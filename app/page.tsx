@@ -421,6 +421,7 @@ export default function Home() {
     };
 
     const handleWheel = (event: WheelEvent) => {
+      if (document.documentElement.dataset.scrollLocked === "true") return;
       if (reducedMotion.matches || event.ctrlKey || event.shiftKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
       if (event.deltaY === 0 || canScrollInside(event.target, event.deltaY)) return;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -461,6 +462,36 @@ export default function Home() {
       verticalScrollFrameRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (!selected) return;
+    const root = document.documentElement;
+    const body = document.body;
+    const previousRootOverflow = root.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+
+    if (verticalScrollFrameRef.current !== null) window.cancelAnimationFrame(verticalScrollFrameRef.current);
+    verticalScrollFrameRef.current = null;
+    verticalScrollLastFrameRef.current = null;
+    verticalScrollTargetRef.current = window.scrollY;
+    verticalScrollPositionRef.current = window.scrollY;
+    root.dataset.scrollLocked = "true";
+    root.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelected(null);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      delete root.dataset.scrollLocked;
+      root.style.overflow = previousRootOverflow;
+      body.style.overflow = previousBodyOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+      verticalScrollTargetRef.current = window.scrollY;
+      verticalScrollPositionRef.current = window.scrollY;
+    };
+  }, [selected]);
 
   const earnedCredits = useMemo(
     () => courses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
