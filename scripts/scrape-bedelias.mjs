@@ -426,13 +426,15 @@ function normalizeExpressionNode(node) {
   const options = parseRequirementOptions(label);
   const approvalMinimum = Number.parseInt(label.match(/^(\d+)\s+aprobaci[oó]n/i)?.[1] ?? "", 10) || null;
   const creditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Plan:\s*(\d{4})\s+-\s+(.+)$/i);
+  const groupCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Grupo:\s*([A-Z0-9.]+)\s+-\s+(.+)$/i);
   return {
     ...node,
     label,
     minimum: approvalMinimum ?? (options.length ? 1 : node.minimum),
     options,
     creditRequirement: creditMatch ? { minimum: Number(creditMatch[1]), planYear: creditMatch[2], planName: creditMatch[3] } : null,
-    parserStatus: options.length || creditMatch || ["all", "any", "none"].includes(node.kind) ? "parsed" : "raw",
+    groupCreditRequirement: groupCreditMatch ? { minimum: Number(groupCreditMatch[1]), groupCode: groupCreditMatch[2], groupName: groupCreditMatch[3] } : null,
+    parserStatus: options.length || creditMatch || groupCreditMatch || ["all", "any", "none"].includes(node.kind) ? "parsed" : "raw",
     children: (node.children ?? []).map(normalizeExpressionNode),
   };
 }

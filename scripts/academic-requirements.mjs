@@ -1,6 +1,8 @@
 export const requirementSources = {
   plan2025: "https://eva.fing.edu.uy/mod/resource/view.php?id=72909",
   plan1997: "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2012/distribuido/5550/Distribuido%20N%C2%BA%2081-2012%20-%20plan_ing_computacion.pdf",
+  plan1997Implementation: "https://www.fing.edu.uy/sites/default/files/2023-02/IngComp_AutoEvaluacion_2022.pdf",
+  plan1997ProjectPrerequisites: "https://www.fing.edu.uy/es/node/3263",
   bedelias: "https://bedelias.udelar.edu.uy/",
 };
 
@@ -36,6 +38,7 @@ export const requirementStructures = {
           { nodeId: "p2025-gdi", minCredits: 10 },
           { nodeId: "p2025-ai", minCredits: 15 },
         ],
+        requiredCourseGroups: [],
         requiredActivities: [],
         sourceUrl: requirementSources.plan2025,
       },
@@ -57,6 +60,7 @@ export const requirementStructures = {
           { nodeId: "p2025-industrial", minCredits: 0 },
           { nodeId: "p2025-society", minCredits: 0 },
         ],
+        requiredCourseGroups: [],
         requiredActivities: [
           { id: "degree-project", label: "Proyecto de grado", minCredits: 30, courseIds: [], representationStatus: "not-modeled", sourceUrl: requirementSources.plan2025 },
         ],
@@ -97,6 +101,7 @@ export const requirementStructures = {
           { nodeId: "p1997-data", minCredits: 10 },
           { nodeId: "p1997-integrating", minCredits: 15 },
         ],
+        requiredCourseGroups: [],
         requiredActivities: [],
         sourceUrl: requirementSources.plan1997,
       },
@@ -121,6 +126,25 @@ export const requirementStructures = {
           { nodeId: "p1997-complementary", minCredits: 10 },
           { nodeId: "p1997-social", minCredits: 10 },
           { nodeId: "p1997-optional", minCredits: 0 },
+        ],
+        requiredCourseGroups: [
+          {
+            id: "mandatory-curriculum",
+            label: "Núcleo curricular obligatorio",
+            minCompleted: 22,
+            courseIds: [
+              "1061", "1062", "1030", "1031", "1023", "1026", "1373", "1025", "1466", "1323", "1027",
+              "1321", "1033", "1650", "1911", "1537", "1327", "1446", "1324", "1325", "1783", "1721",
+            ],
+            sourceUrl: requirementSources.plan1997Implementation,
+          },
+          {
+            id: "additional-programming-paradigm",
+            label: "Programación Funcional o Programación Lógica",
+            minCompleted: 1,
+            courseIds: ["1354", "1340"],
+            sourceUrl: requirementSources.plan1997Implementation,
+          },
         ],
         requiredActivities: [
           { id: "degree-project", label: "Proyecto de grado", minCredits: 30, courseIds: ["1730-A", "1730-B"], representationStatus: "modeled", sourceUrl: requirementSources.plan1997 },

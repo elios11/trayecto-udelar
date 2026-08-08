@@ -42,7 +42,7 @@ test("todas las materias del núcleo de la trayectoria tienen regla oficial para
 });
 
 test("el Plan 1997 usa la jerarquía y las áreas oficiales de Bedelías", () => {
-  assert.deepEqual(data.sourceCoverage, { officialProgram: 2, officialBedelias: 34, suggested: 0, conflicts: 0, missing: 0 });
+  assert.deepEqual(data.sourceCoverage, { officialProgram: 2, officialBedelias: 88, suggested: 0, conflicts: 0, missing: 0 });
   const targets = new Map(data.creditStructure.nodes.map((node) => [node.id, node.minCredits]));
   assert.equal(targets.get("p1997-basic"), 80);
   assert.equal(targets.get("p1997-math"), 70);
@@ -58,6 +58,14 @@ test("el Plan 1997 usa la jerarquía y las áreas oficiales de Bedelías", () =>
   assert.equal(allocation("1373").sourceUrl, "https://www.fing.edu.uy/sites/default/files/2022-09/Programacion%201.pdf");
 });
 
+test("el catálogo flexible conserva inclusión, créditos y área oficiales", () => {
+  const flexible = data.courses.filter((course) => course.catalogKind === "flexible");
+  assert.equal(flexible.length, 61);
+  assert.ok(flexible.every((course) => course.creditAllocations.length > 0));
+  assert.equal(flexible.find((course) => course.code === "1731").credits, 10, "incluye Pasantía");
+  assert.equal(flexible.find((course) => course.code === "1866").creditAllocations[0].nodeId, "p1997-ai");
+});
+
 test("el título de Analista 1997 conserva sus mínimos específicos", () => {
   const credential = data.creditStructure.credentials.find((item) => item.id === "analyst");
   assert.equal(credential.minTotalCredits, 270);
@@ -69,6 +77,26 @@ test("el título de Analista 1997 conserva sus mínimos específicos", () => {
     "p1997-data": 10,
     "p1997-integrating": 15,
   });
+});
+
+test("el título de Ingeniería exige el núcleo obligatorio y un paradigma adicional", () => {
+  const credential = data.creditStructure.credentials.find((item) => item.id === "engineer");
+  const core = credential.requiredCourseGroups.find((group) => group.id === "mandatory-curriculum");
+  const paradigm = credential.requiredCourseGroups.find((group) => group.id === "additional-programming-paradigm");
+  assert.equal(core.minCompleted, 22);
+  assert.equal(core.courseIds.length, 22);
+  assert.deepEqual(paradigm.courseIds, ["1354", "1340"]);
+  assert.equal(paradigm.minCompleted, 1);
+});
+
+test("Proyecto de Grado usa la regla vigente de Bedelías con tres caminos", () => {
+  const rule = data.rules.find((item) => item.target.code === "1730" && item.target.assessment === "course");
+  assert.ok(rule);
+  const nodes = walk(rule.expression);
+  assert.ok(nodes.some((node) => node.creditRequirement?.minimum === 330));
+  assert.ok(nodes.some((node) => node.creditRequirement?.minimum === 365));
+  assert.ok(nodes.some((node) => node.creditRequirement?.minimum === 380));
+  assert.ok(nodes.some((node) => node.groupCreditRequirement?.groupCode === "4083" && node.groupCreditRequirement.minimum === 70));
 });
 
 test("Arquitectura 1466 no se reduce a Programación 1", () => {

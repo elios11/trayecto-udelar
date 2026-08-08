@@ -31,6 +31,7 @@ type Credential = {
   title: string;
   minTotalCredits: number;
   nodeRequirements: Array<{ nodeId: string; minCredits: number; maxCredits?: number }>;
+  requiredCourseGroups: Array<{ id: string; label: string; minCompleted: number; courseIds: string[]; sourceUrl: string }>;
   requiredActivities: Array<{ id: string; label: string; minCredits: number; courseIds: string[]; representationStatus: "modeled" | "not-modeled"; sourceUrl: string }>;
   sourceUrl: string;
 };
@@ -71,6 +72,7 @@ type RequirementExpression = {
   minimum: number | null;
   options: RequirementOption[];
   creditRequirement: { minimum: number; planYear: string; planName: string } | null;
+  groupCreditRequirement?: { minimum: number; groupCode: string; groupName: string } | null;
   children: RequirementExpression[];
 };
 
@@ -86,8 +88,9 @@ type BedeliasProjection = {
   source: { extractedAt: string; contentHash: string };
   plan: { minCredits: number; colibriUrl: string };
   creditStructure: CreditStructure;
+  requirementGroupMap: Record<string, string>;
   programSources: Array<{ courseCode: string; courseName: string; area: string; url: string }>;
-  courses: Array<{ code: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[] }>;
+  courses: Array<{ code: string; name: string; credits: number; catalogKind: "trajectory" | "flexible"; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[] }>;
   rules: VerifiedRule[];
 };
 
@@ -137,18 +140,12 @@ const plan1997BaseCourses: Course[] = [
   { id: "1721", name: "Proyecto de Ingeniería de Software", credits: 15, semester: 8, area: "Integradora", prerequisites: ["1783", "1911"], minCredits: 250, offered: ["par"] },
   { id: "1224", name: "Economía", credits: 7, semester: 8, area: "Gestión", minCredits: 120, offered: ["par", "libre"] },
   { id: "1225", name: "Políticas Científicas en Informática", credits: 3, semester: 8, area: "Gestión", minCredits: 120, offered: ["par"] },
-  { id: "1730-A", name: "Proyecto de Grado · primera etapa", credits: 15, semester: 9, area: "Integradora", prerequisites: ["1721"], minCredits: 270, offered: ["impar", "par"] },
+  { id: "1730-A", name: "Proyecto de Grado · primera etapa", credits: 15, semester: 9, area: "Integradora", offered: ["impar", "par"] },
   { id: "1730-B", name: "Proyecto de Grado · segunda etapa", credits: 15, semester: 10, area: "Integradora", prerequisites: ["1730-A"], offered: ["impar", "par"] },
-  { id: "1354", name: "Programación Funcional", credits: 10, semester: "opt", area: "Programación", elective: true, prerequisites: ["1324"], offered: ["impar"] },
-  { id: "1866", name: "Aprendizaje Automático", credits: 10, semester: "opt", area: "Fundamentos", elective: true, prerequisites: ["1025", "1323"], offered: ["par"] },
-  { id: "1434", name: "Computación de Alta Performance", credits: 10, semester: "opt", area: "Sistemas", elective: true, prerequisites: ["1537"], offered: ["impar"] },
-  { id: "1316", name: "Introducción a la Computación Gráfica", credits: 10, semester: "opt", area: "Programación", elective: true, prerequisites: ["1323", "1031"], offered: ["impar"] },
-  { id: "1545", name: "Criptografía", credits: 10, semester: "opt", area: "Fundamentos", elective: true, prerequisites: ["1027"], offered: ["par"] },
-  { id: "1926", name: "Sistemas de Información Geográfica", credits: 8, semester: "opt", area: "Datos", elective: true, prerequisites: ["1911"], offered: ["impar"] },
 ];
 
 const plan1997VerifiedCourses = new Map(bedeliasData.courses.map((course) => [course.code, course]));
-const plan1997Courses: Course[] = plan1997BaseCourses.map((course) => {
+const plan1997TrajectoryCourses: Course[] = plan1997BaseCourses.map((course) => {
   const lookupId = course.id === "1730-A" || course.id === "1730-B" ? "1730" : course.id;
   const official = plan1997VerifiedCourses.get(lookupId);
   if (official) {
@@ -169,6 +166,21 @@ const plan1997Courses: Course[] = plan1997BaseCourses.map((course) => {
   return course;
 });
 
+const plan1997FlexibleCourses: Course[] = bedeliasData.courses
+  .filter((course) => course.catalogKind === "flexible" && !plan1997BaseCourses.some((item) => item.id === course.code))
+  .map((course) => ({
+    id: course.code,
+    name: readableCourseName(course.name),
+    credits: course.credits,
+    semester: "opt",
+    eligibleRequirementIds: course.eligibleRequirementIds,
+    creditAllocations: course.creditAllocations,
+    offered: [],
+    elective: true,
+  }));
+
+const plan1997Courses = [...plan1997TrajectoryCourses, ...plan1997FlexibleCourses];
+
 function buildPlan2025Courses(trajectoryId: string): Course[] {
   const trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const semesters = new Map<string, number>();
@@ -187,11 +199,12 @@ function optionSatisfied(option: RequirementOption, statuses: Record<string, Cou
   return false;
 }
 
-function expressionSatisfied(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number): boolean {
-  if (expression.kind === "all") return expression.children.every((child) => expressionSatisfied(child, statuses, earnedCredits));
-  if (expression.kind === "any") return expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits));
-  if (expression.kind === "none") return !expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits));
+function expressionSatisfied(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, groupCredits: (groupCode: string) => number = () => 0): boolean {
+  if (expression.kind === "all") return expression.children.every((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits));
+  if (expression.kind === "any") return expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits));
+  if (expression.kind === "none") return !expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits));
   if (expression.creditRequirement) return earnedCredits >= expression.creditRequirement.minimum;
+  if (expression.groupCreditRequirement) return groupCredits(expression.groupCreditRequirement.groupCode) >= expression.groupCreditRequirement.minimum;
   const required = expression.minimum ?? 1;
   return expression.options.filter((option) => optionSatisfied(option, statuses)).length >= required;
 }
@@ -252,7 +265,13 @@ function describeExcludedOption(option: RequirementOption, courses: Course[]) {
   return `No tener aprobado el examen de ${name}`;
 }
 
-type RequirementRow = { key: string; label: string; alternatives?: string[]; done: boolean };
+type RequirementRow = {
+  key: string;
+  label: string;
+  alternatives?: string[];
+  alternativeGroups?: Array<{ label: string; conditions: string[]; done: boolean }>;
+  done: boolean;
+};
 
 function expressionOptions(expression: RequirementExpression, courses: Course[], courseIds: Set<string>) {
   const localOptions = expression.options.filter((option) => courseIds.has(option.code));
@@ -262,6 +281,7 @@ function expressionOptions(expression: RequirementExpression, courses: Course[],
 
 function describeExpression(expression: RequirementExpression, courses: Course[], courseIds: Set<string>): string {
   if (expression.creditRequirement) return `${expression.creditRequirement.minimum} créditos acumulados en el plan`;
+  if (expression.groupCreditRequirement) return `${expression.groupCreditRequirement.minimum} créditos en ${readableCourseName(expression.groupCreditRequirement.groupName)}`;
   if (expression.kind === "none") {
     const options = expression.children.flatMap((child) => child.options).slice(0, 3);
     return options.length ? options.map((option) => describeExcludedOption(option, courses)).join(" o ") : "No cumplir una condición excluyente";
@@ -272,23 +292,39 @@ function describeExpression(expression: RequirementExpression, courses: Course[]
   return displayOptions.length ? displayOptions.join(" o ") : expression.label;
 }
 
-function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, courses: Course[], courseIds: Set<string>, prefix = "r"): RequirementRow[] {
-  if (expression.kind === "all") return expression.children.flatMap((child, index) => requirementRows(child, statuses, earnedCredits, courses, courseIds, `${prefix}-${index}`));
+function branchConditions(expression: RequirementExpression, courses: Course[], courseIds: Set<string>): string[] {
+  if (expression.kind === "all") return expression.children.flatMap((child) => branchConditions(child, courses, courseIds));
+  if (expression.kind === "any") return [`Una de estas alternativas: ${expression.children.map((child) => describeExpression(child, courses, courseIds)).join(" / ")}`];
+  if (expression.kind === "none") return [describeExpression(expression, courses, courseIds)];
+  return [describeExpression(expression, courses, courseIds)];
+}
+
+function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, courses: Course[], courseIds: Set<string>, groupCredits: (groupCode: string) => number, prefix = "r"): RequirementRow[] {
+  if (expression.kind === "all") return expression.children.flatMap((child, index) => requirementRows(child, statuses, earnedCredits, courses, courseIds, groupCredits, `${prefix}-${index}`));
   if (expression.kind === "none") {
     const alternatives = expression.children.flatMap((child) => expressionOptions(child, courses, courseIds)).slice(0, 3);
-    return [{ key: prefix, label: alternatives.length ? "No tener aprobada ninguna de estas equivalencias" : "No cumplir una condición excluyente", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits) }];
+    return [{ key: prefix, label: alternatives.length ? "No tener aprobada ninguna de estas equivalencias" : "No cumplir una condición excluyente", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
   }
   if (expression.kind === "any") {
+    const isComplex = expression.children.some((child) => child.kind === "all" && child.children.length > 2);
+    if (isComplex) {
+      const alternativeGroups = expression.children.map((child, index) => ({
+        label: `Opción ${index + 1}`,
+        conditions: branchConditions(child, courses, courseIds),
+        done: expressionSatisfied(child, statuses, earnedCredits, groupCredits),
+      }));
+      return [{ key: prefix, label: "Cumplir una de estas opciones", alternativeGroups, done: alternativeGroups.some((group) => group.done) }];
+    }
     const alternatives = expression.children.map((child) => describeExpression(child, courses, courseIds)).filter(Boolean);
-    return [{ key: prefix, label: "Cumplir una de estas opciones", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits) }];
+    return [{ key: prefix, label: "Cumplir una de estas opciones", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
   }
   const alternatives = expressionOptions(expression, courses, courseIds);
   if (alternatives.length > 1) {
     const minimum = expression.minimum ?? 1;
     const label = minimum === 1 ? "Cumplir una de estas opciones" : `Cumplir al menos ${minimum} de estas opciones`;
-    return [{ key: prefix, label, alternatives, done: expressionSatisfied(expression, statuses, earnedCredits) }];
+    return [{ key: prefix, label, alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
   }
-  return [{ key: prefix, label: describeExpression(expression, courses, courseIds), done: expressionSatisfied(expression, statuses, earnedCredits) }];
+  return [{ key: prefix, label: describeExpression(expression, courses, courseIds), done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
 }
 
 const stateLabels: Record<CourseStatus, string> = {
@@ -308,6 +344,7 @@ export default function Home() {
   const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {} });
   const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
   const [selected, setSelected] = useState<Course | null>(null);
+  const [importError, setImportError] = useState<{ title: string; message: string } | null>(null);
   const [search, setSearch] = useState("");
   const [availableOnly, setAvailableOnly] = useState(false);
   const [showElectives, setShowElectives] = useState(true);
@@ -467,7 +504,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!selected) return;
+    if (!selected && !importError) return;
     const root = document.documentElement;
     const body = document.body;
     const previousRootOverflow = root.style.overflow;
@@ -483,7 +520,10 @@ export default function Home() {
     body.style.overflow = "hidden";
 
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSelected(null);
+      if (event.key === "Escape") {
+        if (importError) setImportError(null);
+        else setSelected(null);
+      }
     };
     document.addEventListener("keydown", closeOnEscape);
     return () => {
@@ -494,7 +534,7 @@ export default function Home() {
       verticalScrollTargetRef.current = window.scrollY;
       verticalScrollPositionRef.current = window.scrollY;
     };
-  }, [selected]);
+  }, [selected, importError]);
 
   useEffect(() => {
     const scroller = curriculumScrollRef.current;
@@ -546,26 +586,35 @@ export default function Home() {
     const course = courses.find((item) => item.id === id);
     return sum + (course && statuses[id] === "exonerated" ? course.credits : 0);
   }, 0);
+  const requiredCourseGroupProgress = (group: Credential["requiredCourseGroups"][number]) => group.courseIds.filter((id) => statuses[id] === "exonerated").length;
   const countableNodeRequirements = credential.nodeRequirements.filter((requirement) => requirement.minCredits > 0);
-  const credentialRequirementsMet = countableNodeRequirements.filter((requirement) => nodeCredits(requirement.nodeId) >= requirement.minCredits).length
+  const credentialRequirementsMet = (earnedCredits >= credential.minTotalCredits ? 1 : 0)
+    + countableNodeRequirements.filter((requirement) => nodeCredits(requirement.nodeId) >= requirement.minCredits).length
+    + credential.requiredCourseGroups.filter((group) => requiredCourseGroupProgress(group) >= group.minCompleted).length
     + credential.requiredActivities.filter((activity) => activityProgress(activity) >= activity.minCredits).length;
-  const credentialRequirementsTotal = countableNodeRequirements.length + credential.requiredActivities.length;
+  const credentialRequirementsTotal = 1 + countableNodeRequirements.length + credential.requiredCourseGroups.length + credential.requiredActivities.length;
 
   const isComplete = (id: string) => statuses[id] === "approved" || statuses[id] === "exonerated";
   const isFixedPlacementTest = (course: Course) => planYear === "2025" && trajectoryId === "pi-60-plus" && course.id === "PI";
   const isRequirementComplete = (id: string) => id === "MI2"
     ? isComplete("MI2") || statuses.PI === "exonerated"
     : isComplete(id);
-  const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.id}:${assessment}`);
+  const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.id === "1730-A" ? "1730" : course.id}:${assessment}`);
+  const groupCredits = (groupCode: string) => {
+    const nodeId = planYear === "1997" ? bedeliasData.requirementGroupMap[groupCode] : undefined;
+    return nodeId ? nodeCredits(nodeId) : 0;
+  };
+  const hasVerifiedCourseRule = (course: Course) => Boolean(officialRule(course, "course"));
+  const isCourseAvailabilityKnown = (course: Course) => course.placementTest || hasVerifiedCourseRule(course) || Boolean(course.prerequisites?.length || course.minCredits);
   const isCourseUnlocked = (course: Course) => {
     if (course.placementTest) return true;
     const rule = officialRule(course, "course");
-    if (rule) return expressionSatisfied(rule.expression, statuses, earnedCredits);
+    if (rule) return expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits);
     return (course.prerequisites ?? []).every(isRequirementComplete) && (!course.minCredits || earnedCredits >= course.minCredits);
   };
   const isExamUnlocked = (course: Course) => {
     const rule = officialRule(course, "exam");
-    return rule ? expressionSatisfied(rule.expression, statuses, earnedCredits) : true;
+    return rule ? expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits) : true;
   };
   const isUnlocked = (course: Course) => {
     const status = statuses[course.id] ?? "pending";
@@ -593,11 +642,11 @@ export default function Home() {
     const matchesSemester = course.semester === semester;
     const matchesSearch = `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLowerCase().includes(search.toLowerCase());
     const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
-    return matchesSemester && matchesSearch && !isReplacedByPlacementTest && (!availableOnly || isUnlocked(course));
+    return matchesSemester && matchesSearch && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
   });
 
   const exportProgress = () => {
-    const blob = new Blob([JSON.stringify({ career: `ingenieria-computacion-${planYear}`, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
+    const blob = new Blob([JSON.stringify({ formatVersion: 1, career: `ingenieria-computacion-${planYear}`, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
@@ -612,12 +661,32 @@ export default function Home() {
     const reader = new FileReader();
     reader.onload = () => {
       try {
-        const parsed = JSON.parse(String(reader.result));
-        if (parsed.statuses && typeof parsed.statuses === "object") setStatuses(parsed.statuses);
+        const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; career?: unknown; plan?: unknown; statuses?: unknown };
+        if (!parsed || typeof parsed !== "object" || !parsed.statuses || typeof parsed.statuses !== "object" || Array.isArray(parsed.statuses)) {
+          setImportError({ title: "Archivo incompatible", message: "El archivo es JSON, pero no contiene un progreso de Trayecto reconocible." });
+          return;
+        }
+        if (parsed.formatVersion !== undefined && parsed.formatVersion !== 1) {
+          setImportError({ title: "Versión no compatible", message: "Este archivo fue creado con una versión de Trayecto que todavía no podemos importar." });
+          return;
+        }
+        if (parsed.plan !== undefined && parsed.plan !== planYear) {
+          setImportError({ title: "Corresponde a otro plan", message: `Este progreso pertenece al Plan ${String(parsed.plan)}. Seleccioná ese plan antes de importarlo.` });
+          return;
+        }
+        const entries = Object.entries(parsed.statuses as Record<string, unknown>);
+        const validStatuses = new Set<CourseStatus>(["pending", "approved", "exonerated"]);
+        const validCourseIds = new Set(courses.map((course) => course.id));
+        if (entries.some(([id, status]) => !validCourseIds.has(id) || typeof status !== "string" || !validStatuses.has(status as CourseStatus))) {
+          setImportError({ title: "Progreso inválido", message: "El archivo contiene materias o estados que no tienen un formato válido." });
+          return;
+        }
+        setStatuses(Object.fromEntries(entries) as Record<string, CourseStatus>);
       } catch {
-        window.alert("No pudimos leer ese archivo de progreso.");
+        setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
       }
     };
+    reader.onerror = () => setImportError({ title: "No pudimos abrir el archivo", message: "El navegador no pudo leerlo. Probá seleccionándolo nuevamente o exportándolo otra vez." });
     reader.readAsText(file);
     event.target.value = "";
   };
@@ -639,7 +708,7 @@ export default function Home() {
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
   const selectedRule = selected ? officialRule(selected, selectedAssessment) : undefined;
   const selectedAllocation = selected?.creditAllocations?.[0];
-  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, courses, courseIds) : [];
+  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, courses, courseIds, groupCredits) : [];
   const selectedDependents = selected ? courses.filter((course) => {
     if (course.id === selected.id) return false;
     if (course.prerequisites?.includes(selected.id)) return true;
@@ -647,7 +716,7 @@ export default function Home() {
     return Boolean(courseRule && expressionReferencesCode(courseRule.expression, selected.id));
   }) : [];
   const sourceLabel = (course: Course): "Bedelías" | "FING" | undefined => {
-    if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id) ? "Bedelías" : undefined;
+    if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
     return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : undefined;
   };
 
@@ -712,7 +781,7 @@ export default function Home() {
           {planYear === "2025" ? (
             <p className="pilot-note"><span /> {plan2025Data.trajectories[trajectoryId].description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</p>
           ) : (
-            <p className="pilot-note"><span /> Semestres de la trayectoria sugerida compartida. Créditos y reglas de 29 materias importados de Bedelías el 08/08/2026; metas por área aún en revisión.</p>
+            <p className="pilot-note"><span /> Semestres de la trayectoria sugerida compartida. Créditos, áreas y reglas centrales importados de Bedelías; núcleo obligatorio contrastado con la implementación curricular de FING.</p>
           )}
         </div>
 
@@ -771,6 +840,7 @@ export default function Home() {
             {suggestedAllocationCount > 0 && <small>{suggestedAllocationCount} áreas sugeridas en esta trayectoria</small>}
           </div>
           <div className="requirements-tree">
+            <div className="required-activity"><span><b>Total de créditos</b><small>Requisito general del título</small></span><strong className={earnedCredits >= credential.minTotalCredits ? "met" : ""}>{earnedCredits}/{credential.minTotalCredits}</strong></div>
             {rootRequirementNodes.map((root) => {
               const rootTarget = credentialTargets.get(root.id)?.minCredits;
               const current = nodeCredits(root.id);
@@ -804,19 +874,31 @@ export default function Home() {
               const current = activityProgress(activity);
               return <div className="required-activity" key={activity.id}><span><b>{activity.label}</b><small>{activity.representationStatus === "not-modeled" ? "Aún sin ubicación completa en la trayectoria" : "Actividad obligatoria"}</small></span><strong className={current >= activity.minCredits ? "met" : ""}>{current}/{activity.minCredits}</strong></div>;
             })}
+            {credential.requiredCourseGroups.map((group) => {
+              const current = requiredCourseGroupProgress(group);
+              const missing = group.courseIds.filter((id) => statuses[id] !== "exonerated").map((id) => courses.find((course) => course.id === id)?.name ?? id);
+              return <details className="required-course-group" key={group.id}>
+                <summary><span><b>{group.label}</b><small>{current} de {group.minCompleted} completadas</small></span><strong className={current >= group.minCompleted ? "met" : ""}>{current}/{group.minCompleted}</strong></summary>
+                <div className="required-course-body">
+                  {missing.length ? <><p>Te faltan:</p><ul>{missing.map((name) => <li key={name}>{name}</li>)}</ul></> : <p className="all-complete">✓ Requisito completo</p>}
+                  <a href={group.sourceUrl} target="_blank" rel="noreferrer">Ver fuente oficial de FING ↗</a>
+                </div>
+              </details>;
+            })}
           </div>
-          <p className="data-source">Las metas provienen del plan y de la composición oficial. Las asignaciones sugeridas cuentan normalmente y quedan identificadas en cada materia.</p>
+          <p className="data-source">Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías.</p>
         </aside>
 
         <section className="curriculum-panel">
           <div className="toolbar">
-            <label className="search-box">
+            <div className="search-box">
               <svg className="search-icon" aria-hidden="true" viewBox="0 0 20 20">
                 <circle cx="8.5" cy="8.5" r="5.25" />
                 <path d="m12.4 12.4 4.1 4.1" />
               </svg>
-              <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar materia, código o área" />
-            </label>
+              <input aria-label="Buscar materia, código o área" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar materia, código o área" />
+              {search && <button type="button" className="search-clear" onClick={() => setSearch("")} aria-label="Limpiar búsqueda" title="Limpiar búsqueda">×</button>}
+            </div>
             {planYear === "1997" ? <label className="toggle-control">
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
@@ -843,7 +925,7 @@ export default function Home() {
                   <div className="course-stack">
                     {planYear === "1997" && semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
                     {filtered(semester).map((course) => (
-                      <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                      <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}
                     {filtered(semester).length === 0 && <p className="empty-column">Sin resultados</p>}
                   </div>
@@ -855,12 +937,12 @@ export default function Home() {
           {planYear === "1997" ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
               <div><span className="eyebrow">Trayectoria flexible</span><h2>Optativas y electivas</h2></div>
-              <div><span>{filtered("opt").length} materias en el catálogo piloto</span><b>{showElectives ? "−" : "+"}</b></div>
+              <div><span>{filtered("opt").length} materias verificadas en la composición</span><b>{showElectives ? "−" : "+"}</b></div>
             </button>
             {showElectives && (
               <div className="electives-grid">
                 {filtered("opt").map((course) => (
-                  <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                  <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
             )}
@@ -877,6 +959,17 @@ export default function Home() {
         <p>Trayecto es un proyecto estudiantil independiente. La información oficial prevalece siempre sobre este prototipo.</p>
         <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Consultar Bedelías ↗</a>
       </footer>
+
+      {importError && (
+        <div className="modal-backdrop" onClick={() => setImportError(null)}>
+          <section className="import-modal" role="dialog" aria-modal="true" aria-labelledby="import-error-title" onClick={(event) => event.stopPropagation()}>
+            <div className="modal-symbol" aria-hidden="true">!</div>
+            <h2 id="import-error-title">{importError.title}</h2>
+            <p>{importError.message}</p>
+            <button type="button" className="primary-button" autoFocus onClick={() => setImportError(null)}>Entendido</button>
+          </section>
+        </div>
+      )}
 
       {selected && (
         <div className="drawer-backdrop" onClick={() => setSelected(null)}>
@@ -899,6 +992,12 @@ export default function Home() {
                   <span>{row.done ? "✓" : "○"}</span>
                   <div className="requirement-copy">
                     <strong>{row.label}</strong>
+                    {row.alternativeGroups?.length ? <div className="requirement-paths">
+                      {row.alternativeGroups.map((group) => <details key={`${row.key}-${group.label}`} open={group.done}>
+                        <summary><span>{group.done ? "✓" : "○"}</span>{group.label}</summary>
+                        <ul>{group.conditions.map((condition, index) => <li key={`${row.key}-${group.label}-${index}`}>{condition}</li>)}</ul>
+                      </details>)}
+                    </div> : null}
                     {row.alternatives?.length ? <ul className="requirement-alternatives">
                       {row.alternatives.map((alternative, index) => <li key={`${row.key}-option-${index}`}>{alternative}</li>)}
                     </ul> : null}
@@ -932,7 +1031,7 @@ export default function Home() {
   );
 }
 
-function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING"; onCycle: () => void; onDetails: () => void }) {
+function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rulesKnown, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; rulesKnown: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING"; onCycle: () => void; onDetails: () => void }) {
   return (
     <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
       <div className="course-topline">
@@ -944,6 +1043,8 @@ function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, fix
       <button className="status-button" disabled={!unlocked || fixed} onClick={onCycle}>
         {fixed
           ? <><span className="status-mark">✓</span>Acreditada por trayectoria · 4 cr.</>
+          : !rulesKnown && status === "pending"
+          ? <><span className="status-mark">?</span>Previas aún no consultadas</>
           : !unlocked
           ? <><span className="lock-mark">⌑</span>{status === "approved" ? "Examen no habilitado" : "No habilitada"}</>
           : course.placementTest

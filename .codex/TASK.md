@@ -5,7 +5,7 @@ Workspace: `C:\Users\elios\Documents\Proyectos_GPT\MallaCurricularUniversal`
 Rama activa: `main`  
 Commit de importación académica de referencia: `a63f653` (`Import official Bedelias prerequisite rules`)
 Sitio desplegado: <https://trayecto-udelar-piloto.tokyo121.chatgpt.site>  
-Acceso actual: privado, solo propietario.
+Acceso actual: público; cualquier persona con el enlace puede abrirlo.
 
 ## 1. Objetivo del producto
 
@@ -58,7 +58,7 @@ Hay cinco conjuntos relevantes de datos:
    - Contiene 25 servicios encontrados en la consulta pública.
 3. Proyección compacta consumida por la interfaz:
    - `app/data/computacion-1997-bedelias.json`
-   - Contiene solo las 29 materias centrales mostradas y sus 53 reglas relevantes.
+   - Contiene 29 materias de trayectoria, 61 unidades curriculares flexibles y 126 reglas de curso/examen relevantes.
 4. Snapshot de Bedelías para Ingeniería en Computación Plan 2025:
    - `data/bedelias/fing-ingenieria-en-computacion-2025.json`
    - Confirma vigencia, 450 créditos, 60 meses y 38 unidades/equivalencias actualmente presentes en la composición. La composición y las previas siguen incompletas en SGAE.
@@ -156,6 +156,7 @@ No se reducen las previaturas a listas planas. El modelo guarda:
 - `none`: no debe cumplirse ninguna condición excluyente;
 - `requirement`: cantidad mínima de aprobaciones entre opciones;
 - mínimos de créditos en el plan;
+- mínimos de créditos dentro de un grupo/área curricular;
 - evidencia de curso, examen o inscripción;
 - equivalencias de otros servicios/planes;
 - texto original para formatos futuros.
@@ -166,9 +167,9 @@ Ejemplo validado: para cursar Arquitectura de Computadoras 1466 en Plan 97 no al
 
 Los semestres no provienen de Bedelías. Fueron transcritos de la trayectoria sugerida compartida por el usuario para Plan 97, con dedicación total. No son una optimización algorítmica de egreso ni una garantía de oferta semestral.
 
-Los créditos y previaturas de las 29 materias centrales sí provienen del snapshot de Bedelías y llevan una etiqueta visual `Bedelías`.
+Los créditos, áreas y previaturas de las 29 materias centrales provienen del snapshot de Bedelías y llevan una etiqueta visual `Bedelías`. El catálogo flexible contiene otras 61 unidades verificadas en la composición oficial; 60 tienen regla de curso publicada/importada y `Ciencia, Tecnología y Sociedad` queda explícitamente con previas aún no consultadas/publicadas.
 
-Las optativas del catálogo piloto, los dos bloques manuales del Proyecto de Grado y algunas metas siguen siendo curados/no verificados.
+La implementación curricular publicada por FING respalda el núcleo obligatorio de 22 unidades y la alternativa `Programación Funcional o Programación Lógica`. La regla vigente de Proyecto de Grado se extrajo de Bedelías y evalúa tres caminos alternativos: 365 créditos con cursos clave, 330 créditos con mínimos por área, o 380 créditos totales. La división visual `1730-A/B` sigue siendo una decisión de interfaz, pero la habilitación de la primera etapa usa la regla oficial de `1730`.
 
 Para el Plan 2025, la trayectoria sí proviene de la página oficial de Carreras de Computación en EVA/FING. FING publica dos láminas para Montevideo según el resultado de la Prueba Inicial y aclara que el ordenamiento es un ejemplo flexible, no una secuencia única. Bedelías sigue siendo la autoridad para vigencia, composición y previaturas, pero al 2026-08-08 su composición solo muestra 38 unidades/equivalencias. Se consultaron las diez materias iniciales identificadas por código y la proyección conserva 17 reglas de curso/examen correspondientes a nueve materias. La UI distingue las etiquetas `FING` y `Bedelías`; una ausencia de regla nunca se presenta como “sin previas”.
 
@@ -189,15 +190,16 @@ El índice oficial completo es <https://eva.fing.edu.uy/course/view.php?id=800&s
 - La malla horizontal se excluye del detector de paneles con scroll vertical: apuntar una materia nunca desactiva el suavizado vertical de la página, aunque el navegador reporte `overflow-y: auto` como efecto de `overflow-x`.
 - Las condiciones de Bedelías se presentan con lenguaje normalizado y alternativas en viñetas. La transformación es únicamente visual: códigos, reglas y evaluación conservan intactos los datos oficiales extraídos.
 - Las fichas identifican en texto cuándo una materia o asignación proviene de Bedelías; no enlazan esas menciones a la portada general porque no existe una URL pública permanente para la ficha concreta.
-- Buscador por código, nombre o área.
+- Buscador por código, nombre o área, con botón `×` para limpiar todo el texto de una vez.
 - Filtro de materias habilitadas en Plan 1997. En Plan 2025 se reemplaza por un indicador de cobertura de previas, porque todavía no corresponde afirmar habilitación oficial.
 - Estados visuales pendiente/aprobada/exonerada.
 - Persistencia local.
-- Exportar/importar progreso.
+- Exportar/importar progreso con `formatVersion: 1`. El importador valida estructura, estados, versión y plan antes de tocar el progreso; JSON erróneo o incompatible abre un modal propio centrado en vez de `window.alert`.
 - Reinicio del progreso.
 - Panel de créditos totales.
 - Panel de título intermedio y título de grado.
 - Árbol anidado de grupos y áreas con metas oficiales para Plan 2025 y Plan 1997.
+- Requisitos explícitos de total de créditos, núcleo obligatorio, paradigma adicional y Proyecto de Grado para Ingeniería Plan 97, con faltantes desplegables y enlace a FING.
 - Selector de requisitos de Analista o Ingeniería, manteniendo ambas tarjetas resumen.
 - Mínimos superiores de grupo, mínimos de área y créditos flexibles adicionales; el Plan 2025 muestra los 60 créditos tecnológicos adicionales.
 - Nodos con mínimo cero rotulados `Sin mínimo propio`, sin barras `0/0`.
@@ -277,9 +279,10 @@ La distribución visible se alineó con la imagen compartida:
 - Bedelías muestra actualmente 38 unidades/equivalencias en la composición del Plan 2025.
 - FING publica 32 materias diferentes en las tres ramas combinadas; la proyección contiene 33 fichas al sumar la Prueba Inicial presemestre asumida y conserva 17 reglas de curso/examen para nueve materias iniciales localizables por código.
 - 610 unidades/equivalencias únicas en la composición del Plan 97.
-- 29 materias centrales y 7 cursos/equivalencias adicionales proyectados para sostener áreas, optativas y Proyecto de Grado del Plan 97.
-- 53 reglas de curso/examen.
-- Cobertura de áreas Plan 97: 2 asignaciones respaldadas por programa oficial y 34 por composición de Bedelías; 0 sugeridas, conflictos o faltantes en la proyección.
+- 29 materias de trayectoria y 61 unidades curriculares flexibles proyectadas para el Plan 97.
+- 126 reglas de curso/examen del Plan 97: 89 de curso y 37 de examen. Entre las flexibles, 60/61 tienen regla de curso publicada.
+- El lote flexible se ejecutó a 500 ms entre interacciones: 62 códigos, 74 reglas recuperadas, 4.260 solicitudes de interfaz y cero incidencias/bloqueos; luego se fusionó con las 53 reglas centrales y se normalizó el conjunto completo.
+- Cobertura de áreas Plan 97: 2 asignaciones respaldadas por programa oficial y 88 por composición de Bedelías; 0 sugeridas, conflictos o faltantes en la proyección.
 - Cobertura de áreas Plan 2025: 11 asignaciones respaldadas por composición de Bedelías y 22 sugeridas; 0 conflictos o faltantes estructurales.
 - Cero requisitos sin interpretar después de la normalización actual.
 - Títulos detectados: Ingeniero en Computación y Analista en Computación.
@@ -293,6 +296,9 @@ Pruebas en `tests/bedelias-data.test.mjs`:
 - todas las materias centrales tienen regla oficial para cursar;
 - Arquitectura 1466 contiene los cuatro grupos relevantes y exclusiones;
 - Arquitectura exige Programación 1 exonerada, no solo aprobada;
+- catálogo flexible de 61 unidades con créditos y áreas oficiales;
+- núcleo obligatorio de 22 unidades y alternativa Programación Funcional/Lógica;
+- Proyecto de Grado con caminos de 330, 365 y 380 créditos y mínimos de grupo;
 - ningún requisito normalizado queda como texto crudo.
 
 Pruebas en `tests/rendered-html.test.mjs`:
@@ -310,7 +316,7 @@ Pruebas en `tests/computacion-2025-data.test.mjs`:
 - totales exactos por semestre en ambas trayectorias oficiales;
 - ficha y estado de procedencia para todas las materias proyectadas.
 
-Estado actual: `npm.cmd test` compila correctamente y pasan 15/15 pruebas.
+Estado actual: `npm.cmd test` compila correctamente y pasan 18/18 pruebas.
 
 ## 6. Bugs, inconsistencias y límites conocidos
 
@@ -318,25 +324,25 @@ Estado actual: `npm.cmd test` compila correctamente y pasan 15/15 pruebas.
 
 1. **Créditos de la PI 2026 asumidos, sin confirmación inequívoca.** Los cortes y el efecto sobre la trayectoria están publicados. Por decisión del proyecto, la rama `>=60%` suma los 4 créditos históricos como equivalencia de Matemática Inicial, pero el estado del dato deja explícito que falta una resolución o registro vigente que lo confirme.
 2. **Cobertura de programas 2025 todavía parcial.** Las áreas de materias ya ubicadas inequívocamente en la composición de Bedelías son oficiales. Las nuevas materias sin Anexo B o resolución aplicable conservan una asignación sugerida y visible.
-3. **Proyecto de Grado dividido manualmente.** `1730-A` y `1730-B` son una representación visual de dos semestres. No son códigos oficiales importados, aunque sus 30 créditos y su aporte a Actividades Integradoras provienen del curso oficial `1730`.
+3. **Proyecto de Grado dividido visualmente.** `1730-A` y `1730-B` representan dos etapas de 15 créditos, no códigos oficiales. Los 30 créditos, el área y la regla de habilitación sí provienen de `1730`; la regla oficial se aplica a la primera etapa y la segunda exige completar la primera.
 4. **Oferta no importada.** Los campos `offered` del Plan 97 siguen siendo manuales. El Plan 2025 no afirma oferta; sus semestres provienen de la trayectoria sugerida oficial, que FING define como ejemplo flexible.
 
 ### Datos y evaluador
 
 5. Solo se integraron los planes 1997 y 2025 de Ingeniería en Computación. El objetivo global de grados, tecnicaturas y CIO vigentes todavía no está cubierto.
-6. En Plan 97 solo 29 materias centrales tienen cobertura oficial y las optativas visibles aún usan previas manuales. En Plan 2025 todavía faltan perfiles, optativas, formación complementaria y Proyecto de Grado en la malla.
+6. En Plan 97 las 29 materias centrales y 61 flexibles tienen créditos/área oficiales; 60/61 flexibles tienen regla de curso importada. La oferta efectiva por semestre todavía no fue verificada y no se afirma. En Plan 2025 todavía faltan perfiles, optativas, formación complementaria y Proyecto de Grado en la malla.
 7. Bedelías todavía no contiene la implementación completa del Plan 2025: 38 unidades/equivalencias en composición y 17 reglas proyectadas para nueve materias iniciales. Las materias sin regla pueden marcarse para registrar progreso, pero no se bloquean ni se muestran como “habilitadas”.
 8. Algunas materias publican regla de curso pero no regla de examen, posiblemente porque no tienen examen convencional (taller/proyecto). Hoy, si no hay regla de examen proyectada, la transición a exonerada no se bloquea. Se debe distinguir explícitamente `sin modalidad de examen`, `sin regla publicada` y `no consultada`.
 9. El evaluador no registra inscripciones reales. Las opciones `course-enrollment` y `exam-enrollment` se consideran falsas. Esto funciona para muchas exclusiones, pero no alcanza para evaluar condiciones basadas en una inscripción vigente.
 10. Progreso antiguo de `localStorage` no se revalida al cambiar reglas. Esto es intencional para no borrar una escolaridad real, pero un estado colocado durante la demo puede sobrevivir aunque se haya obtenido con reglas viejas.
 11. Las URLs con `?cid=1` son de conversación JSF y no son enlaces permanentes. El snapshot conserva procedencia y texto, pero los enlaces estables de cara al usuario deben ser la portada de Bedelías y documentos de Colibrí.
-12. El snapshot completo del Plan 97 ronda 1,5 MB y la proyección del navegador ronda 430 KB. Es aceptable para el piloto, pero no escalará a toda Udelar sin dividir datos por carrera/plan o servirlos bajo demanda.
+12. El snapshot completo del Plan 97 ronda 2,1 MB y la proyección del navegador 0,9 MB. La compilación ya advierte un chunk superior a 500 KB; antes de escalar a toda Udelar hay que dividir datos por carrera/plan y cargarlos bajo demanda.
 
 ### Infraestructura
 
 13. `npm install` reportó 20 vulnerabilidades transitivas (1 baja, 4 moderadas, 15 altas). No se ejecutó `npm audit fix` porque puede introducir cambios incompatibles. Auditar dependencias antes de producción pública.
 14. No existe autenticación propia, base de datos ni sincronización. Las cuentas quedaron explícitamente para una etapa futura.
-15. El sitio está privado/owner-only. Copiar el enlace no da acceso a otros usuarios mientras no se cambie el control de acceso.
+15. El sitio está público por pedido del usuario para poder probarlo y compartirlo. Antes de una publicación estable conviene revisar si se mantiene este acceso o se vuelve a una lista acotada.
 
 ## 7. Intentos, problemas encontrados y decisiones descartadas
 
@@ -348,7 +354,9 @@ Estado actual: `npm.cmd test` compila correctamente y pasan 15/15 pruebas.
 - **Filas de previaturas:** inicialmente se asumió `data-rk`; esas tablas usan `data-ri`. Se corrigió usando filas semánticas y texto exacto.
 - **Volver mediante botón:** generaba más recargas. El importador intenta historial (`goBack`) y conserva fallback al botón.
 - **Checkpoints con reglas vacías:** la primera prueba guardó marcadores `none` por el bug de filas. El flujo fue corregido y luego reextraído/normalizado.
-- **Parser inicial limitado:** solo entendía `Curso/Examen de la U.C.B.`. Se amplió para `aprobado`, `U.C.B aprobada`, inscripciones, equivalencias con servicio y mínimos de créditos. Luego se normalizaron las 53 reglas sin nuevas solicitudes.
+- **Parser inicial limitado:** solo entendía `Curso/Examen de la U.C.B.`. Se amplió para `aprobado`, `U.C.B aprobada`, inscripciones, equivalencias con servicio, mínimos de créditos del plan y mínimos por grupo curricular. Las 126 reglas actuales quedan sin nodos crudos.
+- **PDF histórico de Proyecto de Grado:** la página de FING anuncia reglas vigentes desde 2016, pero el PDF enlazado responde 403 aun al navegar desde la página oficial. No se reutilizó el documento accesible de 2008. Se consultó directamente la regla vigente de `1730` en Bedelías y se extrajeron sus tres caminos completos.
+- **Auditoría de materias-computacion.netlify.app:** se usó como lista estudiantil de descubrimiento, nunca como fuente de verdad. Los candidatos se cruzaron con la composición de Bedelías; solo se proyectaron códigos presentes oficialmente. El archivo estudiantil descargado para el cruce no forma parte del producto final.
 - **Áreas planas y metas demo:** el primer prototipo asignaba una sola etiqueta manual y no representaba mínimos superiores. Se reemplazó por un árbol universal con requisitos por título, procedencia por asignación y cómputo sin duplicados.
 - **Plan 2025 tratado inicialmente como “detectado”:** se comprobó que no basta con esperar una vuelta completa del plan. FING ya publicó la estructura, las dos trayectorias de Montevideo y los mínimos, mientras Bedelías todavía está parcial. Se adoptó un modelo de doble procedencia en vez de bloquear toda la integración.
 - **Confundir año de publicación con año del plan:** el PDF `TrayectoriaSugerida_2025_Montevideo.pdf` fue publicado para la cursada 2025, pero sus materias y total corresponden al Plan 1997. Se usa como verificación histórica de PI=4, no como prueba del nuevo Plan de Estudios 2025.
@@ -369,11 +377,11 @@ Orden sugerido:
 4. Añadir estados explícitos para modalidad/regla de curso y examen: `published`, `not-published`, `not-applicable`, `not-scraped`.
 5. Volver a extraer el Plan 2025 periódicamente y comparar snapshots para detectar cuándo Bedelías agrega composición, códigos y reglas; no sustituir datos FING automáticamente.
 6. Incorporar perfiles del Plan 2025, optativas reales, créditos complementarios y Proyecto de Grado cuando la Comisión de Carrera publique su implementación.
-7. Confirmar Proyecto de Grado del Plan 97 y eliminar o documentar formalmente la división manual `1730-A/B`.
-8. Ampliar el catálogo de Anexos B y resoluciones del Plan 2025 hasta reducir a cero las asignaciones sugeridas.
-9. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
-10. Investigar fuentes institucionales de oferta efectiva por semestre sin confundirlas con la trayectoria sugerida.
-11. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras.
+7. Documentar con una fuente institucional la división temporal en dos etapas de Proyecto de Grado, o reemplazarla por una sola tarjeta de 30 créditos si no corresponde presentarla como dos semestres.
+8. Importar programa/EVA y oferta efectiva de las 61 unidades flexibles sin confundir presencia curricular con dictado actual; resolver específicamente la ausencia de regla de curso de `1223`.
+9. Ampliar el catálogo de Anexos B y resoluciones del Plan 2025 hasta reducir a cero las asignaciones sugeridas.
+10. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
+11. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras; el chunk del Plan 97 ya supera 500 KB.
 12. Añadir reportes de diferencias y un panel visible de procedencia por plan.
 13. Evaluar cuentas/sincronización solo después de estabilizar el modelo académico.
 
