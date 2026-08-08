@@ -337,8 +337,20 @@ const STORAGE_KEY = "trayecto-udelar-progress-v2";
 const LEGACY_STORAGE_KEY = "trayecto-udelar-demo-v1";
 type PlanId = "1997" | "2025";
 type PlanProgress = Record<PlanId, Record<string, CourseStatus>>;
+type AppMode = "curriculum" | "planner";
+type PlannerView = "board" | "compact" | "balance";
+type PlannerTerm = { id: string; label: string; courseIds: string[] };
+type PlannerPlans = Record<PlanId, PlannerTerm[]>;
+
+const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
+const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, index) => ({
+  id: `term-${index + 1}`,
+  label: `Semestre ${index + 1}`,
+  courseIds: [],
+}));
 
 export default function Home() {
+  const [appMode, setAppMode] = useState<AppMode>("curriculum");
   const [planYear, setPlanYear] = useState<PlanId>("2025");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
   const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {} });
@@ -350,6 +362,10 @@ export default function Home() {
   const [showElectives, setShowElectives] = useState(true);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
+  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms() });
+  const [plannerView, setPlannerView] = useState<PlannerView>("board");
+  const [plannerSearch, setPlannerSearch] = useState("");
+  const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
   const importRef = useRef<HTMLInputElement>(null);
   const curriculumScrollRef = useRef<HTMLDivElement>(null);
   const verticalScrollTargetRef = useRef(0);
@@ -361,6 +377,12 @@ export default function Home() {
     () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997Courses,
     [planYear, trajectoryId],
   );
+  const plannerCourses = useMemo<Course[]>(() => planYear === "2025"
+    ? plan2025Data.courses.map((course) => ({ ...course, semester: "opt", offered: [] }))
+    : plan1997Courses,
+  [planYear]);
+  const plannerTerms = plannerPlans[planYear];
+  const activeCourses = appMode === "planner" ? plannerCourses : courses;
   const storedStatuses = progress[planYear] ?? {};
   const statuses = useMemo(
     () => planYear === "2025" && trajectoryId === "pi-60-plus"
@@ -368,7 +390,7 @@ export default function Home() {
       : storedStatuses,
     [planYear, trajectoryId, storedStatuses],
   );
-  const courseIds = useMemo(() => new Set(courses.map((course) => course.id)), [courses]);
+  const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(
     () => planYear === "2025"
       ? new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]))
@@ -410,6 +432,8 @@ export default function Home() {
         const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
         if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {} });
       }
+      const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
+      if (savedPlanner) setPlannerPlans(JSON.parse(savedPlanner));
     } catch {
       // A damaged local save should never prevent the curriculum from loading.
     }
@@ -419,6 +443,10 @@ export default function Home() {
   useEffect(() => {
     if (hydrated) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   }, [progress, hydrated]);
+
+  useEffect(() => {
+    if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
+  }, [plannerPlans, hydrated]);
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
@@ -554,8 +582,8 @@ export default function Home() {
   }, [planYear, trajectoryId]);
 
   const earnedCredits = useMemo(
-    () => courses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
-    [courses, statuses],
+    () => activeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
+    [activeCourses, statuses],
   );
 
   const allocationBelongsTo = (allocationNodeId: string, targetNodeId: string) => {
@@ -566,7 +594,7 @@ export default function Home() {
     }
     return false;
   };
-  const nodeCredits = (nodeId: string) => courses.reduce((total, course) => {
+  const nodeCredits = (nodeId: string) => activeCourses.reduce((total, course) => {
     if (statuses[course.id] !== "exonerated") return total;
     const contribution = (course.creditAllocations ?? [])
       .filter((allocation) => allocationBelongsTo(allocation.nodeId, nodeId))
@@ -583,7 +611,7 @@ export default function Home() {
   const rootRequirementNodes = requirementNodes.filter((node) => node.parentId === null && hasCredentialRequirement(node.id));
   const suggestedAllocationCount = courses.filter((course) => courseAllocationStatus(course) === "suggested").length;
   const activityProgress = (activity: Credential["requiredActivities"][number]) => activity.courseIds.reduce((sum, id) => {
-    const course = courses.find((item) => item.id === id);
+    const course = activeCourses.find((item) => item.id === id);
     return sum + (course && statuses[id] === "exonerated" ? course.credits : 0);
   }, 0);
   const requiredCourseGroupProgress = (group: Credential["requiredCourseGroups"][number]) => group.courseIds.filter((id) => statuses[id] === "exonerated").length;
@@ -704,12 +732,35 @@ export default function Home() {
     scroller.scrollBy({ left: direction * (column.getBoundingClientRect().width + gap), behavior: "smooth" });
   };
 
+  const updatePlannerTerms = (updater: (terms: PlannerTerm[]) => PlannerTerm[]) => {
+    setPlannerPlans((current) => ({ ...current, [planYear]: updater(current[planYear] ?? createDefaultTerms()) }));
+  };
+  const addPlannerTerm = () => updatePlannerTerms((terms) => [
+    ...terms,
+    { id: `term-${Date.now()}`, label: `Semestre ${terms.length + 1}`, courseIds: [] },
+  ]);
+  const renamePlannerTerm = (termId: string, label: string) => updatePlannerTerms((terms) => terms.map((term) => term.id === termId ? { ...term, label } : term));
+  const removePlannerTerm = (termId: string) => updatePlannerTerms((terms) => terms.length === 1 ? terms : terms.filter((term) => term.id !== termId));
+  const assignPlannerCourse = (courseId: string, termId: string) => updatePlannerTerms((terms) => terms.map((term) => ({
+    ...term,
+    courseIds: term.id === termId
+      ? [...term.courseIds.filter((id) => id !== courseId), courseId]
+      : term.courseIds.filter((id) => id !== courseId),
+  })));
+  const unassignPlannerCourse = (courseId: string) => updatePlannerTerms((terms) => terms.map((term) => ({ ...term, courseIds: term.courseIds.filter((id) => id !== courseId) })));
+  const assignedPlannerIds = new Set(plannerTerms.flatMap((term) => term.courseIds));
+  const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
+  const availablePlannerCourses = plannerCourses.filter((course) => {
+    const query = plannerSearch.trim().toLocaleLowerCase("es-UY");
+    return !assignedPlannerIds.has(course.id) && (!query || `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLocaleLowerCase("es-UY").includes(query));
+  });
+
   const selectedStatus = selected ? statuses[selected.id] ?? "pending" : "pending";
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
   const selectedRule = selected ? officialRule(selected, selectedAssessment) : undefined;
   const selectedAllocation = selected?.creditAllocations?.[0];
-  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, courses, courseIds, groupCredits) : [];
-  const selectedDependents = selected ? courses.filter((course) => {
+  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, activeCourses, courseIds, groupCredits) : [];
+  const selectedDependents = selected ? activeCourses.filter((course) => {
     if (course.id === selected.id) return false;
     if (course.prerequisites?.includes(selected.id)) return true;
     const courseRule = officialRule(course, "course");
@@ -731,6 +782,10 @@ export default function Home() {
             <h1>Trayecto</h1>
           </div>
         </div>
+        <nav className="mode-switch" aria-label="Modo de trabajo">
+          <button className={appMode === "curriculum" ? "active" : ""} onClick={() => setAppMode("curriculum")}><span>Mapa</span> Currícula</button>
+          <button className={appMode === "planner" ? "active" : ""} onClick={() => setAppMode("planner")}><span>Propio</span> Planificador</button>
+        </nav>
         <div className="header-actions">
           <button className="quiet-button" onClick={() => importRef.current?.click()}>Importar</button>
           <button className="quiet-button" onClick={exportProgress}>Exportar</button>
@@ -762,7 +817,7 @@ export default function Home() {
                 <option value="1997">Plan 1997 · histórico</option>
               </select>
             </label>
-            <label>
+            {appMode === "curriculum" && <label>
               <span>Trayectoria</span>
               <select value={trajectoryId} onChange={(event) => {
                 const next = event.target.value;
@@ -776,9 +831,11 @@ export default function Home() {
                   <option value={id} key={id}>{trajectory.label}</option>
                 )) : <option value="pi-20-59">Ingreso 1er semestre · PI 20–59%</option>}
               </select>
-            </label>
+            </label>}
           </div>
-          {planYear === "2025" ? (
+          {appMode === "planner" ? (
+            <p className="pilot-note planner-note"><span /> Armá una currícula propia con las mismas materias, créditos y áreas del plan. Los cambios quedan guardados en este dispositivo.</p>
+          ) : planYear === "2025" ? (
             <p className="pilot-note"><span /> {plan2025Data.trajectories[trajectoryId].description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</p>
           ) : (
             <p className="pilot-note"><span /> Semestres de la trayectoria sugerida compartida. Créditos, áreas y reglas centrales importados de Bedelías; núcleo obligatorio contrastado con la implementación curricular de FING.</p>
@@ -786,12 +843,12 @@ export default function Home() {
         </div>
 
         <div className="credit-summary">
-          <div className="credit-ring" style={{ "--progress": `${Math.min(earnedCredits / planMinCredits * 100, 100)}%` } as React.CSSProperties}>
-            <div><strong>{earnedCredits}</strong><span>de {planMinCredits}</span></div>
+          <div className="credit-ring" style={{ "--progress": `${Math.min((appMode === "planner" ? plannedCredits : earnedCredits) / planMinCredits * 100, 100)}%` } as React.CSSProperties}>
+            <div><strong>{appMode === "planner" ? plannedCredits : earnedCredits}</strong><span>de {planMinCredits}</span></div>
           </div>
           <div>
-            <p>Créditos obtenidos</p>
-            <strong>{Math.round(earnedCredits / planMinCredits * 100)}% de la carrera</strong>
+            <p>{appMode === "planner" ? "Créditos planificados" : "Créditos obtenidos"}</p>
+            <strong>{appMode === "planner" ? `${plannedCredits} cr. distribuidos` : `${Math.round(earnedCredits / planMinCredits * 100)}% de la carrera`}</strong>
           </div>
         </div>
       </section>
@@ -876,7 +933,7 @@ export default function Home() {
             })}
             {credential.requiredCourseGroups.map((group) => {
               const current = requiredCourseGroupProgress(group);
-              const missing = group.courseIds.filter((id) => statuses[id] !== "exonerated").map((id) => courses.find((course) => course.id === id)?.name ?? id);
+              const missing = group.courseIds.filter((id) => statuses[id] !== "exonerated").map((id) => activeCourses.find((course) => course.id === id)?.name ?? id);
               return <details className="required-course-group" key={group.id}>
                 <summary><span><b>{group.label}</b><small>{current} de {group.minCompleted} completadas</small></span><strong className={current >= group.minCompleted ? "met" : ""}>{current}/{group.minCompleted}</strong></summary>
                 <div className="required-course-body">
@@ -890,6 +947,97 @@ export default function Home() {
         </aside>
 
         <section className="curriculum-panel">
+          {appMode === "planner" ? (
+            <div className="planner-shell">
+              <div className="planner-toolbar">
+                <div>
+                  <p className="eyebrow">Tu currícula, a tu ritmo</p>
+                  <h2>Planificador</h2>
+                  <span>{assignedPlannerIds.size} materias · {plannedCredits} créditos distribuidos</span>
+                </div>
+                <div className="planner-actions">
+                  <div className="view-switch" role="group" aria-label="Opciones visuales del planificador">
+                    <button className={plannerView === "board" ? "active" : ""} onClick={() => setPlannerView("board")} aria-pressed={plannerView === "board"}><b>▥</b> Tablero</button>
+                    <button className={plannerView === "compact" ? "active" : ""} onClick={() => setPlannerView("compact")} aria-pressed={plannerView === "compact"}><b>☷</b> Compacta</button>
+                    <button className={plannerView === "balance" ? "active" : ""} onClick={() => setPlannerView("balance")} aria-pressed={plannerView === "balance"}><b>▰</b> Carga</button>
+                  </div>
+                  <button className="add-term-button" onClick={addPlannerTerm}>+ Nuevo semestre</button>
+                </div>
+              </div>
+
+              {plannerView === "balance" && (
+                <div className="planner-load-overview" aria-label="Comparación de carga por semestre">
+                  {plannerTerms.map((term) => {
+                    const credits = term.courseIds.reduce((sum, id) => sum + (plannerCourses.find((course) => course.id === id)?.credits ?? 0), 0);
+                    const maxCredits = Math.max(1, ...plannerTerms.map((item) => item.courseIds.reduce((sum, id) => sum + (plannerCourses.find((course) => course.id === id)?.credits ?? 0), 0)));
+                    return <div className="load-row" key={term.id}><span>{term.label}</span><i><b style={{ width: `${credits / maxCredits * 100}%` }} /></i><strong>{credits} cr.</strong></div>;
+                  })}
+                </div>
+              )}
+
+              <div className="planner-layout">
+                <aside className="course-catalog">
+                  <div className="catalog-heading"><div><p className="eyebrow">Catálogo del plan</p><h3>Materias disponibles</h3></div><span>{availablePlannerCourses.length}</span></div>
+                  <div className="search-box planner-search">
+                    <span aria-hidden="true">⌕</span>
+                    <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => setPlannerSearch(event.target.value)} placeholder="Buscar por nombre, código o área" />
+                    {plannerSearch && <button type="button" className="search-clear" onClick={() => setPlannerSearch("")} aria-label="Limpiar búsqueda">×</button>}
+                  </div>
+                  <p className="catalog-help">Arrastrá una materia o elegí su semestre. Los créditos se conservan tal como figuran en el plan.</p>
+                  <div className="catalog-list">
+                    {availablePlannerCourses.map((course) => (
+                      <article className="catalog-course" key={course.id} draggable onDragStart={() => setDraggedCourseId(course.id)} onDragEnd={() => setDraggedCourseId(null)}>
+                        <button className="catalog-course-main" onClick={() => setSelected(course)} aria-label={`Ver detalles de ${course.name}`}>
+                          <span>#{course.id} · {courseAreaLabel(course)}</span>
+                          <h4>{course.name}</h4>
+                          <strong>{course.credits} cr.</strong>
+                        </button>
+                        <select aria-label={`Agregar ${course.name} a un semestre`} defaultValue="" onChange={(event) => { if (event.target.value) assignPlannerCourse(course.id, event.target.value); }}>
+                          <option value="" disabled>Agregar a…</option>
+                          {plannerTerms.map((term) => <option value={term.id} key={term.id}>{term.label}</option>)}
+                        </select>
+                      </article>
+                    ))}
+                    {availablePlannerCourses.length === 0 && <div className="catalog-empty"><span>✓</span><p>{plannerSearch ? "No hay materias que coincidan con la búsqueda." : "Todas las materias del catálogo están distribuidas."}</p></div>}
+                  </div>
+                </aside>
+
+                <div className={`planner-board ${plannerView}`}>
+                  {plannerTerms.map((term, termIndex) => {
+                    const termCourses = term.courseIds.map((id) => plannerCourses.find((course) => course.id === id)).filter(Boolean) as Course[];
+                    const termCredits = termCourses.reduce((sum, course) => sum + course.credits, 0);
+                    return (
+                      <section className="planner-term" key={term.id} onDragOver={(event) => event.preventDefault()} onDrop={() => { if (draggedCourseId) assignPlannerCourse(draggedCourseId, term.id); setDraggedCourseId(null); }}>
+                        <header>
+                          <span>{String(termIndex + 1).padStart(2, "0")}</span>
+                          <div>
+                            <input value={term.label} onChange={(event) => renamePlannerTerm(term.id, event.target.value)} aria-label={`Nombre del semestre ${termIndex + 1}`} />
+                            <p>{termCourses.length} materias · <strong>{termCredits} créditos</strong></p>
+                          </div>
+                          <button className="remove-term" onClick={() => removePlannerTerm(term.id)} disabled={plannerTerms.length === 1} aria-label={`Eliminar ${term.label}`} title="Las materias vuelven al catálogo">×</button>
+                        </header>
+                        <div className="term-load"><i style={{ width: `${Math.min(termCredits / 45 * 100, 100)}%` }} /></div>
+                        <div className="planned-course-list">
+                          {termCourses.map((course) => {
+                            const status = statuses[course.id] ?? "pending";
+                            return <article className={`planned-course ${status}`} key={course.id} draggable onDragStart={() => setDraggedCourseId(course.id)} onDragEnd={() => setDraggedCourseId(null)}>
+                              <button className="planned-course-info" onClick={() => setSelected(course)}>
+                                <span>#{course.id} · {courseAreaLabel(course)}</span>
+                                <h3>{course.name}</h3>
+                              </button>
+                              <div><strong>{course.credits} cr.</strong><button className="mini-status" onClick={() => cycleStatus(course)} title="Cambiar estado">{status === "pending" ? "○" : status === "approved" ? "◐" : "●"}</button><button onClick={() => unassignPlannerCourse(course.id)} aria-label={`Quitar ${course.name} del plan`}>×</button></div>
+                            </article>;
+                          })}
+                          {termCourses.length === 0 && <div className="term-empty"><span>+</span><p>Arrastrá materias acá</p></div>}
+                        </div>
+                      </section>
+                    );
+                  })}
+                  <button className="add-term-card" onClick={addPlannerTerm}><span>+</span><strong>Agregar semestre</strong><small>Extendé tu plan cuando quieras</small></button>
+                </div>
+              </div>
+            </div>
+          ) : (<>
           <div className="toolbar">
             <div className="search-box">
               <svg className="search-icon" aria-hidden="true" viewBox="0 0 20 20">
@@ -952,6 +1100,7 @@ export default function Home() {
             <p>{plan2025Data.trajectories[trajectoryId].notice ?? plan2025Data.plan.notice}</p>
             <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">Ver documentación oficial de FING ↗</a>
           </section>}
+          </>)}
         </section>
       </section>
 
@@ -1007,7 +1156,7 @@ export default function Home() {
             ) : (selected.prerequisites?.length || selected.minCredits) ? (
               <ul className="requirements-list">
                 {selected.prerequisites?.map((id) => {
-                  const prerequisite = courses.find((course) => course.id === id);
+                  const prerequisite = activeCourses.find((course) => course.id === id);
                   return <li className={isRequirementComplete(id) ? "done" : "missing"} key={id}><span>{isRequirementComplete(id) ? "✓" : "○"}</span>{prerequisite?.name ?? id}</li>;
                 })}
                 {selected.minCredits && <li className={earnedCredits >= selected.minCredits ? "done" : "missing"}><span>{earnedCredits >= selected.minCredits ? "✓" : "○"}</span>{selected.minCredits} créditos acumulados</li>}
