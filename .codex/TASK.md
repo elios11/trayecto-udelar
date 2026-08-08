@@ -3,7 +3,7 @@
 Última actualización: 2026-08-08  
 Workspace: `C:\Users\elios\Documents\Proyectos_GPT`  
 Rama activa: `main`  
-Último commit funcional al redactar este documento: `a63f653` (`Import official Bedelias prerequisite rules`)  
+Commit de importación académica de referencia: `a63f653` (`Import official Bedelias prerequisite rules`)
 Sitio desplegado: <https://trayecto-udelar-piloto.tokyo121.chatgpt.site>  
 Acceso actual: privado, solo propietario.
 
@@ -144,7 +144,8 @@ Las optativas del catálogo piloto, los dos bloques manuales del Proyecto de Gra
 ### UI y progreso
 
 - Selector de carrera, plan y trayectoria (solo una opción funcional por ahora).
-- Malla horizontal de pre-semestre a décimo semestre.
+- Malla horizontal de pre-semestre a décimo semestre en escritorio.
+- En mobile (hasta 720 px), la malla se convierte en una trayectoria vertical: los semestres y sus materias se recorren hacia abajo, sin desplazamiento horizontal; el panel de avance queda después de la malla para priorizar las materias.
 - Buscador por código, nombre o área.
 - Filtro de materias habilitadas.
 - Estados visuales pendiente/aprobada/exonerada.
