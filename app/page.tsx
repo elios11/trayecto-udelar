@@ -314,6 +314,8 @@ export default function Home() {
   const [hydrated, setHydrated] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
   const verticalScrollTargetRef = useRef(0);
+  const verticalScrollPositionRef = useRef(0);
+  const verticalScrollLastFrameRef = useRef<number | null>(null);
   const verticalScrollFrameRef = useRef<number | null>(null);
 
   const courses = useMemo(
@@ -381,16 +383,24 @@ export default function Home() {
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
+    verticalScrollPositionRef.current = window.scrollY;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    const animateToTarget = () => {
-      const distance = verticalScrollTargetRef.current - window.scrollY;
-      if (Math.abs(distance) < 0.5) {
+    const animateToTarget = (timestamp: number) => {
+      const previousTimestamp = verticalScrollLastFrameRef.current ?? timestamp - 16.67;
+      const elapsedSeconds = Math.min((timestamp - previousTimestamp) / 1000, 0.05);
+      verticalScrollLastFrameRef.current = timestamp;
+      const distance = verticalScrollTargetRef.current - verticalScrollPositionRef.current;
+      if (Math.abs(distance) < 0.2) {
+        verticalScrollPositionRef.current = verticalScrollTargetRef.current;
         window.scrollTo(0, verticalScrollTargetRef.current);
+        verticalScrollLastFrameRef.current = null;
         verticalScrollFrameRef.current = null;
         return;
       }
-      window.scrollTo(0, window.scrollY + distance * 0.2);
+      const timeIndependentBlend = 1 - Math.exp(-16 * elapsedSeconds);
+      verticalScrollPositionRef.current += distance * timeIndependentBlend;
+      window.scrollTo(0, verticalScrollPositionRef.current);
       verticalScrollFrameRef.current = window.requestAnimationFrame(animateToTarget);
     };
 
@@ -428,11 +438,18 @@ export default function Home() {
 
       event.preventDefault();
       verticalScrollTargetRef.current = Math.max(0, Math.min(maxScroll, currentTarget + normalizedDelta * 1.1));
-      if (verticalScrollFrameRef.current === null) verticalScrollFrameRef.current = window.requestAnimationFrame(animateToTarget);
+      if (verticalScrollFrameRef.current === null) {
+        verticalScrollPositionRef.current = window.scrollY;
+        verticalScrollLastFrameRef.current = null;
+        verticalScrollFrameRef.current = window.requestAnimationFrame(animateToTarget);
+      }
     };
 
     const syncTarget = () => {
-      if (verticalScrollFrameRef.current === null) verticalScrollTargetRef.current = window.scrollY;
+      if (verticalScrollFrameRef.current === null) {
+        verticalScrollTargetRef.current = window.scrollY;
+        verticalScrollPositionRef.current = window.scrollY;
+      }
     };
     document.addEventListener("wheel", handleWheel, { passive: false });
     window.addEventListener("scroll", syncTarget, { passive: true });
@@ -440,6 +457,7 @@ export default function Home() {
       document.removeEventListener("wheel", handleWheel);
       window.removeEventListener("scroll", syncTarget);
       if (verticalScrollFrameRef.current !== null) window.cancelAnimationFrame(verticalScrollFrameRef.current);
+      verticalScrollLastFrameRef.current = null;
       verticalScrollFrameRef.current = null;
     };
   }, []);

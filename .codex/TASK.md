@@ -183,6 +183,7 @@ El índice oficial completo es <https://eva.fing.edu.uy/course/view.php?id=800&s
 - Malla horizontal de pre-semestre a décimo semestre en escritorio.
 - En mobile (hasta 720 px), la malla se convierte en una trayectoria vertical: los semestres y sus materias se recorren hacia abajo, sin desplazamiento horizontal; el panel de avance queda después de la malla para priorizar las materias.
 - La rueda desplaza la página verticalmente con una interpolación breve mediante `requestAnimationFrame`; nunca se convierte en scroll horizontal sobre la malla. Los paneles internos conservan su propio scroll, el desplazamiento horizontal queda disponible mediante la barra inferior/gestos horizontales y `prefers-reduced-motion` mantiene el comportamiento nativo.
+- La interpolación vertical usa tiempo transcurrido, no una fracción fija por cuadro, para mantener la misma respuesta en pantallas de 60/120/144 Hz y recuperarse de cuadros ocasionalmente lentos. La barra fija evita `backdrop-filter` durante el recorrido para reducir recomposición gráfica.
 - Las condiciones de Bedelías se presentan con lenguaje normalizado y alternativas en viñetas. La transformación es únicamente visual: códigos, reglas y evaluación conservan intactos los datos oficiales extraídos.
 - Las fichas identifican en texto cuándo una materia o asignación proviene de Bedelías; no enlazan esas menciones a la portada general porque no existe una URL pública permanente para la ficha concreta.
 - Buscador por código, nombre o área.
