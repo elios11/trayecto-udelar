@@ -165,6 +165,8 @@ Las optativas del catálogo piloto, los dos bloques manuales del Proyecto de Gra
 
 Para el Plan 2025, la trayectoria sí proviene de la página oficial de Carreras de Computación en EVA/FING. FING publica dos láminas para Montevideo según el resultado de la Prueba Inicial y aclara que el ordenamiento es un ejemplo flexible, no una secuencia única. Bedelías sigue siendo la autoridad para vigencia, composición y previaturas, pero al 2026-08-08 su composición solo muestra 38 unidades/equivalencias. Se consultaron las diez materias iniciales identificadas por código y la proyección conserva 17 reglas de curso/examen correspondientes a nueve materias. La UI distingue las etiquetas `FING` y `Bedelías`; una ausencia de regla nunca se presenta como “sin previas”.
 
+El índice oficial completo es <https://eva.fing.edu.uy/course/view.php?id=800&section=4>. Además de las dos trayectorias de ingreso en primer semestre ya proyectadas, publica variantes todavía no integradas en la UI: ingreso en segundo semestre para `>=60%` y `20–59%`, trayectoria CENUR Litoral Norte, Analista en Computación en Colonia, trayecto inicial de Tacuarembó y un procedimiento transitorio para estudiantes con estudios previos avanzados. No presentar la malla actual como cobertura de todas las sedes o momentos de ingreso.
+
 ## 4. Funcionalidad implementada
 
 ### UI y progreso
@@ -342,16 +344,17 @@ Orden sugerido:
 
 1. Confirmar documentalmente si la Prueba Inicial 2026 otorga 4 créditos y reemplazar el estado de supuesto por uno verificado, o corregir la contabilización si la evidencia vigente lo contradice.
 2. Definir la transición guiada desde el bloque `PI <20%` a una trayectoria posterior sin asumir automáticamente una rama.
-3. Añadir estados explícitos para modalidad/regla de curso y examen: `published`, `not-published`, `not-applicable`, `not-scraped`.
-4. Volver a extraer el Plan 2025 periódicamente y comparar snapshots para detectar cuándo Bedelías agrega composición, códigos y reglas; no sustituir datos FING automáticamente.
-5. Incorporar perfiles del Plan 2025, optativas reales, créditos complementarios y Proyecto de Grado cuando la Comisión de Carrera publique su implementación.
-6. Confirmar Proyecto de Grado del Plan 97 y eliminar o documentar formalmente la división manual `1730-A/B`.
-7. Reemplazar metas demo por área del Plan 97 después de validarlas documentalmente.
-8. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
-9. Investigar fuentes institucionales de oferta efectiva por semestre sin confundirlas con la trayectoria sugerida.
-10. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras.
-11. Añadir reportes de diferencias y un panel visible de procedencia por plan.
-12. Evaluar cuentas/sincronización solo después de estabilizar el modelo académico.
+3. Añadir selector de sede y semestre de ingreso antes de integrar las trayectorias oficiales de segundo semestre, CENUR Litoral Norte, Colonia y Tacuarembó publicadas en la página del Plan 2025.
+4. Añadir estados explícitos para modalidad/regla de curso y examen: `published`, `not-published`, `not-applicable`, `not-scraped`.
+5. Volver a extraer el Plan 2025 periódicamente y comparar snapshots para detectar cuándo Bedelías agrega composición, códigos y reglas; no sustituir datos FING automáticamente.
+6. Incorporar perfiles del Plan 2025, optativas reales, créditos complementarios y Proyecto de Grado cuando la Comisión de Carrera publique su implementación.
+7. Confirmar Proyecto de Grado del Plan 97 y eliminar o documentar formalmente la división manual `1730-A/B`.
+8. Reemplazar metas demo por área del Plan 97 después de validarlas documentalmente.
+9. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
+10. Investigar fuentes institucionales de oferta efectiva por semestre sin confundirlas con la trayectoria sugerida.
+11. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras.
+12. Añadir reportes de diferencias y un panel visible de procedencia por plan.
+13. Evaluar cuentas/sincronización solo después de estabilizar el modelo académico.
 
 ## 9. Flujo seguro para continuar
 
