@@ -312,7 +312,9 @@ export default function Home() {
   const [availableOnly, setAvailableOnly] = useState(false);
   const [showElectives, setShowElectives] = useState(true);
   const [hydrated, setHydrated] = useState(false);
+  const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
   const importRef = useRef<HTMLInputElement>(null);
+  const curriculumScrollRef = useRef<HTMLDivElement>(null);
   const verticalScrollTargetRef = useRef(0);
   const verticalScrollPositionRef = useRef(0);
   const verticalScrollLastFrameRef = useRef<number | null>(null);
@@ -408,7 +410,8 @@ export default function Home() {
       let element = target instanceof HTMLElement ? target : null;
       while (element && element !== document.body) {
         const overflowY = window.getComputedStyle(element).overflowY;
-        const isScrollable = /auto|scroll/.test(overflowY) && element.scrollHeight > element.clientHeight + 1;
+        const isCurriculumTrack = element.classList.contains("curriculum-scroll");
+        const isScrollable = !isCurriculumTrack && /auto|scroll/.test(overflowY) && element.scrollHeight > element.clientHeight + 1;
         if (isScrollable) {
           const canContinue = delta > 0
             ? element.scrollTop < element.scrollHeight - element.clientHeight - 1
@@ -492,6 +495,23 @@ export default function Home() {
       verticalScrollPositionRef.current = window.scrollY;
     };
   }, [selected]);
+
+  useEffect(() => {
+    const scroller = curriculumScrollRef.current;
+    if (!scroller) return;
+    scroller.scrollLeft = 0;
+    const updateEdges = () => {
+      const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+      setCurriculumEdges({ atStart: scroller.scrollLeft <= 1, atEnd: scroller.scrollLeft >= maxScroll - 1 });
+    };
+    updateEdges();
+    scroller.addEventListener("scroll", updateEdges, { passive: true });
+    window.addEventListener("resize", updateEdges, { passive: true });
+    return () => {
+      scroller.removeEventListener("scroll", updateEdges);
+      window.removeEventListener("resize", updateEdges);
+    };
+  }, [planYear, trajectoryId]);
 
   const earnedCredits = useMemo(
     () => courses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
@@ -604,6 +624,15 @@ export default function Home() {
 
   const resetProgress = () => {
     if (window.confirm(`¿Querés borrar el progreso guardado para el Plan ${planYear}?`)) setStatuses({});
+  };
+
+  const moveCurriculum = (direction: -1 | 1) => {
+    const scroller = curriculumScrollRef.current;
+    const column = scroller?.querySelector<HTMLElement>(".semester-column");
+    if (!scroller || !column) return;
+    const grid = scroller.querySelector<HTMLElement>(".semester-grid");
+    const gap = grid ? Number.parseFloat(window.getComputedStyle(grid).columnGap) || 0 : 0;
+    scroller.scrollBy({ left: direction * (column.getBoundingClientRect().width + gap), behavior: "smooth" });
   };
 
   const selectedStatus = selected ? statuses[selected.id] ?? "pending" : "pending";
@@ -792,6 +821,10 @@ export default function Home() {
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
             </label> : <span className="rules-coverage">Previas publicadas: {new Set(plan2025Data.rules.map((rule) => rule.target.code)).size}/{courses.length} materias</span>}
+            <div className="curriculum-navigation" role="group" aria-label="Navegar por semestres">
+              <button type="button" onClick={() => moveCurriculum(-1)} disabled={curriculumEdges.atStart} aria-label="Ir al semestre anterior" title="Semestre anterior">←</button>
+              <button type="button" onClick={() => moveCurriculum(1)} disabled={curriculumEdges.atEnd} aria-label="Ir al semestre siguiente" title="Semestre siguiente">→</button>
+            </div>
             <div className="legend" aria-label="Estados de las materias">
               <span><i className="dot pending" /> Pendiente</span>
               <span title="Curso aprobado; todavía no suma créditos"><i className="dot approved" /> Aprobada · sin créditos</span>
@@ -799,7 +832,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="curriculum-scroll" tabIndex={0} aria-label="Trayectoria por semestres; desplazamiento horizontal disponible con la barra inferior">
+          <div className="curriculum-scroll" ref={curriculumScrollRef} tabIndex={0} aria-label="Trayectoria por semestres; usá las flechas o la barra inferior para desplazarte horizontalmente">
             <div className="semester-grid">
               {semesters.map((semester) => (
                 <section className="semester-column" key={semester}>
