@@ -779,7 +779,7 @@ export default function Home() {
           <span className="brand-separator" aria-hidden="true" />
           <div>
             <p className="eyebrow">Proyecto estudiantil no oficial</p>
-            <h1>Trayecto</h1>
+            <h1>Trayecto Udelar</h1>
           </div>
         </div>
         <nav className="mode-switch" aria-label="Modo de trabajo">

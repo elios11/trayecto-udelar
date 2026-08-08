@@ -10,14 +10,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "trayecto-udelar-piloto.tokyo121.chatgpt.site";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  const imageUrl = `${protocol}://${host}/og-planificador.png`;
-  const title = "Trayecto — Currícula y planificador Udelar";
-  const description = "Explorá la currícula oficial o armá tus propios semestres con materias, previas y créditos Udelar.";
+  const imageUrl = `${protocol}://${host}/og-trayecto-udelar.png`;
+  const title = "Trayecto Udelar — Currícula y planificador";
+  const description = "Explorá mallas curriculares Udelar, planificá tus semestres y seguí créditos, previas y requisitos.";
   return {
     title,
     description,
     icons: { icon: "/udelar.svg", shortcut: "/udelar.svg" },
-    openGraph: { title, description, type: "website", images: [{ url: imageUrl, width: 1728, height: 910, alt: "Trayecto Planificador — tu currícula, a tu ritmo" }] },
+    openGraph: { title, description, type: "website", images: [{ url: imageUrl, width: 1920, height: 1080, alt: "Trayecto Udelar — mallas curriculares, planificación y avance" }] },
     twitter: { card: "summary_large_image", title, description, images: [imageUrl] },
   };
 }
