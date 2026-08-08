@@ -313,9 +313,8 @@ export default function Home() {
   const [showElectives, setShowElectives] = useState(true);
   const [hydrated, setHydrated] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
-  const curriculumScrollRef = useRef<HTMLDivElement>(null);
-  const wheelTargetRef = useRef(0);
-  const wheelFrameRef = useRef<number | null>(null);
+  const verticalScrollTargetRef = useRef(0);
+  const verticalScrollFrameRef = useRef<number | null>(null);
 
   const courses = useMemo(
     () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997Courses,
@@ -381,58 +380,69 @@ export default function Home() {
   }, [progress, hydrated]);
 
   useEffect(() => {
-    const scroller = curriculumScrollRef.current;
-    if (!scroller) return;
-
-    wheelTargetRef.current = scroller.scrollLeft;
+    verticalScrollTargetRef.current = window.scrollY;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const desktop = window.matchMedia("(min-width: 721px)");
 
     const animateToTarget = () => {
-      const distance = wheelTargetRef.current - scroller.scrollLeft;
+      const distance = verticalScrollTargetRef.current - window.scrollY;
       if (Math.abs(distance) < 0.5) {
-        scroller.scrollLeft = wheelTargetRef.current;
-        wheelFrameRef.current = null;
+        window.scrollTo(0, verticalScrollTargetRef.current);
+        verticalScrollFrameRef.current = null;
         return;
       }
-      scroller.scrollLeft += distance * 0.18;
-      wheelFrameRef.current = window.requestAnimationFrame(animateToTarget);
+      window.scrollTo(0, window.scrollY + distance * 0.2);
+      verticalScrollFrameRef.current = window.requestAnimationFrame(animateToTarget);
+    };
+
+    const canScrollInside = (target: EventTarget | null, delta: number) => {
+      let element = target instanceof HTMLElement ? target : null;
+      while (element && element !== document.body) {
+        const overflowY = window.getComputedStyle(element).overflowY;
+        const isScrollable = /auto|scroll/.test(overflowY) && element.scrollHeight > element.clientHeight + 1;
+        if (isScrollable) {
+          const canContinue = delta > 0
+            ? element.scrollTop < element.scrollHeight - element.clientHeight - 1
+            : element.scrollTop > 1;
+          if (canContinue) return true;
+        }
+        element = element.parentElement;
+      }
+      return false;
     };
 
     const handleWheel = (event: WheelEvent) => {
-      if (!desktop.matches || reducedMotion.matches || event.ctrlKey) return;
-      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      if (reducedMotion.matches || event.ctrlKey || event.shiftKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+      if (event.deltaY === 0 || canScrollInside(event.target, event.deltaY)) return;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       if (maxScroll <= 0) return;
 
-      const dominantDelta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
-      if (dominantDelta === 0) return;
       const normalizedDelta = event.deltaMode === WheelEvent.DOM_DELTA_LINE
-        ? dominantDelta * 36
+        ? event.deltaY * 36
         : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
-          ? dominantDelta * scroller.clientWidth * 0.85
-          : dominantDelta;
-      const currentTarget = Math.max(0, Math.min(maxScroll, wheelTargetRef.current));
+          ? event.deltaY * window.innerHeight * 0.85
+          : event.deltaY;
+      const currentTarget = Math.max(0, Math.min(maxScroll, verticalScrollTargetRef.current));
       const atStart = currentTarget <= 0.5 && normalizedDelta < 0;
       const atEnd = currentTarget >= maxScroll - 0.5 && normalizedDelta > 0;
       if (atStart || atEnd) return;
 
       event.preventDefault();
-      wheelTargetRef.current = Math.max(0, Math.min(maxScroll, currentTarget + normalizedDelta * 1.05));
-      if (wheelFrameRef.current === null) wheelFrameRef.current = window.requestAnimationFrame(animateToTarget);
+      verticalScrollTargetRef.current = Math.max(0, Math.min(maxScroll, currentTarget + normalizedDelta * 1.1));
+      if (verticalScrollFrameRef.current === null) verticalScrollFrameRef.current = window.requestAnimationFrame(animateToTarget);
     };
 
     const syncTarget = () => {
-      if (wheelFrameRef.current === null) wheelTargetRef.current = scroller.scrollLeft;
+      if (verticalScrollFrameRef.current === null) verticalScrollTargetRef.current = window.scrollY;
     };
-    scroller.addEventListener("wheel", handleWheel, { passive: false });
-    scroller.addEventListener("scroll", syncTarget, { passive: true });
+    document.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("scroll", syncTarget, { passive: true });
     return () => {
-      scroller.removeEventListener("wheel", handleWheel);
-      scroller.removeEventListener("scroll", syncTarget);
-      if (wheelFrameRef.current !== null) window.cancelAnimationFrame(wheelFrameRef.current);
-      wheelFrameRef.current = null;
+      document.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("scroll", syncTarget);
+      if (verticalScrollFrameRef.current !== null) window.cancelAnimationFrame(verticalScrollFrameRef.current);
+      verticalScrollFrameRef.current = null;
     };
-  }, [planYear, trajectoryId]);
+  }, []);
 
   const earnedCredits = useMemo(
     () => courses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
@@ -740,7 +750,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="curriculum-scroll" ref={curriculumScrollRef} tabIndex={0} aria-label="Trayectoria por semestres; desplazamiento horizontal suave con la rueda del mouse">
+          <div className="curriculum-scroll" tabIndex={0} aria-label="Trayectoria por semestres; desplazamiento horizontal disponible con la barra inferior">
             <div className="semester-grid">
               {semesters.map((semester) => (
                 <section className="semester-column" key={semester}>
@@ -795,9 +805,9 @@ export default function Home() {
             <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
             {selectedAllocation?.status === "suggested" ? <p className="allocation-source suggested-allocation"><span>≈</span> Cuenta en <strong>{courseAreaLabel(selected)}</strong> mediante una asignación sugerida. Los créditos se computan normalmente, pero todavía falta un Anexo B o resolución específica para este plan.</p>
               : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
-                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong>. <a href={selectedAllocation.sourceUrl} target="_blank" rel="noreferrer">Ver fuente ↗</a></p>}
+                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según Bedelías.</p>}
             {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
-              : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Bedelías</a>.</p>
+              : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
                   : selected.dataStatus === "project-assumption" && <p className="verified-source fing-source"><span>!</span> Los 4 créditos se mantienen como supuesto del proyecto para el Plan 2025; la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria vigente de FING</a> confirma el corte de 60%, pero no explicita este crédito.</p>}
             <h3>{selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
