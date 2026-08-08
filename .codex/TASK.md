@@ -185,6 +185,7 @@ El check especial se usa en el Plan 1997 y, desde la decisión del 2026-08-08, t
 - PI y MI2 no pueden acumularse; marcar una limpia la otra.
 - El evaluador trata PI acreditada como sustitución de MI2 para reglas posteriores.
 - En Plan 2025 aparece solo en la rama `>=60%`, como instancia presemestre de 4 créditos; no altera los totales oficiales de los semestres 1–8.
+- Seleccionar la rama `>=60%` fija automáticamente PI como `exonerated`: suma los 4 créditos, se muestra acreditada y no puede desmarcarse. Al cambiar a otra rama, PI deja de contabilizarse.
 - Para 2025 esos 4 créditos son un supuesto operativo pedido por el usuario, coherente con la equivalencia histórica PI/MI, pero aún pendiente de confirmación documental explícita para 2026. El dato queda marcado `assumed-current-pending-verification` y no debe presentarse como una regla oficial ya comprobada.
 
 ### Trayectoria Plan 97 cargada

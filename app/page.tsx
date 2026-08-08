@@ -207,7 +207,13 @@ export default function Home() {
     () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997Courses,
     [planYear, trajectoryId],
   );
-  const statuses = progress[planYear] ?? {};
+  const storedStatuses = progress[planYear] ?? {};
+  const statuses = useMemo(
+    () => planYear === "2025" && trajectoryId === "pi-60-plus"
+      ? { ...storedStatuses, PI: "exonerated" as CourseStatus }
+      : storedStatuses,
+    [planYear, trajectoryId, storedStatuses],
+  );
   const courseIds = useMemo(() => new Set(courses.map((course) => course.id)), [courses]);
   const verifiedCourses = useMemo(
     () => planYear === "2025"
@@ -264,6 +270,7 @@ export default function Home() {
   );
 
   const isComplete = (id: string) => statuses[id] === "approved" || statuses[id] === "exonerated";
+  const isFixedPlacementTest = (course: Course) => planYear === "2025" && trajectoryId === "pi-60-plus" && course.id === "PI";
   const isRequirementComplete = (id: string) => id === "MI2"
     ? isComplete("MI2") || statuses.PI === "exonerated"
     : isComplete(id);
@@ -284,7 +291,7 @@ export default function Home() {
   };
 
   const cycleStatus = (course: Course) => {
-    if (!isUnlocked(course)) return;
+    if (!isUnlocked(course) || isFixedPlacementTest(course)) return;
     setStatuses((current) => {
       const now = current[course.id] ?? "pending";
       if (course.placementTest) {
@@ -503,7 +510,7 @@ export default function Home() {
                   <div className="course-stack">
                     {planYear === "1997" && semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
                     {filtered(semester).map((course) => (
-                      <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} sourceLabel={verifiedCourses.has(course.id) ? "Bedelías" : planYear === "2025" ? "FING" : undefined} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                      <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={verifiedCourses.has(course.id) ? "Bedelías" : planYear === "2025" ? "FING" : undefined} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}
                     {filtered(semester).length === 0 && <p className="empty-column">Sin resultados</p>}
                   </div>
@@ -520,7 +527,7 @@ export default function Home() {
             {showElectives && (
               <div className="electives-grid">
                 {filtered("opt").map((course) => (
-                  <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} sourceLabel={verifiedCourses.has(course.id) ? "Bedelías" : undefined} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                  <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={verifiedCourses.has(course.id) ? "Bedelías" : undefined} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
             )}
@@ -565,8 +572,10 @@ export default function Home() {
               {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
             </ul></>}
             {selected.offered.length > 0 && <><h3>Se dicta</h3><div className="offering-list">{selected.offered.map((item) => <span key={item}>{item}</span>)}</div></>}
-            <button className="primary-button" disabled={!isUnlocked(selected)} onClick={() => cycleStatus(selected)}>
-              {selected.placementTest
+            <button className="primary-button" disabled={!isUnlocked(selected) || isFixedPlacementTest(selected)} onClick={() => cycleStatus(selected)}>
+              {isFixedPlacementTest(selected)
+                ? "Acreditada automáticamente por la trayectoria"
+                : selected.placementTest
                 ? (statuses.PI === "exonerated" ? "Desmarcar Prueba Inicial" : "Acreditar Prueba Inicial")
                 : isUnlocked(selected) ? `Marcar como ${(statuses[selected.id] ?? "pending") === "pending" ? "aprobada" : (statuses[selected.id] ?? "pending") === "approved" ? "exonerada" : "pendiente"}` : selectedStatus === "approved" ? "Examen aún no habilitado" : "Materia aún no habilitada"}
             </button>
@@ -577,7 +586,7 @@ export default function Home() {
   );
 }
 
-function CourseCard({ course, status, unlocked, sourceLabel, onCycle, onDetails }: { course: Course; status: CourseStatus; unlocked: boolean; sourceLabel?: "Bedelías" | "FING"; onCycle: () => void; onDetails: () => void }) {
+function CourseCard({ course, status, unlocked, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; status: CourseStatus; unlocked: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING"; onCycle: () => void; onDetails: () => void }) {
   return (
     <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
       <div className="course-topline">
@@ -586,8 +595,10 @@ function CourseCard({ course, status, unlocked, sourceLabel, onCycle, onDetails 
       </div>
       <h3>{course.name}</h3>
       <div className="course-meta"><span>{course.area}</span><strong>{course.credits} cr.</strong></div>
-      <button className="status-button" disabled={!unlocked} onClick={onCycle}>
-        {!unlocked
+      <button className="status-button" disabled={!unlocked || fixed} onClick={onCycle}>
+        {fixed
+          ? <><span className="status-mark">✓</span>Acreditada por trayectoria · 4 cr.</>
+          : !unlocked
           ? <><span className="lock-mark">⌑</span>{status === "approved" ? "Examen no habilitado" : "No habilitada"}</>
           : course.placementTest
             ? <><span className="status-mark">{status === "exonerated" ? "✓" : "□"}</span>{status === "exonerated" ? "Acreditada · suma 4 cr." : "Acreditar prueba"}</>
