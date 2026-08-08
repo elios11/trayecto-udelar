@@ -341,8 +341,31 @@ type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
 type PlannerTerm = { id: string; label: string; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
+type ThemeId = "udelar" | "oscuro" | "violeta" | "solarized" | "bosque" | "terracota";
+type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
+type VisualPreferences = {
+  theme: ThemeId;
+  colorVisionEnabled: boolean;
+  colorVisionType: ColorVisionType;
+};
 
 const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
+const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
+const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string] }> = [
+  { id: "udelar", label: "Udelar", colors: ["#004a82", "#55b7cc", "#f3f5f4"] },
+  { id: "oscuro", label: "Oscuro", colors: ["#08151d", "#2f89bd", "#7cc8ee"] },
+  { id: "violeta", label: "Violeta", colors: ["#35244f", "#7650aa", "#d9b7ef"] },
+  { id: "solarized", label: "Solarized", colors: ["#073642", "#268bd2", "#f2d58b"] },
+  { id: "bosque", label: "Bosque", colors: ["#123f38", "#2a8a75", "#b5d8b1"] },
+  { id: "terracota", label: "Terracota", colors: ["#5b2d28", "#bd684f", "#e7b98f"] },
+];
+const colorVisionOptions: Array<{ id: ColorVisionType; label: string }> = [
+  { id: "deuteranopia", label: "Deuteranopia" },
+  { id: "protanopia", label: "Protanopia" },
+  { id: "tritanopia", label: "Tritanopia" },
+];
+const isThemeId = (value: unknown): value is ThemeId => themeOptions.some((option) => option.id === value);
+const isColorVisionType = (value: unknown): value is ColorVisionType => colorVisionOptions.some((option) => option.id === value);
 const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, index) => ({
   id: `term-${index + 1}`,
   label: `Semestre ${index + 1}`,
@@ -366,6 +389,9 @@ export default function Home() {
   const [plannerView, setPlannerView] = useState<PlannerView>("board");
   const [plannerSearch, setPlannerSearch] = useState("");
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
+  const [theme, setTheme] = useState<ThemeId>("udelar");
+  const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
+  const [colorVisionType, setColorVisionType] = useState<ColorVisionType>("deuteranopia");
   const importRef = useRef<HTMLInputElement>(null);
   const curriculumScrollRef = useRef<HTMLDivElement>(null);
   const verticalScrollTargetRef = useRef(0);
@@ -434,6 +460,13 @@ export default function Home() {
       }
       const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
       if (savedPlanner) setPlannerPlans(JSON.parse(savedPlanner));
+      const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
+      if (savedVisualPreferences) {
+        const preferences = JSON.parse(savedVisualPreferences) as Partial<VisualPreferences>;
+        if (isThemeId(preferences.theme)) setTheme(preferences.theme);
+        if (typeof preferences.colorVisionEnabled === "boolean") setColorVisionEnabled(preferences.colorVisionEnabled);
+        if (isColorVisionType(preferences.colorVisionType)) setColorVisionType(preferences.colorVisionType);
+      }
     } catch {
       // A damaged local save should never prevent the curriculum from loading.
     }
@@ -447,6 +480,17 @@ export default function Home() {
   useEffect(() => {
     if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
   }, [plannerPlans, hydrated]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.theme = theme;
+    root.dataset.colorVision = colorVisionEnabled ? colorVisionType : "standard";
+    root.style.colorScheme = theme === "oscuro" ? "dark" : "light";
+    if (hydrated) {
+      const preferences: VisualPreferences = { theme, colorVisionEnabled, colorVisionType };
+      localStorage.setItem(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
+    }
+  }, [theme, colorVisionEnabled, colorVisionType, hydrated]);
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
@@ -790,6 +834,75 @@ export default function Home() {
           <button className="quiet-button" onClick={() => importRef.current?.click()}>Importar</button>
           <button className="quiet-button" onClick={exportProgress}>Exportar</button>
           <input ref={importRef} type="file" accept="application/json" hidden onChange={importProgress} />
+          <details className="appearance-menu">
+            <summary aria-label={`Apariencia: tema ${themeOptions.find((option) => option.id === theme)?.label}`}>
+              <span
+                className="theme-orb appearance-orb"
+                style={{
+                  "--swatch-a": themeOptions.find((option) => option.id === theme)?.colors[0],
+                  "--swatch-b": themeOptions.find((option) => option.id === theme)?.colors[1],
+                  "--swatch-c": themeOptions.find((option) => option.id === theme)?.colors[2],
+                } as React.CSSProperties}
+                aria-hidden="true"
+              />
+            </summary>
+            <div className="appearance-panel">
+              <div className="appearance-heading">
+                <div>
+                  <p className="eyebrow">Apariencia</p>
+                  <h2>Elegí tu ambiente</h2>
+                </div>
+                <span>Se guarda en este dispositivo</span>
+              </div>
+              <div className="theme-grid" role="group" aria-label="Tema de color">
+                {themeOptions.map((option) => (
+                  <button
+                    type="button"
+                    key={option.id}
+                    className={theme === option.id ? "active" : ""}
+                    aria-pressed={theme === option.id}
+                    onClick={() => setTheme(option.id)}
+                  >
+                    <span
+                      className="theme-orb"
+                      style={{
+                        "--swatch-a": option.colors[0],
+                        "--swatch-b": option.colors[1],
+                        "--swatch-c": option.colors[2],
+                      } as React.CSSProperties}
+                      aria-hidden="true"
+                    />
+                    <small>{option.label}</small>
+                  </button>
+                ))}
+              </div>
+              <div className="color-vision-section">
+                <div className="color-vision-heading">
+                  <div>
+                    <strong>Modo daltónico</strong>
+                    <span>Señales más distinguibles</span>
+                  </div>
+                  <label className="toggle-control color-vision-toggle">
+                    <input
+                      type="checkbox"
+                      checked={colorVisionEnabled}
+                      onChange={(event) => setColorVisionEnabled(event.target.checked)}
+                    />
+                    <span aria-hidden="true" />
+                    <b>{colorVisionEnabled ? "Activado" : "Desactivado"}</b>
+                  </label>
+                </div>
+                {colorVisionEnabled && (
+                  <label className="color-vision-select">
+                    <span>Tipo de visión de color</span>
+                    <select value={colorVisionType} onChange={(event) => setColorVisionType(event.target.value as ColorVisionType)}>
+                      {colorVisionOptions.map((option) => <option value={option.id} key={option.id}>{option.label}</option>)}
+                    </select>
+                  </label>
+                )}
+              </div>
+            </div>
+          </details>
           <button className="avatar" aria-label="Progreso guardado en este dispositivo">LOCAL</button>
         </div>
       </header>
