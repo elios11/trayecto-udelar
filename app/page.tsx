@@ -55,8 +55,8 @@ type Plan2025Projection = {
   source: { reviewedAt: string; curriculumPage: string; bedeliasExtractedAt: string };
   plan: { minCredits: number; intermediateCredits: number; intermediateTitle: string; degreeTitle: string; notice: string; bedeliasCompositionCourses: number; publishedRules: number };
   areaTargets: Array<{ id: string; name: string; target: number }>;
-  courses: Array<{ id: string; name: string; credits: number; area: string; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" }>;
-  trajectories: Record<string, { label: string; description: string; semesters: string[][] }>;
+  courses: Array<{ id: string; name: string; credits: number; area: string; placementTest?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" }>;
+  trajectories: Record<string, { label: string; description: string; notice?: string; preSemester?: string[]; semesters: string[][] }>;
   rules: VerifiedRule[];
 };
 
@@ -113,6 +113,7 @@ const plan1997Courses: Course[] = plan1997BaseCourses.map((course) => {
 function buildPlan2025Courses(trajectoryId: string): Course[] {
   const trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const semesters = new Map<string, number>();
+  trajectory.preSemester?.forEach((id) => semesters.set(id, 0));
   trajectory.semesters.forEach((ids, index) => ids.forEach((id) => semesters.set(id, index + 1)));
   return plan2025Data.courses
     .filter((course) => semesters.has(course.id))
@@ -134,6 +135,11 @@ function expressionSatisfied(expression: RequirementExpression, statuses: Record
   if (expression.creditRequirement) return earnedCredits >= expression.creditRequirement.minimum;
   const required = expression.minimum ?? 1;
   return expression.options.filter((option) => optionSatisfied(option, statuses)).length >= required;
+}
+
+function expressionReferencesCode(expression: RequirementExpression, code: string): boolean {
+  return expression.options.some((option) => option.code === code)
+    || expression.children.some((child) => expressionReferencesCode(child, code));
 }
 
 function describeOption(option: RequirementOption, courses: Course[]) {
@@ -216,7 +222,12 @@ export default function Home() {
   const areaTargets = planYear === "2025"
     ? plan2025Data.areaTargets.map((area) => ({ name: area.id, label: area.name, target: area.target }))
     : plan1997AreaTargets.map((area) => ({ ...area, label: area.name }));
-  const semesters = planYear === "2025" ? [1, 2, 3, 4, 5, 6, 7, 8] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const semesters = planYear === "2025"
+    ? [
+      ...(plan2025Data.trajectories[trajectoryId].preSemester?.length ? [0] : []),
+      ...plan2025Data.trajectories[trajectoryId].semesters.map((_, index) => index + 1),
+    ]
+    : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const planMinCredits = planYear === "2025" ? plan2025Data.plan.minCredits : bedeliasData.plan.minCredits;
   const intermediateCredits = planYear === "2025" ? plan2025Data.plan.intermediateCredits : 270;
   const intermediateTitle = planYear === "2025" ? plan2025Data.plan.intermediateTitle : "Analista en Computación";
@@ -335,6 +346,12 @@ export default function Home() {
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
   const selectedRule = selected ? officialRule(selected, selectedAssessment) : undefined;
   const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, courses, courseIds) : [];
+  const selectedDependents = selected ? courses.filter((course) => {
+    if (course.id === selected.id) return false;
+    if (course.prerequisites?.includes(selected.id)) return true;
+    const courseRule = officialRule(course, "course");
+    return Boolean(courseRule && expressionReferencesCode(courseRule.expression, selected.id));
+  }) : [];
 
   return (
     <main className="app-shell">
@@ -380,7 +397,14 @@ export default function Home() {
             </label>
             <label>
               <span>Trayectoria</span>
-              <select value={trajectoryId} onChange={(event) => { setTrajectoryId(event.target.value); setSelected(null); }}>
+              <select value={trajectoryId} onChange={(event) => {
+                const next = event.target.value;
+                setTrajectoryId(next);
+                if (planYear === "2025" && next !== "pi-60-plus") {
+                  setStatuses((current) => ({ ...current, PI: "pending" }));
+                }
+                setSelected(null);
+              }}>
                 {planYear === "2025" ? Object.entries(plan2025Data.trajectories).map(([id, trajectory]) => (
                   <option value={id} key={id}>{trajectory.label}</option>
                 )) : <option value="pi-20-59">Ingreso 1er semestre · PI 20–59%</option>}
@@ -388,7 +412,7 @@ export default function Home() {
             </label>
           </div>
           {planYear === "2025" ? (
-            <p className="pilot-note"><span /> Trayectoria oficial publicada por FING para la generación 2026. Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</p>
+            <p className="pilot-note"><span /> {plan2025Data.trajectories[trajectoryId].description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</p>
           ) : (
             <p className="pilot-note"><span /> Semestres de la trayectoria sugerida compartida. Créditos y reglas de 29 materias importados de Bedelías el 08/08/2026; metas por área aún en revisión.</p>
           )}
@@ -503,7 +527,7 @@ export default function Home() {
           </section> : <section className="plan-transition-note">
             <p className="eyebrow">Plan vigente · implementación en curso</p>
             <h2>Lo que todavía no tiene semestre publicado</h2>
-            <p>{plan2025Data.plan.notice}</p>
+            <p>{plan2025Data.trajectories[trajectoryId].notice ?? plan2025Data.plan.notice}</p>
             <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">Ver documentación oficial de FING ↗</a>
           </section>}
         </section>
@@ -537,6 +561,9 @@ export default function Home() {
                 {selected.minCredits && <li className={earnedCredits >= selected.minCredits ? "done" : "missing"}><span>{earnedCredits >= selected.minCredits ? "✓" : "○"}</span>{selected.minCredits} créditos acumulados</li>}
               </ul>
             ) : <p className="free-course">Sin una regla importada para esta instancia; no se presenta como validación oficial.</p>}
+            {selectedDependents.length > 0 && <><h3>Puede habilitar o condicionar</h3><ul className="requirements-list dependent-list">
+              {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
+            </ul></>}
             {selected.offered.length > 0 && <><h3>Se dicta</h3><div className="offering-list">{selected.offered.map((item) => <span key={item}>{item}</span>)}</div></>}
             <button className="primary-button" disabled={!isUnlocked(selected)} onClick={() => cycleStatus(selected)}>
               {selected.placementTest

@@ -23,7 +23,9 @@ test("renderiza la malla y su procedencia institucional", async () => {
   assert.match(html, /Ingeniería en Computación/);
   assert.match(html, /Plan 2025 · vigente, en transición/);
   assert.match(html, /Plan 1997/);
-  assert.match(html, /Trayectoria oficial publicada por FING/);
+  assert.match(html, /Trayectoria sugerida por FING/);
+  assert.match(html, /Pre-semestre/);
+  assert.match(html, /Acreditar prueba/);
   assert.match(html, /Bedelías confirma el plan vigente/);
   assert.match(html, /Arquitectura de Computadoras/);
   assert.match(html, /official-tag/);

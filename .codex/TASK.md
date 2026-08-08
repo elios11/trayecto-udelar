@@ -149,14 +149,14 @@ Los créditos y previaturas de las 29 materias centrales sí provienen del snaps
 
 Las optativas del catálogo piloto, los dos bloques manuales del Proyecto de Grado y algunas metas siguen siendo curados/no verificados.
 
-Para el Plan 2025, la trayectoria sí proviene de la página oficial de Carreras de Computación en EVA/FING. FING publica dos láminas para Montevideo según el resultado de la Prueba Inicial y aclara que el ordenamiento es un ejemplo flexible, no una secuencia única. Bedelías sigue siendo la autoridad para vigencia, composición y previaturas, pero al 2026-08-08 su composición solo muestra 38 unidades/equivalencias y apenas una materia de la trayectoria tiene reglas publicadas para este plan. La UI distingue por eso las etiquetas `FING` y `Bedelías`; una ausencia de regla nunca se presenta como “sin previas”.
+Para el Plan 2025, la trayectoria sí proviene de la página oficial de Carreras de Computación en EVA/FING. FING publica dos láminas para Montevideo según el resultado de la Prueba Inicial y aclara que el ordenamiento es un ejemplo flexible, no una secuencia única. Bedelías sigue siendo la autoridad para vigencia, composición y previaturas, pero al 2026-08-08 su composición solo muestra 38 unidades/equivalencias. Se consultaron las diez materias iniciales identificadas por código y la proyección conserva 17 reglas de curso/examen correspondientes a nueve materias. La UI distingue las etiquetas `FING` y `Bedelías`; una ausencia de regla nunca se presenta como “sin previas”.
 
 ## 4. Funcionalidad implementada
 
 ### UI y progreso
 
 - Selector de carrera, plan y trayectoria. Ingeniería en Computación permite elegir Plan 2025 o Plan 1997.
-- Plan 2025 es la opción predeterminada y ofrece las ramas oficiales `PI >=60%` y `PI 20–59%` publicadas por FING.
+- Plan 2025 es la opción predeterminada y ofrece las tres ramas oficiales: `PI <20%`, `PI 20–59%` y `PI >=60%`.
 - Malla horizontal de pre-semestre a décimo semestre en escritorio.
 - En mobile (hasta 720 px), la malla se convierte en una trayectoria vertical: los semestres y sus materias se recorren hacia abajo, sin desplazamiento horizontal; el panel de avance queda después de la malla para priorizar las materias.
 - Buscador por código, nombre o área.
@@ -176,12 +176,16 @@ Para el Plan 2025, la trayectoria sí proviene de la página oficial de Carreras
 
 ### Prueba Inicial y Matemática Inicial
 
+El check especial se usa en el Plan 1997 y, desde la decisión del 2026-08-08, también en la rama `PI >=60%` del Plan 2025:
+
 - Existe una materia especial `PI` en pre-semestre.
 - Se comporta como check, no como el ciclo de tres estados.
 - Al acreditarla suma 4 créditos.
 - Sustituye y oculta Matemática Inicial (`MI2`).
 - PI y MI2 no pueden acumularse; marcar una limpia la otra.
 - El evaluador trata PI acreditada como sustitución de MI2 para reglas posteriores.
+- En Plan 2025 aparece solo en la rama `>=60%`, como instancia presemestre de 4 créditos; no altera los totales oficiales de los semestres 1–8.
+- Para 2025 esos 4 créditos son un supuesto operativo pedido por el usuario, coherente con la equivalencia histórica PI/MI, pero aún pendiente de confirmación documental explícita para 2026. El dato queda marcado `assumed-current-pending-verification` y no debe presentarse como una regla oficial ya comprobada.
 
 ### Trayectoria Plan 97 cargada
 
@@ -200,10 +204,13 @@ La distribución visible se alineó con la imagen compartida:
 ### Trayectoria Plan 2025 cargada
 
 - Fuente: sección oficial `Planes de Estudio 2025` de Carreras de Computación en EVA/FING.
-- Dos ramas para ingreso en primer semestre: `PI >=60%` y `PI 20–59%`.
+- Dos trayectorias completas para ingreso en primer semestre: `PI >=60%` y `PI 20–59%`.
+- Un tercer tramo `PI <20%` muestra únicamente el primer semestre obligatorio con Matemática Inicial y TBEO (7 créditos); no inventa la continuación posterior.
 - Ocho semestres de núcleo común y requisitos específicos publicados por FING.
 - Los totales por semestre coinciden exactamente con las láminas oficiales: `36, 38, 42, 43, 44, 35, 30, 15` para `>=60%` y `18, 38, 44, 43, 44, 45, 40, 15` para `20–59%`.
-- El selector no suma créditos por la Prueba Inicial en Plan 2025; reproduce las materias y totales publicados, donde Matemática Inicial aparece solo en la rama `20–59%`.
+- La rama `>=60%` incluye la Prueba Inicial como check presemestre de 4 créditos. Por estar fuera de los semestres, reproduce sin cambios los totales publicados por FING.
+- Las páginas oficiales de ingreso 2026 consultadas mantienen los cortes `<20%`, `20–59%` y `>=60%`. La documentación reciente de la trayectoria no confirma de forma inequívoca los 4 créditos; se contabilizan por decisión del proyecto y quedan marcados como `assumed-current-pending-verification` hasta localizar una resolución o registro vigente.
+- Las reglas SGAE muestran a Matemática Inicial (`MI2`) dentro de la condición de Cálculo DIV (`1061`): se conserva tanto la aprobación de MI como la exclusión de inscripción simultánea. El drawer puede mostrar materias que una unidad puede habilitar o condicionar.
 - La UI advierte que perfiles, optativas, 20 créditos complementarios y Proyecto de Grado de 30 créditos todavía no tienen una ubicación semestral completa en la trayectoria proyectada.
 - Materias ya presentes en la composición SGAE llevan etiqueta `Bedelías`; el resto lleva etiqueta `FING`.
 
@@ -231,7 +238,7 @@ La distribución visible se alineó con la imagen compartida:
 - Plan 97 marcado como no vigente.
 - Plan 2025 importado y confirmado como vigente, 60 meses y 450 créditos mínimos.
 - Bedelías muestra actualmente 38 unidades/equivalencias en la composición del Plan 2025.
-- FING publica 31 materias diferentes en las dos trayectorias combinadas; solo Fundamentos de la Combinatoria tiene por ahora reglas de curso/examen publicadas y localizables para este plan.
+- FING publica 32 materias diferentes en las tres ramas combinadas; la proyección contiene 33 fichas al sumar la Prueba Inicial presemestre asumida y conserva 17 reglas de curso/examen para nueve materias iniciales localizables por código.
 - 610 unidades/equivalencias únicas en la composición del Plan 97.
 - 29 materias centrales proyectadas en la UI.
 - 53 reglas de curso/examen.
@@ -264,13 +271,13 @@ Pruebas en `tests/computacion-2025-data.test.mjs`:
 - totales exactos por semestre en ambas trayectorias oficiales;
 - ficha y estado de procedencia para todas las materias proyectadas.
 
-Estado al redactar: `npm.cmd test` compila correctamente y pasan 10/10 pruebas.
+Estado actual: `npm.cmd test` compila correctamente y pasan 11/11 pruebas.
 
 ## 6. Bugs, inconsistencias y límites conocidos
 
 ### Prioridad alta
 
-1. **Rama PI <20% todavía no está modelada.** FING indica que el primer semestre debe contener únicamente Matemática Inicial y TBEO, y que después se puede continuar por alguna trayectoria sugerida. La UI solo ofrece las dos láminas completas publicadas (`20–59%` y `>=60%`).
+1. **Créditos de la PI 2026 asumidos, sin confirmación inequívoca.** Los cortes y el efecto sobre la trayectoria están publicados. Por decisión del proyecto, la rama `>=60%` suma los 4 créditos históricos como equivalencia de Matemática Inicial, pero el estado del dato deja explícito que falta una resolución o registro vigente que lo confirme.
 2. **Plan 97 conserva metas por área demo.** El Plan 2025 ya usa mínimos oficiales por área; `areaTargets` del Plan 1997 y algunos detalles del título intermedio siguen curados como demo.
 3. **Proyecto de Grado dividido manualmente.** `1730-A` y `1730-B` son una representación visual de dos semestres. No son códigos oficiales importados. Debe confirmarse cómo Bedelías representa el Proyecto de Grado y sus créditos/reglas.
 4. **Oferta no importada.** Los campos `offered` del Plan 97 siguen siendo manuales. El Plan 2025 no afirma oferta; sus semestres provienen de la trayectoria sugerida oficial, que FING define como ejemplo flexible.
@@ -279,7 +286,7 @@ Estado al redactar: `npm.cmd test` compila correctamente y pasan 10/10 pruebas.
 
 5. Solo se integraron los planes 1997 y 2025 de Ingeniería en Computación. El objetivo global de grados, tecnicaturas y CIO vigentes todavía no está cubierto.
 6. En Plan 97 solo 29 materias centrales tienen cobertura oficial y las optativas visibles aún usan previas manuales. En Plan 2025 todavía faltan perfiles, optativas, formación complementaria y Proyecto de Grado en la malla.
-7. Bedelías todavía no contiene la implementación completa del Plan 2025: 38 unidades/equivalencias en composición y reglas publicadas para una sola materia de la trayectoria. Las materias sin regla pueden marcarse para registrar progreso, pero no se bloquean ni se muestran como “habilitadas”.
+7. Bedelías todavía no contiene la implementación completa del Plan 2025: 38 unidades/equivalencias en composición y 17 reglas proyectadas para nueve materias iniciales. Las materias sin regla pueden marcarse para registrar progreso, pero no se bloquean ni se muestran como “habilitadas”.
 8. Algunas materias publican regla de curso pero no regla de examen, posiblemente porque no tienen examen convencional (taller/proyecto). Hoy, si no hay regla de examen proyectada, la transición a exonerada no se bloquea. Se debe distinguir explícitamente `sin modalidad de examen`, `sin regla publicada` y `no consultada`.
 9. El evaluador no registra inscripciones reales. Las opciones `course-enrollment` y `exam-enrollment` se consideran falsas. Esto funciona para muchas exclusiones, pero no alcanza para evaluar condiciones basadas en una inscripción vigente.
 10. Progreso antiguo de `localStorage` no se revalida al cambiar reglas. Esto es intencional para no borrar una escolaridad real, pero un estado colocado durante la demo puede sobrevivir aunque se haya obtenido con reglas viejas.
@@ -315,18 +322,18 @@ Estado al redactar: `npm.cmd test` compila correctamente y pasan 10/10 pruebas.
 
 Orden sugerido:
 
-1. Modelar la rama de ingreso `PI <20%` (Matemática Inicial + TBEO) y definir cómo enlaza con las trayectorias posteriores.
-2. Añadir estados explícitos para modalidad/regla de curso y examen: `published`, `not-published`, `not-applicable`, `not-scraped`.
-3. Volver a extraer el Plan 2025 periódicamente y comparar snapshots para detectar cuándo Bedelías agrega composición, códigos y reglas; no sustituir datos FING automáticamente.
-4. Incorporar perfiles del Plan 2025, optativas reales, créditos complementarios y Proyecto de Grado cuando la Comisión de Carrera publique su implementación.
-5. Confirmar Proyecto de Grado del Plan 97 y eliminar o documentar formalmente la división manual `1730-A/B`.
-6. Reemplazar metas demo por área del Plan 97 después de validarlas documentalmente.
-7. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
-8. Investigar fuentes institucionales de oferta efectiva por semestre sin confundirlas con la trayectoria sugerida.
-9. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras.
-10. Añadir reportes de diferencias entre snapshots para revisar cambios de Bedelías antes de publicar; nunca desplegar cambios académicos automáticamente sin revisión.
-11. Añadir un panel visible de procedencia por plan: fecha del snapshot, documento, cobertura de reglas y advertencias pendientes.
-12. Evaluar cuentas/sincronización solo después de estabilizar el modelo académico. Hasta entonces mantener `localStorage` y exportación/importación.
+1. Confirmar documentalmente si la Prueba Inicial 2026 otorga 4 créditos y reemplazar el estado de supuesto por uno verificado, o corregir la contabilización si la evidencia vigente lo contradice.
+2. Definir la transición guiada desde el bloque `PI <20%` a una trayectoria posterior sin asumir automáticamente una rama.
+3. Añadir estados explícitos para modalidad/regla de curso y examen: `published`, `not-published`, `not-applicable`, `not-scraped`.
+4. Volver a extraer el Plan 2025 periódicamente y comparar snapshots para detectar cuándo Bedelías agrega composición, códigos y reglas; no sustituir datos FING automáticamente.
+5. Incorporar perfiles del Plan 2025, optativas reales, créditos complementarios y Proyecto de Grado cuando la Comisión de Carrera publique su implementación.
+6. Confirmar Proyecto de Grado del Plan 97 y eliminar o documentar formalmente la división manual `1730-A/B`.
+7. Reemplazar metas demo por área del Plan 97 después de validarlas documentalmente.
+8. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
+9. Investigar fuentes institucionales de oferta efectiva por semestre sin confundirlas con la trayectoria sugerida.
+10. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras.
+11. Añadir reportes de diferencias y un panel visible de procedencia por plan.
+12. Evaluar cuentas/sincronización solo después de estabilizar el modelo académico.
 
 ## 9. Flujo seguro para continuar
 

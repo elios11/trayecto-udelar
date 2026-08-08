@@ -19,7 +19,9 @@
     "intermediateCredits": 270,
     "degreeTitle": "Ingeniero/a en Computación",
     "implementationStatus": "in-progress",
-    "notice": "La trayectoria publicada cubre el núcleo común y requisitos específicos hasta el octavo semestre. Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos no tienen todavía una ubicación semestral completa en esta proyección."
+    "placementTestCredits": 4,
+    "placementTestCreditsStatus": "assumed-current-pending-verification",
+    "notice": "La trayectoria publicada cubre el núcleo común y requisitos específicos hasta el octavo semestre. Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos no tienen todavía una ubicación semestral completa en esta proyección. Para la rama de 60% o más, la Prueba Inicial se representa como una instancia presemestre de 4 créditos que sustituye Matemática Inicial. Es un supuesto operativo del proyecto, coherente con la regla histórica, pendiente de confirmación documental explícita para 2026."
   },
   "areaTargets": [
     { "id": "MCE", "name": "Matemática y ciencias", "target": 50 },
@@ -32,7 +34,9 @@
     { "id": "COMP", "name": "Formación complementaria", "target": 20 }
   ],
   "courses": [
+    { "id": "PI", "name": "Prueba Inicial", "credits": 4, "area": "MCE", "placementTest": true },
     { "id": "MI2", "name": "Matemática Inicial", "credits": 4, "area": "MCE" },
+    { "id": "1275", "name": "Taller Básico de Estrategias y Orientación (TBEO)", "credits": 3, "area": "COMP" },
     { "id": "2044", "name": "Fundamentos de la Combinatoria", "credits": 9, "area": "FC" },
     { "id": "1030", "name": "Geometría y Álgebra Lineal 1", "credits": 9, "area": "MCE" },
     { "id": "2043", "name": "Introducción a la Computación", "credits": 5, "area": "AI" },
@@ -65,9 +69,18 @@
     { "id": "P25-PROY-IS", "name": "Proyecto de Ingeniería de Software", "credits": 15, "area": "AI", "engineeringOnly": true }
   ],
   "trajectories": {
+    "pi-under-20": {
+      "label": "Ingreso 1er semestre · PI menos de 20%",
+      "description": "Tramo inicial obligatorio publicado por FING: Matemática Inicial y TBEO.",
+      "notice": "FING publica únicamente este bloque obligatorio para el primer semestre. Una vez completado, el estudiante puede continuar por alguna de las trayectorias sugeridas; esta opción no inventa semestres posteriores.",
+      "semesters": [
+        ["MI2", "1275"]
+      ]
+    },
     "pi-60-plus": {
       "label": "Ingreso 1er semestre · PI 60% o más",
       "description": "Trayectoria sugerida por FING para quienes alcanzan al menos 60% en la Prueba Inicial.",
+      "preSemester": ["PI"],
       "semesters": [
         ["2044", "1030", "2043", "1061"],
         ["1375", "1031", "2046", "1062"],
