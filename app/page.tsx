@@ -18,7 +18,7 @@ type Course = {
   elective?: boolean;
   placementTest?: boolean;
   engineeringOnly?: boolean;
-  dataStatus?: "bedelias-composition" | "fing-trajectory";
+  dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption";
 };
 
 type RequirementOption = {
@@ -55,13 +55,14 @@ type Plan2025Projection = {
   source: { reviewedAt: string; curriculumPage: string; bedeliasExtractedAt: string };
   plan: { minCredits: number; intermediateCredits: number; intermediateTitle: string; degreeTitle: string; notice: string; bedeliasCompositionCourses: number; publishedRules: number };
   areaTargets: Array<{ id: string; name: string; target: number }>;
-  courses: Array<{ id: string; name: string; credits: number; area: string; placementTest?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" }>;
+  courses: Array<{ id: string; name: string; credits: number; area: string; placementTest?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" | "project-assumption" }>;
   trajectories: Record<string, { label: string; description: string; notice?: string; preSemester?: string[]; semesters: string[][] }>;
   rules: VerifiedRule[];
 };
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
 const plan2025Data = plan2025DataJson as unknown as Plan2025Projection;
+const plan1997PlacementTestSource = "https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf";
 
 const plan1997BaseCourses: Course[] = [
   { id: "PI", name: "Prueba Inicial", credits: 4, semester: 0, area: "Matemática", placementTest: true, offered: ["impar", "par"] },
@@ -359,6 +360,10 @@ export default function Home() {
     const courseRule = officialRule(course, "course");
     return Boolean(courseRule && expressionReferencesCode(courseRule.expression, selected.id));
   }) : [];
+  const sourceLabel = (course: Course): "Bedelías" | "FING" | undefined => {
+    if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id) ? "Bedelías" : undefined;
+    return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : undefined;
+  };
 
   return (
     <main className="app-shell">
@@ -510,7 +515,7 @@ export default function Home() {
                   <div className="course-stack">
                     {planYear === "1997" && semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
                     {filtered(semester).map((course) => (
-                      <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={verifiedCourses.has(course.id) ? "Bedelías" : planYear === "2025" ? "FING" : undefined} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                      <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}
                     {filtered(semester).length === 0 && <p className="empty-column">Sin resultados</p>}
                   </div>
@@ -527,7 +532,7 @@ export default function Home() {
             {showElectives && (
               <div className="electives-grid">
                 {filtered("opt").map((course) => (
-                  <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={verifiedCourses.has(course.id) ? "Bedelías" : undefined} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                  <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
             )}
@@ -552,8 +557,10 @@ export default function Home() {
             <p className="eyebrow">{selected.id} · {selected.area}</p>
             <h2>{selected.name}</h2>
             <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
-            {verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Bedelías</a>.</p>
-              : planYear === "2025" && <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>}
+            {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
+              : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Bedelías</a>.</p>
+                : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
+                  : selected.dataStatus === "project-assumption" && <p className="verified-source fing-source"><span>!</span> Los 4 créditos se mantienen como supuesto del proyecto para el Plan 2025; la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria vigente de FING</a> confirma el corte de 60%, pero no explicita este crédito.</p>}
             <h3>{selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
             {selectedRule ? (
               selectedRows.length ? <ul className="requirements-list">

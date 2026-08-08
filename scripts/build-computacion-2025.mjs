@@ -42,7 +42,7 @@ const output = {
     return {
       ...course,
       credits: official?.credits ?? course.credits,
-      dataStatus: official ? "bedelias-composition" : "fing-trajectory",
+      dataStatus: official ? "bedelias-composition" : course.dataStatus ?? "fing-trajectory",
     };
   }),
   trajectories: trajectory.trajectories,

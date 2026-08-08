@@ -33,6 +33,7 @@ test("Bedelías vincula Matemática Inicial con Cálculo DIV y la PI queda como 
   assert.deepEqual(projection.trajectories["pi-60-plus"].preSemester, ["PI"]);
   assert.equal(pi.credits, 4);
   assert.equal(pi.placementTest, true);
+  assert.equal(pi.dataStatus, "project-assumption");
 });
 
 test("las trayectorias oficiales mantienen los créditos publicados por semestre", () => {
@@ -48,7 +49,7 @@ test("toda materia de las trayectorias tiene ficha y procedencia explícita", ()
   for (const trajectory of Object.values(projection.trajectories)) {
     for (const id of [...(trajectory.preSemester ?? []), ...trajectory.semesters.flat()]) {
       assert.ok(byId.has(id), id);
-      assert.match(byId.get(id).dataStatus, /^(bedelias-composition|fing-trajectory)$/);
+      assert.match(byId.get(id).dataStatus, /^(bedelias-composition|fing-trajectory|project-assumption)$/);
     }
   }
   assert.equal(byId.get("2044").dataStatus, "bedelias-composition");

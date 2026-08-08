@@ -97,6 +97,20 @@ En Windows debe usarse `npm.cmd`; `npm.ps1` puede fallar por la política de eje
 
 La consulta pública de Bedelías/SGAE es la autoridad operativa para planes y previaturas. Los ejemplos externos como trayectoria.fely.dev, micarrera.uy y mallas existentes sirven para comparar UX o detectar inconsistencias, pero no deben alimentar reglas oficiales sin validación.
 
+### Protocolo de investigación documental por carrera y plan
+
+Antes de incorporar datos de una carrera nueva se deben buscar y contrastar todas las fuentes institucionales disponibles, no limitarse a Bedelías ni inferir el plan por el nombre del archivo:
+
+1. Identificar servicio, carrera, título, año/nombre del plan y generación de entrada en Bedelías.
+2. Localizar el plan o resolución aprobado en Colibrí, CDC, consejo de facultad o sitio institucional equivalente.
+3. Revisar páginas de carrera, comisiones, EVA y materiales oficiales de ingreso para trayectorias sugeridas, perfiles, orientaciones, CIO, títulos intermedios y reglas transitorias.
+4. Clasificar cada documento por el plan que describe usando sus materias, créditos, total y fecha interna; el nombre o año de publicación no basta.
+5. Contrastar créditos, semestres, mínimos por área y títulos entre al menos Bedelías y el documento oficial específico del plan. Investigar discrepancias antes de publicar.
+6. Conservar URL, fecha de revisión, alcance y estado por dato: `verified`, `partial`, `historical`, `project-assumption` o equivalente.
+7. Usar sitios estudiantiles únicamente como detector de faltantes o comparación de UX; nunca como autoridad final.
+
+Caso importante: `TrayectoriaSugerida_2025_Montevideo.pdf`, publicado por FING y compartido por el usuario, explicita 4 créditos de Prueba Inicial para `>=60%`, pero corresponde al Plan 1997 cursado durante 2025. Se reconoce por Programación 1–4, Física 1, Proyecto de Grado en semestres 9–10 y total de 329 créditos. No confirma por sí solo los créditos de la PI del nuevo Plan de Estudios 2025 vigente desde 2026.
+
 ### Automatización de la interfaz en lugar de imitar endpoints internos
 
 La auditoría mostró una aplicación Jakarta Faces/PrimeFaces con `ViewState`, formularios POST, AJAX parcial e identificadores generados. No se encontró una API REST pública/documentada.
@@ -187,6 +201,8 @@ El check especial se usa en el Plan 1997 y, desde la decisión del 2026-08-08, t
 - En Plan 2025 aparece solo en la rama `>=60%`, como instancia presemestre de 4 créditos; no altera los totales oficiales de los semestres 1–8.
 - Seleccionar la rama `>=60%` fija automáticamente PI como `exonerated`: suma los 4 créditos, se muestra acreditada y no puede desmarcarse. Al cambiar a otra rama, PI deja de contabilizarse.
 - Para 2025 esos 4 créditos son un supuesto operativo pedido por el usuario, coherente con la equivalencia histórica PI/MI, pero aún pendiente de confirmación documental explícita para 2026. El dato queda marcado `assumed-current-pending-verification` y no debe presentarse como una regla oficial ya comprobada.
+- Para Plan 1997 los 4 créditos sí quedan verificados también por la trayectoria oficial publicada por FING en 2025: <https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf>.
+- La UI ya no etiqueta la PI del Plan 2025 como dato FING: usa procedencia `project-assumption`. La PI del Plan 1997 sí enlaza la evidencia oficial de FING en su drawer.
 
 ### Trayectoria Plan 97 cargada
 
@@ -312,6 +328,7 @@ Estado actual: `npm.cmd test` compila correctamente y pasan 11/11 pruebas.
 - **Checkpoints con reglas vacías:** la primera prueba guardó marcadores `none` por el bug de filas. El flujo fue corregido y luego reextraído/normalizado.
 - **Parser inicial limitado:** solo entendía `Curso/Examen de la U.C.B.`. Se amplió para `aprobado`, `U.C.B aprobada`, inscripciones, equivalencias con servicio y mínimos de créditos. Luego se normalizaron las 53 reglas sin nuevas solicitudes.
 - **Plan 2025 tratado inicialmente como “detectado”:** se comprobó que no basta con esperar una vuelta completa del plan. FING ya publicó la estructura, las dos trayectorias de Montevideo y los mínimos, mientras Bedelías todavía está parcial. Se adoptó un modelo de doble procedencia en vez de bloquear toda la integración.
+- **Confundir año de publicación con año del plan:** el PDF `TrayectoriaSugerida_2025_Montevideo.pdf` fue publicado para la cursada 2025, pero sus materias y total corresponden al Plan 1997. Se usa como verificación histórica de PI=4, no como prueba del nuevo Plan de Estudios 2025.
 - **Búsqueda de reglas 2025 solo por códigos:** la composición parcial no contiene códigos para muchas materias nuevas. Se añadió `--course-names` con normalización de acentos para consultar por nombre sin ampliar innecesariamente el volumen de solicitudes.
 - **Ausencia de resultado tratada como error:** los checkpoints `noPublishedRule` producían falsos errores de expresión faltante. La validación ahora distingue consulta sin regla publicada de regla malformada.
 - **Ubicación física del proyecto:** originalmente todo estaba directamente en `Proyectos_GPT`. A pedido del usuario se trasladó el proyecto completo, incluido `.git`, a `Proyectos_GPT\MallaCurricularUniversal`.
