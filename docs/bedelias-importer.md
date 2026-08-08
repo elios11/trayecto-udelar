@@ -17,9 +17,12 @@ Bedelías es la fuente institucional del proyecto. El portal público no ofrece 
 ```powershell
 npm run bedelias:catalog
 npm run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 1997 --courses 1466,1321
+npm run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 2025 --course-names "Fundamentos de la Combinatoria|Programación Imperativa"
 ```
 
 Sin `--courses`, el modo `plan` intenta consultar las previaturas de todas las unidades curriculares locales encontradas en la composición. Para pruebas y desarrollo se recomienda comenzar por un conjunto pequeño.
+
+En planes cuya composición todavía está incompleta, `--course-names` permite consultar nombres exactos separados por `|`. Los nombres se comparan sin distinguir mayúsculas, acentos ni puntuación. Si Bedelías no devuelve una materia/regla, el checkpoint registra `noPublishedRule`; esto significa “consulta realizada sin regla publicada”, no “materia sin previas”.
 
 ## Modelo de datos
 

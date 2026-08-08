@@ -32,6 +32,7 @@ function parseArgs(argv) {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const normalizeSpace = (value) => String(value ?? "").replace(/\s+/g, " ").trim();
+const normalizeLookup = (value) => normalizeSpace(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 const slug = (value) => normalizeSpace(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 function stableHash(value) {
@@ -285,13 +286,22 @@ class BedeliasBrowser {
     });
   }
 
-  async filterPrerequisiteTargets(courseCode) {
+  async searchPrerequisiteTargets(query) {
     const input = this.page.getByRole("textbox", { name: "Filtrar por Materia" });
     await input.fill("");
-    await input.type(courseCode);
+    await input.type(query);
     await input.press("Enter");
     await this.settle(200);
-    return (await this.listPrerequisiteTargets()).filter((item) => item.code.toUpperCase() === courseCode.toUpperCase());
+    return this.listPrerequisiteTargets();
+  }
+
+  async filterPrerequisiteTargets(courseCode) {
+    return (await this.searchPrerequisiteTargets(courseCode)).filter((item) => item.code.toUpperCase() === courseCode.toUpperCase());
+  }
+
+  async filterPrerequisiteTargetsByName(courseName) {
+    const expected = normalizeLookup(courseName);
+    return (await this.searchPrerequisiteTargets(courseName)).filter((item) => normalizeLookup(item.name) === expected);
   }
 
   async openPrerequisiteTarget(target) {
@@ -465,6 +475,7 @@ function validateDataset(dataset) {
     if (!Number.isFinite(course.credits)) issues.push({ level: "error", code: "invalid-credits", message: `Créditos inválidos: ${key}` });
   }
   for (const rule of dataset.prerequisites) {
+    if (rule.noPublishedRule) continue;
     if (!rule.expression) issues.push({ level: "error", code: "missing-expression", message: `Regla sin expresión: ${rule.target.code} ${rule.target.assessment}` });
     if (!rule.rawText) issues.push({ level: "warning", code: "empty-rule", message: `Regla vacía: ${rule.target.code} ${rule.target.assessment}` });
     for (const label of collectRawNodes(rule.expression)) {
@@ -493,6 +504,7 @@ async function scrapePlan(client, options) {
   const programName = String(options.career ?? "INGENIERÍA EN COMPUTACIÓN");
   const year = String(options.year ?? "1997");
   const requestedCodes = String(options.courses ?? "").split(",").map((value) => value.trim()).filter(Boolean);
+  const requestedNames = String(options["course-names"] ?? "").split("|").map((value) => value.trim()).filter(Boolean);
   const resume = options.resume !== "false";
 
   await client.openAcademicOffer();
@@ -509,17 +521,23 @@ async function scrapePlan(client, options) {
   const checkpoint = resume ? await loadJson(checkpointPath, { prerequisites: {} }) : { prerequisites: {} };
   await client.openPrerequisites();
 
-  const courseCodes = requestedCodes.length ? requestedCodes : plan.courses.filter((course) => !course.serviceCode || course.serviceCode === serviceCode).map((course) => course.code);
-  const uniqueCodes = [...new Set(courseCodes)];
-  for (let index = 0; index < uniqueCodes.length; index += 1) {
-    const courseCode = uniqueCodes[index];
-    const targets = await client.filterPrerequisiteTargets(courseCode);
+  const courseCodes = requestedCodes.length || requestedNames.length ? requestedCodes : plan.courses.filter((course) => !course.serviceCode || course.serviceCode === serviceCode).map((course) => course.code);
+  const requests = [
+    ...[...new Set(courseCodes)].map((value) => ({ kind: "code", value })),
+    ...[...new Set(requestedNames)].map((value) => ({ kind: "name", value })),
+  ];
+  for (let index = 0; index < requests.length; index += 1) {
+    const request = requests[index];
+    const targets = request.kind === "code"
+      ? await client.filterPrerequisiteTargets(request.value)
+      : await client.filterPrerequisiteTargetsByName(request.value);
     if (!targets.length) {
-      checkpoint.prerequisites[`${courseCode}:none`] = { target: { code: courseCode }, noPublishedRule: true };
+      checkpoint.prerequisites[`query:${request.kind}:${request.value}:none`] = { target: { code: request.kind === "code" ? request.value : null, name: request.kind === "name" ? request.value : null }, query: request, noPublishedRule: true };
       await atomicJson(checkpointPath, checkpoint);
       continue;
     }
-    delete checkpoint.prerequisites[`${courseCode}:none`];
+    delete checkpoint.prerequisites[`query:${request.kind}:${request.value}:none`];
+    if (request.kind === "code") delete checkpoint.prerequisites[`${request.value}:none`];
     for (const target of targets) {
       const key = `${target.code}:${target.assessment}`;
       if (checkpoint.prerequisites[key]) continue;
@@ -529,7 +547,7 @@ async function scrapePlan(client, options) {
       await atomicJson(checkpointPath, checkpoint);
       await client.backToPrerequisiteList();
     }
-    process.stdout.write(`\rPrevias ${index + 1}/${uniqueCodes.length} · ${courseCode}   `);
+    process.stdout.write(`\rPrevias ${index + 1}/${requests.length} · ${request.value}   `);
   }
   process.stdout.write("\n");
 
@@ -548,7 +566,7 @@ async function scrapePlan(client, options) {
     program: { name: program.name, type: program.type },
     plan: { ...plan, year, current: planSummary.current },
     prerequisites,
-    extraction: { requestedCourseCodes: uniqueCodes, completedRules: prerequisites.filter((rule) => rule.expression).length, requestCount: client.requestCount, requestTypes: client.requestTypes },
+    extraction: { requestedCourseCodes: [...new Set(courseCodes)], requestedCourseNames: [...new Set(requestedNames)], completedRules: prerequisites.filter((rule) => rule.expression).length, requestCount: client.requestCount, requestTypes: client.requestTypes },
   };
   dataset.validation = { issues: validateDataset(dataset) };
   dataset.contentHash = stableHash({ service: dataset.service, program: dataset.program, plan: dataset.plan, prerequisites: dataset.prerequisites });
@@ -578,6 +596,7 @@ Uso:
 Opciones:
   --delay 900        Pausa mínima entre interacciones (mínimo 500 ms)
   --courses A,B      Limita la extracción de previas a códigos concretos
+  --course-names A|B Busca materias por nombre exacto, separadas por |, para planes todavía incompletos
   --output archivo   Ruta JSON de salida
   --resume false     Ignora el checkpoint anterior
   --browser ruta     Ejecutable de Chrome/Edge

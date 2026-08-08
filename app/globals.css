@@ -88,6 +88,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .toggle-control > span::after { content: ""; position: absolute; width: 14px; height: 14px; left: 2px; top: 2px; background: white; border-radius: 50%; transition: .2s; }
 .toggle-control input:checked + span { background: var(--udelar); }
 .toggle-control input:checked + span::after { transform: translateX(14px); }
+.rules-coverage { padding: 7px 10px; border: 1px solid #dfd5b8; border-radius: 99px; background: #faf6e9; color: #755e25; font-size: 10px; font-weight: 700; white-space: nowrap; }
 .legend { gap: 14px; color: var(--muted); font-size: 10px; }
 .legend span { display: flex; align-items: center; gap: 5px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; }
@@ -112,6 +113,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .course-topline { display: flex; justify-content: space-between; align-items: center; }
 .course-topline > span { font-family: var(--font-geist-mono); color: var(--muted); font-size: 9px; }
 .official-tag { display: inline-flex; margin-left: 6px; padding: 2px 5px; border-radius: 99px; background: #e6f3ef; color: var(--exonerated); font-family: var(--font-geist-sans); font-size: 7px; font-style: normal; font-weight: 750; letter-spacing: .03em; }
+.official-tag.fing-tag { background: #e8f0f5; color: var(--udelar); }
 .course-topline button { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--muted); font-family: Georgia, serif; font-style: italic; font-size: 11px; }
 .course-topline button:hover { border-color: var(--udelar); color: var(--udelar); }
 .course-card h3 { font-size: 13px; line-height: 1.25; letter-spacing: -.015em; margin: 12px 0; min-height: 33px; }
@@ -131,6 +133,10 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .electives-heading > div:last-child { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 11px; }
 .electives-heading b { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--udelar); font-size: 18px; font-weight: 400; }
 .electives-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; padding: 0 30px 30px; }
+.plan-transition-note { padding: 26px 30px 30px; border-top: 1px solid var(--line); background: #f7f9f9; }
+.plan-transition-note h2 { margin: 5px 0 8px; font-size: 20px; letter-spacing: -.04em; }
+.plan-transition-note > p:not(.eyebrow) { max-width: 760px; margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.plan-transition-note a { color: var(--udelar); font-size: 11px; font-weight: 750; text-decoration: none; }
 
 footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 36px; background: var(--udelar-dark); color: rgba(255,255,255,.7); font-size: 11px; }
 footer p { margin: 0; }
@@ -149,6 +155,8 @@ footer a { color: white; text-decoration: none; white-space: nowrap; }
 .verified-source { margin: 14px 0 0; padding: 10px 12px; border: 1px solid #cce4dc; border-radius: 8px; background: #f2faf7; color: #315f55; font-size: 11px; }
 .verified-source > span { color: var(--exonerated); font-weight: 800; margin-right: 5px; }
 .verified-source a { color: var(--udelar); font-weight: 750; }
+.verified-source.fing-source { border-color: #cddde7; background: #f3f8fb; color: #355366; }
+.verified-source.fing-source > span { color: var(--udelar); }
 .requirements-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .requirements-list li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--paper); border-radius: 8px; font-size: 12px; }
 .requirements-list li.done { color: var(--exonerated); }
@@ -202,6 +210,7 @@ footer a { color: white; text-decoration: none; white-space: nowrap; }
   .replacement-note { margin-bottom: 0; font-size: 11px; }
   .empty-column { margin: 0; padding: 9px 0 4px; }
   .electives-heading { padding: 22px 16px; }
+  .plan-transition-note { padding: 22px 16px 26px; }
   .electives-heading > div:last-child > span { display: none; }
   .electives-grid { padding: 0 16px 24px; grid-template-columns: repeat(2, minmax(0,1fr)); }
   footer { padding: 22px 16px; align-items: flex-start; flex-direction: column; }

@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "institution": "Facultad de Ingeniería · Universidad de la República",
+    "curriculumPage": "https://eva.fing.edu.uy/course/view.php?id=800&section=4",
+    "planDocument": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909",
+    "trajectory60Plus": "https://eva.fing.edu.uy/mod/resource/view.php?id=72912",
+    "trajectory20To59": "https://eva.fing.edu.uy/mod/resource/view.php?id=72913",
+    "news": "https://www.fing.edu.uy/es/node/52537",
+    "reviewedAt": "2026-08-08",
+    "bedeliasSystem": "SGAE Bedelías",
+    "bedeliasExtractedAt": "2026-08-08T17:06:51.112Z",
+    "bedeliasContentHash": "9f0098e62237463ad86d9b5601a5e45ef1dcd3e31958169b54986ae373200e7d",
+    "bedeliasPlanUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+  },
+  "plan": {
+    "year": "2025",
+    "effectiveFrom": 2026,
+    "current": true,
+    "minCredits": 450,
+    "durationMonths": 60,
+    "intermediateTitle": "Analista en Computación",
+    "intermediateCredits": 270,
+    "degreeTitle": "Ingeniero/a en Computación",
+    "implementationStatus": "in-progress",
+    "notice": "La trayectoria publicada cubre el núcleo común y requisitos específicos hasta el octavo semestre. Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos no tienen todavía una ubicación semestral completa en esta proyección.",
+    "bedeliasCompositionCourses": 38,
+    "publishedRules": 2
+  },
+  "areaTargets": [
+    {
+      "id": "MCE",
+      "name": "Matemática y ciencias",
+      "target": 50
+    },
+    {
+      "id": "FC",
+      "name": "Fundamentos de computación",
+      "target": 70
+    },
+    {
+      "id": "FS",
+      "name": "Fundamentos de sistemas",
+      "target": 30
+    },
+    {
+      "id": "IS",
+      "name": "Ingeniería de software",
+      "target": 20
+    },
+    {
+      "id": "GDI",
+      "name": "Datos e información",
+      "target": 10
+    },
+    {
+      "id": "CA",
+      "name": "Computación aplicada",
+      "target": 20
+    },
+    {
+      "id": "AI",
+      "name": "Actividades integradoras",
+      "target": 40
+    },
+    {
+      "id": "COMP",
+      "name": "Formación complementaria",
+      "target": 20
+    }
+  ],
+  "courses": [
+    {
+      "id": "MI2",
+      "name": "Matemática Inicial",
+      "credits": 4,
+      "area": "MCE",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "2044",
+      "name": "Fundamentos de la Combinatoria",
+      "credits": 9,
+      "area": "FC",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "1030",
+      "name": "Geometría y Álgebra Lineal 1",
+      "credits": 9,
+      "area": "MCE",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "2043",
+      "name": "Introducción a la Computación",
+      "credits": 5,
+      "area": "AI",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "1061",
+      "name": "Cálculo Diferencial e Integral en Una Variable",
+      "credits": 13,
+      "area": "MCE",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "1375",
+      "name": "Programación Imperativa",
+      "credits": 10,
+      "area": "FC",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "1031",
+      "name": "Geometría y Álgebra Lineal 2",
+      "credits": 9,
+      "area": "MCE",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "2046",
+      "name": "Herramientas de Modelización y Análisis",
+      "credits": 6,
+      "area": "FC",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "1062",
+      "name": "Cálculo Diferencial e Integral en Varias Variables",
+      "credits": 13,
+      "area": "MCE",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "P25-TG",
+      "name": "Teoría de Grafos",
+      "credits": 6,
+      "area": "FC",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-EDA",
+      "name": "Estructuras de Datos y Algoritmos",
+      "credits": 10,
+      "area": "FC",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-LPO",
+      "name": "Lógica de Primer Orden",
+      "credits": 6,
+      "area": "FC",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "1025",
+      "name": "Probabilidad y Estadística",
+      "credits": 10,
+      "area": "MCE",
+      "dataStatus": "bedelias-composition"
+    },
+    {
+      "id": "P25-MEC",
+      "name": "Métodos Experimentales en Computación",
+      "credits": 10,
+      "area": "MCE",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-LAB",
+      "name": "Laboratorio de Programación",
+      "credits": 5,
+      "area": "AI",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-ALG",
+      "name": "Algoritmos",
+      "credits": 8,
+      "area": "FC",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-OOP",
+      "name": "Diseño y Programación Orientados a Objetos",
+      "credits": 10,
+      "area": "FC",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-ARQ",
+      "name": "Arquitectura de Computadoras",
+      "credits": 10,
+      "area": "FS",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-BD",
+      "name": "Bases de Datos",
+      "credits": 10,
+      "area": "GDI",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-TC",
+      "name": "Teoría de la Computación",
+      "credits": 10,
+      "area": "FC",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-APC",
+      "name": "Análisis de Problemas Computacionales",
+      "credits": 8,
+      "area": "FC",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-SO",
+      "name": "Sistemas Operativos",
+      "credits": 8,
+      "area": "FS",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-PIS",
+      "name": "Principios de Ingeniería de Software",
+      "credits": 10,
+      "area": "IS",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-CPD",
+      "name": "Computación Paralela y Distribuida",
+      "credits": 8,
+      "area": "FS",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-RED",
+      "name": "Redes de Computadoras",
+      "credits": 10,
+      "area": "FS",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-TD",
+      "name": "Taller de Desarrollo",
+      "credits": 15,
+      "area": "AI",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-AA",
+      "name": "Aprendizaje Automático",
+      "credits": 10,
+      "area": "CA",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-IIO",
+      "name": "Introducción a la Investigación de Operaciones",
+      "credits": 10,
+      "area": "CA",
+      "engineeringOnly": true,
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-SEG",
+      "name": "Seguridad Computacional",
+      "credits": 10,
+      "area": "FS",
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-ISA",
+      "name": "Ingeniería de Software Avanzada",
+      "credits": 10,
+      "area": "IS",
+      "engineeringOnly": true,
+      "dataStatus": "fing-trajectory"
+    },
+    {
+      "id": "P25-PROY-IS",
+      "name": "Proyecto de Ingeniería de Software",
+      "credits": 15,
+      "area": "AI",
+      "engineeringOnly": true,
+      "dataStatus": "fing-trajectory"
+    }
+  ],
+  "trajectories": {
+    "pi-60-plus": {
+      "label": "Ingreso 1er semestre · PI 60% o más",
+      "description": "Trayectoria sugerida por FING para quienes alcanzan al menos 60% en la Prueba Inicial.",
+      "semesters": [
+        [
+          "2044",
+          "1030",
+          "2043",
+          "1061"
+        ],
+        [
+          "1375",
+          "1031",
+          "2046",
+          "1062"
+        ],
+        [
+          "P25-TG",
+          "P25-EDA",
+          "P25-LPO",
+          "1025",
+          "P25-MEC"
+        ],
+        [
+          "P25-LAB",
+          "P25-ALG",
+          "P25-OOP",
+          "P25-ARQ",
+          "P25-BD"
+        ],
+        [
+          "P25-TC",
+          "P25-APC",
+          "P25-SO",
+          "P25-PIS",
+          "P25-CPD"
+        ],
+        [
+          "P25-RED",
+          "P25-TD",
+          "P25-AA"
+        ],
+        [
+          "P25-IIO",
+          "P25-SEG",
+          "P25-ISA"
+        ],
+        [
+          "P25-PROY-IS"
+        ]
+      ]
+    },
+    "pi-20-59": {
+      "label": "Ingreso 1er semestre · PI 20–59%",
+      "description": "Trayectoria sugerida por FING para quienes obtienen entre 20% y 59% en la Prueba Inicial.",
+      "semesters": [
+        [
+          "2044",
+          "2043",
+          "MI2"
+        ],
+        [
+          "1375",
+          "1061",
+          "1030",
+          "2046"
+        ],
+        [
+          "1062",
+          "P25-EDA",
+          "P25-LPO",
+          "1031",
+          "P25-TG"
+        ],
+        [
+          "1025",
+          "P25-ARQ",
+          "P25-ALG",
+          "P25-OOP",
+          "P25-LAB"
+        ],
+        [
+          "P25-SO",
+          "P25-TC",
+          "P25-PIS",
+          "P25-APC",
+          "P25-CPD"
+        ],
+        [
+          "P25-RED",
+          "P25-BD",
+          "P25-TD",
+          "P25-AA"
+        ],
+        [
+          "P25-MEC",
+          "P25-IIO",
+          "P25-SEG",
+          "P25-ISA"
+        ],
+        [
+          "P25-PROY-IS"
+        ]
+      ]
+    }
+  },
+  "rules": [
+    {
+      "target": {
+        "rowIndex": "0",
+        "code": "2044",
+        "name": "FUNDAMENTOS DE LA COMBINATORIA",
+        "assessment": "course"
+      },
+      "expression": {
+        "kind": "none",
+        "sourceType": "no",
+        "label": "no debe tener",
+        "minimum": null,
+        "options": [],
+        "children": [
+          {
+            "kind": "requirement",
+            "sourceType": "default",
+            "label": "1 aprobación/es entre: Examen de la U.C.B: 1023P - CREDITOS NO ACUM MATEMATICA DISCRETA 1 Examen de la U.C.B: 1023 - MATEMATICA DISCRETA 1 Examen de la U.C.B: CURE - DMA02 - MATEMÁTICA DISCRETA",
+            "minimum": 1,
+            "options": [
+              {
+                "assessment": "exam",
+                "serviceCode": null,
+                "code": "1023P",
+                "name": "CREDITOS NO ACUM MATEMATICA DISCRETA 1",
+                "raw": "Examen de la U.C.B: 1023P - CREDITOS NO ACUM MATEMATICA DISCRETA 1"
+              },
+              {
+                "assessment": "exam",
+                "serviceCode": null,
+                "code": "1023",
+                "name": "MATEMATICA DISCRETA 1",
+                "raw": "Examen de la U.C.B: 1023 - MATEMATICA DISCRETA 1"
+              },
+              {
+                "assessment": "exam",
+                "serviceCode": "CURE",
+                "code": "DMA02",
+                "name": "MATEMÁTICA DISCRETA",
+                "raw": "Examen de la U.C.B: CURE - DMA02 - MATEMÁTICA DISCRETA"
+              }
+            ],
+            "children": [],
+            "creditRequirement": null,
+            "parserStatus": "parsed"
+          }
+        ],
+        "creditRequirement": null,
+        "parserStatus": "parsed"
+      },
+      "heading": "Condiciones a cumplir para realizar el Curso de la U.C.B. - FING - 2044 - FUNDAMENTOS DE LA COMBINATORIA",
+      "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
+    },
+    {
+      "target": {
+        "rowIndex": "1",
+        "code": "2044",
+        "name": "FUNDAMENTOS DE LA COMBINATORIA",
+        "assessment": "exam"
+      },
+      "expression": {
+        "kind": "none",
+        "sourceType": "no",
+        "label": "no debe tener",
+        "minimum": null,
+        "options": [],
+        "children": [
+          {
+            "kind": "requirement",
+            "sourceType": "default",
+            "label": "1 aprobación/es entre: Examen de la U.C.B: 1023P - CREDITOS NO ACUM MATEMATICA DISCRETA 1 Examen de la U.C.B: 1023 - MATEMATICA DISCRETA 1",
+            "minimum": 1,
+            "options": [
+              {
+                "assessment": "exam",
+                "serviceCode": null,
+                "code": "1023P",
+                "name": "CREDITOS NO ACUM MATEMATICA DISCRETA 1",
+                "raw": "Examen de la U.C.B: 1023P - CREDITOS NO ACUM MATEMATICA DISCRETA 1"
+              },
+              {
+                "assessment": "exam",
+                "serviceCode": null,
+                "code": "1023",
+                "name": "MATEMATICA DISCRETA 1",
+                "raw": "Examen de la U.C.B: 1023 - MATEMATICA DISCRETA 1"
+              }
+            ],
+            "children": [],
+            "creditRequirement": null,
+            "parserStatus": "parsed"
+          }
+        ],
+        "creditRequirement": null,
+        "parserStatus": "parsed"
+      },
+      "heading": "Condiciones a cumplir para realizar el Examen de la U.C.B. - FING - 2044 - FUNDAMENTOS DE LA COMBINATORIA",
+      "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
+    }
+  ]
+}

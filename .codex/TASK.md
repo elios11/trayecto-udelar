@@ -1,7 +1,7 @@
 # Estado del proyecto: Trayecto Udelar
 
 Última actualización: 2026-08-08  
-Workspace: `C:\Users\elios\Documents\Proyectos_GPT`  
+Workspace: `C:\Users\elios\Documents\Proyectos_GPT\MallaCurricularUniversal`
 Rama activa: `main`  
 Commit de importación académica de referencia: `a63f653` (`Import official Bedelias prerequisite rules`)
 Sitio desplegado: <https://trayecto-udelar-piloto.tokyo121.chatgpt.site>  
@@ -22,7 +22,7 @@ Construir una malla curricular independiente para carreras de Udelar que permita
 - mantener una interfaz moderna, minimalista y coherente con la identidad visual de Udelar;
 - continuar siendo un proyecto estudiantil no oficial y mostrar claramente qué datos están verificados.
 
-El piloto actual es Ingeniería en Computación, Plan 1997. Aunque ese plan ya figura como no vigente en Bedelías, debe mantenerse porque todavía puede haber estudiantes cursándolo. Para expansión nueva se deben priorizar los planes vigentes, especialmente el Plan 2025 de Ingeniería en Computación.
+El piloto actual es Ingeniería en Computación con dos planes seleccionables. El Plan 2025 vigente es la opción predeterminada y el Plan 1997 se mantiene como histórico porque todavía puede haber estudiantes cursándolo. El Plan 2025 entró en vigor para la generación 2026 y su implementación académica sigue evolucionando.
 
 ## 2. Arquitectura actual
 
@@ -40,15 +40,15 @@ El piloto actual es Ingeniería en Computación, Plan 1997. Aunque ese plan ya f
 ### Persistencia del progreso
 
 - El progreso del usuario se guarda en `localStorage`.
-- Clave actual: `trayecto-udelar-demo-v1`.
-- Solo se guarda el mapa de estados por código de materia.
+- Clave actual: `trayecto-udelar-progress-v2`.
+- Se guarda un mapa de estados separado por plan. Si solo existe la clave histórica `trayecto-udelar-demo-v1`, se migra automáticamente al Plan 1997.
 - No son cookies, no se envía al servidor y no se sincroniza entre navegadores/dispositivos.
 - Hay importación/exportación manual a JSON.
 - El botón de reinicio borra el estado de la aplicación después de confirmación.
 
 ### Datos académicos
 
-Hay tres niveles de datos:
+Hay cinco conjuntos relevantes de datos:
 
 1. Snapshot completo de Bedelías:
    - `data/bedelias/fing-ingenieria-computacion-1997.json`
@@ -59,6 +59,13 @@ Hay tres niveles de datos:
 3. Proyección compacta consumida por la interfaz:
    - `app/data/computacion-1997-bedelias.json`
    - Contiene solo las 29 materias centrales mostradas y sus 53 reglas relevantes.
+4. Snapshot de Bedelías para Ingeniería en Computación Plan 2025:
+   - `data/bedelias/fing-ingenieria-en-computacion-2025.json`
+   - Confirma vigencia, 450 créditos, 60 meses y 38 unidades/equivalencias actualmente presentes en la composición. La composición y las previas siguen incompletas en SGAE.
+5. Trayectorias oficiales y proyección Plan 2025:
+   - Fuente curada: `data/fing/computacion-2025-trayectorias.json`.
+   - Proyección web: `app/data/computacion-2025-fing.json`.
+   - Conserva dos trayectorias oficiales de FING para Montevideo (`PI >=60%` y `PI 20–59%`), mínimos por área, procedencia por materia y la cobertura parcial de Bedelías.
 
 El snapshot completo es deliberadamente más grande que la proyección. La aplicación no debe importar el snapshot completo al navegador.
 
@@ -66,6 +73,7 @@ El snapshot completo es deliberadamente más grande que la proyección. La aplic
 
 - Importador principal: `scripts/scrape-bedelias.mjs`.
 - Generador de proyección: `scripts/build-app-data.mjs`.
+- Generador Plan 2025: `scripts/build-computacion-2025.mjs`.
 - Documentación operativa: `docs/bedelias-importer.md`.
 - Automatización con `playwright-core` y Chrome/Edge instalado localmente.
 
@@ -74,8 +82,10 @@ Comandos relevantes:
 ```powershell
 npm.cmd run bedelias:catalog
 npm.cmd run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 1997 --courses 1466,1321
+npm.cmd run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 2025 --course-names "Fundamentos de la Combinatoria|Programación Imperativa"
 node scripts\scrape-bedelias.mjs normalize --input data\bedelias\fing-ingenieria-computacion-1997.json
 npm.cmd run bedelias:project
+npm.cmd run bedelias:project:2025
 npm.cmd test
 ```
 
@@ -139,26 +149,30 @@ Los créditos y previaturas de las 29 materias centrales sí provienen del snaps
 
 Las optativas del catálogo piloto, los dos bloques manuales del Proyecto de Grado y algunas metas siguen siendo curados/no verificados.
 
+Para el Plan 2025, la trayectoria sí proviene de la página oficial de Carreras de Computación en EVA/FING. FING publica dos láminas para Montevideo según el resultado de la Prueba Inicial y aclara que el ordenamiento es un ejemplo flexible, no una secuencia única. Bedelías sigue siendo la autoridad para vigencia, composición y previaturas, pero al 2026-08-08 su composición solo muestra 38 unidades/equivalencias y apenas una materia de la trayectoria tiene reglas publicadas para este plan. La UI distingue por eso las etiquetas `FING` y `Bedelías`; una ausencia de regla nunca se presenta como “sin previas”.
+
 ## 4. Funcionalidad implementada
 
 ### UI y progreso
 
-- Selector de carrera, plan y trayectoria (solo una opción funcional por ahora).
+- Selector de carrera, plan y trayectoria. Ingeniería en Computación permite elegir Plan 2025 o Plan 1997.
+- Plan 2025 es la opción predeterminada y ofrece las ramas oficiales `PI >=60%` y `PI 20–59%` publicadas por FING.
 - Malla horizontal de pre-semestre a décimo semestre en escritorio.
 - En mobile (hasta 720 px), la malla se convierte en una trayectoria vertical: los semestres y sus materias se recorren hacia abajo, sin desplazamiento horizontal; el panel de avance queda después de la malla para priorizar las materias.
 - Buscador por código, nombre o área.
-- Filtro de materias habilitadas.
+- Filtro de materias habilitadas en Plan 1997. En Plan 2025 se reemplaza por un indicador de cobertura de previas, porque todavía no corresponde afirmar habilitación oficial.
 - Estados visuales pendiente/aprobada/exonerada.
 - Persistencia local.
 - Exportar/importar progreso.
 - Reinicio del progreso.
 - Panel de créditos totales.
 - Panel de título intermedio y título de grado.
-- Panel de créditos por área, todavía rotulado como metas demo.
+- Panel de créditos por área: metas oficiales para Plan 2025 y metas todavía demo para Plan 1997.
 - Sección plegable de optativas/electivas.
 - Drawer de detalles de materia.
 - Identificación visual de materias con datos importados de Bedelías.
 - Visualización de la condición relevante para el siguiente cambio de estado: curso si está pendiente, examen si está aprobada.
+- Progreso separado por plan en `localStorage`, con migración automática del progreso histórico del Plan 1997.
 
 ### Prueba Inicial y Matemática Inicial
 
@@ -183,6 +197,16 @@ La distribución visible se alineó con la imagen compartida:
 - Semestre 8: Proyecto de Ingeniería de Software, Economía, Políticas Científicas.
 - Semestres 9 y 10: Proyecto de Grado dividido visualmente en dos etapas de 15 créditos.
 
+### Trayectoria Plan 2025 cargada
+
+- Fuente: sección oficial `Planes de Estudio 2025` de Carreras de Computación en EVA/FING.
+- Dos ramas para ingreso en primer semestre: `PI >=60%` y `PI 20–59%`.
+- Ocho semestres de núcleo común y requisitos específicos publicados por FING.
+- Los totales por semestre coinciden exactamente con las láminas oficiales: `36, 38, 42, 43, 44, 35, 30, 15` para `>=60%` y `18, 38, 44, 43, 44, 45, 40, 15` para `20–59%`.
+- El selector no suma créditos por la Prueba Inicial en Plan 2025; reproduce las materias y totales publicados, donde Matemática Inicial aparece solo en la rama `20–59%`.
+- La UI advierte que perfiles, optativas, 20 créditos complementarios y Proyecto de Grado de 30 créditos todavía no tienen una ubicación semestral completa en la trayectoria proyectada.
+- Materias ya presentes en la composición SGAE llevan etiqueta `Bedelías`; el resto lleva etiqueta `FING`.
+
 ### Importador de Bedelías
 
 - Descubre servicios desde la oferta académica pública.
@@ -195,6 +219,8 @@ La distribución visible se alineó con la imagen compartida:
 - Normaliza requisitos directos, alternativas, equivalencias, inscripciones y créditos mínimos.
 - Permite normalizar snapshots existentes sin nuevas solicitudes.
 - Permite extracción acotada con `--courses`.
+- Permite buscar materias por nombre exacto con `--course-names`, útil cuando un plan todavía no incorporó todos los códigos a su composición.
+- Los marcadores `noPublishedRule` no se validan como reglas rotas: representan explícitamente una consulta sin regla publicada.
 - Guarda checkpoint ignorado por Git (`data/bedelias/*.checkpoint`).
 
 ### Datos obtenidos
@@ -203,7 +229,9 @@ La distribución visible se alineó con la imagen compartida:
 - Plan 1997 de Ingeniería en Computación.
 - Plan tipo créditos, 60 meses, 450 créditos mínimos.
 - Plan 97 marcado como no vigente.
-- Plan 2025 detectado como vigente en Bedelías, todavía no importado.
+- Plan 2025 importado y confirmado como vigente, 60 meses y 450 créditos mínimos.
+- Bedelías muestra actualmente 38 unidades/equivalencias en la composición del Plan 2025.
+- FING publica 31 materias diferentes en las dos trayectorias combinadas; solo Fundamentos de la Combinatoria tiene por ahora reglas de curso/examen publicadas y localizables para este plan.
 - 610 unidades/equivalencias únicas en la composición del Plan 97.
 - 29 materias centrales proyectadas en la UI.
 - 53 reglas de curso/examen.
@@ -225,35 +253,44 @@ Pruebas en `tests/rendered-html.test.mjs`:
 
 - render del sitio real y metadatos correctos;
 - ausencia del starter de Sites;
-- presencia de procedencia Bedelías;
-- estados pendiente/aprobada/exonerada y Prueba Inicial.
+- presencia de procedencia FING y Bedelías;
+- Plan 2025 predeterminado y Plan 1997 seleccionable;
+- estados pendiente/aprobada/exonerada y rama de Prueba Inicial.
 
-Estado al redactar: `npm.cmd test` compila correctamente y pasan 7/7 pruebas.
+Pruebas en `tests/computacion-2025-data.test.mjs`:
+
+- procedencia independiente de FING y Bedelías;
+- vigencia, 450 créditos y cobertura de composición;
+- totales exactos por semestre en ambas trayectorias oficiales;
+- ficha y estado de procedencia para todas las materias proyectadas.
+
+Estado al redactar: `npm.cmd test` compila correctamente y pasan 10/10 pruebas.
 
 ## 6. Bugs, inconsistencias y límites conocidos
 
 ### Prioridad alta
 
-1. **Selector de Prueba Inicial inconsistente.** La UI dice `Ingreso 1er semestre · PI 20–59%`, pero permite acreditar PI por 4 créditos y omitir Matemática Inicial. Según la orientación pública de FING, la trayectoria 20–59% incluye Matemática Inicial; la acreditación de 4 créditos y omisión corresponde al tramo de 60% o más. Hay que modelar ambas trayectorias o corregir el selector antes de afirmar que esta rama es oficial.
-2. **Metas por área no verificadas.** `areaTargets` y el progreso de Analista 270 están curados como demo. Bedelías sí contiene grupos y mínimos, pero todavía no se proyectan al panel lateral ni se ha validado la estructura exacta de cada título.
+1. **Rama PI <20% todavía no está modelada.** FING indica que el primer semestre debe contener únicamente Matemática Inicial y TBEO, y que después se puede continuar por alguna trayectoria sugerida. La UI solo ofrece las dos láminas completas publicadas (`20–59%` y `>=60%`).
+2. **Plan 97 conserva metas por área demo.** El Plan 2025 ya usa mínimos oficiales por área; `areaTargets` del Plan 1997 y algunos detalles del título intermedio siguen curados como demo.
 3. **Proyecto de Grado dividido manualmente.** `1730-A` y `1730-B` son una representación visual de dos semestres. No son códigos oficiales importados. Debe confirmarse cómo Bedelías representa el Proyecto de Grado y sus créditos/reglas.
-4. **Oferta y semestres no importados.** Los campos `offered` y la distribución semestral siguen siendo manuales. No usar esos datos para garantizar cuándo se dicta una materia.
+4. **Oferta no importada.** Los campos `offered` del Plan 97 siguen siendo manuales. El Plan 2025 no afirma oferta; sus semestres provienen de la trayectoria sugerida oficial, que FING define como ejemplo flexible.
 
 ### Datos y evaluador
 
-5. Solo se integró Plan 97 de Ingeniería en Computación. El objetivo global de grados, tecnicaturas y CIO vigentes todavía no está cubierto.
-6. Solo 29 materias centrales están proyectadas; las optativas/electivas visibles aún usan previas manuales y no tienen etiqueta Bedelías.
-7. Algunas materias publican regla de curso pero no regla de examen, posiblemente porque no tienen examen convencional (taller/proyecto). Hoy, si no hay regla de examen proyectada, la transición a exonerada no se bloquea. Se debe distinguir explícitamente `sin modalidad de examen`, `sin regla publicada` y `no consultada`.
-8. El evaluador no registra inscripciones reales. Las opciones `course-enrollment` y `exam-enrollment` se consideran falsas. Esto funciona para muchas exclusiones, pero no alcanza para evaluar condiciones basadas en una inscripción vigente.
-9. Progreso antiguo de `localStorage` no se revalida al cambiar reglas. Esto es intencional para no borrar una escolaridad real, pero un estado colocado durante la demo puede sobrevivir aunque se haya obtenido con reglas viejas.
-10. Las URLs con `?cid=1` son de conversación JSF y no son enlaces permanentes. El snapshot conserva procedencia y texto, pero los enlaces estables de cara al usuario deben ser la portada de Bedelías y documentos de Colibrí.
-11. El snapshot completo ronda 1,5 MB y la proyección del navegador ronda 430 KB. El chunk cliente minificado quedó cerca de 258 KB. Es aceptable para el piloto, pero no escalará a toda Udelar sin dividir datos por carrera/plan o servirlos bajo demanda.
+5. Solo se integraron los planes 1997 y 2025 de Ingeniería en Computación. El objetivo global de grados, tecnicaturas y CIO vigentes todavía no está cubierto.
+6. En Plan 97 solo 29 materias centrales tienen cobertura oficial y las optativas visibles aún usan previas manuales. En Plan 2025 todavía faltan perfiles, optativas, formación complementaria y Proyecto de Grado en la malla.
+7. Bedelías todavía no contiene la implementación completa del Plan 2025: 38 unidades/equivalencias en composición y reglas publicadas para una sola materia de la trayectoria. Las materias sin regla pueden marcarse para registrar progreso, pero no se bloquean ni se muestran como “habilitadas”.
+8. Algunas materias publican regla de curso pero no regla de examen, posiblemente porque no tienen examen convencional (taller/proyecto). Hoy, si no hay regla de examen proyectada, la transición a exonerada no se bloquea. Se debe distinguir explícitamente `sin modalidad de examen`, `sin regla publicada` y `no consultada`.
+9. El evaluador no registra inscripciones reales. Las opciones `course-enrollment` y `exam-enrollment` se consideran falsas. Esto funciona para muchas exclusiones, pero no alcanza para evaluar condiciones basadas en una inscripción vigente.
+10. Progreso antiguo de `localStorage` no se revalida al cambiar reglas. Esto es intencional para no borrar una escolaridad real, pero un estado colocado durante la demo puede sobrevivir aunque se haya obtenido con reglas viejas.
+11. Las URLs con `?cid=1` son de conversación JSF y no son enlaces permanentes. El snapshot conserva procedencia y texto, pero los enlaces estables de cara al usuario deben ser la portada de Bedelías y documentos de Colibrí.
+12. El snapshot completo del Plan 97 ronda 1,5 MB y la proyección del navegador ronda 430 KB. Es aceptable para el piloto, pero no escalará a toda Udelar sin dividir datos por carrera/plan o servirlos bajo demanda.
 
 ### Infraestructura
 
-12. `npm install` reportó 20 vulnerabilidades transitivas (1 baja, 4 moderadas, 15 altas). No se ejecutó `npm audit fix` porque puede introducir cambios incompatibles. Auditar dependencias antes de producción pública.
-13. No existe autenticación propia, base de datos ni sincronización. Las cuentas quedaron explícitamente para una etapa futura.
-14. El sitio está privado/owner-only. Copiar el enlace no da acceso a otros usuarios mientras no se cambie el control de acceso.
+13. `npm install` reportó 20 vulnerabilidades transitivas (1 baja, 4 moderadas, 15 altas). No se ejecutó `npm audit fix` porque puede introducir cambios incompatibles. Auditar dependencias antes de producción pública.
+14. No existe autenticación propia, base de datos ni sincronización. Las cuentas quedaron explícitamente para una etapa futura.
+15. El sitio está privado/owner-only. Copiar el enlace no da acceso a otros usuarios mientras no se cambie el control de acceso.
 
 ## 7. Intentos, problemas encontrados y decisiones descartadas
 
@@ -266,6 +303,10 @@ Estado al redactar: `npm.cmd test` compila correctamente y pasan 7/7 pruebas.
 - **Volver mediante botón:** generaba más recargas. El importador intenta historial (`goBack`) y conserva fallback al botón.
 - **Checkpoints con reglas vacías:** la primera prueba guardó marcadores `none` por el bug de filas. El flujo fue corregido y luego reextraído/normalizado.
 - **Parser inicial limitado:** solo entendía `Curso/Examen de la U.C.B.`. Se amplió para `aprobado`, `U.C.B aprobada`, inscripciones, equivalencias con servicio y mínimos de créditos. Luego se normalizaron las 53 reglas sin nuevas solicitudes.
+- **Plan 2025 tratado inicialmente como “detectado”:** se comprobó que no basta con esperar una vuelta completa del plan. FING ya publicó la estructura, las dos trayectorias de Montevideo y los mínimos, mientras Bedelías todavía está parcial. Se adoptó un modelo de doble procedencia en vez de bloquear toda la integración.
+- **Búsqueda de reglas 2025 solo por códigos:** la composición parcial no contiene códigos para muchas materias nuevas. Se añadió `--course-names` con normalización de acentos para consultar por nombre sin ampliar innecesariamente el volumen de solicitudes.
+- **Ausencia de resultado tratada como error:** los checkpoints `noPublishedRule` producían falsos errores de expresión faltante. La validación ahora distingue consulta sin regla publicada de regla malformada.
+- **Ubicación física del proyecto:** originalmente todo estaba directamente en `Proyectos_GPT`. A pedido del usuario se trasladó el proyecto completo, incluido `.git`, a `Proyectos_GPT\MallaCurricularUniversal`.
 - **Pruebas del starter:** `tests/rendered-html.test.mjs` todavía esperaba el skeleton inicial de Sites. Se reemplazó por pruebas del producto real.
 - **Scripts npm con variables Unix:** `WRANGLER_LOG_PATH=...` fallaba en Windows. Los scripts quedaron como `vinext dev/build/start` para ser multiplataforma.
 - **`npm.ps1`:** bloqueado por ExecutionPolicy. Usar `npm.cmd`.
@@ -274,26 +315,26 @@ Estado al redactar: `npm.cmd test` compila correctamente y pasan 7/7 pruebas.
 
 Orden sugerido:
 
-1. Corregir la experiencia de Prueba Inicial modelando al menos las ramas `<20%`, `20–59%` y `>=60%`, con texto y efectos consistentes.
-2. Importar Ingeniería en Computación Plan 2025 completo y convertirlo en la opción vigente predeterminada, manteniendo Plan 97 como plan histórico disponible.
-3. Añadir al snapshot estados explícitos para modalidad/regla de curso y examen: `published`, `not-published`, `not-applicable`, `not-scraped`.
-4. Proyectar grupos, mínimos de créditos y títulos desde la composición de Bedelías; reemplazar `areaTargets` y Analista 270 solo después de validación documental.
-5. Confirmar Proyecto de Grado y eliminar o documentar formalmente la división manual `1730-A/B`.
-6. Extraer y validar optativas/electivas reales del plan, con créditos aportados por grupo y equivalencias.
+1. Modelar la rama de ingreso `PI <20%` (Matemática Inicial + TBEO) y definir cómo enlaza con las trayectorias posteriores.
+2. Añadir estados explícitos para modalidad/regla de curso y examen: `published`, `not-published`, `not-applicable`, `not-scraped`.
+3. Volver a extraer el Plan 2025 periódicamente y comparar snapshots para detectar cuándo Bedelías agrega composición, códigos y reglas; no sustituir datos FING automáticamente.
+4. Incorporar perfiles del Plan 2025, optativas reales, créditos complementarios y Proyecto de Grado cuando la Comisión de Carrera publique su implementación.
+5. Confirmar Proyecto de Grado del Plan 97 y eliminar o documentar formalmente la división manual `1730-A/B`.
+6. Reemplazar metas demo por área del Plan 97 después de validarlas documentalmente.
 7. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
-8. Investigar fuentes institucionales para trayectoria recomendada y oferta por semestre; Bedelías no necesariamente contiene una secuencia sugerida estable.
+8. Investigar fuentes institucionales de oferta efectiva por semestre sin confundirlas con la trayectoria sugerida.
 9. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras.
 10. Añadir reportes de diferencias entre snapshots para revisar cambios de Bedelías antes de publicar; nunca desplegar cambios académicos automáticamente sin revisión.
-11. Añadir un panel visible de procedencia por plan: fecha del snapshot, vigencia, documento Colibrí, cobertura de reglas y advertencias pendientes.
+11. Añadir un panel visible de procedencia por plan: fecha del snapshot, documento, cobertura de reglas y advertencias pendientes.
 12. Evaluar cuentas/sincronización solo después de estabilizar el modelo académico. Hasta entonces mantener `localStorage` y exportación/importación.
 
 ## 9. Flujo seguro para continuar
 
 1. Leer este archivo y `docs/bedelias-importer.md`.
 2. Ejecutar `git status --short`; preservar cambios del usuario.
-3. Ejecutar primero una extracción acotada con `--courses` al modificar el scraper.
+3. Ejecutar primero una extracción acotada con `--courses` o `--course-names` al modificar el scraper.
 4. Revisar el checkpoint y snapshot; normalizar sin red cuando sea posible.
-5. Ejecutar `npm.cmd run bedelias:project` para regenerar la proyección.
+5. Ejecutar `npm.cmd run bedelias:project` para Plan 97 y `npm.cmd run bedelias:project:2025` para Plan 2025.
 6. Ejecutar `npm.cmd test`.
 7. Solo integrar datos con procedencia y validación completa.
 8. Para publicar, usar el flujo existente de Sites y el `project_id` de `.openai/hosting.json`; no crear otro sitio.

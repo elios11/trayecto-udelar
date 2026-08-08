@@ -21,10 +21,13 @@ test("renderiza la malla y su procedencia institucional", async () => {
   const html = await response.text();
   assert.match(html, /<title>Trayecto — Mallas curriculares Udelar<\/title>/i);
   assert.match(html, /Ingeniería en Computación/);
+  assert.match(html, /Plan 2025 · vigente, en transición/);
   assert.match(html, /Plan 1997/);
-  assert.match(html, /29 materias importados de Bedelías/);
+  assert.match(html, /Trayectoria oficial publicada por FING/);
+  assert.match(html, /Bedelías confirma el plan vigente/);
   assert.match(html, /Arquitectura de Computadoras/);
   assert.match(html, /official-tag/);
+  assert.match(html, /Lo que todavía no tiene semestre publicado/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
@@ -33,5 +36,5 @@ test("distingue las tres instancias del progreso", async () => {
   assert.match(html, /Pendiente/);
   assert.match(html, /Aprobada · sin créditos/);
   assert.match(html, /Exonerada · suma créditos/);
-  assert.match(html, /Prueba Inicial/);
+  assert.match(html, /PI 60% o más/);
 });
