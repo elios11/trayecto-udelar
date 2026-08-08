@@ -14,37 +14,43 @@ type Course = {
   minCredits?: number;
   offered: Array<"impar" | "par" | "libre">;
   elective?: boolean;
+  placementTest?: boolean;
 };
 
 const courses: Course[] = [
-  { id: "1030", name: "Geometría y Álgebra Lineal 1", credits: 9, semester: 1, area: "Matemática", offered: ["impar", "par", "libre"] },
+  { id: "PI", name: "Prueba Inicial", credits: 4, semester: 0, area: "Matemática", placementTest: true, offered: ["impar", "par"] },
+  { id: "MI2", name: "Matemática Inicial", credits: 4, semester: 1, area: "Matemática", offered: ["impar", "par"] },
   { id: "1023", name: "Matemática Discreta 1", credits: 9, semester: 1, area: "Fundamentos", offered: ["impar", "par", "libre"] },
   { id: "1373", name: "Programación 1", credits: 10, semester: 1, area: "Programación", offered: ["impar", "par"] },
-  { id: "1061", name: "Cálculo DIV", credits: 13, semester: 2, area: "Matemática", offered: ["impar", "par", "libre"] },
-  { id: "1031", name: "Geometría y Álgebra Lineal 2", credits: 9, semester: 2, area: "Matemática", prerequisites: ["1030"], offered: ["impar", "par", "libre"] },
-  { id: "1026", name: "Matemática Discreta 2", credits: 9, semester: 2, area: "Fundamentos", prerequisites: ["1023"], offered: ["impar", "par", "libre"] },
+  { id: "1061", name: "Cálculo Diferencial e Integral en una Variable", credits: 13, semester: 2, area: "Matemática", prerequisites: ["MI2"], offered: ["impar", "par", "libre"] },
+  { id: "1151", name: "Física 1", credits: 10, semester: 2, area: "Ciencias", offered: ["impar", "par", "libre"] },
+  { id: "1030", name: "Geometría y Álgebra Lineal 1", credits: 9, semester: 2, area: "Matemática", offered: ["impar", "par", "libre"] },
   { id: "1321", name: "Programación 2", credits: 12, semester: 2, area: "Programación", prerequisites: ["1373"], offered: ["impar", "par"] },
-  { id: "1062", name: "Cálculo DIVV", credits: 13, semester: 3, area: "Matemática", prerequisites: ["1061"], offered: ["impar", "par", "libre"] },
-  { id: "1027", name: "Lógica", credits: 12, semester: 3, area: "Fundamentos", prerequisites: ["1026"], offered: ["impar"] },
-  { id: "1324", name: "Programación 4", credits: 15, semester: 3, area: "Programación", prerequisites: ["1321"], offered: ["impar"] },
-  { id: "1025", name: "Probabilidad y Estadística", credits: 10, semester: 4, area: "Matemática", prerequisites: ["1061"], offered: ["impar", "par", "libre"] },
-  { id: "1323", name: "Programación 3", credits: 15, semester: 4, area: "Programación", prerequisites: ["1321"], offered: ["par", "libre"] },
+  { id: "1062", name: "Cálculo Diferencial e Integral en Varias Variables", credits: 13, semester: 3, area: "Matemática", prerequisites: ["1061"], offered: ["impar", "par", "libre"] },
+  { id: "1031", name: "Geometría y Álgebra Lineal 2", credits: 9, semester: 3, area: "Matemática", prerequisites: ["1030"], offered: ["impar", "par", "libre"] },
+  { id: "1027", name: "Lógica", credits: 12, semester: 3, area: "Fundamentos", prerequisites: ["1023"], offered: ["impar"] },
+  { id: "1026", name: "Matemática Discreta 2", credits: 9, semester: 3, area: "Fundamentos", prerequisites: ["1023"], offered: ["impar", "par", "libre"] },
   { id: "1466", name: "Arquitectura de Computadoras", credits: 10, semester: 4, area: "Sistemas", prerequisites: ["1373"], offered: ["par", "libre"] },
-  { id: "1033", name: "Métodos Numéricos", credits: 10, semester: 4, area: "Matemática", prerequisites: ["1062"], offered: ["par"] },
-  { id: "1650", name: "Introducción a la Investigación de Operaciones", credits: 10, semester: 5, area: "Matemática", prerequisites: ["1025"], offered: ["impar"] },
+  { id: "1323", name: "Programación 3", credits: 15, semester: 4, area: "Programación", prerequisites: ["1321"], offered: ["par", "libre"] },
+  { id: "1025", name: "Probabilidad y Estadística", credits: 10, semester: 4, area: "Matemática", prerequisites: ["1061"], offered: ["impar", "par", "libre"] },
+  { id: "1033", name: "Métodos Numéricos", credits: 8, semester: 4, area: "Matemática", prerequisites: ["1062"], offered: ["par"] },
   { id: "1537", name: "Sistemas Operativos", credits: 12, semester: 5, area: "Sistemas", prerequisites: ["1466", "1323"], offered: ["impar", "libre"] },
-  { id: "1325", name: "Teoría de Lenguajes", credits: 12, semester: 5, area: "Fundamentos", prerequisites: ["1027", "1324"], offered: ["impar"] },
+  { id: "1324", name: "Programación 4", credits: 15, semester: 5, area: "Programación", prerequisites: ["1321"], offered: ["impar"] },
+  { id: "1325", name: "Teoría de Lenguajes", credits: 12, semester: 5, area: "Fundamentos", prerequisites: ["1027", "1026"], offered: ["impar"] },
   { id: "1944", name: "Administración General para Ingenieros", credits: 5, semester: 5, area: "Gestión", minCredits: 120, offered: ["impar", "libre"] },
   { id: "1911", name: "Fundamentos de Bases de Datos", credits: 15, semester: 6, area: "Datos", prerequisites: ["1323"], offered: ["par"] },
   { id: "1327", name: "Taller de Programación", credits: 15, semester: 6, area: "Integradora", prerequisites: ["1323", "1324"], offered: ["par"] },
   { id: "1446", name: "Redes de Computadoras", credits: 12, semester: 6, area: "Sistemas", prerequisites: ["1537"], offered: ["par"] },
-  { id: "1716", name: "Introducción a la Ingeniería de Software", credits: 10, semester: 7, area: "Software", prerequisites: ["1327"], offered: ["impar"] },
-  { id: "1354", name: "Programación Funcional", credits: 10, semester: 7, area: "Programación", prerequisites: ["1324"], offered: ["impar"] },
+  { id: "1945", name: "Práctica de Administración para Ingenieros", credits: 5, semester: 6, area: "Gestión", minCredits: 150, offered: ["par", "libre"] },
+  { id: "1650", name: "Introducción a la Investigación de Operaciones", credits: 10, semester: 7, area: "Matemática", prerequisites: ["1025"], offered: ["impar"] },
+  { id: "1783", name: "Taller Introductorio de Ingeniería de Software", credits: 10, semester: 7, area: "Software", prerequisites: ["1327"], offered: ["impar"] },
   { id: "1340", name: "Programación Lógica", credits: 10, semester: 7, area: "Programación", prerequisites: ["1027", "1324"], offered: ["impar"] },
-  { id: "1721", name: "Proyecto de Ingeniería de Software", credits: 15, semester: 8, area: "Integradora", prerequisites: ["1716", "1911"], minCredits: 250, offered: ["par"] },
+  { id: "1721", name: "Proyecto de Ingeniería de Software", credits: 15, semester: 8, area: "Integradora", prerequisites: ["1783", "1911"], minCredits: 250, offered: ["par"] },
   { id: "1224", name: "Economía", credits: 7, semester: 8, area: "Gestión", minCredits: 120, offered: ["par", "libre"] },
   { id: "1225", name: "Políticas Científicas en Informática", credits: 3, semester: 8, area: "Gestión", minCredits: 120, offered: ["par"] },
-  { id: "1151", name: "Física 1", credits: 10, semester: "opt", area: "Ciencias", elective: true, offered: ["impar", "par", "libre"] },
+  { id: "1730-A", name: "Proyecto de Grado · primera etapa", credits: 15, semester: 9, area: "Integradora", prerequisites: ["1721"], minCredits: 270, offered: ["impar", "par"] },
+  { id: "1730-B", name: "Proyecto de Grado · segunda etapa", credits: 15, semester: 10, area: "Integradora", prerequisites: ["1730-A"], offered: ["impar", "par"] },
+  { id: "1354", name: "Programación Funcional", credits: 10, semester: "opt", area: "Programación", elective: true, prerequisites: ["1324"], offered: ["impar"] },
   { id: "1866", name: "Aprendizaje Automático", credits: 10, semester: "opt", area: "Fundamentos", elective: true, prerequisites: ["1025", "1323"], offered: ["par"] },
   { id: "1434", name: "Computación de Alta Performance", credits: 10, semester: "opt", area: "Sistemas", elective: true, prerequisites: ["1537"], offered: ["impar"] },
   { id: "1316", name: "Introducción a la Computación Gráfica", credits: 10, semester: "opt", area: "Programación", elective: true, prerequisites: ["1323", "1031"], offered: ["impar"] },
@@ -100,22 +106,34 @@ export default function Home() {
   );
 
   const isComplete = (id: string) => statuses[id] === "approved" || statuses[id] === "exonerated";
+  const isRequirementComplete = (id: string) => id === "MI2"
+    ? isComplete("MI2") || statuses.PI === "exonerated"
+    : isComplete(id);
   const isUnlocked = (course: Course) =>
-    (course.prerequisites ?? []).every(isComplete) && (!course.minCredits || earnedCredits >= course.minCredits);
+    (course.prerequisites ?? []).every(isRequirementComplete) && (!course.minCredits || earnedCredits >= course.minCredits);
 
   const cycleStatus = (course: Course) => {
     if (!isUnlocked(course)) return;
     setStatuses((current) => {
       const now = current[course.id] ?? "pending";
+      if (course.placementTest) {
+        const next: CourseStatus = now === "exonerated" ? "pending" : "exonerated";
+        const updated = { ...current, [course.id]: next };
+        if (next === "exonerated") updated.MI2 = "pending";
+        return updated;
+      }
       const next: CourseStatus = now === "pending" ? "approved" : now === "approved" ? "exonerated" : "pending";
-      return { ...current, [course.id]: next };
+      const updated = { ...current, [course.id]: next };
+      if (course.id === "MI2" && next !== "pending") updated.PI = "pending";
+      return updated;
     });
   };
 
   const filtered = (semester: Course["semester"]) => courses.filter((course) => {
     const matchesSemester = course.semester === semester;
     const matchesSearch = `${course.id} ${course.name} ${course.area}`.toLowerCase().includes(search.toLowerCase());
-    return matchesSemester && matchesSearch && (!availableOnly || isUnlocked(course));
+    const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
+    return matchesSemester && matchesSearch && !isReplacedByPlacementTest && (!availableOnly || isUnlocked(course));
   });
 
   const areaCredits = (area: string) => courses.reduce(
@@ -189,8 +207,14 @@ export default function Home() {
                 <option value="1997">Plan 1997 · piloto</option>
               </select>
             </label>
+            <label>
+              <span>Trayectoria</span>
+              <select defaultValue="pi-20-59">
+                <option value="pi-20-59">Ingreso 1er semestre · PI 20–59%</option>
+              </select>
+            </label>
           </div>
-          <p className="pilot-note"><span /> Piloto funcional para validar la experiencia. Los requisitos marcados como demo se sustituirán por los datos oficiales del extractor.</p>
+          <p className="pilot-note"><span /> Semestres transcritos de la trayectoria compartida (dedicación total). Las previas del piloto son una simulación no validada y no deben usarse para planificar inscripciones.</p>
         </div>
 
         <div className="credit-summary">
@@ -269,13 +293,14 @@ export default function Home() {
 
           <div className="curriculum-scroll">
             <div className="semester-grid">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((semester) => (
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((semester) => (
                 <section className="semester-column" key={semester}>
                   <header>
-                    <span>{String(semester).padStart(2, "0")}</span>
-                    <div><h2>{semester}º semestre</h2><p>{filtered(semester).reduce((sum, item) => sum + item.credits, 0)} créditos</p></div>
+                    <span>{semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
+                    <div><h2>{semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{filtered(semester).reduce((sum, item) => sum + item.credits, 0)} créditos</p></div>
                   </header>
                   <div className="course-stack">
+                    {semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
                     {filtered(semester).map((course) => (
                       <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}
@@ -313,13 +338,13 @@ export default function Home() {
             <button className="drawer-close" onClick={() => setSelected(null)} aria-label="Cerrar detalles">×</button>
             <p className="eyebrow">{selected.id} · {selected.area}</p>
             <h2>{selected.name}</h2>
-            <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
+            <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
             <h3>Condiciones para cursar</h3>
             {(selected.prerequisites?.length || selected.minCredits) ? (
               <ul className="requirements-list">
                 {selected.prerequisites?.map((id) => {
                   const prerequisite = courses.find((course) => course.id === id);
-                  return <li className={isComplete(id) ? "done" : "missing"} key={id}><span>{isComplete(id) ? "✓" : "○"}</span>{prerequisite?.name ?? id}</li>;
+                  return <li className={isRequirementComplete(id) ? "done" : "missing"} key={id}><span>{isRequirementComplete(id) ? "✓" : "○"}</span>{prerequisite?.name ?? id}</li>;
                 })}
                 {selected.minCredits && <li className={earnedCredits >= selected.minCredits ? "done" : "missing"}><span>{earnedCredits >= selected.minCredits ? "✓" : "○"}</span>{selected.minCredits} créditos acumulados</li>}
               </ul>
@@ -327,7 +352,9 @@ export default function Home() {
             <h3>Se dicta</h3>
             <div className="offering-list">{selected.offered.map((item) => <span key={item}>{item}</span>)}</div>
             <button className="primary-button" disabled={!isUnlocked(selected)} onClick={() => cycleStatus(selected)}>
-              {isUnlocked(selected) ? `Marcar como ${(statuses[selected.id] ?? "pending") === "pending" ? "aprobada" : (statuses[selected.id] ?? "pending") === "approved" ? "exonerada" : "pendiente"}` : "Materia aún no habilitada"}
+              {selected.placementTest
+                ? (statuses.PI === "exonerated" ? "Desmarcar Prueba Inicial" : "Acreditar Prueba Inicial")
+                : isUnlocked(selected) ? `Marcar como ${(statuses[selected.id] ?? "pending") === "pending" ? "aprobada" : (statuses[selected.id] ?? "pending") === "approved" ? "exonerada" : "pendiente"}` : "Materia aún no habilitada"}
             </button>
           </aside>
         </div>
@@ -346,7 +373,11 @@ function CourseCard({ course, status, unlocked, onCycle, onDetails }: { course: 
       <h3>{course.name}</h3>
       <div className="course-meta"><span>{course.area}</span><strong>{course.credits} cr.</strong></div>
       <button className="status-button" disabled={!unlocked} onClick={onCycle}>
-        {!unlocked ? <><span className="lock-mark">⌑</span> No habilitada</> : <><span className="status-mark">{status === "pending" ? "○" : status === "approved" ? "◐" : "●"}</span>{stateLabels[status]}</>}
+        {!unlocked
+          ? <><span className="lock-mark">⌑</span> No habilitada</>
+          : course.placementTest
+            ? <><span className="status-mark">{status === "exonerated" ? "✓" : "□"}</span>{status === "exonerated" ? "Acreditada · suma 4 cr." : "Acreditar prueba"}</>
+            : <><span className="status-mark">{status === "pending" ? "○" : status === "approved" ? "◐" : "●"}</span>{stateLabels[status]}</>}
       </button>
     </article>
   );

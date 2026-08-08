@@ -38,7 +38,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .selector-row label { display: grid; gap: 7px; }
 .selector-row label > span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
 .selector-row select { min-width: 310px; appearance: none; border: 1px solid var(--line); border-radius: 10px; padding: 13px 42px 13px 14px; font-weight: 680; color: var(--ink); background: #fff linear-gradient(45deg, transparent 50%, var(--udelar) 50%) calc(100% - 18px) 19px/5px 5px no-repeat; }
-.selector-row label:last-child select { min-width: 180px; }
+.selector-row label:not(:first-child) select { min-width: 180px; }
 .pilot-note { font-size: 12px; color: var(--muted); margin: 14px 0 0; display: flex; align-items: center; gap: 8px; }
 .pilot-note > span { width: 6px; height: 6px; background: var(--pending); border-radius: 50%; flex: none; }
 .credit-summary { gap: 16px; min-width: 230px; }
@@ -96,7 +96,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .dot.exonerated { background: var(--exonerated); }
 
 .curriculum-scroll { overflow-x: auto; scrollbar-width: thin; scrollbar-color: #b7c2c8 transparent; }
-.semester-grid { min-width: 1860px; display: grid; grid-template-columns: repeat(8, minmax(210px, 1fr)); padding: 24px; gap: 12px; align-items: start; }
+.semester-grid { min-width: 2550px; display: grid; grid-template-columns: repeat(11, minmax(210px, 1fr)); padding: 24px; gap: 12px; align-items: start; }
 .semester-column { min-width: 0; }
 .semester-column > header { display: flex; align-items: center; gap: 10px; padding: 0 4px 12px; border-bottom: 1px solid var(--line); margin-bottom: 10px; }
 .semester-column > header > span { font-family: var(--font-geist-mono); color: #a6b1b7; font-size: 18px; }
@@ -122,6 +122,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .locked .status-button { background: #e2e6e7; color: #7f8c92; cursor: not-allowed; }
 .status-mark, .lock-mark { display: inline-block; width: 17px; }
 .empty-column { color: var(--muted); font-size: 11px; padding: 10px 4px; }
+.replacement-note { margin: 0 0 8px; padding: 10px; border-radius: 8px; background: #e6f3ef; color: #086b57; font-size: 10px; line-height: 1.4; }
 
 .electives-section { background: white; border-top: 1px solid var(--line); }
 .electives-heading { width: 100%; padding: 24px 30px; justify-content: space-between; border: 0; background: var(--white); text-align: left; }
@@ -170,14 +171,14 @@ footer a { color: white; text-decoration: none; white-space: nowrap; }
   .quiet-button { display: none; }
   .hero-row { padding: 24px 16px; display: block; }
   .selector-row { display: grid; grid-template-columns: 1fr 1fr; }
-  .selector-row select, .selector-row label:last-child select { min-width: 0; width: 100%; font-size: 12px; }
+  .selector-row select, .selector-row label:not(:first-child) select { min-width: 0; width: 100%; font-size: 12px; }
   .credit-summary { margin-top: 24px; }
   .workspace { display: block; }
   .progress-panel { border-right: 0; border-bottom: 1px solid var(--line); }
   .area-list { grid-template-columns: 1fr 1fr; gap: 13px 20px; }
   .toolbar { top: 72px; padding: 12px 16px; flex-wrap: wrap; }
   .search-box { flex: 1 1 100%; min-width: 0; }
-  .semester-grid { padding: 16px; grid-template-columns: repeat(8, 195px); min-width: 1660px; }
+  .semester-grid { padding: 16px; grid-template-columns: repeat(11, 195px); min-width: 2280px; }
   .electives-heading { padding: 22px 16px; }
   .electives-heading > div:last-child > span { display: none; }
   .electives-grid { padding: 0 16px 24px; grid-template-columns: repeat(2, minmax(0,1fr)); }
