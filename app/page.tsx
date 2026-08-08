@@ -201,9 +201,41 @@ function expressionReferencesCode(expression: RequirementExpression, code: strin
     || expression.children.some((child) => expressionReferencesCode(child, code));
 }
 
+function readableCourseName(rawName: string) {
+  const normalized = rawName
+    .replace(/\(P\.\s*74\)/gi, "· Plan 1974")
+    .replace(/\(1ER\.\s*SEM\.\)/gi, "· 1.er semestre")
+    .replace(/\(2DO\.\s*SEM\.\)/gi, "· 2.º semestre")
+    .replace(/\(ANUAL\)/gi, "· anual")
+    .replace(/\bDIF\.\b/gi, "diferencial")
+    .replace(/\bPROB\.\b/gi, "probabilidad")
+    .replace(/\bEST\.\b/gi, "estadística")
+    .replace(/\s+/g, " ")
+    .trim();
+  const lower = normalized.toLocaleLowerCase("es-UY");
+  const accented = lower.replace(/\b(analisis|matematico|matematica|calculo|creditos|revalida|algebra|programacion|logica|fisica|estadistica)\b/g, (word) => ({
+    analisis: "análisis",
+    matematico: "matemático",
+    matematica: "matemática",
+    calculo: "cálculo",
+    creditos: "créditos",
+    revalida: "reválida",
+    algebra: "álgebra",
+    programacion: "programación",
+    logica: "lógica",
+    fisica: "física",
+    estadistica: "estadística",
+  })[word] ?? word);
+  return accented.replace(/(^|[·(]\s*|\s)([a-záéíóúüñ])/g, (match, prefix, letter) => `${prefix}${letter.toLocaleUpperCase("es-UY")}`)
+    .replace(/\b(Ii|Iii|Iv|Vi|Vii|Viii|Ix|Xi|Xii)\b/g, (roman) => roman.toUpperCase())
+    .replace("1.er Semestre", "1.er semestre")
+    .replace("2.º Semestre", "2.º semestre")
+    .replace("· Anual", "· anual");
+}
+
 function describeOption(option: RequirementOption, courses: Course[]) {
   const course = courses.find((item) => item.id === option.code);
-  const name = course?.name ?? option.name;
+  const name = course?.name ?? readableCourseName(option.name);
   const evidence = option.assessment === "exam" ? "examen aprobado"
     : option.assessment === "course" ? "curso aprobado"
       : option.assessment === "exam-enrollment" ? "inscripción a examen"
@@ -211,21 +243,51 @@ function describeOption(option: RequirementOption, courses: Course[]) {
   return `${name} · ${evidence}`;
 }
 
+function describeExcludedOption(option: RequirementOption, courses: Course[]) {
+  const course = courses.find((item) => item.id === option.code);
+  const name = course?.name ?? readableCourseName(option.name);
+  if (option.assessment === "course-enrollment") return `No estar inscripto/a al curso de ${name}`;
+  if (option.assessment === "exam-enrollment") return `No estar inscripto/a al examen de ${name}`;
+  if (option.assessment === "course") return `No tener aprobado el curso de ${name}`;
+  return `No tener aprobado el examen de ${name}`;
+}
+
+type RequirementRow = { key: string; label: string; alternatives?: string[]; done: boolean };
+
+function expressionOptions(expression: RequirementExpression, courses: Course[], courseIds: Set<string>) {
+  const localOptions = expression.options.filter((option) => courseIds.has(option.code));
+  const displayOptions = localOptions.length ? localOptions : expression.options.slice(0, 3);
+  return displayOptions.map((option) => describeOption(option, courses));
+}
+
 function describeExpression(expression: RequirementExpression, courses: Course[], courseIds: Set<string>): string {
   if (expression.creditRequirement) return `${expression.creditRequirement.minimum} créditos acumulados en el plan`;
   if (expression.kind === "none") {
     const options = expression.children.flatMap((child) => child.options).slice(0, 3);
-    return options.length ? `No tener: ${options.map((option) => describeOption(option, courses)).join(" o ")}` : "No cumplir una condición excluyente";
+    return options.length ? options.map((option) => describeExcludedOption(option, courses)).join(" o ") : "No cumplir una condición excluyente";
   }
   if (expression.kind === "all") return expression.children.map((child) => describeExpression(child, courses, courseIds)).filter(Boolean).join(" y ");
   if (expression.kind === "any") return expression.children.map((child) => describeExpression(child, courses, courseIds)).filter(Boolean).join(" o ");
-  const localOptions = expression.options.filter((option) => courseIds.has(option.code));
-  const displayOptions = localOptions.length ? localOptions : expression.options.slice(0, 3);
-  return displayOptions.length ? displayOptions.map((option) => describeOption(option, courses)).join(" o ") : expression.label;
+  const displayOptions = expressionOptions(expression, courses, courseIds);
+  return displayOptions.length ? displayOptions.join(" o ") : expression.label;
 }
 
-function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, courses: Course[], courseIds: Set<string>, prefix = "r"): Array<{ key: string; label: string; done: boolean }> {
+function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, courses: Course[], courseIds: Set<string>, prefix = "r"): RequirementRow[] {
   if (expression.kind === "all") return expression.children.flatMap((child, index) => requirementRows(child, statuses, earnedCredits, courses, courseIds, `${prefix}-${index}`));
+  if (expression.kind === "none") {
+    const alternatives = expression.children.flatMap((child) => expressionOptions(child, courses, courseIds)).slice(0, 3);
+    return [{ key: prefix, label: alternatives.length ? "No tener aprobada ninguna de estas equivalencias" : "No cumplir una condición excluyente", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits) }];
+  }
+  if (expression.kind === "any") {
+    const alternatives = expression.children.map((child) => describeExpression(child, courses, courseIds)).filter(Boolean);
+    return [{ key: prefix, label: "Cumplir una de estas opciones", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits) }];
+  }
+  const alternatives = expressionOptions(expression, courses, courseIds);
+  if (alternatives.length > 1) {
+    const minimum = expression.minimum ?? 1;
+    const label = minimum === 1 ? "Cumplir una de estas opciones" : `Cumplir al menos ${minimum} de estas opciones`;
+    return [{ key: prefix, label, alternatives, done: expressionSatisfied(expression, statuses, earnedCredits) }];
+  }
   return [{ key: prefix, label: describeExpression(expression, courses, courseIds), done: expressionSatisfied(expression, statuses, earnedCredits) }];
 }
 
@@ -251,6 +313,9 @@ export default function Home() {
   const [showElectives, setShowElectives] = useState(true);
   const [hydrated, setHydrated] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
+  const curriculumScrollRef = useRef<HTMLDivElement>(null);
+  const wheelTargetRef = useRef(0);
+  const wheelFrameRef = useRef<number | null>(null);
 
   const courses = useMemo(
     () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997Courses,
@@ -314,6 +379,60 @@ export default function Home() {
   useEffect(() => {
     if (hydrated) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   }, [progress, hydrated]);
+
+  useEffect(() => {
+    const scroller = curriculumScrollRef.current;
+    if (!scroller) return;
+
+    wheelTargetRef.current = scroller.scrollLeft;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const desktop = window.matchMedia("(min-width: 721px)");
+
+    const animateToTarget = () => {
+      const distance = wheelTargetRef.current - scroller.scrollLeft;
+      if (Math.abs(distance) < 0.5) {
+        scroller.scrollLeft = wheelTargetRef.current;
+        wheelFrameRef.current = null;
+        return;
+      }
+      scroller.scrollLeft += distance * 0.18;
+      wheelFrameRef.current = window.requestAnimationFrame(animateToTarget);
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!desktop.matches || reducedMotion.matches || event.ctrlKey) return;
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      if (maxScroll <= 0) return;
+
+      const dominantDelta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      if (dominantDelta === 0) return;
+      const normalizedDelta = event.deltaMode === WheelEvent.DOM_DELTA_LINE
+        ? dominantDelta * 36
+        : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
+          ? dominantDelta * scroller.clientWidth * 0.85
+          : dominantDelta;
+      const currentTarget = Math.max(0, Math.min(maxScroll, wheelTargetRef.current));
+      const atStart = currentTarget <= 0.5 && normalizedDelta < 0;
+      const atEnd = currentTarget >= maxScroll - 0.5 && normalizedDelta > 0;
+      if (atStart || atEnd) return;
+
+      event.preventDefault();
+      wheelTargetRef.current = Math.max(0, Math.min(maxScroll, currentTarget + normalizedDelta * 1.05));
+      if (wheelFrameRef.current === null) wheelFrameRef.current = window.requestAnimationFrame(animateToTarget);
+    };
+
+    const syncTarget = () => {
+      if (wheelFrameRef.current === null) wheelTargetRef.current = scroller.scrollLeft;
+    };
+    scroller.addEventListener("wheel", handleWheel, { passive: false });
+    scroller.addEventListener("scroll", syncTarget, { passive: true });
+    return () => {
+      scroller.removeEventListener("wheel", handleWheel);
+      scroller.removeEventListener("scroll", syncTarget);
+      if (wheelFrameRef.current !== null) window.cancelAnimationFrame(wheelFrameRef.current);
+      wheelFrameRef.current = null;
+    };
+  }, [planYear, trajectoryId]);
 
   const earnedCredits = useMemo(
     () => courses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
@@ -604,7 +723,10 @@ export default function Home() {
         <section className="curriculum-panel">
           <div className="toolbar">
             <label className="search-box">
-              <span aria-hidden="true">⌕</span>
+              <svg className="search-icon" aria-hidden="true" viewBox="0 0 20 20">
+                <circle cx="8.5" cy="8.5" r="5.25" />
+                <path d="m12.4 12.4 4.1 4.1" />
+              </svg>
               <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar materia, código o área" />
             </label>
             {planYear === "1997" ? <label className="toggle-control">
@@ -618,7 +740,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="curriculum-scroll">
+          <div className="curriculum-scroll" ref={curriculumScrollRef} tabIndex={0} aria-label="Trayectoria por semestres; desplazamiento horizontal suave con la rueda del mouse">
             <div className="semester-grid">
               {semesters.map((semester) => (
                 <section className="semester-column" key={semester}>
@@ -681,7 +803,15 @@ export default function Home() {
             <h3>{selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
             {selectedRule ? (
               selectedRows.length ? <ul className="requirements-list">
-                {selectedRows.map((row) => <li className={row.done ? "done" : "missing"} key={row.key}><span>{row.done ? "✓" : "○"}</span>{row.label}</li>)}
+                {selectedRows.map((row) => <li className={row.done ? "done" : "missing"} key={row.key}>
+                  <span>{row.done ? "✓" : "○"}</span>
+                  <div className="requirement-copy">
+                    <strong>{row.label}</strong>
+                    {row.alternatives?.length ? <ul className="requirement-alternatives">
+                      {row.alternatives.map((alternative, index) => <li key={`${row.key}-option-${index}`}>{alternative}</li>)}
+                    </ul> : null}
+                  </div>
+                </li>)}
               </ul> : <p className="free-course">Bedelías no publica condiciones adicionales para esta instancia.</p>
             ) : (selected.prerequisites?.length || selected.minCredits) ? (
               <ul className="requirements-list">

@@ -38,6 +38,7 @@ test("renderiza la malla y su procedencia institucional", async () => {
   assert.match(html, /60 cr\. flexibles dentro del grupo/);
   assert.match(html, /Sin mínimo propio/);
   assert.match(html, /áreas sugeridas en esta trayectoria/);
+  assert.match(html, /desplazamiento horizontal suave con la rueda del mouse/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 

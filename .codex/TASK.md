@@ -182,6 +182,8 @@ El índice oficial completo es <https://eva.fing.edu.uy/course/view.php?id=800&s
 - Plan 2025 es la opción predeterminada y ofrece las tres ramas oficiales: `PI <20%`, `PI 20–59%` y `PI >=60%`.
 - Malla horizontal de pre-semestre a décimo semestre en escritorio.
 - En mobile (hasta 720 px), la malla se convierte en una trayectoria vertical: los semestres y sus materias se recorren hacia abajo, sin desplazamiento horizontal; el panel de avance queda después de la malla para priorizar las materias.
+- En escritorio, la rueda controla la malla horizontal mediante una interpolación breve con `requestAnimationFrame` y snap suave por semestre. Al llegar a cualquiera de los extremos se libera el scroll vertical normal; móvil y `prefers-reduced-motion` conservan desplazamiento nativo.
+- Las condiciones de Bedelías se presentan con lenguaje normalizado y alternativas en viñetas. La transformación es únicamente visual: códigos, reglas y evaluación conservan intactos los datos oficiales extraídos.
 - Buscador por código, nombre o área.
 - Filtro de materias habilitadas en Plan 1997. En Plan 2025 se reemplaza por un indicador de cobertura de previas, porque todavía no corresponde afirmar habilitación oficial.
 - Estados visuales pendiente/aprobada/exonerada.
