@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
+import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
 
@@ -17,7 +18,39 @@ type Course = {
   placementTest?: boolean;
 };
 
-const courses: Course[] = [
+type RequirementOption = {
+  assessment: "course" | "exam" | "course-enrollment" | "exam-enrollment";
+  serviceCode: string | null;
+  code: string;
+  name: string;
+};
+
+type RequirementExpression = {
+  kind: "all" | "any" | "none" | "requirement";
+  label: string;
+  minimum: number | null;
+  options: RequirementOption[];
+  creditRequirement: { minimum: number; planYear: string; planName: string } | null;
+  children: RequirementExpression[];
+};
+
+type VerifiedRule = {
+  target: { code: string; name: string; assessment: "course" | "exam" };
+  expression: RequirementExpression;
+  heading: string;
+  sourceUrl: string;
+};
+
+type BedeliasProjection = {
+  source: { extractedAt: string; contentHash: string };
+  plan: { minCredits: number; colibriUrl: string };
+  courses: Array<{ code: string; name: string; credits: number }>;
+  rules: VerifiedRule[];
+};
+
+const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
+
+const baseCourses: Course[] = [
   { id: "PI", name: "Prueba Inicial", credits: 4, semester: 0, area: "Matemática", placementTest: true, offered: ["impar", "par"] },
   { id: "MI2", name: "Matemática Inicial", credits: 4, semester: 1, area: "Matemática", offered: ["impar", "par"] },
   { id: "1023", name: "Matemática Discreta 1", credits: 9, semester: 1, area: "Fundamentos", offered: ["impar", "par", "libre"] },
@@ -57,6 +90,59 @@ const courses: Course[] = [
   { id: "1545", name: "Criptografía", credits: 10, semester: "opt", area: "Fundamentos", elective: true, prerequisites: ["1027"], offered: ["par"] },
   { id: "1926", name: "Sistemas de Información Geográfica", credits: 8, semester: "opt", area: "Datos", elective: true, prerequisites: ["1911"], offered: ["impar"] },
 ];
+
+const verifiedCourses = new Map(bedeliasData.courses.map((course) => [course.code, course]));
+const verifiedRules = new Map(bedeliasData.rules.map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
+const courses: Course[] = baseCourses.map((course) => {
+  const official = verifiedCourses.get(course.id);
+  return official ? { ...course, credits: official.credits } : course;
+});
+const courseIds = new Set(courses.map((course) => course.id));
+
+function optionSatisfied(option: RequirementOption, statuses: Record<string, CourseStatus>) {
+  const status = statuses[option.code] ?? "pending";
+  const placementTestSubstitution = option.code === "MI2" && statuses.PI === "exonerated";
+  if (option.assessment === "course") return placementTestSubstitution || status === "approved" || status === "exonerated";
+  if (option.assessment === "exam") return placementTestSubstitution || status === "exonerated";
+  return false;
+}
+
+function expressionSatisfied(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number): boolean {
+  if (expression.kind === "all") return expression.children.every((child) => expressionSatisfied(child, statuses, earnedCredits));
+  if (expression.kind === "any") return expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits));
+  if (expression.kind === "none") return !expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits));
+  if (expression.creditRequirement) return earnedCredits >= expression.creditRequirement.minimum;
+  const required = expression.minimum ?? 1;
+  return expression.options.filter((option) => optionSatisfied(option, statuses)).length >= required;
+}
+
+function describeOption(option: RequirementOption) {
+  const course = courses.find((item) => item.id === option.code);
+  const name = course?.name ?? option.name;
+  const evidence = option.assessment === "exam" ? "examen aprobado"
+    : option.assessment === "course" ? "curso aprobado"
+      : option.assessment === "exam-enrollment" ? "inscripción a examen"
+        : "inscripción a curso";
+  return `${name} · ${evidence}`;
+}
+
+function describeExpression(expression: RequirementExpression): string {
+  if (expression.creditRequirement) return `${expression.creditRequirement.minimum} créditos acumulados en el plan`;
+  if (expression.kind === "none") {
+    const options = expression.children.flatMap((child) => child.options).slice(0, 3);
+    return options.length ? `No tener: ${options.map(describeOption).join(" o ")}` : "No cumplir una condición excluyente";
+  }
+  if (expression.kind === "all") return expression.children.map(describeExpression).filter(Boolean).join(" y ");
+  if (expression.kind === "any") return expression.children.map(describeExpression).filter(Boolean).join(" o ");
+  const localOptions = expression.options.filter((option) => courseIds.has(option.code));
+  const displayOptions = localOptions.length ? localOptions : expression.options.slice(0, 3);
+  return displayOptions.length ? displayOptions.map(describeOption).join(" o ") : expression.label;
+}
+
+function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, prefix = "r"): Array<{ key: string; label: string; done: boolean }> {
+  if (expression.kind === "all") return expression.children.flatMap((child, index) => requirementRows(child, statuses, earnedCredits, `${prefix}-${index}`));
+  return [{ key: prefix, label: describeExpression(expression), done: expressionSatisfied(expression, statuses, earnedCredits) }];
+}
 
 const areaTargets = [
   { name: "Matemática", target: 60 },
@@ -109,8 +195,21 @@ export default function Home() {
   const isRequirementComplete = (id: string) => id === "MI2"
     ? isComplete("MI2") || statuses.PI === "exonerated"
     : isComplete(id);
-  const isUnlocked = (course: Course) =>
-    (course.prerequisites ?? []).every(isRequirementComplete) && (!course.minCredits || earnedCredits >= course.minCredits);
+  const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.id}:${assessment}`);
+  const isCourseUnlocked = (course: Course) => {
+    if (course.placementTest) return true;
+    const rule = officialRule(course, "course");
+    if (rule) return expressionSatisfied(rule.expression, statuses, earnedCredits);
+    return (course.prerequisites ?? []).every(isRequirementComplete) && (!course.minCredits || earnedCredits >= course.minCredits);
+  };
+  const isExamUnlocked = (course: Course) => {
+    const rule = officialRule(course, "exam");
+    return rule ? expressionSatisfied(rule.expression, statuses, earnedCredits) : true;
+  };
+  const isUnlocked = (course: Course) => {
+    const status = statuses[course.id] ?? "pending";
+    return status === "pending" ? isCourseUnlocked(course) : status === "approved" ? isExamUnlocked(course) : true;
+  };
 
   const cycleStatus = (course: Course) => {
     if (!isUnlocked(course)) return;
@@ -171,6 +270,11 @@ export default function Home() {
     if (window.confirm("¿Querés borrar todo el progreso guardado en este dispositivo?")) setStatuses({});
   };
 
+  const selectedStatus = selected ? statuses[selected.id] ?? "pending" : "pending";
+  const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
+  const selectedRule = selected ? officialRule(selected, selectedAssessment) : undefined;
+  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits) : [];
+
   return (
     <main className="app-shell">
       <header className="topbar">
@@ -214,7 +318,7 @@ export default function Home() {
               </select>
             </label>
           </div>
-          <p className="pilot-note"><span /> Semestres transcritos de la trayectoria compartida (dedicación total). Las previas del piloto son una simulación no validada y no deben usarse para planificar inscripciones.</p>
+          <p className="pilot-note"><span /> Semestres de la trayectoria sugerida compartida. Créditos y reglas de 29 materias importados de Bedelías el 08/08/2026; metas por área aún en revisión.</p>
         </div>
 
         <div className="credit-summary">
@@ -302,7 +406,7 @@ export default function Home() {
                   <div className="course-stack">
                     {semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
                     {filtered(semester).map((course) => (
-                      <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                      <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} verified={verifiedCourses.has(course.id)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}
                     {filtered(semester).length === 0 && <p className="empty-column">Sin resultados</p>}
                   </div>
@@ -319,7 +423,7 @@ export default function Home() {
             {showElectives && (
               <div className="electives-grid">
                 {filtered("opt").map((course) => (
-                  <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                  <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} verified={verifiedCourses.has(course.id)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
             )}
@@ -339,8 +443,13 @@ export default function Home() {
             <p className="eyebrow">{selected.id} · {selected.area}</p>
             <h2>{selected.name}</h2>
             <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
-            <h3>Condiciones para cursar</h3>
-            {(selected.prerequisites?.length || selected.minCredits) ? (
+            {verifiedCourses.has(selected.id) && <p className="verified-source"><span>✓</span> Datos y reglas importados de <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Bedelías</a>.</p>}
+            <h3>{selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
+            {selectedRule ? (
+              selectedRows.length ? <ul className="requirements-list">
+                {selectedRows.map((row) => <li className={row.done ? "done" : "missing"} key={row.key}><span>{row.done ? "✓" : "○"}</span>{row.label}</li>)}
+              </ul> : <p className="free-course">Bedelías no publica condiciones adicionales para esta instancia.</p>
+            ) : (selected.prerequisites?.length || selected.minCredits) ? (
               <ul className="requirements-list">
                 {selected.prerequisites?.map((id) => {
                   const prerequisite = courses.find((course) => course.id === id);
@@ -348,13 +457,13 @@ export default function Home() {
                 })}
                 {selected.minCredits && <li className={earnedCredits >= selected.minCredits ? "done" : "missing"}><span>{earnedCredits >= selected.minCredits ? "✓" : "○"}</span>{selected.minCredits} créditos acumulados</li>}
               </ul>
-            ) : <p className="free-course">No tiene previas en este recorrido sugerido.</p>}
+            ) : <p className="free-course">Sin una regla importada para esta instancia; no se presenta como validación oficial.</p>}
             <h3>Se dicta</h3>
             <div className="offering-list">{selected.offered.map((item) => <span key={item}>{item}</span>)}</div>
             <button className="primary-button" disabled={!isUnlocked(selected)} onClick={() => cycleStatus(selected)}>
               {selected.placementTest
                 ? (statuses.PI === "exonerated" ? "Desmarcar Prueba Inicial" : "Acreditar Prueba Inicial")
-                : isUnlocked(selected) ? `Marcar como ${(statuses[selected.id] ?? "pending") === "pending" ? "aprobada" : (statuses[selected.id] ?? "pending") === "approved" ? "exonerada" : "pendiente"}` : "Materia aún no habilitada"}
+                : isUnlocked(selected) ? `Marcar como ${(statuses[selected.id] ?? "pending") === "pending" ? "aprobada" : (statuses[selected.id] ?? "pending") === "approved" ? "exonerada" : "pendiente"}` : selectedStatus === "approved" ? "Examen aún no habilitado" : "Materia aún no habilitada"}
             </button>
           </aside>
         </div>
@@ -363,18 +472,18 @@ export default function Home() {
   );
 }
 
-function CourseCard({ course, status, unlocked, onCycle, onDetails }: { course: Course; status: CourseStatus; unlocked: boolean; onCycle: () => void; onDetails: () => void }) {
+function CourseCard({ course, status, unlocked, verified, onCycle, onDetails }: { course: Course; status: CourseStatus; unlocked: boolean; verified: boolean; onCycle: () => void; onDetails: () => void }) {
   return (
     <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
       <div className="course-topline">
-        <span>#{course.id}</span>
+        <span>#{course.id}{verified && <i className="official-tag">Bedelías</i>}</span>
         <button onClick={onDetails} aria-label={`Ver detalles de ${course.name}`}>i</button>
       </div>
       <h3>{course.name}</h3>
       <div className="course-meta"><span>{course.area}</span><strong>{course.credits} cr.</strong></div>
       <button className="status-button" disabled={!unlocked} onClick={onCycle}>
         {!unlocked
-          ? <><span className="lock-mark">⌑</span> No habilitada</>
+          ? <><span className="lock-mark">⌑</span>{status === "approved" ? "Examen no habilitado" : "No habilitada"}</>
           : course.placementTest
             ? <><span className="status-mark">{status === "exonerated" ? "✓" : "□"}</span>{status === "exonerated" ? "Acreditada · suma 4 cr." : "Acreditar prueba"}</>
             : <><span className="status-mark">{status === "pending" ? "○" : status === "approved" ? "◐" : "●"}</span>{stateLabels[status]}</>}

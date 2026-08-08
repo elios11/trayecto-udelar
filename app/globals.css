@@ -111,6 +111,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .course-card.unlocked:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(25,46,58,.08); }
 .course-topline { display: flex; justify-content: space-between; align-items: center; }
 .course-topline > span { font-family: var(--font-geist-mono); color: var(--muted); font-size: 9px; }
+.official-tag { display: inline-flex; margin-left: 6px; padding: 2px 5px; border-radius: 99px; background: #e6f3ef; color: var(--exonerated); font-family: var(--font-geist-sans); font-size: 7px; font-style: normal; font-weight: 750; letter-spacing: .03em; }
 .course-topline button { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--muted); font-family: Georgia, serif; font-style: italic; font-size: 11px; }
 .course-topline button:hover { border-color: var(--udelar); color: var(--udelar); }
 .course-card h3 { font-size: 13px; line-height: 1.25; letter-spacing: -.015em; margin: 12px 0; min-height: 33px; }
@@ -145,6 +146,9 @@ footer a { color: white; text-decoration: none; white-space: nowrap; }
 .drawer-stats > div { flex: 1; padding: 15px; border: 1px solid var(--line); border-radius: 10px; display: grid; gap: 4px; }
 .drawer-stats span { font-size: 10px; color: var(--muted); }
 .drawer-stats strong { font-size: 16px; }
+.verified-source { margin: 14px 0 0; padding: 10px 12px; border: 1px solid #cce4dc; border-radius: 8px; background: #f2faf7; color: #315f55; font-size: 11px; }
+.verified-source > span { color: var(--exonerated); font-weight: 800; margin-right: 5px; }
+.verified-source a { color: var(--udelar); font-weight: 750; }
 .requirements-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .requirements-list li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--paper); border-radius: 8px; font-size: 12px; }
 .requirements-list li.done { color: var(--exonerated); }
