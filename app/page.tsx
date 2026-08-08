@@ -95,7 +95,7 @@ export default function Home() {
   }, [statuses, hydrated]);
 
   const earnedCredits = useMemo(
-    () => courses.reduce((sum, course) => statuses[course.id] && statuses[course.id] !== "pending" ? sum + course.credits : sum, 0),
+    () => courses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
     [statuses],
   );
 
@@ -119,7 +119,7 @@ export default function Home() {
   });
 
   const areaCredits = (area: string) => courses.reduce(
-    (sum, course) => course.area === area && isComplete(course.id) ? sum + course.credits : sum,
+    (sum, course) => course.area === area && statuses[course.id] === "exonerated" ? sum + course.credits : sum,
     0,
   );
 
@@ -262,8 +262,8 @@ export default function Home() {
             </label>
             <div className="legend" aria-label="Estados de las materias">
               <span><i className="dot pending" /> Pendiente</span>
-              <span><i className="dot approved" /> Aprobada</span>
-              <span><i className="dot exonerated" /> Exonerada</span>
+              <span title="Curso aprobado; todavía no suma créditos"><i className="dot approved" /> Aprobada · sin créditos</span>
+              <span title="Unidad curricular completada; suma créditos"><i className="dot exonerated" /> Exonerada · suma créditos</span>
             </div>
           </div>
 
