@@ -221,7 +221,7 @@ class BedeliasBrowser {
         const content = li.querySelector(":scope > .ui-treenode-content");
         const label = clean(content?.querySelector(":scope > .ui-treenode-label")?.textContent);
         const nodeType = li.getAttribute("data-nodetype") ?? "unknown";
-        const groupMatch = label.match(/^(\d+)\s+-\s+(.*?)\s+-\s+min:\s*(\d+)\s+cr[eé]ditos$/i);
+        const groupMatch = label.match(/^([A-Z0-9]+(?:\.[A-Z0-9]+)*)\s+-\s+(.*?)\s+-\s+min:\s*(\d+)\s+cr[eé]ditos$/i);
         const courseSpan = content?.querySelector('span[title*="Cr"]');
         const node = {
           sourceKey: li.getAttribute("data-rowkey"),

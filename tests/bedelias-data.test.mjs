@@ -26,6 +26,7 @@ function satisfies(node, statuses, credits = 0) {
 }
 
 test("la proyección conserva procedencia institucional", () => {
+  assert.equal(data.schemaVersion, 2);
   assert.equal(data.source.system, "SGAE Bedelías");
   assert.equal(data.plan.serviceCode, "FING");
   assert.equal(data.plan.year, "1997");
@@ -33,10 +34,41 @@ test("la proyección conserva procedencia institucional", () => {
   assert.match(data.source.contentHash, /^[a-f0-9]{64}$/);
 });
 
-test("todos los cursos de la aplicación tienen regla oficial para cursar", () => {
-  for (const course of data.courses) {
-    assert.ok(data.rules.some((rule) => rule.target.code === course.code && rule.target.assessment === "course"), course.code);
+test("todas las materias del núcleo de la trayectoria tienen regla oficial para cursar", () => {
+  const coreCodes = ["MI2", "1023", "1373", "1061", "1151", "1030", "1321", "1062", "1031", "1027", "1026", "1466", "1323", "1025", "1033", "1537", "1324", "1325", "1944", "1911", "1327", "1446", "1945", "1650", "1783", "1340", "1721", "1224", "1225"];
+  for (const code of coreCodes) {
+    assert.ok(data.rules.some((rule) => rule.target.code === code && rule.target.assessment === "course"), code);
   }
+});
+
+test("el Plan 1997 usa la jerarquía y las áreas oficiales de Bedelías", () => {
+  assert.deepEqual(data.sourceCoverage, { officialProgram: 2, officialBedelias: 34, suggested: 0, conflicts: 0, missing: 0 });
+  const targets = new Map(data.creditStructure.nodes.map((node) => [node.id, node.minCredits]));
+  assert.equal(targets.get("p1997-basic"), 80);
+  assert.equal(targets.get("p1997-math"), 70);
+  assert.equal(targets.get("p1997-science"), 10);
+  assert.equal(targets.get("p1997-tech"), 220);
+  assert.equal(targets.get("p1997-integrating"), 45);
+  assert.equal(targets.get("p1997-complementary"), 10);
+
+  const allocation = (code) => data.courses.find((course) => course.code === code).creditAllocations[0];
+  assert.equal(allocation("1023").nodeId, "p1997-math", "Discreta 1 aporta a Matemática");
+  assert.equal(allocation("1027").nodeId, "p1997-math", "Lógica aporta a Matemática");
+  assert.equal(allocation("1151").nodeId, "p1997-science", "Física aporta a Ciencias Experimentales");
+  assert.equal(allocation("1373").sourceUrl, "https://www.fing.edu.uy/sites/default/files/2022-09/Programacion%201.pdf");
+});
+
+test("el título de Analista 1997 conserva sus mínimos específicos", () => {
+  const credential = data.creditStructure.credentials.find((item) => item.id === "analyst");
+  assert.equal(credential.minTotalCredits, 270);
+  assert.deepEqual(Object.fromEntries(credential.nodeRequirements.map((item) => [item.nodeId, item.minCredits])), {
+    "p1997-basic": 80,
+    "p1997-programming": 60,
+    "p1997-systems": 30,
+    "p1997-management": 10,
+    "p1997-data": 10,
+    "p1997-integrating": 15,
+  });
 });
 
 test("Arquitectura 1466 no se reduce a Programación 1", () => {

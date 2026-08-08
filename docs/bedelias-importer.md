@@ -39,3 +39,49 @@ Cada conjunto contiene:
 - incidencias automáticas y hash reproducible.
 
 El JSON extraído es un insumo, no una publicación automática. Para habilitar una carrera en la aplicación debe pasar validaciones estructurales y una comparación manual inicial con Bedelías.
+
+## Áreas de formación y programas oficiales
+
+Las previaturas y la composición operativa se contrastan con Bedelías, pero la asignación de créditos por área usa la fuente más específica disponible para cada carrera y plan:
+
+1. Anexo B del programa oficial de la unidad curricular.
+2. Resolución de la Comisión de Carrera o del Consejo.
+3. Composición curricular de Bedelías.
+4. Plan de estudios y documentos de implementación.
+5. Trayectoria sugerida oficial.
+6. Asignación curada marcada como `suggested`.
+
+La Comisión Académica de Grado de Fing exige que el Anexo B aclare en qué área suma créditos la UC para cada plan. Una clasificación del Plan 1997 no se traslada automáticamente al Plan 2025.
+
+El catálogo inicial está en `data/fing/computacion-programas-oficiales.json`. Cada programa registra código, plan aplicable, área, URL y estado. Los generadores combinan este catálogo con las rutas curriculares del snapshot y producen proyecciones `schemaVersion: 2` con:
+
+- `creditStructure.nodes`: árbol de grupos y áreas;
+- `creditStructure.credentials`: requisitos por título;
+- `eligibleRequirementIds`: áreas oficialmente posibles;
+- `creditAllocations`: asignación efectiva, créditos, estado y fuente;
+- `sourceCoverage`: cobertura por programas, Bedelías, sugerencias, conflictos y faltantes.
+
+En modo `allocated`, usado actualmente por Computación, una materia nunca puede aportar más créditos que su valor total. Los grupos acumulan contribuciones directas y de sus descendientes sin duplicarlas.
+
+## Áreas de formación y programas oficiales
+
+Las previaturas y la composición operativa se contrastan con Bedelías, pero la asignación de créditos por área usa la fuente más específica disponible para cada carrera y plan:
+
+1. Anexo B del programa oficial de la unidad curricular.
+2. Resolución de la Comisión de Carrera o del Consejo.
+3. Composición curricular de Bedelías.
+4. Plan de estudios y documentos de implementación.
+5. Trayectoria sugerida oficial.
+6. Asignación curada marcada como `suggested`.
+
+La Comisión Académica de Grado de Fing exige que el Anexo B aclare en qué área suma créditos la UC para cada plan. Una clasificación del Plan 1997 no se traslada automáticamente al Plan 2025.
+
+El catálogo inicial está en `data/fing/computacion-programas-oficiales.json`. Cada programa registra código, plan aplicable, área, URL y estado. Los generadores combinan este catálogo con las rutas curriculares del snapshot y producen proyecciones `schemaVersion: 2` con:
+
+- `creditStructure.nodes`: árbol de grupos y áreas;
+- `creditStructure.credentials`: requisitos por título;
+- `eligibleRequirementIds`: áreas oficialmente posibles;
+- `creditAllocations`: asignación efectiva, créditos, estado y fuente;
+- `sourceCoverage`: cobertura por programas, Bedelías, sugerencias, conflictos y faltantes.
+
+En modo `allocated`, usado actualmente por Computación, una materia nunca puede aportar más créditos que su valor total. Los grupos acumulan contribuciones directas y de sus descendientes sin duplicarlas.

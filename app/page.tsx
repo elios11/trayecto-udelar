@@ -5,13 +5,50 @@ import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
+type CredentialId = "analyst" | "engineer";
+type AllocationStatus = "official" | "suggested" | "conflict";
+
+type CreditAllocation = {
+  nodeId: string;
+  credits: number;
+  status: AllocationStatus;
+  sourceUrl: string;
+};
+
+type RequirementNode = {
+  id: string;
+  parentId: string | null;
+  kind: "group" | "area" | "cycle" | "module" | "category" | "activity";
+  name: string;
+  shortName?: string;
+  minCredits: number;
+  sourceStatus: "official" | "partial" | "suggested";
+  sourceUrl: string;
+};
+
+type Credential = {
+  id: CredentialId;
+  title: string;
+  minTotalCredits: number;
+  nodeRequirements: Array<{ nodeId: string; minCredits: number; maxCredits?: number }>;
+  requiredActivities: Array<{ id: string; label: string; minCredits: number; courseIds: string[]; representationStatus: "modeled" | "not-modeled"; sourceUrl: string }>;
+  sourceUrl: string;
+};
+
+type CreditStructure = {
+  countingMode: "allocated" | "independent";
+  nodes: RequirementNode[];
+  credentials: Credential[];
+};
 
 type Course = {
   id: string;
   name: string;
   credits: number;
   semester: number | "opt";
-  area: string;
+  area?: string;
+  eligibleRequirementIds?: string[];
+  creditAllocations?: CreditAllocation[];
   prerequisites?: string[];
   minCredits?: number;
   offered: Array<"impar" | "par" | "libre">;
@@ -45,17 +82,22 @@ type VerifiedRule = {
 };
 
 type BedeliasProjection = {
+  schemaVersion: number;
   source: { extractedAt: string; contentHash: string };
   plan: { minCredits: number; colibriUrl: string };
-  courses: Array<{ code: string; name: string; credits: number }>;
+  creditStructure: CreditStructure;
+  programSources: Array<{ courseCode: string; courseName: string; area: string; url: string }>;
+  courses: Array<{ code: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[] }>;
   rules: VerifiedRule[];
 };
 
 type Plan2025Projection = {
+  schemaVersion: number;
   source: { reviewedAt: string; curriculumPage: string; bedeliasExtractedAt: string };
   plan: { minCredits: number; intermediateCredits: number; intermediateTitle: string; degreeTitle: string; notice: string; bedeliasCompositionCourses: number; publishedRules: number };
-  areaTargets: Array<{ id: string; name: string; target: number }>;
-  courses: Array<{ id: string; name: string; credits: number; area: string; placementTest?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" | "project-assumption" }>;
+  creditStructure: CreditStructure;
+  programSources: Array<{ courseCode: string; courseName: string; area: string; url: string }>;
+  courses: Array<{ id: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; placementTest?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" | "project-assumption" }>;
   trajectories: Record<string, { label: string; description: string; notice?: string; preSemester?: string[]; semesters: string[][] }>;
   rules: VerifiedRule[];
 };
@@ -65,7 +107,7 @@ const plan2025Data = plan2025DataJson as unknown as Plan2025Projection;
 const plan1997PlacementTestSource = "https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf";
 
 const plan1997BaseCourses: Course[] = [
-  { id: "PI", name: "Prueba Inicial", credits: 4, semester: 0, area: "Matemática", placementTest: true, offered: ["impar", "par"] },
+  { id: "PI", name: "Prueba Inicial", credits: 4, semester: 0, area: "Matemática", creditAllocations: [], placementTest: true, offered: ["impar", "par"] },
   { id: "MI2", name: "Matemática Inicial", credits: 4, semester: 1, area: "Matemática", offered: ["impar", "par"] },
   { id: "1023", name: "Matemática Discreta 1", credits: 9, semester: 1, area: "Fundamentos", offered: ["impar", "par", "libre"] },
   { id: "1373", name: "Programación 1", credits: 10, semester: 1, area: "Programación", offered: ["impar", "par"] },
@@ -107,8 +149,24 @@ const plan1997BaseCourses: Course[] = [
 
 const plan1997VerifiedCourses = new Map(bedeliasData.courses.map((course) => [course.code, course]));
 const plan1997Courses: Course[] = plan1997BaseCourses.map((course) => {
-  const official = plan1997VerifiedCourses.get(course.id);
-  return official ? { ...course, credits: official.credits } : course;
+  const lookupId = course.id === "1730-A" || course.id === "1730-B" ? "1730" : course.id;
+  const official = plan1997VerifiedCourses.get(lookupId);
+  if (official) {
+    return {
+      ...course,
+      credits: course.id.startsWith("1730-") ? 15 : official.credits,
+      eligibleRequirementIds: official.eligibleRequirementIds,
+      creditAllocations: official.creditAllocations.map((allocation) => ({ ...allocation, credits: course.id.startsWith("1730-") ? 15 : allocation.credits })),
+    };
+  }
+  if (course.id === "PI") {
+    return {
+      ...course,
+      eligibleRequirementIds: [],
+      creditAllocations: [{ nodeId: "p1997-math", credits: 4, status: "suggested", sourceUrl: plan1997PlacementTestSource }],
+    };
+  }
+  return course;
 });
 
 function buildPlan2025Courses(trajectoryId: string): Course[] {
@@ -171,17 +229,6 @@ function requirementRows(expression: RequirementExpression, statuses: Record<str
   return [{ key: prefix, label: describeExpression(expression, courses, courseIds), done: expressionSatisfied(expression, statuses, earnedCredits) }];
 }
 
-const plan1997AreaTargets = [
-  { name: "Matemática", target: 60 },
-  { name: "Fundamentos", target: 60 },
-  { name: "Programación", target: 70 },
-  { name: "Sistemas", target: 50 },
-  { name: "Software", target: 20 },
-  { name: "Datos", target: 15 },
-  { name: "Integradora", target: 30 },
-  { name: "Gestión", target: 15 },
-];
-
 const stateLabels: Record<CourseStatus, string> = {
   pending: "Pendiente",
   approved: "Aprobada",
@@ -197,6 +244,7 @@ export default function Home() {
   const [planYear, setPlanYear] = useState<PlanId>("2025");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
   const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {} });
+  const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
   const [selected, setSelected] = useState<Course | null>(null);
   const [search, setSearch] = useState("");
   const [availableOnly, setAvailableOnly] = useState(false);
@@ -226,9 +274,11 @@ export default function Home() {
     () => new Map((planYear === "2025" ? plan2025Data.rules : bedeliasData.rules).map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule])),
     [planYear],
   );
-  const areaTargets = planYear === "2025"
-    ? plan2025Data.areaTargets.map((area) => ({ name: area.id, label: area.name, target: area.target }))
-    : plan1997AreaTargets.map((area) => ({ ...area, label: area.name }));
+  const creditStructure = planYear === "2025" ? plan2025Data.creditStructure : bedeliasData.creditStructure;
+  const requirementNodes = creditStructure.nodes;
+  const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
+  const credential = creditStructure.credentials.find((item) => item.id === credentialId) ?? creditStructure.credentials[0];
+  const credentialTargets = useMemo(() => new Map(credential.nodeRequirements.map((item) => [item.nodeId, item])), [credential]);
   const semesters = planYear === "2025"
     ? [
       ...(plan2025Data.trajectories[trajectoryId].preSemester?.length ? [0] : []),
@@ -236,8 +286,8 @@ export default function Home() {
     ]
     : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const planMinCredits = planYear === "2025" ? plan2025Data.plan.minCredits : bedeliasData.plan.minCredits;
-  const intermediateCredits = planYear === "2025" ? plan2025Data.plan.intermediateCredits : 270;
-  const intermediateTitle = planYear === "2025" ? plan2025Data.plan.intermediateTitle : "Analista en Computación";
+  const analystCredential = creditStructure.credentials.find((item) => item.id === "analyst")!;
+  const engineerCredential = creditStructure.credentials.find((item) => item.id === "engineer")!;
 
   const setStatuses = (updater: Record<string, CourseStatus> | ((current: Record<string, CourseStatus>) => Record<string, CourseStatus>)) => {
     setProgress((current) => {
@@ -269,6 +319,39 @@ export default function Home() {
     () => courses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
     [courses, statuses],
   );
+
+  const allocationBelongsTo = (allocationNodeId: string, targetNodeId: string) => {
+    let current = nodeById.get(allocationNodeId);
+    while (current) {
+      if (current.id === targetNodeId) return true;
+      current = current.parentId ? nodeById.get(current.parentId) : undefined;
+    }
+    return false;
+  };
+  const nodeCredits = (nodeId: string) => courses.reduce((total, course) => {
+    if (statuses[course.id] !== "exonerated") return total;
+    const contribution = (course.creditAllocations ?? [])
+      .filter((allocation) => allocationBelongsTo(allocation.nodeId, nodeId))
+      .reduce((sum, allocation) => sum + allocation.credits, 0);
+    return total + Math.min(course.credits, contribution);
+  }, 0);
+  const courseAreaLabel = (course: Course) => {
+    const allocation = course.creditAllocations?.[0];
+    return allocation ? (nodeById.get(allocation.nodeId)?.shortName ?? nodeById.get(allocation.nodeId)?.name ?? "Área sin nombre") : "Área pendiente";
+  };
+  const courseAllocationStatus = (course: Course): AllocationStatus | undefined => course.creditAllocations?.[0]?.status;
+  const hasCredentialRequirement = (nodeId: string) => credentialTargets.has(nodeId)
+    || requirementNodes.some((node) => node.parentId === nodeId && hasCredentialRequirement(node.id));
+  const rootRequirementNodes = requirementNodes.filter((node) => node.parentId === null && hasCredentialRequirement(node.id));
+  const suggestedAllocationCount = courses.filter((course) => courseAllocationStatus(course) === "suggested").length;
+  const activityProgress = (activity: Credential["requiredActivities"][number]) => activity.courseIds.reduce((sum, id) => {
+    const course = courses.find((item) => item.id === id);
+    return sum + (course && statuses[id] === "exonerated" ? course.credits : 0);
+  }, 0);
+  const countableNodeRequirements = credential.nodeRequirements.filter((requirement) => requirement.minCredits > 0);
+  const credentialRequirementsMet = countableNodeRequirements.filter((requirement) => nodeCredits(requirement.nodeId) >= requirement.minCredits).length
+    + credential.requiredActivities.filter((activity) => activityProgress(activity) >= activity.minCredits).length;
+  const credentialRequirementsTotal = countableNodeRequirements.length + credential.requiredActivities.length;
 
   const isComplete = (id: string) => statuses[id] === "approved" || statuses[id] === "exonerated";
   const isFixedPlacementTest = (course: Course) => planYear === "2025" && trajectoryId === "pi-60-plus" && course.id === "PI";
@@ -310,15 +393,10 @@ export default function Home() {
 
   const filtered = (semester: Course["semester"]) => courses.filter((course) => {
     const matchesSemester = course.semester === semester;
-    const matchesSearch = `${course.id} ${course.name} ${course.area}`.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLowerCase().includes(search.toLowerCase());
     const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
     return matchesSemester && matchesSearch && !isReplacedByPlacementTest && (!availableOnly || isUnlocked(course));
   });
-
-  const areaCredits = (area: string) => courses.reduce(
-    (sum, course) => course.area === area && statuses[course.id] === "exonerated" ? sum + course.credits : sum,
-    0,
-  );
 
   const exportProgress = () => {
     const blob = new Blob([JSON.stringify({ career: `ingenieria-computacion-${planYear}`, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
@@ -353,6 +431,7 @@ export default function Home() {
   const selectedStatus = selected ? statuses[selected.id] ?? "pending" : "pending";
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
   const selectedRule = selected ? officialRule(selected, selectedAssessment) : undefined;
+  const selectedAllocation = selected?.creditAllocations?.[0];
   const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, courses, courseIds) : [];
   const selectedDependents = selected ? courses.filter((course) => {
     if (course.id === selected.id) return false;
@@ -451,40 +530,75 @@ export default function Home() {
             <button className="icon-button" aria-label="Reiniciar progreso" onClick={resetProgress}>↺</button>
           </div>
 
-          <div className="degree-card analyst">
+          <div className={`degree-card analyst ${credentialId === "analyst" ? "selected-degree" : ""}`}>
             <div>
               <span>Título intermedio</span>
-              <h3>{intermediateTitle}</h3>
+              <h3>{analystCredential.title}</h3>
             </div>
-            <strong>{Math.min(earnedCredits, intermediateCredits)}<small>/{intermediateCredits}</small></strong>
-            <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / intermediateCredits * 100, 100)}%` }} /></div>
+            <strong>{Math.min(earnedCredits, analystCredential.minTotalCredits)}<small>/{analystCredential.minTotalCredits}</small></strong>
+            <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / analystCredential.minTotalCredits * 100, 100)}%` }} /></div>
           </div>
 
-          <div className="degree-card engineer">
+          <div className={`degree-card engineer ${credentialId === "engineer" ? "selected-degree" : ""}`}>
             <div>
               <span>Título de grado</span>
-              <h3>Ingeniero/a en Computación</h3>
+              <h3>{engineerCredential.title}</h3>
             </div>
             <strong>{earnedCredits}<small>/{planMinCredits}</small></strong>
             <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / planMinCredits * 100, 100)}%` }} /></div>
           </div>
 
-          <div className="area-heading">
-            <h3>Créditos por área</h3>
-            <span>{planYear === "2025" ? "Plan oficial" : "Metas demo"}</span>
+          <div className="requirement-heading">
+            <div>
+              <h3>Metas de créditos</h3>
+              <span>Por título y área</span>
+            </div>
+            <div className="credential-switch" role="group" aria-label="Título para las metas detalladas">
+              <button className={credentialId === "analyst" ? "active" : ""} onClick={() => setCredentialId("analyst")}>Analista</button>
+              <button className={credentialId === "engineer" ? "active" : ""} onClick={() => setCredentialId("engineer")}>Ingeniería</button>
+            </div>
           </div>
-          <div className="area-list">
-            {areaTargets.map((area) => {
-              const current = areaCredits(area.name);
+          <div className="requirements-overview">
+            <span>{credential.title}</span>
+            <strong>{credentialRequirementsMet}/{credentialRequirementsTotal} requisitos</strong>
+            {suggestedAllocationCount > 0 && <small>{suggestedAllocationCount} áreas sugeridas en esta trayectoria</small>}
+          </div>
+          <div className="requirements-tree">
+            {rootRequirementNodes.map((root) => {
+              const rootTarget = credentialTargets.get(root.id)?.minCredits;
+              const current = nodeCredits(root.id);
+              const children = requirementNodes.filter((node) => node.parentId === root.id && credentialTargets.has(node.id));
+              const childMinimum = children.reduce((sum, child) => sum + (credentialTargets.get(child.id)?.minCredits ?? 0), 0);
+              const flexibleMinimum = rootTarget === undefined ? 0 : Math.max(0, rootTarget - childMinimum);
               return (
-                <div className="area-row" key={area.name}>
-                  <div><span>{area.label}</span><strong>{current}/{area.target}</strong></div>
-                  <div className="area-track"><i style={{ width: `${Math.min(current / area.target * 100, 100)}%` }} /></div>
-                </div>
+                <details className="requirement-group" key={root.id} open>
+                  <summary>
+                    <span><b>{root.shortName ?? root.name}</b><small>{rootTarget === undefined ? "Agrupa las áreas exigidas" : rootTarget === 0 ? "Sin mínimo propio" : `${current} de ${rootTarget} cr.`}</small></span>
+                    {rootTarget !== undefined && rootTarget > 0 && <strong className={current >= rootTarget ? "met" : ""}>{current}/{rootTarget}</strong>}
+                  </summary>
+                  {rootTarget !== undefined && rootTarget > 0 && <div className="area-track group-track"><i style={{ width: `${Math.min(current / rootTarget * 100, 100)}%` }} /></div>}
+                  <div className="requirement-children">
+                    {children.map((node) => {
+                      const target = credentialTargets.get(node.id)!.minCredits;
+                      const nodeCurrent = nodeCredits(node.id);
+                      return (
+                        <div className="requirement-leaf" key={node.id}>
+                          <div><span>{node.name}</span>{target === 0 ? <strong>Sin mínimo propio</strong> : <strong className={nodeCurrent >= target ? "met" : ""}>{nodeCurrent}/{target}</strong>}</div>
+                          {target > 0 && <div className="area-track"><i style={{ width: `${Math.min(nodeCurrent / target * 100, 100)}%` }} /></div>}
+                        </div>
+                      );
+                    })}
+                    {flexibleMinimum > 0 && <p className="flexible-credits">{childMinimum > 0 ? `Además de los mínimos por área, faltan ${flexibleMinimum} cr. flexibles dentro del grupo.` : `El título exige ${flexibleMinimum} cr. flexibles dentro de este grupo.`}</p>}
+                  </div>
+                </details>
               );
             })}
+            {credential.requiredActivities.map((activity) => {
+              const current = activityProgress(activity);
+              return <div className="required-activity" key={activity.id}><span><b>{activity.label}</b><small>{activity.representationStatus === "not-modeled" ? "Aún sin ubicación completa en la trayectoria" : "Actividad obligatoria"}</small></span><strong className={current >= activity.minCredits ? "met" : ""}>{current}/{activity.minCredits}</strong></div>;
+            })}
           </div>
-          <p className="data-source">{planYear === "2025" ? "Los mínimos por área provienen del Plan 2025. La suma total también requiere perfil, optativas, formación complementaria y proyecto final." : "Progreso guardado únicamente en este navegador."}</p>
+          <p className="data-source">Las metas provienen del plan y de la composición oficial. Las asignaciones sugeridas cuentan normalmente y quedan identificadas en cada materia.</p>
         </aside>
 
         <section className="curriculum-panel">
@@ -515,7 +629,7 @@ export default function Home() {
                   <div className="course-stack">
                     {planYear === "1997" && semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
                     {filtered(semester).map((course) => (
-                      <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                      <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}
                     {filtered(semester).length === 0 && <p className="empty-column">Sin resultados</p>}
                   </div>
@@ -532,7 +646,7 @@ export default function Home() {
             {showElectives && (
               <div className="electives-grid">
                 {filtered("opt").map((course) => (
-                  <CourseCard key={course.id} course={course} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                  <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
             )}
@@ -554,9 +668,12 @@ export default function Home() {
         <div className="drawer-backdrop" onClick={() => setSelected(null)}>
           <aside className="details-drawer" onClick={(event) => event.stopPropagation()} aria-label={`Detalles de ${selected.name}`}>
             <button className="drawer-close" onClick={() => setSelected(null)} aria-label="Cerrar detalles">×</button>
-            <p className="eyebrow">{selected.id} · {selected.area}</p>
+            <p className="eyebrow">{selected.id} · {courseAreaLabel(selected)}</p>
             <h2>{selected.name}</h2>
             <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
+            {selectedAllocation?.status === "suggested" ? <p className="allocation-source suggested-allocation"><span>≈</span> Cuenta en <strong>{courseAreaLabel(selected)}</strong> mediante una asignación sugerida. Los créditos se computan normalmente, pero todavía falta un Anexo B o resolución específica para este plan.</p>
+              : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
+                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong>. <a href={selectedAllocation.sourceUrl} target="_blank" rel="noreferrer">Ver fuente ↗</a></p>}
             {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Bedelías</a>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
@@ -593,7 +710,7 @@ export default function Home() {
   );
 }
 
-function CourseCard({ course, status, unlocked, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; status: CourseStatus; unlocked: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING"; onCycle: () => void; onDetails: () => void }) {
+function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING"; onCycle: () => void; onDetails: () => void }) {
   return (
     <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
       <div className="course-topline">
@@ -601,7 +718,7 @@ function CourseCard({ course, status, unlocked, fixed = false, sourceLabel, onCy
         <button onClick={onDetails} aria-label={`Ver detalles de ${course.name}`}>i</button>
       </div>
       <h3>{course.name}</h3>
-      <div className="course-meta"><span>{course.area}</span><strong>{course.credits} cr.</strong></div>
+      <div className="course-meta"><span>{areaLabel}{allocationStatus === "suggested" && <i className="suggested-badge">sugerida</i>}</span><strong>{course.credits} cr.</strong></div>
       <button className="status-button" disabled={!unlocked || fixed} onClick={onCycle}>
         {fixed
           ? <><span className="status-mark">✓</span>Acreditada por trayectoria · 4 cr.</>

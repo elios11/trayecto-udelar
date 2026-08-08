@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "source": {
     "system": "SGAE Bedelías",
     "extractedAt": "2026-08-08T07:32:49.153Z",
@@ -15,151 +15,898 @@
     "minCredits": 450,
     "colibriUrl": "https://hdl.handle.net/20.500.12008/43879"
   },
+  "creditStructure": {
+    "countingMode": "allocated",
+    "nodes": [
+      {
+        "id": "p1997-basic",
+        "parentId": null,
+        "kind": "group",
+        "name": "Materias básicas",
+        "shortName": "Formación básica",
+        "minCredits": 80,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-math",
+        "parentId": "p1997-basic",
+        "kind": "area",
+        "name": "Matemática",
+        "shortName": "Matemática",
+        "minCredits": 70,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-science",
+        "parentId": "p1997-basic",
+        "kind": "area",
+        "name": "Ciencias Experimentales",
+        "shortName": "Ciencias experimentales",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-tech",
+        "parentId": null,
+        "kind": "group",
+        "name": "Básico-tecnológicas, técnicas e integradoras",
+        "shortName": "Formación tecnológica",
+        "minCredits": 220,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-programming",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Programación",
+        "shortName": "Programación",
+        "minCredits": 60,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-systems",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Arquitectura, Sistemas Operativos y Redes",
+        "shortName": "Arquitectura, SO y redes",
+        "minCredits": 30,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-ai",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Inteligencia Artificial y Robótica",
+        "shortName": "IA y robótica",
+        "minCredits": 0,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-data",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Bases de Datos y Sistemas de Información",
+        "shortName": "Bases de datos y SI",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-numerical",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Cálculo Numérico y Simbólico",
+        "shortName": "Cálculo numérico",
+        "minCredits": 8,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-software",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Ingeniería de Software",
+        "shortName": "Ing. de software",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-integrating",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Actividades Integradoras, Talleres, Pasantías y Proyectos",
+        "shortName": "Act. integradoras",
+        "minCredits": 45,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-operations",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Investigación de Operaciones",
+        "shortName": "Investigación operativa",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-management",
+        "parentId": "p1997-tech",
+        "kind": "area",
+        "name": "Gestión en Organizaciones",
+        "shortName": "Gestión",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-complementary",
+        "parentId": null,
+        "kind": "group",
+        "name": "Materias complementarias",
+        "shortName": "Formación complementaria",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-social",
+        "parentId": "p1997-complementary",
+        "kind": "area",
+        "name": "Ciencias Humanas y Sociales",
+        "shortName": "Ciencias humanas y sociales",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      },
+      {
+        "id": "p1997-optional",
+        "parentId": null,
+        "kind": "category",
+        "name": "Materias opcionales",
+        "shortName": "Opcionales",
+        "minCredits": 0,
+        "sourceStatus": "official",
+        "sourceUrl": "https://bedelias.udelar.edu.uy/"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "analyst",
+        "title": "Analista en Computación",
+        "minTotalCredits": 270,
+        "nodeRequirements": [
+          {
+            "nodeId": "p1997-basic",
+            "minCredits": 80
+          },
+          {
+            "nodeId": "p1997-programming",
+            "minCredits": 60
+          },
+          {
+            "nodeId": "p1997-systems",
+            "minCredits": 30
+          },
+          {
+            "nodeId": "p1997-management",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-data",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-integrating",
+            "minCredits": 15
+          }
+        ],
+        "requiredActivities": [],
+        "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2012/distribuido/5550/Distribuido%20N%C2%BA%2081-2012%20-%20plan_ing_computacion.pdf"
+      },
+      {
+        "id": "engineer",
+        "title": "Ingeniero/a en Computación",
+        "minTotalCredits": 450,
+        "nodeRequirements": [
+          {
+            "nodeId": "p1997-basic",
+            "minCredits": 80
+          },
+          {
+            "nodeId": "p1997-math",
+            "minCredits": 70
+          },
+          {
+            "nodeId": "p1997-science",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-tech",
+            "minCredits": 220
+          },
+          {
+            "nodeId": "p1997-programming",
+            "minCredits": 60
+          },
+          {
+            "nodeId": "p1997-systems",
+            "minCredits": 30
+          },
+          {
+            "nodeId": "p1997-ai",
+            "minCredits": 0
+          },
+          {
+            "nodeId": "p1997-data",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-numerical",
+            "minCredits": 8
+          },
+          {
+            "nodeId": "p1997-software",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-integrating",
+            "minCredits": 45
+          },
+          {
+            "nodeId": "p1997-operations",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-management",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-complementary",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-social",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p1997-optional",
+            "minCredits": 0
+          }
+        ],
+        "requiredActivities": [
+          {
+            "id": "degree-project",
+            "label": "Proyecto de grado",
+            "minCredits": 30,
+            "courseIds": [
+              "1730-A",
+              "1730-B"
+            ],
+            "representationStatus": "modeled",
+            "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2012/distribuido/5550/Distribuido%20N%C2%BA%2081-2012%20-%20plan_ing_computacion.pdf"
+          }
+        ],
+        "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2012/distribuido/5550/Distribuido%20N%C2%BA%2081-2012%20-%20plan_ing_computacion.pdf"
+      }
+    ]
+  },
+  "programSources": [
+    {
+      "courseCode": "1373",
+      "courseName": "Programación 1",
+      "planYears": [
+        "1997"
+      ],
+      "area": "Programación",
+      "areaNodeId": "p1997-programming",
+      "status": "official",
+      "url": "https://www.fing.edu.uy/sites/default/files/2022-09/Programacion%201.pdf"
+    },
+    {
+      "courseCode": "1866",
+      "courseName": "Aprendizaje Automático",
+      "planYears": [
+        "1997"
+      ],
+      "area": "Inteligencia Artificial y Robótica",
+      "areaNodeId": "p1997-ai",
+      "status": "official",
+      "url": "https://www.fing.edu.uy/sites/default/files/AA%20-%20Programa%20de%20Unidad%20Curricular.pdf"
+    }
+  ],
+  "sourceCoverage": {
+    "officialProgram": 2,
+    "officialBedelias": 34,
+    "suggested": 0,
+    "conflicts": 0,
+    "missing": 0
+  },
   "courses": [
     {
       "code": "1023",
       "name": "MATEMATICA DISCRETA 1",
-      "credits": 9
+      "credits": 9,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1025",
       "name": "PROBABILIDAD Y ESTADISTICA",
-      "credits": 10
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1026",
       "name": "MATEMATICA DISCRETA 2",
-      "credits": 9
+      "credits": 9,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1027",
       "name": "LOGICA",
-      "credits": 12
+      "credits": 12,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1030",
       "name": "GEOMETRIA Y ALGEBRA LINEAL 1",
-      "credits": 9
+      "credits": 9,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1031",
       "name": "GEOMETRIA Y ALGEBRA LINEAL 2",
-      "credits": 9
+      "credits": 9,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1033",
       "name": "METODOS NUMERICOS",
-      "credits": 8
+      "credits": 8,
+      "eligibleRequirementIds": [
+        "p1997-numerical"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-numerical",
+          "credits": 8,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1061",
       "name": "CALCULO DIF. E INTEGRAL EN UNA VARIABLE",
-      "credits": 13
+      "credits": 13,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 13,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1062",
       "name": "CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES",
-      "credits": 13
+      "credits": 13,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 13,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1151",
       "name": "FISICA 1",
-      "credits": 10
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-science"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-science",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1224",
       "name": "ECONOMIA",
-      "credits": 7
+      "credits": 7,
+      "eligibleRequirementIds": [
+        "p1997-social"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-social",
+          "credits": 7,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1225",
       "name": "POLITICAS CIENTIFICAS EN INF.Y COMP.",
-      "credits": 3
+      "credits": 3,
+      "eligibleRequirementIds": [
+        "p1997-social"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-social",
+          "credits": 3,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
+    },
+    {
+      "code": "1316",
+      "name": "INT. A LA COMPUTACION GRAFICA",
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1321",
       "name": "PROGRAMACION 2",
-      "credits": 12
+      "credits": 12,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1323",
       "name": "PROGRAMACION 3",
-      "credits": 15
+      "credits": 15,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 15,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1324",
       "name": "PROGRAMACION 4",
-      "credits": 15
+      "credits": 15,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 15,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1325",
       "name": "TEORIA DE LENGUAJES",
-      "credits": 12
+      "credits": 12,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1327",
       "name": "TALLER DE PROGRAMACION",
-      "credits": 15
+      "credits": 15,
+      "eligibleRequirementIds": [
+        "p1997-integrating"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-integrating",
+          "credits": 15,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1340",
       "name": "PROGRAMACION LOGICA",
-      "credits": 10
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
+    },
+    {
+      "code": "1354",
+      "name": "PROGRAMACION FUNCIONAL",
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1373",
       "name": "PROGRAMACION 1",
-      "credits": 10
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-programming"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-programming",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2022-09/Programacion%201.pdf"
+        }
+      ]
+    },
+    {
+      "code": "1434",
+      "name": "COMPUTACION DE ALTA PERFORMANCE",
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-systems"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-systems",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1446",
       "name": "REDES DE COMPUTADORAS",
-      "credits": 12
+      "credits": 12,
+      "eligibleRequirementIds": [
+        "p1997-systems"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-systems",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1466",
       "name": "ARQUITECTURA DE COMPUTADORAS",
-      "credits": 10
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-systems"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-systems",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1537",
       "name": "SISTEMAS OPERATIVOS",
-      "credits": 12
+      "credits": 12,
+      "eligibleRequirementIds": [
+        "p1997-systems"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-systems",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
+    },
+    {
+      "code": "1545",
+      "name": "CRIPTOGRAFIA",
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-systems"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-systems",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1650",
       "name": "INT. A LA INVESTIGACION DE OPERACIONES",
-      "credits": 10
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-operations"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-operations",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1721",
       "name": "PROYECTO DE INGENIERIA DE SOFTWARE",
-      "credits": 15
+      "credits": 15,
+      "eligibleRequirementIds": [
+        "p1997-integrating"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-integrating",
+          "credits": 15,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
+    },
+    {
+      "code": "1730",
+      "name": "PROYECTO DE GRADO",
+      "credits": 30,
+      "eligibleRequirementIds": [
+        "p1997-integrating"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-integrating",
+          "credits": 30,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1783",
       "name": "TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE",
-      "credits": 10
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-software"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-software",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
+    },
+    {
+      "code": "1866",
+      "name": "APRENDIZAJE AUTOMATICO",
+      "credits": 12,
+      "eligibleRequirementIds": [
+        "p1997-ai"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-ai",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/AA%20-%20Programa%20de%20Unidad%20Curricular.pdf"
+        }
+      ]
     },
     {
       "code": "1911",
       "name": "FUNDAMENTOS DE BASES DE DATOS",
-      "credits": 15
+      "credits": 15,
+      "eligibleRequirementIds": [
+        "p1997-data"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-data",
+          "credits": 15,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
+    },
+    {
+      "code": "1926",
+      "name": "INT. A LOS SIST. DE INFOR. GEOGRAFICA",
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "p1997-data"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-data",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1944",
       "name": "ADMINISTRACION GENERAL PARA INGENIEROS",
-      "credits": 5
+      "credits": 5,
+      "eligibleRequirementIds": [
+        "p1997-management"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-management",
+          "credits": 5,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "1945",
       "name": "PRACTICA DE ADMINISTRACION PARA INGENIEROS",
-      "credits": 5
+      "credits": 5,
+      "eligibleRequirementIds": [
+        "p1997-management"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-management",
+          "credits": 5,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "code": "MI2",
       "name": "MATEMATICA INICIAL",
-      "credits": 4
+      "credits": 4,
+      "eligibleRequirementIds": [
+        "p1997-math"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p1997-math",
+          "credits": 4,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     }
   ],
   "rules": [

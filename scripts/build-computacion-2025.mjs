@@ -2,6 +2,7 @@
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import { allocationFromPaths, plan2025SuggestedNodes, requirementStructures } from "./academic-requirements.mjs";
 
 const trajectoryPath = path.resolve(process.argv[2] ?? "data/fing/computacion-2025-trayectorias.json");
 const bedeliasPath = path.resolve(process.argv[3] ?? "data/bedelias/fing-ingenieria-en-computacion-2025.json");
@@ -9,6 +10,7 @@ const outputPath = path.resolve(process.argv[4] ?? "app/data/computacion-2025-fi
 
 const trajectory = JSON.parse(await readFile(trajectoryPath, "utf8"));
 const bedelias = JSON.parse(await readFile(bedeliasPath, "utf8"));
+const programCatalog = JSON.parse(await readFile(path.resolve("data/fing/computacion-programas-oficiales.json"), "utf8"));
 const composition = new Map(
   bedelias.plan.courses
     .filter((course) => !course.serviceCode || course.serviceCode === bedelias.service.code)
@@ -19,8 +21,37 @@ const rules = bedelias.prerequisites
   .filter((rule) => rule.expression && trajectoryIds.has(rule.target?.code))
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }));
 
+const projectedCourses = trajectory.courses.map((course) => {
+  const { area: _legacyArea, ...courseFields } = course;
+  const official = composition.get(course.id);
+  const credits = official?.credits ?? course.credits;
+  const allocation = allocationFromPaths(
+    official,
+    "2025",
+    plan2025SuggestedNodes[course.id],
+    trajectory.source.curriculumPage,
+  );
+  return {
+    ...courseFields,
+    credits,
+    dataStatus: official ? "bedelias-composition" : course.dataStatus ?? "fing-trajectory",
+    ...allocation,
+    creditAllocations: allocation.creditAllocations.map((item) => ({ ...item, credits })),
+  };
+});
+const programUrls = new Set(programCatalog.programs.map((program) => program.url));
+const sourceCoverage = projectedCourses.reduce((summary, course) => {
+  const allocation = course.creditAllocations[0];
+  if (!allocation) summary.missing += 1;
+  else if (allocation.status === "suggested") summary.suggested += 1;
+  else if (allocation.status === "conflict") summary.conflicts += 1;
+  else if (programUrls.has(allocation.sourceUrl)) summary.officialProgram += 1;
+  else summary.officialBedelias += 1;
+  return summary;
+}, { officialProgram: 0, officialBedelias: 0, suggested: 0, conflicts: 0, missing: 0 });
+
 const output = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   source: {
     ...trajectory.source,
     bedeliasSystem: bedelias.source.system,
@@ -36,15 +67,10 @@ const output = {
     bedeliasCompositionCourses: bedelias.plan.courses.length,
     publishedRules: rules.length,
   },
-  areaTargets: trajectory.areaTargets,
-  courses: trajectory.courses.map((course) => {
-    const official = composition.get(course.id);
-    return {
-      ...course,
-      credits: official?.credits ?? course.credits,
-      dataStatus: official ? "bedelias-composition" : course.dataStatus ?? "fing-trajectory",
-    };
-  }),
+  creditStructure: requirementStructures["2025"],
+  programSources: programCatalog.programs.filter((program) => program.planYears.includes("2025")),
+  sourceCoverage,
+  courses: projectedCourses,
   trajectories: trajectory.trajectories,
   rules,
 };

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "source": {
     "institution": "Facultad de Ingeniería · Universidad de la República",
     "curriculumPage": "https://eva.fing.edu.uy/course/view.php?id=800&section=4",
@@ -29,283 +29,761 @@
     "bedeliasCompositionCourses": 38,
     "publishedRules": 17
   },
-  "areaTargets": [
-    {
-      "id": "MCE",
-      "name": "Matemática y ciencias",
-      "target": 50
-    },
-    {
-      "id": "FC",
-      "name": "Fundamentos de computación",
-      "target": 70
-    },
-    {
-      "id": "FS",
-      "name": "Fundamentos de sistemas",
-      "target": 30
-    },
-    {
-      "id": "IS",
-      "name": "Ingeniería de software",
-      "target": 20
-    },
-    {
-      "id": "GDI",
-      "name": "Datos e información",
-      "target": 10
-    },
-    {
-      "id": "CA",
-      "name": "Computación aplicada",
-      "target": 20
-    },
-    {
-      "id": "AI",
-      "name": "Actividades integradoras",
-      "target": 40
-    },
-    {
-      "id": "COMP",
-      "name": "Formación complementaria",
-      "target": 20
-    }
-  ],
+  "creditStructure": {
+    "countingMode": "allocated",
+    "nodes": [
+      {
+        "id": "p2025-basic",
+        "parentId": null,
+        "kind": "group",
+        "name": "Áreas de formación básica",
+        "shortName": "Formación básica",
+        "minCredits": 120,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-mce",
+        "parentId": "p2025-basic",
+        "kind": "area",
+        "name": "Matemática y Ciencias Experimentales",
+        "shortName": "Matemática y ciencias",
+        "minCredits": 50,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-fc",
+        "parentId": "p2025-basic",
+        "kind": "area",
+        "name": "Fundamentos de Computación",
+        "shortName": "Fundamentos",
+        "minCredits": 70,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-tech",
+        "parentId": null,
+        "kind": "group",
+        "name": "Áreas de formación básico-tecnológica y técnicas de Computación",
+        "shortName": "Formación tecnológica",
+        "minCredits": 180,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-fs",
+        "parentId": "p2025-tech",
+        "kind": "area",
+        "name": "Fundamentos de Sistemas",
+        "shortName": "Sistemas",
+        "minCredits": 30,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-is",
+        "parentId": "p2025-tech",
+        "kind": "area",
+        "name": "Ingeniería de Software",
+        "shortName": "Ing. de software",
+        "minCredits": 20,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-gdi",
+        "parentId": "p2025-tech",
+        "kind": "area",
+        "name": "Gestión de Datos e Información",
+        "shortName": "Datos e información",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-ca",
+        "parentId": "p2025-tech",
+        "kind": "area",
+        "name": "Computación Aplicada",
+        "shortName": "Computación aplicada",
+        "minCredits": 20,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-ai",
+        "parentId": "p2025-tech",
+        "kind": "area",
+        "name": "Actividades Integradoras",
+        "shortName": "Act. integradoras",
+        "minCredits": 40,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-comp",
+        "parentId": null,
+        "kind": "group",
+        "name": "Áreas de formación complementaria",
+        "shortName": "Formación complementaria",
+        "minCredits": 20,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-industrial",
+        "parentId": "p2025-comp",
+        "kind": "area",
+        "name": "Ingeniería Industrial",
+        "shortName": "Ing. industrial",
+        "minCredits": 0,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "p2025-society",
+        "parentId": "p2025-comp",
+        "kind": "area",
+        "name": "Ingeniería y Sociedad",
+        "shortName": "Ingeniería y sociedad",
+        "minCredits": 0,
+        "sourceStatus": "official",
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "analyst",
+        "title": "Analista en Computación",
+        "minTotalCredits": 270,
+        "nodeRequirements": [
+          {
+            "nodeId": "p2025-mce",
+            "minCredits": 20
+          },
+          {
+            "nodeId": "p2025-fc",
+            "minCredits": 40
+          },
+          {
+            "nodeId": "p2025-fs",
+            "minCredits": 20
+          },
+          {
+            "nodeId": "p2025-is",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p2025-gdi",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p2025-ai",
+            "minCredits": 15
+          }
+        ],
+        "requiredActivities": [],
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      },
+      {
+        "id": "engineer",
+        "title": "Ingeniero/a en Computación",
+        "minTotalCredits": 450,
+        "nodeRequirements": [
+          {
+            "nodeId": "p2025-basic",
+            "minCredits": 120
+          },
+          {
+            "nodeId": "p2025-mce",
+            "minCredits": 50
+          },
+          {
+            "nodeId": "p2025-fc",
+            "minCredits": 70
+          },
+          {
+            "nodeId": "p2025-tech",
+            "minCredits": 180
+          },
+          {
+            "nodeId": "p2025-fs",
+            "minCredits": 30
+          },
+          {
+            "nodeId": "p2025-is",
+            "minCredits": 20
+          },
+          {
+            "nodeId": "p2025-gdi",
+            "minCredits": 10
+          },
+          {
+            "nodeId": "p2025-ca",
+            "minCredits": 20
+          },
+          {
+            "nodeId": "p2025-ai",
+            "minCredits": 40
+          },
+          {
+            "nodeId": "p2025-comp",
+            "minCredits": 20
+          },
+          {
+            "nodeId": "p2025-industrial",
+            "minCredits": 0
+          },
+          {
+            "nodeId": "p2025-society",
+            "minCredits": 0
+          }
+        ],
+        "requiredActivities": [
+          {
+            "id": "degree-project",
+            "label": "Proyecto de grado",
+            "minCredits": 30,
+            "courseIds": [],
+            "representationStatus": "not-modeled",
+            "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+          }
+        ],
+        "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909"
+      }
+    ]
+  },
+  "programSources": [],
+  "sourceCoverage": {
+    "officialProgram": 0,
+    "officialBedelias": 11,
+    "suggested": 22,
+    "conflicts": 0,
+    "missing": 0
+  },
   "courses": [
     {
       "id": "PI",
       "name": "Prueba Inicial",
       "credits": 4,
-      "area": "MCE",
       "placementTest": true,
-      "dataStatus": "project-assumption"
+      "dataStatus": "project-assumption",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 4,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "MI2",
       "name": "Matemática Inicial",
       "credits": 4,
-      "area": "MCE",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-mce"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 4,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "1275",
       "name": "Taller Básico de Estrategias y Orientación (TBEO)",
       "credits": 3,
-      "area": "COMP",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-society"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-society",
+          "credits": 3,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "2044",
       "name": "Fundamentos de la Combinatoria",
       "credits": 9,
-      "area": "FC",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-fc"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "1030",
       "name": "Geometría y Álgebra Lineal 1",
       "credits": 9,
-      "area": "MCE",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-mce"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "2043",
       "name": "Introducción a la Computación",
       "credits": 5,
-      "area": "AI",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-ai"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-ai",
+          "credits": 5,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "1061",
       "name": "Cálculo Diferencial e Integral en Una Variable",
       "credits": 13,
-      "area": "MCE",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-mce"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 13,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "1375",
       "name": "Programación Imperativa",
       "credits": 10,
-      "area": "FC",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-fc"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "1031",
       "name": "Geometría y Álgebra Lineal 2",
       "credits": 9,
-      "area": "MCE",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-mce"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "2046",
       "name": "Herramientas de Modelización y Análisis",
       "credits": 6,
-      "area": "FC",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-fc"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 6,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "1062",
       "name": "Cálculo Diferencial e Integral en Varias Variables",
       "credits": 13,
-      "area": "MCE",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-mce"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 13,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "P25-TG",
       "name": "Teoría de Grafos",
       "credits": 6,
-      "area": "FC",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 6,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-EDA",
       "name": "Estructuras de Datos y Algoritmos",
       "credits": 10,
-      "area": "FC",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-LPO",
       "name": "Lógica de Primer Orden",
       "credits": 6,
-      "area": "FC",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 6,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "1025",
       "name": "Probabilidad y Estadística",
       "credits": 10,
-      "area": "MCE",
-      "dataStatus": "bedelias-composition"
+      "dataStatus": "bedelias-composition",
+      "eligibleRequirementIds": [
+        "p2025-mce"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://bedelias.udelar.edu.uy/"
+        }
+      ]
     },
     {
       "id": "P25-MEC",
       "name": "Métodos Experimentales en Computación",
       "credits": 10,
-      "area": "MCE",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-mce",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-LAB",
       "name": "Laboratorio de Programación",
       "credits": 5,
-      "area": "AI",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-ai",
+          "credits": 5,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-ALG",
       "name": "Algoritmos",
       "credits": 8,
-      "area": "FC",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 8,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-OOP",
       "name": "Diseño y Programación Orientados a Objetos",
       "credits": 10,
-      "area": "FC",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-ARQ",
       "name": "Arquitectura de Computadoras",
       "credits": 10,
-      "area": "FS",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fs",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-BD",
       "name": "Bases de Datos",
       "credits": 10,
-      "area": "GDI",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-gdi",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-TC",
       "name": "Teoría de la Computación",
       "credits": 10,
-      "area": "FC",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-APC",
       "name": "Análisis de Problemas Computacionales",
       "credits": 8,
-      "area": "FC",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fc",
+          "credits": 8,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-SO",
       "name": "Sistemas Operativos",
       "credits": 8,
-      "area": "FS",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fs",
+          "credits": 8,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-PIS",
       "name": "Principios de Ingeniería de Software",
       "credits": 10,
-      "area": "IS",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-is",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-CPD",
       "name": "Computación Paralela y Distribuida",
       "credits": 8,
-      "area": "FS",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fs",
+          "credits": 8,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-RED",
       "name": "Redes de Computadoras",
       "credits": 10,
-      "area": "FS",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fs",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-TD",
       "name": "Taller de Desarrollo",
       "credits": 15,
-      "area": "AI",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-ai",
+          "credits": 15,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-AA",
       "name": "Aprendizaje Automático",
       "credits": 10,
-      "area": "CA",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-ca",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-IIO",
       "name": "Introducción a la Investigación de Operaciones",
       "credits": 10,
-      "area": "CA",
       "engineeringOnly": true,
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-ca",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-SEG",
       "name": "Seguridad Computacional",
       "credits": 10,
-      "area": "FS",
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-fs",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-ISA",
       "name": "Ingeniería de Software Avanzada",
       "credits": 10,
-      "area": "IS",
       "engineeringOnly": true,
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-is",
+          "credits": 10,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     },
     {
       "id": "P25-PROY-IS",
       "name": "Proyecto de Ingeniería de Software",
       "credits": 15,
-      "area": "AI",
       "engineeringOnly": true,
-      "dataStatus": "fing-trajectory"
+      "dataStatus": "fing-trajectory",
+      "eligibleRequirementIds": [],
+      "creditAllocations": [
+        {
+          "nodeId": "p2025-ai",
+          "credits": 15,
+          "status": "suggested",
+          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
+        }
+      ]
     }
   ],
   "trajectories": {

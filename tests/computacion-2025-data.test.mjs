@@ -13,6 +13,7 @@ function walk(node, output = []) {
 }
 
 test("el Plan 2025 conserva por separado sus dos fuentes institucionales", () => {
+  assert.equal(projection.schemaVersion, 2);
   assert.equal(projection.plan.current, true);
   assert.equal(projection.plan.minCredits, 450);
   assert.equal(projection.plan.bedeliasCompositionCourses, 38);
@@ -21,6 +22,36 @@ test("el Plan 2025 conserva por separado sus dos fuentes institucionales", () =>
   assert.match(projection.source.curriculumPage, /^https:\/\/eva\.fing\.edu\.uy\//);
   assert.match(projection.source.bedeliasContentHash, /^[a-f0-9]{64}$/);
   assert.equal(snapshot.validation.issues.length, 0);
+});
+
+test("el Plan 2025 diferencia mínimos de grupo, áreas y título intermedio", () => {
+  const nodes = new Map(projection.creditStructure.nodes.map((node) => [node.id, node]));
+  assert.equal(nodes.get("p2025-basic").minCredits, 120);
+  assert.equal(nodes.get("p2025-tech").minCredits, 180);
+  assert.equal(nodes.get("p2025-comp").minCredits, 20);
+  assert.equal(["p2025-fs", "p2025-is", "p2025-gdi", "p2025-ca", "p2025-ai"].reduce((sum, id) => sum + nodes.get(id).minCredits, 0), 120);
+
+  const analyst = projection.creditStructure.credentials.find((item) => item.id === "analyst");
+  assert.equal(analyst.minTotalCredits, 270);
+  assert.deepEqual(Object.fromEntries(analyst.nodeRequirements.map((item) => [item.nodeId, item.minCredits])), {
+    "p2025-mce": 20,
+    "p2025-fc": 40,
+    "p2025-fs": 20,
+    "p2025-is": 10,
+    "p2025-gdi": 10,
+    "p2025-ai": 15,
+  });
+});
+
+test("las asignaciones sugeridas cuentan una vez y nunca se presentan como oficiales", () => {
+  assert.deepEqual(projection.sourceCoverage, { officialProgram: 0, officialBedelias: 11, suggested: 22, conflicts: 0, missing: 0 });
+  for (const course of projection.courses) {
+    const allocated = course.creditAllocations.reduce((sum, item) => sum + item.credits, 0);
+    assert.ok(allocated <= course.credits, `${course.id} no puede duplicar créditos`);
+  }
+  assert.equal(projection.courses.find((course) => course.id === "2044").creditAllocations[0].status, "official");
+  assert.equal(projection.courses.find((course) => course.id === "P25-ARQ").creditAllocations[0].status, "suggested");
+  assert.equal(projection.courses.find((course) => course.id === "1275").creditAllocations[0].nodeId, "p2025-society");
 });
 
 test("Bedelías vincula Matemática Inicial con Cálculo DIV y la PI queda como supuesto separado", () => {

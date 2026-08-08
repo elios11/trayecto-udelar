@@ -67,6 +67,11 @@ Hay cinco conjuntos relevantes de datos:
    - Proyección web: `app/data/computacion-2025-fing.json`.
    - Conserva dos trayectorias oficiales de FING para Montevideo (`PI >=60%` y `PI 20–59%`), mínimos por área, procedencia por materia y la cobertura parcial de Bedelías.
 
+6. Modelo universal de requisitos y catálogo inicial de programas:
+   - `scripts/academic-requirements.mjs` define árboles y requisitos por título para Computación 1997 y 2025.
+   - `data/fing/computacion-programas-oficiales.json` registra programas oficiales por UC, carrera y plan.
+   - Las proyecciones web usan `schemaVersion: 2`, `creditStructure`, `creditAllocations`, `eligibleRequirementIds`, `programSources` y `sourceCoverage`.
+
 El snapshot completo es deliberadamente más grande que la proyección. La aplicación no debe importar el snapshot completo al navegador.
 
 ### Herramientas de importación
@@ -93,9 +98,11 @@ En Windows debe usarse `npm.cmd`; `npm.ps1` puede fallar por la política de eje
 
 ## 3. Decisiones importantes y razones
 
-### Bedelías es la fuente de verdad académica
+### La fuente más específica prevalece para cada tipo de dato
 
-La consulta pública de Bedelías/SGAE es la autoridad operativa para planes y previaturas. Los ejemplos externos como trayectoria.fely.dev, micarrera.uy y mallas existentes sirven para comparar UX o detectar inconsistencias, pero no deben alimentar reglas oficiales sin validación.
+La consulta pública de Bedelías/SGAE es la autoridad operativa para composición y previaturas. Para saber en qué área suma una UC prevalece el Anexo B oficial específico de esa carrera y plan, luego las resoluciones, la composición de Bedelías, el plan y la trayectoria oficial. Los ejemplos externos como trayectoria.fely.dev, micarrera.uy y mallas existentes sirven para comparar UX o detectar inconsistencias, pero no alimentan reglas oficiales sin validación.
+
+La Comisión Académica de Grado de Fing exige que el Anexo B indique el área para cada plan. No se reutiliza automáticamente una clasificación del Plan 97 en el Plan 2025. Si no existe documento aplicable, la UI puede contar una asignación `suggested`, pero la identifica en la tarjeta y en el drawer.
 
 ### Protocolo de investigación documental por carrera y plan
 
@@ -183,7 +190,11 @@ El índice oficial completo es <https://eva.fing.edu.uy/course/view.php?id=800&s
 - Reinicio del progreso.
 - Panel de créditos totales.
 - Panel de título intermedio y título de grado.
-- Panel de créditos por área: metas oficiales para Plan 2025 y metas todavía demo para Plan 1997.
+- Árbol anidado de grupos y áreas con metas oficiales para Plan 2025 y Plan 1997.
+- Selector de requisitos de Analista o Ingeniería, manteniendo ambas tarjetas resumen.
+- Mínimos superiores de grupo, mínimos de área y créditos flexibles adicionales; el Plan 2025 muestra los 60 créditos tecnológicos adicionales.
+- Nodos con mínimo cero rotulados `Sin mínimo propio`, sin barras `0/0`.
+- Asignaciones de área oficiales o sugeridas visibles por materia; las sugeridas cuentan normalmente y nunca duplican créditos.
 - Sección plegable de optativas/electivas.
 - Drawer de detalles de materia.
 - Identificación visual de materias con datos importados de Bedelías.
@@ -259,8 +270,10 @@ La distribución visible se alineó con la imagen compartida:
 - Bedelías muestra actualmente 38 unidades/equivalencias en la composición del Plan 2025.
 - FING publica 32 materias diferentes en las tres ramas combinadas; la proyección contiene 33 fichas al sumar la Prueba Inicial presemestre asumida y conserva 17 reglas de curso/examen para nueve materias iniciales localizables por código.
 - 610 unidades/equivalencias únicas en la composición del Plan 97.
-- 29 materias centrales proyectadas en la UI.
+- 29 materias centrales y 7 cursos/equivalencias adicionales proyectados para sostener áreas, optativas y Proyecto de Grado del Plan 97.
 - 53 reglas de curso/examen.
+- Cobertura de áreas Plan 97: 2 asignaciones respaldadas por programa oficial y 34 por composición de Bedelías; 0 sugeridas, conflictos o faltantes en la proyección.
+- Cobertura de áreas Plan 2025: 11 asignaciones respaldadas por composición de Bedelías y 22 sugeridas; 0 conflictos o faltantes estructurales.
 - Cero requisitos sin interpretar después de la normalización actual.
 - Títulos detectados: Ingeniero en Computación y Analista en Computación.
 - Documento estable del Plan 97: <https://hdl.handle.net/20.500.12008/43879>.
@@ -290,15 +303,15 @@ Pruebas en `tests/computacion-2025-data.test.mjs`:
 - totales exactos por semestre en ambas trayectorias oficiales;
 - ficha y estado de procedencia para todas las materias proyectadas.
 
-Estado actual: `npm.cmd test` compila correctamente y pasan 11/11 pruebas.
+Estado actual: `npm.cmd test` compila correctamente y pasan 15/15 pruebas.
 
 ## 6. Bugs, inconsistencias y límites conocidos
 
 ### Prioridad alta
 
 1. **Créditos de la PI 2026 asumidos, sin confirmación inequívoca.** Los cortes y el efecto sobre la trayectoria están publicados. Por decisión del proyecto, la rama `>=60%` suma los 4 créditos históricos como equivalencia de Matemática Inicial, pero el estado del dato deja explícito que falta una resolución o registro vigente que lo confirme.
-2. **Plan 97 conserva metas por área demo.** El Plan 2025 ya usa mínimos oficiales por área; `areaTargets` del Plan 1997 y algunos detalles del título intermedio siguen curados como demo.
-3. **Proyecto de Grado dividido manualmente.** `1730-A` y `1730-B` son una representación visual de dos semestres. No son códigos oficiales importados. Debe confirmarse cómo Bedelías representa el Proyecto de Grado y sus créditos/reglas.
+2. **Cobertura de programas 2025 todavía parcial.** Las áreas de materias ya ubicadas inequívocamente en la composición de Bedelías son oficiales. Las nuevas materias sin Anexo B o resolución aplicable conservan una asignación sugerida y visible.
+3. **Proyecto de Grado dividido manualmente.** `1730-A` y `1730-B` son una representación visual de dos semestres. No son códigos oficiales importados, aunque sus 30 créditos y su aporte a Actividades Integradoras provienen del curso oficial `1730`.
 4. **Oferta no importada.** Los campos `offered` del Plan 97 siguen siendo manuales. El Plan 2025 no afirma oferta; sus semestres provienen de la trayectoria sugerida oficial, que FING define como ejemplo flexible.
 
 ### Datos y evaluador
@@ -329,6 +342,7 @@ Estado actual: `npm.cmd test` compila correctamente y pasan 11/11 pruebas.
 - **Volver mediante botón:** generaba más recargas. El importador intenta historial (`goBack`) y conserva fallback al botón.
 - **Checkpoints con reglas vacías:** la primera prueba guardó marcadores `none` por el bug de filas. El flujo fue corregido y luego reextraído/normalizado.
 - **Parser inicial limitado:** solo entendía `Curso/Examen de la U.C.B.`. Se amplió para `aprobado`, `U.C.B aprobada`, inscripciones, equivalencias con servicio y mínimos de créditos. Luego se normalizaron las 53 reglas sin nuevas solicitudes.
+- **Áreas planas y metas demo:** el primer prototipo asignaba una sola etiqueta manual y no representaba mínimos superiores. Se reemplazó por un árbol universal con requisitos por título, procedencia por asignación y cómputo sin duplicados.
 - **Plan 2025 tratado inicialmente como “detectado”:** se comprobó que no basta con esperar una vuelta completa del plan. FING ya publicó la estructura, las dos trayectorias de Montevideo y los mínimos, mientras Bedelías todavía está parcial. Se adoptó un modelo de doble procedencia en vez de bloquear toda la integración.
 - **Confundir año de publicación con año del plan:** el PDF `TrayectoriaSugerida_2025_Montevideo.pdf` fue publicado para la cursada 2025, pero sus materias y total corresponden al Plan 1997. Se usa como verificación histórica de PI=4, no como prueba del nuevo Plan de Estudios 2025.
 - **Búsqueda de reglas 2025 solo por códigos:** la composición parcial no contiene códigos para muchas materias nuevas. Se añadió `--course-names` con normalización de acentos para consultar por nombre sin ampliar innecesariamente el volumen de solicitudes.
@@ -349,7 +363,7 @@ Orden sugerido:
 5. Volver a extraer el Plan 2025 periódicamente y comparar snapshots para detectar cuándo Bedelías agrega composición, códigos y reglas; no sustituir datos FING automáticamente.
 6. Incorporar perfiles del Plan 2025, optativas reales, créditos complementarios y Proyecto de Grado cuando la Comisión de Carrera publique su implementación.
 7. Confirmar Proyecto de Grado del Plan 97 y eliminar o documentar formalmente la división manual `1730-A/B`.
-8. Reemplazar metas demo por área del Plan 97 después de validarlas documentalmente.
+8. Ampliar el catálogo de Anexos B y resoluciones del Plan 2025 hasta reducir a cero las asignaciones sugeridas.
 9. Construir el catálogo global de carreras/ciclos/CIO por servicio y filtrar planes vigentes de grado/tecnicatura/CIO.
 10. Investigar fuentes institucionales de oferta efectiva por semestre sin confundirlas con la trayectoria sugerida.
 11. Separar datos por carrera/plan y cargarlos bajo demanda antes de integrar muchas carreras.

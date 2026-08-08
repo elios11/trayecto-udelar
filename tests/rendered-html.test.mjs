@@ -20,6 +20,8 @@ test("renderiza la malla y su procedencia institucional", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Trayecto — Mallas curriculares Udelar<\/title>/i);
+  assert.match(html, /property="og:image" content="https:\/\/trayecto-udelar-piloto\.tokyo121\.chatgpt\.site\/og\.png"/i);
+  assert.match(html, /name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /Ingeniería en Computación/);
   assert.match(html, /Plan 2025 · vigente, en transición/);
   assert.match(html, /Plan 1997/);
@@ -30,6 +32,12 @@ test("renderiza la malla y su procedencia institucional", async () => {
   assert.match(html, /Arquitectura de Computadoras/);
   assert.match(html, /official-tag/);
   assert.match(html, /Lo que todavía no tiene semestre publicado/);
+  assert.match(html, /Metas de créditos/);
+  assert.match(html, /Analista/);
+  assert.match(html, /Ingeniería/);
+  assert.match(html, /60 cr\. flexibles dentro del grupo/);
+  assert.match(html, /Sin mínimo propio/);
+  assert.match(html, /áreas sugeridas en esta trayectoria/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
