@@ -5,6 +5,7 @@ import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { mergePrerequisiteCheckpoint } from "./bedelias-checkpoint.mjs";
 
 const BASE_URL = "https://bedelias.udelar.edu.uy/";
 const DEFAULT_BROWSER_PATHS = [
@@ -520,7 +521,17 @@ async function scrapePlan(client, options) {
   plan.courses = dedupeCompositionCourses(collectCompositionCourses(plan.composition), serviceCode);
   const output = path.resolve(options.output ?? `data/bedelias/${slug(serviceCode)}-${slug(program.name)}-${year}.json`);
   const checkpointPath = `${output}.checkpoint`;
-  const checkpoint = resume ? await loadJson(checkpointPath, { prerequisites: {} }) : { prerequisites: {} };
+  const storedCheckpoint = resume ? await loadJson(checkpointPath, { prerequisites: {} }) : { prerequisites: {} };
+  const previousSnapshot = resume ? await loadJson(output, null) : null;
+  const { checkpoint, restoredRules } = mergePrerequisiteCheckpoint(storedCheckpoint, previousSnapshot, {
+    serviceCode,
+    programName: program.name,
+    year,
+  });
+  if (restoredRules > 0) {
+    await atomicJson(checkpointPath, checkpoint);
+    console.log(`Checkpoint reconstruido: ${Object.keys(checkpoint.prerequisites).length} entradas (${restoredRules} recuperadas del último snapshot).`);
+  }
   await client.openPrerequisites();
 
   const courseCodes = requestedCodes.length || requestedNames.length ? requestedCodes : plan.courses.filter((course) => !course.serviceCode || course.serviceCode === serviceCode).map((course) => course.code);

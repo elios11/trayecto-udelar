@@ -266,6 +266,10 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .electives-heading > div:last-child { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 11px; }
 .electives-heading b { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--udelar); font-size: 18px; font-weight: 400; }
 .electives-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; padding: 0 30px 30px; }
+.electives-loader { margin: 0 30px 30px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-subtle); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.electives-loader p { margin: 0; max-width: 720px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+.electives-loader strong { color: var(--ink); }
+.electives-loader a { color: var(--udelar); font-weight: 750; }
 .plan-transition-note { padding: 26px 30px 30px; border-top: 1px solid var(--line); background: #f7f9f9; }
 .plan-transition-note h2 { margin: 5px 0 8px; font-size: 20px; letter-spacing: -.04em; }
 .plan-transition-note > p:not(.eyebrow) { max-width: 760px; margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.55; }
@@ -395,6 +399,7 @@ footer a { color: white; text-decoration: none; white-space: nowrap; }
   .plan-transition-note { padding: 22px 16px 26px; }
   .electives-heading > div:last-child > span { display: none; }
   .electives-grid { padding: 0 16px 24px; grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .electives-loader { margin: 0 16px 24px; align-items: stretch; flex-direction: column; }
   footer { padding: 22px 16px; align-items: flex-start; flex-direction: column; }
 }
 

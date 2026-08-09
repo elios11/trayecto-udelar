@@ -57,6 +57,7 @@ type Course = {
   placementTest?: boolean;
   engineeringOnly?: boolean;
   dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption";
+  offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null };
 };
 
 type RequirementOption = {
@@ -93,6 +94,15 @@ type BedeliasProjection = {
   courses: Array<{ code: string; name: string; credits: number; catalogKind: "trajectory" | "flexible"; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[] }>;
   rules: VerifiedRule[];
 };
+type ExtendedElectivesProjection = {
+  schemaVersion: number;
+  source: { system: string; extractedAt: string; planUrl: string; contentHash: string; enrichmentSources: Array<{ system: string; url: string; reviewedAt: string; term: { year: number; semester: number; label: string } }> };
+  courses: Array<{ id: string; serviceCode: string; code: string; name: string; credits: number; catalogKind: "bedelias-catalog"; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; offered: Array<"impar" | "par" | "libre">; offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null } }>;
+  rules: VerifiedRule[];
+  offeredOutsidePlanComposition: Array<{ code: string; name: string }>;
+  excludedAdministrativeEntries: Array<{ id: string; serviceCode: string; code: string; name: string; credits: number }>;
+};
+
 
 type Plan2025Projection = {
   schemaVersion: number;
@@ -199,6 +209,20 @@ const plan2025CatalogCourses: Course[] = (() => {
   return [...projected, ...electives];
 })();
 
+
+function buildExtendedPlan1997Courses(data: ExtendedElectivesProjection | null): Course[] {
+  return (data?.courses ?? []).map((course) => ({
+    id: course.id,
+    name: readableCourseName(course.name),
+    credits: course.credits,
+    semester: "opt",
+    eligibleRequirementIds: course.eligibleRequirementIds,
+    creditAllocations: course.creditAllocations,
+    offered: course.offered,
+    offering: course.offering,
+    elective: true,
+  }));
+}
 function buildPlan2025Courses(trajectoryId: string): Course[] {
   const trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const semesters = new Map<string, number>();
@@ -405,6 +429,9 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [availableOnly, setAvailableOnly] = useState(false);
   const [showElectives, setShowElectives] = useState(true);
+  const [extendedElectivesData, setExtendedElectivesData] = useState<ExtendedElectivesProjection | null>(null);
+  const [extendedElectivesLoadState, setExtendedElectivesLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [fullElectivesCatalogExpanded, setFullElectivesCatalogExpanded] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
   const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms() });
@@ -425,14 +452,53 @@ export default function Home() {
   const verticalScrollFrameRef = useRef<number | null>(null);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
 
+
+  const loadExtendedElectives = async (): Promise<ExtendedElectivesProjection | null> => {
+    if (extendedElectivesData) return extendedElectivesData;
+    setExtendedElectivesLoadState("loading");
+    try {
+      const catalogImport = await import("./data/computacion-1997-electivas.json");
+      const projection = catalogImport.default as unknown as ExtendedElectivesProjection;
+      setExtendedElectivesData(projection);
+      setExtendedElectivesLoadState("loaded");
+      return projection;
+    } catch {
+      setExtendedElectivesLoadState("error");
+      return null;
+    }
+  };
+  const expandFullElectivesCatalog = async () => {
+    const projection = await loadExtendedElectives();
+    if (projection) setFullElectivesCatalogExpanded(true);
+  };
+  const ensureFullCatalogForSearch = (value: string) => {
+    if (planYear === "1997" && value.trim() && !extendedElectivesData && extendedElectivesLoadState !== "loading") {
+      void loadExtendedElectives();
+    }
+  };
+  const handleCurriculumSearch = (value: string) => {
+    setSearch(value);
+    ensureFullCatalogForSearch(value);
+  };
+  const handlePlannerSearch = (value: string) => {
+    setPlannerSearch(value);
+    ensureFullCatalogForSearch(value);
+  };
+  const extendedPlan1997Courses = useMemo(
+    () => buildExtendedPlan1997Courses(extendedElectivesData),
+    [extendedElectivesData],
+  );
+  const extendedPlan1997CourseIds = useMemo(() => new Set(extendedPlan1997Courses.map((course) => course.id)), [extendedPlan1997Courses]);
+  const plan1997AvailableCourses = useMemo(() => [...plan1997Courses, ...extendedPlan1997Courses], [extendedPlan1997Courses]);
+
   const courses = useMemo(
-    () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997Courses,
-    [planYear, trajectoryId],
+    () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997AvailableCourses,
+    [planYear, trajectoryId, plan1997AvailableCourses],
   );
   const plannerCourses = useMemo<Course[]>(() => planYear === "2025"
     ? plan2025CatalogCourses
-    : plan1997Courses,
-  [planYear]);
+    : plan1997AvailableCourses,
+  [planYear, plan1997AvailableCourses]);
   const plannerTerms = plannerPlans[planYear];
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
@@ -444,16 +510,18 @@ export default function Home() {
     [planYear, trajectoryId, storedStatuses],
   );
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
-  const verifiedCourses = useMemo(
-    () => planYear === "2025"
-      ? new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]))
-      : plan1997VerifiedCourses,
-    [planYear],
-  );
-  const verifiedRules = useMemo(
-    () => new Map((planYear === "2025" ? plan2025Data.rules : bedeliasData.rules).map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule])),
-    [planYear],
-  );
+  const verifiedCourses = useMemo(() => {
+    if (planYear === "2025") return new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]));
+    const merged = new Map<string, unknown>(plan1997VerifiedCourses);
+    for (const course of extendedElectivesData?.courses ?? []) merged.set(course.id, course);
+    return merged;
+  }, [planYear, extendedElectivesData]);
+  const verifiedRules = useMemo(() => {
+    const rules = planYear === "2025"
+      ? plan2025Data.rules
+      : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
+    return new Map(rules.map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
+  }, [planYear, extendedElectivesData]);
   const creditStructure = planYear === "2025" ? plan2025Data.creditStructure : bedeliasData.creditStructure;
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
@@ -757,7 +825,8 @@ export default function Home() {
     const matchesSemester = course.semester === semester;
     const matchesSearch = `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLowerCase().includes(search.toLowerCase());
     const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
-    return matchesSemester && matchesSearch && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
+    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim();
+    return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
   });
 
   const exportProgress = () => {
@@ -774,7 +843,7 @@ export default function Home() {
     const file = event.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = async () => {
       try {
         const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; career?: unknown; plan?: unknown; statuses?: unknown };
         if (!parsed || typeof parsed !== "object" || !parsed.statuses || typeof parsed.statuses !== "object" || Array.isArray(parsed.statuses)) {
@@ -792,6 +861,14 @@ export default function Home() {
         const entries = Object.entries(parsed.statuses as Record<string, unknown>);
         const validStatuses = new Set<CourseStatus>(["pending", "approved", "exonerated"]);
         const validCourseIds = new Set(courses.map((course) => course.id));
+        if (planYear === "1997" && entries.some(([id]) => !validCourseIds.has(id))) {
+          const extended = await loadExtendedElectives();
+          if (!extended) {
+            setImportError({ title: "No pudimos cargar el catálogo", message: "El progreso incluye optativas del catálogo ampliado, pero no pudimos abrir esos datos. Probá nuevamente." });
+            return;
+          }
+          for (const course of extended.courses) validCourseIds.add(course.id);
+        }
         if (entries.some(([id, status]) => !validCourseIds.has(id) || typeof status !== "string" || !validStatuses.has(status as CourseStatus))) {
           setImportError({ title: "Progreso inválido", message: "El archivo contiene materias o estados que no tienen un formato válido." });
           return;
@@ -863,7 +940,8 @@ export default function Home() {
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const availablePlannerCourses = plannerCourses.filter((course) => {
     const query = plannerSearch.trim().toLocaleLowerCase("es-UY");
-    return !assignedPlannerIds.has(course.id) && (!query || `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLocaleLowerCase("es-UY").includes(query));
+    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query;
+    return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && (!query || `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLocaleLowerCase("es-UY").includes(query));
   });
 
   const rolloverTerm = plannerTerms.find((term) => term.id === rolloverTermId);
@@ -1193,7 +1271,7 @@ export default function Home() {
                   <div className="catalog-heading"><div><p className="eyebrow">Plan y optativas</p><h3>Materias disponibles</h3></div><span>{availablePlannerCourses.length}</span></div>
                   <div className="search-box planner-search">
                     <span aria-hidden="true">⌕</span>
-                    <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => setPlannerSearch(event.target.value)} placeholder="Buscar por nombre, código o área" />
+                    <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => handlePlannerSearch(event.target.value)} placeholder="Buscar por nombre, código o área" />
                     {plannerSearch && <button type="button" className="search-clear" onClick={() => setPlannerSearch("")} aria-label="Limpiar búsqueda">×</button>}
                   </div>
                   <p className="catalog-help">Arrastrá una materia o elegí su semestre. Los créditos se conservan tal como figuran en el plan.</p>
@@ -1264,7 +1342,7 @@ export default function Home() {
                 <circle cx="8.5" cy="8.5" r="5.25" />
                 <path d="m12.4 12.4 4.1 4.1" />
               </svg>
-              <input aria-label="Buscar materia, código o área" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar materia, código o área" />
+              <input aria-label="Buscar materia, código o área" value={search} onChange={(event) => handleCurriculumSearch(event.target.value)} placeholder="Buscar materia, código o área" />
               {search && <button type="button" className="search-clear" onClick={() => setSearch("")} aria-label="Limpiar búsqueda" title="Limpiar búsqueda">×</button>}
             </div>
             {planYear === "1997" ? <label className="toggle-control">
@@ -1308,11 +1386,21 @@ export default function Home() {
               <div><span>{filtered("opt").length} materias verificadas en la composición</span><b>{showElectives ? "−" : "+"}</b></div>
             </button>
             {showElectives && (
+              <>
               <div className="electives-grid">
                 {filtered("opt").map((course) => (
                   <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
+              <div className="electives-loader" role="status" aria-live="polite">
+                {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{extendedPlan1997Courses.length} materias adicionales</strong> de la composición oficial del plan en Bedelías. <a href={extendedElectivesData?.source.planUrl} target="_blank" rel="noreferrer">Ver composición en Bedelías &nearr;</a></p> : <>
+                  <p>{extendedElectivesLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
+                  <button type="button" className="primary-button" disabled={extendedElectivesLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
+                    {extendedElectivesLoadState === "loading" ? "Cargando materias..." : extendedElectivesLoadState === "error" ? "Reintentar carga" : "Cargar catálogo completo de Bedelías"}
+                  </button>
+                </>}
+              </div>
+              </>
             )}
           </section> : <section className="plan-transition-note">
             <p className="eyebrow">Plan vigente · implementación en curso</p>
@@ -1371,6 +1459,8 @@ export default function Home() {
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
                   : selected.dataStatus === "project-assumption" && <p className="verified-source fing-source"><span>!</span> Los 4 créditos se mantienen como supuesto del proyecto para el Plan 2025; la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria vigente de FING</a> confirma el corte de 60%, pero no explicita este crédito.</p>}
+            {selected.offering && <p className="verified-source fing-source offering-source"><span>F</span> FING publica esta materia en la oferta del <strong>{selected.offering.term}</strong>. <a href={selected.offering.sourceUrl} target="_blank" rel="noreferrer">Ver publicación &nearr;</a>{selected.offering.evaUrl && <> · <a href={selected.offering.evaUrl} target="_blank" rel="noreferrer">Abrir curso en EVA &nearr;</a></>}</p>}
+            {!selectedAllocation && (selected.eligibleRequirementIds?.length ?? 0) > 1 && <p className="allocation-source suggested-allocation"><span>i</span> Suma al total del plan, pero Bedel&iacute;as la admite en m&aacute;s de un &aacute;rea ({selected.eligibleRequirementIds?.map((id) => nodeById.get(id)?.shortName ?? nodeById.get(id)?.name ?? id).join(" o ")}). La asignaci&oacute;n de &aacute;rea queda pendiente para no duplicar cr&eacute;ditos.</p>}
             <h3>{selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
             {selectedRule ? (
               selectedRows.length ? <ul className="requirements-list">
@@ -1402,7 +1492,7 @@ export default function Home() {
             {selectedDependents.length > 0 && <><h3>Puede habilitar o condicionar</h3><ul className="requirements-list dependent-list">
               {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
             </ul></>}
-            {selected.offered.length > 0 && <><h3>Se dicta</h3><div className="offering-list">{selected.offered.map((item) => <span key={item}>{item}</span>)}</div></>}
+            {selected.offered.length > 0 && <><h3>Se dicta</h3><div className="offering-list">{selected.offered.map((item) => <span key={item}>{item === "par" ? "2.\u00ba semestre" : item === "impar" ? "1.er semestre" : "Libre"}</span>)}</div></>}
             <button className="primary-button" disabled={!isUnlocked(selected) || isFixedPlacementTest(selected)} onClick={() => cycleStatus(selected)}>
               {isFixedPlacementTest(selected)
                 ? "Acreditada automáticamente por la trayectoria"

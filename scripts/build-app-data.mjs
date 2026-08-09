@@ -4,23 +4,43 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { allocationFromPaths, groupCodeToNode, requirementStructures } from "./academic-requirements.mjs";
 
+async function loadOptionalJson(filePath) {
+  try {
+    return JSON.parse(await readFile(filePath, "utf8"));
+  } catch (error) {
+    if (error?.code === "ENOENT") return null;
+    throw error;
+  }
+}
+
+function planCourseId(course, primaryServiceCode) {
+  return course.serviceCode && course.serviceCode !== primaryServiceCode
+    ? `${course.serviceCode}:${course.code}`
+    : course.code;
+}
+
+function isAdministrativeCourse(course) {
+  const name = String(course.name ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
+  return /^CREDITOS? (?:ASIGNADOS? POR REVALIDAS?|NO ACUM)/.test(name);
+}
+
 const inputPath = path.resolve(process.argv[2] ?? "data/bedelias/fing-ingenieria-computacion-1997.json");
 const outputPath = path.resolve(process.argv[3] ?? "app/data/computacion-1997-bedelias.json");
+const offeringPath = path.resolve(process.argv[4] ?? "data/fing/computacion-oferta-2026-2.json");
+const extendedOutputPath = path.resolve(process.argv[5] ?? "app/data/computacion-1997-electivas.json");
 const coreCourseCodes = new Set([
   "MI2", "1023", "1373", "1061", "1151", "1030", "1321", "1062", "1031", "1027", "1026",
   "1466", "1323", "1025", "1033", "1537", "1324", "1325", "1944", "1911", "1327", "1446",
   "1945", "1650", "1783", "1340", "1721", "1224", "1225",
 ]);
-const flexibleCourseCodes = new Set([
-  "2044", "2512", "1886", "1157", "1872", "5852", "1158", "1450", "2046", "1375", "1617", "1641",
-  "1631", "1624", "1632", "2398", "1857", "5914", "1063", "1066", "2415", "1899", "1898", "5005",
-  "1871", "1640", "2047", "1876", "2418", "1867", "1949", "1890", "1556", "5907", "1891", "1434",
-  "1775", "1774", "2045", "1868", "1543", "1942", "1354", "1350", "1340", "1866", "5720", "1887",
-  "1637", "1316", "1349", "5916", "1223", "1780", "1152", "1153", "1510", "1918", "1731", "1545", "1926",
+const defaultFlexibleCourseCodes = new Set([
+  "1316", "1354", "1375", "1434", "1545", "1556", "1617", "1624", "1731", "1774",
+  "1780", "1857", "1866", "1867", "1887", "1890", "1891", "1918", "1949", "5916",
 ]);
-const appCourseCodes = new Set([...coreCourseCodes, ...flexibleCourseCodes, "1730"]);
+const appCourseCodes = new Set([...coreCourseCodes, ...defaultFlexibleCourseCodes, "1730"]);
 
 const dataset = JSON.parse(await readFile(inputPath, "utf8"));
+const offering = await loadOptionalJson(offeringPath);
 const programCatalog = JSON.parse(await readFile(path.resolve("data/fing/computacion-programas-oficiales.json"), "utf8"));
 const programByCourse = new Map(programCatalog.programs.filter((program) => program.planYears.includes("1997")).map((program) => [program.courseCode, program]));
 const courses = dataset.plan.courses
@@ -32,7 +52,7 @@ const courses = dataset.plan.courses
       allocation.eligibleRequirementIds = [program.areaNodeId];
       allocation.creditAllocations = [{ nodeId: program.areaNodeId, credits: course.credits, status: "official", sourceUrl: program.url }];
     }
-    return { code: course.code, name: course.name, credits: course.credits, catalogKind: flexibleCourseCodes.has(course.code) ? "flexible" : "trajectory", ...allocation };
+    return { code: course.code, name: course.name, credits: course.credits, catalogKind: defaultFlexibleCourseCodes.has(course.code) ? "flexible" : "trajectory", ...allocation };
   })
   .sort((a, b) => a.code.localeCompare(b.code));
 const rules = dataset.prerequisites
@@ -40,6 +60,49 @@ const rules = dataset.prerequisites
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }))
   .sort((a, b) => `${a.target.code}:${a.target.assessment}`.localeCompare(`${b.target.code}:${b.target.assessment}`));
 
+const defaultCourseIds = new Set(courses.map((course) => course.code));
+const offeringByCode = new Map((offering?.courses ?? []).map((course) => [course.code, course]));
+const extendedCourses = dataset.plan.courses
+  .filter((course) => !isAdministrativeCourse(course))
+  .filter((course) => !defaultCourseIds.has(planCourseId(course, dataset.service.code)))
+  .map((course) => {
+    const id = planCourseId(course, dataset.service.code);
+    const offeredCourse = !course.serviceCode || course.serviceCode === dataset.service.code
+      ? offeringByCode.get(course.code)
+      : null;
+    const semester = offering?.term?.semester === 1 ? "impar" : offering?.term?.semester === 2 ? "par" : "libre";
+    return {
+      id,
+      serviceCode: course.serviceCode ?? dataset.service.code,
+      code: course.code,
+      name: course.name,
+      credits: course.credits,
+      catalogKind: "bedelias-catalog",
+      ...allocationFromPaths(course, "1997", null, dataset.plan.sourceUrl),
+      offered: offeredCourse ? [semester] : [],
+      ...(offeredCourse ? {
+        offering: {
+          term: offering.term.label,
+          sourceUrl: offering.source.url,
+          ...(offeredCourse.evaUrl ? { evaUrl: offeredCourse.evaUrl } : {}),
+          capacity: offeredCourse.capacity,
+        },
+      } : {}),
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name, "es"));
+const extendedCourseIds = new Set(extendedCourses.map((course) => course.id));
+const extendedRules = dataset.prerequisites
+  .filter((rule) => extendedCourseIds.has(planCourseId(rule.target ?? {}, dataset.service.code)) && rule.expression)
+  .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }))
+  .sort((a, b) => `${a.target.code}:${a.target.assessment}`.localeCompare(`${b.target.code}:${b.target.assessment}`));
+const compositionIds = new Set(dataset.plan.courses.map((course) => planCourseId(course, dataset.service.code)));
+const offeredOutsidePlanComposition = (offering?.courses ?? [])
+  .filter((course) => !compositionIds.has(course.code))
+  .map(({ code, name }) => ({ code, name }));
+const excludedAdministrativeEntries = dataset.plan.courses
+  .filter(isAdministrativeCourse)
+  .map((course) => ({ id: planCourseId(course, dataset.service.code), serviceCode: course.serviceCode ?? dataset.service.code, code: course.code, name: course.name, credits: course.credits }));
 const missingCourses = [...appCourseCodes].filter((code) => !courses.some((course) => course.code === code));
 const missingCourseRules = [...coreCourseCodes].filter((code) => !rules.some((rule) => rule.target.code === code && rule.target.assessment === "course"));
 if (missingCourses.length || missingCourseRules.length) {
@@ -81,6 +144,33 @@ const projection = {
   rules,
 };
 
-await mkdir(path.dirname(outputPath), { recursive: true });
-await writeFile(outputPath, `${JSON.stringify(projection, null, 2)}\n`, "utf8");
+const extendedProjection = {
+  schemaVersion: 2,
+  source: {
+    system: dataset.source.system,
+    extractedAt: dataset.source.extractedAt,
+    planUrl: dataset.plan.sourceUrl,
+    contentHash: dataset.contentHash,
+    enrichmentSources: offering ? [{
+      system: offering.source.system,
+      url: offering.source.url,
+      reviewedAt: offering.source.reviewedAt,
+      term: offering.term,
+    }] : [],
+  },
+  courses: extendedCourses,
+  rules: extendedRules,
+  offeredOutsidePlanComposition,
+  excludedAdministrativeEntries,
+};
+
+await Promise.all([
+  mkdir(path.dirname(outputPath), { recursive: true }),
+  mkdir(path.dirname(extendedOutputPath), { recursive: true }),
+]);
+await Promise.all([
+  writeFile(outputPath, `${JSON.stringify(projection, null, 2)}\n`, "utf8"),
+  writeFile(extendedOutputPath, `${JSON.stringify(extendedProjection, null, 2)}\n`, "utf8"),
+]);
 console.log(`Proyección: ${courses.length} cursos y ${rules.length} reglas -> ${outputPath}`);
+console.log(`Catálogo diferido: ${extendedCourses.length} materias de Bedelías -> ${extendedOutputPath}`);
