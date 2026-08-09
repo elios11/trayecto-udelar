@@ -864,7 +864,6 @@ export default function Home() {
                 <strong>Tema</strong>
                 <small>{activeThemeOption.label} · {themeScheme === "dark" ? "Oscuro" : "Claro"}</small>
               </span>
-              <span className="appearance-chevron" aria-hidden="true">⌄</span>
             </summary>
             <div className="appearance-panel">
               <div className="appearance-heading">
