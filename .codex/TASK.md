@@ -190,7 +190,7 @@ El índice oficial completo es <https://eva.fing.edu.uy/course/view.php?id=800&s
 - La malla horizontal se excluye del detector de paneles con scroll vertical: apuntar una materia nunca desactiva el suavizado vertical de la página, aunque el navegador reporte `overflow-y: auto` como efecto de `overflow-x`.
 - Las condiciones de Bedelías se presentan con lenguaje normalizado y alternativas en viñetas. La transformación es únicamente visual: códigos, reglas y evaluación conservan intactos los datos oficiales extraídos.
 - Las fichas identifican en texto cuándo una materia o asignación proviene de Bedelías; no enlazan esas menciones a la portada general porque no existe una URL pública permanente para la ficha concreta.
-- Buscador por código, nombre o área, con botón `×` para limpiar todo el texto de una vez.
+- Buscador compartido por la malla y el planificador: ignora mayúsculas y tildes, admite código, nombre, área, prefijos de palabras y siglas genéricas sin conectores (`GAL`, `GAL2`, `P1`, `PROG1`), con botón `×` para limpiar todo el texto de una vez.
 - Filtro de materias habilitadas en Plan 1997. En Plan 2025 se reemplaza por un indicador de cobertura de previas, porque todavía no corresponde afirmar habilitación oficial.
 - Estados visuales pendiente/aprobada/exonerada.
 - Persistencia local.
@@ -316,7 +316,15 @@ Pruebas en `tests/computacion-2025-data.test.mjs`:
 - totales exactos por semestre en ambas trayectorias oficiales;
 - ficha y estado de procedencia para todas las materias proyectadas.
 
-Estado actual: `npm.cmd test` compila correctamente y pasan 18/18 pruebas.
+Pruebas en `tests/course-search.test.mjs`:
+
+- normalización de mayúsculas, tildes y puntuación;
+- búsqueda por siglas sin conectores y con sufijo numérico;
+- alias genéricos palabra+número (`P1`, `PROG1`);
+- equivalencia de numeración romana y arábiga;
+- prefijos de varias palabras y casos negativos para evitar coincidencias arbitrarias.
+
+Estado actual: `npm.cmd test` compila correctamente y pasan 31/31 pruebas. El lint de los archivos nuevos pasa sin observaciones. El lint global conserva 12 errores y 1 advertencia preexistentes en `app/page.tsx` y `scripts/build-computacion-2025.mjs`.
 
 ## 6. Bugs, inconsistencias y límites conocidos
 
