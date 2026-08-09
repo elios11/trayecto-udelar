@@ -1393,7 +1393,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="electives-loader" role="status" aria-live="polite">
-                {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{extendedPlan1997Courses.length} materias adicionales</strong> de la composición oficial del plan en Bedelías. <a href={extendedElectivesData?.source.planUrl} target="_blank" rel="noreferrer">Ver composición en Bedelías &nearr;</a></p> : <>
+                {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{extendedPlan1997Courses.length} materias adicionales</strong> de la composición oficial del plan en Bedelías.</p> : <>
                   <p>{extendedElectivesLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
                   <button type="button" className="primary-button" disabled={extendedElectivesLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
                     {extendedElectivesLoadState === "loading" ? "Cargando materias..." : extendedElectivesLoadState === "error" ? "Reintentar carga" : "Cargar catálogo completo de Bedelías"}
