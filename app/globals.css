@@ -178,9 +178,10 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .term-empty { min-height: 82px; display: grid; place-content: center; justify-items: center; border: 1px dashed #bdcbd1; border-radius: 9px; color: #8a999f; }
 .term-empty span { font-size: 20px; font-weight: 300; }
 .term-empty p { margin: 3px 0 0; font-size: 9px; }
-.add-term-card { min-height: 126px; display: grid; place-content: center; justify-items: center; padding: 20px; border: 1px dashed #aebfc7; border-radius: 13px; background: rgba(255,255,255,.45); color: var(--udelar); }
-.add-term-card span { width: 31px; height: 31px; display: grid; place-items: center; margin-bottom: 8px; border-radius: 50%; background: #e3edf2; font-size: 20px; font-weight: 300; }
-.add-term-card strong { font-size: 11px; }
+.add-term-card { min-height: 126px; display: grid; place-content: center; justify-items: center; padding: 20px; border: 1px dashed color-mix(in srgb, var(--udelar) 42%, var(--line)); border-radius: 13px; background: var(--surface-subtle); color: var(--accent-ink); transition: border-color .15s ease, background .15s ease; }
+.add-term-card:hover { border-color: var(--udelar); background: var(--accent-soft); }
+.add-term-card span { width: 31px; height: 31px; display: grid; place-items: center; margin-bottom: 8px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); font-size: 20px; font-weight: 300; }
+.add-term-card strong { color: var(--ink); font-size: 11px; }
 .add-term-card small { margin-top: 3px; color: var(--muted); font-size: 8px; }
 .planner-board.compact { grid-template-columns: 1fr; gap: 9px; }
 .planner-board.compact .planner-term { display: grid; grid-template-columns: 210px minmax(0,1fr); align-items: center; }
@@ -372,14 +373,14 @@ footer a { color: white; text-decoration: none; white-space: nowrap; }
   .planner-board { padding: 16px; }
   .planner-board.compact .planner-term { display: block; }
   .planner-board.compact .planner-term > header { border-right: 0; }
-  .curriculum-scroll { overflow: visible; background: linear-gradient(180deg, #f6f8f8 0, var(--paper) 100%); }
+  .curriculum-scroll { overflow: visible; background: linear-gradient(180deg, var(--surface-subtle) 0, var(--paper) 100%); }
   .semester-grid { display: block; padding: 22px 16px 30px; min-width: 0; }
   .semester-column { position: relative; padding-left: 42px; margin-bottom: 28px; }
-  .semester-column::before { content: ""; position: absolute; left: 15px; top: 32px; bottom: -30px; width: 1px; background: #cbd7dd; }
+  .semester-column::before { content: ""; position: absolute; left: 15px; top: 32px; bottom: -30px; width: 1px; background: var(--line); }
   .semester-column:last-child { margin-bottom: 0; }
   .semester-column:last-child::before { display: none; }
   .semester-column > header { position: relative; min-height: 34px; padding: 0 0 10px; margin-bottom: 8px; border-bottom: 0; }
-  .semester-column > header > span { position: absolute; left: -42px; top: 0; width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: var(--udelar); border: 4px solid #edf2f3; color: white; font-size: 10px; font-weight: 760; z-index: 1; }
+  .semester-column > header > span { position: absolute; left: -42px; top: 0; width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: var(--udelar); border: 4px solid var(--surface-subtle); color: white; font-size: 10px; font-weight: 760; z-index: 1; }
   .semester-column:first-child > header > span { background: var(--udelar-dark); }
   .semester-column h2 { font-size: 16px; letter-spacing: -.025em; }
   .semester-column header p { margin-top: 3px; font-size: 10px; }
@@ -660,7 +661,7 @@ body, .app-shell, .workspace { background: var(--paper); }
 .linear-progress, .area-track, .term-load, .load-row > i { background: var(--surface-strong); }
 .credential-switch, .view-switch, .search-clear, .planned-course > div button { background: var(--surface-muted); }
 .credential-switch button.active, .view-switch button.active { background: var(--surface); }
-.requirements-overview, .catalog-heading > span, .planner-term > header > span, .add-term-card span { background: var(--accent-soft); }
+.requirements-overview, .catalog-heading > span, .planner-term > header > span { background: var(--accent-soft); }
 .requirement-children, .required-course-body, .planner-load-overview, .plan-transition-note, .catalog-course select { background: var(--surface-subtle); }
 .course-card.locked, .locked .status-button, .primary-button:disabled { background: var(--surface-muted); color: var(--muted); }
 .official-tag, .replacement-note, .verified-source, .allocation-source { background: var(--success-soft); }

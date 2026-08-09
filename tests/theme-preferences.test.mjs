@@ -53,3 +53,22 @@ test("define persistencia local y paletas para los tipos de visión de color", a
   assert.match(logo, /id="udelar-mark"/);
   assert.match(logo, /fill="currentColor"/);
 });
+
+test("la currícula móvil hereda las superficies del tema activo", async () => {
+  const styles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(styles, /\.curriculum-scroll \{ overflow: visible; background: linear-gradient\(180deg, var\(--surface-subtle\) 0, var\(--paper\) 100%\); \}/);
+  assert.match(styles, /\.semester-column::before \{[^}]*background: var\(--line\); \}/);
+  assert.match(styles, /\.semester-column > header > span \{[^}]*border: 4px solid var\(--surface-subtle\);/);
+  assert.doesNotMatch(styles, /\.curriculum-scroll \{[^}]*#f6f8f8/);
+});
+
+test("la acción para agregar semestres conserva el contraste del tema", async () => {
+  const styles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(styles, /\.add-term-card \{[^}]*background: var\(--surface-subtle\);[^}]*color: var\(--accent-ink\);/);
+  assert.match(styles, /\.add-term-card:hover \{[^}]*background: var\(--accent-soft\);/);
+  assert.match(styles, /\.add-term-card strong \{ color: var\(--ink\);/);
+  assert.match(styles, /\.add-term-card small \{[^}]*color: var\(--muted\);/);
+  assert.doesNotMatch(styles, /\.add-term-card \{[^}]*rgba\(255,255,255/);
+});
