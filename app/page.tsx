@@ -360,10 +360,12 @@ type PlannerView = "board" | "compact" | "balance";
 type PlannerTerm = { id: string; label: string; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
 type CurrentPlannerTerms = Record<PlanId, string | null>;
-type ThemeId = "udelar" | "oscuro" | "violeta" | "solarized" | "bosque" | "terracota";
+type ThemeId = "udelar" | "violeta" | "solarized" | "bosque" | "terracota";
+type ThemeScheme = "light" | "dark";
 type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
 type VisualPreferences = {
   theme: ThemeId;
+  scheme: ThemeScheme;
   colorVisionEnabled: boolean;
   colorVisionType: ColorVisionType;
 };
@@ -371,13 +373,12 @@ type VisualPreferences = {
 const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
 const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
 const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
-const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string] }> = [
-  { id: "udelar", label: "Udelar", colors: ["#004a82", "#55b7cc", "#f3f5f4"] },
-  { id: "oscuro", label: "Oscuro", colors: ["#08151d", "#2f89bd", "#7cc8ee"] },
-  { id: "violeta", label: "Violeta", colors: ["#35244f", "#7650aa", "#d9b7ef"] },
-  { id: "solarized", label: "Solarized", colors: ["#073642", "#268bd2", "#f2d58b"] },
-  { id: "bosque", label: "Bosque", colors: ["#123f38", "#2a8a75", "#b5d8b1"] },
-  { id: "terracota", label: "Terracota", colors: ["#5b2d28", "#bd684f", "#e7b98f"] },
+const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string, string] }> = [
+  { id: "udelar", label: "Udelar", colors: ["#004a82", "#55b7cc", "#f3f5f4", "#0c161c"] },
+  { id: "violeta", label: "Violeta", colors: ["#7650aa", "#d9b7ef", "#f4f0f7", "#17101f"] },
+  { id: "solarized", label: "Solarized", colors: ["#268bd2", "#f2d58b", "#fdf6e3", "#002b36"] },
+  { id: "bosque", label: "Bosque", colors: ["#167565", "#91d0bd", "#eef4f0", "#0c1815"] },
+  { id: "terracota", label: "Terracota", colors: ["#ad503d", "#e7b98f", "#f7f0ec", "#1d1211"] },
 ];
 const colorVisionOptions: Array<{ id: ColorVisionType; label: string }> = [
   { id: "deuteranopia", label: "Deuteranopia" },
@@ -385,6 +386,7 @@ const colorVisionOptions: Array<{ id: ColorVisionType; label: string }> = [
   { id: "tritanopia", label: "Tritanopia" },
 ];
 const isThemeId = (value: unknown): value is ThemeId => themeOptions.some((option) => option.id === value);
+const isThemeScheme = (value: unknown): value is ThemeScheme => value === "light" || value === "dark";
 const isColorVisionType = (value: unknown): value is ColorVisionType => colorVisionOptions.some((option) => option.id === value);
 const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, index) => ({
   id: `term-${index + 1}`,
@@ -412,6 +414,7 @@ export default function Home() {
   const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null });
   const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeId>("udelar");
+  const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
   const [colorVisionType, setColorVisionType] = useState<ColorVisionType>("deuteranopia");
   const importRef = useRef<HTMLInputElement>(null);
@@ -420,6 +423,7 @@ export default function Home() {
   const verticalScrollPositionRef = useRef(0);
   const verticalScrollLastFrameRef = useRef<number | null>(null);
   const verticalScrollFrameRef = useRef<number | null>(null);
+  const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
 
   const courses = useMemo(
     () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997Courses,
@@ -490,8 +494,14 @@ export default function Home() {
       }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
       if (savedVisualPreferences) {
-        const preferences = JSON.parse(savedVisualPreferences) as Partial<VisualPreferences>;
-        if (isThemeId(preferences.theme)) setTheme(preferences.theme);
+        const preferences = JSON.parse(savedVisualPreferences) as Record<string, unknown>;
+        if (preferences.theme === "oscuro") {
+          setTheme("udelar");
+          setThemeScheme("dark");
+        } else {
+          if (isThemeId(preferences.theme)) setTheme(preferences.theme);
+          if (isThemeScheme(preferences.scheme)) setThemeScheme(preferences.scheme);
+        }
         if (typeof preferences.colorVisionEnabled === "boolean") setColorVisionEnabled(preferences.colorVisionEnabled);
         if (isColorVisionType(preferences.colorVisionType)) setColorVisionType(preferences.colorVisionType);
       }
@@ -516,13 +526,14 @@ export default function Home() {
   useEffect(() => {
     const root = document.documentElement;
     root.dataset.theme = theme;
+    root.dataset.scheme = themeScheme;
     root.dataset.colorVision = colorVisionEnabled ? colorVisionType : "standard";
-    root.style.colorScheme = theme === "oscuro" ? "dark" : "light";
+    root.style.colorScheme = themeScheme;
     if (hydrated) {
-      const preferences: VisualPreferences = { theme, colorVisionEnabled, colorVisionType };
+      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType };
       localStorage.setItem(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     }
-  }, [theme, colorVisionEnabled, colorVisionType, hydrated]);
+  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, hydrated]);
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
@@ -608,7 +619,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!selected && !importError) return;
+    if (!selected && !importError && !rolloverTermId) return;
     const root = document.documentElement;
     const body = document.body;
     const previousRootOverflow = root.style.overflow;
@@ -625,7 +636,7 @@ export default function Home() {
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        if (importError) setImportError(null);
+        if (rolloverTermId) setRolloverTermId(null);
         else setSelected(null);
       }
     };
@@ -638,7 +649,7 @@ export default function Home() {
       verticalScrollTargetRef.current = window.scrollY;
       verticalScrollPositionRef.current = window.scrollY;
     };
-  }, [selected, importError]);
+  }, [selected, importError, rolloverTermId]);
 
   useEffect(() => {
     const scroller = curriculumScrollRef.current;
@@ -880,7 +891,10 @@ export default function Home() {
     <main className="app-shell">
       <header className="topbar">
         <div className="brand-block">
-          <img src="/udelar.svg" alt="Universidad de la República" className="udelar-logo" />
+          <svg viewBox="0 0 53 60" className="udelar-logo" role="img" aria-labelledby="udelar-logo-title">
+            <title id="udelar-logo-title">Universidad de la República</title>
+            <use href="/udelar.svg#udelar-mark" />
+          </svg>
           <span className="brand-separator" aria-hidden="true" />
           <div>
             <p className="eyebrow">Proyecto estudiantil no oficial</p>
@@ -896,26 +910,50 @@ export default function Home() {
           <button className="quiet-button" onClick={exportProgress}>Exportar</button>
           <input ref={importRef} type="file" accept="application/json" hidden onChange={importProgress} />
           <details className="appearance-menu">
-            <summary aria-label={`Apariencia: tema ${themeOptions.find((option) => option.id === theme)?.label}`}>
+            <summary aria-label={`Tema ${activeThemeOption.label}, modo ${themeScheme === "dark" ? "oscuro" : "claro"}. Abrir apariencia`}>
               <span
                 className="theme-orb appearance-orb"
                 style={{
-                  "--swatch-a": themeOptions.find((option) => option.id === theme)?.colors[0],
-                  "--swatch-b": themeOptions.find((option) => option.id === theme)?.colors[1],
-                  "--swatch-c": themeOptions.find((option) => option.id === theme)?.colors[2],
+                  "--swatch-a": activeThemeOption.colors[0],
+                  "--swatch-b": activeThemeOption.colors[1],
+                  "--swatch-c": activeThemeOption.colors[2],
+                  "--swatch-dark": activeThemeOption.colors[3],
                 } as React.CSSProperties}
                 aria-hidden="true"
               />
+              <span className="appearance-trigger-copy">
+                <strong>Tema</strong>
+                <small>{activeThemeOption.label} · {themeScheme === "dark" ? "Oscuro" : "Claro"}</small>
+              </span>
+              <span className="appearance-chevron" aria-hidden="true">⌄</span>
             </summary>
             <div className="appearance-panel">
               <div className="appearance-heading">
                 <div>
                   <p className="eyebrow">Apariencia</p>
-                  <h2>Elegí tu ambiente</h2>
+                  <h2>Tema y contraste</h2>
                 </div>
                 <span>Se guarda en este dispositivo</span>
               </div>
-              <div className="theme-grid" role="group" aria-label="Tema de color">
+              <div className="scheme-section">
+                <div>
+                  <strong>Modo de pantalla</strong>
+                  <span>Cada familia tiene versión clara y oscura</span>
+                </div>
+                <label className="scheme-toggle">
+                  <span>Claro</span>
+                  <input
+                    type="checkbox"
+                    role="switch"
+                    aria-label="Usar modo oscuro"
+                    checked={themeScheme === "dark"}
+                    onChange={(event) => setThemeScheme(event.target.checked ? "dark" : "light")}
+                  />
+                  <span className="scheme-track" aria-hidden="true" />
+                  <span>Oscuro</span>
+                </label>
+              </div>
+              <div className="theme-grid" role="group" aria-label="Familia de color">
                 {themeOptions.map((option) => (
                   <button
                     type="button"
@@ -930,6 +968,7 @@ export default function Home() {
                         "--swatch-a": option.colors[0],
                         "--swatch-b": option.colors[1],
                         "--swatch-c": option.colors[2],
+                        "--swatch-dark": option.colors[3],
                       } as React.CSSProperties}
                       aria-hidden="true"
                     />
@@ -1292,15 +1331,15 @@ export default function Home() {
       </footer>
 
       {rolloverTerm && (
-        <div className="modal-backdrop" onClick={() => setRolloverTermId(null)}>
-          <section className="import-modal rollover-modal" role="dialog" aria-modal="true" aria-labelledby="rollover-title" onClick={(event) => event.stopPropagation()}>
+        <div className="modal-backdrop">
+          <section className="import-modal rollover-modal" role="dialog" aria-modal="true" aria-labelledby="rollover-title">
             <div className="modal-symbol rollover-symbol" aria-hidden="true">→</div>
             <h2 id="rollover-title">Terminar {rolloverTerm.label}</h2>
             <p>{rolloverIncompleteCourses.length > 0
               ? "Quedan " + rolloverIncompleteCourses.length + " materias sin exonerar, por " + rolloverIncompleteCredits + " créditos. ¿Querés moverlas al próximo semestre?"
               : "Todas las materias de este semestre están exoneradas. El próximo semestre pasará a ser el actual."}</p>
             <div className="rollover-actions">
-              <button type="button" className="primary-button" autoFocus onClick={() => finishPlannerTerm(true)}>{rolloverIncompleteCourses.length > 0 ? "Mover y continuar" : "Continuar"}</button>
+              <button type="button" className="primary-button" onClick={() => finishPlannerTerm(true)}>{rolloverIncompleteCourses.length > 0 ? "Mover y continuar" : "Continuar"}</button>
               {rolloverIncompleteCourses.length > 0 && <button type="button" className="secondary-button" onClick={() => finishPlannerTerm(false)}>Cerrar sin mover</button>}
               <button type="button" className="quiet-button" onClick={() => setRolloverTermId(null)}>Cancelar</button>
             </div>
