@@ -1,6 +1,16 @@
 # Estado del proyecto: Trayecto Udelar
 
-Última actualización: 2026-08-08  
+## Tarea activa - Ingeniería Eléctrica Plan 2023 (Montevideo)
+
+- Rama/worktree: `feature/ingenieria-electrica-2023` en `MallaCurricularUniversal-electrica-2023`.
+- Alcance corregido por evidencia oficial: el plan fue aprobado en 2022, pero entró en vigencia y está identificado por Bedelías/FING como Plan 2023.
+- Auditoría Bedelías completa al 2026-08-09: 221 unidades/equivalencias, 173 cursos locales, 48 equivalencias externas, 233 reglas publicadas (155 curso, 78 examen) y 17 consultas sin regla publicada.
+- Fuentes, cobertura y pendientes: `data/fing/electrica-2023-fuentes.json` y `docs/tasks/ingenieria-electrica-2023.md`.
+- Fuentes curriculares confirmadas: plan Colibrí/Diario Oficial, página FING, EVA de la Comisión de Carrera, dos trayectorias con Matemática Inicial y planilla de perfiles 2026.
+- La condición especial de actividad de curso de Diseño Lógico quedó normalizada; el snapshot tiene cero nodos sin interpretar. Siguiente paso: proyectar núcleo/perfiles/catálogo y generalizar la interfaz.
+- No integrar en `main`, no hacer push y no publicar sin autorización explícita.
+
+Última actualización: 2026-08-09
 Workspace: `C:\Users\elios\Documents\Proyectos_GPT\MallaCurricularUniversal`
 Rama activa: `main`  
 Commit de importación académica de referencia: `a63f653` (`Import official Bedelias prerequisite rules`)

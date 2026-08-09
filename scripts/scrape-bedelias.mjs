@@ -394,6 +394,7 @@ function parseRequirementOptions(label) {
     "U.C.B aprobada:",
     "Inscripción a Curso de la U.C.B:",
     "Inscripción a Examen de la U.C.B:",
+    "Actividad Curso aprobada/reprobada en la U.C.B:",
   ];
   const escaped = prefixes.map((value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
   const matcher = new RegExp(`(${escaped})\\s*(.*?)(?=(?:${escaped})|$)`, "gi");
@@ -412,7 +413,8 @@ function parseRequirementOptions(label) {
       name = segments.slice(2).join(" - ");
     }
     const lower = prefix.toLowerCase();
-    const assessment = lower.includes("inscripción a curso") ? "course-enrollment"
+    const assessment = lower.includes("actividad curso aprobada/reprobada") ? "course-activity"
+      : lower.includes("inscripción a curso") ? "course-enrollment"
       : lower.includes("inscripción a examen") ? "exam-enrollment"
         : lower.startsWith("curso") ? "course"
           : "exam";

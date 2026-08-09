@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-09",
+  "service": "Facultad de Ingeniería",
+  "serviceCode": "FING",
+  "career": "Ingeniería Eléctrica",
+  "campus": "Montevideo",
+  "identity": {
+    "fingCareerCode": "22-8",
+    "academicPlanYear": "2023",
+    "approvalYear": "2022",
+    "effectiveFrom": "2023-01-01",
+    "bedeliasPlanYear": "2023",
+    "degreeTitle": "Ingeniero Eléctrico / Ingeniera Eléctrica",
+    "intermediateTitle": null,
+    "minCredits": 450,
+    "durationMonths": 60,
+    "status": "verified"
+  },
+  "sources": [
+    {
+      "id": "bedelias-plan",
+      "kind": "bedelias-public-ui",
+      "url": "https://bedelias.udelar.edu.uy/",
+      "status": "verified",
+      "scope": "Vigencia, duración, 450 créditos, título, composición, códigos, créditos, áreas y previaturas de curso/examen."
+    },
+    {
+      "id": "official-plan",
+      "kind": "colibri-plan",
+      "url": "https://hdl.handle.net/20.500.12008/44580",
+      "status": "verified",
+      "scope": "Plan aprobado por CFI Res. 104 del 19/07/2022 y CDC Res. 12 del 29/11/2022; perfil de egreso y mínimos por grupos/áreas."
+    },
+    {
+      "id": "fing-career",
+      "kind": "fing-career-page",
+      "url": "https://www.fing.edu.uy/carreras/grado/ingenieriaelectrica",
+      "status": "verified",
+      "scope": "Código de carrera, duración, créditos y descripción pública de perfiles."
+    },
+    {
+      "id": "career-eva",
+      "kind": "eva-course",
+      "url": "https://eva.fing.edu.uy/course/view.php?id=996",
+      "status": "verified",
+      "scope": "Índice público de implementación, trayectorias, perfiles y documentos importantes."
+    },
+    {
+      "id": "trajectory-with-mi-general",
+      "kind": "eva-pdf",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72762",
+      "status": "verified",
+      "scope": "Trayectoria inicial de ocho semestres con Matemática Inicial para todos los perfiles salvo Potencia; total publicado 277 créditos."
+    },
+    {
+      "id": "trajectory-with-mi-power",
+      "kind": "eva-pdf",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72763",
+      "status": "verified",
+      "scope": "Trayectoria inicial de ocho semestres con Matemática Inicial para Potencia; total publicado 276 créditos."
+    },
+    {
+      "id": "profiles-2026",
+      "kind": "eva-ods",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72770",
+      "status": "verified",
+      "scope": "Planilla vigente 2026 con perfil básico y perfiles Electrónica, Señales y Aprendizaje Automático, Telecomunicaciones, Ingeniería Biomédica, Potencia y Control."
+    },
+    {
+      "id": "bedelias-composition-pdf",
+      "kind": "eva-pdf",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=78345",
+      "status": "verified",
+      "scope": "Emisión oficial de composición del Plan 2023 del 20/04/2026, usada como contraste documental del snapshot."
+    },
+    {
+      "id": "plan-differences",
+      "kind": "eva-pdf",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72781",
+      "status": "verified",
+      "scope": "Diferencias Plan 1997/2023; confirma que el plan aprobado en 2022 entró en vigencia en 2023 y cambió el título a Ingeniero Eléctrico."
+    },
+    {
+      "id": "profile-electronics",
+      "kind": "eva-pdf",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72773",
+      "status": "verified",
+      "scope": "Información adicional del perfil Electrónica."
+    },
+    {
+      "id": "profile-biomedical",
+      "kind": "eva-pdf",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72774",
+      "status": "verified",
+      "scope": "Información adicional del perfil Ingeniería Biomédica."
+    },
+    {
+      "id": "profile-power-license",
+      "kind": "eva-pdf",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=76181",
+      "status": "verified",
+      "scope": "Información adicional sobre habilitación URSEA/UTE para el perfil Potencia."
+    }
+  ],
+  "bedeliasCoverage": {
+    "compositionCoursesAndEquivalences": 221,
+    "localCourses": 173,
+    "externalEquivalences": 48,
+    "prerequisiteEntries": 250,
+    "publishedRules": 233,
+    "courseRules": 155,
+    "examRules": 78,
+    "queriesWithoutPublishedRule": 17,
+    "unparsedRequirementNodes": 0,
+    "publicUiRequests": 15437,
+    "status": "verified-after-normalization"
+  },
+  "pendingSources": [
+    {
+      "id": "trajectory-without-mi",
+      "url": "https://eva.fing.edu.uy/mod/url/view.php?id=72764",
+      "status": "public-link-unresolved",
+      "note": "EVA publica el rótulo 'Trayectoria sin Mat Inicial - todos los perfiles', pero el destino no se resolvió desde el acceso invitado. No se usa para afirmar semestres ni créditos."
+    },
+    {
+      "id": "profile-control-additional",
+      "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72772",
+      "status": "html-wrapper-only",
+      "note": "El recurso público no entregó un archivo directo. El perfil Control sí queda cubierto por la planilla de perfiles 2026."
+    },
+    {
+      "id": "profile-specific-resolutions",
+      "status": "not-located",
+      "note": "No se localizaron resoluciones separadas y actuales para todos los perfiles. Las condiciones específicas conservan procedencia de la planilla oficial 2026."
+    }
+  ]
+}
