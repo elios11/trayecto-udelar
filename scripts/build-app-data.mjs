@@ -6,6 +6,8 @@ import { allocationFromPaths, groupCodeToNode, requirementStructures } from "./a
 
 const inputPath = path.resolve(process.argv[2] ?? "data/bedelias/fing-ingenieria-computacion-1997.json");
 const outputPath = path.resolve(process.argv[3] ?? "app/data/computacion-1997-bedelias.json");
+const offeringPath = path.resolve(process.argv[4] ?? "data/fing/computacion-oferta-2026-2.json");
+const extendedOutputPath = path.resolve(process.argv[5] ?? "app/data/computacion-1997-electivas.json");
 const coreCourseCodes = new Set([
   "MI2", "1023", "1373", "1061", "1151", "1030", "1321", "1062", "1031", "1027", "1026",
   "1466", "1323", "1025", "1033", "1537", "1324", "1325", "1944", "1911", "1327", "1446",
@@ -21,6 +23,7 @@ const flexibleCourseCodes = new Set([
 const appCourseCodes = new Set([...coreCourseCodes, ...flexibleCourseCodes, "1730"]);
 
 const dataset = JSON.parse(await readFile(inputPath, "utf8"));
+const offering = JSON.parse(await readFile(offeringPath, "utf8"));
 const programCatalog = JSON.parse(await readFile(path.resolve("data/fing/computacion-programas-oficiales.json"), "utf8"));
 const programByCourse = new Map(programCatalog.programs.filter((program) => program.planYears.includes("1997")).map((program) => [program.courseCode, program]));
 const courses = dataset.plan.courses
@@ -40,6 +43,37 @@ const rules = dataset.prerequisites
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }))
   .sort((a, b) => `${a.target.code}:${a.target.assessment}`.localeCompare(`${b.target.code}:${b.target.assessment}`));
 
+const compositionByCode = new Map(dataset.plan.courses
+  .filter((course) => !course.serviceCode || course.serviceCode === dataset.service.code)
+  .map((course) => [course.code, course]));
+const extendedCourses = offering.courses
+  .filter((offeredCourse) => !appCourseCodes.has(offeredCourse.code) && compositionByCode.has(offeredCourse.code))
+  .map((offeredCourse) => {
+    const course = compositionByCode.get(offeredCourse.code);
+    return {
+      code: course.code,
+      name: offeredCourse.name,
+      credits: course.credits,
+      catalogKind: "offered-elective",
+      ...allocationFromPaths(course, "1997", null, dataset.plan.sourceUrl),
+      offered: ["par"],
+      offering: {
+        term: offering.term.label,
+        sourceUrl: offering.source.url,
+        evaUrl: offeredCourse.evaUrl,
+        capacity: offeredCourse.capacity,
+      },
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name, "es"));
+const extendedCourseCodes = new Set(extendedCourses.map((course) => course.code));
+const extendedRules = dataset.prerequisites
+  .filter((rule) => extendedCourseCodes.has(rule.target?.code) && rule.expression)
+  .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }))
+  .sort((a, b) => `${a.target.code}:${a.target.assessment}`.localeCompare(`${b.target.code}:${b.target.assessment}`));
+const offeredOutsidePlanComposition = offering.courses
+  .filter((course) => !compositionByCode.has(course.code))
+  .map(({ code, name }) => ({ code, name }));
 const missingCourses = [...appCourseCodes].filter((code) => !courses.some((course) => course.code === code));
 const missingCourseRules = [...coreCourseCodes].filter((code) => !rules.some((rule) => rule.target.code === code && rule.target.assessment === "course"));
 if (missingCourses.length || missingCourseRules.length) {
@@ -81,6 +115,29 @@ const projection = {
   rules,
 };
 
-await mkdir(path.dirname(outputPath), { recursive: true });
-await writeFile(outputPath, `${JSON.stringify(projection, null, 2)}\n`, "utf8");
+const extendedProjection = {
+  schemaVersion: 1,
+  source: {
+    system: offering.source.system,
+    offeringUrl: offering.source.url,
+    reviewedAt: offering.source.reviewedAt,
+    term: offering.term,
+    bedeliasPlanUrl: dataset.plan.sourceUrl,
+    bedeliasExtractedAt: dataset.source.extractedAt,
+    bedeliasContentHash: dataset.contentHash,
+  },
+  courses: extendedCourses,
+  rules: extendedRules,
+  offeredOutsidePlanComposition,
+};
+
+await Promise.all([
+  mkdir(path.dirname(outputPath), { recursive: true }),
+  mkdir(path.dirname(extendedOutputPath), { recursive: true }),
+]);
+await Promise.all([
+  writeFile(outputPath, `${JSON.stringify(projection, null, 2)}\n`, "utf8"),
+  writeFile(extendedOutputPath, `${JSON.stringify(extendedProjection, null, 2)}\n`, "utf8"),
+]);
 console.log(`Proyección: ${courses.length} cursos y ${rules.length} reglas -> ${outputPath}`);
+console.log(`Catálogo diferido: ${extendedCourses.length} materias ofrecidas -> ${extendedOutputPath}`);

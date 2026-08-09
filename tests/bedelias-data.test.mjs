@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
 const data = JSON.parse(await readFile(new URL("../app/data/computacion-1997-bedelias.json", import.meta.url), "utf8"));
+const extended = JSON.parse(await readFile(new URL("../app/data/computacion-1997-electivas.json", import.meta.url), "utf8"));
+const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 
 function walk(node, output = []) {
   if (!node) return output;
@@ -64,6 +66,24 @@ test("el catálogo flexible conserva inclusión, créditos y área oficiales", (
   assert.ok(flexible.every((course) => course.creditAllocations.length > 0));
   assert.equal(flexible.find((course) => course.code === "1731").credits, 10, "incluye Pasantía");
   assert.equal(flexible.find((course) => course.code === "1866").creditAllocations[0].nodeId, "p1997-ai");
+});
+
+test("el catalogo diferido contiene solo oferta vigente compatible con el Plan 1997", () => {
+  assert.equal(extended.schemaVersion, 1);
+  assert.equal(extended.source.system, "Facultad de Ingenier\u00eda \u00b7 Udelar");
+  assert.equal(extended.source.term.year, 2026);
+  assert.equal(extended.source.term.semester, 2);
+  assert.equal(extended.courses.length, 9);
+  assert.ok(extended.courses.every((course) => course.catalogKind === "offered-elective" && course.offered.includes("par")));
+  assert.deepEqual(new Set(extended.courses.map((course) => course.code)), new Set(["1440", "1443", "1347", "1828", "1779", "2042", "1938", "1952", "1633"]));
+  assert.equal(extended.courses.find((course) => course.code === "1440").creditAllocations[0].nodeId, "p1997-systems");
+  assert.deepEqual(extended.courses.find((course) => course.code === "2042").eligibleRequirementIds, ["p1997-programming", "p1997-operations"]);
+  assert.equal(extended.courses.find((course) => course.code === "2042").creditAllocations.length, 0, "no duplica creditos entre areas posibles");
+  assert.equal(extended.offeredOutsidePlanComposition.length, 5);
+  assert.ok(extended.offeredOutsidePlanComposition.some((course) => course.code === "1892"));
+  assert.ok(!extended.courses.some((course) => course.code === "1892"), "no acredita cursos ausentes de la composicion del plan");
+  assert.match(pageSource, /import\("\.\/data\/computacion-1997-electivas\.json"\)/);
+  assert.match(pageSource, /Cargar materias ofrecidas en 2026/);
 });
 
 test("el título de Analista 1997 conserva sus mínimos específicos", () => {

@@ -24,6 +24,10 @@ Sin `--courses`, el modo `plan` intenta consultar las previaturas de todas las u
 
 Para lotes revisados se puede usar `--delay 500`, que es el mínimo prudente aceptado por la herramienta. Conviene agrupar muchos códigos en una sola ejecución porque abrir la carrera, el plan y la consulta pública tiene un costo fijo importante. El checkpoint permite reanudar un lote interrumpido sin repetir reglas ya guardadas.
 
+Si el checkpoint local quedó desactualizado o no viajó con un worktree, el modo reanudable recupera primero las reglas del último snapshot válido del mismo servicio, carrera y plan. Las entradas más nuevas del checkpoint prevalecen y el archivo publicado solo se reemplaza cuando termina el lote.
+
+`npm run bedelias:project` también cruza `data/fing/computacion-oferta-2026-2.json` con la composición del Plan 1997 y genera `app/data/computacion-1997-electivas.json`. La interfaz importa ese archivo únicamente cuando la persona solicita ampliar el catálogo. La oferta debe actualizarse cada semestre desde la publicación oficial de FING; estar en la composición no demuestra por sí solo que una materia se dicte.
+
 En planes cuya composición todavía está incompleta, `--course-names` permite consultar nombres exactos separados por `|`. Los nombres se comparan sin distinguir mayúsculas, acentos ni puntuación. Si Bedelías no devuelve una materia/regla, el checkpoint registra `noPublishedRule`; esto significa “consulta realizada sin regla publicada”, no “materia sin previas”.
 
 ## Modelo de datos

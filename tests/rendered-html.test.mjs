@@ -38,6 +38,7 @@ test("renderiza la malla y su procedencia institucional", async () => {
   assert.match(html, /60 cr\. flexibles dentro del grupo/);
   assert.match(html, /Sin mínimo propio/);
   assert.match(html, /áreas sugeridas en esta trayectoria/);
+  assert.doesNotMatch(html, /An\u00e1lisis y Dise\u00f1o de Algoritmos Distribuidos en Redes/, "el catalogo ampliado no forma parte del HTML inicial");
   assert.match(html, /usá las flechas o la barra inferior para desplazarte horizontalmente/);
   assert.match(html, /Ir al semestre anterior/);
   assert.match(html, /Ir al semestre siguiente/);
