@@ -55,16 +55,15 @@ export function matchesCourseSearch(course, areaLabel, rawQuery) {
   if (!query) return true;
 
   const fields = [course.id, course.name, areaLabel].map(normalizeSearchText);
-  const combined = fields.join(" ");
-  if (combined.includes(query)) return true;
-
   const compactQuery = query.replaceAll(" ", "");
-  if (fields.some((field) => field.replaceAll(" ", "").includes(compactQuery))) return true;
+  if (fields.some((field) => field.replaceAll(" ", "") === compactQuery)) return true;
 
   const searchableTokens = fields.flatMap((field) => field.split(" ").filter(Boolean));
   const queryTokens = query.split(" ");
   if (queryTokens.every((queryToken) => searchableTokens.some((token) => token.startsWith(queryToken)))) return true;
 
-  return [...aliasesFor(course.name), ...aliasesFor(areaLabel)]
-    .some((alias) => alias.startsWith(compactQuery));
+  const aliases = [...aliasesFor(course.name), ...aliasesFor(areaLabel)];
+  return /\d/.test(compactQuery)
+    ? aliases.some((alias) => alias === compactQuery)
+    : aliases.some((alias) => alias.startsWith(compactQuery));
 }

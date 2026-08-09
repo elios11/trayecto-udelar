@@ -21,6 +21,13 @@ test("genera siglas sin conectores y conserva el número", () => {
   assert.equal(matchesCourseSearch(course("Introducción a la Investigación de Operaciones"), "Investigación operativa", "IIO"), true);
 });
 
+test("una sigla numerada exige coincidencia exacta y nunca una subcadena", () => {
+  assert.equal(matchesCourseSearch(course("Geometría y Álgebra Lineal 20"), "Matemática", "GAL2"), false);
+  assert.equal(matchesCourseSearch(course("Regalías 2"), "Derecho", "GAL2"), false);
+  assert.equal(matchesCourseSearch(course("Marco legal"), "Derecho", "gal"), false);
+  assert.equal(matchesCourseSearch(course("Geometría y Álgebra Lineal 2"), "Matemática", "GAL 2"), true);
+});
+
 test("permite abreviaturas genéricas de palabra y número", () => {
   assert.equal(matchesCourseSearch(course("Programación 1"), "Computación", "P1"), true);
   assert.equal(matchesCourseSearch(course("Programación 1"), "Computación", "prog1"), true);
