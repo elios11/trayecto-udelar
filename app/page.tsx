@@ -409,6 +409,7 @@ export default function Home() {
   const [showElectives, setShowElectives] = useState(true);
   const [extendedElectivesData, setExtendedElectivesData] = useState<ExtendedElectivesProjection | null>(null);
   const [extendedElectivesLoadState, setExtendedElectivesLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [fullElectivesCatalogExpanded, setFullElectivesCatalogExpanded] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
   const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms() });
@@ -440,10 +441,28 @@ export default function Home() {
       return null;
     }
   };
+  const expandFullElectivesCatalog = async () => {
+    const projection = await loadExtendedElectives();
+    if (projection) setFullElectivesCatalogExpanded(true);
+  };
+  const ensureFullCatalogForSearch = (value: string) => {
+    if (planYear === "1997" && value.trim() && !extendedElectivesData && extendedElectivesLoadState !== "loading") {
+      void loadExtendedElectives();
+    }
+  };
+  const handleCurriculumSearch = (value: string) => {
+    setSearch(value);
+    ensureFullCatalogForSearch(value);
+  };
+  const handlePlannerSearch = (value: string) => {
+    setPlannerSearch(value);
+    ensureFullCatalogForSearch(value);
+  };
   const extendedPlan1997Courses = useMemo(
     () => buildExtendedPlan1997Courses(extendedElectivesData),
     [extendedElectivesData],
   );
+  const extendedPlan1997CourseIds = useMemo(() => new Set(extendedPlan1997Courses.map((course) => course.id)), [extendedPlan1997Courses]);
   const plan1997AvailableCourses = useMemo(() => [...plan1997Courses, ...extendedPlan1997Courses], [extendedPlan1997Courses]);
 
   const courses = useMemo(
@@ -763,7 +782,8 @@ export default function Home() {
     const matchesSemester = course.semester === semester;
     const matchesSearch = `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLowerCase().includes(search.toLowerCase());
     const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
-    return matchesSemester && matchesSearch && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
+    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim();
+    return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
   });
 
   const exportProgress = () => {
@@ -853,7 +873,8 @@ export default function Home() {
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const availablePlannerCourses = plannerCourses.filter((course) => {
     const query = plannerSearch.trim().toLocaleLowerCase("es-UY");
-    return !assignedPlannerIds.has(course.id) && (!query || `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLocaleLowerCase("es-UY").includes(query));
+    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query;
+    return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && (!query || `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLocaleLowerCase("es-UY").includes(query));
   });
 
   const selectedStatus = selected ? statuses[selected.id] ?? "pending" : "pending";
@@ -1150,7 +1171,7 @@ export default function Home() {
                   <div className="catalog-heading"><div><p className="eyebrow">Catálogo del plan</p><h3>Materias disponibles</h3></div><span>{availablePlannerCourses.length}</span></div>
                   <div className="search-box planner-search">
                     <span aria-hidden="true">⌕</span>
-                    <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => setPlannerSearch(event.target.value)} placeholder="Buscar por nombre, código o área" />
+                    <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => handlePlannerSearch(event.target.value)} placeholder="Buscar por nombre, código o área" />
                     {plannerSearch && <button type="button" className="search-clear" onClick={() => setPlannerSearch("")} aria-label="Limpiar búsqueda">×</button>}
                   </div>
                   <p className="catalog-help">Arrastrá una materia o elegí su semestre. Los créditos se conservan tal como figuran en el plan.</p>
@@ -1214,7 +1235,7 @@ export default function Home() {
                 <circle cx="8.5" cy="8.5" r="5.25" />
                 <path d="m12.4 12.4 4.1 4.1" />
               </svg>
-              <input aria-label="Buscar materia, código o área" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar materia, código o área" />
+              <input aria-label="Buscar materia, código o área" value={search} onChange={(event) => handleCurriculumSearch(event.target.value)} placeholder="Buscar materia, código o área" />
               {search && <button type="button" className="search-clear" onClick={() => setSearch("")} aria-label="Limpiar búsqueda" title="Limpiar búsqueda">×</button>}
             </div>
             {planYear === "1997" ? <label className="toggle-control">
@@ -1265,9 +1286,9 @@ export default function Home() {
                 ))}
               </div>
               <div className="electives-loader" role="status" aria-live="polite">
-                {extendedElectivesLoadState === "loaded" ? <p>Se cargaron <strong>{extendedPlan1997Courses.length} materias adicionales</strong> de la composición oficial del plan en Bedelías. <a href={extendedElectivesData?.source.planUrl} target="_blank" rel="noreferrer">Ver composición en Bedelías &nearr;</a></p> : <>
-                  <p>{extendedElectivesLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : "La carga inicial mantiene las optativas más habituales. El catálogo completo agrega todas las unidades curriculares que Bedelías admite para este plan; las fuentes de FING sólo complementan datos de oferta cuando existen."}</p>
-                  <button type="button" className="primary-button" disabled={extendedElectivesLoadState === "loading"} onClick={() => void loadExtendedElectives()}>
+                {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{extendedPlan1997Courses.length} materias adicionales</strong> de la composición oficial del plan en Bedelías. <a href={extendedElectivesData?.source.planUrl} target="_blank" rel="noreferrer">Ver composición en Bedelías &nearr;</a></p> : <>
+                  <p>{extendedElectivesLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
+                  <button type="button" className="primary-button" disabled={extendedElectivesLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
                     {extendedElectivesLoadState === "loading" ? "Cargando materias..." : extendedElectivesLoadState === "error" ? "Reintentar carga" : "Cargar catálogo completo de Bedelías"}
                   </button>
                 </>}

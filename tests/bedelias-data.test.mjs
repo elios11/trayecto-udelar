@@ -44,7 +44,7 @@ test("todas las materias del núcleo de la trayectoria tienen regla oficial para
 });
 
 test("el Plan 1997 usa la jerarquía y las áreas oficiales de Bedelías", () => {
-  assert.deepEqual(data.sourceCoverage, { officialProgram: 2, officialBedelias: 88, suggested: 0, conflicts: 0, missing: 0 });
+  assert.deepEqual(data.sourceCoverage, { officialProgram: 2, officialBedelias: 48, suggested: 0, conflicts: 0, missing: 0 });
   const targets = new Map(data.creditStructure.nodes.map((node) => [node.id, node.minCredits]));
   assert.equal(targets.get("p1997-basic"), 80);
   assert.equal(targets.get("p1997-math"), 70);
@@ -62,7 +62,7 @@ test("el Plan 1997 usa la jerarquía y las áreas oficiales de Bedelías", () =>
 
 test("el catálogo flexible conserva inclusión, créditos y área oficiales", () => {
   const flexible = data.courses.filter((course) => course.catalogKind === "flexible");
-  assert.equal(flexible.length, 61);
+  assert.equal(flexible.length, 20);
   assert.ok(flexible.every((course) => course.creditAllocations.length > 0));
   assert.equal(flexible.find((course) => course.code === "1731").credits, 10, "incluye Pasantía");
   assert.equal(flexible.find((course) => course.code === "1866").creditAllocations[0].nodeId, "p1997-ai");
@@ -72,7 +72,7 @@ test("el catalogo diferido cubre las materias reales de la composicion de Bedeli
   assert.equal(extended.schemaVersion, 2);
   assert.equal(extended.source.system, "SGAE Bedelías");
   assert.equal(extended.source.contentHash, data.source.contentHash);
-  assert.equal(extended.courses.length, 394);
+  assert.equal(extended.courses.length, 434);
   assert.equal(new Set(extended.courses.map((course) => course.id)).size, extended.courses.length, "los ids por servicio son unicos");
   assert.ok(extended.courses.every((course) => course.catalogKind === "bedelias-catalog"));
   assert.equal(extended.excludedAdministrativeEntries.length, 126);
@@ -94,9 +94,14 @@ test("el catalogo diferido cubre las materias reales de la composicion de Bedeli
   assert.equal(externalCourse.serviceCode, "FCEA");
   assert.equal(externalCourse.creditAllocations[0].nodeId, "p1997-math");
   assert.equal(data.courses.length + extended.courses.length, 484, "cubre toda la composicion salvo entradas administrativas");
+  assert.equal(data.rules.length + extended.rules.length, 126, "conserva las previas de las materias movidas al catalogo diferido");
   assert.match(pageSource, /const plan1997FlexibleCourses:[\s\S]*?id: course\.code,/);
   assert.match(pageSource, /import\("\.\/data\/computacion-1997-electivas\.json"\)/);
   assert.match(pageSource, /Cargar catálogo completo de Bedelías/);
+  assert.equal(pageSource.match(/ensureFullCatalogForSearch\(value\);/g)?.length, 2, "ambos buscadores disparan la carga completa");
+  assert.match(pageSource, /extendedPlan1997CourseIds\.has\(course\.id\) && !fullElectivesCatalogExpanded && !search\.trim\(\)/);
+  assert.match(pageSource, /extendedPlan1997CourseIds\.has\(course\.id\) && !fullElectivesCatalogExpanded && !query/);
+  assert.match(pageSource, /onClick=\{\(\) => void expandFullElectivesCatalog\(\)\}/);
 });
 
 test("el título de Analista 1997 conserva sus mínimos específicos", () => {
