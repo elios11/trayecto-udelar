@@ -449,6 +449,7 @@ export default function Home() {
   const [colorVisionType, setColorVisionType] = useState<ColorVisionType>("deuteranopia");
   const importRef = useRef<HTMLInputElement>(null);
   const curriculumScrollRef = useRef<HTMLDivElement>(null);
+  const curriculumEdgesRef = useRef(curriculumEdges);
   const verticalScrollTargetRef = useRef(0);
   const verticalScrollPositionRef = useRef(0);
   const verticalScrollLastFrameRef = useRef<number | null>(null);
@@ -745,7 +746,11 @@ export default function Home() {
     scroller.scrollLeft = 0;
     const updateEdges = () => {
       const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
-      setCurriculumEdges({ atStart: scroller.scrollLeft <= 1, atEnd: scroller.scrollLeft >= maxScroll - 1 });
+      const nextEdges = { atStart: scroller.scrollLeft <= 1, atEnd: scroller.scrollLeft >= maxScroll - 1 };
+      const currentEdges = curriculumEdgesRef.current;
+      if (currentEdges.atStart === nextEdges.atStart && currentEdges.atEnd === nextEdges.atEnd) return;
+      curriculumEdgesRef.current = nextEdges;
+      setCurriculumEdges(nextEdges);
     };
     updateEdges();
     scroller.addEventListener("scroll", updateEdges, { passive: true });
