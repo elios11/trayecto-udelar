@@ -180,6 +180,24 @@ const plan1997FlexibleCourses: Course[] = bedeliasData.courses
   }));
 
 const plan1997Courses = [...plan1997TrajectoryCourses, ...plan1997FlexibleCourses];
+const plan1997NodeLabels = new Map(bedeliasData.creditStructure.nodes.map((node) => [node.id, node.shortName ?? node.name]));
+const plan2025CatalogCourses: Course[] = (() => {
+  const projected = plan2025Data.courses.map((course) => ({ ...course, semester: "opt" as const, offered: [] }));
+  const projectedIds = new Set(projected.map((course) => course.id));
+  const projectedNames = new Set(projected.map((course) => course.name.toLocaleLowerCase("es-UY")));
+  const electives = plan1997FlexibleCourses
+    .filter((course) => !projectedIds.has(course.id) && !projectedNames.has(course.name.toLocaleLowerCase("es-UY")))
+    .map((course) => ({
+      ...course,
+      semester: "opt" as const,
+      area: plan1997NodeLabels.get(course.creditAllocations?.[0]?.nodeId ?? "") ?? "Optativa",
+      eligibleRequirementIds: [],
+      creditAllocations: [],
+      offered: [],
+      elective: true,
+    }));
+  return [...projected, ...electives];
+})();
 
 function buildPlan2025Courses(trajectoryId: string): Course[] {
   const trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
@@ -341,6 +359,7 @@ type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
 type PlannerTerm = { id: string; label: string; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
+type CurrentPlannerTerms = Record<PlanId, string | null>;
 type ThemeId = "udelar" | "oscuro" | "violeta" | "solarized" | "bosque" | "terracota";
 type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
 type VisualPreferences = {
@@ -350,6 +369,7 @@ type VisualPreferences = {
 };
 
 const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
+const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
 const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
 const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string] }> = [
   { id: "udelar", label: "Udelar", colors: ["#004a82", "#55b7cc", "#f3f5f4"] },
@@ -389,6 +409,8 @@ export default function Home() {
   const [plannerView, setPlannerView] = useState<PlannerView>("board");
   const [plannerSearch, setPlannerSearch] = useState("");
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
+  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null });
+  const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
   const [colorVisionType, setColorVisionType] = useState<ColorVisionType>("deuteranopia");
@@ -404,10 +426,11 @@ export default function Home() {
     [planYear, trajectoryId],
   );
   const plannerCourses = useMemo<Course[]>(() => planYear === "2025"
-    ? plan2025Data.courses.map((course) => ({ ...course, semester: "opt", offered: [] }))
+    ? plan2025CatalogCourses
     : plan1997Courses,
   [planYear]);
   const plannerTerms = plannerPlans[planYear];
+  const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
   const storedStatuses = progress[planYear] ?? {};
   const statuses = useMemo(
@@ -460,6 +483,11 @@ export default function Home() {
       }
       const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
       if (savedPlanner) setPlannerPlans(JSON.parse(savedPlanner));
+      const savedCurrentPlannerTerms = localStorage.getItem(CURRENT_TERM_STORAGE_KEY);
+      if (savedCurrentPlannerTerms) {
+        const parsed = JSON.parse(savedCurrentPlannerTerms) as Partial<CurrentPlannerTerms>;
+        setCurrentPlannerTerms({ 1997: typeof parsed["1997"] === "string" ? parsed["1997"] : null, 2025: typeof parsed["2025"] === "string" ? parsed["2025"] : null });
+      }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
       if (savedVisualPreferences) {
         const preferences = JSON.parse(savedVisualPreferences) as Partial<VisualPreferences>;
@@ -480,6 +508,10 @@ export default function Home() {
   useEffect(() => {
     if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
   }, [plannerPlans, hydrated]);
+
+  useEffect(() => {
+    if (hydrated) localStorage.setItem(CURRENT_TERM_STORAGE_KEY, JSON.stringify(currentPlannerTerms));
+  }, [currentPlannerTerms, hydrated]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -647,7 +679,7 @@ export default function Home() {
   }, 0);
   const courseAreaLabel = (course: Course) => {
     const allocation = course.creditAllocations?.[0];
-    return allocation ? (nodeById.get(allocation.nodeId)?.shortName ?? nodeById.get(allocation.nodeId)?.name ?? "Área sin nombre") : "Área pendiente";
+    return allocation ? (nodeById.get(allocation.nodeId)?.shortName ?? nodeById.get(allocation.nodeId)?.name ?? course.area ?? "Área sin nombre") : (course.area ?? (course.elective ? "Optativa" : "Área pendiente"));
   };
   const courseAllocationStatus = (course: Course): AllocationStatus | undefined => course.creditAllocations?.[0]?.status;
   const hasCredentialRequirement = (nodeId: string) => credentialTargets.has(nodeId)
@@ -784,7 +816,10 @@ export default function Home() {
     { id: `term-${Date.now()}`, label: `Semestre ${terms.length + 1}`, courseIds: [] },
   ]);
   const renamePlannerTerm = (termId: string, label: string) => updatePlannerTerms((terms) => terms.map((term) => term.id === termId ? { ...term, label } : term));
-  const removePlannerTerm = (termId: string) => updatePlannerTerms((terms) => terms.length === 1 ? terms : terms.filter((term) => term.id !== termId));
+  const removePlannerTerm = (termId: string) => {
+    updatePlannerTerms((terms) => terms.length === 1 ? terms : terms.filter((term) => term.id !== termId));
+    if (currentPlannerTermId === termId) setCurrentPlannerTerms((current) => ({ ...current, [planYear]: null }));
+  };
   const assignPlannerCourse = (courseId: string, termId: string) => updatePlannerTerms((terms) => terms.map((term) => ({
     ...term,
     courseIds: term.id === termId
@@ -792,12 +827,38 @@ export default function Home() {
       : term.courseIds.filter((id) => id !== courseId),
   })));
   const unassignPlannerCourse = (courseId: string) => updatePlannerTerms((terms) => terms.map((term) => ({ ...term, courseIds: term.courseIds.filter((id) => id !== courseId) })));
+  const setCurrentPlannerTerm = (termId: string) => setCurrentPlannerTerms((current) => ({ ...current, [planYear]: termId }));
+  const finishPlannerTerm = (moveIncomplete: boolean) => {
+    const termId = rolloverTermId ?? currentPlannerTermId;
+    const currentIndex = plannerTerms.findIndex((term) => term.id === termId);
+    if (currentIndex < 0) return;
+    const sourceTerm = plannerTerms[currentIndex];
+    const unfinishedIds = new Set(sourceTerm.courseIds.filter((id) => (statuses[id] ?? "pending") !== "exonerated"));
+    const existingNext = plannerTerms[currentIndex + 1];
+    const nextTerm: PlannerTerm = existingNext ?? { id: "term-" + Date.now(), label: "Semestre " + (plannerTerms.length + 1), courseIds: [] };
+    updatePlannerTerms((terms) => {
+      const extended = existingNext ? terms : [...terms, nextTerm];
+      if (!moveIncomplete || unfinishedIds.size === 0) return extended;
+      return extended.map((term) => {
+        if (term.id === sourceTerm.id) return { ...term, courseIds: term.courseIds.filter((id) => !unfinishedIds.has(id)) };
+        if (term.id === nextTerm.id) return { ...term, courseIds: [...term.courseIds.filter((id) => !unfinishedIds.has(id)), ...unfinishedIds] };
+        return term;
+      });
+    });
+    setCurrentPlannerTerms((current) => ({ ...current, [planYear]: nextTerm.id }));
+    setRolloverTermId(null);
+  };
   const assignedPlannerIds = new Set(plannerTerms.flatMap((term) => term.courseIds));
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const availablePlannerCourses = plannerCourses.filter((course) => {
     const query = plannerSearch.trim().toLocaleLowerCase("es-UY");
     return !assignedPlannerIds.has(course.id) && (!query || `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLocaleLowerCase("es-UY").includes(query));
   });
+
+  const rolloverTerm = plannerTerms.find((term) => term.id === rolloverTermId);
+  const rolloverCourses = rolloverTerm?.courseIds.map((id) => plannerCourses.find((course) => course.id === id)).filter(Boolean) as Course[] | undefined;
+  const rolloverIncompleteCourses = rolloverCourses?.filter((course) => (statuses[course.id] ?? "pending") !== "exonerated") ?? [];
+  const rolloverIncompleteCredits = rolloverIncompleteCourses.reduce((sum, course) => sum + course.credits, 0);
 
   const selectedStatus = selected ? statuses[selected.id] ?? "pending" : "pending";
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
@@ -1074,6 +1135,7 @@ export default function Home() {
                     <button className={plannerView === "compact" ? "active" : ""} onClick={() => setPlannerView("compact")} aria-pressed={plannerView === "compact"}><b>☷</b> Compacta</button>
                     <button className={plannerView === "balance" ? "active" : ""} onClick={() => setPlannerView("balance")} aria-pressed={plannerView === "balance"}><b>▰</b> Carga</button>
                   </div>
+                  {currentPlannerTermId && <button className="finish-term-button" onClick={() => setRolloverTermId(currentPlannerTermId)}>Terminar semestre</button>}
                   <button className="add-term-button" onClick={addPlannerTerm}>+ Nuevo semestre</button>
                 </div>
               </div>
@@ -1090,7 +1152,7 @@ export default function Home() {
 
               <div className="planner-layout">
                 <aside className="course-catalog">
-                  <div className="catalog-heading"><div><p className="eyebrow">Catálogo del plan</p><h3>Materias disponibles</h3></div><span>{availablePlannerCourses.length}</span></div>
+                  <div className="catalog-heading"><div><p className="eyebrow">Plan y optativas</p><h3>Materias disponibles</h3></div><span>{availablePlannerCourses.length}</span></div>
                   <div className="search-box planner-search">
                     <span aria-hidden="true">⌕</span>
                     <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => setPlannerSearch(event.target.value)} placeholder="Buscar por nombre, código o área" />
@@ -1119,13 +1181,20 @@ export default function Home() {
                   {plannerTerms.map((term, termIndex) => {
                     const termCourses = term.courseIds.map((id) => plannerCourses.find((course) => course.id === id)).filter(Boolean) as Course[];
                     const termCredits = termCourses.reduce((sum, course) => sum + course.credits, 0);
+                    const exoneratedCredits = termCourses.reduce((sum, course) => sum + ((statuses[course.id] ?? "pending") === "exonerated" ? course.credits : 0), 0);
+                    const isCurrentTerm = currentPlannerTermId === term.id;
                     return (
-                      <section className="planner-term" key={term.id} onDragOver={(event) => event.preventDefault()} onDrop={() => { if (draggedCourseId) assignPlannerCourse(draggedCourseId, term.id); setDraggedCourseId(null); }}>
+                      <section className={"planner-term" + (isCurrentTerm ? " current" : "")} key={term.id} onDragOver={(event) => event.preventDefault()} onDrop={() => { if (draggedCourseId) assignPlannerCourse(draggedCourseId, term.id); setDraggedCourseId(null); }}>
                         <header>
                           <span>{String(termIndex + 1).padStart(2, "0")}</span>
                           <div>
                             <input value={term.label} onChange={(event) => renamePlannerTerm(term.id, event.target.value)} aria-label={`Nombre del semestre ${termIndex + 1}`} />
-                            <p>{termCourses.length} materias · <strong>{termCredits} créditos</strong></p>
+                            <p>{termCourses.length} materias · <strong>{termCredits} créditos planeados</strong></p>
+                            {isCurrentTerm && <>
+                              <div className="current-term-progress" role="progressbar" aria-label={"Progreso de " + term.label} aria-valuemin={0} aria-valuemax={termCredits} aria-valuenow={exoneratedCredits}><i style={{ width: (termCredits ? exoneratedCredits / termCredits * 100 : 0) + "%" }} /></div>
+                              <p className="current-progress-copy"><strong>{exoneratedCredits}/{termCredits}</strong> créditos exonerados</p>
+                            </>}
+                            <button type="button" className={"current-term-button" + (isCurrentTerm ? " active" : "")} onClick={() => setCurrentPlannerTerm(term.id)}>{isCurrentTerm ? "Semestre actual" : "Marcar como actual"}</button>
                           </div>
                           <button className="remove-term" onClick={() => removePlannerTerm(term.id)} disabled={plannerTerms.length === 1} aria-label={`Eliminar ${term.label}`} title="Las materias vuelven al catálogo">×</button>
                         </header>
@@ -1221,6 +1290,23 @@ export default function Home() {
         <p>Trayecto es un proyecto estudiantil independiente. La información oficial prevalece siempre sobre este prototipo.</p>
         <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Consultar Bedelías ↗</a>
       </footer>
+
+      {rolloverTerm && (
+        <div className="modal-backdrop" onClick={() => setRolloverTermId(null)}>
+          <section className="import-modal rollover-modal" role="dialog" aria-modal="true" aria-labelledby="rollover-title" onClick={(event) => event.stopPropagation()}>
+            <div className="modal-symbol rollover-symbol" aria-hidden="true">→</div>
+            <h2 id="rollover-title">Terminar {rolloverTerm.label}</h2>
+            <p>{rolloverIncompleteCourses.length > 0
+              ? "Quedan " + rolloverIncompleteCourses.length + " materias sin exonerar, por " + rolloverIncompleteCredits + " créditos. ¿Querés moverlas al próximo semestre?"
+              : "Todas las materias de este semestre están exoneradas. El próximo semestre pasará a ser el actual."}</p>
+            <div className="rollover-actions">
+              <button type="button" className="primary-button" autoFocus onClick={() => finishPlannerTerm(true)}>{rolloverIncompleteCourses.length > 0 ? "Mover y continuar" : "Continuar"}</button>
+              {rolloverIncompleteCourses.length > 0 && <button type="button" className="secondary-button" onClick={() => finishPlannerTerm(false)}>Cerrar sin mover</button>}
+              <button type="button" className="quiet-button" onClick={() => setRolloverTermId(null)}>Cancelar</button>
+            </div>
+          </section>
+        </div>
+      )}
 
       {importError && (
         <div className="modal-backdrop" onClick={() => setImportError(null)}>
