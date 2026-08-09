@@ -387,6 +387,8 @@ Estado actual: `npm.cmd test` compila correctamente y pasan 35/35 pruebas. El li
 
 El backlog de mejoras técnicas todavía no implementadas se mantiene en [BACKLOG.md](BACKLOG.md). El primer ítem, `BL-001`, diseña la separación del catálogo ampliado en índice liviano, caché local versionada y chunks de detalles para restaurar una optativa sin descargar el bloque completo.
 
+Las plantillas para abrir tareas aisladas de una carrera o feature nueva se mantienen en [PROMPTS.md](PROMPTS.md).
+
 Orden sugerido:
 
 1. Confirmar documentalmente si la Prueba Inicial 2026 otorga 4 créditos y reemplazar el estado de supuesto por uno verificado, o corregir la contabilización si la evidencia vigente lo contradice.
