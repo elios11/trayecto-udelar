@@ -14,8 +14,8 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 - La aplicacion trabaja actualmente con planes de Ingenieria en Computacion de la Facultad de Ingenieria de Udelar.
 - Los datos consumidos por la interfaz estan en `app/data/`. Las transformaciones y fuentes asociadas viven en `data/`, `scripts/` y `docs/bedelias-importer.md` cuando corresponde.
 - Bedelias es una fuente institucional importante, pero los datos pueden combinar fuentes oficiales, proyecciones y sugerencias. Mantener visible esa diferencia en el modelo y en la interfaz cuando sea relevante.
-- Para el Plan 1997, la carga inicial conserva el núcleo y una selección de optativas verificadas. La oferta adicional se genera en `app/data/computacion-1997-electivas.json` y se carga bajo demanda para no incorporar todo el snapshot al paquete inicial.
-- Una unidad adicional solo puede acreditarse automáticamente si figura tanto en una oferta oficial vigente de FING como en la composición del plan publicada por Bedelías. La oferta efectiva y la pertenencia curricular se conservan como evidencias distintas.
+- Para el Plan 1997, la carga inicial conserva el núcleo y una selección de optativas verificadas. El catálogo completo se genera desde la composición publicada por Bedelías en `app/data/computacion-1997-electivas.json` y se carga bajo demanda para no incorporar todo el snapshot al paquete inicial.
+- Bedelías es la fuente primaria para existencia, código, créditos y pertenencia al plan. EVA, horarios, programas y otras publicaciones oficiales son enriquecimientos opcionales y nunca condicionan que una materia de Bedelías sea visible o acreditable. Se excluyen únicamente entradas administrativas que no representan unidades curriculares, como créditos genéricos por reválida.
 - El avance y los planes personales se guardan actualmente en el almacenamiento local del navegador. No hay persistencia remota activa: `.openai/hosting.json` no declara D1 ni R2.
 
 ## Arquitectura

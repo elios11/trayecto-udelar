@@ -57,7 +57,7 @@ type Course = {
   placementTest?: boolean;
   engineeringOnly?: boolean;
   dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption";
-  offering?: { term: string; sourceUrl: string; evaUrl: string; capacity: number | null };
+  offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null };
 };
 
 type RequirementOption = {
@@ -96,10 +96,11 @@ type BedeliasProjection = {
 };
 type ExtendedElectivesProjection = {
   schemaVersion: number;
-  source: { offeringUrl: string; reviewedAt: string; term: { year: number; semester: number; label: string }; bedeliasContentHash: string };
-  courses: Array<{ code: string; name: string; credits: number; catalogKind: "offered-elective"; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; offered: Array<"impar" | "par" | "libre">; offering: { term: string; sourceUrl: string; evaUrl: string; capacity: number | null } }>;
+  source: { system: string; extractedAt: string; planUrl: string; contentHash: string; enrichmentSources: Array<{ system: string; url: string; reviewedAt: string; term: { year: number; semester: number; label: string } }> };
+  courses: Array<{ id: string; serviceCode: string; code: string; name: string; credits: number; catalogKind: "bedelias-catalog"; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; offered: Array<"impar" | "par" | "libre">; offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null } }>;
   rules: VerifiedRule[];
   offeredOutsidePlanComposition: Array<{ code: string; name: string }>;
+  excludedAdministrativeEntries: Array<{ id: string; serviceCode: string; code: string; name: string; credits: number }>;
 };
 
 
@@ -193,7 +194,7 @@ const plan1997Courses = [...plan1997TrajectoryCourses, ...plan1997FlexibleCourse
 
 function buildExtendedPlan1997Courses(data: ExtendedElectivesProjection | null): Course[] {
   return (data?.courses ?? []).map((course) => ({
-    id: course.code,
+    id: course.id,
     name: readableCourseName(course.name),
     credits: course.credits,
     semester: "opt",
@@ -466,7 +467,7 @@ export default function Home() {
   const verifiedCourses = useMemo(() => {
     if (planYear === "2025") return new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]));
     const merged = new Map<string, unknown>(plan1997VerifiedCourses);
-    for (const course of extendedElectivesData?.courses ?? []) merged.set(course.code, course);
+    for (const course of extendedElectivesData?.courses ?? []) merged.set(course.id, course);
     return merged;
   }, [planYear, extendedElectivesData]);
   const verifiedRules = useMemo(() => {
@@ -803,7 +804,7 @@ export default function Home() {
             setImportError({ title: "No pudimos cargar el catálogo", message: "El progreso incluye optativas del catálogo ampliado, pero no pudimos abrir esos datos. Probá nuevamente." });
             return;
           }
-          for (const course of extended.courses) validCourseIds.add(course.code);
+          for (const course of extended.courses) validCourseIds.add(course.id);
         }
         if (entries.some(([id, status]) => !validCourseIds.has(id) || typeof status !== "string" || !validStatuses.has(status as CourseStatus))) {
           setImportError({ title: "Progreso inválido", message: "El archivo contiene materias o estados que no tienen un formato válido." });
@@ -1264,10 +1265,10 @@ export default function Home() {
                 ))}
               </div>
               <div className="electives-loader" role="status" aria-live="polite">
-                {extendedElectivesLoadState === "loaded" ? <p>Se cargaron <strong>{extendedPlan1997Courses.length} materias</strong> de la oferta vigente que tambi&eacute;n integran este plan. <a href={extendedElectivesData?.source.offeringUrl} target="_blank" rel="noreferrer">Ver oferta de FING &nearr;</a></p> : <>
-                  <p>{extendedElectivesLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : "La carga inicial mantiene las optativas más habituales. El catálogo ampliado agrega materias dictadas por FING en 2026 y respaldadas por la composición de Bedelías."}</p>
+                {extendedElectivesLoadState === "loaded" ? <p>Se cargaron <strong>{extendedPlan1997Courses.length} materias adicionales</strong> de la composición oficial del plan en Bedelías. <a href={extendedElectivesData?.source.planUrl} target="_blank" rel="noreferrer">Ver composición en Bedelías &nearr;</a></p> : <>
+                  <p>{extendedElectivesLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : "La carga inicial mantiene las optativas más habituales. El catálogo completo agrega todas las unidades curriculares que Bedelías admite para este plan; las fuentes de FING sólo complementan datos de oferta cuando existen."}</p>
                   <button type="button" className="primary-button" disabled={extendedElectivesLoadState === "loading"} onClick={() => void loadExtendedElectives()}>
-                    {extendedElectivesLoadState === "loading" ? "Cargando materias..." : extendedElectivesLoadState === "error" ? "Reintentar carga" : "Cargar materias ofrecidas en 2026"}
+                    {extendedElectivesLoadState === "loading" ? "Cargando materias..." : extendedElectivesLoadState === "error" ? "Reintentar carga" : "Cargar catálogo completo de Bedelías"}
                   </button>
                 </>}
               </div>
@@ -1313,7 +1314,7 @@ export default function Home() {
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
                   : selected.dataStatus === "project-assumption" && <p className="verified-source fing-source"><span>!</span> Los 4 créditos se mantienen como supuesto del proyecto para el Plan 2025; la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria vigente de FING</a> confirma el corte de 60%, pero no explicita este crédito.</p>}
-            {selected.offering && <p className="verified-source fing-source offering-source"><span>F</span> FING publica esta materia en la oferta del <strong>{selected.offering.term}</strong>. <a href={selected.offering.evaUrl} target="_blank" rel="noreferrer">Abrir curso en EVA &nearr;</a></p>}
+            {selected.offering && <p className="verified-source fing-source offering-source"><span>F</span> FING publica esta materia en la oferta del <strong>{selected.offering.term}</strong>. <a href={selected.offering.sourceUrl} target="_blank" rel="noreferrer">Ver publicación &nearr;</a>{selected.offering.evaUrl && <> · <a href={selected.offering.evaUrl} target="_blank" rel="noreferrer">Abrir curso en EVA &nearr;</a></>}</p>}
             {!selectedAllocation && (selected.eligibleRequirementIds?.length ?? 0) > 1 && <p className="allocation-source suggested-allocation"><span>i</span> Suma al total del plan, pero Bedel&iacute;as la admite en m&aacute;s de un &aacute;rea ({selected.eligibleRequirementIds?.map((id) => nodeById.get(id)?.shortName ?? nodeById.get(id)?.name ?? id).join(" o ")}). La asignaci&oacute;n de &aacute;rea queda pendiente para no duplicar cr&eacute;ditos.</p>}
             <h3>{selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
             {selectedRule ? (

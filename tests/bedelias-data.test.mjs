@@ -68,22 +68,35 @@ test("el catálogo flexible conserva inclusión, créditos y área oficiales", (
   assert.equal(flexible.find((course) => course.code === "1866").creditAllocations[0].nodeId, "p1997-ai");
 });
 
-test("el catalogo diferido contiene solo oferta vigente compatible con el Plan 1997", () => {
-  assert.equal(extended.schemaVersion, 1);
-  assert.equal(extended.source.system, "Facultad de Ingenier\u00eda \u00b7 Udelar");
-  assert.equal(extended.source.term.year, 2026);
-  assert.equal(extended.source.term.semester, 2);
-  assert.equal(extended.courses.length, 9);
-  assert.ok(extended.courses.every((course) => course.catalogKind === "offered-elective" && course.offered.includes("par")));
-  assert.deepEqual(new Set(extended.courses.map((course) => course.code)), new Set(["1440", "1443", "1347", "1828", "1779", "2042", "1938", "1952", "1633"]));
-  assert.equal(extended.courses.find((course) => course.code === "1440").creditAllocations[0].nodeId, "p1997-systems");
-  assert.deepEqual(extended.courses.find((course) => course.code === "2042").eligibleRequirementIds, ["p1997-programming", "p1997-operations"]);
-  assert.equal(extended.courses.find((course) => course.code === "2042").creditAllocations.length, 0, "no duplica creditos entre areas posibles");
-  assert.equal(extended.offeredOutsidePlanComposition.length, 5);
-  assert.ok(extended.offeredOutsidePlanComposition.some((course) => course.code === "1892"));
-  assert.ok(!extended.courses.some((course) => course.code === "1892"), "no acredita cursos ausentes de la composicion del plan");
+test("el catalogo diferido cubre las materias reales de la composicion de Bedelias", () => {
+  assert.equal(extended.schemaVersion, 2);
+  assert.equal(extended.source.system, "SGAE Bedelías");
+  assert.equal(extended.source.contentHash, data.source.contentHash);
+  assert.equal(extended.courses.length, 394);
+  assert.equal(new Set(extended.courses.map((course) => course.id)).size, extended.courses.length, "los ids por servicio son unicos");
+  assert.ok(extended.courses.every((course) => course.catalogKind === "bedelias-catalog"));
+  assert.equal(extended.excludedAdministrativeEntries.length, 126);
+  assert.ok(extended.excludedAdministrativeEntries.every((course) => /^CREDITOS? (?:ASIGNADOS? POR REVALIDAS?|NO ACUM)/.test(course.name)));
+  assert.ok(!extended.courses.some((course) => /CREDITOS? ASIGNADOS? POR REVALIDA/.test(course.name)));
+
+  const introductoryCyberPhysical = extended.courses.find((course) => course.id === "1888");
+  assert.equal(introductoryCyberPhysical.name, "TALLER DE INICIACION A LOS SISTEMAS CIBER-FISICOS");
+  assert.equal(introductoryCyberPhysical.credits, 4, "conserva los creditos que Bedelias asigna al Plan 1997");
+  assert.deepEqual(introductoryCyberPhysical.eligibleRequirementIds, ["p1997-systems", "p1997-ai"]);
+  assert.equal(introductoryCyberPhysical.offering, undefined, "no depende de una ficha EVA ni de una oferta auxiliar para aparecer");
+
+  const advancedCyberPhysical = extended.courses.find((course) => course.id === "1952");
+  assert.equal(advancedCyberPhysical.credits, 6);
+  assert.ok(advancedCyberPhysical.offered.includes("par"), "la oferta de FING solo enriquece la materia de Bedelias");
+  assert.match(advancedCyberPhysical.offering.evaUrl, /^https:\/\/eva\.fing\.edu\.uy\//);
+
+  const externalCourse = extended.courses.find((course) => course.id === "FCEA:MC10");
+  assert.equal(externalCourse.serviceCode, "FCEA");
+  assert.equal(externalCourse.creditAllocations[0].nodeId, "p1997-math");
+  assert.equal(data.courses.length + extended.courses.length, 484, "cubre toda la composicion salvo entradas administrativas");
+  assert.match(pageSource, /const plan1997FlexibleCourses:[\s\S]*?id: course\.code,/);
   assert.match(pageSource, /import\("\.\/data\/computacion-1997-electivas\.json"\)/);
-  assert.match(pageSource, /Cargar materias ofrecidas en 2026/);
+  assert.match(pageSource, /Cargar catálogo completo de Bedelías/);
 });
 
 test("el título de Analista 1997 conserva sus mínimos específicos", () => {
