@@ -43,7 +43,8 @@ test("renderiza la malla y su procedencia institucional", async () => {
   assert.match(html, /Ir al semestre siguiente/);
   assert.match(html, /Modo de trabajo/);
   assert.match(html, /Planificador/);
-  assert.match(html, /Apariencia: tema Udelar/);
+  assert.match(html, /Tema Udelar, modo claro\. Abrir apariencia/);
+  assert.match(html, /Usar modo oscuro/);
   assert.match(html, /Modo dalt\u00f3nico/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
