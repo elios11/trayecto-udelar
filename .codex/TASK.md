@@ -205,6 +205,8 @@ El índice oficial completo es <https://eva.fing.edu.uy/course/view.php?id=800&s
 - Nodos con mínimo cero rotulados `Sin mínimo propio`, sin barras `0/0`.
 - Asignaciones de área oficiales o sugeridas visibles por materia; las sugeridas cuentan normalmente y nunca duplican créditos.
 - Sección plegable de optativas/electivas.
+- Al restaurar el Plan 1997, si `localStorage` contiene una optativa aprobada o exonerada fuera del catálogo inicial, la aplicación carga una sola vez el bloque ampliado, incorpora únicamente esas materias a la lista visible y contabiliza sus créditos sin exigir una nueva búsqueda.
+- Las optativas visibles se ordenan por progreso: exoneradas, aprobadas y pendientes; dentro de cada grupo se usa orden alfabético español con numeración natural.
 - Drawer de detalles de materia.
 - Identificación visual de materias con datos importados de Bedelías.
 - Visualización de la condición relevante para el siguiente cambio de estado: curso si está pendiente, examen si está aprobada.
@@ -324,7 +326,13 @@ Pruebas en `tests/course-search.test.mjs`:
 - equivalencia de numeración romana y arábiga;
 - prefijos de varias palabras y casos negativos para evitar coincidencias arbitrarias.
 
-Estado actual: `npm.cmd test` compila correctamente y pasan 32/32 pruebas. El lint de los archivos nuevos pasa sin observaciones. El lint global conserva 12 errores y 1 advertencia preexistentes en `app/page.tsx` y `scripts/build-computacion-2025.mjs`.
+Pruebas en `tests/course-progress.test.mjs`:
+
+- detección de progreso académico relevante fuera del catálogo inicial;
+- exclusión de estados pendientes para evitar cargas innecesarias;
+- orden por exonerada/aprobada/pendiente y nombre, sin mutar el catálogo original.
+
+Estado actual: `npm.cmd test` compila correctamente y pasan 35/35 pruebas. El lint de los archivos nuevos pasa sin observaciones. El lint global conserva 12 errores y 1 advertencia preexistentes en `app/page.tsx` y `scripts/build-computacion-2025.mjs`.
 
 ## 6. Bugs, inconsistencias y límites conocidos
 

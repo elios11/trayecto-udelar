@@ -1,9 +1,10 @@
 "use client";
 
-import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
 import { matchesCourseSearch } from "./course-search.mjs";
+import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
 type CredentialId = "analyst" | "engineer";
@@ -191,6 +192,7 @@ const plan1997FlexibleCourses: Course[] = bedeliasData.courses
   }));
 
 const plan1997Courses = [...plan1997TrajectoryCourses, ...plan1997FlexibleCourses];
+const initialPlan1997CourseIds = new Set(plan1997Courses.map((course) => course.id));
 const plan1997NodeLabels = new Map(bedeliasData.creditStructure.nodes.map((node) => [node.id, node.shortName ?? node.name]));
 const plan2025CatalogCourses: Course[] = (() => {
   const projected = plan2025Data.courses.map((course) => ({ ...course, semester: "opt" as const, offered: [] }));
@@ -451,23 +453,31 @@ export default function Home() {
   const verticalScrollPositionRef = useRef(0);
   const verticalScrollLastFrameRef = useRef<number | null>(null);
   const verticalScrollFrameRef = useRef<number | null>(null);
+  const extendedElectivesPromiseRef = useRef<Promise<ExtendedElectivesProjection | null> | null>(null);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
 
 
-  const loadExtendedElectives = async (): Promise<ExtendedElectivesProjection | null> => {
+  const loadExtendedElectives = useCallback(async (): Promise<ExtendedElectivesProjection | null> => {
     if (extendedElectivesData) return extendedElectivesData;
+    if (extendedElectivesPromiseRef.current) return extendedElectivesPromiseRef.current;
     setExtendedElectivesLoadState("loading");
-    try {
-      const catalogImport = await import("./data/computacion-1997-electivas.json");
-      const projection = catalogImport.default as unknown as ExtendedElectivesProjection;
-      setExtendedElectivesData(projection);
-      setExtendedElectivesLoadState("loaded");
-      return projection;
-    } catch {
-      setExtendedElectivesLoadState("error");
-      return null;
-    }
-  };
+    const request = (async () => {
+      try {
+        const catalogImport = await import("./data/computacion-1997-electivas.json");
+        const projection = catalogImport.default as unknown as ExtendedElectivesProjection;
+        setExtendedElectivesData(projection);
+        setExtendedElectivesLoadState("loaded");
+        return projection;
+      } catch {
+        setExtendedElectivesLoadState("error");
+        return null;
+      } finally {
+        extendedElectivesPromiseRef.current = null;
+      }
+    })();
+    extendedElectivesPromiseRef.current = request;
+    return request;
+  }, [extendedElectivesData]);
   const expandFullElectivesCatalog = async () => {
     const projection = await loadExtendedElectives();
     if (projection) setFullElectivesCatalogExpanded(true);
@@ -504,6 +514,10 @@ export default function Home() {
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
   const storedStatuses = progress[planYear] ?? {};
+  const hasStoredExtendedElectiveProgress = useMemo(
+    () => hasRecordedProgressOutsideCatalog(progress["1997"] ?? {}, initialPlan1997CourseIds),
+    [progress],
+  );
   const statuses = useMemo(
     () => planYear === "2025" && trajectoryId === "pi-60-plus"
       ? { ...storedStatuses, PI: "exonerated" as CourseStatus }
@@ -583,6 +597,11 @@ export default function Home() {
   useEffect(() => {
     if (hydrated) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   }, [progress, hydrated]);
+
+  useEffect(() => {
+    if (planYear !== "1997" || !hydrated || !hasStoredExtendedElectiveProgress || extendedElectivesData || extendedElectivesLoadState !== "idle") return;
+    void loadExtendedElectives();
+  }, [planYear, hydrated, hasStoredExtendedElectiveProgress, extendedElectivesData, extendedElectivesLoadState, loadExtendedElectives]);
 
   useEffect(() => {
     if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
@@ -822,13 +841,17 @@ export default function Home() {
     });
   };
 
-  const filtered = (semester: Course["semester"]) => courses.filter((course) => {
-    const matchesSemester = course.semester === semester;
-    const matchesSearch = matchesCourseSearch(course, courseAreaLabel(course), search);
-    const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
-    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim();
-    return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
-  });
+  const filtered = (semester: Course["semester"]) => {
+    const matches = courses.filter((course) => {
+      const matchesSemester = course.semester === semester;
+      const matchesSearch = matchesCourseSearch(course, courseAreaLabel(course), search);
+      const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
+      const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
+      return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
+    });
+    return semester === "opt" ? sortCoursesByProgress(matches, statuses) : matches;
+  };
+  const visibleElectives = filtered("opt");
 
   const exportProgress = () => {
     const blob = new Blob([JSON.stringify({ formatVersion: 1, career: `ingenieria-computacion-${planYear}`, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
@@ -941,7 +964,7 @@ export default function Home() {
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const availablePlannerCourses = plannerCourses.filter((course) => {
     const query = plannerSearch.trim();
-    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query;
+    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
     return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
   });
 
@@ -1384,12 +1407,12 @@ export default function Home() {
           {planYear === "1997" ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
               <div><span className="eyebrow">Trayectoria flexible</span><h2>Optativas y electivas</h2></div>
-              <div><span>{filtered("opt").length} materias verificadas en la composición</span><b>{showElectives ? "−" : "+"}</b></div>
+              <div><span>{visibleElectives.length} materias verificadas en la composición</span><b>{showElectives ? "−" : "+"}</b></div>
             </button>
             {showElectives && (
               <>
               <div className="electives-grid">
-                {filtered("opt").map((course) => (
+                {visibleElectives.map((course) => (
                   <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
