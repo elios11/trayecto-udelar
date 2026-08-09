@@ -3,6 +3,7 @@
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
+import { matchesCourseSearch } from "./course-search.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
 type CredentialId = "analyst" | "engineer";
@@ -823,7 +824,7 @@ export default function Home() {
 
   const filtered = (semester: Course["semester"]) => courses.filter((course) => {
     const matchesSemester = course.semester === semester;
-    const matchesSearch = `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = matchesCourseSearch(course, courseAreaLabel(course), search);
     const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
     const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim();
     return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
@@ -939,9 +940,9 @@ export default function Home() {
   const assignedPlannerIds = new Set(plannerTerms.flatMap((term) => term.courseIds));
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const availablePlannerCourses = plannerCourses.filter((course) => {
-    const query = plannerSearch.trim().toLocaleLowerCase("es-UY");
+    const query = plannerSearch.trim();
     const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query;
-    return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && (!query || `${course.id} ${course.name} ${courseAreaLabel(course)}`.toLocaleLowerCase("es-UY").includes(query));
+    return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
   });
 
   const rolloverTerm = plannerTerms.find((term) => term.id === rolloverTermId);
@@ -1271,7 +1272,7 @@ export default function Home() {
                   <div className="catalog-heading"><div><p className="eyebrow">Plan y optativas</p><h3>Materias disponibles</h3></div><span>{availablePlannerCourses.length}</span></div>
                   <div className="search-box planner-search">
                     <span aria-hidden="true">⌕</span>
-                    <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => handlePlannerSearch(event.target.value)} placeholder="Buscar por nombre, código o área" />
+                    <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => handlePlannerSearch(event.target.value)} placeholder="Nombre, código, área o sigla (ej. GAL)" />
                     {plannerSearch && <button type="button" className="search-clear" onClick={() => setPlannerSearch("")} aria-label="Limpiar búsqueda">×</button>}
                   </div>
                   <p className="catalog-help">Arrastrá una materia o elegí su semestre. Los créditos se conservan tal como figuran en el plan.</p>
@@ -1342,7 +1343,7 @@ export default function Home() {
                 <circle cx="8.5" cy="8.5" r="5.25" />
                 <path d="m12.4 12.4 4.1 4.1" />
               </svg>
-              <input aria-label="Buscar materia, código o área" value={search} onChange={(event) => handleCurriculumSearch(event.target.value)} placeholder="Buscar materia, código o área" />
+              <input aria-label="Buscar materia por nombre, código, área o sigla" value={search} onChange={(event) => handleCurriculumSearch(event.target.value)} placeholder="Nombre, código, área o sigla (ej. GAL)" />
               {search && <button type="button" className="search-clear" onClick={() => setSearch("")} aria-label="Limpiar búsqueda" title="Limpiar búsqueda">×</button>}
             </div>
             {planYear === "1997" ? <label className="toggle-control">
