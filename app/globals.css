@@ -40,11 +40,13 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 
 .hero-row { display: flex; justify-content: space-between; gap: 32px; padding: 34px 36px 30px; background: var(--white); border-bottom: 1px solid var(--line); }
 .career-heading { max-width: 850px; }
-.selector-row { gap: 12px; align-items: flex-end; }
+.selector-row { gap: 12px; align-items: flex-end; flex-wrap: wrap; }
 .selector-row label { display: grid; gap: 7px; }
 .selector-row label > span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
 .selector-row select { min-width: 310px; appearance: none; border: 1px solid var(--line); border-radius: 10px; padding: 13px 42px 13px 14px; font-weight: 680; color: var(--ink); background: #fff linear-gradient(45deg, transparent 50%, var(--udelar) 50%) calc(100% - 18px) 19px/5px 5px no-repeat; }
 .selector-row label:not(:first-child) select { min-width: 180px; }
+.selector-row .faculty-selector select { min-width: 230px; }
+.selector-row .career-selector select { min-width: 250px; }
 .pilot-note { font-size: 12px; color: var(--muted); margin: 14px 0 0; display: flex; align-items: center; gap: 8px; }
 .pilot-note > span { width: 6px; height: 6px; background: var(--pending); border-radius: 50%; flex: none; }
 .credit-summary { gap: 16px; min-width: 230px; }

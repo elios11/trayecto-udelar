@@ -424,6 +424,12 @@ const stateLabels: Record<CourseStatus, string> = {
 const STORAGE_KEY = "trayecto-udelar-progress-v2";
 const LEGACY_STORAGE_KEY = "trayecto-udelar-demo-v1";
 type PlanId = "1997" | "2025" | "electrica-2023";
+type FacultyId = "fing";
+type CareerId = "computacion" | "electrica";
+type AcademicPlanOption = { id: PlanId; label: string; defaultTrajectoryId: string };
+type AcademicCareerOption = { id: CareerId; label: string; plans: AcademicPlanOption[] };
+type AcademicFacultyOption = { id: FacultyId; label: string; careers: AcademicCareerOption[] };
+
 type PlanProgress = Record<PlanId, Record<string, CourseStatus>>;
 type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
@@ -441,6 +447,29 @@ type VisualPreferences = {
 };
 
 const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
+const academicCatalog: AcademicFacultyOption[] = [
+  {
+    id: "fing",
+    label: "Facultad de Ingeniería",
+    careers: [
+      {
+        id: "computacion",
+        label: "Ingeniería en Computación",
+        plans: [
+          { id: "2025", label: "Plan 2025 · vigente, en transición", defaultTrajectoryId: "pi-60-plus" },
+          { id: "1997", label: "Plan 1997 · histórico", defaultTrajectoryId: "pi-20-59" },
+        ],
+      },
+      {
+        id: "electrica",
+        label: "Ingeniería Eléctrica",
+        plans: [
+          { id: "electrica-2023", label: "Plan 2023 · vigente", defaultTrajectoryId: "basic" },
+        ],
+      },
+    ],
+  },
+];
 const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
 const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
 const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string, string] }> = [
@@ -570,6 +599,20 @@ export default function Home() {
     electricCatalogPromiseRef.current = request;
     return request;
   }, [electricCatalogData]);
+  const activeFaculty = academicCatalog.find((faculty) => faculty.careers.some((career) => career.plans.some((plan) => plan.id === planYear))) ?? academicCatalog[0];
+  const activeCareer = activeFaculty.careers.find((career) => career.plans.some((plan) => plan.id === planYear)) ?? activeFaculty.careers[0];
+  const selectAcademicPlan = async (nextPlan: AcademicPlanOption) => {
+    if (nextPlan.id === "electrica-2023" && !await loadElectricPlan()) {
+      setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Ingeniería Eléctrica nuevamente. Tu progreso no se modificó." });
+      return;
+    }
+    setPlanYear(nextPlan.id);
+    setTrajectoryId(nextPlan.defaultTrajectoryId);
+    setCredentialId("engineer");
+    setFullElectivesCatalogExpanded(false);
+    setSelected(null);
+  };
+
   const expandFullElectivesCatalog = async () => {
     const projection = planYear === "electrica-2023"
       ? await loadElectricCatalog()
@@ -1254,40 +1297,37 @@ export default function Home() {
       <section className="hero-row">
         <div className="career-heading">
           <div className="selector-row">
-            <label>
-              <span>Carrera</span>
-              <select value={planYear === "electrica-2023" ? "electrica" : "computacion"} onChange={async (event) => {
-                const electric = event.target.value === "electrica";
-                if (electric && !await loadElectricPlan()) {
-                  setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Ingeniería Eléctrica nuevamente. Tu progreso no se modificó." });
-                  return;
-                }
-                setPlanYear(electric ? "electrica-2023" : "2025");
-                setTrajectoryId(electric ? "basic" : "pi-60-plus");
-                setCredentialId("engineer");
-                setFullElectivesCatalogExpanded(false);
-                setSelected(null);
+            <label className="faculty-selector">
+              <span>Facultad</span>
+              <select value={activeFaculty.id} onChange={(event) => {
+                const nextFaculty = academicCatalog.find((faculty) => faculty.id === event.target.value);
+                const nextPlan = nextFaculty?.careers[0]?.plans[0];
+                if (nextPlan) void selectAcademicPlan(nextPlan);
               }}>
-                <option value="computacion">Ingeniería en Computación</option>
-                <option value="electrica">{electricPlanLoadState === "loading" ? "Ingeniería Eléctrica · cargando…" : "Ingeniería Eléctrica"}</option>
+                {academicCatalog.map((faculty) => <option value={faculty.id} key={faculty.id}>{faculty.label}</option>)}
+              </select>
+            </label>
+            <label className="career-selector">
+              <span>Carrera</span>
+              <select value={activeCareer.id} onChange={(event) => {
+                const nextCareer = activeFaculty.careers.find((career) => career.id === event.target.value);
+                const nextPlan = nextCareer?.plans[0];
+                if (nextPlan) void selectAcademicPlan(nextPlan);
+              }}>
+                {activeFaculty.careers.map((career) => (
+                  <option value={career.id} key={career.id}>
+                    {career.id === "electrica" && electricPlanLoadState === "loading" ? `${career.label} · cargando…` : career.label}
+                  </option>
+                ))}
               </select>
             </label>
             <label>
               <span>Plan</span>
               <select value={planYear} onChange={(event) => {
-                const next = event.target.value as PlanId;
-                setPlanYear(next);
-                setTrajectoryId(next === "2025" ? "pi-60-plus" : next === "electrica-2023" ? "basic" : "pi-20-59");
-                setCredentialId("engineer");
-                setFullElectivesCatalogExpanded(false);
-                setSelected(null);
+                const nextPlan = activeCareer.plans.find((plan) => plan.id === event.target.value);
+                if (nextPlan) void selectAcademicPlan(nextPlan);
               }}>
-                {planYear === "electrica-2023" ? (
-                  <option value="electrica-2023">Plan 2023 · vigente</option>
-                ) : <>
-                  <option value="2025">Plan 2025 · vigente, en transición</option>
-                  <option value="1997">Plan 1997 · histórico</option>
-                </>}
+                {activeCareer.plans.map((plan) => <option value={plan.id} key={plan.id}>{plan.label}</option>)}
               </select>
             </label>
             {appMode === "curriculum" && <label>

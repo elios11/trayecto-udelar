@@ -43,6 +43,6 @@ La procedencia estructurada está en `data/fing/electrica-2023-fuentes.json`.
 
 - Auditoría institucional: completa; la condición especial de actividad de curso de Diseño Lógico quedó normalizada y el snapshot no conserva nodos sin interpretar.
 - Proyección web: implementada con 112 bloques de trayectoria, 36 unidades de núcleo común, siete perfiles y catálogo diferido de 165 materias/equivalencias adicionales.
-- Interfaz: selector de carrera/Plan 2023/perfil, requisitos de grado sin título intermedio inventado, espacios optativos explícitos, procedencia y estados de cobertura de previaturas.
+- Interfaz: navegación Facultad de Ingeniería → Ingeniería Eléctrica → Plan 2023 → perfil, requisitos de grado sin título intermedio inventado, espacios optativos explícitos, procedencia y estados de cobertura de previaturas.
 - Verificación focalizada: generador reproducible, compilación y pruebas curriculares completas; la suite general y el lint final se registran en `.codex/TASK.md`.
 - Publicación, push e integración en `main`: fuera de alcance sin autorización explícita.
