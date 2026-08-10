@@ -16,9 +16,14 @@ Bedelías es la fuente institucional del proyecto. El portal público no ofrece 
 
 ```powershell
 npm run bedelias:catalog
+npm run bedelias:service -- --service FING
 npm run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 1997 --courses 1466,1321
 npm run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 2025 --course-names "Fundamentos de la Combinatoria|Programación Imperativa"
 ```
+
+El modo `bedelias:service` descubre todas las carreras de un servicio y procesa secuencialmente sus planes vigentes. No llama a modelos ni APIs de IA: una vez iniciado, trabaja localmente sin necesitar turnos de Codex. Guarda un índice del servicio en `data/bedelias/services/`, un estado reanudable en `data/bedelias/batches/` y mantiene además los checkpoints individuales del modo `plan`. Si se interrumpe, el mismo comando omite los planes ya completados y continúa con los pendientes. El índice descubierto también se reutiliza; `--refresh-index true` fuerza una actualización desde Bedelías.
+
+Para revisar el lote antes de iniciarlo se puede usar `--dry-run`. Los filtros `--types "GRADO|TECNICATURA|CIO"`, `--careers "CARRERA A|CARRERA B"` y `--max-plans N` permiten acotar la ejecución. `--current-only false` incluye planes históricos. De forma predeterminada se procesan únicamente planes vigentes con tipos compatibles con grado, tecnicaturas y CIO. `Posgrado` se excluye de manera explícita aunque contenga la palabra “grado”; `--types all` incluye posgrados y cualquier otro tipo.
 
 Sin `--courses`, el modo `plan` intenta consultar las previaturas de todas las unidades curriculares locales encontradas en la composición. Para pruebas y desarrollo se recomienda comenzar por un conjunto pequeño.
 

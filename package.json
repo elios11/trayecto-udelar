@@ -15,7 +15,8 @@
     "bedelias:catalog": "node scripts/scrape-bedelias.mjs catalog",
     "bedelias:plan": "node scripts/scrape-bedelias.mjs plan",
     "bedelias:project": "node scripts/build-app-data.mjs",
-    "bedelias:project:2025": "node scripts/build-computacion-2025.mjs"
+    "bedelias:project:2025": "node scripts/build-computacion-2025.mjs",
+    "bedelias:service": "node scripts/scrape-bedelias-service.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

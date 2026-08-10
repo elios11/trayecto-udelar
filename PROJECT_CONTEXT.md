@@ -41,6 +41,7 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 - Para decisiones estables compartidas: este archivo.
 - Para el protocolo de trabajo, integracion y publicacion: `AGENTS.md`.
 - Para la importacion y validacion curricular desde Bedelias: `docs/bedelias-importer.md`.
+- El importador puede ejecutarse por plan o como lote secuencial y reanudable por servicio; el lote local no usa modelos ni APIs de IA y no publica datos automáticamente.
 
 Si estas fuentes parecen incompatibles, el agente debe comprobar primero si su worktree quedo desactualizado respecto de `main`. No debe inventar una conciliacion ni copiar cambios desde otro worktree sin autorizacion.
 
