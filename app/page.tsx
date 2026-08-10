@@ -59,11 +59,16 @@ type Course = {
   placementTest?: boolean;
   engineeringOnly?: boolean;
   dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption";
+  bedeliasCode?: string;
+  core?: boolean;
+  placeholder?: boolean;
+  serviceCode?: string | null;
+  ruleCoverage?: "published" | "not-published" | "not-scraped";
   offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null };
 };
 
 type RequirementOption = {
-  assessment: "course" | "exam" | "course-enrollment" | "exam-enrollment";
+  assessment: "course" | "exam" | "course-enrollment" | "exam-enrollment" | "course-activity";
   serviceCode: string | null;
   code: string;
   name: string;
@@ -116,6 +121,22 @@ type Plan2025Projection = {
   trajectories: Record<string, { label: string; description: string; notice?: string; preSemester?: string[]; semesters: string[][] }>;
   rules: VerifiedRule[];
 };
+
+type Electric2023Projection = Omit<Plan2025Projection, "trajectories" | "source" | "plan" | "courses" | "programSources"> & {
+  source: { reviewedAt: string; profilesSpreadsheet: string; commissionPage: string; planDocument: string; bedeliasExtractedAt: string };
+  plan: Plan2025Projection["plan"] & { approvalYear: number; careerCode: string; noPublishedRule: number; localCourses: number; externalEquivalences: number };
+  courses: Array<Plan2025Projection["courses"][number] & { bedeliasCode?: string; core?: boolean; placeholder?: boolean; elective?: boolean; ruleCoverage?: Course["ruleCoverage"] }>;
+  profiles: Record<string, { label: string; description: string; semesters: string[][] }>;
+  commonCourseIds: string[];
+  requirementGroupMap: Record<string, string>;
+};
+type Electric2023CatalogProjection = {
+  schemaVersion: number;
+  source: { system: string; extractedAt: string; planUrl: string; contentHash: string };
+  courses: Array<Plan2025Projection["courses"][number] & { serviceCode: string | null; bedeliasCode: string; elective: boolean; offered: Array<"impar" | "par" | "libre">; ruleCoverage?: Course["ruleCoverage"] }>;
+  rules: VerifiedRule[];
+};
+
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
 const plan2025Data = plan2025DataJson as unknown as Plan2025Projection;
@@ -236,10 +257,30 @@ function buildPlan2025Courses(trajectoryId: string): Course[] {
     .map((course) => ({ ...course, semester: semesters.get(course.id)!, offered: [] }));
 }
 
+function buildElectric2023Courses(profileId: string, data: Electric2023Projection | null): Course[] {
+  if (!data) return [];
+  const profile = data.profiles[profileId] ?? data.profiles.basic;
+  const semesters = new Map<string, number>();
+  profile.semesters.forEach((ids, index) => ids.forEach((id) => semesters.set(id, index + 1)));
+  return data.courses
+    .filter((course) => semesters.has(course.id))
+    .map((course) => ({ ...course, semester: semesters.get(course.id)!, offered: [] }));
+}
+
+function buildElectric2023Catalog(profileId: string, planData: Electric2023Projection | null, data: Electric2023CatalogProjection | null): Course[] {
+  const trajectoryCourses = buildElectric2023Courses(profileId, planData);
+  const ids = new Set(trajectoryCourses.map((course) => course.id));
+  const bedeliasCodes = new Set(trajectoryCourses.map((course) => course.bedeliasCode).filter(Boolean));
+  const catalog = (data?.courses ?? [])
+    .filter((course) => !ids.has(course.id) && !bedeliasCodes.has(course.bedeliasCode))
+    .map((course) => ({ ...course, semester: "opt" as const }));
+  return [...trajectoryCourses, ...catalog];
+}
+
 function optionSatisfied(option: RequirementOption, statuses: Record<string, CourseStatus>) {
   const status = statuses[option.code] ?? "pending";
   const placementTestSubstitution = option.code === "MI2" && statuses.PI === "exonerated";
-  if (option.assessment === "course") return placementTestSubstitution || status === "approved" || status === "exonerated";
+  if (option.assessment === "course" || option.assessment === "course-activity") return placementTestSubstitution || status === "approved" || status === "exonerated";
   if (option.assessment === "exam") return placementTestSubstitution || status === "exonerated";
   return false;
 }
@@ -296,8 +337,9 @@ function describeOption(option: RequirementOption, courses: Course[]) {
   const name = course?.name ?? readableCourseName(option.name);
   const evidence = option.assessment === "exam" ? "examen aprobado"
     : option.assessment === "course" ? "curso aprobado"
-      : option.assessment === "exam-enrollment" ? "inscripción a examen"
-        : "inscripción a curso";
+      : option.assessment === "course-activity" ? "actividad de curso registrada"
+        : option.assessment === "exam-enrollment" ? "inscripción a examen"
+          : "inscripción a curso";
   return `${name} · ${evidence}`;
 }
 
@@ -306,6 +348,7 @@ function describeExcludedOption(option: RequirementOption, courses: Course[]) {
   const name = course?.name ?? readableCourseName(option.name);
   if (option.assessment === "course-enrollment") return `No estar inscripto/a al curso de ${name}`;
   if (option.assessment === "exam-enrollment") return `No estar inscripto/a al examen de ${name}`;
+  if (option.assessment === "course-activity") return `No tener actividad de curso aprobada o reprobada de ${name}`;
   if (option.assessment === "course") return `No tener aprobado el curso de ${name}`;
   return `No tener aprobado el examen de ${name}`;
 }
@@ -380,7 +423,7 @@ const stateLabels: Record<CourseStatus, string> = {
 
 const STORAGE_KEY = "trayecto-udelar-progress-v2";
 const LEGACY_STORAGE_KEY = "trayecto-udelar-demo-v1";
-type PlanId = "1997" | "2025";
+type PlanId = "1997" | "2025" | "electrica-2023";
 type PlanProgress = Record<PlanId, Record<string, CourseStatus>>;
 type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
@@ -425,7 +468,7 @@ export default function Home() {
   const [appMode, setAppMode] = useState<AppMode>("curriculum");
   const [planYear, setPlanYear] = useState<PlanId>("2025");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
-  const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {} });
+  const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {}, "electrica-2023": {} });
   const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
   const [selected, setSelected] = useState<Course | null>(null);
   const [importError, setImportError] = useState<{ title: string; message: string } | null>(null);
@@ -434,14 +477,18 @@ export default function Home() {
   const [showElectives, setShowElectives] = useState(true);
   const [extendedElectivesData, setExtendedElectivesData] = useState<ExtendedElectivesProjection | null>(null);
   const [extendedElectivesLoadState, setExtendedElectivesLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [electric2023Data, setElectric2023Data] = useState<Electric2023Projection | null>(null);
+  const [electricPlanLoadState, setElectricPlanLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [electricCatalogData, setElectricCatalogData] = useState<Electric2023CatalogProjection | null>(null);
+  const [electricCatalogLoadState, setElectricCatalogLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [fullElectivesCatalogExpanded, setFullElectivesCatalogExpanded] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
-  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms() });
+  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms() });
   const [plannerView, setPlannerView] = useState<PlannerView>("board");
   const [plannerSearch, setPlannerSearch] = useState("");
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
-  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null });
+  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null, "electrica-2023": null });
   const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
@@ -455,6 +502,8 @@ export default function Home() {
   const verticalScrollLastFrameRef = useRef<number | null>(null);
   const verticalScrollFrameRef = useRef<number | null>(null);
   const extendedElectivesPromiseRef = useRef<Promise<ExtendedElectivesProjection | null> | null>(null);
+  const electricCatalogPromiseRef = useRef<Promise<Electric2023CatalogProjection | null> | null>(null);
+  const electricPlanPromiseRef = useRef<Promise<Electric2023Projection | null> | null>(null);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
 
 
@@ -479,13 +528,60 @@ export default function Home() {
     extendedElectivesPromiseRef.current = request;
     return request;
   }, [extendedElectivesData]);
+  const loadElectricPlan = useCallback(async (): Promise<Electric2023Projection | null> => {
+    if (electric2023Data) return electric2023Data;
+    if (electricPlanPromiseRef.current) return electricPlanPromiseRef.current;
+    setElectricPlanLoadState("loading");
+    const request = (async () => {
+      try {
+        const planImport = await import("./data/electrica-2023-fing.json");
+        const projection = planImport.default as unknown as Electric2023Projection;
+        setElectric2023Data(projection);
+        setElectricPlanLoadState("loaded");
+        return projection;
+      } catch {
+        setElectricPlanLoadState("error");
+        return null;
+      } finally {
+        electricPlanPromiseRef.current = null;
+      }
+    })();
+    electricPlanPromiseRef.current = request;
+    return request;
+  }, [electric2023Data]);
+  const loadElectricCatalog = useCallback(async (): Promise<Electric2023CatalogProjection | null> => {
+    if (electricCatalogData) return electricCatalogData;
+    if (electricCatalogPromiseRef.current) return electricCatalogPromiseRef.current;
+    setElectricCatalogLoadState("loading");
+    const request = (async () => {
+      try {
+        const catalogImport = await import("./data/electrica-2023-electivas.json");
+        const projection = catalogImport.default as unknown as Electric2023CatalogProjection;
+        setElectricCatalogData(projection);
+        setElectricCatalogLoadState("loaded");
+        return projection;
+      } catch {
+        setElectricCatalogLoadState("error");
+        return null;
+      } finally {
+        electricCatalogPromiseRef.current = null;
+      }
+    })();
+    electricCatalogPromiseRef.current = request;
+    return request;
+  }, [electricCatalogData]);
   const expandFullElectivesCatalog = async () => {
-    const projection = await loadExtendedElectives();
+    const projection = planYear === "electrica-2023"
+      ? await loadElectricCatalog()
+      : await loadExtendedElectives();
     if (projection) setFullElectivesCatalogExpanded(true);
   };
   const ensureFullCatalogForSearch = (value: string) => {
     if (planYear === "1997" && value.trim() && !extendedElectivesData && extendedElectivesLoadState !== "loading") {
       void loadExtendedElectives();
+    }
+    if (planYear === "electrica-2023" && value.trim() && !electricCatalogData && electricCatalogLoadState !== "loading") {
+      void loadElectricCatalog();
     }
   };
   const handleCurriculumSearch = (value: string) => {
@@ -503,14 +599,18 @@ export default function Home() {
   const extendedPlan1997CourseIds = useMemo(() => new Set(extendedPlan1997Courses.map((course) => course.id)), [extendedPlan1997Courses]);
   const plan1997AvailableCourses = useMemo(() => [...plan1997Courses, ...extendedPlan1997Courses], [extendedPlan1997Courses]);
 
+  const electric2023AvailableCourses = useMemo(() => buildElectric2023Catalog(trajectoryId, electric2023Data, electricCatalogData), [trajectoryId, electric2023Data, electricCatalogData]);
+  const electricCatalogCourseIds = useMemo(() => new Set((electricCatalogData?.courses ?? []).map((course) => course.id)), [electricCatalogData]);
   const courses = useMemo(
-    () => planYear === "2025" ? buildPlan2025Courses(trajectoryId) : plan1997AvailableCourses,
-    [planYear, trajectoryId, plan1997AvailableCourses],
+    () => planYear === "2025"
+      ? buildPlan2025Courses(trajectoryId)
+      : planYear === "electrica-2023" ? electric2023AvailableCourses : plan1997AvailableCourses,
+    [planYear, trajectoryId, plan1997AvailableCourses, electric2023AvailableCourses],
   );
   const plannerCourses = useMemo<Course[]>(() => planYear === "2025"
     ? plan2025CatalogCourses
-    : plan1997AvailableCourses,
-  [planYear, plan1997AvailableCourses]);
+    : planYear === "electrica-2023" ? electric2023AvailableCourses : plan1997AvailableCourses,
+  [planYear, plan1997AvailableCourses, electric2023AvailableCourses]);
   const plannerTerms = plannerPlans[planYear];
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
@@ -518,6 +618,11 @@ export default function Home() {
   const hasStoredExtendedElectiveProgress = useMemo(
     () => hasRecordedProgressOutsideCatalog(progress["1997"] ?? {}, initialPlan1997CourseIds),
     [progress],
+  );
+  const initialElectricCourseIds = useMemo(() => new Set((electric2023Data?.courses ?? []).map((course) => course.id)), [electric2023Data]);
+  const hasStoredElectricCatalogProgress = useMemo(
+    () => hasRecordedProgressOutsideCatalog(progress["electrica-2023"] ?? {}, initialElectricCourseIds),
+    [progress, initialElectricCourseIds],
   );
   const statuses = useMemo(
     () => planYear === "2025" && trajectoryId === "pi-60-plus"
@@ -528,17 +633,26 @@ export default function Home() {
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
     if (planYear === "2025") return new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]));
+    if (planYear === "electrica-2023" && electric2023Data) {
+      const merged = new Map<string, unknown>(electric2023Data.courses.map((course) => [course.id, course]));
+      for (const course of electricCatalogData?.courses ?? []) merged.set(course.id, course);
+      return merged;
+    }
     const merged = new Map<string, unknown>(plan1997VerifiedCourses);
     for (const course of extendedElectivesData?.courses ?? []) merged.set(course.id, course);
     return merged;
-  }, [planYear, extendedElectivesData]);
+  }, [planYear, extendedElectivesData, electricCatalogData, electric2023Data]);
   const verifiedRules = useMemo(() => {
     const rules = planYear === "2025"
       ? plan2025Data.rules
-      : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
+      : planYear === "electrica-2023"
+        ? [...(electric2023Data?.rules ?? []), ...(electricCatalogData?.rules ?? [])]
+        : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
     return new Map(rules.map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
-  }, [planYear, extendedElectivesData]);
-  const creditStructure = planYear === "2025" ? plan2025Data.creditStructure : bedeliasData.creditStructure;
+  }, [planYear, extendedElectivesData, electricCatalogData, electric2023Data]);
+  const creditStructure = planYear === "2025"
+    ? plan2025Data.creditStructure
+    : planYear === "electrica-2023" ? (electric2023Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
   const credential = creditStructure.credentials.find((item) => item.id === credentialId) ?? creditStructure.credentials[0];
@@ -548,10 +662,12 @@ export default function Home() {
       ...(plan2025Data.trajectories[trajectoryId].preSemester?.length ? [0] : []),
       ...plan2025Data.trajectories[trajectoryId].semesters.map((_, index) => index + 1),
     ]
-    : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const planMinCredits = planYear === "2025" ? plan2025Data.plan.minCredits : bedeliasData.plan.minCredits;
-  const analystCredential = creditStructure.credentials.find((item) => item.id === "analyst")!;
-  const engineerCredential = creditStructure.credentials.find((item) => item.id === "engineer")!;
+    : planYear === "electrica-2023" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const planMinCredits = planYear === "2025"
+    ? plan2025Data.plan.minCredits
+    : planYear === "electrica-2023" ? (electric2023Data?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
+  const analystCredential = creditStructure.credentials.find((item) => item.id === "analyst");
+  const engineerCredential = creditStructure.credentials.find((item) => item.id === "engineer") ?? creditStructure.credentials[0];
 
   const setStatuses = (updater: Record<string, CourseStatus> | ((current: Record<string, CourseStatus>) => Record<string, CourseStatus>)) => {
     setProgress((current) => {
@@ -564,17 +680,24 @@ export default function Home() {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setProgress(JSON.parse(saved));
+      if (saved) setProgress({ 1997: {}, 2025: {}, "electrica-2023": {}, ...JSON.parse(saved) });
       else {
         const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-        if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {} });
+        if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {}, "electrica-2023": {} });
       }
       const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
-      if (savedPlanner) setPlannerPlans(JSON.parse(savedPlanner));
+      if (savedPlanner) setPlannerPlans({
+        1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(),
+        ...JSON.parse(savedPlanner),
+      });
       const savedCurrentPlannerTerms = localStorage.getItem(CURRENT_TERM_STORAGE_KEY);
       if (savedCurrentPlannerTerms) {
         const parsed = JSON.parse(savedCurrentPlannerTerms) as Partial<CurrentPlannerTerms>;
-        setCurrentPlannerTerms({ 1997: typeof parsed["1997"] === "string" ? parsed["1997"] : null, 2025: typeof parsed["2025"] === "string" ? parsed["2025"] : null });
+        setCurrentPlannerTerms({
+          1997: typeof parsed["1997"] === "string" ? parsed["1997"] : null,
+          2025: typeof parsed["2025"] === "string" ? parsed["2025"] : null,
+          "electrica-2023": typeof parsed["electrica-2023"] === "string" ? parsed["electrica-2023"] : null,
+        });
       }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
       if (savedVisualPreferences) {
@@ -603,6 +726,11 @@ export default function Home() {
     if (planYear !== "1997" || !hydrated || !hasStoredExtendedElectiveProgress || extendedElectivesData || extendedElectivesLoadState !== "idle") return;
     void loadExtendedElectives();
   }, [planYear, hydrated, hasStoredExtendedElectiveProgress, extendedElectivesData, extendedElectivesLoadState, loadExtendedElectives]);
+
+  useEffect(() => {
+    if (planYear !== "electrica-2023" || !hydrated || !hasStoredElectricCatalogProgress || electricCatalogData || electricCatalogLoadState !== "idle") return;
+    void loadElectricCatalog();
+  }, [planYear, hydrated, hasStoredElectricCatalogProgress, electricCatalogData, electricCatalogLoadState, loadElectricCatalog]);
 
   useEffect(() => {
     if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
@@ -807,15 +935,19 @@ export default function Home() {
   const isRequirementComplete = (id: string) => id === "MI2"
     ? isComplete("MI2") || statuses.PI === "exonerated"
     : isComplete(id);
-  const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.id === "1730-A" ? "1730" : course.id}:${assessment}`);
+  const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.bedeliasCode ?? (course.id === "1730-A" ? "1730" : course.id)}:${assessment}`);
   const groupCredits = (groupCode: string) => {
-    const nodeId = planYear === "1997" ? bedeliasData.requirementGroupMap[groupCode] : undefined;
+    const nodeId = planYear === "1997"
+      ? bedeliasData.requirementGroupMap[groupCode]
+      : planYear === "electrica-2023" ? electric2023Data?.requirementGroupMap[groupCode] : undefined;
     return nodeId ? nodeCredits(nodeId) : 0;
   };
   const hasVerifiedCourseRule = (course: Course) => Boolean(officialRule(course, "course"));
   const isCourseAvailabilityKnown = (course: Course) => course.placementTest || hasVerifiedCourseRule(course) || Boolean(course.prerequisites?.length || course.minCredits);
   const isCourseUnlocked = (course: Course) => {
+    if (course.placeholder) return false;
     if (course.placementTest) return true;
+    if (course.id === "2013-B") return isComplete("2013-A");
     const rule = officialRule(course, "course");
     if (rule) return expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits);
     return (course.prerequisites ?? []).every(isRequirementComplete) && (!course.minCredits || earnedCredits >= course.minCredits);
@@ -830,7 +962,7 @@ export default function Home() {
   };
 
   const cycleStatus = (course: Course) => {
-    if (!isUnlocked(course) || isFixedPlacementTest(course)) return;
+    if (course.placeholder || !isUnlocked(course) || isFixedPlacementTest(course)) return;
     setStatuses((current) => {
       const now = current[course.id] ?? "pending";
       if (course.placementTest) {
@@ -851,7 +983,9 @@ export default function Home() {
       const matchesSemester = course.semester === semester;
       const matchesSearch = matchesCourseSearch(course, courseAreaLabel(course), search);
       const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
-      const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
+      const isSearchOnlyPlan1997Elective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
+      const isSearchOnlyElectricElective = electricCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
+      const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective;
       return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
     });
     return semester === "opt" ? sortCoursesByProgress(matches, statuses) : matches;
@@ -859,7 +993,7 @@ export default function Home() {
   const visibleElectives = filtered("opt");
 
   const exportProgress = () => {
-    const blob = new Blob([JSON.stringify({ formatVersion: 1, career: `ingenieria-computacion-${planYear}`, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
+    const blob = new Blob([JSON.stringify({ formatVersion: 1, career: planYear === "electrica-2023" ? "ingenieria-electrica-2023" : `ingenieria-computacion-${planYear}`, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
@@ -969,7 +1103,9 @@ export default function Home() {
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const availablePlannerCourses = plannerCourses.filter((course) => {
     const query = plannerSearch.trim();
-    const isSearchOnlyElective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyPlan1997Elective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyElectricElective = electricCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective;
     return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
   });
 
@@ -993,6 +1129,8 @@ export default function Home() {
     if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
     return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : undefined;
   };
+  const deferredCatalogLoadState = planYear === "electrica-2023" ? electricCatalogLoadState : extendedElectivesLoadState;
+  const deferredCatalogCount = planYear === "electrica-2023" ? (electricCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
 
   return (
     <main className="app-shell">
@@ -1118,10 +1256,20 @@ export default function Home() {
           <div className="selector-row">
             <label>
               <span>Carrera</span>
-              <select defaultValue="computacion">
+              <select value={planYear === "electrica-2023" ? "electrica" : "computacion"} onChange={async (event) => {
+                const electric = event.target.value === "electrica";
+                if (electric && !await loadElectricPlan()) {
+                  setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Ingeniería Eléctrica nuevamente. Tu progreso no se modificó." });
+                  return;
+                }
+                setPlanYear(electric ? "electrica-2023" : "2025");
+                setTrajectoryId(electric ? "basic" : "pi-60-plus");
+                setCredentialId("engineer");
+                setFullElectivesCatalogExpanded(false);
+                setSelected(null);
+              }}>
                 <option value="computacion">Ingeniería en Computación</option>
-                <option disabled>Doctor en Medicina — próxima importación</option>
-                <option disabled>Abogacía — próxima importación</option>
+                <option value="electrica">{electricPlanLoadState === "loading" ? "Ingeniería Eléctrica · cargando…" : "Ingeniería Eléctrica"}</option>
               </select>
             </label>
             <label>
@@ -1129,15 +1277,21 @@ export default function Home() {
               <select value={planYear} onChange={(event) => {
                 const next = event.target.value as PlanId;
                 setPlanYear(next);
-                setTrajectoryId(next === "2025" ? "pi-60-plus" : "pi-20-59");
+                setTrajectoryId(next === "2025" ? "pi-60-plus" : next === "electrica-2023" ? "basic" : "pi-20-59");
+                setCredentialId("engineer");
+                setFullElectivesCatalogExpanded(false);
                 setSelected(null);
               }}>
-                <option value="2025">Plan 2025 · vigente, en transición</option>
-                <option value="1997">Plan 1997 · histórico</option>
+                {planYear === "electrica-2023" ? (
+                  <option value="electrica-2023">Plan 2023 · vigente</option>
+                ) : <>
+                  <option value="2025">Plan 2025 · vigente, en transición</option>
+                  <option value="1997">Plan 1997 · histórico</option>
+                </>}
               </select>
             </label>
             {appMode === "curriculum" && <label>
-              <span>Trayectoria</span>
+              <span>{planYear === "electrica-2023" ? "Perfil" : "Trayectoria"}</span>
               <select value={trajectoryId} onChange={(event) => {
                 const next = event.target.value;
                 setTrajectoryId(next);
@@ -1148,6 +1302,8 @@ export default function Home() {
               }}>
                 {planYear === "2025" ? Object.entries(plan2025Data.trajectories).map(([id, trajectory]) => (
                   <option value={id} key={id}>{trajectory.label}</option>
+                )) : planYear === "electrica-2023" ? Object.entries(electric2023Data?.profiles ?? {}).map(([id, profile]) => (
+                  <option value={id} key={id}>{profile.label}</option>
                 )) : <option value="pi-20-59">Ingreso 1er semestre · PI 20–59%</option>}
               </select>
             </label>}
@@ -1156,6 +1312,8 @@ export default function Home() {
             <p className="pilot-note planner-note"><span /> Armá una currícula propia con las mismas materias, créditos y áreas del plan. Los cambios quedan guardados en este dispositivo.</p>
           ) : planYear === "2025" ? (
             <p className="pilot-note"><span /> {plan2025Data.trajectories[trajectoryId].description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</p>
+          ) : planYear === "electrica-2023" ? (
+            <p className="pilot-note"><span /> {electric2023Data?.profiles[trajectoryId]?.description} Trayectoria sugerida por la Comisión de Carrera; créditos, áreas y previaturas contrastados con Bedelías.</p>
           ) : (
             <p className="pilot-note"><span /> Semestres de la trayectoria sugerida compartida. Créditos, áreas y reglas centrales importados de Bedelías; núcleo obligatorio contrastado con la implementación curricular de FING.</p>
           )}
@@ -1182,14 +1340,14 @@ export default function Home() {
             <button className="icon-button" aria-label="Reiniciar progreso" onClick={resetProgress}>↺</button>
           </div>
 
-          <div className={`degree-card analyst ${credentialId === "analyst" ? "selected-degree" : ""}`}>
+          {analystCredential && <div className={`degree-card analyst ${credentialId === "analyst" ? "selected-degree" : ""}`}>
             <div>
               <span>Título intermedio</span>
               <h3>{analystCredential.title}</h3>
             </div>
             <strong>{Math.min(earnedCredits, analystCredential.minTotalCredits)}<small>/{analystCredential.minTotalCredits}</small></strong>
             <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / analystCredential.minTotalCredits * 100, 100)}%` }} /></div>
-          </div>
+          </div>}
 
           <div className={`degree-card engineer ${credentialId === "engineer" ? "selected-degree" : ""}`}>
             <div>
@@ -1205,10 +1363,10 @@ export default function Home() {
               <h3>Metas de créditos</h3>
               <span>Por título y área</span>
             </div>
-            <div className="credential-switch" role="group" aria-label="Título para las metas detalladas">
+            {analystCredential && <div className="credential-switch" role="group" aria-label="Título para las metas detalladas">
               <button className={credentialId === "analyst" ? "active" : ""} onClick={() => setCredentialId("analyst")}>Analista</button>
               <button className={credentialId === "engineer" ? "active" : ""} onClick={() => setCredentialId("engineer")}>Ingeniería</button>
-            </div>
+            </div>}
           </div>
           <div className="requirements-overview">
             <span>{credential.title}</span>
@@ -1377,7 +1535,9 @@ export default function Home() {
             {planYear === "1997" ? <label className="toggle-control">
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
-            </label> : <span className="rules-coverage">Previas publicadas: {new Set(plan2025Data.rules.map((rule) => rule.target.code)).size}/{courses.length} materias</span>}
+            </label> : planYear === "electrica-2023"
+              ? <span className="rules-coverage">Bedelías auditada: {electric2023Data?.plan.publishedRules ?? 233} reglas · {electric2023Data?.plan.noPublishedRule ?? 17} sin publicar</span>
+              : <span className="rules-coverage">Previas publicadas: {new Set(plan2025Data.rules.map((rule) => rule.target.code)).size}/{courses.length} materias</span>}
             <div className="curriculum-navigation" role="group" aria-label="Navegar por semestres">
               <button type="button" onClick={() => moveCurriculum(-1)} disabled={curriculumEdges.atStart} aria-label="Ir al semestre anterior" title="Semestre anterior">←</button>
               <button type="button" onClick={() => moveCurriculum(1)} disabled={curriculumEdges.atEnd} aria-label="Ir al semestre siguiente" title="Semestre siguiente">→</button>
@@ -1409,7 +1569,7 @@ export default function Home() {
             </div>
           </div>
 
-          {planYear === "1997" ? <section className="electives-section">
+          {planYear === "1997" || planYear === "electrica-2023" ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
               <div><span className="eyebrow">Trayectoria flexible</span><h2>Optativas y electivas</h2></div>
               <div><span>{visibleElectives.length} materias verificadas en la composición</span><b>{showElectives ? "−" : "+"}</b></div>
@@ -1422,10 +1582,10 @@ export default function Home() {
                 ))}
               </div>
               <div className="electives-loader" role="status" aria-live="polite">
-                {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{extendedPlan1997Courses.length} materias adicionales</strong> de la composición oficial del plan en Bedelías.</p> : <>
-                  <p>{extendedElectivesLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
-                  <button type="button" className="primary-button" disabled={extendedElectivesLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
-                    {extendedElectivesLoadState === "loading" ? "Cargando materias..." : extendedElectivesLoadState === "error" ? "Reintentar carga" : "Cargar catálogo completo de Bedelías"}
+                {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{deferredCatalogCount} materias adicionales</strong> de la composición oficial del plan en Bedelías.</p> : <>
+                  <p>{deferredCatalogLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : planYear === "electrica-2023" ? electric2023Data?.plan.notice : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
+                  <button type="button" className="primary-button" disabled={deferredCatalogLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
+                    {deferredCatalogLoadState === "loading" ? "Cargando materias..." : deferredCatalogLoadState === "error" ? "Reintentar carga" : "Cargar catálogo completo de Bedelías"}
                   </button>
                 </>}
               </div>
@@ -1480,17 +1640,19 @@ export default function Home() {
             <button className="drawer-close" onClick={() => setSelected(null)} aria-label="Cerrar detalles">×</button>
             <p className="eyebrow">{selected.id} · {courseAreaLabel(selected)}</p>
             <h2>{selected.name}</h2>
-            <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
+            <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placeholder ? "Espacio a completar" : selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
             {selectedAllocation?.status === "suggested" ? <p className="allocation-source suggested-allocation"><span>≈</span> Cuenta en <strong>{courseAreaLabel(selected)}</strong> mediante una asignación sugerida. Los créditos se computan normalmente, pero todavía falta un Anexo B o resolución específica para este plan.</p>
               : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
                 : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según Bedelías.</p>}
             {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
+              : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={electric2023Data?.source.profilesSpreadsheet} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>; debe completarse eligiendo una unidad curricular admitida por el plan.</p>
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
                   : selected.dataStatus === "project-assumption" && <p className="verified-source fing-source"><span>!</span> Los 4 créditos se mantienen como supuesto del proyecto para el Plan 2025; la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria vigente de FING</a> confirma el corte de 60%, pero no explicita este crédito.</p>}
             {selected.offering && <p className="verified-source fing-source offering-source"><span>F</span> FING publica esta materia en la oferta del <strong>{selected.offering.term}</strong>. <a href={selected.offering.sourceUrl} target="_blank" rel="noreferrer">Ver publicación &nearr;</a>{selected.offering.evaUrl && <> · <a href={selected.offering.evaUrl} target="_blank" rel="noreferrer">Abrir curso en EVA &nearr;</a></>}</p>}
+            {selected.core && <p className="verified-source fing-source"><span>F</span> Esta unidad integra el núcleo común presente en los siete perfiles oficiales publicados por la Comisión de Carrera.</p>}
             {!selectedAllocation && (selected.eligibleRequirementIds?.length ?? 0) > 1 && <p className="allocation-source suggested-allocation"><span>i</span> Suma al total del plan, pero Bedel&iacute;as la admite en m&aacute;s de un &aacute;rea ({selected.eligibleRequirementIds?.map((id) => nodeById.get(id)?.shortName ?? nodeById.get(id)?.name ?? id).join(" o ")}). La asignaci&oacute;n de &aacute;rea queda pendiente para no duplicar cr&eacute;ditos.</p>}
-            <h3>{selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
+            <h3>{selected.placeholder ? "Cómo completar este espacio" : selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
             {selectedRule ? (
               selectedRows.length ? <ul className="requirements-list">
                 {selectedRows.map((row) => <li className={row.done ? "done" : "missing"} key={row.key}>
@@ -1517,13 +1679,15 @@ export default function Home() {
                 })}
                 {selected.minCredits && <li className={earnedCredits >= selected.minCredits ? "done" : "missing"}><span>{earnedCredits >= selected.minCredits ? "✓" : "○"}</span>{selected.minCredits} créditos acumulados</li>}
               </ul>
-            ) : <p className="free-course">Sin una regla importada para esta instancia; no se presenta como validación oficial.</p>}
+            ) : <p className="free-course">{selected.placeholder ? "Elegí una unidad curricular del catálogo que cumpla el área o perfil indicado; el bloque no suma créditos por sí mismo." : selected.ruleCoverage === "not-published" ? "Bedelías fue consultada y no publica una regla para esta unidad; no se interpreta como ausencia de previas." : "Sin una regla importada para esta instancia; no se presenta como validación oficial."}</p>}
             {selectedDependents.length > 0 && <><h3>Puede habilitar o condicionar</h3><ul className="requirements-list dependent-list">
               {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
             </ul></>}
             {selected.offered.length > 0 && <><h3>Se dicta</h3><div className="offering-list">{selected.offered.map((item) => <span key={item}>{item === "par" ? "2.\u00ba semestre" : item === "impar" ? "1.er semestre" : "Libre"}</span>)}</div></>}
-            <button className="primary-button" disabled={!isUnlocked(selected) || isFixedPlacementTest(selected)} onClick={() => cycleStatus(selected)}>
-              {isFixedPlacementTest(selected)
+            <button className="primary-button" disabled={selected.placeholder || !isUnlocked(selected) || isFixedPlacementTest(selected)} onClick={() => cycleStatus(selected)}>
+              {selected.placeholder
+                ? "Elegí una materia del catálogo"
+                : isFixedPlacementTest(selected)
                 ? "Acreditada automáticamente por la trayectoria"
                 : selected.placementTest
                 ? (statuses.PI === "exonerated" ? "Desmarcar Prueba Inicial" : "Acreditar Prueba Inicial")
@@ -1540,14 +1704,18 @@ function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rul
   return (
     <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
       <div className="course-topline">
-        <span>#{course.id}{sourceLabel && <i className={`official-tag ${sourceLabel === "FING" ? "fing-tag" : ""}`}>{sourceLabel}</i>}</span>
+        <span>#{course.id}{sourceLabel && <i className={`official-tag ${sourceLabel === "FING" ? "fing-tag" : ""}`}>{sourceLabel}</i>}{course.core && <i className="official-tag fing-tag">Común</i>}</span>
         <button onClick={onDetails} aria-label={`Ver detalles de ${course.name}`}>i</button>
       </div>
       <h3>{course.name}</h3>
       <div className="course-meta"><span>{areaLabel}{allocationStatus === "suggested" && <i className="suggested-badge">sugerida</i>}</span><strong>{course.credits} cr.</strong></div>
-      <button className="status-button" disabled={!unlocked || fixed} onClick={onCycle}>
-        {fixed
+      <button className="status-button" disabled={course.placeholder || !unlocked || fixed} onClick={onCycle}>
+        {course.placeholder
+          ? <><span className="status-mark">+</span>Elegí una UC del catálogo</>
+          : fixed
           ? <><span className="status-mark">✓</span>Acreditada por trayectoria · 4 cr.</>
+          : course.ruleCoverage === "not-published" && status === "pending"
+          ? <><span className="status-mark">?</span>Bedelías no publica regla</>
           : !rulesKnown && status === "pending"
           ? <><span className="status-mark">?</span>Previas aún no consultadas</>
           : !unlocked

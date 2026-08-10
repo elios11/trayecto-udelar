@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-09",
+  "source": {
+    "careerPage": "https://www.fing.edu.uy/carreras/grado/ingenieriaelectrica",
+    "commissionPage": "https://eva.fing.edu.uy/course/view.php?id=996",
+    "profilesSpreadsheet": "https://eva.fing.edu.uy/mod/resource/view.php?id=72770",
+    "planDocument": "https://hdl.handle.net/20.500.12008/44580"
+  },
+  "plan": {
+    "year": "2023",
+    "approvalYear": 2022,
+    "careerCode": "22-8",
+    "degreeTitle": "Ingeniero/a Eléctrico/a",
+    "minCredits": 450,
+    "durationMonths": 60,
+    "notice": "Las trayectorias son recorridos sugeridos de la Comisión de Carrera. Los espacios optativos deben completarse con unidades curriculares admitidas por la composición del plan hasta alcanzar 450 créditos y los mínimos por área."
+  },
+  "aliasToBedeliasCode": {
+    "AIMDs": "5724", "ANTENAS": "5817", "CALC1": "1061", "CALC2": "1062", "CALC3": "1063", "COM_DIG": "1462", "DL": "1512", "ECON": "1224", "ED": "1064", "ELECTRO": "1128", "ELECTRO_F": "5715", "ELECTRO_POT": "5609", "ELECTRO_T": "5850", "ELECTRO_T2": "2109", "ELECTRO2": "5716", "ELECTRO3": "5717", "EPST": "5849", "F1": "1151", "F2": "1152", "F3": "1153", "FE1": "1154", "FE2": "1155", "FOURIER": "1459", "FVC_N": "1066", "GAL1": "1030", "GAL2": "1031", "IIEE": "5507", "INGBIO": "5710", "INST INDUSTRIAL": "2706", "LEG": "2401", "ME": "1461", "MEC": "1122", "MI": "MI2", "MICRO_P": "1513", "MMEE": "5602", "MN": "1033", "PAS": "2011", "PIE": "1307", "PIMP": "1321", "PLC": "5920", "PROY_IIEE": "5511", "PYE": "1025", "REC_PAT2": "5852", "REDES1": "5824", "RREE": "5508", "SISEM": "1556", "SR": "5905", "SS": "1457", "SS_MT": "5514", "SSE": "1460", "TALLER_EP": "5610", "TALLER_ME": "5603", "TALLERINE": "5904", "TC": "1456", "TEE": "5520"
+  },
+  "specialCourses": {
+    "PROY1": { "id": "2013-A", "bedeliasCode": "2013", "name": "Proyecto · primera etapa", "credits": 10 },
+    "PROY2": { "id": "2013-B", "bedeliasCode": "2013", "name": "Proyecto · segunda etapa", "credits": 25, "prerequisites": ["2013-A"] }
+  },
+  "optionalSpaces": {
+    "OP_AA": { "name": "Espacio optativo · Aprendizaje Automático", "credits": 0 },
+    "OP_BAS": { "name": "Espacio optativo · Formación básica", "credits": 0 },
+    "OP_COMP": { "name": "Espacio optativo · Informática", "credits": 0 },
+    "OP_CONTROL": { "name": "Espacio optativo · Control", "credits": 0 },
+    "OP_ELECTRO": { "name": "Espacio optativo · Electrónica o Sistemas Digitales", "credits": 0 },
+    "OP_IE": { "name": "Espacio optativo · Ingeniería Eléctrica", "credits": 0 },
+    "OP_IND": { "name": "Espacio optativo · Ingeniería Industrial", "credits": 0 },
+    "OP_INGBIO": { "name": "Espacio optativo · Ingeniería Biomédica", "credits": 0 },
+    "OP_PERFIL": { "name": "Espacio optativo · Perfil", "credits": 0 },
+    "OP_SEN": { "name": "Espacio optativo · Señales", "credits": 0 },
+    "OP_SEN_AA": { "name": "Espacio optativo · Señales o Aprendizaje Automático", "credits": 6 },
+    "OP_SOC": { "name": "Espacio optativo · Ingeniería y Sociedad", "credits": 7 },
+    "OP_TEL_SEN": { "name": "Espacio optativo · Telecomunicaciones o Señales/AA", "credits": 6 },
+    "OP_TELECOM": { "name": "Espacio optativo · Telecomunicaciones", "credits": 0 }
+  },
+  "profiles": {
+    "basic": {
+      "label": "Perfil básico",
+      "description": "Recorrido general que conserva flexibilidad para definir el perfil con optativas.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "TALLERINE", "MI"], ["CALC2", "GAL2", "F2", "PIMP"],
+        ["CALC3", "PYE", "F3", "MEC", "FE1"], ["ED", "ELECTRO", "FE2", "TC", "DL"],
+        ["FVC_N", "SS", "MICRO_P", "PIE", "ELECTRO_F"], ["MN", "SR", "FOURIER", "SSE", "REDES1"],
+        ["ME", "OP_BAS"], ["PAS", "ELECTRO_T2", "LEG"], ["PROY1", "OP_IND"], ["PROY2", "IIEE", "OP_SOC", "ECON"]
+      ]
+    },
+    "electronics": {
+      "label": "Electrónica",
+      "description": "Diseño, análisis y aplicación de circuitos y sistemas electrónicos.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "TALLERINE", "MI"], ["CALC2", "GAL2", "F2", "PIMP"],
+        ["CALC3", "PYE", "F3", "MEC", "FE1"], ["ED", "ELECTRO", "FE2", "TC", "DL"],
+        ["FVC_N", "SS", "MICRO_P", "PIE", "ELECTRO_F"], ["MN", "SR", "FOURIER", "SSE", "ELECTRO2"],
+        ["ME", "OP_IND", "OP_BAS", "SISEM", "ELECTRO3"], ["ECON", "ELECTRO_T2", "OP_TEL_SEN", "OP_ELECTRO", "OP_ELECTRO"],
+        ["PROY1", "PAS", "OP_ELECTRO", "OP_PERFIL", "OP_SOC"], ["PROY2", "LEG", "IIEE", "REDES1", "OP_PERFIL"]
+      ]
+    },
+    "signals-aa": {
+      "label": "Señales y Aprendizaje Automático",
+      "description": "Procesamiento de señales, modelado de datos y aprendizaje automático.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "TALLERINE", "MI"], ["CALC2", "GAL2", "F2", "PIMP"],
+        ["CALC3", "PYE", "F3", "MEC", "FE1"], ["ED", "ELECTRO", "FE2", "TC", "DL"],
+        ["FVC_N", "SS", "MICRO_P", "PIE", "ELECTRO_F"], ["MN", "SR", "FOURIER", "SSE", "REC_PAT2"],
+        ["ME", "OP_AA", "OP_BAS", "OP_SEN", "OP_TELECOM"], ["PAS", "REDES1", "OP_SEN", "OP_COMP", "ELECTRO_T2"],
+        ["PROY1", "OP_IND", "OP_ELECTRO", "OP_SEN_AA", "OP_SEN"], ["PROY2", "LEG", "IIEE", "ECON", "OP_SOC"]
+      ]
+    },
+    "telecommunications": {
+      "label": "Telecomunicaciones",
+      "description": "Transmisión de información, redes, antenas y sistemas de comunicación.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "TALLERINE", "MI"], ["CALC2", "GAL2", "F2", "PIMP"],
+        ["CALC3", "PYE", "F3", "MEC", "FE1"], ["ED", "ELECTRO", "FE2", "TC", "DL"],
+        ["FVC_N", "SS", "MICRO_P", "PIE", "ELECTRO_F"], ["MN", "SR", "FOURIER", "SSE", "REDES1"],
+        ["ME", "OP_BAS", "COM_DIG", "ANTENAS", "OP_SOC"], ["PAS", "ELECTRO_T2", "OP_IND", "OP_TELECOM", "OP_ELECTRO"],
+        ["PROY1", "OP_TELECOM", "OP_COMP", "OP_SEN_AA", "OP_TELECOM"], ["PROY2", "IIEE", "LEG", "ECON", "OP_TELECOM"]
+      ]
+    },
+    "biomedical": {
+      "label": "Ingeniería Biomédica",
+      "description": "Tecnología eléctrica y electrónica aplicada a medicina y biología.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "TALLERINE", "MI"], ["CALC2", "GAL2", "F2", "PIMP"],
+        ["CALC3", "PYE", "F3", "MEC", "FE1"], ["ED", "ELECTRO", "FE2", "TC", "DL"],
+        ["FVC_N", "SS", "MICRO_P", "PIE", "ELECTRO_F"], ["MN", "SR", "FOURIER", "SSE", "OP_IE"],
+        ["ME", "OP_IE", "OP_BAS", "OP_INGBIO", "EPST"], ["PAS", "ECON", "INGBIO", "AIMDs", "ELECTRO_T2"],
+        ["PROY1", "OP_IND", "OP_INGBIO", "OP_INGBIO", "OP_IE"], ["PROY2", "LEG", "OP_SOC", "REDES1", "IIEE"]
+      ]
+    },
+    "power": {
+      "label": "Potencia",
+      "description": "Generación, conversión, transporte y utilización de energía eléctrica.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "TALLERINE", "MI"], ["CALC2", "GAL2", "F2", "PIMP"],
+        ["CALC3", "PYE", "F3", "MEC", "FE1"], ["ED", "ELECTRO", "FE2", "TC", "DL"],
+        ["FVC_N", "SS", "ELECTRO_T", "PIE", "ELECTRO_F"], ["MN", "SR", "FOURIER", "SSE", "MMEE"],
+        ["ME", "MICRO_P", "ELECTRO_POT", "RREE", "TALLER_ME"], ["PAS", "REDES1", "IIEE", "TEE", "TALLER_EP", "OP_BAS"],
+        ["PROY1", "OP_IND", "OP_PERFIL", "OP_PERFIL", "SS_MT"], ["PROY2", "LEG", "OP_SOC", "ECON", "PROY_IIEE"]
+      ]
+    },
+    "control": {
+      "label": "Control",
+      "description": "Automatización, instrumentación y control de sistemas dinámicos.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "TALLERINE", "MI"], ["CALC2", "GAL2", "F2", "PIMP"],
+        ["CALC3", "PYE", "F3", "MEC", "FE1"], ["ED", "ELECTRO", "FE2", "TC", "DL"],
+        ["FVC_N", "SS", "MICRO_P", "PIE", "ELECTRO_F"], ["MN", "SR", "FOURIER", "SSE", "REDES1"],
+        ["ME", "OP_BAS", "INST INDUSTRIAL", "SISEM"], ["PAS", "ELECTRO_T2", "OP_CONTROL", "PLC", "LEG"],
+        ["PROY1", "OP_IND", "OP_PERFIL", "OP_PERFIL", "OP_PERFIL"], ["PROY2", "IIEE", "ECON", "OP_SOC", "OP_PERFIL"]
+      ]
+    }
+  }
+}

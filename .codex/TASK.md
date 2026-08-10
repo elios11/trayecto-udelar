@@ -7,10 +7,12 @@
 - Auditoría Bedelías completa al 2026-08-09: 221 unidades/equivalencias, 173 cursos locales, 48 equivalencias externas, 233 reglas publicadas (155 curso, 78 examen) y 17 consultas sin regla publicada.
 - Fuentes, cobertura y pendientes: `data/fing/electrica-2023-fuentes.json` y `docs/tasks/ingenieria-electrica-2023.md`.
 - Fuentes curriculares confirmadas: plan Colibrí/Diario Oficial, página FING, EVA de la Comisión de Carrera, dos trayectorias con Matemática Inicial y planilla de perfiles 2026.
-- La condición especial de actividad de curso de Diseño Lógico quedó normalizada; el snapshot tiene cero nodos sin interpretar. Siguiente paso: proyectar núcleo/perfiles/catálogo y generalizar la interfaz.
+- Implementación completa: selector de Ingeniería Eléctrica/Plan 2023, siete perfiles, 36 unidades de núcleo común, 24 áreas con mínimos oficiales, proyecto, espacios optativos, catálogo diferido y previaturas con cobertura explícita.
+- Proyecciones cargadas bajo demanda: 112 bloques iniciales y 95 reglas de trayectoria; catálogo ampliado con 165 materias/equivalencias y 138 reglas restantes. La unión conserva las 221 entradas y 233 reglas auditadas.
+- Verificación final: `npm.cmd test` pasa 50/50. El lint focalizado de los archivos nuevos pasa; `npm.cmd run lint` conserva exactamente la deuda de `main` (12 errores y 1 advertencia), sin hallazgos nuevos.
 - No integrar en `main`, no hacer push y no publicar sin autorización explícita.
 
-Última actualización: 2026-08-09
+Última actualización: 2026-08-10
 Workspace: `C:\Users\elios\Documents\Proyectos_GPT\MallaCurricularUniversal`
 Rama activa: `main`  
 Commit de importación académica de referencia: `a63f653` (`Import official Bedelias prerequisite rules`)

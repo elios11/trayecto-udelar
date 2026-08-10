@@ -17,7 +17,7 @@ La procedencia estructurada está en `data/fing/electrica-2023-fuentes.json`.
 
 - Bedelías/SGAE: 221 unidades/equivalencias en composición, de las cuales 173 son locales de FING y 48 pertenecen a otros servicios o sedes.
 - Previaturas: 250 entradas consultadas; 233 reglas publicadas (155 de curso y 78 de examen) y 17 consultas sin regla publicada.
-- Plan oficial: 450 créditos y mínimos por cuatro grupos y 22 áreas de formación.
+- Plan oficial: 450 créditos y mínimos por cuatro grupos y 24 áreas de formación.
 - Trayectoria inicial: dos láminas oficiales con Matemática Inicial, una general (277 créditos en ocho semestres) y otra para Potencia (276 créditos).
 - Perfiles: planilla oficial versión 2026 con perfil básico y perfiles Electrónica, Señales y Aprendizaje Automático, Telecomunicaciones, Ingeniería Biomédica, Potencia y Control.
 - Optativas/electivas: Bedelías determina presencia, código, créditos y áreas posibles; la planilla de perfiles aporta conjuntos recomendados y condiciones específicas. Una recomendación de perfil no se convertirá en obligación general.
@@ -42,5 +42,7 @@ La procedencia estructurada está en `data/fing/electrica-2023-fuentes.json`.
 ## Estado de la tarea
 
 - Auditoría institucional: completa; la condición especial de actividad de curso de Diseño Lógico quedó normalizada y el snapshot no conserva nodos sin interpretar.
-- Proyección web, integración de interfaz y pruebas: pendientes.
+- Proyección web: implementada con 112 bloques de trayectoria, 36 unidades de núcleo común, siete perfiles y catálogo diferido de 165 materias/equivalencias adicionales.
+- Interfaz: selector de carrera/Plan 2023/perfil, requisitos de grado sin título intermedio inventado, espacios optativos explícitos, procedencia y estados de cobertura de previaturas.
+- Verificación focalizada: generador reproducible, compilación y pruebas curriculares completas; la suite general y el lint final se registran en `.codex/TASK.md`.
 - Publicación, push e integración en `main`: fuera de alcance sin autorización explícita.
