@@ -773,4 +773,27 @@ body, .app-shell, .workspace { background: var(--paper); }
   .scheme-toggle { width: 100%; justify-content: end; }
 }
 
+@media (min-width: 721px) and (max-width: 980px) {
+  .topbar { height: 80px; padding: 0 20px; }
+  .udelar-logo { width: 44px; height: 52px; padding: 4px; border-radius: 12px; }
+  .brand-separator { margin: 0 12px; }
+  .brand-block .eyebrow, .brand-block h1 { white-space: nowrap; }
+  .brand-block .eyebrow { font-size: 9px; }
+  .brand-block h1 { font-size: 20px; }
+  .mode-switch { padding-top: 12px; }
+  .mode-switch button { min-width: 92px; padding-inline: 10px; }
+  .quiet-button { display: none; }
+  .appearance-menu > summary { min-width: 76px; }
+  .appearance-trigger-copy small { display: none; }
+  .header-actions { gap: 6px; }
+  .avatar { width: 38px; height: 38px; margin-left: 2px; }
+  .hero-row { display: block; padding: 28px 24px; }
+  .career-heading { max-width: none; }
+  .selector-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .selector-row select,
+  .selector-row label:not(:first-child) select,
+  .selector-row .faculty-selector select,
+  .selector-row .career-selector select { width: 100%; min-width: 0; }
+  .credit-summary { margin-top: 22px; }
+}
 @media (prefers-reduced-motion: reduce) { .udelar-logo, .scheme-track, .scheme-track::after { transition: none !important; } }
