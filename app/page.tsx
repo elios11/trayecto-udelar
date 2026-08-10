@@ -1174,6 +1174,11 @@ export default function Home() {
   };
   const deferredCatalogLoadState = planYear === "electrica-2023" ? electricCatalogLoadState : extendedElectivesLoadState;
   const deferredCatalogCount = planYear === "electrica-2023" ? (electricCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
+  const electivesSummary = visibleElectives.length > 0
+    ? `${visibleElectives.length} materias verificadas en la composición`
+    : planYear === "electrica-2023" && !fullElectivesCatalogExpanded
+      ? "Catálogo oficial disponible"
+      : "Sin materias visibles";
 
   return (
     <main className="app-shell">
@@ -1612,7 +1617,7 @@ export default function Home() {
           {planYear === "1997" || planYear === "electrica-2023" ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
               <div><span className="eyebrow">Trayectoria flexible</span><h2>Optativas y electivas</h2></div>
-              <div><span>{visibleElectives.length} materias verificadas en la composición</span><b>{showElectives ? "−" : "+"}</b></div>
+              <div><span>{electivesSummary}</span><b>{showElectives ? "−" : "+"}</b></div>
             </button>
             {showElectives && (
               <>
@@ -1625,7 +1630,7 @@ export default function Home() {
                 {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{deferredCatalogCount} materias adicionales</strong> de la composición oficial del plan en Bedelías.</p> : <>
                   <p>{deferredCatalogLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : planYear === "electrica-2023" ? electric2023Data?.plan.notice : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
                   <button type="button" className="primary-button" disabled={deferredCatalogLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
-                    {deferredCatalogLoadState === "loading" ? "Cargando materias..." : deferredCatalogLoadState === "error" ? "Reintentar carga" : "Cargar catálogo completo de Bedelías"}
+                    {deferredCatalogLoadState === "loading" ? "Cargando materias..." : deferredCatalogLoadState === "error" ? "Reintentar carga" : "Cargar catálogo de Bedelías"}
                   </button>
                 </>}
               </div>
