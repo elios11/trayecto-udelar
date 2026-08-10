@@ -69,6 +69,16 @@
 - Si el usuario pide a un mismo chat completar todo el ciclo, termina primero el commit aislado, pasa a Local mediante `Hand off`, integra sobre el `main` actual, vuelve a verificar y recien entonces publica.
 - Aplica este flujo automaticamente; no pidas al usuario que vuelva a explicarlo en cada chat.
 
+### Delegacion y seleccion de modelo
+
+- El usuario autoriza delegar automaticamente subtareas mecanicas, repetitivas y bien delimitadas a un subagente con `gpt-5.6-terra` cuando ese modelo este disponible.
+- Conserva Sol para investigacion academica y documental, interpretacion de fuentes, decisiones ambiguas, arquitectura, revision final, integracion y publicacion.
+- No intentes cambiar el modelo de una tarea ya iniciada. Para usar un modelo distinto, crea un subagente nuevo con el modelo elegido, contexto minimo suficiente, una salida concreta y criterios de verificacion claros.
+- No delegues cuando transferir contexto y revisar el resultado cueste mas que resolver directamente la subtarea. Revisa y valida siempre la salida antes de incorporarla.
+- No uses un agente para una operacion determinista que pueda ejecutar directamente un script local. Inicia el script, deja que finalice sin sondeos periodicos del agente y valida sus artefactos al terminar.
+- Usa solamente modelos expuestos por las herramientas de la sesion. Si Luna esta disponible, reservalo para cargas mecanicas de alto volumen con validacion determinista; nunca inventes ni simules un modelo no ofrecido.
+- La seleccion de modelo busca eficiencia, pero no asumas ni prometas una reduccion proporcional del porcentaje de uso del plan.
+
 ## Entrega
 
 - Resume el resultado funcional, no solo los archivos editados.
