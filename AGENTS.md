@@ -79,6 +79,15 @@
 - Usa solamente modelos expuestos por las herramientas de la sesion. Si Luna esta disponible, reservalo para cargas mecanicas de alto volumen con validacion determinista; nunca inventes ni simules un modelo no ofrecido.
 - La seleccion de modelo busca eficiencia, pero no asumas ni prometas una reduccion proporcional del porcentaje de uso del plan.
 
+### Continuidad ante limites e interrupciones
+
+- No asumas que el agente puede ver el porcentaje restante del plan. Solo actua sobre un indicador que la herramienta exponga de forma explicita o sobre una advertencia del usuario; nunca inventes un porcentaje ni sondees repetidamente el panel de uso.
+- Divide el trabajo largo en fases recuperables. Guarda estado durable en hitos significativos, no despues de cada herramienta o request: deja los cambios en disco y, cuando exista una especificacion en `docs/tasks/`, registra lo completado, lo pendiente, los comandos exactos, los artefactos, la ultima validacion y el siguiente paso. No uses `PROJECT_CONTEXT.md` para estado temporal.
+- Si el usuario informa poco uso restante o una interrupcion inminente, no abras frentes nuevos. Termina primero la escritura atomica en curso, ejecuta la verificacion mas estrecha posible y crea un commit de checkpoint cuando el estado sea coherente. Si aun no puede confirmarse, conserva el worktree y deja un traspaso explicito sin declarar la tarea completa.
+- Antes de iniciar un proceso local largo, comprueba que tenga checkpoints reanudables y salidas atomicas. Registra una sola vez el comando exacto de reanudacion y las rutas de estado; si no existe recuperacion segura, implementala o acota la ejecucion antes del lote completo.
+- Un script local determinista no requiere turnos del agente mientras corre y puede continuar si el proceso y la computadora siguen activos. No lo sondees periodicamente para informar que sigue igual: deja que sus checkpoints automaticos preserven el avance sin consumo adicional del agente.
+- Al retomar, lee primero la especificacion, `git status`, los checkpoints y el estado de cualquier proceso antes de repetir comandos. Reanuda desde lo guardado y no fuerces reinicios destructivos salvo que exista una razon verificada y documentada.
+
 ## Entrega
 
 - Resume el resultado funcional, no solo los archivos editados.
