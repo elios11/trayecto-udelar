@@ -783,9 +783,9 @@ export default function Home() {
       setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Química Farmacéutica nuevamente. Tu progreso no se modificó." });
       return;
     }
-    setPlanYear(nextPlan.id);
     setTrajectoryId(nextPlan.defaultTrajectoryId);
     setCredentialId(nextPlan.defaultCredentialId);
+    setPlanYear(nextPlan.id);
     setFullElectivesCatalogExpanded(false);
     setSelected(null);
   };
@@ -894,14 +894,15 @@ export default function Home() {
   const creditStructure = planYear === "2025"
     ? plan2025Data.creditStructure
     : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
+  const activePlan2025Trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
   const credential = creditStructure.credentials.find((item) => item.id === credentialId) ?? creditStructure.credentials[0];
   const credentialTargets = useMemo(() => new Map(credential.nodeRequirements.map((item) => [item.nodeId, item])), [credential]);
   const semesters = planYear === "2025"
     ? [
-      ...(plan2025Data.trajectories[trajectoryId].preSemester?.length ? [0] : []),
-      ...plan2025Data.trajectories[trajectoryId].semesters.map((_, index) => index + 1),
+      ...(activePlan2025Trajectory.preSemester?.length ? [0] : []),
+      ...activePlan2025Trajectory.semesters.map((_, index) => index + 1),
     ]
     : isProfilePlan || planYear === "qf-2015" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const planMinCredits = planYear === "2025"
@@ -1666,7 +1667,7 @@ export default function Home() {
           {appMode === "planner" ? (
             <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Armá una currícula propia con las mismas materias, créditos y áreas del plan. Los cambios quedan guardados en este dispositivo.</span></p>
           ) : planYear === "2025" ? (
-            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{plan2025Data.trajectories[trajectoryId].description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
+            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activePlan2025Trajectory.description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
           ) : isProfilePlan ? (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activeProfileData?.profiles[trajectoryId]?.description} Trayectoria sugerida por la Comisión de Carrera; créditos, áreas y previaturas contrastados con Bedelías.</span></p>
           ) : planYear === "qf-2015" ? (
@@ -1959,7 +1960,7 @@ export default function Home() {
           </section> : <section className="plan-transition-note">
             <p className="eyebrow">Plan vigente · implementación en curso</p>
             <h2>Lo que todavía no tiene semestre publicado</h2>
-            <p>{plan2025Data.trajectories[trajectoryId].notice ?? plan2025Data.plan.notice}</p>
+            <p>{activePlan2025Trajectory.notice ?? plan2025Data.plan.notice}</p>
             <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">Ver documentación oficial de FING ↗</a>
           </section>}
           </>)}
