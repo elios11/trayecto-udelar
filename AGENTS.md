@@ -46,6 +46,8 @@
 ## Git, worktrees y publicacion
 
 - Usa un worktree independiente por funcionalidad cuando haya trabajo paralelo.
+- Si la tarea ya fue iniciada en un worktree administrado por Codex, usa ese directorio y no crees otro. Si debes crearlo manualmente, ubicalo siempre bajo la raiz registrada del proyecto como `.worktrees/<tarea>`; nunca uses una carpeta hermana, el directorio padre del proyecto ni una ruta externa a sus raices autorizadas.
+- Guarda descargas, PDFs, planillas, checkpoints y artefactos temporales de la tarea dentro del worktree, preferentemente bajo `tmp/<tarea>`. No cambies el directorio de trabajo a AppData u otra carpeta externa salvo que una herramienta obligatoria lo requiera.
 - Parte de la version mas reciente de `main` que contenga todas las dependencias necesarias de la tarea.
 - Recuerda que un worktree conserva el commit desde el que fue creado y no recibe automaticamente cambios posteriores de `main`.
 - Crea un commit enfocado despues de validar la implementacion, salvo que el usuario pida expresamente no hacerlo.
@@ -78,6 +80,17 @@
 - No uses un agente para una operacion determinista que pueda ejecutar directamente un script local. Inicia el script, deja que finalice sin sondeos periodicos del agente y valida sus artefactos al terminar.
 - Usa solamente modelos expuestos por las herramientas de la sesion. Si Luna esta disponible, reservalo para cargas mecanicas de alto volumen con validacion determinista; nunca inventes ni simules un modelo no ofrecido.
 - La seleccion de modelo busca eficiencia, pero no asumas ni prometas una reduccion proporcional del porcentaje de uso del plan.
+
+### Higiene de aprobaciones
+
+- Evita interrumpir al usuario con aprobaciones repetidas para operaciones de lectura. Antes de usar shell o red, comprueba si existe una herramienta de busqueda, navegador, conector o comando ya permitido que cubra la tarea.
+- Para investigar fuentes publicas, agrupa busquedas y aperturas en lotes razonables. No ejecutes Invoke-WebRequest, curl ni variantes con una URL distinta por documento cuando una herramienta web puede consultar esas fuentes sin aprobaciones individuales.
+- Para inspeccionar codigo local, usa primero `rg`, `rg --files` y contextos acotados en una sola consulta. Evita leer el mismo archivo por tramos con cadenas de `Get-Content | Select-Object`, pipes y comandos separados por punto y coma, porque cada segmento puede generar una aprobacion distinta.
+- Si una operacion necesita aprobacion, consolida primero el alcance inmediato y solicita una unica regla reutilizable, estrecha y segura. Reutiliza exactamente el comando o prefijo aprobado cuando corresponda; no reformules el comando en cada llamada sin necesidad.
+- No pidas reglas amplias para evitar el sandbox ni debilites controles de seguridad. Si dos solicitudes equivalentes consecutivas no quedan cubiertas, detente, cambia a una herramienta apropiada o explica en una sola consulta por que el acceso restante es imprescindible.
+- Una aprobacion de sesion o de comandos similares puede no aplicarse a otro chat, worktree, herramienta o variante de comando. No asumas que el usuario debe volver a aprobar cada fuente: adapta el metodo de trabajo.
+- Concentra las aprobaciones inevitables en una fase inicial de bootstrap, antes de iniciar extracciones o implementacion prolongada. Unas pocas aprobaciones iniciales son aceptables; durante la ejecucion no solicites nuevas aprobaciones de lectura salvo que aparezca una capacidad materialmente distinta e imprescindible.
+- No marques `require_escalated` preventivamente. Intenta primero la operacion segura dentro del sandbox. Si aparece `apply deny-read ACLs`, `helper_unknown_error` o el mismo fallo de sandbox dos veces, tratalo como un problema del entorno: no escales cada comando posterior. Cambia a herramientas sin shell, reutiliza un unico comando estable ya autorizado o deja un bloqueo unico con la reparacion necesaria.
 
 ### Continuidad ante limites e interrupciones
 
