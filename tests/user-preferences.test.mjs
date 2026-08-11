@@ -29,8 +29,16 @@ test("el planificador carga y muestra el catálogo diferido completo", () => {
 test("los paneles plegables conservan contraste y espacio inferior", () => {
   assert.match(pageSource, /useState\(false\);[\s\S]*?showPlannerCatalog/);
   assert.match(pageSource, /Minimizar materias disponibles/);
-  assert.match(css, /\.requirement-children \{[^}]*border-top: 1px solid var\(--line\)/);
+  assert.match(css, /\.requirement-children \{[^}]*border-top: 0/);
   assert.match(css, /\.required-course-body \{[^}]*border-top: 1px solid var\(--line\)/);
   assert.match(css, /\.electives-section \{ display: flow-root;/);
   assert.match(css, /\.electives-loader \{ margin: 0 30px 38px;/);
+});
+
+test("la información del plan y el catálogo minimizado siguen siendo comprensibles", () => {
+  assert.match(pageSource, /className="pilot-note-mark"[^>]*>i<\/span><span className="pilot-note-copy">/);
+  assert.doesNotMatch(pageSource, /className="pilot-note[^"]*"><span \/>/);
+  assert.match(css, /\.planner-layout\.catalog-collapsed \{ display: block; \}/);
+  assert.match(css, /\.course-catalog\.collapsed \{[^}]*height: auto;[^}]*position: static;/);
+  assert.doesNotMatch(css, /\.course-catalog\.collapsed \.catalog-heading > div[^}]*display: none/);
 });
