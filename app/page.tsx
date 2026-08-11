@@ -3,6 +3,7 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
+import { resolveAcademicOption } from "./academic-option.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
 
@@ -277,7 +278,8 @@ function buildPlan2025Courses(trajectoryId: string): Course[] {
 
 function buildElectric2023Courses(profileId: string, data: Electric2023Projection | null): Course[] {
   if (!data) return [];
-  const profile = data.profiles[profileId] ?? data.profiles.basic;
+  const profile = resolveAcademicOption(data.profiles, profileId, "basic");
+  if (!profile) return [];
   const semesters = new Map<string, number>();
   profile.semesters.forEach((ids, index) => ids.forEach((id) => semesters.set(id, index + 1)));
   return data.courses
@@ -297,7 +299,8 @@ function buildElectric2023Catalog(profileId: string, planData: Electric2023Proje
 
 function buildQf2015Courses(trajectoryId: string, data: Qf2015Projection | null): Course[] {
   if (!data) return [];
-  const trajectory = data.trajectories[trajectoryId] ?? data.trajectories.suggested;
+  const trajectory = resolveAcademicOption(data.trajectories, trajectoryId, "suggested");
+  if (!trajectory) return [];
   const semesters = new Map<string, number>();
   trajectory.semesters.forEach((ids, index) => ids.forEach((id) => semesters.set(id, index + 1)));
   return data.courses
