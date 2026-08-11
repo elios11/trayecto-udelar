@@ -97,7 +97,7 @@ test("el catalogo diferido cubre las materias reales de la composicion de Bedeli
   assert.equal(data.rules.length + extended.rules.length, 126, "conserva las previas de las materias movidas al catalogo diferido");
   assert.match(pageSource, /const plan1997FlexibleCourses:[\s\S]*?id: course\.code,/);
   assert.match(pageSource, /import\("\.\/data\/computacion-1997-electivas\.json"\)/);
-  assert.match(pageSource, /Cargar catálogo completo de Bedelías/);
+  assert.match(pageSource, /Cargar catálogo de Bedelías/);
   assert.equal(pageSource.match(/ensureFullCatalogForSearch\(value\);/g)?.length, 2, "ambos buscadores disparan la carga completa");
   assert.match(pageSource, /extendedPlan1997CourseIds\.has\(course\.id\) && !fullElectivesCatalogExpanded && !search\.trim\(\)/);
   assert.match(pageSource, /extendedPlan1997CourseIds\.has\(course\.id\) && !fullElectivesCatalogExpanded && !query/);

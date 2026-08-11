@@ -444,6 +444,12 @@ type VisualPreferences = {
   scheme: ThemeScheme;
   colorVisionEnabled: boolean;
   colorVisionType: ColorVisionType;
+  appMode: AppMode;
+  plannerView: PlannerView;
+  availableOnly: boolean;
+  showElectives: boolean;
+  showRequirements: boolean;
+  showPlannerCatalog: boolean;
 };
 
 const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
@@ -472,6 +478,7 @@ const academicCatalog: AcademicFacultyOption[] = [
 ];
 const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
 const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
+const ACADEMIC_SELECTION_STORAGE_KEY = "trayecto-udelar-academic-selection-v1";
 const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string, string] }> = [
   { id: "udelar", label: "Udelar", colors: ["#004a82", "#55b7cc", "#f3f5f4", "#0c161c"] },
   { id: "violeta", label: "Violeta", colors: ["#7650aa", "#d9b7ef", "#f4f0f7", "#17101f"] },
@@ -487,6 +494,9 @@ const colorVisionOptions: Array<{ id: ColorVisionType; label: string }> = [
 const isThemeId = (value: unknown): value is ThemeId => themeOptions.some((option) => option.id === value);
 const isThemeScheme = (value: unknown): value is ThemeScheme => value === "light" || value === "dark";
 const isColorVisionType = (value: unknown): value is ColorVisionType => colorVisionOptions.some((option) => option.id === value);
+const isAppMode = (value: unknown): value is AppMode => value === "curriculum" || value === "planner";
+const isPlannerView = (value: unknown): value is PlannerView => value === "board" || value === "compact" || value === "balance";
+const electricProfileIds = new Set(["basic", "electronics", "signals-aa", "telecommunications", "biomedical", "power", "control"]);
 const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, index) => ({
   id: `term-${index + 1}`,
   label: `Semestre ${index + 1}`,
@@ -504,6 +514,8 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [availableOnly, setAvailableOnly] = useState(false);
   const [showElectives, setShowElectives] = useState(true);
+  const [showRequirements, setShowRequirements] = useState(false);
+  const [showPlannerCatalog, setShowPlannerCatalog] = useState(true);
   const [extendedElectivesData, setExtendedElectivesData] = useState<ExtendedElectivesProjection | null>(null);
   const [extendedElectivesLoadState, setExtendedElectivesLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [electric2023Data, setElectric2023Data] = useState<Electric2023Projection | null>(null);
@@ -524,6 +536,7 @@ export default function Home() {
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
   const [colorVisionType, setColorVisionType] = useState<ColorVisionType>("deuteranopia");
   const importRef = useRef<HTMLInputElement>(null);
+  const appearanceMenuRef = useRef<HTMLDetailsElement>(null);
   const curriculumScrollRef = useRef<HTMLDivElement>(null);
   const curriculumEdgesRef = useRef(curriculumEdges);
   const verticalScrollTargetRef = useRef(0);
@@ -754,6 +767,28 @@ export default function Home() {
         }
         if (typeof preferences.colorVisionEnabled === "boolean") setColorVisionEnabled(preferences.colorVisionEnabled);
         if (isColorVisionType(preferences.colorVisionType)) setColorVisionType(preferences.colorVisionType);
+        if (isAppMode(preferences.appMode)) setAppMode(preferences.appMode);
+        if (isPlannerView(preferences.plannerView)) setPlannerView(preferences.plannerView);
+        if (typeof preferences.availableOnly === "boolean") setAvailableOnly(preferences.availableOnly);
+        if (typeof preferences.showElectives === "boolean") setShowElectives(preferences.showElectives);
+        if (typeof preferences.showRequirements === "boolean") setShowRequirements(preferences.showRequirements);
+        if (typeof preferences.showPlannerCatalog === "boolean") setShowPlannerCatalog(preferences.showPlannerCatalog);
+      }
+      const savedAcademicSelection = localStorage.getItem(ACADEMIC_SELECTION_STORAGE_KEY);
+      if (savedAcademicSelection) {
+        const selection = JSON.parse(savedAcademicSelection) as Record<string, unknown>;
+        const selectedPlan = academicCatalog
+          .flatMap((faculty) => faculty.careers)
+          .flatMap((career) => career.plans)
+          .find((plan) => plan.id === selection.planId);
+        if (selectedPlan) {
+          const candidate = typeof selection.trajectoryId === "string" ? selection.trajectoryId : selectedPlan.defaultTrajectoryId;
+          const isValid = selectedPlan.id === "2025"
+            ? Object.hasOwn(plan2025Data.trajectories, candidate)
+            : selectedPlan.id === "1997" ? candidate === "pi-20-59" : electricProfileIds.has(candidate);
+          setPlanYear(selectedPlan.id);
+          setTrajectoryId(isValid ? candidate : selectedPlan.defaultTrajectoryId);
+        }
       }
     } catch {
       // A damaged local save should never prevent the curriculum from loading.
@@ -764,6 +799,41 @@ export default function Home() {
   useEffect(() => {
     if (hydrated) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   }, [progress, hydrated]);
+
+  useEffect(() => {
+    const closeAppearanceMenu = (event: PointerEvent) => {
+      const menu = appearanceMenuRef.current;
+      if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+    };
+    const closeAppearanceMenuWithKeyboard = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && appearanceMenuRef.current?.open) {
+        appearanceMenuRef.current.open = false;
+        appearanceMenuRef.current.querySelector("summary")?.focus();
+      }
+    };
+    document.addEventListener("pointerdown", closeAppearanceMenu);
+    document.addEventListener("keydown", closeAppearanceMenuWithKeyboard);
+    return () => {
+      document.removeEventListener("pointerdown", closeAppearanceMenu);
+      document.removeEventListener("keydown", closeAppearanceMenuWithKeyboard);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated || planYear !== "electrica-2023" || electric2023Data || electricPlanLoadState !== "idle") return;
+    void loadElectricPlan();
+  }, [hydrated, planYear, electric2023Data, electricPlanLoadState, loadElectricPlan]);
+
+  useEffect(() => {
+    if (!hydrated || appMode !== "planner") return;
+    if (planYear === "1997" && !extendedElectivesData && extendedElectivesLoadState === "idle") void loadExtendedElectives();
+    if (planYear === "electrica-2023" && !electricCatalogData && electricCatalogLoadState === "idle") void loadElectricCatalog();
+  }, [hydrated, appMode, planYear, extendedElectivesData, extendedElectivesLoadState, electricCatalogData, electricCatalogLoadState, loadExtendedElectives, loadElectricCatalog]);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    localStorage.setItem(ACADEMIC_SELECTION_STORAGE_KEY, JSON.stringify({ planId: planYear, trajectoryId }));
+  }, [planYear, trajectoryId, hydrated]);
 
   useEffect(() => {
     if (planYear !== "1997" || !hydrated || !hasStoredExtendedElectiveProgress || extendedElectivesData || extendedElectivesLoadState !== "idle") return;
@@ -790,10 +860,10 @@ export default function Home() {
     root.dataset.colorVision = colorVisionEnabled ? colorVisionType : "standard";
     root.style.colorScheme = themeScheme;
     if (hydrated) {
-      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType };
+      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog };
       localStorage.setItem(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     }
-  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, hydrated]);
+  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, hydrated]);
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
@@ -1146,8 +1216,8 @@ export default function Home() {
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const availablePlannerCourses = plannerCourses.filter((course) => {
     const query = plannerSearch.trim();
-    const isSearchOnlyPlan1997Elective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
-    const isSearchOnlyElectricElective = electricCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyPlan1997Elective = appMode !== "planner" && extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyElectricElective = appMode !== "planner" && electricCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
     const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective;
     return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
   });
@@ -1202,7 +1272,7 @@ export default function Home() {
           <button className="quiet-button" onClick={() => importRef.current?.click()}>Importar</button>
           <button className="quiet-button" onClick={exportProgress}>Exportar</button>
           <input ref={importRef} type="file" accept="application/json" hidden onChange={importProgress} />
-          <details className="appearance-menu">
+          <details ref={appearanceMenuRef} className="appearance-menu">
             <summary aria-label={`Tema ${activeThemeOption.label}, modo ${themeScheme === "dark" ? "oscuro" : "claro"}. Abrir apariencia`}>
               <span
                 className="theme-orb appearance-orb"
@@ -1403,16 +1473,18 @@ export default function Home() {
             <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / planMinCredits * 100, 100)}%` }} /></div>
           </div>
 
-          <div className="requirement-heading">
+          <button type="button" className="requirement-heading" onClick={() => setShowRequirements((value) => !value)} aria-expanded={showRequirements}>
             <div>
               <h3>Metas de créditos</h3>
               <span>Por título y área</span>
             </div>
-            {analystCredential && <div className="credential-switch" role="group" aria-label="Título para las metas detalladas">
-              <button className={credentialId === "analyst" ? "active" : ""} onClick={() => setCredentialId("analyst")}>Analista</button>
-              <button className={credentialId === "engineer" ? "active" : ""} onClick={() => setCredentialId("engineer")}>Ingeniería</button>
-            </div>}
-          </div>
+            <b className="panel-toggle-symbol" aria-hidden="true">{showRequirements ? "−" : "+"}</b>
+          </button>
+          {showRequirements && <>
+          {analystCredential && <div className="credential-switch" role="group" aria-label="Título para las metas detalladas">
+            <button className={credentialId === "analyst" ? "active" : ""} onClick={() => setCredentialId("analyst")}>Analista</button>
+            <button className={credentialId === "engineer" ? "active" : ""} onClick={() => setCredentialId("engineer")}>Ingeniería</button>
+          </div>}
           <div className="requirements-overview">
             <span>{credential.title}</span>
             <strong>{credentialRequirementsMet}/{credentialRequirementsTotal} requisitos</strong>
@@ -1466,6 +1538,7 @@ export default function Home() {
             })}
           </div>
           <p className="data-source">Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías.</p>
+          </>}
         </aside>
 
         <section className="curriculum-panel">
@@ -1498,9 +1571,13 @@ export default function Home() {
                 </div>
               )}
 
-              <div className="planner-layout">
-                <aside className="course-catalog">
-                  <div className="catalog-heading"><div><p className="eyebrow">Plan y optativas</p><h3>Materias disponibles</h3></div><span>{availablePlannerCourses.length}</span></div>
+              <div className={`planner-layout${showPlannerCatalog ? "" : " catalog-collapsed"}`}>
+                <aside className={`course-catalog${showPlannerCatalog ? "" : " collapsed"}`}>
+                  <div className="catalog-heading">
+                    <div><p className="eyebrow">Plan y optativas</p><h3>Materias disponibles</h3></div>
+                    <span>{availablePlannerCourses.length}</span>
+                    <button type="button" className="catalog-toggle" onClick={() => setShowPlannerCatalog((value) => !value)} aria-expanded={showPlannerCatalog} aria-label={showPlannerCatalog ? "Minimizar materias disponibles" : "Mostrar materias disponibles"}>{showPlannerCatalog ? "−" : "+"}</button>
+                  </div>
                   <div className="search-box planner-search">
                     <span aria-hidden="true">⌕</span>
                     <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => handlePlannerSearch(event.target.value)} placeholder="Nombre, código, área o sigla (ej. GAL)" />
