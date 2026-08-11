@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-11",
+  "identity": {
+    "serviceCode": "FQ",
+    "serviceName": "FACULTAD DE QUÍMICA",
+    "bedeliasCareer": "QUÍMICA FARMACÉUTICA",
+    "academicPlanYear": "2015",
+    "degreeTitle": "Químico Farmacéutico",
+    "effectiveFrom": "2016-01-01",
+    "current": true,
+    "intermediateTitle": null,
+    "status": "verified",
+    "campuses": [
+      "Montevideo",
+      "Salto (primer año)"
+    ]
+  },
+  "requirements": {
+    "totalCredits": {
+      "value": 450,
+      "status": "verified",
+      "source": "plan-document"
+    },
+    "mandatoryCredits": {
+      "value": 324,
+      "status": "verified",
+      "source": "plan-document"
+    },
+    "flexibleCredits": {
+      "value": 71,
+      "status": "verified",
+      "source": "plan-document"
+    },
+    "minimumOptativeCredits": {
+      "value": 60,
+      "status": "verified",
+      "source": "career-page"
+    },
+    "practicumCredits": {
+      "value": 55,
+      "status": "verified",
+      "source": "plan-document"
+    },
+    "durationMonths": {
+      "value": 60,
+      "status": "verified",
+      "source": "career-page"
+    }
+  },
+  "sources": [
+    {
+      "id": "career-page",
+      "system": "Facultad de Química",
+      "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F619",
+      "scope": "identidad, perfil, duración, créditos y reglas de optativas/electivas",
+      "status": "verified"
+    },
+    {
+      "id": "plan-document",
+      "system": "Facultad de Química / Consejo Directivo Central",
+      "url": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+      "scope": "plan aprobado, título, vigencia, materias y mínimos",
+      "status": "verified"
+    },
+    {
+      "id": "suggested-curriculum",
+      "system": "Consejo de Facultad de Química",
+      "url": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20farmac%C3%A9utico%20res%20112%20CFQ%2012%2003%202026.pdf",
+      "scope": "damero sugerido vigente y créditos por unidad curricular obligatoria",
+      "status": "verified"
+    },
+    {
+      "id": "optatives-catalog",
+      "system": "Facultad de Química",
+      "url": "https://www.fq.edu.uy/sites/default/files/archivos/Optativas%20QF_31.pdf",
+      "scope": "catálogo de optativas actualizado el 13/07/2026",
+      "status": "verified"
+    },
+    {
+      "id": "electives-catalog",
+      "system": "Facultad de Química",
+      "url": "https://www.fq.edu.uy/sites/default/files/archivos/Electivas%20QF_42.pdf",
+      "scope": "catálogo de electivas actualizado el 21/07/2026",
+      "status": "verified"
+    },
+    {
+      "id": "bedelias",
+      "system": "SGAE Bedelías",
+      "url": "https://bedelias.udelar.edu.uy/",
+      "scope": "vigencia, composición, códigos, créditos y previaturas de curso/examen",
+      "status": "verified"
+    }
+  ],
+  "notes": [
+    "La carrera se denomina QUÍMICA FARMACÉUTICA en Bedelías y otorga el título Químico Farmacéutico.",
+    "El archivo adjunto como resolución 112 CFQ del 12/03/2026 prevalece para el damero sobre copias anteriores; aunque conserva la leyenda de actualización del 19/12/2024, incluye Bioquímica Opción II, Laboratorio de Bioquímica y Sistemas de Gestión.",
+    "No se modela un título intermedio porque las fuentes específicas del Plan 2015 no publican uno para esta carrera.",
+    "El damero vigente asigna 5 créditos a Laboratorio de Bioquímica, mientras la composición de Bedelías consultada publica 10; la interfaz conserva los 5 del damero y marca la asignación como conflicto entre fuentes oficiales."
+  ]
+}

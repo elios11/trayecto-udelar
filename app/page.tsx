@@ -7,7 +7,7 @@ import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
-type CredentialId = "analyst" | "engineer";
+type CredentialId = "analyst" | "engineer" | "pharmacist";
 type AllocationStatus = "official" | "suggested" | "conflict";
 
 type CreditAllocation = {
@@ -58,12 +58,12 @@ type Course = {
   elective?: boolean;
   placementTest?: boolean;
   engineeringOnly?: boolean;
-  dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption";
+  dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption" | "fq-damero";
   bedeliasCode?: string;
   core?: boolean;
   placeholder?: boolean;
   serviceCode?: string | null;
-  ruleCoverage?: "published" | "not-published" | "not-scraped";
+  ruleCoverage?: "published" | "partial" | "not-published" | "not-scraped";
   offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null };
 };
 
@@ -139,6 +139,22 @@ type Electric2023CatalogProjection = {
 type Civil2021Projection = Electric2023Projection;
 type Civil2021CatalogProjection = Electric2023CatalogProjection;
 
+type Qf2015Projection = {
+  schemaVersion: number;
+  source: { reviewedAt: string; careerPage: string; planDocument: string; suggestedCurriculum: string; bedeliasExtractedAt: string };
+  plan: { year: string; degreeTitle: string; minCredits: number; durationMonths: number; notice: string; bedeliasCompositionCourses: number; publishedRules: number; partialRules: number; noPublishedRule: number };
+  creditStructure: CreditStructure;
+  courses: Array<{ id: string; bedeliasCode: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fq-damero"; ruleCoverage: Course["ruleCoverage"]; elective: boolean }>;
+  trajectories: Record<string, { label: string; description: string; semesters: string[][] }>;
+  rules: VerifiedRule[];
+  requirementGroupMap: Record<string, string>;
+};
+type Qf2015CatalogProjection = {
+  schemaVersion: number;
+  source: { system: string; extractedAt: string; planUrl: string; contentHash: string; optativesCatalog: string; electivesCatalog: string };
+  courses: Array<{ id: string; serviceCode: string | null; bedeliasCode: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; offered: Array<"impar" | "par" | "libre">; elective: boolean; dataStatus: "bedelias-composition"; ruleCoverage: Course["ruleCoverage"] }>;
+  rules: VerifiedRule[];
+};
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
 const plan2025Data = plan2025DataJson as unknown as Plan2025Projection;
@@ -273,6 +289,26 @@ function buildElectric2023Catalog(profileId: string, planData: Electric2023Proje
   const trajectoryCourses = buildElectric2023Courses(profileId, planData);
   const ids = new Set(trajectoryCourses.map((course) => course.id));
   const bedeliasCodes = new Set(trajectoryCourses.map((course) => course.bedeliasCode).filter(Boolean));
+  const catalog = (data?.courses ?? [])
+    .filter((course) => !ids.has(course.id) && !bedeliasCodes.has(course.bedeliasCode))
+    .map((course) => ({ ...course, semester: "opt" as const }));
+  return [...trajectoryCourses, ...catalog];
+}
+
+function buildQf2015Courses(trajectoryId: string, data: Qf2015Projection | null): Course[] {
+  if (!data) return [];
+  const trajectory = data.trajectories[trajectoryId] ?? data.trajectories.suggested;
+  const semesters = new Map<string, number>();
+  trajectory.semesters.forEach((ids, index) => ids.forEach((id) => semesters.set(id, index + 1)));
+  return data.courses
+    .filter((course) => semesters.has(course.id))
+    .map((course) => ({ ...course, semester: semesters.get(course.id)!, offered: [] }));
+}
+
+function buildQf2015Catalog(trajectoryId: string, planData: Qf2015Projection | null, data: Qf2015CatalogProjection | null): Course[] {
+  const trajectoryCourses = buildQf2015Courses(trajectoryId, planData);
+  const ids = new Set(trajectoryCourses.map((course) => course.id));
+  const bedeliasCodes = new Set(trajectoryCourses.map((course) => course.bedeliasCode));
   const catalog = (data?.courses ?? [])
     .filter((course) => !ids.has(course.id) && !bedeliasCodes.has(course.bedeliasCode))
     .map((course) => ({ ...course, semester: "opt" as const }));
@@ -425,10 +461,10 @@ const stateLabels: Record<CourseStatus, string> = {
 
 const STORAGE_KEY = "trayecto-udelar-progress-v2";
 const LEGACY_STORAGE_KEY = "trayecto-udelar-demo-v1";
-type PlanId = "1997" | "2025" | "electrica-2023" | "civil-2021";
-type FacultyId = "fing";
-type CareerId = "computacion" | "electrica" | "civil";
-type AcademicPlanOption = { id: PlanId; label: string; defaultTrajectoryId: string };
+type PlanId = "1997" | "2025" | "electrica-2023" | "civil-2021" | "qf-2015";
+type FacultyId = "fing" | "fq";
+type CareerId = "computacion" | "electrica" | "civil" | "quimica-farmaceutica";
+type AcademicPlanOption = { id: PlanId; label: string; defaultTrajectoryId: string; defaultCredentialId: CredentialId };
 type AcademicCareerOption = { id: CareerId; label: string; plans: AcademicPlanOption[] };
 type AcademicFacultyOption = { id: FacultyId; label: string; careers: AcademicCareerOption[] };
 
@@ -464,25 +500,34 @@ const academicCatalog: AcademicFacultyOption[] = [
         id: "computacion",
         label: "Ingeniería en Computación",
         plans: [
-          { id: "2025", label: "Plan 2025 · vigente, en transición", defaultTrajectoryId: "pi-60-plus" },
-          { id: "1997", label: "Plan 1997 · histórico", defaultTrajectoryId: "pi-20-59" },
+          { id: "2025", label: "Plan 2025 · vigente, en transición", defaultTrajectoryId: "pi-60-plus", defaultCredentialId: "engineer" },
+          { id: "1997", label: "Plan 1997 · histórico", defaultTrajectoryId: "pi-20-59", defaultCredentialId: "engineer" },
         ],
       },
       {
         id: "electrica",
         label: "Ingeniería Eléctrica",
         plans: [
-          { id: "electrica-2023", label: "Plan 2023 · vigente", defaultTrajectoryId: "basic" },
+          { id: "electrica-2023", label: "Plan 2023 · vigente", defaultTrajectoryId: "basic", defaultCredentialId: "engineer" },
         ],
       },
       {
         id: "civil",
         label: "Ingeniería Civil",
         plans: [
-          { id: "civil-2021", label: "Plan 2021 · vigente", defaultTrajectoryId: "construction" },
+          { id: "civil-2021", label: "Plan 2021 · vigente", defaultTrajectoryId: "construction", defaultCredentialId: "engineer" },
         ],
       },
     ],
+  },
+  {
+    id: "fq",
+    label: "Facultad de Química",
+    careers: [{
+      id: "quimica-farmaceutica",
+      label: "Química Farmacéutica",
+      plans: [{ id: "qf-2015", label: "Plan 2015 · vigente", defaultTrajectoryId: "suggested", defaultCredentialId: "pharmacist" }],
+    }],
   },
 ];
 const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
@@ -517,7 +562,7 @@ export default function Home() {
   const [appMode, setAppMode] = useState<AppMode>("curriculum");
   const [planYear, setPlanYear] = useState<PlanId>("2025");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
-  const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {} });
+  const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {}, "qf-2015": {} });
   const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
   const [selected, setSelected] = useState<Course | null>(null);
   const [importError, setImportError] = useState<{ title: string; message: string } | null>(null);
@@ -536,14 +581,18 @@ export default function Home() {
   const [civilPlanLoadState, setCivilPlanLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [civilCatalogData, setCivilCatalogData] = useState<Civil2021CatalogProjection | null>(null);
   const [civilCatalogLoadState, setCivilCatalogLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [qf2015Data, setQf2015Data] = useState<Qf2015Projection | null>(null);
+  const [qfPlanLoadState, setQfPlanLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [qfCatalogData, setQfCatalogData] = useState<Qf2015CatalogProjection | null>(null);
+  const [qfCatalogLoadState, setQfCatalogLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [fullElectivesCatalogExpanded, setFullElectivesCatalogExpanded] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
-  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms() });
+  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms(), "qf-2015": createDefaultTerms() });
   const [plannerView, setPlannerView] = useState<PlannerView>("board");
   const [plannerSearch, setPlannerSearch] = useState("");
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
-  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null, "electrica-2023": null, "civil-2021": null });
+  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null, "electrica-2023": null, "civil-2021": null, "qf-2015": null });
   const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
@@ -562,6 +611,8 @@ export default function Home() {
   const electricPlanPromiseRef = useRef<Promise<Electric2023Projection | null> | null>(null);
   const civilCatalogPromiseRef = useRef<Promise<Civil2021CatalogProjection | null> | null>(null);
   const civilPlanPromiseRef = useRef<Promise<Civil2021Projection | null> | null>(null);
+  const qfPlanPromiseRef = useRef<Promise<Qf2015Projection | null> | null>(null);
+  const qfCatalogPromiseRef = useRef<Promise<Qf2015CatalogProjection | null> | null>(null);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
 
 
@@ -674,6 +725,48 @@ export default function Home() {
   const activeProfileData = planYear === "electrica-2023" ? electric2023Data : planYear === "civil-2021" ? civil2021Data : null;
   const activeProfileCatalogData = planYear === "electrica-2023" ? electricCatalogData : planYear === "civil-2021" ? civilCatalogData : null;
   const activeProfileCatalogLoadState = planYear === "electrica-2023" ? electricCatalogLoadState : civilCatalogLoadState;
+  const loadQfPlan = useCallback(async (): Promise<Qf2015Projection | null> => {
+    if (qf2015Data) return qf2015Data;
+    if (qfPlanPromiseRef.current) return qfPlanPromiseRef.current;
+    setQfPlanLoadState("loading");
+    const request = (async () => {
+      try {
+        const planImport = await import("./data/quimico-farmaceutico-2015-fq.json");
+        const projection = planImport.default as unknown as Qf2015Projection;
+        setQf2015Data(projection);
+        setQfPlanLoadState("loaded");
+        return projection;
+      } catch {
+        setQfPlanLoadState("error");
+        return null;
+      } finally {
+        qfPlanPromiseRef.current = null;
+      }
+    })();
+    qfPlanPromiseRef.current = request;
+    return request;
+  }, [qf2015Data]);
+  const loadQfCatalog = useCallback(async (): Promise<Qf2015CatalogProjection | null> => {
+    if (qfCatalogData) return qfCatalogData;
+    if (qfCatalogPromiseRef.current) return qfCatalogPromiseRef.current;
+    setQfCatalogLoadState("loading");
+    const request = (async () => {
+      try {
+        const catalogImport = await import("./data/quimico-farmaceutico-2015-electivas.json");
+        const projection = catalogImport.default as unknown as Qf2015CatalogProjection;
+        setQfCatalogData(projection);
+        setQfCatalogLoadState("loaded");
+        return projection;
+      } catch {
+        setQfCatalogLoadState("error");
+        return null;
+      } finally {
+        qfCatalogPromiseRef.current = null;
+      }
+    })();
+    qfCatalogPromiseRef.current = request;
+    return request;
+  }, [qfCatalogData]);
   const activeFaculty = academicCatalog.find((faculty) => faculty.careers.some((career) => career.plans.some((plan) => plan.id === planYear))) ?? academicCatalog[0];
   const activeCareer = activeFaculty.careers.find((career) => career.plans.some((plan) => plan.id === planYear)) ?? activeFaculty.careers[0];
   const selectAcademicPlan = async (nextPlan: AcademicPlanOption) => {
@@ -685,9 +778,13 @@ export default function Home() {
       setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Ingeniería Civil nuevamente. Tu progreso no se modificó." });
       return;
     }
+    if (nextPlan.id === "qf-2015" && !await loadQfPlan()) {
+      setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Química Farmacéutica nuevamente. Tu progreso no se modificó." });
+      return;
+    }
     setPlanYear(nextPlan.id);
     setTrajectoryId(nextPlan.defaultTrajectoryId);
-    setCredentialId("engineer");
+    setCredentialId(nextPlan.defaultCredentialId);
     setFullElectivesCatalogExpanded(false);
     setSelected(null);
   };
@@ -697,7 +794,7 @@ export default function Home() {
       ? await loadElectricCatalog()
       : planYear === "civil-2021"
         ? await loadCivilCatalog()
-        : await loadExtendedElectives();
+        : planYear === "qf-2015" ? await loadQfCatalog() : await loadExtendedElectives();
     if (projection) setFullElectivesCatalogExpanded(true);
   };
   const ensureFullCatalogForSearch = (value: string) => {
@@ -709,6 +806,9 @@ export default function Home() {
     }
     if (planYear === "civil-2021" && value.trim() && !civilCatalogData && civilCatalogLoadState !== "loading") {
       void loadCivilCatalog();
+    }
+    if (planYear === "qf-2015" && value.trim() && !qfCatalogData && qfCatalogLoadState !== "loading") {
+      void loadQfCatalog();
     }
   };
   const handleCurriculumSearch = (value: string) => {
@@ -730,16 +830,18 @@ export default function Home() {
   const civil2021AvailableCourses = useMemo(() => buildElectric2023Catalog(trajectoryId, civil2021Data, civilCatalogData), [trajectoryId, civil2021Data, civilCatalogData]);
   const profileAvailableCourses = planYear === "electrica-2023" ? electric2023AvailableCourses : civil2021AvailableCourses;
   const profileCatalogCourseIds = useMemo(() => new Set((activeProfileCatalogData?.courses ?? []).map((course) => course.id)), [activeProfileCatalogData]);
+  const qf2015AvailableCourses = useMemo(() => buildQf2015Catalog(trajectoryId, qf2015Data, qfCatalogData), [trajectoryId, qf2015Data, qfCatalogData]);
+  const qfCatalogCourseIds = useMemo(() => new Set((qfCatalogData?.courses ?? []).map((course) => course.id)), [qfCatalogData]);
   const courses = useMemo(
     () => planYear === "2025"
       ? buildPlan2025Courses(trajectoryId)
-      : isProfilePlan ? profileAvailableCourses : plan1997AvailableCourses,
-    [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses],
+      : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : plan1997AvailableCourses,
+    [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses],
   );
   const plannerCourses = useMemo<Course[]>(() => planYear === "2025"
     ? plan2025CatalogCourses
-    : isProfilePlan ? profileAvailableCourses : plan1997AvailableCourses,
-  [planYear, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses]);
+    : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : plan1997AvailableCourses,
+  [planYear, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses]);
   const plannerTerms = plannerPlans[planYear];
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
@@ -752,6 +854,11 @@ export default function Home() {
   const hasStoredProfileCatalogProgress = useMemo(
     () => isProfilePlan && hasRecordedProgressOutsideCatalog(progress[planYear] ?? {}, initialProfileCourseIds),
     [progress, planYear, isProfilePlan, initialProfileCourseIds],
+  );
+  const initialQfCourseIds = useMemo(() => new Set((qf2015Data?.courses ?? []).map((course) => course.id)), [qf2015Data]);
+  const hasStoredQfCatalogProgress = useMemo(
+    () => hasRecordedProgressOutsideCatalog(progress["qf-2015"] ?? {}, initialQfCourseIds),
+    [progress, initialQfCourseIds],
   );
   const statuses = useMemo(
     () => planYear === "2025" && trajectoryId === "pi-60-plus"
@@ -767,21 +874,26 @@ export default function Home() {
       for (const course of activeProfileCatalogData?.courses ?? []) merged.set(course.id, course);
       return merged;
     }
+    if (planYear === "qf-2015" && qf2015Data) {
+      const merged = new Map<string, unknown>(qf2015Data.courses.map((course) => [course.id, course]));
+      for (const course of qfCatalogData?.courses ?? []) merged.set(course.id, course);
+      return merged;
+    }
     const merged = new Map<string, unknown>(plan1997VerifiedCourses);
     for (const course of extendedElectivesData?.courses ?? []) merged.set(course.id, course);
     return merged;
-  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData]);
+  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
   const verifiedRules = useMemo(() => {
     const rules = planYear === "2025"
       ? plan2025Data.rules
       : isProfilePlan
         ? [...(activeProfileData?.rules ?? []), ...(activeProfileCatalogData?.rules ?? [])]
-        : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
+        : planYear === "qf-2015" ? [...(qf2015Data?.rules ?? []), ...(qfCatalogData?.rules ?? [])] : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
     return new Map(rules.map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
-  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData]);
+  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
   const creditStructure = planYear === "2025"
     ? plan2025Data.creditStructure
-    : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
+    : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
   const credential = creditStructure.credentials.find((item) => item.id === credentialId) ?? creditStructure.credentials[0];
@@ -791,12 +903,12 @@ export default function Home() {
       ...(plan2025Data.trajectories[trajectoryId].preSemester?.length ? [0] : []),
       ...plan2025Data.trajectories[trajectoryId].semesters.map((_, index) => index + 1),
     ]
-    : isProfilePlan ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    : isProfilePlan || planYear === "qf-2015" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const planMinCredits = planYear === "2025"
     ? plan2025Data.plan.minCredits
-    : isProfilePlan ? (activeProfileData?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
+    : isProfilePlan ? (activeProfileData?.plan.minCredits ?? 450) : planYear === "qf-2015" ? (qf2015Data?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
   const analystCredential = creditStructure.credentials.find((item) => item.id === "analyst");
-  const engineerCredential = creditStructure.credentials.find((item) => item.id === "engineer") ?? creditStructure.credentials[0];
+  const degreeCredential = creditStructure.credentials.find((item) => item.id !== "analyst") ?? creditStructure.credentials[0];
 
   const setStatuses = (updater: Record<string, CourseStatus> | ((current: Record<string, CourseStatus>) => Record<string, CourseStatus>)) => {
     setProgress((current) => {
@@ -809,14 +921,14 @@ export default function Home() {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setProgress({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {}, ...JSON.parse(saved) });
+      if (saved) setProgress({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {}, "qf-2015": {}, ...JSON.parse(saved) });
       else {
         const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-        if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {}, "electrica-2023": {}, "civil-2021": {} });
+        if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {}, "electrica-2023": {}, "civil-2021": {}, "qf-2015": {} });
       }
       const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
       if (savedPlanner) setPlannerPlans({
-        1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms(),
+        1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms(), "qf-2015": createDefaultTerms(),
         ...JSON.parse(savedPlanner),
       });
       const savedCurrentPlannerTerms = localStorage.getItem(CURRENT_TERM_STORAGE_KEY);
@@ -827,6 +939,7 @@ export default function Home() {
           2025: typeof parsed["2025"] === "string" ? parsed["2025"] : null,
           "electrica-2023": typeof parsed["electrica-2023"] === "string" ? parsed["electrica-2023"] : null,
           "civil-2021": typeof parsed["civil-2021"] === "string" ? parsed["civil-2021"] : null,
+          "qf-2015": typeof parsed["qf-2015"] === "string" ? parsed["qf-2015"] : null,
         });
       }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
@@ -861,9 +974,11 @@ export default function Home() {
             ? Object.hasOwn(plan2025Data.trajectories, candidate)
             : selectedPlan.id === "1997" ? candidate === "pi-20-59"
               : selectedPlan.id === "electrica-2023" ? electricProfileIds.has(candidate)
-                : civilProfileIds.has(candidate);
+                : selectedPlan.id === "civil-2021" ? civilProfileIds.has(candidate)
+                  : candidate === "suggested";
           setPlanYear(selectedPlan.id);
           setTrajectoryId(isValid ? candidate : selectedPlan.defaultTrajectoryId);
+          setCredentialId(selectedPlan.defaultCredentialId);
         }
       }
     } catch {
@@ -904,13 +1019,18 @@ export default function Home() {
     if (!hydrated || planYear !== "civil-2021" || civil2021Data || civilPlanLoadState !== "idle") return;
     void loadCivilPlan();
   }, [hydrated, planYear, civil2021Data, civilPlanLoadState, loadCivilPlan]);
+  useEffect(() => {
+    if (!hydrated || planYear !== "qf-2015" || qf2015Data || qfPlanLoadState !== "idle") return;
+    void loadQfPlan();
+  }, [hydrated, planYear, qf2015Data, qfPlanLoadState, loadQfPlan]);
 
   useEffect(() => {
     if (!hydrated || appMode !== "planner") return;
     if (planYear === "1997" && !extendedElectivesData && extendedElectivesLoadState === "idle") void loadExtendedElectives();
     if (planYear === "electrica-2023" && !electricCatalogData && electricCatalogLoadState === "idle") void loadElectricCatalog();
     if (planYear === "civil-2021" && !civilCatalogData && civilCatalogLoadState === "idle") void loadCivilCatalog();
-  }, [hydrated, appMode, planYear, extendedElectivesData, extendedElectivesLoadState, electricCatalogData, electricCatalogLoadState, civilCatalogData, civilCatalogLoadState, loadExtendedElectives, loadElectricCatalog, loadCivilCatalog]);
+    if (planYear === "qf-2015" && !qfCatalogData && qfCatalogLoadState === "idle") void loadQfCatalog();
+  }, [hydrated, appMode, planYear, extendedElectivesData, extendedElectivesLoadState, electricCatalogData, electricCatalogLoadState, civilCatalogData, civilCatalogLoadState, qfCatalogData, qfCatalogLoadState, loadExtendedElectives, loadElectricCatalog, loadCivilCatalog, loadQfCatalog]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -926,6 +1046,11 @@ export default function Home() {
     if (!isProfilePlan || !hydrated || !hasStoredProfileCatalogProgress || activeProfileCatalogData || activeProfileCatalogLoadState !== "idle") return;
     void (planYear === "electrica-2023" ? loadElectricCatalog() : loadCivilCatalog());
   }, [planYear, isProfilePlan, hydrated, hasStoredProfileCatalogProgress, activeProfileCatalogData, activeProfileCatalogLoadState, loadElectricCatalog, loadCivilCatalog]);
+
+  useEffect(() => {
+    if (planYear !== "qf-2015" || !hydrated || !hasStoredQfCatalogProgress || qfCatalogData || qfCatalogLoadState !== "idle") return;
+    void loadQfCatalog();
+  }, [planYear, hydrated, hasStoredQfCatalogProgress, qfCatalogData, qfCatalogLoadState, loadQfCatalog]);
 
   useEffect(() => {
     if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
@@ -1134,7 +1259,7 @@ export default function Home() {
   const groupCredits = (groupCode: string) => {
     const nodeId = planYear === "1997"
       ? bedeliasData.requirementGroupMap[groupCode]
-      : isProfilePlan ? activeProfileData?.requirementGroupMap[groupCode] : undefined;
+      : isProfilePlan ? activeProfileData?.requirementGroupMap[groupCode] : planYear === "qf-2015" ? qf2015Data?.requirementGroupMap[groupCode] : undefined;
     return nodeId ? nodeCredits(nodeId) : 0;
   };
   const hasVerifiedCourseRule = (course: Course) => Boolean(officialRule(course, "course"));
@@ -1179,8 +1304,9 @@ export default function Home() {
       const matchesSearch = matchesCourseSearch(course, courseAreaLabel(course), search);
       const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
       const isSearchOnlyPlan1997Elective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
-      const isSearchOnlyElectricElective = profileCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
-      const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective;
+    const isSearchOnlyElectricElective = profileCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyQfElective = qfCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective || isSearchOnlyQfElective;
       return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
     });
     return semester === "opt" ? sortCoursesByProgress(matches, statuses) : matches;
@@ -1192,7 +1318,9 @@ export default function Home() {
       ? "ingenieria-electrica-2023"
       : planYear === "civil-2021"
         ? "ingenieria-civil-2021"
-        : `ingenieria-computacion-${planYear}`;
+        : planYear === "qf-2015"
+          ? "quimica-farmaceutica-2015"
+          : `ingenieria-computacion-${planYear}`;
     const blob = new Blob([JSON.stringify({ formatVersion: 1, career, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
@@ -1226,6 +1354,14 @@ export default function Home() {
         const validCourseIds = new Set(courses.map((course) => course.id));
         if (planYear === "1997" && entries.some(([id]) => !validCourseIds.has(id))) {
           const extended = await loadExtendedElectives();
+          if (!extended) {
+            setImportError({ title: "No pudimos cargar el catálogo", message: "El progreso incluye optativas del catálogo ampliado, pero no pudimos abrir esos datos. Probá nuevamente." });
+            return;
+          }
+          for (const course of extended.courses) validCourseIds.add(course.id);
+        }
+        if (planYear === "qf-2015" && entries.some(([id]) => !validCourseIds.has(id))) {
+          const extended = await loadQfCatalog();
           if (!extended) {
             setImportError({ title: "No pudimos cargar el catálogo", message: "El progreso incluye optativas del catálogo ampliado, pero no pudimos abrir esos datos. Probá nuevamente." });
             return;
@@ -1305,7 +1441,8 @@ export default function Home() {
     const query = plannerSearch.trim();
     const isSearchOnlyPlan1997Elective = appMode !== "planner" && extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
     const isSearchOnlyElectricElective = appMode !== "planner" && profileCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
-    const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective;
+    const isSearchOnlyQfElective = appMode !== "planner" && qfCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective || isSearchOnlyQfElective;
     return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
   });
 
@@ -1325,15 +1462,15 @@ export default function Home() {
     const courseRule = officialRule(course, "course");
     return Boolean(courseRule && expressionReferencesCode(courseRule.expression, selected.id));
   }) : [];
-  const sourceLabel = (course: Course): "Bedelías" | "FING" | undefined => {
+  const sourceLabel = (course: Course): "Bedelías" | "FING" | "FQ" | undefined => {
     if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
-    return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : undefined;
+    return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : course.dataStatus === "fq-damero" ? "FQ" : undefined;
   };
-  const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : extendedElectivesLoadState;
-  const deferredCatalogCount = isProfilePlan ? (activeProfileCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
+  const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : planYear === "qf-2015" ? qfCatalogLoadState : extendedElectivesLoadState;
+  const deferredCatalogCount = isProfilePlan ? (activeProfileCatalogData?.courses.length ?? 0) : planYear === "qf-2015" ? (qfCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
   const electivesSummary = visibleElectives.length > 0
     ? `${visibleElectives.length} materias verificadas en la composición`
-    : isProfilePlan && !fullElectivesCatalogExpanded
+    : (isProfilePlan && !fullElectivesCatalogExpanded) || (planYear === "qf-2015" && !fullElectivesCatalogExpanded)
       ? "Catálogo oficial disponible"
       : "Sin materias visibles";
 
@@ -1508,6 +1645,8 @@ export default function Home() {
                   <option value={id} key={id}>{profile.label}</option>
                 )) : planYear === "civil-2021" ? Object.entries(civil2021Data?.profiles ?? {}).map(([id, profile]) => (
                   <option value={id} key={id}>{profile.label}</option>
+                )) : planYear === "qf-2015" ? Object.entries(qf2015Data?.trajectories ?? {}).map(([id, trajectory]) => (
+                  <option value={id} key={id}>{trajectory.label}</option>
                 )) : <option value="pi-20-59">Ingreso 1er semestre · PI 20–59%</option>}
               </select>
             </label>}
@@ -1518,6 +1657,8 @@ export default function Home() {
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{plan2025Data.trajectories[trajectoryId].description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
           ) : isProfilePlan ? (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activeProfileData?.profiles[trajectoryId]?.description} Trayectoria sugerida por la Comisión de Carrera; créditos, áreas y previaturas contrastados con Bedelías.</span></p>
+          ) : planYear === "qf-2015" ? (
+            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{qf2015Data?.trajectories[trajectoryId]?.description} Los 71 créditos optativos y electivos se eligen del catálogo vigente y no tienen un semestre único.</span></p>
           ) : (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Semestres de la trayectoria sugerida compartida. Créditos, áreas y reglas centrales importados de Bedelías; núcleo obligatorio contrastado con la implementación curricular de FING.</span></p>
           )}
@@ -1553,10 +1694,10 @@ export default function Home() {
             <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / analystCredential.minTotalCredits * 100, 100)}%` }} /></div>
           </div>}
 
-          <div className={`degree-card engineer ${credentialId === "engineer" ? "selected-degree" : ""}`}>
+          <div className={`degree-card engineer ${credentialId === degreeCredential.id ? "selected-degree" : ""}`}>
             <div>
               <span>Título de grado</span>
-              <h3>{engineerCredential.title}</h3>
+              <h3>{degreeCredential.title}</h3>
             </div>
             <strong>{earnedCredits}<small>/{planMinCredits}</small></strong>
             <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / planMinCredits * 100, 100)}%` }} /></div>
@@ -1626,7 +1767,7 @@ export default function Home() {
               </details>;
             })}
           </div>
-          <p className="data-source">Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías.</p>
+          <p className="data-source">{planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
           </>}
         </aside>
 
@@ -1748,6 +1889,7 @@ export default function Home() {
               <span /> Solo habilitadas
             </label> : isProfilePlan
               ? <span className="rules-coverage">Bedelías auditada: {activeProfileData?.plan.publishedRules ?? 0} reglas · {activeProfileData?.plan.noPublishedRule ?? 0} sin publicar</span>
+              : planYear === "qf-2015" ? <span className="rules-coverage">Bedelías auditada: {qf2015Data?.plan.publishedRules ?? 0} reglas · {qf2015Data?.plan.partialRules ?? 0} parciales · {qf2015Data?.plan.noPublishedRule ?? 0} sin publicar</span>
               : <span className="rules-coverage">Previas publicadas: {new Set(plan2025Data.rules.map((rule) => rule.target.code)).size}/{courses.length} materias</span>}
             <div className="curriculum-navigation" role="group" aria-label="Navegar por semestres">
               <button type="button" onClick={() => moveCurriculum(-1)} disabled={curriculumEdges.atStart} aria-label="Ir al semestre anterior" title="Semestre anterior">←</button>
@@ -1780,7 +1922,7 @@ export default function Home() {
             </div>
           </div>
 
-          {planYear === "1997" || isProfilePlan ? <section className="electives-section">
+          {planYear === "1997" || isProfilePlan || planYear === "qf-2015" ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
               <div><span className="eyebrow">Trayectoria flexible</span><h2>Optativas y electivas</h2></div>
               <div><span>{electivesSummary}</span><b>{showElectives ? "−" : "+"}</b></div>
@@ -1794,7 +1936,7 @@ export default function Home() {
               </div>
               <div className="electives-loader" role="status" aria-live="polite">
                 {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{deferredCatalogCount} materias adicionales</strong> de la composición oficial del plan en Bedelías.</p> : <>
-                  <p>{deferredCatalogLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : isProfilePlan ? activeProfileData?.plan.notice : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
+                  <p>{deferredCatalogLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : isProfilePlan ? activeProfileData?.plan.notice : planYear === "qf-2015" ? qf2015Data?.plan.notice : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
                   <button type="button" className="primary-button" disabled={deferredCatalogLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
                     {deferredCatalogLoadState === "loading" ? "Cargando materias..." : deferredCatalogLoadState === "error" ? "Reintentar carga" : "Cargar catálogo de Bedelías"}
                   </button>
@@ -1854,8 +1996,9 @@ export default function Home() {
             <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placeholder ? "Espacio a completar" : selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
             {selectedAllocation?.status === "suggested" ? <p className="allocation-source suggested-allocation"><span>≈</span> Cuenta en <strong>{courseAreaLabel(selected)}</strong> mediante una asignación sugerida. Los créditos se computan normalmente, pero todavía falta un Anexo B o resolución específica para este plan.</p>
               : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
-                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según Bedelías.</p>}
+                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según {planYear === "qf-2015" && selected.dataStatus === "fq-damero" ? "Facultad de Química" : "Bedelías"}.</p>}
             {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
+              : selected.dataStatus === "fq-damero" ? <p className="verified-source fing-source"><span>FQ</span> Materia, créditos y semestre publicados en el <a href={qf2015Data?.source.suggestedCurriculum} target="_blank" rel="noreferrer">damero vigente de Facultad de Química</a>; códigos y previaturas se contrastan con Bedelías.</p>
               : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={activeProfileData?.source.profilesSpreadsheet} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>; debe completarse eligiendo una unidad curricular admitida por el plan.</p>
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
@@ -1911,11 +2054,11 @@ export default function Home() {
   );
 }
 
-function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rulesKnown, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; rulesKnown: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING"; onCycle: () => void; onDetails: () => void }) {
+function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rulesKnown, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; rulesKnown: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING" | "FQ"; onCycle: () => void; onDetails: () => void }) {
   return (
     <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
       <div className="course-topline">
-        <span>#{course.id}{sourceLabel && <i className={`official-tag ${sourceLabel === "FING" ? "fing-tag" : ""}`}>{sourceLabel}</i>}{course.core && <i className="official-tag fing-tag">Común</i>}</span>
+        <span>#{course.id}{sourceLabel && <i className={`official-tag ${sourceLabel !== "Bedelías" ? "fing-tag" : ""}`}>{sourceLabel}</i>}{course.core && <i className="official-tag fing-tag">Común</i>}</span>
         <button onClick={onDetails} aria-label={`Ver detalles de ${course.name}`}>i</button>
       </div>
       <h3>{course.name}</h3>
@@ -1927,6 +2070,8 @@ function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rul
           ? <><span className="status-mark">✓</span>Acreditada por trayectoria · 4 cr.</>
           : course.ruleCoverage === "not-published" && status === "pending"
           ? <><span className="status-mark">?</span>Bedelías no publica regla</>
+          : course.ruleCoverage === "partial" && status === "pending"
+          ? <><span className="status-mark">?</span>Regla oficial en revisión</>
           : !rulesKnown && status === "pending"
           ? <><span className="status-mark">?</span>Previas aún no consultadas</>
           : !unlocked

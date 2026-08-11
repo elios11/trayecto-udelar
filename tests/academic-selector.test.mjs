@@ -12,6 +12,9 @@ test("organizes every incorporated plan by faculty and career", () => {
   assert.match(pageSource, /id: "2025"/);
   assert.match(pageSource, /id: "1997"/);
   assert.match(pageSource, /id: "electrica-2023"/);
+  assert.match(pageSource, /label: "Facultad de Química"/);
+  assert.match(pageSource, /label: "Química Farmacéutica"/);
+  assert.match(pageSource, /id: "qf-2015"/);
 });
 
 test("filters careers and plans through the active academic hierarchy", () => {

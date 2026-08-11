@@ -1,6 +1,19 @@
 # Estado del proyecto: Trayecto Udelar
 
-## Tarea activa - Ingeniería Civil Plan 2021
+## Integración completada - Química Farmacéutica Plan 2015
+
+- Rama/worktree: `feature/quimico-farmaceutico` en `.worktrees/quimico-farmaceutico`.
+- Fuentes oficiales revisadas: Plan 2015, página de carrera, damero adjunto a resolución 112 CFQ de 2026, catálogos de optativas/electivas 2026 y Bedelías.
+- Auditoría Bedelías completa al 2026-08-11: 441 cursos/equivalencias y 446 reglas, sin incidencias del importador.
+- Implementación: Facultad de Química → Química Farmacéutica → Plan 2015, título Químico Farmacéutico, diez semestres, Practicantado y metas de 450 créditos.
+- Proyecciones bajo demanda: 48 materias/bloques y 87 reglas iniciales; catálogo ampliado con 393 materias/equivalencias y 359 reglas.
+- Conflicto preservado: el damero 2026 publica 5 créditos para Laboratorio de Bioquímica y Bedelías todavía publica 10; la trayectoria usa el damero y lo identifica como conflicto.
+- Verificación final: `npm.cmd test` pasa 67/67; el lint conserva la deuda previa de `main` (12 errores y 1 advertencia), sin hallazgos nuevos.
+- Commit de origen: `d72466abbb9e6538a7e7333f12da29cb4e78320c`; integración en `main` autorizada el 2026-08-11.
+
+Última actualización: 2026-08-11
+
+## Integración completada - Ingeniería Civil Plan 2021
 
 - Rama/worktree: `feature/ingenieria-civil-2021` en `work/ingenieria-civil-2021`.
 - Fuentes oficiales: Plan 2021 de Colibrí, página FING, EVA de la Comisión de Carrera, planilla de currículas versión 2025-06 y snapshot público completo de SGAE Bedelías.
@@ -10,7 +23,7 @@
 - Especificación y reanudación: `docs/tasks/ingenieria-civil-2021.md`.
 - Verificación final: `npm.cmd test` pasa 66/66; el lint focalizado de generador y pruebas pasa. `npm.cmd run lint` conserva la deuda ya documentada de `main`: 12 errores y 1 advertencia, sin hallazgos nuevos.
 - Validación funcional local: selección de Civil, cuatro perfiles, cambio a Hidráulico-Ambiental y carga de las 349 materias del catálogo diferido.
-- No integrar en `main`, no hacer push y no publicar sin autorización explícita.
+- Commit de origen: `1a3708fc53cf78d4389e4b483abc5eda820dbe94`; integración en `main` autorizada el 2026-08-11.
 
 Última actualización: 2026-08-11
 Workspace: `C:\Users\elios\Documents\Proyectos_GPT\MallaCurricularUniversal`

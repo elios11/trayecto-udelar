@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-11",
+  "source": {
+    "careerPage": "https://www.fq.edu.uy/?q=es%2Fnode%2F619",
+    "planDocument": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+    "suggestedCurriculum": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20farmac%C3%A9utico%20res%20112%20CFQ%2012%2003%202026.pdf",
+    "optativesCatalog": "https://www.fq.edu.uy/sites/default/files/archivos/Optativas%20QF_31.pdf",
+    "electivesCatalog": "https://www.fq.edu.uy/sites/default/files/archivos/Electivas%20QF_42.pdf"
+  },
+  "plan": {
+    "year": "2015",
+    "degreeTitle": "Químico Farmacéutico",
+    "minCredits": 450,
+    "durationMonths": 60,
+    "mandatoryCredits": 324,
+    "flexibleCredits": 71,
+    "minimumOptativeCredits": 60,
+    "practicumCredits": 55,
+    "notice": "El damero sugerido distribuye las asignaturas obligatorias y el Practicantado en diez semestres. Los 71 créditos optativos y electivos se eligen de los catálogos vigentes y no tienen una ubicación semestral única."
+  },
+  "requirements": [
+    {
+      "id": "qf2015-cfm",
+      "name": "Ciencias Físico-Matemáticas",
+      "shortName": "Físico-Matemáticas",
+      "minCredits": 42
+    },
+    {
+      "id": "qf2015-cq",
+      "name": "Ciencias Químicas",
+      "shortName": "Ciencias Químicas",
+      "minCredits": 108
+    },
+    {
+      "id": "qf2015-cbb",
+      "name": "Ciencias Biológicas y Biomédicas",
+      "shortName": "Biológicas y Biomédicas",
+      "minCredits": 69
+    },
+    {
+      "id": "qf2015-cflg",
+      "name": "Ciencias Farmacéuticas, Legislación y Gestión de Empresas",
+      "shortName": "Farmacéuticas, Legislación y Gestión",
+      "minCredits": 105
+    }
+  ],
+  "courses": {
+    "mat-a": {
+      "name": "Matemática A",
+      "credits": 10,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "01A"
+    },
+    "qg1": {
+      "name": "Química General I",
+      "credits": 7,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "102"
+    },
+    "icb1": {
+      "name": "Introducción a las Ciencias Biológicas I",
+      "credits": 5,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "103B"
+    },
+    "prl": {
+      "name": "Prevención de Riesgos en el Laboratorio",
+      "credits": 4,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "104A"
+    },
+    "mat-b": {
+      "name": "Matemática B",
+      "credits": 6,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "02B"
+    },
+    "mat-c": {
+      "name": "Matemática C",
+      "credits": 8,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "02C"
+    },
+    "qg2": {
+      "name": "Química General II",
+      "credits": 8,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "202"
+    },
+    "icb2": {
+      "name": "Introducción a las Ciencias Biológicas II",
+      "credits": 5,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "203A"
+    },
+    "fis101": {
+      "name": "Física 101",
+      "credits": 7,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "205"
+    },
+    "qo101": {
+      "name": "Química Orgánica 101",
+      "credits": 11,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "301"
+    },
+    "qa1": {
+      "name": "Química Analítica 1",
+      "credits": 10,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "302"
+    },
+    "qi-t": {
+      "name": "Química Inorgánica (T)",
+      "credits": 6,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "303A"
+    },
+    "qi-lab": {
+      "name": "Laboratorio de Química Inorgánica",
+      "credits": 5,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "303B"
+    },
+    "fis102": {
+      "name": "Física 102",
+      "credits": 7,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "304"
+    },
+    "fisiologia": {
+      "name": "Fisiología",
+      "credits": 7,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "408A"
+    },
+    "qo102": {
+      "name": "Química Orgánica 102",
+      "credits": 6,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "401Q"
+    },
+    "qa2": {
+      "name": "Química Analítica 2",
+      "credits": 7,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "402A"
+    },
+    "fq102": {
+      "name": "Fisicoquímica 102",
+      "credits": 13,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "508A"
+    },
+    "fis003l": {
+      "name": "Física 003 (L)",
+      "credits": 4,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "404"
+    },
+    "fisiopatologia": {
+      "name": "Fisiopatología",
+      "credits": 7,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "415C"
+    },
+    "intro-medicamento": {
+      "name": "Introducción al Medicamento",
+      "credits": 2,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "416X"
+    },
+    "qo103l": {
+      "name": "Química Orgánica 103 (L)",
+      "credits": 5,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "501"
+    },
+    "qo104": {
+      "name": "Química Orgánica 104",
+      "credits": 4,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "502X"
+    },
+    "qa3": {
+      "name": "Química Analítica 3",
+      "credits": 10,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "503"
+    },
+    "fq103": {
+      "name": "Fisicoquímica 103",
+      "credits": 12,
+      "requirementId": "qf2015-cq",
+      "bedeliasCode": "520A"
+    },
+    "bioq-op2": {
+      "name": "Bioquímica Opción II",
+      "credits": 10,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "190"
+    },
+    "lab-bioq": {
+      "name": "Laboratorio de Bioquímica",
+      "credits": 5,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "512"
+    },
+    "farmacognosia": {
+      "name": "Farmacognosia",
+      "credits": 9,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "909"
+    },
+    "botanica": {
+      "name": "Botánica",
+      "credits": 4,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "908A"
+    },
+    "microbio-t": {
+      "name": "Microbiología General (T)",
+      "credits": 6,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "533T"
+    },
+    "lab-anal-micro": {
+      "name": "Laboratorio de Análisis Microbiológico",
+      "credits": 6,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "533L"
+    },
+    "inmuno1": {
+      "name": "Inmunología 1",
+      "credits": 5,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "506X"
+    },
+    "farmacocinetica": {
+      "name": "Farmacocinética y Biofarmacia",
+      "credits": 8,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "535X"
+    },
+    "taller-cbb": {
+      "name": "Taller de Integración de Ciencias Biológicas y Biomédicas",
+      "credits": 2,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "615"
+    },
+    "sistemas-gestion": {
+      "name": "Sistemas de Gestión",
+      "credits": 4,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "157"
+    },
+    "qf101": {
+      "name": "Química Farmacéutica 101 - Teórico",
+      "credits": 8,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "700"
+    },
+    "qf102": {
+      "name": "Química Farmacéutica 102 - Práctico",
+      "credits": 6,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "701X"
+    },
+    "farmacotecnia1": {
+      "name": "Farmacotecnia 1",
+      "credits": 10,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "702X"
+    },
+    "inmuno2": {
+      "name": "Inmunología 2",
+      "credits": 7,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "534X"
+    },
+    "bromatologia": {
+      "name": "Bromatología y Nutrición",
+      "credits": 4,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "704"
+    },
+    "farmacologia": {
+      "name": "Farmacología",
+      "credits": 10,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "703X"
+    },
+    "farmacoterapia": {
+      "name": "Farmacoterapia",
+      "credits": 8,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "803X"
+    },
+    "farmacotecnia2": {
+      "name": "Farmacotecnia 2",
+      "credits": 10,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "802X"
+    },
+    "control-calidad-med1": {
+      "name": "Control de Calidad de Medicamentos I",
+      "credits": 12,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "804X"
+    },
+    "tox-fund": {
+      "name": "Toxicología Fundamental",
+      "credits": 4,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "805"
+    },
+    "leg-deonto": {
+      "name": "Legislación y Deontología",
+      "credits": 6,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "809"
+    },
+    "gestion-empresas": {
+      "name": "Gestión de Empresas",
+      "credits": 4,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "410B"
+    },
+    "practicantado": {
+      "name": "Practicantado",
+      "credits": 55,
+      "requirementId": "qf2015-practicum",
+      "bedeliasCode": "965X"
+    }
+  },
+  "trajectory": {
+    "id": "suggested",
+    "label": "Damero sugerido · resolución 2026",
+    "description": "Distribución sugerida por Facultad de Química para el Plan 2015, actualizada en el documento adjunto a la resolución 112 del Consejo de Facultad de Química.",
+    "semesters": [
+      [
+        "mat-a",
+        "qg1",
+        "icb1",
+        "prl"
+      ],
+      [
+        "mat-b",
+        "mat-c",
+        "qg2",
+        "icb2",
+        "fis101"
+      ],
+      [
+        "qo101",
+        "qa1",
+        "qi-t",
+        "qi-lab",
+        "fis102",
+        "fisiologia"
+      ],
+      [
+        "qo102",
+        "qa2",
+        "fq102",
+        "fis003l",
+        "fisiopatologia",
+        "intro-medicamento"
+      ],
+      [
+        "qo103l",
+        "qo104",
+        "qa3",
+        "fq103",
+        "bioq-op2",
+        "lab-bioq"
+      ],
+      [
+        "farmacognosia",
+        "botanica",
+        "microbio-t",
+        "lab-anal-micro",
+        "inmuno1",
+        "farmacocinetica",
+        "taller-cbb",
+        "sistemas-gestion"
+      ],
+      [
+        "qf101",
+        "qf102",
+        "farmacotecnia1",
+        "inmuno2",
+        "bromatologia",
+        "farmacologia"
+      ],
+      [
+        "farmacoterapia",
+        "farmacotecnia2",
+        "control-calidad-med1",
+        "tox-fund"
+      ],
+      [
+        "leg-deonto",
+        "gestion-empresas"
+      ],
+      [
+        "practicantado"
+      ]
+    ]
+  }
+}
