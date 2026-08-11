@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-11",
+  "source": {
+    "careerPage": "https://www.fing.edu.uy/carreras/grado/ingenieriacivil",
+    "commissionPage": "https://eva.fing.edu.uy/course/view.php?id=773",
+    "profilesSpreadsheet": "https://eva.fing.edu.uy/pluginfile.php/79334/mod_folder/content/0/Curricula_Todos_Los_Perfiles%20-%20v2025_06.xlsx?forcedownload=1",
+    "planDocument": "https://hdl.handle.net/20.500.12008/43881"
+  },
+  "plan": {
+    "year": "2021",
+    "approvalYear": 2021,
+    "careerCode": "22-5",
+    "degreeTitle": "Ingeniero Civil",
+    "minCredits": 450,
+    "durationMonths": 60,
+    "notice": "Los perfiles son recorridos sugeridos por la Comisión de Carrera. La escolaridad y la composición vigente de Bedelías determinan el cómputo definitivo de créditos y áreas."
+  },
+  "aliasToBedeliasCode": {
+    "ADMIN": "1944",
+    "AEREO": "2508",
+    "ACERO": "2393",
+    "CALC1": "1061",
+    "CALC2": "1062",
+    "CALCV": "1063",
+    "CAM1": "2231",
+    "CAM2": "2232",
+    "COSTOS": "2240",
+    "COMP1": "1411",
+    "CONSTR": "1715B",
+    "DIS_HIDRO": "2399",
+    "DIS_REDES": "1852",
+    "ECON": "1224",
+    "EC_DIF": "1064",
+    "EFLUENTES": "2316",
+    "ELASTICIDAD": "2366",
+    "ELEM_AMB": "2256",
+    "ELEM_FLUIDOS": "1805",
+    "EJ_SAN": "2309",
+    "EST_MADERA": "2386",
+    "EVAL_AMB": "2253",
+    "EVAL_PAV": "2235",
+    "FERRO": "2505",
+    "F1": "1151",
+    "F2": "1152",
+    "F3": "1153",
+    "FE1": "1154",
+    "FLUVIAL": "2507",
+    "FUND_AMB": "1854B",
+    "GAL1": "1030",
+    "GAL2": "1031",
+    "GEOLOGIA": "2206",
+    "GEST_AMB": "1855",
+    "HIDRAULICA_FLUVIAL": "2397",
+    "HIDRO_AV2": "1847",
+    "HIDRO_AP": "1833",
+    "HORM1": "2382",
+    "HORM2": "2395",
+    "HORM3": "2419",
+    "ING_LEGAL": "1227",
+    "INTRO_SAN": "2315",
+    "INTRO_SUELOS": "2207",
+    "INTRO_TRANS": "2510",
+    "IO": "1650",
+    "LAB_HORM": "2321",
+    "LAB_RES": "2379",
+    "LAB_SUELOS": "2218",
+    "MAMP": "2356",
+    "MATERIALES": "1508",
+    "MEC_ESTRUCT": "2381",
+    "MEC_NEWTON": "1122",
+    "MET_COMP": "2380",
+    "MET_NUM": "1033",
+    "OBRAS_HID": "2396",
+    "PASANTIA": "2450",
+    "POTABIL": "1853",
+    "PROY_CONST1": "2404",
+    "PROY_CONST2": "2407",
+    "PROY_HA": "2405",
+    "PROC_ESTRUCT": "1700",
+    "PROC_VIALES": "2352",
+    "PYE": "1025",
+    "PUENTES": "2359",
+    "QUIMICA": "1620",
+    "RES1": "2368",
+    "RES2": "1312",
+    "SALUD_AMB": "1854B",
+    "SEGURIDAD": "2246",
+    "SIST_COND": "1851",
+    "TALLER_A": "1266",
+    "TALLER_ADMIN": "1946",
+    "TALLER_CIVIL": "1267",
+    "TEC_HORM": "2371",
+    "TOPOGRAFIA": "2230",
+    "TRANS_CARRETERA": "2504",
+    "TRANS_URBANO": "2511"
+  },
+  "specialCourses": {
+    "INTRO_CIVIL": {
+      "id": "1274",
+      "bedeliasCode": "1274",
+      "name": "Introducción a la Ingeniería Civil",
+      "credits": 5,
+      "allocations": [
+        { "groupCode": "3973", "credits": 4 },
+        { "groupCode": "5291", "credits": 1 }
+      ]
+    },
+    "PATOLOGIA": {
+      "id": "2389",
+      "bedeliasCode": "2389",
+      "name": "Patología de las Estructuras",
+      "credits": 6,
+      "allocations": [
+        { "groupCode": "4397", "credits": 2 },
+        { "groupCode": "4818", "credits": 4 }
+      ]
+    },
+    "PROY_EST1": { "id": "2411-A", "bedeliasCode": "2411", "name": "Proyecto Estructural Anual · primera etapa", "credits": 15 },
+    "PROY_EST2": { "id": "2411-B", "bedeliasCode": "2411", "name": "Proyecto Estructural Anual · segunda etapa", "credits": 18, "prerequisites": ["2411-A"] },
+    "PROY_TRANS1A": { "id": "2400-A", "bedeliasCode": "2400", "name": "Proyecto de Transporte 1 · primera etapa", "credits": 8 },
+    "PROY_TRANS1B": { "id": "2400-B", "bedeliasCode": "2400", "name": "Proyecto de Transporte 1 · segunda etapa", "credits": 8, "prerequisites": ["2400-A"] },
+    "PROY_TRANS2A": { "id": "2403-A", "bedeliasCode": "2403", "name": "Proyecto de Transporte 2 · primera etapa", "credits": 8 },
+    "PROY_TRANS2B": { "id": "2403-B", "bedeliasCode": "2403", "name": "Proyecto de Transporte 2 · segunda etapa", "credits": 8, "prerequisites": ["2403-A"] }
+  },
+  "optionalSpaces": {},
+  "profiles": {
+    "construction": {
+      "label": "Construcción",
+      "description": "Planificación, ejecución, gestión y control de obras civiles.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "QUIMICA", "INTRO_CIVIL"],
+        ["CALC2", "GAL2", "F2", "ECON", "TALLER_A"],
+        ["CALCV", "PYE", "MEC_NEWTON", "FE1", "F3"],
+        ["COMP1", "RES1", "ELEM_AMB", "ING_LEGAL", "EC_DIF"],
+        ["MATERIALES", "ELASTICIDAD", "ELEM_FLUIDOS", "ADMIN", "CAM1"],
+        ["RES2", "CONSTR", "HIDRO_AP", "GEOLOGIA", "TALLER_CIVIL", "TOPOGRAFIA"],
+        ["HORM1", "INTRO_SUELOS", "COSTOS", "PROC_ESTRUCT", "TEC_HORM"],
+        ["HORM2", "PROC_VIALES", "CAM2", "SEGURIDAD", "INTRO_SAN", "MET_NUM"],
+        ["PROY_CONST1", "ACERO", "HORM3", "LAB_RES", "PATOLOGIA"],
+        ["PROY_CONST2", "INTRO_TRANS", "PASANTIA", "LAB_SUELOS", "EST_MADERA", "LAB_HORM"]
+      ]
+    },
+    "structures": {
+      "label": "Estructuras",
+      "description": "Análisis, diseño y proyecto de estructuras y sus materiales.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "QUIMICA", "INTRO_CIVIL"],
+        ["CALC2", "GAL2", "F2", "ECON", "TALLER_A"],
+        ["CALCV", "PYE", "MEC_NEWTON", "FE1", "F3"],
+        ["COMP1", "RES1", "ELEM_AMB", "ING_LEGAL", "EC_DIF"],
+        ["MATERIALES", "ELASTICIDAD", "ELEM_FLUIDOS", "ADMIN"],
+        ["RES2", "CONSTR", "HIDRO_AP", "INTRO_SAN", "GEOLOGIA", "TALLER_CIVIL"],
+        ["HORM1", "INTRO_SUELOS", "MEC_ESTRUCT", "COSTOS", "PROC_ESTRUCT"],
+        ["HORM2", "MET_COMP", "INTRO_TRANS", "TALLER_ADMIN", "EST_MADERA", "SEGURIDAD"],
+        ["PROY_EST1", "ACERO", "HORM3", "LAB_RES", "PATOLOGIA"],
+        ["PROY_EST2", "PUENTES", "MAMP", "PASANTIA"]
+      ]
+    },
+    "hydraulic-environmental": {
+      "label": "Hidráulico-Ambiental",
+      "description": "Agua, saneamiento, hidráulica y gestión ambiental.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "QUIMICA", "INTRO_CIVIL"],
+        ["CALC2", "GAL2", "F2", "ECON", "TALLER_A"],
+        ["CALCV", "PYE", "MEC_NEWTON", "FE1", "F3"],
+        ["COMP1", "RES1", "GEOLOGIA", "ELEM_AMB", "EC_DIF"],
+        ["ELASTICIDAD", "ELEM_FLUIDOS", "MATERIALES", "IO"],
+        ["RES2", "CONSTR", "HIDRO_AP", "INTRO_SAN", "ING_LEGAL", "TALLER_CIVIL"],
+        ["DIS_HIDRO", "HIDRAULICA_FLUVIAL", "SIST_COND", "FUND_AMB", "INTRO_SUELOS"],
+        ["POTABIL", "EFLUENTES", "OBRAS_HID", "GEST_AMB", "HIDRO_AV2", "PROC_VIALES"],
+        ["HORM1", "COSTOS", "EVAL_AMB", "ADMIN", "EJ_SAN"],
+        ["PROY_HA", "PASANTIA", "INTRO_TRANS", "TALLER_ADMIN", "DIS_REDES"]
+      ]
+    },
+    "transportation": {
+      "label": "Transporte y Vías de Comunicación",
+      "description": "Infraestructura, planificación y operación de los sistemas de transporte.",
+      "semesters": [
+        ["CALC1", "GAL1", "F1", "QUIMICA", "INTRO_CIVIL"],
+        ["CALC2", "GAL2", "F2", "ECON", "TALLER_A"],
+        ["CALCV", "PYE", "MEC_NEWTON", "FE1", "F3"],
+        ["COMP1", "RES1", "ELEM_AMB", "ING_LEGAL", "EC_DIF"],
+        ["MATERIALES", "ELASTICIDAD", "ELEM_FLUIDOS", "IO"],
+        ["RES2", "CONSTR", "HIDRO_AP", "GEOLOGIA", "TALLER_CIVIL", "TOPOGRAFIA"],
+        ["HORM1", "INTRO_SUELOS", "COSTOS", "CAM1", "TEC_HORM", "ADMIN"],
+        ["INTRO_TRANS", "PROC_VIALES", "CAM2", "PROY_TRANS1A", "INTRO_SAN", "SEGURIDAD", "LAB_HORM"],
+        ["PROY_TRANS1B", "PROY_TRANS2A", "TRANS_CARRETERA", "FERRO", "PASANTIA", "LAB_RES"],
+        ["PROY_TRANS2B", "AEREO", "FLUVIAL", "LAB_SUELOS", "TRANS_URBANO", "EVAL_PAV"]
+      ]
+    }
+  }
+}

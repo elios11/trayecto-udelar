@@ -5,8 +5,8 @@ import test from "node:test";
 const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
-test("presents the deferred Electrical electives catalog as an intentional empty state", () => {
-  assert.match(pageSource, /planYear === "electrica-2023" && !fullElectivesCatalogExpanded/);
+test("presents the deferred profile-plan electives catalog as an intentional empty state", () => {
+  assert.match(pageSource, /isProfilePlan && !fullElectivesCatalogExpanded/);
   assert.match(pageSource, /\? "Catálogo oficial disponible"/);
   assert.match(pageSource, /<span>\{electivesSummary\}<\/span>/);
   assert.match(pageSource, /"Cargar catálogo de Bedelías"/);

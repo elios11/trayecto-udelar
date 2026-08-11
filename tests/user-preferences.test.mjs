@@ -22,8 +22,8 @@ test("cierra el selector de temas fuera del panel y con Escape", () => {
 
 test("el planificador carga y muestra el catálogo diferido completo", () => {
   assert.match(pageSource, /appMode !== "planner" && extendedPlan1997CourseIds\.has/);
-  assert.match(pageSource, /appMode !== "planner" && electricCatalogCourseIds\.has/);
-  assert.match(pageSource, /appMode !== "planner"\) return;[\s\S]*?loadExtendedElectives\(\)[\s\S]*?loadElectricCatalog\(\)/);
+  assert.match(pageSource, /appMode !== "planner" && profileCatalogCourseIds\.has/);
+  assert.match(pageSource, /appMode !== "planner"\) return;[\s\S]*?loadExtendedElectives\(\)[\s\S]*?loadElectricCatalog\(\)[\s\S]*?loadCivilCatalog\(\)/);
 });
 
 test("los paneles plegables conservan contraste y espacio inferior", () => {

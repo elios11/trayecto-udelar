@@ -136,6 +136,8 @@ type Electric2023CatalogProjection = {
   courses: Array<Plan2025Projection["courses"][number] & { serviceCode: string | null; bedeliasCode: string; elective: boolean; offered: Array<"impar" | "par" | "libre">; ruleCoverage?: Course["ruleCoverage"] }>;
   rules: VerifiedRule[];
 };
+type Civil2021Projection = Electric2023Projection;
+type Civil2021CatalogProjection = Electric2023CatalogProjection;
 
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
@@ -423,9 +425,9 @@ const stateLabels: Record<CourseStatus, string> = {
 
 const STORAGE_KEY = "trayecto-udelar-progress-v2";
 const LEGACY_STORAGE_KEY = "trayecto-udelar-demo-v1";
-type PlanId = "1997" | "2025" | "electrica-2023";
+type PlanId = "1997" | "2025" | "electrica-2023" | "civil-2021";
 type FacultyId = "fing";
-type CareerId = "computacion" | "electrica";
+type CareerId = "computacion" | "electrica" | "civil";
 type AcademicPlanOption = { id: PlanId; label: string; defaultTrajectoryId: string };
 type AcademicCareerOption = { id: CareerId; label: string; plans: AcademicPlanOption[] };
 type AcademicFacultyOption = { id: FacultyId; label: string; careers: AcademicCareerOption[] };
@@ -473,6 +475,13 @@ const academicCatalog: AcademicFacultyOption[] = [
           { id: "electrica-2023", label: "Plan 2023 · vigente", defaultTrajectoryId: "basic" },
         ],
       },
+      {
+        id: "civil",
+        label: "Ingeniería Civil",
+        plans: [
+          { id: "civil-2021", label: "Plan 2021 · vigente", defaultTrajectoryId: "construction" },
+        ],
+      },
     ],
   },
 ];
@@ -497,6 +506,7 @@ const isColorVisionType = (value: unknown): value is ColorVisionType => colorVis
 const isAppMode = (value: unknown): value is AppMode => value === "curriculum" || value === "planner";
 const isPlannerView = (value: unknown): value is PlannerView => value === "board" || value === "compact" || value === "balance";
 const electricProfileIds = new Set(["basic", "electronics", "signals-aa", "telecommunications", "biomedical", "power", "control"]);
+const civilProfileIds = new Set(["construction", "structures", "hydraulic-environmental", "transportation"]);
 const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, index) => ({
   id: `term-${index + 1}`,
   label: `Semestre ${index + 1}`,
@@ -507,7 +517,7 @@ export default function Home() {
   const [appMode, setAppMode] = useState<AppMode>("curriculum");
   const [planYear, setPlanYear] = useState<PlanId>("2025");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
-  const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {}, "electrica-2023": {} });
+  const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {} });
   const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
   const [selected, setSelected] = useState<Course | null>(null);
   const [importError, setImportError] = useState<{ title: string; message: string } | null>(null);
@@ -522,14 +532,18 @@ export default function Home() {
   const [electricPlanLoadState, setElectricPlanLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [electricCatalogData, setElectricCatalogData] = useState<Electric2023CatalogProjection | null>(null);
   const [electricCatalogLoadState, setElectricCatalogLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [civil2021Data, setCivil2021Data] = useState<Civil2021Projection | null>(null);
+  const [civilPlanLoadState, setCivilPlanLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [civilCatalogData, setCivilCatalogData] = useState<Civil2021CatalogProjection | null>(null);
+  const [civilCatalogLoadState, setCivilCatalogLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [fullElectivesCatalogExpanded, setFullElectivesCatalogExpanded] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
-  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms() });
+  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms() });
   const [plannerView, setPlannerView] = useState<PlannerView>("board");
   const [plannerSearch, setPlannerSearch] = useState("");
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
-  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null, "electrica-2023": null });
+  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null, "electrica-2023": null, "civil-2021": null });
   const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
@@ -546,6 +560,8 @@ export default function Home() {
   const extendedElectivesPromiseRef = useRef<Promise<ExtendedElectivesProjection | null> | null>(null);
   const electricCatalogPromiseRef = useRef<Promise<Electric2023CatalogProjection | null> | null>(null);
   const electricPlanPromiseRef = useRef<Promise<Electric2023Projection | null> | null>(null);
+  const civilCatalogPromiseRef = useRef<Promise<Civil2021CatalogProjection | null> | null>(null);
+  const civilPlanPromiseRef = useRef<Promise<Civil2021Projection | null> | null>(null);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
 
 
@@ -612,11 +628,61 @@ export default function Home() {
     electricCatalogPromiseRef.current = request;
     return request;
   }, [electricCatalogData]);
+  const loadCivilPlan = useCallback(async (): Promise<Civil2021Projection | null> => {
+    if (civil2021Data) return civil2021Data;
+    if (civilPlanPromiseRef.current) return civilPlanPromiseRef.current;
+    setCivilPlanLoadState("loading");
+    const request = (async () => {
+      try {
+        const planImport = await import("./data/civil-2021-fing.json");
+        const projection = planImport.default as unknown as Civil2021Projection;
+        setCivil2021Data(projection);
+        setCivilPlanLoadState("loaded");
+        return projection;
+      } catch {
+        setCivilPlanLoadState("error");
+        return null;
+      } finally {
+        civilPlanPromiseRef.current = null;
+      }
+    })();
+    civilPlanPromiseRef.current = request;
+    return request;
+  }, [civil2021Data]);
+  const loadCivilCatalog = useCallback(async (): Promise<Civil2021CatalogProjection | null> => {
+    if (civilCatalogData) return civilCatalogData;
+    if (civilCatalogPromiseRef.current) return civilCatalogPromiseRef.current;
+    setCivilCatalogLoadState("loading");
+    const request = (async () => {
+      try {
+        const catalogImport = await import("./data/civil-2021-electivas.json");
+        const projection = catalogImport.default as unknown as Civil2021CatalogProjection;
+        setCivilCatalogData(projection);
+        setCivilCatalogLoadState("loaded");
+        return projection;
+      } catch {
+        setCivilCatalogLoadState("error");
+        return null;
+      } finally {
+        civilCatalogPromiseRef.current = null;
+      }
+    })();
+    civilCatalogPromiseRef.current = request;
+    return request;
+  }, [civilCatalogData]);
+  const isProfilePlan = planYear === "electrica-2023" || planYear === "civil-2021";
+  const activeProfileData = planYear === "electrica-2023" ? electric2023Data : planYear === "civil-2021" ? civil2021Data : null;
+  const activeProfileCatalogData = planYear === "electrica-2023" ? electricCatalogData : planYear === "civil-2021" ? civilCatalogData : null;
+  const activeProfileCatalogLoadState = planYear === "electrica-2023" ? electricCatalogLoadState : civilCatalogLoadState;
   const activeFaculty = academicCatalog.find((faculty) => faculty.careers.some((career) => career.plans.some((plan) => plan.id === planYear))) ?? academicCatalog[0];
   const activeCareer = activeFaculty.careers.find((career) => career.plans.some((plan) => plan.id === planYear)) ?? activeFaculty.careers[0];
   const selectAcademicPlan = async (nextPlan: AcademicPlanOption) => {
     if (nextPlan.id === "electrica-2023" && !await loadElectricPlan()) {
       setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Ingeniería Eléctrica nuevamente. Tu progreso no se modificó." });
+      return;
+    }
+    if (nextPlan.id === "civil-2021" && !await loadCivilPlan()) {
+      setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Ingeniería Civil nuevamente. Tu progreso no se modificó." });
       return;
     }
     setPlanYear(nextPlan.id);
@@ -629,7 +695,9 @@ export default function Home() {
   const expandFullElectivesCatalog = async () => {
     const projection = planYear === "electrica-2023"
       ? await loadElectricCatalog()
-      : await loadExtendedElectives();
+      : planYear === "civil-2021"
+        ? await loadCivilCatalog()
+        : await loadExtendedElectives();
     if (projection) setFullElectivesCatalogExpanded(true);
   };
   const ensureFullCatalogForSearch = (value: string) => {
@@ -638,6 +706,9 @@ export default function Home() {
     }
     if (planYear === "electrica-2023" && value.trim() && !electricCatalogData && electricCatalogLoadState !== "loading") {
       void loadElectricCatalog();
+    }
+    if (planYear === "civil-2021" && value.trim() && !civilCatalogData && civilCatalogLoadState !== "loading") {
+      void loadCivilCatalog();
     }
   };
   const handleCurriculumSearch = (value: string) => {
@@ -656,17 +727,19 @@ export default function Home() {
   const plan1997AvailableCourses = useMemo(() => [...plan1997Courses, ...extendedPlan1997Courses], [extendedPlan1997Courses]);
 
   const electric2023AvailableCourses = useMemo(() => buildElectric2023Catalog(trajectoryId, electric2023Data, electricCatalogData), [trajectoryId, electric2023Data, electricCatalogData]);
-  const electricCatalogCourseIds = useMemo(() => new Set((electricCatalogData?.courses ?? []).map((course) => course.id)), [electricCatalogData]);
+  const civil2021AvailableCourses = useMemo(() => buildElectric2023Catalog(trajectoryId, civil2021Data, civilCatalogData), [trajectoryId, civil2021Data, civilCatalogData]);
+  const profileAvailableCourses = planYear === "electrica-2023" ? electric2023AvailableCourses : civil2021AvailableCourses;
+  const profileCatalogCourseIds = useMemo(() => new Set((activeProfileCatalogData?.courses ?? []).map((course) => course.id)), [activeProfileCatalogData]);
   const courses = useMemo(
     () => planYear === "2025"
       ? buildPlan2025Courses(trajectoryId)
-      : planYear === "electrica-2023" ? electric2023AvailableCourses : plan1997AvailableCourses,
-    [planYear, trajectoryId, plan1997AvailableCourses, electric2023AvailableCourses],
+      : isProfilePlan ? profileAvailableCourses : plan1997AvailableCourses,
+    [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses],
   );
   const plannerCourses = useMemo<Course[]>(() => planYear === "2025"
     ? plan2025CatalogCourses
-    : planYear === "electrica-2023" ? electric2023AvailableCourses : plan1997AvailableCourses,
-  [planYear, plan1997AvailableCourses, electric2023AvailableCourses]);
+    : isProfilePlan ? profileAvailableCourses : plan1997AvailableCourses,
+  [planYear, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses]);
   const plannerTerms = plannerPlans[planYear];
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
@@ -675,10 +748,10 @@ export default function Home() {
     () => hasRecordedProgressOutsideCatalog(progress["1997"] ?? {}, initialPlan1997CourseIds),
     [progress],
   );
-  const initialElectricCourseIds = useMemo(() => new Set((electric2023Data?.courses ?? []).map((course) => course.id)), [electric2023Data]);
-  const hasStoredElectricCatalogProgress = useMemo(
-    () => hasRecordedProgressOutsideCatalog(progress["electrica-2023"] ?? {}, initialElectricCourseIds),
-    [progress, initialElectricCourseIds],
+  const initialProfileCourseIds = useMemo(() => new Set((activeProfileData?.courses ?? []).map((course) => course.id)), [activeProfileData]);
+  const hasStoredProfileCatalogProgress = useMemo(
+    () => isProfilePlan && hasRecordedProgressOutsideCatalog(progress[planYear] ?? {}, initialProfileCourseIds),
+    [progress, planYear, isProfilePlan, initialProfileCourseIds],
   );
   const statuses = useMemo(
     () => planYear === "2025" && trajectoryId === "pi-60-plus"
@@ -689,26 +762,26 @@ export default function Home() {
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
     if (planYear === "2025") return new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]));
-    if (planYear === "electrica-2023" && electric2023Data) {
-      const merged = new Map<string, unknown>(electric2023Data.courses.map((course) => [course.id, course]));
-      for (const course of electricCatalogData?.courses ?? []) merged.set(course.id, course);
+    if (isProfilePlan && activeProfileData) {
+      const merged = new Map<string, unknown>(activeProfileData.courses.map((course) => [course.id, course]));
+      for (const course of activeProfileCatalogData?.courses ?? []) merged.set(course.id, course);
       return merged;
     }
     const merged = new Map<string, unknown>(plan1997VerifiedCourses);
     for (const course of extendedElectivesData?.courses ?? []) merged.set(course.id, course);
     return merged;
-  }, [planYear, extendedElectivesData, electricCatalogData, electric2023Data]);
+  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData]);
   const verifiedRules = useMemo(() => {
     const rules = planYear === "2025"
       ? plan2025Data.rules
-      : planYear === "electrica-2023"
-        ? [...(electric2023Data?.rules ?? []), ...(electricCatalogData?.rules ?? [])]
+      : isProfilePlan
+        ? [...(activeProfileData?.rules ?? []), ...(activeProfileCatalogData?.rules ?? [])]
         : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
     return new Map(rules.map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
-  }, [planYear, extendedElectivesData, electricCatalogData, electric2023Data]);
+  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData]);
   const creditStructure = planYear === "2025"
     ? plan2025Data.creditStructure
-    : planYear === "electrica-2023" ? (electric2023Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
+    : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
   const credential = creditStructure.credentials.find((item) => item.id === credentialId) ?? creditStructure.credentials[0];
@@ -718,10 +791,10 @@ export default function Home() {
       ...(plan2025Data.trajectories[trajectoryId].preSemester?.length ? [0] : []),
       ...plan2025Data.trajectories[trajectoryId].semesters.map((_, index) => index + 1),
     ]
-    : planYear === "electrica-2023" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    : isProfilePlan ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const planMinCredits = planYear === "2025"
     ? plan2025Data.plan.minCredits
-    : planYear === "electrica-2023" ? (electric2023Data?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
+    : isProfilePlan ? (activeProfileData?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
   const analystCredential = creditStructure.credentials.find((item) => item.id === "analyst");
   const engineerCredential = creditStructure.credentials.find((item) => item.id === "engineer") ?? creditStructure.credentials[0];
 
@@ -736,14 +809,14 @@ export default function Home() {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setProgress({ 1997: {}, 2025: {}, "electrica-2023": {}, ...JSON.parse(saved) });
+      if (saved) setProgress({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {}, ...JSON.parse(saved) });
       else {
         const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-        if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {}, "electrica-2023": {} });
+        if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {}, "electrica-2023": {}, "civil-2021": {} });
       }
       const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
       if (savedPlanner) setPlannerPlans({
-        1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(),
+        1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms(),
         ...JSON.parse(savedPlanner),
       });
       const savedCurrentPlannerTerms = localStorage.getItem(CURRENT_TERM_STORAGE_KEY);
@@ -753,6 +826,7 @@ export default function Home() {
           1997: typeof parsed["1997"] === "string" ? parsed["1997"] : null,
           2025: typeof parsed["2025"] === "string" ? parsed["2025"] : null,
           "electrica-2023": typeof parsed["electrica-2023"] === "string" ? parsed["electrica-2023"] : null,
+          "civil-2021": typeof parsed["civil-2021"] === "string" ? parsed["civil-2021"] : null,
         });
       }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
@@ -785,7 +859,9 @@ export default function Home() {
           const candidate = typeof selection.trajectoryId === "string" ? selection.trajectoryId : selectedPlan.defaultTrajectoryId;
           const isValid = selectedPlan.id === "2025"
             ? Object.hasOwn(plan2025Data.trajectories, candidate)
-            : selectedPlan.id === "1997" ? candidate === "pi-20-59" : electricProfileIds.has(candidate);
+            : selectedPlan.id === "1997" ? candidate === "pi-20-59"
+              : selectedPlan.id === "electrica-2023" ? electricProfileIds.has(candidate)
+                : civilProfileIds.has(candidate);
           setPlanYear(selectedPlan.id);
           setTrajectoryId(isValid ? candidate : selectedPlan.defaultTrajectoryId);
         }
@@ -825,10 +901,16 @@ export default function Home() {
   }, [hydrated, planYear, electric2023Data, electricPlanLoadState, loadElectricPlan]);
 
   useEffect(() => {
+    if (!hydrated || planYear !== "civil-2021" || civil2021Data || civilPlanLoadState !== "idle") return;
+    void loadCivilPlan();
+  }, [hydrated, planYear, civil2021Data, civilPlanLoadState, loadCivilPlan]);
+
+  useEffect(() => {
     if (!hydrated || appMode !== "planner") return;
     if (planYear === "1997" && !extendedElectivesData && extendedElectivesLoadState === "idle") void loadExtendedElectives();
     if (planYear === "electrica-2023" && !electricCatalogData && electricCatalogLoadState === "idle") void loadElectricCatalog();
-  }, [hydrated, appMode, planYear, extendedElectivesData, extendedElectivesLoadState, electricCatalogData, electricCatalogLoadState, loadExtendedElectives, loadElectricCatalog]);
+    if (planYear === "civil-2021" && !civilCatalogData && civilCatalogLoadState === "idle") void loadCivilCatalog();
+  }, [hydrated, appMode, planYear, extendedElectivesData, extendedElectivesLoadState, electricCatalogData, electricCatalogLoadState, civilCatalogData, civilCatalogLoadState, loadExtendedElectives, loadElectricCatalog, loadCivilCatalog]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -841,9 +923,9 @@ export default function Home() {
   }, [planYear, hydrated, hasStoredExtendedElectiveProgress, extendedElectivesData, extendedElectivesLoadState, loadExtendedElectives]);
 
   useEffect(() => {
-    if (planYear !== "electrica-2023" || !hydrated || !hasStoredElectricCatalogProgress || electricCatalogData || electricCatalogLoadState !== "idle") return;
-    void loadElectricCatalog();
-  }, [planYear, hydrated, hasStoredElectricCatalogProgress, electricCatalogData, electricCatalogLoadState, loadElectricCatalog]);
+    if (!isProfilePlan || !hydrated || !hasStoredProfileCatalogProgress || activeProfileCatalogData || activeProfileCatalogLoadState !== "idle") return;
+    void (planYear === "electrica-2023" ? loadElectricCatalog() : loadCivilCatalog());
+  }, [planYear, isProfilePlan, hydrated, hasStoredProfileCatalogProgress, activeProfileCatalogData, activeProfileCatalogLoadState, loadElectricCatalog, loadCivilCatalog]);
 
   useEffect(() => {
     if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
@@ -1052,7 +1134,7 @@ export default function Home() {
   const groupCredits = (groupCode: string) => {
     const nodeId = planYear === "1997"
       ? bedeliasData.requirementGroupMap[groupCode]
-      : planYear === "electrica-2023" ? electric2023Data?.requirementGroupMap[groupCode] : undefined;
+      : isProfilePlan ? activeProfileData?.requirementGroupMap[groupCode] : undefined;
     return nodeId ? nodeCredits(nodeId) : 0;
   };
   const hasVerifiedCourseRule = (course: Course) => Boolean(officialRule(course, "course"));
@@ -1060,10 +1142,10 @@ export default function Home() {
   const isCourseUnlocked = (course: Course) => {
     if (course.placeholder) return false;
     if (course.placementTest) return true;
-    if (course.id === "2013-B") return isComplete("2013-A");
+    const modeledPrerequisitesMet = (course.prerequisites ?? []).every(isRequirementComplete);
     const rule = officialRule(course, "course");
-    if (rule) return expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits);
-    return (course.prerequisites ?? []).every(isRequirementComplete) && (!course.minCredits || earnedCredits >= course.minCredits);
+    if (rule) return modeledPrerequisitesMet && expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits);
+    return modeledPrerequisitesMet && (!course.minCredits || earnedCredits >= course.minCredits);
   };
   const isExamUnlocked = (course: Course) => {
     const rule = officialRule(course, "exam");
@@ -1097,7 +1179,7 @@ export default function Home() {
       const matchesSearch = matchesCourseSearch(course, courseAreaLabel(course), search);
       const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
       const isSearchOnlyPlan1997Elective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
-      const isSearchOnlyElectricElective = electricCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
+      const isSearchOnlyElectricElective = profileCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
       const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective;
       return matchesSemester && matchesSearch && !isSearchOnlyElective && !isReplacedByPlacementTest && (!availableOnly || (isCourseAvailabilityKnown(course) && isUnlocked(course)));
     });
@@ -1106,7 +1188,12 @@ export default function Home() {
   const visibleElectives = filtered("opt");
 
   const exportProgress = () => {
-    const blob = new Blob([JSON.stringify({ formatVersion: 1, career: planYear === "electrica-2023" ? "ingenieria-electrica-2023" : `ingenieria-computacion-${planYear}`, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
+    const career = planYear === "electrica-2023"
+      ? "ingenieria-electrica-2023"
+      : planYear === "civil-2021"
+        ? "ingenieria-civil-2021"
+        : `ingenieria-computacion-${planYear}`;
+    const blob = new Blob([JSON.stringify({ formatVersion: 1, career, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
@@ -1217,7 +1304,7 @@ export default function Home() {
   const availablePlannerCourses = plannerCourses.filter((course) => {
     const query = plannerSearch.trim();
     const isSearchOnlyPlan1997Elective = appMode !== "planner" && extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
-    const isSearchOnlyElectricElective = appMode !== "planner" && electricCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
+    const isSearchOnlyElectricElective = appMode !== "planner" && profileCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
     const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective;
     return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
   });
@@ -1242,11 +1329,11 @@ export default function Home() {
     if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
     return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : undefined;
   };
-  const deferredCatalogLoadState = planYear === "electrica-2023" ? electricCatalogLoadState : extendedElectivesLoadState;
-  const deferredCatalogCount = planYear === "electrica-2023" ? (electricCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
+  const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : extendedElectivesLoadState;
+  const deferredCatalogCount = isProfilePlan ? (activeProfileCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
   const electivesSummary = visibleElectives.length > 0
     ? `${visibleElectives.length} materias verificadas en la composición`
-    : planYear === "electrica-2023" && !fullElectivesCatalogExpanded
+    : isProfilePlan && !fullElectivesCatalogExpanded
       ? "Catálogo oficial disponible"
       : "Sin materias visibles";
 
@@ -1391,7 +1478,7 @@ export default function Home() {
               }}>
                 {activeFaculty.careers.map((career) => (
                   <option value={career.id} key={career.id}>
-                    {career.id === "electrica" && electricPlanLoadState === "loading" ? `${career.label} · cargando…` : career.label}
+                    {(career.id === "electrica" && electricPlanLoadState === "loading") || (career.id === "civil" && civilPlanLoadState === "loading") ? `${career.label} · cargando…` : career.label}
                   </option>
                 ))}
               </select>
@@ -1406,7 +1493,7 @@ export default function Home() {
               </select>
             </label>
             {appMode === "curriculum" && <label>
-              <span>{planYear === "electrica-2023" ? "Perfil" : "Trayectoria"}</span>
+              <span>{isProfilePlan ? "Perfil" : "Trayectoria"}</span>
               <select value={trajectoryId} onChange={(event) => {
                 const next = event.target.value;
                 setTrajectoryId(next);
@@ -1419,6 +1506,8 @@ export default function Home() {
                   <option value={id} key={id}>{trajectory.label}</option>
                 )) : planYear === "electrica-2023" ? Object.entries(electric2023Data?.profiles ?? {}).map(([id, profile]) => (
                   <option value={id} key={id}>{profile.label}</option>
+                )) : planYear === "civil-2021" ? Object.entries(civil2021Data?.profiles ?? {}).map(([id, profile]) => (
+                  <option value={id} key={id}>{profile.label}</option>
                 )) : <option value="pi-20-59">Ingreso 1er semestre · PI 20–59%</option>}
               </select>
             </label>}
@@ -1427,8 +1516,8 @@ export default function Home() {
             <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Armá una currícula propia con las mismas materias, créditos y áreas del plan. Los cambios quedan guardados en este dispositivo.</span></p>
           ) : planYear === "2025" ? (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{plan2025Data.trajectories[trajectoryId].description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
-          ) : planYear === "electrica-2023" ? (
-            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{electric2023Data?.profiles[trajectoryId]?.description} Trayectoria sugerida por la Comisión de Carrera; créditos, áreas y previaturas contrastados con Bedelías.</span></p>
+          ) : isProfilePlan ? (
+            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activeProfileData?.profiles[trajectoryId]?.description} Trayectoria sugerida por la Comisión de Carrera; créditos, áreas y previaturas contrastados con Bedelías.</span></p>
           ) : (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Semestres de la trayectoria sugerida compartida. Créditos, áreas y reglas centrales importados de Bedelías; núcleo obligatorio contrastado con la implementación curricular de FING.</span></p>
           )}
@@ -1657,8 +1746,8 @@ export default function Home() {
             {planYear === "1997" ? <label className="toggle-control">
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
-            </label> : planYear === "electrica-2023"
-              ? <span className="rules-coverage">Bedelías auditada: {electric2023Data?.plan.publishedRules ?? 233} reglas · {electric2023Data?.plan.noPublishedRule ?? 17} sin publicar</span>
+            </label> : isProfilePlan
+              ? <span className="rules-coverage">Bedelías auditada: {activeProfileData?.plan.publishedRules ?? 0} reglas · {activeProfileData?.plan.noPublishedRule ?? 0} sin publicar</span>
               : <span className="rules-coverage">Previas publicadas: {new Set(plan2025Data.rules.map((rule) => rule.target.code)).size}/{courses.length} materias</span>}
             <div className="curriculum-navigation" role="group" aria-label="Navegar por semestres">
               <button type="button" onClick={() => moveCurriculum(-1)} disabled={curriculumEdges.atStart} aria-label="Ir al semestre anterior" title="Semestre anterior">←</button>
@@ -1691,7 +1780,7 @@ export default function Home() {
             </div>
           </div>
 
-          {planYear === "1997" || planYear === "electrica-2023" ? <section className="electives-section">
+          {planYear === "1997" || isProfilePlan ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
               <div><span className="eyebrow">Trayectoria flexible</span><h2>Optativas y electivas</h2></div>
               <div><span>{electivesSummary}</span><b>{showElectives ? "−" : "+"}</b></div>
@@ -1705,7 +1794,7 @@ export default function Home() {
               </div>
               <div className="electives-loader" role="status" aria-live="polite">
                 {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{deferredCatalogCount} materias adicionales</strong> de la composición oficial del plan en Bedelías.</p> : <>
-                  <p>{deferredCatalogLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : planYear === "electrica-2023" ? electric2023Data?.plan.notice : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
+                  <p>{deferredCatalogLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : isProfilePlan ? activeProfileData?.plan.notice : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
                   <button type="button" className="primary-button" disabled={deferredCatalogLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
                     {deferredCatalogLoadState === "loading" ? "Cargando materias..." : deferredCatalogLoadState === "error" ? "Reintentar carga" : "Cargar catálogo de Bedelías"}
                   </button>
@@ -1767,12 +1856,12 @@ export default function Home() {
               : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
                 : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según Bedelías.</p>}
             {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
-              : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={electric2023Data?.source.profilesSpreadsheet} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>; debe completarse eligiendo una unidad curricular admitida por el plan.</p>
+              : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={activeProfileData?.source.profilesSpreadsheet} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>; debe completarse eligiendo una unidad curricular admitida por el plan.</p>
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
                   : selected.dataStatus === "project-assumption" && <p className="verified-source fing-source"><span>!</span> Los 4 créditos se mantienen como supuesto del proyecto para el Plan 2025; la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria vigente de FING</a> confirma el corte de 60%, pero no explicita este crédito.</p>}
             {selected.offering && <p className="verified-source fing-source offering-source"><span>F</span> FING publica esta materia en la oferta del <strong>{selected.offering.term}</strong>. <a href={selected.offering.sourceUrl} target="_blank" rel="noreferrer">Ver publicación &nearr;</a>{selected.offering.evaUrl && <> · <a href={selected.offering.evaUrl} target="_blank" rel="noreferrer">Abrir curso en EVA &nearr;</a></>}</p>}
-            {selected.core && <p className="verified-source fing-source"><span>F</span> Esta unidad integra el núcleo común presente en los siete perfiles oficiales publicados por la Comisión de Carrera.</p>}
+            {selected.core && <p className="verified-source fing-source"><span>F</span> Esta unidad integra el núcleo común de los perfiles oficiales publicados por la Comisión de Carrera.</p>}
             {!selectedAllocation && (selected.eligibleRequirementIds?.length ?? 0) > 1 && <p className="allocation-source suggested-allocation"><span>i</span> Suma al total del plan, pero Bedel&iacute;as la admite en m&aacute;s de un &aacute;rea ({selected.eligibleRequirementIds?.map((id) => nodeById.get(id)?.shortName ?? nodeById.get(id)?.name ?? id).join(" o ")}). La asignaci&oacute;n de &aacute;rea queda pendiente para no duplicar cr&eacute;ditos.</p>}
             <h3>{selected.placeholder ? "Cómo completar este espacio" : selectedAssessment === "exam" ? "Condiciones para rendir o exonerar" : "Condiciones para cursar"}</h3>
             {selectedRule ? (

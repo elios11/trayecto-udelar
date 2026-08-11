@@ -1,19 +1,18 @@
 # Estado del proyecto: Trayecto Udelar
 
-## Tarea activa - Ingeniería Eléctrica Plan 2023 (Montevideo)
+## Tarea activa - Ingeniería Civil Plan 2021
 
-- Rama/worktree: `feature/ingenieria-electrica-2023` en `MallaCurricularUniversal-electrica-2023`.
-- Alcance corregido por evidencia oficial: el plan fue aprobado en 2022, pero entró en vigencia y está identificado por Bedelías/FING como Plan 2023.
-- Auditoría Bedelías completa al 2026-08-09: 221 unidades/equivalencias, 173 cursos locales, 48 equivalencias externas, 233 reglas publicadas (155 curso, 78 examen) y 17 consultas sin regla publicada.
-- Fuentes, cobertura y pendientes: `data/fing/electrica-2023-fuentes.json` y `docs/tasks/ingenieria-electrica-2023.md`.
-- Fuentes curriculares confirmadas: plan Colibrí/Diario Oficial, página FING, EVA de la Comisión de Carrera, dos trayectorias con Matemática Inicial y planilla de perfiles 2026.
-- Implementación completa: selector de Ingeniería Eléctrica/Plan 2023, siete perfiles, 36 unidades de núcleo común, 24 áreas con mínimos oficiales, proyecto, espacios optativos, catálogo diferido y previaturas con cobertura explícita.
-- Proyecciones cargadas bajo demanda: 112 bloques iniciales y 95 reglas de trayectoria; catálogo ampliado con 165 materias/equivalencias y 138 reglas restantes. La unión conserva las 221 entradas y 233 reglas auditadas.
-- Navegación académica incorporada: selector Facultad → Carrera → Plan → Perfil/Trayectoria, alimentado por un catálogo que muestra únicamente los tres planes disponibles y separará futuras carreras por servicio.
-- Verificación final: `npm.cmd test` pasa 52/52. El lint focalizado de los archivos nuevos pasa; `npm.cmd run lint` conserva exactamente la deuda de `main` (12 errores y 1 advertencia), sin hallazgos nuevos.
+- Rama/worktree: `feature/ingenieria-civil-2021` en `work/ingenieria-civil-2021`.
+- Fuentes oficiales: Plan 2021 de Colibrí, página FING, EVA de la Comisión de Carrera, planilla de currículas versión 2025-06 y snapshot público completo de SGAE Bedelías.
+- Implementación: selector de Ingeniería Civil/Plan 2021, cuatro perfiles de diez semestres, 35 unidades comunes, estructura oficial de créditos, catálogo diferido, previaturas, progreso y planificador independientes.
+- Snapshot: 512 entradas en composición, 430 materias/equivalencias modelables, 232 reglas publicadas, 348 consultas sin regla y 82 entradas administrativas de reválidas excluidas del catálogo.
+- Proyección: 84 bloques iniciales; catálogo diferido con 349 materias/equivalencias. Totales sugeridos por perfil: Construcción 454, Estructuras 451, Hidráulico-Ambiental 452 y Transporte 450 créditos.
+- Especificación y reanudación: `docs/tasks/ingenieria-civil-2021.md`.
+- Verificación final: `npm.cmd test` pasa 66/66; el lint focalizado de generador y pruebas pasa. `npm.cmd run lint` conserva la deuda ya documentada de `main`: 12 errores y 1 advertencia, sin hallazgos nuevos.
+- Validación funcional local: selección de Civil, cuatro perfiles, cambio a Hidráulico-Ambiental y carga de las 349 materias del catálogo diferido.
 - No integrar en `main`, no hacer push y no publicar sin autorización explícita.
 
-Última actualización: 2026-08-10
+Última actualización: 2026-08-11
 Workspace: `C:\Users\elios\Documents\Proyectos_GPT\MallaCurricularUniversal`
 Rama activa: `main`  
 Commit de importación académica de referencia: `a63f653` (`Import official Bedelias prerequisite rules`)
