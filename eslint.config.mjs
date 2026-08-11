@@ -9,10 +9,13 @@ import tseslint from "typescript-eslint";
 
 const eslintConfig = defineConfig([
   globalIgnores([
-    ".next/**",
-    "dist/**",
-    "out/**",
-    "build/**",
+    "**/.next/**",
+    "**/dist/**",
+    "**/out/**",
+    "**/build/**",
+    ".worktrees/**",
+    "work/**",
+    "tmp/**",
     "next-env.d.ts",
   ]),
   eslint.configs.recommended,
@@ -23,6 +26,9 @@ const eslintConfig = defineConfig([
   jsxA11y.flatConfigs.recommended,
   next.configs["core-web-vitals"],
   {
+    rules: {
+      "jsx-a11y/no-noninteractive-tabindex": ["error", { roles: ["region", "tabpanel"] }],
+    },
     languageOptions: {
       globals: {
         ...globals.browser,

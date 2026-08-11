@@ -22,7 +22,8 @@ const rules = bedelias.prerequisites
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }));
 
 const projectedCourses = trajectory.courses.map((course) => {
-  const { area: _legacyArea, ...courseFields } = course;
+  const courseFields = { ...course };
+  delete courseFields.area;
   const official = composition.get(course.id);
   const credits = official?.credits ?? course.credits;
   const allocation = allocationFromPaths(

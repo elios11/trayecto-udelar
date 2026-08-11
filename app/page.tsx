@@ -599,6 +599,7 @@ export default function Home() {
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
   const [colorVisionType, setColorVisionType] = useState<ColorVisionType>("deuteranopia");
   const importRef = useRef<HTMLInputElement>(null);
+  const importErrorButtonRef = useRef<HTMLButtonElement>(null);
   const appearanceMenuRef = useRef<HTMLDetailsElement>(null);
   const curriculumScrollRef = useRef<HTMLDivElement>(null);
   const curriculumEdgesRef = useRef(curriculumEdges);
@@ -845,7 +846,6 @@ export default function Home() {
   const plannerTerms = plannerPlans[planYear];
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
-  const storedStatuses = progress[planYear] ?? {};
   const hasStoredExtendedElectiveProgress = useMemo(
     () => hasRecordedProgressOutsideCatalog(progress["1997"] ?? {}, initialPlan1997CourseIds),
     [progress],
@@ -860,12 +860,12 @@ export default function Home() {
     () => hasRecordedProgressOutsideCatalog(progress["qf-2015"] ?? {}, initialQfCourseIds),
     [progress, initialQfCourseIds],
   );
-  const statuses = useMemo(
-    () => planYear === "2025" && trajectoryId === "pi-60-plus"
+  const statuses = useMemo(() => {
+    const storedStatuses = progress[planYear] ?? {};
+    return planYear === "2025" && trajectoryId === "pi-60-plus"
       ? { ...storedStatuses, PI: "exonerated" as CourseStatus }
-      : storedStatuses,
-    [planYear, trajectoryId, storedStatuses],
-  );
+      : storedStatuses;
+  }, [progress, planYear, trajectoryId]);
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
     if (planYear === "2025") return new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]));
@@ -919,7 +919,10 @@ export default function Home() {
   };
 
   useEffect(() => {
-    try {
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (cancelled) return;
+      try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) setProgress({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {}, "qf-2015": {}, ...JSON.parse(saved) });
       else {
@@ -981,10 +984,14 @@ export default function Home() {
           setCredentialId(selectedPlan.defaultCredentialId);
         }
       }
-    } catch {
-      // A damaged local save should never prevent the curriculum from loading.
-    }
-    setHydrated(true);
+      } catch {
+        // A damaged local save should never prevent the curriculum from loading.
+      }
+      setHydrated(true);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
@@ -1170,10 +1177,14 @@ export default function Home() {
     root.dataset.scrollLocked = "true";
     root.style.overflow = "hidden";
     body.style.overflow = "hidden";
+    const focusFrame = importError
+      ? window.requestAnimationFrame(() => importErrorButtonRef.current?.focus())
+      : null;
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         if (rolloverTermId) setRolloverTermId(null);
+        else if (importError) setImportError(null);
         else setSelected(null);
       }
     };
@@ -1182,6 +1193,7 @@ export default function Home() {
       delete root.dataset.scrollLocked;
       root.style.overflow = previousRootOverflow;
       body.style.overflow = previousBodyOverflow;
+      if (focusFrame !== null) window.cancelAnimationFrame(focusFrame);
       document.removeEventListener("keydown", closeOnEscape);
       verticalScrollTargetRef.current = window.scrollY;
       verticalScrollPositionRef.current = window.scrollY;
@@ -1902,7 +1914,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="curriculum-scroll" ref={curriculumScrollRef} tabIndex={0} aria-label="Trayectoria por semestres; usá las flechas o la barra inferior para desplazarte horizontalmente">
+          <div className="curriculum-scroll" ref={curriculumScrollRef} role="region" tabIndex={0} aria-label="Trayectoria por semestres; usá las flechas o la barra inferior para desplazarte horizontalmente">
             <div className="semester-grid">
               {semesters.map((semester) => (
                 <section className="semester-column" key={semester}>
@@ -1977,19 +1989,21 @@ export default function Home() {
       )}
 
       {importError && (
-        <div className="modal-backdrop" onClick={() => setImportError(null)}>
-          <section className="import-modal" role="dialog" aria-modal="true" aria-labelledby="import-error-title" onClick={(event) => event.stopPropagation()}>
+        <div className="modal-backdrop">
+          <button type="button" className="backdrop-dismiss" aria-label="Cerrar mensaje de importación" onClick={() => setImportError(null)} />
+          <section className="import-modal" role="dialog" aria-modal="true" aria-labelledby="import-error-title">
             <div className="modal-symbol" aria-hidden="true">!</div>
             <h2 id="import-error-title">{importError.title}</h2>
             <p>{importError.message}</p>
-            <button type="button" className="primary-button" autoFocus onClick={() => setImportError(null)}>Entendido</button>
+            <button ref={importErrorButtonRef} type="button" className="primary-button" onClick={() => setImportError(null)}>Entendido</button>
           </section>
         </div>
       )}
 
       {selected && (
-        <div className="drawer-backdrop" onClick={() => setSelected(null)}>
-          <aside className="details-drawer" onClick={(event) => event.stopPropagation()} aria-label={`Detalles de ${selected.name}`}>
+        <div className="drawer-backdrop">
+          <button type="button" className="backdrop-dismiss" aria-label="Cerrar detalles de la materia" onClick={() => setSelected(null)} />
+          <aside className="details-drawer" role="dialog" aria-modal="true" aria-label={`Detalles de ${selected.name}`}>
             <button className="drawer-close" onClick={() => setSelected(null)} aria-label="Cerrar detalles">×</button>
             <p className="eyebrow">{selected.id} · {courseAreaLabel(selected)}</p>
             <h2>{selected.name}</h2>
