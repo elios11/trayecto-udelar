@@ -35,8 +35,15 @@ function displayName(name) {
 function resolveCourse(alias, specification) {
   if (specification.bedeliasCode) {
     const byCode = localByCode.get(specification.bedeliasCode);
-    if (!byCode) throw new Error(`No se encontró ${alias} con código ${specification.bedeliasCode} en la composición local de Bedelías.`);
-    return byCode;
+    if (byCode) return byCode;
+    if (specification.allowMissingFromComposition) {
+      return { code: specification.bedeliasCode, name: specification.name, credits: specification.credits, historicalReference: true };
+    }
+    throw new Error(`No se encontró ${alias} con código ${specification.bedeliasCode} en la composición local de Bedelías.`);
+  }
+
+  if (specification.syntheticId) {
+    return { code: specification.syntheticId, name: specification.name, credits: specification.credits, historicalReference: true };
   }
 
   const wanted = normalized(specification.name);
@@ -149,7 +156,7 @@ for (const [alias, specification] of Object.entries(trajectory.courses)) {
   courseIdByAlias.set(alias, id);
   projectedCourses.push({
     id,
-    bedeliasCode: official.code,
+    bedeliasCode: specification.syntheticId ? undefined : official.code,
     name: specification.name,
     credits: specification.credits,
     eligibleRequirementIds: [specification.requirementId],
@@ -157,33 +164,51 @@ for (const [alias, specification] of Object.entries(trajectory.courses)) {
       nodeId: specification.requirementId,
       credits: specification.credits,
       status: official.credits === specification.credits ? "official" : "conflict",
-      sourceUrl: official.credits === specification.credits ? trajectory.source.planDocument : trajectory.source.suggestedCurriculum
+      sourceUrl: specification.sourceUrl ?? (official.credits === specification.credits ? trajectory.source.planDocument : trajectory.source.suggestedCurriculum)
     }],
-    dataStatus: "fq-damero",
+    dataStatus: specification.historicalOnly ? "fq-historical-damero" : "fq-damero",
     ruleCoverage: ruleCoverage(official.code),
     elective: false
   });
 }
 
-const semesters = trajectory.trajectory.semesters.map((aliases) => aliases.map((alias) => {
-  const id = courseIdByAlias.get(alias);
-  if (!id) throw new Error(`El damero referencia un alias inexistente: ${alias}.`);
-  return id;
+const trajectories = Object.fromEntries(trajectory.trajectories.map((definition) => {
+  const aliases = definition.semesters.flat();
+  if (new Set(aliases).size !== aliases.length) throw new Error(`${definition.label}: contiene materias repetidas.`);
+  const semesters = definition.semesters.map((semesterAliases) => semesterAliases.map((alias) => {
+    const id = courseIdByAlias.get(alias);
+    if (!id) throw new Error(`${definition.label}: referencia un alias inexistente: ${alias}.`);
+    return id;
+  }));
+
+  const creditsByRequirement = Object.fromEntries(trajectory.requirements.map((requirement) => [requirement.id, 0]));
+  let scheduledCredits = 0;
+  for (const alias of aliases) {
+    const specification = trajectory.courses[alias];
+    scheduledCredits += specification.credits;
+    if (specification.requirementId in creditsByRequirement) creditsByRequirement[specification.requirementId] += specification.credits;
+  }
+  for (const requirement of trajectory.requirements) {
+    if (creditsByRequirement[requirement.id] !== requirement.minCredits) {
+      throw new Error(`${definition.label} · ${requirement.name}: suma ${creditsByRequirement[requirement.id]} y el plan exige ${requirement.minCredits}.`);
+    }
+  }
+  const expectedScheduledCredits = trajectory.plan.mandatoryCredits + trajectory.plan.practicumCredits;
+  if (scheduledCredits !== expectedScheduledCredits) {
+    throw new Error(`${definition.label}: distribuye ${scheduledCredits} créditos y se esperaban ${expectedScheduledCredits}.`);
+  }
+
+  return [definition.id, {
+    label: definition.label,
+    description: definition.description,
+    status: definition.status,
+    sourceUrl: definition.sourceUrl,
+    supportingSourceUrl: definition.supportingSourceUrl,
+    semesters,
+  }];
 }));
 const trajectoryCodes = new Set(courseIdByAlias.values());
 const practicumCourseId = courseIdByAlias.get("practicantado");
-
-const mandatoryCreditsByRequirement = Object.fromEntries(trajectory.requirements.map((requirement) => [requirement.id, 0]));
-for (const course of projectedCourses) {
-  if (course.creditAllocations[0].nodeId in mandatoryCreditsByRequirement) {
-    mandatoryCreditsByRequirement[course.creditAllocations[0].nodeId] += course.credits;
-  }
-}
-for (const requirement of trajectory.requirements) {
-  if (mandatoryCreditsByRequirement[requirement.id] !== requirement.minCredits) {
-    throw new Error(`${requirement.name}: el damero suma ${mandatoryCreditsByRequirement[requirement.id]} y el plan exige ${requirement.minCredits}.`);
-  }
-}
 
 const catalogCourses = bedelias.plan.courses
   .filter((course) => !trajectoryCodes.has(course.code))
@@ -248,13 +273,7 @@ const output = {
   requirementGroupMap,
   programSources: [],
   courses: projectedCourses,
-  trajectories: {
-    [trajectory.trajectory.id]: {
-      label: trajectory.trajectory.label,
-      description: trajectory.trajectory.description,
-      semesters
-    }
-  },
+  trajectories,
   rules,
   sourceCoverage: {
     mandatoryCourses: projectedCourses.length,
@@ -282,6 +301,6 @@ const catalogOutput = {
 await mkdir(path.dirname(outputPath), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
 await writeFile(catalogOutputPath, `${JSON.stringify(catalogOutput, null, 2)}\n`, "utf8");
-console.log(`Químico Farmacéutico 2015: ${projectedCourses.length} materias/bloques y ${rules.length} reglas iniciales -> ${outputPath}`);
+console.log(`Químico Farmacéutico 2015: ${projectedCourses.length} materias/bloques, ${Object.keys(trajectories).length} trayectorias y ${rules.length} reglas iniciales -> ${outputPath}`);
 console.log(`Catálogo diferido: ${catalogCourses.length} materias/equivalencias y ${catalogRules.length} reglas -> ${catalogOutputPath}`);
 console.log(`Reglas no proyectadas por texto sin interpretar: ${rawRules.length}.`);

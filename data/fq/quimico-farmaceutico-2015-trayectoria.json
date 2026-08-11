@@ -1,12 +1,14 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "reviewedAt": "2026-08-11",
   "source": {
     "careerPage": "https://www.fq.edu.uy/?q=es%2Fnode%2F619",
     "planDocument": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf",
     "suggestedCurriculum": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20farmac%C3%A9utico%20res%20112%20CFQ%2012%2003%202026.pdf",
     "optativesCatalog": "https://www.fq.edu.uy/sites/default/files/archivos/Optativas%20QF_31.pdf",
-    "electivesCatalog": "https://www.fq.edu.uy/sites/default/files/archivos/Electivas%20QF_42.pdf"
+    "electivesCatalog": "https://www.fq.edu.uy/sites/default/files/archivos/Electivas%20QF_42.pdf",
+    "previousSuggestedCurriculum": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf",
+    "previousSuggestedCurriculumResolution": "https://www.fq.edu.uy/sites/default/files/archivos/Quimico%20farmaceutico%20res%2074%20CFQ%2031%2007%202025.pdf"
   },
   "plan": {
     "year": "2015",
@@ -333,81 +335,285 @@
       "credits": 55,
       "requirementId": "qf2015-practicum",
       "bedeliasCode": "965X"
+    },
+    "mat-01": {
+      "name": "Matemática 01",
+      "credits": 14,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "01",
+      "historicalOnly": true,
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
+    },
+    "mat-02": {
+      "name": "Matemática 02",
+      "credits": 10,
+      "requirementId": "qf2015-cfm",
+      "bedeliasCode": "02",
+      "historicalOnly": true,
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
+    },
+    "bioq-op3": {
+      "name": "Bioquímica Opción III",
+      "credits": 15,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "505",
+      "historicalOnly": true,
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf"
+    },
+    "microbio-general": {
+      "name": "Microbiología General",
+      "credits": 12,
+      "requirementId": "qf2015-cbb",
+      "bedeliasCode": "533",
+      "historicalOnly": true,
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
+    },
+    "uc-area-calidad": {
+      "name": "Unidad curricular del Área Calidad",
+      "credits": 4,
+      "requirementId": "qf2015-cflg",
+      "syntheticId": "qf2015-area-calidad-2024",
+      "historicalOnly": true,
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf"
+    },
+    "buenas-practicas": {
+      "name": "Buenas Prácticas y Gestión Integral",
+      "credits": 4,
+      "requirementId": "qf2015-cflg",
+      "bedeliasCode": "105",
+      "allowMissingFromComposition": true,
+      "historicalOnly": true,
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
     }
   },
-  "trajectory": {
-    "id": "suggested",
-    "label": "Damero sugerido · resolución 2026",
-    "description": "Distribución sugerida por Facultad de Química para el Plan 2015, actualizada en el documento adjunto a la resolución 112 del Consejo de Facultad de Química.",
-    "semesters": [
-      [
-        "mat-a",
-        "qg1",
-        "icb1",
-        "prl"
+  "trajectories": [
+    {
+      "id": "suggested",
+      "label": "Damero 2026 · vigente",
+      "description": "Distribución sugerida por Facultad de Química para el Plan 2015, actualizada en el documento adjunto a la resolución 112 del Consejo de Facultad de Química.",
+      "semesters": [
+        [
+          "mat-a",
+          "qg1",
+          "icb1",
+          "prl"
+        ],
+        [
+          "mat-b",
+          "mat-c",
+          "qg2",
+          "icb2",
+          "fis101"
+        ],
+        [
+          "qo101",
+          "qa1",
+          "qi-t",
+          "qi-lab",
+          "fis102",
+          "fisiologia"
+        ],
+        [
+          "qo102",
+          "qa2",
+          "fq102",
+          "fis003l",
+          "fisiopatologia",
+          "intro-medicamento"
+        ],
+        [
+          "qo103l",
+          "qo104",
+          "qa3",
+          "fq103",
+          "bioq-op2",
+          "lab-bioq"
+        ],
+        [
+          "farmacognosia",
+          "botanica",
+          "microbio-t",
+          "lab-anal-micro",
+          "inmuno1",
+          "farmacocinetica",
+          "taller-cbb",
+          "sistemas-gestion"
+        ],
+        [
+          "qf101",
+          "qf102",
+          "farmacotecnia1",
+          "inmuno2",
+          "bromatologia",
+          "farmacologia"
+        ],
+        [
+          "farmacoterapia",
+          "farmacotecnia2",
+          "control-calidad-med1",
+          "tox-fund"
+        ],
+        [
+          "leg-deonto",
+          "gestion-empresas"
+        ],
+        [
+          "practicantado"
+        ]
       ],
-      [
-        "mat-b",
-        "mat-c",
-        "qg2",
-        "icb2",
-        "fis101"
-      ],
-      [
-        "qo101",
-        "qa1",
-        "qi-t",
-        "qi-lab",
-        "fis102",
-        "fisiologia"
-      ],
-      [
-        "qo102",
-        "qa2",
-        "fq102",
-        "fis003l",
-        "fisiopatologia",
-        "intro-medicamento"
-      ],
-      [
-        "qo103l",
-        "qo104",
-        "qa3",
-        "fq103",
-        "bioq-op2",
-        "lab-bioq"
-      ],
-      [
-        "farmacognosia",
-        "botanica",
-        "microbio-t",
-        "lab-anal-micro",
-        "inmuno1",
-        "farmacocinetica",
-        "taller-cbb",
-        "sistemas-gestion"
-      ],
-      [
-        "qf101",
-        "qf102",
-        "farmacotecnia1",
-        "inmuno2",
-        "bromatologia",
-        "farmacologia"
-      ],
-      [
-        "farmacoterapia",
-        "farmacotecnia2",
-        "control-calidad-med1",
-        "tox-fund"
-      ],
-      [
-        "leg-deonto",
-        "gestion-empresas"
-      ],
-      [
-        "practicantado"
+      "status": "current",
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20farmac%C3%A9utico%20res%20112%20CFQ%2012%2003%202026.pdf"
+    },
+    {
+      "id": "historical-2024",
+      "label": "Damero 2024 · histórico",
+      "description": "Trayectoria histórica actualizada el 19/12/2024 y conservada en la resolución 74/2025. No representa la distribución vigente desde 2026.",
+      "status": "historical",
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf",
+      "supportingSourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Quimico%20farmaceutico%20res%2074%20CFQ%2031%2007%202025.pdf",
+      "semesters": [
+        [
+          "mat-a",
+          "qg1",
+          "icb1",
+          "prl"
+        ],
+        [
+          "mat-b",
+          "mat-c",
+          "qg2",
+          "icb2",
+          "fis101"
+        ],
+        [
+          "qo101",
+          "qa1",
+          "qi-t",
+          "qi-lab",
+          "fis102",
+          "fisiologia"
+        ],
+        [
+          "qo102",
+          "qa2",
+          "fq102",
+          "fis003l",
+          "fisiopatologia",
+          "intro-medicamento"
+        ],
+        [
+          "qo103l",
+          "qo104",
+          "qa3",
+          "fq103",
+          "bioq-op3"
+        ],
+        [
+          "farmacognosia",
+          "botanica",
+          "microbio-t",
+          "lab-anal-micro",
+          "inmuno1",
+          "farmacocinetica",
+          "taller-cbb",
+          "uc-area-calidad"
+        ],
+        [
+          "qf101",
+          "qf102",
+          "farmacotecnia1",
+          "inmuno2",
+          "bromatologia",
+          "farmacologia"
+        ],
+        [
+          "farmacoterapia",
+          "farmacotecnia2",
+          "control-calidad-med1",
+          "tox-fund"
+        ],
+        [
+          "leg-deonto",
+          "gestion-empresas"
+        ],
+        [
+          "practicantado"
+        ]
       ]
-    ]
-  }
+    },
+    {
+      "id": "original-2015",
+      "label": "Implementación original · 2015",
+      "description": "Ejemplo de implementación incluido en el Plan 2015 original. Es una referencia histórica y no representa la distribución vigente.",
+      "status": "historical",
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+      "semesters": [
+        [
+          "mat-01",
+          "qg1",
+          "icb1",
+          "prl"
+        ],
+        [
+          "mat-02",
+          "qg2",
+          "fis101",
+          "icb2"
+        ],
+        [
+          "qo101",
+          "qa1",
+          "qi-t",
+          "qi-lab",
+          "fis102",
+          "fisiologia"
+        ],
+        [
+          "qo102",
+          "qa2",
+          "fq102",
+          "fis003l",
+          "fisiopatologia",
+          "intro-medicamento"
+        ],
+        [
+          "qo103l",
+          "qo104",
+          "qa3",
+          "fq103",
+          "bioq-op3"
+        ],
+        [
+          "farmacognosia",
+          "botanica",
+          "microbio-general",
+          "inmuno1",
+          "farmacocinetica",
+          "buenas-practicas",
+          "taller-cbb"
+        ],
+        [
+          "qf101",
+          "qf102",
+          "farmacotecnia1",
+          "farmacologia",
+          "inmuno2",
+          "bromatologia"
+        ],
+        [
+          "farmacoterapia",
+          "farmacotecnia2",
+          "control-calidad-med1",
+          "tox-fund"
+        ],
+        [
+          "leg-deonto",
+          "gestion-empresas"
+        ],
+        [
+          "practicantado"
+        ]
+      ]
+    }
+  ]
 }

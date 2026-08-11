@@ -457,3 +457,6 @@ Un dato puede mostrarse como verificado por Bedelías solo si:
 - un cambio posterior de snapshot fue revisado antes de desplegarse.
 
 Cuando falte cualquiera de estas condiciones, mostrar `en revisión`, `trayectoria sugerida` o `sin regla importada`, nunca una afirmación oficial.
+
+- Ampliación implementada: damero 2026 vigente y seleccionable por defecto, actualización 2024 histórica e implementación original del Plan 2015; cada versión valida 379 créditos distribuidos en diez semestres.
+- Validación de la ampliación: `npm.cmd test` 69/69; lint sin regresiones y con los mismos 12 errores/1 advertencia preexistentes.

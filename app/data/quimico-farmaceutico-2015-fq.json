@@ -6,6 +6,8 @@
     "suggestedCurriculum": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20farmac%C3%A9utico%20res%20112%20CFQ%2012%2003%202026.pdf",
     "optativesCatalog": "https://www.fq.edu.uy/sites/default/files/archivos/Optativas%20QF_31.pdf",
     "electivesCatalog": "https://www.fq.edu.uy/sites/default/files/archivos/Electivas%20QF_42.pdf",
+    "previousSuggestedCurriculum": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf",
+    "previousSuggestedCurriculumResolution": "https://www.fq.edu.uy/sites/default/files/archivos/Quimico%20farmaceutico%20res%2074%20CFQ%2031%2007%202025.pdf",
     "reviewedAt": "2026-08-11",
     "bedeliasSystem": "SGAE Bedelías",
     "bedeliasExtractedAt": "2026-08-11T19:32:06.279Z",
@@ -1155,12 +1157,133 @@
       "dataStatus": "fq-damero",
       "ruleCoverage": "not-published",
       "elective": false
+    },
+    {
+      "id": "01",
+      "bedeliasCode": "01",
+      "name": "Matemática 01",
+      "credits": 14,
+      "eligibleRequirementIds": [
+        "qf2015-cfm"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "qf2015-cfm",
+          "credits": 14,
+          "status": "official",
+          "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
+        }
+      ],
+      "dataStatus": "fq-historical-damero",
+      "ruleCoverage": "not-published",
+      "elective": false
+    },
+    {
+      "id": "02",
+      "bedeliasCode": "02",
+      "name": "Matemática 02",
+      "credits": 10,
+      "eligibleRequirementIds": [
+        "qf2015-cfm"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "qf2015-cfm",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
+        }
+      ],
+      "dataStatus": "fq-historical-damero",
+      "ruleCoverage": "not-published",
+      "elective": false
+    },
+    {
+      "id": "505",
+      "bedeliasCode": "505",
+      "name": "Bioquímica Opción III",
+      "credits": 15,
+      "eligibleRequirementIds": [
+        "qf2015-cbb"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "qf2015-cbb",
+          "credits": 15,
+          "status": "official",
+          "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf"
+        }
+      ],
+      "dataStatus": "fq-historical-damero",
+      "ruleCoverage": "published",
+      "elective": false
+    },
+    {
+      "id": "533",
+      "bedeliasCode": "533",
+      "name": "Microbiología General",
+      "credits": 12,
+      "eligibleRequirementIds": [
+        "qf2015-cbb"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "qf2015-cbb",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
+        }
+      ],
+      "dataStatus": "fq-historical-damero",
+      "ruleCoverage": "published",
+      "elective": false
+    },
+    {
+      "id": "qf2015-area-calidad-2024",
+      "name": "Unidad curricular del Área Calidad",
+      "credits": 4,
+      "eligibleRequirementIds": [
+        "qf2015-cflg"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "qf2015-cflg",
+          "credits": 4,
+          "status": "official",
+          "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf"
+        }
+      ],
+      "dataStatus": "fq-historical-damero",
+      "ruleCoverage": "not-scraped",
+      "elective": false
+    },
+    {
+      "id": "105",
+      "bedeliasCode": "105",
+      "name": "Buenas Prácticas y Gestión Integral",
+      "credits": 4,
+      "eligibleRequirementIds": [
+        "qf2015-cflg"
+      ],
+      "creditAllocations": [
+        {
+          "nodeId": "qf2015-cflg",
+          "credits": 4,
+          "status": "official",
+          "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf"
+        }
+      ],
+      "dataStatus": "fq-historical-damero",
+      "ruleCoverage": "not-scraped",
+      "elective": false
     }
   ],
   "trajectories": {
     "suggested": {
-      "label": "Damero sugerido · resolución 2026",
+      "label": "Damero 2026 · vigente",
       "description": "Distribución sugerida por Facultad de Química para el Plan 2015, actualizada en el documento adjunto a la resolución 112 del Consejo de Facultad de Química.",
+      "status": "current",
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20farmac%C3%A9utico%20res%20112%20CFQ%2012%2003%202026.pdf",
       "semesters": [
         [
           "01A",
@@ -1216,6 +1339,155 @@
           "534X",
           "704",
           "703X"
+        ],
+        [
+          "803X",
+          "802X",
+          "804X",
+          "805"
+        ],
+        [
+          "809",
+          "410B"
+        ],
+        [
+          "965X"
+        ]
+      ]
+    },
+    "historical-2024": {
+      "label": "Damero 2024 · histórico",
+      "description": "Trayectoria histórica actualizada el 19/12/2024 y conservada en la resolución 74/2025. No representa la distribución vigente desde 2026.",
+      "status": "historical",
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20QF%20plan%202015.pdf",
+      "supportingSourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Quimico%20farmaceutico%20res%2074%20CFQ%2031%2007%202025.pdf",
+      "semesters": [
+        [
+          "01A",
+          "102",
+          "103B",
+          "104A"
+        ],
+        [
+          "02B",
+          "02C",
+          "202",
+          "203A",
+          "205"
+        ],
+        [
+          "301",
+          "302",
+          "303A",
+          "303B",
+          "304",
+          "408A"
+        ],
+        [
+          "401Q",
+          "402A",
+          "508A",
+          "404",
+          "415C",
+          "416X"
+        ],
+        [
+          "501",
+          "502X",
+          "503",
+          "520A",
+          "505"
+        ],
+        [
+          "909",
+          "908A",
+          "533T",
+          "533L",
+          "506X",
+          "535X",
+          "615",
+          "qf2015-area-calidad-2024"
+        ],
+        [
+          "700",
+          "701X",
+          "702X",
+          "534X",
+          "704",
+          "703X"
+        ],
+        [
+          "803X",
+          "802X",
+          "804X",
+          "805"
+        ],
+        [
+          "809",
+          "410B"
+        ],
+        [
+          "965X"
+        ]
+      ]
+    },
+    "original-2015": {
+      "label": "Implementación original · 2015",
+      "description": "Ejemplo de implementación incluido en el Plan 2015 original. Es una referencia histórica y no representa la distribución vigente.",
+      "status": "historical",
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%20FARMAC%C3%89UTICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+      "semesters": [
+        [
+          "01",
+          "102",
+          "103B",
+          "104A"
+        ],
+        [
+          "02",
+          "202",
+          "205",
+          "203A"
+        ],
+        [
+          "301",
+          "302",
+          "303A",
+          "303B",
+          "304",
+          "408A"
+        ],
+        [
+          "401Q",
+          "402A",
+          "508A",
+          "404",
+          "415C",
+          "416X"
+        ],
+        [
+          "501",
+          "502X",
+          "503",
+          "520A",
+          "505"
+        ],
+        [
+          "909",
+          "908A",
+          "533",
+          "506X",
+          "535X",
+          "105",
+          "615"
+        ],
+        [
+          "700",
+          "701X",
+          "702X",
+          "703X",
+          "534X",
+          "704"
         ],
         [
           "803X",
@@ -3020,6 +3292,937 @@
         "parserStatus": "parsed"
       },
       "heading": "Condiciones a cumplir para realizar el Examen de la U.C.B. - FQ - 190 - BIOQUÍMICA OP. II (A PARTIR DE 2026)",
+      "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
+    },
+    {
+      "target": {
+        "rowIndex": "0",
+        "code": "505",
+        "name": "BIOQUÍMICA OP. III (HASTA 2025)",
+        "assessment": "course"
+      },
+      "expression": {
+        "kind": "all",
+        "sourceType": "y",
+        "label": "debe tener todas",
+        "minimum": null,
+        "options": [],
+        "children": [
+          {
+            "kind": "none",
+            "sourceType": "no",
+            "label": "no debe tener",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "all",
+                "sourceType": "y",
+                "label": "debe tener todas",
+                "minimum": null,
+                "options": [],
+                "children": [
+                  {
+                    "kind": "requirement",
+                    "sourceType": "default",
+                    "label": "U.C.B Aprobada: 512 - LABORATORIO DE BIOQUÍMICA",
+                    "minimum": 1,
+                    "options": [
+                      {
+                        "assessment": "exam",
+                        "serviceCode": null,
+                        "code": "512",
+                        "name": "LABORATORIO DE BIOQUÍMICA",
+                        "raw": "U.C.B Aprobada: 512 - LABORATORIO DE BIOQUÍMICA"
+                      }
+                    ],
+                    "children": [],
+                    "creditRequirement": null,
+                    "groupCreditRequirement": null,
+                    "parserStatus": "parsed"
+                  },
+                  {
+                    "kind": "requirement",
+                    "sourceType": "default",
+                    "label": "Curso aprobado de la U.C.B: 513 - BIOQUÍMICA OP. II",
+                    "minimum": 1,
+                    "options": [
+                      {
+                        "assessment": "course",
+                        "serviceCode": null,
+                        "code": "513",
+                        "name": "BIOQUÍMICA OP. II",
+                        "raw": "Curso aprobado de la U.C.B: 513 - BIOQUÍMICA OP. II"
+                      }
+                    ],
+                    "children": [],
+                    "creditRequirement": null,
+                    "groupCreditRequirement": null,
+                    "parserStatus": "parsed"
+                  }
+                ],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "none",
+            "sourceType": "no",
+            "label": "no debe tener",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "all",
+                "sourceType": "y",
+                "label": "debe tener todas",
+                "minimum": null,
+                "options": [],
+                "children": [
+                  {
+                    "kind": "requirement",
+                    "sourceType": "default",
+                    "label": "U.C.B Aprobada: 512 - LABORATORIO DE BIOQUÍMICA",
+                    "minimum": 1,
+                    "options": [
+                      {
+                        "assessment": "exam",
+                        "serviceCode": null,
+                        "code": "512",
+                        "name": "LABORATORIO DE BIOQUÍMICA",
+                        "raw": "U.C.B Aprobada: 512 - LABORATORIO DE BIOQUÍMICA"
+                      }
+                    ],
+                    "children": [],
+                    "creditRequirement": null,
+                    "groupCreditRequirement": null,
+                    "parserStatus": "parsed"
+                  },
+                  {
+                    "kind": "requirement",
+                    "sourceType": "default",
+                    "label": "Curso aprobado de la U.C.B: 513A - BIOQUÍMICA OP. II",
+                    "minimum": 1,
+                    "options": [
+                      {
+                        "assessment": "course",
+                        "serviceCode": null,
+                        "code": "513A",
+                        "name": "BIOQUÍMICA OP. II",
+                        "raw": "Curso aprobado de la U.C.B: 513A - BIOQUÍMICA OP. II"
+                      }
+                    ],
+                    "children": [],
+                    "creditRequirement": null,
+                    "groupCreditRequirement": null,
+                    "parserStatus": "parsed"
+                  }
+                ],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "none",
+            "sourceType": "no",
+            "label": "no debe tener",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 483 - BIOQUÍMICA (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "483",
+                    "name": "BIOQUÍMICA (PLAN 1980)",
+                    "raw": "Curso aprobado de la U.C.B: 483 - BIOQUÍMICA (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 402A - QUÍMICA ANALÍTICA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "402A",
+                    "name": "QUÍMICA ANALÍTICA II",
+                    "raw": "U.C.B Aprobada: 402A - QUÍMICA ANALÍTICA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 402 - QUÍMICA ANALÍTICA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "402",
+                    "name": "QUÍMICA ANALÍTICA II",
+                    "raw": "U.C.B Aprobada: 402 - QUÍMICA ANALÍTICA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 402 - QUÍMICA ANALÍTICA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "402",
+                    "name": "QUÍMICA ANALÍTICA II",
+                    "raw": "Curso aprobado de la U.C.B: 402 - QUÍMICA ANALÍTICA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 402A - QUÍMICA ANALÍTICA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "402A",
+                    "name": "QUÍMICA ANALÍTICA II",
+                    "raw": "Curso aprobado de la U.C.B: 402A - QUÍMICA ANALÍTICA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 285 - QCA. ANALÍTICA CUANTITATIVA I (SEM.1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "285",
+                    "name": "QCA. ANALÍTICA CUANTITATIVA I (SEM.1980)",
+                    "raw": "Curso aprobado de la U.C.B: 285 - QCA. ANALÍTICA CUANTITATIVA I (SEM.1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 103A - INT. A LAS C. BIOLÓGICAS I (DESDE 2002)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "103A",
+                    "name": "INT. A LAS C. BIOLÓGICAS I (DESDE 2002)",
+                    "raw": "U.C.B Aprobada: 103A - INT. A LAS C. BIOLÓGICAS I (DESDE 2002)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "103B",
+                    "name": "INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                    "raw": "U.C.B Aprobada: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: CENURLN - CBB22 - INTRODUCCIÓN A LAS CIENCIAS BIOL. I",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": "CENURLN",
+                    "code": "CBB22",
+                    "name": "INTRODUCCIÓN A LAS CIENCIAS BIOL. I",
+                    "raw": "U.C.B Aprobada: CENURLN - CBB22 - INTRODUCCIÓN A LAS CIENCIAS BIOL. I"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": "CENURLN",
+                    "code": "SRN07",
+                    "name": "INTRODUCCIÓN A LA BIOLOGÍA I",
+                    "raw": "U.C.B Aprobada: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "103B",
+                    "name": "INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                    "raw": "Curso aprobado de la U.C.B: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": "CENURLN",
+                    "code": "SRN07",
+                    "name": "INTRODUCCIÓN A LA BIOLOGÍA I",
+                    "raw": "Curso aprobado de la U.C.B: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: CENURLN - CBB22 - INTRODUCCIÓN A LAS CIENCIAS BIOL. I",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": "CENURLN",
+                    "code": "CBB22",
+                    "name": "INTRODUCCIÓN A LAS CIENCIAS BIOL. I",
+                    "raw": "Curso aprobado de la U.C.B: CENURLN - CBB22 - INTRODUCCIÓN A LAS CIENCIAS BIOL. I"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 389 - BIOLOGÍA (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "389",
+                    "name": "BIOLOGÍA (PLAN 1980)",
+                    "raw": "Curso aprobado de la U.C.B: 389 - BIOLOGÍA (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 103A - INT. A LAS C. BIOLÓGICAS I (DESDE 2002)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "103A",
+                    "name": "INT. A LAS C. BIOLÓGICAS I (DESDE 2002)",
+                    "raw": "Curso aprobado de la U.C.B: 103A - INT. A LAS C. BIOLÓGICAS I (DESDE 2002)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 483 - BIOQUÍMICA (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "483",
+                    "name": "BIOQUÍMICA (PLAN 1980)",
+                    "raw": "Curso aprobado de la U.C.B: 483 - BIOQUÍMICA (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 401 - QUÍMICA ORGÁNICA 102",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "401",
+                    "name": "QUÍMICA ORGÁNICA 102",
+                    "raw": "U.C.B Aprobada: 401 - QUÍMICA ORGÁNICA 102"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 401I - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "401I",
+                    "name": "QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                    "raw": "U.C.B Aprobada: 401I - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 401Q - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "401Q",
+                    "name": "QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                    "raw": "U.C.B Aprobada: 401Q - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 401I - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "401I",
+                    "name": "QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                    "raw": "Curso aprobado de la U.C.B: 401I - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 401 - QUÍMICA ORGÁNICA 102",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "401",
+                    "name": "QUÍMICA ORGÁNICA 102",
+                    "raw": "Curso aprobado de la U.C.B: 401 - QUÍMICA ORGÁNICA 102"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 383 - QCA. ORGÁNICA II (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "383",
+                    "name": "QCA. ORGÁNICA II (PLAN 1980)",
+                    "raw": "Curso aprobado de la U.C.B: 383 - QCA. ORGÁNICA II (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 401Q - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "401Q",
+                    "name": "QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)",
+                    "raw": "Curso aprobado de la U.C.B: 401Q - QUÍMICA ORGÁNICA 102 (A PARTIR DE 2024)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Examen aprobado de la U.C.B: CP14 - CRÉDITOS POR QUÍMICA ORGÁNICA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "CP14",
+                    "name": "CRÉDITOS POR QUÍMICA ORGÁNICA II",
+                    "raw": "Examen aprobado de la U.C.B: CP14 - CRÉDITOS POR QUÍMICA ORGÁNICA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 406 - FISICOQUÍMICA I (PLAN 2000)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "406",
+                    "name": "FISICOQUÍMICA I (PLAN 2000)",
+                    "raw": "U.C.B Aprobada: 406 - FISICOQUÍMICA I (PLAN 2000)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 508 - FISICOQUÍMICA II (PLAN 2000)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "508",
+                    "name": "FISICOQUÍMICA II (PLAN 2000)",
+                    "raw": "U.C.B Aprobada: 508 - FISICOQUÍMICA II (PLAN 2000)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 508A - FISICOQUÍMICA 102 (DESDE 2003)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "508A",
+                    "name": "FISICOQUÍMICA 102 (DESDE 2003)",
+                    "raw": "U.C.B Aprobada: 508A - FISICOQUÍMICA 102 (DESDE 2003)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 406A - FISICOQUÍMICA 101 (DESDE 2003)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "406A",
+                    "name": "FISICOQUÍMICA 101 (DESDE 2003)",
+                    "raw": "U.C.B Aprobada: 406A - FISICOQUÍMICA 101 (DESDE 2003)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Examen aprobado de la U.C.B: CP12 - CRÉDITOS POR FISICOQUÍMICA I",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "CP12",
+                    "name": "CRÉDITOS POR FISICOQUÍMICA I",
+                    "raw": "Examen aprobado de la U.C.B: CP12 - CRÉDITOS POR FISICOQUÍMICA I"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 406 - FISICOQUÍMICA I (PLAN 2000)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "406",
+                    "name": "FISICOQUÍMICA I (PLAN 2000)",
+                    "raw": "Curso aprobado de la U.C.B: 406 - FISICOQUÍMICA I (PLAN 2000)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Examen aprobado de la U.C.B: CP15 - CRÉDITOS POR FISICOQUÍMICA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "CP15",
+                    "name": "CRÉDITOS POR FISICOQUÍMICA II",
+                    "raw": "Examen aprobado de la U.C.B: CP15 - CRÉDITOS POR FISICOQUÍMICA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 384 - FISICOQUÍMICA II (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "384",
+                    "name": "FISICOQUÍMICA II (PLAN 1980)",
+                    "raw": "Curso aprobado de la U.C.B: 384 - FISICOQUÍMICA II (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 508 - FISICOQUÍMICA II (PLAN 2000)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "508",
+                    "name": "FISICOQUÍMICA II (PLAN 2000)",
+                    "raw": "Curso aprobado de la U.C.B: 508 - FISICOQUÍMICA II (PLAN 2000)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 508A - FISICOQUÍMICA 102 (DESDE 2003)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "508A",
+                    "name": "FISICOQUÍMICA 102 (DESDE 2003)",
+                    "raw": "Curso aprobado de la U.C.B: 508A - FISICOQUÍMICA 102 (DESDE 2003)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 288 - FISICOQUÍMICA I (1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "288",
+                    "name": "FISICOQUÍMICA I (1980)",
+                    "raw": "Curso aprobado de la U.C.B: 288 - FISICOQUÍMICA I (1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 406A - FISICOQUÍMICA 101 (DESDE 2003)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "406A",
+                    "name": "FISICOQUÍMICA 101 (DESDE 2003)",
+                    "raw": "Curso aprobado de la U.C.B: 406A - FISICOQUÍMICA 101 (DESDE 2003)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          }
+        ],
+        "creditRequirement": null,
+        "groupCreditRequirement": null,
+        "parserStatus": "parsed"
+      },
+      "heading": "Condiciones a cumplir para realizar el Curso de la U.C.B. - FQ - 505 - BIOQUÍMICA OP. III (HASTA 2025)",
+      "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
+    },
+    {
+      "target": {
+        "rowIndex": "1",
+        "code": "505",
+        "name": "BIOQUÍMICA OP. III (HASTA 2025)",
+        "assessment": "exam"
+      },
+      "expression": {
+        "kind": "all",
+        "sourceType": "y",
+        "label": "debe tener todas",
+        "minimum": null,
+        "options": [],
+        "children": [
+          {
+            "kind": "requirement",
+            "sourceType": "default",
+            "label": "Curso aprobado de la U.C.B: 505 - BIOQUÍMICA OP. III (HASTA 2025)",
+            "minimum": 1,
+            "options": [
+              {
+                "assessment": "course",
+                "serviceCode": null,
+                "code": "505",
+                "name": "BIOQUÍMICA OP. III (HASTA 2025)",
+                "raw": "Curso aprobado de la U.C.B: 505 - BIOQUÍMICA OP. III (HASTA 2025)"
+              }
+            ],
+            "children": [],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          }
+        ],
+        "creditRequirement": null,
+        "groupCreditRequirement": null,
+        "parserStatus": "parsed"
+      },
+      "heading": "Condiciones a cumplir para realizar el Examen de la U.C.B. - FQ - 505 - BIOQUÍMICA OP. III (HASTA 2025)",
       "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
     },
     {
@@ -6609,6 +7812,526 @@
         "parserStatus": "parsed"
       },
       "heading": "Condiciones a cumplir para realizar el Examen de la U.C.B. - FQ - 533T - MICROBIOLOGÍA GENERAL",
+      "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
+    },
+    {
+      "target": {
+        "rowIndex": "1",
+        "code": "533",
+        "name": "MICROBIOLOGÍA GENERAL",
+        "assessment": "course"
+      },
+      "expression": {
+        "kind": "all",
+        "sourceType": "y",
+        "label": "debe tener todas",
+        "minimum": null,
+        "options": [],
+        "children": [
+          {
+            "kind": "none",
+            "sourceType": "no",
+            "label": "no debe tener",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Examen aprobado de la U.C.B: 485R - MICROBIOLOGÍA (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "485R",
+                    "name": "MICROBIOLOGÍA (PLAN 1980)",
+                    "raw": "Examen aprobado de la U.C.B: 485R - MICROBIOLOGÍA (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "none",
+            "sourceType": "no",
+            "label": "no debe tener",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Examen aprobado de la U.C.B: 533R - MICROBIOLOGÍA GENERAL",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "533R",
+                    "name": "MICROBIOLOGÍA GENERAL",
+                    "raw": "Examen aprobado de la U.C.B: 533R - MICROBIOLOGÍA GENERAL"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "none",
+            "sourceType": "no",
+            "label": "no debe tener",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 485 - MICROBIOLOGÍA (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "485",
+                    "name": "MICROBIOLOGÍA (PLAN 1980)",
+                    "raw": "Curso aprobado de la U.C.B: 485 - MICROBIOLOGÍA (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "all",
+                "sourceType": "y",
+                "label": "debe tener todas",
+                "minimum": null,
+                "options": [],
+                "children": [
+                  {
+                    "kind": "any",
+                    "sourceType": "o",
+                    "label": "debe tener alguna",
+                    "minimum": null,
+                    "options": [],
+                    "children": [
+                      {
+                        "kind": "requirement",
+                        "sourceType": "default",
+                        "label": "U.C.B Aprobada: 512 - LABORATORIO DE BIOQUÍMICA",
+                        "minimum": 1,
+                        "options": [
+                          {
+                            "assessment": "exam",
+                            "serviceCode": null,
+                            "code": "512",
+                            "name": "LABORATORIO DE BIOQUÍMICA",
+                            "raw": "U.C.B Aprobada: 512 - LABORATORIO DE BIOQUÍMICA"
+                          }
+                        ],
+                        "children": [],
+                        "creditRequirement": null,
+                        "groupCreditRequirement": null,
+                        "parserStatus": "parsed"
+                      },
+                      {
+                        "kind": "requirement",
+                        "sourceType": "default",
+                        "label": "Curso aprobado de la U.C.B: 512 - LABORATORIO DE BIOQUÍMICA",
+                        "minimum": 1,
+                        "options": [
+                          {
+                            "assessment": "course",
+                            "serviceCode": null,
+                            "code": "512",
+                            "name": "LABORATORIO DE BIOQUÍMICA",
+                            "raw": "Curso aprobado de la U.C.B: 512 - LABORATORIO DE BIOQUÍMICA"
+                          }
+                        ],
+                        "children": [],
+                        "creditRequirement": null,
+                        "groupCreditRequirement": null,
+                        "parserStatus": "parsed"
+                      }
+                    ],
+                    "creditRequirement": null,
+                    "groupCreditRequirement": null,
+                    "parserStatus": "parsed"
+                  },
+                  {
+                    "kind": "any",
+                    "sourceType": "o",
+                    "label": "debe tener alguna",
+                    "minimum": null,
+                    "options": [],
+                    "children": [
+                      {
+                        "kind": "requirement",
+                        "sourceType": "default",
+                        "label": "U.C.B Aprobada: 513A - BIOQUÍMICA OP. II",
+                        "minimum": 1,
+                        "options": [
+                          {
+                            "assessment": "exam",
+                            "serviceCode": null,
+                            "code": "513A",
+                            "name": "BIOQUÍMICA OP. II",
+                            "raw": "U.C.B Aprobada: 513A - BIOQUÍMICA OP. II"
+                          }
+                        ],
+                        "children": [],
+                        "creditRequirement": null,
+                        "groupCreditRequirement": null,
+                        "parserStatus": "parsed"
+                      },
+                      {
+                        "kind": "requirement",
+                        "sourceType": "default",
+                        "label": "Curso aprobado de la U.C.B: 513 - BIOQUÍMICA OP. II",
+                        "minimum": 1,
+                        "options": [
+                          {
+                            "assessment": "course",
+                            "serviceCode": null,
+                            "code": "513",
+                            "name": "BIOQUÍMICA OP. II",
+                            "raw": "Curso aprobado de la U.C.B: 513 - BIOQUÍMICA OP. II"
+                          }
+                        ],
+                        "children": [],
+                        "creditRequirement": null,
+                        "groupCreditRequirement": null,
+                        "parserStatus": "parsed"
+                      },
+                      {
+                        "kind": "requirement",
+                        "sourceType": "default",
+                        "label": "Curso aprobado de la U.C.B: 513A - BIOQUÍMICA OP. II",
+                        "minimum": 1,
+                        "options": [
+                          {
+                            "assessment": "course",
+                            "serviceCode": null,
+                            "code": "513A",
+                            "name": "BIOQUÍMICA OP. II",
+                            "raw": "Curso aprobado de la U.C.B: 513A - BIOQUÍMICA OP. II"
+                          }
+                        ],
+                        "children": [],
+                        "creditRequirement": null,
+                        "groupCreditRequirement": null,
+                        "parserStatus": "parsed"
+                      }
+                    ],
+                    "creditRequirement": null,
+                    "groupCreditRequirement": null,
+                    "parserStatus": "parsed"
+                  }
+                ],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 505 - BIOQUÍMICA OP. III (HASTA 2025)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "505",
+                    "name": "BIOQUÍMICA OP. III (HASTA 2025)",
+                    "raw": "U.C.B Aprobada: 505 - BIOQUÍMICA OP. III (HASTA 2025)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Examen aprobado de la U.C.B: 483R - BIOQUÍMICA (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "483R",
+                    "name": "BIOQUÍMICA (PLAN 1980)",
+                    "raw": "Examen aprobado de la U.C.B: 483R - BIOQUÍMICA (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 505R - BIOQUÍMICA OP. III",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "505R",
+                    "name": "BIOQUÍMICA OP. III",
+                    "raw": "Curso aprobado de la U.C.B: 505R - BIOQUÍMICA OP. III"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 505 - BIOQUÍMICA OP. III (HASTA 2025)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "505",
+                    "name": "BIOQUÍMICA OP. III (HASTA 2025)",
+                    "raw": "Curso aprobado de la U.C.B: 505 - BIOQUÍMICA OP. III (HASTA 2025)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 483 - BIOQUÍMICA (PLAN 1980)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "483",
+                    "name": "BIOQUÍMICA (PLAN 1980)",
+                    "raw": "Curso aprobado de la U.C.B: 483 - BIOQUÍMICA (PLAN 1980)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 514 - BIOQUÍMICA OP. I (PLAN 2000)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "514",
+                    "name": "BIOQUÍMICA OP. I (PLAN 2000)",
+                    "raw": "Curso aprobado de la U.C.B: 514 - BIOQUÍMICA OP. I (PLAN 2000)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          },
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": "CENURLN",
+                    "code": "SRN07",
+                    "name": "INTRODUCCIÓN A LA BIOLOGÍA I",
+                    "raw": "U.C.B Aprobada: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "103B",
+                    "name": "INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                    "raw": "U.C.B Aprobada: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": "CENURLN",
+                    "code": "SRN07",
+                    "name": "INTRODUCCIÓN A LA BIOLOGÍA I",
+                    "raw": "Curso aprobado de la U.C.B: CENURLN - SRN07 - INTRODUCCIÓN A LA BIOLOGÍA I"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "103B",
+                    "name": "INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)",
+                    "raw": "Curso aprobado de la U.C.B: 103B - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I (DESDE 2012)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "Curso aprobado de la U.C.B: 103BB - INT. A LAS C. BIOLÓGICAS I (DESDE 2012)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "course",
+                    "serviceCode": null,
+                    "code": "103BB",
+                    "name": "INT. A LAS C. BIOLÓGICAS I (DESDE 2012)",
+                    "raw": "Curso aprobado de la U.C.B: 103BB - INT. A LAS C. BIOLÓGICAS I (DESDE 2012)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed"
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          }
+        ],
+        "creditRequirement": null,
+        "groupCreditRequirement": null,
+        "parserStatus": "parsed"
+      },
+      "heading": "Condiciones a cumplir para realizar el Curso de la U.C.B. - FQ - 533 - MICROBIOLOGÍA GENERAL",
+      "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
+    },
+    {
+      "target": {
+        "rowIndex": "2",
+        "code": "533",
+        "name": "MICROBIOLOGÍA GENERAL",
+        "assessment": "exam"
+      },
+      "expression": {
+        "kind": "all",
+        "sourceType": "y",
+        "label": "debe tener todas",
+        "minimum": null,
+        "options": [],
+        "children": [
+          {
+            "kind": "requirement",
+            "sourceType": "default",
+            "label": "Curso aprobado de la U.C.B: 533 - MICROBIOLOGÍA GENERAL",
+            "minimum": 1,
+            "options": [
+              {
+                "assessment": "course",
+                "serviceCode": null,
+                "code": "533",
+                "name": "MICROBIOLOGÍA GENERAL",
+                "raw": "Curso aprobado de la U.C.B: 533 - MICROBIOLOGÍA GENERAL"
+              }
+            ],
+            "children": [],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed"
+          }
+        ],
+        "creditRequirement": null,
+        "groupCreditRequirement": null,
+        "parserStatus": "parsed"
+      },
+      "heading": "Condiciones a cumplir para realizar el Examen de la U.C.B. - FQ - 533 - MICROBIOLOGÍA GENERAL",
       "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
     },
     {
@@ -24473,7 +26196,7 @@
     }
   ],
   "sourceCoverage": {
-    "mandatoryCourses": 48,
+    "mandatoryCourses": 54,
     "bedeliasCompositionCourses": 441,
     "modeledRules": 446,
     "partialRules": 0,
