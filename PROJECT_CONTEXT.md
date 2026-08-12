@@ -29,6 +29,7 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 
 - Aplicacion web con React 19, TypeScript, vinext y Vite.
 - El codigo principal de la interfaz esta bajo `app/`; `app/page.tsx` contiene actualmente gran parte del estado y la interaccion, y `app/globals.css` contiene los estilos globales.
+- La jerarquia de facultades, carreras y planes, junto con sus identificadores tipados, vive en `app/academic-catalog.ts`; los registros de estado por plan se inicializan desde ese catalogo para evitar listas paralelas al incorporar nuevas carreras.
 - Las pruebas automatizadas estan bajo `tests/` y se ejecutan con el runner nativo de Node despues de la compilacion.
 - El proyecto usa npm y requiere Node.js `>=22.13.0`.
 - El despliegue esta configurado mediante `.openai/hosting.json` para Sites.

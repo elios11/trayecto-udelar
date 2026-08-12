@@ -3,13 +3,13 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
+import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, type CredentialId, type PlanId } from "./academic-catalog";
 import { resolveAcademicOption } from "./academic-option.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
 import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
-type CredentialId = "analyst" | "engineer" | "pharmacist";
 type AllocationStatus = "official" | "suggested" | "conflict";
 
 type CreditAllocation = {
@@ -467,13 +467,6 @@ const stateLabels: Record<CourseStatus, string> = {
 
 const STORAGE_KEY = "trayecto-udelar-progress-v2";
 const LEGACY_STORAGE_KEY = "trayecto-udelar-demo-v1";
-type PlanId = "1997" | "2025" | "electrica-2023" | "civil-2021" | "qf-2015";
-type FacultyId = "fing" | "fq";
-type CareerId = "computacion" | "electrica" | "civil" | "quimica-farmaceutica";
-type AcademicPlanOption = { id: PlanId; label: string; defaultTrajectoryId: string; defaultCredentialId: CredentialId };
-type AcademicCareerOption = { id: CareerId; label: string; plans: AcademicPlanOption[] };
-type AcademicFacultyOption = { id: FacultyId; label: string; careers: AcademicCareerOption[] };
-
 type PlanProgress = Record<PlanId, Record<string, CourseStatus>>;
 type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
@@ -497,45 +490,6 @@ type VisualPreferences = {
 };
 
 const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
-const academicCatalog: AcademicFacultyOption[] = [
-  {
-    id: "fing",
-    label: "Facultad de Ingeniería",
-    careers: [
-      {
-        id: "computacion",
-        label: "Ingeniería en Computación",
-        plans: [
-          { id: "2025", label: "Plan 2025 · vigente, en transición", defaultTrajectoryId: "pi-60-plus", defaultCredentialId: "engineer" },
-          { id: "1997", label: "Plan 1997 · histórico", defaultTrajectoryId: "pi-20-59", defaultCredentialId: "engineer" },
-        ],
-      },
-      {
-        id: "electrica",
-        label: "Ingeniería Eléctrica",
-        plans: [
-          { id: "electrica-2023", label: "Plan 2023 · vigente", defaultTrajectoryId: "basic", defaultCredentialId: "engineer" },
-        ],
-      },
-      {
-        id: "civil",
-        label: "Ingeniería Civil",
-        plans: [
-          { id: "civil-2021", label: "Plan 2021 · vigente", defaultTrajectoryId: "construction", defaultCredentialId: "engineer" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "fq",
-    label: "Facultad de Química",
-    careers: [{
-      id: "quimica-farmaceutica",
-      label: "Química Farmacéutica",
-      plans: [{ id: "qf-2015", label: "Plan 2015 · vigente", defaultTrajectoryId: "suggested", defaultCredentialId: "pharmacist" }],
-    }],
-  },
-];
 const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
 const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
 const ACADEMIC_SELECTION_STORAGE_KEY = "trayecto-udelar-academic-selection-v1";
@@ -568,7 +522,7 @@ export default function Home() {
   const [appMode, setAppMode] = useState<AppMode>("curriculum");
   const [planYear, setPlanYear] = useState<PlanId>("2025");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
-  const [progress, setProgress] = useState<PlanProgress>({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {}, "qf-2015": {} });
+  const [progress, setProgress] = useState<PlanProgress>(() => createAcademicPlanRecord(() => ({})));
   const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
   const [selected, setSelected] = useState<Course | null>(null);
   const [importError, setImportError] = useState<{ title: string; message: string } | null>(null);
@@ -594,11 +548,11 @@ export default function Home() {
   const [fullElectivesCatalogExpanded, setFullElectivesCatalogExpanded] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
-  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>({ 1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms(), "qf-2015": createDefaultTerms() });
+  const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>(() => createAcademicPlanRecord(() => createDefaultTerms()));
   const [plannerView, setPlannerView] = useState<PlannerView>("board");
   const [plannerSearch, setPlannerSearch] = useState("");
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
-  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>({ 1997: null, 2025: null, "electrica-2023": null, "civil-2021": null, "qf-2015": null });
+  const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>(() => createAcademicPlanRecord(() => null));
   const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
@@ -931,26 +885,17 @@ export default function Home() {
       if (cancelled) return;
       try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setProgress({ 1997: {}, 2025: {}, "electrica-2023": {}, "civil-2021": {}, "qf-2015": {}, ...JSON.parse(saved) });
+      if (saved) setProgress({ ...createAcademicPlanRecord(() => ({})), ...JSON.parse(saved) });
       else {
         const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-        if (legacy) setProgress({ 1997: JSON.parse(legacy), 2025: {}, "electrica-2023": {}, "civil-2021": {}, "qf-2015": {} });
+        if (legacy) setProgress({ ...createAcademicPlanRecord(() => ({})), 1997: JSON.parse(legacy) });
       }
       const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
-      if (savedPlanner) setPlannerPlans({
-        1997: createDefaultTerms(), 2025: createDefaultTerms(), "electrica-2023": createDefaultTerms(), "civil-2021": createDefaultTerms(), "qf-2015": createDefaultTerms(),
-        ...JSON.parse(savedPlanner),
-      });
+      if (savedPlanner) setPlannerPlans({ ...createAcademicPlanRecord(() => createDefaultTerms()), ...JSON.parse(savedPlanner) });
       const savedCurrentPlannerTerms = localStorage.getItem(CURRENT_TERM_STORAGE_KEY);
       if (savedCurrentPlannerTerms) {
         const parsed = JSON.parse(savedCurrentPlannerTerms) as Partial<CurrentPlannerTerms>;
-        setCurrentPlannerTerms({
-          1997: typeof parsed["1997"] === "string" ? parsed["1997"] : null,
-          2025: typeof parsed["2025"] === "string" ? parsed["2025"] : null,
-          "electrica-2023": typeof parsed["electrica-2023"] === "string" ? parsed["electrica-2023"] : null,
-          "civil-2021": typeof parsed["civil-2021"] === "string" ? parsed["civil-2021"] : null,
-          "qf-2015": typeof parsed["qf-2015"] === "string" ? parsed["qf-2015"] : null,
-        });
+        setCurrentPlannerTerms(createAcademicPlanRecord((planId) => typeof parsed[planId] === "string" ? parsed[planId] : null));
       }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
       if (savedVisualPreferences) {

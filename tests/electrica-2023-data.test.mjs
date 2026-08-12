@@ -6,6 +6,7 @@ const initial = JSON.parse(await readFile(new URL("../app/data/electrica-2023-fi
 const catalog = JSON.parse(await readFile(new URL("../app/data/electrica-2023-electivas.json", import.meta.url), "utf8"));
 const source = JSON.parse(await readFile(new URL("../data/fing/electrica-2023-trayectorias.json", import.meta.url), "utf8"));
 const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+const catalogSource = await readFile(new URL("../app/academic-catalog.ts", import.meta.url), "utf8");
 
 test("projects the official Plan 2023 identity without inventing an intermediate title", () => {
   assert.equal(initial.plan.year, "2023");
@@ -83,6 +84,6 @@ test("keeps source provenance and every trajectory reference resolvable", () => 
   for (const profile of Object.values(initial.profiles)) {
     for (const id of profile.semesters.flat()) assert.ok(ids.has(id), id);
   }
-  assert.match(pageSource, /type PlanId = "1997" \| "2025" \| "electrica-2023"/);
+  assert.match(catalogSource, /type PlanId = "1997" \| "2025" \| "electrica-2023"/);
   assert.match(pageSource, /course-activity/);
 });
