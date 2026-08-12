@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "careerPage": "https://www.fadu.edu.uy/carreras/arquitectura/informacion-general/",
+    "planDocument": "https://www.fadu.edu.uy/bedelia/files/2019/10/Plan-de-estudios-de-la-carrera-de-arquitectura-2015.pdf",
+    "creditStructure": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf",
+    "curriculumMap": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU.pdf",
+    "prerequisites": "https://www.fadu.edu.uy/comision-carrera-arq/files/2023/09/PREVIATURAS-2024_-Arquitectura-Plan-2015.pdf",
+    "reviewedAt": "2026-08-12",
+    "bedeliasSystem": "SGAE Bedelías",
+    "bedeliasExtractedAt": "2026-08-12T03:30:09.625Z",
+    "bedeliasContentHash": "5f9f5996f66a1c9154b51666c769a8cef3ad040436fc2f43c3e824ba0582c3c2",
+    "bedeliasPlanUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+  },
+  "plan": {
+    "year": "2015",
+    "current": true,
+    "degreeTitle": "Arquitecto",
+    "minCredits": 450,
+    "durationMonths": 60,
+    "campuses": [
+      "FADU, Bulevar Artigas 1031, Montevideo"
+    ],
+    "sharedWith": [],
+    "auditStatus": "audited",
+    "notice": "El Plan 2015 define una trayectoria flexible por etapas y mínimos, no una secuencia semestral única. Los bloques representan requisitos oficiales; el catálogo histórico y electivo crudo no se publica como oferta vigente.",
+    "bedeliasCompositionCourses": 2864,
+    "publishedRules": 0,
+    "partialRules": 0,
+    "noPublishedRule": 0
+  },
+  "creditStructure": {
+    "countingMode": "allocated",
+    "nodes": [
+      {
+        "id": "arq-initial",
+        "parentId": null,
+        "kind": "cycle",
+        "name": "Primer ciclo · Etapa inicial",
+        "shortName": "Etapa inicial",
+        "minCredits": 84,
+        "sourceStatus": "official",
+        "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+      },
+      {
+        "id": "arq-development",
+        "parentId": null,
+        "kind": "cycle",
+        "name": "Primer ciclo · Etapa de desarrollo",
+        "shortName": "Desarrollo",
+        "minCredits": 255,
+        "sourceStatus": "official",
+        "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+      },
+      {
+        "id": "arq-second",
+        "parentId": null,
+        "kind": "cycle",
+        "name": "Segundo ciclo preprofesional",
+        "shortName": "Segundo ciclo",
+        "minCredits": 63,
+        "sourceStatus": "official",
+        "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+      },
+      {
+        "id": "arq-flex",
+        "parentId": null,
+        "kind": "group",
+        "name": "Créditos flexibles",
+        "shortName": "Flexibles",
+        "minCredits": 48,
+        "sourceStatus": "official",
+        "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+      },
+      {
+        "id": "arq-opt",
+        "parentId": "arq-flex",
+        "kind": "category",
+        "name": "Optativas",
+        "shortName": "Optativas",
+        "minCredits": 38,
+        "sourceStatus": "official",
+        "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+      },
+      {
+        "id": "arq-elect",
+        "parentId": "arq-flex",
+        "kind": "category",
+        "name": "Electivas",
+        "shortName": "Electivas",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "architect",
+        "title": "Arquitecto",
+        "minTotalCredits": 450,
+        "nodeRequirements": [
+          {
+            "nodeId": "arq-initial",
+            "minCredits": 84
+          },
+          {
+            "nodeId": "arq-development",
+            "minCredits": 255
+          },
+          {
+            "nodeId": "arq-second",
+            "minCredits": 63
+          },
+          {
+            "nodeId": "arq-flex",
+            "minCredits": 48
+          },
+          {
+            "nodeId": "arq-opt",
+            "minCredits": 38
+          },
+          {
+            "nodeId": "arq-elect",
+            "minCredits": 10
+          }
+        ],
+        "requiredCourseGroups": [],
+        "requiredActivities": [],
+        "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2019/10/Plan-de-estudios-de-la-carrera-de-arquitectura-2015.pdf"
+      }
+    ]
+  },
+  "courses": [
+    {
+      "id": "arq-i-pr",
+      "name": "Proyecto y Representación · etapa inicial",
+      "credits": 48,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-initial",
+          "credits": 48,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-initial"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-i-tech",
+      "name": "Tecnología · etapa inicial",
+      "credits": 24,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-initial",
+          "credits": 24,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-initial"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-i-htc",
+      "name": "Historia, Teoría y Crítica · etapa inicial",
+      "credits": 6,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-initial",
+          "credits": 6,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-initial"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-i-trans",
+      "name": "Transversal I",
+      "credits": 6,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-initial",
+          "credits": 6,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-initial"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-d-pr",
+      "name": "Proyecto y Representación · desarrollo",
+      "credits": 120,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-development",
+          "credits": 120,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-development"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-d-tech",
+      "name": "Tecnología · desarrollo",
+      "credits": 63,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-development",
+          "credits": 63,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-development"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-d-htc",
+      "name": "Historia, Teoría y Crítica · desarrollo",
+      "credits": 48,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-development",
+          "credits": 48,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-development"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-d-trans",
+      "name": "Transversales II a V",
+      "credits": 24,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-development",
+          "credits": 24,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-development"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-pdo",
+      "name": "Práctica y Dirección de Obra",
+      "credits": 12,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-second",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-second"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-legal",
+      "name": "Arquitectura Legal",
+      "credits": 6,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-second",
+          "credits": 6,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-second"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-tfc",
+      "name": "Trabajo Final de Carrera",
+      "credits": 45,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-second",
+          "credits": 45,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-second"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-optatives",
+      "name": "Optativas del Plan 2015",
+      "credits": 38,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-opt",
+          "credits": 38,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-opt"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "arq-electives",
+      "name": "Electivas",
+      "credits": 10,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "arq-elect",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "arq-elect"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    }
+  ],
+  "pathways": {
+    "flexible": {
+      "label": "Trayectoria flexible oficial",
+      "description": "Organización vigente desde 2025, agrupada por etapas sin inventar una distribución semestral.",
+      "periods": [
+        {
+          "label": "Etapa inicial · 84 cr.",
+          "courseIds": [
+            "arq-i-pr",
+            "arq-i-tech",
+            "arq-i-htc",
+            "arq-i-trans"
+          ]
+        },
+        {
+          "label": "Desarrollo · 255 cr.",
+          "courseIds": [
+            "arq-d-pr",
+            "arq-d-tech",
+            "arq-d-htc",
+            "arq-d-trans"
+          ]
+        },
+        {
+          "label": "Segundo ciclo · 63 cr.",
+          "courseIds": [
+            "arq-pdo",
+            "arq-legal",
+            "arq-tfc"
+          ]
+        },
+        {
+          "label": "Flexibles · 48 cr.",
+          "courseIds": [
+            "arq-optatives",
+            "arq-electives"
+          ]
+        }
+      ]
+    }
+  },
+  "rules": [],
+  "audit": {
+    "officialAreaMinimums": {
+      "Proyecto y Representación": 207,
+      "Tecnología": 129,
+      "Historia, Teoría y Crítica": 66,
+      "Optativas y electivas": 48
+    },
+    "anomalies": [
+      "SGAE conserva Optativas de Inicio y sólo 10 créditos flexibles como mínimo; la organización 2025 exige 38 optativas y 10 electivas.",
+      "El catálogo SGAE es acumulativo y mezcla cursos históricos, equivalencias y oferta electiva; no se proyecta como oferta actual.",
+      "Las asignaciones parciales por área no deben confundirse con el crédito total de una unidad curricular."
+    ]
+  }
+}

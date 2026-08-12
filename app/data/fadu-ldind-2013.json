@@ -1,0 +1,907 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "careerPage": "https://www.fadu.edu.uy/carreras/ldind/informacion-general/",
+    "planDocument": "https://old.fadu.edu.uy/eucd/files/2014/06/Plan-de-Estudios-LIC_DIS_INDUSTRIAL.pdf",
+    "creditStructure": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf",
+    "productMap": "https://old.fadu.edu.uy/bedelia/files/2025/12/Producto.pdf",
+    "textileMap": "https://old.fadu.edu.uy/bedelia/files/2025/12/Textil.pdf",
+    "flexibleRule": "https://old.fadu.edu.uy/bedelia/files/2025/12/Res-11-Consejo-17-dic-2025.pdf",
+    "reviewedAt": "2026-08-12",
+    "bedeliasSystem": "SGAE Bedelías",
+    "bedeliasExtractedAt": "2026-08-12T05:07:36.490Z",
+    "bedeliasContentHash": "b8c2d5338b2cea4ca37c8aff0ec4d518dabfa1ed16c133d847501003571c47c3",
+    "bedeliasPlanUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+  },
+  "plan": {
+    "year": "2013",
+    "current": true,
+    "degreeTitle": "Licenciado en Diseño Industrial",
+    "minCredits": 360,
+    "durationMonths": 48,
+    "campuses": [
+      "EUCD Jackson, Montevideo",
+      "Aulario FARO, Montevideo",
+      "FADU, Montevideo"
+    ],
+    "sharedWith": [],
+    "auditStatus": "audited",
+    "notice": "El plan tiene un título único y dos perfiles. La vista conserva los mínimos oficiales por área y ciclo sin mezclar códigos históricos del catálogo SGAE.",
+    "bedeliasCompositionCourses": 813,
+    "publishedRules": 1,
+    "partialRules": 0,
+    "noPublishedRule": 0
+  },
+  "creditStructure": {
+    "countingMode": "allocated",
+    "nodes": [
+      {
+        "id": "ldi-project",
+        "parentId": null,
+        "kind": "area",
+        "name": "Área Proyectual",
+        "shortName": "Proyectual",
+        "minCredits": 149,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      },
+      {
+        "id": "ldi-theory",
+        "parentId": null,
+        "kind": "area",
+        "name": "Área Teórica-Metodológica",
+        "shortName": "Teórica",
+        "minCredits": 79,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      },
+      {
+        "id": "ldi-tech",
+        "parentId": null,
+        "kind": "area",
+        "name": "Área Tecnológica",
+        "shortName": "Tecnológica",
+        "minCredits": 65,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      },
+      {
+        "id": "ldi-management",
+        "parentId": null,
+        "kind": "area",
+        "name": "Gestión de Proyectos",
+        "shortName": "Gestión",
+        "minCredits": 20,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      },
+      {
+        "id": "ldi-degree",
+        "parentId": null,
+        "kind": "activity",
+        "name": "Trabajo de Grado",
+        "shortName": "Trabajo de Grado",
+        "minCredits": 12,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      },
+      {
+        "id": "ldi-flex",
+        "parentId": null,
+        "kind": "group",
+        "name": "Optativas y electivas",
+        "shortName": "Flexibles",
+        "minCredits": 35,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      },
+      {
+        "id": "ldi-opt",
+        "parentId": "ldi-flex",
+        "kind": "category",
+        "name": "Optativas",
+        "minCredits": 16,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      },
+      {
+        "id": "ldi-elect",
+        "parentId": "ldi-flex",
+        "kind": "category",
+        "name": "Electivas",
+        "minCredits": 10,
+        "sourceStatus": "official",
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "industrial-designer",
+        "title": "Licenciado en Diseño Industrial",
+        "minTotalCredits": 360,
+        "nodeRequirements": [
+          {
+            "nodeId": "ldi-project",
+            "minCredits": 149
+          },
+          {
+            "nodeId": "ldi-theory",
+            "minCredits": 79
+          },
+          {
+            "nodeId": "ldi-tech",
+            "minCredits": 65
+          },
+          {
+            "nodeId": "ldi-management",
+            "minCredits": 20
+          },
+          {
+            "nodeId": "ldi-degree",
+            "minCredits": 12
+          },
+          {
+            "nodeId": "ldi-flex",
+            "minCredits": 35
+          },
+          {
+            "nodeId": "ldi-opt",
+            "minCredits": 16
+          },
+          {
+            "nodeId": "ldi-elect",
+            "minCredits": 10
+          }
+        ],
+        "requiredCourseGroups": [],
+        "requiredActivities": [],
+        "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Plan-de-Estudios-LIC_DIS_INDUSTRIAL.pdf"
+      }
+    ]
+  },
+  "courses": [
+    {
+      "id": "ldi-i-project",
+      "name": "Ciclo de inicio · Área Proyectual",
+      "credits": 42,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-project",
+          "credits": 42,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-project"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-i-tech",
+      "name": "Ciclo de inicio · Área Tecnológica",
+      "credits": 10,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-tech",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-tech"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-i-theory",
+      "name": "Ciclo de inicio · Área Teórica-Metodológica",
+      "credits": 20,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-theory",
+          "credits": 20,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-theory"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-o-project",
+      "name": "Producto · Orientación · Área Proyectual",
+      "credits": 70,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-project",
+          "credits": 70,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-project"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-o-tech",
+      "name": "Producto · Orientación · Área Tecnológica",
+      "credits": 50,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-tech",
+          "credits": 50,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-tech"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-o-theory",
+      "name": "Producto · Orientación · Área Teórica-Metodológica",
+      "credits": 45,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-theory",
+          "credits": 45,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-theory"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-o-management",
+      "name": "Producto · Orientación · Gestión",
+      "credits": 9,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-management",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-management"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-e-project",
+      "name": "Producto · Egreso · Área Proyectual",
+      "credits": 37,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-project",
+          "credits": 37,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-project"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-e-tech",
+      "name": "Producto · Egreso · Área Tecnológica",
+      "credits": 5,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-tech",
+          "credits": 5,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-tech"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-e-theory",
+      "name": "Producto · Egreso · Área Teórica-Metodológica",
+      "credits": 14,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-theory",
+          "credits": 14,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-theory"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-p-e-management",
+      "name": "Producto · Egreso · Gestión",
+      "credits": 11,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-management",
+          "credits": 11,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-management"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-o-project",
+      "name": "Textil-Indumentaria · Orientación · Área Proyectual",
+      "credits": 74,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-project",
+          "credits": 74,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-project"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-o-tech",
+      "name": "Textil-Indumentaria · Orientación · Área Tecnológica",
+      "credits": 50,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-tech",
+          "credits": 50,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-tech"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-o-theory",
+      "name": "Textil-Indumentaria · Orientación · Área Teórica-Metodológica",
+      "credits": 45,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-theory",
+          "credits": 45,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-theory"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-o-management",
+      "name": "Textil-Indumentaria · Orientación · Gestión",
+      "credits": 9,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-management",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-management"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-e-project",
+      "name": "Textil-Indumentaria · Egreso · Área Proyectual",
+      "credits": 33,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-project",
+          "credits": 33,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-project"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-e-tech",
+      "name": "Textil-Indumentaria · Egreso · Área Tecnológica",
+      "credits": 5,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-tech",
+          "credits": 5,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-tech"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-e-theory",
+      "name": "Textil-Indumentaria · Egreso · Área Teórica-Metodológica",
+      "credits": 14,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-theory",
+          "credits": 14,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-theory"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-t-e-management",
+      "name": "Textil-Indumentaria · Egreso · Gestión",
+      "credits": 11,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-management",
+          "credits": 11,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-management"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-degree-work",
+      "bedeliasCode": "4500",
+      "name": "Trabajo de Grado",
+      "credits": 12,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-degree",
+          "credits": 12,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-degree"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "published"
+    },
+    {
+      "id": "ldi-optatives",
+      "name": "Optativas",
+      "credits": 16,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-opt",
+          "credits": 16,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-opt"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-electives",
+      "name": "Electivas",
+      "credits": 10,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-elect",
+          "credits": 10,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-elect"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    },
+    {
+      "id": "ldi-flex-free",
+      "name": "Optativas o electivas de elección libre",
+      "credits": 9,
+      "curricularBlock": true,
+      "creditAllocations": [
+        {
+          "nodeId": "ldi-flex",
+          "credits": 9,
+          "status": "official",
+          "sourceUrl": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf"
+        }
+      ],
+      "eligibleRequirementIds": [
+        "ldi-flex"
+      ],
+      "dataStatus": "fadu-official",
+      "ruleCoverage": "not-applicable"
+    }
+  ],
+  "pathways": {
+    "product": {
+      "label": "Perfil Producto",
+      "description": "Trayectoria oficial del perfil Producto, organizada por ciclos y mínimos.",
+      "periods": [
+        {
+          "label": "Ciclo de inicio · 72 cr. fijos",
+          "courseIds": [
+            "ldi-i-project",
+            "ldi-i-tech",
+            "ldi-i-theory"
+          ]
+        },
+        {
+          "label": "Orientación Producto · 174 cr. fijos",
+          "courseIds": [
+            "ldi-p-o-project",
+            "ldi-p-o-tech",
+            "ldi-p-o-theory",
+            "ldi-p-o-management"
+          ]
+        },
+        {
+          "label": "Egreso Producto · 79 cr. fijos",
+          "courseIds": [
+            "ldi-p-e-project",
+            "ldi-p-e-tech",
+            "ldi-p-e-theory",
+            "ldi-p-e-management",
+            "ldi-degree-work"
+          ]
+        },
+        {
+          "label": "Flexibles · 35 cr.",
+          "courseIds": [
+            "ldi-optatives",
+            "ldi-electives",
+            "ldi-flex-free"
+          ]
+        }
+      ]
+    },
+    "textile": {
+      "label": "Perfil Textil-Indumentaria",
+      "description": "Trayectoria oficial del perfil Textil-Indumentaria, organizada por ciclos y mínimos.",
+      "periods": [
+        {
+          "label": "Ciclo de inicio · 72 cr. fijos",
+          "courseIds": [
+            "ldi-i-project",
+            "ldi-i-tech",
+            "ldi-i-theory"
+          ]
+        },
+        {
+          "label": "Orientación Textil · 178 cr. fijos",
+          "courseIds": [
+            "ldi-t-o-project",
+            "ldi-t-o-tech",
+            "ldi-t-o-theory",
+            "ldi-t-o-management"
+          ]
+        },
+        {
+          "label": "Egreso Textil · 75 cr. fijos",
+          "courseIds": [
+            "ldi-t-e-project",
+            "ldi-t-e-tech",
+            "ldi-t-e-theory",
+            "ldi-t-e-management",
+            "ldi-degree-work"
+          ]
+        },
+        {
+          "label": "Flexibles · 35 cr.",
+          "courseIds": [
+            "ldi-optatives",
+            "ldi-electives",
+            "ldi-flex-free"
+          ]
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "target": {
+        "rowIndex": "0",
+        "code": "4500",
+        "name": "TRABAJO DE GRADO",
+        "assessment": "course"
+      },
+      "expression": {
+        "kind": "all",
+        "sourceType": "y",
+        "label": "debe tener todas",
+        "minimum": null,
+        "options": [],
+        "children": [
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 4140P - METODOLOGÍA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "4140P",
+                    "name": "METODOLOGÍA II",
+                    "raw": "U.C.B Aprobada: 4140P - METODOLOGÍA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed",
+                "groupApprovalRequirement": null,
+                "profileCreditRequirement": null,
+                "profileEnrollmentRequirement": null,
+                "creditOptionsRequirement": null
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 4140T - METODOLOGÍA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "4140T",
+                    "name": "METODOLOGÍA II",
+                    "raw": "U.C.B Aprobada: 4140T - METODOLOGÍA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed",
+                "groupApprovalRequirement": null,
+                "profileCreditRequirement": null,
+                "profileEnrollmentRequirement": null,
+                "creditOptionsRequirement": null
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 4140 - METODOLOGÍA II",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "4140",
+                    "name": "METODOLOGÍA II",
+                    "raw": "U.C.B Aprobada: 4140 - METODOLOGÍA II"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed",
+                "groupApprovalRequirement": null,
+                "profileCreditRequirement": null,
+                "profileEnrollmentRequirement": null,
+                "creditOptionsRequirement": null
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed",
+            "groupApprovalRequirement": null,
+            "profileCreditRequirement": null,
+            "profileEnrollmentRequirement": null,
+            "creditOptionsRequirement": null
+          },
+          {
+            "kind": "any",
+            "sourceType": "o",
+            "label": "debe tener alguna",
+            "minimum": null,
+            "options": [],
+            "children": [
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 4005T - DISEÑO IV (PERFIL TEXTIL)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "4005T",
+                    "name": "DISEÑO IV (PERFIL TEXTIL)",
+                    "raw": "U.C.B Aprobada: 4005T - DISEÑO IV (PERFIL TEXTIL)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed",
+                "groupApprovalRequirement": null,
+                "profileCreditRequirement": null,
+                "profileEnrollmentRequirement": null,
+                "creditOptionsRequirement": null
+              },
+              {
+                "kind": "requirement",
+                "sourceType": "default",
+                "label": "U.C.B Aprobada: 4005P - DISEÑO IV (PERFIL PRODUCTO)",
+                "minimum": 1,
+                "options": [
+                  {
+                    "assessment": "exam",
+                    "serviceCode": null,
+                    "code": "4005P",
+                    "name": "DISEÑO IV (PERFIL PRODUCTO)",
+                    "raw": "U.C.B Aprobada: 4005P - DISEÑO IV (PERFIL PRODUCTO)"
+                  }
+                ],
+                "children": [],
+                "creditRequirement": null,
+                "groupCreditRequirement": null,
+                "parserStatus": "parsed",
+                "groupApprovalRequirement": null,
+                "profileCreditRequirement": null,
+                "profileEnrollmentRequirement": null,
+                "creditOptionsRequirement": null
+              }
+            ],
+            "creditRequirement": null,
+            "groupCreditRequirement": null,
+            "parserStatus": "parsed",
+            "groupApprovalRequirement": null,
+            "profileCreditRequirement": null,
+            "profileEnrollmentRequirement": null,
+            "creditOptionsRequirement": null
+          }
+        ],
+        "creditRequirement": null,
+        "groupCreditRequirement": null,
+        "parserStatus": "parsed",
+        "groupApprovalRequirement": null,
+        "profileCreditRequirement": null,
+        "profileEnrollmentRequirement": null,
+        "creditOptionsRequirement": null
+      },
+      "heading": "Condiciones a cumplir para realizar el Curso de la U.C.B. - FADU - 4500 - TRABAJO DE GRADO",
+      "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarSistemaPreviatura/consultarSistemaPreviatura03.xhtml?cid=1"
+    }
+  ],
+  "audit": {
+    "canonicalCodes": [
+      "1021",
+      "1046",
+      "1900",
+      "1901",
+      "2016P",
+      "2016T",
+      "2076P",
+      "2076T",
+      "2086",
+      "2190",
+      "2020P",
+      "2020T",
+      "3015P",
+      "3015T",
+      "3076P",
+      "3076T",
+      "3086",
+      "3020P",
+      "3020T",
+      "4020P",
+      "4020T"
+    ],
+    "excludedHistoricalCodes": [
+      "1020",
+      "1040",
+      "1045",
+      "1050",
+      "2015P",
+      "2015T",
+      "2075P",
+      "2075T",
+      "2085P",
+      "2085T",
+      "3075P",
+      "3075T",
+      "3085P",
+      "3085T",
+      "ADI00"
+    ],
+    "anomalies": [
+      "SGAE publica un mínimo flexible de 24 que se solapa con optativas/electivas; la regla vigente desde abril de 2026 exige 35 totales, al menos 16 optativos y 10 electivos.",
+      "Las Unidades de Proyecto aparecen fragmentadas entre áreas y deben fusionarse antes de proyectar unidades curriculares individuales.",
+      "La metadata SGAE de 60 meses contradice el plan oficial de cuatro años."
+    ]
+  }
+}

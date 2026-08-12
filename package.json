@@ -22,7 +22,8 @@
     "bedelias:report": "node scripts/bedelias-service-report.mjs",
     "bedelias:audit-rules": "node scripts/audit-bedelias-rules.mjs",
     "bedelias:service": "node scripts/scrape-bedelias-service.mjs",
-    "bedelias:project:qf": "node scripts/build-quimico-farmaceutico-2015.mjs"
+    "bedelias:project:qf": "node scripts/build-quimico-farmaceutico-2015.mjs",
+    "bedelias:project:fadu": "node scripts/build-fadu-audited-plans.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-12",
+  "plans": [
+    {
+      "id": "fadu-arquitectura-2015",
+      "label": "Arquitectura · Plan 2015",
+      "outputFile": "fadu-arquitectura-2015.json",
+      "snapshotPath": "data/bedelias/fadu-arquitectura-2015.json",
+      "source": {
+        "careerPage": "https://www.fadu.edu.uy/carreras/arquitectura/informacion-general/",
+        "planDocument": "https://www.fadu.edu.uy/bedelia/files/2019/10/Plan-de-estudios-de-la-carrera-de-arquitectura-2015.pdf",
+        "creditStructure": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf",
+        "curriculumMap": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU.pdf",
+        "prerequisites": "https://www.fadu.edu.uy/comision-carrera-arq/files/2023/09/PREVIATURAS-2024_-Arquitectura-Plan-2015.pdf"
+      },
+      "plan": {
+        "year": "2015",
+        "current": true,
+        "degreeTitle": "Arquitecto",
+        "minCredits": 450,
+        "durationMonths": 60,
+        "campuses": ["FADU, Bulevar Artigas 1031, Montevideo"],
+        "sharedWith": []
+      },
+      "notice": "El Plan 2015 define una trayectoria flexible por etapas y mínimos, no una secuencia semestral única. Los bloques representan requisitos oficiales; el catálogo histórico y electivo crudo no se publica como oferta vigente.",
+      "creditStructure": {
+        "countingMode": "allocated",
+        "nodes": [
+          { "id": "arq-initial", "parentId": null, "kind": "cycle", "name": "Primer ciclo · Etapa inicial", "shortName": "Etapa inicial", "minCredits": 84 },
+          { "id": "arq-development", "parentId": null, "kind": "cycle", "name": "Primer ciclo · Etapa de desarrollo", "shortName": "Desarrollo", "minCredits": 255 },
+          { "id": "arq-second", "parentId": null, "kind": "cycle", "name": "Segundo ciclo preprofesional", "shortName": "Segundo ciclo", "minCredits": 63 },
+          { "id": "arq-flex", "parentId": null, "kind": "group", "name": "Créditos flexibles", "shortName": "Flexibles", "minCredits": 48 },
+          { "id": "arq-opt", "parentId": "arq-flex", "kind": "category", "name": "Optativas", "shortName": "Optativas", "minCredits": 38 },
+          { "id": "arq-elect", "parentId": "arq-flex", "kind": "category", "name": "Electivas", "shortName": "Electivas", "minCredits": 10 }
+        ],
+        "credentials": [{
+          "id": "architect",
+          "title": "Arquitecto",
+          "minTotalCredits": 450,
+          "nodeRequirements": [
+            { "nodeId": "arq-initial", "minCredits": 84 },
+            { "nodeId": "arq-development", "minCredits": 255 },
+            { "nodeId": "arq-second", "minCredits": 63 },
+            { "nodeId": "arq-flex", "minCredits": 48 },
+            { "nodeId": "arq-opt", "minCredits": 38 },
+            { "nodeId": "arq-elect", "minCredits": 10 }
+          ],
+          "requiredCourseGroups": [],
+          "requiredActivities": []
+        }]
+      },
+      "courses": [
+        { "id": "arq-i-pr", "name": "Proyecto y Representación · etapa inicial", "credits": 48, "allocations": { "arq-initial": 48 }, "curricularBlock": true },
+        { "id": "arq-i-tech", "name": "Tecnología · etapa inicial", "credits": 24, "allocations": { "arq-initial": 24 }, "curricularBlock": true },
+        { "id": "arq-i-htc", "name": "Historia, Teoría y Crítica · etapa inicial", "credits": 6, "allocations": { "arq-initial": 6 }, "curricularBlock": true },
+        { "id": "arq-i-trans", "name": "Transversal I", "credits": 6, "allocations": { "arq-initial": 6 }, "curricularBlock": true },
+        { "id": "arq-d-pr", "name": "Proyecto y Representación · desarrollo", "credits": 120, "allocations": { "arq-development": 120 }, "curricularBlock": true },
+        { "id": "arq-d-tech", "name": "Tecnología · desarrollo", "credits": 63, "allocations": { "arq-development": 63 }, "curricularBlock": true },
+        { "id": "arq-d-htc", "name": "Historia, Teoría y Crítica · desarrollo", "credits": 48, "allocations": { "arq-development": 48 }, "curricularBlock": true },
+        { "id": "arq-d-trans", "name": "Transversales II a V", "credits": 24, "allocations": { "arq-development": 24 }, "curricularBlock": true },
+        { "id": "arq-pdo", "name": "Práctica y Dirección de Obra", "credits": 12, "allocations": { "arq-second": 12 }, "curricularBlock": true },
+        { "id": "arq-legal", "name": "Arquitectura Legal", "credits": 6, "allocations": { "arq-second": 6 }, "curricularBlock": true },
+        { "id": "arq-tfc", "name": "Trabajo Final de Carrera", "credits": 45, "allocations": { "arq-second": 45 }, "curricularBlock": true },
+        { "id": "arq-optatives", "name": "Optativas del Plan 2015", "credits": 38, "allocations": { "arq-opt": 38 }, "curricularBlock": true },
+        { "id": "arq-electives", "name": "Electivas", "credits": 10, "allocations": { "arq-elect": 10 }, "curricularBlock": true }
+      ],
+      "pathways": {
+        "flexible": {
+          "label": "Trayectoria flexible oficial",
+          "description": "Organización vigente desde 2025, agrupada por etapas sin inventar una distribución semestral.",
+          "periods": [
+            { "label": "Etapa inicial · 84 cr.", "courseIds": ["arq-i-pr", "arq-i-tech", "arq-i-htc", "arq-i-trans"] },
+            { "label": "Desarrollo · 255 cr.", "courseIds": ["arq-d-pr", "arq-d-tech", "arq-d-htc", "arq-d-trans"] },
+            { "label": "Segundo ciclo · 63 cr.", "courseIds": ["arq-pdo", "arq-legal", "arq-tfc"] },
+            { "label": "Flexibles · 48 cr.", "courseIds": ["arq-optatives", "arq-electives"] }
+          ]
+        }
+      },
+      "audit": {
+        "officialAreaMinimums": { "Proyecto y Representación": 207, "Tecnología": 129, "Historia, Teoría y Crítica": 66, "Optativas y electivas": 48 },
+        "anomalies": [
+          "SGAE conserva Optativas de Inicio y sólo 10 créditos flexibles como mínimo; la organización 2025 exige 38 optativas y 10 electivas.",
+          "El catálogo SGAE es acumulativo y mezcla cursos históricos, equivalencias y oferta electiva; no se proyecta como oferta actual.",
+          "Las asignaciones parciales por área no deben confundirse con el crédito total de una unidad curricular."
+        ]
+      }
+    },
+    {
+      "id": "fadu-ldcv-2007",
+      "label": "Diseño de Comunicación Visual · Plan 2007",
+      "outputFile": "fadu-ldcv-2007.json",
+      "snapshotPath": "data/bedelias/fadu-licenciatura-en-diseno-de-comunicacion-visual-2007.json",
+      "source": {
+        "careerPage": "https://www.fadu.edu.uy/carreras/ldcv/informacion-general/",
+        "planDocument": "https://old.fadu.edu.uy/bedelia/files/2025/04/Plan-de-Estudios-LDCV-Resolucion-y-Diario-Oficial_0001.pdf",
+        "creditStructure": "https://www.fadu.edu.uy/ldcv/files/2023/08/Mapa-Curricular-de-la-LDCV.pdf",
+        "prerequisites": "https://www.fadu.edu.uy/bedelia/files/2026/07/20260727_Previaturas_LDCV_2026.pdf",
+        "planReview": "https://www.fadu.edu.uy/carreras/ldcv/revision-plan-de-estudios-ldcv/"
+      },
+      "plan": {
+        "year": "2007",
+        "current": true,
+        "degreeTitle": "Licenciado en Diseño de Comunicación Visual",
+        "minCredits": 363,
+        "durationMonths": 48,
+        "campuses": ["FADU, Montevideo", "Facultad de Artes, Montevideo"],
+        "sharedWith": ["Facultad de Artes"]
+      },
+      "notice": "La trayectoria incorpora el piloto de ingreso 2026 y conserva 363 créditos. El nuevo texto aprobado por el Claustro de FADU todavía no sustituyó al Plan 2007.",
+      "creditStructure": {
+        "countingMode": "allocated",
+        "nodes": [
+          { "id": "ldcv-proj", "parentId": null, "kind": "area", "name": "Área Proyectual", "shortName": "Proyectual", "minCredits": 205 },
+          { "id": "ldcv-proj-general", "parentId": "ldcv-proj", "kind": "group", "name": "General", "minCredits": 26 },
+          { "id": "ldcv-workshop", "parentId": "ldcv-proj", "kind": "group", "name": "Taller de Diseño de Comunicación Visual", "shortName": "Taller DCV", "minCredits": 80 },
+          { "id": "ldcv-mte", "parentId": "ldcv-proj", "kind": "group", "name": "Medios y Técnicas de Expresión I", "shortName": "MTE I", "minCredits": 13 },
+          { "id": "ldcv-type", "parentId": "ldcv-proj", "kind": "group", "name": "Tipografía", "minCredits": 32 },
+          { "id": "ldcv-syntax", "parentId": "ldcv-proj", "kind": "group", "name": "Sintaxis y Lenguaje Visual", "shortName": "Sintaxis", "minCredits": 16 },
+          { "id": "ldcv-seminar", "parentId": "ldcv-proj", "kind": "group", "name": "Seminario Interdisciplinario de Producto", "shortName": "Seminario", "minCredits": 6 },
+          { "id": "ldcv-pfc", "parentId": "ldcv-proj", "kind": "activity", "name": "Proyecto Final de Carrera", "shortName": "PFC", "minCredits": 20 },
+          { "id": "ldcv-thesis", "parentId": "ldcv-proj", "kind": "activity", "name": "Tesis", "minCredits": 12 },
+          { "id": "ldcv-tech", "parentId": null, "kind": "area", "name": "Área Tecnológica", "shortName": "Tecnológica", "minCredits": 67 },
+          { "id": "ldcv-tech-general", "parentId": "ldcv-tech", "kind": "group", "name": "General", "minCredits": 14 },
+          { "id": "ldcv-av", "parentId": "ldcv-tech", "kind": "group", "name": "Producción Audiovisual", "shortName": "Audiovisual", "minCredits": 24 },
+          { "id": "ldcv-graphic", "parentId": "ldcv-tech", "kind": "group", "name": "Producción Gráfica", "shortName": "Gráfica", "minCredits": 24 },
+          { "id": "ldcv-practice", "parentId": "ldcv-tech", "kind": "group", "name": "Práctica Profesional y Legislación", "shortName": "Práctica", "minCredits": 5 },
+          { "id": "ldcv-socio", "parentId": null, "kind": "area", "name": "Área Sociocultural y Comunicacional", "shortName": "Sociocultural", "minCredits": 78 },
+          { "id": "ldcv-initial", "parentId": "ldcv-socio", "kind": "group", "name": "Seminario Inicial", "minCredits": 6 },
+          { "id": "ldcv-socio-general", "parentId": "ldcv-socio", "kind": "group", "name": "General", "minCredits": 19 },
+          { "id": "ldcv-aesthetics", "parentId": "ldcv-socio", "kind": "group", "name": "Estética y Diseño", "minCredits": 12 },
+          { "id": "ldcv-history", "parentId": "ldcv-socio", "kind": "group", "name": "Teoría e Historia", "minCredits": 12 },
+          { "id": "ldcv-communication", "parentId": "ldcv-socio", "kind": "group", "name": "Comunicación", "minCredits": 24 },
+          { "id": "ldcv-methods", "parentId": "ldcv-socio", "kind": "group", "name": "Metodologías de Investigación", "shortName": "Metodologías", "minCredits": 5 },
+          { "id": "ldcv-flex", "parentId": null, "kind": "category", "name": "Opcionales y electivas", "shortName": "Opcionales", "minCredits": 13 }
+        ],
+        "credentials": [{
+          "id": "visual-designer",
+          "title": "Licenciado en Diseño de Comunicación Visual",
+          "minTotalCredits": 363,
+          "nodeRequirements": [
+            { "nodeId": "ldcv-proj", "minCredits": 205 }, { "nodeId": "ldcv-proj-general", "minCredits": 26 }, { "nodeId": "ldcv-workshop", "minCredits": 80 }, { "nodeId": "ldcv-mte", "minCredits": 13 }, { "nodeId": "ldcv-type", "minCredits": 32 }, { "nodeId": "ldcv-syntax", "minCredits": 16 }, { "nodeId": "ldcv-seminar", "minCredits": 6 }, { "nodeId": "ldcv-pfc", "minCredits": 20 }, { "nodeId": "ldcv-thesis", "minCredits": 12 },
+            { "nodeId": "ldcv-tech", "minCredits": 67 }, { "nodeId": "ldcv-tech-general", "minCredits": 14 }, { "nodeId": "ldcv-av", "minCredits": 24 }, { "nodeId": "ldcv-graphic", "minCredits": 24 }, { "nodeId": "ldcv-practice", "minCredits": 5 },
+            { "nodeId": "ldcv-socio", "minCredits": 78 }, { "nodeId": "ldcv-initial", "minCredits": 6 }, { "nodeId": "ldcv-socio-general", "minCredits": 19 }, { "nodeId": "ldcv-aesthetics", "minCredits": 12 }, { "nodeId": "ldcv-history", "minCredits": 12 }, { "nodeId": "ldcv-communication", "minCredits": 24 }, { "nodeId": "ldcv-methods", "minCredits": 5 },
+            { "nodeId": "ldcv-flex", "minCredits": 13 }
+          ],
+          "requiredCourseGroups": [],
+          "requiredActivities": []
+        }]
+      },
+      "courses": [
+        { "id": "G102", "bedeliasCode": "G102", "name": "Seminario Inicial", "credits": 6, "allocations": { "ldcv-initial": 6 } },
+        { "id": "L113", "bedeliasCode": "L113", "name": "Taller de Experiencias y Visualidades", "credits": 12, "allocations": { "ldcv-proj-general": 6, "ldcv-socio-general": 6 } },
+        { "id": "L114", "bedeliasCode": "L114", "name": "Taller de Diseño 1", "credits": 17, "allocations": { "ldcv-proj-general": 10, "ldcv-tech-general": 7 } },
+        { "id": "L117", "bedeliasCode": "L117", "name": "Taller de Diseño 2", "credits": 17, "allocations": { "ldcv-proj-general": 10, "ldcv-tech-general": 7 } },
+        { "id": "L112", "bedeliasCode": "L112", "name": "Medios y Técnicas de Expresión I · parte A", "credits": 8, "allocations": { "ldcv-mte": 8 } },
+        { "id": "L118", "bedeliasCode": "L118", "name": "Medios y Técnicas de Expresión I · parte B", "credits": 5, "allocations": { "ldcv-mte": 5 } },
+        { "id": "L116", "bedeliasCode": "L116", "name": "Problemas de Diseño", "credits": 7, "allocations": { "ldcv-socio-general": 7 } },
+        { "id": "L115", "bedeliasCode": "L115", "name": "Re-presentaciones: arte y cultura visual/material", "credits": 6, "allocations": { "ldcv-socio-general": 6 } },
+        { "id": "L120", "bedeliasCode": "L120", "name": "Diseño de Comunicación Visual I", "credits": 16, "allocations": { "ldcv-workshop": 16 } },
+        { "id": "L140", "bedeliasCode": "L140", "name": "Sintaxis y Lenguaje Visual I", "credits": 8, "allocations": { "ldcv-syntax": 8 } },
+        { "id": "L130", "bedeliasCode": "L130", "name": "Tipografía I", "credits": 8, "allocations": { "ldcv-type": 8 } },
+        { "id": "L340", "bedeliasCode": "L340", "name": "Comunicación I", "credits": 6, "allocations": { "ldcv-communication": 6 } },
+        { "id": "L230", "bedeliasCode": "L230", "name": "Producción Gráfica 2D I", "credits": 6, "allocations": { "ldcv-graphic": 6 } },
+        { "id": "L270", "bedeliasCode": "L270", "name": "Producción Audiovisual Interactiva I", "credits": 6, "allocations": { "ldcv-av": 6 } },
+        { "id": "L310", "bedeliasCode": "L310", "name": "Teoría e Historia del Diseño de Comunicación Visual I", "credits": 6, "allocations": { "ldcv-history": 6 } },
+        { "id": "L160", "bedeliasCode": "L160", "name": "Diseño de Comunicación Visual II", "credits": 16, "allocations": { "ldcv-workshop": 16 } },
+        { "id": "L150", "bedeliasCode": "L150", "name": "Sintaxis y Lenguaje Visual II", "credits": 8, "allocations": { "ldcv-syntax": 8 } },
+        { "id": "L200", "bedeliasCode": "L200", "name": "Tipografía II", "credits": 8, "allocations": { "ldcv-type": 8 } },
+        { "id": "L350", "bedeliasCode": "L350", "name": "Comunicación II", "credits": 6, "allocations": { "ldcv-communication": 6 } },
+        { "id": "L240", "bedeliasCode": "L240", "name": "Producción Gráfica 2D II", "credits": 6, "allocations": { "ldcv-graphic": 6 } },
+        { "id": "L280", "bedeliasCode": "L280", "name": "Producción Audiovisual Interactiva II", "credits": 6, "allocations": { "ldcv-av": 6 } },
+        { "id": "L430", "bedeliasCode": "L430", "name": "Estética y Diseño I", "credits": 6, "allocations": { "ldcv-aesthetics": 6 } },
+        { "id": "L170", "bedeliasCode": "L170", "name": "Diseño de Comunicación Visual III", "credits": 16, "allocations": { "ldcv-workshop": 16 } },
+        { "id": "L210", "bedeliasCode": "L210", "name": "Tipografía III", "credits": 8, "allocations": { "ldcv-type": 8 } },
+        { "id": "L360", "bedeliasCode": "L360", "name": "Comunicación III", "credits": 6, "allocations": { "ldcv-communication": 6 } },
+        { "id": "L250", "bedeliasCode": "L250", "name": "Producción Gráfica 3D I", "credits": 6, "allocations": { "ldcv-graphic": 6 } },
+        { "id": "L290", "bedeliasCode": "L290", "name": "Producción Audiovisual Cinética I", "credits": 6, "allocations": { "ldcv-av": 6 } },
+        { "id": "L440", "bedeliasCode": "L440", "name": "Estética y Diseño II", "credits": 6, "allocations": { "ldcv-aesthetics": 6 } },
+        { "id": "L180", "bedeliasCode": "L180", "name": "Diseño de Comunicación Visual IV", "credits": 16, "allocations": { "ldcv-workshop": 16 } },
+        { "id": "L220", "bedeliasCode": "L220", "name": "Tipografía IV", "credits": 8, "allocations": { "ldcv-type": 8 } },
+        { "id": "L370", "bedeliasCode": "L370", "name": "Comunicación IV", "credits": 6, "allocations": { "ldcv-communication": 6 } },
+        { "id": "L260", "bedeliasCode": "L260", "name": "Producción Gráfica 3D II", "credits": 6, "allocations": { "ldcv-graphic": 6 } },
+        { "id": "L300", "bedeliasCode": "L300", "name": "Producción Audiovisual Cinética II", "credits": 6, "allocations": { "ldcv-av": 6 } },
+        { "id": "L320", "bedeliasCode": "L320", "name": "Teoría e Historia del Diseño de Comunicación Visual II", "credits": 6, "allocations": { "ldcv-history": 6 } },
+        { "id": "L380", "bedeliasCode": "L380", "name": "Seminario Interdisciplinario de Producto", "credits": 6, "allocations": { "ldcv-seminar": 6 } },
+        { "id": "L190", "bedeliasCode": "L190", "name": "Diseño de Comunicación Visual V", "credits": 16, "allocations": { "ldcv-workshop": 16 } },
+        { "id": "L390", "bedeliasCode": "L390", "name": "Metodologías de Investigación", "credits": 5, "allocations": { "ldcv-methods": 5 } },
+        { "id": "L400", "bedeliasCode": "L400", "name": "Práctica Profesional y Legislación", "credits": 5, "allocations": { "ldcv-practice": 5 } },
+        { "id": "L410", "bedeliasCode": "L410", "name": "Proyecto Final de Carrera", "credits": 20, "allocations": { "ldcv-pfc": 20 } },
+        { "id": "L420", "bedeliasCode": "L420", "name": "Tesis", "credits": 12, "allocations": { "ldcv-thesis": 12 } },
+        { "id": "ldcv-flexible", "name": "Opcionales y electivas", "credits": 13, "allocations": { "ldcv-flex": 13 }, "curricularBlock": true }
+      ],
+      "pathways": {
+        "current-2026": {
+          "label": "Trayectoria vigente 2026",
+          "description": "Recorrido oficial de cuatro años con el piloto de ingreso vigente desde 2026.",
+          "periods": [
+            { "label": "Primer año · 78 cr.", "courseIds": ["G102", "L113", "L114", "L117", "L112", "L118", "L116", "L115"] },
+            { "label": "Segundo año · 112 cr.", "courseIds": ["L120", "L140", "L130", "L340", "L230", "L270", "L310", "L160", "L150", "L200", "L350", "L240", "L280", "L430"] },
+            { "label": "Tercer año · 102 cr.", "courseIds": ["L170", "L210", "L360", "L250", "L290", "L440", "L180", "L220", "L370", "L260", "L300", "L320", "L380"] },
+            { "label": "Cuarto año · 71 cr.", "courseIds": ["L190", "L390", "L400", "L410", "L420", "ldcv-flexible"] }
+          ]
+        }
+      },
+      "audit": {
+        "anomalies": [
+          "La página informativa resume 360 créditos, pero el plan aprobado, SGAE, el mapa y Facultad de Artes exigen 363.",
+          "SGAE guarda L113, L114 y L117 como asignaciones parciales; sus créditos totales vigentes son 12, 17 y 17.",
+          "El mapa 2023 conserva el ingreso anterior y se reemplaza para primer año por el piloto 2026."
+        ]
+      }
+    },
+    {
+      "id": "fadu-ldind-2013",
+      "label": "Diseño Industrial · Plan 2013",
+      "outputFile": "fadu-ldind-2013.json",
+      "snapshotPath": "data/bedelias/fadu-licenciatura-en-diseno-industrial-2013.json",
+      "source": {
+        "careerPage": "https://www.fadu.edu.uy/carreras/ldind/informacion-general/",
+        "planDocument": "https://old.fadu.edu.uy/eucd/files/2014/06/Plan-de-Estudios-LIC_DIS_INDUSTRIAL.pdf",
+        "creditStructure": "https://old.fadu.edu.uy/eucd/files/2014/06/Organizacion_plandeestudios_2013_Modificacio%CC%81n_nov2018.pdf",
+        "productMap": "https://old.fadu.edu.uy/bedelia/files/2025/12/Producto.pdf",
+        "textileMap": "https://old.fadu.edu.uy/bedelia/files/2025/12/Textil.pdf",
+        "flexibleRule": "https://old.fadu.edu.uy/bedelia/files/2025/12/Res-11-Consejo-17-dic-2025.pdf"
+      },
+      "plan": {
+        "year": "2013",
+        "current": true,
+        "degreeTitle": "Licenciado en Diseño Industrial",
+        "minCredits": 360,
+        "durationMonths": 48,
+        "campuses": ["EUCD Jackson, Montevideo", "Aulario FARO, Montevideo", "FADU, Montevideo"],
+        "sharedWith": []
+      },
+      "notice": "El plan tiene un título único y dos perfiles. La vista conserva los mínimos oficiales por área y ciclo sin mezclar códigos históricos del catálogo SGAE.",
+      "creditStructure": {
+        "countingMode": "allocated",
+        "nodes": [
+          { "id": "ldi-project", "parentId": null, "kind": "area", "name": "Área Proyectual", "shortName": "Proyectual", "minCredits": 149 },
+          { "id": "ldi-theory", "parentId": null, "kind": "area", "name": "Área Teórica-Metodológica", "shortName": "Teórica", "minCredits": 79 },
+          { "id": "ldi-tech", "parentId": null, "kind": "area", "name": "Área Tecnológica", "shortName": "Tecnológica", "minCredits": 65 },
+          { "id": "ldi-management", "parentId": null, "kind": "area", "name": "Gestión de Proyectos", "shortName": "Gestión", "minCredits": 20 },
+          { "id": "ldi-degree", "parentId": null, "kind": "activity", "name": "Trabajo de Grado", "shortName": "Trabajo de Grado", "minCredits": 12 },
+          { "id": "ldi-flex", "parentId": null, "kind": "group", "name": "Optativas y electivas", "shortName": "Flexibles", "minCredits": 35 },
+          { "id": "ldi-opt", "parentId": "ldi-flex", "kind": "category", "name": "Optativas", "minCredits": 16 },
+          { "id": "ldi-elect", "parentId": "ldi-flex", "kind": "category", "name": "Electivas", "minCredits": 10 }
+        ],
+        "credentials": [{
+          "id": "industrial-designer",
+          "title": "Licenciado en Diseño Industrial",
+          "minTotalCredits": 360,
+          "nodeRequirements": [
+            { "nodeId": "ldi-project", "minCredits": 149 }, { "nodeId": "ldi-theory", "minCredits": 79 }, { "nodeId": "ldi-tech", "minCredits": 65 }, { "nodeId": "ldi-management", "minCredits": 20 }, { "nodeId": "ldi-degree", "minCredits": 12 }, { "nodeId": "ldi-flex", "minCredits": 35 }, { "nodeId": "ldi-opt", "minCredits": 16 }, { "nodeId": "ldi-elect", "minCredits": 10 }
+          ],
+          "requiredCourseGroups": [],
+          "requiredActivities": []
+        }]
+      },
+      "courses": [
+        { "id": "ldi-i-project", "name": "Ciclo de inicio · Área Proyectual", "credits": 42, "allocations": { "ldi-project": 42 }, "curricularBlock": true },
+        { "id": "ldi-i-tech", "name": "Ciclo de inicio · Área Tecnológica", "credits": 10, "allocations": { "ldi-tech": 10 }, "curricularBlock": true },
+        { "id": "ldi-i-theory", "name": "Ciclo de inicio · Área Teórica-Metodológica", "credits": 20, "allocations": { "ldi-theory": 20 }, "curricularBlock": true },
+        { "id": "ldi-p-o-project", "name": "Producto · Orientación · Área Proyectual", "credits": 70, "allocations": { "ldi-project": 70 }, "curricularBlock": true },
+        { "id": "ldi-p-o-tech", "name": "Producto · Orientación · Área Tecnológica", "credits": 50, "allocations": { "ldi-tech": 50 }, "curricularBlock": true },
+        { "id": "ldi-p-o-theory", "name": "Producto · Orientación · Área Teórica-Metodológica", "credits": 45, "allocations": { "ldi-theory": 45 }, "curricularBlock": true },
+        { "id": "ldi-p-o-management", "name": "Producto · Orientación · Gestión", "credits": 9, "allocations": { "ldi-management": 9 }, "curricularBlock": true },
+        { "id": "ldi-p-e-project", "name": "Producto · Egreso · Área Proyectual", "credits": 37, "allocations": { "ldi-project": 37 }, "curricularBlock": true },
+        { "id": "ldi-p-e-tech", "name": "Producto · Egreso · Área Tecnológica", "credits": 5, "allocations": { "ldi-tech": 5 }, "curricularBlock": true },
+        { "id": "ldi-p-e-theory", "name": "Producto · Egreso · Área Teórica-Metodológica", "credits": 14, "allocations": { "ldi-theory": 14 }, "curricularBlock": true },
+        { "id": "ldi-p-e-management", "name": "Producto · Egreso · Gestión", "credits": 11, "allocations": { "ldi-management": 11 }, "curricularBlock": true },
+        { "id": "ldi-t-o-project", "name": "Textil-Indumentaria · Orientación · Área Proyectual", "credits": 74, "allocations": { "ldi-project": 74 }, "curricularBlock": true },
+        { "id": "ldi-t-o-tech", "name": "Textil-Indumentaria · Orientación · Área Tecnológica", "credits": 50, "allocations": { "ldi-tech": 50 }, "curricularBlock": true },
+        { "id": "ldi-t-o-theory", "name": "Textil-Indumentaria · Orientación · Área Teórica-Metodológica", "credits": 45, "allocations": { "ldi-theory": 45 }, "curricularBlock": true },
+        { "id": "ldi-t-o-management", "name": "Textil-Indumentaria · Orientación · Gestión", "credits": 9, "allocations": { "ldi-management": 9 }, "curricularBlock": true },
+        { "id": "ldi-t-e-project", "name": "Textil-Indumentaria · Egreso · Área Proyectual", "credits": 33, "allocations": { "ldi-project": 33 }, "curricularBlock": true },
+        { "id": "ldi-t-e-tech", "name": "Textil-Indumentaria · Egreso · Área Tecnológica", "credits": 5, "allocations": { "ldi-tech": 5 }, "curricularBlock": true },
+        { "id": "ldi-t-e-theory", "name": "Textil-Indumentaria · Egreso · Área Teórica-Metodológica", "credits": 14, "allocations": { "ldi-theory": 14 }, "curricularBlock": true },
+        { "id": "ldi-t-e-management", "name": "Textil-Indumentaria · Egreso · Gestión", "credits": 11, "allocations": { "ldi-management": 11 }, "curricularBlock": true },
+        { "id": "ldi-degree-work", "bedeliasCode": "4500", "name": "Trabajo de Grado", "credits": 12, "allocations": { "ldi-degree": 12 } },
+        { "id": "ldi-optatives", "name": "Optativas", "credits": 16, "allocations": { "ldi-opt": 16 }, "curricularBlock": true },
+        { "id": "ldi-electives", "name": "Electivas", "credits": 10, "allocations": { "ldi-elect": 10 }, "curricularBlock": true },
+        { "id": "ldi-flex-free", "name": "Optativas o electivas de elección libre", "credits": 9, "allocations": { "ldi-flex": 9 }, "curricularBlock": true }
+      ],
+      "pathways": {
+        "product": {
+          "label": "Perfil Producto",
+          "description": "Trayectoria oficial del perfil Producto, organizada por ciclos y mínimos.",
+          "periods": [
+            { "label": "Ciclo de inicio · 72 cr. fijos", "courseIds": ["ldi-i-project", "ldi-i-tech", "ldi-i-theory"] },
+            { "label": "Orientación Producto · 174 cr. fijos", "courseIds": ["ldi-p-o-project", "ldi-p-o-tech", "ldi-p-o-theory", "ldi-p-o-management"] },
+            { "label": "Egreso Producto · 79 cr. fijos", "courseIds": ["ldi-p-e-project", "ldi-p-e-tech", "ldi-p-e-theory", "ldi-p-e-management", "ldi-degree-work"] },
+            { "label": "Flexibles · 35 cr.", "courseIds": ["ldi-optatives", "ldi-electives", "ldi-flex-free"] }
+          ]
+        },
+        "textile": {
+          "label": "Perfil Textil-Indumentaria",
+          "description": "Trayectoria oficial del perfil Textil-Indumentaria, organizada por ciclos y mínimos.",
+          "periods": [
+            { "label": "Ciclo de inicio · 72 cr. fijos", "courseIds": ["ldi-i-project", "ldi-i-tech", "ldi-i-theory"] },
+            { "label": "Orientación Textil · 178 cr. fijos", "courseIds": ["ldi-t-o-project", "ldi-t-o-tech", "ldi-t-o-theory", "ldi-t-o-management"] },
+            { "label": "Egreso Textil · 75 cr. fijos", "courseIds": ["ldi-t-e-project", "ldi-t-e-tech", "ldi-t-e-theory", "ldi-t-e-management", "ldi-degree-work"] },
+            { "label": "Flexibles · 35 cr.", "courseIds": ["ldi-optatives", "ldi-electives", "ldi-flex-free"] }
+          ]
+        }
+      },
+      "audit": {
+        "canonicalCodes": ["1021", "1046", "1900", "1901", "2016P", "2016T", "2076P", "2076T", "2086", "2190", "2020P", "2020T", "3015P", "3015T", "3076P", "3076T", "3086", "3020P", "3020T", "4020P", "4020T"],
+        "excludedHistoricalCodes": ["1020", "1040", "1045", "1050", "2015P", "2015T", "2075P", "2075T", "2085P", "2085T", "3075P", "3075T", "3085P", "3085T", "ADI00"],
+        "anomalies": [
+          "SGAE publica un mínimo flexible de 24 que se solapa con optativas/electivas; la regla vigente desde abril de 2026 exige 35 totales, al menos 16 optativos y 10 electivos.",
+          "Las Unidades de Proyecto aparecen fragmentadas entre áreas y deben fusionarse antes de proyectar unidades curriculares individuales.",
+          "La metadata SGAE de 60 meses contradice el plan oficial de cuatro años."
+        ]
+      }
+    }
+  ]
+}
