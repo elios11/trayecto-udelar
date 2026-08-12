@@ -45,12 +45,13 @@ test("los snapshots FADU superan el contrato estructural automático", () => {
   }
 });
 
-test("el manifiesto mantiene FADU fuera de publicación hasta la auditoría oficial", () => {
+test("el manifiesto habilita sólo las proyecciones FADU con auditoría oficial", () => {
   const fadu = manifest.services.find((service) => service.code === "FADU");
   assert.ok(fadu);
   assert.equal(fadu.counts.plans, 3);
-  assert.deepEqual(fadu.counts.byState, { "structurally-valid": 3 });
-  assert.ok(fadu.plans.every((plan) => plan.state === "structurally-valid"));
-  assert.ok(fadu.plans.every((plan) => plan.coverage.officialSources === "pending"));
+  assert.deepEqual(fadu.counts.byState, { audited: 3 });
+  assert.ok(fadu.plans.every((plan) => plan.state === "audited"));
+  assert.ok(fadu.plans.every((plan) => plan.coverage.officialSources === "audited"));
+  assert.ok(fadu.plans.every((plan) => plan.stateEvidence.source === "docs/fadu-auditoria-oficial.md"));
   assert.ok(fadu.plans.every((plan) => plan.site === null));
 });

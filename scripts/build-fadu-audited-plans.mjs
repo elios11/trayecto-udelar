@@ -130,6 +130,7 @@ for (const plan of source.plans) {
     courses,
     pathways: plan.pathways,
     rules: publishedRules,
+    requirementGroupMap: plan.requirementGroupMap ?? {},
     audit: plan.audit,
   };
 

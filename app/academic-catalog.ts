@@ -1,8 +1,8 @@
-export type CredentialId = "analyst" | "engineer" | "pharmacist";
+export type CredentialId = "analyst" | "engineer" | "pharmacist" | "architect" | "visual-designer" | "industrial-designer";
 
-export type PlanId = "1997" | "2025" | "electrica-2023" | "civil-2021" | "qf-2015";
-export type FacultyId = "fing" | "fq";
-export type CareerId = "computacion" | "electrica" | "civil" | "quimica-farmaceutica";
+export type PlanId = "1997" | "2025" | "electrica-2023" | "civil-2021" | "qf-2015" | "fadu-arquitectura-2015" | "fadu-ldcv-2007" | "fadu-ldind-2013";
+export type FacultyId = "fing" | "fq" | "fadu";
+export type CareerId = "computacion" | "electrica" | "civil" | "quimica-farmaceutica" | "arquitectura" | "ldcv" | "ldind";
 
 export type AcademicPlanOption = {
   id: PlanId;
@@ -60,6 +60,27 @@ export const academicCatalog: AcademicFacultyOption[] = [
       label: "Química Farmacéutica",
       plans: [{ id: "qf-2015", label: "Plan 2015 · vigente", defaultTrajectoryId: "suggested", defaultCredentialId: "pharmacist" }],
     }],
+  },
+  {
+    id: "fadu",
+    label: "Facultad de Arquitectura, Diseño y Urbanismo",
+    careers: [
+      {
+        id: "arquitectura",
+        label: "Arquitectura",
+        plans: [{ id: "fadu-arquitectura-2015", label: "Plan 2015 · vigente", defaultTrajectoryId: "flexible", defaultCredentialId: "architect" }],
+      },
+      {
+        id: "ldcv",
+        label: "Licenciatura en Diseño de Comunicación Visual",
+        plans: [{ id: "fadu-ldcv-2007", label: "Plan 2007 · vigente", defaultTrajectoryId: "current-2026", defaultCredentialId: "visual-designer" }],
+      },
+      {
+        id: "ldind",
+        label: "Licenciatura en Diseño Industrial",
+        plans: [{ id: "fadu-ldind-2013", label: "Plan 2013 · vigente", defaultTrajectoryId: "product", defaultCredentialId: "industrial-designer" }],
+      },
+    ],
   },
 ];
 

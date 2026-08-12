@@ -4,6 +4,7 @@ import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
 import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, type CredentialId, type PlanId } from "./academic-catalog";
+import { isRegisteredAcademicPlan, isRegisteredPathway, loadRegisteredAcademicPlan, registeredAcademicPlans } from "./academic-plan-registry";
 import { resolveAcademicOption } from "./academic-option.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
@@ -60,12 +61,13 @@ type Course = {
   elective?: boolean;
   placementTest?: boolean;
   engineeringOnly?: boolean;
-  dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption" | "fq-damero";
+  dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption" | "fq-damero" | "fadu-official";
   bedeliasCode?: string;
   core?: boolean;
   placeholder?: boolean;
   serviceCode?: string | null;
-  ruleCoverage?: "published" | "partial" | "not-published" | "not-scraped";
+  ruleCoverage?: "published" | "partial" | "not-published" | "not-scraped" | "not-applicable";
+  curricularBlock?: boolean;
   offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null };
 };
 
@@ -156,6 +158,18 @@ type Qf2015CatalogProjection = {
   source: { system: string; extractedAt: string; planUrl: string; contentHash: string; optativesCatalog: string; electivesCatalog: string };
   courses: Array<{ id: string; serviceCode: string | null; bedeliasCode: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; offered: Array<"impar" | "par" | "libre">; elective: boolean; dataStatus: "bedelias-composition"; ruleCoverage: Course["ruleCoverage"] }>;
   rules: VerifiedRule[];
+};
+
+type FaduProjection = {
+  schemaVersion: number;
+  source: { reviewedAt: string; careerPage: string; planDocument: string; bedeliasExtractedAt: string; bedeliasContentHash: string };
+  plan: { year: string; current: boolean; degreeTitle: string; minCredits: number; durationMonths: number; campuses: string[]; sharedWith: string[]; auditStatus: "audited"; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
+  creditStructure: CreditStructure;
+  courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
+  pathways: Record<string, { label: string; description: string; periods: Array<{ label: string; courseIds: string[] }> }>;
+  rules: VerifiedRule[];
+  requirementGroupMap: Record<string, string>;
+  audit: { anomalies: string[] };
 };
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
@@ -317,6 +331,17 @@ function buildQf2015Catalog(trajectoryId: string, planData: Qf2015Projection | n
     .filter((course) => !ids.has(course.id) && !bedeliasCodes.has(course.bedeliasCode))
     .map((course) => ({ ...course, semester: "opt" as const }));
   return [...trajectoryCourses, ...catalog];
+}
+
+function buildRegisteredPlanCourses(pathwayId: string, data: FaduProjection | null): Course[] {
+  if (!data) return [];
+  const pathway = resolveAcademicOption(data.pathways, pathwayId, Object.keys(data.pathways)[0] ?? "");
+  if (!pathway) return [];
+  const periods = new Map<string, number>();
+  pathway.periods.forEach((period, index) => period.courseIds.forEach((id) => periods.set(id, index + 1)));
+  return data.courses
+    .filter((course) => periods.has(course.id))
+    .map((course) => ({ ...course, semester: periods.get(course.id)!, offered: [] }));
 }
 
 function optionSatisfied(option: RequirementOption, statuses: Record<string, CourseStatus>) {
@@ -545,6 +570,8 @@ export default function Home() {
   const [qfPlanLoadState, setQfPlanLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [qfCatalogData, setQfCatalogData] = useState<Qf2015CatalogProjection | null>(null);
   const [qfCatalogLoadState, setQfCatalogLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
+  const [registeredPlanData, setRegisteredPlanData] = useState<Partial<Record<PlanId, FaduProjection>>>({});
+  const [registeredPlanLoadStates, setRegisteredPlanLoadStates] = useState<Partial<Record<PlanId, "idle" | "loading" | "loaded" | "error">>>({});
   const [fullElectivesCatalogExpanded, setFullElectivesCatalogExpanded] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [curriculumEdges, setCurriculumEdges] = useState({ atStart: true, atEnd: false });
@@ -574,6 +601,7 @@ export default function Home() {
   const civilPlanPromiseRef = useRef<Promise<Civil2021Projection | null> | null>(null);
   const qfPlanPromiseRef = useRef<Promise<Qf2015Projection | null> | null>(null);
   const qfCatalogPromiseRef = useRef<Promise<Qf2015CatalogProjection | null> | null>(null);
+  const registeredPlanPromisesRef = useRef<Partial<Record<PlanId, Promise<FaduProjection | null>>>>({});
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
 
 
@@ -728,9 +756,37 @@ export default function Home() {
     qfCatalogPromiseRef.current = request;
     return request;
   }, [qfCatalogData]);
+  const loadRegisteredPlan = useCallback(async (planId: PlanId): Promise<FaduProjection | null> => {
+    if (!isRegisteredAcademicPlan(planId)) return null;
+    if (registeredPlanData[planId]) return registeredPlanData[planId] ?? null;
+    if (registeredPlanPromisesRef.current[planId]) return registeredPlanPromisesRef.current[planId] ?? null;
+    setRegisteredPlanLoadStates((current) => ({ ...current, [planId]: "loading" }));
+    const request = (async () => {
+      try {
+        const projection = await loadRegisteredAcademicPlan(planId) as FaduProjection | null;
+        if (!projection || projection.plan.auditStatus !== "audited") throw new Error("Plan no auditado");
+        setRegisteredPlanData((current) => ({ ...current, [planId]: projection }));
+        setRegisteredPlanLoadStates((current) => ({ ...current, [planId]: "loaded" }));
+        return projection;
+      } catch {
+        setRegisteredPlanLoadStates((current) => ({ ...current, [planId]: "error" }));
+        return null;
+      } finally {
+        delete registeredPlanPromisesRef.current[planId];
+      }
+    })();
+    registeredPlanPromisesRef.current[planId] = request;
+    return request;
+  }, [registeredPlanData]);
+  const isRegisteredPlan = isRegisteredAcademicPlan(planYear);
+  const activeRegisteredPlan = registeredPlanData[planYear] ?? null;
   const activeFaculty = academicCatalog.find((faculty) => faculty.careers.some((career) => career.plans.some((plan) => plan.id === planYear))) ?? academicCatalog[0];
   const activeCareer = activeFaculty.careers.find((career) => career.plans.some((plan) => plan.id === planYear)) ?? activeFaculty.careers[0];
   const selectAcademicPlan = async (nextPlan: AcademicPlanOption) => {
+    if (isRegisteredAcademicPlan(nextPlan.id) && !await loadRegisteredPlan(nextPlan.id)) {
+      setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar el plan nuevamente. Tu progreso no se modificó." });
+      return;
+    }
     if (nextPlan.id === "electrica-2023" && !await loadElectricPlan()) {
       setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Ingeniería Eléctrica nuevamente. Tu progreso no se modificó." });
       return;
@@ -793,16 +849,21 @@ export default function Home() {
   const profileCatalogCourseIds = useMemo(() => new Set((activeProfileCatalogData?.courses ?? []).map((course) => course.id)), [activeProfileCatalogData]);
   const qf2015AvailableCourses = useMemo(() => buildQf2015Catalog(trajectoryId, qf2015Data, qfCatalogData), [trajectoryId, qf2015Data, qfCatalogData]);
   const qfCatalogCourseIds = useMemo(() => new Set((qfCatalogData?.courses ?? []).map((course) => course.id)), [qfCatalogData]);
+  const registeredAvailableCourses = useMemo(() => buildRegisteredPlanCourses(trajectoryId, activeRegisteredPlan), [trajectoryId, activeRegisteredPlan]);
   const courses = useMemo(
-    () => planYear === "2025"
+    () => isRegisteredPlan
+      ? registeredAvailableCourses
+      : planYear === "2025"
       ? buildPlan2025Courses(trajectoryId)
       : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : plan1997AvailableCourses,
-    [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses],
+    [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses, isRegisteredPlan, registeredAvailableCourses],
   );
-  const plannerCourses = useMemo<Course[]>(() => planYear === "2025"
+  const plannerCourses = useMemo<Course[]>(() => isRegisteredPlan
+    ? registeredAvailableCourses
+    : planYear === "2025"
     ? plan2025CatalogCourses
     : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : plan1997AvailableCourses,
-  [planYear, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses]);
+  [planYear, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses, isRegisteredPlan, registeredAvailableCourses]);
   const plannerTerms = plannerPlans[planYear];
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
@@ -828,6 +889,7 @@ export default function Home() {
   }, [progress, planYear, trajectoryId]);
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
+    if (isRegisteredPlan && activeRegisteredPlan) return new Map<string, unknown>(activeRegisteredPlan.courses.map((course) => [course.id, course]));
     if (planYear === "2025") return new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]));
     if (isProfilePlan && activeProfileData) {
       const merged = new Map<string, unknown>(activeProfileData.courses.map((course) => [course.id, course]));
@@ -842,30 +904,39 @@ export default function Home() {
     const merged = new Map<string, unknown>(plan1997VerifiedCourses);
     for (const course of extendedElectivesData?.courses ?? []) merged.set(course.id, course);
     return merged;
-  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
+  }, [planYear, isProfilePlan, isRegisteredPlan, activeRegisteredPlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
   const verifiedRules = useMemo(() => {
-    const rules = planYear === "2025"
+    const rules = isRegisteredPlan
+      ? (activeRegisteredPlan?.rules ?? [])
+      : planYear === "2025"
       ? plan2025Data.rules
       : isProfilePlan
         ? [...(activeProfileData?.rules ?? []), ...(activeProfileCatalogData?.rules ?? [])]
         : planYear === "qf-2015" ? [...(qf2015Data?.rules ?? []), ...(qfCatalogData?.rules ?? [])] : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
     return new Map(rules.filter((rule) => isRequirementExpressionEvaluable(rule.expression)).map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
-  }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
-  const creditStructure = planYear === "2025"
+  }, [planYear, isProfilePlan, isRegisteredPlan, activeRegisteredPlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
+  const creditStructure = isRegisteredPlan
+    ? (activeRegisteredPlan?.creditStructure ?? plan2025Data.creditStructure)
+    : planYear === "2025"
     ? plan2025Data.creditStructure
     : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const activePlan2025Trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
+  const activeRegisteredPathway = activeRegisteredPlan?.pathways[trajectoryId] ?? Object.values(activeRegisteredPlan?.pathways ?? {})[0];
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
   const credential = creditStructure.credentials.find((item) => item.id === credentialId) ?? creditStructure.credentials[0];
   const credentialTargets = useMemo(() => new Map(credential.nodeRequirements.map((item) => [item.nodeId, item])), [credential]);
-  const semesters = planYear === "2025"
+  const semesters = isRegisteredPlan
+    ? (activeRegisteredPlan?.pathways[trajectoryId]?.periods ?? []).map((_, index) => index + 1)
+    : planYear === "2025"
     ? [
       ...(activePlan2025Trajectory.preSemester?.length ? [0] : []),
       ...activePlan2025Trajectory.semesters.map((_, index) => index + 1),
     ]
     : isProfilePlan || planYear === "qf-2015" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const planMinCredits = planYear === "2025"
+  const planMinCredits = isRegisteredPlan
+    ? (activeRegisteredPlan?.plan.minCredits ?? registeredAcademicPlans[planYear]?.minCredits ?? 1)
+    : planYear === "2025"
     ? plan2025Data.plan.minCredits
     : isProfilePlan ? (activeProfileData?.plan.minCredits ?? 450) : planYear === "qf-2015" ? (qf2015Data?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
   const analystCredential = creditStructure.credentials.find((item) => item.id === "analyst");
@@ -925,7 +996,9 @@ export default function Home() {
           .find((plan) => plan.id === selection.planId);
         if (selectedPlan) {
           const candidate = typeof selection.trajectoryId === "string" ? selection.trajectoryId : selectedPlan.defaultTrajectoryId;
-          const isValid = selectedPlan.id === "2025"
+          const isValid = isRegisteredAcademicPlan(selectedPlan.id)
+            ? isRegisteredPathway(selectedPlan.id, candidate)
+            : selectedPlan.id === "2025"
             ? Object.hasOwn(plan2025Data.trajectories, candidate)
             : selectedPlan.id === "1997" ? candidate === "pi-20-59"
               : selectedPlan.id === "electrica-2023" ? electricProfileIds.has(candidate)
@@ -982,6 +1055,10 @@ export default function Home() {
     if (!hydrated || planYear !== "qf-2015" || qf2015Data || qfPlanLoadState !== "idle") return;
     void loadQfPlan();
   }, [hydrated, planYear, qf2015Data, qfPlanLoadState, loadQfPlan]);
+  useEffect(() => {
+    if (!hydrated || !isRegisteredPlan || activeRegisteredPlan || ["loading", "loaded", "error"].includes(registeredPlanLoadStates[planYear] ?? "idle")) return;
+    void loadRegisteredPlan(planYear);
+  }, [hydrated, planYear, isRegisteredPlan, activeRegisteredPlan, registeredPlanLoadStates, loadRegisteredPlan]);
 
   useEffect(() => {
     if (!hydrated || appMode !== "planner") return;
@@ -1223,11 +1300,11 @@ export default function Home() {
   const groupCredits = (groupCode: string) => {
     const nodeId = planYear === "1997"
       ? bedeliasData.requirementGroupMap[groupCode]
-      : isProfilePlan ? activeProfileData?.requirementGroupMap[groupCode] : planYear === "qf-2015" ? qf2015Data?.requirementGroupMap[groupCode] : undefined;
+      : isRegisteredPlan ? activeRegisteredPlan?.requirementGroupMap[groupCode] : isProfilePlan ? activeProfileData?.requirementGroupMap[groupCode] : planYear === "qf-2015" ? qf2015Data?.requirementGroupMap[groupCode] : undefined;
     return nodeId ? nodeCredits(nodeId) : 0;
   };
   const hasVerifiedCourseRule = (course: Course) => Boolean(officialRule(course, "course"));
-  const isCourseAvailabilityKnown = (course: Course) => course.placementTest || hasVerifiedCourseRule(course) || Boolean(course.prerequisites?.length || course.minCredits);
+  const isCourseAvailabilityKnown = (course: Course) => course.curricularBlock || course.placementTest || hasVerifiedCourseRule(course) || Boolean(course.prerequisites?.length || course.minCredits);
   const isCourseUnlocked = (course: Course) => {
     if (course.placeholder) return false;
     if (course.placementTest) return true;
@@ -1278,13 +1355,7 @@ export default function Home() {
   const visibleElectives = filtered("opt");
 
   const exportProgress = () => {
-    const career = planYear === "electrica-2023"
-      ? "ingenieria-electrica-2023"
-      : planYear === "civil-2021"
-        ? "ingenieria-civil-2021"
-        : planYear === "qf-2015"
-          ? "quimica-farmaceutica-2015"
-          : `ingenieria-computacion-${planYear}`;
+    const career = activeCareer.id;
     const blob = new Blob([JSON.stringify({ formatVersion: 1, career, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
@@ -1426,9 +1497,9 @@ export default function Home() {
     const courseRule = officialRule(course, "course");
     return Boolean(courseRule && expressionReferencesCode(courseRule.expression, selected.id));
   }) : [];
-  const sourceLabel = (course: Course): "Bedelías" | "FING" | "FQ" | undefined => {
+  const sourceLabel = (course: Course): "Bedelías" | "FING" | "FQ" | "FADU" | undefined => {
     if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
-    return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : course.dataStatus === "fq-damero" ? "FQ" : undefined;
+    return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : course.dataStatus === "fq-damero" ? "FQ" : course.dataStatus === "fadu-official" ? "FADU" : undefined;
   };
   const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : planYear === "qf-2015" ? qfCatalogLoadState : extendedElectivesLoadState;
   const deferredCatalogCount = isProfilePlan ? (activeProfileCatalogData?.courses.length ?? 0) : planYear === "qf-2015" ? (qfCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
@@ -1579,7 +1650,7 @@ export default function Home() {
               }}>
                 {activeFaculty.careers.map((career) => (
                   <option value={career.id} key={career.id}>
-                    {(career.id === "electrica" && electricPlanLoadState === "loading") || (career.id === "civil" && civilPlanLoadState === "loading") ? `${career.label} · cargando…` : career.label}
+                    {(career.id === "electrica" && electricPlanLoadState === "loading") || (career.id === "civil" && civilPlanLoadState === "loading") || registeredPlanLoadStates[career.plans[0]?.id] === "loading" ? `${career.label} · cargando…` : career.label}
                   </option>
                 ))}
               </select>
@@ -1594,7 +1665,7 @@ export default function Home() {
               </select>
             </label>
             {appMode === "curriculum" && <label>
-              <span>{isProfilePlan ? "Perfil" : "Trayectoria"}</span>
+              <span>{isRegisteredPlan ? registeredAcademicPlans[planYear]?.pathwayLabel : isProfilePlan ? "Perfil" : "Trayectoria"}</span>
               <select value={trajectoryId} onChange={(event) => {
                 const next = event.target.value;
                 setTrajectoryId(next);
@@ -1603,7 +1674,9 @@ export default function Home() {
                 }
                 setSelected(null);
               }}>
-                {planYear === "2025" ? Object.entries(plan2025Data.trajectories).map(([id, trajectory]) => (
+                {isRegisteredPlan ? Object.entries(activeRegisteredPlan?.pathways ?? {}).map(([id, pathway]) => (
+                  <option value={id} key={id}>{pathway.label}</option>
+                )) : planYear === "2025" ? Object.entries(plan2025Data.trajectories).map(([id, trajectory]) => (
                   <option value={id} key={id}>{trajectory.label}</option>
                 )) : planYear === "electrica-2023" ? Object.entries(electric2023Data?.profiles ?? {}).map(([id, profile]) => (
                   <option value={id} key={id}>{profile.label}</option>
@@ -1617,6 +1690,8 @@ export default function Home() {
           </div>
           {appMode === "planner" ? (
             <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Armá una currícula propia con las mismas materias, créditos y áreas del plan. Los cambios quedan guardados en este dispositivo.</span></p>
+          ) : isRegisteredPlan ? (
+            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">✓</span><span className="pilot-note-copy">{activeRegisteredPathway?.description} {activeRegisteredPlan?.plan.notice}</span></p>
           ) : planYear === "2025" ? (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activePlan2025Trajectory.description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
           ) : isProfilePlan ? (
@@ -1731,7 +1806,7 @@ export default function Home() {
               </details>;
             })}
           </div>
-          <p className="data-source">{planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
+          <p className="data-source">{isRegisteredPlan ? "Las metas, etapas, perfiles y bloques provienen del plan y la organización oficial de FADU; el snapshot SGAE se usa como contraste y no como oferta vigente." : planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
           </>}
         </aside>
 
@@ -1851,7 +1926,9 @@ export default function Home() {
             {planYear === "1997" ? <label className="toggle-control">
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
-            </label> : isProfilePlan
+            </label> : isRegisteredPlan
+              ? <span className="rules-coverage">Proyección FADU auditada · revisión {activeRegisteredPlan?.source.reviewedAt ?? "en carga"}</span>
+              : isProfilePlan
               ? <span className="rules-coverage">Bedelías auditada: {activeProfileData?.plan.publishedRules ?? 0} reglas · {activeProfileData?.plan.noPublishedRule ?? 0} sin publicar</span>
               : planYear === "qf-2015" ? <span className="rules-coverage">Bedelías auditada: {qf2015Data?.plan.publishedRules ?? 0} reglas · {qf2015Data?.plan.partialRules ?? 0} parciales · {qf2015Data?.plan.noPublishedRule ?? 0} sin publicar</span>
               : <span className="rules-coverage">Previas publicadas: {new Set(plan2025Data.rules.map((rule) => rule.target.code)).size}/{courses.length} materias</span>}
@@ -1866,13 +1943,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="curriculum-scroll" ref={curriculumScrollRef} role="region" tabIndex={0} aria-label="Trayectoria por semestres; usá las flechas o la barra inferior para desplazarte horizontalmente">
+          <div className="curriculum-scroll" ref={curriculumScrollRef} role="region" tabIndex={0} aria-label="Trayectoria académica; usá las flechas o la barra inferior para desplazarte horizontalmente">
             <div className="semester-grid">
               {semesters.map((semester) => (
                 <section className="semester-column" key={semester}>
                   <header>
                     <span>{semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
-                    <div><h2>{semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{filtered(semester).reduce((sum, item) => sum + item.credits, 0)} créditos</p></div>
+                    <div><h2>{isRegisteredPlan ? activeRegisteredPathway?.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{filtered(semester).reduce((sum, item) => sum + item.credits, 0)} créditos</p></div>
                   </header>
                   <div className="course-stack">
                     {planYear === "1997" && semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
@@ -1908,6 +1985,11 @@ export default function Home() {
               </div>
               </>
             )}
+          </section> : isRegisteredPlan ? <section className="plan-transition-note">
+            <p className="eyebrow">Plan vigente · proyección auditada</p>
+            <h2>Fuentes oficiales y alcance</h2>
+            <p>{activeRegisteredPlan?.plan.notice}</p>
+            <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">Consultar el plan oficial de FADU ↗</a>
           </section> : <section className="plan-transition-note">
             <p className="eyebrow">Plan vigente · implementación en curso</p>
             <h2>Lo que todavía no tiene semestre publicado</h2>
@@ -1962,9 +2044,10 @@ export default function Home() {
             <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placeholder ? "Espacio a completar" : selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
             {selectedAllocation?.status === "suggested" ? <p className="allocation-source suggested-allocation"><span>≈</span> Cuenta en <strong>{courseAreaLabel(selected)}</strong> mediante una asignación sugerida. Los créditos se computan normalmente, pero todavía falta un Anexo B o resolución específica para este plan.</p>
               : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
-                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según {planYear === "qf-2015" && selected.dataStatus === "fq-damero" ? "Facultad de Química" : "Bedelías"}.</p>}
+                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según {selected.dataStatus === "fadu-official" ? "FADU" : planYear === "qf-2015" && selected.dataStatus === "fq-damero" ? "Facultad de Química" : "Bedelías"}.</p>}
             {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
               : selected.dataStatus === "fq-damero" ? <p className="verified-source fing-source"><span>FQ</span> Materia, créditos y semestre publicados en el <a href={qf2015Data?.source.suggestedCurriculum} target="_blank" rel="noreferrer">damero vigente de Facultad de Química</a>; códigos y previaturas se contrastan con Bedelías.</p>
+              : selected.dataStatus === "fadu-official" ? <p className="verified-source fing-source"><span>FA</span> {selected.curricularBlock ? "Bloque y créditos" : "Unidad curricular y créditos"} contrastados con el <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">plan y la organización oficial de FADU</a>.</p>
               : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={activeProfileData?.source.profilesSpreadsheet} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>; debe completarse eligiendo una unidad curricular admitida por el plan.</p>
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
@@ -1999,7 +2082,7 @@ export default function Home() {
                 })}
                 {selected.minCredits && <li className={earnedCredits >= selected.minCredits ? "done" : "missing"}><span>{earnedCredits >= selected.minCredits ? "✓" : "○"}</span>{selected.minCredits} créditos acumulados</li>}
               </ul>
-            ) : <p className="free-course">{selected.placeholder ? "Elegí una unidad curricular del catálogo que cumpla el área o perfil indicado; el bloque no suma créditos por sí mismo." : selected.ruleCoverage === "not-published" ? "Bedelías fue consultada y no publica una regla para esta unidad; no se interpreta como ausencia de previas." : selected.ruleCoverage === "partial" ? "La regla publicada por Bedelías llegó incompleta. No se usa para bloquear esta materia hasta volver a auditarla." : "Sin una regla importada para esta instancia; no se presenta como validación oficial."}</p>}
+            ) : <p className="free-course">{selected.placeholder ? "Elegí una unidad curricular del catálogo que cumpla el área o perfil indicado; el bloque no suma créditos por sí mismo." : selected.curricularBlock ? "Este bloque se acredita manualmente cuando completás el mínimo oficial que representa; no se presenta como una unidad curricular individual ni como una regla de previaturas." : selected.ruleCoverage === "not-published" ? "Bedelías fue consultada y no publica una regla para esta unidad; no se interpreta como ausencia de previas." : selected.ruleCoverage === "partial" ? "La regla publicada por Bedelías llegó incompleta. No se usa para bloquear esta materia hasta volver a auditarla." : "Sin una regla importada para esta instancia; no se presenta como validación oficial."}</p>}
             {selectedDependents.length > 0 && <><h3>Puede habilitar o condicionar</h3><ul className="requirements-list dependent-list">
               {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
             </ul></>}
@@ -2020,7 +2103,7 @@ export default function Home() {
   );
 }
 
-function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rulesKnown, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; rulesKnown: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING" | "FQ"; onCycle: () => void; onDetails: () => void }) {
+function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rulesKnown, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; rulesKnown: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING" | "FQ" | "FADU"; onCycle: () => void; onDetails: () => void }) {
   return (
     <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
       <div className="course-topline">

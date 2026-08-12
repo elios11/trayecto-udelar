@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T05:14:51.575Z",
+  "generatedAt": "2026-08-12T12:46:51.310Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,9 +18,9 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 243,
-      "structurally-valid": 3,
-      "audited": 4
+      "discovered": 240,
+      "audited": 7,
+      "blocked": 3
     }
   },
   "services": [
@@ -2580,7 +2580,7 @@
           "Grado": 3
         },
         "byState": {
-          "structurally-valid": 3
+          "audited": 3
         }
       },
       "block": null,
@@ -2598,17 +2598,15 @@
             "name": "ARQUITECTURA",
             "current": true
           },
-          "state": "structurally-valid",
+          "state": "audited",
           "stateEvidence": {
-            "source": "bedelias-snapshot",
-            "at": "2026-08-12T03:30:09.625Z",
-            "contentHash": "5f9f5996f66a1c9154b51666c769a8cef3ad040436fc2f43c3e824ba0582c3c2",
-            "validationIssues": 0
+            "source": "docs/fadu-auditoria-oficial.md",
+            "at": "2026-08-12"
           },
           "coverage": {
             "bedeliasIndex": "verified",
             "site": "not-published-by-service-index",
-            "officialSources": "pending"
+            "officialSources": "audited"
           },
           "anomalies": []
         },
@@ -2625,17 +2623,15 @@
             "name": "LICENCIATURA EN DISEÑO DE COMUNICACIÓN VISUAL",
             "current": true
           },
-          "state": "structurally-valid",
+          "state": "audited",
           "stateEvidence": {
-            "source": "bedelias-snapshot",
-            "at": "2026-08-12T04:17:00.321Z",
-            "contentHash": "3755c114155924da9c365895cfe453fddf3e5fe424451a13583e93002c81697b",
-            "validationIssues": 0
+            "source": "docs/fadu-auditoria-oficial.md",
+            "at": "2026-08-12"
           },
           "coverage": {
             "bedeliasIndex": "verified",
             "site": "not-published-by-service-index",
-            "officialSources": "pending"
+            "officialSources": "audited"
           },
           "anomalies": []
         },
@@ -2652,17 +2648,15 @@
             "name": "LICENCIATURA EN DISEÑO INDUSTRIAL",
             "current": true
           },
-          "state": "structurally-valid",
+          "state": "audited",
           "stateEvidence": {
-            "source": "bedelias-snapshot",
-            "at": "2026-08-12T05:07:36.490Z",
-            "contentHash": "b8c2d5338b2cea4ca37c8aff0ec4d518dabfa1ed16c133d847501003571c47c3",
-            "validationIssues": 0
+            "source": "docs/fadu-auditoria-oficial.md",
+            "at": "2026-08-12"
           },
           "coverage": {
             "bedeliasIndex": "verified",
             "site": "not-published-by-service-index",
-            "officialSources": "pending"
+            "officialSources": "audited"
           },
           "anomalies": []
         }
@@ -2688,7 +2682,7 @@
           "Grado": 3
         },
         "byState": {
-          "discovered": 3
+          "blocked": 3
         }
       },
       "block": null,
@@ -2706,7 +2700,7 @@
             "name": "INGENIERO AGRÓNOMO",
             "current": true
           },
-          "state": "discovered",
+          "state": "blocked",
           "stateEvidence": {
             "source": "service-index",
             "at": "2026-08-12T00:01:01.125Z"
@@ -2716,7 +2710,13 @@
             "site": "not-published-by-service-index",
             "officialSources": "pending"
           },
-          "anomalies": []
+          "anomalies": [
+            {
+              "code": "extraction-failed",
+              "detail": "Código de salida 1",
+              "action": "Reanudar exactamente el mismo comando del servicio."
+            }
+          ]
         },
         {
           "key": "FAGRO:licenciatura en vitivinicultura:2006",
@@ -2731,7 +2731,7 @@
             "name": "LICENCIATURA EN VITIVINICULTURA",
             "current": true
           },
-          "state": "discovered",
+          "state": "blocked",
           "stateEvidence": {
             "source": "service-index",
             "at": "2026-08-12T00:01:01.125Z"
@@ -2741,7 +2741,13 @@
             "site": "not-published-by-service-index",
             "officialSources": "pending"
           },
-          "anomalies": []
+          "anomalies": [
+            {
+              "code": "extraction-failed",
+              "detail": "Código de salida 1",
+              "action": "Reanudar exactamente el mismo comando del servicio."
+            }
+          ]
         },
         {
           "key": "FAGRO:tecnico rural:1956",
@@ -2756,7 +2762,7 @@
             "name": "TECNICO RURAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "blocked",
           "stateEvidence": {
             "source": "service-index",
             "at": "2026-08-12T00:01:01.125Z"
@@ -2766,7 +2772,13 @@
             "site": "not-published-by-service-index",
             "officialSources": "pending"
           },
-          "anomalies": []
+          "anomalies": [
+            {
+              "code": "extraction-failed",
+              "detail": "Código de salida 1",
+              "action": "Reanudar exactamente el mismo comando del servicio."
+            }
+          ]
         }
       ]
     },
@@ -6953,5 +6965,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:b5e4410f8c7112d4e4371cdd78dc753f61ad7e860cac53cbd21c466bc3564ba2"
+  "contentHash": "sha256:b263741800e20acca084df0cdacbc50c3932855b2e6a9cc8cd13830246417798"
 }

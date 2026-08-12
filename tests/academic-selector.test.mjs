@@ -16,6 +16,10 @@ test("organizes every incorporated plan by faculty and career", () => {
   assert.match(catalogSource, /label: "Facultad de Química"/);
   assert.match(catalogSource, /label: "Química Farmacéutica"/);
   assert.match(catalogSource, /id: "qf-2015"/);
+  assert.match(catalogSource, /label: "Facultad de Arquitectura, Diseño y Urbanismo"/);
+  assert.match(catalogSource, /label: "Arquitectura"/);
+  assert.match(catalogSource, /label: "Licenciatura en Diseño de Comunicación Visual"/);
+  assert.match(catalogSource, /label: "Licenciatura en Diseño Industrial"/);
 });
 
 test("filters careers and plans through the active academic hierarchy", () => {
