@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-12T05:14:59.040Z",
+  "service": {
+    "code": "FADU",
+    "name": "FACULTAD DE ARQUITECTURA, DISEÑO Y URBANISMO",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "official-sources-pending",
+  "totals": {
+    "plans": 3,
+    "courses": 4234,
+    "prerequisiteEntries": 4125,
+    "publishedRules": 1848,
+    "noPublishedRuleQueries": 2277,
+    "validationIssues": 0,
+    "requests": 86303,
+    "bytes": 52387639
+  },
+  "plans": [
+    {
+      "key": "FADU:arquitectura:2015",
+      "career": "ARQUITECTURA",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 2864,
+        "prerequisiteEntries": 2854,
+        "publishedRules": 1055,
+        "noPublishedRuleQueries": 1799,
+        "validationIssues": 0,
+        "requests": 47313,
+        "bytes": 32665116
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-12T03:30:09.625Z",
+        "rateLimitMs": 500,
+        "contentHash": "5f9f5996f66a1c9154b51666c769a8cef3ad040436fc2f43c3e824ba0582c3c2"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FADU:licenciatura-en-diseno-de-comunicacion-visual:2007",
+      "career": "LICENCIATURA EN DISEÑO DE COMUNICACIÓN VISUAL",
+      "type": "Grado",
+      "planYear": "2007",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 557,
+        "prerequisiteEntries": 538,
+        "publishedRules": 361,
+        "noPublishedRuleQueries": 177,
+        "validationIssues": 0,
+        "requests": 9440,
+        "bytes": 8111559
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-12T04:17:00.321Z",
+        "rateLimitMs": 500,
+        "contentHash": "3755c114155924da9c365895cfe453fddf3e5fe424451a13583e93002c81697b"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FADU:licenciatura-en-diseno-industrial:2013",
+      "career": "LICENCIATURA EN DISEÑO INDUSTRIAL",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 813,
+        "prerequisiteEntries": 733,
+        "publishedRules": 432,
+        "noPublishedRuleQueries": 301,
+        "validationIssues": 0,
+        "requests": 29550,
+        "bytes": 11610964
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-12T05:07:36.490Z",
+        "rateLimitMs": 500,
+        "contentHash": "b8c2d5338b2cea4ca37c8aff0ec4d518dabfa1ed16c133d847501003571c47c3"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FADU antes de auditar o publicar."
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T00:51:49.302Z",
+  "generatedAt": "2026-08-12T05:14:51.575Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,7 +18,8 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 246,
+      "discovered": 243,
+      "structurally-valid": 3,
       "audited": 4
     }
   },
@@ -2579,7 +2580,7 @@
           "Grado": 3
         },
         "byState": {
-          "discovered": 3
+          "structurally-valid": 3
         }
       },
       "block": null,
@@ -2597,10 +2598,12 @@
             "name": "ARQUITECTURA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:00:29.649Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-12T03:30:09.625Z",
+            "contentHash": "5f9f5996f66a1c9154b51666c769a8cef3ad040436fc2f43c3e824ba0582c3c2",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2622,10 +2625,12 @@
             "name": "LICENCIATURA EN DISEÑO DE COMUNICACIÓN VISUAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:00:29.649Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-12T04:17:00.321Z",
+            "contentHash": "3755c114155924da9c365895cfe453fddf3e5fe424451a13583e93002c81697b",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2647,10 +2652,12 @@
             "name": "LICENCIATURA EN DISEÑO INDUSTRIAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:00:29.649Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-12T05:07:36.490Z",
+            "contentHash": "b8c2d5338b2cea4ca37c8aff0ec4d518dabfa1ed16c133d847501003571c47c3",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6946,5 +6953,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:03570279136b9af58948b2cbac77f1506924402971ed0c313bf019e5b27333f7"
+  "contentHash": "sha256:b5e4410f8c7112d4e4371cdd78dc753f61ad7e860cac53cbd21c466bc3564ba2"
 }

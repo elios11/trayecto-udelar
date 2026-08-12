@@ -5,6 +5,7 @@ import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { mergePrerequisiteCheckpoint } from "./bedelias-checkpoint.mjs";
 
 const BASE_URL = "https://bedelias.udelar.edu.uy/";
@@ -215,8 +216,8 @@ class BedeliasBrowser {
         const left = match[1];
         const middle = match[2];
         const credits = Number(match[3]);
-        if (/^[A-Z][A-Z0-9]{1,9}$/.test(left) && /^[A-Z]{2,}[0-9]/.test(middle)) {
-          const [code, ...name] = middle.split(/\s+-\s+/);
+        const [code, ...name] = middle.split(/\s+-\s+/);
+        if (/^[A-Z][A-Z0-9]{1,9}$/.test(left) && /^[A-Z]{2,}[0-9]/.test(middle) && name.length > 0) {
           return { serviceCode: left, code, name: name.join(" - "), credits, raw: clean(text) };
         }
         return { serviceCode: null, code: left, name: middle, credits, raw: clean(text) };
@@ -427,13 +428,41 @@ function parseRequirementOptions(label) {
   return options;
 }
 
-function normalizeExpressionNode(node) {
+export function normalizeCourseRecord(course) {
+  if (course?.code && course?.name) return course;
+  const match = normalizeSpace(course?.raw).match(/^(.*?)\s+-\s+(.*?)\s+-\s+cr[eé]ditos:\s*(\d+)$/i);
+  if (!match) return course;
+  return {
+    ...course,
+    serviceCode: null,
+    code: match[1],
+    name: match[2],
+    credits: Number(match[3]),
+  };
+}
+
+function parseCreditOptions(label) {
+  const match = label.match(/^(\d+)\s+cr[eé]ditos entre:\s*(.+)$/i);
+  if (!match) return null;
+  const options = [];
+  const matcher = /(?:^|\s)([A-Z0-9][A-Z0-9.]{1,9})\s+-\s+(.+?)(?=\s+[A-Z0-9][A-Z0-9.]{1,9}\s+-\s+|$)/g;
+  for (const option of match[2].matchAll(matcher)) {
+    options.push({ serviceCode: null, code: option[1], name: normalizeSpace(option[2]), raw: option[0].trim() });
+  }
+  return options.length ? { minimum: Number(match[1]), options } : null;
+}
+
+export function normalizeExpressionNode(node) {
   if (!node) return null;
   const label = normalizeSpace(node.label);
   const options = parseRequirementOptions(label);
   const approvalMinimum = Number.parseInt(label.match(/^(\d+)\s+aprobaci[oó]n/i)?.[1] ?? "", 10) || null;
   const creditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Plan:\s*(\d{4})\s+-\s+(.+)$/i);
   const groupCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Grupo:\s*([A-Z0-9.]+)\s+-\s+(.+)$/i);
+  const groupApprovalMatch = label.match(/^(\d+)\s+aprobaci[oó]n(?:\/es)? en el Grupo:\s*([A-Z0-9.]+)\s+-\s+(.+)$/i);
+  const profileCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Perfil:\s*(.+)$/i);
+  const profileEnrollmentMatch = label.match(/^Inscripci[oó]n a perfil:\s*(.+)$/i);
+  const creditOptionsRequirement = parseCreditOptions(label);
   return {
     ...node,
     label,
@@ -441,7 +470,21 @@ function normalizeExpressionNode(node) {
     options,
     creditRequirement: creditMatch ? { minimum: Number(creditMatch[1]), planYear: creditMatch[2], planName: creditMatch[3] } : null,
     groupCreditRequirement: groupCreditMatch ? { minimum: Number(groupCreditMatch[1]), groupCode: groupCreditMatch[2], groupName: groupCreditMatch[3] } : null,
-    parserStatus: options.length || creditMatch || groupCreditMatch || ["all", "any", "none"].includes(node.kind) ? "parsed" : "raw",
+    groupApprovalRequirement: groupApprovalMatch ? { minimum: Number(groupApprovalMatch[1]), groupCode: groupApprovalMatch[2], groupName: groupApprovalMatch[3] } : null,
+    profileCreditRequirement: profileCreditMatch ? { minimum: Number(profileCreditMatch[1]), profileName: profileCreditMatch[2] } : null,
+    profileEnrollmentRequirement: profileEnrollmentMatch ? { profileName: profileEnrollmentMatch[1] } : null,
+    creditOptionsRequirement,
+    parserStatus: options.length
+      || approvalMinimum
+      || creditMatch
+      || groupCreditMatch
+      || groupApprovalMatch
+      || profileCreditMatch
+      || profileEnrollmentMatch
+      || creditOptionsRequirement
+      || ["all", "any", "none"].includes(node.kind)
+      ? "parsed"
+      : "raw",
     children: (node.children ?? []).map(normalizeExpressionNode),
   };
 }
@@ -481,6 +524,7 @@ function validateDataset(dataset) {
     const key = `${course.serviceCode ?? dataset.service.code}:${course.code}`;
     if (seen.has(key)) issues.push({ level: "warning", code: "duplicate-course", message: `Curso duplicado: ${key}` });
     seen.add(key);
+    if (!course.code || !course.name) issues.push({ level: "error", code: "invalid-course-identity", message: `Identidad de curso inválida: ${course.raw ?? key}` });
     if (!Number.isFinite(course.credits)) issues.push({ level: "error", code: "invalid-credits", message: `Créditos inválidos: ${key}` });
   }
   for (const rule of dataset.prerequisites) {
@@ -597,6 +641,7 @@ async function normalizeDataset(options) {
   const filePath = path.resolve(options.input ?? options.output ?? "data/bedelias/fing-ingenieria-computacion-1997.json");
   const dataset = await loadJson(filePath, null);
   if (!dataset) throw new Error(`No se pudo leer ${filePath}.`);
+  dataset.plan.courses = (dataset.plan.courses ?? []).map(normalizeCourseRecord);
   dataset.prerequisites = (dataset.prerequisites ?? []).map(normalizePrerequisiteRule);
   dataset.validation = { issues: validateDataset(dataset) };
   dataset.contentHash = stableHash({ service: dataset.service, program: dataset.program, plan: dataset.plan, prerequisites: dataset.prerequisites });
@@ -642,7 +687,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(`Error: ${error.message}`);
-  process.exitCode = 1;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(`Error: ${error.message}`);
+    process.exitCode = 1;
+  });
+}
