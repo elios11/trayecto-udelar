@@ -41,9 +41,12 @@ export function selectServicePlans(index, options = {}) {
   for (const program of index.programs ?? []) {
     const normalizedType = normalizeLookup(program.type);
     const normalizedName = normalizeLookup(program.name);
-    const matchesType = (filter) => filter === "grado"
-      ? normalizedType.includes("grado") && !normalizedType.includes("posgrado")
-      : normalizedType.includes(filter);
+    const matchesType = (filter) => {
+      if (filter === "grado") return normalizedType.includes("grado") && !normalizedType.includes("posgrado");
+      if (filter === "tecnicatura") return normalizedType.includes("tecnicatura") || normalizedType.includes("tecnologo");
+      if (filter === "cio") return normalizedType.includes("cio") || normalizedType.includes("ciclo inicial");
+      return normalizedType.includes(filter);
+    };
     if (typeFilters.length && !typeFilters.some(matchesType)) continue;
     if (careerFilters.length && !careerFilters.includes(normalizedName)) continue;
     for (const plan of program.plans ?? []) {

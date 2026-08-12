@@ -134,8 +134,12 @@ class BedeliasBrowser {
     const services = await this.listServices();
     const service = services.find((item) => item.serviceCode.toUpperCase() === serviceCode.toUpperCase());
     if (!service) throw new Error(`No se encontró el servicio ${serviceCode}.`);
-    await this.page.getByRole("tab", { name: new RegExp(service.area.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")) }).click();
-    const serviceRow = this.page.getByRole("row", { name: new RegExp(`^${service.serviceCode} - `) });
+    const escapedArea = service.area.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const tab = this.page.locator('[role="tab"]:visible').filter({ hasText: new RegExp(escapedArea) }).first();
+    if (await tab.getAttribute("aria-selected") !== "true") await tab.click();
+    const serviceRow = this.page.locator('[role="tabpanel"]:visible')
+      .getByRole("row", { name: new RegExp(`^${service.serviceCode} - `) })
+      .first();
     await serviceRow.waitFor({ state: "visible" });
     await Promise.all([
       this.page.waitForURL(/consultaOfertaAcademica02/, { timeout: 20_000 }),

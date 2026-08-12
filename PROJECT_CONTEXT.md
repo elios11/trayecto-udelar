@@ -13,6 +13,7 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 
 - La aplicacion trabaja con Ingeniería en Computación (planes 1997 y 2025), Ingeniería Eléctrica (Plan 2023) e Ingeniería Civil (Plan 2021) de la Facultad de Ingeniería, y con Química Farmacéutica (Plan 2015) de la Facultad de Química de Udelar.
 - Los datos consumidos por la interfaz estan en `app/data/`. Las transformaciones y fuentes asociadas viven en `data/`, `scripts/` y `docs/bedelias-importer.md` cuando corresponde.
+- El inventario global vigente de Bedelías se genera de forma secuencial y reanudable con `npm run bedelias:inventory -- --types "GRADO|TECNICATURA|CIO" --dry-run`; sus índices por servicio viven en `data/bedelias/services/` y el manifiesto académico en `data/bedelias/inventory/global-current.json`. El manifiesto no habilita carreras automáticamente y conserva explícitamente estados y anomalías.
 - Ingeniería Eléctrica Plan 2023 conserva siete perfiles oficiales, núcleo común derivado de esos perfiles, 450 créditos, mínimos por cuatro grupos y 24 áreas, y previaturas de curso/examen auditadas. No tiene un título intermedio publicado y la interfaz no inventa uno.
 - La proyección principal de Eléctrica (`app/data/electrica-2023-fing.json`) y su catálogo ampliado (`app/data/electrica-2023-electivas.json`) se cargan bajo demanda al seleccionar la carrera o buscar/expandir optativas. La fuente curada es `data/fing/electrica-2023-trayectorias.json` y el generador es `scripts/build-electrica-2023.mjs`.
 - Ingeniería Civil Plan 2021 conserva cuatro perfiles oficiales de diez semestres, 450 créditos, mínimos por cuatro grupos y 19 áreas, y previaturas auditadas. Su fuente curada es `data/fing/civil-2021-trayectorias.json`; `scripts/build-civil-2021.mjs` genera la proyección inicial y el catálogo diferido, excluyendo las entradas administrativas de reválidas sin perder su auditoría.
@@ -46,7 +47,7 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 - Para decisiones estables compartidas: este archivo.
 - Para el protocolo de trabajo, integracion y publicacion: `AGENTS.md`.
 - Para la importacion y validacion curricular desde Bedelias: `docs/bedelias-importer.md`.
-- El importador puede ejecutarse por plan o como lote secuencial y reanudable por servicio; el lote local no usa modelos ni APIs de IA y no publica datos automáticamente.
+- El importador puede ejecutarse por plan, como lote secuencial y reanudable por servicio o como inventario global en seco; estos procesos locales no usan modelos ni APIs de IA y no publican datos automáticamente.
 
 Si estas fuentes parecen incompatibles, el agente debe comprobar primero si su worktree quedo desactualizado respecto de `main`. No debe inventar una conciliacion ni copiar cambios desde otro worktree sin autorizacion.
 

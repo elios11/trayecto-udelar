@@ -54,6 +54,20 @@ test("filtra tipos y carreras sin depender de mayúsculas o tildes", () => {
   );
 });
 
+test("los filtros canónicos incluyen tecnólogos y ciclos iniciales", () => {
+  const index = {
+    ...serviceIndex,
+    programs: [
+      { name: "TECNÓLOGO MECÁNICO", type: "Tecnólogo", plans: [{ year: "2020", current: true }] },
+      { name: "CICLO INICIAL OPTATIVO", type: "Ciclo Inicial", plans: [{ year: "2021", current: true }] },
+    ],
+  };
+  assert.deepEqual(
+    selectServicePlans(index, { types: "TECNICATURA|CIO" }).map((target) => target.programName),
+    ["CICLO INICIAL OPTATIVO", "TECNÓLOGO MECÁNICO"],
+  );
+});
+
 test("el filtro de grado nunca incorpora posgrados por coincidencia parcial", () => {
   const index = {
     ...serviceIndex,

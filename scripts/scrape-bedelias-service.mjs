@@ -120,8 +120,11 @@ class ServiceDiscoveryBrowser {
         const text = normalize(row.textContent);
         const [code, ...name] = text.split(" - ");
         const panel = row.closest('[role="tabpanel"]');
+        const labelledBy = panel?.getAttribute("aria-labelledby");
+        const labelledTab = labelledBy ? document.getElementById(labelledBy) : null;
         return {
-          area: normalize(panel?.previousElementSibling?.textContent),
+          area: normalize(labelledTab?.textContent ?? panel?.previousElementSibling?.textContent),
+          dataKey: row.getAttribute("data-rk"),
           code,
           name: name.join(" - "),
         };
@@ -129,8 +132,15 @@ class ServiceDiscoveryBrowser {
     });
     const service = services.find((candidate) => candidate.code.toUpperCase() === serviceCode.toUpperCase());
     if (!service) throw new Error(`No se encontró el servicio ${serviceCode}.`);
-    await this.page.getByRole("tab", { name: new RegExp(service.area.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")) }).click();
-    const row = this.page.getByRole("row", { name: new RegExp(`^${service.code} - `) });
+    const escapedArea = service.area.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const tab = this.page.locator('[role="tab"]:visible').filter({ hasText: new RegExp(escapedArea) }).first();
+    if (await tab.getAttribute("aria-selected") !== "true") {
+      await tab.click();
+      await sleep(this.delayMs);
+    }
+    const row = this.page.locator(`tr[data-rk="${service.dataKey}"]`)
+      .filter({ hasText: new RegExp(`^${service.code} - `) })
+      .first();
     await Promise.all([
       this.page.waitForURL(/consultaOfertaAcademica02/, { timeout: 20_000 }),
       row.click(),
@@ -163,7 +173,7 @@ class ServiceDiscoveryBrowser {
       visitedPages.add(signature);
       for (const program of programs) collected.set(`${program.name}:${program.type}`, program);
 
-      const next = this.page.locator(".ui-paginator-next").last();
+      const next = this.page.locator(".ui-paginator-next:visible").last();
       if ((await next.count()) === 0) break;
       const className = await next.getAttribute("class");
       const ariaDisabled = await next.getAttribute("aria-disabled");
@@ -180,7 +190,7 @@ class ServiceDiscoveryBrowser {
     await input.type(programName);
     await input.press("Enter");
     await this.settle(250);
-    const first = this.page.locator(".ui-paginator-first").last();
+    const first = this.page.locator(".ui-paginator-first:visible").last();
     if ((await first.count()) > 0) {
       const className = await first.getAttribute("class");
       const ariaDisabled = await first.getAttribute("aria-disabled");

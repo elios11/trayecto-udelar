@@ -16,10 +16,15 @@ Bedelías es la fuente institucional del proyecto. El portal público no ofrece 
 
 ```powershell
 npm run bedelias:catalog
+npm run bedelias:inventory -- --types "GRADO|TECNICATURA|CIO" --dry-run
 npm run bedelias:service -- --service FING
 npm run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 1997 --courses 1466,1321
 npm run bedelias:plan -- --service FING --career "INGENIERÍA EN COMPUTACIÓN" --year 2025 --course-names "Fundamentos de la Combinatoria|Programación Imperativa"
 ```
+
+En PowerShell, el carácter `|` de los filtros debe llegar literalmente a Node. La forma comprobada es `npm.cmd --% run bedelias:inventory -- --types "GRADO|TECNICATURA|CIO" --dry-run` y, para un servicio, `npm.cmd --% run bedelias:service -- --service FADU --types "GRADO|TECNICATURA|CIO" --delay 500`.
+
+`bedelias:inventory` recorre secuencialmente el catálogo global, invoca el modo `--dry-run` por servicio y genera `data/bedelias/inventory/global-current.json`. Conserva un checkpoint local en `data/bedelias/batches/global-inventory.json`, reintenta fallos transitorios con backoff y omite servicios completos al ejecutar de nuevo el mismo comando. El manifiesto preserva los estados académicos `discovered`, `extracted`, `structurally-valid`, `official-sources-pending`, `audited` y `blocked`; sólo una anulación curada puede marcar un plan como `audited`.
 
 El modo `bedelias:service` descubre todas las carreras de un servicio y procesa secuencialmente sus planes vigentes. No llama a modelos ni APIs de IA: una vez iniciado, trabaja localmente sin necesitar turnos de Codex. Guarda un índice del servicio en `data/bedelias/services/`, un estado reanudable en `data/bedelias/batches/` y mantiene además los checkpoints individuales del modo `plan`. Si se interrumpe, el mismo comando omite los planes ya completados y continúa con los pendientes. El índice descubierto también se reutiliza; `--refresh-index true` fuerza una actualización desde Bedelías.
 
