@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 import { openServicePrograms } from "./bedelias-browser-navigation.mjs";
 import {
   buildPlanArguments,
+  isCompletedSnapshot,
   parseBoolean,
   reconcileBatchState,
   selectServicePlans,
@@ -315,6 +316,14 @@ async function main() {
     careers: options.careers,
     outputForTarget,
   });
+  for (const target of state.targets) {
+    if (!existsSync(target.output)) continue;
+    const snapshot = await loadJson(target.output, null);
+    if (!isCompletedSnapshot(snapshot, target)) continue;
+    target.status = "succeeded";
+    target.finishedAt ??= snapshot.source?.extractedAt ?? new Date().toISOString();
+    target.lastError = null;
+  }
   await atomicJson(batchPath, state);
 
   console.log(`Lote: ${targets.length} planes de ${index.service.name}.`);

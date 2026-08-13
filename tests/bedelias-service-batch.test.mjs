@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   batchTargetKey,
   buildPlanArguments,
+  isCompletedSnapshot,
   reconcileBatchState,
   selectServicePlans,
   summarizeBatch,
@@ -132,4 +133,18 @@ test("resume el estado del lote por resultado", () => {
     { status: "pending" },
     { status: "interrupted" },
   ] }), { total: 4, pending: 1, running: 0, succeeded: 1, failed: 1, interrupted: 1 });
+});
+
+test("reconoce un snapshot completo del objetivo sin aceptar otro plan", () => {
+  const target = { serviceCode: "FCIEN", programName: "LICENCIATURA EN CIENCIAS BIOLÓGICAS", year: "2017" };
+  const snapshot = {
+    schemaVersion: 1,
+    service: { code: "FCIEN" },
+    program: { name: "LICENCIATURA EN CIENCIAS BIOLOGICAS" },
+    plan: { year: "2017" },
+    validation: { issues: [] },
+  };
+  assert.equal(isCompletedSnapshot(snapshot, target), true);
+  assert.equal(isCompletedSnapshot({ ...snapshot, plan: { year: "2018" } }, target), false);
+  assert.equal(isCompletedSnapshot({ ...snapshot, validation: {} }, target), false);
 });

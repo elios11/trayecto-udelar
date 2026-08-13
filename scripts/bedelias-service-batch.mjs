@@ -31,6 +31,14 @@ export function batchTargetKey(target) {
   return `${String(target.serviceCode).toUpperCase()}:${normalizeLookup(target.programName)}:${target.year}`;
 }
 
+export function isCompletedSnapshot(snapshot, target) {
+  return snapshot?.schemaVersion === 1
+    && String(snapshot.service?.code ?? "").toUpperCase() === String(target.serviceCode ?? "").toUpperCase()
+    && normalizeLookup(snapshot.program?.name) === normalizeLookup(target.programName)
+    && String(snapshot.plan?.year ?? "") === String(target.year ?? "")
+    && Array.isArray(snapshot.validation?.issues);
+}
+
 export function selectServicePlans(index, options = {}) {
   const currentOnly = parseBoolean(options.currentOnly, true);
   const typeFilters = splitFilter(options.types);

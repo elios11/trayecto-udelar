@@ -32,6 +32,16 @@ test("normaliza códigos de grupo con guiones usados por FAGRO", () => {
   assert.equal(electives.parserStatus, "parsed");
 });
 
+test("normaliza mínimos de créditos por ciclo usados por FCIEN", () => {
+  const node = normalizeExpressionNode(rawNode("90 créditos en el Ciclo: 22 - TRAMO COMÚN"));
+  assert.deepEqual(node.cycleCreditRequirement, {
+    minimum: 90,
+    cycleCode: "22",
+    cycleName: "TRAMO COMÚN",
+  });
+  assert.equal(node.parserStatus, "parsed");
+});
+
 test("normaliza créditos e inscripción por perfil de FADU", () => {
   const credits = normalizeExpressionNode(rawNode("250 créditos en el Perfil: PERFIL PRODUCTO"));
   const enrollment = normalizeExpressionNode(rawNode("Inscripción a perfil: PERFIL TEXTIL - INDUMENTARIA"));

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-13T17:20:47.237Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "FCIEN",
+    "name": "FACULTAD DE CIENCIAS",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "program": {
+    "name": "LICENCIATURA EN OCEANOGRAFÍA BIOLÓGICA",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 1978 - LICENCIATURA EN OCEANOGRAFÍA BIOLÓGICA",
+    "metadata": {
+      "type": null,
+      "current": false,
+      "duration": null,
+      "minCredits": null,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "No se puede mostrar la composición de este plan."
+    },
+    "courses": [],
+    "titleLabels": [
+      "LICENCIADO EN OCEANOGRAFIA BIOLOGICA"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "1978",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "No se puede mostrar la composición de este plan."
+      }
+    ]
+  },
+  "contentHash": "91e771974c71feb1ad55f47c804bc10e43dd49cf577323a4435ac030ed22f68c"
+}

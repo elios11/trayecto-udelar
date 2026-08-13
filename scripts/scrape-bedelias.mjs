@@ -8,7 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergePrerequisiteCheckpoint } from "./bedelias-checkpoint.mjs";
 import { incompleteLogicalNodes, removeIncompletePrerequisiteRules } from "../lib/requirement-expression.mjs";
-import { openServicePrograms } from "./bedelias-browser-navigation.mjs";
+import { openServicePrograms, recoverNavigation, runVisibleTransition } from "./bedelias-browser-navigation.mjs";
 
 const BASE_URL = "https://bedelias.udelar.edu.uy/";
 const DEFAULT_BROWSER_PATHS = [
@@ -352,11 +352,43 @@ class BedeliasBrowser {
   }
 
   async openPrerequisiteTarget(target) {
-    const visibleTargets = await this.filterPrerequisiteTargets(target.code);
-    const current = visibleTargets.find((candidate) => samePrerequisiteTarget(candidate, target));
+    const initialTargets = await this.filterPrerequisiteTargets(target.code);
+    let current = initialTargets.find((candidate) => samePrerequisiteTarget(candidate, target));
     if (!current?.hasDetails) return { hasRule: false, navigated: false, reason: "detail-link-unavailable" };
 
-    const clicked = await this.page.evaluate(({ rowIndex, targetValue }) => {
+    try {
+      await runVisibleTransition({
+        locator: this.page.locator("#arbol"),
+        action: async (attempt) => {
+          if (attempt > 0) {
+            const visibleTargets = await this.filterPrerequisiteTargets(target.code);
+            current = visibleTargets.find((candidate) => samePrerequisiteTarget(candidate, target));
+          }
+          if (!current?.hasDetails) throw new Error("detail-link-unavailable");
+          const clicked = await this.clickPrerequisiteTarget(current, target);
+          if (!clicked) throw new Error("detail-link-unavailable");
+          await this.settle();
+        },
+        recover: () => this.backToPrerequisiteList(),
+        timeout: 30_000,
+      });
+    } catch {
+      throw new Error(`Bedelías abrió ${target.code} ${target.assessment}, pero no mostró el árbol de previaturas.`);
+    }
+    let expansions = 0;
+    for (; expansions < 1000; expansions += 1) {
+      const collapsed = this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler");
+      if ((await collapsed.count()) === 0) break;
+      await collapsed.first().click();
+      await this.settle(100);
+    }
+    const remaining = await this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler").count();
+    if (remaining > 0) throw new Error(`El árbol de previaturas conserva ${remaining} nodos colapsados después de ${expansions} expansiones.`);
+    return { hasRule: true, navigated: true, reason: null };
+  }
+
+  async clickPrerequisiteTarget(current, target) {
+    return this.page.evaluate(({ rowIndex, targetValue }) => {
       const clean = (value) => String(value ?? "").replace(/\s+/g, " ").trim();
       const grid = [...document.querySelectorAll('[role="grid"]')]
         .find((node) => clean(node.textContent).includes("Materia") && clean(node.textContent).includes("Tipo"));
@@ -373,24 +405,6 @@ class BedeliasBrowser {
       link.click();
       return true;
     }, { rowIndex: current.rowIndex, targetValue: target });
-    if (!clicked) return { hasRule: false, navigated: false, reason: "detail-link-unavailable" };
-
-    await this.settle();
-    try {
-      await this.page.locator("#arbol").waitFor({ state: "visible", timeout: 30_000 });
-    } catch {
-      throw new Error(`Bedelías abrió ${target.code} ${target.assessment}, pero no mostró el árbol de previaturas.`);
-    }
-    let expansions = 0;
-    for (; expansions < 1000; expansions += 1) {
-      const collapsed = this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler");
-      if ((await collapsed.count()) === 0) break;
-      await collapsed.first().click();
-      await this.settle(100);
-    }
-    const remaining = await this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler").count();
-    if (remaining > 0) throw new Error(`El árbol de previaturas conserva ${remaining} nodos colapsados después de ${expansions} expansiones.`);
-    return { hasRule: true, navigated: true, reason: null };
   }
 
   async extractPrerequisiteRule(target) {
@@ -439,9 +453,15 @@ class BedeliasBrowser {
   }
 
   async backToPrerequisiteList() {
-    await this.page.goBack({ waitUntil: "domcontentloaded" });
-    await sleep(this.delayMs);
-    if (await this.waitForPrerequisiteList(5_000)) return;
+    const recovered = await recoverNavigation({
+      navigate: () => this.page.goBack({ waitUntil: "domcontentloaded" }),
+      reload: () => this.page.reload({ waitUntil: "domcontentloaded" }),
+      isReady: async () => {
+        await sleep(this.delayMs);
+        return this.waitForPrerequisiteList(5_000);
+      },
+    });
+    if (recovered) return;
 
     const back = this.page.getByRole("button", { name: "Volver", exact: true });
     if (await back.count()) {
@@ -537,6 +557,7 @@ export function normalizeExpressionNode(node) {
   const children = (node.children ?? []).map(normalizeExpressionNode);
   const approvalMinimum = Number.parseInt(label.match(/^(\d+)\s+aprobaci[oó]n/i)?.[1] ?? "", 10) || null;
   const creditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Plan:\s*(\d{4})\s+-\s+(.+)$/i);
+  const cycleCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Ciclo:\s*([A-Z0-9.-]+)\s+-\s+(.+)$/i);
   const groupCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Grupo:\s*([A-Z0-9.-]+)\s+-\s+(.+)$/i);
   const groupApprovalMatch = label.match(/^(\d+)\s+aprobaci[oó]n(?:\/es)? en el Grupo:\s*([A-Z0-9.-]+)\s+-\s+(.+)$/i);
   const profileCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Perfil:\s*(.+)$/i);
@@ -548,6 +569,7 @@ export function normalizeExpressionNode(node) {
     minimum: approvalMinimum ?? (options.length ? 1 : node.minimum),
     options,
     creditRequirement: creditMatch ? { minimum: Number(creditMatch[1]), planYear: creditMatch[2], planName: creditMatch[3] } : null,
+    cycleCreditRequirement: cycleCreditMatch ? { minimum: Number(cycleCreditMatch[1]), cycleCode: cycleCreditMatch[2], cycleName: cycleCreditMatch[3] } : null,
     groupCreditRequirement: groupCreditMatch ? { minimum: Number(groupCreditMatch[1]), groupCode: groupCreditMatch[2], groupName: groupCreditMatch[3] } : null,
     groupApprovalRequirement: groupApprovalMatch ? { minimum: Number(groupApprovalMatch[1]), groupCode: groupApprovalMatch[2], groupName: groupApprovalMatch[3] } : null,
     profileCreditRequirement: profileCreditMatch ? { minimum: Number(profileCreditMatch[1]), profileName: profileCreditMatch[2] } : null,
@@ -558,6 +580,7 @@ export function normalizeExpressionNode(node) {
       : options.length
       || approvalMinimum
       || creditMatch
+      || cycleCreditMatch
       || groupCreditMatch
       || groupApprovalMatch
       || profileCreditMatch
