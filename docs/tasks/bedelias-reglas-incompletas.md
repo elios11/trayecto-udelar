@@ -14,9 +14,13 @@ Los bloques negativos no causaban ese bloqueo: un check verde en `No tener aprob
 - Los generadores nunca publican una regla incompleta como evaluable: la materia queda marcada con cobertura parcial y la regla no bloquea el avance.
 - La interfaz repite esa protección para cualquier proyección futura y redacta en negativo las equivalencias excluyentes.
 
-## Auditoría actual
+## Auditoría original
 
 Al implementar la corrección, el problema solo estaba presente en `data/bedelias/fq-quimica-farmaceutica-2015.json`: 8 reglas (`508A`, `102`, `303A`, `702X`, `700`, `701X`, `579A` y `06A`). Los snapshots de las demás carreras incorporadas no contenían grupos lógicos vacíos.
+
+## Cierre de Química Farmacéutica
+
+El 13 de agosto de 2026 se reanudó la extracción original de Química Farmacéutica Plan 2015. El importador reconstruyó el checkpoint, descartó exclusivamente las 8 reglas incompletas y obtuvo sus árboles completos desde Bedelías. El snapshot quedó con 448 reglas, cero incidencias y `npm run bedelias:audit-rules -- --strict` sin hallazgos. Las proyecciones se regeneraron sin reglas parciales.
 
 ## Cierre antes de terminar la app
 

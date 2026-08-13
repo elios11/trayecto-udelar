@@ -46,6 +46,7 @@ npm.cmd run bedelias:service -- --service FQ --careers "QUÍMICA FARMACÉUTICA"
 - Índice del servicio: `data/bedelias/services/fq-index.json`.
 - Snapshot: `data/bedelias/fq-quimica-farmaceutica-2015.json`.
 - Para reanudar tras una interrupción se debe ejecutar exactamente el mismo comando, sin borrar checkpoints ni forzar una actualización del índice.
+- La reconsulta selectiva del 13 de agosto de 2026 recuperó 8 reglas que habían quedado truncadas por el límite anterior de expansión del árbol. El snapshot actual conserva 448 reglas, cero grupos lógicos incompletos y supera `npm run bedelias:audit-rules -- --strict`.
 
 ## Criterios de aceptación
 

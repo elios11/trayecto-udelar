@@ -103,10 +103,13 @@ test("preserves official provenance and never projects raw prerequisite nodes", 
   assert.equal(catalog.rules.some((rule) => hasIncompleteLogicalNode(rule.expression)), false);
 });
 
-test("an incomplete Bedelias rule never blocks Fisicoquímica 102", () => {
+test("the refreshed Fisicoquímica 102 rule is complete and evaluable", () => {
   const course = initial.courses.find((item) => item.id === "508A");
-  assert.equal(course?.ruleCoverage, "partial");
-  assert.equal(initial.rules.some((rule) => rule.target.code === "508A" && rule.target.assessment === "course"), false);
+  const rule = initial.rules.find((item) => item.target.code === "508A" && item.target.assessment === "course");
+  assert.equal(course?.ruleCoverage, "published");
+  assert.ok(rule);
+  assert.equal(isRequirementExpressionEvaluable(rule.expression), true);
+  assert.equal(hasIncompleteLogicalNode(rule.expression), false);
   assert.match(pageSource, /La regla publicada por Bedelías llegó incompleta/);
 });
 
