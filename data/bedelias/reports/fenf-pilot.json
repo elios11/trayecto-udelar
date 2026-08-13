@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-13T22:44:57.111Z",
+  "service": {
+    "code": "FENF",
+    "name": "FACULTAD DE ENFERMERÍA",
+    "area": "CIENCIAS DE LA SALUD"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "official-sources-pending",
+  "totals": {
+    "plans": 4,
+    "courses": 223,
+    "prerequisiteEntries": 131,
+    "publishedRules": 50,
+    "noPublishedRuleQueries": 81,
+    "validationIssues": 0,
+    "requests": 3959,
+    "bytes": 963416
+  },
+  "plans": [
+    {
+      "key": "FENF:enfermeria-universitaria:1983",
+      "career": "ENFERMERIA UNIVERSITARIA",
+      "type": "Grado",
+      "planYear": "1983",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 186,
+        "bytes": 30889
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T22:28:48.457Z",
+        "rateLimitMs": 500,
+        "contentHash": "1eeb3afe47576df077819b170f34f335210d601c64d8f41031dbe8d1edf4dd2f"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FENF:escalonada-de-enfermeria:2001",
+      "career": "ESCALONADA DE ENFERMERIA",
+      "type": "Grado",
+      "planYear": "2001",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 126,
+        "bytes": 54713
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T22:28:58.492Z",
+        "rateLimitMs": 500,
+        "contentHash": "82cecba92bc4223d8a802a331749724428868851ccbf73af14b54423fbd87b90"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FENF:licenciatura-en-enfermeria:2016",
+      "career": "LICENCIATURA EN ENFERMERIA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 223,
+        "prerequisiteEntries": 131,
+        "publishedRules": 50,
+        "noPublishedRuleQueries": 81,
+        "validationIssues": 0,
+        "requests": 3521,
+        "bytes": 821047
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T22:34:06.802Z",
+        "rateLimitMs": 500,
+        "contentHash": "abcff8ffd7e9a32b54d5a934167476a2d5c6d8a6a266c2c4be22d25c354009fb"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FENF:licenciatura-en-enfermeria-profesionalizacion-de-auxiliar:1999",
+      "career": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
+      "type": "Grado",
+      "planYear": "1999",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 126,
+        "bytes": 56767
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T22:34:17.217Z",
+        "rateLimitMs": 500,
+        "contentHash": "91977b900fad3dd24d8f5307d82a91718fa2f475bfbfae511d1e0ead46eb578a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE ENFERMERÍA antes de auditar o publicar."
+}

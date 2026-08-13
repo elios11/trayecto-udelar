@@ -225,3 +225,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FDER`; artefacto `data/bedelias/reports/fder-pilot.json`, estado `extracted`. Ningún plan queda auditado ni habilitado para publicación.
 - Manifiesto global actualizado sin red: 190 planes `discovered`, 7 `audited`, 43 `structurally-valid` y 10 `extracted`; hash `sha256:9fc52b13a759c8e1b2cf53df786b8c4734360fac5f66b697afc20116f494ffbe`.
 - Siguiente servicio central de la cola: FENF. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
+
+### Carril de recolección — FENF completado 2026-08-13
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service FENF --delay 500`; estado local `data/bedelias/batches/fenf-vigentes.json` y checkpoints individuales `data/bedelias/fenf-*.json.checkpoint`.
+- Alcance por tipos: cuatro planes de grado vigentes. Los 23 posgrados y el plan preuniversitario del índice quedan fuera del filtro global `GRADO|TECNICATURA|CIO`.
+- Estado final: 4/4 `succeeded` en el primer intento, sin fallos ni interrupciones: Enfermería Universitaria 1983, Escalonada de Enfermería 2001, Licenciatura en Enfermería 2016 y Profesionalización de Auxiliar 1999.
+- Cobertura: 223 cursos, 131 entradas de previaturas, 50 reglas publicadas y 81 consultas sin regla; 3.959 requests registradas. Los cuatro snapshots pasan la validación estructural automática.
+- Los planes 1983, 1999 y 2001 publican un árbol de composición válido pero sin nodos de materia. Se conserva literalmente y no se interpreta como una currícula vacía ni se habilita para la UI sin fuentes oficiales.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service FENF`; artefacto `data/bedelias/reports/fenf-pilot.json`, estado `official-sources-pending`.
+- Manifiesto global actualizado sin red: 186 planes `discovered`, 7 `audited`, 47 `structurally-valid` y 10 `extracted`; hash `sha256:17a9af7e5806109d0af67f88281dd9db7008f55f4e26b43959a44c6d8ec4d114`.
+- Siguiente servicio central de la cola: FHUM. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.

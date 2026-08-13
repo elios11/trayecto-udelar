@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T22:25:23.906Z",
+  "generatedAt": "2026-08-13T22:44:58.765Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,9 +18,9 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 190,
+      "discovered": 186,
       "audited": 7,
-      "structurally-valid": 43,
+      "structurally-valid": 47,
       "extracted": 10
     }
   },
@@ -4280,7 +4280,7 @@
           "Grado": 4
         },
         "byState": {
-          "discovered": 4
+          "structurally-valid": 4
         }
       },
       "block": null,
@@ -4298,10 +4298,12 @@
             "name": "ENFERMERIA UNIVERSITARIA EUE CARLOS NERY",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:48:41.623Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T22:28:48.457Z",
+            "contentHash": "1eeb3afe47576df077819b170f34f335210d601c64d8f41031dbe8d1edf4dd2f",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4323,10 +4325,12 @@
             "name": "ESCALONADA DE ENFERMERIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:48:41.623Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T22:28:58.492Z",
+            "contentHash": "82cecba92bc4223d8a802a331749724428868851ccbf73af14b54423fbd87b90",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4348,10 +4352,12 @@
             "name": "LICENCIATURA EN ENFERMERIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:48:41.623Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T22:34:06.802Z",
+            "contentHash": "abcff8ffd7e9a32b54d5a934167476a2d5c6d8a6a266c2c4be22d25c354009fb",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4373,10 +4379,12 @@
             "name": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:48:41.623Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T22:34:17.217Z",
+            "contentHash": "91977b900fad3dd24d8f5307d82a91718fa2f475bfbfae511d1e0ead46eb578a",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7058,5 +7066,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:984bfa9a1e149558b6520d21f749d3ad54d85374c267073d98c63022624d20a2"
+  "contentHash": "sha256:f22e600ff04c1180d3ddc9b2af96ec620664f52e1039c29c148c6e9fba64e569"
 }
