@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T12:46:51.310Z",
+  "generatedAt": "2026-08-13T12:33:05.792Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -20,7 +20,8 @@
     "byState": {
       "discovered": 240,
       "audited": 7,
-      "blocked": 3
+      "structurally-valid": 1,
+      "extracted": 2
     }
   },
   "services": [
@@ -2682,7 +2683,8 @@
           "Grado": 3
         },
         "byState": {
-          "blocked": 3
+          "structurally-valid": 1,
+          "extracted": 2
         }
       },
       "block": null,
@@ -2700,23 +2702,19 @@
             "name": "INGENIERO AGRÓNOMO",
             "current": true
           },
-          "state": "blocked",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:01:01.125Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T06:04:55.718Z",
+            "contentHash": "c7107e06c12f4fa03c29488837b14bbfedceca142af5724f7126010fb9d922fc",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
             "site": "not-published-by-service-index",
             "officialSources": "pending"
           },
-          "anomalies": [
-            {
-              "code": "extraction-failed",
-              "detail": "Código de salida 1",
-              "action": "Reanudar exactamente el mismo comando del servicio."
-            }
-          ]
+          "anomalies": []
         },
         {
           "key": "FAGRO:licenciatura en vitivinicultura:2006",
@@ -2731,23 +2729,19 @@
             "name": "LICENCIATURA EN VITIVINICULTURA",
             "current": true
           },
-          "state": "blocked",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:01:01.125Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T12:31:07.317Z",
+            "contentHash": "614030b36c27271fdca78b20b5a1fd39dbe8c44af8c0c232fb11d6bd7162501f",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
             "site": "not-published-by-service-index",
             "officialSources": "pending"
           },
-          "anomalies": [
-            {
-              "code": "extraction-failed",
-              "detail": "Código de salida 1",
-              "action": "Reanudar exactamente el mismo comando del servicio."
-            }
-          ]
+          "anomalies": []
         },
         {
           "key": "FAGRO:tecnico rural:1956",
@@ -2762,23 +2756,19 @@
             "name": "TECNICO RURAL",
             "current": true
           },
-          "state": "blocked",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:01:01.125Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T12:30:42.112Z",
+            "contentHash": "1ffd4e6ed35469283d5bac2c12015327d1cce822e3bd25756110ce41578d8645",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
             "site": "not-published-by-service-index",
             "officialSources": "pending"
           },
-          "anomalies": [
-            {
-              "code": "extraction-failed",
-              "detail": "Código de salida 1",
-              "action": "Reanudar exactamente el mismo comando del servicio."
-            }
-          ]
+          "anomalies": []
         }
       ]
     },
@@ -6965,5 +6955,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:b263741800e20acca084df0cdacbc50c3932855b2e6a9cc8cd13830246417798"
+  "contentHash": "sha256:a41d1521d2318f01d8cc5c536b6b1b0f9f48506b35ee86b8d6abcfabcce99046"
 }

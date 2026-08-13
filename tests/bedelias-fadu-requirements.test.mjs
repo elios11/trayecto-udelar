@@ -14,6 +14,24 @@ test("normaliza mínimos de aprobación por grupo de FADU", () => {
   });
 });
 
+test("normaliza códigos de grupo con guiones usados por FAGRO", () => {
+  const curricular = normalizeExpressionNode(rawNode("135 créditos en el Grupo: 2020-2-3 - ASIGNATURAS OBLIGATORIAS"));
+  const electives = normalizeExpressionNode(rawNode("12 créditos en el Grupo: UC-ELE - ELECTIVAS"));
+
+  assert.deepEqual(curricular.groupCreditRequirement, {
+    minimum: 135,
+    groupCode: "2020-2-3",
+    groupName: "ASIGNATURAS OBLIGATORIAS",
+  });
+  assert.deepEqual(electives.groupCreditRequirement, {
+    minimum: 12,
+    groupCode: "UC-ELE",
+    groupName: "ELECTIVAS",
+  });
+  assert.equal(curricular.parserStatus, "parsed");
+  assert.equal(electives.parserStatus, "parsed");
+});
+
 test("normaliza créditos e inscripción por perfil de FADU", () => {
   const credits = normalizeExpressionNode(rawNode("250 créditos en el Perfil: PERFIL PRODUCTO"));
   const enrollment = normalizeExpressionNode(rawNode("Inscripción a perfil: PERFIL TEXTIL - INDUMENTARIA"));

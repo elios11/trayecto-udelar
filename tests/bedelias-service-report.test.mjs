@@ -27,4 +27,5 @@ test("resume cobertura y mantiene planes estructurales pendientes de fuentes ofi
   });
   assert.equal(report.plans[0].state, "structurally-valid");
   assert.equal(report.plans[0].officialSources, "pending");
+  assert.match(report.nextStep, /FACULTAD DE ARQUITECTURA/);
 });

@@ -85,7 +85,7 @@ export function buildServiceReport(index, planEntries, now = new Date().toISOStr
       bytes: sum("bytes"),
     },
     plans,
-    nextStep: "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FADU antes de auditar o publicar.",
+    nextStep: `Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de ${index.service?.name ?? index.service?.code ?? "este servicio"} antes de auditar o publicar.`,
   };
 }
 

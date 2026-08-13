@@ -44,6 +44,19 @@ export function samePrerequisiteTarget(candidate, target) {
     && (!target?.name || normalizeLookup(candidate?.name) === normalizeLookup(target.name));
 }
 
+export function buildPrerequisiteRequests({ requestedCodes, requestedNames, planCourses, serviceCode }) {
+  const courseCodes = requestedCodes.length || requestedNames.length
+    ? requestedCodes
+    : planCourses.filter((course) => !course.serviceCode || course.serviceCode === serviceCode).map((course) => course.code);
+  return {
+    courseCodes: [...new Set(courseCodes)],
+    requests: [
+      ...[...new Set(courseCodes)].map((value) => ({ kind: "code", value })),
+      ...[...new Set(requestedNames)].map((value) => ({ kind: "name", value })),
+    ],
+  };
+}
+
 function stableHash(value) {
   return createHash("sha256").update(JSON.stringify(value)).digest("hex");
 }
@@ -251,6 +264,9 @@ class BedeliasBrowser {
       }
 
       const compositionRoot = [...document.querySelectorAll('li[data-nodetype="Composicion"]')].map((li) => parseCompositionNode(li))[0] ?? null;
+      const compositionUnavailableReason = [...document.querySelectorAll("body *")]
+        .map((node) => clean(node.textContent))
+        .find((text) => text === "No se puede mostrar la composición de este plan.") ?? null;
       const titleTree = [...document.querySelectorAll(".ui-tree")].find((tree) => clean(tree.textContent).includes("Títulos/Certificados"));
       const titleNodes = [...(titleTree?.querySelectorAll(".ui-treenode-leaf table") ?? [])].map((table) => clean(table.textContent)).filter(Boolean);
       const allCourses = [...document.querySelectorAll('li[data-nodetype="Materia"] span[title*="Cr"]')].map((span) => parseCourseLabel(span.textContent));
@@ -266,6 +282,10 @@ class BedeliasBrowser {
           colibriUrl: colibri,
         },
         composition: compositionRoot,
+        compositionAvailability: {
+          available: Boolean(compositionRoot),
+          reason: compositionRoot ? null : compositionUnavailableReason ?? "La interfaz pública no publicó una composición.",
+        },
         courses: uniqueCourses,
         titleLabels: titleNodes,
         sourceUrl,
@@ -517,8 +537,8 @@ export function normalizeExpressionNode(node) {
   const children = (node.children ?? []).map(normalizeExpressionNode);
   const approvalMinimum = Number.parseInt(label.match(/^(\d+)\s+aprobaci[oó]n/i)?.[1] ?? "", 10) || null;
   const creditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Plan:\s*(\d{4})\s+-\s+(.+)$/i);
-  const groupCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Grupo:\s*([A-Z0-9.]+)\s+-\s+(.+)$/i);
-  const groupApprovalMatch = label.match(/^(\d+)\s+aprobaci[oó]n(?:\/es)? en el Grupo:\s*([A-Z0-9.]+)\s+-\s+(.+)$/i);
+  const groupCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Grupo:\s*([A-Z0-9.-]+)\s+-\s+(.+)$/i);
+  const groupApprovalMatch = label.match(/^(\d+)\s+aprobaci[oó]n(?:\/es)? en el Grupo:\s*([A-Z0-9.-]+)\s+-\s+(.+)$/i);
   const profileCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Perfil:\s*(.+)$/i);
   const profileEnrollmentMatch = label.match(/^Inscripci[oó]n a perfil:\s*(.+)$/i);
   const creditOptionsRequirement = parseCreditOptions(label);
@@ -580,6 +600,13 @@ function dedupeCompositionCourses(courses, defaultServiceCode) {
 
 function validateDataset(dataset) {
   const issues = [];
+  if (dataset.plan.compositionAvailability?.available === false) {
+    issues.push({
+      level: "warning",
+      code: "composition-unavailable",
+      message: dataset.plan.compositionAvailability.reason,
+    });
+  }
   const seen = new Set();
   for (const course of dataset.plan.courses) {
     const key = `${course.serviceCode ?? dataset.service.code}:${course.code}`;
@@ -653,13 +680,13 @@ async function scrapePlan(client, options) {
     await atomicJson(checkpointPath, checkpoint);
     console.log(`Checkpoint reconstruido: ${Object.keys(checkpoint.prerequisites).length} entradas (${restoredRules} recuperadas del último snapshot).`);
   }
-  await client.openPrerequisites();
-
-  const courseCodes = requestedCodes.length || requestedNames.length ? requestedCodes : plan.courses.filter((course) => !course.serviceCode || course.serviceCode === serviceCode).map((course) => course.code);
-  const requests = [
-    ...[...new Set(courseCodes)].map((value) => ({ kind: "code", value })),
-    ...[...new Set(requestedNames)].map((value) => ({ kind: "name", value })),
-  ];
+  const { courseCodes, requests } = buildPrerequisiteRequests({
+    requestedCodes,
+    requestedNames,
+    planCourses: plan.courses,
+    serviceCode,
+  });
+  if (requests.length > 0) await client.openPrerequisites();
   for (let index = 0; index < requests.length; index += 1) {
     const request = requests[index];
     const targets = request.kind === "code"
@@ -712,7 +739,7 @@ async function scrapePlan(client, options) {
     program: { name: program.name, type: program.type },
     plan: { ...plan, year, current: planSummary.current },
     prerequisites,
-    extraction: { requestedCourseCodes: [...new Set(courseCodes)], requestedCourseNames: [...new Set(requestedNames)], completedRules: prerequisites.filter((rule) => rule.expression).length, requestCount: client.requestCount, requestTypes: client.requestTypes },
+    extraction: { requestedCourseCodes: courseCodes, requestedCourseNames: [...new Set(requestedNames)], completedRules: prerequisites.filter((rule) => rule.expression).length, requestCount: client.requestCount, requestTypes: client.requestTypes },
   };
   dataset.validation = { issues: validateDataset(dataset) };
   dataset.contentHash = stableHash({ service: dataset.service, program: dataset.program, plan: dataset.plan, prerequisites: dataset.prerequisites });
@@ -724,6 +751,10 @@ async function normalizeDataset(options) {
   const filePath = path.resolve(options.input ?? options.output ?? "data/bedelias/fing-ingenieria-computacion-1997.json");
   const dataset = await loadJson(filePath, null);
   if (!dataset) throw new Error(`No se pudo leer ${filePath}.`);
+  dataset.plan.compositionAvailability ??= {
+    available: Boolean(dataset.plan.composition),
+    reason: dataset.plan.composition ? null : "La interfaz pública no publicó una composición.",
+  };
   dataset.plan.courses = (dataset.plan.courses ?? []).map(normalizeCourseRecord);
   dataset.prerequisites = (dataset.prerequisites ?? []).map(normalizePrerequisiteRule);
   dataset.validation = { issues: validateDataset(dataset) };

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-13T12:31:07.317Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "FAGRO",
+    "name": "FACULTAD DE AGRONOMÍA",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "program": {
+    "name": "LICENCIATURA EN VITIVINICULTURA",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2006 - LICENCIATURA EN VITIVINICULTURA",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "60 meses",
+      "minCredits": 150,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "No se puede mostrar la composición de este plan."
+    },
+    "courses": [],
+    "titleLabels": [
+      "LICENCIADO EN VITIVINICULTURA"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2006",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "No se puede mostrar la composición de este plan."
+      }
+    ]
+  },
+  "contentHash": "614030b36c27271fdca78b20b5a1fd39dbe8c44af8c0c232fb11d6bd7162501f"
+}

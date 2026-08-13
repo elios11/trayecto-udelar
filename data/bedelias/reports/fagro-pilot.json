@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-13T12:33:44.405Z",
+  "service": {
+    "code": "FAGRO",
+    "name": "FACULTAD DE AGRONOMÍA",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 3,
+    "courses": 526,
+    "prerequisiteEntries": 387,
+    "publishedRules": 327,
+    "noPublishedRuleQueries": 60,
+    "validationIssues": 2,
+    "requests": 1899,
+    "bytes": 3134803
+  },
+  "plans": [
+    {
+      "key": "FAGRO:ingeniero-agronomo:2020",
+      "career": "INGENIERO AGRÓNOMO",
+      "type": "Grado",
+      "planYear": "2020",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 526,
+        "prerequisiteEntries": 387,
+        "publishedRules": 327,
+        "noPublishedRuleQueries": 60,
+        "validationIssues": 0,
+        "requests": 1645,
+        "bytes": 3131213
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T06:04:55.718Z",
+        "rateLimitMs": 500,
+        "contentHash": "c7107e06c12f4fa03c29488837b14bbfedceca142af5724f7126010fb9d922fc"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FAGRO:licenciatura-en-vitivinicultura:2006",
+      "career": "LICENCIATURA EN VITIVINICULTURA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1831
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T12:31:07.317Z",
+        "rateLimitMs": 500,
+        "contentHash": "614030b36c27271fdca78b20b5a1fd39dbe8c44af8c0c232fb11d6bd7162501f"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "FAGRO:tecnico-rural:1956",
+      "career": "TECNICO RURAL",
+      "type": "Grado",
+      "planYear": "1956",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1759
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T12:30:42.112Z",
+        "rateLimitMs": 500,
+        "contentHash": "1ffd4e6ed35469283d5bac2c12015327d1cce822e3bd25756110ce41578d8645"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE AGRONOMÍA antes de auditar o publicar."
+}
