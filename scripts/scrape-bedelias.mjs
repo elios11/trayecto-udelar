@@ -7,6 +7,7 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergePrerequisiteCheckpoint } from "./bedelias-checkpoint.mjs";
+import { incompleteLogicalNodes, removeIncompletePrerequisiteRules } from "../lib/requirement-expression.mjs";
 
 const BASE_URL = "https://bedelias.udelar.edu.uy/";
 const DEFAULT_BROWSER_PATHS = [
@@ -318,12 +319,15 @@ class BedeliasBrowser {
     await row.getByRole("link", { name: "Ver más" }).click();
     await this.settle();
     await this.page.locator("#arbol").waitFor();
-    for (let pass = 0; pass < 12; pass += 1) {
+    let expansions = 0;
+    for (; expansions < 1000; expansions += 1) {
       const collapsed = this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler");
       if ((await collapsed.count()) === 0) break;
       await collapsed.first().click();
       await this.settle(100);
     }
+    const remaining = await this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler").count();
+    if (remaining > 0) throw new Error(`El árbol de previaturas conserva ${remaining} nodos colapsados después de ${expansions} expansiones.`);
   }
 
   async extractPrerequisiteRule(target) {
@@ -456,6 +460,7 @@ export function normalizeExpressionNode(node) {
   if (!node) return null;
   const label = normalizeSpace(node.label);
   const options = parseRequirementOptions(label);
+  const children = (node.children ?? []).map(normalizeExpressionNode);
   const approvalMinimum = Number.parseInt(label.match(/^(\d+)\s+aprobaci[oó]n/i)?.[1] ?? "", 10) || null;
   const creditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Plan:\s*(\d{4})\s+-\s+(.+)$/i);
   const groupCreditMatch = label.match(/^(\d+)\s+cr[eé]ditos en el Grupo:\s*([A-Z0-9.]+)\s+-\s+(.+)$/i);
@@ -474,7 +479,9 @@ export function normalizeExpressionNode(node) {
     profileCreditRequirement: profileCreditMatch ? { minimum: Number(profileCreditMatch[1]), profileName: profileCreditMatch[2] } : null,
     profileEnrollmentRequirement: profileEnrollmentMatch ? { profileName: profileEnrollmentMatch[1] } : null,
     creditOptionsRequirement,
-    parserStatus: options.length
+    parserStatus: ["all", "any", "none"].includes(node.kind) && options.length === 0 && children.length === 0
+      ? "incomplete"
+      : options.length
       || approvalMinimum
       || creditMatch
       || groupCreditMatch
@@ -485,7 +492,7 @@ export function normalizeExpressionNode(node) {
       || ["all", "any", "none"].includes(node.kind)
       ? "parsed"
       : "raw",
-    children: (node.children ?? []).map(normalizeExpressionNode),
+    children,
   };
 }
 
@@ -531,6 +538,9 @@ function validateDataset(dataset) {
     if (rule.noPublishedRule) continue;
     if (!rule.expression) issues.push({ level: "error", code: "missing-expression", message: `Regla sin expresión: ${rule.target.code} ${rule.target.assessment}` });
     if (!rule.rawText) issues.push({ level: "warning", code: "empty-rule", message: `Regla vacía: ${rule.target.code} ${rule.target.assessment}` });
+    for (const node of incompleteLogicalNodes(rule.expression)) {
+      issues.push({ level: "error", code: "incomplete-expression", message: `${rule.target.code} ${rule.target.assessment}: ${node.path} (${node.kind}) no tiene opciones ni descendientes` });
+    }
     for (const label of collectRawNodes(rule.expression)) {
       issues.push({ level: "warning", code: "unparsed-requirement", message: `${rule.target.code} ${rule.target.assessment}: ${label}` });
     }
@@ -578,6 +588,13 @@ async function scrapePlan(client, options) {
     programName: program.name,
     year,
   });
+  const cleanedCheckpoint = removeIncompletePrerequisiteRules(checkpoint.prerequisites);
+  checkpoint.prerequisites = cleanedCheckpoint.prerequisites;
+  if (cleanedCheckpoint.removedKeys.length > 0) {
+    checkpoint.updatedAt = new Date().toISOString();
+    await atomicJson(checkpointPath, checkpoint);
+    console.log(`Reglas incompletas descartadas del checkpoint para reconsulta: ${cleanedCheckpoint.removedKeys.length}.`);
+  }
   if (restoredRules > 0) {
     await atomicJson(checkpointPath, checkpoint);
     console.log(`Checkpoint reconstruido: ${Object.keys(checkpoint.prerequisites).length} entradas (${restoredRules} recuperadas del último snapshot).`);

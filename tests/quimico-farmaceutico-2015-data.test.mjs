@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { hasIncompleteLogicalNode, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 const initial = JSON.parse(await readFile(new URL("../app/data/quimico-farmaceutico-2015-fq.json", import.meta.url), "utf8"));
 const catalog = JSON.parse(await readFile(new URL("../app/data/quimico-farmaceutico-2015-electivas.json", import.meta.url), "utf8"));
@@ -85,7 +86,7 @@ test("keeps the complete Bedelias composition and modeled rules behind deferred 
   assert.equal(initial.plan.localCourses + initial.plan.externalEquivalences, snapshot.plan.courses.length);
   assert.equal(projectedBedeliasCourses.length + catalog.courses.length, snapshot.plan.courses.length);
   assert.equal(initial.rules.length + catalog.rules.length, initial.plan.publishedRules);
-  assert.equal(initial.plan.partialRules, snapshot.prerequisites.filter((rule) => rule.expression && hasRawNode(rule.expression)).length);
+  assert.equal(initial.plan.partialRules, snapshot.prerequisites.filter((rule) => rule.expression && !isRequirementExpressionEvaluable(rule.expression)).length);
   assert.match(pageSource, /import\("\.\/data\/quimico-farmaceutico-2015-fq\.json"\)/);
   assert.match(pageSource, /import\("\.\/data\/quimico-farmaceutico-2015-electivas\.json"\)/);
   assert.doesNotMatch(pageSource, /import qf2015DataJson from/);
@@ -98,11 +99,16 @@ test("preserves official provenance and never projects raw prerequisite nodes", 
   assert.equal(catalog.source.electivesCatalog, source.source.electivesCatalog);
   assert.equal(initial.rules.flatMap((rule) => collectRawNodes(rule.expression)).length, 0);
   assert.equal(catalog.rules.flatMap((rule) => collectRawNodes(rule.expression)).length, 0);
+  assert.equal(initial.rules.some((rule) => hasIncompleteLogicalNode(rule.expression)), false);
+  assert.equal(catalog.rules.some((rule) => hasIncompleteLogicalNode(rule.expression)), false);
 });
 
-function hasRawNode(expression) {
-  return collectRawNodes(expression).length > 0;
-}
+test("an incomplete Bedelias rule never blocks Fisicoquímica 102", () => {
+  const course = initial.courses.find((item) => item.id === "508A");
+  assert.equal(course?.ruleCoverage, "partial");
+  assert.equal(initial.rules.some((rule) => rule.target.code === "508A" && rule.target.assessment === "course"), false);
+  assert.match(pageSource, /La regla publicada por Bedelías llegó incompleta/);
+});
 
 function collectRawNodes(expression, output = []) {
   if (!expression) return output;

@@ -2,6 +2,7 @@
 
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 const trajectoryPath = path.resolve(process.argv[2] ?? "data/fq/quimico-farmaceutico-2015-trayectoria.json");
 const bedeliasPath = path.resolve(process.argv[3] ?? "data/bedelias/fq-quimica-farmaceutica-2015.json");
@@ -62,12 +63,6 @@ function resolveCourse(alias, specification) {
   throw new Error(`No se pudo resolver de forma única ${alias} (${specification.name}, ${specification.credits} cr.). Candidatos: ${candidates || "ninguno"}`);
 }
 
-function hasRawNode(expression) {
-  if (!expression) return false;
-  if (expression.kind === "requirement" && expression.parserStatus === "raw") return true;
-  return (expression.children ?? []).some(hasRawNode);
-}
-
 const resolvedByAlias = new Map();
 const aliasesByCode = new Map();
 for (const [alias, specification] of Object.entries(trajectory.courses)) {
@@ -78,10 +73,10 @@ for (const [alias, specification] of Object.entries(trajectory.courses)) {
   aliasesByCode.set(official.code, alias);
 }
 
-const rawRules = bedelias.prerequisites.filter((rule) => rule.expression && hasRawNode(rule.expression));
-const modeledRules = bedelias.prerequisites.filter((rule) => rule.expression && !hasRawNode(rule.expression));
-const modeledRuleCodes = new Set(modeledRules.map((rule) => rule.target.code));
-const rawRuleCodes = new Set(rawRules.map((rule) => rule.target.code));
+const partialRules = bedelias.prerequisites.filter((rule) => rule.expression && !isRequirementExpressionEvaluable(rule.expression));
+const modeledRules = bedelias.prerequisites.filter((rule) => rule.expression && isRequirementExpressionEvaluable(rule.expression));
+const modeledCourseRuleCodes = new Set(modeledRules.filter((rule) => rule.target.assessment === "course").map((rule) => rule.target.code));
+const partialCourseRuleCodes = new Set(partialRules.filter((rule) => rule.target.assessment === "course").map((rule) => rule.target.code));
 const noPublishedRuleCodes = new Set(bedelias.prerequisites.filter((rule) => rule.noPublishedRule).map((rule) => rule.target.code));
 
 const mandatoryRootId = "qf2015-mandatory";
@@ -142,8 +137,8 @@ function allocationFromPaths(course) {
 }
 
 function ruleCoverage(code) {
-  if (modeledRuleCodes.has(code)) return "published";
-  if (rawRuleCodes.has(code)) return "partial";
+  if (partialCourseRuleCodes.has(code)) return "partial";
+  if (modeledCourseRuleCodes.has(code)) return "published";
   if (noPublishedRuleCodes.has(code)) return "not-published";
   return "not-scraped";
 }
@@ -266,7 +261,7 @@ const output = {
     localCourses: localCourses.length,
     externalEquivalences: bedelias.plan.courses.length - localCourses.length,
     publishedRules: modeledRules.length,
-    partialRules: rawRules.length,
+    partialRules: partialRules.length,
     noPublishedRule: bedelias.prerequisites.filter((rule) => rule.noPublishedRule).length
   },
   creditStructure,
@@ -279,7 +274,7 @@ const output = {
     mandatoryCourses: projectedCourses.length,
     bedeliasCompositionCourses: bedelias.plan.courses.length,
     modeledRules: modeledRules.length,
-    partialRules: rawRules.length,
+    partialRules: partialRules.length,
     noPublishedRule: bedelias.prerequisites.filter((rule) => rule.noPublishedRule).length
   }
 };
@@ -303,4 +298,4 @@ await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
 await writeFile(catalogOutputPath, `${JSON.stringify(catalogOutput, null, 2)}\n`, "utf8");
 console.log(`Químico Farmacéutico 2015: ${projectedCourses.length} materias/bloques, ${Object.keys(trajectories).length} trayectorias y ${rules.length} reglas iniciales -> ${outputPath}`);
 console.log(`Catálogo diferido: ${catalogCourses.length} materias/equivalencias y ${catalogRules.length} reglas -> ${catalogOutputPath}`);
-console.log(`Reglas no proyectadas por texto sin interpretar: ${rawRules.length}.`);
+console.log(`Reglas parciales no proyectadas: ${partialRules.length}.`);

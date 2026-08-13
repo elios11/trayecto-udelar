@@ -2,6 +2,7 @@
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import { isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 import { allocationFromPaths, groupCodeToNode, requirementStructures } from "./academic-requirements.mjs";
 
 async function loadOptionalJson(filePath) {
@@ -56,7 +57,7 @@ const courses = dataset.plan.courses
   })
   .sort((a, b) => a.code.localeCompare(b.code));
 const rules = dataset.prerequisites
-  .filter((rule) => appCourseCodes.has(rule.target?.code) && rule.expression)
+  .filter((rule) => appCourseCodes.has(rule.target?.code) && isRequirementExpressionEvaluable(rule.expression))
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }))
   .sort((a, b) => `${a.target.code}:${a.target.assessment}`.localeCompare(`${b.target.code}:${b.target.assessment}`));
 

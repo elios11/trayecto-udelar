@@ -2,6 +2,7 @@
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import { isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 import { allocationFromPaths, plan2025SuggestedNodes, requirementStructures } from "./academic-requirements.mjs";
 
 const trajectoryPath = path.resolve(process.argv[2] ?? "data/fing/computacion-2025-trayectorias.json");
@@ -18,7 +19,7 @@ const composition = new Map(
 );
 const trajectoryIds = new Set(trajectory.courses.map((course) => course.id));
 const rules = bedelias.prerequisites
-  .filter((rule) => rule.expression && trajectoryIds.has(rule.target?.code))
+  .filter((rule) => isRequirementExpressionEvaluable(rule.expression) && trajectoryIds.has(rule.target?.code))
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }));
 
 const projectedCourses = trajectory.courses.map((course) => {

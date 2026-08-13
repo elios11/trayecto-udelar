@@ -11,6 +11,7 @@ Bedelías es la fuente institucional del proyecto. El portal público no ofrece 
 - Conservación de URLs de origen, fecha, texto original, estructura de reglas y hash del contenido.
 - Curso y examen se guardan como requisitos diferentes.
 - Las expresiones conservan operadores `all`, `any`, `none`, mínimos de créditos del plan, mínimos por grupo y requisitos con alternativas; los formatos desconocidos permanecen como texto original para revisión.
+- Un operador lógico sin opciones ni descendientes se considera una extracción incompleta, nunca una regla válida ni ausencia de previaturas.
 
 ## Comandos
 
@@ -46,6 +47,8 @@ Sin `--courses`, el modo `plan` intenta consultar las previaturas de todas las u
 Para lotes revisados se puede usar `--delay 500`, que es el mínimo prudente aceptado por la herramienta. Conviene agrupar muchos códigos en una sola ejecución porque abrir la carrera, el plan y la consulta pública tiene un costo fijo importante. El checkpoint permite reanudar un lote interrumpido sin repetir reglas ya guardadas.
 
 Si el checkpoint local quedó desactualizado o no viajó con un worktree, el modo reanudable recupera primero las reglas del último snapshot válido del mismo servicio, carrera y plan. Las entradas más nuevas del checkpoint prevalecen y el archivo publicado solo se reemplaza cuando termina el lote.
+
+Al reanudar, el importador elimina del checkpoint únicamente las reglas con operadores lógicos vacíos y las vuelve a consultar. `npm run bedelias:audit-rules` detecta estos casos en todos los snapshots; antes de cerrar una importación global debe pasar también `npm run bedelias:audit-rules -- --strict`. Las proyecciones y la interfaz tratan cualquier regla incompleta como cobertura parcial y no la usan para bloquear una materia.
 
 `npm run bedelias:project` genera `app/data/computacion-1997-electivas.json` con todas las unidades curriculares de la composición del Plan 1997 que no forman parte de la carga inicial de 20 optativas. Bedelías determina inclusión, código, créditos y áreas posibles; sólo se omiten entradas administrativas de créditos por reválida o no acumulables. La interfaz importa este archivo cuando la persona busca o solicita el catálogo completo. Buscar sólo hace visibles las coincidencias y, al limpiar la consulta, vuelve a las 20 optativas iniciales; el botón de expansión sí mantiene todo el catálogo visible. `data/fing/computacion-oferta-2026-2.json` es opcional y sólo agrega semestre, cupo y enlace cuando existe: una materia de Bedelías nunca desaparece por faltar en EVA, horarios u otra publicación.
 

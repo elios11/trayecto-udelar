@@ -2,6 +2,7 @@
 
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 const trajectoryPath = path.resolve(process.argv[2] ?? "data/fing/electrica-2023-trayectorias.json");
 const bedeliasPath = path.resolve(process.argv[3] ?? "data/bedelias/fing-ingenieria-electrica-2023.json");
@@ -13,7 +14,8 @@ const bedelias = JSON.parse(await readFile(bedeliasPath, "utf8"));
 const bedeliasSource = "https://bedelias.udelar.edu.uy/";
 const localCourses = bedelias.plan.courses.filter((course) => !course.serviceCode);
 const localByCode = new Map(localCourses.map((course) => [course.code, course]));
-const publishedRuleCodes = new Set(bedelias.prerequisites.filter((rule) => rule.expression).map((rule) => rule.target.code));
+const publishedCourseRuleCodes = new Set(bedelias.prerequisites.filter((rule) => rule.target.assessment === "course" && isRequirementExpressionEvaluable(rule.expression)).map((rule) => rule.target.code));
+const partialCourseRuleCodes = new Set(bedelias.prerequisites.filter((rule) => rule.target.assessment === "course" && rule.expression && !isRequirementExpressionEvaluable(rule.expression)).map((rule) => rule.target.code));
 const noPublishedRuleCodes = new Set(bedelias.prerequisites.filter((rule) => rule.noPublishedRule).map((rule) => rule.target.code));
 
 const areaDefinitions = [
@@ -122,7 +124,7 @@ for (const [profileId, profile] of Object.entries(trajectory.profiles)) {
       ...allocationFromPaths(official, credits),
       prerequisites: special?.prerequisites,
       dataStatus: "bedelias-composition",
-      ruleCoverage: publishedRuleCodes.has(code) ? "published" : noPublishedRuleCodes.has(code) ? "not-published" : "not-scraped"
+      ruleCoverage: partialCourseRuleCodes.has(code) ? "partial" : publishedCourseRuleCodes.has(code) ? "published" : noPublishedRuleCodes.has(code) ? "not-published" : "not-scraped"
     });
     profileConcreteIds.add(id);
     return id;
@@ -141,11 +143,11 @@ const catalogCourses = bedelias.plan.courses.map((course) => {
     id, serviceCode: course.serviceCode, bedeliasCode: course.code, name: displayName(course.name), credits: course.credits,
     ...allocationFromPaths(course), offered: [], elective: !trajectoryBedeliasCodes.has(course.code),
     dataStatus: "bedelias-composition",
-    ruleCoverage: publishedRuleCodes.has(course.code) ? "published" : noPublishedRuleCodes.has(course.code) ? "not-published" : "not-scraped"
+    ruleCoverage: partialCourseRuleCodes.has(course.code) ? "partial" : publishedCourseRuleCodes.has(course.code) ? "published" : noPublishedRuleCodes.has(course.code) ? "not-published" : "not-scraped"
   };
 });
 const allRules = bedelias.prerequisites
-  .filter((rule) => rule.expression)
+  .filter((rule) => isRequirementExpressionEvaluable(rule.expression))
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }));
 const rules = allRules.filter((rule) => trajectoryBedeliasCodes.has(rule.target.code));
 const catalogRules = allRules.filter((rule) => !trajectoryBedeliasCodes.has(rule.target.code));
@@ -168,6 +170,7 @@ const output = {
     localCourses: localCourses.length,
     externalEquivalences: bedelias.plan.courses.length - localCourses.length,
     publishedRules: allRules.length,
+    partialRules: bedelias.prerequisites.filter((rule) => rule.expression && !isRequirementExpressionEvaluable(rule.expression)).length,
     noPublishedRule: bedelias.prerequisites.filter((rule) => rule.noPublishedRule).length
   },
   creditStructure,

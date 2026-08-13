@@ -6,6 +6,7 @@ import plan2025DataJson from "./data/computacion-2025-fing.json";
 import { resolveAcademicOption } from "./academic-option.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
+import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
 type CredentialId = "analyst" | "engineer" | "pharmacist";
@@ -412,7 +413,7 @@ function describeExpression(expression: RequirementExpression, courses: Course[]
   if (expression.creditRequirement) return `${expression.creditRequirement.minimum} créditos acumulados en el plan`;
   if (expression.groupCreditRequirement) return `${expression.groupCreditRequirement.minimum} créditos en ${readableCourseName(expression.groupCreditRequirement.groupName)}`;
   if (expression.kind === "none") {
-    const options = expression.children.flatMap((child) => child.options).slice(0, 3);
+    const options = (collectRequirementOptions(expression) as RequirementOption[]).slice(0, 3);
     return options.length ? options.map((option) => describeExcludedOption(option, courses)).join(" o ") : "No cumplir una condición excluyente";
   }
   if (expression.kind === "all") return expression.children.map((child) => describeExpression(child, courses, courseIds)).filter(Boolean).join(" y ");
@@ -431,7 +432,9 @@ function branchConditions(expression: RequirementExpression, courses: Course[], 
 function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, courses: Course[], courseIds: Set<string>, groupCredits: (groupCode: string) => number, prefix = "r"): RequirementRow[] {
   if (expression.kind === "all") return expression.children.flatMap((child, index) => requirementRows(child, statuses, earnedCredits, courses, courseIds, groupCredits, `${prefix}-${index}`));
   if (expression.kind === "none") {
-    const alternatives = expression.children.flatMap((child) => expressionOptions(child, courses, courseIds)).slice(0, 3);
+    const options = collectRequirementOptions(expression) as RequirementOption[];
+    const localOptions = options.filter((option) => courseIds.has(option.code));
+    const alternatives = (localOptions.length ? localOptions : options).slice(0, 3).map((option) => describeExcludedOption(option, courses));
     return [{ key: prefix, label: alternatives.length ? "No tener aprobada ninguna de estas equivalencias" : "No cumplir una condición excluyente", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
   }
   if (expression.kind === "any") {
@@ -892,7 +895,7 @@ export default function Home() {
       : isProfilePlan
         ? [...(activeProfileData?.rules ?? []), ...(activeProfileCatalogData?.rules ?? [])]
         : planYear === "qf-2015" ? [...(qf2015Data?.rules ?? []), ...(qfCatalogData?.rules ?? [])] : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
-    return new Map(rules.map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
+    return new Map(rules.filter((rule) => isRequirementExpressionEvaluable(rule.expression)).map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
   }, [planYear, isProfilePlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
   const creditStructure = planYear === "2025"
     ? plan2025Data.creditStructure
@@ -2051,7 +2054,7 @@ export default function Home() {
                 })}
                 {selected.minCredits && <li className={earnedCredits >= selected.minCredits ? "done" : "missing"}><span>{earnedCredits >= selected.minCredits ? "✓" : "○"}</span>{selected.minCredits} créditos acumulados</li>}
               </ul>
-            ) : <p className="free-course">{selected.placeholder ? "Elegí una unidad curricular del catálogo que cumpla el área o perfil indicado; el bloque no suma créditos por sí mismo." : selected.ruleCoverage === "not-published" ? "Bedelías fue consultada y no publica una regla para esta unidad; no se interpreta como ausencia de previas." : "Sin una regla importada para esta instancia; no se presenta como validación oficial."}</p>}
+            ) : <p className="free-course">{selected.placeholder ? "Elegí una unidad curricular del catálogo que cumpla el área o perfil indicado; el bloque no suma créditos por sí mismo." : selected.ruleCoverage === "not-published" ? "Bedelías fue consultada y no publica una regla para esta unidad; no se interpreta como ausencia de previas." : selected.ruleCoverage === "partial" ? "La regla publicada por Bedelías llegó incompleta. No se usa para bloquear esta materia hasta volver a auditarla." : "Sin una regla importada para esta instancia; no se presenta como validación oficial."}</p>}
             {selectedDependents.length > 0 && <><h3>Puede habilitar o condicionar</h3><ul className="requirements-list dependent-list">
               {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
             </ul></>}
