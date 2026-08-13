@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergePrerequisiteCheckpoint } from "./bedelias-checkpoint.mjs";
 import { incompleteLogicalNodes, removeIncompletePrerequisiteRules } from "../lib/requirement-expression.mjs";
+import { openServicePrograms } from "./bedelias-browser-navigation.mjs";
 
 const BASE_URL = "https://bedelias.udelar.edu.uy/";
 const DEFAULT_BROWSER_PATHS = [
@@ -162,12 +163,9 @@ class BedeliasBrowser {
       .getByRole("row", { name: new RegExp(`^${service.serviceCode} - `) })
       .first();
     await serviceRow.waitFor({ state: "visible" });
-    await Promise.all([
-      this.page.waitForURL(/consultaOfertaAcademica02/, { timeout: 20_000 }),
-      serviceRow.click(),
-    ]);
+    const programFilter = await openServicePrograms(this.page, serviceRow);
     await this.settle();
-    await this.page.getByRole("textbox", { name: "Filtrar por Nombre" }).waitFor();
+    await programFilter.waitFor();
     return service;
   }
 

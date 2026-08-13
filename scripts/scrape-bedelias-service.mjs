@@ -6,6 +6,7 @@ import { existsSync } from "node:fs";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { openServicePrograms } from "./bedelias-browser-navigation.mjs";
 import {
   buildPlanArguments,
   parseBoolean,
@@ -141,12 +142,9 @@ class ServiceDiscoveryBrowser {
     const row = this.page.locator(`tr[data-rk="${service.dataKey}"]`)
       .filter({ hasText: new RegExp(`^${service.code} - `) })
       .first();
-    await Promise.all([
-      this.page.waitForURL(/consultaOfertaAcademica02/, { timeout: 20_000 }),
-      row.click(),
-    ]);
+    const programFilter = await openServicePrograms(this.page, row);
     await this.settle();
-    await this.page.getByRole("textbox", { name: "Filtrar por Nombre" }).waitFor();
+    await programFilter.waitFor();
     return service;
   }
 
