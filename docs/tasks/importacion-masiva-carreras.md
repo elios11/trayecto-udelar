@@ -153,10 +153,11 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Alcance deliberado: los bloques curriculares agregados se acreditan manualmente; no se presentan como unidades individuales. Los catálogos histórico/electivo completos de Arquitectura y Diseño Industrial permanecen fuera de la UI hasta una auditoría de oferta específica.
 - Estado del manifiesto: los tres planes FADU pasan a `audited` mediante evidencia explícita en `data/bedelias/inventory/status-overrides.json`; el snapshot bruto no cambia de significado.
 
-### Carril de recolección posterior al piloto — FAGRO en curso 2026-08-12
+### Carril de recolección posterior al piloto — FAGRO reanudado 2026-08-13
 
 - Siguiente servicio central de la cola: FAGRO, con Ingeniero Agrónomo 2020, Licenciatura en Vitivinicultura 2006 y Técnico Rural 1956.
-- Comando reanudable: `npm.cmd --% run bedelias:service -- --service FAGRO --types "GRADO|TECNICATURA|CIO" --delay 500`.
+- Comando reanudable recomendado en Windows: `npm.cmd run bedelias:service -- --service FAGRO --delay 500`. Los tipos por defecto ya son `GRADO|TECNICATURA|CIO`; omitir el argumento evita que `cmd.exe` interprete `|` como tuberías al lanzar el proceso en segundo plano.
 - Estado y checkpoints: `data/bedelias/batches/fagro-vigentes.json` y `data/bedelias/fagro-*.json.checkpoint`; salida de operación local en `tmp/importacion-masiva/fagro.*.log`.
-- El intento inicial dentro del sandbox no pudo abrir Chrome. El proceso autorizado fuera del sandbox avanzó hasta 153/387 consultas de previaturas de Ingeniería Agrónoma y agotó la espera de la interfaz pública; se inició un único tercer intento desde checkpoint.
-- No se inicia otro scraper mientras FAGRO esté activo. Al terminar, corresponde ejecutar el reporte compacto, actualizar el manifiesto y recién entonces continuar con el siguiente servicio del inventario.
+- El intento inicial dentro del sandbox no pudo abrir Chrome. Los intentos autorizados avanzaron hasta 385/387 consultas de Ingeniería Agrónoma, pero el selector de detalle dependía del texto accesible completo de la fila y agotó la espera en `13000 - TESIS`; Vitivinicultura y Técnico Rural agotaron la espera inicial de la lista pública. El cuarto lanzamiento no ejecutó el scraper porque `cmd.exe` interpretó el argumento de tipos como tres comandos separados.
+- Corrección genérica: las filas de previaturas se identifican por la grilla institucional y su `data-ri`, las filas que realmente no ofrecen detalle se registran como `noPublishedRule`, y la lista tiene una recuperación acotada ante una carga transitoria incompleta. La validación real y limpia de `13000 - TESIS` abrió el detalle y extrajo una regla; `npm test` pasó 107/107 y `npm run lint` pasó.
+- El monitor de 30 minutos quedó pausado. Se reanudó un único proceso FAGRO con el comando recomendado; el lote confirmó Ingeniería Agrónoma en `running`, intento 4, y los logs del proceso están en `tmp/importacion-masiva/fagro-retry5.*.log`. No sondear periódicamente: al terminar, ejecutar el reporte compacto y actualizar el manifiesto antes de continuar con el siguiente servicio.

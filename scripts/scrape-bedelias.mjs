@@ -38,6 +38,12 @@ const normalizeSpace = (value) => String(value ?? "").replace(/\s+/g, " ").trim(
 const normalizeLookup = (value) => normalizeSpace(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 const slug = (value) => normalizeSpace(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+export function samePrerequisiteTarget(candidate, target) {
+  return normalizeLookup(candidate?.code) === normalizeLookup(target?.code)
+    && candidate?.assessment === target?.assessment
+    && (!target?.name || normalizeLookup(candidate?.name) === normalizeLookup(target.name));
+}
+
 function stableHash(value) {
   return createHash("sha256").update(JSON.stringify(value)).digest("hex");
 }
@@ -270,7 +276,22 @@ class BedeliasBrowser {
   async openPrerequisites() {
     await this.page.getByRole("button", { name: "Sistema de previaturas", exact: true }).click();
     await this.settle();
-    await this.page.getByRole("textbox", { name: "Filtrar por Materia" }).waitFor();
+    if (await this.waitForPrerequisiteList()) return;
+
+    await this.page.reload({ waitUntil: "domcontentloaded" });
+    await this.settle(500);
+    if (!await this.waitForPrerequisiteList(30_000)) {
+      throw new Error(`Bedelías no mostró la lista de previaturas después de reintentar (${this.page.url()}).`);
+    }
+  }
+
+  async waitForPrerequisiteList(timeout = 15_000) {
+    try {
+      await this.page.getByRole("textbox", { name: "Filtrar por Materia" }).waitFor({ state: "visible", timeout });
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   async listPrerequisiteTargets() {
@@ -280,7 +301,7 @@ class BedeliasBrowser {
       if (!grid) return [];
       return [...grid.querySelectorAll("tbody > tr")].map((row) => {
         const cells = [...row.querySelectorAll(":scope > td")];
-        if (cells.length < 3 || !row.querySelector('a')) return null;
+        if (cells.length < 2) return null;
         const subject = clean(cells[0]?.textContent);
         const separator = subject.indexOf(" - ");
         return {
@@ -288,6 +309,7 @@ class BedeliasBrowser {
           code: separator >= 0 ? subject.slice(0, separator) : subject,
           name: separator >= 0 ? subject.slice(separator + 3) : "",
           assessment: clean(cells[1]?.textContent).toLowerCase() === "examen" ? "exam" : "course",
+          hasDetails: Boolean(row.querySelector("a")),
         };
       }).filter(Boolean);
     });
@@ -312,13 +334,35 @@ class BedeliasBrowser {
   }
 
   async openPrerequisiteTarget(target) {
-    await this.filterPrerequisiteTargets(target.code);
-    const assessmentLabel = target.assessment === "exam" ? "Examen" : "Curso";
-    const escapedSubject = `${target.code} - ${target.name}`.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const row = this.page.getByRole("row", { name: new RegExp(`^${escapedSubject}\\s+${assessmentLabel}\\s+Ver más$`, "i") });
-    await row.getByRole("link", { name: "Ver más" }).click();
+    const visibleTargets = await this.filterPrerequisiteTargets(target.code);
+    const current = visibleTargets.find((candidate) => samePrerequisiteTarget(candidate, target));
+    if (!current?.hasDetails) return { hasRule: false, navigated: false, reason: "detail-link-unavailable" };
+
+    const clicked = await this.page.evaluate(({ rowIndex, targetValue }) => {
+      const clean = (value) => String(value ?? "").replace(/\s+/g, " ").trim();
+      const grid = [...document.querySelectorAll('[role="grid"]')]
+        .find((node) => clean(node.textContent).includes("Materia") && clean(node.textContent).includes("Tipo"));
+      const rows = [...(grid?.querySelectorAll("tbody > tr") ?? [])];
+      const row = rows.find((candidate) => candidate.getAttribute("data-ri") === rowIndex)
+        ?? rows.find((candidate) => {
+          const cells = [...candidate.querySelectorAll(":scope > td")];
+          const subject = clean(cells[0]?.textContent);
+          const assessment = clean(cells[1]?.textContent).toLowerCase() === "examen" ? "exam" : "course";
+          return subject === `${targetValue.code} - ${targetValue.name}` && assessment === targetValue.assessment;
+        });
+      const link = row?.querySelector("a");
+      if (!link) return false;
+      link.click();
+      return true;
+    }, { rowIndex: current.rowIndex, targetValue: target });
+    if (!clicked) return { hasRule: false, navigated: false, reason: "detail-link-unavailable" };
+
     await this.settle();
-    await this.page.locator("#arbol").waitFor();
+    try {
+      await this.page.locator("#arbol").waitFor({ state: "visible", timeout: 30_000 });
+    } catch {
+      throw new Error(`Bedelías abrió ${target.code} ${target.assessment}, pero no mostró el árbol de previaturas.`);
+    }
     let expansions = 0;
     for (; expansions < 1000; expansions += 1) {
       const collapsed = this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler");
@@ -328,6 +372,7 @@ class BedeliasBrowser {
     }
     const remaining = await this.page.locator("#arbol td.ui-treenode-collapsed > .ui-treenode-content > .ui-tree-toggler").count();
     if (remaining > 0) throw new Error(`El árbol de previaturas conserva ${remaining} nodos colapsados después de ${expansions} expansiones.`);
+    return { hasRule: true, navigated: true, reason: null };
   }
 
   async extractPrerequisiteRule(target) {
@@ -378,11 +423,20 @@ class BedeliasBrowser {
   async backToPrerequisiteList() {
     await this.page.goBack({ waitUntil: "domcontentloaded" });
     await sleep(this.delayMs);
-    if (!this.page.url().includes("consultarSistemaPreviatura02")) {
-      await this.page.getByRole("button", { name: "Volver", exact: true }).click();
+    if (await this.waitForPrerequisiteList(5_000)) return;
+
+    const back = this.page.getByRole("button", { name: "Volver", exact: true });
+    if (await back.count()) {
+      await back.click();
       await this.settle();
     }
-    await this.page.getByRole("textbox", { name: "Filtrar por Materia" }).waitFor();
+    if (await this.waitForPrerequisiteList()) return;
+
+    await this.page.reload({ waitUntil: "domcontentloaded" });
+    await this.settle(500);
+    if (!await this.waitForPrerequisiteList(30_000)) {
+      throw new Error(`Bedelías no recuperó la lista de previaturas (${this.page.url()}).`);
+    }
   }
 }
 
@@ -621,7 +675,19 @@ async function scrapePlan(client, options) {
     for (const target of targets) {
       const key = `${target.code}:${target.assessment}`;
       if (checkpoint.prerequisites[key]) continue;
-      await client.openPrerequisiteTarget(target);
+      const detail = await client.openPrerequisiteTarget(target);
+      if (!detail.hasRule) {
+        checkpoint.prerequisites[key] = {
+          target,
+          query: request,
+          noPublishedRule: true,
+          reason: detail.reason,
+        };
+        checkpoint.updatedAt = new Date().toISOString();
+        await atomicJson(checkpointPath, checkpoint);
+        if (detail.navigated) await client.backToPrerequisiteList();
+        continue;
+      }
       checkpoint.prerequisites[key] = await client.extractPrerequisiteRule(target);
       checkpoint.updatedAt = new Date().toISOString();
       await atomicJson(checkpointPath, checkpoint);

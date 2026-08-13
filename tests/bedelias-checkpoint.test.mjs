@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mergePrerequisiteCheckpoint, prerequisiteCheckpointKey } from "../scripts/bedelias-checkpoint.mjs";
+import { isContradictoryMissingDetail, mergePrerequisiteCheckpoint, prerequisiteCheckpointKey } from "../scripts/bedelias-checkpoint.mjs";
 
 const identity = {
   serviceCode: "FING",
@@ -49,4 +49,28 @@ test("genera claves estables para reglas y consultas sin publicacion", () => {
   assert.equal(prerequisiteCheckpointKey({ query: { kind: "code", value: "1234" }, noPublishedRule: true }), "query:code:1234:none");
   assert.equal(prerequisiteCheckpointKey({ target: { code: "1234", assessment: "exam" } }), "1234:exam");
   assert.equal(prerequisiteCheckpointKey({ target: {} }), null);
+});
+
+test("descarta el falso sin-regla creado cuando la fila sí declaraba un enlace", () => {
+  const contradictory = {
+    target: { code: "13000", assessment: "course", hasDetails: true },
+    query: { kind: "code", value: "13000" },
+    noPublishedRule: true,
+    reason: "detail-link-unavailable",
+  };
+  const validMissingDetail = {
+    target: { code: "A", assessment: "course", hasDetails: false },
+    noPublishedRule: true,
+    reason: "detail-link-unavailable",
+  };
+
+  assert.equal(isContradictoryMissingDetail(contradictory), true);
+  assert.equal(isContradictoryMissingDetail(validMissingDetail), false);
+
+  const { checkpoint } = mergePrerequisiteCheckpoint(
+    { prerequisites: { "13000:course": contradictory, "A:course": validMissingDetail } },
+    { ...identity, service: { code: identity.serviceCode }, program: { name: identity.programName }, plan: { year: identity.year }, prerequisites: [contradictory] },
+    identity,
+  );
+  assert.deepEqual(Object.keys(checkpoint.prerequisites), ["A:course"]);
 });
