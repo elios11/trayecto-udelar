@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 import { chromium } from "playwright-core";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergePrerequisiteCheckpoint } from "./bedelias-checkpoint.mjs";
 import { incompleteLogicalNodes, removeIncompletePrerequisiteRules } from "../lib/requirement-expression.mjs";
+import { renameWithRetry } from "./bedelias-atomic-write.mjs";
 import { openServicePrograms, recoverNavigation, runVisibleTransition } from "./bedelias-browser-navigation.mjs";
 
 const BASE_URL = "https://bedelias.udelar.edu.uy/";
@@ -73,7 +74,7 @@ async function atomicJson(filePath, value) {
   await mkdir(path.dirname(filePath), { recursive: true });
   const temp = `${filePath}.tmp`;
   await writeFile(temp, `${JSON.stringify(value, null, 2)}\n`, "utf8");
-  await rename(temp, filePath);
+  await renameWithRetry(temp, filePath);
 }
 
 async function loadJson(filePath, fallback) {
@@ -163,7 +164,11 @@ class BedeliasBrowser {
       .getByRole("row", { name: new RegExp(`^${service.serviceCode} - `) })
       .first();
     await serviceRow.waitFor({ state: "visible" });
-    const programFilter = await openServicePrograms(this.page, serviceRow);
+    const programFilter = await openServicePrograms(this.page, serviceRow, 30_000, async () => {
+      await this.openAcademicOffer();
+      if (await tab.getAttribute("aria-selected") !== "true") await tab.click();
+      await serviceRow.waitFor({ state: "visible", timeout: 30_000 });
+    });
     await this.settle();
     await programFilter.waitFor();
     return service;
@@ -291,14 +296,30 @@ class BedeliasBrowser {
     });
   }
 
-  async openPrerequisites() {
-    await this.page.getByRole("button", { name: "Sistema de previaturas", exact: true }).click();
-    await this.settle();
-    if (await this.waitForPrerequisiteList()) return;
+  async reopenPlan({ serviceCode, programName, year }) {
+    await this.openAcademicOffer();
+    await this.selectService(serviceCode);
+    const program = await this.findProgram(programName);
+    await this.expandProgram(program);
+    await this.openPlan(year);
+  }
 
-    await this.page.reload({ waitUntil: "domcontentloaded" });
-    await this.settle(500);
-    if (!await this.waitForPrerequisiteList(30_000)) {
+  async openPrerequisites(planTarget) {
+    const button = this.page.getByRole("button", { name: "Sistema de previaturas", exact: true });
+    const filter = this.page.getByRole("textbox", { name: "Filtrar por Materia" });
+    const backButton = this.page.getByRole("button", { name: "Volver", exact: true });
+
+    try {
+      await runVisibleTransition({
+        locator: filter.or(backButton),
+        action: async () => {
+          await button.click();
+          await this.settle();
+        },
+        recover: () => this.reopenPlan(planTarget),
+        timeout: 30_000,
+      });
+    } catch {
       throw new Error(`Bedelías no mostró la lista de previaturas después de reintentar (${this.page.url()}).`);
     }
   }
@@ -335,6 +356,7 @@ class BedeliasBrowser {
 
   async searchPrerequisiteTargets(query) {
     const input = this.page.getByRole("textbox", { name: "Filtrar por Materia" });
+    if (!await input.isVisible().catch(() => false)) return [];
     await input.fill("");
     await input.type(query);
     await input.press("Enter");
@@ -709,7 +731,7 @@ async function scrapePlan(client, options) {
     planCourses: plan.courses,
     serviceCode,
   });
-  if (requests.length > 0) await client.openPrerequisites();
+  if (requests.length > 0) await client.openPrerequisites({ serviceCode, programName: program.name, year });
   for (let index = 0; index < requests.length; index += 1) {
     const request = requests[index];
     const targets = request.kind === "code"

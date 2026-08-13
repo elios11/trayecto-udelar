@@ -213,3 +213,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FCS`; artefacto `data/bedelias/reports/fcs-pilot.json`, estado `extracted`. Ningún plan queda auditado ni habilitado para publicación.
 - Manifiesto global actualizado sin red: 201 planes `discovered`, 7 `audited`, 34 `structurally-valid` y 8 `extracted`; hash `sha256:ce413b21cdb9198611b8d777f02d3c7e244b02c312abf29df903061c5eebfe21`.
 - Siguiente servicio central de la cola: FDER. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
+
+### Carril de recolección — FDER completado 2026-08-13
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service FDER --delay 500`; estado local `data/bedelias/batches/fder-vigentes.json` y checkpoints individuales `data/bedelias/fder-*.json.checkpoint`.
+- La primera pasada dejó 3/11 planes completos. Ocho planes fallaron porque Bedelías abrió una pantalla de previaturas sin filas ni filtro, que el scraper confundía con una navegación incompleta. Ese estado ahora se reconoce por el botón institucional `Volver` y se conserva como ausencia de reglas publicadas.
+- Dos reanudaciones posteriores omitieron los snapshots completos. Los bloqueos transitorios `EPERM` de Windows durante el renombre atómico de checkpoints ahora admiten reintentos breves y acotados; la recuperación se comparte con snapshots, lote, reportes e inventario y tiene pruebas deterministas.
+- Traductorado Público Alemán fue el único plan restante tras la segunda reanudación: agotó la espera al abrir FDER. La transición ahora reconstruye la oferta académica completa antes del único reintento. La validación real produjo 68 cursos, 68 consultas sin regla y cero incidencias.
+- Estado final reconciliado: 11/11 `succeeded`, cero fallos e interrupciones. La pasada final omitió explícitamente los once snapshots existentes.
+- Cobertura: 1.643 cursos, 1.545 entradas de previaturas, cero reglas publicadas y 1.545 consultas sin regla; 1.637 requests registradas. Diplomacia 1918 y Licenciatura en Relaciones Laborales 2012 conservan una advertencia porque Bedelías no publica su composición; los otros nueve planes no tienen incidencias estructurales.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service FDER`; artefacto `data/bedelias/reports/fder-pilot.json`, estado `extracted`. Ningún plan queda auditado ni habilitado para publicación.
+- Manifiesto global actualizado sin red: 190 planes `discovered`, 7 `audited`, 43 `structurally-valid` y 10 `extracted`; hash `sha256:9fc52b13a759c8e1b2cf53df786b8c4734360fac5f66b697afc20116f494ffbe`.
+- Siguiente servicio central de la cola: FENF. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.

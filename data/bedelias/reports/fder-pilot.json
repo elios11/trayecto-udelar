@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-13T22:25:16.098Z",
+  "service": {
+    "code": "FDER",
+    "name": "FACULTAD DE DERECHO",
+    "area": "SOCIAL Y ARTÍSTICA"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 11,
+    "courses": 1643,
+    "prerequisiteEntries": 1545,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 1545,
+    "validationIssues": 2,
+    "requests": 1637,
+    "bytes": 2823042
+  },
+  "plans": [
+    {
+      "key": "FDER:abogacia:2016",
+      "career": "ABOGACÍA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 510,
+        "prerequisiteEntries": 468,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 468,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 842538
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:43:17.971Z",
+        "rateLimitMs": 500,
+        "contentHash": "87b7b3c6438b23fcea9fd689a4668afc0c42302d611e3fb19afc2afe1bd865e6"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:diplomacia:1918",
+      "career": "DIPLOMACIA",
+      "type": "Grado",
+      "planYear": "1918",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1736
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:04:15.751Z",
+        "rateLimitMs": 500,
+        "contentHash": "3bdf2049e2c3aab77fa735d45be75cd36cee3ae6dfbde9c170786dca78f37b3d"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "FDER:licenciatura-en-relaciones-internacionales:2013",
+      "career": "LICENCIATURA EN RELACIONES INTERNACIONALES",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 308,
+        "prerequisiteEntries": 300,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 300,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 631314
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:46:55.449Z",
+        "rateLimitMs": 500,
+        "contentHash": "347095403cfb7dad3809588f565ca129797ffadc2716da26fc1469c6ccb9d33d"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:licenciatura-en-relaciones-laborales:2012",
+      "career": "LICENCIATURA EN RELACIONES LABORALES",
+      "type": "Grado",
+      "planYear": "2012",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1872
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:05:24.679Z",
+        "rateLimitMs": 500,
+        "contentHash": "953f74cb00870acb5c8a943bd3a7f13e677ad0be1d3c4312e5cc9b6703872f37"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "FDER:notariado:2016",
+      "career": "NOTARIADO",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 474,
+        "prerequisiteEntries": 436,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 436,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 769757
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:47:10.563Z",
+        "rateLimitMs": 500,
+        "contentHash": "c40c0ba96a74077a8852dee5b22d130e771afbc19f4af14631c55c9b66998c04"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:tecnicatura-en-relaciones-laborales:1995",
+      "career": "TECNICATURA EN RELACIONES LABORALES",
+      "type": "Grado",
+      "planYear": "1995",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 10602
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:06:33.093Z",
+        "rateLimitMs": 500,
+        "contentHash": "52602eff402aa3803c9757c677428f6c929e95b572b1361a9f677fb70e6344ee"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:traductorado-publico-aleman:2022",
+      "career": "TRADUCTORADO PÚBLICO ALEMÁN",
+      "type": "Grado",
+      "planYear": "2022",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 68,
+        "prerequisiteEntries": 68,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 68,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 104891
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T22:23:42.779Z",
+        "rateLimitMs": 500,
+        "contentHash": "c66caed32c62ecb9ed6a678e054c853837c1ea964c63f0ec6505bd7aafa04ec5"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:traductorado-publico-frances:2022",
+      "career": "TRADUCTORADO PÚBLICO FRANCÉS",
+      "type": "Grado",
+      "planYear": "2022",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 68,
+        "prerequisiteEntries": 68,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 68,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 105062
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:45:16.866Z",
+        "rateLimitMs": 500,
+        "contentHash": "a80b795460a4cbf15207e70839c8aabfb0a6c1f70b0ce86c9f23735cac992907"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:traductorado-publico-ingles:2022",
+      "career": "TRADUCTORADO PÚBLICO INGLÉS",
+      "type": "Grado",
+      "planYear": "2022",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 81,
+        "prerequisiteEntries": 71,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 71,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 147627
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:45:28.929Z",
+        "rateLimitMs": 500,
+        "contentHash": "fca2ae18f5b21560feabe51c0c7a5546d6324d4ba92e1a2e63d151382e295da2"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:traductorado-publico-italiano:2022",
+      "career": "TRADUCTORADO PÚBLICO ITALIANO",
+      "type": "Grado",
+      "planYear": "2022",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 68,
+        "prerequisiteEntries": 68,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 68,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 105234
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:45:40.755Z",
+        "rateLimitMs": 500,
+        "contentHash": "b357d1257ff942dac5965bc21c77885789818eae1fb63078c20347c9ee25618a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FDER:traductorado-publico-portugues:2022",
+      "career": "TRADUCTORADO PÚBLICO PORTUGUÉS",
+      "type": "Grado",
+      "planYear": "2022",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 66,
+        "prerequisiteEntries": 66,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 66,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 102409
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T21:45:53.094Z",
+        "rateLimitMs": 500,
+        "contentHash": "558f5252f353f3975f3dde074c27e22e3c3a4071f271b57f71cee0c785cf9230"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE DERECHO antes de auditar o publicar."
+}

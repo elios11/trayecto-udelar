@@ -26,6 +26,28 @@ test("confirma la apertura del servicio por la UI de destino y no por un evento 
   ]);
 });
 
+test("permite reconstruir la oferta antes de reintentar la entrada al servicio", async () => {
+  const calls = [];
+  let waits = 0;
+  const programFilter = {
+    waitFor: async () => {
+      waits += 1;
+      calls.push(`wait-${waits}`);
+      if (waits === 1) throw new Error("timeout transitorio");
+    },
+  };
+  const page = { getByRole: () => programFilter };
+  const serviceRow = { click: async () => calls.push("click") };
+
+  assert.equal(await openServicePrograms(
+    page,
+    serviceRow,
+    10,
+    async () => calls.push("recover-offer"),
+  ), programFilter);
+  assert.deepEqual(calls, ["wait-1", "click", "recover-offer", "wait-2", "click"]);
+});
+
 test("reintenta una transición visible una sola vez y permite recuperar el estado", async () => {
   const calls = [];
   let waits = 0;

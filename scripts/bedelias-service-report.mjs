@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 import { stat } from "node:fs/promises";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { selectServicePlans, slug } from "./bedelias-service-batch.mjs";
+import { renameWithRetry } from "./bedelias-atomic-write.mjs";
 
 const PROJECT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -32,7 +33,7 @@ async function atomicJson(filePath, value) {
   await mkdir(path.dirname(filePath), { recursive: true });
   const temporaryPath = `${filePath}.tmp`;
   await writeFile(temporaryPath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
-  await rename(temporaryPath, filePath);
+  await renameWithRetry(temporaryPath, filePath);
 }
 
 export function buildServiceReport(index, planEntries, now = new Date().toISOString()) {

@@ -3,10 +3,11 @@
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { openServicePrograms } from "./bedelias-browser-navigation.mjs";
+import { renameWithRetry } from "./bedelias-atomic-write.mjs";
 import {
   buildPlanArguments,
   isCompletedSnapshot,
@@ -54,7 +55,7 @@ async function atomicJson(filePath, value) {
   await mkdir(path.dirname(filePath), { recursive: true });
   const temporaryPath = `${filePath}.tmp`;
   await writeFile(temporaryPath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
-  await rename(temporaryPath, filePath);
+  await renameWithRetry(temporaryPath, filePath);
 }
 
 async function loadJson(filePath, fallback) {

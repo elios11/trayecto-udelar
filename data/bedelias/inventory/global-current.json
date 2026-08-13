@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T21:01:16.920Z",
+  "generatedAt": "2026-08-13T22:25:23.906Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 201,
+      "discovered": 190,
       "audited": 7,
-      "structurally-valid": 34,
-      "extracted": 8
+      "structurally-valid": 43,
+      "extracted": 10
     }
   },
   "services": [
@@ -3955,7 +3955,8 @@
           "Grado": 11
         },
         "byState": {
-          "discovered": 11
+          "structurally-valid": 9,
+          "extracted": 2
         }
       },
       "block": null,
@@ -3973,10 +3974,12 @@
             "name": "ABOGACÍA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:43:17.971Z",
+            "contentHash": "87b7b3c6438b23fcea9fd689a4668afc0c42302d611e3fb19afc2afe1bd865e6",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3998,10 +4001,12 @@
             "name": "DIPLOMACIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:04:15.751Z",
+            "contentHash": "3bdf2049e2c3aab77fa735d45be75cd36cee3ae6dfbde9c170786dca78f37b3d",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4023,10 +4028,12 @@
             "name": "LICENCIATURA EN RELACIONES INTERNACIONALES",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:46:55.449Z",
+            "contentHash": "347095403cfb7dad3809588f565ca129797ffadc2716da26fc1469c6ccb9d33d",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4048,10 +4055,12 @@
             "name": "LICENCIATURA EN RELACIONES LABORALES",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:05:24.679Z",
+            "contentHash": "953f74cb00870acb5c8a943bd3a7f13e677ad0be1d3c4312e5cc9b6703872f37",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4073,10 +4082,12 @@
             "name": "NOTARIADO",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:47:10.563Z",
+            "contentHash": "c40c0ba96a74077a8852dee5b22d130e771afbc19f4af14631c55c9b66998c04",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4098,10 +4109,12 @@
             "name": "TECNICATURA EN RELACIONES LABORALES",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:06:33.093Z",
+            "contentHash": "52602eff402aa3803c9757c677428f6c929e95b572b1361a9f677fb70e6344ee",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4123,10 +4136,12 @@
             "name": "LICENCIATURA EN TRADUCCIÓN PÚBLICA ALEMÁN",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T22:23:42.779Z",
+            "contentHash": "c66caed32c62ecb9ed6a678e054c853837c1ea964c63f0ec6505bd7aafa04ec5",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4148,10 +4163,12 @@
             "name": "LICENCIATURA EN TRADUCCIÓN PÚBLICA FRANCÉS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:45:16.866Z",
+            "contentHash": "a80b795460a4cbf15207e70839c8aabfb0a6c1f70b0ce86c9f23735cac992907",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4173,10 +4190,12 @@
             "name": "LICENCIATURA EN TRADUCCIÓN PÚBLICA INGLÉS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:45:28.929Z",
+            "contentHash": "fca2ae18f5b21560feabe51c0c7a5546d6324d4ba92e1a2e63d151382e295da2",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4198,10 +4217,12 @@
             "name": "LICENCIATURA EN TRADUCCIÓN PÚBLICA ITALIANO",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:45:40.755Z",
+            "contentHash": "b357d1257ff942dac5965bc21c77885789818eae1fb63078c20347c9ee25618a",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4223,10 +4244,12 @@
             "name": "LICENCIATURA EN TRADUCCIÓN PÚBLICA PORTUGUÉS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:08:31.574Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T21:45:53.094Z",
+            "contentHash": "558f5252f353f3975f3dde074c27e22e3c3a4071f271b57f71cee0c785cf9230",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7035,5 +7058,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:ce413b21cdb9198611b8d777f02d3c7e244b02c312abf29df903061c5eebfe21"
+  "contentHash": "sha256:984bfa9a1e149558b6520d21f749d3ad54d85374c267073d98c63022624d20a2"
 }

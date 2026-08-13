@@ -30,11 +30,12 @@ export async function recoverNavigation({ navigate, reload, isReady }) {
   return isReady();
 }
 
-export async function openServicePrograms(page, serviceRow, timeout = 30_000) {
+export async function openServicePrograms(page, serviceRow, timeout = 30_000, recover) {
   const programFilter = page.getByRole("textbox", { name: "Filtrar por Nombre" });
   return runVisibleTransition({
     locator: programFilter,
     action: () => serviceRow.click(),
+    recover,
     timeout,
   });
 }
