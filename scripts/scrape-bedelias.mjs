@@ -465,7 +465,7 @@ function collectCompositionCourses(node, output = []) {
   return output;
 }
 
-function parseRequirementOptions(label) {
+export function parseRequirementOptions(label) {
   const prefixes = [
     "Curso aprobado de la U.C.B:",
     "Examen aprobado de la U.C.B:",
@@ -476,6 +476,7 @@ function parseRequirementOptions(label) {
     "Inscripción a Curso de la U.C.B:",
     "Inscripción a Examen de la U.C.B:",
     "Actividad Curso aprobada/reprobada en la U.C.B:",
+    "Actividad Examen aprobada/reprobada en la U.C.B:",
   ];
   const escaped = prefixes.map((value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
   const matcher = new RegExp(`(${escaped})\\s*(.*?)(?=(?:${escaped})|$)`, "gi");
@@ -495,6 +496,7 @@ function parseRequirementOptions(label) {
     }
     const lower = prefix.toLowerCase();
     const assessment = lower.includes("actividad curso aprobada/reprobada") ? "course-activity"
+      : lower.includes("actividad examen aprobada/reprobada") ? "exam-activity"
       : lower.includes("inscripción a curso") ? "course-enrollment"
       : lower.includes("inscripción a examen") ? "exam-enrollment"
         : lower.startsWith("curso") ? "course"

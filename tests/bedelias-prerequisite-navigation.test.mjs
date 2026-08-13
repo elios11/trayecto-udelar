@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { buildPrerequisiteRequests, samePrerequisiteTarget } from "../scripts/scrape-bedelias.mjs";
+import { buildPrerequisiteRequests, parseRequirementOptions, samePrerequisiteTarget } from "../scripts/scrape-bedelias.mjs";
 
 test("identifica el mismo destino de previaturas sin depender del texto completo de la fila", () => {
   assert.equal(samePrerequisiteTarget(
@@ -46,4 +46,16 @@ test("conserva consultas explícitas aunque el plan no tenga composición public
       { kind: "name", value: "TESIS" },
     ],
   });
+});
+
+test("distingue actividad de examen de un examen aprobado", () => {
+  assert.deepEqual(parseRequirementOptions(
+    "Actividad Examen aprobada/reprobada en la U.C.B: E10 - INTRODUCCIÓN A LA MICROECONOMÍA",
+  ), [{
+    assessment: "exam-activity",
+    serviceCode: null,
+    code: "E10",
+    name: "INTRODUCCIÓN A LA MICROECONOMÍA",
+    raw: "Actividad Examen aprobada/reprobada en la U.C.B: E10 - INTRODUCCIÓN A LA MICROECONOMÍA",
+  }]);
 });

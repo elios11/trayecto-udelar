@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T13:29:01.135Z",
+  "generatedAt": "2026-08-13T15:11:10.873Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 223,
+      "discovered": 217,
       "audited": 7,
-      "structurally-valid": 18,
-      "extracted": 2
+      "structurally-valid": 23,
+      "extracted": 3
     }
   },
   "services": [
@@ -3278,7 +3278,8 @@
           "Grado": 6
         },
         "byState": {
-          "discovered": 6
+          "structurally-valid": 5,
+          "extracted": 1
         }
       },
       "block": null,
@@ -3296,10 +3297,12 @@
             "name": "CONTADOR PÚBLICO",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:03:32.837Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T13:44:48.068Z",
+            "contentHash": "76f7808312557eef9334511e6733c993b0f30b61a0d2736f0e1b2eb61aeb019f",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3321,10 +3324,12 @@
             "name": "LICENCIATURA EN ADMINISTRACION",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:03:32.837Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T14:00:28.296Z",
+            "contentHash": "883168d2c9757e5d15daf0ce8031719488ff3a6ae9fef0d6f3b92633c84a983c",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3346,10 +3351,12 @@
             "name": "LICENCIATURA EN ECONOMIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:03:32.837Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T14:17:08.642Z",
+            "contentHash": "2545b0f196c155693d1b7fab51c4a1805383040ed274db145434b9e5eb6679ce",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3371,10 +3378,12 @@
             "name": "LICENCIATURA EN ESTADISTICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:03:32.837Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T14:30:33.533Z",
+            "contentHash": "fab6311bfe5d5a2939835f0175ea5a36555e1402261ce3e47c656b6c17c84035",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3396,10 +3405,12 @@
             "name": "TÉCNICO EN ADMINISTRACIÓN",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:03:32.837Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T14:39:12.410Z",
+            "contentHash": "39bef8cf21ea792e705e06650349ed0df47d2f0d45520448490e64dbdf2124d5",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3421,10 +3432,12 @@
             "name": "TECNÓLOGO EN GESTIÓN UNIVERSITARIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:03:32.837Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T14:39:23.912Z",
+            "contentHash": "e113d14b13473072ac1669449e633a2ba03aa8638da4bae96df154b5b6a6bb7d",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6989,5 +7002,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:b58ce0d45f9b1cb0714bcc398c1fdf94ddf3950291938c9a6fa35d7294ca7e54"
+  "contentHash": "sha256:8390057b0ef8043cccb72e99c38dd39257c76c61d39f89a2a8b3286a2d6de922"
 }
