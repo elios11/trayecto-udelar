@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T20:23:45.391Z",
+  "generatedAt": "2026-08-13T21:01:16.920Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 205,
+      "discovered": 201,
       "audited": 7,
       "structurally-valid": 34,
-      "extracted": 4
+      "extracted": 8
     }
   },
   "services": [
@@ -3820,7 +3820,7 @@
           "Grado": 4
         },
         "byState": {
-          "discovered": 4
+          "extracted": 4
         }
       },
       "block": null,
@@ -3838,10 +3838,12 @@
             "name": "LICENCIATURA EN CIENCIA POLÍTICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:07:28.187Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T20:26:23.339Z",
+            "contentHash": "e31d064cea6fc9b961cd9a69f55e8c7ad6bc90363b64591cfc07e7a7637cf61b",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3863,10 +3865,12 @@
             "name": "LICENCIATURA EN DESARROLLO",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:07:28.187Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T20:26:34.094Z",
+            "contentHash": "d0f4f890005fe7d2357aa4f17fba59e0bc61892dd54bd4b77ef28c25722df7f5",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3888,10 +3892,12 @@
             "name": "LICENCIATURA EN SOCIOLOGÍA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:07:28.187Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T20:26:44.258Z",
+            "contentHash": "6f86a755b45b90c2dc3cb506d6f63206b8f7b56941557947ed2b7b0b83a01af0",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -3913,10 +3919,12 @@
             "name": "LICENCIATURA EN TRABAJO SOCIAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:07:28.187Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-13T20:26:55.302Z",
+            "contentHash": "dc66ae1c7a2b4acba5e22362a1b1fc2c8cc435efe16a8560c4e6f7eb68af67ed",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7027,5 +7035,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:8c07585367a8a768a2782c3807ce3478467e81d45711286d3ea7daaa01d4d61c"
+  "contentHash": "sha256:ce413b21cdb9198611b8d777f02d3c7e244b02c312abf29df903061c5eebfe21"
 }

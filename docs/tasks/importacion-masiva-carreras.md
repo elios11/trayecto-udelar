@@ -203,3 +203,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FCIEN`; artefacto `data/bedelias/reports/fcien-pilot.json`, estado `extracted`. Ningún plan queda auditado ni habilitado para publicación.
 - Manifiesto global actualizado sin red: 205 planes `discovered`, 7 `audited`, 34 `structurally-valid` y 4 `extracted`; hash `sha256:8c07585367a8a768a2782c3807ce3478467e81d45711286d3ea7daaa01d4d61c`.
 - Siguiente servicio central de la cola: FCS. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
+
+### Carril de recolección — FCS completado 2026-08-13
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service FCS --delay 500`; estado local `data/bedelias/batches/fcs-vigentes.json`.
+- Estado final: 4/4 `succeeded` en el primer intento, sin fallos ni interrupciones: Ciencia Política, Desarrollo, Sociología y Trabajo Social, todos con plan 2009.
+- La interfaz de Bedelías marca vigentes los cuatro planes, pero no publica la composición de ninguno. Cada snapshot conserva `compositionAvailability.available=false` y la advertencia correspondiente; no se inventan materias ni previaturas.
+- Cobertura literal: cero cursos/reglas publicados, 508 requests de interfaz y cuatro advertencias estructurales.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service FCS`; artefacto `data/bedelias/reports/fcs-pilot.json`, estado `extracted`. Ningún plan queda auditado ni habilitado para publicación.
+- Manifiesto global actualizado sin red: 201 planes `discovered`, 7 `audited`, 34 `structurally-valid` y 8 `extracted`; hash `sha256:ce413b21cdb9198611b8d777f02d3c7e244b02c312abf29df903061c5eebfe21`.
+- Siguiente servicio central de la cola: FDER. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.

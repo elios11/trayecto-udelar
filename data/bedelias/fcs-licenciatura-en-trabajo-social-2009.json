@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-13T20:26:55.302Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "FCS",
+    "name": "FACULTAD DE CIENCIAS SOCIALES",
+    "area": "SOCIAL Y ARTÍSTICA"
+  },
+  "program": {
+    "name": "LICENCIATURA EN TRABAJO SOCIAL",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2009 - LICENCIATURA EN TRABAJO SOCIAL",
+    "metadata": {
+      "type": "Plan por ciclos",
+      "current": true,
+      "duration": "48 meses",
+      "minCredits": null,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "LICENCIADO EN TRABAJO SOCIAL"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2009",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "dc66ae1c7a2b4acba5e22362a1b1fc2c8cc435efe16a8560c4e6f7eb68af67ed"
+}

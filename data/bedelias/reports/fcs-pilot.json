@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-13T21:01:16.399Z",
+  "service": {
+    "code": "FCS",
+    "name": "FACULTAD DE CIENCIAS SOCIALES",
+    "area": "SOCIAL Y ARTÍSTICA"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 4,
+    "courses": 0,
+    "prerequisiteEntries": 0,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 0,
+    "validationIssues": 4,
+    "requests": 508,
+    "bytes": 7238
+  },
+  "plans": [
+    {
+      "key": "FCS:licenciatura-en-ciencia-politica:2009",
+      "career": "LICENCIATURA EN CIENCIA POLÍTICA",
+      "type": "Grado",
+      "planYear": "2009",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1821
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T20:26:23.339Z",
+        "rateLimitMs": 500,
+        "contentHash": "e31d064cea6fc9b961cd9a69f55e8c7ad6bc90363b64591cfc07e7a7637cf61b"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "FCS:licenciatura-en-desarrollo:2009",
+      "career": "LICENCIATURA EN DESARROLLO",
+      "type": "Grado",
+      "planYear": "2009",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1801
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T20:26:34.094Z",
+        "rateLimitMs": 500,
+        "contentHash": "d0f4f890005fe7d2357aa4f17fba59e0bc61892dd54bd4b77ef28c25722df7f5"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "FCS:licenciatura-en-sociologia:2009",
+      "career": "LICENCIATURA EN SOCIOLOGÍA",
+      "type": "Grado",
+      "planYear": "2009",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1803
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T20:26:44.258Z",
+        "rateLimitMs": 500,
+        "contentHash": "6f86a755b45b90c2dc3cb506d6f63206b8f7b56941557947ed2b7b0b83a01af0"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "FCS:licenciatura-en-trabajo-social:2009",
+      "career": "LICENCIATURA EN TRABAJO SOCIAL",
+      "type": "Grado",
+      "planYear": "2009",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1813
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-13T20:26:55.302Z",
+        "rateLimitMs": 500,
+        "contentHash": "dc66ae1c7a2b4acba5e22362a1b1fc2c8cc435efe16a8560c4e6f7eb68af67ed"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE CIENCIAS SOCIALES antes de auditar o publicar."
+}

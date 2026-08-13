@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-13T20:26:44.258Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "FCS",
+    "name": "FACULTAD DE CIENCIAS SOCIALES",
+    "area": "SOCIAL Y ARTÍSTICA"
+  },
+  "program": {
+    "name": "LICENCIATURA EN SOCIOLOGÍA",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2009 - LICENCIATURA EN SOCIOLOGÍA",
+    "metadata": {
+      "type": "Plan por ciclos",
+      "current": true,
+      "duration": "48 meses",
+      "minCredits": null,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "LICENCIADO EN SOCIOLOGIA"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2009",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "6f86a755b45b90c2dc3cb506d6f63206b8f7b56941557947ed2b7b0b83a01af0"
+}
