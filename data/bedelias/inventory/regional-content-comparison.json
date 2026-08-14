@@ -1,0 +1,2223 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T08:54:40.086Z",
+  "source": {
+    "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
+    "method": "local-curriculum-fingerprint"
+  },
+  "policy": {
+    "contentMatchIsNotOfficialEquivalence": true,
+    "missingSnapshotsRemainPending": true,
+    "siteVariantRequiresDetectedAndAuditedDifference": true
+  },
+  "counts": {
+    "candidateIdentities": 43,
+    "regionalOffers": 57,
+    "comparablePairs": 0,
+    "contentMatchCandidates": 0,
+    "contentDifferences": 0,
+    "missingCanonicalSnapshots": 12,
+    "missingRegionalSnapshots": 57,
+    "pendingIdentities": 43
+  },
+  "plans": [
+    {
+      "identity": "abogacia:2016",
+      "career": {
+        "name": "ABOGACÍA",
+        "normalizedName": "abogacia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2016"
+      },
+      "canonical": {
+        "serviceCode": "FDER",
+        "serviceName": "FACULTAD DE DERECHO",
+        "planKey": "FDER:abogacia:2016",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fder-abogacia-2016.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:09b61cd31786ed78728274e7c4128765d5fe891bc8f1a2b9356ce00e6fdf2066",
+          "counts": {
+            "courses": 510,
+            "prerequisites": 468,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:abogacia:2016",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-abogacia-2016.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "archivologia:2012",
+      "career": {
+        "name": "ARCHIVOLOGÍA",
+        "normalizedName": "archivologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2012"
+      },
+      "canonical": {
+        "serviceCode": "FIC",
+        "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
+        "planKey": "FIC:archivologia:2012",
+        "site": null,
+        "state": "extracted",
+        "snapshot": "data/bedelias/fic-archivologia-2012.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:68f4b6012f65e4905e0e2a619028bb8a301440ecba5bf282d6a888852f2c8e06",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:archivologia:2012",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-archivologia-2012.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "asistente en odontologia:2017",
+      "career": {
+        "name": "ASISTENTE EN ODONTOLOGÍA",
+        "normalizedName": "asistente en odontologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2017"
+      },
+      "canonical": {
+        "serviceCode": "ODON",
+        "serviceName": "FACULTAD DE ODONTOLOGÍA",
+        "planKey": "ODON:asistente en odontologia:2017",
+        "site": null,
+        "state": "extracted",
+        "snapshot": "data/bedelias/odon-asistente-en-odontologia-2017.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:4c2a950229249330f801bb8b435d573524c4f6884cee659056b13fa45c1b82e1",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CUR",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
+          "planKey": "CUR:asistente en odontologia:2017",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cur-asistente-en-odontologia-2017.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:asistente en odontologia:2017",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-asistente-en-odontologia-2017.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CUR",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "bibliotecologia:2012",
+      "career": {
+        "name": "BIBLIOTECOLOGÍA",
+        "normalizedName": "bibliotecologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2012"
+      },
+      "canonical": {
+        "serviceCode": "FIC",
+        "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
+        "planKey": "FIC:bibliotecologia:2012",
+        "site": null,
+        "state": "extracted",
+        "snapshot": "data/bedelias/fic-bibliotecologia-2012.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:c136e2aeab28480e5cc2a81b6bf12be6531508c9c64f2878acfb7a5b076930a4",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:bibliotecologia:2012",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-bibliotecologia-2012.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "bioquimico clinico:2015",
+      "career": {
+        "name": "BIOQUÍMICO CLÍNICO",
+        "normalizedName": "bioquimico clinico",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2015"
+      },
+      "canonical": {
+        "serviceCode": "FQ",
+        "serviceName": "FACULTAD DE QUÍMICA",
+        "planKey": "FQ:bioquimico clinico:2015",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fq-bioquimico-clinico-2015.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:bioquimico clinico:2015",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-bioquimico-clinico-2015.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "diplomatura en musica:1994",
+      "career": {
+        "name": "DIPLOMATURA EN MÚSICA",
+        "normalizedName": "diplomatura en musica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "1994"
+      },
+      "canonical": {
+        "serviceCode": "FARTES",
+        "serviceName": "FACULTAD DE ARTES",
+        "planKey": "FARTES:diplomatura en musica:1994",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fartes-diplomatura-en-musica-1994.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:4d772ac2a3f400b07302d874aef4c58c78635765f03faa070ffc4aa6515d8408",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:diplomatura en musica:1994",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-diplomatura-en-musica-1994.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "doctor en ciencias veterinarias:2021",
+      "career": {
+        "name": "DOCTOR EN CIENCIAS VETERINARIAS",
+        "normalizedName": "doctor en ciencias veterinarias",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2021"
+      },
+      "canonical": {
+        "serviceCode": "FVET",
+        "serviceName": "FACULTAD DE VETERINARIA",
+        "planKey": "FVET:doctor en ciencias veterinarias:2021",
+        "site": null,
+        "state": "extracted",
+        "snapshot": "data/bedelias/fvet-doctor-en-ciencias-veterinarias-2021.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:4a82875f50bd4a02fe7df3d2c7fb55aae5ba20ca65cdb1454d5ed1ac809b8051",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:doctor en ciencias veterinarias:2021",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-doctor-en-ciencias-veterinarias-2021.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "doctor en medicina:2008",
+      "career": {
+        "name": "DOCTOR EN MEDICINA",
+        "normalizedName": "doctor en medicina",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2008"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:doctor en medicina:2008",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-doctor-en-medicina-2008.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:6a824a7bc64c783a6a2c8df0cda5b26e4479879fee73254131dd155189bc5f10",
+          "counts": {
+            "courses": 2753,
+            "prerequisites": 2276,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:doctor en medicina:2008",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-doctor-en-medicina-2008.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "escalonada de enfermeria:2001",
+      "career": {
+        "name": "ESCALONADA DE ENFERMERIA",
+        "normalizedName": "escalonada de enfermeria",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2001"
+      },
+      "canonical": {
+        "serviceCode": "FENF",
+        "serviceName": "FACULTAD DE ENFERMERÍA",
+        "planKey": "FENF:escalonada de enfermeria:2001",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fenf-escalonada-de-enfermeria-2001.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:2a3857131cd68a41838bbab5be33bfd91622fc92e4756b40284c9a641c7f46bf",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CUR",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
+          "planKey": "CUR:escalonada de enfermeria:2001",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cur-escalonada-de-enfermeria-2001.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CURE",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+          "planKey": "CURE:escalonada de enfermeria:2001",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cure-escalonada-de-enfermeria-2001.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:escalonada de enfermeria:2001",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-escalonada-de-enfermeria-2001.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CUR",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CURE",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "higienista en odontologia:2017",
+      "career": {
+        "name": "HIGIENISTA EN ODONTOLOGÍA",
+        "normalizedName": "higienista en odontologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2017"
+      },
+      "canonical": {
+        "serviceCode": "ODON",
+        "serviceName": "FACULTAD DE ODONTOLOGÍA",
+        "planKey": "ODON:higienista en odontologia:2017",
+        "site": null,
+        "state": "extracted",
+        "snapshot": "data/bedelias/odon-higienista-en-odontologia-2017.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:987a66625bf2a8b051f5cc7e749fe0692ee53760a7143745e487f6c34072a32c",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CUR",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
+          "planKey": "CUR:higienista en odontologia:2017",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cur-higienista-en-odontologia-2017.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:higienista en odontologia:2017",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-higienista-en-odontologia-2017.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CUR",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "ingenieria de alimentos:2003",
+      "career": {
+        "name": "INGENIERÍA DE ALIMENTOS",
+        "normalizedName": "ingenieria de alimentos",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2003"
+      },
+      "canonical": {
+        "serviceCode": "FING",
+        "serviceName": "FACULTAD DE INGENIERÍA",
+        "planKey": "FING:ingenieria de alimentos:2003",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fing-ingenieria-de-alimentos-2003.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:ingenieria de alimentos:2003",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-ingenieria-de-alimentos-2003.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "ingenieria en computacion:2025",
+      "career": {
+        "name": "INGENIERÍA EN COMPUTACIÓN",
+        "normalizedName": "ingenieria en computacion",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2025"
+      },
+      "canonical": {
+        "serviceCode": "FING",
+        "serviceName": "FACULTAD DE INGENIERÍA",
+        "planKey": "FING:ingenieria en computacion:2025",
+        "site": null,
+        "state": "audited",
+        "snapshot": "data/bedelias/fing-ingenieria-en-computacion-2025.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:49448d3349831d479ef4f3971acd7bb0f7a2c5fb44fd831da563c631bab92231",
+          "counts": {
+            "courses": 38,
+            "prerequisites": 50,
+            "publishedRules": 18
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURSO",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL SUROESTE",
+          "planKey": "CENURSO:ingenieria en computacion:2025",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurso-ingenieria-en-computacion-2025.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:ingenieria en computacion:2025",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-ingenieria-en-computacion-2025.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURSO",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "ingenieria quimica:2021",
+      "career": {
+        "name": "INGENIERÍA QUÍMICA",
+        "normalizedName": "ingenieria quimica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2021"
+      },
+      "canonical": {
+        "serviceCode": "FING",
+        "serviceName": "FACULTAD DE INGENIERÍA",
+        "planKey": "FING:ingenieria quimica:2021",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fing-ingenieria-quimica-2021.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:ingenieria quimica:2021",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-ingenieria-quimica-2021.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "ingeniero agronomo:2020",
+      "career": {
+        "name": "INGENIERO AGRÓNOMO",
+        "normalizedName": "ingeniero agronomo",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2020"
+      },
+      "canonical": {
+        "serviceCode": "FAGRO",
+        "serviceName": "FACULTAD DE AGRONOMÍA",
+        "planKey": "FAGRO:ingeniero agronomo:2020",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:2e7ebd4fc7b54d864dc838ae11aecaa0fbcab7b74ab38fdbbdb22b3198bb56a6",
+          "counts": {
+            "courses": 526,
+            "prerequisites": 387,
+            "publishedRules": 327
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:ingeniero agronomo:2020",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-ingeniero-agronomo-2020.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "interpretacion lsu espanol lsu:2014",
+      "career": {
+        "name": "INTERPRETACIÓN LSU-ESPAÑOL-LSU",
+        "normalizedName": "interpretacion lsu espanol lsu",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2014"
+      },
+      "canonical": {
+        "serviceCode": "FHUM",
+        "serviceName": "FACULTAD DE HUMANIDADES",
+        "planKey": "FHUM:interpretacion lsu espanol lsu:2014",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fhum-interpretacion-lsu-espanol-lsu-2014.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:cd3bf6ed72a55d55307f82f344ea79263a3e5ef502f76d3128c6749c639a6fe1",
+          "counts": {
+            "courses": 199,
+            "prerequisites": 202,
+            "publishedRules": 29
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CUT",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
+          "planKey": "CUT:interpretacion lsu espanol lsu:2014",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cut-interpretacion-lsu-espanol-lsu-2014.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:interpretacion lsu espanol lsu:2014",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-interpretacion-lsu-espanol-lsu-2014.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CUT",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "lic en ingenieria biologica:2013",
+      "career": {
+        "name": "LIC EN INGENIERÍA BIOLÓGICA",
+        "normalizedName": "lic en ingenieria biologica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2013"
+      },
+      "canonical": {
+        "serviceCode": "FING",
+        "serviceName": "FACULTAD DE INGENIERÍA",
+        "planKey": "FING:lic en ingenieria biologica:2013",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fing-lic-en-ingenieria-biologica-2013.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:lic en ingenieria biologica:2013",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-lic-en-ingenieria-biologica-2013.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en biotecnologia:2024",
+      "career": {
+        "name": "LICENCIATURA EN BIOTECNOLOGÍA",
+        "normalizedName": "licenciatura en biotecnologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2024"
+      },
+      "canonical": {
+        "serviceCode": "FCIEN",
+        "serviceName": "FACULTAD DE CIENCIAS",
+        "planKey": "FCIEN:licenciatura en biotecnologia:2024",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fcien-licenciatura-en-biotecnologia-2024.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:c775cf7fe3449ef46f3adcf527712ff34c760c762fae84f3e79ded5d90c687e0",
+          "counts": {
+            "courses": 127,
+            "prerequisites": 91,
+            "publishedRules": 55
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en biotecnologia:2024",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-biotecnologia-2024.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en educacion fisica:2017",
+      "career": {
+        "name": "LICENCIATURA EN EDUCACIÓN FÍSICA",
+        "normalizedName": "licenciatura en educacion fisica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2017"
+      },
+      "canonical": {
+        "serviceCode": "ISEF",
+        "serviceName": "INSTITUTO SUPERIOR DE EDUCACIÓN FÍSICA",
+        "planKey": "ISEF:licenciatura en educacion fisica:2017",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:15061d36e2db8c796edd424505cb07f58363d03c50230e6bee279a92b0ffff60",
+          "counts": {
+            "courses": 1297,
+            "prerequisites": 1192,
+            "publishedRules": 117
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CURE",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+          "planKey": "CURE:licenciatura en educacion fisica:2017",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cure-licenciatura-en-educacion-fisica-2017.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en educacion fisica:2017",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-educacion-fisica-2017.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CURE",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
+      "career": {
+        "name": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
+        "normalizedName": "licenciatura en enfermeria profesionalizacion de auxiliar",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "1999"
+      },
+      "canonical": {
+        "serviceCode": "FENF",
+        "serviceName": "FACULTAD DE ENFERMERÍA",
+        "planKey": "FENF:licenciatura en enfermeria profesionalizacion de auxiliar:1999",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:3fbb720293910b7c9c21dfec17d5a701d42b95092f8672b2bdcdac44e2b8ddeb",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURSO",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL SUROESTE",
+          "planKey": "CENURSO:licenciatura en enfermeria profesionalizacion de auxiliar:1999",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurso-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURSO",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en enfermeria:2016",
+      "career": {
+        "name": "LICENCIATURA EN ENFERMERIA",
+        "normalizedName": "licenciatura en enfermeria",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2016"
+      },
+      "canonical": {
+        "serviceCode": "FENF",
+        "serviceName": "FACULTAD DE ENFERMERÍA",
+        "planKey": "FENF:licenciatura en enfermeria:2016",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fenf-licenciatura-en-enfermeria-2016.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:1ed13a4c75aed2e3e8c291a66164fa1c617ad10cea0eb811e676e27658fbe453",
+          "counts": {
+            "courses": 223,
+            "prerequisites": 131,
+            "publishedRules": 50
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CUR",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
+          "planKey": "CUR:licenciatura en enfermeria:2016",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cur-licenciatura-en-enfermeria-2016.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CURE",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+          "planKey": "CURE:licenciatura en enfermeria:2016",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cure-licenciatura-en-enfermeria-2016.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en enfermeria:2016",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-enfermeria-2016.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CUR",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CURE",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en fisioterapia:2006",
+      "career": {
+        "name": "LICENCIATURA EN FISIOTERAPIA",
+        "normalizedName": "licenciatura en fisioterapia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:licenciatura en fisioterapia:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-licenciatura-en-fisioterapia-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:26dd96e8754417bd67d308fcc3e654845c4bfa7ee6e0cb1b15631294b8cc5b43",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en fisioterapia:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-fisioterapia-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en imagenologia:2006",
+      "career": {
+        "name": "LICENCIATURA EN IMAGENOLOGÍA",
+        "normalizedName": "licenciatura en imagenologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:licenciatura en imagenologia:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-licenciatura-en-imagenologia-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:6bea7f0283b2e9837978224c89b75fb247dc5d825a1654bfc9cad5b2e0a8c3aa",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en imagenologia:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-imagenologia-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en instrumentacion quirurgica:2006",
+      "career": {
+        "name": "LICENCIATURA EN INSTRUMENTACIÓN QUIRÚRGICA",
+        "normalizedName": "licenciatura en instrumentacion quirurgica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:licenciatura en instrumentacion quirurgica:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-licenciatura-en-instrumentacion-quirurgica-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:a9314fb265d32f022ee7040f5ca5389c6f6b8370436f8b195e8daa30488ac4da",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en instrumentacion quirurgica:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-instrumentacion-quirurgica-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en laboratorio clinico:2006",
+      "career": {
+        "name": "LICENCIATURA EN LABORATORIO CLÍNICO",
+        "normalizedName": "licenciatura en laboratorio clinico",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:licenciatura en laboratorio clinico:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-licenciatura-en-laboratorio-clinico-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:034fd8d0c10b02534817ef4f42ee3ceaa4e659d6da56d4e6bc3e86273e3a79af",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en laboratorio clinico:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-laboratorio-clinico-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en psicologia:2013",
+      "career": {
+        "name": "LICENCIATURA EN PSICOLOGIA",
+        "normalizedName": "licenciatura en psicologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2013"
+      },
+      "canonical": {
+        "serviceCode": "PSICO",
+        "serviceName": "FACULTAD DE PSICOLOGÍA",
+        "planKey": "PSICO:licenciatura en psicologia:2013",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/psico-licenciatura-en-psicologia-2013.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:ec3c0cb2f0fc562ec31c1049d03104ecee59fee0dc84f2b72d90893a379dbce9",
+          "counts": {
+            "courses": 2946,
+            "prerequisites": 2647,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en psicologia:2013",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-psicologia-2013.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en psicomotricidad:2006",
+      "career": {
+        "name": "LICENCIATURA EN PSICOMOTRICIDAD",
+        "normalizedName": "licenciatura en psicomotricidad",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:licenciatura en psicomotricidad:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-licenciatura-en-psicomotricidad-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:d684904d4ea41db5e7050353f72336ae295782f5379eea44dd3b5b52ce888ec5",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en psicomotricidad:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-psicomotricidad-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en quimica:2016",
+      "career": {
+        "name": "LICENCIATURA EN QUÍMICA",
+        "normalizedName": "licenciatura en quimica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2016"
+      },
+      "canonical": {
+        "serviceCode": "FQ",
+        "serviceName": "FACULTAD DE QUÍMICA",
+        "planKey": "FQ:licenciatura en quimica:2016",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fq-licenciatura-en-quimica-2016.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en quimica:2016",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-quimica-2016.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "licenciatura en trabajo social:2009",
+      "career": {
+        "name": "LICENCIATURA EN TRABAJO SOCIAL",
+        "normalizedName": "licenciatura en trabajo social",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2009"
+      },
+      "canonical": {
+        "serviceCode": "FCS",
+        "serviceName": "FACULTAD DE CIENCIAS SOCIALES",
+        "planKey": "FCS:licenciatura en trabajo social:2009",
+        "site": null,
+        "state": "extracted",
+        "snapshot": "data/bedelias/fcs-licenciatura-en-trabajo-social-2009.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:8f5e27697b3c8fc8562ede9f5a29d6d38b44a13e0c18cf1e734a1a1443115cb7",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:licenciatura en trabajo social:2009",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-licenciatura-en-trabajo-social-2009.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "notariado:2016",
+      "career": {
+        "name": "NOTARIADO",
+        "normalizedName": "notariado",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2016"
+      },
+      "canonical": {
+        "serviceCode": "FDER",
+        "serviceName": "FACULTAD DE DERECHO",
+        "planKey": "FDER:notariado:2016",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fder-notariado-2016.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:ce4de5ad0888aa08a4e24826667db0f06283c060f65aaeb0b0c773d0aa18561f",
+          "counts": {
+            "courses": 474,
+            "prerequisites": 436,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:notariado:2016",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-notariado-2016.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "quimica farmaceutica:2015",
+      "career": {
+        "name": "QUÍMICA FARMACÉUTICA",
+        "normalizedName": "quimica farmaceutica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2015"
+      },
+      "canonical": {
+        "serviceCode": "FQ",
+        "serviceName": "FACULTAD DE QUÍMICA",
+        "planKey": "FQ:quimica farmaceutica:2015",
+        "site": null,
+        "state": "audited",
+        "snapshot": "data/bedelias/fq-quimica-farmaceutica-2015.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:19684e84f8d04135210ec4b60b2ef35bbdea5bf08296cf35f924e31ae7137858",
+          "counts": {
+            "courses": 441,
+            "prerequisites": 576,
+            "publishedRules": 446
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:quimica farmaceutica:2015",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-quimica-farmaceutica-2015.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "quimico:2015",
+      "career": {
+        "name": "QUÍMICO",
+        "normalizedName": "quimico",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2015"
+      },
+      "canonical": {
+        "serviceCode": "FQ",
+        "serviceName": "FACULTAD DE QUÍMICA",
+        "planKey": "FQ:quimico:2015",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fq-quimico-2015.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:quimico:2015",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-quimico-2015.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnicatura en anatomia patologica:2006",
+      "career": {
+        "name": "TECNICATURA EN ANATOMÍA PATOLÓGICA",
+        "normalizedName": "tecnicatura en anatomia patologica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:tecnicatura en anatomia patologica:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-tecnicatura-en-anatomia-patologica-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:449041ae59c2b0035587b0eaa617b3ff45b896ec94ea97c123b18c065a8ea5ef",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnicatura en anatomia patologica:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnicatura-en-anatomia-patologica-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnicatura en deportes:2007",
+      "career": {
+        "name": "TECNICATURA EN DEPORTES",
+        "normalizedName": "tecnicatura en deportes",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2007"
+      },
+      "canonical": {
+        "serviceCode": "ISEF",
+        "serviceName": "INSTITUTO SUPERIOR DE EDUCACIÓN FÍSICA",
+        "planKey": "ISEF:tecnicatura en deportes:2007",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/isef-tecnicatura-en-deportes-2007.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:3344dafd311f62d2b221a0ff4f236b437bec51d4149e8236b142578483400fbe",
+          "counts": {
+            "courses": 758,
+            "prerequisites": 632,
+            "publishedRules": 49
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CUR",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
+          "planKey": "CUR:tecnicatura en deportes:2007",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cur-tecnicatura-en-deportes-2007.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CURE",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+          "planKey": "CURE:tecnicatura en deportes:2007",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cure-tecnicatura-en-deportes-2007.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnicatura en deportes:2007",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnicatura-en-deportes-2007.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CUR",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CURE",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnicatura en hemoterapia:2006",
+      "career": {
+        "name": "TECNICATURA EN HEMOTERAPIA",
+        "normalizedName": "tecnicatura en hemoterapia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:tecnicatura en hemoterapia:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-tecnicatura-en-hemoterapia-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:71c9cba50a63c5c8076a566702d2cd1038534c99b1bb2b323cde53eac9e05a9a",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CURE",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+          "planKey": "CURE:tecnicatura en hemoterapia:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cure-tecnicatura-en-hemoterapia-2006.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnicatura en hemoterapia:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnicatura-en-hemoterapia-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CURE",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnicatura en podologia:2006",
+      "career": {
+        "name": "TECNICATURA EN PODOLOGÍA",
+        "normalizedName": "tecnicatura en podologia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:tecnicatura en podologia:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-tecnicatura-en-podologia-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:2610444f35561fe0a186b2e05a4d837d1e482468d0cf00336b5ea35b1d0bafd3",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnicatura en podologia:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnicatura-en-podologia-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnicatura en radioterapia:2006",
+      "career": {
+        "name": "TECNICATURA EN RADIOTERAPIA",
+        "normalizedName": "tecnicatura en radioterapia",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:tecnicatura en radioterapia:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-tecnicatura-en-radioterapia-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:f3a0246fe65aa165716c1cb4ce32c1ce907f92ae6e25a1d0b230528939e79c8b",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnicatura en radioterapia:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnicatura-en-radioterapia-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnicatura en salud ocupacional:2006",
+      "career": {
+        "name": "TECNICATURA EN SALUD OCUPACIONAL",
+        "normalizedName": "tecnicatura en salud ocupacional",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2006"
+      },
+      "canonical": {
+        "serviceCode": "FMED",
+        "serviceName": "FACULTAD DE MEDICINA",
+        "planKey": "FMED:tecnicatura en salud ocupacional:2006",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fmed-tecnicatura-en-salud-ocupacional-2006.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:bcd70612f5caa178923a6cec44b04bc82a2b1d54793c2784680fff4f39783a8b",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnicatura en salud ocupacional:2006",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnicatura-en-salud-ocupacional-2006.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnico bach en cs quimicas:2015",
+      "career": {
+        "name": "TÉCNICO BACH. EN CS.QUÍMICAS",
+        "normalizedName": "tecnico bach en cs quimicas",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2015"
+      },
+      "canonical": {
+        "serviceCode": "FQ",
+        "serviceName": "FACULTAD DE QUÍMICA",
+        "planKey": "FQ:tecnico bach en cs quimicas:2015",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fq-tecnico-bach-en-cs-quimicas-2015.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnico bach en cs quimicas:2015",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnico-bach-en-cs-quimicas-2015.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnologo en informatica:2007",
+      "career": {
+        "name": "TECNÓLOGO EN INFORMÁTICA",
+        "normalizedName": "tecnologo en informatica",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2007"
+      },
+      "canonical": {
+        "serviceCode": "FING",
+        "serviceName": "FACULTAD DE INGENIERÍA",
+        "planKey": "FING:tecnologo en informatica:2007",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fing-tecnologo-en-informatica-2007.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CURE",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+          "planKey": "CURE:tecnologo en informatica:2007",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cure-tecnologo-en-informatica-2007.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnologo en informatica:2007",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnologo-en-informatica-2007.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CURE",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnologo en telecomunicaciones:2009",
+      "career": {
+        "name": "TECNÓLOGO EN TELECOMUNICACIONES",
+        "normalizedName": "tecnologo en telecomunicaciones",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2009"
+      },
+      "canonical": {
+        "serviceCode": "FING",
+        "serviceName": "FACULTAD DE INGENIERÍA",
+        "planKey": "FING:tecnologo en telecomunicaciones:2009",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fing-tecnologo-en-telecomunicaciones-2009.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CURE",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+          "planKey": "CURE:tecnologo en telecomunicaciones:2009",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cure-tecnologo-en-telecomunicaciones-2009.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CURE",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnologo industrial mecanico:2016",
+      "career": {
+        "name": "TECNÓLOGO INDUSTRIAL MECÁNICO",
+        "normalizedName": "tecnologo industrial mecanico",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2016"
+      },
+      "canonical": {
+        "serviceCode": "FING",
+        "serviceName": "FACULTAD DE INGENIERÍA",
+        "planKey": "FING:tecnologo industrial mecanico:2016",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fing-tecnologo-industrial-mecanico-2016.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnologo industrial mecanico:2016",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnologo-industrial-mecanico-2016.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnologo int y trad lsu esp:2025",
+      "career": {
+        "name": "TECNÓLOGO INT Y TRAD LSU ESP",
+        "normalizedName": "tecnologo int y trad lsu esp",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2025"
+      },
+      "canonical": {
+        "serviceCode": "FHUM",
+        "serviceName": "FACULTAD DE HUMANIDADES",
+        "planKey": "FHUM:tecnologo int y trad lsu esp:2025",
+        "site": null,
+        "state": "structurally-valid",
+        "snapshot": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
+        "available": true,
+        "fingerprint": {
+          "hash": "sha256:0cf3018289fc185d054c3b6ac60d921298351cbde613fe8ee1e2445797186bdb",
+          "counts": {
+            "courses": 199,
+            "prerequisites": 195,
+            "publishedRules": 0
+          }
+        }
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CUCEL",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - CUCEL",
+          "planKey": "CUCEL:tecnologo int y trad lsu esp:2025",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cucel-tecnologo-int-y-trad-lsu-esp-2025.json",
+          "available": false,
+          "fingerprint": null
+        },
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnologo int y trad lsu esp:2025",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnologo-int-y-trad-lsu-esp-2025.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CUCEL",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-regional-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    },
+    {
+      "identity": "tecnologo quimico:2025",
+      "career": {
+        "name": "TECNÓLOGO QUÍMICO",
+        "normalizedName": "tecnologo quimico",
+        "type": "Grado"
+      },
+      "plan": {
+        "year": "2025"
+      },
+      "canonical": {
+        "serviceCode": "FQ",
+        "serviceName": "FACULTAD DE QUÍMICA",
+        "planKey": "FQ:tecnologo quimico:2025",
+        "site": null,
+        "state": "discovered",
+        "snapshot": "data/bedelias/fq-tecnologo-quimico-2025.json",
+        "available": false,
+        "fingerprint": null
+      },
+      "regionalOfferings": [
+        {
+          "serviceCode": "CENURLN",
+          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+          "planKey": "CENURLN:tecnologo quimico:2025",
+          "site": null,
+          "state": "discovered",
+          "snapshot": "data/bedelias/cenurln-tecnologo-quimico-2025.json",
+          "available": false,
+          "fingerprint": null
+        }
+      ],
+      "comparisons": [
+        {
+          "serviceCode": "CENURLN",
+          "status": "not-comparable",
+          "reason": "missing-canonical-snapshot"
+        }
+      ],
+      "conclusion": "pending-snapshots"
+    }
+  ],
+  "contentHash": "sha256:03946772bb7259a3d87b8806f0d589c086b44557ae994bffd4e42e65974b54db"
+}

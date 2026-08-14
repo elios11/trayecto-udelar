@@ -381,3 +381,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Manifiesto global actualizado sin red: 89 `discovered`, 110 `structurally-valid`, 44 `extracted` y 7 `audited`; hash `sha256:59bf04e46531aa982160ae535b501b7af9665bebdfacb9270c59997751a9835a`.
 - Manifiesto regional: hash `sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357`.
 - Siguiente paso: comparar localmente el contenido disponible de las 43 identidades con coincidencia central antes de marcar equivalencias o variantes por sede.
+
+### Comparación de ofertas regionales coincidentes — diagnóstico local 2026-08-14
+
+- Comando reproducible y sin red: `node scripts/bedelias-regional-content-comparison.mjs`; artefacto `data/bedelias/inventory/regional-content-comparison.json`.
+- La huella curricular compara metadatos académicos, títulos, materias, créditos, recorridos de composición y previaturas, excluyendo procedencia y fechas. Una coincidencia de huella sigue siendo candidata y no equivalencia oficial automática.
+- Resultado: 43 identidades y 57 ofertas regionales candidatas, pero 0 pares comparables porque los 57 snapshots regionales coincidentes se omitieron deliberadamente para no repetir currículas; en 12 pares tampoco existe todavía un snapshot central crudo.
+- No se afirmó ninguna equivalencia ni diferencia y no se habilitó ningún selector de sede. Las 43 identidades permanecen `pending-snapshots` y el manifiesto conserva el criterio conservador.
+- Hash del diagnóstico: `sha256:03946772bb7259a3d87b8806f0d589c086b44557ae994bffd4e42e65974b54db`.
+- Próxima decisión: mantener la deduplicación por identidad como candidata, o autorizar una extracción comparativa acotada de ofertas coincidentes antes de modelar variantes curriculares por sede.
