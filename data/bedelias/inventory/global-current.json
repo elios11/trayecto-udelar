@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T04:33:25.560Z",
+  "generatedAt": "2026-08-14T04:48:07.105Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 123,
+      "discovered": 122,
+      "extracted": 35,
       "audited": 7,
-      "structurally-valid": 86,
-      "extracted": 34
+      "structurally-valid": 86
     }
   },
   "services": [
@@ -2529,7 +2529,7 @@
           "Grado": 1
         },
         "byState": {
-          "discovered": 1
+          "extracted": 1
         }
       },
       "block": null,
@@ -2547,10 +2547,12 @@
             "name": "LICENCIATURA EN NUTRICIÓN",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:47:32.025Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T04:34:58.679Z",
+            "contentHash": "05093b7e9b08fdcd5c2149778666f593ec27a05cc999e3ab96d6c856201661ad",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7196,5 +7198,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:0ae6bf0d077c63e76d86e7512582fa4a1ebf76bdb9d62a25f057a52483e6a542"
+  "contentHash": "sha256:2fec67be09ae4c2eb1ef9fa9fef5511b788ad9c2facc7aaf5ced83056e31fc82"
 }

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T04:48:05.191Z",
+  "service": {
+    "code": "ENUT",
+    "name": "ESCUELA DE NUTRICIÓN",
+    "area": "CIENCIAS DE LA SALUD"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 1,
+    "courses": 0,
+    "prerequisiteEntries": 0,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 0,
+    "validationIssues": 1,
+    "requests": 126,
+    "bytes": 1796
+  },
+  "plans": [
+    {
+      "key": "ENUT:licenciatura-en-nutricion:2014",
+      "career": "LICENCIATURA EN NUTRICIÓN",
+      "type": "Grado",
+      "planYear": "2014",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 126,
+        "bytes": 1796
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T04:34:58.679Z",
+        "rateLimitMs": 500,
+        "contentHash": "05093b7e9b08fdcd5c2149778666f593ec27a05cc999e3ab96d6c856201661ad"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de ESCUELA DE NUTRICIÓN antes de auditar o publicar."
+}

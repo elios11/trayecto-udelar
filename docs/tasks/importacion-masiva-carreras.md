@@ -296,3 +296,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service PSICO`; artefacto `data/bedelias/reports/psico-pilot.json`, estado `extracted`.
 - Manifiesto global actualizado sin red: 123 planes `discovered`, 7 `audited`, 86 `structurally-valid` y 34 `extracted`; hash `sha256:fbf47717de4554ca56371165383fd406f6289b6c70d21349667abf0e31374397`.
 - Siguiente servicio: ENUT. Mantener cierre y encadenamiento automáticos sin integrar ni publicar.
+
+### Carril de recolección — ENUT completado 2026-08-14
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service ENUT --delay 500`; estado local `data/bedelias/batches/enut-vigentes.json`.
+- Estado final: 1/1 `succeeded`, sin fallos ni interrupciones: Licenciatura en Nutrición 2014.
+- Bedelías marca el plan vigente pero no publica su composición. El snapshot conserva esa advertencia, sin materias ni previaturas inventadas.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service ENUT`; artefacto `data/bedelias/reports/enut-pilot.json`, estado `extracted`.
+- Manifiesto global actualizado sin red: 122 planes `discovered`, 7 `audited`, 86 `structurally-valid` y 35 `extracted`; hash `sha256:8be0d0ee042a2af6aadd885e950cfe260848dbfacc43ba7dd364db624d5d9540`.
+- Siguiente servicio: ISEF. Mantener cierre y encadenamiento automáticos sin integrar ni publicar.
