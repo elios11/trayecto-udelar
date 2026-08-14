@@ -267,3 +267,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FMED`; artefacto `data/bedelias/reports/fmed-pilot.json`, estado `extracted`.
 - Manifiesto global actualizado sin red: 133 planes `discovered`, 7 `audited`, 84 `structurally-valid` y 26 `extracted`; hash `sha256:9641544d5fa9ea6a0fc1a81f9794fb06b8a2d4cb946970404244eb9fa6d62ecb`.
 - Siguiente servicio central de la cola: FVET. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
+
+### Carril de recolección — FVET completado 2026-08-14
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service FVET --delay 500`; estado local `data/bedelias/batches/fvet-vigentes.json`.
+- Estado final: 1/1 `succeeded`, sin fallos ni interrupciones: Doctor en Ciencias Veterinarias 2021.
+- Bedelías marca el plan vigente pero no publica su composición. El snapshot conserva la advertencia literal y no inventa materias ni previaturas.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service FVET`; artefacto `data/bedelias/reports/fvet-pilot.json`, estado `extracted`.
+- Manifiesto global actualizado sin red: 132 planes `discovered`, 7 `audited`, 84 `structurally-valid` y 27 `extracted`; hash `sha256:470b26a42dd632a3f99a888cf405d5c15d12c9a34d577fc5005a8ab6c59b09cb`.
+- Siguiente servicio central de la cola: ODON. El monitor debe cerrar cada servicio exitoso y continuar automáticamente, además de diagnosticar y reintentar fallos.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T01:52:46.642Z",
+  "generatedAt": "2026-08-14T03:31:02.225Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 133,
+      "discovered": 132,
       "audited": 7,
       "structurally-valid": 84,
-      "extracted": 26
+      "extracted": 27
     }
   },
   "services": [
@@ -6760,7 +6760,7 @@
           "Grado": 1
         },
         "byState": {
-          "discovered": 1
+          "extracted": 1
         }
       },
       "block": null,
@@ -6778,10 +6778,12 @@
             "name": "MÉDICO VETERINARIO",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:14:50.161Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:54:33.414Z",
+            "contentHash": "d843ee2bcff0090a3df2bcefde614cf0ec7df60fcf023dec7016acda0bf721aa",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7174,5 +7176,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:c80fbf62fea0f8cac4c6d3eb3d929778c63743f9767820b05d258cf952f01b18"
+  "contentHash": "sha256:06cf39554eae388758440430faea3d4167230f63460543425a7a4d54a4d87179"
 }

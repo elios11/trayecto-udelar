@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T01:54:33.414Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "FVET",
+    "name": "FACULTAD DE VETERINARIA",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "program": {
+    "name": "DOCTOR EN CIENCIAS VETERINARIAS",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2021 - MÉDICO VETERINARIO",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "60 meses",
+      "minCredits": 453,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "MÉDICO VETERINARIO"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2021",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "d843ee2bcff0090a3df2bcefde614cf0ec7df60fcf023dec7016acda0bf721aa"
+}

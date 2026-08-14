@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T03:30:57.937Z",
+  "service": {
+    "code": "FVET",
+    "name": "FACULTAD DE VETERINARIA",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 1,
+    "courses": 0,
+    "prerequisiteEntries": 0,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 0,
+    "validationIssues": 1,
+    "requests": 127,
+    "bytes": 1811
+  },
+  "plans": [
+    {
+      "key": "FVET:doctor-en-ciencias-veterinarias:2021",
+      "career": "DOCTOR EN CIENCIAS VETERINARIAS",
+      "type": "Grado",
+      "planYear": "2021",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1811
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T01:54:33.414Z",
+        "rateLimitMs": 500,
+        "contentHash": "d843ee2bcff0090a3df2bcefde614cf0ec7df60fcf023dec7016acda0bf721aa"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE VETERINARIA antes de auditar o publicar."
+}
