@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T17:50:37.314Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "CUR",
+    "name": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
+    "area": "CENTROS REGIONALES"
+  },
+  "program": {
+    "name": "ASISTENTE EN ODONTOLOGÍA",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2017 - ASISTENTE EN ODONTOLOGÍA",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "24 meses",
+      "minCredits": 160,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "ASISTENTE EN ODONTOLOGIA"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2017",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "cd60d4bee290fc44b1c714aafe999300b5af7c126261942a9e1297052e39692c"
+}

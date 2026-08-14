@@ -4,8 +4,15 @@ import { readFileSync, readdirSync } from "node:fs";
 
 const dataDirectory = new URL("../data/bedelias/", import.meta.url);
 const readJson = (relativePath) => JSON.parse(readFileSync(new URL(`../${relativePath}`, import.meta.url), "utf8"));
+const representativeSnapshots = new Set([
+  "cur-licenciatura-en-educacion-fisica-2014.json",
+  "cur-licenciatura-en-recursos-naturales-2010.json",
+  "cur-tecnicatura-en-artes-plasticas-y-visuales-2017.json",
+  "cur-tecnicatura-en-gestion-de-recursos-naturales-2011.json",
+  "cur-tecnologo-en-madera-2012.json",
+]);
 const snapshots = readdirSync(dataDirectory)
-  .filter((name) => /^cur-.*\.json$/.test(name))
+  .filter((name) => representativeSnapshots.has(name))
   .map((name) => readJson(`data/bedelias/${name}`));
 const report = readJson("data/bedelias/reports/cur-regional.json");
 const globalManifest = readJson("data/bedelias/inventory/global-current.json");

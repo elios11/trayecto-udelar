@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T18:05:40.260Z",
+  "service": {
+    "code": "CUR",
+    "name": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 5,
+    "courses": 1139,
+    "prerequisiteEntries": 61,
+    "publishedRules": 4,
+    "noPublishedRuleQueries": 57,
+    "validationIssues": 2,
+    "requests": 1013,
+    "bytes": 2425935
+  },
+  "plans": [
+    {
+      "key": "CUR:asistente-en-odontologia:2017",
+      "career": "ASISTENTE EN ODONTOLOGÍA",
+      "type": "Grado",
+      "planYear": "2017",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1817
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:50:37.314Z",
+        "rateLimitMs": 500,
+        "contentHash": "cd60d4bee290fc44b1c714aafe999300b5af7c126261942a9e1297052e39692c"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CUR:escalonada-de-enfermeria:2001",
+      "career": "ESCALONADA DE ENFERMERIA",
+      "type": "Grado",
+      "planYear": "2001",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 55056
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:50:47.956Z",
+        "rateLimitMs": 500,
+        "contentHash": "3ef67a0c68d4d141bf678ad21c90f82184debc27cc6aa16fbb48b73495c40de0"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CUR:higienista-en-odontologia:2017",
+      "career": "HIGIENISTA EN ODONTOLOGÍA",
+      "type": "Grado",
+      "planYear": "2017",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1820
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:50:58.747Z",
+        "rateLimitMs": 500,
+        "contentHash": "f544afb55091f8e8274cef0c1edb42798b9f1982726f1007398006d628069064"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CUR:licenciatura-en-enfermeria:2016",
+      "career": "LICENCIATURA EN ENFERMERIA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 301,
+        "prerequisiteEntries": 2,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 2,
+        "validationIssues": 0,
+        "requests": 160,
+        "bytes": 473179
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:51:11.958Z",
+        "rateLimitMs": 500,
+        "contentHash": "efa7878aaec469e45a3c92213aa2a45cb8725ce1d36a31edff86a0104f5fe378"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CUR:tecnicatura-en-deportes:2007",
+      "career": "TECNICATURA EN DEPORTES",
+      "type": "Grado",
+      "planYear": "2007",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 838,
+        "prerequisiteEntries": 59,
+        "publishedRules": 4,
+        "noPublishedRuleQueries": 55,
+        "validationIssues": 0,
+        "requests": 472,
+        "bytes": 1894063
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:52:22.097Z",
+        "rateLimitMs": 500,
+        "contentHash": "d35d34b6b7d6064f78085e30792b1dffaef4e0d809a8d3018d93b13df0a9b2ce"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA antes de auditar o publicar."
+}

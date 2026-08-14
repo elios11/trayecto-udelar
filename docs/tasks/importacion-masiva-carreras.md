@@ -408,3 +408,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Resultado: CUCEL y la oferta central contienen los mismos 199 cursos, códigos, créditos y estructura. Sólo difiere la cobertura de previaturas publicada (2 frente a 195), por lo que no se crea una variante curricular de sede.
 - Diagnóstico acumulado: 3/57 ofertas disponibles, 2 currículas comparables y coincidentes, 1 caso con información insuficiente, 54 snapshots pendientes y cero diferencias curriculares verificadas. Hash `sha256:77698c38e06a1390e4d4fda3cdc33ec227f163eba71776b1d9f7271f5aa49a07`.
 - Siguiente paso: comparar las cinco ofertas coincidentes de CUR y continuar sin pausa.
+
+### Comparación CUR — completada 2026-08-14
+
+- Se extrajeron las cinco ofertas coincidentes de CUR mediante `cur-comparison.json`, sin sobrescribir el lote ni los snapshots de las cinco identidades regionales representativas.
+- Cobertura: 1.139 cursos, 61 entradas de previaturas, 4 reglas publicadas, 57 consultas sin regla y 1.013 requests a 500 ms. Asistente e Higienista en Odontología conservaron la anomalía institucional `composition-unavailable`.
+- Asistente en Odontología 2017, Escalonada de Enfermería 2001 e Higienista en Odontología 2017 tienen composición vacía en al menos una oferta; permanecen `insufficient-content` y no se declaran equivalentes.
+- Licenciatura en Enfermería 2016 y Tecnicatura en Deportes 2007 presentan diferencias de catálogo verificables en Bedelías. Son candidatas a variante por sede, pendientes de auditoría oficial para distinguir núcleo curricular de la oferta ampliada de electivas.
+- Diagnóstico acumulado: 8/57 ofertas disponibles, 4 pares comparables, 2 coincidencias curriculares con distinta cobertura de previaturas, 2 diferencias curriculares, 4 casos insuficientes y 49 snapshots regionales pendientes. Hash `sha256:b013ea7d675ee9d3376ac9927755aafde6039cb04a084c1bc2227f91e09be5e7`.
+- Siguiente paso: comparar las siete ofertas coincidentes de CURE y continuar automáticamente por CUT y CENURLN.

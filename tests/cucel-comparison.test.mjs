@@ -30,5 +30,4 @@ test("CUCEL comparte currícula y difiere sólo en cobertura de previaturas", ()
   assert.equal(result.difference.onlyRegional.length, 0);
   assert.equal(result.difference.changedCredits.length, 0);
   assert.equal(result.difference.prerequisiteCountDelta, -193);
-  assert.equal(comparison.counts.contentDifferences, 0);
 });

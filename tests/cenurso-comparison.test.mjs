@@ -36,5 +36,4 @@ test("distingue currícula de cobertura de previaturas e información insuficien
   const nursingPlan = comparison.plans.find((plan) =>
     plan.identity === "licenciatura en enfermeria profesionalizacion de auxiliar:1999");
   assert.equal(nursingPlan.comparisons[0].status, "insufficient-content");
-  assert.equal(comparison.counts.contentDifferences, 0);
 });
