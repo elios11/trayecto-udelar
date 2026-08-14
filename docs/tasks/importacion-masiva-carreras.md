@@ -362,3 +362,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Manifiesto global actualizado sin red: 104 `discovered`, 101 `structurally-valid`, 38 `extracted` y 7 `audited`; hash `sha256:5f93b3b49db12866dfef573bf055349268f4907e4b5b088b0cb2fe40228dea45`.
 - Manifiesto regional: hash `sha256:cfa68efe4143c766b88156272e0f813e4dff175c7c10684946eed2ffe8b36bf1`.
 - Siguiente paso: extraer las cinco identidades nuevas de CUT, sin repetir sus tres coincidencias centrales.
+
+### CUT — representantes regionales completadas 2026-08-14
+
+- Se extrajeron las cinco identidades exclusivamente regionales: Ingeniería Forestal 2013, Economía Agrícola y Agronegocios 2022, Desarrollo Regional Sustentable 2013, Técnico Operador de Alimentos 2011 y Tecnólogo Cárnico 2010. Las tres coincidencias centrales no se repitieron.
+- Cobertura: 42 cursos, 46 entradas de previaturas, 22 reglas publicadas, 24 consultas sin regla y 2.130 requests a 500 ms. Economía Agrícola quedó `structurally-valid`; los otros cuatro planes quedaron `extracted` porque Bedelías no publica sus composiciones.
+- Reporte filtrado: `data/bedelias/reports/cut-regional.json`; estado `extracted`, con cuatro anomalías institucionales conservadas.
+- Manifiesto global actualizado sin red: 99 `discovered`, 102 `structurally-valid`, 42 `extracted` y 7 `audited`; hash `sha256:402c83d5cad607ccbb10ce28d32055b5bf39c1871cbae89769fadd2588ebb177`.
+- Manifiesto regional: hash `sha256:f1f4503ee668264915cae249fa2237ef08f0612450c1ccc62eac5e46a692c4f7`.
+- Siguiente paso: extraer las diez identidades nuevas de CENURLN, sin repetir sus 43 ofertas con identidad central o ya representada regionalmente.

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T07:52:39.471Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "CUT",
+    "name": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
+    "area": "CENTROS REGIONALES"
+  },
+  "program": {
+    "name": "INGENIERIA FORESTAL",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2013 - INGENIERIA FORESTAL",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "60 meses",
+      "minCredits": 450,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "INGENIERO FORESTAL"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2013",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "11dc879983d712828130ee66b8ee8ade7df078120eb9c4af47c7f98598900ac0"
+}

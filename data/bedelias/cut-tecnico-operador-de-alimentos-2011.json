@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T07:55:13.125Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "CUT",
+    "name": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
+    "area": "CENTROS REGIONALES"
+  },
+  "program": {
+    "name": "TECNICO OPERADOR DE ALIMENTOS",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2011 - TECNICO OPERADOR DE ALIMENTOS",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "60 meses",
+      "minCredits": 160,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "TECNICO OPERADOR DE ALIMENTOS"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2011",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "62cee3ce7976ecbda259476436198f6674a88a9ae6be7f7239927997e8ca8103"
+}

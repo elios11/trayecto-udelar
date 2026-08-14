@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T07:50:27.165Z",
+  "generatedAt": "2026-08-14T08:20:26.735Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,9 +18,9 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 104,
-      "structurally-valid": 101,
-      "extracted": 38,
+      "discovered": 99,
+      "structurally-valid": 102,
+      "extracted": 42,
       "audited": 7
     }
   },
@@ -2316,7 +2316,9 @@
           "Grado": 8
         },
         "byState": {
-          "discovered": 8
+          "extracted": 4,
+          "discovered": 3,
+          "structurally-valid": 1
         }
       },
       "block": null,
@@ -2334,10 +2336,12 @@
             "name": "INGENIERIA FORESTAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:52.361Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:52:39.471Z",
+            "contentHash": "11dc879983d712828130ee66b8ee8ade7df078120eb9c4af47c7f98598900ac0",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2384,10 +2388,12 @@
             "name": "LICENCIATURA EN ECONOMÍA AGRÍCOLA Y GESTIÓN DE AGRONEGOCIOS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:52.361Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:54:51.614Z",
+            "contentHash": "0fc465ee11a0a42a9d013b3446e55780b70a7b5a139e9ac788803e1fb05c88a9",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2409,10 +2415,12 @@
             "name": "TECNICATURA EN DESARROLLO REGIONAL SUSTENTABLE",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:52.361Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:55:01.808Z",
+            "contentHash": "0c356b6a2dbf100c1d6e2375387c9de9c343e5834dbcdd8ebf651c932e2aa817",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2459,10 +2467,12 @@
             "name": "TECNICO OPERADOR DE ALIMENTOS",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:52.361Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:55:13.125Z",
+            "contentHash": "62cee3ce7976ecbda259476436198f6674a88a9ae6be7f7239927997e8ca8103",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2484,10 +2494,12 @@
             "name": "TECNÓLOGO CÁRNICO",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:52.361Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:55:24.109Z",
+            "contentHash": "b4dc6e841d7508219a3f409173f2111e809e54473eedae5c9634468dc6572708",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7240,5 +7252,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:5f93b3b49db12866dfef573bf055349268f4907e4b5b088b0cb2fe40228dea45"
+  "contentHash": "sha256:402c83d5cad607ccbb10ce28d32055b5bf39c1871cbae89769fadd2588ebb177"
 }
