@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T19:01:35.840Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "CENURLN",
+    "name": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "program": {
+    "name": "TECNÓLOGO QUÍMICO",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2025 - TECNÓLOGO QUÍMICO",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "24 meses",
+      "minCredits": 270,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "No se puede mostrar la composición de este plan."
+    },
+    "courses": [],
+    "titleLabels": [],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2025",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 124,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 3
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "No se puede mostrar la composición de este plan."
+      }
+    ]
+  },
+  "contentHash": "a914767ce35aeed9db49160dc92234de4b1af2f5fc0707516c2b2963dbdf8dd9"
+}

@@ -1,0 +1,1133 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T19:04:42.675Z",
+  "service": {
+    "code": "CENURLN",
+    "name": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 41,
+    "courses": 14796,
+    "prerequisiteEntries": 739,
+    "publishedRules": 149,
+    "noPublishedRuleQueries": 590,
+    "validationIssues": 8,
+    "requests": 15686,
+    "bytes": 38322520
+  },
+  "plans": [
+    {
+      "key": "CENURLN:abogacia:2016",
+      "career": "ABOGACÍA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 566,
+        "prerequisiteEntries": 40,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 40,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 790512
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:40:25.348Z",
+        "rateLimitMs": 500,
+        "contentHash": "a5b057423e4dfa42e3b8524cd2fe35eba479251e2546a0d0c3d53a2a0b7507d9"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:archivologia:2012",
+      "career": "ARCHIVOLOGÍA",
+      "type": "Grado",
+      "planYear": "2012",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1813
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:40:37.039Z",
+        "rateLimitMs": 500,
+        "contentHash": "4fb98fd8cdb4ed1b766ddf5ae67d5ee55d3029019f86a124e67d239732677f29"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:asistente-en-odontologia:2017",
+      "career": "ASISTENTE EN ODONTOLOGÍA",
+      "type": "Grado",
+      "planYear": "2017",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1820
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:40:47.345Z",
+        "rateLimitMs": 500,
+        "contentHash": "13605e296617d4810045a3fba2c8469c388573b2098b97780d91086d628c8c4a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:bibliotecologia:2012",
+      "career": "BIBLIOTECOLOGÍA",
+      "type": "Grado",
+      "planYear": "2012",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1822
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:40:58.787Z",
+        "rateLimitMs": 500,
+        "contentHash": "bfe52e77c2584436640489843f0b821bf70e3c6100cd61ab3e8e586d6f044380"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:bioquimico-clinico:2015",
+      "career": "BIOQUÍMICO CLÍNICO",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 452,
+        "prerequisiteEntries": 25,
+        "publishedRules": 17,
+        "noPublishedRuleQueries": 8,
+        "validationIssues": 0,
+        "requests": 1266,
+        "bytes": 822748
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:42:28.727Z",
+        "rateLimitMs": 500,
+        "contentHash": "3244f02522f53ab9179f1b0cfeeba4c8e87a41a081fdf2ba8d81b4061d662fea"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:diplomatura-en-musica:1994",
+      "career": "DIPLOMATURA EN MÚSICA",
+      "type": "Grado",
+      "planYear": "1994",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 30370
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:42:39.548Z",
+        "rateLimitMs": 500,
+        "contentHash": "fe50978b99527a67ac3a1a6947f5c39f26622106a76e628c22092069126f6a7a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:doctor-en-ciencias-veterinarias:2021",
+      "career": "DOCTOR EN CIENCIAS VETERINARIAS",
+      "type": "Grado",
+      "planYear": "2021",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1815
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:42:50.546Z",
+        "rateLimitMs": 500,
+        "contentHash": "f5de42159e39d408333f9025a5cfc7ab24ea373bffd23e3cf9f6904059732c1a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:doctor-en-medicina:2008",
+      "career": "DOCTOR EN MEDICINA",
+      "type": "Grado",
+      "planYear": "2008",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 3438,
+        "prerequisiteEntries": 7,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 7,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 7248070
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:43:07.546Z",
+        "rateLimitMs": 500,
+        "contentHash": "802c46dd3244a1b0748063c3abc3aaf1d775d0eda8f40e923833e960c5de0251"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:escalonada-de-enfermeria:2001",
+      "career": "ESCALONADA DE ENFERMERIA",
+      "type": "Grado",
+      "planYear": "2001",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 55065
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:43:18.126Z",
+        "rateLimitMs": 500,
+        "contentHash": "817e11c31cbdb7cc006bb60751a6ad96881c877c0ab92aaca61b54b638edb18b"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:higienista-en-odontologia:2017",
+      "career": "HIGIENISTA EN ODONTOLOGÍA",
+      "type": "Grado",
+      "planYear": "2017",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1823
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:43:28.902Z",
+        "rateLimitMs": 500,
+        "contentHash": "2f3412065bd96186f01a379e87cdd95c6013f2a7fa2849d886c95cf0e0f2503a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:ingenieria-de-alimentos:2003",
+      "career": "INGENIERÍA DE ALIMENTOS",
+      "type": "Grado",
+      "planYear": "2003",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 389,
+        "prerequisiteEntries": 18,
+        "publishedRules": 10,
+        "noPublishedRuleQueries": 8,
+        "validationIssues": 0,
+        "requests": 814,
+        "bytes": 704777
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:44:29.354Z",
+        "rateLimitMs": 500,
+        "contentHash": "a0d6270a951692b6c48c95fb9cf90c5299fc95eb8e87b9c2aff22df0dc3335f7"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:ingenieria-en-computacion:2025",
+      "career": "INGENIERÍA EN COMPUTACIÓN",
+      "type": "Grado",
+      "planYear": "2025",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 44,
+        "prerequisiteEntries": 15,
+        "publishedRules": 12,
+        "noPublishedRuleQueries": 3,
+        "validationIssues": 0,
+        "requests": 937,
+        "bytes": 129874
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:45:31.475Z",
+        "rateLimitMs": 500,
+        "contentHash": "15e81a30745a9c43d6a6d31f317757ac60f859b31931d0328fb36eb2b156d442"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:ingenieria-quimica:2021",
+      "career": "INGENIERÍA QUÍMICA",
+      "type": "Grado",
+      "planYear": "2021",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 375,
+        "prerequisiteEntries": 22,
+        "publishedRules": 12,
+        "noPublishedRuleQueries": 10,
+        "validationIssues": 0,
+        "requests": 946,
+        "bytes": 696438
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:46:41.747Z",
+        "rateLimitMs": 500,
+        "contentHash": "c41f3fd9d0a212fd307eee8ffb5ed815ac9bf559a2ddd1315c49232c3c7dbf5c"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:ingeniero-agronomo:2020",
+      "career": "INGENIERO AGRÓNOMO",
+      "type": "Grado",
+      "planYear": "2020",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 717,
+        "prerequisiteEntries": 9,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 9,
+        "validationIssues": 0,
+        "requests": 167,
+        "bytes": 1308184
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:47:01.139Z",
+        "rateLimitMs": 500,
+        "contentHash": "dceca17fcab68442b62a5aec9e1f9ba9271decacbe991562f38374621074688d"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:interpretacion-lsu-espanol-lsu:2014",
+      "career": "INTERPRETACIÓN LSU-ESPAÑOL-LSU",
+      "type": "Grado",
+      "planYear": "2014",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 199,
+        "prerequisiteEntries": 3,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 3,
+        "validationIssues": 0,
+        "requests": 161,
+        "bytes": 295480
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:47:15.373Z",
+        "rateLimitMs": 500,
+        "contentHash": "71583bf928b74b886400e72efb871692f83784dd5b3bcf13a1b159b3c95c18e9"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:lic-en-ingenieria-biologica:2013",
+      "career": "LIC EN INGENIERÍA BIOLÓGICA",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1836
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:47:28.216Z",
+        "rateLimitMs": 500,
+        "contentHash": "807843d92085af4372ab8b89acd3218873859f56ee69741f75b01f8cc8b4e4bf"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:licenciatura-en-biotecnologia:2024",
+      "career": "LICENCIATURA EN BIOTECNOLOGÍA",
+      "type": "Grado",
+      "planYear": "2024",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 246,
+        "prerequisiteEntries": 33,
+        "publishedRules": 23,
+        "noPublishedRuleQueries": 10,
+        "validationIssues": 0,
+        "requests": 1662,
+        "bytes": 530075
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:49:27.528Z",
+        "rateLimitMs": 500,
+        "contentHash": "0c39ef68d806862386f0979c13d21d05b07c5a11cbee662561567fcf93e752da"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-educacion-fisica:2017",
+      "career": "LICENCIATURA EN EDUCACIÓN FÍSICA",
+      "type": "Grado",
+      "planYear": "2017",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 1426,
+        "prerequisiteEntries": 65,
+        "publishedRules": 25,
+        "noPublishedRuleQueries": 40,
+        "validationIssues": 0,
+        "requests": 1823,
+        "bytes": 8985837
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:51:58.483Z",
+        "rateLimitMs": 500,
+        "contentHash": "ea4904b6001babca1d750e6820395bfe6b12252d5b7b5fce59c15153baaf09e8"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-enfermeria:2016",
+      "career": "LICENCIATURA EN ENFERMERIA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 301,
+        "prerequisiteEntries": 3,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 3,
+        "validationIssues": 0,
+        "requests": 161,
+        "bytes": 473348
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:52:12.688Z",
+        "rateLimitMs": 500,
+        "contentHash": "2dffa5e1c1fd3d39f13a8e7ab7f78a7da0b4e933e9a4b00d7519ff8c2ccb7bc0"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-fisioterapia:2006",
+      "career": "LICENCIATURA EN FISIOTERAPIA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 21272
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:52:23.194Z",
+        "rateLimitMs": 500,
+        "contentHash": "9cb9f71f5ed7b0ff3db2d23a8288fa797fb6bdbda2a25ebb28de300c68e8e32d"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-imagenologia:2006",
+      "career": "LICENCIATURA EN IMAGENOLOGÍA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 21340
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:52:33.759Z",
+        "rateLimitMs": 500,
+        "contentHash": "b2d8bf119a3655f6355e41ea50760d665265e5a622e96bc75721f19d9393811b"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-instrumentacion-quirurgica:2006",
+      "career": "LICENCIATURA EN INSTRUMENTACIÓN QUIRÚRGICA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 21351
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:52:44.399Z",
+        "rateLimitMs": 500,
+        "contentHash": "069f1457b027e4d87ff2bb8a302c69806d36f0d6206da7563f3ef0dad06387c3"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-laboratorio-clinico:2006",
+      "career": "LICENCIATURA EN LABORATORIO CLÍNICO",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 20937
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:52:54.998Z",
+        "rateLimitMs": 500,
+        "contentHash": "36f41440ff10ebf2b61872865aea415fdf6b6ce7722625bcaa351025d36a8831"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-psicologia:2013",
+      "career": "LICENCIATURA EN PSICOLOGIA",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 2990,
+        "prerequisiteEntries": 317,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 317,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 6075425
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:53:13.355Z",
+        "rateLimitMs": 500,
+        "contentHash": "dc5385f16186406c501a399703116c7c950cbf0ada2db217b739c560187d0335"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-psicomotricidad:2006",
+      "career": "LICENCIATURA EN PSICOMOTRICIDAD",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 19761
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:53:23.520Z",
+        "rateLimitMs": 500,
+        "contentHash": "d7f58fbc79635de6a7e67ceefaf30c837cdad7a0a3e9939398480b4be821122d"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-quimica:2016",
+      "career": "LICENCIATURA EN QUÍMICA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 320,
+        "prerequisiteEntries": 10,
+        "publishedRules": 2,
+        "noPublishedRuleQueries": 8,
+        "validationIssues": 0,
+        "requests": 296,
+        "bytes": 578048
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:53:49.880Z",
+        "rateLimitMs": 500,
+        "contentHash": "b42321cb985586cf93400fa0536b5299d72c1b8821b7ba7f1673de00dc20f5c3"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-trabajo-social:2009",
+      "career": "LICENCIATURA EN TRABAJO SOCIAL",
+      "type": "Grado",
+      "planYear": "2009",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1832
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:53:59.941Z",
+        "rateLimitMs": 500,
+        "contentHash": "1c5a3b39854ace5d6aa6dc24439604a586385de5a72cdfd2768314672c3a0f46"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:notariado:2016",
+      "career": "NOTARIADO",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 528,
+        "prerequisiteEntries": 39,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 39,
+        "validationIssues": 0,
+        "requests": 155,
+        "bytes": 722446
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:54:11.950Z",
+        "rateLimitMs": 500,
+        "contentHash": "c737b812d718daea985f32a78f88153fbca9ddf7e1305eeb6172e36b7282bb08"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:quimica-farmaceutica:2015",
+      "career": "QUÍMICA FARMACÉUTICA",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 469,
+        "prerequisiteEntries": 25,
+        "publishedRules": 17,
+        "noPublishedRuleQueries": 8,
+        "validationIssues": 0,
+        "requests": 1266,
+        "bytes": 862048
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:55:43.330Z",
+        "rateLimitMs": 500,
+        "contentHash": "82399b8d43489e77709951cada5a635572cc6b55235217c8ba741e131e3a9ebf"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:quimico:2015",
+      "career": "QUÍMICO",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 710,
+        "prerequisiteEntries": 35,
+        "publishedRules": 24,
+        "noPublishedRuleQueries": 11,
+        "validationIssues": 0,
+        "requests": 1724,
+        "bytes": 4587895
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:57:47.690Z",
+        "rateLimitMs": 500,
+        "contentHash": "71e0fe3ce8241e054c4e791bbafa3c001fe59f05562463481d6e3daca54d0308"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-anatomia-patologica:2006",
+      "career": "TECNICATURA EN ANATOMÍA PATOLÓGICA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 12135
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:57:57.929Z",
+        "rateLimitMs": 500,
+        "contentHash": "74ad2ecbad6dbe19c1f53993e036a23df472295e97607b15b4e31d58a352228c"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-deportes:2007",
+      "career": "TECNICATURA EN DEPORTES",
+      "type": "Grado",
+      "planYear": "2007",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 838,
+        "prerequisiteEntries": 61,
+        "publishedRules": 7,
+        "noPublishedRuleQueries": 54,
+        "validationIssues": 0,
+        "requests": 666,
+        "bytes": 1898433
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:59:21.336Z",
+        "rateLimitMs": 500,
+        "contentHash": "0561ed5d49a5e0a1e6087fd0d6e99ee6dfe536671da04c2a3a8e58ff7faea6c7"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-hemoterapia:2006",
+      "career": "TECNICATURA EN HEMOTERAPIA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 16555
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:59:31.442Z",
+        "rateLimitMs": 500,
+        "contentHash": "c48160b9de2870b6165ec05f34fad7a24dd44a3eeff997592236fc1e5f2da48a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-podologia:2006",
+      "career": "TECNICATURA EN PODOLOGÍA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 17626
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:59:41.502Z",
+        "rateLimitMs": 500,
+        "contentHash": "7ea8d1f8798d7702a573fd8778a16a14f296bfe3d0412aca3741cc3ab77ab2f1"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-radioterapia:2006",
+      "career": "TECNICATURA EN RADIOTERAPIA",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 16062
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:59:52.137Z",
+        "rateLimitMs": 500,
+        "contentHash": "9b9526c5ea56498bd9c076660ab3a63b8216b88bced08e2c68aed86c93bdd34b"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-salud-ocupacional:2006",
+      "career": "TECNICATURA EN SALUD OCUPACIONAL",
+      "type": "Grado",
+      "planYear": "2006",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 19982
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:00:02.246Z",
+        "rateLimitMs": 500,
+        "contentHash": "48ec385ff896091b53e41771a884851cebd37bdeab9541b048c00c60efd0c03e"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnico-bach-en-cs-quimicas:2015",
+      "career": "TÉCNICO BACH. EN CS.QUÍMICAS",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 488,
+        "prerequisiteEntries": 9,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 9,
+        "validationIssues": 0,
+        "requests": 167,
+        "bytes": 862785
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:00:21.373Z",
+        "rateLimitMs": 500,
+        "contentHash": "c6dda9e69978e55d51250f6827eff665ce58855f57f002c0b07f0664fffec4a4"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnologo-en-informatica:2007",
+      "career": "TECNÓLOGO EN INFORMÁTICA",
+      "type": "Grado",
+      "planYear": "2007",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 57,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 83402
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:00:32.006Z",
+        "rateLimitMs": 500,
+        "contentHash": "5d0939a6a3fe3228ffa16a9846e0c8542c018b513869aec229a27754a34ead50"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnologo-industrial-mecanico:2016",
+      "career": "TECNÓLOGO INDUSTRIAL MECÁNICO",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 44,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 187,
+        "bytes": 86550
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:01:13.901Z",
+        "rateLimitMs": 500,
+        "contentHash": "16110a5bb26217ac1a372eea839a88968781e7280e2c39ea644deac3b3b49bc0"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnologo-int-y-trad-lsu-esp:2025",
+      "career": "TECNÓLOGO INT Y TRAD LSU ESP",
+      "type": "Grado",
+      "planYear": "2025",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 199,
+        "prerequisiteEntries": 3,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 3,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 293160
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:01:25.374Z",
+        "rateLimitMs": 500,
+        "contentHash": "2292cfcc917d40b9a278aea65f5312e3b4482a339c9e3a6259df8e641a001c2f"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnologo-quimico:2025",
+      "career": "TECNÓLOGO QUÍMICO",
+      "type": "Grado",
+      "planYear": "2025",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 124,
+        "bytes": 1768
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:01:35.840Z",
+        "rateLimitMs": 500,
+        "contentHash": "a914767ce35aeed9db49160dc92234de4b1af2f5fc0707516c2b2963dbdf8dd9"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE antes de auditar o publicar."
+}

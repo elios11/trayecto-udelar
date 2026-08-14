@@ -433,3 +433,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - La oferta publica la misma currícula, códigos y créditos que la central. Sólo difiere la cobertura de previaturas (una entrada regional frente a 202 centrales), por lo que no se crea una variante curricular de sede.
 - Diagnóstico acumulado: 16/57 snapshots regionales disponibles, 14 pares con ambos snapshots, 8 comparables, 3 coincidencias curriculares con distinta cobertura de previaturas, 5 diferencias curriculares, 6 casos insuficientes y 41 snapshots regionales pendientes. Hash `sha256:626db1c68095947cea9faacbdf512e32616a93ac3992f8fa09bb97f315a9badb`.
 - Siguiente paso: comparar las 41 ofertas coincidentes de CENURLN con un único proceso secuencial y reanudable.
+
+### Comparación regional completa — CENURLN y cierre 2026-08-14
+
+- Se extrajeron las 41 ofertas coincidentes de CENURLN mediante `cenurln-comparison.json`, completando 57/57 snapshots regionales comparativos sin repetir los 30 representantes de identidades exclusivamente regionales.
+- Cobertura CENURLN: 14.796 cursos, 739 entradas de previaturas, 149 reglas publicadas, 590 consultas sin regla y 15.686 requests a 500 ms. Quedaron 33 snapshots `structurally-valid` y 8 `extracted` por `composition-unavailable`.
+- Comparación global: 45 pares tienen ambos snapshots y 21 son curricularmente comparables. Cinco ofertas comparten currícula con la central pero difieren en cobertura de previaturas; 16 presentan diferencias de catálogo; 24 son insuficientes por composición vacía. No falta ningún snapshot regional.
+- Quedan 12 comparaciones sin snapshot central crudo y 30 identidades pendientes de conclusión por fuente ausente o información insuficiente. Ninguna coincidencia se convirtió automáticamente en equivalencia oficial y las diferencias sólo habilitan auditoría de posible variante por sede.
+- Artefacto reproducible: `node scripts/bedelias-regional-content-comparison.mjs`; salida `data/bedelias/inventory/regional-content-comparison.json`, hash `sha256:70442f3463961bfe43bbd45fdee7197e24cdc917869192bbd0636b6aab86e7d8`.
+- Siguiente paso: completar los snapshots centrales crudos faltantes de FING y FQ, volver a comparar sin red y después dirigir la auditoría oficial sólo a diferencias e información insuficiente.
