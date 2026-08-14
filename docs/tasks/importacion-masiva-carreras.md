@@ -371,3 +371,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Manifiesto global actualizado sin red: 99 `discovered`, 102 `structurally-valid`, 42 `extracted` y 7 `audited`; hash `sha256:402c83d5cad607ccbb10ce28d32055b5bf39c1871cbae89769fadd2588ebb177`.
 - Manifiesto regional: hash `sha256:f1f4503ee668264915cae249fa2237ef08f0612450c1ccc62eac5e46a692c4f7`.
 - Siguiente paso: extraer las diez identidades nuevas de CENURLN, sin repetir sus 43 ofertas con identidad central o ya representada regionalmente.
+
+### CENURLN y cola regional deduplicada — extracción completada 2026-08-14
+
+- Se extrajeron las diez identidades exclusivamente regionales de CENURLN. Las otras 43 ofertas del servicio, ya representadas por una identidad central o regional, no se repitieron.
+- Cobertura CENURLN: 499 cursos, 194 entradas de previaturas, 127 reglas publicadas, 67 consultas sin regla y 9.717 requests a 500 ms. Ocho snapshots quedaron `structurally-valid`; Ciencias Hídricas Aplicadas y Diseño Integrado quedaron `extracted` porque Bedelías no publica sus composiciones.
+- Reporte filtrado: `data/bedelias/reports/cenurln-regional.json`; estado `extracted`, con dos anomalías institucionales conservadas.
+- Cola regional completa: 30/30 representantes terminales; 21 `structurally-valid` y 9 `extracted`. Las 92 ofertas y sus 73 identidades siguen conservadas en el manifiesto.
+- Manifiesto global actualizado sin red: 89 `discovered`, 110 `structurally-valid`, 44 `extracted` y 7 `audited`; hash `sha256:59bf04e46531aa982160ae535b501b7af9665bebdfacb9270c59997751a9835a`.
+- Manifiesto regional: hash `sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357`.
+- Siguiente paso: comparar localmente el contenido disponible de las 43 identidades con coincidencia central antes de marcar equivalencias o variantes por sede.

@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T08:50:34.409Z",
+  "service": {
+    "code": "CENURLN",
+    "name": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 10,
+    "courses": 499,
+    "prerequisiteEntries": 194,
+    "publishedRules": 127,
+    "noPublishedRuleQueries": 67,
+    "validationIssues": 2,
+    "requests": 9717,
+    "bytes": 2121997
+  },
+  "plans": [
+    {
+      "key": "CENURLN:ciclo-en-biologia-bioquimica:2016",
+      "career": "CICLO EN BIOLOGÍA - BIOQUÍMICA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 30,
+        "prerequisiteEntries": 31,
+        "publishedRules": 19,
+        "noPublishedRuleQueries": 12,
+        "validationIssues": 0,
+        "requests": 1404,
+        "bytes": 93117
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:23:52.211Z",
+        "rateLimitMs": 500,
+        "contentHash": "aed666c9eb9e7fda6217df4d2300c2e3769667831d05d5c06acca00661af38f4"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:ciclo-inicial-de-matematica:2012",
+      "career": "CICLO INICIAL DE MATEMÁTICA",
+      "type": "Grado",
+      "planYear": "2012",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 29,
+        "prerequisiteEntries": 45,
+        "publishedRules": 43,
+        "noPublishedRuleQueries": 2,
+        "validationIssues": 0,
+        "requests": 2982,
+        "bytes": 303440
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:27:25.132Z",
+        "rateLimitMs": 500,
+        "contentHash": "97d6aeedfb0723b035925f5556b7079485ebe01c9053246088a746e16eaea8c6"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-binacional-en-turismo:2004",
+      "career": "LICENCIATURA BINACIONAL EN TURISMO",
+      "type": "Grado",
+      "planYear": "2004",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 27705
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:27:35.735Z",
+        "rateLimitMs": 500,
+        "contentHash": "4dd675fafe24fca60fb3141a1f9405096465e0d0aabaa7dfe530fea7e51aed4a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-ciencias-hidricas-aplicadas:2016",
+      "career": "LICENCIATURA EN CIENCIAS HÍDRICAS APLICADAS",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1861
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:27:46.897Z",
+        "rateLimitMs": 500,
+        "contentHash": "914c207384304594e4c3641147a2856c98f5ec586410f8a74b5bf569f5a4f2a9"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:licenciatura-en-ciencias-sociales:2009",
+      "career": "LICENCIATURA EN CIENCIAS SOCIALES",
+      "type": "Grado",
+      "planYear": "2009",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 425,
+        "prerequisiteEntries": 103,
+        "publishedRules": 54,
+        "noPublishedRuleQueries": 49,
+        "validationIssues": 0,
+        "requests": 3692,
+        "bytes": 1503503
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:32:14.868Z",
+        "rateLimitMs": 500,
+        "contentHash": "f632fa15b7e880f8ee6d454f8f98162cd662acee798a6d180a4b37dc583786c9"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:licenciatura-en-diseno-integrado:2012",
+      "career": "LICENCIATURA EN DISEÑO INTEGRADO",
+      "type": "Grado",
+      "planYear": "2012",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1944
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:32:27.254Z",
+        "rateLimitMs": 500,
+        "contentHash": "0ec1c984cc7373dee0fb9fe257550ca739a212cd70db9058ba790e8396b3bc5a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CENURLN:tecnicatura-binacional-en-turismo:2004",
+      "career": "TECNICATURA BINACIONAL EN TURISMO",
+      "type": "Grado",
+      "planYear": "2004",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 18475
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:32:37.372Z",
+        "rateLimitMs": 500,
+        "contentHash": "de854ebf851b080ea6d8a7497b914c5be9f434e08017ef829041ac2a5fa2b8c5"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-direccion-de-coros:2002",
+      "career": "TECNICATURA EN DIRECCIÓN DE COROS",
+      "type": "Grado",
+      "planYear": "2002",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 23601
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:32:48.070Z",
+        "rateLimitMs": 500,
+        "contentHash": "aed51a58cc2073778e2e1d42768a5c06742e20fa9b6ce0f4aca15c955d0791cd"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-interpretacion-perfil-canto-guitarra-piano:2002",
+      "career": "TECNICATURA EN INTERPRETACIÓN - PERFIL CANTO- GUITARRA- PIANO",
+      "type": "Grado",
+      "planYear": "2002",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 94974
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:32:58.877Z",
+        "rateLimitMs": 500,
+        "contentHash": "2d28f24f0b55311261794138f90daf0c57195be1e7a97eeee857afd8f8071c70"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURLN:tecnicatura-en-tecnologias-de-la-imagen-fotografica:2008",
+      "career": "TECNICATURA EN TECNOLOGÍAS DE LA IMAGEN FOTOGRÁFICA",
+      "type": "Grado",
+      "planYear": "2008",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 15,
+        "prerequisiteEntries": 15,
+        "publishedRules": 11,
+        "noPublishedRuleQueries": 4,
+        "validationIssues": 0,
+        "requests": 877,
+        "bytes": 53377
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T08:34:02.165Z",
+        "rateLimitMs": 500,
+        "contentHash": "dcdf8bcef16ec58d7be9c11826db28bce6d7035e8b358c85d68cefe1dda52ebf"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE antes de auditar o publicar."
+}
