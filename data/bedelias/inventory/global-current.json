@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T23:58:52.215Z",
+  "generatedAt": "2026-08-14T01:15:20.330Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 172,
+      "discovered": 165,
       "audited": 7,
-      "structurally-valid": 61,
-      "extracted": 10
+      "structurally-valid": 64,
+      "extracted": 14
     }
   },
   "services": [
@@ -4820,7 +4820,8 @@
           "Grado": 7
         },
         "byState": {
-          "discovered": 7
+          "extracted": 4,
+          "structurally-valid": 3
         }
       },
       "block": null,
@@ -4838,10 +4839,12 @@
             "name": "LICENCIATURA EN ARCHIVOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:10:47.541Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T00:00:37.435Z",
+            "contentHash": "66579682d9cc96df220b905e9aaa9c930ae24ec4a3f5626cf76f63b580e46287",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4863,10 +4866,12 @@
             "name": "LICENCIATURA EN BIBLIOTECOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:10:47.541Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T00:00:49.134Z",
+            "contentHash": "8c905cbf634ea5ef26a5ef6de503c67996703fc86a42f1d277fa492f9d790b59",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4888,10 +4893,12 @@
             "name": "LICENCIATURA EN COMUNICACION - GENERACIÓN 2013",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:10:47.541Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T00:35:49.123Z",
+            "contentHash": "86522cb87ecad260694b17cf3c159129b3c0d65cbbd3ec296a23764cd4599bcd",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4913,10 +4920,12 @@
             "name": "LICENCIATURA EN COMUNICACIÓN",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:10:47.541Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T00:36:01.984Z",
+            "contentHash": "ee2bdce4104d48279bdd6422f0d0e266b1973b7f9208788b3e6045414fe1fa64",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4938,10 +4947,12 @@
             "name": "LICENCIATURA EN COMUNICACION- GEN 2014",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:10:47.541Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:06:05.896Z",
+            "contentHash": "0b4d8ebe49e8ef50b7b70ebe49e716d7a2830c00c16190ec5ccfeeef5ee7de89",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4963,10 +4974,12 @@
             "name": "LICENCIATURA EN COMUNICACIÓN V.2019",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:10:47.541Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:06:23.674Z",
+            "contentHash": "4e0cc01c41b92a5e510e5d681b70b11858b10f6f4e7d4ccb678b10219244229d",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -4988,10 +5001,12 @@
             "name": "LICENCIATURA EN INGENIERIA DE MEDIOS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:10:47.541Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:06:46.292Z",
+            "contentHash": "fbf43002a7ae9016d9b5aadcd4149ba56e8ea4c1b3d1e22f0b611d3bdcf8ee12",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7094,5 +7109,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:9c3e71d92358886bd72a5c25bb661badc14f13fed8d2b13639cc0ee67ffc4d4c"
+  "contentHash": "sha256:01ec9cf1b714187e6f08418d52b8b2413d73383206b896b5e61931ef5e801436"
 }

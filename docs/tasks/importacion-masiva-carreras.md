@@ -246,3 +246,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FHUM`; artefacto `data/bedelias/reports/fhum-pilot.json`, estado `official-sources-pending`.
 - Manifiesto global actualizado sin red: 172 planes `discovered`, 7 `audited`, 61 `structurally-valid` y 10 `extracted`; hash `sha256:6438941f0df5119b2205bc21bedd19509de23985eb37667d7c130e0a851eeb73`.
 - Siguiente servicio central de la cola: FIC. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
+
+### Carril de recolección — FIC completado 2026-08-14
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service FIC --delay 500`; estado local `data/bedelias/batches/fic-vigentes.json` y checkpoints `data/bedelias/fic-*.json.checkpoint`.
+- Estado final: 7/7 `succeeded` en el primer intento, sin fallos ni interrupciones.
+- Cobertura: 1.378 cursos, 1.559 entradas de previaturas, 827 reglas publicadas y 732 consultas sin regla; 55.112 requests registradas.
+- Archivología, Bibliotecología, Licenciatura en Comunicación y su versión 2019 aparecen vigentes, pero Bedelías no publica su composición. Conservan una advertencia cada una; los otros tres planes no tienen incidencias estructurales.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service FIC`; artefacto `data/bedelias/reports/fic-pilot.json`, estado `extracted`. Ningún plan queda auditado ni habilitado para publicación.
+- Manifiesto global actualizado sin red: 165 planes `discovered`, 7 `audited`, 64 `structurally-valid` y 14 `extracted`; hash `sha256:0eee6d37a683edb63cbe46bd25eaa6269fbc753d581ec184d0fdf8d2d3afc8d0`.
+- Siguiente servicio central de la cola: FMED. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
