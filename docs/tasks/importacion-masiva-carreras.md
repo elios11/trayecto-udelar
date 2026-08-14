@@ -417,3 +417,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Licenciatura en Enfermería 2016 y Tecnicatura en Deportes 2007 presentan diferencias de catálogo verificables en Bedelías. Son candidatas a variante por sede, pendientes de auditoría oficial para distinguir núcleo curricular de la oferta ampliada de electivas.
 - Diagnóstico acumulado: 8/57 ofertas disponibles, 4 pares comparables, 2 coincidencias curriculares con distinta cobertura de previaturas, 2 diferencias curriculares, 4 casos insuficientes y 49 snapshots regionales pendientes. Hash `sha256:b013ea7d675ee9d3376ac9927755aafde6039cb04a084c1bc2227f91e09be5e7`.
 - Siguiente paso: comparar las siete ofertas coincidentes de CURE y continuar automáticamente por CUT y CENURLN.
+
+### Comparación CURE — completada 2026-08-14
+
+- Se extrajeron las siete ofertas coincidentes seleccionadas de CURE mediante `cure-comparison.json`; el lote de representantes regionales permaneció intacto. Los siete snapshots quedaron `structurally-valid`.
+- Cobertura: 2.659 cursos, 233 entradas de previaturas, 40 reglas publicadas, 193 consultas sin regla y 3.883 requests a 500 ms, sin incidencias estructurales.
+- Educación Física 2017, Licenciatura en Enfermería 2016 y Tecnicatura en Deportes 2007 presentan diferencias de catálogo verificables en Bedelías; quedan como candidatas a variante por sede hasta separar oferta ampliada de electivas y núcleo curricular mediante auditoría oficial.
+- Escalonada de Enfermería 2001 y Hemoterapia 2006 permanecen `insufficient-content` por composiciones vacías. Tecnólogo en Informática 2007 y Telecomunicaciones 2009 no son comparables porque aún falta el snapshot crudo de la oferta central; no se infiere equivalencia.
+- Diagnóstico acumulado: 15/57 snapshots regionales disponibles, 13 pares con ambos snapshots, 7 comparables, 2 coincidencias curriculares con distinta cobertura de previaturas, 5 diferencias curriculares, 6 casos insuficientes y 42 snapshots regionales pendientes. Hash `sha256:aa5979d5a3b64aff42a6c46990af81ee8296ac8adca5e95d4e29bdf6d616c9bc`.
+- Siguiente paso: comparar la única oferta coincidente de CUT y continuar automáticamente con las 41 de CENURLN.
