@@ -272,7 +272,7 @@ class BedeliasBrowser {
           "FING", "FQ", "FAGRO", "FCIEN", "FVET",
           "CENURLN", "CENURSO", "CUCEL", "CUR", "CURE", "CUT",
         ]);
-        if (serviceCodes.has(left.toUpperCase()) && /^[A-Z0-9.]{2,}$/i.test(code) && name.length > 0) {
+        if (serviceCodes.has(left.toUpperCase()) && /^[A-Z0-9.]+(?:-[A-Z0-9.]+)*$/i.test(code) && name.length > 0) {
           return { serviceCode: left, code, name: name.join(" - "), credits, raw: clean(text) };
         }
         return { serviceCode: null, code: left, name: middle, credits, raw: clean(text) };
@@ -589,12 +589,12 @@ export function parseRequirementOptions(label) {
 
 export function normalizeCourseRecord(course) {
   const crossServiceMatch = normalizeSpace(course?.raw).match(
-    /^([A-Z][A-Z0-9]{1,9})\s+-\s+([A-Z0-9.]+)\s+-\s+(.*?)\s+-\s+cr[eé]ditos:\s*(\d+)$/i,
+    /^([A-Z][A-Z0-9]{1,9})\s+-\s+([A-Z0-9.]+(?:-[A-Z0-9.]+)*)\s+-\s+(.*?)\s+-\s+cr[eé]ditos:\s*(\d+)$/i,
   );
   const externalCode = crossServiceMatch?.[2] ?? "";
   if (crossServiceMatch
     && KNOWN_SERVICE_CODES.has(crossServiceMatch[1].toUpperCase())
-    && /^[A-Z0-9.]{2,}$/i.test(externalCode)) {
+    && /^[A-Z0-9.]+(?:-[A-Z0-9.]+)*$/i.test(externalCode)) {
     return {
       ...course,
       serviceCode: crossServiceMatch[1].toUpperCase(),

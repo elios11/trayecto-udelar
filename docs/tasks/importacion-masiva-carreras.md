@@ -450,3 +450,11 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Se resolvieron siete comparaciones regionales: seis comparten currícula y difieren sólo en cobertura de previaturas; Ingeniería Biológica permanece `insufficient-content`. No aparecieron nuevas diferencias curriculares.
 - Diagnóstico acumulado: 52/57 pares tienen ambos snapshots, 27 son comparables, 11 coinciden curricularmente con distinta cobertura de previaturas, 16 presentan diferencias y 25 son insuficientes. Faltan cinco snapshots centrales de FQ. Hash `sha256:749eded532528f09fb614c6586116d7e3bbe62c3b046051e3f3ee5d7a71e6a04`.
 - Siguiente paso: extraer los cinco snapshots centrales faltantes de FQ mediante un único proceso secuencial y reanudable.
+
+### Comparación regional — centrales faltantes de FQ completadas 2026-08-14
+
+- Se extrajeron Bioquímico Clínico 2015, Licenciatura en Química 2016, Químico 2015, Técnico Bachiller en Ciencias Químicas 2015 y Tecnólogo Químico 2025 mediante `fq-canonical-missing.json`. Los primeros cuatro se completaron en el primer intento; Tecnólogo Químico se reanudó solo tras un fallo transitorio DNS y terminó en el segundo.
+- Cobertura: 1.972 cursos, 1.832 entradas de previaturas, 1.132 reglas publicadas, 700 consultas sin regla y 77.280 requests a 500 ms. Tecnólogo Químico quedó `extracted` por `composition-unavailable`; los otros cuatro quedaron `structurally-valid`.
+- La normalización genérica ahora conserva guiones internos en códigos externos como `FQ - REV-B - …`. Se renormalizaron localmente tres snapshots de CENURLN, eliminando dos falsas diferencias sin nuevas requests.
+- Diagnóstico global cerrado: 57/57 pares tienen ambos snapshots; 31 son comparables, con 15 coincidencias curriculares que sólo difieren en cobertura de previaturas y 16 diferencias de catálogo. Los 26 pares restantes son `insufficient-content`; no quedan snapshots faltantes. Hash `sha256:85594402f1e09be2ef150dfd527e85d87e72da39ba61608b87d30a1cdb180bf2`.
+- Siguiente paso: extraer los diez planes centrales restantes de FING y los seis restantes de FQ; después iniciar la auditoría oficial dirigida por las 16 diferencias y las composiciones insuficientes.

@@ -28,9 +28,9 @@ test("la comparación global no confunde faltantes ni composiciones vacías con 
   const count = (status) => results.filter((entry) => entry.status === status).length;
 
   assert.equal(results.length, 41);
-  assert.equal(count("curriculum-match-prerequisite-coverage-difference"), 6);
+  assert.equal(count("curriculum-match-prerequisite-coverage-difference"), 10);
   assert.equal(count("content-difference-detected"), 11);
-  assert.equal(count("insufficient-content"), 19);
-  assert.equal(count("not-comparable"), 5);
+  assert.equal(count("insufficient-content"), 20);
+  assert.equal(count("not-comparable"), 0);
   assert.equal(comparison.counts.missingRegionalSnapshots, 0);
 });

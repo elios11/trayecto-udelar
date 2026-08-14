@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T22:35:32.657Z",
+  "service": {
+    "code": "FQ",
+    "name": "FACULTAD DE QUÍMICA",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 5,
+    "courses": 1972,
+    "prerequisiteEntries": 1832,
+    "publishedRules": 1132,
+    "noPublishedRuleQueries": 700,
+    "validationIssues": 1,
+    "requests": 77280,
+    "bytes": 20719753
+  },
+  "plans": [
+    {
+      "key": "FQ:bioquimico-clinico:2015",
+      "career": "BIOQUÍMICO CLÍNICO",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 453,
+        "prerequisiteEntries": 546,
+        "publishedRules": 397,
+        "noPublishedRuleQueries": 149,
+        "validationIssues": 0,
+        "requests": 26918,
+        "bytes": 5790120
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T20:49:14.597Z",
+        "rateLimitMs": 500,
+        "contentHash": "70b213ab7026a054e45606c74326328a1693e6e19b661d6e7024007c3e98b405"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FQ:licenciatura-en-quimica:2016",
+      "career": "LICENCIATURA EN QUÍMICA",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 320,
+        "prerequisiteEntries": 216,
+        "publishedRules": 125,
+        "noPublishedRuleQueries": 91,
+        "validationIssues": 0,
+        "requests": 8668,
+        "bytes": 1975382
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T21:03:18.162Z",
+        "rateLimitMs": 500,
+        "contentHash": "1c33c238294fd0f7216bcc34a872040d05f81a0951eff005e30adeb16b2673f5"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FQ:quimico:2015",
+      "career": "QUÍMICO",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 710,
+        "prerequisiteEntries": 641,
+        "publishedRules": 461,
+        "noPublishedRuleQueries": 180,
+        "validationIssues": 0,
+        "requests": 31219,
+        "bytes": 10182965
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T21:48:48.442Z",
+        "rateLimitMs": 500,
+        "contentHash": "f2f8bafb0d20e6856d6b3042a9af2fa3ec42a97a8b158081d33283bdd3e3cbe9"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FQ:tecnico-bach-en-cs-quimicas:2015",
+      "career": "TÉCNICO BACH. EN CS.QUÍMICAS",
+      "type": "Grado",
+      "planYear": "2015",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 489,
+        "prerequisiteEntries": 429,
+        "publishedRules": 149,
+        "noPublishedRuleQueries": 280,
+        "validationIssues": 0,
+        "requests": 10351,
+        "bytes": 2769527
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T22:07:41.650Z",
+        "rateLimitMs": 500,
+        "contentHash": "bf1c6122971d1896e81b9ebd9fd1d03d3f513e8742cccf8f900c544fba611a5b"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FQ:tecnologo-quimico:2025",
+      "career": "TECNÓLOGO QUÍMICO",
+      "type": "Grado",
+      "planYear": "2025",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 124,
+        "bytes": 1759
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T22:35:15.496Z",
+        "rateLimitMs": 500,
+        "contentHash": "e02f22cca48c67391455f9617719ab23c72ef64d16ce1c1e6042eaec32732862"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE QUÍMICA antes de auditar o publicar."
+}

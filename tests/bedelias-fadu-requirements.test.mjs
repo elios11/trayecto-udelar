@@ -118,3 +118,16 @@ test("repara materias externas con código alfabético sin confundir nombres loc
   assert.equal(local.serviceCode, null);
   assert.equal(local.code, "ABC");
 });
+
+test("conserva guiones dentro de códigos externos de FQ", () => {
+  const external = normalizeCourseRecord({
+    serviceCode: null,
+    code: "FQ",
+    name: "REV-B - CRÉDITOS POR REVALIDA MATEMÁTICA 03 Y 04 POR MATEMÁTICA B",
+    credits: 18,
+    raw: "FQ - REV-B - CRÉDITOS POR REVALIDA MATEMÁTICA 03 Y 04 POR MATEMÁTICA B - créditos: 18",
+  });
+  assert.equal(external.serviceCode, "FQ");
+  assert.equal(external.code, "REV-B");
+  assert.match(external.name, /^CRÉDITOS POR REVALIDA/);
+});
