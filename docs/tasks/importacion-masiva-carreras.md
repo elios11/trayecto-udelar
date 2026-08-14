@@ -442,3 +442,11 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Quedan 12 comparaciones sin snapshot central crudo y 30 identidades pendientes de conclusión por fuente ausente o información insuficiente. Ninguna coincidencia se convirtió automáticamente en equivalencia oficial y las diferencias sólo habilitan auditoría de posible variante por sede.
 - Artefacto reproducible: `node scripts/bedelias-regional-content-comparison.mjs`; salida `data/bedelias/inventory/regional-content-comparison.json`, hash `sha256:70442f3463961bfe43bbd45fdee7197e24cdc917869192bbd0636b6aab86e7d8`.
 - Siguiente paso: completar los snapshots centrales crudos faltantes de FING y FQ, volver a comparar sin red y después dirigir la auditoría oficial sólo a diferencias e información insuficiente.
+
+### Comparación regional — centrales faltantes de FING completadas 2026-08-14
+
+- Se extrajeron seis snapshots centrales crudos mediante `fing-canonical-missing.json`: Ingeniería de Alimentos 2003, Ingeniería Química 2021, Ingeniería Biológica 2013 y los tecnólogos en Informática 2007, Telecomunicaciones 2009 e Industrial Mecánico 2016.
+- Cobertura: 902 cursos, 595 entradas de previaturas, 444 reglas publicadas, 151 consultas sin regla y 30.178 requests a 500 ms. Ingeniería Biológica quedó `extracted` por `composition-unavailable`; los otros cinco planes quedaron `structurally-valid`.
+- Se resolvieron siete comparaciones regionales: seis comparten currícula y difieren sólo en cobertura de previaturas; Ingeniería Biológica permanece `insufficient-content`. No aparecieron nuevas diferencias curriculares.
+- Diagnóstico acumulado: 52/57 pares tienen ambos snapshots, 27 son comparables, 11 coinciden curricularmente con distinta cobertura de previaturas, 16 presentan diferencias y 25 son insuficientes. Faltan cinco snapshots centrales de FQ. Hash `sha256:749eded532528f09fb614c6586116d7e3bbe62c3b046051e3f3ee5d7a71e6a04`.
+- Siguiente paso: extraer los cinco snapshots centrales faltantes de FQ mediante un único proceso secuencial y reanudable.

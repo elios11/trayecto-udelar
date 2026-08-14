@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T20:04:41.275Z",
+  "service": {
+    "code": "FING",
+    "name": "FACULTAD DE INGENIERÍA",
+    "area": "TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 6,
+    "courses": 902,
+    "prerequisiteEntries": 595,
+    "publishedRules": 444,
+    "noPublishedRuleQueries": 151,
+    "validationIssues": 1,
+    "requests": 30178,
+    "bytes": 5256467
+  },
+  "plans": [
+    {
+      "key": "FING:ingenieria-de-alimentos:2003",
+      "career": "INGENIERÍA DE ALIMENTOS",
+      "type": "Grado",
+      "planYear": "2003",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 389,
+        "prerequisiteEntries": 188,
+        "publishedRules": 141,
+        "noPublishedRuleQueries": 47,
+        "validationIssues": 0,
+        "requests": 9565,
+        "bytes": 2391371
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:20:58.214Z",
+        "rateLimitMs": 500,
+        "contentHash": "a07179a6fcb385063f9d23c8def5258e4f5c8f0f6b8cee27e98924665a825423"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FING:ingenieria-quimica:2021",
+      "career": "INGENIERÍA QUÍMICA",
+      "type": "Grado",
+      "planYear": "2021",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 375,
+        "prerequisiteEntries": 256,
+        "publishedRules": 168,
+        "noPublishedRuleQueries": 88,
+        "validationIssues": 0,
+        "requests": 11251,
+        "bytes": 2220929
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:35:33.319Z",
+        "rateLimitMs": 500,
+        "contentHash": "4c358fba9478118f1ef7ea6e85f70c6a4a4e11619d8a2f4045f22a204fb82a4b"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FING:lic-en-ingenieria-biologica:2013",
+      "career": "LIC EN INGENIERÍA BIOLÓGICA",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1832
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:35:44.710Z",
+        "rateLimitMs": 500,
+        "contentHash": "661bff6d4eda665a5c64f0d56ae130a8d4180eec7690507c274226db1540d3a9"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "FING:tecnologo-en-informatica:2007",
+      "career": "TECNÓLOGO EN INFORMÁTICA",
+      "type": "Grado",
+      "planYear": "2007",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 57,
+        "prerequisiteEntries": 64,
+        "publishedRules": 61,
+        "noPublishedRuleQueries": 3,
+        "validationIssues": 0,
+        "requests": 4115,
+        "bytes": 269744
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:40:16.586Z",
+        "rateLimitMs": 500,
+        "contentHash": "d9eee94d47ea3105e16e1206aaaab859f85e0e34dd6fe1ddea668433aedac96a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FING:tecnologo-en-telecomunicaciones:2009",
+      "career": "TECNÓLOGO EN TELECOMUNICACIONES",
+      "type": "Grado",
+      "planYear": "2009",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 37,
+        "prerequisiteEntries": 11,
+        "publishedRules": 6,
+        "noPublishedRuleQueries": 5,
+        "validationIssues": 0,
+        "requests": 552,
+        "bytes": 77905
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:40:57.321Z",
+        "rateLimitMs": 500,
+        "contentHash": "382f147990c37855943f23911b2ecd38ce6776cfb6e840e090a803ef3f0a5c68"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "FING:tecnologo-industrial-mecanico:2016",
+      "career": "TECNÓLOGO INDUSTRIAL MECÁNICO",
+      "type": "Grado",
+      "planYear": "2016",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 44,
+        "prerequisiteEntries": 76,
+        "publishedRules": 68,
+        "noPublishedRuleQueries": 8,
+        "validationIssues": 0,
+        "requests": 4568,
+        "bytes": 294686
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T19:45:59.634Z",
+        "rateLimitMs": 500,
+        "contentHash": "cb38dbcb605d5c298485c22092449722fc4062ec832325be8b1e31598a985ff8"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE INGENIERÍA antes de auditar o publicar."
+}

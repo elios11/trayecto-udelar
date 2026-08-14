@@ -40,7 +40,8 @@ test("CURE distingue diferencias, información insuficiente y centrales ausentes
 
   for (const identity of ["tecnologo en informatica:2007", "tecnologo en telecomunicaciones:2009"]) {
     const result = findComparison(identity);
-    assert.equal(result.status, "not-comparable");
-    assert.equal(result.reason, "missing-canonical-snapshot");
+    assert.equal(result.status, "curriculum-match-prerequisite-coverage-difference");
+    assert.equal(result.difference.onlyCanonical.length, 0);
+    assert.equal(result.difference.onlyRegional.length, 0);
   }
 });
