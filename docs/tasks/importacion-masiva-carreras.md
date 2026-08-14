@@ -305,3 +305,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service ENUT`; artefacto `data/bedelias/reports/enut-pilot.json`, estado `extracted`.
 - Manifiesto global actualizado sin red: 122 planes `discovered`, 7 `audited`, 86 `structurally-valid` y 35 `extracted`; hash `sha256:8be0d0ee042a2af6aadd885e950cfe260848dbfacc43ba7dd364db624d5d9540`.
 - Siguiente servicio: ISEF. Mantener cierre y encadenamiento automáticos sin integrar ni publicar.
+
+### Carril de recolección — ISEF completado 2026-08-14
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service ISEF --delay 500`; estado local `data/bedelias/batches/isef-vigentes.json` y checkpoints `data/bedelias/isef-*.json.checkpoint`.
+- Estado final: 3/3 `succeeded` en el primer intento, sin fallos ni interrupciones: Licenciatura en Educación Física 2017, Tecnicatura en Deportes 2007 y Tecnicatura en Guardavidas 2025.
+- Cobertura: 2.071 cursos, 1.840 entradas de previaturas, 166 reglas publicadas y 1.674 consultas sin regla; 12.963 requests registradas. Los tres snapshots pasan la validación estructural.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service ISEF`; artefacto `data/bedelias/reports/isef-pilot.json`, estado `official-sources-pending`.
+- Manifiesto global actualizado sin red: 119 planes `discovered`, 7 `audited`, 89 `structurally-valid` y 35 `extracted`; hash `sha256:5bfddba51583519d0af589018356d6719cca6d358eefe4fd453b24beb9d32fcd`.
+- Siguiente paso: no iniciar servicios regionales hasta modelar planes canónicos y ofertas/sedes, evitando extraer como independientes las coincidencias regionales.

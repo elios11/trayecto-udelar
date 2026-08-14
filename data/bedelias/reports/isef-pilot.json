@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T05:33:52.541Z",
+  "service": {
+    "code": "ISEF",
+    "name": "INSTITUTO SUPERIOR DE EDUCACIÓN FÍSICA",
+    "area": "CIENCIAS DE LA SALUD"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "official-sources-pending",
+  "totals": {
+    "plans": 3,
+    "courses": 2071,
+    "prerequisiteEntries": 1840,
+    "publishedRules": 166,
+    "noPublishedRuleQueries": 1674,
+    "validationIssues": 0,
+    "requests": 12963,
+    "bytes": 11670678
+  },
+  "plans": [
+    {
+      "key": "ISEF:licenciatura-en-educacion-fisica:2017",
+      "career": "LICENCIATURA EN EDUCACIÓN FÍSICA",
+      "type": "Grado",
+      "planYear": "2017",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 1297,
+        "prerequisiteEntries": 1192,
+        "publishedRules": 117,
+        "noPublishedRuleQueries": 1075,
+        "validationIssues": 0,
+        "requests": 8890,
+        "bytes": 9578871
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T05:12:17.114Z",
+        "rateLimitMs": 500,
+        "contentHash": "8a52bda4620e7a45e9bbd741b4fb60ebc813609011fda0a82f55538b4656de5f"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "ISEF:tecnicatura-en-deportes:2007",
+      "career": "TECNICATURA EN DEPORTES",
+      "type": "Grado",
+      "planYear": "2007",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 758,
+        "prerequisiteEntries": 632,
+        "publishedRules": 49,
+        "noPublishedRuleQueries": 583,
+        "validationIssues": 0,
+        "requests": 3915,
+        "bytes": 2061906
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T05:23:10.816Z",
+        "rateLimitMs": 500,
+        "contentHash": "ec55efbec64d56df5164055149e287cef831f0607de7ee93f4f7965671e0c655"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "ISEF:tecnicatura-en-guardavidas:2025",
+      "career": "TECNICATURA EN GUARDAVIDAS",
+      "type": "Grado",
+      "planYear": "2025",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 16,
+        "prerequisiteEntries": 16,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 16,
+        "validationIssues": 0,
+        "requests": 158,
+        "bytes": 29901
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T05:23:22.681Z",
+        "rateLimitMs": 500,
+        "contentHash": "3ef42de0009664ab79771e9cf87f40801773e21aaaa49381f1fc84aaaf1050dd"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de INSTITUTO SUPERIOR DE EDUCACIÓN FÍSICA antes de auditar o publicar."
+}

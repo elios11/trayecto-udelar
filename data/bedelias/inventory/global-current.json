@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T04:48:07.105Z",
+  "generatedAt": "2026-08-14T05:33:54.589Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 122,
+      "discovered": 119,
       "extracted": 35,
       "audited": 7,
-      "structurally-valid": 86
+      "structurally-valid": 89
     }
   },
   "services": [
@@ -6816,7 +6816,7 @@
           "Grado": 3
         },
         "byState": {
-          "discovered": 3
+          "structurally-valid": 3
         }
       },
       "block": null,
@@ -6834,10 +6834,12 @@
             "name": "LICENCIATURA EN EDUCACIÓN FÍSICA PLAN 2017",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:22.084Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T05:12:17.114Z",
+            "contentHash": "8a52bda4620e7a45e9bbd741b4fb60ebc813609011fda0a82f55538b4656de5f",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6859,10 +6861,12 @@
             "name": "TECNICATURA EN DEPORTES",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:22.084Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T05:23:10.816Z",
+            "contentHash": "ec55efbec64d56df5164055149e287cef831f0607de7ee93f4f7965671e0c655",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6884,10 +6888,12 @@
             "name": "TECNICATURA EN GUARDAVIDAS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:22.084Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T05:23:22.681Z",
+            "contentHash": "3ef42de0009664ab79771e9cf87f40801773e21aaaa49381f1fc84aaaf1050dd",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7198,5 +7204,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:2fec67be09ae4c2eb1ef9fa9fef5511b788ad9c2facc7aaf5ced83056e31fc82"
+  "contentHash": "sha256:1791b2ea9143104d909f29ffaf4ddc3b39b9c446062bd5199cd98d0ed2c421d6"
 }
