@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T18:37:51.752Z",
+  "service": {
+    "code": "CUT",
+    "name": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "official-sources-pending",
+  "totals": {
+    "plans": 1,
+    "courses": 199,
+    "prerequisiteEntries": 1,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 1,
+    "validationIssues": 0,
+    "requests": 159,
+    "bytes": 295170
+  },
+  "plans": [
+    {
+      "key": "CUT:interpretacion-lsu-espanol-lsu:2014",
+      "career": "INTERPRETACIÓN LSU-ESPAÑOL-LSU",
+      "type": "Grado",
+      "planYear": "2014",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 199,
+        "prerequisiteEntries": 1,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 1,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 295170
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T18:37:41.871Z",
+        "rateLimitMs": 500,
+        "contentHash": "af7135a7e6cd4d50f25fbe4ea22f7ebd2a5d1925a30b8a9b887b8dae69e6adde"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ antes de auditar o publicar."
+}

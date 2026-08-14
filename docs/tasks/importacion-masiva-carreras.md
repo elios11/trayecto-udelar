@@ -426,3 +426,10 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Escalonada de Enfermería 2001 y Hemoterapia 2006 permanecen `insufficient-content` por composiciones vacías. Tecnólogo en Informática 2007 y Telecomunicaciones 2009 no son comparables porque aún falta el snapshot crudo de la oferta central; no se infiere equivalencia.
 - Diagnóstico acumulado: 15/57 snapshots regionales disponibles, 13 pares con ambos snapshots, 7 comparables, 2 coincidencias curriculares con distinta cobertura de previaturas, 5 diferencias curriculares, 6 casos insuficientes y 42 snapshots regionales pendientes. Hash `sha256:aa5979d5a3b64aff42a6c46990af81ee8296ac8adca5e95d4e29bdf6d616c9bc`.
 - Siguiente paso: comparar la única oferta coincidente de CUT y continuar automáticamente con las 41 de CENURLN.
+
+### Comparación CUT — completada 2026-08-14
+
+- Se extrajo Interpretación LSU–Español–LSU 2014 como única identidad coincidente propia de CUT mediante `cut-comparison.json`: 199 cursos, una consulta sin regla, 159 requests a 500 ms y cero incidencias.
+- La oferta publica la misma currícula, códigos y créditos que la central. Sólo difiere la cobertura de previaturas (una entrada regional frente a 202 centrales), por lo que no se crea una variante curricular de sede.
+- Diagnóstico acumulado: 16/57 snapshots regionales disponibles, 14 pares con ambos snapshots, 8 comparables, 3 coincidencias curriculares con distinta cobertura de previaturas, 5 diferencias curriculares, 6 casos insuficientes y 41 snapshots regionales pendientes. Hash `sha256:626db1c68095947cea9faacbdf512e32616a93ac3992f8fa09bb97f315a9badb`.
+- Siguiente paso: comparar las 41 ofertas coincidentes de CENURLN con un único proceso secuencial y reanudable.
