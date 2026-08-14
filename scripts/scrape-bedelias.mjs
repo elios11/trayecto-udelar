@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import { mergePrerequisiteCheckpoint } from "./bedelias-checkpoint.mjs";
 import { incompleteLogicalNodes, removeIncompletePrerequisiteRules } from "../lib/requirement-expression.mjs";
 import { renameWithRetry } from "./bedelias-atomic-write.mjs";
-import { openServicePrograms, recoverNavigation, runVisibleTransition } from "./bedelias-browser-navigation.mjs";
+import { openServicePrograms, recoverNavigation, runRecoverableLookup, runVisibleTransition } from "./bedelias-browser-navigation.mjs";
 
 const BASE_URL = "https://bedelias.udelar.edu.uy/";
 const DEFAULT_BROWSER_PATHS = [
@@ -186,14 +186,23 @@ class BedeliasBrowser {
     });
   }
 
-  async findProgram(programName) {
-    const input = this.page.getByRole("textbox", { name: "Filtrar por Nombre" });
-    await input.fill("");
-    await input.type(programName);
-    await input.press("Enter");
-    await this.settle(250);
-    const programs = await this.listPrograms();
-    const exact = programs.find((item) => normalizeSpace(item.name).toUpperCase() === normalizeSpace(programName).toUpperCase());
+  async findProgram(programName, serviceCode) {
+    let programs = [];
+    const exact = await runRecoverableLookup({
+      lookup: async () => {
+        const input = this.page.getByRole("textbox", { name: "Filtrar por Nombre" });
+        await input.fill("");
+        await input.type(programName);
+        await input.press("Enter");
+        await this.settle(250);
+        programs = await this.listPrograms();
+        return programs.find((item) => normalizeSpace(item.name).toUpperCase() === normalizeSpace(programName).toUpperCase()) ?? null;
+      },
+      recover: serviceCode ? async () => {
+        await this.openAcademicOffer();
+        await this.selectService(serviceCode);
+      } : undefined,
+    });
     if (!exact) throw new Error(`No se encontró la carrera «${programName}». Coincidencias: ${programs.map((item) => item.name).join(", ")}`);
     return exact;
   }
@@ -299,7 +308,7 @@ class BedeliasBrowser {
   async reopenPlan({ serviceCode, programName, year }) {
     await this.openAcademicOffer();
     await this.selectService(serviceCode);
-    const program = await this.findProgram(programName);
+    const program = await this.findProgram(programName, serviceCode);
     await this.expandProgram(program);
     await this.openPlan(year);
   }
@@ -698,7 +707,7 @@ async function scrapePlan(client, options) {
 
   await client.openAcademicOffer();
   const service = await client.selectService(serviceCode);
-  const program = await client.findProgram(programName);
+  const program = await client.findProgram(programName, serviceCode);
   const plans = await client.expandProgram(program);
   const planSummary = plans.find((item) => item.year === year);
   if (!planSummary) throw new Error(`No se encontró el plan ${year}. Disponibles: ${plans.map((item) => item.year).join(", ")}`);

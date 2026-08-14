@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T01:21:48.577Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "FMED",
+    "name": "FACULTAD DE MEDICINA",
+    "area": "CIENCIAS DE LA SALUD"
+  },
+  "program": {
+    "name": "TECNICATURA EN RADIOLOGÍA",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 1900 - TECNICATURA EN RADIOLOGIA",
+    "metadata": {
+      "type": null,
+      "current": false,
+      "duration": null,
+      "minCredits": null,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "No se puede mostrar la composición de este plan."
+    },
+    "courses": [],
+    "titleLabels": [
+      "TECNICO EN RADIOLOGIA"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "1900",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 126,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 7,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "No se puede mostrar la composición de este plan."
+      }
+    ]
+  },
+  "contentHash": "a6642c443ce590c53a2e1d581e8dd25c2d6d9a38ee938b13b0c33f7b3a5c46b6"
+}

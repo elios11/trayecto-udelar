@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { openServicePrograms, recoverNavigation, runVisibleTransition } from "../scripts/bedelias-browser-navigation.mjs";
+import { openServicePrograms, recoverNavigation, runRecoverableLookup, runVisibleTransition } from "../scripts/bedelias-browser-navigation.mjs";
 
 test("confirma la apertura del servicio por la UI de destino y no por un evento de URL", async () => {
   const calls = [];
@@ -95,4 +95,18 @@ test("recupera una vuelta de historial rechazada mediante recarga", async () => 
     },
   }), true);
   assert.deepEqual(calls, ["navigate", "ready-1", "reload", "ready-2"]);
+});
+
+test("reconstruye el servicio cuando un filtro paginado ignora la primera búsqueda", async () => {
+  const calls = [];
+  const result = await runRecoverableLookup({
+    lookup: async (attempt) => {
+      calls.push(`lookup-${attempt}`);
+      return attempt === 0 ? null : { name: "TECNICATURA EN RADIOTERAPIA" };
+    },
+    recover: async () => calls.push("recover-service"),
+  });
+
+  assert.deepEqual(result, { name: "TECNICATURA EN RADIOTERAPIA" });
+  assert.deepEqual(calls, ["lookup-0", "recover-service", "lookup-1"]);
 });

@@ -256,3 +256,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FIC`; artefacto `data/bedelias/reports/fic-pilot.json`, estado `extracted`. Ningún plan queda auditado ni habilitado para publicación.
 - Manifiesto global actualizado sin red: 165 planes `discovered`, 7 `audited`, 64 `structurally-valid` y 14 `extracted`; hash `sha256:0eee6d37a683edb63cbe46bd25eaa6269fbc753d581ec184d0fdf8d2d3afc8d0`.
 - Siguiente servicio central de la cola: FMED. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
+
+### Carril de recolección — FMED completado 2026-08-14
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service FMED --delay 500`; estado local `data/bedelias/batches/fmed-vigentes.json` y checkpoints `data/bedelias/fmed-*.json.checkpoint`.
+- La primera pasada terminó 31/32. El filtro paginado ignoró una búsqueda y presentó la primera página como si Radioterapia no existiera. La búsqueda exacta ahora reconstruye la oferta y el servicio antes de un único reintento; la prueba real extrajo solamente Radioterapia y la reconciliación omitió los otros 31 snapshots.
+- Estado final: 32/32 `succeeded`, sin fallos ni interrupciones.
+- Cobertura literal: 2.753 cursos, 2.276 entradas de previaturas, cero reglas publicadas y 2.276 consultas sin regla; 4.060 requests registradas. Doctor en Medicina es el único snapshot cuyo árbol enumera materias.
+- Doce tecnicaturas antiguas no publican composición y conservan esa advertencia. Otros diecinueve planes publican árboles válidos sin nodos de materia; ninguno se interpreta como currícula vacía ni se habilita sin auditoría oficial.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service FMED`; artefacto `data/bedelias/reports/fmed-pilot.json`, estado `extracted`.
+- Manifiesto global actualizado sin red: 133 planes `discovered`, 7 `audited`, 84 `structurally-valid` y 26 `extracted`; hash `sha256:9641544d5fa9ea6a0fc1a81f9794fb06b8a2d4cb946970404244eb9fa6d62ecb`.
+- Siguiente servicio central de la cola: FVET. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.

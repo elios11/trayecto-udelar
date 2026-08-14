@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T01:21:00.195Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "FMED",
+    "name": "FACULTAD DE MEDICINA",
+    "area": "CIENCIAS DE LA SALUD"
+  },
+  "program": {
+    "name": "TECNICATURA EN LABORATORIO CLÍNICO",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 1900 - TECNICATURA EN LABORATORIO CLINICO",
+    "metadata": {
+      "type": null,
+      "current": false,
+      "duration": null,
+      "minCredits": null,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "No se puede mostrar la composición de este plan."
+    },
+    "courses": [],
+    "titleLabels": [
+      "TECNICO EN LABORATORIO CLINICO"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "1900",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 126,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 7,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "No se puede mostrar la composición de este plan."
+      }
+    ]
+  },
+  "contentHash": "ab0863ca0894115e6df92424563479a1b93c0941c95d5d3ffd2356afb9a766d0"
+}

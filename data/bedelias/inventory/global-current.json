@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T01:15:20.330Z",
+  "generatedAt": "2026-08-14T01:52:46.642Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 165,
+      "discovered": 133,
       "audited": 7,
-      "structurally-valid": 64,
-      "extracted": 14
+      "structurally-valid": 84,
+      "extracted": 26
     }
   },
   "services": [
@@ -5540,7 +5540,8 @@
           "Grado": 32
         },
         "byState": {
-          "discovered": 32
+          "structurally-valid": 20,
+          "extracted": 12
         }
       },
       "block": null,
@@ -5558,10 +5559,12 @@
             "name": "DOCTOR EN MEDICINA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:17:37.154Z",
+            "contentHash": "4a33e881cca8eca895180671d436b6a95018b239bcef48a4cae4c4e5f78ea804",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5583,10 +5586,12 @@
             "name": "LICENCIATURA EN FISIOTERAPIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:17:46.984Z",
+            "contentHash": "bf3c404b4c40e533c3f2dc8bd853fa22582df7d3af989aab66c99aae77ee209e",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5608,10 +5613,12 @@
             "name": "LICENCIATURA EN FONOAUDIOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:17:56.825Z",
+            "contentHash": "524fd23b013eaac1973e633f44ccff12e7561281d3cb21908e2a051acaeda3ec",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5633,10 +5640,12 @@
             "name": "LICENCIATURA EN IMAGENOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:18:06.500Z",
+            "contentHash": "014b9840115e5d79a2cd62a14e7cf427a0d960db1b754036d7434c7da9d2416d",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5658,10 +5667,12 @@
             "name": "LICENCIATURA EN INSTRUMENTACION QUIRURGICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:18:16.271Z",
+            "contentHash": "e7db998c82ede8740a8fa9caa4d72a74f90c98a4a088e0525448b083fef9be80",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5683,10 +5694,12 @@
             "name": "LICENCIATURA EN LABORATORIO CLINICO",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:18:25.878Z",
+            "contentHash": "5631033612fc673f2719964379337074be82cae5751a3638581d05f1e2e2cd5e",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5708,10 +5721,12 @@
             "name": "LICENCIATURA EN NEUMOCARDIOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:18:35.533Z",
+            "contentHash": "eda3bf5f8d848c7f53b8faf8022d936ecc0743ec9a5e0d971cb88fe67d62960f",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5733,10 +5748,12 @@
             "name": "LICENCIATURA EN NEUROFISIOLOGIA CLINICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:18:45.215Z",
+            "contentHash": "91214fa37931689e919d59912e34cb26c415c80e098cc0468b79deefdd6f1966",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5758,10 +5775,12 @@
             "name": "LICENCIATURA EN OFTALMOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:18:54.846Z",
+            "contentHash": "014abd6c41bbf4ea1ce1c41c06c9ad2eec0eaa5a78d514db4be0309a92ae7c30",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5783,10 +5802,12 @@
             "name": "LICENCIATURA EN PSICOMOTRICIDAD",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:19:04.543Z",
+            "contentHash": "d6206c5cd638342104193e2ce71031bf45cbdd9adff0144213e1ad804620f689",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5808,10 +5829,12 @@
             "name": "LICENCIATURA EN REGISTROS MEDICOS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:19:14.133Z",
+            "contentHash": "741bf9bc8957800f053b2ad47df5ddd678cfaad8463cad1b456ef6750fbcc072",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5833,10 +5856,12 @@
             "name": "LICENCIATURA EN TERAPIA OCUPACIONAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:19:24.004Z",
+            "contentHash": "768a938051395bd74612127e1028de3fafd60860fd08b7c907f3b2ba6f3e4e07",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5858,10 +5883,12 @@
             "name": "OBSTETRA PARTERA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:19:33.704Z",
+            "contentHash": "6e36db6278483023b860c5ac90768ac790dcf879ce07a9a21c42c1febf085cb0",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5883,10 +5910,12 @@
             "name": "TECNICATURA EN ANATOMIA PATOLOGICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:19:43.553Z",
+            "contentHash": "7e049c4ac498adc9791bd9fcdb566ca795145c8c66e7eb4e40649a552e6c1eb3",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5908,10 +5937,12 @@
             "name": "TECNICATURA EN ARCHIVO MEDICO",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:19:53.096Z",
+            "contentHash": "8bc1c5d46efbb34d1131fa0849d3afee2cc5e1e7d3df3385b7589ac49e6529a6",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5933,10 +5964,12 @@
             "name": "TECNICATURA EN ELECTROENCEFALOGRAFIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:20:02.791Z",
+            "contentHash": "5d30b6ee46a4d86494020d54e7111f7935c0d257be8cec5c4961e00aec5b7c2e",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5958,10 +5991,12 @@
             "name": "TECNICATURA EN ELECTROENCEFALOGRAFIA Y NEUROFISIOLOGIA CLINICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:20:12.321Z",
+            "contentHash": "1913ae8f630ad688eee922448e627734806afab8a8047d57ec96e0a78c0f2efa",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -5983,10 +6018,12 @@
             "name": "TECNICATURA EN FISIOTERAPIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:20:21.899Z",
+            "contentHash": "b09bfc61f519b59f64ae9562ba56c9eacad55566239f378379c4222f425ea6d3",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6008,10 +6045,12 @@
             "name": "TECNICATURA EN FONOAUDIOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:20:31.388Z",
+            "contentHash": "b46911339fdf2c015bae42bac4f2bcaf9d157143edbeb115d32dc48fcf4d0bfa",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6033,10 +6072,12 @@
             "name": "TECNICATURA EN HEMOTERAPIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:20:41.062Z",
+            "contentHash": "6e7e2c61727476f3a0a5f159beb8caf2934f38bb06ad9ab394e38cf110370eba",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6058,10 +6099,12 @@
             "name": "TECNICATURA EN INSTRUMENTACION QUIRURGICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:20:50.637Z",
+            "contentHash": "8ef0bb9da620dc64eed89489bd8a73be019e5a370b066784107214fe9e694c73",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6083,10 +6126,12 @@
             "name": "TECNICATURA EN LABORATORIO CLINICO",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:21:00.195Z",
+            "contentHash": "ab0863ca0894115e6df92424563479a1b93c0941c95d5d3ffd2356afb9a766d0",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6108,10 +6153,12 @@
             "name": "TECNICATURA EN NEUMOCARDIOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:21:09.919Z",
+            "contentHash": "29a6bf1dc2a2284465a1821593b296bb0d7b4c8094a7df9a5add1af7b07fcea9",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6133,10 +6180,12 @@
             "name": "TECNICATURA EN OFTALMOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:21:19.604Z",
+            "contentHash": "2673044cc590383f9393ebdc223c1aaeb7c0116f5ec8b7d56b3e165231732b1a",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6158,10 +6207,12 @@
             "name": "TECNICATURA EN PODOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:21:29.263Z",
+            "contentHash": "b0407659d0f5ce4715c7b58c531822e615cf8142dd5f26fd0d9906ecbb3fda4f",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6183,10 +6234,12 @@
             "name": "TECNICATURA EN RADIOISOTOPOS",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:21:38.902Z",
+            "contentHash": "d00acf18fb5d0632eb219209437cbcdef472b6f3750cfd30534499bb8898a1ab",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6208,10 +6261,12 @@
             "name": "TECNICATURA EN RADIOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:21:48.577Z",
+            "contentHash": "a6642c443ce590c53a2e1d581e8dd25c2d6d9a38ee938b13b0c33f7b3a5c46b6",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6233,10 +6288,12 @@
             "name": "TECNICATURA EN RADIOTERAPIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:52:02.505Z",
+            "contentHash": "a9ebd6cf1887189e418501323d81a69153b3da7feaa4e055c63c13296f778d16",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6258,10 +6315,12 @@
             "name": "TECNICATURA EN REEDUCACION PSICOMOTRIZ",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:22:06.293Z",
+            "contentHash": "7efc6e769bd8f3a68512ead823d055f2d6512d9241a2a92ee8250c20dcf1917e",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6283,10 +6342,12 @@
             "name": "TECNICATURA EN REGISTROS MEDICOS",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:22:15.912Z",
+            "contentHash": "b9b087828d88e4b189fae73fafa7d0b0ccb678dcf9b332e77dd728ddb34f0040",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6308,10 +6369,12 @@
             "name": "TECNICATURA EN SALUD OCUPACIONAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:22:25.588Z",
+            "contentHash": "bc23702a1feabdf8a9476b89c668d3fc997481ef21e5cb27f49e8186998f23c0",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6333,10 +6396,12 @@
             "name": "TECNOLOGO EN COSMETOLOGIA MEDICA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:50:00.974Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T01:22:35.306Z",
+            "contentHash": "fb8c932ccae3af4f90f321c6f4deb918f908391029bb7abe1b5958aa62d55bb1",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7109,5 +7174,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:01ec9cf1b714187e6f08418d52b8b2413d73383206b896b5e61931ef5e801436"
+  "contentHash": "sha256:c80fbf62fea0f8cac4c6d3eb3d929778c63743f9767820b05d258cf952f01b18"
 }

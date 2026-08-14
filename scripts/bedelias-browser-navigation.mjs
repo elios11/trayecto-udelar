@@ -30,6 +30,15 @@ export async function recoverNavigation({ navigate, reload, isReady }) {
   return isReady();
 }
 
+export async function runRecoverableLookup({ lookup, recover, attempts = 2 }) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    const result = await lookup(attempt);
+    if (result) return result;
+    if (attempt + 1 < attempts) await recover?.(attempt);
+  }
+  return null;
+}
+
 export async function openServicePrograms(page, serviceRow, timeout = 30_000, recover) {
   const programFilter = page.getByRole("textbox", { name: "Filtrar por Nombre" });
   return runVisibleTransition({
