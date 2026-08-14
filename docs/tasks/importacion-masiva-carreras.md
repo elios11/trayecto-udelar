@@ -314,3 +314,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service ISEF`; artefacto `data/bedelias/reports/isef-pilot.json`, estado `official-sources-pending`.
 - Manifiesto global actualizado sin red: 119 planes `discovered`, 7 `audited`, 89 `structurally-valid` y 35 `extracted`; hash `sha256:5bfddba51583519d0af589018356d6719cca6d358eefe4fd453b24beb9d32fcd`.
 - Siguiente paso: no iniciar servicios regionales hasta modelar planes canónicos y ofertas/sedes, evitando extraer como independientes las coincidencias regionales.
+
+### Servicios regionales — modelo canónico y cola deduplicada 2026-08-14
+
+- Decisión de datos: una carrera y año identifican un plan canónico; cada servicio regional se conserva como una oferta de ese plan. La sede no se representa como perfil o trayectoria.
+- Decisión de interfaz futura: si las ofertas tienen la misma currícula, la sede es sólo metadata y comparte progreso. Sólo una diferencia curricular verificada habilita un selector separado `Sede`; si también existen perfiles o trayectorias, ambos selectores permanecen como dimensiones distintas.
+- Análisis local reproducible: `node scripts/bedelias-regional-offerings.mjs`; artefacto `data/bedelias/inventory/regional-offerings.json`.
+- Hash reproducible del contenido: `sha256:a0b5c051352e1696027bc997e1e844abf01ba6387b3465f76c79e2380794845b`.
+- Criterio conservador: nombre de carrera normalizado + año de plan. La coincidencia exacta con un servicio central queda como candidata y no se declara equivalencia curricular hasta comparar contenido.
+- Resultado: 92 ofertas regionales forman 73 identidades; 57 ofertas (43 identidades) coinciden con un plan central y 35 ofertas forman 30 identidades exclusivamente regionales. Hay 14 identidades repetidas entre regionales, que reúnen 33 ofertas.
+- Cola reducida: 30 extracciones representativas — CENURSO 2, CUCEL 2, CUR 5, CURE 6, CUT 5 y CENURLN 10 — en ese orden. Las otras 62 ofertas no se extraen de nuevo durante este hito.
+- Reanudación: regenerar el manifiesto no usa red ni modifica snapshots; después reanudar únicamente los objetivos listados en `extractionTargets`.
+- Siguiente paso: extraer las dos representantes de CENURSO mediante un único proceso secuencial a 500 ms, conservar checkpoints y comparar contenido antes de consolidar ofertas centrales/regionales.
