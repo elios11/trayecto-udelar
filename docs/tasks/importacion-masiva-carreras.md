@@ -335,3 +335,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Manifiesto global actualizado sin red: 117 `discovered`, 90 `structurally-valid`, 36 `extracted` y 7 `audited`; hash `sha256:8e55b065e798cf9ec3814dfd87615f46ab7476d08cd267806391d7b41456c427`.
 - Manifiesto regional: hash `sha256:ecafd3079192cbd773b960105d166e61f1cb827fb04f510812064bf8a566c32f`.
 - Siguiente paso: extraer únicamente Tecnólogo en Producción Equina 2022 y Tecnólogo en Sistemas Integrados de Producción Agropecuaria 2022 de CUCEL.
+
+### CUCEL — representantes regionales completadas 2026-08-14
+
+- Se extrajeron únicamente Tecnólogo en Producción Equina 2022 y Tecnólogo en Sistemas Integrados de Producción Agropecuaria 2022. La tercera oferta del servicio, ya coincidente con una identidad central, no se repitió.
+- Cobertura: 82 cursos, 72 consultas de previaturas sin regla publicada, 288 requests a 500 ms y cero incidencias estructurales. Ambos planes quedaron `structurally-valid`.
+- Reporte filtrado: `data/bedelias/reports/cucel-regional.json`; estado `official-sources-pending`.
+- Manifiesto global actualizado sin red: 115 `discovered`, 92 `structurally-valid`, 36 `extracted` y 7 `audited`; hash `sha256:409f085f87bedb98f6b4f29a666dcc5274129e5e464b28adec959fd2d24245d0`.
+- Manifiesto regional: hash `sha256:521a6de4d8863f47864be1ca45e1f46ebd07df66aafdc164d2e6c2cd323b1715`.
+- Siguiente paso: extraer las cinco identidades nuevas de CUR listadas en `regional-offerings.json`, sin repetir sus cinco coincidencias centrales.

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T06:50:22.622Z",
+  "service": {
+    "code": "CUCEL",
+    "name": "CENTRO UNIVERSITARIO REGIONAL NORESTE - CUCEL",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "official-sources-pending",
+  "totals": {
+    "plans": 2,
+    "courses": 82,
+    "prerequisiteEntries": 72,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 72,
+    "validationIssues": 0,
+    "requests": 288,
+    "bytes": 172557
+  },
+  "plans": [
+    {
+      "key": "CUCEL:tecnologo-en-produccion-equina:2022",
+      "career": "TECNÓLOGO EN PRODUCCIÓN EQUINA",
+      "type": "Grado",
+      "planYear": "2022",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 46,
+        "prerequisiteEntries": 46,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 46,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 104973
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T06:23:21.340Z",
+        "rateLimitMs": 500,
+        "contentHash": "6cc1fcc859b4dc3f11c846ec1705b77d455f185af31f48f704e07d379eb8ec38"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CUCEL:tecnologo-en-sistemas-integrados-de-produccion-agropecuaria:2022",
+      "career": "TECNÓLOGO EN SISTEMAS INTEGRADOS DE PRODUCCIÓN AGROPECUARIA",
+      "type": "Grado",
+      "planYear": "2022",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 36,
+        "prerequisiteEntries": 26,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 26,
+        "validationIssues": 0,
+        "requests": 129,
+        "bytes": 67584
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T06:23:33.464Z",
+        "rateLimitMs": 500,
+        "contentHash": "9d60987e6fcd13c4fa3ec44bd00e185fc19ec6080672a2c5d7e48a31784c7bbb"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL NORESTE - CUCEL antes de auditar o publicar."
+}
