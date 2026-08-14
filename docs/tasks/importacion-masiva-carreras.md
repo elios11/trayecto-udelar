@@ -286,3 +286,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service ODON`; artefacto `data/bedelias/reports/odon-pilot.json`, estado `extracted`.
 - Manifiesto global actualizado sin red: 125 planes `discovered`, 7 `audited`, 85 `structurally-valid` y 33 `extracted`; hash `sha256:7e32b1db349a1b1fd622fcecb16e01793446a9374bee1dd324451c576248a3bb`.
 - Siguiente servicio central de la cola: PSICO. Mantener el cierre y encadenamiento automáticos sin integrar ni publicar.
+
+### Carril de recolección — PSICO completado 2026-08-14
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service PSICO --delay 500`; estado local `data/bedelias/batches/psico-vigentes.json` y checkpoint de la licenciatura.
+- Estado final: 2/2 `succeeded` en el primer intento, sin fallos ni interrupciones.
+- Cobertura: 2.946 cursos y 2.647 consultas sin regla publicada; 280 requests registradas. Bedelías no publicó ninguna regla de previatura para esas consultas.
+- Licenciatura en Psicología 2013 pasa la validación estructural. Psicología Infantil 1960 no publica composición y conserva una advertencia.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service PSICO`; artefacto `data/bedelias/reports/psico-pilot.json`, estado `extracted`.
+- Manifiesto global actualizado sin red: 123 planes `discovered`, 7 `audited`, 86 `structurally-valid` y 34 `extracted`; hash `sha256:fbf47717de4554ca56371165383fd406f6289b6c70d21349667abf0e31374397`.
+- Siguiente servicio: ENUT. Mantener cierre y encadenamiento automáticos sin integrar ni publicar.

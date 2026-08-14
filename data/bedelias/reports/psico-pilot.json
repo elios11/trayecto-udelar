@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T04:33:23.575Z",
+  "service": {
+    "code": "PSICO",
+    "name": "FACULTAD DE PSICOLOGÍA",
+    "area": "CIENCIAS DE LA SALUD"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 2,
+    "courses": 2946,
+    "prerequisiteEntries": 2647,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 2647,
+    "validationIssues": 1,
+    "requests": 280,
+    "bytes": 6468097
+  },
+  "plans": [
+    {
+      "key": "PSICO:licenciatura-en-psicologia:2013",
+      "career": "LICENCIATURA EN PSICOLOGIA",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 2946,
+        "prerequisiteEntries": 2647,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 2647,
+        "validationIssues": 0,
+        "requests": 154,
+        "bytes": 6466327
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T04:05:37.458Z",
+        "rateLimitMs": 500,
+        "contentHash": "1986d82952136abf7500e36a97152955b07ccb276a1cb54f8dd7eab701557c5a"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "PSICO:psicologia-infantil:1960",
+      "career": "PSICOLOGIA INFANTIL",
+      "type": "Grado",
+      "planYear": "1960",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 126,
+        "bytes": 1770
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T04:05:47.644Z",
+        "rateLimitMs": 500,
+        "contentHash": "196b4b5c1627e87af69c71e61dee83ca0455ced75f666150ce2ba76bfc3c6525"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de FACULTAD DE PSICOLOGÍA antes de auditar o publicar."
+}

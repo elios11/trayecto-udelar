@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T04:03:31.761Z",
+  "generatedAt": "2026-08-14T04:33:25.560Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 125,
+      "discovered": 123,
       "audited": 7,
-      "structurally-valid": 85,
-      "extracted": 33
+      "structurally-valid": 86,
+      "extracted": 34
     }
   },
   "services": [
@@ -7133,7 +7133,8 @@
           "Grado": 2
         },
         "byState": {
-          "discovered": 2
+          "structurally-valid": 1,
+          "extracted": 1
         }
       },
       "block": null,
@@ -7151,10 +7152,12 @@
             "name": "LICENCIATURA EN PSICOLOGIA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:48.880Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T04:05:37.458Z",
+            "contentHash": "1986d82952136abf7500e36a97152955b07ccb276a1cb54f8dd7eab701557c5a",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7176,10 +7179,12 @@
             "name": "PSICOLOGIA INFANTIL",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:48.880Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T04:05:47.644Z",
+            "contentHash": "196b4b5c1627e87af69c71e61dee83ca0455ced75f666150ce2ba76bfc3c6525",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7191,5 +7196,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:0e98819b261f48a5bfb2c5ad9dcf8c928547b7231586dc092295a3abbc63a833"
+  "contentHash": "sha256:0ae6bf0d077c63e76d86e7512582fa4a1ebf76bdb9d62a25f057a52483e6a542"
 }
