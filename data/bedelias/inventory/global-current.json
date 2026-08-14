@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T03:31:02.225Z",
+  "generatedAt": "2026-08-14T04:03:31.761Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 132,
+      "discovered": 125,
       "audited": 7,
-      "structurally-valid": 84,
-      "extracted": 27
+      "structurally-valid": 85,
+      "extracted": 33
     }
   },
   "services": [
@@ -6916,7 +6916,8 @@
           "Grado": 7
         },
         "byState": {
-          "discovered": 7
+          "extracted": 6,
+          "structurally-valid": 1
         }
       },
       "block": null,
@@ -6934,10 +6935,12 @@
             "name": "ASISTENTE DENTAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:10.567Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T03:32:56.313Z",
+            "contentHash": "28623897d70e5e5006c2719218576e11a81f98c976ddb8c645345a7d8a1a4cc3",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6959,10 +6962,12 @@
             "name": "ASISTENTE EN ODONTOLOGÍA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:10.567Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T03:33:05.968Z",
+            "contentHash": "58186be5e7dfd39b69066fda5984065d3d1514c7c8b5be471dc555cc3f0657e6",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -6984,10 +6989,12 @@
             "name": "HIGIENISTA DENTAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:10.567Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T03:33:16.950Z",
+            "contentHash": "d03ad99116ee98fd607e729a1df3674e762d1ff263d1efb72dbd18959a292c6e",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7009,10 +7016,12 @@
             "name": "HIGIENISTA EN ODONTOLOGÍA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:10.567Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T03:33:26.657Z",
+            "contentHash": "3c3b786fdf28963d7f550e72696df86f3f958c798b8cdb35cce3fcb76c42f93e",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7034,10 +7043,12 @@
             "name": "LABORATORISTA DENTAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:10.567Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T03:33:36.386Z",
+            "contentHash": "462bc45fe41686098f9b164e8536d9d10181fc6b76b12ccdda5b77d89aad7907",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7059,10 +7070,12 @@
             "name": "LABORATORISTA EN ODONTOLOGÍA",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:10.567Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T03:34:17.732Z",
+            "contentHash": "b9b015d639bdda689f229e2c278718bc093d6e662d0638a496aefd0d5c85aabf",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7084,10 +7097,12 @@
             "name": "ODONTOLOGÍA",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-12T00:51:10.567Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T03:46:36.590Z",
+            "contentHash": "13d167ed1317f5293f0a050fc31ba16629124d094ed56e3b26eba0b65820c6f1",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7176,5 +7191,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:06cf39554eae388758440430faea3d4167230f63460543425a7a4d54a4d87179"
+  "contentHash": "sha256:0e98819b261f48a5bfb2c5ad9dcf8c928547b7231586dc092295a3abbc63a833"
 }

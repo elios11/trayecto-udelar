@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T03:34:17.732Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=2"
+    ]
+  },
+  "service": {
+    "code": "ODON",
+    "name": "FACULTAD DE ODONTOLOGÍA",
+    "area": "CIENCIAS DE LA SALUD"
+  },
+  "program": {
+    "name": "LABORATORISTA EN ODONTOLOGÍA",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2017 - LABORATORISTA EN ODONTOLOGÍA",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "36 meses",
+      "minCredits": 240,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "LABORATORISTA EN ODONTOLOGIA"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=2",
+    "year": "2017",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 186,
+    "requestTypes": {
+      "document": 9,
+      "stylesheet": 50,
+      "script": 85,
+      "image": 20,
+      "xhr": 8,
+      "other": 8,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "b9b015d639bdda689f229e2c278718bc093d6e662d0638a496aefd0d5c85aabf"
+}

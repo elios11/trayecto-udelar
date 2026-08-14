@@ -276,3 +276,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FVET`; artefacto `data/bedelias/reports/fvet-pilot.json`, estado `extracted`.
 - Manifiesto global actualizado sin red: 132 planes `discovered`, 7 `audited`, 84 `structurally-valid` y 27 `extracted`; hash `sha256:470b26a42dd632a3f99a888cf405d5c15d12c9a34d577fc5005a8ab6c59b09cb`.
 - Siguiente servicio central de la cola: ODON. El monitor debe cerrar cada servicio exitoso y continuar automáticamente, además de diagnosticar y reintentar fallos.
+
+### Carril de recolección — ODON completado 2026-08-14
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service ODON --delay 500`; estado local `data/bedelias/batches/odon-vigentes.json` y checkpoints `data/bedelias/odon-*.json.checkpoint`.
+- Estado final: 7/7 `succeeded` en el primer intento, sin fallos ni interrupciones.
+- Cobertura: 332 cursos, 323 entradas de previaturas, 112 reglas publicadas y 211 consultas sin regla; 8.632 requests registradas.
+- Odontología 2011 es el único plan con materias publicadas. Los seis planes de asistentes, higienistas y laboratoristas no publican composición y conservan una advertencia cada uno.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service ODON`; artefacto `data/bedelias/reports/odon-pilot.json`, estado `extracted`.
+- Manifiesto global actualizado sin red: 125 planes `discovered`, 7 `audited`, 85 `structurally-valid` y 33 `extracted`; hash `sha256:7e32b1db349a1b1fd622fcecb16e01793446a9374bee1dd324451c576248a3bb`.
+- Siguiente servicio central de la cola: PSICO. Mantener el cierre y encadenamiento automáticos sin integrar ni publicar.
