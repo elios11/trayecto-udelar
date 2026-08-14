@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T07:50:26.069Z",
+  "service": {
+    "code": "CURE",
+    "name": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 6,
+    "courses": 727,
+    "prerequisiteEntries": 711,
+    "publishedRules": 212,
+    "noPublishedRuleQueries": 499,
+    "validationIssues": 2,
+    "requests": 15285,
+    "bytes": 2238301
+  },
+  "plans": [
+    {
+      "key": "CURE:licenciatura-en-diseno-de-paisaje:2008",
+      "career": "LICENCIATURA EN DISEÑO DE PAISAJE",
+      "type": "Grado",
+      "planYear": "2008",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 291,
+        "prerequisiteEntries": 277,
+        "publishedRules": 90,
+        "noPublishedRuleQueries": 187,
+        "validationIssues": 0,
+        "requests": 6282,
+        "bytes": 1022809
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T07:32:09.913Z",
+        "rateLimitMs": 500,
+        "contentHash": "f15ec44dffbffdaad60cd6d0dc1fcb7e0f6d38ecac58ffb7b579fdcf80c89c3f"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CURE:licenciatura-en-gestion-ambiental:2011",
+      "career": "LICENCIATURA EN GESTIÓN AMBIENTAL",
+      "type": "Grado",
+      "planYear": "2011",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 2342
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T07:32:21.170Z",
+        "rateLimitMs": 500,
+        "contentHash": "b7a324a140066d0fe7de2e01a1111526c716d3b87bf6234b3458a87a19df1b42"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CURE:licenciatura-en-lenguajes-y-medios-audiovisuales:2011",
+      "career": "LICENCIATURA EN LENGUAJES Y MEDIOS AUDIOVISUALES",
+      "type": "Grado",
+      "planYear": "2011",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 127,
+        "bytes": 1874
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T07:32:32.184Z",
+        "rateLimitMs": 500,
+        "contentHash": "60e4df3058b95c7b4d4633d31430d17889eaeb79eb3599b2f366c250c787b537"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    },
+    {
+      "key": "CURE:licenciatura-en-turismo:2014",
+      "career": "LICENCIATURA EN TURISMO",
+      "type": "Grado",
+      "planYear": "2014",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 371,
+        "prerequisiteEntries": 344,
+        "publishedRules": 65,
+        "noPublishedRuleQueries": 279,
+        "validationIssues": 0,
+        "requests": 4716,
+        "bytes": 921829
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T07:41:41.948Z",
+        "rateLimitMs": 500,
+        "contentHash": "ed4c9106cb707afa24307d1695c7aa422f3c82cdce941a10513e5f60260e4093"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CURE:tecnicatura-en-artes-artes-plasticas-y-visuales:2013",
+      "career": "TECNICATURA EN ARTES - ARTES PLÁSTICAS Y VISUALES",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 17,
+        "prerequisiteEntries": 17,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 17,
+        "validationIssues": 0,
+        "requests": 175,
+        "bytes": 32343
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T07:42:07.249Z",
+        "rateLimitMs": 500,
+        "contentHash": "23bc58a7949fe7939ae7c9544d5035c1e10c4a837a311cb2afcec766b1522eeb"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CURE:tecnologo-minero:2013",
+      "career": "TECNÓLOGO MINERO",
+      "type": "Grado",
+      "planYear": "2013",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 48,
+        "prerequisiteEntries": 73,
+        "publishedRules": 57,
+        "noPublishedRuleQueries": 16,
+        "validationIssues": 0,
+        "requests": 3858,
+        "bytes": 257104
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T07:46:27.919Z",
+        "rateLimitMs": 500,
+        "contentHash": "f43312c9c8329bb999e3f6715b7f8e6327918a85cbbc8553ac53983fe6115f1c"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL ESTE antes de auditar o publicar."
+}

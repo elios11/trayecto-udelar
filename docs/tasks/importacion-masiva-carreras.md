@@ -353,3 +353,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Manifiesto global actualizado sin red: 110 `discovered`, 97 `structurally-valid`, 36 `extracted` y 7 `audited`; hash `sha256:cfe49339844241b9cad8c5429be335fea4e5934b5a830c792cd893f5e3bedb62`.
 - Manifiesto regional: hash `sha256:e95b31b98f21c30464c531c2b0f67a013d08c006f88f3bec045a636bad1b08d5`.
 - Siguiente paso: extraer las seis identidades nuevas de CURE, sin repetir sus ocho coincidencias centrales.
+
+### CURE — representantes regionales completadas 2026-08-14
+
+- Se extrajeron las seis identidades exclusivamente regionales: Diseño de Paisaje 2008, Gestión Ambiental 2011, Lenguajes y Medios Audiovisuales 2011, Turismo 2014, Artes Plásticas y Visuales 2013 y Tecnólogo Minero 2013. Las ocho coincidencias centrales no se repitieron.
+- Cobertura: 727 cursos, 711 entradas de previaturas, 212 reglas publicadas, 499 consultas sin regla y 15.285 requests a 500 ms. Cuatro snapshots quedaron `structurally-valid`; Gestión Ambiental y Lenguajes y Medios Audiovisuales quedaron `extracted` porque Bedelías no publica sus composiciones.
+- Reporte filtrado: `data/bedelias/reports/cure-regional.json`; estado `extracted`, con las dos anomalías institucionales conservadas.
+- Manifiesto global actualizado sin red: 104 `discovered`, 101 `structurally-valid`, 38 `extracted` y 7 `audited`; hash `sha256:5f93b3b49db12866dfef573bf055349268f4907e4b5b088b0cb2fe40228dea45`.
+- Manifiesto regional: hash `sha256:cfa68efe4143c766b88156272e0f813e4dff175c7c10684946eed2ffe8b36bf1`.
+- Siguiente paso: extraer las cinco identidades nuevas de CUT, sin repetir sus tres coincidencias centrales.

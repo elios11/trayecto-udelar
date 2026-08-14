@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T07:32:21.170Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1"
+    ]
+  },
+  "service": {
+    "code": "CURE",
+    "name": "CENTRO UNIVERSITARIO REGIONAL ESTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "program": {
+    "name": "LICENCIATURA EN GESTIÓN AMBIENTAL",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2011 - LICENCIATURA EN GESTIÓN AMBIENTAL",
+    "metadata": {
+      "type": "Plan por ciclos",
+      "current": true,
+      "duration": "60 meses",
+      "minCredits": null,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "LICENCIADO EN GESTION AMBIENTAL - CONTAMINACION AMBIENTAL (Perfil: CONTAMINACION AMBIENTAL)",
+      "LICENCIADO EN GESTION AMBIENTAL - GESTION SOSTENIBLE EN SISTEMAS AGRARIOS (Perfil: GESTIÓN SOSTENIBLE EN SISTEMAS AGRARIOS)",
+      "LICENCIADO EN GESTION AMBIENTAL - MANEJO DE ECOSISTEMAS (Perfil: MANEJO DE ECOSISTEMAS)",
+      "LICENCIADO EN GESTION AMBIENTAL - ORDENAMIENTO TERRITORIAL (Perfil: ORDENAMIENTO TERRITORIAL)",
+      "LICENCIADO EN GESTION AMBIENTAL - RECURSOS PESQUEROS Y ACUICULTURA (Perfil: RECURSOS PESQUEROS Y ACUICULTURA)"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+    "year": "2011",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 127,
+    "requestTypes": {
+      "document": 6,
+      "stylesheet": 33,
+      "script": 57,
+      "image": 12,
+      "xhr": 8,
+      "other": 5,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "b7a324a140066d0fe7de2e01a1111526c716d3b87bf6234b3458a87a19df1b42"
+}

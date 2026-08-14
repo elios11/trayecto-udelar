@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T07:20:24.423Z",
+  "generatedAt": "2026-08-14T07:50:27.165Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,9 +18,9 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 110,
-      "structurally-valid": 97,
-      "extracted": 36,
+      "discovered": 104,
+      "structurally-valid": 101,
+      "extracted": 38,
       "audited": 7
     }
   },
@@ -1925,7 +1925,9 @@
           "Grado": 14
         },
         "byState": {
-          "discovered": 14
+          "discovered": 8,
+          "structurally-valid": 4,
+          "extracted": 2
         }
       },
       "block": null,
@@ -1968,10 +1970,12 @@
             "name": "LICENCIATURA EN DISEÑO DE PAISAJE",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:26.838Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:32:09.913Z",
+            "contentHash": "f15ec44dffbffdaad60cd6d0dc1fcb7e0f6d38ecac58ffb7b579fdcf80c89c3f",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2043,10 +2047,12 @@
             "name": "LICENCIATURA EN GESTIÓN AMBIENTAL",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:26.838Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:32:21.170Z",
+            "contentHash": "b7a324a140066d0fe7de2e01a1111526c716d3b87bf6234b3458a87a19df1b42",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2068,10 +2074,12 @@
             "name": "LICENCIATURA EN LENGUAJES Y MEDIOS AUDIOVISUALES",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:26.838Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:32:32.184Z",
+            "contentHash": "60e4df3058b95c7b4d4633d31430d17889eaeb79eb3599b2f366c250c787b537",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2093,10 +2101,12 @@
             "name": "LICENCIATURA EN TURISMO",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:26.838Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:41:41.948Z",
+            "contentHash": "ed4c9106cb707afa24307d1695c7aa422f3c82cdce941a10513e5f60260e4093",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2118,10 +2128,12 @@
             "name": "TECNICATURA EN ARTES - ARTES PLASTICAS Y VISUALES",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:26.838Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:42:07.249Z",
+            "contentHash": "23bc58a7949fe7939ae7c9544d5035c1e10c4a837a311cb2afcec766b1522eeb",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -2268,10 +2280,12 @@
             "name": "TECNÓLOGO MINERO",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:58:26.838Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T07:46:27.919Z",
+            "contentHash": "f43312c9c8329bb999e3f6715b7f8e6327918a85cbbc8553ac53983fe6115f1c",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7226,5 +7240,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:cfe49339844241b9cad8c5429be335fea4e5934b5a830c792cd893f5e3bedb62"
+  "contentHash": "sha256:5f93b3b49db12866dfef573bf055349268f4907e4b5b088b0cb2fe40228dea45"
 }
