@@ -236,3 +236,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Reporte reproducible: `npm.cmd run bedelias:report -- --service FENF`; artefacto `data/bedelias/reports/fenf-pilot.json`, estado `official-sources-pending`.
 - Manifiesto global actualizado sin red: 186 planes `discovered`, 7 `audited`, 47 `structurally-valid` y 10 `extracted`; hash `sha256:17a9af7e5806109d0af67f88281dd9db7008f55f4e26b43959a44c6d8ec4d114`.
 - Siguiente servicio central de la cola: FHUM. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
+
+### Carril de recolección — FHCE (`FHUM` en Bedelías) completado 2026-08-13
+
+- Comando ejecutado y reanudable: `npm.cmd run bedelias:service -- --service FHUM --delay 500`; estado local `data/bedelias/batches/fhum-vigentes.json` y checkpoints `data/bedelias/fhum-*.json.checkpoint`. `FHUM` se conserva sólo como código técnico; el nombre público usado en informes es FHCE.
+- Estado final: 14/14 `succeeded` en el primer intento, sin fallos ni interrupciones.
+- Cobertura: 2.665 cursos, 2.661 entradas de previaturas, 397 reglas publicadas y 2.264 consultas sin regla; 29.859 requests registradas. Los catorce snapshots pasan la validación estructural automática.
+- Letras Hispánicas 1976 y Tecnicatura en Turismo 1996 publican árboles de composición válidos sin nodos de materia. Se conserva el resultado literal y no se interpreta como currícula vacía.
+- Reporte reproducible: `npm.cmd run bedelias:report -- --service FHUM`; artefacto `data/bedelias/reports/fhum-pilot.json`, estado `official-sources-pending`.
+- Manifiesto global actualizado sin red: 172 planes `discovered`, 7 `audited`, 61 `structurally-valid` y 10 `extracted`; hash `sha256:6438941f0df5119b2205bc21bedd19509de23985eb37667d7c130e0a851eeb73`.
+- Siguiente servicio central de la cola: FIC. Mantener un único proceso secuencial y no integrar ni publicar sin autorización.
