@@ -97,7 +97,11 @@ async function main() {
   const indexPath = path.resolve(PROJECT_ROOT, options.index ?? `data/bedelias/services/${slug(serviceCode)}-index.json`);
   const outputPath = path.resolve(PROJECT_ROOT, options.output ?? `data/bedelias/reports/${slug(serviceCode)}-pilot.json`);
   const index = await loadJson(indexPath);
-  const targets = selectServicePlans(index, { currentOnly: true, types: options.types ?? "GRADO|TECNICATURA|CIO" });
+  const targets = selectServicePlans(index, {
+    currentOnly: true,
+    types: options.types ?? "GRADO|TECNICATURA|CIO",
+    careers: options.careers,
+  });
   const planEntries = [];
   for (const target of targets) {
     const snapshotPath = path.join(PROJECT_ROOT, "data", "bedelias", `${slug(serviceCode)}-${slug(target.programName)}-${target.year}.json`);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T05:33:54.589Z",
+  "generatedAt": "2026-08-14T06:21:28.692Z",
   "source": {
     "system": "SGAE Bedelías",
     "catalogExtractedAt": "2026-08-08T07:20:45.669Z",
@@ -18,10 +18,10 @@
       "Grado": 250
     },
     "byState": {
-      "discovered": 119,
-      "extracted": 35,
-      "audited": 7,
-      "structurally-valid": 89
+      "discovered": 117,
+      "structurally-valid": 90,
+      "extracted": 36,
+      "audited": 7
     }
   },
   "services": [
@@ -1397,7 +1397,9 @@
           "Grado": 4
         },
         "byState": {
-          "discovered": 4
+          "discovered": 2,
+          "structurally-valid": 1,
+          "extracted": 1
         }
       },
       "block": null,
@@ -1465,10 +1467,12 @@
             "name": "TECNICATURA UNIVERSITARIA EN BIENES CULTURALES",
             "current": true
           },
-          "state": "discovered",
+          "state": "structurally-valid",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:56:50.199Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T05:49:34.718Z",
+            "contentHash": "ee49fea9140ebdd2fc332c3a112db1d1b44b2659bca5efe3cb6cdcf195a006ab",
+            "validationIssues": 0
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -1490,10 +1494,12 @@
             "name": "TECNÓLOGO EN ADMINISTRACIÓN Y CONTABILIDAD",
             "current": true
           },
-          "state": "discovered",
+          "state": "extracted",
           "stateEvidence": {
-            "source": "service-index",
-            "at": "2026-08-11T23:56:50.199Z"
+            "source": "bedelias-snapshot",
+            "at": "2026-08-14T05:50:18.185Z",
+            "contentHash": "36eed8e732a67f3d3d1d3e02395245b9c8432ed4c3abcb74ed11256400119716",
+            "validationIssues": 1
           },
           "coverage": {
             "bedeliasIndex": "verified",
@@ -7204,5 +7210,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:1791b2ea9143104d909f29ffaf4ddc3b39b9c446062bd5199cd98d0ed2c421d6"
+  "contentHash": "sha256:8e55b065e798cf9ec3814dfd87615f46ab7476d08cd267806391d7b41456c427"
 }

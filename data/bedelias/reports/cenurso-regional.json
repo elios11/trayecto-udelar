@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T06:21:02.725Z",
+  "service": {
+    "code": "CENURSO",
+    "name": "CENTRO UNIVERSITARIO REGIONAL SUROESTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "extracted",
+  "totals": {
+    "plans": 2,
+    "courses": 20,
+    "prerequisiteEntries": 3,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 3,
+    "validationIssues": 1,
+    "requests": 348,
+    "bytes": 120011
+  },
+  "plans": [
+    {
+      "key": "CENURSO:tecnicatura-universitaria-en-bienes-culturales:2021",
+      "career": "TECNICATURA UNIVERSITARIA EN BIENES CULTURALES",
+      "type": "Grado",
+      "planYear": "2021",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 20,
+        "prerequisiteEntries": 3,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 3,
+        "validationIssues": 0,
+        "requests": 161,
+        "bytes": 117512
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T05:49:34.718Z",
+        "rateLimitMs": 500,
+        "contentHash": "ee49fea9140ebdd2fc332c3a112db1d1b44b2659bca5efe3cb6cdcf195a006ab"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURSO:tecnologo-en-administracion-y-contabilidad:2012",
+      "career": "TECNÓLOGO EN ADMINISTRACIÓN Y CONTABILIDAD",
+      "type": "Grado",
+      "planYear": "2012",
+      "current": true,
+      "state": "extracted",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 1,
+        "requests": 187,
+        "bytes": 2499
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T05:50:18.185Z",
+        "rateLimitMs": 500,
+        "contentHash": "36eed8e732a67f3d3d1d3e02395245b9c8432ed4c3abcb74ed11256400119716"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": [
+        {
+          "level": "warning",
+          "code": "composition-unavailable"
+        }
+      ]
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL SUROESTE antes de auditar o publicar."
+}

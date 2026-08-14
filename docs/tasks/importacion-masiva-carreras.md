@@ -326,3 +326,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Cola reducida: 30 extracciones representativas — CENURSO 2, CUCEL 2, CUR 5, CURE 6, CUT 5 y CENURLN 10 — en ese orden. Las otras 62 ofertas no se extraen de nuevo durante este hito.
 - Reanudación: regenerar el manifiesto no usa red ni modifica snapshots; después reanudar únicamente los objetivos listados en `extractionTargets`.
 - Siguiente paso: extraer las dos representantes de CENURSO mediante un único proceso secuencial a 500 ms, conservar checkpoints y comparar contenido antes de consolidar ofertas centrales/regionales.
+
+### CENURSO — representantes regionales completadas 2026-08-14
+
+- Se extrajeron únicamente las dos identidades regionales nuevas de la cola canónica: Tecnicatura Universitaria en Bienes Culturales 2021 y Tecnólogo en Administración y Contabilidad 2012. Ingeniería en Computación y Enfermería no se repitieron.
+- Cobertura: 20 cursos, 3 consultas de previaturas sin regla publicada y 348 requests a 500 ms. Bienes Culturales quedó `structurally-valid`; Administración y Contabilidad quedó `extracted` porque Bedelías no publica su composición, anomalía conservada sin inventar materias.
+- Reporte filtrado reproducible: `node scripts/bedelias-service-report.mjs --service CENURSO --careers "TECNICATURA UNIVERSITARIA EN BIENES CULTURALES|TECNÓLOGO EN ADMINISTRACIÓN Y CONTABILIDAD" --output data/bedelias/reports/cenurso-regional.json`.
+- Manifiesto global actualizado sin red: 117 `discovered`, 90 `structurally-valid`, 36 `extracted` y 7 `audited`; hash `sha256:8e55b065e798cf9ec3814dfd87615f46ab7476d08cd267806391d7b41456c427`.
+- Manifiesto regional: hash `sha256:ecafd3079192cbd773b960105d166e61f1cb827fb04f510812064bf8a566c32f`.
+- Siguiente paso: extraer únicamente Tecnólogo en Producción Equina 2022 y Tecnólogo en Sistemas Integrados de Producción Agropecuaria 2022 de CUCEL.

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "system": "SGAE Bedelías",
+    "baseUrl": "https://bedelias.udelar.edu.uy/",
+    "extractedAt": "2026-08-14T05:50:18.185Z",
+    "method": "public-ui-browser",
+    "rateLimitMs": 500,
+    "sourceUrls": [
+      "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=2"
+    ]
+  },
+  "service": {
+    "code": "CENURSO",
+    "name": "CENTRO UNIVERSITARIO REGIONAL SUROESTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "program": {
+    "name": "TECNÓLOGO EN ADMINISTRACIÓN Y CONTABILIDAD",
+    "type": "Grado"
+  },
+  "plan": {
+    "heading": "Plan 2012 - TECNÓLOGO EN ADMINISTRACIÓN Y CONTABILIDAD",
+    "metadata": {
+      "type": "Plan por créditos",
+      "current": true,
+      "duration": "60 meses",
+      "minCredits": 225,
+      "colibriUrl": null
+    },
+    "composition": null,
+    "compositionAvailability": {
+      "available": false,
+      "reason": "La interfaz pública no publicó una composición."
+    },
+    "courses": [],
+    "titleLabels": [
+      "TECNOLOGO EN ADMINISTRACION Y CONTABILIDAD - MENCION AGROINDUSTRIA (Perfil: AGROINDUSTRIA)",
+      "TECNOLOGO EN ADMINISTRACION Y CONTABILIDAD - MENCION COMUNICACION ORGANIZACIONAL (Perfil: COMUNICACIÓN ORGANIZACIONAL)",
+      "TECNOLOGO EN ADMINISTRACION Y CONTABILIDAD-MENCION COOPERATIVISMO (Perfil: COOPERATIVISMO)",
+      "TECNOLOGO EN ADMINISTRACION Y CONTABILIDAD - MENCION GESTION AMBIENTAL (Perfil: GESTIÓN AMBIENTAL)",
+      "TECNOLOGO EN ADMINISTRACIÓN Y CONTABILIDAD (Perfil: MINERÍA)",
+      "TECNOLOGO EN ADMINISTRACIÓN Y CONTABILIDAD MENCIÓN SALUD (Perfil: SALUD)",
+      "TECNOLOGO EN ADMINISTRACION Y CONTABILIDAD - MENCION TURISMO (Perfil: TURISMO)"
+    ],
+    "sourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=2",
+    "year": "2012",
+    "current": true
+  },
+  "prerequisites": [],
+  "extraction": {
+    "requestedCourseCodes": [],
+    "requestedCourseNames": [],
+    "completedRules": 0,
+    "requestCount": 187,
+    "requestTypes": {
+      "document": 9,
+      "stylesheet": 50,
+      "script": 85,
+      "image": 20,
+      "xhr": 9,
+      "other": 8,
+      "font": 6
+    }
+  },
+  "validation": {
+    "issues": [
+      {
+        "level": "warning",
+        "code": "composition-unavailable",
+        "message": "La interfaz pública no publicó una composición."
+      }
+    ]
+  },
+  "contentHash": "36eed8e732a67f3d3d1d3e02395245b9c8432ed4c3abcb74ed11256400119716"
+}
