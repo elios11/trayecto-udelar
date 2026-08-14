@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { renameWithRetry } from "./bedelias-atomic-write.mjs";
 import { normalizeLookup, slug } from "./bedelias-service-batch.mjs";
+import { normalizeCourseRecord } from "./scrape-bedelias.mjs";
 
 const PROJECT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -31,17 +32,18 @@ function compareStable(left, right) {
 }
 
 export function curriculumFingerprint(snapshot) {
+  const normalizedCourses = (snapshot.plan?.courses ?? []).map(normalizeCourseRecord);
   const metadata = normalizeValue({
     type: snapshot.plan?.metadata?.type ?? null,
     duration: snapshot.plan?.metadata?.duration ?? null,
     minCredits: snapshot.plan?.metadata?.minCredits ?? null,
   });
-  const courseCatalog = (snapshot.plan?.courses ?? []).map((course) => normalizeValue({
+  const courseCatalog = normalizedCourses.map((course) => normalizeValue({
     code: course.code,
     name: course.name,
     credits: course.credits,
   })).sort(compareStable);
-  const courses = (snapshot.plan?.courses ?? []).map((course) => normalizeValue({
+  const courses = normalizedCourses.map((course) => normalizeValue({
     code: course.code,
     name: course.name,
     credits: course.credits,

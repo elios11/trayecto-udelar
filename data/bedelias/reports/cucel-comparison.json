@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T17:46:42.971Z",
+  "service": {
+    "code": "CUCEL",
+    "name": "CENTRO UNIVERSITARIO REGIONAL NORESTE - CUCEL",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "official-sources-pending",
+  "totals": {
+    "plans": 1,
+    "courses": 199,
+    "prerequisiteEntries": 2,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 2,
+    "validationIssues": 0,
+    "requests": 159,
+    "bytes": 293063
+  },
+  "plans": [
+    {
+      "key": "CUCEL:tecnologo-int-y-trad-lsu-esp:2025",
+      "career": "TECNÓLOGO INT Y TRAD LSU ESP",
+      "type": "Grado",
+      "planYear": "2025",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 199,
+        "prerequisiteEntries": 2,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 2,
+        "validationIssues": 0,
+        "requests": 159,
+        "bytes": 293063
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:45:27.419Z",
+        "rateLimitMs": 500,
+        "contentHash": "cfc5bd299b30eb1a2141c4884e5969ea5a2030a19a2269963ba7dbf50df1823e"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL NORESTE - CUCEL antes de auditar o publicar."
+}

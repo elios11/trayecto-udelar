@@ -95,3 +95,26 @@ test("repara materias externas cuyo código institucional es numérico", () => {
     },
   );
 });
+
+test("repara materias externas con código alfabético sin confundir nombres locales", () => {
+  const external = normalizeCourseRecord({
+    serviceCode: null,
+    code: "FHUM",
+    name: "ATP - AUTORITARISMOS, TRANSICIONES Y POLÍTICAS DE LA MEMORIA",
+    credits: 0,
+    raw: "FHUM - ATP - AUTORITARISMOS, TRANSICIONES Y POLÍTICAS DE LA MEMORIA - créditos: 0",
+  });
+  assert.equal(external.serviceCode, "FHUM");
+  assert.equal(external.code, "ATP");
+  assert.match(external.name, /^AUTORITARISMOS/);
+
+  const local = normalizeCourseRecord({
+    serviceCode: null,
+    code: "ABC",
+    name: "TEORÍA - PRÁCTICA",
+    credits: 5,
+    raw: "ABC - TEORÍA - PRÁCTICA - créditos: 5",
+  });
+  assert.equal(local.serviceCode, null);
+  assert.equal(local.code, "ABC");
+});

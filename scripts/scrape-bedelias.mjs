@@ -17,6 +17,12 @@ const DEFAULT_BROWSER_PATHS = [
   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
   "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
 ];
+const KNOWN_SERVICE_CODES = new Set([
+  "FMED", "ODON", "PSICO", "FENF", "EGRADU", "ENUT", "ISEF",
+  "FCEA", "FDER", "FHUM", "FCS", "FIC", "FADU", "FARTES",
+  "FING", "FQ", "FAGRO", "FCIEN", "FVET",
+  "CENURLN", "CENURSO", "CUCEL", "CUR", "CURE", "CUT",
+]);
 
 function parseArgs(argv) {
   const [command = "help", ...rest] = argv;
@@ -260,9 +266,13 @@ class BedeliasBrowser {
         const middle = match[2];
         const credits = Number(match[3]);
         const [code, ...name] = middle.split(/\s+-\s+/);
-        if (/^[A-Z][A-Z0-9]{1,9}$/.test(left)
-          && (/^\d+[A-Z0-9.]*\s+-\s+/.test(middle) || /^[A-Z]{2,}[0-9]/.test(middle))
-          && name.length > 0) {
+        const serviceCodes = new Set([
+          "FMED", "ODON", "PSICO", "FENF", "EGRADU", "ENUT", "ISEF",
+          "FCEA", "FDER", "FHUM", "FCS", "FIC", "FADU", "FARTES",
+          "FING", "FQ", "FAGRO", "FCIEN", "FVET",
+          "CENURLN", "CENURSO", "CUCEL", "CUR", "CURE", "CUT",
+        ]);
+        if (serviceCodes.has(left.toUpperCase()) && /^[A-Z0-9.]{2,}$/i.test(code) && name.length > 0) {
           return { serviceCode: left, code, name: name.join(" - "), credits, raw: clean(text) };
         }
         return { serviceCode: null, code: left, name: middle, credits, raw: clean(text) };
@@ -583,7 +593,8 @@ export function normalizeCourseRecord(course) {
   );
   const externalCode = crossServiceMatch?.[2] ?? "";
   if (crossServiceMatch
-    && (/^\d+[A-Z0-9.]*$/i.test(externalCode) || /^[A-Z]{2,}[0-9][A-Z0-9.]*$/i.test(externalCode))) {
+    && KNOWN_SERVICE_CODES.has(crossServiceMatch[1].toUpperCase())
+    && /^[A-Z0-9.]{2,}$/i.test(externalCode)) {
     return {
       ...course,
       serviceCode: crossServiceMatch[1].toUpperCase(),

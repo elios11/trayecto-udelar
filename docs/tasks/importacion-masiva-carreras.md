@@ -400,3 +400,11 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Enfermería 1999 publica cero cursos en ambas ofertas; la huella coincide pero se clasifica `insufficient-content`, no equivalencia.
 - Diagnóstico acumulado: 2/57 ofertas disponibles, 1 comparación curricular determinable, 1 insuficiente y 55 snapshots regionales pendientes; todavía no hay diferencias curriculares verificadas. Hash `sha256:a60f259ca411581e80c7f07d79c01bb08f2761b7c2c1e4e5039123ec278794c2`.
 - Siguiente paso: comparar Tecnólogo Intérprete y Traductor LSU–Español–LSU 2025 de CUCEL y continuar automáticamente por CUR, CURE, CUT y CENURLN.
+
+### Comparación CUCEL — completada 2026-08-14
+
+- Se extrajo Tecnólogo Intérprete y Traductor LSU–Español–LSU 2025 como única oferta coincidente de CUCEL: 199 cursos, 2 consultas sin regla, 159 requests y cero incidencias.
+- La normalización de referencias externas se amplió a códigos alfabéticos (`FHUM - ATP - …`) usando el catálogo real de servicios; también se aplica al calcular huellas de snapshots centrales históricos, sin reescribirlos.
+- Resultado: CUCEL y la oferta central contienen los mismos 199 cursos, códigos, créditos y estructura. Sólo difiere la cobertura de previaturas publicada (2 frente a 195), por lo que no se crea una variante curricular de sede.
+- Diagnóstico acumulado: 3/57 ofertas disponibles, 2 currículas comparables y coincidentes, 1 caso con información insuficiente, 54 snapshots pendientes y cero diferencias curriculares verificadas. Hash `sha256:77698c38e06a1390e4d4fda3cdc33ec227f163eba71776b1d9f7271f5aa49a07`.
+- Siguiente paso: comparar las cinco ofertas coincidentes de CUR y continuar sin pausa.
