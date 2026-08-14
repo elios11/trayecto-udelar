@@ -23,17 +23,13 @@ test("la huella curricular ignora procedencia y conserva diferencias académicas
   );
 });
 
-test("no afirma equivalencias cuando faltan snapshots regionales", async () => {
+test("no transforma coincidencias de huella en equivalencias oficiales", async () => {
   const rebuilt = await buildRegionalContentComparison(regionalManifest, {
     generatedAt: comparison.generatedAt,
   });
   assert.deepEqual(rebuilt.counts, comparison.counts);
   assert.equal(comparison.counts.candidateIdentities, 43);
   assert.equal(comparison.counts.regionalOffers, 57);
-  assert.equal(comparison.counts.comparablePairs, 0);
-  assert.equal(comparison.counts.contentMatchCandidates, 0);
-  assert.equal(comparison.counts.contentDifferences, 0);
-  assert.equal(comparison.counts.pendingIdentities, 43);
-  assert.ok(comparison.plans.every((plan) => plan.conclusion === "pending-snapshots"));
   assert.equal(comparison.policy.contentMatchIsNotOfficialEquivalence, true);
+  assert.ok(comparison.plans.every((plan) => !plan.comparisons.some((entry) => entry.status === "official-equivalence")));
 });

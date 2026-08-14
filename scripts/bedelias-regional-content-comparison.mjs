@@ -31,6 +31,16 @@ function compareStable(left, right) {
 }
 
 export function curriculumFingerprint(snapshot) {
+  const metadata = normalizeValue({
+    type: snapshot.plan?.metadata?.type ?? null,
+    duration: snapshot.plan?.metadata?.duration ?? null,
+    minCredits: snapshot.plan?.metadata?.minCredits ?? null,
+  });
+  const courseCatalog = (snapshot.plan?.courses ?? []).map((course) => normalizeValue({
+    code: course.code,
+    name: course.name,
+    credits: course.credits,
+  })).sort(compareStable);
   const courses = (snapshot.plan?.courses ?? []).map((course) => normalizeValue({
     code: course.code,
     name: course.name,
@@ -42,24 +52,49 @@ export function curriculumFingerprint(snapshot) {
     noPublishedRule: rule.noPublishedRule ?? false,
     expression: rule.expression ?? null,
   })).sort(compareStable);
-  const content = normalizeValue({
-    metadata: {
-      type: snapshot.plan?.metadata?.type ?? null,
-      duration: snapshot.plan?.metadata?.duration ?? null,
-      minCredits: snapshot.plan?.metadata?.minCredits ?? null,
-    },
+  const curriculumContent = normalizeValue({
+    metadata,
     compositionAvailable: snapshot.plan?.compositionAvailability?.available ?? true,
     titleLabels: [...(snapshot.plan?.titleLabels ?? [])].sort(),
     courses,
-    prerequisites,
   });
   return {
-    hash: hash(content),
+    hash: hash({ curriculumContent, prerequisites }),
+    curriculumHash: hash(curriculumContent),
+    prerequisiteHash: hash(prerequisites),
+    metadata,
+    courseCatalog,
     counts: {
       courses: courses.length,
       prerequisites: prerequisites.length,
       publishedRules: prerequisites.filter((rule) => rule.expression).length,
     },
+  };
+}
+
+function summarizeDifference(canonical, regional) {
+  const keyForCourse = (course) => course.code || course.name;
+  const canonicalByKey = new Map(canonical.courseCatalog.map((course) => [keyForCourse(course), course]));
+  const regionalByKey = new Map(regional.courseCatalog.map((course) => [keyForCourse(course), course]));
+  const onlyCanonical = [...canonicalByKey.entries()]
+    .filter(([key]) => !regionalByKey.has(key))
+    .map(([, course]) => course);
+  const onlyRegional = [...regionalByKey.entries()]
+    .filter(([key]) => !canonicalByKey.has(key))
+    .map(([, course]) => course);
+  const changedCredits = [...canonicalByKey.entries()]
+    .filter(([key, course]) => regionalByKey.has(key) && regionalByKey.get(key).credits !== course.credits)
+    .map(([key, course]) => ({
+      key,
+      canonical: course.credits,
+      regional: regionalByKey.get(key).credits,
+    }));
+  return {
+    metadataChanged: JSON.stringify(canonical.metadata) !== JSON.stringify(regional.metadata),
+    onlyCanonical,
+    onlyRegional,
+    changedCredits,
+    prerequisiteCountDelta: regional.counts.prerequisites - canonical.counts.prerequisites,
   };
 }
 
@@ -99,15 +134,43 @@ export async function buildRegionalContentComparison(regionalManifest, options =
           reason: !canonical.available ? "missing-canonical-snapshot" : "missing-regional-snapshot",
         };
       }
+      if (canonical.fingerprint.counts.courses === 0 || regional.fingerprint.counts.courses === 0) {
+        return {
+          serviceCode: regional.serviceCode,
+          status: "insufficient-content",
+          reason: "empty-course-composition",
+        };
+      }
+      const sameCurriculum = canonical.fingerprint.curriculumHash === regional.fingerprint.curriculumHash;
+      const samePrerequisites = canonical.fingerprint.prerequisiteHash === regional.fingerprint.prerequisiteHash;
+      const status = !sameCurriculum
+        ? "content-difference-detected"
+        : samePrerequisites
+          ? "content-match-candidate"
+          : "curriculum-match-prerequisite-coverage-difference";
       return {
         serviceCode: regional.serviceCode,
-        status: canonical.fingerprint.hash === regional.fingerprint.hash
-          ? "content-match-candidate"
-          : "content-difference-detected",
+        status,
         reason: "curriculum-fingerprint",
+        difference: status === "content-match-candidate"
+          ? null
+          : summarizeDifference(canonical.fingerprint, regional.fingerprint),
       };
     });
-    const comparable = comparisons.filter((comparison) => comparison.status !== "not-comparable");
+    const determinateStatuses = [
+      "content-match-candidate",
+      "curriculum-match-prerequisite-coverage-difference",
+      "content-difference-detected",
+    ];
+    const determinate = comparisons.filter((comparison) => determinateStatuses.includes(comparison.status));
+    const hasDifference = determinate.some((comparison) => comparison.status === "content-difference-detected");
+    const allMatched = comparisons.length > 0
+      && comparisons.every((comparison) => comparison.status === "content-match-candidate");
+    const allCurriculaMatched = comparisons.length > 0
+      && comparisons.every((comparison) => [
+        "content-match-candidate",
+        "curriculum-match-prerequisite-coverage-difference",
+      ].includes(comparison.status));
     plans.push({
       identity: plan.identity,
       career: plan.career,
@@ -115,11 +178,15 @@ export async function buildRegionalContentComparison(regionalManifest, options =
       canonical,
       regionalOfferings,
       comparisons,
-      conclusion: comparable.length === 0
-        ? "pending-snapshots"
-        : comparable.every((comparison) => comparison.status === "content-match-candidate")
+      conclusion: hasDifference
+        ? "content-difference-detected"
+        : allMatched
           ? "content-match-candidate"
-          : "content-difference-detected",
+          : allCurriculaMatched
+            ? "curriculum-match-candidate"
+          : comparisons.some((comparison) => comparison.status === "insufficient-content")
+            ? "insufficient-content"
+            : "pending-snapshots",
     });
   }
 
@@ -140,14 +207,24 @@ export async function buildRegionalContentComparison(regionalManifest, options =
     counts: {
       candidateIdentities: plans.length,
       regionalOffers: comparisons.length,
-      comparablePairs: comparisons.filter((comparison) => comparison.status !== "not-comparable").length,
+      availablePairs: comparisons.filter((comparison) => comparison.status !== "not-comparable").length,
+      comparablePairs: comparisons.filter((comparison) =>
+        [
+          "content-match-candidate",
+          "curriculum-match-prerequisite-coverage-difference",
+          "content-difference-detected",
+        ].includes(comparison.status)).length,
       contentMatchCandidates: comparisons.filter((comparison) => comparison.status === "content-match-candidate").length,
+      curriculumMatchesWithPrerequisiteCoverageDifferences: comparisons.filter((comparison) =>
+        comparison.status === "curriculum-match-prerequisite-coverage-difference").length,
       contentDifferences: comparisons.filter((comparison) => comparison.status === "content-difference-detected").length,
+      insufficientContentPairs: comparisons.filter((comparison) => comparison.status === "insufficient-content").length,
       missingCanonicalSnapshots: plans.reduce((count, plan) =>
         count + (plan.canonical.available ? 0 : plan.regionalOfferings.length), 0),
       missingRegionalSnapshots: plans.reduce((count, plan) =>
         count + plan.regionalOfferings.filter((offering) => !offering.available).length, 0),
-      pendingIdentities: plans.filter((plan) => plan.conclusion === "pending-snapshots").length,
+      pendingIdentities: plans.filter((plan) =>
+        ["pending-snapshots", "insufficient-content"].includes(plan.conclusion)).length,
     },
     plans,
     contentHash: hash(stableContent),

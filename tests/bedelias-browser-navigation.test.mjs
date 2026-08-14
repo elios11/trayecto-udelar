@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import { openServicePrograms, recoverNavigation, runRecoverableLookup, runVisibleTransition } from "../scripts/bedelias-browser-navigation.mjs";
+import { selectPlanWithRecovery } from "../scripts/scrape-bedelias.mjs";
 
 test("confirma la apertura del servicio por la UI de destino y no por un evento de URL", async () => {
   const calls = [];
@@ -109,4 +110,21 @@ test("reconstruye el servicio cuando un filtro paginado ignora la primera búsqu
 
   assert.deepEqual(result, { name: "TECNICATURA EN RADIOTERAPIA" });
   assert.deepEqual(calls, ["lookup-0", "recover-service", "lookup-1"]);
+});
+
+test("vuelve a abrir servicio y carrera cuando la tabla de planes llega vacía", async () => {
+  let attempts = 0;
+  let recoveries = 0;
+  const result = await selectPlanWithRecovery({
+    year: "1999",
+    select: async () => {
+      attempts += 1;
+      return attempts === 1 ? [] : [{ year: "1999", name: "Plan 1999" }];
+    },
+    recover: async () => { recoveries += 1; },
+  });
+
+  assert.equal(result.plan.year, "1999");
+  assert.equal(attempts, 2);
+  assert.equal(recoveries, 1);
 });

@@ -390,3 +390,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - No se afirmó ninguna equivalencia ni diferencia y no se habilitó ningún selector de sede. Las 43 identidades permanecen `pending-snapshots` y el manifiesto conserva el criterio conservador.
 - Hash del diagnóstico: `sha256:03946772bb7259a3d87b8806f0d589c086b44557ae994bffd4e42e65974b54db`.
 - Próxima decisión: mantener la deduplicación por identidad como candidata, o autorizar una extracción comparativa acotada de ofertas coincidentes antes de modelar variantes curriculares por sede.
+
+### Comparación CENURSO — completada 2026-08-14
+
+- Se extrajeron las dos ofertas coincidentes de CENURSO mediante `cenurso-comparison.json`, sin sobrescribir el batch ni los snapshots de sus representantes regionales nuevos.
+- Recuperación aplicada: la tabla de planes de Enfermería 1999 llegó vacía en el primer intento. El scraper ahora reabre servicio y carrera una vez antes de declarar ausente un plan; la reanudación omitió Computación ya completa y recuperó únicamente Enfermería.
+- Normalización genérica corregida: las materias externas con código numérico (`FING - 1886 - …`) ya conservan servicio, código y nombre separados. El snapshot se renormalizó localmente, sin requests adicionales.
+- Resultado curricular: Ingeniería en Computación 2025 publica los mismos 38 cursos y créditos que FING. La diferencia está en cobertura de previaturas (3 entradas regionales contra 50 centrales), por lo que no se modela como variante curricular de sede.
+- Enfermería 1999 publica cero cursos en ambas ofertas; la huella coincide pero se clasifica `insufficient-content`, no equivalencia.
+- Diagnóstico acumulado: 2/57 ofertas disponibles, 1 comparación curricular determinable, 1 insuficiente y 55 snapshots regionales pendientes; todavía no hay diferencias curriculares verificadas. Hash `sha256:a60f259ca411581e80c7f07d79c01bb08f2761b7c2c1e4e5039123ec278794c2`.
+- Siguiente paso: comparar Tecnólogo Intérprete y Traductor LSU–Español–LSU 2025 de CUCEL y continuar automáticamente por CUR, CURE, CUT y CENURLN.

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T17:40:48.077Z",
+  "service": {
+    "code": "CENURSO",
+    "name": "CENTRO UNIVERSITARIO REGIONAL SUROESTE",
+    "area": "CENTROS REGIONALES"
+  },
+  "scope": {
+    "currentOnly": true,
+    "types": "GRADO|TECNICATURA|CIO"
+  },
+  "status": "official-sources-pending",
+  "totals": {
+    "plans": 2,
+    "courses": 38,
+    "prerequisiteEntries": 3,
+    "publishedRules": 0,
+    "noPublishedRuleQueries": 3,
+    "validationIssues": 0,
+    "requests": 288,
+    "bytes": 144637
+  },
+  "plans": [
+    {
+      "key": "CENURSO:ingenieria-en-computacion:2025",
+      "career": "INGENIERÍA EN COMPUTACIÓN",
+      "type": "Grado",
+      "planYear": "2025",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 38,
+        "prerequisiteEntries": 3,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 3,
+        "validationIssues": 0,
+        "requests": 161,
+        "bytes": 87420
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:05:14.060Z",
+        "rateLimitMs": 500,
+        "contentHash": "a6b6edb73d25ce6754daa8f9fe2546a665ae89dac3acc08ee56f86362d834ac5"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    },
+    {
+      "key": "CENURSO:licenciatura-en-enfermeria-profesionalizacion-de-auxiliar:1999",
+      "career": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
+      "type": "Grado",
+      "planYear": "1999",
+      "current": true,
+      "state": "structurally-valid",
+      "coverage": {
+        "courses": 0,
+        "prerequisiteEntries": 0,
+        "publishedRules": 0,
+        "noPublishedRuleQueries": 0,
+        "validationIssues": 0,
+        "requests": 127,
+        "bytes": 57217
+      },
+      "source": {
+        "system": "SGAE Bedelías",
+        "extractedAt": "2026-08-14T17:36:27.220Z",
+        "rateLimitMs": 500,
+        "contentHash": "8e9363bb79b379428b93b2c9fd27c79b98bbb2c3bdeb42983e64078861f1b71f"
+      },
+      "officialSources": "pending",
+      "site": "not-published-by-service-index",
+      "anomalies": []
+    }
+  ],
+  "nextStep": "Contrastar vigencia, sedes, títulos, áreas y trayectorias con fuentes oficiales de CENTRO UNIVERSITARIO REGIONAL SUROESTE antes de auditar o publicar."
+}

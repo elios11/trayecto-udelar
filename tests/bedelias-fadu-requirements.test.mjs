@@ -76,3 +76,22 @@ test("repara códigos locales cuyo nombre comienza con otro código instituciona
     raw: "A0190 - MTR801 TRANSITION NUMÉRIQUE/ BIM - créditos: 3",
   });
 });
+
+test("repara materias externas cuyo código institucional es numérico", () => {
+  assert.deepEqual(
+    normalizeCourseRecord({
+      serviceCode: null,
+      code: "FING",
+      name: "1886 - TOPOLOGIA Y ANALISIS REAL",
+      credits: 10,
+      raw: "FING - 1886 - TOPOLOGIA Y ANALISIS REAL - créditos: 10",
+    }),
+    {
+      serviceCode: "FING",
+      code: "1886",
+      name: "TOPOLOGIA Y ANALISIS REAL",
+      credits: 10,
+      raw: "FING - 1886 - TOPOLOGIA Y ANALISIS REAL - créditos: 10",
+    },
+  );
+});

@@ -59,6 +59,17 @@ export function buildPrerequisiteRequests({ requestedCodes, requestedNames, plan
   };
 }
 
+export async function selectPlanWithRecovery({ year, select, recover }) {
+  let plans = await select();
+  let plan = plans.find((item) => item.year === year);
+  if (!plan && recover) {
+    await recover();
+    plans = await select();
+    plan = plans.find((item) => item.year === year);
+  }
+  return { plan, plans };
+}
+
 function stableHash(value) {
   return createHash("sha256").update(JSON.stringify(value)).digest("hex");
 }
@@ -249,7 +260,9 @@ class BedeliasBrowser {
         const middle = match[2];
         const credits = Number(match[3]);
         const [code, ...name] = middle.split(/\s+-\s+/);
-        if (/^[A-Z][A-Z0-9]{1,9}$/.test(left) && /^[A-Z]{2,}[0-9]/.test(middle) && name.length > 0) {
+        if (/^[A-Z][A-Z0-9]{1,9}$/.test(left)
+          && (/^\d+[A-Z0-9.]*\s+-\s+/.test(middle) || /^[A-Z]{2,}[0-9]/.test(middle))
+          && name.length > 0) {
           return { serviceCode: left, code, name: name.join(" - "), credits, raw: clean(text) };
         }
         return { serviceCode: null, code: left, name: middle, credits, raw: clean(text) };
@@ -516,6 +529,13 @@ function collectCompositionCourses(node, output = []) {
   return output;
 }
 
+function normalizeCompositionCourseRecords(node) {
+  if (!node) return node;
+  if (node.course) node.course = normalizeCourseRecord(node.course);
+  for (const child of node.children ?? []) normalizeCompositionCourseRecords(child);
+  return node;
+}
+
 export function parseRequirementOptions(label) {
   const prefixes = [
     "Curso aprobado de la U.C.B:",
@@ -558,6 +578,20 @@ export function parseRequirementOptions(label) {
 }
 
 export function normalizeCourseRecord(course) {
+  const crossServiceMatch = normalizeSpace(course?.raw).match(
+    /^([A-Z][A-Z0-9]{1,9})\s+-\s+([A-Z0-9.]+)\s+-\s+(.*?)\s+-\s+cr[eé]ditos:\s*(\d+)$/i,
+  );
+  const externalCode = crossServiceMatch?.[2] ?? "";
+  if (crossServiceMatch
+    && (/^\d+[A-Z0-9.]*$/i.test(externalCode) || /^[A-Z]{2,}[0-9][A-Z0-9.]*$/i.test(externalCode))) {
+    return {
+      ...course,
+      serviceCode: crossServiceMatch[1].toUpperCase(),
+      code: externalCode,
+      name: crossServiceMatch[3],
+      credits: Number(crossServiceMatch[4]),
+    };
+  }
   if (course?.code && course?.name) return course;
   const match = normalizeSpace(course?.raw).match(/^(.*?)\s+-\s+(.*?)\s+-\s+cr[eé]ditos:\s*(\d+)$/i);
   if (!match) return course;
@@ -707,12 +741,22 @@ async function scrapePlan(client, options) {
 
   await client.openAcademicOffer();
   const service = await client.selectService(serviceCode);
-  const program = await client.findProgram(programName, serviceCode);
-  const plans = await client.expandProgram(program);
-  const planSummary = plans.find((item) => item.year === year);
+  let program;
+  const { plan: planSummary, plans } = await selectPlanWithRecovery({
+    year,
+    select: async () => {
+      program = await client.findProgram(programName, serviceCode);
+      return client.expandProgram(program);
+    },
+    recover: async () => {
+      await client.openAcademicOffer();
+      await client.selectService(serviceCode);
+    },
+  });
   if (!planSummary) throw new Error(`No se encontró el plan ${year}. Disponibles: ${plans.map((item) => item.year).join(", ")}`);
   await client.openPlan(year);
   const plan = await client.extractPlan();
+  normalizeCompositionCourseRecords(plan.composition);
   plan.courses = dedupeCompositionCourses(collectCompositionCourses(plan.composition), serviceCode);
   const output = path.resolve(options.output ?? `data/bedelias/${slug(serviceCode)}-${slug(program.name)}-${year}.json`);
   const checkpointPath = `${output}.checkpoint`;
@@ -809,7 +853,10 @@ async function normalizeDataset(options) {
     available: Boolean(dataset.plan.composition),
     reason: dataset.plan.composition ? null : "La interfaz pública no publicó una composición.",
   };
-  dataset.plan.courses = (dataset.plan.courses ?? []).map(normalizeCourseRecord);
+  normalizeCompositionCourseRecords(dataset.plan.composition);
+  dataset.plan.courses = dataset.plan.composition
+    ? dedupeCompositionCourses(collectCompositionCourses(dataset.plan.composition), dataset.service.code)
+    : (dataset.plan.courses ?? []).map(normalizeCourseRecord);
   dataset.prerequisites = (dataset.prerequisites ?? []).map(normalizePrerequisiteRule);
   dataset.validation = { issues: validateDataset(dataset) };
   dataset.contentHash = stableHash({ service: dataset.service, program: dataset.program, plan: dataset.plan, prerequisites: dataset.prerequisites });
