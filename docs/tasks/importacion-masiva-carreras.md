@@ -344,3 +344,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Manifiesto global actualizado sin red: 115 `discovered`, 92 `structurally-valid`, 36 `extracted` y 7 `audited`; hash `sha256:409f085f87bedb98f6b4f29a666dcc5274129e5e464b28adec959fd2d24245d0`.
 - Manifiesto regional: hash `sha256:521a6de4d8863f47864be1ca45e1f46ebd07df66aafdc164d2e6c2cd323b1715`.
 - Siguiente paso: extraer las cinco identidades nuevas de CUR listadas en `regional-offerings.json`, sin repetir sus cinco coincidencias centrales.
+
+### CUR — representantes regionales completadas 2026-08-14
+
+- Se extrajeron las cinco identidades exclusivamente regionales: Educación Física 2014, Recursos Naturales 2010, Artes Plásticas y Visuales 2017, Gestión de Recursos Naturales 2011 y Tecnólogo en Madera 2012. Las otras cinco ofertas con identidad central no se repitieron.
+- Cobertura: 922 cursos, 836 entradas de previaturas, 227 reglas publicadas, 609 consultas sin regla y 16.132 requests a 500 ms. Los cinco snapshots quedaron `structurally-valid`, sin incidencias.
+- Reporte filtrado: `data/bedelias/reports/cur-regional.json`; estado `official-sources-pending`.
+- Manifiesto global actualizado sin red: 110 `discovered`, 97 `structurally-valid`, 36 `extracted` y 7 `audited`; hash `sha256:cfe49339844241b9cad8c5429be335fea4e5934b5a830c792cd893f5e3bedb62`.
+- Manifiesto regional: hash `sha256:e95b31b98f21c30464c531c2b0f67a013d08c006f88f3bec045a636bad1b08d5`.
+- Siguiente paso: extraer las seis identidades nuevas de CURE, sin repetir sus ocho coincidencias centrales.
