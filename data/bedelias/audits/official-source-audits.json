@@ -740,7 +740,191 @@
         }
       ],
       "remainingWork": "La auditoría resuelve las falsas diferencias regionales y los requisitos normativos. La proyección curada de unidades, previaturas y catálogo flexible para la UI sigue pendiente y no habilita publicación."
+    },
+    {
+      "identity": "doctor en medicina:2008",
+      "career": "DOCTOR EN MEDICINA",
+      "planYear": "2008",
+      "reviewedAt": "2026-08-15",
+      "status": "official-evidence-complete",
+      "scope": "plan-and-multi-site-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Asamblea del Claustro de Facultad de Medicina, 27/12/2007",
+          "Consejo de Facultad de Medicina, Resolución 55 de 26/03/2008",
+          "Consejo Directivo Central, Resolución 11 de 09/12/2008"
+        ],
+        "title": "Doctor en Medicina",
+        "durationMonths": 84,
+        "minimumCredits": 741,
+        "creditDistribution": {
+          "Primer trienio, semestres 1 a 6": 265,
+          "Segundo trienio, semestres 7 a 12": 330,
+          "Internado rotatorio obligatorio": 146
+        },
+        "cycles": [
+          "Ciclo de Introducción a las Ciencias de la Salud",
+          "Ciclo Básico Clínico Comunitario",
+          "Ciclo Metodología Científica I",
+          "Ciclo de Introducción a la Medicina General Integral",
+          "Ciclo de Clínica General Integral",
+          "Ciclo Metodología Científica II",
+          "Ciclo Internado Rotatorio"
+        ],
+        "flexibleRequirements": {
+          "minimumCredits": 60,
+          "minimumOptionalCredits": 15,
+          "minimumElectiveCredits": 10,
+          "includedInDegreeTotal": true
+        },
+        "intermediateTitle": {
+          "title": "Técnico en Promoción de Salud y Prevención de Enfermedades",
+          "minimumCredits": 395,
+          "requirement": "cuarto año completo y 20 créditos optativos o electivos",
+          "evidenceNote": "El total de 395 surge de los 375 créditos de los ocho primeros semestres más los 20 flexibles exigidos por Bedelía y coincide con la guía central de carreras 2023. Las estadísticas de Planeamiento 2023 publican 410; se conserva esa discrepancia como anomalía documental."
+        },
+        "trajectoryRule": "Las optativas y electivas permiten perfiles personales, pero no definen orientaciones territoriales. En CENUR Litoral Norte, «Trayectoria Medicina» denomina el recorrido de ingreso por CIO Salud que Facultad reconoce como primer año."
+      },
+      "offerings": [
+        {
+          "serviceCode": "FMED",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2008"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Región Litoral Norte (Paysandú y Salto)"
+          ],
+          "role": "oferta regional completa e intersede del mismo Plan 2008",
+          "entryRoute": "CIO Salud, Trayectoria Medicina, cursado en Paysandú y reconocido como primer año; los años siguientes se distribuyen entre Paysandú y Salto"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-doctor-en-medicina-2008.json",
+        "regionalSnapshot": "data/bedelias/cenurln-doctor-en-medicina-2008.json",
+        "canonicalCourses": 2753,
+        "regionalCourses": 3438,
+        "mandatoryCoreCoursesCanonical": 70,
+        "mandatoryCoreCoursesRegional": 70,
+        "mandatoryCoreEqual": true,
+        "onlyCanonical": 7,
+        "onlyRegional": 684,
+        "allCatalogDifferencesFlexible": true,
+        "changedCreditCodeCollisions": [
+          {
+            "key": "EPAR",
+            "canonicalCredits": 2,
+            "regionalCredits": 5
+          },
+          {
+            "key": "PORT",
+            "canonicalCredits": 6,
+            "regionalCredits": 8
+          }
+        ],
+        "changedCreditsUnderFlexibleBranches": 2,
+        "canonicalPrerequisiteEntries": 2276,
+        "regionalPrerequisiteEntries": 7
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalOfferingTopology": "single-inter-site-offering",
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales implementan la misma carrera y el mismo Plan 2008 en Montevideo y en la Región Litoral Norte. Los snapshots conservan exactamente las mismas 70 entradas no flexibles; las 691 claves exclusivas y las dos colisiones de código detectadas están bajo optativas/electivas. La diferencia refleja el catálogo flexible acumulado y la cobertura de publicación, no otra currícula.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Doctor en Medicina Plan 2008.",
+          "Modelar Montevideo como una oferta y la Región Litoral Norte como una segunda oferta intersede que combina Paysandú y Salto; no presentarlas como dos trayectorias independientes.",
+          "Representar CIO Salud — Trayectoria Medicina como vía regional de ingreso equivalente al primer año, no como perfil de egreso ni variante curricular.",
+          "Normalizar el egreso por 741 créditos, incluyendo 60 optativos/electivos con mínimos de 15 optativos y 10 electivos.",
+          "Conservar el título intermedio de Técnico en Promoción de Salud y Prevención de Enfermedades con el requisito operativo vigente de cuarto año completo y 20 créditos flexibles.",
+          "No interpretar el catálogo flexible ampliado de CENURLN ni las colisiones EPAR/PORT como cambios del núcleo.",
+          "Tratar la cobertura regional de siete previaturas frente a 2276 entradas centrales como una diferencia de publicación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/plan-de-estudios",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": [
+            "aprobaciones institucionales del Plan 2008",
+            "documentos vigentes del plan y mínimos flexibles"
+          ]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/bedelia/PLAN%20DE%20ESTUDIOS%20y%20CREDITOS%28final%20CDC%29.pdf",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": [
+            "título Doctor en Medicina y duración de siete años",
+            "741 créditos y distribución por semestres e internado",
+            "título intermedio al completar los cuatro primeros años"
+          ]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/bedelia/RESOL%2078%20DEL%2010.07.2013%20-%20CREDITOS%20M%C3%8DNIMOS%20EN%20OPTATIVAS%20Y%20ELECTIVAS.pdf",
+          "authority": "Consejo de Facultad de Medicina, Udelar",
+          "supports": [
+            "60 créditos optativos/electivos para egresar",
+            "mínimos de 15 optativos y 10 electivos"
+          ]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/dr-en-medicina/programas-de-las-unidades-curriculares",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": [
+            "estructura vigente en dos trienios y un año de práctica supervisada",
+            "unidades curriculares y siete ciclos del Plan 2008"
+          ]
+        },
+        {
+          "url": "https://webng.fmed.edu.uy/gestion/bedelia/dr-en-medicina/tramite-de-titulos-y-certificados",
+          "authority": "Bedelía de Facultad de Medicina, Udelar",
+          "supports": [
+            "título intermedio",
+            "requisito de cuarto año completo y 20 créditos optativos/electivos"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/doctor-en-medicina-2/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": [
+            "carrera completa en CENUR Litoral Norte",
+            "CIO Salud en Paysandú como primer año y cursado posterior intersede"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/cdc-aprobo-el-cursado-completo-de-la-carrera-de-medicina-en-el-cenur-litoral-norte",
+          "authority": "Portal central de Udelar",
+          "supports": [
+            "aprobación del despliegue de segundo y tercer año entre Salto y Paysandú",
+            "extensión territorial de la misma carrera de Facultad de Medicina"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/portal/wp-content/uploads/sites/48/2023/01/Carreras-de-Grado-2023.pdf",
+          "authority": "Guía de carreras de grado, Udelar",
+          "supports": [
+            "Doctor en Medicina, siete años y 741 créditos",
+            "título intermedio de cuatro años y 395 créditos",
+            "oferta regional en Paysandú y Salto"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "intermediateTitle.minimumCredits",
+          "officialValues": [
+            395,
+            410
+          ],
+          "resolution": "Se usa 395 porque coincide con la suma del Plan 2008 y el requisito operativo vigente de Bedelía; mantener 410 como discrepancia de la serie estadística de Planeamiento hasta aclaración institucional."
+        }
+      ],
+      "remainingWork": "La auditoría resuelve la falsa diferencia curricular regional y define la oferta intersede. La proyección curada de unidades y previaturas para la UI sigue pendiente; la discrepancia documental del título intermedio debe permanecer visible y no habilita publicación automática."
     }
   ],
-  "contentHash": "sha256:725c88dc9eb07f79d2cb34ef41a2a0e43382d41712bb150d1ffdbf5d8e988a67"
+  "contentHash": "sha256:eb6a06b1506463169111ddf6c62cd8a2ebcd0fecaa3c7cc3968788af9d90a9e8"
 }
