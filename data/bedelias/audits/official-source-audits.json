@@ -143,7 +143,156 @@
         }
       ],
       "remainingWork": "La auditoría resuelve la excepción regional y la estructura normativa. La proyección curada de materias, previaturas y trayectorias para la UI sigue pendiente y no habilita publicación."
+    },
+    {
+      "identity": "licenciatura en biotecnologia:2024",
+      "career": "LICENCIATURA EN BIOTECNOLOGÍA",
+      "planYear": "2024",
+      "reviewedAt": "2026-08-15",
+      "status": "official-evidence-complete",
+      "scope": "shared-plan-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Licenciado en Biotecnología",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "commonSection": {
+          "minimumCredits": 232,
+          "areas": {
+            "Biología fundamental y aplicada": 80,
+            "Química": 50,
+            "Física": 12,
+            "Matemática": 30,
+            "Procesos": 35,
+            "Desarrollo profesional": 25
+          }
+        },
+        "orientationSection": {
+          "minimumCredits": 80,
+          "areas": {
+            "Profundización en Biotecnología": 40,
+            "Actividades integradoras": 40,
+            "Formación social o productiva dentro de actividades integradoras": 10,
+            "Trabajo final de grado dentro de actividades integradoras": 30
+          }
+        },
+        "additionalFlexibleCreditsToDegree": 48,
+        "suggestedPathways": [
+          "Biotecnología molecular",
+          "Biotecnología industrial",
+          "Biotecnología agropecuaria",
+          "Biotecnología empresarial",
+          "Biomateriales"
+        ],
+        "trajectoryRule": "Las orientaciones son ejemplos sugeridos; cada estudiante puede acordar una trayectoria personalizada con la Comisión de Carrera."
+      },
+      "governance": {
+        "referenceService": "FCIEN",
+        "sharedServices": [
+          "FCIEN",
+          "FING",
+          "FQ",
+          "FADU",
+          "FAGRO",
+          "FVET",
+          "CENURLN"
+        ]
+      },
+      "offerings": [
+        {
+          "locations": [
+            "Montevideo"
+          ],
+          "entryServices": [
+            "FCIEN",
+            "FQ"
+          ]
+        },
+        {
+          "locations": [
+            "Salto",
+            "Paysandú"
+          ],
+          "entryServices": [
+            "CENURLN"
+          ],
+          "entryPath": "CIO Científico Tecnológico o Ciclo Inicial Biología-Bioquímica"
+        }
+      ],
+      "bedeliasComparison": {
+        "snapshots": {
+          "FCIEN": "data/bedelias/fcien-licenciatura-en-biotecnologia-2024.json",
+          "FQ": "data/bedelias/fq-licenciatura-en-biotecnologia-2024.json",
+          "CENURLN": "data/bedelias/cenurln-licenciatura-en-biotecnologia-2024.json"
+        },
+        "courseCounts": {
+          "FCIEN": 127,
+          "FQ": 246,
+          "CENURLN": 246
+        },
+        "prerequisiteEntryCounts": {
+          "FCIEN": 91,
+          "FQ": 110,
+          "CENURLN": 33
+        },
+        "bestCentralMatchForRegionalOffering": "FQ",
+        "regionalOnlyAgainstBestMatch": 0,
+        "bestMatchChangedCredits": 0,
+        "prerequisiteCountDeltaAgainstBestMatch": -77,
+        "FCIENOnlyAgainstFQ": 0,
+        "FQOnlyAgainstFCIEN": 119
+      },
+      "conclusion": {
+        "canonicalModel": "one-shared-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "El plan es deliberadamente compartido y se organiza por mínimos de área y trayectorias flexibles. CENURLN y FQ publican el mismo catálogo de 246 materias y créditos; sólo difiere la cobertura de previaturas. FCIEN publica un subconjunto de 127 alternativas, no otro plan.",
+        "normalization": [
+          "Conservar una única identidad canónica y los siete servicios responsables.",
+          "Modelar Montevideo, Salto y Paysandú como ofertas/sedes del mismo plan.",
+          "No presentar FCIEN, FQ o CENURLN como carreras duplicadas.",
+          "Modelar las cinco orientaciones como trayectorias sugeridas, no como títulos ni variantes por sede.",
+          "Normalizar requisitos por áreas y mínimos; los catálogos de cada servicio son alternativas para cumplirlos.",
+          "Mantener la diferencia de previaturas como cobertura de publicación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42761",
+          "authority": "Repositorio institucional Colibrí, Udelar",
+          "supports": [
+            "Plan 2024 y códigos institucionales",
+            "Facultad de Ciencias como servicio de referencia",
+            "responsabilidad compartida entre siete servicios"
+          ]
+        },
+        {
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/177982/mod_forum/attachment/81185/Plan%20de%20Estudio%20Licenciatura%20Biotecnolog%C3%ADa.pdf",
+          "authority": "Facultad de Ciencias, Udelar",
+          "supports": [
+            "título, cuatro años y 360 créditos",
+            "mínimos por tramos y áreas",
+            "optativas, electivas, trabajo final y trayectorias sugeridas"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/nueva-carrera-de-grado-licenciatura-en-biotecnologia",
+          "authority": "Portal central de Udelar",
+          "supports": [
+            "oferta en Montevideo, Salto y Paysandú",
+            "servicios universitarios responsables"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/carrera-nueva-de-la-udelar-en-2024-licenciatura-en-biotecnologia-se-podra-cursar-en-las-sedes-salto",
+          "authority": "Portal central de Udelar",
+          "supports": [
+            "puertas de entrada regionales",
+            "implementación mediante recursos curriculares existentes"
+          ]
+        }
+      ],
+      "remainingWork": "La auditoría resuelve la identidad compartida y la falsa diferencia regional. La selección curada de unidades por área y trayectoria para la UI sigue pendiente y no habilita publicación."
     }
   ],
-  "contentHash": "sha256:918fbdf2e400113d722a627a8b6b3c66bf3f0f8776a77dcacaed8bf0a05063eb"
+  "contentHash": "sha256:cdc9711b23ad986e1723355581be27ae060da4059f0e598ea45ebab2abe1f530"
 }

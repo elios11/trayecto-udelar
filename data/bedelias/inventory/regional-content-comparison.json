@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T22:37:47.292Z",
+  "generatedAt": "2026-08-15T03:37:20.064Z",
   "source": {
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "method": "local-curriculum-fingerprint"
@@ -16,8 +16,8 @@
     "availablePairs": 57,
     "comparablePairs": 31,
     "contentMatchCandidates": 0,
-    "curriculumMatchesWithPrerequisiteCoverageDifferences": 15,
-    "contentDifferences": 16,
+    "curriculumMatchesWithPrerequisiteCoverageDifferences": 16,
+    "contentDifferences": 15,
     "insufficientContentPairs": 26,
     "missingCanonicalSnapshots": 0,
     "missingRegionalSnapshots": 0,
@@ -2610,6 +2610,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FDER",
+          "snapshot": "data/bedelias/fder-abogacia-2016.json",
+          "available": true,
+          "curriculumHash": "sha256:8b2cc00604f2a2a72d5ae64745350cb90df02015ad988ea30926c53923fa39d0",
+          "prerequisiteHash": "sha256:e8811dee614a6edb48ab7e1738a293254a2982c69d1a704d68d88d0df036dde5",
+          "counts": {
+            "courses": 510,
+            "prerequisites": 468,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -5471,6 +5485,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FDER",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -5785,6 +5800,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FIC",
+          "snapshot": "data/bedelias/fic-archivologia-2012.json",
+          "available": true,
+          "curriculumHash": "sha256:d74824d9fa9273ae4ac445be46510651291b799794feacb2e634a93c5e6472b3",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -5815,8 +5844,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FIC",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -5856,6 +5887,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "ODON",
+          "snapshot": "data/bedelias/odon-asistente-en-odontologia-2017.json",
+          "available": true,
+          "curriculumHash": "sha256:01b801b5876fabefcdddca91878aecca46d96a260dd57443c789e3c5c4154cb0",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CUR",
@@ -5911,13 +5956,17 @@
       "comparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -5957,6 +6006,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FIC",
+          "snapshot": "data/bedelias/fic-bibliotecologia-2012.json",
+          "available": true,
+          "curriculumHash": "sha256:c71a1c0bb0292e5ebe764216ea867526ec4f9fe94a097377aaef22aacd988b44",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -5987,8 +6050,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FIC",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -8294,6 +8359,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-bioquimico-clinico-2015.json",
+          "available": true,
+          "curriculumHash": "sha256:af6cdadf63986234fe512d7ece759b0599b62614df676b1ef2de170b653ac171",
+          "prerequisiteHash": "sha256:5a5d351595c3a786a2a0369fd1a0a3293212d625f429dc85e15a7eef5986e472",
+          "counts": {
+            "courses": 453,
+            "prerequisites": 546,
+            "publishedRules": 397
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -10590,6 +10669,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -10638,6 +10718,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FARTES",
+          "snapshot": "data/bedelias/fartes-diplomatura-en-musica-1994.json",
+          "available": true,
+          "curriculumHash": "sha256:e51d1ad3ce2056a699470f9be8af3c60fe84bd5c27b551fba2b459669f1dd9ec",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -10668,8 +10762,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FARTES",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -10709,6 +10805,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FVET",
+          "snapshot": "data/bedelias/fvet-doctor-en-ciencias-veterinarias-2021.json",
+          "available": true,
+          "curriculumHash": "sha256:9eb763a44b7130ed1d2a57fec3c12d514468e55f40b1c1cd1af0ee1c931d0561",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -10739,8 +10849,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FVET",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -24546,6 +24658,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-doctor-en-medicina-2008.json",
+          "available": true,
+          "curriculumHash": "sha256:1df031723ddd2b9078dcc2420eba7dbdd49b90c35b1f7ae43b4e62b8f831717b",
+          "prerequisiteHash": "sha256:e43d10f5f3ec4c93acc782a1beb1076d204730e99c33ac9f549dd864a9c3819b",
+          "counts": {
+            "courses": 2753,
+            "prerequisites": 2276,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -41767,6 +41893,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -45283,6 +45410,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FENF",
+          "snapshot": "data/bedelias/fenf-escalonada-de-enfermeria-2001.json",
+          "available": true,
+          "curriculumHash": "sha256:b5ede2bb5a1a11b289217dbc0337dcb3848d076361961627e31ebc6cc95f0dba",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CUR",
@@ -45363,18 +45504,24 @@
       "comparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -45414,6 +45561,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "ODON",
+          "snapshot": "data/bedelias/odon-higienista-en-odontologia-2017.json",
+          "available": true,
+          "curriculumHash": "sha256:64c3a1586cc879d7531e7800f10fac53a1c8c41a0d9161f65b06eb4b8e5fafc0",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CUR",
@@ -45469,13 +45630,17 @@
       "comparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -47461,6 +47626,32 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FING",
+          "snapshot": "data/bedelias/fing-ingenieria-de-alimentos-2003.json",
+          "available": true,
+          "curriculumHash": "sha256:4f08d319f2b31b580597f292ce59401b57e501d8f045b545e2f15f40060f2767",
+          "prerequisiteHash": "sha256:fc8791cf2b4c3d94dff780e40e395da163b1449bae98a316e9fa62996ae58040",
+          "counts": {
+            "courses": 389,
+            "prerequisites": 188,
+            "publishedRules": 141
+          }
+        },
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-ingenieria-de-alimentos-2003.json",
+          "available": true,
+          "curriculumHash": "sha256:4f08d319f2b31b580597f292ce59401b57e501d8f045b545e2f15f40060f2767",
+          "prerequisiteHash": "sha256:5f2ba01a9f6935ad13b4063fa2eeb770e86c630d2db9fcaa2e40cd2fb412e988",
+          "counts": {
+            "courses": 389,
+            "prerequisites": 258,
+            "publishedRules": 155
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -49437,6 +49628,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -49676,6 +49868,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FING",
+          "snapshot": "data/bedelias/fing-ingenieria-en-computacion-2025.json",
+          "available": true,
+          "curriculumHash": "sha256:b9123676a5d707c59315909a5b86ea25146fba2dc35bf38fa163e0c4e93b3eb3",
+          "prerequisiteHash": "sha256:3b6b43b3eda32839e669c7a39a5b7f8ad00c8e3489c0146b22820fc67ea101d6",
+          "counts": {
+            "courses": 38,
+            "prerequisites": 50,
+            "publishedRules": 18
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURSO",
@@ -50143,6 +50349,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURSO",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -50155,6 +50362,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -52110,6 +52318,32 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FING",
+          "snapshot": "data/bedelias/fing-ingenieria-quimica-2021.json",
+          "available": true,
+          "curriculumHash": "sha256:7a3df2e58f9e61bf80854f2b24a665ad7516df4d80897495063796316340b5a7",
+          "prerequisiteHash": "sha256:01108b0fb0b6ccdd7d0e33f717bd7ed4971007ae387a1230b8602bb6d3169dd0",
+          "counts": {
+            "courses": 375,
+            "prerequisites": 256,
+            "publishedRules": 168
+          }
+        },
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-ingenieria-quimica-2021.json",
+          "available": true,
+          "curriculumHash": "sha256:7a3df2e58f9e61bf80854f2b24a665ad7516df4d80897495063796316340b5a7",
+          "prerequisiteHash": "sha256:89599ff1ebf34db13e2a34078fbd49776f1fcb5bb643412977daeca08fdc3eb8",
+          "counts": {
+            "courses": 375,
+            "prerequisites": 176,
+            "publishedRules": 92
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -54016,6 +54250,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -56695,6 +56930,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FAGRO",
+          "snapshot": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
+          "available": true,
+          "curriculumHash": "sha256:14b1a87d2eba4fcbc3874d409639b5b6c3314b7b7b08397395147c83d09c0eec",
+          "prerequisiteHash": "sha256:22e5c6aeea0cb826b275251d7e2a92c5c5145cc06da387e05e7f4b342a7db1c0",
+          "counts": {
+            "courses": 526,
+            "prerequisites": 387,
+            "publishedRules": 327
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -60311,6 +60560,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FAGRO",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -62311,6 +62561,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FHUM",
+          "snapshot": "data/bedelias/fhum-interpretacion-lsu-espanol-lsu-2014.json",
+          "available": true,
+          "curriculumHash": "sha256:3796a9861a2325da018ab1c80785082f8c77ae25273cffe31554ba2ccbe090db",
+          "prerequisiteHash": "sha256:1ac49bbed0b18268ccc6bc958dae1040a25e6ee2328da45bc42ad6f3e717d1b9",
+          "counts": {
+            "courses": 199,
+            "prerequisites": 202,
+            "publishedRules": 29
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CUT",
@@ -64358,6 +64622,7 @@
       "comparisons": [
         {
           "serviceCode": "CUT",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -64370,6 +64635,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -64418,6 +64684,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FING",
+          "snapshot": "data/bedelias/fing-lic-en-ingenieria-biologica-2013.json",
+          "available": true,
+          "curriculumHash": "sha256:3d53b8b633b0725e100d74af1c5fa44f330420733f6e977f8184184726022f6a",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -64448,8 +64728,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -65125,6 +65407,32 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FCIEN",
+          "snapshot": "data/bedelias/fcien-licenciatura-en-biotecnologia-2024.json",
+          "available": true,
+          "curriculumHash": "sha256:be80dbbfa5ff48f33992eeb7ab73499ee0f5a8684b1a3139d8f248eddc82810a",
+          "prerequisiteHash": "sha256:1b87c38acdc699cb85c0e16d9025d788ac8e005ad3a9b34272ebbb857f8b7006",
+          "counts": {
+            "courses": 127,
+            "prerequisites": 91,
+            "publishedRules": 55
+          }
+        },
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-licenciatura-en-biotecnologia-2024.json",
+          "available": true,
+          "curriculumHash": "sha256:cd9e74454ed0aca69ae420ddbc8dfe92e0ecb9ba882da7323d535e44b0dded29",
+          "prerequisiteHash": "sha256:bfd1a5040a9236ea9a3fe59c5ceda3ee0ad4aee8d1df52ec9478733a85a61484",
+          "counts": {
+            "courses": 246,
+            "prerequisites": 110,
+            "publishedRules": 75
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -66386,614 +66694,19 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
-          "status": "content-difference-detected",
+          "canonicalServiceCode": "FQ",
+          "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
             "metadataChanged": false,
             "onlyCanonical": [],
-            "onlyRegional": [
-              {
-                "code": "01",
-                "credits": 14,
-                "name": "matematica 01 analisis i"
-              },
-              {
-                "code": "01a",
-                "credits": 10,
-                "name": "matematica a analisis i"
-              },
-              {
-                "code": "02",
-                "credits": 10,
-                "name": "matematica 02 algebra y tratamiento de datos"
-              },
-              {
-                "code": "02b",
-                "credits": 6,
-                "name": "matematica b algebra lineal y analisis en varias variables"
-              },
-              {
-                "code": "02c",
-                "credits": 8,
-                "name": "matematica c estadistica"
-              },
-              {
-                "code": "05",
-                "credits": 11,
-                "name": "matematica 05 estadistica"
-              },
-              {
-                "code": "05a",
-                "credits": 11,
-                "name": "matematica 05 estadistica desde 2015 hasta 2023"
-              },
-              {
-                "code": "05b",
-                "credits": 11,
-                "name": "matematica 05 estadistica desde 2024"
-              },
-              {
-                "code": "06eu",
-                "credits": 7,
-                "name": "mat 06 calculo numerico"
-              },
-              {
-                "code": "102",
-                "credits": 7,
-                "name": "quimica general i"
-              },
-              {
-                "code": "103b",
-                "credits": 5,
-                "name": "introduccion a las ciencias biologicas i desde 2012"
-              },
-              {
-                "code": "104a",
-                "credits": 4,
-                "name": "prevencion de riesgos en el laboratorio"
-              },
-              {
-                "code": "1223a",
-                "credits": 8,
-                "name": "ciencia tecnologia y sociedad area"
-              },
-              {
-                "code": "157",
-                "credits": 4,
-                "name": "sistemas de gestion a partir de 2025"
-              },
-              {
-                "code": "190",
-                "credits": 10,
-                "name": "bioquimica op ii a partir de 2026"
-              },
-              {
-                "code": "202",
-                "credits": 8,
-                "name": "quimica general ii"
-              },
-              {
-                "code": "203a",
-                "credits": 5,
-                "name": "introduccion a las ciencias biologicas ii desde 2002"
-              },
-              {
-                "code": "205",
-                "credits": 7,
-                "name": "fisica 101"
-              },
-              {
-                "code": "205v",
-                "credits": 8,
-                "name": "fisiologia ii"
-              },
-              {
-                "code": "207v",
-                "credits": 4,
-                "name": "nutricion"
-              },
-              {
-                "code": "208v",
-                "credits": 4,
-                "name": "parasitologia"
-              },
-              {
-                "code": "2107a",
-                "credits": 2,
-                "name": "taller de comunicacion oral y escrita"
-              },
-              {
-                "code": "210eu",
-                "credits": 6,
-                "name": "anatomia"
-              },
-              {
-                "code": "21201",
-                "credits": 6,
-                "name": "inmunologia"
-              },
-              {
-                "code": "21204",
-                "credits": 7,
-                "name": "bioestadistica i"
-              },
-              {
-                "code": "290eu",
-                "credits": 4,
-                "name": "anticuerpos terap otras estrat inmunoter"
-              },
-              {
-                "code": "301",
-                "credits": 11,
-                "name": "quimica organica 101"
-              },
-              {
-                "code": "302",
-                "credits": 10,
-                "name": "quimica analitica i"
-              },
-              {
-                "code": "304",
-                "credits": 7,
-                "name": "fisica 102"
-              },
-              {
-                "code": "305",
-                "credits": 6,
-                "name": "bases juridicas de la empresa"
-              },
-              {
-                "code": "401",
-                "credits": 6,
-                "name": "quimica organica 102"
-              },
-              {
-                "code": "401eu",
-                "credits": 6,
-                "name": "quimica organica 102"
-              },
-              {
-                "code": "401q",
-                "credits": 6,
-                "name": "quimica organica 102 a partir de 2024"
-              },
-              {
-                "code": "402",
-                "credits": 7,
-                "name": "quimica analitica ii"
-              },
-              {
-                "code": "402a",
-                "credits": 7,
-                "name": "quimica analitica ii"
-              },
-              {
-                "code": "406a",
-                "credits": 13,
-                "name": "fisicoquimica 101 desde 2003"
-              },
-              {
-                "code": "415eu",
-                "credits": 7,
-                "name": "fisiopatologia"
-              },
-              {
-                "code": "425eu",
-                "credits": 5,
-                "name": "herram molec para el analisis micro de alim"
-              },
-              {
-                "code": "491",
-                "credits": 5,
-                "name": "medicamentos biologicos"
-              },
-              {
-                "code": "501",
-                "credits": 5,
-                "name": "qca organica 103 laboratorio"
-              },
-              {
-                "code": "505",
-                "credits": 15,
-                "name": "bioquimica op iii hasta 2025"
-              },
-              {
-                "code": "506x",
-                "credits": 5,
-                "name": "inmunologia i"
-              },
-              {
-                "code": "508a",
-                "credits": 13,
-                "name": "fisicoquimica 102 desde 2003"
-              },
-              {
-                "code": "512",
-                "credits": 5,
-                "name": "laboratorio de bioquimica"
-              },
-              {
-                "code": "52",
-                "credits": 0,
-                "name": "biotecn de reprod y teriogenologia ii"
-              },
-              {
-                "code": "533",
-                "credits": 12,
-                "name": "microbiologia general"
-              },
-              {
-                "code": "533l",
-                "credits": 6,
-                "name": "laboratorio de analisis microbiologico"
-              },
-              {
-                "code": "533t",
-                "credits": 6,
-                "name": "microbiologia general"
-              },
-              {
-                "code": "534x",
-                "credits": 7,
-                "name": "inmunologia ii"
-              },
-              {
-                "code": "535eu",
-                "credits": 8,
-                "name": "farmacocinetica y biofarmacia"
-              },
-              {
-                "code": "536x",
-                "credits": 11,
-                "name": "biologia molecular"
-              },
-              {
-                "code": "540eu",
-                "credits": 5,
-                "name": "espectrometria atomica analitica"
-              },
-              {
-                "code": "547eu",
-                "credits": 6,
-                "name": "quimica bioinorganica teorico"
-              },
-              {
-                "code": "553eu",
-                "credits": 5,
-                "name": "qca del estado solido"
-              },
-              {
-                "code": "556eu",
-                "credits": 5,
-                "name": "uso y manejo de animales de laboratorio a partir de 2024"
-              },
-              {
-                "code": "559eu",
-                "credits": 3,
-                "name": "propiedad intelectual"
-              },
-              {
-                "code": "562eu",
-                "credits": 8,
-                "name": "fisica del estado solido"
-              },
-              {
-                "code": "567eu",
-                "credits": 6,
-                "name": "metodos separativos org 205"
-              },
-              {
-                "code": "571eu",
-                "credits": 5,
-                "name": "qca de productos naturales org 202a"
-              },
-              {
-                "code": "574eu",
-                "credits": 4,
-                "name": "retrosintesis org 203a"
-              },
-              {
-                "code": "579eu",
-                "credits": 4,
-                "name": "fundamentos de microbiologia molecular"
-              },
-              {
-                "code": "618",
-                "credits": 4,
-                "name": "introduccion a los sistemas de gestion vigente hasta 2015"
-              },
-              {
-                "code": "633eu",
-                "credits": 6,
-                "name": "quimica supramolecular"
-              },
-              {
-                "code": "694eu",
-                "credits": 5,
-                "name": "herr mol para ident y caract hong fil"
-              },
-              {
-                "code": "704eu",
-                "credits": 4,
-                "name": "bromatologia y nutricion"
-              },
-              {
-                "code": "706eu",
-                "credits": 10,
-                "name": "bacteriologia y micologia clinica"
-              },
-              {
-                "code": "707eu",
-                "credits": 5,
-                "name": "parasitologia"
-              },
-              {
-                "code": "708eu",
-                "credits": 6,
-                "name": "inmunologia clinica"
-              },
-              {
-                "code": "736eu",
-                "credits": 7,
-                "name": "bioinformatica"
-              },
-              {
-                "code": "753eu",
-                "credits": 4,
-                "name": "biocatalisis i"
-              },
-              {
-                "code": "754eu",
-                "credits": 5,
-                "name": "biocatalisis ii"
-              },
-              {
-                "code": "755eu",
-                "credits": 6,
-                "name": "ecologia quimica org 311"
-              },
-              {
-                "code": "780eu",
-                "credits": 9,
-                "name": "diseno de compuestos bioactivos"
-              },
-              {
-                "code": "782eu",
-                "credits": 8,
-                "name": "taller en simulaciones biomoleculares"
-              },
-              {
-                "code": "785",
-                "credits": 4,
-                "name": "gestion tecnologica hasta 2024"
-              },
-              {
-                "code": "785a",
-                "credits": 4,
-                "name": "gestion tecnologica a partir de 2025"
-              },
-              {
-                "code": "788eu",
-                "credits": 5,
-                "name": "automatizacion en quimica analitica"
-              },
-              {
-                "code": "789eu",
-                "credits": 6,
-                "name": "nutricion tecnologia e inocuidad"
-              },
-              {
-                "code": "810eu",
-                "credits": 6,
-                "name": "virologia clinica"
-              },
-              {
-                "code": "816eu",
-                "credits": 4,
-                "name": "ingles cientifico"
-              },
-              {
-                "code": "830eu",
-                "credits": 5,
-                "name": "profundizacion en inmunologia humana a partir de 2024"
-              },
-              {
-                "code": "831eu",
-                "credits": 4,
-                "name": "profundizacion en inmunologia humana"
-              },
-              {
-                "code": "835eu",
-                "credits": 6,
-                "name": "espectrometria de masas de compuestos organicos"
-              },
-              {
-                "code": "836eu",
-                "credits": 7,
-                "name": "bionformatica estructural"
-              },
-              {
-                "code": "868",
-                "credits": 3,
-                "name": "introduccion al diseno experimental"
-              },
-              {
-                "code": "905eu",
-                "credits": 5,
-                "name": "tecnologia de polimeros"
-              },
-              {
-                "code": "924",
-                "credits": 3,
-                "name": "introduccion al analisis multivariado utilizando el software r"
-              },
-              {
-                "code": "926eu",
-                "credits": 2,
-                "name": "aplicacion de conceptos de microbiologia a la resolucion de problemas"
-              },
-              {
-                "code": "931eu",
-                "credits": 3,
-                "name": "ciencia de polimeros"
-              },
-              {
-                "code": "932eu",
-                "credits": 2,
-                "name": "lectinas herramientas en glicobiologia"
-              },
-              {
-                "code": "98107",
-                "credits": 10,
-                "name": "genetica general"
-              },
-              {
-                "code": "98202",
-                "credits": 8,
-                "name": "microbiologia"
-              },
-              {
-                "code": "98404",
-                "credits": 4,
-                "name": "economia y administracion agropecuaria"
-              },
-              {
-                "code": "997eu",
-                "credits": 5,
-                "name": "introduccion a la farmacometria"
-              },
-              {
-                "code": "999eu",
-                "credits": 4,
-                "name": "espectrometria de masa en ciencias de la salud aplic y nuevos desarrollos"
-              },
-              {
-                "code": "a0620",
-                "credits": 12,
-                "name": "biologia animal"
-              },
-              {
-                "code": "a0920",
-                "credits": 10,
-                "name": "botanica"
-              },
-              {
-                "code": "a62",
-                "credits": 10,
-                "name": "gestion de la innovacion y la tecnologia"
-              },
-              {
-                "code": "a65",
-                "credits": 10,
-                "name": "introduccion al emprendedurismo"
-              },
-              {
-                "code": "a66",
-                "credits": 5,
-                "name": "gestion de proyectos"
-              },
-              {
-                "code": "b0220",
-                "credits": 8,
-                "name": "fisiologia digestiva y metabolismo"
-              },
-              {
-                "code": "b0720",
-                "credits": 6,
-                "name": "estadistica ii diseno y regresion"
-              },
-              {
-                "code": "b0920",
-                "credits": 7,
-                "name": "fisiologia vegetal"
-              },
-              {
-                "code": "c0520",
-                "credits": 6,
-                "name": "fitotecnia"
-              },
-              {
-                "code": "c0620",
-                "credits": 6,
-                "name": "genetica de poblaciones y genetica cuant"
-              },
-              {
-                "code": "caccg",
-                "credits": 4,
-                "name": "micropropagacion de plantas"
-              },
-              {
-                "code": "cacch",
-                "credits": 3,
-                "name": "etica aplicada al mejoramiento genetico animal"
-              },
-              {
-                "code": "m007",
-                "credits": 6,
-                "name": "fitopatologia"
-              },
-              {
-                "code": "m009",
-                "credits": 5,
-                "name": "gestion de calidad e inocuidad en la industria alimentaria"
-              },
-              {
-                "code": "m010",
-                "credits": 7,
-                "name": "microbiologia de lacteos"
-              },
-              {
-                "code": "m018",
-                "credits": 5,
-                "name": "areas de conservacion"
-              },
-              {
-                "code": "m024",
-                "credits": 4,
-                "name": "sistemas agroforestales"
-              },
-              {
-                "code": "m027",
-                "credits": 7,
-                "name": "tecnologia de frutas y hortalizas"
-              },
-              {
-                "code": "m029",
-                "credits": 5,
-                "name": "diseno y analisis de experimentos eemac"
-              },
-              {
-                "code": "m080",
-                "credits": 4,
-                "name": "identificacion molecular fitopatogenos"
-              },
-              {
-                "code": "q110",
-                "credits": 12,
-                "name": "fundamentos de ingenieria de bioprocesos"
-              },
-              {
-                "code": "q112",
-                "credits": 12,
-                "name": "ingenieria de bioprocesos"
-              },
-              {
-                "code": "v2110",
-                "credits": 2,
-                "name": "taller de etica"
-              },
-              {
-                "code": "v507",
-                "credits": 4,
-                "name": "gestion de empresas"
-              }
-            ],
+            "onlyRegional": [],
             "changedCredits": [],
-            "prerequisiteCountDelta": -58
+            "prerequisiteCountDelta": -77
           }
         }
       ],
-      "conclusion": "content-difference-detected"
+      "conclusion": "curriculum-match-candidate"
     },
     {
       "identity": "licenciatura en educacion fisica:2017",
@@ -73516,6 +73229,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "ISEF",
+          "snapshot": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
+          "available": true,
+          "curriculumHash": "sha256:cb155c152cd517b97c1a292a773e3f012083f31ffd8109c6e26ec45e2feffdb5",
+          "prerequisiteHash": "sha256:97413cf2efdab054075a376721695a615e38c7c0248766f1e4aa613628e2ed4b",
+          "counts": {
+            "courses": 1297,
+            "prerequisites": 1192,
+            "publishedRules": 117
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CURE",
@@ -87833,6 +87560,7 @@
       "comparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -88398,6 +88126,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -88999,6 +88728,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FENF",
+          "snapshot": "data/bedelias/fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json",
+          "available": true,
+          "curriculumHash": "sha256:b3ae8b2cd25cbcc1d213563649e72a6256f5b73f212148a60552deae48b0f0f2",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURSO",
@@ -89029,8 +88772,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURSO",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -90186,6 +89931,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FENF",
+          "snapshot": "data/bedelias/fenf-licenciatura-en-enfermeria-2016.json",
+          "available": true,
+          "curriculumHash": "sha256:a52d35b8e8b97ba6d68afe994dc21c6ca7cba431aa65dd8dd40815d30fafeced",
+          "prerequisiteHash": "sha256:6a8d81af112097c4aa60e25c05a5ca3b8149dea2c260ff2a84b485574c088f06",
+          "counts": {
+            "courses": 223,
+            "prerequisites": 131,
+            "publishedRules": 50
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CUR",
@@ -94784,6 +94543,7 @@
       "comparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "FENF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -95214,6 +94974,7 @@
         },
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FENF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -95644,6 +95405,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FENF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -96110,6 +95872,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-licenciatura-en-fisioterapia-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:2084735f25ef79897b1c4439ac4646f5e18f20de09f94952eca5a71416cb69b5",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -96140,8 +95916,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -96181,6 +95959,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-licenciatura-en-imagenologia-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:edba21951894aef92caa8ad79f0242bd4122318aa0590594547b7eff61fe896c",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -96211,8 +96003,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -96252,6 +96046,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-licenciatura-en-instrumentacion-quirurgica-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:3ebe9641b1e5a9b5e7554a586d0eabc652958aa5d8508dd40e46e43441a7c520",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -96282,8 +96090,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -96323,6 +96133,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-licenciatura-en-laboratorio-clinico-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:9eb9635cb44de8d330c2d2ee7f43207b7d0df18548ed0d59383da8e704f7248a",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -96353,8 +96177,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -111125,6 +110951,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "PSICO",
+          "snapshot": "data/bedelias/psico-licenciatura-en-psicologia-2013.json",
+          "available": true,
+          "curriculumHash": "sha256:b2c5479b439bf184dda1332fc42fedece045f45418309326bb3cd0e3b86da030",
+          "prerequisiteHash": "sha256:52acc9b9b3495adaa2e47e86d60ca80b60bf76e8c6851c0e1baa9e7e293cb906",
+          "counts": {
+            "courses": 2946,
+            "prerequisites": 2647,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -126106,6 +125946,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "PSICO",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -126396,6 +126237,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-licenciatura-en-psicomotricidad-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:845cb5760cfe45b50c57ed99d0baf0818978069c8af483efc7082fb96edcc7fa",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -126426,8 +126281,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -128068,6 +127925,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-licenciatura-en-quimica-2016.json",
+          "available": true,
+          "curriculumHash": "sha256:f7fd3d328546699d45368e1353dd4ac2cd034dae51d20a773386107210f33abe",
+          "prerequisiteHash": "sha256:009ffa2c5de6524b6bf607327019617ff1950d1551f22fb15d44114a4c6e25d9",
+          "counts": {
+            "courses": 320,
+            "prerequisites": 216,
+            "publishedRules": 125
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -129699,6 +129570,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -129747,6 +129619,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FCS",
+          "snapshot": "data/bedelias/fcs-licenciatura-en-trabajo-social-2009.json",
+          "available": true,
+          "curriculumHash": "sha256:cabb08b09fee9fa10fef0d058a35df72ce9fec7f6d9e50f0888ec92badab043f",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -129777,8 +129663,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FCS",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -132189,6 +132077,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FDER",
+          "snapshot": "data/bedelias/fder-notariado-2016.json",
+          "available": true,
+          "curriculumHash": "sha256:9eb2b8134eb0457e6cb2d5c05d09dda8631d7317363934974bcd3861374040e3",
+          "prerequisiteHash": "sha256:b0ef33d4a40baa1de016662af9a4bb9ee18cd9d74f8b1d0ec1a48a2fd94ffb12",
+          "counts": {
+            "courses": 474,
+            "prerequisites": 436,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -134860,6 +134762,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FDER",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -137375,6 +137278,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-quimica-farmaceutica-2015.json",
+          "available": true,
+          "curriculumHash": "sha256:eaf31377ee4acd8d9705b97b05e7fce3a3452f54323314c2e7cf2b373a0eb94c",
+          "prerequisiteHash": "sha256:63ac48ba0384bd8483919c50ac20aee0b8efc43d4ac3ee0973076d4b0d198ed6",
+          "counts": {
+            "courses": 441,
+            "prerequisites": 576,
+            "publishedRules": 446
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -139756,6 +139673,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -143501,6 +143419,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-quimico-2015.json",
+          "available": true,
+          "curriculumHash": "sha256:3a3d1fc7d6136a24d8617929fcf1931dff6b11ae5e6e1397a40765f6c22bb0c7",
+          "prerequisiteHash": "sha256:68334b6f1f4a13397200a703c29427323d770172e30c75a3766a7e179c292f67",
+          "counts": {
+            "courses": 710,
+            "prerequisites": 641,
+            "publishedRules": 461
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -147082,6 +147014,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -147130,6 +147063,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-tecnicatura-en-anatomia-patologica-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:3553e126fa02bf85a016af2c7008985627a62438e55fc12da194475beaa5f33d",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -147160,8 +147107,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -150992,6 +150941,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "ISEF",
+          "snapshot": "data/bedelias/isef-tecnicatura-en-deportes-2007.json",
+          "available": true,
+          "curriculumHash": "sha256:3e52c935cbf3306ccb87286728f151372f1b9ef9c280ddc13c8a7218f5f474ce",
+          "prerequisiteHash": "sha256:af5fbc3df297f3bced29e518acf06c6f0ee576f27f73cc4a590fb8ce8cc8b768",
+          "counts": {
+            "courses": 758,
+            "prerequisites": 632,
+            "publishedRules": 49
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CUR",
@@ -163645,6 +163608,7 @@
       "comparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -164048,6 +164012,7 @@
         },
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -164451,6 +164416,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -164890,6 +164856,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-tecnicatura-en-hemoterapia-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:3a81e277907aaba91007df69e96eb390acb1d4f65355537fc9f29e8f0b985a38",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CURE",
@@ -164945,13 +164925,17 @@
       "comparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -164991,6 +164975,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-tecnicatura-en-podologia-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:d7118972b8b7107845b8bb25b6edd82221c8719b4c17d6c5f810b3654389c174",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -165021,8 +165019,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -165062,6 +165062,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-tecnicatura-en-radioterapia-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:5cd9c45fd747679c7d9ba5d9975e5126c9d3bc3879695ec752bf27ad17542ff0",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -165092,8 +165106,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -165133,6 +165149,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FMED",
+          "snapshot": "data/bedelias/fmed-tecnicatura-en-salud-ocupacional-2006.json",
+          "available": true,
+          "curriculumHash": "sha256:3a27283847f6220e7f000d708a621cdcc4ecd37fa6ddd5baea84f3e48ab3d3fb",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -165163,8 +165193,10 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
@@ -167650,6 +167682,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-tecnico-bach-en-cs-quimicas-2015.json",
+          "available": true,
+          "curriculumHash": "sha256:54b04b47a81cc9d68bb8a1e1da1279efaa4223d76f19fd241e0c5c18726df1e2",
+          "prerequisiteHash": "sha256:021128697803425d7e3080c1dd4d0b4357d55fe39aca3547fb7ab10be46fb138",
+          "counts": {
+            "courses": 489,
+            "prerequisites": 429,
+            "publishedRules": 149
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -170126,6 +170172,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -170460,6 +170507,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FING",
+          "snapshot": "data/bedelias/fing-tecnologo-en-informatica-2007.json",
+          "available": true,
+          "curriculumHash": "sha256:126ee868791238c33414da0d467c29ced9b04d8ee74b7aebc34920609e5169ba",
+          "prerequisiteHash": "sha256:981b5424ef269b00ee564f81d021981161854e2a09084f1a7bb4931d98132e60",
+          "counts": {
+            "courses": 57,
+            "prerequisites": 64,
+            "publishedRules": 61
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CURE",
@@ -171087,6 +171148,7 @@
       "comparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -171099,6 +171161,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -171333,6 +171396,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FING",
+          "snapshot": "data/bedelias/fing-tecnologo-en-telecomunicaciones-2009.json",
+          "available": true,
+          "curriculumHash": "sha256:1a3afa9a5627b61b827aef772265351c4ed5856b0226c7136e39b966ff896be5",
+          "prerequisiteHash": "sha256:561e5d564fdad3b0b9e94696250dfa437eaf2f016e1b590215956d14e89a9bc4",
+          "counts": {
+            "courses": 37,
+            "prerequisites": 11,
+            "publishedRules": 6
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CURE",
@@ -171549,6 +171626,7 @@
       "comparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -171818,6 +171896,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FING",
+          "snapshot": "data/bedelias/fing-tecnologo-industrial-mecanico-2016.json",
+          "available": true,
+          "curriculumHash": "sha256:9005079fd77f603941b18d18fd6c17926b8e387a8516b8527fae8f9de38df8fd",
+          "prerequisiteHash": "sha256:52d69d3410c68542a4a3222ec68371af2437024d137fe0be50ebc150641364c3",
+          "counts": {
+            "courses": 44,
+            "prerequisites": 76,
+            "publishedRules": 68
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -172069,6 +172161,7 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -173113,6 +173206,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FHUM",
+          "snapshot": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
+          "available": true,
+          "curriculumHash": "sha256:1686f06cde1d20df906ec461af70a142773d2f6fe1bf243b3eccd07d023171f4",
+          "prerequisiteHash": "sha256:1adab595640ab8d99c73d5dffc4bc0f826092cb779b8b279ac60be665ba1b805",
+          "counts": {
+            "courses": 199,
+            "prerequisites": 195,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CUCEL",
@@ -175160,6 +175267,7 @@
       "comparisons": [
         {
           "serviceCode": "CUCEL",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -175172,6 +175280,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -175220,6 +175329,20 @@
           }
         }
       },
+      "canonicalCandidates": [
+        {
+          "serviceCode": "FQ",
+          "snapshot": "data/bedelias/fq-tecnologo-quimico-2025.json",
+          "available": true,
+          "curriculumHash": "sha256:bc23cbb3ec283d64836d46b4714b72856a4baea51e1163bbf4a0a81c1cc5bbf5",
+          "prerequisiteHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "counts": {
+            "courses": 0,
+            "prerequisites": 0,
+            "publishedRules": 0
+          }
+        }
+      ],
       "regionalOfferings": [
         {
           "serviceCode": "CENURLN",
@@ -175250,12 +175373,14 @@
       "comparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ],
       "conclusion": "insufficient-content"
     }
   ],
-  "contentHash": "sha256:85594402f1e09be2ef150dfd527e85d87e72da39ba61608b87d30a1cdb180bf2"
+  "contentHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550"
 }

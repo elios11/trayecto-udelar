@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T03:10:08.993Z",
+  "generatedAt": "2026-08-15T03:38:44.176Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
-    "comparisonManifestHash": "sha256:85594402f1e09be2ef150dfd527e85d87e72da39ba61608b87d30a1cdb180bf2",
-    "officialAuditRegistryHash": "sha256:918fbdf2e400113d722a627a8b6b3c66bf3f0f8776a77dcacaed8bf0a05063eb"
+    "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
+    "officialAuditRegistryHash": "sha256:cdc9711b23ad986e1723355581be27ae060da4059f0e598ea45ebab2abe1f530"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 1,
-    "pendingCanonicalIdentities": 176,
+    "evidenceClosedCanonicalIdentities": 2,
+    "pendingCanonicalIdentities": 175,
     "byPriority": {
-      "regional-content-difference": 8,
+      "regional-content-difference": 7,
       "insufficient-regional-content": 21,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
-      "content-difference-detected": 16,
+      "content-difference-detected": 15,
       "insufficient-content": 26,
-      "curriculum-match-prerequisite-coverage-difference": 15
+      "curriculum-match-prerequisite-coverage-difference": 16
     }
   },
   "completedAudits": [
@@ -30,653 +30,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-15",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "licenciatura en biotecnologia:2024",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-15",
+      "conclusion": "one-shared-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en biotecnologia:2024",
-      "career": {
-        "name": "LICENCIATURA EN BIOTECNOLOGÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2024",
-        "name": "LICENCIATURA EN BIOTECNOLOGÍA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en biotecnologia:2024",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en biotecnologia:2024",
-          "state": "structurally-valid"
-        },
-        {
-          "serviceCode": "FQ",
-          "serviceName": "FACULTAD DE QUÍMICA",
-          "planKey": "FQ:licenciatura en biotecnologia:2024",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "regional-content-difference",
-      "action": "Contrastar plan y resoluciones oficiales; separar núcleo curricular de oferta ampliada por sede.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "status": "content-difference-detected",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [
-              {
-                "code": "01",
-                "credits": 14,
-                "name": "matematica 01 analisis i"
-              },
-              {
-                "code": "01a",
-                "credits": 10,
-                "name": "matematica a analisis i"
-              },
-              {
-                "code": "02",
-                "credits": 10,
-                "name": "matematica 02 algebra y tratamiento de datos"
-              },
-              {
-                "code": "02b",
-                "credits": 6,
-                "name": "matematica b algebra lineal y analisis en varias variables"
-              },
-              {
-                "code": "02c",
-                "credits": 8,
-                "name": "matematica c estadistica"
-              },
-              {
-                "code": "05",
-                "credits": 11,
-                "name": "matematica 05 estadistica"
-              },
-              {
-                "code": "05a",
-                "credits": 11,
-                "name": "matematica 05 estadistica desde 2015 hasta 2023"
-              },
-              {
-                "code": "05b",
-                "credits": 11,
-                "name": "matematica 05 estadistica desde 2024"
-              },
-              {
-                "code": "06eu",
-                "credits": 7,
-                "name": "mat 06 calculo numerico"
-              },
-              {
-                "code": "102",
-                "credits": 7,
-                "name": "quimica general i"
-              },
-              {
-                "code": "103b",
-                "credits": 5,
-                "name": "introduccion a las ciencias biologicas i desde 2012"
-              },
-              {
-                "code": "104a",
-                "credits": 4,
-                "name": "prevencion de riesgos en el laboratorio"
-              },
-              {
-                "code": "1223a",
-                "credits": 8,
-                "name": "ciencia tecnologia y sociedad area"
-              },
-              {
-                "code": "157",
-                "credits": 4,
-                "name": "sistemas de gestion a partir de 2025"
-              },
-              {
-                "code": "190",
-                "credits": 10,
-                "name": "bioquimica op ii a partir de 2026"
-              },
-              {
-                "code": "202",
-                "credits": 8,
-                "name": "quimica general ii"
-              },
-              {
-                "code": "203a",
-                "credits": 5,
-                "name": "introduccion a las ciencias biologicas ii desde 2002"
-              },
-              {
-                "code": "205",
-                "credits": 7,
-                "name": "fisica 101"
-              },
-              {
-                "code": "205v",
-                "credits": 8,
-                "name": "fisiologia ii"
-              },
-              {
-                "code": "207v",
-                "credits": 4,
-                "name": "nutricion"
-              },
-              {
-                "code": "208v",
-                "credits": 4,
-                "name": "parasitologia"
-              },
-              {
-                "code": "2107a",
-                "credits": 2,
-                "name": "taller de comunicacion oral y escrita"
-              },
-              {
-                "code": "210eu",
-                "credits": 6,
-                "name": "anatomia"
-              },
-              {
-                "code": "21201",
-                "credits": 6,
-                "name": "inmunologia"
-              },
-              {
-                "code": "21204",
-                "credits": 7,
-                "name": "bioestadistica i"
-              },
-              {
-                "code": "290eu",
-                "credits": 4,
-                "name": "anticuerpos terap otras estrat inmunoter"
-              },
-              {
-                "code": "301",
-                "credits": 11,
-                "name": "quimica organica 101"
-              },
-              {
-                "code": "302",
-                "credits": 10,
-                "name": "quimica analitica i"
-              },
-              {
-                "code": "304",
-                "credits": 7,
-                "name": "fisica 102"
-              },
-              {
-                "code": "305",
-                "credits": 6,
-                "name": "bases juridicas de la empresa"
-              },
-              {
-                "code": "401",
-                "credits": 6,
-                "name": "quimica organica 102"
-              },
-              {
-                "code": "401eu",
-                "credits": 6,
-                "name": "quimica organica 102"
-              },
-              {
-                "code": "401q",
-                "credits": 6,
-                "name": "quimica organica 102 a partir de 2024"
-              },
-              {
-                "code": "402",
-                "credits": 7,
-                "name": "quimica analitica ii"
-              },
-              {
-                "code": "402a",
-                "credits": 7,
-                "name": "quimica analitica ii"
-              },
-              {
-                "code": "406a",
-                "credits": 13,
-                "name": "fisicoquimica 101 desde 2003"
-              },
-              {
-                "code": "415eu",
-                "credits": 7,
-                "name": "fisiopatologia"
-              },
-              {
-                "code": "425eu",
-                "credits": 5,
-                "name": "herram molec para el analisis micro de alim"
-              },
-              {
-                "code": "491",
-                "credits": 5,
-                "name": "medicamentos biologicos"
-              },
-              {
-                "code": "501",
-                "credits": 5,
-                "name": "qca organica 103 laboratorio"
-              },
-              {
-                "code": "505",
-                "credits": 15,
-                "name": "bioquimica op iii hasta 2025"
-              },
-              {
-                "code": "506x",
-                "credits": 5,
-                "name": "inmunologia i"
-              },
-              {
-                "code": "508a",
-                "credits": 13,
-                "name": "fisicoquimica 102 desde 2003"
-              },
-              {
-                "code": "512",
-                "credits": 5,
-                "name": "laboratorio de bioquimica"
-              },
-              {
-                "code": "52",
-                "credits": 0,
-                "name": "biotecn de reprod y teriogenologia ii"
-              },
-              {
-                "code": "533",
-                "credits": 12,
-                "name": "microbiologia general"
-              },
-              {
-                "code": "533l",
-                "credits": 6,
-                "name": "laboratorio de analisis microbiologico"
-              },
-              {
-                "code": "533t",
-                "credits": 6,
-                "name": "microbiologia general"
-              },
-              {
-                "code": "534x",
-                "credits": 7,
-                "name": "inmunologia ii"
-              },
-              {
-                "code": "535eu",
-                "credits": 8,
-                "name": "farmacocinetica y biofarmacia"
-              },
-              {
-                "code": "536x",
-                "credits": 11,
-                "name": "biologia molecular"
-              },
-              {
-                "code": "540eu",
-                "credits": 5,
-                "name": "espectrometria atomica analitica"
-              },
-              {
-                "code": "547eu",
-                "credits": 6,
-                "name": "quimica bioinorganica teorico"
-              },
-              {
-                "code": "553eu",
-                "credits": 5,
-                "name": "qca del estado solido"
-              },
-              {
-                "code": "556eu",
-                "credits": 5,
-                "name": "uso y manejo de animales de laboratorio a partir de 2024"
-              },
-              {
-                "code": "559eu",
-                "credits": 3,
-                "name": "propiedad intelectual"
-              },
-              {
-                "code": "562eu",
-                "credits": 8,
-                "name": "fisica del estado solido"
-              },
-              {
-                "code": "567eu",
-                "credits": 6,
-                "name": "metodos separativos org 205"
-              },
-              {
-                "code": "571eu",
-                "credits": 5,
-                "name": "qca de productos naturales org 202a"
-              },
-              {
-                "code": "574eu",
-                "credits": 4,
-                "name": "retrosintesis org 203a"
-              },
-              {
-                "code": "579eu",
-                "credits": 4,
-                "name": "fundamentos de microbiologia molecular"
-              },
-              {
-                "code": "618",
-                "credits": 4,
-                "name": "introduccion a los sistemas de gestion vigente hasta 2015"
-              },
-              {
-                "code": "633eu",
-                "credits": 6,
-                "name": "quimica supramolecular"
-              },
-              {
-                "code": "694eu",
-                "credits": 5,
-                "name": "herr mol para ident y caract hong fil"
-              },
-              {
-                "code": "704eu",
-                "credits": 4,
-                "name": "bromatologia y nutricion"
-              },
-              {
-                "code": "706eu",
-                "credits": 10,
-                "name": "bacteriologia y micologia clinica"
-              },
-              {
-                "code": "707eu",
-                "credits": 5,
-                "name": "parasitologia"
-              },
-              {
-                "code": "708eu",
-                "credits": 6,
-                "name": "inmunologia clinica"
-              },
-              {
-                "code": "736eu",
-                "credits": 7,
-                "name": "bioinformatica"
-              },
-              {
-                "code": "753eu",
-                "credits": 4,
-                "name": "biocatalisis i"
-              },
-              {
-                "code": "754eu",
-                "credits": 5,
-                "name": "biocatalisis ii"
-              },
-              {
-                "code": "755eu",
-                "credits": 6,
-                "name": "ecologia quimica org 311"
-              },
-              {
-                "code": "780eu",
-                "credits": 9,
-                "name": "diseno de compuestos bioactivos"
-              },
-              {
-                "code": "782eu",
-                "credits": 8,
-                "name": "taller en simulaciones biomoleculares"
-              },
-              {
-                "code": "785",
-                "credits": 4,
-                "name": "gestion tecnologica hasta 2024"
-              },
-              {
-                "code": "785a",
-                "credits": 4,
-                "name": "gestion tecnologica a partir de 2025"
-              },
-              {
-                "code": "788eu",
-                "credits": 5,
-                "name": "automatizacion en quimica analitica"
-              },
-              {
-                "code": "789eu",
-                "credits": 6,
-                "name": "nutricion tecnologia e inocuidad"
-              },
-              {
-                "code": "810eu",
-                "credits": 6,
-                "name": "virologia clinica"
-              },
-              {
-                "code": "816eu",
-                "credits": 4,
-                "name": "ingles cientifico"
-              },
-              {
-                "code": "830eu",
-                "credits": 5,
-                "name": "profundizacion en inmunologia humana a partir de 2024"
-              },
-              {
-                "code": "831eu",
-                "credits": 4,
-                "name": "profundizacion en inmunologia humana"
-              },
-              {
-                "code": "835eu",
-                "credits": 6,
-                "name": "espectrometria de masas de compuestos organicos"
-              },
-              {
-                "code": "836eu",
-                "credits": 7,
-                "name": "bionformatica estructural"
-              },
-              {
-                "code": "868",
-                "credits": 3,
-                "name": "introduccion al diseno experimental"
-              },
-              {
-                "code": "905eu",
-                "credits": 5,
-                "name": "tecnologia de polimeros"
-              },
-              {
-                "code": "924",
-                "credits": 3,
-                "name": "introduccion al analisis multivariado utilizando el software r"
-              },
-              {
-                "code": "926eu",
-                "credits": 2,
-                "name": "aplicacion de conceptos de microbiologia a la resolucion de problemas"
-              },
-              {
-                "code": "931eu",
-                "credits": 3,
-                "name": "ciencia de polimeros"
-              },
-              {
-                "code": "932eu",
-                "credits": 2,
-                "name": "lectinas herramientas en glicobiologia"
-              },
-              {
-                "code": "98107",
-                "credits": 10,
-                "name": "genetica general"
-              },
-              {
-                "code": "98202",
-                "credits": 8,
-                "name": "microbiologia"
-              },
-              {
-                "code": "98404",
-                "credits": 4,
-                "name": "economia y administracion agropecuaria"
-              },
-              {
-                "code": "997eu",
-                "credits": 5,
-                "name": "introduccion a la farmacometria"
-              },
-              {
-                "code": "999eu",
-                "credits": 4,
-                "name": "espectrometria de masa en ciencias de la salud aplic y nuevos desarrollos"
-              },
-              {
-                "code": "a0620",
-                "credits": 12,
-                "name": "biologia animal"
-              },
-              {
-                "code": "a0920",
-                "credits": 10,
-                "name": "botanica"
-              },
-              {
-                "code": "a62",
-                "credits": 10,
-                "name": "gestion de la innovacion y la tecnologia"
-              },
-              {
-                "code": "a65",
-                "credits": 10,
-                "name": "introduccion al emprendedurismo"
-              },
-              {
-                "code": "a66",
-                "credits": 5,
-                "name": "gestion de proyectos"
-              },
-              {
-                "code": "b0220",
-                "credits": 8,
-                "name": "fisiologia digestiva y metabolismo"
-              },
-              {
-                "code": "b0720",
-                "credits": 6,
-                "name": "estadistica ii diseno y regresion"
-              },
-              {
-                "code": "b0920",
-                "credits": 7,
-                "name": "fisiologia vegetal"
-              },
-              {
-                "code": "c0520",
-                "credits": 6,
-                "name": "fitotecnia"
-              },
-              {
-                "code": "c0620",
-                "credits": 6,
-                "name": "genetica de poblaciones y genetica cuant"
-              },
-              {
-                "code": "caccg",
-                "credits": 4,
-                "name": "micropropagacion de plantas"
-              },
-              {
-                "code": "cacch",
-                "credits": 3,
-                "name": "etica aplicada al mejoramiento genetico animal"
-              },
-              {
-                "code": "m007",
-                "credits": 6,
-                "name": "fitopatologia"
-              },
-              {
-                "code": "m009",
-                "credits": 5,
-                "name": "gestion de calidad e inocuidad en la industria alimentaria"
-              },
-              {
-                "code": "m010",
-                "credits": 7,
-                "name": "microbiologia de lacteos"
-              },
-              {
-                "code": "m018",
-                "credits": 5,
-                "name": "areas de conservacion"
-              },
-              {
-                "code": "m024",
-                "credits": 4,
-                "name": "sistemas agroforestales"
-              },
-              {
-                "code": "m027",
-                "credits": 7,
-                "name": "tecnologia de frutas y hortalizas"
-              },
-              {
-                "code": "m029",
-                "credits": 5,
-                "name": "diseno y analisis de experimentos eemac"
-              },
-              {
-                "code": "m080",
-                "credits": 4,
-                "name": "identificacion molecular fitopatogenos"
-              },
-              {
-                "code": "q110",
-                "credits": 12,
-                "name": "fundamentos de ingenieria de bioprocesos"
-              },
-              {
-                "code": "q112",
-                "credits": 12,
-                "name": "ingenieria de bioprocesos"
-              },
-              {
-                "code": "v2110",
-                "credits": 2,
-                "name": "taller de etica"
-              },
-              {
-                "code": "v507",
-                "credits": 4,
-                "name": "gestion de empresas"
-              }
-            ],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -58
-          }
-        }
-      ]
-    },
     {
       "identity": "abogacia:2016",
       "career": {
@@ -707,6 +69,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FDER",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -1015,6 +378,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FDER",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -1318,6 +682,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "FENF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -1748,6 +1113,7 @@
         },
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FENF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -2178,6 +1544,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FENF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -2638,6 +2005,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -6148,6 +5516,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -6713,6 +6082,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -7308,6 +6678,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -7711,6 +7082,7 @@
         },
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -8114,6 +7486,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ISEF",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -8547,6 +7920,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "PSICO",
           "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -8831,8 +8205,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FARTES",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -8866,8 +8242,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FCS",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -8901,18 +8279,24 @@
       "regionalComparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -8946,8 +8330,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURSO",
+          "canonicalServiceCode": "FENF",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -8981,8 +8367,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FIC",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9016,8 +8404,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FIC",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9051,8 +8441,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9086,8 +8478,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9121,8 +8515,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9156,8 +8552,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9191,8 +8589,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9226,8 +8626,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9261,8 +8663,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9296,13 +8700,17 @@
       "regionalComparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9336,8 +8744,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9371,8 +8781,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9406,8 +8818,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FMED",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9441,8 +8855,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9476,8 +8892,10 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FVET",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9511,13 +8929,17 @@
       "regionalComparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -9551,13 +8973,17 @@
       "regionalComparisons": [
         {
           "serviceCode": "CUR",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "ODON",
           "status": "insufficient-content",
-          "reason": "empty-course-composition"
+          "reason": "empty-course-composition",
+          "difference": null
         }
       ]
     },
@@ -12643,6 +12069,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CUT",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -12655,6 +12082,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -12871,6 +12299,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CUCEL",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -12883,6 +12312,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FHUM",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13018,6 +12448,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13269,6 +12700,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13369,6 +12801,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13381,6 +12814,7 @@
         },
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13423,6 +12857,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CURE",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13465,6 +12900,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FING",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13797,6 +13233,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13839,6 +13276,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13910,6 +13348,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -13952,6 +13391,7 @@
       "regionalComparisons": [
         {
           "serviceCode": "CENURLN",
+          "canonicalServiceCode": "FQ",
           "status": "curriculum-match-prerequisite-coverage-difference",
           "reason": "curriculum-fingerprint",
           "difference": {
@@ -14052,5 +13492,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:3f975092eaf8f70345e922f8ca68414f5349b4d4dcfa9360a2e5ef46a98de4b2"
+  "contentHash": "sha256:060ce3c7191d370dd42dc355e519ddc9111f8aa426f33f6aced0fe9537f50591"
 }

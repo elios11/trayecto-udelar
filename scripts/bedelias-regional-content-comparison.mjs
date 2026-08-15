@@ -117,6 +117,39 @@ async function inspectOffering(offering, careerName, planYear) {
   };
 }
 
+function compareAvailablePair(canonical, regional) {
+  if (canonical.fingerprint.counts.courses === 0 || regional.fingerprint.counts.courses === 0) {
+    return {
+      canonicalServiceCode: canonical.serviceCode,
+      status: "insufficient-content",
+      reason: "empty-course-composition",
+      difference: null,
+    };
+  }
+  const sameCurriculum = canonical.fingerprint.curriculumHash === regional.fingerprint.curriculumHash;
+  const samePrerequisites = canonical.fingerprint.prerequisiteHash === regional.fingerprint.prerequisiteHash;
+  const status = !sameCurriculum
+    ? "content-difference-detected"
+    : samePrerequisites
+      ? "content-match-candidate"
+      : "curriculum-match-prerequisite-coverage-difference";
+  return {
+    canonicalServiceCode: canonical.serviceCode,
+    status,
+    reason: "curriculum-fingerprint",
+    difference: status === "content-match-candidate"
+      ? null
+      : summarizeDifference(canonical.fingerprint, regional.fingerprint),
+  };
+}
+
+const comparisonRank = new Map([
+  ["content-match-candidate", 0],
+  ["curriculum-match-prerequisite-coverage-difference", 1],
+  ["content-difference-detected", 2],
+  ["insufficient-content", 3],
+]);
+
 export async function buildRegionalContentComparison(regionalManifest, options = {}) {
   const candidates = regionalManifest.canonicalPlans
     .filter((plan) => plan.classification === "central-match-candidate");
@@ -124,39 +157,33 @@ export async function buildRegionalContentComparison(regionalManifest, options =
 
   for (const plan of candidates) {
     const canonical = await inspectOffering(plan.canonicalSource, plan.career.name, plan.plan.year);
+    const centralSources = plan.centralMatches?.length ? plan.centralMatches : [plan.canonicalSource];
+    const canonicalCandidates = [];
+    const seenCentralServices = new Set();
+    for (const source of centralSources) {
+      if (seenCentralServices.has(source.serviceCode)) continue;
+      seenCentralServices.add(source.serviceCode);
+      canonicalCandidates.push(await inspectOffering(source, plan.career.name, plan.plan.year));
+    }
     const regionalOfferings = [];
     for (const offering of plan.offerings) {
       regionalOfferings.push(await inspectOffering(offering, plan.career.name, plan.plan.year));
     }
     const comparisons = regionalOfferings.map((regional) => {
-      if (!canonical.available || !regional.available) {
+      const availableCanonicals = canonicalCandidates.filter((candidate) => candidate.available);
+      if (availableCanonicals.length === 0 || !regional.available) {
         return {
           serviceCode: regional.serviceCode,
           status: "not-comparable",
-          reason: !canonical.available ? "missing-canonical-snapshot" : "missing-regional-snapshot",
+          reason: availableCanonicals.length === 0 ? "missing-canonical-snapshot" : "missing-regional-snapshot",
         };
       }
-      if (canonical.fingerprint.counts.courses === 0 || regional.fingerprint.counts.courses === 0) {
-        return {
-          serviceCode: regional.serviceCode,
-          status: "insufficient-content",
-          reason: "empty-course-composition",
-        };
-      }
-      const sameCurriculum = canonical.fingerprint.curriculumHash === regional.fingerprint.curriculumHash;
-      const samePrerequisites = canonical.fingerprint.prerequisiteHash === regional.fingerprint.prerequisiteHash;
-      const status = !sameCurriculum
-        ? "content-difference-detected"
-        : samePrerequisites
-          ? "content-match-candidate"
-          : "curriculum-match-prerequisite-coverage-difference";
+      const best = availableCanonicals
+        .map((candidate) => compareAvailablePair(candidate, regional))
+        .sort((left, right) => comparisonRank.get(left.status) - comparisonRank.get(right.status))[0];
       return {
         serviceCode: regional.serviceCode,
-        status,
-        reason: "curriculum-fingerprint",
-        difference: status === "content-match-candidate"
-          ? null
-          : summarizeDifference(canonical.fingerprint, regional.fingerprint),
+        ...best,
       };
     });
     const determinateStatuses = [
@@ -178,6 +205,14 @@ export async function buildRegionalContentComparison(regionalManifest, options =
       career: plan.career,
       plan: plan.plan,
       canonical,
+      canonicalCandidates: canonicalCandidates.map((candidate) => ({
+        serviceCode: candidate.serviceCode,
+        snapshot: candidate.snapshot,
+        available: candidate.available,
+        curriculumHash: candidate.fingerprint?.curriculumHash ?? null,
+        prerequisiteHash: candidate.fingerprint?.prerequisiteHash ?? null,
+        counts: candidate.fingerprint?.counts ?? null,
+      })),
       regionalOfferings,
       comparisons,
       conclusion: hasDifference
@@ -222,7 +257,7 @@ export async function buildRegionalContentComparison(regionalManifest, options =
       contentDifferences: comparisons.filter((comparison) => comparison.status === "content-difference-detected").length,
       insufficientContentPairs: comparisons.filter((comparison) => comparison.status === "insufficient-content").length,
       missingCanonicalSnapshots: plans.reduce((count, plan) =>
-        count + (plan.canonical.available ? 0 : plan.regionalOfferings.length), 0),
+        count + (plan.canonicalCandidates.some((candidate) => candidate.available) ? 0 : plan.regionalOfferings.length), 0),
       missingRegionalSnapshots: plans.reduce((count, plan) =>
         count + plan.regionalOfferings.filter((offering) => !offering.available).length, 0),
       pendingIdentities: plans.filter((plan) =>

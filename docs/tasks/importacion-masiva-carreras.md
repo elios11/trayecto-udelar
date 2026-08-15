@@ -495,3 +495,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Evidencia durable: `data/bedelias/audits/official-source-audits.json`, hash `sha256:918fbdf2e400113d722a627a8b6b3c66bf3f0f8776a77dcacaed8bf0a05063eb`. La auditoría de excepción no habilita publicación ni sustituye la futura proyección curada de materias.
 - Cola actualizada sin red: 176 identidades pendientes; quedan 8 con diferencias regionales. Hash `sha256:3f975092eaf8f70345e922f8ca68414f5349b4d4dcfa9360a2e5ef46a98de4b2`.
 - Siguiente paso: auditar Licenciatura en Biotecnología 2024, compartida por FCIEN/FQ y ofrecida también en CENURLN.
+
+### Licenciatura en Biotecnología 2024 — plan compartido auditado 2026-08-15
+
+- El [Plan 2024 institucional](https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42761) confirma una única carrera compartida, con Facultad de Ciencias como servicio de referencia y participación de FCIEN, FING, FQ, FADU, FAGRO, FVET y CENURLN.
+- Título `Licenciado en Biotecnología`, cuatro años y 360 créditos. El tramo común exige 232: Biología 80, Química 50, Física 12, Matemática 30, Procesos 35 y Desarrollo profesional 25. El tramo de orientación exige 80: Profundización 40 y Actividades integradoras 40, incluyendo formación social/productiva 10 y TFG 30. Los 48 créditos restantes son flexibles.
+- Las orientaciones Molecular, Industrial, Agropecuaria, Empresarial y Biomateriales son ejemplos sugeridos; el [plan](https://eva.fcien.udelar.edu.uy/pluginfile.php/177982/mod_forum/attachment/81185/Plan%20de%20Estudio%20Licenciatura%20Biotecnolog%C3%ADa.pdf) permite trayectorias personalizadas acordadas con la Comisión de Carrera. No son títulos ni variantes por sede.
+- Se corrigió el comparador de carreras compartidas: ahora contrasta cada oferta regional con todos los snapshots centrales disponibles y conserva la mejor correspondencia antes de declarar diferencias. CENURLN y FQ coinciden exactamente en sus 246 materias y créditos; sólo difieren en previaturas (33 frente a 110). FCIEN publica un subconjunto de 127 alternativas del mismo plan.
+- Decisión de normalización: una identidad con gobernanza compartida y ofertas en Montevideo, Salto y Paysandú; catálogos por servicio como alternativas para cumplir mínimos de área, no carreras duplicadas ni mallas territoriales distintas.
+- Registro de auditoría: hash `sha256:cdc9711b23ad986e1723355581be27ae060da4059f0e598ea45ebab2abe1f530`. Comparación regional corregida: 16 coincidencias curriculares con distinta cobertura de previaturas, 15 diferencias y 26 casos insuficientes; hash `sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550`.
+- Cola actualizada: 175 identidades pendientes, siete con diferencias regionales; hash `sha256:060ce3c7191d370dd42dc355e519ddc9111f8aa426f33f6aced0fe9537f50591`.
+- Siguiente paso: auditar Abogacía 2016 entre FDER y CENURLN.
