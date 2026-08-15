@@ -536,3 +536,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Decisión: una identidad canónica con ofertas en Montevideo y Salto, sin malla ni trayectoria regional separada. Las materias adicionales permanecen en el catálogo flexible y la auditoría no habilita publicación.
 - Registro de auditoría: hash `sha256:a382590b01eaf3537417b94645f5398918fe4561046f0ea1c1a3bfabdd74fed4`. Cola actualizada: 173 identidades pendientes y cinco diferencias regionales prioritarias.
 - Siguiente paso: auditar Licenciatura en Enfermería 2016 entre FENF, CUR, CURE y CENURLN.
+
+### Licenciatura en Enfermería 2016 — ofertas regionales auditadas 2026-08-15
+
+- La Facultad de Enfermería documenta un único Plan 2016 para Montevideo, Rivera, Rocha y Salto. La decisión institucional fue implantar el mismo plan acreditado en todas las sedes; la ampliación territorial no creó currículas ni títulos separados.
+- El plan vigente dura 54 meses y exige 360 créditos en cuatro ciclos de 80, 200, 40 y 40. Son 330 créditos obligatorios —240 en unidades integradas y 90 en independientes— y 30 optativos/electivos. Otorga el título `Licenciado/a en Enfermería` y, al completar 200 créditos hasta el quinto semestre, el título intermedio `Auxiliar de Enfermería`.
+- Los snapshots de FENF, CUR, CURE y CENURLN conservan exactamente el mismo núcleo de 21 unidades. Cada publicación regional contiene 78 alternativas flexibles adicionales y omite cuatro alternativas flexibles del catálogo central; las dos diferencias de créditos compartidas también pertenecen a ramas optativas/electivas.
+- La cobertura de previaturas regional es mucho menor (2–3 entradas frente a 131), como diferencia de publicación. No existe evidencia oficial que vincule una trayectoria curricular a Rivera, Rocha o Salto.
+- Decisión: una identidad canónica con ofertas en Montevideo, Rivera, Rocha y Salto. Las diferencias de catálogo permanecen como alternativas flexibles y no generan una malla ni trayectoria territorial. La auditoría no habilita publicación.
+- Registro de auditoría: hash `sha256:725c88dc9eb07f79d2cb34ef41a2a0e43382d41712bb150d1ffdbf5d8e988a67`. Cola actualizada: 172 identidades pendientes y cuatro diferencias regionales prioritarias; hash `sha256:1152e0fe7246ca56633009af5813f72c651ee0ccedde2fe51dfcd7cfac5451c7`.
+- Siguiente paso: auditar Doctor en Medicina 2008 entre FMED y CENURLN.

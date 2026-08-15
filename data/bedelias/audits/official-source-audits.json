@@ -542,7 +542,205 @@
         }
       ],
       "remainingWork": "La auditoría resuelve la falsa diferencia regional y los requisitos normativos vigentes. La selección curada de unidades, previaturas y catálogo flexible para la UI sigue pendiente y no habilita publicación."
+    },
+    {
+      "identity": "licenciatura en enfermeria:2016",
+      "career": "LICENCIATURA EN ENFERMERÍA",
+      "planYear": "2016",
+      "reviewedAt": "2026-08-15",
+      "status": "official-evidence-complete",
+      "scope": "plan-and-multiple-regional-offerings",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo Directivo Central, 16/08/2016",
+          "Reglamento actualizado por Resolución 48 del Consejo de Facultad de Enfermería, 18/12/2024"
+        ],
+        "title": "Licenciado/a en Enfermería",
+        "durationMonths": 54,
+        "minimumCredits": 360,
+        "cycles": [
+          {
+            "name": "Ciclo I",
+            "semesters": "1-2",
+            "minimumCredits": 80
+          },
+          {
+            "name": "Ciclo II",
+            "semesters": "3-7",
+            "minimumCredits": 200
+          },
+          {
+            "name": "Ciclo III",
+            "semesters": "8",
+            "minimumCredits": 40
+          },
+          {
+            "name": "Ciclo IV",
+            "semesters": "9",
+            "minimumCredits": 40
+          }
+        ],
+        "creditDistribution": {
+          "Unidades integradas obligatorias": 240,
+          "Unidades independientes obligatorias": 90,
+          "Optativas o electivas": 30
+        },
+        "intermediateTitle": {
+          "title": "Auxiliar de Enfermería",
+          "minimumCredits": 200,
+          "completion": "unidades curriculares hasta el quinto semestre inclusive"
+        },
+        "trajectoryRule": "El Plan 2016 es flexible y permite completar los 30 créditos no obligatorios con optativas, electivas o una combinación. Las trayectorias autónomas no están vinculadas a una sede."
+      },
+      "offerings": [
+        {
+          "serviceCode": "FENF",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2016"
+        },
+        {
+          "serviceCode": "CUR",
+          "locations": [
+            "Rivera"
+          ],
+          "role": "oferta regional completa del mismo Plan 2016"
+        },
+        {
+          "serviceCode": "CURE",
+          "locations": [
+            "Rocha"
+          ],
+          "role": "oferta regional completa del mismo Plan 2016"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Sede Salto"
+          ],
+          "role": "oferta regional completa del mismo Plan 2016"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fenf-licenciatura-en-enfermeria-2016.json",
+        "regionalSnapshots": {
+          "CUR": "data/bedelias/cur-licenciatura-en-enfermeria-2016.json",
+          "CURE": "data/bedelias/cure-licenciatura-en-enfermeria-2016.json",
+          "CENURLN": "data/bedelias/cenurln-licenciatura-en-enfermeria-2016.json"
+        },
+        "canonicalCourses": 223,
+        "regionalCourses": {
+          "CUR": 301,
+          "CURE": 301,
+          "CENURLN": 301
+        },
+        "mandatoryCoreCoursesCanonical": 21,
+        "mandatoryCoreCoursesRegional": {
+          "CUR": 21,
+          "CURE": 21,
+          "CENURLN": 21
+        },
+        "mandatoryCoreEqual": true,
+        "onlyCanonical": {
+          "CUR": 4,
+          "CURE": 4,
+          "CENURLN": 4
+        },
+        "onlyRegional": {
+          "CUR": 78,
+          "CURE": 78,
+          "CENURLN": 78
+        },
+        "allCatalogDifferencesFlexible": true,
+        "changedCredits": [
+          {
+            "code": "CE4MH",
+            "canonicalCredits": 14,
+            "regionalCredits": 6
+          },
+          {
+            "code": "EPAR",
+            "canonicalCredits": 2,
+            "regionalCredits": 5
+          }
+        ],
+        "changedCreditsUnderFlexibleBranches": 2,
+        "prerequisiteEntries": {
+          "FENF": 131,
+          "CUR": 2,
+          "CURE": 3,
+          "CENURLN": 3
+        }
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Enfermería resolvió implementar un único plan curricular en Montevideo, Rivera, Rocha y Salto. Los cuatro snapshots conservan exactamente el mismo núcleo de 21 unidades; todas las diferencias de catálogo y créditos están dentro de ramas optativas o electivas, por lo que no prueban una trayectoria ni una currícula territorial.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Licenciatura en Enfermería Plan 2016.",
+          "Modelar Montevideo, Rivera, Rocha y Salto como ofertas/sedes del mismo plan.",
+          "No crear trayectorias territoriales: la flexibilidad se cumple con optativas y electivas elegidas por cada estudiante.",
+          "Normalizar el egreso por 360 créditos: 240 integrados obligatorios, 90 independientes obligatorios y 30 optativos/electivos.",
+          "Conservar Auxiliar de Enfermería como título intermedio vigente de 200 créditos.",
+          "Tratar las diferencias del catálogo flexible y la menor cobertura regional de previaturas como diferencias de publicación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fenf.edu.uy/plan-de-estudios-2016/",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "documentación vigente del Plan 2016",
+            "reglamento actualizado y guía estudiantil oficial"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "texto institucional del Plan 2016",
+            "aprobación por el Consejo Directivo Central"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "implementación del mismo Plan 2016 en Montevideo, Rivera, Rocha y Salto",
+            "cuatro ciclos de 80, 200, 40 y 40 créditos",
+            "distribución de 330 créditos obligatorios y 30 optativos/electivos"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2026/01/Reglamento-Plan-2016-.pdf",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "reglamento vigente aprobado por Resolución 48 de 18/12/2024",
+            "títulos Licenciado/a y Auxiliar de Enfermería",
+            "título intermedio al completar 200 créditos"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/sites/default/files/migrated-files/Memoria-Enfermeri%25CC%2581a-2021-WEB-v8_2.pdf",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "decisión institucional de un único plan curricular para todas las sedes",
+            "implantación progresiva del Plan 2016 en las cuatro sedes"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-enfermeria",
+          "authority": "Catálogo central de carreras, Udelar",
+          "supports": [
+            "una carrera de 360 créditos y 54 meses",
+            "oferta en Montevideo, Rivera, Rocha y Salto"
+          ]
+        }
+      ],
+      "remainingWork": "La auditoría resuelve las falsas diferencias regionales y los requisitos normativos. La proyección curada de unidades, previaturas y catálogo flexible para la UI sigue pendiente y no habilita publicación."
     }
   ],
-  "contentHash": "sha256:a382590b01eaf3537417b94645f5398918fe4561046f0ea1c1a3bfabdd74fed4"
+  "contentHash": "sha256:725c88dc9eb07f79d2cb34ef41a2a0e43382d41712bb150d1ffdbf5d8e988a67"
 }
