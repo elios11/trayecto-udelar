@@ -466,3 +466,11 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - El inventario global ahora combina de forma determinista todos los lotes separados por servicio y prioriza snapshots `succeeded` existentes sobre fallos posteriores. Así conserva representantes, comparaciones y extracciones centrales sin sobrescribir checkpoints.
 - Manifiesto actualizado sin red: 176 planes `structurally-valid`, 56 `extracted`, 7 `audited` y 11 `discovered`; FING quedó 19/19 terminal. Los 11 restantes son seis planes centrales de FQ y cinco ofertas regionales duplicadas ya representadas canónicamente. Hash `sha256:04d81ee5c2ed3eeca0476a94d33edc6b25cf98152d43d3153a40b74e1c7f3c9a`.
 - Siguiente paso: extraer los seis planes centrales restantes de FQ y comprobar que ningún servicio central conserve planes `discovered`.
+
+### FQ y recolección central — completadas 2026-08-15
+
+- Se extrajeron los seis planes vigentes de FQ que aún no tenían snapshot: Bachiller en Ciencias Químicas 2000, Ingeniería de Alimentos 2003, Ingeniería Química 2021, Licenciatura en Biotecnología 2024, Licenciatura en Tecnologías de la Química 2022 y Tecnólogo Agroenergético 2008.
+- Cobertura: 1.457 cursos, 1.203 entradas de previaturas, 835 reglas publicadas, 368 consultas sin regla y 57.032 requests a 500 ms. Los seis snapshots quedaron `structurally-valid`, sin incidencias.
+- Recolección central completa: ningún servicio no regional conserva planes `discovered`. FQ quedó con 10 planes `structurally-valid`, uno `extracted` y Química Farmacéutica `audited`.
+- Manifiesto global sin red: 182 planes `structurally-valid`, 56 `extracted`, 7 `audited` y 5 `discovered`; hash `sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153`. Los cinco `discovered` son ofertas regionales duplicadas de tres identidades ya representadas, no carreras centrales faltantes.
+- Siguiente paso: generar una cola reproducible de auditoría oficial que priorice las 16 diferencias curriculares regionales, los 26 pares con composición insuficiente y luego los planes canónicos restantes.
