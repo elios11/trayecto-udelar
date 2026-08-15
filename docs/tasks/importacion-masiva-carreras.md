@@ -484,3 +484,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Las diferencias extraídas no se interpretan todavía como variantes curriculares: la auditoría debe separar núcleo obligatorio, electivas disponibles y particularidades de sede usando planes, resoluciones y páginas oficiales.
 - La cola se reconstruye de forma determinista conservando `generatedAt`; hash `sha256:bb14ece325a3cf5ff7292b9f093a56ef59ea11f9be7e6df053b081650d002aea`.
 - Siguiente paso: auditar por fuentes oficiales el primer bloque de 9 identidades con diferencias regionales y registrar evidencia antes de normalizar o integrar nuevas carreras.
+
+### Ingeniería Agronómica 2020 — excepción regional auditada 2026-08-15
+
+- El [Plan 2020 de Facultad de Agronomía](https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf) confirma un único título `Ingeniero Agrónomo`, cinco años y 450 créditos, aprobado por Facultad el 21/10/2019 y por el CDC el 05/11/2019.
+- Estructura oficial: Ciclo Básico General 90 créditos (80 obligatorios, AFO 6, flexibles 4); Ciclo Básico Agronómico 180 (135 obligatorios, AFO 18, flexibles 27); Ciclo de Análisis y Consolidación 180 (AFO 27–63, flexibles 72–108 y TFG 45).
+- La comparación local muestra 526 materias en FAGRO y 717 en CENURLN. Las 191 exclusivas del snapshot regional están todas bajo ramas optativas/electivas; no falta ninguna materia canónica ni cambia ningún crédito compartido. La cobertura de previaturas regional es menor (9 frente a 387), pero eso es una diferencia de publicación.
+- Los catálogos oficiales de Udelar conservan una sola carrera y la ofrecen también en Salto/Paysandú. La [ficha central](https://udelar.edu.uy/carrera/ingeniero-agronomo) identifica Agrícola-ganadera como opción en Salto y la [página vigente de FAGRO](https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/cuarto-ano/) define trayectorias por sistema de producción, optativas y electivas.
+- Decisión de normalización: una identidad canónica con ofertas/sedes; no crear una malla regional separada. Agrícola-ganadera puede presentarse como trayectoria asociada a la oferta de Salto cuando se implemente el selector de sede.
+- Evidencia durable: `data/bedelias/audits/official-source-audits.json`, hash `sha256:918fbdf2e400113d722a627a8b6b3c66bf3f0f8776a77dcacaed8bf0a05063eb`. La auditoría de excepción no habilita publicación ni sustituye la futura proyección curada de materias.
+- Cola actualizada sin red: 176 identidades pendientes; quedan 8 con diferencias regionales. Hash `sha256:3f975092eaf8f70345e922f8ca68414f5349b4d4dcfa9360a2e5ef46a98de4b2`.
+- Siguiente paso: auditar Licenciatura en Biotecnología 2024, compartida por FCIEN/FQ y ofrecida también en CENURLN.

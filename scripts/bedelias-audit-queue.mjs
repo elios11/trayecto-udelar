@@ -35,7 +35,17 @@ function identityForPlan(plan) {
   return `${normalizeLookup(plan.career.name)}:${plan.plan.year}`;
 }
 
-export function buildAuditQueue({ globalManifest, regionalManifest, comparisonManifest, generatedAt = new Date().toISOString() }) {
+export function officialAuditRegistryHash(registry) {
+  return hash({ schemaVersion: registry.schemaVersion, audits: registry.audits });
+}
+
+export function buildAuditQueue({
+  globalManifest,
+  regionalManifest,
+  comparisonManifest,
+  auditRegistry = { schemaVersion: 1, audits: [], contentHash: null },
+  generatedAt = new Date().toISOString(),
+}) {
   const centralPlans = globalManifest.services
     .filter((service) => service.area !== "CENTROS REGIONALES")
     .flatMap((service) => service.plans.map((plan) => ({
@@ -75,9 +85,12 @@ export function buildAuditQueue({ globalManifest, regionalManifest, comparisonMa
   }
   const canonicalPlans = [...canonicalPlansByIdentity.values()];
   const comparisonsByIdentity = new Map(comparisonManifest.plans.map((plan) => [plan.identity, plan.comparisons]));
+  const completedAudits = new Map(auditRegistry.audits
+    .filter((audit) => audit.status === "official-evidence-complete")
+    .map((audit) => [audit.identity, audit]));
 
   const queue = canonicalPlans
-    .filter((plan) => plan.canonicalSource.state !== "audited")
+    .filter((plan) => plan.canonicalSource.state !== "audited" && !completedAudits.has(plan.identity))
     .map((plan) => {
       const comparisons = comparisonsByIdentity.get(plan.identity) ?? [];
       const priority = comparisons.some((entry) => entry.status === "content-difference-detected")
@@ -110,14 +123,22 @@ export function buildAuditQueue({ globalManifest, regionalManifest, comparisonMa
       globalManifestHash: globalManifest.contentHash,
       regionalManifestHash: regionalManifest.contentHash,
       comparisonManifestHash: comparisonManifest.contentHash,
+      officialAuditRegistryHash: auditRegistry.contentHash ?? officialAuditRegistryHash(auditRegistry),
     },
     counts: {
       canonicalIdentities: canonicalPlans.length,
       auditedCanonicalIdentities: canonicalPlans.filter((plan) => plan.canonicalSource.state === "audited").length,
+      evidenceClosedCanonicalIdentities: completedAudits.size,
       pendingCanonicalIdentities: queue.length,
       byPriority: countBy(queue, (entry) => entry.priority),
       regionalComparisons: countBy(regionalComparisons, (entry) => entry.status),
     },
+    completedAudits: [...completedAudits.values()].map((audit) => ({
+      identity: audit.identity,
+      status: audit.status,
+      reviewedAt: audit.reviewedAt,
+      conclusion: audit.conclusion.canonicalModel,
+    })),
     queue,
   };
   return {
@@ -143,10 +164,16 @@ async function writeJson(relativePath, value) {
 }
 
 async function main() {
+  const auditRegistry = await readJson("data/bedelias/audits/official-source-audits.json");
+  const expectedAuditHash = officialAuditRegistryHash(auditRegistry);
+  if (auditRegistry.contentHash !== expectedAuditHash) {
+    throw new Error(`Hash inválido en registro de auditorías: ${auditRegistry.contentHash} != ${expectedAuditHash}`);
+  }
   const queue = buildAuditQueue({
     globalManifest: await readJson("data/bedelias/inventory/global-current.json"),
     regionalManifest: await readJson("data/bedelias/inventory/regional-offerings.json"),
     comparisonManifest: await readJson("data/bedelias/inventory/regional-content-comparison.json"),
+    auditRegistry,
   });
   const output = await writeJson("data/bedelias/inventory/audit-queue.json", queue);
   console.log(`Identidades canónicas: ${queue.counts.canonicalIdentities}.`);

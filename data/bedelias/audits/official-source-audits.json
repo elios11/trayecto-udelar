@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "audits": [
+    {
+      "identity": "ingeniero agronomo:2020",
+      "career": "INGENIERO AGRÓNOMO",
+      "planYear": "2020",
+      "reviewedAt": "2026-08-15",
+      "status": "official-evidence-complete",
+      "scope": "plan-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad, Resolución 1563 de 21/10/2019",
+          "Consejo Directivo Central, Resolución 25 de 05/11/2019"
+        ],
+        "title": "Ingeniero Agrónomo",
+        "durationMonths": 60,
+        "minimumCredits": 450,
+        "cycles": [
+          {
+            "name": "Ciclo Básico General",
+            "years": "1",
+            "minimumCredits": 90,
+            "requirements": {
+              "mandatoryCourses": 80,
+              "mandatoryTrainingArea": 6,
+              "optionalOrElective": 4
+            }
+          },
+          {
+            "name": "Ciclo Básico Agronómico",
+            "years": "2-3",
+            "minimumCredits": 180,
+            "requirements": {
+              "mandatoryCourses": 135,
+              "mandatoryTrainingArea": 18,
+              "optionalOrElective": 27
+            }
+          },
+          {
+            "name": "Ciclo de Análisis y Consolidación",
+            "years": "4-5",
+            "minimumCredits": 180,
+            "requirements": {
+              "mandatoryTrainingAreaMinimum": 27,
+              "mandatoryTrainingAreaMaximum": 63,
+              "optionalOrElectiveMinimum": 72,
+              "optionalOrElectiveMaximum": 108,
+              "finalProject": 45
+            }
+          }
+        ],
+        "trajectoryRule": "El último ciclo admite trayectorias personalizadas con tutor y elección de sistema de producción; no define un perfil de título distinto."
+      },
+      "offerings": [
+        {
+          "serviceCode": "FAGRO",
+          "locations": [
+            "Facultad de Agronomía, Montevideo",
+            "Estación Experimental Mario A. Cassinoni, Paysandú",
+            "Estación Experimental de Facultad de Agronomía de Salto"
+          ],
+          "role": "servicio responsable del plan y de sus trayectorias"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Sede Salto",
+            "Sede Paysandú"
+          ],
+          "role": "oferta regional completa del mismo plan; la ficha central destaca la opción Agrícola-ganadera en Salto"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
+        "regionalSnapshot": "data/bedelias/cenurln-ingeniero-agronomo-2020.json",
+        "canonicalCourses": 526,
+        "regionalCourses": 717,
+        "onlyCanonical": 0,
+        "onlyRegional": 191,
+        "changedCredits": 0,
+        "regionalOnlyCoursesUnderFlexibleBranches": 191,
+        "canonicalPrerequisiteEntries": 387,
+        "regionalPrerequisiteEntries": 9
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Las dos ofertas publican el Plan 2020 con el mismo título, duración, créditos y mínimos. Las 191 materias adicionales del snapshot regional están exclusivamente bajo ramas optativas o electivas; son un catálogo flexible ampliado, no un núcleo obligatorio diferente.",
+        "normalization": [
+          "Conservar una sola identidad canónica para el Plan 2020.",
+          "Modelar Salto y Paysandú como ofertas/sedes, no como carreras duplicadas.",
+          "Representar Agrícola-ganadera como trayectoria disponible en la oferta regional cuando se modele el selector de sede.",
+          "No proyectar las 191 materias adicionales como obligatorias ni como una malla regional separada.",
+          "Mantener la menor cobertura regional de previaturas como diferencia de publicación, no de currícula."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+          "authority": "Facultad de Agronomía, Udelar",
+          "supports": [
+            "aprobación y vigencia del Plan 2020",
+            "título, duración y 450 créditos",
+            "estructura y mínimos de los tres ciclos",
+            "flexibilidad, trayectorias y trabajo final"
+          ]
+        },
+        {
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/",
+          "authority": "Facultad de Agronomía, Udelar",
+          "supports": [
+            "plan vigente",
+            "estructura por años",
+            "sistemas de producción y localizaciones de cuarto y quinto año"
+          ]
+        },
+        {
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/cuarto-ano/",
+          "authority": "Facultad de Agronomía, Udelar",
+          "supports": [
+            "definición vigente de optativas y electivas",
+            "trayectorias por sistema de producción",
+            "trabajo final de 45 créditos"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/ingeniero-agronomo",
+          "authority": "Catálogo central de carreras, Udelar",
+          "supports": [
+            "una única carrera y título",
+            "450 créditos y 60 meses",
+            "oferta en Facultad de Agronomía y Sede Salto con opción Agrícola-ganadera"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": [
+            "oferta de Ingeniero Agrónomo en Paysandú y Salto"
+          ]
+        }
+      ],
+      "remainingWork": "La auditoría resuelve la excepción regional y la estructura normativa. La proyección curada de materias, previaturas y trayectorias para la UI sigue pendiente y no habilita publicación."
+    }
+  ],
+  "contentHash": "sha256:918fbdf2e400113d722a627a8b6b3c66bf3f0f8776a77dcacaed8bf0a05063eb"
+}
