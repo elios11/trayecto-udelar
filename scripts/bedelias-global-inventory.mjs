@@ -3,7 +3,7 @@
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { renameWithRetry } from "./bedelias-atomic-write.mjs";
 import { fileURLToPath } from "node:url";
@@ -126,6 +126,48 @@ function countBy(items, keyForItem) {
 
 function contentHash(value) {
   return `sha256:${createHash("sha256").update(JSON.stringify(value)).digest("hex")}`;
+}
+
+export function mergeServiceBatches(batchList, { outputExists = existsSync } = {}) {
+  const selected = new Map();
+  const timestamp = (batch, target) => Date.parse(
+    target.finishedAt ?? target.startedAt ?? batch.updatedAt ?? batch.createdAt ?? 0,
+  ) || 0;
+
+  for (const batch of batchList.filter(Boolean)) {
+    for (const target of batch.targets ?? []) {
+      const key = target.key;
+      if (!key) continue;
+      const candidate = {
+        batch,
+        target,
+        complete: target.status === "succeeded" && outputExists(target.output),
+        timestamp: timestamp(batch, target),
+      };
+      const current = selected.get(key);
+      if (!current
+        || Number(candidate.complete) > Number(current.complete)
+        || (candidate.complete === current.complete && candidate.timestamp >= current.timestamp)) {
+        selected.set(key, candidate);
+      }
+    }
+  }
+
+  return {
+    targets: [...selected.values()]
+      .map((entry) => entry.target)
+      .sort((left, right) => left.key.localeCompare(right.key, "es")),
+  };
+}
+
+async function loadServiceBatches(serviceCode) {
+  const directory = path.join(PROJECT_ROOT, "data", "bedelias", "batches");
+  const prefix = `${slug(serviceCode)}-`;
+  const names = (await readdir(directory))
+    .filter((name) => name.startsWith(prefix) && name.endsWith(".json"))
+    .sort();
+  const batches = await Promise.all(names.map((name) => loadJson(path.join(directory, name))));
+  return mergeServiceBatches(batches);
 }
 
 export async function buildInventoryManifest({ catalog, runState, indexes, batches, overrides = [], types = DEFAULT_TYPES }) {
@@ -319,11 +361,10 @@ async function main() {
   const refreshManifest = async () => {
     for (const service of state.services) {
       const indexPath = path.join(PROJECT_ROOT, "data", "bedelias", "services", `${slug(service.code)}-index.json`);
-      const batchPath = path.join(PROJECT_ROOT, "data", "bedelias", "batches", `${slug(service.code)}-vigentes.json`);
       const index = await loadJson(indexPath);
-      const batch = await loadJson(batchPath);
+      const batch = await loadServiceBatches(service.code);
       if (index) indexes.set(service.code, index);
-      if (batch) batches.set(service.code, batch);
+      if (batch.targets.length > 0) batches.set(service.code, batch);
     }
     const manifest = await buildInventoryManifest({ catalog, runState: state, indexes, batches, overrides, types });
     await atomicJson(manifestPath, manifest);

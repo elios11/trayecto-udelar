@@ -458,3 +458,11 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - La normalización genérica ahora conserva guiones internos en códigos externos como `FQ - REV-B - …`. Se renormalizaron localmente tres snapshots de CENURLN, eliminando dos falsas diferencias sin nuevas requests.
 - Diagnóstico global cerrado: 57/57 pares tienen ambos snapshots; 31 son comparables, con 15 coincidencias curriculares que sólo difieren en cobertura de previaturas y 16 diferencias de catálogo. Los 26 pares restantes son `insufficient-content`; no quedan snapshots faltantes. Hash `sha256:85594402f1e09be2ef150dfd527e85d87e72da39ba61608b87d30a1cdb180bf2`.
 - Siguiente paso: extraer los diez planes centrales restantes de FING y los seis restantes de FQ; después iniciar la auditoría oficial dirigida por las 16 diferencias y las composiciones insuficientes.
+
+### FING — extracción central restante completada 2026-08-15
+
+- Se extrajeron los diez planes vigentes de FING que aún no tenían snapshot crudo, mediante `fing-remaining.json`, sin repetir los tres planes auditados ni los seis usados para cerrar comparaciones regionales.
+- Cobertura: 1.967 cursos, 1.928 entradas de previaturas, 1.334 reglas publicadas, 594 consultas sin regla y 89.474 requests a 500 ms. Los diez planes quedaron `structurally-valid`, sin incidencias.
+- El inventario global ahora combina de forma determinista todos los lotes separados por servicio y prioriza snapshots `succeeded` existentes sobre fallos posteriores. Así conserva representantes, comparaciones y extracciones centrales sin sobrescribir checkpoints.
+- Manifiesto actualizado sin red: 176 planes `structurally-valid`, 56 `extracted`, 7 `audited` y 11 `discovered`; FING quedó 19/19 terminal. Los 11 restantes son seis planes centrales de FQ y cinco ofertas regionales duplicadas ya representadas canónicamente. Hash `sha256:04d81ee5c2ed3eeca0476a94d33edc6b25cf98152d43d3153a40b74e1c7f3c9a`.
+- Siguiente paso: extraer los seis planes centrales restantes de FQ y comprobar que ningún servicio central conserve planes `discovered`.

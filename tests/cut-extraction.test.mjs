@@ -46,7 +46,7 @@ test("reporte y manifiestos actualizan sólo los representantes de CUT", () => {
   });
 
   const cut = globalManifest.services.find((service) => service.code === "CUT");
-  assert.deepEqual(cut.counts.byState, { discovered: 3, extracted: 4, "structurally-valid": 1 });
+  assert.deepEqual(cut.counts.byState, { extracted: 4, "structurally-valid": 2, discovered: 2 });
   assert.equal(cut.plans.length, 8);
 
   const targets = regionalManifest.extractionTargets.filter((target) => target.serviceCode === "CUT");

@@ -36,7 +36,7 @@ test("reporte y manifiestos actualizan sólo los representantes de CUCEL", () =>
   assert.equal(report.status, "official-sources-pending");
 
   const cucel = globalManifest.services.find((service) => service.code === "CUCEL");
-  assert.deepEqual(cucel.counts.byState, { discovered: 1, "structurally-valid": 2 });
+  assert.deepEqual(cucel.counts.byState, { "structurally-valid": 3 });
   assert.equal(cucel.plans.length, 3);
 
   const targets = regionalManifest.extractionTargets.filter((target) => target.serviceCode === "CUCEL");

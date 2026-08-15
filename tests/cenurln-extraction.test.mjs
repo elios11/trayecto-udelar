@@ -54,7 +54,7 @@ test("reporte y manifiestos completan las treinta extracciones regionales", () =
   });
 
   const cenurln = globalManifest.services.find((service) => service.code === "CENURLN");
-  assert.deepEqual(cenurln.counts.byState, { "structurally-valid": 8, discovered: 43, extracted: 2 });
+  assert.deepEqual(cenurln.counts.byState, { "structurally-valid": 41, extracted: 10, discovered: 2 });
   assert.equal(cenurln.plans.length, 53);
 
   assert.equal(regionalManifest.extractionTargets.length, 30);

@@ -39,7 +39,7 @@ test("reporte y manifiestos actualizan sólo los representantes de CUR", () => {
   assert.equal(report.status, "official-sources-pending");
 
   const cur = globalManifest.services.find((service) => service.code === "CUR");
-  assert.deepEqual(cur.counts.byState, { discovered: 5, "structurally-valid": 5 });
+  assert.deepEqual(cur.counts.byState, { "structurally-valid": 8, extracted: 2 });
   assert.equal(cur.plans.length, 10);
 
   const targets = regionalManifest.extractionTargets.filter((target) => target.serviceCode === "CUR");

@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   buildInventoryManifest,
+  mergeServiceBatches,
   reconcileInventoryRun,
   selectCatalogServices,
 } from "../scripts/bedelias-global-inventory.mjs";
@@ -34,6 +35,30 @@ test("reanuda servicios completados sólo dentro de la misma selección", () => 
   assert.equal(state.createdAt, previous.createdAt);
   assert.equal(state.services[0].status, "succeeded");
   assert.equal(state.services[0].attempts, 1);
+});
+
+test("combina lotes separados sin perder un snapshot completo por un fallo posterior", () => {
+  const merged = mergeServiceBatches([
+    {
+      updatedAt: "2026-08-11T00:00:00.000Z",
+      targets: [
+        { key: "FING:plan-a:2025", status: "succeeded", output: "a-ok.json" },
+        { key: "FING:plan-b:2025", status: "pending", output: "b.json" },
+      ],
+    },
+    {
+      updatedAt: "2026-08-12T00:00:00.000Z",
+      targets: [
+        { key: "FING:plan-a:2025", status: "failed", output: "a.json" },
+        { key: "FING:plan-b:2025", status: "succeeded", output: "b-ok.json" },
+      ],
+    },
+  ], { outputExists: (output) => output.endsWith("-ok.json") });
+
+  assert.deepEqual(merged.targets.map((target) => [target.key, target.status]), [
+    ["FING:plan-a:2025", "succeeded"],
+    ["FING:plan-b:2025", "succeeded"],
+  ]);
 });
 
 test("genera manifiesto por plan y sólo una anulación explícita queda auditada", async () => {

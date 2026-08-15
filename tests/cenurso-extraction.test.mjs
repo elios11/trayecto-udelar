@@ -38,7 +38,7 @@ test("registra literalmente la composición no publicada sin bloquear el lote", 
 
 test("los manifiestos conservan ofertas no extraídas y actualizan sólo los representantes", () => {
   const cenurso = globalManifest.services.find((service) => service.code === "CENURSO");
-  assert.deepEqual(cenurso.counts.byState, { discovered: 2, "structurally-valid": 1, extracted: 1 });
+  assert.deepEqual(cenurso.counts.byState, { "structurally-valid": 3, extracted: 1 });
 
   const targets = regionalManifest.extractionTargets.filter((target) => target.serviceCode === "CENURSO");
   assert.deepEqual(targets.map((target) => target.state).sort(), ["extracted", "structurally-valid"]);

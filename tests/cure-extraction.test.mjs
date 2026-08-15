@@ -51,7 +51,7 @@ test("reporte y manifiestos actualizan sólo los representantes de CURE", () => 
   });
 
   const cure = globalManifest.services.find((service) => service.code === "CURE");
-  assert.deepEqual(cure.counts.byState, { discovered: 8, "structurally-valid": 4, extracted: 2 });
+  assert.deepEqual(cure.counts.byState, { "structurally-valid": 11, extracted: 2, discovered: 1 });
   assert.equal(cure.plans.length, 14);
 
   const targets = regionalManifest.extractionTargets.filter((target) => target.serviceCode === "CURE");
