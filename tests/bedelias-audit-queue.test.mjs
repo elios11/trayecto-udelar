@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 2);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 175);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 3);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 174);
   assert.deepEqual(saved.counts.byPriority, {
-    "regional-content-difference": 7,
+    "regional-content-difference": 6,
     "insufficient-regional-content": 21,
     "composition-unavailable": 38,
     "official-sources-pending": 109,
@@ -30,6 +30,7 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.queue.filter((entry) => entry.sourceOffers.length > 1).length, 3);
   assert.equal(saved.completedAudits[0].identity, "ingeniero agronomo:2020");
   assert.equal(saved.completedAudits[1].identity, "licenciatura en biotecnologia:2024");
+  assert.equal(saved.completedAudits[2].identity, "abogacia:2016");
   assert.equal(saved.source.officialAuditRegistryHash, auditRegistry.contentHash);
   assert.equal(officialAuditRegistryHash(auditRegistry), auditRegistry.contentHash);
 });

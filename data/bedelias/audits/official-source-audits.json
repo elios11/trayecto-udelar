@@ -292,7 +292,129 @@
         }
       ],
       "remainingWork": "La auditoría resuelve la identidad compartida y la falsa diferencia regional. La selección curada de unidades por área y trayectoria para la UI sigue pendiente y no habilita publicación."
+    },
+    {
+      "identity": "abogacia:2016",
+      "career": "ABOGACÍA",
+      "planYear": "2016",
+      "reviewedAt": "2026-08-15",
+      "status": "official-evidence-complete",
+      "scope": "plan-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad de Derecho, 18/06/2015 y 26/05/2016",
+          "Consejo Directivo Central, 19/07/2016"
+        ],
+        "title": "Abogado",
+        "durationMonths": 60,
+        "minimumCredits": 450,
+        "minimumCreditsByArea": {
+          "Formación socio-jurídica, teórico-jurídica y metodológica": 66,
+          "Derecho público": 114,
+          "Derecho privado": 90,
+          "Derecho de carácter social específico": 54,
+          "Práctica profesional": 78,
+          "Optativas o electivas": 48
+        },
+        "intermediateTitle": {
+          "title": "Procurador",
+          "minimumCredits": 160
+        },
+        "trajectoryRule": "El plan admite flexibilidad dentro de la misma carrera mediante optativas y electivas; los créditos de esas unidades pueden variar la trayectoria sin alterar el título ni los mínimos por área."
+      },
+      "offerings": [
+        {
+          "serviceCode": "FDER",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2016"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Sede Salto"
+          ],
+          "role": "oferta regional completa del mismo Plan 2016"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fder-abogacia-2016.json",
+        "regionalSnapshot": "data/bedelias/cenurln-abogacia-2016.json",
+        "canonicalCourses": 510,
+        "regionalCourses": 566,
+        "mandatoryCoreCoursesCanonical": 85,
+        "mandatoryCoreCoursesRegional": 85,
+        "mandatoryCoreOnlyCanonical": 0,
+        "mandatoryCoreOnlyRegional": 0,
+        "onlyCanonical": 0,
+        "onlyRegional": 53,
+        "regionalOnlyCoursesUnderFlexibleBranches": 53,
+        "changedCredits": 1,
+        "changedCreditsUnderFlexibleBranches": 1,
+        "changedCreditCourse": "3206B - Garantías Particulares",
+        "canonicalPrerequisiteEntries": 468,
+        "regionalPrerequisiteEntries": 40
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales describen un único Plan 2016, implantado en Montevideo y CENUR Litoral Norte. Ambos snapshots tienen el mismo núcleo de 85 unidades; las 53 materias exclusivas de la publicación regional y la única diferencia de créditos están dentro de la bolsa flexible de 48 créditos, por lo que representan oferta opcional/electiva y no otra currícula.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Abogacía Plan 2016.",
+          "Modelar Montevideo y Salto como ofertas/sedes del mismo plan.",
+          "Normalizar el egreso por 450 créditos y los seis mínimos de área, no por la suma del catálogo publicado en Bedelías.",
+          "Mantener las materias adicionales de Salto dentro del catálogo flexible; no proyectarlas como obligatorias ni como trayectoria territorial cerrada.",
+          "Tratar la diferencia de Garantías Particulares y la menor cobertura de previaturas como diferencias de publicación hasta que una resolución específica indique lo contrario.",
+          "Conservar Procurador como título intermedio común de 160 créditos."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fder.edu.uy/node/529",
+          "authority": "Facultad de Derecho, Udelar",
+          "supports": [
+            "aprobación institucional del Plan 2016",
+            "título Abogado, cinco años y 450 créditos",
+            "mínimos por áreas, flexibilidad y optativas/electivas"
+          ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/sites/default/files/2024-05/grilla-abogac%C3%ADa-actualizada-20240527.pdf",
+          "authority": "Facultad de Derecho, Udelar",
+          "supports": [
+            "grilla vigente y núcleo por semestre",
+            "mínimos 66, 114, 90, 54, 78 y 48 créditos",
+            "modificaciones aprobadas en 2019 y 2023"
+          ]
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/proyecto-financiado/evaluacion-de-la-implementacion-y-propuesta-de-ajustes-a-los-planes-de-estudio-de-abogacia-y-notariado-2016/",
+          "authority": "Comisión Sectorial de Enseñanza, Udelar",
+          "supports": [
+            "implantación del mismo Plan 2016 en Montevideo y CENUR Litoral Norte desde 2017",
+            "carácter flexible de optativas y electivas"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": [
+            "oferta completa de Abogacía en Salto"
+          ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/node/3873",
+          "authority": "Facultad de Derecho, Udelar",
+          "supports": [
+            "título intermedio de Procurador",
+            "mínimo de 160 créditos y grilla aprobada"
+          ]
+        }
+      ],
+      "remainingWork": "La auditoría resuelve la falsa diferencia regional y los requisitos normativos. La proyección curada de unidades, previaturas y oferta flexible para la UI sigue pendiente y no habilita publicación."
     }
   ],
-  "contentHash": "sha256:cdc9711b23ad986e1723355581be27ae060da4059f0e598ea45ebab2abe1f530"
+  "contentHash": "sha256:faaf27ea6a74861282fea299296d3a1b843271c575f3fc1df0d928f20e70a682"
 }

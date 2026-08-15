@@ -506,3 +506,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:cdc9711b23ad986e1723355581be27ae060da4059f0e598ea45ebab2abe1f530`. Comparación regional corregida: 16 coincidencias curriculares con distinta cobertura de previaturas, 15 diferencias y 26 casos insuficientes; hash `sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550`.
 - Cola actualizada: 175 identidades pendientes, siete con diferencias regionales; hash `sha256:060ce3c7191d370dd42dc355e519ddc9111f8aa426f33f6aced0fe9537f50591`.
 - Siguiente paso: auditar Abogacía 2016 entre FDER y CENURLN.
+
+### Abogacía 2016 — oferta regional auditada 2026-08-15
+
+- El [Plan 2016 de Facultad de Derecho](https://www.fder.edu.uy/node/529), aprobado por Facultad en 2015/2016 y por el CDC el 19/07/2016, define un único título `Abogado`, cinco años y 450 créditos. La [CSE](https://www.cse.udelar.edu.uy/proyecto-financiado/evaluacion-de-la-implementacion-y-propuesta-de-ajustes-a-los-planes-de-estudio-de-abogacia-y-notariado-2016/) confirma que el mismo plan comenzó a ejecutarse en 2017 tanto en Montevideo como en CENUR Litoral Norte.
+- La [grilla vigente](https://www.fder.edu.uy/sites/default/files/2024-05/grilla-abogac%C3%ADa-actualizada-20240527.pdf) exige mínimos de 66 créditos socio-jurídicos/teórico-metodológicos, 114 de Derecho público, 90 de Derecho privado, 54 de Derecho social específico, 78 de práctica profesional y 48 optativos/electivos. Conserva además el título intermedio `Procurador` con 160 créditos.
+- Los snapshots de FDER y CENURLN contienen el mismo núcleo de 85 unidades. Las 53 materias que el comparador normalizado encuentra sólo en Salto están íntegramente bajo `OPC - BOLSA DE OPCIONALES - min: 48 créditos`; la única diferencia de créditos compartida (`3206B`, Garantías Particulares) también es opcional. La menor cobertura regional de previaturas (40 frente a 468) es una diferencia de publicación.
+- Decisión de normalización: una identidad canónica con ofertas en Montevideo y Salto. Las materias adicionales regionales amplían el catálogo flexible; no constituyen una malla, título ni trayectoria territorial distinta.
+- Registro de auditoría: hash `sha256:faaf27ea6a74861282fea299296d3a1b843271c575f3fc1df0d928f20e70a682`. Cola actualizada: 174 identidades pendientes y seis diferencias regionales prioritarias; hash `sha256:496e9a7bd7414ea75ce72ebfe430155d3fea363e35c5f89d289bea1dd256f697`.
+- La auditoría no habilita publicación ni sustituye la futura selección curada de unidades y reglas para la UI.
+- Siguiente paso: auditar Notariado 2016 entre FDER y CENURLN.
