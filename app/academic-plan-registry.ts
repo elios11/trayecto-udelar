@@ -1,14 +1,17 @@
 import type { PlanId } from "./academic-catalog";
+import { extractedAcademicPlanRegistrations } from "./data/extracted-academic-loaders";
 
 type PlanModule = { default: unknown };
 type PlanLoader = () => Promise<PlanModule>;
 
-export const registeredAcademicPlans: Partial<Record<PlanId, {
+type RegisteredAcademicPlan = {
   load: PlanLoader;
   pathwayIds: readonly string[];
   pathwayLabel: "Perfil" | "Trayectoria";
   minCredits: number;
-}>> = {
+};
+
+export const registeredAcademicPlans: Partial<Record<PlanId, RegisteredAcademicPlan>> = {
   "fadu-arquitectura-2015": {
     load: () => import("./data/fadu-arquitectura-2015.json"),
     pathwayIds: ["flexible"],
@@ -27,6 +30,7 @@ export const registeredAcademicPlans: Partial<Record<PlanId, {
     pathwayLabel: "Perfil",
     minCredits: 360,
   },
+  ...extractedAcademicPlanRegistrations,
 };
 
 export function isRegisteredAcademicPlan(planId: PlanId) {

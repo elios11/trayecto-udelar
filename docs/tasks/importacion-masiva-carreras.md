@@ -516,3 +516,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:faaf27ea6a74861282fea299296d3a1b843271c575f3fc1df0d928f20e70a682`. Cola actualizada: 174 identidades pendientes y seis diferencias regionales prioritarias; hash `sha256:496e9a7bd7414ea75ce72ebfe430155d3fea363e35c5f89d289bea1dd256f697`.
 - La auditoría no habilita publicación ni sustituye la futura selección curada de unidades y reglas para la UI.
 - Siguiente paso: auditar Notariado 2016 entre FDER y CENURLN.
+
+### Integración funcional del inventario extraído en la UI — completada 2026-08-15
+
+- Se proyectaron de forma determinista las 177 identidades canónicas vigentes todavía ausentes del catálogo curado. Junto con los siete planes vigentes ya integrados, la UI permite seleccionar las 184 identidades del inventario; Ingeniería en Computación 1997 se conserva como plan histórico adicional.
+- Las proyecciones se cargan bajo demanda por plan. Noventa y tres tienen composición utilizable y 84 muestran un estado explícito de composición no publicada, sin fabricar períodos, créditos mínimos ni materias.
+- Ninguna proyección masiva se declara auditada o publicable: conservan `publicationEligible: false`, la procedencia del snapshot y un estado visible de auditoría pendiente.
+- El selector `Sede` sólo aparece cuando existe evidencia oficial registrada y más de una opción. Agronomía ofrece Montevideo, Paysandú y Salto; Salto habilita la trayectoria oficial Agrícola-ganadera. Biotecnología ofrece Montevideo, Salto y Paysandú; Abogacía ofrece Montevideo y Salto sin inventar una trayectoria regional.
+- La sede se persiste separada de la trayectoria, se valida al hidratar preferencias antiguas o inválidas, se restablece al cambiar de plan y no duplica carrera ni progreso. El flujo fue verificado en escritorio, tablet y móvil, en temas claros y oscuros.
+- Artefactos reproducibles: `node scripts/build-extracted-academic-plans.mjs`; manifiesto `data/bedelias/inventory/ui-extracted-plans.json`; catálogo y cargas diferidas bajo `app/data/`.
+- Siguiente paso: continuar la auditoría oficial desde Notariado 2016 y reemplazar progresivamente las proyecciones pendientes por normalizaciones auditadas, sin habilitar publicación automática.

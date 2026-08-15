@@ -47,6 +47,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .selector-row label:not(:first-child) select { min-width: 180px; }
 .selector-row .faculty-selector select { min-width: 230px; }
 .selector-row .career-selector select { min-width: 250px; }
+.selector-row .campus-selector select { min-width: 180px; }
 .pilot-note { max-width: 920px; margin: 14px 0 0; display: flex; align-items: flex-start; gap: 8px; color: var(--muted); font-size: 12px; line-height: 1.45; }
 .pilot-note-mark { width: 18px; height: 18px; flex: none; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--udelar) 38%, var(--line)); border-radius: 50%; background: var(--accent-soft); color: var(--udelar); font: 750 10px var(--font-geist-mono); }
 .pilot-note-copy { min-width: 0; }
@@ -222,6 +223,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .toggle-control input:checked + span { background: var(--udelar); }
 .toggle-control input:checked + span::after { transform: translateX(14px); }
 .rules-coverage { padding: 7px 10px; border: 1px solid #dfd5b8; border-radius: 99px; background: #faf6e9; color: #755e25; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.pending-audit-note .pilot-note-mark, .pending-audit-status { border-color: color-mix(in srgb, var(--warning-ink) 35%, var(--line)); background: var(--warning-soft); color: var(--warning-ink); }
 .curriculum-navigation { display: flex; gap: 5px; }
 .curriculum-navigation button { width: 31px; height: 31px; display: grid; place-items: center; padding: 0 0 2px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--udelar); font-size: 17px; line-height: 1; transition: border-color .15s ease, background .15s ease, color .15s ease; }
 .curriculum-navigation button:hover:not(:disabled) { border-color: #9db5c5; background: #eef5f8; }
@@ -239,6 +241,12 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .curriculum-scroll::-webkit-scrollbar-thumb { border: 3px solid transparent; border-radius: 99px; background: #9fb0b9; background-clip: padding-box; }
 .curriculum-scroll::-webkit-scrollbar-thumb:hover { background-color: #718a97; }
 .curriculum-scroll:focus-visible { outline: 3px solid rgba(0,74,130,.2); outline-offset: -3px; }
+.curriculum-unavailable { min-height: 360px; padding: clamp(28px, 8vw, 80px); display: flex; align-items: flex-start; justify-content: center; gap: 16px; background: linear-gradient(180deg, var(--surface-subtle), var(--paper)); }
+.curriculum-unavailable > span { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--warning-ink) 35%, var(--line)); border-radius: 50%; background: var(--warning-soft); color: var(--warning-ink); font-weight: 800; }
+.curriculum-unavailable div { max-width: 560px; }
+.curriculum-unavailable h2 { margin: 6px 0 10px; font-size: clamp(20px, 3vw, 28px); letter-spacing: -.04em; }
+.curriculum-unavailable p:not(.eyebrow) { margin: 0 0 14px; color: var(--muted); line-height: 1.55; }
+.curriculum-unavailable a { color: var(--udelar); font-size: 12px; font-weight: 750; text-decoration: none; }
 .semester-grid { min-width: 2550px; display: grid; grid-template-columns: repeat(11, minmax(210px, 1fr)); padding: 24px; gap: 12px; align-items: start; }
 .semester-column { min-width: 0; }
 .semester-column > header { display: flex; align-items: center; gap: 10px; padding: 0 4px 12px; border-bottom: 1px solid var(--line); margin-bottom: 10px; }
@@ -287,6 +295,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .plan-transition-note h2 { margin: 5px 0 8px; font-size: 20px; letter-spacing: -.04em; }
 .plan-transition-note > p:not(.eyebrow) { max-width: 760px; margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.55; }
 .plan-transition-note a { color: var(--udelar); font-size: 11px; font-weight: 750; text-decoration: none; }
+.pending-audit-panel { border-top-color: color-mix(in srgb, var(--warning-ink) 25%, var(--line)); }
 
 footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 36px; background: var(--udelar-dark); color: rgba(255,255,255,.7); font-size: 11px; }
 footer p { margin: 0; }
@@ -808,6 +817,11 @@ body, .app-shell, .workspace { background: var(--paper); }
   .selector-row label:not(:first-child) select,
   .selector-row .faculty-selector select,
   .selector-row .career-selector select { width: 100%; min-width: 0; }
+  .selector-row .campus-selector select { width: 100%; min-width: 0; }
+  .toolbar { flex-wrap: wrap; }
+  .search-box { flex: 1 1 270px; min-width: 0; }
+  .rules-coverage { flex: 1 1 auto; white-space: normal; }
+  .curriculum-navigation { margin-left: auto; }
   .credit-summary { margin-top: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .udelar-logo, .scheme-track, .scheme-track::after { transition: none !important; } }

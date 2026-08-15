@@ -89,7 +89,7 @@ test("keeps source provenance, clean validation and storage migration", () => {
   assert.deepEqual(snapshot.validation.issues, []);
   assert.equal(initial.source.profilesSpreadsheet, source.source.profilesSpreadsheet);
   assert.equal(initial.source.planDocument, source.source.planDocument);
-  assert.match(catalogSource, /type PlanId = "1997" \| "2025" \| "electrica-2023" \| "civil-2021"/);
+  assert.match(catalogSource, /export type PlanId = string/);
   assert.match(catalogSource, /label: "Ingeniería Civil"/);
   assert.match(catalogSource, /id: "civil-2021"/);
   assert.match(pageSource, /createAcademicPlanRecord\(\(\) => \(\{\}\)\)/);

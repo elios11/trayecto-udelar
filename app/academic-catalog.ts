@@ -1,8 +1,9 @@
-export type CredentialId = "analyst" | "engineer" | "pharmacist" | "architect" | "visual-designer" | "industrial-designer";
+import extractedAcademicCatalogJson from "./data/extracted-academic-catalog.json";
 
-export type PlanId = "1997" | "2025" | "electrica-2023" | "civil-2021" | "qf-2015" | "fadu-arquitectura-2015" | "fadu-ldcv-2007" | "fadu-ldind-2013";
-export type FacultyId = "fing" | "fq" | "fadu";
-export type CareerId = "computacion" | "electrica" | "civil" | "quimica-farmaceutica" | "arquitectura" | "ldcv" | "ldind";
+export type CredentialId = string;
+export type PlanId = string;
+export type FacultyId = string;
+export type CareerId = string;
 
 export type AcademicPlanOption = {
   id: PlanId;
@@ -23,7 +24,7 @@ export type AcademicFacultyOption = {
   careers: AcademicCareerOption[];
 };
 
-export const academicCatalog: AcademicFacultyOption[] = [
+const curatedAcademicCatalog: AcademicFacultyOption[] = [
   {
     id: "fing",
     label: "Facultad de Ingeniería",
@@ -82,6 +83,16 @@ export const academicCatalog: AcademicFacultyOption[] = [
       },
     ],
   },
+];
+
+const extractedAcademicCatalog = extractedAcademicCatalogJson as AcademicFacultyOption[];
+
+export const academicCatalog: AcademicFacultyOption[] = [
+  ...curatedAcademicCatalog.map((faculty) => {
+    const extractedFaculty = extractedAcademicCatalog.find((candidate) => candidate.id === `bedelias-${faculty.id}`);
+    return extractedFaculty ? { ...faculty, careers: [...faculty.careers, ...extractedFaculty.careers] } : faculty;
+  }),
+  ...extractedAcademicCatalog.filter((faculty) => !curatedAcademicCatalog.some((curated) => faculty.id === `bedelias-${curated.id}`)),
 ];
 
 export const academicPlanIds = academicCatalog.flatMap((faculty) =>

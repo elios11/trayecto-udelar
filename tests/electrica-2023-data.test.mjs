@@ -84,6 +84,6 @@ test("keeps source provenance and every trajectory reference resolvable", () => 
   for (const profile of Object.values(initial.profiles)) {
     for (const id of profile.semesters.flat()) assert.ok(ids.has(id), id);
   }
-  assert.match(catalogSource, /type PlanId = "1997" \| "2025" \| "electrica-2023"/);
+  assert.match(catalogSource, /export type PlanId = string/);
   assert.match(pageSource, /course-activity/);
 });

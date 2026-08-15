@@ -12,4 +12,9 @@ test("keeps the header and academic selector fluid at tablet widths", () => {
   assert.match(tabletMedia, /\.hero-row \{ display: block;/);
   assert.match(tabletMedia, /\.selector-row \{ display: grid; grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
   assert.match(tabletMedia, /\.selector-row \.career-selector select \{ width: 100%; min-width: 0; \}/);
+  assert.match(tabletMedia, /\.selector-row \.campus-selector select \{ width: 100%; min-width: 0; \}/);
+  assert.match(tabletMedia, /\.toolbar \{ flex-wrap: wrap; \}/);
+  assert.match(tabletMedia, /\.search-box \{ flex: 1 1 270px; min-width: 0; \}/);
+  assert.match(tabletMedia, /\.rules-coverage \{ flex: 1 1 auto; white-space: normal; \}/);
+  assert.match(tabletMedia, /\.curriculum-navigation \{ margin-left: auto; \}/);
 });
