@@ -526,3 +526,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - La sede se persiste separada de la trayectoria, se valida al hidratar preferencias antiguas o inválidas, se restablece al cambiar de plan y no duplica carrera ni progreso. El flujo fue verificado en escritorio, tablet y móvil, en temas claros y oscuros.
 - Artefactos reproducibles: `node scripts/build-extracted-academic-plans.mjs`; manifiesto `data/bedelias/inventory/ui-extracted-plans.json`; catálogo y cargas diferidas bajo `app/data/`.
 - Siguiente paso: continuar la auditoría oficial desde Notariado 2016 y reemplazar progresivamente las proyecciones pendientes por normalizaciones auditadas, sin habilitar publicación automática.
+
+### Notariado 2016 — oferta regional auditada 2026-08-15
+
+- El Plan 2016 de Facultad de Derecho, aprobado por Facultad el 18/06/2015 y 26/05/2016 y por el CDC el 19/07/2016, confirma el título `Escribano Público`, cinco años, 450 créditos y el certificado intermedio común de Procurador con 160 créditos.
+- La grilla vigente de 27/12/2024 fija mínimos actuales de 61 créditos socio-jurídicos/teórico-metodológicos, 83 de Derecho público, 94 de Derecho privado, 42 de Derecho social específico, 135 de práctica profesional y 35 optativos/electivos. Se preservan por separado los mínimos del texto original del plan (56, 104, 90, 40, 112 y 48) para no mezclar versiones normativas.
+- Facultad de Derecho, el catálogo central y la CSE describen un único Plan 2016 implantado en Montevideo y CENUR Litoral Norte desde 2017. Los cuatro primeros semestres son comunes con Abogacía y desde el quinto comienza el ciclo orientado a Notariado; esto no define una trayectoria territorial.
+- Los snapshots de FDER y CENURLN conservan el mismo núcleo de 87 unidades. Las 52 materias que aparecen sólo en Salto están íntegramente bajo ramas optativas/electivas; no faltan materias canónicas ni cambian créditos compartidos. La cobertura de previaturas regional es menor (39 frente a 436), como diferencia de publicación.
+- Decisión: una identidad canónica con ofertas en Montevideo y Salto, sin malla ni trayectoria regional separada. Las materias adicionales permanecen en el catálogo flexible y la auditoría no habilita publicación.
+- Registro de auditoría: hash `sha256:a382590b01eaf3537417b94645f5398918fe4561046f0ea1c1a3bfabdd74fed4`. Cola actualizada: 173 identidades pendientes y cinco diferencias regionales prioritarias.
+- Siguiente paso: auditar Licenciatura en Enfermería 2016 entre FENF, CUR, CURE y CENURLN.

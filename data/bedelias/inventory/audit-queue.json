@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T04:09:15.294Z",
+  "generatedAt": "2026-08-15T05:02:37.283Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:faaf27ea6a74861282fea299296d3a1b843271c575f3fc1df0d928f20e70a682"
+    "officialAuditRegistryHash": "sha256:a382590b01eaf3537417b94645f5398918fe4561046f0ea1c1a3bfabdd74fed4"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 3,
-    "pendingCanonicalIdentities": 174,
+    "evidenceClosedCanonicalIdentities": 4,
+    "pendingCanonicalIdentities": 173,
     "byPriority": {
-      "regional-content-difference": 6,
+      "regional-content-difference": 5,
       "insufficient-regional-content": 21,
       "composition-unavailable": 38,
       "official-sources-pending": 109
@@ -42,313 +42,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-15",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "notariado:2016",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-15",
+      "conclusion": "one-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "notariado:2016",
-      "career": {
-        "name": "NOTARIADO",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2016",
-        "name": "NOTARIADO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FDER",
-        "serviceName": "FACULTAD DE DERECHO",
-        "planKey": "FDER:notariado:2016",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FDER",
-          "serviceName": "FACULTAD DE DERECHO",
-          "planKey": "FDER:notariado:2016",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "regional-content-difference",
-      "action": "Contrastar plan y resoluciones oficiales; separar núcleo curricular de oferta ampliada por sede.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FDER",
-          "status": "content-difference-detected",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [
-              {
-                "code": "133",
-                "credits": 8,
-                "name": "poder estado y sistema politico"
-              },
-              {
-                "code": "135",
-                "credits": 6,
-                "name": "sociedad moderna y desigualdades sociales"
-              },
-              {
-                "code": "176",
-                "credits": 0,
-                "name": "sociologia del uruguay"
-              },
-              {
-                "code": "180a",
-                "credits": 6,
-                "name": "herramientas y habilidades de produccion academica"
-              },
-              {
-                "code": "188",
-                "credits": 0,
-                "name": "extension universitaria"
-              },
-              {
-                "code": "426r",
-                "credits": 0,
-                "name": "gestion financ del estado cred p90"
-              },
-              {
-                "code": "443op",
-                "credits": 6,
-                "name": "economia agropecuaria cred p90"
-              },
-              {
-                "code": "51 7n",
-                "credits": 8,
-                "name": "teoria del derecho"
-              },
-              {
-                "code": "52 8n",
-                "credits": 12,
-                "name": "situaciones juridicas subjetivas"
-              },
-              {
-                "code": "5300",
-                "credits": 6,
-                "name": "semiotica"
-              },
-              {
-                "code": "620",
-                "credits": 10,
-                "name": "psicologia y salud"
-              },
-              {
-                "code": "626",
-                "credits": 5,
-                "name": "problematicas contemporaneas de la psicologia social"
-              },
-              {
-                "code": "641",
-                "credits": 5,
-                "name": "psicologia y educacion"
-              },
-              {
-                "code": "645b",
-                "credits": 6,
-                "name": "derecho del turismo 4"
-              },
-              {
-                "code": "646b",
-                "credits": 6,
-                "name": "derecho departamental y local 4"
-              },
-              {
-                "code": "a42",
-                "credits": 6,
-                "name": "diseno organizacional"
-              },
-              {
-                "code": "a62",
-                "credits": 0,
-                "name": "gestion de la innovacion y la tecnologia"
-              },
-              {
-                "code": "a65",
-                "credits": 3,
-                "name": "introduccion al emprendedurismo"
-              },
-              {
-                "code": "a66",
-                "credits": 5,
-                "name": "gestion de proyectos"
-              },
-              {
-                "code": "c116",
-                "credits": 0,
-                "name": "epistemologia de la educacion"
-              },
-              {
-                "code": "c126",
-                "credits": 0,
-                "name": "perspectivas pedagogicas contemp"
-              },
-              {
-                "code": "c157",
-                "credits": 0,
-                "name": "psicosociologia de las instituciones"
-              },
-              {
-                "code": "c160",
-                "credits": 0,
-                "name": "seminario reflexion sobre la produccion de conocimiento en el campo educativo"
-              },
-              {
-                "code": "c164",
-                "credits": 0,
-                "name": "sem ii pedagogia politica y sociedad"
-              },
-              {
-                "code": "c45",
-                "credits": 6,
-                "name": "politicas educativas"
-              },
-              {
-                "code": "c51",
-                "credits": 6,
-                "name": "sistema politico nacional i"
-              },
-              {
-                "code": "c58",
-                "credits": 6,
-                "name": "sistema politico nacional ii"
-              },
-              {
-                "code": "c61",
-                "credits": 6,
-                "name": "estado y politicas publicas ii"
-              },
-              {
-                "code": "c86",
-                "credits": 4,
-                "name": "estado y politicas publicas iv intro a la evaluacion de politicas publicas"
-              },
-              {
-                "code": "c88",
-                "credits": 6,
-                "name": "sistema politico nacional iii la politica uruguaya mas alla de los partidos"
-              },
-              {
-                "code": "c90",
-                "credits": 4,
-                "name": "estado y politicas publicas iv analisis de politicas publicas"
-              },
-              {
-                "code": "d27",
-                "credits": 4,
-                "name": "la dimension ambiental del desarrollo"
-              },
-              {
-                "code": "d86",
-                "credits": 6,
-                "name": "teoria de las instituciones"
-              },
-              {
-                "code": "d87",
-                "credits": 6,
-                "name": "teoria de juegos"
-              },
-              {
-                "code": "d94",
-                "credits": 6,
-                "name": "desarrollo economico territorial"
-              },
-              {
-                "code": "h12",
-                "credits": 0,
-                "name": "historia americana ii"
-              },
-              {
-                "code": "h9ex",
-                "credits": 0,
-                "name": "historia americana i"
-              },
-              {
-                "code": "s100",
-                "credits": 8,
-                "name": "cooperativismo y economia solidaria 4 salto"
-              },
-              {
-                "code": "s101",
-                "credits": 8,
-                "name": "cooperativismo y economia solidaria 5 salto"
-              },
-              {
-                "code": "s44",
-                "credits": 0,
-                "name": "historia economica del uruguay"
-              },
-              {
-                "code": "s45",
-                "credits": 6,
-                "name": "desigualdad y pobreza"
-              },
-              {
-                "code": "s46",
-                "credits": 0,
-                "name": "sociologia contemporanea"
-              },
-              {
-                "code": "s85a",
-                "credits": 6,
-                "name": "epistemologia"
-              },
-              {
-                "code": "semio",
-                "credits": 6,
-                "name": "semiotica"
-              },
-              {
-                "code": "t36",
-                "credits": 5,
-                "name": "la produccion y la reproduccion contemporanea"
-              },
-              {
-                "code": "t37",
-                "credits": 5,
-                "name": "poblaciones migrantes la realidad uruguaya desde una persp multidisciplinaria"
-              },
-              {
-                "code": "t42",
-                "credits": 6,
-                "name": "laboratorio"
-              },
-              {
-                "code": "t51",
-                "credits": 6,
-                "name": "trabajo social iii"
-              },
-              {
-                "code": "t53",
-                "credits": 6,
-                "name": "antropologia cultural"
-              },
-              {
-                "code": "t54",
-                "credits": 6,
-                "name": "seminario investigacion cualitativa en ciencias sociales"
-              },
-              {
-                "code": "t55",
-                "credits": 6,
-                "name": "etica filosofica"
-              },
-              {
-                "code": "ter",
-                "credits": 4,
-                "name": "terminologia ecom"
-              }
-            ],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -397
-          }
-        }
-      ]
-    },
     {
       "identity": "licenciatura en enfermeria:2016",
       "career": {
@@ -13189,5 +12891,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:496e9a7bd7414ea75ce72ebfe430155d3fea363e35c5f89d289bea1dd256f697"
+  "contentHash": "sha256:63925f6269d56a80770b5fd539c436c4d75659f7a53ff3004a8576d5b50e5dd4"
 }

@@ -414,7 +414,135 @@
         }
       ],
       "remainingWork": "La auditoría resuelve la falsa diferencia regional y los requisitos normativos. La proyección curada de unidades, previaturas y oferta flexible para la UI sigue pendiente y no habilita publicación."
+    },
+    {
+      "identity": "notariado:2016",
+      "career": "NOTARIADO",
+      "planYear": "2016",
+      "reviewedAt": "2026-08-15",
+      "status": "official-evidence-complete",
+      "scope": "plan-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad de Derecho, 18/06/2015 y 26/05/2016",
+          "Consejo Directivo Central, 19/07/2016"
+        ],
+        "title": "Escribano Público",
+        "durationMonths": 60,
+        "minimumCredits": 450,
+        "currentMinimumCreditsByArea": {
+          "Formación socio-jurídica, teórico-jurídica y metodológica": 61,
+          "Derecho público": 83,
+          "Derecho privado": 94,
+          "Derecho de carácter social específico": 42,
+          "Práctica profesional": 135,
+          "Optativas o electivas": 35
+        },
+        "originalMinimumCreditsByArea": {
+          "Formación socio-jurídica, teórico-jurídica y metodológica": 56,
+          "Derecho público": 104,
+          "Derecho privado": 90,
+          "Derecho de carácter social específico": 40,
+          "Práctica profesional": 112,
+          "Optativas o electivas": 48
+        },
+        "intermediateTitle": {
+          "title": "Procurador",
+          "minimumCredits": 160
+        },
+        "trajectoryRule": "El Plan 2016 admite variaciones dentro de Notariado mediante optativas y electivas. Los cuatro primeros semestres forman un ciclo común con Abogacía; desde el quinto comienza el ciclo orientado a Notariado."
+      },
+      "offerings": [
+        {
+          "serviceCode": "FDER",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2016"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Sede Salto"
+          ],
+          "role": "oferta regional completa del mismo Plan 2016"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fder-notariado-2016.json",
+        "regionalSnapshot": "data/bedelias/cenurln-notariado-2016.json",
+        "canonicalCourses": 474,
+        "regionalCourses": 528,
+        "mandatoryCoreCoursesCanonical": 87,
+        "mandatoryCoreCoursesRegional": 87,
+        "mandatoryCoreOnlyCanonical": 0,
+        "mandatoryCoreOnlyRegional": 0,
+        "onlyCanonical": 0,
+        "onlyRegional": 52,
+        "regionalOnlyCoursesUnderFlexibleBranches": 52,
+        "changedCredits": 0,
+        "canonicalPrerequisiteEntries": 436,
+        "regionalPrerequisiteEntries": 39
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales describen un único Plan 2016, vigente en Montevideo y CENUR Litoral Norte. Los dos snapshots conservan exactamente el mismo núcleo de 87 unidades; las 52 materias exclusivas de la publicación regional están dentro de ramas optativas o electivas y no constituyen otra trayectoria ni otro título.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Notariado Plan 2016.",
+          "Modelar Montevideo y Salto como ofertas/sedes del mismo plan, sin crear una trayectoria territorial.",
+          "Usar la grilla vigente de 27/12/2024 para los seis mínimos actuales por área y conservar separados los mínimos del texto original del Plan 2016.",
+          "Mantener las 52 materias adicionales de Salto dentro del catálogo flexible; no proyectarlas como obligatorias.",
+          "Tratar la menor cobertura regional de previaturas como una diferencia de publicación.",
+          "Conservar Procurador como título intermedio común de 160 créditos."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fder.edu.uy/node/431",
+          "authority": "Facultad de Derecho, Udelar",
+          "supports": [
+            "aprobación institucional del Plan 2016",
+            "título Escribano Público, cinco años y 450 créditos",
+            "ciclo común, orientación notarial, flexibilidad y mínimos originales"
+          ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+          "authority": "Facultad de Derecho, Udelar",
+          "supports": [
+            "grilla vigente de 27/12/2024",
+            "núcleo por semestre y 90 créditos anuales",
+            "mínimos vigentes 61, 83, 94, 42, 135 y 35 créditos"
+          ]
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/proyecto-financiado/evaluacion-de-la-implementacion-y-propuesta-de-ajustes-a-los-planes-de-estudio-de-abogacia-y-notariado-2016/",
+          "authority": "Comisión Sectorial de Enseñanza, Udelar",
+          "supports": [
+            "implantación del Plan 2016 en Montevideo y CENUR Litoral Norte desde 2017",
+            "ciclo común y concentración posterior de optativas y electivas"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/notariado",
+          "authority": "Catálogo central de carreras, Udelar",
+          "supports": [
+            "una única carrera de 450 créditos y 60 meses",
+            "oferta en Facultad de Derecho y Sede Salto"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/cenur-litoral-norte-sede-salto/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": [
+            "oferta de Escribano Público en Salto"
+          ]
+        }
+      ],
+      "remainingWork": "La auditoría resuelve la falsa diferencia regional y los requisitos normativos vigentes. La selección curada de unidades, previaturas y catálogo flexible para la UI sigue pendiente y no habilita publicación."
     }
   ],
-  "contentHash": "sha256:faaf27ea6a74861282fea299296d3a1b843271c575f3fc1df0d928f20e70a682"
+  "contentHash": "sha256:a382590b01eaf3537417b94645f5398918fe4561046f0ea1c1a3bfabdd74fed4"
 }
