@@ -474,3 +474,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Recolección central completa: ningún servicio no regional conserva planes `discovered`. FQ quedó con 10 planes `structurally-valid`, uno `extracted` y Química Farmacéutica `audited`.
 - Manifiesto global sin red: 182 planes `structurally-valid`, 56 `extracted`, 7 `audited` y 5 `discovered`; hash `sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153`. Los cinco `discovered` son ofertas regionales duplicadas de tres identidades ya representadas, no carreras centrales faltantes.
 - Siguiente paso: generar una cola reproducible de auditoría oficial que priorice las 16 diferencias curriculares regionales, los 26 pares con composición insuficiente y luego los planes canónicos restantes.
+
+### Cola canónica de auditoría oficial — preparada 2026-08-15
+
+- Se generó sin red `data/bedelias/inventory/audit-queue.json` mediante `node scripts/bedelias-audit-queue.mjs`, combinando el inventario global y los diagnósticos regionales sin duplicar una carrera por servicio o sede.
+- El universo canónico contiene 184 identidades: 7 ya auditadas y 177 pendientes. La cola prioriza 9 identidades con diferencias regionales de contenido, luego 21 con información regional insuficiente, 38 cuya composición no está publicada en Bedelías y 109 pendientes ordinarias de fuentes oficiales.
+- Las 9 y 21 identidades prioritarias representan respectivamente las 16 comparaciones `content-difference-detected` y los 26 pares `insufficient-content`; varias ofertas o servicios pueden corresponder a una misma identidad canónica.
+- Cuatro planes compartidos entre servicios centrales se conservan como una identidad con todas sus ofertas de origen: Biotecnología 2024, Ciencias de la Atmósfera 2007, Ingeniería de Alimentos 2003 e Ingeniería Química 2021.
+- Las diferencias extraídas no se interpretan todavía como variantes curriculares: la auditoría debe separar núcleo obligatorio, electivas disponibles y particularidades de sede usando planes, resoluciones y páginas oficiales.
+- La cola se reconstruye de forma determinista conservando `generatedAt`; hash `sha256:bb14ece325a3cf5ff7292b9f093a56ef59ea11f9be7e6df053b081650d002aea`.
+- Siguiente paso: auditar por fuentes oficiales el primer bloque de 9 identidades con diferencias regionales y registrar evidencia antes de normalizar o integrar nuevas carreras.
