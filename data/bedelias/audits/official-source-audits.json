@@ -10783,7 +10783,175 @@
         { "field": "composition", "resolution": "La crónica institucional enumera algunas asignaturas, pero no una malla completa normalizable. Al estar cerrado el plan, no se infieren créditos, previaturas ni equivalencias." }
       ],
       "remainingWork": "Caso cerrado para la UI vigente. Mantener sólo la evidencia histórica y corregir la derivación de vigencia para evitar que metadata.current=false vuelva a elevarse como plan actual."
+    },
+    {
+      "identity": "tecnologo en gestion universitaria:2018",
+      "career": "TECNÓLOGO EN GESTIÓN UNIVERSITARIA",
+      "planYear": "2018",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-curriculum-credit-minima-flexibility-final-practice-title-duration-and-campus",
+      "publicationEligible": false,
+      "uiNotice": "La carrera exige 225 créditos en cinco semestres. La UI usa la grilla oficial actualizada en julio de 2026, exige los mínimos de sus seis áreas y 35 créditos de libre elección, y presenta Pasantía (20 créditos) o Proyecto de Gestión (10 créditos) como alternativas. Las previaturas se consultan en cada ficha o en Autogestión porque FCEA no publica una tabla consolidada vigente.",
+      "officialPlan": {
+        "facultyCode": "FCEA",
+        "facultyName": "FACULTAD DE CIENCIAS ECONÓMICAS Y DE ADMINISTRACIÓN",
+        "planYear": "2018",
+        "approval": [
+          "Plan aprobado identificado por FCEA como antecedente normativo de la carrera",
+          "Grilla vigente modificada por resoluciones posteriores y actualizada en julio de 2026"
+        ],
+        "title": "Tecnólogo en Gestión Universitaria",
+        "durationMonths": 30,
+        "minimumCredits": 225,
+        "curriculum": {
+          "sourceUrl": "https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/243-tecnico-en-gestion-universitaria.html",
+          "pathwayLabel": "Malla vigente",
+          "pathwayDescription": "Distribución oficial de cinco semestres actualizada por FCEA en julio de 2026. Las unidades de libre elección se muestran en un catálogo flexible y no como materias obligatorias acumulativas.",
+          "prerequisitesSourceUrl": "https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/243-tecnico-en-gestion-universitaria.html",
+          "creditRequirements": [
+            { "id": "tgu-csh", "name": "Ciencias Sociales y Humanísticas", "shortName": "CSH", "minCredits": 40 },
+            { "id": "tgu-administracion", "name": "Administración", "shortName": "Administración", "minCredits": 90 },
+            { "id": "tgu-juridica", "name": "Jurídica", "shortName": "Jurídica", "minCredits": 20 },
+            { "id": "tgu-contable", "name": "Contable", "shortName": "Contable", "minCredits": 10 },
+            { "id": "tgu-integradora", "name": "Integradora", "shortName": "Integradora", "minCredits": 20 },
+            { "id": "tgu-metodos", "name": "Métodos Cuantitativos", "shortName": "Métodos", "minCredits": 10 },
+            { "id": "tgu-libre", "name": "Libre elección", "shortName": "Libre", "minCredits": 35 }
+          ],
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courses": [
+                { "id": "s511", "name": "Taller: Metodología del Aprendizaje", "credits": 10, "requirementId": "tgu-csh" },
+                { "id": "s513", "name": "Historia, Evolución y Organización de las Instituciones Universitarias", "credits": 5, "requirementId": "tgu-csh" },
+                { "id": "j514", "name": "Normativa Universitaria", "credits": 10, "requirementId": "tgu-juridica" },
+                { "id": "c10", "name": "Conceptos Contables", "credits": 10, "requirementId": "tgu-contable" },
+                { "id": "a510n", "name": "Administración y Gestión de las Organizaciones de Enseñanza", "credits": 10, "requirementId": "tgu-administracion" }
+              ]
+            },
+            {
+              "label": "Semestre 2",
+              "courses": [
+                { "id": "s521", "name": "Taller: Comunicación en la Gestión Universitaria", "credits": 10, "requirementId": "tgu-csh" },
+                { "id": "a532", "name": "Informática Aplicada", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "j60op", "name": "Derecho Público", "credits": 10, "requirementId": "tgu-juridica" },
+                { "id": "552", "name": "Ética en la Función Pública", "credits": 5, "requirementId": "tgu-csh" }
+              ]
+            },
+            {
+              "label": "Semestre 3",
+              "courses": [
+                { "id": "s542n", "name": "Organización y Trabajo", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "a30", "name": "Procesos y Sistemas de Información", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "s543n", "name": "Salud Ocupacional", "credits": 10, "requirementId": "tgu-csh" }
+              ]
+            },
+            {
+              "label": "Semestre 4",
+              "courses": [
+                { "id": "a83n", "name": "Cambio Organizacional", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "a42", "name": "Diseño Organizacional", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "a40", "name": "Administración de Recursos Humanos", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "i546", "name": "Taller: Diseño de Proyectos para la Gestión Universitaria", "credits": 10, "requirementId": "tgu-integradora" }
+              ]
+            },
+            {
+              "label": "Semestre 5",
+              "courses": [
+                { "id": "mc53", "name": "Taller de Métodos Cuantitativos", "credits": 10, "requirementId": "tgu-metodos" },
+                { "id": "a550", "name": "Evaluación Institucional", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "a70", "name": "Comportamiento Organizacional", "credits": 10, "requirementId": "tgu-administracion" },
+                { "id": "upc-pasantia", "name": "Pasantía · alternativa de UPC", "credits": 20, "requirementId": "tgu-integradora" },
+                { "id": "i547", "name": "Proyecto de Gestión · alternativa de UPC", "credits": 10, "requirementId": "tgu-integradora" }
+              ]
+            },
+            {
+              "label": "Catálogo de libre elección 2026",
+              "catalog": true,
+              "courses": [
+                { "id": "o1103", "name": "Identidad e Imagen Organizacional", "credits": 9, "requirementId": "tgu-libre" },
+                { "id": "5060", "name": "Enfoque de las TIC", "credits": 8, "requirementId": "tgu-libre" },
+                { "id": "o1361", "name": "Introducción a la Comunicación Organizacional", "credits": 9, "requirementId": "tgu-libre" },
+                { "id": "o1101", "name": "Introducción a la Comunicación Publicitaria", "credits": 9, "requirementId": "tgu-libre" },
+                { "id": "mc54", "name": "Taller: Introducción a la Informática Social y Visualización de Datos", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "i549", "name": "Taller de Competencias Digitales para la Gestión Académica e Institucional", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "o1231", "name": "Asuntos Públicos", "credits": 7, "requirementId": "tgu-libre" },
+                { "id": "i137", "name": "Curso-taller de Introducción a la Extensión Universitaria", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "i138", "name": "Iniciación a la Docencia Universitaria", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "asa14", "name": "Transformación Digital de las Organizaciones", "credits": 8, "requirementId": "tgu-libre" },
+                { "id": "asa5", "name": "Política, Ambiente y Sociedad: Debates Contemporáneos", "credits": 8, "requirementId": "tgu-libre" },
+                { "id": "s544", "name": "Capacitación, Gestión del Conocimiento e Innovación", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "i55", "name": "Tutorías entre Pares FCEA", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "i40", "name": "Taller de Iniciación a la Investigación", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "a20", "name": "Administración y Gestión de las Organizaciones II", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "s46", "name": "Sociología Contemporánea", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "s60", "name": "Administración de las Relaciones de Trabajo", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "s90", "name": "Sociología Económica", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "s22", "name": "Desarrollo y Bienestar", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "i87", "name": "Prospectiva Estratégica: con la Mirada en el Futuro", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "a84", "name": "Economía y Gestión de Organizaciones de Salud", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "uada3", "name": "Unidad de Actividades de Difusión Académica", "credits": 5, "requirementId": "tgu-libre" },
+                { "id": "a50", "name": "Análisis Institucional y Planificación en el Sector Público", "credits": 10, "requirementId": "tgu-libre" },
+                { "id": "i56a", "name": "Liderazgo para la Innovación Social", "credits": 10, "requirementId": "tgu-libre" }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "tgu-nucleo-obligatorio",
+              "label": "Diecinueve unidades obligatorias de la grilla vigente",
+              "minCompleted": 19,
+              "courseIds": ["s511", "s513", "j514", "c10", "a510n", "s521", "a532", "j60op", "552", "s542n", "a30", "s543n", "a83n", "a42", "a40", "i546", "mc53", "a550", "a70"]
+            },
+            {
+              "id": "tgu-upc",
+              "label": "Una Unidad de Práctica Curricular: Pasantía o Proyecto de Gestión",
+              "minCompleted": 1,
+              "courseIds": ["upc-pasantia", "i547"]
+            }
+          ],
+          "prerequisites": []
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FCEA", "locations": ["Montevideo"], "role": "carrera completa; el apoyo EVA no constituye otra sede", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcea-tecnologo-en-gestion-universitaria-2018.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, título, 225 créditos y 30 meses, pero no la composición. FCEA publica la grilla vigente completa, los mínimos actualizados, las alternativas de UPC y el catálogo de libre elección."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-plan-one-campus-five-semesters",
+        "regionalCurriculumVariant": false,
+        "reason": "Existe un único título y una única sede presencial. La libre elección y las dos alternativas de práctica son flexibilidad del mismo Plan 2018, no trayectorias certificadas ni ofertas territoriales distintas.",
+        "normalization": [
+          "Mostrar una carrera bajo FCEA, un Plan 2018 y la sede Montevideo.",
+          "Exigir 225 créditos y los mínimos vigentes 40/90/20/10/20/10 de las seis áreas, más 35 de libre elección.",
+          "Exigir las diecinueve unidades obligatorias y una UPC, permitiendo elegir Pasantía de 20 créditos o Proyecto de Gestión de 10.",
+          "Mostrar las unidades de libre elección publicadas en 2026 como catálogo flexible, sin convertirlas todas en obligatorias ni duplicar sus créditos en las áreas.",
+          "No inventar previaturas: desde 2020 FCEA las publica por ficha y en Autogestión, sin una tabla consolidada vigente."
+        ]
+      },
+      "sources": [
+        { "url": "https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/243-tecnico-en-gestion-universitaria.html", "authority": "Facultad de Ciencias Económicas y de Administración", "supports": ["vigencia 2026", "título", "cinco semestres", "225 créditos", "Montevideo", "grilla actualizada julio 2026", "mínimos por área", "35 créditos libres", "alternativas de UPC"] },
+        { "url": "https://www.fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Tecn%C3%B3logo_TGU/TGU_-_Plan_de_Estudios_2017.pdf", "authority": "Facultad de Ciencias Económicas y de Administración", "supports": ["plan aprobado", "título", "cinco semestres", "225 créditos", "áreas formativas", "flexibilidad optativa y electiva"] },
+        { "url": "https://udelar.edu.uy/carrera/tecnologo-en-gestion-universitaria", "authority": "Universidad de la República", "supports": ["vigencia", "FCEA", "30 meses", "225 créditos", "Montevideo"] },
+        { "url": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html", "authority": "Facultad de Ciencias Económicas y de Administración", "supports": ["identidad Plan 2018", "modificaciones posteriores de grilla", "incorporación y reválida de UPC", "equivalencias"] },
+        { "url": "https://escueladegobierno.udelar.edu.uy/wp-content/uploads/2025/02/TGU.pdf", "authority": "Escuela de Gobierno, Universidad de la República", "supports": ["vigencia", "dos años y medio", "cinco semestres", "perfil interdisciplinario"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "El PDF aprobado imprime año 2015 y su ruta institucional contiene 2017, mientras Bedelías y las resoluciones vigentes identifican la carrera como Plan 2018. La UI conserva 2018 para coincidir con la inscripción y la grilla actual." },
+        { "field": "creditMinimums", "resolution": "El plan aprobado asignaba 30 créditos a CSH y 45 a libre elección. La grilla vigente de julio de 2026 publica 40 CSH y 35 libres, manteniendo 225 totales; la UI usa los mínimos actuales." },
+        { "field": "freeChoiceCounting", "resolution": "FCEA muestra cada libre elección en un área disciplinar y exige además 35 créditos libres. Como el núcleo obligatorio ya satisface los mínimos de las seis áreas, la UI asigna cada alternativa sólo al bloque libre para evitar contar dos veces los mismos créditos." },
+        { "field": "upc", "resolution": "La grilla ofrece Pasantía de 20 créditos o Proyecto de Gestión de 10 como alternativas de la UPC. La UI exige aprobar una de las dos y acepta que la pasantía produzca un total superior al mínimo de 225." },
+        { "field": "currentOffer", "resolution": "Taller de Cargos y Remuneraciones y Transformación Cultural figuran como opciones reconocidas pero expresamente no se dictan en 2026; no se incluyen en el catálogo activo." },
+        { "field": "prerequisites", "resolution": "FCEA remite las previaturas vigentes a cada ficha de curso o a Autogestión desde septiembre de 2020. Sin una tabla pública consolidada, la UI no infiere correlatividades desde el orden semestral." },
+        { "field": "campus", "resolution": "La página oficial publica Montevideo y EVA. EVA es el entorno virtual de apoyo, no una sede o trayectoria independiente." }
+      ],
+      "remainingWork": "La malla, los mínimos, el catálogo flexible y la alternativa de práctica quedan operativos. Actualizar la oferta libre cuando FCEA cambie la grilla y automatizar previaturas sólo a partir de una fuente consolidada vigente o una exportación oficial de Autogestión."
     }
   ],
-  "contentHash": "sha256:380a63dd6593dbb5d133720b6e3448911250d473fdd734a47eafdecbba18d0c6"
+  "contentHash": "sha256:39a443d47dc111f58b916ad37f4aa84e12e510b30037480fb5220f82760c38aa"
 }

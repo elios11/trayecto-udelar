@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:39b71b040e922b2a6b45755dfc2cf8dbc55543aa90a211987ea857a6e41cf947",
-    "officialAuditHash": "sha256:380a63dd6593dbb5d133720b6e3448911250d473fdd734a47eafdecbba18d0c6",
+    "auditQueueHash": "sha256:08e38daf59d930e2fdfa496cf908dec808bd67cfa20dd945d4e45ef94214cb97",
+    "officialAuditHash": "sha256:39a443d47dc111f58b916ad37f4aa84e12e510b30037480fb5220f82760c38aa",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 173,
-    "compositionAvailable": 119,
-    "compositionUnavailable": 54,
+    "compositionAvailable": 120,
+    "compositionUnavailable": 53,
     "plansWithOfficialCampuses": 29,
     "excludedFromCurrentUi": 4
   },
@@ -628,9 +628,11 @@
       "planId": "bedelias-fcea-tecnologo-en-gestion-universitaria-2018",
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-tecnologo-en-gestion-universitaria-2018.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "licenciatura en ciencia politica:2009",
@@ -1692,5 +1694,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:196f858d849fee24495eef1e520482fd7d1c5ed313da4a9075ef0b59da05704e"
+  "contentHash": "sha256:100dea5f22ae08b19a8d87e41627293c85fd52d241bdeb7fff637557e548ec84"
 }

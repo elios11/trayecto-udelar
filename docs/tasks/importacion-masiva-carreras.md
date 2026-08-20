@@ -938,3 +938,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Se excluye de la UI vigente sin reconstruir una malla incompleta. Registro de auditoría `sha256:380a63dd6593dbb5d133720b6e3448911250d473fdd734a47eafdecbba18d0c6`; cola `sha256:39b71b040e922b2a6b45755dfc2cf8dbc55543aa90a211987ea857a6e41cf947`.
 - La UI queda en 173 proyecciones: 119 con composición, 54 sin composición y cuatro identidades históricas excluidas; hash `sha256:196f858d849fee24495eef1e520482fd7d1c5ed313da4a9075ef0b59da05704e`.
 - Siguiente paso: auditar Tecnólogo en Gestión Universitaria Plan 2018.
+
+### Tecnólogo en Gestión Universitaria Plan 2018 — malla vigente, libre elección y UPC auditadas 2026-08-20
+
+- FCEA mantiene un único título `Tecnólogo en Gestión Universitaria`, dos años y medio, cinco semestres y 225 créditos en Montevideo. EVA es el entorno virtual de apoyo y no una segunda sede o trayectoria.
+- La UI incorpora la grilla oficial actualizada en julio de 2026: diecinueve unidades obligatorias, Pasantía de 20 créditos o Proyecto de Gestión de 10 como alternativas de la Unidad de Práctica Curricular y veinticuatro opciones activas de libre elección.
+- El egreso exige 40 créditos de Ciencias Sociales y Humanísticas, 90 de Administración, 20 Jurídicos, 10 Contables, 20 de Integradora, 10 de Métodos Cuantitativos y 35 de libre elección. Los mínimos suman exactamente 225.
+- El plan aprobado publicaba 30 créditos de CSH y 45 libres. La grilla vigente redistribuye esos diez créditos a 40/35 sin cambiar el total; la UI prioriza el requisito actualizado.
+- Las libres elecciones aparecen también clasificadas por área en la grilla. Como el núcleo obligatorio ya satisface los mínimos de área, la proyección las asigna al bloque libre para impedir que un mismo crédito se cuente dos veces.
+- Las opciones `Taller de Cargos y Remuneraciones` y `Transformación Cultural` figuran reconocidas pero sin dictado en 2026, por lo que no integran el catálogo activo.
+- Desde septiembre de 2020 FCEA remite las previaturas a cada ficha de curso o a Autogestión. Sin una tabla pública consolidada vigente, no se inventan correlatividades a partir del orden semestral.
+- Registro de auditoría: hash `sha256:39a443d47dc111f58b916ad37f4aa84e12e510b30037480fb5220f82760c38aa`. Cola actualizada: 134 identidades pendientes, 25 sin composición; hash `sha256:08e38daf59d930e2fdfa496cf908dec808bd67cfa20dd945d4e45ef94214cb97`.
+- La UI conserva 173 proyecciones: 120 con composición, 53 sin composición y cuatro identidades históricas excluidas; hash `sha256:100dea5f22ae08b19a8d87e41627293c85fd52d241bdeb7fff637557e548ec84`.
+- Siguiente paso: auditar Licenciatura en Oceanografía Biológica Plan 1978.
