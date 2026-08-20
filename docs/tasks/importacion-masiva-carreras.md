@@ -646,3 +646,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:d002cd1607ca1a7cbf830985589bec01afbd21f56edca7e6ceeff724f30828a8`. Cola actualizada: 163 identidades pendientes, 16 de prioridad `insufficient-regional-content`; hash `sha256:92bbad88feba2209ed4720c89370b2ee7619792b0c4ee5d8d46e22a6cac38a22`.
 - Manifiesto UI: 175 proyecciones, 94 con composición, 81 sin composición y doce con sedes oficiales; hash `sha256:8d1b01f67ed0165f5e0e0bf21e15860924d559cf8cda9d8ba8c169b474adab48`.
 - Siguiente paso: auditar Bibliotecología Plan 2012, que comparte el marco normativo y la oferta Montevideo/Paysandú, pero requiere convertir su propia malla oficial sin reutilizar materias específicas de Archivología.
+
+### Bibliotecología Plan 2012 — malla oficial y sedes normalizadas 2026-08-20
+
+- El Plan 2012 aprobado por el CDC el 21/08/2012 define el título Licenciado/a en Bibliotecología, cuatro años, ocho semestres y 360 créditos en los ciclos Inicial, Intermedio y de Graduación.
+- La malla vigente de FIC aporta 44 unidades o alternativas distribuidas en ocho semestres. Se normalizaron por separado de Archivología, con sus módulos propios de Fuentes, colecciones y servicios, Descripción y recuperación, Políticas y gestión, Investigación, Documentación digital, Disciplinas complementarias, Actividades integradoras y Alfabetización académica.
+- El egreso requiere 79 créditos opcionales: al menos 30 optativos, 5 electivos, 5 de investigación y 5 de extensión. La oferta optativa anual de 2026 queda como catálogo renovable y no se incorpora al núcleo obligatorio.
+- Se conservaron cuatro elecciones explícitas, dos prácticas preprofesionales por 18 créditos y el Trabajo Final de Grado de 30. No se inventaron previaturas porque las fuentes oficiales consultadas no las publican.
+- Montevideo y Paysandú son sedes del mismo Plan 2012, sin título, mínimos ni trayectoria territorial distinta. Los dos snapshots de Bedelías permanecen vacíos y la UI atribuye correctamente la composición a la malla oficial de FIC.
+- Registro de auditoría: hash `sha256:c6b90a70a0ec7876cbd31a8fce6d21c08e9c246a95e5c9cd62230f16564d9d07`. Cola actualizada: 162 identidades pendientes, 15 de prioridad `insufficient-regional-content`; hash `sha256:22040b72eba1eef79bad9692bf360ebb77161862faa016ecf48fc15e1ba53e8e`.
+- Manifiesto UI: 175 proyecciones, 95 con composición, 80 sin composición y trece con sedes oficiales; hash `sha256:c971ce926a825ec322e86f46a9fa7991d97d042831ce3f25b52993f49a3e0f15`.
+- Siguiente paso: auditar Licenciatura en Ingeniería Biológica Plan 2013, próxima identidad `insufficient-regional-content`, y distinguir el plan canónico de sus ofertas FING/CENURLN.

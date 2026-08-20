@@ -2241,7 +2241,212 @@
         { "field": "regionalAdmissions", "resolution": "La apertura en Paysandú ha sido intermitente por cohortes. Esto afecta la disponibilidad de ingreso, no la identidad curricular del plan." }
       ],
       "remainingWork": "La identidad, malla, mínimos y sedes quedan normalizados. Las previaturas y la disponibilidad de ingreso por cohorte deben actualizarse cuando FIC o CENUR publiquen resoluciones específicas; esa ausencia no bloquea la malla oficial actual."
+    },
+    {
+      "identity": "bibliotecologia:2012",
+      "career": "BIBLIOTECOLOGÍA",
+      "planYear": "2012",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-plan-official-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Licenciado/a en Bibliotecología",
+        "approval": "Consejo Directivo Central, 21/08/2012",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "cycles": ["Inicial", "Intermedio", "De Graduación"],
+        "requiredPracticesCredits": 18,
+        "finalDegreeWorkCredits": 30,
+        "curriculum": {
+          "version": "Malla curricular vigente en 2026",
+          "sourceUrl": "https://mallas-curriculares.fic.edu.uy/index.php/licenciatura-en-bibliotecologia/",
+          "creditRequirements": [
+            { "id": "bib-ftc", "name": "Fundamentos teórico-conceptuales y contexto", "shortName": "Fundamentos", "minCredits": 33 },
+            { "id": "bib-fcs", "name": "Fuentes, colecciones y servicios de información", "shortName": "Fuentes y servicios", "minCredits": 35 },
+            { "id": "bib-dar", "name": "Descripción, análisis y recuperación de la información", "shortName": "Descripción", "minCredits": 49 },
+            { "id": "bib-ppg", "name": "Políticas públicas, planificación y gestión", "shortName": "Políticas y gestión", "minCredits": 30 },
+            { "id": "bib-ici", "name": "Investigación en la ciencia de la información", "shortName": "Investigación", "minCredits": 24 },
+            { "id": "bib-dda", "name": "Documentación digital y aplicación de las TIC", "shortName": "Documentación digital", "minCredits": 34 },
+            { "id": "bib-dic", "name": "Disciplinas complementarias", "shortName": "Complementarias", "minCredits": 20 },
+            { "id": "bib-ain", "name": "Actividades integradoras", "shortName": "Integradoras", "minCredits": 48 },
+            { "id": "bib-ala", "name": "Alfabetización académica", "shortName": "Alfabetización", "minCredits": 8 },
+            { "id": "bib-opc", "name": "Unidades y actividades opcionales", "shortName": "Opcionales", "minCredits": 79 },
+            { "id": "bib-optativas", "parentId": "bib-opc", "name": "Unidades curriculares optativas", "shortName": "Optativas", "kind": "category", "minCredits": 30 },
+            { "id": "bib-electivas", "parentId": "bib-opc", "name": "Unidades curriculares electivas", "shortName": "Electivas", "kind": "category", "minCredits": 5 },
+            { "id": "bib-investigacion", "parentId": "bib-opc", "name": "Actividades de investigación", "shortName": "Investigación opcional", "kind": "activity", "minCredits": 5 },
+            { "id": "bib-extension", "parentId": "bib-opc", "name": "Actividades de extensión", "shortName": "Extensión", "kind": "activity", "minCredits": 5 },
+            { "id": "bib-opc-restantes", "parentId": "bib-opc", "name": "Otros créditos opcionales hasta completar el total", "shortName": "Opcionales restantes", "kind": "category", "minCredits": 34, "credentialRequired": false }
+          ],
+          "periods": [
+            {
+              "label": "1.er semestre",
+              "courses": [
+                { "id": "historia-ideas", "name": "Historia de las Ideas", "credits": 8, "requirementId": "bib-dic" },
+                { "id": "introduccion-bibliotecologia", "name": "Introducción a la Bibliotecología y Ciencia de la Información", "credits": 8, "requirementId": "bib-ftc" },
+                { "id": "introduccion-epistemologia", "name": "Introducción a la Epistemología", "credits": 8, "requirementId": "bib-ftc" },
+                { "id": "historia-documentos", "name": "Historia de los Documentos", "credits": 8, "requirementId": "bib-ftc" },
+                { "id": "curso-introductorio", "name": "Curso Introductorio", "credits": 2, "requirementId": "bib-ala" },
+                { "id": "introduccion-universidad", "name": "Introducción a la Universidad", "credits": 4, "requirementId": "bib-ala" },
+                { "id": "taller-produccion-academica", "name": "Taller de Producción Académica Estudiantil", "credits": 4, "requirementId": "bib-ala" },
+                { "id": "comprension-espanol", "name": "Comprensión Lectora y Escritura en Español", "credits": 2, "requirementId": "bib-ala" }
+              ]
+            },
+            {
+              "label": "2.º semestre",
+              "courses": [
+                { "id": "metodologia-investigacion", "name": "Metodología de la Investigación en Información y Comunicación", "credits": 8, "requirementId": "bib-ftc" },
+                { "id": "taller-biblioteca-comunidad", "name": "Taller la Biblioteca y la Comunidad", "credits": 3, "requirementId": "bib-ftc" },
+                { "id": "fundamentos-ia", "name": "Fundamentos de Inteligencia Artificial", "credits": 6, "requirementId": "bib-dda" },
+                { "id": "proceso-cultural-uruguay", "name": "Proceso Cultural del Uruguay", "credits": 8, "requirementId": "bib-dic" },
+                { "id": "metodologia-trabajo-bibliografico", "name": "Metodología del Trabajo Bibliográfico", "credits": 8, "requirementId": "bib-fcs" },
+                { "id": "referencia-servicios-usuario", "name": "Referencia y Servicios al Usuario", "credits": 8, "requirementId": "bib-fcs" }
+              ]
+            },
+            {
+              "label": "3.er semestre",
+              "courses": [
+                { "id": "estadistica-basica", "name": "Estadística Básica", "credits": 8, "requirementId": "bib-ici" },
+                { "id": "organizacion-conocimiento-1", "name": "Organización del Conocimiento I", "credits": 8, "requirementId": "bib-dar" },
+                { "id": "descripcion-acceso-1", "name": "Descripción y Acceso I", "credits": 12, "requirementId": "bib-dar" },
+                { "id": "comprension-ingles", "name": "Comprensión Lectora en Inglés", "credits": 6, "requirementId": "bib-dic" },
+                { "id": "diseno-asistido-software", "name": "Diseño Asistido de Software", "credits": 6, "requirementId": "bib-dda" }
+              ]
+            },
+            {
+              "label": "4.º semestre",
+              "courses": [
+                { "id": "diseno-analisis", "name": "Diseño y Análisis", "credits": 8, "requirementId": "bib-ici" },
+                { "id": "taller-integrador-analisis", "name": "Taller Integrador de Análisis de la Información", "credits": 3, "requirementId": "bib-dar" },
+                { "id": "fuentes-informacion-especializada", "name": "Fuentes de Información Especializada", "credits": 8, "requirementId": "bib-fcs" },
+                { "id": "administracion-ui-1", "name": "Administración en Unidades de Información I", "credits": 9, "requirementId": "bib-ppg" }
+              ]
+            },
+            {
+              "label": "5.º semestre",
+              "courses": [
+                { "id": "descripcion-acceso-2", "name": "Descripción y Acceso II", "credits": 8, "requirementId": "bib-dar" },
+                { "id": "organizacion-conocimiento-2", "name": "Organización del Conocimiento II", "credits": 8, "requirementId": "bib-dar" },
+                { "id": "fuentes-sociales-humanidades", "name": "Taller de Fuentes de Información en Ciencias Sociales y Humanidades", "credits": 3, "requirementId": "bib-fcs" },
+                { "id": "fuentes-ciencia-tecnologia", "name": "Taller de Fuentes de Información en Ciencia y Tecnología", "credits": 3, "requirementId": "bib-fcs" },
+                { "id": "historia-ciencia", "name": "Historia de la Ciencia", "credits": 8, "requirementId": "bib-dic" },
+                { "id": "bibliotecas-escolares", "name": "Taller de Bibliotecas Escolares", "credits": 4, "requirementId": "bib-ppg" }
+              ]
+            },
+            {
+              "label": "6.º semestre",
+              "courses": [
+                { "id": "elaboracion-tesauros", "name": "Taller de Elaboración de Tesauros", "credits": 4, "requirementId": "bib-dar" },
+                { "id": "recuperacion-electronica", "name": "Taller de Recuperación Electrónica", "credits": 4, "requirementId": "bib-dar" },
+                { "id": "formacion-desarrollo-colecciones", "name": "Formación y Desarrollo de Colecciones", "credits": 8, "requirementId": "bib-fcs" },
+                { "id": "bases-datos", "name": "Bases de Datos", "credits": 8, "requirementId": "bib-dda" },
+                { "id": "estudios-usuarios", "name": "Estudios de Usuarios de Información", "credits": 8, "requirementId": "bib-ici" },
+                { "id": "administracion-ui-2", "name": "Administración en Unidades de Información II", "credits": 9, "requirementId": "bib-ppg" },
+                { "id": "practica-preprofesional-1", "name": "Práctica Preprofesional I", "credits": 9, "requirementId": "bib-ain" }
+              ]
+            },
+            {
+              "label": "7.º semestre",
+              "courses": [
+                { "id": "documentacion-audiovisual", "name": "Documentación Audiovisual", "credits": 8, "requirementId": "bib-dar" },
+                { "id": "practica-preprofesional-2", "name": "Práctica Preprofesional II", "credits": 9, "requirementId": "bib-ain" },
+                { "id": "colecciones-digitales", "name": "Colecciones Digitales", "credits": 6, "requirementId": "bib-dda" },
+                { "id": "preservacion-digital", "name": "Introducción a la Preservación Digital", "credits": 6, "requirementId": "bib-dda" },
+                { "id": "planeamiento-informacion", "name": "Planeamiento en el Área de la Información", "credits": 9, "requirementId": "bib-ppg" },
+                { "id": "bibliotecas-universitarias", "name": "Taller de Bibliotecas Universitarias y Especializadas", "credits": 4, "requirementId": "bib-ppg" }
+              ]
+            },
+            {
+              "label": "8.º semestre",
+              "courses": [
+                { "id": "redes-sistemas", "name": "Redes y Sistemas", "credits": 8, "requirementId": "bib-dda" },
+                { "id": "trabajo-final-grado", "name": "Trabajo Final de Grado", "credits": 30, "requirementId": "bib-ain" }
+              ]
+            },
+            {
+              "label": "Créditos opcionales",
+              "courses": [
+                { "id": "bloque-optativas", "name": "Unidades curriculares optativas · mínimo", "credits": 30, "requirementId": "bib-optativas", "curricularBlock": true },
+                { "id": "bloque-electivas", "name": "Unidades curriculares electivas · mínimo", "credits": 5, "requirementId": "bib-electivas", "curricularBlock": true },
+                { "id": "bloque-investigacion", "name": "Actividades de investigación · mínimo", "credits": 5, "requirementId": "bib-investigacion", "curricularBlock": true },
+                { "id": "bloque-extension", "name": "Actividades de extensión · mínimo", "credits": 5, "requirementId": "bib-extension", "curricularBlock": true },
+                { "id": "bloque-opcionales-restantes", "name": "Otros créditos opcionales hasta completar 79", "credits": 34, "requirementId": "bib-opc-restantes", "curricularBlock": true }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "bib-eleccion-cultural", "label": "Historia de las Ideas o Proceso Cultural del Uruguay", "minCompleted": 1, "courseIds": ["historia-ideas", "proceso-cultural-uruguay"] },
+            { "id": "bib-eleccion-fuentes", "label": "Un taller de fuentes de información", "minCompleted": 1, "courseIds": ["fuentes-sociales-humanidades", "fuentes-ciencia-tecnologia"] },
+            { "id": "bib-eleccion-digital", "label": "Colecciones Digitales o Introducción a la Preservación Digital", "minCompleted": 1, "courseIds": ["colecciones-digitales", "preservacion-digital"] },
+            { "id": "bib-eleccion-bibliotecas", "label": "Taller de Bibliotecas Escolares o Universitarias y Especializadas", "minCompleted": 1, "courseIds": ["bibliotecas-escolares", "bibliotecas-universitarias"] },
+            { "id": "bib-practicas", "label": "Dos prácticas preprofesionales", "minCompleted": 2, "courseIds": ["practica-preprofesional-1", "practica-preprofesional-2"] },
+            { "id": "bib-tfg", "label": "Trabajo Final de Grado", "minCompleted": 1, "courseIds": ["trabajo-final-grado"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FIC", "locations": ["Montevideo"], "role": "servicio responsable y sede central del Plan 2012", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "oferta regional del mismo Plan 2012", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fic-bibliotecologia-2012.json",
+        "regionalSnapshot": "data/bedelias/cenurln-bibliotecologia-2012.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los dos snapshots publican la misma identidad, duración, créditos y título, pero omiten composición. La malla vigente de FIC permite recuperar las unidades y mínimos; las fuentes institucionales describen Paysandú como segunda sede del mismo Plan 2012."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "El Plan 2012 es común a la carrera en Montevideo y Paysandú. Las fuentes institucionales lo describen como un único plan vigente en ambas sedes; no existe orientación, título ni mínimo territorial diferente.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Bibliotecología Plan 2012.",
+          "Modelar Montevideo y Paysandú como sedes del mismo plan, sin duplicar carrera, progreso ni trayectoria.",
+          "Usar la malla curricular publicada por FIC para las unidades, créditos y períodos; no atribuirla a Bedelías.",
+          "Normalizar los mínimos de los ocho módulos, alfabetización académica y 79 créditos opcionales.",
+          "Exigir dentro de los opcionales al menos 30 créditos optativos, 5 electivos, 5 de investigación y 5 de extensión.",
+          "Conservar las dos prácticas preprofesionales, el Trabajo Final de Grado de 30 créditos y las cuatro elecciones explícitas de la malla.",
+          "No inventar previaturas ni convertir la oferta optativa 2026 en núcleo obligatorio."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://mallas-curriculares.fic.edu.uy/index.php/licenciatura-en-bibliotecologia/",
+          "authority": "Facultad de Información y Comunicación, Udelar",
+          "supports": ["malla curricular vigente", "unidades, créditos y períodos", "requisitos de egreso y oferta optativa 2026"]
+        },
+        {
+          "url": "https://fic.edu.uy/ensenanza/grado/lic-en-bibliotecologia",
+          "authority": "Facultad de Información y Comunicación, Udelar",
+          "supports": ["vigencia del Plan 2012", "360 créditos y ocho semestres", "tres ciclos, ocho módulos y requisitos de egreso"]
+        },
+        {
+          "url": "https://impo.com.uy/diariooficial/2013/03/15/avisos.pdf",
+          "authority": "Diario Oficial, Plan de Estudios aprobado por el Consejo Directivo Central",
+          "supports": ["aprobación del 21 de agosto de 2012", "título y duración", "mínimos por módulo", "implementación financiada en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/proyecto-financiado/seguimiento-y-evaluacion-de-la-implementacion-del-plan-de-estudio-2012-de-las-licenciaturas-en-archivologia-y-bibliotecologia/",
+          "authority": "Comisión Sectorial de Enseñanza, Udelar",
+          "supports": ["un único Plan 2012 vigente", "oferta en las sedes Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["Licenciatura en Bibliotecología en Paysandú"]
+        }
+      ],
+      "anomalies": [
+        { "field": "bedeliasComposition", "resolution": "FIC y CENUR Litoral Norte publican cero unidades. La UI usa la malla oficial de FIC y conserva las previaturas como no publicadas." },
+        { "field": "optionalCredits", "resolution": "Los 79 créditos opcionales incluyen mínimos internos y admiten combinaciones flexibles. La UI los representa como bloques ajustables y no incorpora como obligatoria la oferta optativa cambiante de 2026." },
+        { "field": "curriculumCredits", "resolution": "La malla presenta una oferta semestral más amplia que los mínimos del plan. La credencial se calcula por mínimos modulares y total de 360, no exigiendo automáticamente cada unidad listada." },
+        { "field": "regionalAdmissions", "resolution": "La apertura en Paysandú puede variar por cohorte. Esto afecta la disponibilidad de ingreso, no la identidad curricular del plan." }
+      ],
+      "remainingWork": "La identidad, malla, mínimos y sedes quedan normalizados. Las previaturas y la disponibilidad de ingreso por cohorte deben actualizarse cuando FIC o CENUR publiquen resoluciones específicas; esa ausencia no bloquea la malla oficial actual."
     }
   ],
-  "contentHash": "sha256:d002cd1607ca1a7cbf830985589bec01afbd21f56edca7e6ceeff724f30828a8"
+  "contentHash": "sha256:c6b90a70a0ec7876cbd31a8fce6d21c08e9c246a95e5c9cd62230f16564d9d07"
 }

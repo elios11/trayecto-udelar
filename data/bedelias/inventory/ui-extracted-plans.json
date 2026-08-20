@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:92bbad88feba2209ed4720c89370b2ee7619792b0c4ee5d8d46e22a6cac38a22",
-    "officialAuditHash": "sha256:d002cd1607ca1a7cbf830985589bec01afbd21f56edca7e6ceeff724f30828a8",
+    "auditQueueHash": "sha256:22040b72eba1eef79bad9692bf360ebb77161862faa016ecf48fc15e1ba53e8e",
+    "officialAuditHash": "sha256:c6b90a70a0ec7876cbd31a8fce6d21c08e9c246a95e5c9cd62230f16564d9d07",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 94,
-    "compositionUnavailable": 81,
-    "plansWithOfficialCampuses": 12,
+    "compositionAvailable": 95,
+    "compositionUnavailable": 80,
+    "plansWithOfficialCampuses": 13,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -944,9 +944,12 @@
       "planId": "bedelias-fic-bibliotecologia-2012",
       "facultyCode": "FIC",
       "snapshotPath": "data/bedelias/fic-bibliotecologia-2012.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo",
+        "paysandu"
+      ]
     },
     {
       "identity": "licenciatura en ciencias de la comunicacion:2012",
@@ -1634,5 +1637,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:8d1b01f67ed0165f5e0e0bf21e15860924d559cf8cda9d8ba8c169b474adab48"
+  "contentHash": "sha256:c971ce926a825ec322e86f46a9fa7991d97d042831ce3f25b52993f49a3e0f15"
 }
