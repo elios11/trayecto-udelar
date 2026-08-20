@@ -3230,7 +3230,121 @@
         { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
       ],
       "remainingWork": "La identidad, malla y sedes del Plan 2006 quedan normalizadas. La discrepancia de carga horaria debe revisarse si Facultad corrige sus páginas o aprueba un nuevo plan."
+    },
+    {
+      "identity": "tecnicatura en anatomia patologica:2006",
+      "career": "TECNICATURA EN ANATOMÍA PATOLÓGICA",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"],
+        "title": "Técnico en Anatomía Patológica",
+        "durationMonths": 36,
+        "hours": 1196,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/sites/default/files/pag/12-2024/FORMULARIO%20DE%20REVALIDA%20DE%20ANATOMIA%20PATOLOGICA_2024.pdf",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "anatomia", "name": "Anatomía", "credits": 0 },
+                { "id": "biologia-celular-tisular", "name": "Biología celular y tisular", "credits": 0 },
+                { "id": "neurobiologia", "name": "Neurobiología", "credits": 0 },
+                { "id": "cardiovascular-respiratorio", "name": "Cardiovascular y respiratorio", "credits": 0 },
+                { "id": "digestivo-renal-endocrino", "name": "Digestivo renal y endócrino", "credits": 0 },
+                { "id": "reproductor-desarrollo", "name": "Reproductor y desarrollo", "credits": 0 },
+                { "id": "metodologia-cientifica", "name": "Metodología científica", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "salud-publica", "name": "Salud Pública", "credits": 0 },
+                { "id": "curso-1", "name": "Curso I (Introducción al laboratorio de Anatomía Patológica y procesamiento del material anatómico I)", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "deontologia-legislacion", "name": "Deontología y legislación laboral", "credits": 0 },
+                { "id": "administracion-hospitalaria", "name": "Administración hospitalaria", "credits": 0 },
+                { "id": "curso-2", "name": "Curso II (Procesamiento de material anatómico II, inmunohistoquímica y otras técnicas avanzadas)", "credits": 0 },
+                { "id": "rotaciones-practicas", "name": "Rotaciones Prácticas", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "anatomia-patologica-primer-ano", "label": "Primer año", "minCompleted": 7, "courseIds": ["anatomia", "biologia-celular-tisular", "neurobiologia", "cardiovascular-respiratorio", "digestivo-renal-endocrino", "reproductor-desarrollo", "metodologia-cientifica"] },
+            { "id": "anatomia-patologica-segundo-ano", "label": "Segundo año", "minCompleted": 2, "courseIds": ["salud-publica", "curso-1"] },
+            { "id": "anatomia-patologica-tercer-ano", "label": "Tercer año y rotaciones", "minCompleted": 4, "courseIds": ["deontologia-legislacion", "administracion-hospitalaria", "curso-2", "rotaciones-practicas"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FMED", "locations": ["Montevideo"], "role": "servicio responsable y sede completa del Plan 2006", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "sede completa del mismo Plan 2006", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-anatomia-patologica-2006.json",
+        "regionalSnapshot": "data/bedelias/cenurln-tecnicatura-en-anatomia-patologica-2006.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los snapshots no exponen unidades normalizadas. Facultad publica la nómina curricular y confirma Curso I y Curso II para ambas sedes en 2026."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Medicina y CENUR Litoral Norte describen el mismo Plan 2006 y título, con cursado completo en Montevideo y Paysandú.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Tecnicatura en Anatomía Patológica Plan 2006.",
+          "Modelar Montevideo y Paysandú como sedes completas del mismo plan, sin trayectoria territorial.",
+          "Usar las 13 unidades y tres años documentados por Facultad de Medicina como malla oficial.",
+          "Conservar 1196 horas y créditos en cero; no convertir horas a créditos.",
+          "Conservar las Rotaciones Prácticas como requisito del tercer año sin inventar previaturas adicionales."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/pag/12-2024/FORMULARIO%20DE%20REVALIDA%20DE%20ANATOMIA%20PATOLOGICA_2024.pdf",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["nómina de 13 unidades por año", "Curso I, Curso II y Rotaciones Prácticas"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/tecnicatura-en-anatomia-patologica",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["título, tres años y 1196 horas", "ingreso en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/coordinacion-curricular/tecnicatura-en-anatomia-patologica",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["dictado de Curso I y Curso II en ambas sedes durante 2026", "ciclo ESFUNO de seis unidades"]
+        },
+        {
+          "url": "https://litoralnorte.udelar.edu.uy/llamados/306-anatomia-patologica",
+          "authority": "CENUR Litoral Norte, Udelar",
+          "supports": ["carrera completa en Paysandú", "título y duración de tres años"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/cursos/programas/2026/Anatom%C3%ADa%20Patol%C3%B3gica/Programa%20Curso%20II%202026%20%281%29.pdf",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["Curso II vigente en tercer año durante 2026"]
+        }
+      ],
+      "anomalies": [
+        { "field": "duration", "resolution": "Facultad de Medicina y CENUR publican tres años; el catálogo general informa 60 meses. Se prioriza el servicio responsable y se conserva la discrepancia." },
+        { "field": "credits", "resolution": "El Plan 2006 está expresado en 1196 horas y no publica un total de créditos. Las unidades conservan cero créditos explícitos." },
+        { "field": "regionalAdmission", "resolution": "Paysandú permite ingresar por CIO Salud, una vía administrativa equivalente al primer año que no crea otra carrera ni trayectoria curricular." },
+        { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la nómina institucional y no atribuye créditos ni nuevas previaturas a Bedelías." }
+      ],
+      "remainingWork": "La identidad, malla horaria y sedes del Plan 2006 quedan normalizadas. Cualquier plan creditizado futuro requerirá una auditoría nueva antes de reemplazar esta proyección."
     }
   ],
-  "contentHash": "sha256:a96346018d21b93efe8585ae39d3aad4d3d4ce3065a76bc14c22bdf3d55d2ec9"
+  "contentHash": "sha256:038eb0bbb356f5f7d54e5bdd30b1ab331b380903405b63b3df63bc43c5a15703"
 }

@@ -718,3 +718,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:a96346018d21b93efe8585ae39d3aad4d3d4ce3065a76bc14c22bdf3d55d2ec9`. Cola actualizada: 156 identidades pendientes, 9 de prioridad `insufficient-regional-content`; hash `sha256:96d79abc8da0e2e8d28404d7b87eaa34e702412f3980634cde5c01ce3b324345`.
 - Manifiesto UI: 175 proyecciones, 100 con composición, 75 sin composición y diecinueve con sedes oficiales; hash `sha256:07e675c5db3b3a854d5c85c251762721f62ed79056d68c599c553eec6258f07b`.
 - Siguiente paso: auditar Tecnicatura en Anatomía Patológica Plan 2006 entre Facultad de Medicina y Paysandú.
+
+### Tecnicatura en Anatomía Patológica Plan 2006 — malla y sedes auditadas 2026-08-20
+
+- Facultad de Medicina publica el título `Técnico en Anatomía Patológica`, tres años y 1196 horas. El formulario institucional de reválidas enumera 13 unidades: 7 en primer año, 2 en segundo y 4 en tercero, incluidas las Rotaciones Prácticas.
+- La coordinación vigente confirma Curso I y Curso II en Montevideo y Paysandú durante 2026. CENUR Litoral Norte presenta Paysandú como cursado completo del mismo plan; el CIO Salud es una vía de ingreso y no una trayectoria separada.
+- El plan no publica un total de créditos. La UI conserva cero créditos explícitos, atribuye la malla a Facultad y no inventa conversiones ni previaturas más allá de exigir los grupos oficiales por año.
+- El catálogo general informa 60 meses, mientras Facultad y CENUR publican tres años. Se prioriza la duración del servicio responsable y se registra la discrepancia.
+- Registro de auditoría: hash `sha256:038eb0bbb356f5f7d54e5bdd30b1ab331b380903405b63b3df63bc43c5a15703`. Cola actualizada: 155 identidades pendientes, 8 de prioridad `insufficient-regional-content`; hash `sha256:c812095affcc326281ece7b17b226b00191fd5e65b8e0102595243d72d5887c7`.
+- Manifiesto UI: 175 proyecciones, 101 con composición, 74 sin composición y veinte con sedes oficiales; hash `sha256:78611fad7368f8c355bce69ad525e68c2106c3862344d4c51ca792c8835d6190`.
+- Siguiente paso: auditar Tecnicatura en Hemoterapia Plan 2006 entre Facultad de Medicina y Paysandú.

@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:96d79abc8da0e2e8d28404d7b87eaa34e702412f3980634cde5c01ce3b324345",
-    "officialAuditHash": "sha256:a96346018d21b93efe8585ae39d3aad4d3d4ce3065a76bc14c22bdf3d55d2ec9",
+    "auditQueueHash": "sha256:c812095affcc326281ece7b17b226b00191fd5e65b8e0102595243d72d5887c7",
+    "officialAuditHash": "sha256:038eb0bbb356f5f7d54e5bdd30b1ab331b380903405b63b3df63bc43c5a15703",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 100,
-    "compositionUnavailable": 75,
-    "plansWithOfficialCampuses": 19,
+    "compositionAvailable": 101,
+    "compositionUnavailable": 74,
+    "plansWithOfficialCampuses": 20,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1276,9 +1276,12 @@
       "planId": "bedelias-fmed-tecnicatura-en-anatomia-patologica-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-anatomia-patologica-2006.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo",
+        "paysandu"
+      ]
     },
     {
       "identity": "tecnicatura en archivo medico:2006",
@@ -1657,5 +1660,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:07e675c5db3b3a854d5c85c251762721f62ed79056d68c599c553eec6258f07b"
+  "contentHash": "sha256:78611fad7368f8c355bce69ad525e68c2106c3862344d4c51ca792c8835d6190"
 }

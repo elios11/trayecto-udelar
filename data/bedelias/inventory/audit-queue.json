@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T06:58:49.103Z",
+  "generatedAt": "2026-08-20T07:04:25.079Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:a96346018d21b93efe8585ae39d3aad4d3d4ce3065a76bc14c22bdf3d55d2ec9"
+    "officialAuditRegistryHash": "sha256:038eb0bbb356f5f7d54e5bdd30b1ab331b380903405b63b3df63bc43c5a15703"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 21,
-    "pendingCanonicalIdentities": 156,
+    "evidenceClosedCanonicalIdentities": 22,
+    "pendingCanonicalIdentities": 155,
     "byPriority": {
-      "insufficient-regional-content": 9,
+      "insufficient-regional-content": 8,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -149,46 +149,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "tecnicatura en anatomia patologica:2006",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnicatura en anatomia patologica:2006",
-      "career": {
-        "name": "TECNICATURA EN ANATOMÍA PATOLÓGICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2006",
-        "name": "TECNICATURA EN ANATOMIA PATOLOGICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FMED",
-        "serviceName": "FACULTAD DE MEDICINA",
-        "planKey": "FMED:tecnicatura en anatomia patologica:2006",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FMED",
-          "serviceName": "FACULTAD DE MEDICINA",
-          "planKey": "FMED:tecnicatura en anatomia patologica:2006",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FMED",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
     {
       "identity": "tecnicatura en hemoterapia:2006",
       "career": {
@@ -5011,5 +4980,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:96d79abc8da0e2e8d28404d7b87eaa34e702412f3980634cde5c01ce3b324345"
+  "contentHash": "sha256:c812095affcc326281ece7b17b226b00191fd5e65b8e0102595243d72d5887c7"
 }
