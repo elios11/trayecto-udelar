@@ -10677,7 +10677,59 @@
         { "field": "professionalPracticeCredits", "resolution": "La descripción general agrupa 90 créditos como práctica profesional; la malla vigente los desagrega en 45 de Práctica Profesional y 45 de Trabajo Final de Grado. La UI usa esa desagregación actual." }
       ],
       "remainingWork": "La malla, los mínimos, la flexibilidad, las previaturas representables y el alcance territorial quedan operativos. Mantener actualizado el catálogo de optativas por separado y ampliar el estado académico sólo si se necesita representar intentos de evaluación o condiciones de defensa distintas del inicio del TFG."
+    },
+    {
+      "identity": "licenciatura en vitivinicultura:2006",
+      "career": "LICENCIATURA EN VITIVINICULTURA",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-offering-admission-and-active-enrollment",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Licenciado en Vitivinicultura",
+        "historicalMinimumCredits": 150,
+        "historicalAdmissionAudience": "Egresados de la Escuela de Vitivinicultura de UTU con título de Enólogo",
+        "lastOfficialAdmissionLocated": 2010,
+        "academicServices": ["Facultad de Agronomía", "Facultad de Química"]
+      },
+      "offerings": [
+        { "serviceCode": "FAGRO", "locations": ["Montevideo"], "role": "registro histórico compartido sin ingreso vigente", "admissionStatus": "historical-not-current" },
+        { "serviceCode": "FQ", "locations": ["Montevideo"], "role": "registro histórico compartido sin ingreso vigente", "admissionStatus": "historical-not-current" }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fagro-licenciatura-en-vitivinicultura-2006.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías marca como actual un Plan 2006 de 150 créditos, 60 meses y composición no publicada. La admisión oficial localizada corresponde a 2010; las ofertas 2026 de Química y Agronomía no incluyen la carrera y el registro institucional de estudiantes activos 2025 tampoco la enumera."
+      },
+      "conclusion": {
+        "canonicalModel": "legacy-shared-complementary-degree-without-current-admission",
+        "regionalCurriculumVariant": false,
+        "excludeFromCurrentUi": true,
+        "reason": "Fue una licenciatura complementaria compartida para Enólogos de UTU, con admisión documentada en 2010. Ninguno de sus dos servicios académicos la ofrece para ingreso 2026 y no figura en la población activa 2025; la bandera vigente de Bedelías no alcanza para presentarla como una opción actual.",
+        "normalization": [
+          "No presentar Licenciatura en Vitivinicultura Plan 2006 en el selector de carreras vigentes.",
+          "Conservar el snapshot, los 150 créditos históricos y la condición de ingreso para trazabilidad.",
+          "No sustituirla por la orientación Fruti-Vitivicultura de Ingeniería Agronómica ni por cursos o posgrados actuales de viticultura.",
+          "Reincorporarla únicamente si Agronomía o Química publican una reapertura oficial con plan, admisión y malla vigentes."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.fq.edu.uy/es/node/60", "authority": "Facultad de Química", "supports": ["carreras de grado con ingreso 2026", "ausencia de Licenciatura en Vitivinicultura"] },
+        { "url": "https://portal.fagro.edu.uy/ensenanza/carreras-agrarias/", "authority": "Facultad de Agronomía", "supports": ["oferta vigente de carreras agrarias", "Fruti-Vitivicultura como opción y no como Licenciatura Plan 2006"] },
+        { "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf", "authority": "Dirección General de Planeamiento, Udelar", "supports": ["estudiantes activos 2025 por carrera", "ausencia de Licenciatura en Vitivinicultura"] },
+        { "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/10/Ingresos-totales-a-Servicios-Estudiantes-de-grado-2000-2024.pdf", "authority": "Dirección General de Planeamiento, Udelar", "supports": ["dos ingresos en 2010", "ausencia de ingresos entre 2011 y 2024"] },
+        { "url": "https://udelar.edu.uy/noticias/vitivinicultura-licenciatura", "authority": "Universidad de la República", "supports": ["admisión histórica 2010", "destinatarios Enólogos de UTU", "cursado administrado por Facultad de Química"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf", "authority": "Comisión Sectorial de Enseñanza, Udelar", "supports": ["registro histórico Plan 2006", "título Licenciado en Vitivinicultura", "servicio Química"] }
+      ],
+      "anomalies": [
+        { "field": "bedeliasCurrent", "resolution": "La bandera `current: true` contradice la oferta de ingreso 2026 de ambos servicios y la ausencia de población activa 2025. Se conserva como anomalía técnica y no habilita la publicación actual." },
+        { "field": "careerName", "resolution": "Fuentes históricas alternan Licenciatura en Vitivinicultura, Vitivinicultura y Enología, y Licenciatura en Viticultura y Enología. La auditoría conserva la identidad exacta de Bedelías sin confundirla con la opción Fruti-Vitivicultura de Agronomía." },
+        { "field": "composition", "resolution": "No se localizó una malla oficial vigente y el snapshot no publica composición. Como no existe admisión actual, no se reconstruyen materias desde cursos sueltos ni planes sucesores." }
+      ],
+      "remainingWork": "Caso cerrado para la UI vigente. Sólo requiere una nueva auditoría si alguno de los servicios responsables publica formalmente su reapertura."
     }
   ],
-  "contentHash": "sha256:3b8744e5f48e13ad1bb2b7112f3f185bc42f9449ebe6322ada44a6eb09123fb6"
+  "contentHash": "sha256:27dfb30060066e199d81e8444f08353cae611e1341511abf021bf1823d196ee6"
 }

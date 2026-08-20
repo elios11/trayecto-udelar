@@ -192,12 +192,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
-  "bedelias-fagro-licenciatura-en-vitivinicultura-2006": {
-    load: () => import("./bedelias-generated/bedelias-fagro-licenciatura-en-vitivinicultura-2006.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 150,
-  },
   "bedelias-fagro-tecnico-rural-1956": {
     load: () => import("./bedelias-generated/bedelias-fagro-tecnico-rural-1956.json"),
     pathwayIds: ["bedelias"],

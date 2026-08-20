@@ -920,3 +920,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:3b8744e5f48e13ad1bb2b7112f3f185bc42f9449ebe6322ada44a6eb09123fb6`. Cola actualizada: 137 identidades pendientes, 28 sin composición; hash `sha256:e8ea913bd94da75d35e00f84ca4ee2498c3d42409ce2d41dd0a1d98d585d645c`.
 - Manifiesto UI: 175 proyecciones, 119 con composición y 56 sin composición; hash `sha256:4e7a5eb619ae65511a3369e958fcb9eced71ed17657b543927cb460540e588de`.
 - Siguiente paso: auditar Licenciatura en Vitivinicultura Plan 2006, próxima identidad sin composición de la cola reproducible.
+
+### Licenciatura en Vitivinicultura Plan 2006 — falso vigente cerrado 2026-08-20
+
+- Bedelías mantiene `current: true` para un Plan 2006 de 150 créditos y sin composición, pero la carrera no integra la oferta de ingreso 2026 de Facultad de Química ni las carreras vigentes de Facultad de Agronomía.
+- La admisión oficial localizada corresponde a 2010 y estaba dirigida exclusivamente a Enólogos egresados de UTU. Las estadísticas de Planeamiento registran dos ingresos en 2010, ninguno entre 2011 y 2024, y no enumeran la carrera entre estudiantes activos 2025.
+- Se normaliza como licenciatura complementaria histórica compartida por Agronomía y Química. La UI actual deja de ofrecerla y conserva su snapshot y evidencia para una eventual reapertura.
+- No se confunde con la opción Fruti-Vitivicultura de Ingeniería Agronómica ni con cursos y posgrados actuales de viticultura o enología; tampoco se reconstruye una malla desde asignaturas sueltas.
+- Registro de auditoría: hash `sha256:27dfb30060066e199d81e8444f08353cae611e1341511abf021bf1823d196ee6`. Cola actualizada: 136 identidades pendientes, 27 sin composición; hash `sha256:09d1212fd13432524307ab271e215e0b3ec3e890cc3bcad7dab3cae15f2871b5`.
+- Manifiesto UI: 174 proyecciones vigentes, 119 con composición, 55 sin composición y tres identidades históricas excluidas; hash `sha256:604bbbebde697602bc53b3809b9d585a55d45f6c1f53fe3cc0fefb5d4b082033`.
+- Siguiente paso: auditar Técnico Rural Plan 1956, próxima identidad sin composición de la cola reproducible.

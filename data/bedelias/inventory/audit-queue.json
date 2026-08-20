@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T16:00:37.667Z",
+  "generatedAt": "2026-08-20T16:07:47.468Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:3b8744e5f48e13ad1bb2b7112f3f185bc42f9449ebe6322ada44a6eb09123fb6"
+    "officialAuditRegistryHash": "sha256:27dfb30060066e199d81e8444f08353cae611e1341511abf021bf1823d196ee6"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 40,
-    "pendingCanonicalIdentities": 137,
+    "evidenceClosedCanonicalIdentities": 41,
+    "pendingCanonicalIdentities": 136,
     "byPriority": {
-      "composition-unavailable": 28,
+      "composition-unavailable": 27,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -262,38 +262,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-flexible-four-cycle-plan-one-full-campus-one-partial-final-cycle-campus"
+    },
+    {
+      "identity": "licenciatura en vitivinicultura:2006",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "legacy-shared-complementary-degree-without-current-admission"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en vitivinicultura:2006",
-      "career": {
-        "name": "LICENCIATURA EN VITIVINICULTURA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2006",
-        "name": "LICENCIATURA EN VITIVINICULTURA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FAGRO",
-        "serviceName": "FACULTAD DE AGRONOMÍA",
-        "planKey": "FAGRO:licenciatura en vitivinicultura:2006",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FAGRO",
-          "serviceName": "FACULTAD DE AGRONOMÍA",
-          "planKey": "FAGRO:licenciatura en vitivinicultura:2006",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnico rural:1956",
       "career": {
@@ -4471,5 +4448,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:e8ea913bd94da75d35e00f84ca4ee2498c3d42409ce2d41dd0a1d98d585d645c"
+  "contentHash": "sha256:09d1212fd13432524307ab271e215e0b3ec3e890cc3bcad7dab3cae15f2871b5"
 }
