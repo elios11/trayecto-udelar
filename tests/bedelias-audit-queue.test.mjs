@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 24);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 153);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 26);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 151);
   assert.deepEqual(saved.counts.byPriority, {
-    "insufficient-regional-content": 6,
+    "insufficient-regional-content": 4,
     "composition-unavailable": 38,
     "official-sources-pending": 109,
   });
@@ -51,6 +51,8 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.completedAudits[21].identity, "tecnicatura en anatomia patologica:2006");
   assert.equal(saved.completedAudits[22].identity, "tecnicatura en hemoterapia:2006");
   assert.equal(saved.completedAudits[23].identity, "tecnicatura en podologia:2006");
+  assert.equal(saved.completedAudits[24].identity, "tecnicatura en radioterapia:2006");
+  assert.equal(saved.completedAudits[25].identity, "tecnicatura en salud ocupacional:2006");
   assert.equal(saved.source.officialAuditRegistryHash, auditRegistry.contentHash);
   assert.equal(officialAuditRegistryHash(auditRegistry), auditRegistry.contentHash);
 });
@@ -67,5 +69,5 @@ test("la cola guardada se reconstruye sin red con el mismo hash", () => {
   assert.deepEqual(rebuilt.counts, saved.counts);
   assert.ok(rebuilt.queue.every((entry) => entry.canonicalSource.state !== "audited"));
   assert.equal(rebuilt.queue[0].priority, "insufficient-regional-content");
-  assert.equal(rebuilt.queue[0].identity, "tecnicatura en radioterapia:2006");
+  assert.equal(rebuilt.queue[0].identity, "tecnologo quimico:2025");
 });

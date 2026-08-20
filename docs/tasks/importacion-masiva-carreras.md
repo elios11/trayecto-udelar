@@ -748,3 +748,19 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:57b8068a0a97887e45046853c9aab19b87e21792eebcc0cf1d7e26da78856a2d`. Cola actualizada: 153 identidades pendientes, 6 de prioridad `insufficient-regional-content`; hash `sha256:4415aea4dd85dee5e8337e88cb733738f3d47fb219b6f5ac2d26861d26660760`.
 - Manifiesto UI: 175 proyecciones, 103 con composición, 72 sin composición y veintidós planes con sedes oficiales; hash `sha256:ea5707681642d86190bdc3d3c616df427f79b886b3aa1db0aab21c9932908f7b`.
 - Siguiente paso: auditar Tecnicatura en Radioterapia Plan 2006 entre Facultad de Medicina y Paysandú.
+
+### Tecnicatura en Radioterapia Plan 2006 — título, malla y oferta vigente auditados 2026-08-20
+
+- Facultad de Medicina mantiene la identidad `Tecnicatura en Radioterapia`, pero publica el título oficial `Tecnólogo en Radioterapia`, tres años y 3025 horas. La malla contiene 21 unidades: 11 en primer año, 9 en segundo y el Curso Práctico de Radioterapia en tercero.
+- La suma de las tablas anuales da 3040 horas, quince más que el total explícito de la ficha. La UI prioriza las 3025 horas del servicio, conserva la anomalía y no convierte horas en créditos.
+- La ficha vigente sólo publica ingreso en Montevideo. El snapshot CENURLN se conserva como antecedente, pero Radioterapia no figura en el catálogo territorial actual de Paysandú y por eso no se muestra como sede vigente.
+- Registro de auditoría intermedio: hash `sha256:ea0a3b3ac3a9119fdb8970792f593d2606fed273876b616405d9af9dda050ab7`. La malla queda incorporada sin inventar créditos ni previaturas.
+
+### Tecnicatura en Salud Ocupacional Plan 2006 — malla y sedes auditadas 2026-08-20
+
+- Facultad de Medicina publica el título `Tecnólogo en Salud Ocupacional`, tres años, 3069 horas y 20 unidades: 11 en primer año, 3 en segundo y 6 en tercero. Las cargas anuales suman exactamente el total vigente.
+- Montevideo y Paysandú ofrecen el mismo Plan 2006 y perfil profesional, sin evidencia de una trayectoria territorial diferente. El CIO Salud de Paysandú es una vía de ingreso y no otra carrera.
+- La UI conserva las 20 unidades y la Monografía con cero créditos explícitos, porque el plan está expresado en horas, y no inventa conversiones ni previaturas.
+- Registro de auditoría: hash `sha256:a2be2379537045ba31c1ed4ead1c0b90272f5f09bdb5910edafc9233173a71f5`. Cola actualizada: 151 identidades pendientes, 4 de prioridad `insufficient-regional-content`; hash `sha256:4eaeece2109a0cad95516d51447c753dbbcdb76ef5199d013bd1c71e90f1b8a7`.
+- Manifiesto UI: 175 proyecciones, 105 con composición, 70 sin composición y veintitrés planes con sedes oficiales; hash `sha256:ef5e02bddc9190f856ec4a5442fc7967a7f848064bbacd715cadc6d90cf7675f`.
+- Siguiente paso: auditar Tecnólogo Químico Plan 2025 y resolver su identidad compartida entre Facultad de Química y Paysandú.

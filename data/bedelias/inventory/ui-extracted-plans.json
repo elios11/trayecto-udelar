@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:4415aea4dd85dee5e8337e88cb733738f3d47fb219b6f5ac2d26861d26660760",
-    "officialAuditHash": "sha256:57b8068a0a97887e45046853c9aab19b87e21792eebcc0cf1d7e26da78856a2d",
+    "auditQueueHash": "sha256:4eaeece2109a0cad95516d51447c753dbbcdb76ef5199d013bd1c71e90f1b8a7",
+    "officialAuditHash": "sha256:a2be2379537045ba31c1ed4ead1c0b90272f5f09bdb5910edafc9233173a71f5",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 103,
-    "compositionUnavailable": 72,
-    "plansWithOfficialCampuses": 22,
+    "compositionAvailable": 105,
+    "compositionUnavailable": 70,
+    "plansWithOfficialCampuses": 23,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1411,9 +1411,11 @@
       "planId": "bedelias-fmed-tecnicatura-en-radioterapia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-radioterapia-2006.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "tecnicatura en reeducacion psicomotriz:1901",
@@ -1438,9 +1440,12 @@
       "planId": "bedelias-fmed-tecnicatura-en-salud-ocupacional-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-salud-ocupacional-2006.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo",
+        "paysandu"
+      ]
     },
     {
       "identity": "tecnologo en cosmetologia medica:2006",
@@ -1666,5 +1671,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:ea5707681642d86190bdc3d3c616df427f79b886b3aa1db0aab21c9932908f7b"
+  "contentHash": "sha256:ef5e02bddc9190f856ec4a5442fc7967a7f848064bbacd715cadc6d90cf7675f"
 }

@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T07:17:28.746Z",
+  "generatedAt": "2026-08-20T11:28:09.585Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:57b8068a0a97887e45046853c9aab19b87e21792eebcc0cf1d7e26da78856a2d"
+    "officialAuditRegistryHash": "sha256:a2be2379537045ba31c1ed4ead1c0b90272f5f09bdb5910edafc9233173a71f5"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 24,
-    "pendingCanonicalIdentities": 153,
+    "evidenceClosedCanonicalIdentities": 26,
+    "pendingCanonicalIdentities": 151,
     "byPriority": {
-      "insufficient-regional-content": 6,
+      "insufficient-regional-content": 4,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -167,83 +167,21 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-multiple-offerings"
-    }
-  ],
-  "queue": [
+    },
     {
       "identity": "tecnicatura en radioterapia:2006",
-      "career": {
-        "name": "TECNICATURA EN RADIOTERAPIA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2006",
-        "name": "TECNICATURA EN RADIOTERAPIA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FMED",
-        "serviceName": "FACULTAD DE MEDICINA",
-        "planKey": "FMED:tecnicatura en radioterapia:2006",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FMED",
-          "serviceName": "FACULTAD DE MEDICINA",
-          "planKey": "FMED:tecnicatura en radioterapia:2006",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FMED",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-currently-one-offering"
     },
     {
       "identity": "tecnicatura en salud ocupacional:2006",
-      "career": {
-        "name": "TECNICATURA EN SALUD OCUPACIONAL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2006",
-        "name": "TECNICATURA EN SALUD OCUPACIONAL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FMED",
-        "serviceName": "FACULTAD DE MEDICINA",
-        "planKey": "FMED:tecnicatura en salud ocupacional:2006",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FMED",
-          "serviceName": "FACULTAD DE MEDICINA",
-          "planKey": "FMED:tecnicatura en salud ocupacional:2006",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FMED",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-multiple-offerings"
+    }
+  ],
+  "queue": [
     {
       "identity": "tecnologo quimico:2025",
       "career": {
@@ -4911,5 +4849,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:4415aea4dd85dee5e8337e88cb733738f3d47fb219b6f5ac2d26861d26660760"
+  "contentHash": "sha256:4eaeece2109a0cad95516d51447c753dbbcdb76ef5199d013bd1c71e90f1b8a7"
 }
