@@ -728,3 +728,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:038eb0bbb356f5f7d54e5bdd30b1ab331b380903405b63b3df63bc43c5a15703`. Cola actualizada: 155 identidades pendientes, 8 de prioridad `insufficient-regional-content`; hash `sha256:c812095affcc326281ece7b17b226b00191fd5e65b8e0102595243d72d5887c7`.
 - Manifiesto UI: 175 proyecciones, 101 con composición, 74 sin composición y veinte con sedes oficiales; hash `sha256:78611fad7368f8c355bce69ad525e68c2106c3862344d4c51ca792c8835d6190`.
 - Siguiente paso: auditar Tecnicatura en Hemoterapia Plan 2006 entre Facultad de Medicina y Paysandú.
+
+### Tecnicatura en Hemoterapia Plan 2006 — malla y sedes vigentes auditadas 2026-08-20
+
+- Facultad de Medicina publica el título `Técnico en Hemoterapia`, tres años, 2840 horas y 21 unidades: 11 en primer año, 8 en segundo y 2 en tercero. La suma anual de la tabla oficial coincide con la carga total.
+- Montevideo y Paysandú son las sedes vigentes del mismo Plan 2006. La coordinación 2026 y el catálogo territorial confirman actividad en ambas, sin diferencias de título o malla.
+- Rocha aparece en el snapshot CURE, estadísticas 2020 y ofertas antiguas, pero está ausente de la ficha vigente de Facultad y del catálogo actual de CURE. No se muestra como sede actual hasta que una fuente oficial vigente la vuelva a confirmar.
+- La UI conserva las 21 unidades con cero créditos explícitos, porque el plan está expresado en horas, y no inventa conversiones ni previaturas.
+- Registro de auditoría: hash `sha256:dc8610c9657bc33576d62e3923f12e91bf7ebff0e0c5650af3f82610fb60ccb9`. Cola actualizada: 154 identidades pendientes, 7 de prioridad `insufficient-regional-content`; hash `sha256:89dd39b04ef769d419504284fd9e6134645a5c3b71e907d36f083ba0d6896c38`.
+- Manifiesto UI: 175 proyecciones, 102 con composición, 73 sin composición y veintiún planes con sedes oficiales; hash `sha256:5d0383531fa4462fa5ee01086fbdd5c177a17baf102be1bd069ece73cb14f89b`.
+- Siguiente paso: auditar Tecnicatura en Podología Plan 2006 entre Facultad de Medicina y Paysandú.

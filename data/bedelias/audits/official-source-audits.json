@@ -3344,7 +3344,129 @@
         { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la nómina institucional y no atribuye créditos ni nuevas previaturas a Bedelías." }
       ],
       "remainingWork": "La identidad, malla horaria y sedes del Plan 2006 quedan normalizadas. Cualquier plan creditizado futuro requerirá una auditoría nueva antes de reemplazar esta proyección."
+    },
+    {
+      "identity": "tecnicatura en hemoterapia:2006",
+      "career": "TECNICATURA EN HEMOTERAPIA",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"],
+        "title": "Técnico en Hemoterapia",
+        "durationMonths": 36,
+        "hours": 2840,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/tecnicatura-en-hemoterapia/plan-de-estudio",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "anatomia", "name": "Anatomía", "credits": 0 },
+                { "id": "biologia-celular-tisular", "name": "Biología celular y tisular", "credits": 0 },
+                { "id": "neurobiologia", "name": "Neurobiología", "credits": 0 },
+                { "id": "cardiovascular-respiratorio", "name": "Cardiovascular y respiratorio", "credits": 0 },
+                { "id": "digestivo-renal-endocrino", "name": "Digestivo renal y endócrino", "credits": 0 },
+                { "id": "reproductor-desarrollo", "name": "Reproductor y desarrollo", "credits": 0 },
+                { "id": "psicologia-1", "name": "Psicología I", "credits": 0 },
+                { "id": "metodologia-cientifica", "name": "Metodología científica", "credits": 0 },
+                { "id": "enfermeria-1", "name": "Enfermería I", "credits": 0 },
+                { "id": "salud-publica", "name": "Salud Pública", "credits": 0 },
+                { "id": "inmunologia-genetica", "name": "Inmunología y genética", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "microbiologia", "name": "Microbiología", "credits": 0 },
+                { "id": "fisiopatologia", "name": "Fisiopatología", "credits": 0 },
+                { "id": "farmacologia", "name": "Farmacología", "credits": 0 },
+                { "id": "deontologia-legislacion", "name": "Deontología y legislación laboral", "credits": 0 },
+                { "id": "administracion-hospitalaria", "name": "Administración hospitalaria", "credits": 0 },
+                { "id": "hematologia", "name": "Hematología", "credits": 0 },
+                { "id": "hemoterapia-1", "name": "Hemoterapia I", "credits": 0 },
+                { "id": "hemoterapia-2", "name": "Hemoterapia II", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "hemoterapia-3", "name": "Hemoterapia III", "credits": 0 },
+                { "id": "hemoterapia-4", "name": "Hemoterapia IV", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "hemoterapia-primer-ano", "label": "Primer año", "minCompleted": 11, "courseIds": ["anatomia", "biologia-celular-tisular", "neurobiologia", "cardiovascular-respiratorio", "digestivo-renal-endocrino", "reproductor-desarrollo", "psicologia-1", "metodologia-cientifica", "enfermeria-1", "salud-publica", "inmunologia-genetica"] },
+            { "id": "hemoterapia-segundo-ano", "label": "Segundo año", "minCompleted": 8, "courseIds": ["microbiologia", "fisiopatologia", "farmacologia", "deontologia-legislacion", "administracion-hospitalaria", "hematologia", "hemoterapia-1", "hemoterapia-2"] },
+            { "id": "hemoterapia-tercer-ano", "label": "Tercer año", "minCompleted": 2, "courseIds": ["hemoterapia-3", "hemoterapia-4"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FMED", "locations": ["Montevideo"], "role": "servicio responsable y sede completa del Plan 2006", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "sede completa vigente del mismo Plan 2006", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-hemoterapia-2006.json",
+        "regionalSnapshots": ["data/bedelias/cenurln-tecnicatura-en-hemoterapia-2006.json", "data/bedelias/cure-tecnicatura-en-hemoterapia-2006.json"],
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los tres snapshots no exponen unidades normalizadas. Las fuentes vigentes confirman Montevideo y Paysandú; Rocha sólo queda respaldada por fuentes históricas y no se publica como sede actual."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Medicina y el catálogo territorial vigente describen el mismo Plan 2006, título y malla para Montevideo y Paysandú; no hay respaldo actual suficiente para Rocha.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Tecnicatura en Hemoterapia Plan 2006.",
+          "Modelar Montevideo y Paysandú como sedes completas del mismo plan, sin trayectoria territorial.",
+          "No exponer Rocha como sede vigente hasta que una fuente oficial actual vuelva a confirmarla.",
+          "Usar las 21 unidades y tres años publicados por Facultad de Medicina como malla oficial.",
+          "Conservar 2840 horas y créditos en cero; no convertir horas a créditos ni inventar previaturas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/tecnicatura-en-hemoterapia/plan-de-estudio",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["malla vigente de 21 unidades", "tres años y suma de 2840 horas"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/tecnicatura-en-hemoterapia",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["título, tres años y 2840 horas", "ingreso en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/coordinacion-curricular/tecnicatura-en-hemoterapia",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["actividad académica vigente en Montevideo y Paysandú durante 2026"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/tecnicatura-en-hemoterapia/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["carrera de tres años en Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-este/cenur-este-sede-rocha/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["ausencia actual de Hemoterapia en la oferta publicada para Rocha"]
+        }
+      ],
+      "anomalies": [
+        { "field": "duration", "resolution": "Facultad y el catálogo del interior publican tres años; el catálogo general informa 60 meses. Se prioriza el servicio responsable." },
+        { "field": "credits", "resolution": "El Plan 2006 está expresado en 2840 horas y no publica créditos. Las materias conservan cero créditos explícitos." },
+        { "field": "rochaOffering", "resolution": "El snapshot CURE y estadísticas 2020 reflejan una oferta completa histórica en Rocha, ausente de la ficha 2026 de Facultad y del catálogo vigente de CURE. Se excluye del selector actual." },
+        { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni nuevas previaturas a Bedelías." }
+      ],
+      "remainingWork": "La identidad, malla horaria y sedes vigentes del Plan 2006 quedan normalizadas. Rocha debe reabrirse únicamente si una fuente oficial actual confirma nuevamente la oferta."
     }
   ],
-  "contentHash": "sha256:038eb0bbb356f5f7d54e5bdd30b1ab331b380903405b63b3df63bc43c5a15703"
+  "contentHash": "sha256:dc8610c9657bc33576d62e3923f12e91bf7ebff0e0c5650af3f82610fb60ccb9"
 }

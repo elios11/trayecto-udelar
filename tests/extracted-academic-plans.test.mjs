@@ -64,6 +64,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["licenciatura en laboratorio clinico:2006", ["montevideo", "paysandu"]],
     ["licenciatura en psicomotricidad:2006", ["montevideo", "paysandu"]],
     ["tecnicatura en anatomia patologica:2006", ["montevideo", "paysandu"]],
+    ["tecnicatura en hemoterapia:2006", ["montevideo", "paysandu"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {
