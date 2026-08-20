@@ -846,3 +846,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:3891095d5c4fc579f1394895cfef32fe292ebf6848541715e92c8923957623ad`. Cola actualizada: 143 identidades pendientes, 34 sin composición; hash `sha256:2a7c0c07b0c8a5a398cf84e93096df24a490fe16395777226d74ab98a3d2f72b`.
 - Manifiesto UI: 175 proyecciones, 113 con composición, 62 sin composición y veintisiete planes con sedes oficiales; hash `sha256:73bbe9f826094c67f2ce0c3339444d2f6a7472642741c8b32371128e14f2b687`.
 - Siguiente paso: auditar Licenciatura en Lenguajes y Medios Audiovisuales Plan 2011, próxima identidad sin composición de la cola reproducible.
+
+### Licenciatura en Lenguajes y Medios Audiovisuales Plan 2011 — trayectorias y malla auditadas 2026-08-20
+
+- CURE y Facultad de Artes mantienen una sola carrera, un único título `Licenciado en Lenguajes y Medios Audiovisuales`, cuatro años y 360 créditos. La oferta e inscripción 2026 se concentra en la sede Maldonado.
+- Primer año es común: Taller de los Fenómenos de la Percepción y Lenguajes 55 créditos y Legados Histórico-Culturales 35. Su aprobación habilita la elección de trayectoria.
+- Desde segundo año se elige Creación Audiovisual o Creación Audiovisual Interactiva. Cada recorrido conserva 90 créditos por año y suma exactamente 360 con Estéticas, optativas/electivas y el Trabajo Final de Egreso de 20 créditos.
+- La UI filtra únicamente los talleres de segundo a cuarto; el primer año, Estéticas, las bolsas flexibles y el egreso conservan progreso compartido. Animación y Videojuegos son focos internos de cuarto interactivo, no carreras, títulos ni trayectorias certificadas adicionales.
+- El catálogo de Bedelías informa 60 meses y Plan 2011; CURE y Udelar publican cuatro años, mientras estadísticas históricas rotulan Plan 2008. Se prioriza la duración y grilla actuales, conservando 2011 como clave de inscripción y registrando ambas discrepancias.
+- Documentos antiguos ubican la carrera en Playa Hermosa/Piriápolis. La oferta vigente 2026 publica sede Maldonado; la UI no duplica ubicaciones históricas.
+- Registro de auditoría: hash `sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7`. Cola actualizada: 142 identidades pendientes, 33 sin composición; hash `sha256:c011b9eac405178343d9015dd0c79eb864ab9a7ee838b2dd58da3f70f32ba342`.
+- Manifiesto UI: 175 proyecciones, 114 con composición y 61 sin composición; hash `sha256:b595ccfcc9e59b5ce395e0d4ddc6f28230a22aa79fc7790e90e5b8cb0626a61f`.
+- Siguiente paso: auditar Ingeniería Forestal Plan 2013, próxima identidad sin composición de la cola reproducible.

@@ -74,7 +74,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011": {
     load: () => import("./bedelias-generated/bedelias-cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["creacion-audiovisual","creacion-audiovisual-interactiva"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },

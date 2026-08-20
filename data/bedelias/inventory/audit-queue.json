@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T14:50:56.631Z",
+  "generatedAt": "2026-08-20T14:56:58.611Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:3891095d5c4fc579f1394895cfef32fe292ebf6848541715e92c8923957623ad"
+    "officialAuditRegistryHash": "sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 34,
-    "pendingCanonicalIdentities": 143,
+    "evidenceClosedCanonicalIdentities": 35,
+    "pendingCanonicalIdentities": 142,
     "byPriority": {
-      "composition-unavailable": 34,
+      "composition-unavailable": 33,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -226,39 +226,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-flexible-plan-three-campuses-five-profiles"
+    },
+    {
+      "identity": "licenciatura en lenguajes y medios audiovisuales:2011",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-one-campus-two-trajectories"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en lenguajes y medios audiovisuales:2011",
-      "career": {
-        "name": "LICENCIATURA EN LENGUAJES Y MEDIOS AUDIOVISUALES",
-        "normalizedName": "licenciatura en lenguajes y medios audiovisuales",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2011"
-      },
-      "canonicalSource": {
-        "serviceCode": "CURE",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
-        "planKey": "CURE:licenciatura en lenguajes y medios audiovisuales:2011",
-        "site": null,
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CURE",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
-          "planKey": "CURE:licenciatura en lenguajes y medios audiovisuales:2011",
-          "site": null,
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "ingenieria forestal:2013",
       "career": {
@@ -4614,5 +4590,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:2a7c0c07b0c8a5a398cf84e93096df24a490fe16395777226d74ab98a3d2f72b"
+  "contentHash": "sha256:c011b9eac405178343d9015dd0c79eb864ab9a7ee838b2dd58da3f70f32ba342"
 }

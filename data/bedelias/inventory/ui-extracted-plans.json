@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:2a7c0c07b0c8a5a398cf84e93096df24a490fe16395777226d74ab98a3d2f72b",
-    "officialAuditHash": "sha256:3891095d5c4fc579f1394895cfef32fe292ebf6848541715e92c8923957623ad",
+    "auditQueueHash": "sha256:c011b9eac405178343d9015dd0c79eb864ab9a7ee838b2dd58da3f70f32ba342",
+    "officialAuditHash": "sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 113,
-    "compositionUnavailable": 62,
+    "compositionAvailable": 114,
+    "compositionUnavailable": 61,
     "plansWithOfficialCampuses": 27,
     "excludedFromCurrentUi": 2
   },
@@ -135,9 +135,11 @@
       "planId": "bedelias-cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "maldonado"
+      ]
     },
     {
       "identity": "licenciatura en turismo:2014",
@@ -1696,5 +1698,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:73bbe9f826094c67f2ce0c3339444d2f6a7472642741c8b32371128e14f2b687"
+  "contentHash": "sha256:b595ccfcc9e59b5ce395e0d4ddc6f28230a22aa79fc7790e90e5b8cb0626a61f"
 }

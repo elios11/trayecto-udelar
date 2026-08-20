@@ -9942,7 +9942,115 @@
         { "field": "depthAdmission", "resolution": "El ingreso al ciclo exige 180 créditos cursados y 120 aprobados. La UI informa el umbral, pero no lo automatiza porque el modelo local no distingue curso ganado de crédito aprobado con precisión suficiente." }
       ],
       "remainingWork": "La estructura, catálogo flexible, sedes y perfiles quedan operativos. Actualizar oferta y previaturas cuando CURE publique nuevas planillas consolidadas; las elecciones finales siguen requiriendo tutoría y aval de la Comisión de Carrera."
+    },
+    {
+      "identity": "licenciatura en lenguajes y medios audiovisuales:2011",
+      "career": "LICENCIATURA EN LENGUAJES Y MEDIOS AUDIOVISUALES",
+      "planYear": "2011",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-curriculum-trajectories-credits-and-campus",
+      "publicationEligible": false,
+      "uiNotice": "La carrera se divide desde segundo año en Creación Audiovisual y Creación Audiovisual Interactiva. Ambas trayectorias conservan el mismo título y 360 créditos. Las actividades optativas se representan como bloques de crédito porque la oferta cambia; en la trayectoria interactiva, Animación y Videojuegos son focos internos de cuarto año, no títulos ni planes separados.",
+      "officialPlan": {
+        "facultyCode": "FARTES",
+        "facultyName": "FACULTAD DE ARTES",
+        "approval": ["Plan vigente en Bedelías como Plan 2011", "Grilla curricular vigente publicada por CURE"],
+        "title": "Licenciado en Lenguajes y Medios Audiovisuales",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "pathwayLabel": "Trayectoria",
+        "trajectories": [
+          {
+            "id": "creacion-audiovisual",
+            "label": "Creación Audiovisual",
+            "description": "Trayectoria de creación cinematográfica y audiovisual, con ficción, documental, cine experimental, fotografía, sonido, guion, montaje y dirección de arte.",
+            "campusIds": ["maldonado"],
+            "courseIds": ["creacion-audiovisual-1", "creacion-audiovisual-2", "creacion-audiovisual-3"]
+          },
+          {
+            "id": "creacion-audiovisual-interactiva",
+            "label": "Creación Audiovisual Interactiva",
+            "description": "Trayectoria artística que incorpora programación, animación, videojuegos y plataformas interactivas. En cuarto año permite profundizar en animación o videojuegos dentro del mismo taller.",
+            "campusIds": ["maldonado"],
+            "courseIds": ["creacion-interactiva-1", "creacion-interactiva-2", "creacion-interactiva-3"]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-lenguajes-y-medios-audiovisuales/",
+          "prerequisitesSourceUrl": "https://www.cure.edu.uy/wp-content/uploads/2025/02/Informacion-general___Licenciatura-en-Lenguajes-y-Medios-Audiovisuales.pdf",
+          "creditRequirements": [
+            { "id": "lma-primer-ano", "name": "Primer año · formación común", "shortName": "Primer año", "minCredits": 90 },
+            { "id": "lma-segundo-ano", "name": "Segundo año", "shortName": "Segundo año", "minCredits": 90 },
+            { "id": "lma-tercer-ano", "name": "Tercer año", "shortName": "Tercer año", "minCredits": 90 },
+            { "id": "lma-cuarto-ano", "name": "Cuarto año y egreso", "shortName": "Cuarto año", "minCredits": 90 }
+          ],
+          "commonCourseIds": ["percepcion-lenguajes", "legados-historico-culturales", "esteticas-1", "optativas-2", "esteticas-2", "optativas-4", "trabajo-final"],
+          "periods": [
+            { "label": "Primer año", "courses": [
+              { "id": "percepcion-lenguajes", "name": "Taller de los Fenómenos de la Percepción y Lenguajes", "credits": 55, "requirementId": "lma-primer-ano" },
+              { "id": "legados-historico-culturales", "name": "Taller del Estudio de los Legados Histórico-Culturales y su Incidencia en la Creación Audiovisual", "credits": 35, "requirementId": "lma-primer-ano" }
+            ] },
+            { "label": "Segundo año", "courses": [
+              { "id": "creacion-audiovisual-1", "name": "Taller de Creación Audiovisual I", "credits": 60, "requirementId": "lma-segundo-ano" },
+              { "id": "creacion-interactiva-1", "name": "Taller de Creación Audiovisual Interactiva I", "credits": 60, "requirementId": "lma-segundo-ano" },
+              { "id": "esteticas-1", "name": "Estudio de las Estéticas I", "credits": 20, "requirementId": "lma-segundo-ano" },
+              { "id": "optativas-2", "name": "Actividades electivas u opcionales · segundo año", "credits": 10, "requirementId": "lma-segundo-ano", "curricularBlock": true }
+            ] },
+            { "label": "Tercer año", "courses": [
+              { "id": "creacion-audiovisual-2", "name": "Taller de Creación Audiovisual II", "credits": 80, "requirementId": "lma-tercer-ano" },
+              { "id": "creacion-interactiva-2", "name": "Taller de Creación Audiovisual Interactiva II", "credits": 80, "requirementId": "lma-tercer-ano" },
+              { "id": "esteticas-2", "name": "Estudio de las Estéticas II", "credits": 10, "requirementId": "lma-tercer-ano" }
+            ] },
+            { "label": "Cuarto año", "courses": [
+              { "id": "creacion-audiovisual-3", "name": "Taller de Creación Audiovisual III", "credits": 60, "requirementId": "lma-cuarto-ano" },
+              { "id": "creacion-interactiva-3", "name": "Taller de Creación Audiovisual Interactiva III", "credits": 60, "requirementId": "lma-cuarto-ano" },
+              { "id": "optativas-4", "name": "Actividades electivas u opcionales · cuarto año", "credits": 10, "requirementId": "lma-cuarto-ano", "curricularBlock": true },
+              { "id": "trabajo-final", "name": "Trabajo Final de Egreso", "credits": 20, "requirementId": "lma-cuarto-ano" }
+            ] }
+          ],
+          "prerequisites": [
+            { "targetId": "creacion-audiovisual-1", "courseIds": ["percepcion-lenguajes", "legados-historico-culturales"] },
+            { "targetId": "creacion-interactiva-1", "courseIds": ["percepcion-lenguajes", "legados-historico-culturales"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CURE", "locations": ["Maldonado"], "role": "carrera completa del servicio de referencia Facultad de Artes", "curriculumVariant": false, "trajectoryIds": ["creacion-audiovisual", "creacion-audiovisual-interactiva"] }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, título y total de 360 créditos, pero no la composición. CURE publica la grilla completa, las dos trayectorias, la duración y la sede vigente."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-one-campus-two-trajectories",
+        "regionalCurriculumVariant": false,
+        "reason": "Las dos trayectorias comienzan después del primer año común, llevan al mismo título y mantienen cuatro bloques anuales de 90 créditos.",
+        "normalization": [
+          "Mostrar una sola carrera bajo Facultad de Artes y un solo Plan 2011.",
+          "Representar Maldonado como sede oficial, sin duplicar la carrera bajo CURE.",
+          "Filtrar los talleres de segundo a cuarto según la trayectoria elegida y conservar el progreso común.",
+          "Exigir 90 créditos por año y 360 para el egreso.",
+          "Representar electivas y optativas como bloques flexibles de 10 créditos en segundo y cuarto."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-lenguajes-y-medios-audiovisuales/", "authority": "Cenur del Este", "supports": ["vigencia 2026", "Facultad de Artes", "Maldonado", "título", "cuatro años", "grilla", "créditos"] },
+        { "url": "https://www.cure.edu.uy/wp-content/uploads/2025/02/Informacion-general___Licenciatura-en-Lenguajes-y-Medios-Audiovisuales.pdf", "authority": "CURE e Instituto Escuela Nacional de Bellas Artes", "supports": ["primer año común", "dos trayectorias", "contenidos", "aprobación del primer año", "evaluación continua"] },
+        { "url": "https://www.cure.edu.uy/licenciatura-en-lenguajes-y-medios-audiovisuales-sensibilizar-los-sentidos-y-romper-prejuicios-en-la-busqueda-de-formar-artistas/", "authority": "Cenur del Este", "supports": ["trayectorias vigentes", "focos de animación y videojuegos", "Maldonado", "evaluación"] },
+        { "url": "https://www.cure.edu.uy/abren-las-inscripciones-para-la-generacion-2026-en-la-cure/", "authority": "Cenur del Este", "supports": ["ingreso 2026", "sede Maldonado"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "Bedelías rotula el plan vigente como 2011, mientras estadísticas institucionales históricas lo identifican como 2008. La UI conserva 2011 para coincidir con la inscripción actual y registra la discrepancia." },
+        { "field": "duration", "resolution": "Bedelías informa 60 meses, pero CURE y Udelar publican cuatro años y una grilla de cuatro bloques anuales. La UI usa 48 meses." },
+        { "field": "location", "resolution": "Documentación antigua menciona Playa Hermosa/Piriápolis; la oferta e inscripción 2026 publican sede Maldonado. La UI usa Maldonado como ubicación oficial vigente." },
+        { "field": "interactiveFocus", "resolution": "Animación y Videojuegos aparecen como focos de profundización dentro de Creación Audiovisual Interactiva, no como trayectorias certificadas ni títulos independientes." },
+        { "field": "prerequisites", "resolution": "La fuente exige aprobar primer año antes de optar por trayectoria. No se agregan otras previaturas porque no se publicó una tabla consolidada vigente." }
+      ],
+      "remainingWork": "La malla, los créditos, la sede y las dos trayectorias quedan operativos. Actualizar las optativas nominales sólo cuando Facultad de Artes o CURE publique un catálogo vigente y consolidado."
     }
   ],
-  "contentHash": "sha256:3891095d5c4fc579f1394895cfef32fe292ebf6848541715e92c8923957623ad"
+  "contentHash": "sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7"
 }
