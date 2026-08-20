@@ -2690,7 +2690,144 @@
         { "field": "bedeliasComposition", "resolution": "El árbol SGAE enumera UCB pero los snapshots normalizados quedan sin cursos creditizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
       ],
       "remainingWork": "La identidad, sedes y malla horaria del Plan 2006 quedan normalizadas. Debe auditarse una futura resolución de aprobación e implementación antes de reemplazarla por el nuevo plan creditizado."
+    },
+    {
+      "identity": "licenciatura en imagenologia:2006",
+      "career": "LICENCIATURA EN IMAGENOLOGÍA",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-territorial-delivery",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"],
+        "title": "Licenciado en Imagenología",
+        "durationMonths": 48,
+        "hours": 4070,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-imagenologia/plan-de-estudio",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "anatomia", "name": "Anatomía", "credits": 0 },
+                { "id": "biologia-celular-tisular", "name": "Biología celular y tisular", "credits": 0 },
+                { "id": "neurobiologia", "name": "Neurobiología", "credits": 0 },
+                { "id": "cardiovascular-respiratorio", "name": "Cardiovascular y respiratorio", "credits": 0 },
+                { "id": "digestivo-renal-endocrino", "name": "Digestivo renal y endócrino", "credits": 0 },
+                { "id": "reproductor-desarrollo", "name": "Reproductor y desarrollo", "credits": 0 },
+                { "id": "enfermeria-1", "name": "Enfermería I", "credits": 0 },
+                { "id": "psicologia-1", "name": "Psicología I", "credits": 0 },
+                { "id": "salud-publica", "name": "Salud Pública", "credits": 0 },
+                { "id": "metodologia-cientifica", "name": "Metodología científica", "credits": 0 },
+                { "id": "fisiopatologia", "name": "Fisiopatología", "credits": 0 },
+                { "id": "fisica-basica", "name": "Física Básica", "credits": 0 },
+                { "id": "fisica-radiologica", "name": "Física Radiológica", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "tecnicas-radiologicas-1", "name": "Técnicas Radiológicas I", "credits": 0 },
+                { "id": "proteccion-radiologica", "name": "Protección radiológica y control de calidad", "credits": 0 },
+                { "id": "procesamiento-imagenes-1", "name": "Sistema de procesamiento de imágenes I", "credits": 0 },
+                { "id": "anatomia-radiologica-2", "name": "Anatomía Radiológica II", "credits": 0 },
+                { "id": "procesamiento-imagenes-2", "name": "Sistema de procesamiento de imágenes II", "credits": 0 },
+                { "id": "tecnicas-radiologicas-2", "name": "Técnicas Radiológicas II", "credits": 0 },
+                { "id": "anatomia-radiologica-1", "name": "Anatomía Radiológica I", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "anatomia-radiologica-3", "name": "Anatomía Radiológica III", "credits": 0 },
+                { "id": "tecnicas-radiologicas-3", "name": "Técnicas Radiológicas III", "credits": 0 },
+                { "id": "imagenologia-especializada-1", "name": "Imagenología especializada I", "credits": 0 },
+                { "id": "introduccion-trabajo-cientifico", "name": "Introducción al Trabajo Científico", "credits": 0 },
+                { "id": "deontologia-legislacion", "name": "Deontología y legislación laboral", "credits": 0 },
+                { "id": "administracion-hospitalaria", "name": "Administración hospitalaria", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Cuarto año",
+              "courses": [
+                { "id": "imagenologia-especializada-2", "name": "Imagenología especializada II", "credits": 0 },
+                { "id": "internado", "name": "Internado", "credits": 0 },
+                { "id": "monografia", "name": "Monografía", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "imagen-primer-ano", "label": "Primer año", "minCompleted": 13, "courseIds": ["anatomia", "biologia-celular-tisular", "neurobiologia", "cardiovascular-respiratorio", "digestivo-renal-endocrino", "reproductor-desarrollo", "enfermeria-1", "psicologia-1", "salud-publica", "metodologia-cientifica", "fisiopatologia", "fisica-basica", "fisica-radiologica"] },
+            { "id": "imagen-segundo-ano", "label": "Segundo año", "minCompleted": 7, "courseIds": ["tecnicas-radiologicas-1", "proteccion-radiologica", "procesamiento-imagenes-1", "anatomia-radiologica-2", "procesamiento-imagenes-2", "tecnicas-radiologicas-2", "anatomia-radiologica-1"] },
+            { "id": "imagen-tercer-ano", "label": "Tercer año", "minCompleted": 6, "courseIds": ["anatomia-radiologica-3", "tecnicas-radiologicas-3", "imagenologia-especializada-1", "introduccion-trabajo-cientifico", "deontologia-legislacion", "administracion-hospitalaria"] },
+            { "id": "imagen-cuarto-ano", "label": "Cuarto año, internado y monografía", "minCompleted": 3, "courseIds": ["imagenologia-especializada-2", "internado", "monografia"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FMED", "locations": ["Montevideo · carrera completa"], "role": "servicio responsable y sede completa del Plan 2006", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú · carrera completa", "Río Negro · 3.er y 4.º año"], "role": "cursado territorial del mismo Plan 2006", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-licenciatura-en-imagenologia-2006.json",
+        "regionalSnapshot": "data/bedelias/cenurln-licenciatura-en-imagenologia-2006.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los snapshots no exponen unidades creditizadas. Facultad publica una única malla horaria; Udelar documenta cursado completo en Montevideo y Paysandú y un tramo avanzado en Río Negro."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales describen un único Plan 2006 y un único título. Río Negro amplía la localización de los años avanzados, sin modificar malla, duración ni egreso.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Imagenología Plan 2006.",
+          "Presentar Montevideo y Paysandú como carrera completa y Río Negro como cursado de tercer y cuarto año.",
+          "Usar las 29 unidades y cuatro años publicados por Facultad de Medicina como malla oficial.",
+          "Conservar 4070 horas y créditos en cero; no convertir horas a créditos.",
+          "Exigir las unidades publicadas por año, incluido Internado y Monografía, sin inventar previaturas.",
+          "No crear una trayectoria curricular para Río Negro porque la diferencia es de etapa de cursado."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-imagenologia/plan-de-estudio",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["malla vigente por cuatro años", "29 unidades y carga horaria", "Internado y Monografía"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/grado",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["título, cuatro años y 4070 horas", "ingreso en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-imagenologia",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": ["Montevideo, Paysandú y Río Negro", "tercer y cuarto año en Río Negro"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-imagenologia/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": ["cursado completo en Paysandú", "continuidad avanzada en Fray Bentos"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/gestion/bedelia/parque-batlle",
+          "authority": "Bedelía de Facultad de Medicina, Udelar",
+          "supports": ["vigencia administrativa del Plan 2006 en 2026"]
+        }
+      ],
+      "anomalies": [
+        { "field": "credits", "resolution": "El Plan 2006 vigente está expresado en 4070 horas y no publica créditos. Las materias conservan cero créditos explícitos y requisitos por unidad." },
+        { "field": "duration", "resolution": "Facultad de Medicina y el catálogo del interior publican cuatro años; el catálogo general informa 60 meses. Se prioriza el servicio responsable y se conserva la discrepancia." },
+        { "field": "rioNegroStage", "resolution": "La página general vigente limita Río Negro a tercer y cuarto año; la página interior de 2021 decía desde el segundo semestre de segundo año. Se usa la información vigente más reciente y no se presenta como carrera completa." },
+        { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
+      ],
+      "remainingWork": "La identidad, malla horaria y alcance territorial quedan normalizados. La etapa exacta ofrecida en Río Negro debe mantenerse sincronizada con el catálogo vigente y cualquier plan creditizado futuro requerirá una nueva auditoría."
     }
   ],
-  "contentHash": "sha256:253ccd53f71f547b82b1e0cdbdb53c9b26beab5966162d68a64db55baf14e0f9"
+  "contentHash": "sha256:e57a2a997f003a9b10b0e8028ce252953204d5f1380b3b1300bc3d9fb63e244d"
 }

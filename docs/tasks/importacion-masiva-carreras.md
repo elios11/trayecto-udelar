@@ -680,3 +680,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:253ccd53f71f547b82b1e0cdbdb53c9b26beab5966162d68a64db55baf14e0f9`. Cola actualizada: 160 identidades pendientes, 13 de prioridad `insufficient-regional-content`; hash `sha256:3119b2b40637ed9f160965141ff8b86f20fe17a4250215b6174e8f708330ab27`.
 - Manifiesto UI: 175 proyecciones, 96 con composición, 79 sin composición y quince con sedes oficiales; hash `sha256:25dbc8d8750bd226a333fab783c8a54e015fc028012faa4dccae7f0dbaf5b092`.
 - Siguiente paso: auditar Licenciatura en Imagenología Plan 2006, que comparte la estructura EUTM y la oferta Montevideo/Paysandú, sin reutilizar materias específicas de Fisioterapia.
+
+### Licenciatura en Imagenología Plan 2006 — malla y alcance territorial auditados 2026-08-20
+
+- Facultad de Medicina publica el título `Licenciado en Imagenología`, cuatro años, 4070 horas y una malla de 29 unidades: 13 en primer año, 7 en segundo, 6 en tercero y 3 en cuarto.
+- El Plan 2006 no publica créditos. La UI conserva cero créditos explícitos y exige las unidades por año, incluido el Internado y la Monografía, sin convertir horas ni inventar previaturas.
+- Montevideo y Paysandú permiten cursar la carrera completa. El catálogo general vigente limita Río Negro a tercer y cuarto año; por eso el selector lo muestra como tramo avanzado y no como sede completa ni trayectoria distinta.
+- El catálogo interior de 2021 situaba la continuidad en Fray Bentos desde el segundo semestre de segundo año. Se prioriza la descripción vigente más reciente y se conserva la discrepancia para seguimiento.
+- Registro de auditoría: hash `sha256:e57a2a997f003a9b10b0e8028ce252953204d5f1380b3b1300bc3d9fb63e244d`. Cola actualizada: 159 identidades pendientes, 12 de prioridad `insufficient-regional-content`; hash `sha256:844b2f5591bebb5aa1eacf3289210687dc91ffa91edae4660813d2ace86a727d`.
+- Manifiesto UI: 175 proyecciones, 97 con composición, 78 sin composición y dieciséis con sedes oficiales; hash `sha256:342796e8c6685ce673e5607a9251909e4857aab15aba3b97e3f4603475c4a5a2`.
+- Siguiente paso: auditar Licenciatura en Instrumentación Quirúrgica Plan 2006 entre Facultad de Medicina y Paysandú.

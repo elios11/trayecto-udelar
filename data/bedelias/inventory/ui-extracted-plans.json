@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:3119b2b40637ed9f160965141ff8b86f20fe17a4250215b6174e8f708330ab27",
-    "officialAuditHash": "sha256:253ccd53f71f547b82b1e0cdbdb53c9b26beab5966162d68a64db55baf14e0f9",
+    "auditQueueHash": "sha256:844b2f5591bebb5aa1eacf3289210687dc91ffa91edae4660813d2ace86a727d",
+    "officialAuditHash": "sha256:e57a2a997f003a9b10b0e8028ce252953204d5f1380b3b1300bc3d9fb63e244d",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 96,
-    "compositionUnavailable": 79,
-    "plansWithOfficialCampuses": 15,
+    "compositionAvailable": 97,
+    "compositionUnavailable": 78,
+    "plansWithOfficialCampuses": 16,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1173,9 +1173,13 @@
       "planId": "bedelias-fmed-licenciatura-en-imagenologia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-imagenologia-2006.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo-carrera-completa",
+        "paysandu-carrera-completa",
+        "rio-negro-3-er-y-4-ano"
+      ]
     },
     {
       "identity": "licenciatura en instrumentacion quirurgica:2006",
@@ -1644,5 +1648,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:25dbc8d8750bd226a333fab783c8a54e015fc028012faa4dccae7f0dbaf5b092"
+  "contentHash": "sha256:342796e8c6685ce673e5607a9251909e4857aab15aba3b97e3f4603475c4a5a2"
 }

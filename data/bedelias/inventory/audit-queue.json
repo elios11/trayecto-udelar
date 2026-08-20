@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T06:39:06.583Z",
+  "generatedAt": "2026-08-20T06:43:20.171Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:253ccd53f71f547b82b1e0cdbdb53c9b26beab5966162d68a64db55baf14e0f9"
+    "officialAuditRegistryHash": "sha256:e57a2a997f003a9b10b0e8028ce252953204d5f1380b3b1300bc3d9fb63e244d"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 17,
-    "pendingCanonicalIdentities": 160,
+    "evidenceClosedCanonicalIdentities": 18,
+    "pendingCanonicalIdentities": 159,
     "byPriority": {
-      "insufficient-regional-content": 13,
+      "insufficient-regional-content": 12,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -125,46 +125,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "licenciatura en imagenologia:2006",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en imagenologia:2006",
-      "career": {
-        "name": "LICENCIATURA EN IMAGENOLOGÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2006",
-        "name": "LICENCIATURA EN IMAGENOLOGIA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FMED",
-        "serviceName": "FACULTAD DE MEDICINA",
-        "planKey": "FMED:licenciatura en imagenologia:2006",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FMED",
-          "serviceName": "FACULTAD DE MEDICINA",
-          "planKey": "FMED:licenciatura en imagenologia:2006",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FMED",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
     {
       "identity": "licenciatura en instrumentacion quirurgica:2006",
       "career": {
@@ -5135,5 +5104,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:3119b2b40637ed9f160965141ff8b86f20fe17a4250215b6174e8f708330ab27"
+  "contentHash": "sha256:844b2f5591bebb5aa1eacf3289210687dc91ffa91edae4660813d2ace86a727d"
 }
