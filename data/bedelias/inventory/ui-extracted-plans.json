@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:ca334be7fdc7177aadb06242293e1a1d0d09912858b2d1b458214a990ddd46ec",
-    "officialAuditHash": "sha256:d77fada9156c794714dcb62988df34e72db91f63e82ec1cdd98f94d82fff3976",
+    "auditQueueHash": "sha256:96d79abc8da0e2e8d28404d7b87eaa34e702412f3980634cde5c01ce3b324345",
+    "officialAuditHash": "sha256:a96346018d21b93efe8585ae39d3aad4d3d4ce3065a76bc14c22bdf3d55d2ec9",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 99,
-    "compositionUnavailable": 76,
-    "plansWithOfficialCampuses": 18,
+    "compositionAvailable": 100,
+    "compositionUnavailable": 75,
+    "plansWithOfficialCampuses": 19,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1237,9 +1237,12 @@
       "planId": "bedelias-fmed-licenciatura-en-psicomotricidad-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-psicomotricidad-2006.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo",
+        "paysandu"
+      ]
     },
     {
       "identity": "licenciatura en registros medicos:2006",
@@ -1654,5 +1657,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:0ade848365ffe333df4cc9eb1c38d889aa005d4df67bbc9b50631505038fc9d1"
+  "contentHash": "sha256:07e675c5db3b3a854d5c85c251762721f62ed79056d68c599c553eec6258f07b"
 }

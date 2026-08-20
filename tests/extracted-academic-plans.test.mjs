@@ -62,6 +62,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["licenciatura en imagenologia:2006", ["montevideo-carrera-completa", "paysandu-carrera-completa", "rio-negro-3-er-y-4-ano"]],
     ["licenciatura en instrumentacion quirurgica:2006", ["montevideo", "paysandu"]],
     ["licenciatura en laboratorio clinico:2006", ["montevideo", "paysandu"]],
+    ["licenciatura en psicomotricidad:2006", ["montevideo", "paysandu"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

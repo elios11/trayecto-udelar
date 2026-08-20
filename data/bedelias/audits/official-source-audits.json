@@ -3097,7 +3097,140 @@
         { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
       ],
       "remainingWork": "La identidad, malla horaria y sedes del Plan 2006 quedan normalizadas. Cualquier plan creditizado futuro requerirá una auditoría nueva antes de reemplazar esta proyección."
+    },
+    {
+      "identity": "licenciatura en psicomotricidad:2006",
+      "career": "LICENCIATURA EN PSICOMOTRICIDAD",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"],
+        "title": "Licenciado en Psicomotricidad",
+        "durationMonths": 48,
+        "hours": 3388,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-psicomotricidad/plan-de-estudio",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "anatomia", "name": "Anatomía", "credits": 0 },
+                { "id": "biologia-celular-tisular", "name": "Biología celular y tisular", "credits": 0 },
+                { "id": "neurobiologia", "name": "Neurobiología", "credits": 0 },
+                { "id": "cardiovascular-respiratorio", "name": "Cardiovascular y respiratorio", "credits": 0 },
+                { "id": "digestivo-renal-endocrino", "name": "Digestivo renal y endócrino", "credits": 0 },
+                { "id": "reproductor-desarrollo", "name": "Reproductor y desarrollo", "credits": 0 },
+                { "id": "psicomotricidad-neurofisiologia-terapia-ocupacional", "name": "Psicomotricidad, Neurofisiología Clínica y Terapia Ocupacional", "credits": 0 },
+                { "id": "psicologia-1", "name": "Psicología I", "credits": 0 },
+                { "id": "metodologia-cientifica", "name": "Metodología científica", "credits": 0 },
+                { "id": "enfermeria-1", "name": "Enfermería I", "credits": 0 },
+                { "id": "salud-publica", "name": "Salud Pública", "credits": 0 },
+                { "id": "introduccion-psicomotricidad", "name": "Introducción a la psicomotricidad", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "desarrollo-psicomotor", "name": "Desarrollo psicomotor", "credits": 0 },
+                { "id": "psicomotricidad-1", "name": "Psicomotricidad I (Atención Primaria en Salud, A.P.S.)", "credits": 0 },
+                { "id": "psicologia-2", "name": "Psicología II (Psicología del niño)", "credits": 0 },
+                { "id": "pedagogia-didactica", "name": "Pedagogía y didáctica", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "neuropediatria", "name": "Neuropediatría", "credits": 0 },
+                { "id": "psicomotricidad-2", "name": "Psicomotricidad II (Educación Psicomotriz y Formación del Rol del Psicomotricista a través del trabajo corporal)", "credits": 0 },
+                { "id": "psicologia-3", "name": "Psicología III (Psicomotricidad)", "credits": 0 },
+                { "id": "psiquiatria-infantil", "name": "Psiquiatría Infantil (Psicopatología)", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Cuarto año",
+              "courses": [
+                { "id": "psicomotricidad-3", "name": "Psicomotricidad III (Diagnóstico y tratamiento psicomotriz del ciclo vital)", "credits": 0 },
+                { "id": "clinica-lactantes", "name": "Clínica de lactantes", "credits": 0 },
+                { "id": "psicologia-4", "name": "Psicología IV (Psicomotricidad)", "credits": 0 },
+                { "id": "deontologia-legislacion", "name": "Deontología y legislación laboral", "credits": 0 },
+                { "id": "administracion-hospitalaria", "name": "Administración hospitalaria", "credits": 0 },
+                { "id": "monografia", "name": "Monografía", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "psicomotricidad-primer-ano", "label": "Primer año", "minCompleted": 12, "courseIds": ["anatomia", "biologia-celular-tisular", "neurobiologia", "cardiovascular-respiratorio", "digestivo-renal-endocrino", "reproductor-desarrollo", "psicomotricidad-neurofisiologia-terapia-ocupacional", "psicologia-1", "metodologia-cientifica", "enfermeria-1", "salud-publica", "introduccion-psicomotricidad"] },
+            { "id": "psicomotricidad-segundo-ano", "label": "Segundo año", "minCompleted": 4, "courseIds": ["desarrollo-psicomotor", "psicomotricidad-1", "psicologia-2", "pedagogia-didactica"] },
+            { "id": "psicomotricidad-tercer-ano", "label": "Tercer año", "minCompleted": 4, "courseIds": ["neuropediatria", "psicomotricidad-2", "psicologia-3", "psiquiatria-infantil"] },
+            { "id": "psicomotricidad-cuarto-ano", "label": "Cuarto año y monografía", "minCompleted": 6, "courseIds": ["psicomotricidad-3", "clinica-lactantes", "psicologia-4", "deontologia-legislacion", "administracion-hospitalaria", "monografia"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FMED", "locations": ["Montevideo"], "role": "servicio responsable y sede completa del Plan 2006", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "sede completa del mismo Plan 2006", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-licenciatura-en-psicomotricidad-2006.json",
+        "regionalSnapshot": "data/bedelias/cenurln-licenciatura-en-psicomotricidad-2006.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los snapshots no exponen unidades creditizadas. Facultad publica una única malla horaria y los cursos vigentes se dictan para ambas sedes."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Medicina y Udelar describen el mismo Plan 2006, título y malla para Montevideo y Paysandú.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Psicomotricidad Plan 2006.",
+          "Modelar Montevideo y Paysandú como sedes completas del mismo plan, sin trayectoria territorial.",
+          "Usar las 26 unidades y cuatro años publicados por Facultad de Medicina como malla oficial.",
+          "Conservar 3388 horas como dato vigente del servicio y créditos en cero; no convertir horas a créditos.",
+          "Exigir las unidades publicadas por año, incluida Monografía, sin inventar previaturas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-psicomotricidad/plan-de-estudio",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["malla vigente por cuatro años", "26 unidades y cargas horarias por materia", "Monografía"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-psicomotricidad",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["título, cuatro años y 3388 horas", "ingreso en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-psicomotricidad/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["carrera de cuatro años en Paysandú"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/cursos/programas/2026/Psicomotricidad/Introducci%C3%B3n%20a%20la%20Psicomotricidad.pdf",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["unidad obligatoria y ubicación curricular vigentes en 2026"]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2023/04/DGPLAN-EstadisticasBasicas2020_19_04_2023-WEB-todo-CON-TAPA.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": ["Plan 2006, cuatro años y sedes Montevideo/Paysandú", "registro institucional histórico de 3688 horas"]
+        }
+      ],
+      "anomalies": [
+        { "field": "hours", "resolution": "La ficha vigente de Facultad informa 3388 horas, la estadística institucional 3688 y la suma de la tabla curricular publicada da 3745. Se conserva 3388 por ser el dato vigente del servicio responsable y se deja la inconsistencia trazada." },
+        { "field": "credits", "resolution": "El Plan 2006 no publica créditos. Las materias conservan cero créditos explícitos y requisitos por unidad." },
+        { "field": "regionalOffering", "resolution": "Facultad y el catálogo del interior confirman Paysandú; programas recientes además mencionan el dictado conjunto Montevideo-Paysandú. No hay evidencia de variante curricular." },
+        { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
+      ],
+      "remainingWork": "La identidad, malla y sedes del Plan 2006 quedan normalizadas. La discrepancia de carga horaria debe revisarse si Facultad corrige sus páginas o aprueba un nuevo plan."
     }
   ],
-  "contentHash": "sha256:d77fada9156c794714dcb62988df34e72db91f63e82ec1cdd98f94d82fff3976"
+  "contentHash": "sha256:a96346018d21b93efe8585ae39d3aad4d3d4ce3065a76bc14c22bdf3d55d2ec9"
 }

@@ -708,3 +708,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:d77fada9156c794714dcb62988df34e72db91f63e82ec1cdd98f94d82fff3976`. Cola actualizada: 157 identidades pendientes, 10 de prioridad `insufficient-regional-content`; hash `sha256:ca334be7fdc7177aadb06242293e1a1d0d09912858b2d1b458214a990ddd46ec`.
 - Manifiesto UI: 175 proyecciones, 99 con composición, 76 sin composición y dieciocho con sedes oficiales; hash `sha256:0ade848365ffe333df4cc9eb1c38d889aa005d4df67bbc9b50631505038fc9d1`.
 - Siguiente paso: auditar Licenciatura en Psicomotricidad Plan 2006 entre Facultad de Medicina y Paysandú.
+
+### Licenciatura en Psicomotricidad Plan 2006 — malla y sedes auditadas 2026-08-20
+
+- Facultad de Medicina mantiene el título `Licenciado en Psicomotricidad`, el Plan 2006 y cuatro años de duración. La malla oficial contiene 26 unidades: 12 en primer año, 4 en segundo, 4 en tercero y 6 en cuarto.
+- Montevideo y Paysandú ofrecen el mismo plan completo. Los programas recientes mencionan explícitamente el dictado para ambas sedes y no aportan evidencia de una trayectoria territorial diferente.
+- La carga horaria oficial es inconsistente: la ficha vigente informa 3388 horas, la estadística institucional 3688 y la suma de la tabla curricular da 3745. La proyección conserva 3388 como dato vigente del servicio, registra la discrepancia y no convierte horas en créditos.
+- Los snapshots de ambas ofertas no exponen materias normalizadas. La UI atribuye las 26 unidades a Facultad de Medicina, exige los conjuntos publicados por año y no inventa créditos ni previaturas.
+- Registro de auditoría: hash `sha256:a96346018d21b93efe8585ae39d3aad4d3d4ce3065a76bc14c22bdf3d55d2ec9`. Cola actualizada: 156 identidades pendientes, 9 de prioridad `insufficient-regional-content`; hash `sha256:96d79abc8da0e2e8d28404d7b87eaa34e702412f3980634cde5c01ce3b324345`.
+- Manifiesto UI: 175 proyecciones, 100 con composición, 75 sin composición y diecinueve con sedes oficiales; hash `sha256:07e675c5db3b3a854d5c85c251762721f62ed79056d68c599c553eec6258f07b`.
+- Siguiente paso: auditar Tecnicatura en Anatomía Patológica Plan 2006 entre Facultad de Medicina y Paysandú.
