@@ -176,8 +176,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-cenurso-tecnologo-en-administracion-y-contabilidad-2012": {
     load: () => import("./bedelias-generated/bedelias-cenurso-tecnologo-en-administracion-y-contabilidad-2012.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["cooperativismo-asociativismo","agroindustria","comunicacion-organizacional","turismo","gestion-ambiental","salud","mineria"],
+    pathwayLabel: "Mención",
     minCredits: 225,
   },
   "bedelias-enut-licenciatura-en-nutricion-2014": {

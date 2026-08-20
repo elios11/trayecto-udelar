@@ -821,3 +821,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787`. Cola actualizada: 145 identidades pendientes, 36 sin composición; hash `sha256:17adfd3fb393d80d9b3dacfdde422b632e6d515d9d10937bf2b6ab0f9636dd20`.
 - Manifiesto UI: 175 proyecciones, 111 con composición y 64 sin composición; hash `sha256:0ca7e35cf95740ac0308bbec000fe60f664c623d9842f5ab59fb2deabebfa14f`.
 - Siguiente paso: auditar Tecnólogo en Administración y Contabilidad Plan 2012, próxima identidad sin composición de la cola reproducible.
+
+### Tecnólogo en Administración y Contabilidad Plan 2012 — menciones y sedes normalizadas 2026-08-20
+
+- FCEA mantiene una sola carrera, un solo Plan 2012 y el título `Tecnólogo en Administración y Contabilidad`. La implementación vigente dura cinco semestres y exige 225 créditos; los 60 meses del catálogo general se conservan como anomalía, no como duración académica.
+- La grilla actual exige 200 créditos comunes: 50 en Administración, 70 en Contabilidad e Impuestos, 30 Jurídicos, 10 de Economía, 20 de Métodos Cuantitativos y 20 de Actividades Integradoras. Los 25 restantes son de distribución flexible y definen la mención.
+- La UI ofrece siete menciones del mismo plan: Cooperativismo y Asociativismo en Colonia/Mercedes; Agroindustria y Comunicación Organizacional en Tacuarembó; Turismo, Gestión Ambiental y Salud en el Cenur del Este; y Minería en Treinta y Tres. El selector filtra menciones por sede y conserva el progreso del núcleo común.
+- Las opciones nominales de cada región se muestran como catálogo elegible. No se marcan todas como obligatorias: basta cumplir el mínimo flexible de 25 créditos. Para Salud se conserva una bolsa residual de siete créditos porque las opciones nominales identificadas suman dieciocho.
+- `Introducción a la Microeconomía` sustituye a `Análisis de las Interacciones Económicas` desde 2026. `Cálculo I` representa también la equivalencia publicada `Cálculo I/A + Cálculo I/B` sin duplicar créditos.
+- El Plan original distribuía 170 créditos obligatorios y 55 opcionales; la grilla vigente de FCEA establece 200 y 25. La UI prioriza la implementación actual y mantiene trazada la diferencia. No se inventan previaturas ante la ausencia de una tabla consolidada vigente.
+- Registro de auditoría: hash `sha256:be7823100dbd6346473ddd9ccac65ab000851f1066b06412246761cc57e0f45d`. Cola actualizada: 144 identidades pendientes, 35 sin composición; hash `sha256:3938e4e6fac243aa0949bdf388ab5b08489badd313919355c96c98203db768d3`.
+- Manifiesto UI: 175 proyecciones, 112 con composición y 63 sin composición; hash `sha256:3abe983ff1da7e4c500eeddbacd8dab61b570eda532a03c623fcd94cfb444da2`.
+- Siguiente paso: auditar Licenciatura en Gestión Ambiental Plan 2011, próxima identidad sin composición de la cola reproducible.

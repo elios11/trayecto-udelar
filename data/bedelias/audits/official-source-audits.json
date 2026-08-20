@@ -9596,7 +9596,147 @@
         { "field": "sourceCodeTypo", "resolution": "La tabla de previaturas contiene referencias cruzadas con códigos inconsistentes en algunas filas. La normalización enlaza por nombre inequívoco y por el código correcto de la tabla de composición." }
       ],
       "remainingWork": "La malla 2025, los perfiles, mínimos, previaturas y sede quedan operativos. Revisar únicamente futuras decisiones de la revisión integral del Plan 2012."
+    },
+    {
+      "identity": "tecnologo en administracion y contabilidad:2012",
+      "career": "TECNÓLOGO EN ADMINISTRACIÓN Y CONTABILIDAD",
+      "planYear": "2012",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "Plan vigente, núcleo común, mínimos por área, menciones y sedes oficiales",
+      "publicationEligible": false,
+      "uiNotice": "Grilla vigente de FCEA: 200 créditos obligatorios y 25 de distribución flexible vinculados a la mención. Las unidades de cada mención son opciones publicadas y no deben marcarse todas como obligatorias. Algunas modalidades, pruebas o actividades pueden requerir traslado dentro de la región.",
+      "officialPlan": {
+        "facultyCode": "FCEA",
+        "facultyName": "FACULTAD DE CIENCIAS ECONÓMICAS Y DE ADMINISTRACIÓN",
+        "pathwayLabel": "Mención",
+        "approval": ["Resolución CDC N.º 30 de 19/07/2011", "Grilla curricular FCEA actualizada y vigente en 2026"],
+        "title": "Tecnólogo en Administración y Contabilidad",
+        "durationMonths": 30,
+        "minimumCredits": 225,
+        "trajectories": [
+          { "id": "cooperativismo-asociativismo", "label": "Cooperativismo y Asociativismo", "description": "Mención territorial de la Región Suroeste para Colonia y Mercedes.", "campusIds": ["colonia", "mercedes"], "courseIds": ["coop-economia-social", "coop-administracion", "coop-sociologia"] },
+          { "id": "agroindustria", "label": "Agroindustria", "description": "Mención ofrecida por el Cenur Noreste en Tacuarembó.", "campusIds": ["tacuarembo"], "courseIds": ["agro-competitividad", "agro-forestal-1", "agro-recursos-naturales", "agro-sistemas-produccion", "agro-forestal-2"] },
+          { "id": "comunicacion-organizacional", "label": "Comunicación Organizacional", "description": "Mención ofrecida por el Cenur Noreste en Tacuarembó.", "campusIds": ["tacuarembo"], "courseIds": ["com-era-digital", "com-analisis-1", "com-analisis-2"] },
+          { "id": "turismo", "label": "Turismo", "description": "Mención del Cenur del Este; la oferta nominal publicada se concentra especialmente en Maldonado.", "campusIds": ["maldonado", "rocha", "treinta-y-tres"], "courseIds": ["tur-introduccion", "tur-marketing", "tur-geografia", "tur-administracion"] },
+          { "id": "gestion-ambiental", "label": "Gestión Ambiental", "description": "Mención del Cenur del Este con opciones ambientales regionales.", "campusIds": ["maldonado", "rocha", "treinta-y-tres"], "courseIds": ["amb-educacion", "amb-evaluacion-impacto", "amb-calidad-agua", "amb-derecho"] },
+          { "id": "salud", "label": "Salud", "description": "Mención del Cenur del Este; combina opciones nominales y créditos flexibles aprobados.", "campusIds": ["maldonado", "rocha", "treinta-y-tres"], "courseIds": ["salud-administracion-hospitalaria", "amb-calidad-agua", "salud-deontologia", "salud-flexible"] },
+          { "id": "mineria", "label": "Minería", "description": "Mención del Cenur del Este vinculada a la sede Treinta y Tres.", "campusIds": ["treinta-y-tres"], "courseIds": ["min-geologia", "min-sig", "min-derecho", "min-economia"] }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/carreras-en-centros-universitarios-regionales/173-tecnologo-en-administracion-y-contabilidad-tac.html",
+          "creditRequirements": [
+            { "id": "tac-administracion", "name": "Administración", "shortName": "Administración", "minCredits": 50 },
+            { "id": "tac-contabilidad", "name": "Contabilidad e Impuestos", "shortName": "Contabilidad", "minCredits": 70 },
+            { "id": "tac-juridica", "name": "Jurídica", "shortName": "Jurídica", "minCredits": 30 },
+            { "id": "tac-economia", "name": "Economía", "shortName": "Economía", "minCredits": 10 },
+            { "id": "tac-metodos", "name": "Métodos Cuantitativos", "shortName": "Métodos", "minCredits": 20 },
+            { "id": "tac-integradoras", "name": "Actividades Integradoras", "shortName": "Integradoras", "minCredits": 20 },
+            { "id": "tac-flexibles", "name": "Créditos de Distribución Flexible · Mención", "shortName": "Mención", "minCredits": 25 }
+          ],
+          "commonCourseIds": ["administracion-1", "conceptos-contables", "microeconomia", "calculo-1", "administracion-2", "contabilidad-1", "derecho-civil", "matematica-financiera", "procesos-sistemas", "contabilidad-2", "derecho-tributario", "tributaria-1", "legislacion-laboral", "recursos-humanos", "taller", "minimo-administracion", "minimo-contabilidad", "tributaria-2", "proyecto", "derecho-comercial"],
+          "periods": [
+            { "label": "Semestre 1", "courses": [
+              { "id": "administracion-1", "name": "Administración y Gestión de las Organizaciones I", "credits": 10, "requirementId": "tac-administracion" },
+              { "id": "conceptos-contables", "name": "Conceptos Contables", "credits": 10, "requirementId": "tac-contabilidad" },
+              { "id": "microeconomia", "name": "Introducción a la Microeconomía", "credits": 10, "requirementId": "tac-economia" },
+              { "id": "calculo-1", "name": "Cálculo I · o equivalencia Cálculo I/A + I/B", "credits": 10, "requirementId": "tac-metodos" },
+              { "id": "tur-introduccion", "name": "Introducción al Turismo", "credits": 13, "requirementId": "tac-flexibles" },
+              { "id": "tur-marketing", "name": "Marketing Turístico", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "min-geologia", "name": "Geología Básica I", "credits": 12, "requirementId": "tac-flexibles" },
+              { "id": "min-sig", "name": "Sistema de Información Geográfica", "credits": 3, "requirementId": "tac-flexibles" }
+            ] },
+            { "label": "Semestre 2", "courses": [
+              { "id": "administracion-2", "name": "Administración y Gestión de las Organizaciones II", "credits": 10, "requirementId": "tac-administracion" },
+              { "id": "contabilidad-1", "name": "Contabilidad General I", "credits": 10, "requirementId": "tac-contabilidad" },
+              { "id": "derecho-civil", "name": "Derecho Civil", "credits": 10, "requirementId": "tac-juridica" },
+              { "id": "matematica-financiera", "name": "Matemática Financiera TAC", "credits": 10, "requirementId": "tac-metodos" },
+              { "id": "coop-economia-social", "name": "Introducción a la Economía Social y Solidaria", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "agro-competitividad", "name": "Competitividad y Entorno Empresarial", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "com-era-digital", "name": "Comunicación Organizacional en la Era Digital", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "tur-geografia", "name": "Geografía Turística", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "amb-educacion", "name": "Educación Ambiental", "credits": 5, "requirementId": "tac-flexibles" },
+              { "id": "amb-evaluacion-impacto", "name": "Introducción a la Evaluación de Impacto Ambiental y Evaluación Ambiental Estratégica", "credits": 5, "requirementId": "tac-flexibles" },
+              { "id": "min-derecho", "name": "Derecho Minero", "credits": 6, "requirementId": "tac-flexibles" }
+            ] },
+            { "label": "Semestre 3", "courses": [
+              { "id": "procesos-sistemas", "name": "Procesos y Sistemas de Información", "credits": 10, "requirementId": "tac-administracion" },
+              { "id": "contabilidad-2", "name": "Contabilidad General II", "credits": 10, "requirementId": "tac-contabilidad" },
+              { "id": "derecho-tributario", "name": "Derecho Tributario", "credits": 10, "requirementId": "tac-juridica" },
+              { "id": "coop-administracion", "name": "Administración y Gestión de Cooperativas", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "agro-forestal-1", "name": "Economía y Gestión en la Actividad Forestal I", "credits": 6, "requirementId": "tac-flexibles" },
+              { "id": "agro-recursos-naturales", "name": "Introducción a la Economía de los Recursos Naturales", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "agro-sistemas-produccion", "name": "Introducción a los Sistemas de Producción Agropecuarios", "credits": 5, "requirementId": "tac-flexibles" },
+              { "id": "com-analisis-1", "name": "Análisis de la Comunicación Organizacional I", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "tur-administracion", "name": "Administración General · Turismo", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "amb-calidad-agua", "name": "Calidad del Agua para la Salud Ambiental y Humana", "credits": 11, "requirementId": "tac-flexibles" },
+              { "id": "amb-derecho", "name": "Derecho Ambiental", "credits": 4, "requirementId": "tac-flexibles" },
+              { "id": "salud-administracion-hospitalaria", "name": "Administración Hospitalaria", "credits": 3, "requirementId": "tac-flexibles" },
+              { "id": "salud-deontologia", "name": "Deontología y Legislación Laboral", "credits": 4, "requirementId": "tac-flexibles" },
+              { "id": "min-economia", "name": "Economía Minera", "credits": 10, "requirementId": "tac-flexibles" }
+            ] },
+            { "label": "Semestre 4", "courses": [
+              { "id": "tributaria-1", "name": "Tributaria I", "credits": 10, "requirementId": "tac-contabilidad" },
+              { "id": "legislacion-laboral", "name": "Legislación Laboral y Seguridad Social", "credits": 10, "requirementId": "tac-contabilidad" },
+              { "id": "recursos-humanos", "name": "Administración de Recursos Humanos", "credits": 10, "requirementId": "tac-administracion" },
+              { "id": "taller", "name": "Taller", "credits": 5, "requirementId": "tac-integradoras" },
+              { "id": "minimo-administracion", "name": "Unidad electiva de Administración para completar el mínimo de área", "credits": 10, "requirementId": "tac-administracion", "curricularBlock": true },
+              { "id": "minimo-contabilidad", "name": "Unidad electiva de Contabilidad e Impuestos para completar el mínimo de área", "credits": 10, "requirementId": "tac-contabilidad", "curricularBlock": true },
+              { "id": "coop-sociologia", "name": "Sociología de las Organizaciones Cooperativas", "credits": 10, "requirementId": "tac-flexibles" },
+              { "id": "agro-forestal-2", "name": "Economía y Gestión en la Actividad Forestal II", "credits": 5, "requirementId": "tac-flexibles" },
+              { "id": "com-analisis-2", "name": "Análisis de la Comunicación Organizacional II", "credits": 5, "requirementId": "tac-flexibles" },
+              { "id": "salud-flexible", "name": "Otros créditos flexibles aprobados para la Mención Salud", "credits": 7, "requirementId": "tac-flexibles", "curricularBlock": true }
+            ] },
+            { "label": "Semestre 5", "courses": [
+              { "id": "tributaria-2", "name": "Tributaria II", "credits": 10, "requirementId": "tac-contabilidad" },
+              { "id": "proyecto", "name": "Proyecto Final", "credits": 15, "requirementId": "tac-integradoras" },
+              { "id": "derecho-comercial", "name": "Derecho Comercial", "credits": 10, "requirementId": "tac-juridica" }
+            ] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "tac-nucleo-comun", "label": "Núcleo común y mínimos de área", "minCompleted": 20, "courseIds": ["administracion-1", "conceptos-contables", "microeconomia", "calculo-1", "administracion-2", "contabilidad-1", "derecho-civil", "matematica-financiera", "procesos-sistemas", "contabilidad-2", "derecho-tributario", "tributaria-1", "legislacion-laboral", "recursos-humanos", "taller", "minimo-administracion", "minimo-contabilidad", "tributaria-2", "proyecto", "derecho-comercial"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CENURSO", "locations": ["Colonia", "Mercedes"], "role": "carrera completa en la Región Suroeste", "curriculumVariant": false, "trajectoryIds": ["cooperativismo-asociativismo"] },
+        { "serviceCode": "CUT", "locations": ["Tacuarembó"], "role": "carrera completa en Cenur Noreste", "curriculumVariant": false, "trajectoryIds": ["agroindustria", "comunicacion-organizacional"] },
+        { "serviceCode": "CURE", "locations": ["Maldonado", "Rocha"], "role": "carrera completa en Cenur del Este", "curriculumVariant": false, "trajectoryIds": ["turismo", "gestion-ambiental", "salud"] },
+        { "serviceCode": "CURE", "locations": ["Treinta y Tres"], "role": "carrera completa en Cenur del Este", "curriculumVariant": false, "trajectoryIds": ["mineria", "gestion-ambiental", "salud", "turismo"] }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurso-tecnologo-en-administracion-y-contabilidad-2012.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, 225 créditos y siete rótulos de mención, pero no la composición. FCEA publica la grilla común, mínimos, opciones regionales y sedes vigentes."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-six-campuses-seven-mentions",
+        "regionalCurriculumVariant": false,
+        "reason": "Las menciones acompañan al mismo título y se construyen con los 25 créditos flexibles regionales; no son carreras ni planes independientes.",
+        "normalization": [
+          "Mostrar una sola carrera bajo FCEA y un solo Plan 2012.",
+          "Filtrar las siete menciones según la sede elegida sin duplicar el núcleo común ni el progreso.",
+          "Exigir 225 créditos y los mínimos 50/70/30/10/20/20/25 por área.",
+          "Conservar las unidades de mención como opciones; el mínimo flexible es 25 créditos.",
+          "Usar la duración académica de cinco semestres publicada por FCEA, no los 60 meses del catálogo general."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/carreras-en-centros-universitarios-regionales/173-tecnologo-en-administracion-y-contabilidad-tac.html", "authority": "Facultad de Ciencias Económicas y de Administración", "supports": ["grilla vigente", "mínimos", "menciones", "sedes", "cambios 2026"] },
+        { "url": "https://fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Tecnologo_TAC/TAC_Plan_de_estudios.pdf", "authority": "FCEA, Plan de Estudios", "supports": ["Plan", "título", "225 créditos", "cinco semestres", "modelo de menciones"] },
+        { "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/Reglamento_TAC_actualizaci%C3%B3n_2025.pdf", "authority": "FCEA, Reglamento actualizado 2025", "supports": ["vigencia", "régimen de cursado", "ingreso"] },
+        { "url": "https://udelar.edu.uy/noticias/la-region-suroeste-de-la-udelar-ofrece-el-tecnologo-en-administracion-y-contabilidad", "authority": "Universidad de la República", "supports": ["Colonia", "Mercedes", "Cooperativismo y Asociativismo", "cinco semestres"] },
+        { "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnologo-en-administracion-y-contabilidad/", "authority": "Cenur del Este", "supports": ["Maldonado", "Rocha", "Treinta y Tres", "título", "menciones del Este"] }
+      ],
+      "anomalies": [
+        { "field": "duration", "resolution": "El catálogo central y Bedelías muestran 60 meses, pero FCEA y la noticia institucional vigente organizan la carrera en cinco semestres. La UI usa 30 meses." },
+        { "field": "creditModel", "resolution": "El Plan original describe 170 créditos obligatorios y 55 opcionales. La grilla vigente de FCEA establece 200 obligatorios y 25 de distribución flexible; prevalece la implementación actual y la diferencia queda trazada." },
+        { "field": "courseAvailability", "resolution": "La oferta opcional cambia por año, modalidad y sede. La UI publica el catálogo específico que FCEA identifica para cada mención y advierte que no todas las opciones deben completarse." },
+        { "field": "prerequisites", "resolution": "No existe una tabla consolidada vigente de previaturas en las fuentes revisadas. No se inventan bloqueos; los programas de cada unidad siguen siendo la referencia operativa." }
+      ],
+      "remainingWork": "La malla, mínimos, sedes y menciones quedan operativos. Incorporar previaturas sólo cuando FCEA publique una tabla consolidada vigente o se auditen individualmente todos los programas."
     }
   ],
-  "contentHash": "sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787"
+  "contentHash": "sha256:be7823100dbd6346473ddd9ccac65ab000851f1066b06412246761cc57e0f45d"
 }

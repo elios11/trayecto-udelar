@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T14:14:40.033Z",
+  "generatedAt": "2026-08-20T14:37:03.986Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787"
+    "officialAuditRegistryHash": "sha256:be7823100dbd6346473ddd9ccac65ab000851f1066b06412246761cc57e0f45d"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 32,
-    "pendingCanonicalIdentities": 145,
+    "evidenceClosedCanonicalIdentities": 33,
+    "pendingCanonicalIdentities": 144,
     "byPriority": {
-      "composition-unavailable": 36,
+      "composition-unavailable": 35,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -214,39 +214,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-one-campus-two-profiles"
+    },
+    {
+      "identity": "tecnologo en administracion y contabilidad:2012",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-six-campuses-seven-mentions"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnologo en administracion y contabilidad:2012",
-      "career": {
-        "name": "TECNÓLOGO EN ADMINISTRACIÓN Y CONTABILIDAD",
-        "normalizedName": "tecnologo en administracion y contabilidad",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2012"
-      },
-      "canonicalSource": {
-        "serviceCode": "CENURSO",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL SUROESTE",
-        "planKey": "CENURSO:tecnologo en administracion y contabilidad:2012",
-        "site": null,
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CENURSO",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL SUROESTE",
-          "planKey": "CENURSO:tecnologo en administracion y contabilidad:2012",
-          "site": null,
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en gestion ambiental:2011",
       "career": {
@@ -4662,5 +4638,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:17adfd3fb393d80d9b3dacfdde422b632e6d515d9d10937bf2b6ab0f9636dd20"
+  "contentHash": "sha256:3938e4e6fac243aa0949bdf388ab5b08489badd313919355c96c98203db768d3"
 }

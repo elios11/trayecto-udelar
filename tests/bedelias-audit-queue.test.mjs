@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 32);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 145);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 33);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 144);
   assert.deepEqual(saved.counts.byPriority, {
-    "composition-unavailable": 36,
+    "composition-unavailable": 35,
     "official-sources-pending": 109,
   });
   assert.deepEqual(saved.counts.regionalComparisons, {
@@ -58,6 +58,7 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.completedAudits[29].identity, "higienista en odontologia:2017");
   assert.equal(saved.completedAudits[30].identity, "licenciatura en ciencias hidricas aplicadas:2016");
   assert.equal(saved.completedAudits[31].identity, "licenciatura en diseno integrado:2012");
+  assert.equal(saved.completedAudits[32].identity, "tecnologo en administracion y contabilidad:2012");
   assert.equal(saved.source.officialAuditRegistryHash, auditRegistry.contentHash);
   assert.equal(officialAuditRegistryHash(auditRegistry), auditRegistry.contentHash);
 });
@@ -74,5 +75,5 @@ test("la cola guardada se reconstruye sin red con el mismo hash", () => {
   assert.deepEqual(rebuilt.counts, saved.counts);
   assert.ok(rebuilt.queue.every((entry) => entry.canonicalSource.state !== "audited"));
   assert.equal(rebuilt.queue[0].priority, "composition-unavailable");
-  assert.equal(rebuilt.queue[0].identity, "tecnologo en administracion y contabilidad:2012");
+  assert.equal(rebuilt.queue[0].identity, "licenciatura en gestion ambiental:2011");
 });

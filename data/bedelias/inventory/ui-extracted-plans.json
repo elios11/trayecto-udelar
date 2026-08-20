@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:17adfd3fb393d80d9b3dacfdde422b632e6d515d9d10937bf2b6ab0f9636dd20",
-    "officialAuditHash": "sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787",
+    "auditQueueHash": "sha256:3938e4e6fac243aa0949bdf388ab5b08489badd313919355c96c98203db768d3",
+    "officialAuditHash": "sha256:be7823100dbd6346473ddd9ccac65ab000851f1066b06412246761cc57e0f45d",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 111,
-    "compositionUnavailable": 64,
-    "plansWithOfficialCampuses": 25,
+    "compositionAvailable": 112,
+    "compositionUnavailable": 63,
+    "plansWithOfficialCampuses": 26,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -284,9 +284,16 @@
       "planId": "bedelias-cenurso-tecnologo-en-administracion-y-contabilidad-2012",
       "facultyCode": "CENURSO",
       "snapshotPath": "data/bedelias/cenurso-tecnologo-en-administracion-y-contabilidad-2012.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "colonia",
+        "mercedes",
+        "tacuarembo",
+        "maldonado",
+        "rocha",
+        "treinta-y-tres"
+      ]
     },
     {
       "identity": "licenciatura en nutricion:2014",
@@ -1685,5 +1692,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:0ca7e35cf95740ac0308bbec000fe60f664c623d9842f5ab59fb2deabebfa14f"
+  "contentHash": "sha256:3abe983ff1da7e4c500eeddbacd8dab61b570eda532a03c623fcd94cfb444da2"
 }

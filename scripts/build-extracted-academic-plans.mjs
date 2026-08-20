@@ -152,6 +152,10 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
   if (Array.isArray(audit?.officialPlan?.trajectories) && audit.officialPlan.trajectories.length > 0) {
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => {
       const excludedIds = new Set((trajectory.excludedCourseIds ?? []).map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
+      const includedIds = Array.isArray(trajectory.courseIds)
+        ? new Set([...(audit.officialPlan.curriculum.commonCourseIds ?? []), ...trajectory.courseIds]
+          .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id))
+        : null;
       return [trajectory.id, {
         label: trajectory.label,
         description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
@@ -160,7 +164,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           label: period.label,
           courseIds: (period.courseIds ?? [])
             .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
-            .filter((id) => id && !excludedIds.has(id)),
+            .filter((id) => id && !excludedIds.has(id) && (!includedIds || includedIds.has(id))),
         })),
       }];
     }));
@@ -190,6 +194,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
 }
 
 function pathwayLabelForAudit(audit) {
+  if (audit?.officialPlan?.pathwayLabel) return audit.officialPlan.pathwayLabel;
   return audit?.identity === "tecnicatura en deportes:2007" ? "Opción" : "Trayectoria";
 }
 
@@ -421,7 +426,8 @@ function buildProjection(entry, snapshot, audit) {
         publishedMinCredits: Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : null,
         durationMonths: Number(audit?.officialPlan?.durationMonths) || Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
         campuses,
-        sharedWith: (entry.sourceOffers ?? []).map((offer) => offer.serviceName).filter((name) => name !== entry.canonicalSource.serviceName),
+        sharedWith: [...new Set((entry.sourceOffers ?? []).map((offer) => offer.serviceName)
+          .filter((name) => Boolean(name) && name !== entry.canonicalSource.serviceName))],
         auditStatus,
         compositionAvailable,
         notice,
