@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:8a8cd8f12e9b932dd37be9de7c040eb89952d12ed3301a0753a8995d6b5f9311",
-    "officialAuditHash": "sha256:d5fd2b3259e6c893e842601f6237b4261b3f779306913d6a52f5fab24f27f070",
+    "auditQueueHash": "sha256:7d130af0c3c6d562b9048a2bcad2e2f4972985a4b7433c89c8ef669b07655208",
+    "officialAuditHash": "sha256:37ee845bb8076902436527a735dbb37dbceff248537e18cf3f82382cda7efdb3",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 109,
-    "compositionUnavailable": 66,
+    "compositionAvailable": 110,
+    "compositionUnavailable": 65,
     "plansWithOfficialCampuses": 25,
     "excludedFromCurrentUi": 2
   },
@@ -46,9 +46,11 @@
       "planId": "bedelias-cenurln-licenciatura-en-ciencias-hidricas-aplicadas-2016",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-licenciatura-en-ciencias-hidricas-aplicadas-2016.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "salto"
+      ]
     },
     {
       "identity": "licenciatura en ciencias sociales:2009",
@@ -1681,5 +1683,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:7a01739d5425fbb7593a194e41c6e67317fdb7082d439ae536e43ea589fa35fe"
+  "contentHash": "sha256:8310a8fdeab561ec995a047b1afe79fc6c11578f9566bb4adb42bcaf23bd2d87"
 }

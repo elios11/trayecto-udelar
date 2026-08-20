@@ -799,3 +799,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:d5fd2b3259e6c893e842601f6237b4261b3f779306913d6a52f5fab24f27f070`. Cola actualizada: 147 identidades pendientes, sin casos `insufficient-regional-content`; hash `sha256:8a8cd8f12e9b932dd37be9de7c040eb89952d12ed3301a0753a8995d6b5f9311`.
 - Manifiesto UI: 175 proyecciones, 109 con composición y 66 sin composición; hash `sha256:7a01739d5425fbb7593a194e41c6e67317fdb7082d439ae536e43ea589fa35fe`.
 - Siguiente paso: auditar Licenciatura en Ciencias Hídricas Aplicadas Plan 2016, primera identidad sin composición de la cola reproducible.
+
+### Licenciatura en Recursos Hídricos y Riego Plan 2017 — identidad, malla y previaturas normalizadas 2026-08-20
+
+- La identidad histórica `Licenciatura en Ciencias Hídricas Aplicadas` Plan 2016 queda únicamente como clave técnica del snapshot. La resolución del Claustro y las páginas vigentes de Facultad de Ingeniería y CENUR Litoral Norte confirman que Recursos Hídricos y Riego la sustituyó; la UI muestra una sola carrera y un solo Plan 2017.
+- La combinación tipo 2024 publica 36 unidades en ocho semestres. Como el plan permite elegir el currículo cumpliendo mínimos por área, sus 377 créditos visibles no se interpretan como un tronco íntegramente obligatorio.
+- El egreso exige 360 créditos: 110 en Ciencias básicas, 190 en áreas específicas, 5 complementarios y 55 de libre elección, junto con los mínimos temáticos, Pasantía y Proyecto Final. Los créditos libres se representan como bloque flexible y no como asignaturas inventadas.
+- La malla interactiva oficial aporta 27 reglas de cursado, diferenciando curso y examen aprobados. Pasantía requiere 210 créditos y Proyecto Final 250.
+- Salto es la única sede completa vigente. Algunas asignaturas pueden dictarse en Concordia, Argentina, pero esa ubicación puntual no se presenta como otra sede ni trayectoria.
+- Registro de auditoría: hash `sha256:37ee845bb8076902436527a735dbb37dbceff248537e18cf3f82382cda7efdb3`. Cola actualizada: 146 identidades pendientes, 37 sin composición; hash `sha256:7d130af0c3c6d562b9048a2bcad2e2f4972985a4b7433c89c8ef669b07655208`.
+- Manifiesto UI: 175 proyecciones, 110 con composición y 65 sin composición; hash `sha256:8310a8fdeab561ec995a047b1afe79fc6c11578f9566bb4adb42bcaf23bd2d87`.
+- Siguiente paso: auditar Licenciatura en Diseño Integrado Plan 2012, próxima identidad sin composición de la cola reproducible.

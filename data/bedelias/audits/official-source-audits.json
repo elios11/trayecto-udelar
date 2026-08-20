@@ -9213,7 +9213,198 @@
         }
       ],
       "remainingWork": "La malla, el mínimo de egreso, las previaturas y el alcance territorial vigente quedan operativos. Revisar sólo futuras modificaciones de la malla o de las pautas reglamentarias."
+    },
+    {
+      "identity": "licenciatura en ciencias hidricas aplicadas:2016",
+      "career": "LICENCIATURA EN CIENCIAS HÍDRICAS APLICADAS",
+      "planYear": "2016",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-renamed-curriculum-prerequisites-and-campus",
+      "publicationEligible": false,
+      "uiNotice": "La Licenciatura en Recursos Hídricos y Riego, Plan 2017, reemplazó a Ciencias Hídricas Aplicadas. La malla oficial propone 36 unidades y permite elegir el currículo dentro de mínimos por área; por eso no todas las unidades visibles son obligatorias. Pasantía requiere 210 créditos y Proyecto Final 250.",
+      "officialPlan": {
+        "careerName": "Licenciatura en Recursos Hídricos y Riego",
+        "planYear": "2017",
+        "approval": [
+          "Asamblea del Claustro de Facultad de Ingeniería, Resolución 6 de 21/12/2016",
+          "Plan aprobado en 2017 y publicado como oferta vigente por Facultad de Ingeniería"
+        ],
+        "title": "Licenciado en Recursos Hídricos y Riego",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "curriculum": {
+          "sourceUrl": "https://agua.unorte.edu.uy/rsc/Trayectoria2024_LRHYR.pdf",
+          "prerequisitesSourceUrl": "https://agua.unorte.edu.uy/malla/index.html",
+          "creditRequirements": [
+            { "id": "rhyr-basicas", "name": "Ciencias básicas", "shortName": "Ciencias básicas", "minCredits": 110 },
+            { "id": "rhyr-matematica", "parentId": "rhyr-basicas", "name": "Matemática", "shortName": "Matemática", "minCredits": 55 },
+            { "id": "rhyr-fisica", "parentId": "rhyr-basicas", "name": "Física", "shortName": "Física", "minCredits": 30 },
+            { "id": "rhyr-programacion", "parentId": "rhyr-basicas", "name": "Programación", "shortName": "Programación", "minCredits": 10 },
+            { "id": "rhyr-quimica", "parentId": "rhyr-basicas", "name": "Química", "shortName": "Química", "minCredits": 8 },
+            { "id": "rhyr-especificas", "name": "Áreas específicas", "shortName": "Específicas", "minCredits": 190 },
+            { "id": "rhyr-hidraulica", "parentId": "rhyr-especificas", "name": "Hidráulica", "shortName": "Hidráulica", "minCredits": 30 },
+            { "id": "rhyr-hidrologia", "parentId": "rhyr-especificas", "name": "Hidrología", "shortName": "Hidrología", "minCredits": 40 },
+            { "id": "rhyr-geociencias", "parentId": "rhyr-especificas", "name": "Geociencias", "shortName": "Geociencias", "minCredits": 30 },
+            { "id": "rhyr-medio-rural", "parentId": "rhyr-especificas", "name": "Agua y Medio rural", "shortName": "Agua y Medio rural", "minCredits": 20 },
+            { "id": "rhyr-practica", "parentId": "rhyr-especificas", "name": "Práctica", "shortName": "Práctica", "minCredits": 40 },
+            { "id": "rhyr-complementarias", "name": "Actividades integradoras complementarias", "shortName": "Complementarias", "minCredits": 5 },
+            { "id": "rhyr-libre", "name": "Créditos de libre elección", "shortName": "Libre elección", "minCredits": 55 }
+          ],
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courses": [
+                { "id": "calculo-1", "name": "Cálculo I", "credits": 16, "requirementId": "rhyr-matematica" },
+                { "id": "algebra-1", "name": "Geometría y Álgebra Lineal I", "credits": 12, "requirementId": "rhyr-matematica" },
+                { "id": "fisica-1", "name": "Física I", "credits": 10, "requirementId": "rhyr-fisica" },
+                { "id": "taller-diseno", "name": "Taller de Diseño", "credits": 6, "requirementId": "rhyr-complementarias" },
+                { "id": "introduccion-actividad-agropecuaria", "name": "Introducción a la Actividad Agropecuaria", "credits": 2, "requirementId": "rhyr-medio-rural" }
+              ]
+            },
+            {
+              "label": "Semestre 2",
+              "courses": [
+                { "id": "calculo-2", "name": "Cálculo II", "credits": 16, "requirementId": "rhyr-matematica" },
+                { "id": "fisica-2", "name": "Física II", "credits": 10, "requirementId": "rhyr-fisica" },
+                { "id": "algebra-2", "name": "Geometría y Álgebra Lineal II", "credits": 12, "requirementId": "rhyr-matematica" },
+                { "id": "geologia", "name": "Geología", "credits": 8, "requirementId": "rhyr-geociencias" }
+              ]
+            },
+            {
+              "label": "Semestre 3",
+              "courses": [
+                { "id": "probabilidad-estadistica", "name": "Probabilidad y Estadística", "credits": 10, "requirementId": "rhyr-matematica" },
+                { "id": "mecanica-clasica", "name": "Mecánica Clásica", "credits": 10, "requirementId": "rhyr-fisica" },
+                { "id": "edafologia", "name": "Edafología", "credits": 10, "requirementId": "rhyr-medio-rural" },
+                { "id": "agrometeorologia", "name": "Agrometeorología", "credits": 8, "requirementId": "rhyr-medio-rural" },
+                { "id": "quimica-general", "name": "Principios de Química General", "credits": 10, "requirementId": "rhyr-quimica" }
+              ]
+            },
+            {
+              "label": "Semestre 4",
+              "courses": [
+                { "id": "metodos-numericos", "name": "Métodos Numéricos", "credits": 10, "requirementId": "rhyr-programacion" },
+                { "id": "mecanica-fluidos", "name": "Mecánica de los Fluidos", "credits": 14, "requirementId": "rhyr-hidraulica" },
+                { "id": "topografia", "name": "Topografía", "credits": 10, "requirementId": "rhyr-geociencias" },
+                { "id": "programacion-1", "name": "Programación I", "credits": 10, "requirementId": "rhyr-programacion" }
+              ]
+            },
+            {
+              "label": "Semestre 5",
+              "courses": [
+                { "id": "geotecnica", "name": "Geotécnica", "credits": 10, "requirementId": "rhyr-geociencias" },
+                { "id": "geofisica-general", "name": "Geofísica General", "credits": 11, "requirementId": "rhyr-geociencias" },
+                { "id": "hidrologia", "name": "Hidrología", "credits": 11, "requirementId": "rhyr-hidrologia" },
+                { "id": "instalaciones-hidraulicas-presion", "name": "Instalaciones Hidráulicas a Presión", "credits": 10, "requirementId": "rhyr-hidraulica" },
+                { "id": "hidraulica-canales", "name": "Hidráulica de Canales", "credits": 10, "requirementId": "rhyr-hidraulica" }
+              ]
+            },
+            {
+              "label": "Semestre 6",
+              "courses": [
+                { "id": "modelos-hidrologicos", "name": "Modelos Hidrológicos", "credits": 10, "requirementId": "rhyr-hidrologia" },
+                { "id": "ingenieria-ambiental", "name": "Elementos de Ingeniería Ambiental", "credits": 7, "requirementId": "rhyr-hidrologia" },
+                { "id": "metodos-geofisicos-aplicados", "name": "Métodos Geofísicos Aplicados", "credits": 10, "requirementId": "rhyr-geociencias" },
+                { "id": "hidroquimica", "name": "Principios de Hidroquímica", "credits": 4, "requirementId": "rhyr-quimica" }
+              ]
+            },
+            {
+              "label": "Semestre 7",
+              "courses": [
+                { "id": "riego-drenaje-1", "name": "Sistemas de Riego y Drenaje I", "credits": 10, "requirementId": "rhyr-medio-rural" },
+                { "id": "pasantia", "name": "Pasantía", "credits": 10, "requirementId": "rhyr-practica" },
+                { "id": "normativa-agua", "name": "Normativa y Legislación del Agua", "credits": 8, "requirementId": "rhyr-complementarias" },
+                { "id": "proyecto-final", "name": "Proyecto Final", "credits": 30, "requirementId": "rhyr-practica" }
+              ]
+            },
+            {
+              "label": "Semestre 8",
+              "courses": [
+                { "id": "riego-drenaje-2", "name": "Sistemas de Riego y Drenaje II", "credits": 10, "requirementId": "rhyr-medio-rural" },
+                { "id": "obras-hidraulicas", "name": "Obras Hidráulicas", "credits": 10, "requirementId": "rhyr-hidraulica" },
+                { "id": "agroefluentes-saneamiento", "name": "Agroefluentes y Saneamiento", "credits": 10, "requirementId": "rhyr-hidrologia" },
+                { "id": "hidrologia-subterranea", "name": "Hidrología Subterránea", "credits": 11, "requirementId": "rhyr-hidrologia" },
+                { "id": "conduccion-drenaje-urbano", "name": "Sistemas de Conducción y Drenaje Urbano", "credits": 11, "requirementId": "rhyr-hidraulica" }
+              ]
+            },
+            {
+              "label": "Formación flexible",
+              "courses": [
+                { "id": "libre-eleccion", "name": "Créditos de Libre Elección", "credits": 55, "requirementId": "rhyr-libre", "curricularBlock": true }
+              ]
+            }
+          ],
+          "prerequisites": [
+            { "targetId": "calculo-2", "courseIds": ["calculo-1"] },
+            { "targetId": "fisica-2", "courseIds": ["fisica-1"] },
+            { "targetId": "algebra-2", "courseIds": ["algebra-1"] },
+            { "targetId": "probabilidad-estadistica", "courseIds": ["calculo-2", "algebra-2"], "examIds": ["calculo-1", "algebra-1"] },
+            { "targetId": "mecanica-clasica", "courseIds": ["calculo-1", "fisica-1"] },
+            { "targetId": "edafologia", "courseIds": ["geologia"] },
+            { "targetId": "agrometeorologia", "courseIds": ["fisica-1"] },
+            { "targetId": "metodos-numericos", "courseIds": ["calculo-2", "algebra-2"], "examIds": ["calculo-1", "algebra-1"] },
+            { "targetId": "mecanica-fluidos", "courseIds": ["calculo-2", "fisica-2", "algebra-2"], "examIds": ["calculo-1", "algebra-1", "fisica-1"] },
+            { "targetId": "topografia", "courseIds": ["calculo-2", "fisica-2", "algebra-2"], "examIds": ["calculo-1", "algebra-1", "fisica-1"] },
+            { "targetId": "geotecnica", "courseIds": ["mecanica-fluidos"], "examIds": ["calculo-2", "fisica-2", "algebra-2", "geologia"] },
+            { "targetId": "geofisica-general", "courseIds": ["calculo-2", "fisica-2", "algebra-2", "geologia", "mecanica-clasica"], "examIds": ["calculo-1", "algebra-1", "fisica-1"] },
+            { "targetId": "hidrologia", "courseIds": ["calculo-2", "fisica-2", "algebra-2"], "examIds": ["fisica-1", "algebra-1", "calculo-1"] },
+            { "targetId": "instalaciones-hidraulicas-presion", "courseIds": ["mecanica-fluidos"], "examIds": ["calculo-2", "algebra-2", "fisica-2"] },
+            { "targetId": "hidraulica-canales", "courseIds": ["mecanica-fluidos"], "examIds": ["calculo-2", "algebra-2", "fisica-2"] },
+            { "targetId": "modelos-hidrologicos", "courseIds": ["probabilidad-estadistica", "hidraulica-canales", "hidrologia", "metodos-numericos"] },
+            { "targetId": "ingenieria-ambiental", "courseIds": ["hidrologia", "quimica-general"] },
+            { "targetId": "metodos-geofisicos-aplicados", "courseIds": ["geofisica-general"], "examIds": ["calculo-2", "fisica-2", "algebra-2", "mecanica-clasica"] },
+            { "targetId": "riego-drenaje-1", "courseIds": ["agrometeorologia", "edafologia", "topografia", "hidraulica-canales", "instalaciones-hidraulicas-presion"] },
+            { "targetId": "pasantia", "minCredits": 210 },
+            { "targetId": "normativa-agua", "courseIds": ["hidrologia", "riego-drenaje-1", "ingenieria-ambiental"] },
+            { "targetId": "proyecto-final", "minCredits": 250 },
+            { "targetId": "riego-drenaje-2", "courseIds": ["riego-drenaje-1"] },
+            { "targetId": "obras-hidraulicas", "courseIds": ["topografia", "geotecnica", "hidrologia", "hidraulica-canales", "mecanica-fluidos"], "examIds": ["geologia"] },
+            { "targetId": "agroefluentes-saneamiento", "courseIds": ["ingenieria-ambiental"], "examIds": ["quimica-general"] },
+            { "targetId": "hidrologia-subterranea", "courseIds": ["metodos-numericos", "mecanica-fluidos", "hidrologia"], "examIds": ["calculo-2", "fisica-2", "algebra-2", "geologia", "quimica-general"] },
+            { "targetId": "conduccion-drenaje-urbano", "courseIds": ["hidraulica-canales", "instalaciones-hidraulicas-presion"], "examIds": ["geologia", "hidrologia"] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "rhyr-practicas-obligatorias", "label": "Pasantía y Proyecto Final obligatorios", "minCompleted": 2, "courseIds": ["pasantia", "proyecto-final"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CENURLN", "locations": ["Salto"], "role": "sede vigente de la carrera completa", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-licenciatura-en-ciencias-hidricas-aplicadas-2016.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "El snapshot conserva la denominación y el año anteriores, pero su propio título ya remite a Recursos Hídricos y Riego. Las fuentes vigentes confirman que el Plan 2017 sustituyó al anterior y publican la composición completa."
+      },
+      "conclusion": {
+        "canonicalModel": "one-current-renamed-plan-in-salto",
+        "regionalCurriculumVariant": false,
+        "reason": "La resolución del Claustro y la oferta vigente de Facultad de Ingeniería describen un reemplazo de plan y nombre, no dos carreras simultáneas. La carrera completa se dicta en Salto; algunas asignaturas en Concordia no constituyen otra sede completa.",
+        "normalization": [
+          "Conservar la identidad histórica de inventario sólo como clave técnica y mostrar un único nombre vigente: Licenciatura en Recursos Hídricos y Riego.",
+          "Mostrar Plan 2017, 360 créditos, ocho semestres y el título oficial.",
+          "Publicar la combinación tipo 2024 y todas las previaturas de la malla interactiva oficial.",
+          "Representar los 55 créditos de libre elección como bloque flexible, no como asignaturas inventadas.",
+          "Ofrecer Salto como única sede completa confirmada."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.fing.edu.uy/sites/default/files/Plan_Lic_Rec_Hid.pdf", "authority": "Facultad de Ingeniería, Udelar", "supports": ["Plan de Estudios", "360 créditos", "mínimos por área", "título", "Pasantía y Proyecto Final"] },
+        { "url": "https://www.fing.edu.uy/es/carrera/grado/lic-en-recursos-hidricos-y-riego-rn-salto", "authority": "Facultad de Ingeniería, Udelar", "supports": ["nombre vigente", "Plan 2017", "cuatro años", "sede Salto"] },
+        { "url": "https://agua.unorte.edu.uy/licenciaturarhyr", "authority": "Departamento del Agua, CENUR Litoral Norte", "supports": ["vigencia", "reemplazo de denominación", "360 créditos", "coordinación académica"] },
+        { "url": "https://agua.unorte.edu.uy/rsc/Trayectoria2024_LRHYR.pdf", "authority": "Departamento del Agua, trayectoria sugerida 2024", "supports": ["ocho semestres", "36 unidades curriculares"] },
+        { "url": "https://agua.unorte.edu.uy/malla/index.html", "authority": "Departamento del Agua, malla curricular interactiva", "supports": ["unidades", "créditos", "previaturas de curso", "previaturas de examen", "umbrales de Pasantía y Proyecto Final"] },
+        { "url": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/acta/29244/ACTA%2004%20_21%20dic%202016_.pdf", "authority": "Asamblea del Claustro de Facultad de Ingeniería", "supports": ["sustitución del Plan Ciencias Hídricas Aplicadas por Recursos Hídricos y Riego"] }
+      ],
+      "anomalies": [
+        { "field": "identityAndPlanYear", "resolution": "Bedelías conserva Ciencias Hídricas Aplicadas 2016 como clave, mientras Facultad y CENUR publican Recursos Hídricos y Riego, aprobado en 2017. La UI normaliza nombre y año sin duplicar la carrera ni romper la trazabilidad del snapshot." },
+        { "field": "suggestedCourseCredits", "resolution": "La combinación tipo visible suma más de 360 créditos porque el plan es flexible y la persona elige su currículo cumpliendo mínimos. Las unidades visibles no se marcan todas como obligatorias; sólo Pasantía y Proyecto Final lo son explícitamente." },
+        { "field": "courseLocation", "resolution": "Facultad indica que algunas asignaturas se dictan en la UTN de Concordia, Argentina. Se conserva como nota de alcance y no como una segunda sede completa de la carrera." }
+      ],
+      "remainingWork": "La identidad vigente, malla, mínimos, previaturas y sede quedan operativos. Revisar futuras modificaciones de la combinación tipo o de la malla interactiva."
     }
   ],
-  "contentHash": "sha256:d5fd2b3259e6c893e842601f6237b4261b3f779306913d6a52f5fab24f27f070"
+  "contentHash": "sha256:37ee845bb8076902436527a735dbb37dbceff248537e18cf3f82382cda7efdb3"
 }

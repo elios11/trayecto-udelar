@@ -398,7 +398,7 @@ function buildProjection(entry, snapshot, audit) {
         bedeliasPlanUrl: snapshot.plan?.sourceUrl,
       },
       plan: {
-        year: String(entry.plan.year),
+        year: String(audit?.officialPlan?.planYear ?? entry.plan.year),
         current: entry.plan.current !== false,
         degreeTitle: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name),
         minCredits: safeMinCredits,
@@ -485,15 +485,17 @@ export async function buildExtractedAcademicPlans() {
   for (const { planId, projection } of projections) await writeFile(path.join(outputDirectory, `${planId}.json`), `${JSON.stringify(projection)}\n`, "utf8");
 
   const facultyMap = new Map();
-  for (const { entry, planId, projection } of projections) {
+  for (const { entry, planId, projection, audit } of projections) {
     const facultyId = `bedelias-${entry.canonicalSource.serviceCode.toLocaleLowerCase()}`;
     if (!facultyMap.has(facultyId)) facultyMap.set(facultyId, { id: facultyId, label: readableFacultyName(entry.canonicalSource.serviceName), careers: new Map() });
     const faculty = facultyMap.get(facultyId);
-    const careerId = `${facultyId}-${slug(entry.career.name)}`;
-    if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: titleCase(entry.career.name), plans: [] });
+    const careerName = audit?.officialPlan?.careerName ?? entry.career.name;
+    const planYear = audit?.officialPlan?.planYear ?? entry.plan.year;
+    const careerId = `${facultyId}-${slug(careerName)}`;
+    if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: titleCase(careerName), plans: [] });
     faculty.careers.get(careerId).plans.push({
       id: planId,
-      label: `Plan ${entry.plan.year}${entry.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
+      label: `Plan ${planYear}${entry.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
       defaultTrajectoryId: Object.keys(projection.pathways)[0],
       defaultCredentialId: "bedelias-degree",
     });
