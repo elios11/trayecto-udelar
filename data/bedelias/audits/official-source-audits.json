@@ -10951,7 +10951,59 @@
         { "field": "campus", "resolution": "La página oficial publica Montevideo y EVA. EVA es el entorno virtual de apoyo, no una sede o trayectoria independiente." }
       ],
       "remainingWork": "La malla, los mínimos, el catálogo flexible y la alternativa de práctica quedan operativos. Actualizar la oferta libre cuando FCEA cambie la grilla y automatizar previaturas sólo a partir de una fuente consolidada vigente o una exportación oficial de Autogestión."
+    },
+    {
+      "identity": "licenciatura en oceanografia biologica:1978",
+      "career": "LICENCIATURA EN OCEANOGRAFÍA BIOLÓGICA",
+      "planYear": "1978",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "historical-operation-current-offering-and-successor-programs",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Licenciado en Oceanografía Biológica",
+        "approvalYear": 1978,
+        "historicalOperatingPeriod": "1978-1994",
+        "academicService": "Facultad de Ciencias"
+      },
+      "offerings": [
+        { "serviceCode": "FCIEN", "locations": ["Montevideo"], "role": "licenciatura histórica que dejó de dictarse", "admissionStatus": "historical-not-current" }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-en-oceanografia-biologica-1978.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "El snapshot no publica composición y contiene estados contradictorios: metadata.current es false, mientras plan.current es true. Udelar documenta que la Licenciatura en Oceanografía Biológica dejó de dictarse y el registro histórico acota su funcionamiento a 1978-1994."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-oceanography-degree-replaced-by-biological-sciences-path-and-future-program",
+        "regionalCurriculumVariant": false,
+        "excludeFromCurrentUi": true,
+        "reason": "La Licenciatura en Oceanografía Biológica funcionó entre 1978 y 1994 y posteriormente dejó de dictarse. La oferta vigente canaliza la formación oceanográfica dentro de la Licenciatura en Ciencias Biológicas; la nueva Licenciatura en Oceanografía es otra carrera, con apertura formal prevista para 2027.",
+        "normalization": [
+          "No presentar Licenciatura en Oceanografía Biológica Plan 1978 como carrera vigente o con ingreso actual.",
+          "Conservar el título histórico y el período 1978-1994 para trazabilidad.",
+          "No reconstruir una malla contemporánea con cursos de Oceanografía de la Licenciatura en Ciencias Biológicas Plan 2017.",
+          "No sustituirla ni fusionarla con la nueva Licenciatura en Oceanografía: tiene cinco orientaciones y apertura formal prevista para 2027.",
+          "Revisar el inventario cuando la nueva carrera tenga identidad de inscripción, plan vigente y composición oficial en SGAE."
+        ]
+      },
+      "sources": [
+        { "url": "https://udelar.edu.uy/noticias/facultad-de-ciencias-el-futuro-por-25-anos", "authority": "Universidad de la República", "supports": ["antecedente en Facultad de Ciencias", "cese del dictado de Oceanografía Biológica"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/17137", "authority": "Facultad de Ciencias, Universidad de la República", "supports": ["período histórico 1978-1994", "título Licenciado en Oceanografía Biológica", "servicio responsable"] },
+        { "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado", "authority": "Facultad de Ciencias", "supports": ["oferta vigente de carreras de grado", "ausencia de Licenciatura en Oceanografía Biológica"] },
+        { "url": "https://www.fcien.edu.uy/noticias/3625-inscripciones-generacion-2026", "authority": "Facultad de Ciencias", "supports": ["oferta e inscripciones de grado 2026"] },
+        { "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-biologicas", "authority": "Facultad de Ciencias", "supports": ["Plan vigente de Ciencias Biológicas", "tramo de orientación flexible", "360 créditos"] },
+        { "url": "https://udelar.edu.uy/noticias/se-abren-inscripciones-la-nueva-licenciatura-en-oceanografia", "authority": "Universidad de la República", "supports": ["nueva carrera distinta", "apertura formal 2027", "ingreso transitorio 2026 por Ciencias Biológicas", "cinco orientaciones"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "El snapshot contiene metadata.current=false y plan.current=true. Las fuentes históricas y la oferta vigente resuelven la contradicción a favor de un plan cerrado." },
+        { "field": "composition", "resolution": "Bedelías no publica composición. Al estar cerrada la carrera, no se infieren materias, créditos ni previaturas desde testimonios históricos o programas sueltos." },
+        { "field": "successorPath", "resolution": "Los programas modernos de Oceanografía Biológica pertenecen a Licenciatura en Ciencias Biológicas Plan 2017. Son parte de su tramo flexible y no prueban continuidad del Plan 1978." },
+        { "field": "newOceanographyDegree", "resolution": "La Licenciatura en Oceanografía anunciada para 2027 tiene una base común y cinco orientaciones. No es una reapertura nominal del título histórico y todavía no debe publicarse como carrera vigente 2026." }
+      ],
+      "remainingWork": "Caso cerrado para la UI 2026. Auditar e incorporar la nueva Licenciatura en Oceanografía cuando Udelar publique su apertura formal 2027, identidad SGAE y oferta curricular vigente."
     }
   ],
-  "contentHash": "sha256:39a443d47dc111f58b916ad37f4aa84e12e510b30037480fb5220f82760c38aa"
+  "contentHash": "sha256:1aa1d93f4e49efd315d077b6df52bfd8ef7f395ec5400734944f654be441dcfe"
 }

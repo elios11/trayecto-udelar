@@ -348,12 +348,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
-  "bedelias-fcien-licenciatura-en-oceanografia-biologica-1978": {
-    load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-oceanografia-biologica-1978.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fcea-contador-publico-2024": {
     load: () => import("./bedelias-generated/bedelias-fcea-contador-publico-2024.json"),
     pathwayIds: ["bedelias"],

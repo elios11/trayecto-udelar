@@ -951,3 +951,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:39a443d47dc111f58b916ad37f4aa84e12e510b30037480fb5220f82760c38aa`. Cola actualizada: 134 identidades pendientes, 25 sin composición; hash `sha256:08e38daf59d930e2fdfa496cf908dec808bd67cfa20dd945d4e45ef94214cb97`.
 - La UI conserva 173 proyecciones: 120 con composición, 53 sin composición y cuatro identidades históricas excluidas; hash `sha256:100dea5f22ae08b19a8d87e41627293c85fd52d241bdeb7fff637557e548ec84`.
 - Siguiente paso: auditar Licenciatura en Oceanografía Biológica Plan 1978.
+
+### Licenciatura en Oceanografía Biológica Plan 1978 — registro histórico cerrado 2026-08-20
+
+- El snapshot se contradice: `metadata.current` es `false`, pero `plan.current` es `true`. Udelar documenta expresamente que la Licenciatura en Oceanografía Biológica dejó de dictarse y el registro histórico de Facultad de Ciencias acota su funcionamiento a 1978-1994.
+- La oferta 2026 de Facultad de Ciencias no incluye ese título. La formación oceanográfica actual integra el tramo flexible de Licenciatura en Ciencias Biológicas Plan 2017 y no prueba continuidad del Plan 1978.
+- La nueva Licenciatura en Oceanografía es otra carrera: tendrá base común y cinco orientaciones, con apertura formal prevista para 2027. En 2026 las personas interesadas deben ingresar por Ciencias Biológicas; no se publica anticipadamente una carrera todavía sin inscripción propia vigente.
+- Se excluye el Plan 1978 de la UI actual y se conserva el título histórico `Licenciado en Oceanografía Biológica`, sin reconstruir materias desde programas modernos ni mezclar progresos.
+- Registro de auditoría: hash `sha256:1aa1d93f4e49efd315d077b6df52bfd8ef7f395ec5400734944f654be441dcfe`. Cola actualizada: 133 identidades pendientes, 24 sin composición; hash `sha256:6cb7440a2175ecb252e699b41492ab2c5b3a45287de18dcc03e3b1f080f2ee4b`.
+- La UI queda en 172 proyecciones: 120 con composición, 52 sin composición y cinco identidades históricas excluidas; hash `sha256:8b65438473436aaf684802721117bfdbf29031a4c8b0a506a1b8d1fff3ddacf7`.
+- Siguiente paso: auditar Licenciatura en Ciencia Política Plan 2009.

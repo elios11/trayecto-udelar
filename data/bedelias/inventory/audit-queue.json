@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T17:19:45.922Z",
+  "generatedAt": "2026-08-20T17:24:23.230Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:39a443d47dc111f58b916ad37f4aa84e12e510b30037480fb5220f82760c38aa"
+    "officialAuditRegistryHash": "sha256:1aa1d93f4e49efd315d077b6df52bfd8ef7f395ec5400734944f654be441dcfe"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 43,
-    "pendingCanonicalIdentities": 134,
+    "evidenceClosedCanonicalIdentities": 44,
+    "pendingCanonicalIdentities": 133,
     "byPriority": {
-      "composition-unavailable": 25,
+      "composition-unavailable": 24,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -280,38 +280,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-flexible-plan-one-campus-five-semesters"
+    },
+    {
+      "identity": "licenciatura en oceanografia biologica:1978",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "historical-oceanography-degree-replaced-by-biological-sciences-path-and-future-program"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en oceanografia biologica:1978",
-      "career": {
-        "name": "LICENCIATURA EN OCEANOGRAFÍA BIOLÓGICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1978",
-        "name": "LICENCIATURA EN OCEANOGRAFÍA BIOLÓGICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en oceanografia biologica:1978",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en oceanografia biologica:1978",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en ciencia politica:2009",
       "career": {
@@ -4402,5 +4379,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:08e38daf59d930e2fdfa496cf908dec808bd67cfa20dd945d4e45ef94214cb97"
+  "contentHash": "sha256:6cb7440a2175ecb252e699b41492ab2c5b3a45287de18dcc03e3b1f080f2ee4b"
 }

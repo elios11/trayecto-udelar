@@ -9,15 +9,16 @@ const catalog = await readJson("app/data/extracted-academic-catalog.json");
 
 test("integra una sola proyección por identidad canónica vigente y excluye planes históricos verificados", () => {
   assert.equal(report.counts.canonicalCurrentIdentities, 184);
-  assert.equal(report.counts.generatedPlans, 173);
-  assert.equal(report.counts.excludedFromCurrentUi, 4);
+  assert.equal(report.counts.generatedPlans, 172);
+  assert.equal(report.counts.excludedFromCurrentUi, 5);
   assert.equal(new Set(report.plans.map((plan) => plan.identity)).size, report.plans.length);
   assert.equal(new Set(report.plans.map((plan) => plan.planId)).size, report.plans.length);
-  assert.equal(catalog.flatMap((faculty) => faculty.careers).flatMap((career) => career.plans).length, 173);
+  assert.equal(catalog.flatMap((faculty) => faculty.careers).flatMap((career) => career.plans).length, 172);
   assert.ok(!report.plans.some((plan) => plan.identity === "diplomatura en musica:1994"));
   assert.ok(!report.plans.some((plan) => plan.identity === "escalonada de enfermeria:2001"));
   assert.ok(!report.plans.some((plan) => plan.identity === "licenciatura en vitivinicultura:2006"));
   assert.ok(!report.plans.some((plan) => plan.identity === "tecnico rural:1956"));
+  assert.ok(!report.plans.some((plan) => plan.identity === "licenciatura en oceanografia biologica:1978"));
   assert.ok(!catalog.flatMap((faculty) => faculty.careers).some((career) => career.label === "Diplomatura en Música"));
   assert.ok(!catalog.flatMap((faculty) => faculty.careers).some((career) => /Escalonada de Enfermer/i.test(career.label)));
   assert.equal(report.counts.compositionAvailable + report.counts.compositionUnavailable, report.counts.generatedPlans);
