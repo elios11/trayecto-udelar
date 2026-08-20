@@ -669,3 +669,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:8eb514e4f7ad83283e54c13e610230fbd98e7f8789dbaf21cc8cfe8f119b5b9d`. Cola actualizada: 161 identidades pendientes, 14 de prioridad `insufficient-regional-content`; hash `sha256:d642d6a1a5c6ac220afcc9ed2b5c330ad4dfc45368b6537cdf36e25fdea34665`.
 - Manifiesto UI: 175 proyecciones, 95 con composición, 80 sin composición y catorce con sedes oficiales; hash `sha256:62461766f773f5c72b07549098227d7cc2be81fcba634eb204d0cf68331c0099`.
 - Siguiente paso: auditar Licenciatura en Fisioterapia Plan 2006 entre Facultad de Medicina y CENUR Litoral Norte.
+
+### Licenciatura en Fisioterapia Plan 2006 — malla y sedes auditadas 2026-08-20
+
+- Facultad de Medicina mantiene vigente en 2026 el Plan 2006, con título `Licenciado en Fisioterapia`, cuatro años, 4050 horas e ingreso en Montevideo y Paysandú. El catálogo del interior confirma el cursado completo en Paysandú.
+- La malla oficial contiene 29 unidades: 13 en primer año, 5 en segundo, 5 en tercero y 6 en cuarto, incluyendo Internado y Monografía. La UI las proyecta por año y exige completar cada conjunto.
+- El plan vigente no está creditizado. Las unidades conservan cero créditos explícitos: no se convierten horas o UCB a créditos ni se muestra un mínimo total inventado.
+- La Comisión de Carrera trabajaba en octubre de 2025 sobre un nuevo plan de 360 créditos aún incompleto, con nueve créditos flexibles pendientes y ajustes de implementación. Ese borrador no se mezcla con el Plan 2006 actual.
+- Montevideo y Paysandú son sedes completas del mismo plan, sin evidencia de título, núcleo o trayectoria territorial diferente. Los snapshots SGAE contienen el árbol de UCB pero no unidades normalizadas; la proyección atribuye la malla a Facultad.
+- Registro de auditoría: hash `sha256:253ccd53f71f547b82b1e0cdbdb53c9b26beab5966162d68a64db55baf14e0f9`. Cola actualizada: 160 identidades pendientes, 13 de prioridad `insufficient-regional-content`; hash `sha256:3119b2b40637ed9f160965141ff8b86f20fe17a4250215b6174e8f708330ab27`.
+- Manifiesto UI: 175 proyecciones, 96 con composición, 79 sin composición y quince con sedes oficiales; hash `sha256:25dbc8d8750bd226a333fab783c8a54e015fc028012faa4dccae7f0dbaf5b092`.
+- Siguiente paso: auditar Licenciatura en Imagenología Plan 2006, que comparte la estructura EUTM y la oferta Montevideo/Paysandú, sin reutilizar materias específicas de Fisioterapia.

@@ -2553,7 +2553,144 @@
         { "field": "locations", "resolution": "Montevideo y Salto no se presentan como sedes de carrera completa: el selector explicita que allí se cursa el tramo inicial y que la continuidad converge en Paysandú." }
       ],
       "remainingWork": "La identidad, estructura de créditos y secuencia territorial quedan normalizadas. Falta una composición oficial vigente por unidades curriculares y una nómina cerrada de perfiles; su ausencia impide mostrar materias o trayectorias, pero no justifica duplicar el plan por sede."
+    },
+    {
+      "identity": "licenciatura en fisioterapia:2006",
+      "career": "LICENCIATURA EN FISIOTERAPIA",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"],
+        "title": "Licenciado en Fisioterapia",
+        "durationMonths": 48,
+        "hours": 4050,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisioterapia/plan-de-estudio",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "anatomia", "name": "Anatomía", "credits": 0 },
+                { "id": "biologia-celular-tisular", "name": "Biología celular y tisular", "credits": 0 },
+                { "id": "neurobiologia", "name": "Neurobiología", "credits": 0 },
+                { "id": "cardiovascular-respiratorio", "name": "Cardiovascular y respiratorio", "credits": 0 },
+                { "id": "digestivo-renal-endocrino", "name": "Digestivo renal y endócrino", "credits": 0 },
+                { "id": "reproductor-desarrollo", "name": "Reproductor y desarrollo", "credits": 0 },
+                { "id": "profundizacion-fisioterapia", "name": "Profundización de Fisioterapia", "credits": 0 },
+                { "id": "psicologia-1", "name": "Psicología I", "credits": 0 },
+                { "id": "fisica-medica-1", "name": "Física Médica I", "credits": 0 },
+                { "id": "enfermeria-1", "name": "Enfermería I", "credits": 0 },
+                { "id": "metodologia-cientifica", "name": "Metodología científica", "credits": 0 },
+                { "id": "salud-publica", "name": "Salud Pública", "credits": 0 },
+                { "id": "biomecanica-kinesiologia", "name": "Biomecánica y Kinesiología", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "fisiopatologia", "name": "Fisiopatología", "credits": 0 },
+                { "id": "kinesiologia-kinesiterapia-1", "name": "Kinesiología y Kinesiterapia I", "credits": 0 },
+                { "id": "fisica-medica-2", "name": "Física Médica II", "credits": 0 },
+                { "id": "gimnasia-terapeutica-1", "name": "Gimnasia Terapéutica I", "credits": 0 },
+                { "id": "psicologia-2", "name": "Psicología II (Fisioterapia)", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "neuropatologia", "name": "Neuropatología", "credits": 0 },
+                { "id": "kinesiologia-kinesiterapia-2", "name": "Kinesiología y Kinesiterapia II", "credits": 0 },
+                { "id": "fisica-medica-3", "name": "Física Médica III", "credits": 0 },
+                { "id": "gimnasia-terapeutica-2", "name": "Gimnasia Terapéutica II", "credits": 0 },
+                { "id": "psicologia-3", "name": "Psicología III", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Cuarto año",
+              "courses": [
+                { "id": "kinesiologia-kinesiterapia-3", "name": "Kinesiología y Kinesiterapia III", "credits": 0 },
+                { "id": "gimnasia-terapeutica-3", "name": "Gimnasia Terapéutica III", "credits": 0 },
+                { "id": "deontologia-legislacion", "name": "Deontología y legislación laboral", "credits": 0 },
+                { "id": "administracion-hospitalaria", "name": "Administración hospitalaria", "credits": 0 },
+                { "id": "internado", "name": "Internado (Fisioterapia)", "credits": 0 },
+                { "id": "monografia", "name": "Monografía", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "fisio-primer-ano", "label": "Primer año", "minCompleted": 13, "courseIds": ["anatomia", "biologia-celular-tisular", "neurobiologia", "cardiovascular-respiratorio", "digestivo-renal-endocrino", "reproductor-desarrollo", "profundizacion-fisioterapia", "psicologia-1", "fisica-medica-1", "enfermeria-1", "metodologia-cientifica", "salud-publica", "biomecanica-kinesiologia"] },
+            { "id": "fisio-segundo-ano", "label": "Segundo año", "minCompleted": 5, "courseIds": ["fisiopatologia", "kinesiologia-kinesiterapia-1", "fisica-medica-2", "gimnasia-terapeutica-1", "psicologia-2"] },
+            { "id": "fisio-tercer-ano", "label": "Tercer año", "minCompleted": 5, "courseIds": ["neuropatologia", "kinesiologia-kinesiterapia-2", "fisica-medica-3", "gimnasia-terapeutica-2", "psicologia-3"] },
+            { "id": "fisio-cuarto-ano", "label": "Cuarto año, internado y monografía", "minCompleted": 6, "courseIds": ["kinesiologia-kinesiterapia-3", "gimnasia-terapeutica-3", "deontologia-legislacion", "administracion-hospitalaria", "internado", "monografia"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FMED", "locations": ["Montevideo"], "role": "servicio responsable y sede completa del Plan 2006", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "sede completa del mismo Plan 2006", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-licenciatura-en-fisioterapia-2006.json",
+        "regionalSnapshot": "data/bedelias/cenurln-licenciatura-en-fisioterapia-2006.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los dos snapshots contienen el mismo árbol del Plan 2006 pero el extractor no obtiene unidades creditizadas porque el plan vigente se expresa en horas y UCB. Facultad publica la composición completa y ambas sedes sin una variante territorial."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Medicina y Udelar publican una única Licenciatura en Fisioterapia, con ingreso y cursado completo en Montevideo y Paysandú. No hay título, duración ni malla diferentes por sede.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Fisioterapia Plan 2006.",
+          "Modelar Montevideo y Paysandú como sedes completas del mismo plan, sin trayectoria territorial.",
+          "Usar las 29 unidades y cuatro años publicados por Facultad de Medicina como malla oficial.",
+          "Conservar 4050 horas y no convertirlas automáticamente a créditos.",
+          "Exigir las unidades publicadas por año, incluido el internado y la monografía, sin inventar previaturas.",
+          "No incorporar el borrador de plan creditizado de 360 créditos mientras continúe en elaboración."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisioterapia/plan-de-estudio",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["malla vigente por cuatro años", "29 unidades y carga horaria", "internado y monografía"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisioterapia",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["título, cuatro años y 4050 horas", "ingreso en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/gestion/bedelia/parque-batlle",
+          "authority": "Bedelía de Facultad de Medicina, Udelar",
+          "supports": ["vigencia administrativa del Plan 2006 en 2026"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/cenur-litoral-norte-sede-paysandu/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["Licenciatura en Fisioterapia en Paysandú"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/comcarreras/actas/Licenciatura%20en%20Fisioterapia/Acta_Fisioterapia_36%2020-10-2025.pdf",
+          "authority": "Comisión de Carrera de Licenciatura en Fisioterapia, Facultad de Medicina",
+          "supports": ["el plan de 360 créditos permanecía en elaboración", "faltaban créditos flexibles, ajustes y recursos para su implementación"]
+        }
+      ],
+      "anomalies": [
+        { "field": "credits", "resolution": "El Plan 2006 vigente está expresado en 4050 horas y no fue creditizado. Las materias se proyectan con cero créditos explícitos y requisitos de aprobación por unidad; no se aplica una conversión inventada." },
+        { "field": "duration", "resolution": "Facultad de Medicina publica cuatro años; el catálogo general de Udelar informa 60 meses. Se prioriza la fuente responsable del plan y se conserva la discrepancia documental." },
+        { "field": "futurePlan", "resolution": "La Comisión de Carrera discutía en octubre de 2025 un nuevo plan de 360 créditos todavía incompleto. No se mezcla ese borrador con el Plan 2006 vigente." },
+        { "field": "bedeliasComposition", "resolution": "El árbol SGAE enumera UCB pero los snapshots normalizados quedan sin cursos creditizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
+      ],
+      "remainingWork": "La identidad, sedes y malla horaria del Plan 2006 quedan normalizadas. Debe auditarse una futura resolución de aprobación e implementación antes de reemplazarla por el nuevo plan creditizado."
     }
   ],
-  "contentHash": "sha256:8eb514e4f7ad83283e54c13e610230fbd98e7f8789dbaf21cc8cfe8f119b5b9d"
+  "contentHash": "sha256:253ccd53f71f547b82b1e0cdbdb53c9b26beab5966162d68a64db55baf14e0f9"
 }

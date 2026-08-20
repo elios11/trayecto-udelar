@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:d642d6a1a5c6ac220afcc9ed2b5c330ad4dfc45368b6537cdf36e25fdea34665",
-    "officialAuditHash": "sha256:8eb514e4f7ad83283e54c13e610230fbd98e7f8789dbaf21cc8cfe8f119b5b9d",
+    "auditQueueHash": "sha256:3119b2b40637ed9f160965141ff8b86f20fe17a4250215b6174e8f708330ab27",
+    "officialAuditHash": "sha256:253ccd53f71f547b82b1e0cdbdb53c9b26beab5966162d68a64db55baf14e0f9",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 95,
-    "compositionUnavailable": 80,
-    "plansWithOfficialCampuses": 14,
+    "compositionAvailable": 96,
+    "compositionUnavailable": 79,
+    "plansWithOfficialCampuses": 15,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1152,9 +1152,12 @@
       "planId": "bedelias-fmed-licenciatura-en-fisioterapia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-fisioterapia-2006.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo",
+        "paysandu"
+      ]
     },
     {
       "identity": "licenciatura en fonoaudiologia:2006",
@@ -1641,5 +1644,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:62461766f773f5c72b07549098227d7cc2be81fcba634eb204d0cf68331c0099"
+  "contentHash": "sha256:25dbc8d8750bd226a333fab783c8a54e015fc028012faa4dccae7f0dbaf5b092"
 }
