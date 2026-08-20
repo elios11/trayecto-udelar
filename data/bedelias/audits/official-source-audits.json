@@ -1351,7 +1351,173 @@
         }
       ],
       "remainingWork": "La auditoría define el modelo sede-opción y resuelve que los árboles regionales no son variantes territoriales. Para proyectar la UI se debe construir una malla curada por opción a partir del Plan 2007 y del árbol regional más completo, con aviso temporal de ingreso; la auditoría no habilita publicación automática."
+    },
+    {
+      "identity": "licenciatura en psicologia:2013",
+      "career": "LICENCIATURA EN PSICOLOGÍA",
+      "planYear": "2013",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-multi-site-offering-and-regional-entry-route",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad de Psicología, 08/06/2012",
+          "Consejo Directivo Central, Resolución 20 de 25/09/2012"
+        ],
+        "title": "Licenciado en Psicología",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 320,
+        "cycles": {
+          "Ciclo de Formación Inicial": 80,
+          "Ciclo de Formación Integral": 160,
+          "Ciclo de Graduación": 80
+        },
+        "modules": {
+          "Psicología": 145,
+          "Metodológico": 60,
+          "Articulación de Saberes": 40,
+          "Prácticas y Proyectos": 50,
+          "Referencial": 20
+        },
+        "institutionalCooperationMaximumCredits": 5,
+        "finalDegreeProjectCredits": 40,
+        "itineraryRule": "El itinerario es una construcción flexible y personal que atraviesa ciclos y módulos; no es una orientación territorial ni modifica el título.",
+        "flexibilityRule": "El Ciclo Inicial es obligatorio. En Formación Integral y Graduación conviven unidades obligatorias, optativas y electivas, prácticas, proyectos y contenidos renovables aprobados por el Consejo."
+      },
+      "offerings": [
+        {
+          "serviceCode": "PSICO",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2013"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto",
+            "Paysandú"
+          ],
+          "role": "carrera completa del mismo Plan 2013",
+          "curriculumVariant": false
+        },
+        {
+          "serviceCode": "CURE",
+          "locations": [
+            "Maldonado",
+            "Rocha",
+            "Treinta y Tres"
+          ],
+          "role": "vía regional de ingreso, no oferta completa independiente",
+          "entryRoute": "CIO Ciencia y Tecnología — Trayectoria Psicología; 90 créditos reconocidos como primer año"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/psico-licenciatura-en-psicologia-2013.json",
+        "regionalSnapshot": "data/bedelias/cenurln-licenciatura-en-psicologia-2013.json",
+        "canonicalCourses": 2946,
+        "regionalCourses": 2990,
+        "sharedUniqueCourseKeys": 2942,
+        "onlyCanonical": 2,
+        "onlyRegional": 46,
+        "changedCredits": 0,
+        "canonicalOnlyCodes": [
+          "639-1",
+          "EL2PM"
+        ],
+        "regionalTransitionalCodes": [
+          "519"
+        ],
+        "regionalLocalFlexibleOrAccreditationEntries": 45,
+        "canonicalPrerequisiteEntries": 2647,
+        "regionalPrerequisiteEntries": 317,
+        "interpretation": "Las diferencias identificables son una disposición transitoria, acreditaciones, prácticas y proyectos locales, optativas o electivas y otras propuestas que el propio plan permite renovar dentro de los mismos ciclos y mínimos. No cambian créditos compartidos ni definen una orientación de egreso por sede."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "regionalEntryRouteIsTrajectory": false,
+        "reason": "Facultad declara expresamente que el PELP 2013 rige para las tres sedes con carrera completa. El plan promueve itinerarios personales y contenidos flexibles, y la diferencia de Bedelías se concentra en ofertas locales, acreditaciones, prácticas, proyectos, electivas y una disposición transitoria. La menor publicación de previaturas regional tampoco constituye otra malla.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Licenciatura en Psicología Plan 2013.",
+          "Modelar Montevideo, Salto y Paysandú como sedes de la carrera completa sin filtrar itinerarios por territorio.",
+          "Representar CIO Ciencia y Tecnología — Trayectoria Psicología del CURE como vía de ingreso equivalente al primer año, no como perfil, malla ni título.",
+          "Normalizar el egreso por 320 créditos distribuidos en ciclos de 80, 160 y 80 y módulos de 145, 60, 40, 50 y 20, más hasta 5 de cooperación institucional.",
+          "Conservar 40 créditos para el Trabajo Final de Grado dentro del Módulo Psicología y del Ciclo de Graduación.",
+          "No convertir prácticas, proyectos, electivas ni acreditaciones regionales en trayectoria territorial.",
+          "Tratar la diferencia de previaturas como cobertura de publicación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://psico.edu.uy/sites/default/files/plan_de_estudio_de_la_licenciatura_en_psicologia_2013.diariooficial.pdf",
+          "authority": "Facultad de Psicología, Udelar",
+          "supports": [
+            "aprobación del Plan 2013 por el CDC",
+            "título, cuatro años y 320 créditos",
+            "créditos por ciclo y módulo, cooperación y Trabajo Final de Grado",
+            "naturaleza flexible y personal de los itinerarios"
+          ]
+        },
+        {
+          "url": "https://www.psico.edu.uy/noticias/publicacion-del-plan-de-estudio-2013",
+          "authority": "Facultad de Psicología, Udelar",
+          "supports": [
+            "aplicación del mismo PELP 2013 en Montevideo, Paysandú y Salto",
+            "ingreso mediante CIO en CURE"
+          ]
+        },
+        {
+          "url": "https://psico.edu.uy/ensenanza/grado/licenciatura/plan/malla-curricular",
+          "authority": "Facultad de Psicología, Udelar",
+          "supports": [
+            "malla vigente en tres ciclos y cinco módulos",
+            "carácter singular del itinerario estudiantil"
+          ]
+        },
+        {
+          "url": "https://psico.edu.uy/sites/default/pub_files/2021-04/malla%20curricular%20-%20Plan%202013.pdf",
+          "authority": "Facultad de Psicología, Udelar",
+          "supports": [
+            "distribución semestral vigente",
+            "320 créditos y mínimos por módulo"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-psicologia",
+          "authority": "Catálogo central de carreras, Udelar",
+          "supports": [
+            "carrera completa en Montevideo, Paysandú y Salto",
+            "CIO Ciencia y Tecnología — Trayectoria Psicología como primer año reconocido"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/ciclo-inicial-optativo-ciencia-y-tecnologia-trayectoria-psicologia/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": [
+            "90 créditos del CIO reconocidos como primer año de Psicología",
+            "carácter de trayectoria de ingreso y no de orientación de egreso"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "durationMonths",
+          "officialValues": [
+            48,
+            60
+          ],
+          "resolution": "Usar 48 meses porque el Plan aprobado establece cuatro años y ocho semestres. Conservar los 60 meses del catálogo central como discrepancia documental, no como regla curricular."
+        },
+        {
+          "field": "bedeliasCycleMinimums",
+          "resolution": "Los mínimos operativos publicados por Bedelías no reproducen literalmente la distribución 80/160/80 del Plan. La normalización de egreso debe respetar el documento aprobado y modelar por separado las reglas operativas vigentes."
+        }
+      ],
+      "remainingWork": "La auditoría resuelve la falsa variante regional y la vía de ingreso CURE. La proyección curada de unidades, mínimos operativos y previaturas para la UI sigue pendiente y no habilita publicación automática."
     }
   ],
-  "contentHash": "sha256:06dd414de6ecbc1f6307966b1ba0ebb959be4d952155965be517ad51e8894ba0"
+  "contentHash": "sha256:dc8651ba1caafa5410a9f8b57c145982e800c40a4604412a93a8762a1f57ce60"
 }

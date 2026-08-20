@@ -1,19 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T05:19:13.635Z",
+  "generatedAt": "2026-08-20T05:23:51.028Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:06dd414de6ecbc1f6307966b1ba0ebb959be4d952155965be517ad51e8894ba0"
+    "officialAuditRegistryHash": "sha256:dc8651ba1caafa5410a9f8b57c145982e800c40a4604412a93a8762a1f57ce60"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 8,
-    "pendingCanonicalIdentities": 169,
+    "evidenceClosedCanonicalIdentities": 9,
+    "pendingCanonicalIdentities": 168,
     "byPriority": {
-      "regional-content-difference": 1,
       "insufficient-regional-content": 21,
       "composition-unavailable": 38,
       "official-sources-pending": 109
@@ -72,294 +71,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-site-specific-sport-options"
+    },
+    {
+      "identity": "licenciatura en psicologia:2013",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en psicologia:2013",
-      "career": {
-        "name": "LICENCIATURA EN PSICOLOGIA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2013",
-        "name": "LICENCIATURA EN PSICOLOGIA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "PSICO",
-        "serviceName": "FACULTAD DE PSICOLOGÍA",
-        "planKey": "PSICO:licenciatura en psicologia:2013",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "PSICO",
-          "serviceName": "FACULTAD DE PSICOLOGÍA",
-          "planKey": "PSICO:licenciatura en psicologia:2013",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "regional-content-difference",
-      "action": "Contrastar plan y resoluciones oficiales; separar núcleo curricular de oferta ampliada por sede.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "PSICO",
-          "status": "content-difference-detected",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [
-              {
-                "code": "639 1",
-                "credits": 15,
-                "name": "proyecto sceam acreditacion"
-              },
-              {
-                "code": "el2pm",
-                "credits": 2,
-                "name": "electiva psicologia perinatal 2"
-              }
-            ],
-            "onlyRegional": [
-              {
-                "code": "519",
-                "credits": 5,
-                "name": "transitoria modulo metodologico"
-              },
-              {
-                "code": "800ps",
-                "credits": 20,
-                "name": "proyecto salud comunitaria pers psico sc"
-              },
-              {
-                "code": "804ps",
-                "credits": 20,
-                "name": "practica en psicologia penitenciaria"
-              },
-              {
-                "code": "aapsc",
-                "credits": 1,
-                "name": "adiciones aspectos psico socio yclinicos"
-              },
-              {
-                "code": "capa",
-                "credits": 20,
-                "name": "capapay22"
-              },
-              {
-                "code": "capag",
-                "credits": 20,
-                "name": "capapay22"
-              },
-              {
-                "code": "e1006",
-                "credits": 10,
-                "name": "electiva salud y medio ambiente"
-              },
-              {
-                "code": "e1007",
-                "credits": 10,
-                "name": "electiva promocion de salud"
-              },
-              {
-                "code": "e3005",
-                "credits": 5,
-                "name": "monitoreo sanitario ante el impacto de la globalizacion en la infancia y la ado"
-              },
-              {
-                "code": "elbcm",
-                "credits": 37,
-                "name": "electiva biologia celular y molecular"
-              },
-              {
-                "code": "elbes",
-                "credits": 5,
-                "name": "electiva introduccion a la bioestadistica"
-              },
-              {
-                "code": "elcar",
-                "credits": 18,
-                "name": "electiva cardiovascular y respiratorio"
-              },
-              {
-                "code": "elhem",
-                "credits": 27,
-                "name": "electiva hematologia e inmunologia"
-              },
-              {
-                "code": "elhis",
-                "credits": 6,
-                "name": "electiva histologia de neuro y cardio"
-              },
-              {
-                "code": "elneu",
-                "credits": 21,
-                "name": "electiva neurociencias"
-              },
-              {
-                "code": "elsph",
-                "credits": 6,
-                "name": "electiva salud publica y humanidades"
-              },
-              {
-                "code": "gtinc",
-                "credits": 5,
-                "name": "tutorias inclusivas cooperacion"
-              },
-              {
-                "code": "gunis",
-                "credits": 5,
-                "name": "programa unisa cooperacion"
-              },
-              {
-                "code": "oga",
-                "credits": 5,
-                "name": "etica y salud perspectiva eticas en las practicas psicologicas en salud"
-              },
-              {
-                "code": "ogcm",
-                "credits": 5,
-                "name": "conversaciones marikas"
-              },
-              {
-                "code": "ogep",
-                "credits": 5,
-                "name": "emancipacion y psicoanalisis"
-              },
-              {
-                "code": "ogeva",
-                "credits": 5,
-                "name": "escuela de verano salud comunitaria"
-              },
-              {
-                "code": "ogpds",
-                "credits": 5,
-                "name": "psicologia discapacidad y salud"
-              },
-              {
-                "code": "ogpr",
-                "credits": 20,
-                "name": "rol del psicologo en caif"
-              },
-              {
-                "code": "ogps",
-                "credits": 20,
-                "name": "prevencion en iae y suicidio"
-              },
-              {
-                "code": "oppg",
-                "credits": 20,
-                "name": "otras psicologias posibles grad"
-              },
-              {
-                "code": "oppi",
-                "credits": 20,
-                "name": "otras psicologias posibles int"
-              },
-              {
-                "code": "p18ag",
-                "credits": 5,
-                "name": "cooperacion institucional actreditacion"
-              },
-              {
-                "code": "p18ai",
-                "credits": 5,
-                "name": "cooperacion institucional acreditacion"
-              },
-              {
-                "code": "p27ee",
-                "credits": 5,
-                "name": "idioma ingles"
-              },
-              {
-                "code": "p623p",
-                "credits": 5,
-                "name": "diseno de proyectos"
-              },
-              {
-                "code": "pgi",
-                "credits": 10,
-                "name": "salud comun y proc soc en amb de trabajo"
-              },
-              {
-                "code": "pgmg",
-                "credits": 20,
-                "name": "masculinidades y genero graduacion"
-              },
-              {
-                "code": "pgpev",
-                "credits": 20,
-                "name": "psicologia educacion virtualidad graduacion"
-              },
-              {
-                "code": "pgpl",
-                "credits": 20,
-                "name": "paulina luisi graduacion"
-              },
-              {
-                "code": "pgpsc",
-                "credits": 20,
-                "name": "psicologia salud comunitaria"
-              },
-              {
-                "code": "pimes",
-                "credits": 10,
-                "name": "metodologia expresivas en salud"
-              },
-              {
-                "code": "pinp",
-                "credits": 20,
-                "name": "salud comunitaria en nuevo paysandu"
-              },
-              {
-                "code": "pipev",
-                "credits": 20,
-                "name": "psicologia educacion virtualidad integral"
-              },
-              {
-                "code": "pipl",
-                "credits": 20,
-                "name": "paulina luisi integral"
-              },
-              {
-                "code": "piuni",
-                "credits": 10,
-                "name": "proyecto unisa"
-              },
-              {
-                "code": "ppiae",
-                "credits": 15,
-                "name": "prevencion en iae integral"
-              },
-              {
-                "code": "sappa",
-                "credits": 20,
-                "name": "clinica con adultos paysandu"
-              },
-              {
-                "code": "sydis",
-                "credits": 5,
-                "name": "salud y diversidad sexual"
-              },
-              {
-                "code": "syesp",
-                "credits": 8,
-                "name": "salud y espiritualidad"
-              },
-              {
-                "code": "tep",
-                "credits": 4,
-                "name": "tutoria entre pares 01 gen 2021"
-              }
-            ],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -2330
-          }
-        }
-      ]
-    },
     {
       "identity": "diplomatura en musica:1994",
       "career": {
@@ -5677,5 +5397,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:cb3d344dbad99305cb0e1f59a64927605e92dd3b7ef2dfdd8bce40907c883551"
+  "contentHash": "sha256:df72d586e3b13b6e62128e37982b3a3cdca415717b1b2a1e3bc6dd4044c30eb2"
 }
