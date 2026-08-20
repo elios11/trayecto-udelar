@@ -556,3 +556,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Decisión: una identidad canónica, con oferta Montevideo y una única oferta regional `Litoral Norte (Paysandú y Salto)`. No presentar Salto y Paysandú como trayectorias independientes ni convertir el catálogo flexible ampliado en variante curricular.
 - Registro de auditoría: hash `sha256:eb6a06b1506463169111ddf6c62cd8a2ebcd0fecaa3c7cc3968788af9d90a9e8`. Cola actualizada: 171 identidades pendientes y tres diferencias regionales prioritarias; hash `sha256:7ae7c003a425fa1de5ff3301d2f0b7b0c1eaee49bc40a79361f7e4770c23bbf9`.
 - Siguiente paso: auditar Licenciatura en Educación Física 2017 entre ISEF, CURE y CENURLN.
+
+### Licenciatura en Educación Física 2017 — trayectos por sede auditados 2026-08-20
+
+- El [Plan 2017 de ISEF](https://isef.udelar.edu.uy/noticias/nuevo-plan-de-estudio-licenciatura-en-educacion-fisica/), aprobado por el CDC el 08/11/2016, define un único título `Licenciado en Educación Física`, cuatro años, ocho semestres y 360 créditos: 270 comunes obligatorios, 60 de una opción específica y 30 optativos/electivos.
+- Desde el quinto semestre se elige uno de cuatro trayectos certificados: Deporte, Salud, Prácticas Corporales o Tiempo Libre y Ocio. El título no cambia con la opción.
+- La disponibilidad sí tiene alcance territorial oficial. Montevideo ofrece los cuatro trayectos; la [página vigente de CURE](https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-educacion-fisica/) presenta los cuatro en Maldonado; [Paysandú](https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-educacion-fisica) ofrece únicamente Deporte y Salud. Un informe nacional 2020-2024 no registra matrícula de Salud en Maldonado, pero esa ausencia estadística no se usa para contradecir la oferta pública actual.
+- Los tres snapshots conservan las mismas 38 entradas no flexibles. Frente a ISEF, CURE y CENURLN tienen cada uno 107 claves regionales y omiten una clave central; todo está bajo ramas optativas/electivas. Las colisiones de código `EPAR` y `MBCM` también son flexibles. La cobertura de previaturas es 1192 en ISEF, 119 en CURE y 65 en CENURLN.
+- Decisión: una identidad y una malla canónica, con selector de sede que filtre trayectos oficiales. Paysandú debe mostrar sólo Deporte y Salud; el catálogo regional ampliado no crea otra currícula ni habilita trayectos adicionales.
+- Registro de auditoría: hash `sha256:26d97d99c693d4579d5dc48d2703b0b3f0840246013884cb0b1d2212f7839774`. Cola actualizada: 170 identidades pendientes y dos diferencias regionales prioritarias; hash `sha256:eb72c73b73b175b8526bd9b52445ea4a399cea9e14a30920ebe015bbc71be4b2`.
+- Siguiente paso: auditar Tecnicatura en Deportes 2007 entre ISEF, CUR, CURE y CENURLN.

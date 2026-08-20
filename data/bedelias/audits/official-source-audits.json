@@ -924,7 +924,223 @@
         }
       ],
       "remainingWork": "La auditoría resuelve la falsa diferencia curricular regional y define la oferta intersede. La proyección curada de unidades y previaturas para la UI sigue pendiente; la discrepancia documental del título intermedio debe permanecer visible y no habilita publicación automática."
+    },
+    {
+      "identity": "licenciatura en educacion fisica:2017",
+      "career": "LICENCIATURA EN EDUCACIÓN FÍSICA",
+      "planYear": "2017",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-and-site-filtered-trajectories",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo Directivo Central, 08/11/2016"
+        ],
+        "title": "Licenciado en Educación Física",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "creditDistribution": {
+          "Formación común obligatoria": 270,
+          "Opción específica": 60,
+          "Formación optativa o electiva": 30
+        },
+        "trajectorySelection": {
+          "startsAtSemester": 5,
+          "minimumPriorCredits": 120,
+          "maximumOptionalCreditsWithinPriorMinimum": 10
+        },
+        "trajectories": [
+          {
+            "id": "deporte",
+            "label": "Deporte"
+          },
+          {
+            "id": "salud",
+            "label": "Salud"
+          },
+          {
+            "id": "practicas-corporales",
+            "label": "Prácticas Corporales"
+          },
+          {
+            "id": "tiempo-libre-y-ocio",
+            "label": "Tiempo Libre y Ocio"
+          }
+        ],
+        "degreeRule": "El título es único para las cuatro opciones. ISEF expide además un certificado que identifica la opción elegida."
+      },
+      "offerings": [
+        {
+          "serviceCode": "ISEF",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2017",
+          "trajectoryIds": [
+            "deporte",
+            "salud",
+            "practicas-corporales",
+            "tiempo-libre-y-ocio"
+          ]
+        },
+        {
+          "serviceCode": "CURE",
+          "locations": [
+            "Maldonado"
+          ],
+          "role": "oferta regional completa del mismo Plan 2017",
+          "trajectoryIds": [
+            "deporte",
+            "salud",
+            "practicas-corporales",
+            "tiempo-libre-y-ocio"
+          ],
+          "evidenceNote": "La página vigente de CURE presenta las cuatro áreas como perfiles disponibles. Un informe nacional 2020-2024 no registra estudiantes de Salud en Maldonado; no se usa esa ausencia estadística para restringir la oferta pública actual."
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "oferta regional completa del mismo Plan 2017",
+          "trajectoryIds": [
+            "deporte",
+            "salud"
+          ]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
+        "regionalSnapshots": {
+          "CURE": "data/bedelias/cure-licenciatura-en-educacion-fisica-2017.json",
+          "CENURLN": "data/bedelias/cenurln-licenciatura-en-educacion-fisica-2017.json"
+        },
+        "canonicalCourses": 1297,
+        "regionalCourses": {
+          "CURE": 1426,
+          "CENURLN": 1426
+        },
+        "mandatoryCoreCoursesCanonical": 38,
+        "mandatoryCoreCoursesRegional": {
+          "CURE": 38,
+          "CENURLN": 38
+        },
+        "mandatoryCoreEqual": true,
+        "onlyCanonical": {
+          "CURE": 1,
+          "CENURLN": 1
+        },
+        "onlyRegional": {
+          "CURE": 107,
+          "CENURLN": 107
+        },
+        "allCatalogDifferencesFlexible": true,
+        "changedCreditCodeCollisions": [
+          {
+            "key": "EPAR",
+            "canonicalCredits": 2,
+            "regionalCredits": 5
+          },
+          {
+            "key": "MBCM",
+            "canonicalCredits": 1,
+            "regionalCredits": 37
+          }
+        ],
+        "changedCreditsUnderFlexibleBranches": 2,
+        "prerequisiteEntries": {
+          "ISEF": 1192,
+          "CURE": 119,
+          "CENURLN": 65
+        }
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": true,
+        "reason": "ISEF, CURE y CENUR Litoral Norte dictan el mismo Plan 2017 y conservan las mismas 38 entradas no flexibles en Bedelías. Las diferencias extraídas están íntegramente en ramas optativas/electivas. La variación territorial oficialmente relevante es qué opciones de 60 créditos se ofrecen: Paysandú publica sólo Deporte y Salud, mientras Montevideo y la página vigente de Maldonado presentan las cuatro.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Licenciatura en Educación Física Plan 2017.",
+          "Modelar Montevideo, Maldonado y Paysandú como sedes del mismo plan, sin duplicar carrera ni progreso.",
+          "Filtrar los trayectos por sede: Paysandú ofrece Deporte y Salud; Montevideo y la oferta pública vigente de Maldonado presentan las cuatro opciones.",
+          "Conservar un único título y mostrar la opción como trayecto certificado, no como carrera o título separado.",
+          "Normalizar el egreso por 270 créditos comunes, 60 específicos del trayecto y 30 optativos/electivos.",
+          "No usar los catálogos regionales ampliados ni las colisiones EPAR/MBCM para definir disponibilidad de trayectos.",
+          "Tratar la menor cobertura regional de previaturas como una diferencia de publicación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://isef.udelar.edu.uy/wp-content/uploads/2017/02/Plan-de-Estudios-2017.pdf",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "Plan de Estudios 2017",
+            "título único, duración y estructura de créditos",
+            "cuatro opciones y selección desde el quinto semestre"
+          ]
+        },
+        {
+          "url": "https://isef.udelar.edu.uy/noticias/nuevo-plan-de-estudio-licenciatura-en-educacion-fisica/",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "implementación del Plan 2017",
+            "270 créditos comunes, 60 específicos y 30 flexibles",
+            "certificación de la opción elegida"
+          ]
+        },
+        {
+          "url": "https://isef.udelar.edu.uy/noticias/isef-montevideo-inscripcion-a-trayectos-en-la-licenciatura-en-educacion-fisica/",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "oferta en Montevideo de los cuatro trayectos",
+            "inscripción a trayecto desde el quinto semestre"
+          ]
+        },
+        {
+          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-educacion-fisica/",
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "supports": [
+            "oferta vigente del Plan 2017 en Maldonado",
+            "cuatro perfiles publicados y egreso por 360 créditos con tesina"
+          ]
+        },
+        {
+          "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-educacion-fisica",
+          "authority": "Centro Universitario Regional Litoral Norte, Udelar",
+          "supports": [
+            "oferta completa en Paysandú",
+            "disponibilidad territorial de los trayectos Deporte y Salud"
+          ]
+        },
+        {
+          "url": "https://isef.udelar.edu.uy/estudia-en-isef/",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "oferta 2026 en Montevideo, Maldonado y Paysandú",
+            "selección de una única sede al ingresar"
+          ]
+        },
+        {
+          "url": "https://ordendeldia.isef.udelar.edu.uy/sesionescd/Distribuidos/317-25.pdf",
+          "authority": "Comisión Directiva del Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "distribución nacional de inscripciones por trayecto y sede entre 2020 y 2024",
+            "cuatro trayectos en Montevideo, tres con matrícula en Maldonado y dos en Paysandú"
+          ]
+        },
+        {
+          "url": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/previaturas-academicas-plan-2017/",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "previaturas vigentes del Plan 2017",
+            "requisitos de inscripción a trayecto y seminario"
+          ]
+        }
+      ],
+      "remainingWork": "La auditoría resuelve la falsa diferencia curricular y permite filtrar trayectos por sede. La proyección curada de unidades y previaturas para la UI sigue pendiente y no habilita publicación automática."
     }
   ],
-  "contentHash": "sha256:eb6a06b1506463169111ddf6c62cd8a2ebcd0fecaa3c7cc3968788af9d90a9e8"
+  "contentHash": "sha256:26d97d99c693d4579d5dc48d2703b0b3f0840246013884cb0b1d2212f7839774"
 }
