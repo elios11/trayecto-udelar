@@ -625,3 +625,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:6bbf27ed8483f32100283929caa25eb10321a65d10bf8a1415c20334a208f0dc`. Cola actualizada: 165 identidades pendientes, 18 de prioridad `insufficient-regional-content`; hash `sha256:34c7e0dc0d2f85f033bc388f3b34df9eda57e200d54acd7a83fb32787fcd3ca1`.
 - Manifiesto UI: 175 proyecciones generadas, 93 con composición y 82 sin composición, dos identidades históricas excluidas; hash `sha256:827a3c4cb9c3837f33e9d249f1faf35e79518d49102377f7fe041a1df7406c2c`.
 - Siguiente paso: auditar Profesionalización de Auxiliares de Enfermería Plan 1999, cuya oferta 2026 está abierta en la región suroeste pero requiere separar la identidad académica de su edición territorial actual.
+
+### Profesionalización de Auxiliares de Enfermería Plan 1999 — cohortes vigentes 2026-08-20
+
+- El Consejo de Facultad y la convocatoria 2026 identifican expresamente la propuesta como Profesionalización Plan 1999. La cohorte 2026 comenzó en Mercedes y Colonia del Sacramento; Montevideo conserva una cohorte nacional 2025.
+- Es un único programa para auxiliares con bachillerato, título registrado, experiencia y trabajo vigente. Otorga el título Licenciado/a en Enfermería tras tres años de cursos y el Trabajo Final de Investigación; las presentaciones institucionales resumen 42 meses totales.
+- Decisión: modelar Montevideo, Mercedes y Colonia del Sacramento como sedes/cohortes del mismo programa, con disponibilidad temporal y progreso compartido. Las prácticas locales no justifican trayectorias ni planes separados.
+- Los snapshots FENF y CENURSO marcan erróneamente el plan como no vigente y no publican composición, créditos ni previaturas. La evidencia institucional 2026 prevalece para la vigencia; la UI mantiene créditos y materias como no publicados.
+- Registro de auditoría: hash `sha256:f594e3a9b018c8fcdde1ab1ebdcbfb0041481321b51fcfd96161f9ab480087ad`. Cola actualizada: 164 identidades pendientes, 17 de prioridad `insufficient-regional-content`; hash `sha256:8219078c2397951dc9524fdcfae9a4462e9f61afbe154b3d13330942efad1284`.
+- Manifiesto UI: 175 proyecciones, 93 con composición, 82 sin composición y once con sedes oficiales; hash `sha256:403d61656803d30894643f66e68256026a984936627b4923251987acfec7ea3d`.
+- Siguiente paso: auditar Archivología Plan 2012 y comprobar si la oferta de Paysandú comparte íntegramente el plan de FIC o sólo una vía territorial de cursado.

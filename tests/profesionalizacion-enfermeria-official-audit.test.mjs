@@ -1,0 +1,41 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+
+const readJson = (relativePath) => JSON.parse(readFileSync(new URL(`../${relativePath}`, import.meta.url), "utf8"));
+const registry = readJson("data/bedelias/audits/official-source-audits.json");
+const queue = readJson("data/bedelias/inventory/audit-queue.json");
+const audit = registry.audits.find((entry) => entry.identity === "licenciatura en enfermeria profesionalizacion de auxiliar:1999");
+const projection = readJson("app/data/bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json");
+
+test("la convocatoria 2026 mantiene vigente el Plan 1999", () => {
+  assert.equal(audit.status, "official-evidence-complete");
+  assert.equal(audit.publicationEligible, false);
+  assert.equal(audit.officialPlan.approvalYear, 1999);
+  assert.equal(audit.officialPlan.title, "Licenciado/a en Enfermería");
+  assert.equal(audit.officialPlan.durationMonths, 42);
+  assert.equal(audit.officialPlan.minimumCredits, null);
+  assert.equal(audit.conclusion.canonicalModel, "one-program-cohort-specific-offerings");
+});
+
+test("Montevideo y Región Suroeste son cohortes del mismo programa", () => {
+  const offerings = new Map(audit.offerings.map((offering) => [offering.serviceCode, offering]));
+  assert.deepEqual(offerings.get("FENF").locations, ["Montevideo"]);
+  assert.deepEqual(offerings.get("CENURSO").locations, ["Mercedes, Soriano", "Colonia del Sacramento"]);
+  assert.equal(offerings.get("FENF").curriculumVariant, false);
+  assert.equal(offerings.get("CENURSO").curriculumVariant, false);
+  assert.equal(audit.conclusion.regionalCurriculumVariant, false);
+  assert.equal(audit.conclusion.timeDependentAdmissionAvailability, true);
+  assert.deepEqual(projection.campuses.map((campus) => campus.id), ["montevideo", "mercedes-soriano", "colonia-del-sacramento"]);
+});
+
+test("la UI conserva vigencia y procedencia sin inventar composición ni créditos", () => {
+  assert.equal(projection.plan.current, true);
+  assert.equal(projection.plan.durationMonths, 42);
+  assert.equal(projection.plan.minCredits, 0);
+  assert.equal(projection.plan.compositionAvailable, false);
+  assert.equal(projection.courses.length, 0);
+  assert.match(projection.plan.notice, /no publica su composición/i);
+  assert.ok(queue.completedAudits.some((entry) => entry.identity === audit.identity));
+  assert.ok(!queue.queue.some((entry) => entry.identity === audit.identity));
+});

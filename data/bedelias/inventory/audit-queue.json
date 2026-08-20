@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T05:54:47.876Z",
+  "generatedAt": "2026-08-20T06:01:14.579Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:6bbf27ed8483f32100283929caa25eb10321a65d10bf8a1415c20334a208f0dc"
+    "officialAuditRegistryHash": "sha256:f594e3a9b018c8fcdde1ab1ebdcbfb0041481321b51fcfd96161f9ab480087ad"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 12,
-    "pendingCanonicalIdentities": 165,
+    "evidenceClosedCanonicalIdentities": 13,
+    "pendingCanonicalIdentities": 164,
     "byPriority": {
-      "insufficient-regional-content": 18,
+      "insufficient-regional-content": 17,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -95,46 +95,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "legacy-plan-teach-out"
+    },
+    {
+      "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-program-cohort-specific-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
-      "career": {
-        "name": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1999",
-        "name": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FENF",
-        "serviceName": "FACULTAD DE ENFERMERÍA",
-        "planKey": "FENF:licenciatura en enfermeria profesionalizacion de auxiliar:1999",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FENF",
-          "serviceName": "FACULTAD DE ENFERMERÍA",
-          "planKey": "FENF:licenciatura en enfermeria profesionalizacion de auxiliar:1999",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURSO",
-          "canonicalServiceCode": "FENF",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
     {
       "identity": "archivologia:2012",
       "career": {
@@ -5290,5 +5259,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:34c7e0dc0d2f85f033bc388f3b34df9eda57e200d54acd7a83fb32787fcd3ca1"
+  "contentHash": "sha256:8219078c2397951dc9524fdcfae9a4462e9f61afbe154b3d13330942efad1284"
 }

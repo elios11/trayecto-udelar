@@ -1901,7 +1901,145 @@
         }
       ],
       "remainingWork": "Una futura vista explícita de planes en finalización podría incorporar el Plan 2001 para sus cohortes activas, si se obtiene una composición oficial completa. No debe reaparecer en el selector de oferta vigente ni bloquear la integración del Plan 2016."
+    },
+    {
+      "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
+      "career": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
+      "planYear": "1999",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-program-regional-cohorts-and-admission",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Licenciado/a en Enfermería",
+        "approvalYear": 1999,
+        "durationMonths": 42,
+        "durationRule": "Tres años de cursos más aprobación del Trabajo Final de Investigación; las presentaciones institucionales resumen la duración total como tres años y medio.",
+        "targetPopulation": "Auxiliares de Enfermería con bachillerato completo, título registrado, al menos tres años de ejercicio y trabajo vigente.",
+        "requiredFinalActivity": "Trabajo Final de Investigación",
+        "minimumCredits": null
+      },
+      "offerings": [
+        {
+          "serviceCode": "FENF",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "cohorte nacional 2025 del mismo Plan 1999",
+          "admissionStatus": "active-cohort-no-2026-intake",
+          "curriculumVariant": false
+        },
+        {
+          "serviceCode": "CENURSO",
+          "locations": [
+            "Mercedes, Soriano",
+            "Colonia del Sacramento"
+          ],
+          "role": "cohorte regional 2026 del mismo Plan 1999",
+          "admissionStatus": "open-2026-cohort-started",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json",
+        "regionalSnapshot": "data/bedelias/cenurso-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json",
+        "snapshotCurrentFlags": {
+          "FENF": false,
+          "CENURSO": false
+        },
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Ambos snapshots identifican Plan 1999 y el mismo título, pero no publican composición ni previaturas y lo marcan no vigente. El Consejo de Facultad y la convocatoria oficial confirman, sin embargo, que Plan 1999 sigue activo para las cohortes 2025 y 2026; se prioriza esa evidencia institucional vigente."
+      },
+      "conclusion": {
+        "canonicalModel": "one-program-cohort-specific-offerings",
+        "regionalCurriculumVariant": false,
+        "timeDependentAdmissionAvailability": true,
+        "reason": "Facultad y su Consejo denominan explícitamente Plan de Profesionalización 1999 a la propuesta vigente. La edición 2026 en Soriano y Colonia y la cohorte 2025 de Montevideo comparten objetivo, título, requisitos y estructura general; la sede y el año de cohorte determinan disponibilidad y campos de práctica, no otra carrera ni trayectoria de egreso.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Profesionalización de Auxiliares de Enfermería Plan 1999.",
+          "Modelar Montevideo, Mercedes y Colonia del Sacramento como sedes de cohortes del mismo programa, sin duplicar carrera ni progreso.",
+          "No crear trayectorias territoriales: las prácticas presenciales se organizan por cohorte y sede, pero no hay evidencia de mínimos o títulos diferentes.",
+          "Mostrar la disponibilidad temporal: Montevideo conserva la generación 2025 y Región Suroeste abrió la generación 2026.",
+          "Normalizar una duración total de 42 meses y el título Licenciado/a en Enfermería, dejando créditos sin publicar.",
+          "Mantener composición y previaturas como no publicadas hasta obtener un plan oficial detallado; no copiar el Plan 2016."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fenf.edu.uy/programa-profesionalizacion-auxiliares-enfermeria/",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "cohorte 2026 en Región Suroeste",
+            "cohorte 2025 en Montevideo",
+            "unidad académica del programa entre territorios"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/2026/02/09/inscripciones-al-programa-de-profesionalizacion-region-suroeste/",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "ingreso 2026 y 150 cupos",
+            "requisitos específicos para auxiliares",
+            "cursos y prácticas en Colonia y Soriano"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/2026/04/13/iniciaron-las-clases-del-programa-de-profesionalizacion-en-la-region-suroeste/",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "inicio efectivo de la cohorte 2026",
+            "tres años más Trabajo Final de Investigación",
+            "título Licenciado/a en Enfermería"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/2026/02/23/se-presentara-en-colonia-el-programa-de-profesionalizacion-de-auxiliares-de-enfermeria/",
+          "authority": "Facultad de Enfermería y portal Udelar",
+          "supports": [
+            "duración total de tres años y medio",
+            "sedes Soriano y Colonia",
+            "título y población destinataria"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2026/02/orden-del-dia-11-febrero.pdf",
+          "authority": "Consejo de Facultad de Enfermería, Udelar",
+          "supports": [
+            "identificación vigente como Profesionalización Plan 1999",
+            "gestión académica de la edición CENUR Suroeste"
+          ]
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/52639/1/Memoria-Udelar-1999-2000.pdf",
+          "authority": "Memoria institucional Udelar",
+          "supports": [
+            "aprobación del Programa de Profesionalización por el CDC en diciembre de 1999"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "bedeliasCurrentFlag",
+          "resolution": "Los snapshots FENF y CENURSO marcan no vigente el Plan 1999, pero la convocatoria, el inicio de clases y el Consejo de Facultad lo identifican como programa activo en 2026. La UI aplica la evidencia oficial vigente."
+        },
+        {
+          "field": "durationMonths",
+          "officialValues": [
+            36,
+            42
+          ],
+          "resolution": "Usar 42 meses como duración total porque las presentaciones institucionales incluyen el Trabajo Final de Investigación; conservar la descripción de tres años como período de cursos."
+        },
+        {
+          "field": "minimumCredits",
+          "resolution": "Las fuentes oficiales revisadas no publican un total de créditos del Programa 1999 y los snapshots están vacíos. No reutilizar los 360 créditos de Licenciatura Plan 2016 ni mostrar un mínimo inventado."
+        }
+      ],
+      "remainingWork": "La identidad, vigencia, título, duración y sedes quedan normalizados. Falta una fuente oficial detallada de unidades, créditos y previaturas para construir la malla; mientras tanto debe mostrarse como programa vigente con composición no publicada."
     }
   ],
-  "contentHash": "sha256:6bbf27ed8483f32100283929caa25eb10321a65d10bf8a1415c20334a208f0dc"
+  "contentHash": "sha256:f594e3a9b018c8fcdde1ab1ebdcbfb0041481321b51fcfd96161f9ab480087ad"
 }
