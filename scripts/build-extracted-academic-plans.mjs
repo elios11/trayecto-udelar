@@ -288,6 +288,7 @@ function buildProjection(entry, snapshot, audit) {
     } else if (rule.noPublishedRule && rule.target?.code) noPublishedCodes.add(rule.target.code);
   }
   for (const course of courses) {
+    if (!course.bedeliasCode) continue;
     course.ruleCoverage = publishedCodes.has(course.bedeliasCode) ? "published" : noPublishedCodes.has(course.bedeliasCode) ? "not-published" : "not-scraped";
   }
 
@@ -304,7 +305,8 @@ function buildProjection(entry, snapshot, audit) {
   const pathways = buildPathways(audit, periods, courseRecords, campuses);
   const auditStatus = audit ? "official-evidence-complete" : entry.canonicalSource.state === "structurally-valid" ? "structurally-valid" : "extracted";
   const planDocument = audit?.sources?.[0]?.url ?? snapshot.plan?.metadata?.colibriUrl ?? snapshot.plan?.sourceUrl;
-  const notice = audit?.identity === "tecnicatura en deportes:2007"
+  const notice = audit?.uiNotice
+    ?? (audit?.identity === "tecnicatura en deportes:2007"
     ? "El Plan 2007 continúa para cohortes existentes, pero no tiene ingreso abierto en Montevideo ni Rocha durante 2026; Paysandú no publica una nueva apertura y Rivera se conserva sólo como antecedente histórico."
     : officialCurriculum?.courses.length
       ? "Malla curricular vigente publicada por el servicio. Las previaturas no se muestran cuando la fuente oficial no las documenta."
@@ -314,7 +316,7 @@ function buildProjection(entry, snapshot, audit) {
     ? audit
       ? "La identidad, el plan y sus sedes fueron contrastados con fuentes oficiales. La composición mostrada sigue siendo la extracción de Bedelías y no una trayectoria curricular curada."
       : "Composición extraída de Bedelías. La auditoría oficial de títulos, mínimos, obligatoriedad y trayectoria está pendiente."
-    : "Bedelías identifica este plan vigente, pero no publica su composición. No se inventan materias ni una trayectoria provisional.";
+    : "Bedelías identifica este plan vigente, pero no publica su composición. No se inventan materias ni una trayectoria provisional.");
 
   return {
     planId,

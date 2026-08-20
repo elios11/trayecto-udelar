@@ -764,3 +764,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:a2be2379537045ba31c1ed4ead1c0b90272f5f09bdb5910edafc9233173a71f5`. Cola actualizada: 151 identidades pendientes, 4 de prioridad `insufficient-regional-content`; hash `sha256:4eaeece2109a0cad95516d51447c753dbbcdb76ef5199d013bd1c71e90f1b8a7`.
 - Manifiesto UI: 175 proyecciones, 105 con composición, 70 sin composición y veintitrés planes con sedes oficiales; hash `sha256:ef5e02bddc9190f856ec4a5442fc7967a7f848064bbacd715cadc6d90cf7675f`.
 - Siguiente paso: auditar Tecnólogo Químico Plan 2025 y resolver su identidad compartida entre Facultad de Química y Paysandú.
+
+### Tecnólogo Químico Plan 2025 — malla compartida y sedes auditadas 2026-08-20
+
+- Udelar, DGETP-UTU y UTEC publican un único Plan 2025 de tres años y seis semestres. La grilla oficial contiene 32 cargas obligatorias por período, ocho optativas y la Pasantía; las unidades anuales se conservan en ambos semestres con los créditos que el documento asigna a cada tramo.
+- Las cargas obligatorias suman 266 créditos. Bedelías y el catálogo central exigen un mínimo de 270, mientras las optativas publicadas valen 5 o 6 créditos; la UI exige el total y permite superar el mínimo sin inventar una cantidad fija de optativas.
+- Montevideo y Paysandú son sedes del mismo plan compartido. No existe evidencia de título, mínimos o trayectoria territorial diferente, por lo que la elección de sede conserva una única malla y el mismo progreso.
+- Bedelías informa 24 meses y no muestra composición; el plan oficial vigente está organizado en 36 meses y prevalece. Tampoco se inventan previaturas para el nuevo plan.
+- Registro de auditoría: hash `sha256:0b268a5d02dcba14afe7e53b4f4872116d06a73608421ef95a8698c0f960f881`. Cola actualizada: 150 identidades pendientes, 3 de prioridad `insufficient-regional-content`; hash `sha256:ec1ea7504537fc2a693821d1b9bc58b2e95073132627a4d9b12b93785220b7b3`.
+- Manifiesto UI: 175 proyecciones, 106 con composición, 69 sin composición y veinticuatro planes con sedes oficiales; hash `sha256:4e9a1c3ff7073423cc5381cd370ee30a76ee0dfc83dc50b8ed900b9174562b4d`.
+- Siguiente paso: auditar Doctor en Ciencias Veterinarias Plan 2021 y localizar su estructura oficial cuando la composición de Bedelías resulte insuficiente.

@@ -67,6 +67,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["tecnicatura en hemoterapia:2006", ["montevideo", "paysandu"]],
     ["tecnicatura en podologia:2006", ["montevideo", "paysandu"]],
     ["tecnicatura en salud ocupacional:2006", ["montevideo", "paysandu"]],
+    ["tecnologo quimico:2025", ["montevideo", "paysandu"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

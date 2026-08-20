@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T11:28:09.585Z",
+  "generatedAt": "2026-08-20T11:51:39.898Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:a2be2379537045ba31c1ed4ead1c0b90272f5f09bdb5910edafc9233173a71f5"
+    "officialAuditRegistryHash": "sha256:0b268a5d02dcba14afe7e53b4f4872116d06a73608421ef95a8698c0f960f881"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 26,
-    "pendingCanonicalIdentities": 151,
+    "evidenceClosedCanonicalIdentities": 27,
+    "pendingCanonicalIdentities": 150,
     "byPriority": {
-      "insufficient-regional-content": 4,
+      "insufficient-regional-content": 3,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -179,46 +179,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "tecnologo quimico:2025",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnologo quimico:2025",
-      "career": {
-        "name": "TECNÓLOGO QUÍMICO",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2025",
-        "name": "TECNÓLOGO QUÍMICO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FQ",
-        "serviceName": "FACULTAD DE QUÍMICA",
-        "planKey": "FQ:tecnologo quimico:2025",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FQ",
-          "serviceName": "FACULTAD DE QUÍMICA",
-          "planKey": "FQ:tecnologo quimico:2025",
-          "state": "extracted"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FQ",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
     {
       "identity": "doctor en ciencias veterinarias:2021",
       "career": {
@@ -4849,5 +4818,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:4eaeece2109a0cad95516d51447c753dbbcdb76ef5199d013bd1c71e90f1b8a7"
+  "contentHash": "sha256:ec1ea7504537fc2a693821d1b9bc58b2e95073132627a4d9b12b93785220b7b3"
 }

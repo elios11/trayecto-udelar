@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:4eaeece2109a0cad95516d51447c753dbbcdb76ef5199d013bd1c71e90f1b8a7",
-    "officialAuditHash": "sha256:a2be2379537045ba31c1ed4ead1c0b90272f5f09bdb5910edafc9233173a71f5",
+    "auditQueueHash": "sha256:ec1ea7504537fc2a693821d1b9bc58b2e95073132627a4d9b12b93785220b7b3",
+    "officialAuditHash": "sha256:0b268a5d02dcba14afe7e53b4f4872116d06a73608421ef95a8698c0f960f881",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 105,
-    "compositionUnavailable": 70,
-    "plansWithOfficialCampuses": 23,
+    "compositionAvailable": 106,
+    "compositionUnavailable": 69,
+    "plansWithOfficialCampuses": 24,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1622,9 +1622,12 @@
       "planId": "bedelias-fq-tecnologo-quimico-2025",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-tecnologo-quimico-2025.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo",
+        "paysandu"
+      ]
     },
     {
       "identity": "doctor en ciencias veterinarias:2021",
@@ -1671,5 +1674,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:ef5e02bddc9190f856ec4a5442fc7967a7f848064bbacd715cadc6d90cf7675f"
+  "contentHash": "sha256:4e9a1c3ff7073423cc5381cd370ee30a76ee0dfc83dc50b8ed900b9174562b4d"
 }
