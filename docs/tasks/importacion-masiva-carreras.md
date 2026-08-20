@@ -635,3 +635,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:f594e3a9b018c8fcdde1ab1ebdcbfb0041481321b51fcfd96161f9ab480087ad`. Cola actualizada: 164 identidades pendientes, 17 de prioridad `insufficient-regional-content`; hash `sha256:8219078c2397951dc9524fdcfae9a4462e9f61afbe154b3d13330942efad1284`.
 - Manifiesto UI: 175 proyecciones, 93 con composición, 82 sin composición y once con sedes oficiales; hash `sha256:403d61656803d30894643f66e68256026a984936627b4923251987acfec7ea3d`.
 - Siguiente paso: auditar Archivología Plan 2012 y comprobar si la oferta de Paysandú comparte íntegramente el plan de FIC o sólo una vía territorial de cursado.
+
+### Archivología Plan 2012 — malla oficial y sedes normalizadas 2026-08-20
+
+- El Plan 2012, aprobado por el CDC el 21/08/2012, define un único título Licenciado/a en Archivología, cuatro años, ocho semestres y 360 créditos organizados en los ciclos Inicial, Intermedio y de Graduación.
+- FIC publica una malla curricular 2019 vigente con 40 unidades o alternativas explícitas en ocho semestres. La UI conserva además los 87 créditos opcionales como bloques verificables: al menos 35 optativos, 5 electivos, 5 de investigación y 5 de extensión.
+- La malla exige dos prácticas preprofesionales por 18 créditos y un Trabajo Final de Grado de 30. Las elecciones Historia de las Ideas/Proceso Cultural del Uruguay y Colecciones Digitales/Introducción a la Preservación Digital quedan modeladas como alternativas, no como duplicaciones obligatorias.
+- El plan original financia expresamente la implementación en Montevideo y Paysandú; la CSE identifica ambas como sedes del mismo Plan 2012 y el catálogo vigente del interior mantiene Archivología en Paysandú. No hay evidencia de título, mínimos ni trayectoria territorial diferente.
+- Los snapshots FIC y CENURLN contienen cero unidades y previaturas. La proyección usa la malla oficial con procedencia `official-curriculum`, sin atribuirla a Bedelías y sin inventar correlatividades.
+- Registro de auditoría: hash `sha256:d002cd1607ca1a7cbf830985589bec01afbd21f56edca7e6ceeff724f30828a8`. Cola actualizada: 163 identidades pendientes, 16 de prioridad `insufficient-regional-content`; hash `sha256:92bbad88feba2209ed4720c89370b2ee7619792b0c4ee5d8d46e22a6cac38a22`.
+- Manifiesto UI: 175 proyecciones, 94 con composición, 81 sin composición y doce con sedes oficiales; hash `sha256:8d1b01f67ed0165f5e0e0bf21e15860924d559cf8cda9d8ba8c169b474adab48`.
+- Siguiente paso: auditar Bibliotecología Plan 2012, que comparte el marco normativo y la oferta Montevideo/Paysandú, pero requiere convertir su propia malla oficial sin reutilizar materias específicas de Archivología.

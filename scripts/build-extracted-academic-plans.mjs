@@ -87,7 +87,7 @@ function auditCampuses(audit) {
 }
 
 function courseId(serviceCode, course, index, usedIds) {
-  const base = `${serviceCode.toLocaleLowerCase()}-${slug(course.code || course.name || `unidad-${index + 1}`)}`;
+  const base = `${serviceCode.toLocaleLowerCase()}-${slug(course.id || course.code || course.name || `unidad-${index + 1}`)}`;
   let candidate = base;
   let suffix = 2;
   while (usedIds.has(candidate)) candidate = `${base}-${suffix++}`;
@@ -151,8 +151,10 @@ function buildPathways(audit, periods, courseRecords, campuses) {
   }
   const pathways = {
     bedelias: {
-      label: "Composición Bedelías",
-      description: "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada.",
+      label: audit?.officialPlan?.curriculum ? "Malla oficial" : "Composición Bedelías",
+      description: audit?.officialPlan?.curriculum
+        ? "Unidades, créditos y períodos publicados por el servicio universitario; no equivale a una trayectoria territorial."
+        : "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada.",
       campusIds: campuses.map((campus) => campus.id),
       periods,
     },
@@ -184,10 +186,65 @@ function normalizeExpressionCourseIds(expression, codeToId, localServiceCode) {
   };
 }
 
+function buildOfficialCurriculum(audit, serviceCode, usedIds) {
+  const curriculum = audit?.officialPlan?.curriculum;
+  if (!Array.isArray(curriculum?.periods) || curriculum.periods.length === 0) return null;
+
+  const sourceUrl = curriculum.sourceUrl ?? audit.sources?.[0]?.url;
+  const courses = [];
+  const periods = [];
+  const courseIdBySourceId = new Map();
+  for (const period of curriculum.periods) {
+    const courseIds = [];
+    for (const [index, rawCourse] of (period.courses ?? []).entries()) {
+      const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
+      const credits = Number(rawCourse.credits);
+      const nodeId = rawCourse.requirementId ?? "plan-total";
+      courses.push({
+        id,
+        name: rawCourse.name,
+        credits: Number.isFinite(credits) && credits >= 0 ? credits : 0,
+        eligibleRequirementIds: [nodeId],
+        creditAllocations: [{ nodeId, credits, status: "official", sourceUrl }],
+        dataStatus: "official-curriculum",
+        ruleCoverage: "not-published",
+        curricularBlock: rawCourse.curricularBlock === true,
+      });
+      if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
+      courseIds.push(id);
+    }
+    periods.push({ label: period.label, courseIds });
+  }
+
+  const nodes = [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: Number(audit.officialPlan.minimumCredits), sourceStatus: "official", sourceUrl }];
+  for (const requirement of curriculum.creditRequirements ?? []) {
+    nodes.push({
+      id: requirement.id,
+      parentId: requirement.parentId ?? "plan-total",
+      kind: requirement.kind ?? "module",
+      name: requirement.name,
+      shortName: requirement.shortName,
+      minCredits: Number(requirement.minCredits),
+      sourceStatus: "official",
+      sourceUrl,
+    });
+  }
+
+  const requiredCourseGroups = (curriculum.requiredCourseGroups ?? []).map((group) => ({
+    id: group.id,
+    label: group.label,
+    minCompleted: Number(group.minCompleted),
+    courseIds: group.courseIds.map((id) => courseIdBySourceId.get(id)).filter(Boolean),
+    sourceUrl,
+  }));
+
+  return { courses, periods, nodes, requiredCourseGroups, sourceUrl };
+}
+
 function buildProjection(entry, snapshot, audit) {
   const planId = `bedelias-${entry.canonicalSource.serviceCode.toLocaleLowerCase()}-${slug(entry.career.name)}-${entry.plan.year}`;
   const usedIds = new Set();
-  const courses = [];
+  let courses = [];
   const courseRecords = [];
   const periodMap = new Map();
   const codeToId = new Map();
@@ -211,6 +268,11 @@ function buildProjection(entry, snapshot, audit) {
     courseRecords.push({ id, rawCourse });
   }
 
+  const officialCurriculum = buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
+  if (officialCurriculum && courses.length === 0) {
+    courses = officialCurriculum.courses;
+  }
+
   const publishedCodes = new Set();
   const noPublishedCodes = new Set();
   const rules = [];
@@ -229,14 +291,18 @@ function buildProjection(entry, snapshot, audit) {
   const safeMinCredits = Number.isFinite(auditedMinCredits) && auditedMinCredits > 0
     ? auditedMinCredits
     : Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : 0;
-  const compositionAvailable = snapshot.plan?.compositionAvailability !== "unavailable" && courses.length > 0;
-  const periods = compositionAvailable ? [...periodMap].map(([label, courseIds]) => ({ label, courseIds })) : [];
+  const compositionAvailable = courses.length > 0;
+  const periods = officialCurriculum
+    ? officialCurriculum.periods
+    : compositionAvailable ? [...periodMap].map(([label, courseIds]) => ({ label, courseIds })) : [];
   const campuses = auditCampuses(audit);
   const pathways = buildPathways(audit, periods, courseRecords, campuses);
   const auditStatus = audit ? "official-evidence-complete" : entry.canonicalSource.state === "structurally-valid" ? "structurally-valid" : "extracted";
   const planDocument = audit?.sources?.[0]?.url ?? snapshot.plan?.metadata?.colibriUrl ?? snapshot.plan?.sourceUrl;
   const notice = audit?.identity === "tecnicatura en deportes:2007"
     ? "El Plan 2007 continúa para cohortes existentes, pero no tiene ingreso abierto en Montevideo ni Rocha durante 2026; Paysandú no publica una nueva apertura y Rivera se conserva sólo como antecedente histórico."
+    : officialCurriculum
+      ? "Malla curricular vigente publicada por el servicio. Las previaturas no se muestran cuando la fuente oficial no las documenta."
     : compositionAvailable
     ? audit
       ? "La identidad, el plan y sus sedes fueron contrastados con fuentes oficiales. La composición mostrada sigue siendo la extracción de Bedelías y no una trayectoria curricular curada."
@@ -273,8 +339,8 @@ function buildProjection(entry, snapshot, audit) {
       },
       creditStructure: {
         countingMode: "allocated",
-        nodes: [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: safeMinCredits, sourceStatus: "official", sourceUrl: snapshot.plan?.sourceUrl }],
-        credentials: [{ id: "bedelias-degree", title: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name), minTotalCredits: safeMinCredits, nodeRequirements: [{ nodeId: "plan-total", minCredits: safeMinCredits }], requiredCourseGroups: [], requiredActivities: [], sourceUrl: planDocument }],
+        nodes: officialCurriculum?.nodes ?? [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: safeMinCredits, sourceStatus: "official", sourceUrl: snapshot.plan?.sourceUrl }],
+        credentials: [{ id: "bedelias-degree", title: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name), minTotalCredits: safeMinCredits, nodeRequirements: officialCurriculum ? (audit.officialPlan.curriculum.creditRequirements ?? []).filter((requirement) => requirement.credentialRequired !== false).map((requirement) => ({ nodeId: requirement.id, minCredits: Number(requirement.minCredits) })) : [{ nodeId: "plan-total", minCredits: safeMinCredits }], requiredCourseGroups: officialCurriculum?.requiredCourseGroups ?? [], requiredActivities: [], sourceUrl: planDocument }],
       },
       courses,
       pathways,

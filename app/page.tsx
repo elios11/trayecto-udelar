@@ -62,7 +62,7 @@ type Course = {
   elective?: boolean;
   placementTest?: boolean;
   engineeringOnly?: boolean;
-  dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption" | "fq-damero" | "fadu-official";
+  dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption" | "fq-damero" | "fadu-official" | "official-curriculum";
   bedeliasCode?: string;
   core?: boolean;
   placeholder?: boolean;
@@ -173,7 +173,7 @@ type RegisteredProjection = {
   source: { reviewedAt: string | null; careerPage: string; planDocument: string; bedeliasExtractedAt: string; bedeliasContentHash: string; bedeliasPlanUrl?: string };
   plan: { year: string; current: boolean; degreeTitle: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
-  courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
+  courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
   pathways: Record<string, { label: string; description: string; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }> }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
@@ -1520,9 +1520,9 @@ export default function Home() {
     const courseRule = officialRule(course, "course");
     return Boolean(courseRule && expressionReferencesCode(courseRule.expression, selected.id));
   }) : [];
-  const sourceLabel = (course: Course): "Bedelías" | "FING" | "FQ" | "FADU" | undefined => {
+  const sourceLabel = (course: Course): "Bedelías" | "FING" | "FQ" | "FADU" | "Udelar" | undefined => {
     if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
-    return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : course.dataStatus === "fq-damero" ? "FQ" : course.dataStatus === "fadu-official" ? "FADU" : undefined;
+    return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : course.dataStatus === "fq-damero" ? "FQ" : course.dataStatus === "fadu-official" ? "FADU" : course.dataStatus === "official-curriculum" ? "Udelar" : undefined;
   };
   const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : planYear === "qf-2015" ? qfCatalogLoadState : extendedElectivesLoadState;
   const deferredCatalogCount = isProfilePlan ? (activeProfileCatalogData?.courses.length ?? 0) : planYear === "qf-2015" ? (qfCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
@@ -2082,10 +2082,11 @@ export default function Home() {
             <div className="drawer-stats"><div><span>Créditos</span><strong>{selected.credits}</strong></div><div><span>Estado</span><strong>{selected.placeholder ? "Espacio a completar" : selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
             {selectedAllocation?.status === "suggested" ? <p className="allocation-source suggested-allocation"><span>≈</span> Cuenta en <strong>{courseAreaLabel(selected)}</strong> mediante una asignación sugerida. Los créditos se computan normalmente, pero todavía falta un Anexo B o resolución específica para este plan.</p>
               : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
-                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según {selected.dataStatus === "fadu-official" ? "FADU" : planYear === "qf-2015" && selected.dataStatus === "fq-damero" ? "Facultad de Química" : "Bedelías"}.</p>}
+                : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según {selected.dataStatus === "fadu-official" ? "FADU" : planYear === "qf-2015" && selected.dataStatus === "fq-damero" ? "Facultad de Química" : selected.dataStatus === "official-curriculum" ? "el servicio universitario" : "Bedelías"}.</p>}
             {planYear === "1997" && selected.id === "PI" ? <p className="verified-source fing-source"><span>F</span> La <a href={plan1997PlacementTestSource} target="_blank" rel="noreferrer">trayectoria sugerida publicada por FING en 2025</a> explicita 4 créditos para quienes obtienen 60% o más.</p>
               : selected.dataStatus === "fq-damero" ? <p className="verified-source fing-source"><span>FQ</span> Materia, créditos y semestre publicados en el <a href={qf2015Data?.source.suggestedCurriculum} target="_blank" rel="noreferrer">damero vigente de Facultad de Química</a>; códigos y previaturas se contrastan con Bedelías.</p>
               : selected.dataStatus === "fadu-official" ? <p className="verified-source fing-source"><span>FA</span> {selected.curricularBlock ? "Bloque y créditos" : "Unidad curricular y créditos"} contrastados con el <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">plan y la organización oficial de FADU</a>.</p>
+              : selected.dataStatus === "official-curriculum" ? <p className="verified-source fing-source"><span>U</span> {selected.curricularBlock ? "Bloque y créditos" : "Unidad curricular, créditos y período"} publicados en la <a href={activeRegisteredPlan?.source.careerPage} target="_blank" rel="noreferrer">malla curricular oficial del servicio</a>.</p>
               : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={activeProfileData?.source.profilesSpreadsheet} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>; debe completarse eligiendo una unidad curricular admitida por el plan.</p>
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>

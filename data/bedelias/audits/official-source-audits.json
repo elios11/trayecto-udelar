@@ -2039,7 +2039,209 @@
         }
       ],
       "remainingWork": "La identidad, vigencia, título, duración y sedes quedan normalizados. Falta una fuente oficial detallada de unidades, créditos y previaturas para construir la malla; mientras tanto debe mostrarse como programa vigente con composición no publicada."
+    },
+    {
+      "identity": "archivologia:2012",
+      "career": "ARCHIVOLOGÍA",
+      "planYear": "2012",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-plan-official-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Licenciado/a en Archivología",
+        "approval": "Consejo Directivo Central, 21/08/2012",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "cycles": [
+          "Inicial",
+          "Intermedio",
+          "De Graduación"
+        ],
+        "requiredPracticesCredits": 18,
+        "finalDegreeWorkCredits": 30,
+        "curriculum": {
+          "version": "Malla curricular 2019 vigente en 2026",
+          "sourceUrl": "https://mallas-curriculares.fic.edu.uy/index.php/licenciatura-en-archivologia/",
+          "creditRequirements": [
+            { "id": "arch-ftc", "name": "Fundamentos teórico-conceptuales y contexto", "shortName": "Fundamentos", "minCredits": 48 },
+            { "id": "arch-gda", "name": "Gestión documental y sistemas archivísticos", "shortName": "Gestión documental", "minCredits": 25 },
+            { "id": "arch-dar", "name": "Descripción, análisis y recuperación de la información", "shortName": "Descripción", "minCredits": 33 },
+            { "id": "arch-ppg", "name": "Políticas públicas, planificación y gestión", "shortName": "Políticas y gestión", "minCredits": 35 },
+            { "id": "arch-ici", "name": "Investigación en la ciencia de la información", "shortName": "Investigación", "minCredits": 24 },
+            { "id": "arch-dda", "name": "Documentación digital y aplicación de las TIC", "shortName": "Documentación digital", "minCredits": 40 },
+            { "id": "arch-dic", "name": "Disciplinas complementarias", "shortName": "Complementarias", "minCredits": 12 },
+            { "id": "arch-ain", "name": "Actividades integradoras", "shortName": "Integradoras", "minCredits": 48 },
+            { "id": "arch-ala", "name": "Alfabetización académica", "shortName": "Alfabetización", "minCredits": 8 },
+            { "id": "arch-opc", "name": "Unidades y actividades opcionales", "shortName": "Opcionales", "minCredits": 87 },
+            { "id": "arch-optativas", "parentId": "arch-opc", "name": "Unidades curriculares optativas", "shortName": "Optativas", "kind": "category", "minCredits": 35 },
+            { "id": "arch-electivas", "parentId": "arch-opc", "name": "Unidades curriculares electivas", "shortName": "Electivas", "kind": "category", "minCredits": 5 },
+            { "id": "arch-investigacion", "parentId": "arch-opc", "name": "Actividades de investigación", "shortName": "Investigación opcional", "kind": "activity", "minCredits": 5 },
+            { "id": "arch-extension", "parentId": "arch-opc", "name": "Actividades de extensión", "shortName": "Extensión", "kind": "activity", "minCredits": 5 },
+            { "id": "arch-opc-restantes", "parentId": "arch-opc", "name": "Otros créditos opcionales hasta completar el total", "shortName": "Opcionales restantes", "kind": "category", "minCredits": 37, "credentialRequired": false }
+          ],
+          "periods": [
+            {
+              "label": "1.er semestre",
+              "courses": [
+                { "id": "introduccion-archivologia", "name": "Introducción a la Archivología y Ciencia de la Información", "credits": 7, "requirementId": "arch-ftc" },
+                { "id": "introduccion-epistemologia", "name": "Introducción a la Epistemología", "credits": 8, "requirementId": "arch-ftc" },
+                { "id": "historia-institucional", "name": "Historia Institucional del Uruguay", "credits": 8, "requirementId": "arch-gda" },
+                { "id": "historia-ideas", "name": "Historia de las Ideas", "credits": 8, "requirementId": "arch-dic" },
+                { "id": "curso-introductorio", "name": "Curso Introductorio", "credits": 2, "requirementId": "arch-ala" },
+                { "id": "introduccion-universidad", "name": "Introducción a la Universidad", "credits": 4, "requirementId": "arch-ala" },
+                { "id": "taller-produccion-academica", "name": "Taller de Producción Académica Estudiantil", "credits": 4, "requirementId": "arch-ala" },
+                { "id": "comprension-espanol", "name": "Comprensión Lectora y Escritura en Español", "credits": 2, "requirementId": "arch-ala" }
+              ]
+            },
+            {
+              "label": "2.º semestre",
+              "courses": [
+                { "id": "fundamentos-ia", "name": "Fundamentos de Inteligencia Artificial", "credits": 6, "requirementId": "arch-dda" },
+                { "id": "metodologia-investigacion", "name": "Metodología de la Investigación en Información y Comunicación", "credits": 8, "requirementId": "arch-ftc" },
+                { "id": "taller-servicios-informacion", "name": "Taller Servicios de Información y Acceso a la Información Pública", "credits": 2, "requirementId": "arch-ftc" },
+                { "id": "gestion-documental-1", "name": "Gestión Documental I", "credits": 8, "requirementId": "arch-gda" },
+                { "id": "proceso-cultural-uruguay", "name": "Proceso Cultural del Uruguay", "credits": 8, "requirementId": "arch-dic" }
+              ]
+            },
+            {
+              "label": "3.er semestre",
+              "courses": [
+                { "id": "diseno-asistido-software", "name": "Diseño Asistido de Software", "credits": 6, "requirementId": "arch-dda" },
+                { "id": "estadistica-basica", "name": "Estadística Básica", "credits": 8, "requirementId": "arch-ici" },
+                { "id": "gestion-documental-2", "name": "Gestión Documental II", "credits": 8, "requirementId": "arch-gda" },
+                { "id": "comprension-ingles", "name": "Comprensión Lectora en Inglés", "credits": 6, "requirementId": "arch-dic" },
+                { "id": "organizacion-documental", "name": "Organización Documental", "credits": 8, "requirementId": "arch-dar" }
+              ]
+            },
+            {
+              "label": "4.º semestre",
+              "courses": [
+                { "id": "administracion-ui-1", "name": "Administración en Unidades de Información I", "credits": 9, "requirementId": "arch-ppg" },
+                { "id": "diseno-analisis", "name": "Diseño y Análisis", "credits": 8, "requirementId": "arch-ici" },
+                { "id": "legislacion-archivistica", "name": "Taller de Legislación Archivística", "credits": 4, "requirementId": "arch-gda" },
+                { "id": "cuadros-clasificacion", "name": "Taller de Elaboración de Cuadros de Clasificación", "credits": 3, "requirementId": "arch-dar" },
+                { "id": "descripcion-documental", "name": "Descripción Documental", "credits": 8, "requirementId": "arch-dar" }
+              ]
+            },
+            {
+              "label": "5.º semestre",
+              "courses": [
+                { "id": "conservacion-1", "name": "Conservación I: Conservación Preventiva y Gestión de Riesgos", "credits": 8, "requirementId": "arch-ppg" },
+                { "id": "evaluacion-documental", "name": "Evaluación Documental", "credits": 8, "requirementId": "arch-gda" },
+                { "id": "difusion-archivistica", "name": "Difusión Archivística", "credits": 4, "requirementId": "arch-gda" },
+                { "id": "organizacion-conocimiento", "name": "Organización del Conocimiento y Recuperación de la Información", "credits": 8, "requirementId": "arch-dar" }
+              ]
+            },
+            {
+              "label": "6.º semestre",
+              "courses": [
+                { "id": "administracion-ui-2", "name": "Administración en Unidades de Información II", "credits": 9, "requirementId": "arch-ppg" },
+                { "id": "estudios-usuarios", "name": "Estudios de Usuarios de Información", "credits": 8, "requirementId": "arch-ici" },
+                { "id": "archivos-historicos", "name": "Archivos Históricos", "credits": 8, "requirementId": "arch-gda" },
+                { "id": "bases-datos", "name": "Bases de Datos", "credits": 8, "requirementId": "arch-dda" },
+                { "id": "practica-preprofesional-1", "name": "Práctica Preprofesional I", "credits": 9, "requirementId": "arch-ain" }
+              ]
+            },
+            {
+              "label": "7.º semestre",
+              "courses": [
+                { "id": "planeamiento-informacion", "name": "Planeamiento en el Área de la Información", "credits": 9, "requirementId": "arch-ppg" },
+                { "id": "documentacion-audiovisual", "name": "Documentación Audiovisual", "credits": 8, "requirementId": "arch-dar" },
+                { "id": "colecciones-digitales", "name": "Colecciones Digitales", "credits": 6, "requirementId": "arch-dda" },
+                { "id": "preservacion-digital", "name": "Introducción a la Preservación Digital", "credits": 6, "requirementId": "arch-dda" },
+                { "id": "practica-preprofesional-2", "name": "Práctica Preprofesional II", "credits": 9, "requirementId": "arch-ain" }
+              ]
+            },
+            {
+              "label": "8.º semestre",
+              "courses": [
+                { "id": "micrografia-digitalizacion", "name": "Micrografía y Digitalización", "credits": 8, "requirementId": "arch-dda" },
+                { "id": "redes-sistemas", "name": "Redes y Sistemas", "credits": 8, "requirementId": "arch-dda" },
+                { "id": "trabajo-final-grado", "name": "Trabajo Final de Grado", "credits": 30, "requirementId": "arch-ain" }
+              ]
+            },
+            {
+              "label": "Créditos opcionales",
+              "courses": [
+                { "id": "bloque-optativas", "name": "Unidades curriculares optativas · mínimo", "credits": 35, "requirementId": "arch-optativas", "curricularBlock": true },
+                { "id": "bloque-electivas", "name": "Unidades curriculares electivas · mínimo", "credits": 5, "requirementId": "arch-electivas", "curricularBlock": true },
+                { "id": "bloque-investigacion", "name": "Actividades de investigación · mínimo", "credits": 5, "requirementId": "arch-investigacion", "curricularBlock": true },
+                { "id": "bloque-extension", "name": "Actividades de extensión · mínimo", "credits": 5, "requirementId": "arch-extension", "curricularBlock": true },
+                { "id": "bloque-opcionales-restantes", "name": "Otros créditos opcionales hasta completar 87", "credits": 37, "requirementId": "arch-opc-restantes", "curricularBlock": true }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "arch-eleccion-cultural", "label": "Historia de las Ideas o Proceso Cultural del Uruguay", "minCompleted": 1, "courseIds": ["historia-ideas", "proceso-cultural-uruguay"] },
+            { "id": "arch-eleccion-digital", "label": "Colecciones Digitales o Introducción a la Preservación Digital", "minCompleted": 1, "courseIds": ["colecciones-digitales", "preservacion-digital"] },
+            { "id": "arch-practicas", "label": "Dos prácticas preprofesionales", "minCompleted": 2, "courseIds": ["practica-preprofesional-1", "practica-preprofesional-2"] },
+            { "id": "arch-tfg", "label": "Trabajo Final de Grado", "minCompleted": 1, "courseIds": ["trabajo-final-grado"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FIC", "locations": ["Montevideo"], "role": "servicio responsable y sede central del Plan 2012", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "oferta regional del mismo Plan 2012", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fic-archivologia-2012.json",
+        "regionalSnapshot": "data/bedelias/cenurln-archivologia-2012.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los dos snapshots publican la misma identidad, duración, créditos y título, pero omiten composición. La malla vigente de FIC permite recuperar las unidades y mínimos; las fuentes institucionales describen Paysandú como segunda sede del mismo Plan 2012."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "El Plan aprobado previó expresamente su implementación en Montevideo y Paysandú. Las evaluaciones institucionales posteriores lo denominan un único Plan 2012 vigente en ambas sedes; no existe orientación, título ni mínimo territorial diferente.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Archivología Plan 2012.",
+          "Modelar Montevideo y Paysandú como sedes del mismo plan, sin duplicar carrera, progreso ni trayectoria.",
+          "Usar la malla curricular 2019 publicada por FIC para las unidades, créditos y períodos; no atribuirla a Bedelías.",
+          "Normalizar los mínimos de los ocho módulos, alfabetización académica y 87 créditos opcionales.",
+          "Exigir dentro de los opcionales al menos 35 créditos optativos, 5 electivos, 5 de investigación y 5 de extensión.",
+          "Conservar las dos prácticas preprofesionales, el Trabajo Final de Grado de 30 créditos y las dos elecciones explícitas de la malla.",
+          "No inventar previaturas: la malla vigente no las publica y los snapshots están vacíos."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://mallas-curriculares.fic.edu.uy/index.php/licenciatura-en-archivologia/",
+          "authority": "Facultad de Información y Comunicación, Udelar",
+          "supports": ["malla curricular 2019 vigente", "unidades, créditos y períodos", "requisitos de egreso y oferta optativa 2026"]
+        },
+        {
+          "url": "https://fic.edu.uy/index.php/ensenanza/grado/lic-en-archivologia",
+          "authority": "Facultad de Información y Comunicación, Udelar",
+          "supports": ["vigencia del Plan 2012", "360 créditos y ocho semestres", "tres ciclos, ocho módulos y requisitos de egreso"]
+        },
+        {
+          "url": "https://eva.fic.udelar.edu.uy/mod/resource/view.php?id=10539",
+          "authority": "Plan de Estudios aprobado por el Consejo Directivo Central, Udelar",
+          "supports": ["aprobación del 21 de agosto de 2012", "título y duración", "mínimos por módulo", "implementación financiada en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2023/05/DT20_USIEn_Segundo-informe_20-CARRERAS_CSE-CCI-1.pdf",
+          "authority": "Comisión Sectorial de Enseñanza, Udelar",
+          "supports": ["oferta del mismo Plan 2012 en FIC Montevideo y CENUR Litoral Norte Paysandú", "aperturas territoriales por cohorte"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["Licenciatura en Archivología en Paysandú"]
+        }
+      ],
+      "anomalies": [
+        { "field": "bedeliasComposition", "resolution": "FIC y CENUR Litoral Norte publican cero unidades. La UI usa la malla oficial de FIC y conserva las previaturas como no publicadas." },
+        { "field": "optionalCredits", "resolution": "Los 87 créditos opcionales incluyen mínimos internos y admiten combinaciones flexibles. La UI los representa como bloques ajustables, no como asignaturas ficticias ni una trayectoria territorial." },
+        { "field": "regionalAdmissions", "resolution": "La apertura en Paysandú ha sido intermitente por cohortes. Esto afecta la disponibilidad de ingreso, no la identidad curricular del plan." }
+      ],
+      "remainingWork": "La identidad, malla, mínimos y sedes quedan normalizados. Las previaturas y la disponibilidad de ingreso por cohorte deben actualizarse cuando FIC o CENUR publiquen resoluciones específicas; esa ausencia no bloquea la malla oficial actual."
     }
   ],
-  "contentHash": "sha256:f594e3a9b018c8fcdde1ab1ebdcbfb0041481321b51fcfd96161f9ab480087ad"
+  "contentHash": "sha256:d002cd1607ca1a7cbf830985589bec01afbd21f56edca7e6ceeff724f30828a8"
 }
