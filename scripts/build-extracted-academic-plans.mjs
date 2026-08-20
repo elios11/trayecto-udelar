@@ -268,15 +268,18 @@ function buildOfficialPrerequisiteRules(audit, officialCurriculum, serviceCode) 
     const targetId = officialCurriculum.courseIdBySourceId.get(prerequisite.targetId);
     const target = courseById.get(targetId);
     if (!target) return [];
-    const children = (prerequisite.courseIds ?? []).flatMap((sourceId) => {
+    const children = [
+      ...((prerequisite.courseIds ?? []).map((sourceId) => ({ sourceId, assessment: "course", evidence: "Curso aprobado" }))),
+      ...((prerequisite.examIds ?? []).map((sourceId) => ({ sourceId, assessment: "exam", evidence: "Evaluación final/examen aprobado" }))),
+    ].flatMap(({ sourceId, assessment, evidence }) => {
       const courseId = officialCurriculum.courseIdBySourceId.get(sourceId);
       const course = courseById.get(courseId);
       if (!course) return [];
-      const label = `Curso aprobado de ${course.name}`;
+      const label = `${evidence} de ${course.name}`;
       return [emptyRequirementExpression({
         label,
         minimum: 1,
-        options: [{ assessment: "course", serviceCode, code: course.id, name: course.name, raw: label }],
+        options: [{ assessment, serviceCode, code: course.id, name: course.name, raw: label }],
       })];
     });
     if (Number(prerequisite.minCredits) > 0) {

@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:a4e71626ae13deb831ae5b2fa3bd0d4b188048db75b19f3426952c063b9914b5",
-    "officialAuditHash": "sha256:6c6874f16ee3d5fcc85bfd0cd5f5ad5898758ff1ca63ee461b5339d32cb42653",
+    "auditQueueHash": "sha256:8a8cd8f12e9b932dd37be9de7c040eb89952d12ed3301a0753a8995d6b5f9311",
+    "officialAuditHash": "sha256:d5fd2b3259e6c893e842601f6237b4261b3f779306913d6a52f5fab24f27f070",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 107,
-    "compositionUnavailable": 68,
+    "compositionAvailable": 109,
+    "compositionUnavailable": 66,
     "plansWithOfficialCampuses": 25,
     "excludedFromCurrentUi": 2
   },
@@ -1470,9 +1470,11 @@
       "planId": "bedelias-odon-asistente-en-odontologia-2017",
       "facultyCode": "ODON",
       "snapshotPath": "data/bedelias/odon-asistente-en-odontologia-2017.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo-facultad-de-odontologia"
+      ]
     },
     {
       "identity": "higienista dental:1963",
@@ -1488,9 +1490,11 @@
       "planId": "bedelias-odon-higienista-en-odontologia-2017",
       "facultyCode": "ODON",
       "snapshotPath": "data/bedelias/odon-higienista-en-odontologia-2017.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo-facultad-de-odontologia"
+      ]
     },
     {
       "identity": "laboratorista dental:1963",
@@ -1677,5 +1681,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:b0ef90996f53c223688f7545b749289933ce36e388ebe4d598fc10e6365011f7"
+  "contentHash": "sha256:7a01739d5425fbb7593a194e41c6e67317fdb7082d439ae536e43ea589fa35fe"
 }

@@ -8207,7 +8207,1013 @@
         }
       ],
       "remainingWork": "La malla, los mínimos, las previaturas y los recorridos territoriales vigentes quedan operativos. Revisar únicamente una futura corrección del subtotal del semestre 6 y la versión definitiva del Anexo II."
+    },
+    {
+      "identity": "asistente en odontologia:2017",
+      "career": "ASISTENTE EN ODONTOLOGÍA",
+      "planYear": "2017",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-plan-curriculum-prerequisites-and-offering",
+      "publicationEligible": false,
+      "uiNotice": "Plan 2017 vigente: 160 créditos en cuatro semestres, con primer año común a Higienista y 12 créditos optativos/electivos. La carrera completa se ofrece en Montevideo; la Práctica en Servicios puede realizarse también en instituciones conveniadas del interior según cupos.",
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios 2017 de las carreras de Asistente e Higienista en Odontología",
+          "Pautas reglamentarias aprobadas por el Consejo de Facultad el 18/09/2025"
+        ],
+        "title": "Asistente en Odontología",
+        "durationMonths": 24,
+        "minimumCredits": 160,
+        "curriculum": {
+          "sourceUrl": "https://odon.edu.uy/sitio/malla-curricular-tecno-asistente/",
+          "prerequisitesSourceUrl": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-Asistente-en-Odontologia-Res.-18-del-18-09-25.pdf",
+          "creditRequirements": [
+            {
+              "id": "odontologia-optativas-electivas",
+              "name": "Optativas y electivas",
+              "shortName": "Opt./elect.",
+              "minCredits": 12
+            }
+          ],
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courses": [
+                {
+                  "id": "io",
+                  "name": "Introducción a la Odontología (IO)",
+                  "credits": 4
+                },
+                {
+                  "id": "la-salud",
+                  "name": "La Salud",
+                  "credits": 6
+                },
+                {
+                  "id": "enfermedades-sistema-estomatognatico",
+                  "name": "Enfermedades del Sistema Estomatognático",
+                  "credits": 6
+                },
+                {
+                  "id": "instrumental-odontologico",
+                  "name": "Instrumental de uso odontológico",
+                  "credits": 6
+                },
+                {
+                  "id": "clinica-odontologica-1",
+                  "name": "Clínica Odontológica I e Iniciación a la práctica clínica",
+                  "credits": 8
+                },
+                {
+                  "id": "bases-biologicas-odontologicas",
+                  "name": "Bases Biológicas Odontológicas (BBO)",
+                  "credits": 6
+                },
+                {
+                  "id": "bioetica",
+                  "name": "Bioética",
+                  "credits": 6
+                }
+              ]
+            },
+            {
+              "label": "Semestre 2",
+              "courses": [
+                {
+                  "id": "farmacos-uso-odontologico",
+                  "name": "Fármacos de uso odontológico",
+                  "credits": 6
+                },
+                {
+                  "id": "biomateriales-prevencion-restauracion",
+                  "name": "Biomateriales de prevención y restauración",
+                  "credits": 8
+                },
+                {
+                  "id": "informatica",
+                  "name": "Informática",
+                  "credits": 6
+                },
+                {
+                  "id": "bioseguridad-clinica-odontologica",
+                  "name": "Bioseguridad en la clínica odontológica",
+                  "credits": 6
+                },
+                {
+                  "id": "iniciacion-investigacion",
+                  "name": "Iniciación a la investigación",
+                  "credits": 8
+                },
+                {
+                  "id": "administracion-gestion",
+                  "name": "Administración y gestión",
+                  "credits": 6
+                },
+                {
+                  "id": "aspectos-psicologicos-asistencia",
+                  "name": "Aspectos psicológicos en la asistencia odontológica",
+                  "credits": 6
+                }
+              ]
+            },
+            {
+              "label": "Semestre 3",
+              "courses": [
+                {
+                  "id": "procedimientos-tecnicos-paraclinicos",
+                  "name": "Procedimientos técnicos paraclínicos",
+                  "credits": 6
+                },
+                {
+                  "id": "clinica-odontologica-2",
+                  "name": "Clínica Odontológica II",
+                  "credits": 8
+                },
+                {
+                  "id": "materiales-dentales-clinica-laboratorio",
+                  "name": "Materiales dentales de clínica y laboratorio",
+                  "credits": 8
+                },
+                {
+                  "id": "block-quirurgico",
+                  "name": "Block quirúrgico",
+                  "credits": 6
+                },
+                {
+                  "id": "contabilidad-software-odontologia",
+                  "name": "Nociones de contabilidad y uso de software aplicados a odontología",
+                  "credits": 6
+                }
+              ]
+            },
+            {
+              "label": "Semestre 4",
+              "courses": [
+                {
+                  "id": "procedimientos-tecnicos-clinicos",
+                  "name": "Procedimientos técnicos clínicos",
+                  "credits": 10
+                },
+                {
+                  "id": "optativas-electivas",
+                  "name": "Optativas y electivas (mínimo)",
+                  "credits": 12,
+                  "requirementId": "odontologia-optativas-electivas",
+                  "curricularBlock": true
+                },
+                {
+                  "id": "practica-servicios",
+                  "name": "Práctica en Servicios",
+                  "credits": 16
+                }
+              ]
+            }
+          ],
+          "prerequisites": [
+            {
+              "targetId": "la-salud",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "enfermedades-sistema-estomatognatico",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "instrumental-odontologico",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "clinica-odontologica-1",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "bases-biologicas-odontologicas",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "bioetica",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "farmacos-uso-odontologico",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "biomateriales-prevencion-restauracion",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "informatica",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "bioseguridad-clinica-odontologica",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "iniciacion-investigacion",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "administracion-gestion",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "aspectos-psicologicos-asistencia",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "optativas-electivas",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "procedimientos-tecnicos-paraclinicos",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "clinica-odontologica-2",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "materiales-dentales-clinica-laboratorio",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "block-quirurgico",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "contabilidad-software-odontologia",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "procedimientos-tecnicos-clinicos",
+              "courseIds": [
+                "procedimientos-tecnicos-paraclinicos",
+                "clinica-odontologica-2",
+                "materiales-dentales-clinica-laboratorio",
+                "block-quirurgico",
+                "contabilidad-software-odontologia"
+              ],
+              "examIds": [
+                "la-salud",
+                "bases-biologicas-odontologicas",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bioetica",
+                "enfermedades-sistema-estomatognatico",
+                "biomateriales-prevencion-restauracion",
+                "farmacos-uso-odontologico",
+                "bioseguridad-clinica-odontologica"
+              ]
+            },
+            {
+              "targetId": "practica-servicios",
+              "courseIds": [
+                "procedimientos-tecnicos-clinicos"
+              ],
+              "examIds": [
+                "procedimientos-tecnicos-paraclinicos",
+                "materiales-dentales-clinica-laboratorio",
+                "clinica-odontologica-2",
+                "block-quirurgico"
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "odontologia-tronco-obligatorio",
+              "label": "Tronco obligatorio publicado",
+              "minCompleted": 21,
+              "courseIds": [
+                "io",
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia",
+                "procedimientos-tecnicos-paraclinicos",
+                "clinica-odontologica-2",
+                "materiales-dentales-clinica-laboratorio",
+                "block-quirurgico",
+                "contabilidad-software-odontologia",
+                "procedimientos-tecnicos-clinicos",
+                "practica-servicios"
+              ]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "ODON",
+          "locations": [
+            "Montevideo · Facultad de Odontología"
+          ],
+          "role": "sede vigente de la carrera completa",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/odon-asistente-en-odontologia-2017.json",
+        "regionalSnapshots": [
+          "data/bedelias/cur-asistente-en-odontologia-2017.json",
+          "data/bedelias/cenurln-asistente-en-odontologia-2017.json"
+        ],
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los tres snapshots identifican el Plan 2017 pero no exponen composición. Las fuentes oficiales vigentes publican la carrera completa en Montevideo y habilitan la Práctica en Servicios en instituciones conveniadas del interior; no confirman una sede regional completa vigente."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-montevideo-with-interior-practicum",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad publica una única malla de cuatro semestres y una única sede completa en Montevideo. La posibilidad de cursar la práctica preprofesional en servicios del interior es una ubicación de actividad, no otra carrera ni trayectoria curricular.",
+        "normalization": [
+          "Mostrar una sola identidad canónica Plan 2017 y el título oficial.",
+          "Representar cuatro semestres, el primer año común y doce créditos optativos/electivos.",
+          "Aplicar las previaturas de curso y de evaluación final aprobadas en septiembre de 2025.",
+          "No ofrecer CUR ni CENUR Litoral Norte como sedes completas mientras el catálogo vigente no las publique.",
+          "Informar que la Práctica en Servicios puede realizarse en Montevideo o en el interior según convenios y cupos."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://odon.edu.uy/sitio/wp-content/uploads/PLAN-DE-ESTUDIOS-2017.pdf",
+          "authority": "Facultad de Odontología, Udelar",
+          "supports": [
+            "Plan 2017",
+            "títulos",
+            "duración",
+            "160 créditos",
+            "primer año común"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/asistente-en-odontologia/",
+          "authority": "Facultad de Odontología, Udelar",
+          "supports": [
+            "vigencia",
+            "sede Montevideo",
+            "reglamento 2025",
+            "malla y previaturas"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/malla-curricular-tecno-asistente/",
+          "authority": "Facultad de Odontología, malla curricular vigente",
+          "supports": [
+            "cuatro semestres",
+            "unidades curriculares",
+            "créditos por unidad",
+            "optativas"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-Asistente-en-Odontologia-Res.-18-del-18-09-25.pdf",
+          "authority": "Consejo de Facultad de Odontología",
+          "supports": [
+            "previaturas",
+            "doce créditos optativos/electivos",
+            "práctica en servicios del interior"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/asistente-en-odontologia",
+          "authority": "Catálogo vigente de carreras de Udelar",
+          "supports": [
+            "24 meses",
+            "160 créditos",
+            "sede Facultad de Odontología"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "regionalOffers",
+          "resolution": "Bedelías conserva ofertas vacías de CUR y CENUR Litoral Norte, pero las fuentes vigentes sólo publican Montevideo como sede completa. No se muestran sedes regionales sin confirmación actual."
+        },
+        {
+          "field": "courseProgramCredits",
+          "resolution": "Algunos programas individuales asignan créditos distintos a los de la malla (por ejemplo Fármacos y Procedimientos paraclínicos figuran con 8 en sus programas y con 6 en la malla). Se prioriza la malla porque su suma coincide con los 160 créditos del plan y del catálogo vigente."
+        }
+      ],
+      "remainingWork": "La malla, el mínimo de egreso, las previaturas y el alcance territorial vigente quedan operativos. Revisar sólo futuras modificaciones de la malla o de las pautas reglamentarias."
+    },
+    {
+      "identity": "higienista en odontologia:2017",
+      "career": "HIGIENISTA EN ODONTOLOGÍA",
+      "planYear": "2017",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-plan-curriculum-prerequisites-and-offering",
+      "publicationEligible": false,
+      "uiNotice": "Plan 2017 vigente: 160 créditos en cuatro semestres, con primer año común a Asistente y 12 créditos optativos/electivos. La carrera completa se ofrece en Montevideo; la Práctica en Servicios puede realizarse también en instituciones conveniadas del interior según cupos. Para esa práctica, el reglamento exige además estar cursando o haber cursado Práctica en Posgrado, condición que se informa pero no bloquea automáticamente el planificador.",
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios 2017 de las carreras de Asistente e Higienista en Odontología",
+          "Pautas reglamentarias aprobadas por el Consejo de Facultad el 18/09/2025"
+        ],
+        "title": "Higienista en Odontología",
+        "durationMonths": 24,
+        "minimumCredits": 160,
+        "curriculum": {
+          "sourceUrl": "https://odon.edu.uy/sitio/malla-curricular-tecno-hig/",
+          "prerequisitesSourceUrl": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-Higienista-en-Odontologia-Plan-2017-Res.-16-del-18-09-25.pdf",
+          "creditRequirements": [
+            {
+              "id": "odontologia-optativas-electivas",
+              "name": "Optativas y electivas",
+              "shortName": "Opt./elect.",
+              "minCredits": 12
+            }
+          ],
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courses": [
+                {
+                  "id": "io",
+                  "name": "Introducción a la Odontología (IO)",
+                  "credits": 4
+                },
+                {
+                  "id": "la-salud",
+                  "name": "La Salud",
+                  "credits": 6
+                },
+                {
+                  "id": "enfermedades-sistema-estomatognatico",
+                  "name": "Enfermedades del Sistema Estomatognático",
+                  "credits": 6
+                },
+                {
+                  "id": "instrumental-odontologico",
+                  "name": "Instrumental de uso odontológico",
+                  "credits": 6
+                },
+                {
+                  "id": "clinica-odontologica-1",
+                  "name": "Clínica Odontológica I e Iniciación a la práctica clínica",
+                  "credits": 8
+                },
+                {
+                  "id": "bases-biologicas-odontologicas",
+                  "name": "Bases Biológicas Odontológicas (BBO)",
+                  "credits": 6
+                },
+                {
+                  "id": "bioetica",
+                  "name": "Bioética",
+                  "credits": 6
+                }
+              ]
+            },
+            {
+              "label": "Semestre 2",
+              "courses": [
+                {
+                  "id": "farmacos-uso-odontologico",
+                  "name": "Fármacos de uso odontológico",
+                  "credits": 6
+                },
+                {
+                  "id": "biomateriales-prevencion-restauracion",
+                  "name": "Biomateriales de prevención y restauración",
+                  "credits": 8
+                },
+                {
+                  "id": "informatica",
+                  "name": "Informática",
+                  "credits": 6
+                },
+                {
+                  "id": "bioseguridad-clinica-odontologica",
+                  "name": "Bioseguridad en la clínica odontológica",
+                  "credits": 6
+                },
+                {
+                  "id": "iniciacion-investigacion",
+                  "name": "Iniciación a la investigación",
+                  "credits": 8
+                },
+                {
+                  "id": "administracion-gestion",
+                  "name": "Administración y gestión",
+                  "credits": 6
+                },
+                {
+                  "id": "aspectos-psicologicos-asistencia",
+                  "name": "Aspectos psicológicos en la asistencia odontológica",
+                  "credits": 6
+                }
+              ]
+            },
+            {
+              "label": "Semestre 3",
+              "courses": [
+                {
+                  "id": "educacion-salud",
+                  "name": "Educación para la Salud",
+                  "credits": 6
+                },
+                {
+                  "id": "dieta-nutricion",
+                  "name": "Dieta y nutrición",
+                  "credits": 6
+                },
+                {
+                  "id": "optativa-1",
+                  "name": "Optativa/electiva I",
+                  "credits": 6,
+                  "requirementId": "odontologia-optativas-electivas",
+                  "curricularBlock": true
+                },
+                {
+                  "id": "programacion-atencion-actividad-clinica",
+                  "name": "Programación de la atención y actividad clínica",
+                  "credits": 16
+                },
+                {
+                  "id": "procedimientos-prevencion-promocion-educacion",
+                  "name": "Procedimientos de prevención, promoción y educación para la salud y procedimientos técnicos educativos comunitarios",
+                  "credits": 8
+                }
+              ]
+            },
+            {
+              "label": "Semestre 4",
+              "courses": [
+                {
+                  "id": "practica-posgrado",
+                  "name": "Práctica en Posgrado",
+                  "credits": 8
+                },
+                {
+                  "id": "practica-servicios",
+                  "name": "Práctica en Servicios",
+                  "credits": 16
+                },
+                {
+                  "id": "optativa-2",
+                  "name": "Optativa/electiva II",
+                  "credits": 6,
+                  "requirementId": "odontologia-optativas-electivas",
+                  "curricularBlock": true
+                }
+              ]
+            }
+          ],
+          "prerequisites": [
+            {
+              "targetId": "la-salud",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "enfermedades-sistema-estomatognatico",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "instrumental-odontologico",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "clinica-odontologica-1",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "bases-biologicas-odontologicas",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "bioetica",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "farmacos-uso-odontologico",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "biomateriales-prevencion-restauracion",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "informatica",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "bioseguridad-clinica-odontologica",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "iniciacion-investigacion",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "administracion-gestion",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "aspectos-psicologicos-asistencia",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "optativa-1",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "optativa-2",
+              "courseIds": [
+                "io"
+              ]
+            },
+            {
+              "targetId": "programacion-atencion-actividad-clinica",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "procedimientos-prevencion-promocion-educacion",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "educacion-salud",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "dieta-nutricion",
+              "courseIds": [
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia"
+              ]
+            },
+            {
+              "targetId": "practica-posgrado",
+              "courseIds": [
+                "programacion-atencion-actividad-clinica",
+                "procedimientos-prevencion-promocion-educacion",
+                "educacion-salud",
+                "dieta-nutricion"
+              ],
+              "examIds": [
+                "la-salud",
+                "bases-biologicas-odontologicas",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bioetica",
+                "aspectos-psicologicos-asistencia",
+                "enfermedades-sistema-estomatognatico",
+                "biomateriales-prevencion-restauracion",
+                "farmacos-uso-odontologico",
+                "bioseguridad-clinica-odontologica",
+                "administracion-gestion",
+                "informatica"
+              ]
+            },
+            {
+              "targetId": "practica-servicios",
+              "courseIds": [
+                "programacion-atencion-actividad-clinica",
+                "procedimientos-prevencion-promocion-educacion",
+                "educacion-salud",
+                "dieta-nutricion"
+              ],
+              "examIds": [
+                "la-salud",
+                "bases-biologicas-odontologicas",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bioetica",
+                "aspectos-psicologicos-asistencia",
+                "enfermedades-sistema-estomatognatico",
+                "biomateriales-prevencion-restauracion",
+                "farmacos-uso-odontologico",
+                "bioseguridad-clinica-odontologica",
+                "administracion-gestion",
+                "informatica"
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "odontologia-tronco-obligatorio",
+              "label": "Tronco obligatorio publicado",
+              "minCompleted": 20,
+              "courseIds": [
+                "io",
+                "la-salud",
+                "enfermedades-sistema-estomatognatico",
+                "instrumental-odontologico",
+                "clinica-odontologica-1",
+                "bases-biologicas-odontologicas",
+                "bioetica",
+                "farmacos-uso-odontologico",
+                "biomateriales-prevencion-restauracion",
+                "informatica",
+                "bioseguridad-clinica-odontologica",
+                "iniciacion-investigacion",
+                "administracion-gestion",
+                "aspectos-psicologicos-asistencia",
+                "educacion-salud",
+                "dieta-nutricion",
+                "programacion-atencion-actividad-clinica",
+                "procedimientos-prevencion-promocion-educacion",
+                "practica-posgrado",
+                "practica-servicios"
+              ]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "ODON",
+          "locations": [
+            "Montevideo · Facultad de Odontología"
+          ],
+          "role": "sede vigente de la carrera completa",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/odon-higienista-en-odontologia-2017.json",
+        "regionalSnapshots": [
+          "data/bedelias/cur-higienista-en-odontologia-2017.json",
+          "data/bedelias/cenurln-higienista-en-odontologia-2017.json"
+        ],
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los tres snapshots identifican el Plan 2017 pero no exponen composición. Las fuentes oficiales vigentes publican la carrera completa en Montevideo y habilitan la Práctica en Servicios en instituciones conveniadas del interior; no confirman una sede regional completa vigente."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-montevideo-with-interior-practicum",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad publica una única malla de cuatro semestres y una única sede completa en Montevideo. La posibilidad de cursar la práctica preprofesional en servicios del interior es una ubicación de actividad, no otra carrera ni trayectoria curricular.",
+        "normalization": [
+          "Mostrar una sola identidad canónica Plan 2017 y el título oficial.",
+          "Representar cuatro semestres, el primer año común y doce créditos optativos/electivos.",
+          "Aplicar las previaturas de curso y de evaluación final aprobadas en septiembre de 2025.",
+          "No ofrecer CUR ni CENUR Litoral Norte como sedes completas mientras el catálogo vigente no las publique.",
+          "Informar que la Práctica en Servicios puede realizarse en Montevideo o en el interior según convenios y cupos."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://odon.edu.uy/sitio/wp-content/uploads/PLAN-DE-ESTUDIOS-2017.pdf",
+          "authority": "Facultad de Odontología, Udelar",
+          "supports": [
+            "Plan 2017",
+            "títulos",
+            "duración",
+            "160 créditos",
+            "primer año común"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/higienista-en-odontologia/",
+          "authority": "Facultad de Odontología, Udelar",
+          "supports": [
+            "vigencia",
+            "sede Montevideo",
+            "reglamento 2025",
+            "malla y previaturas"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/malla-curricular-tecno-hig/",
+          "authority": "Facultad de Odontología, malla curricular vigente",
+          "supports": [
+            "cuatro semestres",
+            "unidades curriculares",
+            "créditos por unidad",
+            "optativas"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-Higienista-en-Odontologia-Plan-2017-Res.-16-del-18-09-25.pdf",
+          "authority": "Consejo de Facultad de Odontología",
+          "supports": [
+            "previaturas",
+            "doce créditos optativos/electivos",
+            "práctica en servicios del interior"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/higienista-en-odontologia",
+          "authority": "Catálogo vigente de carreras de Udelar",
+          "supports": [
+            "24 meses",
+            "160 créditos",
+            "sede Facultad de Odontología"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "regionalOffers",
+          "resolution": "Bedelías conserva ofertas vacías de CUR y CENUR Litoral Norte, pero las fuentes vigentes sólo publican Montevideo como sede completa. No se muestran sedes regionales sin confirmación actual."
+        },
+        {
+          "field": "corequisite",
+          "resolution": "La Práctica en Servicios exige estar cursando o haber cursado Práctica en Posgrado. El estado local sólo distingue pendiente, cursando y aprobada para la unidad objetivo, por lo que la malla informa esta condición sin convertirla en una previatura más restrictiva de aprobación."
+        },
+        {
+          "field": "duplicatedPrerequisiteRows",
+          "resolution": "La tabla oficial repite cinco unidades del primer año en el bloque de previaturas de segundo. Se normalizan una sola vez sin cambiar el conjunto exigido."
+        }
+      ],
+      "remainingWork": "La malla, el mínimo de egreso, las previaturas y el alcance territorial vigente quedan operativos. Revisar sólo futuras modificaciones de la malla o de las pautas reglamentarias."
     }
   ],
-  "contentHash": "sha256:6c6874f16ee3d5fcc85bfd0cd5f5ad5898758ff1ca63ee461b5339d32cb42653"
+  "contentHash": "sha256:d5fd2b3259e6c893e842601f6237b4261b3f779306913d6a52f5fab24f27f070"
 }

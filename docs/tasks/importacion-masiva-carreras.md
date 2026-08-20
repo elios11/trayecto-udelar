@@ -786,3 +786,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:6c6874f16ee3d5fcc85bfd0cd5f5ad5898758ff1ca63ee461b5339d32cb42653`. Cola actualizada: 149 identidades pendientes, 2 de prioridad `insufficient-regional-content`; hash `sha256:a4e71626ae13deb831ae5b2fa3bd0d4b188048db75b19f3426952c063b9914b5`.
 - Manifiesto UI: 175 proyecciones, 107 con composición, 68 sin composición y veinticinco planes con sedes oficiales; hash `sha256:b0ef90996f53c223688f7545b749289933ce36e388ebe4d598fc10e6365011f7`.
 - Siguiente paso: auditar Asistente en Odontología Plan 2017, cuya composición no está publicada por Bedelías.
+
+### Asistente e Higienista en Odontología Plan 2017 — mallas y previaturas auditadas 2026-08-20
+
+- Facultad publica dos carreras tecnológicas de dos años y 160 créditos. Ambas comparten las catorce unidades del primer año; el segundo año diferencia el perfil asistencial del educativo-preventivo.
+- Cada proyección contiene cuatro semestres, 22 unidades o bloques y exactamente 160 créditos. El egreso exige 12 créditos optativos/electivos, representados como carga flexible y no como asignaturas nominales obligatorias.
+- Las pautas reglamentarias aprobadas el 18/09/2025 distinguen aprobación de curso y aprobación de evaluación final/examen. La UI conserva ambas clases de condición en 21 reglas por carrera.
+- La carrera completa vigente se publica en Montevideo. Las prácticas en servicios pueden realizarse en instituciones conveniadas de Montevideo o del interior según cupos; esa movilidad de práctica no se presenta como una sede regional completa ni como trayectoria diferente.
+- Los snapshots de CUR y CENUR Litoral Norte conservan la identidad del Plan 2017 pero están vacíos. Al no existir oferta regional completa en el catálogo vigente, no se exponen como sedes actuales.
+- En Higienista, Práctica en Servicios exige además estar cursando o haber cursado Práctica en Posgrado. La UI informa esta correquisita, pero no la transforma en una aprobación previa más restrictiva que el reglamento.
+- Algunos programas individuales asignan 8 créditos a unidades que la malla valora en 6. Se prioriza la malla porque su suma coincide con los 160 créditos del plan y del catálogo vigente, y la discrepancia queda documentada.
+- Registro de auditoría: hash `sha256:d5fd2b3259e6c893e842601f6237b4261b3f779306913d6a52f5fab24f27f070`. Cola actualizada: 147 identidades pendientes, sin casos `insufficient-regional-content`; hash `sha256:8a8cd8f12e9b932dd37be9de7c040eb89952d12ed3301a0753a8995d6b5f9311`.
+- Manifiesto UI: 175 proyecciones, 109 con composición y 66 sin composición; hash `sha256:7a01739d5425fbb7593a194e41c6e67317fdb7082d439ae536e43ea589fa35fe`.
+- Siguiente paso: auditar Licenciatura en Ciencias Hídricas Aplicadas Plan 2016, primera identidad sin composición de la cola reproducible.

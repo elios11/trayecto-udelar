@@ -1,19 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T12:30:29.330Z",
+  "generatedAt": "2026-08-20T12:58:55.752Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:6c6874f16ee3d5fcc85bfd0cd5f5ad5898758ff1ca63ee461b5339d32cb42653"
+    "officialAuditRegistryHash": "sha256:d5fd2b3259e6c893e842601f6237b4261b3f779306913d6a52f5fab24f27f070"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 28,
-    "pendingCanonicalIdentities": 149,
+    "evidenceClosedCanonicalIdentities": 30,
+    "pendingCanonicalIdentities": 147,
     "byPriority": {
-      "insufficient-regional-content": 2,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -191,97 +190,21 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-two-territorial-routes"
-    }
-  ],
-  "queue": [
+    },
     {
       "identity": "asistente en odontologia:2017",
-      "career": {
-        "name": "ASISTENTE EN ODONTOLOGÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2017",
-        "name": "ASISTENTE EN ODONTOLOGÍA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ODON",
-        "serviceName": "FACULTAD DE ODONTOLOGÍA",
-        "planKey": "ODON:asistente en odontologia:2017",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ODON",
-          "serviceName": "FACULTAD DE ODONTOLOGÍA",
-          "planKey": "ODON:asistente en odontologia:2017",
-          "state": "extracted"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CUR",
-          "canonicalServiceCode": "ODON",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        },
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "ODON",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-montevideo-with-interior-practicum"
     },
     {
       "identity": "higienista en odontologia:2017",
-      "career": {
-        "name": "HIGIENISTA EN ODONTOLOGÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2017",
-        "name": "HIGIENISTA EN ODONTOLOGÍA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ODON",
-        "serviceName": "FACULTAD DE ODONTOLOGÍA",
-        "planKey": "ODON:higienista en odontologia:2017",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ODON",
-          "serviceName": "FACULTAD DE ODONTOLOGÍA",
-          "planKey": "ODON:higienista en odontologia:2017",
-          "state": "extracted"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CUR",
-          "canonicalServiceCode": "ODON",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        },
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "ODON",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-montevideo-with-interior-practicum"
+    }
+  ],
+  "queue": [
     {
       "identity": "licenciatura en ciencias hidricas aplicadas:2016",
       "career": {
@@ -4787,5 +4710,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:a4e71626ae13deb831ae5b2fa3bd0d4b188048db75b19f3426952c063b9914b5"
+  "contentHash": "sha256:8a8cd8f12e9b932dd37be9de7c040eb89952d12ed3301a0753a8995d6b5f9311"
 }
