@@ -1595,7 +1595,140 @@
         }
       ],
       "remainingWork": "Conservar la ficha histórica sólo si se implementa una vista explícita de planes cerrados. La UI vigente debe usar las Tecnicaturas Plan 2004 y no inferir su composición desde el registro 1994 vacío."
+    },
+    {
+      "identity": "licenciatura en trabajo social:2009",
+      "career": "LICENCIATURA EN TRABAJO SOCIAL",
+      "planYear": "2009",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-current-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Licenciado/a en Trabajo Social",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "cycleStructure": {
+          "Ciclo Inicial común": 120,
+          "Ciclo Avanzado específico": 240
+        },
+        "advancedCycleModules": {
+          "Fundamentos Teórico-Metodológicos del Trabajo Social": 81,
+          "Políticas Públicas, Planificación y Gestión": 30,
+          "Componentes Psicosociales y Pedagógicos de la Intervención Profesional": 14,
+          "Teorías Sociales": 30,
+          "Metodología de la Investigación": 27,
+          "Introducción al Pensamiento Filosófico": 16,
+          "Análisis de los Procesos Históricos": 12,
+          "Monografía Final": 30
+        },
+        "advancedCycleCredits": 240,
+        "initialCycleRequirementForAdvancedEnrollment": 48,
+        "initialCycleRequirementBreakdown": {
+          "Introducción a las Ciencias Sociales": 24,
+          "Métodos aplicados a las Ciencias Sociales": 16,
+          "Cualquier módulo del Ciclo Inicial": 8
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCS",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2009"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "carrera completa del mismo Plan 2009",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcs-licenciatura-en-trabajo-social-2009.json",
+        "regionalSnapshot": "data/bedelias/cenurln-licenciatura-en-trabajo-social-2009.json",
+        "canonicalCompositionAvailable": false,
+        "regionalCompositionAvailable": false,
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los dos snapshots publican la misma identidad, duración y título, pero ninguno expone composición ni previaturas. La ausencia idéntica de datos no prueba equivalencia por sí sola; la equivalencia se funda en el Plan 2009 y en las páginas institucionales que presentan Trabajo Social en Montevideo y Salto como la misma licenciatura de FCS."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "FCS identifica Trabajo Social en Montevideo y Salto dentro de su oferta de grado y la ficha oficial del interior remite expresamente al Plan de Estudios FCS 2009. Las fuentes vigentes publican un único título, cuatro años, 360 créditos y la misma estructura común y avanzada; no documentan una orientación, título ni mínimo curricular propio de Salto.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Licenciatura en Trabajo Social Plan 2009.",
+          "Modelar Montevideo y Salto como sedes de la carrera completa, sin duplicar carrera, plan ni progreso.",
+          "No crear una trayectoria territorial: las prácticas y optativas locales admitidas por el plan no constituyen una variante curricular.",
+          "Normalizar el egreso por 360 créditos: 120 del Ciclo Inicial común y 240 del Ciclo Avanzado de Trabajo Social.",
+          "Conservar los mínimos oficiales de los ocho módulos avanzados y el título Licenciado/a en Trabajo Social.",
+          "Mantener la composición de materias como no publicada hasta proyectar una malla curada desde fuentes oficiales; no inferirla de snapshots vacíos."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://cienciassociales.edu.uy/ensenanza/bedelia-de-grado/mallas-curriculares-y-programas/trabajo-social/",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "malla curricular vigente de la Licenciatura en Trabajo Social",
+            "vigencia del Plan 2009 y acceso a sus normas y previaturas"
+          ]
+        },
+        {
+          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/11/TS-Malla-curricular-PROPUESTA.pdf",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "240 créditos del Ciclo Avanzado",
+            "distribución semestral y mínimos de los ocho módulos",
+            "reglas vigentes de Proyectos Integrales y Teorías Sociales II"
+          ]
+        },
+        {
+          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2021/07/NORMAS-DE-LA-LICENCIATURA-EN-TRABAJO-SOCIAL-versi%C3%B3n-actualizada.pdf",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "título Licenciado/a en Trabajo Social",
+            "composición en Ciclo Inicial y Ciclo Avanzado",
+            "requisito de 48 créditos para ingresar al Ciclo Avanzado"
+          ]
+        },
+        {
+          "url": "https://cienciassociales.edu.uy/noticias-ei/evaluacion-institucional-analiza-la-ensenanza-de-grado-en-fcs/",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "oferta de Trabajo Social en Montevideo y Salto",
+            "duración de cuatro años, 360 créditos y Ciclo Inicial común"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-trabajo-social/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": [
+            "carrera completa en la sede Salto",
+            "duración de cuatro años",
+            "remisión al Plan de Estudios FCS 2009"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "bedeliasComposition",
+          "resolution": "Tanto FCS como CENUR Litoral Norte omiten la composición en la interfaz pública. La UI puede mostrar la identidad, los 360 créditos y las sedes auditadas, pero no debe inventar materias ni previaturas."
+        },
+        {
+          "field": "currentFcsWebCopy",
+          "resolution": "Una página para futuros estudiantes contiene una errata sobre la duración del Ciclo Avanzado. Se usa el Plan 2009, la malla vigente y la evaluación institucional, que convergen en cuatro años y 360 créditos."
+        }
+      ],
+      "remainingWork": "La identidad, el título, los mínimos y las sedes quedan normalizados. Para ofrecer una malla interactiva completa se necesita convertir la malla oficial y sus reglas vigentes a unidades curriculares curadas; hasta entonces la UI debe declarar composición no publicada."
     }
   ],
-  "contentHash": "sha256:f4059e60ca15617c887201df63af3b653ec7570eb93bda9297ac243221f151e2"
+  "contentHash": "sha256:8289f34a008284af9a90ec69f6dbe1896febcf5c6443f4e0efd1623389704bdc"
 }

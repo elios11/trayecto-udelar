@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:83a5ffa8a4193a49dc6f8890b004ca909d5dd8b17b5809e30f008072e5cf9253",
-    "officialAuditHash": "sha256:f4059e60ca15617c887201df63af3b653ec7570eb93bda9297ac243221f151e2",
+    "auditQueueHash": "sha256:b4648edd61780e0d6bb43142f539399241bb461d79c18ca641f38ce8b06539d3",
+    "officialAuditHash": "sha256:8289f34a008284af9a90ec69f6dbe1896febcf5c6443f4e0efd1623389704bdc",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 176,
     "compositionAvailable": 93,
     "compositionUnavailable": 83,
-    "plansWithOfficialCampuses": 9,
+    "plansWithOfficialCampuses": 10,
     "excludedFromCurrentUi": 1
   },
   "plans": [
@@ -653,9 +653,12 @@
       "planId": "bedelias-fcs-licenciatura-en-trabajo-social-2009",
       "facultyCode": "FCS",
       "snapshotPath": "data/bedelias/fcs-licenciatura-en-trabajo-social-2009.json",
-      "auditStatus": "extracted",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": false,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "abogacia:2016",
@@ -1633,5 +1636,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:5ca7828d64cd6b24a863506d7cb709748aed97c97b81206a9fe5ad332ca8acc1"
+  "contentHash": "sha256:395ca4987b58b76dcab663951dd2320c36cec85bd1f9f6b226a8f38d68539c29"
 }

@@ -51,6 +51,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["licenciatura en educacion fisica:2017", ["montevideo", "maldonado", "paysandu"]],
     ["tecnicatura en deportes:2007", ["montevideo", "rocha", "paysandu"]],
     ["licenciatura en psicologia:2013", ["montevideo", "salto", "paysandu"]],
+    ["licenciatura en trabajo social:2009", ["montevideo", "salto"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

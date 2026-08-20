@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T05:41:22.382Z",
+  "generatedAt": "2026-08-20T05:48:24.965Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:f4059e60ca15617c887201df63af3b653ec7570eb93bda9297ac243221f151e2"
+    "officialAuditRegistryHash": "sha256:8289f34a008284af9a90ec69f6dbe1896febcf5c6443f4e0efd1623389704bdc"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 10,
-    "pendingCanonicalIdentities": 167,
+    "evidenceClosedCanonicalIdentities": 11,
+    "pendingCanonicalIdentities": 166,
     "byPriority": {
-      "insufficient-regional-content": 20,
+      "insufficient-regional-content": 19,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -83,46 +83,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "legacy-plan-superseded"
+    },
+    {
+      "identity": "licenciatura en trabajo social:2009",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en trabajo social:2009",
-      "career": {
-        "name": "LICENCIATURA EN TRABAJO SOCIAL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2009",
-        "name": "LICENCIATURA EN TRABAJO SOCIAL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCS",
-        "serviceName": "FACULTAD DE CIENCIAS SOCIALES",
-        "planKey": "FCS:licenciatura en trabajo social:2009",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCS",
-          "serviceName": "FACULTAD DE CIENCIAS SOCIALES",
-          "planKey": "FCS:licenciatura en trabajo social:2009",
-          "state": "extracted"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FCS",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
     {
       "identity": "escalonada de enfermeria:2001",
       "career": {
@@ -5366,5 +5335,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:83a5ffa8a4193a49dc6f8890b004ca909d5dd8b17b5809e30f008072e5cf9253"
+  "contentHash": "sha256:b4648edd61780e0d6bb43142f539399241bb461d79c18ca641f38ce8b06539d3"
 }

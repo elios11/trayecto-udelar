@@ -605,3 +605,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:f4059e60ca15617c887201df63af3b653ec7570eb93bda9297ac243221f151e2`. Cola actualizada: 167 identidades pendientes, 20 de prioridad `insufficient-regional-content`; hash `sha256:83a5ffa8a4193a49dc6f8890b004ca909d5dd8b17b5809e30f008072e5cf9253`.
 - Manifiesto UI: hash `sha256:5ca7828d64cd6b24a863506d7cb709748aed97c97b81206a9fe5ad332ca8acc1`.
 - Siguiente paso: auditar Licenciatura en Trabajo Social 2009, próxima identidad `insufficient-regional-content`, sin trasladar automáticamente la discrepancia Plan 2002/2004 de las Tecnicaturas de Salto.
+
+### Trabajo Social Plan 2009 — auditoría oficial y sedes 2026-08-20
+
+- FCS publica un único Plan 2009 de cuatro años y 360 créditos: 120 del Ciclo Inicial común y 240 del Ciclo Avanzado de Trabajo Social. La malla vigente distribuye esos 240 créditos en ocho módulos y mantiene un único título de Licenciado/a en Trabajo Social.
+- La oferta institucional ubica la carrera completa en Montevideo y Salto. La ficha oficial del interior remite al mismo Plan de Estudios FCS 2009; no se encontró una orientación, título ni mínimo curricular propio de Salto.
+- Decisión: conservar una sola carrera y plan, con selector de sede Montevideo/Salto y progreso compartido. No crear una trayectoria territorial a partir de prácticas u optativas locales.
+- Los dos snapshots de Bedelías carecen de composición y previaturas. La UI muestra 360 créditos, cuatro años y ambas sedes auditadas, pero conserva el estado explícito de composición no publicada sin inventar materias.
+- Registro de auditoría: hash `sha256:8289f34a008284af9a90ec69f6dbe1896febcf5c6443f4e0efd1623389704bdc`. Cola actualizada: 166 identidades pendientes, 19 de prioridad `insufficient-regional-content`; hash `sha256:b4648edd61780e0d6bb43142f539399241bb461d79c18ca641f38ce8b06539d3`.
+- Manifiesto UI: 176 proyecciones generadas, 93 con composición y 83 sin composición, diez con sedes oficiales; hash `sha256:395ca4987b58b76dcab663951dd2320c36cec85bd1f9f6b226a8f38d68539c29`.
+- Siguiente paso: auditar Escalonada de Enfermería 2001, próxima identidad `insufficient-regional-content`, y verificar su vigencia actual antes de proyectar ofertas regionales.
