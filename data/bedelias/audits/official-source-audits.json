@@ -10177,7 +10177,124 @@
         { "field": "sharedGovernance", "resolution": "La carrera es compartida por Agronomía, Ingeniería y Química. La UI la agrupa una sola vez bajo Agronomía y explicita los otros servicios para evitar tres copias del mismo plan." }
       ],
       "remainingWork": "La estructura de egreso, sede y cogestión quedan operativas. Sustituir los bloques por unidades curriculares sólo cuando la Comisión de Carrera publique una grilla nominal vigente y consolidada."
+    },
+    {
+      "identity": "tecnicatura en desarrollo regional sustentable:2013",
+      "career": "TECNICATURA EN DESARROLLO REGIONAL SUSTENTABLE",
+      "planYear": "2013",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-modular-curriculum-electivity-practice-title-duration-and-campus",
+      "publicationEligible": false,
+      "uiNotice": "El Plan 2013 es flexible: exige 270 créditos y mínimos en cinco módulos, incluidos 48 créditos de libre elección y una práctica preprofesional. La malla semestral enlazada por Udelar se muestra como recorrido de referencia; las asignaturas señaladas como electivas pueden sustituirse por alternativas aprobadas sin cambiar el título ni crear una trayectoria diferente.",
+      "officialPlan": {
+        "facultyCode": "FCS",
+        "facultyName": "FACULTAD DE CIENCIAS SOCIALES",
+        "approval": ["Consejo Directivo Central, Resolución 22 de 17/12/2013", "Publicación en Diario Oficial de 08/04/2014"],
+        "title": "Técnico en Desarrollo Regional Sustentable",
+        "durationMonths": 36,
+        "minimumCredits": 270,
+        "curriculum": {
+          "sourceUrl": "https://www.impo.com.uy/diariooficial/2014/04/08/avisos.pdf",
+          "pathwayLabel": "Malla de referencia",
+          "pathwayDescription": "Distribución semestral publicada y enlazada por Udelar para orientar un currículo flexible. Los mínimos por módulo y la pasantía son los requisitos normativos; los espacios electivos admiten alternativas aprobadas.",
+          "creditRequirements": [
+            { "id": "ted-problemas-desarrollo", "name": "Módulo 1 · Los problemas del desarrollo", "shortName": "Problemas del desarrollo", "minCredits": 50 },
+            { "id": "ted-electivas-modulo-1", "parentId": "ted-problemas-desarrollo", "name": "Libre elección del Módulo 1", "shortName": "Electivas M1", "minCredits": 5 },
+            { "id": "ted-abordajes-teoricos", "name": "Módulo 2 · Abordajes teóricos aplicados", "shortName": "Abordajes teóricos", "minCredits": 40 },
+            { "id": "ted-electivas-modulo-2", "parentId": "ted-abordajes-teoricos", "name": "Libre elección del Módulo 2", "shortName": "Electivas M2", "minCredits": 10 },
+            { "id": "ted-herramientas-metodologicas", "name": "Módulo 3 · Herramientas metodológicas", "shortName": "Herramientas metodológicas", "minCredits": 45 },
+            { "id": "ted-electivas-modulo-3", "parentId": "ted-herramientas-metodologicas", "name": "Libre elección del Módulo 3", "shortName": "Electivas M3", "minCredits": 8 },
+            { "id": "ted-promocion-gestion", "name": "Módulo 4 · Promoción y gestión del desarrollo regional", "shortName": "Promoción y gestión", "minCredits": 90 },
+            { "id": "ted-electivas-modulo-4", "parentId": "ted-promocion-gestion", "name": "Libre elección del Módulo 4", "shortName": "Electivas M4", "minCredits": 5 },
+            { "id": "ted-practica-final", "name": "Módulo 5 · Práctica profesional y trabajo final", "shortName": "Práctica y trabajo final", "minCredits": 45 },
+            { "id": "ted-electivas-modulo-5", "parentId": "ted-practica-final", "name": "Libre elección del Módulo 5", "shortName": "Electivas M5", "minCredits": 20 }
+          ],
+          "periods": [
+            { "label": "Semestre 1", "courses": [
+              { "id": "introduccion-problemas-desarrollo", "name": "Introducción a los Problemas del Desarrollo", "credits": 8, "requirementId": "ted-problemas-desarrollo" },
+              { "id": "introduccion-economia", "name": "Introducción a la Economía", "credits": 10, "requirementId": "ted-abordajes-teoricos" },
+              { "id": "estadistica-social", "name": "Estadística Social", "credits": 10, "requirementId": "ted-herramientas-metodologicas" },
+              { "id": "administracion-organizaciones-1", "name": "Administración y Gestión de las Organizaciones I", "credits": 10, "requirementId": "ted-promocion-gestion" }
+            ] },
+            { "label": "Semestre 2", "courses": [
+              { "id": "experiencias-historicas-desarrollo", "name": "Experiencias Históricas de Desarrollo", "credits": 5, "requirementId": "ted-problemas-desarrollo" },
+              { "id": "bases-teoricas-desarrollo", "name": "Bases Teóricas del Concepto de Desarrollo", "credits": 10, "requirementId": "ted-abordajes-teoricos" },
+              { "id": "metodologia-investigacion-social", "name": "Metodología de la Investigación Social", "credits": 10, "requirementId": "ted-herramientas-metodologicas" },
+              { "id": "estado-desarrollo-politicas-publicas", "name": "Estado, Desarrollo y Políticas Públicas", "credits": 10, "requirementId": "ted-promocion-gestion" },
+              { "id": "gobernanza-global-cooperacion", "name": "Gobernanza Global y Cooperación para el Desarrollo", "credits": 10, "requirementId": "ted-promocion-gestion" }
+            ] },
+            { "label": "Semestre 3", "courses": [
+              { "id": "poblacion-desarrollo-local", "name": "Problemas de Población y Desarrollo Local", "credits": 8, "requirementId": "ted-problemas-desarrollo" },
+              { "id": "cultura-desarrollo", "name": "Cultura y Desarrollo", "credits": 6, "requirementId": "ted-problemas-desarrollo" },
+              { "id": "sociologia-desarrollo-electiva", "name": "Sociología del Desarrollo o electiva equivalente", "credits": 10, "requirementId": "ted-electivas-modulo-2", "curricularBlock": true },
+              { "id": "objeto-metodos-desarrollo", "name": "Objeto y Métodos de Estudio y Acción para el Desarrollo", "credits": 10, "requirementId": "ted-herramientas-metodologicas" },
+              { "id": "indicadores-desarrollo", "name": "Indicadores de Desarrollo", "credits": 10, "requirementId": "ted-promocion-gestion" }
+            ] },
+            { "label": "Semestre 4", "courses": [
+              { "id": "sociedad-ambiente", "name": "Sociedad y Ambiente", "credits": 8, "requirementId": "ted-problemas-desarrollo" },
+              { "id": "etica-desarrollo-electiva", "name": "Ética y Desarrollo o electiva equivalente", "credits": 5, "requirementId": "ted-electivas-modulo-1", "curricularBlock": true },
+              { "id": "desarrollo-territorial-endogeno", "name": "Desarrollo Territorial Endógeno", "credits": 10, "requirementId": "ted-abordajes-teoricos" },
+              { "id": "formulacion-evaluacion-proyectos-electiva", "name": "Formulación y Evaluación de Proyectos o electiva equivalente", "credits": 8, "requirementId": "ted-electivas-modulo-3", "curricularBlock": true },
+              { "id": "gestion-publica-gobernanza-local", "name": "Gestión Pública y Gobernanza Local", "credits": 10, "requirementId": "ted-promocion-gestion" },
+              { "id": "ordenamiento-territorial-electiva", "name": "Planificación y Ordenamiento Territorial o electiva equivalente", "credits": 5, "requirementId": "ted-electivas-modulo-4", "curricularBlock": true }
+            ] },
+            { "label": "Semestre 5", "courses": [
+              { "id": "ciencia-tecnologia-innovacion", "name": "Ciencia, Tecnología, Innovación y Desarrollo", "credits": 10, "requirementId": "ted-problemas-desarrollo" },
+              { "id": "planificacion-estrategica", "name": "Planificación Estratégica", "credits": 7, "requirementId": "ted-herramientas-metodologicas" },
+              { "id": "innovacion-inclusion-desarrollo", "name": "Gestión de la Innovación para la Inclusión y el Desarrollo Local", "credits": 10, "requirementId": "ted-promocion-gestion" },
+              { "id": "taller-instrumentos-gestion", "name": "Taller de Instrumentos de Gestión para el Desarrollo", "credits": 15, "requirementId": "ted-promocion-gestion" }
+            ] },
+            { "label": "Semestre 6", "courses": [
+              { "id": "contabilidad-presupuestal-control", "name": "Contabilidad Presupuestal y Control de Gestión", "credits": 10, "requirementId": "ted-promocion-gestion" },
+              { "id": "libre-eleccion-1", "name": "Espacio de libre elección I", "credits": 10, "requirementId": "ted-electivas-modulo-5", "curricularBlock": true },
+              { "id": "libre-eleccion-2", "name": "Espacio de libre elección II", "credits": 10, "requirementId": "ted-electivas-modulo-5", "curricularBlock": true },
+              { "id": "pasantia", "name": "Pasantía y memoria final", "credits": 25, "requirementId": "ted-practica-final" }
+            ] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "ted-pasantia-obligatoria", "label": "Práctica preprofesional y memoria final", "minCompleted": 1, "courseIds": ["pasantia"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CUT", "locations": ["Tacuarembó"], "role": "carrera completa con Facultad de Ciencias Sociales como servicio académico de referencia", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cut-tecnicatura-en-desarrollo-regional-sustentable-2013.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica título, duración y 270 créditos, pero no la composición. El plan oficial aporta mínimos modulares y electividad; Udelar enlaza una distribución semestral de referencia."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-plan-one-campus-five-modules",
+        "regionalCurriculumVariant": false,
+        "reason": "Existe un único título y una única sede. La flexibilidad y los recorridos compartidos con otras ofertas no constituyen trayectorias certificadas diferentes.",
+        "normalization": [
+          "Mostrar una carrera bajo Facultad de Ciencias Sociales, un Plan 2013 y la sede Tacuarembó.",
+          "Exigir los mínimos 50/40/45/90/45 de los cinco módulos y 270 créditos totales.",
+          "Conservar los 48 créditos de libre elección dentro de sus módulos: 5/10/8/5/20.",
+          "Mostrar la malla semestral publicada como recorrido de referencia y no como una secuencia rígida inmutable.",
+          "Exigir la pasantía y memoria final sin inventar previaturas nominales."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.impo.com.uy/diariooficial/2014/04/08/avisos.pdf", "authority": "Diario Oficial", "supports": ["título", "seis semestres", "270 créditos", "cinco módulos", "mínimos", "48 créditos de electividad", "pasantía"] },
+        { "url": "https://udelar.edu.uy/carrera/tecnicatura-en-desarrollo-regional-sustentable", "authority": "Universidad de la República", "supports": ["vigencia 2026", "Facultad de Ciencias Sociales", "36 meses", "270 créditos", "Tacuarembó"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/tecnicatura-en-desarrollo-regional-sustentable/", "authority": "Udelar en el Interior", "supports": ["seis semestres", "270 créditos", "práctica preprofesional", "Tacuarembó", "malla enlazada"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/wp-content/uploads/sites/61/2021/02/Malla-TED-por-semestre-con-informacion-de-docentes-2020.pdf", "authority": "Udelar en el Interior", "supports": ["distribución semestral de referencia", "asignaturas", "créditos"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/wp-content/uploads/sites/61/2021/02/REGLAMENTO-DEL-PLAN-DE-ESTUDIOS-TED.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["servicio académico de referencia", "régimen de cursos", "aprobación de 270 créditos"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/53117/1/gaceta.ur_26.pdf", "authority": "Universidad de la República", "supports": ["Resolución CDC 22 de 17/12/2013", "título", "Facultad de Ciencias Sociales"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "Bedelías y la aprobación del CDC identifican Plan 2013. Un programa 2026 rotula por error Plan 2014; la UI conserva 2013 por coincidir con el acto de aprobación y la inscripción vigente." },
+        { "field": "curriculumFlexibility", "resolution": "La distribución nominal es orientativa y contiene cursos sustituibles por electivas. La UI exige mínimos de módulo y presenta las sustituciones como espacios flexibles, no como obligatoriedad individual absoluta." },
+        { "field": "prerequisites", "resolution": "El Reglamento admite períodos de examen acotados a asignaturas definidas como previas, pero no publica una tabla consolidada. No se inventan correlatividades." },
+        { "field": "verticalArticulation", "resolution": "El plan publicado indica reconocimiento total de los créditos en la Licenciatura en Desarrollo, mientras la página territorial resume dos tercios. Se registra la discrepancia y no se presenta la continuidad como título intermedio automático." },
+        { "field": "campus", "resolution": "Cursos híbridos recientes articulan docentes en Rivera y Cerro Largo, pero la carrera vigente se publica con sede Tacuarembó. Esas participaciones no crean sedes completas adicionales." }
+      ],
+      "remainingWork": "La malla de referencia, los mínimos flexibles y la pasantía quedan operativos. Actualizar cursos nominales cuando FCS o CENUR Noreste reemplacen formalmente la malla enlazada de 2020."
     }
   ],
-  "contentHash": "sha256:c9dfed44e6bec02a3b3c780521ece65d87d0522b8338babd98739f3464f67ecb"
+  "contentHash": "sha256:b14a6f1d67de82d9372fdbd8d9df71c1c0972418b54abebe3e56307a7f78879d"
 }

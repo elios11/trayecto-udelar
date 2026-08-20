@@ -172,12 +172,14 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
   const hasOfficialCourses = audit?.officialPlan?.curriculum?.periods?.some((period) => (period.courses ?? []).length > 0) === true;
   const pathways = {
     bedelias: {
-      label: hasOfficialCourses ? "Malla oficial" : audit?.officialPlan?.curriculum ? "Estructura oficial" : "Composición Bedelías",
-      description: audit?.officialPlan?.curriculum
-        ? hasOfficialCourses
-          ? "Unidades, créditos y períodos publicados por el servicio universitario; no equivale a una trayectoria territorial."
-          : "Mínimos y requisitos publicados por el servicio universitario; la composición por unidades curriculares sigue pendiente."
-        : "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada.",
+      label: audit?.officialPlan?.curriculum?.pathwayLabel
+        ?? (hasOfficialCourses ? "Malla oficial" : audit?.officialPlan?.curriculum ? "Estructura oficial" : "Composición Bedelías"),
+      description: audit?.officialPlan?.curriculum?.pathwayDescription
+        ?? (audit?.officialPlan?.curriculum
+          ? hasOfficialCourses
+            ? "Unidades, créditos y períodos publicados por el servicio universitario; no equivale a una trayectoria territorial."
+            : "Mínimos y requisitos publicados por el servicio universitario; la composición por unidades curriculares sigue pendiente."
+          : "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada."),
       campusIds: campuses.map((campus) => campus.id),
       periods,
     },

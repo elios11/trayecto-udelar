@@ -870,3 +870,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:c9dfed44e6bec02a3b3c780521ece65d87d0522b8338babd98739f3464f67ecb`. Cola actualizada: 141 identidades pendientes, 32 sin composición; hash `sha256:d1b1ee4e1e4a2cf6e4010917ff3d5e4f6ddcdc2e8dc6630934330e8c2115fc37`.
 - Manifiesto UI: 175 proyecciones, 115 con composición y 60 sin composición; hash `sha256:cb4f4f5b117322c779dcba012579d9d17073ce2377af99fa8713239822d6b80a`.
 - Siguiente paso: auditar Tecnicatura en Desarrollo Regional Sustentable Plan 2013, próxima identidad sin composición de la cola reproducible.
+
+### Tecnicatura en Desarrollo Regional Sustentable Plan 2013 — malla flexible y pasantía auditadas 2026-08-20
+
+- Facultad de Ciencias Sociales es el servicio académico de referencia de un único Plan 2013, título `Técnico en Desarrollo Regional Sustentable`, tres años, seis semestres y 270 créditos en Tacuarembó.
+- El plan exige cinco módulos: Problemas del Desarrollo 50, Abordajes Teóricos 40, Herramientas Metodológicas 45, Promoción y Gestión 90, y Práctica Profesional y Trabajo Final 45.
+- Los 48 créditos de libre elección se mantienen dentro de los módulos en la distribución normativa 5/10/8/5/20. Las materias marcadas como sustituibles y los espacios libres no se convierten en asignaturas nominales obligatorias.
+- La malla enlazada por Udelar se proyecta como recorrido de referencia con cargas semestrales 38/45/44/46/42/55, que suman exactamente 270. La pasantía y memoria final de 25 créditos quedan como requisito explícito de egreso.
+- El Reglamento alude a asignaturas definidas como previas, pero no publica una tabla consolidada. La UI no inventa correlatividades ni confunde el carácter flexible del plan con trayectorias certificadas.
+- La participación docente híbrida reciente de Rivera y Cerro Largo no transforma esas localidades en sedes completas: el catálogo vigente mantiene Tacuarembó.
+- Registro de auditoría: hash `sha256:b14a6f1d67de82d9372fdbd8d9df71c1c0972418b54abebe3e56307a7f78879d`. Cola actualizada: 140 identidades pendientes, 31 sin composición; hash `sha256:3735f8d052a5cc9a7da8a5ff366f3c8b9fa7c60230becce4caa81395df63f375`.
+- Manifiesto UI: 175 proyecciones, 116 con composición y 59 sin composición; hash `sha256:b9adeada5a57794ef41b78f8865f1187444c72d12208c662aa522ae05679a7e0`.
+- Siguiente paso: auditar Técnico Operador de Alimentos Plan 2011, próxima identidad sin composición de la cola reproducible.
