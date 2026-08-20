@@ -882,3 +882,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:b14a6f1d67de82d9372fdbd8d9df71c1c0972418b54abebe3e56307a7f78879d`. Cola actualizada: 140 identidades pendientes, 31 sin composición; hash `sha256:3735f8d052a5cc9a7da8a5ff366f3c8b9fa7c60230becce4caa81395df63f375`.
 - Manifiesto UI: 175 proyecciones, 116 con composición y 59 sin composición; hash `sha256:b9adeada5a57794ef41b78f8865f1187444c72d12208c662aa522ae05679a7e0`.
 - Siguiente paso: auditar Técnico Operador de Alimentos Plan 2011, próxima identidad sin composición de la cola reproducible.
+
+### Técnico Operador de Alimentos Plan 2011 — malla flexible, práctica y sede auditadas 2026-08-20
+
+- Escuela de Nutrición mantiene un único Plan 2011, título `Técnico Operador de Alimentos`, dos años, cuatro semestres y 160 créditos en Tacuarembó.
+- El egreso exige 111 créditos de cursos disciplinares e interdisciplinares, 12 optativos, 5 electivos y 32 de práctica de campo con informe final. Los cuatro mínimos suman exactamente 160.
+- Se incorporaron los quince cursos y talleres obligatorios vigentes, que suman 111 créditos, junto con siete optativas publicadas para 2025. Las optativas forman un catálogo de 36 créditos posibles: la UI exige sólo 12 y no las presenta todas como obligatorias.
+- Los cinco créditos electivos se mantienen como espacio flexible. El plan prevé articulación especial con Tecnólogo Cárnico, pero esa articulación no crea una trayectoria, título o sede distinta.
+- La práctica de campo exige haber aprobado todos los cursos y talleres y queda automatizada con quince condiciones trazables. Las demás previaturas requieren sólo haber cursado —incluso sin aprobación— y una correquisita; se documentan pero no se endurecen hasta que la UI pueda representar esos estados académicos con fidelidad.
+- Bedelías y el catálogo general publican 60 meses. El plan, el reglamento y la ficha territorial coinciden en 24 meses y cuatro semestres, que es la duración usada en la UI.
+- Las tres áreas Biopsicosocial, Nutrición y Alimentación, y Gestión organizan contenidos; no son orientaciones ni trayectorias seleccionables.
+- Registro de auditoría: hash `sha256:3c502e7d59ea733139b4f91429cf6afd076eb212dd4d24dff0f8f0226d30f717`. Cola actualizada: 139 identidades pendientes, 30 sin composición; la UI genera 117 planes con composición y 58 sin composición.
+- Siguiente paso: auditar Tecnólogo Cárnico Plan 2010, próxima identidad sin composición de la cola reproducible.

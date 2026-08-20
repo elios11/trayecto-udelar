@@ -10294,7 +10294,117 @@
         { "field": "campus", "resolution": "Cursos híbridos recientes articulan docentes en Rivera y Cerro Largo, pero la carrera vigente se publica con sede Tacuarembó. Esas participaciones no crean sedes completas adicionales." }
       ],
       "remainingWork": "La malla de referencia, los mínimos flexibles y la pasantía quedan operativos. Actualizar cursos nominales cuando FCS o CENUR Noreste reemplacen formalmente la malla enlazada de 2020."
+    },
+    {
+      "identity": "tecnico operador de alimentos:2011",
+      "career": "TECNICO OPERADOR DE ALIMENTOS",
+      "planYear": "2011",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-curriculum-flexibility-practice-prerequisites-title-duration-and-campus",
+      "publicationEligible": false,
+      "uiNotice": "El Plan 2011 exige 160 créditos en cuatro semestres: 111 disciplinares, 12 optativos, 5 electivos y 32 de práctica de campo. La UI muestra la oferta optativa publicada para 2025 como catálogo elegible, no como un conjunto íntegramente obligatorio. Las previaturas de cursado y correquisitas se documentan pero no se automatizan porque no equivalen a aprobar la unidad previa.",
+      "officialPlan": {
+        "facultyCode": "ENUT",
+        "facultyName": "ESCUELA DE NUTRICIÓN",
+        "approval": ["Consejo Delegado Académico, Resolución 8 de 01/11/2011", "Publicación en Diario Oficial de 15/11/2011"],
+        "title": "Técnico Operador de Alimentos",
+        "durationMonths": 24,
+        "minimumCredits": 160,
+        "curriculum": {
+          "sourceUrl": "https://eva.nutricion.udelar.edu.uy/pluginfile.php/10102/course/section/1218/Plan%20de%20estudios%20TOA-%202014.pdf",
+          "pathwayLabel": "Malla vigente",
+          "pathwayDescription": "Distribución curricular vigente en cuatro semestres. Las optativas publicadas son alternativas para completar 12 créditos; los 5 créditos electivos pueden provenir de otras carreras, con articulación especial con Tecnólogo Cárnico.",
+          "prerequisitesSourceUrl": "https://udelar.edu.uy/carrerasinterior/wp-content/uploads/sites/61/2021/02/Reglamento-Plan-Estudios-TOA_presentacion-2020.pdf",
+          "creditRequirements": [
+            { "id": "toa-disciplinares", "name": "Cursos disciplinares e interdisciplinares", "shortName": "Disciplinares", "minCredits": 111 },
+            { "id": "toa-optativas", "name": "Créditos optativos", "shortName": "Optativas", "minCredits": 12 },
+            { "id": "toa-electivas", "name": "Créditos electivos", "shortName": "Electivas", "minCredits": 5 },
+            { "id": "toa-practica", "name": "Práctica de campo e informe final", "shortName": "Práctica", "minCredits": 32 }
+          ],
+          "periods": [
+            { "label": "Semestre 1", "courses": [
+              { "id": "calidad-alimentaria", "name": "Calidad Alimentaria", "credits": 18, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "nutricion-humana", "name": "Nutrición Humana y Estado Nutricional", "credits": 13, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "aparatos-sistemas", "name": "Aparatos y Sistemas", "credits": 7, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "dimension-psicosocial", "name": "Dimensión Psico-social de la Salud", "credits": 6, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "informatica", "name": "Informática · optativa", "credits": 8, "requirementId": "toa-optativas", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" }
+            ] },
+            { "label": "Semestre 2", "courses": [
+              { "id": "gestion-operador-1", "name": "Gestión del Operador de Alimentos I", "credits": 6, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "alimentacion-colectividades", "name": "Alimentación en Colectividades Sanas y en Situación de Enfermedad", "credits": 12, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "conducta-alimentaria", "name": "Conducta Alimentaria", "credits": 6, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "microbiologia", "name": "Microbiología en la Naturaleza y en los Alimentos", "credits": 4, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "evaluacion-sensorial", "name": "Evaluación Sensorial · optativa", "credits": 8, "requirementId": "toa-optativas", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "ingles-1", "name": "Inglés Básico I · optativa", "credits": 4, "requirementId": "toa-optativas", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "portugues-1", "name": "Portugués Técnico I · optativa", "credits": 4, "requirementId": "toa-optativas", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf" },
+              { "id": "envases", "name": "Envases como Aporte a la Calidad Alimentaria · optativa", "credits": 4, "requirementId": "toa-optativas", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" }
+            ] },
+            { "label": "Semestre 3", "courses": [
+              { "id": "gestion-operador-2", "name": "Gestión del Operador de Alimentos II", "credits": 3, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "servicio-colectividades-sanas", "name": "Servicios de Comidas para Colectividades Sanas", "credits": 10, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "servicio-asistencia-medica", "name": "Servicio de Comidas en Instituciones de Asistencia Médica", "credits": 6, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "hoteleria-restaurantes", "name": "Atención en Hotelería y Restaurantes", "credits": 8, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "taller-atencion-usuario", "name": "Taller de Atención al Usuario", "credits": 4, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "taller-insercion-laboral", "name": "Taller de Inserción Laboral", "credits": 3, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "ingles-2", "name": "Inglés Técnico II · optativa", "credits": 4, "requirementId": "toa-optativas", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" }
+            ] },
+            { "label": "Semestre 4", "courses": [
+              { "id": "marketing", "name": "Marketing en la Oferta de Productos", "credits": 5, "requirementId": "toa-disciplinares", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "portugues-2", "name": "Portugués II · optativa", "credits": 4, "requirementId": "toa-optativas", "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf" },
+              { "id": "electivas", "name": "Espacio de unidades electivas", "credits": 5, "requirementId": "toa-electivas", "curricularBlock": true },
+              { "id": "practica-campo", "name": "Práctica de Campo e Informe Final", "credits": 32, "requirementId": "toa-practica" }
+            ] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "toa-cursos-talleres-obligatorios", "label": "Quince cursos y talleres obligatorios", "minCompleted": 15, "courseIds": ["calidad-alimentaria", "nutricion-humana", "aparatos-sistemas", "dimension-psicosocial", "gestion-operador-1", "alimentacion-colectividades", "conducta-alimentaria", "microbiologia", "gestion-operador-2", "servicio-colectividades-sanas", "servicio-asistencia-medica", "hoteleria-restaurantes", "taller-atencion-usuario", "taller-insercion-laboral", "marketing"] },
+            { "id": "toa-practica-obligatoria", "label": "Práctica de campo e informe final", "minCompleted": 1, "courseIds": ["practica-campo"] }
+          ],
+          "prerequisites": [
+            { "targetId": "practica-campo", "courseIds": ["calidad-alimentaria", "nutricion-humana", "aparatos-sistemas", "dimension-psicosocial", "gestion-operador-1", "alimentacion-colectividades", "conducta-alimentaria", "microbiologia", "gestion-operador-2", "servicio-colectividades-sanas", "servicio-asistencia-medica", "hoteleria-restaurantes", "taller-atencion-usuario", "taller-insercion-laboral", "marketing"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CUT", "locations": ["Tacuarembó"], "role": "carrera completa de Escuela de Nutrición en Cenur Noreste", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cut-tecnico-operador-de-alimentos-2011.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, título y 160 créditos, pero no la composición y registra una duración errónea de 60 meses. Escuela de Nutrición y Udelar en el Interior publican cuatro semestres, créditos por modalidad, programas vigentes y reglamento."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-plan-one-campus-four-semesters",
+        "regionalCurriculumVariant": false,
+        "reason": "Existe un único título y una única sede completa. Las tres áreas son categorías de formación; las optativas y electivas son flexibilidad del mismo plan y no trayectorias certificadas.",
+        "normalization": [
+          "Mostrar una carrera bajo Escuela de Nutrición, un Plan 2011 y la sede Tacuarembó.",
+          "Corregir la duración a 24 meses y exigir 160 créditos en cuatro semestres.",
+          "Exigir 111 créditos disciplinares, 12 optativos, 5 electivos y 32 de práctica.",
+          "Presentar los programas optativos 2025 como alternativas elegibles y no como obligatoriedad acumulativa.",
+          "Exigir todos los cursos y talleres antes de la práctica final; no endurecer las previaturas de mero cursado ni la correquisita de Calidad Alimentaria."
+        ]
+      },
+      "sources": [
+        { "url": "https://eva.nutricion.udelar.edu.uy/pluginfile.php/10102/course/section/1218/Plan%20de%20estudios%20TOA-%202014.pdf", "authority": "Escuela de Nutrición", "supports": ["título", "cuatro semestres", "160 créditos", "111 disciplinares", "12 optativos", "5 electivos", "32 de práctica", "tres áreas"] },
+        { "url": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/1_Programa-TOA_Cursos-Primer-ano-2025.pdf", "authority": "Escuela de Nutrición", "supports": ["programas vigentes de primer año", "créditos", "semestres", "optativas"] },
+        { "url": "https://www.nutricion.edu.uy/wp-content/uploads/2025/05/2_Programa-TOA_Cursos-Segundo-ano-2025.pdf", "authority": "Escuela de Nutrición", "supports": ["programas vigentes de segundo año", "créditos", "semestres", "optativas"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/wp-content/uploads/sites/61/2021/02/Reglamento-Plan-Estudios-TOA_presentacion-2020.pdf", "authority": "Escuela de Nutrición", "supports": ["previaturas de cursado", "correquisita", "aprobación previa a la práctica", "informe final"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/tecnico-operador-de-alimentos/", "authority": "Udelar en el Interior", "supports": ["vigencia", "Tacuarembó", "dos años", "cuatro semestres", "tres áreas"] },
+        { "url": "https://udelar.edu.uy/carrera/tecnico-operador-de-alimentos", "authority": "Universidad de la República", "supports": ["vigencia", "Escuela de Nutrición", "160 créditos", "Tacuarembó"] },
+        { "url": "https://dgjuridica.udelar.edu.uy/077-reglamento-del-plan-de-estudios-de-la-carrera-de-tecnico-operador-de-alimentos-de-la-escuela-de-nutricion-y-dietetica/", "authority": "Dirección General Jurídica de Udelar", "supports": ["Resolución 8 de 01/11/2011", "publicación de 15/11/2011"] }
+      ],
+      "anomalies": [
+        { "field": "duration", "resolution": "Bedelías y el catálogo general informan 60 meses, pero el plan, el reglamento y la ficha territorial coinciden en dos años y cuatro semestres. La UI usa 24 meses." },
+        { "field": "planYear", "resolution": "La resolución y Bedelías identifican Plan 2011. El PDF del plan está archivado con rótulo 2014; la UI conserva 2011 como año normativo y de inscripción." },
+        { "field": "electivity", "resolution": "Los programas 2025 publican más de 12 créditos de cursos optativos. Se muestran como catálogo de alternativas y el egreso exige sólo el mínimo de 12, más 5 electivos." },
+        { "field": "prerequisites", "resolution": "El reglamento exige haber cursado ciertas unidades, aun sin aprobarlas, y define una correquisita. La UI no dispone de un estado independiente para cursado no aprobado o simultáneo; esas condiciones se informan pero no se convierten en bloqueos más estrictos. La práctica sí exige todos los cursos y talleres aprobados y queda automatizada." },
+        { "field": "areas", "resolution": "Biopsicosocial, Nutrición y Alimentación, y Gestión son áreas del plan, no orientaciones ni trayectorias certificadas. No se crea un selector de trayectoria." },
+        { "field": "campus", "resolution": "La carrera vigente se publica en Tacuarembó. La articulación de electivas con Tecnólogo Cárnico no crea otra sede ni otro plan." }
+      ],
+      "remainingWork": "La malla, flexibilidad, sede y condición de acceso a la práctica quedan operativas. Incorporar nuevas optativas cuando Escuela de Nutrición publique sus programas y automatizar las previaturas de cursado sólo si la UI incorpora un estado académico que las represente sin exigir aprobación."
     }
   ],
-  "contentHash": "sha256:b14a6f1d67de82d9372fdbd8d9df71c1c0972418b54abebe3e56307a7f78879d"
+  "contentHash": "sha256:3c502e7d59ea733139b4f91429cf6afd076eb212dd4d24dff0f8f0226d30f717"
 }

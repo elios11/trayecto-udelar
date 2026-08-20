@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:3735f8d052a5cc9a7da8a5ff366f3c8b9fa7c60230becce4caa81395df63f375",
-    "officialAuditHash": "sha256:b14a6f1d67de82d9372fdbd8d9df71c1c0972418b54abebe3e56307a7f78879d",
+    "auditQueueHash": "sha256:29c10c4e6d14ef69d513b74e0f332cc2b53ba99a54566862cd038cce259aa138",
+    "officialAuditHash": "sha256:3c502e7d59ea733139b4f91429cf6afd076eb212dd4d24dff0f8f0226d30f717",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 116,
-    "compositionUnavailable": 59,
+    "compositionAvailable": 117,
+    "compositionUnavailable": 58,
     "plansWithOfficialCampuses": 27,
     "excludedFromCurrentUi": 2
   },
@@ -267,9 +267,11 @@
       "planId": "bedelias-cut-tecnico-operador-de-alimentos-2011",
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-tecnico-operador-de-alimentos-2011.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "tacuarembo"
+      ]
     },
     {
       "identity": "tecnologo carnico:2010",
@@ -1702,5 +1704,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:b9adeada5a57794ef41b78f8865f1187444c72d12208c662aa522ae05679a7e0"
+  "contentHash": "sha256:13903ed460b179537969e44c1100a98d1afa710175fb38684c92e4237ca4b9a3"
 }

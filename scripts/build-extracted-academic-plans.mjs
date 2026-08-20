@@ -228,12 +228,13 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
       const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
       const credits = Number(rawCourse.credits);
       const nodeId = rawCourse.requirementId ?? "plan-total";
+      const courseSourceUrl = rawCourse.sourceUrl ?? sourceUrl;
       courses.push({
         id,
         name: rawCourse.name,
         credits: Number.isFinite(credits) && credits >= 0 ? credits : 0,
         eligibleRequirementIds: [nodeId],
-        creditAllocations: [{ nodeId, credits, status: "official", sourceUrl }],
+        creditAllocations: [{ nodeId, credits, status: "official", sourceUrl: courseSourceUrl }],
         dataStatus: "official-curriculum",
         ruleCoverage: "not-published",
         curricularBlock: rawCourse.curricularBlock === true,
