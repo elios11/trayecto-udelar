@@ -1046,14 +1046,14 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-isef-licenciatura-en-educacion-fisica-2017": {
     load: () => import("./bedelias-generated/bedelias-isef-licenciatura-en-educacion-fisica-2017.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["deporte","salud","practicas-corporales","tiempo-libre-y-ocio"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
   "bedelias-isef-tecnicatura-en-deportes-2007": {
     load: () => import("./bedelias-generated/bedelias-isef-tecnicatura-en-deportes-2007.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["futbol","actividades-acuaticas","atletismo"],
+    pathwayLabel: "Opción",
     minCredits: 160,
   },
   "bedelias-isef-tecnicatura-en-guardavidas-2025": {

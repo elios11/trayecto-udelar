@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:496e9a7bd7414ea75ce72ebfe430155d3fea363e35c5f89d289bea1dd256f697",
-    "officialAuditHash": "sha256:faaf27ea6a74861282fea299296d3a1b843271c575f3fc1df0d928f20e70a682",
+    "auditQueueHash": "sha256:df72d586e3b13b6e62128e37982b3a3cdca415717b1b2a1e3bc6dd4044c30eb2",
+    "officialAuditHash": "sha256:dc8651ba1caafa5410a9f8b57c145982e800c40a4604412a93a8762a1f57ce60",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 177,
     "compositionAvailable": 93,
     "compositionUnavailable": 84,
-    "plansWithOfficialCampuses": 3
+    "plansWithOfficialCampuses": 9
   },
   "plans": [
     {
@@ -709,9 +709,12 @@
       "planId": "bedelias-fder-notariado-2016",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-notariado-2016.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "tecnicatura en relaciones laborales:1995",
@@ -790,9 +793,14 @@
       "planId": "bedelias-fenf-licenciatura-en-enfermeria-2016",
       "facultyCode": "FENF",
       "snapshotPath": "data/bedelias/fenf-licenciatura-en-enfermeria-2016.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "rivera",
+        "rocha",
+        "salto"
+      ]
     },
     {
       "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
@@ -1132,9 +1140,12 @@
       "planId": "bedelias-fmed-doctor-en-medicina-2008",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-doctor-en-medicina-2008.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "region-litoral-norte-paysandu-y-salto"
+      ]
     },
     {
       "identity": "licenciatura en fisioterapia:2006",
@@ -1483,9 +1494,13 @@
       "planId": "bedelias-psico-licenciatura-en-psicologia-2013",
       "facultyCode": "PSICO",
       "snapshotPath": "data/bedelias/psico-licenciatura-en-psicologia-2013.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto",
+        "paysandu"
+      ]
     },
     {
       "identity": "psicologia infantil:1960",
@@ -1595,18 +1610,26 @@
       "planId": "bedelias-isef-licenciatura-en-educacion-fisica-2017",
       "facultyCode": "ISEF",
       "snapshotPath": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "maldonado",
+        "paysandu"
+      ]
     },
     {
       "identity": "tecnicatura en deportes:2007",
       "planId": "bedelias-isef-tecnicatura-en-deportes-2007",
       "facultyCode": "ISEF",
       "snapshotPath": "data/bedelias/isef-tecnicatura-en-deportes-2007.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "rocha",
+        "paysandu"
+      ]
     },
     {
       "identity": "tecnicatura en guardavidas:2025",
@@ -1618,5 +1641,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:01788e658b95202759e63b5265e3feb531b74dfcc950ce69478fc736dd578f66"
+  "contentHash": "sha256:2d283a8f120d8d863b0e667fca9a0d9db31acfd7c9f601b82e80ec03c83fde03"
 }

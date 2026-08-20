@@ -7,7 +7,7 @@ type PlanLoader = () => Promise<PlanModule>;
 type RegisteredAcademicPlan = {
   load: PlanLoader;
   pathwayIds: readonly string[];
-  pathwayLabel: "Perfil" | "Trayectoria";
+  pathwayLabel: "Perfil" | "Trayectoria" | "Opción";
   minCredits: number;
 };
 

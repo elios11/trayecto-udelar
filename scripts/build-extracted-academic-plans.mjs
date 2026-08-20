@@ -50,10 +50,19 @@ function canonicalSnapshotPath(audit) {
   return preferred ? audit.bedeliasComparison?.snapshots?.[preferred] : null;
 }
 
+function activeFullOfferings(audit) {
+  return (audit?.offerings ?? []).filter((offering) => offering.admissionStatus !== "historical-not-current"
+    && !/vía regional de ingreso|no oferta completa/i.test(offering.role ?? ""));
+}
+
+function offeringPathwayIds(offering) {
+  return offering.trajectoryIds ?? offering.sportOptionIds ?? [];
+}
+
 function auditCampuses(audit) {
   if (!audit) return [];
   const labels = new Map();
-  for (const offering of audit.offerings ?? []) {
+  for (const offering of activeFullOfferings(audit)) {
     for (const location of offering.locations ?? []) {
       const compact = location
         .replace(/^Facultad de Agronomía,\s*/i, "")
@@ -62,14 +71,18 @@ function auditCampuses(audit) {
         .replace(/^Sede\s+/i, "")
         .trim();
       const key = normalize(compact);
-      if (!labels.has(key)) labels.set(key, titleCase(compact));
+      if (!labels.has(key)) labels.set(key, { label: titleCase(compact), pathwayIds: [] });
+      const entry = labels.get(key);
+      entry.pathwayIds.push(...offeringPathwayIds(offering).filter((id) => !entry.pathwayIds.includes(id)));
     }
   }
-  return [...labels].map(([id, label]) => ({
+  return [...labels].map(([id, entry]) => ({
     id: slug(id),
-    label,
+    label: entry.label,
     official: true,
-    defaultPathwayId: audit.identity === "ingeniero agronomo:2020" && id === "salto" ? "salto-agricola-ganadera" : "bedelias",
+    defaultPathwayId: audit.identity === "ingeniero agronomo:2020" && id === "salto"
+      ? "salto-agricola-ganadera"
+      : entry.pathwayIds[0] ?? "bedelias",
   }));
 }
 
@@ -82,11 +95,81 @@ function courseId(serviceCode, course, index, usedIds) {
   return candidate;
 }
 
-function periodLabel(course) {
-  const pathSegments = course.curriculumPaths?.[0] ?? [];
+function periodLabel(course, selectedPath) {
+  const pathSegments = selectedPath ?? course.curriculumPaths?.[0] ?? [];
   const groupsIndex = pathSegments.findIndex((segment) => normalize(segment) === "grupos");
   const candidate = groupsIndex >= 0 ? pathSegments[groupsIndex + 1] : pathSegments.at(-2) ?? pathSegments.at(-1);
   return candidate?.replace(/\s+-\s+min:\s*\d+\s+cr[eé]ditos?\s*$/i, "").trim() || "Composición del plan";
+}
+
+function periodsForProfile(courseRecords, profileLabel) {
+  const periodMap = new Map();
+  for (const { id, rawCourse } of courseRecords) {
+    const selectedPath = (rawCourse.curriculumPaths ?? []).find((pathSegments) => {
+      const profileIndex = pathSegments.findIndex((segment) => normalize(segment) === "perfiles");
+      return profileIndex >= 0 && normalize(pathSegments[profileIndex + 1]) === normalize(profileLabel);
+    });
+    if (!selectedPath) continue;
+    const label = periodLabel(rawCourse, selectedPath);
+    if (!periodMap.has(label)) periodMap.set(label, []);
+    if (!periodMap.get(label).includes(id)) periodMap.get(label).push(id);
+  }
+  return [...periodMap].map(([label, courseIds]) => ({ label, courseIds }));
+}
+
+function campusIdsForPathway(audit, pathwayId) {
+  const ids = [];
+  for (const offering of activeFullOfferings(audit)) {
+    if (!offeringPathwayIds(offering).includes(pathwayId)) continue;
+    for (const location of offering.locations ?? []) {
+      const compact = location
+        .replace(/^Sede\s+/i, "")
+        .trim();
+      const id = slug(normalize(compact));
+      if (!ids.includes(id)) ids.push(id);
+    }
+  }
+  return ids;
+}
+
+function buildPathways(audit, periods, courseRecords, campuses) {
+  if (audit?.identity === "licenciatura en educacion fisica:2017") {
+    return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => [trajectory.id, {
+      label: trajectory.label,
+      description: `${trajectory.label} es una opción certificada del Plan 2017. Su disponibilidad se filtra según la sede elegida.`,
+      campusIds: campusIdsForPathway(audit, trajectory.id),
+      periods: periodsForProfile(courseRecords, trajectory.label),
+    }]));
+  }
+  if (audit?.identity === "tecnicatura en deportes:2007") {
+    return Object.fromEntries(audit.officialPlan.documentedSportOptions.map((option) => [option.id, {
+      label: option.label,
+      description: `${option.label} es una opción deportiva del Plan 2007 vinculada a las sedes y cohortes documentadas. La selección no implica que exista ingreso abierto en 2026.`,
+      campusIds: campusIdsForPathway(audit, option.id),
+      periods: periodsForProfile(courseRecords, option.label),
+    }]));
+  }
+  const pathways = {
+    bedelias: {
+      label: "Composición Bedelías",
+      description: "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada.",
+      campusIds: campuses.map((campus) => campus.id),
+      periods,
+    },
+  };
+  if (audit?.identity === "ingeniero agronomo:2020") {
+    pathways["salto-agricola-ganadera"] = {
+      label: "Agrícola-ganadera",
+      description: "Opción territorial oficialmente publicada para Salto. La selección flexible de unidades todavía requiere curaduría documental.",
+      campusIds: ["salto"],
+      periods,
+    };
+  }
+  return pathways;
+}
+
+function pathwayLabelForAudit(audit) {
+  return audit?.identity === "tecnicatura en deportes:2007" ? "Opción" : "Trayectoria";
 }
 
 function normalizeExpressionCourseIds(expression, codeToId, localServiceCode) {
@@ -105,6 +188,7 @@ function buildProjection(entry, snapshot, audit) {
   const planId = `bedelias-${entry.canonicalSource.serviceCode.toLocaleLowerCase()}-${slug(entry.career.name)}-${entry.plan.year}`;
   const usedIds = new Set();
   const courses = [];
+  const courseRecords = [];
   const periodMap = new Map();
   const codeToId = new Map();
   for (const [index, rawCourse] of (snapshot.plan?.courses ?? []).entries()) {
@@ -124,6 +208,7 @@ function buildProjection(entry, snapshot, audit) {
       dataStatus: "bedelias-composition",
       ruleCoverage: "not-scraped",
     });
+    courseRecords.push({ id, rawCourse });
   }
 
   const publishedCodes = new Set();
@@ -139,30 +224,20 @@ function buildProjection(entry, snapshot, audit) {
     course.ruleCoverage = publishedCodes.has(course.bedeliasCode) ? "published" : noPublishedCodes.has(course.bedeliasCode) ? "not-published" : "not-scraped";
   }
 
-  const minCredits = Number(snapshot.plan?.metadata?.minCredits);
-  const safeMinCredits = Number.isFinite(minCredits) && minCredits > 0 ? minCredits : 0;
+  const publishedMinCredits = Number(snapshot.plan?.metadata?.minCredits);
+  const auditedMinCredits = Number(audit?.officialPlan?.minimumCredits);
+  const safeMinCredits = Number.isFinite(auditedMinCredits) && auditedMinCredits > 0
+    ? auditedMinCredits
+    : Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : 0;
   const compositionAvailable = snapshot.plan?.compositionAvailability !== "unavailable" && courses.length > 0;
   const periods = compositionAvailable ? [...periodMap].map(([label, courseIds]) => ({ label, courseIds })) : [];
   const campuses = auditCampuses(audit);
-  const pathways = {
-    bedelias: {
-      label: "Composición Bedelías",
-      description: "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada.",
-      campusIds: campuses.map((campus) => campus.id),
-      periods,
-    },
-  };
-  if (audit?.identity === "ingeniero agronomo:2020") {
-    pathways["salto-agricola-ganadera"] = {
-      label: "Agrícola-ganadera",
-      description: "Opción territorial oficialmente publicada para Salto. La selección flexible de unidades todavía requiere curaduría documental.",
-      campusIds: ["salto"],
-      periods,
-    };
-  }
+  const pathways = buildPathways(audit, periods, courseRecords, campuses);
   const auditStatus = audit ? "official-evidence-complete" : entry.canonicalSource.state === "structurally-valid" ? "structurally-valid" : "extracted";
   const planDocument = audit?.sources?.[0]?.url ?? snapshot.plan?.metadata?.colibriUrl ?? snapshot.plan?.sourceUrl;
-  const notice = compositionAvailable
+  const notice = audit?.identity === "tecnicatura en deportes:2007"
+    ? "El Plan 2007 continúa para cohortes existentes, pero no tiene ingreso abierto en Montevideo ni Rocha durante 2026; Paysandú no publica una nueva apertura y Rivera se conserva sólo como antecedente histórico."
+    : compositionAvailable
     ? audit
       ? "La identidad, el plan y sus sedes fueron contrastados con fuentes oficiales. La composición mostrada sigue siendo la extracción de Bedelías y no una trayectoria curricular curada."
       : "Composición extraída de Bedelías. La auditoría oficial de títulos, mínimos, obligatoriedad y trayectoria está pendiente."
@@ -183,10 +258,10 @@ function buildProjection(entry, snapshot, audit) {
       plan: {
         year: String(entry.plan.year),
         current: entry.plan.current !== false,
-        degreeTitle: titleCase(snapshot.plan?.titleLabels?.[0] ?? entry.career.name),
+        degreeTitle: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name),
         minCredits: safeMinCredits,
-        publishedMinCredits: Number.isFinite(minCredits) && minCredits > 0 ? minCredits : null,
-        durationMonths: Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
+        publishedMinCredits: Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : null,
+        durationMonths: Number(audit?.officialPlan?.durationMonths) || Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
         campuses,
         sharedWith: (entry.sourceOffers ?? []).map((offer) => offer.serviceName).filter((name) => name !== entry.canonicalSource.serviceName),
         auditStatus,
@@ -199,7 +274,7 @@ function buildProjection(entry, snapshot, audit) {
       creditStructure: {
         countingMode: "allocated",
         nodes: [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: safeMinCredits, sourceStatus: "official", sourceUrl: snapshot.plan?.sourceUrl }],
-        credentials: [{ id: "bedelias-degree", title: titleCase(snapshot.plan?.titleLabels?.[0] ?? entry.career.name), minTotalCredits: safeMinCredits, nodeRequirements: [{ nodeId: "plan-total", minCredits: safeMinCredits }], requiredCourseGroups: [], requiredActivities: [], sourceUrl: planDocument }],
+        credentials: [{ id: "bedelias-degree", title: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name), minTotalCredits: safeMinCredits, nodeRequirements: [{ nodeId: "plan-total", minCredits: safeMinCredits }], requiredCourseGroups: [], requiredActivities: [], sourceUrl: planDocument }],
       },
       courses,
       pathways,
@@ -276,14 +351,14 @@ export async function buildExtractedAcademicPlans() {
     faculty.careers.get(careerId).plans.push({
       id: planId,
       label: `Plan ${entry.plan.year}${entry.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
-      defaultTrajectoryId: "bedelias",
+      defaultTrajectoryId: Object.keys(projection.pathways)[0],
       defaultCredentialId: "bedelias-degree",
     });
   }
   const catalog = [...facultyMap.values()].map((faculty) => ({ ...faculty, careers: [...faculty.careers.values()].map((career) => ({ ...career, plans: career.plans.sort((a, b) => b.label.localeCompare(a.label, "es")) })) }));
   await writeFile(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
 
-  const loaderLines = projections.map(({ planId, projection }) => `  ${JSON.stringify(planId)}: {\n    load: () => import(${JSON.stringify(`./bedelias-generated/${planId}.json`)}),\n    pathwayIds: ${JSON.stringify(Object.keys(projection.pathways))},\n    pathwayLabel: "Trayectoria",\n    minCredits: ${projection.plan.minCredits},\n  },`);
+  const loaderLines = projections.map(({ planId, projection, audit }) => `  ${JSON.stringify(planId)}: {\n    load: () => import(${JSON.stringify(`./bedelias-generated/${planId}.json`)}),\n    pathwayIds: ${JSON.stringify(Object.keys(projection.pathways))},\n    pathwayLabel: ${JSON.stringify(pathwayLabelForAudit(audit))},\n    minCredits: ${projection.plan.minCredits},\n  },`);
   await writeFile(loadersPath, `// Archivo generado por scripts/build-extracted-academic-plans.mjs.\nexport const extractedAcademicPlanRegistrations = {\n${loaderLines.join("\n")}\n} as const;\n`, "utf8");
 
   const reportCore = {

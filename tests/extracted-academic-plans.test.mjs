@@ -42,6 +42,12 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["ingeniero agronomo:2020", ["montevideo", "paysandu", "salto"]],
     ["licenciatura en biotecnologia:2024", ["montevideo", "salto", "paysandu"]],
     ["abogacia:2016", ["montevideo", "salto"]],
+    ["notariado:2016", ["montevideo", "salto"]],
+    ["licenciatura en enfermeria:2016", ["montevideo", "rivera", "rocha", "salto"]],
+    ["doctor en medicina:2008", ["montevideo", "region-litoral-norte-paysandu-y-salto"]],
+    ["licenciatura en educacion fisica:2017", ["montevideo", "maldonado", "paysandu"]],
+    ["tecnicatura en deportes:2007", ["montevideo", "rocha", "paysandu"]],
+    ["licenciatura en psicologia:2013", ["montevideo", "salto", "paysandu"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {
@@ -55,6 +61,38 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
   assert.equal(agronomy.campuses.find((campus) => campus.id === "montevideo").defaultPathwayId, "bedelias");
   const animalBiologyRule = agronomy.rules.find((rule) => rule.target.code === "A0620");
   assert.equal(animalBiologyRule.expression.children[0].options[0].code, "fagro-a0120");
+});
+
+test("las trayectorias auditadas se filtran por sede y conservan metadatos oficiales", async () => {
+  const education = await readJson("app/data/bedelias-generated/bedelias-isef-licenciatura-en-educacion-fisica-2017.json");
+  assert.equal(education.plan.durationMonths, 48);
+  assert.equal(education.plan.minCredits, 360);
+  assert.deepEqual(Object.keys(education.pathways), [
+    "deporte",
+    "salud",
+    "practicas-corporales",
+    "tiempo-libre-y-ocio",
+  ]);
+  assert.deepEqual(education.pathways["practicas-corporales"].campusIds, ["montevideo", "maldonado"]);
+  assert.deepEqual(education.pathways.salud.campusIds, ["montevideo", "maldonado", "paysandu"]);
+  assert.ok(Object.values(education.pathways).every((pathway) => pathway.periods.length > 0));
+
+  const sports = await readJson("app/data/bedelias-generated/bedelias-isef-tecnicatura-en-deportes-2007.json");
+  assert.equal(sports.plan.durationMonths, 24);
+  assert.equal(sports.plan.minCredits, 160);
+  assert.deepEqual(Object.keys(sports.pathways), ["futbol", "actividades-acuaticas", "atletismo"]);
+  assert.deepEqual(sports.pathways.futbol.campusIds, ["montevideo"]);
+  assert.deepEqual(sports.pathways["actividades-acuaticas"].campusIds, ["rocha"]);
+  assert.deepEqual(sports.pathways.atletismo.campusIds, ["paysandu"]);
+  assert.ok(Object.values(sports.pathways).every((pathway) => pathway.periods.length > 0));
+  assert.ok(!sports.campuses.some((campus) => campus.id === "rivera"));
+  assert.match(sports.plan.notice, /no tiene ingreso abierto/i);
+
+  const psychology = await readJson("app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json");
+  assert.equal(psychology.plan.durationMonths, 48);
+  assert.equal(psychology.plan.minCredits, 320);
+  assert.deepEqual(psychology.campuses.map((campus) => campus.id), ["montevideo", "salto", "paysandu"]);
+  assert.ok(!psychology.campuses.some((campus) => ["maldonado", "rocha", "treinta-y-tres"].includes(campus.id)));
 });
 
 test("el reporte queda ligado por hash a sus tres entradas reproducibles", () => {

@@ -586,3 +586,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Decisión: una identidad canónica con sedes Montevideo, Salto y Paysandú, sin filtrar itinerarios por sede. El CIO se muestra como vía de ingreso. La duración se normaliza a 48 meses según el plan aprobado; los 60 meses del catálogo central quedan como anomalía documental.
 - Registro de auditoría: hash `sha256:dc8651ba1caafa5410a9f8b57c145982e800c40a4604412a93a8762a1f57ce60`. Cola actualizada: 168 identidades pendientes, sin diferencias regionales de contenido pendientes; hash `sha256:df72d586e3b13b6e62128e37982b3a3cdca415717b1b2a1e3bc6dd4044c30eb2`.
 - Siguiente paso: auditar el lote `insufficient-regional-content`, comenzando por Diplomatura en Música 1994.
+
+### Proyección UI actualizada con las nueve auditorías regionales — 2026-08-20
+
+- Se regeneraron las 177 proyecciones masivas desde la cola, los snapshots y `official-source-audits.json`: 93 conservan composición utilizable y 84 muestran el estado explícito de composición no publicada. Junto con los siete planes vigentes curados, la UI cubre las 184 identidades canónicas vigentes del inventario.
+- Los nueve planes con auditoría oficial cerrada publican sus sedes verificadas sin duplicar carrera ni plan: Agronomía, Biotecnología, Abogacía, Notariado, Enfermería, Medicina, Educación Física, Tecnicatura en Deportes y Psicología.
+- Educación Física filtra trayectos por sede; la Tecnicatura en Deportes vincula cada opción con Montevideo, Rocha o Paysandú y advierte el cierre o ausencia de ingreso; Rivera no se expone como oferta actual. La vía CIO de Psicología en CURE y la trayectoria de primer año de Medicina no se presentan como sedes completas independientes.
+- El catálogo regional flexible no genera variantes curriculares por sí solo. Todas las proyecciones masivas conservan `publicationEligible: false` aunque tengan evidencia oficial de sedes o metadatos.
+- Manifiesto reproducible: `data/bedelias/inventory/ui-extracted-plans.json`, hash de reporte `sha256:2d283a8f120d8d863b0e667fca9a0d9db31acfd7c9f601b82e80ec03c83fde03`.
+- Siguiente paso documental: continuar el lote `insufficient-regional-content` desde Diplomatura en Música 1994 sin bloquear la disponibilidad local de las identidades ya extraídas.
