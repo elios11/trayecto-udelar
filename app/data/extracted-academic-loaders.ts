@@ -388,7 +388,7 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-fcs-licenciatura-en-ciencia-politica-2009.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 360,
   },
   "bedelias-fcs-licenciatura-en-desarrollo-2009": {
     load: () => import("./bedelias-generated/bedelias-fcs-licenciatura-en-desarrollo-2009.json"),

@@ -961,3 +961,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:1aa1d93f4e49efd315d077b6df52bfd8ef7f395ec5400734944f654be441dcfe`. Cola actualizada: 133 identidades pendientes, 24 sin composición; hash `sha256:6cb7440a2175ecb252e699b41492ab2c5b3a45287de18dcc03e3b1f080f2ee4b`.
 - La UI queda en 172 proyecciones: 120 con composición, 52 sin composición y cinco identidades históricas excluidas; hash `sha256:8b65438473436aaf684802721117bfdbf29031a4c8b0a506a1b8d1fff3ddacf7`.
 - Siguiente paso: auditar Licenciatura en Ciencia Política Plan 2009.
+
+### Licenciatura en Ciencia Política Plan 2009 — ciclos solapables y módulos auditados 2026-08-20
+
+- Facultad de Ciencias Sociales mantiene un único Plan 2009, título `Licenciado en Ciencia Política`, cuatro años y 360 créditos en Montevideo.
+- El Ciclo Inicial exige 120 créditos: 48 de Introducción, 26 de Métodos, 8 de Temáticas y 38 optativos. El Ciclo Avanzado aporta los 240 restantes en ocho módulos, incluido un Trabajo Final de 30 créditos.
+- La UI usa doce módulos en vez de semestres rígidos. El reglamento permite comenzar el Ciclo Avanzado con 48 créditos iniciales y completar ambos ciclos en paralelo; imponer 120 créditos previos a todo el Avanzado sería más restrictivo que la norma.
+- Se incorporaron 27 unidades obligatorias y nueve grupos de alternativas: una introducción, matemática, temática, Instituciones III, Estado IV, Teoría III, técnica cuantitativa, base de análisis económico y modalidad de Trabajo Final.
+- Análisis Económico exige elegir Macro o Micro de 4 créditos y completar al menos 6 adicionales. Las seis unidades sugeridas vigentes se muestran como catálogo flexible, sujeto a actualización anual.
+- El Trabajo Final permite Monografía o Pasantía Educativa, ambas de 30 créditos. Son modalidades del mismo título y no trayectorias distintas.
+- La tabla de previaturas permite rendir si la previa fue promovida, aprobada por examen o conserva condición de reglamentado. Como la UI no representa esta tercera condición, no se reemplaza por una exigencia automática de aprobación.
+- Registro de auditoría: hash `sha256:f1b135bf0a7442c41686c40db5e7f75c8a42d9a6d30e97fc0d1d3a90e4cd5cc6`. Cola actualizada: 132 identidades pendientes, 23 sin composición; hash `sha256:765d31f5233ec39552b50f579dc9e3b01cbc8fd1d2c7d3614fdd8a0c983cdfb6`.
+- La UI queda en 172 proyecciones: 121 con composición, 51 sin composición y cinco identidades históricas excluidas; hash `sha256:d3e24994ab399e0f939ef7edd6dd9f472c065c30fb926e00abd80a42658dd1fb`.
+- Siguiente paso: auditar Licenciatura en Desarrollo Plan 2009.

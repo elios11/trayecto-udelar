@@ -11003,7 +11003,190 @@
         { "field": "newOceanographyDegree", "resolution": "La Licenciatura en Oceanografía anunciada para 2027 tiene una base común y cinco orientaciones. No es una reapertura nominal del título histórico y todavía no debe publicarse como carrera vigente 2026." }
       ],
       "remainingWork": "Caso cerrado para la UI 2026. Auditar e incorporar la nueva Licenciatura en Oceanografía cuando Udelar publique su apertura formal 2027, identidad SGAE y oferta curricular vigente."
+    },
+    {
+      "identity": "licenciatura en ciencia politica:2009",
+      "career": "LICENCIATURA EN CIENCIA POLÍTICA",
+      "planYear": "2009",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-modular-curriculum-flexibility-final-work-prerequisites-title-duration-and-campus",
+      "publicationEligible": false,
+      "uiNotice": "El Plan 2009 exige 360 créditos: 120 del Ciclo Inicial común y 240 del Ciclo Avanzado de Ciencia Política, incluido un Trabajo Final de 30 créditos. La UI presenta módulos y alternativas oficiales vigentes; desde 48 créditos del Ciclo Inicial se puede comenzar el Avanzado, por lo que no impone una secuencia semestral rígida. Las previas a examen admiten también conservar la condición de reglamentado y se informan sin endurecerlas como aprobación obligatoria.",
+      "officialPlan": {
+        "facultyCode": "FCS",
+        "facultyName": "FACULTAD DE CIENCIAS SOCIALES",
+        "planYear": "2009",
+        "approval": [
+          "Plan de Estudios 2009 de Facultad de Ciencias Sociales",
+          "Malla de Ciencia Política modificada por Resolución CF 2654 de 27/11/2025",
+          "Malla de Ciclo Inicial modificada por Resolución CF 1025 de 04/06/2026"
+        ],
+        "title": "Licenciado en Ciencia Política",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "curriculum": {
+          "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/CP-Malla-2511.pdf",
+          "pathwayLabel": "Plan modular vigente",
+          "pathwayDescription": "Módulos oficiales del Ciclo Inicial 2026 y del Ciclo Avanzado de Ciencia Política 2025. El orden visual organiza requisitos y alternativas, pero no fija una secuencia rígida: ambos ciclos pueden solaparse desde los 48 créditos iniciales reglamentarios.",
+          "prerequisitesSourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/TABLA-PREVIATURAS-CP.pdf",
+          "creditRequirements": [
+            { "id": "cp-ci-introduccion", "name": "Ciclo Inicial · Introducción a las Ciencias Sociales", "shortName": "CI Introducción", "minCredits": 48 },
+            { "id": "cp-ci-metodos", "name": "Ciclo Inicial · Métodos Aplicados a las Ciencias Sociales", "shortName": "CI Métodos", "minCredits": 26 },
+            { "id": "cp-ci-tematicas", "name": "Ciclo Inicial · Temáticas en Ciencias Sociales", "shortName": "CI Temáticas", "minCredits": 8 },
+            { "id": "cp-ci-optativas", "name": "Ciclo Inicial · Actividades Curriculares Optativas", "shortName": "CI Optativas", "minCredits": 38 },
+            { "id": "cp-sistema-politico", "name": "Sistema Político Nacional", "shortName": "Sistema político", "minCredits": 24 },
+            { "id": "cp-instituciones", "name": "Instituciones Políticas y Actores", "shortName": "Instituciones", "minCredits": 24 },
+            { "id": "cp-estado-politicas", "name": "Estado y Políticas Públicas", "shortName": "Estado y políticas", "minCredits": 24 },
+            { "id": "cp-teoria", "name": "Teoría Política", "shortName": "Teoría", "minCredits": 24 },
+            { "id": "cp-metodologia", "name": "Metodología de la Investigación", "shortName": "Metodología", "minCredits": 39 },
+            { "id": "cp-complementarias", "name": "Disciplinas Complementarias", "shortName": "Complementarias", "minCredits": 39 },
+            { "id": "cp-profundizacion", "name": "Profundización Temática", "shortName": "Profundización", "minCredits": 36 },
+            { "id": "cp-trabajo-final", "name": "Trabajo Final", "shortName": "Trabajo final", "minCredits": 30 }
+          ],
+          "periods": [
+            { "label": "Ciclo Inicial · Introducción", "courses": [
+              { "id": "ci-cuestion-social", "name": "La Cuestión Social en la Historia", "credits": 8, "requirementId": "cp-ci-introduccion" },
+              { "id": "ci-sociedades-modernas", "name": "Sociedades Modernas y Desigualdades Sociales", "credits": 8, "requirementId": "cp-ci-introduccion" },
+              { "id": "ci-problemas-desarrollo", "name": "Problemas del Desarrollo", "credits": 8, "requirementId": "cp-ci-introduccion" },
+              { "id": "ci-poder-estado", "name": "Poder, Estado y Sistema Político", "credits": 8, "requirementId": "cp-ci-introduccion" },
+              { "id": "ci-principios-economia", "name": "Principios de Economía", "credits": 8, "requirementId": "cp-ci-introduccion" },
+              { "id": "ci-historia-america-latina", "name": "Historia Contemporánea de América Latina · alternativa", "credits": 8, "requirementId": "cp-ci-introduccion" },
+              { "id": "ci-opcion-politica", "name": "Opción Política · alternativa", "credits": 8, "requirementId": "cp-ci-introduccion" },
+              { "id": "ci-opcion-economica-social", "name": "Opción Económica y Social · alternativa", "credits": 8, "requirementId": "cp-ci-introduccion" }
+            ] },
+            { "label": "Ciclo Inicial · Métodos", "courses": [
+              { "id": "ci-matematica-1", "name": "Matemática I · alternativa", "credits": 8, "requirementId": "cp-ci-metodos" },
+              { "id": "ci-matematica-extendida", "name": "Curso Extendido de Matemática · alternativa", "credits": 8, "requirementId": "cp-ci-metodos" },
+              { "id": "ci-estadistica-social", "name": "Estadística Social", "credits": 8, "requirementId": "cp-ci-metodos" },
+              { "id": "ci-metodologia-investigacion", "name": "Metodología de la Investigación", "credits": 10, "requirementId": "cp-ci-metodos" }
+            ] },
+            { "label": "Ciclo Inicial · Temáticas", "courses": [
+              { "id": "ci-desafios-contemporaneos", "name": "Debates sobre Desafíos Ambientales, Poblacionales y Violencias · alternativa", "credits": 8, "requirementId": "cp-ci-tematicas" },
+              { "id": "ci-uruguay-mundo", "name": "Uruguay en el Mundo · alternativa", "credits": 8, "requirementId": "cp-ci-tematicas" },
+              { "id": "ci-experiencias-desarrollo", "name": "Experiencias Históricas del Desarrollo · alternativa", "credits": 8, "requirementId": "cp-ci-tematicas" },
+              { "id": "ci-genero-desigualdades", "name": "Género y Desigualdades en Debate · alternativa", "credits": 8, "requirementId": "cp-ci-tematicas" },
+              { "id": "ci-accion-colectiva", "name": "Acción Colectiva en Clave Interdisciplinaria · alternativa", "credits": 8, "requirementId": "cp-ci-tematicas" }
+            ] },
+            { "label": "Ciclo Inicial · Optativas", "courses": [
+              { "id": "ci-politicas-publicas", "name": "Políticas Públicas · optativa específica de Ciencia Política", "credits": 10, "requirementId": "cp-ci-optativas" },
+              { "id": "ci-optativas-generales", "name": "Actividades Curriculares Optativas del Ciclo Inicial", "credits": 28, "requirementId": "cp-ci-optativas", "curricularBlock": true }
+            ] },
+            { "label": "Ciclo Avanzado · Sistema Político Nacional", "courses": [
+              { "id": "c51", "name": "Sistema Político Nacional I", "credits": 8, "requirementId": "cp-sistema-politico" },
+              { "id": "c58", "name": "Sistema Político Nacional II", "credits": 8, "requirementId": "cp-sistema-politico" },
+              { "id": "c88", "name": "Sistema Político Nacional III: La Política Uruguaya más allá de los Partidos", "credits": 8, "requirementId": "cp-sistema-politico" }
+            ] },
+            { "label": "Ciclo Avanzado · Instituciones", "courses": [
+              { "id": "c54", "name": "Instituciones Políticas y Actores I", "credits": 8, "requirementId": "cp-instituciones" },
+              { "id": "c59", "name": "Instituciones Políticas y Actores II", "credits": 8, "requirementId": "cp-instituciones" },
+              { "id": "c81", "name": "Instituciones Políticas en América Latina · alternativa III", "credits": 8, "requirementId": "cp-instituciones" },
+              { "id": "c82", "name": "Economía Política e Instituciones · alternativa III", "credits": 8, "requirementId": "cp-instituciones" },
+              { "id": "2d86", "name": "Teoría de las Instituciones · alternativa III", "credits": 8, "requirementId": "cp-instituciones" }
+            ] },
+            { "label": "Ciclo Avanzado · Estado y Políticas", "courses": [
+              { "id": "c55", "name": "Estado y Políticas Públicas I", "credits": 8, "requirementId": "cp-estado-politicas" },
+              { "id": "c61", "name": "Estado y Políticas Públicas II", "credits": 6, "requirementId": "cp-estado-politicas" },
+              { "id": "c65", "name": "Estado y Políticas Públicas III", "credits": 6, "requirementId": "cp-estado-politicas" },
+              { "id": "2c86", "name": "Introducción a la Evaluación de Políticas Públicas · alternativa IV", "credits": 4, "requirementId": "cp-estado-politicas" },
+              { "id": "c90", "name": "Análisis de Políticas Públicas · alternativa IV", "credits": 4, "requirementId": "cp-estado-politicas" }
+            ] },
+            { "label": "Ciclo Avanzado · Teoría Política", "courses": [
+              { "id": "c52", "name": "Teoría Política I", "credits": 8, "requirementId": "cp-teoria" },
+              { "id": "c62", "name": "Teoría Política II", "credits": 8, "requirementId": "cp-teoria" },
+              { "id": "c103", "name": "Límites y Desafíos de la Política y lo Político · alternativa III", "credits": 8, "requirementId": "cp-teoria" },
+              { "id": "c104", "name": "El Poder en las Democracias Contemporáneas · alternativa III", "credits": 8, "requirementId": "cp-teoria" }
+            ] },
+            { "label": "Ciclo Avanzado · Metodología", "courses": [
+              { "id": "c60", "name": "Medición y Diseño de Investigación", "credits": 8, "requirementId": "cp-metodologia" },
+              { "id": "cp-tecnicas-cualitativas", "name": "Técnicas Cualitativas para la Investigación en Ciencia Política", "credits": 8, "requirementId": "cp-metodologia" },
+              { "id": "c35", "name": "Análisis de Datos Cuantitativos en Ciencia Política · alternativa", "credits": 8, "requirementId": "cp-metodologia" },
+              { "id": "c36", "name": "Estadística y sus Aplicaciones en Ciencias Sociales · alternativa", "credits": 8, "requirementId": "cp-metodologia" },
+              { "id": "c87a", "name": "Método Comparado y Estudio de Caso", "credits": 7, "requirementId": "cp-metodologia" },
+              { "id": "c85", "name": "Métodos de Inferencia Causal Aplicada", "credits": 8, "requirementId": "cp-metodologia" }
+            ] },
+            { "label": "Ciclo Avanzado · Complementarias", "courses": [
+              { "id": "cp-historia-uruguay", "name": "Historia del Uruguay Contemporáneo", "credits": 11, "requirementId": "cp-complementarias" },
+              { "id": "cp-historia-universal", "name": "Historia Universal Contemporánea", "credits": 10, "requirementId": "cp-complementarias" },
+              { "id": "cp-teoria-derecho", "name": "Teoría del Derecho", "credits": 8, "requirementId": "cp-complementarias" },
+              { "id": "cp-analisis-macro", "name": "Análisis Macroeconómico · base económica alternativa", "credits": 4, "requirementId": "cp-complementarias" },
+              { "id": "cp-analisis-micro", "name": "Análisis Microeconómico · base económica alternativa", "credits": 4, "requirementId": "cp-complementarias" }
+            ] },
+            { "label": "Catálogo · Complemento de Análisis Económico", "catalog": true, "courses": [
+              { "id": "cp-educacion-desarrollo", "name": "Educación y Desarrollo", "credits": 6, "requirementId": "cp-complementarias" },
+              { "id": "cp-economia-discriminacion", "name": "Economía de la Discriminación", "credits": 6, "requirementId": "cp-complementarias" },
+              { "id": "cp-desigualdad-pobreza", "name": "Desigualdad y Pobreza: Medición y Aplicaciones", "credits": 6, "requirementId": "cp-complementarias" },
+              { "id": "cp-economia-publica", "name": "Economía Pública", "credits": 6, "requirementId": "cp-complementarias" },
+              { "id": "cp-mercado-trabajo-familia", "name": "Mercado de Trabajo y Familia", "credits": 6, "requirementId": "cp-complementarias" },
+              { "id": "cp-economia-internacional", "name": "Economía Internacional", "credits": 6, "requirementId": "cp-complementarias" }
+            ] },
+            { "label": "Ciclo Avanzado · Profundización", "courses": [
+              { "id": "cp-profundizacion-1", "name": "Optativas de Profundización Temática I", "credits": 18, "requirementId": "cp-profundizacion", "curricularBlock": true },
+              { "id": "cp-profundizacion-2", "name": "Optativas de Profundización Temática II", "credits": 18, "requirementId": "cp-profundizacion", "curricularBlock": true }
+            ] },
+            { "label": "Trabajo Final", "courses": [
+              { "id": "cp-monografia-final", "name": "Monografía Final · alternativa de egreso", "credits": 30, "requirementId": "cp-trabajo-final" },
+              { "id": "cp-pasantia-final", "name": "Pasantía Educativa e Informe Final · alternativa de egreso", "credits": 30, "requirementId": "cp-trabajo-final" }
+            ] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "cp-nucleo-obligatorio", "label": "Núcleo obligatorio de ambos ciclos", "minCompleted": 27, "courseIds": ["ci-cuestion-social", "ci-sociedades-modernas", "ci-problemas-desarrollo", "ci-poder-estado", "ci-principios-economia", "ci-estadistica-social", "ci-metodologia-investigacion", "ci-politicas-publicas", "c51", "c58", "c88", "c54", "c59", "c55", "c61", "c65", "c52", "c62", "c60", "cp-tecnicas-cualitativas", "c87a", "c85", "cp-historia-uruguay", "cp-historia-universal", "cp-teoria-derecho", "cp-profundizacion-1", "cp-profundizacion-2"] },
+            { "id": "cp-ci-introduccion-alternativa", "label": "Una alternativa de introducción del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-historia-america-latina", "ci-opcion-politica", "ci-opcion-economica-social"] },
+            { "id": "cp-ci-matematica", "label": "Una alternativa de matemática del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-matematica-1", "ci-matematica-extendida"] },
+            { "id": "cp-ci-tematica", "label": "Un seminario multidisciplinario del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-desafios-contemporaneos", "ci-uruguay-mundo", "ci-experiencias-desarrollo", "ci-genero-desigualdades", "ci-accion-colectiva"] },
+            { "id": "cp-instituciones-3", "label": "Una alternativa de Instituciones Políticas y Actores III", "minCompleted": 1, "courseIds": ["c81", "c82", "2d86"] },
+            { "id": "cp-estado-4", "label": "Una alternativa de Estado y Políticas Públicas IV", "minCompleted": 1, "courseIds": ["2c86", "c90"] },
+            { "id": "cp-teoria-3", "label": "Una alternativa de Teoría Política III", "minCompleted": 1, "courseIds": ["c103", "c104"] },
+            { "id": "cp-cuantitativas", "label": "Una alternativa de Técnicas Cuantitativas", "minCompleted": 1, "courseIds": ["c35", "c36"] },
+            { "id": "cp-analisis-economico-base", "label": "Análisis Macroeconómico o Análisis Microeconómico", "minCompleted": 1, "courseIds": ["cp-analisis-macro", "cp-analisis-micro"] },
+            { "id": "cp-trabajo-final-modalidad", "label": "Monografía o Pasantía Educativa", "minCompleted": 1, "courseIds": ["cp-monografia-final", "cp-pasantia-final"] }
+          ],
+          "prerequisites": []
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FCS", "locations": ["Montevideo"], "role": "carrera completa en Facultad de Ciencias Sociales", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcs-licenciatura-en-ciencia-politica-2009.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, título, vigencia y 48 meses, pero no composición ni total de créditos. FCS publica las mallas vigentes de los dos ciclos, normas 2025, 360 créditos y tabla de previas."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-modular-plan-one-campus-overlapping-cycles",
+        "regionalCurriculumVariant": false,
+        "reason": "Existe un único título y una única sede. Los módulos, alternativas de unidades, optativas y dos modalidades de Trabajo Final forman parte del mismo Plan 2009; el solapamiento permitido entre ciclos no crea trayectorias certificadas distintas.",
+        "normalization": [
+          "Mostrar una carrera bajo Facultad de Ciencias Sociales, un Plan 2009 y la sede Montevideo.",
+          "Exigir 120 créditos del Ciclo Inicial y 240 del Avanzado, con los mínimos de sus doce módulos y 360 créditos totales.",
+          "Exigir el núcleo obligatorio y una unidad de cada grupo alternativo publicado, sin exigir todas las alternativas.",
+          "Permitir Monografía o Pasantía Educativa como modalidades excluyentes del Trabajo Final de 30 créditos.",
+          "Presentar la estructura por módulos, porque el Ciclo Avanzado puede iniciarse con 48 créditos del Inicial y no existe una secuencia rígida única.",
+          "No convertir las previas a examen en bloqueos de aprobación: la norma también admite conservar la condición de reglamentado."
+        ]
+      },
+      "sources": [
+        { "url": "https://cienciassociales.edu.uy/ensenanza/", "authority": "Facultad de Ciencias Sociales", "supports": ["vigencia", "Plan 2009", "cuatro años", "ocho semestres", "360 créditos", "Montevideo"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-ciencia-politica", "authority": "Universidad de la República", "supports": ["vigencia", "Facultad de Ciencias Sociales", "48 meses", "sede"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["Ciclo Inicial 2026", "120 créditos", "cuatro módulos", "82 obligatorios", "38 optativos", "alternativas"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/CP-Malla-2511.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["malla avanzada vigente", "210 créditos por módulos", "Trabajo Final 30", "alternativas", "Resolución 2654 de 27/11/2025"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/Normas-de-la-Licenciatura-en-Ciencia-Poli%CC%81tica_-2025.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["título", "360 créditos", "dos ciclos", "48 créditos para ingresar al Avanzado", "modalidades de Trabajo Final"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/TABLA-PREVIATURAS-CP.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["previas a examen vigentes", "condición de reglamentado como alternativa"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/10/LCP-AnalisisEconomico_DocumentoOrientador_set2025.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["10 créditos de Análisis Económico", "base Macro o Micro de 4 créditos", "complemento de al menos 6", "oferta sugerida"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2020/01/REGLAMENTO_PLAN_DE_ESTUDIOS-2009.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["120 créditos iniciales", "240 avanzados", "360 totales", "certificado intermedio"] }
+      ],
+      "anomalies": [
+        { "field": "composition", "resolution": "Bedelías no publica la composición. Se reconstruye exclusivamente desde las mallas oficiales vigentes de FCS de 2025 y 2026, no desde el orden histórico del Plan original." },
+        { "field": "cycleOverlap", "resolution": "El Ciclo Inicial se organiza en cuatro semestres, pero con 48 créditos ya se puede comenzar el Avanzado y completar ambos en paralelo. La UI usa módulos y no bloquea artificialmente todo el Avanzado hasta llegar a 120." },
+        { "field": "semesterTotals", "resolution": "La malla avanzada publica rangos variables por semestre según cuándo se cursen electivas. La UI evita asignar una única trayectoria temporal rígida y conserva los mínimos por módulo." },
+        { "field": "economicAnalysis", "resolution": "El módulo exige 10 créditos: una base Macro o Micro de 4 y al menos 6 adicionales. La UI exige una base y el mínimo modular; el catálogo sugerido puede cambiar cada año." },
+        { "field": "prerequisites", "resolution": "La tabla regula previas para rendir examen y admite promover, aprobar el examen o mantener la condición de reglamentado en la previa. Como la UI no representa esa tercera condición, no la sustituye por aprobación obligatoria." },
+        { "field": "duration", "resolution": "La página principal y Udelar publican cuatro años y 48 meses. Una página para futuros estudiantes contiene el texto inconsistente 'Ciclo Avanzado de tres años'; se conserva la duración institucional de cuatro años." },
+        { "field": "campus", "resolution": "La carrera completa se publica en la sede Montevideo de FCS. La movilidad horizontal y las optativas de otros servicios no crean sedes adicionales." }
+      ],
+      "remainingWork": "La estructura modular vigente, alternativas y modalidades de egreso quedan operativas. Actualizar los catálogos de optativas y Análisis Económico cuando cambien las ofertas; automatizar previas a examen sólo si la UI incorpora el estado reglamentado sin exigir aprobación."
     }
   ],
-  "contentHash": "sha256:1aa1d93f4e49efd315d077b6df52bfd8ef7f395ec5400734944f654be441dcfe"
+  "contentHash": "sha256:f1b135bf0a7442c41686c40db5e7f75c8a42d9a6d30e97fc0d1d3a90e4cd5cc6"
 }

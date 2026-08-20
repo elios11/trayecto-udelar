@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:6cb7440a2175ecb252e699b41492ab2c5b3a45287de18dcc03e3b1f080f2ee4b",
-    "officialAuditHash": "sha256:1aa1d93f4e49efd315d077b6df52bfd8ef7f395ec5400734944f654be441dcfe",
+    "auditQueueHash": "sha256:765d31f5233ec39552b50f579dc9e3b01cbc8fd1d2c7d3614fdd8a0c983cdfb6",
+    "officialAuditHash": "sha256:f1b135bf0a7442c41686c40db5e7f75c8a42d9a6d30e97fc0d1d3a90e4cd5cc6",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 172,
-    "compositionAvailable": 120,
-    "compositionUnavailable": 52,
+    "compositionAvailable": 121,
+    "compositionUnavailable": 51,
     "plansWithOfficialCampuses": 29,
     "excludedFromCurrentUi": 5
   },
@@ -630,9 +630,11 @@
       "planId": "bedelias-fcs-licenciatura-en-ciencia-politica-2009",
       "facultyCode": "FCS",
       "snapshotPath": "data/bedelias/fcs-licenciatura-en-ciencia-politica-2009.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "licenciatura en desarrollo:2009",
@@ -1685,5 +1687,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:8b65438473436aaf684802721117bfdbf29031a4c8b0a506a1b8d1fff3ddacf7"
+  "contentHash": "sha256:d3e24994ab399e0f939ef7edd6dd9f472c065c30fb926e00abd80a42658dd1fb"
 }
