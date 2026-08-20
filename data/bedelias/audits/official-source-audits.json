@@ -10530,7 +10530,154 @@
         { "field": "academicOwnership", "resolution": "La oferta es interinstitucional. La UI la agrupa bajo Facultad de Veterinaria por su ficha académica vigente y conserva como participación explícita Agronomía, Ingeniería, Química y DGETP-UTU." }
       ],
       "remainingWork": "La estructura de egreso, malla semestral, catálogo optativo, trabajo final y sedes quedan operativos. Incorporar previaturas sólo cuando la coordinación publique una tabla normativa consolidada y revisar el nombre de Plan 2010 si Bedelías actualiza su clave al año de aprobación 2008."
+    },
+    {
+      "identity": "licenciatura en nutricion:2014",
+      "career": "LICENCIATURA EN NUTRICIÓN",
+      "planYear": "2014",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-curriculum-cycles-flexibility-prerequisites-title-duration-and-territorial-scope",
+      "publicationEligible": false,
+      "uiNotice": "El Plan 2014 exige 360 créditos en ocho semestres. La carrera completa se dicta en Montevideo; en Paysandú se puede realizar únicamente el Ciclo IV de Desempeño Profesional (Práctica Profesional y Trabajo Final de Grado). Las prácticas articuladoras y los campos de práctica permiten recorridos flexibles, pero no constituyen trayectorias certificadas diferentes.",
+      "officialPlan": {
+        "facultyCode": "ENUT",
+        "facultyName": "ESCUELA DE NUTRICIÓN",
+        "approval": ["Plan de Estudios 2014", "Disposiciones reglamentarias actualizadas a diciembre de 2025"],
+        "title": "Licenciado en Nutrición",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "curriculum": {
+          "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2019/07/Plan-Estudios-2014-1.pdf",
+          "prerequisitesSourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/12/Disposiciones-reglamentarias-Actualizado-Diciembre-2025.pdf",
+          "pathwayLabel": "Malla oficial flexible",
+          "pathwayDescription": "Cuatro ciclos de 90 créditos. Las optativas y electivas son componentes flexibles del mismo plan y aparecen en el catálogo, no como un semestre adicional ni como trayectorias separadas.",
+          "creditRequirements": [
+            { "id": "nut-disciplinares", "name": "Cursos disciplinares obligatorios", "shortName": "Disciplinares", "minCredits": 190 },
+            { "id": "nut-optativas", "name": "Unidades curriculares optativas", "shortName": "Optativas", "minCredits": 30 },
+            { "id": "nut-electivas", "name": "Unidades curriculares electivas", "shortName": "Electivas", "minCredits": 10 },
+            { "id": "nut-practicas-articuladoras", "name": "Prácticas articuladoras", "shortName": "Prácticas", "minCredits": 40 },
+            { "id": "nut-desempeno-profesional", "name": "Ciclo IV · Desempeño Profesional", "shortName": "Desempeño", "minCredits": 90 }
+          ],
+          "periods": [
+            { "label": "Semestre 1", "courses": [
+              { "id": "curso-introductorio", "name": "Curso Introductorio", "credits": 1, "requirementId": "nut-disciplinares" },
+              { "id": "bases-biologicas", "name": "Bases Biológicas de la Nutrición Humana", "credits": 11, "requirementId": "nut-disciplinares" },
+              { "id": "microbiologia-alimentaria", "name": "Microbiología Alimentaria", "credits": 8, "requirementId": "nut-disciplinares" },
+              { "id": "quimica-alimentaria", "name": "Química Alimentaria", "credits": 8, "requirementId": "nut-disciplinares" },
+              { "id": "fundamentos-nutricion", "name": "Fundamentos de la Nutrición Humana", "credits": 10, "requirementId": "nut-disciplinares" },
+              { "id": "metodologia-practicas", "name": "Metodología de las Prácticas Articuladoras", "credits": 3, "requirementId": "nut-disciplinares" }
+            ] },
+            { "label": "Semestre 2", "courses": [
+              { "id": "normativa-alimentaria", "name": "Normativa Alimentaria", "credits": 4, "requirementId": "nut-disciplinares" },
+              { "id": "bioquimica-nutricional", "name": "Bioquímica Nutricional", "credits": 13, "requirementId": "nut-disciplinares" },
+              { "id": "sansa", "name": "Seguridad Alimentaria Nutricional y Soberanía Alimentaria", "credits": 11, "requirementId": "nut-disciplinares" },
+              { "id": "administracion-profesional", "name": "Administración Aplicada al Ejercicio Profesional", "credits": 5, "requirementId": "nut-disciplinares" },
+              { "id": "practica-articuladora-1", "name": "Práctica Articuladora I", "credits": 5, "requirementId": "nut-practicas-articuladoras" }
+            ] },
+            { "label": "Semestre 3", "courses": [
+              { "id": "diagnostico-estado-nutricional", "name": "Diagnóstico y Evaluación del Estado Nutricional", "credits": 5, "requirementId": "nut-disciplinares" },
+              { "id": "nutricion-ciclo-vida", "name": "Nutrición y Alimentación en el Ciclo de la Vida", "credits": 10, "requirementId": "nut-disciplinares" },
+              { "id": "salud-publica", "name": "Salud Pública", "credits": 5, "requirementId": "nut-disciplinares" },
+              { "id": "bioestadistica-investigacion", "name": "Bioestadística y Métodos de la Investigación", "credits": 10, "requirementId": "nut-disciplinares" },
+              { "id": "practica-articuladora-2", "name": "Práctica Articuladora II", "credits": 5, "requirementId": "nut-practicas-articuladoras" }
+            ] },
+            { "label": "Semestre 4", "courses": [
+              { "id": "produccion-alimentos", "name": "Producción e Industrialización de Alimentos", "credits": 8, "requirementId": "nut-disciplinares" },
+              { "id": "transformaciones-alimentos", "name": "Transformaciones Físico-Químicas de los Alimentos", "credits": 11, "requirementId": "nut-disciplinares" },
+              { "id": "epidemiologia-nutricional", "name": "Epidemiología Nutricional", "credits": 6, "requirementId": "nut-disciplinares" },
+              { "id": "educacion-alimentacion", "name": "Educación en Alimentación y Nutrición: Fundamentos y Praxis", "credits": 11, "requirementId": "nut-disciplinares" },
+              { "id": "practica-articuladora-3", "name": "Práctica Articuladora III", "credits": 5, "requirementId": "nut-practicas-articuladoras" }
+            ] },
+            { "label": "Semestre 5", "courses": [
+              { "id": "etica-alimentacion", "name": "Ética de la Alimentación", "credits": 3, "requirementId": "nut-disciplinares" },
+              { "id": "nutricion-poblacional", "name": "Nutrición Poblacional", "credits": 10, "requirementId": "nut-disciplinares" },
+              { "id": "diseno-alimentos", "name": "Diseño de Alimentos", "credits": 4, "requirementId": "nut-disciplinares" },
+              { "id": "nutricion-clinica-1", "name": "Nutrición Clínica I", "credits": 11, "requirementId": "nut-disciplinares" },
+              { "id": "practica-articuladora-4", "name": "Práctica Articuladora IV", "credits": 8, "requirementId": "nut-practicas-articuladoras" }
+            ] },
+            { "label": "Semestre 6", "courses": [
+              { "id": "nutricion-clinica-2", "name": "Nutrición Clínica II", "credits": 11, "requirementId": "nut-disciplinares" },
+              { "id": "gestion-alimentacion-colectiva", "name": "Gestión de Servicios de Alimentación Colectiva", "credits": 11, "requirementId": "nut-disciplinares" },
+              { "id": "practica-articuladora-5", "name": "Práctica Articuladora V", "credits": 17, "requirementId": "nut-practicas-articuladoras" }
+            ] },
+            { "label": "Semestre 7", "courses": [
+              { "id": "practica-profesional", "name": "Práctica Profesional", "credits": 45, "requirementId": "nut-desempeno-profesional" }
+            ] },
+            { "label": "Semestre 8", "courses": [
+              { "id": "trabajo-final-grado", "name": "Trabajo Final de Grado", "credits": 45, "requirementId": "nut-desempeno-profesional" }
+            ] },
+            { "label": "Catálogo flexible", "catalog": true, "courses": [
+              { "id": "creditos-optativos", "name": "Créditos optativos", "credits": 30, "requirementId": "nut-optativas", "curricularBlock": true },
+              { "id": "creditos-electivos", "name": "Créditos electivos", "credits": 10, "requirementId": "nut-electivas", "curricularBlock": true }
+            ] }
+          ],
+          "creditGroups": [
+            { "id": "nut-ciclo-1-ucobs", "courseIds": ["curso-introductorio", "bases-biologicas", "microbiologia-alimentaria", "quimica-alimentaria", "fundamentos-nutricion", "metodologia-practicas", "normativa-alimentaria", "bioquimica-nutricional", "sansa", "administracion-profesional"] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "nut-disciplinarias-obligatorias", "label": "Unidades curriculares disciplinares obligatorias", "minCompleted": 24, "courseIds": ["curso-introductorio", "bases-biologicas", "microbiologia-alimentaria", "quimica-alimentaria", "fundamentos-nutricion", "metodologia-practicas", "normativa-alimentaria", "bioquimica-nutricional", "sansa", "administracion-profesional", "diagnostico-estado-nutricional", "nutricion-ciclo-vida", "salud-publica", "bioestadistica-investigacion", "produccion-alimentos", "transformaciones-alimentos", "epidemiologia-nutricional", "educacion-alimentacion", "etica-alimentacion", "nutricion-poblacional", "diseno-alimentos", "nutricion-clinica-1", "nutricion-clinica-2", "gestion-alimentacion-colectiva"] },
+            { "id": "nut-practicas-obligatorias", "label": "Prácticas articuladoras", "minCompleted": 5, "courseIds": ["practica-articuladora-1", "practica-articuladora-2", "practica-articuladora-3", "practica-articuladora-4", "practica-articuladora-5"] },
+            { "id": "nut-ciclo-4-obligatorio", "label": "Práctica profesional y trabajo final", "minCompleted": 2, "courseIds": ["practica-profesional", "trabajo-final-grado"] }
+          ],
+          "prerequisites": [
+            { "targetId": "practica-articuladora-1", "courseIds": ["metodologia-practicas"] },
+            { "targetId": "practica-articuladora-2", "courseIds": ["practica-articuladora-1"] },
+            { "targetId": "practica-articuladora-3", "courseIds": ["practica-articuladora-2"] },
+            { "targetId": "practica-articuladora-4", "courseIds": ["practica-articuladora-3"], "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "practica-articuladora-5", "courseIds": ["practica-articuladora-4"], "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "etica-alimentacion", "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "nutricion-poblacional", "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "diseno-alimentos", "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "nutricion-clinica-1", "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "nutricion-clinica-2", "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "gestion-alimentacion-colectiva", "minCredits": 56, "minCreditsGroupId": "nut-ciclo-1-ucobs", "minCreditsGroupName": "unidades obligatorias del Ciclo I" },
+            { "targetId": "practica-profesional", "courseIds": ["curso-introductorio", "bases-biologicas", "microbiologia-alimentaria", "quimica-alimentaria", "fundamentos-nutricion", "metodologia-practicas", "normativa-alimentaria", "bioquimica-nutricional", "sansa", "administracion-profesional", "diagnostico-estado-nutricional", "nutricion-ciclo-vida", "salud-publica", "bioestadistica-investigacion", "produccion-alimentos", "transformaciones-alimentos", "epidemiologia-nutricional", "educacion-alimentacion", "etica-alimentacion", "nutricion-poblacional", "diseno-alimentos", "nutricion-clinica-1", "nutricion-clinica-2", "gestion-alimentacion-colectiva"] },
+            { "targetId": "trabajo-final-grado", "courseIds": ["practica-articuladora-5", "curso-introductorio", "bases-biologicas", "microbiologia-alimentaria", "quimica-alimentaria", "fundamentos-nutricion", "metodologia-practicas", "normativa-alimentaria", "bioquimica-nutricional", "sansa", "administracion-profesional", "diagnostico-estado-nutricional", "nutricion-ciclo-vida", "salud-publica", "bioestadistica-investigacion", "produccion-alimentos", "transformaciones-alimentos", "epidemiologia-nutricional", "educacion-alimentacion"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "ENUT", "locations": ["Montevideo"], "role": "carrera completa", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú · sólo Ciclo IV"], "role": "oferta exclusiva del Ciclo IV de Desempeño Profesional", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/enut-licenciatura-en-nutricion-2014.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías identifica el plan vigente y sus 360 créditos, pero no publica la composición. Escuela de Nutrición publica la malla, los programas y las disposiciones reglamentarias vigentes; Udelar delimita la oferta de Paysandú al Ciclo IV."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-four-cycle-plan-one-full-campus-one-partial-final-cycle-campus",
+        "regionalCurriculumVariant": false,
+        "reason": "Existe un único título y un único Plan 2014. Paysandú habilita solamente el Ciclo IV del mismo currículo; los campos de práctica y las unidades optativas o electivas permiten recorridos personales, pero no son trayectorias certificadas.",
+        "normalization": [
+          "Mostrar una carrera bajo Escuela de Nutrición, un Plan 2014 y 360 créditos en ocho semestres.",
+          "Mostrar Montevideo como carrera completa y Paysandú con la etiqueta explícita de que allí sólo se realiza el Ciclo IV.",
+          "Exigir 190 créditos disciplinares, 30 optativos, 10 electivos, 40 de prácticas articuladoras y 90 de desempeño profesional.",
+          "Mantener optativas y electivas en el catálogo flexible, sin crear un noveno semestre ni una trayectoria artificial.",
+          "Automatizar la cadena de prácticas, el mínimo de 56 créditos obligatorios del Ciclo I para ingresar al Ciclo III y las condiciones de acceso a Práctica Profesional y TFG que la UI puede representar fielmente."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.nutricion.edu.uy/wp-content/uploads/2019/07/Plan-Estudios-2014-1.pdf", "authority": "Escuela de Nutrición", "supports": ["título", "ocho semestres", "360 créditos", "cuatro ciclos", "modalidades de formación", "flexibilidad curricular"] },
+        { "url": "https://www.nutricion.edu.uy/?page_id=11002", "authority": "Escuela de Nutrición", "supports": ["vigencia del Plan 2014", "organización por ciclos", "prácticas articuladoras", "carácter flexible"] },
+        { "url": "https://www.nutricion.edu.uy/wp-content/uploads/2024/11/malla-curricular-V2png.jpg", "authority": "Escuela de Nutrición", "supports": ["malla vigente", "créditos por unidad", "áreas", "Práctica Profesional", "Trabajo Final de Grado"] },
+        { "url": "https://www.nutricion.edu.uy/?page_id=654", "authority": "Escuela de Nutrición", "supports": ["unidades obligatorias vigentes", "programas oficiales 2024"] },
+        { "url": "https://www.nutricion.edu.uy/wp-content/uploads/2025/12/Disposiciones-reglamentarias-Actualizado-Diciembre-2025.pdf", "authority": "Escuela de Nutrición", "supports": ["previaturas", "mínimos por ciclo", "acceso a práctica profesional", "inicio y defensa del TFG"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-nutricion", "authority": "Universidad de la República", "supports": ["vigencia", "48 meses", "360 créditos", "Montevideo", "Ciclo IV en Paysandú"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-nutricion/", "authority": "Udelar en el Interior", "supports": ["prácticas preprofesionales en Paysandú", "alcance territorial parcial"] }
+      ],
+      "anomalies": [
+        { "field": "regionalScope", "resolution": "Paysandú no dicta la carrera completa: únicamente habilita el Ciclo IV. Se muestra como opción territorial con alcance explícito y no como carrera, plan o trayectoria duplicada." },
+        { "field": "flexiblePaths", "resolution": "El plan permite itinerarios flexibles y campos de práctica reorientables, pero no publica orientaciones certificadas. No se crea un selector de trayectoria." },
+        { "field": "optionalOffer", "resolution": "La oferta de optativas cambia por semestre. La UI conserva bloques de 30 créditos optativos y 10 electivos en el catálogo flexible, en vez de congelar como obligatoria una oferta temporal." },
+        { "field": "cycleTwoEnrollment", "resolution": "El ingreso al Ciclo II exige haber rendido al menos una evaluación de determinadas unidades del Ciclo I. La UI no registra intentos no aprobados, por lo que esa condición se informa pero no se endurece como aprobación obligatoria." },
+        { "field": "finalWorkDefense", "resolution": "Para iniciar el TFG se exige Práctica Articuladora V y las obligatorias de ciclos I y II; para defenderlo deben estar aprobadas también las obligatorias del Ciclo III. La tarjeta automatiza el inicio y el aviso conserva la condición de defensa, sin bloquear anticipadamente con una regla más estricta." },
+        { "field": "professionalPracticeCredits", "resolution": "La descripción general agrupa 90 créditos como práctica profesional; la malla vigente los desagrega en 45 de Práctica Profesional y 45 de Trabajo Final de Grado. La UI usa esa desagregación actual." }
+      ],
+      "remainingWork": "La malla, los mínimos, la flexibilidad, las previaturas representables y el alcance territorial quedan operativos. Mantener actualizado el catálogo de optativas por separado y ampliar el estado académico sólo si se necesita representar intentos de evaluación o condiciones de defensa distintas del inicio del TFG."
     }
   ],
-  "contentHash": "sha256:2d5acd1ecc337febfa6d18b1f3e9505b46c6cd30b8a792bdbbb2726ac36c6c4e"
+  "contentHash": "sha256:3b8744e5f48e13ad1bb2b7112f3f185bc42f9449ebe6322ada44a6eb09123fb6"
 }

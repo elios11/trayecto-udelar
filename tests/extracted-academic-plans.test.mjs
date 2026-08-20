@@ -33,6 +33,7 @@ test("cada proyección diferida conserva referencias internas válidas y estado 
     }
     for (const pathway of Object.values(projection.pathways)) {
       for (const id of pathway.periods.flatMap((period) => period.courseIds)) assert.ok(ids.has(id), `${item.identity}: referencia ${id}`);
+      for (const id of pathway.catalogCourseIds ?? []) assert.ok(ids.has(id), `${item.identity}: referencia de catálogo ${id}`);
     }
     if (!item.compositionAvailable) {
       assert.equal(projection.courses.length, 0, item.identity);
@@ -72,6 +73,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["tecnologo en administracion y contabilidad:2012", ["colonia", "mercedes", "tacuarembo", "maldonado", "rocha", "treinta-y-tres"]],
     ["licenciatura en gestion ambiental:2011", ["maldonado", "rocha", "treinta-y-tres"]],
     ["tecnologo carnico:2010", ["tacuarembo", "durazno"]],
+    ["licenciatura en nutricion:2014", ["montevideo", "paysandu-solo-ciclo-iv"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

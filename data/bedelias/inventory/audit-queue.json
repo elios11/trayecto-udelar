@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T15:39:51.861Z",
+  "generatedAt": "2026-08-20T16:00:37.667Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:2d5acd1ecc337febfa6d18b1f3e9505b46c6cd30b8a792bdbbb2726ac36c6c4e"
+    "officialAuditRegistryHash": "sha256:3b8744e5f48e13ad1bb2b7112f3f185bc42f9449ebe6322ada44a6eb09123fb6"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 39,
-    "pendingCanonicalIdentities": 138,
+    "evidenceClosedCanonicalIdentities": 40,
+    "pendingCanonicalIdentities": 137,
     "byPriority": {
-      "composition-unavailable": 29,
+      "composition-unavailable": 28,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -256,38 +256,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-semi-open-plan-two-campuses-three-axes"
+    },
+    {
+      "identity": "licenciatura en nutricion:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-flexible-four-cycle-plan-one-full-campus-one-partial-final-cycle-campus"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en nutricion:2014",
-      "career": {
-        "name": "LICENCIATURA EN NUTRICIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "LICENCIATURA EN NUTRICIÓN",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ENUT",
-        "serviceName": "ESCUELA DE NUTRICIÓN",
-        "planKey": "ENUT:licenciatura en nutricion:2014",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ENUT",
-          "serviceName": "ESCUELA DE NUTRICIÓN",
-          "planKey": "ENUT:licenciatura en nutricion:2014",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en vitivinicultura:2006",
       "career": {
@@ -4494,5 +4471,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:873982255ea63dc0b92214440fae28e065a452fdfe4ade8d75bb8ddfce17942e"
+  "contentHash": "sha256:e8ea913bd94da75d35e00f84ca4ee2498c3d42409ce2d41dd0a1d98d585d645c"
 }

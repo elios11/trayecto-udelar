@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:873982255ea63dc0b92214440fae28e065a452fdfe4ade8d75bb8ddfce17942e",
-    "officialAuditHash": "sha256:2d5acd1ecc337febfa6d18b1f3e9505b46c6cd30b8a792bdbbb2726ac36c6c4e",
+    "auditQueueHash": "sha256:e8ea913bd94da75d35e00f84ca4ee2498c3d42409ce2d41dd0a1d98d585d645c",
+    "officialAuditHash": "sha256:3b8744e5f48e13ad1bb2b7112f3f185bc42f9449ebe6322ada44a6eb09123fb6",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 118,
-    "compositionUnavailable": 57,
-    "plansWithOfficialCampuses": 28,
+    "compositionAvailable": 119,
+    "compositionUnavailable": 56,
+    "plansWithOfficialCampuses": 29,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -315,9 +315,12 @@
       "planId": "bedelias-enut-licenciatura-en-nutricion-2014",
       "facultyCode": "ENUT",
       "snapshotPath": "data/bedelias/enut-licenciatura-en-nutricion-2014.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo",
+        "paysandu-solo-ciclo-iv"
+      ]
     },
     {
       "identity": "ingeniero agronomo:2020",
@@ -1707,5 +1710,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:92c53214f1f83ef25055edf74d559955777d1d5844caaf664c70ac35b608beb9"
+  "contentHash": "sha256:4e7a5eb619ae65511a3369e958fcb9eced71ed17657b543927cb460540e588de"
 }

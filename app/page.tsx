@@ -174,10 +174,11 @@ type RegisteredProjection = {
   plan: { year: string; current: boolean; degreeTitle: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
   courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
-  pathways: Record<string, { label: string; description: string; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }> }>;
+  pathways: Record<string, { label: string; description: string; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
   requirementGroupMap: Record<string, string>;
+  requirementCourseGroups?: Record<string, string[]>;
   audit: { anomalies: unknown[]; priority?: string; publicationEligible?: boolean };
 };
 
@@ -348,9 +349,10 @@ function buildRegisteredPlanCourses(pathwayId: string, data: RegisteredProjectio
   if (!pathway) return [];
   const periods = new Map<string, number>();
   pathway.periods.forEach((period, index) => period.courseIds.forEach((id) => periods.set(id, index + 1)));
+  const catalogIds = new Set(pathway.catalogCourseIds ?? []);
   return data.courses
-    .filter((course) => periods.has(course.id))
-    .map((course) => ({ ...course, semester: periods.get(course.id)!, offered: [] }));
+    .filter((course) => periods.has(course.id) || catalogIds.has(course.id))
+    .map((course) => ({ ...course, semester: catalogIds.has(course.id) ? "opt" : periods.get(course.id)!, offered: [] }));
 }
 
 function optionSatisfied(option: RequirementOption, statuses: Record<string, CourseStatus>) {
@@ -1320,6 +1322,13 @@ export default function Home() {
     : isComplete(id);
   const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.bedeliasCode ?? (course.id === "1730-A" ? "1730" : course.id)}:${assessment}`);
   const groupCredits = (groupCode: string) => {
+    const registeredCourseGroup = isRegisteredPlan ? activeRegisteredPlan?.requirementCourseGroups?.[groupCode] : undefined;
+    if (registeredCourseGroup) {
+      return registeredCourseGroup.reduce((sum, courseId) => {
+        const course = activeCourses.find((item) => item.id === courseId);
+        return sum + (course && statuses[courseId] === "exonerated" ? course.credits : 0);
+      }, 0);
+    }
     const nodeId = planYear === "1997"
       ? bedeliasData.requirementGroupMap[groupCode]
       : isRegisteredPlan ? activeRegisteredPlan?.requirementGroupMap[groupCode] : isProfilePlan ? activeProfileData?.requirementGroupMap[groupCode] : planYear === "qf-2015" ? qf2015Data?.requirementGroupMap[groupCode] : undefined;

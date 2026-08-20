@@ -71,7 +71,7 @@ function auditCampuses(audit) {
         .replace(/^Sede\s+/i, "")
         .trim();
       const key = normalize(compact);
-      if (!labels.has(key)) labels.set(key, { label: titleCase(compact), pathwayIds: [] });
+      if (!labels.has(key)) labels.set(key, { label: titleCase(compact).replace(/\bCiclo Iv\b/, "Ciclo IV"), pathwayIds: [] });
       const entry = labels.get(key);
       entry.pathwayIds.push(...offeringPathwayIds(offering).filter((id) => !entry.pathwayIds.includes(id)));
     }
@@ -170,6 +170,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
     }));
   }
   const hasOfficialCourses = audit?.officialPlan?.curriculum?.periods?.some((period) => (period.courses ?? []).length > 0) === true;
+  const catalogCourseIds = periods.filter((period) => period.catalog).flatMap((period) => period.courseIds);
   const pathways = {
     bedelias: {
       label: audit?.officialPlan?.curriculum?.pathwayLabel
@@ -181,7 +182,8 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
             : "Mínimos y requisitos publicados por el servicio universitario; la composición por unidades curriculares sigue pendiente."
           : "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada."),
       campusIds: campuses.map((campus) => campus.id),
-      periods,
+      periods: periods.filter((period) => !period.catalog),
+      ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
     },
   };
   if (audit?.identity === "ingeniero agronomo:2020") {
@@ -242,7 +244,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
       if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
       courseIds.push(id);
     }
-    periods.push({ label: period.label, courseIds });
+    periods.push({ label: period.label, courseIds, ...(period.catalog === true ? { catalog: true } : {}) });
   }
 
   const nodes = [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: Number(audit.officialPlan.minimumCredits), sourceStatus: "official", sourceUrl }];
@@ -267,7 +269,12 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     sourceUrl,
   }));
 
-  return { courses, periods, nodes, requiredCourseGroups, sourceUrl, courseIdBySourceId };
+  const requirementCourseGroups = Object.fromEntries((curriculum.creditGroups ?? []).map((group) => [
+    group.id,
+    group.courseIds.map((id) => courseIdBySourceId.get(id)).filter(Boolean),
+  ]));
+
+  return { courses, periods, nodes, requiredCourseGroups, requirementCourseGroups, sourceUrl, courseIdBySourceId };
 }
 
 function emptyRequirementExpression(overrides = {}) {
@@ -307,10 +314,20 @@ function buildOfficialPrerequisiteRules(audit, officialCurriculum, serviceCode) 
       })];
     });
     if (Number(prerequisite.minCredits) > 0) {
-      children.push(emptyRequirementExpression({
-        label: `${Number(prerequisite.minCredits)} créditos obtenidos`,
-        creditRequirement: { minimum: Number(prerequisite.minCredits), planYear: String(audit.planYear), planName: audit.career },
-      }));
+      const minimum = Number(prerequisite.minCredits);
+      children.push(prerequisite.minCreditsGroupId
+        ? emptyRequirementExpression({
+          label: `${minimum} créditos en ${prerequisite.minCreditsGroupName ?? prerequisite.minCreditsGroupId}`,
+          groupCreditRequirement: {
+            minimum,
+            groupCode: prerequisite.minCreditsGroupId,
+            groupName: prerequisite.minCreditsGroupName ?? prerequisite.minCreditsGroupId,
+          },
+        })
+        : emptyRequirementExpression({
+          label: `${minimum} créditos obtenidos`,
+          creditRequirement: { minimum, planYear: String(audit.planYear), planName: audit.career },
+        }));
     }
     if (children.length === 0) return [];
     return [{
@@ -451,6 +468,9 @@ function buildProjection(entry, snapshot, audit) {
       campuses,
       rules,
       requirementGroupMap: {},
+      ...(officialCurriculum && Object.keys(officialCurriculum.requirementCourseGroups).length > 0
+        ? { requirementCourseGroups: officialCurriculum.requirementCourseGroups }
+        : {}),
       audit: { anomalies: snapshot.validation?.issues ?? [], priority: entry.priority ?? "official-evidence-complete", publicationEligible: false },
     },
   };

@@ -907,3 +907,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:2d5acd1ecc337febfa6d18b1f3e9505b46c6cd30b8a792bdbbb2726ac36c6c4e`. Cola actualizada: 138 identidades pendientes, 29 sin composición; hash `sha256:873982255ea63dc0b92214440fae28e065a452fdfe4ade8d75bb8ddfce17942e`.
 - Manifiesto UI: 175 proyecciones, 118 con composición y 57 sin composición; hash `sha256:92c53214f1f83ef25055edf74d559955777d1d5844caaf664c70ac35b608beb9`.
 - Siguiente paso: auditar Licenciatura en Nutrición Plan 2014, próxima identidad sin composición de la cola reproducible.
+
+### Licenciatura en Nutrición Plan 2014 — ciclos, flexibilidad, previaturas y alcance territorial auditados 2026-08-20
+
+- Escuela de Nutrición mantiene un único Plan 2014, título `Licenciado en Nutrición`, cuatro años, ocho semestres y 360 créditos. La UI incorpora 31 unidades obligatorias o actividades y dos bloques flexibles.
+- El egreso exige 190 créditos disciplinares, 30 optativos, 10 electivos, 40 de prácticas articuladoras y 90 de Desempeño Profesional. La malla vigente desagrega estos últimos en Práctica Profesional 45 y Trabajo Final de Grado 45.
+- Los créditos optativos y electivos aparecen en el catálogo flexible: no crean un noveno semestre ni se congelan como materias obligatorias las ofertas que Escuela de Nutrición actualiza cada período.
+- La cadena de cinco prácticas articuladoras queda automatizada. El ingreso al Ciclo III exige 56 créditos de las unidades obligatorias del Ciclo I; el nuevo soporte de grupos calcula ese mínimo dentro del ciclo y no contra créditos cualesquiera del plan.
+- Práctica Profesional exige las 24 unidades disciplinares de los tres primeros ciclos. El inicio del TFG exige Práctica Articuladora V y las obligatorias de ciclos I y II. Las condiciones basadas sólo en haber rendido una evaluación y la defensa final del TFG quedan documentadas sin transformarse en bloqueos más estrictos que la norma.
+- La carrera completa se dicta en Montevideo. Paysandú permite realizar únicamente el Ciclo IV de Desempeño Profesional; se muestra como `Paysandú · sólo Ciclo IV` dentro del mismo plan y progreso, no como carrera o trayectoria duplicada.
+- Los campos de práctica y los itinerarios flexibles son elecciones personales reorientables y no trayectorias certificadas, por lo que no se crea un selector adicional.
+- Registro de auditoría: hash `sha256:3b8744e5f48e13ad1bb2b7112f3f185bc42f9449ebe6322ada44a6eb09123fb6`. Cola actualizada: 137 identidades pendientes, 28 sin composición; hash `sha256:e8ea913bd94da75d35e00f84ca4ee2498c3d42409ce2d41dd0a1d98d585d645c`.
+- Manifiesto UI: 175 proyecciones, 119 con composición y 56 sin composición; hash `sha256:4e7a5eb619ae65511a3369e958fcb9eced71ed17657b543927cb460540e588de`.
+- Siguiente paso: auditar Licenciatura en Vitivinicultura Plan 2006, próxima identidad sin composición de la cola reproducible.
