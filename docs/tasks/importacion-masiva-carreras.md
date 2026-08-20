@@ -699,3 +699,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:8016548a4c8d61b83d8bff6cf7a369442887903e1e8168646859a5cab10f53f8`. Cola actualizada: 158 identidades pendientes, 11 de prioridad `insufficient-regional-content`; hash `sha256:7fc6c7a1c21af3f3f78201f8bfec51071c4d9bccf6e8a272b0e2f4acca09c46d`.
 - Manifiesto UI: 175 proyecciones, 98 con composición, 77 sin composición y diecisiete con sedes oficiales; hash `sha256:f917e6d66a56f53a7f9e6df1f159a116daef79cbe43cd0c7af70aea8998e75c3`.
 - Siguiente paso: auditar Licenciatura en Laboratorio Clínico Plan 2006 entre Facultad de Medicina y Paysandú.
+
+### Licenciatura en Laboratorio Clínico Plan 2006 — malla y sedes auditadas 2026-08-20
+
+- Facultad de Medicina mantiene el Plan 2006 con título `Licenciado en Laboratorio Clínico`, cuatro años y 3880 horas. La malla oficial contiene 28 unidades: 13 en primer año, 7 en segundo, 5 en tercero y 3 en cuarto.
+- La UI conserva las unidades por año, las prácticas de laboratorio, Internado y Monografía. Como el plan vigente está expresado en horas y no publica créditos, mantiene cero créditos explícitos y no inventa conversiones ni previaturas.
+- Montevideo y Paysandú ofrecen el mismo plan completo, sin evidencia de título, mínimos o trayectoria territorial diferente. Los snapshots de ambas ofertas no exponen materias normalizadas y la composición se atribuye a Facultad de Medicina.
+- Registro de auditoría: hash `sha256:d77fada9156c794714dcb62988df34e72db91f63e82ec1cdd98f94d82fff3976`. Cola actualizada: 157 identidades pendientes, 10 de prioridad `insufficient-regional-content`; hash `sha256:ca334be7fdc7177aadb06242293e1a1d0d09912858b2d1b458214a990ddd46ec`.
+- Manifiesto UI: 175 proyecciones, 99 con composición, 76 sin composición y dieciocho con sedes oficiales; hash `sha256:0ade848365ffe333df4cc9eb1c38d889aa005d4df67bbc9b50631505038fc9d1`.
+- Siguiente paso: auditar Licenciatura en Psicomotricidad Plan 2006 entre Facultad de Medicina y Paysandú.

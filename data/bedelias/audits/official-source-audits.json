@@ -2962,7 +2962,142 @@
         { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
       ],
       "remainingWork": "La identidad, malla horaria y sedes del Plan 2006 quedan normalizadas. Cualquier plan creditizado futuro requerirá una auditoría nueva antes de reemplazar esta proyección."
+    },
+    {
+      "identity": "licenciatura en laboratorio clinico:2006",
+      "career": "LICENCIATURA EN LABORATORIO CLÍNICO",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"],
+        "title": "Licenciado en Laboratorio Clínico",
+        "durationMonths": 48,
+        "hours": 3880,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-laboratorio-clinico/plan-de-estudio",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "anatomia", "name": "Anatomía", "credits": 0 },
+                { "id": "biologia-celular-tisular", "name": "Biología celular y tisular", "credits": 0 },
+                { "id": "neurobiologia", "name": "Neurobiología", "credits": 0 },
+                { "id": "cardiovascular-respiratorio", "name": "Cardiovascular y respiratorio", "credits": 0 },
+                { "id": "digestivo-renal-endocrino", "name": "Digestivo renal y endócrino", "credits": 0 },
+                { "id": "reproductor-desarrollo", "name": "Reproductor y desarrollo", "credits": 0 },
+                { "id": "introduccion-laboratorio-clinico", "name": "Introducción al Laboratorio Clínico", "credits": 0 },
+                { "id": "psicologia-1", "name": "Psicología I", "credits": 0 },
+                { "id": "metodologia-cientifica", "name": "Metodología científica", "credits": 0 },
+                { "id": "enfermeria-1", "name": "Enfermería I", "credits": 0 },
+                { "id": "salud-publica", "name": "Salud Pública", "credits": 0 },
+                { "id": "deontologia-legislacion", "name": "Deontología y legislación laboral", "credits": 0 },
+                { "id": "administracion-hospitalaria", "name": "Administración hospitalaria", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "bioquimica-clinica", "name": "Bioquímica Clínica", "credits": 0 },
+                { "id": "practico-medio-interno-funcionalidad-renal", "name": "Práctico Medio Interno y Funcionalidad Renal", "credits": 0 },
+                { "id": "practico-funcional-hepatico-enzimologia", "name": "Práctico Funcional Hepático y Enzimología", "credits": 0 },
+                { "id": "practico-proteinas-glucidos-lipidos", "name": "Práctico Proteínas, Glúcidos y Lípidos", "credits": 0 },
+                { "id": "practico-extraccion-sangre", "name": "Práctico Extracción de sangre", "credits": 0 },
+                { "id": "hematologia-teorico", "name": "Hematología (Teórico)", "credits": 0 },
+                { "id": "practico-hematologia", "name": "Práctico de Hematología", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "microbiologia-a-seminarios", "name": "Microbiología A) Bacteriología y Virología. Seminarios", "credits": 0 },
+                { "id": "practico-microbiologia-a", "name": "Práctico de Microbiología A) Bacteriología y Virología", "credits": 0 },
+                { "id": "microbiologia-b-seminarios", "name": "Microbiología B) Parasitología. Seminarios", "credits": 0 },
+                { "id": "practico-microbiologia-b", "name": "Práctico de Microbiología B) Parasitología", "credits": 0 },
+                { "id": "inmunologia-seminarios", "name": "Inmunología Seminarios", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Cuarto año",
+              "courses": [
+                { "id": "practico-inmunologia", "name": "Práctico de Inmunología", "credits": 0 },
+                { "id": "internado", "name": "Internado", "credits": 0 },
+                { "id": "monografia", "name": "Monografía", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "laboratorio-primer-ano", "label": "Primer año", "minCompleted": 13, "courseIds": ["anatomia", "biologia-celular-tisular", "neurobiologia", "cardiovascular-respiratorio", "digestivo-renal-endocrino", "reproductor-desarrollo", "introduccion-laboratorio-clinico", "psicologia-1", "metodologia-cientifica", "enfermeria-1", "salud-publica", "deontologia-legislacion", "administracion-hospitalaria"] },
+            { "id": "laboratorio-segundo-ano", "label": "Segundo año", "minCompleted": 7, "courseIds": ["bioquimica-clinica", "practico-medio-interno-funcionalidad-renal", "practico-funcional-hepatico-enzimologia", "practico-proteinas-glucidos-lipidos", "practico-extraccion-sangre", "hematologia-teorico", "practico-hematologia"] },
+            { "id": "laboratorio-tercer-ano", "label": "Tercer año", "minCompleted": 5, "courseIds": ["microbiologia-a-seminarios", "practico-microbiologia-a", "microbiologia-b-seminarios", "practico-microbiologia-b", "inmunologia-seminarios"] },
+            { "id": "laboratorio-cuarto-ano", "label": "Cuarto año, internado y monografía", "minCompleted": 3, "courseIds": ["practico-inmunologia", "internado", "monografia"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FMED", "locations": ["Montevideo"], "role": "servicio responsable y sede completa del Plan 2006", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "sede completa del mismo Plan 2006", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-licenciatura-en-laboratorio-clinico-2006.json",
+        "regionalSnapshot": "data/bedelias/cenurln-licenciatura-en-laboratorio-clinico-2006.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los snapshots no exponen unidades creditizadas. Facultad publica una única malla horaria y Udelar confirma la carrera completa en Montevideo y Paysandú."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Medicina y el catálogo territorial describen el mismo Plan 2006, título, duración y malla en ambas sedes.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Laboratorio Clínico Plan 2006.",
+          "Modelar Montevideo y Paysandú como sedes completas del mismo plan, sin trayectoria territorial.",
+          "Usar las 28 unidades y cuatro años publicados por Facultad de Medicina como malla oficial.",
+          "Conservar 3880 horas y créditos en cero; no convertir horas a créditos.",
+          "Exigir las unidades publicadas por año, incluido Internado y Monografía, sin inventar previaturas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-laboratorio-clinico/plan-de-estudio",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["malla vigente por cuatro años", "28 unidades y carga horaria", "Internado y Monografía"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-laboratorio-clinico",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["título, cuatro años y 3880 horas", "ingreso en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["oferta vigente en Paysandú"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/gestion/bedelia/parque-batlle",
+          "authority": "Bedelía de Facultad de Medicina, Udelar",
+          "supports": ["vigencia administrativa del Plan 2006 en 2026"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/cursos/programas/2026/Laboratorio%20Cl%C3%ADnico/Programa%20de%20curso%20Internado%20Laboratorio%20Cl%C3%ADnico%202026.pdf",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["actividad curricular Internado vigente en 2026"]
+        }
+      ],
+      "anomalies": [
+        { "field": "credits", "resolution": "El Plan 2006 vigente está expresado en 3880 horas y no publica créditos. Las materias conservan cero créditos explícitos y requisitos por unidad." },
+        { "field": "duration", "resolution": "Facultad de Medicina publica cuatro años; fuentes estadísticas institucionales anteriores confirman la misma duración y carga horaria. Se conserva la duración del servicio responsable." },
+        { "field": "regionalOffering", "resolution": "El catálogo vigente del interior confirma Paysandú, sin publicar una malla o título distinto. Se modela como sede del mismo plan." },
+        { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
+      ],
+      "remainingWork": "La identidad, malla horaria y sedes del Plan 2006 quedan normalizadas. Cualquier plan creditizado futuro requerirá una auditoría nueva antes de reemplazar esta proyección."
     }
   ],
-  "contentHash": "sha256:8016548a4c8d61b83d8bff6cf7a369442887903e1e8168646859a5cab10f53f8"
+  "contentHash": "sha256:d77fada9156c794714dcb62988df34e72db91f63e82ec1cdd98f94d82fff3976"
 }
