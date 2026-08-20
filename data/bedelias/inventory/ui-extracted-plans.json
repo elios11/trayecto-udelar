@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:22040b72eba1eef79bad9692bf360ebb77161862faa016ecf48fc15e1ba53e8e",
-    "officialAuditHash": "sha256:c6b90a70a0ec7876cbd31a8fce6d21c08e9c246a95e5c9cd62230f16564d9d07",
+    "auditQueueHash": "sha256:d642d6a1a5c6ac220afcc9ed2b5c330ad4dfc45368b6537cdf36e25fdea34665",
+    "officialAuditHash": "sha256:8eb514e4f7ad83283e54c13e610230fbd98e7f8789dbaf21cc8cfe8f119b5b9d",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 175,
     "compositionAvailable": 95,
     "compositionUnavailable": 80,
-    "plansWithOfficialCampuses": 13,
+    "plansWithOfficialCampuses": 14,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1082,9 +1082,13 @@
       "planId": "bedelias-fing-lic-en-ingenieria-biologica-2013",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-lic-en-ingenieria-biologica-2013.json",
-      "auditStatus": "extracted",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": false,
-      "campusIds": []
+      "campusIds": [
+        "montevideo-tramo-inicial",
+        "salto-tramo-inicial",
+        "paysandu-carrera-completa"
+      ]
     },
     {
       "identity": "licenciatura en computacion:2025",
@@ -1637,5 +1641,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:c971ce926a825ec322e86f46a9fa7991d97d042831ce3f25b52993f49a3e0f15"
+  "contentHash": "sha256:62461766f773f5c72b07549098227d7cc2be81fcba634eb204d0cf68331c0099"
 }

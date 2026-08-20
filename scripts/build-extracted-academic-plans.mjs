@@ -149,11 +149,14 @@ function buildPathways(audit, periods, courseRecords, campuses) {
       periods: periodsForProfile(courseRecords, option.label),
     }]));
   }
+  const hasOfficialCourses = audit?.officialPlan?.curriculum?.periods?.some((period) => (period.courses ?? []).length > 0) === true;
   const pathways = {
     bedelias: {
-      label: audit?.officialPlan?.curriculum ? "Malla oficial" : "Composición Bedelías",
+      label: hasOfficialCourses ? "Malla oficial" : audit?.officialPlan?.curriculum ? "Estructura oficial" : "Composición Bedelías",
       description: audit?.officialPlan?.curriculum
-        ? "Unidades, créditos y períodos publicados por el servicio universitario; no equivale a una trayectoria territorial."
+        ? hasOfficialCourses
+          ? "Unidades, créditos y períodos publicados por el servicio universitario; no equivale a una trayectoria territorial."
+          : "Mínimos y requisitos publicados por el servicio universitario; la composición por unidades curriculares sigue pendiente."
         : "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada.",
       campusIds: campuses.map((campus) => campus.id),
       periods,
@@ -188,13 +191,15 @@ function normalizeExpressionCourseIds(expression, codeToId, localServiceCode) {
 
 function buildOfficialCurriculum(audit, serviceCode, usedIds) {
   const curriculum = audit?.officialPlan?.curriculum;
-  if (!Array.isArray(curriculum?.periods) || curriculum.periods.length === 0) return null;
+  const hasPeriods = Array.isArray(curriculum?.periods) && curriculum.periods.length > 0;
+  const hasRequirements = Array.isArray(curriculum?.creditRequirements) && curriculum.creditRequirements.length > 0;
+  if (!hasPeriods && !hasRequirements) return null;
 
   const sourceUrl = curriculum.sourceUrl ?? audit.sources?.[0]?.url;
   const courses = [];
   const periods = [];
   const courseIdBySourceId = new Map();
-  for (const period of curriculum.periods) {
+  for (const period of curriculum.periods ?? []) {
     const courseIds = [];
     for (const [index, rawCourse] of (period.courses ?? []).entries()) {
       const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
@@ -301,8 +306,10 @@ function buildProjection(entry, snapshot, audit) {
   const planDocument = audit?.sources?.[0]?.url ?? snapshot.plan?.metadata?.colibriUrl ?? snapshot.plan?.sourceUrl;
   const notice = audit?.identity === "tecnicatura en deportes:2007"
     ? "El Plan 2007 continúa para cohortes existentes, pero no tiene ingreso abierto en Montevideo ni Rocha durante 2026; Paysandú no publica una nueva apertura y Rivera se conserva sólo como antecedente histórico."
-    : officialCurriculum
+    : officialCurriculum?.courses.length
       ? "Malla curricular vigente publicada por el servicio. Las previaturas no se muestran cuando la fuente oficial no las documenta."
+    : officialCurriculum
+      ? "La estructura de créditos y requisitos fue auditada en fuentes oficiales, pero el servicio no publica su composición por unidades curriculares. No se inventan materias ni trayectorias."
     : compositionAvailable
     ? audit
       ? "La identidad, el plan y sus sedes fueron contrastados con fuentes oficiales. La composición mostrada sigue siendo la extracción de Bedelías y no una trayectoria curricular curada."

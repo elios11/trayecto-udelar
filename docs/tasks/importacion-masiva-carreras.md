@@ -657,3 +657,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:c6b90a70a0ec7876cbd31a8fce6d21c08e9c246a95e5c9cd62230f16564d9d07`. Cola actualizada: 162 identidades pendientes, 15 de prioridad `insufficient-regional-content`; hash `sha256:22040b72eba1eef79bad9692bf360ebb77161862faa016ecf48fc15e1ba53e8e`.
 - Manifiesto UI: 175 proyecciones, 95 con composición, 80 sin composición y trece con sedes oficiales; hash `sha256:c971ce926a825ec322e86f46a9fa7991d97d042831ce3f25b52993f49a3e0f15`.
 - Siguiente paso: auditar Licenciatura en Ingeniería Biológica Plan 2013, próxima identidad `insufficient-regional-content`, y distinguir el plan canónico de sus ofertas FING/CENURLN.
+
+### Licenciatura en Ingeniería Biológica Plan 2013 — estructura y cursado territorial auditados 2026-08-20
+
+- El Plan 2013 aprobado por Facultad de Ingeniería y el CDC define un único título `Licenciado en Ingeniería Biológica`, cuatro años, ocho semestres y 360 créditos. Exige además pasantía o actividad equivalente, tesis y un perfil curricular coherente aprobado por la Comisión de Carrera.
+- Se normalizaron los mínimos oficiales: Formación Básica 150, Formación Tecnológica Fundamental 70, Formación Complementaria 10 y Formación Tecnológica 60, con sus mínimos internos, además del requisito transversal de 160 créditos específicos de Ingeniería Biológica.
+- Montevideo y Salto ofrecen el tramo inicial; el cursado territorial converge en Paysandú, donde puede completarse la carrera. La UI explicita estas etapas en el selector de sede y conserva una única identidad, título y plan.
+- Las áreas de Biomecánica y Biomateriales, Bioinstrumentación, Señales e Imágenes Biológicas y Agroindustrial son ejemplos para perfiles individualmente aprobados, no una nómina cerrada vigente. No se publican como trayectorias seleccionables.
+- Los snapshots FING y CENURLN no contienen unidades ni previaturas. La UI muestra la estructura oficial de créditos con procedencia verificable, pero conserva `compositionAvailable: false` y no inventa materias, períodos ni perfiles.
+- La fuente normativa y FING indican cuatro años/ocho semestres; el catálogo del interior informa cuatro años y medio/nueve semestres para la secuencia territorial. Se conserva la duración normativa y se documenta la diferencia operativa.
+- Registro de auditoría: hash `sha256:8eb514e4f7ad83283e54c13e610230fbd98e7f8789dbaf21cc8cfe8f119b5b9d`. Cola actualizada: 161 identidades pendientes, 14 de prioridad `insufficient-regional-content`; hash `sha256:d642d6a1a5c6ac220afcc9ed2b5c330ad4dfc45368b6537cdf36e25fdea34665`.
+- Manifiesto UI: 175 proyecciones, 95 con composición, 80 sin composición y catorce con sedes oficiales; hash `sha256:62461766f773f5c72b07549098227d7cc2be81fcba634eb204d0cf68331c0099`.
+- Siguiente paso: auditar Licenciatura en Fisioterapia Plan 2006 entre Facultad de Medicina y CENUR Litoral Norte.

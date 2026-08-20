@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T06:24:22.034Z",
+  "generatedAt": "2026-08-20T06:32:57.578Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:c6b90a70a0ec7876cbd31a8fce6d21c08e9c246a95e5c9cd62230f16564d9d07"
+    "officialAuditRegistryHash": "sha256:8eb514e4f7ad83283e54c13e610230fbd98e7f8789dbaf21cc8cfe8f119b5b9d"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 15,
-    "pendingCanonicalIdentities": 162,
+    "evidenceClosedCanonicalIdentities": 16,
+    "pendingCanonicalIdentities": 161,
     "byPriority": {
-      "insufficient-regional-content": 15,
+      "insufficient-regional-content": 14,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -113,46 +113,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "lic en ingenieria biologica:2013",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-multiple-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "lic en ingenieria biologica:2013",
-      "career": {
-        "name": "LIC EN INGENIERÍA BIOLÓGICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2013",
-        "name": "LIC EN INGENIERIA BIOLOGICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:lic en ingenieria biologica:2013",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:lic en ingenieria biologica:2013",
-          "state": "extracted"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FING",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
     {
       "identity": "licenciatura en fisioterapia:2006",
       "career": {
@@ -5197,5 +5166,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:22040b72eba1eef79bad9692bf360ebb77161862faa016ecf48fc15e1ba53e8e"
+  "contentHash": "sha256:d642d6a1a5c6ac220afcc9ed2b5c330ad4dfc45368b6537cdf36e25fdea34665"
 }

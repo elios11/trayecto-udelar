@@ -2446,7 +2446,114 @@
         { "field": "regionalAdmissions", "resolution": "La apertura en Paysandú puede variar por cohorte. Esto afecta la disponibilidad de ingreso, no la identidad curricular del plan." }
       ],
       "remainingWork": "La identidad, malla, mínimos y sedes quedan normalizados. Las previaturas y la disponibilidad de ingreso por cohorte deben actualizarse cuando FIC o CENUR publiquen resoluciones específicas; esa ausencia no bloquea la malla oficial actual."
+    },
+    {
+      "identity": "lic en ingenieria biologica:2013",
+      "career": "LICENCIATURA EN INGENIERÍA BIOLÓGICA",
+      "planYear": "2013",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-and-territorial-delivery",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Asamblea del Claustro de Facultad de Ingeniería, 30/05/2013",
+          "Consejo de Facultad de Ingeniería, 18/07/2013",
+          "Consejo Directivo Central, 17/09/2013"
+        ],
+        "title": "Licenciado en Ingeniería Biológica",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "curriculum": {
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/claustro_citaciones/2013/distribuido/6982/03-2013%20Plan%20de%20estudios%20version%2015.pdf",
+          "creditRequirements": [
+            { "id": "lib-formacion-basica", "name": "Formación Básica", "shortName": "Básica", "kind": "group", "minCredits": 150 },
+            { "id": "lib-matematica", "parentId": "lib-formacion-basica", "name": "Matemática", "shortName": "Matemática", "kind": "category", "minCredits": 60 },
+            { "id": "lib-fisica", "parentId": "lib-formacion-basica", "name": "Física", "shortName": "Física", "kind": "category", "minCredits": 30 },
+            { "id": "lib-quimica", "parentId": "lib-formacion-basica", "name": "Química", "shortName": "Química", "kind": "category", "minCredits": 10 },
+            { "id": "lib-informatica", "parentId": "lib-formacion-basica", "name": "Informática", "shortName": "Informática", "kind": "category", "minCredits": 20 },
+            { "id": "lib-biologia", "parentId": "lib-formacion-basica", "name": "Biología", "shortName": "Biología", "kind": "category", "minCredits": 15 },
+            { "id": "lib-formacion-tecnologica-fundamental", "name": "Formación Tecnológica Fundamental", "shortName": "Tecnológica fundamental", "kind": "group", "minCredits": 70 },
+            { "id": "lib-senales-sistemas", "parentId": "lib-formacion-tecnologica-fundamental", "name": "Señales y sistemas", "shortName": "Señales", "kind": "category", "minCredits": 15 },
+            { "id": "lib-procesamiento-senales", "parentId": "lib-formacion-tecnologica-fundamental", "name": "Procesamiento de señales", "shortName": "Procesamiento", "kind": "category", "minCredits": 15 },
+            { "id": "lib-ingenieria-electrica", "parentId": "lib-formacion-tecnologica-fundamental", "name": "Ingeniería eléctrica", "shortName": "Eléctrica", "kind": "category", "minCredits": 5 },
+            { "id": "lib-ingenieria-biologica", "parentId": "lib-formacion-tecnologica-fundamental", "name": "Ingeniería biológica", "shortName": "Biológica", "kind": "category", "minCredits": 20 },
+            { "id": "lib-control", "parentId": "lib-formacion-tecnologica-fundamental", "name": "Control", "shortName": "Control", "kind": "category", "minCredits": 5 },
+            { "id": "lib-formacion-complementaria", "name": "Formación Complementaria", "shortName": "Complementaria", "kind": "group", "minCredits": 10 },
+            { "id": "lib-ingenieria-sociedad", "parentId": "lib-formacion-complementaria", "name": "Ingeniería y sociedad", "shortName": "Sociedad", "kind": "category", "minCredits": 4 },
+            { "id": "lib-ingenieria-industrial", "parentId": "lib-formacion-complementaria", "name": "Ingeniería industrial", "shortName": "Industrial", "kind": "category", "minCredits": 4 },
+            { "id": "lib-formacion-tecnologica", "name": "Formación Tecnológica", "shortName": "Tecnológica", "kind": "group", "minCredits": 60 },
+            { "id": "lib-asignaturas-tecnologicas", "parentId": "lib-formacion-tecnologica", "name": "Asignaturas tecnológicas", "shortName": "Asignaturas", "kind": "category", "minCredits": 25 },
+            { "id": "lib-actividades-integradoras", "parentId": "lib-formacion-tecnologica", "name": "Actividades integradoras: tesis, talleres y pasantía", "shortName": "Integradoras", "kind": "activity", "minCredits": 25 },
+            { "id": "lib-formacion-especifica", "name": "Formación específica en Ingeniería Biológica", "shortName": "Específica", "kind": "group", "minCredits": 160 }
+          ],
+          "periods": []
+        },
+        "graduationRequirements": [
+          "Obtener 360 créditos y cumplir los mínimos por materia y agrupamiento.",
+          "Aprobar una pasantía o actividad equivalente.",
+          "Aprobar una tesis.",
+          "Completar un perfil curricular coherente aprobado por la Comisión de Carrera."
+        ],
+        "profileRule": "El plan menciona Biomecánica y Biomateriales, Bioinstrumentación, Señales e Imágenes Biológicas y Agroindustrial como áreas posibles. No publica una lista cerrada y vigente de trayectorias; cada perfil requiere aprobación individual de la Comisión de Carrera."
+      },
+      "offerings": [
+        { "serviceCode": "FING", "locations": ["Montevideo · tramo inicial"], "role": "cursado inicial oficial del mismo Plan 2013", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Salto · tramo inicial", "Paysandú · carrera completa"], "role": "cursado territorial por etapas del mismo Plan 2013", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fing-lic-en-ingenieria-biologica-2013.json",
+        "regionalSnapshot": "data/bedelias/cenurln-lic-en-ingenieria-biologica-2013.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Ambos snapshots identifican el Plan 2013, 360 créditos y el mismo título, pero no publican composición. Las fuentes oficiales describen un cursado territorial por etapas que converge en Paysandú, no currículas regionales distintas."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "La normativa define un único Plan 2013 y un único título. Montevideo, Salto y Paysandú participan en etapas diferentes del cursado; la etapa territorial no altera créditos, título ni requisitos de egreso.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Ingeniería Biológica Plan 2013.",
+          "Presentar Montevideo y Salto como tramos iniciales y Paysandú como sede donde puede completarse la carrera.",
+          "Normalizar los mínimos oficiales de Formación Básica, Tecnológica Fundamental, Complementaria y Tecnológica, además del requisito transversal de 160 créditos específicos.",
+          "Conservar tesis, pasantía y perfil aprobado como requisitos documentados, sin inventar unidades curriculares para representarlos.",
+          "No publicar las áreas de especialización ilustrativas como trayectorias seleccionables mientras no exista una nómina oficial vigente y cerrada.",
+          "No convertir diferencias de oferta en Bedelías en variantes curriculares por sede."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/claustro_citaciones/2013/distribuido/6982/03-2013%20Plan%20de%20estudios%20version%2015.pdf",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "supports": ["aprobación del Plan 2013", "título, 360 créditos y ocho semestres", "mínimos por agrupamiento", "tesis, pasantía y perfil aprobado"]
+        },
+        {
+          "url": "https://www.iie.fing.edu.uy/es/carrera/grado/lic-en-ingenier%C3%ADa-biol%C3%B3gica-salto-y-paysand%C3%BA",
+          "authority": "Instituto de Ingeniería Eléctrica, Facultad de Ingeniería, Udelar",
+          "supports": ["vigencia, cuatro años y 360 créditos", "primeros años en Montevideo, Salto o Paysandú", "etapa final en Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-ingenieria-biologica/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": ["ingresos y cursado inicial en Montevideo, Salto y Paysandú", "convergencia territorial en Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/2013-sumando-carreras-en-el-interior",
+          "authority": "Universidad de la República",
+          "supports": ["creación de la carrera en 2013", "articulación territorial Salto-Paysandú"]
+        }
+      ],
+      "anomalies": [
+        { "field": "bedeliasComposition", "resolution": "FING y CENUR Litoral Norte publican cero unidades. La UI muestra la estructura oficial de créditos y declara explícitamente que la composición no está disponible." },
+        { "field": "duration", "resolution": "El plan normativo y FING establecen cuatro años y ocho semestres; el catálogo del interior informa cuatro años y medio y nueve semestres como duración de la secuencia territorial. Se conserva la duración normativa y se documenta la diferencia operativa." },
+        { "field": "profiles", "resolution": "Las áreas mencionadas por el plan son ejemplos para construir perfiles aprobados individualmente, no opciones cerradas que puedan publicarse como trayectorias de la UI." },
+        { "field": "locations", "resolution": "Montevideo y Salto no se presentan como sedes de carrera completa: el selector explicita que allí se cursa el tramo inicial y que la continuidad converge en Paysandú." }
+      ],
+      "remainingWork": "La identidad, estructura de créditos y secuencia territorial quedan normalizadas. Falta una composición oficial vigente por unidades curriculares y una nómina cerrada de perfiles; su ausencia impide mostrar materias o trayectorias, pero no justifica duplicar el plan por sede."
     }
   ],
-  "contentHash": "sha256:c6b90a70a0ec7876cbd31a8fce6d21c08e9c246a95e5c9cd62230f16564d9d07"
+  "contentHash": "sha256:8eb514e4f7ad83283e54c13e610230fbd98e7f8789dbaf21cc8cfe8f119b5b9d"
 }
