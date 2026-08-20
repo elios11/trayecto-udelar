@@ -810,3 +810,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:37ee845bb8076902436527a735dbb37dbceff248537e18cf3f82382cda7efdb3`. Cola actualizada: 146 identidades pendientes, 37 sin composición; hash `sha256:7d130af0c3c6d562b9048a2bcad2e2f4972985a4b7433c89c8ef669b07655208`.
 - Manifiesto UI: 175 proyecciones, 110 con composición y 65 sin composición; hash `sha256:8310a8fdeab561ec995a047b1afe79fc6c11578f9566bb4adb42bcaf23bd2d87`.
 - Siguiente paso: auditar Licenciatura en Diseño Integrado Plan 2012, próxima identidad sin composición de la cola reproducible.
+
+### Licenciatura en Diseño Integrado Plan 2012 — perfiles, malla y previaturas auditados 2026-08-20
+
+- FADU mantiene un único Plan 2012, un único título `Licenciado en Diseño Integrado`, cuatro años y 360 créditos. La UI agrupa la carrera bajo FADU aunque su snapshot técnico provenga de CENUR Litoral Norte.
+- La carrera se dicta en Salto y ofrece dos perfiles oficiales de pre-especialización: Desarrollo Local y Eficiencia Energética. Se modelan como trayectorias del mismo plan, no como carreras ni títulos duplicados, y comparten el progreso del núcleo común.
+- La estructura exige 90 créditos en Ciclo Básico, 180 en Ciclo Desarrollo y 90 en Ciclo Egreso. Se conservan los mínimos por área, los 20 créditos optativos/electivos de Desarrollo y los 40 de Egreso.
+- El mapa aprobado por CFADU y actualizado el 05/04/2025 aporta 30 unidades obligatorias, `Introducción a la Vida Universitaria` con cero créditos y 36 reglas de cursado. Proyecto Final de Carrera y Práctica Pre-profesional se representa como una unidad anual de 50 créditos y exige 270 créditos previos, además del núcleo indicado.
+- Las optativas nominales se presentan como oferta posible. El perfil Desarrollo Local incluye un bloque flexible para completar sus 40 créditos de Egreso sin inventar asignaturas; Eficiencia Energética conserva sus seis opciones publicadas.
+- Registro de auditoría: hash `sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787`. Cola actualizada: 145 identidades pendientes, 36 sin composición; hash `sha256:17adfd3fb393d80d9b3dacfdde422b632e6d515d9d10937bf2b6ab0f9636dd20`.
+- Manifiesto UI: 175 proyecciones, 111 con composición y 64 sin composición; hash `sha256:0ca7e35cf95740ac0308bbec000fe60f664c623d9842f5ab59fb2deabebfa14f`.
+- Siguiente paso: auditar Tecnólogo en Administración y Contabilidad Plan 2012, próxima identidad sin composición de la cola reproducible.

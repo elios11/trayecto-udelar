@@ -132,7 +132,7 @@ function campusIdsForPathway(audit, pathwayId) {
   return ids;
 }
 
-function buildPathways(audit, periods, courseRecords, campuses) {
+function buildPathways(audit, periods, courseRecords, campuses, officialCurriculum) {
   if (audit?.identity === "licenciatura en educacion fisica:2017") {
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => [trajectory.id, {
       label: trajectory.label,
@@ -148,6 +148,22 @@ function buildPathways(audit, periods, courseRecords, campuses) {
       campusIds: campusIdsForPathway(audit, option.id),
       periods: periodsForProfile(courseRecords, option.label),
     }]));
+  }
+  if (Array.isArray(audit?.officialPlan?.trajectories) && audit.officialPlan.trajectories.length > 0) {
+    return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => {
+      const excludedIds = new Set((trajectory.excludedCourseIds ?? []).map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
+      return [trajectory.id, {
+        label: trajectory.label,
+        description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
+        campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
+        periods: (trajectory.periods ?? periods).map((period) => ({
+          label: period.label,
+          courseIds: (period.courseIds ?? [])
+            .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
+            .filter((id) => id && !excludedIds.has(id)),
+        })),
+      }];
+    }));
   }
   const hasOfficialCourses = audit?.officialPlan?.curriculum?.periods?.some((period) => (period.courses ?? []).length > 0) === true;
   const pathways = {
@@ -369,7 +385,7 @@ function buildProjection(entry, snapshot, audit) {
     ? officialCurriculum.periods
     : compositionAvailable ? [...periodMap].map(([label, courseIds]) => ({ label, courseIds })) : [];
   const campuses = auditCampuses(audit);
-  const pathways = buildPathways(audit, periods, courseRecords, campuses);
+  const pathways = buildPathways(audit, periods, courseRecords, campuses, officialCurriculum);
   const auditStatus = audit ? "official-evidence-complete" : entry.canonicalSource.state === "structurally-valid" ? "structurally-valid" : "extracted";
   const planDocument = audit?.sources?.[0]?.url ?? snapshot.plan?.metadata?.colibriUrl ?? snapshot.plan?.sourceUrl;
   const notice = audit?.uiNotice
@@ -486,8 +502,10 @@ export async function buildExtractedAcademicPlans() {
 
   const facultyMap = new Map();
   for (const { entry, planId, projection, audit } of projections) {
-    const facultyId = `bedelias-${entry.canonicalSource.serviceCode.toLocaleLowerCase()}`;
-    if (!facultyMap.has(facultyId)) facultyMap.set(facultyId, { id: facultyId, label: readableFacultyName(entry.canonicalSource.serviceName), careers: new Map() });
+    const facultyCode = audit?.officialPlan?.facultyCode ?? entry.canonicalSource.serviceCode;
+    const facultyName = audit?.officialPlan?.facultyName ?? entry.canonicalSource.serviceName;
+    const facultyId = `bedelias-${facultyCode.toLocaleLowerCase()}`;
+    if (!facultyMap.has(facultyId)) facultyMap.set(facultyId, { id: facultyId, label: readableFacultyName(facultyName), careers: new Map() });
     const faculty = facultyMap.get(facultyId);
     const careerName = audit?.officialPlan?.careerName ?? entry.career.name;
     const planYear = audit?.officialPlan?.planYear ?? entry.plan.year;

@@ -9226,6 +9226,8 @@
       "officialPlan": {
         "careerName": "Licenciatura en Recursos Hídricos y Riego",
         "planYear": "2017",
+        "facultyCode": "FING",
+        "facultyName": "FACULTAD DE INGENIERÍA",
         "approval": [
           "Asamblea del Claustro de Facultad de Ingeniería, Resolución 6 de 21/12/2016",
           "Plan aprobado en 2017 y publicado como oferta vigente por Facultad de Ingeniería"
@@ -9404,7 +9406,197 @@
         { "field": "courseLocation", "resolution": "Facultad indica que algunas asignaturas se dictan en la UTN de Concordia, Argentina. Se conserva como nota de alcance y no como una segunda sede completa de la carrera." }
       ],
       "remainingWork": "La identidad vigente, malla, mínimos, previaturas y sede quedan operativos. Revisar futuras modificaciones de la combinación tipo o de la malla interactiva."
+    },
+    {
+      "identity": "licenciatura en diseno integrado:2012",
+      "career": "LICENCIATURA EN DISEÑO INTEGRADO",
+      "planYear": "2012",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-curriculum-prerequisites-profiles-and-campus",
+      "publicationEligible": false,
+      "uiNotice": "Mapa curricular y previaturas vigentes, actualizados por FADU el 05/04/2025. El plan tiene un título único y dos perfiles de pre-especialización; las optativas visibles son una oferta posible y pueden complementarse con electivas aprobadas por la Comisión de Carrera. El Proyecto Final y la Práctica Pre-profesional forman una unidad anual de 50 créditos.",
+      "officialPlan": {
+        "facultyCode": "FADU",
+        "facultyName": "FACULTAD DE ARQUITECTURA, DISEÑO Y URBANISMO",
+        "approval": ["Plan de Estudios 2012", "Mapa curricular y sistema de previaturas actualizado el 05/04/2025 y aprobado por CFADU"],
+        "title": "Licenciado en Diseño Integrado",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "trajectories": [
+          {
+            "id": "desarrollo-local",
+            "label": "Desarrollo Local",
+            "description": "Perfil de pre-especialización en gestión del hábitat y ordenamiento territorial. Conserva el mismo título, los 360 créditos y el núcleo común.",
+            "campusIds": ["salto"],
+            "excludedCourseIds": ["evaluacion-energetica", "solar-termica", "fisica-experimental", "simulacion-energetica", "gestion-energia", "auditorias-energeticas"]
+          },
+          {
+            "id": "eficiencia-energetica",
+            "label": "Eficiencia Energética",
+            "description": "Perfil de pre-especialización en desempeño y gestión energética del espacio construido. Conserva el mismo título, los 360 créditos y el núcleo común.",
+            "campusIds": ["salto"],
+            "excludedCourseIds": ["gestion-local-habitat", "ordenamiento-territorial", "otras-optativas-egreso-local"]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://drive.google.com/file/d/1hfgyhBCSTG8JnGON4f84_7GtqPEloOXS/view",
+          "prerequisitesSourceUrl": "https://drive.google.com/file/d/1hfgyhBCSTG8JnGON4f84_7GtqPEloOXS/view",
+          "creditRequirements": [
+            { "id": "ldi-basico", "name": "Ciclo Básico", "shortName": "Ciclo Básico", "minCredits": 90 },
+            { "id": "ldi-basico-diseno", "parentId": "ldi-basico", "name": "Diseño · Ciclo Básico", "shortName": "Diseño básico", "minCredits": 40 },
+            { "id": "ldi-basico-tecnologica", "parentId": "ldi-basico", "name": "Tecnológica · Ciclo Básico", "shortName": "Tecnológica básica", "minCredits": 30 },
+            { "id": "ldi-basico-teorica", "parentId": "ldi-basico", "name": "Teórica · Ciclo Básico", "shortName": "Teórica básica", "minCredits": 20 },
+            { "id": "ldi-desarrollo", "name": "Ciclo Desarrollo", "shortName": "Ciclo Desarrollo", "minCredits": 180 },
+            { "id": "ldi-desarrollo-diseno", "parentId": "ldi-desarrollo", "name": "Diseño · Ciclo Desarrollo", "shortName": "Diseño desarrollo", "minCredits": 80 },
+            { "id": "ldi-desarrollo-tecnologica", "parentId": "ldi-desarrollo", "name": "Tecnológica · Ciclo Desarrollo", "shortName": "Tecnológica desarrollo", "minCredits": 40 },
+            { "id": "ldi-desarrollo-teorica", "parentId": "ldi-desarrollo", "name": "Teórica · Ciclo Desarrollo", "shortName": "Teórica desarrollo", "minCredits": 30 },
+            { "id": "ldi-desarrollo-seminarios", "parentId": "ldi-desarrollo", "name": "Seminarios Transversales", "shortName": "Seminarios", "minCredits": 10 },
+            { "id": "ldi-desarrollo-optativas", "parentId": "ldi-desarrollo", "name": "Optativas y electivas · Ciclo Desarrollo", "shortName": "Optativas desarrollo", "minCredits": 20 },
+            { "id": "ldi-egreso", "name": "Ciclo Egreso", "shortName": "Ciclo Egreso", "minCredits": 90 },
+            { "id": "ldi-egreso-proyecto", "parentId": "ldi-egreso", "name": "Proyecto Final y Práctica Pre-profesional", "shortName": "Proyecto y práctica", "minCredits": 50 },
+            { "id": "ldi-egreso-optativas", "parentId": "ldi-egreso", "name": "Optativas y electivas · Ciclo Egreso", "shortName": "Optativas egreso", "minCredits": 40 }
+          ],
+          "periods": [
+            { "label": "Semestre 1", "courses": [
+              { "id": "introduccion-vida-universitaria", "name": "Introducción a la Vida Universitaria", "credits": 0 },
+              { "id": "diseno-1", "name": "Diseño I: Fundamentos Ambientales", "credits": 20, "requirementId": "ldi-basico-diseno" },
+              { "id": "bases-teorico-criticas", "name": "Bases Teórico Críticas para el Diseño Integrado", "credits": 10, "requirementId": "ldi-basico-teorica" },
+              { "id": "fisica-1a", "name": "Física IA", "credits": 4, "requirementId": "ldi-basico-tecnologica" },
+              { "id": "matematica", "name": "Matemática", "credits": 7, "requirementId": "ldi-basico-tecnologica" }
+            ] },
+            { "label": "Semestre 2", "courses": [
+              { "id": "diseno-2", "name": "Diseño II: Intervenciones en el Paisaje", "credits": 20, "requirementId": "ldi-basico-diseno" },
+              { "id": "historia-regional", "name": "Historia Regional", "credits": 10, "requirementId": "ldi-basico-teorica" },
+              { "id": "fisica-2a", "name": "Física IIA", "credits": 4, "requirementId": "ldi-basico-tecnologica" },
+              { "id": "ciencias-ambientales-1", "name": "Ciencias Ambientales I: Fundamentos de Ecología", "credits": 5, "requirementId": "ldi-basico-tecnologica" },
+              { "id": "tecnologias-1", "name": "Tecnologías para el Diseño Integrado I", "credits": 10, "requirementId": "ldi-basico-tecnologica" }
+            ] },
+            { "label": "Semestre 3", "courses": [
+              { "id": "diseno-3", "name": "Diseño III: Diseño Pasivo", "credits": 20, "requirementId": "ldi-desarrollo-diseno" },
+              { "id": "problemas-desarrollo", "name": "Problemas del Desarrollo", "credits": 8, "requirementId": "ldi-desarrollo-teorica" },
+              { "id": "tecnologias-2", "name": "Tecnologías para el Diseño Integrado II", "credits": 5, "requirementId": "ldi-desarrollo-tecnologica" },
+              { "id": "acondicionamiento-termico", "name": "Acondicionamiento Térmico", "credits": 6, "requirementId": "ldi-desarrollo-tecnologica" },
+              { "id": "seminario-transversal-1", "name": "Seminario Transversal I: Lectura y Escritura Académica", "credits": 4, "requirementId": "ldi-desarrollo-seminarios" },
+              { "id": "fisica-1b", "name": "Física IB", "credits": 6, "requirementId": "ldi-desarrollo-optativas" }
+            ] },
+            { "label": "Semestre 4", "courses": [
+              { "id": "diseno-4", "name": "Diseño IV: Territorio, Paisaje y Espacio Público", "credits": 20, "requirementId": "ldi-desarrollo-diseno" },
+              { "id": "derecho", "name": "Derecho", "credits": 5, "requirementId": "ldi-desarrollo-teorica" },
+              { "id": "seminario-area-teorica", "name": "Seminario Área Teórica", "credits": 2, "requirementId": "ldi-desarrollo-teorica" },
+              { "id": "ciencias-ambientales-2", "name": "Ciencias Ambientales II: Gestión del Agua", "credits": 5, "requirementId": "ldi-desarrollo-tecnologica" },
+              { "id": "acondicionamiento-acustico-luminico", "name": "Acondicionamiento Acústico y Lumínico", "credits": 5, "requirementId": "ldi-desarrollo-tecnologica" },
+              { "id": "fisica-2b", "name": "Física IIB", "credits": 6, "requirementId": "ldi-desarrollo-optativas" }
+            ] },
+            { "label": "Semestre 5", "courses": [
+              { "id": "diseno-5", "name": "Diseño V: Eficiencia Ambiental", "credits": 20, "requirementId": "ldi-desarrollo-diseno" },
+              { "id": "gestion-ambiental-territorio", "name": "Gestión Ambiental del Territorio", "credits": 8, "requirementId": "ldi-desarrollo-teorica" },
+              { "id": "ciencias-ambientales-3", "name": "Ciencias Ambientales III: Instrumentos de Gestión Ambiental", "credits": 5, "requirementId": "ldi-desarrollo-tecnologica" },
+              { "id": "fisica-edificios", "name": "Física de Edificios", "credits": 9, "requirementId": "ldi-desarrollo-tecnologica" },
+              { "id": "seminario-transversal-2", "name": "Seminario Transversal II: Epistemología", "credits": 3, "requirementId": "ldi-desarrollo-seminarios" },
+              { "id": "sig", "name": "SIG: Sistema de Información Geográfica · Nivel Básico", "credits": 5, "requirementId": "ldi-desarrollo-optativas" },
+              { "id": "bim", "name": "Introducción al BIM", "credits": 5, "requirementId": "ldi-desarrollo-optativas" }
+            ] },
+            { "label": "Semestre 6", "courses": [
+              { "id": "diseno-6", "name": "Diseño VI: Planificación y Gestión Ambiental del Territorio", "credits": 20, "requirementId": "ldi-desarrollo-diseno" },
+              { "id": "teoria-critica-contemporanea", "name": "Teoría y Crítica Contemporánea del Diseño", "credits": 7, "requirementId": "ldi-desarrollo-teorica" },
+              { "id": "tecnologias-3", "name": "Tecnologías para el Diseño Integrado III", "credits": 5, "requirementId": "ldi-desarrollo-tecnologica" },
+              { "id": "seminario-transversal-3", "name": "Seminario Transversal III: Metodología de la Investigación", "credits": 3, "requirementId": "ldi-desarrollo-seminarios" },
+              { "id": "seminario-area-teorica-opt", "name": "Seminario Área Teórica · optativa", "credits": 2, "requirementId": "ldi-desarrollo-optativas" }
+            ] },
+            { "label": "Semestre 7", "courses": [
+              { "id": "proyecto-practica", "name": "Proyecto Final de Carrera y Práctica Pre-profesional · anual", "credits": 50, "requirementId": "ldi-egreso-proyecto" },
+              { "id": "gestion-local-habitat", "name": "Gestión Local del Hábitat y Actores Sociales", "credits": 10, "requirementId": "ldi-egreso-optativas" },
+              { "id": "simulacion-energetica", "name": "Simulación Energética de Edificios", "credits": 10, "requirementId": "ldi-egreso-optativas" },
+              { "id": "gestion-energia", "name": "Gestión de la Energía", "credits": 6, "requirementId": "ldi-egreso-optativas" }
+            ] },
+            { "label": "Semestre 8", "courses": [
+              { "id": "ordenamiento-territorial", "name": "Instrumentos de Ordenamiento Territorial", "credits": 5, "requirementId": "ldi-egreso-optativas" },
+              { "id": "otras-optativas-egreso-local", "name": "Otras Optativas y Electivas de Egreso · Desarrollo Local", "credits": 25, "requirementId": "ldi-egreso-optativas", "curricularBlock": true },
+              { "id": "evaluacion-energetica", "name": "Evaluación Constructiva y Energética de Edificios", "credits": 5, "requirementId": "ldi-egreso-optativas" },
+              { "id": "solar-termica", "name": "Aprovechamiento Térmico de la Energía Solar", "credits": 7, "requirementId": "ldi-egreso-optativas" },
+              { "id": "fisica-experimental", "name": "Introducción a la Física Experimental", "credits": 6, "requirementId": "ldi-egreso-optativas" },
+              { "id": "auditorias-energeticas", "name": "Auditorías Energéticas", "credits": 8, "requirementId": "ldi-egreso-optativas" }
+            ] }
+          ],
+          "prerequisites": [
+            { "targetId": "diseno-2", "courseIds": ["diseno-1"] },
+            { "targetId": "historia-regional", "courseIds": ["bases-teorico-criticas"] },
+            { "targetId": "fisica-2a", "courseIds": ["fisica-1a"] },
+            { "targetId": "diseno-3", "courseIds": ["introduccion-vida-universitaria", "diseno-1", "diseno-2", "tecnologias-1"] },
+            { "targetId": "diseno-4", "courseIds": ["introduccion-vida-universitaria", "diseno-1", "diseno-2", "tecnologias-1", "diseno-3", "bases-teorico-criticas", "historia-regional"] },
+            { "targetId": "problemas-desarrollo", "courseIds": ["introduccion-vida-universitaria"] },
+            { "targetId": "derecho", "courseIds": ["introduccion-vida-universitaria"] },
+            { "targetId": "seminario-area-teorica", "courseIds": ["introduccion-vida-universitaria", "bases-teorico-criticas", "historia-regional"] },
+            { "targetId": "ciencias-ambientales-2", "courseIds": ["introduccion-vida-universitaria", "ciencias-ambientales-1"] },
+            { "targetId": "tecnologias-2", "courseIds": ["introduccion-vida-universitaria", "fisica-1a", "fisica-2a", "tecnologias-1"] },
+            { "targetId": "acondicionamiento-acustico-luminico", "courseIds": ["introduccion-vida-universitaria", "fisica-1a", "fisica-2a", "tecnologias-1"] },
+            { "targetId": "acondicionamiento-termico", "courseIds": ["introduccion-vida-universitaria", "fisica-1a", "fisica-2a", "tecnologias-1"] },
+            { "targetId": "seminario-transversal-1", "courseIds": ["introduccion-vida-universitaria"] },
+            { "targetId": "diseno-5", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico"] },
+            { "targetId": "diseno-6", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "derecho", "ciencias-ambientales-2", "gestion-ambiental-territorio"] },
+            { "targetId": "gestion-ambiental-territorio", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "problemas-desarrollo", "derecho", "ciencias-ambientales-2"] },
+            { "targetId": "teoria-critica-contemporanea", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "problemas-desarrollo"] },
+            { "targetId": "ciencias-ambientales-3", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "derecho", "ciencias-ambientales-2"] },
+            { "targetId": "tecnologias-3", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "tecnologias-2", "acondicionamiento-termico"] },
+            { "targetId": "fisica-edificios", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico"] },
+            { "targetId": "seminario-transversal-2", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "seminario-transversal-1"] },
+            { "targetId": "seminario-transversal-3", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "seminario-transversal-1", "seminario-transversal-2"] },
+            { "targetId": "proyecto-practica", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "derecho", "seminario-area-teorica", "ciencias-ambientales-2", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico", "seminario-transversal-1", "diseno-5", "diseno-6", "gestion-ambiental-territorio", "teoria-critica-contemporanea", "ciencias-ambientales-3", "tecnologias-3", "fisica-edificios", "seminario-transversal-2", "seminario-transversal-3"], "minCredits": 270 },
+            { "targetId": "fisica-1b", "courseIds": ["fisica-1a"] },
+            { "targetId": "fisica-2b", "courseIds": ["fisica-1a", "fisica-2a"] },
+            { "targetId": "sig", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "ciencias-ambientales-1", "diseno-3", "diseno-4", "ciencias-ambientales-2"] },
+            { "targetId": "bim", "courseIds": ["diseno-1", "diseno-2", "tecnologias-1"] },
+            { "targetId": "seminario-area-teorica-opt", "courseIds": ["bases-teorico-criticas", "historia-regional", "seminario-area-teorica"] },
+            { "targetId": "gestion-local-habitat", "courseIds": ["problemas-desarrollo"] },
+            { "targetId": "ordenamiento-territorial", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "ciencias-ambientales-2", "gestion-ambiental-territorio"] },
+            { "targetId": "evaluacion-energetica", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico", "tecnologias-3", "fisica-edificios"] },
+            { "targetId": "solar-termica", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "derecho", "seminario-area-teorica", "ciencias-ambientales-2", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico", "seminario-transversal-1", "fisica-edificios"] },
+            { "targetId": "fisica-experimental", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "derecho", "seminario-area-teorica", "ciencias-ambientales-2", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico", "seminario-transversal-1", "fisica-edificios"] },
+            { "targetId": "simulacion-energetica", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "derecho", "seminario-area-teorica", "ciencias-ambientales-2", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico", "seminario-transversal-1", "fisica-edificios"] },
+            { "targetId": "gestion-energia", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "derecho", "seminario-area-teorica", "ciencias-ambientales-2", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico", "seminario-transversal-1", "ciencias-ambientales-3", "tecnologias-3", "fisica-edificios"] },
+            { "targetId": "auditorias-energeticas", "courseIds": ["diseno-1", "diseno-2", "bases-teorico-criticas", "historia-regional", "fisica-1a", "fisica-2a", "matematica", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "diseno-4", "problemas-desarrollo", "derecho", "seminario-area-teorica", "ciencias-ambientales-2", "tecnologias-2", "acondicionamiento-acustico-luminico", "acondicionamiento-termico", "seminario-transversal-1", "ciencias-ambientales-3", "tecnologias-3", "fisica-edificios", "gestion-energia"] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "ldi-obligatorias", "label": "Unidades curriculares obligatorias", "minCompleted": 30, "courseIds": ["introduccion-vida-universitaria", "diseno-1", "bases-teorico-criticas", "fisica-1a", "matematica", "diseno-2", "historia-regional", "fisica-2a", "ciencias-ambientales-1", "tecnologias-1", "diseno-3", "problemas-desarrollo", "tecnologias-2", "acondicionamiento-termico", "seminario-transversal-1", "diseno-4", "derecho", "seminario-area-teorica", "ciencias-ambientales-2", "acondicionamiento-acustico-luminico", "diseno-5", "gestion-ambiental-territorio", "ciencias-ambientales-3", "fisica-edificios", "seminario-transversal-2", "diseno-6", "teoria-critica-contemporanea", "tecnologias-3", "seminario-transversal-3", "proyecto-practica"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CENURLN", "locations": ["Salto"], "role": "sede exclusiva vigente de la carrera completa", "curriculumVariant": false, "trajectoryIds": ["desarrollo-local", "eficiencia-energetica"] }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-licenciatura-en-diseno-integrado-2012.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, 360 créditos y dos rótulos de perfil, pero no la composición. La proyección se construye con el mapa curricular y sistema de previaturas vigentes de FADU."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-one-campus-two-profiles",
+        "regionalCurriculumVariant": false,
+        "reason": "FADU publica un título único y dos perfiles de pre-especialización dentro del mismo Plan 2012. La carrera completa se dicta exclusivamente en Salto.",
+        "normalization": [
+          "Mostrar una sola carrera y Plan 2012 bajo FADU, con sede Salto.",
+          "Permitir elegir Desarrollo Local o Eficiencia Energética sin duplicar el título ni el progreso común.",
+          "Exigir las treinta unidades obligatorias y los mínimos 90/180/90 por ciclo.",
+          "Incorporar las previaturas vigentes y conservar las optativas como elecciones, no como núcleo obligatorio.",
+          "Representar los 25 créditos no nominales del perfil Desarrollo Local como bolsa de otras optativas/electivas, sin inventar asignaturas."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.fadu.edu.uy/carreras/ldi/estructura-curricular/", "authority": "Facultad de Arquitectura, Diseño y Urbanismo", "supports": ["vigencia", "mapa curricular 2025", "programas", "electivas"] },
+        { "url": "https://drive.google.com/file/d/1hfgyhBCSTG8JnGON4f84_7GtqPEloOXS/view", "authority": "FADU, mapa curricular y sistema de previaturas aprobado", "supports": ["unidades", "créditos", "semestres", "previaturas", "perfiles"] },
+        { "url": "https://www.fadu.edu.uy/ldi/files/2019/08/PLAN-LDI-octubre-2012.pdf", "authority": "FADU, Plan de Estudios", "supports": ["Plan 2012", "título", "360 créditos", "ciclos", "perfiles"] },
+        { "url": "https://www.fadu.edu.uy/ldi/noticias/preguntas-frecuentes/", "authority": "FADU, Licenciatura en Diseño Integrado", "supports": ["título único", "dos perfiles de pre-especialización", "cuatro años", "360 créditos"] },
+        { "url": "https://www.fadu.edu.uy/ingreso/", "authority": "FADU, ingreso vigente", "supports": ["sede Salto", "unidades del primer año"] }
+      ],
+      "anomalies": [
+        { "field": "bedeliasTitles", "resolution": "Bedelías presenta dos rótulos de título con perfil, pero FADU aclara que existe un título único y dos salidas de pre-especialización. La UI modela perfiles, no dos credenciales." },
+        { "field": "electiveCoverage", "resolution": "El mapa enumera 81 créditos de optativas propias, pero el plan admite electivas nacionales o del exterior aprobadas por la Comisión. La UI ofrece las publicadas y una bolsa explícita sólo donde el perfil Desarrollo Local no llega al mínimo de egreso." },
+        { "field": "sourceCodeTypo", "resolution": "La tabla de previaturas contiene referencias cruzadas con códigos inconsistentes en algunas filas. La normalización enlaza por nombre inequívoco y por el código correcto de la tabla de composición." }
+      ],
+      "remainingWork": "La malla 2025, los perfiles, mínimos, previaturas y sede quedan operativos. Revisar únicamente futuras decisiones de la revisión integral del Plan 2012."
     }
   ],
-  "contentHash": "sha256:37ee845bb8076902436527a735dbb37dbceff248537e18cf3f82382cda7efdb3"
+  "contentHash": "sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787"
 }

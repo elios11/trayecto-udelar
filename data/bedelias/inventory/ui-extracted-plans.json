@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:7d130af0c3c6d562b9048a2bcad2e2f4972985a4b7433c89c8ef669b07655208",
-    "officialAuditHash": "sha256:37ee845bb8076902436527a735dbb37dbceff248537e18cf3f82382cda7efdb3",
+    "auditQueueHash": "sha256:17adfd3fb393d80d9b3dacfdde422b632e6d515d9d10937bf2b6ab0f9636dd20",
+    "officialAuditHash": "sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 110,
-    "compositionUnavailable": 65,
+    "compositionAvailable": 111,
+    "compositionUnavailable": 64,
     "plansWithOfficialCampuses": 25,
     "excludedFromCurrentUi": 2
   },
@@ -66,9 +66,11 @@
       "planId": "bedelias-cenurln-licenciatura-en-diseno-integrado-2012",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-licenciatura-en-diseno-integrado-2012.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "salto"
+      ]
     },
     {
       "identity": "tecnicatura binacional en turismo:2004",
@@ -1683,5 +1685,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:8310a8fdeab561ec995a047b1afe79fc6c11578f9566bb4adb42bcaf23bd2d87"
+  "contentHash": "sha256:0ca7e35cf95740ac0308bbec000fe60f664c623d9842f5ab59fb2deabebfa14f"
 }

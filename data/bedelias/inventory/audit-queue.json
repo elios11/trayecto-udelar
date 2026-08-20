@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T13:25:25.732Z",
+  "generatedAt": "2026-08-20T14:14:40.033Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:37ee845bb8076902436527a735dbb37dbceff248537e18cf3f82382cda7efdb3"
+    "officialAuditRegistryHash": "sha256:6db4b47a806c596bca0b0a817c687125f4af9c62e4c7e942c27f02cf36632787"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 31,
-    "pendingCanonicalIdentities": 146,
+    "evidenceClosedCanonicalIdentities": 32,
+    "pendingCanonicalIdentities": 145,
     "byPriority": {
-      "composition-unavailable": 37,
+      "composition-unavailable": 36,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -208,39 +208,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-current-renamed-plan-in-salto"
+    },
+    {
+      "identity": "licenciatura en diseno integrado:2012",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-one-campus-two-profiles"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en diseno integrado:2012",
-      "career": {
-        "name": "LICENCIATURA EN DISEÑO INTEGRADO",
-        "normalizedName": "licenciatura en diseno integrado",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2012"
-      },
-      "canonicalSource": {
-        "serviceCode": "CENURLN",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
-        "planKey": "CENURLN:licenciatura en diseno integrado:2012",
-        "site": null,
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CENURLN",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
-          "planKey": "CENURLN:licenciatura en diseno integrado:2012",
-          "site": null,
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnologo en administracion y contabilidad:2012",
       "career": {
@@ -4686,5 +4662,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:7d130af0c3c6d562b9048a2bcad2e2f4972985a4b7433c89c8ef669b07655208"
+  "contentHash": "sha256:17adfd3fb393d80d9b3dacfdde422b632e6d515d9d10937bf2b6ab0f9636dd20"
 }
