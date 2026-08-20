@@ -930,3 +930,11 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:27dfb30060066e199d81e8444f08353cae611e1341511abf021bf1823d196ee6`. Cola actualizada: 136 identidades pendientes, 27 sin composición; hash `sha256:09d1212fd13432524307ab271e215e0b3ec3e890cc3bcad7dab3cae15f2871b5`.
 - Manifiesto UI: 174 proyecciones vigentes, 119 con composición, 55 sin composición y tres identidades históricas excluidas; hash `sha256:604bbbebde697602bc53b3809b9d585a55d45f6c1f53fe3cc0fefb5d4b082033`.
 - Siguiente paso: auditar Técnico Rural Plan 1956, próxima identidad sin composición de la cola reproducible.
+
+### Técnico Rural Plan 1956 — registro histórico cerrado 2026-08-20
+
+- El snapshot se contradice: `metadata.current` es `false`, pero `plan.current` es `true`. La historia oficial de Agronomía resuelve que el curso funcionó desde 1956 hasta mediados de los sesenta.
+- Era una formación rotativa de tres años: primero en Salto, segundo en Bañado de Medina (Cerro Largo) y tercero en Paysandú. Esas etapas no son sedes actuales ni trayectorias opcionales.
+- Se excluye de la UI vigente sin reconstruir una malla incompleta. Registro de auditoría `sha256:380a63dd6593dbb5d133720b6e3448911250d473fdd734a47eafdecbba18d0c6`; cola `sha256:39b71b040e922b2a6b45755dfc2cf8dbc55543aa90a211987ea857a6e41cf947`.
+- La UI queda en 173 proyecciones: 119 con composición, 54 sin composición y cuatro identidades históricas excluidas; hash `sha256:196f858d849fee24495eef1e520482fd7d1c5ed313da4a9075ef0b59da05704e`.
+- Siguiente paso: auditar Tecnólogo en Gestión Universitaria Plan 2018.

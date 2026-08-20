@@ -10729,7 +10729,61 @@
         { "field": "composition", "resolution": "No se localizó una malla oficial vigente y el snapshot no publica composición. Como no existe admisión actual, no se reconstruyen materias desde cursos sueltos ni planes sucesores." }
       ],
       "remainingWork": "Caso cerrado para la UI vigente. Sólo requiere una nueva auditoría si alguno de los servicios responsables publica formalmente su reapertura."
+    },
+    {
+      "identity": "tecnico rural:1956",
+      "career": "TÉCNICO RURAL",
+      "planYear": "1956",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "historical-duration-locations-and-current-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico Rural",
+        "approvalYear": 1956,
+        "historicalDurationMonths": 36,
+        "historicalLocationsByYear": [
+          { "year": 1, "location": "Salto" },
+          { "year": 2, "location": "Bañado de Medina, Cerro Largo" },
+          { "year": 3, "location": "Paysandú" }
+        ],
+        "historicalEnd": "mediados de la década de 1960"
+      },
+      "offerings": [
+        { "serviceCode": "FAGRO", "locations": ["Salto", "Bañado de Medina, Cerro Largo", "Paysandú"], "role": "curso histórico rotativo entre estaciones experimentales", "admissionStatus": "historical-not-current" }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fagro-tecnico-rural-1956.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "El snapshot no publica composición y contiene estados contradictorios: metadata.current es false, mientras plan.current es true. La historia oficial de Agronomía documenta que el curso funcionó desde 1956 hasta mediados de los sesenta y la oferta vigente no lo incluye."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-three-year-rotating-rural-technician-course",
+        "regionalCurriculumVariant": false,
+        "excludeFromCurrentUi": true,
+        "reason": "Técnico Rural fue una carrera histórica de tres años que rotaba entre las estaciones de Salto, Bañado de Medina y Paysandú. Facultad de Agronomía documenta que dejó de dictarse a mediados de la década de 1960 y no la publica entre sus carreras actuales.",
+        "normalization": [
+          "No presentar Técnico Rural Plan 1956 como carrera vigente ni como opción de ingreso actual.",
+          "Conservar una única identidad histórica y no convertir sus tres años rotativos en sedes contemporáneas seleccionables.",
+          "No reconstruir una malla actual desde la lista histórica parcial de asignaturas.",
+          "Corregir en el inventario derivado la promoción errónea del plan a vigente cuando sus propios metadatos indican false."
+        ]
+      },
+      "sources": [
+        { "url": "https://portal.fagro.edu.uy/eebr/historia/", "authority": "Facultad de Agronomía", "supports": ["dictado histórico entre mediados de los cincuenta y mediados de los sesenta", "rotación anual Salto-Cerro Largo-Paysandú", "sustitución de Perito Rural"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/48628/1/Olivero_La%20cenicienta%20venerable_FAGRO.pdf", "authority": "Facultad de Agronomía y CSIC", "supports": ["aprobación del Plan 1956", "finalidad", "tres años y asignaturas históricas", "implementación en estaciones"] },
+        { "url": "https://portal.fagro.edu.uy/ensenanza/carreras-agrarias/", "authority": "Facultad de Agronomía", "supports": ["oferta vigente de carreras agrarias", "ausencia de Técnico Rural"] },
+        { "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf", "authority": "Dirección General de Planeamiento, Udelar", "supports": ["estudiantes activos 2025", "ausencia de Técnico Rural"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf", "authority": "Comisión Sectorial de Enseñanza, Udelar", "supports": ["registro SGB Plan 1956", "título Técnico Rural", "servicio Agronomía"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "El snapshot contiene metadata.current=false y plan.current=true. La fuente histórica y la oferta vigente resuelven la contradicción a favor de plan histórico no actual." },
+        { "field": "locations", "resolution": "Salto, Bañado de Medina y Paysandú eran etapas anuales obligatorias de un curso rotativo, no tres sedes actuales ni trayectorias territoriales opcionales." },
+        { "field": "composition", "resolution": "La crónica institucional enumera algunas asignaturas, pero no una malla completa normalizable. Al estar cerrado el plan, no se infieren créditos, previaturas ni equivalencias." }
+      ],
+      "remainingWork": "Caso cerrado para la UI vigente. Mantener sólo la evidencia histórica y corregir la derivación de vigencia para evitar que metadata.current=false vuelva a elevarse como plan actual."
     }
   ],
-  "contentHash": "sha256:27dfb30060066e199d81e8444f08353cae611e1341511abf021bf1823d196ee6"
+  "contentHash": "sha256:380a63dd6593dbb5d133720b6e3448911250d473fdd734a47eafdecbba18d0c6"
 }

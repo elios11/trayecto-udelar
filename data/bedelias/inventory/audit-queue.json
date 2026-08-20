@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T16:07:47.468Z",
+  "generatedAt": "2026-08-20T16:12:05.145Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:27dfb30060066e199d81e8444f08353cae611e1341511abf021bf1823d196ee6"
+    "officialAuditRegistryHash": "sha256:380a63dd6593dbb5d133720b6e3448911250d473fdd734a47eafdecbba18d0c6"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 41,
-    "pendingCanonicalIdentities": 136,
+    "evidenceClosedCanonicalIdentities": 42,
+    "pendingCanonicalIdentities": 135,
     "byPriority": {
-      "composition-unavailable": 27,
+      "composition-unavailable": 26,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -268,38 +268,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "legacy-shared-complementary-degree-without-current-admission"
+    },
+    {
+      "identity": "tecnico rural:1956",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "historical-three-year-rotating-rural-technician-course"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnico rural:1956",
-      "career": {
-        "name": "TECNICO RURAL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1956",
-        "name": "TECNICO RURAL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FAGRO",
-        "serviceName": "FACULTAD DE AGRONOMÍA",
-        "planKey": "FAGRO:tecnico rural:1956",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FAGRO",
-          "serviceName": "FACULTAD DE AGRONOMÍA",
-          "planKey": "FAGRO:tecnico rural:1956",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnologo en gestion universitaria:2018",
       "career": {
@@ -4448,5 +4425,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:09d1212fd13432524307ab271e215e0b3ec3e890cc3bcad7dab3cae15f2871b5"
+  "contentHash": "sha256:39b71b040e922b2a6b45755dfc2cf8dbc55543aa90a211987ea857a6e41cf947"
 }

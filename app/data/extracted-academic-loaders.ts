@@ -192,12 +192,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
-  "bedelias-fagro-tecnico-rural-1956": {
-    load: () => import("./bedelias-generated/bedelias-fagro-tecnico-rural-1956.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fartes-creador-plastico-1991": {
     load: () => import("./bedelias-generated/bedelias-fartes-creador-plastico-1991.json"),
     pathwayIds: ["bedelias"],
