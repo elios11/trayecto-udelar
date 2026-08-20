@@ -1140,7 +1140,218 @@
         }
       ],
       "remainingWork": "La auditoría resuelve la falsa diferencia curricular y permite filtrar trayectos por sede. La proyección curada de unidades y previaturas para la UI sigue pendiente y no habilita publicación automática."
+    },
+    {
+      "identity": "tecnicatura en deportes:2007",
+      "career": "TECNICATURA EN DEPORTES",
+      "planYear": "2007",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-site-specific-sport-options-and-intake-status",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Técnico Deportivo Superior",
+        "durationMonths": 24,
+        "minimumCredits": 160,
+        "creditDistribution": {
+          "Formación común": 37,
+          "Formación específica de la opción deportiva": 107,
+          "Formación opcional": 16
+        },
+        "academicStructure": [
+          "Formación básica común",
+          "Formación básica específica de la opción deportiva",
+          "Formación opcional variable"
+        ],
+        "documentedSportOptions": [
+          {
+            "id": "futbol",
+            "label": "Fútbol"
+          },
+          {
+            "id": "actividades-acuaticas",
+            "label": "Actividades Acuáticas"
+          },
+          {
+            "id": "atletismo",
+            "label": "Atletismo"
+          }
+        ],
+        "optionRule": "La especialidad deportiva determina 107 créditos de formación específica. El núcleo básico puede cursarse en una sede y la parte específica en otra o en modalidad semipresencial; esto no crea planes ni títulos diferentes.",
+        "intakeRule": "Las aperturas del interior y sus opciones varían según la proyección académica y normalmente se realizan cada dos años. La continuidad del plan para cohortes existentes no equivale a una nueva apertura de ingreso."
+      },
+      "offerings": [
+        {
+          "serviceCode": "ISEF",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable del Plan 2007",
+          "sportOptionIds": [
+            "futbol"
+          ],
+          "admissionStatus": "closed-2026",
+          "evidenceNote": "ISEF resolvió no abrir ingreso a la opción Fútbol en 2026 dentro de la propuesta de cierre y estímulo al egreso del Plan 2007."
+        },
+        {
+          "serviceCode": "CURE",
+          "locations": [
+            "Rocha"
+          ],
+          "role": "oferta regional rotativa del mismo Plan 2007",
+          "sportOptionIds": [
+            "actividades-acuaticas"
+          ],
+          "admissionStatus": "closed-2026"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "oferta regional rotativa documentada del mismo Plan 2007",
+          "sportOptionIds": [
+            "atletismo"
+          ],
+          "admissionStatus": "not-confirmed-for-2026",
+          "evidenceNote": "El catálogo oficial del interior documenta la opción Atletismo; la distribución territorial vigente de ISEF no anuncia una apertura 2026."
+        },
+        {
+          "serviceCode": "CUR",
+          "locations": [
+            "Rivera"
+          ],
+          "role": "antecedente territorial del mismo Plan 2007",
+          "sportOptionIds": [
+            "futbol",
+            "actividades-acuaticas"
+          ],
+          "admissionStatus": "historical-not-current",
+          "evidenceNote": "Udelar documenta el inicio de ambas opciones en Rivera en 2013. La distribución territorial vigente de ISEF ya no incluye la Tecnicatura entre las carreras ofrecidas en la región noreste."
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/isef-tecnicatura-en-deportes-2007.json",
+        "regionalSnapshots": {
+          "CUR": "data/bedelias/cur-tecnicatura-en-deportes-2007.json",
+          "CURE": "data/bedelias/cure-tecnicatura-en-deportes-2007.json",
+          "CENURLN": "data/bedelias/cenurln-tecnicatura-en-deportes-2007.json"
+        },
+        "canonicalCourses": 758,
+        "regionalCourses": {
+          "CUR": 838,
+          "CURE": 838,
+          "CENURLN": 838
+        },
+        "regionalCurriculumHash": "sha256:2d0cdcda683667a89ad02a29714d775f9ae1944cfc142e2273d1175e057f0223",
+        "regionalCurriculumEqual": true,
+        "onlyCanonical": 0,
+        "onlyRegional": 78,
+        "onlyRegionalOptional": 59,
+        "onlyRegionalBasic": 19,
+        "uniqueBasicCourseKeysCanonical": 67,
+        "uniqueBasicCourseKeysRegional": 86,
+        "canonicalBasicSubsetOfRegional": true,
+        "prerequisiteEntries": {
+          "ISEF": 632,
+          "CUR": 59,
+          "CURE": 68,
+          "CENURLN": 61
+        },
+        "interpretation": "Los tres snapshots regionales tienen composición idéntica y más completa que el snapshot central, especialmente en las ramas de Handball, además de un catálogo opcional ampliado. La diferencia central-regional no sigue la sede ni la opción efectivamente ofrecida y por eso no constituye evidencia de una variante territorial."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-site-specific-sport-options",
+        "regionalCurriculumVariant": false,
+        "siteSpecificOptionAvailability": true,
+        "timeDependentAdmissionAvailability": true,
+        "reason": "Las fuentes oficiales definen un único Plan 2007, un único título y una formación específica que cambia según la opción deportiva. Las opciones se abren por sede y cohorte. Los tres snapshots regionales son idénticos entre sí pese a representar territorios con opciones diferentes, mientras el snapshot central omite parte de ramas que sí aparecen en los tres regionales; esa divergencia es de publicación de Bedelías, no una malla regional.",
+        "normalization": [
+          "Conservar una sola identidad canónica para Tecnicatura en Deportes Plan 2007.",
+          "Modelar la opción deportiva como trayecto del plan y asociarla a la sede y a su vigencia temporal; no duplicar la carrera.",
+          "Mostrar Fútbol en Montevideo y Actividades Acuáticas en Rocha como opciones documentadas sin afirmar ingreso abierto en 2026.",
+          "Conservar Atletismo en Paysandú como oferta oficial documentada, pero no anunciar ingreso 2026 sin una convocatoria vigente.",
+          "Conservar Rivera únicamente como antecedente histórico de Fútbol y Actividades Acuáticas; no mostrarla como sede vigente.",
+          "Normalizar el egreso por 37 créditos comunes, 107 específicos y 16 opcionales.",
+          "Usar la composición regional idéntica como señal de mayor completitud del árbol publicado, no como currícula del interior.",
+          "Tratar la menor cobertura regional de previaturas como una diferencia de publicación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.cure.edu.uy/wp-content/uploads/2025/02/Plan-de-estudios-tecnicatura_en_deportes-2_0.pdf",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "Plan de Estudios 2007, duración de dos años y título",
+            "160 créditos distribuidos en 37 comunes, 107 específicos y 16 opcionales",
+            "estructura común y específica de la opción deportiva"
+          ]
+        },
+        {
+          "url": "https://isef.udelar.edu.uy/ensenanza/tecnicatura-en-deporte/",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "vigencia curricular del Plan 2007 para cohortes existentes",
+            "flexibilidad para cursar núcleo y parte específica en sedes diferentes",
+            "programas específicos de Fútbol, Actividades Acuáticas y Atletismo",
+            "cierre del ingreso a Fútbol en 2026"
+          ]
+        },
+        {
+          "url": "https://isef.udelar.edu.uy/institucional/distribucion-territorial/",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "supports": [
+            "Fútbol como opción territorial publicada en Montevideo",
+            "ausencia actual de la Tecnicatura en la oferta anunciada para Este, Litoral Norte y Noreste"
+          ]
+        },
+        {
+          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnicatura-en-deporte/",
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "supports": [
+            "opción Actividades Acuáticas en Rocha",
+            "título Técnico Deportivo Superior y duración de dos años",
+            "cierre de inscripciones en 2026 y variabilidad anual de optativas"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/tecnicatura-en-deportes/",
+          "authority": "Catálogo de carreras del interior, Udelar",
+          "supports": [
+            "opción Atletismo en Paysandú",
+            "organización en bloques común, específico y opcional",
+            "posibilidad de cursado coordinado entre sedes"
+          ]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/04/EB-2023.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": [
+            "Plan 2007, dos años, 1264 horas y 160 créditos",
+            "mapeo de Actividades Acuáticas a Rocha, Atletismo a Paysandú y Fútbol a Montevideo",
+            "carácter rotativo de las opciones del interior"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/2013-sumando-carreras-en-el-interior",
+          "authority": "Portal central de Udelar",
+          "supports": [
+            "inicio histórico en Rivera de las opciones Actividades Acuáticas y Fútbol en 2013"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "centralSnapshot.completeness",
+          "resolution": "No usar el snapshot ISEF como única fuente de composición: contiene 67 claves básicas únicas frente a 86 en los tres snapshots regionales idénticos y presenta ramas incompletas, especialmente Handball."
+        },
+        {
+          "field": "activeAdmissions",
+          "resolution": "Separar vigencia del plan, continuidad de cohortes y apertura de ingreso. En 2026 no hay apertura documentada para Montevideo ni Rocha, y no se confirma una nueva cohorte en Paysandú o Rivera."
+        }
+      ],
+      "remainingWork": "La auditoría define el modelo sede-opción y resuelve que los árboles regionales no son variantes territoriales. Para proyectar la UI se debe construir una malla curada por opción a partir del Plan 2007 y del árbol regional más completo, con aviso temporal de ingreso; la auditoría no habilita publicación automática."
     }
   ],
-  "contentHash": "sha256:26d97d99c693d4579d5dc48d2703b0b3f0840246013884cb0b1d2212f7839774"
+  "contentHash": "sha256:06dd414de6ecbc1f6307966b1ba0ebb959be4d952155965be517ad51e8894ba0"
 }
