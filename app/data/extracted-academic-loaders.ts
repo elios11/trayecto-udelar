@@ -498,12 +498,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 0,
   },
-  "bedelias-fenf-escalonada-de-enfermeria-2001": {
-    load: () => import("./bedelias-generated/bedelias-fenf-escalonada-de-enfermeria-2001.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fenf-licenciatura-en-enfermeria-2016": {
     load: () => import("./bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json"),
     pathwayIds: ["bedelias"],

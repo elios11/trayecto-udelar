@@ -41,7 +41,7 @@ Incorporar al selector académico todas las identidades canónicas vigentes extr
 
 ## Estado actualizado 2026-08-20
 
-- La UI cubre 183 de las 184 identidades que Bedelías marca como vigentes: siete ya existentes en el catálogo curado y 176 proyecciones generadas, además del Plan 1997 histórico de Ingeniería en Computación. La Diplomatura en Música Plan 1994 se excluye porque la oferta y admisión oficiales 2026 publican en su lugar las Tecnicaturas de Salto.
-- De las proyecciones generadas, 93 tienen composición utilizable y 83 permanecen seleccionables con un estado vacío explícito porque Bedelías no publicó una composición suficiente.
+- La UI cubre 182 de las 184 identidades que Bedelías marca como vigentes: siete ya existentes en el catálogo curado y 175 proyecciones generadas, además del Plan 1997 histórico de Ingeniería en Computación. La Diplomatura en Música Plan 1994 y la Carrera Escalonada de Enfermería Plan 2001 se conservan como antecedentes auditados, pero salen del selector vigente por haber sido sustituidas y permanecer sólo en régimen de finalización.
+- De las proyecciones generadas, 93 tienen composición utilizable y 82 permanecen seleccionables con un estado vacío explícito porque Bedelías no publicó una composición suficiente.
 - Diez planes generados incorporan sedes respaldadas por auditoría oficial; las opciones territoriales no se extrapolan a los restantes planes. Trabajo Social Plan 2009 ofrece Montevideo y Salto como sedes de una única malla y conserva el estado explícito de composición no publicada.
-- El manifiesto reproducible es `data/bedelias/inventory/ui-extracted-plans.json`, con hash de reporte `sha256:395ca4987b58b76dcab663951dd2320c36cec85bd1f9f6b226a8f38d68539c29`.
+- El manifiesto reproducible es `data/bedelias/inventory/ui-extracted-plans.json`, con hash de reporte `sha256:827a3c4cb9c3837f33e9d249f1faf35e79518d49102377f7fe041a1df7406c2c`.

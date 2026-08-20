@@ -1728,7 +1728,180 @@
         }
       ],
       "remainingWork": "La identidad, el título, los mínimos y las sedes quedan normalizados. Para ofrecer una malla interactiva completa se necesita convertir la malla oficial y sus reglas vigentes a unidades curriculares curadas; hasta entonces la UI debe declarar composición no publicada."
+    },
+    {
+      "identity": "escalonada de enfermeria:2001",
+      "career": "ESCALONADA DE ENFERMERIA",
+      "planYear": "2001",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-offering-teach-out-and-successor-plan",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitles": [
+          "Auxiliar de Enfermería",
+          "Licenciado en Enfermería"
+        ],
+        "historicalPurpose": "Formación gradual que reconocía trayectorias previas y permitía alcanzar primero el nivel auxiliar y luego la licenciatura.",
+        "documentedImplementation": {
+          "startYear": 2001,
+          "lastNewCohortYearRivera": 2014
+        },
+        "currentSuccessor": {
+          "title": "Licenciado/a en Enfermería",
+          "planYear": "2016",
+          "durationMonths": 54,
+          "minimumCredits": 360,
+          "admissionYear": 2026,
+          "locations": [
+            "Montevideo",
+            "Salto",
+            "Rivera"
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FENF",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "plan histórico en régimen de egreso y exámenes",
+          "admissionStatus": "historical-not-current"
+        },
+        {
+          "serviceCode": "CUR",
+          "locations": [
+            "Rivera"
+          ],
+          "role": "implementación histórica 2001-2014",
+          "admissionStatus": "historical-not-current"
+        },
+        {
+          "serviceCode": "CURE",
+          "locations": [
+            "Rocha"
+          ],
+          "role": "implementación histórica del mismo programa",
+          "admissionStatus": "historical-not-current"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "implementación histórica del mismo programa",
+          "admissionStatus": "historical-not-current"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fenf-escalonada-de-enfermeria-2001.json",
+        "regionalSnapshots": {
+          "CUR": "data/bedelias/cur-escalonada-de-enfermeria-2001.json",
+          "CURE": "data/bedelias/cure-escalonada-de-enfermeria-2001.json",
+          "CENURLN": "data/bedelias/cenurln-escalonada-de-enfermeria-2001.json"
+        },
+        "snapshotCurrentFlags": {
+          "FENF": false,
+          "CUR": false,
+          "CURE": false,
+          "CENURLN": false
+        },
+        "courses": {
+          "FENF": 0,
+          "CUR": 0,
+          "CURE": 0,
+          "CENURLN": 0
+        },
+        "prerequisiteEntries": {
+          "FENF": 0,
+          "CUR": 0,
+          "CURE": 0,
+          "CENURLN": 0
+        },
+        "interpretation": "Los cuatro snapshots coinciden en título y Plan 2001, marcan el plan como no vigente y no publican unidades ni previaturas. El inventario global lo elevó erróneamente como actual a pesar de esos metadatos."
+      },
+      "conclusion": {
+        "canonicalModel": "legacy-plan-teach-out",
+        "regionalCurriculumVariant": false,
+        "excludeFromCurrentUi": true,
+        "reason": "La oferta oficial 2026 abre ingresos exclusivamente a Licenciatura en Enfermería Plan 2016 y al Programa de Profesionalización. Facultad documenta que la Carrera Escalonada se desarrolló en Rivera entre 2001 y 2014, mientras en 2026 mantiene únicamente exámenes y trámites individuales para estudiantes rezagados. Es un plan en finalización, no una carrera vigente para nuevos ingresos.",
+        "normalization": [
+          "No presentar Carrera Escalonada Plan 2001 como carrera vigente ni como opción de ingreso actual.",
+          "Conservar una sola identidad histórica compartida por Montevideo, Rivera, Rocha y Salto; no duplicarla por sede.",
+          "Mantener el registro para trazabilidad y eventual vista de planes en finalización dirigida a estudiantes existentes.",
+          "No trasladar unidades, créditos ni previaturas desde Licenciatura Plan 2016 al Plan 2001.",
+          "Representar la oferta actual mediante Licenciatura en Enfermería Plan 2016 y el Programa de Profesionalización, que son propuestas distintas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fenf.edu.uy/2026/02/10/conoce-la-oferta-educativa-2026/",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "oferta e ingresos 2026 limitados a Licenciatura Plan 2016 y Profesionalización",
+            "sedes actuales Montevideo, Salto y Rivera",
+            "ausencia de nuevos ingresos a Carrera Escalonada"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/ensenanza/sedes/rivera/",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "desarrollo histórico de Carrera Escalonada entre 2001 y 2014",
+            "sustitución territorial por Licenciatura Plan 1993 y luego Plan 2016"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/cronogramas-estudiantiles/",
+          "authority": "Facultad de Enfermería, Udelar",
+          "supports": [
+            "separación entre cursos actuales Plan 2016 y exámenes de Plan 1993/Carrera Escalonada",
+            "continuidad administrativa de cohortes históricas sin nueva admisión"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2026/06/Orden-del-dia-17-junio.pdf",
+          "authority": "Consejo de Facultad de Enfermería, Udelar",
+          "supports": [
+            "calendario de exámenes julio 2026 para Plan 1993 y Carrera Escalonada",
+            "carácter de plan en finalización para estudiantes existentes"
+          ]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": [
+            "29 estudiantes activos en Carrera Escalonada durante 2025",
+            "distinción estadística respecto de Licenciatura en Enfermería"
+          ]
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf",
+          "authority": "Comisión Sectorial de Enseñanza, Udelar",
+          "supports": [
+            "registro histórico Plan 2001",
+            "títulos Auxiliar y Licenciado en Enfermería",
+            "implementaciones en Montevideo, Rivera y Salto"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "globalManifest.current",
+          "resolution": "El manifiesto global marca actual el Plan 2001, pero los cuatro snapshots lo marcan no vigente y la oferta 2026 no abre ingresos. La UI vigente aplica la auditoría oficial y lo excluye."
+        },
+        {
+          "field": "compositionAvailability",
+          "resolution": "Los snapshots declaran disponibilidad pero contienen cero unidades y cero previaturas. Se considera composición no disponible; no se infiere una malla vacía ni se copia el Plan 2016."
+        },
+        {
+          "field": "activeStudents",
+          "resolution": "La existencia de estudiantes, exámenes y trámites de continuidad en 2025-2026 prueba un régimen de finalización, no una nueva oferta. Conservar trazabilidad separada de la UI de carreras vigentes."
+        }
+      ],
+      "remainingWork": "Una futura vista explícita de planes en finalización podría incorporar el Plan 2001 para sus cohortes activas, si se obtiene una composición oficial completa. No debe reaparecer en el selector de oferta vigente ni bloquear la integración del Plan 2016."
     }
   ],
-  "contentHash": "sha256:8289f34a008284af9a90ec69f6dbe1896febcf5c6443f4e0efd1623389704bdc"
+  "contentHash": "sha256:6bbf27ed8483f32100283929caa25eb10321a65d10bf8a1415c20334a208f0dc"
 }

@@ -615,3 +615,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:8289f34a008284af9a90ec69f6dbe1896febcf5c6443f4e0efd1623389704bdc`. Cola actualizada: 166 identidades pendientes, 19 de prioridad `insufficient-regional-content`; hash `sha256:b4648edd61780e0d6bb43142f539399241bb461d79c18ca641f38ce8b06539d3`.
 - Manifiesto UI: 176 proyecciones generadas, 93 con composición y 83 sin composición, diez con sedes oficiales; hash `sha256:395ca4987b58b76dcab663951dd2320c36cec85bd1f9f6b226a8f38d68539c29`.
 - Siguiente paso: auditar Escalonada de Enfermería 2001, próxima identidad `insufficient-regional-content`, y verificar su vigencia actual antes de proyectar ofertas regionales.
+
+### Carrera Escalonada de Enfermería Plan 2001 — régimen de finalización 2026-08-20
+
+- Facultad de Enfermería documenta la Carrera Escalonada como un programa histórico que se desarrolló en Rivera entre 2001 y 2014. La oferta e ingresos 2026 publican únicamente Licenciatura en Enfermería Plan 2016 y Profesionalización de Auxiliares.
+- La continuidad es de egreso: en 2026 se mantienen calendarios de exámenes y trámites individuales para cohortes previas, y Planeamiento registró 29 estudiantes activos en 2025. Esto no equivale a una nueva oferta vigente.
+- Los snapshots FENF, CUR, CURE y CENURLN marcan el Plan 2001 como no vigente y contienen cero unidades y cero previaturas. El manifiesto global lo había elevado incorrectamente como actual.
+- Decisión: conservar una única identidad histórica compartida por Montevideo, Rivera, Rocha y Salto, pero excluirla del selector de carreras vigentes. No copiar la composición del Plan 2016 ni duplicar el programa por sede.
+- Registro de auditoría: hash `sha256:6bbf27ed8483f32100283929caa25eb10321a65d10bf8a1415c20334a208f0dc`. Cola actualizada: 165 identidades pendientes, 18 de prioridad `insufficient-regional-content`; hash `sha256:34c7e0dc0d2f85f033bc388f3b34df9eda57e200d54acd7a83fb32787fcd3ca1`.
+- Manifiesto UI: 175 proyecciones generadas, 93 con composición y 82 sin composición, dos identidades históricas excluidas; hash `sha256:827a3c4cb9c3837f33e9d249f1faf35e79518d49102377f7fe041a1df7406c2c`.
+- Siguiente paso: auditar Profesionalización de Auxiliares de Enfermería Plan 1999, cuya oferta 2026 está abierta en la región suroeste pero requiere separar la identidad académica de su edición territorial actual.
