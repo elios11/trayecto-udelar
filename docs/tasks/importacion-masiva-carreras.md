@@ -858,3 +858,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7`. Cola actualizada: 142 identidades pendientes, 33 sin composición; hash `sha256:c011b9eac405178343d9015dd0c79eb864ab9a7ee838b2dd58da3f70f32ba342`.
 - Manifiesto UI: 175 proyecciones, 114 con composición y 61 sin composición; hash `sha256:b595ccfcc9e59b5ce395e0d4ddc6f28230a22aa79fc7790e90e5b8cb0626a61f`.
 - Siguiente paso: auditar Ingeniería Forestal Plan 2013, próxima identidad sin composición de la cola reproducible.
+
+### Ingeniería Forestal Plan 2013 — mínimos, cogestión y sede auditados 2026-08-20
+
+- Udelar mantiene un único título `Ingeniero Forestal`, cinco años y 450 créditos. La carrera se dicta en Tacuarembó y es compartida por las facultades de Agronomía, Ingeniería y Química.
+- La UI la agrupa una sola vez bajo Agronomía, explicita los otros dos servicios y conserva el snapshot regional CUT como fuente técnica. La cogestión no crea tres copias de carrera, plan o progreso.
+- El egreso exige 5 créditos introductorios, 120 de Ciencias Básicas, 64 de Biociencias, 72 de Ecología Forestal y Silvicultura, 68 de Procesos Industriales, 52 de Gestión, 34 de Formación Complementaria y 35 de Trabajo Final. También se incorporan todos los mínimos oficiales de sus subáreas.
+- El plan describe contenidos y ejemplos, pero no publica una grilla nominal vigente y cerrada por semestre. La UI presenta los 450 créditos como bloques de formación verificables: no transforma ejemplos en materias obligatorias ni inventa orientaciones o previaturas.
+- El documento técnico se denomina Plan 2012; el CDC lo aprobó en diciembre de 2013, FING informa aprobación 2013 y Bedelías usa Plan 2013. La UI conserva 2013 como clave vigente.
+- Documentación histórica contempló cursados posteriores en otras localidades según tutor y oferta. Las páginas vigentes publican Tacuarembó, por lo que no se exponen Rivera, Cerro Largo o Montevideo como sedes completas independientes.
+- Registro de auditoría: hash `sha256:c9dfed44e6bec02a3b3c780521ece65d87d0522b8338babd98739f3464f67ecb`. Cola actualizada: 141 identidades pendientes, 32 sin composición; hash `sha256:d1b1ee4e1e4a2cf6e4010917ff3d5e4f6ddcdc2e8dc6630934330e8c2115fc37`.
+- Manifiesto UI: 175 proyecciones, 115 con composición y 60 sin composición; hash `sha256:cb4f4f5b117322c779dcba012579d9d17073ce2377af99fa8713239822d6b80a`.
+- Siguiente paso: auditar Tecnicatura en Desarrollo Regional Sustentable Plan 2013, próxima identidad sin composición de la cola reproducible.

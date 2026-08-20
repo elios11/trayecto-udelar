@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:c011b9eac405178343d9015dd0c79eb864ab9a7ee838b2dd58da3f70f32ba342",
-    "officialAuditHash": "sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7",
+    "auditQueueHash": "sha256:d1b1ee4e1e4a2cf6e4010917ff3d5e4f6ddcdc2e8dc6630934330e8c2115fc37",
+    "officialAuditHash": "sha256:c9dfed44e6bec02a3b3c780521ece65d87d0522b8338babd98739f3464f67ecb",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 114,
-    "compositionUnavailable": 61,
+    "compositionAvailable": 115,
+    "compositionUnavailable": 60,
     "plansWithOfficialCampuses": 27,
     "excludedFromCurrentUi": 2
   },
@@ -236,9 +236,11 @@
       "planId": "bedelias-cut-ingenieria-forestal-2013",
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-ingenieria-forestal-2013.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "tacuarembo"
+      ]
     },
     {
       "identity": "licenciatura en economia agricola y gestion de agronegocios:2022",
@@ -1698,5 +1700,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:b595ccfcc9e59b5ce395e0d4ddc6f28230a22aa79fc7790e90e5b8cb0626a61f"
+  "contentHash": "sha256:cb4f4f5b117322c779dcba012579d9d17073ce2377af99fa8713239822d6b80a"
 }

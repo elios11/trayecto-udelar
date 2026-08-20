@@ -10050,7 +10050,134 @@
         { "field": "prerequisites", "resolution": "La fuente exige aprobar primer año antes de optar por trayectoria. No se agregan otras previaturas porque no se publicó una tabla consolidada vigente." }
       ],
       "remainingWork": "La malla, los créditos, la sede y las dos trayectorias quedan operativos. Actualizar las optativas nominales sólo cuando Facultad de Artes o CURE publique un catálogo vigente y consolidado."
+    },
+    {
+      "identity": "ingenieria forestal:2013",
+      "career": "INGENIERIA FORESTAL",
+      "planYear": "2013",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-credit-structure-title-duration-campus-and-shared-governance",
+      "publicationEligible": false,
+      "uiNotice": "El Plan 2013 exige 450 créditos distribuidos en áreas y subáreas. Las fuentes oficiales no publican una grilla vigente y cerrada por semestre, por lo que la malla representa los mínimos como bloques de formación y no inventa materias ni previaturas. La carrera se dicta en Tacuarembó y es compartida por Agronomía, Ingeniería y Química.",
+      "officialPlan": {
+        "facultyCode": "FAGRO",
+        "facultyName": "FACULTAD DE AGRONOMÍA",
+        "sharedWith": ["Facultad de Ingeniería", "Facultad de Química"],
+        "approval": [
+          "Consejo Directivo Central, Resolución 24 de 17/12/2013",
+          "Publicación en Diario Oficial de 21/01/2014"
+        ],
+        "title": "Ingeniero Forestal",
+        "durationMonths": 60,
+        "minimumCredits": 450,
+        "curriculum": {
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/claustro_citaciones/2012/distribuido/5974/103-12%20Ingenier%C3%ADa%20Forestal%20%28Plan%20de%20estudios%20%29.pdf",
+          "creditRequirements": [
+            { "id": "if-introductoria", "name": "Formación introductoria", "shortName": "Introductoria", "minCredits": 5 },
+            { "id": "if-ciencias-basicas", "name": "Ciencias básicas", "shortName": "Ciencias básicas", "minCredits": 120 },
+            { "id": "if-matematica", "parentId": "if-ciencias-basicas", "name": "Matemática y aplicaciones", "shortName": "Matemática", "minCredits": 45 },
+            { "id": "if-fisica", "parentId": "if-ciencias-basicas", "name": "Física", "shortName": "Física", "minCredits": 30 },
+            { "id": "if-quimica", "parentId": "if-ciencias-basicas", "name": "Química", "shortName": "Química", "minCredits": 30 },
+            { "id": "if-informatica", "parentId": "if-ciencias-basicas", "name": "Informática", "shortName": "Informática", "minCredits": 15 },
+            { "id": "if-biociencias", "name": "Biociencias", "shortName": "Biociencias", "minCredits": 64 },
+            { "id": "if-celular-fisiologia", "parentId": "if-biociencias", "name": "Estructura celular y fisiología", "shortName": "Celular y fisiología", "minCredits": 24 },
+            { "id": "if-botanica", "parentId": "if-biociencias", "name": "Botánica, anatomía y fisiología vegetal", "shortName": "Botánica", "minCredits": 20 },
+            { "id": "if-biociencias-aplicadas", "parentId": "if-biociencias", "name": "Biociencias aplicadas", "shortName": "Biociencias aplicadas", "minCredits": 20 },
+            { "id": "if-ecologia-silvicultura", "name": "Ecología forestal y silvicultura", "shortName": "Ecología y silvicultura", "minCredits": 72 },
+            { "id": "if-silvicultura-basica", "parentId": "if-ecologia-silvicultura", "name": "Silvicultura básica", "shortName": "Silvicultura básica", "minCredits": 20 },
+            { "id": "if-paisaje", "parentId": "if-ecologia-silvicultura", "name": "Paisaje", "shortName": "Paisaje", "minCredits": 30 },
+            { "id": "if-silvicultura-aplicada", "parentId": "if-ecologia-silvicultura", "name": "Silvicultura aplicada y especializada", "shortName": "Silvicultura aplicada", "minCredits": 22 },
+            { "id": "if-procesos-industriales", "name": "Procesos industriales", "shortName": "Procesos industriales", "minCredits": 68 },
+            { "id": "if-fluidos-energia", "parentId": "if-procesos-industriales", "name": "Fluidos y energía", "shortName": "Fluidos y energía", "minCredits": 20 },
+            { "id": "if-electrotecnia-control", "parentId": "if-procesos-industriales", "name": "Electrotecnia, instrumentación y control", "shortName": "Electrotecnia y control", "minCredits": 15 },
+            { "id": "if-materiales-diseno", "parentId": "if-procesos-industriales", "name": "Materiales, diseño y mecánica aplicada", "shortName": "Materiales y diseño", "minCredits": 15 },
+            { "id": "if-tecnologia-madera", "parentId": "if-procesos-industriales", "name": "Tecnología de la madera", "shortName": "Tecnología de la madera", "minCredits": 18 },
+            { "id": "if-gestion", "name": "Gestión", "shortName": "Gestión", "minCredits": 52 },
+            { "id": "if-politica-legislacion", "parentId": "if-gestion", "name": "Política y legislación", "shortName": "Política y legislación", "minCredits": 6 },
+            { "id": "if-economia", "parentId": "if-gestion", "name": "Economía", "shortName": "Economía", "minCredits": 16 },
+            { "id": "if-sistemas-gestion", "parentId": "if-gestion", "name": "Sistemas integrados de gestión", "shortName": "Sistemas de gestión", "minCredits": 14 },
+            { "id": "if-operaciones-logistica", "parentId": "if-gestion", "name": "Operaciones y logística", "shortName": "Operaciones y logística", "minCredits": 16 },
+            { "id": "if-complementaria", "name": "Formación complementaria", "shortName": "Complementaria", "minCredits": 34 },
+            { "id": "if-trabajo-final", "name": "Trabajo final", "shortName": "Trabajo final", "minCredits": 35 }
+          ],
+          "periods": [
+            { "label": "Formación introductoria", "courses": [
+              { "id": "introduccion-sistemas-foresto-madereros", "name": "Introducción a los Sistemas Foresto-madereros", "credits": 5, "requirementId": "if-introductoria", "curricularBlock": true }
+            ] },
+            { "label": "Ciencias básicas", "courses": [
+              { "id": "matematica-aplicaciones", "name": "Matemática y aplicaciones", "credits": 45, "requirementId": "if-matematica", "curricularBlock": true },
+              { "id": "fisica", "name": "Física", "credits": 30, "requirementId": "if-fisica", "curricularBlock": true },
+              { "id": "quimica", "name": "Química", "credits": 30, "requirementId": "if-quimica", "curricularBlock": true },
+              { "id": "informatica", "name": "Informática", "credits": 15, "requirementId": "if-informatica", "curricularBlock": true }
+            ] },
+            { "label": "Biociencias", "courses": [
+              { "id": "estructura-celular-fisiologia", "name": "Estructura celular y fisiología", "credits": 24, "requirementId": "if-celular-fisiologia", "curricularBlock": true },
+              { "id": "botanica-anatomia-fisiologia", "name": "Botánica, anatomía y fisiología vegetal", "credits": 20, "requirementId": "if-botanica", "curricularBlock": true },
+              { "id": "biociencias-aplicadas", "name": "Biociencias aplicadas", "credits": 20, "requirementId": "if-biociencias-aplicadas", "curricularBlock": true }
+            ] },
+            { "label": "Ecología forestal y silvicultura", "courses": [
+              { "id": "silvicultura-basica", "name": "Silvicultura básica", "credits": 20, "requirementId": "if-silvicultura-basica", "curricularBlock": true },
+              { "id": "paisaje", "name": "Paisaje", "credits": 30, "requirementId": "if-paisaje", "curricularBlock": true },
+              { "id": "silvicultura-aplicada-especializada", "name": "Silvicultura aplicada y especializada", "credits": 22, "requirementId": "if-silvicultura-aplicada", "curricularBlock": true }
+            ] },
+            { "label": "Procesos industriales", "courses": [
+              { "id": "fluidos-energia", "name": "Fluidos y energía", "credits": 20, "requirementId": "if-fluidos-energia", "curricularBlock": true },
+              { "id": "electrotecnia-instrumentacion-control", "name": "Electrotecnia, instrumentación y control", "credits": 15, "requirementId": "if-electrotecnia-control", "curricularBlock": true },
+              { "id": "materiales-diseno-mecanica", "name": "Materiales, diseño y mecánica aplicada", "credits": 15, "requirementId": "if-materiales-diseno", "curricularBlock": true },
+              { "id": "tecnologia-madera", "name": "Tecnología de la madera", "credits": 18, "requirementId": "if-tecnologia-madera", "curricularBlock": true }
+            ] },
+            { "label": "Gestión", "courses": [
+              { "id": "politica-legislacion", "name": "Política y legislación", "credits": 6, "requirementId": "if-politica-legislacion", "curricularBlock": true },
+              { "id": "economia", "name": "Economía", "credits": 16, "requirementId": "if-economia", "curricularBlock": true },
+              { "id": "sistemas-integrados-gestion", "name": "Sistemas integrados de gestión", "credits": 14, "requirementId": "if-sistemas-gestion", "curricularBlock": true },
+              { "id": "operaciones-logistica", "name": "Operaciones y logística", "credits": 16, "requirementId": "if-operaciones-logistica", "curricularBlock": true }
+            ] },
+            { "label": "Formación flexible y egreso", "courses": [
+              { "id": "formacion-complementaria", "name": "Formación complementaria", "credits": 34, "requirementId": "if-complementaria", "curricularBlock": true },
+              { "id": "trabajo-final", "name": "Trabajo final", "credits": 35, "requirementId": "if-trabajo-final", "curricularBlock": true }
+            ] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CUT", "locations": ["Tacuarembó"], "role": "carrera completa compartida por Agronomía, Ingeniería y Química", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cut-ingenieria-forestal-2013.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, título, duración y total de créditos, pero no la composición. El plan aprobado publica los mínimos completos por área y subárea."
+      },
+      "conclusion": {
+        "canonicalModel": "one-shared-plan-one-campus-area-credit-structure",
+        "regionalCurriculumVariant": false,
+        "reason": "La oferta vigente se concentra en Tacuarembó y conduce a un único título. La participación de tres facultades y el cursado eventual en otros servicios no crean carreras, sedes ni trayectorias distintas.",
+        "normalization": [
+          "Mostrar una carrera y un Plan 2013 bajo Facultad de Agronomía, con Ingeniería y Química como servicios participantes.",
+          "Mostrar Tacuarembó como única sede vigente confirmada.",
+          "Representar los 450 créditos mediante los mínimos oficiales de siete áreas de formación y el Trabajo Final.",
+          "Desglosar los mínimos de Ciencias Básicas, Biociencias, Ecología y Silvicultura, Procesos Industriales y Gestión.",
+          "No inventar semestres, asignaturas individuales, orientaciones ni previaturas no publicadas como vigentes."
+        ]
+      },
+      "sources": [
+        { "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-forestal/", "authority": "Facultad de Agronomía", "supports": ["vigencia", "cinco años", "450 créditos", "Tacuarembó", "servicios participantes"] },
+        { "url": "https://udelar.edu.uy/carrera/ingenieria-forestal", "authority": "Universidad de la República", "supports": ["título", "60 meses", "450 créditos", "Tacuarembó", "Agronomía", "Ingeniería", "Química"] },
+        { "url": "https://webiie.fing.edu.uy/en/carrera/grado/ingenier%C3%ADa-forestal-tacuaremb%C3%B3", "authority": "Facultad de Ingeniería", "supports": ["aprobación 2013", "duración", "créditos", "Tacuarembó", "plan oficial"] },
+        { "url": "https://www.fing.edu.uy/sites/default/files/claustro_citaciones/2012/distribuido/5974/103-12%20Ingenier%C3%ADa%20Forestal%20%28Plan%20de%20estudios%20%29.pdf", "authority": "Comisión de carrera y Facultad de Ingeniería", "supports": ["título", "450 créditos", "áreas", "subáreas", "mínimos", "trabajo final", "formación complementaria"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/53117/1/gaceta.ur_26.pdf", "authority": "Diario Oficial de la Universidad de la República", "supports": ["Resolución CDC 24 de 17/12/2013", "título", "servicios responsables"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/ingenieria-forestal/", "authority": "Udelar en el Interior", "supports": ["Tacuarembó", "diez semestres", "áreas de formación"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "El documento técnico se titula Plan 2012, pero el CDC lo aprobó en diciembre de 2013, FING lo publica con año de aprobación 2013 y Bedelías identifica el plan vigente como 2013. La UI conserva 2013." },
+        { "field": "courseComposition", "resolution": "El plan describe contenidos y ejemplos de unidades, pero no una grilla vigente y cerrada por semestre. La UI muestra bloques de crédito y no presenta ejemplos como materias obligatorias." },
+        { "field": "prerequisites", "resolution": "El plan proyectó discutir un régimen de previaturas y un rezago de dos años; no lo aprobó como tabla vigente. No se codifica esa proyección como requisito." },
+        { "field": "campuses", "resolution": "Una autoevaluación histórica contempló cursados posteriores en otras localidades según orientación y tutor. Las páginas vigentes publican Tacuarembó; no se exponen Rivera, Cerro Largo ni Montevideo como sedes independientes." },
+        { "field": "sharedGovernance", "resolution": "La carrera es compartida por Agronomía, Ingeniería y Química. La UI la agrupa una sola vez bajo Agronomía y explicita los otros servicios para evitar tres copias del mismo plan." }
+      ],
+      "remainingWork": "La estructura de egreso, sede y cogestión quedan operativas. Sustituir los bloques por unidades curriculares sólo cuando la Comisión de Carrera publique una grilla nominal vigente y consolidada."
     }
   ],
-  "contentHash": "sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7"
+  "contentHash": "sha256:c9dfed44e6bec02a3b3c780521ece65d87d0522b8338babd98739f3464f67ecb"
 }

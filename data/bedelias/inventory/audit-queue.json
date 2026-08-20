@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T14:56:58.611Z",
+  "generatedAt": "2026-08-20T15:03:56.338Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:322d0be6ce28a712d39155b8a7ce210f4116f412a580b68126daa2ab6a3feea7"
+    "officialAuditRegistryHash": "sha256:c9dfed44e6bec02a3b3c780521ece65d87d0522b8338babd98739f3464f67ecb"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 35,
-    "pendingCanonicalIdentities": 142,
+    "evidenceClosedCanonicalIdentities": 36,
+    "pendingCanonicalIdentities": 141,
     "byPriority": {
-      "composition-unavailable": 33,
+      "composition-unavailable": 32,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -232,39 +232,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-one-campus-two-trajectories"
+    },
+    {
+      "identity": "ingenieria forestal:2013",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-shared-plan-one-campus-area-credit-structure"
     }
   ],
   "queue": [
-    {
-      "identity": "ingenieria forestal:2013",
-      "career": {
-        "name": "INGENIERIA FORESTAL",
-        "normalizedName": "ingenieria forestal",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2013"
-      },
-      "canonicalSource": {
-        "serviceCode": "CUT",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
-        "planKey": "CUT:ingenieria forestal:2013",
-        "site": null,
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CUT",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
-          "planKey": "CUT:ingenieria forestal:2013",
-          "site": null,
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnicatura en desarrollo regional sustentable:2013",
       "career": {
@@ -4590,5 +4566,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:c011b9eac405178343d9015dd0c79eb864ab9a7ee838b2dd58da3f70f32ba342"
+  "contentHash": "sha256:d1b1ee4e1e4a2cf6e4010917ff3d5e4f6ddcdc2e8dc6630934330e8c2115fc37"
 }

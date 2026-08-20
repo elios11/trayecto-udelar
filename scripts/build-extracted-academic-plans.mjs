@@ -426,8 +426,11 @@ function buildProjection(entry, snapshot, audit) {
         publishedMinCredits: Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : null,
         durationMonths: Number(audit?.officialPlan?.durationMonths) || Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
         campuses,
-        sharedWith: [...new Set((entry.sourceOffers ?? []).map((offer) => offer.serviceName)
-          .filter((name) => Boolean(name) && name !== entry.canonicalSource.serviceName))],
+        sharedWith: [...new Set([
+          ...(audit?.officialPlan?.sharedWith ?? []),
+          ...(entry.sourceOffers ?? []).map((offer) => offer.serviceName)
+            .filter((name) => Boolean(name) && name !== entry.canonicalSource.serviceName),
+        ])],
         auditStatus,
         compositionAvailable,
         notice,
