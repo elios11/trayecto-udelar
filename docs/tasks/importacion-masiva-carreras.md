@@ -738,3 +738,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:dc8610c9657bc33576d62e3923f12e91bf7ebff0e0c5650af3f82610fb60ccb9`. Cola actualizada: 154 identidades pendientes, 7 de prioridad `insufficient-regional-content`; hash `sha256:89dd39b04ef769d419504284fd9e6134645a5c3b71e907d36f083ba0d6896c38`.
 - Manifiesto UI: 175 proyecciones, 102 con composición, 73 sin composición y veintiún planes con sedes oficiales; hash `sha256:5d0383531fa4462fa5ee01086fbdd5c177a17baf102be1bd069ece73cb14f89b`.
 - Siguiente paso: auditar Tecnicatura en Podología Plan 2006 entre Facultad de Medicina y Paysandú.
+
+### Tecnicatura en Podología Plan 2006 — malla y sedes auditadas 2026-08-20
+
+- Facultad de Medicina publica el título `Técnico en Podología`, tres años, 2450 horas y 23 unidades: 10 en primer año, 8 en segundo y 5 en tercero. Las cargas anuales oficiales suman exactamente las 2450 horas.
+- Montevideo y Paysandú ofrecen el mismo Plan 2006 y la coordinación vigente organiza las materias comunes para ambas sedes. No hay evidencia oficial de una trayectoria curricular territorial diferente.
+- El catálogo general informa 60 meses, mientras la ficha del servicio responsable publica tres años. Se prioriza Facultad de Medicina y se conserva la discrepancia en la auditoría.
+- La UI conserva las 23 unidades con cero créditos explícitos, porque el plan está expresado en horas, y no inventa conversiones ni previaturas.
+- Registro de auditoría: hash `sha256:57b8068a0a97887e45046853c9aab19b87e21792eebcc0cf1d7e26da78856a2d`. Cola actualizada: 153 identidades pendientes, 6 de prioridad `insufficient-regional-content`; hash `sha256:4415aea4dd85dee5e8337e88cb733738f3d47fb219b6f5ac2d26861d26660760`.
+- Manifiesto UI: 175 proyecciones, 103 con composición, 72 sin composición y veintidós planes con sedes oficiales; hash `sha256:ea5707681642d86190bdc3d3c616df427f79b886b3aa1db0aab21c9932908f7b`.
+- Siguiente paso: auditar Tecnicatura en Radioterapia Plan 2006 entre Facultad de Medicina y Paysandú.

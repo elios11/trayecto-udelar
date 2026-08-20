@@ -3466,7 +3466,294 @@
         { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni nuevas previaturas a Bedelías." }
       ],
       "remainingWork": "La identidad, malla horaria y sedes vigentes del Plan 2006 quedan normalizadas. Rocha debe reabrirse únicamente si una fuente oficial actual confirma nuevamente la oferta."
+    },
+    {
+      "identity": "tecnicatura en podologia:2006",
+      "career": "TECNICATURA EN PODOLOGÍA",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"
+        ],
+        "title": "Técnico en Podología",
+        "durationMonths": 36,
+        "hours": 2450,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/tecnicatura-en-podologia/plan-de-estudio",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                {
+                  "id": "anatomia",
+                  "name": "Anatomía",
+                  "credits": 0
+                },
+                {
+                  "id": "biologia-celular-tisular",
+                  "name": "Biología celular y tisular",
+                  "credits": 0
+                },
+                {
+                  "id": "neurobiologia",
+                  "name": "Neurobiología",
+                  "credits": 0
+                },
+                {
+                  "id": "cardiovascular-respiratorio",
+                  "name": "Cardiovascular y respiratorio",
+                  "credits": 0
+                },
+                {
+                  "id": "digestivo-renal-endocrino",
+                  "name": "Digestivo renal y endócrino",
+                  "credits": 0
+                },
+                {
+                  "id": "reproductor-desarrollo",
+                  "name": "Reproductor y desarrollo",
+                  "credits": 0
+                },
+                {
+                  "id": "psicologia-1",
+                  "name": "Psicología I",
+                  "credits": 0
+                },
+                {
+                  "id": "metodologia-cientifica",
+                  "name": "Metodología científica",
+                  "credits": 0
+                },
+                {
+                  "id": "salud-publica",
+                  "name": "Salud Pública",
+                  "credits": 0
+                },
+                {
+                  "id": "introduccion-practica-podologica",
+                  "name": "Introducción a la Práctica Podológica",
+                  "credits": 0
+                }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                {
+                  "id": "enfermeria-1",
+                  "name": "Enfermería I",
+                  "credits": 0
+                },
+                {
+                  "id": "microbiologia",
+                  "name": "Microbiología",
+                  "credits": 0
+                },
+                {
+                  "id": "tecnicas-podologicas-1",
+                  "name": "Técnicas Podológicas I",
+                  "credits": 0
+                },
+                {
+                  "id": "clinica-podologica",
+                  "name": "Clínica Podológica",
+                  "credits": 0
+                },
+                {
+                  "id": "farmacologia-terapeutica",
+                  "name": "Farmacología y terapéutica",
+                  "credits": 0
+                },
+                {
+                  "id": "clinica-quirurgica",
+                  "name": "Clínica Quirúrgica",
+                  "credits": 0
+                },
+                {
+                  "id": "tecnicas-podologicas-2",
+                  "name": "Técnicas Podológicas II",
+                  "credits": 0
+                },
+                {
+                  "id": "dermatologia",
+                  "name": "Dermatología",
+                  "credits": 0
+                }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                {
+                  "id": "deontologia-legislacion",
+                  "name": "Deontología y legislación laboral",
+                  "credits": 0
+                },
+                {
+                  "id": "administracion-hospitalaria",
+                  "name": "Administración hospitalaria",
+                  "credits": 0
+                },
+                {
+                  "id": "tecnicas-podologicas-especiales",
+                  "name": "Técnicas Podológicas Especiales",
+                  "credits": 0
+                },
+                {
+                  "id": "educacion-sanitaria-practicas-asistenciales",
+                  "name": "Educación Sanitaria y Prácticas Asistenciales",
+                  "credits": 0
+                },
+                {
+                  "id": "patologia-general",
+                  "name": "Patología General",
+                  "credits": 0
+                }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "podologia-primer-ano",
+              "label": "Primer año",
+              "minCompleted": 10,
+              "courseIds": [
+                "anatomia",
+                "biologia-celular-tisular",
+                "neurobiologia",
+                "cardiovascular-respiratorio",
+                "digestivo-renal-endocrino",
+                "reproductor-desarrollo",
+                "psicologia-1",
+                "metodologia-cientifica",
+                "salud-publica",
+                "introduccion-practica-podologica"
+              ]
+            },
+            {
+              "id": "podologia-segundo-ano",
+              "label": "Segundo año",
+              "minCompleted": 8,
+              "courseIds": [
+                "enfermeria-1",
+                "microbiologia",
+                "tecnicas-podologicas-1",
+                "clinica-podologica",
+                "farmacologia-terapeutica",
+                "clinica-quirurgica",
+                "tecnicas-podologicas-2",
+                "dermatologia"
+              ]
+            },
+            {
+              "id": "podologia-tercer-ano",
+              "label": "Tercer año",
+              "minCompleted": 5,
+              "courseIds": [
+                "deontologia-legislacion",
+                "administracion-hospitalaria",
+                "tecnicas-podologicas-especiales",
+                "educacion-sanitaria-practicas-asistenciales",
+                "patologia-general"
+              ]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FMED",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable y sede completa del Plan 2006",
+          "curriculumVariant": false
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "sede completa vigente del mismo Plan 2006",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-podologia-2006.json",
+        "regionalSnapshots": [
+          "data/bedelias/cenurln-tecnicatura-en-podologia-2006.json"
+        ],
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los dos snapshots identifican el Plan 2006 pero no exponen unidades normalizadas. Las fuentes vigentes confirman una única malla para Montevideo y Paysandú."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Medicina publica un único Plan 2006, título y malla, con ingreso vigente en Montevideo y Paysandú; no existe evidencia oficial de una variante curricular territorial.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Tecnicatura en Podología Plan 2006.",
+          "Modelar Montevideo y Paysandú como sedes completas del mismo plan, sin trayectoria territorial.",
+          "Usar las 23 unidades y tres años publicados por Facultad de Medicina como malla oficial.",
+          "Conservar 2450 horas y créditos en cero; no convertir horas a créditos ni inventar previaturas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/tecnicatura-en-podologia/plan-de-estudio",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": [
+            "malla vigente de 23 unidades",
+            "tres años y suma de 2450 horas"
+          ]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/tecnicatura-en-podologia",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": [
+            "título, tres años y 2450 horas",
+            "ingreso en Montevideo y Paysandú"
+          ]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/coordinacion-curricular/tecnicatura-en-podologia",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": [
+            "actividad académica común para ambas sedes durante 2026"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/cenur-litoral-norte-sede-paysandu/",
+          "authority": "Catálogo vigente de carreras del interior, Udelar",
+          "supports": [
+            "oferta vigente de la Tecnicatura en Podología en Paysandú"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "duration",
+          "resolution": "Facultad de Medicina publica tres años y 2450 horas; el catálogo general informa 60 meses. Se prioriza el servicio responsable."
+        },
+        {
+          "field": "credits",
+          "resolution": "El Plan 2006 está expresado en horas y no publica un total de créditos. Las unidades conservan cero créditos explícitos."
+        },
+        {
+          "field": "bedeliasComposition",
+          "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni nuevas previaturas a Bedelías."
+        }
+      ],
+      "remainingWork": "La identidad, malla horaria y sedes vigentes del Plan 2006 quedan normalizadas. Cualquier plan creditizado futuro requerirá una auditoría nueva antes de reemplazar esta proyección."
     }
   ],
-  "contentHash": "sha256:dc8610c9657bc33576d62e3923f12e91bf7ebff0e0c5650af3f82610fb60ccb9"
+  "contentHash": "sha256:57b8068a0a97887e45046853c9aab19b87e21792eebcc0cf1d7e26da78856a2d"
 }
