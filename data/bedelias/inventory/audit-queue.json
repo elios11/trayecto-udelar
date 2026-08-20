@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T11:51:39.898Z",
+  "generatedAt": "2026-08-20T12:30:29.330Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:0b268a5d02dcba14afe7e53b4f4872116d06a73608421ef95a8698c0f960f881"
+    "officialAuditRegistryHash": "sha256:6c6874f16ee3d5fcc85bfd0cd5f5ad5898758ff1ca63ee461b5339d32cb42653"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 27,
-    "pendingCanonicalIdentities": 150,
+    "evidenceClosedCanonicalIdentities": 28,
+    "pendingCanonicalIdentities": 149,
     "byPriority": {
-      "insufficient-regional-content": 3,
+      "insufficient-regional-content": 2,
       "composition-unavailable": 38,
       "official-sources-pending": 109
     },
@@ -185,46 +185,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "doctor en ciencias veterinarias:2021",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-plan-two-territorial-routes"
     }
   ],
   "queue": [
-    {
-      "identity": "doctor en ciencias veterinarias:2021",
-      "career": {
-        "name": "DOCTOR EN CIENCIAS VETERINARIAS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2021",
-        "name": "MÉDICO VETERINARIO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FVET",
-        "serviceName": "FACULTAD DE VETERINARIA",
-        "planKey": "FVET:doctor en ciencias veterinarias:2021",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FVET",
-          "serviceName": "FACULTAD DE VETERINARIA",
-          "planKey": "FVET:doctor en ciencias veterinarias:2021",
-          "state": "extracted"
-        }
-      ],
-      "priority": "insufficient-regional-content",
-      "action": "Localizar composición oficial y documentar si la oferta comparte el plan canónico.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FVET",
-          "status": "insufficient-content",
-          "reason": "empty-course-composition",
-          "difference": null
-        }
-      ]
-    },
     {
       "identity": "asistente en odontologia:2017",
       "career": {
@@ -4818,5 +4787,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:ec1ea7504537fc2a693821d1b9bc58b2e95073132627a4d9b12b93785220b7b3"
+  "contentHash": "sha256:a4e71626ae13deb831ae5b2fa3bd0d4b188048db75b19f3426952c063b9914b5"
 }

@@ -243,7 +243,64 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     sourceUrl,
   }));
 
-  return { courses, periods, nodes, requiredCourseGroups, sourceUrl };
+  return { courses, periods, nodes, requiredCourseGroups, sourceUrl, courseIdBySourceId };
+}
+
+function emptyRequirementExpression(overrides = {}) {
+  return {
+    kind: "requirement",
+    label: "",
+    minimum: null,
+    options: [],
+    children: [],
+    creditRequirement: null,
+    groupCreditRequirement: null,
+    ...overrides,
+  };
+}
+
+function buildOfficialPrerequisiteRules(audit, officialCurriculum, serviceCode) {
+  const prerequisites = audit?.officialPlan?.curriculum?.prerequisites ?? [];
+  if (!officialCurriculum || prerequisites.length === 0) return [];
+  const courseById = new Map(officialCurriculum.courses.map((course) => [course.id, course]));
+  const sourceUrl = audit.officialPlan.curriculum.prerequisitesSourceUrl ?? officialCurriculum.sourceUrl;
+  return prerequisites.flatMap((prerequisite) => {
+    const targetId = officialCurriculum.courseIdBySourceId.get(prerequisite.targetId);
+    const target = courseById.get(targetId);
+    if (!target) return [];
+    const children = (prerequisite.courseIds ?? []).flatMap((sourceId) => {
+      const courseId = officialCurriculum.courseIdBySourceId.get(sourceId);
+      const course = courseById.get(courseId);
+      if (!course) return [];
+      const label = `Curso aprobado de ${course.name}`;
+      return [emptyRequirementExpression({
+        label,
+        minimum: 1,
+        options: [{ assessment: "course", serviceCode, code: course.id, name: course.name, raw: label }],
+      })];
+    });
+    if (Number(prerequisite.minCredits) > 0) {
+      children.push(emptyRequirementExpression({
+        label: `${Number(prerequisite.minCredits)} créditos obtenidos`,
+        creditRequirement: { minimum: Number(prerequisite.minCredits), planYear: String(audit.planYear), planName: audit.career },
+      }));
+    }
+    if (children.length === 0) return [];
+    return [{
+      target: { code: target.id, name: target.name, assessment: "course" },
+      expression: {
+        kind: "all",
+        label: "Debe cumplir todas las condiciones",
+        minimum: null,
+        options: [],
+        children,
+        creditRequirement: null,
+        groupCreditRequirement: null,
+      },
+      heading: `Condiciones oficiales para cursar ${target.name}`,
+      sourceUrl,
+    }];
+  });
 }
 
 function buildProjection(entry, snapshot, audit) {
@@ -287,8 +344,15 @@ function buildProjection(entry, snapshot, audit) {
       rules.push({ target: { code: rule.target.code, name: rule.target.name, assessment: rule.target.assessment }, expression: normalizeExpressionCourseIds(rule.expression, codeToId, snapshot.service.code), heading: rule.heading, sourceUrl: rule.sourceUrl });
     } else if (rule.noPublishedRule && rule.target?.code) noPublishedCodes.add(rule.target.code);
   }
+  for (const rule of buildOfficialPrerequisiteRules(audit, officialCurriculum, snapshot.service.code)) {
+    publishedCodes.add(rule.target.code);
+    rules.push(rule);
+  }
   for (const course of courses) {
-    if (!course.bedeliasCode) continue;
+    if (!course.bedeliasCode) {
+      if (publishedCodes.has(course.id)) course.ruleCoverage = "published";
+      continue;
+    }
     course.ruleCoverage = publishedCodes.has(course.bedeliasCode) ? "published" : noPublishedCodes.has(course.bedeliasCode) ? "not-published" : "not-scraped";
   }
 

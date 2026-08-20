@@ -774,3 +774,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:0b268a5d02dcba14afe7e53b4f4872116d06a73608421ef95a8698c0f960f881`. Cola actualizada: 150 identidades pendientes, 3 de prioridad `insufficient-regional-content`; hash `sha256:ec1ea7504537fc2a693821d1b9bc58b2e95073132627a4d9b12b93785220b7b3`.
 - Manifiesto UI: 175 proyecciones, 106 con composición, 69 sin composición y veinticuatro planes con sedes oficiales; hash `sha256:4e9a1c3ff7073423cc5381cd370ee30a76ee0dfc83dc50b8ed900b9174562b4d`.
 - Siguiente paso: auditar Doctor en Ciencias Veterinarias Plan 2021 y localizar su estructura oficial cuando la composición de Bedelías resulte insuficiente.
+
+### Médico Veterinario Plan 2021 — malla 2026, previaturas y recorridos territoriales auditados 2026-08-20
+
+- Facultad publica el Plan 2021 modificado para 2026 con título `Médico Veterinario`, cinco años, diez semestres, ciclo flexible y 453 créditos. La UI incorpora 69 unidades o actividades rígidas, cuatro mínimos flexibles y 56 reglas oficiales para cursar.
+- El egreso exige 21 créditos optativos/electivos, 9 de EFI, 30 de practicantados —al menos dos— y 10 del Trabajo Final de Grado, además del tronco obligatorio y el total de 453.
+- Se modelan dos recorridos territoriales del mismo plan: Sur combina Montevideo y el Instituto de Producción Animal en San José; Norte cursa 1.º–7.º en Salto y 8.º–10.º en Paysandú. Facultad declara una única malla y permite cambiar de sede, por lo que no se duplican carrera, plan ni progreso.
+- El anexo de previaturas 2026 está rotulado provisorio. Sus cursos previos y umbrales de 28 a 215 créditos quedan operativos y trazables, con revisión pendiente únicamente cuando exista una versión definitiva.
+- El PDF de créditos imprime 45 como subtotal del semestre 6, aunque sus ocho filas suman 46. El total general y la suma de todas las filas coinciden en 453; se preservan los créditos por unidad y se muestra la advertencia.
+- Un PDF de créditos intercambia las infecciosas de rumiantes/monogástricos entre 5.º y 6.º. La malla vigente, la página de cursos y el anexo de previaturas coinciden en Monogástricos en 5.º y Rumiantes en 6.º; prevalece esa coincidencia triple.
+- Registro de auditoría: hash `sha256:6c6874f16ee3d5fcc85bfd0cd5f5ad5898758ff1ca63ee461b5339d32cb42653`. Cola actualizada: 149 identidades pendientes, 2 de prioridad `insufficient-regional-content`; hash `sha256:a4e71626ae13deb831ae5b2fa3bd0d4b188048db75b19f3426952c063b9914b5`.
+- Manifiesto UI: 175 proyecciones, 107 con composición, 68 sin composición y veinticinco planes con sedes oficiales; hash `sha256:b0ef90996f53c223688f7545b749289933ce36e388ebe4d598fc10e6365011f7`.
+- Siguiente paso: auditar Asistente en Odontología Plan 2017, cuya composición no está publicada por Bedelías.

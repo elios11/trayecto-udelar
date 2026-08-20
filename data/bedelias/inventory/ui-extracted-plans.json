@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:ec1ea7504537fc2a693821d1b9bc58b2e95073132627a4d9b12b93785220b7b3",
-    "officialAuditHash": "sha256:0b268a5d02dcba14afe7e53b4f4872116d06a73608421ef95a8698c0f960f881",
+    "auditQueueHash": "sha256:a4e71626ae13deb831ae5b2fa3bd0d4b188048db75b19f3426952c063b9914b5",
+    "officialAuditHash": "sha256:6c6874f16ee3d5fcc85bfd0cd5f5ad5898758ff1ca63ee461b5339d32cb42653",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 106,
-    "compositionUnavailable": 69,
-    "plansWithOfficialCampuses": 24,
+    "compositionAvailable": 107,
+    "compositionUnavailable": 68,
+    "plansWithOfficialCampuses": 25,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -1634,9 +1634,12 @@
       "planId": "bedelias-fvet-doctor-en-ciencias-veterinarias-2021",
       "facultyCode": "FVET",
       "snapshotPath": "data/bedelias/fvet-doctor-en-ciencias-veterinarias-2021.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "sur-montevideo-y-san-jose-instituto-de-produccion-animal",
+        "norte-salto-1-7-y-paysandu-8-10"
+      ]
     },
     {
       "identity": "licenciatura en educacion fisica:2017",
@@ -1674,5 +1677,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:4e9a1c3ff7073423cc5381cd370ee30a76ee0dfc83dc50b8ed900b9174562b4d"
+  "contentHash": "sha256:b0ef90996f53c223688f7545b749289933ce36e388ebe4d598fc10e6365011f7"
 }
