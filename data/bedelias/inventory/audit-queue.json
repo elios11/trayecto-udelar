@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T15:31:05.790Z",
+  "generatedAt": "2026-08-20T15:39:51.861Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:3c502e7d59ea733139b4f91429cf6afd076eb212dd4d24dff0f8f0226d30f717"
+    "officialAuditRegistryHash": "sha256:2d5acd1ecc337febfa6d18b1f3e9505b46c6cd30b8a792bdbbb2726ac36c6c4e"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 38,
-    "pendingCanonicalIdentities": 139,
+    "evidenceClosedCanonicalIdentities": 39,
+    "pendingCanonicalIdentities": 138,
     "byPriority": {
-      "composition-unavailable": 30,
+      "composition-unavailable": 29,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -250,39 +250,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-flexible-plan-one-campus-four-semesters"
+    },
+    {
+      "identity": "tecnologo carnico:2010",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-semi-open-plan-two-campuses-three-axes"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnologo carnico:2010",
-      "career": {
-        "name": "TECNÓLOGO CÁRNICO",
-        "normalizedName": "tecnologo carnico",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2010"
-      },
-      "canonicalSource": {
-        "serviceCode": "CUT",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
-        "planKey": "CUT:tecnologo carnico:2010",
-        "site": null,
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CUT",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - TACUAREMBÓ",
-          "planKey": "CUT:tecnologo carnico:2010",
-          "site": null,
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en nutricion:2014",
       "career": {
@@ -4518,5 +4494,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:29c10c4e6d14ef69d513b74e0f332cc2b53ba99a54566862cd038cce259aa138"
+  "contentHash": "sha256:873982255ea63dc0b92214440fae28e065a452fdfe4ade8d75bb8ddfce17942e"
 }

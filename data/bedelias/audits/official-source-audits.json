@@ -10404,7 +10404,133 @@
         { "field": "campus", "resolution": "La carrera vigente se publica en Tacuarembó. La articulación de electivas con Tecnólogo Cárnico no crea otra sede ni otro plan." }
       ],
       "remainingWork": "La malla, flexibilidad, sede y condición de acceso a la práctica quedan operativas. Incorporar nuevas optativas cuando Escuela de Nutrición publique sus programas y automatizar las previaturas de cursado sólo si la UI incorpora un estado académico que las represente sin exigir aprobación."
+    },
+    {
+      "identity": "tecnologo carnico:2010",
+      "career": "TECNÓLOGO CÁRNICO",
+      "planYear": "2010",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-curriculum-flexibility-final-work-title-duration-and-campuses",
+      "publicationEligible": false,
+      "uiNotice": "La carrera exige 262 créditos en seis semestres: 189 obligatorios, 73 optativos y un trabajo final de 15 créditos. La UI muestra la distribución obligatoria y el catálogo optativo oficial; cada estudiante elige opciones hasta alcanzar los mínimos de los tres ejes. UTU publica sedes vigentes en Tacuarembó y Durazno, sin variantes curriculares entre ellas.",
+      "officialPlan": {
+        "facultyCode": "FVET",
+        "facultyName": "FACULTAD DE VETERINARIA",
+        "approval": ["Plan de Estudios aprobado en 2008", "Oferta conjunta Udelar–ANEP/DGETP-UTU"],
+        "title": "Tecnólogo Cárnico",
+        "durationMonths": 36,
+        "minimumCredits": 262,
+        "sharedWith": ["Facultad de Agronomía", "Facultad de Ingeniería", "Facultad de Química", "DGETP-UTU"],
+        "curriculum": {
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/Tecn%C3%B3logo%20C%C3%A1rnico%20Plan%20de%20Estudios.pdf",
+          "pathwayLabel": "Malla oficial flexible",
+          "pathwayDescription": "Distribución semestral del Plan de Estudios y oferta optativa vigente publicada por DGETP-UTU. Las optativas son alternativas: se exigen 12 créditos en el eje Básico e instrumental, 41 en Tecnología Industrial y 20 en Formación Integral.",
+          "creditRequirements": [
+            { "id": "tc-basico", "name": "Eje Básico e instrumental", "shortName": "Básico", "minCredits": 57 },
+            { "id": "tc-basico-obligatorio", "parentId": "tc-basico", "name": "Básico e instrumental obligatorio", "shortName": "Básico oblig.", "minCredits": 45 },
+            { "id": "tc-basico-optativo", "parentId": "tc-basico", "name": "Básico e instrumental optativo", "shortName": "Básico opt.", "minCredits": 12 },
+            { "id": "tc-tecnologia", "name": "Eje Tecnología Industrial", "shortName": "Tecnología", "minCredits": 142 },
+            { "id": "tc-tecnologia-obligatoria", "parentId": "tc-tecnologia", "name": "Tecnología Industrial obligatoria", "shortName": "Tecnología oblig.", "minCredits": 101 },
+            { "id": "tc-tecnologia-optativa", "parentId": "tc-tecnologia", "name": "Tecnología Industrial optativa", "shortName": "Tecnología opt.", "minCredits": 41 },
+            { "id": "tc-integral", "name": "Eje Formación Integral", "shortName": "Integral", "minCredits": 48 },
+            { "id": "tc-integral-obligatoria", "parentId": "tc-integral", "name": "Formación Integral obligatoria", "shortName": "Integral oblig.", "minCredits": 28 },
+            { "id": "tc-integral-optativa", "parentId": "tc-integral", "name": "Formación Integral optativa", "shortName": "Integral opt.", "minCredits": 20 },
+            { "id": "tc-trabajo-final", "name": "Trabajo final", "shortName": "Trabajo final", "minCredits": 15 }
+          ],
+          "periods": [
+            { "label": "Semestre 1", "courses": [
+              { "id": "matematica", "name": "Matemática", "credits": 9, "requirementId": "tc-basico-obligatorio" },
+              { "id": "quimica", "name": "Química", "credits": 6, "requirementId": "tc-basico-obligatorio" },
+              { "id": "fisica", "name": "Física", "credits": 6, "requirementId": "tc-basico-obligatorio" },
+              { "id": "procesos-carnes-1", "name": "Procesos Agroindustriales de Producción de Carnes I", "credits": 14, "requirementId": "tc-tecnologia-obligatoria" },
+              { "id": "ingles-tecnico", "name": "Inglés Técnico · optativa", "credits": 4, "requirementId": "tc-basico-optativo" },
+              { "id": "informatica", "name": "Informática · optativa", "credits": 4, "requirementId": "tc-basico-optativo" }
+            ] },
+            { "label": "Semestre 2", "courses": [
+              { "id": "microbiologia-general", "name": "Microbiología General", "credits": 8, "requirementId": "tc-basico-obligatorio" },
+              { "id": "anatomia-fisiologia", "name": "Anatomía y Fisiología", "credits": 8, "requirementId": "tc-basico-obligatorio" },
+              { "id": "bioquimica", "name": "Bioquímica", "credits": 8, "requirementId": "tc-basico-obligatorio" },
+              { "id": "procesos-carnes-2", "name": "Procesos Agroindustriales de Producción de Carnes II", "credits": 14, "requirementId": "tc-tecnologia-obligatoria" },
+              { "id": "sistemas-produccion-cadenas", "name": "Sistemas de Producción Agropecuarios y Cadenas de Valor · optativa", "credits": 4, "requirementId": "tc-basico-optativo" },
+              { "id": "extension", "name": "Extensión · optativa", "credits": 4, "requirementId": "tc-integral-optativa" }
+            ] },
+            { "label": "Semestre 3", "courses": [
+              { "id": "procesos-carnes-3", "name": "Procesos Agroindustriales de Producción de Carnes III", "credits": 14, "requirementId": "tc-tecnologia-obligatoria" },
+              { "id": "calidad-carne-1", "name": "Calidad Sanitaria, Organoléptica y Nutricional I", "credits": 15, "requirementId": "tc-tecnologia-obligatoria" },
+              { "id": "estadistica", "name": "Estadística", "credits": 6, "requirementId": "tc-integral-obligatoria" },
+              { "id": "economia-gestion", "name": "Economía y Gestión Empresarial", "credits": 2, "requirementId": "tc-integral-obligatoria" },
+              { "id": "tratamiento-aguas", "name": "Tratamiento de Aguas para Uso Industrial · optativa", "credits": 8, "requirementId": "tc-tecnologia-optativa" }
+            ] },
+            { "label": "Semestre 4", "courses": [
+              { "id": "procesos-carnes-4", "name": "Procesos Agroindustriales de Producción de Carnes IV", "credits": 14, "requirementId": "tc-tecnologia-obligatoria" },
+              { "id": "calidad-carne-2", "name": "Calidad Sanitaria, Organoléptica y Nutricional II", "credits": 15, "requirementId": "tc-tecnologia-obligatoria" },
+              { "id": "gestion-recursos-humanos", "name": "Gestión de Recursos Humanos", "credits": 2, "requirementId": "tc-integral-obligatoria" },
+              { "id": "legislacion-laboral", "name": "Legislación Laboral", "credits": 3, "requirementId": "tc-integral-obligatoria" },
+              { "id": "carne-aviar", "name": "Procesos Agroindustriales para Carne Aviar · optativa", "credits": 6, "requirementId": "tc-tecnologia-optativa" },
+              { "id": "complejos-mercadeo", "name": "Gestión de Complejos Agroindustriales y Mercadeo · optativa", "credits": 4, "requirementId": "tc-integral-optativa" }
+            ] },
+            { "label": "Semestre 5", "courses": [
+              { "id": "inocuidad-gestion", "name": "Inocuidad, Sistemas de Gestión de Calidad y Medio Ambiente", "credits": 15, "requirementId": "tc-tecnologia-obligatoria" },
+              { "id": "seguridad-industrial", "name": "Seguridad Industrial", "credits": 15, "requirementId": "tc-integral-obligatoria" },
+              { "id": "carne-porcina", "name": "Procesos Agroindustriales para Carne Porcina · optativa", "credits": 6, "requirementId": "tc-tecnologia-optativa" },
+              { "id": "carnes-procesadas", "name": "Carnes Procesadas · optativa", "credits": 8, "requirementId": "tc-tecnologia-optativa" },
+              { "id": "microbiologia-industrial", "name": "Microbiología Industrial · optativa", "credits": 6, "requirementId": "tc-tecnologia-optativa" },
+              { "id": "efluentes-residuos", "name": "Tratamiento de Efluentes y Gestión de Residuos Sólidos Industriales · optativa", "credits": 6, "requirementId": "tc-tecnologia-optativa" }
+            ] },
+            { "label": "Semestre 6", "courses": [
+              { "id": "trabajo-final", "name": "Trabajo Final", "credits": 15, "requirementId": "tc-trabajo-final" },
+              { "id": "carnes-no-tradicionales", "name": "Procesos Agroindustriales de Carnes no Tradicionales · optativa", "credits": 8, "requirementId": "tc-tecnologia-optativa" },
+              { "id": "gestion-calidad", "name": "Gestión de la Calidad · optativa", "credits": 4, "requirementId": "tc-integral-optativa" },
+              { "id": "logistica", "name": "Logística · optativa", "credits": 4, "requirementId": "tc-integral-optativa" },
+              { "id": "emprendedorismo", "name": "Emprendedorismo e Inserción Laboral · optativa", "credits": 4, "requirementId": "tc-integral-optativa" }
+            ] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "tc-trabajo-final-obligatorio", "label": "Trabajo final de carrera", "minCompleted": 1, "courseIds": ["trabajo-final"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CUT", "locations": ["Tacuarembó", "Durazno"], "role": "carrera conjunta Udelar–DGETP-UTU con dos sedes publicadas", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cut-tecnologo-carnico-2010.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, duración y 262 créditos, pero no la composición. El plan oficial aporta la estructura por ejes, créditos y trabajo final; la ficha terciaria vigente de DGETP-UTU aporta la distribución semestral y las dos sedes."
+      },
+      "conclusion": {
+        "canonicalModel": "one-semi-open-plan-two-campuses-three-axes",
+        "regionalCurriculumVariant": false,
+        "reason": "Existe un único título y un único plan semiabierto. Tacuarembó y Durazno son sedes del mismo currículo y no trayectorias ni carreras duplicadas.",
+        "normalization": [
+          "Mostrar una carrera bajo Facultad de Veterinaria, un Plan 2010 y las sedes Tacuarembó y Durazno.",
+          "Exigir 262 créditos y los mínimos 57/142/48 de los tres ejes, más 15 de trabajo final.",
+          "Dentro de cada eje exigir 45+12, 101+41 y 28+20 créditos obligatorios y optativos, respectivamente.",
+          "Presentar la lista optativa por semestre como catálogo de alternativas; no exigir aprobar todas sus unidades.",
+          "No crear trayectorias por tipo de carne ni inventar previaturas: el plan delega las correlatividades a reglamentación posterior que no está publicada en forma consolidada."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.fing.edu.uy/sites/default/files/Tecn%C3%B3logo%20C%C3%A1rnico%20Plan%20de%20Estudios.pdf", "authority": "Universidad de la República", "supports": ["Plan 2008", "seis semestres", "262 créditos", "tres ejes", "mínimos obligatorios y optativos", "trabajo final", "currículo semiabierto"] },
+        { "url": "https://www.fing.edu.uy/es/carrera/grado/tecn%C3%B3logo-c%C3%A1rnico", "authority": "Facultad de Ingeniería", "supports": ["vigencia", "aprobación 2008", "Tacuarembó", "tres años", "optativas por tipos de carne"] },
+        { "url": "https://www.fvet.edu.uy/ensenanza/grado/tecnologo-carnico/", "authority": "Facultad de Veterinaria", "supports": ["vigencia", "oferta compartida", "seis semestres", "Tacuarembó", "prácticas y pasantías"] },
+        { "url": "https://eduterciaria.utu.edu.uy/2024/06/20/tecnologo-carnico/", "authority": "DGETP-UTU", "supports": ["cogestión vigente", "distribución semestral", "Tacuarembó", "Durazno", "título"] },
+        { "url": "https://cv.utu.edu.uy/tecnologo-carnico", "authority": "DGETP-UTU", "supports": ["vigencia", "seis semestres", "262 créditos", "ingreso con cualquier bachillerato"] },
+        { "url": "https://udelar.edu.uy/carrera/tecnologo-carnico", "authority": "Universidad de la República", "supports": ["vigencia", "36 meses", "262 créditos", "servicios participantes", "Tacuarembó"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/tecnologo-carnico/", "authority": "Udelar en el Interior", "supports": ["seis semestres", "tres ejes", "Tacuarembó"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "Bedelías identifica Plan 2010, mientras el plan enlazado y las facultades indican aprobación en 2008. La UI conserva 2010 como clave de inscripción vigente y documenta 2008 como año del documento académico." },
+        { "field": "optionalCredits", "resolution": "La tabla estructural exige 73 créditos optativos y suma 262; el ejemplo semestral del anexo suma 74 optativos. La UI usa los mínimos normativos de la tabla y trata el anexo como distribución orientativa." },
+        { "field": "optionalCatalog", "resolution": "El catálogo nominal ofrece más créditos que los mínimos. Se muestran alternativas seleccionables, no un conjunto obligatorio completo; Carne y Salud se omite hasta contar con créditos oficiales." },
+        { "field": "campuses", "resolution": "El catálogo central de Udelar sólo enumera Tacuarembó, pero DGETP-UTU —cogestora de la carrera— publica además el Polo Educativo Tecnológico de Durazno y actividad docente reciente en esa sede. Se exponen ambas como sedes del mismo plan, sin variante curricular." },
+        { "field": "prerequisites", "resolution": "El plan prevé que las previaturas sean definidas por reglamentación posterior, pero no publica una tabla consolidada. La UI no inventa correlatividades." },
+        { "field": "academicOwnership", "resolution": "La oferta es interinstitucional. La UI la agrupa bajo Facultad de Veterinaria por su ficha académica vigente y conserva como participación explícita Agronomía, Ingeniería, Química y DGETP-UTU." }
+      ],
+      "remainingWork": "La estructura de egreso, malla semestral, catálogo optativo, trabajo final y sedes quedan operativos. Incorporar previaturas sólo cuando la coordinación publique una tabla normativa consolidada y revisar el nombre de Plan 2010 si Bedelías actualiza su clave al año de aprobación 2008."
     }
   ],
-  "contentHash": "sha256:3c502e7d59ea733139b4f91429cf6afd076eb212dd4d24dff0f8f0226d30f717"
+  "contentHash": "sha256:2d5acd1ecc337febfa6d18b1f3e9505b46c6cd30b8a792bdbbb2726ac36c6c4e"
 }

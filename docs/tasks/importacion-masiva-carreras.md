@@ -894,3 +894,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Las tres áreas Biopsicosocial, Nutrición y Alimentación, y Gestión organizan contenidos; no son orientaciones ni trayectorias seleccionables.
 - Registro de auditoría: hash `sha256:3c502e7d59ea733139b4f91429cf6afd076eb212dd4d24dff0f8f0226d30f717`. Cola actualizada: 139 identidades pendientes, 30 sin composición; la UI genera 117 planes con composición y 58 sin composición.
 - Siguiente paso: auditar Tecnólogo Cárnico Plan 2010, próxima identidad sin composición de la cola reproducible.
+
+### Tecnólogo Cárnico Plan 2010 — ejes, optatividad, trabajo final y sedes auditados 2026-08-20
+
+- Udelar y DGETP-UTU mantienen un único título `Tecnólogo Cárnico`, tres años, seis semestres y 262 créditos. La UI lo agrupa una sola vez bajo Facultad de Veterinaria y explicita la participación de Agronomía, Ingeniería, Química y DGETP-UTU.
+- El egreso exige 57 créditos del eje Básico e instrumental, 142 de Tecnología Industrial, 48 de Formación Integral y 15 de Trabajo Final. Dentro de los tres ejes se conservan exactamente los mínimos 45+12, 101+41 y 28+20 de formación obligatoria y optativa; los 189 obligatorios y 73 optativos suman 262.
+- Se incorporaron las diecinueve actividades obligatorias de la distribución semestral y quince optativas oficiales como catálogo de 80 créditos posibles. La UI exige sólo los mínimos por eje: no convierte todas las alternativas en materias obligatorias.
+- El anexo orientativo suma 74 créditos optativos, pero la tabla normativa fija 73 y totaliza 262. Se aplica la tabla y se registra la inconsistencia; `Carne y Salud` se omite hasta contar con un crédito oficial.
+- El Trabajo Final de 15 créditos queda como requisito explícito. El plan delega las previaturas a reglamentación posterior y no publica una tabla consolidada, por lo que no se inventan correlatividades.
+- DGETP-UTU, cogestora de la carrera, publica sedes en Tacuarembó y Durazno; el catálogo central de Udelar sólo enumera Tacuarembó. Se exponen ambas sedes del mismo plan, sin duplicar la carrera ni crear una trayectoria territorial ficticia.
+- Bedelías identifica Plan 2010, mientras el documento académico y las facultades informan aprobación en 2008. La UI conserva 2010 como clave de inscripción y deja trazada la diferencia.
+- Registro de auditoría: hash `sha256:2d5acd1ecc337febfa6d18b1f3e9505b46c6cd30b8a792bdbbb2726ac36c6c4e`. Cola actualizada: 138 identidades pendientes, 29 sin composición; hash `sha256:873982255ea63dc0b92214440fae28e065a452fdfe4ade8d75bb8ddfce17942e`.
+- Manifiesto UI: 175 proyecciones, 118 con composición y 57 sin composición; hash `sha256:92c53214f1f83ef25055edf74d559955777d1d5844caaf664c70ac35b608beb9`.
+- Siguiente paso: auditar Licenciatura en Nutrición Plan 2014, próxima identidad sin composición de la cola reproducible.
