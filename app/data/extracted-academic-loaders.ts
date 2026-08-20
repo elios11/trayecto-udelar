@@ -210,12 +210,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 0,
   },
-  "bedelias-fartes-diplomatura-en-musica-1994": {
-    load: () => import("./bedelias-generated/bedelias-fartes-diplomatura-en-musica-1994.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fartes-licenciatura-en-arte-digital-y-electronico-2013": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-arte-digital-y-electronico-2013.json"),
     pathwayIds: ["bedelias"],

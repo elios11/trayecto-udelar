@@ -303,6 +303,7 @@ export async function buildExtractedAcademicPlans() {
   }
   const completedEntries = queue.completedAudits.map((completed) => {
     const audit = audits.get(completed.identity);
+    if (audit?.conclusion?.excludeFromCurrentUi) return null;
     const plan = globalByIdentity.get(completed.identity);
     const preferredSnapshot = canonicalSnapshotPath(audit);
     const preferredServiceCode = preferredSnapshot?.split(/[\\/]/).at(-1)?.split("-")[0]?.toLocaleUpperCase() ?? plan.serviceCode;
@@ -315,7 +316,7 @@ export async function buildExtractedAcademicPlans() {
       priority: "official-evidence-complete",
       explicitSnapshotPath: preferredSnapshot,
     };
-  });
+  }).filter(Boolean);
   const entries = [...queue.queue, ...completedEntries].sort((a, b) => a.canonicalSource.serviceName.localeCompare(b.canonicalSource.serviceName, "es") || a.career.name.localeCompare(b.career.name, "es") || String(a.plan.year).localeCompare(String(b.plan.year), "es"));
 
   const snapshotFiles = (await readdir(snapshotDirectory)).filter((name) => name.endsWith(".json"));
@@ -370,6 +371,7 @@ export async function buildExtractedAcademicPlans() {
       compositionAvailable: projections.filter(({ projection }) => projection.plan.compositionAvailable).length,
       compositionUnavailable: projections.filter(({ projection }) => !projection.plan.compositionAvailable).length,
       plansWithOfficialCampuses: projections.filter(({ projection }) => projection.campuses.length > 1).length,
+      excludedFromCurrentUi: auditsRegistry.audits.filter((audit) => audit.conclusion?.excludeFromCurrentUi).length,
     },
     plans: projections.map(({ entry, planId, item, projection }) => ({ identity: entry.identity, planId, facultyCode: entry.canonicalSource.serviceCode, snapshotPath: path.relative(projectRoot, item.absolutePath).replaceAll("\\", "/"), auditStatus: projection.plan.auditStatus, compositionAvailable: projection.plan.compositionAvailable, campusIds: projection.campuses.map((campus) => campus.id) })),
   };

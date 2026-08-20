@@ -41,7 +41,7 @@ Incorporar al selector académico todas las identidades canónicas vigentes extr
 
 ## Estado actualizado 2026-08-20
 
-- La UI cubre las 184 identidades canónicas vigentes del inventario: siete ya existentes en el catálogo curado y 177 proyecciones generadas, además del Plan 1997 histórico de Ingeniería en Computación.
-- De las proyecciones generadas, 93 tienen composición utilizable y 84 permanecen seleccionables con un estado vacío explícito porque Bedelías no publicó una composición suficiente.
+- La UI cubre 183 de las 184 identidades que Bedelías marca como vigentes: siete ya existentes en el catálogo curado y 176 proyecciones generadas, además del Plan 1997 histórico de Ingeniería en Computación. La Diplomatura en Música Plan 1994 se excluye porque la oferta y admisión oficiales 2026 publican en su lugar las Tecnicaturas de Salto.
+- De las proyecciones generadas, 93 tienen composición utilizable y 83 permanecen seleccionables con un estado vacío explícito porque Bedelías no publicó una composición suficiente.
 - Nueve planes generados incorporan sedes respaldadas por auditoría oficial; las opciones territoriales no se extrapolan a los restantes planes.
-- El manifiesto reproducible es `data/bedelias/inventory/ui-extracted-plans.json`, con hash de reporte `sha256:2d283a8f120d8d863b0e667fca9a0d9db31acfd7c9f601b82e80ec03c83fde03`.
+- El manifiesto reproducible es `data/bedelias/inventory/ui-extracted-plans.json`, con hash de reporte `sha256:5ca7828d64cd6b24a863506d7cb709748aed97c97b81206a9fe5ad332ca8acc1`.

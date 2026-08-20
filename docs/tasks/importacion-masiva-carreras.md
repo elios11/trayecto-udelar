@@ -595,3 +595,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - El catálogo regional flexible no genera variantes curriculares por sí solo. Todas las proyecciones masivas conservan `publicationEligible: false` aunque tengan evidencia oficial de sedes o metadatos.
 - Manifiesto reproducible: `data/bedelias/inventory/ui-extracted-plans.json`, hash de reporte `sha256:2d283a8f120d8d863b0e667fca9a0d9db31acfd7c9f601b82e80ec03c83fde03`.
 - Siguiente paso documental: continuar el lote `insufficient-regional-content` desde Diplomatura en Música 1994 sin bloquear la disponibilidad local de las identidades ya extraídas.
+
+### Diplomatura en Música 1994 — marca de vigencia corregida 2026-08-20
+
+- El listado institucional histórico registra `Diplomado en Música (Salto)` Plan 1994 con Piano, Canto, Dirección Coral y Guitarra. Bedelías conserva además la variante nominal `Diplomatura`, sin composición publicada en el servicio central ni en CENUR Litoral Norte.
+- La oferta vigente de Facultad de Artes publica en Salto dos carreras sucesoras separadas: Técnico en Interpretación y Técnico en Dirección de Coros. Las bases de admisión 2026 las identifican como Plan 2004 y no convocan ingresos al Plan 1994.
+- Decisión: conservar el Plan 1994 como antecedente trazable, pero excluirlo del selector vigente. No mezclar sus reglas vacías con las Tecnicaturas actuales ni usar la marca `current` de Bedelías para contradecir la oferta oficial 2026.
+- La UI queda con 183 identidades vigentes verificables —siete curadas y 176 generadas— más Ingeniería en Computación Plan 1997 como plan histórico explícito. De las proyecciones generadas, 93 tienen composición y 83 muestran composición no publicada.
+- Registro de auditoría: hash `sha256:f4059e60ca15617c887201df63af3b653ec7570eb93bda9297ac243221f151e2`. Cola actualizada: 167 identidades pendientes, 20 de prioridad `insufficient-regional-content`; hash `sha256:83a5ffa8a4193a49dc6f8890b004ca909d5dd8b17b5809e30f008072e5cf9253`.
+- Manifiesto UI: hash `sha256:5ca7828d64cd6b24a863506d7cb709748aed97c97b81206a9fe5ad332ca8acc1`.
+- Siguiente paso: auditar Licenciatura en Trabajo Social 2009, próxima identidad `insufficient-regional-content`, sin trasladar automáticamente la discrepancia Plan 2002/2004 de las Tecnicaturas de Salto.

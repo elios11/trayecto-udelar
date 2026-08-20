@@ -1517,7 +1517,85 @@
         }
       ],
       "remainingWork": "La auditoría resuelve la falsa variante regional y la vía de ingreso CURE. La proyección curada de unidades, mínimos operativos y previaturas para la UI sigue pendiente y no habilita publicación automática."
+    },
+    {
+      "identity": "diplomatura en musica:1994",
+      "career": "DIPLOMATURA EN MÚSICA",
+      "planYear": "1994",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-offering-and-successor-plan",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Diplomado en Música (Salto)",
+        "historicalOptions": ["Ejecución instrumental: Piano", "Canto", "Dirección Coral", "Ejecución instrumental: Guitarra"],
+        "currentSuccessors": [
+          { "title": "Técnico en Interpretación", "planYear": "2004", "options": ["Guitarra", "Piano", "Canto"], "location": "Salto" },
+          { "title": "Técnico en Dirección de Coros", "planYear": "2004", "location": "Salto" }
+        ],
+        "currentAdmissionYear": 2026
+      },
+      "offerings": [
+        {
+          "serviceCode": "FARTES",
+          "locations": ["Salto"],
+          "role": "registro histórico sustituido por las Tecnicaturas Plan 2004",
+          "admissionStatus": "historical-not-current"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-diplomatura-en-musica-1994.json",
+        "regionalSnapshot": "data/bedelias/cenurln-diplomatura-en-musica-1994.json",
+        "canonicalCompositionAvailable": false,
+        "regionalCompositionAvailable": false,
+        "interpretation": "Los dos registros de Bedelías carecen de composición y conservan una identidad de 1994. El listado institucional histórico separa ese Diplomado de las Tecnicaturas de Salto, mientras la oferta y admisión oficiales 2026 publican únicamente las carreras Plan 2004."
+      },
+      "conclusion": {
+        "canonicalModel": "legacy-plan-superseded",
+        "regionalCurriculumVariant": false,
+        "excludeFromCurrentUi": true,
+        "reason": "La denominación y las cuatro opciones del registro 1994 corresponden al Diplomado histórico de Salto. Facultad de Artes publica como oferta actual las Tecnicaturas Plan 2004 y las convoca expresamente para ingreso 2026; no existe evidencia oficial vigente de un nuevo ingreso a la Diplomatura 1994.",
+        "normalization": [
+          "No presentar la Diplomatura Plan 1994 como carrera vigente ni como plan seleccionable actual.",
+          "Conservar el registro y su discrepancia con Bedelías como evidencia histórica trazable.",
+          "Mantener separadas las Tecnicaturas Plan 2004, sus títulos y sus opciones de interpretación o dirección coral.",
+          "No trasladar materias, créditos ni reglas entre el plan histórico sin composición y sus sucesores vigentes."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicaturas-instituto-de-musica-salto/",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": ["oferta vigente de las dos Tecnicaturas en Salto", "opciones Guitarra, Piano y Canto", "estructura de ocho semestres y reglamento sucesor"]
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/inscripciones-musica-nueva-generacion/",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": ["ingreso 2026 a las Tecnicaturas del CENUR Litoral Norte", "ausencia de convocatoria a Diplomatura Plan 1994"]
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2025/08/BASES-DE-ADMISION-TECNICATURAS_SALTO_2026.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": ["pruebas de admisión 2026 para las Tecnicaturas Plan 2004", "opciones actuales Canto, Guitarra, Piano y Dirección Coral"]
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf",
+          "authority": "Comisión Sectorial de Enseñanza, Udelar",
+          "supports": ["registro histórico Diplomado en Música (Salto) Plan 1994", "cuatro ciclos históricos", "existencia separada de las Tecnicaturas de Salto"]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "bedeliasCurrentFlag",
+          "resolution": "La marca vigente del índice de Bedelías contradice la oferta académica y admisión oficiales 2026. Se conserva en el inventario de origen, pero la UI actual excluye el Plan 1994."
+        },
+        {
+          "field": "careerName",
+          "resolution": "Las fuentes históricas usan Diplomado en Música (Salto), mientras el índice regional también registra Diplomatura en Música. Se tratan como el mismo antecedente Plan 1994, no como dos carreras actuales."
+        }
+      ],
+      "remainingWork": "Conservar la ficha histórica sólo si se implementa una vista explícita de planes cerrados. La UI vigente debe usar las Tecnicaturas Plan 2004 y no inferir su composición desde el registro 1994 vacío."
     }
   ],
-  "contentHash": "sha256:dc8651ba1caafa5410a9f8b57c145982e800c40a4604412a93a8762a1f57ce60"
+  "contentHash": "sha256:f4059e60ca15617c887201df63af3b653ec7570eb93bda9297ac243221f151e2"
 }
