@@ -690,3 +690,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:e57a2a997f003a9b10b0e8028ce252953204d5f1380b3b1300bc3d9fb63e244d`. Cola actualizada: 159 identidades pendientes, 12 de prioridad `insufficient-regional-content`; hash `sha256:844b2f5591bebb5aa1eacf3289210687dc91ffa91edae4660813d2ace86a727d`.
 - Manifiesto UI: 175 proyecciones, 97 con composición, 78 sin composición y dieciséis con sedes oficiales; hash `sha256:342796e8c6685ce673e5607a9251909e4857aab15aba3b97e3f4603475c4a5a2`.
 - Siguiente paso: auditar Licenciatura en Instrumentación Quirúrgica Plan 2006 entre Facultad de Medicina y Paysandú.
+
+### Licenciatura en Instrumentación Quirúrgica Plan 2006 — malla y sedes auditadas 2026-08-20
+
+- Facultad de Medicina mantiene el Plan 2006 con título `Licenciado en Instrumentación Quirúrgica`, cuatro años y 4932 horas. Su malla oficial contiene 28 unidades: 11 en primer año, 6 en segundo, 7 en tercero y 4 en cuarto.
+- La UI conserva las unidades obligatorias por año, las cuatro prácticas de instrumentación, Internado y Monografía. El plan no publica créditos, por lo que no convierte horas ni UCB y mantiene cero créditos explícitos.
+- Montevideo y Paysandú ofrecen la carrera completa bajo la misma malla. El ingreso por CIO Salud en Paysandú es una vía administrativa y no una trayectoria curricular distinta.
+- Registro de auditoría: hash `sha256:8016548a4c8d61b83d8bff6cf7a369442887903e1e8168646859a5cab10f53f8`. Cola actualizada: 158 identidades pendientes, 11 de prioridad `insufficient-regional-content`; hash `sha256:7fc6c7a1c21af3f3f78201f8bfec51071c4d9bccf6e8a272b0e2f4acca09c46d`.
+- Manifiesto UI: 175 proyecciones, 98 con composición, 77 sin composición y diecisiete con sedes oficiales; hash `sha256:f917e6d66a56f53a7f9e6df1f159a116daef79cbe43cd0c7af70aea8998e75c3`.
+- Siguiente paso: auditar Licenciatura en Laboratorio Clínico Plan 2006 entre Facultad de Medicina y Paysandú.

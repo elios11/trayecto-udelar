@@ -2827,7 +2827,142 @@
         { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
       ],
       "remainingWork": "La identidad, malla horaria y alcance territorial quedan normalizados. La etapa exacta ofrecida en Río Negro debe mantenerse sincronizada con el catálogo vigente y cualquier plan creditizado futuro requerirá una nueva auditoría."
+    },
+    {
+      "identity": "licenciatura en instrumentacion quirurgica:2006",
+      "career": "LICENCIATURA EN INSTRUMENTACIÓN QUIRÚRGICA",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "plan-curriculum-and-regional-offering",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2006 de la Escuela Universitaria de Tecnología Médica"],
+        "title": "Licenciado en Instrumentación Quirúrgica",
+        "durationMonths": 48,
+        "hours": 4932,
+        "minimumCredits": 0,
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-instrumentacion-quirurgica/plan-de-estudio",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "anatomia", "name": "Anatomía", "credits": 0 },
+                { "id": "biologia-celular-tisular", "name": "Biología celular y tisular", "credits": 0 },
+                { "id": "neurobiologia", "name": "Neurobiología", "credits": 0 },
+                { "id": "cardiovascular-respiratorio", "name": "Cardiovascular y respiratorio", "credits": 0 },
+                { "id": "digestivo-renal-endocrino", "name": "Digestivo renal y endócrino", "credits": 0 },
+                { "id": "reproductor-desarrollo", "name": "Reproductor y desarrollo", "credits": 0 },
+                { "id": "introduccion-area-quirurgica", "name": "Introducción al área quirúrgica", "credits": 0 },
+                { "id": "psicologia-1", "name": "Psicología I", "credits": 0 },
+                { "id": "salud-publica", "name": "Salud Pública", "credits": 0 },
+                { "id": "metodologia-cientifica", "name": "Metodología científica", "credits": 0 },
+                { "id": "microbiologia", "name": "Microbiología", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "practica-instrumentacion-1", "name": "Práctica de Instrumentación I", "credits": 0 },
+                { "id": "practica-instrumentacion-2", "name": "Práctica de Instrumentación II", "credits": 0 },
+                { "id": "anestesiologia-servicios", "name": "Anestesiología y Servicios Auxiliares", "credits": 0 },
+                { "id": "instrumental-1-2", "name": "Instrumental I y II", "credits": 0 },
+                { "id": "patologia-quirurgica", "name": "Patología quirúrgica", "credits": 0 },
+                { "id": "fisiopatologia", "name": "Fisiopatología", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "deontologia-legislacion", "name": "Deontología y legislación laboral", "credits": 0 },
+                { "id": "administracion-hospitalaria", "name": "Administración hospitalaria", "credits": 0 },
+                { "id": "practica-instrumentacion-3", "name": "Práctica de Instrumentación III", "credits": 0 },
+                { "id": "tecnicas-generales-cirugia", "name": "Técnicas generales de Cirugía", "credits": 0 },
+                { "id": "administracion-block", "name": "Administración en Block Quirúrgico", "credits": 0 },
+                { "id": "economato", "name": "Economato", "credits": 0 },
+                { "id": "bioseguridad", "name": "Bioseguridad", "credits": 0 }
+              ]
+            },
+            {
+              "label": "Cuarto año",
+              "courses": [
+                { "id": "practica-instrumentacion-4", "name": "Práctica de Instrumentación IV", "credits": 0 },
+                { "id": "tecnicas-especiales-cirugia", "name": "Técnicas Especiales de Cirugía", "credits": 0 },
+                { "id": "internado", "name": "Internado", "credits": 0 },
+                { "id": "monografia", "name": "Monografía", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "instrumentacion-primer-ano", "label": "Primer año", "minCompleted": 11, "courseIds": ["anatomia", "biologia-celular-tisular", "neurobiologia", "cardiovascular-respiratorio", "digestivo-renal-endocrino", "reproductor-desarrollo", "introduccion-area-quirurgica", "psicologia-1", "salud-publica", "metodologia-cientifica", "microbiologia"] },
+            { "id": "instrumentacion-segundo-ano", "label": "Segundo año", "minCompleted": 6, "courseIds": ["practica-instrumentacion-1", "practica-instrumentacion-2", "anestesiologia-servicios", "instrumental-1-2", "patologia-quirurgica", "fisiopatologia"] },
+            { "id": "instrumentacion-tercer-ano", "label": "Tercer año", "minCompleted": 7, "courseIds": ["deontologia-legislacion", "administracion-hospitalaria", "practica-instrumentacion-3", "tecnicas-generales-cirugia", "administracion-block", "economato", "bioseguridad"] },
+            { "id": "instrumentacion-cuarto-ano", "label": "Cuarto año, internado y monografía", "minCompleted": 4, "courseIds": ["practica-instrumentacion-4", "tecnicas-especiales-cirugia", "internado", "monografia"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FMED", "locations": ["Montevideo"], "role": "servicio responsable y sede completa del Plan 2006", "curriculumVariant": false },
+        { "serviceCode": "CENURLN", "locations": ["Paysandú"], "role": "sede completa del mismo Plan 2006", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-licenciatura-en-instrumentacion-quirurgica-2006.json",
+        "regionalSnapshot": "data/bedelias/cenurln-licenciatura-en-instrumentacion-quirurgica-2006.json",
+        "canonicalCourses": 0,
+        "regionalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "regionalPrerequisiteEntries": 0,
+        "interpretation": "Los snapshots no exponen unidades creditizadas. Facultad publica una única malla horaria y Udelar confirma la carrera completa en Montevideo y Paysandú."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Medicina y CENUR Litoral Norte describen el mismo Plan 2006, título, duración y malla en ambas sedes.",
+        "normalization": [
+          "Conservar una sola identidad canónica para la Licenciatura en Instrumentación Quirúrgica Plan 2006.",
+          "Modelar Montevideo y Paysandú como sedes completas del mismo plan, sin trayectoria territorial.",
+          "Usar las 28 unidades y cuatro años publicados por Facultad de Medicina como malla oficial.",
+          "Conservar 4932 horas y créditos en cero; no convertir horas a créditos.",
+          "Exigir las unidades publicadas por año, incluido Internado y Monografía, sin inventar previaturas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-instrumentacion-quirurgica/plan-de-estudio",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["malla vigente por cuatro años", "28 unidades y carga horaria", "Internado y Monografía"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-instrumentacion-quirurgica",
+          "authority": "Facultad de Medicina, Udelar",
+          "supports": ["título, cuatro años y 4932 horas", "ingreso en Montevideo y Paysandú"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-instrumentacion-quirurgica",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": ["Plan único y sedes Facultad de Medicina/Paysandú"]
+        },
+        {
+          "url": "https://pruebawww.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-instrumentacion-quirurgica",
+          "authority": "CENUR Litoral Norte, Udelar",
+          "supports": ["carrera completa en Paysandú", "duración de cuatro años e ingreso por CIO Salud"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/gestion/bedelia/parque-batlle",
+          "authority": "Bedelía de Facultad de Medicina, Udelar",
+          "supports": ["vigencia administrativa del Plan 2006 en 2026"]
+        }
+      ],
+      "anomalies": [
+        { "field": "credits", "resolution": "El Plan 2006 vigente está expresado en 4932 horas y no publica créditos. Las materias conservan cero créditos explícitos y requisitos por unidad." },
+        { "field": "duration", "resolution": "Facultad de Medicina y CENUR publican cuatro años; el catálogo general informa 60 meses. Se prioriza el servicio responsable y se conserva la discrepancia." },
+        { "field": "regionalAdmission", "resolution": "Paysandú informa ingreso mediante CIO Salud; esta vía administrativa no altera la identidad ni crea una trayectoria curricular." },
+        { "field": "bedeliasComposition", "resolution": "Los snapshots no publican cursos normalizados. La UI usa la malla oficial de Facultad y no atribuye créditos ni previaturas a Bedelías." }
+      ],
+      "remainingWork": "La identidad, malla horaria y sedes del Plan 2006 quedan normalizadas. Cualquier plan creditizado futuro requerirá una auditoría nueva antes de reemplazar esta proyección."
     }
   ],
-  "contentHash": "sha256:e57a2a997f003a9b10b0e8028ce252953204d5f1380b3b1300bc3d9fb63e244d"
+  "contentHash": "sha256:8016548a4c8d61b83d8bff6cf7a369442887903e1e8168646859a5cab10f53f8"
 }
