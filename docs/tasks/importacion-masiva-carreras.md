@@ -833,3 +833,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:be7823100dbd6346473ddd9ccac65ab000851f1066b06412246761cc57e0f45d`. Cola actualizada: 144 identidades pendientes, 35 sin composición; hash `sha256:3938e4e6fac243aa0949bdf388ab5b08489badd313919355c96c98203db768d3`.
 - Manifiesto UI: 175 proyecciones, 112 con composición y 63 sin composición; hash `sha256:3abe983ff1da7e4c500eeddbacd8dab61b570eda532a03c623fcd94cfb444da2`.
 - Siguiente paso: auditar Licenciatura en Gestión Ambiental Plan 2011, próxima identidad sin composición de la cola reproducible.
+
+### Licenciatura en Gestión Ambiental Plan 2011 — currículo flexible, perfiles y sedes auditados 2026-08-20
+
+- CURE publica un único Plan 2011, el título `Licenciado en Gestión Ambiental`, cuatro años y 360 créditos. La carrera se organiza en un Ciclo Básico de 180 créditos y un Ciclo de Profundización de otros 180.
+- El Ciclo Básico exige 24 créditos en Ciencias Exactas, 24 en Ciencias Naturales y Geociencias, 24 en Ciencias Sociales, 48 interdisciplinarios, 24 técnico-metodológicos y 36 optativos. Taller Interdisciplinario I y II son sus únicas unidades obligatorias.
+- La profundización exige Taller III 24 créditos, 91 créditos de cursos vinculados al perfil, Monografía 20 y Trabajo Final 45. Para ingresar se requieren 180 créditos cursados y 120 aprobados; la UI informa el doble umbral y no lo automatiza de forma incompleta.
+- Se modelan cinco perfiles del mismo título: Manejo de Ecosistemas, Gestión Sostenible de Sistemas Agrarios, Contaminación Ambiental, Ordenamiento Territorial y Recursos Pesqueros. Los cursos fundamentales y opciones generales se filtran como trayectorias sugeridas, no como secuencias rígidas.
+- Maldonado y Rocha ofrecen los cinco perfiles. Treinta y Tres ofrece la carrera completa únicamente con Gestión Sostenible de Sistemas Agrarios. La elección de sede conserva carrera, plan y progreso compartidos.
+- La oferta efectiva puede alternar por semestre, año, modalidad y sede. La UI usa las planillas oficiales 2025/2026 con créditos, mantiene una bolsa explícita de optativas básicas y advierte que la grilla definitiva requiere tutoría y aval de la Comisión de Carrera.
+- No se inventan previaturas individuales: CURE confirma que existen, pero no publica una tabla consolidada vigente en las fuentes revisadas.
+- Registro de auditoría: hash `sha256:3891095d5c4fc579f1394895cfef32fe292ebf6848541715e92c8923957623ad`. Cola actualizada: 143 identidades pendientes, 34 sin composición; hash `sha256:2a7c0c07b0c8a5a398cf84e93096df24a490fe16395777226d74ab98a3d2f72b`.
+- Manifiesto UI: 175 proyecciones, 113 con composición, 62 sin composición y veintisiete planes con sedes oficiales; hash `sha256:73bbe9f826094c67f2ce0c3339444d2f6a7472642741c8b32371128e14f2b687`.
+- Siguiente paso: auditar Licenciatura en Lenguajes y Medios Audiovisuales Plan 2011, próxima identidad sin composición de la cola reproducible.

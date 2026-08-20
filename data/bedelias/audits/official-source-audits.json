@@ -9736,7 +9736,213 @@
         { "field": "prerequisites", "resolution": "No existe una tabla consolidada vigente de previaturas en las fuentes revisadas. No se inventan bloqueos; los programas de cada unidad siguen siendo la referencia operativa." }
       ],
       "remainingWork": "La malla, mínimos, sedes y menciones quedan operativos. Incorporar previaturas sólo cuando FCEA publique una tabla consolidada vigente o se auditen individualmente todos los programas."
+    },
+    {
+      "identity": "licenciatura en gestion ambiental:2011",
+      "career": "LICENCIATURA EN GESTIÓN AMBIENTAL",
+      "planYear": "2011",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "current-flexible-curriculum-credit-minima-profiles-and-campuses",
+      "publicationEligible": false,
+      "uiNotice": "La LGA tiene trayectorias flexibles: cada estudiante acuerda su grilla con tutor y la Comisión de Carrera. La UI muestra los mínimos oficiales, los cursos recomendados y aceptados publicados por CURE y los fundamentales de cada perfil; la oferta efectiva puede alternar por semestre, año y sede. Para ingresar al ciclo de profundización se requieren 180 créditos cursados y 120 aprobados.",
+      "officialPlan": {
+        "facultyCode": "CURE",
+        "facultyName": "CENTRO UNIVERSITARIO REGIONAL DEL ESTE",
+        "approval": [
+          "Plan de Estudios 2011",
+          "Oferta educativa y presentación de ingreso CURE 2026"
+        ],
+        "title": "Licenciado en Gestión Ambiental",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "pathwayLabel": "Perfil",
+        "trajectories": [
+          {
+            "id": "manejo-ecosistemas",
+            "label": "Manejo de Ecosistemas",
+            "description": "Perfil orientado a la gestión y el uso sostenible de bienes y servicios ecosistémicos. La selección visible prioriza sus cursos fundamentales y las opciones generales aceptadas por CURE.",
+            "campusIds": ["maldonado", "rocha"],
+            "courseIds": ["ecologia-general", "ecologia-general-aplicada", "mapeo-modelacion", "muestreo-vertebrados", "limnologia", "paleolimnologia", "herramientas-moleculares", "teoria-grafos", "ecologia-teorica", "biodiversidad-2", "innovacion-gestion-ambiental", "oceanografia-biologica", "botanica-3"]
+          },
+          {
+            "id": "gestion-sostenible-sistemas-agrarios",
+            "label": "Gestión Sostenible de Sistemas Agrarios",
+            "description": "Perfil de gestión ambiental de sistemas productivos agrarios. Es el único perfil que CURE publica como carrera completa desde Treinta y Tres.",
+            "campusIds": ["maldonado", "rocha", "treinta-y-tres"],
+            "courseIds": ["problemas-produccion-vegetal", "planificacion-ambiental", "gestion-areas-protegidas", "certificacion-sustentabilidad", "agroecologia", "gestion-cuencas", "manejo-conservacion-suelos", "problemas-produccion-animal", "gestion-patrimonio", "gestion-residuos"]
+          },
+          {
+            "id": "contaminacion-ambiental",
+            "label": "Contaminación Ambiental",
+            "description": "Perfil centrado en la evaluación y gestión de la contaminación física, química y biológica. La selección visible prioriza sus cursos fundamentales y opciones afines.",
+            "campusIds": ["maldonado", "rocha"],
+            "courseIds": ["ecologia-general", "ecotoxicologia", "analitica-ambiental", "limnologia", "paleolimnologia", "herramientas-moleculares", "microbiologia-ambiental", "agua-salud", "ecofisiologia", "oceanografia-biologica"]
+          },
+          {
+            "id": "ordenamiento-territorial",
+            "label": "Ordenamiento Territorial",
+            "description": "Perfil de estudio, planificación y gestión participativa del territorio y sus recursos culturales y ambientales.",
+            "campusIds": ["maldonado", "rocha"],
+            "courseIds": ["ciudad-territorio", "metodologias-planificacion", "marco-juridico-ot", "practicas-mirador", "limnologia", "ecologia-urbana", "gestion-residuos", "innovacion-gestion-ambiental", "interpretacion-paisaje-3"]
+          },
+          {
+            "id": "recursos-pesqueros",
+            "label": "Recursos Pesqueros",
+            "description": "Perfil orientado al manejo de recursos pesqueros marinos y continentales desde un enfoque social-ecológico.",
+            "campusIds": ["maldonado", "rocha"],
+            "courseIds": ["problemas-pesca", "gestion-recursos-pesqueros", "limnologia", "paleolimnologia", "herramientas-moleculares", "oceanografia-biologica"]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://eva.interior.udelar.edu.uy/mod/resource/view.php?id=8184&redirect=1",
+          "creditRequirements": [
+            { "id": "lga-basico", "name": "Ciclo Básico", "shortName": "Ciclo Básico", "minCredits": 180 },
+            { "id": "lga-basico-exactas", "parentId": "lga-basico", "name": "Ciencias Exactas", "shortName": "Exactas", "minCredits": 24 },
+            { "id": "lga-basico-naturales", "parentId": "lga-basico", "name": "Ciencias Naturales y Geociencias", "shortName": "Naturales", "minCredits": 24 },
+            { "id": "lga-basico-sociales", "parentId": "lga-basico", "name": "Ciencias Sociales", "shortName": "Sociales", "minCredits": 24 },
+            { "id": "lga-basico-interdisciplina", "parentId": "lga-basico", "name": "Formación interdisciplinaria", "shortName": "Interdisciplina", "minCredits": 48 },
+            { "id": "lga-basico-tecnico", "parentId": "lga-basico", "name": "Formación técnico-metodológica", "shortName": "Técnico-metodológica", "minCredits": 24 },
+            { "id": "lga-basico-optativas", "parentId": "lga-basico", "name": "Optativas del Ciclo Básico", "shortName": "Optativas básicas", "minCredits": 36 },
+            { "id": "lga-profundizacion", "name": "Ciclo de Profundización", "shortName": "Profundización", "minCredits": 180 },
+            { "id": "lga-profundizacion-taller", "parentId": "lga-profundizacion", "name": "Taller Interdisciplinario III", "shortName": "Taller III", "minCredits": 24 },
+            { "id": "lga-profundizacion-cursos", "parentId": "lga-profundizacion", "name": "Cursos relacionados con el perfil", "shortName": "Cursos del perfil", "minCredits": 91 },
+            { "id": "lga-profundizacion-monografia", "parentId": "lga-profundizacion", "name": "Monografía", "shortName": "Monografía", "minCredits": 20 },
+            { "id": "lga-profundizacion-final", "parentId": "lga-profundizacion", "name": "Trabajo Final", "shortName": "Trabajo Final", "minCredits": 45 }
+          ],
+          "commonCourseIds": [
+            "quimica-1", "fisica-1", "calculo-1a", "calculo-1b", "geologia-geomorfologia", "introduccion-biologia", "introduccion-edafologia", "sistemas-acuaticos", "introduccion-contaminacion", "biodiversidad-1", "problemas-desarrollo", "antropologia-ambiente", "territorio-cultura", "analisis-interacciones-economicas", "raig", "introduccion-gestion-ambiental", "herramientas-trabajo-colectivo", "estadistica", "taller-1", "taller-2", "optativas-basico", "taller-3", "derecho-ambiental", "economia-ambiental", "evaluacion-impacto", "bases-impacto", "conflictos-ambientales", "paleociencias", "ecologia-restauracion", "educacion-ambiental", "proceso-residuos", "biologia-aves", "variabilidad-climatica", "manejo-relaves", "monografia", "trabajo-final"
+          ],
+          "periods": [
+            { "label": "Ciclo Básico · semestre impar", "courses": [
+              { "id": "quimica-1", "name": "Química I", "credits": 12, "requirementId": "lga-basico-exactas" },
+              { "id": "fisica-1", "name": "Física I", "credits": 14, "requirementId": "lga-basico-exactas" },
+              { "id": "calculo-1a", "name": "Cálculo 1 A", "credits": 5, "requirementId": "lga-basico-exactas" },
+              { "id": "geologia-geomorfologia", "name": "Geología y Geomorfología", "credits": 6, "requirementId": "lga-basico-naturales" },
+              { "id": "introduccion-biologia", "name": "Introducción a la Biología", "credits": 12, "requirementId": "lga-basico-naturales" },
+              { "id": "sistemas-acuaticos", "name": "Introducción a los Sistemas Acuáticos", "credits": 6, "requirementId": "lga-basico-naturales" },
+              { "id": "biodiversidad-1", "name": "Biodiversidad I", "credits": 6, "requirementId": "lga-basico-naturales" },
+              { "id": "problemas-desarrollo", "name": "Introducción a los Problemas del Desarrollo", "credits": 8, "requirementId": "lga-basico-sociales" },
+              { "id": "antropologia-ambiente", "name": "Antropología, Ambiente y Desarrollo", "credits": 8, "requirementId": "lga-basico-sociales" },
+              { "id": "analisis-interacciones-economicas", "name": "Análisis de las Interacciones Económicas", "credits": 10, "requirementId": "lga-basico-sociales" },
+              { "id": "introduccion-gestion-ambiental", "name": "Introducción a la Gestión Ambiental", "credits": 4, "requirementId": "lga-basico-tecnico" },
+              { "id": "estadistica", "name": "Introducción a la Estadística", "credits": 12, "requirementId": "lga-basico-tecnico" }
+            ] },
+            { "label": "Ciclo Básico · semestre par", "courses": [
+              { "id": "calculo-1b", "name": "Cálculo 1 B", "credits": 5, "requirementId": "lga-basico-exactas" },
+              { "id": "introduccion-edafologia", "name": "Introducción a la Edafología", "credits": 8, "requirementId": "lga-basico-naturales" },
+              { "id": "introduccion-contaminacion", "name": "Introducción a la Contaminación Ambiental", "credits": 4, "requirementId": "lga-basico-naturales" },
+              { "id": "territorio-cultura", "name": "Territorio y Cultura", "credits": 8, "requirementId": "lga-basico-sociales" },
+              { "id": "raig", "name": "Representación y Análisis de la Información Geográfica", "credits": 8, "requirementId": "lga-basico-tecnico" },
+              { "id": "herramientas-trabajo-colectivo", "name": "Herramientas para el Trabajo Colectivo", "credits": 5, "requirementId": "lga-basico-tecnico" }
+            ] },
+            { "label": "Ciclo Básico · obligatorias y flexibles", "courses": [
+              { "id": "taller-1", "name": "Taller Interdisciplinario de Tópicos Regionales I · anual", "credits": 24, "requirementId": "lga-basico-interdisciplina" },
+              { "id": "taller-2", "name": "Taller Interdisciplinario de Tópicos Regionales II · anual", "credits": 24, "requirementId": "lga-basico-interdisciplina" },
+              { "id": "optativas-basico", "name": "Créditos optativos aprobados del Ciclo Básico", "credits": 36, "requirementId": "lga-basico-optativas", "curricularBlock": true }
+            ] },
+            { "label": "Profundización · semestre impar", "courses": [
+              { "id": "taller-3", "name": "Taller Interdisciplinario de Tópicos Regionales III · anual", "credits": 24, "requirementId": "lga-profundizacion-taller" },
+              { "id": "derecho-ambiental", "name": "Derecho Ambiental", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "conflictos-ambientales", "name": "Conflictos Ambientales", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "bases-impacto", "name": "Bases Ecológicas y Metodológicas para Cuantificar el Impacto Ambiental", "credits": 4, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "educacion-ambiental", "name": "Educación Ambiental I", "credits": 5, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "proceso-residuos", "name": "Proceso de Manejo de los Residuos", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "variabilidad-climatica", "name": "Variabilidad y Cambio Climático", "credits": 10, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "manejo-relaves", "name": "Manejo de Relaves", "credits": 4, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "problemas-produccion-animal", "name": "Problemas Ambientales de la Producción Animal", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "planificacion-ambiental", "name": "Planificación Ambiental", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "gestion-cuencas", "name": "Gestión de Cuencas", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "gestion-patrimonio", "name": "Herramientas para la Gestión Integral del Patrimonio", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "problemas-pesca", "name": "Problemas Ambientales Asociados a la Pesca", "credits": 7, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ciudad-territorio", "name": "Ciudad y Territorio: Teorías y Planificación", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "marco-juridico-ot", "name": "Marco Jurídico para el Ordenamiento Territorial", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ecologia-general", "name": "Ecología General", "credits": 12, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ecologia-general-aplicada", "name": "Ecología General Aplicada a la Gestión Ambiental", "credits": 9, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "analitica-ambiental", "name": "Analítica Ambiental", "credits": 12, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "practicas-mirador", "name": "Prácticas Mirador Región Este", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "teoria-grafos", "name": "Introducción a la Teoría de Grafos Aplicada a la Gestión Ambiental", "credits": 4, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ecologia-teorica", "name": "Introducción a la Ecología Teórica", "credits": 9, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "biodiversidad-2", "name": "Biodiversidad II", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "microbiologia-ambiental", "name": "Microbiología Ambiental", "credits": 9, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "innovacion-gestion-ambiental", "name": "Innovación y Emprendimientos para la Gestión Ambiental", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "oceanografia-biologica", "name": "Oceanografía Biológica", "credits": 12, "requirementId": "lga-profundizacion-cursos" }
+            ] },
+            { "label": "Profundización · semestre par", "courses": [
+              { "id": "economia-ambiental", "name": "Economía Ambiental, Ecológica y de los Recursos Naturales A", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "evaluacion-impacto", "name": "Evaluación de Impacto Ambiental y Evaluación Ambiental Estratégica", "credits": 7, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "paleociencias", "name": "Paleociencias", "credits": 5, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ecologia-restauracion", "name": "Ecología de la Restauración", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "biologia-aves", "name": "Biología de Aves para Turismo y Conservación", "credits": 5, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "problemas-produccion-vegetal", "name": "Problemas Ambientales de la Producción Vegetal", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "gestion-areas-protegidas", "name": "Gestión de Áreas Protegidas", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "certificacion-sustentabilidad", "name": "Certificación y Sustentabilidad", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "agroecologia", "name": "Agroecología", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "manejo-conservacion-suelos", "name": "Manejo y Conservación de Suelos", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "gestion-recursos-pesqueros", "name": "Gestión de Recursos Pesqueros: un Enfoque Social-Ecológico", "credits": 10, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "metodologias-planificacion", "name": "Metodologías de Planificación Territorial Participativa", "credits": 12, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ecotoxicologia", "name": "Ecotoxicología", "credits": 12, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "mapeo-modelacion", "name": "Técnicas de Mapeo Digital y Modelación 3D", "credits": 10, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "muestreo-vertebrados", "name": "Técnicas de Muestreo para el Estudio y Manejo de Vertebrados Terrestres", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "limnologia", "name": "Limnología", "credits": 12, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "paleolimnologia", "name": "Paleolimnología, Paleoceanografía y Paleoclimatología", "credits": 10, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "herramientas-moleculares", "name": "Herramientas Moleculares Aplicadas a las Ciencias Ambientales", "credits": 10, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "agua-salud", "name": "Agua para la Salud Ambiental y Humana", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ecofisiologia", "name": "Ecofisiología", "credits": 12, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "ecologia-urbana", "name": "Ecología Urbana", "credits": 6, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "gestion-residuos", "name": "Gestión de los Residuos", "credits": 8, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "botanica-3", "name": "Botánica III", "credits": 7, "requirementId": "lga-profundizacion-cursos" },
+              { "id": "interpretacion-paisaje-3", "name": "Interpretación del Paisaje III", "credits": 10, "requirementId": "lga-profundizacion-cursos" }
+            ] },
+            { "label": "Egreso", "courses": [
+              { "id": "monografia", "name": "Monografía", "credits": 20, "requirementId": "lga-profundizacion-monografia" },
+              { "id": "trabajo-final", "name": "Trabajo Final", "credits": 45, "requirementId": "lga-profundizacion-final" }
+            ] }
+          ],
+          "requiredCourseGroups": [
+            { "id": "lga-actividades-obligatorias", "label": "Actividades obligatorias de ambos ciclos", "minCompleted": 5, "courseIds": ["taller-1", "taller-2", "taller-3", "monografia", "trabajo-final"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "CURE", "locations": ["Maldonado", "Rocha"], "role": "carrera completa con los cinco perfiles", "curriculumVariant": false, "trajectoryIds": ["manejo-ecosistemas", "gestion-sostenible-sistemas-agrarios", "contaminacion-ambiental", "ordenamiento-territorial", "recursos-pesqueros"] },
+        { "serviceCode": "CURE", "locations": ["Treinta y Tres"], "role": "carrera completa con el perfil de Gestión Sostenible de Sistemas Agrarios", "curriculumVariant": false, "trajectoryIds": ["gestion-sostenible-sistemas-agrarios"] }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cure-licenciatura-en-gestion-ambiental-2011.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica la identidad vigente y los cinco rótulos de perfil, pero no la composición. CURE publica la estructura de 360 créditos, cursos aceptados, perfiles, sedes y reglamentos operativos."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-plan-three-campuses-five-profiles",
+        "regionalCurriculumVariant": false,
+        "reason": "Los perfiles comparten título, plan y mínimos. La sede filtra la disponibilidad del perfil: Maldonado y Rocha ofrecen los cinco; Treinta y Tres ofrece la carrera completa sólo con Sistemas Agrarios.",
+        "normalization": [
+          "Mostrar una sola carrera CURE y un solo Plan 2011.",
+          "Exigir 180 créditos en cada ciclo y los mínimos 24/24/24/48/24/36 del Ciclo Básico.",
+          "Representar el ciclo de profundización como Taller III 24, cursos del perfil 91, Monografía 20 y Trabajo Final 45.",
+          "Filtrar perfiles por sede sin duplicar carrera, plan ni progreso.",
+          "Tratar los cursos como catálogo flexible sujeto a tutoría y oferta efectiva; no como una secuencia rígida."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-gestion-ambiental/", "authority": "Cenur del Este", "supports": ["vigencia 2026", "360 créditos", "cuatro años", "cinco perfiles", "Maldonado", "Rocha", "Treinta y Tres", "flexibilidad"] },
+        { "url": "https://eva.interior.udelar.edu.uy/mod/resource/view.php?id=8184&redirect=1", "authority": "CURE, bienvenida Generación 2026", "supports": ["mínimos por ciclo y área", "actividades obligatorias", "créditos de profundización", "perfiles", "requisito de avance"] },
+        { "url": "https://eva.interior.udelar.edu.uy/pluginfile.php/237981/mod_resource/content/20/_Cursos%20del%20ciclo%20b%C3%A1sico%20%28recomendados%20y%20aceptados%2C2026%29%20-%20Hoja%201.pdf", "authority": "CURE, cursos básicos recomendados y aceptados 2026", "supports": ["cursos", "créditos", "semestres", "sedes", "perfiles sugeridos"] },
+        { "url": "https://eva.interior.udelar.edu.uy/pluginfile.php/159174/mod_resource/content/18/Cursos%20del%20ciclo%20de%20Profundizaci%C3%B3n%20%28recomendados%20y%20aceptados%2C%202025%29.pdf", "authority": "CURE, cursos de profundización recomendados y aceptados", "supports": ["cursos fundamentales", "optativas", "créditos", "semestres", "sedes"] },
+        { "url": "https://eva.interior.udelar.edu.uy/pluginfile.php/12299/mod_resource/content/1/Reglamento%20LGA.pdf", "authority": "CURE, Reglamento LGA", "supports": ["trayectoria con tutor y aval de CAC", "previaturas", "180 cursados y 120 aprobados"] },
+        { "url": "https://www.cure.edu.uy/wp-content/uploads/2025/02/reglamento-monografia-y-tesis-LGA-ultimo.docx_.pdf", "authority": "CURE, Reglamento de Monografía y Trabajo Final", "supports": ["Monografía obligatoria 20 créditos", "Trabajo Final obligatorio 45 créditos", "condiciones"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "Bedelías identifica Plan 2011 y la presentación CURE 2026 lo denomina Plan 2011; estadísticas históricas de Udelar lo rotulan 2010. La UI conserva 2011 para coincidir con la inscripción vigente." },
+        { "field": "courseAvailability", "resolution": "La oferta cambia por semestre, año, modalidad y sede. La UI usa el catálogo oficial más reciente encontrado y advierte que debe confirmarse con horarios y tutoría." },
+        { "field": "profileCourses", "resolution": "Los cursos fundamentales de un perfil pueden aceptarse como optativos de otro. La UI prioriza los fundamentales del perfil y opciones comunes, sin afirmar que las restantes estén prohibidas." },
+        { "field": "prerequisites", "resolution": "El Reglamento dispone previaturas por unidad y CURE advierte que existen, pero no se halló una tabla consolidada vigente. No se inventan bloqueos individuales." },
+        { "field": "depthAdmission", "resolution": "El ingreso al ciclo exige 180 créditos cursados y 120 aprobados. La UI informa el umbral, pero no lo automatiza porque el modelo local no distingue curso ganado de crédito aprobado con precisión suficiente." }
+      ],
+      "remainingWork": "La estructura, catálogo flexible, sedes y perfiles quedan operativos. Actualizar oferta y previaturas cuando CURE publique nuevas planillas consolidadas; las elecciones finales siguen requiriendo tutoría y aval de la Comisión de Carrera."
     }
   ],
-  "contentHash": "sha256:be7823100dbd6346473ddd9ccac65ab000851f1066b06412246761cc57e0f45d"
+  "contentHash": "sha256:3891095d5c4fc579f1394895cfef32fe292ebf6848541715e92c8923957623ad"
 }

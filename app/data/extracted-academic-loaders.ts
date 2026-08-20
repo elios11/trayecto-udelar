@@ -68,9 +68,9 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-cure-licenciatura-en-gestion-ambiental-2011": {
     load: () => import("./bedelias-generated/bedelias-cure-licenciatura-en-gestion-ambiental-2011.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    pathwayIds: ["manejo-ecosistemas","gestion-sostenible-sistemas-agrarios","contaminacion-ambiental","ordenamiento-territorial","recursos-pesqueros"],
+    pathwayLabel: "Perfil",
+    minCredits: 360,
   },
   "bedelias-cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011": {
     load: () => import("./bedelias-generated/bedelias-cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011.json"),

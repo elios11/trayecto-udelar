@@ -70,6 +70,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["tecnologo quimico:2025", ["montevideo", "paysandu"]],
     ["doctor en ciencias veterinarias:2021", ["sur-montevideo-y-san-jose-instituto-de-produccion-animal", "norte-salto-1-7-y-paysandu-8-10"]],
     ["tecnologo en administracion y contabilidad:2012", ["colonia", "mercedes", "tacuarembo", "maldonado", "rocha", "treinta-y-tres"]],
+    ["licenciatura en gestion ambiental:2011", ["maldonado", "rocha", "treinta-y-tres"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

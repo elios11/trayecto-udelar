@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:3938e4e6fac243aa0949bdf388ab5b08489badd313919355c96c98203db768d3",
-    "officialAuditHash": "sha256:be7823100dbd6346473ddd9ccac65ab000851f1066b06412246761cc57e0f45d",
+    "auditQueueHash": "sha256:2a7c0c07b0c8a5a398cf84e93096df24a490fe16395777226d74ab98a3d2f72b",
+    "officialAuditHash": "sha256:3891095d5c4fc579f1394895cfef32fe292ebf6848541715e92c8923957623ad",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 175,
-    "compositionAvailable": 112,
-    "compositionUnavailable": 63,
-    "plansWithOfficialCampuses": 26,
+    "compositionAvailable": 113,
+    "compositionUnavailable": 62,
+    "plansWithOfficialCampuses": 27,
     "excludedFromCurrentUi": 2
   },
   "plans": [
@@ -122,9 +122,13 @@
       "planId": "bedelias-cure-licenciatura-en-gestion-ambiental-2011",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-licenciatura-en-gestion-ambiental-2011.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "maldonado",
+        "rocha",
+        "treinta-y-tres"
+      ]
     },
     {
       "identity": "licenciatura en lenguajes y medios audiovisuales:2011",
@@ -1692,5 +1696,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:3abe983ff1da7e4c500eeddbacd8dab61b570eda532a03c623fcd94cfb444da2"
+  "contentHash": "sha256:73bbe9f826094c67f2ce0c3339444d2f6a7472642741c8b32371128e14f2b687"
 }
