@@ -1315,3 +1315,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:8adf9c544e85b15c6e90e4c7f97684a98564ffe553c71539c3401740cecec116`. Cola general: 69 identidades pendientes; hash `sha256:b92972418a4285fdea43da332bc12256c296b0b2862e49f5d5d840dc2f6f240b`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:1ea058dc8739c532aff3e5154ebc80c7c1d712d4554473ae78debac6523d3c55`. Cola funcional vacía; hash `sha256:0f041ae18183170d820e8e3af1acd25cc5933204b3bbdcee3a0e9f73a8e70065`.
 - Siguiente paso: auditar la Licenciatura en Diseño de Paisaje Plan 2008, primera identidad reproducible restante.
+
+### Licenciatura en Diseño de Paisaje — plan conjunto y currículo por ejes operativo 2026-08-24
+
+- El plan aprobado por el CDC el 18/12/2007 define una licenciatura conjunta de FADU y Facultad de Agronomía, ocho semestres, 360 créditos y sede Maldonado. La UI muestra Plan 2007 y conserva 2008 únicamente como identidad técnica del inicio del dictado y de Bedelías.
+- La norma distribuye 103 créditos en Ciencias, Técnicas y Tecnologías, 162 en Prácticas Proyectuales, 45 en Teoría e Historia y 50 optativos. Bedelías separa el Taller Transversal de 6 créditos y descuenta dos de cada eje común: la UI controla la implementación equivalente 6+101+160+43+50, que suma exactamente 360.
+- La composición conserva 302 unidades y 2.450 créditos como catálogo acreditable. Once optativas externas no aparecen en el índice resumido de cursos, pero la composición las identifica con su servicio y código; se mantienen disponibles sin convertir el catálogo acumulado en obligación de aprobarlo completo.
+- El plan declara flexibilidad e individualidad curricular. No se publican perfiles ni menciones certificadas: una validación explícita representa la aprobación de la Comisión de Carrera sobre el balance de los 360 créditos y la orientación elegida.
+- Maldonado es la única sede completa vigente. La carrera se agrupa bajo FADU, registra su carácter compartido con Agronomía y no muestra un selector territorial innecesario.
+- Registro de auditoría: hash `sha256:c9f8a72c26b9add120177645cee2e795edacd5faf27caa078ccb4841a4312271`. Cola general: 68 identidades pendientes; hash `sha256:6067912f1a617d0e2dcf9687281ea47af2d47767b6bfdc30b7411e8cbaab29b1`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:e5f5b195da5b223a18bb1bb2cfb2c7c8b6682021c1d04b9c0fd7d6314cdde78f`. Cola funcional vacía; hash `sha256:9a5e4a8f211fb8a49a711656be2c47347b7b94aeafd9fd5d4e9dda2ae6409804`.
+- Siguiente paso: auditar la Licenciatura en Turismo Plan 2014, primera identidad reproducible restante.

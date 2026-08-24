@@ -19779,7 +19779,120 @@
       ],
       "uiNotice": "Plan conjunto Udelar-UTU de 270 créditos. Completá los mínimos por área, las actividades obligatorias y un currículo coherente aprobado por la Comisión; las combinaciones tipo no son menciones certificadas.",
       "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías. La Comisión de Carrera define qué combinaciones del catálogo integran cada currículo individual."
+    },
+    {
+      "identity": "licenciatura en diseno de paisaje:2008",
+      "career": "LICENCIATURA EN DISEÑO DE PAISAJE",
+      "planYear": "2008",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, plan aprobado, título conjunto, duración, créditos, ejes, flexibilidad, reglamento y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Resolución del Consejo Directivo Central de 18/12/2007"],
+        "planYear": "2007",
+        "title": "Licenciado en Diseño de Paisaje",
+        "careerName": "Licenciatura en Diseño de Paisaje",
+        "facultyCode": "FADU",
+        "facultyName": "Facultad de Arquitectura, Diseño y Urbanismo",
+        "sharedWith": ["Facultad de Agronomía"],
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "degreeRule": "El título conjunto exige 360 créditos y aprobación del balance individual por la Comisión de Carrera: 103 en Ciencias, Técnicas y Tecnologías, 162 en Prácticas Proyectuales, 45 en Teoría e Historia y 50 optativos. La implementación de Bedelías separa el Taller Transversal de 6 créditos y descuenta dos créditos de cada uno de los tres ejes comunes.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://old.fadu.edu.uy/ldp/informacion-general/plan-estudios/",
+          "pathwayLabel": "Currículo flexible por ejes",
+          "pathwayDescription": "Catálogo acreditable del plan conjunto; la secuencia y los cursos ilustrativos no sustituyen los mínimos por eje ni la aprobación del currículo individual.",
+          "periodOrder": ["INICIACIÓN DISEÑO DE PAISAJE", "CIENCIAS, TEC.Y TECNO. PAISAJE", "TEORÍA E HISTORIA DEL PAISAJE", "PRÁCTICAS PROYECTUALES", "OPTATIVAS Y ELECTIVAS", "Validación de egreso"],
+          "pathRequirementMap": {
+            "3269": "transversal-introduction",
+            "2999": "science-technology",
+            "2160": "theory-history",
+            "2390": "project-practice",
+            "2533": "optional-elective"
+          },
+          "creditRequirements": [
+            { "id": "transversal-introduction", "name": "Iniciación al Diseño de Paisaje", "shortName": "Iniciación", "minCredits": 6 },
+            { "id": "science-technology", "name": "Ciencias, Técnicas y Tecnologías del Paisaje", "shortName": "Ciencias y técnicas", "minCredits": 101 },
+            { "id": "project-practice", "name": "Prácticas Proyectuales", "shortName": "Proyectuales", "minCredits": 160 },
+            { "id": "theory-history", "name": "Teoría e Historia del Paisaje", "shortName": "Teoría e historia", "minCredits": 43 },
+            { "id": "optional-elective", "name": "Optativas y electivas", "shortName": "Optativas", "minCredits": 50 }
+          ],
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del balance de los 360 créditos y de la orientación curricular individual"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CURE",
+          "locations": ["Maldonado"],
+          "role": "oferta completa conjunta de FADU y Facultad de Agronomía en el CURE, sede Maldonado",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cure-licenciatura-en-diseno-de-paisaje-2008.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 360,
+        "distinctCourseRecords": 302,
+        "distinctCourseCredits": 2450,
+        "interpretation": "Bedelías implementa el Taller Transversal como grupo propio de 6 créditos y reduce los mínimos de los tres ejes comunes a 101, 160 y 43; con 50 optativos totaliza exactamente 360. Sus 302 unidades y 2.450 créditos forman un catálogo acumulado y flexible, incluidas once electivas identificadas con servicio FADU o FAGRO que no aparecen en el índice resumido de cursos; no constituyen una malla obligatoria completa."
+      },
+      "conclusion": {
+        "canonicalModel": "one-joint-plan-flexible-by-axes",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2007 define una única licenciatura conjunta de FADU y Agronomía radicada en Maldonado. La formación es flexible e individual y no publica perfiles o menciones certificadas.",
+        "normalization": [
+          "Mostrar Plan 2007 como denominación oficial y conservar 2008 como identidad técnica del comienzo de cursos y de Bedelías.",
+          "Corregir la duración administrativa de 60 meses a cuatro años u ocho semestres.",
+          "Publicar una sola carrera conjunta bajo FADU, compartida con Facultad de Agronomía, y con sede Maldonado.",
+          "Hacer operativa la distribución de Bedelías de 6+101+160+43+50 créditos, equivalente a los mínimos oficiales de 103+162+45+50 al reintegrar dos créditos del Taller Transversal en cada eje común.",
+          "Mantener las 302 unidades de la composición como catálogo flexible por ejes y exigir 360 créditos totales, sin convertir el esquema curricular ilustrativo en una secuencia obligatoria.",
+          "Exigir la validación de la Comisión de Carrera sobre el balance y la orientación del currículo individual.",
+          "No publicar orientaciones personales como perfiles, menciones o trayectorias certificadas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://old.fadu.edu.uy/ldp/informacion-general/plan-estudios/",
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "supports": ["Plan aprobado", "título", "ocho semestres", "360 créditos", "mínimos por ejes", "flexibilidad", "currículo individual", "sede Maldonado"]
+        },
+        {
+          "url": "https://www.fadu.edu.uy/carreras/ldp/informacion-general/",
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "supports": ["vigencia 2026", "cuatro años", "360 créditos", "carácter conjunto", "ejes", "sede Maldonado"]
+        },
+        {
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/licenciatura-en-diseno-de-paisajes/",
+          "authority": "Facultad de Agronomía, Udelar",
+          "supports": ["vigencia", "aprobación 2007", "título", "cuatro años", "360 créditos", "grilla", "sede Maldonado"]
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2020/03/06/avisos.pdf",
+          "authority": "Diario Oficial - IMPO / Universidad de la República",
+          "supports": ["Reglamento vigente aprobado por el CDC el 18/02/2020", "gestión de cursos", "programas", "evaluación"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-diseno-de-paisaje",
+          "authority": "Portal central de la Universidad de la República",
+          "supports": ["oferta vigente", "360 créditos", "servicios académicos", "sede Maldonado"]
+        }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "La UI muestra Plan 2007, año de aprobación oficial; 2008 se conserva como identidad técnica de Bedelías y año de inicio del dictado." },
+        { "field": "durationMonths", "resolution": "FADU, Agronomía y el plan establecen cuatro años u ocho semestres; se corrigen los 60 meses administrativos." },
+        { "field": "creditAccounting", "resolution": "La separación operativa 6+101+160+43+50 de Bedelías totaliza 360 y equivale a los ejes 103+162+45+50 del plan cuando se distribuyen dos créditos del Taller Transversal en cada eje común." },
+        { "field": "catalogSize", "resolution": "Las 302 unidades y 2.450 créditos son oferta acumulada por ejes y no obligaciones completas de egreso; once electivas externas aparecen sólo en la composición, con su servicio de origen explícito." }
+      ],
+      "uiNotice": "Plan conjunto y flexible de 360 créditos. Completá los mínimos por eje y acordá con la Comisión de Carrera el balance y la orientación de tu currículo individual.",
+      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica; la Comisión de Carrera mantiene la competencia sobre la pertinencia y creditización de optativas y electivas."
     }
   ],
-  "contentHash": "sha256:8adf9c544e85b15c6e90e4c7f97684a98564ffe553c71539c3401740cecec116"
+  "contentHash": "sha256:c9f8a72c26b9add120177645cee2e795edacd5faf27caa078ccb4841a4312271"
 }
