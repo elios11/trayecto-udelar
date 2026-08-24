@@ -1,45 +1,31 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T05:37:17.883Z",
+  "generatedAt": "2026-08-24T05:53:35.782Z",
   "source": {
-    "uiExtractedPlansHash": "sha256:6aeda276bc669820b32a5901d57b866787a38d7c08cc076c41d594f702ffc200",
-    "officialAuditRegistryHash": "sha256:fcdffae97dc369be2b4259fcafaa231a9948949bc9ef90fc26a10bfa2a57afce",
+    "uiExtractedPlansHash": "sha256:7a7b2472fa0767b0d6de58e8d471247a2ff4d7238fd538f44cc1dd3111266f2a",
+    "officialAuditRegistryHash": "sha256:c68317190ed8cc3bffc65ba0bd8a098fd2348d54c6a955d1cf552fb40c944cf6",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "currentUiPlans": 152,
-    "curriculumReady": 125,
-    "curriculumPending": 27,
+    "curriculumReady": 126,
+    "curriculumPending": 26,
     "byPriority": {
-      "audited-curriculum-normalization-pending": 2,
+      "audited-curriculum-normalization-pending": 1,
       "official-curriculum-sources-pending": 25
     },
     "byFaculty": {
-      "FENF": 2,
       "FING": 2,
       "CENURLN": 4,
       "FARTES": 6,
       "FDER": 1,
+      "FENF": 1,
       "FHUM": 2,
       "FMED": 9,
       "FQ": 1
     }
   },
   "queue": [
-    {
-      "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
-      "planId": "bedelias-fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999",
-      "facultyCode": "FENF",
-      "snapshotPath": "data/bedelias/fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json",
-      "auditStatus": "official-evidence-complete",
-      "priority": "audited-curriculum-normalization-pending",
-      "action": "Completar la malla oficial: la identidad ya fue auditada, pero la proyección de UI todavía no contiene unidades curriculares.",
-      "officialAudit": {
-        "reviewedAt": "2026-08-20",
-        "scope": "current-program-regional-cohorts-and-admission",
-        "canonicalModel": "one-program-cohort-specific-offerings"
-      }
-    },
     {
       "identity": "lic en ingenieria biologica:2013",
       "planId": "bedelias-fing-lic-en-ingenieria-biologica-2013",
@@ -280,5 +266,5 @@
       "action": "Auditar vigencia e identidad y localizar la composición curricular oficial antes de habilitar una malla utilizable."
     }
   ],
-  "contentHash": "sha256:87c9e6157377300d4bb34d3c07fd36425f3fc4cdc5f4ad1986ccdbb39abaca34"
+  "contentHash": "sha256:08a18f03849e8d07d26292beec46e65f2fcb2e3ee6dd8f4483a5e40c27848d15"
 }

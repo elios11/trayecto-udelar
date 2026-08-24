@@ -2110,10 +2110,11 @@
       "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
       "career": "LICENCIATURA EN ENFERMERIA (PROFESIONALIZACION DE AUXILIAR)",
       "planYear": "1999",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-24",
       "status": "official-evidence-complete",
-      "scope": "current-program-regional-cohorts-and-admission",
+      "scope": "current-program-curriculum-regional-cohorts-and-admission",
       "publicationEligible": false,
+      "uiNotice": "Reglamento vigente aprobado en agosto de 2025: seis módulos, 24 unidades, Internado y Trabajo Final de Investigación. La UI conserva las 2.885 horas publicadas y no las convierte en créditos. La habilitación condicional entre módulos depende de haber ganado el derecho a examen y se informa sin automatizarla como aprobación obligatoria.",
       "officialPlan": {
         "title": "Licenciado/a en Enfermería",
         "approvalYear": 1999,
@@ -2121,7 +2122,111 @@
         "durationRule": "Tres años de cursos más aprobación del Trabajo Final de Investigación; las presentaciones institucionales resumen la duración total como tres años y medio.",
         "targetPopulation": "Auxiliares de Enfermería con bachillerato completo, título registrado, al menos tres años de ejercicio y trabajo vigente.",
         "requiredFinalActivity": "Trabajo Final de Investigación",
-        "minimumCredits": null
+        "minimumCredits": null,
+        "totalHours": 2885,
+        "curriculum": {
+          "version": "Reglamento vigente con modificaciones transitorias aprobadas el 06/08/2025",
+          "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2025/08/20250806-Reglamento-Programa-Profesionalizacion-1.pdf",
+          "prerequisitesSourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2025/08/20250806-Reglamento-Programa-Profesionalizacion-1.pdf",
+          "pathwayLabel": "Malla oficial",
+          "pathwayDescription": "Seis módulos distribuidos en tres ciclos y el Trabajo Final de Investigación. La fuente publica 2.885 horas, pero no expresa una equivalencia en créditos.",
+          "creditRequirements": [],
+          "periods": [
+            {
+              "label": "Ciclo I · Módulo I · 1.er año",
+              "courses": [
+                { "id": "orientacion-general", "name": "Orientación general a la Universidad, Facultad de Enfermería y Programa de Profesionalización", "credits": 0, "hours": 60 },
+                { "id": "epistemologia-1", "name": "Epistemología I", "credits": 0, "hours": 30 },
+                { "id": "esfuno", "name": "ESFUNO", "credits": 0, "hours": 250 }
+              ]
+            },
+            {
+              "label": "Ciclo I · Módulo II · 1.er año",
+              "courses": [
+                { "id": "enfermeria-materno-infantil", "name": "Atención de Enfermería Materno Infantil", "credits": 0, "hours": 280 },
+                { "id": "metodologia-cientifica-1", "name": "Metodología Científica I", "credits": 0, "hours": 20 },
+                { "id": "educacion", "name": "Educación", "credits": 0, "hours": 15 },
+                { "id": "sociologia", "name": "Sociología", "credits": 0, "hours": 15 },
+                { "id": "nutricion", "name": "Nutrición", "credits": 0, "hours": 15 }
+              ]
+            },
+            {
+              "label": "Ciclo I · Módulo III · 1.er año",
+              "courses": [
+                { "id": "enfermeria-ninos-adolescentes", "name": "Atención de Enfermería en Niños y Adolescentes", "credits": 0, "hours": 280 },
+                { "id": "administracion-1", "name": "Administración I", "credits": 0, "hours": 40 },
+                { "id": "salud-mental", "name": "Salud Mental", "credits": 0, "hours": 20 }
+              ]
+            },
+            {
+              "label": "Ciclo II · Módulo IV · 2.º año",
+              "courses": [
+                { "id": "enfermeria-adulto-anciano", "name": "Atención de Enfermería en el Adulto y Anciano", "credits": 0, "hours": 800 },
+                { "id": "epistemologia-2", "name": "Epistemología II", "credits": 0, "hours": 20 },
+                { "id": "metodologia-cientifica-2", "name": "Metodología Científica II", "credits": 0, "hours": 30 },
+                { "id": "bioestadistica-1", "name": "Bioestadística I", "credits": 0, "hours": 20 },
+                { "id": "epidemiologia-2-modulo-4", "name": "Epidemiología II", "credits": 0, "hours": 20 },
+                { "id": "administracion-2", "name": "Administración II", "credits": 0, "hours": 30 },
+                { "id": "metodologia-cientifica-3", "name": "Metodología Científica III", "credits": 0, "hours": 30 },
+                { "id": "bioestadistica-2", "name": "Bioestadística II", "credits": 0, "hours": 20 }
+              ]
+            },
+            {
+              "label": "Ciclo III · Módulo V · 3.er año",
+              "courses": [
+                { "id": "enfermeria-comunitaria", "name": "Enfermería Comunitaria", "credits": 0, "hours": 200 },
+                { "id": "administracion-servicios-enfermeria", "name": "Administración de Servicios de Enfermería", "credits": 0, "hours": 200 },
+                { "id": "epistemologia-3", "name": "Epistemología III", "credits": 0, "hours": 20 },
+                { "id": "epidemiologia-2-modulo-5", "name": "Epidemiología II", "credits": 0, "hours": 20 }
+              ]
+            },
+            {
+              "label": "Ciclo III · Módulo VI · 3.er año",
+              "courses": [
+                { "id": "internado", "name": "Internado", "credits": 0, "hours": 450 }
+              ]
+            },
+            {
+              "label": "Actividad final",
+              "courses": [
+                { "id": "trabajo-final-investigacion", "name": "Trabajo Final de Investigación", "credits": 0 }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "todas-las-unidades",
+              "label": "Aprobación de las 24 unidades y el Trabajo Final de Investigación",
+              "minCompleted": 25,
+              "courseIds": [
+                "orientacion-general", "epistemologia-1", "esfuno", "enfermeria-materno-infantil", "metodologia-cientifica-1", "educacion", "sociologia", "nutricion", "enfermeria-ninos-adolescentes", "administracion-1", "salud-mental", "enfermeria-adulto-anciano", "epistemologia-2", "metodologia-cientifica-2", "bioestadistica-1", "epidemiologia-2-modulo-4", "administracion-2", "metodologia-cientifica-3", "bioestadistica-2", "enfermeria-comunitaria", "administracion-servicios-enfermeria", "epistemologia-3", "epidemiologia-2-modulo-5", "internado", "trabajo-final-investigacion"
+              ]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "bedelias-degree",
+              "title": "Licenciado/a en Enfermería",
+              "minTotalCredits": 0,
+              "nodeRequirements": [],
+              "requiredCourseGroupIds": ["todas-las-unidades"]
+            }
+          ],
+          "prerequisites": [
+            { "targetId": "epistemologia-2", "courseIds": ["epistemologia-1"] },
+            { "targetId": "epistemologia-3", "courseIds": ["epistemologia-2"] },
+            { "targetId": "metodologia-cientifica-2", "courseIds": ["metodologia-cientifica-1"] },
+            { "targetId": "metodologia-cientifica-3", "courseIds": ["metodologia-cientifica-2"] },
+            { "targetId": "bioestadistica-2", "courseIds": ["bioestadistica-1"] },
+            { "targetId": "administracion-2", "courseIds": ["administracion-1"] },
+            {
+              "targetId": "trabajo-final-investigacion",
+              "courseIds": [
+                "orientacion-general", "epistemologia-1", "esfuno", "enfermeria-materno-infantil", "metodologia-cientifica-1", "educacion", "sociologia", "nutricion", "enfermeria-ninos-adolescentes", "administracion-1", "salud-mental", "enfermeria-adulto-anciano", "epistemologia-2", "metodologia-cientifica-2", "bioestadistica-1", "epidemiologia-2-modulo-4", "administracion-2", "metodologia-cientifica-3", "bioestadistica-2"
+              ]
+            }
+          ]
+        }
       },
       "offerings": [
         {
@@ -2168,10 +2273,29 @@
           "No crear trayectorias territoriales: las prácticas presenciales se organizan por cohorte y sede, pero no hay evidencia de mínimos o títulos diferentes.",
           "Mostrar la disponibilidad temporal: Montevideo conserva la generación 2025 y Región Suroeste abrió la generación 2026.",
           "Normalizar una duración total de 42 meses y el título Licenciado/a en Enfermería, dejando créditos sin publicar.",
-          "Mantener composición y previaturas como no publicadas hasta obtener un plan oficial detallado; no copiar el Plan 2016."
+          "Representar las 24 unidades, seis módulos, 2.885 horas e Internado publicados en el reglamento vigente, más el Trabajo Final de Investigación sin carga horaria publicada.",
+          "Automatizar solamente la secuencia de asignaturas homónimas y la aprobación completa de los ciclos I y II antes del Trabajo Final; no convertir el derecho a examen entre módulos en una aprobación más estricta ni copiar el Plan 2016."
         ]
       },
       "sources": [
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/08/20250806-Reglamento-Programa-Profesionalizacion-1.pdf",
+          "authority": "Consejo de Facultad de Enfermería, Udelar",
+          "supports": [
+            "reglamento vigente con modificaciones aprobadas el 6 de agosto de 2025",
+            "tres ciclos, seis módulos, 24 unidades e Internado",
+            "2.885 horas publicadas y Trabajo Final de Investigación obligatorio",
+            "secuencia de asignaturas homónimas y régimen de previaturas"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/08/Resol.-Reglamento-Profes-2025.pdf",
+          "authority": "Consejo de Facultad de Enfermería, Udelar",
+          "supports": [
+            "Resolución 25 del 6 de agosto de 2025",
+            "aprobación de las modificaciones transitorias del reglamento"
+          ]
+        },
         {
           "url": "https://www.fenf.edu.uy/programa-profesionalizacion-auxiliares-enfermeria/",
           "authority": "Facultad de Enfermería, Udelar",
@@ -2239,10 +2363,18 @@
         },
         {
           "field": "minimumCredits",
-          "resolution": "Las fuentes oficiales revisadas no publican un total de créditos del Programa 1999 y los snapshots están vacíos. No reutilizar los 360 créditos de Licenciatura Plan 2016 ni mostrar un mínimo inventado."
+          "resolution": "El reglamento vigente publica 2.885 horas para los seis módulos, pero no expresa créditos. No reutilizar los 360 créditos de Licenciatura Plan 2016 ni convertir horas con una equivalencia inventada."
+        },
+        {
+          "field": "moduleProgression",
+          "resolution": "El reglamento permite iniciar condicionalmente el módulo siguiente con derecho a examen del anterior. La UI no dispone de ese estado académico y no lo endurece como aprobación completa; sí aplica las secuencias inequívocas de asignaturas homónimas."
+        },
+        {
+          "field": "epidemiologiaNaming",
+          "resolution": "El documento denomina Epidemiología II tanto a la unidad del Módulo IV como a la del Módulo V. Se conservan ambos rótulos oficiales con identificadores internos distintos, sin inferir que el segundo sea Epidemiología III."
         }
       ],
-      "remainingWork": "La identidad, vigencia, título, duración y sedes quedan normalizados. Falta una fuente oficial detallada de unidades, créditos y previaturas para construir la malla; mientras tanto debe mostrarse como programa vigente con composición no publicada."
+      "remainingWork": "La identidad, vigencia, título, duración, sedes, módulos, unidades, horas y reglas inequívocas quedan normalizados. Los créditos siguen correctamente como no publicados; la condición de derecho a examen entre módulos debe validarse manualmente porque no existe un estado equivalente en la UI."
     },
     {
       "identity": "archivologia:2012",
@@ -13764,5 +13896,5 @@
       "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
     }
   ],
-  "contentHash": "sha256:fcdffae97dc369be2b4259fcafaa231a9948949bc9ef90fc26a10bfa2a57afce"
+  "contentHash": "sha256:c68317190ed8cc3bffc65ba0bd8a098fd2348d54c6a955d1cf552fb40c944cf6"
 }

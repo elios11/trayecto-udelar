@@ -1099,3 +1099,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - La oferta nominal de optativas cambia por semestre y no se congela como trayectoria. La UI representa sus mínimos mediante bloques flexibles dentro del módulo correspondiente y mantiene Montevideo/Salto como sedes del mismo plan.
 - Quedaron operativas las previas oficiales de Proyecto Integral I y II. La condición alternativa de examen de Teorías Sociales II y los requisitos por ciclos del Trabajo Final permanecen documentados, pero no se endurecen artificialmente mientras el motor no represente condición de reglamentado/promovido ni aprobación por ciclo.
 - La cola funcional baja a 27 mallas pendientes: dos identidades ya auditadas y veinticinco que también requieren contraste oficial.
+
+### Profesionalización de Auxiliares de Enfermería Plan 1999 — normalización curricular completa 2026-08-24
+
+- El reglamento vigente de FENF, con modificaciones aprobadas por Resolución 25 del 06/08/2025, publica tres ciclos, seis módulos, 24 unidades, Internado y Trabajo Final de Investigación.
+- Los módulos suman 2.885 horas. La UI conserva la carga horaria por unidad y el total, sin convertirla a créditos ni reutilizar los 360 créditos de la Licenciatura Plan 2016.
+- Se exige completar las 24 unidades y el Trabajo Final. Quedaron operativas las secuencias de Epistemología, Metodología Científica, Bioestadística y Administración, además de la aprobación de los ciclos I y II para iniciar el Trabajo Final.
+- La habilitación condicional entre módulos depende de haber ganado el derecho a examen. Ese estado no existe en la UI y se informa sin transformarlo en una aprobación completa más estricta.
+- Montevideo, Mercedes y Colonia del Sacramento siguen siendo sedes de cohortes del mismo programa, sin trayectorias territoriales ficticias. La cola funcional baja a 26 mallas pendientes: Ingeniería Biológica ya auditada y veinticinco identidades que todavía requieren fuentes curriculares oficiales.
+- Registro de auditoría: hash `sha256:c68317190ed8cc3bffc65ba0bd8a098fd2348d54c6a955d1cf552fb40c944cf6`. Manifiesto UI: 152 proyecciones, 126 con composición y 26 sin composición; hash `sha256:7a7b2472fa0767b0d6de58e8d471247a2ff4d7238fd538f44cc1dd3111266f2a`. Cola funcional: hash `sha256:08a18f03849e8d07d26292beec46e65f2fcb2e3ee6dd8f4483a5e40c27848d15`.

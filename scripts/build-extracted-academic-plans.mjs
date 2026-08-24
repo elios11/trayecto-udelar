@@ -232,12 +232,14 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     for (const [index, rawCourse] of (period.courses ?? []).entries()) {
       const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
       const credits = Number(rawCourse.credits);
+      const hours = Number(rawCourse.hours);
       const nodeId = rawCourse.requirementId ?? "plan-total";
       const courseSourceUrl = rawCourse.sourceUrl ?? period.sourceUrl ?? sourceUrl;
       courses.push({
         id,
         name: rawCourse.name,
         credits: Number.isFinite(credits) && credits >= 0 ? credits : 0,
+        ...(Number.isFinite(hours) && hours > 0 ? { hours } : {}),
         eligibleRequirementIds: [nodeId],
         creditAllocations: [{ nodeId, credits, status: "official", sourceUrl: courseSourceUrl }],
         dataStatus: "official-curriculum",
@@ -479,6 +481,7 @@ function buildProjection(entry, snapshot, audit) {
         minCredits: safeMinCredits,
         publishedMinCredits: Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : null,
         durationMonths: Number(audit?.officialPlan?.durationMonths) || Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
+        ...(Number(audit?.officialPlan?.totalHours) > 0 ? { totalHours: Number(audit.officialPlan.totalHours) } : {}),
         campuses,
         sharedWith: [...new Set([
           ...(audit?.officialPlan?.sharedWith ?? []),

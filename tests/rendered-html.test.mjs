@@ -52,7 +52,7 @@ test("renderiza la malla y su procedencia institucional", async () => {
 test("distingue las tres instancias del progreso", async () => {
   const html = await (await render()).text();
   assert.match(html, /Pendiente/);
-  assert.match(html, /Aprobada · sin créditos/);
-  assert.match(html, /Exonerada · suma créditos/);
+  assert.match(html, /Aprobada · examen pendiente/);
+  assert.match(html, /Exonerada · completada/);
   assert.match(html, /PI 60% o más/);
 });
