@@ -354,6 +354,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   const useProfileComposition = curriculum.usePublishedCredits === true
     || (audit?.officialPlan?.trajectories ?? []).length > 0;
   const pathRequirementMap = curriculum.pathRequirementMap ?? {};
+  const courseOverrides = curriculum.courseOverrides ?? {};
   const requirementIdForPath = (nodePath) => {
     for (const segment of [...(nodePath ?? [])].reverse()) {
       const code = String(segment).match(/^([A-Z0-9]+)\s+-\s+/i)?.[1];
@@ -372,13 +373,16 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       ? String(node.label).replace(/\s+-\s+cr[eé]ditos?:\s*\d+(?:[.,]\d+)?\s*$/i, "")
       : node.label);
     const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
+    const courseOverride = courseOverrides[parsed.code] ?? courseOverrides[normalize(parsed.name)] ?? {};
     const profileIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "perfiles");
     const profileId = profileIndex >= 0 ? slug(node.path[profileIndex + 1]) : null;
     const groupIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "grupos");
     const rawPeriod = useProfileComposition
       ? [...(node.path ?? [])].reverse().find((segment) => /min:\s*\d+\s+cr[eé]ditos?/i.test(segment))
       : groupIndex >= 0 ? node.path[groupIndex + 1] : null;
-    const period = (useProfileComposition ? compositionCreditGroupLabel(rawPeriod) : compositionGroupLabel(rawPeriod)) || "Composición del plan";
+    const period = courseOverride.periodLabel
+      ?? ((useProfileComposition ? compositionCreditGroupLabel(rawPeriod) : compositionGroupLabel(rawPeriod))
+        || "Composición del plan");
     addToPeriod(periodsByLabel, period, id);
     if (profileId) {
       if (!profilePeriodsById.has(profileId)) profilePeriodsById.set(profileId, new Map());
@@ -386,9 +390,11 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     } else {
       addToPeriod(commonPeriodsByLabel, period, id);
     }
-    const nodeId = requirementIdForPath(node.path);
+    const nodeId = courseOverride.requirementId ?? requirementIdForPath(node.path);
     const publishedCredits = Number(node.course?.credits) || 0;
-    const credits = curriculum.usePublishedCredits === true ? publishedCredits : 0;
+    const credits = Number.isFinite(Number(courseOverride.credits))
+      ? Number(courseOverride.credits)
+      : curriculum.usePublishedCredits === true ? publishedCredits : 0;
     const titleCasedName = titleCase(parsed.name || `Unidad ${index + 1}`);
     const displayName = useProfileComposition
       ? titleCasedName.replace(/\b(?:Iii|Ii|Iv|Viii|Vii|Vi|Ix|Xi|Xii)\b/g, (roman) => roman.toLocaleUpperCase("es-UY"))
@@ -400,7 +406,9 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       credits,
       eligibleRequirementIds: [nodeId],
       creditAllocations: [{ nodeId, credits, status: "official", sourceUrl }],
-      dataStatus: curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
+      dataStatus: Object.keys(courseOverride).length > 0
+        ? "official-curriculum"
+        : curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
       ruleCoverage: "not-scraped",
     });
     courseIdByNode.set(node, id);
@@ -456,6 +464,19 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       sourceUrl,
     }];
   });
+  for (const configuredGroup of curriculum.requiredCourseGroups ?? []) {
+    const courseIds = (configuredGroup.sourceCourseIds ?? [])
+      .map((sourceId) => courseIdBySourceId.get(sourceId))
+      .filter(Boolean);
+    if (courseIds.length === 0) continue;
+    requiredCourseGroups.push({
+      id: configuredGroup.id,
+      label: configuredGroup.label,
+      minCompleted: Math.min(Number(configuredGroup.minCompleted) || courseIds.length, courseIds.length),
+      courseIds,
+      sourceUrl: configuredGroup.sourceUrl ?? sourceUrl,
+    });
+  }
 
   if (curriculum.manualCompletionValidation) {
     const manualCourse = {
@@ -518,14 +539,25 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     requiredActivities: [],
     sourceUrl,
   }];
-  const commonPeriods = [...commonPeriodsByLabel].map(([label, courseIds]) => ({ label, courseIds }));
+  const periodOrder = curriculum.periodOrder ?? [];
+  const orderedPeriods = (periodMap) => [...periodMap]
+    .map(([label, courseIds]) => ({ label, courseIds }))
+    .sort((left, right) => {
+      const leftIndex = periodOrder.indexOf(left.label);
+      const rightIndex = periodOrder.indexOf(right.label);
+      if (leftIndex < 0 && rightIndex < 0) return 0;
+      if (leftIndex < 0) return 1;
+      if (rightIndex < 0) return -1;
+      return leftIndex - rightIndex;
+    });
+  const commonPeriods = orderedPeriods(commonPeriodsByLabel);
   const pathwayPeriods = Object.fromEntries([...profilePeriodsById].map(([profileId, profilePeriods]) => [
     profileId,
-    [...commonPeriods, ...[...profilePeriods].map(([label, courseIds]) => ({ label, courseIds }))],
+    [...commonPeriods, ...orderedPeriods(profilePeriods)],
   ]));
   return {
     courses,
-    periods: [...periodsByLabel].map(([label, courseIds]) => ({ label, courseIds })),
+    periods: orderedPeriods(periodsByLabel),
     pathwayPeriods,
     nodes,
     requiredCourseGroups,

@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T07:41:32.793Z",
+  "generatedAt": "2026-08-24T08:03:57.160Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:ba5adbe2f57d457a1e5f5ae2ef6522a2b7ebabf4dc9ce2cea76fcad5f5aa64d0"
+    "officialAuditRegistryHash": "sha256:47bee90131fa5750315546f96be45ecf0592e15f18b7bcaa556eb27d098d926a"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 100,
-    "pendingCanonicalIdentities": 77,
+    "evidenceClosedCanonicalIdentities": 101,
+    "pendingCanonicalIdentities": 76,
     "byPriority": {
-      "official-sources-pending": 77
+      "official-sources-pending": 76
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -621,39 +621,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "one-plan-multiple-offerings-and-mentions"
+    },
+    {
+      "identity": "tecnologo en produccion equina:2022",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "one-plan-one-offering"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnologo en produccion equina:2022",
-      "career": {
-        "name": "TECNÓLOGO EN PRODUCCIÓN EQUINA",
-        "normalizedName": "tecnologo en produccion equina",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2022"
-      },
-      "canonicalSource": {
-        "serviceCode": "CUCEL",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - CUCEL",
-        "planKey": "CUCEL:tecnologo en produccion equina:2022",
-        "site": null,
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CUCEL",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - CUCEL",
-          "planKey": "CUCEL:tecnologo en produccion equina:2022",
-          "site": null,
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnologo en sistemas integrados de produccion agropecuaria:2022",
       "career": {
@@ -3081,5 +3057,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:75a9accbd8d4a70926afedde314f1623c8c48e3dfa52d2eb914a387e4b94883c"
+  "contentHash": "sha256:80b991a370e546248b7bef0819dffe7e048c4335da1923a9c4a168ede4301f6a"
 }

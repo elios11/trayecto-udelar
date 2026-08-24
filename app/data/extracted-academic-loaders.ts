@@ -88,7 +88,7 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-cucel-tecnologo-en-produccion-equina-2022.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 225,
+    minCredits: 270,
   },
   "bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022": {
     load: () => import("./bedelias-generated/bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022.json"),

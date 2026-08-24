@@ -1240,3 +1240,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:ba5adbe2f57d457a1e5f5ae2ef6522a2b7ebabf4dc9ce2cea76fcad5f5aa64d0`. Cola general: 77 identidades pendientes; hash `sha256:75a9accbd8d4a70926afedde314f1623c8c48e3dfa52d2eb914a387e4b94883c`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:38a3841fa4c10615a866d46a50995c1cb1416d7c62d796950aa832a5879b3d8a`. Cola funcional vacía; hash `sha256:189cea525ce4dd06e66809107faa7c9f80d974fbbf86caab4928dcd737a78f2f`.
 - Siguiente paso: auditar el Tecnólogo en Producción Equina Plan 2022, primera identidad reproducible restante.
+
+### Tecnólogo en Producción Equina — plan conjunto y trayectoria sugerida operativos 2026-08-24
+
+- La resolución de ANEP-DGETP y el plan conjunto publicado por IMPO establecen seis semestres, 270 créditos y el título de Tecnólogo en Producción Equina. La UI muestra la denominación oficial Plan 2021 y conserva Plan 2022 sólo como identidad técnica de la oferta de Bedelías iniciada en 2022.
+- Se corrigen los metadatos imposibles de Bedelías: seis meses y 225 créditos pasan a 36 meses y 270 créditos. La referencia anterior de Facultad de Veterinaria a 254 créditos se documenta como versión superada por la aprobación de 270.
+- El egreso controla 36+15 créditos del eje Básico e introductorio, 122+29 de Producción equina, 32+12 de Formación integral y 24 del Trabajo Final. Los 56 créditos optativos del cuadro oficial cierran el total; la contradicción con la frase narrativa “al menos 55” queda explícita.
+- La distribución oficial de seis semestres se publica como trayectoria sugerida, no como orden obligatorio. Las optativas se mantienen flexibles y la unidad Introducción a las Dinámicas Universitarias, incorporada actualmente en Bedelías, queda disponible sin convertirse por inferencia en requisito de egreso.
+- La carrera se representa una sola vez con sede Melo, Cerro Largo y sin variante territorial. Las previaturas se limitan a reglas efectivamente publicadas por Bedelías.
+- El generador admite correcciones oficiales por código de unidad, orden reproducible de períodos y grupos nominales obligatorios dentro de composiciones jerárquicas; esto evita alterar el snapshot y mantiene trazabilidad entre la fuente administrativa y la normativa.
+- Registro de auditoría: hash `sha256:47bee90131fa5750315546f96be45ecf0592e15f18b7bcaa556eb27d098d926a`. Cola general: 76 identidades pendientes; hash `sha256:80b991a370e546248b7bef0819dffe7e048c4335da1923a9c4a168ede4301f6a`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:3d6393feff5a245eb896dc3347eb0fd64e3fa03b0b02a93baef93a11cdf48555`. Cola funcional vacía; hash `sha256:087f0f4f91f6a3719076bb0957669db45160aef561ef595618d82fb42ca66c82`.
+- Siguiente paso: auditar el Tecnólogo en Sistemas Integrados de Producción Agropecuaria Plan 2022, primera identidad reproducible restante.
