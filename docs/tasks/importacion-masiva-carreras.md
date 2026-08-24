@@ -1159,3 +1159,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:43e40f1187b547181157bc9df5f196fec7124f054f96fbab3f2cb467097acbf4`. Cola general: 96 identidades pendientes; hash `sha256:ada4ab1bae08c60e8cb1d4a14d03257f9c92eb6b5b66e9461ff1ca77ad17e48b`.
 - Manifiesto UI: 148 proyecciones, 134 con composición y 14 sin composición; hash `sha256:e3e06111d278797426ccf6e01781e7ffc25bbe325de3eca73f3995f6b50697fe`. Cola funcional: hash `sha256:7e554ee03224d8454a2058bac5a903a73723f996ca15ba800c52bee7def01432`.
 - Siguiente paso funcional: Enfermería Universitaria Plan 1983, cuyo árbol conserva 53 unidades sin créditos y debe contrastarse con el plan vigente y el régimen de egreso.
+
+### Enfermería Universitaria Plan 1983 — antecedente histórico cerrado 2026-08-24
+
+- La historia institucional de Facultad ubica a la Escuela Universitaria de Enfermería Dr. Carlos Nery entre 1973 y 1985. El Plan 1983 y su título Enfermero Universitario pertenecen a esa institución predecesora.
+- Bedelías conserva 53 materias distribuidas en cuatro grupos, pero marca `metadata.current=false`; los cuatro mínimos son cero U.C.B. y no publica créditos, obligatoriedad ni regla de egreso. El índice que lo marcaba vigente no alcanza para habilitar una malla.
+- La oferta y los cronogramas 2026 publican Plan 2016, Plan 1993, Carrera Escalonada y Profesionalización. No publican ingreso, cursado ni exámenes del Plan 1983. La evidencia de egresados históricos tampoco demuestra estudiantes activos actuales.
+- La UI excluye el registro Plan 1983 y conserva Licenciatura en Enfermería Plan 2016 como sucesora vigente. Las 53 materias permanecen en el snapshot para trazabilidad; la auditoría deberá reabrirse si Facultad publica continuidad específica para cohortes de 1983.
+- Registro de auditoría: hash `sha256:4a9c60498092cf4497039cf142321ded086b36358b0d6a19c137ea9f9c815d5a`. Cola general: 95 identidades pendientes; hash `sha256:99b5e8c4b3ff3856cb84592911247ceedb180ceb6ff2e6154e3e0b5ba32be2c8`.
+- Manifiesto UI: 147 proyecciones, 134 con composición, 13 sin composición y treinta identidades excluidas; hash `sha256:b9994022a2bfabe47c1fa0ec3a70ed5860c5b180f476dc162858f2f845513243`. Cola funcional: hash `sha256:04b1ce11396ea8cacdec51fed9c12c494baf1f7b7dbc3d3b2e700c0f4c08c119`.
+- Siguiente paso funcional: Letras Hispánicas Plan 1976, contrastando el registro sin composición con la estructura actual y los mecanismos oficiales de transición de FHCE.

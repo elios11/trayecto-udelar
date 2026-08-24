@@ -14478,7 +14478,97 @@
         { "field": "curriculum", "resolution": "No se reconstruye una malla histórica con cursos actuales ni se migra progreso automáticamente entre títulos." }
       ],
       "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
+    },
+    {
+      "identity": "enfermeria universitaria:1983",
+      "career": "ENFERMERÍA UNIVERSITARIA",
+      "planYear": "1983",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del Plan 1983 de la EUE Dr. Carlos Nery frente a la oferta y los regímenes de continuidad actuales de Facultad de Enfermería.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Enfermero Universitario",
+        "historicalInstitution": "Escuela Universitaria de Enfermería Dr. Carlos Nery",
+        "institutionalPeriod": "1973-1985",
+        "currentSuccessor": {
+          "identity": "licenciatura en enfermeria:2016",
+          "title": "Licenciado/a en Enfermería",
+          "planYear": "2016"
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fenf-enfermeria-universitaria-1983.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "titleLabel": "ENFERMERO UNIVERSITARIO",
+        "compositionMatterCount": 53,
+        "compositionGroups": [
+          { "label": "Primer semestre", "matterCount": 16, "minimumUcb": 0 },
+          { "label": "Segundo semestre", "matterCount": 17, "minimumUcb": 0 },
+          { "label": "Tercer semestre", "matterCount": 9, "minimumUcb": 0 },
+          { "label": "Cuarto semestre", "matterCount": 11, "minimumUcb": 0 }
+        ],
+        "interpretation": "Bedelías preserva el catálogo histórico de 53 materias, pero no publica créditos, obligatoriedad ni una regla de egreso: los cuatro grupos declaran mínimo cero. Esa composición no basta para construir un seguimiento fiable."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-predecessor-plan-not-current",
+        "canonicalIdentity": "licenciatura en enfermeria:2016",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "El Plan 1983 pertenece a la institución predecesora que funcionó entre 1973 y 1985. La oferta y los cronogramas 2026 sólo publican Plan 2016, Plan 1993, Carrera Escalonada y Profesionalización; no hay ingreso, cursado, exámenes ni evidencia de estudiantes activos del Plan 1983. Su reconocimiento como antecedente o título de egresados no prueba un plan todavía utilizable."
+      },
+      "sources": [
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/03/Historia-Biblioteca-2.pdf",
+          "authority": "Facultad de Enfermería, Universidad de la República",
+          "supports": [
+            "período institucional 1973-1985 de la Escuela Universitaria de Enfermería Dr. Carlos Nery",
+            "secuencia histórica de instituciones predecesoras de Facultad de Enfermería"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/2026/02/10/conoce-la-oferta-educativa-2026/",
+          "authority": "Facultad de Enfermería, Universidad de la República",
+          "supports": [
+            "oferta e ingresos vigentes de Facultad de Enfermería",
+            "ausencia del Plan 1983 entre las propuestas de ingreso"
+          ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/cronogramas-estudiantiles/",
+          "authority": "Facultad de Enfermería, Universidad de la República",
+          "supports": [
+            "cronogramas 2026 del Plan 2016",
+            "continuidad explícita de Plan 1993 y Carrera Escalonada",
+            "ausencia de cursado o exámenes publicados para Plan 1983"
+          ]
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/2353/1/FE-0419TG.pdf",
+          "authority": "Repositorio institucional Colibrí, Universidad de la República",
+          "supports": [
+            "identificación del Plan 1983 como uno de los planes históricos de formación",
+            "existencia de egresados del plan sin demostrar estudiantes activos o un régimen de egreso actual"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "current",
+          "resolution": "Se priorizan metadata.current=false, la historia institucional y la oferta/cronogramas 2026 sobre la marca current heredada del índice de servicio."
+        },
+        {
+          "field": "composition",
+          "resolution": "Las 53 materias se conservan como evidencia histórica, pero los mínimos cero y la ausencia de créditos o reglas de egreso impiden tratarlas como una malla utilizable."
+        },
+        {
+          "field": "titleRecognition",
+          "resolution": "La existencia de egresados con el título Enfermero Universitario no demuestra que el Plan 1983 continúe abierto para cursado o egreso."
+        }
+      ],
+      "remainingWork": "Caso cerrado como antecedente histórico sin continuidad vigente demostrada. Si Facultad publicara una resolución o calendario específico para estudiantes activos del Plan 1983, deberá reabrirse la auditoría antes de habilitarlo como plan histórico."
     }
   ],
-  "contentHash": "sha256:43e40f1187b547181157bc9df5f196fec7124f054f96fbab3f2cb467097acbf4"
+  "contentHash": "sha256:4a9c60498092cf4497039cf142321ded086b36358b0d6a19c137ea9f9c815d5a"
 }
