@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:8bc7ca01f4f4fab2ac748c2165e93f6e2ebb2e78a0bcba82cceabce7208259c3",
-    "officialAuditHash": "sha256:30fc142b8fa93068c1a9b70ffd47c33f2c17616e803d6dc2420782599f7da5c2",
+    "auditQueueHash": "sha256:75a9accbd8d4a70926afedde314f1623c8c48e3dfa52d2eb914a387e4b94883c",
+    "officialAuditHash": "sha256:ba5adbe2f57d457a1e5f5ae2ef6522a2b7ebabf4dc9ce2cea76fcad5f5aa64d0",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 143,
     "compositionAvailable": 143,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 32,
+    "plansWithOfficialCampuses": 33,
     "excludedFromCurrentUi": 34
   },
   "plans": [
@@ -285,9 +285,13 @@
       "planId": "bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021",
       "facultyCode": "CENURSO",
       "snapshotPath": "data/bedelias/cenurso-tecnicatura-universitaria-en-bienes-culturales-2021.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "colonia",
+        "paysandu",
+        "tacuarembo"
+      ]
     },
     {
       "identity": "tecnologo en administracion y contabilidad:2012",
@@ -1469,5 +1473,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:4038595050e64a7f261c4f8b6f63be9697479a21017065b57ec1e227e816c37f"
+  "contentHash": "sha256:38a3841fa4c10615a866d46a50995c1cb1416d7c62d796950aa832a5879b3d8a"
 }

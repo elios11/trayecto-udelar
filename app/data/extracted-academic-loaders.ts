@@ -158,8 +158,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021": {
     load: () => import("./bedelias-generated/bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["historia-regional-y-local","museologia","patrimonio"],
+    pathwayLabel: "Mención",
     minCredits: 200,
   },
   "bedelias-cenurso-tecnologo-en-administracion-y-contabilidad-2012": {

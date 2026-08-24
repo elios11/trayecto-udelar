@@ -1229,3 +1229,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:30fc142b8fa93068c1a9b70ffd47c33f2c17616e803d6dc2420782599f7da5c2`. Cola general: 78 identidades pendientes; hash `sha256:8bc7ca01f4f4fab2ac748c2165e93f6e2ebb2e78a0bcba82cceabce7208259c3`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 32 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:4038595050e64a7f261c4f8b6f63be9697479a21017065b57ec1e227e816c37f`. Cola funcional vacía; hash `sha256:6dd51f1e6c481628efeba945a80c7a7af11f2f19dd883d4e9b85afa946c17eae`.
 - Siguiente paso: auditar la Tecnicatura Universitaria en Bienes Culturales Plan 2021, primera identidad reproducible restante.
+
+### Tecnicatura Universitaria en Bienes Culturales Plan 2021 — menciones y sedes operativas 2026-08-24
+
+- El plan aprobado por FHCE y el CDC define un único título de Técnico Universitario en Bienes Culturales, cinco semestres y 200 créditos. FHCE certifica una de tres menciones: Historia Regional y Local, Museología o Patrimonio.
+- La UI conserva una sola carrera y un solo progreso para Colonia, Paysandú y Tacuarembó. Las tres sedes publicadas por el portal central acceden a las tres menciones; no existe evidencia oficial vigente de una variante curricular o restricción territorial.
+- El generador proyecta por primera vez la composición jerárquica completa de Bedelías: 44 alternativas comunes, el bloque integrado específico y únicamente la rama de la mención elegida. Las listas optativas, electivas e integradas siguen siendo catálogos acreditables y no se convierten en una secuencia obligatoria.
+- Los requisitos controlan 91 créditos de Historia y Patrimonio, 26 de Museología, 20 de Gestión y Promoción Cultural, 4 de idioma moderno, 29 de formación específica, 20 electivos y actividades integradas de 3+7 créditos. Los mínimos suman exactamente los 200 créditos del título.
+- La rama administrativa de 36 créditos de formación específica se descompone conforme al cuadro oficial: 29 créditos específicos y siete integrados. Cuando la fuente no fija una unidad nominal para esos siete créditos, la UI muestra un bloque acreditable y no inventa una materia.
+- Registro de auditoría: hash `sha256:ba5adbe2f57d457a1e5f5ae2ef6522a2b7ebabf4dc9ce2cea76fcad5f5aa64d0`. Cola general: 77 identidades pendientes; hash `sha256:75a9accbd8d4a70926afedde314f1623c8c48e3dfa52d2eb914a387e4b94883c`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:38a3841fa4c10615a866d46a50995c1cb1416d7c62d796950aa832a5879b3d8a`. Cola funcional vacía; hash `sha256:189cea525ce4dd06e66809107faa7c9f80d974fbbf86caab4928dcd737a78f2f`.
+- Siguiente paso: auditar el Tecnólogo en Producción Equina Plan 2022, primera identidad reproducible restante.

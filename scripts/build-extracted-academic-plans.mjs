@@ -154,6 +154,15 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
   }
   if (Array.isArray(audit?.officialPlan?.trajectories) && audit.officialPlan.trajectories.length > 0) {
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => {
+      const compositionPeriods = officialCurriculum?.pathwayPeriods?.[trajectory.id];
+      if (compositionPeriods) {
+        return [trajectory.id, {
+          label: trajectory.label,
+          description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
+          campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
+          periods: compositionPeriods,
+        }];
+      }
       const excludedIds = new Set((trajectory.excludedCourseIds ?? []).map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
       const includedIds = Array.isArray(trajectory.courseIds)
         ? new Set([...(audit.officialPlan.curriculum.commonCourseIds ?? []), ...trajectory.courseIds]
@@ -304,6 +313,13 @@ function compositionGroupLabel(value) {
     .trim();
 }
 
+function compositionCreditGroupLabel(value) {
+  return String(value ?? "")
+    .replace(/\s+-\s+min:\s*\d+\s+(?:U\.C\.B|cr[eé]ditos?)\s*$/i, "")
+    .replace(/^[^-]+\s+-\s+/, "")
+    .trim();
+}
+
 function compositionMatter(value) {
   const label = String(value ?? "").trim();
   const serviceMatch = label.match(/^([^-]+?)\s+-\s+([^-]+?)\s+-\s+(.+)$/);
@@ -331,28 +347,90 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
 
   const courses = [];
   const periodsByLabel = new Map();
+  const commonPeriodsByLabel = new Map();
+  const profilePeriodsById = new Map();
   const courseIdByNode = new Map();
   const courseIdBySourceId = new Map();
+  const useProfileComposition = curriculum.usePublishedCredits === true
+    || (audit?.officialPlan?.trajectories ?? []).length > 0;
+  const pathRequirementMap = curriculum.pathRequirementMap ?? {};
+  const requirementIdForPath = (nodePath) => {
+    for (const segment of [...(nodePath ?? [])].reverse()) {
+      const code = String(segment).match(/^([A-Z0-9]+)\s+-\s+/i)?.[1];
+      const name = normalize(compositionCreditGroupLabel(segment));
+      if (code && pathRequirementMap[code]) return pathRequirementMap[code];
+      if (pathRequirementMap[name]) return pathRequirementMap[name];
+    }
+    return "plan-total";
+  };
+  const addToPeriod = (periodMap, label, id) => {
+    if (!periodMap.has(label)) periodMap.set(label, []);
+    periodMap.get(label).push(id);
+  };
   for (const [index, node] of matterNodes.entries()) {
-    const parsed = compositionMatter(node.label);
+    const parsed = compositionMatter(useProfileComposition
+      ? String(node.label).replace(/\s+-\s+cr[eé]ditos?:\s*\d+(?:[.,]\d+)?\s*$/i, "")
+      : node.label);
     const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
+    const profileIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "perfiles");
+    const profileId = profileIndex >= 0 ? slug(node.path[profileIndex + 1]) : null;
     const groupIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "grupos");
-    const rawPeriod = groupIndex >= 0 ? node.path[groupIndex + 1] : null;
-    const period = compositionGroupLabel(rawPeriod) || "Composición del plan";
-    if (!periodsByLabel.has(period)) periodsByLabel.set(period, []);
-    periodsByLabel.get(period).push(id);
+    const rawPeriod = useProfileComposition
+      ? [...(node.path ?? [])].reverse().find((segment) => /min:\s*\d+\s+cr[eé]ditos?/i.test(segment))
+      : groupIndex >= 0 ? node.path[groupIndex + 1] : null;
+    const period = (useProfileComposition ? compositionCreditGroupLabel(rawPeriod) : compositionGroupLabel(rawPeriod)) || "Composición del plan";
+    addToPeriod(periodsByLabel, period, id);
+    if (profileId) {
+      if (!profilePeriodsById.has(profileId)) profilePeriodsById.set(profileId, new Map());
+      addToPeriod(profilePeriodsById.get(profileId), period, id);
+    } else {
+      addToPeriod(commonPeriodsByLabel, period, id);
+    }
+    const nodeId = requirementIdForPath(node.path);
+    const publishedCredits = Number(node.course?.credits) || 0;
+    const credits = curriculum.usePublishedCredits === true ? publishedCredits : 0;
+    const titleCasedName = titleCase(parsed.name || `Unidad ${index + 1}`);
+    const displayName = useProfileComposition
+      ? titleCasedName.replace(/\b(?:Iii|Ii|Iv|Viii|Vii|Vi|Ix|Xi|Xii)\b/g, (roman) => roman.toLocaleUpperCase("es-UY"))
+      : titleCasedName;
     courses.push({
       id,
       ...(parsed.code ? { bedeliasCode: parsed.code } : {}),
-      name: titleCase(parsed.name || `Unidad ${index + 1}`),
-      credits: 0,
-      eligibleRequirementIds: ["plan-total"],
-      creditAllocations: [{ nodeId: "plan-total", credits: 0, status: "official", sourceUrl }],
-      dataStatus: "bedelias-composition-creditless",
+      name: displayName,
+      credits,
+      eligibleRequirementIds: [nodeId],
+      creditAllocations: [{ nodeId, credits, status: "official", sourceUrl }],
+      dataStatus: curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
       ruleCoverage: "not-scraped",
     });
     courseIdByNode.set(node, id);
     if (parsed.code && !courseIdBySourceId.has(parsed.code)) courseIdBySourceId.set(parsed.code, id);
+  }
+
+  for (const [index, rawCourse] of (curriculum.additionalCourses ?? []).entries()) {
+    const id = courseId(serviceCode, rawCourse, matterNodes.length + index, usedIds);
+    const nodeId = rawCourse.requirementId ?? "plan-total";
+    courses.push({
+      id,
+      name: rawCourse.name,
+      credits: Number(rawCourse.credits) || 0,
+      eligibleRequirementIds: [nodeId],
+      creditAllocations: [{ nodeId, credits: Number(rawCourse.credits) || 0, status: "official", sourceUrl: rawCourse.sourceUrl ?? sourceUrl }],
+      dataStatus: "official-curriculum",
+      ruleCoverage: "not-published",
+      curricularBlock: rawCourse.curricularBlock === true,
+    });
+    if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
+    const period = rawCourse.periodLabel ?? "Estructura oficial";
+    addToPeriod(periodsByLabel, period, id);
+    if ((rawCourse.pathwayIds ?? []).length > 0) {
+      for (const profileId of rawCourse.pathwayIds) {
+        if (!profilePeriodsById.has(profileId)) profilePeriodsById.set(profileId, new Map());
+        addToPeriod(profilePeriodsById.get(profileId), period, id);
+      }
+    } else {
+      addToPeriod(commonPeriodsByLabel, period, id);
+    }
   }
 
   const descendantCourseIds = (node) => {
@@ -403,18 +481,52 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
 
   const minimumCredits = Number(audit.officialPlan?.minimumCredits) || 0;
   const nodes = [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: minimumCredits, sourceStatus: "official", sourceUrl }];
-  const credentials = [{
+  for (const requirement of curriculum.creditRequirements ?? []) {
+    nodes.push({
+      id: requirement.id,
+      parentId: requirement.parentId ?? "plan-total",
+      kind: requirement.kind ?? "module",
+      name: requirement.name,
+      shortName: requirement.shortName,
+      minCredits: Number(requirement.minCredits),
+      sourceStatus: "official",
+      sourceUrl: requirement.sourceUrl ?? sourceUrl,
+    });
+  }
+  const configuredCredentials = (curriculum.credentials ?? []).map((credential) => ({
+    id: credential.id,
+    title: credential.title,
+    minTotalCredits: Number(credential.minTotalCredits),
+    nodeRequirements: (credential.nodeRequirements ?? []).map((requirement) => ({
+      nodeId: requirement.nodeId,
+      minCredits: Number(requirement.minCredits),
+    })),
+    requiredCourseGroups: (credential.requiredCourseGroupIds ?? [])
+      .map((id) => requiredCourseGroups.find((group) => group.id === id))
+      .filter(Boolean),
+    requiredActivities: [],
+    sourceUrl: credential.sourceUrl ?? sourceUrl,
+  }));
+  const credentials = configuredCredentials.length > 0 ? configuredCredentials : [{
     id: "bedelias-degree",
     title: titleCase(audit.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? audit.career),
     minTotalCredits: minimumCredits,
-    nodeRequirements: [],
+    nodeRequirements: (curriculum.creditRequirements ?? [])
+      .filter((requirement) => requirement.credentialRequired !== false)
+      .map((requirement) => ({ nodeId: requirement.id, minCredits: Number(requirement.minCredits) })),
     requiredCourseGroups,
     requiredActivities: [],
     sourceUrl,
   }];
+  const commonPeriods = [...commonPeriodsByLabel].map(([label, courseIds]) => ({ label, courseIds }));
+  const pathwayPeriods = Object.fromEntries([...profilePeriodsById].map(([profileId, profilePeriods]) => [
+    profileId,
+    [...commonPeriods, ...[...profilePeriods].map(([label, courseIds]) => ({ label, courseIds }))],
+  ]));
   return {
     courses,
     periods: [...periodsByLabel].map(([label, courseIds]) => ({ label, courseIds })),
+    pathwayPeriods,
     nodes,
     requiredCourseGroups,
     requirementCourseGroups: {},
@@ -537,9 +649,9 @@ function buildProjection(entry, snapshot, audit) {
     courseRecords.push({ id, rawCourse });
   }
 
-  const officialCurriculum = buildOfficialCurriculum(audit, snapshot.service.code, usedIds)
-    ?? buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds);
-  if (officialCurriculum && courses.length === 0) {
+  const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds)
+    ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
+  if (officialCurriculum && (courses.length === 0 || audit?.officialPlan?.curriculum?.useBedeliasCompositionTree === true)) {
     courses = officialCurriculum.courses;
     for (const course of courses) {
       if (course.bedeliasCode && !codeToId.has(course.bedeliasCode)) codeToId.set(course.bedeliasCode, course.id);

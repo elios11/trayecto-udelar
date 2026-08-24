@@ -18383,7 +18383,282 @@
         }
       ],
       "remainingWork": "La secuencia de previaturas se limita a las reglas publicadas por Bedelías; no se deduce de la distribución semestral."
+    },
+    {
+      "identity": "tecnicatura universitaria en bienes culturales:2021",
+      "career": "TECNICATURA UNIVERSITARIA EN BIENES CULTURALES",
+      "planYear": "2021",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, créditos, menciones, estructura curricular y sedes",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad de Humanidades y Ciencias de la Educación, Resolución 50 de 19/05/2021",
+          "Consejo Directivo Central, Resolución 11 de 09/11/2021"
+        ],
+        "title": "Técnico Universitario en Bienes Culturales",
+        "durationMonths": 30,
+        "semesters": 5,
+        "minimumCredits": 200,
+        "current": true,
+        "pathwayLabel": "Mención",
+        "trajectories": [
+          {
+            "id": "historia-regional-y-local",
+            "label": "Historia Regional y Local",
+            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021."
+          },
+          {
+            "id": "museologia",
+            "label": "Museología",
+            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021."
+          },
+          {
+            "id": "patrimonio",
+            "label": "Patrimonio",
+            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021."
+          }
+        ],
+        "degreeRule": "La Universidad expide un único título de Técnico Universitario en Bienes Culturales y FHCE certifica la mención desarrollada.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/01/tubicu_museologia_version-final-rev-segun-DGJ-para-publicar.pdf",
+          "pathwayLabel": "Mención",
+          "pathwayDescription": "Malla del Plan 2021 con tronco común y la mención seleccionada; las optativas y electivas conservan su carácter flexible.",
+          "pathRequirementMap": {
+            "1836": "elective-activities",
+            "4643": "integrated-general",
+            "4691": "modern-language",
+            "4925": "cultural-management",
+            "5280": "history-and-heritage",
+            "4642": "museology",
+            "4167": "specific-formation",
+            "5279": "specific-formation",
+            "4342": "specific-formation",
+            "4344": "specific-formation",
+            "5060": "specific-formation",
+            "4684": "specific-formation"
+          },
+          "creditRequirements": [
+            {
+              "id": "history-and-heritage",
+              "name": "Historia y Patrimonio",
+              "shortName": "Historia y Patrimonio",
+              "minCredits": 91
+            },
+            {
+              "id": "museology",
+              "name": "Museología",
+              "shortName": "Museología",
+              "minCredits": 26
+            },
+            {
+              "id": "cultural-management",
+              "name": "Gestión y Promoción Cultural",
+              "shortName": "Gestión cultural",
+              "minCredits": 20
+            },
+            {
+              "id": "modern-language",
+              "name": "Comprensión lectora en idioma moderno",
+              "shortName": "Idioma moderno",
+              "minCredits": 4
+            },
+            {
+              "id": "specific-formation",
+              "name": "Formación específica de la mención",
+              "shortName": "Formación específica",
+              "minCredits": 29
+            },
+            {
+              "id": "elective-activities",
+              "name": "Actividades electivas",
+              "shortName": "Electivas",
+              "minCredits": 20
+            },
+            {
+              "id": "integrated-general",
+              "name": "Actividades integradas de formación general",
+              "shortName": "Integradas generales",
+              "minCredits": 3
+            },
+            {
+              "id": "integrated-specific",
+              "name": "Actividades integradas de formación específica",
+              "shortName": "Integradas específicas",
+              "minCredits": 7
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "actividades-integradas-especificas",
+              "name": "Actividades integradas de formación específica",
+              "credits": 7,
+              "requirementId": "integrated-specific",
+              "periodLabel": "Actividades integradas",
+              "curricularBlock": true
+            }
+          ],
+          "credentials": [
+            {
+              "id": "bedelias-degree",
+              "title": "Técnico Universitario en Bienes Culturales",
+              "minTotalCredits": 200,
+              "nodeRequirements": [
+                {
+                  "nodeId": "history-and-heritage",
+                  "minCredits": 91
+                },
+                {
+                  "nodeId": "museology",
+                  "minCredits": 26
+                },
+                {
+                  "nodeId": "cultural-management",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "modern-language",
+                  "minCredits": 4
+                },
+                {
+                  "nodeId": "specific-formation",
+                  "minCredits": 29
+                },
+                {
+                  "nodeId": "elective-activities",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "integrated-general",
+                  "minCredits": 3
+                },
+                {
+                  "nodeId": "integrated-specific",
+                  "minCredits": 7
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CENURSO",
+          "locations": [
+            "Colonia"
+          ],
+          "role": "oferta completa del Plan 2021",
+          "trajectoryIds": [
+            "historia-regional-y-local",
+            "museologia",
+            "patrimonio"
+          ],
+          "curriculumVariant": false
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "oferta completa del Plan 2021",
+          "trajectoryIds": [
+            "historia-regional-y-local",
+            "museologia",
+            "patrimonio"
+          ],
+          "curriculumVariant": false
+        },
+        {
+          "serviceCode": "CUT",
+          "locations": [
+            "Tacuarembó"
+          ],
+          "role": "oferta completa del Plan 2021",
+          "trajectoryIds": [
+            "historia-regional-y-local",
+            "museologia",
+            "patrimonio"
+          ],
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurso-tecnicatura-universitaria-en-bienes-culturales-2021.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 30,
+        "publishedMinimumCredits": 200,
+        "compositionMatterEntries": 63,
+        "interpretation": "La composición jerárquica de Bedelías contiene el tronco común y las tres ramas de mención. Los catálogos electivos y optativos son opciones acreditables, no obligaciones completas."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-multiple-offerings-and-mentions",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2021 define un único título y tres menciones certificadas. El portal central publica simultáneamente Colonia, Paysandú y Tacuarembó sin documentar una variante curricular ni restringir una mención a una sede.",
+        "normalization": [
+          "Conservar una única carrera y un único Plan 2021 para las tres sedes.",
+          "Modelar Historia Regional y Local, Museología y Patrimonio como menciones seleccionables, no como títulos ni carreras separadas.",
+          "Ofrecer las tres menciones en Colonia, Paysandú y Tacuarembó mientras una fuente oficial vigente no publique una restricción territorial.",
+          "Controlar 141 créditos generales, 29 específicos, 20 electivos y 10 de actividades integradas, con mínimo total de 200 créditos.",
+          "Conservar los catálogos flexibles como opciones y representar los siete créditos integrados específicos como bloque acreditable cuando la fuente no fija una unidad nominal.",
+          "No inferir previaturas ni una secuencia obligatoria desde la distribución anual tentativa."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/01/tubicu_museologia_version-final-rev-segun-DGJ-para-publicar.pdf",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "supports": [
+            "aprobaciones del Plan 2021",
+            "título único, cinco semestres y 200 créditos",
+            "tres menciones y certificación",
+            "estructura de créditos, actividades integradas y flexibilidad"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/plan-de-estudios-7/",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "supports": [
+            "publicación vigente del Plan 2021"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/tecnicatura-universitaria-en-bienes-culturales",
+          "authority": "Portal central de la Universidad de la República",
+          "supports": [
+            "vigencia, duración y créditos",
+            "menciones Historia Regional y Local, Patrimonio y Museología",
+            "sedes Colonia, Paysandú y Tacuarembó"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/region-suroeste-abre-sus-inscripciones-para-la-tecnicatura-universitaria-en-bienes-culturales?fecha=&servicios=All&temas=31",
+          "authority": "Universidad de la República",
+          "supports": [
+            "apertura de la oferta completa en Colonia desde 2025"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "title",
+          "resolution": "Se corrige la forma gramatical defectuosa de las etiquetas de Bedelías y se usa el título jurídico único del Plan 2021."
+        },
+        {
+          "field": "specificFormation",
+          "resolution": "La rama de Bedelías agrupa 36 créditos porque combina 29 de formación específica y siete integrados; la UI los muestra en requisitos separados conforme al cuadro oficial de 200 créditos."
+        },
+        {
+          "field": "flexibleCatalogs",
+          "resolution": "Las 63 entradas de la composición son un catálogo de alternativas comunes y por mención. No se exige aprobarlas todas ni se presentan como una secuencia fija."
+        }
+      ],
+      "uiNotice": "Plan 2021 con tronco común y tres menciones certificadas. Las optativas, electivas y actividades integradas son flexibles; elegí únicamente las necesarias para cumplir los mínimos oficiales.",
+      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica; la distribución anual del plan es tentativa y no se transforma en una secuencia obligatoria."
     }
   ],
-  "contentHash": "sha256:30fc142b8fa93068c1a9b70ffd47c33f2c17616e803d6dc2420782599f7da5c2"
+  "contentHash": "sha256:ba5adbe2f57d457a1e5f5ae2ef6522a2b7ebabf4dc9ce2cea76fcad5f5aa64d0"
 }
