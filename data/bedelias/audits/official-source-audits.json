@@ -14769,7 +14769,113 @@
         }
       ],
       "remainingWork": "Caso histórico cerrado para la UI. La Licenciatura en Turismo Plan 2014 permanece como oferta vigente y conserva por separado su auditoría curricular y territorial."
+    },
+    {
+      "identity": "ingenieria en computacion revalida:1987",
+      "career": "INGENIERÍA EN COMPUTACIÓN REVÁLIDA",
+      "planYear": "1987",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de identidad del registro de reválidas frente al Plan 1987 académico de Ingeniería en Computación y sus mecanismos oficiales de continuidad.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "actualHistoricalIdentity": "ingenieria en computacion:1987",
+        "historicalTitle": "Ingeniero en Computación",
+        "historicalDurationYears": 5,
+        "currentPlan": {
+          "identity": "ingenieria en computacion:2025",
+          "planYear": "2025",
+          "implementedFrom": 2026
+        },
+        "previousPublishedPlan": {
+          "identity": "ingenieria en computacion:1997",
+          "title": "Ingeniero en Computación",
+          "minimumCredits": 450
+        },
+        "continuityRule": "Los estudiantes de planes anteriores al Plan 1997 deben consultar a la Comisión de Enseñanza del Instituto de Computación; FING publica tablas de equivalencias para completar el Plan 1987 con asignaturas del Plan 1997."
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fing-ingenieria-en-computacion-revalida-1987.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "titleCount": 0,
+        "compositionMatterCount": 184,
+        "compositionGroups": [
+          { "code": "2938", "label": "MATERIAS", "minimumUcb": 0 },
+          { "code": "G.C408", "label": "ELECTIVAS", "minimumUcb": 0 }
+        ],
+        "interpretation": "El registro no define un título ni reglas de egreso y sólo agrupa materias potencialmente imputables con mínimos cero. Es un contenedor administrativo de reválidas, distinto del Plan 1987 académico que Bedelías lista por separado como Ingeniería en Computación."
+      },
+      "conclusion": {
+        "canonicalModel": "administrative-revalidation-container-not-academic-career",
+        "canonicalIdentity": "ingenieria en computacion:1987",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "Reválida no es una carrera ni un plan de egreso. Mostrar sus 184 entradas con mínimos cero permitiría armar una malla sin requisitos y duplicaría incorrectamente Ingeniería en Computación."
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/es/node/3263",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "existencia separada del Plan 1987 académico",
+            "adaptación del Plan 1987 al Plan 1997",
+            "tabla de equivalencias para completar el Plan 1987 con asignaturas del Plan 1997"
+          ]
+        },
+        {
+          "url": "https://eva.fing.edu.uy/course/view.php?id=800",
+          "authority": "Instituto de Computación, Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "identificación de las carreras de Computación actuales y los planes anteriores",
+            "derivación de estudiantes de planes previos al Plan 1997 a la Comisión de Enseñanza"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/inco/ensenianza/grado",
+          "authority": "Instituto de Computación, Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "Ingeniería en Computación como carrera académica",
+            "Plan 1997 de 450 créditos y título intermedio Analista en Computación"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/node/52537",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "Plan 2025 de Ingeniería en Computación vigente desde 2026",
+            "continuidad de una única identidad académica de Ingeniería en Computación"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/noticias/area-de-comunicacion/1967-2017-medio-siglo-de-computacion-en-la-udelar",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "creación del Plan 1987 académico de Ingeniería en Computación",
+            "duración histórica de cinco años"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "identity",
+          "resolution": "Se distingue el contenedor Ingeniería en Computación Reválida del verdadero Plan 1987, que el índice de FING lista como otra carrera/plan y que requiere auditoría histórica separada."
+        },
+        {
+          "field": "current",
+          "resolution": "Se priorizan metadata.current=false, la ausencia de título y mínimos, y la documentación académica sobre la marca current del contenedor administrativo."
+        },
+        {
+          "field": "composition",
+          "resolution": "Las 184 materias con mínimos cero se preservan como evidencia administrativa; no se convierten en cursos opcionales ni en una malla del Plan 1987."
+        },
+        {
+          "field": "historicalPlanCoverage",
+          "resolution": "Excluir Reválida no afirma que el Plan 1987 real esté extinguido. Su eventual incorporación exige extraer y auditar la identidad Ingeniería en Computación Plan 1987 y las equivalencias individuales vigentes."
+        }
+      ],
+      "remainingWork": "El falso vigente administrativo queda cerrado. Auditar por separado Ingeniería en Computación Plan 1987 si se incorpora el universo de planes históricos; no se puede inferir esa malla desde el contenedor de reválidas."
     }
   ],
-  "contentHash": "sha256:2df77a67cbff48adad908663d60447e6b9015f96fc09dd14583753f6acc27aa1"
+  "contentHash": "sha256:123492637962d586c9e0db9e54df9a16e6c07beb682ff385dccbf9349fd02658"
 }

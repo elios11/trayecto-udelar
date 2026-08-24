@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T06:51:34.261Z",
+  "generatedAt": "2026-08-24T06:56:38.251Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:2df77a67cbff48adad908663d60447e6b9015f96fc09dd14583753f6acc27aa1"
+    "officialAuditRegistryHash": "sha256:123492637962d586c9e0db9e54df9a16e6c07beb682ff385dccbf9349fd02658"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 84,
-    "pendingCanonicalIdentities": 93,
+    "evidenceClosedCanonicalIdentities": 85,
+    "pendingCanonicalIdentities": 92,
     "byPriority": {
-      "official-sources-pending": 93
+      "official-sources-pending": 92
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -525,6 +525,12 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "historical-itinerant-tourism-program-superseded-by-current-degree"
+    },
+    {
+      "identity": "ingenieria en computacion revalida:1987",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "administrative-revalidation-container-not-academic-career"
     }
   ],
   "queue": [
@@ -2482,35 +2488,6 @@
       "regionalComparisons": []
     },
     {
-      "identity": "ingenieria en computacion revalida:1987",
-      "career": {
-        "name": "INGENIERÍA EN COMPUTACIÓN REVÁLIDA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1987",
-        "name": "INGENIERIA EN COMPUTACION REVALIDA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:ingenieria en computacion revalida:1987",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:ingenieria en computacion revalida:1987",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
       "identity": "ingenieria en sistemas de comunicacion:2018",
       "career": {
         "name": "INGENIERÍA EN SISTEMAS DE COMUNICACIÓN",
@@ -3454,5 +3431,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:630651334afade7a02519970f32677a9f5cb2c608d2332450880091947b55f51"
+  "contentHash": "sha256:8e4b1c357db51eed1c2d89cf9b65851b34925ceec50228030364b9c92d245552"
 }

@@ -570,12 +570,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
-  "bedelias-fing-ingenieria-en-computacion-revalida-1987": {
-    load: () => import("./bedelias-generated/bedelias-fing-ingenieria-en-computacion-revalida-1987.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018.json"),
     pathwayIds: ["bedelias"],

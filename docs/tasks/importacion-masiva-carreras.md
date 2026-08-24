@@ -1188,3 +1188,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:2df77a67cbff48adad908663d60447e6b9015f96fc09dd14583753f6acc27aa1`. Cola general: 93 identidades pendientes; hash `sha256:630651334afade7a02519970f32677a9f5cb2c608d2332450880091947b55f51`.
 - Manifiesto UI: 145 proyecciones, 134 con composición, 11 sin composición y treinta y dos identidades excluidas; hash `sha256:0d8c3f63a16ac30eb906b4e0afe3f7e55d92706872b717caf82b5053002f18de`. Cola funcional: hash `sha256:316ef109936d471aa8873c086d7d09c4a0d2125b028087fe6ae5e420b41172ce`.
 - Siguiente paso funcional: Ingeniería en Computación Reválida Plan 1987, para determinar si corresponde a un plan académico histórico utilizable o a una identidad administrativa de reválidas.
+
+### Ingeniería en Computación Reválida Plan 1987 — contenedor administrativo cerrado 2026-08-24
+
+- FING documenta un Plan 1987 académico real bajo la identidad Ingeniería en Computación y publica mecanismos de adaptación y tablas de equivalencias para que sus estudiantes completen estudios con asignaturas del Plan 1997. La carrera `Ingeniería en Computación Reválida` no aparece en la oferta académica.
+- El snapshot de Reválida marca `metadata.current=false`, no define título, duración, créditos ni reglas de egreso y reúne 184 materias en dos grupos con mínimos cero. El índice lista además y por separado al verdadero Plan 1987 de Ingeniería en Computación.
+- La UI excluye únicamente el contenedor administrativo Reválida: publicarlo permitiría aprobar una falsa carrera sin requisitos y duplicaría Ingeniería en Computación. Se conservan los Planes 1997 y 2025 ya operativos.
+- La exclusión no declara extinguido el Plan 1987 real. Los estudiantes de planes previos al 97 son derivados oficialmente a la Comisión de Enseñanza; una eventual malla histórica exige extraer y auditar esa identidad académica y no puede inferirse desde las entradas de reválida.
+- Registro de auditoría: hash `sha256:123492637962d586c9e0db9e54df9a16e6c07beb682ff385dccbf9349fd02658`. Cola general: 92 identidades pendientes; hash `sha256:8e4b1c357db51eed1c2d89cf9b65851b34925ceec50228030364b9c92d245552`.
+- Manifiesto UI: 144 proyecciones, 134 con composición, 10 sin composición y treinta y tres identidades excluidas; hash `sha256:20e525ff5b9493a630ea165f7cde3d256d945ec20f8e9891819bf31c611b3f0c`. Cola funcional: hash `sha256:0428c20bab76a7ac7a6cdd7c171dff9db65fe259c6b533539f442b552c0732d0`.
+- Siguiente paso funcional: cerrar en un lote coherente las nueve carreras de Tecnología Médica Plan 2006 cuya composición no fue publicada por Bedelías, comenzando por Fonoaudiología.

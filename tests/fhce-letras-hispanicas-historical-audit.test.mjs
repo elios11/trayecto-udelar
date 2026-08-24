@@ -28,5 +28,5 @@ test("no copia las mallas 1991 o 2014 al registro vacío de 1976", () => {
   const identities = new Set(report.plans.map((plan) => plan.identity));
   assert.ok(!identities.has("letras hispanicas:1976"));
   assert.ok(identities.has("letras:2014"));
-  assert.equal(report.counts.compositionUnavailable, 11);
+  assert.equal(report.counts.compositionUnavailable, 10);
 });
