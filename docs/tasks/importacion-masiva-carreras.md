@@ -1272,3 +1272,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:4cd79081109ed7389250358058aee2c1da21493d1968da8711ad653e29dacee5`. Cola general: 74 identidades pendientes; hash `sha256:a30aa9eb53f13321a9d2c29d6e4c7ba1fbf38de219af34c38a5d27be5d00ab4a`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:b75b21e2a05b8b4442ba3d7cb9afedb6f795f684e3fd68952c3f6ba181c4bda1`. Cola funcional vacía; hash `sha256:e4832409b097b7f1872f7ad458bde84cbb863fdc9ef409ecdcd4bb12ceeaa0f2`.
 - Siguiente paso: auditar la Licenciatura en Recursos Naturales Plan 2010, primera identidad reproducible restante.
+
+### Licenciatura en Recursos Naturales Plan 2010 — currículo flexible por áreas operativo 2026-08-24
+
+- El plan aprobado por el CDC y publicado en Diario Oficial define un título único de Licenciado en Recursos Naturales, 360 créditos y dictado íntegro en Rivera bajo Facultad de Ciencias. La página vigente de Facultad mantiene inscripciones, cuatro años y las siete áreas del plan; Planeamiento registra actividad estudiantil en 2025.
+- Se normaliza la duración a 48 meses conforme al plan y a Facultad de Ciencias. Los 60 meses del portal central y de Bedelías quedan documentados como metadato administrativo contradictorio.
+- La UI controla mínimos de 50 créditos Físico-Matemáticos, 75 Químico-Biológicos, 40 de Geociencias, 65 de Recursos Naturales, 38 de Ciencias Sociales, 15 optativos y 40 de Tesina. Esos mínimos suman 323; el título exige 360 y los 37 restantes se distribuyen en el currículo personal coherente aprobado por la Comisión de Carrera.
+- Las 378 unidades y 2.811 créditos visibles en la composición son un catálogo acumulado por áreas, no una malla obligatoria completa. La Tesina de Graduación queda como requisito nominal y se agrega una validación final explícita de la Comisión de Carrera, sin inventar materias ni secuencia semestral.
+- La Tecnicatura en Gestión de Recursos Naturales continúa como carrera y título separados: su articulación permite continuar estudios, pero no se presenta como credencial intermedia automática del Plan 2010.
+- Registro de auditoría: hash `sha256:7b5cd949953296be18fe5fc9f7efc6436ad18acb689b022158e6ed33e076b1c0`. Cola general: 73 identidades pendientes; hash `sha256:ba8b77c2aa59b0e286b2d684aa22c91ed5f0b2db09f0c9d05a666e924018c137`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:03eb10a533735326c3bfe03caf29e466fc26f6784f8823099e4e7a9e401760b3`. Cola funcional vacía; hash `sha256:4d2e512ef0dc57f9ca9a8a17d64982fb9a3bb01c28d57f2e9155131c893816fa`.
+- Siguiente paso: auditar la Tecnicatura en Artes Plásticas y Visuales Plan 2017, primera identidad reproducible restante.

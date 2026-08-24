@@ -19154,7 +19154,138 @@
       ],
       "uiNotice": "Plan conjunto ANEP-Udelar de Rivera, opción Prácticas Educativas. Completá las 33 unidades obligatorias y 56 créditos opcionales; Bedelía debe validar el componente de Educación y los 10 créditos de extensión, investigación o enseñanza.",
       "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica; no se deducen de la distribución semestral oficial."
+    },
+    {
+      "identity": "licenciatura en recursos naturales:2010",
+      "career": "LICENCIATURA EN RECURSOS NATURALES",
+      "planYear": "2010",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, duración, créditos, áreas, currículo flexible, tesina, sede y articulación con la tecnicatura",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Consejo Directivo Central de la Udelar, octubre de 2010",
+          "Publicación del Plan de Estudios en Diario Oficial de 15/11/2010"
+        ],
+        "title": "Licenciado en Recursos Naturales",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "degreeRule": "El título exige 360 créditos, los mínimos de las siete áreas y una tesina de graduación de 40 créditos. El currículo individual debe ser coherente y aprobado previamente por la Comisión de Carrera.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://www.impo.com.uy/diariooficial/2010/11/15/avisosdeldia.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Currículo flexible por áreas, construido por cada estudiante y sujeto a aprobación de la Comisión de Carrera; el orden del catálogo no implica una secuencia obligatoria.",
+          "periodOrder": [
+            "ÁREA FÍSICO - MATEMÁTICA",
+            "ÁREA QUÍMICA - BIOLOGÍA",
+            "ÁREA GEOCIENCIAS",
+            "ÁREA RECURSOS NATURALES",
+            "ÁREA CIENCIAS SOCIALES",
+            "OPTATIVAS",
+            "TESINA DE GRADUACIÓN",
+            "Validación de egreso"
+          ],
+          "pathRequirementMap": {
+            "3598": "physical-mathematics",
+            "2198": "chemistry-biology",
+            "2259": "geosciences",
+            "2687": "natural-resources",
+            "3355": "social-sciences",
+            "1996": "optional",
+            "2156": "thesis"
+          },
+          "courseOverrides": {
+            "RN500": { "credits": 40, "requirementId": "thesis", "periodLabel": "TESINA DE GRADUACIÓN" }
+          },
+          "creditRequirements": [
+            { "id": "physical-mathematics", "name": "Área Físico-Matemática", "shortName": "Físico-matemática", "minCredits": 50 },
+            { "id": "chemistry-biology", "name": "Área Química-Biología", "shortName": "Química-biología", "minCredits": 75 },
+            { "id": "geosciences", "name": "Área Geociencias", "shortName": "Geociencias", "minCredits": 40 },
+            { "id": "natural-resources", "name": "Área Recursos Naturales", "shortName": "Recursos naturales", "minCredits": 65 },
+            { "id": "social-sciences", "name": "Área Ciencias Sociales", "shortName": "Ciencias sociales", "minCredits": 38 },
+            { "id": "optional", "name": "Optativas", "shortName": "Optativas", "minCredits": 15 },
+            { "id": "thesis", "name": "Tesina de graduación", "shortName": "Tesina", "minCredits": 40 }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "mandatory-thesis",
+              "label": "Tesina de graduación obligatoria",
+              "sourceCourseIds": ["RN500"]
+            }
+          ],
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del currículo individual coherente que completa los 360 créditos"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CUR",
+          "locations": ["Rivera"],
+          "role": "oferta completa de Facultad de Ciencias en el CENUR Noreste, sede Rivera",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cur-licenciatura-en-recursos-naturales-2010.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 378,
+        "compositionCredits": 2811,
+        "interpretation": "Bedelías reproduce los siete mínimos oficiales y una oferta acumulada de 378 unidades acreditables. El catálogo de 2.811 créditos es flexible y no representa una malla que deba aprobarse completa."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-one-offering-flexible-by-areas",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2010 define una única licenciatura de Facultad de Ciencias, dictada íntegramente en Rivera. Su flexibilidad por áreas y su articulación con la tecnicatura no crean menciones, títulos ni sedes adicionales.",
+        "normalization": [
+          "Publicar una única Licenciatura en Recursos Naturales Plan 2010 bajo Facultad de Ciencias y con sede Rivera.",
+          "Usar la duración normativa de cuatro años; documentar los 60 meses de la ficha central y de Bedelías como metadato administrativo contradictorio.",
+          "Controlar 50 créditos Físico-Matemáticos, 75 Químico-Biológicos, 40 de Geociencias, 65 de Recursos Naturales, 38 de Ciencias Sociales, 15 optativos y 40 de Tesina.",
+          "Exigir 360 créditos totales: los mínimos por área suman 323 y los 37 restantes se distribuyen dentro del currículo personal aprobado.",
+          "Mantener las 378 unidades de Bedelías como catálogo acreditable por área, sin volverlas obligatorias ni inferir una secuencia.",
+          "Exigir la Tesina de Graduación nominal y una validación final de la Comisión de Carrera.",
+          "Conservar la Tecnicatura en Gestión de Recursos Naturales como carrera y título separados; su articulación habilita continuidad, no una credencial intermedia automática de la licenciatura."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2010/11/15/avisosdeldia.pdf",
+          "authority": "Diario Oficial - IMPO / Universidad de la República",
+          "supports": ["Plan 2010", "título", "360 créditos", "mínimos por siete áreas", "Tesina", "aprobación del currículo individual", "articulación con la tecnicatura"]
+        },
+        {
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-recursos-naturales",
+          "authority": "Facultad de Ciencias, Udelar",
+          "supports": ["vigencia", "cuatro años", "360 créditos", "siete áreas", "inscripciones y dictado en Rivera"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-recursos-naturales",
+          "authority": "Portal central de la Universidad de la República",
+          "supports": ["título", "360 créditos", "sede exclusiva Rivera", "requisitos de ingreso"]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": ["actividad estudiantil vigente en 2025"]
+        }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "Facultad de Ciencias y el plan aprobado establecen cuatro años; se normaliza a 48 meses y se conserva la referencia administrativa de 60 meses como discrepancia." },
+        { "field": "catalogSize", "resolution": "Los 2.811 créditos visibles son oferta acumulada por área. El requisito real es alcanzar 360 créditos, respetar mínimos y obtener aprobación de la Comisión de Carrera." },
+        { "field": "areaMinimums", "resolution": "Los mínimos de las siete áreas suman 323 créditos. Los 37 restantes no constituyen un área omitida: se completan dentro del currículo coherente individual." },
+        { "field": "technicalArticulation", "resolution": "La continuidad para egresados de la tecnicatura no convierte ese título en una salida intermedia automática del Plan 2010." }
+      ],
+      "uiNotice": "Plan 2010 flexible: completá los mínimos de cada área, la Tesina y 360 créditos totales. La Comisión de Carrera debe aprobar la coherencia del currículo individual; el catálogo disponible no es obligatorio completo.",
+      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La asignación concreta de unidades a un currículo personal requiere resolución de la Comisión de Carrera."
     }
   ],
-  "contentHash": "sha256:4cd79081109ed7389250358058aee2c1da21493d1968da8711ad653e29dacee5"
+  "contentHash": "sha256:7b5cd949953296be18fe5fc9f7efc6436ad18acb689b022158e6ed33e076b1c0"
 }
