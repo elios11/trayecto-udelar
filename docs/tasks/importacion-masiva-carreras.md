@@ -974,3 +974,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:f1b135bf0a7442c41686c40db5e7f75c8a42d9a6d30e97fc0d1d3a90e4cd5cc6`. Cola actualizada: 132 identidades pendientes, 23 sin composición; hash `sha256:765d31f5233ec39552b50f579dc9e3b01cbc8fd1d2c7d3614fdd8a0c983cdfb6`.
 - La UI queda en 172 proyecciones: 121 con composición, 51 sin composición y cinco identidades históricas excluidas; hash `sha256:d3e24994ab399e0f939ef7edd6dd9f472c065c30fb926e00abd80a42658dd1fb`.
 - Siguiente paso: auditar Licenciatura en Desarrollo Plan 2009.
+
+### Licenciatura en Desarrollo Plan 2009 — módulos y profundizaciones auditados 2026-08-20
+
+- Facultad de Ciencias Sociales mantiene un único Plan 2009, título `Licenciado en Desarrollo`, cuatro años y 360 créditos en Montevideo.
+- El Ciclo Inicial exige 120 créditos. El Avanzado suma 240 en Problemas del Desarrollo 60, Profundización Teórica 30, Metodología 30, Taller 30, Módulo Optativo Integral 35 y Práctica Académico-Profesional/Trabajo Final 55.
+- La UI ofrece tres profundizaciones actuales del mismo título: Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas. Comparten el núcleo completo y difieren sólo en los 35 créditos del MOI.
+- Cada trayectoria conserva las obligatorias nominales que FCS publica. Las opciones cuya oferta cambia por semestre se representan como bloques flexibles con el crédito exacto restante; no se congelan como obligatorias todas las materias de la nómina 2023.
+- Métodos Cuantitativos puede acreditarse en Práctica o en Desarrollo Económico. Si se usa en Práctica, el MOI exige una sustitución metodológica; la proyección mantiene un componente alternativo y evita duplicar una misma materia.
+- Las normas vigentes eliminaron las previaturas reglamentadas. La secuencia acumulativa y los conocimientos previos publicados son recomendaciones académicas, no bloqueos automáticos.
+- El documento antiguo que enumeraba cinco MOI y uno autoconstruido no prevalece sobre la página institucional actual, que publica tres. Ninguno crea otro título, plan o carrera.
+- Registro de auditoría: hash `sha256:324a155771cee681ef8ee9ecfaddf56afdc7cec17cf89429477e427097994b2c`. Cola actualizada: 131 identidades pendientes, 22 sin composición; hash `sha256:1cd11f38d5499743d2b73242def8fe22ab922c571a213197228724d1912964c9`.
+- La UI queda en 172 proyecciones: 122 con composición, 50 sin composición y cinco identidades históricas excluidas; hash `sha256:d1f7a92814f362ff02abda7734b004abfc87e8c47115f6f8543b2bcbc6e8645b`.
+- Siguiente paso: auditar Licenciatura en Sociología Plan 2009.

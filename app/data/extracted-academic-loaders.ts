@@ -392,9 +392,9 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcs-licenciatura-en-desarrollo-2009": {
     load: () => import("./bedelias-generated/bedelias-fcs-licenciatura-en-desarrollo-2009.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["desarrollo-economico","desarrollo-territorial","gestion-politicas-publicas"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 360,
   },
   "bedelias-fcs-licenciatura-en-sociologia-2009": {
     load: () => import("./bedelias-generated/bedelias-fcs-licenciatura-en-sociologia-2009.json"),

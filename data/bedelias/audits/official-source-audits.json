@@ -11186,7 +11186,254 @@
         { "field": "campus", "resolution": "La carrera completa se publica en la sede Montevideo de FCS. La movilidad horizontal y las optativas de otros servicios no crean sedes adicionales." }
       ],
       "remainingWork": "La estructura modular vigente, alternativas y modalidades de egreso quedan operativas. Actualizar los catálogos de optativas y Análisis Económico cuando cambien las ofertas; automatizar previas a examen sólo si la UI incorpora el estado reglamentado sin exigir aprobación."
+    },
+    {
+      "identity": "licenciatura en desarrollo:2009",
+      "career": "LICENCIATURA EN DESARROLLO",
+      "planYear": "2009",
+      "reviewedAt": "2026-08-20",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría oficial de vigencia, título, sede, ciclos, mínimos modulares, composición vigente, profundizaciones y régimen de previaturas.",
+      "publicationEligible": false,
+      "uiNotice": "El Plan 2009 exige 360 créditos: 120 del Ciclo Inicial y 240 del Avanzado. La UI presenta la malla por módulos y tres profundizaciones vigentes: Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas. Las optativas sujetas a oferta se agrupan como bloques flexibles; la licenciatura no tiene previas reglamentadas y el orden semestral es orientativo.",
+      "officialPlan": {
+        "facultyCode": "FCS",
+        "facultyName": "FACULTAD DE CIENCIAS SOCIALES",
+        "planYear": "2009",
+        "approval": [
+          "Plan de Estudios 2009 de Facultad de Ciencias Sociales",
+          "Normas de la Licenciatura en Desarrollo aprobadas por Resolución CF 494 de 28/03/2019 y vigentes por Resolución CF 799 de 02/05/2019",
+          "Malla curricular modificada por Resolución CF 1292 de 15/06/2023",
+          "Malla de Ciclo Inicial modificada por Resolución CF 1025 de 04/06/2026"
+        ],
+        "title": "Licenciado en Desarrollo",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "trajectories": [
+          {
+            "id": "desarrollo-economico",
+            "label": "Desarrollo Económico",
+            "description": "Profundización integral vigente en fundamentos teóricos y metodológicos de los procesos económicos del desarrollo. Conserva el mismo título y exige 35 créditos en el MOI.",
+            "campusIds": ["montevideo"],
+            "excludedCourseIds": ["moi-dt-desarrollo-politico", "moi-dt-desarrollo-socioterritorial", "moi-dt-desarrollo-economico-territorial", "moi-dt-optativas", "moi-gpp-estado-politicas-2", "moi-gpp-gestionando", "moi-gpp-seleccion"]
+          },
+          {
+            "id": "desarrollo-territorial",
+            "label": "Desarrollo Territorial",
+            "description": "Profundización integral vigente sobre el territorio como construcción social, política y económica. Conserva el mismo título y exige 35 créditos en el MOI.",
+            "campusIds": ["montevideo"],
+            "excludedCourseIds": ["moi-de-economia-publica", "moi-de-componente-metodologico", "moi-de-optativas", "moi-gpp-estado-politicas-2", "moi-gpp-gestionando", "moi-gpp-seleccion"]
+          },
+          {
+            "id": "gestion-politicas-publicas",
+            "label": "Gestión y Políticas Públicas",
+            "description": "Profundización integral vigente en análisis, diseño, gestión y evaluación de políticas públicas para el desarrollo. Conserva el mismo título y exige 35 créditos en el MOI.",
+            "campusIds": ["montevideo"],
+            "excludedCourseIds": ["moi-de-economia-publica", "moi-de-componente-metodologico", "moi-de-optativas", "moi-dt-desarrollo-politico", "moi-dt-desarrollo-socioterritorial", "moi-dt-desarrollo-economico-territorial", "moi-dt-optativas"]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2023/07/Malla-curricular_LED-2306.pdf",
+          "prerequisitesSourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2020/01/Normas-de-la-LED.pdf",
+          "creditRequirements": [
+            { "id": "led-ci-introduccion", "name": "Ciclo Inicial · Introducción a las Ciencias Sociales", "shortName": "CI Introducción", "minCredits": 48 },
+            { "id": "led-ci-metodos", "name": "Ciclo Inicial · Métodos Aplicados a las Ciencias Sociales", "shortName": "CI Métodos", "minCredits": 26 },
+            { "id": "led-ci-tematicas", "name": "Ciclo Inicial · Temáticas en Ciencias Sociales", "shortName": "CI Temáticas", "minCredits": 8 },
+            { "id": "led-ci-optativas", "name": "Ciclo Inicial · Actividades Curriculares Optativas", "shortName": "CI Optativas", "minCredits": 38 },
+            { "id": "led-problemas", "name": "Problemas del Desarrollo", "shortName": "Problemas", "minCredits": 60 },
+            { "id": "led-profundizacion-teorica", "name": "Profundización Teórica", "shortName": "Teoría", "minCredits": 30 },
+            { "id": "led-metodologia", "name": "Metodología de la Investigación", "shortName": "Metodología", "minCredits": 30 },
+            { "id": "led-taller", "name": "Taller de Desarrollo", "shortName": "Taller", "minCredits": 30 },
+            { "id": "led-moi", "name": "Módulo Optativo Integral", "shortName": "MOI", "minCredits": 35 },
+            { "id": "led-practica-final", "name": "Práctica Académico-Profesional y Trabajo Final", "shortName": "Práctica y final", "minCredits": 55 }
+          ],
+          "periods": [
+            {
+              "label": "Ciclo Inicial · Introducción",
+              "courses": [
+                { "id": "ci-cuestion-social", "name": "La Cuestión Social en la Historia", "credits": 8, "requirementId": "led-ci-introduccion" },
+                { "id": "ci-sociedades-modernas", "name": "Sociedades Modernas y Desigualdades Sociales", "credits": 8, "requirementId": "led-ci-introduccion" },
+                { "id": "ci-problemas-desarrollo", "name": "Problemas del Desarrollo", "credits": 8, "requirementId": "led-ci-introduccion" },
+                { "id": "ci-poder-estado", "name": "Poder, Estado y Sistema Político", "credits": 8, "requirementId": "led-ci-introduccion" },
+                { "id": "ci-principios-economia", "name": "Principios de Economía", "credits": 8, "requirementId": "led-ci-introduccion" },
+                { "id": "ci-historia-america-latina", "name": "Historia Contemporánea de América Latina · alternativa", "credits": 8, "requirementId": "led-ci-introduccion" },
+                { "id": "ci-opcion-politica", "name": "Opción Política · alternativa", "credits": 8, "requirementId": "led-ci-introduccion" },
+                { "id": "ci-opcion-economica-social", "name": "Opción Económica y Social · alternativa", "credits": 8, "requirementId": "led-ci-introduccion" }
+              ]
+            },
+            {
+              "label": "Ciclo Inicial · Métodos",
+              "courses": [
+                { "id": "ci-matematica-1", "name": "Matemática I · alternativa", "credits": 8, "requirementId": "led-ci-metodos" },
+                { "id": "ci-matematica-extendida", "name": "Curso Extendido de Matemática · alternativa", "credits": 8, "requirementId": "led-ci-metodos" },
+                { "id": "ci-estadistica-social", "name": "Estadística Social", "credits": 8, "requirementId": "led-ci-metodos" },
+                { "id": "ci-metodologia-investigacion", "name": "Metodología de la Investigación", "credits": 10, "requirementId": "led-ci-metodos" }
+              ]
+            },
+            {
+              "label": "Ciclo Inicial · Temáticas",
+              "courses": [
+                { "id": "ci-desafios-contemporaneos", "name": "Debates sobre Desafíos Ambientales, Poblacionales y Violencias · alternativa", "credits": 8, "requirementId": "led-ci-tematicas" },
+                { "id": "ci-uruguay-mundo", "name": "Uruguay en el Mundo · alternativa", "credits": 8, "requirementId": "led-ci-tematicas" },
+                { "id": "ci-experiencias-desarrollo", "name": "Experiencias Históricas del Desarrollo · alternativa", "credits": 8, "requirementId": "led-ci-tematicas" },
+                { "id": "ci-genero-desigualdades", "name": "Género y Desigualdades en Debate · alternativa", "credits": 8, "requirementId": "led-ci-tematicas" },
+                { "id": "ci-accion-colectiva", "name": "Acción Colectiva en Clave Interdisciplinaria · alternativa", "credits": 8, "requirementId": "led-ci-tematicas" }
+              ]
+            },
+            {
+              "label": "Ciclo Inicial · Optativas",
+              "courses": [
+                { "id": "ci-bases-desarrollo", "name": "Bases de Profundización Teórica del Concepto de Desarrollo", "credits": 10, "requirementId": "led-ci-optativas" },
+                { "id": "ci-optativas-generales", "name": "Actividades Curriculares Optativas del Ciclo Inicial", "credits": 28, "requirementId": "led-ci-optativas", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "Ciclo Avanzado · Problemas del Desarrollo",
+              "courses": [
+                { "id": "led-objeto-metodo", "name": "Objeto y Método de los Estudios y la Acción para el Desarrollo", "credits": 8, "requirementId": "led-problemas" },
+                { "id": "led-pensamiento-desarrollo", "name": "El Pensamiento sobre el Desarrollo antes del Siglo XX", "credits": 6, "requirementId": "led-problemas" },
+                { "id": "led-sistema-internacional", "name": "Sistema Internacional, Gobernanza y Cooperación para el Desarrollo", "credits": 6, "requirementId": "led-problemas" },
+                { "id": "led-teoria-sociologica", "name": "Teoría Sociológica del Desarrollo", "credits": 8, "requirementId": "led-problemas" },
+                { "id": "led-poblacion-desarrollo", "name": "Población y Desarrollo", "credits": 6, "requirementId": "led-problemas" },
+                { "id": "led-ctisyd", "name": "Ciencia, Tecnología, Innovación, Sociedad y Desarrollo", "credits": 6, "requirementId": "led-problemas" },
+                { "id": "led-teoria-desarrollo-economico", "name": "Teoría del Desarrollo Económico", "credits": 8, "requirementId": "led-problemas" },
+                { "id": "led-estado-desarrollo", "name": "Estado, Desarrollo y Políticas Públicas", "credits": 6, "requirementId": "led-problemas" },
+                { "id": "led-planificacion-prospectiva", "name": "Planificación del Desarrollo y Prospectiva", "credits": 6, "requirementId": "led-problemas" }
+              ]
+            },
+            {
+              "label": "Ciclo Avanzado · Profundización Teórica",
+              "courses": [
+                { "id": "led-analisis-macro", "name": "Análisis Macroeconómico", "credits": 4, "requirementId": "led-profundizacion-teorica" },
+                { "id": "led-analisis-micro", "name": "Análisis Microeconómico", "credits": 4, "requirementId": "led-profundizacion-teorica" },
+                { "id": "led-teoria-instituciones", "name": "Teoría de las Instituciones", "credits": 8, "requirementId": "led-profundizacion-teorica" },
+                { "id": "led-optativas-teoricas-1", "name": "Optativas Teóricas I", "credits": 6, "requirementId": "led-profundizacion-teorica", "curricularBlock": true },
+                { "id": "led-optativas-teoricas-2", "name": "Optativas Teóricas II", "credits": 8, "requirementId": "led-profundizacion-teorica", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "Ciclo Avanzado · Metodología",
+              "courses": [
+                { "id": "led-disenos-investigacion", "name": "Diseños de Investigación", "credits": 6, "requirementId": "led-metodologia" },
+                { "id": "led-indicadores-desarrollo", "name": "Indicadores de Desarrollo", "credits": 8, "requirementId": "led-metodologia" },
+                { "id": "led-estadistica-aplicada", "name": "Estadística y sus Aplicaciones en Ciencias Sociales", "credits": 8, "requirementId": "led-metodologia" },
+                { "id": "led-optativa-metodologica", "name": "Optativa Metodológica", "credits": 8, "requirementId": "led-metodologia", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "Ciclo Avanzado · Taller",
+              "courses": [
+                { "id": "led-taller-desarrollo-1", "name": "Taller de Desarrollo I", "credits": 20, "requirementId": "led-taller" },
+                { "id": "led-taller-desarrollo-2", "name": "Taller de Desarrollo II", "credits": 10, "requirementId": "led-taller" }
+              ]
+            },
+            {
+              "label": "MOI · componente común",
+              "courses": [
+                { "id": "moi-herramientas-interdisciplinario", "name": "Herramientas Teórico-Conceptuales para el Trabajo Interdisciplinario", "credits": 6, "requirementId": "led-moi" }
+              ]
+            },
+            {
+              "label": "MOI · Desarrollo Económico",
+              "courses": [
+                { "id": "moi-de-economia-publica", "name": "Economía Pública", "credits": 6, "requirementId": "led-moi" },
+                { "id": "moi-de-componente-metodologico", "name": "Componente metodológico obligatorio del MOI Desarrollo Económico", "credits": 10, "requirementId": "led-moi", "curricularBlock": true },
+                { "id": "moi-de-optativas", "name": "Optativas del MOI Desarrollo Económico", "credits": 13, "requirementId": "led-moi", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "MOI · Desarrollo Territorial",
+              "courses": [
+                { "id": "moi-dt-desarrollo-politico", "name": "Desarrollo Político en y desde el Territorio", "credits": 6, "requirementId": "led-moi" },
+                { "id": "moi-dt-desarrollo-socioterritorial", "name": "Desarrollo Socioterritorial", "credits": 6, "requirementId": "led-moi" },
+                { "id": "moi-dt-desarrollo-economico-territorial", "name": "Desarrollo Económico Territorial", "credits": 8, "requirementId": "led-moi" },
+                { "id": "moi-dt-optativas", "name": "Optativas del MOI Desarrollo Territorial", "credits": 9, "requirementId": "led-moi", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "MOI · Gestión y Políticas Públicas",
+              "courses": [
+                { "id": "moi-gpp-estado-politicas-2", "name": "Estado y Políticas Públicas II", "credits": 6, "requirementId": "led-moi" },
+                { "id": "moi-gpp-gestionando", "name": "Gestionando el Desarrollo", "credits": 6, "requirementId": "led-moi" },
+                { "id": "moi-gpp-seleccion", "name": "Selección metodológica y temática del MOI Gestión y Políticas Públicas", "credits": 17, "requirementId": "led-moi", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "Práctica Académico-Profesional y Trabajo Final",
+              "courses": [
+                { "id": "led-metodos-cuantitativos-aplicados", "name": "Métodos Cuantitativos Aplicados a los Estudios del Desarrollo · alternativa", "credits": 10, "requirementId": "led-practica-final" },
+                { "id": "led-metodos-cualitativos-aplicados", "name": "Métodos Cualitativos Aplicados a los Estudios del Desarrollo · alternativa", "credits": 10, "requirementId": "led-practica-final" },
+                { "id": "led-optativas-libres-1", "name": "Optativas Libres I", "credits": 7, "requirementId": "led-practica-final", "curricularBlock": true },
+                { "id": "led-optativas-libres-2", "name": "Optativas Libres II", "credits": 8, "requirementId": "led-practica-final", "curricularBlock": true },
+                { "id": "led-trabajo-final", "name": "Trabajo Final", "credits": 30, "requirementId": "led-practica-final" }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "led-nucleo-obligatorio",
+              "label": "Núcleo obligatorio y bloques flexibles mínimos",
+              "minCompleted": 33,
+              "courseIds": [
+                "ci-cuestion-social", "ci-sociedades-modernas", "ci-problemas-desarrollo", "ci-poder-estado", "ci-principios-economia", "ci-estadistica-social", "ci-metodologia-investigacion", "ci-bases-desarrollo", "ci-optativas-generales",
+                "led-objeto-metodo", "led-pensamiento-desarrollo", "led-sistema-internacional", "led-teoria-sociologica", "led-poblacion-desarrollo", "led-ctisyd", "led-teoria-desarrollo-economico", "led-estado-desarrollo", "led-planificacion-prospectiva",
+                "led-analisis-macro", "led-analisis-micro", "led-teoria-instituciones", "led-optativas-teoricas-1", "led-optativas-teoricas-2",
+                "led-disenos-investigacion", "led-indicadores-desarrollo", "led-estadistica-aplicada", "led-optativa-metodologica",
+                "led-taller-desarrollo-1", "led-taller-desarrollo-2", "moi-herramientas-interdisciplinario", "led-optativas-libres-1", "led-optativas-libres-2", "led-trabajo-final"
+              ]
+            },
+            { "id": "led-ci-introduccion-alternativa", "label": "Una alternativa de introducción del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-historia-america-latina", "ci-opcion-politica", "ci-opcion-economica-social"] },
+            { "id": "led-ci-matematica", "label": "Una alternativa de matemática del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-matematica-1", "ci-matematica-extendida"] },
+            { "id": "led-ci-tematica", "label": "Un seminario multidisciplinario del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-desafios-contemporaneos", "ci-uruguay-mundo", "ci-experiencias-desarrollo", "ci-genero-desigualdades", "ci-accion-colectiva"] },
+            { "id": "led-metodo-practica", "label": "Métodos Cuantitativos o Cualitativos aplicados al Desarrollo", "minCompleted": 1, "courseIds": ["led-metodos-cuantitativos-aplicados", "led-metodos-cualitativos-aplicados"] }
+          ],
+          "prerequisites": []
+        }
+      },
+      "offerings": [
+        { "serviceCode": "FCS", "locations": ["Montevideo"], "role": "carrera completa en Facultad de Ciencias Sociales", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcs-licenciatura-en-desarrollo-2009.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías publica identidad, título, vigencia y 48 meses, pero no composición ni total de créditos. FCS publica el Ciclo Inicial vigente, la malla avanzada de 240 créditos, las tres profundizaciones actuales y la ausencia de previas reglamentadas."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-modular-plan-three-suggested-trajectories-one-campus",
+        "regionalCurriculumVariant": false,
+        "reason": "Existe un solo título y una sola sede. Las tres profundizaciones son Módulos Optativos Integrales de 35 créditos dentro del mismo Plan 2009 y comparten todo el resto de la formación.",
+        "normalization": [
+          "Mostrar una carrera bajo Facultad de Ciencias Sociales, un Plan 2009 y la sede Montevideo.",
+          "Exigir 120 créditos del Ciclo Inicial y 240 del Avanzado, con los mínimos de sus diez módulos y 360 créditos totales.",
+          "Ofrecer Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas como trayectorias sugeridas del mismo título.",
+          "Conservar como bloques flexibles las optativas cuya nómina cambia por semestre y exigir los 35 créditos completos del MOI elegido.",
+          "No crear reglas de previatura: la normativa vigente eliminó el régimen reglamentado y las secuencias publicadas son recomendaciones académicas.",
+          "No contar dos veces Métodos Cuantitativos cuando se acredita en el módulo de Práctica y en Desarrollo Económico; el bloque metodológico del MOI admite la sustitución oficial."
+        ]
+      },
+      "sources": [
+        { "url": "https://cienciassociales.edu.uy/ensenanza/licenciatura-en-desarrollo/", "authority": "Facultad de Ciencias Sociales", "supports": ["vigencia", "título", "cuatro años", "360 créditos", "dos ciclos", "seis módulos avanzados", "tres profundizaciones actuales"] },
+        { "url": "https://cienciassociales.edu.uy/ensenanza/", "authority": "Facultad de Ciencias Sociales", "supports": ["Plan 2009", "48 meses", "ocho semestres", "360 créditos", "sede Montevideo"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["Ciclo Inicial 2026", "120 créditos", "cuatro módulos", "alternativas"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2023/07/Malla-curricular_LED-2306.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["malla avanzada", "240 créditos", "seis módulos", "materias y créditos", "Resolución CF 1292 de 15/06/2023"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2023/07/Malla-curricular_Optativas-LED-2306.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["oferta optativa 2023", "obligatorias y optativas de los tres MOI", "créditos"] },
+        { "url": "https://cienciassociales.edu.uy/modulos-de-la-licenciatura-en-desarrollo/", "authority": "Facultad de Ciencias Sociales", "supports": ["mínimos de los seis módulos", "tres MOI vigentes", "estructura obligatoria y flexible de cada profundización"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2021/04/2-TRAYECTORIAS-SUGERIDAS-EN-LA-LICENCIATURA-EN-DESARROLLO_Febrero-20211-1.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["orden recomendado", "ausencia de previas reglamentadas", "conocimientos previos recomendados"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2020/01/Normas-de-la-LED.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["normas 2019", "eliminación del régimen de previaturas a examen", "potestades del Comité Académico"] },
+        { "url": "https://cienciassociales.edu.uy/wp-content/uploads/2020/01/REGLAMENTO_PLAN_DE_ESTUDIOS-2009.pdf", "authority": "Facultad de Ciencias Sociales", "supports": ["120 créditos iniciales", "240 avanzados", "360 totales", "certificado intermedio"] }
+      ],
+      "anomalies": [
+        { "field": "composition", "resolution": "Bedelías no publica composición. Se reconstruye desde la malla de la Licenciatura enlazada actualmente por FCS y desde el Ciclo Inicial 2026." },
+        { "field": "moiHistory", "resolution": "Un folleto anterior enumeraba cinco MOI y la posibilidad de uno autoconstruido. La página institucional vigente publica tres; la UI ofrece sólo Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas." },
+        { "field": "electiveCatalog", "resolution": "La nómina nominal disponible está fechada 2023 y las ofertas cambian por semestre. La UI conserva los mínimos y obligatorias vigentes y agrupa el resto como bloques flexibles, sin congelar todas las opciones históricas." },
+        { "field": "doubleCounting", "resolution": "Métodos Cuantitativos puede acreditarse en Práctica o en el MOI Desarrollo Económico; si se usa en Práctica, FCS exige otra unidad metodológica en el MOI. La UI representa ese componente como bloque alternativo y no duplica una misma materia." },
+        { "field": "prerequisites", "resolution": "Las normas eliminaron el régimen de previaturas a examen y el documento de trayectorias declara ausencia de previas reglamentadas. El orden sugerido y los conocimientos recomendados no se convierten en bloqueos automáticos." },
+        { "field": "semesterTotals", "resolution": "El Ciclo Avanzado puede comenzar en tercer semestre mientras se completa el Inicial y las optativas admiten recorridos diversos. La UI organiza por módulos en lugar de imponer una única secuencia rígida." },
+        { "field": "campus", "resolution": "La carrera completa se publica en la sede Montevideo de FCS. La movilidad horizontal, prácticas y cursos de otros servicios no crean sedes adicionales." }
+      ],
+      "remainingWork": "La malla modular y las tres profundizaciones vigentes quedan operativas. Actualizar los bloques optativos cuando FCS publique una nueva nómina consolidada y desagregarlos sólo si puede preservarse la acreditación flexible sin doble conteo."
     }
   ],
-  "contentHash": "sha256:f1b135bf0a7442c41686c40db5e7f75c8a42d9a6d30e97fc0d1d3a90e4cd5cc6"
+  "contentHash": "sha256:324a155771cee681ef8ee9ecfaddf56afdc7cec17cf89429477e427097994b2c"
 }

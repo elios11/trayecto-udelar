@@ -165,7 +165,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           courseIds: (period.courseIds ?? [])
             .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
             .filter((id) => id && !excludedIds.has(id) && (!includedIds || includedIds.has(id))),
-        })),
+        })).filter((period) => period.courseIds.length > 0),
       }];
     }));
   }

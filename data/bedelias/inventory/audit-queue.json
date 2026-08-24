@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T17:34:04.174Z",
+  "generatedAt": "2026-08-20T17:46:35.645Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:f1b135bf0a7442c41686c40db5e7f75c8a42d9a6d30e97fc0d1d3a90e4cd5cc6"
+    "officialAuditRegistryHash": "sha256:324a155771cee681ef8ee9ecfaddf56afdc7cec17cf89429477e427097994b2c"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 45,
-    "pendingCanonicalIdentities": 132,
+    "evidenceClosedCanonicalIdentities": 46,
+    "pendingCanonicalIdentities": 131,
     "byPriority": {
-      "composition-unavailable": 23,
+      "composition-unavailable": 22,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -292,38 +292,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-flexible-modular-plan-one-campus-overlapping-cycles"
+    },
+    {
+      "identity": "licenciatura en desarrollo:2009",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-20",
+      "conclusion": "one-flexible-modular-plan-three-suggested-trajectories-one-campus"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en desarrollo:2009",
-      "career": {
-        "name": "LICENCIATURA EN DESARROLLO",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2009",
-        "name": "LICENCIATURA EN DESARROLLO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCS",
-        "serviceName": "FACULTAD DE CIENCIAS SOCIALES",
-        "planKey": "FCS:licenciatura en desarrollo:2009",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCS",
-          "serviceName": "FACULTAD DE CIENCIAS SOCIALES",
-          "planKey": "FCS:licenciatura en desarrollo:2009",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en sociologia:2009",
       "career": {
@@ -4356,5 +4333,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:765d31f5233ec39552b50f579dc9e3b01cbc8fd1d2c7d3614fdd8a0c983cdfb6"
+  "contentHash": "sha256:1cd11f38d5499743d2b73242def8fe22ab922c571a213197228724d1912964c9"
 }
