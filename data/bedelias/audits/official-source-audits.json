@@ -3606,10 +3606,11 @@
       "identity": "lic en ingenieria biologica:2013",
       "career": "LICENCIATURA EN INGENIERÍA BIOLÓGICA",
       "planYear": "2013",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-24",
       "status": "official-evidence-complete",
       "scope": "plan-and-territorial-delivery",
       "publicationEligible": false,
+      "uiNotice": "El Plan 2013 es flexible y no fija una grilla única: exige 360 créditos, mínimos por agrupamiento, 160 créditos de formación específica, pasantía, tesis y un perfil individual aprobado. La UI representa los mínimos como bloques acreditables; las materias del anexo son una implementación inicial tentativa y no se presentan como obligatorias vigentes.",
       "officialPlan": {
         "approval": [
           "Asamblea del Claustro de Facultad de Ingeniería, 30/05/2013",
@@ -3621,7 +3622,10 @@
         "semesters": 8,
         "minimumCredits": 360,
         "curriculum": {
+          "version": "Estructura normativa del Plan 2013; implementación inicial del anexo conservada sólo como referencia documental",
           "sourceUrl": "https://www.fing.edu.uy/sites/default/files/claustro_citaciones/2013/distribuido/6982/03-2013%20Plan%20de%20estudios%20version%2015.pdf",
+          "pathwayLabel": "Estructura oficial",
+          "pathwayDescription": "Bloques acreditables de una carrera flexible. Cada bloque representa un mínimo oficial que se completa con unidades aprobadas por la Comisión de Carrera; no es una grilla semestral rígida ni una trayectoria territorial.",
           "creditRequirements": [
             {
               "id": "lib-formacion-basica",
@@ -3763,16 +3767,79 @@
               "kind": "activity",
               "minCredits": 25
             },
-            {
-              "id": "lib-formacion-especifica",
-              "name": "Formación específica en Ingeniería Biológica",
-              "shortName": "Específica",
-              "kind": "group",
-              "minCredits": 160
-            }
-          ],
-          "periods": []
+        {
+          "id": "lib-formacion-especifica",
+          "name": "Formación específica en Ingeniería Biológica",
+          "shortName": "Específica",
+          "kind": "group",
+          "minCredits": 160,
+          "credentialRequired": false
+        }
+      ],
+      "periods": [
+        {
+          "label": "Formación Básica · 150 créditos",
+          "courses": [
+            { "id": "bloque-matematica", "name": "Créditos en Matemática", "credits": 60, "requirementId": "lib-matematica", "curricularBlock": true },
+            { "id": "bloque-fisica", "name": "Créditos en Física", "credits": 30, "requirementId": "lib-fisica", "curricularBlock": true },
+            { "id": "bloque-quimica", "name": "Créditos en Química", "credits": 10, "requirementId": "lib-quimica", "curricularBlock": true },
+            { "id": "bloque-informatica", "name": "Créditos en Informática", "credits": 20, "requirementId": "lib-informatica", "curricularBlock": true },
+            { "id": "bloque-biologia", "name": "Créditos en Biología", "credits": 15, "requirementId": "lib-biologia", "curricularBlock": true },
+            { "id": "bloque-basica-flexible", "name": "Distribución flexible dentro de Formación Básica", "credits": 15, "requirementId": "lib-formacion-basica", "curricularBlock": true }
+          ]
         },
+        {
+          "label": "Formación Tecnológica Fundamental · 70 créditos",
+          "courses": [
+            { "id": "bloque-senales-sistemas", "name": "Créditos en Señales y sistemas", "credits": 15, "requirementId": "lib-senales-sistemas", "curricularBlock": true },
+            { "id": "bloque-procesamiento-senales", "name": "Créditos en Procesamiento de señales", "credits": 15, "requirementId": "lib-procesamiento-senales", "curricularBlock": true },
+            { "id": "bloque-ingenieria-electrica", "name": "Créditos en Ingeniería eléctrica", "credits": 5, "requirementId": "lib-ingenieria-electrica", "curricularBlock": true },
+            { "id": "bloque-ingenieria-biologica", "name": "Créditos en Ingeniería biológica", "credits": 20, "requirementId": "lib-ingenieria-biologica", "curricularBlock": true },
+            { "id": "bloque-control", "name": "Créditos en Control", "credits": 5, "requirementId": "lib-control", "curricularBlock": true },
+            { "id": "bloque-tecnologica-fundamental-flexible", "name": "Distribución flexible dentro de Formación Tecnológica Fundamental", "credits": 10, "requirementId": "lib-formacion-tecnologica-fundamental", "curricularBlock": true }
+          ]
+        },
+        {
+          "label": "Formación Complementaria · 10 créditos",
+          "courses": [
+            { "id": "bloque-ingenieria-sociedad", "name": "Créditos en Ingeniería y sociedad", "credits": 4, "requirementId": "lib-ingenieria-sociedad", "curricularBlock": true },
+            { "id": "bloque-ingenieria-industrial", "name": "Créditos en Ingeniería industrial", "credits": 4, "requirementId": "lib-ingenieria-industrial", "curricularBlock": true },
+            { "id": "bloque-complementaria-flexible", "name": "Distribución flexible dentro de Formación Complementaria", "credits": 2, "requirementId": "lib-formacion-complementaria", "curricularBlock": true }
+          ]
+        },
+        {
+          "label": "Formación Tecnológica · 60 créditos",
+          "courses": [
+            { "id": "bloque-asignaturas-tecnologicas", "name": "Créditos en asignaturas tecnológicas", "credits": 25, "requirementId": "lib-asignaturas-tecnologicas", "curricularBlock": true },
+            { "id": "bloque-actividades-integradoras", "name": "Créditos en tesis, talleres y pasantía", "credits": 25, "requirementId": "lib-actividades-integradoras", "curricularBlock": true },
+            { "id": "bloque-tecnologica-flexible", "name": "Distribución flexible dentro de Formación Tecnológica", "credits": 10, "requirementId": "lib-formacion-tecnologica", "curricularBlock": true }
+          ]
+        },
+        {
+          "label": "Distribución restante · 70 créditos",
+          "courses": [
+            { "id": "bloque-distribucion-restante", "name": "Créditos restantes a distribuir según el perfil aprobado", "credits": 70, "requirementId": "plan-total", "curricularBlock": true }
+          ]
+        },
+        {
+          "label": "Requisitos transversales de egreso",
+          "courses": [
+            { "id": "formacion-especifica-validada", "name": "160 créditos de formación específica validados", "credits": 0, "curricularBlock": true },
+            { "id": "pasantia-aprobada", "name": "Pasantía o formación equivalente aprobada", "credits": 0, "curricularBlock": true },
+            { "id": "tesis-aprobada", "name": "Tesis de licenciatura aprobada", "credits": 0, "curricularBlock": true },
+            { "id": "perfil-aprobado", "name": "Currículo o perfil aprobado por la Comisión de Carrera", "credits": 0, "curricularBlock": true }
+          ]
+        }
+      ],
+      "requiredCourseGroups": [
+        {
+          "id": "requisitos-transversales",
+          "label": "Requisitos transversales validados por la Comisión de Carrera",
+          "minCompleted": 4,
+          "courseIds": ["formacion-especifica-validada", "pasantia-aprobada", "tesis-aprobada", "perfil-aprobado"]
+        }
+      ]
+    },
         "graduationRequirements": [
           "Obtener 360 créditos y cumplir los mínimos por materia y agrupamiento.",
           "Aprobar una pasantía o actividad equivalente.",
@@ -3817,7 +3884,9 @@
           "Conservar una sola identidad canónica para la Licenciatura en Ingeniería Biológica Plan 2013.",
           "Presentar Montevideo y Salto como tramos iniciales y Paysandú como sede donde puede completarse la carrera.",
           "Normalizar los mínimos oficiales de Formación Básica, Tecnológica Fundamental, Complementaria y Tecnológica, además del requisito transversal de 160 créditos específicos.",
-          "Conservar tesis, pasantía y perfil aprobado como requisitos documentados, sin inventar unidades curriculares para representarlos.",
+          "Conservar tesis, pasantía, 160 créditos específicos y perfil aprobado como controles manuales explícitos, sin fingir una asignación automática que la Comisión de Carrera debe validar.",
+          "Representar los mínimos normativos como bloques acreditables que suman 360 créditos; los 70 restantes se distribuyen según el perfil individual y no constituyen una materia.",
+          "Usar el anexo aprobado sólo como referencia de una implementación inicial tentativa, no como una grilla obligatoria vigente.",
           "No publicar las áreas de especialización ilustrativas como trayectorias seleccionables mientras no exista una nómina oficial vigente y cerrada.",
           "No convertir diferencias de oferta en Bedelías en variantes curriculares por sede."
         ]
@@ -3831,6 +3900,24 @@
             "título, 360 créditos y ocho semestres",
             "mínimos por agrupamiento",
             "tesis, pasantía y perfil aprobado"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/claustro_citaciones/2013/distribuido/6982/04-2013%20Anexos%20al%20plan%20de%20estudios%20version%2015.pdf",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "supports": [
+            "implementación inicial expresamente tentativa",
+            "posibles asignaturas, créditos y distribución semestral",
+            "carácter electivo de los perfiles y disponibilidad variable"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/node/51831",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "supports": [
+            "currícula sugerida vigente del primer semestre",
+            "alternativa entre Cálculo y Matemática Inicial según Prueba Inicial",
+            "Taller de Ingeniería Biológica I en el ingreso"
           ]
         },
         {
@@ -3862,7 +3949,15 @@
       "anomalies": [
         {
           "field": "bedeliasComposition",
-          "resolution": "FING y CENUR Litoral Norte publican cero unidades. La UI muestra la estructura oficial de créditos y declara explícitamente que la composición no está disponible."
+          "resolution": "FING y CENUR Litoral Norte publican cero unidades en Bedelías. La UI muestra los mínimos oficiales como bloques acreditables y no atribuye a Bedelías una composición inexistente."
+        },
+        {
+          "field": "tentativeCurriculum",
+          "resolution": "El anexo aprobado enumera una implementación inicial y advierte que depende de la disponibilidad. FING sólo mantiene una sugerencia vigente para el primer semestre; no se congela el anexo como lista obligatoria ni se deducen previaturas."
+        },
+        {
+          "field": "specificCredits",
+          "resolution": "Los 160 créditos específicos se superponen con los agrupamientos generales y requieren validación del perfil por la Comisión de Carrera. Se controlan manualmente para no duplicar créditos en el total."
         },
         {
           "field": "duration",
@@ -3877,7 +3972,7 @@
           "resolution": "Montevideo y Salto no se presentan como sedes de carrera completa: el selector explicita que allí se cursa el tramo inicial y que la continuidad converge en Paysandú."
         }
       ],
-      "remainingWork": "La identidad, estructura de créditos y secuencia territorial quedan normalizadas. Falta una composición oficial vigente por unidades curriculares y una nómina cerrada de perfiles; su ausencia impide mostrar materias o trayectorias, pero no justifica duplicar el plan por sede."
+      "remainingWork": "La identidad, estructura de créditos, requisitos de egreso y secuencia territorial quedan operativos mediante bloques acreditables. Cada estudiante debe cargar las unidades concretas de su perfil aprobado; no existe una nómina oficial vigente y cerrada que permita automatizar esa asignación sin intervención de la Comisión de Carrera."
     },
     {
       "identity": "licenciatura en fisioterapia:2006",
@@ -13896,5 +13991,5 @@
       "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
     }
   ],
-  "contentHash": "sha256:c68317190ed8cc3bffc65ba0bd8a098fd2348d54c6a955d1cf552fb40c944cf6"
+  "contentHash": "sha256:fd9e910abd594fb8dc8c3bb509a7d2e1ae6c74512e443acd6cd5fc6885e36507"
 }

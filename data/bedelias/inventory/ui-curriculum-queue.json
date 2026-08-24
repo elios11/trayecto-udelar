@@ -1,45 +1,30 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T05:53:35.782Z",
+  "generatedAt": "2026-08-24T06:03:21.474Z",
   "source": {
-    "uiExtractedPlansHash": "sha256:7a7b2472fa0767b0d6de58e8d471247a2ff4d7238fd538f44cc1dd3111266f2a",
-    "officialAuditRegistryHash": "sha256:c68317190ed8cc3bffc65ba0bd8a098fd2348d54c6a955d1cf552fb40c944cf6",
+    "uiExtractedPlansHash": "sha256:5b5c004f3881051aafadd893b9ec6b5f9a23d7ab9595b25afa285c92c55df567",
+    "officialAuditRegistryHash": "sha256:fd9e910abd594fb8dc8c3bb509a7d2e1ae6c74512e443acd6cd5fc6885e36507",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "currentUiPlans": 152,
-    "curriculumReady": 126,
-    "curriculumPending": 26,
+    "curriculumReady": 127,
+    "curriculumPending": 25,
     "byPriority": {
-      "audited-curriculum-normalization-pending": 1,
       "official-curriculum-sources-pending": 25
     },
     "byFaculty": {
-      "FING": 2,
       "CENURLN": 4,
       "FARTES": 6,
       "FDER": 1,
       "FENF": 1,
       "FHUM": 2,
+      "FING": 1,
       "FMED": 9,
       "FQ": 1
     }
   },
   "queue": [
-    {
-      "identity": "lic en ingenieria biologica:2013",
-      "planId": "bedelias-fing-lic-en-ingenieria-biologica-2013",
-      "facultyCode": "FING",
-      "snapshotPath": "data/bedelias/fing-lic-en-ingenieria-biologica-2013.json",
-      "auditStatus": "official-evidence-complete",
-      "priority": "audited-curriculum-normalization-pending",
-      "action": "Completar la malla oficial: la identidad ya fue auditada, pero la proyección de UI todavía no contiene unidades curriculares.",
-      "officialAudit": {
-        "reviewedAt": "2026-08-20",
-        "scope": "plan-and-territorial-delivery",
-        "canonicalModel": "one-plan-multiple-offerings"
-      }
-    },
     {
       "identity": "licenciatura binacional en turismo:2004",
       "planId": "bedelias-cenurln-licenciatura-binacional-en-turismo-2004",
@@ -266,5 +251,5 @@
       "action": "Auditar vigencia e identidad y localizar la composición curricular oficial antes de habilitar una malla utilizable."
     }
   ],
-  "contentHash": "sha256:08a18f03849e8d07d26292beec46e65f2fcb2e3ee6dd8f4483a5e40c27848d15"
+  "contentHash": "sha256:cb46ee94c17b9160a4193e97e2838be6bfa590af4db1aeeef2ad5a0b2c196e93"
 }

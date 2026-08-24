@@ -19,12 +19,15 @@ test("Ingeniería Biológica conserva un solo plan y explicita sus tramos territ
   assert.deepEqual(plan.pathways.bedelias.campusIds, plan.campuses.map((campus) => campus.id));
 });
 
-test("publica mínimos oficiales sin inventar materias ni perfiles cerrados", () => {
-  assert.equal(plan.plan.compositionAvailable, false);
-  assert.deepEqual(plan.courses, []);
-  assert.deepEqual(plan.pathways.bedelias.periods, []);
-  assert.match(plan.plan.notice, /estructura de créditos y requisitos fue auditada/i);
-  assert.match(plan.plan.notice, /no publica su composición/i);
+test("publica mínimos oficiales como bloques sin inventar materias ni perfiles cerrados", () => {
+  assert.equal(plan.plan.compositionAvailable, true);
+  assert.equal(plan.courses.length, 23);
+  assert.equal(plan.pathways.bedelias.periods.length, 6);
+  assert.ok(plan.courses.every((course) => course.curricularBlock));
+  assert.equal(plan.courses.reduce((sum, course) => sum + course.credits, 0), 360);
+  assert.equal(plan.courses.filter((course) => course.credits === 0).length, 4);
+  assert.match(plan.plan.notice, /no fija una grilla única/i);
+  assert.match(plan.plan.notice, /implementación inicial tentativa/i);
   const minima = Object.fromEntries(plan.creditStructure.nodes.map((node) => [node.id, node.minCredits]));
   assert.equal(minima["plan-total"], 360);
   assert.equal(minima["lib-formacion-basica"], 150);
@@ -34,5 +37,13 @@ test("publica mínimos oficiales sin inventar materias ni perfiles cerrados", ()
   assert.equal(minima["lib-formacion-tecnologica"], 60);
   assert.equal(minima["lib-actividades-integradoras"], 25);
   assert.equal(minima["lib-formacion-especifica"], 160);
+  const credential = plan.creditStructure.credentials[0];
+  assert.equal(credential.minTotalCredits, 360);
+  assert.ok(!credential.nodeRequirements.some((requirement) => requirement.nodeId === "lib-formacion-especifica"));
+  assert.equal(credential.requiredCourseGroups[0].minCompleted, 4);
+  assert.deepEqual(
+    credential.requiredCourseGroups[0].courseIds.map((id) => plan.courses.find((course) => course.id === id)?.credits),
+    [0, 0, 0, 0],
+  );
   assert.match(plan.creditStructure.nodes[0].sourceUrl, /fing\.edu\.uy/);
 });
