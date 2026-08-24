@@ -1149,3 +1149,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:78a8487ff176b8724079a063244ffe278c70be05e12434646388ff2fcdbab5ff`. Cola general: 97 identidades pendientes; hash `sha256:8f8c0caa3affccb6872449323d6529f14a2a7b3a7c697528ccd8ce0f537ffba7`.
 - Manifiesto UI: 148 proyecciones, 133 con composición, 15 sin composición y veintinueve identidades excluidas; hash `sha256:99eb4fb89ff0193382a1f221d9a5b85d4fa3708288f18dfc45b2e15b627cfdc7`. Cola funcional: hash `sha256:7dd405f18c94c376153691abda05d7a0e3ffbf91963912a592038baee0556a0b`.
 - Siguiente paso funcional: Tecnicatura en Relaciones Laborales Plan 1995, cuyo snapshot conserva trece unidades sin créditos y requiere auditar vigencia y reglas de culminación.
+
+### Tecnicatura en Relaciones Laborales Plan 1995 — seguimiento histórico operativo 2026-08-24
+
+- Facultad de Derecho rotula expresamente esta propuesta como `plan anterior`, publica sus trece programas y documenta la evolución desde la Tecnicatura creada en 1994 hacia la Licenciatura actual. Los calendarios oficiales todavía incluyeron mesas del Plan 1995 en 2023.
+- La UI la conserva como plan histórico para cohortes existentes: cinco unidades de primer año, cinco de segundo y tres de tercero. Los tres mínimos `5+5+3 U.C.B.` de Bedelías obligan a completar las trece unidades.
+- El plan no publica créditos. Todas las unidades valen cero en el contador y la duración institucional se conserva en treinta meses; no se prorratean créditos ni se mezcla con la Licenciatura Plan 2012.
+- El título `Técnico en Relaciones Laborales` Plan 1995 sigue separado de `Técnico Asesor en Relaciones Laborales`, credencial intermedia de 200 créditos de la Licenciatura Plan 2012. El cambio de plan y sus reválidas continúan siendo trámites individuales.
+- Registro de auditoría: hash `sha256:43e40f1187b547181157bc9df5f196fec7124f054f96fbab3f2cb467097acbf4`. Cola general: 96 identidades pendientes; hash `sha256:ada4ab1bae08c60e8cb1d4a14d03257f9c92eb6b5b66e9461ff1ca77ad17e48b`.
+- Manifiesto UI: 148 proyecciones, 134 con composición y 14 sin composición; hash `sha256:e3e06111d278797426ccf6e01781e7ffc25bbe325de3eca73f3995f6b50697fe`. Cola funcional: hash `sha256:7e554ee03224d8454a2058bac5a903a73723f996ca15ba800c52bee7def01432`.
+- Siguiente paso funcional: Enfermería Universitaria Plan 1983, cuyo árbol conserva 53 unidades sin créditos y debe contrastarse con el plan vigente y el régimen de egreso.

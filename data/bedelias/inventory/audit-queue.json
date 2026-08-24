@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T06:26:53.517Z",
+  "generatedAt": "2026-08-24T06:32:04.089Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:78a8487ff176b8724079a063244ffe278c70be05e12434646388ff2fcdbab5ff"
+    "officialAuditRegistryHash": "sha256:43e40f1187b547181157bc9df5f196fec7124f054f96fbab3f2cb467097acbf4"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 80,
-    "pendingCanonicalIdentities": 97,
+    "evidenceClosedCanonicalIdentities": 81,
+    "pendingCanonicalIdentities": 96,
     "byPriority": {
-      "official-sources-pending": 97
+      "official-sources-pending": 96
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -459,6 +459,12 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "historical-intermediate-tourism-title-removed-by-current-plan"
+    },
+    {
+      "identity": "tecnicatura en relaciones laborales:1995",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-teach-out-plan-visible-for-existing-students"
     },
     {
       "identity": "creador plastico:1991",
@@ -1767,35 +1773,6 @@
           "serviceCode": "FDER",
           "serviceName": "FACULTAD DE DERECHO",
           "planKey": "FDER:licenciatura en relaciones internacionales:2013",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
-      "identity": "tecnicatura en relaciones laborales:1995",
-      "career": {
-        "name": "TECNICATURA EN RELACIONES LABORALES",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1995",
-        "name": "TECNICATURA EN RELACIONES LABORALES",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FDER",
-        "serviceName": "FACULTAD DE DERECHO",
-        "planKey": "FDER:tecnicatura en relaciones laborales:1995",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FDER",
-          "serviceName": "FACULTAD DE DERECHO",
-          "planKey": "FDER:tecnicatura en relaciones laborales:1995",
           "state": "structurally-valid"
         }
       ],
@@ -3546,5 +3523,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:8f8c0caa3affccb6872449323d6529f14a2a7b3a7c697528ccd8ce0f537ffba7"
+  "contentHash": "sha256:ada4ab1bae08c60e8cb1d4a14d03257f9c92eb6b5b66e9461ff1ca77ad17e48b"
 }

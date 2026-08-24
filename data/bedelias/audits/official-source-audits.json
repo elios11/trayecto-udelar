@@ -14209,6 +14209,55 @@
       "remainingWork": "Caso cerrado como título intermedio histórico sin ingreso vigente."
     },
     {
+      "identity": "tecnicatura en relaciones laborales:1995",
+      "career": "TECNICATURA EN RELACIONES LABORALES",
+      "planYear": "1995",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del Plan 1995 en régimen de egreso y proyección de sus trece unidades sin créditos.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "facultyCode": "FDER",
+        "facultyName": "FACULTAD DE DERECHO",
+        "careerName": "TECNICATURA EN RELACIONES LABORALES",
+        "planYear": "1995",
+        "title": "TÉCNICO EN RELACIONES LABORALES",
+        "durationMonths": 30,
+        "current": false,
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "sourceUrl": "https://www.fder.edu.uy/node/8457"
+        }
+      },
+      "uiNotice": "Plan anterior sin nuevos ingresos, conservado para estudiantes de la Tecnicatura 1995. La malla permite seguir sus trece unidades obligatorias; como el plan no usa créditos, cada unidad vale cero en el contador.",
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fder-tecnicatura-en-relaciones-laborales-1995.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionMatterCount": 13,
+        "interpretation": "El árbol Bedelías coincide exactamente con los programas oficiales del Plan 1995: cinco unidades de primer año, cinco de segundo y tres de tercero. Facultad lo rotula como plan anterior y ofrece actualmente la Licenciatura Plan 2012."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-teach-out-plan-visible-for-existing-students",
+        "canonicalIdentity": "tecnicatura en relaciones laborales:1995",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "El Plan 1995 ya no recibe ingresos, pero conserva programas oficiales y tuvo mesas de examen posteriores al cambio; se presenta como plan histórico utilizable, separado del título intermedio de la Licenciatura 2012."
+      },
+      "sources": [
+        { "url": "https://www.fder.edu.uy/node/8457", "authority": "Facultad de Derecho, Universidad de la República", "supports": ["rótulo plan anterior", "trece programas del Plan 1995", "distribución por tres años"] },
+        { "url": "https://www.fder.edu.uy/node/6317", "authority": "Facultad de Derecho, Universidad de la República", "supports": ["creación de la Tecnicatura en 1994", "inicio de cursos en 1995", "duración de dos años y medio", "evolución hacia la Licenciatura"] },
+        { "url": "https://www.fder.edu.uy/sites/default/files/2022-12/Exp.051440-000117-22_Calendarios%20de%20mayo%20a%20diciembre%2023_0.pdf", "authority": "Consejo de Facultad de Derecho, Universidad de la República", "supports": ["mesas de examen Plan 1995 durante 2023", "códigos de las trece unidades"] },
+        { "url": "https://www.fder.edu.uy/sites/default/files/2018-02/FORMULARIO%20CAMBIO%20DE%20PLAN%20RRLL.pdf", "authority": "Facultad de Derecho, Universidad de la República", "supports": ["cambio voluntario al Plan 2012", "reválidas desde el plan anterior"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se muestra como histórico: Facultad lo denomina plan anterior y la Licenciatura 2012 es la oferta vigente." },
+        { "field": "credits", "resolution": "El plan trabaja por unidades y no publica créditos; se exigen las 5+5+3 unidades del árbol sin asignar créditos ficticios." },
+        { "field": "identity", "resolution": "Técnico en Relaciones Laborales Plan 1995 no se fusiona con Técnico Asesor, título intermedio de 200 créditos del Plan 2012." }
+      ],
+      "remainingWork": "Malla histórica cerrada; cualquier reválida al Plan 2012 continúa siendo un trámite individual y no una migración automática."
+    },
+    {
       "identity": "creador plastico:1991",
       "career": "CREADOR PLASTICO",
       "planYear": "1991",
@@ -14431,5 +14480,5 @@
       "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
     }
   ],
-  "contentHash": "sha256:78a8487ff176b8724079a063244ffe278c70be05e12434646388ff2fcdbab5ff"
+  "contentHash": "sha256:43e40f1187b547181157bc9df5f196fec7124f054f96fbab3f2cb467097acbf4"
 }

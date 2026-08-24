@@ -305,10 +305,13 @@ function compositionGroupLabel(value) {
 }
 
 function compositionMatter(value) {
-  const match = String(value ?? "").match(/^([^-]+?)\s+-\s+([^-]+?)\s+-\s+(.+)$/);
-  return match
-    ? { code: `${match[1].trim()}-${match[2].trim()}`, name: match[3].trim() }
-    : { code: null, name: String(value ?? "").trim() };
+  const label = String(value ?? "").trim();
+  const serviceMatch = label.match(/^([^-]+?)\s+-\s+([^-]+?)\s+-\s+(.+)$/);
+  if (serviceMatch) return { code: `${serviceMatch[1].trim()}-${serviceMatch[2].trim()}`, name: serviceMatch[3].trim() };
+  const localMatch = label.match(/^([^-]+?)\s+-\s+(.+)$/);
+  return localMatch
+    ? { code: localMatch[1].trim(), name: localMatch[2].trim() }
+    : { code: null, name: label };
 }
 
 function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedIds) {
