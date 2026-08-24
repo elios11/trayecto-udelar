@@ -19649,7 +19649,137 @@
       ],
       "uiNotice": "Plan 2011 flexible: completá 50 créditos en cada eje, el Trabajo Final de 35 créditos y 195 totales. La Comisión de Carrera valida la pertinencia del currículo y el máximo de 10 créditos optativos.",
       "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La aprobación concreta de unidades dentro de cada eje corresponde a la Comisión de Carrera."
+    },
+    {
+      "identity": "tecnologo en madera:2012",
+      "career": "TECNÓLOGO EN MADERA",
+      "planYear": "2012",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, plan aprobado, título conjunto, duración, créditos, mínimos por área, obligaciones nominales, flexibilidad y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Resolución 20 del Consejo Directivo Central de 25/10/2011"],
+        "planYear": "2011",
+        "title": "Tecnólogo en Madera",
+        "careerName": "Tecnólogo en Madera",
+        "facultyCode": "FAGRO",
+        "facultyName": "Facultad de Agronomía",
+        "sharedWith": ["Facultad de Ingeniería", "DGETP-UTU"],
+        "durationMonths": 36,
+        "semesters": 6,
+        "minimumCredits": 270,
+        "current": true,
+        "degreeRule": "El título conjunto exige 270 créditos, un currículo aprobado por la Comisión de Carrera, 94 créditos básicos y forestales, 110 tecnológicos y 34 complementarios, además de los mínimos internos y actividades obligatorias.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://www.impo.com.uy/diariooficial/2011/11/21/avisos.pdf",
+          "pathwayLabel": "Currículo flexible por áreas",
+          "pathwayDescription": "Catálogo acreditable del plan; los anexos y las combinaciones tipo son ejemplos, no una secuencia semestral obligatoria.",
+          "periodOrder": ["TALLER INTRODUCTORIO", "MAT- ESTADIS- CONTROL DE PROCE", "PROCESO FISICOS Y APLICACIONES", "PROC BIOLOG Y QUIM. DE LA MADE", "EJE TECNOLÓGICO COMÚN", "GESTIÓN DE LA PRODUCCIÓN", "SECADO Y ENERGÍA", "TECNOLOGÍA DE LA MADERA", "AREA TEMATICA DE ACT.COMPLEMEN", "Validación de egreso"],
+          "pathRequirementMap": {
+            "4672": "introductory",
+            "5050": "basic-mathematics",
+            "5099": "basic-physical",
+            "4327": "basic-biochemical",
+            "4801": "technology-common",
+            "4706": "technology-production",
+            "4321": "technology-energy",
+            "4348": "technology-wood",
+            "4615": "complementary"
+          },
+          "creditRequirements": [
+            { "id": "introductory", "name": "Taller introductorio", "shortName": "Introductorio", "minCredits": 0, "credentialRequired": false },
+            { "id": "basic-mathematics", "name": "Matemática, Estadística y Control de Procesos", "shortName": "Matemática", "minCredits": 22 },
+            { "id": "basic-physical", "name": "Procesos Físicos y sus Aplicaciones", "shortName": "Procesos físicos", "minCredits": 27 },
+            { "id": "basic-biochemical", "name": "Procesos Biológicos y Químicos de la Madera", "shortName": "Bioquímica", "minCredits": 45 },
+            { "id": "technology", "name": "Formación Tecnológica", "shortName": "Tecnológica", "minCredits": 110 },
+            { "id": "technology-common", "parentId": "technology", "name": "Eje Tecnológico Común", "shortName": "Eje común", "minCredits": 66 },
+            { "id": "technology-production", "parentId": "technology", "name": "Gestión de la Producción", "shortName": "Gestión", "minCredits": 0, "credentialRequired": false },
+            { "id": "technology-energy", "parentId": "technology", "name": "Secado y Energía", "shortName": "Secado y energía", "minCredits": 0, "credentialRequired": false },
+            { "id": "technology-wood", "parentId": "technology", "name": "Tecnología de la Madera", "shortName": "Tecnología madera", "minCredits": 0, "credentialRequired": false },
+            { "id": "complementary", "name": "Formación Complementaria", "shortName": "Complementaria", "minCredits": 34 }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "mandatory-introductory-workshop",
+              "label": "Taller Introductorio de Metrología y Elaboración de la Madera obligatorio",
+              "sourceCourseIds": ["TIMEM"]
+            },
+            {
+              "id": "mandatory-common-technology",
+              "label": "Unidades obligatorias del Eje Tecnológico Común",
+              "sourceCourseIds": ["ETC1-COMPLEJOS FORESTO", "ETC2-ASERRADO", "ETC3", "ETC4", "ETC5-SECADO I", "ETC6-SECADO II", "ETC7", "ETC8", "ETC9", "ETC10"]
+            },
+            {
+              "id": "mandatory-complementary-activities",
+              "label": "Talleres y Pasantía o Proyecto obligatorios",
+              "sourceCourseIds": ["AC6-TALLER I", "AC7-TALLER II", "AC8-TALLER III", "AC9"]
+            }
+          ],
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del currículo coherente que completa los 270 créditos"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CUR",
+          "locations": ["Rivera"],
+          "role": "oferta conjunta de las facultades de Agronomía e Ingeniería y DGETP-UTU en el CENUR Noreste",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cur-tecnologo-en-madera-2012.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 270,
+        "distinctCourseRecords": 63,
+        "distinctCourseCredits": 406,
+        "interpretation": "La composición de Bedelías contiene 63 unidades distintas. La proyección usa los grupos internos para asignar cada crédito una sola vez; el catálogo de 406 créditos excede el mínimo flexible de 270."
+      },
+      "conclusion": {
+        "canonicalModel": "one-joint-plan-flexible-by-areas",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2011 es una única carrera conjunta Udelar-UTU, radicada en Rivera. Sus combinaciones tipo y anexos ejemplifican posibles trayectorias, pero el egreso se controla por mínimos y aprobación individual de la Comisión de Carrera.",
+        "normalization": [
+          "Mostrar Plan 2011 como denominación oficial y conservar 2012 como identidad técnica de Bedelías vinculada al inicio efectivo de la carrera.",
+          "Corregir la duración a tres años o seis semestres frente a los 60 meses administrativos.",
+          "Controlar 22 créditos de Matemática-Estadística, 27 de Procesos Físicos y 45 de Procesos Biológicos-Químicos, que completan los 94 básicos.",
+          "Controlar 110 créditos tecnológicos, de los cuales 66 corresponden obligatoriamente al eje común, y 34 complementarios.",
+          "Exigir el Taller Introductorio, las diez unidades del Eje Tecnológico Común, los tres talleres complementarios y la Pasantía o Proyecto.",
+          "Mantener las restantes unidades como catálogo flexible y exigir 270 créditos totales más aprobación de la Comisión de Carrera.",
+          "No publicar como menciones certificadas las tres trayectorias de énfasis ilustradas en el anexo del plan.",
+          "Verificar la unicidad por código y nombre al recorrer la composición jerárquica, sin convertir las etiquetas de grupos padre e hijos en unidades adicionales."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2011/11/21/avisos.pdf",
+          "authority": "Diario Oficial - IMPO / Universidad de la República",
+          "supports": ["Resolución 20 del CDC", "Plan 2011", "título conjunto", "seis semestres", "270 créditos", "mínimos por áreas", "obligaciones", "flexibilidad", "aprobación de Comisión"]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/carrera/grado/tecn%C3%B3logo-en-madera-rivera",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "supports": ["vigencia", "Plan 2011", "tres años", "sede Rivera", "coordinación actual"]
+        },
+        {
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/tecnologo-de-la-madera/",
+          "authority": "Facultad de Agronomía, Udelar",
+          "supports": ["vigencia", "tres años", "270 créditos", "carácter compartido con Ingeniería y DGETP-UTU", "sede Rivera"]
+        }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "La UI muestra Plan 2011, año de aprobación oficial; Bedelías conserva 2012 como clave técnica de la oferta iniciada ese año." },
+        { "field": "durationMonths", "resolution": "El plan y las páginas académicas vigentes establecen seis semestres/tres años; se corrigen los 60 meses administrativos." },
+        { "field": "compositionHierarchy", "resolution": "Los caminos padre e hijo repiten contexto visual, pero el snapshot conserva 63 unidades distintas; la proyección verifica su unicidad por código y nombre." },
+        { "field": "catalogSize", "resolution": "Los 406 créditos de cursos únicos son oferta flexible. El requisito real es alcanzar 270, respetar mínimos y obtener aprobación de la Comisión." }
+      ],
+      "uiNotice": "Plan conjunto Udelar-UTU de 270 créditos. Completá los mínimos por área, las actividades obligatorias y un currículo coherente aprobado por la Comisión; las combinaciones tipo no son menciones certificadas.",
+      "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías. La Comisión de Carrera define qué combinaciones del catálogo integran cada currículo individual."
     }
   ],
-  "contentHash": "sha256:c6a3d260538bebc1071b3708977a1b35eb1c873fee54ac30fc4b011dd3eae06d"
+  "contentHash": "sha256:8adf9c544e85b15c6e90e4c7f97684a98564ffe553c71539c3401740cecec116"
 }
