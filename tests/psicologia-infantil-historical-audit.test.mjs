@@ -22,5 +22,5 @@ test("la UI excluye el título histórico y conserva la Licenciatura vigente", (
   const identities = new Set(report.plans.map((plan) => plan.identity));
   assert.ok(!identities.has("psicologia infantil:1960"));
   assert.ok(identities.has("licenciatura en psicologia:2013"));
-  assert.equal(report.counts.compositionUnavailable, 23);
+  assert.equal(report.counts.compositionUnavailable, 21);
 });

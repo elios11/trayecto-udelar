@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:ffc35826bbba168a1dba55de2790fffa21f158cad60fed2b05cab021044497e1",
-    "officialAuditHash": "sha256:ff59d4647aa878f657bb80f89b61b9837aa07e236c1024e865076515331b30e3",
+    "auditQueueHash": "sha256:24509be9577d21c791680dffa588b4b100b30b19bf820ecf01dc57a97de85cf0",
+    "officialAuditHash": "sha256:8f510dfd32c7bec5f57e781bb07d2f287cf135fd31b945881c4304cbf0a019f6",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 150,
-    "compositionAvailable": 127,
-    "compositionUnavailable": 23,
+    "compositionAvailable": 129,
+    "compositionUnavailable": 21,
     "plansWithOfficialCampuses": 29,
     "excludedFromCurrentUi": 27
   },
@@ -68,18 +68,22 @@
       "planId": "bedelias-cenurln-tecnicatura-en-direccion-de-coros-2002",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-direccion-de-coros-2002.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "salto"
+      ]
     },
     {
       "identity": "tecnicatura en interpretacion perfil canto guitarra piano:2002",
       "planId": "bedelias-cenurln-tecnicatura-en-interpretacion-perfil-canto-guitarra-piano-2002",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-interpretacion-perfil-canto-guitarra-piano-2002.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "salto"
+      ]
     },
     {
       "identity": "tecnicatura en tecnologias de la imagen fotografica:2008",
@@ -1499,5 +1503,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:e372a73d4d52fb697e7841bf81af86ba221102680a8aa2e6819408f7e08862c1"
+  "contentHash": "sha256:ebfe25b44df0522c46d7ffdaa491776a38d726f03f400e8826d879d856a6194b"
 }

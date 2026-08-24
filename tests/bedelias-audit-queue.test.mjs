@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 72);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 105);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 74);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 103);
   assert.deepEqual(saved.counts.byPriority, {
-    "official-sources-pending": 105,
+    "official-sources-pending": 103,
   });
   assert.deepEqual(saved.counts.regionalComparisons, {
     "curriculum-match-prerequisite-coverage-difference": 16,
@@ -97,6 +97,8 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
     "higienista dental:1963",
     "laboratorista dental:1963",
     "laboratorista en odontologia:2017",
+    "tecnicatura en direccion de coros:2002",
+    "tecnicatura en interpretacion perfil canto guitarra piano:2002",
     "licenciatura binacional en turismo:2004",
     "tecnicatura binacional en turismo:2004",
     "psicologia infantil:1960",

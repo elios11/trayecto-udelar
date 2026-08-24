@@ -1128,3 +1128,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:ff59d4647aa878f657bb80f89b61b9837aa07e236c1024e865076515331b30e3`. Cola general: 105 identidades pendientes; hash `sha256:ffc35826bbba168a1dba55de2790fffa21f158cad60fed2b05cab021044497e1`.
 - Manifiesto UI: 150 proyecciones, 127 con composición, 23 sin composición y veintisiete identidades excluidas; hash `sha256:e372a73d4d52fb697e7841bf81af86ba221102680a8aa2e6819408f7e08862c1`. Cola funcional: hash `sha256:df1317031af5df0f0621c6025a673273e8ad733988d8b6b600c107c05b173ef7`.
 - Siguiente paso: auditar las dos tecnicaturas artísticas Plan 2002 de Salto —Dirección de Coros e Interpretación— y contrastarlas con la oferta e ingresos vigentes de Facultad de Artes.
+
+### Tecnicaturas de Música en Salto Plan 2002 — mallas operativas 2026-08-24
+
+- Facultad de Artes y las bases de admisión 2026 confirman la vigencia de Técnico en Dirección de Coros y Técnico en Interpretación en Salto. Interpretación es una sola carrera con opciones Guitarra, Piano y Canto; el selector de opción no duplica plan, sede ni progreso.
+- Cada tecnicatura conserva las 32 unidades reglamentarias en ocho semestres y dos ciclos. Dirección usa Taller de Práctica Coral en el segundo ciclo; Interpretación usa Taller de Práctica Docente.
+- Facultad resume 360 créditos y el catálogo general de Udelar informa 2.368 horas presenciales/clase, pero ninguna fuente distribuye esos créditos por unidad. La UI permite marcar cada curso y conserva el total mediante un bloque explícito de validación, sin prorratear ni inventar créditos unitarios.
+- Para ingresar al segundo ciclo se exige aprobar las dieciséis unidades de los primeros cuatro semestres. También se automatizan la ante-anterior de Lectoescritura y las condiciones adicionales de Dirección Coral IV. El requisito de tener la unidad inmediata anterior reglamentada se informa sin endurecerlo a aprobación completa.
+- El reglamento histórico sólo nombra Guitarra y Piano en el artículo del título, pero la oferta y la admisión 2026 incluyen Canto. Se normalizan las tres opciones actuales bajo el mismo título Técnico en Interpretación.
+- Registro de auditoría: hash `sha256:8f510dfd32c7bec5f57e781bb07d2f287cf135fd31b945881c4304cbf0a019f6`. Cola general: 103 identidades pendientes; hash `sha256:24509be9577d21c791680dffa588b4b100b30b19bf820ecf01dc57a97de85cf0`.
+- Manifiesto UI: 150 proyecciones, 129 con composición y 21 sin composición; hash `sha256:ebfe25b44df0522c46d7ffdaa491776a38d726f03f400e8826d879d856a6194b`. Cola funcional: hash `sha256:e2ac69a8f37ad6a610f2eaff0e424ecab63cbdfb93311deecda6296a23c9d9f0`.
+- Siguiente paso: auditar conjuntamente las seis identidades de Facultad de Artes sin composición, comenzando por Creador Plástico Plan 1991 y sus planes sucesores.

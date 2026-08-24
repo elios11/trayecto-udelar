@@ -34,13 +34,13 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-cenurln-tecnicatura-en-direccion-de-coros-2002.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 360,
   },
   "bedelias-cenurln-tecnicatura-en-interpretacion-perfil-canto-guitarra-piano-2002": {
     load: () => import("./bedelias-generated/bedelias-cenurln-tecnicatura-en-interpretacion-perfil-canto-guitarra-piano-2002.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["guitarra","piano","canto"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 360,
   },
   "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008": {
     load: () => import("./bedelias-generated/bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json"),
