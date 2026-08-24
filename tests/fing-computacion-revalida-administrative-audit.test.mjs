@@ -32,5 +32,5 @@ test("preserva la evidencia administrativa sin publicar una malla de mínimos ce
   assert.ok(!identities.has("ingenieria en computacion revalida:1987"));
   const catalogSource = readFileSync(new URL("../app/academic-catalog.ts", import.meta.url), "utf8");
   assert.match(catalogSource, /label: "Ingeniería en Computación"[\s\S]*id: "2025"[\s\S]*id: "1997"/);
-  assert.equal(report.counts.compositionUnavailable, 10);
+  assert.equal(report.counts.compositionUnavailable, 1);
 });

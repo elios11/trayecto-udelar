@@ -706,7 +706,7 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-fmed-licenciatura-en-terapia-ocupacional-2006.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 290.5,
   },
   "bedelias-fmed-obstetra-partera-1990": {
     load: () => import("./bedelias-generated/bedelias-fmed-obstetra-partera-1990.json"),

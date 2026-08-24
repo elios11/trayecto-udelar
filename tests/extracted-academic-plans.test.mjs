@@ -80,6 +80,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["licenciatura en instrumentacion quirurgica:2006", ["montevideo", "paysandu"]],
     ["licenciatura en laboratorio clinico:2006", ["montevideo", "paysandu"]],
     ["licenciatura en psicomotricidad:2006", ["montevideo", "paysandu"]],
+    ["licenciatura en registros medicos:2006", ["montevideo", "paysandu"]],
     ["tecnicatura en anatomia patologica:2006", ["montevideo", "paysandu"]],
     ["tecnicatura en hemoterapia:2006", ["montevideo", "paysandu"]],
     ["tecnicatura en podologia:2006", ["montevideo", "paysandu"]],
@@ -90,6 +91,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["licenciatura en gestion ambiental:2011", ["maldonado", "rocha", "treinta-y-tres"]],
     ["tecnologo carnico:2010", ["tacuarembo", "durazno"]],
     ["licenciatura en nutricion:2014", ["montevideo", "paysandu-solo-ciclo-iv"]],
+    ["obstetra partera:1990", ["montevideo", "paysandu"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

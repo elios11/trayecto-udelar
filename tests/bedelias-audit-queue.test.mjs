@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 85);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 92);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 94);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 83);
   assert.deepEqual(saved.counts.byPriority, {
-    "official-sources-pending": 92,
+    "official-sources-pending": 83,
   });
   assert.deepEqual(saved.counts.regionalComparisons, {
     "curriculum-match-prerequisite-coverage-difference": 16,
@@ -92,7 +92,7 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
     "tecnicatura en reeducacion psicomotriz:1901",
     "tecnicatura en registros medicos:1990",
   ]);
-  assert.deepEqual(saved.completedAudits.slice(65).map((entry) => entry.identity), [
+  assert.deepEqual(saved.completedAudits.slice(65, 85).map((entry) => entry.identity), [
     "asistente dental:1963",
     "higienista dental:1963",
     "laboratorista dental:1963",
@@ -113,6 +113,17 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
     "letras hispanicas:1976",
     "tecnicatura en turismo:1996",
     "ingenieria en computacion revalida:1987",
+  ]);
+  assert.deepEqual(saved.completedAudits.slice(85).map((entry) => entry.identity), [
+    "licenciatura en fonoaudiologia:2006",
+    "licenciatura en neumocardiologia:2006",
+    "licenciatura en neurofisiologia clinica:2006",
+    "licenciatura en oftalmologia:2006",
+    "licenciatura en registros medicos:2006",
+    "licenciatura en terapia ocupacional:2006",
+    "tecnicatura en radioisotopos:2006",
+    "tecnologo en cosmetologia medica:2006",
+    "obstetra partera:1990",
   ]);
   assert.equal(saved.source.officialAuditRegistryHash, auditRegistry.contentHash);
   assert.equal(officialAuditRegistryHash(auditRegistry), auditRegistry.contentHash);

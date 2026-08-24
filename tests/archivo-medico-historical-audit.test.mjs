@@ -21,5 +21,6 @@ test("Archivo Médico no se proyecta como carrera vigente duplicada", () => {
   const queue = readJson("data/bedelias/inventory/audit-queue.json");
   assert.ok(!report.plans.some((plan) => plan.identity === "tecnicatura en archivo medico:2006"));
   assert.ok(queue.completedAudits.some((entry) => entry.identity === "tecnicatura en archivo medico:2006"));
-  assert.ok(queue.queue.some((entry) => entry.identity === "licenciatura en registros medicos:2006"));
+  assert.ok(queue.completedAudits.some((entry) => entry.identity === "licenciatura en registros medicos:2006"));
+  assert.ok(report.plans.some((plan) => plan.identity === "licenciatura en registros medicos:2006" && plan.compositionAvailable));
 });

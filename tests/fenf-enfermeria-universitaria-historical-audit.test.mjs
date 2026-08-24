@@ -36,5 +36,5 @@ test("preserva las 53 materias como evidencia pero no publica una malla con mín
   const identities = new Set(report.plans.map((plan) => plan.identity));
   assert.ok(!identities.has("enfermeria universitaria:1983"));
   assert.ok(identities.has("licenciatura en enfermeria:2016"));
-  assert.equal(report.counts.compositionUnavailable, 10);
+  assert.equal(report.counts.compositionUnavailable, 1);
 });
