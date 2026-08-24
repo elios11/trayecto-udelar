@@ -987,3 +987,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:324a155771cee681ef8ee9ecfaddf56afdc7cec17cf89429477e427097994b2c`. Cola actualizada: 131 identidades pendientes, 22 sin composición; hash `sha256:1cd11f38d5499743d2b73242def8fe22ab922c571a213197228724d1912964c9`.
 - La UI queda en 172 proyecciones: 122 con composición, 50 sin composición y cinco identidades históricas excluidas; hash `sha256:d1f7a92814f362ff02abda7734b004abfc87e8c47115f6f8543b2bcbc6e8645b`.
 - Siguiente paso: auditar Licenciatura en Sociología Plan 2009.
+
+### Licenciatura en Sociología Plan 2009 — módulos, Taller Central y egreso auditados 2026-08-24
+
+- Facultad de Ciencias Sociales mantiene un único Plan 2009, título `Licenciado en Sociología`, cuatro años y 360 créditos en Montevideo. No existen trayectorias o títulos diferenciados por tema de investigación.
+- El Ciclo Inicial exige 120 créditos: 48 de Introducción, 26 de Métodos, 8 de Temáticas y 38 optativos, incluidos 10 de Teoría Sociológica como opción específica. El Avanzado suma 240 en seis módulos: Teorías 40, Metodología 40, Sociologías Especiales y Temáticas 40, Otras Ciencias Sociales 30, Talleres y Actividades Integrales 60 y Trabajo Final 30.
+- La malla incorpora el núcleo obligatorio nominal y conserva como bloques flexibles los 16 créditos de sociologías electivas, 24 de otras ciencias/actividades y dos seminarios-taller de 8. Sus temas y equipos cambian anualmente; congelarlos como perfiles permanentes confundiría una oferta temporal con una trayectoria certificada.
+- Taller Central se desarrolla durante tres semestres por 15, 15 y 14 créditos. Para el primero se automatizan el seminario-taller correspondiente, Teoría I y las cuatro metodologías de base; para el segundo se automatizan Taller I, Teoría II y Cuantitativa III.
+- Las previas correlativas para rendir Teorías y Metodologías también admiten mantener la condición de reglamentado. La UI no representa ese estado y por eso no lo sustituye por una aprobación obligatoria más restrictiva.
+- El Trabajo Final ofrece Monografía Final de Grado o Pasantía Final e Informe, ambas por 30 créditos. Se exige un umbral de 330 créditos previos y la credencial sigue verificando todos los mínimos modulares.
+- Las normas históricas mencionan 64 créditos iniciales para inscribirse en Sociología; la página vigente del Ciclo Inicial permite comenzar el Avanzado con 48 y regularizar inscripciones provisorias. La UI informa la diferencia, no bloquea el recorrido por un umbral administrativo ambiguo y conserva los 120 créditos iniciales como requisito de egreso.
+- Registro de auditoría: hash `sha256:df12d836df50eb6ab420b11d0c269373a4255c92b8a5722064d7b57286b26f7a`. Cola actualizada: 130 identidades pendientes, 21 sin composición; hash `sha256:0bc664edc606c9d436eb03f1b3a38cd7408de8f037eed066aeb9cbca047c9e96`.
+- La UI queda en 172 proyecciones: 123 con composición, 49 sin composición y cinco identidades históricas excluidas; hash `sha256:90c9fc873cfa0afd9588a8a2bc4e4f01be31d420c1a9e8f2d836bc28ae6f69e2`.
+- Siguiente paso: auditar Diplomacia Plan 1918, próxima identidad sin composición de la cola reproducible.

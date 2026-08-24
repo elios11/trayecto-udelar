@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:1cd11f38d5499743d2b73242def8fe22ab922c571a213197228724d1912964c9",
-    "officialAuditHash": "sha256:324a155771cee681ef8ee9ecfaddf56afdc7cec17cf89429477e427097994b2c",
+    "auditQueueHash": "sha256:0bc664edc606c9d436eb03f1b3a38cd7408de8f037eed066aeb9cbca047c9e96",
+    "officialAuditHash": "sha256:df12d836df50eb6ab420b11d0c269373a4255c92b8a5722064d7b57286b26f7a",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 172,
-    "compositionAvailable": 122,
-    "compositionUnavailable": 50,
+    "compositionAvailable": 123,
+    "compositionUnavailable": 49,
     "plansWithOfficialCampuses": 29,
     "excludedFromCurrentUi": 5
   },
@@ -652,9 +652,11 @@
       "planId": "bedelias-fcs-licenciatura-en-sociologia-2009",
       "facultyCode": "FCS",
       "snapshotPath": "data/bedelias/fcs-licenciatura-en-sociologia-2009.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "licenciatura en trabajo social:2009",
@@ -1689,5 +1691,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:d1f7a92814f362ff02abda7734b004abfc87e8c47115f6f8543b2bcbc6e8645b"
+  "contentHash": "sha256:90c9fc873cfa0afd9588a8a2bc4e4f01be31d420c1a9e8f2d836bc28ae6f69e2"
 }

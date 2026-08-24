@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T17:46:35.645Z",
+  "generatedAt": "2026-08-24T04:02:16.010Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:324a155771cee681ef8ee9ecfaddf56afdc7cec17cf89429477e427097994b2c"
+    "officialAuditRegistryHash": "sha256:df12d836df50eb6ab420b11d0c269373a4255c92b8a5722064d7b57286b26f7a"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 46,
-    "pendingCanonicalIdentities": 131,
+    "evidenceClosedCanonicalIdentities": 47,
+    "pendingCanonicalIdentities": 130,
     "byPriority": {
-      "composition-unavailable": 22,
+      "composition-unavailable": 21,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -298,38 +298,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-20",
       "conclusion": "one-flexible-modular-plan-three-suggested-trajectories-one-campus"
+    },
+    {
+      "identity": "licenciatura en sociologia:2009",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "one-flexible-modular-plan-two-graduation-modes-one-campus"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en sociologia:2009",
-      "career": {
-        "name": "LICENCIATURA EN SOCIOLOGÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2009",
-        "name": "LICENCIATURA EN SOCIOLOGÍA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCS",
-        "serviceName": "FACULTAD DE CIENCIAS SOCIALES",
-        "planKey": "FCS:licenciatura en sociologia:2009",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCS",
-          "serviceName": "FACULTAD DE CIENCIAS SOCIALES",
-          "planKey": "FCS:licenciatura en sociologia:2009",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "diplomacia:1918",
       "career": {
@@ -4333,5 +4310,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:1cd11f38d5499743d2b73242def8fe22ab922c571a213197228724d1912964c9"
+  "contentHash": "sha256:0bc664edc606c9d436eb03f1b3a38cd7408de8f037eed066aeb9cbca047c9e96"
 }
