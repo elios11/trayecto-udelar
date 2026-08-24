@@ -929,7 +929,7 @@
       "identity": "licenciatura en educacion fisica:2017",
       "career": "LICENCIATURA EN EDUCACIÓN FÍSICA",
       "planYear": "2017",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-24",
       "status": "official-evidence-complete",
       "scope": "plan-and-site-filtered-trajectories",
       "publicationEligible": false,
@@ -1663,6 +1663,167 @@
           "Introducción a las Ciencias Sociales": 24,
           "Métodos aplicados a las Ciencias Sociales": 16,
           "Cualquier módulo del Ciclo Inicial": 8
+        },
+        "curriculum": {
+          "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/11/TS-Malla-curricular-PROPUESTA.pdf",
+          "pathwayLabel": "Plan modular vigente",
+          "pathwayDescription": "Malla oficial del Ciclo Inicial 2025 y del Ciclo Avanzado de Trabajo Social. Los Proyectos Integrales y las optativas se representan como bloques flexibles porque su tema y oferta cambian; no constituyen trayectorias territoriales.",
+          "prerequisitesSourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/07/TS-Previas-29072025.pdf",
+          "creditRequirements": [
+            { "id": "ts-ci-introduccion", "name": "Ciclo Inicial · Introducción a las Ciencias Sociales", "shortName": "CI Introducción", "minCredits": 48, "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf" },
+            { "id": "ts-ci-metodos", "name": "Ciclo Inicial · Métodos Aplicados a las Ciencias Sociales", "shortName": "CI Métodos", "minCredits": 26, "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf" },
+            { "id": "ts-ci-tematicas", "name": "Ciclo Inicial · Temáticas en Ciencias Sociales", "shortName": "CI Temáticas", "minCredits": 8, "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf" },
+            { "id": "ts-ci-optativas", "name": "Ciclo Inicial · Actividades Curriculares Optativas", "shortName": "CI Optativas", "minCredits": 38, "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf" },
+            { "id": "ts-fundamentos", "name": "Fundamentos Teórico-Metodológicos del Trabajo Social", "shortName": "Fundamentos", "minCredits": 81 },
+            { "id": "ts-politicas", "name": "Políticas Públicas, Planificación y Gestión", "shortName": "Políticas", "minCredits": 30 },
+            { "id": "ts-psicosocial", "name": "Componentes Psicosociales y Pedagógicos de la Intervención Profesional", "shortName": "Psicosocial", "minCredits": 14 },
+            { "id": "ts-teorias", "name": "Teorías Sociales", "shortName": "Teorías", "minCredits": 30 },
+            { "id": "ts-metodologia", "name": "Metodología de la Investigación", "shortName": "Metodología", "minCredits": 27 },
+            { "id": "ts-filosofia", "name": "Introducción al Pensamiento Filosófico", "shortName": "Filosofía", "minCredits": 16 },
+            { "id": "ts-historia", "name": "Análisis de los Procesos Históricos", "shortName": "Historia", "minCredits": 12 },
+            { "id": "ts-trabajo-final", "name": "Trabajo Final", "shortName": "Trabajo final", "minCredits": 30 }
+          ],
+          "periods": [
+            {
+              "label": "Ciclo Inicial · Introducción",
+              "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf",
+              "courses": [
+                { "id": "ci-cuestion-social", "name": "La Cuestión Social en la Historia", "credits": 8, "requirementId": "ts-ci-introduccion" },
+                { "id": "ci-sociedades-modernas", "name": "Sociedades Modernas y Desigualdades Sociales", "credits": 8, "requirementId": "ts-ci-introduccion" },
+                { "id": "ci-problemas-desarrollo", "name": "Problemas del Desarrollo", "credits": 8, "requirementId": "ts-ci-introduccion" },
+                { "id": "ci-poder-estado", "name": "Poder, Estado y Sistema Político", "credits": 8, "requirementId": "ts-ci-introduccion" },
+                { "id": "ci-principios-economia", "name": "Principios de Economía", "credits": 8, "requirementId": "ts-ci-introduccion" },
+                { "id": "ci-historia-america-latina", "name": "Historia Contemporánea de América Latina · alternativa", "credits": 8, "requirementId": "ts-ci-introduccion" },
+                { "id": "ci-opcion-politica", "name": "Opción Política · alternativa", "credits": 8, "requirementId": "ts-ci-introduccion" },
+                { "id": "ci-opcion-economica-social", "name": "Opción Económica y Social · alternativa", "credits": 8, "requirementId": "ts-ci-introduccion" }
+              ]
+            },
+            {
+              "label": "Ciclo Inicial · Métodos",
+              "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf",
+              "courses": [
+                { "id": "ci-matematica-1", "name": "Matemática I · alternativa", "credits": 8, "requirementId": "ts-ci-metodos" },
+                { "id": "ci-matematica-extendida", "name": "Curso Extendido de Matemática · alternativa", "credits": 8, "requirementId": "ts-ci-metodos" },
+                { "id": "ci-estadistica-social", "name": "Estadística Social", "credits": 8, "requirementId": "ts-ci-metodos" },
+                { "id": "ci-metodologia-investigacion", "name": "Metodología de la Investigación", "credits": 10, "requirementId": "ts-ci-metodos" }
+              ]
+            },
+            {
+              "label": "Ciclo Inicial · Temáticas",
+              "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf",
+              "courses": [
+                { "id": "ci-desafios-contemporaneos", "name": "Debates sobre Desafíos Ambientales, Poblacionales y Violencias · alternativa", "credits": 8, "requirementId": "ts-ci-tematicas" },
+                { "id": "ci-renta-politicas-clima", "name": "Debates sobre Renta Básica, Políticas Afirmativas y Cambio Climático · alternativa", "credits": 8, "requirementId": "ts-ci-tematicas" },
+                { "id": "ci-experiencias-desarrollo", "name": "Experiencias Históricas del Desarrollo · alternativa", "credits": 8, "requirementId": "ts-ci-tematicas" },
+                { "id": "ci-genero-desigualdades", "name": "Género y Desigualdades en Debate · alternativa", "credits": 8, "requirementId": "ts-ci-tematicas" },
+                { "id": "ci-accion-colectiva", "name": "Acción Colectiva en Clave Interdisciplinaria · alternativa", "credits": 8, "requirementId": "ts-ci-tematicas" }
+              ]
+            },
+            {
+              "label": "Ciclo Inicial · Optativas",
+              "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf",
+              "courses": [
+                { "id": "ci-introduccion-trabajo-social", "name": "Introducción al Trabajo Social · optativa específica", "credits": 10, "requirementId": "ts-ci-optativas" },
+                { "id": "ci-optativas-generales", "name": "Actividades Curriculares Optativas del Ciclo Inicial", "credits": 28, "requirementId": "ts-ci-optativas", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "3.er semestre",
+              "courses": [
+                { "id": "ts-planificacion-1", "name": "Planificación y Gestión I", "credits": 6, "requirementId": "ts-politicas" },
+                { "id": "ts-metodologia-cuantitativa-1", "name": "Metodología Cuantitativa I", "credits": 8, "requirementId": "ts-metodologia" },
+                { "id": "ts-metodologia-cualitativa-1", "name": "Metodología Cualitativa I", "credits": 8, "requirementId": "ts-metodologia" }
+              ]
+            },
+            {
+              "label": "4.º semestre",
+              "courses": [
+                { "id": "ts-trabajo-social-1", "name": "Trabajo Social I", "credits": 6, "requirementId": "ts-fundamentos" },
+                { "id": "ts-introduccion-proyectos", "name": "Introducción a Proyectos Integrales", "credits": 3, "requirementId": "ts-fundamentos" },
+                { "id": "ts-laboratorio", "name": "Laboratorio", "credits": 6, "requirementId": "ts-fundamentos" },
+                { "id": "ts-planificacion-2", "name": "Planificación y Gestión II", "credits": 6, "requirementId": "ts-politicas" },
+                { "id": "ts-teorias-sociales-1", "name": "Teorías Sociales I", "credits": 6, "requirementId": "ts-teorias" },
+                { "id": "ts-historia-universal", "name": "Historia Universal Contemporánea", "credits": 5, "requirementId": "ts-historia" }
+              ]
+            },
+            {
+              "label": "5.º semestre",
+              "courses": [
+                { "id": "ts-trabajo-social-2", "name": "Trabajo Social II", "credits": 6, "requirementId": "ts-fundamentos" },
+                { "id": "ts-politicas-sociales", "name": "Políticas Sociales", "credits": 8, "requirementId": "ts-politicas" },
+                { "id": "ts-psicologia", "name": "Psicología", "credits": 4, "requirementId": "ts-psicosocial" },
+                { "id": "ts-teorias-sociales-2", "name": "Teorías Sociales II", "credits": 8, "requirementId": "ts-teorias" }
+              ]
+            },
+            {
+              "label": "6.º semestre",
+              "courses": [
+                { "id": "ts-trabajo-social-3", "name": "Trabajo Social III", "credits": 6, "requirementId": "ts-fundamentos" },
+                { "id": "ts-proyecto-integral-1", "name": "Proyecto Integral I · elección temática anual", "credits": 24, "requirementId": "ts-fundamentos", "curricularBlock": true },
+                { "id": "ts-psicologia-social", "name": "Psicología Social", "credits": 6, "requirementId": "ts-psicosocial" },
+                { "id": "ts-antropologia", "name": "Antropología de las Sociedades Contemporáneas", "credits": 6, "requirementId": "ts-teorias" },
+                { "id": "ts-etica", "name": "Ética Filosófica", "credits": 6, "requirementId": "ts-filosofia" }
+              ]
+            },
+            {
+              "label": "7.º semestre",
+              "courses": [
+                { "id": "ts-trabajo-social-4", "name": "Trabajo Social IV", "credits": 6, "requirementId": "ts-fundamentos" },
+                { "id": "ts-politicas-optativa-1", "name": "Optativa de Políticas Públicas, Planificación y Gestión I", "credits": 5, "requirementId": "ts-politicas", "curricularBlock": true },
+                { "id": "ts-psicosocial-optativa", "name": "Optativa de Componentes Psicosociales y Pedagógicos", "credits": 4, "requirementId": "ts-psicosocial", "curricularBlock": true },
+                { "id": "ts-teorias-optativa-1", "name": "Optativa de Teorías Sociales I", "credits": 4, "requirementId": "ts-teorias", "curricularBlock": true },
+                { "id": "ts-metodologia-optativa-1", "name": "Optativa de Metodología de la Investigación", "credits": 3, "requirementId": "ts-metodologia", "curricularBlock": true },
+                { "id": "ts-filosofia-optativa", "name": "Optativa de Pensamiento Filosófico", "credits": 4, "requirementId": "ts-filosofia", "curricularBlock": true },
+                { "id": "ts-historia-uruguay", "name": "Historia del Uruguay Contemporáneo", "credits": 7, "requirementId": "ts-historia" }
+              ]
+            },
+            {
+              "label": "8.º semestre",
+              "courses": [
+                { "id": "ts-proyecto-integral-2", "name": "Proyecto Integral II · elección temática anual", "credits": 24, "requirementId": "ts-fundamentos", "curricularBlock": true },
+                { "id": "ts-politicas-optativa-2", "name": "Optativa de Políticas Públicas, Planificación y Gestión II", "credits": 5, "requirementId": "ts-politicas", "curricularBlock": true },
+                { "id": "ts-teorias-optativa-2", "name": "Optativa de Teorías Sociales II", "credits": 6, "requirementId": "ts-teorias", "curricularBlock": true },
+                { "id": "ts-metodologia-optativa-2", "name": "Taller de Investigación de Proyecto Integral II", "credits": 8, "requirementId": "ts-metodologia", "curricularBlock": true },
+                { "id": "ts-epistemologia", "name": "Epistemología", "credits": 6, "requirementId": "ts-filosofia" }
+              ]
+            },
+            {
+              "label": "Trabajo Final",
+              "courses": [
+                { "id": "ts-monografia-final", "name": "Monografía Final", "credits": 30, "requirementId": "ts-trabajo-final" }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "ts-nucleo-y-bloques",
+              "label": "Núcleo obligatorio y bloques flexibles mínimos",
+              "minCompleted": 40,
+              "courseIds": [
+                "ci-cuestion-social", "ci-sociedades-modernas", "ci-problemas-desarrollo", "ci-poder-estado", "ci-principios-economia",
+                "ci-estadistica-social", "ci-metodologia-investigacion", "ci-introduccion-trabajo-social", "ci-optativas-generales",
+                "ts-planificacion-1", "ts-metodologia-cuantitativa-1", "ts-metodologia-cualitativa-1",
+                "ts-trabajo-social-1", "ts-introduccion-proyectos", "ts-laboratorio", "ts-planificacion-2", "ts-teorias-sociales-1", "ts-historia-universal",
+                "ts-trabajo-social-2", "ts-politicas-sociales", "ts-psicologia", "ts-teorias-sociales-2",
+                "ts-trabajo-social-3", "ts-proyecto-integral-1", "ts-psicologia-social", "ts-antropologia", "ts-etica",
+                "ts-trabajo-social-4", "ts-politicas-optativa-1", "ts-psicosocial-optativa", "ts-teorias-optativa-1", "ts-metodologia-optativa-1", "ts-filosofia-optativa", "ts-historia-uruguay",
+                "ts-proyecto-integral-2", "ts-politicas-optativa-2", "ts-teorias-optativa-2", "ts-metodologia-optativa-2", "ts-epistemologia", "ts-monografia-final"
+              ]
+            },
+            { "id": "ts-ci-introduccion-alternativa", "label": "Una alternativa de introducción del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-historia-america-latina", "ci-opcion-politica", "ci-opcion-economica-social"] },
+            { "id": "ts-ci-matematica", "label": "Una alternativa de matemática del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-matematica-1", "ci-matematica-extendida"] },
+            { "id": "ts-ci-tematica", "label": "Un seminario multidisciplinario del Ciclo Inicial", "minCompleted": 1, "courseIds": ["ci-desafios-contemporaneos", "ci-renta-politicas-clima", "ci-experiencias-desarrollo", "ci-genero-desigualdades", "ci-accion-colectiva"] }
+          ],
+          "prerequisites": [
+            {
+              "targetId": "ts-proyecto-integral-1",
+              "courseIds": ["ts-laboratorio", "ts-introduccion-proyectos", "ts-planificacion-1", "ts-metodologia-cualitativa-1", "ts-metodologia-cuantitativa-1"]
+            },
+            {
+              "targetId": "ts-proyecto-integral-2",
+              "courseIds": ["ts-proyecto-integral-1", "ts-politicas-sociales", "ts-planificacion-2", "ts-teorias-sociales-1", "ts-trabajo-social-1", "ts-trabajo-social-2"]
+            }
+          ]
         }
       },
       "offerings": [
@@ -1725,6 +1886,15 @@
           ]
         },
         {
+          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/08/CI-Malla-curricular1.pdf",
+          "authority": "Consejo de Facultad de Ciencias Sociales, Resolución 1303 de 26/06/2025",
+          "supports": [
+            "unidades y alternativas vigentes del Ciclo Inicial",
+            "120 créditos y mínimos de sus cuatro módulos",
+            "Introducción al Trabajo Social como optativa específica de 10 créditos"
+          ]
+        },
+        {
           "url": "https://cienciassociales.edu.uy/wp-content/uploads/2021/07/NORMAS-DE-LA-LICENCIATURA-EN-TRABAJO-SOCIAL-versi%C3%B3n-actualizada.pdf",
           "authority": "Facultad de Ciencias Sociales, Udelar",
           "supports": [
@@ -1754,14 +1924,14 @@
       "anomalies": [
         {
           "field": "bedeliasComposition",
-          "resolution": "Tanto FCS como CENUR Litoral Norte omiten la composición en la interfaz pública. La UI puede mostrar la identidad, los 360 créditos y las sedes auditadas, pero no debe inventar materias ni previaturas."
+          "resolution": "Tanto FCS como CENUR Litoral Norte omiten la composición en la interfaz pública. La UI usa la malla curricular oficial 2025 de FCS para proyectar unidades, bloques flexibles, créditos y las previas explícitas de Proyecto Integral I y II."
         },
         {
           "field": "currentFcsWebCopy",
           "resolution": "Una página para futuros estudiantes contiene una errata sobre la duración del Ciclo Avanzado. Se usa el Plan 2009, la malla vigente y la evaluación institucional, que convergen en cuatro años y 360 créditos."
         }
       ],
-      "remainingWork": "La identidad, el título, los mínimos y las sedes quedan normalizados. Para ofrecer una malla interactiva completa se necesita convertir la malla oficial y sus reglas vigentes a unidades curriculares curadas; hasta entonces la UI debe declarar composición no publicada."
+      "remainingWork": "La malla curricular queda normalizada para planificación. La oferta nominal de optativas se mantiene como bloques por módulo porque cambia por semestre. La condición alternativa de examen de Teorías Sociales II y los requisitos no puramente crediticios del Trabajo Final quedan documentados en las fuentes, pero no se convierten en bloqueos ejecutables hasta que el motor represente condición de reglamentado/promovido y aprobación por ciclo."
     },
     {
       "identity": "escalonada de enfermeria:2001",
@@ -13594,5 +13764,5 @@
       "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
     }
   ],
-  "contentHash": "sha256:cf360bfb1566d396ab00461565527957f3a8686958699c1ac007a545190a20ef"
+  "contentHash": "sha256:fcdffae97dc369be2b4259fcafaa231a9948949bc9ef90fc26a10bfa2a57afce"
 }

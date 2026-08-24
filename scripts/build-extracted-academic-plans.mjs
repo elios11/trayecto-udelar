@@ -233,7 +233,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
       const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
       const credits = Number(rawCourse.credits);
       const nodeId = rawCourse.requirementId ?? "plan-total";
-      const courseSourceUrl = rawCourse.sourceUrl ?? sourceUrl;
+      const courseSourceUrl = rawCourse.sourceUrl ?? period.sourceUrl ?? sourceUrl;
       courses.push({
         id,
         name: rawCourse.name,
@@ -260,7 +260,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
       shortName: requirement.shortName,
       minCredits: Number(requirement.minCredits),
       sourceStatus: "official",
-      sourceUrl,
+      sourceUrl: requirement.sourceUrl ?? sourceUrl,
     });
   }
 
@@ -269,7 +269,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     label: group.label,
     minCompleted: Number(group.minCompleted),
     courseIds: group.courseIds.map((id) => courseIdBySourceId.get(id)).filter(Boolean),
-    sourceUrl,
+    sourceUrl: group.sourceUrl ?? sourceUrl,
   }));
 
   const requirementCourseGroups = Object.fromEntries((curriculum.creditGroups ?? []).map((group) => [

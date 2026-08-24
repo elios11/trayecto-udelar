@@ -11,17 +11,16 @@ const saved = readJson("data/bedelias/inventory/ui-curriculum-queue.json");
 
 test("prioriza cada plan visible que todavía no tiene una malla utilizable", () => {
   assert.equal(saved.counts.currentUiPlans, 152);
-  assert.equal(saved.counts.curriculumReady, 124);
-  assert.equal(saved.counts.curriculumPending, 28);
+  assert.equal(saved.counts.curriculumReady, 125);
+  assert.equal(saved.counts.curriculumPending, 27);
   assert.deepEqual(saved.counts.byPriority, {
-    "audited-curriculum-normalization-pending": 3,
+    "audited-curriculum-normalization-pending": 2,
     "official-curriculum-sources-pending": 25,
   });
   assert.equal(new Set(saved.queue.map((entry) => entry.identity)).size, saved.queue.length);
   assert.deepEqual(
-    saved.queue.slice(0, 3).map((entry) => entry.identity),
+    saved.queue.slice(0, 2).map((entry) => entry.identity),
     [
-      "licenciatura en trabajo social:2009",
       "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
       "lic en ingenieria biologica:2013",
     ],
