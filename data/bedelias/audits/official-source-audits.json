@@ -19536,7 +19536,120 @@
       ],
       "uiNotice": "Plan 2013 de Rocha: 240 créditos en seis semestres y Proyecto de Egreso. Las entradas complementarias de Bedelías no sustituyen las 15 unidades del plan oficial.",
       "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías; no se deducen del orden semestral."
+    },
+    {
+      "identity": "tecnicatura en gestion de recursos naturales:2011",
+      "career": "TECNICATURA EN GESTIÓN DE RECURSOS NATURALES",
+      "planYear": "2011",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, duración, créditos, mínimos por eje, trabajo final, optativas, articulación y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Resolución 33 del Consejo Directivo Central de 07/06/2011"],
+        "planYear": "2011",
+        "title": "Técnico en Gestión de Recursos Naturales y Desarrollo Sustentable",
+        "careerName": "Tecnicatura en Gestión de Recursos Naturales",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 30,
+        "minimumCredits": 195,
+        "current": true,
+        "degreeRule": "El título exige 195 créditos: al menos 50 en Conceptuales-Operativas, 50 en Diagnóstico, 50 en Aplicación, 35 de Trabajo Final y como máximo 10 optativos.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://impo.com.uy/diariooficial/2011/08/08/avisosdeldia.pdf",
+          "pathwayLabel": "Currículo flexible por ejes",
+          "pathwayDescription": "Catálogo acreditable organizado por los ejes oficiales; las asignaturas del plan son ejemplos y no una secuencia obligatoria.",
+          "periodOrder": ["CONCEPTUALES - OPERATIVAS", "DIAGNÓSTICO", "APLICACIÓN", "OPTATIVAS", "TRABAJO FINAL", "Validación de egreso"],
+          "pathRequirementMap": {
+            "2558": "conceptual-operational",
+            "3738": "diagnosis",
+            "3663": "application",
+            "2478": "optional",
+            "3595": "final-work"
+          },
+          "courseOverrides": {
+            "RN205": { "credits": 35, "requirementId": "final-work", "periodLabel": "TRABAJO FINAL" }
+          },
+          "creditRequirements": [
+            { "id": "conceptual-operational", "name": "Conceptuales-Operativas", "shortName": "Conceptuales", "minCredits": 50 },
+            { "id": "diagnosis", "name": "Diagnóstico", "shortName": "Diagnóstico", "minCredits": 50 },
+            { "id": "application", "name": "Aplicación", "shortName": "Aplicación", "minCredits": 50 },
+            { "id": "optional", "name": "Optativas, con máximo normativo de 10 créditos", "shortName": "Optativas", "minCredits": 0, "credentialRequired": false },
+            { "id": "final-work", "name": "Trabajo Final o pasantía", "shortName": "Trabajo final", "minCredits": 35 }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "mandatory-final-work",
+              "label": "Trabajo Final o pasantía obligatorio",
+              "sourceCourseIds": ["RN205"]
+            }
+          ],
+          "manualCompletionValidation": "Validación de la Comisión de Carrera: máximo 10 créditos optativos y pertinencia de los 195 créditos del currículo"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CUR",
+          "locations": ["Rivera"],
+          "role": "oferta completa de Facultad de Ciencias en el CENUR Noreste, sede Rivera",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cur-tecnicatura-en-gestion-de-recursos-naturales-2011.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 195,
+        "compositionMatterEntries": 75,
+        "distinctCourseRecords": 71,
+        "compositionCredits": 535,
+        "distinctCourseCredits": 500,
+        "interpretation": "Bedelías reproduce los mínimos de 50+50+50 créditos, el grupo optativo sin mínimo y el Trabajo Final de 35 créditos. Sus 75 entradas son un catálogo acumulado por ejes y pueden repetir unidades entre grupos; no forman una malla obligatoria completa."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-one-offering-flexible-by-axes",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2011 define una tecnicatura propia de Facultad de Ciencias, radicada en Rivera y flexible por ejes. Su articulación académica con la Licenciatura en Recursos Naturales no la convierte en una credencial intermedia de esa licenciatura.",
+        "normalization": [
+          "Publicar una única Tecnicatura en Gestión de Recursos Naturales Plan 2011 bajo Facultad de Ciencias y con sede Rivera.",
+          "Corregir la duración administrativa de 60 meses a los dos años y medio oficiales.",
+          "Controlar 50 créditos Conceptuales-Operativos, 50 de Diagnóstico, 50 de Aplicación, 35 de Trabajo Final y 195 totales.",
+          "Mantener la oferta de Bedelías como catálogo por ejes: el plan declara sus asignaturas como ejemplos ilustrativos y no exige aprobarlas todas.",
+          "Aplicar validación de Comisión de Carrera para el máximo de 10 créditos optativos, restricción que el contador de mínimos no representa por sí solo.",
+          "Conservar el Trabajo Final o pasantía como requisito nominal obligatorio.",
+          "No otorgar automáticamente este título desde la Licenciatura ni presentar la articulación entre carreras como una trayectoria interna."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://impo.com.uy/diariooficial/2011/08/08/avisosdeldia.pdf",
+          "authority": "Diario Oficial - IMPO / Universidad de la República",
+          "supports": ["Resolución 33 del CDC", "Plan 2011", "título", "195 créditos", "mínimos por ejes", "máximo optativo", "Trabajo Final", "carácter ilustrativo de las asignaturas"]
+        },
+        {
+          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/tecnicatura-gestion-recursos-naturales",
+          "authority": "Facultad de Ciencias, Udelar",
+          "supports": ["vigencia", "dos años y medio", "195 créditos", "ejes", "Trabajo Final", "dirección de carrera", "sede Rivera"]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": ["Plan 2011", "dos años y medio", "195 créditos", "sede Rivera"]
+        }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "El plan, Facultad de Ciencias y Planeamiento establecen dos años y medio; se normaliza a 30 meses frente a los 60 administrativos de Bedelías y del portal central." },
+        { "field": "catalogSize", "resolution": "Las 75 entradas y 535 créditos por caminos de composición son oferta acumulada y contienen unidades repetidas entre ejes. No se vuelven obligaciones de egreso." },
+        { "field": "optionalMaximum", "resolution": "El máximo de 10 créditos optativos requiere validación explícita porque el modelo de progreso controla mínimos, no máximos por nodo." },
+        { "field": "degreeRelationship", "resolution": "La tecnicatura conserva título y plan propios; la continuidad hacia la Licenciatura no es una salida intermedia automática." }
+      ],
+      "uiNotice": "Plan 2011 flexible: completá 50 créditos en cada eje, el Trabajo Final de 35 créditos y 195 totales. La Comisión de Carrera valida la pertinencia del currículo y el máximo de 10 créditos optativos.",
+      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La aprobación concreta de unidades dentro de cada eje corresponde a la Comisión de Carrera."
     }
   ],
-  "contentHash": "sha256:9d2c0b740b123206dd85e113c9fb2e26190780ee16385f39bf6ac98cb6dc0d16"
+  "contentHash": "sha256:c6a3d260538bebc1071b3708977a1b35eb1c873fee54ac30fc4b011dd3eae06d"
 }

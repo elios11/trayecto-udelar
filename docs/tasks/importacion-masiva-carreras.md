@@ -1293,3 +1293,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:9d2c0b740b123206dd85e113c9fb2e26190780ee16385f39bf6ac98cb6dc0d16`. Cola general: 71 identidades pendientes; hash `sha256:d2c72b71a991bdc966b5f4f7344c7472a55965bcf16bdf70a2ced01bffd02c26`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:bf6ecac1e0d02c1b8212559bdbee11da216a0ec8788f1a8681efe885fa619aec`. Cola funcional vacía; hash `sha256:ffdac73966bdd484be4573682ec65d8e5fac682aa81ccb042d812af8b611ab69`.
 - Siguiente paso: auditar la Tecnicatura en Gestión de Recursos Naturales Plan 2011 y contrastar su articulación con la Licenciatura Plan 2010 sin convertirla en título intermedio automático.
+
+### Tecnicatura en Gestión de Recursos Naturales Plan 2011 — currículo flexible operativo 2026-08-24
+
+- La Resolución 33 del CDC de 07/06/2011 aprobó el título `Técnico en Gestión de Recursos Naturales y Desarrollo Sustentable`: 195 créditos, con mínimos de 50 en Conceptuales-Operativas, 50 en Diagnóstico, 50 en Aplicación, 35 de Trabajo Final o pasantía y un máximo de 10 optativos.
+- Facultad de Ciencias y Planeamiento publican una duración de dos años y medio y sede Rivera. La UI normaliza a 30 meses y documenta como metadato administrativo contradictorio los 60 meses de Bedelías y del portal central.
+- El plan declara las asignaturas de cada eje como ejemplos ilustrativos. Por eso las 75 entradas y 535 créditos visibles por caminos de composición se conservan como catálogo acreditable y no se convierten en una malla que deba aprobarse completa.
+- El contador controla los tres mínimos, el Trabajo Final nominal y 195 créditos totales. Como el modelo no limita máximos por nodo, agrega una validación explícita de Comisión de Carrera para el máximo de 10 optativos y la pertinencia del currículo.
+- La tecnicatura mantiene carrera, plan y título propios. Su articulación con la Licenciatura en Recursos Naturales permite continuidad académica, pero no se presenta como una credencial intermedia automática de la Licenciatura Plan 2010.
+- Registro de auditoría: hash `sha256:c6a3d260538bebc1071b3708977a1b35eb1c873fee54ac30fc4b011dd3eae06d`. Cola general: 70 identidades pendientes; hash `sha256:1dbf39afcacf8d4e5d95495fd27e6218316c30c8ddb973750f6ad41c483a8174`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:086d19650ab13c707522c76564c0b1a92f16fb0d52cd30cc8406a6e43bdf20db`. Cola funcional vacía; hash `sha256:4bbcb78107625ee3d2a05eaa561b05157612a396de3f6c75f8871c15af554b01`.
+- Siguiente paso: auditar el Tecnólogo en Madera Plan 2012, primera identidad reproducible restante.
