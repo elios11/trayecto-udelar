@@ -504,12 +504,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
-  "bedelias-fhum-letras-hispanicas-1976": {
-    load: () => import("./bedelias-generated/bedelias-fhum-letras-hispanicas-1976.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fhum-licenciatura-en-estudios-sordos-2025": {
     load: () => import("./bedelias-generated/bedelias-fhum-licenciatura-en-estudios-sordos-2025.json"),
     pathwayIds: ["bedelias"],

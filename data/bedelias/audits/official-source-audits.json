@@ -14568,7 +14568,105 @@
         }
       ],
       "remainingWork": "Caso cerrado como antecedente histórico sin continuidad vigente demostrada. Si Facultad publicara una resolución o calendario específico para estudiantes activos del Plan 1983, deberá reabrirse la auditoría antes de habilitarlo como plan histórico."
+    },
+    {
+      "identity": "letras hispanicas:1976",
+      "career": "LETRAS HISPÁNICAS",
+      "planYear": "1976",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia e identidad del título histórico Licenciado en Letras Hispánicas frente a los planes de Licenciatura en Letras publicados por FHCE.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Licenciado en Letras Hispánicas",
+        "historicalCareerCode": "54",
+        "currentSuccessor": {
+          "identity": "letras:2014",
+          "title": "Licenciado en Letras",
+          "planYear": "2014",
+          "durationMonths": 48,
+          "minimumCredits": 360
+        },
+        "intermediatePublishedPlan": {
+          "title": "Licenciado en Letras con opción",
+          "planYear": "1991"
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-letras-hispanicas-1976.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "titleLabel": "LICENCIADO EN LETRAS HISPANICAS",
+        "compositionMatterCount": 0,
+        "interpretation": "El registro conserva nombre, título y año, pero no publica materias, créditos, perfiles ni requisitos. FHCE sólo presenta como planes de Letras el vigente 2014 y el anterior 1991."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-hispanic-letters-title-superseded-by-letters-plans",
+        "canonicalIdentity": "letras:2014",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "Licenciado en Letras Hispánicas Plan 1976 permanece reconocido como título histórico, pero no figura como plan ofrecido o utilizable por FHCE. La Facultad publica Plan 2014 y Plan 1991 para Letras; sin composición ni evidencia de continuidad específica, el registro de 1976 no puede presentarse como una carrera adicional ni recibir la malla moderna por inferencia."
+      },
+      "sources": [
+        {
+          "url": "https://fhce.edu.uy/plan-de-estudios-11/",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "Plan 2014 vigente de Licenciatura en Letras con 360 créditos y cuatro años",
+            "publicación del Plan 1991 como plan anterior disponible",
+            "ausencia del Plan 1976 y del título Letras Hispánicas entre los planes publicados"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/licenciatura_en_letras.pdf",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "estructura del Plan 1991 de Licenciatura en Letras",
+            "título Licenciado en Letras con opción Investigación o Docencia",
+            "plan posterior que no conserva Letras Hispánicas como carrera separada"
+          ]
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf",
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "supports": [
+            "registro administrativo histórico Letras Hispánicas, código de carrera 54, Plan 1976",
+            "distinción respecto de los códigos históricos y actuales de Letras"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/sites/default/files/migrated-files/REGLAMENTO-UNIVERSITARIAS-2021_5.pdf",
+          "authority": "Universidad de la República",
+          "supports": [
+            "reconocimiento del título Licenciado en Letras Hispánicas para el orden de egresados",
+            "el reconocimiento electoral del título no establece una oferta académica vigente"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/Informe_Final_graficos_arreglados_23_10.pdf",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "oferta institucional de Licenciatura en Letras Plan 2014 en Montevideo",
+            "ausencia de Letras Hispánicas como carrera de grado ofrecida"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "current",
+          "resolution": "Se priorizan metadata.current=false, la página oficial de planes y la oferta institucional sobre la marca current heredada del índice."
+        },
+        {
+          "field": "composition",
+          "resolution": "El snapshot declara composición disponible pero contiene cero materias. No se reutiliza la malla de Letras 2014 ni el Plan 1991 como si fueran el Plan 1976."
+        },
+        {
+          "field": "titleRecognition",
+          "resolution": "La ordenanza electoral conserva derechos de egresados del título histórico; no prueba ingreso, cursado, exámenes o egreso activo por ese plan."
+        }
+      ],
+      "remainingWork": "Caso cerrado como título histórico sin malla ni continuidad específica demostrada. Una eventual equivalencia o cambio al Plan 1991/2014 requiere resolución individual de FHCE y no se automatiza."
     }
   ],
-  "contentHash": "sha256:4a9c60498092cf4497039cf142321ded086b36358b0d6a19c137ea9f9c815d5a"
+  "contentHash": "sha256:5f362906296a80c7d0424258a595f66bbddb152b7d034eee589476e0d130ce12"
 }

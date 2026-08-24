@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T06:38:45.811Z",
+  "generatedAt": "2026-08-24T06:45:49.298Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:4a9c60498092cf4497039cf142321ded086b36358b0d6a19c137ea9f9c815d5a"
+    "officialAuditRegistryHash": "sha256:5f362906296a80c7d0424258a595f66bbddb152b7d034eee589476e0d130ce12"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 82,
-    "pendingCanonicalIdentities": 95,
+    "evidenceClosedCanonicalIdentities": 83,
+    "pendingCanonicalIdentities": 94,
     "byPriority": {
-      "official-sources-pending": 95
+      "official-sources-pending": 94
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -513,6 +513,12 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "historical-predecessor-plan-not-current"
+    },
+    {
+      "identity": "letras hispanicas:1976",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-hispanic-letters-title-superseded-by-letters-plans"
     }
   ],
   "queue": [
@@ -2191,35 +2197,6 @@
       "regionalComparisons": []
     },
     {
-      "identity": "letras hispanicas:1976",
-      "career": {
-        "name": "LETRAS HISPÁNICAS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1976",
-        "name": "LICENCIATURA EN LETRAS HISPANICAS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:letras hispanicas:1976",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:letras hispanicas:1976",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
       "identity": "licenciatura en estudios sordos:2025",
       "career": {
         "name": "LICENCIATURA EN ESTUDIOS SORDOS",
@@ -3500,5 +3477,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:99b5e8c4b3ff3856cb84592911247ceedb180ceb6ff2e6154e3e0b5ba32be2c8"
+  "contentHash": "sha256:d1a8ff0ba91522050887e09afe1890380d804c38a63c0b3c5fb2bed2b10eb650"
 }

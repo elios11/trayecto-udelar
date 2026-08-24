@@ -1169,3 +1169,12 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:4a9c60498092cf4497039cf142321ded086b36358b0d6a19c137ea9f9c815d5a`. Cola general: 95 identidades pendientes; hash `sha256:99b5e8c4b3ff3856cb84592911247ceedb180ceb6ff2e6154e3e0b5ba32be2c8`.
 - Manifiesto UI: 147 proyecciones, 134 con composición, 13 sin composición y treinta identidades excluidas; hash `sha256:b9994022a2bfabe47c1fa0ec3a70ed5860c5b180f476dc162858f2f845513243`. Cola funcional: hash `sha256:04b1ce11396ea8cacdec51fed9c12c494baf1f7b7dbc3d3b2e700c0f4c08c119`.
 - Siguiente paso funcional: Letras Hispánicas Plan 1976, contrastando el registro sin composición con la estructura actual y los mecanismos oficiales de transición de FHCE.
+
+### Letras Hispánicas Plan 1976 — título histórico cerrado 2026-08-24
+
+- FHCE publica para Licenciatura en Letras únicamente el Plan 2014 vigente —cuatro años y 360 créditos— y el Plan 1991 anterior. El título Licenciado en Letras Hispánicas permanece reconocido para egresados, pero no aparece como plan ofrecido o utilizable.
+- La documentación administrativa histórica identifica Letras Hispánicas como carrera 54, Plan 1976, separada de las claves de Letras. El snapshot conserva ese nombre y título, marca `metadata.current=false` y no contiene materias, créditos, perfiles ni requisitos.
+- La UI excluye Letras Hispánicas 1976 y conserva Letras 2014 como carrera vigente. No copia la malla 1991/2014 al registro vacío ni presume equivalencias; cualquier cambio de plan sigue siendo una resolución individual de FHCE.
+- Registro de auditoría: hash `sha256:5f362906296a80c7d0424258a595f66bbddb152b7d034eee589476e0d130ce12`. Cola general: 94 identidades pendientes; hash `sha256:d1a8ff0ba91522050887e09afe1890380d804c38a63c0b3c5fb2bed2b10eb650`.
+- Manifiesto UI: 146 proyecciones, 134 con composición, 12 sin composición y treinta y una identidades excluidas; hash `sha256:a2d23ee3ed76be76c586b8cb78149bd7ab1cb653df9ab5a446978f145fae8231`. Cola funcional: hash `sha256:49ee9c5bdcac02d882eafe743228598d58544d0e1d0264a7232d65abe28cedc6`.
+- Siguiente paso funcional: Tecnicatura en Turismo Plan 1996, contrastando su registro sin materias con la Licenciatura en Turismo Plan 2014 y cualquier régimen oficial de continuidad de FHCE.
