@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T08:16:15.724Z",
+  "generatedAt": "2026-08-24T08:31:36.177Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:88c29ce1739f8002a7e67bcd0ae27113493f4250c6185e82c7875843cb7871ba"
+    "officialAuditRegistryHash": "sha256:4cd79081109ed7389250358058aee2c1da21493d1968da8711ad653e29dacee5"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 102,
-    "pendingCanonicalIdentities": 75,
+    "evidenceClosedCanonicalIdentities": 103,
+    "pendingCanonicalIdentities": 74,
     "byPriority": {
-      "official-sources-pending": 75
+      "official-sources-pending": 74
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -633,39 +633,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "one-plan-one-offering-with-flexible-pathways"
+    },
+    {
+      "identity": "licenciatura en educacion fisica:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "distinct-regional-plan-and-teaching-practice-option"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en educacion fisica:2014",
-      "career": {
-        "name": "LICENCIATURA EN EDUCACIÓN FÍSICA",
-        "normalizedName": "licenciatura en educacion fisica",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014"
-      },
-      "canonicalSource": {
-        "serviceCode": "CUR",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
-        "planKey": "CUR:licenciatura en educacion fisica:2014",
-        "site": null,
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CUR",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL NORESTE - RIVERA",
-          "planKey": "CUR:licenciatura en educacion fisica:2014",
-          "site": null,
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en recursos naturales:2010",
       "career": {
@@ -3033,5 +3009,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:5715a640cce5bf9320222af41e212023223cf15269eac00dd7aac9dffd80484b"
+  "contentHash": "sha256:a30aa9eb53f13321a9d2c29d6e4c7ba1fbf38de219af34c38a5d27be5d00ab4a"
 }
