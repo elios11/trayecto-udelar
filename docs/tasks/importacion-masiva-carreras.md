@@ -1209,3 +1209,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:17b61757548aa568d8aced0a807c094dba299815c8b7ddc182fc52e6fa5ccf22`. Cola general: 83 identidades pendientes; hash `sha256:0ab5cda9510dbae9895da5c0e00b1daa3792efa88aa96ff3363c5e19313a9324`.
 - Manifiesto UI: 144 proyecciones, 143 con composición, una sin composición y treinta y tres identidades excluidas; hash `sha256:f708c3c1f429a816c11f9b4a8ab0def901e675cbac19eb2771e4d7dea3ec22c9`. Cola funcional: sólo `Tecnólogo Agroenergético` Plan 2008; hash `sha256:9986a1f7b2b58fb9225b5ee6db6354c0b61313317e7e15246c6e4ad9f4e310c1`.
 - Siguiente paso funcional: cerrar Tecnólogo Agroenergético Plan 2008, última proyección actual sin malla utilizable; después continuar las auditorías oficiales generales sin reabrir extracciones.
+
+### Tecnólogo Agroenergético Plan 2008 — cohorte histórica cerrada 2026-08-24
+
+- El Plan Estratégico de Desarrollo de Udelar documentó que en 2014 se encontraba cursando la última generación en Artigas. La serie oficial de ingresos registra cuatro cohortes y ninguna desde 2013; las estadísticas de egresos no muestran titulaciones después de 2014.
+- La oferta e inscripciones de Facultad de Química 2026 tampoco incluyen Tecnólogo Agroenergético. La página curricular histórica de UTU y los convenios fundacionales se conservan como evidencia de la carrera conjunta en Bella Unión, pero no demuestran cursado ni régimen de egreso actual.
+- Bedelías mantiene `current: true`, 36 meses y 321 créditos, pero no publica una sola materia. La documentación universitaria histórica describe tres años y 270 créditos. La discrepancia no se reconcilia porque la cohorte terminó y no existe una malla vigente que habilite una proyección segura.
+- La UI excluye la identidad y conserva Bella Unión únicamente como sede histórica. Reabrirla requiere evidencia oficial de una nueva cohorte o de estudiantes activos con régimen de culminación publicado.
+- Registro de auditoría: hash `sha256:e08992d94f5f3f15990960160272d4f1172bad51eadd76d9b437d3faa1b4cfbc`. Cola general: 82 identidades pendientes; hash `sha256:ec0aee2dfd3a500339608aeb85b6d209e1c7cd48f093008ac38d7c64ac542c3f`.
+- Manifiesto UI: 143 proyecciones, las 143 con composición utilizable, ninguna vacía y treinta y cuatro identidades excluidas; hash `sha256:e94bffd0cb5410f5fe1137b6c3700dbfe800ae99beb26db6ee0180daf3195a48`. La cola funcional quedó vacía; hash `sha256:5d4f7a9cb6c79fa677713fe1afe1a9fc0c2b9e8ad84086381d552ee431eb4978`.
+- Siguiente paso: continuar las 82 auditorías oficiales generales de vigencia, títulos, mínimos y reglas; la extracción y la cobertura funcional de mallas visibles ya están cerradas.

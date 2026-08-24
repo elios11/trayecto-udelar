@@ -828,12 +828,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 225,
   },
-  "bedelias-fq-tecnologo-agroenergetico-2008": {
-    load: () => import("./bedelias-generated/bedelias-fq-tecnologo-agroenergetico-2008.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 321,
-  },
   "bedelias-fq-tecnologo-quimico-2025": {
     load: () => import("./bedelias-generated/bedelias-fq-tecnologo-quimico-2025.json"),
     pathwayIds: ["bedelias"],

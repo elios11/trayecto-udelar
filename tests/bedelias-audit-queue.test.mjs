@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 94);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 83);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 95);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 82);
   assert.deepEqual(saved.counts.byPriority, {
-    "official-sources-pending": 83,
+    "official-sources-pending": 82,
   });
   assert.deepEqual(saved.counts.regionalComparisons, {
     "curriculum-match-prerequisite-coverage-difference": 16,
@@ -124,6 +124,7 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
     "tecnicatura en radioisotopos:2006",
     "tecnologo en cosmetologia medica:2006",
     "obstetra partera:1990",
+    "tecnologo agroenergetico:2008",
   ]);
   assert.equal(saved.source.officialAuditRegistryHash, auditRegistry.contentHash);
   assert.equal(officialAuditRegistryHash(auditRegistry), auditRegistry.contentHash);

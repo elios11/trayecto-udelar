@@ -27,5 +27,5 @@ test("no inventa la malla de 1996 y conserva Turismo 2014 como opción vigente",
   const identities = new Set(report.plans.map((plan) => plan.identity));
   assert.ok(!identities.has("tecnicatura en turismo:1996"));
   assert.ok(identities.has("licenciatura en turismo:2014"));
-  assert.equal(report.counts.compositionUnavailable, 1);
+  assert.equal(report.counts.compositionUnavailable, 0);
 });

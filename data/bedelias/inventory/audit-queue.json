@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T07:17:39.817Z",
+  "generatedAt": "2026-08-24T07:20:32.083Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:17b61757548aa568d8aced0a807c094dba299815c8b7ddc182fc52e6fa5ccf22"
+    "officialAuditRegistryHash": "sha256:e08992d94f5f3f15990960160272d4f1172bad51eadd76d9b437d3faa1b4cfbc"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 94,
-    "pendingCanonicalIdentities": 83,
+    "evidenceClosedCanonicalIdentities": 95,
+    "pendingCanonicalIdentities": 82,
     "byPriority": {
-      "official-sources-pending": 83
+      "official-sources-pending": 82
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -585,6 +585,12 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "one-plan-multiple-offerings"
+    },
+    {
+      "identity": "tecnologo agroenergetico:2008",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-finite-cohort"
     }
   ],
   "queue": [
@@ -3137,35 +3143,6 @@
       ]
     },
     {
-      "identity": "tecnologo agroenergetico:2008",
-      "career": {
-        "name": "TECNÓLOGO AGROENERGÉTICO",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2008",
-        "name": "TECNOLOGO AGROENERGETICO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FQ",
-        "serviceName": "FACULTAD DE QUÍMICA",
-        "planKey": "FQ:tecnologo agroenergetico:2008",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FQ",
-          "serviceName": "FACULTAD DE QUÍMICA",
-          "planKey": "FQ:tecnologo agroenergetico:2008",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
       "identity": "tecnicatura en guardavidas:2025",
       "career": {
         "name": "TECNICATURA EN GUARDAVIDAS",
@@ -3224,5 +3201,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:0ab5cda9510dbae9895da5c0e00b1daa3792efa88aa96ff3363c5e19313a9324"
+  "contentHash": "sha256:ec0aee2dfd3a500339608aeb85b6d209e1c7cd48f093008ac38d7c64ac542c3f"
 }

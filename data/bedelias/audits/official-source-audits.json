@@ -17920,7 +17920,122 @@
         }
       ],
       "remainingWork": "La identidad, sedes y malla oficial quedan normalizadas. Las previaturas no se automatizan mientras no exista una publicación oficial completa y vigente que permita hacerlo sin inferencias."
+    },
+    {
+      "identity": "tecnologo agroenergetico:2008",
+      "career": "TECNÓLOGO AGROENERGÉTICO",
+      "planYear": "2008",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "historical-offering-and-current-status",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan tratado por la Comisión Sectorial de Enseñanza en 2008 y aprobado por el CDC en marzo de 2009"
+        ],
+        "title": "Tecnólogo Agroenergético",
+        "durationMonths": 36,
+        "current": false,
+        "historicalCredits": 270,
+        "historicalLocation": "Bella Unión, Artigas",
+        "historicalDelivery": "programa conjunto de Udelar y CETP-UTU, dictado en instalaciones de ALUR",
+        "lastGenerationStatus": "última generación en curso durante 2014"
+      },
+      "offerings": [
+        {
+          "serviceCode": "FQ",
+          "locations": [
+            "Bella Unión"
+          ],
+          "role": "registro administrativo histórico de una carrera compartida",
+          "curriculumVariant": false,
+          "admissionStatus": "historical-not-current"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fq-tecnologo-agroenergetico-2008.json",
+        "metadataCurrent": true,
+        "indexCurrent": true,
+        "compositionMatterCount": 0,
+        "publishedMinimumCredits": 321,
+        "interpretation": "El índice y el snapshot mantienen una marca current residual, pero no publican materias ni perfiles. Esa marca contradice la última generación documentada, la serie oficial de ingresos y la oferta de Facultad de Química 2026."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-finite-cohort",
+        "excludeFromCurrentUi": true,
+        "reason": "Udelar documentó que en 2014 cursaba la última generación. Las estadísticas oficiales no registran ingresos desde 2013 ni egresos después de 2014, y Facultad de Química no incluye la carrera entre sus ingresos 2026.",
+        "normalization": [
+          "Excluir Tecnólogo Agroenergético del selector de carreras vigentes.",
+          "Conservar Bella Unión como sede histórica de la cohorte cerrada, no como opción territorial actual.",
+          "Preservar el snapshot vacío y la marca residual de Bedelías como evidencia administrativa.",
+          "No reconstruir una malla actual ni convertir automáticamente los 270 créditos históricos en los 321 informados por SGAE.",
+          "Reabrir la identidad sólo si Udelar o ANEP publican una nueva cohorte, calendario o régimen de culminación vigente."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://udelar.edu.uy/media/10344",
+          "authority": "Universidad de la República, Plan Estratégico de Desarrollo 2015-2019",
+          "supports": [
+            "en 2014 la carrera de Artigas cursaba su última generación"
+          ]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/10/Ingresos-totales-a-Servicios-Estudiantes-de-grado-2000-2024.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": [
+            "ingresos únicamente en cuatro cohortes y ausencia de nuevos ingresos desde 2013"
+          ]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": [
+            "ausencia de egresos de Tecnólogo Agroenergético entre 2015 y 2023"
+          ]
+        },
+        {
+          "url": "https://www.fq.edu.uy/es/node/60",
+          "authority": "Facultad de Química, Udelar",
+          "supports": [
+            "oferta e inscripciones de grado 2026 sin Tecnólogo Agroenergético"
+          ]
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/14116",
+          "authority": "Repositorio institucional Colibrí, Udelar",
+          "supports": [
+            "convenio de 2008 para presentar la carrera corta conjunta"
+          ]
+        },
+        {
+          "url": "https://planeamientoeducativo.utu.edu.uy/sites/cursos.utu.edu.uy/oferta-educativa/2005/2004/TICUR/050/t/agroenergetico.htm",
+          "authority": "Planeamiento Educativo, UTU",
+          "supports": [
+            "descripción histórica del perfil y del currículo semiabierto"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "current",
+          "resolution": "La marca current de Bedelías se considera residual frente a la última generación documentada, doce años sin ingresos y la ausencia en la oferta 2026."
+        },
+        {
+          "field": "planYear",
+          "resolution": "Bedelías usa Plan 2008; la aprobación final del CDC se documenta en marzo de 2009. Se conserva 2008 como clave administrativa sin presentarlo como año inequívoco de aprobación."
+        },
+        {
+          "field": "credits",
+          "resolution": "Las estadísticas universitarias históricas describen 270 créditos y Bedelías informa un mínimo de 321 sin composición. No se reconcilian ni se proyectan porque la oferta terminó y falta una distribución oficial utilizable."
+        },
+        {
+          "field": "archivedCurriculum",
+          "resolution": "UTU conserva una página descriptiva del currículo; su disponibilidad documental no demuestra ingreso, cursado o régimen de egreso vigente."
+        }
+      ],
+      "remainingWork": "Ninguno para la UI actual. Reabrir sólo ante evidencia oficial de una nueva cohorte o de estudiantes activos con un régimen de culminación publicado."
     }
   ],
-  "contentHash": "sha256:17b61757548aa568d8aced0a807c094dba299815c8b7ddc182fc52e6fa5ccf22"
+  "contentHash": "sha256:e08992d94f5f3f15990960160272d4f1172bad51eadd76d9b437d3faa1b4cfbc"
 }
