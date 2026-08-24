@@ -22,7 +22,7 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-cenurln-licenciatura-en-ciencias-sociales-2009.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 360,
   },
   "bedelias-cenurln-licenciatura-en-diseno-integrado-2012": {
     load: () => import("./bedelias-generated/bedelias-cenurln-licenciatura-en-diseno-integrado-2012.json"),

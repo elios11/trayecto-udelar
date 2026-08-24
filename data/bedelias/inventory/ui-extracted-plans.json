@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:ec0aee2dfd3a500339608aeb85b6d209e1c7cd48f093008ac38d7c64ac542c3f",
-    "officialAuditHash": "sha256:e08992d94f5f3f15990960160272d4f1172bad51eadd76d9b437d3faa1b4cfbc",
+    "auditQueueHash": "sha256:8bc7ca01f4f4fab2ac748c2165e93f6e2ebb2e78a0bcba82cceabce7208259c3",
+    "officialAuditHash": "sha256:30fc142b8fa93068c1a9b70ffd47c33f2c17616e803d6dc2420782599f7da5c2",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 143,
     "compositionAvailable": 143,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 31,
+    "plansWithOfficialCampuses": 32,
     "excludedFromCurrentUi": 34
   },
   "plans": [
@@ -19,18 +19,23 @@
       "planId": "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-ciclo-en-biologia-bioquimica-2016.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "salto",
+        "paysandu"
+      ]
     },
     {
       "identity": "ciclo inicial de matematica:2012",
       "planId": "bedelias-cenurln-ciclo-inicial-de-matematica-2012",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-ciclo-inicial-de-matematica-2012.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "salto"
+      ]
     },
     {
       "identity": "licenciatura en ciencias hidricas aplicadas:2016",
@@ -48,9 +53,11 @@
       "planId": "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-licenciatura-en-ciencias-sociales-2009.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "salto"
+      ]
     },
     {
       "identity": "licenciatura en diseno integrado:2012",
@@ -90,9 +97,11 @@
       "planId": "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "paysandu"
+      ]
     },
     {
       "identity": "licenciatura en diseno de paisaje:2008",
@@ -1460,5 +1469,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:e94bffd0cb5410f5fe1137b6c3700dbfe800ae99beb26db6ee0180daf3195a48"
+  "contentHash": "sha256:4038595050e64a7f261c4f8b6f63be9697479a21017065b57ec1e227e816c37f"
 }

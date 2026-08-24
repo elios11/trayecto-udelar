@@ -18035,7 +18035,355 @@
         }
       ],
       "remainingWork": "Ninguno para la UI actual. Reabrir sólo ante evidencia oficial de una nueva cohorte o de estudiantes activos con un régimen de culminación publicado."
+    },
+    {
+      "identity": "ciclo en biologia bioquimica:2016",
+      "career": "CICLO EN BIOLOGÍA - BIOQUÍMICA",
+      "planYear": "2016",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, créditos, continuidad y sedes",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Ciclo en Biología - Bioquímica",
+        "durationMonths": 12,
+        "minimumCredits": 90,
+        "current": true,
+        "sharedWith": [
+          "Facultad de Ciencias"
+        ]
+      },
+      "offerings": [
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto",
+            "Paysandú"
+          ],
+          "role": "ciclo completo del mismo plan en ambas sedes",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-ciclo-en-biologia-bioquimica-2016.json",
+        "metadataCurrent": true,
+        "publishedMinimumCredits": 90,
+        "interpretation": "Bedelías coincide con el total de 90 créditos y conserva una oferta ampliada de unidades acreditables. La página académica oficial delimita tres áreas con mínimos de 25, 15 y 5 créditos y enumera la currícula orientativa del año."
+      },
+      "conclusion": {
+        "canonicalModel": "one-cycle-multiple-offerings",
+        "regionalCurriculumVariant": false,
+        "reason": "El CENUR y Udelar publican un único ciclo de 90 créditos dictado en Salto y Paysandú, con continuidad hacia Ciencias Biológicas, Bioquímica y Biología Humana.",
+        "normalization": [
+          "Conservar una identidad canónica y ofrecer Salto y Paysandú como sedes del mismo ciclo.",
+          "No presentar la sede como trayectoria curricular: ambas comparten el mismo plan.",
+          "Mantener la composición de Bedelías para seguimiento individual, señalando que incluye unidades acreditables además de la currícula orientativa publicada.",
+          "No convertir las carreras de continuidad en títulos ni perfiles propios del ciclo."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/ciclo-de-biologia-y-bioquimica",
+          "authority": "CENUR Litoral Norte, Udelar",
+          "supports": [
+            "vigencia, título del ciclo, duración, sedes y total de 90 créditos"
+          ]
+        },
+        {
+          "url": "https://dcb.litoralnorte.udelar.edu.uy/ense%C3%B1anza",
+          "authority": "Departamento de Ciencias Biológicas del CENUR Litoral Norte",
+          "supports": [
+            "áreas y mínimos curriculares",
+            "unidades orientativas por semestre",
+            "continuidades educativas reconocidas"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/ciclo-en-biologia-bioquimica",
+          "authority": "Portal central de la Universidad de la República",
+          "supports": [
+            "duración, créditos y sedes vigentes"
+          ]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": [
+            "estudiantes activos en 2025"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "planYear",
+          "resolution": "Bedelías identifica Plan 2016 y la documentación académica describe aprobación en 2017. Se conserva 2016 como clave administrativa sin afirmar que sea la fecha final de aprobación."
+        },
+        {
+          "field": "composition",
+          "resolution": "La lista académica de ocho unidades es una currícula orientativa y Bedelías admite más unidades/acreditaciones para alcanzar los mínimos. No se eliminan opciones válidas ni se las declara obligatorias sin resolución específica."
+        }
+      ],
+      "remainingWork": "Las previaturas y la obligatoriedad exacta de cada combinación permanecen sujetas a Bedelía; no se infieren a partir de la lista orientativa."
+    },
+    {
+      "identity": "ciclo inicial de matematica:2012",
+      "career": "CICLO INICIAL DE MATEMÁTICA",
+      "planYear": "2012",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, duración, créditos, continuidad y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Ciclo Inicial en Matemática",
+        "durationMonths": 24,
+        "minimumCredits": 160,
+        "current": true
+      },
+      "offerings": [
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "ciclo completo",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-ciclo-inicial-de-matematica-2012.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 160,
+        "interpretation": "El árbol curricular y el mínimo de 160 créditos se conservan. La duración de 60 meses de SGAE contradice la ficha oficial del CENUR, que declara dos años, y se corrige en la proyección."
+      },
+      "conclusion": {
+        "canonicalModel": "regional-initial-cycle",
+        "regionalCurriculumVariant": false,
+        "reason": "El CIM es una oferta vigente y completa en Salto, continuación natural del CIO científico-tecnológico y utilizable en varias carreras del área.",
+        "normalization": [
+          "Mostrar una duración de dos años y 160 créditos.",
+          "Ofrecer únicamente Salto como sede oficial.",
+          "Conservar las áreas y opciones extraídas de Bedelías sin convertir las carreras de continuidad en trayectorias garantizadas.",
+          "Presentar el CIM como ciclo inicial, no como licenciatura ni título profesional."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pruebawww.litoralnorte.udelar.edu.uy/457-ciclo-inicial-en-matematica",
+          "authority": "CENUR Litoral Norte, Udelar",
+          "supports": [
+            "título del ciclo, requisitos, sede Salto y duración de dos años"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
+          "authority": "Universidad de la República",
+          "supports": [
+            "inscripciones abiertas en julio de 2026"
+          ]
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2019/06/PARTE-1.pdf",
+          "authority": "Comisión Sectorial de Enseñanza, Udelar",
+          "supports": [
+            "Plan 2012 y registro del ciclo único en Salto"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "durationMonths",
+          "resolution": "La UI usa 24 meses según el CENUR. Los 60 meses publicados por Bedelías se consideran un metadato administrativo erróneo."
+        },
+        {
+          "field": "name",
+          "resolution": "Se corrige el texto residual «Ciclo Incial de Matematica» a «Ciclo Inicial en Matemática»."
+        },
+        {
+          "field": "continuity",
+          "resolution": "Las carreras que reconocen créditos se documentan como continuidad posible, no como títulos ni trayectorias internas automáticas."
+        }
+      ],
+      "remainingWork": "Las equivalencias finales dependen de la carrera de destino y no se automatizan como reválidas universales."
+    },
+    {
+      "identity": "licenciatura en ciencias sociales:2009",
+      "career": "LICENCIATURA EN CIENCIAS SOCIALES",
+      "planYear": "2009",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, plan, título, créditos y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Licenciado/a en Ciencias Sociales",
+        "durationMonths": 48,
+        "minimumCredits": 360,
+        "current": true,
+        "sharedWith": [
+          "Facultad de Ciencias Sociales"
+        ]
+      },
+      "offerings": [
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "carrera completa exclusiva de la región con referencia académica de FCS",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-licenciatura-en-ciencias-sociales-2009.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": null,
+        "interpretation": "Bedelías conserva Plan 2009 con composición por Ciclo Inicial y Ciclo Avanzado, pero omite el total y publica 60 meses. El plan aprobado y la información vigente de FCS establecen cuatro años y 360 créditos."
+      },
+      "conclusion": {
+        "canonicalModel": "regional-complete-degree",
+        "regionalCurriculumVariant": false,
+        "reason": "La Licenciatura en Ciencias Sociales se dicta completa y exclusivamente en Salto bajo responsabilidad académica de FCS.",
+        "normalization": [
+          "Mantener la identidad administrativa Plan 2009 y el título Licenciado/a en Ciencias Sociales.",
+          "Corregir la duración a cuatro años y el mínimo a 360 créditos.",
+          "Modelar Salto como única sede de la carrera, no como trayectoria de otra licenciatura.",
+          "Conservar la oferta flexible de Bedelías sin interpretar todas las optativas listadas como obligatorias."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2020/01/procesos-Plan-de-Estudios-FCS2009.pdf",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "Plan de Estudios 2009 y capítulo específico de la Licenciatura en Ciencias Sociales de Regional Norte"
+          ]
+        },
+        {
+          "url": "https://cienciassociales.edu.uy/oferta-de-grado-en-el-interior/",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "título, duración de cuatro años y oferta completa en Salto"
+          ]
+        },
+        {
+          "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-lic-ccss",
+          "authority": "CENUR Litoral Norte, Udelar",
+          "supports": [
+            "vigencia, título, carrera completa y sede Salto"
+          ]
+        },
+        {
+          "url": "https://cienciassociales.edu.uy/ensenanza/",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "oferta vigente y exigencia general de 360 créditos para las licenciaturas"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "planYear",
+          "resolution": "Una descripción vigente de FCS conserva un párrafo que atribuye Plan 1992 a la carrera, pero el plan aprobado de 2009 incluye expresamente la Licenciatura regional, SGAE la registra como 2009 y llamados docentes de 2022/2023 refieren al Plan 2009. Se mantiene la clave 2009 y se documenta la contradicción."
+        },
+        {
+          "field": "durationMonths",
+          "resolution": "La UI usa 48 meses conforme a FCS y CENUR; se descarta el metadato de 60 meses de Bedelías."
+        },
+        {
+          "field": "composition",
+          "resolution": "La extracción lista una oferta amplia de 425 unidades. Se mantiene como catálogo elegible, no como 425 obligaciones ni como una única secuencia recomendada."
+        }
+      ],
+      "remainingWork": "Las orientaciones personales dentro del currículo flexible y las reválidas requieren validación académica individual; no se inventa una trayectoria única."
+    },
+    {
+      "identity": "tecnicatura en tecnologias de la imagen fotografica:2008",
+      "career": "TECNICATURA EN TECNOLOGÍAS DE LA IMAGEN FOTOGRÁFICA",
+      "planYear": "2008",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, estructura, título, créditos y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "title": "Técnico/a Universitario/a en Tecnologías de la Imagen Fotográfica",
+        "durationMonths": 36,
+        "minimumCredits": 240,
+        "current": true,
+        "sharedWith": [
+          "Facultad de Artes"
+        ]
+      },
+      "offerings": [
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "carrera completa con referencia académica de Facultad de Artes",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 240,
+        "interpretation": "La composición y el mínimo de Bedelías coinciden con las áreas del plan oficial. La duración de 60 meses contradice los seis semestres aprobados y se corrige a 36 meses."
+      },
+      "conclusion": {
+        "canonicalModel": "regional-complete-technical-degree",
+        "regionalCurriculumVariant": false,
+        "reason": "Facultad de Artes publica la tecnicatura vigente completa en Paysandú, con seis semestres, 240 créditos y trabajo final.",
+        "normalization": [
+          "Corregir la duración a tres años y mantener el mínimo de 240 créditos.",
+          "Ofrecer únicamente Paysandú como sede oficial.",
+          "Conservar los bloques secuenciales de Bedelías y el Trabajo Final de Egreso.",
+          "No crear una orientación Fotografía separada ni fusionarla con la Licenciatura en Artes de Montevideo."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PLAN_DE_ESTUDIOS_TECNICATURA_FOTOGRAFIA_web_v.2.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": [
+            "aprobación del Plan 2008, seis semestres, 240 créditos, título y trabajo final"
+          ]
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica/",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": [
+            "oferta vigente, programas, coordinación y sede Paysandú"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica",
+          "authority": "Portal central de la Universidad de la República",
+          "supports": [
+            "créditos y sede vigentes"
+          ]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": [
+            "oferta completa en 2024"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "durationMonths",
+          "resolution": "La UI usa 36 meses según el plan aprobado; el valor de 60 meses de Bedelías y del portal central se considera un error de metadatos."
+        },
+        {
+          "field": "title",
+          "resolution": "Se normaliza el título con lenguaje inclusivo sin alterar la denominación jurídica del Plan 2008."
+        }
+      ],
+      "remainingWork": "La secuencia de previaturas se limita a las reglas publicadas por Bedelías; no se deduce de la distribución semestral."
     }
   ],
-  "contentHash": "sha256:e08992d94f5f3f15990960160272d4f1172bad51eadd76d9b437d3faa1b4cfbc"
+  "contentHash": "sha256:30fc142b8fa93068c1a9b70ffd47c33f2c17616e803d6dc2420782599f7da5c2"
 }

@@ -1219,3 +1219,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:e08992d94f5f3f15990960160272d4f1172bad51eadd76d9b437d3faa1b4cfbc`. Cola general: 82 identidades pendientes; hash `sha256:ec0aee2dfd3a500339608aeb85b6d209e1c7cd48f093008ac38d7c64ac542c3f`.
 - Manifiesto UI: 143 proyecciones, las 143 con composición utilizable, ninguna vacía y treinta y cuatro identidades excluidas; hash `sha256:e94bffd0cb5410f5fe1137b6c3700dbfe800ae99beb26db6ee0180daf3195a48`. La cola funcional quedó vacía; hash `sha256:5d4f7a9cb6c79fa677713fe1afe1a9fc0c2b9e8ad84086381d552ee431eb4978`.
 - Siguiente paso: continuar las 82 auditorías oficiales generales de vigencia, títulos, mínimos y reglas; la extracción y la cobertura funcional de mallas visibles ya están cerradas.
+
+### CENUR Litoral Norte — cuatro ofertas vigentes auditadas 2026-08-24
+
+- Se cerraron con fuentes oficiales el Ciclo en Biología-Bioquímica Plan 2016, el Ciclo Inicial de Matemática Plan 2012, la Licenciatura en Ciencias Sociales Plan 2009 y la Tecnicatura en Tecnologías de la Imagen Fotográfica Plan 2008.
+- La UI publica Salto y Paysandú para Biología-Bioquímica; Salto para Matemática y Ciencias Sociales; y Paysandú para Fotografía. Son ofertas del mismo plan sin variantes territoriales inferidas.
+- Se corrigieron tres metadatos administrativos: Matemática pasa de 60 a 24 meses, Ciencias Sociales de 60 a 48 meses con mínimo de 360 créditos, y Fotografía de 60 a 36 meses. Biología-Bioquímica conserva un año y 90 créditos.
+- Ciencias Sociales mantiene la clave administrativa Plan 2009: el plan aprobado, SGAE y llamados docentes recientes sostienen esa identidad, mientras una descripción vigente conserva una referencia contradictoria a Plan 1992; la anomalía queda explícita y no se duplica la carrera.
+- Registro de auditoría: hash `sha256:30fc142b8fa93068c1a9b70ffd47c33f2c17616e803d6dc2420782599f7da5c2`. Cola general: 78 identidades pendientes; hash `sha256:8bc7ca01f4f4fab2ac748c2165e93f6e2ebb2e78a0bcba82cceabce7208259c3`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 32 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:4038595050e64a7f261c4f8b6f63be9697479a21017065b57ec1e227e816c37f`. Cola funcional vacía; hash `sha256:6dd51f1e6c481628efeba945a80c7a7af11f2f19dd883d4e9b85afa946c17eae`.
+- Siguiente paso: auditar la Tecnicatura Universitaria en Bienes Culturales Plan 2021, primera identidad reproducible restante.
