@@ -13552,7 +13552,47 @@
         { "field": "electivePrerequisites", "resolution": "Las previas de Optativas II y III dependen de la opción concreta elegida. Los bloques no aplican una previa única que bloquearía alternativas válidas." }
       ],
       "remainingWork": "Malla vigente operativa. Revisar únicamente futuras modificaciones de optativas, previaturas o correspondencia oficial entre unidades y áreas."
+    },
+    {
+      "identity": "psicologia infantil:1960",
+      "career": "PSICOLOGÍA INFANTIL",
+      "planYear": "1960",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título histórico Técnico en Psicología Infantil frente a la Licenciatura en Psicología.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Psicología Infantil",
+        "conversionRule": "Ordenanza 175, texto vigente aprobado por Resolución 16 del Consejo Directivo Central de 11/06/2002.",
+        "currentSuccessor": { "identity": "licenciatura en psicologia:2013", "title": "Licenciado en Psicología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/psico-psicologia-infantil-1960.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "titleLabel": "TECNICO EN PSICOLOGIA INFANTIL",
+        "interpretation": "La marca vigente del índice contradice los metadatos y la ausencia de composición. La Ordenanza 175 incluye expresamente las distintas procedencias del título Técnico en Psicología Infantil y habilita su conversión a Licenciado en Psicología."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-child-psychology-title-converted-to-current-psychology-degree",
+        "canonicalIdentity": "licenciatura en psicologia:2013",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "Técnico en Psicología Infantil es un título histórico convertido y no una carrera de ingreso vigente adicional."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/175-ordenanza-para-conversion-de-los-titulos-universitarios-que-se-determinan-por-el-de-licenciado-en-psicologia/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión de Técnico en Psicología Infantil", "título Licenciado en Psicología", "Resolución 16 del CDC de 11/06/2002"] },
+        { "url": "https://www.psico.edu.uy/sites/default/files/ordenanza-1751.pdf", "authority": "Facultad de Psicología, Universidad de la República", "supports": ["texto completo de la Ordenanza 175", "procedencias históricas comprendidas"] },
+        { "url": "https://psico.edu.uy/institucional/facultad/historia", "authority": "Facultad de Psicología, Universidad de la República", "supports": ["origen del curso en 1950", "otorgamiento del título técnico desde 1967", "evolución institucional de la formación"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "El snapshot dice Plan 1960, mientras la historia institucional fecha el otorgamiento del título universitario desde 1967. Se conserva 1960 como clave administrativa, no como fecha normativa afirmada." },
+        { "field": "current", "resolution": "Se priorizan metadata.current=false, la Ordenanza 175, la historia institucional y la oferta vigente de Licenciatura." },
+        { "field": "curriculum", "resolution": "No se reconstruye una malla histórica con cursos actuales ni se migra progreso automáticamente entre títulos." }
+      ],
+      "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
     }
   ],
-  "contentHash": "sha256:70d357a3190a56d7e8fcf1ced0641238df68dcd56ad760b45ac25ddbc13a48d0"
+  "contentHash": "sha256:cf360bfb1566d396ab00461565527957f3a8686958699c1ac007a545190a20ef"
 }

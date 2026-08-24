@@ -834,12 +834,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 320,
   },
-  "bedelias-psico-psicologia-infantil-1960": {
-    load: () => import("./bedelias-generated/bedelias-psico-psicologia-infantil-1960.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fq-bachiller-en-ciencias-quimicas-2000": {
     load: () => import("./bedelias-generated/bedelias-fq-bachiller-en-ciencias-quimicas-2000.json"),
     pathwayIds: ["bedelias"],

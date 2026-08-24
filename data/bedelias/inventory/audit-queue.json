@@ -1,19 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T05:15:19.025Z",
+  "generatedAt": "2026-08-24T05:19:11.977Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:70d357a3190a56d7e8fcf1ced0641238df68dcd56ad760b45ac25ddbc13a48d0"
+    "officialAuditRegistryHash": "sha256:cf360bfb1566d396ab00461565527957f3a8686958699c1ac007a545190a20ef"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 69,
-    "pendingCanonicalIdentities": 108,
+    "evidenceClosedCanonicalIdentities": 70,
+    "pendingCanonicalIdentities": 107,
     "byPriority": {
-      "composition-unavailable": 1,
       "official-sources-pending": 107
     },
     "regionalComparisons": {
@@ -436,38 +435,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "one-current-dental-laboratory-plan-in-montevideo"
+    },
+    {
+      "identity": "psicologia infantil:1960",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-child-psychology-title-converted-to-current-psychology-degree"
     }
   ],
   "queue": [
-    {
-      "identity": "psicologia infantil:1960",
-      "career": {
-        "name": "PSICOLOGIA INFANTIL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1960",
-        "name": "PSICOLOGIA INFANTIL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "PSICO",
-        "serviceName": "FACULTAD DE PSICOLOGÍA",
-        "planKey": "PSICO:psicologia infantil:1960",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "PSICO",
-          "serviceName": "FACULTAD DE PSICOLOGÍA",
-          "planKey": "PSICO:psicologia infantil:1960",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "ciclo en biologia bioquimica:2016",
       "career": {
@@ -3804,5 +3780,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:3255cd21aab7ab99aa143a0da907ce31fbb14aec83eaaadd6150fb8052e68332"
+  "contentHash": "sha256:18e65a42677d6c999ce8732a154cb197b35d131ff51e6ecce632478939ac73a1"
 }

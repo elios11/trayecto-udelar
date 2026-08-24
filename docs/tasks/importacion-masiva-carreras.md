@@ -1080,3 +1080,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:70d357a3190a56d7e8fcf1ced0641238df68dcd56ad760b45ac25ddbc13a48d0`. Cola actualizada: 108 identidades pendientes, una sin composición; hash `sha256:3255cd21aab7ab99aa143a0da907ce31fbb14aec83eaaadd6150fb8052e68332`.
 - La UI queda en 153 proyecciones: 124 con composición, 29 sin composición y veinticuatro identidades excluidas; hash `sha256:0d985a9510cbff2e2192ff41b7efd1c07b8e415dcea5688b47bf014206feeda4`.
 - Siguiente paso: auditar `Psicología Infantil` Plan 1960, último caso sin composición de la cola reproducible.
+
+### Psicología Infantil Plan 1960 — título histórico convertido cerrado 2026-08-24
+
+- La historia oficial de Facultad sitúa el curso de Psicología Aplicada a la Infancia desde 1950 y el otorgamiento del título de Técnico Universitario en Psicología Infantil desde 1967. El año 1960 del snapshot se conserva como clave administrativa y no se afirma como fecha normativa.
+- La Ordenanza 175, texto vigente aprobado por Resolución 16 del CDC de 11/06/2002, incluye expresamente los títulos de Técnico en Psicología Infantil de sus distintas procedencias y habilita su conversión a Licenciado en Psicología.
+- El snapshot tiene `metadata.current: false`, composición vacía y `current: true` heredado del índice. Se excluye como carrera actual, sin reconstruir cursos de 1960 con materias modernas ni migrar progreso automáticamente.
+- La Licenciatura en Psicología Plan 2013 permanece como sucesora vigente con su malla, 320 créditos y sedes oficiales ya auditadas.
+- Registro de auditoría: hash `sha256:cf360bfb1566d396ab00461565527957f3a8686958699c1ac007a545190a20ef`. Cola actualizada: 107 identidades pendientes y ninguna cuya prioridad primaria siga siendo la advertencia cruda del scraper; hash `sha256:18e65a42677d6c999ce8732a154cb197b35d131ff51e6ecce632478939ac73a1`.
+- La UI queda en 152 proyecciones: 124 con composición utilizable, 28 todavía sin malla y veinticinco identidades excluidas; hash `sha256:68a96f6384bdca6ac022d620e26aff2aa73512fe70853aa4030e9490d78f863a`.
+- La ausencia de prioridad `composition-unavailable` en la cola no equivale a cobertura total de UI: varias auditorías anteriores cerraron identidad, vigencia o sedes sin incorporar materias. El siguiente paso es cerrar primero esas 28 proyecciones vacías —normalizando malla o excluyendo un falso vigente con evidencia— y recién después continuar los 107 contrastes generales desde `Ciclo en Biología Bioquímica` Plan 2016.
