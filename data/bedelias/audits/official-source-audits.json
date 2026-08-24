@@ -12089,7 +12089,135 @@
         }
       ],
       "remainingWork": "La malla modular, las reglas inequívocas del Taller y las dos modalidades de egreso quedan operativas. Actualizar la oferta nominal de seminarios y sociologías sólo cuando pueda preservarse su variación anual sin presentarla como trayectoria permanente."
+    },
+    {
+      "identity": "diplomacia:1918",
+      "career": "DIPLOMACIA",
+      "planYear": "1918",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría oficial de vigencia, título histórico, interrupción y continuidad institucional en Relaciones Internacionales.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Doctor en Diplomacia",
+        "creationYear": 1918,
+        "historicalInterruption": "Finales de la década de 1970",
+        "institutionalSuccessors": [
+          {
+            "year": 1984,
+            "name": "Licenciatura en Comercio Internacional"
+          },
+          {
+            "year": 1985,
+            "name": "Licenciatura en Relaciones Internacionales"
+          }
+        ],
+        "academicService": "Facultad de Derecho"
+      },
+      "offerings": [
+        {
+          "serviceCode": "FDER",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "doctorado histórico, antecedente de la Licenciatura en Relaciones Internacionales",
+          "admissionStatus": "historical-not-current"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fder-diplomacia-1918.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "El snapshot no publica composición y se contradice: metadata.current es false, mientras plan.current es true. Facultad de Derecho identifica el Doctorado en Diplomacia como antecedente creado en 1918, interrumpido a fines de los setenta y continuado desde 1984 bajo otras denominaciones."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-diplomacy-degree-superseded-by-international-relations",
+        "regionalCurriculumVariant": false,
+        "excludeFromCurrentUi": true,
+        "reason": "Doctorado en Diplomacia es un título histórico, no una carrera con ingreso vigente. Tras su interrupción fue restablecido en 1984 como Licenciatura en Comercio Internacional y adoptó en 1985 la denominación Licenciatura en Relaciones Internacionales, cuya oferta actual usa el Plan 2013.",
+        "normalization": [
+          "No presentar Diplomacia Plan 1918 como carrera vigente o con ingreso actual.",
+          "Conservar el título histórico Doctor en Diplomacia y su papel como antecedente institucional.",
+          "No duplicar ni fusionar su progreso con Licenciatura en Relaciones Internacionales Plan 2013: la identidad, el plan y la credencial vigentes son distintos.",
+          "No reconstruir una malla de 1918 con unidades actuales de Relaciones Internacionales.",
+          "Mantener los derechos institucionales de egresados históricos separados del estado de admisión de la carrera."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fder.edu.uy/node/6317",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": [
+            "creación del Doctorado en Diplomacia en 1918",
+            "interrupción a fines de la década de 1970",
+            "restablecimiento como Licenciatura en Comercio Internacional en 1984",
+            "denominación Licenciatura en Relaciones Internacionales desde 1985"
+          ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/ense%C3%B1anza/carreras-de-grado",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": [
+            "cinco carreras de grado actuales",
+            "ausencia de Diplomacia como oferta vigente",
+            "Relaciones Internacionales Plan 2013 actual"
+          ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/rrii",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": [
+            "oferta vigente de Licenciatura en Relaciones Internacionales",
+            "perfil interdisciplinario y actividad diplomática"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-relaciones-internacionales",
+          "authority": "Universidad de la República",
+          "supports": [
+            "carrera vigente",
+            "título Licenciado en Relaciones Internacionales",
+            "sede Facultad de Derecho",
+            "320 créditos publicados por el catálogo central"
+          ]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
+          "authority": "Dirección General de Planeamiento, Universidad de la República",
+          "supports": [
+            "estudiantes activos 2025 de Facultad de Derecho",
+            "Relaciones Internacionales vigente",
+            "ausencia de Diplomacia entre las carreras activas"
+          ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/sites/default/files/2018-09/ORDENANZA%20ELECCI%20RECTOR-%20DECANO.pdf",
+          "authority": "Universidad de la República",
+          "supports": [
+            "reconocimiento del título histórico Doctor en Diplomacia para el orden de egresados"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "current",
+          "resolution": "El snapshot contiene metadata.current=false y plan.current=true. La historia institucional y la oferta actual resuelven la contradicción a favor de un plan histórico sin ingreso vigente."
+        },
+        {
+          "field": "composition",
+          "resolution": "Bedelías no publica composición. Al estar cerrado el plan, no se infieren materias, créditos ni previaturas desde la Licenciatura en Relaciones Internacionales actual."
+        },
+        {
+          "field": "successorCareer",
+          "resolution": "Relaciones Internacionales es la continuidad institucional del campo, pero su denominación, título y planes vigentes son posteriores. La UI conserva una sola oferta actual bajo su identidad propia y no migra progreso del Plan 1918."
+        },
+        {
+          "field": "graduateElectoralRights",
+          "resolution": "La mención Doctor en Diplomacia en una ordenanza electoral reconoce a egresados históricos; no demuestra reapertura, admisión ni dictado actual."
+        }
+      ],
+      "remainingWork": "Caso cerrado para la UI vigente. Conservar el registro histórico fuera del selector y auditar por separado la Licenciatura en Relaciones Internacionales Plan 2013 desde sus fuentes actuales."
     }
   ],
-  "contentHash": "sha256:df12d836df50eb6ab420b11d0c269373a4255c92b8a5722064d7b57286b26f7a"
+  "contentHash": "sha256:5b9eeb3db8a2adef68a772d1af3c5d511b112cc62b7d3af17935b7f8dea88228"
 }

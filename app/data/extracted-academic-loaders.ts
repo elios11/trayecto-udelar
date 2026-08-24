@@ -414,12 +414,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
-  "bedelias-fder-diplomacia-1918": {
-    load: () => import("./bedelias-generated/bedelias-fder-diplomacia-1918.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fder-licenciatura-en-relaciones-internacionales-2013": {
     load: () => import("./bedelias-generated/bedelias-fder-licenciatura-en-relaciones-internacionales-2013.json"),
     pathwayIds: ["bedelias"],

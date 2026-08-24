@@ -1000,3 +1000,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:df12d836df50eb6ab420b11d0c269373a4255c92b8a5722064d7b57286b26f7a`. Cola actualizada: 130 identidades pendientes, 21 sin composición; hash `sha256:0bc664edc606c9d436eb03f1b3a38cd7408de8f037eed066aeb9cbca047c9e96`.
 - La UI queda en 172 proyecciones: 123 con composición, 49 sin composición y cinco identidades históricas excluidas; hash `sha256:90c9fc873cfa0afd9588a8a2bc4e4f01be31d420c1a9e8f2d836bc28ae6f69e2`.
 - Siguiente paso: auditar Diplomacia Plan 1918, próxima identidad sin composición de la cola reproducible.
+
+### Diplomacia Plan 1918 — antecedente histórico de Relaciones Internacionales cerrado 2026-08-24
+
+- Facultad de Derecho identifica el `Doctorado en Diplomacia`, creado en 1918, como antecedente histórico de Relaciones Internacionales. Fue interrumpido a fines de la década de 1970, restablecido en 1984 como Licenciatura en Comercio Internacional y denominado Licenciatura en Relaciones Internacionales desde 1985.
+- El snapshot se contradice: `metadata.current` es `false`, mientras `plan.current` es `true`; no publica composición, créditos, duración ni previaturas. La historia institucional, la oferta 2026 y la matrícula activa 2025 resuelven que no existe ingreso vigente a Diplomacia.
+- La UI deja de ofrecer Diplomacia como carrera actual y conserva su título histórico para trazabilidad. No reconstruye una malla de 1918 con cursos modernos ni migra progreso a Relaciones Internacionales Plan 2013.
+- La mención de `Doctor en Diplomacia` en la ordenanza electoral reconoce derechos de egresados históricos; no constituye prueba de reapertura o dictado actual.
+- Relaciones Internacionales permanece como una identidad vigente separada, con su propio título, plan, credencial y futura auditoría curricular.
+- Registro de auditoría: hash `sha256:5b9eeb3db8a2adef68a772d1af3c5d511b112cc62b7d3af17935b7f8dea88228`. Cola actualizada: 129 identidades pendientes, 20 sin composición; hash `sha256:d75be0a355b07894a1794626e2f66d9e9fcf5e578a2382c865ef07a7578acb08`.
+- La UI queda en 171 proyecciones: 123 con composición, 48 sin composición y seis identidades históricas excluidas; hash `sha256:901e9b86999ec7cc0b2d2bb9bf5869821c8e4acfaa67f592d81a35bfdcc5275b`.
+- Siguiente paso: auditar Licenciatura en Relaciones Laborales Plan 2012, próxima identidad sin composición de la cola reproducible.

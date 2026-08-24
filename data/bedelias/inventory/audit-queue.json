@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:02:16.010Z",
+  "generatedAt": "2026-08-24T04:10:05.316Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:df12d836df50eb6ab420b11d0c269373a4255c92b8a5722064d7b57286b26f7a"
+    "officialAuditRegistryHash": "sha256:5b9eeb3db8a2adef68a772d1af3c5d511b112cc62b7d3af17935b7f8dea88228"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 47,
-    "pendingCanonicalIdentities": 130,
+    "evidenceClosedCanonicalIdentities": 48,
+    "pendingCanonicalIdentities": 129,
     "byPriority": {
-      "composition-unavailable": 21,
+      "composition-unavailable": 20,
       "official-sources-pending": 109
     },
     "regionalComparisons": {
@@ -304,38 +304,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "one-flexible-modular-plan-two-graduation-modes-one-campus"
+    },
+    {
+      "identity": "diplomacia:1918",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-diplomacy-degree-superseded-by-international-relations"
     }
   ],
   "queue": [
-    {
-      "identity": "diplomacia:1918",
-      "career": {
-        "name": "DIPLOMACIA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1918",
-        "name": "DIPLOMACIA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FDER",
-        "serviceName": "FACULTAD DE DERECHO",
-        "planKey": "FDER:diplomacia:1918",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FDER",
-          "serviceName": "FACULTAD DE DERECHO",
-          "planKey": "FDER:diplomacia:1918",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en relaciones laborales:2012",
       "career": {
@@ -4310,5 +4287,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:0bc664edc606c9d436eb03f1b3a38cd7408de8f037eed066aeb9cbca047c9e96"
+  "contentHash": "sha256:d75be0a355b07894a1794626e2f66d9e9fcf5e578a2382c865ef07a7578acb08"
 }
