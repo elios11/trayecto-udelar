@@ -297,6 +297,130 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
   return { courses, periods, nodes, requiredCourseGroups, requirementCourseGroups, credentials, sourceUrl, courseIdBySourceId };
 }
 
+function compositionGroupLabel(value) {
+  return String(value ?? "")
+    .replace(/\s+-\s+min:\s*\d+\s+U\.C\.B\s*$/i, "")
+    .replace(/^[^-]+\s+-\s+/, "")
+    .trim();
+}
+
+function compositionMatter(value) {
+  const match = String(value ?? "").match(/^([^-]+?)\s+-\s+([^-]+?)\s+-\s+(.+)$/);
+  return match
+    ? { code: `${match[1].trim()}-${match[2].trim()}`, name: match[3].trim() }
+    : { code: null, name: String(value ?? "").trim() };
+}
+
+function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedIds) {
+  const curriculum = audit?.officialPlan?.curriculum;
+  if (curriculum?.useBedeliasCompositionTree !== true) return null;
+
+  const sourceUrl = curriculum.sourceUrl ?? snapshot.plan?.sourceUrl ?? audit.sources?.[0]?.url;
+  const matterNodes = [];
+  const groupNodes = [];
+  const visit = (node) => {
+    if (node?.nodeType === "Materia") matterNodes.push(node);
+    if (node?.nodeType === "Grupo") groupNodes.push(node);
+    for (const child of node?.children ?? []) visit(child);
+  };
+  visit(snapshot.plan?.composition);
+  if (matterNodes.length === 0) return null;
+
+  const courses = [];
+  const periodsByLabel = new Map();
+  const courseIdByNode = new Map();
+  const courseIdBySourceId = new Map();
+  for (const [index, node] of matterNodes.entries()) {
+    const parsed = compositionMatter(node.label);
+    const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
+    const groupIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "grupos");
+    const rawPeriod = groupIndex >= 0 ? node.path[groupIndex + 1] : null;
+    const period = compositionGroupLabel(rawPeriod) || "Composición del plan";
+    if (!periodsByLabel.has(period)) periodsByLabel.set(period, []);
+    periodsByLabel.get(period).push(id);
+    courses.push({
+      id,
+      ...(parsed.code ? { bedeliasCode: parsed.code } : {}),
+      name: titleCase(parsed.name || `Unidad ${index + 1}`),
+      credits: 0,
+      eligibleRequirementIds: ["plan-total"],
+      creditAllocations: [{ nodeId: "plan-total", credits: 0, status: "official", sourceUrl }],
+      dataStatus: "bedelias-composition-creditless",
+      ruleCoverage: "not-scraped",
+    });
+    courseIdByNode.set(node, id);
+    if (parsed.code && !courseIdBySourceId.has(parsed.code)) courseIdBySourceId.set(parsed.code, id);
+  }
+
+  const descendantCourseIds = (node) => {
+    const ids = [];
+    const descend = (candidate) => {
+      const id = courseIdByNode.get(candidate);
+      if (id) ids.push(id);
+      for (const child of candidate?.children ?? []) descend(child);
+    };
+    descend(node);
+    return [...new Set(ids)];
+  };
+  const requiredCourseGroups = groupNodes.flatMap((group, index) => {
+    const match = String(group.label ?? "").match(/min:\s*(\d+)\s+U\.C\.B/i);
+    const minimum = Number(match?.[1]);
+    const courseIds = descendantCourseIds(group);
+    if (!Number.isFinite(minimum) || minimum <= 0 || courseIds.length === 0) return [];
+    return [{
+      id: `bedelias-ucb-${index + 1}`,
+      label: compositionGroupLabel(group.label),
+      minCompleted: Math.min(minimum, courseIds.length),
+      courseIds,
+      sourceUrl,
+    }];
+  });
+
+  if (curriculum.manualCompletionValidation) {
+    const manualCourse = {
+      id: courseId(serviceCode, { id: "validacion-final-plan" }, courses.length, usedIds),
+      name: curriculum.manualCompletionValidation,
+      credits: 0,
+      eligibleRequirementIds: ["plan-total"],
+      creditAllocations: [{ nodeId: "plan-total", credits: 0, status: "official", sourceUrl }],
+      dataStatus: "manual-validation",
+      ruleCoverage: "not-published",
+      curricularBlock: true,
+    };
+    courses.push(manualCourse);
+    periodsByLabel.set("Validación de egreso", [manualCourse.id]);
+    requiredCourseGroups.push({
+      id: "validacion-final-plan",
+      label: curriculum.manualCompletionValidation,
+      minCompleted: 1,
+      courseIds: [manualCourse.id],
+      sourceUrl,
+    });
+  }
+
+  const minimumCredits = Number(audit.officialPlan?.minimumCredits) || 0;
+  const nodes = [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: minimumCredits, sourceStatus: "official", sourceUrl }];
+  const credentials = [{
+    id: "bedelias-degree",
+    title: titleCase(audit.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? audit.career),
+    minTotalCredits: minimumCredits,
+    nodeRequirements: [],
+    requiredCourseGroups,
+    requiredActivities: [],
+    sourceUrl,
+  }];
+  return {
+    courses,
+    periods: [...periodsByLabel].map(([label, courseIds]) => ({ label, courseIds })),
+    nodes,
+    requiredCourseGroups,
+    requirementCourseGroups: {},
+    credentials,
+    sourceUrl,
+    courseIdBySourceId,
+  };
+}
+
 function emptyRequirementExpression(overrides = {}) {
   return {
     kind: "requirement",
@@ -410,9 +534,13 @@ function buildProjection(entry, snapshot, audit) {
     courseRecords.push({ id, rawCourse });
   }
 
-  const officialCurriculum = buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
+  const officialCurriculum = buildOfficialCurriculum(audit, snapshot.service.code, usedIds)
+    ?? buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds);
   if (officialCurriculum && courses.length === 0) {
     courses = officialCurriculum.courses;
+    for (const course of courses) {
+      if (course.bedeliasCode && !codeToId.has(course.bedeliasCode)) codeToId.set(course.bedeliasCode, course.id);
+    }
   }
 
   const publishedCodes = new Set();
@@ -476,7 +604,7 @@ function buildProjection(entry, snapshot, audit) {
       },
       plan: {
         year: String(audit?.officialPlan?.planYear ?? entry.plan.year),
-        current: entry.plan.current !== false,
+        current: audit?.officialPlan?.current ?? entry.plan.current !== false,
         degreeTitle: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name),
         minCredits: safeMinCredits,
         publishedMinCredits: Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : null,
@@ -584,7 +712,7 @@ export async function buildExtractedAcademicPlans() {
     if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: titleCase(careerName), plans: [] });
     faculty.careers.get(careerId).plans.push({
       id: planId,
-      label: `Plan ${planYear}${entry.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
+      label: `Plan ${planYear}${projection.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
       defaultTrajectoryId: Object.keys(projection.pathways)[0],
       defaultCredentialId: "bedelias-degree",
     });

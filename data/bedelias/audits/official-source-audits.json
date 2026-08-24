@@ -14209,6 +14209,188 @@
       "remainingWork": "Caso cerrado como título intermedio histórico sin ingreso vigente."
     },
     {
+      "identity": "creador plastico:1991",
+      "career": "CREADOR PLASTICO",
+      "planYear": "1991",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del antiguo título Creador Plástico frente a la oferta actual de Artes Plásticas y Visuales.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Creador Plástico",
+        "currentSuccessor": { "identity": "licenciatura en artes artes plasticas y visuales:2002", "title": "Licenciado en Artes - Artes Plásticas y Visuales" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-creador-plastico-1991.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionMatterCount": 69,
+        "interpretation": "El índice eleva como vigente un plan cuyos metadatos dicen no vigente. Facultad de Artes publica para ingreso la Licenciatura en Artes Plásticas y Visuales y no Creador Plástico como carrera separada."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-visual-arts-title-superseded",
+        "canonicalIdentity": "licenciatura en artes artes plasticas y visuales:2002",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "No existe oferta oficial vigente de ingreso al título Creador Plástico; la identidad actual publicada es Licenciatura en Artes Plásticas y Visuales."
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["oferta de grado actual", "ausencia de Creador Plástico como ingreso independiente"] },
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-artes-plasticas-y-visuales/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["identidad sucesora publicada", "plan actual de Artes Plásticas y Visuales"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se priorizan metadata.current=false y la oferta oficial vigente sobre la marca del índice de Bedelías." },
+        { "field": "curriculum", "resolution": "El árbol histórico se preserva en el snapshot, pero no se presenta como una carrera de ingreso actual ni se migra progreso al Plan 2002." }
+      ],
+      "remainingWork": "Caso cerrado como identidad histórica; el plan sucesor se mantiene separado."
+    },
+    {
+      "identity": "licenciatura en composicion:1987",
+      "career": "LICENCIATURA EN COMPOSICIÓN",
+      "planYear": "1987",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del Plan 1987 en régimen de egreso y reconstrucción de su malla sin créditos.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "facultyCode": "FARTES",
+        "facultyName": "FACULTAD DE ARTES",
+        "careerName": "LICENCIATURA EN COMPOSICIÓN",
+        "planYear": "1987",
+        "title": "LICENCIADO EN COMPOSICIÓN",
+        "current": false,
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
+          "manualCompletionValidation": "Validación final del Plan 1987 con Bedelía de Facultad de Artes"
+        }
+      },
+      "uiNotice": "Plan histórico sin nuevos ingresos, conservado para estudiantes que mantienen su derecho a egresar por el Plan 1987. Bedelías publica las unidades sin créditos ni obligatoriedad completa; la culminación debe validarse con Bedelía.",
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-composicion-1987.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionMatterCount": 129,
+        "interpretation": "La composición administrativa conserva 129 unidades sin créditos. El plan dejó de dictarse progresivamente, pero Facultad mantiene exámenes y el derecho a finalizarlo."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-teach-out-plan-visible-for-existing-students",
+        "canonicalIdentity": "licenciatura en composicion:1987",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Debe figurar como plan histórico, no como ingreso vigente, porque Facultad reconoce expresamente el derecho a finalizarlo y sigue organizando sus exámenes."
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["sustitución progresiva del Plan 1987", "derecho a finalizar en el plan de ingreso", "cambio de plan irreversible", "Plan 2005 actual"] },
+        { "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["exámenes 2025 para estudiantes de Licenciaturas Plan 1987", "inscripción específica por Bedelía"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se muestra como histórico: no admite nuevos ingresos, pero continúa siendo utilizable por estudiantes del plan." },
+        { "field": "credits", "resolution": "No se inventan créditos. Las unidades del árbol Bedelías valen cero en el contador y se agrega una validación manual de egreso." }
+      ],
+      "remainingWork": "Malla de seguimiento cerrada; las equivalencias con Plan 2005 quedan fuera de cualquier migración automática."
+    },
+    {
+      "identity": "licenciatura en direccion coral:1987",
+      "career": "LICENCIATURA EN DIRECCIÓN CORAL",
+      "planYear": "1987",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del Plan 1987 en régimen de egreso y reconstrucción de su malla sin créditos.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "facultyCode": "FARTES", "facultyName": "FACULTAD DE ARTES", "careerName": "LICENCIATURA EN DIRECCIÓN CORAL", "planYear": "1987", "title": "LICENCIADO EN DIRECCIÓN CORAL", "current": false,
+        "curriculum": { "useBedeliasCompositionTree": true, "sourceUrl": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "manualCompletionValidation": "Validación final del Plan 1987 con Bedelía de Facultad de Artes" }
+      },
+      "uiNotice": "Plan histórico sin nuevos ingresos, conservado para estudiantes que mantienen su derecho a egresar por el Plan 1987. Bedelías publica las unidades sin créditos ni obligatoriedad completa; la culminación debe validarse con Bedelía.",
+      "bedeliasComparison": { "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-direccion-coral-1987.json", "metadataCurrent": false, "indexCurrent": true, "compositionMatterCount": 122, "interpretation": "La composición conserva 122 unidades sin créditos; Facultad mantiene el derecho a terminar y mesas de examen específicas para el Plan 1987." },
+      "conclusion": { "canonicalModel": "historical-teach-out-plan-visible-for-existing-students", "canonicalIdentity": "licenciatura en direccion coral:1987", "excludeFromCurrentUi": false, "regionalCurriculumVariant": false, "reason": "Se conserva como plan histórico utilizable para cohortes existentes y no se ofrece como ingreso vigente." },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["derecho a finalizar Plan 1987", "sustitución progresiva", "Plan 2005 actual"] },
+        { "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["exámenes vigentes para estudiantes Plan 1987"] }
+      ],
+      "anomalies": [{ "field": "credits", "resolution": "Unidades visibles con cero créditos y validación manual final; no se inventa una conversión a Plan 2005." }],
+      "remainingWork": "Malla de seguimiento cerrada; equivalencias sólo por trámite oficial."
+    },
+    {
+      "identity": "licenciatura en direccion orquestal:1987",
+      "career": "LICENCIATURA EN DIRECCIÓN ORQUESTAL",
+      "planYear": "1987",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del Plan 1987 en régimen de egreso y reconstrucción de su malla sin créditos.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "facultyCode": "FARTES", "facultyName": "FACULTAD DE ARTES", "careerName": "LICENCIATURA EN DIRECCIÓN ORQUESTAL", "planYear": "1987", "title": "LICENCIADO EN DIRECCIÓN ORQUESTAL", "current": false,
+        "curriculum": { "useBedeliasCompositionTree": true, "sourceUrl": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "manualCompletionValidation": "Validación final del Plan 1987 con Bedelía de Facultad de Artes" }
+      },
+      "uiNotice": "Plan histórico sin nuevos ingresos, conservado para estudiantes que mantienen su derecho a egresar por el Plan 1987. Bedelías publica las unidades sin créditos ni obligatoriedad completa; la culminación debe validarse con Bedelía.",
+      "bedeliasComparison": { "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-direccion-orquestal-1987.json", "metadataCurrent": false, "indexCurrent": true, "compositionMatterCount": 119, "interpretation": "La composición conserva 119 unidades sin créditos; Facultad mantiene el derecho a terminar y mesas de examen específicas para el Plan 1987." },
+      "conclusion": { "canonicalModel": "historical-teach-out-plan-visible-for-existing-students", "canonicalIdentity": "licenciatura en direccion orquestal:1987", "excludeFromCurrentUi": false, "regionalCurriculumVariant": false, "reason": "Se conserva como plan histórico utilizable para cohortes existentes y no se ofrece como ingreso vigente." },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["derecho a finalizar Plan 1987", "sustitución progresiva", "Plan 2005 actual"] },
+        { "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["exámenes vigentes para estudiantes Plan 1987"] }
+      ],
+      "anomalies": [{ "field": "credits", "resolution": "Unidades visibles con cero créditos y validación manual final; no se inventa una conversión a Plan 2005." }],
+      "remainingWork": "Malla de seguimiento cerrada; equivalencias sólo por trámite oficial."
+    },
+    {
+      "identity": "licenciatura en musicologia:1987",
+      "career": "LICENCIATURA EN MUSICOLOGÍA",
+      "planYear": "1987",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del Plan 1987 en régimen de egreso y reconstrucción de su malla sin créditos.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "facultyCode": "FARTES", "facultyName": "FACULTAD DE ARTES", "careerName": "LICENCIATURA EN MUSICOLOGÍA", "planYear": "1987", "title": "LICENCIADO EN MUSICOLOGÍA", "current": false,
+        "curriculum": { "useBedeliasCompositionTree": true, "sourceUrl": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "manualCompletionValidation": "Validación final del Plan 1987 con Bedelía de Facultad de Artes" }
+      },
+      "uiNotice": "Plan histórico sin nuevos ingresos, conservado para estudiantes que mantienen su derecho a egresar por el Plan 1987. Bedelías publica las unidades sin créditos ni obligatoriedad completa; la culminación debe validarse con Bedelía.",
+      "bedeliasComparison": { "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-musicologia-1987.json", "metadataCurrent": false, "indexCurrent": true, "compositionMatterCount": 144, "interpretation": "La composición conserva 144 unidades sin créditos; Facultad mantiene el derecho a terminar y mesas de examen específicas para el Plan 1987." },
+      "conclusion": { "canonicalModel": "historical-teach-out-plan-visible-for-existing-students", "canonicalIdentity": "licenciatura en musicologia:1987", "excludeFromCurrentUi": false, "regionalCurriculumVariant": false, "reason": "Se conserva como plan histórico utilizable para cohortes existentes y no se ofrece como ingreso vigente." },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["derecho a finalizar Plan 1987", "sustitución progresiva", "Plan 2005 actual"] },
+        { "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["exámenes vigentes para estudiantes Plan 1987"] }
+      ],
+      "anomalies": [{ "field": "credits", "resolution": "Unidades visibles con cero créditos y validación manual final; no se inventa una conversión a Plan 2005." }],
+      "remainingWork": "Malla de seguimiento cerrada; equivalencias sólo por trámite oficial."
+    },
+    {
+      "identity": "profesorado:1967",
+      "career": "PROFESORADO",
+      "planYear": "1967",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del antiguo título Profesor de Solfeo.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Profesor de Solfeo",
+        "currentMusicDegrees": ["Licenciatura en Música", "Licenciatura en Interpretación Musical"]
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-profesorado-1967.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionMatterCount": 0,
+        "interpretation": "El registro administrativo conserva únicamente el título y el año, sin malla. No aparece en la oferta de grado ni en las admisiones actuales de Facultad de Artes."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-music-teaching-title-not-current",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "No hay evidencia de ingreso, cursado o composición vigente del Profesorado de Solfeo; mostrarlo como carrera actual confundiría una identidad histórica con las licenciaturas actuales."
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["oferta actual sin Profesorado de Solfeo"] },
+        { "url": "https://www.artes.udelar.edu.uy/admisiones/", "authority": "Facultad de Artes, Universidad de la República", "supports": ["admisiones actuales de Licenciatura en Música y Licenciatura en Interpretación Musical Plan 2005"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se priorizan metadata.current=false, ausencia de composición y oferta institucional actual sobre la marca del índice." }
+      ],
+      "remainingWork": "Caso cerrado como título histórico sin malla recuperable; se conserva el snapshot para trazabilidad."
+    },
+    {
       "identity": "psicologia infantil:1960",
       "career": "PSICOLOGÍA INFANTIL",
       "planYear": "1960",
@@ -14249,5 +14431,5 @@
       "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
     }
   ],
-  "contentHash": "sha256:8f510dfd32c7bec5f57e781bb07d2f287cf135fd31b945881c4304cbf0a019f6"
+  "contentHash": "sha256:78a8487ff176b8724079a063244ffe278c70be05e12434646388ff2fcdbab5ff"
 }

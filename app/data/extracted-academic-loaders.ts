@@ -180,12 +180,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
-  "bedelias-fartes-creador-plastico-1991": {
-    load: () => import("./bedelias-generated/bedelias-fartes-creador-plastico-1991.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fartes-licenciatura-en-arte-digital-y-electronico-2013": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-arte-digital-y-electronico-2013.json"),
     pathwayIds: ["bedelias"],
@@ -266,12 +260,6 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fartes-licenciatura-en-musicologia-1987": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-musicologia-1987.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
-  "bedelias-fartes-profesorado-1967": {
-    load: () => import("./bedelias-generated/bedelias-fartes-profesorado-1967.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
     minCredits: 0,

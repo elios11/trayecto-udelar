@@ -10,16 +10,16 @@ const globalManifest = readJson("data/bedelias/inventory/global-current.json");
 const saved = readJson("data/bedelias/inventory/ui-curriculum-queue.json");
 
 test("prioriza cada plan visible que todavía no tiene una malla utilizable", () => {
-  assert.equal(saved.counts.currentUiPlans, 150);
-  assert.equal(saved.counts.curriculumReady, 129);
-  assert.equal(saved.counts.curriculumPending, 21);
+  assert.equal(saved.counts.currentUiPlans, 148);
+  assert.equal(saved.counts.curriculumReady, 133);
+  assert.equal(saved.counts.curriculumPending, 15);
   assert.deepEqual(saved.counts.byPriority, {
-    "official-curriculum-sources-pending": 21,
+    "official-curriculum-sources-pending": 15,
   });
   assert.equal(new Set(saved.queue.map((entry) => entry.identity)).size, saved.queue.length);
   assert.deepEqual(
     saved.queue.slice(0, 1).map((entry) => entry.identity),
-    ["creador plastico:1991"],
+    ["tecnicatura en relaciones laborales:1995"],
   );
   assert.deepEqual(
     new Set(saved.queue.map((entry) => entry.identity)),
