@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:67ada2624832d1639ad64db718a07ae73bbec8312549bb7c8002016b6da0b209",
-    "officialAuditHash": "sha256:ddb66774bfa5117d4978469e60e4dd7689204c5a69f08c53c770393d77400010",
+    "auditQueueHash": "sha256:343388445792a2888f21715c6dd7a7690a79b4ce11638a2e03ac6a3fc92f9670",
+    "officialAuditHash": "sha256:065bc4a92a78f84aafd8d103f326a62c6803aed6d1aefa55e9f3c78043584426",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
-    "generatedPlans": 171,
-    "compositionAvailable": 124,
-    "compositionUnavailable": 47,
+    "generatedPlans": 168,
+    "compositionAvailable": 123,
+    "compositionUnavailable": 45,
     "plansWithOfficialCampuses": 29,
-    "excludedFromCurrentUi": 6
+    "excludedFromCurrentUi": 9
   },
   "plans": [
     {
@@ -955,40 +955,15 @@
       ]
     },
     {
-      "identity": "licenciatura en ciencias de la comunicacion:2012",
-      "planId": "bedelias-fic-licenciatura-en-ciencias-de-la-comunicacion-2012",
-      "facultyCode": "FIC",
-      "snapshotPath": "data/bedelias/fic-licenciatura-en-ciencias-de-la-comunicacion-2012.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": true,
-      "campusIds": []
-    },
-    {
       "identity": "licenciatura en comunicacion:2012",
       "planId": "bedelias-fic-licenciatura-en-comunicacion-2012",
       "facultyCode": "FIC",
       "snapshotPath": "data/bedelias/fic-licenciatura-en-comunicacion-2012.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
-      "identity": "licenciatura en comunicacion generacion 2014:2012",
-      "planId": "bedelias-fic-licenciatura-en-comunicacion-generacion-2014-2012",
-      "facultyCode": "FIC",
-      "snapshotPath": "data/bedelias/fic-licenciatura-en-comunicacion-generacion-2014-2012.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
-    },
-    {
-      "identity": "licenciatura en comunicacion plan 2012 version 2019:2012",
-      "planId": "bedelias-fic-licenciatura-en-comunicacion-plan-2012-version-2019-2012",
-      "facultyCode": "FIC",
-      "snapshotPath": "data/bedelias/fic-licenciatura-en-comunicacion-plan-2012-version-2019-2012.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "licenciatura en ingenieria de medios:2018",
@@ -1684,5 +1659,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:7d6a6c4244961e417527fdea3adaa220244a4f197ff1894fd62139b56e9ef324"
+  "contentHash": "sha256:ffa9a988b7a5ecd044190a636e6c6c333a3389f2a54d2781ec03ff9eaed4712f"
 }

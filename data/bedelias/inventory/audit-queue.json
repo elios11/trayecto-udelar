@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:20:51.703Z",
+  "generatedAt": "2026-08-24T04:41:48.909Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:ddb66774bfa5117d4978469e60e4dd7689204c5a69f08c53c770393d77400010"
+    "officialAuditRegistryHash": "sha256:065bc4a92a78f84aafd8d103f326a62c6803aed6d1aefa55e9f3c78043584426"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 49,
-    "pendingCanonicalIdentities": 128,
+    "evidenceClosedCanonicalIdentities": 53,
+    "pendingCanonicalIdentities": 124,
     "byPriority": {
-      "composition-unavailable": 19,
-      "official-sources-pending": 109
+      "composition-unavailable": 17,
+      "official-sources-pending": 107
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -316,67 +316,33 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "one-current-plan-with-intermediate-title"
-    }
-  ],
-  "queue": [
+    },
     {
       "identity": "licenciatura en comunicacion:2012",
-      "career": {
-        "name": "LICENCIATURA EN COMUNICACIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2012",
-        "name": "LICENCIATURA EN COMUNICACIÓN",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FIC",
-        "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-        "planKey": "FIC:licenciatura en comunicacion:2012",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FIC",
-          "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-          "planKey": "FIC:licenciatura en comunicacion:2012",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "one-current-plan-with-seven-changeable-orientations"
+    },
+    {
+      "identity": "licenciatura en ciencias de la comunicacion:2012",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "administrative-generation-alias-of-current-communication-2012"
+    },
+    {
+      "identity": "licenciatura en comunicacion generacion 2014:2012",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "administrative-generation-alias-of-current-communication-2012"
     },
     {
       "identity": "licenciatura en comunicacion plan 2012 version 2019:2012",
-      "career": {
-        "name": "LICENCIATURA EN COMUNICACIÓN (PLAN 2012 VERSIÓN 2019)",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2012",
-        "name": "LICENCIATURA EN COMUNICACIÓN V.2019",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FIC",
-        "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-        "planKey": "FIC:licenciatura en comunicacion plan 2012 version 2019:2012",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FIC",
-          "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-          "planKey": "FIC:licenciatura en comunicacion plan 2012 version 2019:2012",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "current-curriculum-version-alias-of-communication-2012"
+    }
+  ],
+  "queue": [
     {
       "identity": "tecnicatura en archivo medico:2006",
       "career": {
@@ -3098,64 +3064,6 @@
       ]
     },
     {
-      "identity": "licenciatura en ciencias de la comunicacion:2012",
-      "career": {
-        "name": "LICENCIATURA EN CIENCIAS DE LA COMUNICACIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2012",
-        "name": "LICENCIATURA EN COMUNICACION - GENERACIÓN 2013",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FIC",
-        "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-        "planKey": "FIC:licenciatura en ciencias de la comunicacion:2012",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FIC",
-          "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-          "planKey": "FIC:licenciatura en ciencias de la comunicacion:2012",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
-      "identity": "licenciatura en comunicacion generacion 2014:2012",
-      "career": {
-        "name": "LICENCIATURA EN COMUNICACIÓN - GENERACIÓN 2014",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2012",
-        "name": "LICENCIATURA EN COMUNICACION- GEN 2014",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FIC",
-        "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-        "planKey": "FIC:licenciatura en comunicacion generacion 2014:2012",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FIC",
-          "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-          "planKey": "FIC:licenciatura en comunicacion generacion 2014:2012",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
       "identity": "licenciatura en ingenieria de medios:2018",
       "career": {
         "name": "LICENCIATURA EN INGENIERÍA DE MEDIOS",
@@ -4264,5 +4172,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:67ada2624832d1639ad64db718a07ae73bbec8312549bb7c8002016b6da0b209"
+  "contentHash": "sha256:343388445792a2888f21715c6dd7a7690a79b4ce11638a2e03ac6a3fc92f9670"
 }

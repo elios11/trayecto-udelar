@@ -61,6 +61,9 @@ function offeringPathwayIds(offering) {
 
 function auditCampuses(audit) {
   if (!audit) return [];
+  const defaultAuditedPathwayId = audit.officialPlan?.trajectories?.[0]?.id
+    ?? audit.officialPlan?.documentedSportOptions?.[0]?.id
+    ?? "bedelias";
   const labels = new Map();
   for (const offering of activeFullOfferings(audit)) {
     for (const location of offering.locations ?? []) {
@@ -82,7 +85,7 @@ function auditCampuses(audit) {
     official: true,
     defaultPathwayId: audit.identity === "ingeniero agronomo:2020" && id === "salto"
       ? "salto-agricola-ganadera"
-      : entry.pathwayIds[0] ?? "bedelias",
+      : entry.pathwayIds[0] ?? defaultAuditedPathwayId,
   }));
 }
 
@@ -312,66 +315,69 @@ function buildOfficialPrerequisiteRules(audit, officialCurriculum, serviceCode) 
   const courseById = new Map(officialCurriculum.courses.map((course) => [course.id, course]));
   const sourceUrl = audit.officialPlan.curriculum.prerequisitesSourceUrl ?? officialCurriculum.sourceUrl;
   return prerequisites.flatMap((prerequisite) => {
-    const targetId = officialCurriculum.courseIdBySourceId.get(prerequisite.targetId);
-    const target = courseById.get(targetId);
-    if (!target) return [];
-    const children = [
-      ...((prerequisite.courseIds ?? []).map((sourceId) => ({ sourceId, assessment: "course", evidence: "Curso aprobado" }))),
-      ...((prerequisite.examIds ?? []).map((sourceId) => ({ sourceId, assessment: "exam", evidence: "Evaluación final/examen aprobado" }))),
-    ].flatMap(({ sourceId, assessment, evidence }) => {
-      const courseId = officialCurriculum.courseIdBySourceId.get(sourceId);
-      const course = courseById.get(courseId);
-      if (!course) return [];
-      const label = `${evidence} de ${course.name}`;
-      return [emptyRequirementExpression({
-        label,
-        minimum: 1,
-        options: [{ assessment, serviceCode, code: course.id, name: course.name, raw: label }],
-      })];
-    });
-    if (Number(prerequisite.minCredits) > 0) {
-      const minimum = Number(prerequisite.minCredits);
-      children.push(prerequisite.minCreditsGroupId
-        ? emptyRequirementExpression({
-          label: `${minimum} créditos en ${prerequisite.minCreditsGroupName ?? prerequisite.minCreditsGroupId}`,
-          groupCreditRequirement: {
+    const targetSourceIds = prerequisite.targetIds ?? [prerequisite.targetId];
+    return targetSourceIds.flatMap((targetSourceId) => {
+      const targetId = officialCurriculum.courseIdBySourceId.get(targetSourceId);
+      const target = courseById.get(targetId);
+      if (!target) return [];
+      const children = [
+        ...((prerequisite.courseIds ?? []).map((sourceId) => ({ sourceId, assessment: "course", evidence: "Curso aprobado" }))),
+        ...((prerequisite.examIds ?? []).map((sourceId) => ({ sourceId, assessment: "exam", evidence: "Evaluación final/examen aprobado" }))),
+      ].flatMap(({ sourceId, assessment, evidence }) => {
+        const courseId = officialCurriculum.courseIdBySourceId.get(sourceId);
+        const course = courseById.get(courseId);
+        if (!course) return [];
+        const label = `${evidence} de ${course.name}`;
+        return [emptyRequirementExpression({
+          label,
+          minimum: 1,
+          options: [{ assessment, serviceCode, code: course.id, name: course.name, raw: label }],
+        })];
+      });
+      if (Number(prerequisite.minCredits) > 0) {
+        const minimum = Number(prerequisite.minCredits);
+        children.push(prerequisite.minCreditsGroupId
+          ? emptyRequirementExpression({
+            label: `${minimum} créditos en ${prerequisite.minCreditsGroupName ?? prerequisite.minCreditsGroupId}`,
+            groupCreditRequirement: {
+              minimum,
+              groupCode: prerequisite.minCreditsGroupId,
+              groupName: prerequisite.minCreditsGroupName ?? prerequisite.minCreditsGroupId,
+            },
+          })
+          : emptyRequirementExpression({
+            label: `${minimum} créditos obtenidos`,
+            creditRequirement: { minimum, planYear: String(audit.planYear), planName: audit.career },
+          }));
+      }
+      if (Number(prerequisite.minApprovals) > 0 && prerequisite.minApprovalsGroupId) {
+        const minimum = Number(prerequisite.minApprovals);
+        children.push(emptyRequirementExpression({
+          label: `${minimum} unidades aprobadas en ${prerequisite.minApprovalsGroupName ?? prerequisite.minApprovalsGroupId}`,
+          groupApprovalRequirement: {
             minimum,
-            groupCode: prerequisite.minCreditsGroupId,
-            groupName: prerequisite.minCreditsGroupName ?? prerequisite.minCreditsGroupId,
+            groupCode: prerequisite.minApprovalsGroupId,
+            groupName: prerequisite.minApprovalsGroupName ?? prerequisite.minApprovalsGroupId,
           },
-        })
-        : emptyRequirementExpression({
-          label: `${minimum} créditos obtenidos`,
-          creditRequirement: { minimum, planYear: String(audit.planYear), planName: audit.career },
         }));
-    }
-    if (Number(prerequisite.minApprovals) > 0 && prerequisite.minApprovalsGroupId) {
-      const minimum = Number(prerequisite.minApprovals);
-      children.push(emptyRequirementExpression({
-        label: `${minimum} unidades aprobadas en ${prerequisite.minApprovalsGroupName ?? prerequisite.minApprovalsGroupId}`,
-        groupApprovalRequirement: {
-          minimum,
-          groupCode: prerequisite.minApprovalsGroupId,
-          groupName: prerequisite.minApprovalsGroupName ?? prerequisite.minApprovalsGroupId,
+      }
+      if (children.length === 0) return [];
+      return [{
+        target: { code: target.id, name: target.name, assessment: "course" },
+        expression: {
+          kind: "all",
+          label: "Debe cumplir todas las condiciones",
+          minimum: null,
+          options: [],
+          children,
+          creditRequirement: null,
+          groupCreditRequirement: null,
+          groupApprovalRequirement: null,
         },
-      }));
-    }
-    if (children.length === 0) return [];
-    return [{
-      target: { code: target.id, name: target.name, assessment: "course" },
-      expression: {
-        kind: "all",
-        label: "Debe cumplir todas las condiciones",
-        minimum: null,
-        options: [],
-        children,
-        creditRequirement: null,
-        groupCreditRequirement: null,
-        groupApprovalRequirement: null,
-      },
-      heading: `Condiciones oficiales para cursar ${target.name}`,
-      sourceUrl,
-    }];
+        heading: `Condiciones oficiales para cursar ${target.name}`,
+        sourceUrl,
+      }];
+    });
   });
 }
 

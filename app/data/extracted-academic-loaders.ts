@@ -582,27 +582,9 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
-  "bedelias-fic-licenciatura-en-ciencias-de-la-comunicacion-2012": {
-    load: () => import("./bedelias-generated/bedelias-fic-licenciatura-en-ciencias-de-la-comunicacion-2012.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 360,
-  },
   "bedelias-fic-licenciatura-en-comunicacion-2012": {
     load: () => import("./bedelias-generated/bedelias-fic-licenciatura-en-comunicacion-2012.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 360,
-  },
-  "bedelias-fic-licenciatura-en-comunicacion-generacion-2014-2012": {
-    load: () => import("./bedelias-generated/bedelias-fic-licenciatura-en-comunicacion-generacion-2014-2012.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 360,
-  },
-  "bedelias-fic-licenciatura-en-comunicacion-plan-2012-version-2019-2012": {
-    load: () => import("./bedelias-generated/bedelias-fic-licenciatura-en-comunicacion-plan-2012-version-2019-2012.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["audiovisual","educativa-comunitaria","investigacion-analisis","multimedia-tecnologias","organizacional","periodismo","publicidad"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
