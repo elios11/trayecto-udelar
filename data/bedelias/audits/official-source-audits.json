@@ -12998,7 +12998,340 @@
         { "field": "titleLabel", "resolution": "El snapshot dice 'Electroencefalograma'; la denominación normativa oficial es 'Electroencefalografía y Neurofisiología Clínica'." }
       ],
       "remainingWork": "Cerrado como título histórico convertido; el progreso no se migra automáticamente entre identidades."
+    },
+    {
+      "identity": "tecnicatura en fisioterapia:1901",
+      "career": "TECNICATURA EN FISIOTERAPIA",
+      "planYear": "1901",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título técnico histórico frente a la Licenciatura en Fisioterapia.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Fisioterapia",
+        "conversionRule": "Reglamento 164, aprobado por Resolución 63 de la Comisión Ejecutiva Delegada de 08/12/1997.",
+        "currentSuccessor": { "identity": "licenciatura en fisioterapia:2006", "title": "Licenciado en Fisioterapia" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-fisioterapia-1901.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El registro histórico no publica composición y su metadata contradice la marca vigente heredada del índice; la conversión oficial y la oferta actual identifican a la Licenciatura como sucesora."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-physiotherapy-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en fisioterapia:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La tecnicatura fue sustituida mediante conversión oficial y no constituye una carrera de ingreso vigente adicional."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/164-reglamento-de-conversion-del-titulo-de-tecnico-en-fisioterapia-por-el-de-licenciado-en-fisioterapia/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión a Licenciado en Fisioterapia", "Resolución 63 de 08/12/1997"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisioterapia", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["oferta vigente", "título actual", "Montevideo", "Paysandú"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "1901 se conserva como identificador administrativo histórico y no se afirma como fecha de aprobación documentada." },
+        { "field": "current", "resolution": "Se priorizan metadata.current=false, la normativa de conversión y la oferta oficial vigente." }
+      ],
+      "remainingWork": "Auditar la malla de la Licenciatura Plan 2006 sin convertir horas de contacto o U.C.B. en créditos sin equivalencia oficial."
+    },
+    {
+      "identity": "tecnicatura en fonoaudiologia:1900",
+      "career": "TECNICATURA EN FONOAUDIOLOGÍA",
+      "planYear": "1900",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título técnico histórico frente a la Licenciatura en Fonoaudiología.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Fonoaudiología",
+        "conversionRule": "Reglamento 207, aprobado por Resolución 87 de la Comisión Ejecutiva Delegada de 24/12/2001.",
+        "currentSuccessor": { "identity": "licenciatura en fonoaudiologia:2006", "title": "Licenciado en Fonoaudiología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-fonoaudiologia-1900.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "La composición no está publicada y el registro histórico contradice la marca vigente del índice; la normativa convierte expresamente el título técnico."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-speech-therapy-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en fonoaudiologia:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La tecnicatura es un antecedente convertido y no una carrera vigente independiente."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/207-reglamento-de-conversion-del-titulo-de-tecnico-en-fonoaudiologia-por-el-de-licenciado-en-fonoaudiologia/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión a Licenciado en Fonoaudiología", "Resolución 87 de 24/12/2001"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fonoaudiologia", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["oferta vigente", "título actual", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "1900 es un valor administrativo histórico, no una fecha normativa verificada." },
+        { "field": "current", "resolution": "Se descarta current=true heredado del índice frente a metadata.current=false y las fuentes oficiales." }
+      ],
+      "remainingWork": "Auditar la malla de la Licenciatura Plan 2006 sin inferir créditos desde horas o U.C.B."
+    },
+    {
+      "identity": "tecnicatura en instrumentacion quirurgica:1997",
+      "career": "TECNICATURA EN INSTRUMENTACIÓN QUIRÚRGICA",
+      "planYear": "1997",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del registro administrativo de Tecnicatura cuyo título es Instrumentista Quirúrgico frente a la Licenciatura vigente.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Instrumentista Quirúrgico",
+        "conversionRule": "Reglamento 324, modalidad cursos de complementación, aprobado por Resolución 37 del Consejo Directivo Central de 17/07/2007.",
+        "currentSuccessor": { "identity": "licenciatura en instrumentacion quirurgica:2006", "title": "Licenciado en Instrumentación Quirúrgica" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-instrumentacion-quirurgica-1997.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "titleLabel": "INSTRUMENTISTA QUIRURGICO",
+        "interpretation": "Aunque el programa administrativo se rotula Tecnicatura, el título del snapshot coincide exactamente con el alcanzado por el reglamento de conversión."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-surgical-instrumentalist-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en instrumentacion quirurgica:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "Instrumentista Quirúrgico es el título histórico convertido a la Licenciatura y no una oferta de ingreso actual adicional."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/324-reglamento-de-conversion-del-titulo-de-instrumentista-quirurgico-por-el-de-licenciado-en-instrumentacion-quirurgica-modalidad-cursos-de-complementacion/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión del título Instrumentista Quirúrgico", "Resolución 37 del CDC de 17/07/2007"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-instrumentacion-quirurgica", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["Licenciatura vigente", "Montevideo", "Paysandú"] }
+      ],
+      "anomalies": [
+        { "field": "programName", "resolution": "La etiqueta Tecnicatura se interpreta junto al título real Instrumentista Quirúrgico publicado por el propio snapshot." },
+        { "field": "current", "resolution": "La normativa, la oferta vigente y metadata.current=false prevalecen sobre current=true del índice." }
+      ],
+      "remainingWork": "Auditar la Licenciatura Plan 2006 y su estructura oficial antes de ajustar su proyección."
+    },
+    {
+      "identity": "tecnicatura en laboratorio clinico:1900",
+      "career": "TECNICATURA EN LABORATORIO CLÍNICO",
+      "planYear": "1900",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título técnico histórico frente a la Licenciatura en Laboratorio Clínico.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Laboratorio Clínico",
+        "conversionRule": "Reglamento 185, aprobado por Resolución 1 de la Comisión Ejecutiva Delegada de 05/06/2000.",
+        "currentSuccessor": { "identity": "licenciatura en laboratorio clinico:2006", "title": "Licenciado en Laboratorio Clínico" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-laboratorio-clinico-1900.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El snapshot vacío corresponde al título histórico expresamente convertido a la Licenciatura."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-clinical-laboratory-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en laboratorio clinico:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La tecnicatura no constituye una carrera actual adicional."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/185-reglamento-de-conversion-del-titulo-de-tecnico-en-laboratorio-clinico-por-el-de-licenciado-en-laboratorio-clinico/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión a Licenciado en Laboratorio Clínico", "Resolución 1 de 05/06/2000"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-laboratorio-clinico/plan-de-estudio", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["plan de la Licenciatura vigente"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "1900 se conserva como clave administrativa sin tratarlo como fecha normativa." },
+        { "field": "current", "resolution": "Se prioriza la evidencia oficial sobre la marca del índice." }
+      ],
+      "remainingWork": "Auditar la Licenciatura Plan 2006 y no equiparar horas o U.C.B. con créditos."
+    },
+    {
+      "identity": "tecnicatura en neumocardiologia:1900",
+      "career": "TECNICATURA EN NEUMOCARDIOLOGÍA",
+      "planYear": "1900",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título técnico histórico frente a la Licenciatura en Neumocardiología.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Neumocardiología",
+        "conversionRule": "Reglamento 286, aprobado por Resolución 18 del Consejo Directivo Central de 22/06/2004.",
+        "currentSuccessor": { "identity": "licenciatura en neumocardiologia:2006", "title": "Licenciado en Neumocardiología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-neumocardiologia-1900.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "La normativa convirtió el título técnico y la oferta vigente publica únicamente la Licenciatura."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-pneumocardiology-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en neumocardiologia:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "El título técnico fue sustituido mediante conversión oficial."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/286-reglamento-de-conversion-del-titulo-de-tecnico-en-neumocardiologia-por-el-de-licenciado-en-neumocardiologia/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión a Licenciado en Neumocardiología", "Resolución 18 del CDC de 22/06/2004"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-neumocardiologia", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["oferta vigente", "título actual", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "1900 es una clave administrativa histórica." },
+        { "field": "current", "resolution": "Se descarta current=true del índice por contradecir metadata.current=false y las fuentes vigentes." }
+      ],
+      "remainingWork": "Auditar la Licenciatura Plan 2006 y su estructura por horas sin inferir créditos."
+    },
+    {
+      "identity": "tecnicatura en oftalmologia:1990",
+      "career": "TECNICATURA EN OFTALMOLOGÍA",
+      "planYear": "1990",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título técnico histórico frente a la Licenciatura en Oftalmología.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Oftalmología",
+        "conversionRule": "Reglamento 212, aprobado por Resolución 141 de la Comisión Ejecutiva Delegada de 17/12/2001.",
+        "currentSuccessor": { "identity": "licenciatura en oftalmologia:2006", "title": "Licenciado en Oftalmología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-oftalmologia-1990.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El registro histórico sin composición está alcanzado por la conversión oficial a la Licenciatura."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-ophthalmology-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en oftalmologia:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La tecnicatura fue sustituida y no es una carrera de ingreso vigente independiente."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/212-reglamento-de-conversion-del-titulo-de-tecnico-en-oftalmologia-por-el-de-licenciado-en-oftalmologia/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión a Licenciado en Oftalmología", "Resolución 141 de 17/12/2001"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-oftalmologia", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["oferta vigente", "título actual", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "La conversión oficial, la oferta actual y metadata.current=false prevalecen sobre el índice." }
+      ],
+      "remainingWork": "Auditar la Licenciatura Plan 2006 y su malla oficial."
+    },
+    {
+      "identity": "tecnicatura en radiologia:1900",
+      "career": "TECNICATURA EN RADIOLOGÍA",
+      "planYear": "1900",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título técnico histórico frente a la Licenciatura en Imagenología.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Radiología",
+        "conversionRule": "Reglamento 315, aprobado por Resolución 17 del Consejo Directivo Central de 28/11/2006.",
+        "currentSuccessor": { "identity": "licenciatura en imagenologia:2006", "title": "Licenciado en Imagenología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-radiologia-1900.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El reglamento convierte expresamente el título de Radiología al de Licenciado en Imagenología; el snapshot histórico no tiene composición."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-radiology-title-converted-to-current-imaging-degree",
+        "canonicalIdentity": "licenciatura en imagenologia:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "Radiología es el antecedente convertido de Imagenología y no una carrera vigente adicional."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/315-reglamento-de-conversion-del-titulo-de-tecnico-en-radiologia-por-el-titulo-de-licenciado-en-imagenologia/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión de Técnico en Radiología", "título Licenciado en Imagenología", "Resolución 17 del CDC de 28/11/2006"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-imagenologia", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["oferta vigente", "título actual", "Montevideo", "Paysandú"] }
+      ],
+      "anomalies": [
+        { "field": "identity", "resolution": "Se conserva Radiología sólo como identidad histórica trazable; la carrera vigente se denomina Imagenología." },
+        { "field": "planYear", "resolution": "1900 no se interpreta como año documentado de aprobación." }
+      ],
+      "remainingWork": "Auditar la Licenciatura en Imagenología Plan 2006 y su estructura oficial."
+    },
+    {
+      "identity": "tecnicatura en reeducacion psicomotriz:1901",
+      "career": "TECNICATURA EN REEDUCACIÓN PSICOMOTRIZ",
+      "planYear": "1901",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título técnico histórico frente a la Licenciatura en Psicomotricidad.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Reeducación Psicomotriz",
+        "conversionRule": "Reglamento 183, aprobado por Resolución 77 de la Comisión Ejecutiva Delegada de 14/02/2000.",
+        "currentSuccessor": { "identity": "licenciatura en psicomotricidad:2006", "title": "Licenciado en Psicomotricidad" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-reeducacion-psicomotriz-1901.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "La denominación técnica histórica fue convertida oficialmente y su snapshot no publica una malla vigente."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-psychomotor-reeducation-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en psicomotricidad:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La tecnicatura fue sustituida por la Licenciatura en Psicomotricidad."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/183-reglamento-de-conversion-del-titulo-de-tecnico-en-reeducacion-psicomotriz-por-el-de-licenciado-en-psicomotricidad/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión a Licenciado en Psicomotricidad", "Resolución 77 de 14/02/2000"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-psicomotricidad", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["oferta vigente", "título actual", "Montevideo", "Paysandú"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "1901 es un valor administrativo histórico y no una fecha normativa verificada." },
+        { "field": "current", "resolution": "Se priorizan la conversión, la oferta vigente y metadata.current=false." }
+      ],
+      "remainingWork": "Auditar la Licenciatura Plan 2006 sin inferir créditos desde horas o U.C.B."
+    },
+    {
+      "identity": "tecnicatura en registros medicos:1990",
+      "career": "TECNICATURA EN REGISTROS MÉDICOS",
+      "planYear": "1990",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del segundo título técnico alcanzado por la conversión a la Licenciatura en Registros Médicos.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Registros Médicos",
+        "conversionRule": "Reglamento 245, aprobado por Resolución 18 del Consejo Directivo Central de 09/12/2008.",
+        "currentSuccessor": { "identity": "licenciatura en registros medicos:2006", "title": "Licenciado en Registros Médicos", "intermediateTitle": "Tecnólogo en Registros Médicos" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-registros-medicos-1990.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El Reglamento 245 incluye expresamente este título técnico; la oferta vigente publica la Licenciatura y su título intermedio de Tecnólogo."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-medical-records-technician-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en registros medicos:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "Técnico en Registros Médicos es un título histórico convertido y no una carrera vigente adicional."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/245-reglamento-de-conversion-del-titulo-de-tecnico-en-archivo-medico-o-del-titulo-de-tecnico-en-registros-medicos-por-el-titulo-de-licenciado-en-registros-medicos/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["conversión de Técnico en Registros Médicos", "Resolución 18 del CDC de 09/12/2008"] },
+        { "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-registros-medicos", "authority": "Facultad de Medicina, Universidad de la República", "supports": ["Licenciatura vigente", "título intermedio Tecnólogo", "Montevideo", "Paysandú"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se descarta la vigencia del índice frente a metadata.current=false y la normativa de conversión." },
+        { "field": "credential", "resolution": "El título intermedio vigente es Tecnólogo en Registros Médicos; no se publica la tecnicatura histórica como carrera separada." }
+      ],
+      "remainingWork": "Auditar la Licenciatura Plan 2006 y su credencial intermedia con unidades oficiales, sin convertir horas a créditos."
     }
   ],
-  "contentHash": "sha256:a0b40ef8dc5eea78c02586100ab9808fa93b690a618100248b118c22d66ebf7e"
+  "contentHash": "sha256:a351b685381114f9f2c0c48be8790b895c555842dde016a6c8fee122fd68129a"
 }

@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:c1196a1a74602cc4d5e61c7a5209fa80cb4217247bb4542b86833c52a99ec9bd",
-    "officialAuditHash": "sha256:a0b40ef8dc5eea78c02586100ab9808fa93b690a618100248b118c22d66ebf7e",
+    "auditQueueHash": "sha256:f3ff99e7150cc1e118307680ed9891e95a2e34354e79daf9493a4a4d2e966268",
+    "officialAuditHash": "sha256:a351b685381114f9f2c0c48be8790b895c555842dde016a6c8fee122fd68129a",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
-    "generatedPlans": 165,
+    "generatedPlans": 156,
     "compositionAvailable": 123,
-    "compositionUnavailable": 42,
+    "compositionUnavailable": 33,
     "plansWithOfficialCampuses": 29,
-    "excludedFromCurrentUi": 12
+    "excludedFromCurrentUi": 21
   },
   "plans": [
     {
@@ -1262,24 +1262,6 @@
       ]
     },
     {
-      "identity": "tecnicatura en fisioterapia:1901",
-      "planId": "bedelias-fmed-tecnicatura-en-fisioterapia-1901",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-fisioterapia-1901.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
-      "identity": "tecnicatura en fonoaudiologia:1900",
-      "planId": "bedelias-fmed-tecnicatura-en-fonoaudiologia-1900",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-fonoaudiologia-1900.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
       "identity": "tecnicatura en hemoterapia:2006",
       "planId": "bedelias-fmed-tecnicatura-en-hemoterapia-2006",
       "facultyCode": "FMED",
@@ -1290,42 +1272,6 @@
         "montevideo",
         "paysandu"
       ]
-    },
-    {
-      "identity": "tecnicatura en instrumentacion quirurgica:1997",
-      "planId": "bedelias-fmed-tecnicatura-en-instrumentacion-quirurgica-1997",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-instrumentacion-quirurgica-1997.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
-      "identity": "tecnicatura en laboratorio clinico:1900",
-      "planId": "bedelias-fmed-tecnicatura-en-laboratorio-clinico-1900",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-laboratorio-clinico-1900.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
-      "identity": "tecnicatura en neumocardiologia:1900",
-      "planId": "bedelias-fmed-tecnicatura-en-neumocardiologia-1900",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-neumocardiologia-1900.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
-      "identity": "tecnicatura en oftalmologia:1990",
-      "planId": "bedelias-fmed-tecnicatura-en-oftalmologia-1990",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-oftalmologia-1990.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
     },
     {
       "identity": "tecnicatura en podologia:2006",
@@ -1349,15 +1295,6 @@
       "campusIds": []
     },
     {
-      "identity": "tecnicatura en radiologia:1900",
-      "planId": "bedelias-fmed-tecnicatura-en-radiologia-1900",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-radiologia-1900.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
       "identity": "tecnicatura en radioterapia:2006",
       "planId": "bedelias-fmed-tecnicatura-en-radioterapia-2006",
       "facultyCode": "FMED",
@@ -1367,24 +1304,6 @@
       "campusIds": [
         "montevideo"
       ]
-    },
-    {
-      "identity": "tecnicatura en reeducacion psicomotriz:1901",
-      "planId": "bedelias-fmed-tecnicatura-en-reeducacion-psicomotriz-1901",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-reeducacion-psicomotriz-1901.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
-      "identity": "tecnicatura en registros medicos:1990",
-      "planId": "bedelias-fmed-tecnicatura-en-registros-medicos-1990",
-      "facultyCode": "FMED",
-      "snapshotPath": "data/bedelias/fmed-tecnicatura-en-registros-medicos-1990.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
     },
     {
       "identity": "tecnicatura en salud ocupacional:2006",
@@ -1632,5 +1551,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:2f3fdded84c6ede6a7f50118820b30d816f3549c67b3f3b6c4f8e0b1c51c7b14"
+  "contentHash": "sha256:f69430e7fe77543b4036e309cc9ad10b264cae17716235df34962624be9e688c"
 }

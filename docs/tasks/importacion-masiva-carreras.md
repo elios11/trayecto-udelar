@@ -1058,3 +1058,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:a0b40ef8dc5eea78c02586100ab9808fa93b690a618100248b118c22d66ebf7e`. Cola actualizada: 121 identidades pendientes, 14 sin composición; hash `sha256:c1196a1a74602cc4d5e61c7a5209fa80cb4217247bb4542b86833c52a99ec9bd`.
 - La UI queda en 165 proyecciones: 123 con composición, 42 sin composición y doce identidades excluidas; hash `sha256:2f3fdded84c6ede6a7f50118820b30d816f3549c67b3f3b6c4f8e0b1c51c7b14`.
 - Siguiente paso: auditar `Tecnicatura en Fisioterapia` Plan 1901 frente a la Licenciatura en Fisioterapia vigente.
+
+### Titulaciones técnicas históricas de EUTM — nueve conversiones oficiales cerradas 2026-08-24
+
+- Se cerraron conjuntamente Fisioterapia, Fonoaudiología, Instrumentación Quirúrgica, Laboratorio Clínico, Neumocardiología, Oftalmología, Radiología, Reeducación Psicomotriz y Registros Médicos. Sus reglamentos oficiales convierten los títulos históricos a las licenciaturas vigentes de Fisioterapia, Fonoaudiología, Instrumentación Quirúrgica, Laboratorio Clínico, Neumocardiología, Oftalmología, Imagenología, Psicomotricidad y Registros Médicos.
+- Los nueve snapshots tienen `metadata.current: false`, carecen de composición y contradicen el `current: true` heredado del índice. Los años 1900/1901 se conservan como claves administrativas y no se presentan como fechas normativas documentadas.
+- Instrumentación se resolvió por el título real del snapshot, `Instrumentista Quirúrgico`, que coincide con el Reglamento 324; la etiqueta administrativa `Tecnicatura` no crea una oferta distinta.
+- La UI excluye sólo los nueve antecedentes y conserva sus licenciaturas sucesoras. No migra progreso automáticamente ni convierte horas de contacto o U.C.B. en créditos.
+- Registro de auditoría: hash `sha256:a351b685381114f9f2c0c48be8790b895c555842dde016a6c8fee122fd68129a`. Cola actualizada: 112 identidades pendientes, cinco sin composición; hash `sha256:f3ff99e7150cc1e118307680ed9891e95a2e34354e79daf9493a4a4d2e966268`.
+- La UI queda en 156 proyecciones: 123 con composición, 33 sin composición y veintiuna identidades excluidas; hash `sha256:f69430e7fe77543b4036e309cc9ad10b264cae17716235df34962624be9e688c`.
+- Siguiente paso: auditar conjuntamente `Asistente Dental`, `Higienista Dental` y `Laboratorista Dental` Plan 1963 frente a los títulos actuales de Odontología.
