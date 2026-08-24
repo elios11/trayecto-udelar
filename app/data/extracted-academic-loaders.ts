@@ -768,18 +768,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 0,
   },
-  "bedelias-fmed-tecnicatura-en-electroencefalografia-1900": {
-    load: () => import("./bedelias-generated/bedelias-fmed-tecnicatura-en-electroencefalografia-1900.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
-  "bedelias-fmed-tecnicatura-en-electroencefalografia-y-neurofisiologia-clinica-1990": {
-    load: () => import("./bedelias-generated/bedelias-fmed-tecnicatura-en-electroencefalografia-y-neurofisiologia-clinica-1990.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fmed-tecnicatura-en-fisioterapia-1901": {
     load: () => import("./bedelias-generated/bedelias-fmed-tecnicatura-en-fisioterapia-1901.json"),
     pathwayIds: ["bedelias"],

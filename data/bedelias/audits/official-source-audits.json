@@ -12897,7 +12897,108 @@
         }
       ],
       "remainingWork": "Auditar y proyectar la Licenciatura en Registros Médicos Plan 2006 con su estructura por horas y U.C.B.; no convertir horas de contacto en créditos sin una equivalencia oficial."
+    },
+    {
+      "identity": "tecnicatura en electroencefalografia:1900",
+      "career": "TECNICATURA EN ELECTROENCEFALOGRAFÍA",
+      "planYear": "1900",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia e identidad del título técnico histórico frente a la Licenciatura en Neurofisiología Clínica.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Electroencefalografía",
+        "conversionRule": "Reglamento 285, aprobado por Resolución 56 de la Comisión Ejecutiva Delegada de 16/12/2002.",
+        "currentSuccessor": {
+          "identity": "licenciatura en neurofisiologia clinica:2006",
+          "title": "Licenciado en Neurofisiología Clínica"
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-electroencefalografia-1900.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "La marca vigente del índice contradice los metadatos y la ausencia de composición del registro histórico. La conversión oficial y la oferta académica 2026 identifican a Neurofisiología Clínica como carrera actual."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-electroencephalography-title-converted-to-neurophysiology-degree",
+        "canonicalIdentity": "licenciatura en neurofisiologia clinica:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "El título fue alcanzado por el reglamento de conversión de 2002 y no integra la oferta de ingreso actual como tecnicatura independiente."
+      },
+      "sources": [
+        {
+          "url": "https://dgjuridica.udelar.edu.uy/285-reglamento-de-conversion-del-titulo-de-tecnico-en-electroencefalografia-o-electroencefalografia-y-neurofisiologia-clinica-por-el-de-licenciado-de-neurofisiologia-clinica/",
+          "authority": "Dirección General Jurídica, Universidad de la República",
+          "supports": ["conversión de Técnico en Electroencefalografía", "título de Licenciado en Neurofisiología Clínica", "Resolución 56 de 16/12/2002"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-neurofisiologia-clinica",
+          "authority": "Facultad de Medicina, Universidad de la República",
+          "supports": ["oferta vigente", "título actual", "cuatro años", "3.674 horas", "Montevideo"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/sites/default/files/eutm/Neurofisiolog%C3%ADa%20Cl%C3%ADnica/HORARIOS%201RO%20NEUROFISIOLOGIA%20CL%C3%8DNICA%202026.pdf",
+          "authority": "Facultad de Medicina, Universidad de la República",
+          "supports": ["dictado 2026 de la Licenciatura en Neurofisiología Clínica"]
+        }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "El año 1900 funciona como valor administrativo del registro y no se interpreta como fecha documentada de aprobación del plan." },
+        { "field": "current", "resolution": "Se priorizan el reglamento de conversión, la oferta 2026 y metadata.current=false sobre current=true heredado del índice." }
+      ],
+      "remainingWork": "Auditar la Licenciatura en Neurofisiología Clínica Plan 2006 y su malla por horas; no convertir horas de contacto en créditos sin equivalencia oficial."
+    },
+    {
+      "identity": "tecnicatura en electroencefalografia y neurofisiologia clinica:1990",
+      "career": "TECNICATURA EN ELECTROENCEFALOGRAFÍA Y NEUROFISIOLOGÍA CLÍNICA",
+      "planYear": "1990",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia e identidad de la segunda denominación técnica incluida en el Reglamento 285.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Electroencefalografía y Neurofisiología Clínica",
+        "conversionRule": "Reglamento 285, aprobado por Resolución 56 de la Comisión Ejecutiva Delegada de 16/12/2002.",
+        "currentSuccessor": {
+          "identity": "licenciatura en neurofisiologia clinica:2006",
+          "title": "Licenciado en Neurofisiología Clínica"
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-electroencefalografia-y-neurofisiologia-clinica-1990.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El Reglamento 285 nombra expresamente esta denominación y la convierte al título de Licenciado en Neurofisiología Clínica; el snapshot histórico no publica composición."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-electroencephalography-neurophysiology-title-converted-to-current-degree",
+        "canonicalIdentity": "licenciatura en neurofisiologia clinica:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La tecnicatura fue sustituida mediante conversión oficial y no constituye una carrera vigente adicional."
+      },
+      "sources": [
+        {
+          "url": "https://dgjuridica.udelar.edu.uy/285-reglamento-de-conversion-del-titulo-de-tecnico-en-electroencefalografia-o-electroencefalografia-y-neurofisiologia-clinica-por-el-de-licenciado-de-neurofisiologia-clinica/",
+          "authority": "Dirección General Jurídica, Universidad de la República",
+          "supports": ["denominación técnica exacta", "conversión a Licenciado en Neurofisiología Clínica", "Resolución 56 de 16/12/2002"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-neurofisiologia-clinica",
+          "authority": "Facultad de Medicina, Universidad de la República",
+          "supports": ["única carrera vigente", "título actual", "duración", "sede"]
+        }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se descarta la marca current=true del índice porque contradice metadata.current=false, el reglamento de conversión y la oferta académica vigente." },
+        { "field": "titleLabel", "resolution": "El snapshot dice 'Electroencefalograma'; la denominación normativa oficial es 'Electroencefalografía y Neurofisiología Clínica'." }
+      ],
+      "remainingWork": "Cerrado como título histórico convertido; el progreso no se migra automáticamente entre identidades."
     }
   ],
-  "contentHash": "sha256:eda865ecee51cb239667667e7024e68b610119fc3f3c2aaf35e15f2cb8ee3bc2"
+  "contentHash": "sha256:a0b40ef8dc5eea78c02586100ab9808fa93b690a618100248b118c22d66ebf7e"
 }

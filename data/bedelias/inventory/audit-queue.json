@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:55:59.448Z",
+  "generatedAt": "2026-08-24T05:00:08.445Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:eda865ecee51cb239667667e7024e68b610119fc3f3c2aaf35e15f2cb8ee3bc2"
+    "officialAuditRegistryHash": "sha256:a0b40ef8dc5eea78c02586100ab9808fa93b690a618100248b118c22d66ebf7e"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 54,
-    "pendingCanonicalIdentities": 123,
+    "evidenceClosedCanonicalIdentities": 56,
+    "pendingCanonicalIdentities": 121,
     "byPriority": {
-      "composition-unavailable": 16,
+      "composition-unavailable": 14,
       "official-sources-pending": 107
     },
     "regionalComparisons": {
@@ -346,67 +346,21 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "historical-title-converted-to-current-medical-records-degree"
-    }
-  ],
-  "queue": [
+    },
     {
       "identity": "tecnicatura en electroencefalografia:1900",
-      "career": {
-        "name": "TECNICATURA EN ELECTROENCEFALOGRAFÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1900",
-        "name": "TECNICATURA EN ELECTROENCEFALOGRAFIA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FMED",
-        "serviceName": "FACULTAD DE MEDICINA",
-        "planKey": "FMED:tecnicatura en electroencefalografia:1900",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FMED",
-          "serviceName": "FACULTAD DE MEDICINA",
-          "planKey": "FMED:tecnicatura en electroencefalografia:1900",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-electroencephalography-title-converted-to-neurophysiology-degree"
     },
     {
       "identity": "tecnicatura en electroencefalografia y neurofisiologia clinica:1990",
-      "career": {
-        "name": "TECNICATURA EN ELECTROENCEFALOGRAFÍA Y NEUROFISIOLOGÍA CLÍNICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1990",
-        "name": "TECNICATURA EN ELECTROENCEFALOGRAFIA Y NEUROFISIOLOGIA CLINICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FMED",
-        "serviceName": "FACULTAD DE MEDICINA",
-        "planKey": "FMED:tecnicatura en electroencefalografia y neurofisiologia clinica:1990",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FMED",
-          "serviceName": "FACULTAD DE MEDICINA",
-          "planKey": "FMED:tecnicatura en electroencefalografia y neurofisiologia clinica:1990",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-electroencephalography-neurophysiology-title-converted-to-current-degree"
+    }
+  ],
+  "queue": [
     {
       "identity": "tecnicatura en fisioterapia:1901",
       "career": {
@@ -4149,5 +4103,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:c729c0d91e9eba5f80841180cb2f5e0d20592e75fbfb24d5acfa5ffa91464e09"
+  "contentHash": "sha256:c1196a1a74602cc4d5e61c7a5209fa80cb4217247bb4542b86833c52a99ec9bd"
 }

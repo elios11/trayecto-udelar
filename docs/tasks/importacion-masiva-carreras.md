@@ -1048,3 +1048,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:eda865ecee51cb239667667e7024e68b610119fc3f3c2aaf35e15f2cb8ee3bc2`. Cola actualizada: 123 identidades pendientes, 16 sin composición; hash `sha256:c729c0d91e9eba5f80841180cb2f5e0d20592e75fbfb24d5acfa5ffa91464e09`.
 - La UI queda en 167 proyecciones: 123 con composición, 44 sin composición y diez identidades excluidas; hash `sha256:869b635583186e195315ab4c62b025c635c251b330f1e9dbeb83d4b97b7c0cae`.
 - Siguiente paso: auditar `Tecnicatura en Electroencefalografía` Plan 1900 y contrastarla con la Licenciatura en Neurofisiología Clínica vigente.
+
+### Tecnicaturas históricas en Electroencefalografía — conversión a Neurofisiología Clínica cerrada 2026-08-24
+
+- El Reglamento 285 de la Dirección General Jurídica, aprobado por Resolución 56 de la Comisión Ejecutiva Delegada de 16/12/2002, comprende expresamente los títulos `Técnico en Electroencefalografía` y `Técnico en Electroencefalografía y Neurofisiología Clínica` y los convierte al de `Licenciado en Neurofisiología Clínica`.
+- Los dos snapshots históricos —años administrativos 1900 y 1990— tienen `metadata.current: false`, carecen de composición y contradicen el `current: true` heredado del índice. El valor 1900 no se interpreta como fecha real del plan.
+- Facultad de Medicina publica actualmente la Licenciatura en Neurofisiología Clínica: cuatro años, 3.674 horas, Montevideo y actividad académica confirmada en 2026. No publica ninguna de las dos tecnicaturas como ingreso vigente independiente.
+- La UI conserva los snapshots para trazabilidad, excluye ambas denominaciones históricas y no migra progreso automáticamente. La licenciatura vigente queda como identidad separada pendiente de auditoría curricular por horas.
+- Registro de auditoría: hash `sha256:a0b40ef8dc5eea78c02586100ab9808fa93b690a618100248b118c22d66ebf7e`. Cola actualizada: 121 identidades pendientes, 14 sin composición; hash `sha256:c1196a1a74602cc4d5e61c7a5209fa80cb4217247bb4542b86833c52a99ec9bd`.
+- La UI queda en 165 proyecciones: 123 con composición, 42 sin composición y doce identidades excluidas; hash `sha256:2f3fdded84c6ede6a7f50118820b30d816f3549c67b3f3b6c4f8e0b1c51c7b14`.
+- Siguiente paso: auditar `Tecnicatura en Fisioterapia` Plan 1901 frente a la Licenciatura en Fisioterapia vigente.
