@@ -19285,7 +19285,258 @@
       ],
       "uiNotice": "Plan 2010 flexible: completá los mínimos de cada área, la Tesina y 360 créditos totales. La Comisión de Carrera debe aprobar la coherencia del currículo individual; el catálogo disponible no es obligatorio completo.",
       "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La asignación concreta de unidades a un currículo personal requiere resolución de la Comisión de Carrera."
+    },
+    {
+      "identity": "tecnicatura en artes plasticas y visuales:2017",
+      "career": "TECNICATURA EN ARTES - PLÁSTICAS Y VISUALES",
+      "planYear": "2017",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, duración, créditos, estructura semestral, seminarios alternativos y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios publicado por Facultad de Artes para el Centro Universitario de Rivera"],
+        "planYear": "2017",
+        "title": "Técnico Universitario en Artes - Artes Plásticas y Visuales",
+        "careerName": "Tecnicatura en Artes Plásticas y Visuales",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 36,
+        "semesters": 6,
+        "minimumCredits": 240,
+        "current": true,
+        "degreeRule": "El título se obtiene con 240 créditos distribuidos en seis semestres de 40 créditos, incluyendo el Proyecto de Egreso.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+          "pathwayLabel": "Trayectoria del plan",
+          "pathwayDescription": "Secuencia semestral oficial del Plan 2017 en Rivera.",
+          "periodOrder": ["Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", "Semestre 5", "Semestre 6"],
+          "pathRequirementMap": {
+            "1R": "semester-1",
+            "2R": "semester-2",
+            "3R": "semester-3",
+            "4R": "semester-4",
+            "5R": "semester-5",
+            "6R": "semester-6",
+            "PROE": "semester-6"
+          },
+          "courseOverrides": {
+            "EPI": { "periodLabel": "Semestre 1" },
+            "UNIV": { "periodLabel": "Semestre 1" },
+            "EPII": { "periodLabel": "Semestre 2" },
+            "TAI": { "periodLabel": "Semestre 2" },
+            "SPAF": { "periodLabel": "Semestre 3" },
+            "EPIII": { "periodLabel": "Semestre 3" },
+            "SEMI": { "periodLabel": "Semestre 3" },
+            "TAII": { "periodLabel": "Semestre 3" },
+            "EPIV": { "periodLabel": "Semestre 4" },
+            "SEMII": { "periodLabel": "Semestre 4" },
+            "TAIII": { "periodLabel": "Semestre 4" },
+            "EPV": { "periodLabel": "Semestre 5" },
+            "TAIV": { "periodLabel": "Semestre 5" },
+            "STEA": { "periodLabel": "Semestre 6" },
+            "TAV": { "periodLabel": "Semestre 6" },
+            "PROE": { "requirementId": "semester-6", "periodLabel": "Semestre 6" }
+          },
+          "creditRequirements": [
+            { "id": "semester-1", "name": "Primer semestre", "shortName": "Semestre 1", "minCredits": 40 },
+            { "id": "semester-2", "name": "Segundo semestre", "shortName": "Semestre 2", "minCredits": 40 },
+            { "id": "semester-3", "name": "Tercer semestre", "shortName": "Semestre 3", "minCredits": 40 },
+            { "id": "semester-4", "name": "Cuarto semestre", "shortName": "Semestre 4", "minCredits": 40 },
+            { "id": "semester-5", "name": "Quinto semestre", "shortName": "Semestre 5", "minCredits": 40 },
+            { "id": "semester-6", "name": "Sexto semestre y Proyecto de Egreso", "shortName": "Semestre 6", "minCredits": 40 }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "mandatory-curriculum",
+              "label": "Unidades obligatorias del Plan 2017",
+              "sourceCourseIds": ["EPI", "UNIV", "EPII", "TAI", "EPIII", "TAII", "EPIV", "SEMII", "TAIII", "EPV", "TAIV", "STEA", "TAV", "PROE"]
+            },
+            {
+              "id": "third-semester-seminar",
+              "label": "Un seminario de 5 créditos en el tercer semestre",
+              "minCompleted": 1,
+              "sourceCourseIds": ["SPAF", "SEMI"]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CUR",
+          "locations": ["Rivera"],
+          "role": "oferta completa de Facultad de Artes en el CENUR Noreste, sede Rivera",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cur-tecnicatura-en-artes-plasticas-y-visuales-2017.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 36,
+        "publishedMinimumCredits": 240,
+        "compositionMatterEntries": 16,
+        "compositionCredits": 245,
+        "interpretation": "Bedelías reproduce la estructura oficial y agrega dos seminarios concretos de 5 créditos en el tercer semestre. El plan exige un único seminario de 5 créditos en ese semestre, por lo que se modelan como alternativas."
+      },
+      "conclusion": {
+        "canonicalModel": "one-career-distinct-site-plan",
+        "regionalCurriculumVariant": true,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "Rivera tiene un Plan 2017 propio, vigente y territorialmente radicado, con unidades y seminarios diferentes al Plan 2013 de Rocha. Comparten carrera y título, pero no deben fusionarse como una sola malla.",
+        "normalization": [
+          "Agrupar el Plan 2017 y el Plan 2013 bajo una única Tecnicatura en Artes Plásticas y Visuales de Facultad de Artes.",
+          "Mantener el Plan 2017 como opción independiente con sede Rivera, seis semestres y 240 créditos.",
+          "Exigir las unidades nominales del plan, un único seminario de 5 créditos en el tercer semestre y el Proyecto de Egreso.",
+          "Tratar SPAF y Seminario I Maquillaje como alternativas vigentes para el cupo de seminario del tercer semestre, no como 10 créditos obligatorios acumulados."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": ["plan de estudios", "título", "tres años", "seis semestres", "240 créditos", "malla", "Proyecto de Egreso", "sede Rivera"]
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales/",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": ["vigencia", "coordinación actual", "programas de unidades curriculares", "sede Rivera"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales",
+          "authority": "Portal central de la Universidad de la República",
+          "supports": ["vigencia", "36 meses", "240 créditos", "sede Rivera", "requisitos de ingreso"]
+        }
+      ],
+      "anomalies": [
+        { "field": "thirdSemesterSeminars", "resolution": "El plan exige 5 créditos de Seminarios. Bedelías lista dos propuestas concretas de 5 créditos; la UI exige una, sin convertir ambas en obligatorias." },
+        { "field": "planRelationship", "resolution": "El Plan 2017 de Rivera y el Plan 2013 de Rocha se muestran como planes de una misma carrera, no como trayectorias intercambiables ni como carreras duplicadas." }
+      ],
+      "uiNotice": "Plan 2017 de Rivera: 240 créditos en seis semestres. En el tercer semestre elegí un seminario de 5 créditos entre las propuestas vigentes y completá el Proyecto de Egreso.",
+      "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías y por los programas oficiales; no se deducen del orden semestral."
+    },
+    {
+      "identity": "tecnicatura en artes artes plasticas y visuales:2013",
+      "career": "TECNICATURA EN ARTES - ARTES PLÁSTICAS Y VISUALES",
+      "planYear": "2013",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, duración, créditos, estructura semestral, unidades extracurriculares y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios publicado por Facultad de Artes para el Centro Universitario Regional del Este"],
+        "planYear": "2013",
+        "title": "Técnico Universitario en Artes - Artes Plásticas y Visuales",
+        "careerName": "Tecnicatura en Artes Plásticas y Visuales",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 36,
+        "semesters": 6,
+        "minimumCredits": 240,
+        "current": true,
+        "degreeRule": "El título se obtiene con 240 créditos distribuidos en seis semestres de 40 créditos, incluyendo el Proyecto de Egreso.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+          "pathwayLabel": "Trayectoria del plan",
+          "pathwayDescription": "Secuencia semestral oficial del Plan 2013 en Rocha.",
+          "periodOrder": ["Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", "Semestre 5", "Semestre 6", "Oferta complementaria"],
+          "pathRequirementMap": {
+            "3309": "semester-1",
+            "2859": "semester-2",
+            "2674": "semester-3",
+            "3379": "semester-4",
+            "2449": "semester-5",
+            "2593": "semester-6"
+          },
+          "courseOverrides": {
+            "AP01": { "periodLabel": "Semestre 1" },
+            "AP02": { "periodLabel": "Semestre 1" },
+            "AP03": { "periodLabel": "Semestre 2" },
+            "AP04": { "periodLabel": "Semestre 2" },
+            "AP05": { "periodLabel": "Semestre 3" },
+            "AP06": { "periodLabel": "Semestre 3" },
+            "AP07": { "periodLabel": "Semestre 3" },
+            "AP08": { "periodLabel": "Semestre 4" },
+            "AP09": { "periodLabel": "Semestre 4" },
+            "AP15": { "periodLabel": "Semestre 4" },
+            "AP10": { "periodLabel": "Semestre 5" },
+            "AP11": { "periodLabel": "Semestre 5" },
+            "AP12": { "periodLabel": "Semestre 6" },
+            "AP13": { "periodLabel": "Semestre 6" },
+            "AP14": { "periodLabel": "Semestre 6" },
+            "INUNI": { "credits": 0, "requirementId": "supplementary-offer", "periodLabel": "Oferta complementaria" },
+            "AP16": { "credits": 0, "requirementId": "supplementary-offer", "periodLabel": "Oferta complementaria" }
+          },
+          "creditRequirements": [
+            { "id": "semester-1", "name": "Primer semestre", "shortName": "Semestre 1", "minCredits": 40 },
+            { "id": "semester-2", "name": "Segundo semestre", "shortName": "Semestre 2", "minCredits": 40 },
+            { "id": "semester-3", "name": "Tercer semestre", "shortName": "Semestre 3", "minCredits": 40 },
+            { "id": "semester-4", "name": "Cuarto semestre", "shortName": "Semestre 4", "minCredits": 40 },
+            { "id": "semester-5", "name": "Quinto semestre", "shortName": "Semestre 5", "minCredits": 40 },
+            { "id": "semester-6", "name": "Sexto semestre", "shortName": "Semestre 6", "minCredits": 40 },
+            { "id": "supplementary-offer", "name": "Oferta complementaria no exigida por el plan", "shortName": "Complementarias", "minCredits": 0, "credentialRequired": false }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "mandatory-curriculum",
+              "label": "Unidades obligatorias del Plan 2013",
+              "sourceCourseIds": ["AP01", "AP02", "AP03", "AP04", "AP05", "AP06", "AP07", "AP08", "AP09", "AP15", "AP10", "AP11", "AP12", "AP13", "AP14"]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CURE",
+          "locations": ["Rocha"],
+          "role": "oferta completa de Facultad de Artes en el CENUR Este, sede Rocha",
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 240,
+        "compositionMatterEntries": 17,
+        "compositionCredits": 244,
+        "interpretation": "La composición contiene las 15 unidades del plan y dos entradas complementarias: una duplicación administrativa de Introducción a la Universidad por 4 créditos y Botánica y Arte con 0 créditos. Ninguna se vuelve requisito de egreso."
+      },
+      "conclusion": {
+        "canonicalModel": "one-career-distinct-site-plan",
+        "regionalCurriculumVariant": true,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "Rocha conserva un Plan 2013 vigente y territorialmente radicado, con estructura propia respecto del Plan 2017 de Rivera. Comparten carrera y título, pero la persona estudiante debe seleccionar el plan que realmente cursa.",
+        "normalization": [
+          "Agrupar el Plan 2013 y el Plan 2017 bajo una única Tecnicatura en Artes Plásticas y Visuales de Facultad de Artes.",
+          "Mantener el Plan 2013 como opción independiente con sede Rocha, seis semestres y 240 créditos.",
+          "Exigir las 15 unidades nominales del plan, incluidos los dos Seminarios, el Seminario-Taller de Educación Artística y el Proyecto de Egreso.",
+          "Conservar Introducción a la Universidad de 4 créditos y Botánica y Arte como oferta complementaria de Bedelías, sin contarlas para el título oficial."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": ["plan de estudios", "título", "tres años", "seis semestres", "240 créditos", "malla", "Proyecto de Egreso", "sede Rocha"]
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales-2/",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": ["vigencia", "coordinación actual", "grilla", "requisitos de egreso", "sede Rocha"]
+        }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "La fuente académica oficial establece tres años; se corrigen los 60 meses administrativos publicados por Bedelías." },
+        { "field": "supplementaryEntries", "resolution": "INUNI y AP16 no integran la malla oficial publicada; quedan visibles como oferta complementaria sin créditos exigibles." },
+        { "field": "planRelationship", "resolution": "El Plan 2013 de Rocha y el Plan 2017 de Rivera se muestran como planes de una misma carrera, no como trayectorias intercambiables ni como carreras duplicadas." }
+      ],
+      "uiNotice": "Plan 2013 de Rocha: 240 créditos en seis semestres y Proyecto de Egreso. Las entradas complementarias de Bedelías no sustituyen las 15 unidades del plan oficial.",
+      "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías; no se deducen del orden semestral."
     }
   ],
-  "contentHash": "sha256:7b5cd949953296be18fe5fc9f7efc6436ad18acb689b022158e6ed33e076b1c0"
+  "contentHash": "sha256:9d2c0b740b123206dd85e113c9fb2e26190780ee16385f39bf6ac98cb6dc0d16"
 }

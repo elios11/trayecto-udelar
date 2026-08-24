@@ -1283,3 +1283,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:7b5cd949953296be18fe5fc9f7efc6436ad18acb689b022158e6ed33e076b1c0`. Cola general: 73 identidades pendientes; hash `sha256:ba8b77c2aa59b0e286b2d684aa22c91ed5f0b2db09f0c9d05a666e924018c137`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:03eb10a533735326c3bfe03caf29e466fc26f6784f8823099e4e7a9e401760b3`. Cola funcional vacía; hash `sha256:4d2e512ef0dc57f9ca9a8a17d64982fb9a3bb01c28d57f2e9155131c893816fa`.
 - Siguiente paso: auditar la Tecnicatura en Artes Plásticas y Visuales Plan 2017, primera identidad reproducible restante.
+
+### Tecnicatura en Artes Plásticas y Visuales — planes territoriales de Rocha y Rivera operativos 2026-08-24
+
+- Facultad de Artes publica una única carrera y el mismo título `Técnico Universitario en Artes - Artes Plásticas y Visuales`, con dos planes vigentes y territorialmente radicados: Plan 2013 en Rocha y Plan 2017 en Rivera. Ambos duran tres años, se organizan en seis semestres y exigen 240 créditos.
+- La UI agrupa ambos bajo una sola Tecnicatura y conserva dos opciones de plan independientes. No crea carreras duplicadas, no ofrece una sede incompatible con el plan elegido y no mezcla como trayectoria los cursos específicos de Rocha y Rivera.
+- El Plan 2017 exige catorce unidades nominales y un seminario de 5 créditos en el tercer semestre. Bedelías ofrece allí `SPAF` y `Seminario I Maquillaje`; la UI los presenta como alternativas y no exige los dos, evitando elevar falsamente el total a 245 créditos.
+- El Plan 2013 exige sus quince unidades oficiales. `INUNI` de 4 créditos y `Botánica y Arte` de 0 créditos aparecen en Bedelías pero no en la grilla oficial: permanecen visibles como oferta complementaria sin contar para el título ni sustituir la Introducción a la Universidad oficial de 2 créditos.
+- Registro de auditoría: hash `sha256:9d2c0b740b123206dd85e113c9fb2e26190780ee16385f39bf6ac98cb6dc0d16`. Cola general: 71 identidades pendientes; hash `sha256:d2c72b71a991bdc966b5f4f7344c7472a55965bcf16bdf70a2ced01bffd02c26`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:bf6ecac1e0d02c1b8212559bdbee11da216a0ec8788f1a8681efe885fa619aec`. Cola funcional vacía; hash `sha256:ffdac73966bdd484be4573682ec65d8e5fac682aa81ccb042d812af8b611ab69`.
+- Siguiente paso: auditar la Tecnicatura en Gestión de Recursos Naturales Plan 2011 y contrastar su articulación con la Licenciatura Plan 2010 sin convertirla en título intermedio automático.
