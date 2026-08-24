@@ -12217,7 +12217,237 @@
         }
       ],
       "remainingWork": "Caso cerrado para la UI vigente. Conservar el registro histórico fuera del selector y auditar por separado la Licenciatura en Relaciones Internacionales Plan 2013 desde sus fuentes actuales."
+    },
+    {
+      "identity": "licenciatura en relaciones laborales:2012",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "reviewedBy": "Codex",
+      "snapshotPath": "data/bedelias/fder-licenciatura-en-relaciones-laborales-2012.json",
+      "officialPlan": {
+        "facultyCode": "FDER",
+        "facultyName": "FACULTAD DE DERECHO",
+        "careerName": "Licenciatura en Relaciones Laborales",
+        "planYear": "2012",
+        "title": "Licenciado en Relaciones Laborales",
+        "minimumCredits": 320,
+        "durationMonths": 48,
+        "intermediateTitle": {
+          "title": "Técnico Asesor en Relaciones Laborales",
+          "minimumCredits": 200,
+          "completion": "Ciclos de Formación Básica y de Estudios Orientados: 134 créditos obligatorios y 66 opcionales"
+        },
+        "current": true,
+        "curriculum": {
+          "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2023-08/Infograf%C3%ADa%20RRLL.pdf",
+          "prerequisitesSourceUrl": "https://www.fder.edu.uy/node/5321",
+          "creditRequirements": [
+            { "id": "rrll-basico", "name": "Ciclo de Formación Básica", "shortName": "Formación Básica", "minCredits": 80 },
+            { "id": "rrll-orientado", "name": "Ciclo de Estudios Orientados", "shortName": "Estudios Orientados", "minCredits": 120 },
+            { "id": "rrll-profesional", "name": "Ciclo Profesional", "shortName": "Profesional", "minCredits": 120 }
+          ],
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courses": [
+                { "id": "historia-derecho", "name": "Historia del Derecho", "credits": 4, "requirementId": "rrll-basico" },
+                { "id": "principios-constitucional", "name": "Principios de Derecho Constitucional", "credits": 9, "requirementId": "rrll-basico" },
+                { "id": "teoria-general-derecho", "name": "Teoría General del Derecho", "credits": 4, "requirementId": "rrll-basico" },
+                { "id": "derechos-sociales", "name": "Derechos Sociales", "credits": 9, "requirementId": "rrll-basico" }
+              ]
+            },
+            {
+              "label": "Semestre 2",
+              "courses": [
+                { "id": "historia-pensamiento", "name": "Historia del Pensamiento Político y Social", "credits": 4, "requirementId": "rrll-basico" },
+                { "id": "introduccion-investigacion", "name": "Introducción a la Investigación", "credits": 5, "requirementId": "rrll-basico" },
+                { "id": "fundamentos-filosoficos", "name": "Fundamentos Filosóficos de las Relaciones Laborales", "credits": 9, "requirementId": "rrll-basico" },
+                { "id": "opcionales-basico", "name": "Unidades opcionales del Ciclo de Formación Básica", "credits": 36, "requirementId": "rrll-basico", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "Semestre 3",
+              "courses": [
+                { "id": "estadistica", "name": "Estadística", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "sociologia-trabajo", "name": "Sociología del Trabajo", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "derecho-trabajo", "name": "Derecho del Trabajo", "credits": 8, "requirementId": "rrll-orientado" }
+              ]
+            },
+            {
+              "label": "Semestre 4",
+              "courses": [
+                { "id": "organizacion-trabajo", "name": "Organización del Trabajo", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "economia-trabajo", "name": "Economía del Trabajo", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "derecho-individual", "name": "Derecho Individual del Trabajo", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "teoria-relaciones", "name": "Teoría de las Relaciones Laborales", "credits": 8, "requirementId": "rrll-orientado" }
+              ]
+            },
+            {
+              "label": "Semestre 5",
+              "courses": [
+                { "id": "gestion-empresarial", "name": "Gestión Empresarial", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "psicologia-laboral", "name": "Psicología Laboral", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "derecho-integracion", "name": "Derecho de la Integración y las Relaciones Laborales", "credits": 4, "requirementId": "rrll-orientado" },
+                { "id": "negociacion-colectiva", "name": "Negociación Colectiva", "credits": 8, "requirementId": "rrll-orientado" },
+                { "id": "tecnica-1", "name": "Técnica I", "credits": 6, "requirementId": "rrll-orientado" },
+                { "id": "opcionales-orientado", "name": "Unidades opcionales del Ciclo de Estudios Orientados", "credits": 30, "requirementId": "rrll-orientado", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "Semestre 6",
+              "courses": [
+                { "id": "teoria-metodos", "name": "Teoría y Métodos de la Investigación", "credits": 12, "requirementId": "rrll-profesional" },
+                { "id": "derecho-empresa", "name": "Derecho de la Empresa", "credits": 4, "requirementId": "rrll-profesional" },
+                { "id": "derecho-sector-publico", "name": "Derecho de las Relaciones Laborales en el Sector Público", "credits": 4, "requirementId": "rrll-profesional" },
+                { "id": "tecnica-2", "name": "Técnica II", "credits": 4, "requirementId": "rrll-profesional" }
+              ]
+            },
+            {
+              "label": "Semestre 7",
+              "courses": [
+                { "id": "derecho-seguridad-social", "name": "Derecho de la Seguridad Social", "credits": 6, "requirementId": "rrll-profesional" },
+                { "id": "salud-seguridad", "name": "Salud, Seguridad y Prevención", "credits": 6, "requirementId": "rrll-profesional" },
+                { "id": "sociologia-trabajo-2", "name": "Sociología del Trabajo II", "credits": 6, "requirementId": "rrll-profesional" },
+                { "id": "empleo-formacion", "name": "Empleo y Formación Profesional", "credits": 8, "requirementId": "rrll-profesional" },
+                { "id": "tecnica-3", "name": "Técnica III", "credits": 4, "requirementId": "rrll-profesional" }
+              ]
+            },
+            {
+              "label": "Semestre 8",
+              "courses": [
+                { "id": "metodologia-investigacion", "name": "Metodología de la Investigación", "credits": 6, "requirementId": "rrll-profesional" },
+                { "id": "metodologia-ensenanza", "name": "Metodología de la Enseñanza", "credits": 6, "requirementId": "rrll-profesional" },
+                { "id": "metodologia-extension", "name": "Metodología de la Extensión", "credits": 6, "requirementId": "rrll-profesional" },
+                { "id": "monografia-final", "name": "Monografía final de grado", "credits": 30, "requirementId": "rrll-profesional" },
+                { "id": "pasantia-final", "name": "Pasantía final de grado", "credits": 30, "requirementId": "rrll-profesional" },
+                { "id": "acreditacion-practica", "name": "Acreditación de práctica profesional", "credits": 30, "requirementId": "rrll-profesional" },
+                { "id": "opcionales-profesional", "name": "Unidades opcionales del Ciclo Profesional", "credits": 30, "requirementId": "rrll-profesional", "curricularBlock": true }
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            { "id": "rrll-basico-obligatorio", "label": "Núcleo obligatorio de Formación Básica", "minCompleted": 7, "courseIds": ["historia-derecho", "principios-constitucional", "teoria-general-derecho", "derechos-sociales", "historia-pensamiento", "introduccion-investigacion", "fundamentos-filosoficos"] },
+            { "id": "rrll-orientado-obligatorio", "label": "Núcleo obligatorio de Estudios Orientados", "minCompleted": 12, "courseIds": ["estadistica", "sociologia-trabajo", "derecho-trabajo", "organizacion-trabajo", "economia-trabajo", "derecho-individual", "teoria-relaciones", "gestion-empresarial", "psicologia-laboral", "derecho-integracion", "negociacion-colectiva", "tecnica-1"] },
+            { "id": "rrll-profesional-obligatorio", "label": "Núcleo obligatorio del Ciclo Profesional", "minCompleted": 9, "courseIds": ["teoria-metodos", "derecho-empresa", "derecho-sector-publico", "tecnica-2", "derecho-seguridad-social", "salud-seguridad", "sociologia-trabajo-2", "empleo-formacion", "tecnica-3"] },
+            { "id": "rrll-metodologia", "label": "Una metodología", "minCompleted": 1, "courseIds": ["metodologia-investigacion", "metodologia-ensenanza", "metodologia-extension"] },
+            { "id": "rrll-egreso", "label": "Una modalidad de egreso", "minCompleted": 1, "courseIds": ["monografia-final", "pasantia-final", "acreditacion-practica"] }
+          ],
+          "creditGroups": [
+            { "id": "rrll-basico", "courseIds": ["historia-derecho", "principios-constitucional", "teoria-general-derecho", "derechos-sociales", "historia-pensamiento", "introduccion-investigacion", "fundamentos-filosoficos", "opcionales-basico"] },
+            { "id": "rrll-orientado-asignaturas", "courseIds": ["estadistica", "sociologia-trabajo", "derecho-trabajo", "organizacion-trabajo", "economia-trabajo", "derecho-individual", "teoria-relaciones", "gestion-empresarial", "psicologia-laboral", "derecho-integracion", "negociacion-colectiva", "tecnica-1"] }
+          ],
+          "credentials": [
+            {
+              "id": "rrll-tecnico-asesor",
+              "title": "Técnico Asesor en Relaciones Laborales",
+              "minTotalCredits": 200,
+              "nodeRequirements": [
+                { "nodeId": "rrll-basico", "minCredits": 80 },
+                { "nodeId": "rrll-orientado", "minCredits": 120 }
+              ],
+              "requiredCourseGroupIds": ["rrll-basico-obligatorio", "rrll-orientado-obligatorio"]
+            },
+            {
+              "id": "bedelias-degree",
+              "title": "Licenciado en Relaciones Laborales",
+              "minTotalCredits": 320,
+              "nodeRequirements": [
+                { "nodeId": "rrll-basico", "minCredits": 80 },
+                { "nodeId": "rrll-orientado", "minCredits": 120 },
+                { "nodeId": "rrll-profesional", "minCredits": 120 }
+              ],
+              "requiredCourseGroupIds": ["rrll-basico-obligatorio", "rrll-orientado-obligatorio", "rrll-profesional-obligatorio", "rrll-metodologia", "rrll-egreso"]
+            }
+          ],
+          "prerequisites": [
+            { "targetId": "derecho-individual", "examIds": ["derecho-trabajo"] },
+            { "targetId": "derecho-integracion", "examIds": ["derecho-individual"] },
+            { "targetId": "tecnica-2", "examIds": ["tecnica-1"], "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "derecho-sector-publico", "examIds": ["derecho-individual"], "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "derecho-empresa", "examIds": ["derecho-individual"], "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "teoria-metodos", "examIds": ["introduccion-investigacion"], "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "tecnica-3", "examIds": ["tecnica-2"] },
+            { "targetId": "empleo-formacion", "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "sociologia-trabajo-2", "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "salud-seguridad", "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "derecho-seguridad-social", "examIds": ["derecho-individual"], "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "metodologia-investigacion", "examIds": ["teoria-metodos"], "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "metodologia-ensenanza", "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" },
+            { "targetId": "metodologia-extension", "minCredits": 80, "minCreditsGroupId": "rrll-basico", "minCreditsGroupName": "Ciclo de Formación Básica", "minApprovals": 9, "minApprovalsGroupId": "rrll-orientado-asignaturas", "minApprovalsGroupName": "Ciclo de Estudios Orientados" }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FDER",
+          "locations": ["Montevideo"],
+          "curriculumVariant": false
+        }
+      ],
+      "conclusion": {
+        "canonicalModel": "one-current-plan-with-intermediate-title",
+        "regionalCurriculumVariant": false,
+        "publicationEligible": false,
+        "summary": "Un Plan 2012 vigente en Montevideo, con título intermedio a los 200 créditos y tres modalidades alternativas de egreso dentro de una misma licenciatura."
+      },
+      "uiNotice": "Plan flexible de cuatro años y 320 créditos. Los bloques opcionales representan créditos a elegir y no materias únicas. A los 200 créditos de los dos primeros ciclos se obtiene el título intermedio de Técnico Asesor. En el octavo semestre se elige una metodología y una modalidad de egreso de 30 créditos entre monografía, pasantía o acreditación de práctica profesional. Para iniciar el egreso la norma admite estar cursando la metodología; esa condición concurrente se informa sin convertirla en un bloqueo automático más estricto.",
+      "sources": [
+        {
+          "url": "https://www.fder.edu.uy/sites/default/files/2016-02/plan-estudios-licenciatura-rrll.pdf",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": ["Plan 2012", "tres ciclos", "320 créditos", "título intermedio de 200 créditos", "distribución 224 obligatorios y 96 opcionales"]
+        },
+        {
+          "url": "https://www.fder.edu.uy/sites/default/files/2023-08/Infograf%C3%ADa%20RRLL.pdf",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": ["malla por ocho semestres", "créditos de cada unidad", "metodologías alternativas", "modalidades de egreso"]
+        },
+        {
+          "url": "https://www.fder.edu.uy/node/5321",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": ["régimen vigente de previas", "elección de una metodología", "tres modalidades de egreso", "mínimos de ambos títulos"]
+        },
+        {
+          "url": "https://www.fder.edu.uy/sites/default/files/2024-08/FDER%20RRLL%20-Protocolo%20modalidades%20de%20egreso%202024%20CON%20MODIFICACIONES.pdf",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": ["monografía, pasantía o acreditación de práctica profesional", "30 créditos", "metodología cursándose o aprobada como condición de inicio"]
+        },
+        {
+          "url": "https://www.fder.edu.uy/rrll/plan",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": ["vigencia del Plan 2012", "carácter flexible", "320 créditos"]
+        },
+        {
+          "url": "https://www.fder.edu.uy/ense%C3%B1anza/carreras-de-grado",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": ["oferta vigente", "duración institucional de cuatro años"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-relaciones-laborales",
+          "authority": "Universidad de la República",
+          "supports": ["título", "320 créditos", "dictado en Facultad de Derecho"]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "duration",
+          "resolution": "El catálogo central y el snapshot expresan 60 meses, mientras el plan curricular y la oferta de Facultad organizan cuatro años y ocho semestres. La trayectoria usa los ocho semestres oficiales y durationMonths=48."
+        },
+        {
+          "field": "optionalCourses",
+          "resolution": "Las fuentes fijan 36, 30 y 30 créditos opcionales por ciclo, pero la oferta concreta puede variar. Se representan como bloques acreditables y no se inventa una lista permanente de unidades obligatorias."
+        },
+        {
+          "field": "graduationPrerequisite",
+          "resolution": "El protocolo vigente permite iniciar la modalidad de egreso mientras se cursa una metodología. La UI no modela inscripción concurrente y por eso no exige automáticamente haberla aprobado."
+        },
+        {
+          "field": "historicalTransition",
+          "resolution": "El régimen transitorio desde el Plan 1994 estuvo acotado a 2012-2013. No se publica como trayectoria vigente ni se mezcla con el Plan 2012."
+        }
+      ],
+      "remainingWork": "Caso curricular cerrado para la UI. La nómina de opcionales puede enriquecerse en un hito posterior cuando FDER publique un catálogo vigente, completo y estable por ciclo."
     }
   ],
-  "contentHash": "sha256:5b9eeb3db8a2adef68a772d1af3c5d511b112cc62b7d3af17935b7f8dea88228"
+  "contentHash": "sha256:ddb66774bfa5117d4978469e60e4dd7689204c5a69f08c53c770393d77400010"
 }

@@ -86,6 +86,7 @@ type RequirementExpression = {
   options: RequirementOption[];
   creditRequirement: { minimum: number; planYear: string; planName: string } | null;
   groupCreditRequirement?: { minimum: number; groupCode: string; groupName: string } | null;
+  groupApprovalRequirement?: { minimum: number; groupCode: string; groupName: string } | null;
   children: RequirementExpression[];
 };
 
@@ -363,12 +364,13 @@ function optionSatisfied(option: RequirementOption, statuses: Record<string, Cou
   return false;
 }
 
-function expressionSatisfied(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, groupCredits: (groupCode: string) => number = () => 0): boolean {
-  if (expression.kind === "all") return expression.children.every((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits));
-  if (expression.kind === "any") return expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits));
-  if (expression.kind === "none") return !expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits));
+function expressionSatisfied(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, groupCredits: (groupCode: string) => number = () => 0, groupApprovals: (groupCode: string) => number = () => 0): boolean {
+  if (expression.kind === "all") return expression.children.every((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits, groupApprovals));
+  if (expression.kind === "any") return expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits, groupApprovals));
+  if (expression.kind === "none") return !expression.children.some((child) => expressionSatisfied(child, statuses, earnedCredits, groupCredits, groupApprovals));
   if (expression.creditRequirement) return earnedCredits >= expression.creditRequirement.minimum;
   if (expression.groupCreditRequirement) return groupCredits(expression.groupCreditRequirement.groupCode) >= expression.groupCreditRequirement.minimum;
+  if (expression.groupApprovalRequirement) return groupApprovals(expression.groupApprovalRequirement.groupCode) >= expression.groupApprovalRequirement.minimum;
   const required = expression.minimum ?? 1;
   return expression.options.filter((option) => optionSatisfied(option, statuses)).length >= required;
 }
@@ -448,6 +450,7 @@ function expressionOptions(expression: RequirementExpression, courses: Course[],
 function describeExpression(expression: RequirementExpression, courses: Course[], courseIds: Set<string>): string {
   if (expression.creditRequirement) return `${expression.creditRequirement.minimum} créditos acumulados en el plan`;
   if (expression.groupCreditRequirement) return `${expression.groupCreditRequirement.minimum} créditos en ${readableCourseName(expression.groupCreditRequirement.groupName)}`;
+  if (expression.groupApprovalRequirement) return `${expression.groupApprovalRequirement.minimum} unidades aprobadas en ${readableCourseName(expression.groupApprovalRequirement.groupName)}`;
   if (expression.kind === "none") {
     const options = (collectRequirementOptions(expression) as RequirementOption[]).slice(0, 3);
     return options.length ? options.map((option) => describeExcludedOption(option, courses)).join(" o ") : "No cumplir una condición excluyente";
@@ -465,13 +468,13 @@ function branchConditions(expression: RequirementExpression, courses: Course[], 
   return [describeExpression(expression, courses, courseIds)];
 }
 
-function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, courses: Course[], courseIds: Set<string>, groupCredits: (groupCode: string) => number, prefix = "r"): RequirementRow[] {
-  if (expression.kind === "all") return expression.children.flatMap((child, index) => requirementRows(child, statuses, earnedCredits, courses, courseIds, groupCredits, `${prefix}-${index}`));
+function requirementRows(expression: RequirementExpression, statuses: Record<string, CourseStatus>, earnedCredits: number, courses: Course[], courseIds: Set<string>, groupCredits: (groupCode: string) => number, groupApprovals: (groupCode: string) => number, prefix = "r"): RequirementRow[] {
+  if (expression.kind === "all") return expression.children.flatMap((child, index) => requirementRows(child, statuses, earnedCredits, courses, courseIds, groupCredits, groupApprovals, `${prefix}-${index}`));
   if (expression.kind === "none") {
     const options = collectRequirementOptions(expression) as RequirementOption[];
     const localOptions = options.filter((option) => courseIds.has(option.code));
     const alternatives = (localOptions.length ? localOptions : options).slice(0, 3).map((option) => describeExcludedOption(option, courses));
-    return [{ key: prefix, label: alternatives.length ? "No tener aprobada ninguna de estas equivalencias" : "No cumplir una condición excluyente", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
+    return [{ key: prefix, label: alternatives.length ? "No tener aprobada ninguna de estas equivalencias" : "No cumplir una condición excluyente", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits, groupApprovals) }];
   }
   if (expression.kind === "any") {
     const isComplex = expression.children.some((child) => child.kind === "all" && child.children.length > 2);
@@ -479,20 +482,20 @@ function requirementRows(expression: RequirementExpression, statuses: Record<str
       const alternativeGroups = expression.children.map((child, index) => ({
         label: `Opción ${index + 1}`,
         conditions: branchConditions(child, courses, courseIds),
-        done: expressionSatisfied(child, statuses, earnedCredits, groupCredits),
+        done: expressionSatisfied(child, statuses, earnedCredits, groupCredits, groupApprovals),
       }));
       return [{ key: prefix, label: "Cumplir una de estas opciones", alternativeGroups, done: alternativeGroups.some((group) => group.done) }];
     }
     const alternatives = expression.children.map((child) => describeExpression(child, courses, courseIds)).filter(Boolean);
-    return [{ key: prefix, label: "Cumplir una de estas opciones", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
+    return [{ key: prefix, label: "Cumplir una de estas opciones", alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits, groupApprovals) }];
   }
   const alternatives = expressionOptions(expression, courses, courseIds);
   if (alternatives.length > 1) {
     const minimum = expression.minimum ?? 1;
     const label = minimum === 1 ? "Cumplir una de estas opciones" : `Cumplir al menos ${minimum} de estas opciones`;
-    return [{ key: prefix, label, alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
+    return [{ key: prefix, label, alternatives, done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits, groupApprovals) }];
   }
-  return [{ key: prefix, label: describeExpression(expression, courses, courseIds), done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits) }];
+  return [{ key: prefix, label: describeExpression(expression, courses, courseIds), done: expressionSatisfied(expression, statuses, earnedCredits, groupCredits, groupApprovals) }];
 }
 
 const stateLabels: Record<CourseStatus, string> = {
@@ -962,8 +965,8 @@ export default function Home() {
     : planYear === "2025"
     ? plan2025Data.plan.minCredits
     : isProfilePlan ? (activeProfileData?.plan.minCredits ?? 450) : planYear === "qf-2015" ? (qf2015Data?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
-  const analystCredential = creditStructure.credentials.find((item) => item.id === "analyst");
-  const degreeCredential = creditStructure.credentials.find((item) => item.id !== "analyst") ?? creditStructure.credentials[0];
+  const degreeCredential = creditStructure.credentials.find((item) => item.id === "engineer" || item.id === "bedelias-degree") ?? creditStructure.credentials.at(-1)!;
+  const intermediateCredential = creditStructure.credentials.find((item) => item.id !== degreeCredential.id);
 
   const setStatuses = (updater: Record<string, CourseStatus> | ((current: Record<string, CourseStatus>) => Record<string, CourseStatus>)) => {
     setProgress((current) => {
@@ -1334,6 +1337,10 @@ export default function Home() {
       : isRegisteredPlan ? activeRegisteredPlan?.requirementGroupMap[groupCode] : isProfilePlan ? activeProfileData?.requirementGroupMap[groupCode] : planYear === "qf-2015" ? qf2015Data?.requirementGroupMap[groupCode] : undefined;
     return nodeId ? nodeCredits(nodeId) : 0;
   };
+  const groupApprovals = (groupCode: string) => {
+    const registeredCourseGroup = isRegisteredPlan ? activeRegisteredPlan?.requirementCourseGroups?.[groupCode] : undefined;
+    return (registeredCourseGroup ?? []).filter((courseId) => statuses[courseId] === "exonerated").length;
+  };
   const hasVerifiedCourseRule = (course: Course) => Boolean(officialRule(course, "course"));
   const isCourseAvailabilityKnown = (course: Course) => course.curricularBlock || course.placementTest || hasVerifiedCourseRule(course) || Boolean(course.prerequisites?.length || course.minCredits);
   const isCourseUnlocked = (course: Course) => {
@@ -1341,12 +1348,12 @@ export default function Home() {
     if (course.placementTest) return true;
     const modeledPrerequisitesMet = (course.prerequisites ?? []).every(isRequirementComplete);
     const rule = officialRule(course, "course");
-    if (rule) return modeledPrerequisitesMet && expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits);
+    if (rule) return modeledPrerequisitesMet && expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits, groupApprovals);
     return modeledPrerequisitesMet && (!course.minCredits || earnedCredits >= course.minCredits);
   };
   const isExamUnlocked = (course: Course) => {
     const rule = officialRule(course, "exam");
-    return rule ? expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits) : true;
+    return rule ? expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits, groupApprovals) : true;
   };
   const isUnlocked = (course: Course) => {
     const status = statuses[course.id] ?? "pending";
@@ -1522,7 +1529,7 @@ export default function Home() {
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
   const selectedRule = selected ? officialRule(selected, selectedAssessment) : undefined;
   const selectedAllocation = selected?.creditAllocations?.[0];
-  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, activeCourses, courseIds, groupCredits) : [];
+  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, activeCourses, courseIds, groupCredits, groupApprovals) : [];
   const selectedDependents = selected ? activeCourses.filter((course) => {
     if (course.id === selected.id) return false;
     if (course.prerequisites?.includes(selected.id)) return true;
@@ -1768,13 +1775,13 @@ export default function Home() {
             <button className="icon-button" aria-label="Reiniciar progreso" onClick={resetProgress}>↺</button>
           </div>
 
-          {analystCredential && <div className={`degree-card analyst ${credentialId === "analyst" ? "selected-degree" : ""}`}>
+          {intermediateCredential && <div className={`degree-card analyst ${credentialId === intermediateCredential.id ? "selected-degree" : ""}`}>
             <div>
               <span>Título intermedio</span>
-              <h3>{analystCredential.title}</h3>
+              <h3>{intermediateCredential.title}</h3>
             </div>
-            <strong>{Math.min(earnedCredits, analystCredential.minTotalCredits)}<small>/{analystCredential.minTotalCredits}</small></strong>
-            <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / analystCredential.minTotalCredits * 100, 100)}%` }} /></div>
+            <strong>{Math.min(earnedCredits, intermediateCredential.minTotalCredits)}<small>/{intermediateCredential.minTotalCredits}</small></strong>
+            <div className="linear-progress"><i style={{ width: `${Math.min(earnedCredits / intermediateCredential.minTotalCredits * 100, 100)}%` }} /></div>
           </div>}
 
           <div className={`degree-card engineer ${credentialId === degreeCredential.id ? "selected-degree" : ""}`}>
@@ -1794,9 +1801,9 @@ export default function Home() {
             <b className="panel-toggle-symbol" aria-hidden="true">{showRequirements ? "−" : "+"}</b>
           </button>
           {showRequirements && <>
-          {analystCredential && <div className="credential-switch" role="group" aria-label="Título para las metas detalladas">
-            <button className={credentialId === "analyst" ? "active" : ""} onClick={() => setCredentialId("analyst")}>Analista</button>
-            <button className={credentialId === "engineer" ? "active" : ""} onClick={() => setCredentialId("engineer")}>Ingeniería</button>
+          {intermediateCredential && <div className="credential-switch" role="group" aria-label="Título para las metas detalladas">
+            <button className={credentialId === intermediateCredential.id ? "active" : ""} onClick={() => setCredentialId(intermediateCredential.id)}>Título intermedio</button>
+            <button className={credentialId === degreeCredential.id ? "active" : ""} onClick={() => setCredentialId(degreeCredential.id)}>Título de grado</button>
           </div>}
           <div className="requirements-overview">
             <span>{credential.title}</span>
@@ -1845,7 +1852,7 @@ export default function Home() {
                 <summary><span><b>{group.label}</b><small>{current} de {group.minCompleted} completadas</small></span><strong className={current >= group.minCompleted ? "met" : ""}>{current}/{group.minCompleted}</strong></summary>
                 <div className="required-course-body">
                   {missing.length ? <><p>Te faltan:</p><ul>{missing.map((name) => <li key={name}>{name}</li>)}</ul></> : <p className="all-complete">✓ Requisito completo</p>}
-                  <a href={group.sourceUrl} target="_blank" rel="noreferrer">Ver fuente oficial de FING ↗</a>
+                  <a href={group.sourceUrl} target="_blank" rel="noreferrer">Ver fuente oficial ↗</a>
                 </div>
               </details>;
             })}

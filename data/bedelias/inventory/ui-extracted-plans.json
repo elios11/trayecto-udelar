@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:d75be0a355b07894a1794626e2f66d9e9fcf5e578a2382c865ef07a7578acb08",
-    "officialAuditHash": "sha256:5b9eeb3db8a2adef68a772d1af3c5d511b112cc62b7d3af17935b7f8dea88228",
+    "auditQueueHash": "sha256:67ada2624832d1639ad64db718a07ae73bbec8312549bb7c8002016b6da0b209",
+    "officialAuditHash": "sha256:ddb66774bfa5117d4978469e60e4dd7689204c5a69f08c53c770393d77400010",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
     "generatedPlans": 171,
-    "compositionAvailable": 123,
-    "compositionUnavailable": 48,
+    "compositionAvailable": 124,
+    "compositionUnavailable": 47,
     "plansWithOfficialCampuses": 29,
     "excludedFromCurrentUi": 6
   },
@@ -696,9 +696,11 @@
       "planId": "bedelias-fder-licenciatura-en-relaciones-laborales-2012",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-licenciatura-en-relaciones-laborales-2012.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "notariado:2016",
@@ -1682,5 +1684,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:901e9b86999ec7cc0b2d2bb9bf5869821c8e4acfaa67f592d81a35bfdcc5275b"
+  "contentHash": "sha256:7d6a6c4244961e417527fdea3adaa220244a4f197ff1894fd62139b56e9ef324"
 }

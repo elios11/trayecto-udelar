@@ -274,7 +274,22 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     group.courseIds.map((id) => courseIdBySourceId.get(id)).filter(Boolean),
   ]));
 
-  return { courses, periods, nodes, requiredCourseGroups, requirementCourseGroups, sourceUrl, courseIdBySourceId };
+  const credentials = (curriculum.credentials ?? []).map((credential) => ({
+    id: credential.id,
+    title: credential.title,
+    minTotalCredits: Number(credential.minTotalCredits),
+    nodeRequirements: (credential.nodeRequirements ?? []).map((requirement) => ({
+      nodeId: requirement.nodeId,
+      minCredits: Number(requirement.minCredits),
+    })),
+    requiredCourseGroups: (credential.requiredCourseGroupIds ?? [])
+      .map((id) => requiredCourseGroups.find((group) => group.id === id))
+      .filter(Boolean),
+    requiredActivities: [],
+    sourceUrl: credential.sourceUrl ?? sourceUrl,
+  }));
+
+  return { courses, periods, nodes, requiredCourseGroups, requirementCourseGroups, credentials, sourceUrl, courseIdBySourceId };
 }
 
 function emptyRequirementExpression(overrides = {}) {
@@ -286,6 +301,7 @@ function emptyRequirementExpression(overrides = {}) {
     children: [],
     creditRequirement: null,
     groupCreditRequirement: null,
+    groupApprovalRequirement: null,
     ...overrides,
   };
 }
@@ -329,6 +345,17 @@ function buildOfficialPrerequisiteRules(audit, officialCurriculum, serviceCode) 
           creditRequirement: { minimum, planYear: String(audit.planYear), planName: audit.career },
         }));
     }
+    if (Number(prerequisite.minApprovals) > 0 && prerequisite.minApprovalsGroupId) {
+      const minimum = Number(prerequisite.minApprovals);
+      children.push(emptyRequirementExpression({
+        label: `${minimum} unidades aprobadas en ${prerequisite.minApprovalsGroupName ?? prerequisite.minApprovalsGroupId}`,
+        groupApprovalRequirement: {
+          minimum,
+          groupCode: prerequisite.minApprovalsGroupId,
+          groupName: prerequisite.minApprovalsGroupName ?? prerequisite.minApprovalsGroupId,
+        },
+      }));
+    }
     if (children.length === 0) return [];
     return [{
       target: { code: target.id, name: target.name, assessment: "course" },
@@ -340,6 +367,7 @@ function buildOfficialPrerequisiteRules(audit, officialCurriculum, serviceCode) 
         children,
         creditRequirement: null,
         groupCreditRequirement: null,
+        groupApprovalRequirement: null,
       },
       heading: `Condiciones oficiales para cursar ${target.name}`,
       sourceUrl,
@@ -461,7 +489,9 @@ function buildProjection(entry, snapshot, audit) {
       creditStructure: {
         countingMode: "allocated",
         nodes: officialCurriculum?.nodes ?? [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: safeMinCredits, sourceStatus: "official", sourceUrl: snapshot.plan?.sourceUrl }],
-        credentials: [{ id: "bedelias-degree", title: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name), minTotalCredits: safeMinCredits, nodeRequirements: officialCurriculum ? (audit.officialPlan.curriculum.creditRequirements ?? []).filter((requirement) => requirement.credentialRequired !== false).map((requirement) => ({ nodeId: requirement.id, minCredits: Number(requirement.minCredits) })) : [{ nodeId: "plan-total", minCredits: safeMinCredits }], requiredCourseGroups: officialCurriculum?.requiredCourseGroups ?? [], requiredActivities: [], sourceUrl: planDocument }],
+        credentials: officialCurriculum?.credentials.length
+          ? officialCurriculum.credentials
+          : [{ id: "bedelias-degree", title: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name), minTotalCredits: safeMinCredits, nodeRequirements: officialCurriculum ? (audit.officialPlan.curriculum.creditRequirements ?? []).filter((requirement) => requirement.credentialRequired !== false).map((requirement) => ({ nodeId: requirement.id, minCredits: Number(requirement.minCredits) })) : [{ nodeId: "plan-total", minCredits: safeMinCredits }], requiredCourseGroups: officialCurriculum?.requiredCourseGroups ?? [], requiredActivities: [], sourceUrl: planDocument }],
       },
       courses,
       pathways,

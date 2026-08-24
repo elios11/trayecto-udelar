@@ -1011,3 +1011,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:5b9eeb3db8a2adef68a772d1af3c5d511b112cc62b7d3af17935b7f8dea88228`. Cola actualizada: 129 identidades pendientes, 20 sin composición; hash `sha256:d75be0a355b07894a1794626e2f66d9e9fcf5e578a2382c865ef07a7578acb08`.
 - La UI queda en 171 proyecciones: 123 con composición, 48 sin composición y seis identidades históricas excluidas; hash `sha256:901e9b86999ec7cc0b2d2bb9bf5869821c8e4acfaa67f592d81a35bfdcc5275b`.
 - Siguiente paso: auditar Licenciatura en Relaciones Laborales Plan 2012, próxima identidad sin composición de la cola reproducible.
+
+### Licenciatura en Relaciones Laborales Plan 2012 — título intermedio, ciclos y egreso auditados 2026-08-24
+
+- Facultad de Derecho mantiene un único Plan 2012 vigente en Montevideo, organizado en cuatro años y ocho semestres. El catálogo central y el snapshot indican 60 meses; la UI prioriza los cuatro años y ocho semestres de la documentación curricular del servicio.
+- El plan exige 320 créditos: 80 de Formación Básica, 120 de Estudios Orientados y 120 del Ciclo Profesional. La composición incorpora 27 unidades obligatorias nominales y tres bloques flexibles de 36, 30 y 30 créditos; las opciones concretas pueden cambiar y no se inventa una nómina permanente.
+- A los 200 créditos de los dos primeros ciclos —134 obligatorios y 66 opcionales— se representa la credencial intermedia `Técnico Asesor en Relaciones Laborales`, separada de la licenciatura y sin duplicar carrera, plan ni progreso.
+- El octavo semestre exige elegir una de tres metodologías y una modalidad de egreso de 30 créditos: monografía, pasantía o acreditación de práctica profesional. Las alternativas comparten una única credencial de `Licenciado en Relaciones Laborales` y no son trayectorias distintas.
+- El protocolo vigente permite iniciar la modalidad de egreso estando cursando o habiendo aprobado una metodología. Como la UI no representa inscripción concurrente, informa la condición y evita convertirla en una exigencia automática de aprobación más restrictiva.
+- Se automatizaron 14 reglas oficiales. El motor ahora soporta mínimos de cantidad de unidades aprobadas dentro de un grupo: las condiciones del Ciclo Profesional verifican 80 créditos de Formación Básica y nueve asignaturas aprobadas de Estudios Orientados, además de la previa nominal cuando corresponde.
+- El régimen transitorio del Plan 1994 estuvo acotado a 2012-2013 y no se publica como trayectoria actual.
+- Registro de auditoría: hash `sha256:ddb66774bfa5117d4978469e60e4dd7689204c5a69f08c53c770393d77400010`. Cola actualizada: 128 identidades pendientes, 19 sin composición; hash `sha256:67ada2624832d1639ad64db718a07ae73bbec8312549bb7c8002016b6da0b209`.
+- La UI conserva 171 proyecciones: 124 con composición, 47 sin composición y seis identidades históricas excluidas; hash `sha256:7d6a6c4244961e417527fdea3adaa220244a4f197ff1894fd62139b56e9ef324`.
+- Siguiente paso: auditar Licenciatura en Comunicación Plan 2012, próxima identidad sin composición de la cola reproducible.
