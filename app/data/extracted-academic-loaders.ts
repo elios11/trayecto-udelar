@@ -92,8 +92,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022": {
     load: () => import("./bedelias-generated/bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["personalizada","sistemas-integrados","recursos-naturales","economico-social"],
+    pathwayLabel: "Trayectoria sugerida",
     minCredits: 270,
   },
   "bedelias-cur-licenciatura-en-educacion-fisica-2014": {

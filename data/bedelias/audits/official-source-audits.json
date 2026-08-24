@@ -18817,7 +18817,175 @@
       ],
       "uiNotice": "Plan conjunto ANEP-Udelar de 270 créditos. La distribución por semestre es sugerida y la oferta optativa puede cambiar; completá los mínimos de cada eje y el Trabajo Final.",
       "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías; no se deducen del orden semestral sugerido."
+    },
+    {
+      "identity": "tecnologo en sistemas integrados de produccion agropecuaria:2022",
+      "career": "TECNÓLOGO EN SISTEMAS INTEGRADOS DE PRODUCCIÓN AGROPECUARIA",
+      "planYear": "2022",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, duración, créditos, estructura semiabierta, trayectorias sugeridas y sede",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Propuesta educativa del Polo Agroforestal del CENUR Noreste, Cerro Largo, 2022",
+          "Publicación del plan por Facultad de Agronomía en Diario Oficial de 26/06/2023"
+        ],
+        "title": "Tecnólogo en Sistemas Integrados de Producción Agropecuaria",
+        "durationMonths": 36,
+        "semesters": 6,
+        "minimumCredits": 270,
+        "current": true,
+        "sharedWith": ["Facultad de Agronomía", "Facultad de Veterinaria"],
+        "pathwayLabel": "Trayectoria sugerida",
+        "trajectories": [
+          {
+            "id": "personalizada",
+            "label": "Personalizada",
+            "description": "Currículo flexible acordado con la Comisión de Carrera; permite combinar optativas y electivas validadas sin asumir un énfasis obligatorio."
+          },
+          {
+            "id": "sistemas-integrados",
+            "label": "Sistemas Integrados de Producción",
+            "description": "Ejemplo oficial de énfasis; orienta la elección flexible y no modifica el título ni los mínimos de egreso."
+          },
+          {
+            "id": "recursos-naturales",
+            "label": "Manejo sustentable de los Recursos Naturales",
+            "description": "Ejemplo oficial de énfasis; orienta la elección flexible y no constituye una mención certificada."
+          },
+          {
+            "id": "economico-social",
+            "label": "Enfoque Económico-Social",
+            "description": "Ejemplo oficial de énfasis; orienta la elección flexible y no constituye una mención certificada."
+          }
+        ],
+        "degreeRule": "El título exige 270 créditos: 167 obligatorios, 79 optativos/electivos y 24 de Trabajo Final, respetando los mínimos temáticos.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+          "periodOrder": [
+            "SISTEMAS INTEGRADOS DE PRODUCCIÓN",
+            "RECURSOS NATURALES Y SOSTENIBILIDAD",
+            "ECONÓMICO Y SOCIAL",
+            "ACTIVIDADES INTEGRADORAS",
+            "ACTIVIDADES COMPLEMENTARIAS",
+            "OPTATIVAS Y ELECTIVAS",
+            "Ajustes estructurales del plan",
+            "Trabajo Final"
+          ],
+          "pathRequirementMap": {
+            "100": "integrated-production",
+            "200": "natural-resources",
+            "300": "economic-social",
+            "400": "integrative-activities",
+            "500": "flexible-credits",
+            "700": "flexible-credits"
+          },
+          "creditRequirements": [
+            { "id": "integrated-production", "name": "Sistemas Integrados de Producción", "shortName": "Sistemas integrados", "minCredits": 64 },
+            { "id": "natural-resources", "name": "Recursos Naturales y Sostenibilidad", "shortName": "Recursos naturales", "minCredits": 37 },
+            { "id": "economic-social", "name": "Módulo Económico y Social", "shortName": "Económico-social", "minCredits": 26 },
+            { "id": "integrative-activities", "name": "Actividades Integradoras", "shortName": "Integradoras", "minCredits": 40 },
+            { "id": "flexible-credits", "name": "Optativas y electivas", "shortName": "Flexibles", "minCredits": 79 },
+            { "id": "final-project", "name": "Trabajo Final", "shortName": "Trabajo Final", "minCredits": 24 }
+          ],
+          "additionalCourses": [
+            {
+              "id": "sistemas-integrados-obligatorios-no-individualizados",
+              "name": "Créditos obligatorios de Sistemas Integrados no individualizados en Bedelías",
+              "credits": 5,
+              "requirementId": "integrated-production",
+              "periodLabel": "Ajustes estructurales del plan",
+              "curricularBlock": true
+            },
+            {
+              "id": "flexibles-adicionales-validados",
+              "name": "Optativas o electivas adicionales validadas por la Comisión de Carrera",
+              "credits": 3,
+              "requirementId": "flexible-credits",
+              "periodLabel": "Ajustes estructurales del plan",
+              "curricularBlock": true
+            },
+            {
+              "id": "trabajo-final",
+              "name": "Trabajo Final: pasantía académica o proyecto de conclusión de carrera",
+              "credits": 24,
+              "requirementId": "final-project",
+              "periodLabel": "Trabajo Final",
+              "curricularBlock": true
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "CUCEL",
+          "locations": ["Melo, Cerro Largo"],
+          "role": "oferta completa del CENUR Noreste con Agronomía y Veterinaria como servicios de referencia académica",
+          "trajectoryIds": ["personalizada", "sistemas-integrados", "recursos-naturales", "economico-social"],
+          "curriculumVariant": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 36,
+        "publishedMinimumCredits": 270,
+        "compositionMatterEntries": 43,
+        "compositionCredits": 299,
+        "interpretation": "Bedelías publica un catálogo de 299 créditos distribuido por áreas, no una lista de 270 créditos enteramente obligatoria. Faltan el Trabajo Final y pequeños saldos estructurales para que cada mínimo oficial sea operable."
+      },
+      "conclusion": {
+        "canonicalModel": "one-plan-one-offering-with-flexible-pathways",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2022 define una carrera única en Cerro Largo con currículo semiabierto. Los tres enfoques son ejemplos para orientar optativas y electivas, no menciones, títulos ni variantes territoriales.",
+        "normalization": [
+          "Conservar una única carrera, un único Plan 2022 y una única sede en Melo.",
+          "Exigir 64 créditos en Sistemas Integrados, 37 en Recursos Naturales, 26 en Económico-Social, 40 en Actividades Integradoras, 79 flexibles y 24 de Trabajo Final.",
+          "Mantener como catálogo las 43 unidades de la composición jerárquica y no exigir aprobar los 299 créditos disponibles.",
+          "Representar como bloques acreditables sólo los saldos que el plan exige pero Bedelías no individualiza, sin inventar nombres de materias.",
+          "Ofrecer trayectoria personalizada y los tres énfasis sugeridos; todos conservan el mismo título y acceso al catálogo flexible."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+          "authority": "Diario Oficial - IMPO / Facultad de Agronomía",
+          "supports": ["Plan 2022", "seis semestres y 270 créditos", "estructura por áreas", "79 créditos flexibles", "Trabajo Final", "trayectorias sugeridas"]
+        },
+        {
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria/",
+          "authority": "Facultad de Agronomía, Udelar",
+          "supports": ["vigencia", "tres años", "270 créditos", "sede Cerro Largo", "carrera compartida con Veterinaria"]
+        },
+        {
+          "url": "https://www.fvet.edu.uy/ensenanza/grado/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria/",
+          "authority": "Facultad de Veterinaria, Udelar",
+          "supports": ["vigencia", "tres años", "270 créditos", "sede Cerro Largo", "carrera compartida con Agronomía"]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria",
+          "authority": "Universidad de la República",
+          "supports": ["título", "36 meses", "270 créditos", "Sede Cerro Largo"]
+        },
+        {
+          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
+          "authority": "Dirección General de Planeamiento, Udelar",
+          "supports": ["actividad estudiantil vigente en 2025"]
+        }
+      ],
+      "anomalies": [
+        { "field": "compositionCredits", "resolution": "Los 299 créditos visibles son oferta disponible, no el requisito de 270. La UI controla mínimos por área y deja las alternativas flexibles." },
+        { "field": "missingFinalProject", "resolution": "Bedelías no individualiza el Trabajo Final en la composición, pero el plan exige 24 créditos y una de dos modalidades; se agrega un único bloque acreditable." },
+        { "field": "structuralCreditGaps", "resolution": "Se agregan bloques de 5 créditos obligatorios de Sistemas Integrados y 3 flexibles porque el catálogo actual no alcanza esos mínimos. No se inventan unidades nominales." },
+        { "field": "suggestedPathways", "resolution": "Los enfoques publicados son ejemplos no certificados. La selección orienta la planificación sin filtrar el catálogo ni cambiar requisitos." }
+      ],
+      "uiNotice": "Plan 2022 semiabierto: elegí una trayectoria orientativa o armá una personalizada. Los énfasis no cambian el título; completá los mínimos por área, 79 créditos flexibles y el Trabajo Final.",
+      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La Comisión de Carrera debe validar electivas y la trayectoria personalizada."
     }
   ],
-  "contentHash": "sha256:47bee90131fa5750315546f96be45ecf0592e15f18b7bcaa556eb27d098d926a"
+  "contentHash": "sha256:88c29ce1739f8002a7e67bcd0ae27113493f4250c6185e82c7875843cb7871ba"
 }
