@@ -9,11 +9,11 @@ const catalog = await readJson("app/data/extracted-academic-catalog.json");
 
 test("integra una sola proyección por identidad canónica vigente y excluye planes históricos verificados", () => {
   assert.equal(report.counts.canonicalCurrentIdentities, 184);
-  assert.equal(report.counts.generatedPlans, 152);
-  assert.equal(report.counts.excludedFromCurrentUi, 25);
+  assert.equal(report.counts.generatedPlans, 150);
+  assert.equal(report.counts.excludedFromCurrentUi, 27);
   assert.equal(new Set(report.plans.map((plan) => plan.identity)).size, report.plans.length);
   assert.equal(new Set(report.plans.map((plan) => plan.planId)).size, report.plans.length);
-  assert.equal(catalog.flatMap((faculty) => faculty.careers).flatMap((career) => career.plans).length, 152);
+  assert.equal(catalog.flatMap((faculty) => faculty.careers).flatMap((career) => career.plans).length, 150);
   assert.ok(!report.plans.some((plan) => plan.identity === "diplomatura en musica:1994"));
   assert.ok(!report.plans.some((plan) => plan.identity === "escalonada de enfermeria:2001"));
   assert.ok(!report.plans.some((plan) => plan.identity === "licenciatura en vitivinicultura:2006"));

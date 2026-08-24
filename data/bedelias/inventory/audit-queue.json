@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T06:03:18.241Z",
+  "generatedAt": "2026-08-24T06:09:24.209Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:fd9e910abd594fb8dc8c3bb509a7d2e1ae6c74512e443acd6cd5fc6885e36507"
+    "officialAuditRegistryHash": "sha256:ff59d4647aa878f657bb80f89b61b9837aa07e236c1024e865076515331b30e3"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 70,
-    "pendingCanonicalIdentities": 107,
+    "evidenceClosedCanonicalIdentities": 72,
+    "pendingCanonicalIdentities": 105,
     "byPriority": {
-      "official-sources-pending": 107
+      "official-sources-pending": 105
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -437,6 +437,18 @@
       "conclusion": "one-current-dental-laboratory-plan-in-montevideo"
     },
     {
+      "identity": "licenciatura binacional en turismo:2004",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-binational-tourism-degree-superseded-by-one-current-tourism-plan"
+    },
+    {
+      "identity": "tecnicatura binacional en turismo:2004",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-intermediate-tourism-title-removed-by-current-plan"
+    },
+    {
       "identity": "psicologia infantil:1960",
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
@@ -505,36 +517,6 @@
       "regionalComparisons": []
     },
     {
-      "identity": "licenciatura binacional en turismo:2004",
-      "career": {
-        "name": "LICENCIATURA BINACIONAL EN TURISMO",
-        "normalizedName": "licenciatura binacional en turismo",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2004"
-      },
-      "canonicalSource": {
-        "serviceCode": "CENURLN",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
-        "planKey": "CENURLN:licenciatura binacional en turismo:2004",
-        "site": null,
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CENURLN",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
-          "planKey": "CENURLN:licenciatura binacional en turismo:2004",
-          "site": null,
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
       "identity": "licenciatura en ciencias sociales:2009",
       "career": {
         "name": "LICENCIATURA EN CIENCIAS SOCIALES",
@@ -556,36 +538,6 @@
           "serviceCode": "CENURLN",
           "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
           "planKey": "CENURLN:licenciatura en ciencias sociales:2009",
-          "site": null,
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
-    {
-      "identity": "tecnicatura binacional en turismo:2004",
-      "career": {
-        "name": "TECNICATURA BINACIONAL EN TURISMO",
-        "normalizedName": "tecnicatura binacional en turismo",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2004"
-      },
-      "canonicalSource": {
-        "serviceCode": "CENURLN",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
-        "planKey": "CENURLN:tecnicatura binacional en turismo:2004",
-        "site": null,
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CENURLN",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL - LITORAL NORTE",
-          "planKey": "CENURLN:tecnicatura binacional en turismo:2004",
           "site": null,
           "state": "structurally-valid"
         }
@@ -3780,5 +3732,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:d415ec7f7a1bb24447b66208e4b729d92c85e00bc2d8b75c61bb12ff52bf0f64"
+  "contentHash": "sha256:ffc35826bbba168a1dba55de2790fffa21f158cad60fed2b05cab021044497e1"
 }

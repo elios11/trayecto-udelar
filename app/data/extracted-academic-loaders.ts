@@ -12,12 +12,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 160,
   },
-  "bedelias-cenurln-licenciatura-binacional-en-turismo-2004": {
-    load: () => import("./bedelias-generated/bedelias-cenurln-licenciatura-binacional-en-turismo-2004.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-cenurln-licenciatura-en-ciencias-hidricas-aplicadas-2016": {
     load: () => import("./bedelias-generated/bedelias-cenurln-licenciatura-en-ciencias-hidricas-aplicadas-2016.json"),
     pathwayIds: ["bedelias"],
@@ -35,12 +29,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayIds: ["desarrollo-local","eficiencia-energetica"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
-  },
-  "bedelias-cenurln-tecnicatura-binacional-en-turismo-2004": {
-    load: () => import("./bedelias-generated/bedelias-cenurln-tecnicatura-binacional-en-turismo-2004.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
   },
   "bedelias-cenurln-tecnicatura-en-direccion-de-coros-2002": {
     load: () => import("./bedelias-generated/bedelias-cenurln-tecnicatura-en-direccion-de-coros-2002.json"),

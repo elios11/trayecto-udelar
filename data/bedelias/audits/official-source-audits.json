@@ -13951,6 +13951,96 @@
       "remainingWork": "Malla vigente operativa. Revisar únicamente futuras modificaciones de optativas, previaturas o correspondencia oficial entre unidades y áreas."
     },
     {
+      "identity": "licenciatura binacional en turismo:2004",
+      "career": "LICENCIATURA BINACIONAL EN TURISMO",
+      "planYear": "2004",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia e identidad frente a la Licenciatura en Turismo Plan 2014 común a Salto y Maldonado.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Licenciado en Turismo",
+        "historicalDuration": "A término, nueve semestres",
+        "lastAdmissionGeneration": 2012,
+        "currentSuccessor": {
+          "identity": "licenciatura en turismo:2014",
+          "title": "Licenciado en Turismo",
+          "minimumCredits": 360,
+          "locations": ["Salto", "Maldonado"]
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-licenciatura-binacional-en-turismo-2004.json",
+        "metadataCurrent": true,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "La marca vigente y la ficha central desactualizada contradicen la evaluación institucional de FHCE: la última generación binacional ingresó en 2012 y desde 2014 ambas sedes usan un único Plan 2014 no binacional."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-binational-tourism-degree-superseded-by-one-current-tourism-plan",
+        "canonicalIdentity": "licenciatura en turismo:2014",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La Licenciatura Binacional dejó de existir como oferta separada al aplicarse desde 2014 un único plan de Licenciatura en Turismo en Salto y Maldonado."
+      },
+      "sources": [
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/Informe_Final_graficos_arreglados_23_10.pdf", "authority": "Facultad de Humanidades y Ciencias de la Educación, evaluación institucional", "supports": ["última generación binacional en 2012", "fin de la identidad binacional", "Plan 2014 único en Salto y Maldonado", "supresión del título intermedio"] },
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/plandeestudiosli_turismo2014-1.pdf", "authority": "Facultad de Humanidades y Ciencias de la Educación", "supports": ["Plan 2014 vigente", "título Licenciado en Turismo", "ocho semestres", "360 créditos"] },
+        { "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-turismo/", "authority": "Centro Universitario Regional del Este, Universidad de la República", "supports": ["Plan 2014 en Maldonado y Salto", "oferta vigente", "sedes del mismo plan"] },
+        { "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-turismo", "authority": "CENUR Litoral Norte, Universidad de la República", "supports": ["Licenciatura en Turismo vigente", "360 créditos", "carrera completa en Salto"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "La ficha central aún usa el rótulo binacional, pero la evaluación institucional consultó a la Comisión de Carrera y documenta el cierre de esa identidad en 2014. Se prioriza la fuente académica específica." },
+        { "field": "planYear", "resolution": "2004 se conserva como clave administrativa del snapshot histórico; la implementación binacional comenzó en 2005 y su última generación ingresó en 2012." },
+        { "field": "successor", "resolution": "No se migra progreso automáticamente. La UI conserva un único Plan 2014 vigente, con Salto y Maldonado como sedes, y mantiene el snapshot binacional sólo para trazabilidad." }
+      ],
+      "remainingWork": "Caso histórico cerrado para la UI; la Licenciatura en Turismo Plan 2014 se conserva como única oferta vigente y requiere auditoría curricular general por separado."
+    },
+    {
+      "identity": "tecnicatura binacional en turismo:2004",
+      "career": "TECNICATURA BINACIONAL EN TURISMO",
+      "planYear": "2004",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia del título intermedio de Técnico en Turismo de la antigua Licenciatura Binacional.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Turismo",
+        "historicalDuration": "A término, cinco semestres",
+        "lastAdmissionGeneration": 2012,
+        "currentSuccessor": {
+          "identity": "licenciatura en turismo:2014",
+          "title": "Licenciado en Turismo",
+          "intermediateTitleAvailable": false
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/cenurln-tecnicatura-binacional-en-turismo-2004.json",
+        "metadataCurrent": true,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "Bedelías conserva la tecnicatura como vigente sin composición. La evaluación de FHCE documenta que el Plan 2014 eliminó tanto la Licenciatura Binacional como su título intermedio de Técnico en Turismo."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-intermediate-tourism-title-removed-by-current-plan",
+        "canonicalIdentity": "licenciatura en turismo:2014",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "El título intermedio pertenecía al programa binacional a término y no existe en el Plan 2014 vigente."
+      },
+      "sources": [
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/Informe_Final_graficos_arreglados_23_10.pdf", "authority": "Facultad de Humanidades y Ciencias de la Educación, evaluación institucional", "supports": ["fin de la Licenciatura Binacional", "supresión del título intermedio Técnico en Turismo", "Plan 2014 común a ambas sedes"] },
+        { "url": "https://fhce.edu.uy/category/uae-informacion-estructural/page/6/", "authority": "Facultad de Humanidades y Ciencias de la Educación", "supports": ["carácter histórico a término", "cinco semestres", "título Técnico en Turismo"] },
+        { "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-turismo/", "authority": "Centro Universitario Regional del Este, Universidad de la República", "supports": ["Plan 2014 vigente", "360 créditos", "ausencia de título intermedio actual"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "La evaluación institucional y el plan vigente prevalecen sobre las marcas administrativas de Bedelías." },
+        { "field": "careerType", "resolution": "No se transforma esta salida histórica en una tecnicatura actual independiente ni se confunde con la Tecnicatura Universitaria en Turismo Plan 1996." },
+        { "field": "progress", "resolution": "Se preserva el snapshot para trazabilidad y no se migra avance automáticamente al Plan 2014." }
+      ],
+      "remainingWork": "Caso cerrado como título intermedio histórico sin ingreso vigente."
+    },
+    {
       "identity": "psicologia infantil:1960",
       "career": "PSICOLOGÍA INFANTIL",
       "planYear": "1960",
@@ -13991,5 +14081,5 @@
       "remainingWork": "Cerrado como título histórico convertido; la Licenciatura en Psicología Plan 2013 ya conserva malla, sedes y mínimos oficiales."
     }
   ],
-  "contentHash": "sha256:fd9e910abd594fb8dc8c3bb509a7d2e1ae6c74512e443acd6cd5fc6885e36507"
+  "contentHash": "sha256:ff59d4647aa878f657bb80f89b61b9837aa07e236c1024e865076515331b30e3"
 }

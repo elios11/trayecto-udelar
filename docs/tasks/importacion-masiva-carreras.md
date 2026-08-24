@@ -1118,3 +1118,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Montevideo y Salto ofrecen el tramo inicial; Paysandú ofrece la carrera completa. Son sedes del mismo plan y comparten la estructura oficial, sin trayectorias territoriales inventadas.
 - Registro de auditoría: hash `sha256:a270b45545887e54fc5f389808a5f1262995e64ede9654e174fb5116a1074d25`. Manifiesto UI: 152 proyecciones, 127 con composición y 25 sin composición; hash `sha256:daa087b9c72ba47b119f666f1a50968f718c292d6220019f292eae90e3049fda`. Cola funcional: hash `sha256:0bd4861871b32260e610eb061231174e16168eec7f2cb20af6f724c1728e30e7`.
 - Las 25 mallas pendientes requieren ahora auditoría de fuentes curriculares oficiales; la siguiente identidad reproducible es Licenciatura Binacional en Turismo Plan 2004.
+
+### Turismo binacional Plan 2004 — identidades históricas cerradas 2026-08-24
+
+- La evaluación institucional de FHCE documenta que la última generación de la Licenciatura Binacional ingresó en 2012. Desde 2014 Salto y Maldonado aplican un único Plan 2014 de Licenciatura en Turismo, exclusivamente de Udelar y sin carácter binacional.
+- El cambio de plan también eliminó el título intermedio de Técnico en Turismo. Por tanto, la Licenciatura Binacional y la Tecnicatura Binacional Plan 2004 son dos registros históricos del mismo programa a término, no ofertas vigentes ni trayectorias territoriales.
+- La ficha central todavía rotulada `Licenciatura Binacional` y las marcas `current` de Bedelías se consideran desactualizadas frente a la evaluación académica específica, el Plan 2014 y las páginas actuales de CURE y Litoral Norte.
+- La UI excluye las dos identidades antiguas y conserva una sola Licenciatura en Turismo Plan 2014, ya utilizable, con Salto y Maldonado como sedes del mismo plan. No se migra progreso automáticamente desde los títulos históricos.
+- Registro de auditoría: hash `sha256:ff59d4647aa878f657bb80f89b61b9837aa07e236c1024e865076515331b30e3`. Cola general: 105 identidades pendientes; hash `sha256:ffc35826bbba168a1dba55de2790fffa21f158cad60fed2b05cab021044497e1`.
+- Manifiesto UI: 150 proyecciones, 127 con composición, 23 sin composición y veintisiete identidades excluidas; hash `sha256:e372a73d4d52fb697e7841bf81af86ba221102680a8aa2e6819408f7e08862c1`. Cola funcional: hash `sha256:df1317031af5df0f0621c6025a673273e8ad733988d8b6b600c107c05b173ef7`.
+- Siguiente paso: auditar las dos tecnicaturas artísticas Plan 2002 de Salto —Dirección de Coros e Interpretación— y contrastarlas con la oferta e ingresos vigentes de Facultad de Artes.
