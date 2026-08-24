@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T05:08:29.678Z",
+  "generatedAt": "2026-08-24T05:15:19.025Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:a351b685381114f9f2c0c48be8790b895c555842dde016a6c8fee122fd68129a"
+    "officialAuditRegistryHash": "sha256:70d357a3190a56d7e8fcf1ced0641238df68dcd56ad760b45ac25ddbc13a48d0"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 65,
-    "pendingCanonicalIdentities": 112,
+    "evidenceClosedCanonicalIdentities": 69,
+    "pendingCanonicalIdentities": 108,
     "byPriority": {
-      "composition-unavailable": 5,
+      "composition-unavailable": 1,
       "official-sources-pending": 107
     },
     "regionalComparisons": {
@@ -412,125 +412,33 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "historical-medical-records-technician-title-converted-to-current-degree"
-    }
-  ],
-  "queue": [
+    },
     {
       "identity": "asistente dental:1963",
-      "career": {
-        "name": "ASISTENTE DENTAL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1963",
-        "name": "ASISTENTE DENTAL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ODON",
-        "serviceName": "FACULTAD DE ODONTOLOGÍA",
-        "planKey": "ODON:asistente dental:1963",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ODON",
-          "serviceName": "FACULTAD DE ODONTOLOGÍA",
-          "planKey": "ODON:asistente dental:1963",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-dental-assistant-certificate-exchanged-for-current-title"
     },
     {
       "identity": "higienista dental:1963",
-      "career": {
-        "name": "HIGIENISTA DENTAL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1963",
-        "name": "HIGIENISTA DENTAL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ODON",
-        "serviceName": "FACULTAD DE ODONTOLOGÍA",
-        "planKey": "ODON:higienista dental:1963",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ODON",
-          "serviceName": "FACULTAD DE ODONTOLOGÍA",
-          "planKey": "ODON:higienista dental:1963",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-dental-hygienist-certificate-exchanged-for-current-title"
     },
     {
       "identity": "laboratorista dental:1963",
-      "career": {
-        "name": "LABORATORISTA DENTAL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1963",
-        "name": "LABORATORISTA DENTAL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ODON",
-        "serviceName": "FACULTAD DE ODONTOLOGÍA",
-        "planKey": "ODON:laboratorista dental:1963",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ODON",
-          "serviceName": "FACULTAD DE ODONTOLOGÍA",
-          "planKey": "ODON:laboratorista dental:1963",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-dental-laboratory-certificate-exchanged-for-current-title"
     },
     {
       "identity": "laboratorista en odontologia:2017",
-      "career": {
-        "name": "LABORATORISTA EN ODONTOLOGÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2017",
-        "name": "LABORATORISTA EN ODONTOLOGÍA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ODON",
-        "serviceName": "FACULTAD DE ODONTOLOGÍA",
-        "planKey": "ODON:laboratorista en odontologia:2017",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ODON",
-          "serviceName": "FACULTAD DE ODONTOLOGÍA",
-          "planKey": "ODON:laboratorista en odontologia:2017",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "one-current-dental-laboratory-plan-in-montevideo"
+    }
+  ],
+  "queue": [
     {
       "identity": "psicologia infantil:1960",
       "career": {
@@ -3896,5 +3804,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:f3ff99e7150cc1e118307680ed9891e95a2e34354e79daf9493a4a4d2e966268"
+  "contentHash": "sha256:3255cd21aab7ab99aa143a0da907ce31fbb14aec83eaaadd6150fb8052e68332"
 }

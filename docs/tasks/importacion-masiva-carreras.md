@@ -1068,3 +1068,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:a351b685381114f9f2c0c48be8790b895c555842dde016a6c8fee122fd68129a`. Cola actualizada: 112 identidades pendientes, cinco sin composición; hash `sha256:f3ff99e7150cc1e118307680ed9891e95a2e34354e79daf9493a4a4d2e966268`.
 - La UI queda en 156 proyecciones: 123 con composición, 33 sin composición y veintiuna identidades excluidas; hash `sha256:f69430e7fe77543b4036e309cc9ad10b264cae17716235df34962624be9e688c`.
 - Siguiente paso: auditar conjuntamente `Asistente Dental`, `Higienista Dental` y `Laboratorista Dental` Plan 1963 frente a los títulos actuales de Odontología.
+
+### Odontología — certificados de 1963 y Laboratorista Plan 2017 cerrados 2026-08-24
+
+- El Reglamento 237, aprobado por Resolución 14 del CDC de 10/12/2002, canjea los certificados de Asistente Dental, Higienista Dental y Laboratorista Dental de la ex Escuela de Auxiliares del Odontólogo por los títulos de Asistente, Higienista y Laboratorista en Odontología. Los tres snapshots históricos tienen `metadata.current: false`, carecen de composición y quedan fuera del selector.
+- Asistente e Higienista conservan sus mallas Plan 2017 ya auditadas. Laboratorista Plan 2017 se completa ahora con 19 unidades o bloques: 89 créditos en primer año, 85 en segundo y 66 en tercero, total 240 y tres años en Montevideo.
+- La tabla web trunca Ortopedia II como `1` crédito. Su programa enlazado declara 14 créditos y 128 horas; 14 también reconcilia el subtotal oficial de segundo año y el total del plan.
+- Las optativas I, II y III se representan como bloques de 6, 7 y 4 créditos. Sus opciones y previas dependen de la elección concreta, por lo que no se congela una alternativa ni se aplica una previa única falsa.
+- El plan distribuye 240 créditos entre seis áreas, pero la malla no publica la correspondencia materia-área. Se conserva la distribución en la auditoría y la UI controla el total sin inventar asignaciones.
+- Se automatizan doce previaturas inequívocas. Las condiciones que permiten cursado simultáneo se informan sin transformarlas en aprobación obligatoria.
+- Registro de auditoría: hash `sha256:70d357a3190a56d7e8fcf1ced0641238df68dcd56ad760b45ac25ddbc13a48d0`. Cola actualizada: 108 identidades pendientes, una sin composición; hash `sha256:3255cd21aab7ab99aa143a0da907ce31fbb14aec83eaaadd6150fb8052e68332`.
+- La UI queda en 153 proyecciones: 124 con composición, 29 sin composición y veinticuatro identidades excluidas; hash `sha256:0d985a9510cbff2e2192ff41b7efd1c07b8e415dcea5688b47bf014206feeda4`.
+- Siguiente paso: auditar `Psicología Infantil` Plan 1960, último caso sin composición de la cola reproducible.

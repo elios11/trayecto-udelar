@@ -13331,7 +13331,228 @@
         { "field": "credential", "resolution": "El título intermedio vigente es Tecnólogo en Registros Médicos; no se publica la tecnicatura histórica como carrera separada." }
       ],
       "remainingWork": "Auditar la Licenciatura Plan 2006 y su credencial intermedia con unidades oficiales, sin convertir horas a créditos."
+    },
+    {
+      "identity": "asistente dental:1963",
+      "career": "ASISTENTE DENTAL",
+      "planYear": "1963",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del certificado histórico de la ex Escuela de Auxiliares del Odontólogo frente al título actual.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Asistente Dental",
+        "conversionRule": "Reglamento 237, aprobado por Resolución 14 del Consejo Directivo Central de 10/12/2002.",
+        "currentSuccessor": { "identity": "asistente en odontologia:2017", "title": "Asistente en Odontología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/odon-asistente-dental-1963.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El snapshot corresponde al certificado histórico que el Reglamento 237 canjea por el título de Asistente en Odontología."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-dental-assistant-certificate-exchanged-for-current-title",
+        "canonicalIdentity": "asistente en odontologia:2017",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "El certificado de 1963 no constituye una carrera de ingreso vigente independiente."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/237-reglamento-de-canje-de-los-certificados-de-asistente-dental-higienista-dental-y-laboratorista-dental-otorgados-por-la-ex-escuela-de-auxiliares-del-odontologo-de-la-facultad-de-odontologia-por/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["canje de Asistente Dental por Asistente en Odontología", "Resolución 14 del CDC de 10/12/2002"] },
+        { "url": "https://odon.edu.uy/sitio/malla-curricular-tecno-asistente/", "authority": "Facultad de Odontología, Universidad de la República", "supports": ["malla vigente del título sucesor"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se priorizan metadata.current=false, el reglamento de canje y la carrera Plan 2017 vigente." }
+      ],
+      "remainingWork": "Cerrado como certificado histórico; la malla vigente de Asistente en Odontología ya está auditada."
+    },
+    {
+      "identity": "higienista dental:1963",
+      "career": "HIGIENISTA DENTAL",
+      "planYear": "1963",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del certificado histórico de la ex Escuela de Auxiliares del Odontólogo frente al título actual.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Higienista Dental",
+        "conversionRule": "Reglamento 237, aprobado por Resolución 14 del Consejo Directivo Central de 10/12/2002.",
+        "currentSuccessor": { "identity": "higienista en odontologia:2017", "title": "Higienista en Odontología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/odon-higienista-dental-1963.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El snapshot corresponde al certificado histórico canjeado oficialmente por el título de Higienista en Odontología."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-dental-hygienist-certificate-exchanged-for-current-title",
+        "canonicalIdentity": "higienista en odontologia:2017",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "El certificado de 1963 no es una carrera vigente separada."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/237-reglamento-de-canje-de-los-certificados-de-asistente-dental-higienista-dental-y-laboratorista-dental-otorgados-por-la-ex-escuela-de-auxiliares-del-odontologo-de-la-facultad-de-odontologia-por/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["canje de Higienista Dental por Higienista en Odontología", "Resolución 14 del CDC de 10/12/2002"] },
+        { "url": "https://odon.edu.uy/sitio/malla-curricular-tecno-hig/", "authority": "Facultad de Odontología, Universidad de la República", "supports": ["malla vigente del título sucesor"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "Se descarta current=true heredado del índice frente a metadata.current=false y la normativa." }
+      ],
+      "remainingWork": "Cerrado como certificado histórico; la malla vigente de Higienista en Odontología ya está auditada."
+    },
+    {
+      "identity": "laboratorista dental:1963",
+      "career": "LABORATORISTA DENTAL",
+      "planYear": "1963",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del certificado histórico de la ex Escuela de Auxiliares del Odontólogo frente al título actual.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Laboratorista Dental",
+        "conversionRule": "Reglamento 237, aprobado por Resolución 14 del Consejo Directivo Central de 10/12/2002.",
+        "currentSuccessor": { "identity": "laboratorista en odontologia:2017", "title": "Laboratorista en Odontología" }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/odon-laboratorista-dental-1963.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "El Reglamento 237 canjea expresamente el certificado de Laboratorista Dental por el título de Laboratorista en Odontología."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-dental-laboratory-certificate-exchanged-for-current-title",
+        "canonicalIdentity": "laboratorista en odontologia:2017",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "El certificado de 1963 se conserva sólo como antecedente trazable."
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/237-reglamento-de-canje-de-los-certificados-de-asistente-dental-higienista-dental-y-laboratorista-dental-otorgados-por-la-ex-escuela-de-auxiliares-del-odontologo-de-la-facultad-de-odontologia-por/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["canje de Laboratorista Dental por Laboratorista en Odontología", "Resolución 14 del CDC de 10/12/2002"] },
+        { "url": "https://odon.edu.uy/sitio/malla-curricular-tecno-labo/", "authority": "Facultad de Odontología, Universidad de la República", "supports": ["malla vigente del título sucesor"] }
+      ],
+      "anomalies": [
+        { "field": "current", "resolution": "La normativa de canje, la oferta vigente y metadata.current=false prevalecen sobre la marca del índice." }
+      ],
+      "remainingWork": "Cerrado como certificado histórico; la malla vigente se registra en la auditoría Plan 2017."
+    },
+    {
+      "identity": "laboratorista en odontologia:2017",
+      "career": "LABORATORISTA EN ODONTOLOGÍA",
+      "planYear": "2017",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría del plan vigente, malla por años, créditos, optativas y previaturas publicadas.",
+      "publicationEligible": false,
+      "uiNotice": "Plan 2017 vigente: tres años y 240 créditos en Montevideo. Las tres optativas son bloques de elección; la oferta concreta depende del período. La distribución de 240 créditos por seis áreas se conserva como referencia oficial, pero no se asigna automáticamente por materia porque Facultad no publica esa correspondencia en la malla.",
+      "officialPlan": {
+        "approval": ["Carrera de Laboratorista en Odontología aprobada por Resolución 2 de la Comisión Directiva Académica de 09/10/2018"],
+        "title": "Laboratorista en Odontología",
+        "durationMonths": 36,
+        "minimumCredits": 240,
+        "areaCreditDistribution": [
+          { "name": "Bases Biológicas de la Odontología", "credits": 16 },
+          { "name": "Materiales y Biomateriales de uso en el Laboratorio", "credits": 17 },
+          { "name": "Universidad y Salud Colectiva", "credits": 12 },
+          { "name": "Formación Técnica en Procedimientos en el Laboratorio", "credits": 127 },
+          { "name": "Formación Técnica en Servicios y Comunidad", "credits": 44 },
+          { "name": "Formación General y Académica", "credits": 24 }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://odon.edu.uy/sitio/malla-curricular-tecno-labo/",
+          "prerequisitesSourceUrl": "https://odon.edu.uy/sitio/wp-content/uploads/Previaturas-nueva-malla-2.pdf",
+          "periods": [
+            {
+              "label": "Primer año",
+              "courses": [
+                { "id": "io", "name": "Introducción a la Odontología", "credits": 4 },
+                { "id": "materiales-biomateriales", "name": "Materiales y Biomateriales", "credits": 9 },
+                { "id": "bases-biologicas", "name": "Bases Biológicas de la Odontología", "credits": 9 },
+                { "id": "protesis-fija-1", "name": "Prótesis Fija I", "credits": 16 },
+                { "id": "protesis-parcial-removible-1", "name": "Prótesis Parcial Removible I", "credits": 16 },
+                { "id": "protesis-completa-1", "name": "Prótesis Completa I", "credits": 16 },
+                { "id": "ortopedia-1", "name": "Ortopedia I", "credits": 7 },
+                { "id": "optativa-1", "name": "Optativa I", "credits": 6, "curricularBlock": true },
+                { "id": "la-salud", "name": "La Salud", "credits": 6 }
+              ]
+            },
+            {
+              "label": "Segundo año",
+              "courses": [
+                { "id": "administracion", "name": "Administración", "credits": 9 },
+                { "id": "ortopedia-2", "name": "Ortopedia II", "credits": 14 },
+                { "id": "protesis-fija-2", "name": "Prótesis Fija II", "credits": 18 },
+                { "id": "protesis-parcial-removible-2", "name": "Prótesis Parcial Removible II", "credits": 18 },
+                { "id": "protesis-completa-2", "name": "Prótesis Completa II", "credits": 18 },
+                { "id": "iniciacion-investigacion", "name": "Iniciación a la Investigación", "credits": 8 }
+              ]
+            },
+            {
+              "label": "Tercer año",
+              "courses": [
+                { "id": "optativa-2", "name": "Optativa II", "credits": 7, "curricularBlock": true },
+                { "id": "protesis-fija-3", "name": "Prótesis Fija III", "credits": 16 },
+                { "id": "practica-laboratorio", "name": "Servicio de Práctica de Laboratorio (pasantías intramurales y extramurales)", "credits": 39 },
+                { "id": "optativa-3", "name": "Optativa III", "credits": 4, "curricularBlock": true }
+              ]
+            }
+          ],
+          "prerequisites": [
+            { "targetId": "materiales-biomateriales", "courseIds": ["io"] },
+            { "targetId": "bases-biologicas", "courseIds": ["io"] },
+            { "targetId": "la-salud", "courseIds": ["io"] },
+            { "targetId": "protesis-fija-1", "courseIds": ["materiales-biomateriales"] },
+            { "targetId": "ortopedia-2", "courseIds": ["ortopedia-1", "bases-biologicas", "materiales-biomateriales"] },
+            { "targetId": "protesis-parcial-removible-2", "courseIds": ["protesis-parcial-removible-1"] },
+            { "targetId": "protesis-completa-2", "courseIds": ["protesis-completa-1"] },
+            { "targetId": "protesis-fija-2", "courseIds": ["protesis-fija-1"] },
+            { "targetId": "administracion", "courseIds": ["io"] },
+            { "targetId": "iniciacion-investigacion", "courseIds": ["io"] },
+            { "targetId": "practica-laboratorio", "courseIds": ["ortopedia-2", "protesis-parcial-removible-2", "protesis-completa-2", "protesis-fija-2", "administracion", "iniciacion-investigacion"] },
+            { "targetId": "protesis-fija-3", "courseIds": ["protesis-fija-2"] }
+          ]
+        }
+      },
+      "offerings": [
+        { "serviceCode": "ODON", "locations": ["Montevideo · Facultad de Odontología"], "role": "sede vigente de la carrera completa", "curriculumVariant": false }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/odon-laboratorista-en-odontologia-2017.json",
+        "canonicalCourses": 0,
+        "canonicalPrerequisiteEntries": 0,
+        "interpretation": "Bedelías identifica correctamente el Plan 2017, los 36 meses y 240 créditos, pero no expone su composición. La malla y las previaturas se normalizan desde Facultad de Odontología."
+      },
+      "conclusion": {
+        "canonicalModel": "one-current-dental-laboratory-plan-in-montevideo",
+        "regionalCurriculumVariant": false,
+        "reason": "La oferta oficial publica una sola carrera Plan 2017, con tres años, 240 créditos y sede completa en Montevideo.",
+        "normalization": [
+          "Representar tres años y las diecinueve unidades o bloques curriculares que suman 240 créditos.",
+          "Conservar Optativa I, II y III como bloques elegibles sin congelar una opción como obligatoria.",
+          "Aplicar sólo las previaturas inequívocas de aprobación; las condiciones de cursado simultáneo y las previas que dependen de la optativa elegida quedan informadas.",
+          "No publicar el certificado Laboratorista Dental de 1963 como carrera adicional."
+        ]
+      },
+      "sources": [
+        { "url": "https://dgjuridica.udelar.edu.uy/215-carrera-de-laboratorista-en-odontologia-facultad-de-odontologia/", "authority": "Dirección General Jurídica, Universidad de la República", "supports": ["aprobación de la carrera", "Resolución 2 de 09/10/2018"] },
+        { "url": "https://odon.edu.uy/sitio/wp-content/uploads/Plan-Estudio-Carrera-de-Laboratorista-en-Odontologia-copia.pdf", "authority": "Facultad de Odontología, Universidad de la República", "supports": ["título", "tres años", "240 créditos", "seis áreas de formación"] },
+        { "url": "https://odon.edu.uy/sitio/malla-curricular-tecno-labo/", "authority": "Facultad de Odontología, Universidad de la República", "supports": ["unidades curriculares", "créditos por unidad", "subtotales anuales", "optativas"] },
+        { "url": "https://odon.edu.uy/sitio/wp-content/uploads/2024/11/Ortopedia-2.pdf", "authority": "Facultad de Odontología, programa de Ortopedia II", "supports": ["128 horas", "14 créditos", "dictado en segundo año"] },
+        { "url": "https://odon.edu.uy/sitio/wp-content/uploads/Previaturas-nueva-malla-2.pdf", "authority": "Facultad de Odontología, Universidad de la República", "supports": ["previaturas Plan 2017", "ingreso a Práctica de Laboratorio", "condiciones de optativas"] },
+        { "url": "https://udelar.edu.uy/carrera/laboratorista-en-odontologia", "authority": "Catálogo vigente de carreras de Udelar", "supports": ["oferta vigente", "perfil de egreso", "requisitos de ingreso"] }
+      ],
+      "anomalies": [
+        { "field": "orthopedicsTwoCredits", "resolution": "La tabla HTML muestra truncado `1`, pero el programa oficial enlazado declara 14 créditos y 128 horas; además 14 hace coincidir el subtotal oficial de segundo año (85) y el total de 240." },
+        { "field": "areaCourseMapping", "resolution": "El plan distribuye 240 créditos entre seis áreas, pero la malla no asigna cada unidad a un área. Se conserva la distribución como evidencia y se controla el total, sin inventar asociaciones por materia." },
+        { "field": "concurrentPrerequisites", "resolution": "Prótesis Fija I permite haber aprobado o estar cursando Bases Biológicas. Como la UI no representa cursado concurrente, se informa la condición y no se reemplaza por una aprobación más restrictiva." },
+        { "field": "electivePrerequisites", "resolution": "Las previas de Optativas II y III dependen de la opción concreta elegida. Los bloques no aplican una previa única que bloquearía alternativas válidas." }
+      ],
+      "remainingWork": "Malla vigente operativa. Revisar únicamente futuras modificaciones de optativas, previaturas o correspondencia oficial entre unidades y áreas."
     }
   ],
-  "contentHash": "sha256:a351b685381114f9f2c0c48be8790b895c555842dde016a6c8fee122fd68129a"
+  "contentHash": "sha256:70d357a3190a56d7e8fcf1ced0641238df68dcd56ad760b45ac25ddbc13a48d0"
 }

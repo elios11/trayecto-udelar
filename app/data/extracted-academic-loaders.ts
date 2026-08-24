@@ -804,35 +804,17 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 0,
   },
-  "bedelias-odon-asistente-dental-1963": {
-    load: () => import("./bedelias-generated/bedelias-odon-asistente-dental-1963.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-odon-asistente-en-odontologia-2017": {
     load: () => import("./bedelias-generated/bedelias-odon-asistente-en-odontologia-2017.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
     minCredits: 160,
   },
-  "bedelias-odon-higienista-dental-1963": {
-    load: () => import("./bedelias-generated/bedelias-odon-higienista-dental-1963.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-odon-higienista-en-odontologia-2017": {
     load: () => import("./bedelias-generated/bedelias-odon-higienista-en-odontologia-2017.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
     minCredits: 160,
-  },
-  "bedelias-odon-laboratorista-dental-1963": {
-    load: () => import("./bedelias-generated/bedelias-odon-laboratorista-dental-1963.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
   },
   "bedelias-odon-laboratorista-en-odontologia-2017": {
     load: () => import("./bedelias-generated/bedelias-odon-laboratorista-en-odontologia-2017.json"),

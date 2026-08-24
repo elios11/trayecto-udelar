@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 65);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 112);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 69);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 108);
   assert.deepEqual(saved.counts.byPriority, {
-    "composition-unavailable": 5,
+    "composition-unavailable": 1,
     "official-sources-pending": 107,
   });
   assert.deepEqual(saved.counts.regionalComparisons, {
@@ -82,7 +82,7 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.completedAudits[53].identity, "tecnicatura en archivo medico:2006");
   assert.equal(saved.completedAudits[54].identity, "tecnicatura en electroencefalografia:1900");
   assert.equal(saved.completedAudits[55].identity, "tecnicatura en electroencefalografia y neurofisiologia clinica:1990");
-  assert.deepEqual(saved.completedAudits.slice(56).map((entry) => entry.identity), [
+  assert.deepEqual(saved.completedAudits.slice(56, 65).map((entry) => entry.identity), [
     "tecnicatura en fisioterapia:1901",
     "tecnicatura en fonoaudiologia:1900",
     "tecnicatura en instrumentacion quirurgica:1997",
@@ -92,6 +92,12 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
     "tecnicatura en radiologia:1900",
     "tecnicatura en reeducacion psicomotriz:1901",
     "tecnicatura en registros medicos:1990",
+  ]);
+  assert.deepEqual(saved.completedAudits.slice(65).map((entry) => entry.identity), [
+    "asistente dental:1963",
+    "higienista dental:1963",
+    "laboratorista dental:1963",
+    "laboratorista en odontologia:2017",
   ]);
   assert.equal(saved.source.officialAuditRegistryHash, auditRegistry.contentHash);
   assert.equal(officialAuditRegistryHash(auditRegistry), auditRegistry.contentHash);
@@ -109,5 +115,5 @@ test("la cola guardada se reconstruye sin red con el mismo hash", () => {
   assert.deepEqual(rebuilt.counts, saved.counts);
   assert.ok(rebuilt.queue.every((entry) => entry.canonicalSource.state !== "audited"));
   assert.equal(rebuilt.queue[0].priority, "composition-unavailable");
-  assert.equal(rebuilt.queue[0].identity, "asistente dental:1963");
+  assert.equal(rebuilt.queue[0].identity, "psicologia infantil:1960");
 });

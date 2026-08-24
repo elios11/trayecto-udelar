@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:f3ff99e7150cc1e118307680ed9891e95a2e34354e79daf9493a4a4d2e966268",
-    "officialAuditHash": "sha256:a351b685381114f9f2c0c48be8790b895c555842dde016a6c8fee122fd68129a",
+    "auditQueueHash": "sha256:3255cd21aab7ab99aa143a0da907ce31fbb14aec83eaaadd6150fb8052e68332",
+    "officialAuditHash": "sha256:70d357a3190a56d7e8fcf1ced0641238df68dcd56ad760b45ac25ddbc13a48d0",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
-    "generatedPlans": 156,
-    "compositionAvailable": 123,
-    "compositionUnavailable": 33,
+    "generatedPlans": 153,
+    "compositionAvailable": 124,
+    "compositionUnavailable": 29,
     "plansWithOfficialCampuses": 29,
-    "excludedFromCurrentUi": 21
+    "excludedFromCurrentUi": 24
   },
   "plans": [
     {
@@ -1327,15 +1327,6 @@
       "campusIds": []
     },
     {
-      "identity": "asistente dental:1963",
-      "planId": "bedelias-odon-asistente-dental-1963",
-      "facultyCode": "ODON",
-      "snapshotPath": "data/bedelias/odon-asistente-dental-1963.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
       "identity": "asistente en odontologia:2017",
       "planId": "bedelias-odon-asistente-en-odontologia-2017",
       "facultyCode": "ODON",
@@ -1345,15 +1336,6 @@
       "campusIds": [
         "montevideo-facultad-de-odontologia"
       ]
-    },
-    {
-      "identity": "higienista dental:1963",
-      "planId": "bedelias-odon-higienista-dental-1963",
-      "facultyCode": "ODON",
-      "snapshotPath": "data/bedelias/odon-higienista-dental-1963.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
     },
     {
       "identity": "higienista en odontologia:2017",
@@ -1367,22 +1349,15 @@
       ]
     },
     {
-      "identity": "laboratorista dental:1963",
-      "planId": "bedelias-odon-laboratorista-dental-1963",
-      "facultyCode": "ODON",
-      "snapshotPath": "data/bedelias/odon-laboratorista-dental-1963.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
-    },
-    {
       "identity": "laboratorista en odontologia:2017",
       "planId": "bedelias-odon-laboratorista-en-odontologia-2017",
       "facultyCode": "ODON",
       "snapshotPath": "data/bedelias/odon-laboratorista-en-odontologia-2017.json",
-      "auditStatus": "extracted",
-      "compositionAvailable": false,
-      "campusIds": []
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo-facultad-de-odontologia"
+      ]
     },
     {
       "identity": "odontologia:2011",
@@ -1551,5 +1526,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:f69430e7fe77543b4036e309cc9ad10b264cae17716235df34962624be9e688c"
+  "contentHash": "sha256:0d985a9510cbff2e2192ff41b7efd1c07b8e415dcea5688b47bf014206feeda4"
 }
