@@ -522,12 +522,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 211,
   },
-  "bedelias-fhum-tecnicatura-en-turismo-1996": {
-    load: () => import("./bedelias-generated/bedelias-fhum-tecnicatura-en-turismo-1996.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025": {
     load: () => import("./bedelias-generated/bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025.json"),
     pathwayIds: ["bedelias"],

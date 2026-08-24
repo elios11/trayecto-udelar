@@ -14666,7 +14666,110 @@
         }
       ],
       "remainingWork": "Caso cerrado como título histórico sin malla ni continuidad específica demostrada. Una eventual equivalencia o cambio al Plan 1991/2014 requiere resolución individual de FHCE y no se automatiza."
+    },
+    {
+      "identity": "tecnicatura en turismo:1996",
+      "career": "TECNICATURA EN TURISMO",
+      "planYear": "1996",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia de la primera Tecnicatura Universitaria en Turismo frente a la oferta actual de Licenciatura en Turismo de FHCE.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico Universitario en Turismo",
+        "firstGenerationYear": 1997,
+        "historicalImplementation": {
+          "model": "itinerante y descentralizado, con dos cohortes por sede",
+          "locations": ["Fray Bentos", "Colonia", "Maldonado"]
+        },
+        "currentSuccessor": {
+          "identity": "licenciatura en turismo:2014",
+          "title": "Licenciado en Turismo",
+          "planYear": "2014",
+          "minimumCredits": 360,
+          "currentLocations": ["Salto", "Maldonado"]
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-tecnicatura-en-turismo-1996.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "titleLabel": "TECNICO UNIVERSITARIO EN TURISMO",
+        "compositionMatterCount": 0,
+        "interpretation": "Bedelías conserva el nombre, título y año del primer plan, pero no publica materias, créditos ni requisitos. La historia oficial describe una oferta itinerante de cohortes finitas y la oferta actual sólo presenta la Licenciatura en Turismo en Salto y Maldonado."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-itinerant-tourism-program-superseded-by-current-degree",
+        "canonicalIdentity": "licenciatura en turismo:2014",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "La Tecnicatura Plan 1996 fue la primera oferta descentralizada de Turismo y funcionó mediante cohortes itinerantes ya concluidas. No hay evidencia oficial de ingreso, cursado, exámenes o estudiantes activos del plan; presentarla como carrera utilizable confundiría un antecedente histórico con la Licenciatura vigente."
+      },
+      "sources": [
+        {
+          "url": "https://fhce.edu.uy/turismo/",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "primera generación de Técnicos en Turismo en 1997 y posterior dictado en Colonia y Maldonado",
+            "oferta actual de Licenciatura en Turismo en Salto y Maldonado",
+            "ausencia de la Tecnicatura Plan 1996 entre las carreras actuales"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/category/historias-universitarias/",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "identificación del Plan 1996 como primer plan formal de Técnico Universitario en Turismo",
+            "carácter itinerante en Fray Bentos, Colonia y Maldonado",
+            "sucesión por la Licenciatura desde 2005 y por los planes 2010 y 2014"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/09/C.-Turismo.pdf",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "dos cohortes de la Tecnicatura Plan 1996 en cada sede",
+            "decisión posterior de radicar la carrera en una sede fija",
+            "secuencia histórica de las ofertas de Turismo"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/Informe_Final_graficos_arreglados_23_10.pdf",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "oferta institucional actual de Turismo como Licenciatura",
+            "listado de tecnicaturas actuales que no incluye la Tecnicatura en Turismo"
+          ]
+        },
+        {
+          "url": "https://www.fhce.edu.uy/images/UAE/plan_de_estudios_lic_turismo_2014.pdf",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "antecedente de cursos de Turismo desde 1997",
+            "Plan 2014 de Licenciatura en Turismo como plan sucesor"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "current",
+          "resolution": "Se priorizan metadata.current=false, la historia institucional y la oferta actual sobre la marca current heredada del índice de servicio."
+        },
+        {
+          "field": "composition",
+          "resolution": "El snapshot del Plan 1996 no contiene materias. No se reconstruye con asignaturas de planes posteriores ni con una página heredada que describe una Tecnicatura de 225 créditos sin acreditar que corresponda al Plan 1996."
+        },
+        {
+          "field": "historicalLocations",
+          "resolution": "Fray Bentos, Colonia y Maldonado se registran como sedes históricas de cohortes concluidas; no se exponen como sedes elegibles actuales."
+        },
+        {
+          "field": "progressMigration",
+          "resolution": "No se traslada progreso automáticamente a la Licenciatura Plan 2014; cualquier reválida requiere resolución individual de FHCE."
+        }
+      ],
+      "remainingWork": "Caso histórico cerrado para la UI. La Licenciatura en Turismo Plan 2014 permanece como oferta vigente y conserva por separado su auditoría curricular y territorial."
     }
   ],
-  "contentHash": "sha256:5f362906296a80c7d0424258a595f66bbddb152b7d034eee589476e0d130ce12"
+  "contentHash": "sha256:2df77a67cbff48adad908663d60447e6b9015f96fc09dd14583753f6acc27aa1"
 }

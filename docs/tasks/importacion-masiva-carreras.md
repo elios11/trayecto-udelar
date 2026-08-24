@@ -1178,3 +1178,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:5f362906296a80c7d0424258a595f66bbddb152b7d034eee589476e0d130ce12`. Cola general: 94 identidades pendientes; hash `sha256:d1a8ff0ba91522050887e09afe1890380d804c38a63c0b3c5fb2bed2b10eb650`.
 - Manifiesto UI: 146 proyecciones, 134 con composición, 12 sin composición y treinta y una identidades excluidas; hash `sha256:a2d23ee3ed76be76c586b8cb78149bd7ab1cb653df9ab5a446978f145fae8231`. Cola funcional: hash `sha256:49ee9c5bdcac02d882eafe743228598d58544d0e1d0264a7232d65abe28cedc6`.
 - Siguiente paso funcional: Tecnicatura en Turismo Plan 1996, contrastando su registro sin materias con la Licenciatura en Turismo Plan 2014 y cualquier régimen oficial de continuidad de FHCE.
+
+### Tecnicatura en Turismo Plan 1996 — oferta itinerante histórica cerrada 2026-08-24
+
+- La historia oficial de FHCE identifica el Plan 1996 como el primer plan formal de Técnico Universitario en Turismo. Se implementó de forma itinerante en Fray Bentos, Colonia y Maldonado, con dos cohortes por sede; no fue una oferta territorial permanente.
+- La secuencia institucional continuó con la Licenciatura desde 2005 y con los planes 2010 y 2014. Actualmente FHCE ofrece únicamente la Licenciatura en Turismo Plan 2014 en Salto y Maldonado y no publica ingreso, cursado, exámenes ni estudiantes activos del Plan 1996.
+- El snapshot histórico marca `metadata.current=false` y no contiene materias, créditos ni requisitos. Una página heredada menciona una Tecnicatura de 225 créditos, pero no demuestra que esa estructura pertenezca al Plan 1996; por eso no se copia ni se infiere una malla.
+- La UI excluye la Tecnicatura 1996 y conserva Turismo 2014 como única oferta vigente. Fray Bentos, Colonia y Maldonado quedan como sedes históricas de cohortes concluidas, no como opciones actuales, y cualquier reválida requiere resolución individual.
+- Registro de auditoría: hash `sha256:2df77a67cbff48adad908663d60447e6b9015f96fc09dd14583753f6acc27aa1`. Cola general: 93 identidades pendientes; hash `sha256:630651334afade7a02519970f32677a9f5cb2c608d2332450880091947b55f51`.
+- Manifiesto UI: 145 proyecciones, 134 con composición, 11 sin composición y treinta y dos identidades excluidas; hash `sha256:0d8c3f63a16ac30eb906b4e0afe3f7e55d92706872b717caf82b5053002f18de`. Cola funcional: hash `sha256:316ef109936d471aa8873c086d7d09c4a0d2125b028087fe6ae5e420b41172ce`.
+- Siguiente paso funcional: Ingeniería en Computación Reválida Plan 1987, para determinar si corresponde a un plan académico histórico utilizable o a una identidad administrativa de reválidas.
