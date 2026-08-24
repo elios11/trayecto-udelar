@@ -12837,7 +12837,67 @@
       ],
       "anomalies": [{ "field": "duplicateCurrentIdentity", "resolution": "Se excluye la etiqueta versión 2019 como opción separada y se proyecta su contenido en la identidad canónica Plan 2012." }],
       "remainingWork": "Cerrado como alias administrativo; cualquier futura reforma con nuevo plan deberá tener año, resolución e identidad propios."
+    },
+    {
+      "identity": "tecnicatura en archivo medico:2006",
+      "career": "TECNICATURA EN ARCHIVO MÉDICO",
+      "planYear": "2006",
+      "reviewedAt": "2026-08-24",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría de vigencia e identidad del título histórico frente a la Licenciatura en Registros Médicos Plan 2006.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "historicalTitle": "Técnico en Archivo Médico",
+        "conversionRule": "Reglamento de conversión aprobado por Resolución 18 del Consejo Directivo Central de 09/12/2008.",
+        "currentSuccessor": {
+          "identity": "licenciatura en registros medicos:2006",
+          "title": "Licenciado en Registros Médicos",
+          "intermediateTitle": "Tecnólogo en Registros Médicos"
+        }
+      },
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fmed-tecnicatura-en-archivo-medico-2006.json",
+        "metadataCurrent": false,
+        "indexCurrent": true,
+        "compositionAvailable": false,
+        "interpretation": "La marca de vigencia heredada del índice contradice los metadatos del propio plan. La normativa convirtió el título histórico hacia la Licenciatura y la oferta oficial actual sólo publica Licenciatura en Registros Médicos con título intermedio de Tecnólogo."
+      },
+      "conclusion": {
+        "canonicalModel": "historical-title-converted-to-current-medical-records-degree",
+        "canonicalIdentity": "licenciatura en registros medicos:2006",
+        "excludeFromCurrentUi": true,
+        "regionalCurriculumVariant": false,
+        "reason": "Técnico en Archivo Médico es un título histórico con reglamento de conversión; no existe como ingreso o carrera independiente en la oferta vigente de Facultad de Medicina."
+      },
+      "sources": [
+        {
+          "url": "https://dgjuridica.udelar.edu.uy/245-reglamento-de-conversion-del-titulo-de-tecnico-en-archivo-medico-o-del-titulo-de-tecnico-en-registros-medicos-por-el-titulo-de-licenciado-en-registros-medicos/",
+          "authority": "Dirección General Jurídica, Universidad de la República",
+          "supports": ["conversión del título Técnico en Archivo Médico", "conversión a Licenciado en Registros Médicos", "Resolución 18 del CDC de 09/12/2008"]
+        },
+        {
+          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-registros-medicos",
+          "authority": "Facultad de Medicina, Universidad de la República",
+          "supports": ["oferta vigente", "título Licenciado en Registros Médicos", "título intermedio Tecnólogo en Registros Médicos", "Montevideo", "Paysandú"]
+        },
+        {
+          "url": "https://dgp.udelar.edu.uy/sites/default/files/2026-02/C%C3%B3digos%20de%20carreras%20y%20cargos%20TAS%2005.02.26.pdf",
+          "authority": "Dirección General de Personal, Universidad de la República",
+          "supports": ["Técnico Archivo Médico como categoría histórica", "pasaje al escalafón profesional al presentar título de Licenciado en Registros Médicos"]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "current",
+          "resolution": "Se priorizan el metadata.current=false del snapshot y las fuentes académicas vigentes sobre la marca current=true heredada del índice de Bedelías."
+        },
+        {
+          "field": "identity",
+          "resolution": "No se fusiona progreso automáticamente: el snapshot histórico se conserva, pero la UI vigente muestra únicamente la Licenciatura en Registros Médicos y su credencial intermedia oficial."
+        }
+      ],
+      "remainingWork": "Auditar y proyectar la Licenciatura en Registros Médicos Plan 2006 con su estructura por horas y U.C.B.; no convertir horas de contacto en créditos sin una equivalencia oficial."
     }
   ],
-  "contentHash": "sha256:065bc4a92a78f84aafd8d103f326a62c6803aed6d1aefa55e9f3c78043584426"
+  "contentHash": "sha256:eda865ecee51cb239667667e7024e68b610119fc3f3c2aaf35e15f2cb8ee3bc2"
 }

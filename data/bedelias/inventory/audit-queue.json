@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:41:48.909Z",
+  "generatedAt": "2026-08-24T04:55:59.448Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:065bc4a92a78f84aafd8d103f326a62c6803aed6d1aefa55e9f3c78043584426"
+    "officialAuditRegistryHash": "sha256:eda865ecee51cb239667667e7024e68b610119fc3f3c2aaf35e15f2cb8ee3bc2"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 53,
-    "pendingCanonicalIdentities": 124,
+    "evidenceClosedCanonicalIdentities": 54,
+    "pendingCanonicalIdentities": 123,
     "byPriority": {
-      "composition-unavailable": 17,
+      "composition-unavailable": 16,
       "official-sources-pending": 107
     },
     "regionalComparisons": {
@@ -340,38 +340,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "current-curriculum-version-alias-of-communication-2012"
+    },
+    {
+      "identity": "tecnicatura en archivo medico:2006",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "historical-title-converted-to-current-medical-records-degree"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnicatura en archivo medico:2006",
-      "career": {
-        "name": "TECNICATURA EN ARCHIVO MÉDICO",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2006",
-        "name": "TECNICATURA EN ARCHIVO MEDICO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FMED",
-        "serviceName": "FACULTAD DE MEDICINA",
-        "planKey": "FMED:tecnicatura en archivo medico:2006",
-        "state": "extracted"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FMED",
-          "serviceName": "FACULTAD DE MEDICINA",
-          "planKey": "FMED:tecnicatura en archivo medico:2006",
-          "state": "extracted"
-        }
-      ],
-      "priority": "composition-unavailable",
-      "action": "Completar materias, mínimos y títulos desde fuentes oficiales del servicio.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnicatura en electroencefalografia:1900",
       "career": {
@@ -4172,5 +4149,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:343388445792a2888f21715c6dd7a7690a79b4ce11638a2e03ac6a3fc92f9670"
+  "contentHash": "sha256:c729c0d91e9eba5f80841180cb2f5e0d20592e75fbfb24d5acfa5ffa91464e09"
 }

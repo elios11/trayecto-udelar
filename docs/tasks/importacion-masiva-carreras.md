@@ -1038,3 +1038,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:065bc4a92a78f84aafd8d103f326a62c6803aed6d1aefa55e9f3c78043584426`. Cola actualizada: 124 identidades pendientes, 17 sin composición; hash `sha256:343388445792a2888f21715c6dd7a7690a79b4ce11638a2e03ac6a3fc92f9670`.
 - La UI queda en 168 proyecciones: 123 con composición, 45 sin composición y nueve identidades excluidas; hash `sha256:ffa9a988b7a5ecd044190a636e6c6c333a3389f2a54d2781ec03ff9eaed4712f`.
 - Siguiente paso: auditar `Tecnicatura en Archivo Médico` Plan 2006, próxima identidad sin composición de la cola reproducible.
+
+### Tecnicatura en Archivo Médico Plan 2006 — título histórico convertido cerrado 2026-08-24
+
+- El propio snapshot se contradice: sus metadatos marcan el plan como no vigente, mientras el índice de Bedelías hereda `current: true`; además no publica composición, duración ni carga curricular.
+- La Dirección General Jurídica conserva el Reglamento 245, aprobado por Resolución 18 del CDC de 09/12/2008, que convierte los títulos de Técnico en Archivo Médico o Técnico en Registros Médicos al de Licenciado en Registros Médicos.
+- Facultad de Medicina publica actualmente una sola Licenciatura en Registros Médicos Plan 2006, de cuatro años y 4.030 horas, con título intermedio de Tecnólogo en Registros Médicos a las 2.980 horas y oferta en Montevideo y Paysandú.
+- La UI excluye la Tecnicatura en Archivo Médico como opción actual independiente y preserva el snapshot histórico. No migra progreso ni convierte horas de contacto en créditos sin equivalencia oficial.
+- Registro de auditoría: hash `sha256:eda865ecee51cb239667667e7024e68b610119fc3f3c2aaf35e15f2cb8ee3bc2`. Cola actualizada: 123 identidades pendientes, 16 sin composición; hash `sha256:c729c0d91e9eba5f80841180cb2f5e0d20592e75fbfb24d5acfa5ffa91464e09`.
+- La UI queda en 167 proyecciones: 123 con composición, 44 sin composición y diez identidades excluidas; hash `sha256:869b635583186e195315ab4c62b025c635c251b330f1e9dbeb83d4b97b7c0cae`.
+- Siguiente paso: auditar `Tecnicatura en Electroencefalografía` Plan 1900 y contrastarla con la Licenciatura en Neurofisiología Clínica vigente.

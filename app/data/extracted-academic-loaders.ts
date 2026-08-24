@@ -768,12 +768,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 0,
   },
-  "bedelias-fmed-tecnicatura-en-archivo-medico-2006": {
-    load: () => import("./bedelias-generated/bedelias-fmed-tecnicatura-en-archivo-medico-2006.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
-  },
   "bedelias-fmed-tecnicatura-en-electroencefalografia-1900": {
     load: () => import("./bedelias-generated/bedelias-fmed-tecnicatura-en-electroencefalografia-1900.json"),
     pathwayIds: ["bedelias"],
