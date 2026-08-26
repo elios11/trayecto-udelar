@@ -1380,3 +1380,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:1ebfabeb3c033beb5a6ae3ea6e20fe5e78c081b7e8b83d69428971b029b43ea9`. Cola general: 63 identidades pendientes; hash `sha256:afb583687980dc0d56ab2083f692f9bc06da4edf4162a6e248e884c94eb203fb`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:d8dc0373e9973435541060d5dffbdacb2a80a1e7177beef3b55c00aa9253b671`. Cola funcional vacía; hash `sha256:57bba40bbeb47edb0eb4fee21a03de18c76149900e2982388fc22948ab660ec6`.
 - Siguiente paso: auditar la Licenciatura en Artes – Cerámica Plan 2002, primera identidad reproducible restante.
+
+### Licenciatura en Artes – Cerámica Plan 2002 — Artes del Fuego operativa 2026-08-26
+
+- El plan aprobado y la oferta 2026 de Facultad de Artes confirman seis años, 330 créditos, el título de Licenciado en Artes – Cerámica y dictado en Montevideo. La UI corrige la duración administrativa de 60 a 72 meses.
+- El Primer Período exige el Taller de los Fenómenos de la Percepción y Lenguajes y los Seminarios-Taller de las Estéticas I y II. El Segundo Período distribuye los 15 créditos de Estéticas III en tres niveles y cierra con el Trabajo Final de Egreso de 20 créditos.
+- Cuarto, quinto y sexto exigen un único taller de libre orientación de 50, 50 y 30 créditos, respectivamente, con actividades del Área Asistencial de Artes del Fuego. Los módulos técnicos se actualizan por edición y no constituyen carreras, perfiles o trayectorias separados.
+- La composición jerárquica de Bedelías conserva correctamente mínimos por 330 créditos, pero la proyección plana anterior sumaba 575 al tratar cuatro cátedras alternativas de cada año como obligaciones simultáneas. La proyección auditada usa diez bloques normativos que suman exactamente 330 y no congela la nómina docente.
+- Registro de auditoría: hash `sha256:c43973bcbcbb1828843f509a7cd64be9ce5dd9a0a8b1557692a505e3397c88ba`. Cola general: 62 identidades pendientes; hash `sha256:28f2ff21327b8d018eebd988cdafe01255d5111b6255a90fbc0b3d8584c3858a`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:58ec27bae47850e0c5b30ad0185cd812f8296a7a5c44b19d77c8f6820a8df6d3`. Cola funcional vacía; hash `sha256:24b557a860165e1a9f4a124fb7ca9a0519586cac564be708821c687583d6e75a`.
+- Siguiente paso: auditar la Licenciatura en Artes – Dibujo y Pintura Plan 2002, primera identidad reproducible restante.
