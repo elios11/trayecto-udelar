@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T19:34:13.554Z",
+  "generatedAt": "2026-08-26T19:43:26.017Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:959bb8f542514553daa5e4e586720eb004366d0520a57600a65757c6c667a11f"
+    "officialAuditRegistryHash": "sha256:0f431d97c00da628d019d3f8ebfa5d2e96120bbb017120e9527caba2f3b74682"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 119,
-    "pendingCanonicalIdentities": 58,
+    "evidenceClosedCanonicalIdentities": 120,
+    "pendingCanonicalIdentities": 57,
     "byPriority": {
-      "official-sources-pending": 58
+      "official-sources-pending": 57
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -735,38 +735,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-26",
       "conclusion": "one-option-degree-six-years-official-credit-blocks"
+    },
+    {
+      "identity": "licenciatura en danza contemporanea:2018",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-26",
+      "conclusion": "one-degree-common-structure-eight-credit-requirements"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en danza contemporanea:2018",
-      "career": {
-        "name": "LICENCIATURA EN DANZA CONTEMPORÁNEA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2018",
-        "name": "LICENCIATURA DANZA CONTEMPORÁNEA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FARTES",
-        "serviceName": "FACULTAD DE ARTES",
-        "planKey": "FARTES:licenciatura en danza contemporanea:2018",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FARTES",
-          "serviceName": "FACULTAD DE ARTES",
-          "planKey": "FARTES:licenciatura en danza contemporanea:2018",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en interpretacion musical:2005",
       "career": {
@@ -2632,5 +2609,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:0e2365c90fe854cf653e7a92db047a979d58ac974178714262fcf1fcb4760980"
+  "contentHash": "sha256:fb8a07216676ce1bc36bb20808e53a9889f9713b96ad2b4777eff8f01019305f"
 }

@@ -21839,7 +21839,123 @@
       ],
       "uiNotice": "Plan 2002 de seis años y 330 créditos en Montevideo. En cuarto, quinto y sexto cursás un bloque de Foto-Cine-Video, Sección Fotografía; sus módulos técnicos no se suman como trayectorias separadas.",
       "remainingWork": "Los módulos y procedimientos técnicos se actualizan por edición. La UI conserva el bloque normativo y no fija una combinación permanente."
+    },
+    {
+      "identity": "licenciatura en danza contemporanea:2018",
+      "career": "LICENCIATURA EN DANZA CONTEMPORÁNEA",
+      "planYear": "2018",
+      "reviewedAt": "2026-08-26",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, seis ejes, optativas, electivas, trabajo final y ausencia de orientaciones",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de estudios 2008, implementado en 2018, expediente 161110-001274-07"],
+        "planYear": "2018",
+        "title": "Licenciado en Danza Contemporánea",
+        "careerName": "Licenciatura en Danza Contemporánea",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "degreeRule": "El título exige 360 créditos en ocho semestres: Creación Artística 81, Investigación 34, Estudios Teórico-Históricos de Arte y Danza 43, Teorías y Estudios del Cuerpo 43, Mediación 20, Optativas 67, Electivas 36 y Trabajo Final de Egreso 36. La carrera tiene una estructura común; las elecciones curriculares construyen perfiles personales, pero no orientaciones o títulos separados.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2024/06/Licenciatura_Danza_Contemporanea_Plan_de_Estudios_v2.pdf",
+          "excludedSourceCourseIds": ["ENBA-CD1", "ENBA-CM1", "ENBA-CTD1"],
+          "pathRequirementMap": {
+            "CA": "creation",
+            "INV": "research",
+            "THAD": "theory-history",
+            "TEC": "body-studies",
+            "MED": "mediation",
+            "OP": "optatives",
+            "ELE": "electives",
+            "TFE": "final-project"
+          },
+          "periodLabelMap": {
+            "CA": "Creación artística",
+            "INV": "Investigación",
+            "THAD": "Teórico-histórico · arte y danza",
+            "TEC": "Teorías y estudios del cuerpo",
+            "MED": "Mediación",
+            "OP": "Optativas",
+            "ELE": "Electivas",
+            "CR": "Electivas · créditos revalidados",
+            "TFE": "Trabajo Final de Egreso"
+          },
+          "periodOrder": ["Creación artística", "Investigación", "Teórico-histórico · arte y danza", "Teorías y estudios del cuerpo", "Mediación", "Optativas", "Electivas", "Electivas · créditos revalidados", "Trabajo Final de Egreso"],
+          "creditRequirements": [
+            { "id": "creation", "name": "Creación artística", "shortName": "Creación", "minCredits": 81 },
+            { "id": "research", "name": "Investigación", "shortName": "Investigación", "minCredits": 34 },
+            { "id": "theory-history", "name": "Estudios teórico-históricos de arte y danza", "shortName": "Teoría e historia", "minCredits": 43 },
+            { "id": "body-studies", "name": "Teorías y estudios del cuerpo", "shortName": "Cuerpo", "minCredits": 43 },
+            { "id": "mediation", "name": "Mediación artística", "shortName": "Mediación", "minCredits": 20 },
+            { "id": "optatives", "name": "Optativas", "shortName": "Optativas", "minCredits": 67 },
+            { "id": "electives", "name": "Electivas", "shortName": "Electivas", "minCredits": 36 },
+            { "id": "final-project", "name": "Trabajo Final de Egreso", "shortName": "TFE", "minCredits": 36 }
+          ],
+          "credentials": [{
+            "id": "bedelias-degree",
+            "title": "Licenciado en Danza Contemporánea",
+            "minTotalCredits": 360,
+            "nodeRequirements": [
+              { "nodeId": "creation", "minCredits": 81 },
+              { "nodeId": "research", "minCredits": 34 },
+              { "nodeId": "theory-history", "minCredits": 43 },
+              { "nodeId": "body-studies", "minCredits": 43 },
+              { "nodeId": "mediation", "minCredits": 20 },
+              { "nodeId": "optatives", "minCredits": 67 },
+              { "nodeId": "electives", "minCredits": 36 },
+              { "nodeId": "final-project", "minCredits": 36 }
+            ],
+            "requiredCourseGroupIds": []
+          }]
+        }
+      },
+      "offerings": [{ "serviceCode": "FARTES", "locations": ["Montevideo"], "role": "oferta completa del Instituto de Artes Escénicas de Facultad de Artes", "curriculumVariant": false }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-danza-contemporanea-2018.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 420,
+        "compositionOfferedCredits": 2787,
+        "projectedCourseRecordsBeforeAudit": 164,
+        "projectedCourseCreditsBeforeAudit": 1003,
+        "publishedPrerequisiteRecords": 69,
+        "interpretation": "Bedelías publica correctamente los mínimos por eje y una oferta amplia de optativas y electivas, pero la proyección anterior la aplanaba en un único total y podía aparentar que 1003 créditos de oferta eran acumulables. La auditoría conserva el catálogo como opciones y aplica los ocho mínimos de egreso que suman 360."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-common-structure-eight-credit-requirements",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El plan y la oferta 2026 confirman una única Licenciatura en Danza Contemporánea en Montevideo, de cuatro años y 360 créditos. El documento descarta una estructura diversificada en orientaciones: las optativas y electivas generan perfiles personales no certificados.",
+        "normalization": [
+          "Publicar ocho semestres, 48 meses y 360 créditos.",
+          "Controlar por separado los cinco ejes fundamentales, Optativas, Electivas y Trabajo Final de Egreso.",
+          "Conservar la oferta de Bedelías como catálogo elegible y no sumarla como núcleo obligatorio.",
+          "Excluir los tres complementos históricos de 2020 con cero créditos.",
+          "No crear selector de trayectoria ni perfil para elecciones curriculares personales.",
+          "Publicar Montevideo como única sede confirmada."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2024/06/Licenciatura_Danza_Contemporanea_Plan_de_Estudios_v2.pdf", "authority": "Facultad de Artes, Udelar", "supports": ["plan 2008 implementado en 2018", "cuatro años", "360 créditos", "seis ejes", "mínimos", "malla semestral", "ausencia de orientaciones"] },
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-danza-contemporanea/", "authority": "Facultad de Artes, Udelar", "supports": ["vigencia 2026", "cuatro años", "360 créditos", "programas", "Comisión de Carrera", "sede 18 de Julio"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-danza-contemporanea", "authority": "Universidad de la República", "supports": ["título", "48 meses", "360 créditos", "Facultad de Artes"] },
+        { "url": "https://www.artes.udelar.edu.uy/inscripciones-danza-contemporanea-nueva-generacion/", "authority": "Facultad de Artes, Udelar", "supports": ["ingreso 2026", "ocho semestres", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "axisTotals", "resolution": "La tabla operativa y Bedelías fijan 43 créditos en Teorías y Estudios del Cuerpo; el párrafo descriptivo del PDF dice 38. Se usa 43 porque completa las unidades publicadas y, junto con el TFE separado, cierra los 360 créditos." },
+        { "field": "flexibleOfferCredits", "resolution": "Los 2787 créditos listados en la composición son un catálogo histórico/ampliado de alternativas, no una obligación acumulativa. La UI exige únicamente 67 optativos y 36 electivos." },
+        { "field": "personalProfiles", "resolution": "Los perfiles personales no son orientaciones certificadas y no habilitan un selector de trayectoria." }
+      ],
+      "uiNotice": "Plan 2008 implementado en 2018: cuatro años y 360 créditos en Montevideo. La carrera tiene una estructura común; completás mínimos por ocho bloques y personalizás tu recorrido con 67 créditos optativos y 36 electivos, sin elegir una orientación certificada.",
+      "remainingWork": "La oferta concreta de optativas y electivas cambia por edición. La UI conserva el catálogo registrado por Bedelías y los mínimos oficiales, sin prometer que cada unidad se dicte todos los años."
     }
   ],
-  "contentHash": "sha256:959bb8f542514553daa5e4e586720eb004366d0520a57600a65757c6c667a11f"
+  "contentHash": "sha256:0f431d97c00da628d019d3f8ebfa5d2e96120bbb017120e9527caba2f3b74682"
 }

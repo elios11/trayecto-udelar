@@ -1410,3 +1410,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:959bb8f542514553daa5e4e586720eb004366d0520a57600a65757c6c667a11f`. Cola general: 58 identidades pendientes; hash `sha256:0e2365c90fe854cf653e7a92db047a979d58ac974178714262fcf1fcb4760980`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:2520cb4611a8832f8030414288e0150bb4ce8a0e5d31f2160a9b984d9b259d98`. Cola funcional vacía; hash `sha256:c4fa4a4888db9e95656ade273aeb0dd11d54b59194a6dc923fc93859607d0951`.
 - Siguiente paso: auditar la Licenciatura en Danza Contemporánea Plan 2018, primera identidad reproducible restante.
+
+### Licenciatura en Danza Contemporánea — ejes y catálogo flexible operativos 2026-08-26
+
+- El plan oficial 2008, implementado administrativamente en 2018, y la oferta 2026 confirman una carrera única en Montevideo de cuatro años, ocho semestres y 360 créditos, con título de Licenciado en Danza Contemporánea.
+- La proyección controla ocho requisitos que suman exactamente 360: Creación Artística 81, Investigación 34, Teórico-Histórico de Arte y Danza 43, Teorías y Estudios del Cuerpo 43, Mediación 20, Optativas 67, Electivas 36 y Trabajo Final de Egreso 36.
+- El árbol de Bedelías conserva 417 unidades elegibles después de excluir tres complementos históricos de 2020 con cero créditos. Sus 2787 créditos representan oferta acumulada y flexible, no obligaciones simultáneas; cada materia se asigna al eje correspondiente y los dos laboratorios de egreso aportan 18 créditos cada uno.
+- El texto descriptivo del PDF dice 38 créditos para Estudios del Cuerpo, mientras su tabla operativa y Bedelías publican 43. La normalización usa 43 porque coincide con las unidades del eje y permite cerrar el total oficial de 360 junto con el Trabajo Final separado.
+- El plan descarta expresamente orientaciones diversificadas. Las optativas y electivas permiten construir perfiles personales, pero no se publican como menciones, títulos o trayectorias certificadas.
+- Registro de auditoría: hash `sha256:0f431d97c00da628d019d3f8ebfa5d2e96120bbb017120e9527caba2f3b74682`. Cola general: 57 identidades pendientes; hash `sha256:fb8a07216676ce1bc36bb20808e53a9889f9713b96ad2b4777eff8f01019305f`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:89b469c94a73b44c05b02286a21e3a17d736d592b42c6d9683994b8ccd250fa8`. Cola funcional vacía; hash `sha256:635928c74b82b7b5ab939cc8e02e7019bee38c4950ea058fb88e392d36d33fa3`.
+- Siguiente paso: auditar la Licenciatura en Interpretación Musical Plan 2005, primera identidad reproducible restante.
