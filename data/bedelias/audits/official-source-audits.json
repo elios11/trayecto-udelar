@@ -21459,7 +21459,129 @@
       ],
       "uiNotice": "Plan 2002 de seis años y 330 créditos en Montevideo. En cuarto, quinto y sexto cursás un taller de libre orientación con actividades del Área de Artes del Fuego; la UI registra un bloque por año y no exige todas las cátedras históricas.",
       "remainingWork": "La cátedra concreta y los módulos técnicos ofrecidos se validan con Bedelía y el Área de Artes del Fuego en cada edición. La UI conserva sólo las previaturas que una fuente oficial pueda asociar inequívocamente con los diez bloques normativos."
+    },
+    {
+      "identity": "licenciatura en artes dibujo y pintura:2002",
+      "career": "LICENCIATURA EN ARTES - DIBUJO Y PINTURA",
+      "planYear": "2002",
+      "reviewedAt": "2026-08-26",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, aprobación, título, sede, duración, créditos, dos períodos, Plano en el Espacio y trabajo final",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Resolución 17 del Consejo del I.ENBA de 18/09/2002",
+          "Resolución 10 del Consejo Directivo Central de 25/05/2004",
+          "Publicación en Diario Oficial 26580 de 03/09/2004",
+          "Resolución 25 del Consejo del I.ENBA de 08/02/2006",
+          "Publicación en Diario Oficial 26978 de 21/04/2006"
+        ],
+        "planYear": "2002",
+        "title": "Licenciado en Artes - Dibujo y Pintura",
+        "careerName": "Licenciatura en Artes - Dibujo y Pintura",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 72,
+        "semesters": 12,
+        "minimumCredits": 330,
+        "current": true,
+        "degreeRule": "El título exige 330 créditos: 165 del Primer Período y 165 del Primer Ciclo del Segundo Período, incluidas las actividades del Área Asistencial de Plano en el Espacio y el Trabajo Final de Egreso. El plan de trabajo individual no crea un perfil, título o trayectoria certificada diferente.",
+        "curriculum": {
+          "replaceBedeliasCourses": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_DIBUJO_Y_PINTURA.pdf",
+          "periods": [
+            { "label": "1.er año", "courses": [{ "id": "year-1-perception-workshop", "name": "Taller de los Fenómenos de la Percepción y Lenguajes", "credits": 55, "requirementId": "year-1", "curricularBlock": true }] },
+            { "label": "2.º año", "courses": [{ "id": "year-2-aesthetics", "name": "Seminario-Taller de las Estéticas I", "credits": 55, "requirementId": "year-2", "curricularBlock": true }] },
+            { "label": "3.er año", "courses": [{ "id": "year-3-aesthetics", "name": "Seminario-Taller de las Estéticas II", "credits": 55, "requirementId": "year-3", "curricularBlock": true }] },
+            {
+              "label": "4.º año",
+              "courses": [
+                { "id": "year-4-aesthetics", "name": "Seminario de las Estéticas III · nivel I", "credits": 5, "requirementId": "year-4", "curricularBlock": true },
+                { "id": "year-4-drawing-painting-workshop", "name": "Taller de libre orientación con actividades en Plano en el Espacio · 4.º año", "credits": 50, "requirementId": "year-4", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "5.º año",
+              "courses": [
+                { "id": "year-5-aesthetics", "name": "Seminario de las Estéticas III · nivel II", "credits": 5, "requirementId": "year-5", "curricularBlock": true },
+                { "id": "year-5-drawing-painting-workshop", "name": "Taller de libre orientación con actividades en Plano en el Espacio · 5.º año", "credits": 50, "requirementId": "year-5", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "6.º año",
+              "courses": [
+                { "id": "year-6-aesthetics", "name": "Seminario de las Estéticas III · nivel III", "credits": 5, "requirementId": "year-6", "curricularBlock": true },
+                { "id": "year-6-drawing-painting-workshop", "name": "Taller de libre orientación con actividades en Plano en el Espacio · 6.º año", "credits": 30, "requirementId": "year-6", "curricularBlock": true },
+                { "id": "final-project", "name": "Trabajo Final de Egreso en Dibujo y Pintura", "credits": 20, "requirementId": "year-6", "curricularBlock": true }
+              ]
+            }
+          ],
+          "creditRequirements": [
+            { "id": "year-1", "name": "1.er año", "shortName": "1.er año", "minCredits": 55 },
+            { "id": "year-2", "name": "2.º año", "shortName": "2.º año", "minCredits": 55 },
+            { "id": "year-3", "name": "3.er año", "shortName": "3.er año", "minCredits": 55 },
+            { "id": "year-4", "name": "4.º año", "shortName": "4.º año", "minCredits": 55 },
+            { "id": "year-5", "name": "5.º año", "shortName": "5.º año", "minCredits": 55 },
+            { "id": "year-6", "name": "6.º año", "shortName": "6.º año", "minCredits": 55 }
+          ],
+          "requiredCourseGroups": [{
+            "id": "official-curriculum",
+            "label": "Bloques obligatorios del plan",
+            "minCompleted": 10,
+            "courseIds": ["year-1-perception-workshop", "year-2-aesthetics", "year-3-aesthetics", "year-4-aesthetics", "year-4-drawing-painting-workshop", "year-5-aesthetics", "year-5-drawing-painting-workshop", "year-6-aesthetics", "year-6-drawing-painting-workshop", "final-project"]
+          }],
+          "credentials": [{
+            "id": "bedelias-degree",
+            "title": "Licenciado en Artes - Dibujo y Pintura",
+            "minTotalCredits": 330,
+            "nodeRequirements": [
+              { "nodeId": "year-1", "minCredits": 55 }, { "nodeId": "year-2", "minCredits": 55 }, { "nodeId": "year-3", "minCredits": 55 },
+              { "nodeId": "year-4", "minCredits": 55 }, { "nodeId": "year-5", "minCredits": 55 }, { "nodeId": "year-6", "minCredits": 55 }
+            ],
+            "requiredCourseGroupIds": ["official-curriculum"]
+          }]
+        }
+      },
+      "offerings": [{ "serviceCode": "FARTES", "locations": ["Montevideo"], "role": "oferta completa del Instituto de Bellas Artes de Facultad de Artes", "curriculumVariant": false }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-artes-dibujo-y-pintura-2002.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": null,
+        "publishedCourseRecords": 13,
+        "compositionMatterEntries": 46,
+        "publishedCompositionMinimumCredits": 330,
+        "projectedCourseCreditsBeforeAudit": 575,
+        "interpretation": "Los mínimos jerárquicos coinciden con 330 créditos, pero la proyección plana sumaba simultáneamente cuatro cátedras alternativas por año avanzado y producía 575 créditos ficticiamente obligatorios."
+      },
+      "conclusion": {
+        "canonicalModel": "one-option-degree-six-years-official-credit-blocks",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El plan aprobado, la página vigente y el ingreso 2026 confirman una única opción en Montevideo, seis años y 330 créditos. El plan de trabajo individual y el Área Plano en el Espacio no crean otra carrera, sede, perfil, trayectoria ni título.",
+        "normalization": [
+          "Corregir la duración administrativa de 60 a 72 meses y publicar 330 créditos.",
+          "Controlar seis años de 55 créditos, equivalentes a dos períodos de 165.",
+          "Representar un solo bloque de taller con actividades en Plano en el Espacio por año avanzado: 50, 50 y 30 créditos.",
+          "No exigir simultáneamente las cátedras históricas alternativas.",
+          "Exigir el Trabajo Final de Egreso de 20 créditos dentro de sexto año.",
+          "Publicar Montevideo como única sede confirmada y no convertir planes de trabajo personales en trayectorias certificadas."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_DIBUJO_Y_PINTURA.pdf", "authority": "Instituto Escuela Nacional de Bellas Artes / Facultad de Artes, Udelar", "supports": ["aprobación", "título", "seis años", "330 créditos", "estructura anual", "Plano en el Espacio", "Trabajo Final de Egreso"] },
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-dibujo-y-pintura/", "authority": "Facultad de Artes, Udelar", "supports": ["vigencia 2026", "plan de trabajo individual", "Área Plano en el Espacio", "cursos obligatorios"] },
+        { "url": "https://www.artes.udelar.edu.uy/inscripciones-bellas-artes-nueva-generacion/", "authority": "Facultad de Artes, Udelar", "supports": ["ingreso 2026", "opción Dibujo y Pintura", "seis años", "330 créditos"] },
+        { "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/", "authority": "Facultad de Artes, Udelar", "supports": ["oferta vigente", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "Los 60 meses administrativos contradicen los seis cursos anuales. La UI usa 72 meses." },
+        { "field": "flatCourseCredits", "resolution": "La proyección anterior sumaba 575 créditos al acumular cátedras alternativas. La UI usa diez bloques que suman 330." },
+        { "field": "individualStudyPlan", "resolution": "La personalización orienta el trabajo del estudiante, pero no acredita menciones o trayectorias distintas. La UI conserva una única malla normativa." }
+      ],
+      "uiNotice": "Plan 2002 de seis años y 330 créditos en Montevideo. En cuarto, quinto y sexto cursás un taller con actividades del Área Plano en el Espacio; el plan de trabajo es individual, pero no crea otra trayectoria o título.",
+      "remainingWork": "Los módulos, cursos opcionales y el plan personal se acuerdan con el equipo docente en cada edición. La UI conserva los bloques normativos y no inventa una lista permanente de optativas."
     }
   ],
-  "contentHash": "sha256:c43973bcbcbb1828843f509a7cd64be9ce5dd9a0a8b1557692a505e3397c88ba"
+  "contentHash": "sha256:9c4dc57d2dfa15a17e43c634d319454b8d963104a37552b89d066ae03a0f2877"
 }

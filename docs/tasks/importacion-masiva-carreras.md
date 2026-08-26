@@ -1390,3 +1390,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:c43973bcbcbb1828843f509a7cd64be9ce5dd9a0a8b1557692a505e3397c88ba`. Cola general: 62 identidades pendientes; hash `sha256:28f2ff21327b8d018eebd988cdafe01255d5111b6255a90fbc0b3d8584c3858a`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:58ec27bae47850e0c5b30ad0185cd812f8296a7a5c44b19d77c8f6820a8df6d3`. Cola funcional vacía; hash `sha256:24b557a860165e1a9f4a124fb7ca9a0519586cac564be708821c687583d6e75a`.
 - Siguiente paso: auditar la Licenciatura en Artes – Dibujo y Pintura Plan 2002, primera identidad reproducible restante.
+
+### Licenciatura en Artes – Dibujo y Pintura Plan 2002 — Plano en el Espacio operativo 2026-08-26
+
+- El plan aprobado y la oferta 2026 confirman seis años, 330 créditos, el título de Licenciado en Artes – Dibujo y Pintura y dictado en Montevideo. La UI corrige la duración administrativa de 60 a 72 meses.
+- La proyección controla seis años de 55 créditos. En cuarto, quinto y sexto combina cinco créditos de Estéticas III con un solo bloque de taller de 50, 50 y 30 créditos, respectivamente, y exige el Trabajo Final de Egreso de 20 créditos.
+- Las actividades del Área Plano en el Espacio y el plan de trabajo individual orientan el cursado dentro de la misma opción. No crean menciones, perfiles, títulos o trayectorias certificadas y no congelan los cursos opcionales de una edición.
+- La composición jerárquica de Bedelías conserva mínimos por 330 créditos, pero la proyección plana anterior sumaba 575 al acumular cátedras alternativas. Los diez bloques normalizados suman exactamente 330.
+- Registro de auditoría: hash `sha256:9c4dc57d2dfa15a17e43c634d319454b8d963104a37552b89d066ae03a0f2877`. Cola general: 61 identidades pendientes; hash `sha256:dd0587889042feece52dfd8e8342e42de24c75fb276010b895cd9e8b848767d8`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:f8a5f9c2b4d9b829ec458129682129beda3d338f20a8dc1979621241b4148da2`. Cola funcional vacía; hash `sha256:202f5cf58e3c125dba9c8c9e5e3a6018a82104e26299cd335fc29f65eddce030`.
+- Siguiente paso: auditar en el mismo lote Diseño Gráfico, Escultura y Volumen en el Espacio y Fotografía Plan 2002.
