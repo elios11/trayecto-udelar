@@ -355,6 +355,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     || (audit?.officialPlan?.trajectories ?? []).length > 0;
   const pathRequirementMap = curriculum.pathRequirementMap ?? {};
   const courseOverrides = curriculum.courseOverrides ?? {};
+  const excludedSourceCourseIds = new Set(curriculum.excludedSourceCourseIds ?? []);
   const requirementIdForPath = (nodePath) => {
     for (const segment of [...(nodePath ?? [])].reverse()) {
       const code = String(segment).match(/^([A-Z0-9]+)\s+-\s+/i)?.[1];
@@ -372,6 +373,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     const parsed = compositionMatter(useProfileComposition
       ? String(node.label).replace(/\s+-\s+cr[eé]ditos?:\s*\d+(?:[.,]\d+)?\s*$/i, "")
       : node.label);
+    if (parsed.code && excludedSourceCourseIds.has(parsed.code)) continue;
     const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
     const courseOverride = courseOverrides[parsed.code] ?? courseOverrides[normalize(parsed.name)] ?? {};
     const profileIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "perfiles");

@@ -1337,3 +1337,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:6a703dcb8672f427bec3cb143ce13bc1be44eb8f6263f29a953692d93ba91d54`. Cola general: 67 identidades pendientes; hash `sha256:a969a6dae18484ceb986ff63603e4e4e0689729378db1774ddb9409c504d4ea2`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:40a5f692485b5fe16f0845b7b31ab1f61034129511c1b7d75ec6391da5e51e1a`. Cola funcional vacía; hash `sha256:02f254b6f50a81b62bfa764890f3aa97eaca34bf2eef9bac99f30ff1ec57b57d`.
 - Siguiente paso: auditar el Tecnólogo Minero Plan 2013, primera identidad reproducible restante.
+
+### Tecnólogo Minero — plan conjunto, catálogo flexible y trayectoria sugerida operativos 2026-08-26
+
+- El CDC aprobó el Plan 2012 como carrera conjunta de Facultad de Ciencias, Agronomía e Ingeniería. Facultad de Ingeniería y CURE confirman tres años o seis semestres, título de Tecnólogo Minero y dictado exclusivo en Treinta y Tres; la UI conserva 2013 sólo como identidad técnica del comienzo de la oferta en Bedelías.
+- La implementación vigente de CURE y Bedelías exige 272 créditos. El texto aprobado dice 270: la discrepancia queda visible y no se fuerza una conciliación ficticia. La UI controla 40 créditos de Matemática-Física-Química, 70 de Geología, 40 de Prospección y Exploración, 50 de Explotación y Beneficiación, 20 de Ambiental y Seguridad, 20 de Humanística y 15 de Pasantía.
+- La secuencia de seis semestres del plan se publica como trayectoria sugerida para ingreso desde CIO, no como una malla rígida. Las demás unidades permanecen en un catálogo flexible orientado por tutor; la Comisión de Carrera valida el currículo de 272 créditos y la condición transversal de al menos 10 créditos de formación social-productiva o cursados en otros servicios.
+- La Pasantía de 15 créditos es una obligación nominal de egreso. Los 47 cursos visibles suman 398 créditos de oferta potencial y no deben aprobarse completos.
+- Bedelías duplicaba Sistemas de Información Geográfica bajo `TMM32` y `TM32`, con el mismo nombre, área y tres créditos. La proyección conserva una sola unidad `TM32` y documenta el alias administrativo.
+- Registro de auditoría: hash `sha256:39c182dc1393dcb4cfc03d4be27388ad6b619efc692c3da428484680e20943d0`. Cola general: 66 identidades pendientes; hash `sha256:7f8ee2643337d063e7e9c4e0a0f39e574da001c59a328b53233d2d18c9931e8a`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:f0571ff0244c107023df5454eb24d943b56bc79eb15826f8247b81748dfa3021`. Cola funcional vacía; hash `sha256:9f98a2f5e4795cde1c6091970f93d2d3cb1a34e9e66de47c3fce0e17a12342d0`.
+- Siguiente paso: auditar la Licenciatura en Economía Agrícola y Gestión de Agronegocios Plan 2022, primera identidad reproducible restante.
