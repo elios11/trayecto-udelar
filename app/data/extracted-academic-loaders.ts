@@ -184,7 +184,7 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-arte-digital-y-electronico-2013.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 480,
   },
   "bedelias-fartes-licenciatura-en-artes-artes-plasticas-y-visuales-2002": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-artes-artes-plasticas-y-visuales-2002.json"),

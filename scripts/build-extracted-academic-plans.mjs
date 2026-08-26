@@ -704,8 +704,14 @@ function buildProjection(entry, snapshot, audit) {
 
   const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds)
     ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
-  if (officialCurriculum && (courses.length === 0 || audit?.officialPlan?.curriculum?.useBedeliasCompositionTree === true)) {
+  const replaceBedeliasCourses = audit?.officialPlan?.curriculum?.replaceBedeliasCourses === true;
+  if (officialCurriculum && (
+    courses.length === 0
+    || audit?.officialPlan?.curriculum?.useBedeliasCompositionTree === true
+    || replaceBedeliasCourses
+  )) {
     courses = officialCurriculum.courses;
+    if (replaceBedeliasCourses) codeToId.clear();
     for (const course of courses) {
       if (course.bedeliasCode && !codeToId.has(course.bedeliasCode)) codeToId.set(course.bedeliasCode, course.id);
     }
@@ -714,7 +720,7 @@ function buildProjection(entry, snapshot, audit) {
   const publishedCodes = new Set();
   const noPublishedCodes = new Set();
   const rules = [];
-  for (const rule of snapshot.prerequisites ?? []) {
+  for (const rule of replaceBedeliasCourses ? [] : (snapshot.prerequisites ?? [])) {
     if (rule.expression && ["course", "exam"].includes(rule.target?.assessment) && rule.target?.code) {
       publishedCodes.add(rule.target.code);
       rules.push({ target: { code: rule.target.code, name: rule.target.name, assessment: rule.target.assessment }, expression: normalizeExpressionCourseIds(rule.expression, codeToId, snapshot.service.code), heading: rule.heading, sourceUrl: rule.sourceUrl });

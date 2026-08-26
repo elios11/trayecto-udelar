@@ -1359,3 +1359,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:6490ad7dc3f06b10f7dcae291ae60e76f96d6c98e63dc5c07efad7699e772135`. Cola general: 65 identidades pendientes; hash `sha256:8245d09b212280dcfdca3460bedc560b5da7b12201ef345b49e8a84c5295eb54`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:2d450705a6c481fdd09ef76f83ccfaf77aa953cb0979361da48f330fa2aa3856`. Cola funcional vacía; hash `sha256:d0ac7605c289d9c64d083c2a75151664e40b886b343473e46e30e22a853f9fcc`.
 - Siguiente paso: auditar la Licenciatura en Arte Digital y Electrónico Plan 2013, primera identidad reproducible restante.
+
+### Licenciatura en Arte Digital y Electrónico — Plan 2014 y bloques oficiales operativos 2026-08-26
+
+- El plan aprobado por el CDC y publicado en el Diario Oficial define seis años, 480 créditos y el título de Licenciado en Arte Digital y Electrónico. La oferta vigente de Facultad de Artes confirma la continuidad de la carrera en Montevideo.
+- La UI muestra Plan 2014, año de aprobación y registro en la oferta académica, y conserva 2013 sólo como identidad técnica de la versión definitiva cargada en Bedelías. También corrige la duración administrativa de 60 a 72 meses.
+- Los dos períodos insumen 240 créditos cada uno. La proyección controla seis años de 80 créditos y 18 bloques: taller y optativas del primer período; Estéticas III, TPLOEP, Lenguajes Computarizados y optativas en cuarto y quinto; y Estéticas III, TPLOEP, Lenguajes Computarizados y Trabajo Final en sexto.
+- La composición administrativa suma mínimos por 410 créditos: omite 45 optativos o electivos del primer período y 25 del segundo. La proyección restituye esos 70 créditos desde el plan oficial y suma exactamente 480.
+- Los talleres paralelos y la oferta acumulada de electivas no se transforman en materias obligatorias. Cada elección se representa como bloque acreditable del año correspondiente y la oferta nominal queda sujeta a validación de Bedelía.
+- Registro de auditoría: hash `sha256:3d50435d993346cb49b9ea074246e6d85746b47d6086a58d602cc91f7a67d634`. Cola general: 64 identidades pendientes; hash `sha256:abeb636cf30f52dbe2b42702ce44336227d5b667d8ebad5f1399fce6cf7fac9c`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:85688b040c6a84743dc966dec32f47ae24dd4afa4d3bc4a9c9fe9d33762a784a`. Cola funcional vacía; hash `sha256:174f5d7490c616231a32155820a436d8b053c0bd985d5a298172cf691205ace1`.
+- Siguiente paso: auditar la Licenciatura en Artes – Artes Plásticas y Visuales Plan 2002, primera identidad reproducible restante.
