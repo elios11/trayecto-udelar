@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T14:47:16.728Z",
+  "generatedAt": "2026-08-26T18:53:43.300Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:3d50435d993346cb49b9ea074246e6d85746b47d6086a58d602cc91f7a67d634"
+    "officialAuditRegistryHash": "sha256:1ebfabeb3c033beb5a6ae3ea6e20fe5e78c081b7e8b83d69428971b029b43ea9"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 113,
-    "pendingCanonicalIdentities": 64,
+    "evidenceClosedCanonicalIdentities": 114,
+    "pendingCanonicalIdentities": 63,
     "byPriority": {
-      "official-sources-pending": 64
+      "official-sources-pending": 63
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -699,38 +699,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-26",
       "conclusion": "one-plan-six-years-official-credit-blocks"
+    },
+    {
+      "identity": "licenciatura en artes artes plasticas y visuales:2002",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-26",
+      "conclusion": "one-option-degree-six-years-official-credit-blocks"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en artes artes plasticas y visuales:2002",
-      "career": {
-        "name": "LICENCIATURA EN ARTES - ARTES PLÁSTICAS Y VISUALES",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2002",
-        "name": "LICENCIATURA EN ARTES - ARTES PLÁSTICAS Y VISUALES",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FARTES",
-        "serviceName": "FACULTAD DE ARTES",
-        "planKey": "FARTES:licenciatura en artes artes plasticas y visuales:2002",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FARTES",
-          "serviceName": "FACULTAD DE ARTES",
-          "planKey": "FARTES:licenciatura en artes artes plasticas y visuales:2002",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en artes ceramica:2002",
       "career": {
@@ -2770,5 +2747,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:abeb636cf30f52dbe2b42702ce44336227d5b667d8ebad5f1399fce6cf7fac9c"
+  "contentHash": "sha256:afb583687980dc0d56ab2083f692f9bc06da4edf4162a6e248e884c94eb203fb"
 }

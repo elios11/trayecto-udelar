@@ -190,7 +190,7 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-artes-artes-plasticas-y-visuales-2002.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 330,
   },
   "bedelias-fartes-licenciatura-en-artes-ceramica-2002": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-artes-ceramica-2002.json"),

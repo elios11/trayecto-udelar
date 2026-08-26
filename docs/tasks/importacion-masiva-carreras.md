@@ -1370,3 +1370,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:3d50435d993346cb49b9ea074246e6d85746b47d6086a58d602cc91f7a67d634`. Cola general: 64 identidades pendientes; hash `sha256:abeb636cf30f52dbe2b42702ce44336227d5b667d8ebad5f1399fce6cf7fac9c`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:85688b040c6a84743dc966dec32f47ae24dd4afa4d3bc4a9c9fe9d33762a784a`. Cola funcional vacía; hash `sha256:174f5d7490c616231a32155820a436d8b053c0bd985d5a298172cf691205ace1`.
 - Siguiente paso: auditar la Licenciatura en Artes – Artes Plásticas y Visuales Plan 2002, primera identidad reproducible restante.
+
+### Licenciatura en Artes – Artes Plásticas y Visuales Plan 2002 — orientación flexible operativa 2026-08-26
+
+- El plan aprobado por el CDC y la oferta 2026 de Facultad de Artes confirman seis años, 330 créditos, el título de Licenciado en Artes – Artes Plásticas y Visuales y dictado en Montevideo.
+- La UI corrige la duración administrativa de 60 a 72 meses y controla dos períodos de 165 créditos mediante seis años de 55.
+- El Primer Período exige el Taller de los Fenómenos de la Percepción y Lenguajes y los Seminarios-Taller de las Estéticas I y II. El Segundo Período distribuye los 15 créditos de Estéticas III en tres niveles, exige talleres de 50, 50 y 30 créditos y cierra con el Trabajo Final de Egreso de 20.
+- La composición jerárquica de Bedelías conserva correctamente mínimos por 330 créditos, pero la proyección plana anterior sumaba 630 porque trataba varias cátedras históricas de TPLOEP como obligaciones simultáneas. La proyección auditada usa un solo bloque elegible por año y no congela la nómina docente como perfiles certificados.
+- Registro de auditoría: hash `sha256:1ebfabeb3c033beb5a6ae3ea6e20fe5e78c081b7e8b83d69428971b029b43ea9`. Cola general: 63 identidades pendientes; hash `sha256:afb583687980dc0d56ab2083f692f9bc06da4edf4162a6e248e884c94eb203fb`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:d8dc0373e9973435541060d5dffbdacb2a80a1e7177beef3b55c00aa9253b671`. Cola funcional vacía; hash `sha256:57bba40bbeb47edb0eb4fee21a03de18c76149900e2982388fc22948ab660ec6`.
+- Siguiente paso: auditar la Licenciatura en Artes – Cerámica Plan 2002, primera identidad reproducible restante.
