@@ -134,7 +134,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022": {
     load: () => import("./bedelias-generated/bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["mencion-en-investigacion","mencion-profesional"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },

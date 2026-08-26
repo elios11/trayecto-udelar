@@ -1348,3 +1348,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:39c182dc1393dcb4cfc03d4be27388ad6b619efc692c3da428484680e20943d0`. Cola general: 66 identidades pendientes; hash `sha256:7f8ee2643337d063e7e9c4e0a0f39e574da001c59a328b53233d2d18c9931e8a`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:f0571ff0244c107023df5454eb24d943b56bc79eb15826f8247b81748dfa3021`. Cola funcional vacía; hash `sha256:9f98a2f5e4795cde1c6091970f93d2d3cb1a34e9e66de47c3fce0e17a12342d0`.
 - Siguiente paso: auditar la Licenciatura en Economía Agrícola y Gestión de Agronegocios Plan 2022, primera identidad reproducible restante.
+
+### Licenciatura en Economía Agrícola y Gestión de Agronegocios — menciones acreditadas operativas 2026-08-26
+
+- FCEA y el portal central confirman una única Licenciatura Plan 2022, cuatro años, 360 créditos y sede Tacuarembó. El reglamento vigente establece un solo título; Bedelía expide una constancia de la mención elegida.
+- La UI ofrece Mención en Investigación y Mención Profesional como trayectorias del mismo plan y conserva el progreso compartido al cambiar entre ellas. No crea carreras, planes ni títulos duplicados.
+- Investigación controla 15 créditos de Actividades Integradoras, 90 de Administración, 30 de Ciencias Sociales, 20 de Contabilidad, 100 de Economía, 90 de Métodos Cuantitativos y 15 de Opción Libre. Profesional controla 10, 100, 10, 80, 75, 60 y 25 respectivamente; ambos conjuntos suman exactamente 360.
+- También se controlan los submínimos obligatorios y opcionales de Administración, Economía, Métodos Cuantitativos y Contabilidad. El subgrupo cuantitativo opcional de Investigación exige cinco créditos pero no enumera materias; se controla mediante el mínimo raíz de 90 y el piso obligatorio de 85, sin inventar una unidad.
+- Los 135 nodos administrativos de composición se normalizan a 70 materias distintas y 632 créditos de oferta potencial. Las materias repetidas entre perfiles comparten identificador y progreso; `FCEA-A10`, `CURE-A10TM`, `FCEA-MC30` y `CURE-MCC30` permanecen diferenciadas.
+- Registro de auditoría: hash `sha256:6490ad7dc3f06b10f7dcae291ae60e76f96d6c98e63dc5c07efad7699e772135`. Cola general: 65 identidades pendientes; hash `sha256:8245d09b212280dcfdca3460bedc560b5da7b12201ef345b49e8a84c5295eb54`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:2d450705a6c481fdd09ef76f83ccfaf77aa953cb0979361da48f330fa2aa3856`. Cola funcional vacía; hash `sha256:d0ac7605c289d9c64d083c2a75151664e40b886b343473e46e30e22a853f9fcc`.
+- Siguiente paso: auditar la Licenciatura en Arte Digital y Electrónico Plan 2013, primera identidad reproducible restante.

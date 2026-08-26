@@ -354,8 +354,10 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   const useProfileComposition = curriculum.usePublishedCredits === true
     || (audit?.officialPlan?.trajectories ?? []).length > 0;
   const pathRequirementMap = curriculum.pathRequirementMap ?? {};
+  const periodLabelMap = curriculum.periodLabelMap ?? {};
   const courseOverrides = curriculum.courseOverrides ?? {};
   const excludedSourceCourseIds = new Set(curriculum.excludedSourceCourseIds ?? []);
+  const sharedProfileCourses = new Map();
   const requirementIdForPath = (nodePath) => {
     for (const segment of [...(nodePath ?? [])].reverse()) {
       const code = String(segment).match(/^([A-Z0-9]+)\s+-\s+/i)?.[1];
@@ -367,14 +369,13 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   };
   const addToPeriod = (periodMap, label, id) => {
     if (!periodMap.has(label)) periodMap.set(label, []);
-    periodMap.get(label).push(id);
+    if (!periodMap.get(label).includes(id)) periodMap.get(label).push(id);
   };
   for (const [index, node] of matterNodes.entries()) {
     const parsed = compositionMatter(useProfileComposition
       ? String(node.label).replace(/\s+-\s+cr[eé]ditos?:\s*\d+(?:[.,]\d+)?\s*$/i, "")
       : node.label);
     if (parsed.code && excludedSourceCourseIds.has(parsed.code)) continue;
-    const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
     const courseOverride = courseOverrides[parsed.code] ?? courseOverrides[normalize(parsed.name)] ?? {};
     const profileIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "perfiles");
     const profileId = profileIndex >= 0 ? slug(node.path[profileIndex + 1]) : null;
@@ -382,16 +383,12 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     const rawPeriod = useProfileComposition
       ? [...(node.path ?? [])].reverse().find((segment) => /min:\s*\d+\s+cr[eé]ditos?/i.test(segment))
       : groupIndex >= 0 ? node.path[groupIndex + 1] : null;
+    const rawPeriodCode = String(rawPeriod ?? "").match(/^([A-Z0-9]+)\s+-\s+/i)?.[1];
     const period = courseOverride.periodLabel
+      ?? periodLabelMap[rawPeriodCode]
+      ?? periodLabelMap[normalize(compositionCreditGroupLabel(rawPeriod))]
       ?? ((useProfileComposition ? compositionCreditGroupLabel(rawPeriod) : compositionGroupLabel(rawPeriod))
         || "Composición del plan");
-    addToPeriod(periodsByLabel, period, id);
-    if (profileId) {
-      if (!profilePeriodsById.has(profileId)) profilePeriodsById.set(profileId, new Map());
-      addToPeriod(profilePeriodsById.get(profileId), period, id);
-    } else {
-      addToPeriod(commonPeriodsByLabel, period, id);
-    }
     const nodeId = courseOverride.requirementId ?? requirementIdForPath(node.path);
     const publishedCredits = Number(node.course?.credits) || 0;
     const credits = Number.isFinite(Number(courseOverride.credits))
@@ -401,18 +398,40 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     const displayName = useProfileComposition
       ? titleCasedName.replace(/\b(?:Iii|Ii|Iv|Viii|Vii|Vi|Ix|Xi|Xii)\b/g, (roman) => roman.toLocaleUpperCase("es-UY"))
       : titleCasedName;
-    courses.push({
-      id,
-      ...(parsed.code ? { bedeliasCode: parsed.code } : {}),
-      name: displayName,
-      credits,
-      eligibleRequirementIds: [nodeId],
-      creditAllocations: [{ nodeId, credits, status: "official", sourceUrl }],
-      dataStatus: Object.keys(courseOverride).length > 0
-        ? "official-curriculum"
-        : curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
-      ruleCoverage: "not-scraped",
-    });
+    const sharedKey = curriculum.deduplicateSharedProfileCourses === true
+      ? `${parsed.code ? `code:${normalize(parsed.code)}` : `name:${normalize(parsed.name)}`}:credits:${credits}`
+      : null;
+    let course = sharedKey ? sharedProfileCourses.get(sharedKey) : null;
+    if (!course) {
+      const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
+      course = {
+        id,
+        ...(parsed.code ? { bedeliasCode: parsed.code } : {}),
+        name: displayName,
+        credits,
+        eligibleRequirementIds: [nodeId],
+        creditAllocations: [{ nodeId, credits, status: "official", sourceUrl }],
+        dataStatus: Object.keys(courseOverride).length > 0
+          ? "official-curriculum"
+          : curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
+        ruleCoverage: "not-scraped",
+      };
+      courses.push(course);
+      if (sharedKey) sharedProfileCourses.set(sharedKey, course);
+    } else {
+      if (!course.eligibleRequirementIds.includes(nodeId)) course.eligibleRequirementIds.push(nodeId);
+      if (!course.creditAllocations.some((allocation) => allocation.nodeId === nodeId)) {
+        course.creditAllocations.push({ nodeId, credits, status: "official", sourceUrl });
+      }
+    }
+    const id = course.id;
+    addToPeriod(periodsByLabel, period, id);
+    if (profileId) {
+      if (!profilePeriodsById.has(profileId)) profilePeriodsById.set(profileId, new Map());
+      addToPeriod(profilePeriodsById.get(profileId), period, id);
+    } else {
+      addToPeriod(commonPeriodsByLabel, period, id);
+    }
     courseIdByNode.set(node, id);
     if (parsed.code && !courseIdBySourceId.has(parsed.code)) courseIdBySourceId.set(parsed.code, id);
   }
