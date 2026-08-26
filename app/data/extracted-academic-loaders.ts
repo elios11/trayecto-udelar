@@ -208,19 +208,19 @@ export const extractedAcademicPlanRegistrations = {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-artes-diseno-grafico-2002.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 330,
   },
   "bedelias-fartes-licenciatura-en-artes-escultura-y-volumen-en-el-espacio-2002": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-artes-escultura-y-volumen-en-el-espacio-2002.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 330,
   },
   "bedelias-fartes-licenciatura-en-artes-fotografia-2002": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-artes-fotografia-2002.json"),
     pathwayIds: ["bedelias"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 330,
   },
   "bedelias-fartes-licenciatura-en-composicion-1987": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-composicion-1987.json"),

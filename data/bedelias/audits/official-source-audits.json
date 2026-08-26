@@ -21581,7 +21581,265 @@
       ],
       "uiNotice": "Plan 2002 de seis años y 330 créditos en Montevideo. En cuarto, quinto y sexto cursás un taller con actividades del Área Plano en el Espacio; el plan de trabajo es individual, pero no crea otra trayectoria o título.",
       "remainingWork": "Los módulos, cursos opcionales y el plan personal se acuerdan con el equipo docente en cada edición. La UI conserva los bloques normativos y no inventa una lista permanente de optativas."
+    },
+    {
+      "identity": "licenciatura en artes diseno grafico:2002",
+      "career": "LICENCIATURA EN ARTES - DISEÑO GRÁFICO",
+      "planYear": "2002",
+      "reviewedAt": "2026-08-26",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, aprobación, título, sede, duración, créditos, dos períodos, Artes Gráficas y trabajo final",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Resolución 17 del Consejo del I.ENBA de 18/09/2002",
+          "Resolución 10 del Consejo Directivo Central de 25/05/2004",
+          "Publicación en Diario Oficial 26580 de 03/09/2004",
+          "Resolución 25 del Consejo del I.ENBA de 08/02/2006",
+          "Publicación en Diario Oficial 26978 de 21/04/2006"
+        ],
+        "planYear": "2002",
+        "title": "Licenciado en Artes - Diseño Gráfico",
+        "careerName": "Licenciatura en Artes - Diseño Gráfico",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 72,
+        "semesters": 12,
+        "minimumCredits": 330,
+        "current": true,
+        "degreeRule": "El título exige 330 créditos: 165 del Primer Período y 165 del Primer Ciclo del Segundo Período, incluidas las actividades del Área Asistencial de Artes Gráficas y el Trabajo Final de Egreso. Las secciones técnicas y opciones del programa integran el bloque anual y no son requisitos acumulativos independientes.",
+        "curriculum": {
+          "replaceBedeliasCourses": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_DISEO_GRAFICO.pdf",
+          "periods": [
+            { "label": "1.er año", "courses": [{ "id": "year-1-perception-workshop", "name": "Taller de los Fenómenos de la Percepción y Lenguajes", "credits": 55, "requirementId": "year-1", "curricularBlock": true }] },
+            { "label": "2.º año", "courses": [{ "id": "year-2-aesthetics", "name": "Seminario-Taller de las Estéticas I", "credits": 55, "requirementId": "year-2", "curricularBlock": true }] },
+            { "label": "3.er año", "courses": [{ "id": "year-3-aesthetics", "name": "Seminario-Taller de las Estéticas II", "credits": 55, "requirementId": "year-3", "curricularBlock": true }] },
+            {
+              "label": "4.º año",
+              "courses": [
+                { "id": "year-4-aesthetics", "name": "Seminario de las Estéticas III · nivel I", "credits": 5, "requirementId": "year-4", "curricularBlock": true },
+                { "id": "year-4-graphic-design-workshop", "name": "Taller de libre orientación con actividades en Artes Gráficas · 4.º año", "credits": 50, "requirementId": "year-4", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "5.º año",
+              "courses": [
+                { "id": "year-5-aesthetics", "name": "Seminario de las Estéticas III · nivel II", "credits": 5, "requirementId": "year-5", "curricularBlock": true },
+                { "id": "year-5-graphic-design-workshop", "name": "Taller de libre orientación con actividades en Artes Gráficas · 5.º año", "credits": 50, "requirementId": "year-5", "curricularBlock": true }
+              ]
+            },
+            {
+              "label": "6.º año",
+              "courses": [
+                { "id": "year-6-aesthetics", "name": "Seminario de las Estéticas III · nivel III", "credits": 5, "requirementId": "year-6", "curricularBlock": true },
+                { "id": "year-6-graphic-design-workshop", "name": "Taller de libre orientación con actividades en Artes Gráficas · 6.º año", "credits": 30, "requirementId": "year-6", "curricularBlock": true },
+                { "id": "final-project", "name": "Trabajo Final de Egreso en Diseño Gráfico", "credits": 20, "requirementId": "year-6", "curricularBlock": true }
+              ]
+            }
+          ],
+          "creditRequirements": [
+            { "id": "year-1", "name": "1.er año", "shortName": "1.er año", "minCredits": 55 },
+            { "id": "year-2", "name": "2.º año", "shortName": "2.º año", "minCredits": 55 },
+            { "id": "year-3", "name": "3.er año", "shortName": "3.er año", "minCredits": 55 },
+            { "id": "year-4", "name": "4.º año", "shortName": "4.º año", "minCredits": 55 },
+            { "id": "year-5", "name": "5.º año", "shortName": "5.º año", "minCredits": 55 },
+            { "id": "year-6", "name": "6.º año", "shortName": "6.º año", "minCredits": 55 }
+          ],
+          "requiredCourseGroups": [{
+            "id": "official-curriculum",
+            "label": "Bloques obligatorios del plan",
+            "minCompleted": 10,
+            "courseIds": ["year-1-perception-workshop", "year-2-aesthetics", "year-3-aesthetics", "year-4-aesthetics", "year-4-graphic-design-workshop", "year-5-aesthetics", "year-5-graphic-design-workshop", "year-6-aesthetics", "year-6-graphic-design-workshop", "final-project"]
+          }],
+          "credentials": [{
+            "id": "bedelias-degree",
+            "title": "Licenciado en Artes - Diseño Gráfico",
+            "minTotalCredits": 330,
+            "nodeRequirements": [
+              { "nodeId": "year-1", "minCredits": 55 }, { "nodeId": "year-2", "minCredits": 55 }, { "nodeId": "year-3", "minCredits": 55 },
+              { "nodeId": "year-4", "minCredits": 55 }, { "nodeId": "year-5", "minCredits": 55 }, { "nodeId": "year-6", "minCredits": 55 }
+            ],
+            "requiredCourseGroupIds": ["official-curriculum"]
+          }]
+        }
+      },
+      "offerings": [{ "serviceCode": "FARTES", "locations": ["Montevideo"], "role": "oferta completa del Instituto de Bellas Artes de Facultad de Artes", "curriculumVariant": false }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-artes-diseno-grafico-2002.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": null,
+        "publishedCourseRecords": 15,
+        "compositionMatterEntries": 48,
+        "publishedCompositionMinimumCredits": 330,
+        "projectedCourseCreditsBeforeAudit": 685,
+        "interpretation": "Los ciclos jerárquicos exigen 330 créditos, aunque el grupo administrativo del Primer Período declara erróneamente 55. La proyección plana además acumulaba talleres alternativos y sumaba 685 créditos ficticiamente obligatorios."
+      },
+      "conclusion": {
+        "canonicalModel": "one-option-degree-six-years-official-credit-blocks",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El plan aprobado, la página vigente y el ingreso 2026 confirman una única opción en Montevideo, seis años y 330 créditos. Las secciones de Artes Gráficas son componentes técnicos del taller y no carreras, perfiles, trayectorias o títulos separados.",
+        "normalization": [
+          "Corregir la duración administrativa de 60 a 72 meses y publicar 330 créditos.",
+          "Controlar seis años de 55 créditos, equivalentes a dos períodos de 165.",
+          "Representar un solo bloque de taller con actividades en Artes Gráficas por año avanzado: 50, 50 y 30 créditos.",
+          "No exigir simultáneamente cátedras, secciones técnicas u opciones históricas.",
+          "Exigir el Trabajo Final de Egreso de 20 créditos dentro de sexto año.",
+          "Publicar Montevideo como única sede confirmada y no inferir trayectorias certificadas."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_DISEO_GRAFICO.pdf", "authority": "Instituto Escuela Nacional de Bellas Artes / Facultad de Artes, Udelar", "supports": ["aprobación", "título", "seis años", "330 créditos", "estructura anual", "Artes Gráficas", "Trabajo Final de Egreso"] },
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-diseno-grafico/", "authority": "Facultad de Artes, Udelar", "supports": ["vigencia 2026", "Área de Artes Gráficas", "plan y programas", "Comisión de Carrera"] },
+        { "url": "https://www.artes.udelar.edu.uy/inscripciones-bellas-artes-nueva-generacion/", "authority": "Facultad de Artes, Udelar", "supports": ["ingreso 2026", "opción Diseño Gráfico", "seis años", "330 créditos"] },
+        { "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/", "authority": "Facultad de Artes, Udelar", "supports": ["oferta vigente", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "Los 60 meses administrativos contradicen los seis cursos anuales. La UI usa 72 meses." },
+        { "field": "firstPeriodMinimum", "resolution": "El ciclo básico y los tres años suman 165, aunque el grupo padre de Bedelías dice 55. La UI usa los 165 oficiales." },
+        { "field": "flatCourseCredits", "resolution": "La proyección anterior sumaba 685 créditos al acumular alternativas. La UI usa diez bloques que suman 330." }
+      ],
+      "uiNotice": "Plan 2002 de seis años y 330 créditos en Montevideo. En cuarto, quinto y sexto cursás un taller con actividades del Área de Artes Gráficas; sus secciones técnicas integran el bloque anual y no se suman como trayectorias separadas.",
+      "remainingWork": "Las opciones y proyectos técnicos se actualizan por edición. La UI conserva los bloques normativos y no inventa una oferta permanente de módulos u optativas."
+    },
+    {
+      "identity": "licenciatura en artes escultura y volumen en el espacio:2002",
+      "career": "LICENCIATURA EN ARTES - ESCULTURA Y VOLUMEN EN EL ESPACIO",
+      "planYear": "2002",
+      "reviewedAt": "2026-08-26",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, aprobación, título, sede, duración, créditos, dos períodos, Volumen en el Espacio y trabajo final",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Resolución 17 del Consejo del I.ENBA de 18/09/2002", "Resolución 10 del Consejo Directivo Central de 25/05/2004", "Publicación en Diario Oficial 26580 de 03/09/2004", "Resolución 25 del Consejo del I.ENBA de 08/02/2006", "Publicación en Diario Oficial 26978 de 21/04/2006"],
+        "planYear": "2002",
+        "title": "Licenciado en Artes - Escultura y Volumen en el Espacio",
+        "careerName": "Licenciatura en Artes - Escultura y Volumen en el Espacio",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 72,
+        "semesters": 12,
+        "minimumCredits": 330,
+        "current": true,
+        "degreeRule": "El título exige 330 créditos: 165 del Primer Período y 165 del Primer Ciclo del Segundo Período, incluidas las actividades del Área Asistencial de Volumen en el Espacio y el Trabajo Final de Egreso. Los talleres técnicos son componentes y alternativas del área, no obligaciones acumulativas.",
+        "curriculum": {
+          "replaceBedeliasCourses": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_ESCULTURA_Y_VOLUMEN.pdf",
+          "periods": [
+            { "label": "1.er año", "courses": [{ "id": "year-1-perception-workshop", "name": "Taller de los Fenómenos de la Percepción y Lenguajes", "credits": 55, "requirementId": "year-1", "curricularBlock": true }] },
+            { "label": "2.º año", "courses": [{ "id": "year-2-aesthetics", "name": "Seminario-Taller de las Estéticas I", "credits": 55, "requirementId": "year-2", "curricularBlock": true }] },
+            { "label": "3.er año", "courses": [{ "id": "year-3-aesthetics", "name": "Seminario-Taller de las Estéticas II", "credits": 55, "requirementId": "year-3", "curricularBlock": true }] },
+            { "label": "4.º año", "courses": [{ "id": "year-4-aesthetics", "name": "Seminario de las Estéticas III · nivel I", "credits": 5, "requirementId": "year-4", "curricularBlock": true }, { "id": "year-4-sculpture-workshop", "name": "Taller de libre orientación con actividades en Volumen en el Espacio · 4.º año", "credits": 50, "requirementId": "year-4", "curricularBlock": true }] },
+            { "label": "5.º año", "courses": [{ "id": "year-5-aesthetics", "name": "Seminario de las Estéticas III · nivel II", "credits": 5, "requirementId": "year-5", "curricularBlock": true }, { "id": "year-5-sculpture-workshop", "name": "Taller de libre orientación con actividades en Volumen en el Espacio · 5.º año", "credits": 50, "requirementId": "year-5", "curricularBlock": true }] },
+            { "label": "6.º año", "courses": [{ "id": "year-6-aesthetics", "name": "Seminario de las Estéticas III · nivel III", "credits": 5, "requirementId": "year-6", "curricularBlock": true }, { "id": "year-6-sculpture-workshop", "name": "Taller de libre orientación con actividades en Volumen en el Espacio · 6.º año", "credits": 30, "requirementId": "year-6", "curricularBlock": true }, { "id": "final-project", "name": "Trabajo Final de Egreso en Escultura y Volumen en el Espacio", "credits": 20, "requirementId": "year-6", "curricularBlock": true }] }
+          ],
+          "creditRequirements": [
+            { "id": "year-1", "name": "1.er año", "shortName": "1.er año", "minCredits": 55 }, { "id": "year-2", "name": "2.º año", "shortName": "2.º año", "minCredits": 55 }, { "id": "year-3", "name": "3.er año", "shortName": "3.er año", "minCredits": 55 },
+            { "id": "year-4", "name": "4.º año", "shortName": "4.º año", "minCredits": 55 }, { "id": "year-5", "name": "5.º año", "shortName": "5.º año", "minCredits": 55 }, { "id": "year-6", "name": "6.º año", "shortName": "6.º año", "minCredits": 55 }
+          ],
+          "requiredCourseGroups": [{ "id": "official-curriculum", "label": "Bloques obligatorios del plan", "minCompleted": 10, "courseIds": ["year-1-perception-workshop", "year-2-aesthetics", "year-3-aesthetics", "year-4-aesthetics", "year-4-sculpture-workshop", "year-5-aesthetics", "year-5-sculpture-workshop", "year-6-aesthetics", "year-6-sculpture-workshop", "final-project"] }],
+          "credentials": [{
+            "id": "bedelias-degree", "title": "Licenciado en Artes - Escultura y Volumen en el Espacio", "minTotalCredits": 330,
+            "nodeRequirements": [{ "nodeId": "year-1", "minCredits": 55 }, { "nodeId": "year-2", "minCredits": 55 }, { "nodeId": "year-3", "minCredits": 55 }, { "nodeId": "year-4", "minCredits": 55 }, { "nodeId": "year-5", "minCredits": 55 }, { "nodeId": "year-6", "minCredits": 55 }],
+            "requiredCourseGroupIds": ["official-curriculum"]
+          }]
+        }
+      },
+      "offerings": [{ "serviceCode": "FARTES", "locations": ["Montevideo"], "role": "oferta completa del Instituto de Bellas Artes de Facultad de Artes", "curriculumVariant": false }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-artes-escultura-y-volumen-en-el-espacio-2002.json", "metadataCurrent": true, "publishedDurationMonths": 60, "publishedMinimumCredits": null,
+        "publishedCourseRecords": 13, "compositionMatterEntries": 48, "publishedCompositionMinimumCredits": 330, "projectedCourseCreditsBeforeAudit": 585,
+        "interpretation": "Los mínimos jerárquicos coinciden con 330 créditos, pero la proyección plana acumulaba talleres técnicos alternativos y sumaba 585 créditos ficticiamente obligatorios."
+      },
+      "conclusion": {
+        "canonicalModel": "one-option-degree-six-years-official-credit-blocks", "regionalCurriculumVariant": false, "siteSpecificTrajectoryAvailability": false,
+        "reason": "El plan aprobado, la página vigente y el ingreso 2026 confirman una única opción en Montevideo, seis años y 330 créditos. Metales, talla, moldeado, técnicas mixtas y otros talleres son componentes del Área Volumen en el Espacio, no perfiles o trayectorias certificadas.",
+        "normalization": ["Corregir la duración de 60 a 72 meses y publicar 330 créditos.", "Controlar seis años de 55 créditos.", "Representar un bloque del Área Volumen en el Espacio por año avanzado: 50, 50 y 30 créditos.", "No acumular talleres técnicos alternativos.", "Exigir el Trabajo Final de Egreso de 20 créditos.", "Publicar Montevideo como única sede confirmada."]
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_ESCULTURA_Y_VOLUMEN.pdf", "authority": "Instituto Escuela Nacional de Bellas Artes / Facultad de Artes, Udelar", "supports": ["aprobación", "título", "seis años", "330 créditos", "Volumen en el Espacio", "Trabajo Final de Egreso"] },
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-escultura-y-volumen-en-el-espacio/", "authority": "Facultad de Artes, Udelar", "supports": ["vigencia 2026", "Área Volumen en el Espacio", "talleres técnicos", "Comisión de Carrera"] },
+        { "url": "https://www.artes.udelar.edu.uy/inscripciones-bellas-artes-nueva-generacion/", "authority": "Facultad de Artes, Udelar", "supports": ["ingreso 2026", "opción Escultura", "seis años", "330 créditos"] },
+        { "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/", "authority": "Facultad de Artes, Udelar", "supports": ["oferta vigente", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "La UI corrige 60 a 72 meses según los seis cursos anuales." },
+        { "field": "flatCourseCredits", "resolution": "La proyección anterior sumaba 585 créditos al acumular alternativas; la UI usa diez bloques y 330 créditos." },
+        { "field": "technicalWorkshops", "resolution": "Los talleres del área son componentes y opciones técnicas, no menciones ni obligaciones acumulativas." }
+      ],
+      "uiNotice": "Plan 2002 de seis años y 330 créditos en Montevideo. En cuarto, quinto y sexto cursás un bloque del Área Volumen en el Espacio; sus talleres técnicos no se suman como trayectorias separadas.",
+      "remainingWork": "La selección concreta de técnicas y talleres se acuerda por edición. La UI conserva el bloque normativo y no fija una combinación permanente."
+    },
+    {
+      "identity": "licenciatura en artes fotografia:2002",
+      "career": "LICENCIATURA EN ARTES - FOTOGRAFÍA",
+      "planYear": "2002",
+      "reviewedAt": "2026-08-26",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, aprobación, título, sede, duración, créditos, dos períodos, Foto-Cine-Video y trabajo final",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Resolución 17 del Consejo del I.ENBA de 18/09/2002", "Resolución 10 del Consejo Directivo Central de 25/05/2004", "Publicación en Diario Oficial 26580 de 03/09/2004", "Resolución 25 del Consejo del I.ENBA de 08/02/2006", "Publicación en Diario Oficial 26978 de 21/04/2006"],
+        "planYear": "2002",
+        "title": "Licenciado en Artes - Fotografía",
+        "careerName": "Licenciatura en Artes - Fotografía",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 72,
+        "semesters": 12,
+        "minimumCredits": 330,
+        "current": true,
+        "degreeRule": "El título exige 330 créditos: 165 del Primer Período y 165 del Primer Ciclo del Segundo Período, incluidas las actividades de Foto-Cine-Video, Sección Fotografía, y el Trabajo Final de Egreso. Los módulos técnicos integran el bloque anual y no se acreditan como perfiles separados.",
+        "curriculum": {
+          "replaceBedeliasCourses": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_FOTOGRAFIA.pdf",
+          "periods": [
+            { "label": "1.er año", "courses": [{ "id": "year-1-perception-workshop", "name": "Taller de los Fenómenos de la Percepción y Lenguajes", "credits": 55, "requirementId": "year-1", "curricularBlock": true }] },
+            { "label": "2.º año", "courses": [{ "id": "year-2-aesthetics", "name": "Seminario-Taller de las Estéticas I", "credits": 55, "requirementId": "year-2", "curricularBlock": true }] },
+            { "label": "3.er año", "courses": [{ "id": "year-3-aesthetics", "name": "Seminario-Taller de las Estéticas II", "credits": 55, "requirementId": "year-3", "curricularBlock": true }] },
+            { "label": "4.º año", "courses": [{ "id": "year-4-aesthetics", "name": "Seminario de las Estéticas III · nivel I", "credits": 5, "requirementId": "year-4", "curricularBlock": true }, { "id": "year-4-photography-workshop", "name": "Taller de libre orientación con actividades en Foto-Cine-Video · Fotografía · 4.º año", "credits": 50, "requirementId": "year-4", "curricularBlock": true }] },
+            { "label": "5.º año", "courses": [{ "id": "year-5-aesthetics", "name": "Seminario de las Estéticas III · nivel II", "credits": 5, "requirementId": "year-5", "curricularBlock": true }, { "id": "year-5-photography-workshop", "name": "Taller de libre orientación con actividades en Foto-Cine-Video · Fotografía · 5.º año", "credits": 50, "requirementId": "year-5", "curricularBlock": true }] },
+            { "label": "6.º año", "courses": [{ "id": "year-6-aesthetics", "name": "Seminario de las Estéticas III · nivel III", "credits": 5, "requirementId": "year-6", "curricularBlock": true }, { "id": "year-6-photography-workshop", "name": "Taller de libre orientación con actividades en Foto-Cine-Video · Fotografía · 6.º año", "credits": 30, "requirementId": "year-6", "curricularBlock": true }, { "id": "final-project", "name": "Trabajo Final de Egreso en Fotografía", "credits": 20, "requirementId": "year-6", "curricularBlock": true }] }
+          ],
+          "creditRequirements": [
+            { "id": "year-1", "name": "1.er año", "shortName": "1.er año", "minCredits": 55 }, { "id": "year-2", "name": "2.º año", "shortName": "2.º año", "minCredits": 55 }, { "id": "year-3", "name": "3.er año", "shortName": "3.er año", "minCredits": 55 },
+            { "id": "year-4", "name": "4.º año", "shortName": "4.º año", "minCredits": 55 }, { "id": "year-5", "name": "5.º año", "shortName": "5.º año", "minCredits": 55 }, { "id": "year-6", "name": "6.º año", "shortName": "6.º año", "minCredits": 55 }
+          ],
+          "requiredCourseGroups": [{ "id": "official-curriculum", "label": "Bloques obligatorios del plan", "minCompleted": 10, "courseIds": ["year-1-perception-workshop", "year-2-aesthetics", "year-3-aesthetics", "year-4-aesthetics", "year-4-photography-workshop", "year-5-aesthetics", "year-5-photography-workshop", "year-6-aesthetics", "year-6-photography-workshop", "final-project"] }],
+          "credentials": [{
+            "id": "bedelias-degree", "title": "Licenciado en Artes - Fotografía", "minTotalCredits": 330,
+            "nodeRequirements": [{ "nodeId": "year-1", "minCredits": 55 }, { "nodeId": "year-2", "minCredits": 55 }, { "nodeId": "year-3", "minCredits": 55 }, { "nodeId": "year-4", "minCredits": 55 }, { "nodeId": "year-5", "minCredits": 55 }, { "nodeId": "year-6", "minCredits": 55 }],
+            "requiredCourseGroupIds": ["official-curriculum"]
+          }]
+        }
+      },
+      "offerings": [{ "serviceCode": "FARTES", "locations": ["Montevideo"], "role": "oferta completa del Instituto de Bellas Artes de Facultad de Artes", "curriculumVariant": false }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-artes-fotografia-2002.json", "metadataCurrent": true, "publishedDurationMonths": 60, "publishedMinimumCredits": null,
+        "publishedCourseRecords": 13, "compositionMatterEntries": 47, "publishedCompositionMinimumCredits": 330, "projectedCourseCreditsBeforeAudit": 575,
+        "interpretation": "Los mínimos jerárquicos coinciden con 330 créditos, pero la proyección plana acumulaba talleres alternativos y sumaba 575 créditos ficticiamente obligatorios."
+      },
+      "conclusion": {
+        "canonicalModel": "one-option-degree-six-years-official-credit-blocks", "regionalCurriculumVariant": false, "siteSpecificTrajectoryAvailability": false,
+        "reason": "El plan aprobado, la página vigente y el ingreso 2026 confirman una única opción en Montevideo, seis años y 330 créditos. Los módulos de Foto-Cine-Video son componentes técnicos del taller y no perfiles o trayectorias certificadas.",
+        "normalization": ["Corregir la duración de 60 a 72 meses y publicar 330 créditos.", "Controlar seis años de 55 créditos.", "Representar un bloque de Foto-Cine-Video, Sección Fotografía, por año avanzado: 50, 50 y 30 créditos.", "No acumular talleres o módulos técnicos alternativos.", "Exigir el Trabajo Final de Egreso de 20 créditos.", "Publicar Montevideo como única sede confirmada."]
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Plan_Estudios_FOTOGRAFIA.pdf", "authority": "Instituto Escuela Nacional de Bellas Artes / Facultad de Artes, Udelar", "supports": ["aprobación", "título", "seis años", "330 créditos", "Foto-Cine-Video", "Trabajo Final de Egreso"] },
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-fotografia/", "authority": "Facultad de Artes, Udelar", "supports": ["vigencia 2026", "Sección Fotografía", "programa técnico", "Comisión de Carrera"] },
+        { "url": "https://www.artes.udelar.edu.uy/inscripciones-bellas-artes-nueva-generacion/", "authority": "Facultad de Artes, Udelar", "supports": ["ingreso 2026", "opción Fotografía", "seis años", "330 créditos"] },
+        { "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/", "authority": "Facultad de Artes, Udelar", "supports": ["oferta vigente", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "La UI corrige 60 a 72 meses según los seis cursos anuales." },
+        { "field": "flatCourseCredits", "resolution": "La proyección anterior sumaba 575 créditos al acumular alternativas; la UI usa diez bloques y 330 créditos." },
+        { "field": "technicalModules", "resolution": "Los módulos fotográficos integran el taller anual y no constituyen menciones o trayectorias separadas." }
+      ],
+      "uiNotice": "Plan 2002 de seis años y 330 créditos en Montevideo. En cuarto, quinto y sexto cursás un bloque de Foto-Cine-Video, Sección Fotografía; sus módulos técnicos no se suman como trayectorias separadas.",
+      "remainingWork": "Los módulos y procedimientos técnicos se actualizan por edición. La UI conserva el bloque normativo y no fija una combinación permanente."
     }
   ],
-  "contentHash": "sha256:9c4dc57d2dfa15a17e43c634d319454b8d963104a37552b89d066ae03a0f2877"
+  "contentHash": "sha256:959bb8f542514553daa5e4e586720eb004366d0520a57600a65757c6c667a11f"
 }

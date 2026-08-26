@@ -1400,3 +1400,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:9c4dc57d2dfa15a17e43c634d319454b8d963104a37552b89d066ae03a0f2877`. Cola general: 61 identidades pendientes; hash `sha256:dd0587889042feece52dfd8e8342e42de24c75fb276010b895cd9e8b848767d8`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:f8a5f9c2b4d9b829ec458129682129beda3d338f20a8dc1979621241b4148da2`. Cola funcional vacía; hash `sha256:202f5cf58e3c125dba9c8c9e5e3a6018a82104e26299cd335fc29f65eddce030`.
 - Siguiente paso: auditar en el mismo lote Diseño Gráfico, Escultura y Volumen en el Espacio y Fotografía Plan 2002.
+
+### Licenciatura en Artes Plan 2002 — opciones técnicas restantes operativas 2026-08-26
+
+- Los planes oficiales y la oferta 2026 confirman Diseño Gráfico, Escultura y Volumen en el Espacio y Fotografía como opciones vigentes de la Licenciatura en Artes en Montevideo, cada una de seis años y 330 créditos.
+- Las tres proyecciones controlan seis años de 55 créditos con diez bloques normativos: el Primer Período común, Estéticas III durante los tres años avanzados, talleres de 50, 50 y 30 créditos y el Trabajo Final de Egreso de 20.
+- Artes Gráficas, Volumen en el Espacio y Foto-Cine-Video son áreas asistenciales dentro del bloque anual. Sus secciones, talleres técnicos, módulos y opciones cambian por edición y no se publican como carreras, menciones o trayectorias certificadas.
+- La proyección plana anterior sumaba 685 créditos en Diseño Gráfico, 585 en Escultura y 575 en Fotografía al acumular alternativas. La composición jerárquica conserva el total correcto; las mallas normalizadas suman exactamente 330 cada una. En Diseño Gráfico se documenta además el grupo padre del Primer Período que dice 55 aunque el ciclo y sus tres años exigen 165.
+- Registro de auditoría: hash `sha256:959bb8f542514553daa5e4e586720eb004366d0520a57600a65757c6c667a11f`. Cola general: 58 identidades pendientes; hash `sha256:0e2365c90fe854cf653e7a92db047a979d58ac974178714262fcf1fcb4760980`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:2520cb4611a8832f8030414288e0150bb4ce8a0e5d31f2160a9b984d9b259d98`. Cola funcional vacía; hash `sha256:c4fa4a4888db9e95656ade273aeb0dd11d54b59194a6dc923fc93859607d0951`.
+- Siguiente paso: auditar la Licenciatura en Danza Contemporánea Plan 2018, primera identidad reproducible restante.
