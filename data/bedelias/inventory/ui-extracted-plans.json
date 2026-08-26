@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:6067912f1a617d0e2dcf9687281ea47af2d47767b6bfdc30b7411e8cbaab29b1",
-    "officialAuditHash": "sha256:c9f8a72c26b9add120177645cee2e795edacd5faf27caa078ccb4841a4312271",
+    "auditQueueHash": "sha256:a969a6dae18484ceb986ff63603e4e4e0689729378db1774ddb9409c504d4ea2",
+    "officialAuditHash": "sha256:6a703dcb8672f427bec3cb143ce13bc1be44eb8f6263f29a953692d93ba91d54",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 143,
     "compositionAvailable": 143,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 33,
+    "plansWithOfficialCampuses": 34,
     "excludedFromCurrentUi": 34
   },
   "plans": [
@@ -143,9 +143,12 @@
       "planId": "bedelias-cure-licenciatura-en-turismo-2014",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-licenciatura-en-turismo-2014.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "maldonado",
+        "salto"
+      ]
     },
     {
       "identity": "tecnicatura en artes artes plasticas y visuales:2013",
@@ -1491,5 +1494,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:e5f5b195da5b223a18bb1bb2cfb2c7c8b6682021c1d04b9c0fd7d6314cdde78f"
+  "contentHash": "sha256:40a5f692485b5fe16f0845b7b31ab1f61034129511c1b7d75ec6391da5e51e1a"
 }

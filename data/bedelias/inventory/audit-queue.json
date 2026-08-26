@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T09:19:11.817Z",
+  "generatedAt": "2026-08-24T09:27:00.952Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:c9f8a72c26b9add120177645cee2e795edacd5faf27caa078ccb4841a4312271"
+    "officialAuditRegistryHash": "sha256:6a703dcb8672f427bec3cb143ce13bc1be44eb8f6263f29a953692d93ba91d54"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 109,
-    "pendingCanonicalIdentities": 68,
+    "evidenceClosedCanonicalIdentities": 110,
+    "pendingCanonicalIdentities": 67,
     "byPriority": {
-      "official-sources-pending": 68
+      "official-sources-pending": 67
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -675,39 +675,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-24",
       "conclusion": "one-joint-plan-flexible-by-axes"
+    },
+    {
+      "identity": "licenciatura en turismo:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-24",
+      "conclusion": "one-plan-two-campuses-flexible-by-modules"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en turismo:2014",
-      "career": {
-        "name": "LICENCIATURA EN TURISMO",
-        "normalizedName": "licenciatura en turismo",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014"
-      },
-      "canonicalSource": {
-        "serviceCode": "CURE",
-        "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
-        "planKey": "CURE:licenciatura en turismo:2014",
-        "site": null,
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "CURE",
-          "serviceName": "CENTRO UNIVERSITARIO REGIONAL ESTE",
-          "planKey": "CURE:licenciatura en turismo:2014",
-          "site": null,
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnologo minero:2013",
       "career": {
@@ -2865,5 +2841,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:6067912f1a617d0e2dcf9687281ea47af2d47767b6bfdc30b7411e8cbaab29b1"
+  "contentHash": "sha256:a969a6dae18484ceb986ff63603e4e4e0689729378db1774ddb9409c504d4ea2"
 }

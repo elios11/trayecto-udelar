@@ -1326,3 +1326,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:c9f8a72c26b9add120177645cee2e795edacd5faf27caa078ccb4841a4312271`. Cola general: 68 identidades pendientes; hash `sha256:6067912f1a617d0e2dcf9687281ea47af2d47767b6bfdc30b7411e8cbaab29b1`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:e5f5b195da5b223a18bb1bb2cfb2c7c8b6682021c1d04b9c0fd7d6314cdde78f`. Cola funcional vacía; hash `sha256:9a5e4a8f211fb8a49a711656be2c47347b7b94aeafd9fd5d4e9dda2ae6409804`.
 - Siguiente paso: auditar la Licenciatura en Turismo Plan 2014, primera identidad reproducible restante.
+
+### Licenciatura en Turismo Plan 2014 — dos sedes y currículo modular operativo 2026-08-24
+
+- FHCE confirma un único Plan 2014 de ocho semestres y 360 créditos aplicado en Maldonado y Salto. La UI ofrece ambas sedes sobre la misma carrera y el mismo progreso; el ingreso directo alterna por año, pero no existe una variante curricular territorial.
+- El egreso controla 67 créditos introductorios, 57 instrumentales, 91 de Conceptualizaciones y Enfoques, 69 operativos, 46 del Espacio de Aplicación Turística y 30 de Tesina. Los seis mínimos suman exactamente 360 créditos.
+- Se exigen las veinte obligaciones nominales del anexo mediante grupos que reconocen códigos equivalentes por sede o generación. Esto incluye lenguas, metodología, el núcleo de turismo, Seminario, Taller de Investigación, Proyectos Turísticos, Práctica Profesional y Tesina sin exigir versiones duplicadas de una misma unidad.
+- La composición aporta 382 unidades y 2.942 créditos como catálogo acumulado. Los grupos modulares permiten completar sus mínimos con optativas; las electivas generales cuentan para el total, pero su asignación a módulo queda como validación explícita de la Comisión de Carrera.
+- El perfil propio que forma cada estudiante mediante el 30% flexible no se publica como mención certificada. La Licenciatura Binacional y el título intermedio de Técnico en Turismo permanecen excluidos: FHCE documenta que dejaron de existir al aplicarse el Plan 2014 común.
+- Registro de auditoría: hash `sha256:6a703dcb8672f427bec3cb143ce13bc1be44eb8f6263f29a953692d93ba91d54`. Cola general: 67 identidades pendientes; hash `sha256:a969a6dae18484ceb986ff63603e4e4e0689729378db1774ddb9409c504d4ea2`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 34 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:40a5f692485b5fe16f0845b7b31ab1f61034129511c1b7d75ec6391da5e51e1a`. Cola funcional vacía; hash `sha256:02f254b6f50a81b62bfa764890f3aa97eaca34bf2eef9bac99f30ff1ec57b57d`.
+- Siguiente paso: auditar el Tecnólogo Minero Plan 2013, primera identidad reproducible restante.
