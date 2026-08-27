@@ -22400,7 +22400,140 @@
       ],
       "uiNotice": "Plan 2024 de ocho semestres y 360 créditos en Montevideo. Elegís al menos un perfil: 40 créditos obligatorios y 20 opcionales. El perfil queda registrado y permite solicitar una constancia, pero el título es siempre Contador Público.",
       "remainingWork": "La oferta de cursos opcionales y las equivalencias pueden cambiar por edición. La UI conserva el catálogo vigente de Bedelías y los mínimos oficiales, sin prometer el dictado de cada alternativa en todos los semestres."
+    },
+    {
+      "identity": "licenciatura en administracion:2012",
+      "career": "LICENCIATURA EN ADMINISTRACIÓN",
+      "planYear": "2012",
+      "reviewedAt": "2026-08-27",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, mínimos por área, libre distribución y trayectorias sugeridas vigentes",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2012 y requisitos de egreso modificados por Resolución 3 del Consejo de FCEA de 02/07/2018"],
+        "planYear": "2012",
+        "title": "Licenciado en Administración",
+        "careerName": "Licenciatura en Administración",
+        "facultyCode": "FCEA",
+        "facultyName": "Facultad de Ciencias Económicas y de Administración",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria sugerida",
+        "degreeRule": "El título exige 360 créditos, las unidades obligatorias de la grilla vigente y mínimos de 120 en Administración, 60 en Contabilidad e Impuestos, 45 en Métodos Cuantitativos, 40 en Economía, 20 en Actividades Integradoras, 20 en Ciencias Sociales y Humanísticas y 15 en Jurídica. Los 40 créditos restantes son de libre distribución entre áreas.",
+        "trajectories": [
+          { "id": "personalizada", "label": "Personalizada", "description": "Recorrido flexible que muestra el catálogo completo; permite combinar unidades respetando las obligatorias y los mínimos por área." },
+          { "id": "gestion-de-personas", "label": "Gestión de Personas", "description": "Trayectoria sugerida por FCEA para orientar optativas; no modifica el título ni crea una mención.", "courseIds": ["A42", "A54", "A67", "A85", "E77", "A89"] },
+          { "id": "marketing", "label": "Marketing", "description": "Trayectoria sugerida por FCEA para orientar optativas; no modifica el título ni crea una mención.", "courseIds": ["A63", "A72", "A52", "A77", "I87"] }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "sourceUrl": "https://fcea.udelar.edu.uy/depto-adm-ensenanza/lic-adm-ciencias-adm.html",
+          "pathwayLabel": "Trayectoria sugerida",
+          "additionalRequirementIdsForAllCourses": ["free-distribution"],
+          "commonCourseIds": ["A10", "C10", "MC10", "114A", "128A", "E10", "E11", "A20", "C20", "E20N", "A30", "E30", "MC40", "J21", "A40", "MC30", "A61", "C31", "E53", "I50", "C64", "S60", "A70", "A71", "A80", "A83N", "A81"],
+          "pathRequirementMap": {
+            "5297": "administration-basic",
+            "5152": "administration-optional",
+            "5042": "accounting-basic",
+            "4198": "accounting-optional",
+            "4318": "quantitative-basic",
+            "5070": "quantitative-optional",
+            "5019": "economics-basic",
+            "4361": "economics-optional",
+            "4481": "integrative-basic",
+            "5036": "integrative-optional",
+            "4454": "social-basic",
+            "5286": "social-optional",
+            "4069": "legal-basic",
+            "4799": "legal-optional"
+          },
+          "periodLabelMap": {
+            "5297": "Administración · básicas",
+            "5152": "Administración · opcionales",
+            "5042": "Contabilidad e Impuestos · básicas",
+            "4198": "Contabilidad e Impuestos · opcionales",
+            "4318": "Métodos Cuantitativos · básicas",
+            "5070": "Métodos Cuantitativos · opcionales",
+            "5019": "Economía · básicas",
+            "4361": "Economía · opcionales",
+            "4481": "Actividades Integradoras · básicas",
+            "5036": "Actividades Integradoras · opcionales",
+            "4454": "Ciencias Sociales y Humanísticas · básicas",
+            "5286": "Ciencias Sociales y Humanísticas · opcionales",
+            "4069": "Jurídica · básicas",
+            "4799": "Jurídica · opcionales"
+          },
+          "periodOrder": ["Administración · básicas", "Administración · opcionales", "Contabilidad e Impuestos · básicas", "Contabilidad e Impuestos · opcionales", "Métodos Cuantitativos · básicas", "Métodos Cuantitativos · opcionales", "Economía · básicas", "Economía · opcionales", "Actividades Integradoras · básicas", "Actividades Integradoras · opcionales", "Ciencias Sociales y Humanísticas · básicas", "Ciencias Sociales y Humanísticas · opcionales", "Jurídica · básicas", "Jurídica · opcionales"],
+          "creditRequirements": [
+            { "id": "administration", "name": "Administración", "shortName": "Administración", "minCredits": 120 },
+            { "id": "administration-basic", "parentId": "administration", "name": "Administración · U.C. básicas", "shortName": "Básicas", "minCredits": 80 },
+            { "id": "administration-optional", "parentId": "administration", "name": "Administración · U.C. opcionales", "shortName": "Opcionales", "minCredits": 0 },
+            { "id": "accounting", "name": "Contabilidad e Impuestos", "shortName": "Contabilidad", "minCredits": 60 },
+            { "id": "accounting-basic", "parentId": "accounting", "name": "Contabilidad e Impuestos · U.C. básicas", "shortName": "Básicas", "minCredits": 40 },
+            { "id": "accounting-optional", "parentId": "accounting", "name": "Contabilidad e Impuestos · U.C. opcionales", "shortName": "Opcionales", "minCredits": 0 },
+            { "id": "quantitative", "name": "Métodos Cuantitativos", "shortName": "Métodos cuantitativos", "minCredits": 45 },
+            { "id": "quantitative-basic", "parentId": "quantitative", "name": "Métodos Cuantitativos · U.C. básicas", "shortName": "Básicas", "minCredits": 30 },
+            { "id": "quantitative-optional", "parentId": "quantitative", "name": "Métodos Cuantitativos · U.C. opcionales", "shortName": "Opcionales", "minCredits": 0 },
+            { "id": "economics", "name": "Economía", "shortName": "Economía", "minCredits": 40 },
+            { "id": "economics-basic", "parentId": "economics", "name": "Economía · U.C. básicas", "shortName": "Básicas", "minCredits": 40 },
+            { "id": "economics-optional", "parentId": "economics", "name": "Economía · U.C. opcionales", "shortName": "Opcionales", "minCredits": 0 },
+            { "id": "integrative", "name": "Actividades Integradoras", "shortName": "Integradoras", "minCredits": 20 },
+            { "id": "integrative-basic", "parentId": "integrative", "name": "Actividades Integradoras · U.C. básicas", "shortName": "Básicas", "minCredits": 0 },
+            { "id": "integrative-optional", "parentId": "integrative", "name": "Actividades Integradoras · U.C. opcionales", "shortName": "Opcionales", "minCredits": 0 },
+            { "id": "social", "name": "Ciencias Sociales y Humanísticas", "shortName": "Sociales", "minCredits": 20 },
+            { "id": "social-basic", "parentId": "social", "name": "Ciencias Sociales y Humanísticas · U.C. básicas", "shortName": "Básicas", "minCredits": 10 },
+            { "id": "social-optional", "parentId": "social", "name": "Ciencias Sociales y Humanísticas · U.C. opcionales", "shortName": "Opcionales", "minCredits": 0 },
+            { "id": "legal", "name": "Jurídica", "shortName": "Jurídica", "minCredits": 15 },
+            { "id": "legal-basic", "parentId": "legal", "name": "Jurídica · U.C. básicas", "shortName": "Básicas", "minCredits": 10 },
+            { "id": "legal-optional", "parentId": "legal", "name": "Jurídica · U.C. opcionales", "shortName": "Opcionales", "minCredits": 0 },
+            { "id": "free-distribution", "name": "Libre distribución entre áreas", "shortName": "Libre distribución", "minCredits": 40 }
+          ],
+          "credentials": [
+            { "id": "licenciado-administracion", "title": "Licenciado en Administración", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "administration", "minCredits": 120 }, { "nodeId": "administration-basic", "minCredits": 80 }, { "nodeId": "accounting", "minCredits": 60 }, { "nodeId": "accounting-basic", "minCredits": 40 }, { "nodeId": "quantitative", "minCredits": 45 }, { "nodeId": "quantitative-basic", "minCredits": 30 }, { "nodeId": "economics", "minCredits": 40 }, { "nodeId": "economics-basic", "minCredits": 40 }, { "nodeId": "integrative", "minCredits": 20 }, { "nodeId": "social", "minCredits": 20 }, { "nodeId": "social-basic", "minCredits": 10 }, { "nodeId": "legal", "minCredits": 15 }, { "nodeId": "legal-basic", "minCredits": 10 }, { "nodeId": "free-distribution", "minCredits": 40 }], "requiredCourseGroupIds": [] }
+          ]
+        }
+      },
+      "offerings": [{ "serviceCode": "FCEA", "locations": ["Montevideo"], "role": "oferta completa de FCEA con apoyo en EVA", "curriculumVariant": false, "pathwayIds": ["personalizada", "gestion-de-personas", "marketing"] }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcea-licenciatura-en-administracion-2012.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 468,
+        "distinctSnapshotCourseRecords": 392,
+        "publishedPrerequisiteRecords": 405,
+        "interpretation": "Bedelías conserva los siete mínimos por área y submínimos de U.C. básicas, además de equivalencias de planes anteriores. No publica los 40 créditos de libre distribución como nodo separado ni las dos trayectorias sugeridas de la página vigente de FCEA."
+      },
+      "conclusion": {
+        "canonicalModel": "one-flexible-degree-two-suggested-pathways",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "La Licenciatura en Administración es una carrera flexible con título único. Gestión de Personas y Marketing son recomendaciones oficiales para orientar optativas, no perfiles certificados ni menciones.",
+        "normalization": [
+          "Controlar siete mínimos por área que suman 320 créditos y un bloque de 40 créditos de libre distribución.",
+          "Conservar los submínimos de U.C. básicas publicados por Bedelías sin sumar toda la oferta histórica como obligatoria.",
+          "Permitir que cualquier unidad elegible aporte a la libre distribución cuando ya se cubrieron los mínimos de área.",
+          "Ofrecer una trayectoria personalizada con el catálogo completo y dos trayectorias sugeridas con las unidades fuertemente recomendadas por FCEA.",
+          "Mantener un solo título y una sola sede en Montevideo; EVA es apoyo virtual, no una sede adicional."
+        ]
+      },
+      "sources": [
+        { "url": "https://fcea.udelar.edu.uy/depto-adm-ensenanza/lic-adm-ciencias-adm.html", "authority": "Facultad de Ciencias Económicas y de Administración, Udelar", "supports": ["vigencia", "título", "ocho semestres", "360 créditos", "Montevideo y EVA", "mínimos por área", "40 créditos libres", "grilla julio 2026", "trayectorias sugeridas de Gestión de Personas y Marketing"] },
+        { "url": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html", "authority": "Bedelía de grado, FCEA", "supports": ["oferta académica 2026", "requisitos de egreso vigentes", "actualizaciones y equivalencias"] },
+        { "url": "https://fcea.udelar.edu.uy/bedelia/ingreso-a-facultad.html", "authority": "Bedelía de grado, FCEA", "supports": ["ingreso vigente al Plan 2012", "actualización de requisitos en 2025"] }
+      ],
+      "anomalies": [
+        { "field": "freeDistribution", "resolution": "Los siete mínimos por área suman 320, mientras el total es 360. FCEA confirma que los 40 restantes pueden realizarse en cualquier área; todas las unidades reciben esa elegibilidad alternativa sin duplicar créditos." },
+        { "field": "historicalEquivalences", "resolution": "Los grupos de U.C. básicas contienen códigos actuales, reválidas y equivalencias de planes anteriores. Se publican como alternativas elegibles para el submínimo, no como obligaciones simultáneas." },
+        { "field": "suggestedPathways", "resolution": "Gestión de Personas y Marketing son trayectorias sugeridas y no certificadas. La selección filtra una guía de cursos recomendados; la opción Personalizada conserva el catálogo completo." },
+        { "field": "currentOfferExceptions", "resolution": "A85 y A86 figuran como no ofrecidas en 2026. A85 permanece en la guía oficial de Gestión de Personas con esa limitación documental; elegir la trayectoria no la vuelve obligatoria." }
+      ],
+      "uiNotice": "Plan 2012 flexible de ocho semestres y 360 créditos en Montevideo. Podés usar el catálogo completo o una guía sugerida de Gestión de Personas o Marketing; ninguna cambia el título. Cumplí los mínimos por área y 40 créditos de libre distribución.",
+      "remainingWork": "La grilla es indicativa y la oferta de opcionales cambia por semestre. Las trayectorias sugeridas orientan la elección, pero la Comisión de Carrera y Bedelía validan reconocimientos, electivas y equivalencias individuales."
     }
   ],
-  "contentHash": "sha256:c2d7ca667fd4cd3817ad4c6bbf1e2d066aafd1324874deb893bfac81294588cd"
+  "contentHash": "sha256:3343d2d864aee12bb34919f112849b5285f97c656de9cea3967c4d9980721632"
 }

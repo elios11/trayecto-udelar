@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T05:35:20.502Z",
+  "generatedAt": "2026-08-27T05:43:49.096Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:c2d7ca667fd4cd3817ad4c6bbf1e2d066aafd1324874deb893bfac81294588cd"
+    "officialAuditRegistryHash": "sha256:3343d2d864aee12bb34919f112849b5285f97c656de9cea3967c4d9980721632"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 123,
-    "pendingCanonicalIdentities": 54,
+    "evidenceClosedCanonicalIdentities": 124,
+    "pendingCanonicalIdentities": 53,
     "byPriority": {
-      "official-sources-pending": 54
+      "official-sources-pending": 53
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -759,38 +759,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-27",
       "conclusion": "one-degree-five-certified-profiles"
+    },
+    {
+      "identity": "licenciatura en administracion:2012",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-27",
+      "conclusion": "one-flexible-degree-two-suggested-pathways"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en administracion:2012",
-      "career": {
-        "name": "LICENCIATURA EN ADMINISTRACIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2012",
-        "name": "LICENCIATURA EN ADMINISTRACION",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCEA",
-        "serviceName": "FACULTAD DE CIENCIAS ECONÓMICAS",
-        "planKey": "FCEA:licenciatura en administracion:2012",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCEA",
-          "serviceName": "FACULTAD DE CIENCIAS ECONÓMICAS",
-          "planKey": "FCEA:licenciatura en administracion:2012",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en economia:2012",
       "career": {
@@ -2540,5 +2517,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:d1084942f0f345da2467b25c41d5bc41c452eb53c4cab6116e5d0d328c2d5f13"
+  "contentHash": "sha256:46f75c1c65d52980b451c166d17121b511ca9041bc0f62844cbc540568726c60"
 }

@@ -332,8 +332,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcea-licenciatura-en-administracion-2012": {
     load: () => import("./bedelias-generated/bedelias-fcea-licenciatura-en-administracion-2012.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["personalizada","gestion-de-personas","marketing"],
+    pathwayLabel: "Trayectoria sugerida",
     minCredits: 360,
   },
   "bedelias-fcea-licenciatura-en-economia-2012": {

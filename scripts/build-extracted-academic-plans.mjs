@@ -168,16 +168,23 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         ? new Set([...(audit.officialPlan.curriculum.commonCourseIds ?? []), ...trajectory.courseIds]
           .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id))
         : null;
+      const trajectoryPeriods = (trajectory.periods ?? periods).map((period) => ({
+        label: period.label,
+        courseIds: (period.courseIds ?? [])
+          .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
+          .filter((id) => id && !excludedIds.has(id) && (!includedIds || includedIds.has(id))),
+      })).filter((period) => period.courseIds.length > 0);
+      const catalogCourseIds = includedIds
+        ? [...new Set((trajectory.periods ?? periods).flatMap((period) => period.courseIds ?? []))]
+          .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
+          .filter((id) => id && !excludedIds.has(id) && !includedIds.has(id))
+        : [];
       return [trajectory.id, {
         label: trajectory.label,
         description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
         campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
-        periods: (trajectory.periods ?? periods).map((period) => ({
-          label: period.label,
-          courseIds: (period.courseIds ?? [])
-            .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
-            .filter((id) => id && !excludedIds.has(id) && (!includedIds || includedIds.has(id))),
-        })).filter((period) => period.courseIds.length > 0),
+        periods: trajectoryPeriods,
+        ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
       }];
     }));
   }
@@ -356,6 +363,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   const pathRequirementMap = curriculum.pathRequirementMap ?? {};
   const periodLabelMap = curriculum.periodLabelMap ?? {};
   const courseOverrides = curriculum.courseOverrides ?? {};
+  const additionalRequirementIdsForAllCourses = curriculum.additionalRequirementIdsForAllCourses ?? [];
   const excludedSourceCourseIds = new Set(curriculum.excludedSourceCourseIds ?? []);
   const sharedProfileCourses = new Map();
   const requirementIdForPath = (nodePath) => {
@@ -404,13 +412,14 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     let course = sharedKey ? sharedProfileCourses.get(sharedKey) : null;
     if (!course) {
       const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
+      const eligibleRequirementIds = [...new Set([nodeId, ...additionalRequirementIdsForAllCourses])];
       course = {
         id,
         ...(parsed.code ? { bedeliasCode: parsed.code } : {}),
         name: displayName,
         credits,
-        eligibleRequirementIds: [nodeId],
-        creditAllocations: [{ nodeId, credits, status: "official", sourceUrl }],
+        eligibleRequirementIds,
+        creditAllocations: eligibleRequirementIds.map((eligibleNodeId) => ({ nodeId: eligibleNodeId, credits, status: "official", sourceUrl })),
         dataStatus: Object.keys(courseOverride).length > 0
           ? "official-curriculum"
           : curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
@@ -422,6 +431,12 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       if (!course.eligibleRequirementIds.includes(nodeId)) course.eligibleRequirementIds.push(nodeId);
       if (!course.creditAllocations.some((allocation) => allocation.nodeId === nodeId)) {
         course.creditAllocations.push({ nodeId, credits, status: "official", sourceUrl });
+      }
+      for (const eligibleNodeId of additionalRequirementIdsForAllCourses) {
+        if (!course.eligibleRequirementIds.includes(eligibleNodeId)) course.eligibleRequirementIds.push(eligibleNodeId);
+        if (!course.creditAllocations.some((allocation) => allocation.nodeId === eligibleNodeId)) {
+          course.creditAllocations.push({ nodeId: eligibleNodeId, credits, status: "official", sourceUrl });
+        }
       }
     }
     const id = course.id;

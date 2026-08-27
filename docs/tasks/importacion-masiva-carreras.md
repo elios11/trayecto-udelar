@@ -1453,3 +1453,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:c2d7ca667fd4cd3817ad4c6bbf1e2d066aafd1324874deb893bfac81294588cd`. Cola general: 54 identidades pendientes; hash `sha256:d1084942f0f345da2467b25c41d5bc41c452eb53c4cab6116e5d0d328c2d5f13`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable y 34 con sedes oficiales; hash `sha256:2fb5e4f12acb1a61c40fde6acbdb90b6cdf45eef84a3cf9f547f741bd331efc3`. Cola funcional vacía; hash `sha256:12f54ef6a9d9010dc47fade84532572258ccbd59038e9f17b34e0fc82ca0e75c`.
 - Siguiente paso: auditar la Licenciatura en Administración Plan 2012, primera identidad reproducible restante.
+
+### Licenciatura en Administración Plan 2012 — flexibilidad y guías operativas 2026-08-27
+
+- La grilla vigente de FCEA confirma un único título de Licenciado en Administración, ocho semestres, 360 créditos y dictado en Montevideo con apoyo en EVA.
+- La UI controla mínimos de Administración 120, Contabilidad e Impuestos 60, Métodos Cuantitativos 45, Economía 40, Actividades Integradoras 20, Ciencias Sociales y Humanísticas 20 y Jurídica 15. Los 320 créditos de área se completan con 40 de libre distribución.
+- Cada unidad puede asignarse a su área o al saldo libre, sin contabilizarse dos veces. Se conservan además los submínimos de U.C. básicas 80/40/30/40/10/10 publicados por Bedelías.
+- FCEA publica dos trayectorias sugeridas: Gestión de Personas y Marketing. La UI incorpora ambas como guías no certificadas y mantiene una opción Personalizada con el catálogo completo; cada guía destaca sus recomendaciones pero deja disponibles todas las demás unidades en el catálogo.
+- Las equivalencias y reválidas históricas del árbol de Bedelías permanecen como alternativas, no como obligaciones simultáneas. A85 se mantiene en la guía oficial de Personas con aviso de que no se ofrece en 2026.
+- Registro de auditoría: hash `sha256:3343d2d864aee12bb34919f112849b5285f97c656de9cea3967c4d9980721632`. Cola general: 53 identidades pendientes; hash `sha256:46f75c1c65d52980b451c166d17121b511ca9041bc0f62844cbc540568726c60`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:b3e2119988e9bc84f36d57752d69292799568b0f7d79110e89c7aabfed7683d8`. Cola funcional vacía; hash `sha256:53b4357c75cb9b8de11b19d5e61087989ba54c822677c460b1cc7e9d3f630b64`.
+- Siguiente paso: auditar la Licenciatura en Economía Plan 2012, primera identidad reproducible restante.
