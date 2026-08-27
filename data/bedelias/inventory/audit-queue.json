@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T05:50:40.697Z",
+  "generatedAt": "2026-08-27T22:13:06.296Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:aa6fd9d0bc4a53531616aed15260daea3e98caad5b55e86868dcdb9e01b5fa20"
+    "officialAuditRegistryHash": "sha256:3d1032b069b84a182d5dd576b1d47bd3bb3952f8311614f6bb98a53ba2eaf214"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 125,
-    "pendingCanonicalIdentities": 52,
+    "evidenceClosedCanonicalIdentities": 126,
+    "pendingCanonicalIdentities": 51,
     "byPriority": {
-      "official-sources-pending": 52
+      "official-sources-pending": 51
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -771,38 +771,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-27",
       "conclusion": "one-flexible-degree-four-suggested-pathways"
+    },
+    {
+      "identity": "licenciatura en estadistica:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-27",
+      "conclusion": "one-degree-four-specialization-profiles"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en estadistica:2014",
-      "career": {
-        "name": "LICENCIATURA EN ESTADÍSTICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "LICENCIATURA EN ESTADISTICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCEA",
-        "serviceName": "FACULTAD DE CIENCIAS ECONÓMICAS",
-        "planKey": "FCEA:licenciatura en estadistica:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCEA",
-          "serviceName": "FACULTAD DE CIENCIAS ECONÓMICAS",
-          "planKey": "FCEA:licenciatura en estadistica:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnico en administracion:2014",
       "career": {
@@ -2494,5 +2471,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:c65cee1a7c4c6819ccee423ece60cff5a2195bc79b342c87a43d39a57e82f950"
+  "contentHash": "sha256:cad5ec50f4542d82a8eaa57ea187e0da6aaa909712447499241fcee636d2430a"
 }

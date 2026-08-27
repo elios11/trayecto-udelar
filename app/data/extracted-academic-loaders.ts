@@ -344,8 +344,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcea-licenciatura-en-estadistica-2014": {
     load: () => import("./bedelias-generated/bedelias-fcea-licenciatura-en-estadistica-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["actuarial-demografico","bioestadistico","economia","tecnologico"],
+    pathwayLabel: "Perfil",
     minCredits: 360,
   },
   "bedelias-fcea-tecnico-en-administracion-2014": {

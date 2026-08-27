@@ -1475,3 +1475,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:aa6fd9d0bc4a53531616aed15260daea3e98caad5b55e86868dcdb9e01b5fa20`. Cola general: 52 identidades pendientes; hash `sha256:c65cee1a7c4c6819ccee423ece60cff5a2195bc79b342c87a43d39a57e82f950`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:ca1f2860ad668b3ab8758eefad6ea194d3ae8054e0b89ac84faa84a57a0b051e`. Cola funcional vacía; hash `sha256:8b5b5b6319ae4e5724d429a064df003aa84bb008ee495539855bb03bf38019f7`.
 - Siguiente paso: auditar la Licenciatura en Estadística Plan 2014, primera identidad reproducible restante.
+
+### Licenciatura en Estadística Plan 2014 — perfiles oficiales operativos 2026-08-27
+
+- La carrera conduce a un único título de Licenciado en Estadística y ofrece cuatro perfiles de especialización: Actuarial-Demográfico, Bioestadístico, Economía y Tecnológico. La UI los presenta como trayectorias del mismo plan y conserva el progreso compartido al cambiar de perfil.
+- Cada perfil controla los mismos mínimos normativos: 85 créditos de Matemática, 85 de Inferencia Estadística, 30 de Instrumental, 60 del área asociada, 10 de Conocimientos Generales y 20 de Actividades Integradoras, más 70 créditos de libre distribución; el total es 360.
+- Tres árboles administrativos de Bedelías publicaban mínimos cero y la grilla tecnológica resumía 83 créditos de Matemática. La normalización aplica la tabla del Plan aprobado, que exige 85 y suma 290 antes del bloque libre.
+- Las 642 apariciones jerárquicas se normalizan a 263 unidades de UI. Cada perfil conserva su grilla propia y deja el resto disponible como catálogo flexible para los 70 créditos libres; los 192 registros de `plan.courses` no incluían todas las unidades externas presentes en la composición.
+- Montevideo es la única sede completa; EVA se conserva como apoyo virtual y no como localización seleccionable.
+- Registro de auditoría: hash `sha256:3d1032b069b84a182d5dd576b1d47bd3bb3952f8311614f6bb98a53ba2eaf214`. Cola general: 51 identidades pendientes; hash `sha256:cad5ec50f4542d82a8eaa57ea187e0da6aaa909712447499241fcee636d2430a`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:947db1f137b713981ae4fb39f76bc62ed48cf80d125cc659d58f35f2eda14b87`. Cola funcional vacía; hash `sha256:8489690f53b8235832b1dcbf260116245949160e8f8347054bc04996e7cd6cf5`.
+- Siguiente paso: auditar el Técnico en Administración Plan 2014, primera identidad reproducible restante.

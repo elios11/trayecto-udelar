@@ -156,11 +156,16 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => {
       const compositionPeriods = officialCurriculum?.pathwayPeriods?.[trajectory.id];
       if (compositionPeriods) {
+        const selectedCourseIds = new Set(compositionPeriods.flatMap((period) => period.courseIds));
+        const catalogCourseIds = audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
+          ? officialCurriculum.courses.map((course) => course.id).filter((id) => !selectedCourseIds.has(id))
+          : [];
         return [trajectory.id, {
           label: trajectory.label,
           description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
           campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
           periods: compositionPeriods,
+          ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
         }];
       }
       const excludedIds = new Set((trajectory.excludedCourseIds ?? []).map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
