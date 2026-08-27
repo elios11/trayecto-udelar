@@ -338,8 +338,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcea-licenciatura-en-economia-2012": {
     load: () => import("./bedelias-generated/bedelias-fcea-licenciatura-en-economia-2012.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["personalizada","academica","empresarial","politicas-publicas","sector-financiero"],
+    pathwayLabel: "Trayectoria sugerida",
     minCredits: 360,
   },
   "bedelias-fcea-licenciatura-en-estadistica-2014": {

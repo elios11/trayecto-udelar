@@ -1464,3 +1464,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:3343d2d864aee12bb34919f112849b5285f97c656de9cea3967c4d9980721632`. Cola general: 53 identidades pendientes; hash `sha256:46f75c1c65d52980b451c166d17121b511ca9041bc0f62844cbc540568726c60`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:b3e2119988e9bc84f36d57752d69292799568b0f7d79110e89c7aabfed7683d8`. Cola funcional vacía; hash `sha256:53b4357c75cb9b8de11b19d5e61087989ba54c822677c460b1cc7e9d3f630b64`.
 - Siguiente paso: auditar la Licenciatura en Economía Plan 2012, primera identidad reproducible restante.
+
+### Licenciatura en Economía — trayectorias sugeridas operativas 2026-08-27
+
+- FCEA confirma la vigencia del Plan 2012, un único título de Licenciado en Economía, ocho semestres, 360 créditos y cursado en Montevideo con apoyo de EVA. El Plan no establece menciones ni especializaciones en el título.
+- La UI controla mínimos de 150 créditos en Economía, 80 en Métodos Cuantitativos, 50 en Ciencias Sociales y Humanísticas, 10 en Actividades Integradoras, 10 en Contabilidad e Impuestos y 10 en Administración. Esos mínimos suman 310; los 50 créditos restantes se modelan como libre distribución entre áreas sin duplicar el cómputo.
+- Se conservan los submínimos básicos de Bedelías: 120 en Economía, 70 en Métodos Cuantitativos, 20 en Ciencias Sociales y Humanísticas y 10 en cada una de Actividades Integradoras, Contabilidad y Administración. Reválidas y equivalencias históricas permanecen como alternativas, no como obligaciones simultáneas.
+- FCEA publica cuatro trayectorias sugeridas: Académica, Empresarial, Políticas Públicas y Sector Financiero. La UI las presenta como guías no certificadas, destaca sus cursos concretos y mantiene las categorías abiertas y las 500 unidades del catálogo disponibles para cualquier combinación válida. La opción Personalizada muestra el catálogo completo.
+- MC10 conserva la alternativa 114A + 128A. E10 es la única oferta inicial obligatoria desde 2026; E11 queda como equivalencia de egreso y no se exige en paralelo.
+- Registro de auditoría: hash `sha256:aa6fd9d0bc4a53531616aed15260daea3e98caad5b55e86868dcdb9e01b5fa20`. Cola general: 52 identidades pendientes; hash `sha256:c65cee1a7c4c6819ccee423ece60cff5a2195bc79b342c87a43d39a57e82f950`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:ca1f2860ad668b3ab8758eefad6ea194d3ae8054e0b89ac84faa84a57a0b051e`. Cola funcional vacía; hash `sha256:8b5b5b6319ae4e5724d429a064df003aa84bb008ee495539855bb03bf38019f7`.
+- Siguiente paso: auditar la Licenciatura en Estadística Plan 2014, primera identidad reproducible restante.
