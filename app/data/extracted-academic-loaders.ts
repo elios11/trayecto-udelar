@@ -266,7 +266,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcien-licenciatura-biologia-humana-2004": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-biologia-humana-2004.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["curriculo-personalizado"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },

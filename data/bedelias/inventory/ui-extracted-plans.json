@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:0153d6f0fff665be7a91f1f062acc3be17362c137ce35846d042d2b3d2fc9762",
-    "officialAuditHash": "sha256:57e89b31f41eb9957308fa8cc7a9563d1119b3b284d4849876cd9efb7b6b73cd",
+    "auditQueueHash": "sha256:6a9f9f24fc2c7796ce1f708998a93a7b8cd1389c763ea23be7a9dd42bb9abf42",
+    "officialAuditHash": "sha256:270fde1dbd7368d3b8cda78184872b33bb7c03188e47ef9b525a21e784d4ee10",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 143,
     "compositionAvailable": 143,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 34,
+    "plansWithOfficialCampuses": 35,
     "excludedFromCurrentUi": 34
   },
   "plans": [
@@ -510,9 +510,15 @@
       "planId": "bedelias-fcien-licenciatura-biologia-humana-2004",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-biologia-humana-2004.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto",
+        "paysandu",
+        "rivera",
+        "tacuarembo"
+      ]
     },
     {
       "identity": "licenciatura en astronomia:2016",
@@ -1528,5 +1534,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:950a6e0b9d24e269b2b85f80ef10ba2990efcefda481c2272b42259a5fe39835"
+  "contentHash": "sha256:20236d388a96f27e16672b2e9bbcc30824fecbc1841c350a71c1613e54852e0f"
 }

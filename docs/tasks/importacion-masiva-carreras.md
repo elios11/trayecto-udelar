@@ -1497,3 +1497,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:57e89b31f41eb9957308fa8cc7a9563d1119b3b284d4849876cd9efb7b6b73cd`. Cola general: 50 identidades pendientes; hash `sha256:0153d6f0fff665be7a91f1f062acc3be17362c137ce35846d042d2b3d2fc9762`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:950a6e0b9d24e269b2b85f80ef10ba2990efcefda481c2272b42259a5fe39835`. Cola funcional vacía; hash `sha256:c278baf660514e582ada02858ca2302daf4b3e5b66f8db800e40c8ae9400471d`.
 - Siguiente paso: auditar la Licenciatura en Biología Humana Plan 2004, primera identidad reproducible restante.
+
+### Licenciatura en Biología Humana — currículo personal y cinco sedes operativos 2026-08-27
+
+- El plan oficial confirma un único título interservicios de Licenciado en Biología Humana, cuatro años y al menos 360 créditos. Participan Ciencias, Humanidades y Ciencias de la Educación, Medicina y Odontología; la UI conserva Facultad de Ciencias como servicio canónico sin ocultar el carácter compartido.
+- La carrera está disponible en Montevideo, Salto, Paysandú, Rivera y Tacuarembó. Las cinco localidades son ofertas del mismo plan y comparten progreso; no se crean carreras, planes ni perfiles territoriales separados.
+- La UI controla 79 créditos de Ciencias Básicas, 133 de Ciencias Biológicas, 29 de Ciencias Sociales y Humanísticas y 119 de Orientación Específica. Los cuatro mínimos suman exactamente 360.
+- La orientación es individual y se construye con tutoría. No se convierten ejemplos como genética humana, neurobiología o epidemiología en menciones prefijadas; se muestra una única trayectoria de currículo personalizado y la Comisión Curricular conserva la aprobación final.
+- El plan exige una pasantía de al menos 120 horas y un informe científico. Como Bedelías publica varias pasantías con códigos, créditos y duraciones diferentes, la UI agrega una validación de egreso explícita en lugar de imponer una unidad arbitraria.
+- Las 2.032 apariciones del árbol se conservan como catálogo flexible por área y no como obligaciones simultáneas. Se normaliza la duración a 48 meses; los 60 meses administrativos de Bedelías y del catálogo central quedan documentados. También se conserva la discrepancia entre la identidad 2004 del registro institucional y el rótulo Plan de Estudios 2011 del PDF depositado.
+- Registro de auditoría: hash `sha256:270fde1dbd7368d3b8cda78184872b33bb7c03188e47ef9b525a21e784d4ee10`. Cola general: 49 identidades pendientes; hash `sha256:6a9f9f24fc2c7796ce1f708998a93a7b8cd1389c763ea23be7a9dd42bb9abf42`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable y 35 con sedes oficiales; hash `sha256:20236d388a96f27e16672b2e9bbcc30824fecbc1841c350a71c1613e54852e0f`. Cola funcional vacía; hash `sha256:a156957faed3aba057ac53992a6e69791b81901efbb7a45784992dff961524ee`.
+- Siguiente paso: auditar la Licenciatura en Astronomía Plan 2016, primera identidad reproducible restante.

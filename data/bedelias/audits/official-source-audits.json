@@ -23118,7 +23118,117 @@
       ],
       "uiNotice": "Plan 2014 semiabierto de cinco semestres y 225 créditos en Montevideo. La grilla vigente es un orden sugerido: debés aprobar sus unidades obligatorias, cumplir los seis mínimos por área y completar 40 créditos de libre distribución.",
       "remainingWork": "La Comisión de Carrera y Bedelía validan optativas, electivas, prácticas curriculares, intercambios, reválidas y reconocimientos individuales; A85 y A86 permanecen identificadas como unidades no ofrecidas en 2026."
+    },
+    {
+      "identity": "licenciatura biologia humana:2004",
+      "career": "LICENCIATURA EN BIOLOGÍA HUMANA",
+      "planYear": "2004",
+      "reviewedAt": "2026-08-27",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, servicios participantes, sedes, duración, créditos, áreas comunes, orientación individual, tutorías y pasantía",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Registro institucional de Colibri emitido en 2004 para el plan compartido por Ciencias, Humanidades, Medicina y Odontología",
+          "Documento archivado por Facultad de Ciencias bajo la denominación Plan de Estudios 2011"
+        ],
+        "planYear": "2004",
+        "title": "Licenciado en Biología Humana",
+        "careerName": "Licenciatura en Biología Humana",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El título exige al menos 360 créditos: 79 en Ciencias Básicas, 133 en Ciencias Biológicas, 29 en Ciencias Sociales y Humanísticas y 119 en una orientación específica coherente. También exige una pasantía de al menos 120 horas con informe científico y la aprobación del currículo individual por la Comisión Curricular.",
+        "trajectories": [
+          {
+            "id": "curriculo-personalizado",
+            "label": "Currículo personalizado",
+            "description": "Trayectoria individual y flexible construida con tutoría académica. No es una mención prefijada: la orientación específica y el balance de créditos deben formar un programa coherente aprobado por la Comisión Curricular."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24551/1/PLBIHU_2020.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Catálogo flexible por áreas para construir un currículo personal con tutoría; el orden de las unidades no implica una secuencia obligatoria.",
+          "periodOrder": [
+            "CIENCIAS BASICAS",
+            "CIENCIAS BIOLOGICAS",
+            "CS. SOCIALES Y HUMANISTICAS",
+            "ORIENTACION ESPECIFICA",
+            "Validación de egreso"
+          ],
+          "pathRequirementMap": {
+            "2584": "basic-sciences",
+            "2872": "biological-sciences",
+            "2737": "social-humanistic-sciences",
+            "3059": "specific-orientation"
+          },
+          "creditRequirements": [
+            { "id": "basic-sciences", "name": "Ciencias Básicas", "shortName": "Básicas", "minCredits": 79 },
+            { "id": "biological-sciences", "name": "Ciencias Biológicas", "shortName": "Biológicas", "minCredits": 133 },
+            { "id": "social-humanistic-sciences", "name": "Ciencias Sociales y Humanísticas", "shortName": "Sociales y humanísticas", "minCredits": 29 },
+            { "id": "specific-orientation", "name": "Orientación específica", "shortName": "Orientación", "minCredits": 119 }
+          ],
+          "manualCompletionValidation": "Aprobación de la Comisión Curricular del currículo individual y de la pasantía mínima de 120 horas con informe científico"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCIEN",
+          "locations": ["Montevideo", "Salto", "Paysandú", "Rivera", "Tacuarembó"],
+          "role": "carrera compartida por Ciencias, Humanidades y Ciencias de la Educación, Medicina y Odontología, con oferta completa en Montevideo y sedes regionales",
+          "curriculumVariant": false,
+          "trajectoryIds": ["curriculo-personalizado"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-biologia-humana-2004.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 2032,
+        "distinctSnapshotCourseRecords": 1797,
+        "publishedPrerequisiteRecords": 1649,
+        "interpretation": "Bedelías publica los cuatro mínimos que suman exactamente 360 créditos y una oferta acumulada de 2.032 apariciones. El catálogo es flexible y multidisciplinario: no representa una lista que deba aprobarse completa ni define perfiles cerrados."
+      },
+      "conclusion": {
+        "canonicalModel": "one-shared-degree-one-personalized-curriculum-multiple-locations",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "Las fuentes oficiales describen un único título interservicios y una trayectoria individual aprobada por tutoría y Comisión Curricular. Montevideo, Salto, Paysandú, Rivera y Tacuarembó son sedes de la misma carrera; no hay evidencia de planes o menciones territoriales distintos.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Biología Humana con cinco sedes seleccionables y progreso compartido.",
+          "Mostrar una única trayectoria de currículo personalizado, sin convertir ejemplos de áreas de interés en perfiles certificados.",
+          "Controlar los cuatro mínimos de 79, 133, 29 y 119 créditos, que completan los 360 del título.",
+          "Conservar para cada unidad el área publicada por Bedelías; cualquier reasignación entre áreas requiere resolución de la Comisión Curricular.",
+          "Exigir una validación final explícita para la coherencia del currículo y la pasantía con informe científico.",
+          "Normalizar la duración normativa a cuatro años; conservar los 60 meses del catálogo central y Bedelías como discrepancia administrativa."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24551/1/PLBIHU_2020.pdf", "authority": "Plan de Estudios archivado por Facultad de Ciencias, Udelar", "supports": ["título único", "cuatro años", "360 créditos", "mínimos porcentuales y por áreas", "orientación específica individual", "tutor y Comisión Curricular", "pasantía de 120 horas e informe"] },
+        { "url": "https://fhce.edu.uy/licenciatura-en-biologia-humana/", "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar", "supports": ["vigencia", "servicios participantes", "flexibilidad", "tutorías", "requisitos de ingreso"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-biologia-humana", "authority": "Catálogo de carreras de Udelar", "supports": ["vigencia", "título", "360 créditos", "carácter compartido", "oferta regional"] },
+        { "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-biologia-humana-3/", "authority": "Portal Carreras Interior de Udelar", "supports": ["cuatro años", "360 créditos", "sedes Montevideo, Salto, Rivera, Paysandú y Tacuarembó"] },
+        { "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf", "authority": "Dirección General de Planeamiento, Udelar", "supports": ["actividad estudiantil vigente en 2025 como carrera compartida"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "Bedelías y el registro de Colibri identifican 2004, mientras el PDF depositado se rotula Plan de Estudios 2011. Se conserva la identidad canónica 2004 y se documenta el rótulo posterior sin crear otro plan." },
+        { "field": "duration", "resolution": "El Plan y los portales territoriales establecen cuatro años; Bedelías y el catálogo central informan 60 meses. La UI usa 48 meses como duración normativa." },
+        { "field": "campuses", "resolution": "El catálogo central resume Facultad de Ciencias y CENUR Noreste, pero Carreras Interior y las páginas de sede documentan además Salto, Paysandú, Rivera y Tacuarembó. Se normalizan las cinco localidades sin duplicar carrera." },
+        { "field": "catalogSize", "resolution": "Las 2.032 apariciones de composición y 1.797 registros de plan incluyen cursos de múltiples servicios, años e instituciones. Son opciones acreditables para currículos individuales, no obligaciones acumulativas." },
+        { "field": "internship", "resolution": "Bedelías contiene varias pasantías con créditos y duraciones diferentes. Como el Plan exige 120 horas e informe pero no fija un código único, la UI solicita validación manual en lugar de imponer una unidad arbitraria." }
+      ],
+      "uiNotice": "Carrera interservicios de cuatro años y 360 créditos, disponible en Montevideo, Salto, Paysandú, Rivera y Tacuarembó. Construí tu orientación con tutoría, cumplí los cuatro mínimos por área y validá con la Comisión Curricular la coherencia del plan y la pasantía obligatoria.",
+      "remainingWork": "La Comisión Curricular determina la pertinencia y los créditos concretos de cursos, reválidas, orientación específica y pasantía para cada estudiante; la UI no puede sustituir esa aprobación individual."
     }
   ],
-  "contentHash": "sha256:57e89b31f41eb9957308fa8cc7a9563d1119b3b284d4849876cd9efb7b6b73cd"
+  "contentHash": "sha256:270fde1dbd7368d3b8cda78184872b33bb7c03188e47ef9b525a21e784d4ee10"
 }
