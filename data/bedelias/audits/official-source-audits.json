@@ -22114,7 +22114,154 @@
       ],
       "uiNotice": "Plan 2005 de ocho semestres y 360 créditos en Montevideo. Elegís una opción instrumental o Canto y el título expresa esa mención. Corno y Trombón se conservan para continuidad de estudiantes registrados, pero no figuran entre los ingresos publicados para 2026.",
       "remainingWork": "El Plan 2005 permite solicitar una certificación al completar el Primer Ciclo. La fuente pública no publica un umbral autónomo suficiente para calcularla en la UI sin reconstruir los cuatro primeros semestres de cada opción; no se presenta como título intermedio automático."
+    },
+    {
+      "identity": "licenciatura en musica:2005",
+      "career": "LICENCIATURA EN MÚSICA",
+      "planYear": "2005",
+      "reviewedAt": "2026-08-27",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, cuatro opciones certificadas y mínimos diferenciados del Plan 2005",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2005 de la Escuela Universitaria de Música, vigente en el Instituto de Música de Facultad de Artes"],
+        "planYear": "2005",
+        "title": "Licenciado en Música",
+        "careerName": "Licenciatura en Música",
+        "facultyCode": "FARTES",
+        "facultyName": "Facultad de Artes",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Opción",
+        "degreeRule": "El título exige 360 créditos y expresa la opción elegida. Las cuatro opciones comparten 138 créditos de Tronco Común y exigen 12 créditos troncales y 8 de proyectos especiales; los mínimos específicos y electivos completan el total según cada opción.",
+        "trajectories": [
+          { "id": "composicion", "label": "Composición", "description": "Opción certificada de Composición del Plan 2005." },
+          { "id": "direccion-de-coro", "label": "Dirección de Coro", "description": "Opción certificada de Dirección de Coro del Plan 2005." },
+          { "id": "direccion-de-orquesta", "label": "Dirección de Orquesta", "description": "Opción certificada de Dirección de Orquesta del Plan 2005." },
+          { "id": "musicologia", "label": "Musicología", "description": "Opción certificada de Musicología del Plan 2005." }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
+          "pathwayLabel": "Opción",
+          "pathRequirementMap": {
+            "2929": "common-core",
+            "1682": "composition-electives",
+            "4928": "composition-musical-electives",
+            "4907": "composition-non-musical-electives",
+            "1648": "composition-specific",
+            "1814": "composition-degree-core",
+            "1588": "composition-projects",
+            "1315": "chorus-electives",
+            "4226": "chorus-musical-electives",
+            "4614": "chorus-non-musical-electives",
+            "1634": "chorus-specific",
+            "1532": "chorus-degree-core",
+            "1653": "chorus-projects",
+            "1735": "orchestra-electives",
+            "4462": "orchestra-musical-electives",
+            "4675": "orchestra-non-musical-electives",
+            "1134": "orchestra-specific",
+            "1263": "orchestra-degree-core",
+            "1365": "orchestra-projects",
+            "1771": "musicology-electives",
+            "5192": "musicology-musical-electives",
+            "4163": "musicology-non-musical-electives",
+            "1457": "musicology-specific",
+            "1092": "musicology-degree-core",
+            "1678": "musicology-projects"
+          },
+          "periodLabelMap": {
+            "tronco comun": "Tronco común",
+            "asignaturas electivas": "Electivas",
+            "de formacion musical": "Electivas · formación musical",
+            "de formacion no musical": "Electivas · formación no musical",
+            "materias especificas de opcion": "Materias específicas de la opción",
+            "materias troncales de lic": "Materias troncales de la Licenciatura",
+            "proyectos especiales": "Proyectos especiales"
+          },
+          "periodOrder": ["Tronco común", "Materias troncales de la Licenciatura", "Materias específicas de la opción", "Electivas", "Electivas · formación musical", "Electivas · formación no musical", "Proyectos especiales"],
+          "creditRequirements": [
+            { "id": "common-core", "name": "Tronco común", "shortName": "Tronco común", "minCredits": 138 },
+            { "id": "composition-degree-core", "name": "Composición · materias troncales", "shortName": "Troncales", "minCredits": 12 },
+            { "id": "composition-specific", "name": "Composición · materias específicas", "shortName": "Específicas", "minCredits": 144 },
+            { "id": "composition-electives", "name": "Composición · asignaturas electivas", "shortName": "Electivas", "minCredits": 58 },
+            { "id": "composition-musical-electives", "parentId": "composition-electives", "name": "Composición · electivas musicales", "shortName": "Musicales", "minCredits": 20 },
+            { "id": "composition-non-musical-electives", "parentId": "composition-electives", "name": "Composición · electivas no musicales", "shortName": "No musicales", "minCredits": 20 },
+            { "id": "composition-projects", "name": "Composición · proyectos especiales", "shortName": "Proyectos", "minCredits": 8 },
+            { "id": "chorus-degree-core", "name": "Dirección de Coro · materias troncales", "shortName": "Troncales", "minCredits": 12 },
+            { "id": "chorus-specific", "name": "Dirección de Coro · materias específicas", "shortName": "Específicas", "minCredits": 124 },
+            { "id": "chorus-electives", "name": "Dirección de Coro · asignaturas electivas", "shortName": "Electivas", "minCredits": 78 },
+            { "id": "chorus-musical-electives", "parentId": "chorus-electives", "name": "Dirección de Coro · electivas musicales", "shortName": "Musicales", "minCredits": 26 },
+            { "id": "chorus-non-musical-electives", "parentId": "chorus-electives", "name": "Dirección de Coro · electivas no musicales", "shortName": "No musicales", "minCredits": 26 },
+            { "id": "chorus-projects", "name": "Dirección de Coro · proyectos especiales", "shortName": "Proyectos", "minCredits": 8 },
+            { "id": "orchestra-degree-core", "name": "Dirección de Orquesta · materias troncales", "shortName": "Troncales", "minCredits": 12 },
+            { "id": "orchestra-specific", "name": "Dirección de Orquesta · materias específicas", "shortName": "Específicas", "minCredits": 116 },
+            { "id": "orchestra-electives", "name": "Dirección de Orquesta · asignaturas electivas", "shortName": "Electivas", "minCredits": 86 },
+            { "id": "orchestra-musical-electives", "parentId": "orchestra-electives", "name": "Dirección de Orquesta · electivas musicales", "shortName": "Musicales", "minCredits": 29 },
+            { "id": "orchestra-non-musical-electives", "parentId": "orchestra-electives", "name": "Dirección de Orquesta · electivas no musicales", "shortName": "No musicales", "minCredits": 29 },
+            { "id": "orchestra-projects", "name": "Dirección de Orquesta · proyectos especiales", "shortName": "Proyectos", "minCredits": 8 },
+            { "id": "musicology-degree-core", "name": "Musicología · materias troncales", "shortName": "Troncales", "minCredits": 12 },
+            { "id": "musicology-specific", "name": "Musicología · materias específicas", "shortName": "Específicas", "minCredits": 116 },
+            { "id": "musicology-electives", "name": "Musicología · asignaturas electivas", "shortName": "Electivas", "minCredits": 86 },
+            { "id": "musicology-musical-electives", "parentId": "musicology-electives", "name": "Musicología · electivas musicales", "shortName": "Musicales", "minCredits": 29 },
+            { "id": "musicology-non-musical-electives", "parentId": "musicology-electives", "name": "Musicología · electivas no musicales", "shortName": "No musicales", "minCredits": 29 },
+            { "id": "musicology-projects", "name": "Musicología · proyectos especiales", "shortName": "Proyectos", "minCredits": 8 }
+          ],
+          "credentials": [
+            { "id": "composicion", "title": "Licenciado en Música opción Composición", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-core", "minCredits": 138 }, { "nodeId": "composition-degree-core", "minCredits": 12 }, { "nodeId": "composition-specific", "minCredits": 144 }, { "nodeId": "composition-electives", "minCredits": 58 }, { "nodeId": "composition-musical-electives", "minCredits": 20 }, { "nodeId": "composition-non-musical-electives", "minCredits": 20 }, { "nodeId": "composition-projects", "minCredits": 8 }], "requiredCourseGroupIds": [] },
+            { "id": "direccion-de-coro", "title": "Licenciado en Música opción Dirección de Coro", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-core", "minCredits": 138 }, { "nodeId": "chorus-degree-core", "minCredits": 12 }, { "nodeId": "chorus-specific", "minCredits": 124 }, { "nodeId": "chorus-electives", "minCredits": 78 }, { "nodeId": "chorus-musical-electives", "minCredits": 26 }, { "nodeId": "chorus-non-musical-electives", "minCredits": 26 }, { "nodeId": "chorus-projects", "minCredits": 8 }], "requiredCourseGroupIds": [] },
+            { "id": "direccion-de-orquesta", "title": "Licenciado en Música opción Dirección de Orquesta", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-core", "minCredits": 138 }, { "nodeId": "orchestra-degree-core", "minCredits": 12 }, { "nodeId": "orchestra-specific", "minCredits": 116 }, { "nodeId": "orchestra-electives", "minCredits": 86 }, { "nodeId": "orchestra-musical-electives", "minCredits": 29 }, { "nodeId": "orchestra-non-musical-electives", "minCredits": 29 }, { "nodeId": "orchestra-projects", "minCredits": 8 }], "requiredCourseGroupIds": [] },
+            { "id": "musicologia", "title": "Licenciado en Música opción Musicología", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-core", "minCredits": 138 }, { "nodeId": "musicology-degree-core", "minCredits": 12 }, { "nodeId": "musicology-specific", "minCredits": 116 }, { "nodeId": "musicology-electives", "minCredits": 86 }, { "nodeId": "musicology-musical-electives", "minCredits": 29 }, { "nodeId": "musicology-non-musical-electives", "minCredits": 29 }, { "nodeId": "musicology-projects", "minCredits": 8 }], "requiredCourseGroupIds": [] }
+          ]
+        }
+      },
+      "offerings": [{ "serviceCode": "FARTES", "locations": ["Montevideo"], "role": "oferta completa del Instituto de Música de Facultad de Artes", "curriculumVariant": false, "pathwayIds": ["composicion", "direccion-de-coro", "direccion-de-orquesta", "musicologia"] }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fartes-licenciatura-en-musica-2005.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 360,
+        "publishedProfileTitles": 4,
+        "compositionMatterEntries": 1498,
+        "compositionOfferedCredits": 7232,
+        "projectedCourseRecordsBeforeAudit": 295,
+        "projectedCourseCreditsBeforeAudit": 1592,
+        "publishedPrerequisiteRecords": 42,
+        "interpretation": "Bedelías conserva las cuatro opciones y sus mínimos diferenciados, pero la proyección anterior mezclaba toda la oferta en una trayectoria y sólo publicaba la primera credencial. La normalización comparte el Tronco Común, separa cada opción y trata el catálogo electivo como oferta flexible."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-four-certified-options",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2005 reúne Composición, Dirección de Coro, Dirección de Orquesta y Musicología en una Licenciatura en Música con opción expresada en el título.",
+        "normalization": [
+          "Corregir la duración administrativa de 60 a 48 meses según los ocho semestres del Plan 2005.",
+          "Publicar un selector de Opción con cuatro recorridos certificados y un único progreso académico.",
+          "Compartir los 138 créditos del Tronco Común y controlar los mínimos específicos de cada opción.",
+          "Conservar los submínimos de electivas musicales y no musicales sin exigir toda la oferta acumulada.",
+          "Publicar Montevideo como única sede confirmada."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf", "authority": "Escuela Universitaria de Música / Facultad de Artes, Udelar", "supports": ["Plan 2005", "dos licenciaturas", "cuatro opciones de Música", "títulos", "ocho semestres", "360 créditos", "bloques y mínimos diferenciados"] },
+        { "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/", "authority": "Instituto de Música / Facultad de Artes, Udelar", "supports": ["vigencia", "estructura", "mínimos", "materias", "opciones", "tutoría"] },
+        { "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/", "authority": "Facultad de Artes, Udelar", "supports": ["oferta vigente", "Licenciatura en Música", "Montevideo"] },
+        { "url": "https://www.artes.udelar.edu.uy/admisiones/", "authority": "Facultad de Artes, Udelar", "supports": ["ingreso 2026", "Plan 2005", "pruebas específicas"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-musica", "authority": "Universidad de la República", "supports": ["título", "360 créditos", "sede", "opciones"] }
+      ],
+      "anomalies": [
+        { "field": "durationMonths", "resolution": "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres y 360 créditos. La UI usa 48 meses y conserva la discrepancia trazable." },
+        { "field": "flatFlexibleOffer", "resolution": "Los 7232 créditos repetidos en 1498 nodos corresponden a cuatro perfiles y catálogos electivos compartidos. No se suman como obligación de una opción." },
+        { "field": "chorusSpecificOffer", "resolution": "Dirección de Coro publica 132 créditos de materias específicas elegibles para un mínimo de 124; los ocho créditos excedentes representan alternativas y no se vuelven obligatorios." }
+      ],
+      "uiNotice": "Plan 2005 de ocho semestres y 360 créditos en Montevideo. Elegís Composición, Dirección de Coro, Dirección de Orquesta o Musicología; cada opción tiene mínimos específicos y se expresa en el título.",
+      "remainingWork": "La oferta electiva cambia por edición; la UI conserva el catálogo de Bedelías como opciones elegibles y no lo congela como una lista obligatoria."
     }
   ],
-  "contentHash": "sha256:91eb28ecb20fa47dbc923e712383e3d70f969a1e4e8206f6acb13a77992bd9a2"
+  "contentHash": "sha256:851ac79720debef70f8d2463b279579f6e618b7f194eab3e8a0eba15edd972a4"
 }

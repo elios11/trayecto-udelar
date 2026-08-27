@@ -254,8 +254,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fartes-licenciatura-en-musica-2005": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-musica-2005.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["composicion","direccion-de-coro","direccion-de-orquesta","musicologia"],
+    pathwayLabel: "Opción",
     minCredits: 360,
   },
   "bedelias-fartes-licenciatura-en-musicologia-1987": {

@@ -1431,3 +1431,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:91eb28ecb20fa47dbc923e712383e3d70f969a1e4e8206f6acb13a77992bd9a2`. Cola general: 56 identidades pendientes; hash `sha256:5cf2aaf233770d9cfab260a29645410e0426282b5f10325d577ae52574f2fc72`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:0eec102167cff451797085c6a717782cb1c1f0a322089ea9bcb961c147b68def`. Cola funcional vacía; hash `sha256:18b0d3acb502de42ce48936cf3f851e5013696c9114d2acc619bdd05022cb2c1`.
 - Siguiente paso: auditar la Licenciatura en Música Plan 2005, primera identidad reproducible restante.
+
+### Licenciatura en Música Plan 2005 — cuatro opciones operativas 2026-08-27
+
+- El Plan 2005 y la oferta vigente confirman una única Licenciatura en Música en Montevideo, de cuatro años, ocho semestres y 360 créditos, con cuatro opciones certificadas: Composición, Dirección de Coro, Dirección de Orquesta y Musicología.
+- Las cuatro opciones comparten 138 créditos de Tronco Común, 12 de materias troncales y 8 de proyectos especiales. Composición exige 144 específicos y 58 electivos; Dirección de Coro 124 y 78; Dirección de Orquesta y Musicología 116 y 86. Los mínimos raíz suman exactamente 360 en cada opción.
+- Dentro de las electivas se conservan los submínimos de formación musical y no musical: 20+20 en Composición, 26+26 en Dirección de Coro y 29+29 en Dirección de Orquesta y Musicología. El saldo hasta el mínimo electivo total permanece flexible.
+- La proyección anterior mezclaba los cuatro catálogos y sólo publicaba la primera credencial. La normalización genera cuatro trayectorias, comparte el tronco y deduplica 656 cursos; sus 3587 créditos representan oferta acumulada y alternativas, no obligaciones simultáneas.
+- Bedelías informa 60 meses, pero el plan aprobado establece ocho semestres; la UI normaliza la duración a 48 meses. Dirección de Coro ofrece 132 créditos específicos para un mínimo de 124, por lo que no convierte los ocho excedentes en obligaciones.
+- Registro de auditoría: hash `sha256:851ac79720debef70f8d2463b279579f6e618b7f194eab3e8a0eba15edd972a4`. Cola general: 55 identidades pendientes; hash `sha256:8c62cb525ff453d00b2fd161baec65ebdd59c4b6077ba9f631bd1c2f510960b1`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:e4644d66a23b29e70459a4c5836d4261e9de3c46487afa2baf5ca8785f2b59f4`. Cola funcional vacía; hash `sha256:77227e3020345bc3f6de543a6ca19b199b0cc98c1152b92e2858810eb011169f`.
+- Siguiente paso: auditar Contador Público Plan 2024, primera identidad reproducible restante.

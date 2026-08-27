@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T05:17:30.516Z",
+  "generatedAt": "2026-08-27T05:26:19.447Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:91eb28ecb20fa47dbc923e712383e3d70f969a1e4e8206f6acb13a77992bd9a2"
+    "officialAuditRegistryHash": "sha256:851ac79720debef70f8d2463b279579f6e618b7f194eab3e8a0eba15edd972a4"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 121,
-    "pendingCanonicalIdentities": 56,
+    "evidenceClosedCanonicalIdentities": 122,
+    "pendingCanonicalIdentities": 55,
     "byPriority": {
-      "official-sources-pending": 56
+      "official-sources-pending": 55
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -747,38 +747,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-26",
       "conclusion": "one-degree-seventeen-certified-instrument-options"
+    },
+    {
+      "identity": "licenciatura en musica:2005",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-27",
+      "conclusion": "one-degree-four-certified-options"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en musica:2005",
-      "career": {
-        "name": "LICENCIATURA EN MÚSICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2005",
-        "name": "LICENCIATURA EN MUSICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FARTES",
-        "serviceName": "FACULTAD DE ARTES",
-        "planKey": "FARTES:licenciatura en musica:2005",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FARTES",
-          "serviceName": "FACULTAD DE ARTES",
-          "planKey": "FARTES:licenciatura en musica:2005",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "contador publico:2024",
       "career": {
@@ -2586,5 +2563,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:5cf2aaf233770d9cfab260a29645410e0426282b5f10325d577ae52574f2fc72"
+  "contentHash": "sha256:8c62cb525ff453d00b2fd161baec65ebdd59c4b6077ba9f631bd1c2f510960b1"
 }
