@@ -393,6 +393,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       : node.label);
     if (parsed.code && excludedSourceCourseIds.has(parsed.code)) continue;
     const courseOverride = courseOverrides[parsed.code] ?? courseOverrides[normalize(parsed.name)] ?? {};
+    const sourceCourseId = courseOverride.sourceId ?? parsed.code;
     const profileIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "perfiles");
     const profileId = profileIndex >= 0 ? slug(node.path[profileIndex + 1]) : null;
     const groupIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "grupos");
@@ -410,20 +411,20 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     const credits = Number.isFinite(Number(courseOverride.credits))
       ? Number(courseOverride.credits)
       : curriculum.usePublishedCredits === true ? publishedCredits : 0;
-    const titleCasedName = titleCase(parsed.name || `Unidad ${index + 1}`);
+    const titleCasedName = titleCase((courseOverride.name ?? parsed.name) || `Unidad ${index + 1}`);
     const displayName = useProfileComposition
       ? titleCasedName.replace(/\b(?:Iii|Ii|Iv|Viii|Vii|Vi|Ix|Xi|Xii)\b/g, (roman) => roman.toLocaleUpperCase("es-UY"))
       : titleCasedName;
     const sharedKey = curriculum.deduplicateSharedProfileCourses === true
-      ? `${parsed.code ? `code:${normalize(parsed.code)}` : `name:${normalize(parsed.name)}`}:credits:${credits}`
+      ? `${sourceCourseId ? `code:${normalize(sourceCourseId)}` : `name:${normalize(courseOverride.name ?? parsed.name)}`}:credits:${credits}`
       : null;
     let course = sharedKey ? sharedProfileCourses.get(sharedKey) : null;
     if (!course) {
-      const id = courseId(serviceCode, { code: parsed.code, name: parsed.name }, index, usedIds);
+      const id = courseId(serviceCode, { code: sourceCourseId, name: courseOverride.name ?? parsed.name }, index, usedIds);
       const eligibleRequirementIds = [...new Set([nodeId, ...additionalRequirementIdsForAllCourses])];
       course = {
         id,
-        ...(parsed.code ? { bedeliasCode: parsed.code } : {}),
+        ...(sourceCourseId ? { bedeliasCode: sourceCourseId } : {}),
         name: displayName,
         credits,
         eligibleRequirementIds,
@@ -456,7 +457,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       addToPeriod(commonPeriodsByLabel, period, id);
     }
     courseIdByNode.set(node, id);
-    if (parsed.code && !courseIdBySourceId.has(parsed.code)) courseIdBySourceId.set(parsed.code, id);
+    if (sourceCourseId && !courseIdBySourceId.has(sourceCourseId)) courseIdBySourceId.set(sourceCourseId, id);
   }
 
   for (const [index, rawCourse] of (curriculum.additionalCourses ?? []).entries()) {

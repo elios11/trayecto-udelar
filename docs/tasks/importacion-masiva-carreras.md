@@ -1509,3 +1509,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:270fde1dbd7368d3b8cda78184872b33bb7c03188e47ef9b525a21e784d4ee10`. Cola general: 49 identidades pendientes; hash `sha256:6a9f9f24fc2c7796ce1f708998a93a7b8cd1389c763ea23be7a9dd42bb9abf42`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable y 35 con sedes oficiales; hash `sha256:20236d388a96f27e16672b2e9bbcc30824fecbc1841c350a71c1613e54852e0f`. Cola funcional vacía; hash `sha256:a156957faed3aba057ac53992a6e69791b81901efbb7a45784992dff961524ee`.
 - Siguiente paso: auditar la Licenciatura en Astronomía Plan 2016, primera identidad reproducible restante.
+
+### Licenciatura en Astronomía Plan 2016 — recorrido flexible operativo 2026-08-27
+
+- Facultad de Ciencias confirma un único título de Licenciado en Astronomía, ocho semestres, 360 créditos y sede Montevideo. La elección personal de optativas y electivas puede formar un perfil académico o profesional, pero no constituye una mención certificada ni otra carrera.
+- La UI controla siete mínimos raíz que suman exactamente 360: Matemática 70, Física 100, Astronomía 90, Métodos Computacionales 20, Ciencias Sociales y Humanas 8, Experiencias de Formación 22 y un bloque combinado Optativas-Electivas de 50.
+- Dentro del bloque flexible se exigen al menos 30 créditos optativos y 10 electivos. El saldo de diez puede distribuirse entre ambos respetando el rango normativo de 10-20 electivos y 30-40 optativos; la UI documenta que todavía no automatiza el máximo electivo.
+- Las Experiencias de Formación conservan sus submínimos de 12 créditos de Iniciación a la Investigación y 10 de Práctica de Formación. Se reparan localmente las identidades administrativas de FI182 y BG802 sin alterar los demás planes; FI189, BG802 y BG928 permanecen como experiencias de práctica acreditables publicadas.
+- Las 186 apariciones de composición forman un catálogo flexible por áreas y no una obligación de aprobar 1.755 créditos. La proyección conserva 175 reglas publicadas por Bedelías y exige validación final de la Comisión de Carrera para el currículo personal.
+- Registro de auditoría: hash `sha256:369e52b4f32aeae1f9fd5c7253913ef1afc1859ab485e3da0eeab7e61ca79d89`. Cola general: 48 identidades pendientes; hash `sha256:3550940e45874f59eaf00a8dcd832d18f44169ccfbb356dcca66b6be7b571efd`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:5de947dd55c7876f585873be7fe0d8fec929db524cc51961e1468ef07f609003`. Cola funcional vacía; hash `sha256:0ca7478e249c2379733344385e034be44ac334ff7130e3cfe09e77dbd25c72c4`.
+- Siguiente paso: auditar la Licenciatura en Bioquímica Plan 2017, primera identidad reproducible restante.

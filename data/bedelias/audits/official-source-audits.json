@@ -23228,7 +23228,137 @@
       ],
       "uiNotice": "Carrera interservicios de cuatro años y 360 créditos, disponible en Montevideo, Salto, Paysandú, Rivera y Tacuarembó. Construí tu orientación con tutoría, cumplí los cuatro mínimos por área y validá con la Comisión Curricular la coherencia del plan y la pasantía obligatoria.",
       "remainingWork": "La Comisión Curricular determina la pertinencia y los créditos concretos de cursos, reválidas, orientación específica y pasantía para cada estudiante; la UI no puede sustituir esa aprobación individual."
+    },
+    {
+      "identity": "licenciatura en astronomia:2016",
+      "career": "LICENCIATURA EN ASTRONOMÍA",
+      "planYear": "2016",
+      "reviewedAt": "2026-08-27",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, áreas temáticas, optativas, electivas, experiencias de formación y tutoría",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios de la Licenciatura en Astronomía aprobado en 2016",
+          "Reglamento del Plan de Estudios 2016 publicado por la Dirección General Jurídica de Udelar"
+        ],
+        "planYear": "2016",
+        "title": "Licenciado en Astronomía",
+        "careerName": "Licenciatura en Astronomía",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El título exige 360 créditos: 70 en Matemática, 100 en Física, 90 en Astronomía, 20 en Métodos Computacionales, 8 en Ciencias Sociales y Humanas, 22 en Experiencias de Formación y 50 combinados entre optativas y electivas. Dentro de ese bloque flexible se requieren al menos 30 créditos optativos y entre 10 y 20 electivos; las Experiencias exigen 12 de Iniciación a la Investigación y 10 de Práctica de Formación.",
+        "trajectories": [
+          {
+            "id": "formacion-personalizada",
+            "label": "Formación personalizada",
+            "description": "Recorrido flexible construido con un tutor mediante optativas y electivas. Permite profundizar intereses o mantener una formación general, pero no constituye una mención ni un perfil certificado del título."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24439/1/PLAST_2016.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Catálogo flexible por áreas; el orden no implica una secuencia obligatoria y la selección optativa debe ser aprobada por la Comisión de Carrera.",
+          "periodOrder": [
+            "MATEMÁTICA",
+            "FÍSICA",
+            "ASTRONOMÍA",
+            "MÉTODOS COMPUTACIONALES",
+            "CIENCIAS SOCIALES Y HUMANAS",
+            "EXPERIENCIAS DE FORMACIÓN",
+            "ELECTIVAS",
+            "OPTATIVAS",
+            "Validación de egreso"
+          ],
+          "pathRequirementMap": {
+            "100": "mathematics",
+            "101": "physics",
+            "102": "astronomy",
+            "103": "computational-methods",
+            "104": "social-human-sciences",
+            "105": "flexible",
+            "106": "training-experiences",
+            "110": "optional",
+            "111": "elective"
+          },
+          "courseOverrides": {
+            "FI182-INICIACIÓN A LA INVESTIGACIÓN": { "sourceId": "FI182", "name": "Iniciación a la Investigación", "requirementId": "research-initiation" },
+            "BG802-EFI": { "sourceId": "BG802", "name": "EFI - Clubes de Ciencias como estrategia de enseñanza", "requirementId": "training-practice" },
+            "BG928": { "requirementId": "training-practice" },
+            "FI189": { "requirementId": "training-practice" }
+          },
+          "creditRequirements": [
+            { "id": "mathematics", "name": "Matemática", "shortName": "Matemática", "minCredits": 70 },
+            { "id": "physics", "name": "Física", "shortName": "Física", "minCredits": 100 },
+            { "id": "astronomy", "name": "Astronomía", "shortName": "Astronomía", "minCredits": 90 },
+            { "id": "computational-methods", "name": "Métodos Computacionales", "shortName": "Computacionales", "minCredits": 20 },
+            { "id": "social-human-sciences", "name": "Ciencias Sociales y Humanas", "shortName": "Sociales y humanas", "minCredits": 8 },
+            { "id": "training-experiences", "name": "Experiencias de Formación", "shortName": "Experiencias", "minCredits": 22 },
+            { "id": "research-initiation", "parentId": "training-experiences", "name": "Iniciación a la Investigación", "shortName": "Investigación", "minCredits": 12 },
+            { "id": "training-practice", "parentId": "training-experiences", "name": "Práctica de Formación", "shortName": "Práctica", "minCredits": 10 },
+            { "id": "flexible", "name": "Optativas y electivas", "shortName": "Flexibles", "minCredits": 50 },
+            { "id": "optional", "parentId": "flexible", "name": "Optativas", "shortName": "Optativas", "minCredits": 30 },
+            { "id": "elective", "parentId": "flexible", "name": "Electivas", "shortName": "Electivas", "minCredits": 10 }
+          ],
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del currículo individual y del plan de asignaturas optativas"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCIEN",
+          "locations": ["Montevideo"],
+          "role": "oferta completa de Facultad de Ciencias",
+          "curriculumVariant": false,
+          "trajectoryIds": ["formacion-personalizada"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-en-astronomia-2016.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 186,
+        "distinctSnapshotCourseRecords": 180,
+        "publishedPrerequisiteRecords": 244,
+        "interpretation": "Bedelías reproduce los mínimos de seis áreas, las Experiencias de Formación y los subgrupos de optativas y electivas, pero fija el grupo padre flexible en 40 créditos. El Plan exige que ese tramo complete 50 para alcanzar los 360, con 10-20 electivos y 30-40 optativos."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-one-personalized-flexible-pathway",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2016 establece un único título en Montevideo y permite que cada estudiante diseñe su perfil mediante optativas y electivas con tutoría. Esa personalización no crea menciones, títulos ni trayectorias certificadas separadas.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Astronomía Plan 2016, de ocho semestres y 360 créditos en Montevideo.",
+          "Controlar seis áreas disciplinares y de experiencias que suman 310 créditos, más un bloque combinado de 50 optativos/electivos.",
+          "Exigir dentro del bloque flexible al menos 30 créditos optativos y 10 electivos; el saldo de 10 puede distribuirse entre ambos sin superar los 20 electivos normativos.",
+          "Controlar 12 créditos de Iniciación a la Investigación y 10 de Práctica de Formación; Bedelías conserva FI182 para iniciación y tres experiencias acreditables de 10 créditos para práctica.",
+          "Mantener las 186 unidades de composición como catálogo por áreas, sin convertirlas en obligaciones simultáneas ni inventar perfiles cerrados.",
+          "Conservar sólo Montevideo como sede completa y requerir validación de la Comisión de Carrera para el currículo individual."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24439/1/PLAST_2016.pdf", "authority": "Plan de Estudios y Reglamento 2016, Facultad de Ciencias, Udelar", "supports": ["título", "ocho semestres", "360 créditos", "mínimos por área", "optativas y electivas", "experiencias obligatorias", "tutoría", "aprobación del currículo"] },
+        { "url": "https://astronomia.fcien.edu.uy/carrera/licenciatura", "authority": "Departamento de Astronomía, Facultad de Ciencias", "supports": ["vigencia", "cuatro años", "360 créditos", "estructura por áreas", "Montevideo"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24439", "authority": "Repositorio Colibri, Udelar", "supports": ["Plan 2016", "código de carrera 300", "responsabilidad de Facultad de Ciencias"] },
+        { "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf", "authority": "Dirección General de Planeamiento, Udelar", "supports": ["oferta vigente", "Plan 2016", "cuatro años", "360 créditos", "Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "flexibleMinimum", "resolution": "Bedelías publica 40 créditos mínimos en el grupo padre Electivas-Optativas, igual a la suma de los submínimos 10+30. El Plan exige 360 totales y establece rangos 10-20/30-40; por ello el bloque combinado se normaliza a 50 manteniendo los dos submínimos." },
+        { "field": "personalProfile", "resolution": "El Plan usa la palabra perfil para el diseño individual mediante optativas y electivas. No denomina perfiles certificados ni cambia el título; la UI lo presenta como formación personalizada." },
+        { "field": "prerequisites", "resolution": "El Reglamento aclara que no hay cursos específicos obligatorios como previaturas para cursar; existen umbrales globales de créditos y recomendaciones. La UI conserva las reglas publicadas por Bedelías sin reinterpretar recomendaciones como bloqueos adicionales." },
+        { "field": "catalogSize", "resolution": "Los 1.755 créditos de los 180 registros y las 186 apariciones de composición son oferta acumulada y flexible. El requisito real es cumplir los mínimos y 360 créditos, no aprobar el catálogo completo." }
+      ],
+      "uiNotice": "Plan 2016 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí los mínimos por área, Iniciación a la Investigación, Práctica de Formación y 50 créditos combinados entre optativas y electivas; la Comisión de Carrera debe aprobar tu recorrido individual.",
+      "remainingWork": "La Comisión de Carrera y el tutor determinan la pertinencia de optativas, electivas, reválidas y eventuales excepciones; la UI no impone el máximo de 20 créditos electivos porque actualmente sólo controla mínimos."
     }
   ],
-  "contentHash": "sha256:270fde1dbd7368d3b8cda78184872b33bb7c03188e47ef9b525a21e784d4ee10"
+  "contentHash": "sha256:369e52b4f32aeae1f9fd5c7253913ef1afc1859ab485e3da0eeab7e61ca79d89"
 }
