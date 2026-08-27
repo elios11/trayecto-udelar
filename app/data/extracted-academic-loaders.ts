@@ -350,8 +350,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcea-tecnico-en-administracion-2014": {
     load: () => import("./bedelias-generated/bedelias-fcea-tecnico-en-administracion-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["grilla-vigente"],
+    pathwayLabel: "Recorrido",
     minCredits: 225,
   },
   "bedelias-fcea-tecnologo-en-gestion-universitaria-2018": {

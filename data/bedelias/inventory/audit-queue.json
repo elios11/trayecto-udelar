@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T22:13:06.296Z",
+  "generatedAt": "2026-08-27T22:23:28.392Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:3d1032b069b84a182d5dd576b1d47bd3bb3952f8311614f6bb98a53ba2eaf214"
+    "officialAuditRegistryHash": "sha256:57e89b31f41eb9957308fa8cc7a9563d1119b3b284d4849876cd9efb7b6b73cd"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 126,
-    "pendingCanonicalIdentities": 51,
+    "evidenceClosedCanonicalIdentities": 127,
+    "pendingCanonicalIdentities": 50,
     "byPriority": {
-      "official-sources-pending": 51
+      "official-sources-pending": 50
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -777,38 +777,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-27",
       "conclusion": "one-degree-four-specialization-profiles"
+    },
+    {
+      "identity": "tecnico en administracion:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-27",
+      "conclusion": "one-semi-open-technical-degree-one-suggested-grid"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnico en administracion:2014",
-      "career": {
-        "name": "TÉCNICO EN ADMINISTRACIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "TÉCNICO EN ADMINISTRACIÓN",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCEA",
-        "serviceName": "FACULTAD DE CIENCIAS ECONÓMICAS",
-        "planKey": "FCEA:tecnico en administracion:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCEA",
-          "serviceName": "FACULTAD DE CIENCIAS ECONÓMICAS",
-          "planKey": "FCEA:tecnico en administracion:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura biologia humana:2004",
       "career": {
@@ -2471,5 +2448,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:cad5ec50f4542d82a8eaa57ea187e0da6aaa909712447499241fcee636d2430a"
+  "contentHash": "sha256:0153d6f0fff665be7a91f1f062acc3be17362c137ce35846d042d2b3d2fc9762"
 }

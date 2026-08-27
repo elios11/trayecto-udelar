@@ -1486,3 +1486,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:3d1032b069b84a182d5dd576b1d47bd3bb3952f8311614f6bb98a53ba2eaf214`. Cola general: 51 identidades pendientes; hash `sha256:cad5ec50f4542d82a8eaa57ea187e0da6aaa909712447499241fcee636d2430a`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:947db1f137b713981ae4fb39f76bc62ed48cf80d125cc659d58f35f2eda14b87`. Cola funcional vacía; hash `sha256:8489690f53b8235832b1dcbf260116245949160e8f8347054bc04996e7cd6cf5`.
 - Siguiente paso: auditar el Técnico en Administración Plan 2014, primera identidad reproducible restante.
+
+### Técnico en Administración Plan 2014 — currículo semiabierto operativo 2026-08-27
+
+- FCEA mantiene vigente un único título de Técnico en Administración de 225 créditos y cinco semestres. La UI normaliza la duración a 30 meses y ofrece sólo Montevideo; EVA es apoyo virtual y no una sede seleccionable.
+- Los mínimos vigentes son 60 créditos de Administración, 50 de Contabilidad e Impuestos, 20 de Jurídica, 10 de Economía, 30 de Métodos Cuantitativos y 15 de Actividades Integradoras. Esos 185 créditos más 40 de libre distribución completan 225.
+- La tabla al pie de la ficha y el grupo de Bedelías todavía muestran 30 créditos libres, lo que suma 215. Se usa el texto vigente de FCEA, que establece 40 y es compatible con el total oficial; también se documenta el metadato administrativo obsoleto de 60 meses.
+- La grilla de julio de 2026 queda como recorrido sugerido de cinco semestres. Sus quince unidades obligatorias inequívocas se controlan nominalmente; E10 o E11 satisfacen la obligación de Economía y MC10 satisface Cálculo completo, mientras 114A más 128A permiten completarlo en dos mitades.
+- La composición aporta 198 unidades normalizadas y 2.364 créditos de oferta acumulada. Las 39 unidades de la grilla se destacan por semestre y las otras 159 permanecen en el catálogo flexible; no se confunde esta carrera montevideana con el Tecnólogo en Administración y Contabilidad del interior.
+- Registro de auditoría: hash `sha256:57e89b31f41eb9957308fa8cc7a9563d1119b3b284d4849876cd9efb7b6b73cd`. Cola general: 50 identidades pendientes; hash `sha256:0153d6f0fff665be7a91f1f062acc3be17362c137ce35846d042d2b3d2fc9762`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:950a6e0b9d24e269b2b85f80ef10ba2990efcefda481c2272b42259a5fe39835`. Cola funcional vacía; hash `sha256:c278baf660514e582ada02858ca2302daf4b3e5b66f8db800e40c8ae9400471d`.
+- Siguiente paso: auditar la Licenciatura en Biología Humana Plan 2004, primera identidad reproducible restante.

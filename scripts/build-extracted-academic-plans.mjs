@@ -180,9 +180,12 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           .filter((id) => id && !excludedIds.has(id) && (!includedIds || includedIds.has(id))),
       })).filter((period) => period.courseIds.length > 0);
       const catalogCourseIds = includedIds
-        ? [...new Set((trajectory.periods ?? periods).flatMap((period) => period.courseIds ?? []))]
-          .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
-          .filter((id) => id && !excludedIds.has(id) && !includedIds.has(id))
+        ? audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
+          ? officialCurriculum.courses.map((course) => course.id)
+            .filter((id) => !excludedIds.has(id) && !includedIds.has(id))
+          : [...new Set((trajectory.periods ?? periods).flatMap((period) => period.courseIds ?? []))]
+            .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
+            .filter((id) => id && !excludedIds.has(id) && !includedIds.has(id))
         : [];
       return [trajectory.id, {
         label: trajectory.label,

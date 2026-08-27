@@ -22944,7 +22944,181 @@
       ],
       "uiNotice": "Plan 2014 compartido, de cuatro años y 360 créditos en Montevideo. Elegí un perfil Actuarial-Demográfico, Bioestadístico, Economía o Tecnológico; todos conducen al mismo título y exigen 290 créditos mínimos por áreas más 70 de libre distribución.",
       "remainingWork": "La Comisión de Carrera y sus docentes orientadores validan la coherencia de los 60 créditos del área asociada al perfil, las electivas externas, las reválidas y el trayecto individual."
+    },
+    {
+      "identity": "tecnico en administracion:2014",
+      "career": "TÉCNICO EN ADMINISTRACIÓN",
+      "planYear": "2014",
+      "reviewedAt": "2026-08-27",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, mínimos por área, obligatoriedad y grilla vigente",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios aprobado por Resolución 2 de la Asamblea del Claustro de FCEA de 09/04/2013, con correcciones de CSE de 23/10/2013",
+          "Reglamento del Plan 2014 aprobado por Resolución 56 del Consejo de FCEA de 12/12/2016"
+        ],
+        "planYear": "2014",
+        "title": "Técnico en Administración",
+        "careerName": "Tecnicatura en Administración",
+        "facultyCode": "FCEA",
+        "facultyName": "Facultad de Ciencias Económicas y de Administración",
+        "durationMonths": 30,
+        "semesters": 5,
+        "minimumCredits": 225,
+        "current": true,
+        "pathwayLabel": "Recorrido",
+        "degreeRule": "El título exige 225 créditos, las unidades obligatorias de la grilla vigente y mínimos de 60 créditos en Administración, 50 en Contabilidad e Impuestos, 20 en Jurídica, 10 en Economía, 30 en Métodos Cuantitativos, 15 en Actividades Integradoras y 40 de libre distribución entre áreas.",
+        "trajectories": [
+          {
+            "id": "grilla-vigente",
+            "label": "Grilla vigente",
+            "description": "Orden sugerido por FCEA para las unidades obligatorias y opcionales vigentes; el currículo es semiabierto y admite otros recorridos.",
+            "courseIds": [
+              "A10", "C10", "E10", "MC10", "114A", "128A",
+              "A20", "C20", "J20TP",
+              "A30", "C30", "J30", "MC40", "A61",
+              "A40", "A42", "C40", "MC30", "C41", "A44", "I87", "I41", "I97", "I114D", "J60OP", "A67", "A83N", "A72",
+              "A70", "A86", "I112N", "A85", "I111N", "I52", "A50", "A52", "A77", "I56A", "C31"
+            ],
+            "periods": [
+              { "label": "Semestre 1", "courseIds": ["A10", "C10", "E10", "MC10", "114A", "128A"] },
+              { "label": "Semestre 2", "courseIds": ["A20", "C20", "J20TP"] },
+              { "label": "Semestre 3", "courseIds": ["A30", "C30", "J30", "MC40", "A61"] },
+              { "label": "Semestre 4", "courseIds": ["A40", "A42", "C40", "MC30", "C41", "A44", "I87", "I41", "I97", "I114D", "J60OP", "A67", "A83N", "A72"] },
+              { "label": "Semestre 5", "courseIds": ["A70", "A86", "I112N", "A85", "I111N", "I52", "A50", "A52", "A77", "I56A", "C31"] }
+            ]
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://fcea.udelar.edu.uy/depto-adm-ensenanza/tecnicatura-admin-ciencias-adm.html",
+          "pathwayLabel": "Recorrido",
+          "additionalRequirementIdsForAllCourses": ["free-distribution"],
+          "pathRequirementMap": {
+            "3057": "administration", "5011": "administration", "4807": "administration",
+            "3311": "accounting", "5186": "accounting", "5183": "accounting",
+            "3381": "legal", "4004": "legal", "5364": "legal",
+            "2408": "economics", "4575": "economics", "4986": "economics",
+            "2815": "quantitative", "5115": "quantitative", "4176": "quantitative",
+            "3009": "integrative", "4803": "integrative", "4398": "integrative",
+            "3367": "free-distribution"
+          },
+          "periodLabelMap": {
+            "5011": "Administración · básicas", "4807": "Administración · opcionales",
+            "5186": "Contabilidad e Impuestos · básicas", "5183": "Contabilidad e Impuestos · opcionales",
+            "4004": "Jurídica · básicas", "5364": "Jurídica · opcionales",
+            "4575": "Economía · básicas", "4986": "Economía · opcionales",
+            "5115": "Métodos Cuantitativos · básicas", "4176": "Métodos Cuantitativos · opcionales",
+            "4803": "Actividades Integradoras · básicas", "4398": "Actividades Integradoras · opcionales",
+            "3367": "Libre distribución"
+          },
+          "creditRequirements": [
+            { "id": "administration", "name": "Administración", "shortName": "Administración", "minCredits": 60 },
+            { "id": "accounting", "name": "Contabilidad e Impuestos", "shortName": "Contabilidad", "minCredits": 50 },
+            { "id": "legal", "name": "Jurídica", "shortName": "Jurídica", "minCredits": 20 },
+            { "id": "economics", "name": "Economía", "shortName": "Economía", "minCredits": 10 },
+            { "id": "quantitative", "name": "Métodos Cuantitativos", "shortName": "Métodos", "minCredits": 30 },
+            { "id": "integrative", "name": "Actividades Integradoras", "shortName": "Integradoras", "minCredits": 15 },
+            { "id": "free-distribution", "name": "Libre distribución entre áreas", "shortName": "Libre distribución", "minCredits": 40 }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "ta-core-required",
+              "label": "Quince unidades obligatorias de la grilla vigente",
+              "minCompleted": 15,
+              "sourceCourseIds": ["A10", "C10", "A20", "C20", "J20TP", "A30", "C30", "J30", "MC40", "A40", "A42", "C40", "MC30", "C41", "A70"]
+            },
+            {
+              "id": "ta-economics-required",
+              "label": "Introducción a la Microeconomía o su equivalencia de egreso",
+              "minCompleted": 1,
+              "sourceCourseIds": ["E10", "E11"]
+            },
+            {
+              "id": "ta-calculus-first-half",
+              "label": "Cálculo I o Cálculo I/A",
+              "minCompleted": 1,
+              "sourceCourseIds": ["MC10", "114A"]
+            },
+            {
+              "id": "ta-calculus-second-half",
+              "label": "Cálculo I o Cálculo I/B",
+              "minCompleted": 1,
+              "sourceCourseIds": ["MC10", "128A"]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "tecnico-administracion",
+              "title": "Técnico en Administración",
+              "minTotalCredits": 225,
+              "nodeRequirements": [
+                { "nodeId": "administration", "minCredits": 60 },
+                { "nodeId": "accounting", "minCredits": 50 },
+                { "nodeId": "legal", "minCredits": 20 },
+                { "nodeId": "economics", "minCredits": 10 },
+                { "nodeId": "quantitative", "minCredits": 30 },
+                { "nodeId": "integrative", "minCredits": 15 },
+                { "nodeId": "free-distribution", "minCredits": 40 }
+              ],
+              "requiredCourseGroupIds": ["ta-core-required", "ta-economics-required", "ta-calculus-first-half", "ta-calculus-second-half"]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCEA",
+          "locations": ["Montevideo"],
+          "role": "oferta completa de FCEA con apoyo en EVA",
+          "curriculumVariant": false,
+          "pathwayIds": ["grilla-vigente"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcea-tecnico-en-administracion-2014.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 60,
+        "publishedMinimumCredits": 225,
+        "compositionMatterEntries": 198,
+        "distinctSnapshotCourseRecords": 181,
+        "publishedPrerequisiteRecords": 212,
+        "interpretation": "Bedelías conserva la oferta acumulada y los mínimos de seis áreas, pero su grupo de distribución flexible todavía dice 30 créditos y la duración administrativa dice 60 meses. La ficha y el Plan oficiales fijan cinco semestres; los mínimos vigentes por área suman 185 y requieren 40 créditos libres para completar 225."
+      },
+      "conclusion": {
+        "canonicalModel": "one-semi-open-technical-degree-one-suggested-grid",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "FCEA publica un único título de Técnico en Administración, un currículo semiabierto de cinco semestres y una grilla indicativa. No existen menciones ni trayectorias territoriales para este plan; el Tecnólogo en Administración y Contabilidad es otra carrera.",
+        "normalization": [
+          "Normalizar la duración a cinco semestres y 30 meses, sin trasladar los 60 meses administrativos de Bedelías y del catálogo central.",
+          "Controlar seis mínimos por área que suman 185 créditos y 40 de libre distribución para completar los 225 vigentes.",
+          "Exigir las quince unidades obligatorias inequívocas, una de las dos equivalencias de Economía y Cálculo I completo o sus dos mitades.",
+          "Presentar la grilla vigente por semestre como recorrido sugerido y conservar las demás unidades de la composición como catálogo flexible.",
+          "Mantener Montevideo como única sede; EVA es apoyo virtual y no otra localización."
+        ]
+      },
+      "sources": [
+        { "url": "https://fcea.udelar.edu.uy/depto-adm-ensenanza/tecnicatura-admin-ciencias-adm.html", "authority": "Facultad de Ciencias Económicas y de Administración, Udelar", "supports": ["vigencia", "título", "225 créditos", "cinco semestres", "Montevideo y EVA", "mínimos por área", "40 créditos libres", "grilla vigente", "obligatoriedad"] },
+        { "url": "https://www.fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Plan_de_Estudios_de_T%C3%A9cnico_en_Administraci%C3%B3n_2014.pdf", "authority": "Plan de Estudios de Técnico en Administración, FCEA", "supports": ["título único", "currículo semiabierto", "cinco semestres", "estructura por áreas", "grilla sugerida", "articulación con carreras de grado"] },
+        { "url": "https://www.fcea.udelar.edu.uy/images/micrositios/bedelia/planes/T%C3%A9cnico_en_Adm_Plan_2014/Reglamento_TecnicoAdm_2014_1.pdf", "authority": "Reglamento del Plan 2014, FCEA", "supports": ["reglamentación vigente", "egreso", "reconocimiento de créditos"] },
+        { "url": "https://www.fcea.udelar.edu.uy/ingreso-a-fcea.html", "authority": "Ingreso a FCEA, Udelar", "supports": ["ingreso vigente al Plan 2014"] },
+        { "url": "https://udelar.edu.uy/carrera/tecnico-en-administracion", "authority": "Catálogo de carreras de Udelar", "supports": ["título", "225 créditos", "sede FCEA", "metadato administrativo de 60 meses"] }
+      ],
+      "anomalies": [
+        { "field": "duration", "resolution": "Bedelías y el catálogo central informan 60 meses, mientras el Plan aprobado y la ficha vigente de FCEA establecen cinco semestres. La UI usa 30 meses y documenta la discrepancia." },
+        { "field": "freeDistributionMinimum", "resolution": "La tabla al pie de la ficha y el grupo de Bedelías todavía dicen 30 créditos libres, lo que con los mínimos vigentes por área suma 215. El texto vigente de FCEA dice 40 y es el único valor que completa los 225 créditos; se usa 40." },
+        { "field": "economicsEquivalence", "resolution": "La grilla vigente exige E10 y aclara que E11 es equivalente para egreso. La UI acepta una de las dos, sin exigirlas en paralelo." },
+        { "field": "calculusAlternative", "resolution": "MC10 puede sustituirse por 114A más 128A. Dos grupos superpuestos permiten que MC10 satisfaga ambas mitades o que se requieran las dos unidades parciales." },
+        { "field": "regionalNameCollision", "resolution": "El Tecnólogo en Administración y Contabilidad tiene 225 créditos y sedes interiores, pero es otra carrera con menciones propias; no se fusiona con Técnico en Administración Plan 2014." }
+      ],
+      "uiNotice": "Plan 2014 semiabierto de cinco semestres y 225 créditos en Montevideo. La grilla vigente es un orden sugerido: debés aprobar sus unidades obligatorias, cumplir los seis mínimos por área y completar 40 créditos de libre distribución.",
+      "remainingWork": "La Comisión de Carrera y Bedelía validan optativas, electivas, prácticas curriculares, intercambios, reválidas y reconocimientos individuales; A85 y A86 permanecen identificadas como unidades no ofrecidas en 2026."
     }
   ],
-  "contentHash": "sha256:3d1032b069b84a182d5dd576b1d47bd3bb3952f8311614f6bb98a53ba2eaf214"
+  "contentHash": "sha256:57e89b31f41eb9957308fa8cc7a9563d1119b3b284d4849876cd9efb7b6b73cd"
 }
