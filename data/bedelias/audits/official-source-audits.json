@@ -22261,7 +22261,146 @@
       ],
       "uiNotice": "Plan 2005 de ocho semestres y 360 créditos en Montevideo. Elegís Composición, Dirección de Coro, Dirección de Orquesta o Musicología; cada opción tiene mínimos específicos y se expresa en el título.",
       "remainingWork": "La oferta electiva cambia por edición; la UI conserva el catálogo de Bedelías como opciones elegibles y no lo congela como una lista obligatoria."
+    },
+    {
+      "identity": "contador publico:2024",
+      "career": "CONTADOR PÚBLICO",
+      "planYear": "2024",
+      "reviewedAt": "2026-08-27",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sedes, duración, créditos, ciclo común, cinco perfiles, mínimos y transición desde el Plan 2012",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": ["Plan de Estudios 2024 de Contador Público, vigente en la Facultad de Ciencias Económicas y de Administración"],
+        "planYear": "2024",
+        "title": "Contador Público",
+        "careerName": "Contador Público",
+        "facultyCode": "FCEA",
+        "facultyName": "Facultad de Ciencias Económicas y de Administración",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Perfil",
+        "degreeRule": "El título exige 360 créditos: 260 del Ciclo Común Obligatorio, 10 de Ciencias Sociales y Humanas, 60 de al menos un perfil —40 obligatorios y 20 opcionales— y 30 opcionales libres. Los perfiles generan constancias y registro en la escolaridad, pero no menciones distintas en el título.",
+        "trajectories": [
+          { "id": "asesoria-financiera", "label": "Asesoría Financiera", "description": "Perfil certificado de Asesoría Financiera; no modifica el título profesional." },
+          { "id": "aspectos-tributarios-y-juridicos", "label": "Aspectos Tributarios y Jurídicos", "description": "Perfil certificado de Aspectos Tributarios y Jurídicos; no modifica el título profesional." },
+          { "id": "controller-y-transformacion-digital", "label": "Controller y Transformación Digital", "description": "Perfil certificado vigente desde 2026; no modifica el título profesional." },
+          { "id": "reportes-externos-y-atestiguamiento", "label": "Reportes Externos y Atestiguamiento", "description": "Perfil certificado de Reportes Externos y Atestiguamiento; no modifica el título profesional." },
+          { "id": "sector-publico", "label": "Sector Público", "description": "Perfil certificado de Sector Público; no modifica el título profesional." }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/7538-contador-publico-planes-varios.html",
+          "pathwayLabel": "Perfil",
+          "pathRequirementMap": {
+            "2401": "common-cycle",
+            "2402": "social-humanities",
+            "2403": "free-electives",
+            "2417": "free-electives",
+            "2418": "free-electives",
+            "2419": "free-electives",
+            "2420": "free-electives",
+            "2404": "finance-required",
+            "2405": "finance-optional",
+            "2407": "tax-required",
+            "2409": "tax-optional",
+            "2411": "controller-required",
+            "2412": "controller-optional",
+            "2413": "reporting-required",
+            "2414": "reporting-optional",
+            "2415": "public-required",
+            "2416": "public-optional"
+          },
+          "courseOverrides": {
+            "I137": { "requirementId": "free-electives", "periodLabel": "Opcionales libres" },
+            "I138": { "requirementId": "free-electives", "periodLabel": "Opcionales libres" }
+          },
+          "periodLabelMap": {
+            "ciclo comun obligatorio": "Ciclo común obligatorio",
+            "area ciencias sociales y humanas": "Ciencias sociales y humanas",
+            "opcion libre": "Opcionales libres",
+            "opcionales libres": "Opcionales libres",
+            "obligatorias": "Perfil · obligatorias",
+            "uc obligatorias del perfil": "Perfil · obligatorias",
+            "opcionales": "Perfil · opcionales",
+            "uc opcionales del perfil": "Perfil · opcionales"
+          },
+          "periodOrder": ["Ciclo común obligatorio", "Ciencias sociales y humanas", "Perfil · obligatorias", "Perfil · opcionales", "Opcionales libres"],
+          "creditRequirements": [
+            { "id": "common-cycle", "name": "Ciclo Común Obligatorio", "shortName": "Ciclo común", "minCredits": 260 },
+            { "id": "social-humanities", "name": "Ciencias Sociales y Humanas", "shortName": "Sociales y humanas", "minCredits": 10 },
+            { "id": "free-electives", "name": "Opcionales libres", "shortName": "Opcionales libres", "minCredits": 30 },
+            { "id": "finance-profile", "name": "Perfil Asesoría Financiera", "shortName": "Perfil", "minCredits": 60 },
+            { "id": "finance-required", "parentId": "finance-profile", "name": "Asesoría Financiera · obligatorias", "shortName": "Obligatorias", "minCredits": 40 },
+            { "id": "finance-optional", "parentId": "finance-profile", "name": "Asesoría Financiera · opcionales", "shortName": "Opcionales", "minCredits": 20 },
+            { "id": "tax-profile", "name": "Perfil Aspectos Tributarios y Jurídicos", "shortName": "Perfil", "minCredits": 60 },
+            { "id": "tax-required", "parentId": "tax-profile", "name": "Aspectos Tributarios y Jurídicos · obligatorias", "shortName": "Obligatorias", "minCredits": 40 },
+            { "id": "tax-optional", "parentId": "tax-profile", "name": "Aspectos Tributarios y Jurídicos · opcionales", "shortName": "Opcionales", "minCredits": 20 },
+            { "id": "controller-profile", "name": "Perfil Controller y Transformación Digital", "shortName": "Perfil", "minCredits": 60 },
+            { "id": "controller-required", "parentId": "controller-profile", "name": "Controller y Transformación Digital · obligatorias", "shortName": "Obligatorias", "minCredits": 40 },
+            { "id": "controller-optional", "parentId": "controller-profile", "name": "Controller y Transformación Digital · opcionales", "shortName": "Opcionales", "minCredits": 20 },
+            { "id": "reporting-profile", "name": "Perfil Reportes Externos y Atestiguamiento", "shortName": "Perfil", "minCredits": 60 },
+            { "id": "reporting-required", "parentId": "reporting-profile", "name": "Reportes Externos y Atestiguamiento · obligatorias", "shortName": "Obligatorias", "minCredits": 40 },
+            { "id": "reporting-optional", "parentId": "reporting-profile", "name": "Reportes Externos y Atestiguamiento · opcionales", "shortName": "Opcionales", "minCredits": 20 },
+            { "id": "public-profile", "name": "Perfil Sector Público", "shortName": "Perfil", "minCredits": 60 },
+            { "id": "public-required", "parentId": "public-profile", "name": "Sector Público · obligatorias", "shortName": "Obligatorias", "minCredits": 40 },
+            { "id": "public-optional", "parentId": "public-profile", "name": "Sector Público · opcionales", "shortName": "Opcionales", "minCredits": 20 }
+          ],
+          "credentials": [
+            { "id": "asesoria-financiera", "title": "Contador Público · constancia Perfil Asesoría Financiera", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-cycle", "minCredits": 260 }, { "nodeId": "social-humanities", "minCredits": 10 }, { "nodeId": "finance-profile", "minCredits": 60 }, { "nodeId": "finance-required", "minCredits": 40 }, { "nodeId": "finance-optional", "minCredits": 20 }, { "nodeId": "free-electives", "minCredits": 30 }], "requiredCourseGroupIds": [] },
+            { "id": "aspectos-tributarios-y-juridicos", "title": "Contador Público · constancia Perfil Aspectos Tributarios y Jurídicos", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-cycle", "minCredits": 260 }, { "nodeId": "social-humanities", "minCredits": 10 }, { "nodeId": "tax-profile", "minCredits": 60 }, { "nodeId": "tax-required", "minCredits": 40 }, { "nodeId": "tax-optional", "minCredits": 20 }, { "nodeId": "free-electives", "minCredits": 30 }], "requiredCourseGroupIds": [] },
+            { "id": "controller-y-transformacion-digital", "title": "Contador Público · constancia Perfil Controller y Transformación Digital", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-cycle", "minCredits": 260 }, { "nodeId": "social-humanities", "minCredits": 10 }, { "nodeId": "controller-profile", "minCredits": 60 }, { "nodeId": "controller-required", "minCredits": 40 }, { "nodeId": "controller-optional", "minCredits": 20 }, { "nodeId": "free-electives", "minCredits": 30 }], "requiredCourseGroupIds": [] },
+            { "id": "reportes-externos-y-atestiguamiento", "title": "Contador Público · constancia Perfil Reportes Externos y Atestiguamiento", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-cycle", "minCredits": 260 }, { "nodeId": "social-humanities", "minCredits": 10 }, { "nodeId": "reporting-profile", "minCredits": 60 }, { "nodeId": "reporting-required", "minCredits": 40 }, { "nodeId": "reporting-optional", "minCredits": 20 }, { "nodeId": "free-electives", "minCredits": 30 }], "requiredCourseGroupIds": [] },
+            { "id": "sector-publico", "title": "Contador Público · constancia Perfil Sector Público", "minTotalCredits": 360, "nodeRequirements": [{ "nodeId": "common-cycle", "minCredits": 260 }, { "nodeId": "social-humanities", "minCredits": 10 }, { "nodeId": "public-profile", "minCredits": 60 }, { "nodeId": "public-required", "minCredits": 40 }, { "nodeId": "public-optional", "minCredits": 20 }, { "nodeId": "free-electives", "minCredits": 30 }], "requiredCourseGroupIds": [] }
+          ]
+        }
+      },
+      "offerings": [{ "serviceCode": "FCEA", "locations": ["Montevideo"], "role": "oferta completa de FCEA con apoyo en EVA", "curriculumVariant": false, "pathwayIds": ["asesoria-financiera", "aspectos-tributarios-y-juridicos", "controller-y-transformacion-digital", "reportes-externos-y-atestiguamiento", "sector-publico"] }],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcea-contador-publico-2024.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "publishedProfileTitles": 5,
+        "compositionMatterEntries": 618,
+        "compositionOfferedCredits": 5180,
+        "projectedCourseRecordsBeforeAudit": 128,
+        "publishedPrerequisiteRecords": 199,
+        "interpretation": "Bedelías conserva cinco perfiles y una oferta amplia con equivalencias, pero publica mínimos cero en sus grupos y mezclaba las cinco trayectorias en una única proyección. La fuente vigente de FCEA aporta los mínimos oficiales 260+10+60+30 y distingue 40 obligatorios más 20 opcionales dentro de cada perfil."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-five-certified-profiles",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2024 otorga un único título de Contador Público y exige completar al menos uno de cinco perfiles. Cada perfil se registra en la escolaridad y habilita una constancia, sin convertirse en una mención del título.",
+        "normalization": [
+          "Publicar un selector de Perfil con cinco recorridos y un único progreso académico.",
+          "Controlar 260 créditos comunes, 10 sociales y humanos, 60 del perfil y 30 opcionales libres.",
+          "Separar dentro de cada perfil 40 créditos obligatorios y 20 opcionales.",
+          "Conservar las equivalencias y alternativas del Ciclo Común como catálogo elegible, no como lista íntegramente obligatoria.",
+          "Reclasificar I137 e I138 como opcionales libres: figuran indebidamente dentro del grupo obligatorio de Controller en Bedelías y no integran los seis cursos obligatorios publicados por FCEA.",
+          "Publicar Montevideo como sede confirmada; EVA se representa como apoyo virtual, no como sede adicional."
+        ]
+      },
+      "sources": [
+        { "url": "https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/7538-contador-publico-planes-varios.html", "authority": "Facultad de Ciencias Económicas y de Administración, Udelar", "supports": ["vigencia del Plan 2024", "ocho semestres", "360 créditos", "estructura 260+10+60+30", "cinco perfiles", "cursos obligatorios y opcionales", "constancias sin mención en el título"] },
+        { "url": "https://www.fcea.udelar.edu.uy/departamentos-academicos/dpto-de-contabilidad-y-tributaria/193-departamentos/departamento-de-contabilidad-y-tributaria/6648-dcyt-contador-publico-2024.html", "authority": "Departamento de Contabilidad y Tributaria, FCEA", "supports": ["Plan 2024", "perfiles", "organización académica vigente"] },
+        { "url": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html", "authority": "Bedelía de grado, FCEA", "supports": ["oferta 2026", "resolución del perfil Controller y Transformación Digital", "transición desde el Plan 2012"] },
+        { "url": "https://fcea.udelar.edu.uy/ingreso-a-fcea.html", "authority": "Facultad de Ciencias Económicas y de Administración, Udelar", "supports": ["ingreso vigente", "sede Montevideo", "apoyo mediante EVA"] }
+      ],
+      "anomalies": [
+        { "field": "bedeliasGroupMinimums", "resolution": "Los grupos de los cinco perfiles figuran con mínimo cero en el árbol SGAE. Se sustituyen por los mínimos oficiales de FCEA: 40 obligatorios y 20 opcionales por perfil." },
+        { "field": "controllerRequiredCourses", "resolution": "El snapshot incluye I137 e I138 dentro del grupo obligatorio de Controller y eleva su oferta a 60 créditos. La página vigente de FCEA enumera seis cursos que suman 40; I137 e I138 se conservan sólo como opcionales libres." },
+        { "field": "commonCycleOffer", "resolution": "El grupo común de Bedelías suma 365 créditos porque contiene equivalencias y códigos alternativos. La UI exige el mínimo oficial de 260 y no presenta toda la oferta como obligatoria simultáneamente." },
+        { "field": "profileMeaning", "resolution": "Los perfiles son obligatorios y certificables, pero no alteran el título. Las credenciales de UI se rotulan como constancias para evitar presentarlas como cinco títulos distintos." }
+      ],
+      "uiNotice": "Plan 2024 de ocho semestres y 360 créditos en Montevideo. Elegís al menos un perfil: 40 créditos obligatorios y 20 opcionales. El perfil queda registrado y permite solicitar una constancia, pero el título es siempre Contador Público.",
+      "remainingWork": "La oferta de cursos opcionales y las equivalencias pueden cambiar por edición. La UI conserva el catálogo vigente de Bedelías y los mínimos oficiales, sin prometer el dictado de cada alternativa en todos los semestres."
     }
   ],
-  "contentHash": "sha256:851ac79720debef70f8d2463b279579f6e618b7f194eab3e8a0eba15edd972a4"
+  "contentHash": "sha256:c2d7ca667fd4cd3817ad4c6bbf1e2d066aafd1324874deb893bfac81294588cd"
 }

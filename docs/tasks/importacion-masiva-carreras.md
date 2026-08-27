@@ -1442,3 +1442,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:851ac79720debef70f8d2463b279579f6e618b7f194eab3e8a0eba15edd972a4`. Cola general: 55 identidades pendientes; hash `sha256:8c62cb525ff453d00b2fd161baec65ebdd59c4b6077ba9f631bd1c2f510960b1`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:e4644d66a23b29e70459a4c5836d4261e9de3c46487afa2baf5ca8785f2b59f4`. Cola funcional vacía; hash `sha256:77227e3020345bc3f6de543a6ca19b199b0cc98c1152b92e2858810eb011169f`.
 - Siguiente paso: auditar Contador Público Plan 2024, primera identidad reproducible restante.
+
+### Contador Público Plan 2024 — cinco perfiles certificados operativos 2026-08-27
+
+- FCEA confirma un único título de Contador Público, ocho semestres y 360 créditos en Montevideo. La carrera exige elegir al menos uno de cinco perfiles: Asesoría Financiera, Aspectos Tributarios y Jurídicos, Controller y Transformación Digital, Reportes Externos y Atestiguamiento o Sector Público.
+- Cada recorrido controla 260 créditos del Ciclo Común Obligatorio, 10 de Ciencias Sociales y Humanas, 60 del perfil y 30 opcionales libres. Dentro del perfil se exigen 40 créditos obligatorios y 20 opcionales.
+- Los perfiles quedan registrados en la escolaridad y habilitan constancias, pero no son menciones distintas del título. La UI conserva un solo título y presenta cinco opciones de Perfil.
+- Bedelías publica mínimos cero en los grupos de perfil y acumula equivalencias en el ciclo común. La normalización aplica los mínimos oficiales de FCEA y conserva las alternativas como catálogo elegible.
+- El grupo Controller del snapshot incluía I137 e I138 y sumaba 60 créditos obligatorios. La nómina vigente de FCEA exige seis cursos que suman 40; ambos cursos se conservan como opcionales libres y no bloquean el egreso del perfil.
+- Registro de auditoría: hash `sha256:c2d7ca667fd4cd3817ad4c6bbf1e2d066aafd1324874deb893bfac81294588cd`. Cola general: 54 identidades pendientes; hash `sha256:d1084942f0f345da2467b25c41d5bc41c452eb53c4cab6116e5d0d328c2d5f13`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable y 34 con sedes oficiales; hash `sha256:2fb5e4f12acb1a61c40fde6acbdb90b6cdf45eef84a3cf9f547f741bd331efc3`. Cola funcional vacía; hash `sha256:12f54ef6a9d9010dc47fade84532572258ccbd59038e9f17b34e0fc82ca0e75c`.
+- Siguiente paso: auditar la Licenciatura en Administración Plan 2012, primera identidad reproducible restante.

@@ -326,8 +326,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcea-contador-publico-2024": {
     load: () => import("./bedelias-generated/bedelias-fcea-contador-publico-2024.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["asesoria-financiera","aspectos-tributarios-y-juridicos","controller-y-transformacion-digital","reportes-externos-y-atestiguamiento","sector-publico"],
+    pathwayLabel: "Perfil",
     minCredits: 360,
   },
   "bedelias-fcea-licenciatura-en-administracion-2012": {
