@@ -1421,3 +1421,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:0f431d97c00da628d019d3f8ebfa5d2e96120bbb017120e9527caba2f3b74682`. Cola general: 57 identidades pendientes; hash `sha256:fb8a07216676ce1bc36bb20808e53a9889f9713b96ad2b4777eff8f01019305f`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:89b469c94a73b44c05b02286a21e3a17d736d592b42c6d9683994b8ccd250fa8`. Cola funcional vacía; hash `sha256:635928c74b82b7b5ab939cc8e02e7019bee38c4950ea058fb88e392d36d33fa3`.
 - Siguiente paso: auditar la Licenciatura en Interpretación Musical Plan 2005, primera identidad reproducible restante.
+
+### Licenciatura en Interpretación Musical Plan 2005 — menciones operativas 2026-08-26
+
+- El plan oficial confirma un único título de cuatro años, ocho semestres y 360 créditos en Montevideo, con mención a la opción elegida. La UI ofrece diecisiete trayectorias registradas en Bedelías; quince integran la admisión publicada para 2026 y Corno/Trombón se conservan expresamente para continuidad de estudiantes ya registrados.
+- Cada mención controla seis mínimos que suman 360: Tronco Común 138, materias troncales 18, materias específicas 152, electivas 29, proyectos especiales 8 y Actividad de Graduación 15. El catálogo de 1026 cursos representa alternativas acumuladas, no obligaciones simultáneas.
+- La opción Canto conserva su formación específica en canto, arte escénico, idiomas y acompañamiento; las opciones instrumentales mantienen separadas sus series específicas. El árbol histórico de Trombón omitía la Actividad de Graduación, por lo que la proyección incorpora el bloque normativo de 15 créditos exigido por el Plan 2005 y lo limita a esa trayectoria.
+- La ficha administrativa informa 60 meses, pero el plan aprobado establece ocho semestres; la UI normaliza la duración a 48 meses y documenta la discrepancia. El certificado opcional de Primer Ciclo no se automatiza porque la fuente pública no publica un umbral autónomo seguro por opción.
+- Registro de auditoría: hash `sha256:91eb28ecb20fa47dbc923e712383e3d70f969a1e4e8206f6acb13a77992bd9a2`. Cola general: 56 identidades pendientes; hash `sha256:5cf2aaf233770d9cfab260a29645410e0426282b5f10325d577ae52574f2fc72`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:0eec102167cff451797085c6a717782cb1c1f0a322089ea9bcb961c147b68def`. Cola funcional vacía; hash `sha256:18b0d3acb502de42ce48936cf3f851e5013696c9114d2acc619bdd05022cb2c1`.
+- Siguiente paso: auditar la Licenciatura en Música Plan 2005, primera identidad reproducible restante.
