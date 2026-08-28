@@ -28346,7 +28346,496 @@
       ],
       "uiNotice": "Plan 2014 de 360 créditos en Montevideo. Elegí un área de profundización para organizar los talleres y la tesina; el título es siempre Licenciado en Educación. Las optativas y electivas requieren acreditación de la Comisión de Carrera.",
       "remainingWork": "La Comisión de Carrera debe confirmar la pertinencia de optativas y electivas externas, las equivalencias y la acreditación de registros que Bedelías publica con crédito cero."
+    },
+    {
+      "identity": "filosofia:2010",
+      "career": "Filosofía",
+      "planYear": "2010",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "current-degree-title-credit-structure-flexible-trajectory-mandatory-core-prerequisites-thesis-and-campus",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios 2010 publicado y mantenido vigente por FHCE",
+          "Oferta académica 2026 aprobada por el Consejo de FHCE"
+        ],
+        "planYear": "2010",
+        "title": "Licenciado en Filosofía",
+        "careerName": "Licenciatura en Filosofía",
+        "facultyCode": "FHUM",
+        "facultyName": "Facultad de Humanidades y Ciencias de la Educación",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El Plan 2010 exige 360 créditos y otorga un único título de Licenciado en Filosofía. Comprende 143 créditos de obligatorias filosóficas, 12 de obligatorias complementarias, 95 de electivas filosóficas —incluidos 30 de Tópicos Especiales—, 52 de electivas universitarias, 20 de Taller Integral, 13 de Seminario de Tesina y 25 de Tesina.",
+        "trajectories": [
+          {
+            "id": "trayectoria-flexible",
+            "credentialId": "licenciado-filosofia",
+            "label": "Trayectoria flexible",
+            "description": "Recorrido individual construido con el docente orientador mediante electivas filosóficas, Tópicos Especiales, electivas universitarias y el tema de tesina. No modifica el título."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2023/01/licenciatura_en_filosofia_2010.pdf",
+          "prerequisitesSourceUrl": "https://bedelias.udelar.edu.uy/",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "El Plan 2010 es flexible: la secuencia de ocho semestres es orientativa y las elecciones deben formar un recorrido académicamente consistente, avalado por el Instituto de Filosofía.",
+          "pathRequirementMap": {
+            "2485": "fil-flexible",
+            "2716": "fil-philosophical-required",
+            "3027": "fil-complementary-required",
+            "3031": "fil-thesis-seminar",
+            "3154": "fil-special-topics",
+            "3183": "fil-thesis",
+            "3504": "fil-integral-workshop",
+            "4363": "fil-philosophical-electives",
+            "4405": "fil-university-electives"
+          },
+          "periodOrder": [
+            "Obligatorias filosóficas",
+            "Obligatorias complementarias",
+            "Electivas filosóficas",
+            "Tópicos Especiales",
+            "Electivas universitarias",
+            "Taller Integral",
+            "Seminario de Tesina",
+            "Tesina",
+            "Validación de egreso"
+          ],
+          "periodLabelMap": {
+            "2485": "Formación flexible",
+            "2716": "Obligatorias filosóficas",
+            "3027": "Obligatorias complementarias",
+            "3031": "Seminario de Tesina",
+            "3154": "Tópicos Especiales",
+            "3183": "Tesina",
+            "3504": "Taller Integral",
+            "4363": "Electivas filosóficas",
+            "4405": "Electivas universitarias"
+          },
+          "creditRequirements": [
+            {
+              "id": "fil-philosophical-required",
+              "name": "Obligatorias filosóficas",
+              "shortName": "Obligatorias filosóficas",
+              "minCredits": 143
+            },
+            {
+              "id": "fil-complementary-required",
+              "name": "Obligatorias complementarias",
+              "shortName": "Complementarias",
+              "minCredits": 12
+            },
+            {
+              "id": "fil-flexible",
+              "name": "Formación filosófica y universitaria flexible",
+              "shortName": "Formación flexible",
+              "minCredits": 147
+            },
+            {
+              "id": "fil-philosophical-electives",
+              "parentId": "fil-flexible",
+              "name": "Electivas filosóficas",
+              "shortName": "Electivas filosóficas",
+              "minCredits": 65,
+              "credentialRequired": false
+            },
+            {
+              "id": "fil-special-topics",
+              "parentId": "fil-flexible",
+              "name": "Tópicos Especiales",
+              "shortName": "Tópicos",
+              "minCredits": 30,
+              "credentialRequired": false
+            },
+            {
+              "id": "fil-university-electives",
+              "parentId": "fil-flexible",
+              "name": "Electivas universitarias",
+              "shortName": "Electivas universitarias",
+              "minCredits": 52,
+              "credentialRequired": false
+            },
+            {
+              "id": "fil-integral-workshop",
+              "name": "Taller Integral",
+              "shortName": "Taller Integral",
+              "minCredits": 20
+            },
+            {
+              "id": "fil-thesis-seminar",
+              "name": "Seminario de Tesina",
+              "shortName": "Seminario",
+              "minCredits": 13
+            },
+            {
+              "id": "fil-thesis",
+              "name": "Tesina",
+              "shortName": "Tesina",
+              "minCredits": 25
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "validacion-final-plan",
+              "name": "Validación final de electivas y consistencia de la trayectoria por el Instituto de Filosofía",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Validación de egreso",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "trayectoria-flexible"
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "fil-history-ancient",
+              "label": "Historia de la Filosofía Antigua",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FA1",
+                "HFA"
+              ]
+            },
+            {
+              "id": "fil-history-medieval",
+              "label": "Historia de la Filosofía Medieval",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FA2",
+                "HFM"
+              ]
+            },
+            {
+              "id": "fil-history-modern",
+              "label": "Historia de la Filosofía Moderna",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FA3"
+              ]
+            },
+            {
+              "id": "fil-history-contemporary",
+              "label": "Historia de la Filosofía Contemporánea",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FA4"
+              ]
+            },
+            {
+              "id": "fil-ethics",
+              "label": "Ética I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FD1"
+              ]
+            },
+            {
+              "id": "fil-aesthetics",
+              "label": "Estética I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FE1"
+              ]
+            },
+            {
+              "id": "fil-latin-american",
+              "label": "Filosofía Latinoamericana y Uruguaya",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FG1"
+              ]
+            },
+            {
+              "id": "fil-theoretical",
+              "label": "Filosofía Teórica I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FC1"
+              ]
+            },
+            {
+              "id": "fil-science-history",
+              "label": "Historia y Filosofía de la Ciencia I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FF1"
+              ]
+            },
+            {
+              "id": "fil-methodology",
+              "label": "Metodología de la Investigación Filosófica I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "MIF",
+                "FB4"
+              ]
+            },
+            {
+              "id": "fil-logic",
+              "label": "Lógica I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "LOG",
+                "FB1"
+              ]
+            },
+            {
+              "id": "fil-university-introduction",
+              "label": "Introducción a la Vida Universitaria o equivalente",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "EGU",
+                "IVA2",
+                "BAS2",
+                "IVU",
+                "FI1"
+              ]
+            },
+            {
+              "id": "fil-language",
+              "label": "Comprensión lectora en una lengua extranjera o equivalente",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "ALEM",
+                "FRANC",
+                "INGL",
+                "ITAL",
+                "PORT",
+                "INPFI",
+                "IPFI",
+                "ICPF"
+              ]
+            },
+            {
+              "id": "fil-integral-workshop-course",
+              "label": "Taller Integral",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FTI"
+              ]
+            },
+            {
+              "id": "fil-thesis-seminar-course",
+              "label": "Seminario de Tesina",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FST",
+                "FST2"
+              ]
+            },
+            {
+              "id": "fil-thesis-course",
+              "label": "Tesina",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "FTF"
+              ]
+            },
+            {
+              "id": "validacion-final-plan",
+              "label": "Validación final de electivas y consistencia de la trayectoria",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "validacion-final-plan"
+              ]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "licenciado-filosofia",
+              "title": "Licenciado en Filosofía",
+              "minTotalCredits": 360,
+              "requiredCourseGroupIds": [
+                "fil-history-ancient",
+                "fil-history-medieval",
+                "fil-history-modern",
+                "fil-history-contemporary",
+                "fil-ethics",
+                "fil-aesthetics",
+                "fil-latin-american",
+                "fil-theoretical",
+                "fil-science-history",
+                "fil-methodology",
+                "fil-logic",
+                "fil-university-introduction",
+                "fil-language",
+                "fil-integral-workshop-course",
+                "fil-thesis-seminar-course",
+                "fil-thesis-course",
+                "validacion-final-plan"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "fil-philosophical-required",
+                  "minCredits": 143
+                },
+                {
+                  "nodeId": "fil-complementary-required",
+                  "minCredits": 12
+                },
+                {
+                  "nodeId": "fil-flexible",
+                  "minCredits": 147
+                },
+                {
+                  "nodeId": "fil-philosophical-electives",
+                  "minCredits": 65
+                },
+                {
+                  "nodeId": "fil-special-topics",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "fil-university-electives",
+                  "minCredits": 52
+                },
+                {
+                  "nodeId": "fil-integral-workshop",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "fil-thesis-seminar",
+                  "minCredits": 13
+                },
+                {
+                  "nodeId": "fil-thesis",
+                  "minCredits": 25
+                }
+              ]
+            }
+          ],
+          "manualCompletionValidation": "Aval del Instituto de Filosofía sobre la consistencia del recorrido electivo y control de los 335 créditos previos a la entrega de la tesina"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FHUM",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable y sede completa",
+          "admissionStatus": "active"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-filosofia-2010.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 281,
+        "prerequisiteRuleCount": 46,
+        "noPublishedRuleCount": 228,
+        "interpretation": "La composición administrativa coincide con los nueve mínimos normativos y conserva versiones históricas, equivalencias y ofertas electivas. La UI deduplica cursos compartidos, neutraliza filas sin crédito y exige sólo el núcleo y las previaturas publicados."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-flexible-trajectory",
+        "canonicalIdentity": "filosofia:2010",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "El Plan vigente otorga un solo título y deja una parte sustantiva del recorrido a elecciones individuales orientadas. No define menciones, perfiles ni carreras separadas.",
+        "normalization": [
+          "Publicar una única Licenciatura en Filosofía Plan 2010, de cuatro años y 360 créditos, en Montevideo.",
+          "Representar las elecciones como una trayectoria flexible sin crear orientaciones de título.",
+          "Controlar los seis mínimos principales, cuya suma es exactamente 360 créditos, y los tres submínimos del bloque flexible.",
+          "Exigir las once unidades filosóficas obligatorias, una introducción universitaria, una lengua extranjera, Taller Integral, Seminario de Tesina y Tesina.",
+          "Mantener electivas y Tópicos como catálogos acreditables sujetos al aval del Instituto.",
+          "Conservar las 46 previaturas explícitas de Bedelías sin transformar el orden semestral sugerido en bloqueos adicionales."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://fhce.edu.uy/plan-de-estudios-10/",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "supports": [
+            "vigencia del Plan 2010",
+            "denominación",
+            "título",
+            "360 créditos"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/licenciatura_en_filosofia_2010.pdf",
+          "authority": "Plan de Estudios 2010, FHCE",
+          "supports": [
+            "estructura de créditos",
+            "núcleo obligatorio",
+            "electivas",
+            "Tópicos Especiales",
+            "Taller Integral",
+            "tesina"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/03/Filosofia_CambioDePlanes_2023-03-22.pdf",
+          "authority": "Guía detallada del Plan, Instituto de Filosofía",
+          "supports": [
+            "unidades obligatorias",
+            "trayectoria flexible",
+            "ocho semestres sugeridos",
+            "docente orientador"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/ReglamentacionTesinaFilosofia.pdf",
+          "authority": "Reglamentación de Tesina, FHCE",
+          "supports": [
+            "Seminario de Tesina",
+            "25 créditos de Tesina",
+            "335 créditos previos",
+            "defensa"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/programas-2026-lic-en-filosofia/",
+          "authority": "Oferta 2026 aprobada por el Consejo de FHCE",
+          "supports": [
+            "vigencia de obligatorias",
+            "electivas filosóficas",
+            "Tópicos Especiales",
+            "Taller Integral"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/filosofia",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "48 meses",
+            "360 créditos",
+            "sede FHCE",
+            "requisitos de ingreso"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "guideCreditSummary",
+          "resolution": "Una guía divulgativa consigna 32 créditos de Tópicos y 149 flexibles, pero el Plan normativo fija 30 de Tópicos, 95 electivos filosóficos y 52 universitarios. Bedelías coincide con el Plan y la UI usa 30 + 65 + 52 = 147."
+        },
+        {
+          "field": "historicalCourseVersions",
+          "resolution": "El catálogo reúne códigos históricos y actuales para algunas obligatorias y una oferta electiva amplia. Los grupos de equivalencias evitan exigir duplicados y los mínimos impiden convertir todas las electivas en obligatorias."
+        },
+        {
+          "field": "zeroCreditRows",
+          "resolution": "Bedelías conserva 89 registros únicos con crédito cero, principalmente ofertas históricas o sin acreditación publicada. No suman a ningún mínimo y su eventual acreditación requiere validación administrativa."
+        },
+        {
+          "field": "prerequisites",
+          "resolution": "Se conservan las 46 reglas explícitas publicadas por Bedelías. Las 228 unidades sin regla publicada y la secuencia semestral sugerida no generan previaturas inventadas."
+        }
+      ],
+      "uiNotice": "Plan 2010 flexible de 360 créditos en Montevideo. Completá el núcleo obligatorio, 147 créditos electivos con sus tres mínimos, Taller Integral, Seminario y Tesina; el Instituto debe avalar la consistencia del recorrido.",
+      "remainingWork": "El Instituto de Filosofía debe validar la pertinencia de electivas externas, equivalencias y cualquier actividad que Bedelías publique sin crédito."
     }
   ],
-  "contentHash": "sha256:23ca2879e72d11c8f218f7bad4426d9c2acab76aa6544913b7f7293c40959952"
+  "contentHash": "sha256:2452e37f3754a7fae3f33b657d3d6488f51cf9fab25f573376325300ff2dd5a7"
 }

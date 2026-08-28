@@ -458,7 +458,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-filosofia-2010": {
     load: () => import("./bedelias-generated/bedelias-fhum-filosofia-2010.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["trayectoria-flexible"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },

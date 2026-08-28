@@ -1683,3 +1683,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:23ca2879e72d11c8f218f7bad4426d9c2acab76aa6544913b7f7293c40959952`. Cola general: 30 identidades pendientes; hash `sha256:c1187b65a6308af4586558d0d6e5b05749b7f2271f320c347752afd1bf63cdd4`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:ec2f66e38d617cf37710fd7732fbf75569d13c91e8ab661ff2cf3f8a3ba0097d`. Cola funcional vacía; hash `sha256:f8ba77107f5a1a4dfcb95e249e8f93737a92331d7b5adc86fab70c7a3c5e8950`.
 - Siguiente paso: auditar la Licenciatura en Filosofía Plan 2010, primera identidad reproducible restante.
+
+### Licenciatura en Filosofía Plan 2010 — trayectoria flexible operativa 2026-08-28
+
+- FHCE, el Plan oficial y el catálogo central confirman una única Licenciatura en Filosofía vigente, de cuatro años, 360 créditos y sede Montevideo, con un solo título de `Licenciado en Filosofía`.
+- La UI controla seis mínimos raíz que suman exactamente 360: 143 créditos de obligatorias filosóficas, 12 de obligatorias complementarias, 147 de formación flexible, 20 de Taller Integral, 13 de Seminario de Tesina y 25 de Tesina.
+- Dentro de los 147 créditos flexibles se exigen 65 de electivas filosóficas, 30 de Tópicos Especiales y 52 de electivas universitarias. La guía divulgativa menciona 32 Tópicos y 149 flexibles, pero el Plan normativo y Bedelías coinciden en `30 + 65 + 52 = 147`.
+- Se exige cada una de las once unidades filosóficas obligatorias, una introducción universitaria, comprensión lectora en una lengua extranjera, Taller Integral, Seminario y Tesina. Las equivalencias administrativas se presentan como alternativas y no como obligaciones simultáneas.
+- El recorrido se construye con un docente orientador y debe ser avalado por el Instituto. La UI ofrece una única trayectoria flexible, no inventa menciones ni convierte la secuencia sugerida de ocho semestres en previaturas.
+- La proyección contiene 283 componentes, incluida la validación final. Conserva las 46 reglas de previaturas publicadas y marca 228 consultas sin regla; las 91 filas proyectadas con crédito cero permanecen visibles pero no suman a ningún mínimo.
+- Registro de auditoría: hash `sha256:2452e37f3754a7fae3f33b657d3d6488f51cf9fab25f573376325300ff2dd5a7`. Cola general: 29 identidades pendientes; hash `sha256:d334d82f7f02f0438c12aa5dc6a5f8f8e17210a4dddcf88ed2020b375bdefe26`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:111f221d3ddd301e57cb3d878ea250263f37578a599218dc78119675623859d6`. Cola funcional vacía; hash `sha256:9e39e9becf29258d00efa6aa0fdc65ee9330a968243f63be7af59e746af561f3`.
+- Siguiente paso: auditar la Licenciatura en Historia Plan 2014, primera identidad reproducible restante.
