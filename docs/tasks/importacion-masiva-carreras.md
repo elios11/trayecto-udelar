@@ -1614,3 +1614,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:1fe73182ab8b09dc7cf2dc39ae88afb2787fab8af6d3112b2d0edf8b0e04502f`. Cola general: 40 identidades pendientes; hash `sha256:e728b1c06144e1871b44aa2c5657d9ed16dc05b69532978ae8f9e7ec028d5bbf`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:d2a830f90076e1c52eb357af39a71de351893ba1d6bc9e3aeb9cd941806ba002`. Cola funcional vacía; hash `sha256:b22b71424516957868725c0027b2ed46d4247c7d254b81ab93f643b1bfc81980`.
 - Siguiente paso: auditar la Licenciatura en Relaciones Internacionales Plan 2013, primera identidad reproducible restante.
+
+### Licenciatura en Relaciones Internacionales Plan 2013 — título intermedio y grilla vigente cerrados 2026-08-28
+
+- Las fuentes actuales de Facultad de Derecho y del catálogo central confirman una única Licenciatura en Relaciones Internacionales Plan 2013 en Montevideo, de 320 créditos y 60 meses. La grilla académica se organiza en ocho semestres, sin perfiles, orientaciones ni variantes territoriales.
+- El título intermedio `Técnico Asesor en Comercio Internacional` pertenece al mismo plan: exige 200 créditos, compuestos por los 147 obligatorios de los ciclos Inicial y de Estudios Orientados y 53 opcionales. La UI conserva como objetivo predeterminado el título final y permite consultar las metas del intermedio.
+- Para la licenciatura se normalizaron los mínimos operativos que Bedelías publica y que suman exactamente 320: 60 del Ciclo Inicial, 87 de Estudios Orientados, 80 del Profesional y 93 opcionales/electivos. Las 436 unidades y 3.064 créditos del snapshot son catálogo acumulado y no una obligación total.
+- Se recuperó la secuencia nominal de los ocho semestres, las 28 reglas derivadas exclusivamente del sistema oficial de previaturas, una de tres Funciones Universitarias y una modalidad de egreso de 30 créditos entre monografía, práctica profesional o práctica educativa.
+- La grilla oficial enumera 60 créditos profesionales nominales más 30 de egreso, pero declara 227 obligatorios totales; Bedelías operacionaliza 80 profesionales para que `60 + 87 + 80 = 227`. La normalización respeta ese mínimo, mantiene las alternativas obligatorias y documenta la inconsistencia sin inventar qué diez créditos quedarían fuera.
+- Registro de auditoría: hash `sha256:5d69d74290ffdc850f7671ac5f417aee5cde95b8a3d4834a2d737862fcbf901a`. Cola general: 39 identidades pendientes; hash `sha256:8870c06c1f233f32c804f270b75ab54138d470d9d068141b0d5c6e75c5b77a0a`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:8088fa6f35911b67f6ebc34c19214ac98225ecd6e1b4f2e88cdaf0fbddd9a590`. Cola funcional vacía; hash `sha256:3ed58058437b91b277b60b7b61b6d8ffa95aea93de81235a7fb7c0a5fbf2aaf5`.
+- Siguiente paso: auditar en conjunto los cinco Traductorados Públicos Plan 2022 de Facultad de Derecho, comenzando por Alemán.
