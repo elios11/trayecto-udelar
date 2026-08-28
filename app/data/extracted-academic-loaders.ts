@@ -446,8 +446,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-dramaturgia-2015": {
     load: () => import("./bedelias-generated/bedelias-fhum-dramaturgia-2015.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["plan-flexible"],
+    pathwayLabel: "Recorrido",
     minCredits: 180,
   },
   "bedelias-fhum-educacion-2014": {

@@ -1660,3 +1660,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:977914f64660289830ba2ea870e73e1d6a9e00502c389c111906da149d097593`. Cola general: 32 identidades pendientes; hash `sha256:b27404c377826ad27f93bd6f2b2f589d60d97e524b9a6d0962e20a44e8903441`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:f585b8f05a5d6fc16d5d7e28feda98d3bc88174d04348e6c1af1069f46069e75`. Cola funcional vacía; hash `sha256:77a773fb1b142b1de7f45c462bb7cba65b452c28bb69f2efebe788f44b1bd3cf`.
 - Siguiente paso: auditar la Tecnicatura Universitaria en Dramaturgia Plan 2015, primera identidad reproducible restante.
+
+### Tecnicatura Universitaria en Dramaturgia Plan 2015 — carrera compartida y flexible operativa 2026-08-28
+
+- FHCE, EMAD y el catálogo central confirman una única tecnicatura compartida de dos años, 180 créditos y sede Montevideo, con el título `Técnico Universitario en Dramaturgia`. El ingreso es por cohortes, con cupo y selección; la cohorte comprobada más reciente comenzó en 2025.
+- La UI controla tres mínimos raíz que suman exactamente 180 créditos: 100 de práctica de la escritura, 60 de formación teórico-práctica y 20 de actividades complementarias.
+- Dentro de práctica se exigen 60 créditos de Talleres de Dramaturgia I-IV, 15 de talleres optativos para formatos específicos y 25 de pasantías. Dentro de teoría se controlan 36 créditos obligatorios, 24 optativos, 8 afines a puesta en escena y 16 de ciencias humanas y sociales.
+- Bedelías deja vacíos los dos subgrupos teórico-prácticos de 8 y 16 créditos. Las 39 opciones del padre común se clasificaron de forma reproducible por contenido y procedencia: 13 de puesta en escena y 26 de humanidades, sin crear nuevas unidades.
+- Las electivas del snapshot aparecen con crédito cero. La malla oficial de julio de 2026 fija Electiva 1 por 10 y Electiva 2 por 4; la UI las representa como dos bloques acreditables oficiales y excluye siete referencias administrativas imposibles de computar.
+- La proyección contiene 131 componentes: 129 unidades útiles de Bedelías y los dos bloques electivos. No inventa previaturas: las 136 consultas del snapshot permanecen sin regla publicada y la obligatoriedad se controla mediante el Plan y la malla vigentes.
+- Registro de auditoría: hash `sha256:79eb36c03f3a2e082ab3a5975bb0e546e9d05721545a78e649bb9dc1eda9de71`. Cola general: 31 identidades pendientes; hash `sha256:2eb98a28cf4517ecbaec3069d22dba760dfba6f199f0a96282c1e1e77a6258fa`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:734ddd3d1c6610f4318c1762677ff29441c1064ee7db9727d0f50d0a984c4d58`. Cola funcional vacía; hash `sha256:fd614742f76fac94df529c73092fc03287793426de45482e3b224f298de17110`.
+- Siguiente paso: auditar la Licenciatura en Educación Plan 2014, primera identidad reproducible restante.
