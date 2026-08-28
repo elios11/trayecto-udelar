@@ -24219,7 +24219,159 @@
       ],
       "uiNotice": "Plan 2018 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí 220 créditos mínimos por área, 90 optativos, 10 de extensión y la tesina de 40; la Comisión debe avalar la propuesta y los mínimos antes de iniciarla.",
       "remainingWork": "La Comisión de Carrera determina el énfasis del recorrido, la acreditación por área y la pertinencia de actividades externas, y avala la tesina; la UI conserva esas decisiones como validación académica explícita."
+    },
+    {
+      "identity": "licenciatura en geologia:2018",
+      "career": "LICENCIATURA EN GEOLOGÍA",
+      "planYear": "2018",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, tramos, áreas, formación general, orientación individual y trabajo final",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan 2018 publicado en el Diario Oficial Nº 29.860 del 05/01/2018"
+        ],
+        "planYear": "2018",
+        "title": "Licenciado en Geología",
+        "careerName": "Licenciatura en Geología",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El título exige 360 créditos. El tramo común aporta al menos 210 créditos: 90 del área científico-básica, 100 de geología fundamental y 20 de profundización. La orientación individual completa al menos 140 créditos, incluido un trabajo final de 35, y el plan exige además 10 créditos transversales de reflexión científica y formación general que pueden cursarse en cualquiera de los dos tramos.",
+        "trajectories": [
+          {
+            "id": "trayectoria-individual",
+            "label": "Trayectoria individual",
+            "description": "Orientación personalizada acordada con la Comisión de Carrera y un futuro tutor. Las posibles trayectorias sugeridas no son menciones ni títulos certificados separados."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Catálogo flexible del Plan 2018 organizado por tramo y área. El orden no prescribe semestres: la orientación se construye individualmente con la Comisión y un tutor, sin menciones certificadas separadas.",
+          "periodOrder": [
+            "Tramo común · Científico-básica",
+            "Tramo común · Geología fundamental",
+            "Tramo común · Profundización",
+            "Tramo de orientación · Científico-básica",
+            "Tramo de orientación · Geología fundamental",
+            "Tramo de orientación · Profundización",
+            "Reflexión científica y formación general",
+            "Trabajo final",
+            "Validación de egreso"
+          ],
+          "periodLabelMap": {
+            "301": "Tramo común · Científico-básica",
+            "302": "Tramo común · Geología fundamental",
+            "303": "Tramo común · Profundización",
+            "305": "Tramo de orientación · Científico-básica",
+            "312": "Tramo de orientación · Geología fundamental",
+            "313": "Tramo de orientación · Profundización",
+            "308": "Reflexión científica y formación general",
+            "309": "Reflexión científica y formación general",
+            "306": "Trabajo final"
+          },
+          "pathRequirementMap": {
+            "301": "common-scientific-basic",
+            "302": "common-fundamental-geology",
+            "303": "common-deepening",
+            "305": "orientation-stage",
+            "312": "orientation-stage",
+            "313": "orientation-stage",
+            "308": "scientific-reflection-general",
+            "309": "scientific-reflection-general",
+            "306": "final-work"
+          },
+          "creditRequirements": [
+            { "id": "common-stage", "name": "Tramo común", "shortName": "Tramo común", "minCredits": 210 },
+            { "id": "common-scientific-basic", "parentId": "common-stage", "name": "Tramo común · Área científico-básica", "shortName": "Científico-básica", "minCredits": 90, "credentialRequired": false },
+            { "id": "common-fundamental-geology", "parentId": "common-stage", "name": "Tramo común · Geología fundamental", "shortName": "Geología fundamental", "minCredits": 100, "credentialRequired": false },
+            { "id": "common-deepening", "parentId": "common-stage", "name": "Tramo común · Profundización", "shortName": "Profundización", "minCredits": 20, "credentialRequired": false },
+            { "id": "orientation-stage", "name": "Tramo de orientación", "shortName": "Orientación", "minCredits": 140 },
+            { "id": "final-work", "parentId": "orientation-stage", "name": "Trabajo final", "shortName": "Trabajo final", "minCredits": 35, "credentialRequired": false },
+            { "id": "scientific-reflection-general", "name": "Reflexión científica y formación general", "shortName": "Reflexión y formación", "minCredits": 10 }
+          ],
+          "credentials": [
+            {
+              "id": "bedelias-degree",
+              "title": "Licenciado en Geología",
+              "minTotalCredits": 360,
+              "nodeRequirements": [
+                { "nodeId": "common-stage", "minCredits": 210 },
+                { "nodeId": "common-scientific-basic", "minCredits": 90 },
+                { "nodeId": "common-fundamental-geology", "minCredits": 100 },
+                { "nodeId": "common-deepening", "minCredits": 20 },
+                { "nodeId": "orientation-stage", "minCredits": 140 },
+                { "nodeId": "final-work", "minCredits": 35 },
+                { "nodeId": "scientific-reflection-general", "minCredits": 10 }
+              ],
+              "requiredCourseGroupIds": ["validacion-final-plan"]
+            }
+          ],
+          "manualCompletionValidation": "Aprobación de la trayectoria individual y del proyecto de trabajo final por la Comisión de Carrera; para iniciar la orientación se requieren 130 créditos del tramo común con formación geológica fundamental, y para iniciar el trabajo final, los 210 créditos comunes y 90 de orientación"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCIEN",
+          "locations": ["Montevideo"],
+          "role": "oferta completa de Facultad de Ciencias",
+          "curriculumVariant": false,
+          "trajectoryIds": ["trayectoria-individual"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-en-geologia-2018.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 220,
+        "distinctSnapshotCourseRecords": 220,
+        "distinctAdministrativeCourseCodes": 205,
+        "publishedPrerequisiteRecords": 294,
+        "interpretation": "Bedelías refleja el total, los tres mínimos del tramo común, el trabajo final y los 10 créditos transversales. Su presentación separa la formación general y a la vez muestra 210 créditos comunes y 150 de orientación; la normalización evita sumar 370 y conserva el requisito flexible dentro del total oficial de 360."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-one-individual-geology-pathway",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan establece un único título en Montevideo y una orientación curricular individual acordada con la Comisión y un tutor. Puede haber trayectorias sugeridas, pero no menciones ni certificaciones separadas.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Geología Plan 2018, de ocho semestres y 360 créditos en Montevideo.",
+          "Controlar 210 créditos de tramo común, con mínimos de 90 científico-básicos, 100 de geología fundamental y 20 de profundización.",
+          "Representar 140 créditos de orientación individual, incluido el trabajo final de 35, y controlar aparte los 10 créditos transversales de reflexión científica y formación general sin contarlos dos veces.",
+          "Presentar una única trayectoria individual y no convertir recorridos sugeridos por la Comisión en menciones o perfiles certificados.",
+          "Conservar la composición de Bedelías como catálogo flexible por tramo y área, deduplicando coincidencias exactas sin exigir toda la oferta acumulada.",
+          "Mantener como validación académica explícita los umbrales de ingreso a la orientación y al trabajo final, así como la aprobación de la trayectoria y del proyecto."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf", "authority": "Plan de Estudios 2018 publicado en el Diario Oficial, Facultad de Ciencias, Udelar", "supports": ["publicación oficial", "título", "cuatro años", "360 créditos", "tramos", "áreas", "formación general", "orientación individual", "trabajo final", "umbrales de avance"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24563/1/PLGEOL_2020.PDF", "authority": "Plan de Estudios de la Licenciatura en Geología, repositorio Colibri, Udelar", "supports": ["Plan 2018", "código de carrera 245", "código de plan 1274", "responsabilidad de Facultad de Ciencias", "aprobaciones"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24563", "authority": "Repositorio Colibri, Udelar", "supports": ["identificación del Plan 2018", "Facultad de Ciencias"] },
+        { "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geologia/2336-licenciatura-en-geologia-2", "authority": "Facultad de Ciencias, oferta vigente", "supports": ["vigencia", "cuatro años", "360 créditos", "cuatro áreas", "tramo común", "orientación individual"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-geologia", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["vigencia", "48 meses", "360 créditos", "Facultad de Ciencias", "sede Montevideo"] },
+        { "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/1953/mod_resource/content/1/Gu%C3%ADa%20del%20Estudiante.pdf", "authority": "Guía del Estudiante de la Licenciatura en Geología, Facultad de Ciencias", "supports": ["estructura operativa", "mínimos por tramo y área", "ubicación flexible de formación general", "orientación individual", "trabajo final"] }
+      ],
+      "anomalies": [
+        { "field": "transversalCredits", "resolution": "Los 10 créditos de reflexión científica y formación general pueden realizarse en cualquiera de los tramos. Según su ubicación, el tramo común totaliza 210 o 220 y la orientación 150 o 140. La UI los representa como requisito transversal separado junto con 210 comunes y 140 de orientación: suma 360 y no duplica créditos." },
+        { "field": "bedeliasTrancheMinimums", "resolution": "Bedelías muestra simultáneamente mínimos de 210 para tramo común, 150 para orientación y 10 para formación general, que leídos como obligaciones independientes sumarían 370. El Plan aclara que la formación general está incluida de manera móvil en uno de los tramos; la UI aplica la equivalencia oficial de 210 + 140 + 10." },
+        { "field": "trajectoryLabels", "resolution": "La Comisión puede definir trayectorias sugeridas, pero el Plan sólo certifica el título de Licenciado en Geología. La UI ofrece una trayectoria individual y no inventa menciones." },
+        { "field": "progressionThresholds", "resolution": "El ingreso a actividades de orientación requiere 130 créditos comunes con formación geológica fundamental; el trabajo final exige 210 comunes, 90 de orientación, tutor, propuesta y aprobación de la Comisión. Al no existir una única regla automática de Bedelías que concentre estas condiciones, quedan como validación manual explícita." },
+        { "field": "catalogCodes", "resolution": "Las 220 unidades publicadas usan 205 códigos administrativos distintos porque algunos códigos reaparecen en versiones o denominaciones diferentes. La UI conserva los 220 registros trazables y sólo deduplica coincidencias exactas, sin fusionar variantes por código." },
+        { "field": "catalogSize", "resolution": "Los 1.642 créditos de las 220 unidades del catálogo representan oferta flexible acumulada. El egreso requiere 360 créditos distribuidos según los mínimos oficiales y no completar todas las alternativas." }
+      ],
+      "uiNotice": "Plan 2018 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí 210 créditos comunes con sus tres mínimos, 140 de orientación —incluido el trabajo final de 35— y 10 transversales de reflexión/formación; la Comisión debe aprobar tu trayectoria y proyecto final.",
+      "remainingWork": "La Comisión de Carrera aprueba la orientación individual, la acreditación de actividades, el tutor y el proyecto de trabajo final; la UI conserva esas decisiones como validación académica explícita."
     }
   ],
-  "contentHash": "sha256:c974e406c9ad7e8f2fe2f1d6447094c798a0e988488be216a2c1981e9806b085"
+  "contentHash": "sha256:fd5584d8c9da94fe493a21cefa6a06d0a49acf2e9a3aca65e7ad881a4d6b72d7"
 }

@@ -1589,3 +1589,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:c974e406c9ad7e8f2fe2f1d6447094c798a0e988488be216a2c1981e9806b085`. Cola general: 42 identidades pendientes; hash `sha256:ac4e15be46ddc4f5815315c5ad9d1be61ec55e2bcac1f5e1795b752290b03907`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:c88ee64555f1cf1e6632eba3ac61cf7405d40ef6e409f10f0f04fbf7cb95b227`. Cola funcional vacía; hash `sha256:61db32f9a00c0386d1b81b27e4c50b39d09a8cb063cef92e7a05ebdcfda8d040`.
 - Siguiente paso: auditar la Licenciatura en Geología Plan 2018, primera identidad reproducible restante.
+
+### Licenciatura en Geología Plan 2018 — orientación individual operativa 2026-08-28
+
+- El Plan 2018 publicado en el Diario Oficial, Facultad de Ciencias y el catálogo central confirman un único título de Licenciado en Geología, cuatro años, 360 créditos y sede Montevideo.
+- La UI controla 210 créditos de tramo común: 90 del área científico-básica, 100 de geología fundamental y 20 de profundización. La orientación individual aporta 140 créditos y contiene el trabajo final obligatorio de 35.
+- Los 10 créditos de reflexión científica y formación general pueden cursarse en cualquiera de los dos tramos. Bedelías muestra simultáneamente 210 comunes, 150 de orientación y 10 transversales; la proyección aplica la equivalencia oficial 210 + 140 + 10 para no inflar el egreso a 370 créditos.
+- El ingreso a la orientación requiere 130 créditos comunes con formación geológica fundamental. Para iniciar el trabajo final se requieren los 210 comunes, 90 de orientación, tutor, propuesta y aprobación de la Comisión; estas condiciones quedan como validación académica explícita.
+- La orientación se acuerda individualmente con la Comisión y un futuro tutor. El Plan permite recorridos sugeridos, pero no menciones ni títulos certificados separados; la UI conserva una única trayectoria individual.
+- Las 220 unidades publicadas usan 205 códigos administrativos por reutilización entre versiones y suman 1.642 créditos de oferta acumulada. La UI conserva sus variantes trazables, 220 reglas publicadas y una validación final; el egreso no exige completar todo el catálogo.
+- Se corrigió el parser general de composición para usar los campos estructurados de cada materia. Esto evita nombres truncados como `Créditos: 8 programa` y conserva correctamente tanto códigos locales como materias ofrecidas por otros servicios.
+- Registro de auditoría: hash `sha256:fd5584d8c9da94fe493a21cefa6a06d0a49acf2e9a3aca65e7ad881a4d6b72d7`. Cola general: 41 identidades pendientes; hash `sha256:58f14fc5f246370359c4bc876e1e966c4f1525e58860e02403d1964cb37c5a04`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:6a73cde1a625360206d860127d74d61386c90fb613c7f8439350a186f17ee891`. Cola funcional vacía; hash `sha256:fabc76656313f30c627f4c0ded70de214344f4cdba57f8d37e6cfc81498525b4`.
+- Siguiente paso: auditar la Licenciatura en Matemática Plan 2014, primera identidad reproducible restante.

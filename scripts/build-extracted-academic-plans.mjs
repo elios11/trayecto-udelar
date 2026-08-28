@@ -345,6 +345,26 @@ function compositionMatter(value) {
     : { code: null, name: label };
 }
 
+function compositionMatterFromNode(node) {
+  const course = node?.course;
+  if (!course?.code || !course?.name) {
+    return compositionMatter(String(node?.label ?? "")
+      .replace(/\s+-\s+cr[eé]ditos?:\s*\d+(?:[.,]\d+)?(?:\s+programa)?\s*$/i, ""));
+  }
+
+  const rawCode = String(course.code).trim();
+  const rawName = String(course.name).trim();
+  if (course.serviceCode) {
+    return { code: `${course.serviceCode}-${rawCode}`, name: rawName };
+  }
+
+  const externalCourse = rawName.match(/^([A-Z0-9]+)\s+-\s+(.+)$/i);
+  if (/^[A-Z]{2,}$/i.test(rawCode) && externalCourse) {
+    return { code: `${rawCode}-${externalCourse[1]}`, name: externalCourse[2] };
+  }
+  return { code: rawCode, name: rawName };
+}
+
 function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedIds) {
   const curriculum = audit?.officialPlan?.curriculum;
   if (curriculum?.useBedeliasCompositionTree !== true) return null;
@@ -388,11 +408,17 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     if (!periodMap.get(label).includes(id)) periodMap.get(label).push(id);
   };
   for (const [index, node] of matterNodes.entries()) {
-    const parsed = compositionMatter(useProfileComposition
+    const legacyParsed = compositionMatter(useProfileComposition
       ? String(node.label).replace(/\s+-\s+cr[eé]ditos?:\s*\d+(?:[.,]\d+)?\s*$/i, "")
       : node.label);
-    if (parsed.code && excludedSourceCourseIds.has(parsed.code)) continue;
-    const courseOverride = courseOverrides[parsed.code] ?? courseOverrides[normalize(parsed.name)] ?? {};
+    const parsed = compositionMatterFromNode(node);
+    if ((parsed.code && excludedSourceCourseIds.has(parsed.code))
+      || (legacyParsed.code && excludedSourceCourseIds.has(legacyParsed.code))) continue;
+    const courseOverride = courseOverrides[parsed.code]
+      ?? courseOverrides[legacyParsed.code]
+      ?? courseOverrides[normalize(parsed.name)]
+      ?? courseOverrides[normalize(legacyParsed.name)]
+      ?? {};
     const sourceCourseId = courseOverride.sourceId ?? parsed.code;
     const profileIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "perfiles");
     const profileId = profileIndex >= 0 ? slug(node.path[profileIndex + 1]) : null;
@@ -416,7 +442,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       ? titleCasedName.replace(/\b(?:Iii|Ii|Iv|Viii|Vii|Vi|Ix|Xi|Xii)\b/g, (roman) => roman.toLocaleUpperCase("es-UY"))
       : titleCasedName;
     const sharedKey = curriculum.deduplicateSharedProfileCourses === true
-      ? `${sourceCourseId ? `code:${normalize(sourceCourseId)}` : `name:${normalize(courseOverride.name ?? parsed.name)}`}:credits:${credits}`
+      ? `${sourceCourseId ? `code:${normalize(sourceCourseId)}:` : ""}name:${normalize(courseOverride.name ?? parsed.name)}:credits:${credits}`
       : null;
     let course = sharedKey ? sharedProfileCourses.get(sharedKey) : null;
     if (!course) {
@@ -458,6 +484,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     }
     courseIdByNode.set(node, id);
     if (sourceCourseId && !courseIdBySourceId.has(sourceCourseId)) courseIdBySourceId.set(sourceCourseId, id);
+    if (legacyParsed.code && !courseIdBySourceId.has(legacyParsed.code)) courseIdBySourceId.set(legacyParsed.code, id);
   }
 
   for (const [index, rawCourse] of (curriculum.additionalCourses ?? []).entries()) {
