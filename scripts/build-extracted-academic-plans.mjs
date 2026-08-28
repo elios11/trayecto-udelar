@@ -163,6 +163,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         return [trajectory.id, {
           label: trajectory.label,
           description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
+          ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
           campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
           periods: compositionPeriods,
           ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
@@ -190,6 +191,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       return [trajectory.id, {
         label: trajectory.label,
         description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
+        ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
         campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
         periods: trajectoryPeriods,
         ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
@@ -396,7 +398,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   const sharedProfileCourses = new Map();
   const requirementIdForPath = (nodePath) => {
     for (const segment of [...(nodePath ?? [])].reverse()) {
-      const code = String(segment).match(/^([A-Z0-9]+)\s+-\s+/i)?.[1];
+      const code = String(segment).match(/^([A-Z0-9.]+(?:-[A-Z0-9.]+)*)\s+-\s+/i)?.[1];
       const name = normalize(compositionCreditGroupLabel(segment));
       if (code && pathRequirementMap[code]) return pathRequirementMap[code];
       if (pathRequirementMap[name]) return pathRequirementMap[name];
@@ -426,7 +428,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     const rawPeriod = useProfileComposition
       ? [...(node.path ?? [])].reverse().find((segment) => /min:\s*\d+\s+cr[eé]ditos?/i.test(segment))
       : groupIndex >= 0 ? node.path[groupIndex + 1] : null;
-    const rawPeriodCode = String(rawPeriod ?? "").match(/^([A-Z0-9]+)\s+-\s+/i)?.[1];
+    const rawPeriodCode = String(rawPeriod ?? "").match(/^([A-Z0-9.]+(?:-[A-Z0-9.]+)*)\s+-\s+/i)?.[1];
     const period = courseOverride.periodLabel
       ?? periodLabelMap[rawPeriodCode]
       ?? periodLabelMap[normalize(compositionCreditGroupLabel(rawPeriod))]
@@ -939,7 +941,10 @@ export async function buildExtractedAcademicPlans() {
       id: planId,
       label: `Plan ${planYear}${projection.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
       defaultTrajectoryId: Object.keys(projection.pathways)[0],
-      defaultCredentialId: "bedelias-degree",
+      defaultCredentialId: projection.pathways[Object.keys(projection.pathways)[0]]?.credentialId
+        ?? projection.creditStructure.credentials.find((credential) => credential.id === "bedelias-degree")?.id
+        ?? projection.creditStructure.credentials.at(-1)?.id
+        ?? "bedelias-degree",
     });
   }
   const catalog = [...facultyMap.values()].map((faculty) => ({ ...faculty, careers: [...faculty.careers.values()].map((career) => ({ ...career, plans: career.plans.sort((a, b) => b.label.localeCompare(a.label, "es")) })) }));

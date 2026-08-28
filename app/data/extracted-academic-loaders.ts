@@ -320,8 +320,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcien-licenciatura-en-matematica-2014": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-matematica-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["perfil-matematica","orientacion-ciencia-datos","perfil-ciencias-computacion","perfil-ciencias-fisicas","perfil-ciencias-biologicas","perfil-ingenieria-electrica"],
+    pathwayLabel: "Perfil",
     minCredits: 360,
   },
   "bedelias-fcea-contador-publico-2024": {

@@ -20,6 +20,13 @@ test("la UI no presenta la extracción pendiente como auditoría oficial", () =>
   assert.match(page, /La carrera está identificada, pero su malla todavía no está disponible/);
 });
 
+test("los perfiles oficiales seleccionan sus propias metas y no simulan títulos intermedios", () => {
+  assert.match(page, /pathwayCredentialId = isRegisteredPlan \? activeRegisteredPathway\?\.credentialId : undefined/);
+  assert.match(page, /item\.id === \(pathwayCredentialId \?\? credentialId\)/);
+  assert.match(page, /hasPathwayCredentials \? undefined : creditStructure\.credentials\.find/);
+  assert.match(page, /activeRegisteredPlan\?\.pathways\[next\]\?\.credentialId/);
+});
+
 test("sede y estados pendientes usan tokens compatibles con todos los temas", () => {
   assert.match(css, /\.selector-row \.campus-selector select \{ min-width: 180px; \}/);
   assert.match(css, /\.pending-audit-note \.pilot-note-mark, \.pending-audit-status[\s\S]*var\(--warning-soft\)[\s\S]*var\(--warning-ink\)/);

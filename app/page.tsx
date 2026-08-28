@@ -191,7 +191,7 @@ type RegisteredProjection = {
   plan: { year: string; current: boolean; degreeTitle: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
   courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
-  pathways: Record<string, { label: string; description: string; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
+  pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
   requirementGroupMap: Record<string, string>;
@@ -966,7 +966,8 @@ export default function Home() {
   const activeRegisteredPathway = registeredPathwayEntries.find(([id]) => id === activeRegisteredPathwayId)?.[1];
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
-  const credential = creditStructure.credentials.find((item) => item.id === credentialId) ?? creditStructure.credentials[0];
+  const pathwayCredentialId = isRegisteredPlan ? activeRegisteredPathway?.credentialId : undefined;
+  const credential = creditStructure.credentials.find((item) => item.id === (pathwayCredentialId ?? credentialId)) ?? creditStructure.credentials[0];
   const credentialTargets = useMemo(() => new Map(credential.nodeRequirements.map((item) => [item.nodeId, item])), [credential]);
   const semesters = isRegisteredPlan
     ? (activeRegisteredPathway?.periods ?? []).map((_, index) => index + 1)
@@ -981,8 +982,11 @@ export default function Home() {
     : planYear === "2025"
     ? plan2025Data.plan.minCredits
     : isProfilePlan ? (activeProfileData?.plan.minCredits ?? 450) : planYear === "qf-2015" ? (qf2015Data?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
-  const degreeCredential = creditStructure.credentials.find((item) => item.id === "engineer" || item.id === "bedelias-degree") ?? creditStructure.credentials.at(-1)!;
-  const intermediateCredential = creditStructure.credentials.find((item) => item.id !== degreeCredential.id);
+  const hasPathwayCredentials = isRegisteredPlan && Object.values(activeRegisteredPlan?.pathways ?? {}).some((pathway) => pathway.credentialId);
+  const degreeCredential = hasPathwayCredentials
+    ? credential
+    : creditStructure.credentials.find((item) => item.id === "engineer" || item.id === "bedelias-degree") ?? creditStructure.credentials.at(-1)!;
+  const intermediateCredential = hasPathwayCredentials ? undefined : creditStructure.credentials.find((item) => item.id !== degreeCredential.id);
 
   const setStatuses = (updater: Record<string, CourseStatus> | ((current: Record<string, CourseStatus>) => Record<string, CourseStatus>)) => {
     setProgress((current) => {
@@ -1737,8 +1741,11 @@ export default function Home() {
               <select value={activeCampus?.id ?? ""} onChange={(event) => {
                 const nextCampus = registeredCampuses.find((campus) => campus.id === event.target.value);
                 if (!nextCampus) return;
+                const nextPathwayId = resolveCampusPathway(activeRegisteredPlan?.pathways ?? {}, nextCampus, "");
                 setCampusId(nextCampus.id);
-                setTrajectoryId(resolveCampusPathway(activeRegisteredPlan?.pathways ?? {}, nextCampus, ""));
+                setTrajectoryId(nextPathwayId);
+                const nextCredentialId = activeRegisteredPlan?.pathways[nextPathwayId]?.credentialId;
+                if (nextCredentialId) setCredentialId(nextCredentialId);
                 setSelected(null);
               }}>
                 {registeredCampuses.map((campus) => <option value={campus.id} key={campus.id}>{campus.label}</option>)}
@@ -1749,6 +1756,8 @@ export default function Home() {
               <select value={trajectoryId} onChange={(event) => {
                 const next = event.target.value;
                 setTrajectoryId(next);
+                const nextCredentialId = isRegisteredPlan ? activeRegisteredPlan?.pathways[next]?.credentialId : undefined;
+                if (nextCredentialId) setCredentialId(nextCredentialId);
                 if (planYear === "2025" && next !== "pi-60-plus") {
                   setStatuses((current) => ({ ...current, PI: "pending" }));
                 }

@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T12:14:09.912Z",
+  "generatedAt": "2026-08-28T12:33:43.119Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:fd5584d8c9da94fe493a21cefa6a06d0a49acf2e9a3aca65e7ad881a4d6b72d7"
+    "officialAuditRegistryHash": "sha256:1fe73182ab8b09dc7cf2dc39ae88afb2787fab8af6d3112b2d0edf8b0e04502f"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 136,
-    "pendingCanonicalIdentities": 41,
+    "evidenceClosedCanonicalIdentities": 137,
+    "pendingCanonicalIdentities": 40,
     "byPriority": {
-      "official-sources-pending": 41
+      "official-sources-pending": 40
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -837,38 +837,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-degree-one-individual-geology-pathway"
+    },
+    {
+      "identity": "licenciatura en matematica:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-degree-six-regulated-mathematics-profiles"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en matematica:2014",
-      "career": {
-        "name": "LICENCIATURA EN MATEMÁTICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "LICENCIATURA EN MATEMÁTICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en matematica:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en matematica:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en relaciones internacionales:2013",
       "career": {
@@ -2235,5 +2212,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:58f14fc5f246370359c4bc876e1e966c4f1525e58860e02403d1964cb37c5a04"
+  "contentHash": "sha256:e728b1c06144e1871b44aa2c5657d9ed16dc05b69532978ae8f9e7ec028d5bbf"
 }
