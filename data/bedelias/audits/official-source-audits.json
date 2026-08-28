@@ -23358,7 +23358,127 @@
       ],
       "uiNotice": "Plan 2016 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí los mínimos por área, Iniciación a la Investigación, Práctica de Formación y 50 créditos combinados entre optativas y electivas; la Comisión de Carrera debe aprobar tu recorrido individual.",
       "remainingWork": "La Comisión de Carrera y el tutor determinan la pertinencia de optativas, electivas, reválidas y eventuales excepciones; la UI no impone el máximo de 20 créditos electivos porque actualmente sólo controla mínimos."
+    },
+    {
+      "identity": "licenciatura en bioquimica:2017",
+      "career": "LICENCIATURA EN BIOQUÍMICA",
+      "planYear": "2017",
+      "reviewedAt": "2026-08-27",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, tramos, áreas, orientación personal, tesina y formación social/productiva",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Claustro de Facultad de Ciencias, Resolución Nº 5 del 01/03/2016",
+          "Consejo de Facultad de Ciencias, Resolución Nº 35 del 04/04/2016",
+          "Consejo Directivo Central, Resolución Nº 13 del 02/08/2016"
+        ],
+        "planYear": "2017",
+        "title": "Licenciado en Bioquímica",
+        "careerName": "Licenciatura en Bioquímica",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El título exige al menos 360 créditos. El tramo común requiere 60 créditos Físico-Matemáticos, 70 de Química, 60 de Biología, 45 de Bioquímica Básica y 6 de Humanística. El tramo diferencial exige 33 créditos optativos/electivos de orientación y una Tesina de Graduación de 40 créditos. Dentro del total deben acreditarse además 10 créditos de formación social/productiva o cursos afines de otros servicios o instituciones.",
+        "trajectories": [
+          {
+            "id": "formacion-personalizada",
+            "label": "Formación personalizada",
+            "description": "Recorrido flexible elaborado desde tercer año con tutoría. Puede enfatizar investigación, diagnóstico, biotecnología, bioinformática u otras aplicaciones bioquímicas, pero todas conducen al mismo título y no son menciones certificadas."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24552/1/PLBIO_2020.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Catálogo flexible por áreas. El orden no prescribe una secuencia y el plan personal de orientación debe acordarse con tutoría y validarse académicamente.",
+          "periodOrder": [
+            "BIOLOGÍA",
+            "BIOQUÍMICA BÁSICA",
+            "FÍSICO-MATEMÁTICA",
+            "HUMANÍSTICA",
+            "QUÍMICA",
+            "ACTIVIDADES DE FORMACIÓN (ÁMBITO SOCIAL Y PRODUCTIVO)",
+            "ELECTIVAS",
+            "TESINA DE GRADO",
+            "Validación de egreso"
+          ],
+          "pathRequirementMap": {
+            "28": "biology",
+            "27": "basic-biochemistry",
+            "25": "physical-mathematics",
+            "29": "humanities",
+            "26": "chemistry",
+            "51": "social-productive",
+            "50": "orientation",
+            "52": "thesis"
+          },
+          "creditRequirements": [
+            { "id": "physical-mathematics", "name": "Físico-Matemática", "shortName": "Físico-Matemática", "minCredits": 60 },
+            { "id": "chemistry", "name": "Química", "shortName": "Química", "minCredits": 70 },
+            { "id": "biology", "name": "Biología", "shortName": "Biología", "minCredits": 60 },
+            { "id": "basic-biochemistry", "name": "Bioquímica Básica", "shortName": "Bioquímica", "minCredits": 45 },
+            { "id": "humanities", "name": "Humanística", "shortName": "Humanística", "minCredits": 6 },
+            { "id": "orientation", "name": "Optativas y electivas de orientación", "shortName": "Orientación", "minCredits": 33 },
+            { "id": "thesis", "name": "Tesina de Graduación", "shortName": "Tesina", "minCredits": 40 },
+            { "id": "social-productive", "name": "Formación social/productiva u otros servicios", "shortName": "Formación transversal", "minCredits": 0, "credentialRequired": false }
+          ],
+          "manualCompletionValidation": "Validación académica del currículo individual y de los 10 créditos de formación social/productiva o cursos afines externos"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCIEN",
+          "locations": ["Montevideo"],
+          "role": "oferta completa de Facultad de Ciencias",
+          "curriculumVariant": false,
+          "trajectoryIds": ["formacion-personalizada"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-en-bioquimica-2017.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": null,
+        "compositionMatterEntries": 428,
+        "distinctSnapshotCourseRecords": 359,
+        "publishedPrerequisiteRecords": 530,
+        "interpretation": "Bedelías reproduce los cinco mínimos del tramo común, los 33 créditos de orientación y la Tesina de 40 créditos, pero publica mínimos cero para el tramo diferencial y para la formación social/productiva y omite el total de 360 en los metadatos. El Plan aprobado prevalece para esos requisitos."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-one-personalized-orientation-pathway",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2017 establece un único título en Montevideo y un tramo diferencial diseñado personalmente con tutoría. Las orientaciones enumeradas describen ámbitos posibles del perfil de egreso, no menciones ni títulos separados.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Bioquímica Plan 2017, de ocho semestres y 360 créditos en Montevideo.",
+          "Controlar los cinco mínimos del tramo común: 60 Físico-Matemática, 70 Química, 60 Biología, 45 Bioquímica Básica y 6 Humanística.",
+          "Controlar 33 créditos optativos/electivos de orientación y 40 de Tesina de Graduación, conservando BQ200 como la unidad publicada que satisface la Tesina.",
+          "Mantener las 428 apariciones de composición como catálogo flexible, deduplicadas por identidad y créditos, sin exigir simultáneamente cursos equivalentes o históricos.",
+          "Presentar una única trayectoria personalizada y no convertir los ejemplos de orientación profesional en menciones certificadas.",
+          "Exigir validación académica del currículo y de los 10 créditos transversales, porque las dos actividades actualmente clasificadas por Bedelías suman sólo 7 créditos y no representan todas las formas normativas de cumplimiento."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24552/1/PLBIO_2020.pdf", "authority": "Plan de Estudios de la Licenciatura en Bioquímica, Facultad de Ciencias, Udelar", "supports": ["aprobaciones", "título", "cuatro años", "360 créditos", "tramos", "mínimos por área", "tesina", "formación transversal", "tutoría"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24552", "authority": "Repositorio Colibri, Udelar", "supports": ["Plan 2017", "código de carrera 302", "código de plan 1083", "responsabilidad de Facultad de Ciencias"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-bioquimica", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["vigencia", "cuatro años", "Facultad de Ciencias", "orientaciones del perfil"] }
+      ],
+      "anomalies": [
+        { "field": "minimumCredits", "resolution": "El snapshot deja vacío el mínimo total y marca el tramo diferencial con cero créditos. El Plan aprobado exige 360 totales, 33 de optativas/electivas de orientación y 40 de Tesina." },
+        { "field": "socialProductiveTraining", "resolution": "El Plan exige 10 créditos transversales, pero el grupo específico de Bedelías conserva sólo dos actividades históricas por 7 créditos. Se muestra el grupo como catálogo y se requiere validación académica sin inventar una materia ni bloquear el plan con una bolsa incompleta." },
+        { "field": "orientations", "resolution": "Investigación, diagnóstico, biotecnología, bioinformática y demás campos son ejemplos de énfasis dentro de un perfil común. La UI no los ofrece como menciones separadas." },
+        { "field": "catalogSize", "resolution": "Los 2.897 créditos de los 359 códigos distintos y las 428 apariciones jerárquicas constituyen oferta acumulada, equivalencias y cursos históricos. El requisito es cumplir áreas, Tesina y 360 créditos, no aprobar el catálogo completo." }
+      ],
+      "uiNotice": "Plan 2017 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí los cinco mínimos comunes, 33 créditos de orientación y la Tesina de 40; la Comisión de Carrera debe validar tu recorrido y los 10 créditos transversales.",
+      "remainingWork": "Tutoría y Comisión de Carrera determinan la pertinencia de optativas, electivas, pasantías, reválidas y los 10 créditos de formación social/productiva o cursos externos; la UI conserva esa aprobación como control manual explícito."
     }
   ],
-  "contentHash": "sha256:369e52b4f32aeae1f9fd5c7253913ef1afc1859ab485e3da0eeab7e61ca79d89"
+  "contentHash": "sha256:80c95b9802840be917d0857218337334938d6ff222e9a8dcd08c80e0156323f2"
 }

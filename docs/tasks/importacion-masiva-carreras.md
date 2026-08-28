@@ -1520,3 +1520,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:369e52b4f32aeae1f9fd5c7253913ef1afc1859ab485e3da0eeab7e61ca79d89`. Cola general: 48 identidades pendientes; hash `sha256:3550940e45874f59eaf00a8dcd832d18f44169ccfbb356dcca66b6be7b571efd`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:5de947dd55c7876f585873be7fe0d8fec929db524cc51961e1468ef07f609003`. Cola funcional vacía; hash `sha256:0ca7478e249c2379733344385e034be44ac334ff7130e3cfe09e77dbd25c72c4`.
 - Siguiente paso: auditar la Licenciatura en Bioquímica Plan 2017, primera identidad reproducible restante.
+
+### Licenciatura en Bioquímica Plan 2017 — orientación personalizada operativa 2026-08-27
+
+- Facultad de Ciencias confirma un único título de Licenciado en Bioquímica, cuatro años, 360 créditos y sede Montevideo. Investigación, diagnóstico, biotecnología, bioinformática y las demás orientaciones publicadas son énfasis posibles del mismo perfil y no menciones ni títulos separados.
+- La UI controla los mínimos del tramo común: 60 créditos Físico-Matemáticos, 70 de Química, 60 de Biología, 45 de Bioquímica Básica y 6 de Humanística. El tramo diferencial exige 33 créditos optativos/electivos de orientación y BQ200 satisface la Tesina de Graduación de 40 créditos; los mínimos suman 314 y los 46 restantes quedan disponibles para completar el total flexible de 360.
+- El Plan exige además 10 créditos de formación social/productiva o cursos afines de otros servicios o instituciones. Bedelías mantiene sólo dos actividades explícitas por 7 créditos en ese grupo, por lo que la UI no inventa una materia ni un mínimo imposible: conserva el catálogo y exige validación académica explícita de esa condición y del currículo individual.
+- Las 428 apariciones de composición se presentan como catálogo por áreas y no como obligación acumulativa. De los 530 registros de previaturas, la proyección conserva 443 reglas operativas y deja 87 unidades explícitamente sin regla publicada; mantiene una única trayectoria personalizada y la sede montevideana.
+- Registro de auditoría: hash `sha256:80c95b9802840be917d0857218337334938d6ff222e9a8dcd08c80e0156323f2`. Cola general: 47 identidades pendientes; hash `sha256:015bac66251b642da9120133fa3b667ce1fdd7b2ae34f1bde18410aae0d6a1c2`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:6b4a67750b7aed5c577d473761b4b6c8829c908bba4dc7c87b5a8ce2485d8658`. Cola funcional vacía; hash `sha256:9ceba1e79472e47f5006a9658838ccc2921b9c34c0c5116cd61e3057a06235db`.
+- Siguiente paso: auditar la Licenciatura en Ciencias Biológicas Plan 2017, primera identidad reproducible restante.

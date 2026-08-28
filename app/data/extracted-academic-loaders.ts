@@ -278,9 +278,9 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcien-licenciatura-en-bioquimica-2017": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-bioquimica-2017.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["formacion-personalizada"],
     pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    minCredits: 360,
   },
   "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-ciencias-biologicas-2017.json"),

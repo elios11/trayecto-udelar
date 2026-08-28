@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T22:45:53.748Z",
+  "generatedAt": "2026-08-27T22:53:54.831Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:369e52b4f32aeae1f9fd5c7253913ef1afc1859ab485e3da0eeab7e61ca79d89"
+    "officialAuditRegistryHash": "sha256:80c95b9802840be917d0857218337334938d6ff222e9a8dcd08c80e0156323f2"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 129,
-    "pendingCanonicalIdentities": 48,
+    "evidenceClosedCanonicalIdentities": 130,
+    "pendingCanonicalIdentities": 47,
     "byPriority": {
-      "official-sources-pending": 48
+      "official-sources-pending": 47
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -795,38 +795,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-27",
       "conclusion": "one-degree-one-personalized-flexible-pathway"
+    },
+    {
+      "identity": "licenciatura en bioquimica:2017",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-27",
+      "conclusion": "one-degree-one-personalized-orientation-pathway"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en bioquimica:2017",
-      "career": {
-        "name": "LICENCIATURA EN BIOQUÍMICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2017",
-        "name": "LICENCIATURA EN BIOQUÍMICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en bioquimica:2017",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en bioquimica:2017",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en ciencias biologicas:2017",
       "career": {
@@ -2402,5 +2379,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:3550940e45874f59eaf00a8dcd832d18f44169ccfbb356dcca66b6be7b571efd"
+  "contentHash": "sha256:015bac66251b642da9120133fa3b667ce1fdd7b2ae34f1bde18410aae0d6a1c2"
 }
