@@ -1638,3 +1638,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:685c0679067bb298bb80382049f4e20476a0c1ad7c3365b65b5b90e858555837`. Cola general: 34 identidades pendientes; hash `sha256:a78ab1d9747b070faf004512d0e482f31302d10b8c1088903ad86ef3a0b728db`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable, 35 con sedes oficiales y 38 identidades excluidas; hash `sha256:0412cfac75d43093e73eb2a14f83836c232fbd32cba8d4d22423cdc90b67418f`. Cola funcional vacía; hash `sha256:109baf5808d9e939e8aebe2b7f0d631596c126564aef52ba86282573c5773de1`.
 - Siguiente paso: auditar la Licenciatura en Ciencias Antropológicas Plan 2014, primera identidad reproducible restante.
+
+### Licenciatura en Ciencias Antropológicas Plan 2014 — tres opciones tituladas operativas 2026-08-28
+
+- FHCE y el Plan oficial confirman una sola Licenciatura en Ciencias Antropológicas de cuatro años, 360 créditos y sede Montevideo. Antropología Biológica, Arqueología y Antropología Social son opciones del mismo plan que integran la denominación del título, no carreras independientes.
+- La UI ofrece las tres opciones sobre un único progreso y vincula cada una con su credencial exacta. Las áreas Específica I y II cambian con la opción; la formación general, las optativas de las tres ramas y las electivas permanecen compartidas.
+- La distribución operativa que publica Bedelías suma exactamente 360 créditos: 114 de formación general, 84 de contenidos optativos específicos, 58 electivos, 66 de Específica I y 38 de Específica II. Dentro de formación general se controlan 8 créditos de lenguas y 12 de extensión.
+- Cada opción exige 52 créditos optativos de su propia rama y 16 de cada una de las otras dos. Esos valores completan los 84 del bloque sin duplicar sus submínimos.
+- La proyección contiene 273 unidades de Bedelías más una validación final de la opción y del plan individual por la Comisión de Carrera. Conserva 83 reglas operativas y marca 182 unidades sin regla publicada; los seminarios y talleres de investigación pertenecen a Específica II y no se inventa una tesis separada.
+- Registro de auditoría: hash `sha256:e8785443bd4be84159a6580796b7bc5777627421e6944e10aa5ed60c381b68f0`. Cola general: 33 identidades pendientes; hash `sha256:79a5e61958bbe5bd90c03e37909de2f20baa42c9faa019c579262a76c27eed3f`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:cf6771b4fab97ccde2cec30b206d44adf0f623ba8bb1be30c5a8405a030dee37`. Cola funcional vacía; hash `sha256:40802721e67fd1f75fd8958124afb769bb831b09b47ba908fffdf24168fa8a7a`.
+- Siguiente paso: auditar la Tecnicatura Universitaria en Corrección de Estilo Plan 2014, primera identidad reproducible restante.

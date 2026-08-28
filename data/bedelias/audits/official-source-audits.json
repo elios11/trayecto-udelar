@@ -27125,7 +27125,257 @@
         }
       ],
       "remainingWork": "Cerrado como alias administrativo; el snapshot se conserva para trazabilidad y contraste de la oferta flexible."
+    },
+    {
+      "identity": "antropologia:2014",
+      "career": "ANTROPOLOGÍA",
+      "planYear": "2014",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, sede, duración, créditos, tres opciones tituladas, áreas general y específicas, optativas, electivas, extensión, progresión y reglas operativas vigentes",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan 2014 de la Licenciatura en Ciencias Antropológicas publicado y mantenido vigente por FHCE",
+          "Oferta y mallas por opción vigentes en 2026"
+        ],
+        "planYear": "2014",
+        "title": "Licenciado en Ciencias Antropológicas",
+        "careerName": "Licenciatura en Ciencias Antropológicas",
+        "facultyCode": "FHUM",
+        "facultyName": "Facultad de Humanidades y Ciencias de la Educación",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Opción",
+        "degreeRule": "El Plan 2014 exige 360 créditos y una de tres opciones que se especifica en el título: Antropología Biológica, Arqueología o Antropología Social. La implementación de Bedelías distribuye el total en 114 créditos de formación general, 84 de contenidos optativos específicos, 58 electivos y dos niveles específicos de la opción por 66 y 38 créditos.",
+        "trajectories": [
+          {
+            "id": "antropologia-biologica",
+            "credentialId": "titulo-antropologia-biologica",
+            "label": "Antropología Biológica",
+            "description": "Opción oficial que se especifica en el título y concentra sus áreas de formación específica en el estudio biológico de poblaciones humanas."
+          },
+          {
+            "id": "arqueologia",
+            "credentialId": "titulo-arqueologia",
+            "label": "Arqueología",
+            "description": "Opción oficial que se especifica en el título y concentra sus áreas de formación específica en teoría, metodología, pasantía y talleres arqueológicos."
+          },
+          {
+            "id": "antropologia-social",
+            "credentialId": "titulo-antropologia-social",
+            "label": "Antropología Social",
+            "description": "Opción oficial que se especifica en el título y concentra sus áreas de formación específica en teoría, metodología, pasantía y talleres de antropología social."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-Plan-Antropologia.pdf",
+          "pathwayLabel": "Opción",
+          "pathwayDescription": "Catálogo vigente organizado por los cinco mínimos operativos de Bedelías. La opción seleccionada muestra sus dos áreas específicas; las optativas de las tres ramas permanecen disponibles porque el Plan exige formación transversal antes de profundizar.",
+          "pathwayGroupMap": {
+            "1401": "antropologia-biologica",
+            "1403": "antropologia-biologica",
+            "1388": "arqueologia",
+            "1406": "arqueologia",
+            "1404": "antropologia-social",
+            "1405": "antropologia-social"
+          },
+          "pathRequirementMap": {
+            "1906": "anth-general",
+            "3583": "anth-extension",
+            "3706": "anth-language",
+            "2908": "anth-options",
+            "4187": "anth-options-biological",
+            "4396": "anth-options-archaeology",
+            "4447": "anth-options-social",
+            "2450": "anth-electives",
+            "1401": "anth-biological-specific-i",
+            "1403": "anth-biological-specific-ii",
+            "1388": "anth-archaeology-specific-i",
+            "1406": "anth-archaeology-specific-ii",
+            "1404": "anth-social-specific-i",
+            "1405": "anth-social-specific-ii"
+          },
+          "periodOrder": [
+            "Formación general",
+            "Lenguas extranjeras",
+            "Formación y práctica en extensión",
+            "Contenidos optativos específicos",
+            "Optativas · Antropología Biológica",
+            "Optativas · Arqueología",
+            "Optativas · Antropología Social",
+            "Electivas",
+            "Específica I · Antropología Biológica",
+            "Específica II · Antropología Biológica",
+            "Específica I · Arqueología",
+            "Específica II · Arqueología",
+            "Específica I · Antropología Social",
+            "Específica II · Antropología Social",
+            "Validación de egreso"
+          ],
+          "periodLabelMap": {
+            "1906": "Formación general",
+            "3706": "Lenguas extranjeras",
+            "3583": "Formación y práctica en extensión",
+            "2908": "Contenidos optativos específicos",
+            "4187": "Optativas · Antropología Biológica",
+            "4396": "Optativas · Arqueología",
+            "4447": "Optativas · Antropología Social",
+            "2450": "Electivas",
+            "1401": "Específica I · Antropología Biológica",
+            "1403": "Específica II · Antropología Biológica",
+            "1388": "Específica I · Arqueología",
+            "1406": "Específica II · Arqueología",
+            "1404": "Específica I · Antropología Social",
+            "1405": "Específica II · Antropología Social"
+          },
+          "creditRequirements": [
+            { "id": "anth-general", "name": "Área de formación general operativa", "shortName": "Formación general", "minCredits": 114 },
+            { "id": "anth-language", "parentId": "anth-general", "name": "Lenguas extranjeras", "shortName": "Lenguas", "minCredits": 8, "credentialRequired": false },
+            { "id": "anth-extension", "parentId": "anth-general", "name": "Formación y práctica en extensión", "shortName": "Extensión", "minCredits": 12, "credentialRequired": false },
+            { "id": "anth-options", "name": "Contenidos optativos específicos", "shortName": "Optativas específicas", "minCredits": 84 },
+            { "id": "anth-options-biological", "parentId": "anth-options", "name": "Optativas en Antropología Biológica", "shortName": "Optativas biológicas", "minCredits": 16, "credentialRequired": false },
+            { "id": "anth-options-archaeology", "parentId": "anth-options", "name": "Optativas en Arqueología", "shortName": "Optativas arqueológicas", "minCredits": 16, "credentialRequired": false },
+            { "id": "anth-options-social", "parentId": "anth-options", "name": "Optativas en Antropología Social", "shortName": "Optativas sociales", "minCredits": 16, "credentialRequired": false },
+            { "id": "anth-electives", "name": "Electivas", "shortName": "Electivas", "minCredits": 58 },
+            { "id": "anth-biological-specific-i", "name": "Área específica I · Antropología Biológica", "shortName": "Biológica I", "minCredits": 66, "credentialRequired": false },
+            { "id": "anth-biological-specific-ii", "name": "Área específica II · Antropología Biológica", "shortName": "Biológica II", "minCredits": 38, "credentialRequired": false },
+            { "id": "anth-archaeology-specific-i", "name": "Área específica I · Arqueología", "shortName": "Arqueología I", "minCredits": 66, "credentialRequired": false },
+            { "id": "anth-archaeology-specific-ii", "name": "Área específica II · Arqueología", "shortName": "Arqueología II", "minCredits": 38, "credentialRequired": false },
+            { "id": "anth-social-specific-i", "name": "Área específica I · Antropología Social", "shortName": "Social I", "minCredits": 66, "credentialRequired": false },
+            { "id": "anth-social-specific-ii", "name": "Área específica II · Antropología Social", "shortName": "Social II", "minCredits": 38, "credentialRequired": false }
+          ],
+          "additionalCourses": [
+            {
+              "id": "validacion-final-plan",
+              "name": "Validación final de la opción y del plan de optativas por la Comisión de Carrera",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Validación de egreso",
+              "curricularBlock": true
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "validacion-final-plan",
+              "label": "Validación final de la opción y del plan de optativas por la Comisión de Carrera",
+              "minCompleted": 1,
+              "sourceCourseIds": ["validacion-final-plan"]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "titulo-antropologia-biologica",
+              "title": "Licenciado en Ciencias Antropológicas opción Antropología Biológica",
+              "minTotalCredits": 360,
+              "requiredCourseGroupIds": ["validacion-final-plan"],
+              "nodeRequirements": [
+                { "nodeId": "anth-general", "minCredits": 114 },
+                { "nodeId": "anth-language", "minCredits": 8 },
+                { "nodeId": "anth-extension", "minCredits": 12 },
+                { "nodeId": "anth-options", "minCredits": 84 },
+                { "nodeId": "anth-options-biological", "minCredits": 52 },
+                { "nodeId": "anth-options-archaeology", "minCredits": 16 },
+                { "nodeId": "anth-options-social", "minCredits": 16 },
+                { "nodeId": "anth-electives", "minCredits": 58 },
+                { "nodeId": "anth-biological-specific-i", "minCredits": 66 },
+                { "nodeId": "anth-biological-specific-ii", "minCredits": 38 }
+              ]
+            },
+            {
+              "id": "titulo-arqueologia",
+              "title": "Licenciado en Ciencias Antropológicas opción Arqueología",
+              "minTotalCredits": 360,
+              "requiredCourseGroupIds": ["validacion-final-plan"],
+              "nodeRequirements": [
+                { "nodeId": "anth-general", "minCredits": 114 },
+                { "nodeId": "anth-language", "minCredits": 8 },
+                { "nodeId": "anth-extension", "minCredits": 12 },
+                { "nodeId": "anth-options", "minCredits": 84 },
+                { "nodeId": "anth-options-biological", "minCredits": 16 },
+                { "nodeId": "anth-options-archaeology", "minCredits": 52 },
+                { "nodeId": "anth-options-social", "minCredits": 16 },
+                { "nodeId": "anth-electives", "minCredits": 58 },
+                { "nodeId": "anth-archaeology-specific-i", "minCredits": 66 },
+                { "nodeId": "anth-archaeology-specific-ii", "minCredits": 38 }
+              ]
+            },
+            {
+              "id": "titulo-antropologia-social",
+              "title": "Licenciado en Ciencias Antropológicas opción Antropología Social",
+              "minTotalCredits": 360,
+              "requiredCourseGroupIds": ["validacion-final-plan"],
+              "nodeRequirements": [
+                { "nodeId": "anth-general", "minCredits": 114 },
+                { "nodeId": "anth-language", "minCredits": 8 },
+                { "nodeId": "anth-extension", "minCredits": 12 },
+                { "nodeId": "anth-options", "minCredits": 84 },
+                { "nodeId": "anth-options-biological", "minCredits": 16 },
+                { "nodeId": "anth-options-archaeology", "minCredits": 16 },
+                { "nodeId": "anth-options-social", "minCredits": 52 },
+                { "nodeId": "anth-electives", "minCredits": 58 },
+                { "nodeId": "anth-social-specific-i", "minCredits": 66 },
+                { "nodeId": "anth-social-specific-ii", "minCredits": 38 }
+              ]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FHUM",
+          "locations": ["Montevideo"],
+          "role": "sede completa del Plan 2014",
+          "admissionStatus": "current"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-antropologia-2014.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 273,
+        "prerequisiteRuleCount": 83,
+        "noPublishedRuleCount": 182,
+        "interpretation": "La composición vigente operacionaliza exactamente 360 créditos como 114 + 84 + 58 + 66 + 38. Las ramas 1401/1403, 1388/1406 y 1404/1405 corresponden respectivamente a Antropología Biológica, Arqueología y Antropología Social."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-three-titled-options",
+        "canonicalIdentity": "antropologia:2014",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "FHCE publica una sola licenciatura con tres opciones que integran la denominación del título. Deben compartir carrera y progreso, pero cada opción necesita su malla específica y su credencial final propia.",
+        "normalization": [
+          "Conservar una única Licenciatura en Ciencias Antropológicas Plan 2014 en Montevideo.",
+          "Modelar Antropología Biológica, Arqueología y Antropología Social como opciones seleccionables vinculadas a títulos específicos.",
+          "Compartir formación general, contenidos optativos transversales y electivas, y filtrar las dos áreas específicas según la opción.",
+          "Exigir 52 créditos optativos en la rama elegida y 16 en cada una de las otras dos para completar los 84 del Plan.",
+          "Usar los mínimos operativos de Bedelías que suman 360 y documentar su redistribución respecto de las áreas 174 + 94 + 92 del texto normativo.",
+          "Mantener la aprobación de la opción y del plan de optativas como validación explícita de la Comisión de Carrera."
+        ]
+      },
+      "sources": [
+        { "url": "https://fhce.edu.uy/plan-de-estudios-3/", "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar", "supports": ["vigencia del Plan 2014", "tres títulos con opción", "cuatro años", "360 créditos"] },
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-Plan-Antropologia.pdf", "authority": "Plan de Estudios 2014, FHCE", "supports": ["estructura 174 + 94 + 92", "mínimos por contenido", "opciones", "optativas", "electivas", "extensión", "títulos"] },
+        { "url": "https://fhce.edu.uy/malla-curricular-de-la-licenciatura-en-ciencias-antropologicas-por-semestre/", "authority": "Unidad de Apoyo a la Enseñanza, FHCE", "supports": ["tres trayectorias sugeridas vigentes", "planificación por semestre"] },
+        { "url": "https://fhce.edu.uy/preguntas-frecuentes-respecto-al-plan-2014/", "authority": "FHCE", "supports": ["80 por ciento para avanzar entre áreas", "orientación y aprobación del plan de optativas", "distinción entre optativas y electivas"] },
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2026/02/2026-IMPAR-7.pdf", "authority": "Oferta de licenciaturas 2026, FHCE", "supports": ["dictado vigente", "unidades por opción", "umbrales actuales de 120 y 190 créditos"] },
+        { "url": "https://udelar.edu.uy/carrera/antropologia", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["vigencia", "48 meses", "360 créditos", "sede FHCE"] }
+      ],
+      "anomalies": [
+        { "field": "areaDistribution", "resolution": "El Plan expresa 174 créditos generales, 94 de Específica I y 92 de Específica II. Bedelías redistribuye esas obligaciones en 114 generales, 84 optativos específicos, 58 electivos y 66 + 38 específicos de opción; ambas lecturas suman 360. La UI usa la distribución operativa y conserva los submínimos normativos." },
+        { "field": "optionSpecificOptatives", "resolution": "Los 84 créditos optativos exigen 16 en cada rama y 36 adicionales de la opción elegida. Cada credencial controla 52 en su propia rama y 16 en las otras dos, sin convertir todo el catálogo en obligatorio." },
+        { "field": "prerequisites", "resolution": "La FAQ histórica indica que el Plan no fijó previaturas nominales y sí umbrales de 80 por ciento entre áreas. Bedelías y la oferta 2026 publican condiciones operativas actuales; la UI conserva únicamente las 83 reglas explícitas y deja 182 consultas sin regla publicada." },
+        { "field": "catalogSize", "resolution": "Las 273 apariciones incluyen versiones, equivalencias, optativas y electivas acumuladas. El egreso exige mínimos y la aprobación del plan individual, no completar todas las unidades visibles." },
+        { "field": "finalWork", "resolution": "El Plan culmina mediante seminarios o talleres de investigación dentro del Área Específica II. No se agrega una tesis o trabajo final separado." }
+      ],
+      "uiNotice": "Plan 2014 de 360 créditos en Montevideo. Elegí Antropología Biológica, Arqueología o Antropología Social para ver sus áreas específicas y el título correspondiente; las optativas y electivas son alternativas y el plan individual requiere validación de la Comisión de Carrera.",
+      "remainingWork": "La Comisión de Carrera conserva la aprobación del plan individual de optativas y la verificación final de la opción; la UI explicita esa validación sin sustituirla."
     }
   ],
-  "contentHash": "sha256:685c0679067bb298bb80382049f4e20476a0c1ad7c3365b65b5b90e858555837"
+  "contentHash": "sha256:e8785443bd4be84159a6580796b7bc5777627421e6944e10aa5ed60c381b68f0"
 }

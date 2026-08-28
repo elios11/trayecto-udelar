@@ -434,8 +434,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-antropologia-2014": {
     load: () => import("./bedelias-generated/bedelias-fhum-antropologia-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["antropologia-biologica","arqueologia","antropologia-social"],
+    pathwayLabel: "Opción",
     minCredits: 360,
   },
   "bedelias-fhum-correccion-de-estilo-2014": {
