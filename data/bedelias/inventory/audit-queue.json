@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T17:56:51.381Z",
+  "generatedAt": "2026-08-28T18:05:50.215Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:e8785443bd4be84159a6580796b7bc5777627421e6944e10aa5ed60c381b68f0"
+    "officialAuditRegistryHash": "sha256:977914f64660289830ba2ea870e73e1d6a9e00502c389c111906da149d097593"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 144,
-    "pendingCanonicalIdentities": 33,
+    "evidenceClosedCanonicalIdentities": 145,
+    "pendingCanonicalIdentities": 32,
     "byPriority": {
-      "official-sources-pending": 33
+      "official-sources-pending": 32
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -885,38 +885,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-degree-three-titled-options"
+    },
+    {
+      "identity": "correccion de estilo:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-technical-degree-one-flexible-path"
     }
   ],
   "queue": [
-    {
-      "identity": "correccion de estilo:2014",
-      "career": {
-        "name": "CORRECCIÓN DE ESTILO",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "TÉCNICATURA UNIVERSITARIA EN CORRECCIÓN DE ESTILO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:correccion de estilo:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:correccion de estilo:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "dramaturgia:2015",
       "career": {
@@ -2051,5 +2028,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:79a5e61958bbe5bd90c03e37909de2f20baa42c9faa019c579262a76c27eed3f"
+  "contentHash": "sha256:b27404c377826ad27f93bd6f2b2f589d60d97e524b9a6d0962e20a44e8903441"
 }

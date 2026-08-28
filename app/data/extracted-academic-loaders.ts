@@ -440,8 +440,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-correccion-de-estilo-2014": {
     load: () => import("./bedelias-generated/bedelias-fhum-correccion-de-estilo-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["plan-flexible"],
+    pathwayLabel: "Recorrido",
     minCredits: 180,
   },
   "bedelias-fhum-dramaturgia-2015": {

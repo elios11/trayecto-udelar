@@ -27375,7 +27375,268 @@
       ],
       "uiNotice": "Plan 2014 de 360 créditos en Montevideo. Elegí Antropología Biológica, Arqueología o Antropología Social para ver sus áreas específicas y el título correspondiente; las optativas y electivas son alternativas y el plan individual requiere validación de la Comisión de Carrera.",
       "remainingWork": "La Comisión de Carrera conserva la aprobación del plan individual de optativas y la verificación final de la opción; la UI explicita esa validación sin sustituirla."
+    },
+    {
+      "identity": "correccion de estilo:2014",
+      "career": "CORRECCIÓN DE ESTILO",
+      "planYear": "2014",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, sede, duración, título, créditos, cuatro áreas, malla sugerida vigente, obligatoriedad, pasantía y previaturas",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios 2014 publicado y mantenido vigente por FHCE",
+          "Malla curricular sugerida actualizada en febrero de 2025 y oferta de ingreso vigente en 2026"
+        ],
+        "planYear": "2014",
+        "title": "Técnico Universitario en Corrección de Estilo (lengua española)",
+        "careerName": "Tecnicatura Universitaria en Corrección de Estilo (Lengua Española)",
+        "facultyCode": "FHUM",
+        "facultyName": "Facultad de Humanidades y Ciencias de la Educación",
+        "durationMonths": 24,
+        "semesters": 4,
+        "minimumCredits": 180,
+        "current": true,
+        "pathwayLabel": "Recorrido",
+        "degreeRule": "El Plan 2014 exige 180 créditos: 84 del área técnico-instrumental, 56 de lingüística, 26 de literatura y 14 de formación general y académica. La malla semestral vigente es una trayectoria sugerida que puede superar ese mínimo por cambios posteriores en los créditos de las unidades optativas.",
+        "trajectories": [
+          {
+            "id": "plan-flexible",
+            "credentialId": "tecnico-correccion-estilo",
+            "label": "Plan flexible",
+            "description": "Recorrido por las cuatro áreas oficiales. La malla de cuatro semestres orienta el orden, pero las optativas, electivas y equivalencias se eligen dentro del catálogo vigente."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2023/01/TUCE_2014_s_a.pdf",
+          "pathwayLabel": "Recorrido",
+          "pathwayDescription": "Catálogo vigente organizado por las cuatro áreas del Plan 2014. La malla semestral es una guía y las unidades optativas y electivas no son obligaciones simultáneas.",
+          "pathRequirementMap": {
+            "2784": "tuce-linguistics",
+            "3168": "tuce-literature",
+            "3352": "tuce-technical",
+            "3503": "tuce-general",
+            "5243": "tuce-foreign-language"
+          },
+          "periodOrder": [
+            "Técnico-instrumental",
+            "Lingüística",
+            "Comprensión lectora en lengua extranjera",
+            "Literatura",
+            "Formación general y académica"
+          ],
+          "periodLabelMap": {
+            "2784": "Lingüística",
+            "3168": "Literatura",
+            "3352": "Técnico-instrumental",
+            "3503": "Formación general y académica",
+            "5243": "Comprensión lectora en lengua extranjera"
+          },
+          "creditRequirements": [
+            {
+              "id": "tuce-technical",
+              "name": "Área técnico-instrumental",
+              "shortName": "Técnico-instrumental",
+              "minCredits": 84
+            },
+            {
+              "id": "tuce-linguistics",
+              "name": "Área lingüística",
+              "shortName": "Lingüística",
+              "minCredits": 56
+            },
+            {
+              "id": "tuce-foreign-language",
+              "parentId": "tuce-linguistics",
+              "name": "Comprensión lectora en lengua extranjera moderna",
+              "shortName": "Lengua extranjera",
+              "minCredits": 4,
+              "credentialRequired": false
+            },
+            {
+              "id": "tuce-literature",
+              "name": "Área literaria",
+              "shortName": "Literatura",
+              "minCredits": 26
+            },
+            {
+              "id": "tuce-general",
+              "name": "Área de formación general y académica",
+              "shortName": "Formación general",
+              "minCredits": 14
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "tuce-academic-writing",
+              "label": "Lectura y Escritura en Contextos Académicos o Taller de Escritura Académica",
+              "minCompleted": 1,
+              "sourceCourseIds": ["COE10", "COE6"]
+            },
+            {
+              "id": "tuce-informatics",
+              "label": "Informática Aplicada a la Corrección de Estilo",
+              "minCompleted": 1,
+              "sourceCourseIds": ["COE5", "COE5A", "COE5F", "COE8"]
+            },
+            {
+              "id": "tuce-resources",
+              "label": "Instrumentos y Recursos del Corrector de Estilo",
+              "minCompleted": 1,
+              "sourceCourseIds": ["COE1"]
+            },
+            {
+              "id": "tuce-production",
+              "label": "Producción Editorial",
+              "minCompleted": 1,
+              "sourceCourseIds": ["COE7", "PECLA"]
+            },
+            {
+              "id": "tuce-workshop-1",
+              "label": "Taller I",
+              "minCompleted": 1,
+              "sourceCourseIds": ["COE2"]
+            },
+            {
+              "id": "tuce-workshop-2",
+              "label": "Taller II",
+              "minCompleted": 1,
+              "sourceCourseIds": ["COE3"]
+            },
+            {
+              "id": "tuce-internship",
+              "label": "Pasantía e informe",
+              "minCompleted": 1,
+              "sourceCourseIds": ["COE4"]
+            },
+            {
+              "id": "tuce-intro-grammar",
+              "label": "Introducción a la Gramática del Español",
+              "minCompleted": 1,
+              "sourceCourseIds": ["LI174", "LI179", "LI176"]
+            },
+            {
+              "id": "tuce-grammar-1",
+              "label": "Gramática del Español I",
+              "minCompleted": 1,
+              "sourceCourseIds": ["LI114"]
+            },
+            {
+              "id": "tuce-simple-syntax",
+              "label": "Sintaxis: oración simple",
+              "minCompleted": 1,
+              "sourceCourseIds": ["LI133"]
+            },
+            {
+              "id": "tuce-subordinate-syntax",
+              "label": "Sintaxis: oración subordinada",
+              "minCompleted": 1,
+              "sourceCourseIds": ["LI134", "LI136", "LI110"]
+            },
+            {
+              "id": "tuce-sociolinguistics",
+              "label": "Sociolingüística",
+              "minCompleted": 1,
+              "sourceCourseIds": ["LI120"]
+            },
+            {
+              "id": "tuce-foreign-course",
+              "label": "Comprensión lectora en una lengua extranjera moderna",
+              "minCompleted": 1,
+              "sourceCourseIds": ["INPFI", "IPFI", "ALEM", "FRANC", "INGL", "ICPF", "ITAL", "PORT", "LEP2", "PORCL"]
+            },
+            {
+              "id": "tuce-university-introduction",
+              "label": "Introducción a la Vida Universitaria o equivalente",
+              "minCompleted": 1,
+              "sourceCourseIds": ["IVU", "IVA", "BAS2"]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "tecnico-correccion-estilo",
+              "title": "Técnico Universitario en Corrección de Estilo (lengua española)",
+              "minTotalCredits": 180,
+              "requiredCourseGroupIds": [
+                "tuce-academic-writing",
+                "tuce-informatics",
+                "tuce-resources",
+                "tuce-production",
+                "tuce-workshop-1",
+                "tuce-workshop-2",
+                "tuce-internship",
+                "tuce-intro-grammar",
+                "tuce-grammar-1",
+                "tuce-simple-syntax",
+                "tuce-subordinate-syntax",
+                "tuce-sociolinguistics",
+                "tuce-foreign-course",
+                "tuce-university-introduction"
+              ],
+              "nodeRequirements": [
+                { "nodeId": "tuce-technical", "minCredits": 84 },
+                { "nodeId": "tuce-linguistics", "minCredits": 56 },
+                { "nodeId": "tuce-foreign-language", "minCredits": 4 },
+                { "nodeId": "tuce-literature", "minCredits": 26 },
+                { "nodeId": "tuce-general", "minCredits": 14 }
+              ]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FHUM",
+          "locations": ["Montevideo"],
+          "role": "sede completa del Plan 2014",
+          "admissionStatus": "current"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-correccion-de-estilo-2014.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 180,
+        "prerequisiteRuleCount": 36,
+        "noPublishedRuleCount": 144,
+        "interpretation": "La composición vigente operacionaliza los cuatro mínimos 84 + 56 + 26 + 14 = 180 y conserva un subgrupo de comprensión lectora de al menos 4 créditos dentro del área lingüística."
+      },
+      "conclusion": {
+        "canonicalModel": "one-technical-degree-one-flexible-path",
+        "canonicalIdentity": "correccion de estilo:2014",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "FHCE publica una única tecnicatura de dos años y 180 créditos, sin menciones ni variantes territoriales. La malla semestral vigente es una guía sobre un plan por créditos.",
+        "normalization": [
+          "Conservar una única Tecnicatura Universitaria en Corrección de Estilo Plan 2014 en Montevideo.",
+          "Controlar los cuatro mínimos oficiales que suman exactamente 180 créditos.",
+          "Exigir las unidades técnico-instrumentales, lingüísticas y de vida universitaria que la malla vigente marca como obligatorias, admitiendo sus equivalencias administrativas.",
+          "Mantener literatura, electivas y extensión como elecciones dentro de sus áreas y no como un catálogo obligatorio completo.",
+          "Presentar la organización por áreas como recorrido flexible y documentar la malla de cuatro semestres como orden sugerido."
+        ]
+      },
+      "sources": [
+        { "url": "https://fhce.edu.uy/plan-de-estudios-5/", "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar", "supports": ["vigencia del Plan 2014", "título", "180 créditos"] },
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/TUCE_2014_s_a.pdf", "authority": "Plan de Estudios 2014, FHCE", "supports": ["dos años", "180 créditos", "cuatro áreas", "mínimos", "pasantía"] },
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/pdf-Malla-por-semestre-TUCE-feb-2025.pdf", "authority": "Malla curricular vigente de TUCE, FHCE", "supports": ["cuatro semestres sugeridos", "unidades obligatorias", "optativas", "electivas", "créditos actuales"] },
+        { "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Sistema_de_previaturas_de_la_TUCE.pdf", "authority": "Sistema de previaturas de TUCE, FHCE", "supports": ["secuencia técnico-instrumental", "condiciones de Taller I", "Taller II", "Pasantía"] },
+        { "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-correccion-de-estilo/", "authority": "Página vigente de la carrera, FHCE", "supports": ["dictado actual", "malla recomendada", "sistema de previaturas"] },
+        { "url": "https://udelar.edu.uy/carrera/correccion-de-estilo", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["vigencia", "24 meses", "180 créditos", "sede FHCE"] },
+        { "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre", "authority": "Portal Udelar", "supports": ["ingreso abierto en 2026"] }
+      ],
+      "anomalies": [
+        { "field": "suggestedGridCredits", "resolution": "La malla actual suma 193 créditos por cambios posteriores en cargas de lingüística y literatura, pero el Plan y el catálogo institucional mantienen 180 como mínimo de titulación. La UI controla 180 por áreas y presenta la malla como guía, no como total normativo alternativo." },
+        { "field": "foreignLanguageMinimum", "resolution": "El Plan incluye comprensión lectora dentro de los 56 créditos lingüísticos; Bedelías conserva un submínimo operativo de 4, mientras la malla 2025 sugiere una unidad de 8. La UI exige una unidad válida y al menos 4 créditos sin elevar el total del área." },
+        { "field": "catalogSize", "resolution": "Las 180 apariciones incluyen optativas, electivas, versiones y equivalencias acumuladas por 1.218 créditos positivos. El egreso exige mínimos y obligaciones nominales, no completar todo el catálogo." },
+        { "field": "prerequisites", "resolution": "La UI conserva las 36 reglas explícitas extraídas de Bedelías y complementa la obligatoriedad de egreso desde la malla oficial. Las 144 consultas restantes permanecen marcadas sin regla publicada." }
+      ],
+      "uiNotice": "Plan 2014 de 180 créditos en Montevideo. La malla de cuatro semestres es una guía: completá las unidades obligatorias y los mínimos de las cuatro áreas eligiendo literatura, lengua extranjera, electivas y extensión dentro del catálogo vigente.",
+      "remainingWork": "Las equivalencias y la oferta anual de optativas siguen sujetas a validación de la Comisión de Carrera; la UI conserva las alternativas publicadas sin prometer su dictado en un semestre concreto."
     }
   ],
-  "contentHash": "sha256:e8785443bd4be84159a6580796b7bc5777627421e6944e10aa5ed60c381b68f0"
+  "contentHash": "sha256:977914f64660289830ba2ea870e73e1d6a9e00502c389c111906da149d097593"
 }

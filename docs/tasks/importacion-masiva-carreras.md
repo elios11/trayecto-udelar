@@ -1649,3 +1649,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:e8785443bd4be84159a6580796b7bc5777627421e6944e10aa5ed60c381b68f0`. Cola general: 33 identidades pendientes; hash `sha256:79a5e61958bbe5bd90c03e37909de2f20baa42c9faa019c579262a76c27eed3f`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:cf6771b4fab97ccde2cec30b206d44adf0f623ba8bb1be30c5a8405a030dee37`. Cola funcional vacía; hash `sha256:40802721e67fd1f75fd8958124afb769bb831b09b47ba908fffdf24168fa8a7a`.
 - Siguiente paso: auditar la Tecnicatura Universitaria en Corrección de Estilo Plan 2014, primera identidad reproducible restante.
+
+### Tecnicatura Universitaria en Corrección de Estilo Plan 2014 — currículo por áreas operativo 2026-08-28
+
+- FHCE y el catálogo central confirman una única tecnicatura vigente de dos años, 180 créditos y sede Montevideo, con el título `Técnico Universitario en Corrección de Estilo (lengua española)`. No tiene menciones ni variantes territoriales.
+- La UI controla cuatro mínimos que suman exactamente 180 créditos: 84 del área técnico-instrumental, 56 de lingüística, 26 de literatura y 14 de formación general y académica. La comprensión lectora en lengua extranjera conserva su submínimo operativo de cuatro créditos dentro de lingüística.
+- Se exigen las unidades vigentes del núcleo técnico —escritura académica, informática, instrumentos, producción editorial, Taller I, Taller II y Pasantía— y el núcleo lingüístico publicado, admitiendo las equivalencias administrativas presentes en Bedelías.
+- La malla actual de cuatro semestres suma 193 créditos por cambios posteriores en las cargas de lingüística y literatura. Se presenta como guía, no como un nuevo total normativo; las literaturas, electivas, extensión y lenguas extranjeras se eligen desde el catálogo flexible.
+- Las 180 apariciones de composición y sus 1.218 créditos positivos incluyen versiones, equivalencias y oferta acumulada. La proyección conserva 36 reglas operativas y deja 144 unidades marcadas sin regla publicada; la Pasantía de 15 créditos permanece dentro del área técnico-instrumental.
+- Registro de auditoría: hash `sha256:977914f64660289830ba2ea870e73e1d6a9e00502c389c111906da149d097593`. Cola general: 32 identidades pendientes; hash `sha256:b27404c377826ad27f93bd6f2b2f589d60d97e524b9a6d0962e20a44e8903441`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:f585b8f05a5d6fc16d5d7e28feda98d3bc88174d04348e6c1af1069f46069e75`. Cola funcional vacía; hash `sha256:77a773fb1b142b1de7f45c462bb7cba65b452c28bb69f2efebe788f44b1bd3cf`.
+- Siguiente paso: auditar la Tecnicatura Universitaria en Dramaturgia Plan 2015, primera identidad reproducible restante.
