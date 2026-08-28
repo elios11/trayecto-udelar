@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T05:06:20.032Z",
+  "generatedAt": "2026-08-28T05:13:28.955Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:9673992f0326987cb26f7295baae1e62cd04adea59703568e8a4de4be1b4c7d4"
+    "officialAuditRegistryHash": "sha256:c974e406c9ad7e8f2fe2f1d6447094c798a0e988488be216a2c1981e9806b085"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 134,
-    "pendingCanonicalIdentities": 43,
+    "evidenceClosedCanonicalIdentities": 135,
+    "pendingCanonicalIdentities": 42,
     "byPriority": {
-      "official-sources-pending": 43
+      "official-sources-pending": 42
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -825,38 +825,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-shared-degree-one-flexible-individual-plan"
+    },
+    {
+      "identity": "licenciatura en geografia:2018",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-degree-one-flexible-geography-pathway"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en geografia:2018",
-      "career": {
-        "name": "LICENCIATURA EN GEOGRAFÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2018",
-        "name": "LICENCIATURA EN GEOGRAFÍA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en geografia:2018",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en geografia:2018",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en geologia:2018",
       "career": {
@@ -2281,5 +2258,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:282f726f3f87b250689ebc194cbb55070000fe7fe9a7483ce6a0f7268e5e437d"
+  "contentHash": "sha256:ac4e15be46ddc4f5815315c5ad9d1be61ec55e2bcac1f5e1795b752290b03907"
 }

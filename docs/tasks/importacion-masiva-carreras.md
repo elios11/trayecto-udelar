@@ -1577,3 +1577,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:9673992f0326987cb26f7295baae1e62cd04adea59703568e8a4de4be1b4c7d4`. Cola general: 43 identidades pendientes; hash `sha256:282f726f3f87b250689ebc194cbb55070000fe7fe9a7483ce6a0f7268e5e437d`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:2a64f1d75eed220d2084f41194ed0f9a2c1ba794bef72eb5f3da4148b6263d29`. Cola funcional vacía; hash `sha256:2baa31d05c3f1e2f625dc55d3f397170d2dbb592a10f5e0f08652be052b386c6`.
 - Siguiente paso: auditar la Licenciatura en Geografía Plan 2018, primera identidad reproducible restante.
+
+### Licenciatura en Geografía Plan 2018 — trayectoria flexible y tesina operativa 2026-08-28
+
+- El Plan fue aprobado por Claustro y Consejo de Facultad de Ciencias en 2017 y por Resolución Nº 16 del CDC del 12/12/2017. Facultad de Ciencias y el catálogo central confirman un único título de Licenciado en Geografía, cuatro años, 360 créditos y sede Montevideo.
+- La UI controla Conocimientos Básicos y Generales 60, Teórico-Metodológica 45, Socioespacial 45, Sistemas Ambientales 40 y Tecnologías de la Información Geográfica 30. El núcleo de las cinco áreas suma 220 créditos.
+- Los 140 créditos restantes se controlan como 90 de materias optativas, 10 de extensión y actividades en el medio y 40 de tesina. El texto admite entre 10 y 15 créditos de prácticas pertinentes; el cuadro oficial y Bedelías fijan el mínimo operativo de 10.
+- La tesina requiere tutor, aval previo de la Comisión de Carrera y haber aprobado los mínimos de las cinco áreas. Como Bedelías no publica una regla automática para GF303, la UI conserva esta condición como validación académica explícita.
+- El Plan permite énfasis personales mediante optativas y el tema de tesina, pero no nombra menciones, orientaciones ni perfiles certificados. La UI ofrece una única trayectoria flexible y preserva un solo progreso.
+- Las 167 apariciones de composición se proyectan en ocho bloques, más la validación final. Se mantienen 168 apariciones operativas, 148 reglas publicadas y 56 unidades sin regla publicada; los 1.314 créditos del catálogo no son obligaciones simultáneas.
+- Registro de auditoría: hash `sha256:c974e406c9ad7e8f2fe2f1d6447094c798a0e988488be216a2c1981e9806b085`. Cola general: 42 identidades pendientes; hash `sha256:ac4e15be46ddc4f5815315c5ad9d1be61ec55e2bcac1f5e1795b752290b03907`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:c88ee64555f1cf1e6632eba3ac61cf7405d40ef6e409f10f0f04fbf7cb95b227`. Cola funcional vacía; hash `sha256:61db32f9a00c0386d1b81b27e4c50b39d09a8cb063cef92e7a05ebdcfda8d040`.
+- Siguiente paso: auditar la Licenciatura en Geología Plan 2018, primera identidad reproducible restante.
