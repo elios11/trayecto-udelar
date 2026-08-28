@@ -23478,7 +23478,152 @@
       ],
       "uiNotice": "Plan 2017 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí los cinco mínimos comunes, 33 créditos de orientación y la Tesina de 40; la Comisión de Carrera debe validar tu recorrido y los 10 créditos transversales.",
       "remainingWork": "Tutoría y Comisión de Carrera determinan la pertinencia de optativas, electivas, pasantías, reválidas y los 10 créditos de formación social/productiva o cursos externos; la UI conserva esa aprobación como control manual explícito."
+    },
+    {
+      "identity": "licenciatura en ciencias biologicas:2017",
+      "career": "LICENCIATURA EN CIENCIAS BIOLÓGICAS",
+      "planYear": "2017",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, tramos, áreas, prácticas integrales, trabajo final y tutorías",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios aprobado por el Consejo Directivo Central en 2015",
+          "Reglamento aprobado por el Consejo de Facultad de Ciencias el 13/02/2017",
+          "Reglamento ratificado por el Consejo Directivo Central, Resolución Nº 23 del 21/05/2019"
+        ],
+        "planYear": "2017",
+        "title": "Licenciado en Ciencias Biológicas",
+        "careerName": "Licenciatura en Ciencias Biológicas",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El título exige al menos 360 créditos: un tramo común de 210, un tramo de orientación de 140 y 10 créditos de prácticas integrales o extensión. Dentro del tramo común se requieren 90 créditos del área Científico-Básica, 40 de Biología Celular y Molecular, 60 de Diversidad Biológica y 10 de Reflexión Científica y Formación General. El Trabajo Final de 32 créditos integra el tramo de orientación.",
+        "trajectories": [
+          {
+            "id": "formacion-personalizada",
+            "label": "Formación personalizada",
+            "description": "Recorrido flexible diseñado con un Tutor de Orientación Curricular. Puede profundizar campos como biología celular, ecología, genética, oceanografía o zoología, pero no constituye una mención certificada ni modifica el título."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24553/1/PLCBIO_2020.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Catálogo flexible por tramos y áreas. El orden no prescribe una secuencia; la Comisión de Carrera y las tutorías orientan y validan la coherencia del recorrido personal.",
+          "periodOrder": [
+            "Tramo común · Científico-Básica",
+            "Tramo común · Biología Celular y Molecular",
+            "Tramo común · Diversidad Biológica",
+            "Tramo común · Reflexión Científica y Formación General",
+            "Prácticas integrales · Tramo común",
+            "Orientación · Científico-Básica",
+            "Orientación · Biología Celular y Molecular",
+            "Orientación · Diversidad Biológica",
+            "Orientación · Reflexión Científica y Formación General",
+            "Prácticas integrales · Tramo de orientación",
+            "Trabajo final de carrera",
+            "Validación de egreso"
+          ],
+          "periodLabelMap": {
+            "19": "Tramo común · Científico-Básica",
+            "20": "Tramo común · Biología Celular y Molecular",
+            "21": "Tramo común · Diversidad Biológica",
+            "22": "Tramo común · Reflexión Científica y Formación General",
+            "70": "Prácticas integrales · Tramo común",
+            "41": "Orientación · Científico-Básica",
+            "42": "Orientación · Biología Celular y Molecular",
+            "43": "Orientación · Diversidad Biológica",
+            "44": "Orientación · Reflexión Científica y Formación General",
+            "71": "Prácticas integrales · Tramo de orientación",
+            "39": "Trabajo final de carrera"
+          },
+          "pathRequirementMap": {
+            "17": "common",
+            "19": "common-basic-science",
+            "20": "common-cellular-molecular",
+            "21": "common-biological-diversity",
+            "22": "common-scientific-reflection",
+            "70": "integral-practice",
+            "18": "orientation",
+            "41": "orientation",
+            "42": "orientation",
+            "43": "orientation",
+            "44": "orientation",
+            "71": "integral-practice",
+            "39": "final-project"
+          },
+          "creditRequirements": [
+            { "id": "common", "name": "Tramo común", "shortName": "Tramo común", "minCredits": 210 },
+            { "id": "common-basic-science", "parentId": "common", "name": "Científico-Básica", "shortName": "Científico-Básica", "minCredits": 90 },
+            { "id": "common-cellular-molecular", "parentId": "common", "name": "Biología Celular y Molecular", "shortName": "Celular y Molecular", "minCredits": 40 },
+            { "id": "common-biological-diversity", "parentId": "common", "name": "Diversidad Biológica", "shortName": "Diversidad", "minCredits": 60 },
+            { "id": "common-scientific-reflection", "parentId": "common", "name": "Reflexión Científica y Formación General", "shortName": "Reflexión", "minCredits": 10 },
+            { "id": "orientation", "name": "Tramo de orientación", "shortName": "Orientación", "minCredits": 140 },
+            { "id": "final-project", "parentId": "orientation", "name": "Trabajo Final de Carrera", "shortName": "Trabajo final", "minCredits": 32 },
+            { "id": "integral-practice", "name": "Prácticas integrales y extensión", "shortName": "Prácticas integrales", "minCredits": 10 }
+          ],
+          "manualCompletionValidation": "Aprobación de la trayectoria personal y del proyecto de Trabajo Final por la Comisión de Carrera"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCIEN",
+          "locations": ["Montevideo"],
+          "role": "oferta completa de Facultad de Ciencias",
+          "curriculumVariant": false,
+          "trajectoryIds": ["formacion-personalizada"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-en-ciencias-biologicas-2017.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 978,
+        "distinctSnapshotCourseRecords": 842,
+        "publishedPrerequisiteRecords": 1215,
+        "interpretation": "Bedelías publica correctamente 360 créditos, los cuatro mínimos del tramo común y el Trabajo Final, pero deja en cero los mínimos de las prácticas integrales y de las áreas del tramo de orientación. La estructura oficial exige 210 créditos comunes, 140 de orientación y 10 de prácticas integrales."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-one-personalized-biological-pathway",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan y su Reglamento establecen un único título en Montevideo y trayectorias curriculares diversas diseñadas con tutoría. Las áreas de énfasis son posibilidades del recorrido personal, no menciones certificadas.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Ciencias Biológicas Plan 2017, de ocho semestres y 360 créditos en Montevideo.",
+          "Controlar 210 créditos de tramo común, con submínimos de 90 Científico-Básica, 40 Biología Celular y Molecular, 60 Diversidad Biológica y 10 Reflexión Científica y Formación General.",
+          "Controlar 140 créditos de tramo de orientación, incluyendo el Trabajo Final de 32 créditos, y 10 créditos adicionales de prácticas integrales o extensión.",
+          "Mantener las 978 apariciones de composición como catálogo flexible por tramo y área, deduplicando sólo coincidencias exactas de identidad y créditos.",
+          "Presentar una única trayectoria personalizada y no convertir los campos disciplinares publicados en menciones o títulos separados.",
+          "Conservar Montevideo como única sede completa; el Ciclo en Biología-Bioquímica de Salto y Paysandú es una vía inicial de 90 créditos que continúa esta carrera en Facultad de Ciencias."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24553/1/PLCBIO_2020.pdf", "authority": "Plan de Estudios de la Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar", "supports": ["título", "cuatro años", "360 créditos", "tramos", "áreas", "prácticas integrales", "trabajo final", "flexibilidad"] },
+        { "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/197669/mod_label/intro/Reglamento%20del%20Plan%20de%20Estudios%202017%20de%20la%20Licenciatura.pdf", "authority": "Reglamento del Plan, Facultad de Ciencias", "supports": ["tutorías", "Comisión de Carrera", "210 créditos comunes", "140 de orientación", "conocimientos previos", "aprobación del proyecto final"] },
+        { "url": "https://dgjuridica.udelar.edu.uy/422-reglamento-del-plan-de-estudio-de-la-licenciatura-en-ciencias-biologicas/", "authority": "Dirección General Jurídica, Udelar", "supports": ["ratificación del Reglamento en 2019", "vigencia normativa"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24553", "authority": "Repositorio Colibri, Udelar", "supports": ["Plan 2017", "código de carrera 137", "código de plan 1110", "responsabilidad de Facultad de Ciencias"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-ciencias-biologicas", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["vigencia", "cuatro años", "360 créditos", "Facultad de Ciencias", "campos de orientación"] },
+        { "url": "https://udelar.edu.uy/carrera/ciclo-en-biologia-bioquimica", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["ciclo inicial regional de 90 créditos", "continuidad posterior en Facultad de Ciencias en Montevideo"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "El documento aprobado se titula Plan 2015 y el Reglamento conserva esa denominación, mientras Colibri, Bedelías y el catálogo institucional identifican su implementación como Plan 2017. La identidad canónica de UI se mantiene en 2017 y documenta el origen normativo 2015." },
+        { "field": "tramoMinimums", "resolution": "Bedelías deja en cero el grupo del tramo de orientación y las prácticas integrales. El Reglamento exige 140 créditos de orientación y el Plan exige 10 de extensión o integralidad además de los 210 comunes para completar los 360." },
+        { "field": "orientationExamples", "resolution": "Los campos disciplinares difundidos por Udelar describen posibles énfasis del perfil. El Reglamento habla de trayectorias curriculares diversas con tutoría y no crea menciones certificadas." },
+        { "field": "regionalEntry", "resolution": "El Ciclo en Biología-Bioquímica permite iniciar 90 créditos en Salto o Paysandú, pero la fuente institucional indica que la Licenciatura continúa en Facultad de Ciencias en Montevideo. No se presenta el ciclo como sede completa de este plan." },
+        { "field": "catalogSize", "resolution": "Los 6.710 créditos de los 842 códigos distintos y las 978 apariciones jerárquicas constituyen oferta acumulada, alternativas y cursos históricos. El requisito real es cumplir tramos, submínimos, prácticas, Trabajo Final y 360 créditos." }
+      ],
+      "uiNotice": "Plan 2017 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí 210 créditos comunes, 140 de orientación, 10 de prácticas integrales y el Trabajo Final de 32; la Comisión de Carrera debe aprobar tu trayectoria y proyecto final.",
+      "remainingWork": "La Comisión de Carrera y las tutorías determinan la coherencia de cada recorrido, la clasificación de cursos entre áreas, las reválidas y la aprobación previa del proyecto de Trabajo Final; la UI conserva esa validación como requisito manual explícito."
     }
   ],
-  "contentHash": "sha256:80c95b9802840be917d0857218337334938d6ff222e9a8dcd08c80e0156323f2"
+  "contentHash": "sha256:234bd3859f6dbd8f32a18405bb7cb636f78b17351ce5ea2a7c3be995168190cf"
 }

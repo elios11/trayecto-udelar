@@ -1530,3 +1530,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:80c95b9802840be917d0857218337334938d6ff222e9a8dcd08c80e0156323f2`. Cola general: 47 identidades pendientes; hash `sha256:015bac66251b642da9120133fa3b667ce1fdd7b2ae34f1bde18410aae0d6a1c2`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:6b4a67750b7aed5c577d473761b4b6c8829c908bba4dc7c87b5a8ce2485d8658`. Cola funcional vacía; hash `sha256:9ceba1e79472e47f5006a9658838ccc2921b9c34c0c5116cd61e3057a06235db`.
 - Siguiente paso: auditar la Licenciatura en Ciencias Biológicas Plan 2017, primera identidad reproducible restante.
+
+### Licenciatura en Ciencias Biológicas Plan 2017 — trayectoria personal por tramos operativa 2026-08-28
+
+- Facultad de Ciencias y Udelar confirman un único título de Licenciado en Ciencias Biológicas, cuatro años, 360 créditos y sede completa en Montevideo. Biología celular, ecología, genética, oceanografía, zoología y los demás campos publicados son énfasis posibles de una trayectoria individual, no menciones certificadas.
+- La UI controla tres mínimos raíz que completan exactamente 360 créditos: 210 de tramo común, 140 de tramo de orientación y 10 de prácticas integrales o extensión. Dentro del tramo común se exigen 90 de Científico-Básica, 40 de Biología Celular y Molecular, 60 de Diversidad Biológica y 10 de Reflexión Científica y Formación General; BG900 aporta los 32 créditos de Trabajo Final dentro de orientación.
+- Las 978 apariciones de composición se normalizan a 977 unidades curriculares más una validación manual, separadas por tramo y área. La proyección conserva 897 reglas operativas y deja 318 unidades explícitamente sin regla publicada; no convierte el catálogo acumulado de 6.710 créditos en obligaciones simultáneas.
+- El documento aprobado y el Reglamento se denominan Plan 2015, mientras Colibri, Bedelías y el catálogo institucional registran la implementación vigente como Plan 2017. La UI conserva la identidad canónica 2017 y documenta el antecedente normativo sin crear otro plan.
+- El Ciclo en Biología-Bioquímica permite iniciar 90 créditos en Salto o Paysandú, pero la fuente institucional indica que esta Licenciatura continúa en Facultad de Ciencias en Montevideo. Por eso no se agregan sedes regionales completas ni se duplica la carrera.
+- Registro de auditoría: hash `sha256:234bd3859f6dbd8f32a18405bb7cb636f78b17351ce5ea2a7c3be995168190cf`. Cola general: 46 identidades pendientes; hash `sha256:6bf539288a27aa14d6f8eb2c3d62c077bb735388db3dddbf9efa9ef880d100de`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:ae41aa2554cb2763c06c6d651a789f732e9cf8af942489f6614d29884b5ffe4c`. Cola funcional vacía; hash `sha256:ff378b4bf0f7988f16605723984201088aef0872c901abbe2e175c176d2079a7`.
+- Siguiente paso: auditar la Licenciatura en Ciencias de la Atmósfera Plan 2007, primera identidad reproducible restante.

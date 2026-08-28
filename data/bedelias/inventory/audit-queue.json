@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T22:53:54.831Z",
+  "generatedAt": "2026-08-28T04:01:33.398Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:80c95b9802840be917d0857218337334938d6ff222e9a8dcd08c80e0156323f2"
+    "officialAuditRegistryHash": "sha256:234bd3859f6dbd8f32a18405bb7cb636f78b17351ce5ea2a7c3be995168190cf"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 130,
-    "pendingCanonicalIdentities": 47,
+    "evidenceClosedCanonicalIdentities": 131,
+    "pendingCanonicalIdentities": 46,
     "byPriority": {
-      "official-sources-pending": 47
+      "official-sources-pending": 46
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -801,38 +801,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-27",
       "conclusion": "one-degree-one-personalized-orientation-pathway"
+    },
+    {
+      "identity": "licenciatura en ciencias biologicas:2017",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-degree-one-personalized-biological-pathway"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en ciencias biologicas:2017",
-      "career": {
-        "name": "LICENCIATURA EN CIENCIAS BIOLÓGICAS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2017",
-        "name": "LICENCIATURA EN CIENCIAS BIOLÓGICAS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en ciencias biologicas:2017",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en ciencias biologicas:2017",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en ciencias de la atmosfera:2007",
       "career": {
@@ -2379,5 +2356,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:015bac66251b642da9120133fa3b667ce1fdd7b2ae34f1bde18410aae0d6a1c2"
+  "contentHash": "sha256:6bf539288a27aa14d6f8eb2c3d62c077bb735388db3dddbf9efa9ef880d100de"
 }
