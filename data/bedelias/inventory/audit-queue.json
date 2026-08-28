@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T04:54:45.151Z",
+  "generatedAt": "2026-08-28T05:06:20.032Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:abee4c9111bdd515ae7d9117d36f3309034ce8290f52f039bbc1d6a43b01effe"
+    "officialAuditRegistryHash": "sha256:9673992f0326987cb26f7295baae1e62cd04adea59703568e8a4de4be1b4c7d4"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 133,
-    "pendingCanonicalIdentities": 44,
+    "evidenceClosedCanonicalIdentities": 134,
+    "pendingCanonicalIdentities": 43,
     "byPriority": {
-      "official-sources-pending": 44
+      "official-sources-pending": 43
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -819,38 +819,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-degree-one-tutored-flexible-physics-pathway"
+    },
+    {
+      "identity": "licenciatura en fisica medica:2025",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-shared-degree-one-flexible-individual-plan"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en fisica medica:2025",
-      "career": {
-        "name": "LICENCIATURA EN FÍSICA MÉDICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2025",
-        "name": "LICENCIATURA EN FÍSICA MÉDICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en fisica medica:2025",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en fisica medica:2025",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en geografia:2018",
       "career": {
@@ -2304,5 +2281,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:99b092ecc5064d7114fe92800212fc3e44d3b121a85923f9793ec539e2d712c3"
+  "contentHash": "sha256:282f726f3f87b250689ebc194cbb55070000fe7fe9a7483ce6a0f7268e5e437d"
 }

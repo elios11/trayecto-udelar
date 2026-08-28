@@ -1565,3 +1565,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:abee4c9111bdd515ae7d9117d36f3309034ce8290f52f039bbc1d6a43b01effe`. Cola general: 44 identidades pendientes; hash `sha256:99b092ecc5064d7114fe92800212fc3e44d3b121a85923f9793ec539e2d712c3`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:f149ccf8bfacea8d5cadc20972f2b9b00de3ad4e9965c1444634af82722fc885`. Cola funcional vacía; hash `sha256:9d038587e211447076fa7e2a1d5e39c4df8364793a2346ad7bc02d9b4f72c99d`.
 - Siguiente paso: auditar la Licenciatura en Física Médica Plan 2025, primera identidad reproducible restante.
+
+### Licenciatura en Física Médica Plan 2025 — plan individual compartido operativo 2026-08-28
+
+- El Consejo Directivo Central aprobó el nuevo Plan mediante Resolución Nº 10 del 17/09/2024, el Diario Oficial lo publicó y comenzó a regir en 2025. Sustituye el antecedente Plan 2011 de 323/324 créditos; la identidad vigente es de cuatro años y 360 créditos.
+- La carrera y el título son compartidos por Facultad de Ciencias y Facultad de Medicina. La inscripción y la sede completa publicada están en Facultad de Ciencias, Montevideo; la UI conserva un solo plan y progreso y muestra a Medicina como servicio responsable, no como segunda carrera o sede.
+- La UI controla Biología-Medicina 41, Física 81, Física de Radiaciones 27, Física Experimental 23, Formación Complementaria 11, Matemática 81 y Módulos Electivos 60. Estos siete mínimos suman 324 créditos.
+- Además se controlan 10 créditos de prácticas de formación en ámbitos social y productivo o cursos afines admitidos por la Ordenanza de Grado. Bedelías los presenta como octavo grupo operativo; no se los rotula como una octava área disciplinar. Quedan 26 créditos flexibles hasta completar 360.
+- La Comisión de Carrera aprueba el plan individual una vez alcanzados 180 créditos. Radioterapia, medicina nuclear, imagenología, radiología y radioprotección son opciones dentro de los módulos electivos y no menciones certificadas.
+- Las 48 apariciones de composición se proyectan en ocho bloques operativos, más la validación final. La UI mantiene 49 apariciones, 55 reglas publicadas y nueve unidades sin regla publicada; los 468 créditos del catálogo no son obligaciones simultáneas.
+- Registro de auditoría: hash `sha256:9673992f0326987cb26f7295baae1e62cd04adea59703568e8a4de4be1b4c7d4`. Cola general: 43 identidades pendientes; hash `sha256:282f726f3f87b250689ebc194cbb55070000fe7fe9a7483ce6a0f7268e5e437d`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:2a64f1d75eed220d2084f41194ed0f9a2c1ba794bef72eb5f3da4148b6263d29`. Cola funcional vacía; hash `sha256:2baa31d05c3f1e2f625dc55d3f397170d2dbb592a10f5e0f08652be052b386c6`.
+- Siguiente paso: auditar la Licenciatura en Geografía Plan 2018, primera identidad reproducible restante.

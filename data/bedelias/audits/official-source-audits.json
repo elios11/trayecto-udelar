@@ -23946,7 +23946,148 @@
       ],
       "uiNotice": "Plan 2019 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí los cinco mínimos de área y distribuí los 92 créditos restantes; la Comisión debe validar tu currículo, 10 créditos integrales y 8 de iniciación a la investigación.",
       "remainingWork": "La tutoría y la Comisión de Carrera determinan la coherencia del recorrido, la asignación de optativas y electivas y qué actividades satisfacen los requisitos transversales; la UI conserva esa validación como control manual explícito."
+    },
+    {
+      "identity": "licenciatura en fisica medica:2025",
+      "career": "LICENCIATURA EN FÍSICA MÉDICA",
+      "planYear": "2025",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, plan nuevo, título compartido, sede, duración, créditos, mínimos por área, práctica social y productiva, flexibilidad y aprobación curricular",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Aprobado por Resolución Nº 10 del Consejo Directivo Central del 17/09/2024",
+          "Publicado en el Diario Oficial mediante aviso Nº 27257 de 2024",
+          "Comenzó a regir como Plan 2025"
+        ],
+        "planYear": "2025",
+        "title": "Licenciado en Física Médica",
+        "careerName": "Licenciatura en Física Médica",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El título compartido exige al menos 360 créditos, los mínimos de siete áreas que suman 324, al menos 10 créditos de prácticas de formación en ámbitos social y productivo o cursos afines admitidos por la Ordenanza de Grado, y la aprobación del plan individual por la Comisión de Carrera una vez alcanzados 180 créditos.",
+        "trajectories": [
+          {
+            "id": "plan-individual",
+            "label": "Plan individual",
+            "description": "Recorrido flexible construido con optativas y electivas de acuerdo con los intereses del estudiante. Los módulos de radioterapia, medicina nuclear, imagenología, radiología y radioprotección son opciones dentro del mismo título y no menciones certificadas separadas."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.fcien.edu.uy/images/2024/noticias_noviembre/Publicaci%C3%B3n_DO_Plan_Estudio_F%C3%ADsica_M%C3%A9dica.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Catálogo flexible por áreas del Plan 2025. El orden no prescribe semestres: cada estudiante completa los mínimos, distribuye los créditos restantes y presenta su plan individual a la Comisión de Carrera.",
+          "periodOrder": [
+            "Biología-Medicina",
+            "Física",
+            "Física de radiaciones",
+            "Física experimental",
+            "Formación complementaria",
+            "Matemática",
+            "Módulos electivos en Física Médica",
+            "Prácticas de formación en el ámbito social y productivo",
+            "Validación de egreso"
+          ],
+          "periodLabelMap": {
+            "000001": "Biología-Medicina",
+            "000002": "Física",
+            "000003": "Física de radiaciones",
+            "000004": "Física experimental",
+            "000005": "Formación complementaria",
+            "000006": "Matemática",
+            "000007": "Módulos electivos en Física Médica",
+            "000008": "Prácticas de formación en el ámbito social y productivo"
+          },
+          "pathRequirementMap": {
+            "000001": "biology-medicine",
+            "000002": "physics",
+            "000003": "radiation-physics",
+            "000004": "experimental-physics",
+            "000005": "complementary-training",
+            "000006": "mathematics",
+            "000007": "medical-physics-electives",
+            "000008": "social-productive-practices"
+          },
+          "creditRequirements": [
+            { "id": "biology-medicine", "name": "Biología-Medicina", "shortName": "Biología-Medicina", "minCredits": 41 },
+            { "id": "physics", "name": "Física", "shortName": "Física", "minCredits": 81 },
+            { "id": "radiation-physics", "name": "Física de radiaciones", "shortName": "Radiaciones", "minCredits": 27 },
+            { "id": "experimental-physics", "name": "Física experimental", "shortName": "Experimental", "minCredits": 23 },
+            { "id": "complementary-training", "name": "Formación complementaria", "shortName": "Complementaria", "minCredits": 11 },
+            { "id": "mathematics", "name": "Matemática", "shortName": "Matemática", "minCredits": 81 },
+            { "id": "medical-physics-electives", "name": "Módulos electivos en Física Médica", "shortName": "Módulos electivos", "minCredits": 60 },
+            { "id": "social-productive-practices", "name": "Prácticas de formación en el ámbito social y productivo", "shortName": "Prácticas sociales", "minCredits": 10 }
+          ],
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del plan individual una vez alcanzados 180 créditos"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCIEN",
+          "locations": ["Montevideo"],
+          "role": "servicio de inscripción y oferta compartida con Facultad de Medicina",
+          "curriculumVariant": false,
+          "trajectoryIds": ["plan-individual"]
+        },
+        {
+          "serviceCode": "FMED",
+          "locations": ["Montevideo"],
+          "role": "servicio responsable del título compartido con Facultad de Ciencias",
+          "curriculumVariant": false,
+          "trajectoryIds": ["plan-individual"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-en-fisica-medica-2025.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 48,
+        "distinctSnapshotCourseRecords": 44,
+        "publishedPrerequisiteRecords": 64,
+        "interpretation": "Bedelías implementa el Plan 2025 con 360 créditos y refleja los siete mínimos oficiales más un grupo operativo de 10 créditos para prácticas sociales y productivas. Las ocho exigencias suman 334 créditos; los 26 restantes permiten completar un plan individual coherente hasta 360."
+      },
+      "conclusion": {
+        "canonicalModel": "one-shared-degree-one-flexible-individual-plan",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan 2025 establece un único título compartido por Ciencias y Medicina, una sola sede completa y un recorrido individual flexible. Las áreas y los módulos hospitalarios organizan el mismo plan y no son trayectorias certificadas separadas.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Física Médica Plan 2025, de ocho semestres y 360 créditos en Montevideo.",
+          "Representar Facultad de Ciencias y Facultad de Medicina como responsables del mismo título, con inscripción por Ciencias, sin duplicar carrera ni progreso.",
+          "Controlar los siete mínimos oficiales que suman 324 créditos y el requisito transversal de 10 créditos de prácticas sociales y productivas.",
+          "Permitir distribuir los 26 créditos restantes entre actividades acreditables hasta completar 360 y exigir aprobación del plan individual por la Comisión de Carrera.",
+          "Conservar las 48 apariciones de composición de Bedelías como catálogo por área y deduplicar coincidencias exactas.",
+          "Presentar una única trayectoria de plan individual y no convertir los módulos electivos hospitalarios en menciones separadas."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.fcien.edu.uy/images/2024/noticias_noviembre/Publicaci%C3%B3n_DO_Plan_Estudio_F%C3%ADsica_M%C3%A9dica.pdf", "authority": "Publicación del Plan de Estudios en el Diario Oficial, Facultad de Ciencias, Udelar", "supports": ["plan nuevo", "publicación oficial", "título", "360 créditos", "cuatro años", "áreas", "mínimos", "prácticas", "aprobación curricular"] },
+        { "url": "https://www.fcien.edu.uy/noticias/3158-la-licenciatura-en-fisica-medica-tiene-un-nuevo-plan-de-estudios", "authority": "Facultad de Ciencias, texto y anuncio oficial del Plan 2025", "supports": ["vigencia desde 2025", "Resolución Nº 10 del CDC", "estructura", "flexibilidad", "plan individual", "módulos electivos"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica-medica", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["vigencia", "carrera compartida", "inscripción por Ciencias", "48 meses", "360 créditos", "sede Facultad de Ciencias"] },
+        { "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisica-medica", "authority": "Facultad de Ciencias, oferta vigente", "supports": ["vigencia", "título compartido", "cuatro años", "360 créditos", "Montevideo"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24561", "authority": "Repositorio Colibri, Udelar", "supports": ["Plan 2011 predecesor", "carrera compartida", "código de carrera 356"] }
+      ],
+      "anomalies": [
+        { "field": "planTransition", "resolution": "Colibri todavía expone el Plan 2011 de 323/324 créditos y algunos programas recientes conservan su código administrativo, pero el CDC aprobó el nuevo texto en 2024, el Diario Oficial lo publicó y Bedelías lo registra como Plan 2025 de 360 créditos. La UI usa el plan vigente y conserva el anterior sólo como antecedente." },
+        { "field": "areaMinimums", "resolution": "Las siete áreas del Plan suman 324 créditos. Los 10 créditos de formación social y productiva son un requisito transversal; Bedelías los presenta como octavo grupo operativo. La UI los controla por separado sin afirmar que constituyen una octava área disciplinar." },
+        { "field": "freeCredits", "resolution": "Los siete mínimos y la práctica transversal suman 334 créditos. Los 26 restantes se completan con optativas, electivas u otras actividades acreditables coherentes con el plan individual hasta alcanzar 360." },
+        { "field": "sharedServices", "resolution": "Ciencias y Medicina son responsables del mismo título, mientras la inscripción y la sede publicada se concentran en Facultad de Ciencias. Se muestran como servicios compartidos y no como dos carreras o sedes." },
+        { "field": "electiveModules", "resolution": "Radioterapia, medicina nuclear, imagenología, radiología y radioprotección son opciones dentro de los 60 créditos de módulos electivos. El Plan no las define como menciones certificadas y la UI no crea trayectorias separadas." },
+        { "field": "catalogSize", "resolution": "Los 468 créditos de 44 registros y las 48 apariciones por grupo representan una oferta de opciones y cursos que pueden satisfacer más de un requisito. El egreso exige 360 créditos y la aprobación de un plan individual, no completar todo el catálogo." }
+      ],
+      "uiNotice": "Plan 2025 compartido entre Ciencias y Medicina, de ocho semestres y 360 créditos en Montevideo. Cumplí los siete mínimos de área, 10 créditos de práctica social/productiva y distribuí con flexibilidad los 26 restantes; la Comisión debe aprobar tu plan individual.",
+      "remainingWork": "La Comisión de Carrera determina la coherencia del plan individual y la acreditación de optativas, electivas y prácticas; la UI conserva esa aprobación como requisito manual explícito."
     }
   ],
-  "contentHash": "sha256:abee4c9111bdd515ae7d9117d36f3309034ce8290f52f039bbc1d6a43b01effe"
+  "contentHash": "sha256:9673992f0326987cb26f7295baae1e62cd04adea59703568e8a4de4be1b4c7d4"
 }
