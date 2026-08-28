@@ -1553,3 +1553,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:19ca7e05a36ca2aa425e55241ba344e5119bc1e9c07bebf86026bd6774f2f1ab`. Cola general: 45 identidades pendientes; hash `sha256:fcb84c94efcbcf9436f02c47000cf218c50c6ac0659aa3ee0aea413133d8ef6d`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:e5868ff5e4d6a008fd663d4264d5eba831b831a95687c5848072fad470c64b96`. Cola funcional vacía; hash `sha256:9b0d1d9bd4b64a433e9decac54ea33f20227bcbba6df1ec1502359149a6211c5`.
 - Siguiente paso: auditar la Licenciatura en Física Plan 2019, primera identidad reproducible restante.
+
+### Licenciatura en Física Plan 2019 — trayectoria flexible con tutoría operativa 2026-08-28
+
+- Facultad de Ciencias confirma un único título de Licenciado/a en Física, cuatro años, 360 créditos y sede Montevideo. El currículo es individual y la Comisión asigna tutoría al alcanzar 180 créditos, o antes si se solicita un perfil específico.
+- La UI controla Física 110, Matemática 70, Herramientas para la Investigación y el Desarrollo Profesional 60, Otras Disciplinas Científicas y Tecnológicas 10 y Formación Integral/Ciencias Humanas y Sociales 18. Los mínimos suman 268 y los 92 restantes son de distribución flexible.
+- El Plan exige que 10 de los créditos del área humanística correspondan a formación integral y que al menos 8 créditos, en cualquier área, impliquen iniciación a la investigación. Bedelías no clasifica reproduciblemente todas las alternativas, por lo que la UI conserva la validación académica explícita en vez de inferirla por nombre.
+- Matemáticas, enseñanza de la física, biofísica, astrofísica y geofísica son ejemplos de perfiles que pueden construirse con tutoría; no son menciones certificadas. La UI presenta una sola trayectoria personalizada y conserva el progreso compartido.
+- Las 290 apariciones de composición se proyectan como catálogo flexible por área, más la validación de egreso. Se mantienen 229 reglas operativas y 102 unidades sin regla publicada; los 2.534 créditos acumulados no son obligaciones simultáneas.
+- El texto normativo se denomina Plan 2017 y su Reglamento conserva ese rótulo, mientras Colibri, Bedelías y Planeamiento registran la implementación vigente como Plan 2019. La UI mantiene la identidad institucional 2019.
+- Registro de auditoría: hash `sha256:abee4c9111bdd515ae7d9117d36f3309034ce8290f52f039bbc1d6a43b01effe`. Cola general: 44 identidades pendientes; hash `sha256:99b092ecc5064d7114fe92800212fc3e44d3b121a85923f9793ec539e2d712c3`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:f149ccf8bfacea8d5cadc20972f2b9b00de3ad4e9965c1444634af82722fc885`. Cola funcional vacía; hash `sha256:9d038587e211447076fa7e2a1d5e39c4df8364793a2346ad7bc02d9b4f72c99d`.
+- Siguiente paso: auditar la Licenciatura en Física Médica Plan 2025, primera identidad reproducible restante.

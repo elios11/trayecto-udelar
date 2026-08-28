@@ -23824,7 +23824,129 @@
       ],
       "uiNotice": "Plan 2007 compartido entre Ciencias e Ingeniería, de ocho semestres y 360 créditos en Montevideo. Cumplí los nueve mínimos por área y distribuí con flexibilidad los 81 créditos restantes; la Comisión de Carrera debe aprobar tu currículo.",
       "remainingWork": "La Comisión de Carrera determina la coherencia del currículo individual, la asignación de actividades acreditables y las equivalencias; la UI conserva esa aprobación como requisito manual explícito."
+    },
+    {
+      "identity": "licenciatura en fisica:2019",
+      "career": "LICENCIATURA EN FÍSICA",
+      "planYear": "2019",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "vigencia, título, sede, duración, créditos, áreas, requisitos transversales, tutoría, perfiles y aprobación curricular",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios denominado Licenciatura en Física (2017)",
+          "Implementado y registrado institucionalmente como Plan 2019",
+          "Reglamento ratificado por Resolución Nº 16 del Consejo Directivo Central del 11/05/2021"
+        ],
+        "planYear": "2019",
+        "title": "Licenciado/a en Física",
+        "careerName": "Licenciatura en Física",
+        "facultyCode": "FCIEN",
+        "facultyName": "Facultad de Ciencias",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El título exige al menos 360 créditos, los mínimos de cinco áreas que suman 268, al menos 10 créditos de formación integral dentro del área humanística y al menos 8 créditos de iniciación a la investigación en cualquier área. El currículo individual debe ser coherente y aprobado por la Comisión de Carrera.",
+        "trajectories": [
+          {
+            "id": "formacion-personalizada",
+            "label": "Formación personalizada",
+            "description": "Recorrido flexible diseñado con tutoría. Puede profundizar perfiles como matemáticas, enseñanza de la física, biofísica, astrofísica o geofísica, pero el Plan los presenta como posibilidades y no como menciones certificadas."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/25632/1/PLFIS_2020.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Catálogo flexible por áreas. Al alcanzar 180 créditos se asigna tutoría para completar un currículo coherente; el orden de las áreas no prescribe semestres.",
+          "periodOrder": [
+            "Física",
+            "Matemática",
+            "Herramientas para la investigación y el desarrollo profesional",
+            "Otras disciplinas científicas y tecnológicas",
+            "Formación integral, Ciencias Humanas y Sociales",
+            "Validación de egreso"
+          ],
+          "periodLabelMap": {
+            "10000": "Física",
+            "10001": "Matemática",
+            "10002": "Herramientas para la investigación y el desarrollo profesional",
+            "10003": "Otras disciplinas científicas y tecnológicas",
+            "10004": "Formación integral, Ciencias Humanas y Sociales"
+          },
+          "pathRequirementMap": {
+            "10000": "physics",
+            "10001": "mathematics",
+            "10002": "research-professional-tools",
+            "10003": "other-scientific-technological",
+            "10004": "integral-human-social"
+          },
+          "creditRequirements": [
+            { "id": "physics", "name": "Física", "shortName": "Física", "minCredits": 110 },
+            { "id": "mathematics", "name": "Matemática", "shortName": "Matemática", "minCredits": 70 },
+            { "id": "research-professional-tools", "name": "Herramientas para la investigación experimental y el desarrollo profesional", "shortName": "Herramientas", "minCredits": 60 },
+            { "id": "other-scientific-technological", "name": "Otras disciplinas científicas y tecnológicas", "shortName": "Otras disciplinas", "minCredits": 10 },
+            { "id": "integral-human-social", "name": "Formación integral, Ciencias Humanas y Sociales", "shortName": "Formación integral", "minCredits": 18 }
+          ],
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del currículo, incluidos 10 créditos de formación integral y 8 de iniciación a la investigación"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FCIEN",
+          "locations": ["Montevideo"],
+          "role": "oferta completa de Facultad de Ciencias",
+          "curriculumVariant": false,
+          "trajectoryIds": ["formacion-personalizada"]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fcien-licenciatura-en-fisica-2019.json",
+        "metadataCurrent": true,
+        "publishedDurationMonths": 48,
+        "publishedMinimumCredits": 360,
+        "compositionMatterEntries": 290,
+        "distinctSnapshotCourseRecords": 266,
+        "publishedPrerequisiteRecords": 331,
+        "interpretation": "Bedelías publica correctamente duración, total y los cinco mínimos de área. La composición no clasifica de manera reproducible todas las actividades que satisfacen los 10 créditos integrales ni los 8 de iniciación a la investigación, requisitos que el Plan somete a aprobación académica."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-one-tutored-flexible-physics-pathway",
+        "regionalCurriculumVariant": false,
+        "siteSpecificTrajectoryAvailability": false,
+        "reason": "El Plan establece un único título en Montevideo y un currículo flexible aprobado con tutoría. Los perfiles disciplinares son ejemplos de profundización y no menciones certificadas.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Física Plan 2019, de ocho semestres y 360 créditos en Montevideo.",
+          "Controlar Física 110, Matemática 70, Herramientas 60, Otras Disciplinas 10 y Formación Integral/Ciencias Humanas y Sociales 18.",
+          "Mantener los 92 créditos que exceden los mínimos de área como distribución flexible hasta completar 360.",
+          "Exigir validación académica explícita de 10 créditos de formación integral, 8 de iniciación a la investigación y la coherencia del currículo personal.",
+          "Conservar las 290 apariciones de composición como catálogo flexible por área, deduplicando coincidencias exactas sin sumar alternativas históricas.",
+          "Presentar una única trayectoria personalizada y no convertir los perfiles ejemplificados por el Plan en menciones o títulos separados."
+        ]
+      },
+      "sources": [
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/25632/1/PLFIS_2020.pdf", "authority": "Plan de Estudios de la Licenciatura en Física, Facultad de Ciencias, Udelar", "supports": ["título", "cuatro años", "360 créditos", "cinco áreas", "mínimos", "tutoría", "requisitos transversales", "perfiles posibles"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/25632", "authority": "Repositorio Colibri, Udelar", "supports": ["Plan 2019", "código de carrera 301", "código de plan 1385", "responsabilidad de Facultad de Ciencias"] },
+        { "url": "https://dgjuridica.udelar.edu.uy/496-reglamento-del-plan-de-estudios-licenciatura-en-fisica-2017/", "authority": "Dirección General Jurídica, Udelar", "supports": ["reglamento", "ratificación del Consejo Directivo Central en 2021"] },
+        { "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-fisicas", "authority": "Facultad de Ciencias, oferta vigente", "supports": ["vigencia", "cuatro años", "360 créditos", "cinco áreas", "tutoría desde 180 créditos", "Montevideo"] },
+        { "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica", "authority": "Catálogo vigente de carreras, Udelar", "supports": ["vigencia", "48 meses", "360 créditos", "Facultad de Ciencias"] },
+        { "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/27141", "authority": "Programa oficial de Iniciación a la Investigación, Facultad de Ciencias", "supports": ["actividad FI182 de 8 créditos", "Plan 2019", "iniciación a la investigación"] }
+      ],
+      "anomalies": [
+        { "field": "planYear", "resolution": "El texto del Plan se denomina 2017 y el Reglamento conserva ese rótulo, mientras Colibri, Bedelías y Planeamiento registran la implementación vigente como Plan 2019. La UI conserva la identidad institucional 2019 y documenta el origen normativo." },
+        { "field": "profileExamples", "resolution": "Matemáticas, enseñanza de la física, biofísica, astrofísica y geofísica son ejemplos de perfiles que pueden construirse con tutoría. El Plan no los define como menciones certificadas ni fija grillas separadas." },
+        { "field": "transversalRequirements", "resolution": "El árbol de Bedelías no separa todas las actividades que satisfacen los 10 créditos integrales ni las materias de iniciación a la investigación que pueden pertenecer a cualquier área. La UI no infiere esa clasificación y exige validación de la Comisión." },
+        { "field": "freeCredits", "resolution": "Los mínimos de las cinco áreas suman 268 créditos. Los 92 restantes se completan con optativas y electivas coherentes con el perfil personal, sin crear un bloque disciplinar adicional." },
+        { "field": "catalogSize", "resolution": "Los 2.534 créditos de 266 registros y las 290 apariciones jerárquicas constituyen oferta acumulada y alternativas. El requisito real es completar 360 créditos, mínimos, condiciones transversales y aprobación curricular." }
+      ],
+      "uiNotice": "Plan 2019 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí los cinco mínimos de área y distribuí los 92 créditos restantes; la Comisión debe validar tu currículo, 10 créditos integrales y 8 de iniciación a la investigación.",
+      "remainingWork": "La tutoría y la Comisión de Carrera determinan la coherencia del recorrido, la asignación de optativas y electivas y qué actividades satisfacen los requisitos transversales; la UI conserva esa validación como control manual explícito."
     }
   ],
-  "contentHash": "sha256:19ca7e05a36ca2aa425e55241ba344e5119bc1e9c07bebf86026bd6774f2f1ab"
+  "contentHash": "sha256:abee4c9111bdd515ae7d9117d36f3309034ce8290f52f039bbc1d6a43b01effe"
 }

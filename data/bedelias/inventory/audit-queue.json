@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T04:16:53.630Z",
+  "generatedAt": "2026-08-28T04:54:45.151Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:19ca7e05a36ca2aa425e55241ba344e5119bc1e9c07bebf86026bd6774f2f1ab"
+    "officialAuditRegistryHash": "sha256:abee4c9111bdd515ae7d9117d36f3309034ce8290f52f039bbc1d6a43b01effe"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 132,
-    "pendingCanonicalIdentities": 45,
+    "evidenceClosedCanonicalIdentities": 133,
+    "pendingCanonicalIdentities": 44,
     "byPriority": {
-      "official-sources-pending": 45
+      "official-sources-pending": 44
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -813,38 +813,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-shared-degree-one-flexible-curriculum"
+    },
+    {
+      "identity": "licenciatura en fisica:2019",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-degree-one-tutored-flexible-physics-pathway"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en fisica:2019",
-      "career": {
-        "name": "LICENCIATURA EN FÍSICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2019",
-        "name": "LICENCIATURA EN FISÍCA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FCIEN",
-        "serviceName": "FACULTAD DE CIENCIAS",
-        "planKey": "FCIEN:licenciatura en fisica:2019",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FCIEN",
-          "serviceName": "FACULTAD DE CIENCIAS",
-          "planKey": "FCIEN:licenciatura en fisica:2019",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en fisica medica:2025",
       "career": {
@@ -2327,5 +2304,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:fcb84c94efcbcf9436f02c47000cf218c50c6ac0659aa3ee0aea413133d8ef6d"
+  "contentHash": "sha256:99b092ecc5064d7114fe92800212fc3e44d3b121a85923f9793ec539e2d712c3"
 }

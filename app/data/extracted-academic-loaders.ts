@@ -296,7 +296,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcien-licenciatura-en-fisica-2019": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-fisica-2019.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["formacion-personalizada"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
