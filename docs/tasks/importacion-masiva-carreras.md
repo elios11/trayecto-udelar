@@ -1625,3 +1625,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:5d69d74290ffdc850f7671ac5f417aee5cde95b8a3d4834a2d737862fcbf901a`. Cola general: 39 identidades pendientes; hash `sha256:8870c06c1f233f32c804f270b75ab54138d470d9d068141b0d5c6e75c5b77a0a`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:8088fa6f35911b67f6ebc34c19214ac98225ecd6e1b4f2e88cdaf0fbddd9a590`. Cola funcional vacía; hash `sha256:3ed58058437b91b277b60b7b61b6d8ffa95aea93de81235a7fb7c0a5fbf2aaf5`.
 - Siguiente paso: auditar en conjunto los cinco Traductorados Públicos Plan 2022 de Facultad de Derecho, comenzando por Alemán.
+
+### Licenciatura en Traducción Pública Plan 2022 — cinco lenguas consolidadas y operativas 2026-08-28
+
+- El Plan oficial, Facultad de Derecho y el catálogo central confirman una única Licenciatura en Traducción Pública de cuatro años, 320 créditos y sede Montevideo. Alemán, Francés, Inglés, Italiano y Portugués son cinco áreas lingüísticas del mismo plan, no cinco carreras independientes.
+- La UI publica una sola carrera y un solo Plan 2022 con selector de lengua. Cada opción conserva sus 42 componentes visibles, sus previas y la denominación específica del título: `Licenciado/a en Traducción Pública en Lengua ...`.
+- La proyección unificada contiene 106 componentes: 24 comunes, 16 específicos por cada lengua y dos bloques flexibles. Cada trayectoria suma exactamente 320 créditos y deja las 64 unidades de las otras lenguas fuera de la malla activa, disponibles sólo como catálogo trazable.
+- El egreso controla 112 créditos de formación lingüística, 84 de formación jurídica, 84 de práctica profesional y 40 flexibles. Los 10 créditos de prácticas sociales y productivas son un submínimo de los 40 flexibles y no elevan el total a 330.
+- Las carpetas finales están incluidas en Práctica Profesional II —4 dentro de 12 créditos— y IV —8 dentro de 16—. No se inventa una materia ni créditos adicionales de trabajo final.
+- Se reconstruyeron 94 previaturas desde el régimen oficial vigente para las materias comunes y las cinco lenguas. La normalización corrige el mínimo truncado de 12 créditos que el snapshot inglés mostraba para cuarto año y aplica los 72 publicados por el Plan.
+- Los cuatro Traductorados idiomáticos restantes quedan como alias administrativos excluidos del selector. Esto conserva trazabilidad con SGAE sin duplicar carrera, plan, progreso ni credenciales.
+- Registro de auditoría: hash `sha256:685c0679067bb298bb80382049f4e20476a0c1ad7c3365b65b5b90e858555837`. Cola general: 34 identidades pendientes; hash `sha256:a78ab1d9747b070faf004512d0e482f31302d10b8c1088903ad86ef3a0b728db`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable, 35 con sedes oficiales y 38 identidades excluidas; hash `sha256:0412cfac75d43093e73eb2a14f83836c232fbd32cba8d4d22423cdc90b67418f`. Cola funcional vacía; hash `sha256:109baf5808d9e939e8aebe2b7f0d631596c126564aef52ba86282573c5773de1`.
+- Siguiente paso: auditar la Licenciatura en Ciencias Antropológicas Plan 2014, primera identidad reproducible restante.

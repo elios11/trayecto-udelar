@@ -416,32 +416,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fder-traductorado-publico-aleman-2022": {
     load: () => import("./bedelias-generated/bedelias-fder-traductorado-publico-aleman-2022.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 320,
-  },
-  "bedelias-fder-traductorado-publico-frances-2022": {
-    load: () => import("./bedelias-generated/bedelias-fder-traductorado-publico-frances-2022.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 320,
-  },
-  "bedelias-fder-traductorado-publico-ingles-2022": {
-    load: () => import("./bedelias-generated/bedelias-fder-traductorado-publico-ingles-2022.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 320,
-  },
-  "bedelias-fder-traductorado-publico-italiano-2022": {
-    load: () => import("./bedelias-generated/bedelias-fder-traductorado-publico-italiano-2022.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 320,
-  },
-  "bedelias-fder-traductorado-publico-portugues-2022": {
-    load: () => import("./bedelias-generated/bedelias-fder-traductorado-publico-portugues-2022.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["lengua-aleman","lengua-frances","lengua-ingles","lengua-italiano","lengua-portugues"],
+    pathwayLabel: "Lengua",
     minCredits: 320,
   },
   "bedelias-fenf-licenciatura-en-enfermeria-2016": {

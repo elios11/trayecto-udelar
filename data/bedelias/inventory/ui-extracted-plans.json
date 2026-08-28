@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:8870c06c1f233f32c804f270b75ab54138d470d9d068141b0d5c6e75c5b77a0a",
-    "officialAuditHash": "sha256:5d69d74290ffdc850f7671ac5f417aee5cde95b8a3d4834a2d737862fcbf901a",
+    "auditQueueHash": "sha256:a78ab1d9747b070faf004512d0e482f31302d10b8c1088903ad86ef3a0b728db",
+    "officialAuditHash": "sha256:685c0679067bb298bb80382049f4e20476a0c1ad7c3365b65b5b90e858555837",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
-    "generatedPlans": 143,
-    "compositionAvailable": 143,
+    "generatedPlans": 139,
+    "compositionAvailable": 139,
     "compositionUnavailable": 0,
     "plansWithOfficialCampuses": 35,
-    "excludedFromCurrentUi": 34
+    "excludedFromCurrentUi": 38
   },
   "plans": [
     {
@@ -790,45 +790,11 @@
       "planId": "bedelias-fder-traductorado-publico-aleman-2022",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-traductorado-publico-aleman-2022.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
-    },
-    {
-      "identity": "traductorado publico frances:2022",
-      "planId": "bedelias-fder-traductorado-publico-frances-2022",
-      "facultyCode": "FDER",
-      "snapshotPath": "data/bedelias/fder-traductorado-publico-frances-2022.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": true,
-      "campusIds": []
-    },
-    {
-      "identity": "traductorado publico ingles:2022",
-      "planId": "bedelias-fder-traductorado-publico-ingles-2022",
-      "facultyCode": "FDER",
-      "snapshotPath": "data/bedelias/fder-traductorado-publico-ingles-2022.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": true,
-      "campusIds": []
-    },
-    {
-      "identity": "traductorado publico italiano:2022",
-      "planId": "bedelias-fder-traductorado-publico-italiano-2022",
-      "facultyCode": "FDER",
-      "snapshotPath": "data/bedelias/fder-traductorado-publico-italiano-2022.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": true,
-      "campusIds": []
-    },
-    {
-      "identity": "traductorado publico portugues:2022",
-      "planId": "bedelias-fder-traductorado-publico-portugues-2022",
-      "facultyCode": "FDER",
-      "snapshotPath": "data/bedelias/fder-traductorado-publico-portugues-2022.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "licenciatura en enfermeria:2016",
@@ -1554,5 +1520,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:8088fa6f35911b67f6ebc34c19214ac98225ecd6e1b4f2e88cdaf0fbddd9a590"
+  "contentHash": "sha256:0412cfac75d43093e73eb2a14f83836c232fbd32cba8d4d22423cdc90b67418f"
 }
