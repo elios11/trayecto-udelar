@@ -13,10 +13,10 @@ const saved = readJson("data/bedelias/inventory/audit-queue.json");
 test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.canonicalIdentities, 184);
   assert.equal(saved.counts.auditedCanonicalIdentities, 7);
-  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 131);
-  assert.equal(saved.counts.pendingCanonicalIdentities, 46);
+  assert.equal(saved.counts.evidenceClosedCanonicalIdentities, 132);
+  assert.equal(saved.counts.pendingCanonicalIdentities, 45);
   assert.deepEqual(saved.counts.byPriority, {
-    "official-sources-pending": 46,
+    "official-sources-pending": 45,
   });
   assert.deepEqual(saved.counts.regionalComparisons, {
     "curriculum-match-prerequisite-coverage-difference": 16,
@@ -24,7 +24,7 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
     "content-difference-detected": 15,
   });
   assert.equal(new Set(saved.queue.map((entry) => entry.identity)).size, saved.queue.length);
-  assert.equal(saved.queue.filter((entry) => entry.sourceOffers.length > 1).length, 3);
+  assert.equal(saved.queue.filter((entry) => entry.sourceOffers.length > 1).length, 2);
   assert.equal(saved.completedAudits[0].identity, "ingeniero agronomo:2020");
   assert.equal(saved.completedAudits[1].identity, "licenciatura en biotecnologia:2024");
   assert.equal(saved.completedAudits[2].identity, "abogacia:2016");
@@ -161,6 +161,7 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
     "licenciatura en astronomia:2016",
     "licenciatura en bioquimica:2017",
     "licenciatura en ciencias biologicas:2017",
+    "licenciatura en ciencias de la atmosfera:2007",
   ]);
   assert.equal(saved.source.officialAuditRegistryHash, auditRegistry.contentHash);
   assert.equal(officialAuditRegistryHash(auditRegistry), auditRegistry.contentHash);
@@ -178,5 +179,5 @@ test("la cola guardada se reconstruye sin red con el mismo hash", () => {
   assert.deepEqual(rebuilt.counts, saved.counts);
   assert.ok(rebuilt.queue.every((entry) => entry.canonicalSource.state !== "audited"));
   assert.equal(rebuilt.queue[0].priority, "official-sources-pending");
-  assert.equal(rebuilt.queue[0].identity, "licenciatura en ciencias de la atmosfera:2007");
+  assert.equal(rebuilt.queue[0].identity, "licenciatura en fisica:2019");
 });

@@ -1541,3 +1541,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:234bd3859f6dbd8f32a18405bb7cb636f78b17351ce5ea2a7c3be995168190cf`. Cola general: 46 identidades pendientes; hash `sha256:6bf539288a27aa14d6f8eb2c3d62c077bb735388db3dddbf9efa9ef880d100de`.
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:ae41aa2554cb2763c06c6d651a789f732e9cf8af942489f6614d29884b5ffe4c`. Cola funcional vacía; hash `sha256:ff378b4bf0f7988f16605723984201088aef0872c901abbe2e175c176d2079a7`.
 - Siguiente paso: auditar la Licenciatura en Ciencias de la Atmósfera Plan 2007, primera identidad reproducible restante.
+
+### Licenciatura en Ciencias de la Atmósfera Plan 2007 — currículo compartido y flexible operativo 2026-08-28
+
+- Facultad de Ciencias y Facultad de Ingeniería confirman un único título compartido de Licenciado en Ciencias de la Atmósfera, cuatro años, 360 créditos y sede completa en Montevideo. Se puede ingresar por cualquiera de los dos servicios; la UI conserva un solo plan y progreso.
+- La UI controla nueve mínimos: Matemática 68, Física 64, Mecánica de los Fluidos y Dinámica Atmosférica 54, Actividades Integradoras/Laboratorios/Especiales 24, Tratamiento de Datos 20, Métodos Numéricos 18, Química 10, Recursos Hídricos y otras Geociencias 15 y Ciencia y Sociedad 6.
+- Los mínimos suman 279 créditos. Los 81 restantes se distribuyen flexiblemente entre actividades acreditables hasta completar 360 y la Comisión de Carrera aprueba la coherencia del currículo individual; no se inventa un décimo bloque ni una mención certificada.
+- Las 238 apariciones de composición se conservan como catálogo por áreas y no como obligación de aprobar 1.792 créditos. La proyección mantiene 150 reglas operativas y deja 41 unidades explícitamente sin regla publicada.
+- Bedelías y el catálogo central muestran 60 meses, pero el Plan y las páginas vigentes de ambas facultades establecen cuatro años; la UI normaliza la duración a 48 meses. La aprobación ocurrió en 2006 y la implementación institucional se conserva como Plan 2007.
+- El CIO Científico-Tecnológico regional es una vía inicial y no una sede completa de la Licenciatura. No se agregan Salto ni Paysandú ni se confunden los dos servicios montevideanos con sedes distintas.
+- Registro de auditoría: hash `sha256:19ca7e05a36ca2aa425e55241ba344e5119bc1e9c07bebf86026bd6774f2f1ab`. Cola general: 45 identidades pendientes; hash `sha256:fcb84c94efcbcf9436f02c47000cf218c50c6ac0659aa3ee0aea413133d8ef6d`.
+- Manifiesto UI: 143 proyecciones, todas con composición utilizable; hash `sha256:e5868ff5e4d6a008fd663d4264d5eba831b831a95687c5848072fad470c64b96`. Cola funcional vacía; hash `sha256:9b0d1d9bd4b64a433e9decac54ea33f20227bcbba6df1ec1502359149a6211c5`.
+- Siguiente paso: auditar la Licenciatura en Física Plan 2019, primera identidad reproducible restante.

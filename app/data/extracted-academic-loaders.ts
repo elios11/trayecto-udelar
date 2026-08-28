@@ -290,7 +290,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["curriculo-personalizado"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
