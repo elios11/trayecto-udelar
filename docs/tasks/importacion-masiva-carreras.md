@@ -1672,3 +1672,14 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:79eb36c03f3a2e082ab3a5975bb0e546e9d05721545a78e649bb9dc1eda9de71`. Cola general: 31 identidades pendientes; hash `sha256:2eb98a28cf4517ecbaec3069d22dba760dfba6f199f0a96282c1e1e77a6258fa`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:734ddd3d1c6610f4318c1762677ff29441c1064ee7db9727d0f50d0a984c4d58`. Cola funcional vacía; hash `sha256:fd614742f76fac94df529c73092fc03287793426de45482e3b224f298de17110`.
 - Siguiente paso: auditar la Licenciatura en Educación Plan 2014, primera identidad reproducible restante.
+
+### Licenciatura en Educación Plan 2014 — tres áreas de profundización operativas 2026-08-28
+
+- FHCE, el Plan oficial y el catálogo central confirman una única Licenciatura en Educación vigente, de cuatro años, 360 créditos y sede Montevideo, con un solo título de `Licenciado en Educación`.
+- Historia y Filosofía de la Educación, Pedagogía, Política y Sociedad, y Enseñanza y Aprendizaje son áreas de concentración para los talleres de investigación y la tesina. La UI las ofrece como trayectorias del mismo plan y las vincula a una credencial común; no replica las etiquetas históricas de Bedelías como títulos distintos.
+- La distribución vigente controla diez mínimos cuya suma es exactamente 360: 41 introductorios, 40 de Historia y Filosofía, 32 de Pedagogía, Política y Sociedad, 24 de Enseñanza y Aprendizaje, 63 de formación específica, 12 de integración interdisciplinaria, 58 de abordajes interdisciplinarios o docencia, 72 electivos, 10 de actividades integrales y 8 de lengua extranjera.
+- El egreso exige el núcleo común actual, una alternativa de vida universitaria, los tres talleres de investigación consecutivos, la Defensa de Tesina y una lengua extranjera. Optativas, electivas y actividades integrales se eligen desde el catálogo acreditable y conservan una validación final explícita de la Comisión de Carrera.
+- La proyección deduplica 351 apariciones de composición en 300 componentes utilizables. Conserva las 75 reglas de previaturas publicadas y marca 227 consultas sin regla; las 55 filas con crédito cero quedan visibles pero no suman a ningún mínimo ni se presentan como acreditación automática.
+- Registro de auditoría: hash `sha256:23ca2879e72d11c8f218f7bad4426d9c2acab76aa6544913b7f7293c40959952`. Cola general: 30 identidades pendientes; hash `sha256:c1187b65a6308af4586558d0d6e5b05749b7f2271f320c347752afd1bf63cdd4`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:ec2f66e38d617cf37710fd7732fbf75569d13c91e8ab661ff2cf3f8a3ba0097d`. Cola funcional vacía; hash `sha256:f8ba77107f5a1a4dfcb95e249e8f93737a92331d7b5adc86fab70c7a3c5e8950`.
+- Siguiente paso: auditar la Licenciatura en Filosofía Plan 2010, primera identidad reproducible restante.

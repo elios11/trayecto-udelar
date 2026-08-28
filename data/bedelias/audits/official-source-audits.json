@@ -27853,7 +27853,500 @@
       ],
       "uiNotice": "Plan 2015 compartido por FHCE y EMAD, de 180 créditos en Montevideo. El ingreso es por cohortes con cupo; la malla combina talleres obligatorios, pasantías y elecciones flexibles, y no define menciones separadas.",
       "remainingWork": "La coordinación de la TUD valida la oferta de cada cohorte, las pasantías y las acreditaciones electivas; la UI representa los mínimos vigentes sin prometer que todas las opciones históricas se dicten simultáneamente."
+    },
+    {
+      "identity": "educacion:2014",
+      "career": "Educación",
+      "planYear": "2014",
+      "reviewedAt": "2026-08-28",
+      "status": "official-evidence-complete",
+      "scope": "current-degree-title-credit-structure-research-pathways-prerequisites-electives-and-campus",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios 2014 publicado y mantenido vigente por FHCE",
+          "Distribución por áreas y trayectoria sugerida actualizadas por el Instituto de Educación en 2026"
+        ],
+        "planYear": "2014",
+        "title": "Licenciado en Educación",
+        "careerName": "Licenciatura en Educación",
+        "facultyCode": "FHUM",
+        "facultyName": "Facultad de Humanidades y Ciencias de la Educación",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Área de profundización",
+        "degreeRule": "El Plan 2014 exige 360 créditos y un único título de Licenciado en Educación. La distribución vigente comprende 41 créditos introductorios, 40 de Historia y Filosofía de la Educación, 32 de Pedagogía, Política y Sociedad, 24 de Enseñanza y Aprendizaje, 63 de formación específica y profundización metodológica, 12 de integración interdisciplinaria, 58 de abordajes interdisciplinarios o vinculados a la docencia, 72 electivos, 10 de actividades integrales y 8 de lengua extranjera.",
+        "trajectories": [
+          {
+            "id": "historia-filosofia-educacion",
+            "credentialId": "licenciado-educacion",
+            "label": "Historia y Filosofía de la Educación",
+            "description": "Área oficial de concentración para los talleres, la profundización metodológica y la tesina. No modifica el título de Licenciado en Educación."
+          },
+          {
+            "id": "pedagogia-politica-sociedad",
+            "credentialId": "licenciado-educacion",
+            "label": "Pedagogía, Política y Sociedad",
+            "description": "Área oficial de concentración para los talleres, la profundización metodológica y la tesina. No modifica el título de Licenciado en Educación."
+          },
+          {
+            "id": "ensenanza-aprendizaje",
+            "credentialId": "licenciado-educacion",
+            "label": "Enseñanza y Aprendizaje",
+            "description": "Área oficial de concentración para los talleres, la profundización metodológica y la tesina. No modifica el título de Licenciado en Educación."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/02/Presentacion-Lic-en-Educacion-1.pdf",
+          "pathwayLabel": "Área de profundización",
+          "pathwayDescription": "El área elegida organiza los talleres de investigación y la tesina. Las áreas comunes, optativas y electivas siguen siendo flexibles y el título no lleva mención.",
+          "pathwayGroupMap": {
+            "4369": "ensenanza-aprendizaje",
+            "4451": "pedagogia-politica-sociedad",
+            "4876": "historia-filosofia-educacion",
+            "4893": "pedagogia-politica-sociedad",
+            "4917": "ensenanza-aprendizaje",
+            "5331": "historia-filosofia-educacion"
+          },
+          "pathRequirementMap": {
+            "1885": "edu-introductory",
+            "2445": "edu-electives",
+            "2530": "edu-teaching-learning",
+            "2532": "edu-history-philosophy",
+            "2956": "edu-interdisciplinary-teaching",
+            "3015": "edu-pedagogy-politics-society",
+            "3706": "edu-foreign-language",
+            "3802": "edu-integral-activities",
+            "3875": "edu-foreign-language",
+            "4369": "edu-interdisciplinary-integration",
+            "4451": "edu-specific-research",
+            "4876": "edu-interdisciplinary-integration",
+            "4893": "edu-interdisciplinary-integration",
+            "4917": "edu-specific-research",
+            "5331": "edu-specific-research"
+          },
+          "periodOrder": [
+            "Formación introductoria",
+            "Historia y Filosofía de la Educación",
+            "Pedagogía, Política y Sociedad",
+            "Enseñanza y Aprendizaje",
+            "Lengua extranjera",
+            "Actividades integrales",
+            "Abordajes interdisciplinarios o vinculados a la docencia",
+            "Estudios electivos",
+            "Formación específica y profundización metodológica",
+            "Integración interdisciplinaria",
+            "Validación de egreso"
+          ],
+          "periodLabelMap": {
+            "1885": "Formación introductoria",
+            "2445": "Estudios electivos",
+            "2530": "Enseñanza y Aprendizaje",
+            "2532": "Historia y Filosofía de la Educación",
+            "2956": "Abordajes interdisciplinarios o vinculados a la docencia",
+            "3015": "Pedagogía, Política y Sociedad",
+            "3706": "Lengua extranjera",
+            "3802": "Actividades integrales",
+            "3875": "Lengua extranjera",
+            "4369": "Integración interdisciplinaria",
+            "4451": "Formación específica y profundización metodológica",
+            "4876": "Integración interdisciplinaria",
+            "4893": "Integración interdisciplinaria",
+            "4917": "Formación específica y profundización metodológica",
+            "5331": "Formación específica y profundización metodológica"
+          },
+          "creditRequirements": [
+            {
+              "id": "edu-introductory",
+              "name": "Formación introductoria",
+              "shortName": "Introductoria",
+              "minCredits": 41
+            },
+            {
+              "id": "edu-history-philosophy",
+              "name": "Historia y Filosofía de la Educación",
+              "shortName": "Historia y filosofía",
+              "minCredits": 40
+            },
+            {
+              "id": "edu-pedagogy-politics-society",
+              "name": "Pedagogía, Política y Sociedad",
+              "shortName": "Pedagogía y sociedad",
+              "minCredits": 32
+            },
+            {
+              "id": "edu-teaching-learning",
+              "name": "Enseñanza y Aprendizaje",
+              "shortName": "Enseñanza",
+              "minCredits": 24
+            },
+            {
+              "id": "edu-specific-research",
+              "name": "Formación específica y profundización metodológica",
+              "shortName": "Profundización",
+              "minCredits": 63
+            },
+            {
+              "id": "edu-interdisciplinary-integration",
+              "name": "Integración interdisciplinaria",
+              "shortName": "Integración",
+              "minCredits": 12
+            },
+            {
+              "id": "edu-interdisciplinary-teaching",
+              "name": "Abordajes interdisciplinarios o vinculados a la docencia",
+              "shortName": "Abordajes",
+              "minCredits": 58
+            },
+            {
+              "id": "edu-electives",
+              "name": "Estudios electivos",
+              "shortName": "Electivas",
+              "minCredits": 72
+            },
+            {
+              "id": "edu-integral-activities",
+              "name": "Actividades integrales",
+              "shortName": "Integrales",
+              "minCredits": 10
+            },
+            {
+              "id": "edu-foreign-language",
+              "name": "Formación en lengua extranjera",
+              "shortName": "Lengua extranjera",
+              "minCredits": 8
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "validacion-final-plan",
+              "name": "Validación final de optativas, electivas, actividades integrales y coherencia de la tesina por la Comisión de Carrera",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Validación de egreso",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "historia-filosofia-educacion",
+                "pedagogia-politica-sociedad",
+                "ensenanza-aprendizaje"
+              ]
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "edu-introductory-core",
+              "label": "Taller introductorio e Investigaciones Educativas I y II",
+              "minCompleted": 3,
+              "sourceCourseIds": [
+                "C190",
+                "C206",
+                "C193"
+              ]
+            },
+            {
+              "id": "edu-university-introduction",
+              "label": "Introducción a la Vida Universitaria o equivalente",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IVU",
+                "IVA",
+                "EGU"
+              ]
+            },
+            {
+              "id": "edu-history-philosophy-core",
+              "label": "Cuatro unidades comunes de Historia y Filosofía de la Educación",
+              "minCompleted": 4,
+              "sourceCourseIds": [
+                "C191",
+                "C204",
+                "C200",
+                "C216"
+              ]
+            },
+            {
+              "id": "edu-pedagogy-core",
+              "label": "Tres unidades comunes de Pedagogía, Política y Sociedad",
+              "minCompleted": 3,
+              "sourceCourseIds": [
+                "C201",
+                "C207",
+                "C192"
+              ]
+            },
+            {
+              "id": "edu-teaching-core",
+              "label": "Teorías de la Enseñanza y del Aprendizaje",
+              "minCompleted": 2,
+              "sourceCourseIds": [
+                "C203",
+                "C194"
+              ]
+            },
+            {
+              "id": "edu-language-course",
+              "label": "Un curso o acreditación de lengua extranjera",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "PFU1",
+                "ITFU1",
+                "FFU1",
+                "AFU1",
+                "AI",
+                "ICPF",
+                "ALE1",
+                "ALEM",
+                "AL1",
+                "FRANC",
+                "FRL1",
+                "INGL",
+                "INL1",
+                "ITAL",
+                "ITL1",
+                "PORT",
+                "PL1",
+                "INPFI",
+                "INFU1",
+                "IPFI"
+              ]
+            },
+            {
+              "id": "edu-workshop-1",
+              "label": "Taller de Investigación I en el área elegida",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "C141",
+                "C176",
+                "C163",
+                "C162"
+              ]
+            },
+            {
+              "id": "edu-workshop-2",
+              "label": "Taller de Investigación II en el área elegida",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "C172",
+                "C154",
+                "C147",
+                "C145"
+              ]
+            },
+            {
+              "id": "edu-workshop-3",
+              "label": "Taller de Investigación III en el área elegida",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "C239",
+                "C238",
+                "C167",
+                "C165",
+                "C158"
+              ]
+            },
+            {
+              "id": "edu-thesis",
+              "label": "Defensa de Tesina",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "DEFT"
+              ]
+            },
+            {
+              "id": "validacion-final-plan",
+              "label": "Validación final de optativas, electivas, actividades integrales y coherencia de la tesina",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "validacion-final-plan"
+              ]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "licenciado-educacion",
+              "title": "Licenciado en Educación",
+              "minTotalCredits": 360,
+              "requiredCourseGroupIds": [
+                "edu-introductory-core",
+                "edu-university-introduction",
+                "edu-history-philosophy-core",
+                "edu-pedagogy-core",
+                "edu-teaching-core",
+                "edu-language-course",
+                "edu-workshop-1",
+                "edu-workshop-2",
+                "edu-workshop-3",
+                "edu-thesis",
+                "validacion-final-plan"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "edu-introductory",
+                  "minCredits": 41
+                },
+                {
+                  "nodeId": "edu-history-philosophy",
+                  "minCredits": 40
+                },
+                {
+                  "nodeId": "edu-pedagogy-politics-society",
+                  "minCredits": 32
+                },
+                {
+                  "nodeId": "edu-teaching-learning",
+                  "minCredits": 24
+                },
+                {
+                  "nodeId": "edu-specific-research",
+                  "minCredits": 63
+                },
+                {
+                  "nodeId": "edu-interdisciplinary-integration",
+                  "minCredits": 12
+                },
+                {
+                  "nodeId": "edu-interdisciplinary-teaching",
+                  "minCredits": 58
+                },
+                {
+                  "nodeId": "edu-electives",
+                  "minCredits": 72
+                },
+                {
+                  "nodeId": "edu-integral-activities",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "edu-foreign-language",
+                  "minCredits": 8
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FHUM",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable y sede completa",
+          "admissionStatus": "active"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-educacion-2014.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 351,
+        "prerequisiteRuleCount": 75,
+        "noPublishedRuleCount": 227,
+        "interpretation": "La composición conserva cursos vigentes e históricos y tres perfiles operativos. La UI aplica la distribución por áreas actualizada por el Instituto, deduplica cursos compartidos y usa los perfiles únicamente como áreas de profundización del mismo título."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-three-research-pathways",
+        "canonicalIdentity": "educacion:2014",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "El Plan vigente otorga un solo título y permite concentrar los talleres de investigación y la tesina en una de tres áreas. Las concentraciones organizan la trayectoria académica, pero no crean carreras ni menciones de título diferentes.",
+        "normalization": [
+          "Publicar una única Licenciatura en Educación Plan 2014, de cuatro años y 360 créditos, en Montevideo.",
+          "Ofrecer las tres áreas oficiales como trayectorias de profundización que comparten el mismo título.",
+          "Controlar los diez mínimos por área de la distribución vigente, cuya suma es exactamente 360 créditos.",
+          "Exigir las unidades comunes actuales, los tres talleres de investigación, la defensa de tesina y una lengua extranjera, admitiendo equivalencias administrativas publicadas.",
+          "Mantener optativas, electivas y actividades integrales como catálogos acreditables y exigir validación final de la Comisión de Carrera.",
+          "Conservar las previaturas explícitas de Bedelías sin convertir el orden semestral sugerido en bloqueos adicionales."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://fhce.edu.uy/plan-de-estudios/",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "supports": [
+            "vigencia del Plan 2014",
+            "título",
+            "cuatro años",
+            "360 créditos"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo_Plan_de_Estudios_Educacion-LSU.pdf",
+          "authority": "Plan de Estudios 2014, FHCE",
+          "supports": [
+            "título único",
+            "áreas",
+            "tres direcciones de profundización",
+            "optativas",
+            "electivas",
+            "tesina"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/02/Presentacion-Lic-en-Educacion-1.pdf",
+          "authority": "Instituto de Educación, FHCE",
+          "supports": [
+            "vigencia",
+            "distribución actual por áreas",
+            "unidades comunes",
+            "talleres consecutivos",
+            "tesina",
+            "acreditaciones"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/03/EDUCACION-pdf-por-semestre.pdf",
+          "authority": "Malla curricular sugerida, FHCE",
+          "supports": [
+            "ocho semestres sugeridos",
+            "unidades vigentes",
+            "créditos",
+            "talleres",
+            "electivas"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/educacion",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "48 meses",
+            "360 créditos",
+            "sede FHCE",
+            "requisitos de ingreso"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "profileTitles",
+          "resolution": "Bedelías expone tres etiquetas de título con perfil, pero el Plan y la página vigente otorgan únicamente Licenciado en Educación. La UI conserva las tres concentraciones como áreas de profundización y usa una sola credencial sin mención."
+        },
+        {
+          "field": "adjustedCreditDistribution",
+          "resolution": "La composición administrativa conserva mínimos originales de 51 y 8 créditos para formación específica e integración. La guía vigente distribuye 63 y 12 e incluye la Defensa de Tesina de 16 créditos; la UI usa esta distribución actualizada, que completa exactamente 360."
+        },
+        {
+          "field": "historicalCourseVersions",
+          "resolution": "El catálogo de Bedelías reúne versiones históricas y actuales de varias unidades. Los mínimos por área evitan exigir todas las variantes y los grupos obligatorios identifican las unidades comunes y talleres actualmente publicados."
+        },
+        {
+          "field": "zeroCreditRows",
+          "resolution": "Bedelías conserva 54 registros con crédito cero, principalmente ofertas históricas o sin acreditación publicada. No suman a ningún mínimo; la Comisión de Carrera debe validar su eventual acreditación antes de incorporarlos al egreso."
+        },
+        {
+          "field": "prerequisites",
+          "resolution": "Se conservan las 75 reglas explícitas publicadas por Bedelías. La secuencia semestral restante es orientativa y no se transforma en previaturas inventadas."
+        }
+      ],
+      "uiNotice": "Plan 2014 de 360 créditos en Montevideo. Elegí un área de profundización para organizar los talleres y la tesina; el título es siempre Licenciado en Educación. Las optativas y electivas requieren acreditación de la Comisión de Carrera.",
+      "remainingWork": "La Comisión de Carrera debe confirmar la pertinencia de optativas y electivas externas, las equivalencias y la acreditación de registros que Bedelías publica con crédito cero."
     }
   ],
-  "contentHash": "sha256:79eb36c03f3a2e082ab3a5975bb0e546e9d05721545a78e649bb9dc1eda9de71"
+  "contentHash": "sha256:23ca2879e72d11c8f218f7bad4426d9c2acab76aa6544913b7f7293c40959952"
 }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:2eb98a28cf4517ecbaec3069d22dba760dfba6f199f0a96282c1e1e77a6258fa",
-    "officialAuditHash": "sha256:79eb36c03f3a2e082ab3a5975bb0e546e9d05721545a78e649bb9dc1eda9de71",
+    "auditQueueHash": "sha256:c1187b65a6308af4586558d0d6e5b05749b7f2271f320c347752afd1bf63cdd4",
+    "officialAuditHash": "sha256:23ca2879e72d11c8f218f7bad4426d9c2acab76aa6544913b7f7293c40959952",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -861,9 +861,11 @@
       "planId": "bedelias-fhum-educacion-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-educacion-2014.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "filosofia:2010",
@@ -1526,5 +1528,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:734ddd3d1c6610f4318c1762677ff29441c1064ee7db9727d0f50d0a984c4d58"
+  "contentHash": "sha256:ec2f66e38d617cf37710fd7732fbf75569d13c91e8ab661ff2cf3f8a3ba0097d"
 }

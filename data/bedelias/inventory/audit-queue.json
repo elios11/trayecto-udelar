@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T18:14:26.655Z",
+  "generatedAt": "2026-08-28T18:25:07.283Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:79eb36c03f3a2e082ab3a5975bb0e546e9d05721545a78e649bb9dc1eda9de71"
+    "officialAuditRegistryHash": "sha256:23ca2879e72d11c8f218f7bad4426d9c2acab76aa6544913b7f7293c40959952"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 146,
-    "pendingCanonicalIdentities": 31,
+    "evidenceClosedCanonicalIdentities": 147,
+    "pendingCanonicalIdentities": 30,
     "byPriority": {
-      "official-sources-pending": 31
+      "official-sources-pending": 30
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -897,38 +897,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-shared-technical-degree-one-flexible-path"
+    },
+    {
+      "identity": "educacion:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-degree-three-research-pathways"
     }
   ],
   "queue": [
-    {
-      "identity": "educacion:2014",
-      "career": {
-        "name": "EDUCACIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "LICENCIATURA EN EDUCACIÓN",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:educacion:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:educacion:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "filosofia:2010",
       "career": {
@@ -2005,5 +1982,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:2eb98a28cf4517ecbaec3069d22dba760dfba6f199f0a96282c1e1e77a6258fa"
+  "contentHash": "sha256:c1187b65a6308af4586558d0d6e5b05749b7f2271f320c347752afd1bf63cdd4"
 }

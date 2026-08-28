@@ -452,8 +452,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-educacion-2014": {
     load: () => import("./bedelias-generated/bedelias-fhum-educacion-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["historia-filosofia-educacion","pedagogia-politica-sociedad","ensenanza-aprendizaje"],
+    pathwayLabel: "Área de profundización",
     minCredits: 360,
   },
   "bedelias-fhum-filosofia-2010": {
