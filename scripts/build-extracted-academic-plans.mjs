@@ -33,6 +33,10 @@ function titleCase(value) {
   });
 }
 
+function academicTitle(value) {
+  return titleCase(value).replace(/\bLsu\b/g, "LSU");
+}
+
 function readableFacultyName(value) {
   return titleCase(value)
     .replace(/^Facultad De /, "Facultad de ")
@@ -838,7 +842,7 @@ function buildProjection(entry, snapshot, audit) {
       plan: {
         year: String(audit?.officialPlan?.planYear ?? entry.plan.year),
         current: audit?.officialPlan?.current ?? entry.plan.current !== false,
-        degreeTitle: titleCase(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name),
+        degreeTitle: academicTitle(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name),
         minCredits: safeMinCredits,
         publishedMinCredits: Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : null,
         durationMonths: Number(audit?.officialPlan?.durationMonths) || Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
@@ -942,7 +946,7 @@ export async function buildExtractedAcademicPlans() {
     const careerName = audit?.officialPlan?.careerName ?? entry.career.name;
     const planYear = audit?.officialPlan?.planYear ?? entry.plan.year;
     const careerId = `${facultyId}-${slug(careerName)}`;
-    if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: titleCase(careerName), plans: [] });
+    if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: academicTitle(careerName), plans: [] });
     faculty.careers.get(careerId).plans.push({
       id: planId,
       label: `Plan ${planYear}${projection.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,

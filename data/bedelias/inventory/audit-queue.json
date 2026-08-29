@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-29T00:01:26.368Z",
+  "generatedAt": "2026-08-29T00:16:17.422Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:d9b6a6837b82bd8bced15b3aba8962fe8ffe9988d2eafa781458b0e3ba5f7958"
+    "officialAuditRegistryHash": "sha256:1419262d382dad716313c8003b0517e778561caaee78d72433c83af16cc04484"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 149,
-    "pendingCanonicalIdentities": 28,
+    "evidenceClosedCanonicalIdentities": 150,
+    "pendingCanonicalIdentities": 27,
     "byPriority": {
-      "official-sources-pending": 28
+      "official-sources-pending": 27
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -915,65 +915,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-degree-general-and-cfe-pathways"
+    },
+    {
+      "identity": "interpretacion lsu espanol lsu:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-technologist-two-language-pathways-current-transition-plan"
     }
   ],
   "queue": [
-    {
-      "identity": "interpretacion lsu espanol lsu:2014",
-      "career": {
-        "name": "INTERPRETACIÓN LSU-ESPAÑOL-LSU",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "TECNÓLOGO INT Y TRAD LSU ESP",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:interpretacion lsu espanol lsu:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:interpretacion lsu espanol lsu:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CUT",
-          "canonicalServiceCode": "FHUM",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -201
-          }
-        },
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FHUM",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -199
-          }
-        }
-      ]
-    },
     {
       "identity": "letras:2014",
       "career": {
@@ -1936,5 +1886,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:87e414289e718642fc26ef92b39ccb26412ca1050f2d79943c465bd3a2ded4fb"
+  "contentHash": "sha256:d2eb1685cc2633b8b44f71476b8f921a8d99f807b79f1138d4e8ec8176dac39b"
 }

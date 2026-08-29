@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:87e414289e718642fc26ef92b39ccb26412ca1050f2d79943c465bd3a2ded4fb",
-    "officialAuditHash": "sha256:d9b6a6837b82bd8bced15b3aba8962fe8ffe9988d2eafa781458b0e3ba5f7958",
+    "auditQueueHash": "sha256:d2eb1685cc2633b8b44f71476b8f921a8d99f807b79f1138d4e8ec8176dac39b",
+    "officialAuditHash": "sha256:1419262d382dad716313c8003b0517e778561caaee78d72433c83af16cc04484",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 35,
+    "plansWithOfficialCampuses": 36,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -894,9 +894,12 @@
       "planId": "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-interpretacion-lsu-espanol-lsu-2014.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "letras:2014",
@@ -1532,5 +1535,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:e0ab0562122351736e8d0c2767f2eb18557b3bbe20e64ff535c38b7b6642c646"
+  "contentHash": "sha256:7cc04f2db1637e76dbf4726ff3fcec633710c759ab9d3371e0a073cad6e0a1b3"
 }

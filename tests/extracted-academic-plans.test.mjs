@@ -96,6 +96,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["ciclo en biologia bioquimica:2016", ["salto", "paysandu"]],
     ["tecnicatura universitaria en bienes culturales:2021", ["colonia", "paysandu", "tacuarembo"]],
     ["licenciatura en turismo:2014", ["maldonado", "salto"]],
+    ["interpretacion lsu espanol lsu:2014", ["montevideo", "salto"]],
     ["licenciatura biologia humana:2004", ["montevideo", "salto", "paysandu", "rivera", "tacuarembo"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);

@@ -1707,3 +1707,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:d9b6a6837b82bd8bced15b3aba8962fe8ffe9988d2eafa781458b0e3ba5f7958`. Cola general: 28 identidades pendientes; hash `sha256:87e414289e718642fc26ef92b39ccb26412ca1050f2d79943c465bd3a2ded4fb`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:e0ab0562122351736e8d0c2767f2eb18557b3bbe20e64ff535c38b7b6642c646`. Cola funcional vacía; hash `sha256:85cb593e27d2717b526969822f9957f110f66bc41dcdbe6274af429c2dcdd1f1`.
 - Siguiente paso: auditar el Tecnólogo en Interpretación y Traducción LSU–Español Plan 2014, primera identidad reproducible restante.
+
+### Tecnólogo en Interpretación y Traducción LSU–Español Plan 2014 — recorridos lingüísticos y sedes normalizados 2026-08-28
+
+- FHCE, el Plan oficial y el catálogo central confirman un único título de `Tecnólogo en Interpretación y Traducción LSU–Español`, de tres años y 270 créditos. El Plan 2014 se conserva para sus cohortes durante la transición al Plan 2025; no se presenta como una carrera diferente.
+- La UI controla siete mínimos que suman exactamente 270 créditos: 112 técnico-instrumentales, 52 de lingüística, 46 de lengua, 22 optativos, 10 electivos, 26 de extensión, investigación y formación general, y 2 de cursos universitarios de FHCE.
+- Estudiantes oyentes cursan cuatro niveles de LSU y Estructura de la LSU; estudiantes sordos/as cursan cuatro niveles de español escrito y Estructuras del Español. Son dos recorridos lingüísticos del mismo plan y título, con núcleo, progreso y catálogo compartidos.
+- El egreso exige el núcleo común, cuatro niveles de segunda lengua, tres pasantías, los mínimos flexibles y validación final por la Comisión de Carrera. La secuencia de seis semestres es sugerida y no crea previaturas nuevas.
+- La malla vigente ejemplifica dos optativas de 13 créditos y alcanza 274, pero el mínimo normativo es 22 optativos y 270 totales. La UI controla el Plan y mantiene las unidades excedentes como catálogo elegible.
+- Montevideo y Salto se ofrecen como sedes actuales del mismo plan. Las huellas regionales de Salto y Tacuarembó coinciden con la central; Tacuarembó queda documentado como cohorte territorial anterior porque no figura como sede de ingreso en el catálogo vigente.
+- La proyección contiene 201 componentes y conserva 29 reglas operativas; 173 unidades quedan sin regla publicada y 43 componentes de crédito cero permanecen visibles sin sumar a ningún mínimo.
+- Registro de auditoría: hash `sha256:1419262d382dad716313c8003b0517e778561caaee78d72433c83af16cc04484`. Cola general: 27 identidades pendientes; hash `sha256:d2eb1685cc2633b8b44f71476b8f921a8d99f807b79f1138d4e8ec8176dac39b`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 36 con sedes oficiales; hash `sha256:7cc04f2db1637e76dbf4726ff3fcec633710c759ab9d3371e0a073cad6e0a1b3`. Cola funcional vacía; hash `sha256:a2315745f887ad93835a0dfa550f2d00198544ef8d86ba1fc060d451d2c882c3`.
+- Siguiente paso: auditar la Licenciatura en Letras Plan 2014, primera identidad reproducible restante; después cerrar conjuntamente el Plan 2025 del Tecnólogo y la Licenciatura en Estudios Sordos para compartir correctamente sus primeros 270 créditos.

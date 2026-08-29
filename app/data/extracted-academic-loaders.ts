@@ -470,8 +470,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014": {
     load: () => import("./bedelias-generated/bedelias-fhum-interpretacion-lsu-espanol-lsu-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["estudiante-oyente","estudiante-sordo"],
+    pathwayLabel: "Recorrido lingüístico",
     minCredits: 270,
   },
   "bedelias-fhum-letras-2014": {
