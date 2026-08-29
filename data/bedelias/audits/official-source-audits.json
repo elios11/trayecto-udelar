@@ -50075,7 +50075,2584 @@
       ],
       "uiNotice": "Plan 2014 flexible de 360 créditos en Montevideo. Completá el núcleo, tres niveles de filología clásica, tres seminarios, optativas, electivas, Taller y Tesina; la malla sugerida actual puede llevarte a 363 sin cambiar el mínimo de egreso.",
       "remainingWork": "La Comisión de Carrera debe validar actividad de extensión, pertinencia de optativas/electivas, equivalencias entre tópicos y seminarios, y la habilitación de la tesina."
+    },
+    {
+      "identity": "licenciatura en estudios sordos:2025",
+      "career": "Licenciatura en Estudios Sordos",
+      "planYear": "2025",
+      "reviewedAt": "2026-08-29",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría conjunta del Plan 2025 de Licenciatura y sus primeros 270 créditos compartidos con el Tecnólogo.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan conjunto 2025 publicado por FHCE",
+          "Página vigente de la Licenciatura",
+          "Comunicaciones institucionales de apertura en 2026"
+        ],
+        "planYear": "2025",
+        "title": "Licenciado en Estudios Sordos",
+        "careerName": "Licenciatura en Estudios Sordos",
+        "facultyCode": "FHUM",
+        "facultyName": "Facultad de Humanidades y Ciencias de la Educación",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Recorrido lingüístico",
+        "degreeRule": "La Licenciatura incluye los 270 créditos del Tecnólogo y agrega 90: 20 electivos y 70 de extensión, investigación y formación general, para un total de 360 créditos.",
+        "intermediateTitle": {
+          "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+          "minimumCredits": 270,
+          "completion": "primeros seis semestres y mínimos del título de Tecnólogo"
+        },
+        "trajectories": [
+          {
+            "id": "estudiante-oyente",
+            "label": "Estudiante oyente",
+            "description": "Recorrido oficial con LSU como segunda lengua; comparte el cuarto año interdisciplinario y ambos títulos con el recorrido para estudiantes sordos/as.",
+            "courseIds": [
+              "IL17",
+              "IL19",
+              "IL21",
+              "IL27",
+              "IL31"
+            ]
+          },
+          {
+            "id": "estudiante-sordo",
+            "label": "Estudiante sordo/a",
+            "description": "Recorrido oficial con español escrito como segunda lengua; comparte el cuarto año interdisciplinario y ambos títulos con el recorrido para estudiantes oyentes.",
+            "courseIds": [
+              "LI114",
+              "IL16",
+              "IL20",
+              "IL26",
+              "IL32"
+            ]
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "pathwayLabel": "Recorrido lingüístico",
+          "pathwayDescription": "La secuencia semestral es sugerida; las optativas, electivas y actividades integrales se eligen dentro de los mínimos oficiales.",
+          "pathRequirementMap": {
+            "1": "tuilsu-technical",
+            "2": "tuilsu-linguistics",
+            "3": "tuilsu-language",
+            "4": "tuilsu-flexible",
+            "3706": "tuilsu-language"
+          },
+          "periodLabelMap": {
+            "1": "Área técnico-instrumental · otras unidades",
+            "2": "Área lingüística · otras unidades",
+            "3": "Área lengua · otras unidades",
+            "4": "Optativas, electivas e integralidad",
+            "3706": "Lengua extranjera"
+          },
+          "periodOrder": [
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6",
+            "Semestre 7",
+            "Semestre 8",
+            "Pasantías · oferta flexible",
+            "Lengua extranjera",
+            "Área técnico-instrumental · otras unidades",
+            "Área lingüística · otras unidades",
+            "Área lengua · otras unidades",
+            "Optativas, electivas e integralidad",
+            "Validación de títulos"
+          ],
+          "courseOverrides": {
+            "IL103": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL92": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL19": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 1"
+            },
+            "IL21": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 2"
+            },
+            "IL27": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 3"
+            },
+            "IL31": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 4"
+            },
+            "IL16": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 1"
+            },
+            "IL20": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 2"
+            },
+            "IL26": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 3"
+            },
+            "IL32": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 4"
+            },
+            "INPFI": {
+              "requirementId": "tuilsu-language"
+            },
+            "INFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "IPFI": {
+              "requirementId": "tuilsu-language"
+            },
+            "PFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ITFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "FFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "AFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "PFTLS": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "AI": {
+              "requirementId": "tuilsu-language"
+            },
+            "PL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "PORT": {
+              "requirementId": "tuilsu-language"
+            },
+            "ITL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ITAL": {
+              "requirementId": "tuilsu-language"
+            },
+            "ICPF": {
+              "requirementId": "tuilsu-language"
+            },
+            "INL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "INGL": {
+              "requirementId": "tuilsu-language"
+            },
+            "FRL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "FRANC": {
+              "requirementId": "tuilsu-language"
+            },
+            "AL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ALE1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ALEM": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL42": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL43": {
+              "requirementId": "tuilsu-language"
+            },
+            "LSF": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL61": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL98": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 3"
+            },
+            "IL114": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL64": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 2"
+            },
+            "IL59": {
+              "requirementId": "tuilsu-linguistics"
+            },
+            "L157": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "L1E": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "LI114": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL18": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL17": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL22": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 2"
+            },
+            "IL28": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 3"
+            },
+            "IL55": {
+              "requirementId": "tuilsu-linguistics"
+            },
+            "IL41": {
+              "requirementId": "tuilsu-linguistics"
+            },
+            "IL96": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL94": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL82": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 3"
+            },
+            "IL83": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL76": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL73": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL71": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL70": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL69": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL68": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL67": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL24": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL30": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 3"
+            },
+            "IL33": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 4"
+            },
+            "IL37": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 5"
+            },
+            "IL44": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 6"
+            },
+            "IL25": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL29": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL48": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL49": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL47": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL53": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL54": {
+              "requirementId": "tuilsu-technical"
+            },
+            "UHD4": {
+              "requirementId": "tuilsu-university"
+            },
+            "UHD3": {
+              "requirementId": "tuilsu-university"
+            },
+            "UHD2": {
+              "requirementId": "tuilsu-university"
+            },
+            "UHD1": {
+              "requirementId": "tuilsu-university"
+            },
+            "IL104": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF171": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF170": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF162": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF161": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF166": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF165": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF164": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF159": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF158": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "ATP": {
+              "requirementId": "tuilsu-electives"
+            },
+            "TPAR": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EF152": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL99": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "FIC": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL101": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF151": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF150": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL102": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF146": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL100": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL97": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF140": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF130": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "INEI": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EF139": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF144": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "TPAC": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL95": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IDP": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IEI": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EF129": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL91": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF132": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF131": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF128": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF122": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF118": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF126": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF121": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF127": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF124": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL90": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI48": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF114": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF112": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL89": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF110": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF107": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF105": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF103": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF102": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL78": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL80": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL79": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "CEIL4": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EFI98": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI96": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI82": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI93": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI92": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL77": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI91": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI94": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL75": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL74": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI86": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI88": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI85": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI79": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL72": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI78": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI84": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI75": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI83": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI76": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL66": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "TAE": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL65": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI59": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI60": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IVU": {
+              "requirementId": "tuilsu-university",
+              "periodLabel": "Semestre 1"
+            },
+            "EFI68": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI61": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EXTE": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL60": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL58": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL62": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI53": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL57": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IVA": {
+              "requirementId": "tuilsu-university",
+              "periodLabel": "Semestre 1"
+            },
+            "EGU": {
+              "requirementId": "tuilsu-university",
+              "periodLabel": "Semestre 1"
+            },
+            "IL36": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL52": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL38": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL51": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL56": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL40": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL39": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL46": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL11": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL14": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL45": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "PS389": {
+              "requirementId": "tuilsu-electives"
+            },
+            "CS071": {
+              "requirementId": "tuilsu-electives"
+            },
+            "CEIL": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL50": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "OGDLS": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "DLS": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EEB": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL34": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL35": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "PSICO": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EFI35": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI44": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI33": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI5": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF18B": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI27": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "CS020": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EFI18": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI17": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "CTEP": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI6": {
+              "requirementId": "tuilsu-integrated"
+            }
+          },
+          "commonCourseIds": [
+            "IVU",
+            "IL18",
+            "IL22",
+            "IL25",
+            "IL24",
+            "IL28",
+            "IL82",
+            "IL30",
+            "IL33",
+            "IL37",
+            "IL44",
+            "lic-electiva-2",
+            "lic-herramientas",
+            "lic-metodologia-1",
+            "lic-tutoria-1",
+            "lic-electiva-3",
+            "lic-diseno",
+            "lic-metodologia-2",
+            "lic-tutoria-2",
+            "lic-trabajo-final",
+            "validacion-tecnologo-2025",
+            "validacion-licenciatura-2025"
+          ],
+          "creditRequirements": [
+            {
+              "id": "tuilsu-technical",
+              "name": "Área de formación técnico-instrumental",
+              "shortName": "Técnico-instrumental",
+              "minCredits": 112
+            },
+            {
+              "id": "tuilsu-linguistics",
+              "name": "Área de formación lingüística",
+              "shortName": "Lingüística",
+              "minCredits": 52
+            },
+            {
+              "id": "tuilsu-language",
+              "name": "Área de formación lengua",
+              "shortName": "Lengua",
+              "minCredits": 46
+            },
+            {
+              "id": "tuilsu-optionals",
+              "name": "Actividades optativas",
+              "shortName": "Optativas",
+              "minCredits": 22
+            },
+            {
+              "id": "tuilsu-electives",
+              "name": "Actividades electivas",
+              "shortName": "Electivas",
+              "minCredits": 30
+            },
+            {
+              "id": "tuilsu-integrated",
+              "name": "Extensión, investigación y formación general",
+              "shortName": "Integralidad",
+              "minCredits": 96
+            },
+            {
+              "id": "tuilsu-university",
+              "name": "Cursos universitarios de FHCE",
+              "shortName": "Universitarios",
+              "minCredits": 2
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "tuilsu-university-intro",
+              "label": "Introducción a la Vida Universitaria o equivalente",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IVU",
+                "IVA",
+                "EGU"
+              ]
+            },
+            {
+              "id": "tuilsu-studies-sordos",
+              "label": "Estudios Sordos",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL18"
+              ]
+            },
+            {
+              "id": "tuilsu-linguistic-1",
+              "label": "Lingüística de las lenguas orales y de señas I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL22",
+                "IL64"
+              ]
+            },
+            {
+              "id": "tuilsu-linguistic-2",
+              "label": "Lingüística de las lenguas orales y de señas II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL28",
+                "IL98"
+              ]
+            },
+            {
+              "id": "tuilsu-video-1",
+              "label": "Técnicas de videograbación, subtitulado y textualidad diferida I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL25",
+                "IL94"
+              ]
+            },
+            {
+              "id": "tuilsu-theory",
+              "label": "Teoría de la interpretación y traducción",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL24",
+                "IL96"
+              ]
+            },
+            {
+              "id": "tuilsu-video-2",
+              "label": "Técnicas de videograbación, subtitulado y textualidad diferida II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL82"
+              ]
+            },
+            {
+              "id": "tuilsu-method-1",
+              "label": "Metodología y práctica de la interpretación y traducción I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL30"
+              ]
+            },
+            {
+              "id": "tuilsu-method-2",
+              "label": "Metodología y práctica de la interpretación y traducción II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL33"
+              ]
+            },
+            {
+              "id": "tuilsu-method-3",
+              "label": "Metodología y práctica de la interpretación y traducción III",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL37"
+              ]
+            },
+            {
+              "id": "tuilsu-method-4",
+              "label": "Metodología y práctica de la interpretación y traducción IV",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL44"
+              ]
+            },
+            {
+              "id": "tuilsu-pasantias",
+              "label": "Tres pasantías de interpretación o traducción",
+              "minCompleted": 3,
+              "sourceCourseIds": [
+                "IL47",
+                "IL48",
+                "IL49",
+                "IL53",
+                "IL54",
+                "IL67",
+                "IL68",
+                "IL69",
+                "IL70",
+                "IL71",
+                "IL83"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-structure",
+              "label": "Estructura de la LSU",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL17"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-structure",
+              "label": "Estructuras del español",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL114",
+                "LI114",
+                "L157",
+                "L1E"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-1",
+              "label": "Extensión de la LSU I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL19"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-2",
+              "label": "Extensión de la LSU II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL21"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-3",
+              "label": "Extensión de la LSU III",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL27"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-4",
+              "label": "Extensión de la LSU IV",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL31"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-1",
+              "label": "Extensión del español I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL16"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-2",
+              "label": "Extensión del español II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL20"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-3",
+              "label": "Extensión del español III",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL26"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-4",
+              "label": "Extensión del español IV",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL32"
+              ]
+            },
+            {
+              "id": "tuilsu-language-structure",
+              "label": "Estructuras de la LSU o del español",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL17",
+                "IL114",
+                "LI114",
+                "L157",
+                "L1E"
+              ]
+            },
+            {
+              "id": "tuilsu-language-1",
+              "label": "Extensión de la segunda lengua I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL19",
+                "IL16"
+              ]
+            },
+            {
+              "id": "tuilsu-language-2",
+              "label": "Extensión de la segunda lengua II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL21",
+                "IL20"
+              ]
+            },
+            {
+              "id": "tuilsu-language-3",
+              "label": "Extensión de la segunda lengua III",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL27",
+                "IL26"
+              ]
+            },
+            {
+              "id": "tuilsu-language-4",
+              "label": "Extensión de la segunda lengua IV",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL31",
+                "IL32"
+              ]
+            },
+            {
+              "id": "validacion-tecnologo-2025",
+              "label": "Validación final del título de Tecnólogo",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "validacion-tecnologo-2025"
+              ]
+            },
+            {
+              "id": "lic-herramientas",
+              "label": "Herramientas para el trabajo intelectual",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "lic-herramientas"
+              ]
+            },
+            {
+              "id": "lic-metodologia",
+              "label": "15 créditos de metodología de investigación y/o intervención",
+              "minCompleted": 2,
+              "sourceCourseIds": [
+                "lic-metodologia-1",
+                "lic-metodologia-2"
+              ]
+            },
+            {
+              "id": "lic-diseno",
+              "label": "Diseño de proyectos",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "lic-diseno"
+              ]
+            },
+            {
+              "id": "lic-tutorias",
+              "label": "Tutorías 1 y 2",
+              "minCompleted": 2,
+              "sourceCourseIds": [
+                "lic-tutoria-1",
+                "lic-tutoria-2"
+              ]
+            },
+            {
+              "id": "lic-trabajo-final",
+              "label": "Trabajo final de grado",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "lic-trabajo-final"
+              ]
+            },
+            {
+              "id": "validacion-licenciatura-2025",
+              "label": "Validación final del título de Licenciado",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "validacion-licenciatura-2025"
+              ]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "tecnologo-tuilsu",
+              "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+              "minTotalCredits": 270,
+              "requiredCourseGroupIds": [
+                "tuilsu-university-intro",
+                "tuilsu-studies-sordos",
+                "tuilsu-linguistic-1",
+                "tuilsu-linguistic-2",
+                "tuilsu-video-1",
+                "tuilsu-theory",
+                "tuilsu-video-2",
+                "tuilsu-method-1",
+                "tuilsu-method-2",
+                "tuilsu-method-3",
+                "tuilsu-method-4",
+                "tuilsu-pasantias",
+                "tuilsu-language-structure",
+                "tuilsu-language-1",
+                "tuilsu-language-2",
+                "tuilsu-language-3",
+                "tuilsu-language-4",
+                "validacion-tecnologo-2025"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "tuilsu-technical",
+                  "minCredits": 112
+                },
+                {
+                  "nodeId": "tuilsu-linguistics",
+                  "minCredits": 52
+                },
+                {
+                  "nodeId": "tuilsu-language",
+                  "minCredits": 46
+                },
+                {
+                  "nodeId": "tuilsu-optionals",
+                  "minCredits": 22
+                },
+                {
+                  "nodeId": "tuilsu-electives",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "tuilsu-integrated",
+                  "minCredits": 26
+                },
+                {
+                  "nodeId": "tuilsu-university",
+                  "minCredits": 2
+                }
+              ]
+            },
+            {
+              "id": "bedelias-degree",
+              "title": "Licenciado en Estudios Sordos",
+              "minTotalCredits": 360,
+              "requiredCourseGroupIds": [
+                "tuilsu-university-intro",
+                "tuilsu-studies-sordos",
+                "tuilsu-linguistic-1",
+                "tuilsu-linguistic-2",
+                "tuilsu-video-1",
+                "tuilsu-theory",
+                "tuilsu-video-2",
+                "tuilsu-method-1",
+                "tuilsu-method-2",
+                "tuilsu-method-3",
+                "tuilsu-method-4",
+                "tuilsu-pasantias",
+                "tuilsu-language-structure",
+                "tuilsu-language-1",
+                "tuilsu-language-2",
+                "tuilsu-language-3",
+                "tuilsu-language-4",
+                "lic-herramientas",
+                "lic-metodologia",
+                "lic-diseno",
+                "lic-tutorias",
+                "lic-trabajo-final",
+                "validacion-licenciatura-2025"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "tuilsu-technical",
+                  "minCredits": 112
+                },
+                {
+                  "nodeId": "tuilsu-linguistics",
+                  "minCredits": 52
+                },
+                {
+                  "nodeId": "tuilsu-language",
+                  "minCredits": 46
+                },
+                {
+                  "nodeId": "tuilsu-optionals",
+                  "minCredits": 22
+                },
+                {
+                  "nodeId": "tuilsu-electives",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "tuilsu-integrated",
+                  "minCredits": 96
+                },
+                {
+                  "nodeId": "tuilsu-university",
+                  "minCredits": 2
+                }
+              ]
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "lic-electiva-2",
+              "name": "Electiva 2",
+              "credits": 10,
+              "requirementId": "tuilsu-electives",
+              "periodLabel": "Semestre 7",
+              "curricularBlock": true
+            },
+            {
+              "id": "lic-herramientas",
+              "name": "Herramientas para el trabajo intelectual",
+              "credits": 5,
+              "requirementId": "tuilsu-integrated",
+              "periodLabel": "Semestre 7"
+            },
+            {
+              "id": "lic-metodologia-1",
+              "name": "Metodología de investigación y/o intervención I",
+              "credits": 8,
+              "requirementId": "tuilsu-integrated",
+              "periodLabel": "Semestre 7",
+              "curricularBlock": true
+            },
+            {
+              "id": "lic-tutoria-1",
+              "name": "Tutoría 1",
+              "credits": 10,
+              "requirementId": "tuilsu-integrated",
+              "periodLabel": "Semestre 7"
+            },
+            {
+              "id": "lic-electiva-3",
+              "name": "Electiva 3",
+              "credits": 10,
+              "requirementId": "tuilsu-electives",
+              "periodLabel": "Semestre 8",
+              "curricularBlock": true
+            },
+            {
+              "id": "lic-diseno",
+              "name": "Diseño de proyectos",
+              "credits": 5,
+              "requirementId": "tuilsu-integrated",
+              "periodLabel": "Semestre 8"
+            },
+            {
+              "id": "lic-metodologia-2",
+              "name": "Metodología de investigación y/o intervención II",
+              "credits": 7,
+              "requirementId": "tuilsu-integrated",
+              "periodLabel": "Semestre 8",
+              "curricularBlock": true
+            },
+            {
+              "id": "lic-tutoria-2",
+              "name": "Tutoría 2",
+              "credits": 10,
+              "requirementId": "tuilsu-integrated",
+              "periodLabel": "Semestre 8"
+            },
+            {
+              "id": "lic-trabajo-final",
+              "name": "Trabajo final de grado",
+              "credits": 25,
+              "requirementId": "tuilsu-integrated",
+              "periodLabel": "Semestre 8"
+            },
+            {
+              "id": "validacion-tecnologo-2025",
+              "name": "Validación de egreso del Tecnólogo por la Comisión de Carrera",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Validación de títulos",
+              "curricularBlock": true
+            },
+            {
+              "id": "validacion-licenciatura-2025",
+              "name": "Validación de egreso de la Licenciatura por la Comisión de Carrera",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Validación de títulos",
+              "curricularBlock": true
+            }
+          ]
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FHUM",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable y sede publicada para la apertura 2026",
+          "admissionStatus": "active"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
+        "administrativeSnapshot": "data/bedelias/fhum-licenciatura-en-estudios-sordos-2025.json",
+        "metadataCurrent": true,
+        "canonicalCompositionMatterCount": 199,
+        "administrativeCompositionMatterCount": 71,
+        "prerequisiteRuleCount": 0,
+        "interpretation": "El snapshot de la Licenciatura contiene sólo 71 unidades del núcleo compartido y no publica el cuarto año. Se usa la composición más completa del Tecnólogo para los primeros 270 créditos y el Plan oficial para los 90 créditos finales; no se infieren materias adicionales."
+      },
+      "conclusion": {
+        "canonicalModel": "current-degree-with-articulated-technologist-title",
+        "canonicalIdentity": "licenciatura en estudios sordos:2025",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "La Licenciatura es una carrera de grado vigente de ocho semestres que incorpora íntegramente los seis semestres del Tecnólogo y otorga ambos títulos en hitos diferentes.",
+        "normalization": [
+          "Publicar una Licenciatura Plan 2025 de 360 créditos y sede Montevideo.",
+          "Mostrar el título de Tecnólogo como hito intermedio real a los 270 créditos.",
+          "Conservar los recorridos lingüísticos sordos/as y oyentes sin crear menciones certificadas.",
+          "Representar los 90 créditos finales mediante los bloques normativos del Plan, sin inventar una oferta de cursos aún no publicada.",
+          "Compartir progreso por código con la carrera de Tecnólogo articulada."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "authority": "Plan de Estudios 2025, FHCE",
+          "supports": [
+            "Licenciatura",
+            "título intermedio",
+            "ocho semestres",
+            "360 créditos",
+            "90 créditos finales",
+            "estructura semestral"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/licenciatura-en-estudios-sordos/",
+          "authority": "Página vigente de la Licenciatura, FHCE",
+          "supports": [
+            "vigencia",
+            "objetivos",
+            "servicio responsable"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/plan-de-estudios-de-la-licenciatura-en-estudios-sordos/",
+          "authority": "Página oficial del plan, FHCE",
+          "supports": [
+            "publicación vigente del Plan 2025"
+          ]
+        },
+        {
+          "url": "https://bienestar.udelar.edu.uy/2025/09/21/saludo-de-bienestar-en-el-dia-nacional-de-las-personas-sordas/",
+          "authority": "Bienestar Universitario, Udelar",
+          "supports": [
+            "aprobación",
+            "apertura en 2026",
+            "dictado en FHCE"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "bedeliasComposition",
+          "resolution": "La composición administrativa de la Licenciatura es incompleta: no se usa para reducir el núcleo ni para omitir el cuarto año oficial."
+        },
+        {
+          "field": "fourthYearCourseOffer",
+          "resolution": "FHCE todavía no publica una malla efectiva del cuarto año; se representan sólo los bloques y créditos nominales aprobados."
+        },
+        {
+          "field": "campus",
+          "resolution": "El Plan permite ingreso de egresados del Tecnólogo, pero la apertura 2026 se atribuye a FHCE; Salto permanece como sede del Tecnólogo, no como sede completa de la Licenciatura."
+        }
+      ],
+      "uiNotice": "Plan 2025 de cuatro años y 360 créditos. Los primeros seis semestres otorgan el título intermedio de Tecnólogo; el cuarto año agrega 90 créditos interdisciplinarios. Elegí el recorrido lingüístico correspondiente y conservá el mismo progreso al alternar con la carrera de Tecnólogo.",
+      "remainingWork": "Auditoría oficial y proyección funcional completas; los bloques flexibles del cuarto año deberán actualizarse cuando FHCE publique su oferta efectiva."
+    },
+    {
+      "identity": "tecnologo int y trad lsu esp:2025",
+      "career": "Tecnólogo en Interpretación y Traducción LSU-Español",
+      "planYear": "2025",
+      "reviewedAt": "2026-08-29",
+      "status": "official-evidence-complete",
+      "scope": "Auditoría conjunta del Plan 2025 del Tecnólogo y su articulación con la Licenciatura en Estudios Sordos.",
+      "publicationEligible": false,
+      "officialPlan": {
+        "approval": [
+          "Plan conjunto 2025 publicado por FHCE",
+          "Página vigente del Plan 2025 del Tecnólogo",
+          "Catálogo vigente de carreras de Udelar"
+        ],
+        "planYear": "2025",
+        "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+        "careerName": "Tecnólogo en Interpretación y Traducción LSU-Español",
+        "facultyCode": "FHUM",
+        "facultyName": "Facultad de Humanidades y Ciencias de la Educación",
+        "durationMonths": 36,
+        "semesters": 6,
+        "minimumCredits": 270,
+        "current": true,
+        "progressPlanId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
+        "pathwayLabel": "Recorrido lingüístico",
+        "degreeRule": "El título de Tecnólogo exige los primeros seis semestres y 270 créditos: 112 técnico-instrumentales, 52 de lingüística, 46 de lengua, 22 optativos, 10 electivos, 26 de extensión, investigación y formación general, y 2 de cursos universitarios de FHCE.",
+        "trajectories": [
+          {
+            "id": "estudiante-oyente",
+            "credentialId": "tecnologo-tuilsu-oyente",
+            "label": "Estudiante oyente",
+            "description": "Recorrido oficial con LSU como segunda lengua; comparte el núcleo y el título con el recorrido para estudiantes sordos/as.",
+            "courseIds": [
+              "IL17",
+              "IL19",
+              "IL21",
+              "IL27",
+              "IL31"
+            ]
+          },
+          {
+            "id": "estudiante-sordo",
+            "credentialId": "tecnologo-tuilsu-sordo",
+            "label": "Estudiante sordo/a",
+            "description": "Recorrido oficial con español escrito como segunda lengua; comparte el núcleo y el título con el recorrido para estudiantes oyentes.",
+            "courseIds": [
+              "LI114",
+              "IL16",
+              "IL20",
+              "IL26",
+              "IL32"
+            ]
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "pathwayLabel": "Recorrido lingüístico",
+          "pathwayDescription": "La secuencia semestral es sugerida; las optativas, electivas y actividades integrales se eligen dentro de los mínimos oficiales.",
+          "pathRequirementMap": {
+            "1": "tuilsu-technical",
+            "2": "tuilsu-linguistics",
+            "3": "tuilsu-language",
+            "4": "tuilsu-flexible",
+            "3706": "tuilsu-language"
+          },
+          "periodLabelMap": {
+            "1": "Área técnico-instrumental · otras unidades",
+            "2": "Área lingüística · otras unidades",
+            "3": "Área lengua · otras unidades",
+            "4": "Optativas, electivas e integralidad",
+            "3706": "Lengua extranjera"
+          },
+          "periodOrder": [
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6",
+            "Pasantías · oferta flexible",
+            "Lengua extranjera",
+            "Área técnico-instrumental · otras unidades",
+            "Área lingüística · otras unidades",
+            "Área lengua · otras unidades",
+            "Optativas, electivas e integralidad",
+            "Validación de egreso"
+          ],
+          "courseOverrides": {
+            "IL103": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL92": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL19": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 1"
+            },
+            "IL21": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 2"
+            },
+            "IL27": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 3"
+            },
+            "IL31": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 4"
+            },
+            "IL16": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 1"
+            },
+            "IL20": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 2"
+            },
+            "IL26": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 3"
+            },
+            "IL32": {
+              "requirementId": "tuilsu-language",
+              "periodLabel": "Semestre 4"
+            },
+            "INPFI": {
+              "requirementId": "tuilsu-language"
+            },
+            "INFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "IPFI": {
+              "requirementId": "tuilsu-language"
+            },
+            "PFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ITFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "FFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "AFU1": {
+              "requirementId": "tuilsu-language"
+            },
+            "PFTLS": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "AI": {
+              "requirementId": "tuilsu-language"
+            },
+            "PL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "PORT": {
+              "requirementId": "tuilsu-language"
+            },
+            "ITL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ITAL": {
+              "requirementId": "tuilsu-language"
+            },
+            "ICPF": {
+              "requirementId": "tuilsu-language"
+            },
+            "INL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "INGL": {
+              "requirementId": "tuilsu-language"
+            },
+            "FRL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "FRANC": {
+              "requirementId": "tuilsu-language"
+            },
+            "AL1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ALE1": {
+              "requirementId": "tuilsu-language"
+            },
+            "ALEM": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL42": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL43": {
+              "requirementId": "tuilsu-language"
+            },
+            "LSF": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL61": {
+              "requirementId": "tuilsu-language"
+            },
+            "IL98": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 3"
+            },
+            "IL114": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL64": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 2"
+            },
+            "IL59": {
+              "requirementId": "tuilsu-linguistics"
+            },
+            "L157": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "L1E": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "LI114": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL18": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL17": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 1"
+            },
+            "IL22": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 2"
+            },
+            "IL28": {
+              "requirementId": "tuilsu-linguistics",
+              "periodLabel": "Semestre 3"
+            },
+            "IL55": {
+              "requirementId": "tuilsu-linguistics"
+            },
+            "IL41": {
+              "requirementId": "tuilsu-linguistics"
+            },
+            "IL96": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL94": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL82": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 3"
+            },
+            "IL83": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL76": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL73": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL71": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL70": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL69": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL68": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL67": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL24": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL30": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 3"
+            },
+            "IL33": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 4"
+            },
+            "IL37": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 5"
+            },
+            "IL44": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 6"
+            },
+            "IL25": {
+              "requirementId": "tuilsu-technical",
+              "periodLabel": "Semestre 2"
+            },
+            "IL29": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL48": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL49": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL47": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL53": {
+              "requirementId": "tuilsu-technical"
+            },
+            "IL54": {
+              "requirementId": "tuilsu-technical"
+            },
+            "UHD4": {
+              "requirementId": "tuilsu-university"
+            },
+            "UHD3": {
+              "requirementId": "tuilsu-university"
+            },
+            "UHD2": {
+              "requirementId": "tuilsu-university"
+            },
+            "UHD1": {
+              "requirementId": "tuilsu-university"
+            },
+            "IL104": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF171": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF170": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF162": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF161": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF166": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF165": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF164": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF159": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF158": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "ATP": {
+              "requirementId": "tuilsu-electives"
+            },
+            "TPAR": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EF152": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL99": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "FIC": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL101": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF151": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF150": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL102": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF146": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL100": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL97": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF140": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF130": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "INEI": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EF139": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF144": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "TPAC": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL95": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IDP": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IEI": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EF129": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL91": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF132": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF131": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF128": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF122": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF118": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF126": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF121": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF127": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF124": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL90": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI48": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF114": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF112": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL89": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EF110": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF107": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF105": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF103": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF102": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL78": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL80": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL79": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "CEIL4": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EFI98": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI96": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI82": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI93": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI92": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL77": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI91": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI94": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL75": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL74": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI86": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI88": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI85": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI79": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL72": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI78": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI84": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI75": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI83": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI76": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL66": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "TAE": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL65": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI59": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI60": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IVU": {
+              "requirementId": "tuilsu-university",
+              "periodLabel": "Semestre 1"
+            },
+            "EFI68": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI61": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EXTE": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL60": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL58": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL62": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EFI53": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "IL57": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IVA": {
+              "requirementId": "tuilsu-university",
+              "periodLabel": "Semestre 1"
+            },
+            "EGU": {
+              "requirementId": "tuilsu-university",
+              "periodLabel": "Semestre 1"
+            },
+            "IL36": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL52": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL38": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL51": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL56": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL40": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL39": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL46": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL11": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL14": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL45": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "PS389": {
+              "requirementId": "tuilsu-electives"
+            },
+            "CS071": {
+              "requirementId": "tuilsu-electives"
+            },
+            "CEIL": {
+              "requirementId": "tuilsu-electives"
+            },
+            "IL50": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "OGDLS": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "DLS": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "EEB": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL34": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "IL35": {
+              "requirementId": "tuilsu-optionals"
+            },
+            "PSICO": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EFI35": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI44": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI33": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI5": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EF18B": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI27": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "CS020": {
+              "requirementId": "tuilsu-electives"
+            },
+            "EFI18": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI17": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "CTEP": {
+              "requirementId": "tuilsu-integrated"
+            },
+            "EFI6": {
+              "requirementId": "tuilsu-integrated"
+            }
+          },
+          "commonCourseIds": [
+            "IVU",
+            "IL18",
+            "IL22",
+            "IL25",
+            "IL24",
+            "IL28",
+            "IL82",
+            "IL30",
+            "IL33",
+            "IL37",
+            "IL44"
+          ],
+          "creditRequirements": [
+            {
+              "id": "tuilsu-technical",
+              "name": "Área de formación técnico-instrumental",
+              "shortName": "Técnico-instrumental",
+              "minCredits": 112
+            },
+            {
+              "id": "tuilsu-linguistics",
+              "name": "Área de formación lingüística",
+              "shortName": "Lingüística",
+              "minCredits": 52
+            },
+            {
+              "id": "tuilsu-language",
+              "name": "Área de formación lengua",
+              "shortName": "Lengua",
+              "minCredits": 46
+            },
+            {
+              "id": "tuilsu-optionals",
+              "name": "Actividades optativas",
+              "shortName": "Optativas",
+              "minCredits": 22
+            },
+            {
+              "id": "tuilsu-electives",
+              "name": "Actividades electivas",
+              "shortName": "Electivas",
+              "minCredits": 10
+            },
+            {
+              "id": "tuilsu-integrated",
+              "name": "Extensión, investigación y formación general",
+              "shortName": "Integralidad",
+              "minCredits": 26
+            },
+            {
+              "id": "tuilsu-university",
+              "name": "Cursos universitarios de FHCE",
+              "shortName": "Universitarios",
+              "minCredits": 2
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "tuilsu-university-intro",
+              "label": "Introducción a la Vida Universitaria o equivalente",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IVU",
+                "IVA",
+                "EGU"
+              ]
+            },
+            {
+              "id": "tuilsu-studies-sordos",
+              "label": "Estudios Sordos",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL18"
+              ]
+            },
+            {
+              "id": "tuilsu-linguistic-1",
+              "label": "Lingüística de las lenguas orales y de señas I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL22",
+                "IL64"
+              ]
+            },
+            {
+              "id": "tuilsu-linguistic-2",
+              "label": "Lingüística de las lenguas orales y de señas II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL28",
+                "IL98"
+              ]
+            },
+            {
+              "id": "tuilsu-video-1",
+              "label": "Técnicas de videograbación, subtitulado y textualidad diferida I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL25",
+                "IL94"
+              ]
+            },
+            {
+              "id": "tuilsu-theory",
+              "label": "Teoría de la interpretación y traducción",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL24",
+                "IL96"
+              ]
+            },
+            {
+              "id": "tuilsu-video-2",
+              "label": "Técnicas de videograbación, subtitulado y textualidad diferida II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL82"
+              ]
+            },
+            {
+              "id": "tuilsu-method-1",
+              "label": "Metodología y práctica de la interpretación y traducción I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL30"
+              ]
+            },
+            {
+              "id": "tuilsu-method-2",
+              "label": "Metodología y práctica de la interpretación y traducción II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL33"
+              ]
+            },
+            {
+              "id": "tuilsu-method-3",
+              "label": "Metodología y práctica de la interpretación y traducción III",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL37"
+              ]
+            },
+            {
+              "id": "tuilsu-method-4",
+              "label": "Metodología y práctica de la interpretación y traducción IV",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL44"
+              ]
+            },
+            {
+              "id": "tuilsu-pasantias",
+              "label": "Tres pasantías de interpretación o traducción",
+              "minCompleted": 3,
+              "sourceCourseIds": [
+                "IL47",
+                "IL48",
+                "IL49",
+                "IL53",
+                "IL54",
+                "IL67",
+                "IL68",
+                "IL69",
+                "IL70",
+                "IL71",
+                "IL83"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-structure",
+              "label": "Estructura de la LSU",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL17"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-structure",
+              "label": "Estructuras del español",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL114",
+                "LI114",
+                "L157",
+                "L1E"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-1",
+              "label": "Extensión de la LSU I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL19"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-2",
+              "label": "Extensión de la LSU II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL21"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-3",
+              "label": "Extensión de la LSU III",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL27"
+              ]
+            },
+            {
+              "id": "tuilsu-oyente-language-4",
+              "label": "Extensión de la LSU IV",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL31"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-1",
+              "label": "Extensión del español I",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL16"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-2",
+              "label": "Extensión del español II",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL20"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-3",
+              "label": "Extensión del español III",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL26"
+              ]
+            },
+            {
+              "id": "tuilsu-sordo-language-4",
+              "label": "Extensión del español IV",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "IL32"
+              ]
+            }
+          ],
+          "credentials": [
+            {
+              "id": "tecnologo-tuilsu-oyente",
+              "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+              "minTotalCredits": 270,
+              "requiredCourseGroupIds": [
+                "tuilsu-university-intro",
+                "tuilsu-studies-sordos",
+                "tuilsu-linguistic-1",
+                "tuilsu-linguistic-2",
+                "tuilsu-video-1",
+                "tuilsu-theory",
+                "tuilsu-video-2",
+                "tuilsu-method-1",
+                "tuilsu-method-2",
+                "tuilsu-method-3",
+                "tuilsu-method-4",
+                "tuilsu-pasantias",
+                "validacion-final-plan",
+                "tuilsu-oyente-structure",
+                "tuilsu-oyente-language-1",
+                "tuilsu-oyente-language-2",
+                "tuilsu-oyente-language-3",
+                "tuilsu-oyente-language-4"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "tuilsu-technical",
+                  "minCredits": 112
+                },
+                {
+                  "nodeId": "tuilsu-linguistics",
+                  "minCredits": 52
+                },
+                {
+                  "nodeId": "tuilsu-language",
+                  "minCredits": 46
+                },
+                {
+                  "nodeId": "tuilsu-optionals",
+                  "minCredits": 22
+                },
+                {
+                  "nodeId": "tuilsu-electives",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "tuilsu-integrated",
+                  "minCredits": 26
+                },
+                {
+                  "nodeId": "tuilsu-university",
+                  "minCredits": 2
+                }
+              ]
+            },
+            {
+              "id": "tecnologo-tuilsu-sordo",
+              "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+              "minTotalCredits": 270,
+              "requiredCourseGroupIds": [
+                "tuilsu-university-intro",
+                "tuilsu-studies-sordos",
+                "tuilsu-linguistic-1",
+                "tuilsu-linguistic-2",
+                "tuilsu-video-1",
+                "tuilsu-theory",
+                "tuilsu-video-2",
+                "tuilsu-method-1",
+                "tuilsu-method-2",
+                "tuilsu-method-3",
+                "tuilsu-method-4",
+                "tuilsu-pasantias",
+                "validacion-final-plan",
+                "tuilsu-sordo-structure",
+                "tuilsu-sordo-language-1",
+                "tuilsu-sordo-language-2",
+                "tuilsu-sordo-language-3",
+                "tuilsu-sordo-language-4"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "tuilsu-technical",
+                  "minCredits": 112
+                },
+                {
+                  "nodeId": "tuilsu-linguistics",
+                  "minCredits": 52
+                },
+                {
+                  "nodeId": "tuilsu-language",
+                  "minCredits": 46
+                },
+                {
+                  "nodeId": "tuilsu-optionals",
+                  "minCredits": 22
+                },
+                {
+                  "nodeId": "tuilsu-electives",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "tuilsu-integrated",
+                  "minCredits": 26
+                },
+                {
+                  "nodeId": "tuilsu-university",
+                  "minCredits": 2
+                }
+              ]
+            }
+          ],
+          "manualCompletionValidation": "Validación final de optativas, electivas, integralidad, pasantías y recorrido lingüístico por la Comisión de Carrera"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FHUM",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable y sede completa",
+          "admissionStatus": "active"
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "sede completa publicada en el catálogo vigente de Udelar",
+          "admissionStatus": "active"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
+        "regionalSnapshots": [
+          "data/bedelias/cenurln-tecnologo-int-y-trad-lsu-esp-2025.json",
+          "data/bedelias/cucel-tecnologo-int-y-trad-lsu-esp-2025.json"
+        ],
+        "metadataCurrent": true,
+        "compositionMatterCount": 199,
+        "prerequisiteRuleCount": 0,
+        "noPublishedRuleCount": 195,
+        "interpretation": "Las tres composiciones de Bedelías contienen las mismas 199 unidades. Udelar sólo confirma como sedes vigentes Montevideo y Salto; la aparición administrativa en CUCEL no se publica como sede sin respaldo oficial."
+      },
+      "conclusion": {
+        "canonicalModel": "current-technologist-articulated-with-current-degree",
+        "canonicalIdentity": "tecnologo int y trad lsu esp:2025",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "El Plan 2025 conserva una carrera y un título de Tecnólogo autónomos, cuyos 270 créditos constituyen a la vez los primeros tres años de la Licenciatura en Estudios Sordos.",
+        "normalization": [
+          "Publicar una única carrera de Tecnólogo Plan 2025 con sedes Montevideo y Salto.",
+          "Conservar los recorridos lingüísticos para estudiantes sordos/as y oyentes sin convertirlos en títulos distintos.",
+          "Compartir el progreso de sus 270 créditos con la Licenciatura articulada.",
+          "No presentar CUCEL como sede actual sin evidencia oficial primaria."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "authority": "Plan de Estudios 2025, FHCE",
+          "supports": [
+            "dos títulos articulados",
+            "tres años",
+            "270 créditos",
+            "áreas",
+            "recorridos lingüísticos",
+            "pasantías"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/plan-de-estudios-4/",
+          "authority": "Página vigente de planes de TUILSU, FHCE",
+          "supports": [
+            "Plan 2025",
+            "denominación",
+            "título",
+            "duración",
+            "créditos"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/tecnologo-en-interpretacion-y-traduccion-lsu-espanol/",
+          "authority": "Página vigente de la carrera, FHCE",
+          "supports": [
+            "ingreso 2026",
+            "prueba de suficiencia",
+            "admisión de estudiantes sordos y oyentes"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/interpretacion-lsu-espanol-lsu",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "36 meses",
+            "270 créditos",
+            "sedes Montevideo y Salto"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "regionalOffering.CUCEL",
+          "resolution": "Bedelías publica la composición en CUCEL, pero el catálogo vigente de Udelar sólo confirma FHCE y Salto; CUCEL no se expone como sede."
+        },
+        {
+          "field": "prerequisites",
+          "resolution": "Los snapshots 2025 no publican reglas operativas; no se heredan las previaturas del Plan 2014."
+        }
+      ],
+      "uiNotice": "Plan 2025 de tres años y 270 créditos, articulado como los primeros seis semestres de la Licenciatura en Estudios Sordos. Elegí sede y recorrido lingüístico; el progreso común se conserva al pasar a la Licenciatura.",
+      "remainingWork": "Auditoría oficial y proyección funcional completas; no sustituye la resolución institucional de reválidas individuales desde cohortes anteriores."
     }
   ],
-  "contentHash": "sha256:36eb085bd378f10fa9ff16c1c761fc4ea048eb46bbdc2f4817dd7a75a88e67ef"
+  "contentHash": "sha256:2d0a6b047827a163c8c54e0819334773a68919656cd18913137e452d33071550"
 }

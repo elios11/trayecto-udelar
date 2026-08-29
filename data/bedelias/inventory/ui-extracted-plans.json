@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:7707fcb9b46b65166c288e34bd40ac712668825adb843db48d77c3bdcccecb0e",
-    "officialAuditHash": "sha256:36eb085bd378f10fa9ff16c1c761fc4ea048eb46bbdc2f4817dd7a75a88e67ef",
+    "auditQueueHash": "sha256:58696a4c43d965934c291cf87ec7cc25a8d1a210acbe8a8df1396c5894004e23",
+    "officialAuditHash": "sha256:2d0a6b047827a163c8c54e0819334773a68919656cd18913137e452d33071550",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 36,
+    "plansWithOfficialCampuses": 37,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -916,10 +916,12 @@
       "identity": "licenciatura en estudios sordos:2025",
       "planId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
       "facultyCode": "FHUM",
-      "snapshotPath": "data/bedelias/fhum-licenciatura-en-estudios-sordos-2025.json",
-      "auditStatus": "structurally-valid",
+      "snapshotPath": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo"
+      ]
     },
     {
       "identity": "linguistica:2014",
@@ -944,9 +946,12 @@
       "planId": "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "archivologia:2012",
@@ -1537,5 +1542,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:4ee15334c21766cefb6dfe7a5e1fdd63e6ade6202dd42a9f7223c164396cff91"
+  "contentHash": "sha256:25d153c711cd35195b9043ae22ca28598982ac2d2f08d2de0f0728ceca338f49"
 }

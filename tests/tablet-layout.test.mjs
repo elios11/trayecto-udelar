@@ -5,7 +5,7 @@ import test from "node:test";
 const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
 test("keeps the header and academic selector fluid at tablet widths", () => {
-  const tabletMedia = css.match(/@media \(min-width: 721px\) and \(max-width: 980px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
+  const tabletMedia = css.match(/@media \(min-width: 721px\) and \(max-width: 1100px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
 
   assert.match(tabletMedia, /\.topbar \{ height: 80px; padding: 0 20px; \}/);
   assert.match(tabletMedia, /\.quiet-button \{ display: none; \}/);

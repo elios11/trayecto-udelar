@@ -34,7 +34,7 @@ test("sede y estados pendientes usan tokens compatibles con todos los temas", ()
 });
 
 test("el selector no desborda en tablet y baja a una columna en móvil angosto", () => {
-  const tablet = css.match(/@media \(min-width: 721px\) and \(max-width: 980px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
+  const tablet = css.match(/@media \(min-width: 721px\) and \(max-width: 1100px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
   const mobile = css.match(/@media \(max-width: 430px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
   assert.match(tablet, /\.selector-row \.campus-selector select \{ width: 100%; min-width: 0; \}/);
   assert.match(tablet, /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);

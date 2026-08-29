@@ -7,8 +7,9 @@ type PlanLoader = () => Promise<PlanModule>;
 type RegisteredAcademicPlan = {
   load: PlanLoader;
   pathwayIds: readonly string[];
-  pathwayLabel: "Perfil" | "Trayectoria" | "Opción";
+  pathwayLabel: "Perfil" | "Trayectoria" | "Opción" | "Recorrido lingüístico";
   minCredits: number;
+  progressPlanId?: PlanId;
 };
 
 export const registeredAcademicPlans: Partial<Record<PlanId, RegisteredAcademicPlan>> = {

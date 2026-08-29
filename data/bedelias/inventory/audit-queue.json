@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-29T05:45:39.320Z",
+  "generatedAt": "2026-08-29T06:05:29.022Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:36eb085bd378f10fa9ff16c1c761fc4ea048eb46bbdc2f4817dd7a75a88e67ef"
+    "officialAuditRegistryHash": "sha256:2d0a6b047827a163c8c54e0819334773a68919656cd18913137e452d33071550"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 151,
-    "pendingCanonicalIdentities": 26,
+    "evidenceClosedCanonicalIdentities": 153,
+    "pendingCanonicalIdentities": 24,
     "byPriority": {
-      "official-sources-pending": 26
+      "official-sources-pending": 24
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -927,38 +927,21 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-29",
       "conclusion": "one-degree-flexible-trajectory"
+    },
+    {
+      "identity": "licenciatura en estudios sordos:2025",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-29",
+      "conclusion": "current-degree-with-articulated-technologist-title"
+    },
+    {
+      "identity": "tecnologo int y trad lsu esp:2025",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-29",
+      "conclusion": "current-technologist-articulated-with-current-degree"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en estudios sordos:2025",
-      "career": {
-        "name": "LICENCIATURA EN ESTUDIOS SORDOS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2025",
-        "name": "LICENCIATURA EN ESTUDIOS SORDOS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:licenciatura en estudios sordos:2025",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:licenciatura en estudios sordos:2025",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "linguistica:2014",
       "career": {
@@ -1016,62 +999,6 @@
       "priority": "official-sources-pending",
       "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
       "regionalComparisons": []
-    },
-    {
-      "identity": "tecnologo int y trad lsu esp:2025",
-      "career": {
-        "name": "TECNÓLOGO INT Y TRAD LSU ESP",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2025",
-        "name": "TECNÓLOGO INT Y TRAD LSU ESP",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:tecnologo int y trad lsu esp:2025",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:tecnologo int y trad lsu esp:2025",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CUCEL",
-          "canonicalServiceCode": "FHUM",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -193
-          }
-        },
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FHUM",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -192
-          }
-        }
-      ]
     },
     {
       "identity": "licenciatura en ingenieria de medios:2018",
@@ -1863,5 +1790,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:7707fcb9b46b65166c288e34bd40ac712668825adb843db48d77c3bdcccecb0e"
+  "contentHash": "sha256:58696a4c43d965934c291cf87ec7cc25a8d1a210acbe8a8df1396c5894004e23"
 }

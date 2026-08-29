@@ -482,8 +482,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-licenciatura-en-estudios-sordos-2025": {
     load: () => import("./bedelias-generated/bedelias-fhum-licenciatura-en-estudios-sordos-2025.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["estudiante-oyente","estudiante-sordo"],
+    pathwayLabel: "Recorrido lingüístico",
     minCredits: 360,
   },
   "bedelias-fhum-linguistica-2014": {
@@ -500,9 +500,10 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025": {
     load: () => import("./bedelias-generated/bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 0,
+    pathwayIds: ["estudiante-oyente","estudiante-sordo"],
+    pathwayLabel: "Recorrido lingüístico",
+    minCredits: 270,
+    progressPlanId: "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
   },
   "bedelias-fic-archivologia-2012": {
     load: () => import("./bedelias-generated/bedelias-fic-archivologia-2012.json"),

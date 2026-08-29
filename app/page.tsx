@@ -811,6 +811,11 @@ export default function Home() {
   }, [registeredPlanData]);
   const isRegisteredPlan = isRegisteredAcademicPlan(planYear);
   const activeRegisteredPlan = registeredPlanData[planYear] ?? null;
+  const hasClosedOfficialEvidence = activeRegisteredPlan?.plan.auditStatus === "audited"
+    || activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete";
+  const activeProgressPlanId = isRegisteredPlan
+    ? (registeredAcademicPlans[planYear]?.progressPlanId ?? planYear)
+    : planYear;
   const registeredCampuses = activeRegisteredPlan?.campuses ?? [];
   const activeCampus = resolveCampus(registeredCampuses, campusId) as CampusOption | undefined;
   const registeredPathwayEntries = availablePathwayEntries(activeRegisteredPlan?.pathways ?? {}, activeCampus) as Array<[string, RegisteredProjection["pathways"][string]]>;
@@ -924,11 +929,11 @@ export default function Home() {
     [progress, initialQfCourseIds],
   );
   const statuses = useMemo(() => {
-    const storedStatuses = progress[planYear] ?? {};
+    const storedStatuses = progress[activeProgressPlanId] ?? {};
     return planYear === "2025" && trajectoryId === "pi-60-plus"
       ? { ...storedStatuses, PI: "exonerated" as CourseStatus }
       : storedStatuses;
-  }, [progress, planYear, trajectoryId]);
+  }, [progress, activeProgressPlanId, planYear, trajectoryId]);
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
     if (isRegisteredPlan && activeRegisteredPlan) return new Map<string, unknown>(activeRegisteredPlan.courses.map((course) => [course.id, course]));
@@ -990,9 +995,9 @@ export default function Home() {
 
   const setStatuses = (updater: Record<string, CourseStatus> | ((current: Record<string, CourseStatus>) => Record<string, CourseStatus>)) => {
     setProgress((current) => {
-      const currentPlan = current[planYear] ?? {};
+      const currentPlan = current[activeProgressPlanId] ?? {};
       const next = typeof updater === "function" ? updater(currentPlan) : updater;
-      return { ...current, [planYear]: next };
+      return { ...current, [activeProgressPlanId]: next };
     });
   };
 
@@ -1778,7 +1783,7 @@ export default function Home() {
             </label>}
           </div>
           {appMode === "planner" ? (
-            <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Armá una currícula propia con las mismas materias, {usesPublishedHours ? "horas" : "créditos"} y áreas del plan. Los cambios quedan guardados en este dispositivo.{isRegisteredPlan && activeRegisteredPlan?.plan.auditStatus !== "audited" ? " Esta composición de Bedelías tiene auditoría oficial pendiente." : ""}</span></p>
+            <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Armá una currícula propia con las mismas materias, {usesPublishedHours ? "horas" : "créditos"} y áreas del plan. Los cambios quedan guardados en este dispositivo.{isRegisteredPlan && !hasClosedOfficialEvidence ? " Esta composición de Bedelías tiene auditoría oficial pendiente." : ""}</span></p>
           ) : isRegisteredPlan ? (
             <p className={`pilot-note ${activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-note"}`}><span className="pilot-note-mark" aria-hidden="true">{activeRegisteredPlan?.plan.auditStatus === "audited" ? "✓" : "i"}</span><span className="pilot-note-copy">{activeCampus ? `Sede: ${activeCampus.label}. ` : ""}{activeRegisteredPathway?.description} {activeRegisteredPlan?.plan.notice}</span></p>
           ) : planYear === "2025" ? (
@@ -1896,7 +1901,7 @@ export default function Home() {
               </details>;
             })}
           </div>
-          <p className="data-source">{isRegisteredPlan ? activeRegisteredPlan?.plan.auditStatus === "audited" ? "Las metas, etapas, perfiles y bloques provienen de documentación oficial auditada; el snapshot SGAE se usa como contraste." : "Las unidades y grupos visibles provienen de la composición de Bedelías. Títulos, mínimos, obligatoriedad y trayectoria conservan auditoría oficial pendiente salvo donde el aviso indique evidencia cerrada." : planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
+          <p className="data-source">{isRegisteredPlan ? activeRegisteredPlan?.plan.auditStatus === "audited" ? "Las metas, etapas, perfiles y bloques provienen de documentación oficial auditada; el snapshot SGAE se usa como contraste." : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete" ? "Títulos, mínimos, sedes y recorridos se contrastaron con fuentes oficiales. Las unidades combinan la composición de Bedelías y las normalizaciones trazables indicadas en el plan." : "Las unidades y grupos visibles provienen de la composición de Bedelías. Títulos, mínimos, obligatoriedad y trayectoria conservan auditoría oficial pendiente salvo donde el aviso indique evidencia cerrada." : planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
           </>}
         </aside>
 
@@ -2027,7 +2032,7 @@ export default function Home() {
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
             </label> : isRegisteredPlan
-              ? <span className={`rules-coverage ${activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-status"}`}>{activeRegisteredPlan?.plan.auditStatus === "audited" ? `Proyección auditada · revisión ${activeRegisteredPlan.source.reviewedAt}` : `Composición Bedelías · auditoría oficial pendiente${activeRegisteredPlan?.plan.publishedRules ? ` · ${activeRegisteredPlan.plan.publishedRules} reglas` : ""}`}</span>
+              ? <span className={`rules-coverage ${hasClosedOfficialEvidence ? "" : "pending-audit-status"}`}>{activeRegisteredPlan?.plan.auditStatus === "audited" ? `Proyección auditada · revisión ${activeRegisteredPlan.source.reviewedAt}` : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete" ? `Malla normalizada · evidencia oficial cerrada${activeRegisteredPlan?.plan.publishedRules ? ` · ${activeRegisteredPlan.plan.publishedRules} reglas` : ""}` : `Composición Bedelías · auditoría oficial pendiente${activeRegisteredPlan?.plan.publishedRules ? ` · ${activeRegisteredPlan.plan.publishedRules} reglas` : ""}`}</span>
               : isProfilePlan
               ? <span className="rules-coverage">Bedelías auditada: {activeProfileData?.plan.publishedRules ?? 0} reglas · {activeProfileData?.plan.noPublishedRule ?? 0} sin publicar</span>
               : planYear === "qf-2015" ? <span className="rules-coverage">Bedelías auditada: {qf2015Data?.plan.publishedRules ?? 0} reglas · {qf2015Data?.plan.partialRules ?? 0} parciales · {qf2015Data?.plan.noPublishedRule ?? 0} sin publicar</span>
@@ -2089,7 +2094,7 @@ export default function Home() {
               </>
             )}
           </section> : isRegisteredPlan ? <section className={`plan-transition-note ${activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-panel"}`}>
-            <p className="eyebrow">{activeRegisteredPlan?.plan.auditStatus === "audited" ? "Plan vigente · proyección auditada" : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete" ? "Identidad y sedes contrastadas · composición pendiente" : "Extracción de Bedelías · auditoría oficial pendiente"}</p>
+            <p className="eyebrow">{activeRegisteredPlan?.plan.auditStatus === "audited" ? "Plan vigente · proyección auditada" : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete" ? "Plan contrastado · malla normalizada" : "Extracción de Bedelías · auditoría oficial pendiente"}</p>
             <h2>{activeRegisteredPlan?.plan.auditStatus === "audited" ? "Fuentes oficiales y alcance" : "Alcance provisional de los datos"}</h2>
             <p>{activeRegisteredPlan?.plan.notice}</p>
             <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente disponible ↗</a>

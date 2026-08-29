@@ -11,18 +11,26 @@ const officialAudit = audits.audits.find(({ identity }) => identity === "interpr
 const credentials = new Map(projection.creditStructure.credentials.map((credential) => [credential.id, credential]));
 const courses = new Map(projection.courses.map((course) => [course.id, course]));
 
-test("publica una sola carrera TUILSU Plan 2014 para sus cohortes", () => {
+test("publica una sola carrera TUILSU con los planes 2025 y 2014", () => {
   const matches = catalog.flatMap((faculty) => faculty.careers
     .filter((career) => career.label === "Tecnólogo en Interpretación y Traducción LSU-español")
     .map((career) => ({ faculty, career })));
   assert.equal(matches.length, 1);
   assert.equal(matches[0].faculty.id, "bedelias-fhum");
-  assert.deepEqual(matches[0].career.plans, [{
-    id: "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
-    label: "Plan 2014 · vigente",
-    defaultTrajectoryId: "estudiante-oyente",
-    defaultCredentialId: "tecnologo-tuilsu-oyente",
-  }]);
+  assert.deepEqual(matches[0].career.plans, [
+    {
+      id: "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
+      label: "Plan 2025 · vigente",
+      defaultTrajectoryId: "estudiante-oyente",
+      defaultCredentialId: "tecnologo-tuilsu-oyente",
+    },
+    {
+      id: "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
+      label: "Plan 2014 · vigente",
+      defaultTrajectoryId: "estudiante-oyente",
+      defaultCredentialId: "tecnologo-tuilsu-oyente",
+    },
+  ]);
   assert.deepEqual(
     [projection.plan.degreeTitle, projection.plan.durationMonths, projection.plan.minCredits],
     ["Tecnólogo en Interpretación y Traducción LSU-español", 36, 270],

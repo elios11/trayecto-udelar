@@ -960,7 +960,10 @@ export async function buildExtractedAcademicPlans() {
   const catalog = [...facultyMap.values()].map((faculty) => ({ ...faculty, careers: [...faculty.careers.values()].map((career) => ({ ...career, plans: career.plans.sort((a, b) => b.label.localeCompare(a.label, "es")) })) }));
   await writeFile(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
 
-  const loaderLines = projections.map(({ planId, projection, audit }) => `  ${JSON.stringify(planId)}: {\n    load: () => import(${JSON.stringify(`./bedelias-generated/${planId}.json`)}),\n    pathwayIds: ${JSON.stringify(Object.keys(projection.pathways))},\n    pathwayLabel: ${JSON.stringify(pathwayLabelForAudit(audit))},\n    minCredits: ${projection.plan.minCredits},\n  },`);
+  const loaderLines = projections.map(({ planId, projection, audit }) => {
+    const progressPlanId = audit?.officialPlan?.progressPlanId;
+    return `  ${JSON.stringify(planId)}: {\n    load: () => import(${JSON.stringify(`./bedelias-generated/${planId}.json`)}),\n    pathwayIds: ${JSON.stringify(Object.keys(projection.pathways))},\n    pathwayLabel: ${JSON.stringify(pathwayLabelForAudit(audit))},\n    minCredits: ${projection.plan.minCredits},${progressPlanId ? `\n    progressPlanId: ${JSON.stringify(progressPlanId)},` : ""}\n  },`;
+  });
   await writeFile(loadersPath, `// Archivo generado por scripts/build-extracted-academic-plans.mjs.\nexport const extractedAcademicPlanRegistrations = {\n${loaderLines.join("\n")}\n} as const;\n`, "utf8");
 
   const reportCore = {
