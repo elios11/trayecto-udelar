@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-29T00:16:17.422Z",
+  "generatedAt": "2026-08-29T05:45:39.320Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:1419262d382dad716313c8003b0517e778561caaee78d72433c83af16cc04484"
+    "officialAuditRegistryHash": "sha256:36eb085bd378f10fa9ff16c1c761fc4ea048eb46bbdc2f4817dd7a75a88e67ef"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 150,
-    "pendingCanonicalIdentities": 27,
+    "evidenceClosedCanonicalIdentities": 151,
+    "pendingCanonicalIdentities": 26,
     "byPriority": {
-      "official-sources-pending": 27
+      "official-sources-pending": 26
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -921,38 +921,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-technologist-two-language-pathways-current-transition-plan"
+    },
+    {
+      "identity": "letras:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-29",
+      "conclusion": "one-degree-flexible-trajectory"
     }
   ],
   "queue": [
-    {
-      "identity": "letras:2014",
-      "career": {
-        "name": "LETRAS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "LICENCIATURA EN LETRAS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:letras:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:letras:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en estudios sordos:2025",
       "career": {
@@ -1886,5 +1863,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:d2eb1685cc2633b8b44f71476b8f921a8d99f807b79f1138d4e8ec8176dac39b"
+  "contentHash": "sha256:7707fcb9b46b65166c288e34bd40ac712668825adb843db48d77c3bdcccecb0e"
 }

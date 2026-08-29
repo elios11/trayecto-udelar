@@ -476,7 +476,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-letras-2014": {
     load: () => import("./bedelias-generated/bedelias-fhum-letras-2014.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["trayectoria-flexible"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
