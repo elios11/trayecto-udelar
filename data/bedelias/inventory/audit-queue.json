@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T23:50:25.093Z",
+  "generatedAt": "2026-08-29T00:01:26.368Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:2452e37f3754a7fae3f33b657d3d6488f51cf9fab25f573376325300ff2dd5a7"
+    "officialAuditRegistryHash": "sha256:d9b6a6837b82bd8bced15b3aba8962fe8ffe9988d2eafa781458b0e3ba5f7958"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 148,
-    "pendingCanonicalIdentities": 29,
+    "evidenceClosedCanonicalIdentities": 149,
+    "pendingCanonicalIdentities": 28,
     "byPriority": {
-      "official-sources-pending": 29
+      "official-sources-pending": 28
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -909,38 +909,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-28",
       "conclusion": "one-degree-flexible-trajectory"
+    },
+    {
+      "identity": "historia:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-28",
+      "conclusion": "one-degree-general-and-cfe-pathways"
     }
   ],
   "queue": [
-    {
-      "identity": "historia:2014",
-      "career": {
-        "name": "HISTORIA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "LICENCIATURA EN HISTORIA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:historia:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:historia:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "interpretacion lsu espanol lsu:2014",
       "career": {
@@ -1959,5 +1936,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:d334d82f7f02f0438c12aa5dc6a5f8f8e17210a4dddcf88ed2020b375bdefe26"
+  "contentHash": "sha256:87e414289e718642fc26ef92b39ccb26412ca1050f2d79943c465bd3a2ded4fb"
 }

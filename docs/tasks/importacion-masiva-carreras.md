@@ -1695,3 +1695,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:2452e37f3754a7fae3f33b657d3d6488f51cf9fab25f573376325300ff2dd5a7`. Cola general: 29 identidades pendientes; hash `sha256:d334d82f7f02f0438c12aa5dc6a5f8f8e17210a4dddcf88ed2020b375bdefe26`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:111f221d3ddd301e57cb3d878ea250263f37578a599218dc78119675623859d6`. Cola funcional vacía; hash `sha256:9e39e9becf29258d00efa6aa0fdc65ee9330a968243f63be7af59e746af561f3`.
 - Siguiente paso: auditar la Licenciatura en Historia Plan 2014, primera identidad reproducible restante.
+
+### Licenciatura en Historia Plan 2014 — ingreso general y continuidad CFE operativos 2026-08-28
+
+- FHCE, el Plan oficial y el catálogo central confirman una única Licenciatura en Historia vigente, de cuatro años, 360 créditos y sede Montevideo, con un solo título de `Licenciado en Historia`.
+- La UI controla nueve mínimos que suman exactamente 360: 13 créditos de actividades integradas, 65 obligatorios de Europa y el mundo, 2 introductorios obligatorios, 39 teórico-metodológicos, 78 de Uruguay y América, 50 electivos, 8 de lengua moderna, 65 optativos y 40 de Seminario de Tesis y Tesis.
+- El ingreso general exige las catorce unidades obligatorias de las cuatro áreas. La secuencia de ocho semestres se muestra como trayectoria sugerida; optativas, electivas e integralidad permanecen flexibles y no se convierten en previaturas.
+- La resolución para egresados del Profesorado de Historia del CFE Plan 2008 o anteriores se modela como segunda vía curricular del mismo título. Cinco bloques exclusivos acreditan 245 créditos y se exigen cuatro unidades posteriores: una de Europa y el mundo, una de Uruguay, una de Historia Americana y una teórico-metodológica.
+- Ambas vías exigen IVU, lengua moderna, 13 créditos de integralidad, Seminario de Tesis, Tesis y validación final. El reconocimiento CFE no aparece en la vía general ni duplica materias para sus estudiantes.
+- La proyección contiene 206 componentes, incluidos cinco reconocimientos CFE y la validación final. Conserva 21 reglas de previaturas publicadas y marca 174 consultas sin regla; 56 componentes con crédito cero quedan visibles sin sumar a ningún mínimo.
+- Registro de auditoría: hash `sha256:d9b6a6837b82bd8bced15b3aba8962fe8ffe9988d2eafa781458b0e3ba5f7958`. Cola general: 28 identidades pendientes; hash `sha256:87e414289e718642fc26ef92b39ccb26412ca1050f2d79943c465bd3a2ded4fb`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:e0ab0562122351736e8d0c2767f2eb18557b3bbe20e64ff535c38b7b6642c646`. Cola funcional vacía; hash `sha256:85cb593e27d2717b526969822f9957f110f66bc41dcdbe6274af429c2dcdd1f1`.
+- Siguiente paso: auditar el Tecnólogo en Interpretación y Traducción LSU–Español Plan 2014, primera identidad reproducible restante.

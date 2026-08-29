@@ -464,8 +464,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-historia-2014": {
     load: () => import("./bedelias-generated/bedelias-fhum-historia-2014.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["ingreso-general","continuidad-cfe"],
+    pathwayLabel: "Vía curricular",
     minCredits: 360,
   },
   "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014": {
