@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T03:51:29.561Z",
+  "generatedAt": "2026-08-30T04:03:30.470Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:f5b63f8fcae859602bf2510100d3ab34d09b4211baaf327f2d5385ecd84c7638"
+    "officialAuditRegistryHash": "sha256:5d9961c0c29f799b6e49c075a217c93450eb766a5be8e3c454f69d35f17c449a"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 155,
-    "pendingCanonicalIdentities": 22,
+    "evidenceClosedCanonicalIdentities": 156,
+    "pendingCanonicalIdentities": 21,
     "byPriority": {
-      "official-sources-pending": 22
+      "official-sources-pending": 21
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -951,38 +951,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-30",
       "conclusion": "one-technical-degree-six-thematic-options-closed-admission"
+    },
+    {
+      "identity": "licenciatura en ingenieria de medios:2018",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-30",
+      "conclusion": "one-joint-degree-flexible-individual-curriculum"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en ingenieria de medios:2018",
-      "career": {
-        "name": "LICENCIATURA EN INGENIERÍA DE MEDIOS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2018",
-        "name": "LICENCIATURA EN INGENIERIA DE MEDIOS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FIC",
-        "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-        "planKey": "FIC:licenciatura en ingenieria de medios:2018",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FIC",
-          "serviceName": "FACULTAD DE INFORMACIÓN Y COMUNICACIÓN",
-          "planKey": "FIC:licenciatura en ingenieria de medios:2018",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "ingenieria de alimentos:2003",
       "career": {
@@ -1744,5 +1721,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:95aabddc13d3fd3375f5ed77e31523af40b693e8026c41697683f1a5f2e5bccb"
+  "contentHash": "sha256:ce2925fbdb2e6ffee63445fd032f7002bf9d34b67ed6d83ced2651860303f40a"
 }

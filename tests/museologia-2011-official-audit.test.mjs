@@ -81,9 +81,9 @@ test("mantiene el catálogo por opción y las previaturas publicadas sin volver 
   assert.match(officialAudit.anomalies.find(({ field }) => field === "catalogBreadth").resolution, /no convierte todo el catálogo/i);
 });
 
-test("cierra la identidad y deja Ingeniería de Medios como siguiente auditoría", () => {
+test("mantiene cerrada la identidad al avanzar la cola oficial", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "museologia:2011"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 155);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 22);
-  assert.equal(queue.queue[0].identity, "licenciatura en ingenieria de medios:2018");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 156);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 21);
+  assert.equal(queue.queue[0].identity, "ingenieria de alimentos:2003");
 });

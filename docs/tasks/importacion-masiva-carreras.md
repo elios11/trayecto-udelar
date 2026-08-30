@@ -1770,3 +1770,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:f5b63f8fcae859602bf2510100d3ab34d09b4211baaf327f2d5385ecd84c7638`. Cola general: 22 identidades pendientes; hash `sha256:95aabddc13d3fd3375f5ed77e31523af40b693e8026c41697683f1a5f2e5bccb`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:4f585548c95c7a783eb324a5bc01d3a9222e1916e107963d9013ff48d6a09d67`. Cola funcional vacía; hash `sha256:8dcd6ac4cb3a82ccb92c57f8dbbe761a9e6dc3363d55817de7976073020d1ba3`.
 - Siguiente paso: auditar la Licenciatura en Ingeniería de Medios Plan 2018, primera identidad reproducible restante.
+
+### Licenciatura en Ingeniería de Medios Plan 2018 — implementación conjunta y currículo flexible 2026-08-30
+
+- FIC y FING implementan conjuntamente un único Plan 2018 en Montevideo. Aunque fue creado en 2017 y publicado oficialmente en 2019, la primera cohorte comenzó en marzo de 2026 con 50 cupos; las páginas históricas que todavía decían que la carrera no funcionaba quedaron superadas.
+- El plan otorga un único título de Licenciado en Ingeniería de Medios, dura ocho semestres y exige 360 créditos. La UI no convierte las líneas de investigación ni los campos de trabajo en menciones o carreras separadas.
+- El egreso controla 85 créditos de Ingeniería —Señales 16, Informática 16, Matemática 25 y Física 16—; 80 de Información, Comunicación y Medios —Lenguajes 24, Teoría 36 y Ciencia de la Información 8—; y 150 de Creatividad e Innovación —Concepción y Producción 40, Técnicas 40 y Actividades Integradoras 58—.
+- Los mínimos de los tres grupos suman 315 créditos. Los 45 restantes completan un currículo individual coherente en áreas del plan o formación complementaria, sujeto a aprobación de la Comisión de Carrera.
+- El primer semestre efectivamente dictado en 2026 contiene Taller Integrador, Matemática Inicial, Informática, Introducción al Estudio del Audiovisual y Teoría de la Comunicación II. La secuencia posterior presentada en diciembre de 2025 no está publicada como tabla estable; la UI organiza esas alternativas por área sin inventar semestre u obligatoriedad.
+- Bedelías aporta 25 entradas de composición y catorce consultas sin regla de previatura publicada. El catálogo es parcial —no incluye aún unidades de Señales e Ingeniería Eléctrica—, por lo que la proyección agrega instrucciones explícitas de elección y una validación final, sin simular materias ni créditos.
+- La proyección contiene 29 componentes: 25 unidades de Bedelías, tres instrucciones flexibles de crédito cero y la validación del currículo individual. Conserva una sola trayectoria y una sola sede, con responsabilidad compartida FIC-FING.
+- Registro de auditoría: hash `sha256:5d9961c0c29f799b6e49c075a217c93450eb766a5be8e3c454f69d35f17c449a`. Cola general: 21 identidades pendientes; hash `sha256:ce2925fbdb2e6ffee63445fd032f7002bf9d34b67ed6d83ced2651860303f40a`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:f9e5ce958846b5f5bccbdd57698402ff05ecc4fb8cf8275fecdd503566643833`. Cola funcional vacía; hash `sha256:6699d64c39015d60e994f195ba3be129c71076de10fadb5506055e3b0cb3e3f7`.
+- Siguiente paso: auditar Ingeniería de Alimentos Plan 2003, primera identidad reproducible restante.

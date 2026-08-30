@@ -53640,7 +53640,437 @@
       ],
       "uiNotice": "Plan 2011 de 211 créditos para estudiantes con escolaridad existente. La carrera no abre nuevos ingresos desde 2010. Elegí una de seis opciones temáticas; todas conducen al mismo título.",
       "remainingWork": "La coordinación debe validar electivas externas, equivalencias, la opción temática declarada y la pasantía de cada escolaridad. La planificación no habilita nuevos ingresos."
+    },
+    {
+      "identity": "licenciatura en ingenieria de medios:2018",
+      "career": "Licenciatura en Ingeniería de Medios",
+      "planYear": "2018",
+      "reviewedAt": "2026-08-30",
+      "status": "official-evidence-complete",
+      "scope": "current-joint-degree-plan-title-credit-structure-flexible-individual-curriculum-first-implemented-cohort-first-semester-and-campus",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Plan aprobado por los Consejos de FIC y FING y publicado en el Diario Oficial el 6 de junio de 2019",
+          "Primera cohorte implementada conjuntamente por FIC y FING desde marzo de 2026",
+          "Plan 2018 vigente en Bedelías con composición y mínimos por grupos y áreas"
+        ],
+        "planYear": "2018",
+        "title": "Licenciado en Ingeniería de Medios",
+        "careerName": "Licenciatura en Ingeniería de Medios",
+        "facultyCode": "FIC",
+        "facultyName": "Facultad de Información y Comunicación",
+        "sharedWith": [
+          "FACULTAD DE INGENIERÍA"
+        ],
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El Plan 2018 exige 360 créditos y otorga un único título de Licenciado en Ingeniería de Medios. El currículo individual debe cumplir 85 créditos de Ingeniería, 80 de Información, Comunicación y Medios y 150 de Creatividad e Innovación, junto con los mínimos de sus áreas; los 45 créditos restantes completan el recorrido coherente aprobado por la Comisión de Carrera.",
+        "trajectories": [
+          {
+            "id": "trayectoria-flexible",
+            "credentialId": "licenciado-ingenieria-medios",
+            "label": "Trayectoria flexible",
+            "description": "Recorrido individual de ocho semestres. El primer semestre corresponde a la cohorte efectivamente iniciada en 2026; las unidades posteriores se eligen por áreas y la Comisión de Carrera aprueba la coherencia del currículo."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf",
+          "prerequisitesSourceUrl": "https://bedelias.udelar.edu.uy/",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "La carrera es flexible: el primer semestre 2026 está identificado y el resto del catálogo se organiza por áreas acreditables, sin convertir todas las alternativas de Bedelías en obligatorias.",
+          "pathRequirementMap": {
+            "LIM0001": "media-engineering",
+            "LIM0001A": "media-signals",
+            "LIM0001B": "media-informatics",
+            "LIM0001C": "media-mathematics",
+            "LIM0001D": "media-physics",
+            "LIM0002": "media-information",
+            "LIM0002A": "media-languages",
+            "LIM0002B": "media-theory",
+            "LIM0002C": "media-information-science",
+            "LIM0003": "media-creativity",
+            "LIM0003A": "media-content-conception",
+            "LIM0003B": "media-content-techniques",
+            "LIM0003C": "media-integrative"
+          },
+          "periodLabelMap": {
+            "LIM0001A": "Señales e Ingeniería Eléctrica",
+            "LIM0001B": "Informática",
+            "LIM0001C": "Matemática",
+            "LIM0001D": "Física",
+            "LIM0002A": "Lenguajes y Narrativas",
+            "LIM0002B": "Teoría de Comunicación y Medios",
+            "LIM0002C": "Ciencia de la Información",
+            "LIM0003A": "Concepción y Producción de Contenidos",
+            "LIM0003B": "Técnicas para la Realización de Contenidos",
+            "LIM0003C": "Actividades Integradoras"
+          },
+          "periodOrder": [
+            "Semestre 1",
+            "Orientación del recorrido",
+            "Señales e Ingeniería Eléctrica",
+            "Informática",
+            "Matemática",
+            "Física",
+            "Lenguajes y Narrativas",
+            "Teoría de Comunicación y Medios",
+            "Ciencia de la Información",
+            "Concepción y Producción de Contenidos",
+            "Técnicas para la Realización de Contenidos",
+            "Actividades Integradoras",
+            "Formación Complementaria",
+            "Validación de egreso"
+          ],
+          "courseOverrides": {
+            "4205": {
+              "name": "Teoría de la Comunicación II",
+              "periodLabel": "Semestre 1"
+            },
+            "6001": {
+              "name": "Introducción al Estudio del Audiovisual",
+              "periodLabel": "Semestre 1"
+            },
+            "2601L": {
+              "name": "Taller Integrador",
+              "periodLabel": "Semestre 1"
+            },
+          "FING-MI2": {
+              "name": "Matemática Inicial",
+              "periodLabel": "Semestre 1"
+            },
+            "2602L": {
+              "name": "Informática",
+              "periodLabel": "Semestre 1"
+            }
+          },
+          "creditRequirements": [
+            {
+              "id": "media-engineering",
+              "parentId": null,
+              "name": "Área de formación en Ingeniería",
+              "shortName": "Ingeniería",
+              "minCredits": 85
+            },
+            {
+              "id": "media-signals",
+              "parentId": "media-engineering",
+              "name": "Señales e Ingeniería Eléctrica",
+              "shortName": "Señales",
+              "minCredits": 16
+            },
+            {
+              "id": "media-informatics",
+              "parentId": "media-engineering",
+              "name": "Informática",
+              "shortName": "Informática",
+              "minCredits": 16
+            },
+            {
+              "id": "media-mathematics",
+              "parentId": "media-engineering",
+              "name": "Matemática",
+              "shortName": "Matemática",
+              "minCredits": 25
+            },
+            {
+              "id": "media-physics",
+              "parentId": "media-engineering",
+              "name": "Física",
+              "shortName": "Física",
+              "minCredits": 16
+            },
+            {
+              "id": "media-information",
+              "parentId": null,
+              "name": "Área de formación en Información, Comunicación y Medios",
+              "shortName": "Información y medios",
+              "minCredits": 80
+            },
+            {
+              "id": "media-languages",
+              "parentId": "media-information",
+              "name": "Lenguajes y Narrativas",
+              "shortName": "Lenguajes",
+              "minCredits": 24
+            },
+            {
+              "id": "media-theory",
+              "parentId": "media-information",
+              "name": "Teoría de Comunicación y Medios",
+              "shortName": "Teoría",
+              "minCredits": 36
+            },
+            {
+              "id": "media-information-science",
+              "parentId": "media-information",
+              "name": "Ciencia de la Información",
+              "shortName": "Ciencia de la información",
+              "minCredits": 8
+            },
+            {
+              "id": "media-creativity",
+              "parentId": null,
+              "name": "Área de formación en Creatividad e Innovación",
+              "shortName": "Creatividad",
+              "minCredits": 150
+            },
+            {
+              "id": "media-content-conception",
+              "parentId": "media-creativity",
+              "name": "Concepción y Producción de Contenidos",
+              "shortName": "Concepción y producción",
+              "minCredits": 40
+            },
+            {
+              "id": "media-content-techniques",
+              "parentId": "media-creativity",
+              "name": "Técnicas para la Realización de Contenidos",
+              "shortName": "Técnicas",
+              "minCredits": 40
+            },
+            {
+              "id": "media-integrative",
+              "parentId": "media-creativity",
+              "name": "Actividades Integradoras",
+              "shortName": "Integradoras",
+              "minCredits": 58
+            },
+            {
+              "id": "media-complementary",
+              "parentId": null,
+              "name": "Formación Complementaria: regulación y gestión",
+              "shortName": "Complementaria",
+              "minCredits": 0,
+              "credentialRequired": false
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "recorrido-flexible-45",
+              "name": "Completá al menos 45 créditos adicionales en un recorrido coherente",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf"
+            },
+            {
+              "id": "senales-catalogo-pendiente",
+              "name": "Elegí unidades acreditables hasta completar 16 créditos de Señales e Ingeniería Eléctrica",
+              "credits": 0,
+              "requirementId": "media-signals",
+              "periodLabel": "Señales e Ingeniería Eléctrica",
+              "curricularBlock": true,
+              "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf"
+            },
+            {
+              "id": "formacion-complementaria",
+              "name": "Podés acreditar formación complementaria en regulación y gestión",
+              "credits": 0,
+              "requirementId": "media-complementary",
+              "periodLabel": "Formación Complementaria",
+              "curricularBlock": true,
+              "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "licenciado-ingenieria-medios",
+              "title": "Licenciado en Ingeniería de Medios",
+              "minTotalCredits": 360,
+              "requiredCourseGroupIds": [
+                "validacion-final-plan"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "media-engineering",
+                  "minCredits": 85
+                },
+                {
+                  "nodeId": "media-signals",
+                  "minCredits": 16
+                },
+                {
+                  "nodeId": "media-informatics",
+                  "minCredits": 16
+                },
+                {
+                  "nodeId": "media-mathematics",
+                  "minCredits": 25
+                },
+                {
+                  "nodeId": "media-physics",
+                  "minCredits": 16
+                },
+                {
+                  "nodeId": "media-information",
+                  "minCredits": 80
+                },
+                {
+                  "nodeId": "media-languages",
+                  "minCredits": 24
+                },
+                {
+                  "nodeId": "media-theory",
+                  "minCredits": 36
+                },
+                {
+                  "nodeId": "media-information-science",
+                  "minCredits": 8
+                },
+                {
+                  "nodeId": "media-creativity",
+                  "minCredits": 150
+                },
+                {
+                  "nodeId": "media-content-conception",
+                  "minCredits": 40
+                },
+                {
+                  "nodeId": "media-content-techniques",
+                  "minCredits": 40
+                },
+                {
+                  "nodeId": "media-integrative",
+                  "minCredits": 58
+                }
+              ]
+            }
+          ],
+          "manualCompletionValidation": "Validación del currículo individual por la Comisión de Carrera de Ingeniería de Medios"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FIC",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio corresponsable, sede de ingreso y sede de enseñanza",
+          "admissionStatus": "active"
+        },
+        {
+          "serviceCode": "FING",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio corresponsable y sede de enseñanza",
+          "admissionStatus": "active"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fic-licenciatura-en-ingenieria-de-medios-2018.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 25,
+        "prerequisiteRuleCount": 0,
+        "noPublishedRuleCount": 14,
+        "interpretation": "Bedelías coincide con los tres grupos y los doce mínimos de área del plan, pero publica sólo 25 entradas de composición y ninguna previatura explícita. Es un catálogo acreditable parcial: no alcanza para reconstruir por sí solo los 360 créditos ni una secuencia obligatoria de ocho semestres."
+      },
+      "conclusion": {
+        "canonicalModel": "one-joint-degree-flexible-individual-curriculum",
+        "canonicalIdentity": "licenciatura en ingenieria de medios:2018",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "FIC y FING implementan conjuntamente un único Plan 2018. Las líneas de trabajo y la malla sugerida no son menciones ni títulos diferentes; cada estudiante arma un currículo coherente sujeto a aprobación de la Comisión de Carrera.",
+        "normalization": [
+          "Publicar una única Licenciatura en Ingeniería de Medios Plan 2018, de cuatro años y 360 créditos, en Montevideo y con responsabilidad conjunta de FIC y FING.",
+          "Representar una sola trayectoria flexible y no transformar áreas, líneas de investigación o catálogos optativos en carreras separadas.",
+          "Controlar 85 créditos de Ingeniería, 80 de Información, Comunicación y Medios y 150 de Creatividad e Innovación, además de sus doce mínimos de área y el total de 360 créditos.",
+          "Mostrar como primer semestre efectivo 2026 Taller Integrador, Matemática Inicial, Informática, Introducción al Estudio del Audiovisual y Teoría de la Comunicación II.",
+          "Mantener el resto de las unidades de Bedelías organizado por áreas acreditables, sin afirmar obligatoriedad ni semestre cuando la fuente vigente no lo publica de forma estable.",
+          "Exigir una validación final del currículo individual por la Comisión de Carrera y advertir que faltan unidades futuras de la primera cohorte en el catálogo administrativo actual."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf",
+          "authority": "Plan de Estudios aprobado por FIC y FING, Udelar",
+          "supports": [
+            "título",
+            "cuatro años",
+            "360 créditos",
+            "grupos y áreas",
+            "mínimos",
+            "currículos individuales",
+            "Comisión de Carrera",
+            "pasantías"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-ingenieria-de-medios",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "responsabilidad conjunta FIC-FING",
+            "48 meses",
+            "360 créditos",
+            "sede FIC",
+            "condiciones de ingreso"
+          ]
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2019/06/06/avisos.pdf",
+          "authority": "Diario Oficial de la República Oriental del Uruguay",
+          "supports": [
+            "publicación oficial del plan",
+            "organización curricular",
+            "aprobación de currículos individuales"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/index.php/es/node/52385",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "supports": [
+            "implementación desde marzo de 2026",
+            "primera cohorte de 50 cupos",
+            "malla sugerida flexible",
+            "tres grupos",
+            "talleres y pasantías"
+          ]
+        },
+        {
+          "url": "https://fic.edu.uy/node/5704",
+          "authority": "Facultad de Información y Comunicación, Udelar",
+          "supports": [
+            "inicio efectivo de la primera cohorte",
+            "cinco unidades curriculares del primer semestre 2026",
+            "Taller Integrador"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "implementationStatus",
+          "resolution": "El plan fue creado en 2017 y publicado en 2019, pero no se implementó hasta marzo de 2026. Las páginas históricas que aún indican que no funciona están superadas por el catálogo Udelar y la primera cohorte efectiva."
+        },
+        {
+          "field": "suggestedCurriculum",
+          "resolution": "FIC y FING presentaron una malla sugerida en diciembre de 2025, pero no publican una tabla estable y trazable de los ocho semestres. La UI sólo fija las cinco unidades confirmadas del primer semestre y deja el resto por áreas."
+        },
+        {
+          "field": "bedeliasCatalogCoverage",
+          "resolution": "Las 25 entradas actuales de Bedelías no alcanzan los mínimos de todas las áreas y no incluyen ninguna unidad de Señales e Ingeniería Eléctrica. Se muestran como catálogo parcial, con orientación explícita para registrar otras unidades acreditables."
+        },
+        {
+          "field": "minimumCreditsGap",
+          "resolution": "Los mínimos de los tres grupos suman 315 créditos. El total de 360 exige al menos 45 créditos adicionales en áreas del plan o formación complementaria coherente, según aprobación de la Comisión de Carrera."
+        },
+        {
+          "field": "prerequisites",
+          "resolution": "Bedelías no publica previaturas para las unidades del snapshot. La UI no inventa bloqueos y deriva la validación de coherencia del currículo a la Comisión de Carrera."
+        }
+      ],
+      "uiNotice": "Plan 2018 conjunto de FIC y FING, activo desde marzo de 2026. Completá 360 créditos y los mínimos de las tres áreas; el primer semestre está confirmado y el resto del currículo flexible requiere aprobación de la Comisión de Carrera.",
+      "remainingWork": "La Comisión de Carrera debe validar unidades acreditables, equivalencias, previaturas no publicadas y la secuencia de semestres posteriores a medida que avance la primera cohorte."
     }
   ],
-  "contentHash": "sha256:f5b63f8fcae859602bf2510100d3ab34d09b4211baaf327f2d5385ecd84c7638"
+  "contentHash": "sha256:5d9961c0c29f799b6e49c075a217c93450eb766a5be8e3c454f69d35f17c449a"
 }
