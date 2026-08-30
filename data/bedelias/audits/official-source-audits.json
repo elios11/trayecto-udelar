@@ -54070,7 +54070,458 @@
       ],
       "uiNotice": "Plan 2018 conjunto de FIC y FING, activo desde marzo de 2026. Completá 360 créditos y los mínimos de las tres áreas; el primer semestre está confirmado y el resto del currículo flexible requiere aprobación de la Comisión de Carrera.",
       "remainingWork": "La Comisión de Carrera debe validar unidades acreditables, equivalencias, previaturas no publicadas y la secuencia de semestres posteriores a medida que avance la primera cohorte."
+    },
+    {
+      "identity": "ingenieria de alimentos:2003",
+      "career": "Ingeniería de Alimentos",
+      "planYear": "2003",
+      "reviewedAt": "2026-08-30",
+      "status": "official-evidence-complete",
+      "scope": "current-joint-degree-title-credit-structure-flexible-individual-curriculum-academic-references-admission-and-regional-first-year",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Plan de Estudios 2003 vigente, de currículo flexible y 450 créditos",
+          "Reglamentación aprobada por el CDC, Resolución 18 del 14 de junio de 2022",
+          "Catálogo Udelar 2026 con sede en Facultad de Química e ingreso vigente"
+        ],
+        "planYear": "2003",
+        "title": "Ingeniero Alimentario",
+        "careerName": "Ingeniería de Alimentos",
+        "facultyCode": "FQ",
+        "facultyName": "Facultad de Química",
+        "sharedWith": [
+          "FACULTAD DE AGRONOMÍA",
+          "FACULTAD DE INGENIERÍA",
+          "FACULTAD DE VETERINARIA"
+        ],
+        "durationMonths": 60,
+        "semesters": 10,
+        "minimumCredits": 450,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El Plan 2003 exige 450 créditos, los mínimos de los cuatro grupos y los mínimos de sus materias. Los mínimos de grupo suman 400 créditos: al menos 50 créditos adicionales completan un currículo individual coherente que debe ser aprobado por los organismos de la carrera.",
+        "trajectories": [
+          {
+            "id": "trayectoria-flexible",
+            "credentialId": "ingeniero-alimentario",
+            "label": "Trayectoria flexible",
+            "description": "Currículo individual de cinco años organizado por áreas acreditables. La selección de unidades, equivalencias y distribución temporal se valida con la Comisión de Carrera; el catálogo no implica que todas las unidades sean obligatorias."
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "deduplicateSharedProfileCourses": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf",
+          "prerequisitesSourceUrl": "https://bedelias.udelar.edu.uy/",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "El Plan 2003 es flexible: elegí unidades de los catálogos acreditables hasta cumplir cada mínimo y el total, sin interpretar todas las alternativas de Bedelías como obligatorias ni asignarles un semestre no publicado.",
+          "pathRequirementMap": {
+            "2084": "food-integrative",
+            "2774": "food-basic",
+            "5137": "food-biology",
+            "4063": "food-physics",
+            "5030": "food-informatics",
+            "4640": "food-mathematics",
+            "4387": "food-chemistry",
+            "3771": "food-complementary",
+            "4738": "food-social-economics",
+            "5100": "food-legal",
+            "5122": "food-industrial-management",
+            "2611": "food-professional",
+            "4349": "food-quality",
+            "5018": "food-process-engineering",
+            "5176": "food-microbiology",
+            "3978": "food-food-chemistry",
+            "4912": "food-technology"
+          },
+          "periodLabelMap": {
+            "2084": "Actividades integradoras",
+            "5137": "Ciencias biológicas",
+            "4063": "Física",
+            "5030": "Informática",
+            "4640": "Matemática",
+            "4387": "Química",
+            "4738": "Ciencias sociales y económicas",
+            "5100": "Legal",
+            "5122": "Organización industrial y gestión",
+            "4349": "Calidad de alimentos",
+            "5018": "Ingeniería de procesos de producción y preservación",
+            "5176": "Microbiología de alimentos",
+            "3978": "Química de alimentos",
+            "4912": "Tecnología de alimentos"
+          },
+          "periodOrder": [
+            "Orientación del recorrido",
+            "Ciencias biológicas",
+            "Física",
+            "Informática",
+            "Matemática",
+            "Química",
+            "Ciencias sociales y económicas",
+            "Legal",
+            "Organización industrial y gestión",
+            "Calidad de alimentos",
+            "Ingeniería de procesos de producción y preservación",
+            "Microbiología de alimentos",
+            "Química de alimentos",
+            "Tecnología de alimentos",
+            "Actividades integradoras",
+            "Validación de egreso"
+          ],
+          "creditRequirements": [
+            {
+              "id": "food-integrative",
+              "parentId": null,
+              "name": "Actividades integradoras",
+              "shortName": "Integradoras",
+              "minCredits": 35
+            },
+            {
+              "id": "food-basic",
+              "parentId": null,
+              "name": "Materias de formación básica",
+              "shortName": "Formación básica",
+              "minCredits": 180
+            },
+            {
+              "id": "food-biology",
+              "parentId": "food-basic",
+              "name": "Ciencias biológicas",
+              "shortName": "Biología",
+              "minCredits": 25
+            },
+            {
+              "id": "food-physics",
+              "parentId": "food-basic",
+              "name": "Física",
+              "shortName": "Física",
+              "minCredits": 30
+            },
+            {
+              "id": "food-informatics",
+              "parentId": "food-basic",
+              "name": "Informática",
+              "shortName": "Informática",
+              "minCredits": 5
+            },
+            {
+              "id": "food-mathematics",
+              "parentId": "food-basic",
+              "name": "Matemática",
+              "shortName": "Matemática",
+              "minCredits": 45
+            },
+            {
+              "id": "food-chemistry",
+              "parentId": "food-basic",
+              "name": "Química",
+              "shortName": "Química",
+              "minCredits": 45
+            },
+            {
+              "id": "food-complementary",
+              "parentId": null,
+              "name": "Materias de formación complementaria",
+              "shortName": "Complementaria",
+              "minCredits": 35
+            },
+            {
+              "id": "food-social-economics",
+              "parentId": "food-complementary",
+              "name": "Ciencias sociales y económicas",
+              "shortName": "Sociales y económicas",
+              "minCredits": 0,
+              "credentialRequired": false
+            },
+            {
+              "id": "food-legal",
+              "parentId": "food-complementary",
+              "name": "Legal",
+              "shortName": "Legal",
+              "minCredits": 4
+            },
+            {
+              "id": "food-industrial-management",
+              "parentId": "food-complementary",
+              "name": "Organización industrial y gestión",
+              "shortName": "Organización y gestión",
+              "minCredits": 0,
+              "credentialRequired": false
+            },
+            {
+              "id": "food-professional",
+              "parentId": null,
+              "name": "Materias de formación profesional específica",
+              "shortName": "Formación profesional",
+              "minCredits": 150
+            },
+            {
+              "id": "food-quality",
+              "parentId": "food-professional",
+              "name": "Calidad de alimentos",
+              "shortName": "Calidad",
+              "minCredits": 12
+            },
+            {
+              "id": "food-process-engineering",
+              "parentId": "food-professional",
+              "name": "Ingeniería de procesos de producción y preservación de alimentos",
+              "shortName": "Ingeniería de procesos",
+              "minCredits": 55
+            },
+            {
+              "id": "food-microbiology",
+              "parentId": "food-professional",
+              "name": "Microbiología de alimentos",
+              "shortName": "Microbiología",
+              "minCredits": 15
+            },
+            {
+              "id": "food-food-chemistry",
+              "parentId": "food-professional",
+              "name": "Química de alimentos",
+              "shortName": "Química de alimentos",
+              "minCredits": 20
+            },
+            {
+              "id": "food-technology",
+              "parentId": "food-professional",
+              "name": "Tecnología de alimentos",
+              "shortName": "Tecnología de alimentos",
+              "minCredits": 20
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "recorrido-flexible-50",
+              "name": "Completá al menos 50 créditos adicionales en un currículo coherente",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf"
+            },
+            {
+              "id": "basicas-flexibles-30",
+              "name": "Completá al menos 30 créditos básicos adicionales a los mínimos por materia",
+              "credits": 0,
+              "requirementId": "food-basic",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf"
+            },
+            {
+              "id": "complementarias-flexibles-31",
+              "name": "Completá al menos 31 créditos complementarios adicionales al mínimo legal",
+              "credits": 0,
+              "requirementId": "food-complementary",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf"
+            },
+            {
+              "id": "profesionales-flexibles-28",
+              "name": "Completá al menos 28 créditos profesionales adicionales a los mínimos por materia",
+              "credits": 0,
+              "requirementId": "food-professional",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "ingeniero-alimentario",
+              "title": "Ingeniero Alimentario",
+              "minTotalCredits": 450,
+              "requiredCourseGroupIds": [
+                "validacion-final-plan"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "food-integrative",
+                  "minCredits": 35
+                },
+                {
+                  "nodeId": "food-basic",
+                  "minCredits": 180
+                },
+                {
+                  "nodeId": "food-biology",
+                  "minCredits": 25
+                },
+                {
+                  "nodeId": "food-physics",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "food-informatics",
+                  "minCredits": 5
+                },
+                {
+                  "nodeId": "food-mathematics",
+                  "minCredits": 45
+                },
+                {
+                  "nodeId": "food-chemistry",
+                  "minCredits": 45
+                },
+                {
+                  "nodeId": "food-complementary",
+                  "minCredits": 35
+                },
+                {
+                  "nodeId": "food-legal",
+                  "minCredits": 4
+                },
+                {
+                  "nodeId": "food-professional",
+                  "minCredits": 150
+                },
+                {
+                  "nodeId": "food-quality",
+                  "minCredits": 12
+                },
+                {
+                  "nodeId": "food-process-engineering",
+                  "minCredits": 55
+                },
+                {
+                  "nodeId": "food-microbiology",
+                  "minCredits": 15
+                },
+                {
+                  "nodeId": "food-food-chemistry",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "food-technology",
+                  "minCredits": 20
+                }
+              ]
+            }
+          ],
+          "manualCompletionValidation": "Validación del currículo individual por la Comisión de Carrera de Ingeniería de Alimentos"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FQ",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "sede oficial, servicio de ingreso y referencia académica para formación básica, Química de Alimentos y Calidad de Alimentos",
+          "admissionStatus": "active"
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fq-ingenieria-de-alimentos-2003.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 389,
+        "compositionGroupCount": 17,
+        "prerequisiteRuleCount": 155,
+        "noPublishedRuleCount": 103,
+        "compositionFingerprint": "sha256:bac01b34bb2777832f38a5f351d3937184bcc1e24dce5b4f5868af99a4fc47a2",
+        "matchingSnapshots": [
+          "data/bedelias/fing-ingenieria-de-alimentos-2003.json",
+          "data/bedelias/cenurln-ingenieria-de-alimentos-2003.json"
+        ],
+        "interpretation": "FQ, FING y CENURLN publican las mismas 389 entradas y los mismos 17 grupos y mínimos. Las diferencias están en la cobertura administrativa de previaturas: FQ publica 155 reglas y 103 consultas sin regla; FING, 141 y 47; CENURLN, 10 y 8. Se usa FQ por ser la sede e ingreso vigentes, sin inferir una variante curricular regional."
+      },
+      "conclusion": {
+        "canonicalModel": "one-joint-degree-flexible-individual-curriculum",
+        "canonicalIdentity": "ingenieria de alimentos:2003",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Agronomía, Ingeniería, Química y Veterinaria sostienen un único Plan 2003. La oferta de primer año en Salto comparte composición con el plan central y no constituye una carrera, título, mención ni trayectoria completa diferente.",
+        "normalization": [
+          "Publicar una única Ingeniería de Alimentos Plan 2003, de cinco años y 450 créditos, con título Ingeniero Alimentario.",
+          "Ubicar la sede completa y el ingreso vigente en Facultad de Química, Montevideo, y conservar la corresponsabilidad de Agronomía, Ingeniería y Veterinaria.",
+          "Representar una sola trayectoria flexible y controlar los cuatro mínimos de grupo y los once mínimos positivos por materia.",
+          "Mostrar las 389 entradas de Bedelías como catálogo acreditable por áreas, sin convertir todas las alternativas en obligatorias ni inventar semestres.",
+          "Explicitar los 50 créditos adicionales al total de mínimos de grupo y las brechas internas de 30 créditos básicos, 31 complementarios y 28 profesionales.",
+          "No ofrecer Salto como sede completa: la fuente oficial sólo habilita allí el primer año y desde el segundo semestre el recorrido continúa en Montevideo.",
+          "Exigir validación final del currículo individual por la Comisión de Carrera."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf",
+          "authority": "Plan de Estudios 2003, Facultad de Ingeniería, Udelar",
+          "supports": [
+            "título Ingeniero Alimentario",
+            "450 créditos",
+            "currículo flexible",
+            "grupos y materias",
+            "mínimos",
+            "aprobación del currículo individual"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/ingenieria-de-alimentos",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "responsabilidad de cuatro facultades",
+            "60 meses",
+            "450 créditos",
+            "sede Facultad de Química"
+          ]
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2022/09/01/avisos.pdf",
+          "authority": "Diario Oficial de la República Oriental del Uruguay",
+          "supports": [
+            "Reglamentación 2022",
+            "Comisión de Carrera",
+            "referencias académicas de FQ y FING",
+            "participación de Agronomía y Veterinaria"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
+          "authority": "Portal de ingresos 2026, Udelar",
+          "supports": [
+            "ingreso vigente exclusivamente por Facultad de Química"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/portal/wp-content/uploads/sites/48/2023/11/Carreras-de-Grado-2024-V1-web-OK-1.pdf",
+          "authority": "Guía oficial de carreras de grado, Udelar",
+          "supports": [
+            "primer año cursable en Salto",
+            "continuidad posterior en Montevideo"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "administrativeCanonicalService",
+          "resolution": "El inventario deduplicado había elegido FING, pero el catálogo y el ingreso 2026 ubican la sede administrativa vigente en FQ. Los tres snapshots tienen idéntica composición; se normaliza con FQ sin perder la corresponsabilidad de los otros servicios."
+        },
+        {
+          "field": "regionalFirstYear",
+          "resolution": "La guía oficial permite cursar el primer año en Salto, pero exige continuar desde el segundo semestre en Montevideo. CENURLN no se presenta como sede completa ni como trayectoria curricular diferente."
+        },
+        {
+          "field": "minimumCreditsGaps",
+          "resolution": "Los mínimos de los cuatro grupos suman 400 créditos, 50 menos que el total. Además, los mínimos por materia suman 150 dentro de Básicas, 4 dentro de Complementarias y 122 dentro de Profesional Específica; la UI conserva simultáneamente cada mínimo padre e hijo sin sumarlos como requisitos independientes adicionales."
+        },
+        {
+          "field": "bedeliasCatalogSemantics",
+          "resolution": "Las 389 entradas son alternativas acumuladas y acreditables de varios servicios y años. No se interpretan como 389 asignaturas obligatorias ni como una secuencia fija de diez semestres."
+        },
+        {
+          "field": "prerequisiteCoverage",
+          "resolution": "La cobertura de previaturas varía según el servicio administrativo. La proyección usa las 155 reglas publicadas por FQ y marca 103 consultas sin regla, sin completar condiciones por inferencia."
+        }
+      ],
+      "uiNotice": "Plan 2003 conjunto de Agronomía, Ingeniería, Química y Veterinaria. Completá 450 créditos y los mínimos de cada área mediante un currículo flexible; el ingreso y la sede completa son en FQ, Montevideo. El primer año puede cursarse en Salto, pero el recorrido continúa en Montevideo.",
+      "remainingWork": "La Comisión de Carrera debe aprobar el currículo individual, equivalencias, unidades acreditables y previaturas no publicadas. La opción de primer año en Salto no evita la continuidad presencial posterior en Montevideo."
     }
   ],
-  "contentHash": "sha256:5d9961c0c29f799b6e49c075a217c93450eb766a5be8e3c454f69d35f17c449a"
+  "contentHash": "sha256:d5c7d6d42ccb5d06b3b96b8276af8c4912ad2741fa95bde359e284a4e6e8705b"
 }

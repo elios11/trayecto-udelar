@@ -1783,3 +1783,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:5d9961c0c29f799b6e49c075a217c93450eb766a5be8e3c454f69d35f17c449a`. Cola general: 21 identidades pendientes; hash `sha256:ce2925fbdb2e6ffee63445fd032f7002bf9d34b67ed6d83ced2651860303f40a`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:f9e5ce958846b5f5bccbdd57698402ff05ecc4fb8cf8275fecdd503566643833`. Cola funcional vacía; hash `sha256:6699d64c39015d60e994f195ba3be129c71076de10fadb5506055e3b0cb3e3f7`.
 - Siguiente paso: auditar Ingeniería de Alimentos Plan 2003, primera identidad reproducible restante.
+
+### Ingeniería de Alimentos Plan 2003 — carrera conjunta y currículo flexible 2026-08-30
+
+- Agronomía, Ingeniería, Química y Veterinaria sostienen un único Plan 2003 de cinco años y 450 créditos, con título `Ingeniero Alimentario`. La sede completa y el ingreso vigente están en Facultad de Química, Montevideo.
+- La UI conserva una sola trayectoria flexible. Controla 180 créditos de formación básica, 150 de formación profesional específica, 35 de formación complementaria y 35 de actividades integradoras, además de once mínimos positivos por materia.
+- Los mínimos de grupo suman 400 créditos: el currículo individual debe agregar al menos 50. Dentro de los grupos, los mínimos por materia dejan 30 créditos básicos, 31 complementarios y 28 profesionales de distribución flexible; estas brechas se muestran como orientación y no se suman otra vez al total.
+- El Plan oficial exige aprobación del currículo individual. La proyección incorpora una validación final explícita y no inventa semestres, obligatoriedad ni equivalencias para las alternativas acumuladas de Bedelías.
+- FQ, FING y CENURLN publican las mismas 389 entradas y los mismos 17 grupos. Se usa el snapshot FQ por ser la sede e ingreso vigentes: aporta 155 previaturas explícitas y 103 consultas sin regla publicada. FING publica 141 y 47; CENURLN, 10 y 8.
+- Salto permite cursar el primer año, pero la guía oficial indica continuidad posterior en Montevideo. No se presenta como sede completa, carrera separada ni trayectoria curricular diferente; el aviso de la UI explica el alcance regional.
+- La proyección contiene 394 componentes: 389 entradas acreditables, cuatro instrucciones flexibles de crédito cero y la validación final. La carrera quedó trasladada canónicamente de FING a FQ sin perder la corresponsabilidad institucional.
+- Registro de auditoría: hash `sha256:d5c7d6d42ccb5d06b3b96b8276af8c4912ad2741fa95bde359e284a4e6e8705b`. Cola general: 20 identidades pendientes; hash `sha256:2a5f762aff8aaf164ae657ce4e682323018bd9a73020c8c56e83a61a4615898a`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:48f9f4bd7225fdd54b0eb0663f1970c377912d968941045d6c5060eec91fe7e5`. Cola funcional vacía; hash `sha256:6899b636fe06ec0c222e22e8ff8b806f054afb276c3f84f6fe26ee7f84c0b6b4`.
+- Siguiente paso: auditar Ingeniería de Producción Plan 2010, primera identidad reproducible restante.

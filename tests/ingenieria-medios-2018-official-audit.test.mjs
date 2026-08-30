@@ -76,9 +76,9 @@ test("expone las áreas aún incompletas sin simular asignaturas o previaturas",
   assert.equal(credential.requiredCourseGroups[0].id, "validacion-final-plan");
 });
 
-test("cierra la identidad y deja Ingeniería de Alimentos como siguiente auditoría", () => {
+test("mantiene la identidad cerrada después de auditar Ingeniería de Alimentos", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "licenciatura en ingenieria de medios:2018"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 156);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 21);
-  assert.equal(queue.queue[0].identity, "ingenieria de alimentos:2003");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 157);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 20);
+  assert.equal(queue.queue[0].identity, "ingenieria de produccion:2010");
 });

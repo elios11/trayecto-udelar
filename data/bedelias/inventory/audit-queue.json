@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T04:03:30.470Z",
+  "generatedAt": "2026-08-30T08:55:41.912Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:5d9961c0c29f799b6e49c075a217c93450eb766a5be8e3c454f69d35f17c449a"
+    "officialAuditRegistryHash": "sha256:d5c7d6d42ccb5d06b3b96b8276af8c4912ad2741fa95bde359e284a4e6e8705b"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 156,
-    "pendingCanonicalIdentities": 21,
+    "evidenceClosedCanonicalIdentities": 157,
+    "pendingCanonicalIdentities": 20,
     "byPriority": {
-      "official-sources-pending": 21
+      "official-sources-pending": 20
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -957,58 +957,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-30",
       "conclusion": "one-joint-degree-flexible-individual-curriculum"
+    },
+    {
+      "identity": "ingenieria de alimentos:2003",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-30",
+      "conclusion": "one-joint-degree-flexible-individual-curriculum"
     }
   ],
   "queue": [
-    {
-      "identity": "ingenieria de alimentos:2003",
-      "career": {
-        "name": "INGENIERÍA DE ALIMENTOS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2003",
-        "name": "INGENIERIA DE ALIMENTOS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:ingenieria de alimentos:2003",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:ingenieria de alimentos:2003",
-          "state": "structurally-valid"
-        },
-        {
-          "serviceCode": "FQ",
-          "serviceName": "FACULTAD DE QUÍMICA",
-          "planKey": "FQ:ingenieria de alimentos:2003",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FING",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -170
-          }
-        }
-      ]
-    },
     {
       "identity": "ingenieria de produccion:2010",
       "career": {
@@ -1721,5 +1678,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:ce2925fbdb2e6ffee63445fd032f7002bf9d34b67ed6d83ced2651860303f40a"
+  "contentHash": "sha256:2a5f762aff8aaf164ae657ce4e682323018bd9a73020c8c56e83a61a4615898a"
 }

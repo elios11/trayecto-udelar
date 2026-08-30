@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:ce2925fbdb2e6ffee63445fd032f7002bf9d34b67ed6d83ced2651860303f40a",
-    "officialAuditHash": "sha256:5d9961c0c29f799b6e49c075a217c93450eb766a5be8e3c454f69d35f17c449a",
+    "auditQueueHash": "sha256:2a5f762aff8aaf164ae657ce4e682323018bd9a73020c8c56e83a61a4615898a",
+    "officialAuditHash": "sha256:d5c7d6d42ccb5d06b3b96b8276af8c4912ad2741fa95bde359e284a4e6e8705b",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -1004,15 +1004,6 @@
       ]
     },
     {
-      "identity": "ingenieria de alimentos:2003",
-      "planId": "bedelias-fing-ingenieria-de-alimentos-2003",
-      "facultyCode": "FING",
-      "snapshotPath": "data/bedelias/fing-ingenieria-de-alimentos-2003.json",
-      "auditStatus": "structurally-valid",
-      "compositionAvailable": true,
-      "campusIds": []
-    },
-    {
       "identity": "ingenieria de produccion:2010",
       "planId": "bedelias-fing-ingenieria-de-produccion-2010",
       "facultyCode": "FING",
@@ -1440,6 +1431,17 @@
       "campusIds": []
     },
     {
+      "identity": "ingenieria de alimentos:2003",
+      "planId": "bedelias-fq-ingenieria-de-alimentos-2003",
+      "facultyCode": "FQ",
+      "snapshotPath": "data/bedelias/fq-ingenieria-de-alimentos-2003.json",
+      "auditStatus": "official-evidence-complete",
+      "compositionAvailable": true,
+      "campusIds": [
+        "montevideo"
+      ]
+    },
+    {
       "identity": "licenciatura en biotecnologia:2024",
       "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
       "facultyCode": "FQ",
@@ -1548,5 +1550,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:f9e5ce958846b5f5bccbdd57698402ff05ecc4fb8cf8275fecdd503566643833"
+  "contentHash": "sha256:48f9f4bd7225fdd54b0eb0663f1970c377912d968941045d6c5060eec91fe7e5"
 }

@@ -529,12 +529,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
-  "bedelias-fing-ingenieria-de-alimentos-2003": {
-    load: () => import("./bedelias-generated/bedelias-fing-ingenieria-de-alimentos-2003.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 450,
-  },
   "bedelias-fing-ingenieria-de-produccion-2010": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-de-produccion-2010.json"),
     pathwayIds: ["bedelias"],
@@ -772,6 +766,12 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-fq-bioquimico-clinico-2015": {
     load: () => import("./bedelias-generated/bedelias-fq-bioquimico-clinico-2015.json"),
     pathwayIds: ["bedelias"],
+    pathwayLabel: "Trayectoria",
+    minCredits: 450,
+  },
+  "bedelias-fq-ingenieria-de-alimentos-2003": {
+    load: () => import("./bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json"),
+    pathwayIds: ["trayectoria-flexible"],
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
