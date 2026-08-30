@@ -537,8 +537,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-en-agrimensura-2023": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-en-agrimensura-2023.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["trayectoria-flexible"],
+    pathwayLabel: "Recorrido",
     minCredits: 450,
   },
   "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018": {

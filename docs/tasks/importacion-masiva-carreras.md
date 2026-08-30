@@ -1810,3 +1810,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:66ba095b83c7a64662d65eacde58581f82ebdecf192f235dc6897eddf035a4a4`. Cola general: 19 identidades pendientes; hash `sha256:341c13489b0509c4f1b68c419b94da974fd2a1262e09cb30a17c08e1bfc184f9`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash de auditoría `sha256:66ba095b83c7a64662d65eacde58581f82ebdecf192f235dc6897eddf035a4a4`. Cola funcional vacía.
 - Siguiente paso: auditar Ingeniería en Agrimensura Plan 2023, primera identidad reproducible restante.
+
+### Ingeniería en Agrimensura Plan 2023 — currículo individual flexible operativo 2026-08-30
+
+- FING, el Plan 2023 y el catálogo vigente de Udelar confirman una única Ingeniería en Agrimensura de cinco años y 450 créditos, con título `Ingeniero Agrimensor / Ingeniera Agrimensora` y carrera completa en Montevideo. El nuevo plan comenzó a implementarse para ingresos 2025.
+- Los cuatro mínimos raíz suman 393 créditos: 145 de formación básica, 193 de formación básico-técnica y tecnológica, 15 de formación complementaria y 40 de actividades integradoras. Los 57 restantes son opcionales aprobados dentro del currículo individual.
+- La UI controla además los dieciséis mínimos por área: Matemática, Física, Económicas y Jurídicas, Informática, Teoría de las Observaciones, Agrimensura Legal, Avaluaciones, Catastro, Geodesia, Geomática, Ordenamiento Territorial, Topografía, Ciencias Humanas, Gestión, Pasantía y Proyecto.
+- No se encontró una secuencia semestral pública estable con carácter de currícula sugerida. Por eso la trayectoria no inventa semestres: presenta orientación, las 77 unidades de Bedelías como catálogo acreditable organizado por área y una validación final de la Comisión de Carrera.
+- Los CIO de Paysandú y Salto son ofertas independientes que pueden articular el inicio de estudios de Ingeniería. No se publican como sedes completas, carreras duplicadas ni trayectorias propias de Agrimensura.
+- La proyección contiene 79 componentes: 77 unidades acreditables, una orientación explícita sobre los 57 créditos opcionales y la validación final. Conserva 61 reglas de previatura publicadas y dos consultas sin regla explícita.
+- Registro de auditoría: hash `sha256:cc9677be8d2688ba5f8b05bf11e5f6b9b4c8962b56c5e17f24e2da64c9804b45`. Cola general: 18 identidades pendientes; hash `sha256:dd87e48ac164f5c108f174f9b30e9b79d53e6cb8d7bb6fb1894b1e6ebc83d980`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash `sha256:c71aae268c8600f230dbe45f9e05ae7e4219a2ee4809f42a78cd05cdd5038589`. Cola funcional vacía; hash `sha256:ebea5428b9b1d2c0c87a93e3f1797de7c44eafcf952eb4efee32c53984a9a1cd`.
+- Siguiente paso: auditar Ingeniería en Sistemas de Comunicación Plan 2018, primera identidad reproducible restante.

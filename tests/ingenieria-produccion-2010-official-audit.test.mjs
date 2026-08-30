@@ -91,13 +91,13 @@ test("mantiene el catálogo completo, las reglas publicadas y las asignaciones d
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));
 });
 
-test("ubica la carrera bajo FING y avanza la cola a Agrimensura 2023", () => {
+test("ubica la carrera bajo FING y la mantiene cerrada al avanzar la cola", () => {
   const faculty = catalog.find(({ id }) => id === "bedelias-fing");
   const career = faculty.careers.find(({ label }) => label === "Ingeniería de Producción");
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-de-produccion-2010");
   assert.equal(career.plans[0].defaultTrajectoryId, "montevideo-curricula-sugerida");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria de produccion:2010"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 158);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 19);
-  assert.equal(queue.queue[0].identity, "ingenieria en agrimensura:2023");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 159);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 18);
+  assert.equal(queue.queue[0].identity, "ingenieria en sistemas de comunicacion:2018");
 });

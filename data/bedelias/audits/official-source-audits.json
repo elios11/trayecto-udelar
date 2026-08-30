@@ -56662,7 +56662,487 @@
       ],
       "uiNotice": "Plan 2010 de 450 créditos. Elegí Montevideo para la currícula sugerida completa o una de las seis trayectorias iniciales del interior; todas conservan el mismo título y continúan luego en Montevideo. Salto y Paysandú articulan parte del cursado entre ambas sedes.",
       "remainingWork": "El Consejo de Facultad debe aprobar cada currículo, las electivas y equivalencias. Las previaturas vigentes se verifican en Bedelías y la disponibilidad semestral de unidades regionales debe confirmarse con cada sede."
+    },
+    {
+      "identity": "ingenieria en agrimensura:2023",
+      "career": "Ingeniería en Agrimensura",
+      "planYear": "2023",
+      "reviewedAt": "2026-08-30",
+      "status": "official-evidence-complete",
+      "scope": "current-degree-title-credit-structure-minima-flexible-curriculum-admission-and-campus",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Aprobado por el Consejo de la Facultad de Ingeniería el 11 de julio de 2023 (resolución 125)",
+          "Aprobado por el Consejo Directivo Central el 12 de diciembre de 2023 (resolución 19)",
+          "Implementado para estudiantes de ingreso desde el año lectivo 2025"
+        ],
+        "planYear": "2023",
+        "title": "Ingeniero Agrimensor / Ingeniera Agrimensora",
+        "careerName": "Ingeniería en Agrimensura",
+        "facultyCode": "FING",
+        "facultyName": "Facultad de Ingeniería",
+        "sharedWith": [],
+        "durationMonths": 60,
+        "semesters": 10,
+        "minimumCredits": 450,
+        "current": true,
+        "pathwayLabel": "Recorrido",
+        "degreeRule": "El Plan 2023 exige 450 créditos, los mínimos de los cuatro grupos y de sus dieciséis áreas, una pasantía de 10 créditos, un proyecto de 30 créditos y un currículo individual aprobado por la Comisión de Carrera. Los mínimos estructurales suman 393 créditos y los 57 restantes son opcionales aprobados para el currículo individual.",
+        "trajectories": [
+          {
+            "id": "trayectoria-flexible",
+            "credentialId": "ingeniero-agrimensor",
+            "label": "Trayectoria flexible",
+            "description": "Plan flexible organizado por áreas de formación. Elegí unidades del catálogo hasta cubrir los mínimos, 57 créditos opcionales adicionales y el total de 450; la Comisión de Carrera debe aprobar el currículo individual.",
+            "campusIds": [
+              "montevideo"
+            ],
+            "periods": []
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fing.edu.uy/index.php/sites/default/files/Plan%20de%20Estudios%20Ing%20en%20Agrimensura%202023.pdf",
+          "pathwayLabel": "Recorrido",
+          "pathwayDescription": "Catálogo acreditable organizado por las áreas del Plan 2023; no existe una secuencia semestral única publicada como requisito de egreso.",
+          "includeAllCoursesInPathwayCatalog": true,
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "pathRequirementMap": {
+            "004": "agrimensura-integradoras",
+            "00401": "agrimensura-pasantia",
+            "00402": "agrimensura-proyecto",
+            "001": "agrimensura-basica",
+            "00103": "agrimensura-economicas-juridicas",
+            "00102": "agrimensura-fisica",
+            "00104": "agrimensura-informatica",
+            "00101": "agrimensura-matematica",
+            "00105": "agrimensura-observaciones",
+            "002": "agrimensura-tecnologica",
+            "00201": "agrimensura-legal",
+            "00202": "agrimensura-avaluaciones",
+            "00203": "agrimensura-catastro",
+            "00207": "agrimensura-geodesia",
+            "00204": "agrimensura-geomatica",
+            "00205": "agrimensura-ordenamiento",
+            "00206": "agrimensura-topografia",
+            "003": "agrimensura-complementaria",
+            "00301": "agrimensura-humanas",
+            "00302": "agrimensura-gestion"
+          },
+          "periodLabelMap": {
+            "00401": "Pasantía",
+            "00402": "Proyecto",
+            "00103": "Económicas y jurídicas",
+            "00102": "Física",
+            "00104": "Informática",
+            "00101": "Matemática",
+            "00105": "Teoría de las observaciones",
+            "00201": "Agrimensura legal",
+            "00202": "Avaluaciones",
+            "00203": "Catastro",
+            "00207": "Geodesia",
+            "00204": "Geomática",
+            "00205": "Ordenamiento territorial y desarrollo sostenible",
+            "00206": "Topografía",
+            "00301": "Ciencias humanas",
+            "00302": "Gestión"
+          },
+          "periodOrder": [
+            "Orientación del recorrido",
+            "Matemática",
+            "Física",
+            "Económicas y jurídicas",
+            "Informática",
+            "Teoría de las observaciones",
+            "Agrimensura legal",
+            "Avaluaciones",
+            "Catastro",
+            "Geodesia",
+            "Geomática",
+            "Ordenamiento territorial y desarrollo sostenible",
+            "Topografía",
+            "Ciencias humanas",
+            "Gestión",
+            "Pasantía",
+            "Proyecto",
+            "Validación de egreso"
+          ],
+          "creditRequirements": [
+            {
+              "id": "agrimensura-integradoras",
+              "parentId": null,
+              "kind": "group",
+              "name": "Actividades integradoras",
+              "shortName": "Integradoras",
+              "minCredits": 40
+            },
+            {
+              "id": "agrimensura-pasantia",
+              "parentId": "agrimensura-integradoras",
+              "name": "Pasantía",
+              "minCredits": 10
+            },
+            {
+              "id": "agrimensura-proyecto",
+              "parentId": "agrimensura-integradoras",
+              "name": "Proyecto",
+              "minCredits": 30
+            },
+            {
+              "id": "agrimensura-basica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Formación básica",
+              "shortName": "Básica",
+              "minCredits": 145
+            },
+            {
+              "id": "agrimensura-economicas-juridicas",
+              "parentId": "agrimensura-basica",
+              "name": "Económicas y jurídicas",
+              "minCredits": 10
+            },
+            {
+              "id": "agrimensura-fisica",
+              "parentId": "agrimensura-basica",
+              "name": "Física",
+              "minCredits": 30
+            },
+            {
+              "id": "agrimensura-informatica",
+              "parentId": "agrimensura-basica",
+              "name": "Informática",
+              "minCredits": 10
+            },
+            {
+              "id": "agrimensura-matematica",
+              "parentId": "agrimensura-basica",
+              "name": "Matemática",
+              "minCredits": 70
+            },
+            {
+              "id": "agrimensura-observaciones",
+              "parentId": "agrimensura-basica",
+              "name": "Teoría de las observaciones",
+              "minCredits": 25
+            },
+            {
+              "id": "agrimensura-tecnologica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Formación básico-técnica y tecnológica",
+              "shortName": "Tecnológica",
+              "minCredits": 193
+            },
+            {
+              "id": "agrimensura-legal",
+              "parentId": "agrimensura-tecnologica",
+              "name": "Agrimensura legal",
+              "minCredits": 30
+            },
+            {
+              "id": "agrimensura-avaluaciones",
+              "parentId": "agrimensura-tecnologica",
+              "name": "Avaluaciones",
+              "minCredits": 22
+            },
+            {
+              "id": "agrimensura-catastro",
+              "parentId": "agrimensura-tecnologica",
+              "name": "Catastro",
+              "minCredits": 6
+            },
+            {
+              "id": "agrimensura-geodesia",
+              "parentId": "agrimensura-tecnologica",
+              "name": "Geodesia",
+              "minCredits": 45
+            },
+            {
+              "id": "agrimensura-geomatica",
+              "parentId": "agrimensura-tecnologica",
+              "name": "Geomática",
+              "minCredits": 30
+            },
+            {
+              "id": "agrimensura-ordenamiento",
+              "parentId": "agrimensura-tecnologica",
+              "name": "Ordenamiento territorial y desarrollo sostenible",
+              "minCredits": 15
+            },
+            {
+              "id": "agrimensura-topografia",
+              "parentId": "agrimensura-tecnologica",
+              "name": "Topografía",
+              "minCredits": 45
+            },
+            {
+              "id": "agrimensura-complementaria",
+              "parentId": null,
+              "kind": "group",
+              "name": "Formación complementaria",
+              "shortName": "Complementaria",
+              "minCredits": 15
+            },
+            {
+              "id": "agrimensura-humanas",
+              "parentId": "agrimensura-complementaria",
+              "name": "Ciencias humanas",
+              "minCredits": 10
+            },
+            {
+              "id": "agrimensura-gestion",
+              "parentId": "agrimensura-complementaria",
+              "name": "Gestión",
+              "minCredits": 5
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "opcionales-flexibles-57",
+              "name": "Completá al menos 57 créditos opcionales aprobados para tu currículo individual",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fing.edu.uy/index.php/sites/default/files/Plan%20de%20Estudios%20Ing%20en%20Agrimensura%202023.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "ingeniero-agrimensor",
+              "title": "Ingeniero Agrimensor / Ingeniera Agrimensora",
+              "minTotalCredits": 450,
+              "requiredCourseGroupIds": [
+                "validacion-final-plan"
+              ],
+              "nodeRequirements": [
+                {
+                  "nodeId": "agrimensura-integradoras",
+                  "minCredits": 40
+                },
+                {
+                  "nodeId": "agrimensura-pasantia",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "agrimensura-proyecto",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "agrimensura-basica",
+                  "minCredits": 145
+                },
+                {
+                  "nodeId": "agrimensura-economicas-juridicas",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "agrimensura-fisica",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "agrimensura-informatica",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "agrimensura-matematica",
+                  "minCredits": 70
+                },
+                {
+                  "nodeId": "agrimensura-observaciones",
+                  "minCredits": 25
+                },
+                {
+                  "nodeId": "agrimensura-tecnologica",
+                  "minCredits": 193
+                },
+                {
+                  "nodeId": "agrimensura-legal",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "agrimensura-avaluaciones",
+                  "minCredits": 22
+                },
+                {
+                  "nodeId": "agrimensura-catastro",
+                  "minCredits": 6
+                },
+                {
+                  "nodeId": "agrimensura-geodesia",
+                  "minCredits": 45
+                },
+                {
+                  "nodeId": "agrimensura-geomatica",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "agrimensura-ordenamiento",
+                  "minCredits": 15
+                },
+                {
+                  "nodeId": "agrimensura-topografia",
+                  "minCredits": 45
+                },
+                {
+                  "nodeId": "agrimensura-complementaria",
+                  "minCredits": 15
+                },
+                {
+                  "nodeId": "agrimensura-humanas",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "agrimensura-gestion",
+                  "minCredits": 5
+                }
+              ]
+            }
+          ],
+          "manualCompletionValidation": "Validación del currículo individual y de los 57 créditos opcionales por la Comisión de Carrera de Ingeniería en Agrimensura"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FING",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "sede responsable y carrera completa",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "trayectoria-flexible"
+          ]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fing-ingenieria-en-agrimensura-2023.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 77,
+        "compositionGroupCount": 20,
+        "prerequisiteRuleCount": 61,
+        "noPublishedRuleCount": 2,
+        "compositionFingerprint": "sha256:32213ee0b1a345ef6ea93b4528ac884240854b9ad7a3120d3f989094e88685c9",
+        "interpretation": "Bedelías publica 77 unidades acreditables, los veinte grupos y áreas del Plan 2023 y 61 reglas de previatura; dos consultas no publican una regla. El catálogo incluye unidades de otros servicios y sedes que pueden acreditar en el currículo, pero eso no convierte esas sedes en ofertas completas de Ingeniería en Agrimensura."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-flexible-individual-curriculum",
+        "canonicalIdentity": "ingenieria en agrimensura:2023",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales vigentes documentan una sola carrera completa en la Facultad de Ingeniería, un único Plan 2023 y un currículo individual flexible. Los CIO del Litoral son vías de inicio articuladas y carreras registradas por separado, no sedes completas ni trayectorias propias de este título.",
+        "normalization": [
+          "Publicar una única Ingeniería en Agrimensura Plan 2023, de cinco años, 450 créditos y título Ingeniero Agrimensor / Ingeniera Agrimensora.",
+          "Mostrar Montevideo como única sede oficial de la carrera completa.",
+          "Organizar las 77 unidades de Bedelías como catálogo acreditable por área, sin presentarlas como 77 obligaciones ni inventar semestres.",
+          "Controlar los cuatro mínimos de grupo, los dieciséis mínimos por área, la Pasantía, el Proyecto y el total de 450 créditos.",
+          "Explicitar los 57 créditos opcionales que completan la brecha entre los mínimos estructurales de 393 créditos y el total del plan.",
+          "Exigir la validación final del currículo individual por la Comisión de Carrera.",
+          "Mantener los CIO de Paysandú y Salto como ofertas independientes que pueden articular el ingreso, no como nuevas sedes de esta carrera."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/index.php/sites/default/files/Plan%20de%20Estudios%20Ing%20en%20Agrimensura%202023.pdf",
+          "authority": "Plan de Estudios de Ingeniería en Agrimensura 2023, Facultad de Ingeniería, Udelar",
+          "supports": [
+            "aprobaciones",
+            "título",
+            "cinco años",
+            "450 créditos",
+            "grupos",
+            "áreas",
+            "mínimos",
+            "pasantía",
+            "proyecto",
+            "57 créditos opcionales",
+            "currículo individual"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/index.php/es/carrera/grado/agrimensura",
+          "authority": "Página vigente de la carrera, Facultad de Ingeniería, Udelar",
+          "supports": [
+            "vigencia",
+            "Plan 2023",
+            "duración",
+            "créditos",
+            "Comisión de Carrera"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/node/51147",
+          "authority": "Noticia institucional de la Facultad de Ingeniería, Udelar",
+          "supports": [
+            "implementación desde 2025",
+            "cambio de denominación",
+            "aprobación del Plan 2023"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/ingenieria-en-agrimensura",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "60 meses",
+            "450 créditos",
+            "sede Facultad de Ingeniería"
+          ]
+        },
+        {
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1511",
+          "authority": "Comisión de Carrera de Ingeniería en Agrimensura, EVA FING",
+          "supports": [
+            "comisión responsable",
+            "orientación académica",
+            "vínculo con trayectorias de ingreso en el interior"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/cio-trayectoria-ingenieria",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "naturaleza independiente del CIO",
+            "oferta en Paysandú y Salto",
+            "articulación con Ingeniería"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
+          "authority": "Portal de ingresos 2026, Udelar",
+          "supports": [
+            "ingreso vigente por FING",
+            "oferta en Montevideo"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "careerNameTransition",
+          "resolution": "El Plan 2023 cambia la denominación de Agrimensura a Ingeniería en Agrimensura y comenzó a implementarse para ingresos 2025. La UI usa la denominación vigente y conserva el año reglamentario del plan."
+        },
+        {
+          "field": "structuralMinimumGap",
+          "resolution": "Los cuatro mínimos de grupo suman 393 créditos. El plan identifica expresamente los 57 créditos restantes como opcionales del currículo individual; la UI controla los mínimos anidados y explicita esa brecha sin asignarla arbitrariamente a un área."
+        },
+        {
+          "field": "noOfficialSuggestedSequence",
+          "resolution": "No se encontró una grilla semestral pública estable con carácter de currícula sugerida. La UI presenta un recorrido flexible y el catálogo por áreas, sin inventar orden ni obligatoriedad por semestre."
+        },
+        {
+          "field": "regionalGatewayVsCampus",
+          "resolution": "Los CIO de Paysandú y Salto permiten iniciar trayectos articulables con Ingeniería, pero son carreras independientes. No se muestran como sedes o trayectorias completas de Ingeniería en Agrimensura."
+        },
+        {
+          "field": "bedeliasCatalogSemantics",
+          "resolution": "Las 77 unidades son alternativas acreditables acumuladas. Permanecen en el catálogo y los mínimos por área determinan qué debe completar cada estudiante; no se presentan como una malla rígida de 77 obligaciones."
+        }
+      ],
+      "uiNotice": "Plan 2023 flexible de 450 créditos, con sede en Montevideo. Elegí unidades del catálogo para cubrir los mínimos por área, 57 créditos opcionales y las actividades integradoras; la Comisión de Carrera valida el currículo individual.",
+      "remainingWork": "La Comisión de Carrera debe aprobar cada currículo individual, las opcionales y las equivalencias. Las previaturas y la oferta efectiva por semestre se verifican en Bedelías."
     }
   ],
-  "contentHash": "sha256:66ba095b83c7a64662d65eacde58581f82ebdecf192f235dc6897eddf035a4a4"
+  "contentHash": "sha256:cc9677be8d2688ba5f8b05bf11e5f6b9b4c8962b56c5e17f24e2da64c9804b45"
 }
