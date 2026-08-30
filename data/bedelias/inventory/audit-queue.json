@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-29T06:05:29.022Z",
+  "generatedAt": "2026-08-30T03:34:39.248Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:2d0a6b047827a163c8c54e0819334773a68919656cd18913137e452d33071550"
+    "officialAuditRegistryHash": "sha256:a29f007df8e1102b70d87ca18b2078e73ccd5af6293621d807d7a44371b171f9"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 153,
-    "pendingCanonicalIdentities": 24,
+    "evidenceClosedCanonicalIdentities": 154,
+    "pendingCanonicalIdentities": 23,
     "byPriority": {
-      "official-sources-pending": 24
+      "official-sources-pending": 23
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -939,38 +939,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-29",
       "conclusion": "current-technologist-articulated-with-current-degree"
+    },
+    {
+      "identity": "linguistica:2014",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-30",
+      "conclusion": "one-degree-flexible-trajectory"
     }
   ],
   "queue": [
-    {
-      "identity": "linguistica:2014",
-      "career": {
-        "name": "LINGÜÍSTICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2014",
-        "name": "LINGÜÍSTICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:linguistica:2014",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:linguistica:2014",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "museologia:2011",
       "career": {
@@ -1790,5 +1767,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:58696a4c43d965934c291cf87ec7cc25a8d1a210acbe8a8df1396c5894004e23"
+  "contentHash": "sha256:44aaea20f04f9c07bd93faa754e0305656dd6049639f4ede263ac9329481f08f"
 }

@@ -1743,3 +1743,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:2d0a6b047827a163c8c54e0819334773a68919656cd18913137e452d33071550`. Cola general: 24 identidades pendientes; hash `sha256:58696a4c43d965934c291cf87ec7cc25a8d1a210acbe8a8df1396c5894004e23`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable, 37 con sedes oficiales y 38 identidades excluidas; hash `sha256:25d153c711cd35195b9043ae22ca28598982ac2d2f08d2de0f0728ceca338f49`. Cola funcional vacía; hash `sha256:a4041e0503cb8f2b0e51a10e8313a859295073929fffd438d4083d62b8422f89`.
 - Siguiente paso: auditar la Licenciatura en Lingüística Plan 2014, primera identidad reproducible restante.
+
+### Licenciatura en Lingüística Plan 2014 — seis áreas y trayectoria flexible operativas 2026-08-30
+
+- FHCE y el catálogo vigente de Udelar confirman una única Licenciatura en Lingüística Plan 2014, de cuatro años, 360 créditos, título `Licenciado en Lingüística` y sede Montevideo. Los énfasis que cada estudiante construye no son menciones ni carreras separadas.
+- La UI controla 255 créditos de formación fundamental, 50 de recorridos interdisciplinarios optativos y 55 electivos. Dentro de la formación fundamental exige los mínimos A=48, B=65, C=52 y D=75; los 15 créditos restantes se distribuyen libremente entre esas cuatro áreas.
+- También controla los requisitos transversales del Plan: 8 créditos de lengua extranjera moderna dentro de las optativas, 10 de prácticas en ámbitos social o productivo y dos seminarios de 23 créditos aprobados por monografía. IVU, Orientación a la generación de ingreso y la validación final de la Comisión de Carrera quedan explícitos.
+- La malla oficial de julio de 2026 se presenta como una trayectoria sugerida de ocho semestres. Sus bloques optativos y electivos son instrucciones de elección con crédito cero, para que no dupliquen las unidades reales que cada estudiante seleccione del catálogo flexible.
+- La trayectoria publicada suma 366 créditos y 261 fundamentales. La UI conserva el mínimo normativo de 360 y 255 fundamentales: los seis créditos excedentes son una propuesta de cursado, no un cambio de plan.
+- La proyección contiene 227 apariciones de Bedelías con 226 códigos únicos, nueve instrucciones flexibles y una validación final. Conserva las 40 previaturas publicadas y deja 184 unidades sin regla explícita; 62 filas administrativas originales de crédito cero no suman a ningún mínimo.
+- El generador ahora admite grupos raíz oficiales y asignaciones adicionales trazables por unidad. Esto permite que las cuatro áreas alimenten el mínimo fundamental y que seminarios o prácticas controlen simultáneamente su requisito transversal sin duplicar los créditos totales.
+- Registro de auditoría: hash `sha256:a29f007df8e1102b70d87ca18b2078e73ccd5af6293621d807d7a44371b171f9`. Cola general: 23 identidades pendientes; hash `sha256:44aaea20f04f9c07bd93faa754e0305656dd6049639f4ede263ac9329481f08f`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:efffe16b4e8e1e06d47e30ce69fd5c7a19080f95ab0174bf340430606511e9ba`. Cola funcional vacía; hash `sha256:c27dbdcb4bc4d729765f31f3d77daf730d647f26cf84d0f38f358f195ee724e0`.
+- Siguiente paso: auditar Museología Plan 2011, primera identidad reproducible restante.

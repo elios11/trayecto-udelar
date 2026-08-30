@@ -286,7 +286,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
   for (const requirement of curriculum.creditRequirements ?? []) {
     nodes.push({
       id: requirement.id,
-      parentId: requirement.parentId ?? "plan-total",
+      parentId: Object.hasOwn(requirement, "parentId") ? requirement.parentId : "plan-total",
       kind: requirement.kind ?? "module",
       name: requirement.name,
       shortName: requirement.shortName,
@@ -459,7 +459,11 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     let course = sharedKey ? sharedProfileCourses.get(sharedKey) : null;
     if (!course) {
       const id = courseId(serviceCode, { code: sourceCourseId, name: courseOverride.name ?? parsed.name }, index, usedIds);
-      const eligibleRequirementIds = [...new Set([nodeId, ...additionalRequirementIdsForAllCourses])];
+      const eligibleRequirementIds = [...new Set([
+        nodeId,
+        ...(courseOverride.additionalRequirementIds ?? []),
+        ...additionalRequirementIdsForAllCourses,
+      ])];
       course = {
         id,
         ...(sourceCourseId ? { bedeliasCode: sourceCourseId } : {}),
@@ -589,7 +593,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   for (const requirement of curriculum.creditRequirements ?? []) {
     nodes.push({
       id: requirement.id,
-      parentId: requirement.parentId ?? "plan-total",
+      parentId: Object.hasOwn(requirement, "parentId") ? requirement.parentId : "plan-total",
       kind: requirement.kind ?? "module",
       name: requirement.name,
       shortName: requirement.shortName,
