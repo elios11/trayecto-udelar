@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:2a5f762aff8aaf164ae657ce4e682323018bd9a73020c8c56e83a61a4615898a",
-    "officialAuditHash": "sha256:d5c7d6d42ccb5d06b3b96b8276af8c4912ad2741fa95bde359e284a4e6e8705b",
+    "auditQueueHash": "sha256:341c13489b0509c4f1b68c419b94da974fd2a1262e09cb30a17c08e1bfc184f9",
+    "officialAuditHash": "sha256:66ba095b83c7a64662d65eacde58581f82ebdecf192f235dc6897eddf035a4a4",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 37,
+    "plansWithOfficialCampuses": 38,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1008,9 +1008,17 @@
       "planId": "bedelias-fing-ingenieria-de-produccion-2010",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-de-produccion-2010.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "maldonado",
+        "paysandu",
+        "rivera",
+        "rocha",
+        "salto",
+        "tacuarembo"
+      ]
     },
     {
       "identity": "ingenieria en agrimensura:2023",
@@ -1550,5 +1558,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:48f9f4bd7225fdd54b0eb0663f1970c377912d968941045d6c5060eec91fe7e5"
+  "contentHash": "sha256:acf50c416c24c32642cdf3d656a7e844a6538271456c10ca446bea17e98a5aff"
 }

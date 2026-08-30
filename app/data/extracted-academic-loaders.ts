@@ -531,8 +531,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-de-produccion-2010": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-de-produccion-2010.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["montevideo-curricula-sugerida","maldonado-inicial","paysandu-inicial","rivera-inicial","rocha-inicial","salto-inicial","tacuarembo-inicial"],
+    pathwayLabel: "Sede y recorrido",
     minCredits: 450,
   },
   "bedelias-fing-ingenieria-en-agrimensura-2023": {

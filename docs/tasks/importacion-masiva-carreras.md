@@ -1796,3 +1796,17 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:d5c7d6d42ccb5d06b3b96b8276af8c4912ad2741fa95bde359e284a4e6e8705b`. Cola general: 20 identidades pendientes; hash `sha256:2a5f762aff8aaf164ae657ce4e682323018bd9a73020c8c56e83a61a4615898a`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:48f9f4bd7225fdd54b0eb0663f1970c377912d968941045d6c5060eec91fe7e5`. Cola funcional vacía; hash `sha256:6899b636fe06ec0c222e22e8ff8b806f054afb276c3f84f6fe26ee7f84c0b6b4`.
 - Siguiente paso: auditar Ingeniería de Producción Plan 2010, primera identidad reproducible restante.
+
+### Ingeniería de Producción Plan 2010 — currícula central y seis tramos territoriales operativos 2026-08-30
+
+- FING y el Plan oficial confirman una única carrera de cinco años y 450 créditos, con título `Ingeniero de Producción`. Las ofertas de Maldonado, Paysandú, Rivera, Rocha, Salto y Tacuarembó son tramos iniciales del mismo plan, no carreras, menciones ni títulos diferentes.
+- La UI ofrece siete opciones de sede. Montevideo muestra la currícula sugerida actualizada el 7 de febrero de 2026; Maldonado, Rivera y Rocha ofrecen dos semestres iniciales y continúan desde tercero en Montevideo; Paysandú, Salto y Tacuarembó ofrecen cuatro y continúan desde quinto.
+- Paysandú y Salto se presentan como recorridos intersede: algunas unidades requieren presencialidad en la sede hermana. La explicación queda visible antes de elegir la trayectoria y no se confunde esa articulación con una sede completa independiente.
+- Los mínimos raíz suman 400 créditos: 160 básicos, 120 específicos de Producción, 60 industriales y 60 integradores. El currículo individual debe completar al menos 50 créditos electivos adicionales aprobados por Facultad.
+- Los submínimos dejan distribuciones flexibles de 8 créditos básicos, 10 específicos y 25 industriales. Talleres —22—, Pasantía —8— y Proyecto —30— completan exactamente el bloque integrador; la validación final controla la aprobación del currículo y de las electivas sin duplicar créditos.
+- La currícula central distingue obligatorias y electivas sugeridas por semestre. El Proyecto de 30 créditos se presenta una sola vez como actividad anual de los semestres 9 y 10, y el resto de las 206 unidades de Bedelías permanece disponible como catálogo acreditable.
+- La proyección contiene 261 componentes: las 206 unidades centrales, cincuenta unidades de los seis tramos regionales, cuatro orientaciones flexibles y una validación final. Conserva 201 reglas publicadas y 46 consultas sin regla explícita.
+- El generador ahora incorpora automáticamente orientación y validación en trayectorias territoriales personalizadas y deja como catálogo todas las unidades no seleccionadas. Así cambiar de sede no oculta electivas ni requisitos finales.
+- Registro de auditoría: hash `sha256:66ba095b83c7a64662d65eacde58581f82ebdecf192f235dc6897eddf035a4a4`. Cola general: 19 identidades pendientes; hash `sha256:341c13489b0509c4f1b68c419b94da974fd2a1262e09cb30a17c08e1bfc184f9`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash de auditoría `sha256:66ba095b83c7a64662d65eacde58581f82ebdecf192f235dc6897eddf035a4a4`. Cola funcional vacía.
+- Siguiente paso: auditar Ingeniería en Agrimensura Plan 2023, primera identidad reproducible restante.

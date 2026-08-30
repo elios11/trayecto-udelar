@@ -178,20 +178,34 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         ? new Set([...(audit.officialPlan.curriculum.commonCourseIds ?? []), ...trajectory.courseIds]
           .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id))
         : null;
-      const trajectoryPeriods = (trajectory.periods ?? periods).map((period) => ({
+      const configuredTrajectoryPeriods = (trajectory.periods ?? periods).map((period) => ({
         label: period.label,
         courseIds: (period.courseIds ?? [])
           .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
           .filter((id) => id && !excludedIds.has(id) && (!includedIds || includedIds.has(id))),
       })).filter((period) => period.courseIds.length > 0);
-      const catalogCourseIds = includedIds
-        ? audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
-          ? officialCurriculum.courses.map((course) => course.id)
-            .filter((id) => !excludedIds.has(id) && !includedIds.has(id))
-          : [...new Set((trajectory.periods ?? periods).flatMap((period) => period.courseIds ?? []))]
+      const configuredCourseIds = new Set(configuredTrajectoryPeriods.flatMap((period) => period.courseIds));
+      const curricularBlockIds = new Set((officialCurriculum?.courses ?? [])
+        .filter((course) => course.curricularBlock === true && course.credits === 0)
+        .map((course) => course.id));
+      const sharedBlockPeriods = (officialCurriculum?.periods ?? []).map((period) => ({
+        label: period.label,
+        courseIds: period.courseIds.filter((id) => (
+          curricularBlockIds.has(id) && !excludedIds.has(id) && !configuredCourseIds.has(id)
+        )),
+      })).filter((period) => period.courseIds.length > 0);
+      const leadingBlockPeriods = sharedBlockPeriods.filter((period) => /orientaci[oó]n/i.test(period.label));
+      const trailingBlockPeriods = sharedBlockPeriods.filter((period) => !/orientaci[oó]n/i.test(period.label));
+      const trajectoryPeriods = [...leadingBlockPeriods, ...configuredTrajectoryPeriods, ...trailingBlockPeriods];
+      const selectedCourseIds = new Set(trajectoryPeriods.flatMap((period) => period.courseIds));
+      const catalogCourseIds = audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
+        ? officialCurriculum.courses.map((course) => course.id)
+          .filter((id) => !excludedIds.has(id) && !selectedCourseIds.has(id))
+        : includedIds
+          ? [...new Set((trajectory.periods ?? periods).flatMap((period) => period.courseIds ?? []))]
             .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
             .filter((id) => id && !excludedIds.has(id) && !includedIds.has(id))
-        : [];
+          : [];
       return [trajectory.id, {
         label: trajectory.label,
         description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
@@ -578,6 +592,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       curricularBlock: true,
     };
     courses.push(manualCourse);
+    courseIdBySourceId.set("validacion-final-plan", manualCourse.id);
     periodsByLabel.set("Validación de egreso", [manualCourse.id]);
     commonPeriodsByLabel.set("Validación de egreso", [manualCourse.id]);
     requiredCourseGroups.push({

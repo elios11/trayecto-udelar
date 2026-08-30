@@ -60,7 +60,8 @@ test("mantiene los dos recorridos lingüísticos y la secuencia correspondiente"
   assert.deepEqual(Object.keys(technologist.pathways), ["estudiante-oyente", "estudiante-sordo"]);
   assert.deepEqual(Object.keys(degree.pathways), ["estudiante-oyente", "estudiante-sordo"]);
   for (const pathway of Object.values(technologist.pathways)) {
-    assert.equal(pathway.periods.length, 6);
+    assert.equal(pathway.periods.length, 7);
+    assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
     assert.ok(pathway.credentialId.startsWith("tecnologo-tuilsu-"));
   }
   for (const pathway of Object.values(degree.pathways)) {
@@ -91,6 +92,6 @@ test("deja trazabilidad oficial y cierra ambas identidades de la cola", () => {
     assert.ok(audit.sources.some(({ url }) => url === planPdf));
     assert.ok(!queue.queue.some((entry) => entry.identity === identity));
   }
-  assert.equal(queue.counts.pendingCanonicalIdentities, 20);
-  assert.equal(queue.queue[0].identity, "ingenieria de produccion:2010");
+  assert.equal(queue.counts.pendingCanonicalIdentities, 19);
+  assert.equal(queue.queue[0].identity, "ingenieria en agrimensura:2023");
 });
