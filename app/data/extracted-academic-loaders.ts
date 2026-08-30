@@ -549,8 +549,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-fisico-matematica-2017": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-fisico-matematica-2017.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["curricula-personalizada","perfil-procesos-industriales","perfil-energia","perfil-fisica","perfil-mecanica-computacional","perfil-investigacion-operaciones","perfil-control","perfil-ciencia-datos","perfil-procesamiento-senales"],
+    pathwayLabel: "Perfil guía",
     minCredits: 450,
   },
   "bedelias-fing-ingenieria-industrial-mecanica-1997": {

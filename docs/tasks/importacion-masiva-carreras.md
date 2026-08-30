@@ -1835,3 +1835,18 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:11f18ec1884b824c901b6c661acdc118dbc793a1e7dfef8f1bf67fbc379a5872`. Cola general: 17 identidades pendientes; hash `sha256:5c9438ac98350ef7b32d6bee7189481914b1472243d573487649599e11e4278b`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash `sha256:3392b1c1026f2cfd682fd726af17a3979da0625a2dca55e61a27475785a64268`. Cola funcional vacía; hash `sha256:be9eb2b7e3c31aa6b0e6db31683ac669e3520259f2ad010147ba0a934846e333`.
 - Siguiente paso: auditar Ingeniería Físico Matemática Plan 2017, primera identidad reproducible restante.
+
+### Ingeniería Físico-Matemática Plan 2017 — currícula personalizada y ocho perfiles guía operativos 2026-08-30
+
+- FING, el Plan 2017, el catálogo vigente de Udelar y la Comisión de Carrera confirman una única Ingeniería Físico-Matemática de cinco años, 450 créditos, título `Ingeniero Físico-Matemático` y carrera completa en Montevideo.
+- La UI ofrece una currícula personalizada y ocho perfiles guía vigentes: Procesos industriales, Energía, Física, Mecánica computacional, Investigación de operaciones, Control, Ciencia de datos y Procesamiento de señales. Son puntos de partida flexibles para el mismo título, no menciones ni especializaciones certificadas.
+- Los cuatro mínimos raíz suman 412 créditos: 200 de Ciencias básicas, 80 de Ciencias de la ingeniería, 120 de Ingeniería aplicada y 12 complementarios. Los 38 restantes completan el currículo individual sin asignarse por inferencia a un área.
+- Los mínimos subordinados dejan márgenes internos de 50 créditos en Ciencias básicas, 10 en Ciencias de la ingeniería y 7 en Ingeniería aplicada. Estas brechas se solapan con el total y no se presentan como bolsas adicionales independientes.
+- Cada perfil selecciona su formación inicial y las unidades fuertemente recomendadas dentro de las áreas oficiales. Todas las demás unidades permanecen en el catálogo acreditable, de modo que el estudiante puede sustituir, profundizar o construir un perfil propio sujeto a aprobación de la Comisión.
+- Bedelías publica 335 apariciones de composición. Seis códigos reparten sus créditos entre dos áreas; se fusionan como 329 cursos únicos, con ambas asignaciones conservadas y una sola aparición visual dentro de cada perfil.
+- La proyección contiene 331 componentes: 329 cursos acreditables, una orientación para completar mínimos y una validación final. Conserva 241 reglas de previatura publicadas y 34 consultas sin regla explícita.
+- El Proyecto de Ingeniería Físico-Matemática se controla como requisito nominal de 35 créditos. La Pasantía, Talleres, mínimos por área, 450 créditos y aprobación del currículo individual se verifican separadamente.
+- Los CIO de Paysandú y Salto pueden articular el inicio de estudios de Ingeniería, pero son ofertas independientes: no se muestran como sedes completas ni perfiles territoriales de esta carrera.
+- Registro de auditoría: hash `sha256:dcb62e439c34837a091a22e42c21586205892f07e31615d264b5679807454bdf`. Cola general: 16 identidades pendientes; hash `sha256:9b9361d74a244cb4fd8e7761dfab898241bbb40683b9f3337642b78768334fde`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash `sha256:060afde7423a185e9b0dcdd54ec7ec08365de87142c5d3139d867bf3d6425609`. Cola funcional vacía; hash `sha256:d7e02fa35cd70fa6f4bce1c2c26399cb9b0578d5d1d48fa08f0b67847ce73d2c`.
+- Siguiente paso: auditar Ingeniería Industrial Mecánica Plan 1997, primera identidad reproducible restante.

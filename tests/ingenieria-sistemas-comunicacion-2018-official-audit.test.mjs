@@ -101,13 +101,13 @@ test("conserva previaturas y discrepancias orientativas sin inventar reglas", ()
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));
 });
 
-test("ubica la carrera bajo FING y avanza la cola a Ingeniería Físico Matemática", () => {
+test("ubica la carrera bajo FING y conserva la siguiente identidad pendiente", () => {
   const faculty = catalog.find(({ id }) => id === "bedelias-fing");
   const career = faculty.careers.find(({ label }) => label === "Ingeniería en Sistemas de Comunicación");
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018");
   assert.equal(career.plans[0].defaultTrajectoryId, "perfil-general-personalizado");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria en sistemas de comunicacion:2018"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 160);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 17);
-  assert.equal(queue.queue[0].identity, "ingenieria fisico matematica:2017");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 161);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 16);
+  assert.equal(queue.queue[0].identity, "ingenieria industrial mecanica:1997");
 });
