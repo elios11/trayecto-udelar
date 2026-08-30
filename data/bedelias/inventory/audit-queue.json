@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T09:37:14.163Z",
+  "generatedAt": "2026-08-30T19:21:12.733Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:cc9677be8d2688ba5f8b05bf11e5f6b9b4c8962b56c5e17f24e2da64c9804b45"
+    "officialAuditRegistryHash": "sha256:11f18ec1884b824c901b6c661acdc118dbc793a1e7dfef8f1bf67fbc379a5872"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 159,
-    "pendingCanonicalIdentities": 18,
+    "evidenceClosedCanonicalIdentities": 160,
+    "pendingCanonicalIdentities": 17,
     "byPriority": {
-      "official-sources-pending": 18
+      "official-sources-pending": 17
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -975,38 +975,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-30",
       "conclusion": "one-degree-flexible-individual-curriculum"
+    },
+    {
+      "identity": "ingenieria en sistemas de comunicacion:2018",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-30",
+      "conclusion": "one-degree-with-suggested-profiles-and-personalized-curriculum"
     }
   ],
   "queue": [
-    {
-      "identity": "ingenieria en sistemas de comunicacion:2018",
-      "career": {
-        "name": "INGENIERÍA EN SISTEMAS DE COMUNICACIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2018",
-        "name": "ING EN SIST DE COMUNICACION",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:ingenieria en sistemas de comunicacion:2018",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:ingenieria en sistemas de comunicacion:2018",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "ingenieria fisico matematica:2017",
       "career": {
@@ -1632,5 +1609,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:dd87e48ac164f5c108f174f9b30e9b79d53e6cb8d7bb6fb1894b1e6ebc83d980"
+  "contentHash": "sha256:5c9438ac98350ef7b32d6bee7189481914b1472243d573487649599e11e4278b"
 }

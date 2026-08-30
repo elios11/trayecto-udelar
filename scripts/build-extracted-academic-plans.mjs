@@ -467,9 +467,12 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     const displayName = useProfileComposition
       ? titleCasedName.replace(/\b(?:Iii|Ii|Iv|Viii|Vii|Vi|Ix|Xi|Xii)\b/g, (roman) => roman.toLocaleUpperCase("es-UY"))
       : titleCasedName;
-    const sharedKey = curriculum.deduplicateSharedProfileCourses === true
-      ? `${sourceCourseId ? `code:${normalize(sourceCourseId)}:` : ""}name:${normalize(courseOverride.name ?? parsed.name)}:credits:${credits}`
-      : null;
+    const mergeSplitCompositionCourses = curriculum.mergeSplitCompositionCourses === true;
+    const sharedKey = mergeSplitCompositionCourses
+      ? `${sourceCourseId ? `code:${normalize(sourceCourseId)}:` : ""}name:${normalize(courseOverride.name ?? parsed.name)}`
+      : curriculum.deduplicateSharedProfileCourses === true
+        ? `${sourceCourseId ? `code:${normalize(sourceCourseId)}:` : ""}name:${normalize(courseOverride.name ?? parsed.name)}:credits:${credits}`
+        : null;
     let course = sharedKey ? sharedProfileCourses.get(sharedKey) : null;
     if (!course) {
       const id = courseId(serviceCode, { code: sourceCourseId, name: courseOverride.name ?? parsed.name }, index, usedIds);
@@ -496,6 +499,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       if (!course.eligibleRequirementIds.includes(nodeId)) course.eligibleRequirementIds.push(nodeId);
       if (!course.creditAllocations.some((allocation) => allocation.nodeId === nodeId)) {
         course.creditAllocations.push({ nodeId, credits, status: "official", sourceUrl });
+        if (mergeSplitCompositionCourses) course.credits += credits;
       }
       for (const eligibleNodeId of additionalRequirementIdsForAllCourses) {
         if (!course.eligibleRequirementIds.includes(eligibleNodeId)) course.eligibleRequirementIds.push(eligibleNodeId);

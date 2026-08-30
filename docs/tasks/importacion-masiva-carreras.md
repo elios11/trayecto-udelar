@@ -1822,3 +1822,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:cc9677be8d2688ba5f8b05bf11e5f6b9b4c8962b56c5e17f24e2da64c9804b45`. Cola general: 18 identidades pendientes; hash `sha256:dd87e48ac164f5c108f174f9b30e9b79d53e6cb8d7bb6fb1894b1e6ebc83d980`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash `sha256:c71aae268c8600f230dbe45f9e05ae7e4219a2ee4809f42a78cd05cdd5038589`. Cola funcional vacía; hash `sha256:ebea5428b9b1d2c0c87a93e3f1797de7c44eafcf952eb4efee32c53984a9a1cd`.
 - Siguiente paso: auditar Ingeniería en Sistemas de Comunicación Plan 2018, primera identidad reproducible restante.
+
+### Ingeniería en Sistemas de Comunicación Plan 2018 — perfiles sugeridos y currículo personalizado operativos 2026-08-30
+
+- FING, el Plan 2018, el catálogo vigente de Udelar y la Comisión de Carrera confirman una única Ingeniería en Sistemas de Comunicación de cinco años, 450 créditos, título `Ingeniero en Sistemas de Comunicación` y carrera completa en Montevideo.
+- La UI ofrece cuatro recorridos del mismo título: currícula general con perfil personalizado, Electrónica para comunicaciones, Redes de telecomunicaciones y Procesamiento de información y señales. Los tres perfiles tipo son sugerencias sustituibles, no menciones ni especializaciones certificadas.
+- Los cuatro mínimos raíz suman 337 créditos: 110 básicos, 105 básico-tecnológicos, 108 tecnológicos y 14 complementarios. La credencial controla además los trece submínimos positivos, una de las dos modalidades publicadas de proyecto final, 450 créditos y la validación del perfil por la Comisión de Carrera.
+- La currícula general identifica 383 créditos antes de opcionales. Los perfiles seleccionan 406, 405 y 416 créditos nominales actuales respectivamente; el resto se elige del catálogo hasta cubrir todos los mínimos y 450, sin convertir las tablas orientativas —que contienen discrepancias internas— en reglas de egreso.
+- Bedelías publica 227 apariciones de composición. Cinco códigos reparten sus créditos entre dos áreas, por lo que el generador ahora puede fusionarlos de forma explícita: quedan 222 cursos únicos con ambos destinos de crédito y sin doble conteo total.
+- La proyección contiene 224 componentes: 222 cursos acreditables, una orientación de opcionales y una validación final. Conserva 194 reglas de previatura publicadas y 36 consultas sin regla explícita.
+- El Proyecto se muestra una sola vez como actividad anual. El requisito de egreso acepta las dos modalidades administrativas publicadas, de 35 y 30 créditos; la distribución sugerida entre semestres no duplica la actividad.
+- Registro de auditoría: hash `sha256:11f18ec1884b824c901b6c661acdc118dbc793a1e7dfef8f1bf67fbc379a5872`. Cola general: 17 identidades pendientes; hash `sha256:5c9438ac98350ef7b32d6bee7189481914b1472243d573487649599e11e4278b`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash `sha256:3392b1c1026f2cfd682fd726af17a3979da0625a2dca55e61a27475785a64268`. Cola funcional vacía; hash `sha256:be9eb2b7e3c31aa6b0e6db31683ac669e3520259f2ad010147ba0a934846e333`.
+- Siguiente paso: auditar Ingeniería Físico Matemática Plan 2017, primera identidad reproducible restante.
