@@ -1756,3 +1756,17 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:a29f007df8e1102b70d87ca18b2078e73ccd5af6293621d807d7a44371b171f9`. Cola general: 23 identidades pendientes; hash `sha256:44aaea20f04f9c07bd93faa754e0305656dd6049639f4ede263ac9329481f08f`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:efffe16b4e8e1e06d47e30ce69fd5c7a19080f95ab0174bf340430606511e9ba`. Cola funcional vacía; hash `sha256:c27dbdcb4bc4d729765f31f3d77daf730d647f26cf84d0f38f358f195ee724e0`.
 - Siguiente paso: auditar Museología Plan 2011, primera identidad reproducible restante.
+
+### Tecnicatura Universitaria en Museología Plan 2011 — seis opciones y admisión cerrada 2026-08-30
+
+- FHCE mantiene publicados la carrera y el Plan 2011, pero informa expresamente que no abre inscripciones desde 2010. La UI la conserva para estudiantes con escolaridad existente y muestra esa limitación; no la ofrece como alternativa de nuevo ingreso.
+- El plan otorga un único título de Técnico Universitario en Museología, dura seis semestres y exige 211 créditos: 133 técnico-profesionales, 39 de una opción temática y 39 complementarios electivos.
+- Historia del Uruguay, Historia Americana, Ciencia y Tecnología, Arte, Antropología Social y Cultural y Arqueología son seis opciones temáticas seleccionables dentro del mismo título. El perfil de Antropología que Bedelías fija en el rótulo administrativo deja de ser un valor implícito.
+- La trayectoria común ubica Museología I, Museografía I e Introducción a los estudios patrimoniales en el primer semestre; Museología II, Museografía II y Educación y acción cultural en el segundo; Gestión, Conservación y una lengua extranjera en el tercero; las selecciones temática y complementaria entre cuarto y quinto; y la pasantía en el sexto.
+- La proyección controla las nueve unidades técnico-profesionales nominales, una de nueve alternativas publicadas de comprensión lectora, los tres mínimos de crédito y la validación final de opción, electivas, equivalencias y pasantía.
+- Bedelías aporta 344 códigos únicos, 36 reglas explícitas y 304 unidades sin regla publicada. Sus alternativas y equivalencias se conservan dentro de cada opción, sin convertir el catálogo completo en una secuencia obligatoria.
+- La Tecnicatura Universitaria en Bienes Culturales Plan 2021 permanece separada: tiene otro título, 200 créditos, tres menciones y sedes del interior; su mención Museología no reemplaza las escolaridades del Plan 2011.
+- El generador ordena ahora conjuntamente los períodos comunes y específicos de planes con perfiles, de modo que la validación de egreso siempre queda después de la opción y de las electivas.
+- Registro de auditoría: hash `sha256:f5b63f8fcae859602bf2510100d3ab34d09b4211baaf327f2d5385ecd84c7638`. Cola general: 22 identidades pendientes; hash `sha256:95aabddc13d3fd3375f5ed77e31523af40b693e8026c41697683f1a5f2e5bccb`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 37 con sedes oficiales; hash `sha256:4f585548c95c7a783eb324a5bc01d3a9222e1916e107963d9013ff48d6a09d67`. Cola funcional vacía; hash `sha256:8dcd6ac4cb3a82ccb92c57f8dbbe761a9e6dc3363d55817de7976073020d1ba3`.
+- Siguiente paso: auditar la Licenciatura en Ingeniería de Medios Plan 2018, primera identidad reproducible restante.

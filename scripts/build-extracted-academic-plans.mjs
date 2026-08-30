@@ -579,6 +579,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     };
     courses.push(manualCourse);
     periodsByLabel.set("Validación de egreso", [manualCourse.id]);
+    commonPeriodsByLabel.set("Validación de egreso", [manualCourse.id]);
     requiredCourseGroups.push({
       id: "validacion-final-plan",
       label: curriculum.manualCompletionValidation,
@@ -638,10 +639,18 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       if (rightIndex < 0) return -1;
       return leftIndex - rightIndex;
     });
-  const commonPeriods = orderedPeriods(commonPeriodsByLabel);
+  const mergedPeriods = (...periodMaps) => {
+    const merged = new Map();
+    for (const periodMap of periodMaps) {
+      for (const [label, courseIds] of periodMap) {
+        for (const id of courseIds) addToPeriod(merged, label, id);
+      }
+    }
+    return merged;
+  };
   const pathwayPeriods = Object.fromEntries([...profilePeriodsById].map(([profileId, profilePeriods]) => [
     profileId,
-    [...commonPeriods, ...orderedPeriods(profilePeriods)],
+    orderedPeriods(mergedPeriods(commonPeriodsByLabel, profilePeriods)),
   ]));
   return {
     courses,

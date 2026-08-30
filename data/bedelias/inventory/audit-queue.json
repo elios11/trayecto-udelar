@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T03:34:39.248Z",
+  "generatedAt": "2026-08-30T03:51:29.561Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:a29f007df8e1102b70d87ca18b2078e73ccd5af6293621d807d7a44371b171f9"
+    "officialAuditRegistryHash": "sha256:f5b63f8fcae859602bf2510100d3ab34d09b4211baaf327f2d5385ecd84c7638"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 154,
-    "pendingCanonicalIdentities": 23,
+    "evidenceClosedCanonicalIdentities": 155,
+    "pendingCanonicalIdentities": 22,
     "byPriority": {
-      "official-sources-pending": 23
+      "official-sources-pending": 22
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -945,38 +945,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-30",
       "conclusion": "one-degree-flexible-trajectory"
+    },
+    {
+      "identity": "museologia:2011",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-30",
+      "conclusion": "one-technical-degree-six-thematic-options-closed-admission"
     }
   ],
   "queue": [
-    {
-      "identity": "museologia:2011",
-      "career": {
-        "name": "MUSEOLOGÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2011",
-        "name": "TÉCNICATURA UNIVERSITARIA EN MUSEOLOGÍA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FHUM",
-        "serviceName": "FACULTAD DE HUMANIDADES",
-        "planKey": "FHUM:museologia:2011",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FHUM",
-          "serviceName": "FACULTAD DE HUMANIDADES",
-          "planKey": "FHUM:museologia:2011",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "licenciatura en ingenieria de medios:2018",
       "career": {
@@ -1767,5 +1744,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:44aaea20f04f9c07bd93faa754e0305656dd6049639f4ede263ac9329481f08f"
+  "contentHash": "sha256:95aabddc13d3fd3375f5ed77e31523af40b693e8026c41697683f1a5f2e5bccb"
 }
