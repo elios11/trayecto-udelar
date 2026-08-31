@@ -108,7 +108,7 @@ test("conserva previaturas, catálogo y referencias internas válidas", () => {
 
 test("cierra Naval y avanza la cola a Ingeniería Química", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria naval:1997"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 163);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 14);
-  assert.equal(queue.queue[0].identity, "ingenieria quimica:2021");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 164);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 13);
+  assert.equal(queue.queue[0].identity, "licenciatura en computacion:2025");
 });

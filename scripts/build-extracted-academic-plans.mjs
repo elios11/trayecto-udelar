@@ -140,6 +140,12 @@ function campusIdsForPathway(audit, pathwayId) {
 }
 
 function buildPathways(audit, periods, courseRecords, campuses, officialCurriculum) {
+  const filterTrajectoryCatalog = (trajectory, courseIds) => {
+    if (!Array.isArray(trajectory.catalogSourceCourseIds)) return courseIds;
+    const allowedIds = new Set(trajectory.catalogSourceCourseIds
+      .map((sourceId) => officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId));
+    return courseIds.filter((id) => allowedIds.has(id));
+  };
   if (audit?.identity === "licenciatura en educacion fisica:2017") {
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => [trajectory.id, {
       label: trajectory.label,
@@ -161,9 +167,9 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       const compositionPeriods = officialCurriculum?.pathwayPeriods?.[trajectory.id];
       if (compositionPeriods) {
         const selectedCourseIds = new Set(compositionPeriods.flatMap((period) => period.courseIds));
-        const catalogCourseIds = audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
+        const catalogCourseIds = filterTrajectoryCatalog(trajectory, audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
           ? officialCurriculum.courses.map((course) => course.id).filter((id) => !selectedCourseIds.has(id))
-          : [];
+          : []);
         return [trajectory.id, {
           label: trajectory.label,
           description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
@@ -198,14 +204,14 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       const trailingBlockPeriods = sharedBlockPeriods.filter((period) => !/orientaci[oó]n/i.test(period.label));
       const trajectoryPeriods = [...leadingBlockPeriods, ...configuredTrajectoryPeriods, ...trailingBlockPeriods];
       const selectedCourseIds = new Set(trajectoryPeriods.flatMap((period) => period.courseIds));
-      const catalogCourseIds = audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
+      const catalogCourseIds = filterTrajectoryCatalog(trajectory, audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
         ? officialCurriculum.courses.map((course) => course.id)
           .filter((id) => !excludedIds.has(id) && !selectedCourseIds.has(id))
         : includedIds
           ? [...new Set((trajectory.periods ?? periods).flatMap((period) => period.courseIds ?? []))]
             .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
             .filter((id) => id && !excludedIds.has(id) && !includedIds.has(id))
-          : [];
+          : []);
       return [trajectory.id, {
         label: trajectory.label,
         description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
@@ -882,6 +888,11 @@ function buildProjection(entry, snapshot, audit) {
       : "Composición extraída de Bedelías. La auditoría oficial de títulos, mínimos, obligatoriedad y trayectoria está pendiente."
     : "Bedelías identifica este plan vigente, pero no publica su composición. No se inventan materias ni una trayectoria provisional.");
 
+  const sharedWith = [
+    ...(audit?.officialPlan?.sharedWith ?? []),
+    ...(entry.sourceOffers ?? []).map((offer) => offer.serviceName)
+      .filter((name) => Boolean(name) && name !== entry.canonicalSource.serviceName),
+  ].filter((name, index, names) => names.findIndex((candidate) => normalize(candidate) === normalize(name)) === index);
   return {
     planId,
     projection: {
@@ -903,11 +914,7 @@ function buildProjection(entry, snapshot, audit) {
         durationMonths: Number(audit?.officialPlan?.durationMonths) || Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
         ...(Number(audit?.officialPlan?.totalHours) > 0 ? { totalHours: Number(audit.officialPlan.totalHours) } : {}),
         campuses,
-        sharedWith: [...new Set([
-          ...(audit?.officialPlan?.sharedWith ?? []),
-          ...(entry.sourceOffers ?? []).map((offer) => offer.serviceName)
-            .filter((name) => Boolean(name) && name !== entry.canonicalSource.serviceName),
-        ])],
+        sharedWith,
         auditStatus,
         compositionAvailable,
         notice,
@@ -961,7 +968,8 @@ export async function buildExtractedAcademicPlans() {
       career: { name: plan.career.name, type: plan.career.type },
       plan: { ...plan.plan },
       canonicalSource: { serviceCode: preferredServiceCode, serviceName: global.services.find((service) => service.code === preferredServiceCode)?.name ?? plan.serviceName, state: plan.state, planKey: plan.key },
-      sourceOffers: audit.offerings?.map((offering) => ({ serviceCode: offering.serviceCode, serviceName: global.services.find((service) => service.code === offering.serviceCode)?.name ?? offering.serviceCode })) ?? [],
+      sourceOffers: audit.offerings?.filter((offering) => offering.includeInSharedWith !== false)
+        .map((offering) => ({ serviceCode: offering.serviceCode, serviceName: global.services.find((service) => service.code === offering.serviceCode)?.name ?? offering.serviceCode })) ?? [],
       priority: "official-evidence-complete",
       explicitSnapshotPath: preferredSnapshot,
     };
@@ -995,22 +1003,29 @@ export async function buildExtractedAcademicPlans() {
   for (const { entry, planId, projection, audit } of projections) {
     const facultyCode = audit?.officialPlan?.facultyCode ?? entry.canonicalSource.serviceCode;
     const facultyName = audit?.officialPlan?.facultyName ?? entry.canonicalSource.serviceName;
-    const facultyId = `bedelias-${facultyCode.toLocaleLowerCase()}`;
-    if (!facultyMap.has(facultyId)) facultyMap.set(facultyId, { id: facultyId, label: readableFacultyName(facultyName), careers: new Map() });
-    const faculty = facultyMap.get(facultyId);
     const careerName = audit?.officialPlan?.careerName ?? entry.career.name;
     const planYear = audit?.officialPlan?.planYear ?? entry.plan.year;
-    const careerId = `${facultyId}-${slug(careerName)}`;
-    if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: academicTitle(careerName), plans: [] });
-    faculty.careers.get(careerId).plans.push({
-      id: planId,
-      label: `Plan ${planYear}${projection.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
-      defaultTrajectoryId: Object.keys(projection.pathways)[0],
-      defaultCredentialId: projection.pathways[Object.keys(projection.pathways)[0]]?.credentialId
-        ?? projection.creditStructure.credentials.find((credential) => credential.id === "bedelias-degree")?.id
-        ?? projection.creditStructure.credentials.at(-1)?.id
-        ?? "bedelias-degree",
-    });
+    const catalogFacultyCodes = [facultyCode, ...(audit?.officialPlan?.catalogFacultyCodes ?? [])]
+      .filter((code, index, codes) => codes.findIndex((candidate) => normalize(candidate) === normalize(code)) === index);
+    for (const catalogFacultyCode of catalogFacultyCodes) {
+      const catalogFacultyName = normalize(catalogFacultyCode) === normalize(facultyCode)
+        ? facultyName
+        : global.services.find((service) => normalize(service.code) === normalize(catalogFacultyCode))?.name ?? catalogFacultyCode;
+      const facultyId = `bedelias-${catalogFacultyCode.toLocaleLowerCase()}`;
+      if (!facultyMap.has(facultyId)) facultyMap.set(facultyId, { id: facultyId, label: readableFacultyName(catalogFacultyName), careers: new Map() });
+      const faculty = facultyMap.get(facultyId);
+      const careerId = `${facultyId}-${slug(careerName)}`;
+      if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: academicTitle(careerName), plans: [] });
+      faculty.careers.get(careerId).plans.push({
+        id: planId,
+        label: `Plan ${planYear}${projection.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
+        defaultTrajectoryId: Object.keys(projection.pathways)[0],
+        defaultCredentialId: projection.pathways[Object.keys(projection.pathways)[0]]?.credentialId
+          ?? projection.creditStructure.credentials.find((credential) => credential.id === "bedelias-degree")?.id
+          ?? projection.creditStructure.credentials.at(-1)?.id
+          ?? "bedelias-degree",
+      });
+    }
   }
   const catalog = [...facultyMap.values()].map((faculty) => ({ ...faculty, careers: [...faculty.careers.values()].map((career) => ({ ...career, plans: career.plans.sort((a, b) => b.label.localeCompare(a.label, "es")) })) }));
   await writeFile(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");

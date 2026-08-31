@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:a63e7dcf04f5bc173185dd5b72d32e7e02911922a330809724a92e7c565b208f",
-    "officialAuditHash": "sha256:dce914102b3a6d794acedf96bfebdf2346dfa528b67dcd1d4c7460e35ffb1422",
+    "auditQueueHash": "sha256:bd16cee0de0d839312ffa9fc3b9cc17a5b728ca754c39c8a23e88faaec99f2c8",
+    "officialAuditHash": "sha256:6bd48322a5b081a5049ecb11419afcd616797ae4dce953bd28f9335409ecc77c",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 39,
+    "plansWithOfficialCampuses": 40,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1082,9 +1082,12 @@
       "planId": "bedelias-fing-ingenieria-quimica-2021",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-quimica-2021.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "lic en ingenieria biologica:2013",
@@ -1570,5 +1573,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:da218baa1f7a1f7e6fc6823a004862fbb3bd88c3b3c6664e40736f33a4108046"
+  "contentHash": "sha256:6394b715d7e5aac83de50164349ea1dd3c7990b52efcd6e143b6d043c642dc3a"
 }

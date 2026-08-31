@@ -13,7 +13,12 @@ test("integra una sola proyección por identidad canónica vigente y excluye pla
   assert.equal(report.counts.excludedFromCurrentUi, 38);
   assert.equal(new Set(report.plans.map((plan) => plan.identity)).size, report.plans.length);
   assert.equal(new Set(report.plans.map((plan) => plan.planId)).size, report.plans.length);
-  assert.equal(catalog.flatMap((faculty) => faculty.careers).flatMap((career) => career.plans).length, 139);
+  const catalogPlanIds = catalog
+    .flatMap((faculty) => faculty.careers)
+    .flatMap((career) => career.plans)
+    .map((plan) => plan.id);
+  assert.equal(catalogPlanIds.length, 140);
+  assert.equal(new Set(catalogPlanIds).size, 139);
   assert.ok(!report.plans.some((plan) => plan.identity === "diplomatura en musica:1994"));
   assert.ok(!report.plans.some((plan) => plan.identity === "escalonada de enfermeria:2001"));
   assert.ok(!report.plans.some((plan) => plan.identity === "enfermeria universitaria:1983"));
@@ -101,6 +106,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["licenciatura biologia humana:2004", ["montevideo", "salto", "paysandu", "rivera", "tacuarembo"]],
     ["ingenieria de produccion:2010", ["montevideo", "maldonado", "paysandu", "rivera", "rocha", "salto", "tacuarembo"]],
     ["ingenieria industrial mecanica:1997", ["montevideo", "paysandu", "tacuarembo"]],
+    ["ingenieria quimica:2021", ["montevideo", "salto"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

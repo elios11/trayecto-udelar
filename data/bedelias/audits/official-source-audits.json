@@ -60781,8 +60781,592 @@
       ],
       "uiNotice": "Plan 1997 vigente de 450 créditos en Montevideo. Podés seguir la currícula sugerida 2017 o armar un recorrido personalizado; en ambos casos deben cumplirse los mínimos y aprobarse el currículo individual.",
       "remainingWork": "La oferta semestral y las previaturas vigentes deben verificarse en Bedelías; la currícula sugerida es orientativa y puede sustituirse respetando los mínimos y la aprobación del Consejo de Facultad."
+    },
+    {
+      "identity": "ingenieria quimica:2021",
+      "career": "Ingeniería Química",
+      "planYear": "2021",
+      "reviewedAt": "2026-08-31",
+      "status": "official-evidence-complete",
+      "scope": "current-shared-degree-title-credit-structure-minima-final-project-flexible-curriculum-entry-routes-and-partial-regional-offering",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Consejo Directivo Central, 21/12/2021",
+          "Consejo de Facultad de Ingeniería, 17/02/2022",
+          "Consejo de Facultad de Química, 24/02/2022"
+        ],
+        "planYear": "2021",
+        "title": "Ingeniero Químico",
+        "careerName": "Ingeniería Química",
+        "facultyCode": "FING",
+        "facultyName": "Facultad de Ingeniería",
+        "catalogFacultyCodes": [
+          "FING",
+          "FQ"
+        ],
+        "sharedWith": [
+          "Facultad de Química"
+        ],
+        "durationMonths": 60,
+        "semesters": 10,
+        "minimumCredits": 450,
+        "current": true,
+        "pathwayLabel": "Recorrido",
+        "degreeRule": "El Plan 2021 exige un currículo aprobado por la Comisión de Carrera, los mínimos por grupos y áreas, al menos 450 créditos y el Proyecto Final de Carrera.",
+        "trajectories": [
+          {
+            "id": "curricula-personalizada",
+            "credentialId": "ingeniero-quimico",
+            "label": "Currícula personalizada",
+            "description": "Recorrido flexible del Plan 2021 en Montevideo. Elegí unidades del catálogo hasta cubrir todos los mínimos y 450 créditos; la Comisión de Carrera debe aprobar el currículo individual.",
+            "campusIds": [
+              "montevideo"
+            ],
+            "periods": [
+              {
+                "label": "Orientación del recorrido",
+                "courseIds": [
+                  "iq-flexibilidad"
+                ]
+              }
+            ],
+            "excludedCourseIds": [
+              "iq-ingreso-fing",
+              "iq-ingreso-fq",
+              "iq-inicio-salto"
+            ]
+          },
+          {
+            "id": "ingreso-fing",
+            "credentialId": "ingeniero-quimico",
+            "label": "Ingreso por FING",
+            "description": "Inicio por Facultad de Ingeniería en Montevideo. La selección inicial depende de la Prueba Inicial Obligatoria y puede incluir Matemática Inicial; después se continúa sobre el mismo Plan 2021 flexible y compartido.",
+            "campusIds": [
+              "montevideo"
+            ],
+            "periods": [
+              {
+                "label": "Orientación del recorrido",
+                "courseIds": [
+                  "iq-ingreso-fing"
+                ]
+              }
+            ],
+            "excludedCourseIds": [
+              "iq-flexibilidad",
+              "iq-ingreso-fq",
+              "iq-inicio-salto"
+            ]
+          },
+          {
+            "id": "ingreso-fq",
+            "credentialId": "ingeniero-quimico",
+            "label": "Ingreso por FQ",
+            "description": "Inicio por Facultad de Química en Montevideo, priorizando unidades básicas de Química y Matemática antes de incorporar la formación técnica de FING. Es el mismo Plan 2021 y el mismo título.",
+            "campusIds": [
+              "montevideo"
+            ],
+            "periods": [
+              {
+                "label": "Orientación del recorrido",
+                "courseIds": [
+                  "iq-ingreso-fq"
+                ]
+              }
+            ],
+            "excludedCourseIds": [
+              "iq-flexibilidad",
+              "iq-ingreso-fing",
+              "iq-inicio-salto"
+            ]
+          },
+          {
+            "id": "inicio-salto",
+            "credentialId": "ingeniero-quimico",
+            "label": "Primer año en Salto",
+            "description": "Primer año en el Cenur Litoral Norte, sede Salto. El catálogo muestra únicamente las unidades regionales detectadas en Bedelías; para completar la carrera se continúa en Montevideo sin crear un segundo plan ni perder el progreso.",
+            "campusIds": [
+              "salto"
+            ],
+            "periods": [
+              {
+                "label": "Orientación del recorrido",
+                "courseIds": [
+                  "iq-inicio-salto"
+                ]
+              }
+            ],
+            "excludedCourseIds": [
+              "iq-flexibilidad",
+              "iq-ingreso-fing",
+              "iq-ingreso-fq"
+            ],
+            "catalogSourceCourseIds": [
+              "CENURLN-CIM10",
+              "CENURLN-CIM24",
+              "CENURLN-CH201",
+              "CENURLN-SRN03",
+              "CENURLN-SRN10",
+              "CENURLN-SRN02",
+              "CENURLN-SRN09",
+              "CENURLN-SRN11",
+              "CENURLN-REF04",
+              "CENURLN-SRN26",
+              "CENURLN-SRN05",
+              "CENURLN-SRN12",
+              "CENURLN-SRN08",
+              "CENURLN-SRN07",
+              "CENURLN-AA808",
+              "CENURLN-AA504",
+              "CENURLN-SRN06",
+              "CENURLN-SRN13"
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf",
+          "pathwayLabel": "Recorrido",
+          "pathwayDescription": "Un único Plan 2021 compartido, con recorridos de ingreso y sede que conservan el mismo progreso, requisitos y título.",
+          "includeAllCoursesInPathwayCatalog": true,
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "mergeSplitCompositionCourses": true,
+          "courseOverrides": {
+            "Q47": {
+              "periodLabel": "Química y Avanzadas",
+              "mergedTotalCredits": 4
+            }
+          },
+          "pathRequirementMap": {
+            "Q1": "iq-formacion-basica",
+            "Q11": "iq-matematicas",
+            "Q12": "iq-fisica",
+            "Q13": "iq-quimica",
+            "Q14": "iq-biologicas",
+            "Q2": "iq-formacion-especifica",
+            "Q21": "iq-troncales",
+            "Q22": "iq-avanzadas",
+            "Q3": "iq-tecnicas-no-especificas",
+            "Q31": "iq-tecnicas",
+            "Q4": "iq-complementarias-grupo",
+            "Q41": "iq-complementarias"
+          },
+          "periodLabelMap": {
+            "Q11": "Matemáticas",
+            "Q12": "Física",
+            "Q13": "Química",
+            "Q14": "Ciencias Biológicas",
+            "Q21": "Troncales",
+            "Q22": "Avanzadas",
+            "Q31": "Técnicas no específicas",
+            "Q41": "Complementarias"
+          },
+          "periodOrder": [
+            "Orientación del recorrido",
+            "Matemáticas",
+            "Física",
+            "Química",
+            "Ciencias Biológicas",
+            "Troncales",
+            "Avanzadas",
+            "Química y Avanzadas",
+            "Técnicas no específicas",
+            "Complementarias",
+            "Validación de egreso"
+          ],
+          "creditRequirements": [
+            {
+              "id": "iq-formacion-basica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Áreas de formación básica de ingeniería",
+              "shortName": "Formación básica",
+              "minCredits": 190,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-matematicas",
+              "parentId": "iq-formacion-basica",
+              "kind": "group",
+              "name": "Matemáticas",
+              "shortName": "Matemáticas",
+              "minCredits": 70,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-fisica",
+              "parentId": "iq-formacion-basica",
+              "kind": "group",
+              "name": "Física",
+              "shortName": "Física",
+              "minCredits": 30,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-quimica",
+              "parentId": "iq-formacion-basica",
+              "kind": "group",
+              "name": "Química",
+              "shortName": "Química",
+              "minCredits": 80,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-biologicas",
+              "parentId": "iq-formacion-basica",
+              "kind": "group",
+              "name": "Ciencias Biológicas",
+              "shortName": "Cs. Biológicas",
+              "minCredits": 5,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-formacion-especifica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Áreas de formación específica en Ingeniería Química",
+              "shortName": "Formación específica",
+              "minCredits": 190,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-troncales",
+              "parentId": "iq-formacion-especifica",
+              "kind": "group",
+              "name": "Troncales",
+              "shortName": "Troncales",
+              "minCredits": 75,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-avanzadas",
+              "parentId": "iq-formacion-especifica",
+              "kind": "group",
+              "name": "Avanzadas",
+              "shortName": "Avanzadas",
+              "minCredits": 80,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-tecnicas-no-especificas",
+              "parentId": null,
+              "kind": "group",
+              "name": "Áreas técnicas no específicas",
+              "shortName": "Técnicas no específicas",
+              "minCredits": 30,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-tecnicas",
+              "parentId": "iq-tecnicas-no-especificas",
+              "kind": "group",
+              "name": "Técnicas no específicas",
+              "shortName": "Técnicas",
+              "minCredits": 30,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-complementarias-grupo",
+              "parentId": null,
+              "kind": "group",
+              "name": "Áreas complementarias",
+              "shortName": "Complementarias",
+              "minCredits": 5,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-complementarias",
+              "parentId": "iq-complementarias-grupo",
+              "kind": "group",
+              "name": "Complementarias",
+              "shortName": "Complementarias",
+              "minCredits": 5,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "iq-proyecto-industrial-1",
+              "label": "Aprobá Proyecto Industrial 1",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "Q80"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf"
+            },
+            {
+              "id": "iq-proyecto-industrial-2",
+              "label": "Aprobá Proyecto Industrial 2",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "Q85",
+                "Q57"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf"
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "iq-flexibilidad",
+              "name": "Elegí unidades hasta cubrir los mínimos oficiales y 450 créditos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            },
+            {
+              "id": "iq-ingreso-fing",
+              "name": "Definí el inicio en FING según la Prueba Inicial Obligatoria",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf"
+            },
+            {
+              "id": "iq-ingreso-fq",
+              "name": "Iniciá en FQ con la formación básica de Química y Matemática",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fq.edu.uy/?q=en%2Fnode%2F1941"
+            },
+            {
+              "id": "iq-inicio-salto",
+              "name": "Cursá el primer año en Salto y continuá la carrera en Montevideo",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://udelar.edu.uy/carrera/ingenieria-quimica"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "ingeniero-quimico",
+              "title": "Ingeniero Químico",
+              "minTotalCredits": 450,
+              "nodeRequirements": [
+                {
+                  "nodeId": "iq-formacion-basica",
+                  "minCredits": 190
+                },
+                {
+                  "nodeId": "iq-matematicas",
+                  "minCredits": 70
+                },
+                {
+                  "nodeId": "iq-fisica",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "iq-quimica",
+                  "minCredits": 80
+                },
+                {
+                  "nodeId": "iq-biologicas",
+                  "minCredits": 5
+                },
+                {
+                  "nodeId": "iq-formacion-especifica",
+                  "minCredits": 190
+                },
+                {
+                  "nodeId": "iq-troncales",
+                  "minCredits": 75
+                },
+                {
+                  "nodeId": "iq-avanzadas",
+                  "minCredits": 80
+                },
+                {
+                  "nodeId": "iq-tecnicas-no-especificas",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "iq-tecnicas",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "iq-complementarias-grupo",
+                  "minCredits": 5
+                },
+                {
+                  "nodeId": "iq-complementarias",
+                  "minCredits": 5
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "iq-proyecto-industrial-1",
+                "iq-proyecto-industrial-2",
+                "validacion-final-plan"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf"
+            }
+          ],
+          "manualCompletionValidation": "Aprobación del currículo individual por la Comisión de Carrera de Ingeniería Química"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FING",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio corresponsable y carrera completa",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada",
+            "ingreso-fing"
+          ]
+        },
+        {
+          "serviceCode": "FQ",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio corresponsable y carrera completa",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada",
+            "ingreso-fq"
+          ]
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "sede de primer año con continuidad en Montevideo",
+          "admissionStatus": "active",
+          "includeInSharedWith": false,
+          "trajectoryIds": [
+            "inicio-salto"
+          ]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fing-ingenieria-quimica-2021.json",
+        "relatedSnapshots": [
+          "data/bedelias/fq-ingenieria-quimica-2021.json",
+          "data/bedelias/cenurln-ingenieria-quimica-2021.json"
+        ],
+        "metadataCurrent": true,
+        "compositionMatterCount": 376,
+        "normalizedCourseCount": 375,
+        "compositionGroupCount": 12,
+        "prerequisiteRuleCount": 256,
+        "noPublishedRuleCount": 88,
+        "compositionFingerprint": "sha256:7a3df2e58f9e61bf80854f2b24a665ad7516df4d80897495063796316340b5a7",
+        "interpretation": "FING, FQ y CENURLN publican la misma composición de 375 códigos para el Plan 2021. Cambia la cobertura de previaturas extraída por servicio, no el currículo canónico; CENURLN aporta 18 códigos locales para el tramo de Salto."
+      },
+      "conclusion": {
+        "canonicalModel": "one-shared-degree-with-entry-and-partial-regional-pathways",
+        "canonicalIdentity": "ingenieria quimica:2021",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales confirman un único Plan 2021 y un único título compartido por FING y FQ. Salto ofrece solamente el primer año, por lo que se modela como tramo territorial del mismo progreso y no como otra carrera.",
+        "normalization": [
+          "Publicar una única Ingeniería Química Plan 2021 con un solo progreso y título.",
+          "Separar los recorridos de ingreso por FING y FQ sin presentarlos como orientaciones o títulos diferentes.",
+          "Ofrecer Salto como sede del primer año, restringida a las unidades regionales identificadas, y explicar la continuidad en Montevideo.",
+          "Controlar los mínimos de cuatro grupos y ocho áreas, 450 créditos, Proyecto Industrial I y II y aprobación del currículo individual.",
+          "Conservar el catálogo completo de Bedelías para los recorridos centrales y no convertir una currícula sugerida en obligación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf",
+          "authority": "Plan de Estudios 2021 de Ingeniería Química, Udelar",
+          "supports": [
+            "título",
+            "cinco años",
+            "450 créditos",
+            "mínimos",
+            "Proyecto Final",
+            "currículo individual",
+            "única orientación"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/ingenieria-quimica",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "carrera compartida",
+            "ingreso por FING o FQ",
+            "primer año en Salto"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/carrera/grado/ingenier%C3%ADa-qu%C3%ADmica",
+          "authority": "Página vigente de la carrera, Facultad de Ingeniería",
+          "supports": [
+            "Plan 2021",
+            "código 53-0",
+            "duración",
+            "créditos",
+            "ingreso por ambos servicios"
+          ]
+        },
+        {
+          "url": "https://www.fq.edu.uy/?q=en%2Fnode%2F1941",
+          "authority": "Página vigente del Plan 2021, Facultad de Química",
+          "supports": [
+            "ingreso por FQ",
+            "formación básica inicial",
+            "incorporación temprana de Ingeniería Química"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf",
+          "authority": "Informe de Autoevaluación ARCU-SUR 2025, FING y FQ",
+          "supports": [
+            "aprobaciones",
+            "tres currículas de ingreso",
+            "Proyecto Industrial I y II",
+            "Pasantía",
+            "flexibilidad"
+          ]
+        },
+        {
+          "url": "https://www.litoralnorte.udelar.edu.uy/etiquetas/ciclo-inicial",
+          "authority": "Oferta de ciclos iniciales, Cenur Litoral Norte",
+          "supports": [
+            "asignaturas regionales disponibles",
+            "articulación con Ingeniería Química"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "suggestedCurriculaFiles",
+          "resolution": "El informe ARCU-SUR enlaza tres currículas 2024, pero los archivos de EVA ya no están disponibles anónimamente. La UI conserva sus rutas de ingreso como guías sin fijar una secuencia completa no verificable y ofrece el catálogo vigente para planificar."
+        },
+        {
+          "field": "regionalScope",
+          "resolution": "El catálogo de Udelar limita Salto al primer año. Se muestra como sede inicial del mismo Plan 2021, con continuidad en Montevideo, y nunca como carrera completa o variante curricular."
+        },
+        {
+          "field": "minimumGaps",
+          "resolution": "Los mínimos por áreas suman 375 créditos, mientras los grupos exigen 190 básicos y 190 específicos y el título exige 450. La UI controla cada nivel de forma independiente sin convertir las diferencias en una bolsa rígida inventada."
+        },
+        {
+          "field": "sharedCourseQ47",
+          "resolution": "Q47 aparece en Química y Avanzadas con cuatro créditos. Se representa una sola vez, conserva elegibilidad en ambas áreas y cuenta cuatro créditos en el total."
+        },
+        {
+          "field": "servicePrerequisiteCoverage",
+          "resolution": "Los tres snapshots tienen la misma huella curricular, pero FING, FQ y CENURLN exponen distinta cobertura de previaturas. Se conserva FING como fuente canónica de reglas y las diferencias no generan carreras duplicadas."
+        }
+      ],
+      "uiNotice": "Plan 2021 compartido por FING y FQ. Podés ingresar por cualquiera de ambas facultades o cursar el primer año en Salto; todos los recorridos mantienen el mismo título, mínimos y progreso, y Salto continúa luego en Montevideo.",
+      "remainingWork": "La oferta semestral y las previaturas vigentes deben verificarse en Bedelías; las secuencias sugeridas pueden actualizarse por la Comisión de Carrera."
     }
   ],
-  "contentHash": "sha256:dce914102b3a6d794acedf96bfebdf2346dfa528b67dcd1d4c7460e35ffb1422",
-  "generatedAt": "2026-08-30T00:00:00.000Z"
+  "contentHash": "sha256:6bd48322a5b081a5049ecb11419afcd616797ae4dce953bd28f9335409ecc77c",
+  "generatedAt": "2026-08-31T00:00:00.000Z"
 }

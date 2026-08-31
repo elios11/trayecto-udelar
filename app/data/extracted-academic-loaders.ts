@@ -567,8 +567,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-quimica-2021": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-quimica-2021.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["curricula-personalizada","ingreso-fing","ingreso-fq","inicio-salto"],
+    pathwayLabel: "Recorrido",
     minCredits: 450,
   },
   "bedelias-fing-lic-en-ingenieria-biologica-2013": {

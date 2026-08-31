@@ -26,5 +26,7 @@ test("filters careers and plans through the active academic hierarchy", () => {
   assert.match(pageSource, /activeFaculty\.careers\.map/);
   assert.match(pageSource, /activeCareer\.plans\.map/);
   assert.match(pageSource, /selectAcademicPlan/);
+  assert.match(pageSource, /facultyId: activeFaculty\.id/);
+  assert.match(pageSource, /selectAcademicPlan\(nextPlan, nextFaculty\.id\)/);
   assert.doesNotMatch(pageSource, /planYear === "electrica-2023" \? \(\s*<option value="electrica-2023"/);
 });

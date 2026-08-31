@@ -1874,3 +1874,15 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:dce914102b3a6d794acedf96bfebdf2346dfa528b67dcd1d4c7460e35ffb1422`. Cola general: 14 identidades pendientes; hash `sha256:a63e7dcf04f5bc173185dd5b72d32e7e02911922a330809724a92e7c565b208f`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:da218baa1f7a1f7e6fc6823a004862fbb3bd88c3b3c6664e40736f33a4108046`. Cola funcional vacía; hash `sha256:8c9fa7c660e2eea27565536ad5cbb8a5b2f8d5ed7c04fc2bb7d437fc3ecf602e`.
 - Siguiente paso: auditar Ingeniería Química Plan 2021, primera identidad reproducible restante.
+
+### Ingeniería Química Plan 2021 — carrera compartida y primer año en Salto operativos 2026-08-31
+
+- El Plan 2021, FING, FQ y el catálogo vigente de Udelar confirman una única Ingeniería Química compartida, de cinco años, 450 créditos y título `Ingeniero Químico`. El ingreso por FING o FQ no crea orientaciones ni carreras distintas.
+- La UI ofrece una currícula personalizada y dos recorridos iniciales en Montevideo —ingreso por FING e ingreso por FQ— sobre el mismo progreso. Las secuencias completas no se fijan como obligatorias: el informe ARCU-SUR enlaza tres currículas 2024, pero sus archivos de EVA dejaron de estar disponibles anónimamente; se conserva la guía de ingreso y el catálogo vigente sin inventar una malla cerrada.
+- Salto aparece como sede seleccionable únicamente para el primer año. Su recorrido muestra las 18 unidades regionales identificadas por el snapshot de CENURLN y explica que la carrera continúa en Montevideo; no se duplica el plan ni se presenta la sede como carrera completa.
+- El egreso controla simultáneamente 190 créditos de formación básica, 190 de formación específica, 30 de técnicas no específicas y 5 complementarios, además de los ocho mínimos subordinados que suman 375, 450 créditos totales, Proyecto Industrial I y II y la aprobación del currículo individual por la Comisión de Carrera.
+- FING, FQ y CENURLN publican la misma composición de 376 apariciones normalizadas a 375 códigos. `Q47` figura en Química y Avanzadas: se representa una sola vez, conserva elegibilidad en ambas áreas y cuenta cuatro créditos en el total. Las diferencias entre servicios corresponden a cobertura de previaturas, no a currículas distintas.
+- La proyección contiene 380 componentes: 375 unidades de Bedelías, cuatro orientaciones de recorrido y una validación final. Conserva 168 reglas publicadas y 88 unidades consultadas sin regla explícita.
+- Registro de auditoría: hash `sha256:6bd48322a5b081a5049ecb11419afcd616797ae4dce953bd28f9335409ecc77c`. Cola general: 13 identidades pendientes; hash `sha256:bd16cee0de0d839312ffa9fc3b9cc17a5b728ca754c39c8a23e88faaec99f2c8`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:6394b715d7e5aac83de50164349ea1dd3c7990b52efcd6e143b6d043c642dc3a`. Cola funcional vacía.
+- Siguiente paso: auditar Licenciatura en Computación Plan 2025, primera identidad reproducible restante.

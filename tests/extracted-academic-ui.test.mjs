@@ -9,7 +9,7 @@ test("la sede es un selector accesible e independiente de plan y trayectoria", (
   assert.match(page, /className="campus-selector"[\s\S]*?<span>Sede<\/span>[\s\S]*?<select value=\{activeCampus\?\.id \?\? ""\}/);
   assert.match(page, /setCampusId\(nextCampus\.id\)/);
   assert.match(page, /resolveCampusPathway\(activeRegisteredPlan\?\.pathways \?\? \{\}, nextCampus, ""\)/);
-  assert.match(page, /JSON\.stringify\(\{ planId: planYear, trajectoryId, campusId \}\)/);
+  assert.match(page, /JSON\.stringify\(\{ facultyId: activeFaculty\.id, planId: planYear, trajectoryId, campusId \}\)/);
   assert.match(page, /typeof selection\.campusId === "string"/);
 });
 

@@ -583,6 +583,7 @@ const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, in
 export default function Home() {
   const [appMode, setAppMode] = useState<AppMode>("curriculum");
   const [planYear, setPlanYear] = useState<PlanId>("2025");
+  const [facultyId, setFacultyId] = useState("fing");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
   const [campusId, setCampusId] = useState("");
   const [progress, setProgress] = useState<PlanProgress>(() => createAcademicPlanRecord(() => ({})));
@@ -827,9 +828,12 @@ export default function Home() {
   const activeCampus = resolveCampus(registeredCampuses, campusId) as CampusOption | undefined;
   const registeredPathwayEntries = availablePathwayEntries(activeRegisteredPlan?.pathways ?? {}, activeCampus) as Array<[string, RegisteredProjection["pathways"][string]]>;
   const activeRegisteredPathwayId = resolveCampusPathway(activeRegisteredPlan?.pathways ?? {}, activeCampus, trajectoryId);
-  const activeFaculty = academicCatalog.find((faculty) => faculty.careers.some((career) => career.plans.some((plan) => plan.id === planYear))) ?? academicCatalog[0];
+  const selectedFaculty = academicCatalog.find((faculty) => faculty.id === facultyId);
+  const activeFaculty = selectedFaculty?.careers.some((career) => career.plans.some((plan) => plan.id === planYear))
+    ? selectedFaculty
+    : academicCatalog.find((faculty) => faculty.careers.some((career) => career.plans.some((plan) => plan.id === planYear))) ?? academicCatalog[0];
   const activeCareer = activeFaculty.careers.find((career) => career.plans.some((plan) => plan.id === planYear)) ?? activeFaculty.careers[0];
-  const selectAcademicPlan = async (nextPlan: AcademicPlanOption) => {
+  const selectAcademicPlan = async (nextPlan: AcademicPlanOption, nextFacultyId = activeFaculty.id) => {
     const nextRegisteredPlan = isRegisteredAcademicPlan(nextPlan.id) ? await loadRegisteredPlan(nextPlan.id) : null;
     if (isRegisteredAcademicPlan(nextPlan.id) && !nextRegisteredPlan) {
       setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar el plan nuevamente. Tu progreso no se modificó." });
@@ -850,6 +854,7 @@ export default function Home() {
     setTrajectoryId(nextPlan.defaultTrajectoryId);
     setCampusId(nextRegisteredPlan?.campuses?.[0]?.id ?? "");
     setCredentialId(nextPlan.defaultCredentialId);
+    setFacultyId(nextFacultyId);
     setPlanYear(nextPlan.id);
     setFullElectivesCatalogExpanded(false);
     setSelected(null);
@@ -1048,10 +1053,14 @@ export default function Home() {
       const savedAcademicSelection = localStorage.getItem(ACADEMIC_SELECTION_STORAGE_KEY);
       if (savedAcademicSelection) {
         const selection = JSON.parse(savedAcademicSelection) as Record<string, unknown>;
-        const selectedPlan = academicCatalog
+        const savedFaculty = typeof selection.facultyId === "string"
+          ? academicCatalog.find((faculty) => faculty.id === selection.facultyId)
+          : undefined;
+        const selectedPlan = (savedFaculty ? [savedFaculty] : academicCatalog)
           .flatMap((faculty) => faculty.careers)
           .flatMap((career) => career.plans)
-          .find((plan) => plan.id === selection.planId);
+          .find((plan) => plan.id === selection.planId)
+          ?? academicCatalog.flatMap((faculty) => faculty.careers).flatMap((career) => career.plans).find((plan) => plan.id === selection.planId);
         if (selectedPlan) {
           const candidate = typeof selection.trajectoryId === "string" ? selection.trajectoryId : selectedPlan.defaultTrajectoryId;
           const isValid = isRegisteredAcademicPlan(selectedPlan.id)
@@ -1063,6 +1072,7 @@ export default function Home() {
                 : selectedPlan.id === "civil-2021" ? civilProfileIds.has(candidate)
                   : candidate === "suggested";
           setPlanYear(selectedPlan.id);
+          setFacultyId(savedFaculty?.careers.some((career) => career.plans.some((plan) => plan.id === selectedPlan.id)) ? savedFaculty.id : "fing");
           setTrajectoryId(isValid ? candidate : selectedPlan.defaultTrajectoryId);
           setCampusId(typeof selection.campusId === "string" ? selection.campusId : "");
           setCredentialId(selectedPlan.defaultCredentialId);
@@ -1129,8 +1139,8 @@ export default function Home() {
 
   useEffect(() => {
     if (!hydrated) return;
-    localStorage.setItem(ACADEMIC_SELECTION_STORAGE_KEY, JSON.stringify({ planId: planYear, trajectoryId, campusId }));
-  }, [planYear, trajectoryId, campusId, hydrated]);
+    localStorage.setItem(ACADEMIC_SELECTION_STORAGE_KEY, JSON.stringify({ facultyId: activeFaculty.id, planId: planYear, trajectoryId, campusId }));
+  }, [activeFaculty.id, planYear, trajectoryId, campusId, hydrated]);
 
   useEffect(() => {
     if (planYear !== "1997" || !hydrated || !hasStoredExtendedElectiveProgress || extendedElectivesData || extendedElectivesLoadState !== "idle") return;
@@ -1723,7 +1733,7 @@ export default function Home() {
               <select value={activeFaculty.id} onChange={(event) => {
                 const nextFaculty = academicCatalog.find((faculty) => faculty.id === event.target.value);
                 const nextPlan = nextFaculty?.careers[0]?.plans[0];
-                if (nextPlan) void selectAcademicPlan(nextPlan);
+                if (nextPlan && nextFaculty) void selectAcademicPlan(nextPlan, nextFaculty.id);
               }}>
                 {academicCatalog.map((faculty) => <option value={faculty.id} key={faculty.id}>{faculty.label}</option>)}
               </select>
