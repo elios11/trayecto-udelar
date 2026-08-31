@@ -61365,8 +61365,489 @@
       ],
       "uiNotice": "Plan 2021 compartido por FING y FQ. Podés ingresar por cualquiera de ambas facultades o cursar el primer año en Salto; todos los recorridos mantienen el mismo título, mínimos y progreso, y Salto continúa luego en Montevideo.",
       "remainingWork": "La oferta semestral y las previaturas vigentes deben verificarse en Bedelías; las secuencias sugeridas pueden actualizarse por la Comisión de Carrera."
+    },
+    {
+      "identity": "licenciatura en computacion:2025",
+      "career": "Licenciatura en Computación",
+      "planYear": "2025",
+      "reviewedAt": "2026-08-31",
+      "status": "official-evidence-complete",
+      "scope": "current-degree-intermediate-title-direct-entry-duration-credits-area-minima-final-work-flexible-curriculum-and-multi-campus-offering",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad de Ingeniería, Resolución N.º 106, 27/08/2024",
+          "Consejo Directivo Central, Resolución N.º 7, 21/05/2025",
+          "Diario Oficial, 06/10/2025"
+        ],
+        "planYear": "2025",
+        "title": "Licenciado en Computación",
+        "careerName": "Licenciatura en Computación",
+        "facultyCode": "FING",
+        "facultyName": "Facultad de Ingeniería",
+        "sharedWith": [],
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 360,
+        "current": true,
+        "effectiveFrom": 2026,
+        "pathwayLabel": "Recorrido",
+        "degreeRule": "El Plan 2025 exige al menos 360 créditos, los mínimos por grupos y áreas, un trabajo final integrador de 20 créditos y la aprobación del currículo individual por la Comisión de Carrera.",
+        "trajectories": [
+          {
+            "id": "curricula-personalizada",
+            "label": "Currícula personalizada",
+            "description": "Plan 2025 flexible y común a todas las sedes. Elegí unidades curriculares hasta cubrir los mínimos oficiales, 360 créditos y el trabajo final; la Comisión de Carrera valida el currículo individual.",
+            "campusIds": [
+              "montevideo",
+              "tacuarembo",
+              "colonia",
+              "salto",
+              "paysandu"
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf",
+          "pathwayLabel": "Recorrido",
+          "pathwayDescription": "Un único Plan 2025 flexible y directo, disponible en cinco sedes, con el mismo progreso, requisitos y títulos.",
+          "includeAllCoursesInPathwayCatalog": true,
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "pathRequirementMap": {
+            "A": "liccomp-basic",
+            "A.1": "liccomp-math",
+            "A.2": "liccomp-foundations",
+            "B": "liccomp-tech",
+            "B.1": "liccomp-systems",
+            "B.2": "liccomp-software",
+            "B.3": "liccomp-data",
+            "B.4": "liccomp-applied",
+            "B.5": "liccomp-integrating",
+            "C": "liccomp-complementary",
+            "C.1": "liccomp-industrial",
+            "C.2": "liccomp-society"
+          },
+          "periodLabelMap": {
+            "A.1": "Matemática y Ciencias Experimentales",
+            "A.2": "Fundamentos de la Computación",
+            "B.1": "Fundamentos de Sistemas",
+            "B.2": "Ingeniería de Software",
+            "B.3": "Gestión de Datos e Información",
+            "B.4": "Computación Aplicada",
+            "B.5": "Actividades Integradoras",
+            "C.1": "Ingeniería Industrial",
+            "C.2": "Ingeniería y Sociedad"
+          },
+          "periodOrder": [
+            "Orientación del recorrido",
+            "Matemática y Ciencias Experimentales",
+            "Fundamentos de la Computación",
+            "Fundamentos de Sistemas",
+            "Ingeniería de Software",
+            "Gestión de Datos e Información",
+            "Computación Aplicada",
+            "Actividades Integradoras",
+            "Ingeniería Industrial",
+            "Ingeniería y Sociedad",
+            "Trabajo final",
+            "Validación de egreso"
+          ],
+          "creditRequirements": [
+            {
+              "id": "liccomp-basic",
+              "parentId": null,
+              "kind": "group",
+              "name": "Áreas de formación básica",
+              "shortName": "Formación básica",
+              "minCredits": 90,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-math",
+              "parentId": "liccomp-basic",
+              "kind": "group",
+              "name": "Matemática y Ciencias Experimentales",
+              "shortName": "Matemática y ciencias",
+              "minCredits": 30,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-foundations",
+              "parentId": "liccomp-basic",
+              "kind": "group",
+              "name": "Fundamentos de la Computación",
+              "shortName": "Fundamentos",
+              "minCredits": 50,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-tech",
+              "parentId": null,
+              "kind": "group",
+              "name": "Áreas de formación básica-tecnológica y técnicas de computación",
+              "shortName": "Formación tecnológica",
+              "minCredits": 130,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-systems",
+              "parentId": "liccomp-tech",
+              "kind": "group",
+              "name": "Fundamentos de Sistemas",
+              "shortName": "Sistemas",
+              "minCredits": 30,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-software",
+              "parentId": "liccomp-tech",
+              "kind": "group",
+              "name": "Ingeniería de Software",
+              "shortName": "Software",
+              "minCredits": 10,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-data",
+              "parentId": "liccomp-tech",
+              "kind": "group",
+              "name": "Gestión de Datos e Información",
+              "shortName": "Datos e información",
+              "minCredits": 10,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-applied",
+              "parentId": "liccomp-tech",
+              "kind": "group",
+              "name": "Computación Aplicada",
+              "shortName": "Computación aplicada",
+              "minCredits": 0,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-integrating",
+              "parentId": "liccomp-tech",
+              "kind": "group",
+              "name": "Actividades Integradoras",
+              "shortName": "Actividades integradoras",
+              "minCredits": 30,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-complementary",
+              "parentId": null,
+              "kind": "group",
+              "name": "Áreas de formación complementaria",
+              "shortName": "Complementaria",
+              "minCredits": 0,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-industrial",
+              "parentId": "liccomp-complementary",
+              "kind": "group",
+              "name": "Ingeniería Industrial",
+              "shortName": "Ingeniería industrial",
+              "minCredits": 0,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-society",
+              "parentId": "liccomp-complementary",
+              "kind": "group",
+              "name": "Ingeniería y Sociedad",
+              "shortName": "Ingeniería y sociedad",
+              "minCredits": 0,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "liccomp-trabajo-final",
+              "label": "Aprobá el trabajo final integrador de la Licenciatura",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "liccomp-trabajo-final"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "liccomp-flexibilidad",
+              "name": "Elegí unidades hasta cubrir los mínimos oficiales y 360 créditos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "liccomp-trabajo-final",
+              "name": "Trabajo final integrador de la Licenciatura",
+              "credits": 20,
+              "requirementId": "liccomp-integrating",
+              "periodLabel": "Trabajo final",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "analista-computacion",
+              "title": "Analista en Computación",
+              "minTotalCredits": 270,
+              "nodeRequirements": [
+                {
+                  "nodeId": "liccomp-math",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "liccomp-foundations",
+                  "minCredits": 40
+                },
+                {
+                  "nodeId": "liccomp-systems",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "liccomp-software",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "liccomp-data",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "liccomp-integrating",
+                  "minCredits": 15
+                }
+              ],
+              "requiredCourseGroupIds": [],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            },
+            {
+              "id": "licenciado-computacion",
+              "title": "Licenciado en Computación",
+              "minTotalCredits": 360,
+              "nodeRequirements": [
+                {
+                  "nodeId": "liccomp-basic",
+                  "minCredits": 90
+                },
+                {
+                  "nodeId": "liccomp-math",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "liccomp-foundations",
+                  "minCredits": 50
+                },
+                {
+                  "nodeId": "liccomp-tech",
+                  "minCredits": 130
+                },
+                {
+                  "nodeId": "liccomp-systems",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "liccomp-software",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "liccomp-data",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "liccomp-applied",
+                  "minCredits": 0
+                },
+                {
+                  "nodeId": "liccomp-integrating",
+                  "minCredits": 30
+                },
+                {
+                  "nodeId": "liccomp-complementary",
+                  "minCredits": 0
+                },
+                {
+                  "nodeId": "liccomp-industrial",
+                  "minCredits": 0
+                },
+                {
+                  "nodeId": "liccomp-society",
+                  "minCredits": 0
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "liccomp-trabajo-final",
+                "validacion-final-plan"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf"
+            }
+          ],
+          "manualCompletionValidation": "Aprobación del currículo individual por la Comisión de Carrera de Licenciatura en Computación"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FING",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "servicio responsable y carrera completa",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ]
+        },
+        {
+          "serviceCode": "CUT",
+          "locations": [
+            "Tacuarembó"
+          ],
+          "role": "sede regional de carrera completa",
+          "admissionStatus": "active",
+          "includeInSharedWith": false,
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ]
+        },
+        {
+          "serviceCode": "CENURSO",
+          "locations": [
+            "Colonia"
+          ],
+          "role": "sede regional de carrera completa",
+          "admissionStatus": "active",
+          "includeInSharedWith": false,
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ]
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto",
+            "Paysandú"
+          ],
+          "role": "sedes regionales de carrera completa",
+          "admissionStatus": "active",
+          "includeInSharedWith": false,
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fing-licenciatura-en-computacion-2025.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 44,
+        "normalizedCourseCount": 44,
+        "compositionGroupCount": 10,
+        "prerequisiteRuleCount": 26,
+        "noPublishedRuleCount": 2,
+        "snapshotContentHash": "c2e43d86322035011ede3d6824388b0094dd29254d6bea5701c2c2426068929b",
+        "interpretation": "Bedelías aporta 44 unidades acreditables y los mínimos visibles, pero conserva 60 meses y sólo el rótulo de Analista. El plan oficial vigente corrige la duración a cuatro años, define el título final, el ingreso directo, el trabajo final y los mínimos completos."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-with-intermediate-title-flexible-curriculum-and-multiple-campus-offerings",
+        "canonicalIdentity": "licenciatura en computacion:2025",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales describen un único Plan 2025 y las páginas vigentes de FING ofrecen la Licenciatura completa en cinco sedes. No se encontró evidencia de planes, títulos o mínimos distintos por sede.",
+        "normalization": [
+          "Publicar una sola Licenciatura en Computación Plan 2025 y no duplicarla por sede.",
+          "Ofrecer Montevideo, Tacuarembó, Colonia, Salto y Paysandú como ubicaciones del mismo recorrido flexible.",
+          "Modelar Analista en Computación como título intermedio de 270 créditos y Licenciado en Computación como título final de 360 créditos.",
+          "Controlar los mínimos de grupos y áreas, el trabajo final integrador de 20 créditos y la validación del currículo individual.",
+          "Conservar las 44 unidades publicadas por Bedelías sin inventar un orden semestral o perfiles que el plan deja a la currícula personalizada."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf",
+          "authority": "Plan de Estudios 2025 de la Licenciatura en Computación, Diario Oficial y Udelar",
+          "supports": [
+            "aprobaciones",
+            "título",
+            "cuatro años",
+            "360 créditos",
+            "ingreso directo",
+            "mínimos",
+            "título intermedio",
+            "trabajo final",
+            "currículo individual"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/carrera/grado/lic-en-computaci%C3%B3n",
+          "authority": "Página vigente de la carrera, Facultad de Ingeniería",
+          "supports": [
+            "Plan 2025",
+            "cuatro años",
+            "360 créditos",
+            "documento oficial"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/noticias/la-facultad-de-ingenieria-aprobo-un-nuevo-plan-de-estudios",
+          "authority": "Noticia institucional de Udelar sobre la implementación del Plan 2025",
+          "supports": [
+            "vigencia desde 2026",
+            "ingreso directo",
+            "núcleo compartido con Ingeniería",
+            "trabajo final de 20 créditos"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/ensenanza/carrerasinterior",
+          "authority": "Oferta vigente de carreras en el interior, Facultad de Ingeniería",
+          "supports": [
+            "carrera completa en Tacuarembó",
+            "carrera completa en Colonia",
+            "carrera completa en Salto",
+            "carrera completa en Paysandú"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-computacion",
+          "authority": "Catálogo general de carreras, Udelar",
+          "supports": [
+            "identidad institucional",
+            "servicio responsable"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "durationAndAdmission",
+          "resolution": "El catálogo general aún muestra 60 meses y el antiguo ingreso posterior al título de Analista. Se priorizan el Plan 2025 aprobado, la página vigente de FING y la comunicación institucional de implementación: cuatro años e ingreso directo desde 2026."
+        },
+        {
+          "field": "bedeliasTitleLabel",
+          "resolution": "Bedelías rotula únicamente Analista en Computación aunque el registro corresponde al Plan 2025 de la Licenciatura. La UI publica Licenciado en Computación como título final y conserva Analista como título intermedio."
+        },
+        {
+          "field": "missingCompositionAreas",
+          "resolution": "La composición visible de Bedelías omite los encabezados B.1 y C.1 y no lista cursos bajo B.2 y B.3. Los mínimos oficiales se conservan como objetivos verificables, sin inventar asignaciones de cursos no publicadas."
+        },
+        {
+          "field": "campusCurriculum",
+          "resolution": "La oferta de FING confirma la carrera en cinco sedes, pero no publica diferencias curriculares por sede. Todas comparten un único plan, recorrido y progreso hasta que una fuente oficial pruebe una variante."
+        },
+        {
+          "field": "courseSequencing",
+          "resolution": "El Plan 2025 define áreas, mínimos y flexibilidad, no una secuencia semestral obligatoria. La UI ofrece catálogo y control de requisitos sin presentar una trayectoria sugerida como prescriptiva."
+        }
+      ],
+      "uiNotice": "Plan 2025 flexible, con ingreso directo desde 2026 y el mismo progreso en Montevideo, Tacuarembó, Colonia, Salto y Paysandú. Analista en Computación es un título intermedio; la Licenciatura exige 360 créditos y un trabajo final de 20 créditos.",
+      "remainingWork": "La oferta semestral, la asignación de cada unidad a las áreas todavía vacías en Bedelías y las previaturas vigentes deben verificarse con la Comisión de Carrera antes de convertirlas en una secuencia sugerida."
     }
   ],
-  "contentHash": "sha256:6bd48322a5b081a5049ecb11419afcd616797ae4dce953bd28f9335409ecc77c",
+  "contentHash": "sha256:f1fb3f23aef96e0a48d5c99b4c28b58bf47f713fe4079fe1c20bdb4dcae86063",
   "generatedAt": "2026-08-31T00:00:00.000Z"
 }

@@ -94,7 +94,7 @@ test("ubica la carrera bajo FING y avanza la cola a Sistemas de Comunicación", 
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-en-agrimensura-2023");
   assert.equal(career.plans[0].defaultTrajectoryId, "trayectoria-flexible");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria en agrimensura:2023"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 164);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 13);
-  assert.equal(queue.queue[0].identity, "licenciatura en computacion:2025");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 165);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 12);
+  assert.equal(queue.queue[0].identity, "tecnologo en cartografia:2011");
 });

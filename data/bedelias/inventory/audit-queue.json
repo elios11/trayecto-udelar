@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T04:23:46.423Z",
+  "generatedAt": "2026-08-31T10:43:19.786Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:6bd48322a5b081a5049ecb11419afcd616797ae4dce953bd28f9335409ecc77c"
+    "officialAuditRegistryHash": "sha256:f1fb3f23aef96e0a48d5c99b4c28b58bf47f713fe4079fe1c20bdb4dcae86063"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 164,
-    "pendingCanonicalIdentities": 13,
+    "evidenceClosedCanonicalIdentities": 165,
+    "pendingCanonicalIdentities": 12,
     "byPriority": {
-      "official-sources-pending": 13
+      "official-sources-pending": 12
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1005,38 +1005,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-31",
       "conclusion": "one-shared-degree-with-entry-and-partial-regional-pathways"
+    },
+    {
+      "identity": "licenciatura en computacion:2025",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-31",
+      "conclusion": "one-degree-with-intermediate-title-flexible-curriculum-and-multiple-campus-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en computacion:2025",
-      "career": {
-        "name": "LICENCIATURA EN COMPUTACIÓN",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2025",
-        "name": "LICENCIATURA EN COMPUTACIÓN",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:licenciatura en computacion:2025",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:licenciatura en computacion:2025",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnologo en cartografia:2011",
       "career": {
@@ -1497,5 +1474,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:bd16cee0de0d839312ffa9fc3b9cc17a5b728ca754c39c8a23e88faaec99f2c8"
+  "contentHash": "sha256:707b49595b572fee5f8b567463f056a9d6f153b0f52b4b7fef548eb955b205f0"
 }

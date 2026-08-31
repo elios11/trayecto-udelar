@@ -108,9 +108,9 @@ test("conserva reglas, referencias internas y una sola entrada por facultad comp
   }
 });
 
-test("cierra Ingeniería Química y avanza la cola a Licenciatura en Computación", () => {
+test("mantiene cerrada Ingeniería Química y avanza la cola vigente", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria quimica:2021"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 164);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 13);
-  assert.equal(queue.queue[0].identity, "licenciatura en computacion:2025");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 165);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 12);
+  assert.equal(queue.queue[0].identity, "tecnologo en cartografia:2011");
 });

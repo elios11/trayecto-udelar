@@ -579,8 +579,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-licenciatura-en-computacion-2025": {
     load: () => import("./bedelias-generated/bedelias-fing-licenciatura-en-computacion-2025.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["curricula-personalizada"],
+    pathwayLabel: "Recorrido",
     minCredits: 360,
   },
   "bedelias-fing-tecnologo-en-cartografia-2011": {
