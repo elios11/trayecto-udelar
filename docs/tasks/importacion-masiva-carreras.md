@@ -1864,3 +1864,13 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash actualizado en `data/bedelias/audits/official-source-audits.json`. Cola general: 15 identidades pendientes; Ingeniería Naval Plan 1997 queda como siguiente caso reproducible.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 39 con sedes oficiales. Cola funcional vacía.
 - Siguiente paso: auditar Ingeniería Naval Plan 1997, primera identidad reproducible restante.
+
+### Ingeniería Naval Plan 1997 — currícula flexible y combinación sugerida operativas 2026-08-30
+
+- El Plan 1997, la página vigente de FING y el catálogo de Udelar confirman una única Ingeniería Naval de cinco años, 450 créditos y título `Ingeniero Naval`, dictada completamente en Montevideo. Los CIO regionales articulan con la carrera, pero permanecen como ofertas de ingreso independientes y no se presentan como sedes completas.
+- La UI ofrece dos trayectorias del mismo título y progreso: `Currícula personalizada`, con todo el catálogo de Bedelías organizado por materias, y `Currícula sugerida 2017`, una combinación tipo oficial sustituible de diez semestres. La guía histórica suma 466 créditos porque asigna 12 a `Máquinas para Fluidos 1`; Bedelías vigente asigna 10 y la proyección actual suma 464. `Estructuras de Buques` se representa una sola vez como unidad anual de 20 créditos.
+- Se controlan los dieciséis mínimos oficiales por materia y actividad, Taller, Pasantía, Proyecto Final, 450 créditos y la aprobación del currículo individual por el Consejo de Facultad. La tabla del Plan imprime `TOTAL 385`, aunque sus valores literales suman 382; se conservan los mínimos publicados y no se deriva una cantidad fija de créditos adicionales de ese subtotal inconsistente.
+- Bedelías aporta 329 apariciones normalizadas a 326 códigos y 242 reglas publicadas. Tres códigos compartidos se fusionan sin duplicar el total: `2041` y `1087` distribuyen créditos entre Matemática e Informática, mientras `1233` conserva cuatro créditos totales con asignación a dos materias.
+- Registro de auditoría: hash `sha256:dce914102b3a6d794acedf96bfebdf2346dfa528b67dcd1d4c7460e35ffb1422`. Cola general: 14 identidades pendientes; hash `sha256:a63e7dcf04f5bc173185dd5b72d32e7e02911922a330809724a92e7c565b208f`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable; hash `sha256:da218baa1f7a1f7e6fc6823a004862fbb3bd88c3b3c6664e40736f33a4108046`. Cola funcional vacía; hash `sha256:8c9fa7c660e2eea27565536ad5cbb8a5b2f8d5ed7c04fc2bb7d437fc3ecf602e`.
+- Siguiente paso: auditar Ingeniería Química Plan 2021, primera identidad reproducible restante.

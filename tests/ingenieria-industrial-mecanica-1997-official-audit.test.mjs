@@ -128,7 +128,7 @@ test("fusiona los tres códigos repetidos sin doble conteo del total", () => {
   assert.equal(projection.courses.length, 462);
 });
 
-test("conserva la cobertura de previaturas y avanza la cola a Ingeniería Naval", () => {
+test("conserva la cobertura de previaturas y refleja el siguiente hito", () => {
   assert.equal(projection.rules.length, 237);
   assert.equal(projection.plan.noPublishedRule, 251);
   const faculty = catalog.find(({ id }) => id === "bedelias-fing");
@@ -136,7 +136,7 @@ test("conserva la cobertura de previaturas y avanza la cola a Ingeniería Naval"
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-industrial-mecanica-1997");
   assert.equal(career.plans[0].defaultTrajectoryId, "curricula-personalizada");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria industrial mecanica:1997"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 162);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 15);
-  assert.equal(queue.queue[0].identity, "ingenieria naval:1997");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 163);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 14);
+  assert.equal(queue.queue[0].identity, "ingenieria quimica:2021");
 });

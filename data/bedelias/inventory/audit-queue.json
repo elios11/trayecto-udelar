@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T00:18:02.871Z",
+  "generatedAt": "2026-08-31T00:53:00.938Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:1ba13ba7f6ba31fe420a2f9eb43d74b5fb2696b63ec86b12f3a02eb74baaf12c"
+    "officialAuditRegistryHash": "sha256:dce914102b3a6d794acedf96bfebdf2346dfa528b67dcd1d4c7460e35ffb1422"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 162,
-    "pendingCanonicalIdentities": 15,
+    "evidenceClosedCanonicalIdentities": 163,
+    "pendingCanonicalIdentities": 14,
     "byPriority": {
-      "official-sources-pending": 15
+      "official-sources-pending": 14
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -993,38 +993,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-30",
       "conclusion": "one-degree-with-personalized-curriculum-guide-profiles-and-partial-regional-trajectories"
+    },
+    {
+      "identity": "ingenieria naval:1997",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-30",
+      "conclusion": "one-degree-with-personalized-curriculum-and-suggested-trajectory"
     }
   ],
   "queue": [
-    {
-      "identity": "ingenieria naval:1997",
-      "career": {
-        "name": "INGENIERÍA NAVAL",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "1997",
-        "name": "INGENIERIA NAVAL",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:ingenieria naval:1997",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:ingenieria naval:1997",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "ingenieria quimica:2021",
       "career": {
@@ -1563,5 +1540,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:02d04380b2c709c3ab39490ddbb725cb029b26044bc4f69384612788d1f2fc85"
+  "contentHash": "sha256:a63e7dcf04f5bc173185dd5b72d32e7e02911922a330809724a92e7c565b208f"
 }

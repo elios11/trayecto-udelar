@@ -1915,11 +1915,13 @@ export default function Home() {
             })}
             {credential.requiredCourseGroups.map((group) => {
               const current = requiredCourseGroupProgress(group);
-              const missing = group.courseIds.filter((id) => statuses[id] !== "exonerated").map((id) => activeCourses.find((course) => course.id === id)?.name ?? id);
+              const missing = group.courseIds
+                .filter((id) => statuses[id] !== "exonerated")
+                .map((id) => ({ id, name: activeCourses.find((course) => course.id === id)?.name ?? id }));
               return <details className="required-course-group" key={group.id}>
                 <summary><span><b>{group.label}</b><small>{current} de {group.minCompleted} completadas</small></span><strong className={current >= group.minCompleted ? "met" : ""}>{current}/{group.minCompleted}</strong></summary>
                 <div className="required-course-body">
-                  {missing.length ? <><p>Te faltan:</p><ul>{missing.map((name) => <li key={name}>{name}</li>)}</ul></> : <p className="all-complete">✓ Requisito completo</p>}
+                  {missing.length ? <><p>Te faltan:</p><ul>{missing.map(({ id, name }) => <li key={id}>{name}</li>)}</ul></> : <p className="all-complete">✓ Requisito completo</p>}
                   <a href={group.sourceUrl} target="_blank" rel="noreferrer">Ver fuente oficial ↗</a>
                 </div>
               </details>;

@@ -561,7 +561,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-naval-1997": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-naval-1997.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["curricula-personalizada","curricula-sugerida-2017"],
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },

@@ -60139,8 +60139,650 @@
       ],
       "uiNotice": "Plan 1997 vigente de 450 créditos. Elegí una currícula o perfil guía en Montevideo, o un tramo inicial en Paysandú/Tacuarembó con continuidad posterior en Montevideo; todos conducen al mismo título.",
       "remainingWork": "El Consejo de Facultad debe aprobar el currículo individual, la profundización y las opcionales. La oferta semestral y las previaturas vigentes deben verificarse en Bedelías; la propuesta de nuevo plan no se aplica hasta su aprobación oficial."
+    },
+    {
+      "identity": "ingenieria naval:1997",
+      "career": "Ingeniería Naval",
+      "planYear": "1997",
+      "reviewedAt": "2026-08-30",
+      "status": "official-evidence-complete",
+      "scope": "current-degree-title-credit-structure-minima-required-activities-flexible-curriculum-and-suggested-trajectory",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Facultad de Ingeniería y Consejo Directivo Central, 1997"
+        ],
+        "planYear": "1997",
+        "title": "Ingeniero Naval",
+        "careerName": "Ingeniería Naval",
+        "facultyCode": "FING",
+        "facultyName": "Facultad de Ingeniería",
+        "sharedWith": [],
+        "durationMonths": 60,
+        "semesters": 10,
+        "minimumCredits": 450,
+        "current": true,
+        "pathwayLabel": "Trayectoria",
+        "degreeRule": "El Plan 1997 exige 450 créditos, los mínimos de trece materias y tres actividades integradoras, la aprobación nominal de Taller, Pasantía y Proyecto Final, y un currículo individual aprobado por el Consejo de Facultad.",
+        "trajectories": [
+          {
+            "id": "curricula-personalizada",
+            "credentialId": "ingeniero-naval",
+            "label": "Currícula personalizada",
+            "description": "Recorrido flexible del Plan 1997. Elegí unidades del catálogo hasta cubrir los mínimos por materia y actividad, las actividades obligatorias y 450 créditos; el Consejo de Facultad debe aprobar la coherencia del currículo individual.",
+            "campusIds": [
+              "montevideo"
+            ]
+          },
+          {
+            "id": "curricula-sugerida-2017",
+            "credentialId": "ingeniero-naval",
+            "label": "Currícula sugerida 2017",
+            "description": "Combinación tipo publicada por FING como orientación sustituible. La guía histórica suma 466 créditos; con los 10 créditos vigentes de Máquinas para Fluidos 1, la proyección actual suma 464. No reemplaza la verificación de mínimos ni la aprobación del currículo individual.",
+            "campusIds": [
+              "montevideo"
+            ],
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "1020",
+                  "1030",
+                  "1151",
+                  "1220"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "1022",
+                  "1031",
+                  "1152",
+                  "2302"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "1024",
+                  "1025",
+                  "1153",
+                  "1078",
+                  "1154",
+                  "1701"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "1028",
+                  "1155",
+                  "C10",
+                  "2001",
+                  "1719",
+                  "1073"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "1805",
+                  "1764",
+                  "2102",
+                  "1724"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "1823",
+                  "1765",
+                  "2103",
+                  "2604"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "1824",
+                  "1850",
+                  "1810",
+                  "Q16",
+                  "2320"
+                ]
+              },
+              {
+                "label": "Estructuras de Buques · anual (semestres 7 y 8)",
+                "courseIds": [
+                  "2600"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "1903",
+                  "2200",
+                  "2603",
+                  "2002"
+                ]
+              },
+              {
+                "label": "Semestre 9",
+                "courseIds": [
+                  "1650",
+                  "2605",
+                  "1818",
+                  "2601"
+                ]
+              },
+              {
+                "label": "Semestre 10",
+                "courseIds": [
+                  "2019",
+                  "2401",
+                  "2256"
+                ]
+              }
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf",
+          "pathwayLabel": "Trayectoria",
+          "pathwayDescription": "Currícula individual flexible y una combinación tipo oficial de diez semestres; ambas conducen al mismo título y comparten el progreso.",
+          "includeAllCoursesInPathwayCatalog": true,
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "mergeSplitCompositionCourses": true,
+          "courseOverrides": {
+            "1087": {
+              "periodLabel": "Matemática e Informática"
+            },
+            "1233": {
+              "periodLabel": "Matemática y Ciencias Económicas y Humanas",
+              "mergedTotalCredits": 4
+            },
+            "2041": {
+              "periodLabel": "Matemática e Informática"
+            }
+          },
+          "pathRequirementMap": {
+            "1873": "naval-materiales-diseno",
+            "1876": "naval-otras",
+            "1878": "naval-pasantia",
+            "1896": "naval-industrial",
+            "1912": "naval-taller",
+            "2079": "naval-informatica",
+            "2128": "naval-proyecto",
+            "2188": "naval-arquitectura",
+            "2239": "naval-economicas-humanas",
+            "2570": "naval-derecho-sociales",
+            "2626": "naval-electrotecnia",
+            "2645": "naval-maquinaria",
+            "2693": "naval-matematica",
+            "2969": "naval-fisica",
+            "3121": "naval-fluidos-energia",
+            "3204": "naval-construccion",
+            "3868": "naval-control"
+          },
+          "periodLabelMap": {
+            "1873": "Materiales y Diseño",
+            "1876": "Otras asignaturas",
+            "1878": "Pasantía",
+            "1896": "Ingeniería Industrial",
+            "1912": "Taller",
+            "2079": "Informática, Métodos Numéricos e Investigación Operativa",
+            "2128": "Proyecto",
+            "2188": "Arquitectura Naval",
+            "2239": "Ciencias Económicas y Humanas",
+            "2570": "Derecho y Ciencias Sociales",
+            "2626": "Electrotecnia",
+            "2645": "Maquinaria y Equipos Navales",
+            "2693": "Matemática",
+            "2969": "Física",
+            "3121": "Fluidos y Energía",
+            "3204": "Construcción y Reparación Naval",
+            "3868": "Control e Instrumentación"
+          },
+          "periodOrder": [
+            "Orientación del recorrido",
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6",
+            "Semestre 7",
+            "Estructuras de Buques · anual (semestres 7 y 8)",
+            "Semestre 8",
+            "Semestre 9",
+            "Semestre 10",
+            "Matemática",
+            "Física",
+            "Fluidos y Energía",
+            "Materiales y Diseño",
+            "Ingeniería Industrial",
+            "Control e Instrumentación",
+            "Electrotecnia",
+            "Arquitectura Naval",
+            "Maquinaria y Equipos Navales",
+            "Construcción y Reparación Naval",
+            "Informática, Métodos Numéricos e Investigación Operativa",
+            "Ciencias Económicas y Humanas",
+            "Derecho y Ciencias Sociales",
+            "Pasantía",
+            "Proyecto",
+            "Taller",
+            "Otras asignaturas",
+            "Validación de egreso"
+          ],
+          "creditRequirements": [
+            {
+              "id": "naval-matematica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Matemática",
+              "shortName": "Matemática",
+              "minCredits": 70,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-fisica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Física",
+              "shortName": "Física",
+              "minCredits": 60,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-fluidos-energia",
+              "parentId": null,
+              "kind": "group",
+              "name": "Fluidos y Energía",
+              "shortName": "Fluidos y Energía",
+              "minCredits": 45,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-materiales-diseno",
+              "parentId": null,
+              "kind": "group",
+              "name": "Materiales y Diseño",
+              "shortName": "Materiales y Diseño",
+              "minCredits": 32,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-industrial",
+              "parentId": null,
+              "kind": "group",
+              "name": "Ingeniería Industrial",
+              "shortName": "Ing. Industrial",
+              "minCredits": 20,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-control",
+              "parentId": null,
+              "kind": "group",
+              "name": "Control e Instrumentación",
+              "shortName": "Control",
+              "minCredits": 10,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-electrotecnia",
+              "parentId": null,
+              "kind": "group",
+              "name": "Electrotecnia",
+              "shortName": "Electrotecnia",
+              "minCredits": 18,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-arquitectura",
+              "parentId": null,
+              "kind": "group",
+              "name": "Arquitectura Naval",
+              "shortName": "Arquitectura Naval",
+              "minCredits": 12,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-maquinaria",
+              "parentId": null,
+              "kind": "group",
+              "name": "Maquinaria y Equipos Navales",
+              "shortName": "Maquinaria Naval",
+              "minCredits": 10,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-construccion",
+              "parentId": null,
+              "kind": "group",
+              "name": "Construcción y Reparación Naval",
+              "shortName": "Construcción Naval",
+              "minCredits": 32,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-informatica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Informática, Métodos Numéricos e Investigación Operativa",
+              "shortName": "Informática e I.O.",
+              "minCredits": 20,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-economicas-humanas",
+              "parentId": null,
+              "kind": "group",
+              "name": "Ciencias Económicas y Humanas",
+              "shortName": "Cs. Económicas",
+              "minCredits": 8,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-derecho-sociales",
+              "parentId": null,
+              "kind": "group",
+              "name": "Derecho y Ciencias Sociales",
+              "shortName": "Derecho y Cs. Sociales",
+              "minCredits": 4,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-pasantia",
+              "parentId": null,
+              "kind": "group",
+              "name": "Pasantía",
+              "shortName": "Pasantía",
+              "minCredits": 20,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-proyecto",
+              "parentId": null,
+              "kind": "group",
+              "name": "Proyecto",
+              "shortName": "Proyecto",
+              "minCredits": 15,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-taller",
+              "parentId": null,
+              "kind": "group",
+              "name": "Taller",
+              "shortName": "Taller",
+              "minCredits": 6,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-otras",
+              "parentId": null,
+              "kind": "group",
+              "name": "Otras asignaturas",
+              "shortName": "Otras",
+              "minCredits": 0,
+              "credentialRequired": false,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "naval-taller-nominal",
+              "label": "Aprobá un Taller del Plan 1997",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "2001"
+              ],
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-pasantia-nominal",
+              "label": "Aprobá la Pasantía",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "2002"
+              ],
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            },
+            {
+              "id": "naval-proyecto-nominal",
+              "label": "Aprobá el Proyecto Final de Ingeniería Naval",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "2019",
+                "CP318"
+              ],
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "naval-flexibilidad-hasta-450",
+              "name": "Completá el currículo con créditos adicionales hasta alcanzar 450",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "ingeniero-naval",
+              "title": "Ingeniero Naval",
+              "minTotalCredits": 450,
+              "nodeRequirements": [
+                {
+                  "nodeId": "naval-matematica",
+                  "minCredits": 70
+                },
+                {
+                  "nodeId": "naval-fisica",
+                  "minCredits": 60
+                },
+                {
+                  "nodeId": "naval-fluidos-energia",
+                  "minCredits": 45
+                },
+                {
+                  "nodeId": "naval-materiales-diseno",
+                  "minCredits": 32
+                },
+                {
+                  "nodeId": "naval-industrial",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "naval-control",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "naval-electrotecnia",
+                  "minCredits": 18
+                },
+                {
+                  "nodeId": "naval-arquitectura",
+                  "minCredits": 12
+                },
+                {
+                  "nodeId": "naval-maquinaria",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "naval-construccion",
+                  "minCredits": 32
+                },
+                {
+                  "nodeId": "naval-informatica",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "naval-economicas-humanas",
+                  "minCredits": 8
+                },
+                {
+                  "nodeId": "naval-derecho-sociales",
+                  "minCredits": 4
+                },
+                {
+                  "nodeId": "naval-pasantia",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "naval-proyecto",
+                  "minCredits": 15
+                },
+                {
+                  "nodeId": "naval-taller",
+                  "minCredits": 6
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "naval-taller-nominal",
+                "naval-pasantia-nominal",
+                "naval-proyecto-nominal",
+                "validacion-final-plan"
+              ],
+              "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+            }
+          ],
+          "manualCompletionValidation": "Aprobación del currículo individual por los mecanismos que resuelva el Consejo de Facultad de Ingeniería"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FING",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "sede responsable y carrera completa",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada",
+            "curricula-sugerida-2017"
+          ]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fing-ingenieria-naval-1997.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 329,
+        "normalizedCourseCount": 326,
+        "compositionGroupCount": 17,
+        "prerequisiteRuleCount": 242,
+        "noPublishedRuleCount": 149,
+        "compositionFingerprint": "sha256:79c56cc5ed9db8e52b5de23e12974edc234cb6b6635694e44301b2d650cba3aa",
+        "interpretation": "Bedelías publica 329 apariciones normalizadas a 326 códigos. Métodos Numéricos y Métodos Numéricos para EDP distribuyen créditos entre Matemática e Informática; Tutoría en Matemática figura completa en Matemática y Ciencias Económicas y Humanas y se cuenta una sola vez en el total."
+      },
+      "conclusion": {
+        "canonicalModel": "one-degree-with-personalized-curriculum-and-suggested-trajectory",
+        "canonicalIdentity": "ingenieria naval:1997",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales vigentes confirman un único Plan 1997 y un único título en Montevideo. La combinación 2017 es una guía sustituible; los CIO regionales son puertas de entrada independientes, no sedes completas de Ingeniería Naval.",
+        "normalization": [
+          "Publicar una única Ingeniería Naval Plan 1997 con un solo progreso y título.",
+          "Ofrecer currícula personalizada y currícula sugerida 2017 sin presentar la guía como una orientación certificada.",
+          "Controlar los 16 mínimos por materia y actividad, Taller, Pasantía, Proyecto Final, 450 créditos y aprobación del currículo individual.",
+          "Mantener el catálogo completo de Bedelías para sustituir unidades y completar los créditos adicionales necesarios hasta alcanzar 450.",
+          "No presentar Paysandú o Salto como sedes de la carrera; sus CIO se mantienen como ofertas independientes de articulación."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf",
+          "authority": "Plan de Estudios 1997 de Ingeniería Naval, Udelar",
+          "supports": [
+            "título",
+            "cinco años",
+            "450 créditos",
+            "mínimos",
+            "Taller",
+            "Pasantía",
+            "Proyecto",
+            "currículo individual"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/ingenieria-naval",
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "supports": [
+            "vigencia",
+            "60 meses",
+            "450 créditos",
+            "Facultad de Ingeniería",
+            "sede Montevideo"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/en/carrera/grado/ingenier%C3%ADa-naval",
+          "authority": "Página vigente de la carrera, Facultad de Ingeniería",
+          "supports": [
+            "Plan 1997",
+            "código 22-4",
+            "vigencia",
+            "duración",
+            "créditos"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2015/24857/20170214%20bloques%20por%20semestre%20naval.pdf",
+          "authority": "Currícula sugerida 2017, Facultad de Ingeniería",
+          "supports": [
+            "diez semestres",
+            "unidades sugeridas",
+            "créditos",
+            "Estructuras de Buques anual"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/ingresos/calendario-%C2%B7-segundo-semestre/",
+          "authority": "Calendario oficial de ingresos 2026, Udelar",
+          "supports": [
+            "ingreso vigente por Facultad de Ingeniería"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/cio-cientifico-tecnologico",
+          "authority": "Oferta vigente del CIO Científico Tecnológico, Udelar",
+          "supports": [
+            "articulación regional hacia Ingeniería Naval como oferta independiente"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "officialMinimumSubtotal",
+          "resolution": "La tabla oficial imprime TOTAL 385, aunque sus 16 valores publicados suman 382. La UI conserva cada mínimo literal y exige 450 créditos totales, sin derivar una cantidad fija de créditos adicionales del subtotal inconsistente."
+        },
+        {
+          "field": "suggestedCurriculumCredits",
+          "resolution": "La combinación tipo 2017 suma 466 créditos porque publica Máquinas para Fluidos 1 con 12; Bedelías vigente asigna 10, por lo que la proyección actual suma 464. Se conserva el crédito vigente, se documenta la diferencia y la guía nunca se exige como bloque cerrado."
+        },
+        {
+          "field": "annualCourse",
+          "resolution": "Estructuras de Buques figura con 10 créditos en los semestres 7 y 8 de la guía, pero Bedelías la publica como una unidad anual de 20 créditos. La UI la representa una sola vez en un bloque anual."
+        },
+        {
+          "field": "regionalEntry",
+          "resolution": "Los CIO de Paysandú y Salto articulan con Ingeniería Naval, pero no constituyen sedes completas del Plan 1997. Permanecen como carreras de ingreso separadas."
+        },
+        {
+          "field": "splitAndSharedCourses",
+          "resolution": "Dos cursos reparten créditos entre Matemática e Informática; Tutoría en Matemática figura con cuatro créditos completos en dos materias. Los tres códigos aparecen una sola vez y conservan sus asignaciones."
+        }
+      ],
+      "uiNotice": "Plan 1997 vigente de 450 créditos en Montevideo. Podés seguir la currícula sugerida 2017 o armar un recorrido personalizado; en ambos casos deben cumplirse los mínimos y aprobarse el currículo individual.",
+      "remainingWork": "La oferta semestral y las previaturas vigentes deben verificarse en Bedelías; la currícula sugerida es orientativa y puede sustituirse respetando los mínimos y la aprobación del Consejo de Facultad."
     }
   ],
-  "contentHash": "sha256:1ba13ba7f6ba31fe420a2f9eb43d74b5fb2696b63ec86b12f3a02eb74baaf12c",
+  "contentHash": "sha256:dce914102b3a6d794acedf96bfebdf2346dfa528b67dcd1d4c7460e35ffb1422",
   "generatedAt": "2026-08-30T00:00:00.000Z"
 }
