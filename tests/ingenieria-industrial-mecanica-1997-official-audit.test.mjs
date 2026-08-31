@@ -136,7 +136,7 @@ test("conserva la cobertura de previaturas y refleja el siguiente hito", () => {
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-industrial-mecanica-1997");
   assert.equal(career.plans[0].defaultTrajectoryId, "curricula-personalizada");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria industrial mecanica:1997"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 167);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 10);
-  assert.equal(queue.queue[0].identity, "tecnologo en telecomunicaciones:2009");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 168);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 9);
+  assert.equal(queue.queue[0].identity, "tecnologo industrial mecanico:2016");
 });

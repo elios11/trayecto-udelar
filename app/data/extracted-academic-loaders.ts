@@ -78,6 +78,12 @@ export const extractedAcademicPlanRegistrations = {
     pathwayLabel: "Trayectoria",
     minCredits: 240,
   },
+  "bedelias-cure-tecnologo-en-telecomunicaciones-2009": {
+    load: () => import("./bedelias-generated/bedelias-cure-tecnologo-en-telecomunicaciones-2009.json"),
+    pathwayIds: ["curricula-rocha","primer-ano-montevideo"],
+    pathwayLabel: "Recorrido",
+    minCredits: 200,
+  },
   "bedelias-cure-tecnologo-minero-2013": {
     load: () => import("./bedelias-generated/bedelias-cure-tecnologo-minero-2013.json"),
     pathwayIds: ["bedelias"],
@@ -594,12 +600,6 @@ export const extractedAcademicPlanRegistrations = {
     pathwayIds: ["curricula-personalizada"],
     pathwayLabel: "Recorrido",
     minCredits: 252,
-  },
-  "bedelias-fing-tecnologo-en-telecomunicaciones-2009": {
-    load: () => import("./bedelias-generated/bedelias-fing-tecnologo-en-telecomunicaciones-2009.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
-    minCredits: 200,
   },
   "bedelias-fing-tecnologo-industrial-mecanico-2016": {
     load: () => import("./bedelias-generated/bedelias-fing-tecnologo-industrial-mecanico-2016.json"),
