@@ -100,6 +100,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["tecnologo int y trad lsu esp:2025", ["montevideo", "salto"]],
     ["licenciatura biologia humana:2004", ["montevideo", "salto", "paysandu", "rivera", "tacuarembo"]],
     ["ingenieria de produccion:2010", ["montevideo", "maldonado", "paysandu", "rivera", "rocha", "salto", "tacuarembo"]],
+    ["ingenieria industrial mecanica:1997", ["montevideo", "paysandu", "tacuarembo"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

@@ -37,6 +37,13 @@ type Credential = {
   title: string;
   minTotalCredits: number;
   nodeRequirements: Array<{ nodeId: string; minCredits: number; maxCredits?: number }>;
+  alternativeNodeRequirements?: Array<{
+    id: string;
+    label: string;
+    minSatisfied: number;
+    options: Array<{ nodeId: string; minCredits: number }>;
+    sourceUrl: string;
+  }>;
   requiredCourseGroups: Array<{ id: string; label: string; minCompleted: number; courseIds: string[]; sourceUrl: string }>;
   requiredActivities: Array<{ id: string; label: string; minCredits: number; courseIds: string[]; representationStatus: "modeled" | "not-modeled"; sourceUrl: string }>;
   sourceUrl: string;
@@ -1343,12 +1350,15 @@ export default function Home() {
   }, 0);
   const requiredCourseGroupProgress = (group: Credential["requiredCourseGroups"][number]) => group.courseIds.filter((id) => statuses[id] === "exonerated").length;
   const countableNodeRequirements = credential.nodeRequirements.filter((requirement) => requirement.minCredits > 0);
+  const alternativeNodeRequirements = credential.alternativeNodeRequirements ?? [];
+  const alternativeNodeRequirementProgress = (requirement: NonNullable<Credential["alternativeNodeRequirements"]>[number]) => requirement.options.filter((option) => nodeCredits(option.nodeId) >= option.minCredits).length;
   const hasTotalCreditRequirement = credential.minTotalCredits > 0;
   const credentialRequirementsMet = (hasTotalCreditRequirement && earnedCredits >= credential.minTotalCredits ? 1 : 0)
     + countableNodeRequirements.filter((requirement) => nodeCredits(requirement.nodeId) >= requirement.minCredits).length
+    + alternativeNodeRequirements.filter((requirement) => alternativeNodeRequirementProgress(requirement) >= requirement.minSatisfied).length
     + credential.requiredCourseGroups.filter((group) => requiredCourseGroupProgress(group) >= group.minCompleted).length
     + credential.requiredActivities.filter((activity) => activityProgress(activity) >= activity.minCredits).length;
-  const credentialRequirementsTotal = (hasTotalCreditRequirement ? 1 : 0) + countableNodeRequirements.length + credential.requiredCourseGroups.length + credential.requiredActivities.length;
+  const credentialRequirementsTotal = (hasTotalCreditRequirement ? 1 : 0) + countableNodeRequirements.length + alternativeNodeRequirements.length + credential.requiredCourseGroups.length + credential.requiredActivities.length;
 
   const isComplete = (id: string) => statuses[id] === "approved" || statuses[id] === "exonerated";
   const isFixedPlacementTest = (course: Course) => planYear === "2025" && trajectoryId === "pi-60-plus" && course.id === "PI";
@@ -1888,6 +1898,20 @@ export default function Home() {
             {credential.requiredActivities.map((activity) => {
               const current = activityProgress(activity);
               return <div className="required-activity" key={activity.id}><span><b>{activity.label}</b><small>{activity.representationStatus === "not-modeled" ? "Aún sin ubicación completa en la trayectoria" : "Actividad obligatoria"}</small></span><strong className={current >= activity.minCredits ? "met" : ""}>{current}/{activity.minCredits}</strong></div>;
+            })}
+            {alternativeNodeRequirements.map((requirement) => {
+              const satisfied = alternativeNodeRequirementProgress(requirement);
+              return <details className="required-course-group" key={requirement.id}>
+                <summary><span><b>{requirement.label}</b><small>{satisfied} de {requirement.minSatisfied} alternativas cumplen el mínimo</small></span><strong className={satisfied >= requirement.minSatisfied ? "met" : ""}>{satisfied}/{requirement.minSatisfied}</strong></summary>
+                <div className="required-course-body">
+                  <ul>{requirement.options.map((option) => {
+                    const current = nodeCredits(option.nodeId);
+                    const node = nodeById.get(option.nodeId);
+                    return <li key={option.nodeId}>{node?.name ?? option.nodeId}: <b className={current >= option.minCredits ? "met" : ""}>{current}/{option.minCredits} cr.</b></li>;
+                  })}</ul>
+                  <a href={requirement.sourceUrl} target="_blank" rel="noreferrer">Ver fuente oficial ↗</a>
+                </div>
+              </details>;
             })}
             {credential.requiredCourseGroups.map((group) => {
               const current = requiredCourseGroupProgress(group);

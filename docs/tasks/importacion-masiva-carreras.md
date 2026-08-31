@@ -1850,3 +1850,17 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:dcb62e439c34837a091a22e42c21586205892f07e31615d264b5679807454bdf`. Cola general: 16 identidades pendientes; hash `sha256:9b9361d74a244cb4fd8e7761dfab898241bbb40683b9f3337642b78768334fde`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 38 con sedes oficiales; hash `sha256:060afde7423a185e9b0dcdd54ec7ec08365de87142c5d3139d867bf3d6425609`. Cola funcional vacía; hash `sha256:d7e02fa35cd70fa6f4bce1c2c26399cb9b0578d5d1d48fa08f0b67847ce73d2c`.
 - Siguiente paso: auditar Ingeniería Industrial Mecánica Plan 1997, primera identidad reproducible restante.
+
+### Ingeniería Industrial Mecánica Plan 1997 — perfiles guía, mínimos alternativos y tramos regionales operativos 2026-08-30
+
+- FING, el Plan 1997 y el catálogo vigente de Udelar confirman una única Ingeniería Industrial Mecánica de cinco años y 450 créditos, con título `Ingeniero Industrial Mecánico`. Existe una propuesta sucesora, pero todavía no reemplaza al plan vigente.
+- La UI ofrece una currícula personalizada y tres combinaciones tipo en Montevideo: Fluidos y Energía, Diseño Mecánico y Materiales e Ingeniería de Planta. Los bloques 2016 suman 436, 419 y 443 créditos y advierten que no cubren por sí solos 450 ni todos los mínimos; se presentan como guías sustituibles con catálogo completo.
+- Paysandú permite cursar cuatro semestres iniciales articulados con Salto y Tacuarembó publica tres semestres iniciales. Son opciones de sede dentro de la misma carrera y el mismo progreso, con alcance parcial y continuidad posterior en Montevideo claramente indicada.
+- El egreso controla doce mínimos fijos que suman 345 créditos, una alternativa de 18 créditos completos en Electrotecnia o en Química y 25 créditos adicionales concentrados en una de once materias. El nuevo requisito alternativo de la UI evita exigir ambas áreas o aceptar una profundización repartida.
+- Taller, Pasantía y Proyecto anual se controlan como actividades nominales, además de sus mínimos de 6, 20 y 30 créditos. El currículo individual, las opcionales y la profundización requieren aprobación del Consejo de Facultad.
+- Bedelías publica 430 apariciones normalizadas a 427 códigos. Métodos Numéricos y Métodos Numéricos para EDP reparten créditos entre Matemática y Sistemas; Tutoría en Matemática figura completa en dos materias. Los tres códigos se muestran una sola vez y conservan sus asignaciones sin duplicar el total.
+- La proyección contiene 462 componentes: 427 unidades únicas de Bedelías, 31 unidades territoriales documentadas, tres orientaciones flexibles y una validación final. Conserva 237 reglas de previatura publicadas y 251 unidades sin regla explícita.
+- La guía de Tacuarembó repite Administración y Gestión de las Organizaciones I en los semestres 1 y 3; la proyección la cuenta una sola vez y documenta la anomalía.
+- Registro de auditoría: hash actualizado en `data/bedelias/audits/official-source-audits.json`. Cola general: 15 identidades pendientes; Ingeniería Naval Plan 1997 queda como siguiente caso reproducible.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 39 con sedes oficiales. Cola funcional vacía.
+- Siguiente paso: auditar Ingeniería Naval Plan 1997, primera identidad reproducible restante.

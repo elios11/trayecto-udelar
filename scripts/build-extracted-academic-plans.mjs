@@ -331,6 +331,16 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
       nodeId: requirement.nodeId,
       minCredits: Number(requirement.minCredits),
     })),
+    ...((credential.alternativeNodeRequirements ?? []).length > 0 ? { alternativeNodeRequirements: credential.alternativeNodeRequirements.map((requirement) => ({
+      id: requirement.id,
+      label: requirement.label,
+      minSatisfied: Number(requirement.minSatisfied),
+      options: (requirement.options ?? []).map((option) => ({
+        nodeId: option.nodeId,
+        minCredits: Number(option.minCredits),
+      })),
+      sourceUrl: requirement.sourceUrl ?? credential.sourceUrl ?? sourceUrl,
+    })) } : {}),
     requiredCourseGroups: (credential.requiredCourseGroupIds ?? [])
       .map((id) => requiredCourseGroups.find((group) => group.id === id))
       .filter(Boolean),
@@ -508,6 +518,9 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
         }
       }
     }
+    if (Number.isFinite(Number(courseOverride.mergedTotalCredits))) {
+      course.credits = Number(courseOverride.mergedTotalCredits);
+    }
     const id = course.id;
     addToPeriod(periodsByLabel, period, id);
     if (profileId) {
@@ -630,6 +643,16 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       nodeId: requirement.nodeId,
       minCredits: Number(requirement.minCredits),
     })),
+    ...((credential.alternativeNodeRequirements ?? []).length > 0 ? { alternativeNodeRequirements: credential.alternativeNodeRequirements.map((requirement) => ({
+      id: requirement.id,
+      label: requirement.label,
+      minSatisfied: Number(requirement.minSatisfied),
+      options: (requirement.options ?? []).map((option) => ({
+        nodeId: option.nodeId,
+        minCredits: Number(option.minCredits),
+      })),
+      sourceUrl: requirement.sourceUrl ?? credential.sourceUrl ?? sourceUrl,
+    })) } : {}),
     requiredCourseGroups: (credential.requiredCourseGroupIds ?? [])
       .map((id) => requiredCourseGroups.find((group) => group.id === id))
       .filter(Boolean),

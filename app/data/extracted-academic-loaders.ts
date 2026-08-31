@@ -555,8 +555,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-industrial-mecanica-1997": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-industrial-mecanica-1997.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["curricula-personalizada","perfil-fluidos-energia","perfil-diseno-materiales","perfil-ingenieria-planta","paysandu-inicial","tacuarembo-inicial"],
+    pathwayLabel: "Perfil o sede",
     minCredits: 450,
   },
   "bedelias-fing-ingenieria-naval-1997": {
