@@ -585,8 +585,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-tecnologo-en-cartografia-2011": {
     load: () => import("./bedelias-generated/bedelias-fing-tecnologo-en-cartografia-2011.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["curricula-personalizada"],
+    pathwayLabel: "Recorrido",
     minCredits: 180,
   },
   "bedelias-fing-tecnologo-en-informatica-2007": {

@@ -17,7 +17,7 @@ test("integra una sola proyección por identidad canónica vigente y excluye pla
     .flatMap((faculty) => faculty.careers)
     .flatMap((career) => career.plans)
     .map((plan) => plan.id);
-  assert.equal(catalogPlanIds.length, 140);
+  assert.equal(catalogPlanIds.length, 141);
   assert.equal(new Set(catalogPlanIds).size, 139);
   assert.ok(!report.plans.some((plan) => plan.identity === "diplomatura en musica:1994"));
   assert.ok(!report.plans.some((plan) => plan.identity === "escalonada de enfermeria:2001"));

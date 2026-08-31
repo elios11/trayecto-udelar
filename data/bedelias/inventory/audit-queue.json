@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T10:43:19.786Z",
+  "generatedAt": "2026-08-31T11:01:18.420Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:f1fb3f23aef96e0a48d5c99b4c28b58bf47f713fe4079fe1c20bdb4dcae86063"
+    "officialAuditRegistryHash": "sha256:c693171b1c1377fcb96ad2277ae376eb8a54a76632eea57ee48157836167b44c"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 165,
-    "pendingCanonicalIdentities": 12,
+    "evidenceClosedCanonicalIdentities": 166,
+    "pendingCanonicalIdentities": 11,
     "byPriority": {
-      "official-sources-pending": 12
+      "official-sources-pending": 11
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1011,38 +1011,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-31",
       "conclusion": "one-degree-with-intermediate-title-flexible-curriculum-and-multiple-campus-offerings"
+    },
+    {
+      "identity": "tecnologo en cartografia:2011",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-31",
+      "conclusion": "one-shared-technologist-with-flexible-curriculum"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnologo en cartografia:2011",
-      "career": {
-        "name": "TECNÓLOGO EN CARTOGRAFÍA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2011",
-        "name": "TECNOLOGO EN CARTOGRAFIA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:tecnologo en cartografia:2011",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:tecnologo en cartografia:2011",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "tecnologo en informatica:2007",
       "career": {
@@ -1474,5 +1451,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:707b49595b572fee5f8b567463f056a9d6f153b0f52b4b7fef548eb955b205f0"
+  "contentHash": "sha256:6ef5a98fafa896d36e907388b9de93223de00b20c71a41b3c5685fa59e39e431"
 }

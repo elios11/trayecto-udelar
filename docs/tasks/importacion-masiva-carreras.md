@@ -1898,3 +1898,16 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Registro de auditoría: hash `sha256:f1fb3f23aef96e0a48d5c99b4c28b58bf47f713fe4079fe1c20bdb4dcae86063`. Cola general: 12 identidades pendientes; hash `sha256:707b49595b572fee5f8b567463f056a9d6f153b0f52b4b7fef548eb955b205f0`.
 - Manifiesto UI: 139 proyecciones, todas con composición utilizable y 41 con sedes oficiales; hash `sha256:2330d715297343e7e85f3a3702b4973e0cbbe12c49ed08e5c148ce19fdf8304a`. Cola funcional vacía; hash `sha256:355ff722073a52b2bbea5f0ef52358b37bed5f48fa0de92a9762cbb628c86b3d`.
 - Siguiente paso: auditar Tecnólogo en Cartografía Plan 2011, primera identidad reproducible restante.
+
+### Tecnólogo en Cartografía Plan 2011 — carrera compartida y currículo flexible operativos 2026-08-31
+
+- El Plan 2011, la página vigente de FING y el catálogo de Udelar confirman una única carrera compartida por las facultades de Ingeniería y Ciencias, con título `Tecnólogo en Cartografía`, sede Montevideo y una duración oficial de cuatro semestres/dos años.
+- El egreso exige 180 créditos: 160 de cursos, 10 de Pasantía y 10 de Proyecto. Los ocho mínimos por área suman 144 créditos —Matemáticas 30, Geodesia 16, Análisis Territorial 18, Geomática 24, Humanística 9, Taller de Cartografía Digital 27, Pasantía 10 y Proyecto 10— y los 36 restantes se completan dentro del currículo individual aprobado.
+- Bedelías conserva 102 opciones acreditables, incluidas sustituciones y unidades históricas, organizadas en esas ocho áreas. La UI muestra el catálogo completo y sus mínimos, pero no convierte automáticamente los módulos orientativos del plan en una secuencia obligatoria que mezcle versiones incompatibles.
+- Pasantía y Proyecto se controlan como actividades nominales de 10 créditos además de sus mínimos de área. La aprobación del currículo individual por la Comisión Coordinadora aparece como validación final de crédito cero.
+- Ingeniería y Ciencias muestran la carrera en sus respectivos selectores, pero ambas entradas cargan el mismo identificador de plan, trayectoria y progreso; no se duplica la identidad académica.
+- Se resolvieron dos discrepancias oficiales: Bedelías y el catálogo general conservan 60 meses, mientras el Plan y FING establecen dos años; la página de FING abrevia `160 créditos`, pero el Plan agrega Pasantía y Proyecto y fija 180 totales.
+- La proyección contiene 104 componentes: 102 unidades de Bedelías, una orientación sobre los 36 créditos flexibles y una validación final. Conserva 55 reglas publicadas y 30 consultas sin regla explícita.
+- Registro de auditoría: hash `sha256:c693171b1c1377fcb96ad2277ae376eb8a54a76632eea57ee48157836167b44c`. Cola general: 11 identidades pendientes; hash `sha256:6ef5a98fafa896d36e907388b9de93223de00b20c71a41b3c5685fa59e39e431`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable y 41 con múltiples sedes oficiales; hash `sha256:3d945ed4f726b9cf95e5515fcf1966ca8900a9ae4939f948569594a239310d75`. Cola funcional vacía; hash `sha256:6311e14861b4dcf68c395b508e74d74b5a1ff8a65edbfc6b8ff80b823af3b07d`.
+- Siguiente paso: auditar Tecnólogo en Informática Plan 2007, primera identidad reproducible restante.

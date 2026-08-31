@@ -92,6 +92,6 @@ test("deja trazabilidad oficial y cierra ambas identidades de la cola", () => {
     assert.ok(audit.sources.some(({ url }) => url === planPdf));
     assert.ok(!queue.queue.some((entry) => entry.identity === identity));
   }
-  assert.equal(queue.counts.pendingCanonicalIdentities, 12);
-  assert.equal(queue.queue[0].identity, "tecnologo en cartografia:2011");
+  assert.equal(queue.counts.pendingCanonicalIdentities, 11);
+  assert.equal(queue.queue[0].identity, "tecnologo en informatica:2007");
 });
