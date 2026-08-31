@@ -62201,8 +62201,397 @@
       ],
       "uiNotice": "Plan 2011 compartido por Ingeniería y Ciencias: 180 créditos en dos años. Los mínimos de área suman 144; completá 36 créditos adicionales en tu currículo, además de Pasantía, Proyecto y validación de la Comisión.",
       "remainingWork": "La oferta semestral y la elección entre unidades vigentes, sustituciones e históricos deben confirmarse con la Comisión Coordinadora antes de convertir el catálogo flexible en una secuencia recomendada."
+    },
+    {
+      "identity": "tecnologo en informatica:2007",
+      "career": "Tecnólogo en Informática",
+      "planYear": "2007",
+      "reviewedAt": "2026-08-31",
+      "status": "official-evidence-complete",
+      "scope": "current-joint-technologist-title-duration-total-credits-area-minima-internship-project-flexible-curriculum-and-five-campuses",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad de Ingeniería, 12/04/2007",
+          "Consejo Directivo Central, 22/05/2007",
+          "Consejo de Educación Técnico Profesional, 17/04/2007"
+        ],
+        "planYear": "2007",
+        "title": "Tecnólogo en Informática",
+        "careerName": "Tecnólogo en Informática",
+        "facultyCode": "FING",
+        "facultyName": "Facultad de Ingeniería",
+        "sharedWith": [
+          "Universidad Tecnológica (UTEC)",
+          "DGETP-UTU"
+        ],
+        "durationMonths": 36,
+        "semesters": 6,
+        "minimumCredits": 252,
+        "current": true,
+        "pathwayLabel": "Recorrido",
+        "degreeRule": "El Plan 2007 exige 252 créditos, los mínimos de las siete áreas, una Pasantía Laboral de 10 créditos, un Proyecto de 20 créditos y la validación del egreso por la Comisión Nacional de Carrera.",
+        "trajectories": [
+          {
+            "id": "curricula-personalizada",
+            "credentialId": "tecnologo-informatica",
+            "label": "Currícula personalizada",
+            "description": "Plan 2007 común a las cinco sedes. Elegí unidades del catálogo hasta cubrir los siete mínimos oficiales y 252 créditos; la Comisión Nacional valida la implementación curricular y el egreso.",
+            "campusIds": [
+              "montevideo",
+              "florida",
+              "maldonado",
+              "san-jose",
+              "paysandu"
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf",
+          "pathwayLabel": "Recorrido",
+          "pathwayDescription": "Un único Plan 2007 compartido por Udelar, UTEC y DGETP-UTU, con la misma estructura de créditos en Montevideo, Florida, Maldonado, San José y Paysandú.",
+          "includeAllCoursesInPathwayCatalog": true,
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "pathRequirementMap": {
+            "1899": "informatica-humanas",
+            "2043": "informatica-matematica",
+            "2203": "informatica-desarrollo",
+            "2852": "informatica-proyecto-pasantia",
+            "3406": "informatica-bases-datos",
+            "3735": "informatica-arquitectura",
+            "3803": "informatica-programacion"
+          },
+          "periodLabelMap": {
+            "1899": "Ciencias Humanas y Sociales",
+            "2043": "Matemática",
+            "2203": "Desarrollo de Software",
+            "2852": "Proyecto y Pasantía Laboral",
+            "3406": "Bases de Datos y Sistemas de Información",
+            "3735": "Arquitectura, Sistemas Operativos y Redes",
+            "3803": "Programación"
+          },
+          "periodOrder": [
+            "Orientación del recorrido",
+            "Matemática",
+            "Programación",
+            "Arquitectura, Sistemas Operativos y Redes",
+            "Bases de Datos y Sistemas de Información",
+            "Desarrollo de Software",
+            "Ciencias Humanas y Sociales",
+            "Proyecto y Pasantía Laboral",
+            "Validación de egreso"
+          ],
+          "creditRequirements": [
+            {
+              "id": "informatica-matematica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Matemática",
+              "shortName": "Matemática",
+              "minCredits": 26,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "informatica-programacion",
+              "parentId": null,
+              "kind": "group",
+              "name": "Programación",
+              "shortName": "Programación",
+              "minCredits": 44,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "informatica-arquitectura",
+              "parentId": null,
+              "kind": "group",
+              "name": "Arquitectura, Sistemas Operativos y Redes de Computadoras",
+              "shortName": "Arquitectura, Sistemas Operativos y Redes de Computadoras",
+              "minCredits": 32,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "informatica-bases-datos",
+              "parentId": null,
+              "kind": "group",
+              "name": "Bases de Datos y Sistemas de Información",
+              "shortName": "Bases de Datos y Sistemas de Información",
+              "minCredits": 24,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "informatica-desarrollo",
+              "parentId": null,
+              "kind": "group",
+              "name": "Desarrollo de Software",
+              "shortName": "Desarrollo de Software",
+              "minCredits": 12,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "informatica-humanas",
+              "parentId": null,
+              "kind": "group",
+              "name": "Ciencias Humanas y Sociales",
+              "shortName": "Ciencias Humanas y Sociales",
+              "minCredits": 28,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "informatica-proyecto-pasantia",
+              "parentId": null,
+              "kind": "group",
+              "name": "Proyecto y Pasantía Laboral",
+              "shortName": "Proyecto y Pasantía Laboral",
+              "minCredits": 30,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "informatica-pasantia-obligatoria",
+              "label": "Aprobá la Pasantía Laboral",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "TI21"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "informatica-proyecto-final",
+              "label": "Aprobá el Proyecto",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "TI27"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "informatica-flexibilidad",
+              "name": "Completá 56 créditos adicionales dentro de la implementación curricular aprobada",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "tecnologo-informatica",
+              "title": "Tecnólogo en Informática",
+              "minTotalCredits": 252,
+              "nodeRequirements": [
+                {
+                  "nodeId": "informatica-matematica",
+                  "minCredits": 26
+                },
+                {
+                  "nodeId": "informatica-programacion",
+                  "minCredits": 44
+                },
+                {
+                  "nodeId": "informatica-arquitectura",
+                  "minCredits": 32
+                },
+                {
+                  "nodeId": "informatica-bases-datos",
+                  "minCredits": 24
+                },
+                {
+                  "nodeId": "informatica-desarrollo",
+                  "minCredits": 12
+                },
+                {
+                  "nodeId": "informatica-humanas",
+                  "minCredits": 28
+                },
+                {
+                  "nodeId": "informatica-proyecto-pasantia",
+                  "minCredits": 30
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "informatica-pasantia-obligatoria",
+                "informatica-proyecto-final",
+                "validacion-final-plan"
+              ],
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            }
+          ],
+          "manualCompletionValidation": "Validación de la implementación curricular y del egreso por la Comisión Nacional de Carrera"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FING",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "oferta Udelar en Montevideo; ingresos 2026 en Buceo y LATU",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ],
+          "includeInSharedWith": false
+        },
+        {
+          "serviceCode": "UTEC",
+          "locations": [
+            "Florida",
+            "San José"
+          ],
+          "role": "oferta interinstitucional presencial",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ],
+          "includeInSharedWith": false
+        },
+        {
+          "serviceCode": "CURE",
+          "locations": [
+            "Maldonado"
+          ],
+          "role": "oferta interinstitucional presencial en CURE",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ],
+          "includeInSharedWith": false
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "oferta interinstitucional híbrida",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "curricula-personalizada"
+          ],
+          "includeInSharedWith": false
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fing-tecnologo-en-informatica-2007.json",
+        "metadataCurrent": true,
+        "compositionMatterCount": 57,
+        "normalizedCourseCount": 57,
+        "compositionGroupCount": 7,
+        "prerequisiteRuleCount": 61,
+        "noPublishedRuleCount": 3,
+        "snapshotContentHash": "d9eee94d47ea3105e16e1206aaaab859f85e0e34dd6fe1ddea668433aedac96a",
+        "regionalSnapshots": {
+          "CURE": "data/bedelias/cure-tecnologo-en-informatica-2007.json",
+          "CENURLN": "data/bedelias/cenurln-tecnologo-en-informatica-2007.json"
+        },
+        "interpretation": "Los catálogos FING, CURE y CENURLN tienen la misma huella curricular de 57 unidades. La menor cobertura regional de previaturas no prueba una variante de plan. Bedelías conserva una duración genérica de 60 meses; el Plan oficial establece seis semestres."
+      },
+      "conclusion": {
+        "canonicalModel": "one-joint-technologist-with-five-campus-offerings",
+        "canonicalIdentity": "tecnologo en informatica:2007",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales y la huella curricular de Bedelías describen un único Plan 2007 compartido. Las sedes y modalidades son ofertas del mismo plan, no nuevas carreras.",
+        "normalization": [
+          "Publicar una sola carrera bajo Facultad de Ingeniería, compartida con UTEC y DGETP-UTU, con un único progreso.",
+          "Permitir elegir Montevideo, Florida, Maldonado, San José o Paysandú sin duplicar materias ni avance.",
+          "Corregir la duración a tres años/seis semestres y conservar los 252 créditos totales.",
+          "Controlar los siete mínimos oficiales, cuya suma es 196 créditos, y orientar 56 créditos adicionales dentro de la implementación aprobada.",
+          "Exigir nominalmente Pasantía Laboral, Proyecto y validación de egreso por la Comisión Nacional.",
+          "Conservar las 57 opciones de Bedelías por área sin interpretar diferencias de cobertura de previaturas como variantes regionales."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf",
+          "authority": "Plan de Estudios 2007 del Tecnólogo en Informática, Facultad de Ingeniería",
+          "supports": [
+            "título",
+            "seis semestres",
+            "252 créditos",
+            "siete mínimos",
+            "pasantía",
+            "proyecto",
+            "implementaciones curriculares",
+            "gobernanza original"
+          ]
+        },
+        {
+          "url": "https://utec.edu.uy/es/educacion/carrera/tecnologo-en-informatica/",
+          "authority": "Página vigente del Tecnólogo en Informática, UTEC",
+          "supports": [
+            "vigencia",
+            "seis semestres",
+            "instituciones actuales",
+            "Florida",
+            "Maldonado",
+            "San José",
+            "Paysandú",
+            "modalidades",
+            "ingreso"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/tecnoinf/mvd/varios/sorteo2026.html",
+          "authority": "Ingreso 2026 del Tecnólogo en Informática en Montevideo, Facultad de Ingeniería",
+          "supports": [
+            "oferta vigente en Montevideo",
+            "Buceo"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/tecnoinf/maldonado/novedades.html",
+          "authority": "Sitio vigente del Tecnólogo en Informática en Maldonado, Facultad de Ingeniería",
+          "supports": [
+            "oferta vigente en Maldonado"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/tecnoinf/paysandu/midder.html",
+          "authority": "Sitio vigente del Tecnólogo en Informática en Paysandú, Facultad de Ingeniería",
+          "supports": [
+            "oferta vigente en Paysandú"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/tecnoinf/maldonado/docsgrales/acuerdo2018.pdf",
+          "authority": "Acuerdo interinstitucional 2018 del Tecnólogo en Informática",
+          "supports": [
+            "Comisión Nacional",
+            "gobernanza Udelar-UTEC-DGETP-UTU"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "duration",
+          "resolution": "Bedelías muestra 60 meses, pero el Plan 2007 y la página vigente de UTEC establecen seis semestres/tres años. La UI usa 36 meses."
+        },
+        {
+          "field": "institutionalGovernance",
+          "resolution": "El texto original refiere a Udelar y ANEP/CETP. La oferta vigente se gobierna entre Udelar, UTEC y DGETP-UTU; la UI usa las instituciones actuales sin alterar el Plan 2007."
+        },
+        {
+          "field": "regionalPrerequisites",
+          "resolution": "CURE y CENURLN publican el mismo catálogo y créditos que FING, pero menos previaturas. Se conserva la cobertura canónica FING y no se infiere una variante curricular por sede."
+        },
+        {
+          "field": "campusModality",
+          "resolution": "La modalidad varía por oferta: Florida, Maldonado y San José son presenciales; Paysandú es híbrida. Esto no crea trayectorias académicas distintas."
+        },
+        {
+          "field": "montevideoLocations",
+          "resolution": "Buceo y LATU son puntos de ingreso/oferta dentro de Montevideo. Se modelan como una sola sede académica para no duplicar el mismo plan ni el progreso."
+        }
+      ],
+      "uiNotice": "Plan 2007 compartido por Udelar, UTEC y DGETP-UTU: 252 créditos en seis semestres. Elegí sede; el plan y tu progreso son comunes. Los mínimos de área suman 196 créditos y la Comisión Nacional valida los 56 restantes, la Pasantía y el Proyecto.",
+      "remainingWork": "La oferta concreta de optativas y horarios debe confirmarse en cada sede antes de convertir el catálogo flexible en una secuencia semestral recomendada."
     }
   ],
-  "contentHash": "sha256:c693171b1c1377fcb96ad2277ae376eb8a54a76632eea57ee48157836167b44c",
+  "contentHash": "sha256:8d55bcfbd6ba3ce1f7afd675ccd47e75afa90af6ea46ad58ec38ce27ceb4f909",
   "generatedAt": "2026-08-31T00:00:00.000Z"
 }

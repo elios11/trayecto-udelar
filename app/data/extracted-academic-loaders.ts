@@ -591,8 +591,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-tecnologo-en-informatica-2007": {
     load: () => import("./bedelias-generated/bedelias-fing-tecnologo-en-informatica-2007.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["curricula-personalizada"],
+    pathwayLabel: "Recorrido",
     minCredits: 252,
   },
   "bedelias-fing-tecnologo-en-telecomunicaciones-2009": {

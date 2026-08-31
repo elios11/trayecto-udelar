@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:6ef5a98fafa896d36e907388b9de93223de00b20c71a41b3c5685fa59e39e431",
-    "officialAuditHash": "sha256:c693171b1c1377fcb96ad2277ae376eb8a54a76632eea57ee48157836167b44c",
+    "auditQueueHash": "sha256:fef4da64fc7f5cf862945d670fbb489e5a406262c44f1ddc9b3a11b452ef2f62",
+    "officialAuditHash": "sha256:8d55bcfbd6ba3ce1f7afd675ccd47e75afa90af6ea46ad58ec38ce27ceb4f909",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 41,
+    "plansWithOfficialCampuses": 42,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1133,9 +1133,15 @@
       "planId": "bedelias-fing-tecnologo-en-informatica-2007",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-tecnologo-en-informatica-2007.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "florida",
+        "san-jose",
+        "maldonado",
+        "paysandu"
+      ]
     },
     {
       "identity": "tecnologo en telecomunicaciones:2009",
@@ -1581,5 +1587,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:3d945ed4f726b9cf95e5515fcf1966ca8900a9ae4939f948569594a239310d75"
+  "contentHash": "sha256:487ee89b4ecd51c9f4e772d7893f2de82df244b3269b45b12541f8923bc1d244"
 }

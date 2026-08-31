@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T11:01:18.420Z",
+  "generatedAt": "2026-08-31T20:20:59.091Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:c693171b1c1377fcb96ad2277ae376eb8a54a76632eea57ee48157836167b44c"
+    "officialAuditRegistryHash": "sha256:8d55bcfbd6ba3ce1f7afd675ccd47e75afa90af6ea46ad58ec38ce27ceb4f909"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 166,
-    "pendingCanonicalIdentities": 11,
+    "evidenceClosedCanonicalIdentities": 167,
+    "pendingCanonicalIdentities": 10,
     "byPriority": {
-      "official-sources-pending": 11
+      "official-sources-pending": 10
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1017,65 +1017,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-31",
       "conclusion": "one-shared-technologist-with-flexible-curriculum"
+    },
+    {
+      "identity": "tecnologo en informatica:2007",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-31",
+      "conclusion": "one-joint-technologist-with-five-campus-offerings"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnologo en informatica:2007",
-      "career": {
-        "name": "TECNÓLOGO EN INFORMÁTICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2007",
-        "name": "TECNOLOGO EN INFORMATICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:tecnologo en informatica:2007",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:tecnologo en informatica:2007",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CURE",
-          "canonicalServiceCode": "FING",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -60
-          }
-        },
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FING",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -64
-          }
-        }
-      ]
-    },
     {
       "identity": "tecnologo en telecomunicaciones:2009",
       "career": {
@@ -1451,5 +1401,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:6ef5a98fafa896d36e907388b9de93223de00b20c71a41b3c5685fa59e39e431"
+  "contentHash": "sha256:fef4da64fc7f5cf862945d670fbb489e5a406262c44f1ddc9b3a11b452ef2f62"
 }
