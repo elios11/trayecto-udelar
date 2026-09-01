@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-01T12:44:32.984Z",
+  "generatedAt": "2026-09-01T18:10:28.444Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:4cbfa5c2102e7b1f539d72afdf8534873f10ee9d9720085023b7fda7ab9ce08e"
+    "officialAuditRegistryHash": "sha256:b434b16c3828ed9daf8064fa0bad4ce269913d529ae6633d78c401b2c4dba257"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 171,
-    "pendingCanonicalIdentities": 6,
+    "evidenceClosedCanonicalIdentities": 172,
+    "pendingCanonicalIdentities": 5,
     "byPriority": {
-      "official-sources-pending": 6
+      "official-sources-pending": 5
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1047,52 +1047,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-09-01",
       "conclusion": "one-current-degree-montevideo-complete-salto-first-year"
+    },
+    {
+      "identity": "licenciatura en quimica:2016",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-09-01",
+      "conclusion": "one-current-degree-montevideo-complete-salto-first-year"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en quimica:2016",
-      "career": {
-        "name": "LICENCIATURA EN QUÍMICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2016",
-        "name": "LICENCIATURA EN QUIMICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FQ",
-        "serviceName": "FACULTAD DE QUÍMICA",
-        "planKey": "FQ:licenciatura en quimica:2016",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FQ",
-          "serviceName": "FACULTAD DE QUÍMICA",
-          "planKey": "FQ:licenciatura en quimica:2016",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FQ",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -206
-          }
-        }
-      ]
-    },
     {
       "identity": "licenciatura en tecnologias de la quimica:2022",
       "career": {
@@ -1267,5 +1230,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:9d2d9f6e1df55780aefbd3782dcab28dd76adf42545313d636f2030e3b899379"
+  "contentHash": "sha256:3bef45ff4a51709d9320183fd14e451c9fce35c72216862c0ce56a4f5c7f3ce6"
 }

@@ -65240,8 +65240,534 @@
       ],
       "uiNotice": "Plan 2015 de 450 créditos. La carrera completa se cursa en Montevideo; Salto ofrece únicamente el primer año y luego se continúa en Montevideo con el mismo título y progreso. El damero es sugerido y el currículo flexible requiere validación de la Comisión de Carrera.",
       "remainingWork": "La oferta concreta de optativas y electivas y las equivalencias de versiones deben verificarse cada período en Facultad de Química; Bedelía y la Comisión de Carrera validan el egreso."
+    },
+    {
+      "identity": "licenciatura en quimica:2016",
+      "career": "Licenciatura en Química",
+      "planYear": "2016",
+      "reviewedAt": "2026-09-01",
+      "status": "official-evidence-complete",
+      "scope": "current-plan-2016-montevideo-complete-salto-first-year-320-credits",
+      "publicationEligible": true,
+      "officialPlan": {
+        "approval": [
+          "Consejo de Facultad de Química, 22/12/2016",
+          "Instructivo vigente de mayo de 2025, expediente 101900-000024-25",
+          "Damero actualizado por Resolución 112 del Consejo de Facultad de Química, 12/03/2026"
+        ],
+        "planYear": "2016",
+        "title": "Licenciado en Química",
+        "careerName": "Licenciatura en Química",
+        "facultyCode": "FQ",
+        "facultyName": "Facultad de Química",
+        "durationMonths": 48,
+        "semesters": 8,
+        "minimumCredits": 320,
+        "current": true,
+        "pathwayLabel": "Recorrido",
+        "degreeRule": "El Plan 2016 exige 320 créditos: 174 obligatorios, 76 optativos/electivos con al menos 56 optativos, 10 de vinculación con el medio y 60 del Proyecto Específico de Título, compuesto por 20 de asignaturas específicas y 40 de Tesis de Grado.",
+        "trajectories": [
+          {
+            "id": "montevideo",
+            "credentialId": "licenciado-en-quimica",
+            "label": "Carrera completa en Montevideo",
+            "description": "Damero sugerido vigente de ocho semestres en Facultad de Química. El sexto semestre y parte de los dos últimos se completan con la oferta flexible y el proyecto individual aprobados por la Comisión de Carrera.",
+            "campusIds": [
+              "montevideo"
+            ],
+            "periods": [
+              {
+                "label": "Primer semestre",
+                "courseIds": [
+                  "01A",
+                  "102",
+                  "103B",
+                  "104A"
+                ]
+              },
+              {
+                "label": "Segundo semestre",
+                "courseIds": [
+                  "02B",
+                  "02C",
+                  "202",
+                  "203A",
+                  "205"
+                ]
+              },
+              {
+                "label": "Tercer semestre",
+                "courseIds": [
+                  "301",
+                  "302",
+                  "303A",
+                  "303B",
+                  "304"
+                ]
+              },
+              {
+                "label": "Cuarto semestre",
+                "courseIds": [
+                  "401Q",
+                  "402",
+                  "508A"
+                ]
+              },
+              {
+                "label": "Quinto semestre",
+                "courseIds": [
+                  "501",
+                  "502X",
+                  "503",
+                  "520A",
+                  "190",
+                  "512"
+                ]
+              },
+              {
+                "label": "Sexto semestre",
+                "courseIds": [
+                  "lq-flexibilidad-sexto"
+                ]
+              },
+              {
+                "label": "Semestres 7 y 8",
+                "courseIds": [
+                  "lq-pet-especificas-guia",
+                  "922"
+                ]
+              }
+            ],
+            "excludedCourseIds": [
+              "lq-inicio-salto"
+            ]
+          },
+          {
+            "id": "salto-primer-ano",
+            "credentialId": "licenciado-en-quimica",
+            "label": "Primer año en Salto",
+            "description": "Tramo inicial en el Cenur Litoral Norte, sede Salto. La fuente oficial confirma sólo el primer año; la carrera continúa en Montevideo con el mismo Plan 2016, título y progreso. La oferta concreta se verifica cada período.",
+            "campusIds": [
+              "salto"
+            ],
+            "periods": [
+              {
+                "label": "Orientación del recorrido",
+                "courseIds": [
+                  "lq-inicio-salto"
+                ]
+              }
+            ],
+            "excludedCourseIds": [
+              "validacion-final-plan",
+              "lq-flexibilidad-sexto",
+              "lq-pet-especificas-guia"
+            ],
+            "catalogSourceCourseIds": [
+              "CENURLN-CBB22",
+              "CENURLN-CBB24",
+              "CENURLN-CIO10",
+              "CENURLN-SRN08",
+              "CENURLN-SRN05"
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20qu%C3%ADmica%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "pathwayLabel": "Recorrido",
+          "pathwayDescription": "Un único Plan 2016: carrera completa en Montevideo o primer año en Salto con continuidad en Montevideo.",
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "courseOverrides": {
+            "512": {
+              "credits": 5,
+              "name": "Laboratorio de Bioquímica"
+            }
+          },
+          "pathRequirementMap": {
+            "3150": "lq-formacion-basica",
+            "3152": "lq-quimicas",
+            "3153": "lq-no-quimicas",
+            "3250": "lq-complementaria",
+            "3251": "lq-optativas",
+            "3252": "lq-electivas",
+            "3253": "lq-avm",
+            "3350": "lq-pet",
+            "3351": "lq-pet-especificas",
+            "3352": "lq-tesis"
+          },
+          "periodLabelMap": {
+            "3152": "Ciencias químicas",
+            "3153": "Ciencias físico-matemáticas, biológicas y otras",
+            "3251": "Optativas",
+            "3252": "Electivas",
+            "3253": "Vinculación con el medio",
+            "3351": "Asignaturas específicas del proyecto",
+            "3352": "Tesis de Grado"
+          },
+          "periodOrder": [
+            "Orientación del recorrido",
+            "Primer semestre",
+            "Segundo semestre",
+            "Tercer semestre",
+            "Cuarto semestre",
+            "Quinto semestre",
+            "Sexto semestre",
+            "Semestres 7 y 8",
+            "Ciencias físico-matemáticas, biológicas y otras",
+            "Ciencias químicas",
+            "Optativas",
+            "Electivas",
+            "Vinculación con el medio",
+            "Asignaturas específicas del proyecto",
+            "Tesis de Grado",
+            "Validación de egreso"
+          ],
+          "creditRequirements": [
+            {
+              "id": "lq-formacion-basica",
+              "parentId": null,
+              "kind": "group",
+              "name": "Área de formación básica",
+              "shortName": "Formación básica",
+              "minCredits": 174,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-no-quimicas",
+              "parentId": "lq-formacion-basica",
+              "kind": "module",
+              "name": "Ciencias físico-matemáticas, biológicas y otras",
+              "shortName": "Cs. físico-mat., biol. y otras",
+              "minCredits": 80,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-quimicas",
+              "parentId": "lq-formacion-basica",
+              "kind": "module",
+              "name": "Ciencias químicas",
+              "shortName": "Ciencias químicas",
+              "minCredits": 94,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-complementaria",
+              "parentId": null,
+              "kind": "group",
+              "name": "Optativas, electivas y vinculación con el medio",
+              "shortName": "Formación complementaria",
+              "minCredits": 86,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-flexibles",
+              "parentId": "lq-complementaria",
+              "kind": "module",
+              "name": "Asignaturas optativas y electivas",
+              "shortName": "Optativas/electivas",
+              "minCredits": 76,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-optativas",
+              "parentId": "lq-flexibles",
+              "kind": "module",
+              "name": "Asignaturas optativas",
+              "shortName": "Optativas",
+              "minCredits": 56,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-electivas",
+              "parentId": "lq-flexibles",
+              "kind": "module",
+              "name": "Asignaturas electivas",
+              "shortName": "Electivas",
+              "minCredits": 0,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-avm",
+              "parentId": "lq-complementaria",
+              "kind": "module",
+              "name": "Actividades de vinculación con el medio",
+              "shortName": "Vinculación con el medio",
+              "minCredits": 10,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-pet",
+              "parentId": null,
+              "kind": "group",
+              "name": "Proyecto Específico de Título",
+              "shortName": "Proyecto de título",
+              "minCredits": 60,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-pet-especificas",
+              "parentId": "lq-pet",
+              "kind": "module",
+              "name": "Asignaturas específicas del proyecto",
+              "shortName": "Asignaturas específicas",
+              "minCredits": 20,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-tesis",
+              "parentId": "lq-pet",
+              "kind": "module",
+              "name": "Tesis de Grado",
+              "shortName": "Tesis de Grado",
+              "minCredits": 40,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "lq-tesis-nominal",
+              "label": "Aprobá la Tesis de Grado",
+              "minCompleted": 1,
+              "sourceCourseIds": [
+                "922"
+              ],
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            }
+          ],
+          "additionalCourses": [
+            {
+              "id": "lq-inicio-salto",
+              "name": "Cursá el primer año en Salto y continuá la carrera en Montevideo",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Orientación del recorrido",
+              "curricularBlock": true,
+              "sourceUrl": "https://udelar.edu.uy/carrera/licenciatura-en-quimica"
+            },
+            {
+              "id": "lq-flexibilidad-sexto",
+              "name": "Completá optativas, electivas y actividades de vinculación con el medio",
+              "credits": 0,
+              "requirementId": "lq-complementaria",
+              "periodLabel": "Sexto semestre",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-pet-especificas-guia",
+              "name": "Elegí 20 créditos de asignaturas específicas vinculadas a la Tesis",
+              "credits": 0,
+              "requirementId": "lq-pet-especificas",
+              "periodLabel": "Semestres 7 y 8",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "licenciado-en-quimica",
+              "title": "Licenciado en Química",
+              "minTotalCredits": 320,
+              "nodeRequirements": [
+                {
+                  "nodeId": "lq-formacion-basica",
+                  "minCredits": 174
+                },
+                {
+                  "nodeId": "lq-no-quimicas",
+                  "minCredits": 80
+                },
+                {
+                  "nodeId": "lq-quimicas",
+                  "minCredits": 94
+                },
+                {
+                  "nodeId": "lq-complementaria",
+                  "minCredits": 86
+                },
+                {
+                  "nodeId": "lq-flexibles",
+                  "minCredits": 76
+                },
+                {
+                  "nodeId": "lq-optativas",
+                  "minCredits": 56
+                },
+                {
+                  "nodeId": "lq-avm",
+                  "minCredits": 10
+                },
+                {
+                  "nodeId": "lq-pet",
+                  "minCredits": 60
+                },
+                {
+                  "nodeId": "lq-pet-especificas",
+                  "minCredits": 20
+                },
+                {
+                  "nodeId": "lq-tesis",
+                  "minCredits": 40
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "lq-tesis-nominal",
+                "validacion-final-plan"
+              ],
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            }
+          ],
+          "manualCompletionValidation": "Validación de optativas, electivas, vinculación con el medio, Proyecto Específico de Título y egreso por la Comisión de Carrera de Licenciatura en Química"
+        }
+      },
+      "offerings": [
+        {
+          "serviceCode": "FQ",
+          "locations": [
+            "Montevideo"
+          ],
+          "role": "carrera completa",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "montevideo"
+          ]
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "sede de primer año con continuidad en Montevideo",
+          "admissionStatus": "active",
+          "includeInSharedWith": false,
+          "trajectoryIds": [
+            "salto-primer-ano"
+          ]
+        }
+      ],
+      "bedeliasComparison": {
+        "canonicalSnapshot": "data/bedelias/fq-licenciatura-en-quimica-2016.json",
+        "relatedSnapshots": [
+          "data/bedelias/cenurln-licenciatura-en-quimica-2016.json"
+        ],
+        "metadataCurrent": true,
+        "compositionMatterCount": 322,
+        "normalizedCourseCount": 320,
+        "compositionGroupCount": 10,
+        "prerequisiteRuleCount": 125,
+        "noPublishedRuleCount": 91,
+        "compositionFingerprint": "sha256:f7fd3d328546699d45368e1353dd4ac2cd034dae51d20a773386107210f33abe",
+        "snapshotContentHash": "1c33c238294fd0f7216bcc34a872040d05f81a0951eff005e30adeb16b2673f5",
+        "interpretation": "FQ y CENURLN publican el mismo catálogo de 320 unidades para el Plan 2016. La diferencia de previaturas no constituye una variante curricular; la oferta oficial limita Salto al primer año."
+      },
+      "conclusion": {
+        "canonicalModel": "one-current-degree-montevideo-complete-salto-first-year",
+        "canonicalIdentity": "licenciatura en quimica:2016",
+        "excludeFromCurrentUi": false,
+        "regionalCurriculumVariant": false,
+        "reason": "Las fuentes oficiales confirman un único Plan 2016 y un único título. Salto ofrece sólo el primer año, por lo que se modela como tramo territorial del mismo progreso y no como otra carrera o plan.",
+        "normalization": [
+          "Publicar una única Licenciatura en Química Plan 2016 y una sola credencial.",
+          "Mostrar Montevideo como carrera completa y Salto exclusivamente como primer año con continuidad en Montevideo.",
+          "Usar el damero aprobado por Resolución 112/2026, incluida Bioquímica Opción II y Laboratorio de Bioquímica en lugar de Bioquímica Opción III.",
+          "Controlar 174 créditos obligatorios, 76 optativos/electivos con 56 optativos, 10 de vinculación y 60 del Proyecto Específico de Título.",
+          "Conservar el catálogo flexible e histórico sin sumarlo automáticamente ni convertirlo en orientaciones certificadas."
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf",
+          "authority": "Instructivo vigente de Licenciatura en Química de Facultad de Química, mayo de 2025",
+          "supports": [
+            "título",
+            "320 créditos",
+            "mínimos",
+            "vinculación con el medio",
+            "Proyecto Específico de Título",
+            "requisito de acceso al proyecto"
+          ]
+        },
+        {
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20qu%C3%ADmica%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "authority": "Damero sugerido vigente aprobado por Resolución 112 del CFQ de 12/03/2026",
+          "supports": [
+            "ocho semestres",
+            "secuencia sugerida",
+            "Bioquímica Opción II",
+            "Laboratorio de Bioquímica",
+            "Proyecto Específico de Título"
+          ]
+        },
+        {
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-quimica",
+          "authority": "Catálogo vigente de carreras Udelar",
+          "supports": [
+            "vigencia",
+            "cuatro años",
+            "320 créditos",
+            "carrera completa en Montevideo",
+            "primer año en Salto"
+          ]
+        },
+        {
+          "url": "https://www.fq.edu.uy/?q=en%2Fnode%2F749",
+          "authority": "Página vigente de la carrera en Facultad de Química",
+          "supports": [
+            "perfil",
+            "Tesis de Grado",
+            "personalización de optativas/electivas",
+            "documentos normativos vigentes"
+          ]
+        },
+        {
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Cat%C3%A1logo%20asignaturas%20Electivas%20y%20Optativas%20Lic%20en%20Qca_16.pdf",
+          "authority": "Catálogo oficial de optativas y electivas de Licenciatura en Química",
+          "supports": [
+            "oferta flexible vigente",
+            "carácter actualizable del catálogo"
+          ]
+        },
+        {
+          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F815",
+          "authority": "Regulación vigente de trabajos individuales de Facultad de Química",
+          "supports": [
+            "máximo de 15 créditos por trabajos individuales",
+            "límites por modalidad"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "field": "saltoScope",
+          "resolution": "Bedelías publica en CENURLN el catálogo completo, pero Udelar limita la oferta territorial al primer año. La UI restringe Salto a cinco alternativas regionales explícitas y explica la continuidad en Montevideo."
+        },
+        {
+          "field": "dameroUpdateMetadata",
+          "resolution": "El archivo enlazado como Resolución 112/2026 conserva dentro del documento la fecha de actualización 20/02/2025, pero reemplaza Bioquímica Opción III por Bioquímica Opción II más Laboratorio de Bioquímica. Se prioriza el contenido de la resolución vigente."
+        },
+        {
+          "field": "laboratorioBioquimicaCredits",
+          "resolution": "Bedelías asigna 10 créditos al código 512, mientras el damero vigente asigna 5 para esta carrera. La proyección usa 5 créditos y conserva trazada la discrepancia."
+        },
+        {
+          "field": "flexibleMinimums",
+          "resolution": "Bedelías agrupa 86 créditos de optativas, electivas y vinculación. El instructivo vigente distingue 76 optativos/electivos, al menos 56 optativos, y 10 de vinculación; la UI controla los tres mínimos por separado."
+        },
+        {
+          "field": "projectPrerequisite",
+          "resolution": "El instructivo exige 174 créditos básicos y al menos 40 optativos/electivos antes del Proyecto Específico de Título. Bedelías no publica regla para la Tesis código 922; se documenta la condición y se mantiene validación de Comisión de Carrera."
+        },
+        {
+          "field": "prerequisiteCoverage",
+          "resolution": "FQ publica 125 reglas y 91 consultas sin regla explícita; CENURLN sólo publica 2 reglas. Se preservan las reglas centrales y no se interpreta la diferencia como variante curricular."
+        }
+      ],
+      "uiNotice": "Plan 2016 de 320 créditos. La carrera completa se cursa en Montevideo; Salto ofrece únicamente el primer año y luego se continúa en Montevideo con el mismo título y progreso. El damero es sugerido y el currículo flexible y el proyecto requieren validación de la Comisión de Carrera.",
+      "remainingWork": "La oferta concreta de optativas, electivas, vinculación y asignaturas específicas del proyecto debe verificarse cada período; Bedelía y la Comisión de Carrera personalizan el plan y validan el egreso."
     }
   ],
-  "contentHash": "sha256:4cbfa5c2102e7b1f539d72afdf8534873f10ee9d9720085023b7fda7ab9ce08e",
+  "contentHash": "sha256:b434b16c3828ed9daf8064fa0bad4ce269913d529ae6633d78c401b2c4dba257",
   "generatedAt": "2026-08-31T00:00:00.000Z"
 }

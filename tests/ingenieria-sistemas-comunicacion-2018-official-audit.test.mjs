@@ -107,7 +107,7 @@ test("ubica la carrera bajo FING y conserva la siguiente identidad pendiente", (
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018");
   assert.equal(career.plans[0].defaultTrajectoryId, "perfil-general-personalizado");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria en sistemas de comunicacion:2018"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 171);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 6);
-  assert.equal(queue.queue[0].identity, "licenciatura en quimica:2016");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 172);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 5);
+  assert.equal(queue.queue[0].identity, "licenciatura en tecnologias de la quimica:2022");
 });

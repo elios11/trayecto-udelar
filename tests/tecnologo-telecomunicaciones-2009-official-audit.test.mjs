@@ -91,7 +91,7 @@ test("controla seis mínimos, 200 créditos y una alternativa entre Proyecto y P
 
 test("cierra la auditoría y avanza a Tecnólogo Industrial Mecánico", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "tecnologo en telecomunicaciones:2009"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 171);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 6);
-  assert.equal(queue.queue[0].identity, "licenciatura en quimica:2016");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 172);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 5);
+  assert.equal(queue.queue[0].identity, "licenciatura en tecnologias de la quimica:2022");
 });

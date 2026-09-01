@@ -783,8 +783,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-licenciatura-en-quimica-2016": {
     load: () => import("./bedelias-generated/bedelias-fq-licenciatura-en-quimica-2016.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["montevideo","salto-primer-ano"],
+    pathwayLabel: "Recorrido",
     minCredits: 320,
   },
   "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022": {

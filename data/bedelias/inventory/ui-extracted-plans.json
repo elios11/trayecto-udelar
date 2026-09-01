@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:9d2d9f6e1df55780aefbd3782dcab28dd76adf42545313d636f2030e3b899379",
-    "officialAuditHash": "sha256:4cbfa5c2102e7b1f539d72afdf8534873f10ee9d9720085023b7fda7ab9ce08e",
+    "auditQueueHash": "sha256:3bef45ff4a51709d9320183fd14e451c9fce35c72216862c0ce56a4f5c7f3ce6",
+    "officialAuditHash": "sha256:b434b16c3828ed9daf8064fa0bad4ce269913d529ae6633d78c401b2c4dba257",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 45,
+    "plansWithOfficialCampuses": 46,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1507,9 +1507,12 @@
       "planId": "bedelias-fq-licenciatura-en-quimica-2016",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-licenciatura-en-quimica-2016.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "licenciatura en tecnologias de la quimica:2022",
@@ -1598,5 +1601,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:13b095d20489bc40aeafe901b3425dc7a6884eda67635f7c5f72835374871f18"
+  "contentHash": "sha256:51ee8c9cdf5caabf7c172e0a636750d10dbb6e7fcd413183d438daea0402ff51"
 }
