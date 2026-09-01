@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-01T18:10:28.444Z",
+  "generatedAt": "2026-09-01T18:25:49.380Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:b434b16c3828ed9daf8064fa0bad4ce269913d529ae6633d78c401b2c4dba257"
+    "officialAuditRegistryHash": "sha256:036f64646ece70c778261b9b8922d78aaf64c2006714c2d3da0f03b16f8d9fc0"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 172,
-    "pendingCanonicalIdentities": 5,
+    "evidenceClosedCanonicalIdentities": 173,
+    "pendingCanonicalIdentities": 4,
     "byPriority": {
-      "official-sources-pending": 5
+      "official-sources-pending": 4
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1053,38 +1053,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-09-01",
       "conclusion": "one-current-degree-montevideo-complete-salto-first-year"
+    },
+    {
+      "identity": "licenciatura en tecnologias de la quimica:2022",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-09-01",
+      "conclusion": "one-current-degree-two-official-orientations-one-campus"
     }
   ],
   "queue": [
-    {
-      "identity": "licenciatura en tecnologias de la quimica:2022",
-      "career": {
-        "name": "LICENCIATURA EN TECNOLOGÍAS DE LA QUÍMICA",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2022",
-        "name": "LICENCIATURA EN TECNOLOGÍAS DE LA QUÍMICA",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FQ",
-        "serviceName": "FACULTAD DE QUÍMICA",
-        "planKey": "FQ:licenciatura en tecnologias de la quimica:2022",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FQ",
-          "serviceName": "FACULTAD DE QUÍMICA",
-          "planKey": "FQ:licenciatura en tecnologias de la quimica:2022",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "quimico:2015",
       "career": {
@@ -1230,5 +1207,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:3bef45ff4a51709d9320183fd14e451c9fce35c72216862c0ce56a4f5c7f3ce6"
+  "contentHash": "sha256:db5311096e5c2ced2f9add94e433625ff866d5a7300d776ea0f64b276a5116a8"
 }

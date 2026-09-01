@@ -789,8 +789,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022": {
     load: () => import("./bedelias-generated/bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["biotecnologia","nanotecnologia"],
+    pathwayLabel: "Orientación",
     minCredits: 360,
   },
   "bedelias-fq-quimico-2015": {
