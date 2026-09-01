@@ -759,8 +759,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-bachiller-en-ciencias-quimicas-2000": {
     load: () => import("./bedelias-generated/bedelias-fq-bachiller-en-ciencias-quimicas-2000.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["bioquimico-clinico-plan-2000","quimico-farmaceutico-plan-2000","quimico-plan-2000","ing-alimentos","ing-quimica"],
+    pathwayLabel: "Carrera de origen",
     minCredits: 230,
   },
   "bedelias-fq-bioquimico-clinico-2015": {

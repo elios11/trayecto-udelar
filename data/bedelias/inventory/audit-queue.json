@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T20:56:41.357Z",
+  "generatedAt": "2026-09-01T01:47:29.723Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:a121fd087f2714cfd17dc8859d8f82693d489c9aa8d83fafbf3b83b3a1a6b9c9"
+    "officialAuditRegistryHash": "sha256:a387a2aba9d04381b134c7e5eca734e255bf83d8364c5d6ed497a9427b2da725"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 169,
-    "pendingCanonicalIdentities": 8,
+    "evidenceClosedCanonicalIdentities": 170,
+    "pendingCanonicalIdentities": 7,
     "byPriority": {
-      "official-sources-pending": 8
+      "official-sources-pending": 7
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1035,38 +1035,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-31",
       "conclusion": "one-joint-technologist-with-flexible-curriculum-four-example-profiles-and-two-campuses"
+    },
+    {
+      "identity": "bachiller en ciencias quimicas:2000",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-31",
+      "conclusion": "one-current-intermediate-title-five-origin-pathways-no-direct-admission"
     }
   ],
   "queue": [
-    {
-      "identity": "bachiller en ciencias quimicas:2000",
-      "career": {
-        "name": "BACHILLER EN CIENCIAS QUÍMICAS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2000",
-        "name": "BACHILLER EN CIENCIAS QUIMICAS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FQ",
-        "serviceName": "FACULTAD DE QUÍMICA",
-        "planKey": "FQ:bachiller en ciencias quimicas:2000",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FQ",
-          "serviceName": "FACULTAD DE QUÍMICA",
-          "planKey": "FQ:bachiller en ciencias quimicas:2000",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "bioquimico clinico:2015",
       "career": {
@@ -1327,5 +1304,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:36a530472630f39646ce7cfd6f265b81b69730eebbf2451eb700fc88862e228c"
+  "contentHash": "sha256:2471ff23a342fff3fed0445273470cee5f2c6a9ddaca468fbbe6193c4d08fe62"
 }

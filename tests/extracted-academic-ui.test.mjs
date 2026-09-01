@@ -25,6 +25,7 @@ test("los perfiles oficiales seleccionan sus propias metas y no simulan títulos
   assert.match(page, /item\.id === \(pathwayCredentialId \?\? credentialId\)/);
   assert.match(page, /hasPathwayCredentials \? undefined : creditStructure\.credentials\.find/);
   assert.match(page, /activeRegisteredPlan\?\.pathways\[next\]\?\.credentialId/);
+  assert.match(page, /activeRegisteredPlan\?\.plan\.credentialLabel \?\? "Título de grado"/);
 });
 
 test("sede y estados pendientes usan tokens compatibles con todos los temas", () => {

@@ -97,7 +97,7 @@ test("ubica la carrera bajo FING y la mantiene cerrada al avanzar la cola", () =
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-de-produccion-2010");
   assert.equal(career.plans[0].defaultTrajectoryId, "montevideo-curricula-sugerida");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria de produccion:2010"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 169);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 8);
-  assert.equal(queue.queue[0].identity, "bachiller en ciencias quimicas:2000");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 170);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 7);
+  assert.equal(queue.queue[0].identity, "bioquimico clinico:2015");
 });

@@ -166,16 +166,33 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => {
       const compositionPeriods = officialCurriculum?.pathwayPeriods?.[trajectory.id];
       if (compositionPeriods) {
-        const selectedCourseIds = new Set(compositionPeriods.flatMap((period) => period.courseIds));
+        const excludedIds = new Set((trajectory.excludedCourseIds ?? [])
+          .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
+        const knownCourseIds = new Set(officialCurriculum.courses.map((course) => course.id));
+        const mergedPeriods = new Map();
+        for (const period of [...(trajectory.periods ?? []), ...compositionPeriods]) {
+          if (!mergedPeriods.has(period.label)) mergedPeriods.set(period.label, []);
+          for (const sourceId of period.courseIds ?? []) {
+            const id = officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId;
+            if (knownCourseIds.has(id) && !excludedIds.has(id) && !mergedPeriods.get(period.label).includes(id)) {
+              mergedPeriods.get(period.label).push(id);
+            }
+          }
+        }
+        const trajectoryPeriods = [...mergedPeriods]
+          .map(([label, courseIds]) => ({ label, courseIds }))
+          .filter((period) => period.courseIds.length > 0);
+        const selectedCourseIds = new Set(trajectoryPeriods.flatMap((period) => period.courseIds));
         const catalogCourseIds = filterTrajectoryCatalog(trajectory, audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
-          ? officialCurriculum.courses.map((course) => course.id).filter((id) => !selectedCourseIds.has(id))
+          ? officialCurriculum.courses.map((course) => course.id)
+            .filter((id) => !selectedCourseIds.has(id) && !excludedIds.has(id))
           : []);
         return [trajectory.id, {
           label: trajectory.label,
           description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
           ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
           campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
-          periods: compositionPeriods,
+          periods: trajectoryPeriods,
           ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
         }];
       }
@@ -492,10 +509,11 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     let course = sharedKey ? sharedProfileCourses.get(sharedKey) : null;
     if (!course) {
       const id = courseId(serviceCode, { code: sourceCourseId, name: courseOverride.name ?? parsed.name }, index, usedIds);
+      const excludedRequirementIds = new Set(courseOverride.excludedAdditionalRequirementIds ?? []);
       const eligibleRequirementIds = [...new Set([
         nodeId,
         ...(courseOverride.additionalRequirementIds ?? []),
-        ...additionalRequirementIdsForAllCourses,
+        ...additionalRequirementIdsForAllCourses.filter((id) => !excludedRequirementIds.has(id)),
       ])];
       course = {
         id,
@@ -517,7 +535,11 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
         course.creditAllocations.push({ nodeId, credits, status: "official", sourceUrl });
         if (mergeSplitCompositionCourses) course.credits += credits;
       }
-      for (const eligibleNodeId of additionalRequirementIdsForAllCourses) {
+      const excludedRequirementIds = new Set(courseOverride.excludedAdditionalRequirementIds ?? []);
+      for (const eligibleNodeId of [
+        ...(courseOverride.additionalRequirementIds ?? []),
+        ...additionalRequirementIdsForAllCourses.filter((id) => !excludedRequirementIds.has(id)),
+      ]) {
         if (!course.eligibleRequirementIds.includes(eligibleNodeId)) course.eligibleRequirementIds.push(eligibleNodeId);
         if (!course.creditAllocations.some((allocation) => allocation.nodeId === eligibleNodeId)) {
           course.creditAllocations.push({ nodeId: eligibleNodeId, credits, status: "official", sourceUrl });
@@ -543,12 +565,18 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   for (const [index, rawCourse] of (curriculum.additionalCourses ?? []).entries()) {
     const id = courseId(serviceCode, rawCourse, matterNodes.length + index, usedIds);
     const nodeId = rawCourse.requirementId ?? "plan-total";
+    const eligibleRequirementIds = [...new Set([nodeId, ...(rawCourse.additionalRequirementIds ?? [])])];
     courses.push({
       id,
       name: rawCourse.name,
       credits: Number(rawCourse.credits) || 0,
-      eligibleRequirementIds: [nodeId],
-      creditAllocations: [{ nodeId, credits: Number(rawCourse.credits) || 0, status: "official", sourceUrl: rawCourse.sourceUrl ?? sourceUrl }],
+      eligibleRequirementIds,
+      creditAllocations: eligibleRequirementIds.map((eligibleNodeId) => ({
+        nodeId: eligibleNodeId,
+        credits: Number(rawCourse.credits) || 0,
+        status: "official",
+        sourceUrl: rawCourse.sourceUrl ?? sourceUrl,
+      })),
       dataStatus: "official-curriculum",
       ruleCoverage: "not-published",
       curricularBlock: rawCourse.curricularBlock === true,
@@ -909,6 +937,7 @@ function buildProjection(entry, snapshot, audit) {
         year: String(audit?.officialPlan?.planYear ?? entry.plan.year),
         current: audit?.officialPlan?.current ?? entry.plan.current !== false,
         degreeTitle: academicTitle(audit?.officialPlan?.title ?? snapshot.plan?.titleLabels?.[0] ?? entry.career.name),
+        ...(audit?.officialPlan?.credentialLabel ? { credentialLabel: audit.officialPlan.credentialLabel } : {}),
         minCredits: safeMinCredits,
         publishedMinCredits: Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : null,
         durationMonths: Number(audit?.officialPlan?.durationMonths) || Number.parseInt(snapshot.plan?.metadata?.duration, 10) || null,
@@ -1018,7 +1047,7 @@ export async function buildExtractedAcademicPlans() {
       if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: academicTitle(careerName), plans: [] });
       faculty.careers.get(careerId).plans.push({
         id: planId,
-        label: `Plan ${planYear}${projection.plan.current === false ? " · histórico" : " · vigente"}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
+        label: `Plan ${planYear} · ${audit?.officialPlan?.catalogStatusLabel ?? (projection.plan.current === false ? "histórico" : "vigente")}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
         defaultTrajectoryId: Object.keys(projection.pathways)[0],
         defaultCredentialId: projection.pathways[Object.keys(projection.pathways)[0]]?.credentialId
           ?? projection.creditStructure.credentials.find((credential) => credential.id === "bedelias-degree")?.id

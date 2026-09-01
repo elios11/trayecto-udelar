@@ -195,7 +195,7 @@ type CampusOption = {
 type RegisteredProjection = {
   schemaVersion: number;
   source: { reviewedAt: string | null; careerPage: string; planDocument: string; bedeliasExtractedAt: string; bedeliasContentHash: string; bedeliasPlanUrl?: string };
-  plan: { year: string; current: boolean; degreeTitle: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
+  plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
   courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
   pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
@@ -1849,7 +1849,7 @@ export default function Home() {
 
           <div className={`degree-card engineer ${credentialId === degreeCredential.id ? "selected-degree" : ""}`}>
             <div>
-              <span>Título de grado</span>
+              <span>{isRegisteredPlan ? activeRegisteredPlan?.plan.credentialLabel ?? "Título de grado" : "Título de grado"}</span>
               <h3>{degreeCredential.title}</h3>
             </div>
             <strong>{usesPublishedHours ? earnedHours : earnedCredits}<small>/{usesPublishedHours && planTotalHours ? `${planTotalHours} h` : planMinCredits > 0 ? planMinCredits : "—"}</small></strong>
