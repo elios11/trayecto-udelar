@@ -82,7 +82,7 @@ test("exige Pasantía, Proyecto y validación sin duplicar sus créditos", () =>
 
 test("cierra la auditoría y avanza a Tecnólogo en Informática", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "tecnologo en cartografia:2011"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 170);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 7);
-  assert.equal(queue.queue[0].identity, "bioquimico clinico:2015");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 171);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 6);
+  assert.equal(queue.queue[0].identity, "licenciatura en quimica:2016");
 });

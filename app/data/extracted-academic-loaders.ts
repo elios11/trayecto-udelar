@@ -765,8 +765,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-bioquimico-clinico-2015": {
     load: () => import("./bedelias-generated/bedelias-fq-bioquimico-clinico-2015.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["montevideo","salto-primer-ano"],
+    pathwayLabel: "Recorrido",
     minCredits: 450,
   },
   "bedelias-fq-ingenieria-de-alimentos-2003": {

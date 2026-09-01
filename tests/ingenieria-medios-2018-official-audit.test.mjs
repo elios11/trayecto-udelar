@@ -78,7 +78,7 @@ test("expone las áreas aún incompletas sin simular asignaturas o previaturas",
 
 test("mantiene la identidad cerrada después de auditar Ingeniería de Alimentos", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "licenciatura en ingenieria de medios:2018"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 170);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 7);
-  assert.equal(queue.queue[0].identity, "bioquimico clinico:2015");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 171);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 6);
+  assert.equal(queue.queue[0].identity, "licenciatura en quimica:2016");
 });

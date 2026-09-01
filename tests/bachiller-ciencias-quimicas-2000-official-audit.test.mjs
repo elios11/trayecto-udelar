@@ -104,7 +104,7 @@ test("controla 170 obligatorios, 60 electivos y los mínimos por área de las in
 
 test("cierra la auditoría y avanza a Bioquímico Clínico", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "bachiller en ciencias quimicas:2000"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 170);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 7);
-  assert.equal(queue.queue[0].identity, "bioquimico clinico:2015");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 171);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 6);
+  assert.equal(queue.queue[0].identity, "licenciatura en quimica:2016");
 });

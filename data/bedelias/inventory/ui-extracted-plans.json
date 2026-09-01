@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:2471ff23a342fff3fed0445273470cee5f2c6a9ddaca468fbbe6193c4d08fe62",
-    "officialAuditHash": "sha256:a387a2aba9d04381b134c7e5eca734e255bf83d8364c5d6ed497a9427b2da725",
+    "auditQueueHash": "sha256:9d2d9f6e1df55780aefbd3782dcab28dd76adf42545313d636f2030e3b899379",
+    "officialAuditHash": "sha256:4cbfa5c2102e7b1f539d72afdf8534873f10ee9d9720085023b7fda7ab9ce08e",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 44,
+    "plansWithOfficialCampuses": 45,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1471,9 +1471,12 @@
       "planId": "bedelias-fq-bioquimico-clinico-2015",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-bioquimico-clinico-2015.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "ingenieria de alimentos:2003",
@@ -1595,5 +1598,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:64cd616e379949d1db140805f0eb2bc8e6f4ae25f578f8c60751073002daf757"
+  "contentHash": "sha256:13b095d20489bc40aeafe901b3425dc7a6884eda67635f7c5f72835374871f18"
 }
