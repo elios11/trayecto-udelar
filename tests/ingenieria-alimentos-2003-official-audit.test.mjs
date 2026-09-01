@@ -81,7 +81,7 @@ test("ubica la carrera bajo FQ y cierra la cola de auditoría", () => {
   assert.equal(career.plans[0].id, "bedelias-fq-ingenieria-de-alimentos-2003");
   assert.equal(career.plans[0].defaultTrajectoryId, "trayectoria-flexible");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria de alimentos:2003"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 168);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 9);
-  assert.equal(queue.queue[0].identity, "tecnologo industrial mecanico:2016");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 169);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 8);
+  assert.equal(queue.queue[0].identity, "bachiller en ciencias quimicas:2000");
 });

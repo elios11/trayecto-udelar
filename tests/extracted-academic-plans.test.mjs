@@ -110,6 +110,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["licenciatura en computacion:2025", ["montevideo", "tacuarembo", "colonia", "salto", "paysandu"]],
     ["tecnologo en informatica:2007", ["montevideo", "florida", "san-jose", "maldonado", "paysandu"]],
     ["tecnologo en telecomunicaciones:2009", ["rocha", "montevideo"]],
+    ["tecnologo industrial mecanico:2016", ["montevideo", "paysandu"]],
   ]);
   assert.equal(report.plans.filter((plan) => plan.campusIds.length > 1).length, expected.size);
   for (const [identity, campusIds] of expected) {

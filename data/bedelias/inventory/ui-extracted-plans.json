@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:d554de4f14a75fc5b4994043079b9a4683420e7dfa983018dbd6ddc931e7852c",
-    "officialAuditHash": "sha256:8f69a3e78e4a8e208b2b28369de9ecb28b910c08018fe6cafb88d3481058e5f5",
+    "auditQueueHash": "sha256:36a530472630f39646ce7cfd6f265b81b69730eebbf2451eb700fc88862e228c",
+    "officialAuditHash": "sha256:a121fd087f2714cfd17dc8859d8f82693d489c9aa8d83fafbf3b83b3a1a6b9c9",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 43,
+    "plansWithOfficialCampuses": 44,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1160,9 +1160,12 @@
       "planId": "bedelias-fing-tecnologo-industrial-mecanico-2016",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-tecnologo-industrial-mecanico-2016.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "paysandu"
+      ]
     },
     {
       "identity": "doctor en medicina:2008",
@@ -1590,5 +1593,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:9c9216ed5deb64c5dcef5037de97c9351bc0dea4ccbbd2bdc980a418b360b0a2"
+  "contentHash": "sha256:055f4933d53df758ed2ae32878da6a91eb2f679d42f6a830943b95a2e4cf61f0"
 }

@@ -603,8 +603,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-tecnologo-industrial-mecanico-2016": {
     load: () => import("./bedelias-generated/bedelias-fing-tecnologo-industrial-mecanico-2016.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["curricula-personalizada","perfil-fluidos-energia","perfil-diseno-materiales","perfil-planta","perfil-produccion"],
+    pathwayLabel: "Recorrido",
     minCredits: 270,
   },
   "bedelias-fmed-doctor-en-medicina-2008": {

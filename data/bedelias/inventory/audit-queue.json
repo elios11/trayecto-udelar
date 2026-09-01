@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T20:36:17.588Z",
+  "generatedAt": "2026-08-31T20:56:41.357Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:8f69a3e78e4a8e208b2b28369de9ecb28b910c08018fe6cafb88d3481058e5f5"
+    "officialAuditRegistryHash": "sha256:a121fd087f2714cfd17dc8859d8f82693d489c9aa8d83fafbf3b83b3a1a6b9c9"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 168,
-    "pendingCanonicalIdentities": 9,
+    "evidenceClosedCanonicalIdentities": 169,
+    "pendingCanonicalIdentities": 8,
     "byPriority": {
-      "official-sources-pending": 9
+      "official-sources-pending": 8
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1029,52 +1029,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-08-31",
       "conclusion": "one-technologist-with-full-rocha-and-partial-montevideo-pathways"
+    },
+    {
+      "identity": "tecnologo industrial mecanico:2016",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-08-31",
+      "conclusion": "one-joint-technologist-with-flexible-curriculum-four-example-profiles-and-two-campuses"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnologo industrial mecanico:2016",
-      "career": {
-        "name": "TECNÓLOGO INDUSTRIAL MECÁNICO",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2016",
-        "name": "TECNOLOGO INDUSTRIAL MECANICO",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "FING",
-        "serviceName": "FACULTAD DE INGENIERÍA",
-        "planKey": "FING:tecnologo industrial mecanico:2016",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "FING",
-          "serviceName": "FACULTAD DE INGENIERÍA",
-          "planKey": "FING:tecnologo industrial mecanico:2016",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": [
-        {
-          "serviceCode": "CENURLN",
-          "canonicalServiceCode": "FING",
-          "status": "curriculum-match-prerequisite-coverage-difference",
-          "reason": "curriculum-fingerprint",
-          "difference": {
-            "metadataChanged": false,
-            "onlyCanonical": [],
-            "onlyRegional": [],
-            "changedCredits": [],
-            "prerequisiteCountDelta": -76
-          }
-        }
-      ]
-    },
     {
       "identity": "bachiller en ciencias quimicas:2000",
       "career": {
@@ -1364,5 +1327,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:d554de4f14a75fc5b4994043079b9a4683420e7dfa983018dbd6ddc931e7852c"
+  "contentHash": "sha256:36a530472630f39646ce7cfd6f265b81b69730eebbf2451eb700fc88862e228c"
 }

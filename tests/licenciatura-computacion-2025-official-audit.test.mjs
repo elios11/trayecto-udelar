@@ -93,7 +93,7 @@ test("exige el trabajo final de 20 créditos y la validación sólo para la Lice
 
 test("cierra la auditoría y avanza a Tecnólogo en Cartografía", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "licenciatura en computacion:2025"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 168);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 9);
-  assert.equal(queue.queue[0].identity, "tecnologo industrial mecanico:2016");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 169);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 8);
+  assert.equal(queue.queue[0].identity, "bachiller en ciencias quimicas:2000");
 });
