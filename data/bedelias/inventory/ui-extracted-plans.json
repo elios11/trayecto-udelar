@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:db5311096e5c2ced2f9add94e433625ff866d5a7300d776ea0f64b276a5116a8",
-    "officialAuditHash": "sha256:036f64646ece70c778261b9b8922d78aaf64c2006714c2d3da0f03b16f8d9fc0",
+    "auditQueueHash": "sha256:8a1b3820777caf9b080a3d4696c231505b529ee4f93e84d8f6424d8e73664598",
+    "officialAuditHash": "sha256:b13a70868fd37fb2842fd0546eb50d2c5b6c0e494046913727f2a014937cb069",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 46,
+    "plansWithOfficialCampuses": 47,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1530,9 +1530,13 @@
       "planId": "bedelias-fq-quimico-2015",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-quimico-2015.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "paysandu",
+        "salto"
+      ]
     },
     {
       "identity": "tecnico bach en cs quimicas:2015",
@@ -1603,5 +1607,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:e2777043943b660ea5564e9150baddee1900657fed40ab352dab6188d0472776"
+  "contentHash": "sha256:614254f09cc398020fd3a0eca986d80e2f38185572b537af28ebe93ffd21677b"
 }

@@ -110,7 +110,7 @@ test("conserva reglas, referencias internas y una sola entrada por facultad comp
 
 test("mantiene cerrada Ingeniería Química y avanza la cola vigente", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria quimica:2021"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 173);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 4);
-  assert.equal(queue.queue[0].identity, "quimico:2015");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 174);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 3);
+  assert.equal(queue.queue[0].identity, "tecnico bach en cs quimicas:2015");
 });

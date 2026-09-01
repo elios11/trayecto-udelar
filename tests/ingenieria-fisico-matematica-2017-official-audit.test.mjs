@@ -128,7 +128,7 @@ test("ubica la carrera bajo FING y avanza la cola al siguiente plan", () => {
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-fisico-matematica-2017");
   assert.equal(career.plans[0].defaultTrajectoryId, "curricula-personalizada");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria fisico matematica:2017"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 173);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 4);
-  assert.equal(queue.queue[0].identity, "quimico:2015");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 174);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 3);
+  assert.equal(queue.queue[0].identity, "tecnico bach en cs quimicas:2015");
 });
