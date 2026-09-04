@@ -108,7 +108,7 @@ test("conserva previaturas, catálogo y referencias internas válidas", () => {
 
 test("cierra Naval y avanza la cola a Ingeniería Química", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria naval:1997"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 176);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 1);
-  assert.equal(queue.queue[0].identity, "odontologia:2011");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 177);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 0);
+  assert.equal(queue.queue.length, 0);
 });

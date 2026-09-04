@@ -86,7 +86,7 @@ test("documenta la cobertura real de Bedelías sin inventar previaturas", () => 
   for (const id of pathway.periods.flatMap(({ courseIds }) => courseIds)) assert.ok(courseById.has(id), id);
 });
 
-test("registra una sola carrera y deja únicamente Odontología 2011 en la cola", () => {
+test("registra una sola carrera y deja la cola global lista para el cierre", () => {
   const faculty = catalog.find(({ id }) => id === "bedelias-isef");
   const careers = faculty.careers.filter(({ label }) => label === "Tecnicatura en Guardavidas");
   assert.equal(careers.length, 1);
@@ -95,7 +95,7 @@ test("registra una sola carrera y deja únicamente Odontología 2011 en la cola"
   assert.equal(careers[0].plans[0].defaultTrajectoryId, "bedelias");
   assert.equal(careers[0].plans[0].defaultCredentialId, "tecnico-guardavidas");
   assert.ok(!queue.queue.some(({ identity }) => identity === "tecnicatura en guardavidas:2025"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 176);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 1);
-  assert.equal(queue.queue[0].identity, "odontologia:2011");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 177);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 0);
+  assert.equal(queue.queue.length, 0);
 });

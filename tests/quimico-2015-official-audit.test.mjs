@@ -156,7 +156,7 @@ test("registra una sola carrera y avanza la cola a Técnico Bachiller 2015", () 
   assert.equal(careers[0].plans[0].defaultTrajectoryId, "agricola-medio-ambiente");
   assert.equal(careers[0].plans[0].defaultCredentialId, "quimico-agricola-medio-ambiente");
   assert.ok(!queue.queue.some(({ identity }) => identity === "quimico:2015"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 176);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 1);
-  assert.equal(queue.queue[0].identity, "odontologia:2011");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 177);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 0);
+  assert.equal(queue.queue.length, 0);
 });

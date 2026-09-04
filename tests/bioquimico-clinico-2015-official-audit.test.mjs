@@ -117,7 +117,7 @@ test("registra una sola carrera en FQ y avanza la cola al siguiente plan", () =>
   assert.equal(careers[0].plans[0].defaultTrajectoryId, "montevideo");
   assert.equal(careers[0].plans[0].defaultCredentialId, "bioquimico-clinico");
   assert.ok(!queue.queue.some(({ identity }) => identity === "bioquimico clinico:2015"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 176);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 1);
-  assert.equal(queue.queue[0].identity, "odontologia:2011");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 177);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 0);
+  assert.equal(queue.queue.length, 0);
 });

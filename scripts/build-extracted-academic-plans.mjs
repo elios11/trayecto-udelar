@@ -854,6 +854,7 @@ function buildProjection(entry, snapshot, audit) {
     courseRecords.push({ id, rawCourse });
   }
 
+  const usesBedeliasCompositionTree = audit?.officialPlan?.curriculum?.useBedeliasCompositionTree === true;
   const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds)
     ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
   const replaceBedeliasCourses = audit?.officialPlan?.curriculum?.replaceBedeliasCourses === true;
@@ -863,7 +864,7 @@ function buildProjection(entry, snapshot, audit) {
     || replaceBedeliasCourses
   )) {
     courses = officialCurriculum.courses;
-    if (replaceBedeliasCourses) codeToId.clear();
+    if (replaceBedeliasCourses || usesBedeliasCompositionTree) codeToId.clear();
     for (const course of courses) {
       if (course.bedeliasCode && !codeToId.has(course.bedeliasCode)) codeToId.set(course.bedeliasCode, course.id);
     }
