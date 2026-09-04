@@ -83,7 +83,7 @@ test("mantiene el catálogo por opción y las previaturas publicadas sin volver 
 
 test("mantiene cerrada la identidad al avanzar la cola oficial", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "museologia:2011"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 174);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 3);
-  assert.equal(queue.queue[0].identity, "tecnico bach en cs quimicas:2015");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 175);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 2);
+  assert.equal(queue.queue[0].identity, "tecnicatura en guardavidas:2025");
 });

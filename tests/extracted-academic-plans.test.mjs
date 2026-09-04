@@ -94,6 +94,7 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["bioquimico clinico:2015", ["montevideo", "salto"]],
     ["licenciatura en quimica:2016", ["montevideo", "salto"]],
     ["quimico:2015", ["montevideo", "paysandu", "salto"]],
+    ["tecnico bach en cs quimicas:2015", ["montevideo", "salto"]],
     ["tecnologo quimico:2025", ["montevideo", "paysandu"]],
     ["doctor en ciencias veterinarias:2021", ["sur-montevideo-y-san-jose-instituto-de-produccion-animal", "norte-salto-1-7-y-paysandu-8-10"]],
     ["tecnologo en administracion y contabilidad:2012", ["colonia", "mercedes", "tacuarembo", "maldonado", "rocha", "treinta-y-tres"]],

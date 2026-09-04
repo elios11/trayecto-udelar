@@ -801,8 +801,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-tecnico-bach-en-cs-quimicas-2015": {
     load: () => import("./bedelias-generated/bedelias-fq-tecnico-bach-en-cs-quimicas-2015.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["montevideo","salto-primer-ano"],
+    pathwayLabel: "Recorrido",
     minCredits: 225,
   },
   "bedelias-fq-tecnologo-quimico-2025": {

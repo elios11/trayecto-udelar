@@ -92,6 +92,6 @@ test("deja trazabilidad oficial y cierra ambas identidades de la cola", () => {
     assert.ok(audit.sources.some(({ url }) => url === planPdf));
     assert.ok(!queue.queue.some((entry) => entry.identity === identity));
   }
-  assert.equal(queue.counts.pendingCanonicalIdentities, 3);
-  assert.equal(queue.queue[0].identity, "tecnico bach en cs quimicas:2015");
+  assert.equal(queue.counts.pendingCanonicalIdentities, 2);
+  assert.equal(queue.queue[0].identity, "tecnicatura en guardavidas:2025");
 });

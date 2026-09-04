@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": {
-    "auditQueueHash": "sha256:8a1b3820777caf9b080a3d4696c231505b529ee4f93e84d8f6424d8e73664598",
-    "officialAuditHash": "sha256:b13a70868fd37fb2842fd0546eb50d2c5b6c0e494046913727f2a014937cb069",
+    "auditQueueHash": "sha256:0bb4735fdcc06dc7eb2717d60d6d880c050111f14c3deaf2dd60d0c3fc6f2904",
+    "officialAuditHash": "sha256:9a8e2aa4a86714f65a877aa01d9aef7e03dca36726c514187f922f16a8b89d8d",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153"
   },
   "counts": {
@@ -10,7 +10,7 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 47,
+    "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38
   },
   "plans": [
@@ -1543,9 +1543,12 @@
       "planId": "bedelias-fq-tecnico-bach-en-cs-quimicas-2015",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-tecnico-bach-en-cs-quimicas-2015.json",
-      "auditStatus": "structurally-valid",
+      "auditStatus": "official-evidence-complete",
       "compositionAvailable": true,
-      "campusIds": []
+      "campusIds": [
+        "montevideo",
+        "salto"
+      ]
     },
     {
       "identity": "tecnologo quimico:2025",
@@ -1607,5 +1610,5 @@
       "campusIds": []
     }
   ],
-  "contentHash": "sha256:614254f09cc398020fd3a0eca986d80e2f38185572b537af28ebe93ffd21677b"
+  "contentHash": "sha256:698ad94a93ffe17d980e1091bd69c9a5c01a242796bb6f1c8e2178a7ce6676eb"
 }

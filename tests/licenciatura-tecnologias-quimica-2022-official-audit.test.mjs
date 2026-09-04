@@ -120,7 +120,7 @@ test("registra una sola entrada en FQ y avanza la cola a Químico 2015", () => {
   assert.equal(careers[0].plans[0].defaultTrajectoryId, "biotecnologia");
   assert.equal(careers[0].plans[0].defaultCredentialId, "licenciado-tecnologias-quimica-biotecnologia");
   assert.ok(!queue.queue.some(({ identity }) => identity === "licenciatura en tecnologias de la quimica:2022"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 174);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 3);
-  assert.equal(queue.queue[0].identity, "tecnico bach en cs quimicas:2015");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 175);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 2);
+  assert.equal(queue.queue[0].identity, "tecnicatura en guardavidas:2025");
 });
