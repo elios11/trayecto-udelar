@@ -48,11 +48,10 @@ test("la oferta regional amplía sólo ramas flexibles y no crea otra currícula
 
   assert.equal(canonicalCourses.length, audit.bedeliasComparison.canonicalCourses);
   assert.equal(regionalCourses.length, audit.bedeliasComparison.regionalCourses);
-  assert.equal(onlyRegional.length, 191);
+  assert.equal(onlyRegional.length, 0);
   assert.equal(onlyCanonical.length, 0);
   assert.equal(changedCredits.length, 0);
-  assert.ok(onlyRegional.every((course) => course.curriculumPaths.length > 0
-    && course.curriculumPaths.every((path) => path.some((label) => /(optativa|electiva)/.test(normalizeLookup(label))))));
+  assert.deepEqual(canonicalCourses.map(courseKey).sort(), regionalCourses.map(courseKey).sort());
   assert.equal(audit.conclusion.canonicalModel, "one-plan-multiple-offerings");
   assert.equal(audit.conclusion.regionalCurriculumVariant, false);
 });

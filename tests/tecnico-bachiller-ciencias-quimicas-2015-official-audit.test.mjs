@@ -78,12 +78,12 @@ test("preserva composición y previaturas sin convertir menor cobertura regional
   assert.equal(audit.bedeliasComparison.normalizedCourseCount, 489);
   assert.equal(audit.bedeliasComparison.compositionGroupCount, 6);
   assert.equal(audit.bedeliasComparison.regionalComparisonStatus, "curriculum-match-prerequisite-coverage-difference");
-  assert.equal(audit.bedeliasComparison.prerequisiteRuleCount, 429);
-  assert.equal(audit.bedeliasComparison.publishedRuleCount, 149);
-  assert.equal(audit.bedeliasComparison.noPublishedRuleCount, 280);
+  assert.equal(audit.bedeliasComparison.prerequisiteRuleCount, 523);
+  assert.equal(audit.bedeliasComparison.publishedRuleCount, 393);
+  assert.equal(audit.bedeliasComparison.noPublishedRuleCount, 130);
   assert.equal(audit.bedeliasComparison.regionalPrerequisiteRuleCount, 9);
-  assert.equal(projection.rules.length, 149);
-  assert.equal(projection.plan.noPublishedRule, 280);
+  assert.equal(projection.rules.length, 393);
+  assert.equal(projection.plan.noPublishedRule, 130);
   assert.equal(projection.courses.length, 493);
   for (const pathway of Object.values(projection.pathways)) {
     for (const id of [...pathway.periods.flatMap(({ courseIds }) => courseIds), ...(pathway.catalogCourseIds ?? [])]) {

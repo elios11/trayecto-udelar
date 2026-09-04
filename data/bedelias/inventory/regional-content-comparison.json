@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T03:37:20.064Z",
+  "generatedAt": "2026-09-04T19:48:20.179Z",
   "source": {
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "method": "local-curriculum-fingerprint"
@@ -16,8 +16,8 @@
     "availablePairs": 57,
     "comparablePairs": 31,
     "contentMatchCandidates": 0,
-    "curriculumMatchesWithPrerequisiteCoverageDifferences": 16,
-    "contentDifferences": 15,
+    "curriculumMatchesWithPrerequisiteCoverageDifferences": 15,
+    "contentDifferences": 16,
     "insufficientContentPairs": 26,
     "missingCanonicalSnapshots": 0,
     "missingRegionalSnapshots": 0,
@@ -6077,9 +6077,9 @@
         "snapshot": "data/bedelias/fq-bioquimico-clinico-2015.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:bb756f7d6f77331c08474e935be6401816a18562463dc5e8ef2b4876da0e1015",
-          "curriculumHash": "sha256:af6cdadf63986234fe512d7ece759b0599b62614df676b1ef2de170b653ac171",
-          "prerequisiteHash": "sha256:5a5d351595c3a786a2a0369fd1a0a3293212d625f429dc85e15a7eef5986e472",
+          "hash": "sha256:26f08607fed9d3b20807b59154ad719a7301457b0f0f2770cce3b32f6b38bf36",
+          "curriculumHash": "sha256:0e9097cbe952af547a97318ccb72d753c081c43b20491de9f8e8fa682aee2b2a",
+          "prerequisiteHash": "sha256:05d8286d051db711d20f579220f3afa2f3421124fb959e380bfce0b9ce0a3fc1",
           "metadata": {
             "duration": "60 meses",
             "minCredits": 450,
@@ -8355,7 +8355,7 @@
           "counts": {
             "courses": 453,
             "prerequisites": 546,
-            "publishedRules": 397
+            "publishedRules": 398
           }
         }
       },
@@ -8364,12 +8364,12 @@
           "serviceCode": "FQ",
           "snapshot": "data/bedelias/fq-bioquimico-clinico-2015.json",
           "available": true,
-          "curriculumHash": "sha256:af6cdadf63986234fe512d7ece759b0599b62614df676b1ef2de170b653ac171",
-          "prerequisiteHash": "sha256:5a5d351595c3a786a2a0369fd1a0a3293212d625f429dc85e15a7eef5986e472",
+          "curriculumHash": "sha256:0e9097cbe952af547a97318ccb72d753c081c43b20491de9f8e8fa682aee2b2a",
+          "prerequisiteHash": "sha256:05d8286d051db711d20f579220f3afa2f3421124fb959e380bfce0b9ce0a3fc1",
           "counts": {
             "courses": 453,
             "prerequisites": 546,
-            "publishedRules": 397
+            "publishedRules": 398
           }
         }
       ],
@@ -10670,7 +10670,7 @@
         {
           "serviceCode": "CENURLN",
           "canonicalServiceCode": "FQ",
-          "status": "curriculum-match-prerequisite-coverage-difference",
+          "status": "content-difference-detected",
           "reason": "curriculum-fingerprint",
           "difference": {
             "metadataChanged": false,
@@ -10681,7 +10681,7 @@
           }
         }
       ],
-      "conclusion": "curriculum-match-candidate"
+      "conclusion": "content-difference-detected"
     },
     {
       "identity": "diplomatura en musica:1994",
@@ -45664,9 +45664,9 @@
         "snapshot": "data/bedelias/fing-ingenieria-de-alimentos-2003.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:6ea90b52f6af6d6e0a4b105bc8d77ffd57f8e28ec55000ab682a42c187e051d4",
+          "hash": "sha256:0f17ee63ab09595142ceeb31231af6625963500e950ab2c74625cf59ce379f5e",
           "curriculumHash": "sha256:4f08d319f2b31b580597f292ce59401b57e501d8f045b545e2f15f40060f2767",
-          "prerequisiteHash": "sha256:fc8791cf2b4c3d94dff780e40e395da163b1449bae98a316e9fa62996ae58040",
+          "prerequisiteHash": "sha256:5d821e84f6f34a1a68156052160e048db111c882260efd59ff76afdff96bd6a0",
           "metadata": {
             "duration": "60 meses",
             "minCredits": 450,
@@ -47632,7 +47632,7 @@
           "snapshot": "data/bedelias/fing-ingenieria-de-alimentos-2003.json",
           "available": true,
           "curriculumHash": "sha256:4f08d319f2b31b580597f292ce59401b57e501d8f045b545e2f15f40060f2767",
-          "prerequisiteHash": "sha256:fc8791cf2b4c3d94dff780e40e395da163b1449bae98a316e9fa62996ae58040",
+          "prerequisiteHash": "sha256:5d821e84f6f34a1a68156052160e048db111c882260efd59ff76afdff96bd6a0",
           "counts": {
             "courses": 389,
             "prerequisites": 188,
@@ -47644,7 +47644,7 @@
           "snapshot": "data/bedelias/fq-ingenieria-de-alimentos-2003.json",
           "available": true,
           "curriculumHash": "sha256:4f08d319f2b31b580597f292ce59401b57e501d8f045b545e2f15f40060f2767",
-          "prerequisiteHash": "sha256:5f2ba01a9f6935ad13b4063fa2eeb770e86c630d2db9fcaa2e40cd2fb412e988",
+          "prerequisiteHash": "sha256:fe39574d5c11df0ed07952f366f8351bd29a3b2f13537b439a6ca6d276b19cc1",
           "counts": {
             "courses": 389,
             "prerequisites": 258,
@@ -54283,9 +54283,9 @@
         "snapshot": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:40504dfd2a6d2c1085472184631553d01e786b823dd42af75b48599aa68880d2",
-          "curriculumHash": "sha256:14b1a87d2eba4fcbc3874d409639b5b6c3314b7b7b08397395147c83d09c0eec",
-          "prerequisiteHash": "sha256:22e5c6aeea0cb826b275251d7e2a92c5c5145cc06da387e05e7f4b342a7db1c0",
+          "hash": "sha256:50bac9b813a741ae87b26eb373198a1c0e7fafb94fc3a387bd4ebf1bda36537b",
+          "curriculumHash": "sha256:ed992f9f591e5ec1a27c32f3f2de7cf883c1b450d7fa870f3224820fe328a71f",
+          "prerequisiteHash": "sha256:32fe005162c166f1e1e50ac9563af08d72c9ea3d4549ab7bf831f16f1cdf4e53",
           "metadata": {
             "duration": "60 meses",
             "minCredits": 450,
@@ -54318,6 +54318,11 @@
               "name": "pasantia cac"
             },
             {
+              "code": "06eu",
+              "credits": 7,
+              "name": "mat 06 calculo numerico"
+            },
+            {
               "code": "06pas",
               "credits": 6,
               "name": "pasantia cac"
@@ -54338,14 +54343,59 @@
               "name": "pasantia cac"
             },
             {
+              "code": "1008",
+              "credits": 5,
+              "name": "hoja de calculo"
+            },
+            {
+              "code": "102eu",
+              "credits": 7,
+              "name": "quimica general i"
+            },
+            {
+              "code": "104eu",
+              "credits": 4,
+              "name": "prevencion de riesgos en el laboratorio"
+            },
+            {
+              "code": "105a",
+              "credits": 6,
+              "name": "bioquimica metabolica"
+            },
+            {
+              "code": "109v",
+              "credits": 3,
+              "name": "etologia y bienestar animal"
+            },
+            {
               "code": "10pas",
               "credits": 10,
               "name": "pasantia cac"
             },
             {
+              "code": "119n",
+              "credits": 10,
+              "name": "introduccion a la estadistica computacional"
+            },
+            {
               "code": "11pas",
               "credits": 11,
               "name": "pasantia cac"
+            },
+            {
+              "code": "1223a",
+              "credits": 10,
+              "name": "ciencia tecnologia y sociedad area"
+            },
+            {
+              "code": "1224a",
+              "credits": 10,
+              "name": "economia area"
+            },
+            {
+              "code": "1260",
+              "credits": 4,
+              "name": "ingles cientifico"
             },
             {
               "code": "12pas",
@@ -54358,9 +54408,39 @@
               "name": "tesis"
             },
             {
+              "code": "139a",
+              "credits": 6,
+              "name": "estudios en ciencia tecnologia y sociedad por que y para que investigamos"
+            },
+            {
+              "code": "140",
+              "credits": 8,
+              "name": "principios de economia"
+            },
+            {
+              "code": "173",
+              "credits": 10,
+              "name": "bases teoricas del concepto de desarrollo"
+            },
+            {
               "code": "1800e",
               "credits": 6,
               "name": "electiva extension univ y elab de proyectos"
+            },
+            {
+              "code": "1882",
+              "credits": 10,
+              "name": "cartografia tematica"
+            },
+            {
+              "code": "1882a",
+              "credits": 10,
+              "name": "cartografia tematica area"
+            },
+            {
+              "code": "201v",
+              "credits": 6,
+              "name": "inmunologia"
             },
             {
               "code": "2040",
@@ -54368,9 +54448,339 @@
               "name": "iniciacion a la prod audiovis y multimedia"
             },
             {
+              "code": "2040a",
+              "credits": 6,
+              "name": "iniciacion a la produccion audiovisual y multimedia area"
+            },
+            {
+              "code": "205v",
+              "credits": 8,
+              "name": "fisiologia ii"
+            },
+            {
+              "code": "207v",
+              "credits": 4,
+              "name": "nutricion"
+            },
+            {
+              "code": "208v",
+              "credits": 4,
+              "name": "parasitologia"
+            },
+            {
+              "code": "209v",
+              "credits": 3,
+              "name": "extension veterinaria"
+            },
+            {
+              "code": "2105a",
+              "credits": 2,
+              "name": "taller de herramientas informaticas"
+            },
+            {
+              "code": "2107a",
+              "credits": 2,
+              "name": "taller de comunicacion oral y escrita"
+            },
+            {
+              "code": "2108a",
+              "credits": 3,
+              "name": "etnologia"
+            },
+            {
+              "code": "210eu",
+              "credits": 6,
+              "name": "anatomia"
+            },
+            {
+              "code": "210v",
+              "credits": 3,
+              "name": "desarrollo sustentable"
+            },
+            {
+              "code": "2110a",
+              "credits": 5,
+              "name": "bioquimica descriptiva"
+            },
+            {
+              "code": "225eu",
+              "credits": 2,
+              "name": "cromatografia de afinidad de biomolec aplic a la purificacion de prot recom"
+            },
+            {
+              "code": "3007",
+              "credits": 5,
+              "name": "trabajo colaborativo en salud"
+            },
+            {
+              "code": "303eu",
+              "credits": 6,
+              "name": "qca inorganica teorico"
+            },
+            {
+              "code": "305eu",
+              "credits": 6,
+              "name": "bases juridicas de la empresa"
+            },
+            {
+              "code": "334",
+              "credits": 10,
+              "name": "inferencia ii"
+            },
+            {
+              "code": "335",
+              "credits": 10,
+              "name": "muestreo y planificacion de encuestas i"
+            },
+            {
+              "code": "336",
+              "credits": 10,
+              "name": "inferencia iii"
+            },
+            {
+              "code": "370eu",
+              "credits": 3,
+              "name": "fritura de alimentos t"
+            },
+            {
+              "code": "401eu",
+              "credits": 6,
+              "name": "quimica organica 102"
+            },
+            {
+              "code": "402",
+              "credits": 8,
+              "name": "proceso cultural del uruguay inv ppp"
+            },
+            {
+              "code": "411eu",
+              "credits": 4,
+              "name": "quimica nuclear"
+            },
+            {
+              "code": "423eu",
+              "credits": 10,
+              "name": "programacion python i inicial"
+            },
+            {
+              "code": "425eu",
+              "credits": 5,
+              "name": "herram molec para el analisis micro de alim"
+            },
+            {
+              "code": "463n",
+              "credits": 10,
+              "name": "estadistica no parametrica"
+            },
+            {
+              "code": "470",
+              "credits": 10,
+              "name": "analisis multivariado ii"
+            },
+            {
+              "code": "475",
+              "credits": 10,
+              "name": "introduccion a los metodos estadisticos"
+            },
+            {
+              "code": "535eu",
+              "credits": 8,
+              "name": "farmacocinetica y biofarmacia"
+            },
+            {
+              "code": "536eu",
+              "credits": 11,
+              "name": "biologia molecular"
+            },
+            {
+              "code": "540eu",
+              "credits": 5,
+              "name": "espectrometria atomica analitica"
+            },
+            {
+              "code": "547eu",
+              "credits": 6,
+              "name": "quimica bioinorganica teorico"
+            },
+            {
+              "code": "549eu",
+              "credits": 6,
+              "name": "quimica de coordinacion teorico"
+            },
+            {
+              "code": "552eu",
+              "credits": 4,
+              "name": "quimica de coordinacion laboratorio"
+            },
+            {
+              "code": "555eu",
+              "credits": 6,
+              "name": "uso y manejo de animales de laboratorio"
+            },
+            {
+              "code": "558eu",
+              "credits": 6,
+              "name": "epistemologia"
+            },
+            {
+              "code": "559eu",
+              "credits": 3,
+              "name": "propiedad intelectual"
+            },
+            {
+              "code": "565eu",
+              "credits": 6,
+              "name": "laboratorio de fitoquimica org 202b"
+            },
+            {
+              "code": "618",
+              "credits": 4,
+              "name": "introduccion a los sistemas de gestion vigente hasta 2015"
+            },
+            {
+              "code": "633eu",
+              "credits": 6,
+              "name": "quimica supramolecular"
+            },
+            {
+              "code": "694eu",
+              "credits": 5,
+              "name": "herr mol para ident y caract hong fil"
+            },
+            {
+              "code": "704eu",
+              "credits": 4,
+              "name": "bromatologia y nutricion"
+            },
+            {
+              "code": "711eu",
+              "credits": 4,
+              "name": "metodologias modernas y sustentables en sintesis organica"
+            },
+            {
+              "code": "719eu",
+              "credits": 4,
+              "name": "agroquimicos i"
+            },
+            {
+              "code": "736eu",
+              "credits": 7,
+              "name": "bioinformatica"
+            },
+            {
+              "code": "739a",
+              "credits": 4,
+              "name": "enologia y biotec de la fermentacion l hasta 2025"
+            },
+            {
+              "code": "740eu",
+              "credits": 6,
+              "name": "enologia y biotecnologia de la fermentacion t"
+            },
+            {
+              "code": "741eu",
+              "credits": 6,
+              "name": "int a microb ambiental y agricola t"
+            },
+            {
               "code": "744eu",
               "credits": 6,
               "name": "agroquimicos ii"
+            },
+            {
+              "code": "753eu",
+              "credits": 4,
+              "name": "biocatalisis i"
+            },
+            {
+              "code": "755eu",
+              "credits": 6,
+              "name": "ecologia quimica org 311"
+            },
+            {
+              "code": "773eu",
+              "credits": 4,
+              "name": "biodiesel curso teorico"
+            },
+            {
+              "code": "782eu",
+              "credits": 8,
+              "name": "taller en simulaciones biomoleculares"
+            },
+            {
+              "code": "788eu",
+              "credits": 5,
+              "name": "automatizacion en quimica analitica"
+            },
+            {
+              "code": "791eu",
+              "credits": 6,
+              "name": "quimica y tecnologia de grasas y aceites teorico"
+            },
+            {
+              "code": "799eu",
+              "credits": 7,
+              "name": "evaluacion sensorial aplicada para el desarrollo de productos"
+            },
+            {
+              "code": "816eu",
+              "credits": 4,
+              "name": "ingles cientifico"
+            },
+            {
+              "code": "832eu",
+              "credits": 5,
+              "name": "toxicologia amb y geolog med avanzada"
+            },
+            {
+              "code": "835eu",
+              "credits": 6,
+              "name": "espectrometria de masas de compuestos organicos"
+            },
+            {
+              "code": "836eu",
+              "credits": 7,
+              "name": "bionformatica estructural"
+            },
+            {
+              "code": "860eu",
+              "credits": 6,
+              "name": "introduccion a la nanotecnologia"
+            },
+            {
+              "code": "8etea",
+              "credits": 8,
+              "name": "taller experimental de arte sonoro material virtual"
+            },
+            {
+              "code": "8etef",
+              "credits": 8,
+              "name": "taller experimental de arte sonoro forma y sonido"
+            },
+            {
+              "code": "908eu",
+              "credits": 4,
+              "name": "botanica"
+            },
+            {
+              "code": "909eu",
+              "credits": 9,
+              "name": "farmacognosia"
+            },
+            {
+              "code": "926eu",
+              "credits": 2,
+              "name": "aplicacion de conceptos de microbiologia a la resolucion de problemas"
+            },
+            {
+              "code": "933eu",
+              "credits": 5,
+              "name": "aplicaciones ind de antioxidantes nat"
+            },
+            {
+              "code": "997eu",
+              "credits": 5,
+              "name": "introduccion a la farmacometria"
             },
             {
               "code": "a0120",
@@ -54433,9 +54843,59 @@
               "name": "introduccion a las geociencias"
             },
             {
+              "code": "a116",
+              "credits": 8,
+              "name": "prehistoria americana ii"
+            },
+            {
               "code": "a1220",
               "credits": 9,
               "name": "fisica"
+            },
+            {
+              "code": "a20",
+              "credits": 10,
+              "name": "administracion y gestion de las organizaciones ii"
+            },
+            {
+              "code": "a41",
+              "credits": 10,
+              "name": "sistemas de informacion"
+            },
+            {
+              "code": "a42",
+              "credits": 10,
+              "name": "diseno organizacional"
+            },
+            {
+              "code": "a62",
+              "credits": 10,
+              "name": "gestion de la innovacion y la tecnologia"
+            },
+            {
+              "code": "a65",
+              "credits": 5,
+              "name": "introduccion al emprendedurismo"
+            },
+            {
+              "code": "a66",
+              "credits": 10,
+              "name": "gestion de proyectos"
+            },
+            {
+              "code": "a83",
+              "credits": 10,
+              "name": "cambio organizacional"
+            },
+            {
+              "code": "a83n",
+              "credits": 10,
+              "name": "cambio organizacional"
+            },
+            {
+              "code": "a84",
+              "credits": 10,
+              "name": "economia y gestion de organizaciones de salud"
             },
             {
               "code": "aa000",
@@ -54748,6 +55208,11 @@
               "name": "pensamiento computacional pc"
             },
             {
+              "code": "atp",
+              "credits": 10,
+              "name": "autoritarismos transiciones y politicas de la memoria en el conosur"
+            },
+            {
               "code": "b0120",
               "credits": 8,
               "name": "agrometeorologia"
@@ -54851,6 +55316,41 @@
               "code": "c0920",
               "credits": 18,
               "name": "afo 2 sustentabilidad de sist agrarios"
+            },
+            {
+              "code": "c101",
+              "credits": 6,
+              "name": "guerra y paz en la politica mundial"
+            },
+            {
+              "code": "c102",
+              "credits": 6,
+              "name": "recuperacion y analisis de texto con r"
+            },
+            {
+              "code": "c207",
+              "credits": 12,
+              "name": "educacion economia y sociedad"
+            },
+            {
+              "code": "c216",
+              "credits": 8,
+              "name": "epistemologia etica y educacion"
+            },
+            {
+              "code": "c34b",
+              "credits": 9,
+              "name": "desarrollo economico en el uruguay contemporaneo"
+            },
+            {
+              "code": "c51",
+              "credits": 8,
+              "name": "sistema politico nacional i"
+            },
+            {
+              "code": "c82",
+              "credits": 8,
+              "name": "economia politica e instituciones"
             },
             {
               "code": "cac01",
@@ -56218,6 +56718,11 @@
               "name": "gestion de empresas agrarias eemac"
             },
             {
+              "code": "d10",
+              "credits": 9,
+              "name": "agenda 2030 objetivos de desarrollo sostenible"
+            },
+            {
               "code": "d1020",
               "credits": 12,
               "name": "pasturas eemac"
@@ -56228,9 +56733,19 @@
               "name": "bovinotecnia"
             },
             {
+              "code": "d12",
+              "credits": 4,
+              "name": "ambiente y desarrollo"
+            },
+            {
               "code": "d1220",
               "credits": 6,
               "name": "ovinotecnia"
+            },
+            {
+              "code": "d13",
+              "credits": 6,
+              "name": "desarrollo sustentable economia ambiental y economia ecologica"
             },
             {
               "code": "d1320",
@@ -56238,14 +56753,29 @@
               "name": "ecologia del pastoreo"
             },
             {
+              "code": "d14",
+              "credits": 6,
+              "name": "economia de la discriminacion"
+            },
+            {
               "code": "d1420",
               "credits": 6,
               "name": "ecologia prod y manejo de pasturas"
             },
             {
+              "code": "d15",
+              "credits": 6,
+              "name": "empresas transnacionales globalizacion productiva y desarrollo"
+            },
+            {
               "code": "d1520",
               "credits": 2,
               "name": "herramientas metodologias para el abordaje de sistemas de produccion"
+            },
+            {
+              "code": "d16",
+              "credits": 4,
+              "name": "ciencia tecnologia innovacion sociedad y desarrollo en uruguay"
             },
             {
               "code": "d1620",
@@ -56258,9 +56788,29 @@
               "name": "cereales y cultivos industriales"
             },
             {
+              "code": "d17a",
+              "credits": 6,
+              "name": "planificacion del desarrollo y prospectiva"
+            },
+            {
+              "code": "d18",
+              "credits": 7,
+              "name": "historia de la desigualdad economica un enfoque de economia politica"
+            },
+            {
               "code": "d1820",
               "credits": 12,
               "name": "fruticultura"
+            },
+            {
+              "code": "d18a",
+              "credits": 8,
+              "name": "historia de la desigualdad economica en las sociedades capitalistas 1750 2020"
+            },
+            {
+              "code": "d19",
+              "credits": 6,
+              "name": "herramientas conceptuales y metodologicas para el trabajo interdisciplinario"
             },
             {
               "code": "d1920",
@@ -56268,14 +56818,29 @@
               "name": "horticultura"
             },
             {
+              "code": "d20",
+              "credits": 10,
+              "name": "topicos de economia social y solidaria"
+            },
+            {
               "code": "d2120",
               "credits": 6,
               "name": "silvicultura"
             },
             {
+              "code": "d22",
+              "credits": 6,
+              "name": "gestionando el desarrollo ed 2020"
+            },
+            {
               "code": "d2220",
               "credits": 4,
               "name": "dasometria y dendrometria"
+            },
+            {
+              "code": "d23",
+              "credits": 6,
+              "name": "teoria de relaciones internacionales economia pol internacional y aplicaciones"
             },
             {
               "code": "d2320",
@@ -56311,6 +56876,11 @@
               "code": "d2920",
               "credits": 8,
               "name": "gestion de empresas agrarias sede salto"
+            },
+            {
+              "code": "d30",
+              "credits": 6,
+              "name": "economia publica"
             },
             {
               "code": "d3020",
@@ -56408,6 +56978,91 @@
               "name": "abordajes feministas y de genero sobre el desarrollo"
             },
             {
+              "code": "d54",
+              "credits": 6,
+              "name": "diseno de investigacion para los estudios de desarrollo"
+            },
+            {
+              "code": "d68",
+              "credits": 4,
+              "name": "analisis microeconomico"
+            },
+            {
+              "code": "d69",
+              "credits": 4,
+              "name": "analisis macroeconomico"
+            },
+            {
+              "code": "d70",
+              "credits": 6,
+              "name": "sistema internacional gobernanza y cooperacion para el desarrollo"
+            },
+            {
+              "code": "d73",
+              "credits": 8,
+              "name": "teoria del desarrollo economico"
+            },
+            {
+              "code": "d74",
+              "credits": 8,
+              "name": "objeto y metodo de los estudios para el desarrollo"
+            },
+            {
+              "code": "d75",
+              "credits": 6,
+              "name": "poblacion y desarrollo"
+            },
+            {
+              "code": "d76",
+              "credits": 6,
+              "name": "metodos cuantitativos para la evaluacion de impacto de politicas y programas"
+            },
+            {
+              "code": "d76a",
+              "credits": 6,
+              "name": "evaluacion de impacto de politicas y programas"
+            },
+            {
+              "code": "d78a",
+              "credits": 6,
+              "name": "ciencia tecnologia innovacion sociedad y desarrollo"
+            },
+            {
+              "code": "d79",
+              "credits": 10,
+              "name": "teoria sociologica del desarrollo"
+            },
+            {
+              "code": "d82",
+              "credits": 6,
+              "name": "economia internacional"
+            },
+            {
+              "code": "d84",
+              "credits": 6,
+              "name": "formulacion y evaluacion de proyectos de inversion"
+            },
+            {
+              "code": "d86",
+              "credits": 8,
+              "name": "teoria de las instituciones"
+            },
+            {
+              "code": "d87",
+              "credits": 6,
+              "name": "teoria de juegos"
+            },
+            {
+              "code": "d92",
+              "credits": 6,
+              "name": "desarrollo socio territorial"
+            },
+            {
+              "code": "d94",
+              "credits": 10,
+              "name": "desarrollo economico territorial"
+            },
+            {
               "code": "e1008",
               "credits": 5,
               "name": "electiva uso de hojas de calculo como apoyo a practicas del area salud"
@@ -56431,6 +57086,16 @@
               "code": "el449",
               "credits": 5,
               "name": "diseno de proyectos comunitarios"
+            },
+            {
+              "code": "emsr",
+              "credits": 4,
+              "name": "la musica de steve reich practicas y analisis"
+            },
+            {
+              "code": "emydn",
+              "credits": 4,
+              "name": "ensamble de musica y danza narrativa"
             },
             {
               "code": "epi09",
@@ -56503,9 +57168,19 @@
               "name": "abordajes participativos para el trabajo territorial brigadas solidarias unive"
             },
             {
+              "code": "esc",
+              "credits": 3,
+              "name": "escritura creativa"
+            },
+            {
               "code": "etc",
               "credits": 5,
               "name": "taller de canciones"
+            },
+            {
+              "code": "etlea",
+              "credits": 5,
+              "name": "taller de lutheria electronica aplicada a la sintesis de sonido"
             },
             {
               "code": "fa4",
@@ -56558,6 +57233,11 @@
               "name": "educacion en y para el derecho humano a la alimentacion"
             },
             {
+              "code": "fthfc",
+              "credits": 7,
+              "name": "topico historia y filosofia de la ciencia"
+            },
+            {
               "code": "ftl4",
               "credits": 10,
               "name": "topico de logica"
@@ -56568,9 +57248,64 @@
               "name": "topico filosofia de la practica"
             },
             {
+              "code": "h12",
+              "credits": 13,
+              "name": "historia americana ii"
+            },
+            {
+              "code": "h13",
+              "credits": 13,
+              "name": "historia contemporanea"
+            },
+            {
+              "code": "h14",
+              "credits": 13,
+              "name": "historia del uruguay ii"
+            },
+            {
+              "code": "h18",
+              "credits": 13,
+              "name": "historia del arte"
+            },
+            {
+              "code": "h6",
+              "credits": 13,
+              "name": "historia medieval"
+            },
+            {
+              "code": "h9ex",
+              "credits": 13,
+              "name": "historia americana i"
+            },
+            {
+              "code": "i87",
+              "credits": 10,
+              "name": "prospectiva estrategica con la mirada en el futuro"
+            },
+            {
+              "code": "iac",
+              "credits": 2,
+              "name": "introduccion al arte contemporaneo"
+            },
+            {
               "code": "ina24",
               "credits": 15,
               "name": "introduccion a la animacion"
+            },
+            {
+              "code": "l144",
+              "credits": 10,
+              "name": "lengua y literatura griega i"
+            },
+            {
+              "code": "ld",
+              "credits": 2,
+              "name": "laboratorio de digitalizacion"
+            },
+            {
+              "code": "lfm",
+              "credits": 3,
+              "name": "laboratorio para el fin de los mundos"
             },
             {
               "code": "li107",
@@ -56828,9 +57563,44 @@
               "name": "interpretacion del paisaje i"
             },
             {
+              "code": "o1145",
+              "credits": 9,
+              "name": "comunicacion estrategica"
+            },
+            {
+              "code": "o1156",
+              "credits": 9,
+              "name": "cualitativa ii inv"
+            },
+            {
+              "code": "o11ea",
+              "credits": 10,
+              "name": "inerpretacion del paisaje iii"
+            },
+            {
               "code": "o1227",
               "credits": 6,
               "name": "derechos culturales y derecho a la cult"
+            },
+            {
+              "code": "o12ea",
+              "credits": 5,
+              "name": "paisaje y cine exploraciones"
+            },
+            {
+              "code": "o13ea",
+              "credits": 6,
+              "name": "fotogrametria de rango cercano aplicada al paisaje"
+            },
+            {
+              "code": "o171",
+              "credits": 15,
+              "name": "inf geo descrp metadatos geograficos"
+            },
+            {
+              "code": "o6521",
+              "credits": 8,
+              "name": "teorias y practicas de la accesibilidad en la comunicacion lim"
             },
             {
               "code": "oo11a",
@@ -56878,9 +57648,19 @@
               "name": "trabajo con la comunidad"
             },
             {
+              "code": "p020v",
+              "credits": 8,
+              "name": "practicantado produccion de carne y lana ovina de calidad"
+            },
+            {
               "code": "pa003",
               "credits": 3,
               "name": "pasantia 2 cba"
+            },
+            {
+              "code": "pas",
+              "credits": 4,
+              "name": "perspectivas artisticas sobre los signos simbolos mitos e imagnes en el mundo"
             },
             {
               "code": "pas03",
@@ -56903,9 +57683,69 @@
               "name": "pasantia cba"
             },
             {
+              "code": "pci",
+              "credits": 3,
+              "name": "procesos creativos intermediales"
+            },
+            {
               "code": "qfj26",
               "credits": 6,
               "name": "que se fuga cuando se juega pract ludicas y artist en sit de priv de liber"
+            },
+            {
+              "code": "s42",
+              "credits": 10,
+              "name": "sociologia de dirigentes de empresas"
+            },
+            {
+              "code": "s60",
+              "credits": 8,
+              "name": "metodologia cuantitativa i medicion y diseno de la investigacion"
+            },
+            {
+              "code": "s62",
+              "credits": 8,
+              "name": "metodologia cualitativa i disenos cualitativos de investigacion"
+            },
+            {
+              "code": "s64",
+              "credits": 10,
+              "name": "teoria sociologica ii"
+            },
+            {
+              "code": "s66",
+              "credits": 8,
+              "name": "metodologia cualitativa ii tecnicas y modalidades de analisis cualitativo"
+            },
+            {
+              "code": "s68",
+              "credits": 10,
+              "name": "metodologia cuantitativa iii analisis bivariado asociacion correlacion e inf"
+            },
+            {
+              "code": "s69",
+              "credits": 10,
+              "name": "teoria sociologica iv"
+            },
+            {
+              "code": "s80",
+              "credits": 8,
+              "name": "analisis sociologico i"
+            },
+            {
+              "code": "s81",
+              "credits": 8,
+              "name": "sociedad y pensamiento sociologico latinoamericano"
+            },
+            {
+              "code": "s84",
+              "credits": 8,
+              "name": "sociedad y pensamiento sociologico del uruguay"
+            },
+            {
+              "code": "s87",
+              "credits": 10,
+              "name": "analisis sociologico ii esquemas de analisis cualitativo"
             },
             {
               "code": "srn47",
@@ -56913,20 +57753,135 @@
               "name": "principios de quimica general cioct rh agr"
             },
             {
+              "code": "t49",
+              "credits": 10,
+              "name": "politicas sociales"
+            },
+            {
+              "code": "t57a",
+              "credits": 5,
+              "name": "proteccion social a inicios del siglo xxi debates y desafios"
+            },
+            {
+              "code": "t66",
+              "credits": 4,
+              "name": "algunos problemas de filosofia politica vinculados al trabajo social"
+            },
+            {
+              "code": "t71a",
+              "credits": 5,
+              "name": "el derecho social desde la perspectiva de los sujetos de derecho"
+            },
+            {
+              "code": "t82",
+              "credits": 4,
+              "name": "la intervencion grupal desde la perspectiva psicosocial"
+            },
+            {
+              "code": "t90",
+              "credits": 5,
+              "name": "sexualidad ciencia y reproduccion aportes desde la antropologia y el genero"
+            },
+            {
+              "code": "tacr",
+              "credits": 3,
+              "name": "taller asistencial de cine de realidad y proyectos de no ficcion con ia ng"
+            },
+            {
               "code": "tc25a",
               "credits": 10,
               "name": "int a la eval de la cal de la inf geogr area"
             },
             {
+              "code": "v102",
+              "credits": 8,
+              "name": "citologia e histologia general"
+            },
+            {
+              "code": "v103",
+              "credits": 3,
+              "name": "biofisica"
+            },
+            {
+              "code": "v1183",
+              "credits": 3,
+              "name": "redaccion presentacion y defensa de la tesis de grado"
+            },
+            {
+              "code": "v200",
+              "credits": 8,
+              "name": "fisiologia i"
+            },
+            {
+              "code": "v202",
+              "credits": 8,
+              "name": "microbiologia"
+            },
+            {
               "code": "v2103",
               "credits": 3,
               "name": "biofisica 2026"
+            },
+            {
+              "code": "v2109",
+              "credits": 2,
+              "name": "taller de ciencias sociales"
+            },
+            {
+              "code": "v211",
+              "credits": 4,
+              "name": "epidemiologia veterinaria"
+            },
+            {
+              "code": "v2110",
+              "credits": 2,
+              "name": "taller de etica"
+            },
+            {
+              "code": "v2113",
+              "credits": 2,
+              "name": "taller de etologia y bienestar en animales de produccion"
+            },
+            {
+              "code": "v302",
+              "credits": 8,
+              "name": "enfermedades parasitarias"
+            },
+            {
+              "code": "v413",
+              "credits": 2,
+              "name": "taller de epidemiologia y servicios oficiales veterinarios"
+            },
+            {
+              "code": "v500",
+              "credits": 7,
+              "name": "produccion de bovinos"
+            },
+            {
+              "code": "v501",
+              "credits": 5,
+              "name": "produccion de ovinos y caprinos"
+            },
+            {
+              "code": "v502",
+              "credits": 6,
+              "name": "alimentacion"
+            },
+            {
+              "code": "v503",
+              "credits": 5,
+              "name": "mejora genetica"
+            },
+            {
+              "code": "v507",
+              "credits": 4,
+              "name": "gestion de empresas"
             }
           ],
           "counts": {
-            "courses": 526,
-            "prerequisites": 387,
-            "publishedRules": 327
+            "courses": 717,
+            "prerequisites": 511,
+            "publishedRules": 322
           }
         }
       },
@@ -56935,12 +57890,12 @@
           "serviceCode": "FAGRO",
           "snapshot": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
           "available": true,
-          "curriculumHash": "sha256:14b1a87d2eba4fcbc3874d409639b5b6c3314b7b7b08397395147c83d09c0eec",
-          "prerequisiteHash": "sha256:22e5c6aeea0cb826b275251d7e2a92c5c5145cc06da387e05e7f4b342a7db1c0",
+          "curriculumHash": "sha256:ed992f9f591e5ec1a27c32f3f2de7cf883c1b450d7fa870f3224820fe328a71f",
+          "prerequisiteHash": "sha256:32fe005162c166f1e1e50ac9563af08d72c9ea3d4549ab7bf831f16f1cdf4e53",
           "counts": {
-            "courses": 526,
-            "prerequisites": 387,
-            "publishedRules": 327
+            "courses": 717,
+            "prerequisites": 511,
+            "publishedRules": 322
           }
         }
       ],
@@ -60566,965 +61521,9 @@
           "difference": {
             "metadataChanged": false,
             "onlyCanonical": [],
-            "onlyRegional": [
-              {
-                "code": "06eu",
-                "credits": 7,
-                "name": "mat 06 calculo numerico"
-              },
-              {
-                "code": "1008",
-                "credits": 5,
-                "name": "hoja de calculo"
-              },
-              {
-                "code": "102eu",
-                "credits": 7,
-                "name": "quimica general i"
-              },
-              {
-                "code": "104eu",
-                "credits": 4,
-                "name": "prevencion de riesgos en el laboratorio"
-              },
-              {
-                "code": "105a",
-                "credits": 6,
-                "name": "bioquimica metabolica"
-              },
-              {
-                "code": "109v",
-                "credits": 3,
-                "name": "etologia y bienestar animal"
-              },
-              {
-                "code": "119n",
-                "credits": 10,
-                "name": "introduccion a la estadistica computacional"
-              },
-              {
-                "code": "1223a",
-                "credits": 10,
-                "name": "ciencia tecnologia y sociedad area"
-              },
-              {
-                "code": "1224a",
-                "credits": 10,
-                "name": "economia area"
-              },
-              {
-                "code": "1260",
-                "credits": 4,
-                "name": "ingles cientifico"
-              },
-              {
-                "code": "139a",
-                "credits": 6,
-                "name": "estudios en ciencia tecnologia y sociedad por que y para que investigamos"
-              },
-              {
-                "code": "140",
-                "credits": 8,
-                "name": "principios de economia"
-              },
-              {
-                "code": "173",
-                "credits": 10,
-                "name": "bases teoricas del concepto de desarrollo"
-              },
-              {
-                "code": "1882",
-                "credits": 10,
-                "name": "cartografia tematica"
-              },
-              {
-                "code": "1882a",
-                "credits": 10,
-                "name": "cartografia tematica area"
-              },
-              {
-                "code": "201v",
-                "credits": 6,
-                "name": "inmunologia"
-              },
-              {
-                "code": "2040a",
-                "credits": 6,
-                "name": "iniciacion a la produccion audiovisual y multimedia area"
-              },
-              {
-                "code": "205v",
-                "credits": 8,
-                "name": "fisiologia ii"
-              },
-              {
-                "code": "207v",
-                "credits": 4,
-                "name": "nutricion"
-              },
-              {
-                "code": "208v",
-                "credits": 4,
-                "name": "parasitologia"
-              },
-              {
-                "code": "209v",
-                "credits": 3,
-                "name": "extension veterinaria"
-              },
-              {
-                "code": "2105a",
-                "credits": 2,
-                "name": "taller de herramientas informaticas"
-              },
-              {
-                "code": "2107a",
-                "credits": 2,
-                "name": "taller de comunicacion oral y escrita"
-              },
-              {
-                "code": "2108a",
-                "credits": 3,
-                "name": "etnologia"
-              },
-              {
-                "code": "210eu",
-                "credits": 6,
-                "name": "anatomia"
-              },
-              {
-                "code": "210v",
-                "credits": 3,
-                "name": "desarrollo sustentable"
-              },
-              {
-                "code": "2110a",
-                "credits": 5,
-                "name": "bioquimica descriptiva"
-              },
-              {
-                "code": "225eu",
-                "credits": 2,
-                "name": "cromatografia de afinidad de biomolec aplic a la purificacion de prot recom"
-              },
-              {
-                "code": "3007",
-                "credits": 5,
-                "name": "trabajo colaborativo en salud"
-              },
-              {
-                "code": "303eu",
-                "credits": 6,
-                "name": "qca inorganica teorico"
-              },
-              {
-                "code": "305eu",
-                "credits": 6,
-                "name": "bases juridicas de la empresa"
-              },
-              {
-                "code": "334",
-                "credits": 10,
-                "name": "inferencia ii"
-              },
-              {
-                "code": "335",
-                "credits": 10,
-                "name": "muestreo y planificacion de encuestas i"
-              },
-              {
-                "code": "336",
-                "credits": 10,
-                "name": "inferencia iii"
-              },
-              {
-                "code": "370eu",
-                "credits": 3,
-                "name": "fritura de alimentos t"
-              },
-              {
-                "code": "401eu",
-                "credits": 6,
-                "name": "quimica organica 102"
-              },
-              {
-                "code": "402",
-                "credits": 8,
-                "name": "proceso cultural del uruguay inv ppp"
-              },
-              {
-                "code": "411eu",
-                "credits": 4,
-                "name": "quimica nuclear"
-              },
-              {
-                "code": "423eu",
-                "credits": 10,
-                "name": "programacion python i inicial"
-              },
-              {
-                "code": "425eu",
-                "credits": 5,
-                "name": "herram molec para el analisis micro de alim"
-              },
-              {
-                "code": "463n",
-                "credits": 10,
-                "name": "estadistica no parametrica"
-              },
-              {
-                "code": "470",
-                "credits": 10,
-                "name": "analisis multivariado ii"
-              },
-              {
-                "code": "475",
-                "credits": 10,
-                "name": "introduccion a los metodos estadisticos"
-              },
-              {
-                "code": "535eu",
-                "credits": 8,
-                "name": "farmacocinetica y biofarmacia"
-              },
-              {
-                "code": "536eu",
-                "credits": 11,
-                "name": "biologia molecular"
-              },
-              {
-                "code": "540eu",
-                "credits": 5,
-                "name": "espectrometria atomica analitica"
-              },
-              {
-                "code": "547eu",
-                "credits": 6,
-                "name": "quimica bioinorganica teorico"
-              },
-              {
-                "code": "549eu",
-                "credits": 6,
-                "name": "quimica de coordinacion teorico"
-              },
-              {
-                "code": "552eu",
-                "credits": 4,
-                "name": "quimica de coordinacion laboratorio"
-              },
-              {
-                "code": "555eu",
-                "credits": 6,
-                "name": "uso y manejo de animales de laboratorio"
-              },
-              {
-                "code": "558eu",
-                "credits": 6,
-                "name": "epistemologia"
-              },
-              {
-                "code": "559eu",
-                "credits": 3,
-                "name": "propiedad intelectual"
-              },
-              {
-                "code": "565eu",
-                "credits": 6,
-                "name": "laboratorio de fitoquimica org 202b"
-              },
-              {
-                "code": "618",
-                "credits": 4,
-                "name": "introduccion a los sistemas de gestion vigente hasta 2015"
-              },
-              {
-                "code": "633eu",
-                "credits": 6,
-                "name": "quimica supramolecular"
-              },
-              {
-                "code": "694eu",
-                "credits": 5,
-                "name": "herr mol para ident y caract hong fil"
-              },
-              {
-                "code": "704eu",
-                "credits": 4,
-                "name": "bromatologia y nutricion"
-              },
-              {
-                "code": "711eu",
-                "credits": 4,
-                "name": "metodologias modernas y sustentables en sintesis organica"
-              },
-              {
-                "code": "719eu",
-                "credits": 4,
-                "name": "agroquimicos i"
-              },
-              {
-                "code": "736eu",
-                "credits": 7,
-                "name": "bioinformatica"
-              },
-              {
-                "code": "739a",
-                "credits": 4,
-                "name": "enologia y biotec de la fermentacion l hasta 2025"
-              },
-              {
-                "code": "740eu",
-                "credits": 6,
-                "name": "enologia y biotecnologia de la fermentacion t"
-              },
-              {
-                "code": "741eu",
-                "credits": 6,
-                "name": "int a microb ambiental y agricola t"
-              },
-              {
-                "code": "753eu",
-                "credits": 4,
-                "name": "biocatalisis i"
-              },
-              {
-                "code": "755eu",
-                "credits": 6,
-                "name": "ecologia quimica org 311"
-              },
-              {
-                "code": "773eu",
-                "credits": 4,
-                "name": "biodiesel curso teorico"
-              },
-              {
-                "code": "782eu",
-                "credits": 8,
-                "name": "taller en simulaciones biomoleculares"
-              },
-              {
-                "code": "788eu",
-                "credits": 5,
-                "name": "automatizacion en quimica analitica"
-              },
-              {
-                "code": "791eu",
-                "credits": 6,
-                "name": "quimica y tecnologia de grasas y aceites teorico"
-              },
-              {
-                "code": "799eu",
-                "credits": 7,
-                "name": "evaluacion sensorial aplicada para el desarrollo de productos"
-              },
-              {
-                "code": "816eu",
-                "credits": 4,
-                "name": "ingles cientifico"
-              },
-              {
-                "code": "832eu",
-                "credits": 5,
-                "name": "toxicologia amb y geolog med avanzada"
-              },
-              {
-                "code": "835eu",
-                "credits": 6,
-                "name": "espectrometria de masas de compuestos organicos"
-              },
-              {
-                "code": "836eu",
-                "credits": 7,
-                "name": "bionformatica estructural"
-              },
-              {
-                "code": "860eu",
-                "credits": 6,
-                "name": "introduccion a la nanotecnologia"
-              },
-              {
-                "code": "8etea",
-                "credits": 8,
-                "name": "taller experimental de arte sonoro material virtual"
-              },
-              {
-                "code": "8etef",
-                "credits": 8,
-                "name": "taller experimental de arte sonoro forma y sonido"
-              },
-              {
-                "code": "908eu",
-                "credits": 4,
-                "name": "botanica"
-              },
-              {
-                "code": "909eu",
-                "credits": 9,
-                "name": "farmacognosia"
-              },
-              {
-                "code": "926eu",
-                "credits": 2,
-                "name": "aplicacion de conceptos de microbiologia a la resolucion de problemas"
-              },
-              {
-                "code": "933eu",
-                "credits": 5,
-                "name": "aplicaciones ind de antioxidantes nat"
-              },
-              {
-                "code": "997eu",
-                "credits": 5,
-                "name": "introduccion a la farmacometria"
-              },
-              {
-                "code": "a116",
-                "credits": 8,
-                "name": "prehistoria americana ii"
-              },
-              {
-                "code": "a20",
-                "credits": 10,
-                "name": "administracion y gestion de las organizaciones ii"
-              },
-              {
-                "code": "a41",
-                "credits": 10,
-                "name": "sistemas de informacion"
-              },
-              {
-                "code": "a42",
-                "credits": 10,
-                "name": "diseno organizacional"
-              },
-              {
-                "code": "a62",
-                "credits": 10,
-                "name": "gestion de la innovacion y la tecnologia"
-              },
-              {
-                "code": "a65",
-                "credits": 5,
-                "name": "introduccion al emprendedurismo"
-              },
-              {
-                "code": "a66",
-                "credits": 10,
-                "name": "gestion de proyectos"
-              },
-              {
-                "code": "a83",
-                "credits": 10,
-                "name": "cambio organizacional"
-              },
-              {
-                "code": "a83n",
-                "credits": 10,
-                "name": "cambio organizacional"
-              },
-              {
-                "code": "a84",
-                "credits": 10,
-                "name": "economia y gestion de organizaciones de salud"
-              },
-              {
-                "code": "atp",
-                "credits": 10,
-                "name": "autoritarismos transiciones y politicas de la memoria en el conosur"
-              },
-              {
-                "code": "c101",
-                "credits": 6,
-                "name": "guerra y paz en la politica mundial"
-              },
-              {
-                "code": "c102",
-                "credits": 6,
-                "name": "recuperacion y analisis de texto con r"
-              },
-              {
-                "code": "c207",
-                "credits": 12,
-                "name": "educacion economia y sociedad"
-              },
-              {
-                "code": "c216",
-                "credits": 8,
-                "name": "epistemologia etica y educacion"
-              },
-              {
-                "code": "c34b",
-                "credits": 9,
-                "name": "desarrollo economico en el uruguay contemporaneo"
-              },
-              {
-                "code": "c51",
-                "credits": 8,
-                "name": "sistema politico nacional i"
-              },
-              {
-                "code": "c82",
-                "credits": 8,
-                "name": "economia politica e instituciones"
-              },
-              {
-                "code": "d10",
-                "credits": 9,
-                "name": "agenda 2030 objetivos de desarrollo sostenible"
-              },
-              {
-                "code": "d12",
-                "credits": 4,
-                "name": "ambiente y desarrollo"
-              },
-              {
-                "code": "d13",
-                "credits": 6,
-                "name": "desarrollo sustentable economia ambiental y economia ecologica"
-              },
-              {
-                "code": "d14",
-                "credits": 6,
-                "name": "economia de la discriminacion"
-              },
-              {
-                "code": "d15",
-                "credits": 6,
-                "name": "empresas transnacionales globalizacion productiva y desarrollo"
-              },
-              {
-                "code": "d16",
-                "credits": 4,
-                "name": "ciencia tecnologia innovacion sociedad y desarrollo en uruguay"
-              },
-              {
-                "code": "d17a",
-                "credits": 6,
-                "name": "planificacion del desarrollo y prospectiva"
-              },
-              {
-                "code": "d18",
-                "credits": 7,
-                "name": "historia de la desigualdad economica un enfoque de economia politica"
-              },
-              {
-                "code": "d18a",
-                "credits": 8,
-                "name": "historia de la desigualdad economica en las sociedades capitalistas 1750 2020"
-              },
-              {
-                "code": "d19",
-                "credits": 6,
-                "name": "herramientas conceptuales y metodologicas para el trabajo interdisciplinario"
-              },
-              {
-                "code": "d20",
-                "credits": 10,
-                "name": "topicos de economia social y solidaria"
-              },
-              {
-                "code": "d22",
-                "credits": 6,
-                "name": "gestionando el desarrollo ed 2020"
-              },
-              {
-                "code": "d23",
-                "credits": 6,
-                "name": "teoria de relaciones internacionales economia pol internacional y aplicaciones"
-              },
-              {
-                "code": "d30",
-                "credits": 6,
-                "name": "economia publica"
-              },
-              {
-                "code": "d54",
-                "credits": 6,
-                "name": "diseno de investigacion para los estudios de desarrollo"
-              },
-              {
-                "code": "d68",
-                "credits": 4,
-                "name": "analisis microeconomico"
-              },
-              {
-                "code": "d69",
-                "credits": 4,
-                "name": "analisis macroeconomico"
-              },
-              {
-                "code": "d70",
-                "credits": 6,
-                "name": "sistema internacional gobernanza y cooperacion para el desarrollo"
-              },
-              {
-                "code": "d73",
-                "credits": 8,
-                "name": "teoria del desarrollo economico"
-              },
-              {
-                "code": "d74",
-                "credits": 8,
-                "name": "objeto y metodo de los estudios para el desarrollo"
-              },
-              {
-                "code": "d75",
-                "credits": 6,
-                "name": "poblacion y desarrollo"
-              },
-              {
-                "code": "d76",
-                "credits": 6,
-                "name": "metodos cuantitativos para la evaluacion de impacto de politicas y programas"
-              },
-              {
-                "code": "d76a",
-                "credits": 6,
-                "name": "evaluacion de impacto de politicas y programas"
-              },
-              {
-                "code": "d78a",
-                "credits": 6,
-                "name": "ciencia tecnologia innovacion sociedad y desarrollo"
-              },
-              {
-                "code": "d79",
-                "credits": 10,
-                "name": "teoria sociologica del desarrollo"
-              },
-              {
-                "code": "d82",
-                "credits": 6,
-                "name": "economia internacional"
-              },
-              {
-                "code": "d84",
-                "credits": 6,
-                "name": "formulacion y evaluacion de proyectos de inversion"
-              },
-              {
-                "code": "d86",
-                "credits": 8,
-                "name": "teoria de las instituciones"
-              },
-              {
-                "code": "d87",
-                "credits": 6,
-                "name": "teoria de juegos"
-              },
-              {
-                "code": "d92",
-                "credits": 6,
-                "name": "desarrollo socio territorial"
-              },
-              {
-                "code": "d94",
-                "credits": 10,
-                "name": "desarrollo economico territorial"
-              },
-              {
-                "code": "emsr",
-                "credits": 4,
-                "name": "la musica de steve reich practicas y analisis"
-              },
-              {
-                "code": "emydn",
-                "credits": 4,
-                "name": "ensamble de musica y danza narrativa"
-              },
-              {
-                "code": "esc",
-                "credits": 3,
-                "name": "escritura creativa"
-              },
-              {
-                "code": "etlea",
-                "credits": 5,
-                "name": "taller de lutheria electronica aplicada a la sintesis de sonido"
-              },
-              {
-                "code": "fthfc",
-                "credits": 7,
-                "name": "topico historia y filosofia de la ciencia"
-              },
-              {
-                "code": "h12",
-                "credits": 13,
-                "name": "historia americana ii"
-              },
-              {
-                "code": "h13",
-                "credits": 13,
-                "name": "historia contemporanea"
-              },
-              {
-                "code": "h14",
-                "credits": 13,
-                "name": "historia del uruguay ii"
-              },
-              {
-                "code": "h18",
-                "credits": 13,
-                "name": "historia del arte"
-              },
-              {
-                "code": "h6",
-                "credits": 13,
-                "name": "historia medieval"
-              },
-              {
-                "code": "h9ex",
-                "credits": 13,
-                "name": "historia americana i"
-              },
-              {
-                "code": "i87",
-                "credits": 10,
-                "name": "prospectiva estrategica con la mirada en el futuro"
-              },
-              {
-                "code": "iac",
-                "credits": 2,
-                "name": "introduccion al arte contemporaneo"
-              },
-              {
-                "code": "l144",
-                "credits": 10,
-                "name": "lengua y literatura griega i"
-              },
-              {
-                "code": "ld",
-                "credits": 2,
-                "name": "laboratorio de digitalizacion"
-              },
-              {
-                "code": "lfm",
-                "credits": 3,
-                "name": "laboratorio para el fin de los mundos"
-              },
-              {
-                "code": "o1145",
-                "credits": 9,
-                "name": "comunicacion estrategica"
-              },
-              {
-                "code": "o1156",
-                "credits": 9,
-                "name": "cualitativa ii inv"
-              },
-              {
-                "code": "o11ea",
-                "credits": 10,
-                "name": "inerpretacion del paisaje iii"
-              },
-              {
-                "code": "o12ea",
-                "credits": 5,
-                "name": "paisaje y cine exploraciones"
-              },
-              {
-                "code": "o13ea",
-                "credits": 6,
-                "name": "fotogrametria de rango cercano aplicada al paisaje"
-              },
-              {
-                "code": "o171",
-                "credits": 15,
-                "name": "inf geo descrp metadatos geograficos"
-              },
-              {
-                "code": "o6521",
-                "credits": 8,
-                "name": "teorias y practicas de la accesibilidad en la comunicacion lim"
-              },
-              {
-                "code": "p020v",
-                "credits": 8,
-                "name": "practicantado produccion de carne y lana ovina de calidad"
-              },
-              {
-                "code": "pas",
-                "credits": 4,
-                "name": "perspectivas artisticas sobre los signos simbolos mitos e imagnes en el mundo"
-              },
-              {
-                "code": "pci",
-                "credits": 3,
-                "name": "procesos creativos intermediales"
-              },
-              {
-                "code": "s42",
-                "credits": 10,
-                "name": "sociologia de dirigentes de empresas"
-              },
-              {
-                "code": "s60",
-                "credits": 8,
-                "name": "metodologia cuantitativa i medicion y diseno de la investigacion"
-              },
-              {
-                "code": "s62",
-                "credits": 8,
-                "name": "metodologia cualitativa i disenos cualitativos de investigacion"
-              },
-              {
-                "code": "s64",
-                "credits": 10,
-                "name": "teoria sociologica ii"
-              },
-              {
-                "code": "s66",
-                "credits": 8,
-                "name": "metodologia cualitativa ii tecnicas y modalidades de analisis cualitativo"
-              },
-              {
-                "code": "s68",
-                "credits": 10,
-                "name": "metodologia cuantitativa iii analisis bivariado asociacion correlacion e inf"
-              },
-              {
-                "code": "s69",
-                "credits": 10,
-                "name": "teoria sociologica iv"
-              },
-              {
-                "code": "s80",
-                "credits": 8,
-                "name": "analisis sociologico i"
-              },
-              {
-                "code": "s81",
-                "credits": 8,
-                "name": "sociedad y pensamiento sociologico latinoamericano"
-              },
-              {
-                "code": "s84",
-                "credits": 8,
-                "name": "sociedad y pensamiento sociologico del uruguay"
-              },
-              {
-                "code": "s87",
-                "credits": 10,
-                "name": "analisis sociologico ii esquemas de analisis cualitativo"
-              },
-              {
-                "code": "t49",
-                "credits": 10,
-                "name": "politicas sociales"
-              },
-              {
-                "code": "t57a",
-                "credits": 5,
-                "name": "proteccion social a inicios del siglo xxi debates y desafios"
-              },
-              {
-                "code": "t66",
-                "credits": 4,
-                "name": "algunos problemas de filosofia politica vinculados al trabajo social"
-              },
-              {
-                "code": "t71a",
-                "credits": 5,
-                "name": "el derecho social desde la perspectiva de los sujetos de derecho"
-              },
-              {
-                "code": "t82",
-                "credits": 4,
-                "name": "la intervencion grupal desde la perspectiva psicosocial"
-              },
-              {
-                "code": "t90",
-                "credits": 5,
-                "name": "sexualidad ciencia y reproduccion aportes desde la antropologia y el genero"
-              },
-              {
-                "code": "tacr",
-                "credits": 3,
-                "name": "taller asistencial de cine de realidad y proyectos de no ficcion con ia ng"
-              },
-              {
-                "code": "v102",
-                "credits": 8,
-                "name": "citologia e histologia general"
-              },
-              {
-                "code": "v103",
-                "credits": 3,
-                "name": "biofisica"
-              },
-              {
-                "code": "v1183",
-                "credits": 3,
-                "name": "redaccion presentacion y defensa de la tesis de grado"
-              },
-              {
-                "code": "v200",
-                "credits": 8,
-                "name": "fisiologia i"
-              },
-              {
-                "code": "v202",
-                "credits": 8,
-                "name": "microbiologia"
-              },
-              {
-                "code": "v2109",
-                "credits": 2,
-                "name": "taller de ciencias sociales"
-              },
-              {
-                "code": "v211",
-                "credits": 4,
-                "name": "epidemiologia veterinaria"
-              },
-              {
-                "code": "v2110",
-                "credits": 2,
-                "name": "taller de etica"
-              },
-              {
-                "code": "v2113",
-                "credits": 2,
-                "name": "taller de etologia y bienestar en animales de produccion"
-              },
-              {
-                "code": "v302",
-                "credits": 8,
-                "name": "enfermedades parasitarias"
-              },
-              {
-                "code": "v413",
-                "credits": 2,
-                "name": "taller de epidemiologia y servicios oficiales veterinarios"
-              },
-              {
-                "code": "v500",
-                "credits": 7,
-                "name": "produccion de bovinos"
-              },
-              {
-                "code": "v501",
-                "credits": 5,
-                "name": "produccion de ovinos y caprinos"
-              },
-              {
-                "code": "v502",
-                "credits": 6,
-                "name": "alimentacion"
-              },
-              {
-                "code": "v503",
-                "credits": 5,
-                "name": "mejora genetica"
-              },
-              {
-                "code": "v507",
-                "credits": 4,
-                "name": "gestion de empresas"
-              }
-            ],
+            "onlyRegional": [],
             "changedCredits": [],
-            "prerequisiteCountDelta": -378
+            "prerequisiteCountDelta": -502
           }
         }
       ],
@@ -66727,9 +66726,9 @@
         "snapshot": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:890c2b14ed607945de325d3aa581d53c44a80f3a4253d89dddce6270faf6cf5c",
-          "curriculumHash": "sha256:cb155c152cd517b97c1a292a773e3f012083f31ffd8109c6e26ec45e2feffdb5",
-          "prerequisiteHash": "sha256:97413cf2efdab054075a376721695a615e38c7c0248766f1e4aa613628e2ed4b",
+          "hash": "sha256:62780efe98f413af7daf40417c85c795098c9ac877259b043a688b931ff5ac7f",
+          "curriculumHash": "sha256:aebb4ba99b152e692e211ba3602c7e155424f12ab2954c58df289b4eb2d53fd5",
+          "prerequisiteHash": "sha256:44ca6c64a474a219c0a375f90538f1cf66767201e2facf123f7e3d2b604e7c68",
           "metadata": {
             "duration": "60 meses",
             "minCredits": 360,
@@ -67242,9 +67241,34 @@
               "name": "profundizacion eutm"
             },
             {
+              "code": "071",
+              "credits": 4,
+              "name": "expresion artisticas en contextos pedagogicos interdisciplinarios"
+            },
+            {
               "code": "08",
               "credits": 8,
               "name": "psicologia i eutm"
+            },
+            {
+              "code": "086",
+              "credits": 10,
+              "name": "psicologia del desarrollo fac psicologia"
+            },
+            {
+              "code": "087",
+              "credits": 2,
+              "name": "metodos y herramientas orientadas a la extension fac psicologia"
+            },
+            {
+              "code": "088",
+              "credits": 5,
+              "name": "articulacion de saberes ii fac psicologia"
+            },
+            {
+              "code": "089",
+              "credits": 10,
+              "name": "psiocologia social fac psicologia"
             },
             {
               "code": "09",
@@ -67310,6 +67334,16 @@
               "code": "1007",
               "credits": 10,
               "name": "prmocion de salud f enf"
+            },
+            {
+              "code": "1007",
+              "credits": 10,
+              "name": "promocion de salud"
+            },
+            {
+              "code": "1008",
+              "credits": 5,
+              "name": "hoja de calculo"
             },
             {
               "code": "1013",
@@ -67767,6 +67801,16 @@
               "name": "la sociologia el mundo y uruguay fac ciencias sociales"
             },
             {
+              "code": "1800",
+              "credits": 6,
+              "name": "extension univ y elab de proyectos"
+            },
+            {
+              "code": "1800e",
+              "credits": 6,
+              "name": "electiva extension univ y elab de proyectos"
+            },
+            {
               "code": "1800e",
               "credits": 6,
               "name": "extension universitaria y elaboracion de proyectos facultad de odontologia"
@@ -67810,6 +67854,16 @@
               "code": "203",
               "credits": 8,
               "name": "derechos humanos fder"
+            },
+            {
+              "code": "2050",
+              "credits": 6,
+              "name": "lectura comprensiva de ingles"
+            },
+            {
+              "code": "2050e",
+              "credits": 6,
+              "name": "electiva lectura comprensiva de ingles"
             },
             {
               "code": "2050e",
@@ -67937,6 +67991,16 @@
               "name": "derecho privado 3 fac derecho"
             },
             {
+              "code": "3005",
+              "credits": 5,
+              "name": "monitoreo sanitario ante el impacto de la globalizacion en la infancia y la adol"
+            },
+            {
+              "code": "3007",
+              "credits": 5,
+              "name": "trabajo colaborativo en salud"
+            },
+            {
               "code": "3010",
               "credits": 6,
               "name": "introduccion a las rrii fder"
@@ -68032,14 +68096,29 @@
               "name": "pensamiento social i fic"
             },
             {
+              "code": "400el",
+              "credits": 5,
+              "name": "electiva fundamentos de la psicologia"
+            },
+            {
               "code": "401",
               "credits": 5,
               "name": "teorias psicologicas fac psicologia"
             },
             {
+              "code": "401el",
+              "credits": 5,
+              "name": "electiva teorias psicologicas"
+            },
+            {
               "code": "4030",
               "credits": 8,
               "name": "introduccion a la epistemologia comunicacion"
+            },
+            {
+              "code": "4041",
+              "credits": 6,
+              "name": "patologia molecular principios fund"
             },
             {
               "code": "4041e",
@@ -68052,9 +68131,19 @@
               "name": "imagenologia bmf fac odont"
             },
             {
+              "code": "4043",
+              "credits": 6,
+              "name": "imagenologia bmf"
+            },
+            {
               "code": "40433",
               "credits": 8,
               "name": "metodologia de la investigacion en informacion y comunicacion fic"
+            },
+            {
+              "code": "4043e",
+              "credits": 6,
+              "name": "electiva imagenologia buco maxilo facial"
             },
             {
               "code": "4043e",
@@ -68097,6 +68186,11 @@
               "name": "psicologia general fac ccss"
             },
             {
+              "code": "476",
+              "credits": 10,
+              "name": "estadistica en el deporte"
+            },
+            {
               "code": "500",
               "credits": 16,
               "name": "fisica 1 eutm"
@@ -68110,6 +68204,11 @@
               "code": "5005",
               "credits": 9,
               "name": "pensamiento social i fic"
+            },
+            {
+              "code": "5006",
+              "credits": 9,
+              "name": "discurso tecnica y comunicacion fac de informacion y comunicacion"
             },
             {
               "code": "5008",
@@ -68170,6 +68269,16 @@
               "code": "5060",
               "credits": 6,
               "name": "odont legal y forense fac odont"
+            },
+            {
+              "code": "5060",
+              "credits": 6,
+              "name": "odontologia legal y forense"
+            },
+            {
+              "code": "5060e",
+              "credits": 6,
+              "name": "electiva odontologia legal y forense"
             },
             {
               "code": "5060e",
@@ -68287,9 +68396,34 @@
               "name": "fisica radiologica eutm"
             },
             {
+              "code": "526",
+              "credits": 4,
+              "name": "deontologia y legislacion laboral"
+            },
+            {
+              "code": "527",
+              "credits": 11,
+              "name": "enfermeria"
+            },
+            {
+              "code": "528",
+              "credits": 11,
+              "name": "fisiopatologia"
+            },
+            {
+              "code": "529",
+              "credits": 4,
+              "name": "desarrollo creativo"
+            },
+            {
               "code": "530",
               "credits": 8,
               "name": "terapia ocupacional i to social y comunitaria"
+            },
+            {
+              "code": "531",
+              "credits": 4,
+              "name": "grupos opcionales ii"
             },
             {
               "code": "5402",
@@ -68322,9 +68456,19 @@
               "name": "iniciacion a lo universitario fsic"
             },
             {
+              "code": "601el",
+              "credits": 10,
+              "name": "electiva historia de la psicologia"
+            },
+            {
               "code": "602a",
               "credits": 5,
               "name": "herram trabajo intelectual psicologia"
+            },
+            {
+              "code": "602el",
+              "credits": 5,
+              "name": "electiva herramientas para el trabajo intelectual"
             },
             {
               "code": "603",
@@ -68332,9 +68476,19 @@
               "name": "epistemologia fsic"
             },
             {
+              "code": "603el",
+              "credits": 5,
+              "name": "electiva epistemologia"
+            },
+            {
               "code": "604",
               "credits": 5,
               "name": "articulacion de saberes i fsic"
+            },
+            {
+              "code": "604el",
+              "credits": 5,
+              "name": "electiva articulacion de saberes i"
             },
             {
               "code": "605",
@@ -68354,6 +68508,11 @@
             {
               "code": "606el",
               "credits": 10,
+              "name": "electiva psicologia del desarrollo"
+            },
+            {
+              "code": "606el",
+              "credits": 10,
               "name": "psicologia del desarrollo modalidad plenario fac psico"
             },
             {
@@ -68365,6 +68524,11 @@
               "code": "6071",
               "credits": 5,
               "name": "procesos cognitivos i fsic"
+            },
+            {
+              "code": "6071e",
+              "credits": 5,
+              "name": "electiva procesos cognitivos i"
             },
             {
               "code": "6071e",
@@ -68389,6 +68553,11 @@
             {
               "code": "6073e",
               "credits": 5,
+              "name": "electiva neurobiologia de la mente"
+            },
+            {
+              "code": "6073e",
+              "credits": 5,
               "name": "neurobiologia de la mente uco fac psico"
             },
             {
@@ -68397,9 +68566,19 @@
               "name": "metodologia general de la investigacion fsic"
             },
             {
+              "code": "608el",
+              "credits": 5,
+              "name": "electiva metodologia general de la investigacion"
+            },
+            {
               "code": "609",
               "credits": 2,
               "name": "met y herr orient a la ext fsic"
+            },
+            {
+              "code": "609el",
+              "credits": 2,
+              "name": "electiva metodos y h orientadas a la extension"
             },
             {
               "code": "610",
@@ -68412,9 +68591,19 @@
               "name": "articulacion de saberes ii modalidad plenario fac psico"
             },
             {
+              "code": "610el",
+              "credits": 5,
+              "name": "electiva as ii psicologia genero y derechos humanos"
+            },
+            {
               "code": "611",
               "credits": 5,
               "name": "referencia ii form acion integral fsic"
+            },
+            {
+              "code": "612el",
+              "credits": 10,
+              "name": "electiva psicologia social"
             },
             {
               "code": "613",
@@ -68422,9 +68611,19 @@
               "name": "psicologia sujeto y aprend fsic"
             },
             {
+              "code": "613el",
+              "credits": 5,
+              "name": "electiva psicologia sujeto y aprendizaje"
+            },
+            {
               "code": "615",
               "credits": 3,
               "name": "etica y deontologia fac psicol"
+            },
+            {
+              "code": "615el",
+              "credits": 3,
+              "name": "electiva etica y deontologia"
             },
             {
               "code": "616",
@@ -68452,14 +68651,54 @@
               "name": "articulacion de saberes iii fac psic"
             },
             {
+              "code": "617el",
+              "credits": 5,
+              "name": "electiva articulacion de saberes iii"
+            },
+            {
+              "code": "619ea",
+              "credits": 5,
+              "name": "electiva psicopatologia de adultos"
+            },
+            {
+              "code": "619ei",
+              "credits": 5,
+              "name": "electiva psicopatologia de la infancia y la adolescencia"
+            },
+            {
               "code": "620",
               "credits": 10,
               "name": "psic y salud fsic"
             },
             {
+              "code": "620el",
+              "credits": 10,
+              "name": "electiva psicologia y salud"
+            },
+            {
+              "code": "621el",
+              "credits": 5,
+              "name": "electiva metodos y tecnicas cualitativas"
+            },
+            {
               "code": "624",
               "credits": 5,
               "name": "articulacion de saberes iv fac de psicologia"
+            },
+            {
+              "code": "624el",
+              "credits": 5,
+              "name": "electiva as iv estado sociedad y politicas publicas"
+            },
+            {
+              "code": "625bb",
+              "credits": 5,
+              "name": "bases biologicas del comportamiento humano"
+            },
+            {
+              "code": "625el",
+              "credits": 5,
+              "name": "electiva neuropsicologia"
             },
             {
               "code": "625el",
@@ -68492,6 +68731,11 @@
               "name": "art vi sexualidad y salud reproductiva fac de psico"
             },
             {
+              "code": "646de",
+              "credits": 5,
+              "name": "electiva articulacion de saberes vi psicologia ambiental"
+            },
+            {
               "code": "646ee",
               "credits": 5,
               "name": "art vi psicologia y comunicacion fac de psico"
@@ -68502,14 +68746,34 @@
               "name": "electiva as vi dialogos y ambitos interdisciplinarios"
             },
             {
+              "code": "646ge",
+              "credits": 5,
+              "name": "electiva articulacion de saberes vi sexualidad y salud reproductiva"
+            },
+            {
               "code": "646ie",
               "credits": 5,
               "name": "articulacion de saberes vi eq de salud e interdisc psico"
             },
             {
+              "code": "646ie",
+              "credits": 5,
+              "name": "electiva art saberes vi equipos de salud"
+            },
+            {
+              "code": "646ke",
+              "credits": 5,
+              "name": "electiva articulacion de saberes vi psicologia juridica"
+            },
+            {
               "code": "646me",
               "credits": 5,
               "name": "art vi dialogos y ambitos interdisciplinarios psico del des fac de psico"
+            },
+            {
+              "code": "646me",
+              "credits": 5,
+              "name": "electiva art saberes vi dialogos y ambitos interdisciplinarios"
             },
             {
               "code": "646ne",
@@ -68532,9 +68796,24 @@
               "name": "articulacion de saberes v fac psic"
             },
             {
+              "code": "653el",
+              "credits": 5,
+              "name": "electiva articulacion de saberes v"
+            },
+            {
+              "code": "662al",
+              "credits": 5,
+              "name": "electiva clinica ii teorias y tecnicas de las intervenciones"
+            },
+            {
               "code": "8etea",
               "credits": 8,
               "name": "taller experimental de arte sonoro material virtual"
+            },
+            {
+              "code": "8etef",
+              "credits": 8,
+              "name": "taller experimental de arte sonoro forma y sonido"
             },
             {
               "code": "9",
@@ -68632,6 +68911,11 @@
               "name": "adm y gestion de las organiz f ccee"
             },
             {
+              "code": "a104",
+              "credits": 8,
+              "name": "evolucion humana"
+            },
+            {
               "code": "a107",
               "credits": 12,
               "name": "etnografias fac humanidades"
@@ -68660,6 +68944,11 @@
               "code": "a165",
               "credits": 8,
               "name": "antropologia social i fac humanidades"
+            },
+            {
+              "code": "a198",
+              "credits": 8,
+              "name": "antropologia de la ciencia y la tecnologia"
             },
             {
               "code": "a1988",
@@ -68715,6 +69004,16 @@
               "code": "a65",
               "credits": 5,
               "name": "introduccion al emprendedurismo"
+            },
+            {
+              "code": "a66",
+              "credits": 5,
+              "name": "gestion de proyectos"
+            },
+            {
+              "code": "a84",
+              "credits": 10,
+              "name": "economia y gestion de organizaciones de salud"
             },
             {
               "code": "aacc",
@@ -69187,6 +69486,11 @@
               "name": "entrenamiento i acj"
             },
             {
+              "code": "acj97",
+              "credits": 6,
+              "name": "actividades ludicas acj"
+            },
+            {
               "code": "acr01",
               "credits": 8,
               "name": "pedagogia i cfe"
@@ -69432,6 +69736,11 @@
               "name": "teoria del tiempo libre y ocio adj creditos"
             },
             {
+              "code": "atp",
+              "credits": 10,
+              "name": "autoritarismos transiciones y politicas de la memoria en el conosur"
+            },
+            {
               "code": "ayc",
               "credits": 6,
               "name": "arte y cuerpo utu recreacion"
@@ -69535,6 +69844,26 @@
               "code": "c20",
               "credits": 10,
               "name": "contabilidad general i ccee"
+            },
+            {
+              "code": "c200",
+              "credits": 12,
+              "name": "historia de la educacion en uruguay y america latina"
+            },
+            {
+              "code": "c207",
+              "credits": 12,
+              "name": "educacion economia y sociedad f hum"
+            },
+            {
+              "code": "c207",
+              "credits": 12,
+              "name": "educacion economia y sociedad"
+            },
+            {
+              "code": "c216",
+              "credits": 8,
+              "name": "epistemologia etica y educacion"
             },
             {
               "code": "c243",
@@ -70087,9 +70416,19 @@
               "name": "derechos sociales f derecho"
             },
             {
+              "code": "d50",
+              "credits": 4,
+              "name": "abordajes feministas y de genero sobre el desarrollo"
+            },
+            {
               "code": "d638",
               "credits": 12,
               "name": "derecho del deporte fac derecho"
+            },
+            {
+              "code": "d84",
+              "credits": 8,
+              "name": "formulacion y evaluacion de proyectos de inversion"
             },
             {
               "code": "d87",
@@ -70132,9 +70471,239 @@
               "name": "derechos de ninos ninas y adolescentes fac medicina"
             },
             {
+              "code": "e001",
+              "credits": 8,
+              "name": "introduccion a la linguistica"
+            },
+            {
+              "code": "e003",
+              "credits": 8,
+              "name": "flexibilidad"
+            },
+            {
+              "code": "e004",
+              "credits": 11,
+              "name": "historia del uruguay contemporaneo"
+            },
+            {
+              "code": "e005",
+              "credits": 10,
+              "name": "historia universal contemporanea"
+            },
+            {
+              "code": "e006",
+              "credits": 6,
+              "name": "circo y ensenanza"
+            },
+            {
+              "code": "e010",
+              "credits": 1,
+              "name": "ciencia politica actividad integrativa"
+            },
+            {
+              "code": "e011",
+              "credits": 4,
+              "name": "derecho informatico e informatica juridica 1"
+            },
+            {
+              "code": "e012",
+              "credits": 4,
+              "name": "introduccion al fenomeno juridico"
+            },
+            {
+              "code": "e013",
+              "credits": 1,
+              "name": "sociedad y derecho actividad integrativa"
+            },
+            {
+              "code": "e014",
+              "credits": 2,
+              "name": "taller de analisis critico constitucional"
+            },
+            {
               "code": "e014",
               "credits": 9,
               "name": "la rehabilitacion int a traves de las t y act asis con animales veterinaria"
+            },
+            {
+              "code": "e015",
+              "credits": 4,
+              "name": "taller de lecto escritura universitaria"
+            },
+            {
+              "code": "e016",
+              "credits": 2,
+              "name": "taller practico de derecho informatico e informatica juridica 1"
+            },
+            {
+              "code": "e017",
+              "credits": 1,
+              "name": "taller practico de lecto escritura"
+            },
+            {
+              "code": "e018",
+              "credits": 2,
+              "name": "taller practico de personas"
+            },
+            {
+              "code": "e019",
+              "credits": 4,
+              "name": "planificacion evaluacion y control del ejercicio fisico en el mant y rec de"
+            },
+            {
+              "code": "e020",
+              "credits": 4,
+              "name": "educacion fisica adaptada en servicios de internacion hospitalaria"
+            },
+            {
+              "code": "e022",
+              "credits": 3,
+              "name": "etica adj de creditos"
+            },
+            {
+              "code": "e023",
+              "credits": 13,
+              "name": "practica profesional atletismo"
+            },
+            {
+              "code": "e028",
+              "credits": 13,
+              "name": "efi educacion fisica y salud con un enfoque interdisciplinario"
+            },
+            {
+              "code": "e029",
+              "credits": 10,
+              "name": "efi formacion de deportistas"
+            },
+            {
+              "code": "e030",
+              "credits": 10,
+              "name": "efi clases de luchas tensiones sociales en la lucha"
+            },
+            {
+              "code": "e031",
+              "credits": 4,
+              "name": "felxibilidad modulo 2"
+            },
+            {
+              "code": "e033",
+              "credits": 12,
+              "name": "sociologia de la educacion"
+            },
+            {
+              "code": "e034",
+              "credits": 16,
+              "name": "psicologia de la educacion"
+            },
+            {
+              "code": "e036",
+              "credits": 3,
+              "name": "el juego y lo escenico intersecciones entre estetica y ludicidad"
+            },
+            {
+              "code": "e037",
+              "credits": 15,
+              "name": "hematologia teorico"
+            },
+            {
+              "code": "e051",
+              "credits": 5,
+              "name": "herramientas basicas para la investigacion aplicada"
+            },
+            {
+              "code": "e052",
+              "credits": 4,
+              "name": "educacion en derechos humanos y derechos humanos en educacion"
+            },
+            {
+              "code": "e053",
+              "credits": 4,
+              "name": "planificacion evaluacion y control del ejercicio en el mant y rec de la salud"
+            },
+            {
+              "code": "e054",
+              "credits": 4,
+              "name": "flexibilidad modulo 2"
+            },
+            {
+              "code": "e055",
+              "credits": 5,
+              "name": "flexibilidad modulo 1"
+            },
+            {
+              "code": "e056",
+              "credits": 3,
+              "name": "prevencion en salud mental"
+            },
+            {
+              "code": "e057",
+              "credits": 5,
+              "name": "el cuerpo en el rol docente"
+            },
+            {
+              "code": "e058",
+              "credits": 7,
+              "name": "improvisacion conciencia creativa"
+            },
+            {
+              "code": "e059",
+              "credits": 4,
+              "name": "cuerpo genero y educacion reflexiones desde las teorias feministas"
+            },
+            {
+              "code": "e060",
+              "credits": 4,
+              "name": "el yoga una practica antigua en el mundo contemporaneo modulo 2"
+            },
+            {
+              "code": "e061",
+              "credits": 5,
+              "name": "orientacion a la universidad"
+            },
+            {
+              "code": "e062",
+              "credits": 20,
+              "name": "es fu no"
+            },
+            {
+              "code": "e063",
+              "credits": 5,
+              "name": "microbiologia"
+            },
+            {
+              "code": "e064",
+              "credits": 10,
+              "name": "enfermeria fundamental"
+            },
+            {
+              "code": "e065",
+              "credits": 5,
+              "name": "ciencias sociales aplicadas a la salud"
+            },
+            {
+              "code": "e066",
+              "credits": 2,
+              "name": "futbol e identidades el futbol desde una perspectiva sociocultural"
+            },
+            {
+              "code": "e068",
+              "credits": 6,
+              "name": "del cuerpo a la escena"
+            },
+            {
+              "code": "e069",
+              "credits": 2,
+              "name": "el juego con las olas como herramienta para la prevencion de accidentes"
+            },
+            {
+              "code": "e072",
+              "credits": 6,
+              "name": "tiempo libre teoria critica y educacion del cuerpo"
+            },
+            {
+              "code": "e073",
+              "credits": 2,
+              "name": "juego y deporte alternativas y encuentro deportes diluidos"
             },
             {
               "code": "e10",
@@ -70174,7 +70743,17 @@
             {
               "code": "e2003",
               "credits": 5,
+              "name": "electiva uso adecuado de redes sociales"
+            },
+            {
+              "code": "e2003",
+              "credits": 5,
               "name": "uso adecuado en redes sociales fac enfermeria"
+            },
+            {
+              "code": "e2004",
+              "credits": 5,
+              "name": "electiva salud intercultural"
             },
             {
               "code": "e2004",
@@ -70190,6 +70769,11 @@
               "code": "e3007",
               "credits": 5,
               "name": "trabajo colaborativo en salud fenf"
+            },
+            {
+              "code": "e3007",
+              "credits": 5,
+              "name": "trabajo colaborativo en salud"
             },
             {
               "code": "e3008",
@@ -70364,6 +70948,11 @@
             {
               "code": "elbes",
               "credits": 5,
+              "name": "electiva introduccion a la bioestadistica"
+            },
+            {
+              "code": "elbes",
+              "credits": 5,
               "name": "intr a la bioestadistica fac de medicina"
             },
             {
@@ -70384,6 +70973,11 @@
             {
               "code": "elibc",
               "credits": 10,
+              "name": "electiva introduccion a la biologia celular y molecular"
+            },
+            {
+              "code": "elibc",
+              "credits": 10,
               "name": "int a la biologia celular y molecular fac medicina"
             },
             {
@@ -70395,11 +70989,6 @@
               "code": "elneu",
               "credits": 21,
               "name": "neurociencias fac medicina"
-            },
-            {
-              "code": "eloc1",
-              "credits": 3,
-              "name": "electiva obstetricia en comunidad 1"
             },
             {
               "code": "eloc1",
@@ -70419,11 +71008,6 @@
             {
               "code": "eloc3",
               "credits": 5,
-              "name": "electiva obstetricia en comunidad 3"
-            },
-            {
-              "code": "eloc3",
-              "credits": 5,
               "name": "obstetricia en comunidad 3 parteras"
             },
             {
@@ -70434,12 +71018,27 @@
             {
               "code": "elso",
               "credits": 2,
+              "name": "electiva sociologia de la salud"
+            },
+            {
+              "code": "elso",
+              "credits": 2,
               "name": "sociologia de la salud parteras"
             },
             {
               "code": "elsph",
               "credits": 11,
+              "name": "electiva salud publica y humanidades"
+            },
+            {
+              "code": "elsph",
+              "credits": 11,
               "name": "salud publica y humanidades fac medicina"
+            },
+            {
+              "code": "emydn",
+              "credits": 4,
+              "name": "ensamble de musica y danza narrativa"
             },
             {
               "code": "en101",
@@ -70473,8 +71072,8 @@
             },
             {
               "code": "epar",
-              "credits": 2,
-              "name": "elso sociologia"
+              "credits": 5,
+              "name": "eloc3 electiva obstetricia en comunidad 3"
             },
             {
               "code": "epi08",
@@ -70607,6 +71206,11 @@
               "name": "etica tecnico deportivo 2001 adj creditos"
             },
             {
+              "code": "etc",
+              "credits": 5,
+              "name": "taller de canciones"
+            },
+            {
               "code": "eutm8",
               "credits": 8,
               "name": "psicologia i tec medica adj creditos"
@@ -70620,6 +71224,11 @@
               "code": "evedf",
               "credits": 5,
               "name": "evaluacion especifica de la disciplina"
+            },
+            {
+              "code": "exgcj",
+              "credits": 6,
+              "name": "ganamos la calle para jugar en maldonado construccion de ciudadania"
             },
             {
               "code": "eytdc",
@@ -70977,6 +71586,21 @@
               "name": "teo y metodologia de la historia fhum"
             },
             {
+              "code": "h13",
+              "credits": 13,
+              "name": "historia contemporanea"
+            },
+            {
+              "code": "h18",
+              "credits": 13,
+              "name": "historia del arte"
+            },
+            {
+              "code": "h9ex",
+              "credits": 13,
+              "name": "historia americana i"
+            },
+            {
               "code": "hasb",
               "credits": 2,
               "name": "herramientas de analisis de secuencias biologicas fac medicina"
@@ -71180,6 +71804,11 @@
               "code": "inun4",
               "credits": 2,
               "name": "introduccion a la universidad isef"
+            },
+            {
+              "code": "inuni",
+              "credits": 4,
+              "name": "introduccion a la universidad"
             },
             {
               "code": "inuni",
@@ -71568,7 +72197,7 @@
             },
             {
               "code": "l2113",
-              "credits": 0,
+              "credits": 11,
               "name": "efi practicas corporales acuaticas en primera infancia isef inau anual"
             },
             {
@@ -71912,6 +72541,11 @@
               "name": "lengua cfe"
             },
             {
+              "code": "leth",
+              "credits": 8,
+              "name": "la educacion y sus transform en la historia cfe"
+            },
+            {
               "code": "lg158",
               "credits": 10,
               "name": "introduccion al analisis de sistemas socio ecologicos"
@@ -71960,6 +72594,11 @@
               "code": "mbcm",
               "credits": 1,
               "name": "biologia celular y molecular fmed"
+            },
+            {
+              "code": "mbcm",
+              "credits": 37,
+              "name": "biologia celular y molecular"
             },
             {
               "code": "mc1",
@@ -72037,6 +72676,11 @@
               "name": "ciclo basico clinico comunit fmed"
             },
             {
+              "code": "mp001",
+              "credits": 6,
+              "name": "mapeo participativo en la cuenca del canal andreoni y alrededores fcien"
+            },
+            {
               "code": "msph",
               "credits": 9,
               "name": "salud publica y humanidades fmed"
@@ -72070,6 +72714,16 @@
               "code": "o1048",
               "credits": 9,
               "name": "el imaginario social uru y los medios comunicacion"
+            },
+            {
+              "code": "o1145",
+              "credits": 9,
+              "name": "comunicacion estrategica fac informacion y comunicacion"
+            },
+            {
+              "code": "o1151",
+              "credits": 9,
+              "name": "arte y comunicacion fac informacion y comunicacion"
             },
             {
               "code": "o5009",
@@ -72822,6 +73476,11 @@
               "name": "ensenanza del deporte"
             },
             {
+              "code": "pst76",
+              "credits": 3,
+              "name": "escuela de atletismo"
+            },
+            {
               "code": "qfj26",
               "credits": 6,
               "name": "que se fuga cuando se juega pract ludicas y artist en sit de priv de liber"
@@ -72917,6 +73576,11 @@
               "name": "introduccion a las escuelas del pensamiento fac ccee"
             },
             {
+              "code": "s42",
+              "credits": 10,
+              "name": "sociologia de dirigentes de empresas"
+            },
+            {
               "code": "s46",
               "credits": 10,
               "name": "soc contemporanea f ccee"
@@ -72945,6 +73609,21 @@
               "code": "s70",
               "credits": 8,
               "name": "sem soc esp desigualdades de genero fac ccss"
+            },
+            {
+              "code": "s80",
+              "credits": 8,
+              "name": "analisis sociologico i"
+            },
+            {
+              "code": "s81",
+              "credits": 8,
+              "name": "sociedad y pensamiento sociologico latinoamericano"
+            },
+            {
+              "code": "s84",
+              "credits": 8,
+              "name": "sociedad y pensamiento sociologico del uruguay"
             },
             {
               "code": "scea1",
@@ -73148,13 +73827,18 @@
             },
             {
               "code": "tlos",
+              "credits": 5,
+              "name": "tiempo libre ocio y sociedad"
+            },
+            {
+              "code": "tlos",
               "credits": 8,
               "name": "tiempo libre ocio y sociedad utu"
             },
             {
               "code": "tloys",
               "credits": 8,
-              "name": "tiempo libre y sociedad utu recreacion"
+              "name": "tiempo libre ocio y sociedad utu recreacion"
             },
             {
               "code": "tlyo",
@@ -73223,8 +73907,8 @@
             }
           ],
           "counts": {
-            "courses": 1297,
-            "prerequisites": 1192,
+            "courses": 1434,
+            "prerequisites": 1197,
             "publishedRules": 117
           }
         }
@@ -73234,11 +73918,11 @@
           "serviceCode": "ISEF",
           "snapshot": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
           "available": true,
-          "curriculumHash": "sha256:cb155c152cd517b97c1a292a773e3f012083f31ffd8109c6e26ec45e2feffdb5",
-          "prerequisiteHash": "sha256:97413cf2efdab054075a376721695a615e38c7c0248766f1e4aa613628e2ed4b",
+          "curriculumHash": "sha256:aebb4ba99b152e692e211ba3602c7e155424f12ab2954c58df289b4eb2d53fd5",
+          "prerequisiteHash": "sha256:44ca6c64a474a219c0a375f90538f1cf66767201e2facf123f7e3d2b604e7c68",
           "counts": {
-            "courses": 1297,
-            "prerequisites": 1192,
+            "courses": 1434,
+            "prerequisites": 1197,
             "publishedRules": 117
           }
         }
@@ -87567,561 +88251,50 @@
             "metadataChanged": false,
             "onlyCanonical": [
               {
+                "code": "5006",
+                "credits": 9,
+                "name": "discurso tecnica y comunicacion fac de informacion y comunicacion"
+              },
+              {
+                "code": "acj97",
+                "credits": 6,
+                "name": "actividades ludicas acj"
+              },
+              {
+                "code": "mp001",
+                "credits": 6,
+                "name": "mapeo participativo en la cuenca del canal andreoni y alrededores fcien"
+              },
+              {
+                "code": "o1145",
+                "credits": 9,
+                "name": "comunicacion estrategica fac informacion y comunicacion"
+              },
+              {
+                "code": "o1151",
+                "credits": 9,
+                "name": "arte y comunicacion fac informacion y comunicacion"
+              },
+              {
                 "code": "p",
                 "credits": 8,
                 "name": "pedagogia cfe"
+              },
+              {
+                "code": "pst76",
+                "credits": 3,
+                "name": "escuela de atletismo"
               }
             ],
-            "onlyRegional": [
-              {
-                "code": "071",
-                "credits": 4,
-                "name": "expresion artisticas en contextos pedagogicos interdisciplinarios"
-              },
-              {
-                "code": "086",
-                "credits": 10,
-                "name": "psicologia del desarrollo fac psicologia"
-              },
-              {
-                "code": "087",
-                "credits": 2,
-                "name": "metodos y herramientas orientadas a la extension fac psicologia"
-              },
-              {
-                "code": "088",
-                "credits": 5,
-                "name": "articulacion de saberes ii fac psicologia"
-              },
-              {
-                "code": "089",
-                "credits": 10,
-                "name": "psiocologia social fac psicologia"
-              },
-              {
-                "code": "1008",
-                "credits": 5,
-                "name": "hoja de calculo"
-              },
-              {
-                "code": "1800",
-                "credits": 6,
-                "name": "extension univ y elab de proyectos"
-              },
-              {
-                "code": "2050",
-                "credits": 6,
-                "name": "lectura comprensiva de ingles"
-              },
-              {
-                "code": "3005",
-                "credits": 5,
-                "name": "monitoreo sanitario ante el impacto de la globalizacion en la infancia y la adol"
-              },
-              {
-                "code": "3007",
-                "credits": 5,
-                "name": "trabajo colaborativo en salud"
-              },
-              {
-                "code": "400el",
-                "credits": 5,
-                "name": "electiva fundamentos de la psicologia"
-              },
-              {
-                "code": "401el",
-                "credits": 5,
-                "name": "electiva teorias psicologicas"
-              },
-              {
-                "code": "4041",
-                "credits": 6,
-                "name": "patologia molecular principios fund"
-              },
-              {
-                "code": "476",
-                "credits": 10,
-                "name": "estadistica en el deporte"
-              },
-              {
-                "code": "526",
-                "credits": 4,
-                "name": "deontologia y legislacion laboral"
-              },
-              {
-                "code": "527",
-                "credits": 11,
-                "name": "enfermeria"
-              },
-              {
-                "code": "528",
-                "credits": 11,
-                "name": "fisiopatologia"
-              },
-              {
-                "code": "529",
-                "credits": 4,
-                "name": "desarrollo creativo"
-              },
-              {
-                "code": "531",
-                "credits": 4,
-                "name": "grupos opcionales ii"
-              },
-              {
-                "code": "601el",
-                "credits": 10,
-                "name": "electiva historia de la psicologia"
-              },
-              {
-                "code": "602el",
-                "credits": 5,
-                "name": "electiva herramientas para el trabajo intelectual"
-              },
-              {
-                "code": "603el",
-                "credits": 5,
-                "name": "electiva epistemologia"
-              },
-              {
-                "code": "604el",
-                "credits": 5,
-                "name": "electiva articulacion de saberes i"
-              },
-              {
-                "code": "608el",
-                "credits": 5,
-                "name": "electiva metodologia general de la investigacion"
-              },
-              {
-                "code": "609el",
-                "credits": 2,
-                "name": "electiva metodos y h orientadas a la extension"
-              },
-              {
-                "code": "612el",
-                "credits": 10,
-                "name": "electiva psicologia social"
-              },
-              {
-                "code": "613el",
-                "credits": 5,
-                "name": "electiva psicologia sujeto y aprendizaje"
-              },
-              {
-                "code": "615el",
-                "credits": 3,
-                "name": "electiva etica y deontologia"
-              },
-              {
-                "code": "617el",
-                "credits": 5,
-                "name": "electiva articulacion de saberes iii"
-              },
-              {
-                "code": "619ea",
-                "credits": 5,
-                "name": "electiva psicopatologia de adultos"
-              },
-              {
-                "code": "619ei",
-                "credits": 5,
-                "name": "electiva psicopatologia de la infancia y la adolescencia"
-              },
-              {
-                "code": "620el",
-                "credits": 10,
-                "name": "electiva psicologia y salud"
-              },
-              {
-                "code": "621el",
-                "credits": 5,
-                "name": "electiva metodos y tecnicas cualitativas"
-              },
-              {
-                "code": "624el",
-                "credits": 5,
-                "name": "electiva as iv estado sociedad y politicas publicas"
-              },
-              {
-                "code": "625bb",
-                "credits": 5,
-                "name": "bases biologicas del comportamiento humano"
-              },
-              {
-                "code": "646de",
-                "credits": 5,
-                "name": "electiva articulacion de saberes vi psicologia ambiental"
-              },
-              {
-                "code": "646ge",
-                "credits": 5,
-                "name": "electiva articulacion de saberes vi sexualidad y salud reproductiva"
-              },
-              {
-                "code": "646ke",
-                "credits": 5,
-                "name": "electiva articulacion de saberes vi psicologia juridica"
-              },
-              {
-                "code": "653el",
-                "credits": 5,
-                "name": "electiva articulacion de saberes v"
-              },
-              {
-                "code": "662al",
-                "credits": 5,
-                "name": "electiva clinica ii teorias y tecnicas de las intervenciones"
-              },
-              {
-                "code": "8etef",
-                "credits": 8,
-                "name": "taller experimental de arte sonoro forma y sonido"
-              },
-              {
-                "code": "a104",
-                "credits": 8,
-                "name": "evolucion humana"
-              },
-              {
-                "code": "a198",
-                "credits": 8,
-                "name": "antropologia de la ciencia y la tecnologia"
-              },
-              {
-                "code": "a66",
-                "credits": 5,
-                "name": "gestion de proyectos"
-              },
-              {
-                "code": "a84",
-                "credits": 10,
-                "name": "economia y gestion de organizaciones de salud"
-              },
-              {
-                "code": "atp",
-                "credits": 10,
-                "name": "autoritarismos transiciones y politicas de la memoria en el conosur"
-              },
-              {
-                "code": "c200",
-                "credits": 12,
-                "name": "historia de la educacion en uruguay y america latina"
-              },
-              {
-                "code": "c207",
-                "credits": 12,
-                "name": "educacion economia y sociedad"
-              },
-              {
-                "code": "c216",
-                "credits": 8,
-                "name": "epistemologia etica y educacion"
-              },
-              {
-                "code": "d50",
-                "credits": 4,
-                "name": "abordajes feministas y de genero sobre el desarrollo"
-              },
-              {
-                "code": "d84",
-                "credits": 8,
-                "name": "formulacion y evaluacion de proyectos de inversion"
-              },
-              {
-                "code": "e001",
-                "credits": 8,
-                "name": "introduccion a la linguistica"
-              },
-              {
-                "code": "e003",
-                "credits": 8,
-                "name": "flexibilidad"
-              },
-              {
-                "code": "e004",
-                "credits": 11,
-                "name": "historia del uruguay contemporaneo"
-              },
-              {
-                "code": "e005",
-                "credits": 10,
-                "name": "historia universal contemporanea"
-              },
-              {
-                "code": "e006",
-                "credits": 6,
-                "name": "circo y ensenanza"
-              },
-              {
-                "code": "e010",
-                "credits": 1,
-                "name": "ciencia politica actividad integrativa"
-              },
-              {
-                "code": "e011",
-                "credits": 4,
-                "name": "derecho informatico e informatica juridica 1"
-              },
-              {
-                "code": "e012",
-                "credits": 4,
-                "name": "introduccion al fenomeno juridico"
-              },
-              {
-                "code": "e013",
-                "credits": 1,
-                "name": "sociedad y derecho actividad integrativa"
-              },
-              {
-                "code": "e015",
-                "credits": 4,
-                "name": "taller de lecto escritura universitaria"
-              },
-              {
-                "code": "e016",
-                "credits": 2,
-                "name": "taller practico de derecho informatico e informatica juridica 1"
-              },
-              {
-                "code": "e017",
-                "credits": 1,
-                "name": "taller practico de lecto escritura"
-              },
-              {
-                "code": "e018",
-                "credits": 2,
-                "name": "taller practico de personas"
-              },
-              {
-                "code": "e019",
-                "credits": 4,
-                "name": "planificacion evaluacion y control del ejercicio fisico en el mant y rec de"
-              },
-              {
-                "code": "e020",
-                "credits": 4,
-                "name": "educacion fisica adaptada en servicios de internacion hospitalaria"
-              },
-              {
-                "code": "e022",
-                "credits": 3,
-                "name": "etica adj de creditos"
-              },
-              {
-                "code": "e023",
-                "credits": 13,
-                "name": "practica profesional atletismo"
-              },
-              {
-                "code": "e028",
-                "credits": 13,
-                "name": "efi educacion fisica y salud con un enfoque interdisciplinario"
-              },
-              {
-                "code": "e029",
-                "credits": 10,
-                "name": "efi formacion de deportistas"
-              },
-              {
-                "code": "e030",
-                "credits": 10,
-                "name": "efi clases de luchas tensiones sociales en la lucha"
-              },
-              {
-                "code": "e031",
-                "credits": 4,
-                "name": "felxibilidad modulo 2"
-              },
-              {
-                "code": "e033",
-                "credits": 12,
-                "name": "sociologia de la educacion"
-              },
-              {
-                "code": "e034",
-                "credits": 16,
-                "name": "psicologia de la educacion"
-              },
-              {
-                "code": "e036",
-                "credits": 3,
-                "name": "el juego y lo escenico intersecciones entre estetica y ludicidad"
-              },
-              {
-                "code": "e037",
-                "credits": 15,
-                "name": "hematologia teorico"
-              },
-              {
-                "code": "e051",
-                "credits": 5,
-                "name": "herramientas basicas para la investigacion aplicada"
-              },
-              {
-                "code": "e052",
-                "credits": 4,
-                "name": "educacion en derechos humanos y derechos humanos en educacion"
-              },
-              {
-                "code": "e053",
-                "credits": 4,
-                "name": "planificacion evaluacion y control del ejercicio en el mant y rec de la salud"
-              },
-              {
-                "code": "e054",
-                "credits": 4,
-                "name": "flexibilidad modulo 2"
-              },
-              {
-                "code": "e055",
-                "credits": 5,
-                "name": "flexibilidad modulo 1"
-              },
-              {
-                "code": "e056",
-                "credits": 3,
-                "name": "prevencion en salud mental"
-              },
-              {
-                "code": "e057",
-                "credits": 5,
-                "name": "el cuerpo en el rol docente"
-              },
-              {
-                "code": "e058",
-                "credits": 7,
-                "name": "improvisacion conciencia creativa"
-              },
-              {
-                "code": "e059",
-                "credits": 4,
-                "name": "cuerpo genero y educacion reflexiones desde las teorias feministas"
-              },
-              {
-                "code": "e060",
-                "credits": 4,
-                "name": "el yoga una practica antigua en el mundo contemporaneo modulo 2"
-              },
-              {
-                "code": "e061",
-                "credits": 5,
-                "name": "orientacion a la universidad"
-              },
-              {
-                "code": "e062",
-                "credits": 20,
-                "name": "es fu no"
-              },
-              {
-                "code": "e063",
-                "credits": 5,
-                "name": "microbiologia"
-              },
-              {
-                "code": "e064",
-                "credits": 10,
-                "name": "enfermeria fundamental"
-              },
-              {
-                "code": "e065",
-                "credits": 5,
-                "name": "ciencias sociales aplicadas a la salud"
-              },
-              {
-                "code": "e066",
-                "credits": 2,
-                "name": "futbol e identidades el futbol desde una perspectiva sociocultural"
-              },
-              {
-                "code": "e068",
-                "credits": 6,
-                "name": "del cuerpo a la escena"
-              },
-              {
-                "code": "e069",
-                "credits": 2,
-                "name": "el juego con las olas como herramienta para la prevencion de accidentes"
-              },
-              {
-                "code": "e072",
-                "credits": 6,
-                "name": "tiempo libre teoria critica y educacion del cuerpo"
-              },
-              {
-                "code": "e073",
-                "credits": 2,
-                "name": "juego y deporte alternativas y encuentro deportes diluidos"
-              },
-              {
-                "code": "emydn",
-                "credits": 4,
-                "name": "ensamble de musica y danza narrativa"
-              },
-              {
-                "code": "etc",
-                "credits": 5,
-                "name": "taller de canciones"
-              },
-              {
-                "code": "exgcj",
-                "credits": 6,
-                "name": "ganamos la calle para jugar en maldonado construccion de ciudadania"
-              },
-              {
-                "code": "h13",
-                "credits": 13,
-                "name": "historia contemporanea"
-              },
-              {
-                "code": "h18",
-                "credits": 13,
-                "name": "historia del arte"
-              },
-              {
-                "code": "h9ex",
-                "credits": 13,
-                "name": "historia americana i"
-              },
-              {
-                "code": "leth",
-                "credits": 8,
-                "name": "la educacion y sus transform en la historia cfe"
-              },
-              {
-                "code": "s42",
-                "credits": 10,
-                "name": "sociologia de dirigentes de empresas"
-              },
-              {
-                "code": "s80",
-                "credits": 8,
-                "name": "analisis sociologico i"
-              },
-              {
-                "code": "s81",
-                "credits": 8,
-                "name": "sociedad y pensamiento sociologico latinoamericano"
-              },
-              {
-                "code": "s84",
-                "credits": 8,
-                "name": "sociedad y pensamiento sociologico del uruguay"
-              }
-            ],
+            "onlyRegional": [],
             "changedCredits": [
               {
-                "key": "epar",
-                "canonical": 2,
-                "regional": 5
-              },
-              {
-                "key": "mbcm",
-                "canonical": 1,
-                "regional": 37
+                "key": "l2113",
+                "canonical": 11,
+                "regional": 0
               }
             ],
-            "prerequisiteCountDelta": -1073
+            "prerequisiteCountDelta": -1078
           }
         },
         {
@@ -88133,561 +88306,50 @@
             "metadataChanged": false,
             "onlyCanonical": [
               {
+                "code": "5006",
+                "credits": 9,
+                "name": "discurso tecnica y comunicacion fac de informacion y comunicacion"
+              },
+              {
+                "code": "acj97",
+                "credits": 6,
+                "name": "actividades ludicas acj"
+              },
+              {
+                "code": "mp001",
+                "credits": 6,
+                "name": "mapeo participativo en la cuenca del canal andreoni y alrededores fcien"
+              },
+              {
+                "code": "o1145",
+                "credits": 9,
+                "name": "comunicacion estrategica fac informacion y comunicacion"
+              },
+              {
+                "code": "o1151",
+                "credits": 9,
+                "name": "arte y comunicacion fac informacion y comunicacion"
+              },
+              {
                 "code": "p",
                 "credits": 8,
                 "name": "pedagogia cfe"
+              },
+              {
+                "code": "pst76",
+                "credits": 3,
+                "name": "escuela de atletismo"
               }
             ],
-            "onlyRegional": [
-              {
-                "code": "071",
-                "credits": 4,
-                "name": "expresion artisticas en contextos pedagogicos interdisciplinarios"
-              },
-              {
-                "code": "086",
-                "credits": 10,
-                "name": "psicologia del desarrollo fac psicologia"
-              },
-              {
-                "code": "087",
-                "credits": 2,
-                "name": "metodos y herramientas orientadas a la extension fac psicologia"
-              },
-              {
-                "code": "088",
-                "credits": 5,
-                "name": "articulacion de saberes ii fac psicologia"
-              },
-              {
-                "code": "089",
-                "credits": 10,
-                "name": "psiocologia social fac psicologia"
-              },
-              {
-                "code": "1008",
-                "credits": 5,
-                "name": "hoja de calculo"
-              },
-              {
-                "code": "1800",
-                "credits": 6,
-                "name": "extension univ y elab de proyectos"
-              },
-              {
-                "code": "2050",
-                "credits": 6,
-                "name": "lectura comprensiva de ingles"
-              },
-              {
-                "code": "3005",
-                "credits": 5,
-                "name": "monitoreo sanitario ante el impacto de la globalizacion en la infancia y la adol"
-              },
-              {
-                "code": "3007",
-                "credits": 5,
-                "name": "trabajo colaborativo en salud"
-              },
-              {
-                "code": "400el",
-                "credits": 5,
-                "name": "electiva fundamentos de la psicologia"
-              },
-              {
-                "code": "401el",
-                "credits": 5,
-                "name": "electiva teorias psicologicas"
-              },
-              {
-                "code": "4041",
-                "credits": 6,
-                "name": "patologia molecular principios fund"
-              },
-              {
-                "code": "476",
-                "credits": 10,
-                "name": "estadistica en el deporte"
-              },
-              {
-                "code": "526",
-                "credits": 4,
-                "name": "deontologia y legislacion laboral"
-              },
-              {
-                "code": "527",
-                "credits": 11,
-                "name": "enfermeria"
-              },
-              {
-                "code": "528",
-                "credits": 11,
-                "name": "fisiopatologia"
-              },
-              {
-                "code": "529",
-                "credits": 4,
-                "name": "desarrollo creativo"
-              },
-              {
-                "code": "531",
-                "credits": 4,
-                "name": "grupos opcionales ii"
-              },
-              {
-                "code": "601el",
-                "credits": 10,
-                "name": "electiva historia de la psicologia"
-              },
-              {
-                "code": "602el",
-                "credits": 5,
-                "name": "electiva herramientas para el trabajo intelectual"
-              },
-              {
-                "code": "603el",
-                "credits": 5,
-                "name": "electiva epistemologia"
-              },
-              {
-                "code": "604el",
-                "credits": 5,
-                "name": "electiva articulacion de saberes i"
-              },
-              {
-                "code": "608el",
-                "credits": 5,
-                "name": "electiva metodologia general de la investigacion"
-              },
-              {
-                "code": "609el",
-                "credits": 2,
-                "name": "electiva metodos y h orientadas a la extension"
-              },
-              {
-                "code": "612el",
-                "credits": 10,
-                "name": "electiva psicologia social"
-              },
-              {
-                "code": "613el",
-                "credits": 5,
-                "name": "electiva psicologia sujeto y aprendizaje"
-              },
-              {
-                "code": "615el",
-                "credits": 3,
-                "name": "electiva etica y deontologia"
-              },
-              {
-                "code": "617el",
-                "credits": 5,
-                "name": "electiva articulacion de saberes iii"
-              },
-              {
-                "code": "619ea",
-                "credits": 5,
-                "name": "electiva psicopatologia de adultos"
-              },
-              {
-                "code": "619ei",
-                "credits": 5,
-                "name": "electiva psicopatologia de la infancia y la adolescencia"
-              },
-              {
-                "code": "620el",
-                "credits": 10,
-                "name": "electiva psicologia y salud"
-              },
-              {
-                "code": "621el",
-                "credits": 5,
-                "name": "electiva metodos y tecnicas cualitativas"
-              },
-              {
-                "code": "624el",
-                "credits": 5,
-                "name": "electiva as iv estado sociedad y politicas publicas"
-              },
-              {
-                "code": "625bb",
-                "credits": 5,
-                "name": "bases biologicas del comportamiento humano"
-              },
-              {
-                "code": "646de",
-                "credits": 5,
-                "name": "electiva articulacion de saberes vi psicologia ambiental"
-              },
-              {
-                "code": "646ge",
-                "credits": 5,
-                "name": "electiva articulacion de saberes vi sexualidad y salud reproductiva"
-              },
-              {
-                "code": "646ke",
-                "credits": 5,
-                "name": "electiva articulacion de saberes vi psicologia juridica"
-              },
-              {
-                "code": "653el",
-                "credits": 5,
-                "name": "electiva articulacion de saberes v"
-              },
-              {
-                "code": "662al",
-                "credits": 5,
-                "name": "electiva clinica ii teorias y tecnicas de las intervenciones"
-              },
-              {
-                "code": "8etef",
-                "credits": 8,
-                "name": "taller experimental de arte sonoro forma y sonido"
-              },
-              {
-                "code": "a104",
-                "credits": 8,
-                "name": "evolucion humana"
-              },
-              {
-                "code": "a198",
-                "credits": 8,
-                "name": "antropologia de la ciencia y la tecnologia"
-              },
-              {
-                "code": "a66",
-                "credits": 5,
-                "name": "gestion de proyectos"
-              },
-              {
-                "code": "a84",
-                "credits": 10,
-                "name": "economia y gestion de organizaciones de salud"
-              },
-              {
-                "code": "atp",
-                "credits": 10,
-                "name": "autoritarismos transiciones y politicas de la memoria en el conosur"
-              },
-              {
-                "code": "c200",
-                "credits": 12,
-                "name": "historia de la educacion en uruguay y america latina"
-              },
-              {
-                "code": "c207",
-                "credits": 12,
-                "name": "educacion economia y sociedad"
-              },
-              {
-                "code": "c216",
-                "credits": 8,
-                "name": "epistemologia etica y educacion"
-              },
-              {
-                "code": "d50",
-                "credits": 4,
-                "name": "abordajes feministas y de genero sobre el desarrollo"
-              },
-              {
-                "code": "d84",
-                "credits": 8,
-                "name": "formulacion y evaluacion de proyectos de inversion"
-              },
-              {
-                "code": "e001",
-                "credits": 8,
-                "name": "introduccion a la linguistica"
-              },
-              {
-                "code": "e003",
-                "credits": 8,
-                "name": "flexibilidad"
-              },
-              {
-                "code": "e004",
-                "credits": 11,
-                "name": "historia del uruguay contemporaneo"
-              },
-              {
-                "code": "e005",
-                "credits": 10,
-                "name": "historia universal contemporanea"
-              },
-              {
-                "code": "e006",
-                "credits": 6,
-                "name": "circo y ensenanza"
-              },
-              {
-                "code": "e010",
-                "credits": 1,
-                "name": "ciencia politica actividad integrativa"
-              },
-              {
-                "code": "e011",
-                "credits": 4,
-                "name": "derecho informatico e informatica juridica 1"
-              },
-              {
-                "code": "e012",
-                "credits": 4,
-                "name": "introduccion al fenomeno juridico"
-              },
-              {
-                "code": "e013",
-                "credits": 1,
-                "name": "sociedad y derecho actividad integrativa"
-              },
-              {
-                "code": "e015",
-                "credits": 4,
-                "name": "taller de lecto escritura universitaria"
-              },
-              {
-                "code": "e016",
-                "credits": 2,
-                "name": "taller practico de derecho informatico e informatica juridica 1"
-              },
-              {
-                "code": "e017",
-                "credits": 1,
-                "name": "taller practico de lecto escritura"
-              },
-              {
-                "code": "e018",
-                "credits": 2,
-                "name": "taller practico de personas"
-              },
-              {
-                "code": "e019",
-                "credits": 4,
-                "name": "planificacion evaluacion y control del ejercicio fisico en el mant y rec de"
-              },
-              {
-                "code": "e020",
-                "credits": 4,
-                "name": "educacion fisica adaptada en servicios de internacion hospitalaria"
-              },
-              {
-                "code": "e022",
-                "credits": 3,
-                "name": "etica adj de creditos"
-              },
-              {
-                "code": "e023",
-                "credits": 13,
-                "name": "practica profesional atletismo"
-              },
-              {
-                "code": "e028",
-                "credits": 13,
-                "name": "efi educacion fisica y salud con un enfoque interdisciplinario"
-              },
-              {
-                "code": "e029",
-                "credits": 10,
-                "name": "efi formacion de deportistas"
-              },
-              {
-                "code": "e030",
-                "credits": 10,
-                "name": "efi clases de luchas tensiones sociales en la lucha"
-              },
-              {
-                "code": "e031",
-                "credits": 4,
-                "name": "felxibilidad modulo 2"
-              },
-              {
-                "code": "e033",
-                "credits": 12,
-                "name": "sociologia de la educacion"
-              },
-              {
-                "code": "e034",
-                "credits": 16,
-                "name": "psicologia de la educacion"
-              },
-              {
-                "code": "e036",
-                "credits": 3,
-                "name": "el juego y lo escenico intersecciones entre estetica y ludicidad"
-              },
-              {
-                "code": "e037",
-                "credits": 15,
-                "name": "hematologia teorico"
-              },
-              {
-                "code": "e051",
-                "credits": 5,
-                "name": "herramientas basicas para la investigacion aplicada"
-              },
-              {
-                "code": "e052",
-                "credits": 4,
-                "name": "educacion en derechos humanos y derechos humanos en educacion"
-              },
-              {
-                "code": "e053",
-                "credits": 4,
-                "name": "planificacion evaluacion y control del ejercicio en el mant y rec de la salud"
-              },
-              {
-                "code": "e054",
-                "credits": 4,
-                "name": "flexibilidad modulo 2"
-              },
-              {
-                "code": "e055",
-                "credits": 5,
-                "name": "flexibilidad modulo 1"
-              },
-              {
-                "code": "e056",
-                "credits": 3,
-                "name": "prevencion en salud mental"
-              },
-              {
-                "code": "e057",
-                "credits": 5,
-                "name": "el cuerpo en el rol docente"
-              },
-              {
-                "code": "e058",
-                "credits": 7,
-                "name": "improvisacion conciencia creativa"
-              },
-              {
-                "code": "e059",
-                "credits": 4,
-                "name": "cuerpo genero y educacion reflexiones desde las teorias feministas"
-              },
-              {
-                "code": "e060",
-                "credits": 4,
-                "name": "el yoga una practica antigua en el mundo contemporaneo modulo 2"
-              },
-              {
-                "code": "e061",
-                "credits": 5,
-                "name": "orientacion a la universidad"
-              },
-              {
-                "code": "e062",
-                "credits": 20,
-                "name": "es fu no"
-              },
-              {
-                "code": "e063",
-                "credits": 5,
-                "name": "microbiologia"
-              },
-              {
-                "code": "e064",
-                "credits": 10,
-                "name": "enfermeria fundamental"
-              },
-              {
-                "code": "e065",
-                "credits": 5,
-                "name": "ciencias sociales aplicadas a la salud"
-              },
-              {
-                "code": "e066",
-                "credits": 2,
-                "name": "futbol e identidades el futbol desde una perspectiva sociocultural"
-              },
-              {
-                "code": "e068",
-                "credits": 6,
-                "name": "del cuerpo a la escena"
-              },
-              {
-                "code": "e069",
-                "credits": 2,
-                "name": "el juego con las olas como herramienta para la prevencion de accidentes"
-              },
-              {
-                "code": "e072",
-                "credits": 6,
-                "name": "tiempo libre teoria critica y educacion del cuerpo"
-              },
-              {
-                "code": "e073",
-                "credits": 2,
-                "name": "juego y deporte alternativas y encuentro deportes diluidos"
-              },
-              {
-                "code": "emydn",
-                "credits": 4,
-                "name": "ensamble de musica y danza narrativa"
-              },
-              {
-                "code": "etc",
-                "credits": 5,
-                "name": "taller de canciones"
-              },
-              {
-                "code": "exgcj",
-                "credits": 6,
-                "name": "ganamos la calle para jugar en maldonado construccion de ciudadania"
-              },
-              {
-                "code": "h13",
-                "credits": 13,
-                "name": "historia contemporanea"
-              },
-              {
-                "code": "h18",
-                "credits": 13,
-                "name": "historia del arte"
-              },
-              {
-                "code": "h9ex",
-                "credits": 13,
-                "name": "historia americana i"
-              },
-              {
-                "code": "leth",
-                "credits": 8,
-                "name": "la educacion y sus transform en la historia cfe"
-              },
-              {
-                "code": "s42",
-                "credits": 10,
-                "name": "sociologia de dirigentes de empresas"
-              },
-              {
-                "code": "s80",
-                "credits": 8,
-                "name": "analisis sociologico i"
-              },
-              {
-                "code": "s81",
-                "credits": 8,
-                "name": "sociedad y pensamiento sociologico latinoamericano"
-              },
-              {
-                "code": "s84",
-                "credits": 8,
-                "name": "sociedad y pensamiento sociologico del uruguay"
-              }
-            ],
+            "onlyRegional": [],
             "changedCredits": [
               {
-                "key": "epar",
-                "canonical": 2,
-                "regional": 5
-              },
-              {
-                "key": "mbcm",
-                "canonical": 1,
-                "regional": 37
+                "key": "l2113",
+                "canonical": 11,
+                "regional": 0
               }
             ],
-            "prerequisiteCountDelta": -1127
+            "prerequisiteCountDelta": -1132
           }
         }
       ],
@@ -126308,9 +125970,9 @@
         "snapshot": "data/bedelias/fq-licenciatura-en-quimica-2016.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:6c1717b88b6b9093ffdbc72ab04882f105915d22738df7d1e084fc236ced0d24",
+          "hash": "sha256:199bc05f9d553620f9c76d702577de3b4498e5ad92b65d9e82b0253b0793ce1e",
           "curriculumHash": "sha256:f7fd3d328546699d45368e1353dd4ac2cd034dae51d20a773386107210f33abe",
-          "prerequisiteHash": "sha256:009ffa2c5de6524b6bf607327019617ff1950d1551f22fb15d44114a4c6e25d9",
+          "prerequisiteHash": "sha256:eee8c473a8a28ef5ff075095b00e217020e552a5079ee02a130dd8a3cea2bc34",
           "metadata": {
             "duration": "48 meses",
             "minCredits": 320,
@@ -127931,7 +127593,7 @@
           "snapshot": "data/bedelias/fq-licenciatura-en-quimica-2016.json",
           "available": true,
           "curriculumHash": "sha256:f7fd3d328546699d45368e1353dd4ac2cd034dae51d20a773386107210f33abe",
-          "prerequisiteHash": "sha256:009ffa2c5de6524b6bf607327019617ff1950d1551f22fb15d44114a4c6e25d9",
+          "prerequisiteHash": "sha256:eee8c473a8a28ef5ff075095b00e217020e552a5079ee02a130dd8a3cea2bc34",
           "counts": {
             "courses": 320,
             "prerequisites": 216,
@@ -135056,9 +134718,9 @@
         "snapshot": "data/bedelias/fq-quimica-farmaceutica-2015.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:3ccb777818f859483fdcd99549658060234a4d1e14531cbbec2c53fe5b76b356",
+          "hash": "sha256:8e6fd2da00fe5a64f8cf115fafd25f81f9c7314a83c09c9ebbc762ec8bfd794d",
           "curriculumHash": "sha256:eaf31377ee4acd8d9705b97b05e7fce3a3452f54323314c2e7cf2b373a0eb94c",
-          "prerequisiteHash": "sha256:63ac48ba0384bd8483919c50ac20aee0b8efc43d4ac3ee0973076d4b0d198ed6",
+          "prerequisiteHash": "sha256:92c4a7cbcfd83fdb888279f485176c7516b3b870167117fbc35347e983686ade",
           "metadata": {
             "duration": "60 meses",
             "minCredits": 450,
@@ -137273,8 +136935,8 @@
           ],
           "counts": {
             "courses": 441,
-            "prerequisites": 576,
-            "publishedRules": 446
+            "prerequisites": 577,
+            "publishedRules": 448
           }
         }
       },
@@ -137284,11 +136946,11 @@
           "snapshot": "data/bedelias/fq-quimica-farmaceutica-2015.json",
           "available": true,
           "curriculumHash": "sha256:eaf31377ee4acd8d9705b97b05e7fce3a3452f54323314c2e7cf2b373a0eb94c",
-          "prerequisiteHash": "sha256:63ac48ba0384bd8483919c50ac20aee0b8efc43d4ac3ee0973076d4b0d198ed6",
+          "prerequisiteHash": "sha256:92c4a7cbcfd83fdb888279f485176c7516b3b870167117fbc35347e983686ade",
           "counts": {
             "courses": 441,
-            "prerequisites": 576,
-            "publishedRules": 446
+            "prerequisites": 577,
+            "publishedRules": 448
           }
         }
       ],
@@ -139827,7 +139489,7 @@
               }
             ],
             "changedCredits": [],
-            "prerequisiteCountDelta": -551
+            "prerequisiteCountDelta": -552
           }
         }
       ],
@@ -139852,9 +139514,9 @@
         "snapshot": "data/bedelias/fq-quimico-2015.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:13d0549d8d090a9e04859981ee20a412a28ecff26f84493c62513c18ce726ee1",
+          "hash": "sha256:f72179b52fd12ef93ffafe9a8df00cd74393f3c13a26f02ceebf58b229867352",
           "curriculumHash": "sha256:3a3d1fc7d6136a24d8617929fcf1931dff6b11ae5e6e1397a40765f6c22bb0c7",
-          "prerequisiteHash": "sha256:68334b6f1f4a13397200a703c29427323d770172e30c75a3766a7e179c292f67",
+          "prerequisiteHash": "sha256:fd94ee653f944c1c6c254e8d7eff64a694efcc1da1c52301aa7ef7e7f9d09613",
           "metadata": {
             "duration": "60 meses",
             "minCredits": 450,
@@ -143425,7 +143087,7 @@
           "snapshot": "data/bedelias/fq-quimico-2015.json",
           "available": true,
           "curriculumHash": "sha256:3a3d1fc7d6136a24d8617929fcf1931dff6b11ae5e6e1397a40765f6c22bb0c7",
-          "prerequisiteHash": "sha256:68334b6f1f4a13397200a703c29427323d770172e30c75a3766a7e179c292f67",
+          "prerequisiteHash": "sha256:fd94ee653f944c1c6c254e8d7eff64a694efcc1da1c52301aa7ef7e7f9d09613",
           "counts": {
             "courses": 710,
             "prerequisites": 641,
@@ -165220,9 +164882,9 @@
         "snapshot": "data/bedelias/fq-tecnico-bach-en-cs-quimicas-2015.json",
         "available": true,
         "fingerprint": {
-          "hash": "sha256:ff093d144ec5f5df714b51369e9f398acfebdc1c4cb70b6be24bd1cf861c80e0",
+          "hash": "sha256:97c58bf4c806c5c3ec150fa36b52aa1d29b20a3893d8593b61d4e725ebae01c5",
           "curriculumHash": "sha256:54b04b47a81cc9d68bb8a1e1da1279efaa4223d76f19fd241e0c5c18726df1e2",
-          "prerequisiteHash": "sha256:021128697803425d7e3080c1dd4d0b4357d55fe39aca3547fb7ab10be46fb138",
+          "prerequisiteHash": "sha256:1edae30b4c3259e098cff870d9ac7b76bf1b6b8a34463a2c777dc574664b74ca",
           "metadata": {
             "duration": "30 meses",
             "minCredits": 225,
@@ -167677,8 +167339,8 @@
           ],
           "counts": {
             "courses": 489,
-            "prerequisites": 429,
-            "publishedRules": 149
+            "prerequisites": 523,
+            "publishedRules": 393
           }
         }
       },
@@ -167688,11 +167350,11 @@
           "snapshot": "data/bedelias/fq-tecnico-bach-en-cs-quimicas-2015.json",
           "available": true,
           "curriculumHash": "sha256:54b04b47a81cc9d68bb8a1e1da1279efaa4223d76f19fd241e0c5c18726df1e2",
-          "prerequisiteHash": "sha256:021128697803425d7e3080c1dd4d0b4357d55fe39aca3547fb7ab10be46fb138",
+          "prerequisiteHash": "sha256:1edae30b4c3259e098cff870d9ac7b76bf1b6b8a34463a2c777dc574664b74ca",
           "counts": {
             "courses": 489,
-            "prerequisites": 429,
-            "publishedRules": 149
+            "prerequisites": 523,
+            "publishedRules": 393
           }
         }
       ],
@@ -170180,7 +169842,7 @@
             "onlyCanonical": [],
             "onlyRegional": [],
             "changedCredits": [],
-            "prerequisiteCountDelta": -420
+            "prerequisiteCountDelta": -514
           }
         }
       ],
@@ -175382,5 +175044,5 @@
       "conclusion": "insufficient-content"
     }
   ],
-  "contentHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550"
+  "contentHash": "sha256:db8f88887c3fce04e8696b2541319c54551493ad11ef5ac11b32fc30ae9e471e"
 }

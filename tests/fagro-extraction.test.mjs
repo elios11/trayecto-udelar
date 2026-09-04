@@ -13,8 +13,8 @@ const manifest = readJson("data/bedelias/inventory/global-current.json");
 test("FAGRO conserva los tres planes vigentes extraídos", () => {
   assert.equal(agronomia.program.name, "INGENIERO AGRÓNOMO");
   assert.equal(agronomia.plan.year, "2020");
-  assert.equal(agronomia.plan.courses.length, 526);
-  assert.equal(agronomia.prerequisites.length, 387);
+  assert.equal(agronomia.plan.courses.length, 717);
+  assert.equal(agronomia.prerequisites.length, 511);
   assert.equal(agronomia.validation.issues.length, 0);
 
   assert.equal(vitivinicultura.program.name, "LICENCIATURA EN VITIVINICULTURA");

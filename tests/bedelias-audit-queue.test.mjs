@@ -17,9 +17,9 @@ test("genera una cola canónica deduplicada y dirigida por excepciones", () => {
   assert.equal(saved.counts.pendingCanonicalIdentities, 0);
   assert.deepEqual(saved.counts.byPriority, {});
   assert.deepEqual(saved.counts.regionalComparisons, {
-    "curriculum-match-prerequisite-coverage-difference": 16,
+    "curriculum-match-prerequisite-coverage-difference": 15,
     "insufficient-content": 26,
-    "content-difference-detected": 15,
+    "content-difference-detected": 16,
   });
   assert.equal(new Set(saved.queue.map((entry) => entry.identity)).size, saved.queue.length);
   assert.equal(saved.queue.filter((entry) => entry.sourceOffers.length > 1).length, 0);

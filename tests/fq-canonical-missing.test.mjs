@@ -37,7 +37,8 @@ test("FQ resuelve todos los pares centrales disponibles sin falsas diferencias p
     .filter((plan) => identities.has(plan.identity))
     .flatMap((plan) => plan.comparisons);
   assert.equal(results.length, 5);
-  assert.equal(results.filter((entry) => entry.status === "curriculum-match-prerequisite-coverage-difference").length, 4);
+  assert.equal(results.filter((entry) => entry.status === "curriculum-match-prerequisite-coverage-difference").length, 3);
+  assert.equal(results.filter((entry) => entry.status === "content-difference-detected").length, 1);
   assert.equal(results.filter((entry) => entry.status === "insufficient-content").length, 1);
   assert.equal(comparison.counts.missingCanonicalSnapshots, 0);
   assert.equal(comparison.counts.missingRegionalSnapshots, 0);

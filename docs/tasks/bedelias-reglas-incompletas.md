@@ -22,6 +22,12 @@ Al implementar la corrección, el problema solo estaba presente en `data/bedelia
 
 El 13 de agosto de 2026 se reanudó la extracción original de Química Farmacéutica Plan 2015. El importador reconstruyó el checkpoint, descartó exclusivamente las 8 reglas incompletas y obtuvo sus árboles completos desde Bedelías. El snapshot quedó con 448 reglas, cero incidencias y `npm run bedelias:audit-rules -- --strict` sin hallazgos. Las proyecciones se regeneraron sin reglas parciales.
 
+## Cierre de la importación global
+
+Al combinar la importación global con la protección anterior aparecieron 60 reglas incompletas adicionales en 11 snapshots extraídos antes de incorporar el límite defensivo alto. El 4 de septiembre de 2026 se reanudó cada plan afectado desde su checkpoint: Turismo 2014 de CURE, Ingeniería Agrónoma 2020, Ingeniería de Alimentos 2003 de FING y FQ, siete planes de FQ y Licenciatura en Educación Física 2017 de ISEF. Se descartaron y reconsultaron exclusivamente las reglas incompletas; para ISEF se limitó la consulta al código afectado `OPC06`.
+
+Las 139 proyecciones masivas y la cola funcional se regeneraron desde los snapshots corregidos. El gate `npm run bedelias:audit-rules -- --strict` quedó sin hallazgos: ningún snapshot versionado conserva operadores lógicos vacíos.
+
 ## Cierre antes de terminar la app
 
 1. Ejecutar `npm run bedelias:audit-rules` para listar snapshots pendientes.

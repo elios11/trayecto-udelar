@@ -75,24 +75,24 @@
       "bedeliasComparison": {
         "canonicalSnapshot": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
         "regionalSnapshot": "data/bedelias/cenurln-ingeniero-agronomo-2020.json",
-        "canonicalCourses": 526,
+        "canonicalCourses": 717,
         "regionalCourses": 717,
         "onlyCanonical": 0,
-        "onlyRegional": 191,
+        "onlyRegional": 0,
         "changedCredits": 0,
-        "regionalOnlyCoursesUnderFlexibleBranches": 191,
-        "canonicalPrerequisiteEntries": 387,
+        "regionalOnlyCoursesUnderFlexibleBranches": 0,
+        "canonicalPrerequisiteEntries": 511,
         "regionalPrerequisiteEntries": 9
       },
       "conclusion": {
         "canonicalModel": "one-plan-multiple-offerings",
         "regionalCurriculumVariant": false,
-        "reason": "Las dos ofertas publican el Plan 2020 con el mismo título, duración, créditos y mínimos. Las 191 materias adicionales del snapshot regional están exclusivamente bajo ramas optativas o electivas; son un catálogo flexible ampliado, no un núcleo obligatorio diferente.",
+        "reason": "Las dos ofertas publican el Plan 2020 con el mismo título, duración, créditos y mínimos. Tras completar el árbol central de Bedelías, ambos snapshots contienen las mismas 717 materias y no muestran una variante curricular regional.",
         "normalization": [
           "Conservar una sola identidad canónica para el Plan 2020.",
           "Modelar Salto y Paysandú como ofertas/sedes, no como carreras duplicadas.",
           "Representar Agrícola-ganadera como trayectoria disponible en la oferta regional cuando se modele el selector de sede.",
-          "No proyectar las 191 materias adicionales como obligatorias ni como una malla regional separada.",
+          "No duplicar el catálogo compartido ni presentarlo como una malla regional separada.",
           "Mantener la menor cobertura regional de previaturas como diferencia de publicación, no de currícula."
         ]
       },
@@ -1017,7 +1017,7 @@
           "CURE": "data/bedelias/cure-licenciatura-en-educacion-fisica-2017.json",
           "CENURLN": "data/bedelias/cenurln-licenciatura-en-educacion-fisica-2017.json"
         },
-        "canonicalCourses": 1297,
+        "canonicalCourses": 1434,
         "regionalCourses": {
           "CURE": 1426,
           "CENURLN": 1426
@@ -1029,29 +1029,24 @@
         },
         "mandatoryCoreEqual": true,
         "onlyCanonical": {
-          "CURE": 1,
-          "CENURLN": 1
+          "CURE": 7,
+          "CENURLN": 7
         },
         "onlyRegional": {
-          "CURE": 107,
-          "CENURLN": 107
+          "CURE": 0,
+          "CENURLN": 0
         },
         "allCatalogDifferencesFlexible": true,
         "changedCreditCodeCollisions": [
           {
-            "key": "EPAR",
-            "canonicalCredits": 2,
-            "regionalCredits": 5
-          },
-          {
-            "key": "MBCM",
-            "canonicalCredits": 1,
-            "regionalCredits": 37
+            "key": "L2113",
+            "canonicalCredits": 11,
+            "regionalCredits": 0
           }
         ],
-        "changedCreditsUnderFlexibleBranches": 2,
+        "changedCreditsUnderFlexibleBranches": 1,
         "prerequisiteEntries": {
-          "ISEF": 1192,
+          "ISEF": 1197,
           "CURE": 119,
           "CENURLN": 65
         }
@@ -1067,7 +1062,7 @@
           "Filtrar los trayectos por sede: Paysandú ofrece Deporte y Salud; Montevideo y la oferta pública vigente de Maldonado presentan las cuatro opciones.",
           "Conservar un único título y mostrar la opción como trayecto certificado, no como carrera o título separado.",
           "Normalizar el egreso por 270 créditos comunes, 60 específicos del trayecto y 30 optativos/electivos.",
-          "No usar los catálogos regionales ampliados ni las colisiones EPAR/MBCM para definir disponibilidad de trayectos.",
+          "No usar las diferencias del catálogo flexible ni las colisiones de créditos para definir disponibilidad de trayectos.",
           "Tratar la menor cobertura regional de previaturas como una diferencia de publicación."
         ]
       },
@@ -31278,11 +31273,11 @@
         "metadataCurrent": true,
         "publishedDurationMonths": 60,
         "publishedMinimumCredits": 360,
-        "compositionMatterEntries": 382,
-        "compositionCredits": 2942,
-        "indexedCourseRecords": 371,
-        "indexedCourseCredits": 2852,
-        "interpretation": "La composición organiza un catálogo acumulado de 382 unidades por cinco módulos, Tesina y electivas generales. Los grupos de Bedelías publican los mínimos obligatorios 41+44+39+39+46+30; la auditoría eleva cada módulo a su mínimo total oficial 67+57+91+69+46+30 y exige las unidades nominales del plan."
+        "compositionMatterEntries": 393,
+        "compositionCredits": 3026,
+        "indexedCourseRecords": 393,
+        "indexedCourseCredits": 3026,
+        "interpretation": "La composición organiza un catálogo acumulado de 393 unidades por cinco módulos, Tesina y electivas generales. Los grupos de Bedelías publican los mínimos obligatorios 41+44+39+39+46+30; la auditoría eleva cada módulo a su mínimo total oficial 67+57+91+69+46+30 y exige las unidades nominales del plan."
       },
       "conclusion": {
         "canonicalModel": "one-plan-two-campuses-flexible-by-modules",
@@ -64591,7 +64586,7 @@
         "compositionGroupCount": 12,
         "prerequisiteRuleCount": 67,
         "noPublishedRuleCount": 115,
-        "snapshotContentHash": "f438b062e838e950c99e34af771a6cce137539adab8325907c140aa296f9468b",
+        "snapshotContentHash": "4ad1289bd718f19b915e6c617f503e4848e4ae6a5e7293632ab21ce00b2c85e9",
         "interpretation": "Bedelías mantiene vigente el título y publica composición detallada para los perfiles de Ingeniería de Alimentos e Ingeniería Química. Los tres recorridos FQ se completan con el damero oficial del Plan 2000, sin mezclarlos con la Tecnicatura Plan 2015."
       },
       "conclusion": {
@@ -65126,11 +65121,12 @@
         "compositionMatterCount": 453,
         "normalizedCourseCount": 453,
         "compositionGroupCount": 10,
-        "prerequisiteRuleCount": 397,
-        "noPublishedRuleCount": 149,
+        "prerequisiteRuleCount": 398,
+        "noPublishedRuleCount": 148,
+        "regionalComparisonStatus": "content-difference-detected",
         "compositionFingerprint": "sha256:af6cdadf63986234fe512d7ece759b0599b62614df676b1ef2de170b653ac171",
-        "snapshotContentHash": "70b213ab7026a054e45606c74326328a1693e6e19b661d6e7024007c3e98b405",
-        "interpretation": "FQ y CENURLN publican la misma composición de 453 apariciones para el Plan 2015. La diferencia de previaturas no constituye una variante curricular; CENURLN aporta alternativas locales para el primer año en Salto."
+        "snapshotContentHash": "7f517ad9df89e3069480bfddbe618d46a20169ae27b13625a32e12bf61cb1086",
+        "interpretation": "FQ y CENURLN publican catálogos de 453 materias sin diferencias de códigos ni créditos para el Plan 2015. Tras completar el árbol central, el comparador detecta una diferencia en los caminos de composición; la evidencia oficial y la oferta regional confirman que es una diferencia de publicación, no una variante curricular. CENURLN aporta alternativas locales para el primer año en Salto."
       },
       "conclusion": {
         "canonicalModel": "one-current-degree-montevideo-complete-salto-first-year",
@@ -65659,7 +65655,7 @@
         "prerequisiteRuleCount": 125,
         "noPublishedRuleCount": 91,
         "compositionFingerprint": "sha256:f7fd3d328546699d45368e1353dd4ac2cd034dae51d20a773386107210f33abe",
-        "snapshotContentHash": "1c33c238294fd0f7216bcc34a872040d05f81a0951eff005e30adeb16b2673f5",
+        "snapshotContentHash": "9a08003a2ec2d62ba5d6910190b5627ced0ffb2e9e6796640d49ef36d101b76d",
         "interpretation": "FQ y CENURLN publican el mismo catálogo de 320 unidades para el Plan 2016. La diferencia de previaturas no constituye una variante curricular; la oferta oficial limita Salto al primer año."
       },
       "conclusion": {
@@ -66961,7 +66957,7 @@
         "compositionGroupCount": 16,
         "prerequisiteRuleCount": 446,
         "noPublishedRuleCount": 31,
-        "snapshotContentHash": "044f98aef3d9ae21d2c7f02f844fe6a7ef520db0187ff848bde1a905d3bc11c6",
+        "snapshotContentHash": "d1a10f3fc09dc0d5682ebe9aba68eaf51a0380966bcd446a0bae3e56e2e22c5c",
         "interpretation": "Bedelías publica dos perfiles del mismo título. Las materias comunes se normalizan una sola vez; cada orientación conserva su grilla y catálogo sin crear dos carreras."
       },
       "conclusion": {
@@ -71103,7 +71099,7 @@
         "compositionGroupCount": 33,
         "prerequisiteRuleCount": 641,
         "noPublishedRuleCount": 180,
-        "snapshotContentHash": "f2f8bafb0d20e6856d6b3042a9af2fa3ec42a97a8b158081d33283bdd3e3cbe9",
+        "snapshotContentHash": "d7c9f777e37ead2709ae3d49c5ad16e98e49c66eba445d6ddfa69d482b891455",
         "regionalSnapshotContentHash": "71e0fe3ce8241e054c4e791bbafa3c001fe59f05562463481d6e3daca54d0308",
         "regionalPrerequisiteRuleCount": 35,
         "regionalNoPublishedRuleCount": 11,
@@ -71579,11 +71575,11 @@
         "compositionMatterCount": 491,
         "normalizedCourseCount": 489,
         "compositionGroupCount": 6,
-        "prerequisiteRuleCount": 429,
-        "publishedRuleCount": 149,
-        "noPublishedRuleCount": 280,
+        "prerequisiteRuleCount": 523,
+        "publishedRuleCount": 393,
+        "noPublishedRuleCount": 130,
         "curriculumFingerprint": "sha256:54b04b47a81cc9d68bb8a1e1da1279efaa4223d76f19fd241e0c5c18726df1e2",
-        "snapshotContentHash": "bf1c6122971d1896e81b9ebd9fd1d03d3f513e8742cccf8f900c544fba611a5b",
+        "snapshotContentHash": "1cc1caa6b3fd9f60ad76f2d2262f7c24ab6ba9ff72ba73d64958a87d054af138",
         "regionalSnapshotContentHash": "c01d8880121bd24639e50ab0f7916d083eb84a7389a5da478bdc5d3322de1e2f",
         "regionalPrerequisiteRuleCount": 9,
         "regionalPublishedRuleCount": 0,
@@ -72638,6 +72634,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:f23ca3e9501660613c08e03d63a043d1ab8396817bc923d7e1efe0b3fe16aa15",
-  "generatedAt": "2026-08-31T00:00:00.000Z"
+  "contentHash": "sha256:5ef143671786b94ebb04a4a09e47051418927bf331a4f9b765098499b2b67224",
+  "generatedAt": "2026-09-04T00:00:00.000Z"
 }

@@ -95,8 +95,8 @@ test("restringe Salto a 17 alternativas regionales y no simula egreso ni carrera
 
 test("preserva composición, previaturas y referencias internas consistentes", () => {
   assert.equal(projection.courses.length, 455);
-  assert.equal(projection.rules.length, 397);
-  assert.equal(projection.plan.noPublishedRule, 149);
+  assert.equal(projection.rules.length, 398);
+  assert.equal(projection.plan.noPublishedRule, 148);
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 453);
   for (const pathway of Object.values(projection.pathways)) {
     for (const id of [...pathway.periods.flatMap(({ courseIds }) => courseIds), ...(pathway.catalogCourseIds ?? [])]) {

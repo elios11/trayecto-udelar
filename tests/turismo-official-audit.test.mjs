@@ -54,9 +54,9 @@ test("reconoce obligaciones nominales y sus equivalencias administrativas", () =
 test("mantiene el catálogo flexible completo sin certificar perfiles personales", () => {
   const rawMatterNodes = flattenComposition(snapshot.plan.composition).filter((node) => node.nodeType === "Materia");
   const projectedCourses = projection.courses.filter((course) => course.dataStatus !== "manual-validation");
-  assert.equal(rawMatterNodes.length, 382);
-  assert.equal(projectedCourses.length, 382);
-  assert.equal(projectedCourses.reduce((sum, course) => sum + course.credits, 0), 2942);
+  assert.equal(rawMatterNodes.length, 393);
+  assert.equal(projectedCourses.length, 393);
+  assert.equal(projectedCourses.reduce((sum, course) => sum + course.credits, 0), 3026);
   assert.deepEqual(Object.keys(projection.pathways), ["bedelias"]);
   assert.match(projection.plan.notice, /Comisión de Carrera.*módulo/i);
 });
