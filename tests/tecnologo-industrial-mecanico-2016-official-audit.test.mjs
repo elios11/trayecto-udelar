@@ -108,7 +108,7 @@ test("controla los ocho mínimos, 270 créditos, Pasantía y validación final",
 
 test("cierra la auditoría y avanza al Bachiller en Ciencias Químicas", () => {
   assert.ok(!queue.queue.some(({ identity }) => identity === "tecnologo industrial mecanico:2016"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 175);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 2);
-  assert.equal(queue.queue[0].identity, "tecnicatura en guardavidas:2025");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 176);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 1);
+  assert.equal(queue.queue[0].identity, "odontologia:2011");
 });

@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-04T03:19:19.318Z",
+  "generatedAt": "2026-09-04T03:35:41.692Z",
   "source": {
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "regionalManifestHash": "sha256:5e07b558c9d119d3cdc493a7190143066d4c4b307725059e806c7d4484505357",
     "comparisonManifestHash": "sha256:beb9d1e3d3b4b6a21708c2d69518d2150cea207e49c85b0cee5097fe901e4550",
-    "officialAuditRegistryHash": "sha256:9a8e2aa4a86714f65a877aa01d9aef7e03dca36726c514187f922f16a8b89d8d"
+    "officialAuditRegistryHash": "sha256:06e2140d7a34dbf0f88b39db841de08b4707b99a7a945e0fcd03c4b7d06675ec"
   },
   "counts": {
     "canonicalIdentities": 184,
     "auditedCanonicalIdentities": 7,
-    "evidenceClosedCanonicalIdentities": 175,
-    "pendingCanonicalIdentities": 2,
+    "evidenceClosedCanonicalIdentities": 176,
+    "pendingCanonicalIdentities": 1,
     "byPriority": {
-      "official-sources-pending": 2
+      "official-sources-pending": 1
     },
     "regionalComparisons": {
       "content-difference-detected": 15,
@@ -1071,38 +1071,15 @@
       "status": "official-evidence-complete",
       "reviewedAt": "2026-09-01",
       "conclusion": "one-current-direct-entry-degree-montevideo-complete-salto-first-year"
+    },
+    {
+      "identity": "tecnicatura en guardavidas:2025",
+      "status": "official-evidence-complete",
+      "reviewedAt": "2026-09-04",
+      "conclusion": "one-current-plan-montevideo-with-one-policy-alternative"
     }
   ],
   "queue": [
-    {
-      "identity": "tecnicatura en guardavidas:2025",
-      "career": {
-        "name": "TECNICATURA EN GUARDAVIDAS",
-        "type": "Grado"
-      },
-      "plan": {
-        "year": "2025",
-        "name": "TECNICATURA EN GUARDAVIDAS",
-        "current": true
-      },
-      "canonicalSource": {
-        "serviceCode": "ISEF",
-        "serviceName": "INSTITUTO SUPERIOR DE EDUCACIÓN FÍSICA",
-        "planKey": "ISEF:tecnicatura en guardavidas:2025",
-        "state": "structurally-valid"
-      },
-      "sourceOffers": [
-        {
-          "serviceCode": "ISEF",
-          "serviceName": "INSTITUTO SUPERIOR DE EDUCACIÓN FÍSICA",
-          "planKey": "ISEF:tecnicatura en guardavidas:2025",
-          "state": "structurally-valid"
-        }
-      ],
-      "priority": "official-sources-pending",
-      "action": "Auditar vigencia, sede, títulos, créditos, mínimos y trayectorias oficiales.",
-      "regionalComparisons": []
-    },
     {
       "identity": "odontologia:2011",
       "career": {
@@ -1133,5 +1110,5 @@
       "regionalComparisons": []
     }
   ],
-  "contentHash": "sha256:a3626bd9a20d0af2dfae17767f0987216782e3d20b5ead614224b948a8206ba4"
+  "contentHash": "sha256:43010d3a5608d62d86edb6cf272170d80e1b3eba7ea5409ed76856b259881051"
 }

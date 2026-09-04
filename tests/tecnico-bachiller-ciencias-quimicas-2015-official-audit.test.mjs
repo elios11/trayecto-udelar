@@ -101,7 +101,7 @@ test("registra una sola carrera y avanza la cola a Guardavidas 2025", () => {
   assert.equal(careers[0].plans[0].defaultTrajectoryId, "montevideo");
   assert.equal(careers[0].plans[0].defaultCredentialId, "tecnico-bachiller-ciencias-quimicas");
   assert.ok(!queue.queue.some(({ identity }) => identity === "tecnico bach en cs quimicas:2015"));
-  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 175);
-  assert.equal(queue.counts.pendingCanonicalIdentities, 2);
-  assert.equal(queue.queue[0].identity, "tecnicatura en guardavidas:2025");
+  assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 176);
+  assert.equal(queue.counts.pendingCanonicalIdentities, 1);
+  assert.equal(queue.queue[0].identity, "odontologia:2011");
 });
