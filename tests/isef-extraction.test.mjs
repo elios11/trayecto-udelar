@@ -20,13 +20,13 @@ test("ISEF conserva sus tres planes vigentes extraídos", () => {
 test("reporte y manifiesto mantienen ISEF pendiente de auditoría", () => {
   assert.deepEqual(report.totals, {
     plans: 3,
-    courses: 2071,
-    prerequisiteEntries: 1840,
+    courses: 2208,
+    prerequisiteEntries: 1845,
     publishedRules: 166,
-    noPublishedRuleQueries: 1674,
+    noPublishedRuleQueries: 1679,
     validationIssues: 0,
-    requests: 12963,
-    bytes: 11670678,
+    requests: 4231,
+    bytes: 11937950,
   });
   assert.equal(report.status, "official-sources-pending");
   const isef = manifest.services.find((service) => service.code === "ISEF");

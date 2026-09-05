@@ -20,6 +20,12 @@ test("la UI no presenta la extracción pendiente como auditoría oficial", () =>
   assert.match(page, /La carrera está identificada, pero su malla todavía no está disponible/);
 });
 
+test("el planificador distingue la organización personal de la currícula oficial", () => {
+  assert.match(page, /Organizá cómo pensás cursar las materias de este plan/);
+  assert.match(page, /Esto no modifica sus requisitos,[\s\S]*ni áreas oficiales/);
+  assert.doesNotMatch(page, /Armá una currícula propia/);
+});
+
 test("los perfiles oficiales seleccionan sus propias metas y no simulan títulos intermedios", () => {
   assert.match(page, /pathwayCredentialId = isRegisteredPlan \? activeRegisteredPathway\?\.credentialId : undefined/);
   assert.match(page, /item\.id === \(pathwayCredentialId \?\? credentialId\)/);

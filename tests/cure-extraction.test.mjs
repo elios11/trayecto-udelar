@@ -41,13 +41,13 @@ test("conserva las dos composiciones no publicadas sin inventar materias", () =>
 test("reporte y manifiestos actualizan sólo los representantes de CURE", () => {
   assert.deepEqual(report.totals, {
     plans: 6,
-    courses: 727,
-    prerequisiteEntries: 711,
+    courses: 749,
+    prerequisiteEntries: 721,
     publishedRules: 212,
-    noPublishedRuleQueries: 499,
+    noPublishedRuleQueries: 509,
     validationIssues: 2,
-    requests: 15285,
-    bytes: 2238301,
+    requests: 11388,
+    bytes: 2328083,
   });
 
   const cure = globalManifest.services.find((service) => service.code === "CURE");

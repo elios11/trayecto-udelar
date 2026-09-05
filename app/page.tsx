@@ -1803,7 +1803,7 @@ export default function Home() {
             </label>}
           </div>
           {appMode === "planner" ? (
-            <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Armá una currícula propia con las mismas materias, {usesPublishedHours ? "horas" : "créditos"} y áreas del plan. Los cambios quedan guardados en este dispositivo.{isRegisteredPlan && !hasClosedOfficialEvidence ? " Esta composición de Bedelías tiene auditoría oficial pendiente." : ""}</span></p>
+            <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Organizá cómo pensás cursar las materias de este plan. Esto no modifica sus requisitos, {usesPublishedHours ? "horas" : "créditos"} ni áreas oficiales. Tu planificación queda guardada en este dispositivo.{isRegisteredPlan && !hasClosedOfficialEvidence ? " Esta composición de Bedelías tiene auditoría oficial pendiente." : ""}</span></p>
           ) : isRegisteredPlan ? (
             <p className={`pilot-note ${activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-note"}`}><span className="pilot-note-mark" aria-hidden="true">{activeRegisteredPlan?.plan.auditStatus === "audited" ? "✓" : "i"}</span><span className="pilot-note-copy">{activeCampus ? `Sede: ${activeCampus.label}. ` : ""}{activeRegisteredPathway?.description} {activeRegisteredPlan?.plan.notice}</span></p>
           ) : planYear === "2025" ? (
