@@ -556,11 +556,11 @@ const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
 const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
 const ACADEMIC_SELECTION_STORAGE_KEY = "trayecto-udelar-academic-selection-v1";
 const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string, string] }> = [
-  { id: "udelar", label: "Udelar", colors: ["#004a82", "#55b7cc", "#f3f5f4", "#0c161c"] },
-  { id: "violeta", label: "Violeta", colors: ["#7650aa", "#d9b7ef", "#f4f0f7", "#17101f"] },
+  { id: "udelar", label: "Udelar", colors: ["#5b8eaa", "#9ac6d2", "#f1f5f5", "#142229"] },
+  { id: "violeta", label: "Violeta", colors: ["#8b70b0", "#d5bce5", "#f6f2f8", "#17121e"] },
   { id: "solarized", label: "Solarized", colors: ["#268bd2", "#f2d58b", "#fdf6e3", "#002b36"] },
-  { id: "bosque", label: "Bosque", colors: ["#167565", "#91d0bd", "#eef4f0", "#0c1815"] },
-  { id: "terracota", label: "Terracota", colors: ["#ad503d", "#e7b98f", "#f7f0ec", "#1d1211"] },
+  { id: "bosque", label: "Bosque", colors: ["#4b9b89", "#a4d5c4", "#f1f6f3", "#14211d"] },
+  { id: "terracota", label: "Terracota", colors: ["#b97a6b", "#e8c0a9", "#f8f2ef", "#211716"] },
 ];
 const colorVisionOptions: Array<{ id: ColorVisionType; label: string }> = [
   { id: "deuteranopia", label: "Deuteranopia" },
