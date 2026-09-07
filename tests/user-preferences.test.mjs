@@ -20,6 +20,16 @@ test("cierra el selector de temas fuera del panel y con Escape", () => {
   assert.match(pageSource, /event\.key === "Escape"/);
 });
 
+test("separa el intercambio del planificador del intercambio completo", () => {
+  assert.match(pageSource, /scope: "all"/);
+  assert.match(pageSource, /planner: \{ terms: plannerTerms, currentTermId: currentPlannerTermId \}/);
+  assert.match(pageSource, /scope: "planner"/);
+  assert.match(pageSource, /const importPlanner =/);
+  assert.match(pageSource, /setPlannerPlans\(\(current\) => \(\{ \.\.\.current, \[planYear\]: plannerTransfer\.terms \}\)\)/);
+  assert.match(pageSource, /Solo planificador/);
+  assert.match(css, /\.data-panel-section button/);
+});
+
 test("el planificador carga y muestra el catálogo diferido completo", () => {
   assert.match(pageSource, /appMode !== "planner" && extendedPlan1997CourseIds\.has/);
   assert.match(pageSource, /appMode !== "planner" && profileCatalogCourseIds\.has/);

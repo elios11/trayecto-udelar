@@ -535,6 +535,7 @@ type PlannerView = "board" | "compact" | "balance";
 type PlannerTerm = { id: string; label: string; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
 type CurrentPlannerTerms = Record<PlanId, string | null>;
+type PlannerTransfer = { terms: PlannerTerm[]; currentTermId: string | null };
 type ThemeId = "udelar" | "violeta" | "solarized" | "bosque" | "terracota";
 type ThemeScheme = "light" | "dark";
 type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
@@ -579,6 +580,28 @@ const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, in
   label: `Semestre ${index + 1}`,
   courseIds: [],
 }));
+const parsePlannerTransfer = (value: unknown): PlannerTransfer | null => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const record = value as Record<string, unknown>;
+  if (!Array.isArray(record.terms) || record.terms.length === 0) return null;
+  const ids = new Set<string>();
+  const termIds = new Set<string>();
+  const terms: PlannerTerm[] = [];
+  for (const [index, candidate] of record.terms.entries()) {
+    if (!candidate || typeof candidate !== "object" || Array.isArray(candidate)) return null;
+    const term = candidate as Record<string, unknown>;
+    if (typeof term.id !== "string" || !term.id || termIds.has(term.id) || typeof term.label !== "string" || !Array.isArray(term.courseIds)) return null;
+    termIds.add(term.id);
+    const courseIds = term.courseIds.filter((courseId): courseId is string => typeof courseId === "string");
+    if (courseIds.length !== term.courseIds.length || courseIds.some((courseId) => !courseId || ids.has(courseId))) return null;
+    courseIds.forEach((courseId) => ids.add(courseId));
+    terms.push({ id: term.id, label: term.label || `Semestre ${index + 1}`, courseIds });
+  }
+  const currentTermId = record.currentTermId === null || record.currentTermId === undefined
+    ? null
+    : typeof record.currentTermId === "string" && terms.some((term) => term.id === record.currentTermId) ? record.currentTermId : null;
+  return { terms, currentTermId };
+};
 
 export default function Home() {
   const [appMode, setAppMode] = useState<AppMode>("curriculum");
@@ -625,7 +648,9 @@ export default function Home() {
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
   const [colorVisionType, setColorVisionType] = useState<ColorVisionType>("deuteranopia");
   const importRef = useRef<HTMLInputElement>(null);
+  const plannerImportRef = useRef<HTMLInputElement>(null);
   const importErrorButtonRef = useRef<HTMLButtonElement>(null);
+  const dataMenuRef = useRef<HTMLDetailsElement>(null);
   const appearanceMenuRef = useRef<HTMLDetailsElement>(null);
   const curriculumScrollRef = useRef<HTMLDivElement>(null);
   const curriculumEdgesRef = useRef(curriculumEdges);
@@ -1096,11 +1121,17 @@ export default function Home() {
     const closeAppearanceMenu = (event: PointerEvent) => {
       const menu = appearanceMenuRef.current;
       if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+      const dataMenu = dataMenuRef.current;
+      if (dataMenu?.open && event.target instanceof Node && !dataMenu.contains(event.target)) dataMenu.open = false;
     };
     const closeAppearanceMenuWithKeyboard = (event: KeyboardEvent) => {
       if (event.key === "Escape" && appearanceMenuRef.current?.open) {
         appearanceMenuRef.current.open = false;
         appearanceMenuRef.current.querySelector("summary")?.focus();
+      }
+      if (event.key === "Escape" && dataMenuRef.current?.open) {
+        dataMenuRef.current.open = false;
+        dataMenuRef.current.querySelector("summary")?.focus();
       }
     };
     document.addEventListener("pointerdown", closeAppearanceMenu);
@@ -1446,15 +1477,59 @@ export default function Home() {
   };
   const visibleElectives = filtered("opt");
 
-  const exportProgress = () => {
-    const career = activeCareer.id;
-    const blob = new Blob([JSON.stringify({ formatVersion: 1, career, plan: planYear, trajectory: trajectoryId, statuses }, null, 2)], { type: "application/json" });
+  const downloadJson = (filename: string, payload: unknown) => {
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = "mi-trayecto-udelar.json";
+    anchor.download = filename;
     anchor.click();
     URL.revokeObjectURL(url);
+  };
+
+  const exportProgress = () => {
+    const career = activeCareer.id;
+    downloadJson("mi-trayecto-udelar.json", {
+      formatVersion: 2,
+      scope: "all",
+      career,
+      plan: planYear,
+      trajectory: trajectoryId,
+      statuses,
+      planner: { terms: plannerTerms, currentTermId: currentPlannerTermId },
+    });
+  };
+
+  const exportPlanner = () => {
+    downloadJson("mi-trayecto-planificador.json", {
+      formatVersion: 1,
+      scope: "planner",
+      career: activeCareer.id,
+      plan: planYear,
+      trajectory: trajectoryId,
+      planner: { terms: plannerTerms, currentTermId: currentPlannerTermId },
+    });
+  };
+
+  const loadMissingCourseIds = async (validCourseIds: Set<string>, candidateCourseIds: string[]) => {
+    if (!candidateCourseIds.some((courseId) => !validCourseIds.has(courseId))) return validCourseIds;
+    if (planYear === "1997") {
+      const extended = await loadExtendedElectives();
+      for (const course of extended?.courses ?? []) validCourseIds.add(course.id);
+    }
+    if (planYear === "electrica-2023") {
+      const catalog = await loadElectricCatalog();
+      for (const course of catalog?.courses ?? []) validCourseIds.add(course.id);
+    }
+    if (planYear === "civil-2021") {
+      const catalog = await loadCivilCatalog();
+      for (const course of catalog?.courses ?? []) validCourseIds.add(course.id);
+    }
+    if (planYear === "qf-2015") {
+      const catalog = await loadQfCatalog();
+      for (const course of catalog?.courses ?? []) validCourseIds.add(course.id);
+    }
+    return validCourseIds;
   };
 
   const importProgress = (event: ChangeEvent<HTMLInputElement>) => {
@@ -1463,12 +1538,12 @@ export default function Home() {
     const reader = new FileReader();
     reader.onload = async () => {
       try {
-        const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; career?: unknown; plan?: unknown; statuses?: unknown };
+        const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; scope?: unknown; career?: unknown; plan?: unknown; statuses?: unknown; planner?: unknown };
         if (!parsed || typeof parsed !== "object" || !parsed.statuses || typeof parsed.statuses !== "object" || Array.isArray(parsed.statuses)) {
-          setImportError({ title: "Archivo incompatible", message: "El archivo es JSON, pero no contiene un progreso de Trayecto reconocible." });
+          setImportError({ title: parsed?.scope === "planner" ? "Es un archivo de planificador" : "Archivo incompatible", message: parsed?.scope === "planner" ? "Para importar solo la planificación, usá la opción “Solo planificador”." : "El archivo es JSON, pero no contiene un progreso de Trayecto reconocible." });
           return;
         }
-        if (parsed.formatVersion !== undefined && parsed.formatVersion !== 1) {
+        if (parsed.formatVersion !== undefined && parsed.formatVersion !== 1 && parsed.formatVersion !== 2) {
           setImportError({ title: "Versión no compatible", message: "Este archivo fue creado con una versión de Trayecto que todavía no podemos importar." });
           return;
         }
@@ -1477,29 +1552,65 @@ export default function Home() {
           return;
         }
         const entries = Object.entries(parsed.statuses as Record<string, unknown>);
+        const plannerTransfer = parsed.planner === undefined ? null : parsePlannerTransfer(parsed.planner);
+        if (parsed.planner !== undefined && !plannerTransfer) {
+          setImportError({ title: "Planificador inválido", message: "El archivo contiene una planificación con semestres o materias en un formato no válido." });
+          return;
+        }
+        const plannerCourseIds = plannerTransfer?.terms.flatMap((term) => term.courseIds) ?? [];
         const validStatuses = new Set<CourseStatus>(["pending", "approved", "exonerated"]);
-        const validCourseIds = new Set(courses.map((course) => course.id));
-        if (planYear === "1997" && entries.some(([id]) => !validCourseIds.has(id))) {
-          const extended = await loadExtendedElectives();
-          if (!extended) {
-            setImportError({ title: "No pudimos cargar el catálogo", message: "El progreso incluye optativas del catálogo ampliado, pero no pudimos abrir esos datos. Probá nuevamente." });
-            return;
-          }
-          for (const course of extended.courses) validCourseIds.add(course.id);
-        }
-        if (planYear === "qf-2015" && entries.some(([id]) => !validCourseIds.has(id))) {
-          const extended = await loadQfCatalog();
-          if (!extended) {
-            setImportError({ title: "No pudimos cargar el catálogo", message: "El progreso incluye optativas del catálogo ampliado, pero no pudimos abrir esos datos. Probá nuevamente." });
-            return;
-          }
-          for (const course of extended.courses) validCourseIds.add(course.id);
-        }
+        const validCourseIds = await loadMissingCourseIds(new Set(plannerCourses.map((course) => course.id)), [...entries.map(([id]) => id), ...plannerCourseIds]);
         if (entries.some(([id, status]) => !validCourseIds.has(id) || typeof status !== "string" || !validStatuses.has(status as CourseStatus))) {
           setImportError({ title: "Progreso inválido", message: "El archivo contiene materias o estados que no tienen un formato válido." });
           return;
         }
+        if (plannerCourseIds.some((courseId) => !validCourseIds.has(courseId))) {
+          setImportError({ title: "Planificador inválido", message: "La planificación incluye materias que no pertenecen al plan seleccionado." });
+          return;
+        }
         setStatuses(Object.fromEntries(entries) as Record<string, CourseStatus>);
+        if (plannerTransfer) {
+          setPlannerPlans((current) => ({ ...current, [planYear]: plannerTransfer.terms }));
+          setCurrentPlannerTerms((current) => ({ ...current, [planYear]: plannerTransfer.currentTermId }));
+        }
+      } catch {
+        setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
+      }
+    };
+    reader.onerror = () => setImportError({ title: "No pudimos abrir el archivo", message: "El navegador no pudo leerlo. Probá seleccionándolo nuevamente o exportándolo otra vez." });
+    reader.readAsText(file);
+    event.target.value = "";
+  };
+
+  const importPlanner = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; scope?: unknown; plan?: unknown; planner?: unknown };
+        if (parsed?.scope !== "planner" || parsed.formatVersion !== 1) {
+          setImportError({ title: "Archivo incompatible", message: "Este archivo no contiene una planificación compartida de Trayecto." });
+          return;
+        }
+        if (parsed.plan !== planYear) {
+          setImportError({ title: "Corresponde a otro plan", message: `Esta planificación pertenece al Plan ${String(parsed.plan)}. Seleccioná ese plan antes de importarla.` });
+          return;
+        }
+        const plannerTransfer = parsePlannerTransfer(parsed.planner);
+        if (!plannerTransfer) {
+          setImportError({ title: "Planificador inválido", message: "El archivo contiene semestres o materias en un formato no válido." });
+          return;
+        }
+        const plannerCourseIds = plannerTransfer.terms.flatMap((term) => term.courseIds);
+        const validCourseIds = await loadMissingCourseIds(new Set(plannerCourses.map((course) => course.id)), plannerCourseIds);
+        if (plannerCourseIds.some((courseId) => !validCourseIds.has(courseId))) {
+          setImportError({ title: "Planificador inválido", message: "La planificación incluye materias que no pertenecen al plan seleccionado." });
+          return;
+        }
+        setPlannerPlans((current) => ({ ...current, [planYear]: plannerTransfer.terms }));
+        setCurrentPlannerTerms((current) => ({ ...current, [planYear]: plannerTransfer.currentTermId }));
+        setAppMode("planner");
       } catch {
         setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
       }
@@ -1629,9 +1740,27 @@ export default function Home() {
           <button className={appMode === "planner" ? "active" : ""} onClick={() => setAppMode("planner")}><span>Propio</span> Planificador</button>
         </nav>
         <div className="header-actions">
-          <button className="quiet-button" onClick={() => importRef.current?.click()}>Importar</button>
-          <button className="quiet-button" onClick={exportProgress}>Exportar</button>
+          <details ref={dataMenuRef} className="data-menu">
+            <summary aria-label="Importar y exportar datos">Datos</summary>
+            <div className="data-panel">
+              <div className="data-panel-heading">
+                <strong>Compartir datos</strong>
+                <span>Elegí si querés incluir la currícula o solo tu planificación.</span>
+              </div>
+              <div className="data-panel-section">
+                <span>Exportar</span>
+                <button type="button" onClick={() => { exportProgress(); dataMenuRef.current!.open = false; }}>Todo · currícula y planificador</button>
+                <button type="button" onClick={() => { exportPlanner(); dataMenuRef.current!.open = false; }}>Solo planificador</button>
+              </div>
+              <div className="data-panel-section">
+                <span>Importar</span>
+                <button type="button" onClick={() => { importRef.current?.click(); dataMenuRef.current!.open = false; }}>Todo · currícula y planificador</button>
+                <button type="button" onClick={() => { plannerImportRef.current?.click(); dataMenuRef.current!.open = false; }}>Solo planificador</button>
+              </div>
+            </div>
+          </details>
           <input ref={importRef} type="file" accept="application/json" hidden onChange={importProgress} />
+          <input ref={plannerImportRef} type="file" accept="application/json" hidden onChange={importPlanner} />
           <details ref={appearanceMenuRef} className="appearance-menu">
             <summary aria-label={`Tema ${activeThemeOption.label}, modo ${themeScheme === "dark" ? "oscuro" : "claro"}. Abrir apariencia`}>
               <span
