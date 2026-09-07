@@ -1589,8 +1589,10 @@ export default function Home() {
     reader.onload = async () => {
       try {
         const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; scope?: unknown; plan?: unknown; planner?: unknown };
-        if (parsed?.scope !== "planner" || parsed.formatVersion !== 1) {
-          setImportError({ title: "Archivo incompatible", message: "Este archivo no contiene una planificación compartida de Trayecto." });
+        const isPlannerFile = parsed?.scope === "planner" && parsed.formatVersion === 1;
+        const isFullFile = parsed?.scope === "all" && parsed.formatVersion === 2;
+        if (!isPlannerFile && !isFullFile) {
+          setImportError({ title: "Archivo incompatible", message: "Este archivo no contiene una planificación compartida de Trayecto. Las exportaciones completas también se pueden importar como solo planificador." });
           return;
         }
         if (parsed.plan !== planYear) {
@@ -1745,7 +1747,7 @@ export default function Home() {
             <div className="data-panel">
               <div className="data-panel-heading">
                 <strong>Compartir datos</strong>
-                <span>Elegí si querés incluir la currícula o solo tu planificación.</span>
+                <span>El modo solo planificador también puede leer una exportación completa sin importar sus créditos.</span>
               </div>
               <div className="data-panel-section">
                 <span>Exportar</span>

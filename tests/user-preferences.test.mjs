@@ -25,6 +25,7 @@ test("separa el intercambio del planificador del intercambio completo", () => {
   assert.match(pageSource, /planner: \{ terms: plannerTerms, currentTermId: currentPlannerTermId \}/);
   assert.match(pageSource, /scope: "planner"/);
   assert.match(pageSource, /const importPlanner =/);
+  assert.match(pageSource, /const isFullFile = parsed\?\.scope === "all" && parsed\.formatVersion === 2/);
   assert.match(pageSource, /setPlannerPlans\(\(current\) => \(\{ \.\.\.current, \[planYear\]: plannerTransfer\.terms \}\)\)/);
   assert.match(pageSource, /Solo planificador/);
   assert.match(css, /\.data-panel-section button/);
