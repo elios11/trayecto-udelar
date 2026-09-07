@@ -1329,6 +1329,8 @@ export default function Home() {
   );
   const planTotalHours = isRegisteredPlan ? (activeRegisteredPlan?.plan.totalHours ?? null) : null;
   const usesPublishedHours = planMinCredits <= 0 && activeCourses.some((course) => (course.hours ?? 0) > 0);
+  const hasPublishedCourseLoad = usesPublishedHours || activeCourses.some((course) => course.credits > 0);
+  const completedCourseCount = activeCourses.filter((course) => statuses[course.id] === "exonerated").length;
 
   const allocationBelongsTo = (allocationNodeId: string, targetNodeId: string) => {
     let current = nodeById.get(allocationNodeId);
@@ -1563,7 +1565,9 @@ export default function Home() {
   const assignedPlannerIds = new Set(plannerTerms.flatMap((term) => term.courseIds));
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const plannedHours = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + (course.hours ?? 0) : sum, 0);
-  const creditProgressPercent = planMinCredits > 0
+  const creditProgressPercent = !hasPublishedCourseLoad
+    ? Math.min((appMode === "planner" ? assignedPlannerIds.size / Math.max(plannerCourses.length, 1) : credentialRequirementsMet / Math.max(credentialRequirementsTotal, 1)) * 100, 100)
+    : planMinCredits > 0
     ? Math.min((appMode === "planner" ? plannedCredits : earnedCredits) / planMinCredits * 100, 100)
     : usesPublishedHours && planTotalHours
       ? Math.min((appMode === "planner" ? plannedHours : earnedHours) / planTotalHours * 100, 100)
@@ -1819,11 +1823,11 @@ export default function Home() {
 
         <div className="credit-summary">
           <div className="credit-ring" style={{ "--progress": `${creditProgressPercent}%` } as React.CSSProperties}>
-            <div><strong>{usesPublishedHours ? (appMode === "planner" ? plannedHours : earnedHours) : (appMode === "planner" ? plannedCredits : earnedCredits)}</strong><span>{usesPublishedHours && planTotalHours ? `de ${planTotalHours} h` : planMinCredits > 0 ? `de ${planMinCredits}` : "mínimo pendiente"}</span></div>
+            <div><strong>{!hasPublishedCourseLoad ? appMode === "planner" ? assignedPlannerIds.size : credentialRequirementsMet : usesPublishedHours ? (appMode === "planner" ? plannedHours : earnedHours) : (appMode === "planner" ? plannedCredits : earnedCredits)}</strong><span>{!hasPublishedCourseLoad ? appMode === "planner" ? `de ${plannerCourses.length} materias` : `de ${credentialRequirementsTotal} requisitos` : usesPublishedHours && planTotalHours ? `de ${planTotalHours} h` : planMinCredits > 0 ? `de ${planMinCredits}` : "mínimo pendiente"}</span></div>
           </div>
           <div>
-            <p>{usesPublishedHours ? (appMode === "planner" ? "Horas planificadas" : "Horas completadas") : appMode === "planner" ? "Créditos planificados" : "Créditos obtenidos"}</p>
-            <strong>{usesPublishedHours && planTotalHours ? `${Math.round((appMode === "planner" ? plannedHours : earnedHours) / planTotalHours * 100)}% de la carga publicada` : appMode === "planner" ? `${plannedCredits} cr. distribuidos` : planMinCredits > 0 ? `${Math.round(earnedCredits / planMinCredits * 100)}% de la carrera` : "Mínimo no publicado"}</strong>
+            <p>{!hasPublishedCourseLoad ? appMode === "planner" ? "Materias planificadas" : "Requisitos cumplidos" : usesPublishedHours ? (appMode === "planner" ? "Horas planificadas" : "Horas completadas") : appMode === "planner" ? "Créditos planificados" : "Créditos obtenidos"}</p>
+            <strong>{!hasPublishedCourseLoad ? appMode === "planner" ? `${assignedPlannerIds.size} materias distribuidas · carga no publicada` : `${completedCourseCount} materias completadas · carga no publicada` : usesPublishedHours && planTotalHours ? `${Math.round((appMode === "planner" ? plannedHours : earnedHours) / planTotalHours * 100)}% de la carga publicada` : appMode === "planner" ? `${plannedCredits} cr. distribuidos` : planMinCredits > 0 ? `${Math.round(earnedCredits / planMinCredits * 100)}% de la carrera` : "Mínimo no publicado"}</strong>
           </div>
         </div>
       </section>
@@ -1852,14 +1856,14 @@ export default function Home() {
               <span>{isRegisteredPlan ? activeRegisteredPlan?.plan.credentialLabel ?? "Título de grado" : "Título de grado"}</span>
               <h3>{degreeCredential.title}</h3>
             </div>
-            <strong>{usesPublishedHours ? earnedHours : earnedCredits}<small>/{usesPublishedHours && planTotalHours ? `${planTotalHours} h` : planMinCredits > 0 ? planMinCredits : "—"}</small></strong>
-            <div className="linear-progress"><i style={{ width: `${usesPublishedHours && planTotalHours ? Math.min(earnedHours / planTotalHours * 100, 100) : planMinCredits > 0 ? Math.min(earnedCredits / planMinCredits * 100, 100) : 0}%` }} /></div>
+            <strong>{!hasPublishedCourseLoad ? credentialRequirementsMet : usesPublishedHours ? earnedHours : earnedCredits}<small>{!hasPublishedCourseLoad ? `/${credentialRequirementsTotal} req.` : `/${usesPublishedHours && planTotalHours ? `${planTotalHours} h` : planMinCredits > 0 ? planMinCredits : "—"}`}</small></strong>
+            <div className="linear-progress"><i style={{ width: `${!hasPublishedCourseLoad ? Math.min(credentialRequirementsMet / Math.max(credentialRequirementsTotal, 1) * 100, 100) : usesPublishedHours && planTotalHours ? Math.min(earnedHours / planTotalHours * 100, 100) : planMinCredits > 0 ? Math.min(earnedCredits / planMinCredits * 100, 100) : 0}%` }} /></div>
           </div>
 
           <button type="button" className="requirement-heading" onClick={() => setShowRequirements((value) => !value)} aria-expanded={showRequirements}>
             <div>
-              <h3>{usesPublishedHours ? "Requisitos de egreso" : "Metas de créditos"}</h3>
-              <span>{usesPublishedHours ? "Por unidades obligatorias" : "Por título y área"}</span>
+              <h3>{usesPublishedHours || !hasPublishedCourseLoad ? "Requisitos de egreso" : "Metas de créditos"}</h3>
+              <span>{usesPublishedHours || !hasPublishedCourseLoad ? "Por unidades obligatorias" : "Por título y área"}</span>
             </div>
             <b className="panel-toggle-symbol" aria-hidden="true">{showRequirements ? "−" : "+"}</b>
           </button>
@@ -1948,7 +1952,7 @@ export default function Home() {
                 <div>
                   <p className="eyebrow">Tu currícula, a tu ritmo</p>
                   <h2>Planificador</h2>
-                  <span>{assignedPlannerIds.size} materias · {usesPublishedHours ? `${plannedHours} horas distribuidas` : `${plannedCredits} créditos distribuidos`}</span>
+                  <span>{assignedPlannerIds.size} materias{hasPublishedCourseLoad ? ` · ${usesPublishedHours ? `${plannedHours} horas distribuidas` : `${plannedCredits} créditos distribuidos`}` : " · carga no publicada"}</span>
                 </div>
                 <div className="planner-actions">
                   <div className="view-switch" role="group" aria-label="Opciones visuales del planificador">
@@ -1964,15 +1968,15 @@ export default function Home() {
               {plannerView === "balance" && (
                 <div className="planner-load-overview" aria-label="Comparación de carga por semestre">
                   {plannerTerms.map((term) => {
-                    const load = term.courseIds.reduce((sum, id) => {
+                    const load = hasPublishedCourseLoad ? term.courseIds.reduce((sum, id) => {
                       const course = plannerCourses.find((candidate) => candidate.id === id);
                       return sum + (usesPublishedHours ? (course?.hours ?? 0) : (course?.credits ?? 0));
-                    }, 0);
-                    const maxLoad = Math.max(1, ...plannerTerms.map((item) => item.courseIds.reduce((sum, id) => {
+                    }, 0) : term.courseIds.length;
+                    const maxLoad = Math.max(1, ...plannerTerms.map((item) => hasPublishedCourseLoad ? item.courseIds.reduce((sum, id) => {
                       const course = plannerCourses.find((candidate) => candidate.id === id);
                       return sum + (usesPublishedHours ? (course?.hours ?? 0) : (course?.credits ?? 0));
-                    }, 0)));
-                    return <div className="load-row" key={term.id}><span>{term.label}</span><i><b style={{ width: `${load / maxLoad * 100}%` }} /></i><strong>{load} {usesPublishedHours ? "h" : "cr."}</strong></div>;
+                    }, 0) : item.courseIds.length));
+                    return <div className="load-row" key={term.id}><span>{term.label}</span><i><b style={{ width: `${load / maxLoad * 100}%` }} /></i><strong>{load} {!hasPublishedCourseLoad ? load === 1 ? "materia" : "materias" : usesPublishedHours ? "h" : "cr."}</strong></div>;
                   })}
                 </div>
               )}
@@ -1989,7 +1993,7 @@ export default function Home() {
                     <input aria-label="Buscar materias para planificar" value={plannerSearch} onChange={(event) => handlePlannerSearch(event.target.value)} placeholder="Nombre, código, área o sigla (ej. GAL)" />
                     {plannerSearch && <button type="button" className="search-clear" onClick={() => setPlannerSearch("")} aria-label="Limpiar búsqueda">×</button>}
                   </div>
-                  <p className="catalog-help">Arrastrá una materia o elegí su semestre. La {usesPublishedHours ? "carga horaria" : "cantidad de créditos"} se conserva tal como figura en el plan.</p>
+                  <p className="catalog-help">Arrastrá una materia o elegí su semestre. {hasPublishedCourseLoad ? `La ${usesPublishedHours ? "carga horaria" : "cantidad de créditos"} se conserva tal como figura en el plan.` : "La fuente oficial no publica la carga de estas materias, por eso el balance se compara por cantidad."}</p>
                   <div className="catalog-list">
                     {availablePlannerCourses.map((course) => (
                       <article className="catalog-course" key={course.id} draggable onDragStart={() => setDraggedCourseId(course.id)} onDragEnd={() => setDraggedCourseId(null)}>
@@ -2015,8 +2019,8 @@ export default function Home() {
                     const exoneratedCredits = termCourses.reduce((sum, course) => sum + ((statuses[course.id] ?? "pending") === "exonerated" ? course.credits : 0), 0);
                     const termHours = termCourses.reduce((sum, course) => sum + (course.hours ?? 0), 0);
                     const exoneratedHours = termCourses.reduce((sum, course) => sum + ((statuses[course.id] ?? "pending") === "exonerated" ? (course.hours ?? 0) : 0), 0);
-                    const termLoad = usesPublishedHours ? termHours : termCredits;
-                    const completedTermLoad = usesPublishedHours ? exoneratedHours : exoneratedCredits;
+                    const termLoad = hasPublishedCourseLoad ? usesPublishedHours ? termHours : termCredits : termCourses.length;
+                    const completedTermLoad = hasPublishedCourseLoad ? usesPublishedHours ? exoneratedHours : exoneratedCredits : termCourses.filter((course) => (statuses[course.id] ?? "pending") === "exonerated").length;
                     const isCurrentTerm = currentPlannerTermId === term.id;
                     return (
                       <section className={"planner-term" + (isCurrentTerm ? " current" : "")} key={term.id} onDragOver={(event) => event.preventDefault()} onDrop={() => { if (draggedCourseId) assignPlannerCourse(draggedCourseId, term.id); setDraggedCourseId(null); }}>
@@ -2024,16 +2028,16 @@ export default function Home() {
                           <span>{String(termIndex + 1).padStart(2, "0")}</span>
                           <div>
                             <input value={term.label} onChange={(event) => renamePlannerTerm(term.id, event.target.value)} aria-label={`Nombre del semestre ${termIndex + 1}`} />
-                            <p>{termCourses.length} materias · <strong>{termLoad} {usesPublishedHours ? "horas planificadas" : "créditos planeados"}</strong></p>
+                            <p>{termCourses.length} materias{hasPublishedCourseLoad && <> · <strong>{termLoad} {usesPublishedHours ? "horas planificadas" : "créditos planeados"}</strong></>}</p>
                             {isCurrentTerm && <>
                               <div className="current-term-progress" role="progressbar" aria-label={"Progreso de " + term.label} aria-valuemin={0} aria-valuemax={termLoad} aria-valuenow={completedTermLoad}><i style={{ width: (termLoad ? completedTermLoad / termLoad * 100 : 0) + "%" }} /></div>
-                              <p className="current-progress-copy"><strong>{completedTermLoad}/{termLoad}</strong> {usesPublishedHours ? "horas completadas" : "créditos exonerados"}</p>
+                              <p className="current-progress-copy"><strong>{completedTermLoad}/{termLoad}</strong> {!hasPublishedCourseLoad ? "materias completadas" : usesPublishedHours ? "horas completadas" : "créditos exonerados"}</p>
                             </>}
                             <button type="button" className={"current-term-button" + (isCurrentTerm ? " active" : "")} onClick={() => setCurrentPlannerTerm(term.id)}>{isCurrentTerm ? "Semestre actual" : "Marcar como actual"}</button>
                           </div>
                           <button className="remove-term" onClick={() => removePlannerTerm(term.id)} disabled={plannerTerms.length === 1} aria-label={`Eliminar ${term.label}`} title="Las materias vuelven al catálogo">×</button>
                         </header>
-                        <div className="term-load"><i style={{ width: `${Math.min(termLoad / (usesPublishedHours ? 1000 : 45) * 100, 100)}%` }} /></div>
+                        <div className="term-load"><i style={{ width: `${Math.min(termLoad / (!hasPublishedCourseLoad ? 8 : usesPublishedHours ? 1000 : 45) * 100, 100)}%` }} /></div>
                         <div className="planned-course-list">
                           {termCourses.map((course) => {
                             const status = statuses[course.id] ?? "pending";
@@ -2155,7 +2159,7 @@ export default function Home() {
             <div className="modal-symbol rollover-symbol" aria-hidden="true">→</div>
             <h2 id="rollover-title">Terminar {rolloverTerm.label}</h2>
             <p>{rolloverIncompleteCourses.length > 0
-              ? "Quedan " + rolloverIncompleteCourses.length + " materias sin exonerar, por " + (usesPublishedHours ? rolloverIncompleteHours + " horas" : rolloverIncompleteCredits + " créditos") + ". ¿Querés moverlas al próximo semestre?"
+              ? "Quedan " + rolloverIncompleteCourses.length + " materias sin exonerar" + (hasPublishedCourseLoad ? ", por " + (usesPublishedHours ? rolloverIncompleteHours + " horas" : rolloverIncompleteCredits + " créditos") : "") + ". ¿Querés moverlas al próximo semestre?"
               : "Todas las materias de este semestre están exoneradas. El próximo semestre pasará a ser el actual."}</p>
             <div className="rollover-actions">
               <button type="button" className="primary-button" onClick={() => finishPlannerTerm(true)}>{rolloverIncompleteCourses.length > 0 ? "Mover y continuar" : "Continuar"}</button>

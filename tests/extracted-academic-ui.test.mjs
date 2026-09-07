@@ -26,6 +26,13 @@ test("el planificador distingue la organización personal de la currícula ofici
   assert.doesNotMatch(page, /Armá una currícula propia/);
 });
 
+test("los planes sin carga publicada se miden por materias y requisitos", () => {
+  assert.match(page, /Materias planificadas/);
+  assert.match(page, /carga no publicada/);
+  assert.match(page, /el balance se compara por cantidad/);
+  assert.match(page, /materias completadas/);
+});
+
 test("los perfiles oficiales seleccionan sus propias metas y no simulan títulos intermedios", () => {
   assert.match(page, /pathwayCredentialId = isRegisteredPlan \? activeRegisteredPathway\?\.credentialId : undefined/);
   assert.match(page, /item\.id === \(pathwayCredentialId \?\? credentialId\)/);
