@@ -16,7 +16,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,
     description,
-    icons: { icon: "/udelar.svg", shortcut: "/udelar.svg" },
+    icons: {
+      icon: [{ url: "/udelar.svg?v=2", type: "image/svg+xml", sizes: "any" }],
+      shortcut: [{ url: "/udelar.svg?v=2", type: "image/svg+xml" }],
+    },
     openGraph: { title, description, type: "website", images: [{ url: imageUrl, width: 1920, height: 1080, alt: "Trayecto Udelar — mallas curriculares, planificación y avance" }] },
     twitter: { card: "summary_large_image", title, description, images: [imageUrl] },
   };

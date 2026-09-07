@@ -20,6 +20,7 @@ test("renderiza la malla y su procedencia institucional", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Trayecto Udelar \u2014 Curr\u00edcula y planificador<\/title>/i);
+  assert.match(html, /rel="icon"[^>]*href="\/udelar\.svg\?v=2"[^>]*type="image\/svg\+xml"/i);
   assert.match(html, /property="og:image" content="https:\/\/trayecto-udelar-piloto\.tokyo121\.chatgpt\.site\/og-trayecto-udelar\.png"/i);
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /Ingeniería en Computación/);
