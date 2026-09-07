@@ -57,6 +57,7 @@ test("la información del plan y el catálogo minimizado siguen siendo comprensi
 test("la cabecera móvil separa navegación y acciones", () => {
   assert.match(css, /grid-template-areas:\s*"brand actions"\s*"modes modes"/);
   assert.match(css, /row-gap: 8px/);
-  assert.match(css, /\.mode-switch \{[\s\S]*?grid-area: modes;[\s\S]*?border-top: 1px solid var\(--line\)/);
+  assert.match(css, /\.mode-switch \{[\s\S]*?grid-area: modes;[\s\S]*?width: calc\(100% \+ 32px\);[\s\S]*?border-top: 1px solid var\(--line\)/);
+  assert.match(css, /\.mode-switch button \{ min-width: 106px; padding: 2px 12px 4px; \}/);
   assert.match(css, /\.appearance-menu \.appearance-orb \{ width: 30px; height: 30px; \}/);
 });
