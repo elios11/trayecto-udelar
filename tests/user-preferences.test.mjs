@@ -53,3 +53,9 @@ test("la información del plan y el catálogo minimizado siguen siendo comprensi
   assert.match(css, /\.course-catalog\.collapsed \{[^}]*height: auto;[^}]*position: static;/);
   assert.doesNotMatch(css, /\.course-catalog\.collapsed \.catalog-heading > div[^}]*display: none/);
 });
+
+test("la cabecera móvil separa navegación y acciones", () => {
+  assert.match(css, /grid-template-areas:\s*"brand actions"\s*"modes modes"/);
+  assert.match(css, /\.mode-switch \{[\s\S]*?grid-area: modes;[\s\S]*?border-top: 1px solid var\(--line\)/);
+  assert.match(css, /\.appearance-menu \.appearance-orb \{ width: 30px; height: 30px; \}/);
+});
