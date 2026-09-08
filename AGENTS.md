@@ -85,12 +85,12 @@
 
 - Cuando el usuario pida ejecutar un roadmap que declare `modelo`, `esfuerzo` y `dependencias`, el agente coordinador debe respetar esos campos y elegir automaticamente el subagente correspondiente entre los modelos disponibles.
 - El coordinador conserva la revision, integracion y publicacion. Los subagentes implementan solamente su nodo en un worktree dedicado bajo `.worktrees/<id-del-nodo>` y devuelven un commit validado.
-- Usa como maximo dos nodos de implementacion en paralelo y solo cuando no compartan archivos ni una dependencia pendiente. Investigacion sin edicion puede ocupar un tercer subagente si existe capacidad.
-- Integra commits de forma serial sobre el `main` mas reciente y vuelve a ejecutar las verificaciones combinadas despues de cada ola.
+- Usa un solo subagente a la vez. No inicies un segundo nodo, ni siquiera de investigacion, hasta que el anterior haya terminado, haya sido revisado y su estado recuperable haya quedado documentado.
+- Integra commits de forma serial sobre el `main` mas reciente y vuelve a ejecutar las verificaciones combinadas despues de cada nodo autorizado.
 - No rebajes silenciosamente un nodo sensible. Si `gpt-6-astra` no esta disponible, usa `gpt-5.6-sol` y registra que la auditoria reforzada queda pendiente. Si falta Terra, usa Sol; si falta Luna, usa Terra. Nunca uses Luna para autenticacion, autorizacion, migraciones destructivas, sincronizacion o decisiones academicas.
 - Un nodo con decisiones humanas pendientes puede producir una investigacion o prueba reversible, pero no debe elegir proveedor, cambiar acceso, contratar servicios, registrar dominios ni publicar por su cuenta.
 - La autorizacion para ejecutar un roadmap permite crear worktrees, editar, probar y crear commits de sus nodos. No implica permiso para integrar, hacer push, cambiar servicios externos o publicar, salvo que el usuario lo autorice expresamente.
-- Para `docs/roadmaps/planificacion-y-cuentas.md`, el coordinador debe avanzar por olas, crear la especificacion individual indicada antes de delegar cada implementacion y detenerse al final de una ola para entregar commits, riesgos y decisiones pendientes.
+- Para `docs/roadmaps/planificacion-y-cuentas.md`, el coordinador debe avanzar nodo por nodo, crear la especificacion individual indicada antes de delegar cada implementacion y detenerse al final de cada nodo para entregar el commit, los riesgos y las decisiones pendientes.
 
 ### Higiene de aprobaciones
 

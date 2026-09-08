@@ -14,6 +14,7 @@ Evolucionar Trayecto desde una herramienta local de progreso y planificación ha
 - `Esfuerzo` es el nivel de razonamiento solicitado al crear el subagente.
 - `Deps.` enumera los nodos que deben estar integrados antes de comenzar.
 - Cada nodo se implementa en un worktree y commit independientes.
+- El coordinador mantiene un unico subagente activo: termina y revisa un nodo antes de iniciar el siguiente.
 - Antes de delegar un nodo, el coordinador crea o completa su especificación en el archivo indicado bajo `docs/tasks/`.
 - Sol coordina, revisa e integra; ningún subagente publica.
 
@@ -40,30 +41,30 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 
 ## Resumen de nodos
 
-| ID | Resultado | Modelo | Esfuerzo | Deps. | Paralelo |
-|---|---|---|---|---|---|
-| F01 | Contrato unificado de datos personales v3 | `gpt-5.6-sol` | high | — | F02 |
-| F02 | CI portable y repositorio canónico | `gpt-5.6-terra` | medium | — | F01 |
-| F03 | Migración local y exportación compatible | `gpt-5.6-sol` | high | F01 | — |
-| F04 | Deshacer, papelera e instantáneas locales | `gpt-5.6-terra` | high | F03 | F05 |
-| F05 | Indicador de guardado y diagnóstico local | `gpt-5.6-luna` | medium | F03 | F04 |
-| P01 | Objetivo de carga y validaciones del semestre | `gpt-5.6-terra` | high | F03 | P02 |
-| P02 | Historial académico personal | `gpt-5.6-sol` | high | F03 | P01 |
-| P03 | Escenarios de planificación | `gpt-5.6-sol` | high | F03 | P04 |
-| P04 | Modelo trazable de oferta y período de dictado | `gpt-5.6-sol` | high | — | P03 |
-| P05 | Línea temporal e hitos | `gpt-5.6-terra` | high | P02 | — |
-| P06 | Alertas por cambios curriculares | `gpt-5.6-sol` | high | F03,P02 | — |
-| B01 | Prueba portable PostgreSQL | `gpt-5.6-sol` | high | F01,F02 | — |
-| B02 | Prueba de identidad OIDC | `gpt-5.6-sol` | high | F02 | B01 |
-| B03 | Esquema y adaptador de persistencia | `gpt-5.6-sol` | high | B01,B02 | — |
-| B04 | Superficie opcional de cuenta | `gpt-5.6-terra` | high | B02,B03 | — |
-| B05 | Migración explícita local → cuenta | `gpt-5.6-sol` | high | F04,B03,B04 | — |
-| B06 | Motor de sincronización y revisiones | `gpt-5.6-sol` | xhigh | B05 | — |
-| B07 | Conflictos y modo sin conexión | `gpt-5.6-terra` | high | B06 | — |
-| B08 | Privacidad, exportación y eliminación | `gpt-5.6-sol` | high | B03,B04 | B07 |
-| B09 | Backups y ensayo de salida | `gpt-5.6-terra` | high | B03,F02 | B08 |
-| S01 | Auditoría integral de seguridad | `gpt-6-astra` | high | B05,B06,B07,B08,B09 | — |
-| R01 | Integración y beta cerrada | `gpt-5.6-sol` | xhigh | S01 | — |
+| ID | Resultado | Modelo | Esfuerzo | Deps. |
+|---|---|---|---|---|
+| F01 | Contrato unificado de datos personales v3 | `gpt-5.6-sol` | high | — |
+| F02 | CI portable y repositorio canónico | `gpt-5.6-terra` | medium | — |
+| F03 | Migración local y exportación compatible | `gpt-5.6-sol` | high | F01 |
+| F04 | Deshacer, papelera e instantáneas locales | `gpt-5.6-terra` | high | F03 |
+| F05 | Indicador de guardado y diagnóstico local | `gpt-5.6-luna` | medium | F03 |
+| P01 | Objetivo de carga y validaciones del semestre | `gpt-5.6-terra` | high | F03 |
+| P02 | Historial académico personal | `gpt-5.6-sol` | high | F03 |
+| P03 | Escenarios de planificación | `gpt-5.6-sol` | high | F03 |
+| P04 | Modelo trazable de oferta y período de dictado | `gpt-5.6-sol` | high | — |
+| P05 | Línea temporal e hitos | `gpt-5.6-terra` | high | P02 |
+| P06 | Alertas por cambios curriculares | `gpt-5.6-sol` | high | F03,P02 |
+| B01 | Prueba portable PostgreSQL | `gpt-5.6-sol` | high | F01,F02 |
+| B02 | Prueba de identidad OIDC | `gpt-5.6-sol` | high | F02 |
+| B03 | Esquema y adaptador de persistencia | `gpt-5.6-sol` | high | B01,B02 |
+| B04 | Superficie opcional de cuenta | `gpt-5.6-terra` | high | B02,B03 |
+| B05 | Migración explícita local → cuenta | `gpt-5.6-sol` | high | F04,B03,B04 |
+| B06 | Motor de sincronización y revisiones | `gpt-5.6-sol` | xhigh | B05 |
+| B07 | Conflictos y modo sin conexión | `gpt-5.6-terra` | high | B06 |
+| B08 | Privacidad, exportación y eliminación | `gpt-5.6-sol` | high | B03,B04 |
+| B09 | Backups y ensayo de salida | `gpt-5.6-terra` | high | B03,F02 |
+| S01 | Auditoría integral de seguridad | `gpt-6-astra` | high | B05,B06,B07,B08,B09 |
+| R01 | Integración y beta cerrada | `gpt-5.6-sol` | xhigh | S01 |
 
 ## Ola 1 — Base local y CI
 
@@ -239,22 +240,20 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Notas sincronizadas: Sol, después de política de privacidad y decisión de retención.
 - Edición colaborativa: fuera del alcance hasta diseñar permisos y auditoría.
 
-## Olas y concurrencia recomendada
+## Orden secuencial recomendado
 
-1. Ola 1A: F01 + F02.
-2. Ola 1B: F03.
-3. Ola 1C: F04 + F05.
-4. Ola 2A: P01 + P02; P04 puede investigar en paralelo sin editar el mismo código.
-5. Ola 2B: P03; luego P05 y P06 de forma serial según archivos afectados.
-6. Ola 3A: B01 + B02, una vez cerradas las decisiones humanas.
-7. Ola 3B en adelante: B03 → B04 → B05 → B06 → B07; B08 y B09 sólo se paralelizan si sus especificaciones no comparten módulos.
-8. Ola 4: S01 → R01.
+Se mantiene un solo subagente activo durante todo el roadmap. El orden prioriza hitos recuperables y evita dejar dos tareas incompletas si se alcanza un límite de uso.
+
+1. Base local: F01 → F02 → F03 → F04 → F05.
+2. Planificación prolongada: P01 → P02 → P04 → P03 → P05 → P06.
+3. Portabilidad y cuentas, después de cerrar las decisiones humanas: B01 → B02 → B03 → B04 → B05 → B06 → B07 → B08 → B09.
+4. Cierre: S01 → R01.
 
 ## Prompt para iniciar la orquestación
 
 Usar en este chat o en una tarea nueva ejecutada con Sol:
 
-> Lee completos `AGENTS.md`, `PROJECT_CONTEXT.md`, `docs/roadmaps/planificacion-y-cuentas.md` y los planes enlazados. Actúa como coordinador del roadmap. Ejecuta solamente la próxima ola cuyas dependencias estén satisfechas. Antes de cada nodo crea o completa su especificación individual en `docs/tasks/`. Crea un worktree separado por nodo bajo `.worktrees/`, delega al modelo y esfuerzo declarados, limita a dos implementaciones simultáneas y revisa todos los resultados. Cada subagente debe ejecutar verificaciones estrechas y `npm test`, crear un commit enfocado y devolver el hash. No integres, hagas push, cambies servicios externos ni publiques sin mi autorización explícita. Al cerrar la ola, entrega los commits, verificaciones, riesgos y decisiones pendientes.
+> Lee completos `AGENTS.md`, `PROJECT_CONTEXT.md`, `docs/roadmaps/planificacion-y-cuentas.md` y los planes enlazados. Actúa como coordinador del roadmap. Ejecuta solamente el próximo nodo del orden recomendado cuyas dependencias estén satisfechas. Antes de delegarlo crea o completa su especificación individual en `docs/tasks/`. Crea un worktree separado bajo `.worktrees/`, delega al modelo y esfuerzo declarados y mantén un solo subagente activo. Revisa su resultado antes de iniciar cualquier otro nodo. El subagente debe ejecutar verificaciones estrechas y `npm test`, crear un commit enfocado y devolver el hash. No integres, hagas push, cambies servicios externos ni publiques sin mi autorización explícita. Al cerrar el nodo, entrega el commit, verificaciones, riesgos y decisiones pendientes.
 
 ## Cómo continuar después de una interrupción
 
@@ -262,4 +261,4 @@ Usar en este chat o en una tarea nueva ejecutada con Sol:
 2. Revisar `git status`, worktrees y commits antes de repetir trabajo.
 3. Considerar completo un nodo sólo si existe commit, verificaciones y criterio de cierre documentado.
 4. No asumir que un worktree recibió integraciones posteriores de `main`.
-5. Reanudar la ola incompleta; no abrir la siguiente hasta revisar e integrar la anterior.
+5. Reanudar el nodo incompleto; no abrir el siguiente hasta terminar y revisar el anterior.
