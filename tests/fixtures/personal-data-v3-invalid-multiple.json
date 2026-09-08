@@ -1,0 +1,80 @@
+{
+  "format": "otro-formato",
+  "formatVersion": 4,
+  "id": " ",
+  "revision": -1,
+  "createdAt": "2026-14-40T10:00:00Z",
+  "updatedAt": "ayer",
+  "lastModifiedByDeviceId": null,
+  "activeProfileId": "perfil-inexistente",
+  "profiles": [
+    {
+      "id": "perfil-repetido",
+      "selection": {
+        "facultyId": "fing",
+        "careerId": "computacion",
+        "planId": "1997",
+        "campusId": null,
+        "trajectoryId": null,
+        "credentialId": null
+      },
+      "curriculumRevision": null,
+      "loadUnit": "puntos",
+      "progress": [
+        { "courseId": "curso-1", "status": "cursando", "updatedAt": null },
+        { "courseId": "curso-1", "status": "approved", "updatedAt": null }
+      ],
+      "planning": {
+        "activeScenarioId": "archivado",
+        "scenarios": [
+          {
+            "id": "archivado",
+            "name": "Escenario archivado",
+            "isPrimary": true,
+            "archived": true,
+            "createdAt": "2026-01-02T00:00:00Z",
+            "updatedAt": "2026-01-01T00:00:00Z",
+            "currentTermId": "cerrado",
+            "terms": [
+              {
+                "id": "cerrado",
+                "label": "Semestre cerrado",
+                "status": "closed",
+                "startsAt": null,
+                "endsAt": null,
+                "loadTarget": { "unit": "credits", "value": 0 },
+                "courseIds": ["curso-2", "curso-2"]
+              }
+            ]
+          },
+          {
+            "id": "otro",
+            "name": "Otro escenario",
+            "isPrimary": true,
+            "archived": false,
+            "createdAt": "2026-01-01T00:00:00Z",
+            "updatedAt": "2026-01-01T00:00:00Z",
+            "currentTermId": "no-existe",
+            "terms": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "perfil-repetido",
+      "selection": {
+        "facultyId": "fing",
+        "careerId": "computacion",
+        "planId": "2025",
+        "progressPlanId": "2025",
+        "campusId": null,
+        "trajectoryId": null,
+        "credentialId": null
+      },
+      "curriculumRevision": null,
+      "loadUnit": "courses",
+      "progress": [],
+      "planning": { "activeScenarioId": null, "scenarios": [] }
+    }
+  ]
+}

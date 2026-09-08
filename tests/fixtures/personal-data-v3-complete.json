@@ -1,0 +1,84 @@
+{
+  "format": "trayecto-personal-data",
+  "formatVersion": 3,
+  "id": "documento-estudiante",
+  "revision": 7,
+  "createdAt": "2025-03-01T12:00:00.000Z",
+  "updatedAt": "2026-09-07T15:30:00.000Z",
+  "lastModifiedByDeviceId": "dispositivo-local-1",
+  "activeProfileId": "perfil-computacion",
+  "profiles": [
+    {
+      "id": "perfil-computacion",
+      "selection": {
+        "facultyId": "fing",
+        "careerId": "ingenieria-computacion",
+        "planId": "computacion-1997",
+        "progressPlanId": "1997",
+        "campusId": "montevideo",
+        "trajectoryId": "ingreso-primer-semestre",
+        "credentialId": "ingeniero-computacion"
+      },
+      "curriculumRevision": "bedelias-2026-08-01",
+      "loadUnit": "credits",
+      "progress": [
+        { "courseId": "1061", "status": "exonerated", "updatedAt": "2025-07-20T18:00:00.000Z" },
+        { "courseId": "1023", "status": "approved", "updatedAt": null },
+        { "courseId": "1031", "status": "pending", "updatedAt": null }
+      ],
+      "planning": {
+        "activeScenarioId": "escenario-principal",
+        "scenarios": [
+          {
+            "id": "escenario-principal",
+            "name": "Trayectoria principal",
+            "isPrimary": true,
+            "archived": false,
+            "createdAt": "2025-03-01T12:00:00.000Z",
+            "updatedAt": "2026-08-01T12:00:00.000Z",
+            "currentTermId": "semestre-2",
+            "terms": [
+              {
+                "id": "semestre-1",
+                "label": "1.er semestre",
+                "status": "closed",
+                "startsAt": "2025-03-10T03:00:00.000Z",
+                "endsAt": "2025-07-19T03:00:00.000Z",
+                "loadTarget": { "unit": "credits", "value": 45 },
+                "courseIds": ["1061", "1023"]
+              },
+              {
+                "id": "semestre-2",
+                "label": "2.º semestre",
+                "status": "in-progress",
+                "startsAt": "2026-08-03T03:00:00.000Z",
+                "endsAt": null,
+                "loadTarget": { "unit": "credits", "value": 40 },
+                "courseIds": ["1031"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "perfil-hemoterapia",
+      "selection": {
+        "facultyId": "medicina",
+        "careerId": "tecnicatura-hemoterapia",
+        "planId": "hemoterapia-2006",
+        "progressPlanId": "hemoterapia-2006",
+        "campusId": "montevideo",
+        "trajectoryId": null,
+        "credentialId": null
+      },
+      "curriculumRevision": null,
+      "loadUnit": "hours",
+      "progress": [],
+      "planning": {
+        "activeScenarioId": null,
+        "scenarios": []
+      }
+    }
+  ]
+}
