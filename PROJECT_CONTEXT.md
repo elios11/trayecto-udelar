@@ -76,6 +76,7 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 
 - Preservar los datos y el progreso existentes al introducir nuevas preferencias o formatos de almacenamiento. Toda migracion debe ser compatible hacia atras o incluir una estrategia explicita.
 - Las preferencias personales sin requisito de sincronizacion remota se guardan localmente en el navegador.
+- Evitar dependencia estructural de un proveedor: el repositorio y los formatos exportables son la fuente portable, el dominio propio no debe depender del host, y cualquier persistencia remota debe usar contratos estandar, migraciones reproducibles y un procedimiento probado de exportacion y restauracion. Sites puede alojar la aplicacion, pero sus servicios propietarios no deben ser la unica forma de ejecutar, autenticar o recuperar Trayecto.
 - No introducir autenticacion, base de datos, telemetria ni servicios externos solo por conveniencia de implementacion; requieren una decision de producto explicita.
 - Mantener accesibilidad, contraste suficiente, estados de foco, navegacion por teclado, soporte tactil y respeto por `prefers-reduced-motion`.
 - Evitar que una funcionalidad nueva cambie identidad visual, metadatos o datos curriculares fuera de su alcance.
