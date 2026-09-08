@@ -20,12 +20,29 @@ import {
   hydratePersonalData,
   parseCompleteTransfer,
   parsePlannerTransferFile,
+  personalDataToAppState,
   personalDataStateFingerprint,
   serializePersonalDataForStorage,
   type PersonalDataAppState,
   type PersonalDataCatalogEntry,
 } from "./personal-data-migration.mjs";
 import type { PersonalDataDocumentV3, PersonalDataSelectionV3 } from "./personal-data.mjs";
+import {
+  RECOVERY_STORAGE_KEY,
+  addDeletedTerm,
+  createDeletedTerm,
+  createRecoverySnapshot,
+  emptyRecoveryStore,
+  matchesPersistedRecoveryStore,
+  parseRecoveryStore,
+  removeRecoveryItem,
+  restoreDeletedTerm,
+  persistRecoveryStore,
+  serializeRecoveryStore,
+} from "./personal-data-recovery.mjs";
+import type { DeletedTermRecovery, RecoveryStore } from "./personal-data-recovery.mjs";
+import { createUndoEntry, isUndoShortcut, pushUndoEntry, takeUndoEntry } from "./personal-data-recovery-session.mjs";
+import type { UndoEntry } from "./personal-data-recovery-session.mjs";
 import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
@@ -608,6 +625,7 @@ type PlannerView = "board" | "compact" | "balance";
 type PlannerTerm = { id: string; label: string; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
 type CurrentPlannerTerms = Record<PlanId, string | null>;
+type RecoveryConfirmation = { kind: "reset" } | { kind: "delete-item"; itemKind: "snapshot" | "deleted-term"; id: string } | { kind: "clear-trash" };
 type ThemeId = "udelar" | "violeta" | "solarized" | "bosque" | "terracota";
 type ThemeScheme = "light" | "dark";
 type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
@@ -691,6 +709,11 @@ export default function Home() {
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
   const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>(() => createAcademicPlanRecord(() => null));
   const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
+  const [recovery, setRecovery] = useState<RecoveryStore>(() => emptyRecoveryStore());
+  const [recoveryHydrated, setRecoveryHydrated] = useState(false);
+  const [undoEntry, setUndoEntry] = useState<UndoEntry | null>(null);
+  const [recoveryConfirmation, setRecoveryConfirmation] = useState<RecoveryConfirmation | null>(null);
+  const [recoveryNotice, setRecoveryNotice] = useState("");
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
@@ -717,6 +740,13 @@ export default function Home() {
   const personalDataRef = useRef<PersonalDataDocumentV3 | null>(null);
   const personalDataFingerprintRef = useRef("");
   const canonicalWriteBlockedRef = useRef(false);
+  const undoStackRef = useRef<UndoEntry[]>([]);
+  const recoveryWriteFailedRef = useRef(false);
+  const recoveryTriggerRef = useRef<HTMLElement | null>(null);
+  const recoveryConfirmRef = useRef<HTMLButtonElement | null>(null);
+  const renameUndoTermRef = useRef<string | null>(null);
+  const undoLastRef = useRef<() => void>(() => {});
+  const recoverySerializedRef = useRef<string | null>(null);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
   const personalDataCatalog = useMemo(() => buildPersonalDataCatalog(registeredPlanData), [registeredPlanData]);
 
@@ -1116,6 +1146,8 @@ export default function Home() {
         }
       }));
       const migrationCatalog = buildPersonalDataCatalog(loadedPlans);
+      const recovered = parseRecoveryStore(localStorage.getItem(RECOVERY_STORAGE_KEY), { now: new Date().toISOString() });
+      let nextRecovery = recovered.ok ? recovered.store : emptyRecoveryStore();
       const hydration = hydratePersonalData(rawStorage, {
         catalog: migrationCatalog,
         now: new Date().toISOString(),
@@ -1146,11 +1178,20 @@ export default function Home() {
           currentPlannerTerms: nextCurrentTerms,
           selection,
         });
-        if (hydration.shouldPersist) localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serializePersonalDataForStorage(hydration.document));
+        if (hydration.shouldPersist) {
+          const migrationSnapshot = createRecoverySnapshot(nextRecovery, hydration.document, {
+            now: new Date().toISOString(), id: crypto.randomUUID(), reason: "Migración local",
+          });
+          if (migrationSnapshot.ok) nextRecovery = migrationSnapshot.store;
+          localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serializePersonalDataForStorage(hydration.document));
+        }
         if (hydration.canonicalWriteBlocked) {
           setImportError({ title: "Recuperamos una copia anterior", message: "La copia v3 guardada está dañada y se conservó sin cambios. Cargamos los datos anteriores disponibles; importá una exportación válida para volver a activar el guardado v3." });
         }
       }
+      if (recovered.issues.length > 0) setRecoveryNotice("Algunas copias de recuperación dañadas o vencidas se omitieron.");
+      setRecovery(nextRecovery);
+      setRecoveryHydrated(true);
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
       if (savedVisualPreferences) {
         const preferences = JSON.parse(savedVisualPreferences) as Record<string, unknown>;
@@ -1179,6 +1220,22 @@ export default function Home() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (!recoveryHydrated) return;
+    try {
+      if (serializeRecoveryStore(recovery, { now: new Date().toISOString() }) === recoverySerializedRef.current) return;
+    } catch {
+      // The write helper reports the validation error through the existing modal.
+    }
+    persistRecoveryImmediately(recovery);
+  }, [recovery, recoveryHydrated]);
+
+  useEffect(() => {
+    if (!recoveryConfirmation) return;
+    const frame = requestAnimationFrame(() => recoveryConfirmRef.current?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [recoveryConfirmation]);
 
   useEffect(() => {
     if (!hydrated || canonicalWriteBlockedRef.current) return;
@@ -1388,7 +1445,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!selected && !importError && !rolloverTermId) return;
+    if (!selected && !importError && !rolloverTermId && !recoveryConfirmation) return;
     const root = document.documentElement;
     const body = document.body;
     const previousRootOverflow = root.style.overflow;
@@ -1408,7 +1465,8 @@ export default function Home() {
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        if (rolloverTermId) setRolloverTermId(null);
+        if (recoveryConfirmation) closeRecoveryConfirmation();
+        else if (rolloverTermId) setRolloverTermId(null);
         else if (importError) setImportError(null);
         else setSelected(null);
       }
@@ -1423,7 +1481,7 @@ export default function Home() {
       verticalScrollTargetRef.current = window.scrollY;
       verticalScrollPositionRef.current = window.scrollY;
     };
-  }, [selected, importError, rolloverTermId]);
+  }, [selected, importError, rolloverTermId, recoveryConfirmation]);
 
   useEffect(() => {
     const scroller = curriculumScrollRef.current;
@@ -1541,8 +1599,84 @@ export default function Home() {
     return status === "pending" ? isCourseUnlocked(course) : status === "approved" ? isExamUnlocked(course) : true;
   };
 
+  const currentPersonalState = (): PersonalDataAppState => ({
+    progress,
+    plannerPlans,
+    currentPlannerTerms,
+    selection: {
+      facultyId: activeFaculty.id,
+      careerId: activeCareer.id,
+      planId: planYear,
+      progressPlanId: activeProgressPlanId,
+      campusId: campusId || null,
+      trajectoryId: trajectoryId || null,
+      credentialId: credentialId || null,
+    },
+  });
+
+  function persistRecoveryImmediately(store: RecoveryStore) {
+    const persisted = persistRecoveryStore(store, {
+      now: new Date().toISOString(),
+      write: (serialized) => localStorage.setItem(RECOVERY_STORAGE_KEY, serialized),
+    });
+    if (persisted.ok) {
+      recoveryWriteFailedRef.current = false;
+      recoverySerializedRef.current = persisted.serialized;
+      return true;
+    }
+    if (!recoveryWriteFailedRef.current) {
+      recoveryWriteFailedRef.current = true;
+      setImportError({ title: "No pudimos guardar la recuperación", message: "El progreso principal sigue guardándose normalmente, pero la papelera o las instantáneas de este dispositivo no pudieron actualizarse." });
+    }
+    return false;
+  }
+
+  function currentPersonalDocument() {
+    const current = appStateToPersonalData(currentPersonalState(), {
+      catalog: personalDataCatalog,
+      now: new Date().toISOString(),
+      documentId: personalDataRef.current?.id ?? crypto.randomUUID(),
+      previousDocument: personalDataRef.current,
+    });
+    if (!current.ok) {
+      setImportError({ title: "No pudimos preparar tus datos actuales", message: "No aplicamos este cambio porque el estado local no pudo validarse." });
+      return null;
+    }
+    return current.document;
+  }
+
+  const rememberUndo = (description: string) => {
+    const entry = createUndoEntry(description, currentPersonalState(), recovery);
+    undoStackRef.current = pushUndoEntry(undoStackRef.current, entry);
+    setUndoEntry(entry);
+  };
+
+  const undoLast = () => {
+    const next = takeUndoEntry(undoStackRef.current);
+    const entry = next.entry;
+    if (!entry) return;
+    const now = new Date().toISOString();
+    if (!matchesPersistedRecoveryStore(entry.recovery, recoverySerializedRef.current, { now }) && !persistRecoveryImmediately(entry.recovery)) return;
+    undoStackRef.current = next.stack;
+    setProgress(entry.state.progress);
+    setPlannerPlans(entry.state.plannerPlans);
+    setCurrentPlannerTerms(entry.state.currentPlannerTerms);
+    if (entry.state.selection) {
+      setPlanYear(entry.state.selection.planId);
+      setFacultyId(entry.state.selection.facultyId);
+      setTrajectoryId(entry.state.selection.trajectoryId ?? "");
+      setCampusId(entry.state.selection.campusId ?? "");
+      setCredentialId(entry.state.selection.credentialId ?? "");
+    }
+    setRecovery(entry.recovery);
+    setUndoEntry(next.stack.at(-1) ?? null);
+    setRecoveryNotice(`Se deshizo: ${entry.description}.`);
+  };
+  undoLastRef.current = undoLast;
+
   const cycleStatus = (course: Course) => {
     if (course.placeholder || !isUnlocked(course) || isFixedPlacementTest(course)) return;
+    rememberUndo(`cambio de estado de ${course.name}`);
     setStatuses((current) => {
       const now = current[course.id] ?? "pending";
       if (course.placementTest) {
@@ -1602,7 +1736,7 @@ export default function Home() {
     });
   };
 
-  const loadCourseIdsForPlan = async (targetPlanId: PlanId) => {
+  const loadCourseIdsForPlan = async (targetPlanId: PlanId, loadedPlans = registeredPlanData) => {
     if (targetPlanId === "2025") return new Set(plan2025CatalogCourses.map((course) => course.id));
     if (targetPlanId === "1997") {
       const validCourseIds = new Set(plan1997AvailableCourses.map((course) => course.id));
@@ -1632,7 +1766,7 @@ export default function Home() {
       return validCourseIds;
     }
     if (isRegisteredAcademicPlan(targetPlanId)) {
-      const projection = registeredPlanData[targetPlanId] ?? await loadRegisteredPlan(targetPlanId);
+      const projection = loadedPlans[targetPlanId] ?? await loadRegisteredPlan(targetPlanId);
       return projection ? new Set(projection.courses.map((course) => course.id)) : null;
     }
     return null;
@@ -1652,17 +1786,17 @@ export default function Home() {
         // The transfer parser will reject a plan whose catalog cannot be resolved.
       }
     }));
-    return buildPersonalDataCatalog(loadedPlans);
+    return { catalog: buildPersonalDataCatalog(loadedPlans), loadedPlans };
   };
 
-  const validateTransferredCourses = async (document: PersonalDataDocumentV3) => {
+  const validateTransferredCourses = async (document: PersonalDataDocumentV3, loadedPlans = registeredPlanData) => {
     for (const profile of document.profiles) {
       const candidateIds = [
         ...profile.progress.map((entry) => entry.courseId),
         ...profile.planning.scenarios.flatMap((scenario) => scenario.terms.flatMap((term) => term.courseIds)),
       ];
       if (candidateIds.length === 0) continue;
-      const validCourseIds = await loadCourseIdsForPlan(profile.selection.planId);
+      const validCourseIds = await loadCourseIdsForPlan(profile.selection.planId, loadedPlans);
       if (!validCourseIds || candidateIds.some((courseId) => !validCourseIds.has(courseId))) return false;
     }
     return true;
@@ -1703,6 +1837,59 @@ export default function Home() {
     });
   };
 
+  const createCurrentSnapshot = (reason: string) => {
+    const document = currentPersonalDocument();
+    if (!document) return false;
+    const snapshot = createRecoverySnapshot(recovery, document, {
+      now: new Date().toISOString(), id: crypto.randomUUID(), reason,
+    });
+    if (!snapshot.ok) {
+      setImportError({ title: "No pudimos preparar una copia", message: "No aplicamos el cambio porque no se pudo validar la copia de recuperación." });
+      return false;
+    }
+    if (!persistRecoveryImmediately(snapshot.store)) return false;
+    setRecovery(snapshot.store);
+    return true;
+  };
+
+  const restoreSnapshot = async (snapshotId: string) => {
+    const snapshot = recovery.snapshots.find((entry) => entry.id === snapshotId);
+    if (!snapshot) return;
+    const transferResources = await loadTransferCatalog(snapshot.document);
+    if (!await validateTransferredCourses(snapshot.document, transferResources.loadedPlans)) {
+      setImportError({ title: "No pudimos restaurar la instantánea", message: "La copia contiene materias que ya no pertenecen al catálogo disponible. Tus datos actuales no se modificaron." });
+      return;
+    }
+    const restored = personalDataToAppState(snapshot.document, transferResources.catalog);
+    if (!restored.ok || !createCurrentSnapshot("Copia de seguridad antes de restaurar")) {
+      if (!restored.ok) setImportError({ title: "No pudimos restaurar la instantánea", message: "La copia no es compatible con el catálogo académico actual. Tus datos actuales no se modificaron." });
+      return;
+    }
+    applyImportedDocument(restored.document, restored.state);
+    setRecoveryNotice(`Se restauró la instantánea: ${snapshot.reason}.`);
+  };
+
+  const restoreTrashedTerm = (item: DeletedTermRecovery) => {
+    const document = currentPersonalDocument();
+    if (!document) return;
+    const restored = restoreDeletedTerm(document, item);
+    if (!restored.ok) {
+      setImportError({ title: "No pudimos restaurar el semestre", message: restored.code === "missing_context" ? "El plan o escenario original todavía no está disponible. Conservamos el semestre en la papelera." : "El semestre no se puede restaurar sin crear una duplicación. Conservamos la copia en la papelera." });
+      return;
+    }
+    const state = personalDataToAppState(restored.document, personalDataCatalog);
+    if (!state.ok) {
+      setImportError({ title: "No pudimos restaurar el semestre", message: "No pudimos validar el plan restaurado. Conservamos tus datos actuales y la copia en la papelera." });
+      return;
+    }
+    const removed = removeRecoveryItem(recovery, "deleted-term", item.id, { now: new Date().toISOString() });
+    if (!removed.ok || !persistRecoveryImmediately(removed.store)) return;
+    rememberUndo(`restauración de ${item.term.label}`);
+    setRecovery(removed.store);
+    applyImportedDocument(restored.document, state.state);
+    setRecoveryNotice(restored.omittedCourseIds.length ? `Se restauró ${item.term.label}; ${restored.omittedCourseIds.length} materias ya estaban asignadas y no se duplicaron.` : `Se restauró ${item.term.label}.`);
+  };
+
   const importProgress = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -1714,18 +1901,20 @@ export default function Home() {
           setImportError({ title: "Es un archivo de planificador", message: "Para importar solo la planificación, usá la opción “Solo planificador”." });
           return;
         }
-        const transferCatalog = await loadTransferCatalog(parsed);
-        const transfer = parseCompleteTransfer(parsed, { catalog: transferCatalog, now: new Date().toISOString(), documentId: crypto.randomUUID() });
+        const transferResources = await loadTransferCatalog(parsed);
+        const transfer = parseCompleteTransfer(parsed, { catalog: transferResources.catalog, now: new Date().toISOString(), documentId: crypto.randomUUID() });
         if (!transfer.ok) {
           const futureVersion = transfer.issues.some((entry) => entry.code === "unsupported_version");
           setImportError({ title: futureVersion ? "Versión no compatible" : "Archivo incompatible", message: futureVersion ? "Este archivo fue creado con una versión de Trayecto que todavía no podemos importar." : "El archivo no contiene datos personales válidos de Trayecto o tiene referencias académicas rotas." });
           return;
         }
-        if (!await validateTransferredCourses(transfer.document)) {
+        if (!await validateTransferredCourses(transfer.document, transferResources.loadedPlans)) {
           setImportError({ title: "Materias no válidas", message: "El archivo incluye materias que no pertenecen a uno de sus planes. No se modificó ningún dato." });
           return;
         }
+        if (!createCurrentSnapshot("Importación completa")) return;
         applyImportedDocument(transfer.document, transfer.state);
+        setRecoveryNotice("Se importaron los datos y se creó una instantánea del estado anterior.");
       } catch {
         setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
       }
@@ -1742,8 +1931,8 @@ export default function Home() {
     reader.onload = async () => {
       try {
         const parsed = JSON.parse(String(reader.result)) as unknown;
-        const transferCatalog = await loadTransferCatalog(parsed);
-        const transfer = parsePlannerTransferFile(parsed, { catalog: transferCatalog, now: new Date().toISOString(), documentId: crypto.randomUUID(), planId: planYear });
+        const transferResources = await loadTransferCatalog(parsed);
+        const transfer = parsePlannerTransferFile(parsed, { catalog: transferResources.catalog, now: new Date().toISOString(), documentId: crypto.randomUUID(), planId: planYear });
         if (!transfer.ok) {
           const differentPlan = transfer.issues.some((entry) => entry.code === "different_plan");
           if (differentPlan) {
@@ -1753,15 +1942,18 @@ export default function Home() {
           setImportError({ title: "Archivo incompatible", message: "Este archivo no contiene una planificación compartida de Trayecto. Las exportaciones completas también se pueden importar como solo planificador." });
           return;
         }
-        const validCourseIds = await loadCourseIdsForPlan(planYear);
+        const validCourseIds = await loadCourseIdsForPlan(planYear, transferResources.loadedPlans);
         const plannerCourseIds = transfer.planner.terms.flatMap((term) => term.courseIds);
         if (!validCourseIds || plannerCourseIds.some((courseId) => !validCourseIds.has(courseId))) {
           setImportError({ title: "Planificador inválido", message: "La planificación incluye materias que no pertenecen al plan seleccionado." });
           return;
         }
+        if (!createCurrentSnapshot("Importación de planificador")) return;
+        rememberUndo("importación de planificador");
         setPlannerPlans((current) => ({ ...current, [planYear]: transfer.planner.terms }));
         setCurrentPlannerTerms((current) => ({ ...current, [planYear]: transfer.planner.currentTermId }));
         setAppMode("planner");
+        setRecoveryNotice("Se importó la planificación y se creó una instantánea del estado anterior.");
       } catch {
         setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
       }
@@ -1771,9 +1963,17 @@ export default function Home() {
     event.target.value = "";
   };
 
-  const resetProgress = () => {
-    if (window.confirm(`¿Querés borrar el progreso guardado para el Plan ${planYear}?`)) setStatuses({});
-  };
+  function beginRecoveryConfirmation(confirmation: RecoveryConfirmation) {
+    recoveryTriggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    setRecoveryConfirmation(confirmation);
+  }
+
+  function closeRecoveryConfirmation() {
+    setRecoveryConfirmation(null);
+    requestAnimationFrame(() => recoveryTriggerRef.current?.focus());
+  }
+
+  const resetProgress = () => beginRecoveryConfirmation({ kind: "reset" });
 
   const moveCurriculum = (direction: -1 | 1) => {
     const scroller = curriculumScrollRef.current;
@@ -1787,31 +1987,73 @@ export default function Home() {
   const updatePlannerTerms = (updater: (terms: PlannerTerm[]) => PlannerTerm[]) => {
     setPlannerPlans((current) => ({ ...current, [planYear]: updater(current[planYear] ?? createDefaultTerms()) }));
   };
-  const addPlannerTerm = () => updatePlannerTerms((terms) => [
+  const addPlannerTerm = () => {
+    rememberUndo("creación de semestre");
+    updatePlannerTerms((terms) => [
     ...terms,
     { id: `term-${Date.now()}`, label: `Semestre ${terms.length + 1}`, courseIds: [] },
-  ]);
-  const renamePlannerTerm = (termId: string, label: string) => updatePlannerTerms((terms) => terms.map((term) => term.id === termId ? { ...term, label } : term));
+    ]);
+  };
+  const renamePlannerTerm = (termId: string, label: string) => {
+    if (renameUndoTermRef.current !== termId) {
+      rememberUndo("cambio de nombre de semestre");
+      renameUndoTermRef.current = termId;
+    }
+    updatePlannerTerms((terms) => terms.map((term) => term.id === termId ? { ...term, label } : term));
+  };
   const removePlannerTerm = (termId: string) => {
+    if (plannerTerms.length === 1) return;
+    const document = currentPersonalDocument();
+    if (!document) return;
+    const term = plannerTerms.find((candidate) => candidate.id === termId);
+    const profile = document.profiles.find((candidate) => candidate.selection.planId === planYear);
+    const scenario = profile?.planning.scenarios.find((candidate) => candidate.id === profile.planning.activeScenarioId)
+      ?? profile?.planning.scenarios.find((candidate) => candidate.isPrimary);
+    const storedTerm = scenario?.terms.find((candidate) => candidate.id === termId)
+      ?? (term ? { ...term, status: termId === currentPlannerTermId ? "in-progress" as const : "planned" as const, startsAt: null, endsAt: null, loadTarget: null } : null);
+    if (!profile || !scenario || !storedTerm) {
+      setImportError({ title: "No pudimos mover el semestre a la papelera", message: "Esperá a que termine de guardarse la planificación antes de eliminar el semestre." });
+      return;
+    }
+    const deleted = createDeletedTerm({ profileId: profile.id, planId: planYear, scenarioId: scenario.id, originalIndex: plannerTerms.findIndex((candidate) => candidate.id === termId), wasCurrent: plannerCurrentTerm === termId, term: storedTerm }, { now: new Date().toISOString(), id: crypto.randomUUID() });
+    const added = deleted ? addDeletedTerm(recovery, deleted, { now: new Date().toISOString() }) : null;
+    if (!added?.ok) {
+      setImportError({ title: "No pudimos mover el semestre a la papelera", message: "No se eliminó el semestre porque no pudimos guardar una copia recuperable." });
+      return;
+    }
+    if (!persistRecoveryImmediately(added.store)) return;
+    rememberUndo(`eliminación de ${storedTerm.label}`);
+    setRecovery(added.store);
     updatePlannerTerms((terms) => terms.length === 1 ? terms : terms.filter((term) => term.id !== termId));
     if (currentPlannerTermId === termId) setCurrentPlannerTerms((current) => ({ ...current, [planYear]: null }));
+    setRecoveryNotice(`${storedTerm.label} se movió a la papelera de este dispositivo.`);
   };
-  const assignPlannerCourse = (courseId: string, termId: string) => updatePlannerTerms((terms) => terms.map((term) => ({
+  const assignPlannerCourse = (courseId: string, termId: string) => {
+    rememberUndo("asignación de materia en el planificador");
+    updatePlannerTerms((terms) => terms.map((term) => ({
     ...term,
     courseIds: term.id === termId
       ? [...term.courseIds.filter((id) => id !== courseId), courseId]
       : term.courseIds.filter((id) => id !== courseId),
-  })));
-  const unassignPlannerCourse = (courseId: string) => updatePlannerTerms((terms) => terms.map((term) => ({ ...term, courseIds: term.courseIds.filter((id) => id !== courseId) })));
-  const setCurrentPlannerTerm = (termId: string) => setCurrentPlannerTerms((current) => ({ ...current, [planYear]: termId }));
+    })));
+  };
+  const unassignPlannerCourse = (courseId: string) => {
+    rememberUndo("retiro de materia del planificador");
+    updatePlannerTerms((terms) => terms.map((term) => ({ ...term, courseIds: term.courseIds.filter((id) => id !== courseId) })));
+  };
+  const setCurrentPlannerTerm = (termId: string) => {
+    rememberUndo("cambio de semestre actual");
+    setCurrentPlannerTerms((current) => ({ ...current, [planYear]: termId }));
+  };
   const finishPlannerTerm = (moveIncomplete: boolean) => {
     const termId = rolloverTermId ?? currentPlannerTermId;
     const currentIndex = plannerTerms.findIndex((term) => term.id === termId);
     if (currentIndex < 0) return;
     const sourceTerm = plannerTerms[currentIndex];
+    rememberUndo(`cierre de ${sourceTerm.label}`);
     const unfinishedIds = new Set(sourceTerm.courseIds.filter((id) => (statuses[id] ?? "pending") !== "exonerated"));
     const existingNext = plannerTerms[currentIndex + 1];
-    const nextTerm: PlannerTerm = existingNext ?? { id: "term-" + Date.now(), label: "Semestre " + (plannerTerms.length + 1), courseIds: [] };
+    const nextTerm: PlannerTerm = existingNext ?? { id: "term-" + crypto.randomUUID(), label: "Semestre " + (plannerTerms.length + 1), courseIds: [] };
     updatePlannerTerms((terms) => {
       const extended = existingNext ? terms : [...terms, nextTerm];
       if (!moveIncomplete || unfinishedIds.size === 0) return extended;
@@ -1824,6 +2066,39 @@ export default function Home() {
     setCurrentPlannerTerms((current) => ({ ...current, [planYear]: nextTerm.id }));
     setRolloverTermId(null);
   };
+
+  const confirmRecoveryAction = () => {
+    if (!recoveryConfirmation) return;
+    if (recoveryConfirmation.kind === "reset") {
+      if (!createCurrentSnapshot("Reinicio de progreso")) return;
+      rememberUndo("reinicio de progreso");
+      setStatuses({});
+      setRecoveryNotice("Se reinició el progreso y se creó una instantánea del estado anterior.");
+    } else if (recoveryConfirmation.kind === "clear-trash") {
+      const cleared = { ...recovery, deletedTerms: [] };
+      if (!persistRecoveryImmediately(cleared)) return;
+      setRecovery(cleared);
+      setRecoveryNotice("Se vació la papelera de este dispositivo.");
+    } else {
+      const removed = removeRecoveryItem(recovery, recoveryConfirmation.itemKind, recoveryConfirmation.id, { now: new Date().toISOString() });
+      if (!removed.ok || !persistRecoveryImmediately(removed.store)) return;
+      setRecovery(removed.store);
+      setRecoveryNotice(recoveryConfirmation.itemKind === "snapshot" ? "Se eliminó la instantánea." : "Se eliminó el semestre definitivamente.");
+    }
+    closeRecoveryConfirmation();
+  };
+
+  useEffect(() => {
+    const handleUndoShortcut = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (!isUndoShortcut({ key: event.key, ctrlKey: event.ctrlKey, metaKey: event.metaKey, target, modalOpen: Boolean(selected || importError || rolloverTermId || recoveryConfirmation) })) return;
+      if (!undoStackRef.current.length) return;
+      event.preventDefault();
+      undoLastRef.current();
+    };
+    document.addEventListener("keydown", handleUndoShortcut);
+    return () => document.removeEventListener("keydown", handleUndoShortcut);
+  }, [selected, importError, rolloverTermId, recoveryConfirmation, progress, plannerPlans, currentPlannerTerms, planYear, activeFaculty.id, activeCareer.id, activeProgressPlanId, campusId, trajectoryId, credentialId]);
   const assignedPlannerIds = new Set(plannerTerms.flatMap((term) => term.courseIds));
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const plannedHours = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + (course.hours ?? 0) : sum, 0);
@@ -1874,6 +2149,7 @@ export default function Home() {
 
   return (
     <main className="app-shell">
+      <p className="recovery-live-message" aria-live="polite">{recoveryNotice}</p>
       <header className="topbar">
         <div className="brand-block">
           <svg viewBox="0 0 53 60" className="udelar-logo" role="img" aria-labelledby="udelar-logo-title">
@@ -1908,6 +2184,30 @@ export default function Home() {
                 <button type="button" onClick={() => { importRef.current?.click(); dataMenuRef.current!.open = false; }}>Todo · currícula y planificador</button>
                 <button type="button" onClick={() => { plannerImportRef.current?.click(); dataMenuRef.current!.open = false; }}>Solo planificador</button>
               </div>
+              <details className="data-panel-section recovery-panel">
+                <summary aria-label={`Recuperación local: ${recovery.snapshots.length} instantáneas y ${recovery.deletedTerms.length} semestres en papelera`}>Recuperación · {recovery.snapshots.length} instantáneas · {recovery.deletedTerms.length} en papelera</summary>
+                <p>Estas copias quedan sólo en este dispositivo y no se exportan.</p>
+                <button type="button" onClick={undoLast} disabled={!undoEntry}>Deshacer{undoEntry ? `: ${undoEntry.description}` : ""}</button>
+                <div className="recovery-list">
+                  <strong>Instantáneas</strong>
+                  {recovery.snapshots.length === 0 ? <span>No hay instantáneas todavía.</span> : recovery.snapshots.map((snapshot) => <div key={snapshot.id}>
+                    <span>{snapshot.reason} · {new Date(snapshot.createdAt).toLocaleString("es-UY")}</span>
+                    <button type="button" onClick={() => void restoreSnapshot(snapshot.id)}>Restaurar</button>
+                    <button type="button" onClick={() => beginRecoveryConfirmation({ kind: "delete-item", itemKind: "snapshot", id: snapshot.id })}>Eliminar</button>
+                  </div>)}
+                </div>
+                <div className="recovery-list">
+                  <strong>Papelera de semestres</strong>
+                  {recovery.deletedTerms.length === 0 ? <span>No hay semestres eliminados.</span> : <>
+                    {recovery.deletedTerms.map((item) => <div key={item.id}>
+                      <span>{item.term.label} · plan {item.planId} · {new Date(item.deletedAt).toLocaleString("es-UY")}</span>
+                      <button type="button" onClick={() => restoreTrashedTerm(item)}>Restaurar</button>
+                      <button type="button" onClick={() => beginRecoveryConfirmation({ kind: "delete-item", itemKind: "deleted-term", id: item.id })}>Eliminar definitivamente</button>
+                    </div>)}
+                    <button type="button" onClick={() => beginRecoveryConfirmation({ kind: "clear-trash" })}>Vaciar papelera</button>
+                  </>}
+                </div>
+              </details>
             </div>
           </details>
           <input ref={importRef} type="file" accept="application/json" hidden onChange={importProgress} />
@@ -2307,7 +2607,7 @@ export default function Home() {
                         <header>
                           <span>{String(termIndex + 1).padStart(2, "0")}</span>
                           <div>
-                            <input value={term.label} onChange={(event) => renamePlannerTerm(term.id, event.target.value)} aria-label={`Nombre del semestre ${termIndex + 1}`} />
+                            <input value={term.label} onChange={(event) => renamePlannerTerm(term.id, event.target.value)} onBlur={() => { renameUndoTermRef.current = null; }} aria-label={`Nombre del semestre ${termIndex + 1}`} />
                             <p>{termCourses.length} materias{hasPublishedCourseLoad && <> · <strong>{termLoad} {usesPublishedHours ? "horas planificadas" : "créditos planeados"}</strong></>}</p>
                             {isCurrentTerm && <>
                               <div className="current-term-progress" role="progressbar" aria-label={"Progreso de " + term.label} aria-valuemin={0} aria-valuemax={termLoad} aria-valuenow={completedTermLoad}><i style={{ width: (termLoad ? completedTermLoad / termLoad * 100 : 0) + "%" }} /></div>
@@ -2445,6 +2745,20 @@ export default function Home() {
               <button type="button" className="primary-button" onClick={() => finishPlannerTerm(true)}>{rolloverIncompleteCourses.length > 0 ? "Mover y continuar" : "Continuar"}</button>
               {rolloverIncompleteCourses.length > 0 && <button type="button" className="secondary-button" onClick={() => finishPlannerTerm(false)}>Cerrar sin mover</button>}
               <button type="button" className="quiet-button" onClick={() => setRolloverTermId(null)}>Cancelar</button>
+            </div>
+          </section>
+        </div>
+      )}
+
+      {recoveryConfirmation && (
+        <div className="modal-backdrop">
+          <section className="import-modal" role="dialog" aria-modal="true" aria-labelledby="recovery-confirmation-title">
+            <div className="modal-symbol" aria-hidden="true">!</div>
+            <h2 id="recovery-confirmation-title">{recoveryConfirmation.kind === "reset" ? "¿Reiniciar progreso?" : recoveryConfirmation.kind === "clear-trash" ? "¿Vaciar la papelera?" : "¿Eliminar definitivamente?"}</h2>
+            <p>{recoveryConfirmation.kind === "reset" ? "Se creará una instantánea local antes de reiniciar el progreso de este plan." : recoveryConfirmation.kind === "clear-trash" ? "Los semestres eliminados dejarán de poder restaurarse en este dispositivo." : "Esta copia local dejará de estar disponible para restauración."}</p>
+            <div className="rollover-actions">
+              <button ref={recoveryConfirmRef} type="button" className="primary-button" onClick={confirmRecoveryAction}>{recoveryConfirmation.kind === "reset" ? "Reiniciar" : "Eliminar"}</button>
+              <button type="button" className="quiet-button" onClick={closeRecoveryConfirmation}>Cancelar</button>
             </div>
           </section>
         </div>
