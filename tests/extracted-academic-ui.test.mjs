@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+const migration = await readFile(new URL("../app/personal-data-migration.mjs", import.meta.url), "utf8");
 const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
 test("la sede es un selector accesible e independiente de plan y trayectoria", () => {
@@ -10,7 +11,7 @@ test("la sede es un selector accesible e independiente de plan y trayectoria", (
   assert.match(page, /setCampusId\(nextCampus\.id\)/);
   assert.match(page, /resolveCampusPathway\(activeRegisteredPlan\?\.pathways \?\? \{\}, nextCampus, ""\)/);
   assert.match(page, /JSON\.stringify\(\{ facultyId: activeFaculty\.id, planId: planYear, trajectoryId, campusId \}\)/);
-  assert.match(page, /typeof selection\.campusId === "string"/);
+  assert.match(migration, /validateOptionalReference\(value\.campusId, descriptor\.campusIds/);
 });
 
 test("la UI no presenta la extracción pendiente como auditoría oficial", () => {

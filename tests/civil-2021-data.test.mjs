@@ -7,6 +7,7 @@ const catalog = JSON.parse(await readFile(new URL("../app/data/civil-2021-electi
 const source = JSON.parse(await readFile(new URL("../data/fing/civil-2021-trayectorias.json", import.meta.url), "utf8"));
 const snapshot = JSON.parse(await readFile(new URL("../data/bedelias/fing-ingenieria-civil-2021.json", import.meta.url), "utf8"));
 const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+const migrationSource = await readFile(new URL("../app/personal-data-migration.mjs", import.meta.url), "utf8");
 const catalogSource = await readFile(new URL("../app/academic-catalog.ts", import.meta.url), "utf8");
 
 test("projects the current Civil Engineering Plan 2021 identity", () => {
@@ -94,5 +95,6 @@ test("keeps source provenance, clean validation and storage migration", () => {
   assert.match(catalogSource, /id: "civil-2021"/);
   assert.match(pageSource, /createAcademicPlanRecord\(\(\) => \(\{\}\)\)/);
   assert.match(pageSource, /createAcademicPlanRecord\(\(\) => createDefaultTerms\(\)\)/);
-  assert.match(pageSource, /createAcademicPlanRecord\(\(planId\) => typeof parsed\[planId\]/);
+  assert.match(pageSource, /localStorage\.getItem\(PERSONAL_DATA_STORAGE_KEY\)/);
+  assert.match(migrationSource, /progressPlans\[descriptor\.progressPlanId\] \?\? \{\}/);
 });

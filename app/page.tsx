@@ -4,11 +4,28 @@ import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
 import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, type CredentialId, type PlanId } from "./academic-catalog";
-import { isRegisteredAcademicPlan, isRegisteredPathway, loadRegisteredAcademicPlan, registeredAcademicPlans } from "./academic-plan-registry";
+import { isRegisteredAcademicPlan, loadRegisteredAcademicPlan, registeredAcademicPlans } from "./academic-plan-registry";
 import { resolveAcademicOption } from "./academic-option.mjs";
 import { availablePathwayEntries, resolveCampus, resolveCampusPathway } from "./academic-campus.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
+import {
+  LEGACY_ACADEMIC_SELECTION_STORAGE_KEY,
+  LEGACY_COMPUTATION_PROGRESS_STORAGE_KEY,
+  LEGACY_CURRENT_TERM_STORAGE_KEY,
+  LEGACY_PLANNER_STORAGE_KEY,
+  LEGACY_PROGRESS_STORAGE_KEY,
+  PERSONAL_DATA_STORAGE_KEY,
+  appStateToPersonalData,
+  hydratePersonalData,
+  parseCompleteTransfer,
+  parsePlannerTransferFile,
+  personalDataStateFingerprint,
+  serializePersonalDataForStorage,
+  type PersonalDataAppState,
+  type PersonalDataCatalogEntry,
+} from "./personal-data-migration.mjs";
+import type { PersonalDataDocumentV3, PersonalDataSelectionV3 } from "./personal-data.mjs";
 import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
@@ -197,7 +214,7 @@ type RegisteredProjection = {
   source: { reviewedAt: string | null; careerPage: string; planDocument: string; bedeliasExtractedAt: string; bedeliasContentHash: string; bedeliasPlanUrl?: string };
   plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
-  courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
+  courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
   pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
@@ -208,6 +225,62 @@ type RegisteredProjection = {
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
 const plan2025Data = plan2025DataJson as unknown as Plan2025Projection;
+
+const buildPersonalDataCatalog = (loadedPlans: Partial<Record<PlanId, RegisteredProjection>> = {}): PersonalDataCatalogEntry[] => (
+  academicCatalog.flatMap((faculty) => faculty.careers.flatMap((career) => career.plans.map((plan) => {
+    const registration = registeredAcademicPlans[plan.id];
+    const loaded = loadedPlans[plan.id];
+    const campuses = loaded?.campuses ?? [];
+    const usesCredits = !registration || registration.minCredits > 0 || (loaded?.plan.minCredits ?? 0) > 0 || loaded?.courses.some((course) => course.credits > 0);
+    const usesHours = !usesCredits && ((loaded?.plan.totalHours ?? 0) > 0 || loaded?.courses.some((course) => (course.hours ?? 0) > 0));
+    return {
+      facultyId: faculty.id,
+      careerId: career.id,
+      planId: plan.id,
+      progressPlanId: registration?.progressPlanId ?? plan.id,
+      defaultTrajectoryId: plan.defaultTrajectoryId,
+      defaultCredentialId: plan.defaultCredentialId,
+      trajectoryIds: registration ? [...registration.pathwayIds] : [plan.defaultTrajectoryId],
+      campusIds: campuses.map((campus) => campus.id),
+      credentialIds: loaded?.creditStructure.credentials.map((credential) => credential.id) ?? [plan.defaultCredentialId],
+      loadUnit: usesCredits ? "credits" : usesHours ? "hours" : "courses",
+    };
+  })))
+);
+
+const collectStoredPlanIds = (rawValues: Array<string | null>, catalog: PersonalDataCatalogEntry[]) => {
+  const planIds = new Set<PlanId>();
+  for (const raw of rawValues) {
+    if (!raw) continue;
+    try {
+      const value = JSON.parse(raw) as unknown;
+      if (!value || typeof value !== "object" || Array.isArray(value)) continue;
+      const record = value as Record<string, unknown>;
+      if (Array.isArray(record.profiles)) {
+        for (const profile of record.profiles) {
+          if (profile && typeof profile === "object" && !Array.isArray(profile)) {
+            const selection = (profile as Record<string, unknown>).selection;
+            if (selection && typeof selection === "object" && !Array.isArray(selection) && typeof (selection as Record<string, unknown>).planId === "string") {
+              planIds.add((selection as Record<string, unknown>).planId as PlanId);
+            }
+          }
+        }
+      }
+      if (typeof record.planId === "string") planIds.add(record.planId);
+      if (typeof record.plan === "string") planIds.add(record.plan);
+      for (const [key, candidate] of Object.entries(record)) {
+        if (catalog.some((entry) => entry.planId === key || entry.progressPlanId === key)
+          && candidate && typeof candidate === "object"
+          && (Array.isArray(candidate) ? candidate.some((term) => term && typeof term === "object" && Array.isArray((term as Record<string, unknown>).courseIds) && ((term as Record<string, unknown>).courseIds as unknown[]).length > 0) : Object.keys(candidate).length > 0)) {
+          for (const entry of catalog.filter((item) => item.planId === key || item.progressPlanId === key)) planIds.add(entry.planId);
+        }
+      }
+    } catch {
+      // The migration module reports malformed JSON without preventing other keys from loading.
+    }
+  }
+  return planIds;
+};
 const plan1997PlacementTestSource = "https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf";
 
 const plan1997BaseCourses: Course[] = [
@@ -527,15 +600,14 @@ const stateLabels: Record<CourseStatus, string> = {
   exonerated: "Exonerada",
 };
 
-const STORAGE_KEY = "trayecto-udelar-progress-v2";
-const LEGACY_STORAGE_KEY = "trayecto-udelar-demo-v1";
+const STORAGE_KEY = LEGACY_PROGRESS_STORAGE_KEY;
+const LEGACY_STORAGE_KEY = LEGACY_COMPUTATION_PROGRESS_STORAGE_KEY;
 type PlanProgress = Record<PlanId, Record<string, CourseStatus>>;
 type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
 type PlannerTerm = { id: string; label: string; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
 type CurrentPlannerTerms = Record<PlanId, string | null>;
-type PlannerTransfer = { terms: PlannerTerm[]; currentTermId: string | null };
 type ThemeId = "udelar" | "violeta" | "solarized" | "bosque" | "terracota";
 type ThemeScheme = "light" | "dark";
 type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
@@ -552,10 +624,10 @@ type VisualPreferences = {
   showPlannerCatalog: boolean;
 };
 
-const PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
-const CURRENT_TERM_STORAGE_KEY = "trayecto-udelar-current-term-v1";
+const PLANNER_STORAGE_KEY = LEGACY_PLANNER_STORAGE_KEY;
+const CURRENT_TERM_STORAGE_KEY = LEGACY_CURRENT_TERM_STORAGE_KEY;
 const VISUAL_PREFERENCES_STORAGE_KEY = "trayecto-udelar-visual-preferences-v1";
-const ACADEMIC_SELECTION_STORAGE_KEY = "trayecto-udelar-academic-selection-v1";
+const ACADEMIC_SELECTION_STORAGE_KEY = LEGACY_ACADEMIC_SELECTION_STORAGE_KEY;
 const themeOptions: Array<{ id: ThemeId; label: string; colors: [string, string, string, string] }> = [
   { id: "udelar", label: "Udelar", colors: ["#5b8eaa", "#9ac6d2", "#f1f5f5", "#142229"] },
   { id: "violeta", label: "Violeta", colors: ["#8b70b0", "#d5bce5", "#f6f2f8", "#17121e"] },
@@ -573,35 +645,11 @@ const isThemeScheme = (value: unknown): value is ThemeScheme => value === "light
 const isColorVisionType = (value: unknown): value is ColorVisionType => colorVisionOptions.some((option) => option.id === value);
 const isAppMode = (value: unknown): value is AppMode => value === "curriculum" || value === "planner";
 const isPlannerView = (value: unknown): value is PlannerView => value === "board" || value === "compact" || value === "balance";
-const electricProfileIds = new Set(["basic", "electronics", "signals-aa", "telecommunications", "biomedical", "power", "control"]);
-const civilProfileIds = new Set(["construction", "structures", "hydraulic-environmental", "transportation"]);
 const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, index) => ({
   id: `term-${index + 1}`,
   label: `Semestre ${index + 1}`,
   courseIds: [],
 }));
-const parsePlannerTransfer = (value: unknown): PlannerTransfer | null => {
-  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
-  const record = value as Record<string, unknown>;
-  if (!Array.isArray(record.terms) || record.terms.length === 0) return null;
-  const ids = new Set<string>();
-  const termIds = new Set<string>();
-  const terms: PlannerTerm[] = [];
-  for (const [index, candidate] of record.terms.entries()) {
-    if (!candidate || typeof candidate !== "object" || Array.isArray(candidate)) return null;
-    const term = candidate as Record<string, unknown>;
-    if (typeof term.id !== "string" || !term.id || termIds.has(term.id) || typeof term.label !== "string" || !Array.isArray(term.courseIds)) return null;
-    termIds.add(term.id);
-    const courseIds = term.courseIds.filter((courseId): courseId is string => typeof courseId === "string");
-    if (courseIds.length !== term.courseIds.length || courseIds.some((courseId) => !courseId || ids.has(courseId))) return null;
-    courseIds.forEach((courseId) => ids.add(courseId));
-    terms.push({ id: term.id, label: term.label || `Semestre ${index + 1}`, courseIds });
-  }
-  const currentTermId = record.currentTermId === null || record.currentTermId === undefined
-    ? null
-    : typeof record.currentTermId === "string" && terms.some((term) => term.id === record.currentTermId) ? record.currentTermId : null;
-  return { terms, currentTermId };
-};
 
 export default function Home() {
   const [appMode, setAppMode] = useState<AppMode>("curriculum");
@@ -666,7 +714,11 @@ export default function Home() {
   const qfPlanPromiseRef = useRef<Promise<Qf2015Projection | null> | null>(null);
   const qfCatalogPromiseRef = useRef<Promise<Qf2015CatalogProjection | null> | null>(null);
   const registeredPlanPromisesRef = useRef<Partial<Record<PlanId, Promise<RegisteredProjection | null>>>>({});
+  const personalDataRef = useRef<PersonalDataDocumentV3 | null>(null);
+  const personalDataFingerprintRef = useRef("");
+  const canonicalWriteBlockedRef = useRef(false);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
+  const personalDataCatalog = useMemo(() => buildPersonalDataCatalog(registeredPlanData), [registeredPlanData]);
 
 
   const loadExtendedElectives = useCallback(async (): Promise<ExtendedElectivesProjection | null> => {
@@ -1040,21 +1092,64 @@ export default function Home() {
 
   useEffect(() => {
     let cancelled = false;
-    queueMicrotask(() => {
+    queueMicrotask(async () => {
       if (cancelled) return;
       try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setProgress({ ...createAcademicPlanRecord(() => ({})), ...JSON.parse(saved) });
-      else {
-        const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-        if (legacy) setProgress({ ...createAcademicPlanRecord(() => ({})), 1997: JSON.parse(legacy) });
-      }
-      const savedPlanner = localStorage.getItem(PLANNER_STORAGE_KEY);
-      if (savedPlanner) setPlannerPlans({ ...createAcademicPlanRecord(() => createDefaultTerms()), ...JSON.parse(savedPlanner) });
-      const savedCurrentPlannerTerms = localStorage.getItem(CURRENT_TERM_STORAGE_KEY);
-      if (savedCurrentPlannerTerms) {
-        const parsed = JSON.parse(savedCurrentPlannerTerms) as Partial<CurrentPlannerTerms>;
-        setCurrentPlannerTerms(createAcademicPlanRecord((planId) => typeof parsed[planId] === "string" ? parsed[planId] : null));
+      const rawStorage = {
+        personalDataV3: localStorage.getItem(PERSONAL_DATA_STORAGE_KEY),
+        progressV2: localStorage.getItem(STORAGE_KEY),
+        progressV1: localStorage.getItem(LEGACY_STORAGE_KEY),
+        plannerV1: localStorage.getItem(PLANNER_STORAGE_KEY),
+        currentTermV1: localStorage.getItem(CURRENT_TERM_STORAGE_KEY),
+        selectionV1: localStorage.getItem(ACADEMIC_SELECTION_STORAGE_KEY)
+          ?? JSON.stringify({ facultyId: "fing", careerId: "computacion", planId: "2025", trajectoryId: "pi-60-plus", credentialId: "engineer", campusId: null }),
+      };
+      const baseCatalog = buildPersonalDataCatalog();
+      const relevantPlanIds = collectStoredPlanIds(Object.values(rawStorage), baseCatalog);
+      const loadedPlans: Partial<Record<PlanId, RegisteredProjection>> = {};
+      await Promise.all([...relevantPlanIds].filter(isRegisteredAcademicPlan).map(async (storedPlanId) => {
+        try {
+          const loaded = await loadRegisteredAcademicPlan(storedPlanId) as RegisteredProjection | null;
+          if (loaded) loadedPlans[storedPlanId] = loaded;
+        } catch {
+          // A missing deferred catalog is reported through the recoverable migration result below.
+        }
+      }));
+      const migrationCatalog = buildPersonalDataCatalog(loadedPlans);
+      const hydration = hydratePersonalData(rawStorage, {
+        catalog: migrationCatalog,
+        now: new Date().toISOString(),
+        documentId: crypto.randomUUID(),
+      });
+      if (!hydration.ok) {
+        setImportError({ title: "No pudimos recuperar tus datos", message: "La copia guardada no es compatible. La conservamos sin cambios para que puedas recuperarla o importar una exportación válida." });
+      } else {
+        personalDataRef.current = hydration.document;
+        canonicalWriteBlockedRef.current = hydration.canonicalWriteBlocked;
+        const nextProgress = { ...createAcademicPlanRecord(() => ({})), ...hydration.state.progress };
+        const nextPlannerPlans = { ...createAcademicPlanRecord(() => createDefaultTerms()), ...hydration.state.plannerPlans };
+        const nextCurrentTerms = { ...createAcademicPlanRecord(() => null), ...hydration.state.currentPlannerTerms };
+        setProgress(nextProgress);
+        setPlannerPlans(nextPlannerPlans);
+        setCurrentPlannerTerms(nextCurrentTerms);
+        const selection = hydration.state.selection;
+        if (selection) {
+          setPlanYear(selection.planId);
+          setFacultyId(selection.facultyId);
+          setTrajectoryId(selection.trajectoryId ?? "");
+          setCampusId(selection.campusId ?? "");
+          setCredentialId(selection.credentialId ?? "");
+        }
+        personalDataFingerprintRef.current = personalDataStateFingerprint({
+          progress: nextProgress,
+          plannerPlans: nextPlannerPlans,
+          currentPlannerTerms: nextCurrentTerms,
+          selection,
+        });
+        if (hydration.shouldPersist) localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serializePersonalDataForStorage(hydration.document));
+        if (hydration.canonicalWriteBlocked) {
+          setImportError({ title: "Recuperamos una copia anterior", message: "La copia v3 guardada está dañada y se conservó sin cambios. Cargamos los datos anteriores disponibles; importá una exportación válida para volver a activar el guardado v3." });
+        }
       }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
       if (savedVisualPreferences) {
@@ -1075,34 +1170,6 @@ export default function Home() {
         if (typeof preferences.showRequirements === "boolean") setShowRequirements(preferences.showRequirements);
         if (typeof preferences.showPlannerCatalog === "boolean") setShowPlannerCatalog(preferences.showPlannerCatalog);
       }
-      const savedAcademicSelection = localStorage.getItem(ACADEMIC_SELECTION_STORAGE_KEY);
-      if (savedAcademicSelection) {
-        const selection = JSON.parse(savedAcademicSelection) as Record<string, unknown>;
-        const savedFaculty = typeof selection.facultyId === "string"
-          ? academicCatalog.find((faculty) => faculty.id === selection.facultyId)
-          : undefined;
-        const selectedPlan = (savedFaculty ? [savedFaculty] : academicCatalog)
-          .flatMap((faculty) => faculty.careers)
-          .flatMap((career) => career.plans)
-          .find((plan) => plan.id === selection.planId)
-          ?? academicCatalog.flatMap((faculty) => faculty.careers).flatMap((career) => career.plans).find((plan) => plan.id === selection.planId);
-        if (selectedPlan) {
-          const candidate = typeof selection.trajectoryId === "string" ? selection.trajectoryId : selectedPlan.defaultTrajectoryId;
-          const isValid = isRegisteredAcademicPlan(selectedPlan.id)
-            ? isRegisteredPathway(selectedPlan.id, candidate)
-            : selectedPlan.id === "2025"
-            ? Object.hasOwn(plan2025Data.trajectories, candidate)
-            : selectedPlan.id === "1997" ? candidate === "pi-20-59"
-              : selectedPlan.id === "electrica-2023" ? electricProfileIds.has(candidate)
-                : selectedPlan.id === "civil-2021" ? civilProfileIds.has(candidate)
-                  : candidate === "suggested";
-          setPlanYear(selectedPlan.id);
-          setFacultyId(savedFaculty?.careers.some((career) => career.plans.some((plan) => plan.id === selectedPlan.id)) ? savedFaculty.id : "fing");
-          setTrajectoryId(isValid ? candidate : selectedPlan.defaultTrajectoryId);
-          setCampusId(typeof selection.campusId === "string" ? selection.campusId : "");
-          setCredentialId(selectedPlan.defaultCredentialId);
-        }
-      }
       } catch {
         // A damaged local save should never prevent the curriculum from loading.
       }
@@ -1112,6 +1179,35 @@ export default function Home() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (!hydrated || canonicalWriteBlockedRef.current) return;
+    const selection: PersonalDataSelectionV3 = {
+      facultyId: activeFaculty.id,
+      careerId: activeCareer.id,
+      planId: planYear,
+      progressPlanId: activeProgressPlanId,
+      campusId: campusId || null,
+      trajectoryId: trajectoryId || null,
+      credentialId: credentialId || null,
+    };
+    const state: PersonalDataAppState = { progress, plannerPlans, currentPlannerTerms, selection };
+    const fingerprint = personalDataStateFingerprint(state);
+    if (fingerprint === personalDataFingerprintRef.current) return;
+    const updated = appStateToPersonalData(state, {
+      catalog: personalDataCatalog,
+      now: new Date().toISOString(),
+      documentId: personalDataRef.current?.id ?? crypto.randomUUID(),
+      previousDocument: personalDataRef.current,
+    });
+    if (!updated.ok) {
+      setImportError({ title: "No pudimos guardar los cambios", message: "Tus datos anteriores siguen conservados. Revisá la selección académica o exportá una copia antes de continuar." });
+      return;
+    }
+    localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serializePersonalDataForStorage(updated.document));
+    personalDataRef.current = updated.document;
+    personalDataFingerprintRef.current = fingerprint;
+  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalDataCatalog, hydrated]);
 
   useEffect(() => {
     if (hydrated) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
@@ -1477,8 +1573,8 @@ export default function Home() {
   };
   const visibleElectives = filtered("opt");
 
-  const downloadJson = (filename: string, payload: unknown) => {
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const downloadJson = (filename: string, payload: unknown, serialized = false) => {
+    const blob = new Blob([serialized ? String(payload) : JSON.stringify(payload, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
@@ -1488,16 +1584,11 @@ export default function Home() {
   };
 
   const exportProgress = () => {
-    const career = activeCareer.id;
-    downloadJson("mi-trayecto-udelar.json", {
-      formatVersion: 2,
-      scope: "all",
-      career,
-      plan: planYear,
-      trajectory: trajectoryId,
-      statuses,
-      planner: { terms: plannerTerms, currentTermId: currentPlannerTermId },
-    });
+    if (!personalDataRef.current) {
+      setImportError({ title: "Todavía estamos preparando tus datos", message: "Esperá un momento y volvé a intentar la exportación." });
+      return;
+    }
+    downloadJson("mi-trayecto-udelar.json", serializePersonalDataForStorage(personalDataRef.current), true);
   };
 
   const exportPlanner = () => {
@@ -1511,25 +1602,105 @@ export default function Home() {
     });
   };
 
-  const loadMissingCourseIds = async (validCourseIds: Set<string>, candidateCourseIds: string[]) => {
-    if (!candidateCourseIds.some((courseId) => !validCourseIds.has(courseId))) return validCourseIds;
-    if (planYear === "1997") {
+  const loadCourseIdsForPlan = async (targetPlanId: PlanId) => {
+    if (targetPlanId === "2025") return new Set(plan2025CatalogCourses.map((course) => course.id));
+    if (targetPlanId === "1997") {
+      const validCourseIds = new Set(plan1997AvailableCourses.map((course) => course.id));
       const extended = await loadExtendedElectives();
       for (const course of extended?.courses ?? []) validCourseIds.add(course.id);
+      return validCourseIds;
     }
-    if (planYear === "electrica-2023") {
+    if (targetPlanId === "electrica-2023") {
+      const projection = await loadElectricPlan();
       const catalog = await loadElectricCatalog();
+      const validCourseIds = new Set((projection?.courses ?? []).map((course) => course.id));
       for (const course of catalog?.courses ?? []) validCourseIds.add(course.id);
+      return validCourseIds;
     }
-    if (planYear === "civil-2021") {
+    if (targetPlanId === "civil-2021") {
+      const projection = await loadCivilPlan();
       const catalog = await loadCivilCatalog();
+      const validCourseIds = new Set((projection?.courses ?? []).map((course) => course.id));
       for (const course of catalog?.courses ?? []) validCourseIds.add(course.id);
+      return validCourseIds;
     }
-    if (planYear === "qf-2015") {
+    if (targetPlanId === "qf-2015") {
+      const projection = await loadQfPlan();
       const catalog = await loadQfCatalog();
+      const validCourseIds = new Set((projection?.courses ?? []).map((course) => course.id));
       for (const course of catalog?.courses ?? []) validCourseIds.add(course.id);
+      return validCourseIds;
     }
-    return validCourseIds;
+    if (isRegisteredAcademicPlan(targetPlanId)) {
+      const projection = registeredPlanData[targetPlanId] ?? await loadRegisteredPlan(targetPlanId);
+      return projection ? new Set(projection.courses.map((course) => course.id)) : null;
+    }
+    return null;
+  };
+
+  const loadTransferCatalog = async (value: unknown) => {
+    const raw = JSON.stringify(value);
+    const baseCatalog = buildPersonalDataCatalog(registeredPlanData);
+    const relevantPlanIds = collectStoredPlanIds([raw], baseCatalog);
+    const loadedPlans = { ...registeredPlanData };
+    await Promise.all([...relevantPlanIds].filter(isRegisteredAcademicPlan).map(async (storedPlanId) => {
+      if (loadedPlans[storedPlanId]) return;
+      try {
+        const loaded = await loadRegisteredAcademicPlan(storedPlanId) as RegisteredProjection | null;
+        if (loaded) loadedPlans[storedPlanId] = loaded;
+      } catch {
+        // The transfer parser will reject a plan whose catalog cannot be resolved.
+      }
+    }));
+    return buildPersonalDataCatalog(loadedPlans);
+  };
+
+  const validateTransferredCourses = async (document: PersonalDataDocumentV3) => {
+    for (const profile of document.profiles) {
+      const candidateIds = [
+        ...profile.progress.map((entry) => entry.courseId),
+        ...profile.planning.scenarios.flatMap((scenario) => scenario.terms.flatMap((term) => term.courseIds)),
+      ];
+      if (candidateIds.length === 0) continue;
+      const validCourseIds = await loadCourseIdsForPlan(profile.selection.planId);
+      if (!validCourseIds || candidateIds.some((courseId) => !validCourseIds.has(courseId))) return false;
+    }
+    return true;
+  };
+
+  const applyImportedDocument = (document: PersonalDataDocumentV3, state: PersonalDataAppState) => {
+    const serialized = serializePersonalDataForStorage(document);
+    localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serialized);
+    const nextProgress = { ...createAcademicPlanRecord(() => ({})), ...state.progress };
+    const nextPlannerPlans = { ...createAcademicPlanRecord(() => createDefaultTerms()), ...state.plannerPlans };
+    const nextCurrentTerms = { ...createAcademicPlanRecord(() => null), ...state.currentPlannerTerms };
+    const selection = state.selection;
+    personalDataRef.current = document;
+    canonicalWriteBlockedRef.current = false;
+    setProgress(nextProgress);
+    setPlannerPlans(nextPlannerPlans);
+    setCurrentPlannerTerms(nextCurrentTerms);
+    if (selection) {
+      setPlanYear(selection.planId);
+      setFacultyId(selection.facultyId);
+      setTrajectoryId(selection.trajectoryId ?? "");
+      setCampusId(selection.campusId ?? "");
+      setCredentialId(selection.credentialId ?? "");
+    }
+    personalDataFingerprintRef.current = personalDataStateFingerprint({
+      progress: nextProgress,
+      plannerPlans: nextPlannerPlans,
+      currentPlannerTerms: nextCurrentTerms,
+      selection: selection ?? {
+        facultyId: activeFaculty.id,
+        careerId: activeCareer.id,
+        planId: planYear,
+        progressPlanId: activeProgressPlanId,
+        campusId: campusId || null,
+        trajectoryId: trajectoryId || null,
+        credentialId: credentialId || null,
+      },
+    });
   };
 
   const importProgress = (event: ChangeEvent<HTMLInputElement>) => {
@@ -1538,41 +1709,23 @@ export default function Home() {
     const reader = new FileReader();
     reader.onload = async () => {
       try {
-        const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; scope?: unknown; career?: unknown; plan?: unknown; statuses?: unknown; planner?: unknown };
-        if (!parsed || typeof parsed !== "object" || !parsed.statuses || typeof parsed.statuses !== "object" || Array.isArray(parsed.statuses)) {
-          setImportError({ title: parsed?.scope === "planner" ? "Es un archivo de planificador" : "Archivo incompatible", message: parsed?.scope === "planner" ? "Para importar solo la planificación, usá la opción “Solo planificador”." : "El archivo es JSON, pero no contiene un progreso de Trayecto reconocible." });
+        const parsed = JSON.parse(String(reader.result)) as unknown;
+        if (parsed && typeof parsed === "object" && !Array.isArray(parsed) && (parsed as Record<string, unknown>).scope === "planner") {
+          setImportError({ title: "Es un archivo de planificador", message: "Para importar solo la planificación, usá la opción “Solo planificador”." });
           return;
         }
-        if (parsed.formatVersion !== undefined && parsed.formatVersion !== 1 && parsed.formatVersion !== 2) {
-          setImportError({ title: "Versión no compatible", message: "Este archivo fue creado con una versión de Trayecto que todavía no podemos importar." });
+        const transferCatalog = await loadTransferCatalog(parsed);
+        const transfer = parseCompleteTransfer(parsed, { catalog: transferCatalog, now: new Date().toISOString(), documentId: crypto.randomUUID() });
+        if (!transfer.ok) {
+          const futureVersion = transfer.issues.some((entry) => entry.code === "unsupported_version");
+          setImportError({ title: futureVersion ? "Versión no compatible" : "Archivo incompatible", message: futureVersion ? "Este archivo fue creado con una versión de Trayecto que todavía no podemos importar." : "El archivo no contiene datos personales válidos de Trayecto o tiene referencias académicas rotas." });
           return;
         }
-        if (parsed.plan !== undefined && parsed.plan !== planYear) {
-          setImportError({ title: "Corresponde a otro plan", message: `Este progreso pertenece al Plan ${String(parsed.plan)}. Seleccioná ese plan antes de importarlo.` });
+        if (!await validateTransferredCourses(transfer.document)) {
+          setImportError({ title: "Materias no válidas", message: "El archivo incluye materias que no pertenecen a uno de sus planes. No se modificó ningún dato." });
           return;
         }
-        const entries = Object.entries(parsed.statuses as Record<string, unknown>);
-        const plannerTransfer = parsed.planner === undefined ? null : parsePlannerTransfer(parsed.planner);
-        if (parsed.planner !== undefined && !plannerTransfer) {
-          setImportError({ title: "Planificador inválido", message: "El archivo contiene una planificación con semestres o materias en un formato no válido." });
-          return;
-        }
-        const plannerCourseIds = plannerTransfer?.terms.flatMap((term) => term.courseIds) ?? [];
-        const validStatuses = new Set<CourseStatus>(["pending", "approved", "exonerated"]);
-        const validCourseIds = await loadMissingCourseIds(new Set(plannerCourses.map((course) => course.id)), [...entries.map(([id]) => id), ...plannerCourseIds]);
-        if (entries.some(([id, status]) => !validCourseIds.has(id) || typeof status !== "string" || !validStatuses.has(status as CourseStatus))) {
-          setImportError({ title: "Progreso inválido", message: "El archivo contiene materias o estados que no tienen un formato válido." });
-          return;
-        }
-        if (plannerCourseIds.some((courseId) => !validCourseIds.has(courseId))) {
-          setImportError({ title: "Planificador inválido", message: "La planificación incluye materias que no pertenecen al plan seleccionado." });
-          return;
-        }
-        setStatuses(Object.fromEntries(entries) as Record<string, CourseStatus>);
-        if (plannerTransfer) {
-          setPlannerPlans((current) => ({ ...current, [planYear]: plannerTransfer.terms }));
-          setCurrentPlannerTerms((current) => ({ ...current, [planYear]: plannerTransfer.currentTermId }));
-        }
+        applyImportedDocument(transfer.document, transfer.state);
       } catch {
         setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
       }
@@ -1588,30 +1741,26 @@ export default function Home() {
     const reader = new FileReader();
     reader.onload = async () => {
       try {
-        const parsed = JSON.parse(String(reader.result)) as { formatVersion?: unknown; scope?: unknown; plan?: unknown; planner?: unknown };
-        const isPlannerFile = parsed?.scope === "planner" && parsed.formatVersion === 1;
-        const isFullFile = parsed?.scope === "all" && parsed.formatVersion === 2;
-        if (!isPlannerFile && !isFullFile) {
+        const parsed = JSON.parse(String(reader.result)) as unknown;
+        const transferCatalog = await loadTransferCatalog(parsed);
+        const transfer = parsePlannerTransferFile(parsed, { catalog: transferCatalog, now: new Date().toISOString(), documentId: crypto.randomUUID(), planId: planYear });
+        if (!transfer.ok) {
+          const differentPlan = transfer.issues.some((entry) => entry.code === "different_plan");
+          if (differentPlan) {
+            setImportError({ title: "Corresponde a otro plan", message: "Esta planificación pertenece a otro plan. Seleccioná ese plan antes de importarla." });
+            return;
+          }
           setImportError({ title: "Archivo incompatible", message: "Este archivo no contiene una planificación compartida de Trayecto. Las exportaciones completas también se pueden importar como solo planificador." });
           return;
         }
-        if (parsed.plan !== planYear) {
-          setImportError({ title: "Corresponde a otro plan", message: `Esta planificación pertenece al Plan ${String(parsed.plan)}. Seleccioná ese plan antes de importarla.` });
-          return;
-        }
-        const plannerTransfer = parsePlannerTransfer(parsed.planner);
-        if (!plannerTransfer) {
-          setImportError({ title: "Planificador inválido", message: "El archivo contiene semestres o materias en un formato no válido." });
-          return;
-        }
-        const plannerCourseIds = plannerTransfer.terms.flatMap((term) => term.courseIds);
-        const validCourseIds = await loadMissingCourseIds(new Set(plannerCourses.map((course) => course.id)), plannerCourseIds);
-        if (plannerCourseIds.some((courseId) => !validCourseIds.has(courseId))) {
+        const validCourseIds = await loadCourseIdsForPlan(planYear);
+        const plannerCourseIds = transfer.planner.terms.flatMap((term) => term.courseIds);
+        if (!validCourseIds || plannerCourseIds.some((courseId) => !validCourseIds.has(courseId))) {
           setImportError({ title: "Planificador inválido", message: "La planificación incluye materias que no pertenecen al plan seleccionado." });
           return;
         }
-        setPlannerPlans((current) => ({ ...current, [planYear]: plannerTransfer.terms }));
-        setCurrentPlannerTerms((current) => ({ ...current, [planYear]: plannerTransfer.currentTermId }));
+        setPlannerPlans((current) => ({ ...current, [planYear]: transfer.planner.terms }));
+        setCurrentPlannerTerms((current) => ({ ...current, [planYear]: transfer.planner.currentTermId }));
         setAppMode("planner");
       } catch {
         setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });

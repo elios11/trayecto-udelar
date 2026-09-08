@@ -3,10 +3,13 @@ import test from "node:test";
 import { readFile } from "node:fs/promises";
 
 const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+const migrationSource = await readFile(new URL("../app/personal-data-migration.mjs", import.meta.url), "utf8");
 const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
 test("restaura la selección académica y las preferencias visuales locales", () => {
-  assert.match(pageSource, /ACADEMIC_SELECTION_STORAGE_KEY = "trayecto-udelar-academic-selection-v1"/);
+  assert.match(migrationSource, /PERSONAL_DATA_STORAGE_KEY = "trayecto-udelar-personal-data-v3"/);
+  assert.match(migrationSource, /LEGACY_ACADEMIC_SELECTION_STORAGE_KEY = "trayecto-udelar-academic-selection-v1"/);
+  assert.match(pageSource, /localStorage\.getItem\(PERSONAL_DATA_STORAGE_KEY\)/);
   assert.match(pageSource, /localStorage\.getItem\(ACADEMIC_SELECTION_STORAGE_KEY\)/);
   assert.match(pageSource, /localStorage\.setItem\(ACADEMIC_SELECTION_STORAGE_KEY,[\s\S]*?planId: planYear, trajectoryId/);
   for (const preference of ["appMode", "plannerView", "availableOnly", "showElectives", "showRequirements", "showPlannerCatalog"]) {
@@ -21,12 +24,14 @@ test("cierra el selector de temas fuera del panel y con Escape", () => {
 });
 
 test("separa el intercambio del planificador del intercambio completo", () => {
-  assert.match(pageSource, /scope: "all"/);
+  assert.match(pageSource, /serializePersonalDataForStorage\(personalDataRef\.current\)/);
+  assert.match(migrationSource, /formatVersion: 3/);
   assert.match(pageSource, /planner: \{ terms: plannerTerms, currentTermId: currentPlannerTermId \}/);
   assert.match(pageSource, /scope: "planner"/);
   assert.match(pageSource, /const importPlanner =/);
-  assert.match(pageSource, /const isFullFile = parsed\?\.scope === "all" && parsed\.formatVersion === 2/);
-  assert.match(pageSource, /setPlannerPlans\(\(current\) => \(\{ \.\.\.current, \[planYear\]: plannerTransfer\.terms \}\)\)/);
+  assert.match(pageSource, /parseCompleteTransfer\(parsed,/);
+  assert.match(pageSource, /parsePlannerTransferFile\(parsed,/);
+  assert.match(pageSource, /setPlannerPlans\(\(current\) => \(\{ \.\.\.current, \[planYear\]: transfer\.planner\.terms \}\)\)/);
   assert.match(pageSource, /Solo planificador/);
   assert.match(css, /\.data-panel-section button/);
 });
