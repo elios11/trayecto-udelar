@@ -2,6 +2,8 @@
 
 Trayecto ayuda a estudiantes de Udelar a explorar su currícula, registrar avance y planificar materias. La aplicación se construye con React, vinext y npm; su proceso de verificación y empaquetado funciona desde un clon limpio, sin depender de ChatGPT Sites.
 
+Es un proyecto estudiantil no oficial y no sustituye la información de Bedelías ni de los servicios de Udelar. El repositorio es público, pero todavía no tiene una licencia que autorice reutilización. Consulta [SECURITY.md](SECURITY.md) antes de comunicar una vulnerabilidad o compartir una exportación de progreso.
+
 ## Requisitos y reconstrucción
 
 - Node.js `>=22.13.0` con npm 10 (el distribuido con Node 22) y el `package-lock.json` versionado.
@@ -9,6 +11,7 @@ Trayecto ayuda a estudiantes de Udelar a explorar su currícula, registrar avanc
 
 ```bash
 npm ci
+npm run security:repo
 npm run verify
 npm run build
 npm run package
@@ -29,3 +32,5 @@ npm run dev
 ```
 
 El despliegue no forma parte de los comandos de CI ni del empaquetado portable.
+
+La política y los controles para mantener seguro el repositorio público están documentados en [docs/security-public-repository.md](docs/security-public-repository.md).

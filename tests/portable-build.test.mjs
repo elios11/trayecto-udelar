@@ -55,7 +55,8 @@ test("sólo limpia outputs/portable y preserva archivos vecinos", async () => {
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 test("el workflow orquesta solamente scripts existentes y conserva permisos mínimos", async () => {
-  const workflow = await readFile(new URL("../.github/workflows/ci.yml", import.meta.url), "utf8");
+  const workflow = (await readFile(new URL("../.github/workflows/ci.yml", import.meta.url), "utf8"))
+    .replaceAll("\r\n", "\n");
   const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
   for (const command of ["verify", "build", "package"]) { assert.equal(typeof packageJson.scripts[command], "string"); assert.match(workflow, new RegExp(`- run: npm run ${command}`)); }
   assert.match(workflow, /^on:\n {2}push:\n {2}pull_request:/m);

@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementada y validada en el commit F02; pendiente de integración sobre `main`. Prepara verificación, compilación y empaquetado reproducibles sin publicar el sitio ni crear/configurar un repositorio remoto.
+Implementada, validada e integrada en `main`. Prepara verificación, compilación y empaquetado reproducibles sin publicar el sitio; la configuración del repositorio remoto se documenta por separado.
 
 ## Resultado
 
