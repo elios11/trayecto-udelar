@@ -28,7 +28,6 @@ Tras crear el repositorio público:
 ```bash
 npm run security:repo
 npm run verify
-npm run build
 npm run package
 ```
 

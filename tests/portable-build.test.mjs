@@ -58,7 +58,9 @@ test("el workflow orquesta solamente scripts existentes y conserva permisos mín
   const workflow = (await readFile(new URL("../.github/workflows/ci.yml", import.meta.url), "utf8"))
     .replaceAll("\r\n", "\n");
   const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
-  for (const command of ["verify", "build", "package"]) { assert.equal(typeof packageJson.scripts[command], "string"); assert.match(workflow, new RegExp(`- run: npm run ${command}`)); }
+  for (const command of ["verify", "package"]) { assert.equal(typeof packageJson.scripts[command], "string"); assert.match(workflow, new RegExp(`- run: npm run ${command}`)); }
+  assert.equal(packageJson.scripts.verify, "npm run lint && npm run build && npm run test:unit");
+  assert.doesNotMatch(workflow, /- run: npm run build/);
   assert.match(workflow, /^on:\n {2}push:\n {2}pull_request:/m);
   assert.match(workflow, /^permissions:\n {2}contents: read$/m);
   assert.match(workflow, /actions\/(checkout|setup-node|upload-artifact)@v4/);

@@ -74,7 +74,6 @@ Para verificar y generar un artefacto portable:
 ```bash
 npm run security:repo
 npm run verify
-npm run build
 npm run package
 node scripts/package-portable-build.mjs --verify
 ```

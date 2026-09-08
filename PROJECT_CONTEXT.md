@@ -72,7 +72,7 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 - El codigo principal de la interfaz esta bajo `app/`; `app/page.tsx` contiene actualmente gran parte del estado y la interaccion, y `app/globals.css` contiene los estilos globales.
 - La jerarquía de facultades, carreras y planes vive en `app/academic-catalog.ts`, que combina el núcleo curado con `app/data/extracted-academic-catalog.json`; los registros de estado por plan se inicializan desde ese catálogo. Los datasets masivos se registran para carga diferida mediante `app/data/extracted-academic-loaders.ts` y `app/academic-plan-registry.ts`, sin condicionales por carrera en la interfaz central. Una composición no publicada mantiene la carrera seleccionable y muestra un estado vacío explícito, sin inventar materias o mínimos.
 - Las pruebas automatizadas estan bajo `tests/` y se ejecutan con el runner nativo de Node despues de la compilacion.
-- El proyecto usa npm y requiere Node.js `>=22.13.0`. Desde un clon limpio, `npm ci`, `npm run verify`, `npm run build` y `npm run package` reconstruyen y empaquetan el artefacto portable en `outputs/portable/`; su manifiesto determinista se verifica con `node scripts/package-portable-build.mjs --verify`.
+- El proyecto usa npm y requiere Node.js `>=22.13.0`. Desde un clon limpio, `npm ci`, `npm run verify` y `npm run package` reconstruyen, prueban y empaquetan el artefacto portable en `outputs/portable/`; su manifiesto determinista se verifica con `node scripts/package-portable-build.mjs --verify`.
 - El despliegue está separado de CI y del empaquetado portable. `.openai/hosting.json` configura Sites como adaptador actual, pero el workflow sólo verifica, compila y conserva el artefacto sin desplegar ni usar secretos.
 
 ## Decisiones de producto transversales
@@ -98,7 +98,7 @@ Si estas fuentes parecen incompatibles, el agente debe comprobar primero si su w
 ## Comandos de verificacion
 
 - `npm test`: compila y ejecuta la suite automatizada.
-- `npm run test:unit`: ejecuta la suite Node sin compilar; `npm run verify`: ejecuta lint y las pruebas unitarias; `npm run package`: empaqueta un `dist/` ya compilado.
+- `npm run test:unit`: ejecuta la suite Node sobre un `dist/` ya compilado; `npm run verify`: ejecuta lint, compila y luego corre la suite; `npm run package`: empaqueta el `dist/` verificado.
 - `npm run lint`: valida el codigo fuente.
 - `npm run dev`: inicia el entorno local para validacion funcional y visual.
 

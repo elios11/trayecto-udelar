@@ -7,11 +7,10 @@ Se requiere Node.js `>=22.13.0` con npm 10 (la línea incluida con Node 22). El 
 ```bash
 npm ci
 npm run verify
-npm run build
 npm run package
 ```
 
-`npm run verify` ejecuta lint y `npm run test:unit`, sin compilar, iniciar servicios, descargar navegadores, consultar Bedelías ni usar secretos. `npm run build` genera `dist/`. `npm run package` requiere ese directorio y crea `outputs/portable/`; `npm test` sigue siendo la comprobación completa de compilación más pruebas unitarias.
+`npm run verify` ejecuta lint, genera `dist/` y después corre `npm run test:unit`. Este orden es necesario porque algunas pruebas renderizan el servidor compilado. No inicia servicios, descarga navegadores, consulta Bedelías ni usa secretos. `npm run package` reutiliza ese `dist/` verificado y crea `outputs/portable/`; `npm test` sigue siendo la comprobación de compilación más pruebas unitarias, sin lint.
 
 ## Artefacto y manifiesto
 
@@ -33,7 +32,7 @@ El empaquetador sólo reemplaza el destino fijo `outputs/portable/`; no borra el
 
 ## CI y despliegue
 
-El workflow inicial ejecuta exactamente `npm run verify`, `npm run build` y `npm run package` después de `npm ci`, y conserva el artefacto como resultado de CI. No despliega, no requiere secretos y no contiene lógica de producto. Compilar y empaquetar son portables; desplegar requiere un adaptador autorizado para cada host.
+El workflow ejecuta `npm run verify` y `npm run package` después de `npm ci`: `verify` compila una sola vez antes de la suite y `package` reutiliza ese resultado. Conserva el artefacto como resultado de CI, no despliega, no requiere secretos y no contiene lógica de producto. Compilar y empaquetar son portables; desplegar requiere un adaptador autorizado para cada host.
 
 La compilación actual todavía usa vinext y su integración con Cloudflare/Sites. Para alojar el artefacto en otro runtime, hay que verificar qué salida de `dist/` sirve el runtime elegido, configurar el adaptador correspondiente y ejecutar una prueba de restauración. Esta guía no declara esa compatibilidad ni el ensayo de restauración B09 como completados.
 
