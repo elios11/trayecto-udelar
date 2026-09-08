@@ -2728,9 +2728,23 @@ export default function Home() {
         </section>
       </section>
 
+      <section className="motivation-section" id="motivacion" aria-labelledby="motivation-title">
+        <div className="motivation-heading">
+          <p className="eyebrow">Hecho por estudiantes, para estudiantes</p>
+          <h2 id="motivation-title">¿Por qué existe Trayecto?</h2>
+        </div>
+        <div className="motivation-copy">
+          <p>Porque entender una carrera y pensar los próximos semestres no debería depender de la facultad en la que estudiás. Muchas de las herramientas que nos inspiraron nacieron en Ingeniería —sobre todo en Computación— y quisimos acercar esa experiencia a toda la Udelar.</p>
+          <p>Trayecto busca reunir currículas, previas y créditos en un solo lugar amigable, para que puedas explorar tus opciones, armar un plan propio y compartirlo con otras personas. Es un proyecto estudiantil, abierto y no oficial: un mapa para conversar mejor con Bedelía, tu Comisión de Carrera y quienes recorren la universidad contigo.</p>
+        </div>
+      </section>
+
       <footer>
         <p>Trayecto es un proyecto estudiantil independiente. La información oficial prevalece siempre sobre este prototipo.</p>
-        <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Consultar Bedelías ↗</a>
+        <nav aria-label="Información del proyecto">
+          <a href="#motivacion">Por qué existe Trayecto</a>
+          <a href="https://bedelias.udelar.edu.uy/" target="_blank" rel="noreferrer">Consultar Bedelías ↗</a>
+        </nav>
       </footer>
 
       {rolloverTerm && (

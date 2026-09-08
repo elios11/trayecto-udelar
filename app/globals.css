@@ -297,9 +297,19 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .plan-transition-note a { color: var(--udelar); font-size: 11px; font-weight: 750; text-decoration: none; }
 .pending-audit-panel { border-top-color: color-mix(in srgb, var(--warning-ink) 25%, var(--line)); }
 
+.motivation-section { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr); gap: clamp(28px, 7vw, 96px); padding: clamp(42px, 7vw, 78px) clamp(24px, 6vw, 84px); border-top: 1px solid var(--line); background: var(--surface-subtle); }
+.motivation-heading { align-self: start; }
+.motivation-heading .eyebrow { margin: 0 0 12px; }
+.motivation-heading h2 { max-width: 360px; margin: 0; color: var(--ink); font-family: var(--font-serif); font-size: clamp(30px, 4vw, 50px); font-weight: 500; line-height: .98; letter-spacing: -.045em; }
+.motivation-copy { max-width: 760px; display: grid; gap: 16px; }
+.motivation-copy p { margin: 0; color: var(--muted); font-size: clamp(15px, 1.5vw, 17px); line-height: 1.68; }
+.motivation-copy p:first-child { color: var(--ink); }
+
 footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 36px; background: var(--udelar-dark); color: rgba(255,255,255,.7); font-size: 11px; }
 footer p { margin: 0; }
 footer a { color: white; text-decoration: none; white-space: nowrap; }
+footer nav { display: flex; align-items: center; gap: 20px; }
+footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .modal-backdrop { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 20px; background: rgba(6,24,35,.5); }
 .backdrop-dismiss { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: default; }
@@ -425,7 +435,10 @@ footer a { color: white; text-decoration: none; white-space: nowrap; }
   .electives-grid { padding: 0 16px 24px; grid-template-columns: repeat(2, minmax(0,1fr)); }
   .electives-loader { margin: 0 16px 32px; align-items: stretch; flex-direction: column; }
   .electives-loader .primary-button { width: 100%; min-width: 0; }
+  .motivation-section { grid-template-columns: 1fr; gap: 24px; padding: 38px 20px 42px; }
+  .motivation-heading h2 { max-width: 300px; }
   footer { padding: 22px 16px; align-items: flex-start; flex-direction: column; }
+  footer nav { align-items: flex-start; flex-direction: column; gap: 10px; }
 }
 
 @media (max-width: 430px) {
