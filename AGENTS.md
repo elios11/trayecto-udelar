@@ -81,6 +81,17 @@
 - Usa solamente modelos expuestos por las herramientas de la sesion. Si Luna esta disponible, reservalo para cargas mecanicas de alto volumen con validacion determinista; nunca inventes ni simules un modelo no ofrecido.
 - La seleccion de modelo busca eficiencia, pero no asumas ni prometas una reduccion proporcional del porcentaje de uso del plan.
 
+### Orquestacion de roadmaps
+
+- Cuando el usuario pida ejecutar un roadmap que declare `modelo`, `esfuerzo` y `dependencias`, el agente coordinador debe respetar esos campos y elegir automaticamente el subagente correspondiente entre los modelos disponibles.
+- El coordinador conserva la revision, integracion y publicacion. Los subagentes implementan solamente su nodo en un worktree dedicado bajo `.worktrees/<id-del-nodo>` y devuelven un commit validado.
+- Usa como maximo dos nodos de implementacion en paralelo y solo cuando no compartan archivos ni una dependencia pendiente. Investigacion sin edicion puede ocupar un tercer subagente si existe capacidad.
+- Integra commits de forma serial sobre el `main` mas reciente y vuelve a ejecutar las verificaciones combinadas despues de cada ola.
+- No rebajes silenciosamente un nodo sensible. Si `gpt-6-astra` no esta disponible, usa `gpt-5.6-sol` y registra que la auditoria reforzada queda pendiente. Si falta Terra, usa Sol; si falta Luna, usa Terra. Nunca uses Luna para autenticacion, autorizacion, migraciones destructivas, sincronizacion o decisiones academicas.
+- Un nodo con decisiones humanas pendientes puede producir una investigacion o prueba reversible, pero no debe elegir proveedor, cambiar acceso, contratar servicios, registrar dominios ni publicar por su cuenta.
+- La autorizacion para ejecutar un roadmap permite crear worktrees, editar, probar y crear commits de sus nodos. No implica permiso para integrar, hacer push, cambiar servicios externos o publicar, salvo que el usuario lo autorice expresamente.
+- Para `docs/roadmaps/planificacion-y-cuentas.md`, el coordinador debe avanzar por olas, crear la especificacion individual indicada antes de delegar cada implementacion y detenerse al final de una ola para entregar commits, riesgos y decisiones pendientes.
+
 ### Higiene de aprobaciones
 
 - Evita interrumpir al usuario con aprobaciones repetidas para operaciones de lectura. Antes de usar shell o red, comprueba si existe una herramienta de busqueda, navegador, conector o comando ya permitido que cubra la tarea.
