@@ -43,6 +43,8 @@ import {
 import type { DeletedTermRecovery, RecoveryStore } from "./personal-data-recovery.mjs";
 import { createUndoEntry, isUndoShortcut, pushUndoEntry, takeUndoEntry } from "./personal-data-recovery-session.mjs";
 import type { UndoEntry } from "./personal-data-recovery-session.mjs";
+import { failedLocalSaveStatus, initialLocalSaveStatus, localSaveStatusPresentation, persistLocalDocument, savedLocalSaveStatus } from "./local-save-status.mjs";
+import type { LocalSaveStatus } from "./local-save-status.mjs";
 import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
@@ -714,6 +716,7 @@ export default function Home() {
   const [undoEntry, setUndoEntry] = useState<UndoEntry | null>(null);
   const [recoveryConfirmation, setRecoveryConfirmation] = useState<RecoveryConfirmation | null>(null);
   const [recoveryNotice, setRecoveryNotice] = useState("");
+  const [localSaveStatus, setLocalSaveStatus] = useState<LocalSaveStatus>(() => initialLocalSaveStatus());
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
@@ -742,6 +745,7 @@ export default function Home() {
   const canonicalWriteBlockedRef = useRef(false);
   const undoStackRef = useRef<UndoEntry[]>([]);
   const recoveryWriteFailedRef = useRef(false);
+  const localSaveStatusRef = useRef(localSaveStatus);
   const recoveryTriggerRef = useRef<HTMLElement | null>(null);
   const recoveryConfirmRef = useRef<HTMLButtonElement | null>(null);
   const renameUndoTermRef = useRef<string | null>(null);
@@ -1120,6 +1124,32 @@ export default function Home() {
     });
   };
 
+  const updateLocalSaveStatus = useCallback((status: LocalSaveStatus) => {
+    localSaveStatusRef.current = status;
+    setLocalSaveStatus(status);
+  }, []);
+
+  const persistPersonalDocument = useCallback((document: PersonalDataDocumentV3, options: { fingerprint?: string; allowBlocked?: boolean } = {}) => {
+    if (canonicalWriteBlockedRef.current && !options.allowBlocked) {
+      updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: localSaveStatusRef.current.savedAt, errorKind: "corrupt" }));
+      return false;
+    }
+    const persisted = persistLocalDocument(document, {
+      serialize: serializePersonalDataForStorage,
+      write: (serialized) => localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serialized),
+      previousSavedAt: localSaveStatusRef.current.savedAt,
+    });
+    if (persisted.ok) {
+      personalDataRef.current = document;
+      if (options.fingerprint !== undefined) personalDataFingerprintRef.current = options.fingerprint;
+      if (options.allowBlocked) canonicalWriteBlockedRef.current = false;
+      updateLocalSaveStatus(persisted.status);
+      return true;
+    }
+    updateLocalSaveStatus(persisted.status);
+    return false;
+  }, [updateLocalSaveStatus]);
+
   useEffect(() => {
     let cancelled = false;
     queueMicrotask(async () => {
@@ -1154,6 +1184,7 @@ export default function Home() {
         documentId: crypto.randomUUID(),
       });
       if (!hydration.ok) {
+        updateLocalSaveStatus(failedLocalSaveStatus(undefined, { errorKind: "corrupt" }));
         setImportError({ title: "No pudimos recuperar tus datos", message: "La copia guardada no es compatible. La conservamos sin cambios para que puedas recuperarla o importar una exportación válida." });
       } else {
         personalDataRef.current = hydration.document;
@@ -1172,20 +1203,24 @@ export default function Home() {
           setCampusId(selection.campusId ?? "");
           setCredentialId(selection.credentialId ?? "");
         }
-        personalDataFingerprintRef.current = personalDataStateFingerprint({
+        const hydratedFingerprint = personalDataStateFingerprint({
           progress: nextProgress,
           plannerPlans: nextPlannerPlans,
           currentPlannerTerms: nextCurrentTerms,
           selection,
         });
+        personalDataFingerprintRef.current = hydratedFingerprint;
         if (hydration.shouldPersist) {
           const migrationSnapshot = createRecoverySnapshot(nextRecovery, hydration.document, {
             now: new Date().toISOString(), id: crypto.randomUUID(), reason: "Migración local",
           });
           if (migrationSnapshot.ok) nextRecovery = migrationSnapshot.store;
-          localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serializePersonalDataForStorage(hydration.document));
+          persistPersonalDocument(hydration.document, { fingerprint: hydratedFingerprint });
+        } else if (!hydration.canonicalWriteBlocked) {
+          updateLocalSaveStatus(savedLocalSaveStatus(hydration.document.updatedAt));
         }
         if (hydration.canonicalWriteBlocked) {
+          updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: hydration.document.updatedAt, errorKind: "corrupt" }));
           setImportError({ title: "Recuperamos una copia anterior", message: "La copia v3 guardada está dañada y se conservó sin cambios. Cargamos los datos anteriores disponibles; importá una exportación válida para volver a activar el guardado v3." });
         }
       }
@@ -1211,7 +1246,8 @@ export default function Home() {
         if (typeof preferences.showRequirements === "boolean") setShowRequirements(preferences.showRequirements);
         if (typeof preferences.showPlannerCatalog === "boolean") setShowPlannerCatalog(preferences.showPlannerCatalog);
       }
-      } catch {
+      } catch (error) {
+        updateLocalSaveStatus(failedLocalSaveStatus(error, { savedAt: localSaveStatusRef.current.savedAt }));
         // A damaged local save should never prevent the curriculum from loading.
       }
       setHydrated(true);
@@ -1219,7 +1255,7 @@ export default function Home() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [persistPersonalDocument, updateLocalSaveStatus]);
 
   useEffect(() => {
     if (!recoveryHydrated) return;
@@ -1261,13 +1297,11 @@ export default function Home() {
       setImportError({ title: "No pudimos guardar los cambios", message: "Tus datos anteriores siguen conservados. Revisá la selección académica o exportá una copia antes de continuar." });
       return;
     }
-    localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serializePersonalDataForStorage(updated.document));
-    personalDataRef.current = updated.document;
-    personalDataFingerprintRef.current = fingerprint;
-  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalDataCatalog, hydrated]);
+    persistPersonalDocument(updated.document, { fingerprint });
+  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalDataCatalog, hydrated, persistPersonalDocument]);
 
   useEffect(() => {
-    if (hydrated) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    if (hydrated) persistLegacyValue(STORAGE_KEY, JSON.stringify(progress));
   }, [progress, hydrated]);
 
   useEffect(() => {
@@ -1323,7 +1357,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!hydrated) return;
-    localStorage.setItem(ACADEMIC_SELECTION_STORAGE_KEY, JSON.stringify({ facultyId: activeFaculty.id, planId: planYear, trajectoryId, campusId }));
+    persistLegacyValue(ACADEMIC_SELECTION_STORAGE_KEY, JSON.stringify({ facultyId: activeFaculty.id, planId: planYear, trajectoryId, campusId }));
   }, [activeFaculty.id, planYear, trajectoryId, campusId, hydrated]);
 
   useEffect(() => {
@@ -1342,11 +1376,11 @@ export default function Home() {
   }, [planYear, hydrated, hasStoredQfCatalogProgress, qfCatalogData, qfCatalogLoadState, loadQfCatalog]);
 
   useEffect(() => {
-    if (hydrated) localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
+    if (hydrated) persistLegacyValue(PLANNER_STORAGE_KEY, JSON.stringify(plannerPlans));
   }, [plannerPlans, hydrated]);
 
   useEffect(() => {
-    if (hydrated) localStorage.setItem(CURRENT_TERM_STORAGE_KEY, JSON.stringify(currentPlannerTerms));
+    if (hydrated) persistLegacyValue(CURRENT_TERM_STORAGE_KEY, JSON.stringify(currentPlannerTerms));
   }, [currentPlannerTerms, hydrated]);
 
   useEffect(() => {
@@ -1357,7 +1391,7 @@ export default function Home() {
     root.style.colorScheme = themeScheme;
     if (hydrated) {
       const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog };
-      localStorage.setItem(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
+      persistLegacyValue(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     }
   }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, hydrated]);
 
@@ -1614,6 +1648,14 @@ export default function Home() {
     },
   });
 
+  function persistLegacyValue(key: string, value: string) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Legacy rollback keys and visual preferences never define the canonical save status.
+    }
+  }
+
   function persistRecoveryImmediately(store: RecoveryStore) {
     const persisted = persistRecoveryStore(store, {
       now: new Date().toISOString(),
@@ -1803,25 +1845,11 @@ export default function Home() {
   };
 
   const applyImportedDocument = (document: PersonalDataDocumentV3, state: PersonalDataAppState) => {
-    const serialized = serializePersonalDataForStorage(document);
-    localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serialized);
     const nextProgress = { ...createAcademicPlanRecord(() => ({})), ...state.progress };
     const nextPlannerPlans = { ...createAcademicPlanRecord(() => createDefaultTerms()), ...state.plannerPlans };
     const nextCurrentTerms = { ...createAcademicPlanRecord(() => null), ...state.currentPlannerTerms };
     const selection = state.selection;
-    personalDataRef.current = document;
-    canonicalWriteBlockedRef.current = false;
-    setProgress(nextProgress);
-    setPlannerPlans(nextPlannerPlans);
-    setCurrentPlannerTerms(nextCurrentTerms);
-    if (selection) {
-      setPlanYear(selection.planId);
-      setFacultyId(selection.facultyId);
-      setTrajectoryId(selection.trajectoryId ?? "");
-      setCampusId(selection.campusId ?? "");
-      setCredentialId(selection.credentialId ?? "");
-    }
-    personalDataFingerprintRef.current = personalDataStateFingerprint({
+    const importedFingerprint = personalDataStateFingerprint({
       progress: nextProgress,
       plannerPlans: nextPlannerPlans,
       currentPlannerTerms: nextCurrentTerms,
@@ -1835,6 +1863,18 @@ export default function Home() {
         credentialId: credentialId || null,
       },
     });
+    if (!persistPersonalDocument(document, { fingerprint: importedFingerprint, allowBlocked: true })) return false;
+    setProgress(nextProgress);
+    setPlannerPlans(nextPlannerPlans);
+    setCurrentPlannerTerms(nextCurrentTerms);
+    if (selection) {
+      setPlanYear(selection.planId);
+      setFacultyId(selection.facultyId);
+      setTrajectoryId(selection.trajectoryId ?? "");
+      setCampusId(selection.campusId ?? "");
+      setCredentialId(selection.credentialId ?? "");
+    }
+    return true;
   };
 
   const createCurrentSnapshot = (reason: string) => {
@@ -1865,7 +1905,7 @@ export default function Home() {
       if (!restored.ok) setImportError({ title: "No pudimos restaurar la instantánea", message: "La copia no es compatible con el catálogo académico actual. Tus datos actuales no se modificaron." });
       return;
     }
-    applyImportedDocument(restored.document, restored.state);
+    if (!applyImportedDocument(restored.document, restored.state)) return;
     setRecoveryNotice(`Se restauró la instantánea: ${snapshot.reason}.`);
   };
 
@@ -1886,7 +1926,7 @@ export default function Home() {
     if (!removed.ok || !persistRecoveryImmediately(removed.store)) return;
     rememberUndo(`restauración de ${item.term.label}`);
     setRecovery(removed.store);
-    applyImportedDocument(restored.document, state.state);
+    if (!applyImportedDocument(restored.document, state.state)) return;
     setRecoveryNotice(restored.omittedCourseIds.length ? `Se restauró ${item.term.label}; ${restored.omittedCourseIds.length} materias ya estaban asignadas y no se duplicaron.` : `Se restauró ${item.term.label}.`);
   };
 
@@ -1913,7 +1953,7 @@ export default function Home() {
           return;
         }
         if (!createCurrentSnapshot("Importación completa")) return;
-        applyImportedDocument(transfer.document, transfer.state);
+        if (!applyImportedDocument(transfer.document, transfer.state)) return;
         setRecoveryNotice("Se importaron los datos y se creó una instantánea del estado anterior.");
       } catch {
         setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
@@ -2146,6 +2186,18 @@ export default function Home() {
     : (isProfilePlan && !fullElectivesCatalogExpanded) || (planYear === "qf-2015" && !fullElectivesCatalogExpanded)
       ? "Catálogo oficial disponible"
       : "Sin materias visibles";
+  const localSavePresentation = localSaveStatusPresentation(localSaveStatus);
+
+  const retryLocalSave = () => {
+    if (canonicalWriteBlockedRef.current) {
+      updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: localSaveStatusRef.current.savedAt, errorKind: "corrupt" }));
+      return;
+    }
+    const state = currentPersonalState();
+    const document = currentPersonalDocument();
+    if (!document) return;
+    persistPersonalDocument(document, { fingerprint: personalDataStateFingerprint(state) });
+  };
 
   return (
     <main className="app-shell">
@@ -2170,6 +2222,19 @@ export default function Home() {
           <details ref={dataMenuRef} className="data-menu">
             <summary aria-label="Importar y exportar datos">Datos</summary>
             <div className="data-panel">
+              <section className={`local-save-card is-${localSaveStatus.phase}`} aria-label="Estado del guardado local">
+                <div className="local-save-message" role="status" aria-live="polite">
+                  <span className="local-save-dot" aria-hidden="true" />
+                  <div>
+                    <strong>{localSavePresentation.title}</strong>
+                    <span>{localSavePresentation.detail}</span>
+                    {localSaveStatus.savedAt && <time dateTime={localSaveStatus.savedAt}>
+                      {localSaveStatus.phase === "saved" ? "Último guardado" : "Último guardado correcto"}: {new Date(localSaveStatus.savedAt).toLocaleString("es-UY")}
+                    </time>}
+                  </div>
+                </div>
+                {localSavePresentation.canRetry && <button type="button" onClick={retryLocalSave}>Reintentar guardado</button>}
+              </section>
               <div className="data-panel-heading">
                 <strong>Compartir datos</strong>
                 <span>El modo solo planificador también puede leer una exportación completa sin importar sus créditos.</span>

@@ -11,7 +11,7 @@ test("restaura la selección académica y las preferencias visuales locales", ()
   assert.match(migrationSource, /LEGACY_ACADEMIC_SELECTION_STORAGE_KEY = "trayecto-udelar-academic-selection-v1"/);
   assert.match(pageSource, /localStorage\.getItem\(PERSONAL_DATA_STORAGE_KEY\)/);
   assert.match(pageSource, /localStorage\.getItem\(ACADEMIC_SELECTION_STORAGE_KEY\)/);
-  assert.match(pageSource, /localStorage\.setItem\(ACADEMIC_SELECTION_STORAGE_KEY,[\s\S]*?planId: planYear, trajectoryId/);
+  assert.match(pageSource, /persistLegacyValue\(ACADEMIC_SELECTION_STORAGE_KEY,[\s\S]*?planId: planYear, trajectoryId/);
   for (const preference of ["appMode", "plannerView", "availableOnly", "showElectives", "showRequirements", "showPlannerCatalog"]) {
     assert.match(pageSource, new RegExp(`preferences\\.${preference}`), preference);
   }
