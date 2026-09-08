@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementada localmente; la configuración remota debe verificarse después de crear `trayecto-udelar` en GitHub.
+Implementada y publicada en <https://github.com/elios11/trayecto-udelar>. El remoto local `origin` apunta al repositorio público y `main` quedó publicado. La configuración de seguridad remota fue inspeccionada después del primer push.
 
 ## Objetivo
 
@@ -17,9 +17,9 @@ Publicar el código de Trayecto sin exponer credenciales ni datos personales, co
 - Actualizaciones de npm y GitHub Actions configuradas sin auto-merge.
 - Checklist remoto para alertas, CodeQL, protección de secretos, rama principal y 2FA.
 
-## Pendientes remotos
+## Estado remoto verificado
 
-- Crear el repositorio público `trayecto-udelar` en la cuenta elegida.
-- Configurar `origin`, subir `main` y verificar la primera ejecución de CI.
-- Aplicar y comprobar la configuración de seguridad enumerada en `docs/security-public-repository.md`.
-- Elegir una licencia por separado; hasta entonces el repositorio es visible, pero no se declara de código abierto.
+- Activos: política de seguridad, advisories y escaneo de secretos.
+- Pendientes: habilitar GitHub Actions para ejecutar CI, reporte privado de vulnerabilidades, alertas y actualizaciones de seguridad de Dependabot, CodeQL y ruleset de `main`.
+- La configuración versionada de Dependabot se aplicará cuando sus funciones y Actions estén habilitadas en el repositorio.
+- Falta elegir una licencia; hasta entonces el repositorio es visible, pero no se declara de código abierto.

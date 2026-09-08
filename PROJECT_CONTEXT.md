@@ -67,6 +67,7 @@ Este documento contiene el contexto estable que todos los chats deben conocer. N
 
 ## Arquitectura
 
+- El repositorio canónico público es <https://github.com/elios11/trayecto-udelar>; `main` es su rama principal y el remoto local se llama `origin`.
 - Aplicacion web con React 19, TypeScript, vinext y Vite.
 - El codigo principal de la interfaz esta bajo `app/`; `app/page.tsx` contiene actualmente gran parte del estado y la interaccion, y `app/globals.css` contiene los estilos globales.
 - La jerarquía de facultades, carreras y planes vive en `app/academic-catalog.ts`, que combina el núcleo curado con `app/data/extracted-academic-catalog.json`; los registros de estado por plan se inicializan desde ese catálogo. Los datasets masivos se registran para carga diferida mediante `app/data/extracted-academic-loaders.ts` y `app/academic-plan-registry.ts`, sin condicionales por carrera en la interfaz central. Una composición no publicada mantiene la carrera seleccionable y muestra un estado vacío explícito, sin inventar materias o mínimos.
