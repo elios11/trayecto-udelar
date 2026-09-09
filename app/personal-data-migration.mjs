@@ -204,9 +204,11 @@ function stableProfileId(selection) {
   ].join("|"))}`;
 }
 
-function profileFromLegacy(selection, statuses, planner, timestamp, previousProfile = null) {
+function profileFromLegacy(selection, statuses, planner, timestamp, previousProfile = null, preferredScenarioId = null) {
   const profileId = previousProfile?.id ?? stableProfileId(selection);
-  const previousScenario = previousProfile?.planning?.scenarios?.find((scenario) => scenario.isPrimary)
+  const previousScenario = previousProfile?.planning?.scenarios?.find((scenario) => scenario.id === preferredScenarioId)
+    ?? previousProfile?.planning?.scenarios?.find((scenario) => scenario.id === previousProfile.planning.activeScenarioId)
+    ?? previousProfile?.planning?.scenarios?.find((scenario) => scenario.isPrimary)
     ?? previousProfile?.planning?.scenarios?.[0]
     ?? null;
   const hasPlanner = planner !== null;
@@ -214,8 +216,8 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
   const rebuiltScenario = hasPlanner ? {
     id: scenarioId,
     name: previousScenario?.name ?? "Plan principal",
-    isPrimary: true,
-    archived: false,
+    isPrimary: previousScenario?.isPrimary ?? true,
+    archived: previousScenario?.archived ?? false,
     createdAt: previousScenario?.createdAt ?? timestamp,
     updatedAt: timestamp,
     currentTermId: planner.currentTermId,
@@ -272,6 +274,11 @@ function equalStatusMaps(left, right) {
   return JSON.stringify(leftEntries) === JSON.stringify(rightEntries);
 }
 
+function equalSelections(left, right) {
+  return Boolean(left && right) && ["facultyId", "careerId", "planId", "progressPlanId", "campusId", "trajectoryId", "credentialId"]
+    .every((key) => left[key] === right[key]);
+}
+
 export function personalDataToAppState(document, catalog) {
   const parsed = parsePersonalDataV3(document);
   const issues = [];
@@ -280,6 +287,7 @@ export function personalDataToAppState(document, catalog) {
   const progress = {};
   const plannerPlans = {};
   const currentPlannerTerms = {};
+  const activeProfile = parsed.document.profiles.find((profile) => profile.id === parsed.document.activeProfileId) ?? null;
   for (const [index, profile] of parsed.document.profiles.entries()) {
     const selection = resolveSelection(profile.selection, normalizedCatalog, `$.profiles[${index}].selection`, issues);
     if (!selection) continue;
@@ -296,12 +304,11 @@ export function personalDataToAppState(document, catalog) {
     }
     progress[selection.progressPlanId] = statuses;
     const planner = plannerFromProfile(profile);
-    if (planner) {
+    if (planner && (!Object.hasOwn(plannerPlans, selection.planId) || profile.id === activeProfile?.id)) {
       plannerPlans[selection.planId] = planner.terms;
       currentPlannerTerms[selection.planId] = planner.currentTermId;
     }
   }
-  const activeProfile = parsed.document.profiles.find((profile) => profile.id === parsed.document.activeProfileId) ?? null;
   return issues.length > 0 ? { ok: false, issues } : {
     ok: true,
     document: parsed.document,
@@ -310,6 +317,8 @@ export function personalDataToAppState(document, catalog) {
       plannerPlans,
       currentPlannerTerms,
       selection: activeProfile?.selection ?? null,
+      activeProfileId: activeProfile?.id ?? null,
+      activeScenarioId: activeProfile?.planning.activeScenarioId ?? null,
     },
   };
 }
@@ -442,38 +451,50 @@ export function appStateToPersonalData(state, options) {
     documentId: previousDocument?.id ?? options?.documentId,
   });
   if (!legacyResult.ok) return legacyResult;
-  const migratedByPlan = new Map(legacyResult.document.profiles.map((profile) => [profile.selection.planId, profile]));
-  const orderedPlanIds = [
-    ...(previousDocument?.profiles.map((profile) => profile.selection.planId) ?? []),
-    ...legacyResult.document.profiles.map((profile) => profile.selection.planId),
-  ].filter((planId, index, all) => all.indexOf(planId) === index);
-  const previousByPlan = new Map(previousDocument?.profiles.map((profile) => [profile.selection.planId, profile]) ?? []);
-  const profiles = orderedPlanIds.map((planId) => {
-    const previousProfile = previousByPlan.get(planId) ?? null;
-    const migratedProfile = migratedByPlan.get(planId) ?? null;
-    const descriptor = descriptorForPlan(catalog, planId);
+  const selected = legacyResult.document.profiles.find((profile) => profile.selection.planId === state?.selection?.planId)?.selection ?? null;
+  const previousProfiles = previousDocument?.profiles ?? [];
+  const requestedProfile = previousProfiles.find((profile) => profile.id === state?.activeProfileId && equalSelections(profile.selection, selected)) ?? null;
+  const matchingProfiles = selected ? previousProfiles.filter((profile) => equalSelections(profile.selection, selected)) : [];
+  if (!requestedProfile && matchingProfiles.length > 1) {
+    return { ok: false, issues: [issue("$.activeProfileId", "ambiguous_profile", "La selección coincide con más de un perfil y necesita una identidad explícita.")] };
+  }
+  const selectedPrevious = requestedProfile ?? matchingProfiles[0] ?? null;
+  const selectedMigrated = selected ? legacyResult.document.profiles.find((profile) => equalSelections(profile.selection, selected)) ?? null : null;
+  const baseProfiles = [...previousProfiles];
+  for (const migrated of legacyResult.document.profiles) {
+    const alreadyRepresented = baseProfiles.some((profile) => profile.id === migrated.id || equalSelections(profile.selection, migrated.selection));
+    if (!alreadyRepresented) baseProfiles.push(migrated);
+  }
+  const targetProfileId = selectedPrevious?.id ?? selectedMigrated?.id ?? null;
+  const planCounts = new Map();
+  for (const profile of baseProfiles) {
+    const planId = profile.selection.planId;
+    planCounts.set(planId, (planCounts.get(planId) ?? 0) + 1);
+  }
+  const profiles = baseProfiles.map((base) => {
+    const descriptor = descriptorForPlan(catalog, base.selection.planId);
     const currentStatuses = descriptor && Object.hasOwn(state?.progress ?? {}, descriptor.progressPlanId)
       ? state.progress[descriptor.progressPlanId]
       : null;
-    const currentTerms = Object.hasOwn(state?.plannerPlans ?? {}, planId) ? state.plannerPlans[planId] : null;
+    const mayEditPlanner = base.id === targetProfileId || planCounts.get(base.selection.planId) === 1;
+    const currentTerms = mayEditPlanner && Object.hasOwn(state?.plannerPlans ?? {}, base.selection.planId) ? state.plannerPlans[base.selection.planId] : null;
     const currentPlanner = currentTerms ? {
       terms: currentTerms,
-      currentTermId: state.currentPlannerTerms?.[planId] ?? null,
+      currentTermId: state.currentPlannerTerms?.[base.selection.planId] ?? null,
     } : null;
-    const base = migratedProfile ?? previousProfile;
-    if (!base) return null;
     const rebuilt = profileFromLegacy(
       base.selection,
       currentStatuses ?? Object.fromEntries(base.progress.map((entry) => [entry.courseId, entry.status])),
-      currentPlanner && (!isDefaultEmptyPlanner(currentPlanner) || previousProfile?.planning.scenarios.length)
+      currentPlanner && (!isDefaultEmptyPlanner(currentPlanner) || base.planning.scenarios.length)
         ? currentPlanner
         : plannerFromProfile(base),
       timestamp,
-      previousProfile,
+      base,
+      base.id === targetProfileId ? state?.activeScenarioId ?? base.planning.activeScenarioId : base.planning.activeScenarioId,
     );
     rebuilt.loadUnit = base.loadUnit;
     return rebuilt;
-  }).filter(Boolean);
+  });
   const candidate = {
     ...legacyResult.document,
     id: previousDocument?.id ?? legacyResult.document.id,
@@ -481,7 +502,7 @@ export function appStateToPersonalData(state, options) {
     createdAt: previousDocument?.createdAt ?? timestamp,
     updatedAt: timestamp,
     lastModifiedByDeviceId: previousDocument?.lastModifiedByDeviceId ?? null,
-    activeProfileId: profiles.find((profile) => profile.selection.planId === state?.selection?.planId)?.id ?? null,
+    activeProfileId: targetProfileId,
     profiles,
   };
   const parsed = parsePersonalDataV3(candidate);
@@ -569,5 +590,7 @@ export function personalDataStateFingerprint(state) {
     plannerPlans,
     currentPlannerTerms,
     selection: state.selection,
+    activeProfileId: state.activeProfileId ?? null,
+    activeScenarioId: state.activeScenarioId ?? null,
   });
 }

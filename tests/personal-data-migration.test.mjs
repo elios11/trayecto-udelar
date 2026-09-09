@@ -25,6 +25,15 @@ const catalog = [
   { facultyId: "fhum", careerId: "technical", planId: "shared-technical", progressPlanId: "shared-degree", defaultTrajectoryId: "listener", defaultCredentialId: "technical", loadUnit: "credits" },
 ];
 const options = { catalog, now, documentId: "migration-document" };
+const catalogForDocument = (document) => [...new Map(document.profiles.map((profile) => [profile.selection.planId, {
+  ...profile.selection,
+  defaultTrajectoryId: profile.selection.trajectoryId,
+  defaultCredentialId: profile.selection.credentialId,
+  trajectoryIds: profile.selection.trajectoryId ? [profile.selection.trajectoryId] : [],
+  campusIds: profile.selection.campusId ? [profile.selection.campusId] : [],
+  credentialIds: profile.selection.credentialId ? [profile.selection.credentialId] : [],
+  loadUnit: profile.loadUnit,
+}])).values()];
 
 test("migrates legacy Computación 1997 progress when v2 is absent", async () => {
   const progressV1 = await fixture("personal-data-legacy-progress-v1.json");
@@ -149,6 +158,72 @@ test("exports, imports, and exports v3 without semantic loss", async () => {
   assert.equal(serializePersonalDataForStorage(rebuilt.document), serializePersonalDataForStorage(complete));
 });
 
+test("preserves two explicit profiles for the same plan when progress changes", async () => {
+  const document = await fixture("personal-data-v3-complete.json");
+  const second = structuredClone(document.profiles[0]);
+  second.id = "profile-second";
+  second.planning.scenarios[0].id = "scenario-second";
+  second.planning.activeScenarioId = "scenario-second";
+  document.profiles.push(second);
+  const matchingCatalog = catalogForDocument(document);
+  const adapted = personalDataToAppState(document, matchingCatalog);
+  assert.equal(adapted.ok, true);
+  adapted.state.progress[document.profiles[0].selection.progressPlanId].MAT1 = "exonerated";
+  const rebuilt = appStateToPersonalData(adapted.state, { catalog: matchingCatalog, now, previousDocument: document });
+  assert.equal(rebuilt.ok, true);
+  assert.equal(rebuilt.document.profiles.length, document.profiles.length);
+  assert.deepEqual(rebuilt.document.profiles.map((profile) => profile.id), document.profiles.map((profile) => profile.id));
+  assert.equal(rebuilt.document.profiles.filter((profile) => profile.selection.progressPlanId === document.profiles[0].selection.progressPlanId).every((profile) => profile.progress.find((entry) => entry.courseId === "MAT1")?.status === "exonerated"), true);
+});
+
+test("edits the active alternative scenario without replacing the primary scenario", async () => {
+  const document = await fixture("personal-data-v3-complete.json");
+  const profile = document.profiles[0];
+  const primaryBefore = structuredClone(profile.planning.scenarios[0]);
+  const alternative = structuredClone(primaryBefore);
+  alternative.id = "scenario-alternative";
+  alternative.name = "Alternativo";
+  alternative.isPrimary = false;
+  alternative.terms[0].label = "Semestre alternativo";
+  const archived = structuredClone(primaryBefore);
+  archived.id = "scenario-archived";
+  archived.name = "Archivado";
+  archived.isPrimary = false;
+  archived.archived = true;
+  archived.terms[0].label = "Semestre archivado";
+  profile.planning.scenarios.push(alternative, archived);
+  profile.planning.activeScenarioId = alternative.id;
+  const matchingCatalog = catalogForDocument(document);
+  const adapted = personalDataToAppState(document, matchingCatalog);
+  assert.equal(adapted.ok, true);
+  assert.equal(adapted.state.activeScenarioId, alternative.id);
+  adapted.state.progress[profile.selection.progressPlanId].MAT1 = "exonerated";
+  const rebuilt = appStateToPersonalData(adapted.state, { catalog: matchingCatalog, now, previousDocument: document });
+  assert.equal(rebuilt.ok, true);
+  const rebuiltProfile = rebuilt.document.profiles.find((candidate) => candidate.id === profile.id);
+  assert.equal(rebuiltProfile.planning.activeScenarioId, alternative.id);
+  assert.deepEqual(rebuiltProfile.planning.scenarios.find((scenario) => scenario.id === primaryBefore.id), primaryBefore);
+  assert.deepEqual(rebuiltProfile.planning.scenarios.find((scenario) => scenario.id === archived.id), archived);
+  assert.equal(rebuiltProfile.planning.scenarios.find((scenario) => scenario.id === alternative.id).terms[0].label, "Semestre alternativo");
+});
+
+test("blocks an ambiguous profile selection when its identity is missing", async () => {
+  const document = await fixture("personal-data-v3-complete.json");
+  const duplicate = structuredClone(document.profiles[0]);
+  duplicate.id = "profile-duplicate";
+  duplicate.planning.scenarios[0].id = "scenario-duplicate";
+  duplicate.planning.activeScenarioId = "scenario-duplicate";
+  document.profiles.push(duplicate);
+  const matchingCatalog = catalogForDocument(document);
+  const adapted = personalDataToAppState(document, matchingCatalog);
+  assert.equal(adapted.ok, true);
+  delete adapted.state.activeProfileId;
+  adapted.state.progress[document.profiles[0].selection.progressPlanId].MAT1 = "exonerated";
+  const rebuilt = appStateToPersonalData(adapted.state, { catalog: matchingCatalog, now, previousDocument: document });
+  assert.equal(rebuilt.ok, false);
+  assert.ok(rebuilt.issues.some((entry) => entry.code === "ambiguous_profile"));
+});
+
 test("imports the complete historical v1/v2 shapes actually accepted by the app", async () => {
   for (const name of ["personal-data-complete-v1.json", "personal-data-complete-v2.json"]) {
     const transfer = await fixture(name);
@@ -202,6 +277,6 @@ test("rejects future versions, broken references, duplicates, and other-plan pla
 
 test("state fingerprint excludes visual preferences and remains deterministic", () => {
   const state = { progress: {}, plannerPlans: {}, currentPlannerTerms: {}, selection: null, theme: "bosque" };
-  assert.equal(personalDataStateFingerprint(state), '{"progress":{},"plannerPlans":{},"currentPlannerTerms":{},"selection":null}');
+  assert.equal(personalDataStateFingerprint(state), '{"progress":{},"plannerPlans":{},"currentPlannerTerms":{},"selection":null,"activeProfileId":null,"activeScenarioId":null}');
   assert.equal(parsePersonalDataV3({}).ok, false);
 });

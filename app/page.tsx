@@ -1151,6 +1151,21 @@ export default function Home() {
     return false;
   }, [updateLocalSaveStatus]);
 
+  function personalIdentityForSelection(selection: PersonalDataSelectionV3) {
+    const profiles = personalDataRef.current?.profiles ?? [];
+    const matches = (candidate: PersonalDataSelectionV3) => candidate.facultyId === selection.facultyId
+      && candidate.careerId === selection.careerId
+      && candidate.planId === selection.planId
+      && candidate.progressPlanId === selection.progressPlanId
+      && candidate.campusId === selection.campusId
+      && candidate.trajectoryId === selection.trajectoryId
+      && candidate.credentialId === selection.credentialId;
+    const matchingProfiles = profiles.filter((candidate) => matches(candidate.selection));
+    const active = matchingProfiles.find((profile) => profile.id === personalDataRef.current?.activeProfileId);
+    const profile = active ?? (matchingProfiles.length === 1 ? matchingProfiles[0] : null);
+    return { activeProfileId: profile?.id ?? null, activeScenarioId: profile?.planning.activeScenarioId ?? null };
+  }
+
   useEffect(() => {
     let cancelled = false;
     queueMicrotask(async () => {
@@ -1209,6 +1224,8 @@ export default function Home() {
           plannerPlans: nextPlannerPlans,
           currentPlannerTerms: nextCurrentTerms,
           selection,
+          activeProfileId: hydration.state.activeProfileId,
+          activeScenarioId: hydration.state.activeScenarioId,
         });
         personalDataFingerprintRef.current = hydratedFingerprint;
         if (hydration.shouldPersist) {
@@ -1285,7 +1302,8 @@ export default function Home() {
       trajectoryId: trajectoryId || null,
       credentialId: credentialId || null,
     };
-    const state: PersonalDataAppState = { progress, plannerPlans, currentPlannerTerms, selection };
+    const identity = personalIdentityForSelection(selection);
+    const state: PersonalDataAppState = { progress, plannerPlans, currentPlannerTerms, selection, ...identity };
     const fingerprint = personalDataStateFingerprint(state);
     if (fingerprint === personalDataFingerprintRef.current) return;
     const updated = appStateToPersonalData(state, {
@@ -1634,11 +1652,8 @@ export default function Home() {
     return status === "pending" ? isCourseUnlocked(course) : status === "approved" ? isExamUnlocked(course) : true;
   };
 
-  const currentPersonalState = (): PersonalDataAppState => ({
-    progress,
-    plannerPlans,
-    currentPlannerTerms,
-    selection: {
+  const currentPersonalState = (): PersonalDataAppState => {
+    const selection: PersonalDataSelectionV3 = {
       facultyId: activeFaculty.id,
       careerId: activeCareer.id,
       planId: planYear,
@@ -1646,8 +1661,9 @@ export default function Home() {
       campusId: campusId || null,
       trajectoryId: trajectoryId || null,
       credentialId: credentialId || null,
-    },
-  });
+    };
+    return { progress, plannerPlans, currentPlannerTerms, selection, ...personalIdentityForSelection(selection) };
+  };
 
   function persistLegacyValue(key: string, value: string) {
     try {
@@ -1861,6 +1877,8 @@ export default function Home() {
         trajectoryId: trajectoryId || null,
         credentialId: credentialId || null,
       },
+      activeProfileId: state.activeProfileId ?? document.activeProfileId,
+      activeScenarioId: state.activeScenarioId ?? document.profiles.find((profile) => profile.id === document.activeProfileId)?.planning.activeScenarioId ?? null,
     });
     if (!persistPersonalDocument(document, { fingerprint: importedFingerprint, allowBlocked: true })) return false;
     setProgress(nextProgress);

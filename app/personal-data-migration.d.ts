@@ -27,6 +27,8 @@ export type PersonalDataAppState = {
   plannerPlans: Record<string, LegacyPlannerTerm[]>;
   currentPlannerTerms: Record<string, string | null>;
   selection: PersonalDataSelectionV3 | null;
+  activeProfileId?: string | null;
+  activeScenarioId?: string | null;
 };
 
 export type MigrationResult<T> =

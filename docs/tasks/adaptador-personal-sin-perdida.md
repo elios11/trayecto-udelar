@@ -33,3 +33,9 @@ Eliminar la diferencia entre lo que acepta `trayecto-personal-data` v3 y lo que 
 - Actualizar `PROJECT_CONTEXT.md` si cambia la frontera estable entre React y v3.
 - Cierre con pruebas específicas, `npm test`, `npm run lint`, `git diff --check` y auditoría pública.
 
+## Estado
+
+Implementado y validado. El estado de aplicación conserva la identidad activa del perfil y del escenario, actualiza únicamente el escenario editado, preserva perfiles homónimos y escenarios archivados, y detiene escrituras cuando una selección heredada no identifica un perfil de forma inequívoca.
+
+Validación final: `npm test` (813 pruebas), `npm run lint`, `git diff --check` y `npm run security:repo`.
+
