@@ -159,6 +159,21 @@ test("imports the complete historical v1/v2 shapes actually accepted by the app"
   }
 });
 
+test("rejects a legacy file completely when migrating it would discard invalid progress", async () => {
+  const transfer = await fixture("personal-data-complete-v2.json");
+  transfer.statuses.BROKEN = "estado-invalido";
+  const result = parseCompleteTransfer(transfer, options);
+  assert.equal(result.ok, false);
+  assert.ok(result.issues.some((entry) => entry.code === "invalid_progress_entry"));
+
+  const recovered = migrateLegacyStateToPersonalData({
+    progressV2: { "2025": transfer.statuses },
+    selectionV1: { planId: "2025" },
+  }, options);
+  assert.equal(recovered.ok, true);
+  assert.deepEqual(recovered.document.profiles[0].progress.map((entry) => entry.courseId), ["MAT1", "FIS1"]);
+});
+
 test("extracts planner v1 and planner data from complete v2 and v3", async () => {
   const plannerV1 = await fixture("personal-data-planner-v1.json");
   const fullV2 = await fixture("personal-data-complete-v2.json");

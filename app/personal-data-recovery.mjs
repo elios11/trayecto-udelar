@@ -239,3 +239,13 @@ export function restoreDeletedTerm(document, deletedTerm) {
   const checked = parsePersonalDataV3(next);
   return checked.ok ? { ok: true, document: checked.document, omittedCourseIds } : { ok: false, issues: checked.issues };
 }
+
+export function isDeletedTermAlreadyRestored(document, deletedTerm) {
+  const parsedDocument = parsePersonalDataV3(document);
+  const issues = [];
+  const item = normalizeDeletedTerm(deletedTerm, "$.deletedTerm", issues);
+  if (!parsedDocument.ok || !item) return false;
+  const profile = parsedDocument.document.profiles.find((candidate) => candidate.id === item.profileId && candidate.selection.planId === item.planId);
+  const scenario = profile?.planning.scenarios.find((candidate) => candidate.id === item.scenarioId);
+  return Boolean(scenario?.terms.some((term) => term.id === item.term.id));
+}

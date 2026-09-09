@@ -22,3 +22,4 @@ export function createDeletedTerm(value: Omit<DeletedTermRecovery, "id" | "delet
 export function addDeletedTerm(store: RecoveryStore, deletedTerm: DeletedTermRecovery, options: { now: string }): RecoveryResult<{ store: RecoveryStore; item: DeletedTermRecovery }>;
 export function removeRecoveryItem(store: RecoveryStore, kind: "snapshot" | "deleted-term", id: string, options?: { now?: string }): RecoveryResult<{ store: RecoveryStore }>;
 export function restoreDeletedTerm(document: unknown, deletedTerm: DeletedTermRecovery): RecoveryResult<{ document: PersonalDataDocumentV3; omittedCourseIds: string[] }> | { ok: false; code: "missing_context" | "duplicate_term"; issues: PersonalDataIssue[] };
+export function isDeletedTermAlreadyRestored(document: unknown, deletedTerm: DeletedTermRecovery): boolean;

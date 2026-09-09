@@ -518,6 +518,9 @@ export function parseCompleteTransfer(value, options) {
     },
   }, options);
   if (!migrated.ok) return migrated;
+  if (migrated.issues.length > 0) {
+    return { ok: false, issues: migrated.issues };
+  }
   const adapted = personalDataToAppState(migrated.document, options?.catalog);
   return adapted.ok ? {
     ok: true,

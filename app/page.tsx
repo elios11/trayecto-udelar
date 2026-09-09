@@ -33,6 +33,7 @@ import {
   createDeletedTerm,
   createRecoverySnapshot,
   emptyRecoveryStore,
+  isDeletedTermAlreadyRestored,
   matchesPersistedRecoveryStore,
   parseRecoveryStore,
   removeRecoveryItem,
@@ -1760,11 +1761,9 @@ export default function Home() {
   };
 
   const exportProgress = () => {
-    if (!personalDataRef.current) {
-      setImportError({ title: "Todavía estamos preparando tus datos", message: "Esperá un momento y volvé a intentar la exportación." });
-      return;
-    }
-    downloadJson("mi-trayecto-udelar.json", serializePersonalDataForStorage(personalDataRef.current), true);
+    const document = currentPersonalDocument();
+    if (!document) return;
+    downloadJson("mi-trayecto-udelar.json", serializePersonalDataForStorage(document), true);
   };
 
   const exportPlanner = () => {
@@ -1912,6 +1911,13 @@ export default function Home() {
   const restoreTrashedTerm = (item: DeletedTermRecovery) => {
     const document = currentPersonalDocument();
     if (!document) return;
+    if (isDeletedTermAlreadyRestored(document, item)) {
+      const removed = removeRecoveryItem(recovery, "deleted-term", item.id, { now: new Date().toISOString() });
+      if (!removed.ok || !persistRecoveryImmediately(removed.store)) return;
+      setRecovery(removed.store);
+      setRecoveryNotice(`${item.term.label} ya estaba restaurado; limpiamos su copia pendiente de la papelera.`);
+      return;
+    }
     const restored = restoreDeletedTerm(document, item);
     if (!restored.ok) {
       setImportError({ title: "No pudimos restaurar el semestre", message: restored.code === "missing_context" ? "El plan o escenario original todavía no está disponible. Conservamos el semestre en la papelera." : "El semestre no se puede restaurar sin crear una duplicación. Conservamos la copia en la papelera." });
@@ -1922,11 +1928,16 @@ export default function Home() {
       setImportError({ title: "No pudimos restaurar el semestre", message: "No pudimos validar el plan restaurado. Conservamos tus datos actuales y la copia en la papelera." });
       return;
     }
-    const removed = removeRecoveryItem(recovery, "deleted-term", item.id, { now: new Date().toISOString() });
-    if (!removed.ok || !persistRecoveryImmediately(removed.store)) return;
-    rememberUndo(`restauración de ${item.term.label}`);
-    setRecovery(removed.store);
+    const undoEntry = createUndoEntry(`restauración de ${item.term.label}`, currentPersonalState(), recovery);
     if (!applyImportedDocument(restored.document, state.state)) return;
+    undoStackRef.current = pushUndoEntry(undoStackRef.current, undoEntry);
+    setUndoEntry(undoEntry);
+    const removed = removeRecoveryItem(recovery, "deleted-term", item.id, { now: new Date().toISOString() });
+    if (!removed.ok || !persistRecoveryImmediately(removed.store)) {
+      setRecoveryNotice(`Se restauró ${item.term.label}, pero su copia sigue en la papelera hasta que podamos limpiarla.`);
+      return;
+    }
+    setRecovery(removed.store);
     setRecoveryNotice(restored.omittedCourseIds.length ? `Se restauró ${item.term.label}; ${restored.omittedCourseIds.length} materias ya estaban asignadas y no se duplicaron.` : `Se restauró ${item.term.label}.`);
   };
 

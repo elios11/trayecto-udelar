@@ -9,6 +9,7 @@ import {
   createDeletedTerm,
   createRecoverySnapshot,
   emptyRecoveryStore,
+  isDeletedTermAlreadyRestored,
   parseRecoveryStore,
   restoreDeletedTerm,
 } from "../app/personal-data-recovery.mjs";
@@ -78,6 +79,8 @@ test("restores a term at its original position without duplicate courses and pre
   assert.deepEqual(restored.document.profiles[0].planning.scenarios[0].terms[1].courseIds, ["PROG1"]);
   assert.equal(restored.document.profiles[0].planning.scenarios[0].currentTermId, "term-b");
   assert.deepEqual(restored.omittedCourseIds, ["FIS1"]);
+  assert.equal(isDeletedTermAlreadyRestored(document, deleted), false);
+  assert.equal(isDeletedTermAlreadyRestored(restored.document, deleted), true);
   const orphan = restoreDeletedTerm(document, { ...deleted, scenarioId: "missing" });
   assert.equal(orphan.ok, false);
   assert.equal(orphan.code, "missing_context");

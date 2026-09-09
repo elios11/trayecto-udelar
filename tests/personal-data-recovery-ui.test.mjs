@@ -20,6 +20,12 @@ test("wires local recovery controls into the data panel accessibly", async () =>
   assert.match(page, /persistRecoveryImmediately\(snapshot\.store\)/);
   assert.match(page, /persistRecoveryImmediately\(added\.store\)/);
   assert.match(page, /persistRecoveryImmediately\(cleared\)/);
+  assert.match(page, /isDeletedTermAlreadyRestored\(document, item\)/);
+  const restoreStart = page.indexOf("const restoreTrashedTerm");
+  const restoreEnd = page.indexOf("const importProgress", restoreStart);
+  const restoreSource = page.slice(restoreStart, restoreEnd);
+  const normalRestore = restoreSource.slice(restoreSource.indexOf("const restored = restoreDeletedTerm"));
+  assert.ok(normalRestore.indexOf("applyImportedDocument(restored.document, state.state)") < normalRestore.indexOf("persistRecoveryImmediately(removed.store)"));
   assert.match(page, /ref=\{recoveryConfirmRef\}/);
   assert.match(page, /transferResources\.catalog/);
   assert.match(page, /onBlur=\{\(\) => \{ renameUndoTermRef\.current = null; \}\}/);
