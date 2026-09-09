@@ -1,4 +1,4 @@
-import type { PersonalDataDocumentV3, PersonalDataIssue, PersonalDataLoadUnit, PersonalDataSelectionV3 } from "./personal-data.mjs";
+import type { PersonalDataDocumentV3, PersonalDataIssue, PersonalDataLoadTargetV3, PersonalDataLoadUnit, PersonalDataSelectionV3 } from "./personal-data.mjs";
 
 export const PERSONAL_DATA_STORAGE_KEY: "trayecto-udelar-personal-data-v3";
 export const LEGACY_PROGRESS_STORAGE_KEY: "trayecto-udelar-progress-v2";
@@ -21,7 +21,7 @@ export type PersonalDataCatalogEntry = {
   loadUnit: PersonalDataLoadUnit;
 };
 
-export type LegacyPlannerTerm = { id: string; label: string; courseIds: string[] };
+export type LegacyPlannerTerm = { id: string; label: string; loadTarget: PersonalDataLoadTargetV3 | null; courseIds: string[] };
 export type LegacyPlannerTransfer = { terms: LegacyPlannerTerm[]; currentTermId: string | null };
 export type PersonalDataAppState = {
   progress: Record<string, Record<string, "pending" | "approved" | "exonerated">>;

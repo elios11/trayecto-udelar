@@ -26,7 +26,7 @@ test("cierra el selector de temas fuera del panel y con Escape", () => {
 test("separa el intercambio del planificador del intercambio completo", () => {
   assert.match(pageSource, /const document = currentPersonalDocument\(\);[\s\S]*?serializePersonalDataForStorage\(document\)/);
   assert.match(migrationSource, /formatVersion: 3/);
-  assert.match(pageSource, /planner: \{ terms: plannerTerms, currentTermId: currentPlannerTermId \}/);
+  assert.match(pageSource, /planner: \{ terms: plannerTerms\.map\(\(\{ id, label, courseIds \}\) => \(\{ id, label, courseIds \}\)\), currentTermId: currentPlannerTermId \}/);
   assert.match(pageSource, /scope: "planner"/);
   assert.match(pageSource, /const importPlanner =/);
   assert.match(pageSource, /parseCompleteTransfer\(parsed,/);

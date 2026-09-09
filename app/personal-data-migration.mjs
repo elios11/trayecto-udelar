@@ -177,8 +177,20 @@ function normalizePlannerTransfer(value, path, issues, allowEmpty = false) {
       courseIds.add(courseId);
       normalizedCourseIds.push(courseId);
     }
+    let loadTarget = null;
+    if (candidate.loadTarget !== null && candidate.loadTarget !== undefined) {
+      if (!isRecord(candidate.loadTarget)
+        || !LOAD_UNITS.has(candidate.loadTarget.unit)
+        || typeof candidate.loadTarget.value !== "number"
+        || !Number.isFinite(candidate.loadTarget.value)
+        || candidate.loadTarget.value <= 0) {
+        issues.push(issue(`${path}.terms[${index}].loadTarget`, "invalid_load_target", "El objetivo de carga debe indicar una unidad válida y un valor mayor que cero."));
+        return null;
+      }
+      loadTarget = { unit: candidate.loadTarget.unit, value: candidate.loadTarget.value };
+    }
     termIds.add(candidate.id);
-    terms.push({ id: candidate.id, label: candidate.label, courseIds: normalizedCourseIds });
+    terms.push({ id: candidate.id, label: candidate.label, loadTarget, courseIds: normalizedCourseIds });
   }
   const currentTermId = value.currentTermId === null || value.currentTermId === undefined
     ? null
@@ -211,7 +223,7 @@ function normalizePlannerPlans(value, currentTerms, path, issues) {
 function isDefaultEmptyPlanner(transfer) {
   return transfer.currentTermId === null
     && transfer.terms.length === 4
-    && transfer.terms.every((term, index) => term.id === `term-${index + 1}` && term.label === `Semestre ${index + 1}` && term.courseIds.length === 0);
+    && transfer.terms.every((term, index) => term.id === `term-${index + 1}` && term.label === `Semestre ${index + 1}` && term.loadTarget === null && term.courseIds.length === 0);
 }
 
 function stableProfileId(selection) {
@@ -255,7 +267,7 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
           : previousTerm?.status === "closed" ? "closed" : "planned",
         startsAt: previousTerm?.startsAt ?? null,
         endsAt: previousTerm?.endsAt ?? null,
-        loadTarget: previousTerm?.loadTarget ?? null,
+        loadTarget: term.loadTarget ?? previousTerm?.loadTarget ?? null,
         courseIds: [...term.courseIds],
       };
     }),
@@ -294,7 +306,7 @@ function plannerFromProfile(profile) {
     ?? null;
   if (!scenario) return null;
   return {
-    terms: scenario.terms.map((term) => ({ id: term.id, label: term.label, courseIds: [...term.courseIds] })),
+    terms: scenario.terms.map((term) => ({ id: term.id, label: term.label, loadTarget: term.loadTarget, courseIds: [...term.courseIds] })),
     currentTermId: scenario.currentTermId,
   };
 }

@@ -224,6 +224,29 @@ test("blocks an ambiguous profile selection when its identity is missing", async
   assert.ok(rebuilt.issues.some((entry) => entry.code === "ambiguous_profile"));
 });
 
+test("preserves and fingerprints a personal load target edited in app state", async () => {
+  const complete = await fixture("personal-data-v3-complete.json");
+  const matchingCatalog = complete.profiles.map((profile) => ({
+    ...profile.selection,
+    defaultTrajectoryId: profile.selection.trajectoryId,
+    defaultCredentialId: profile.selection.credentialId,
+    loadUnit: profile.loadUnit,
+  }));
+  const adapted = personalDataToAppState(complete, matchingCatalog);
+  assert.equal(adapted.ok, true);
+  const before = personalDataStateFingerprint(adapted.state);
+  adapted.state.plannerPlans["computacion-1997"][0].loadTarget = { unit: "hours", value: 320 };
+  assert.notEqual(personalDataStateFingerprint(adapted.state), before);
+
+  const rebuilt = appStateToPersonalData(adapted.state, {
+    catalog: matchingCatalog,
+    now: "2026-09-08T16:00:00.000Z",
+    previousDocument: complete,
+  });
+  assert.equal(rebuilt.ok, true);
+  assert.deepEqual(rebuilt.document.profiles[0].planning.scenarios[0].terms[0].loadTarget, { unit: "hours", value: 320 });
+});
+
 test("imports the complete historical v1/v2 shapes actually accepted by the app", async () => {
   for (const name of ["personal-data-complete-v1.json", "personal-data-complete-v2.json"]) {
     const transfer = await fixture(name);
@@ -259,6 +282,7 @@ test("extracts planner v1 and planner data from complete v2 and v3", async () =>
     const result = parsePlannerTransferFile(value, { ...options, planId: "2025" });
     assert.equal(result.ok, true);
     assert.equal(result.planner.currentTermId, value === plannerV1 ? "term-1" : "term-2");
+    assert.ok(result.planner.terms.every((term) => term.loadTarget === null));
   }
 });
 

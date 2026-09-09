@@ -26,7 +26,7 @@ import {
   type PersonalDataAppState,
   type PersonalDataCatalogEntry,
 } from "./personal-data-migration.mjs";
-import { parsePersonalDataV3, type PersonalDataDocumentV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
+import { parsePersonalDataV3, type PersonalDataDocumentV3, type PersonalDataLoadTargetV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
 import { classifyCurriculumReferences, curriculumRevisionForPlan } from "./curriculum-revisions.mjs";
 import {
   RECOVERY_STORAGE_KEY,
@@ -57,6 +57,7 @@ import {
   writeWithLocalLease,
   type LocalDataConflict,
 } from "./local-data-concurrency.mjs";
+import { analyzePlannerLoad, calculatePotentialCreditImpact, calculateTermLoad } from "./planner-load.mjs";
 import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
@@ -637,7 +638,7 @@ const LEGACY_STORAGE_KEY = LEGACY_COMPUTATION_PROGRESS_STORAGE_KEY;
 type PlanProgress = Record<PlanId, Record<string, CourseStatus>>;
 type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
-type PlannerTerm = { id: string; label: string; courseIds: string[] };
+type PlannerTerm = { id: string; label: string; loadTarget: PersonalDataLoadTargetV3 | null; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
 type CurrentPlannerTerms = Record<PlanId, string | null>;
 type RecoveryConfirmation = { kind: "reset" } | { kind: "delete-item"; itemKind: "snapshot" | "deleted-term"; id: string } | { kind: "clear-trash" };
@@ -681,6 +682,7 @@ const isPlannerView = (value: unknown): value is PlannerView => value === "board
 const createDefaultTerms = (): PlannerTerm[] => Array.from({ length: 4 }, (_, index) => ({
   id: `term-${index + 1}`,
   label: `Semestre ${index + 1}`,
+  loadTarget: null,
   courseIds: [],
 }));
 
@@ -721,6 +723,7 @@ export default function Home() {
   const [plannerPlans, setPlannerPlans] = useState<PlannerPlans>(() => createAcademicPlanRecord(() => createDefaultTerms()));
   const [plannerView, setPlannerView] = useState<PlannerView>("board");
   const [plannerSearch, setPlannerSearch] = useState("");
+  const [plannerTargetUnitDrafts, setPlannerTargetUnitDrafts] = useState<Record<string, PersonalDataLoadTargetV3["unit"]>>({});
   const [draggedCourseId, setDraggedCourseId] = useState<string | null>(null);
   const [currentPlannerTerms, setCurrentPlannerTerms] = useState<CurrentPlannerTerms>(() => createAcademicPlanRecord(() => null));
   const [rolloverTermId, setRolloverTermId] = useState<string | null>(null);
@@ -765,6 +768,7 @@ export default function Home() {
   const recoveryTriggerRef = useRef<HTMLElement | null>(null);
   const recoveryConfirmRef = useRef<HTMLButtonElement | null>(null);
   const renameUndoTermRef = useRef<string | null>(null);
+  const loadTargetUndoTermRef = useRef<string | null>(null);
   const undoLastRef = useRef<() => void>(() => {});
   const recoverySerializedRef = useRef<string | null>(null);
   const activeThemeOption = themeOptions.find((option) => option.id === theme) ?? themeOptions[0];
@@ -1091,16 +1095,17 @@ export default function Home() {
     for (const course of extendedElectivesData?.courses ?? []) merged.set(course.id, course);
     return merged;
   }, [planYear, isProfilePlan, isRegisteredPlan, activeRegisteredPlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
-  const verifiedRules = useMemo(() => {
-    const rules = isRegisteredPlan
+  const publishedRules = useMemo(() => {
+    return isRegisteredPlan
       ? (activeRegisteredPlan?.rules ?? [])
       : planYear === "2025"
       ? plan2025Data.rules
       : isProfilePlan
         ? [...(activeProfileData?.rules ?? []), ...(activeProfileCatalogData?.rules ?? [])]
         : planYear === "qf-2015" ? [...(qf2015Data?.rules ?? []), ...(qfCatalogData?.rules ?? [])] : [...bedeliasData.rules, ...(extendedElectivesData?.rules ?? [])];
-    return new Map(rules.filter((rule) => isRequirementExpressionEvaluable(rule.expression)).map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule]));
   }, [planYear, isProfilePlan, isRegisteredPlan, activeRegisteredPlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
+  const publishedRuleMap = useMemo(() => new Map(publishedRules.map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule])), [publishedRules]);
+  const verifiedRules = useMemo(() => new Map(publishedRules.filter((rule) => isRequirementExpressionEvaluable(rule.expression)).map((rule) => [`${rule.target.code}:${rule.target.assessment}`, rule])), [publishedRules]);
   const creditStructure = isRegisteredPlan
     ? (activeRegisteredPlan?.creditStructure ?? plan2025Data.creditStructure)
     : planYear === "2025"
@@ -1682,6 +1687,7 @@ export default function Home() {
     ? isComplete("MI2") || statuses.PI === "exonerated"
     : isComplete(id);
   const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.bedeliasCode ?? (course.id === "1730-A" ? "1730" : course.id)}:${assessment}`);
+  const publishedRule = (course: Course, assessment: "course" | "exam") => publishedRuleMap.get(`${course.bedeliasCode ?? (course.id === "1730-A" ? "1730" : course.id)}:${assessment}`);
   const groupCredits = (groupCode: string) => {
     const registeredCourseGroup = isRegisteredPlan ? activeRegisteredPlan?.requirementCourseGroups?.[groupCode] : undefined;
     if (registeredCourseGroup) {
@@ -1855,7 +1861,7 @@ export default function Home() {
       career: activeCareer.id,
       plan: planYear,
       trajectory: trajectoryId,
-      planner: { terms: plannerTerms, currentTermId: currentPlannerTermId },
+      planner: { terms: plannerTerms.map(({ id, label, courseIds }) => ({ id, label, courseIds })), currentTermId: currentPlannerTermId },
     });
   };
 
@@ -2137,7 +2143,7 @@ export default function Home() {
     rememberUndo("creación de semestre");
     updatePlannerTerms((terms) => [
     ...terms,
-    { id: `term-${Date.now()}`, label: `Semestre ${terms.length + 1}`, courseIds: [] },
+    { id: `term-${Date.now()}`, label: `Semestre ${terms.length + 1}`, loadTarget: null, courseIds: [] },
     ]);
   };
   const renamePlannerTerm = (termId: string, label: string) => {
@@ -2146,6 +2152,13 @@ export default function Home() {
       renameUndoTermRef.current = termId;
     }
     updatePlannerTerms((terms) => terms.map((term) => term.id === termId ? { ...term, label } : term));
+  };
+  const updatePlannerLoadTarget = (termId: string, loadTarget: PersonalDataLoadTargetV3 | null) => {
+    if (loadTargetUndoTermRef.current !== termId) {
+      rememberUndo(loadTarget ? "cambio de objetivo de carga" : "eliminación de objetivo de carga");
+      loadTargetUndoTermRef.current = termId;
+    }
+    updatePlannerTerms((terms) => terms.map((term) => term.id === termId ? { ...term, loadTarget } : term));
   };
   const removePlannerTerm = (termId: string) => {
     if (plannerTerms.length === 1) return;
@@ -2246,6 +2259,8 @@ export default function Home() {
     return () => document.removeEventListener("keydown", handleUndoShortcut);
   }, [selected, importError, rolloverTermId, recoveryConfirmation, progress, plannerPlans, currentPlannerTerms, planYear, activeFaculty.id, activeCareer.id, activeProgressPlanId, campusId, trajectoryId, credentialId]);
   const assignedPlannerIds = new Set(plannerTerms.flatMap((term) => term.courseIds));
+  const plannerLoadAnalysis = analyzePlannerLoad({ terms: plannerTerms, courses: plannerCourses, progress: statuses });
+  const duplicatePlannerCourseIds = new Set(plannerLoadAnalysis.duplicateCourseIds);
   const plannedCredits = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + course.credits : sum, 0);
   const plannedHours = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + (course.hours ?? 0) : sum, 0);
   const creditProgressPercent = !hasPublishedCourseLoad
@@ -2849,6 +2864,21 @@ export default function Home() {
                     const termLoad = hasPublishedCourseLoad ? usesPublishedHours ? termHours : termCredits : termCourses.length;
                     const completedTermLoad = hasPublishedCourseLoad ? usesPublishedHours ? exoneratedHours : exoneratedCredits : termCourses.filter((course) => (statuses[course.id] ?? "pending") === "exonerated").length;
                     const isCurrentTerm = currentPlannerTermId === term.id;
+                    const targetUnit = plannerTargetUnitDrafts[term.id] ?? term.loadTarget?.unit ?? "credits";
+                    const personalLoad = calculateTermLoad({ term, courses: plannerCourses, unit: term.loadTarget?.unit ?? targetUnit });
+                    const personalTargetStatus = plannerLoadAnalysis.terms.find((summary) => summary.termId === term.id)?.targetStatus;
+                    const accreditedPlanned = termCourses.filter((course) => statuses[course.id] === "exonerated");
+                    const hasDuplicate = term.courseIds.some((courseId) => duplicatePlannerCourseIds.has(courseId));
+                    const coursesWithUnmetKnownRequirements = termCourses.filter((course) => {
+                      if (statuses[course.id] === "exonerated") return false;
+                      const modeledMissing = (course.prerequisites ?? []).some((id) => !isRequirementComplete(id)) || Boolean(course.minCredits && earnedCredits < course.minCredits);
+                      const rule = officialRule(course, "course");
+                      return modeledMissing || Boolean(rule && !expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits, groupApprovals));
+                    });
+                    const coursesWithRulesToReview = termCourses.filter((course) => statuses[course.id] !== "exonerated" && publishedRule(course, "course") && !officialRule(course, "course"));
+                    const potentialImpact = calculatePotentialCreditImpact(termCourses);
+                    const knownAreaImpacts = Object.entries(potentialImpact.nodeCredits).map(([nodeId, credits]) => ({ label: nodeById.get(nodeId)?.name ?? nodeId, credits }));
+                    const potentialTitleCredits = Math.min(potentialImpact.totalCredits, Math.max(credential.minTotalCredits - earnedCredits, 0));
                     return (
                       <section className={"planner-term" + (isCurrentTerm ? " current" : "")} key={term.id} onDragOver={(event) => event.preventDefault()} onDrop={() => { if (draggedCourseId) assignPlannerCourse(draggedCourseId, term.id); setDraggedCourseId(null); }}>
                         <header>
@@ -2861,6 +2891,44 @@ export default function Home() {
                               <p className="current-progress-copy"><strong>{completedTermLoad}/{termLoad}</strong> {!hasPublishedCourseLoad ? "materias completadas" : usesPublishedHours ? "horas completadas" : "créditos exonerados"}</p>
                             </>}
                             <button type="button" className={"current-term-button" + (isCurrentTerm ? " active" : "")} onClick={() => setCurrentPlannerTerm(term.id)}>{isCurrentTerm ? "Semestre actual" : "Marcar como actual"}</button>
+                            <details className="term-planning-details">
+                              <summary>{term.loadTarget ? `Objetivo: ${term.loadTarget.value} ${term.loadTarget.unit === "credits" ? "cr." : term.loadTarget.unit === "hours" ? "h" : "materias"}` : "Definir objetivo de carga"}</summary>
+                              <div className="term-target-editor">
+                                <label>Medir por
+                                  <select value={targetUnit} onChange={(event) => {
+                                    const unit = event.target.value as PersonalDataLoadTargetV3["unit"];
+                                    setPlannerTargetUnitDrafts((current) => ({ ...current, [term.id]: unit }));
+                                    if (term.loadTarget) updatePlannerLoadTarget(term.id, { ...term.loadTarget, unit });
+                                  }}>
+                                    <option value="credits">Créditos</option>
+                                    <option value="hours">Horas</option>
+                                    <option value="courses">Materias</option>
+                                  </select>
+                                </label>
+                                <label>Objetivo
+                                  <input type="number" min="1" step="1" inputMode="numeric" value={term.loadTarget?.value ?? ""} placeholder="Sin objetivo" onChange={(event) => {
+                                    const value = Number(event.target.value);
+                                    updatePlannerLoadTarget(term.id, Number.isFinite(value) && value > 0 ? { unit: targetUnit, value } : null);
+                                  }} onBlur={() => { loadTargetUndoTermRef.current = null; }} />
+                                </label>
+                                {term.loadTarget && <button type="button" onClick={() => { updatePlannerLoadTarget(term.id, null); loadTargetUndoTermRef.current = null; }}>Quitar objetivo</button>}
+                              </div>
+                              <p className="term-load-copy">Carga conocida: {personalLoad.value} {personalLoad.unit === "credits" ? "cr." : personalLoad.unit === "hours" ? "h" : personalLoad.value === 1 ? "materia" : "materias"}{personalLoad.partial ? " · subtotal parcial" : ""}</p>
+                              {potentialImpact.totalCredits > 0 && <div className="term-impact">
+                                <strong>Impacto potencial</strong>
+                                {credential.minTotalCredits > 0 && <span>Hasta {potentialTitleCredits} cr. para {credential.title}.</span>}
+                                {knownAreaImpacts.map((impact) => <span key={impact.label}>{impact.label}: +{impact.credits} cr.</span>)}
+                                {(potentialImpact.ambiguousCourseIds.length > 0 || potentialImpact.unknownCourseIds.length > 0) && <small>{potentialImpact.ambiguousCourseIds.length + potentialImpact.unknownCourseIds.length} materia(s) quedan pendientes de distribución por área.</small>}
+                              </div>}
+                              {(personalTargetStatus?.status === "exceeded" || personalLoad.partial || accreditedPlanned.length > 0 || hasDuplicate || coursesWithUnmetKnownRequirements.length > 0 || coursesWithRulesToReview.length > 0) && <ul className="term-warnings" aria-label={`Avisos de ${term.label}`}>
+                                {personalTargetStatus?.status === "exceeded" && <li>Supera tu objetivo personal por {personalTargetStatus.difference}.</li>}
+                                {personalLoad.partial && <li>Falta carga publicada para {personalLoad.missingCourseIds.length + personalLoad.missingValueCourseIds.length} {personalLoad.missingCourseIds.length + personalLoad.missingValueCourseIds.length === 1 ? "materia" : "materias"}; el subtotal no es definitivo.</li>}
+                                {accreditedPlanned.length > 0 && <li>{accreditedPlanned.length === 1 ? "Una materia ya exonerada está incluida" : `${accreditedPlanned.length} materias ya exoneradas están incluidas`} en este semestre.</li>}
+                                {hasDuplicate && <li>Hay materias repetidas en más de un semestre.</li>}
+                                {coursesWithUnmetKnownRequirements.length > 0 && <li>{coursesWithUnmetKnownRequirements.length === 1 ? "Una materia tiene" : `${coursesWithUnmetKnownRequirements.length} materias tienen`} previas conocidas que aún no figuran cumplidas. Podés conservarlas en el plan.</li>}
+                                {coursesWithRulesToReview.length > 0 && <li>{coursesWithRulesToReview.length === 1 ? "Una materia tiene" : `${coursesWithRulesToReview.length} materias tienen`} reglas publicadas que requieren revisión manual.</li>}
+                              </ul>}
+                            </details>
                           </div>
                           <button className="remove-term" onClick={() => removePlannerTerm(term.id)} disabled={plannerTerms.length === 1} aria-label={`Eliminar ${term.label}`} title="Las materias vuelven al catálogo">×</button>
                         </header>

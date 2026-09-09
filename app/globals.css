@@ -176,6 +176,17 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .current-progress-copy strong { color: var(--exonerated); }
 .current-term-button { margin-top: 7px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface-subtle); color: var(--muted); font-size: 8px; font-weight: 760; }
 .current-term-button.active { border-color: color-mix(in srgb, var(--udelar) 35%, var(--line)); background: var(--accent-soft); color: var(--udelar); }
+.term-planning-details { margin-top: 8px; color: var(--muted); font-size: 9px; }
+.term-planning-details summary { width: fit-content; cursor: pointer; color: var(--udelar); font-weight: 760; }
+.term-target-editor { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 7px; margin-top: 8px; }
+.term-target-editor label { display: grid; gap: 3px; font-size: 8px; font-weight: 700; }
+.term-target-editor select, .term-target-editor input { width: 100%; min-width: 0; padding: 6px 7px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--ink); font: 9px var(--font-geist-sans); }
+.term-target-editor button { grid-column: 1 / -1; width: fit-content; padding: 4px 0; border: 0; background: transparent; color: var(--muted); font-size: 8px; text-decoration: underline; }
+.term-load-copy { margin: 8px 0 0; line-height: 1.35; }
+.term-impact { display: grid; gap: 3px; margin-top: 8px; padding: 7px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-subtle); line-height: 1.35; }
+.term-impact strong { color: var(--ink); }
+.term-impact small { margin-top: 2px; color: var(--muted); }
+.term-warnings { margin: 7px 0 0; padding: 7px 8px 7px 22px; border-radius: 7px; background: var(--warning-soft); color: var(--warning-ink); line-height: 1.4; }
 .planned-course-list { min-height: 105px; display: grid; gap: 7px; padding: 12px; }
 .planned-course { position: relative; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 9px; align-items: center; border: 1px solid var(--line); border-left: 3px solid var(--pending); border-radius: 9px; background: #fff; cursor: grab; }
 .planned-course.approved { border-left-color: var(--approved); }
