@@ -1,6 +1,6 @@
 # C04 — Evolución de datos y referencias curriculares
 
-Estado: implementado, validado e integrado pendiente.
+Estado: implementado, validado e integrado en `main`.
 
 ## Objetivo
 

@@ -72,9 +72,9 @@ No inferir dificultad, disponibilidad, período de dictado ni correlatividades a
 
 ## Estado
 
-- Implementado en el worktree `feat/p01-planner-load`.
+- Implementado e integrado en `main` después de C03 y C04.
 - `term.loadTarget` se conserva en el estado, fingerprint, hidratación, recuperación y documento v3; el export legado de solo planificador continúa omitiéndolo.
 - El planificador permite definir o quitar objetivos por semestre, calcula subtotales conocidos y presenta avisos no bloqueantes por exceso, carga incompleta, materias exoneradas, duplicados y previas conocidas o no evaluables.
 - El impacto potencial informa créditos de título y áreas con asignación unívoca; las asignaciones ambiguas quedan explícitamente pendientes.
 - Validación funcional local: objetivo de 1 crédito, materia de 4 créditos y aviso de exceso/acreditación visibles; controles accesibles desde teclado. La captura de pantalla del navegador de prueba no estuvo disponible, por lo que no se declara revisión visual píxel a píxel.
-- Validación automática final: `npm test` (817/817), `npm run lint`, `git diff --check` y `npm run security:repo` correctos.
+- Validación automática combinada: `npm test` (837/837) y `npm run lint` correctos; la auditoría pública y `git diff --check` se ejecutan sobre el cierre documental.

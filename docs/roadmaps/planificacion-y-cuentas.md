@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05 y C01 están integrados en `main`; C02–C04 son una puerta de integridad obligatoria antes de retomar los nodos de planificación. El roadmap no autoriza por sí solo servicios externos, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P02. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -126,6 +126,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### C02 — Adaptador sin pérdida
 
 - Especificación: `docs/tasks/adaptador-personal-sin-perdida.md`.
+- Integrado en `main`; perfiles duplicados válidos y escenarios no activos sobreviven al round-trip.
 - Conservar perfiles distintos aunque compartan plan y editar exactamente el escenario activo, sin volcarlo sobre el principal.
 - Si una forma válida todavía no es representable en la UI, abrirla en modo protegido o rechazarla explícitamente; nunca degradarla en el siguiente guardado.
 - Cierre: round-trip con dos perfiles del mismo plan y varios escenarios sin pérdida semántica.
@@ -133,6 +134,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### C03 — Concurrencia local
 
 - Especificación: `docs/tasks/concurrencia-local.md`.
+- Integrado en `main`; las escrituras obsoletas conservan ambas ramas como conflicto durable.
 - Coordinar pestañas mediante revisiones y eventos del almacenamiento; una escritura obsoleta no puede sobrescribir silenciosamente otra versión.
 - Conservar ambas versiones o exigir una resolución comprensible cuando no exista combinación automática segura.
 - Cierre: cambios independientes y simultáneos en dos pestañas, pestaña suspendida y recarga cubiertos por pruebas.
@@ -140,6 +142,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### C04 — Evolución y referencias curriculares
 
 - Especificación: `docs/tasks/evolucion-datos-y-curriculas.md`.
+- Integrado en `main`; las extensiones namespaced, versiones futuras y referencias históricas quedan protegidas.
 - Separar versión de formato, revisión de concurrencia y versión de API; definir migraciones encadenadas y modo protegido para clientes incompatibles.
 - Mantener referencias curriculares inmutables o recuperables, aliases trazables y datos personales huérfanos pendientes de revisión en vez de descartarlos.
 - Cierre: matrices cliente viejo/nuevo y currícula anterior/nueva sin pérdida silenciosa, más política explícita para retirar claves v1/v2.
@@ -149,6 +152,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### P01 — Carga y validaciones
 
 - Especificación: `docs/tasks/planificador-carga-validaciones.md`.
+- Integrado en `main`; los objetivos y avisos siguen siendo personales y no bloqueantes.
 - Objetivo personal por créditos, horas o cantidad de materias.
 - Advertencias no bloqueantes por exceso de carga, duplicados, materias acreditadas y previaturas conocidas.
 - Mostrar impacto estimado en totales, áreas y títulos.
