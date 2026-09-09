@@ -3,6 +3,8 @@ import test from "node:test";
 
 import {
   classifyLocalSaveError,
+  conflictedLocalSaveStatus,
+  externalLocalSaveStatus,
   failedLocalSaveStatus,
   initialLocalSaveStatus,
   localSaveStatusPresentation,
@@ -15,6 +17,14 @@ test("representa comprobación, éxito y última escritura válida", () => {
   const saved = savedLocalSaveStatus("2026-09-08T18:30:00-03:00");
   assert.equal(saved.savedAt, "2026-09-08T21:30:00.000Z");
   assert.equal(localSaveStatusPresentation(saved).title, "Guardado en este dispositivo");
+});
+
+test("distingue cambios externos incorporados y conflictos pendientes", () => {
+  const external = externalLocalSaveStatus("2026-09-08T22:00:00.000Z");
+  assert.equal(localSaveStatusPresentation(external).title, "Cambio de otra pestaña incorporado");
+  const conflict = conflictedLocalSaveStatus("2026-09-08T22:00:00.000Z");
+  assert.equal(localSaveStatusPresentation(conflict).title, "Hay dos versiones locales");
+  assert.equal(localSaveStatusPresentation(conflict).canRetry, false);
 });
 
 test("sólo confirma y avanza la fecha después de escribir correctamente", () => {

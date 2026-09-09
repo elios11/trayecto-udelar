@@ -28,3 +28,9 @@ Impedir que dos pestañas del mismo navegador sobrescriban silenciosamente cambi
 - Fallo entre adquisición, escritura y liberación no deja bloqueo permanente.
 - Cierre con pruebas deterministas del protocolo, prueba funcional con dos contextos cuando sea posible, suite completa, lint y auditoría pública.
 
+## Estado
+
+Implementado. El guardado usa una comparación contra la base durable esperada y un bloqueo local con vencimiento; una revisión externa válida se incorpora sólo desde una pestaña limpia y una revisión paralela o atrasada abre un conflicto conservador. Las dos ramas quedan exportables y persisten entre recargas; al marcar el conflicto como revisado se copian antes a instantáneas locales.
+
+Validación: protocolo determinista, carga real de la aplicación en dos contextos del navegador, `npm test` (821 pruebas), `npm run lint`, `git diff --check` y `npm run security:repo`. La automatización disponible permitió comprobar la carga simultánea, pero no inyectar dos clics concurrentes; las carreras de escritura y eventos retrasados se cubren en `tests/local-data-concurrency.test.mjs`.
+

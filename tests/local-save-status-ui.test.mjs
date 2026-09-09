@@ -5,11 +5,14 @@ import test from "node:test";
 test("centraliza el guardado canónico y no aplica importaciones que no pudieron persistirse", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 
-  assert.equal((page.match(/localStorage\.setItem\(PERSONAL_DATA_STORAGE_KEY/g) ?? []).length, 1);
-  assert.match(page, /persistLocalDocument\(document/);
+  assert.equal((page.match(/dataKey: PERSONAL_DATA_STORAGE_KEY/g) ?? []).length, 1);
+  assert.match(page, /writeWithLocalLease\(serialized/);
   assert.match(page, /if \(!persistPersonalDocument\(document, \{ fingerprint: importedFingerprint, allowBlocked: true \}\)\) return false/);
   assert.match(page, /if \(!applyImportedDocument\(transfer\.document, transfer\.state\)\) return/);
   assert.match(page, /canonicalWriteBlockedRef\.current && !options\.allowBlocked/);
+  assert.match(page, /window\.addEventListener\("storage", receiveExternalPersonalData\)/);
+  assert.match(page, /Exportar esta pestaña/);
+  assert.match(page, /Exportar otra pestaña/);
 });
 
 test("muestra un estado accesible, última fecha durable y reintento local", async () => {

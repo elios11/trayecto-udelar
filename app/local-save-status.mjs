@@ -1,4 +1,4 @@
-export const LOCAL_SAVE_PHASES = ["checking", "saved", "failed"];
+export const LOCAL_SAVE_PHASES = ["checking", "saved", "external", "conflict", "failed"];
 export const LOCAL_SAVE_ERROR_KINDS = ["quota", "blocked", "corrupt", "unknown"];
 
 export function initialLocalSaveStatus() {
@@ -8,6 +8,14 @@ export function initialLocalSaveStatus() {
 export function savedLocalSaveStatus(savedAt) {
   const timestamp = normalizeTimestamp(savedAt);
   return { phase: "saved", savedAt: timestamp, errorKind: null };
+}
+
+export function externalLocalSaveStatus(savedAt) {
+  return { phase: "external", savedAt: normalizeTimestamp(savedAt), errorKind: null };
+}
+
+export function conflictedLocalSaveStatus(savedAt) {
+  return { phase: "conflict", savedAt: normalizeTimestamp(savedAt), errorKind: null };
 }
 
 export function classifyLocalSaveError(error) {
@@ -37,6 +45,20 @@ export function localSaveStatusPresentation(status) {
     return {
       title: "Guardado en este dispositivo",
       detail: "Tus cambios quedan en este navegador; no hay una cuenta ni una copia en la nube.",
+      canRetry: false,
+    };
+  }
+  if (status.phase === "external") {
+    return {
+      title: "Cambio de otra pestaña incorporado",
+      detail: "Recargamos la copia más reciente de este navegador. No es sincronización entre dispositivos.",
+      canRetry: false,
+    };
+  }
+  if (status.phase === "conflict") {
+    return {
+      title: "Hay dos versiones locales",
+      detail: "Otra pestaña cambió los datos al mismo tiempo. Mantenemos ambas versiones disponibles; exportalas antes de cerrar si el navegador tiene poco espacio.",
       canRetry: false,
     };
   }

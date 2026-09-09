@@ -732,10 +732,16 @@ body, .app-shell, .workspace { background: var(--paper); }
 .local-save-message time { display: block; }
 .local-save-dot { width: 8px; height: 8px; margin-top: 3px; border-radius: 50%; background: var(--warning); }
 .local-save-card.is-saved .local-save-dot { background: var(--approved); }
+.local-save-card.is-external .local-save-dot { background: var(--udelar); }
+.local-save-card.is-conflict { border-color: color-mix(in srgb, var(--warning-ink) 48%, var(--line)); }
+.local-save-card.is-conflict .local-save-dot { background: var(--warning-ink); }
 .local-save-card.is-failed { border-color: color-mix(in srgb, var(--warning-ink) 38%, var(--line)); }
 .local-save-card.is-failed .local-save-dot { background: var(--warning-ink); }
 .local-save-card > button { min-height: 36px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font-size: 10px; font-weight: 720; text-align: center; }
 .local-save-card > button:hover { border-color: color-mix(in srgb, var(--udelar) 42%, var(--line)); background: var(--accent-soft); }
+.local-conflict-actions { display: grid; gap: 6px; }
+.local-conflict-actions button { min-height: 34px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font-size: 9px; font-weight: 700; text-align: left; }
+.local-conflict-actions button:hover { border-color: color-mix(in srgb, var(--udelar) 42%, var(--line)); background: var(--accent-soft); }
 .data-panel-section { display: grid; gap: 6px; padding-top: 12px; border-top: 1px solid var(--line); }
 .data-panel-section > span { color: var(--muted); font-size: 9px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .data-panel-section button { padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-subtle); color: var(--ink); font-size: 10px; font-weight: 680; text-align: left; }

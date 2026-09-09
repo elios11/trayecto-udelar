@@ -26,7 +26,7 @@ import {
   type PersonalDataAppState,
   type PersonalDataCatalogEntry,
 } from "./personal-data-migration.mjs";
-import type { PersonalDataDocumentV3, PersonalDataSelectionV3 } from "./personal-data.mjs";
+import { parsePersonalDataV3, type PersonalDataDocumentV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
 import {
   RECOVERY_STORAGE_KEY,
   addDeletedTerm,
@@ -44,8 +44,18 @@ import {
 import type { DeletedTermRecovery, RecoveryStore } from "./personal-data-recovery.mjs";
 import { createUndoEntry, isUndoShortcut, pushUndoEntry, takeUndoEntry } from "./personal-data-recovery-session.mjs";
 import type { UndoEntry } from "./personal-data-recovery-session.mjs";
-import { failedLocalSaveStatus, initialLocalSaveStatus, localSaveStatusPresentation, persistLocalDocument, savedLocalSaveStatus } from "./local-save-status.mjs";
+import { conflictedLocalSaveStatus, externalLocalSaveStatus, failedLocalSaveStatus, initialLocalSaveStatus, localSaveStatusPresentation, savedLocalSaveStatus } from "./local-save-status.mjs";
 import type { LocalSaveStatus } from "./local-save-status.mjs";
+import {
+  PERSONAL_DATA_CONFLICTS_KEY,
+  PERSONAL_DATA_EXTERNAL_MARKER_KEY,
+  addLocalConflict,
+  classifyExternalChange,
+  parseLocalConflictStore,
+  serializeLocalConflictStore,
+  writeWithLocalLease,
+  type LocalDataConflict,
+} from "./local-data-concurrency.mjs";
 import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
@@ -718,6 +728,7 @@ export default function Home() {
   const [recoveryConfirmation, setRecoveryConfirmation] = useState<RecoveryConfirmation | null>(null);
   const [recoveryNotice, setRecoveryNotice] = useState("");
   const [localSaveStatus, setLocalSaveStatus] = useState<LocalSaveStatus>(() => initialLocalSaveStatus());
+  const [localConflict, setLocalConflict] = useState<LocalDataConflict | null>(null);
   const [theme, setTheme] = useState<ThemeId>("udelar");
   const [themeScheme, setThemeScheme] = useState<ThemeScheme>("light");
   const [colorVisionEnabled, setColorVisionEnabled] = useState(false);
@@ -743,6 +754,8 @@ export default function Home() {
   const registeredPlanPromisesRef = useRef<Partial<Record<PlanId, Promise<RegisteredProjection | null>>>>({});
   const personalDataRef = useRef<PersonalDataDocumentV3 | null>(null);
   const personalDataFingerprintRef = useRef("");
+  const personalDataSerializedRef = useRef<string | null>(null);
+  const localWriterIdRef = useRef<string | null>(null);
   const canonicalWriteBlockedRef = useRef(false);
   const undoStackRef = useRef<UndoEntry[]>([]);
   const recoveryWriteFailedRef = useRef(false);
@@ -1130,28 +1143,69 @@ export default function Home() {
     setLocalSaveStatus(status);
   }, []);
 
+  const rememberLocalConflict = useCallback((localDocument: PersonalDataDocumentV3, externalSerialized: string | null, reason: LocalDataConflict["reason"]) => {
+    if (!externalSerialized) return false;
+    let externalDocument: PersonalDataDocumentV3;
+    try {
+      const parsedExternal = parsePersonalDataV3(JSON.parse(externalSerialized));
+      if (!parsedExternal.ok) return false;
+      externalDocument = parsedExternal.document;
+    } catch {
+      return false;
+    }
+    const conflict: LocalDataConflict = {
+      id: crypto.randomUUID(),
+      detectedAt: new Date().toISOString(),
+      reason,
+      localDocument,
+      externalDocument,
+    };
+    setLocalConflict(conflict);
+    updateLocalSaveStatus(conflictedLocalSaveStatus(externalDocument.updatedAt));
+    try {
+      const store = addLocalConflict(parseLocalConflictStore(localStorage.getItem(PERSONAL_DATA_CONFLICTS_KEY)), conflict);
+      localStorage.setItem(PERSONAL_DATA_CONFLICTS_KEY, serializeLocalConflictStore(store));
+      return true;
+    } catch {
+      return true;
+    }
+  }, [updateLocalSaveStatus]);
+
   const persistPersonalDocument = useCallback((document: PersonalDataDocumentV3, options: { fingerprint?: string; allowBlocked?: boolean } = {}) => {
     if (canonicalWriteBlockedRef.current && !options.allowBlocked) {
       updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: localSaveStatusRef.current.savedAt, errorKind: "corrupt" }));
       return false;
     }
-    const persisted = persistLocalDocument(document, {
-      serialize: serializePersonalDataForStorage,
-      write: (serialized) => localStorage.setItem(PERSONAL_DATA_STORAGE_KEY, serialized),
-      previousSavedAt: localSaveStatusRef.current.savedAt,
-    });
-    if (persisted.ok) {
+    try {
+      const serialized = serializePersonalDataForStorage(document);
+      localWriterIdRef.current ??= crypto.randomUUID();
+      const persisted = writeWithLocalLease(serialized, {
+        dataKey: PERSONAL_DATA_STORAGE_KEY,
+        expectedSerialized: personalDataSerializedRef.current,
+        ownerId: localWriterIdRef.current,
+        read: (key) => localStorage.getItem(key),
+        write: (key, value) => localStorage.setItem(key, value),
+        remove: (key) => localStorage.removeItem(key),
+        randomId: () => crypto.randomUUID(),
+      });
+      if (!persisted.ok) {
+        if (persisted.kind === "conflict" && rememberLocalConflict(document, persisted.currentSerialized, "stale-write")) return false;
+        updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: localSaveStatusRef.current.savedAt }));
+        return false;
+      }
       personalDataRef.current = document;
+      personalDataSerializedRef.current = serialized;
       if (options.fingerprint !== undefined) personalDataFingerprintRef.current = options.fingerprint;
       if (options.allowBlocked) canonicalWriteBlockedRef.current = false;
-      updateLocalSaveStatus(persisted.status);
+      updateLocalSaveStatus(savedLocalSaveStatus(document.updatedAt));
       return true;
+    } catch (error) {
+      updateLocalSaveStatus(failedLocalSaveStatus(error, { savedAt: localSaveStatusRef.current.savedAt }));
+      return false;
     }
-    updateLocalSaveStatus(persisted.status);
-    return false;
-  }, [updateLocalSaveStatus]);
+  }, [rememberLocalConflict, updateLocalSaveStatus]);
 
-  function personalIdentityForSelection(selection: PersonalDataSelectionV3) {
+  const personalIdentityForSelection = useCallback((selection: PersonalDataSelectionV3) => {
     const profiles = personalDataRef.current?.profiles ?? [];
     const matches = (candidate: PersonalDataSelectionV3) => candidate.facultyId === selection.facultyId
       && candidate.careerId === selection.careerId
@@ -1164,7 +1218,7 @@ export default function Home() {
     const active = matchingProfiles.find((profile) => profile.id === personalDataRef.current?.activeProfileId);
     const profile = active ?? (matchingProfiles.length === 1 ? matchingProfiles[0] : null);
     return { activeProfileId: profile?.id ?? null, activeScenarioId: profile?.planning.activeScenarioId ?? null };
-  }
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -1180,6 +1234,7 @@ export default function Home() {
         selectionV1: localStorage.getItem(ACADEMIC_SELECTION_STORAGE_KEY)
           ?? JSON.stringify({ facultyId: "fing", careerId: "computacion", planId: "2025", trajectoryId: "pi-60-plus", credentialId: "engineer", campusId: null }),
       };
+      personalDataSerializedRef.current = rawStorage.personalDataV3;
       const baseCatalog = buildPersonalDataCatalog();
       const relevantPlanIds = collectStoredPlanIds(Object.values(rawStorage), baseCatalog);
       const loadedPlans: Partial<Record<PlanId, RegisteredProjection>> = {};
@@ -1245,6 +1300,15 @@ export default function Home() {
       if (recovered.issues.length > 0) setRecoveryNotice("Algunas copias de recuperación dañadas o vencidas se omitieron.");
       setRecovery(nextRecovery);
       setRecoveryHydrated(true);
+      const savedConflicts = parseLocalConflictStore(localStorage.getItem(PERSONAL_DATA_CONFLICTS_KEY));
+      const latestConflict = savedConflicts.items[0] ?? null;
+      if (latestConflict) {
+        setLocalConflict(latestConflict);
+        updateLocalSaveStatus(conflictedLocalSaveStatus(latestConflict.externalDocument.updatedAt));
+      } else if (sessionStorage.getItem(PERSONAL_DATA_EXTERNAL_MARKER_KEY)) {
+        sessionStorage.removeItem(PERSONAL_DATA_EXTERNAL_MARKER_KEY);
+        updateLocalSaveStatus(externalLocalSaveStatus(hydration.ok ? hydration.document.updatedAt : null));
+      }
       const savedVisualPreferences = localStorage.getItem(VISUAL_PREFERENCES_STORAGE_KEY);
       if (savedVisualPreferences) {
         const preferences = JSON.parse(savedVisualPreferences) as Record<string, unknown>;
@@ -1317,7 +1381,7 @@ export default function Home() {
       return;
     }
     persistPersonalDocument(updated.document, { fingerprint });
-  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalDataCatalog, hydrated, persistPersonalDocument]);
+  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalDataCatalog, hydrated, persistPersonalDocument, personalIdentityForSelection]);
 
   useEffect(() => {
     if (hydrated) persistLegacyValue(STORAGE_KEY, JSON.stringify(progress));
@@ -1652,7 +1716,7 @@ export default function Home() {
     return status === "pending" ? isCourseUnlocked(course) : status === "approved" ? isExamUnlocked(course) : true;
   };
 
-  const currentPersonalState = (): PersonalDataAppState => {
+  const currentPersonalState = useCallback((): PersonalDataAppState => {
     const selection: PersonalDataSelectionV3 = {
       facultyId: activeFaculty.id,
       careerId: activeCareer.id,
@@ -1663,7 +1727,7 @@ export default function Home() {
       credentialId: credentialId || null,
     };
     return { progress, plannerPlans, currentPlannerTerms, selection, ...personalIdentityForSelection(selection) };
-  };
+  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalIdentityForSelection]);
 
   function persistLegacyValue(key: string, value: string) {
     try {
@@ -1690,7 +1754,7 @@ export default function Home() {
     return false;
   }
 
-  function currentPersonalDocument() {
+  const currentPersonalDocument = useCallback(() => {
     const current = appStateToPersonalData(currentPersonalState(), {
       catalog: personalDataCatalog,
       now: new Date().toISOString(),
@@ -1702,7 +1766,7 @@ export default function Home() {
       return null;
     }
     return current.document;
-  }
+  }, [currentPersonalState, personalDataCatalog]);
 
   const rememberUndo = (description: string) => {
     const entry = createUndoEntry(description, currentPersonalState(), recovery);
@@ -2228,6 +2292,77 @@ export default function Home() {
     persistPersonalDocument(document, { fingerprint: personalDataStateFingerprint(state) });
   };
 
+  const clearReviewedLocalConflicts = () => {
+    if (!localConflict) return;
+    const now = new Date().toISOString();
+    const localSnapshot = createRecoverySnapshot(recovery, localConflict.localDocument, {
+      now,
+      id: crypto.randomUUID(),
+      reason: "Versión local de un conflicto entre pestañas",
+    });
+    if (!localSnapshot.ok) return;
+    const externalSnapshot = createRecoverySnapshot(localSnapshot.store, localConflict.externalDocument, {
+      now,
+      id: crypto.randomUUID(),
+      reason: "Versión externa de un conflicto entre pestañas",
+    });
+    if (!externalSnapshot.ok || !persistRecoveryImmediately(externalSnapshot.store)) return;
+    localStorage.removeItem(PERSONAL_DATA_CONFLICTS_KEY);
+    setRecovery(externalSnapshot.store);
+    setLocalConflict(null);
+    updateLocalSaveStatus(savedLocalSaveStatus(personalDataRef.current?.updatedAt));
+    setRecoveryNotice("Las dos versiones del conflicto quedaron guardadas como instantáneas locales.");
+  };
+
+  useEffect(() => {
+    if (!hydrated) return;
+    const receiveExternalPersonalData = (event: StorageEvent) => {
+      if (event.key !== PERSONAL_DATA_STORAGE_KEY) return;
+      let externalDocument: PersonalDataDocumentV3 | null = null;
+      try {
+        const parsed = parsePersonalDataV3(JSON.parse(event.newValue ?? "null"));
+        if (parsed.ok) externalDocument = parsed.document;
+      } catch {
+        // A malformed external write must never replace the current in-memory branch.
+      }
+      if (!externalDocument) {
+        updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: localSaveStatusRef.current.savedAt, errorKind: "corrupt" }));
+        return;
+      }
+      const currentState = currentPersonalState();
+      const hasUnsavedChanges = personalDataStateFingerprint(currentState) !== personalDataFingerprintRef.current;
+      const action = classifyExternalChange({
+        knownSerialized: personalDataSerializedRef.current,
+        actualSerialized: localStorage.getItem(PERSONAL_DATA_STORAGE_KEY),
+        eventOldValue: event.oldValue,
+        eventNewValue: event.newValue,
+        hasUnsavedChanges,
+        knownRevision: personalDataRef.current?.revision ?? null,
+        eventNewRevision: externalDocument.revision,
+      });
+      if (action === "ignore") return;
+      const localDocument = hasUnsavedChanges ? currentPersonalDocument() : personalDataRef.current;
+      if (!localDocument) return;
+      if (action === "incorporate") {
+        const snapshot = createRecoverySnapshot(recovery, localDocument, {
+          now: new Date().toISOString(),
+          id: crypto.randomUUID(),
+          reason: "Antes de incorporar cambios de otra pestaña",
+        });
+        if (!snapshot.ok || !persistRecoveryImmediately(snapshot.store)) {
+          rememberLocalConflict(localDocument, event.newValue, "external-change");
+          return;
+        }
+        sessionStorage.setItem(PERSONAL_DATA_EXTERNAL_MARKER_KEY, "1");
+        window.location.reload();
+        return;
+      }
+      rememberLocalConflict(localDocument, event.newValue, "external-change");
+    };
+    window.addEventListener("storage", receiveExternalPersonalData);
+    return () => window.removeEventListener("storage", receiveExternalPersonalData);
+  }, [hydrated, recovery, rememberLocalConflict, updateLocalSaveStatus, currentPersonalDocument, currentPersonalState]);
+
   return (
     <main className="app-shell">
       <p className="recovery-live-message" aria-live="polite">{recoveryNotice}</p>
@@ -2263,6 +2398,11 @@ export default function Home() {
                   </div>
                 </div>
                 {localSavePresentation.canRetry && <button type="button" onClick={retryLocalSave}>Reintentar guardado</button>}
+                {localConflict && <div className="local-conflict-actions">
+                  <button type="button" onClick={() => downloadJson("trayecto-version-esta-pestana.json", serializePersonalDataForStorage(localConflict.localDocument), true)}>Exportar esta pestaña</button>
+                  <button type="button" onClick={() => downloadJson("trayecto-version-otra-pestana.json", serializePersonalDataForStorage(localConflict.externalDocument), true)}>Exportar otra pestaña</button>
+                  <button type="button" onClick={clearReviewedLocalConflicts}>Marcar como revisado</button>
+                </div>}
               </section>
               <div className="data-panel-heading">
                 <strong>Compartir datos</strong>
