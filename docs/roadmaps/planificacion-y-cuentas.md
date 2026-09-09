@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación. No inicia implementaciones ni autoriza servicios externos, integración, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05 y C01 están integrados en `main`; C02–C04 son una puerta de integridad obligatoria antes de retomar los nodos de planificación. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -14,6 +14,7 @@ Evolucionar Trayecto desde una herramienta local de progreso y planificación ha
 - `Esfuerzo` es el nivel de razonamiento solicitado al crear el subagente.
 - `Deps.` enumera los nodos que deben estar integrados antes de comenzar.
 - Cada nodo se implementa en un worktree y commit independientes.
+- Una dependencia cuenta como satisfecha solamente cuando su commit validado está integrado en el `main` más reciente; un commit aislado en otro worktree no alcanza.
 - El coordinador mantiene un unico subagente activo: termina y revisa un nodo antes de iniciar el siguiente.
 - Antes de delegar un nodo, el coordinador crea o completa su especificación en el archivo indicado bajo `docs/tasks/`.
 - Sol coordina, revisa e integra; ningún subagente publica.
@@ -46,24 +47,29 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 | F01 | Contrato unificado de datos personales v3 | `gpt-5.6-sol` | high | — |
 | F02 | CI portable y repositorio canónico | `gpt-5.6-terra` | medium | — |
 | F03 | Migración local y exportación compatible | `gpt-5.6-sol` | high | F01 |
-| F04 | Deshacer, papelera e instantáneas locales | `gpt-5.6-terra` | high | F03 |
-| F05 | Indicador de guardado y diagnóstico local | `gpt-5.6-luna` | medium | F03 |
-| P01 | Objetivo de carga y validaciones del semestre | `gpt-5.6-terra` | high | F03 |
-| P02 | Historial académico personal | `gpt-5.6-sol` | high | F03 |
-| P03 | Escenarios de planificación | `gpt-5.6-sol` | high | F03 |
+| F04 | Deshacer, papelera e instantáneas locales | `gpt-5.6-sol` | high | F03 |
+| F05 | Indicador de guardado y diagnóstico local | `gpt-5.6-sol` | high | F03,F04 |
+| C01 | Integridad de exportación, importación y papelera | `gpt-5.6-sol` | high | F05 |
+| C02 | Adaptador sin pérdida para perfiles y escenarios | `gpt-5.6-sol` | xhigh | C01 |
+| C03 | Concurrencia local entre pestañas | `gpt-5.6-sol` | high | C02 |
+| C04 | Evolución del contrato y referencias curriculares | `gpt-5.6-sol` | xhigh | C02 |
+| P01 | Objetivo de carga y validaciones del semestre | `gpt-5.6-terra` | high | C03,C04 |
+| P02 | Historial académico personal | `gpt-5.6-sol` | high | C04 |
+| P03 | Escenarios de planificación | `gpt-5.6-sol` | high | C04 |
 | P04 | Modelo trazable de oferta y período de dictado | `gpt-5.6-sol` | high | — |
-| P05 | Línea temporal e hitos | `gpt-5.6-terra` | high | P02 |
-| P06 | Alertas por cambios curriculares | `gpt-5.6-sol` | high | F03,P02 |
+| P05 | Línea temporal e hitos | `gpt-5.6-terra` | high | P02,P03 |
+| P06 | Alertas por cambios curriculares | `gpt-5.6-sol` | high | C04,P02 |
 | B01 | Prueba portable PostgreSQL | `gpt-5.6-sol` | high | F01,F02 |
 | B02 | Prueba de identidad OIDC | `gpt-5.6-sol` | high | F02 |
-| B03 | Esquema y adaptador de persistencia | `gpt-5.6-sol` | high | B01,B02 |
+| B03 | Esquema y adaptador de persistencia | `gpt-5.6-sol` | high | B01,B02,P02,P03,P06 |
 | B04 | Superficie opcional de cuenta | `gpt-5.6-terra` | high | B02,B03 |
-| B05 | Migración explícita local → cuenta | `gpt-5.6-sol` | high | F04,B03,B04 |
-| B06 | Motor de sincronización y revisiones | `gpt-5.6-sol` | xhigh | B05 |
-| B07 | Conflictos y modo sin conexión | `gpt-5.6-terra` | high | B06 |
+| B06a | Protocolo transaccional e idempotencia | `gpt-5.6-sol` | xhigh | B03 |
+| B05 | Migración explícita local → cuenta | `gpt-5.6-sol` | high | F04,B04,B06a |
+| B06b | Cola durable, reintentos y reconexión | `gpt-5.6-sol` | xhigh | B05 |
+| B07 | Conflictos y modo sin conexión | `gpt-5.6-sol` | high | B06b |
 | B08 | Privacidad, exportación y eliminación | `gpt-5.6-sol` | high | B03,B04 |
-| B09 | Backups y ensayo de salida | `gpt-5.6-terra` | high | B03,F02 |
-| S01 | Auditoría integral de seguridad | `gpt-6-astra` | high | B05,B06,B07,B08,B09 |
+| B09 | Backups y ensayo de salida | `gpt-5.6-sol` | high | F02,B02,B06b,B08 |
+| S01 | Auditoría integral de seguridad | `gpt-6-astra` | high | B05,B06b,B07,B08,B09 |
 | R01 | Integración y beta cerrada | `gpt-5.6-sol` | xhigh | S01 |
 
 ## Ola 1 — Base local y CI
@@ -108,6 +114,35 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Mostrar `Guardado en este dispositivo`, última modificación y errores de persistencia.
 - Evitar prometer respaldo remoto.
 - Cierre: estados accesibles y pruebas deterministas de éxito, cuota y almacenamiento bloqueado.
+
+## Puerta de integridad posterior a la auditoría
+
+### C01 — Exportación, importación y papelera
+
+- Especificación: `docs/tasks/integridad-datos-locales.md`.
+- Integrado en `main` como `849e32d`.
+- Exporta el estado vigente aunque la última escritura haya fallado, rechaza importaciones parciales y restaura semestres antes de consumir la papelera.
+
+### C02 — Adaptador sin pérdida
+
+- Especificación: `docs/tasks/adaptador-personal-sin-perdida.md`.
+- Conservar perfiles distintos aunque compartan plan y editar exactamente el escenario activo, sin volcarlo sobre el principal.
+- Si una forma válida todavía no es representable en la UI, abrirla en modo protegido o rechazarla explícitamente; nunca degradarla en el siguiente guardado.
+- Cierre: round-trip con dos perfiles del mismo plan y varios escenarios sin pérdida semántica.
+
+### C03 — Concurrencia local
+
+- Especificación: `docs/tasks/concurrencia-local.md`.
+- Coordinar pestañas mediante revisiones y eventos del almacenamiento; una escritura obsoleta no puede sobrescribir silenciosamente otra versión.
+- Conservar ambas versiones o exigir una resolución comprensible cuando no exista combinación automática segura.
+- Cierre: cambios independientes y simultáneos en dos pestañas, pestaña suspendida y recarga cubiertos por pruebas.
+
+### C04 — Evolución y referencias curriculares
+
+- Especificación: `docs/tasks/evolucion-datos-y-curriculas.md`.
+- Separar versión de formato, revisión de concurrencia y versión de API; definir migraciones encadenadas y modo protegido para clientes incompatibles.
+- Mantener referencias curriculares inmutables o recuperables, aliases trazables y datos personales huérfanos pendientes de revisión en vez de descartarlos.
+- Cierre: matrices cliente viejo/nuevo y currícula anterior/nueva sin pérdida silenciosa, más política explícita para retirar claves v1/v2.
 
 ## Ola 2 — Planificación prolongada
 
@@ -170,7 +205,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Validar un proveedor independiente, identidad interna y vinculación de una segunda identidad.
 - Probar el mismo flujo en Sites y un runtime alternativo.
 - No registrar usuarios reales en producción.
-- Cierre: amenaza básica, cookies/tokens, cierre de sesión y procedimiento de migración documentados.
+- Cierre: modelo de amenazas previo a B03, cookies/tokens, PKCE, validación de emisor y sujeto, vinculación con prueba de control, cierre de sesión, revocación y procedimiento de migración documentados. Nunca se fusionan identidades sólo por correo.
 
 ### B03 — Persistencia de cuentas
 
@@ -192,11 +227,17 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Conservar copia recuperable.
 - Cierre: nube vacía, local vacío, ambos con datos y planes distintos cubiertos por pruebas.
 
-### B06 — Sincronización
+### B06a — Protocolo transaccional
 
 - Especificación: `docs/tasks/sincronizacion-revisiones.md`.
-- Revisiones optimistas, operaciones idempotentes, cola local y reintentos.
-- Cierre: dos pestañas, dos dispositivos, red intermitente y sesión vencida sin pérdida silenciosa.
+- Definir revisión esperada, escritura atómica, identificador idempotente de operación y respuesta explícita a conflictos antes de migrar datos locales a una cuenta.
+- Cierre: respuesta perdida después de confirmar, repetición de operación, eliminación frente a edición y escritor obsoleto cubiertos por pruebas.
+
+### B06b — Cola durable y reconexión
+
+- Especificación: `docs/tasks/sincronizacion-revisiones.md`.
+- Cola local ligada al propietario, reintentos idempotentes y recuperación de red o sesión sin enviar operaciones bajo otra cuenta.
+- Cierre: dos pestañas, dos dispositivos, red intermitente, cambio de cuenta y sesión vencida sin pérdida silenciosa.
 
 ### B07 — Resolución de conflictos
 
@@ -215,7 +256,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Especificación: `docs/tasks/backups-plan-salida.md`.
 - Automatizar respaldo lógico fuera del proveedor principal.
 - Restaurar en otro PostgreSQL y desplegar una copia temporal en un segundo runtime.
-- Cierre: runbook ejecutado, integridad comparada y tiempo de recuperación registrado.
+- Cierre: RPO/RTO, retención, cifrado, custodia de claves y alertas definidos; runbook ejecutado sobre frontend, API, identidad y base restaurada en otro proveedor. Restaurar un backup no reactiva cuentas eliminadas.
 
 ## Ola 4 — Auditoría y beta
 
@@ -224,10 +265,11 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Especificación: `docs/tasks/auditoria-seguridad-cuentas.md`.
 - Revisar autenticación, autorización, aislamiento, CSRF, sesiones, conflictos, migraciones, logs, exportación y borrado.
 - Producir hallazgos priorizados; no reescribir la implementación completa.
-- Cierre: cero hallazgos críticos o altos abiertos. Si Astra no está disponible, Sol ejecuta la revisión y la beta queda marcada como pendiente de auditoría reforzada.
+- Cierre: cero hallazgos críticos o altos abiertos. Si Astra no está disponible, Sol puede preparar la revisión, pero la beta queda bloqueada hasta completar la auditoría reforzada.
 
 ### R01 — Integración y beta cerrada
 
+- Especificación: `docs/tasks/integracion-beta-cerrada.md`.
 - Propietario: coordinador con `gpt-5.6-sol`, esfuerzo `xhigh`.
 - Integrar serialmente sobre `main`, ejecutar suite completa, lint, pruebas de migración, restauración y validación funcional.
 - Requiere autorización separada para push, cambios externos y publicación.
@@ -244,9 +286,9 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 
 Se mantiene un solo subagente activo durante todo el roadmap. El orden prioriza hitos recuperables y evita dejar dos tareas incompletas si se alcanza un límite de uso.
 
-1. Base local: F01 → F02 → F03 → F04 → F05.
+1. Base local e integridad: F01 → F02 → F03 → F04 → F05 → C01 → C02 → C03 → C04.
 2. Planificación prolongada: P01 → P02 → P04 → P03 → P05 → P06.
-3. Portabilidad y cuentas, después de cerrar las decisiones humanas: B01 → B02 → B03 → B04 → B05 → B06 → B07 → B08 → B09.
+3. Portabilidad y cuentas, después de cerrar las decisiones humanas: B01 → B02 → B03 → B06a → B04 → B05 → B06b → B07 → B08 → B09.
 4. Cierre: S01 → R01.
 
 ## Prompt para iniciar la orquestación
@@ -262,3 +304,4 @@ Usar en este chat o en una tarea nueva ejecutada con Sol:
 3. Considerar completo un nodo sólo si existe commit, verificaciones y criterio de cierre documentado.
 4. No asumir que un worktree recibió integraciones posteriores de `main`.
 5. Reanudar el nodo incompleto; no abrir el siguiente hasta terminar y revisar el anterior.
+6. Si aparece una advertencia de cuota, aplicar `Continuidad ante límites e interrupciones` de `AGENTS.md`: terminar la escritura atómica en curso, dejar cambios y pruebas en el worktree, actualizar el estado de la especificación y crear un commit de checkpoint sólo si el estado es coherente. Registrar el comando exacto de reanudación para procesos largos; no reiniciarlos desde cero.
