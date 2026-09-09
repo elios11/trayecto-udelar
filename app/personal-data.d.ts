@@ -4,6 +4,8 @@ export const PERSONAL_DATA_VERSION: 3;
 export type PersonalDataLoadUnit = "credits" | "hours" | "courses";
 export type PersonalDataProgressStatus = "pending" | "approved" | "exonerated";
 export type PersonalDataTermStatus = "planned" | "in-progress" | "closed";
+export type PersonalDataJsonValue = null | boolean | number | string | PersonalDataJsonValue[] | { [key: string]: PersonalDataJsonValue };
+export type PersonalDataExtensions = Record<string, PersonalDataJsonValue>;
 
 export interface PersonalDataIssue {
   path: string;
@@ -19,12 +21,14 @@ export interface PersonalDataSelectionV3 {
   campusId: string | null;
   trajectoryId: string | null;
   credentialId: string | null;
+  extensions?: PersonalDataExtensions;
 }
 
 export interface PersonalDataProgressEntryV3 {
   courseId: string;
   status: PersonalDataProgressStatus;
   updatedAt: string | null;
+  extensions?: PersonalDataExtensions;
 }
 
 export interface PersonalDataLoadTargetV3 {
@@ -40,6 +44,7 @@ export interface PersonalDataTermV3 {
   endsAt: string | null;
   loadTarget: PersonalDataLoadTargetV3 | null;
   courseIds: string[];
+  extensions?: PersonalDataExtensions;
 }
 
 export interface PersonalDataScenarioV3 {
@@ -51,11 +56,13 @@ export interface PersonalDataScenarioV3 {
   updatedAt: string;
   currentTermId: string | null;
   terms: PersonalDataTermV3[];
+  extensions?: PersonalDataExtensions;
 }
 
 export interface PersonalDataPlanningV3 {
   activeScenarioId: string | null;
   scenarios: PersonalDataScenarioV3[];
+  extensions?: PersonalDataExtensions;
 }
 
 export interface PersonalDataAcademicProfileV3 {
@@ -65,6 +72,7 @@ export interface PersonalDataAcademicProfileV3 {
   loadUnit: PersonalDataLoadUnit;
   progress: PersonalDataProgressEntryV3[];
   planning: PersonalDataPlanningV3;
+  extensions?: PersonalDataExtensions;
 }
 
 export interface PersonalDataDocumentV3 {
@@ -77,6 +85,7 @@ export interface PersonalDataDocumentV3 {
   lastModifiedByDeviceId: string | null;
   activeProfileId: string | null;
   profiles: PersonalDataAcademicProfileV3[];
+  extensions?: PersonalDataExtensions;
 }
 
 export type PersonalDataParseResult =
@@ -88,4 +97,8 @@ export class PersonalDataValidationError extends TypeError {
 }
 
 export function parsePersonalDataV3(input: unknown): PersonalDataParseResult;
+export function classifyPersonalDataCompatibility(input: unknown): {
+  status: "supported" | "legacy-migratable" | "future-protected" | "incompatible";
+  formatVersion: number | null;
+};
 export function serializePersonalDataV3(document: PersonalDataDocumentV3): string;

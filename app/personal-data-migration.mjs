@@ -36,6 +36,7 @@ function normalizeCatalog(catalog, issues) {
       && nonEmpty(entry.careerId)
       && nonEmpty(entry.planId)
       && nonEmpty(entry.progressPlanId)
+      && (entry.curriculumRevision === undefined || entry.curriculumRevision === null || nonEmpty(entry.curriculumRevision))
       && LOAD_UNITS.has(entry.loadUnit);
     if (!valid) issues.push(issue(`$.catalog[${index}]`, "invalid_catalog_entry", "La identidad académica del catálogo está incompleta."));
     return valid;
@@ -44,6 +45,26 @@ function normalizeCatalog(catalog, issues) {
 
 function descriptorForPlan(catalog, planId) {
   return catalog.find((entry) => entry.planId === planId);
+}
+
+function backfillCurriculumRevisions(document, catalog, timestamp) {
+  let changed = false;
+  const profiles = document.profiles.map((profile) => {
+    if (profile.curriculumRevision !== null) return profile;
+    const revision = descriptorForPlan(catalog, profile.selection.planId)?.curriculumRevision ?? null;
+    if (!revision) return profile;
+    changed = true;
+    return { ...profile, curriculumRevision: revision };
+  });
+  if (!changed) return { document, changed: false };
+  const candidate = {
+    ...document,
+    revision: document.revision + 1,
+    updatedAt: nonEmpty(timestamp) && Number.isFinite(Date.parse(timestamp)) ? timestamp : document.updatedAt,
+    profiles,
+  };
+  const parsed = parsePersonalDataV3(candidate);
+  return parsed.ok ? { document: parsed.document, changed: true } : { document, changed: false };
 }
 
 function validateOptionalReference(value, allowed, path, issues) {
@@ -95,6 +116,7 @@ function resolveSelection(value, catalog, path, issues) {
   );
   const campusId = validateOptionalReference(value.campusId, descriptor.campusIds, `${path}.campusId`, issues);
   return {
+    ...(isRecord(value.extensions) ? { extensions: value.extensions } : {}),
     facultyId: descriptor.facultyId,
     careerId: descriptor.careerId,
     planId: descriptor.planId,
@@ -214,6 +236,7 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
   const hasPlanner = planner !== null;
   const scenarioId = previousScenario?.id ?? `scenario:primary:${profileId}`;
   const rebuiltScenario = hasPlanner ? {
+    ...(previousScenario?.extensions ? { extensions: previousScenario.extensions } : {}),
     id: scenarioId,
     name: previousScenario?.name ?? "Plan principal",
     isPrimary: previousScenario?.isPrimary ?? true,
@@ -224,6 +247,7 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
     terms: planner.terms.map((term) => {
       const previousTerm = previousScenario?.terms?.find((candidate) => candidate.id === term.id);
       return {
+        ...(previousTerm?.extensions ? { extensions: previousTerm.extensions } : {}),
         id: term.id,
         label: term.label,
         status: term.id === planner.currentTermId
@@ -242,15 +266,22 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
       : [rebuiltScenario]
     : previousProfile?.planning?.scenarios ?? [];
   return {
+    ...(previousProfile?.extensions ? { extensions: previousProfile.extensions } : {}),
     id: profileId,
     selection,
     curriculumRevision: previousProfile?.curriculumRevision ?? null,
     loadUnit: previousProfile?.loadUnit ?? "courses",
     progress: Object.entries(statuses).map(([courseId, status]) => {
       const previousEntry = previousProfile?.progress?.find((entry) => entry.courseId === courseId);
-      return { courseId, status, updatedAt: previousEntry?.status === status ? previousEntry.updatedAt : previousProfile ? timestamp : null };
+      return {
+        ...(previousEntry?.extensions ? { extensions: previousEntry.extensions } : {}),
+        courseId,
+        status,
+        updatedAt: previousEntry?.status === status ? previousEntry.updatedAt : previousProfile ? timestamp : null,
+      };
     }),
     planning: {
+      ...(previousProfile?.planning?.extensions ? { extensions: previousProfile.planning.extensions } : {}),
       activeScenarioId: hasPlanner ? scenarioId : previousProfile?.planning?.activeScenarioId ?? null,
       scenarios,
     },
@@ -371,6 +402,7 @@ export function migrateLegacyStateToPersonalData(legacy, options) {
     const statuses = progressPlans[descriptor.progressPlanId] ?? {};
     const profile = profileFromLegacy(selection, statuses, planner, timestamp);
     profile.loadUnit = descriptor.loadUnit;
+    profile.curriculumRevision = descriptor.curriculumRevision ?? null;
     profiles.push(profile);
   }
   const activeProfile = selected ? profiles.find((profile) => profile.selection.planId === selected.planId) ?? null : null;
@@ -396,8 +428,10 @@ export function hydratePersonalData(rawStorage, options) {
   if (canonicalValue !== undefined) {
     const parsed = parsePersonalDataV3(canonicalValue);
     if (parsed.ok) {
-      const adapted = personalDataToAppState(parsed.document, options?.catalog);
-      if (adapted.ok) return { ...adapted, source: "v3", issues, shouldPersist: false, canonicalWriteBlocked: false };
+      const catalog = normalizeCatalog(options?.catalog, issues);
+      const backfilled = backfillCurriculumRevisions(parsed.document, catalog, options?.now);
+      const adapted = personalDataToAppState(backfilled.document, catalog);
+      if (adapted.ok) return { ...adapted, source: "v3", issues, shouldPersist: backfilled.changed, canonicalWriteBlocked: false };
       issues.push(...adapted.issues.map((entry) => ({ ...entry, path: `$.personalDataV3${entry.path.slice(1)}` })));
     } else {
       issues.push(...parsed.issues.map((entry) => ({ ...entry, path: `$.personalDataV3${entry.path.slice(1)}` })));
@@ -493,10 +527,11 @@ export function appStateToPersonalData(state, options) {
       base.id === targetProfileId ? state?.activeScenarioId ?? base.planning.activeScenarioId : base.planning.activeScenarioId,
     );
     rebuilt.loadUnit = base.loadUnit;
+    rebuilt.curriculumRevision = base.curriculumRevision ?? descriptor?.curriculumRevision ?? null;
     return rebuilt;
   });
   const candidate = {
-    ...legacyResult.document,
+    ...(previousDocument ?? legacyResult.document),
     id: previousDocument?.id ?? legacyResult.document.id,
     revision: (previousDocument?.revision ?? -1) + 1,
     createdAt: previousDocument?.createdAt ?? timestamp,
@@ -512,8 +547,11 @@ export function appStateToPersonalData(state, options) {
 export function parseCompleteTransfer(value, options) {
   const direct = parsePersonalDataV3(value);
   if (direct.ok) {
-    const adapted = personalDataToAppState(direct.document, options?.catalog);
-    return adapted.ok ? { ok: true, document: direct.document, state: adapted.state, sourceVersion: 3, issues: [] } : adapted;
+    const issues = [];
+    const catalog = normalizeCatalog(options?.catalog, issues);
+    const backfilled = backfillCurriculumRevisions(direct.document, catalog, options?.now);
+    const adapted = personalDataToAppState(backfilled.document, catalog);
+    return adapted.ok ? { ok: true, document: backfilled.document, state: adapted.state, sourceVersion: 3, issues } : adapted;
   }
   if (!isRecord(value) || value.scope === "planner") {
     return { ok: false, issues: [issue("$", "unknown_format", "El archivo no contiene una exportación completa de Trayecto.")] };

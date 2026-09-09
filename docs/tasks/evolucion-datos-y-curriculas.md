@@ -1,5 +1,7 @@
 # C04 — Evolución de datos y referencias curriculares
 
+Estado: implementado, validado e integrado pendiente.
+
 ## Objetivo
 
 Permitir que Trayecto agregue historial, escenarios y sincronización sin que un cliente anterior elimine campos nuevos, y conservar progreso válido cuando cambie la currícula publicada.
@@ -34,3 +36,16 @@ Permitir que Trayecto agregue historial, escenarios y sincronización sin que un
 - Currícula retirada, materia renombrada, alias confirmado y materia sin equivalencia.
 - Restauración de una exportación históricamente válida sin exigir que toda identidad siga en el catálogo vigente.
 - Cierre con decisión documentada de versionado, migraciones puras, fixtures, suite completa, lint y auditoría pública.
+
+## Resultado implementado
+
+- `classifyPersonalDataCompatibility` distingue v3, legado migrable, versión futura protegida e incompatible sin confundir `revision` con versión.
+- V3 conserva `extensions` JSON namespaced a través de parseo, edición, serialización y reconstrucción de perfiles, escenarios y semestres.
+- El catálogo asigna una `curriculumRevision` estable a cada plan y la migración la incorpora a perfiles nuevos o antiguos sin revisión.
+- `curriculum-revisions.mjs` clasifica referencias vigentes, alias explícitos, retiradas y huérfanas; los alias exigen fecha, tipo y fuente HTTPS.
+- Importaciones completas e instantáneas conservan materias fuera del catálogo actual y lo informan. El planificador separado sigue validando contra el catálogo vigente.
+- La política de retiro de escrituras v1/v2 y el contrato de compatibilidad quedaron documentados en `docs/personal-data-compatibility.md`.
+
+## Reanudación y verificación
+
+Validación final del worktree: `npm test` (829/829), `npm run lint`, `git diff --check` y `npm run security:repo`, todos correctos. La prueba focal es `node tests/personal-data-evolution.test.mjs` (8/8).

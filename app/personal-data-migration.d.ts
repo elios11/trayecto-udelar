@@ -12,6 +12,7 @@ export type PersonalDataCatalogEntry = {
   careerId: string;
   planId: string;
   progressPlanId: string;
+  curriculumRevision?: string | null;
   defaultTrajectoryId: string | null;
   defaultCredentialId: string | null;
   trajectoryIds?: string[];

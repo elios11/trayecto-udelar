@@ -27,6 +27,7 @@ import {
   type PersonalDataCatalogEntry,
 } from "./personal-data-migration.mjs";
 import { parsePersonalDataV3, type PersonalDataDocumentV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
+import { classifyCurriculumReferences, curriculumRevisionForPlan } from "./curriculum-revisions.mjs";
 import {
   RECOVERY_STORAGE_KEY,
   addDeletedTerm,
@@ -268,6 +269,7 @@ const buildPersonalDataCatalog = (loadedPlans: Partial<Record<PlanId, Registered
       careerId: career.id,
       planId: plan.id,
       progressPlanId: registration?.progressPlanId ?? plan.id,
+      curriculumRevision: curriculumRevisionForPlan(plan.id),
       defaultTrajectoryId: plan.defaultTrajectoryId,
       defaultCredentialId: plan.defaultCredentialId,
       trajectoryIds: registration ? [...registration.pathwayIds] : [plan.defaultTrajectoryId],
@@ -1910,17 +1912,18 @@ export default function Home() {
     return { catalog: buildPersonalDataCatalog(loadedPlans), loadedPlans };
   };
 
-  const validateTransferredCourses = async (document: PersonalDataDocumentV3, loadedPlans = registeredPlanData) => {
+  const classifyTransferredCourses = async (document: PersonalDataDocumentV3, loadedPlans = registeredPlanData) => {
+    const courseIdsByPlan = new Map<string, Set<string>>();
     for (const profile of document.profiles) {
-      const candidateIds = [
-        ...profile.progress.map((entry) => entry.courseId),
-        ...profile.planning.scenarios.flatMap((scenario) => scenario.terms.flatMap((term) => term.courseIds)),
-      ];
-      if (candidateIds.length === 0) continue;
       const validCourseIds = await loadCourseIdsForPlan(profile.selection.planId, loadedPlans);
-      if (!validCourseIds || candidateIds.some((courseId) => !validCourseIds.has(courseId))) return false;
+      if (!validCourseIds) return { ok: false as const, historicalCount: 0 };
+      courseIdsByPlan.set(profile.selection.planId, validCourseIds);
     }
-    return true;
+    const references = classifyCurriculumReferences(document, courseIdsByPlan);
+    return {
+      ok: true as const,
+      historicalCount: references.filter((reference) => reference.status !== "current").length,
+    };
   };
 
   const applyImportedDocument = (document: PersonalDataDocumentV3, state: PersonalDataAppState) => {
@@ -1977,17 +1980,24 @@ export default function Home() {
     const snapshot = recovery.snapshots.find((entry) => entry.id === snapshotId);
     if (!snapshot) return;
     const transferResources = await loadTransferCatalog(snapshot.document);
-    if (!await validateTransferredCourses(snapshot.document, transferResources.loadedPlans)) {
-      setImportError({ title: "No pudimos restaurar la instantánea", message: "La copia contiene materias que ya no pertenecen al catálogo disponible. Tus datos actuales no se modificaron." });
+    const courseReferences = await classifyTransferredCourses(snapshot.document, transferResources.loadedPlans);
+    if (!courseReferences.ok) {
+      setImportError({ title: "No pudimos restaurar la instantánea", message: "La copia referencia un plan académico que ya no está disponible. Tus datos actuales no se modificaron." });
       return;
     }
-    const restored = personalDataToAppState(snapshot.document, transferResources.catalog);
+    const restored = parseCompleteTransfer(snapshot.document, {
+      catalog: transferResources.catalog,
+      now: new Date().toISOString(),
+      documentId: crypto.randomUUID(),
+    });
     if (!restored.ok || !createCurrentSnapshot("Copia de seguridad antes de restaurar")) {
       if (!restored.ok) setImportError({ title: "No pudimos restaurar la instantánea", message: "La copia no es compatible con el catálogo académico actual. Tus datos actuales no se modificaron." });
       return;
     }
     if (!applyImportedDocument(restored.document, restored.state)) return;
-    setRecoveryNotice(`Se restauró la instantánea: ${snapshot.reason}.`);
+    setRecoveryNotice(courseReferences.historicalCount
+      ? `Se restauró la instantánea: ${snapshot.reason}. Conservamos ${courseReferences.historicalCount} materias históricas para que puedas exportarlas y revisarlas.`
+      : `Se restauró la instantánea: ${snapshot.reason}.`);
   };
 
   const restoreTrashedTerm = (item: DeletedTermRecovery) => {
@@ -2041,13 +2051,16 @@ export default function Home() {
           setImportError({ title: futureVersion ? "Versión no compatible" : "Archivo incompatible", message: futureVersion ? "Este archivo fue creado con una versión de Trayecto que todavía no podemos importar." : "El archivo no contiene datos personales válidos de Trayecto o tiene referencias académicas rotas." });
           return;
         }
-        if (!await validateTransferredCourses(transfer.document, transferResources.loadedPlans)) {
-          setImportError({ title: "Materias no válidas", message: "El archivo incluye materias que no pertenecen a uno de sus planes. No se modificó ningún dato." });
+        const courseReferences = await classifyTransferredCourses(transfer.document, transferResources.loadedPlans);
+        if (!courseReferences.ok) {
+          setImportError({ title: "Plan no disponible", message: "El archivo referencia un plan académico que esta versión de Trayecto no puede abrir. No se modificó ningún dato." });
           return;
         }
         if (!createCurrentSnapshot("Importación completa")) return;
         if (!applyImportedDocument(transfer.document, transfer.state)) return;
-        setRecoveryNotice("Se importaron los datos y se creó una instantánea del estado anterior.");
+        setRecoveryNotice(courseReferences.historicalCount
+          ? `Se importaron los datos y conservamos ${courseReferences.historicalCount} materias históricas para que puedas exportarlas y revisarlas.`
+          : "Se importaron los datos y se creó una instantánea del estado anterior.");
       } catch {
         setImportError({ title: "JSON incorrecto", message: "No pudimos interpretar el archivo. Puede estar incompleto, dañado o no ser un archivo JSON válido." });
       }

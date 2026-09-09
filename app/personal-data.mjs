@@ -5,6 +5,7 @@ const LOAD_UNITS = new Set(["credits", "hours", "courses"]);
 const PROGRESS_STATUSES = new Set(["pending", "approved", "exonerated"]);
 const TERM_STATUSES = new Set(["planned", "in-progress", "closed"]);
 const ISO_DATE_TIME = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{1,3}))?(Z|[+-]\d{2}:\d{2})$/;
+const EXTENSION_NAMESPACE = /^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
 export class PersonalDataValidationError extends TypeError {
   constructor(issues) {
@@ -154,10 +155,27 @@ function asEnum(value, allowed, path, issues, label) {
   return value;
 }
 
+function parseExtensions(value, path, issues) {
+  if (value === undefined) return undefined;
+  const record = asRecord(value, path, issues);
+  if (!record) return undefined;
+  for (const key of Object.keys(record)) {
+    if (!EXTENSION_NAMESPACE.test(key)) {
+      addIssue(issues, `${path}.${key}`, "invalid_extension_namespace", "La extensión debe usar un espacio de nombres con puntos, por ejemplo org.ejemplo.funcion.");
+    }
+  }
+  return { ...record };
+}
+
+function withExtensions(target, record, path, issues) {
+  const extensions = parseExtensions(record.extensions, `${path}.extensions`, issues);
+  return extensions === undefined ? target : { ...target, extensions };
+}
+
 function parseSelection(value, path, issues) {
   const record = asRecord(value, path, issues);
   if (!record) return null;
-  return {
+  return withExtensions({
     facultyId: asId(record.facultyId, `${path}.facultyId`, issues),
     careerId: asId(record.careerId, `${path}.careerId`, issues),
     planId: asId(record.planId, `${path}.planId`, issues),
@@ -165,7 +183,7 @@ function parseSelection(value, path, issues) {
     campusId: asNullableId(record.campusId, `${path}.campusId`, issues),
     trajectoryId: asNullableId(record.trajectoryId, `${path}.trajectoryId`, issues),
     credentialId: asNullableId(record.credentialId, `${path}.credentialId`, issues),
-  };
+  }, record, path, issues);
 }
 
 function parseLoadTarget(value, path, issues) {
@@ -199,7 +217,7 @@ function parseTerm(value, path, issues) {
     if (courseId && localCourseIds.has(courseId)) addIssue(issues, `${path}.courseIds[${index}]`, "duplicate_id", `La materia ${courseId} aparece más de una vez en el semestre.`);
     localCourseIds.add(courseId);
   });
-  return {
+  return withExtensions({
     id: asId(record.id, `${path}.id`, issues),
     label: asText(record.label, `${path}.label`, issues),
     status: asEnum(record.status, TERM_STATUSES, `${path}.status`, issues, "planned, in-progress o closed"),
@@ -207,7 +225,7 @@ function parseTerm(value, path, issues) {
     endsAt,
     loadTarget: parseLoadTarget(record.loadTarget, `${path}.loadTarget`, issues),
     courseIds,
-  };
+  }, record, path, issues);
 }
 
 function parseScenario(value, path, issues) {
@@ -238,7 +256,7 @@ function parseScenario(value, path, issues) {
     addIssue(issues, `${path}.currentTermId`, "closed_reference", "El semestre actual no puede estar cerrado.");
   }
 
-  return {
+  return withExtensions({
     id: asId(record.id, `${path}.id`, issues),
     name: asText(record.name, `${path}.name`, issues),
     isPrimary: asBoolean(record.isPrimary, `${path}.isPrimary`, issues),
@@ -247,7 +265,7 @@ function parseScenario(value, path, issues) {
     updatedAt,
     currentTermId,
     terms,
-  };
+  }, record, path, issues);
 }
 
 function parsePlanning(value, path, issues) {
@@ -272,7 +290,7 @@ function parsePlanning(value, path, issues) {
   } else if (activeScenario?.archived) {
     addIssue(issues, `${path}.activeScenarioId`, "archived_reference", "El escenario activo no puede estar archivado.");
   }
-  return { activeScenarioId, scenarios };
+  return withExtensions({ activeScenarioId, scenarios }, record, path, issues);
 }
 
 function parseProgress(value, path, issues) {
@@ -280,11 +298,11 @@ function parseProgress(value, path, issues) {
     const entryPath = `${path}[${index}]`;
     const record = asRecord(entry, entryPath, issues);
     if (!record) return null;
-    return {
+    return withExtensions({
       courseId: asId(record.courseId, `${entryPath}.courseId`, issues),
       status: asEnum(record.status, PROGRESS_STATUSES, `${entryPath}.status`, issues, "pending, approved o exonerated"),
       updatedAt: normalizeDate(record.updatedAt, `${entryPath}.updatedAt`, issues, true),
-    };
+    }, record, entryPath, issues);
   }).filter(Boolean);
   const courseIds = new Set();
   progress.forEach((entry, index) => {
@@ -297,14 +315,14 @@ function parseProgress(value, path, issues) {
 function parseProfile(value, path, issues) {
   const record = asRecord(value, path, issues);
   if (!record) return null;
-  return {
+  return withExtensions({
     id: asId(record.id, `${path}.id`, issues),
     selection: parseSelection(record.selection, `${path}.selection`, issues),
     curriculumRevision: asNullableId(record.curriculumRevision, `${path}.curriculumRevision`, issues),
     loadUnit: asEnum(record.loadUnit, LOAD_UNITS, `${path}.loadUnit`, issues, "credits, hours o courses"),
     progress: parseProgress(record.progress, `${path}.progress`, issues),
     planning: parsePlanning(record.planning, `${path}.planning`, issues),
-  };
+  }, record, path, issues);
 }
 
 function parseDocument(input, issues) {
@@ -329,7 +347,7 @@ function parseDocument(input, issues) {
   const activeProfileId = asNullableId(record.activeProfileId, "$.activeProfileId", issues);
   if (activeProfileId && !profileIds.has(activeProfileId)) addIssue(issues, "$.activeProfileId", "missing_reference", "El perfil académico activo no existe.");
 
-  return {
+  return withExtensions({
     format: PERSONAL_DATA_FORMAT,
     formatVersion: PERSONAL_DATA_VERSION,
     id: asId(record.id, "$.id", issues),
@@ -339,7 +357,7 @@ function parseDocument(input, issues) {
     lastModifiedByDeviceId: asNullableId(record.lastModifiedByDeviceId, "$.lastModifiedByDeviceId", issues),
     activeProfileId,
     profiles,
-  };
+  }, record, "$", issues);
 }
 
 export function parsePersonalDataV3(input) {
@@ -356,6 +374,19 @@ export function parsePersonalDataV3(input) {
       issues: [{ path: "$", code: "unreadable_value", message: "No se pudo inspeccionar el valor sin ejecutar código externo." }],
     };
   }
+}
+
+export function classifyPersonalDataCompatibility(input) {
+  if (input === null || typeof input !== "object" || Array.isArray(input)) return { status: "incompatible", formatVersion: null };
+  const version = input.formatVersion;
+  if (input.format === PERSONAL_DATA_FORMAT && Number.isInteger(version) && version > PERSONAL_DATA_VERSION) {
+    return { status: "future-protected", formatVersion: version };
+  }
+  if (input.format === PERSONAL_DATA_FORMAT && version === PERSONAL_DATA_VERSION) {
+    return { status: parsePersonalDataV3(input).ok ? "supported" : "incompatible", formatVersion: version };
+  }
+  if (version === undefined || version === 1 || version === 2) return { status: "legacy-migratable", formatVersion: version ?? 1 };
+  return { status: "incompatible", formatVersion: Number.isInteger(version) ? version : null };
 }
 
 export function serializePersonalDataV3(document) {
