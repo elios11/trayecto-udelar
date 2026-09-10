@@ -1,4 +1,5 @@
-import { parsePersonalDataV3 } from "./personal-data.mjs";
+import { parsePersonalDataV4 } from "./personal-data.mjs";
+import { migratePersonalDataV3ToV4 } from "./personal-data-migration.mjs";
 
 export const RECOVERY_STORAGE_KEY = "trayecto-udelar-recovery-v1";
 export const RECOVERY_FORMAT = "trayecto-personal-data-recovery";
@@ -69,7 +70,7 @@ function normalizeSnapshot(value, path, issues) {
   }
   const createdAt = normalizeDate(value.createdAt, `${path}.createdAt`, issues);
   const expiresAt = normalizeDate(value.expiresAt, `${path}.expiresAt`, issues);
-  const parsed = parsePersonalDataV3(value.document);
+  const parsed = migratePersonalDataV3ToV4(value.document);
   if (!createdAt || !expiresAt || Date.parse(expiresAt) < Date.parse(createdAt) || !parsed.ok) {
     if (!parsed.ok) issues.push(...parsed.issues.map((entry) => ({ ...entry, path: `${path}.document${entry.path.slice(1)}` })));
     return null;
@@ -165,7 +166,7 @@ function canonicalize(value) {
 }
 
 export function personalDocumentFingerprint(document) {
-  const parsed = parsePersonalDataV3(document);
+  const parsed = migratePersonalDataV3ToV4(document);
   if (!parsed.ok) return null;
   const semantic = { ...parsed.document };
   delete semantic.revision;
@@ -179,7 +180,7 @@ export function createRecoverySnapshot(store, document, options = {}) {
   const reason = options.reason;
   const id = options.id;
   const parsedStore = parseRecoveryStore(store, { now });
-  const parsedDocument = parsePersonalDataV3(document);
+  const parsedDocument = migratePersonalDataV3ToV4(document);
   if (!parsedStore.ok || !parsedDocument.ok || !nonEmpty(reason) || !nonEmpty(id)) {
     return { ok: false, issues: [...(parsedStore.issues ?? []), ...(parsedDocument.issues ?? []), ...(!nonEmpty(reason) ? [issue("$.reason", "invalid_text", "La instantánea necesita un motivo.")] : []), ...(!nonEmpty(id) ? [issue("$.id", "invalid_id", "La instantánea necesita un identificador.")] : [])] };
   }
@@ -221,7 +222,7 @@ export function removeRecoveryItem(store, kind, id, options = {}) {
 }
 
 export function restoreDeletedTerm(document, deletedTerm) {
-  const parsedDocument = parsePersonalDataV3(document);
+  const parsedDocument = migratePersonalDataV3ToV4(document);
   const issues = [];
   const item = normalizeDeletedTerm(deletedTerm, "$.deletedTerm", issues);
   if (!parsedDocument.ok || !item) return { ok: false, issues: [...(parsedDocument.issues ?? []), ...issues] };
@@ -236,12 +237,12 @@ export function restoreDeletedTerm(document, deletedTerm) {
   scenario.terms.splice(Math.min(item.originalIndex, scenario.terms.length), 0, restoredTerm);
   if (item.wasCurrent) scenario.currentTermId = restoredTerm.id;
   scenario.updatedAt = next.updatedAt;
-  const checked = parsePersonalDataV3(next);
+  const checked = parsePersonalDataV4(next);
   return checked.ok ? { ok: true, document: checked.document, omittedCourseIds } : { ok: false, issues: checked.issues };
 }
 
 export function isDeletedTermAlreadyRestored(document, deletedTerm) {
-  const parsedDocument = parsePersonalDataV3(document);
+  const parsedDocument = migratePersonalDataV3ToV4(document);
   const issues = [];
   const item = normalizeDeletedTerm(deletedTerm, "$.deletedTerm", issues);
   if (!parsedDocument.ok || !item) return false;

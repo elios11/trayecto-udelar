@@ -1,4 +1,4 @@
-import type { PersonalDataDocumentV3, PersonalDataIssue, PersonalDataTermV3 } from "./personal-data.mjs";
+import type { PersonalDataDocumentV4, PersonalDataIssue, PersonalDataTermV3 } from "./personal-data.mjs";
 
 export const RECOVERY_STORAGE_KEY: "trayecto-udelar-recovery-v1";
 export const RECOVERY_FORMAT: "trayecto-personal-data-recovery";
@@ -6,7 +6,7 @@ export const RECOVERY_VERSION: 1;
 export const MAX_RECOVERY_SNAPSHOTS: 10;
 export const MAX_DELETED_TERMS: 20;
 
-export interface RecoverySnapshot { id: string; createdAt: string; expiresAt: string; reason: string; document: PersonalDataDocumentV3 }
+export interface RecoverySnapshot { id: string; createdAt: string; expiresAt: string; reason: string; document: PersonalDataDocumentV4 }
 export interface DeletedTermRecovery { id: string; deletedAt: string; expiresAt: string; profileId: string; planId: string; scenarioId: string; originalIndex: number; wasCurrent: boolean; term: PersonalDataTermV3 }
 export interface RecoveryStore { format: "trayecto-personal-data-recovery"; formatVersion: 1; snapshots: RecoverySnapshot[]; deletedTerms: DeletedTermRecovery[] }
 export type RecoveryResult<T> = { ok: true } & T | { ok: false; issues: PersonalDataIssue[] };
@@ -21,5 +21,5 @@ export function createRecoverySnapshot(store: RecoveryStore, document: unknown, 
 export function createDeletedTerm(value: Omit<DeletedTermRecovery, "id" | "deletedAt" | "expiresAt">, options: { now: string; id: string }): DeletedTermRecovery | null;
 export function addDeletedTerm(store: RecoveryStore, deletedTerm: DeletedTermRecovery, options: { now: string }): RecoveryResult<{ store: RecoveryStore; item: DeletedTermRecovery }>;
 export function removeRecoveryItem(store: RecoveryStore, kind: "snapshot" | "deleted-term", id: string, options?: { now?: string }): RecoveryResult<{ store: RecoveryStore }>;
-export function restoreDeletedTerm(document: unknown, deletedTerm: DeletedTermRecovery): RecoveryResult<{ document: PersonalDataDocumentV3; omittedCourseIds: string[] }> | { ok: false; code: "missing_context" | "duplicate_term"; issues: PersonalDataIssue[] };
+export function restoreDeletedTerm(document: unknown, deletedTerm: DeletedTermRecovery): RecoveryResult<{ document: PersonalDataDocumentV4; omittedCourseIds: string[] }> | { ok: false; code: "missing_context" | "duplicate_term"; issues: PersonalDataIssue[] };
 export function isDeletedTermAlreadyRestored(document: unknown, deletedTerm: DeletedTermRecovery): boolean;

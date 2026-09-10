@@ -347,6 +347,22 @@ footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .drawer-stats > div { flex: 1; padding: 15px; border: 1px solid var(--line); border-radius: 10px; display: grid; gap: 4px; }
 .drawer-stats span { font-size: 10px; color: var(--muted); }
 .drawer-stats strong { font-size: 16px; }
+.academic-history-panel { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); }
+.academic-history-panel > summary { cursor: pointer; color: var(--active-ink); font-size: 12px; font-weight: 800; }
+.academic-history-panel > p { color: var(--muted); font-size: 10px; line-height: 1.5; }
+.academic-history-current { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 9px; background: var(--surface-subtle); font-size: 11px; }
+.academic-history-list { display: grid; gap: 8px; padding: 0; list-style: none; }
+.academic-history-list li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.academic-history-list li > div { display: grid; gap: 2px; }
+.academic-history-list span, .academic-history-list small, .academic-history-empty { color: var(--muted); font-size: 9px; }
+.academic-history-list small { font-weight: 760; text-transform: uppercase; letter-spacing: .06em; }
+.academic-history-list .voided strong { text-decoration: line-through; }
+.academic-history-editor { display: grid; gap: 10px; margin-top: 14px; }
+.academic-history-editor label { display: grid; gap: 5px; color: var(--muted); font-size: 10px; font-weight: 700; }
+.academic-history-editor select, .academic-history-editor input { min-height: 38px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; }
+.academic-history-editor > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.historical-courses-panel ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.historical-courses-panel li { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 9px; }
 .allocation-source { margin: 14px 0 0; padding: 11px 12px; border: 1px solid #cce4dc; border-radius: 8px; background: #f2faf7; color: #315f55; font-size: 11px; line-height: 1.45; }
 .allocation-source > span { margin-right: 5px; color: var(--exonerated); font-weight: 850; }
 .allocation-source a { color: var(--udelar); font-weight: 750; }

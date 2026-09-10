@@ -117,8 +117,8 @@ test("prefers a valid v3 document and rereads it without changing metadata", asy
   const hydrated = hydratePersonalData({ personalDataV3: raw, progressV2: "{broken" }, { ...options, catalog: matchingCatalog });
   assert.equal(hydrated.ok, true);
   assert.equal(hydrated.source, "v3");
-  assert.equal(hydrated.shouldPersist, false);
-  assert.equal(serializePersonalDataForStorage(hydrated.document), raw);
+  assert.equal(hydrated.shouldPersist, true);
+  assert.equal(hydrated.document.formatVersion, 4);
 });
 
 test("does not overwrite a corrupt v3 and recovers valid legacy fragments", () => {
@@ -130,8 +130,8 @@ test("does not overwrite a corrupt v3 and recovers valid legacy fragments", () =
     visualPreferences: JSON.stringify({ theme: "oscuro", appMode: "planner" }),
   }, options);
   assert.equal(hydrated.ok, true);
-  assert.equal(hydrated.canonicalWriteBlocked, true);
-  assert.equal(hydrated.shouldPersist, false);
+  assert.equal(hydrated.canonicalWriteBlocked, false);
+  assert.equal(hydrated.shouldPersist, true);
   assert.deepEqual(hydrated.state.progress["2025"], { GOOD: "approved" });
   assert.ok(hydrated.issues.some((entry) => entry.path === "$.personalDataV3"));
   assert.ok(hydrated.issues.some((entry) => entry.path === "$.plannerV1"));
@@ -301,6 +301,6 @@ test("rejects future versions, broken references, duplicates, and other-plan pla
 
 test("state fingerprint excludes visual preferences and remains deterministic", () => {
   const state = { progress: {}, plannerPlans: {}, currentPlannerTerms: {}, selection: null, theme: "bosque" };
-  assert.equal(personalDataStateFingerprint(state), '{"progress":{},"plannerPlans":{},"currentPlannerTerms":{},"selection":null,"activeProfileId":null,"activeScenarioId":null}');
+  assert.equal(personalDataStateFingerprint(state), '{"progress":{},"academicHistories":{},"plannerPlans":{},"currentPlannerTerms":{},"selection":null,"activeProfileId":null,"activeScenarioId":null}');
   assert.equal(parsePersonalDataV3({}).ok, false);
 });

@@ -6,8 +6,9 @@ import {
   classifyPersonalDataCompatibility,
   parsePersonalDataV3,
   serializePersonalDataV3,
+  serializePersonalDataV4,
 } from "../app/personal-data.mjs";
-import { appStateToPersonalData, hydratePersonalData, migrateLegacyStateToPersonalData, personalDataToAppState } from "../app/personal-data-migration.mjs";
+import { appStateToPersonalData, hydratePersonalData, migrateLegacyStateToPersonalData, migratePersonalDataV3ToV4, personalDataToAppState } from "../app/personal-data-migration.mjs";
 import {
   classifyCurriculumReferences,
   curriculumRevisionForPlan,
@@ -32,18 +33,21 @@ function catalogFor(document) {
 
 test("distingue formato, revisión concurrente y versiones futuras protegidas", async () => {
   const input = await fixture("personal-data-v3-minimal.json");
-  assert.equal(classifyPersonalDataCompatibility(input).status, "supported");
-  assert.equal(classifyPersonalDataCompatibility({ ...input, revision: 999 }).status, "supported");
-  assert.deepEqual(classifyPersonalDataCompatibility({ ...input, formatVersion: 4 }), { status: "future-protected", formatVersion: 4 });
+  assert.equal(classifyPersonalDataCompatibility(input).status, "legacy-migratable");
+  const current = migratePersonalDataV3ToV4(input).document;
+  assert.equal(classifyPersonalDataCompatibility(current).status, "supported");
+  assert.equal(classifyPersonalDataCompatibility({ ...current, revision: 999 }).status, "supported");
+  assert.deepEqual(classifyPersonalDataCompatibility({ ...current, formatVersion: 5 }), { status: "future-protected", formatVersion: 5 });
   assert.equal(classifyPersonalDataCompatibility({ formatVersion: 2, scope: "all" }).status, "legacy-migratable");
 });
 
 test("una copia local futura bloquea la escritura aunque exista un fallback legado", async () => {
   const input = await fixture("personal-data-v3-minimal.json");
-  const futureRaw = JSON.stringify({ ...input, formatVersion: 4, mandatorySync: { accountId: "future" } });
+  const current = migratePersonalDataV3ToV4(input).document;
+  const futureRaw = JSON.stringify({ ...current, formatVersion: 5, mandatorySync: { accountId: "future" } });
   const catalog = [{ facultyId: "fing", careerId: "computacion", planId: "1997", progressPlanId: "1997", defaultTrajectoryId: "pi-20-59", defaultCredentialId: "engineer", loadUnit: "credits" }];
   const hydrated = hydratePersonalData({
-    personalDataV3: futureRaw,
+    personalDataV4: futureRaw,
     progressV2: JSON.stringify({ 1997: { COURSE: "approved" } }),
     selectionV1: JSON.stringify({ planId: "1997" }),
   }, { catalog, now: "2026-09-09T12:00:00.000Z", documentId: "fallback" });
@@ -80,7 +84,7 @@ test("la hidratación actualiza una sola vez los perfiles v3 sin revisión curri
   assert.equal(hydrated.shouldPersist, true);
   assert.equal(hydrated.document.revision, input.revision + 1);
   assert.equal(hydrated.document.profiles[0].curriculumRevision, curriculumRevisionForPlan(input.profiles[0].selection.planId));
-  const reread = hydratePersonalData({ personalDataV3: JSON.stringify(hydrated.document) }, {
+  const reread = hydratePersonalData({ personalDataV4: JSON.stringify(hydrated.document) }, {
     catalog,
     now: "2026-09-09T13:00:00.000Z",
     documentId: "unused",
@@ -118,7 +122,7 @@ test("un cliente actual conserva extensiones namespaced al editar datos conocido
   assert.deepEqual(rebuilt.document.profiles[0].planning.extensions, input.profiles[0].planning.extensions);
   assert.deepEqual(rebuilt.document.profiles[0].planning.scenarios[0].extensions, input.profiles[0].planning.scenarios[0].extensions);
   assert.deepEqual(rebuilt.document.profiles[0].planning.scenarios[0].terms[0].extensions, input.profiles[0].planning.scenarios[0].terms[0].extensions);
-  assert.deepEqual(JSON.parse(serializePersonalDataV3(rebuilt.document)).extensions, input.extensions);
+  assert.deepEqual(JSON.parse(serializePersonalDataV4(rebuilt.document)).extensions, input.extensions);
 });
 
 test("rechaza extensiones sin namespace para no prometer compatibilidad accidental", async () => {

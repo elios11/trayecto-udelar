@@ -1,6 +1,21 @@
-import { parsePersonalDataV3, serializePersonalDataV3 } from "./personal-data.mjs";
+import {
+  PERSONAL_DATA_FORMAT,
+  PERSONAL_DATA_VERSION,
+  parsePersonalDataV3,
+  parsePersonalDataV4,
+  serializePersonalDataV4,
+} from "./personal-data.mjs";
+import {
+  addAcademicHistoryEvent,
+  deriveCourseStatuses,
+  effectiveAcademicHistoryEvents,
+  migrateProgressToAcademicHistory,
+  setAcademicHistoryEventVoided,
+  validateAcademicHistory,
+} from "./academic-history.mjs";
 
-export const PERSONAL_DATA_STORAGE_KEY = "trayecto-udelar-personal-data-v3";
+export const PERSONAL_DATA_STORAGE_KEY = "trayecto-udelar-personal-data-v4";
+export const LEGACY_PERSONAL_DATA_V3_STORAGE_KEY = "trayecto-udelar-personal-data-v3";
 export const LEGACY_PROGRESS_STORAGE_KEY = "trayecto-udelar-progress-v2";
 export const LEGACY_COMPUTATION_PROGRESS_STORAGE_KEY = "trayecto-udelar-demo-v1";
 export const LEGACY_PLANNER_STORAGE_KEY = "trayecto-udelar-planner-v1";
@@ -63,7 +78,7 @@ function backfillCurriculumRevisions(document, catalog, timestamp) {
     updatedAt: nonEmpty(timestamp) && Number.isFinite(Date.parse(timestamp)) ? timestamp : document.updatedAt,
     profiles,
   };
-  const parsed = parsePersonalDataV3(candidate);
+  const parsed = parsePersonalDataV4(candidate);
   return parsed.ok ? { document: parsed.document, changed: true } : { document, changed: false };
 }
 
@@ -238,7 +253,36 @@ function stableProfileId(selection) {
   ].join("|"))}`;
 }
 
-function profileFromLegacy(selection, statuses, planner, timestamp, previousProfile = null, preferredScenarioId = null) {
+function stableHistoryEventId(progressPlanId, courseId, status, timestamp, ordinal) {
+  return `history:user:${encodeURIComponent(progressPlanId)}:${encodeURIComponent(courseId)}:${status}:${encodeURIComponent(timestamp)}:${ordinal}`;
+}
+
+function reconcileHistoryWithStatuses(history, statuses, progressPlanId, timestamp) {
+  let next = validateAcademicHistory(history).ok ? history : { events: [] };
+  const projected = deriveCourseStatuses(next);
+  const courseIds = new Set([...Object.keys(projected), ...Object.keys(statuses)]);
+  for (const courseId of [...courseIds].sort()) {
+    const before = projected[courseId] ?? "pending";
+    const after = statuses[courseId] ?? "pending";
+    if (before === after) continue;
+    if (after === "pending") {
+      const effective = effectiveAcademicHistoryEvents(next).filter((event) => event.courseId === courseId);
+      const latest = effective.at(-1);
+      if (latest) next = setAcademicHistoryEventVoided(next, latest.id, true, {
+        id: stableHistoryEventId(progressPlanId, courseId, "pending", timestamp, next.events.length),
+        recordedAt: timestamp,
+      });
+    } else {
+      next = addAcademicHistoryEvent(next, { courseId, kind: "recorded-status", resultStatus: after, source: "user" }, {
+        id: stableHistoryEventId(progressPlanId, courseId, after, timestamp, next.events.length),
+        recordedAt: timestamp,
+      });
+    }
+  }
+  return next;
+}
+
+function profileFromLegacy(selection, statuses, planner, timestamp, previousProfile = null, preferredScenarioId = null, requestedHistory = null) {
   const profileId = previousProfile?.id ?? stableProfileId(selection);
   const previousScenario = previousProfile?.planning?.scenarios?.find((scenario) => scenario.id === preferredScenarioId)
     ?? previousProfile?.planning?.scenarios?.find((scenario) => scenario.id === previousProfile.planning.activeScenarioId)
@@ -277,13 +321,22 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
       ? previousProfile.planning.scenarios.map((scenario) => scenario.id === previousScenario?.id ? rebuiltScenario : scenario)
       : [rebuiltScenario]
     : previousProfile?.planning?.scenarios ?? [];
+  const baseHistory = requestedHistory
+    ?? previousProfile?.academicHistory
+    ?? migrateProgressToAcademicHistory(Object.entries(statuses).map(([courseId, status]) => ({ courseId, status, updatedAt: null })), {
+      progressPlanId: selection.progressPlanId,
+      recordedAt: timestamp,
+    });
+  const academicHistory = reconcileHistoryWithStatuses(baseHistory, statuses, selection.progressPlanId, timestamp);
+  const projectedStatuses = deriveCourseStatuses(academicHistory);
   return {
     ...(previousProfile?.extensions ? { extensions: previousProfile.extensions } : {}),
     id: profileId,
     selection,
     curriculumRevision: previousProfile?.curriculumRevision ?? null,
     loadUnit: previousProfile?.loadUnit ?? "courses",
-    progress: Object.entries(statuses).map(([courseId, status]) => {
+    progress: [...new Set([...Object.keys(statuses), ...Object.keys(projectedStatuses)])].map((courseId) => {
+      const status = projectedStatuses[courseId] ?? "pending";
       const previousEntry = previousProfile?.progress?.find((entry) => entry.courseId === courseId);
       return {
         ...(previousEntry?.extensions ? { extensions: previousEntry.extensions } : {}),
@@ -292,6 +345,7 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
         updatedAt: previousEntry?.status === status ? previousEntry.updatedAt : previousProfile ? timestamp : null,
       };
     }),
+    academicHistory,
     planning: {
       ...(previousProfile?.planning?.extensions ? { extensions: previousProfile.planning.extensions } : {}),
       activeScenarioId: hasPlanner ? scenarioId : previousProfile?.planning?.activeScenarioId ?? null,
@@ -322,12 +376,58 @@ function equalSelections(left, right) {
     .every((key) => left[key] === right[key]);
 }
 
+export function migratePersonalDataV3ToV4(value) {
+  const alreadyCurrent = parsePersonalDataV4(value);
+  if (alreadyCurrent.ok) return { ok: true, document: alreadyCurrent.document, issues: [], migrated: false };
+  const parsed = parsePersonalDataV3(value);
+  if (!parsed.ok) return parsed;
+  const histories = new Map();
+  const profilesByProgressPlan = new Map();
+  for (const profile of parsed.document.profiles) {
+    const planId = profile.selection.progressPlanId;
+    const group = profilesByProgressPlan.get(planId) ?? [];
+    group.push(profile);
+    profilesByProgressPlan.set(planId, group);
+  }
+  const issues = [];
+  for (const [progressPlanId, profiles] of profilesByProgressPlan) {
+    const canonicalStatuses = Object.fromEntries(profiles[0].progress.map((entry) => [entry.courseId, entry.status]));
+    if (!profiles.every((profile) => equalStatusMaps(canonicalStatuses, Object.fromEntries(profile.progress.map((entry) => [entry.courseId, entry.status]))))) {
+      issues.push(issue("$.profiles", "shared_progress_conflict", `Los perfiles que comparten ${progressPlanId} no tienen el mismo progreso.`));
+      continue;
+    }
+    const progress = Object.entries(canonicalStatuses).map(([courseId, status]) => {
+      const candidates = profiles.flatMap((profile) => profile.progress.filter((entry) => entry.courseId === courseId));
+      const validDates = candidates.map((entry) => entry.updatedAt).filter((date) => typeof date === "string" && Number.isFinite(Date.parse(date))).sort();
+      const source = candidates.find((entry) => entry.updatedAt === validDates.at(-1)) ?? candidates[0];
+      return { ...(source?.extensions ? { extensions: source.extensions } : {}), courseId, status, updatedAt: validDates.at(-1) ?? null };
+    });
+    histories.set(progressPlanId, migrateProgressToAcademicHistory(progress, {
+      progressPlanId,
+      recordedAt: parsed.document.createdAt,
+    }));
+  }
+  if (issues.length) return { ok: false, issues };
+  const candidate = {
+    ...parsed.document,
+    formatVersion: 4,
+    profiles: parsed.document.profiles.map((profile) => ({
+      ...profile,
+      academicHistory: structuredClone(histories.get(profile.selection.progressPlanId) ?? { events: [] }),
+    })),
+  };
+  const checked = parsePersonalDataV4(candidate);
+  return checked.ok ? { ok: true, document: checked.document, issues: [], migrated: true } : checked;
+}
+
 export function personalDataToAppState(document, catalog) {
-  const parsed = parsePersonalDataV3(document);
+  const current = migratePersonalDataV3ToV4(document);
+  const parsed = current.ok ? { ok: true, document: current.document } : current;
   const issues = [];
   const normalizedCatalog = normalizeCatalog(catalog, issues);
   if (!parsed.ok) return { ok: false, issues: parsed.issues };
   const progress = {};
+  const academicHistories = {};
   const plannerPlans = {};
   const currentPlannerTerms = {};
   const activeProfile = parsed.document.profiles.find((profile) => profile.id === parsed.document.activeProfileId) ?? null;
@@ -346,6 +446,12 @@ export function personalDataToAppState(document, catalog) {
       continue;
     }
     progress[selection.progressPlanId] = statuses;
+    const existingHistory = academicHistories[selection.progressPlanId];
+    if (existingHistory && JSON.stringify(existingHistory) !== JSON.stringify(profile.academicHistory)) {
+      issues.push(issue(`$.profiles[${index}].academicHistory`, "shared_history_conflict", "Dos perfiles articulados contienen historias académicas diferentes."));
+      continue;
+    }
+    academicHistories[selection.progressPlanId] = profile.academicHistory;
     const planner = plannerFromProfile(profile);
     if (planner && (!Object.hasOwn(plannerPlans, selection.planId) || profile.id === activeProfile?.id)) {
       plannerPlans[selection.planId] = planner.terms;
@@ -357,6 +463,7 @@ export function personalDataToAppState(document, catalog) {
     document: parsed.document,
     state: {
       progress,
+      academicHistories,
       plannerPlans,
       currentPlannerTerms,
       selection: activeProfile?.selection ?? null,
@@ -420,7 +527,7 @@ export function migrateLegacyStateToPersonalData(legacy, options) {
   const activeProfile = selected ? profiles.find((profile) => profile.selection.planId === selected.planId) ?? null : null;
   const candidate = {
     format: "trayecto-personal-data",
-    formatVersion: 3,
+    formatVersion: 4,
     id: documentId,
     revision: 0,
     createdAt: timestamp,
@@ -429,24 +536,40 @@ export function migrateLegacyStateToPersonalData(legacy, options) {
     activeProfileId: activeProfile?.id ?? null,
     profiles,
   };
-  const parsed = parsePersonalDataV3(candidate);
+  const parsed = parsePersonalDataV4(candidate);
   if (!parsed.ok) return { ok: false, issues: [...issues, ...parsed.issues] };
   return { ok: true, document: parsed.document, issues };
 }
 
 export function hydratePersonalData(rawStorage, options) {
   const issues = [];
-  const canonicalValue = parseStoredJson(rawStorage?.personalDataV3, "$.personalDataV3", issues);
+  const canonicalRaw = rawStorage?.personalDataV4;
+  const canonicalValue = parseStoredJson(canonicalRaw, "$.personalDataV4", issues);
   if (canonicalValue !== undefined) {
-    const parsed = parsePersonalDataV3(canonicalValue);
+    const parsed = parsePersonalDataV4(canonicalValue);
     if (parsed.ok) {
       const catalog = normalizeCatalog(options?.catalog, issues);
       const backfilled = backfillCurriculumRevisions(parsed.document, catalog, options?.now);
       const adapted = personalDataToAppState(backfilled.document, catalog);
-      if (adapted.ok) return { ...adapted, source: "v3", issues, shouldPersist: backfilled.changed, canonicalWriteBlocked: false };
+      if (adapted.ok) return { ...adapted, source: "v4", issues, shouldPersist: backfilled.changed, canonicalWriteBlocked: false };
+      issues.push(...adapted.issues.map((entry) => ({ ...entry, path: `$.personalDataV4${entry.path.slice(1)}` })));
+    } else {
+      issues.push(...parsed.issues.map((entry) => ({ ...entry, path: `$.personalDataV4${entry.path.slice(1)}` })));
+    }
+  }
+
+  const legacyV3Raw = rawStorage?.personalDataV3;
+  const legacyV3Value = parseStoredJson(legacyV3Raw, "$.personalDataV3", issues);
+  if (canonicalValue === undefined && legacyV3Value !== undefined) {
+    const migratedV3 = migratePersonalDataV3ToV4(legacyV3Value);
+    if (migratedV3.ok) {
+      const catalog = normalizeCatalog(options?.catalog, issues);
+      const backfilled = backfillCurriculumRevisions(migratedV3.document, catalog, options?.now);
+      const adapted = personalDataToAppState(backfilled.document, catalog);
+      if (adapted.ok) return { ...adapted, source: "v3", issues, shouldPersist: true, canonicalWriteBlocked: false };
       issues.push(...adapted.issues.map((entry) => ({ ...entry, path: `$.personalDataV3${entry.path.slice(1)}` })));
     } else {
-      issues.push(...parsed.issues.map((entry) => ({ ...entry, path: `$.personalDataV3${entry.path.slice(1)}` })));
+      issues.push(...migratedV3.issues.map((entry) => ({ ...entry, path: `$.personalDataV3${entry.path.slice(1)}` })));
     }
   }
 
@@ -462,7 +585,7 @@ export function hydratePersonalData(rawStorage, options) {
   if (!migrated.ok) return { ok: false, issues: [...issues, ...migrated.issues], source: "legacy" };
   const adapted = personalDataToAppState(migrated.document, options?.catalog);
   if (!adapted.ok) return { ok: false, issues: [...issues, ...migrated.issues, ...adapted.issues], source: "legacy" };
-  const canonicalWasPresent = rawStorage?.personalDataV3 !== null && rawStorage?.personalDataV3 !== undefined;
+  const canonicalWasPresent = canonicalRaw !== null && canonicalRaw !== undefined;
   return {
     ...adapted,
     source: "legacy",
@@ -475,7 +598,7 @@ export function hydratePersonalData(rawStorage, options) {
 export function appStateToPersonalData(state, options) {
   const issues = [];
   const catalog = normalizeCatalog(options?.catalog, issues);
-  const previous = options?.previousDocument ? parsePersonalDataV3(options.previousDocument) : null;
+  const previous = options?.previousDocument ? migratePersonalDataV3ToV4(options.previousDocument) : null;
   if (previous && !previous.ok) return { ok: false, issues: previous.issues };
   const timestamp = options?.now;
   if (!nonEmpty(timestamp) || !Number.isFinite(Date.parse(timestamp))) return { ok: false, issues: [issue("$.now", "invalid_date", "La fecha de guardado debe ser ISO válida.")] };
@@ -537,6 +660,9 @@ export function appStateToPersonalData(state, options) {
       timestamp,
       base,
       base.id === targetProfileId ? state?.activeScenarioId ?? base.planning.activeScenarioId : base.planning.activeScenarioId,
+      descriptor && Object.hasOwn(state?.academicHistories ?? {}, descriptor.progressPlanId)
+        ? state.academicHistories[descriptor.progressPlanId]
+        : base.academicHistory,
     );
     rebuilt.loadUnit = base.loadUnit;
     rebuilt.curriculumRevision = base.curriculumRevision ?? descriptor?.curriculumRevision ?? null;
@@ -552,16 +678,25 @@ export function appStateToPersonalData(state, options) {
     activeProfileId: targetProfileId,
     profiles,
   };
-  const parsed = parsePersonalDataV3(candidate);
+  const parsed = parsePersonalDataV4(candidate);
   return parsed.ok ? { ok: true, document: parsed.document, issues: legacyResult.issues } : parsed;
 }
 
 export function parseCompleteTransfer(value, options) {
-  const direct = parsePersonalDataV3(value);
+  const direct = parsePersonalDataV4(value);
   if (direct.ok) {
     const issues = [];
     const catalog = normalizeCatalog(options?.catalog, issues);
     const backfilled = backfillCurriculumRevisions(direct.document, catalog, options?.now);
+    const adapted = personalDataToAppState(backfilled.document, catalog);
+    return adapted.ok ? { ok: true, document: backfilled.document, state: adapted.state, sourceVersion: 4, issues } : adapted;
+  }
+  if (isRecord(value) && value.format === PERSONAL_DATA_FORMAT && value.formatVersion === PERSONAL_DATA_VERSION) return direct;
+  const migratedV3 = migratePersonalDataV3ToV4(value);
+  if (migratedV3.ok && migratedV3.migrated) {
+    const issues = [];
+    const catalog = normalizeCatalog(options?.catalog, issues);
+    const backfilled = backfillCurriculumRevisions(migratedV3.document, catalog, options?.now);
     const adapted = personalDataToAppState(backfilled.document, catalog);
     return adapted.ok ? { ok: true, document: backfilled.document, state: adapted.state, sourceVersion: 3, issues } : adapted;
   }
@@ -622,7 +757,9 @@ export function parsePlannerTransferFile(value, options) {
 }
 
 export function serializePersonalDataForStorage(document) {
-  return serializePersonalDataV3(document);
+  const current = migratePersonalDataV3ToV4(document);
+  if (!current.ok) throw new TypeError("El documento personal no es compatible con v4.");
+  return serializePersonalDataV4(current.document);
 }
 
 export function personalDataStateFingerprint(state) {
@@ -637,6 +774,7 @@ export function personalDataStateFingerprint(state) {
   }
   return JSON.stringify({
     progress,
+    academicHistories: state.academicHistories ?? {},
     plannerPlans,
     currentPlannerTerms,
     selection: state.selection,

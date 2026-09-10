@@ -1,5 +1,7 @@
 export const PERSONAL_DATA_FORMAT: "trayecto-personal-data";
-export const PERSONAL_DATA_VERSION: 3;
+export const PERSONAL_DATA_VERSION: 4;
+export const LEGACY_PERSONAL_DATA_VERSION: 3;
+import type { AcademicHistory } from "./academic-history.mjs";
 
 export type PersonalDataLoadUnit = "credits" | "hours" | "courses";
 export type PersonalDataProgressStatus = "pending" | "approved" | "exonerated";
@@ -77,7 +79,7 @@ export interface PersonalDataAcademicProfileV3 {
 
 export interface PersonalDataDocumentV3 {
   format: typeof PERSONAL_DATA_FORMAT;
-  formatVersion: typeof PERSONAL_DATA_VERSION;
+  formatVersion: 3;
   id: string;
   revision: number;
   createdAt: string;
@@ -88,17 +90,31 @@ export interface PersonalDataDocumentV3 {
   extensions?: PersonalDataExtensions;
 }
 
-export type PersonalDataParseResult =
+export interface PersonalDataAcademicProfileV4 extends PersonalDataAcademicProfileV3 {
+  academicHistory: AcademicHistory;
+}
+
+export interface PersonalDataDocumentV4 extends Omit<PersonalDataDocumentV3, "formatVersion" | "profiles"> {
+  formatVersion: 4;
+  profiles: PersonalDataAcademicProfileV4[];
+}
+
+export type PersonalDataParseResultV3 =
   | { ok: true; document: PersonalDataDocumentV3 }
+  | { ok: false; issues: PersonalDataIssue[] };
+export type PersonalDataParseResult =
+  | { ok: true; document: PersonalDataDocumentV4 }
   | { ok: false; issues: PersonalDataIssue[] };
 
 export class PersonalDataValidationError extends TypeError {
   issues: PersonalDataIssue[];
 }
 
-export function parsePersonalDataV3(input: unknown): PersonalDataParseResult;
+export function parsePersonalDataV3(input: unknown): PersonalDataParseResultV3;
+export function parsePersonalDataV4(input: unknown): PersonalDataParseResult;
 export function classifyPersonalDataCompatibility(input: unknown): {
   status: "supported" | "legacy-migratable" | "future-protected" | "incompatible";
   formatVersion: number | null;
 };
 export function serializePersonalDataV3(document: PersonalDataDocumentV3): string;
+export function serializePersonalDataV4(document: PersonalDataDocumentV4): string;

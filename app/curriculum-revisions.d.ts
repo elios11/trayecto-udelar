@@ -1,4 +1,4 @@
-import type { PersonalDataDocumentV3 } from "./personal-data.mjs";
+import type { PersonalDataDocumentV4 } from "./personal-data.mjs";
 
 export const CURRICULUM_REVISION_EPOCH: string;
 export type CurriculumAlias = {
@@ -17,4 +17,4 @@ export type CurriculumReference =
 export function curriculumRevisionForPlan(planId: string): string;
 export function validateCurriculumAliases(aliases: unknown): { ok: true; aliases: CurriculumAlias[] } | { ok: false; issues: string[] };
 export function resolveCurriculumCourseReference(courseId: string, currentCourseIds: Iterable<string>, aliases?: CurriculumAlias[]): CurriculumReference;
-export function classifyCurriculumReferences(document: PersonalDataDocumentV3, courseIdsByPlan: Map<string, Set<string>>, aliases?: CurriculumAlias[]): Array<CurriculumReference & { planId: string }>;
+export function classifyCurriculumReferences(document: PersonalDataDocumentV4, courseIdsByPlan: Map<string, Set<string>>, aliases?: CurriculumAlias[]): Array<CurriculumReference & { planId: string }>;

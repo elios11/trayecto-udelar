@@ -1,5 +1,8 @@
 export const PERSONAL_DATA_FORMAT = "trayecto-personal-data";
-export const PERSONAL_DATA_VERSION = 3;
+import { deriveCourseStatuses, validateAcademicHistory } from "./academic-history.mjs";
+
+export const PERSONAL_DATA_VERSION = 4;
+export const LEGACY_PERSONAL_DATA_VERSION = 3;
 
 const LOAD_UNITS = new Set(["credits", "hours", "courses"]);
 const PROGRESS_STATUSES = new Set(["pending", "approved", "exonerated"]);
@@ -9,7 +12,7 @@ const EXTENSION_NAMESPACE = /^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[
 
 export class PersonalDataValidationError extends TypeError {
   constructor(issues) {
-    super("El documento de datos personales v3 no es válido.");
+    super("El documento de datos personales v4 no es válido.");
     this.name = "PersonalDataValidationError";
     this.issues = issues;
   }
@@ -312,24 +315,46 @@ function parseProgress(value, path, issues) {
   return progress;
 }
 
-function parseProfile(value, path, issues) {
+function equalProjectedProgress(progress, academicHistory) {
+  const projected = deriveCourseStatuses(academicHistory);
+  const progressMap = Object.fromEntries(progress.map((entry) => [entry.courseId, entry.status]));
+  const courseIds = new Set([...Object.keys(projected), ...Object.keys(progressMap)]);
+  return [...courseIds].every((courseId) => (projected[courseId] ?? "pending") === (progressMap[courseId] ?? "pending"));
+}
+
+function parseProfile(value, path, issues, includeAcademicHistory) {
   const record = asRecord(value, path, issues);
   if (!record) return null;
+  const progress = parseProgress(record.progress, `${path}.progress`, issues);
+  let academicHistory;
+  if (includeAcademicHistory) {
+    const parsedHistory = validateAcademicHistory(record.academicHistory, `${path}.academicHistory`);
+    if (!parsedHistory.ok) {
+      issues.push(...parsedHistory.issues);
+      academicHistory = { events: [] };
+    } else {
+      academicHistory = parsedHistory.history;
+      if (!equalProjectedProgress(progress, academicHistory)) {
+        addIssue(issues, `${path}.progress`, "history_projection_mismatch", "El progreso debe coincidir con la proyección del historial académico.");
+      }
+    }
+  }
   return withExtensions({
     id: asId(record.id, `${path}.id`, issues),
     selection: parseSelection(record.selection, `${path}.selection`, issues),
     curriculumRevision: asNullableId(record.curriculumRevision, `${path}.curriculumRevision`, issues),
     loadUnit: asEnum(record.loadUnit, LOAD_UNITS, `${path}.loadUnit`, issues, "credits, hours o courses"),
-    progress: parseProgress(record.progress, `${path}.progress`, issues),
+    progress,
+    ...(includeAcademicHistory ? { academicHistory } : {}),
     planning: parsePlanning(record.planning, `${path}.planning`, issues),
   }, record, path, issues);
 }
 
-function parseDocument(input, issues) {
+function parseDocument(input, issues, version = PERSONAL_DATA_VERSION) {
   const record = asRecord(input, "$", issues);
   if (!record) return null;
   if (record.format !== PERSONAL_DATA_FORMAT) addIssue(issues, "$.format", "unknown_format", `Debe ser ${PERSONAL_DATA_FORMAT}.`);
-  if (record.formatVersion !== PERSONAL_DATA_VERSION) addIssue(issues, "$.formatVersion", "unsupported_version", `Sólo se admite formatVersion ${PERSONAL_DATA_VERSION}.`);
+  if (record.formatVersion !== version) addIssue(issues, "$.formatVersion", "unsupported_version", `Sólo se admite formatVersion ${version}.`);
 
   const revision = record.revision;
   if (!Number.isInteger(revision) || revision < 0) addIssue(issues, "$.revision", "invalid_revision", "Debe ser un entero mayor o igual que cero.");
@@ -337,19 +362,33 @@ function parseDocument(input, issues) {
   const updatedAt = normalizeDate(record.updatedAt, "$.updatedAt", issues);
   validateDateOrder(createdAt, updatedAt, "$", issues);
   const profiles = asArray(record.profiles, "$.profiles", issues)
-    .map((profile, index) => parseProfile(profile, `$.profiles[${index}]`, issues))
+    .map((profile, index) => parseProfile(profile, `$.profiles[${index}]`, issues, version === PERSONAL_DATA_VERSION))
     .filter(Boolean);
   const profileIds = new Set();
   profiles.forEach((profile, index) => {
     if (profile.id && profileIds.has(profile.id)) addIssue(issues, `$.profiles[${index}].id`, "duplicate_id", `El perfil ${profile.id} está repetido.`);
     profileIds.add(profile.id);
   });
+  if (version === PERSONAL_DATA_VERSION) {
+    const sharedByProgressPlan = new Map();
+    profiles.forEach((profile, index) => {
+      const progressPlanId = profile.selection?.progressPlanId;
+      if (!progressPlanId) return;
+      const previous = sharedByProgressPlan.get(progressPlanId);
+      if (previous && (JSON.stringify(previous.academicHistory) !== JSON.stringify(profile.academicHistory)
+        || !equalProjectedProgress(profile.progress, previous.academicHistory))) {
+        addIssue(issues, `$.profiles[${index}].academicHistory`, "shared_history_conflict", "Los perfiles que comparten un plan de progreso deben compartir la misma historia académica.");
+      } else if (!previous) {
+        sharedByProgressPlan.set(progressPlanId, profile);
+      }
+    });
+  }
   const activeProfileId = asNullableId(record.activeProfileId, "$.activeProfileId", issues);
   if (activeProfileId && !profileIds.has(activeProfileId)) addIssue(issues, "$.activeProfileId", "missing_reference", "El perfil académico activo no existe.");
 
   return withExtensions({
     format: PERSONAL_DATA_FORMAT,
-    formatVersion: PERSONAL_DATA_VERSION,
+    formatVersion: version,
     id: asId(record.id, "$.id", issues),
     revision: Number.isInteger(revision) && revision >= 0 ? revision : 0,
     createdAt,
@@ -364,7 +403,23 @@ export function parsePersonalDataV3(input) {
   const issues = [];
   try {
     checkJsonValue(input, "$", issues);
-    const document = parseDocument(input, issues);
+    const document = parseDocument(input, issues, LEGACY_PERSONAL_DATA_VERSION);
+    return issues.length === 0 && document
+      ? { ok: true, document }
+      : { ok: false, issues };
+  } catch {
+    return {
+      ok: false,
+      issues: [{ path: "$", code: "unreadable_value", message: "No se pudo inspeccionar el valor sin ejecutar código externo." }],
+    };
+  }
+}
+
+export function parsePersonalDataV4(input) {
+  const issues = [];
+  try {
+    checkJsonValue(input, "$", issues);
+    const document = parseDocument(input, issues, PERSONAL_DATA_VERSION);
     return issues.length === 0 && document
       ? { ok: true, document }
       : { ok: false, issues };
@@ -383,14 +438,20 @@ export function classifyPersonalDataCompatibility(input) {
     return { status: "future-protected", formatVersion: version };
   }
   if (input.format === PERSONAL_DATA_FORMAT && version === PERSONAL_DATA_VERSION) {
-    return { status: parsePersonalDataV3(input).ok ? "supported" : "incompatible", formatVersion: version };
+    return { status: parsePersonalDataV4(input).ok ? "supported" : "incompatible", formatVersion: version };
   }
-  if (version === undefined || version === 1 || version === 2) return { status: "legacy-migratable", formatVersion: version ?? 1 };
+  if (version === undefined || version === 1 || version === 2 || (input.format === PERSONAL_DATA_FORMAT && version === LEGACY_PERSONAL_DATA_VERSION)) return { status: "legacy-migratable", formatVersion: version ?? 1 };
   return { status: "incompatible", formatVersion: Number.isInteger(version) ? version : null };
 }
 
 export function serializePersonalDataV3(document) {
   const result = parsePersonalDataV3(document);
+  if (!result.ok) throw new PersonalDataValidationError(result.issues);
+  return JSON.stringify(result.document);
+}
+
+export function serializePersonalDataV4(document) {
+  const result = parsePersonalDataV4(document);
   if (!result.ok) throw new PersonalDataValidationError(result.issues);
   return JSON.stringify(result.document);
 }

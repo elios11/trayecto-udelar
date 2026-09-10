@@ -13,6 +13,7 @@ import {
   LEGACY_ACADEMIC_SELECTION_STORAGE_KEY,
   LEGACY_COMPUTATION_PROGRESS_STORAGE_KEY,
   LEGACY_CURRENT_TERM_STORAGE_KEY,
+  LEGACY_PERSONAL_DATA_V3_STORAGE_KEY,
   LEGACY_PLANNER_STORAGE_KEY,
   LEGACY_PROGRESS_STORAGE_KEY,
   PERSONAL_DATA_STORAGE_KEY,
@@ -26,7 +27,18 @@ import {
   type PersonalDataAppState,
   type PersonalDataCatalogEntry,
 } from "./personal-data-migration.mjs";
-import { parsePersonalDataV3, type PersonalDataDocumentV3, type PersonalDataLoadTargetV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
+import { parsePersonalDataV4, type PersonalDataDocumentV4, type PersonalDataLoadTargetV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
+import {
+  academicHistoryForCourse,
+  addAcademicHistoryEvent,
+  correctAcademicHistoryEvent,
+  deriveCourseStatuses,
+  effectiveAcademicHistoryEvents,
+  setAcademicHistoryEventVoided,
+  type AcademicHistory,
+  type AcademicHistoryEvent,
+  type AcademicHistoryKind,
+} from "./academic-history.mjs";
 import { classifyCurriculumReferences, curriculumRevisionForPlan } from "./curriculum-revisions.mjs";
 import {
   RECOVERY_STORAGE_KEY,
@@ -641,7 +653,11 @@ type PlannerView = "board" | "compact" | "balance";
 type PlannerTerm = { id: string; label: string; loadTarget: PersonalDataLoadTargetV3 | null; courseIds: string[] };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
 type CurrentPlannerTerms = Record<PlanId, string | null>;
-type RecoveryConfirmation = { kind: "reset" } | { kind: "delete-item"; itemKind: "snapshot" | "deleted-term"; id: string } | { kind: "clear-trash" };
+type RecoveryConfirmation =
+  | { kind: "reset" }
+  | { kind: "delete-item"; itemKind: "snapshot" | "deleted-term"; id: string }
+  | { kind: "clear-trash" }
+  | { kind: "history-event"; event: AcademicHistoryEvent; courseName: string };
 type ThemeId = "udelar" | "violeta" | "solarized" | "bosque" | "terracota";
 type ThemeScheme = "light" | "dark";
 type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
@@ -693,8 +709,11 @@ export default function Home() {
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
   const [campusId, setCampusId] = useState("");
   const [progress, setProgress] = useState<PlanProgress>(() => createAcademicPlanRecord(() => ({})));
+  const [academicHistories, setAcademicHistories] = useState<Record<string, AcademicHistory>>({});
   const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
   const [selected, setSelected] = useState<Course | null>(null);
+  const [historyKind, setHistoryKind] = useState<Exclude<AcademicHistoryKind, "recorded-status">>("course-passed");
+  const [historyDate, setHistoryDate] = useState("");
   const [importError, setImportError] = useState<{ title: string; message: string } | null>(null);
   const [search, setSearch] = useState("");
   const [availableOnly, setAvailableOnly] = useState(false);
@@ -757,7 +776,7 @@ export default function Home() {
   const qfPlanPromiseRef = useRef<Promise<Qf2015Projection | null> | null>(null);
   const qfCatalogPromiseRef = useRef<Promise<Qf2015CatalogProjection | null> | null>(null);
   const registeredPlanPromisesRef = useRef<Partial<Record<PlanId, Promise<RegisteredProjection | null>>>>({});
-  const personalDataRef = useRef<PersonalDataDocumentV3 | null>(null);
+  const personalDataRef = useRef<PersonalDataDocumentV4 | null>(null);
   const personalDataFingerprintRef = useRef("");
   const personalDataSerializedRef = useRef<string | null>(null);
   const localWriterIdRef = useRef<string | null>(null);
@@ -1150,11 +1169,11 @@ export default function Home() {
     setLocalSaveStatus(status);
   }, []);
 
-  const rememberLocalConflict = useCallback((localDocument: PersonalDataDocumentV3, externalSerialized: string | null, reason: LocalDataConflict["reason"]) => {
+  const rememberLocalConflict = useCallback((localDocument: PersonalDataDocumentV4, externalSerialized: string | null, reason: LocalDataConflict["reason"]) => {
     if (!externalSerialized) return false;
-    let externalDocument: PersonalDataDocumentV3;
+    let externalDocument: PersonalDataDocumentV4;
     try {
-      const parsedExternal = parsePersonalDataV3(JSON.parse(externalSerialized));
+      const parsedExternal = parsePersonalDataV4(JSON.parse(externalSerialized));
       if (!parsedExternal.ok) return false;
       externalDocument = parsedExternal.document;
     } catch {
@@ -1178,7 +1197,7 @@ export default function Home() {
     }
   }, [updateLocalSaveStatus]);
 
-  const persistPersonalDocument = useCallback((document: PersonalDataDocumentV3, options: { fingerprint?: string; allowBlocked?: boolean } = {}) => {
+  const persistPersonalDocument = useCallback((document: PersonalDataDocumentV4, options: { fingerprint?: string; allowBlocked?: boolean } = {}) => {
     if (canonicalWriteBlockedRef.current && !options.allowBlocked) {
       updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: localSaveStatusRef.current.savedAt, errorKind: "corrupt" }));
       return false;
@@ -1233,7 +1252,8 @@ export default function Home() {
       if (cancelled) return;
       try {
       const rawStorage = {
-        personalDataV3: localStorage.getItem(PERSONAL_DATA_STORAGE_KEY),
+        personalDataV4: localStorage.getItem(PERSONAL_DATA_STORAGE_KEY),
+        personalDataV3: localStorage.getItem(LEGACY_PERSONAL_DATA_V3_STORAGE_KEY),
         progressV2: localStorage.getItem(STORAGE_KEY),
         progressV1: localStorage.getItem(LEGACY_STORAGE_KEY),
         plannerV1: localStorage.getItem(PLANNER_STORAGE_KEY),
@@ -1241,7 +1261,7 @@ export default function Home() {
         selectionV1: localStorage.getItem(ACADEMIC_SELECTION_STORAGE_KEY)
           ?? JSON.stringify({ facultyId: "fing", careerId: "computacion", planId: "2025", trajectoryId: "pi-60-plus", credentialId: "engineer", campusId: null }),
       };
-      personalDataSerializedRef.current = rawStorage.personalDataV3;
+      personalDataSerializedRef.current = rawStorage.personalDataV4;
       const baseCatalog = buildPersonalDataCatalog();
       const relevantPlanIds = collectStoredPlanIds(Object.values(rawStorage), baseCatalog);
       const loadedPlans: Partial<Record<PlanId, RegisteredProjection>> = {};
@@ -1268,9 +1288,11 @@ export default function Home() {
         personalDataRef.current = hydration.document;
         canonicalWriteBlockedRef.current = hydration.canonicalWriteBlocked;
         const nextProgress = { ...createAcademicPlanRecord(() => ({})), ...hydration.state.progress };
+        const nextAcademicHistories = hydration.state.academicHistories;
         const nextPlannerPlans = { ...createAcademicPlanRecord(() => createDefaultTerms()), ...hydration.state.plannerPlans };
         const nextCurrentTerms = { ...createAcademicPlanRecord(() => null), ...hydration.state.currentPlannerTerms };
         setProgress(nextProgress);
+        setAcademicHistories(nextAcademicHistories);
         setPlannerPlans(nextPlannerPlans);
         setCurrentPlannerTerms(nextCurrentTerms);
         const selection = hydration.state.selection;
@@ -1283,6 +1305,7 @@ export default function Home() {
         }
         const hydratedFingerprint = personalDataStateFingerprint({
           progress: nextProgress,
+          academicHistories: nextAcademicHistories,
           plannerPlans: nextPlannerPlans,
           currentPlannerTerms: nextCurrentTerms,
           selection,
@@ -1301,7 +1324,7 @@ export default function Home() {
         }
         if (hydration.canonicalWriteBlocked) {
           updateLocalSaveStatus(failedLocalSaveStatus(undefined, { savedAt: hydration.document.updatedAt, errorKind: "corrupt" }));
-          setImportError({ title: "Recuperamos una copia anterior", message: "La copia v3 guardada está dañada y se conservó sin cambios. Cargamos los datos anteriores disponibles; importá una exportación válida para volver a activar el guardado v3." });
+          setImportError({ title: "Recuperamos una copia anterior", message: "La copia v4 guardada está dañada y se conservó sin cambios. Cargamos los datos anteriores disponibles; importá una exportación válida para volver a activar el guardado v4." });
         }
       }
       if (recovered.issues.length > 0) setRecoveryNotice("Algunas copias de recuperación dañadas o vencidas se omitieron.");
@@ -1374,7 +1397,7 @@ export default function Home() {
       credentialId: credentialId || null,
     };
     const identity = personalIdentityForSelection(selection);
-    const state: PersonalDataAppState = { progress, plannerPlans, currentPlannerTerms, selection, ...identity };
+    const state: PersonalDataAppState = { progress, academicHistories, plannerPlans, currentPlannerTerms, selection, ...identity };
     const fingerprint = personalDataStateFingerprint(state);
     if (fingerprint === personalDataFingerprintRef.current) return;
     const updated = appStateToPersonalData(state, {
@@ -1388,7 +1411,7 @@ export default function Home() {
       return;
     }
     persistPersonalDocument(updated.document, { fingerprint });
-  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalDataCatalog, hydrated, persistPersonalDocument, personalIdentityForSelection]);
+  }, [progress, academicHistories, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalDataCatalog, hydrated, persistPersonalDocument, personalIdentityForSelection]);
 
   useEffect(() => {
     if (hydrated) persistLegacyValue(STORAGE_KEY, JSON.stringify(progress));
@@ -1734,8 +1757,8 @@ export default function Home() {
       trajectoryId: trajectoryId || null,
       credentialId: credentialId || null,
     };
-    return { progress, plannerPlans, currentPlannerTerms, selection, ...personalIdentityForSelection(selection) };
-  }, [progress, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalIdentityForSelection]);
+    return { progress, academicHistories, plannerPlans, currentPlannerTerms, selection, ...personalIdentityForSelection(selection) };
+  }, [progress, academicHistories, plannerPlans, currentPlannerTerms, activeFaculty.id, activeCareer.id, planYear, activeProgressPlanId, campusId, trajectoryId, credentialId, personalIdentityForSelection]);
 
   function persistLegacyValue(key: string, value: string) {
     try {
@@ -1790,6 +1813,7 @@ export default function Home() {
     if (!matchesPersistedRecoveryStore(entry.recovery, recoverySerializedRef.current, { now }) && !persistRecoveryImmediately(entry.recovery)) return;
     undoStackRef.current = next.stack;
     setProgress(entry.state.progress);
+    setAcademicHistories(entry.state.academicHistories);
     setPlannerPlans(entry.state.plannerPlans);
     setCurrentPlannerTerms(entry.state.currentPlannerTerms);
     if (entry.state.selection) {
@@ -1805,22 +1829,40 @@ export default function Home() {
   };
   undoLastRef.current = undoLast;
 
+  const recordedAtAfter = (history: AcademicHistory) => {
+    const latest = history.events.reduce((maximum, event) => Math.max(maximum, Date.parse(event.recordedAt)), 0);
+    return new Date(Math.max(Date.now(), latest + 1)).toISOString();
+  };
+
+  const transitionAcademicStatus = (history: AcademicHistory, courseId: string, next: CourseStatus, kind?: AcademicHistoryKind) => {
+    let updated = history;
+    if (next === "pending") {
+      for (const event of effectiveAcademicHistoryEvents(updated).filter((candidate) => candidate.courseId === courseId)) {
+        updated = setAcademicHistoryEventVoided(updated, event.id, true, { id: crypto.randomUUID(), recordedAt: recordedAtAfter(updated) });
+      }
+      return updated;
+    }
+    return addAcademicHistoryEvent(updated, {
+      courseId,
+      kind: kind ?? (next === "approved" ? "course-passed" : "exemption"),
+      resultStatus: next,
+      source: "user",
+    }, { id: crypto.randomUUID(), recordedAt: recordedAtAfter(updated) });
+  };
+
   const cycleStatus = (course: Course) => {
     if (course.placeholder || !isUnlocked(course) || isFixedPlacementTest(course)) return;
     rememberUndo(`cambio de estado de ${course.name}`);
-    setStatuses((current) => {
-      const now = current[course.id] ?? "pending";
-      if (course.placementTest) {
-        const next: CourseStatus = now === "exonerated" ? "pending" : "exonerated";
-        const updated = { ...current, [course.id]: next };
-        if (next === "exonerated") updated.MI2 = "pending";
-        return updated;
-      }
-      const next: CourseStatus = now === "pending" ? "approved" : now === "approved" ? "exonerated" : "pending";
-      const updated = { ...current, [course.id]: next };
-      if (course.id === "MI2" && next !== "pending") updated.PI = "pending";
-      return updated;
-    });
+    const currentStatus = statuses[course.id] ?? "pending";
+    const next: CourseStatus = course.placementTest
+      ? currentStatus === "exonerated" ? "pending" : "exonerated"
+      : currentStatus === "pending" ? "approved" : currentStatus === "approved" ? "exonerated" : "pending";
+    let nextHistory = transitionAcademicStatus(academicHistories[activeProgressPlanId] ?? { events: [] }, course.id, next, course.placementTest ? "accreditation" : undefined);
+    if (course.placementTest && next === "exonerated") nextHistory = transitionAcademicStatus(nextHistory, "MI2", "pending");
+    if (course.id === "MI2" && next !== "pending") nextHistory = transitionAcademicStatus(nextHistory, "PI", "pending");
+    const nextStatuses = deriveCourseStatuses(nextHistory);
+    setAcademicHistories((current) => ({ ...current, [activeProgressPlanId]: nextHistory }));
+    setStatuses(nextStatuses);
   };
 
   const filtered = (semester: Course["semester"]) => {
@@ -1918,7 +1960,7 @@ export default function Home() {
     return { catalog: buildPersonalDataCatalog(loadedPlans), loadedPlans };
   };
 
-  const classifyTransferredCourses = async (document: PersonalDataDocumentV3, loadedPlans = registeredPlanData) => {
+  const classifyTransferredCourses = async (document: PersonalDataDocumentV4, loadedPlans = registeredPlanData) => {
     const courseIdsByPlan = new Map<string, Set<string>>();
     for (const profile of document.profiles) {
       const validCourseIds = await loadCourseIdsForPlan(profile.selection.planId, loadedPlans);
@@ -1932,13 +1974,15 @@ export default function Home() {
     };
   };
 
-  const applyImportedDocument = (document: PersonalDataDocumentV3, state: PersonalDataAppState) => {
+  const applyImportedDocument = (document: PersonalDataDocumentV4, state: PersonalDataAppState) => {
     const nextProgress = { ...createAcademicPlanRecord(() => ({})), ...state.progress };
+    const nextAcademicHistories = state.academicHistories;
     const nextPlannerPlans = { ...createAcademicPlanRecord(() => createDefaultTerms()), ...state.plannerPlans };
     const nextCurrentTerms = { ...createAcademicPlanRecord(() => null), ...state.currentPlannerTerms };
     const selection = state.selection;
     const importedFingerprint = personalDataStateFingerprint({
       progress: nextProgress,
+      academicHistories: nextAcademicHistories,
       plannerPlans: nextPlannerPlans,
       currentPlannerTerms: nextCurrentTerms,
       selection: selection ?? {
@@ -1955,6 +1999,7 @@ export default function Home() {
     });
     if (!persistPersonalDocument(document, { fingerprint: importedFingerprint, allowBlocked: true })) return false;
     setProgress(nextProgress);
+    setAcademicHistories(nextAcademicHistories);
     setPlannerPlans(nextPlannerPlans);
     setCurrentPlannerTerms(nextCurrentTerms);
     if (selection) {
@@ -2238,6 +2283,15 @@ export default function Home() {
       if (!persistRecoveryImmediately(cleared)) return;
       setRecovery(cleared);
       setRecoveryNotice("Se vació la papelera de este dispositivo.");
+    } else if (recoveryConfirmation.kind === "history-event") {
+      const { event, courseName } = recoveryConfirmation;
+      const action = event.voided ? "restaurar" : "anular";
+      rememberUndo(`${action} hito de ${courseName}`);
+      const next = setAcademicHistoryEventVoided(activeAcademicHistory, event.id, !event.voided, {
+        id: crypto.randomUUID(),
+        recordedAt: recordedAtAfter(activeAcademicHistory),
+      });
+      applyActiveAcademicHistory(next, `Se ${event.voided ? "restauró" : "anuló"} la revisión personal de ${courseName}.`);
     } else {
       const removed = removeRecoveryItem(recovery, recoveryConfirmation.itemKind, recoveryConfirmation.id, { now: new Date().toISOString() });
       if (!removed.ok || !persistRecoveryImmediately(removed.store)) return;
@@ -2284,6 +2338,57 @@ export default function Home() {
   const rolloverIncompleteCourses = rolloverCourses?.filter((course) => (statuses[course.id] ?? "pending") !== "exonerated") ?? [];
   const rolloverIncompleteCredits = rolloverIncompleteCourses.reduce((sum, course) => sum + course.credits, 0);
   const rolloverIncompleteHours = rolloverIncompleteCourses.reduce((sum, course) => sum + (course.hours ?? 0), 0);
+
+  const activeAcademicHistory = academicHistories[activeProgressPlanId] ?? { events: [] };
+  const selectedHistory = selected ? academicHistoryForCourse(activeAcademicHistory, selected.id) : [];
+  const selectedEffectiveHistory = selected
+    ? effectiveAcademicHistoryEvents(activeAcademicHistory).filter((event) => event.courseId === selected.id)
+    : [];
+  const orphanedHistoryCourseIds = [...new Set(activeAcademicHistory.events.map((event) => event.courseId).filter((id) => !courseIds.has(id)))].sort();
+  const historyKindLabels: Record<AcademicHistoryKind, string> = {
+    "course-passed": "Curso aprobado",
+    exemption: "Exoneración",
+    "exam-passed": "Examen aprobado",
+    accreditation: "Acreditación",
+    "recorded-status": "Estado importado, sin fecha",
+  };
+  const displayHistoryDate = (value: string | null) => {
+    if (!value) return "sin fecha académica";
+    const calendar = value.slice(0, 10).split("-").map(Number);
+    return new Intl.DateTimeFormat("es-UY", { dateStyle: "medium", timeZone: "UTC" }).format(new Date(Date.UTC(calendar[0], calendar[1] - 1, calendar[2])));
+  };
+  const applyActiveAcademicHistory = (nextHistory: AcademicHistory, notice: string) => {
+    setAcademicHistories((current) => ({ ...current, [activeProgressPlanId]: nextHistory }));
+    setStatuses(deriveCourseStatuses(nextHistory));
+    setRecoveryNotice(notice);
+  };
+  const addSelectedHistoryEvent = () => {
+    if (!selected || selected.placeholder) return;
+    rememberUndo(`registro histórico de ${selected.name}`);
+    const next = addAcademicHistoryEvent(activeAcademicHistory, {
+      courseId: selected.id,
+      kind: historyKind,
+      occurredAt: historyDate || null,
+      source: "user",
+    }, { id: crypto.randomUUID(), recordedAt: recordedAtAfter(activeAcademicHistory) });
+    applyActiveAcademicHistory(next, `Se agregó un hito personal para ${selected.name}.`);
+  };
+  const correctSelectedHistoryEvent = () => {
+    if (!selected) return;
+    const latest = selectedEffectiveHistory.at(-1);
+    if (!latest) return;
+    rememberUndo(`corrección histórica de ${selected.name}`);
+    const next = correctAcademicHistoryEvent(activeAcademicHistory, latest.id, {
+      kind: historyKind,
+      occurredAt: historyDate || null,
+      source: "user",
+    }, { id: crypto.randomUUID(), recordedAt: recordedAtAfter(activeAcademicHistory) });
+    applyActiveAcademicHistory(next, `Se corrigió el último hito personal de ${selected.name}.`);
+  };
+  const toggleHistoryEvent = (event: AcademicHistoryEvent) => {
+    if (!selected) return;
+    beginRecoveryConfirmation({ kind: "history-event", event, courseName: selected.name });
+  };
 
   const selectedStatus = selected ? statuses[selected.id] ?? "pending" : "pending";
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
@@ -2346,9 +2451,9 @@ export default function Home() {
     if (!hydrated) return;
     const receiveExternalPersonalData = (event: StorageEvent) => {
       if (event.key !== PERSONAL_DATA_STORAGE_KEY) return;
-      let externalDocument: PersonalDataDocumentV3 | null = null;
+      let externalDocument: PersonalDataDocumentV4 | null = null;
       try {
-        const parsed = parsePersonalDataV3(JSON.parse(event.newValue ?? "null"));
+        const parsed = parsePersonalDataV4(JSON.parse(event.newValue ?? "null"));
         if (parsed.ok) externalDocument = parsed.document;
       } catch {
         // A malformed external write must never replace the current in-memory branch.
@@ -2446,6 +2551,11 @@ export default function Home() {
                 <button type="button" onClick={() => { importRef.current?.click(); dataMenuRef.current!.open = false; }}>Todo · currícula y planificador</button>
                 <button type="button" onClick={() => { plannerImportRef.current?.click(); dataMenuRef.current!.open = false; }}>Solo planificador</button>
               </div>
+              {orphanedHistoryCourseIds.length > 0 && <details className="data-panel-section recovery-panel historical-courses-panel">
+                <summary>Historial fuera de la malla · {orphanedHistoryCourseIds.length}</summary>
+                <p>Estos registros personales siguen guardados y exportables aunque la materia ya no aparezca en la currícula actual.</p>
+                <ul>{orphanedHistoryCourseIds.map((id) => <li key={id}><strong>{id}</strong><span>{stateLabels[deriveCourseStatuses(activeAcademicHistory)[id] ?? "pending"]}</span></li>)}</ul>
+              </details>}
               <details className="data-panel-section recovery-panel">
                 <summary aria-label={`Recuperación local: ${recovery.snapshots.length} instantáneas y ${recovery.deletedTerms.length} semestres en papelera`}>Recuperación · {recovery.snapshots.length} instantáneas · {recovery.deletedTerms.length} en papelera</summary>
                 <p>Estas copias quedan sólo en este dispositivo y no se exportan.</p>
@@ -3083,10 +3193,10 @@ export default function Home() {
         <div className="modal-backdrop">
           <section className="import-modal" role="dialog" aria-modal="true" aria-labelledby="recovery-confirmation-title">
             <div className="modal-symbol" aria-hidden="true">!</div>
-            <h2 id="recovery-confirmation-title">{recoveryConfirmation.kind === "reset" ? "¿Reiniciar progreso?" : recoveryConfirmation.kind === "clear-trash" ? "¿Vaciar la papelera?" : "¿Eliminar definitivamente?"}</h2>
-            <p>{recoveryConfirmation.kind === "reset" ? "Se creará una instantánea local antes de reiniciar el progreso de este plan." : recoveryConfirmation.kind === "clear-trash" ? "Los semestres eliminados dejarán de poder restaurarse en este dispositivo." : "Esta copia local dejará de estar disponible para restauración."}</p>
+            <h2 id="recovery-confirmation-title">{recoveryConfirmation.kind === "reset" ? "¿Reiniciar progreso?" : recoveryConfirmation.kind === "clear-trash" ? "¿Vaciar la papelera?" : recoveryConfirmation.kind === "history-event" ? `¿${recoveryConfirmation.event.voided ? "Restaurar" : "Anular"} esta revisión?` : "¿Eliminar definitivamente?"}</h2>
+            <p>{recoveryConfirmation.kind === "reset" ? "Se creará una instantánea local antes de reiniciar el progreso de este plan." : recoveryConfirmation.kind === "clear-trash" ? "Los semestres eliminados dejarán de poder restaurarse en este dispositivo." : recoveryConfirmation.kind === "history-event" ? `El registro personal de ${recoveryConfirmation.courseName} cambiará, pero la materia oficial no se modifica.` : "Esta copia local dejará de estar disponible para restauración."}</p>
             <div className="rollover-actions">
-              <button ref={recoveryConfirmRef} type="button" className="primary-button" onClick={confirmRecoveryAction}>{recoveryConfirmation.kind === "reset" ? "Reiniciar" : "Eliminar"}</button>
+              <button ref={recoveryConfirmRef} type="button" className="primary-button" onClick={confirmRecoveryAction}>{recoveryConfirmation.kind === "reset" ? "Reiniciar" : recoveryConfirmation.kind === "history-event" ? recoveryConfirmation.event.voided ? "Restaurar" : "Anular" : "Eliminar"}</button>
               <button type="button" className="quiet-button" onClick={closeRecoveryConfirmation}>Cancelar</button>
             </div>
           </section>
@@ -3159,6 +3269,34 @@ export default function Home() {
               {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
             </ul></>}
             {selected.offered.length > 0 && <><h3>Se dicta</h3><div className="offering-list">{selected.offered.map((item) => <span key={item}>{item === "par" ? "2.\u00ba semestre" : item === "impar" ? "1.er semestre" : "Libre"}</span>)}</div></>}
+            {!selected.placeholder && <details className="academic-history-panel">
+              <summary>Historial personal · {selectedHistory.length}</summary>
+              <p>Es un registro personal guardado en este dispositivo. No es una escolaridad oficial y no modifica la currícula.</p>
+              <div className="academic-history-current"><span>Estado actual</span><strong>{stateLabels[selectedStatus]}</strong></div>
+              {selectedHistory.length === 0 ? <p className="academic-history-empty">Todavía no registraste hitos para esta materia.</p> : <ol className="academic-history-list">
+                {selectedHistory.map((event) => <li key={event.id} className={event.voided ? "voided" : ""}>
+                  <div>
+                    <strong>{historyKindLabels[event.kind]}</strong>
+                    <span>{event.kind === "recorded-status" ? "Estado importado, sin fecha" : displayHistoryDate(event.occurredAt)} · revisión {event.revision}</span>
+                    <small>{!event.terminal ? "Corregido" : event.voided ? "Anulado" : event.source === "migration" ? "Migrado" : "Vigente"}</small>
+                  </div>
+                  {event.terminal && <button type="button" className="quiet-button" onClick={() => toggleHistoryEvent(event)}>{event.voided ? "Restaurar" : "Anular"}</button>}
+                </li>)}
+              </ol>}
+              <div className="academic-history-editor">
+                <label>Tipo de hito<select value={historyKind} onChange={(event) => setHistoryKind(event.target.value as Exclude<AcademicHistoryKind, "recorded-status">)}>
+                  <option value="course-passed">Curso aprobado</option>
+                  <option value="exemption">Exoneración</option>
+                  <option value="exam-passed">Examen aprobado</option>
+                  <option value="accreditation">Acreditación</option>
+                </select></label>
+                <label>Fecha académica (opcional)<input type="date" value={historyDate} onChange={(event) => setHistoryDate(event.target.value)} /></label>
+                <div>
+                  <button type="button" className="secondary-button" onClick={addSelectedHistoryEvent}>Agregar hito</button>
+                  <button type="button" className="quiet-button" onClick={correctSelectedHistoryEvent} disabled={selectedEffectiveHistory.length === 0}>Corregir último hito</button>
+                </div>
+              </div>
+            </details>}
             <button className="primary-button" disabled={selected.placeholder || !isUnlocked(selected) || isFixedPlacementTest(selected)} onClick={() => cycleStatus(selected)}>
               {selected.placeholder
                 ? "Elegí una materia del catálogo"

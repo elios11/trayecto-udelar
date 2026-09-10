@@ -1,4 +1,4 @@
-import type { PersonalDataDocumentV3 } from "./personal-data.mjs";
+import type { PersonalDataDocumentV4 } from "./personal-data.mjs";
 
 export const PERSONAL_DATA_LOCK_KEY: string;
 export const PERSONAL_DATA_CONFLICTS_KEY: string;
@@ -8,8 +8,8 @@ export interface LocalDataConflict {
   id: string;
   detectedAt: string;
   reason: "stale-write" | "external-change";
-  localDocument: PersonalDataDocumentV3;
-  externalDocument: PersonalDataDocumentV3;
+  localDocument: PersonalDataDocumentV4;
+  externalDocument: PersonalDataDocumentV4;
 }
 
 export interface LocalConflictStore { format: "trayecto-local-conflicts"; formatVersion: 1; items: LocalDataConflict[]; }

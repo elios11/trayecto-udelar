@@ -1,4 +1,4 @@
-import { parsePersonalDataV3 } from "./personal-data.mjs";
+import { migratePersonalDataV3ToV4 } from "./personal-data-migration.mjs";
 
 export const PERSONAL_DATA_LOCK_KEY = "trayecto-udelar-personal-data-lock-v1";
 export const PERSONAL_DATA_CONFLICTS_KEY = "trayecto-udelar-personal-data-conflicts-v1";
@@ -52,15 +52,16 @@ export function parseLocalConflictStore(raw) {
   try {
     const value = JSON.parse(raw);
     if (value?.format !== "trayecto-local-conflicts" || value?.formatVersion !== 1 || !Array.isArray(value.items)) throw new TypeError("invalid conflict store");
-    return { ...value, items: value.items.filter(isConflict).slice(0, MAX_CONFLICTS) };
+    return { ...value, items: value.items.map(normalizeConflict).filter(Boolean).slice(0, MAX_CONFLICTS) };
   } catch {
     return { format: "trayecto-local-conflicts", formatVersion: 1, items: [] };
   }
 }
 
 export function addLocalConflict(store, conflict) {
-  if (!isConflict(conflict)) throw new TypeError("invalid conflict");
-  const items = [conflict, ...store.items.filter((item) => item.id !== conflict.id)].slice(0, MAX_CONFLICTS);
+  const normalized = normalizeConflict(conflict);
+  if (!normalized) throw new TypeError("invalid conflict");
+  const items = [normalized, ...store.items.filter((item) => item.id !== normalized.id)].slice(0, MAX_CONFLICTS);
   return { format: "trayecto-local-conflicts", formatVersion: 1, items };
 }
 
@@ -77,10 +78,11 @@ function parseLock(raw) {
   }
 }
 
-function isConflict(value) {
-  return Boolean(value && typeof value.id === "string" && typeof value.detectedAt === "string"
+function normalizeConflict(value) {
+  if (!(value && typeof value.id === "string" && typeof value.detectedAt === "string"
     && Number.isFinite(Date.parse(value.detectedAt))
-    && ["stale-write", "external-change"].includes(value.reason)
-    && parsePersonalDataV3(value.localDocument).ok
-    && parsePersonalDataV3(value.externalDocument).ok);
+    && ["stale-write", "external-change"].includes(value.reason))) return null;
+  const local = migratePersonalDataV3ToV4(value.localDocument);
+  const external = migratePersonalDataV3ToV4(value.externalDocument);
+  return local.ok && external.ok ? { ...value, localDocument: local.document, externalDocument: external.document } : null;
 }
