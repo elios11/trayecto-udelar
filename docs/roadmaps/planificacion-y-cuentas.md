@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P02. El roadmap no autoriza por sí solo servicios externos, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04, P01 y P02 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P04. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -161,6 +161,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### P02 — Historial personal
 
 - Especificación: `docs/tasks/historial-academico-personal.md`.
+- Integrado en `main`; el contrato portable v4 conserva el historial personal y deriva de él el estado acreditable sin modificar la currícula oficial.
 - Separar eventos de cursado, examen y acreditación del estado actual.
 - Diseñar correcciones y borrado sin alterar la currícula oficial.
 - Cierre: cálculo de créditos idéntico al actual y trazabilidad de cambios personales.

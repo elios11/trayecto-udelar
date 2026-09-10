@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementada y validada en su worktree, lista para revisión e integración serial después de C04 y P01. Este nodo incorpora un historial personal trazable y una evolución explícita del contrato portable. No agrega cuentas, sincronización, notas, calificaciones ni datos oficiales nuevos.
+Integrada y validada en `main` después de C04 y P01. Este nodo incorpora un historial personal trazable y una evolución explícita del contrato portable. No agrega cuentas, sincronización, notas, calificaciones ni datos oficiales nuevos.
 
 ## Objetivo
 
@@ -142,6 +142,7 @@ P02 queda cerrado cuando un historial personal v4 puede migrarse, editarse, corr
 - Suite global: `npm test` — build correcto y 849/849 pruebas.
 - Calidad: `npm run lint`, `npm run security:repo` y `git diff --check` — correctos.
 - QA funcional: en la aplicación local se abrió una materia, se verificó que el historial iniciara plegado y se ejercitaron agregar, corregir, anular y restaurar. Los dos cambios destructivos pasaron por el diálogo modal accesible; el estado y los créditos siguieron la proyección y no hubo errores de consola. El navegador embebido aislado no permitió verificar de forma fiable el valor del control nativo de fecha ni la persistencia tras recarga; ambos recorridos quedan cubiertos por pruebas puras de fechas, migración, hidratación, serialización y round-trip. No se realizó una revisión visual pixel a pixel ni de breakpoints.
-- Reanudación exacta: revisar `git status --short` y el commit enfocado de P02; el siguiente paso es la revisión del coordinador y su integración serial sobre el `main` más reciente, seguida de las verificaciones combinadas. No hacer push ni publicar desde este worktree.
+- Integración serial: el coordinador revisó e integró P02 sobre el `main` más reciente y repitió `npm test` (849/849), `npm run lint`, `npm run security:repo` y `git diff --check`, todos correctos.
+- Reanudación exacta: revisar `git status --short` y `docs/roadmaps/planificacion-y-cuentas.md`; el próximo nodo secuencial es P04. No hacer push ni publicar sin autorización explícita.
 
-No iniciar otro nodo del roadmap hasta integrar o descartar explícitamente P02.
+P02 está cerrado. No reabrirlo al iniciar P04 salvo que una regresión verificada lo exija.
