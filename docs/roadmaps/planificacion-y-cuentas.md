@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04, P01 y P02 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P04. El roadmap no autoriza por sí solo servicios externos, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04, P01, P02 y P04 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P03. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -176,6 +176,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### P04 — Oferta y período de dictado
 
 - Especificación: `docs/tasks/oferta-periodos.md`.
+- Integrado en `main`; el contrato trazable, la muestra oficial auditada y la UI prudente distinguen confirmación, habitualidad, desconocimiento, negativa expresa y conflicto sin modificar datos personales ni bloquear el planificador.
 - Investigar fuentes oficiales separadas de la composición de Bedelías.
 - Modelar oferta confirmada, habitual y desconocida con procedencia y fecha.
 - No implementar scraping masivo hasta validar una muestra de servicios distintos.

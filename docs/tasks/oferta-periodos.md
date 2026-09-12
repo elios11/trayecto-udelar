@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementada y validada en el worktree de P04; lista para revisión e integración serial sobre el `main` más reciente. El nodo conserva una muestra manual pequeña y no convierte la composición de Bedelías o una trayectoria sugerida en evidencia de dictado.
+Integrada y validada en `main`. El nodo conserva una muestra manual pequeña y no convierte la composición de Bedelías o una trayectoria sugerida en evidencia de dictado. El próximo nodo secuencial del roadmap es P03.
 
 ## Objetivo
 
@@ -126,9 +126,9 @@ P04 queda cerrado cuando existe un esquema común y probado, una política de ca
 
 ## Continuidad y reanudación
 
-Hito coherente: contrato, muestra, auditoría, UI, transporte de fechas v4, pruebas y documentación terminados. No se descargaron artefactos ni se creó evidencia temporal fuera del repositorio. El siguiente paso es revisar el commit de P04 e integrarlo de forma serial; para revalidarlo desde este worktree usar `node tests/personal-data-migration.test.mjs`, `node tests/personal-data-recovery.test.mjs`, `node tests/course-offerings.test.mjs`, `node tests/course-offerings-ui.test.mjs`, `npm.cmd test`, `npm.cmd run lint`, `npm.cmd run security:repo` y `git diff --check`.
+Hito coherente: contrato, muestra, auditoría, UI, transporte de fechas v4, pruebas y documentación integrados en `main`. La validación combinada posterior a la integración pasó con 862 pruebas, lint y auditoría pública sin hallazgos. No se descargaron artefactos ni se creó evidencia temporal fuera del repositorio. Para revalidar usar `node tests/personal-data-migration.test.mjs`, `node tests/personal-data-recovery.test.mjs`, `node tests/course-offerings.test.mjs`, `node tests/course-offerings-ui.test.mjs`, `npm.cmd test`, `npm.cmd run lint`, `npm.cmd run security:repo` y `git diff --check`.
 
-No iniciar P03 ni otro nodo hasta integrar o descartar explícitamente P04.
+P04 está cerrado. El siguiente nodo permitido por el orden aprobado es P03; debe comenzar en un worktree nuevo basado en este `main`.
 
 ## Resultado implementado
 
