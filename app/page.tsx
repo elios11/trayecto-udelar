@@ -3,6 +3,7 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
+import courseOfferingsDataJson from "./data/course-offerings-prototype.json";
 import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, type CredentialId, type PlanId } from "./academic-catalog";
 import { isRegisteredAcademicPlan, loadRegisteredAcademicPlan, registeredAcademicPlans } from "./academic-plan-registry";
 import { resolveAcademicOption } from "./academic-option.mjs";
@@ -70,6 +71,15 @@ import {
   type LocalDataConflict,
 } from "./local-data-concurrency.mjs";
 import { analyzePlannerLoad, calculatePotentialCreditImpact, calculateTermLoad } from "./planner-load.mjs";
+import {
+  academicPeriodFromDateRange,
+  courseOfferingStatusPresentation,
+  evidenceForCourse,
+  formatAcademicPeriod,
+  resolveCourseOffering,
+  type CourseOfferingEvidence,
+  type OfferingResolution,
+} from "./course-offerings.mjs";
 import { collectRequirementOptions, isRequirementExpressionEvaluable } from "../lib/requirement-expression.mjs";
 
 type CourseStatus = "pending" | "approved" | "exonerated";
@@ -269,6 +279,7 @@ type RegisteredProjection = {
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
 const plan2025Data = plan2025DataJson as unknown as Plan2025Projection;
+const courseOfferingEvidence = courseOfferingsDataJson as CourseOfferingEvidence[];
 
 const buildPersonalDataCatalog = (loadedPlans: Partial<Record<PlanId, RegisteredProjection>> = {}): PersonalDataCatalogEntry[] => (
   academicCatalog.flatMap((faculty) => faculty.careers.flatMap((career) => career.plans.map((plan) => {
@@ -650,7 +661,7 @@ const LEGACY_STORAGE_KEY = LEGACY_COMPUTATION_PROGRESS_STORAGE_KEY;
 type PlanProgress = Record<PlanId, Record<string, CourseStatus>>;
 type AppMode = "curriculum" | "planner";
 type PlannerView = "board" | "compact" | "balance";
-type PlannerTerm = { id: string; label: string; loadTarget: PersonalDataLoadTargetV3 | null; courseIds: string[] };
+type PlannerTerm = { id: string; label: string; loadTarget: PersonalDataLoadTargetV3 | null; courseIds: string[]; startsAt?: string | null; endsAt?: string | null };
 type PlannerPlans = Record<PlanId, PlannerTerm[]>;
 type CurrentPlannerTerms = Record<PlanId, string | null>;
 type RecoveryConfirmation =
@@ -982,6 +993,8 @@ export default function Home() {
   const activeFaculty = selectedFaculty?.careers.some((career) => career.plans.some((plan) => plan.id === planYear))
     ? selectedFaculty
     : academicCatalog.find((faculty) => faculty.careers.some((career) => career.plans.some((plan) => plan.id === planYear))) ?? academicCatalog[0];
+  const activeOfferingServiceId = activeFaculty.id.replace(/^bedelias-/, "");
+  const offeringToday = new Date().toISOString().slice(0, 10);
   const activeCareer = activeFaculty.careers.find((career) => career.plans.some((plan) => plan.id === planYear)) ?? activeFaculty.careers[0];
   const selectAcademicPlan = async (nextPlan: AcademicPlanOption, nextFacultyId = activeFaculty.id) => {
     const nextRegisteredPlan = isRegisteredAcademicPlan(nextPlan.id) ? await loadRegisteredPlan(nextPlan.id) : null;
@@ -2214,7 +2227,7 @@ export default function Home() {
     const scenario = profile?.planning.scenarios.find((candidate) => candidate.id === profile.planning.activeScenarioId)
       ?? profile?.planning.scenarios.find((candidate) => candidate.isPrimary);
     const storedTerm = scenario?.terms.find((candidate) => candidate.id === termId)
-      ?? (term ? { ...term, status: termId === currentPlannerTermId ? "in-progress" as const : "planned" as const, startsAt: null, endsAt: null, loadTarget: null } : null);
+      ?? (term ? { ...term, status: termId === currentPlannerTermId ? "in-progress" as const : "planned" as const } : null);
     if (!profile || !scenario || !storedTerm) {
       setImportError({ title: "No pudimos mover el semestre a la papelera", message: "Esperá a que termine de guardarse la planificación antes de eliminar el semestre." });
       return;
@@ -2394,6 +2407,12 @@ export default function Home() {
   const selectedAssessment: "course" | "exam" = selectedStatus === "approved" ? "exam" : "course";
   const selectedRule = selected ? officialRule(selected, selectedAssessment) : undefined;
   const selectedAllocation = selected?.creditAllocations?.[0];
+  const selectedOfferingEvidence = selected ? evidenceForCourse(courseOfferingEvidence, {
+    courseId: selected.id,
+    serviceId: activeOfferingServiceId,
+    planId: planYear,
+    campusId: campusId || undefined,
+  }) : [];
   const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, activeCourses, courseIds, groupCredits, groupApprovals) : [];
   const selectedDependents = selected ? activeCourses.filter((course) => {
     if (course.id === selected.id) return false;
@@ -2967,6 +2986,20 @@ export default function Home() {
                 <div className={`planner-board ${plannerView}`}>
                   {plannerTerms.map((term, termIndex) => {
                     const termCourses = term.courseIds.map((id) => plannerCourses.find((course) => course.id === id)).filter(Boolean) as Course[];
+                    const termAcademicPeriod = academicPeriodFromDateRange(term);
+                    const termOfferingResolutions = new Map<string, OfferingResolution>(termAcademicPeriod ? termCourses.map((course) => [course.id, resolveCourseOffering({
+                      records: courseOfferingEvidence,
+                      courseId: course.id,
+                      serviceId: activeOfferingServiceId,
+                      planId: planYear,
+                      campusId: campusId || undefined,
+                      academicPeriod: termAcademicPeriod,
+                      now: offeringToday,
+                    })]) : []);
+                    const offeringCounts = [...termOfferingResolutions.values()].reduce<Record<string, number>>((counts, resolution) => {
+                      counts[resolution.status] = (counts[resolution.status] ?? 0) + 1;
+                      return counts;
+                    }, {});
                     const termCredits = termCourses.reduce((sum, course) => sum + course.credits, 0);
                     const exoneratedCredits = termCourses.reduce((sum, course) => sum + ((statuses[course.id] ?? "pending") === "exonerated" ? course.credits : 0), 0);
                     const termHours = termCourses.reduce((sum, course) => sum + (course.hours ?? 0), 0);
@@ -2996,6 +3029,7 @@ export default function Home() {
                           <div>
                             <input value={term.label} onChange={(event) => renamePlannerTerm(term.id, event.target.value)} onBlur={() => { renameUndoTermRef.current = null; }} aria-label={`Nombre del semestre ${termIndex + 1}`} />
                             <p>{termCourses.length} materias{hasPublishedCourseLoad && <> · <strong>{termLoad} {usesPublishedHours ? "horas planificadas" : "créditos planeados"}</strong></>}</p>
+                            <p className="term-offering-period">{termAcademicPeriod ? `Oferta consultada para ${formatAcademicPeriod(termAcademicPeriod)}` : "Período personal sin definir · no se infiere oferta por la posición del semestre"}</p>
                             {isCurrentTerm && <>
                               <div className="current-term-progress" role="progressbar" aria-label={"Progreso de " + term.label} aria-valuemin={0} aria-valuemax={termLoad} aria-valuenow={completedTermLoad}><i style={{ width: (termLoad ? completedTermLoad / termLoad * 100 : 0) + "%" }} /></div>
                               <p className="current-progress-copy"><strong>{completedTermLoad}/{termLoad}</strong> {!hasPublishedCourseLoad ? "materias completadas" : usesPublishedHours ? "horas completadas" : "créditos exonerados"}</p>
@@ -3030,13 +3064,16 @@ export default function Home() {
                                 {knownAreaImpacts.map((impact) => <span key={impact.label}>{impact.label}: +{impact.credits} cr.</span>)}
                                 {(potentialImpact.ambiguousCourseIds.length > 0 || potentialImpact.unknownCourseIds.length > 0) && <small>{potentialImpact.ambiguousCourseIds.length + potentialImpact.unknownCourseIds.length} materia(s) quedan pendientes de distribución por área.</small>}
                               </div>}
-                              {(personalTargetStatus?.status === "exceeded" || personalLoad.partial || accreditedPlanned.length > 0 || hasDuplicate || coursesWithUnmetKnownRequirements.length > 0 || coursesWithRulesToReview.length > 0) && <ul className="term-warnings" aria-label={`Avisos de ${term.label}`}>
+                              {(personalTargetStatus?.status === "exceeded" || personalLoad.partial || accreditedPlanned.length > 0 || hasDuplicate || coursesWithUnmetKnownRequirements.length > 0 || coursesWithRulesToReview.length > 0 || (offeringCounts.confirmed ?? 0) > 0 || (offeringCounts["not-offered"] ?? 0) > 0 || (offeringCounts["needs-review"] ?? 0) > 0) && <ul className="term-warnings" aria-label={`Avisos de ${term.label}`}>
                                 {personalTargetStatus?.status === "exceeded" && <li>Supera tu objetivo personal por {personalTargetStatus.difference}.</li>}
                                 {personalLoad.partial && <li>Falta carga publicada para {personalLoad.missingCourseIds.length + personalLoad.missingValueCourseIds.length} {personalLoad.missingCourseIds.length + personalLoad.missingValueCourseIds.length === 1 ? "materia" : "materias"}; el subtotal no es definitivo.</li>}
                                 {accreditedPlanned.length > 0 && <li>{accreditedPlanned.length === 1 ? "Una materia ya exonerada está incluida" : `${accreditedPlanned.length} materias ya exoneradas están incluidas`} en este semestre.</li>}
                                 {hasDuplicate && <li>Hay materias repetidas en más de un semestre.</li>}
                                 {coursesWithUnmetKnownRequirements.length > 0 && <li>{coursesWithUnmetKnownRequirements.length === 1 ? "Una materia tiene" : `${coursesWithUnmetKnownRequirements.length} materias tienen`} previas conocidas que aún no figuran cumplidas. Podés conservarlas en el plan.</li>}
                                 {coursesWithRulesToReview.length > 0 && <li>{coursesWithRulesToReview.length === 1 ? "Una materia tiene" : `${coursesWithRulesToReview.length} materias tienen`} reglas publicadas que requieren revisión manual.</li>}
+                                {(offeringCounts.confirmed ?? 0) > 0 && <li>{offeringCounts.confirmed === 1 ? "Una materia tiene oferta institucional confirmada" : `${offeringCounts.confirmed} materias tienen oferta institucional confirmada`} para el período definido. Es informativo y no cambia tu planificación.</li>}
+                                {(offeringCounts["not-offered"] ?? 0) > 0 && <li>Una fuente institucional declara que {offeringCounts["not-offered"] === 1 ? "una materia no se dicta" : `${offeringCounts["not-offered"]} materias no se dictan`} en este período. Podés conservarlas en el plan.</li>}
+                                {(offeringCounts["needs-review"] ?? 0) > 0 && <li>{offeringCounts["needs-review"] === 1 ? "Una materia tiene información de oferta que requiere revisión" : `${offeringCounts["needs-review"]} materias tienen información de oferta que requiere revisión`}; no se interpreta como disponibilidad ni ausencia.</li>}
                               </ul>}
                             </details>
                           </div>
@@ -3046,10 +3083,13 @@ export default function Home() {
                         <div className="planned-course-list">
                           {termCourses.map((course) => {
                             const status = statuses[course.id] ?? "pending";
+                            const offeringResolution = termOfferingResolutions.get(course.id);
+                            const offeringPresentation = offeringResolution ? courseOfferingStatusPresentation(offeringResolution.status) : null;
                             return <article className={`planned-course ${status}`} key={course.id} draggable onDragStart={() => setDraggedCourseId(course.id)} onDragEnd={() => setDraggedCourseId(null)}>
                               <button className="planned-course-info" onClick={() => setSelected(course)}>
                                 <span>#{course.id} · {courseAreaLabel(course)}</span>
                                 <h3>{course.name}</h3>
+                                {offeringPresentation && <small className={`course-offering-badge ${offeringResolution?.status}`}>{offeringPresentation.label}</small>}
                               </button>
                               <div><strong>{courseLoadLabel(course)}</strong><button className="mini-status" onClick={() => cycleStatus(course)} title="Cambiar estado">{status === "pending" ? "○" : status === "approved" ? "◐" : "●"}</button><button onClick={() => unassignPlannerCourse(course.id)} aria-label={`Quitar ${course.name} del plan`}>×</button></div>
                             </article>;
@@ -3268,7 +3308,25 @@ export default function Home() {
             {selectedDependents.length > 0 && <><h3>Puede habilitar o condicionar</h3><ul className="requirements-list dependent-list">
               {selectedDependents.map((course) => <li key={course.id}><span>→</span>{course.name}</li>)}
             </ul></>}
-            {selected.offered.length > 0 && <><h3>Se dicta</h3><div className="offering-list">{selected.offered.map((item) => <span key={item}>{item === "par" ? "2.\u00ba semestre" : item === "impar" ? "1.er semestre" : "Libre"}</span>)}</div></>}
+            {!selected.placeholder && <details className="course-offering-panel">
+              <summary>Oferta y dictado · {selectedOfferingEvidence.length ? `${selectedOfferingEvidence.length} ${selectedOfferingEvidence.length === 1 ? "antecedente" : "antecedentes"}` : "sin información publicada"}</summary>
+              <p>La oferta efectiva es independiente de la malla y de tu planificación. Un antecedente no promete la próxima edición.</p>
+              {selectedOfferingEvidence.length === 0 ? <p className="course-offering-empty"><strong>Sin información publicada.</strong> Esto no significa que la materia no se dicte.</p> : <ol className="course-offering-evidence">
+                {selectedOfferingEvidence.map((entry) => {
+                  const declaration = entry.declaration === "offered" ? "Oferta publicada" : entry.declaration === "not-offered" ? "No se dicta" : "Periodicidad declarada";
+                  const modality = entry.modality === "in-person" ? "Presencial" : entry.modality === "remote" ? "A distancia" : entry.modality === "hybrid" ? "Híbrida" : null;
+                  return <li key={entry.id}>
+                    <strong>{declaration} · {formatAcademicPeriod(entry.academicPeriod)}</strong>
+                    <span>{entry.source.publisher} · última verificación <time dateTime={entry.source.lastVerifiedAt}>{displayHistoryDate(entry.source.lastVerifiedAt)}</time></span>
+                    {modality && <span>Modalidad publicada: {modality}</span>}
+                    {entry.campusIds.length > 0 && <span>Sede: {entry.campusIds.join(", ")}</span>}
+                    {entry.note && <small>{entry.note}</small>}
+                    <small>{entry.validThrough < offeringToday ? "Antecedente histórico; su vigencia informativa finalizó." : `Vigencia informativa hasta ${displayHistoryDate(entry.validThrough)}.`}</small>
+                    <a href={entry.source.url} target="_blank" rel="noreferrer">Ver fuente institucional ↗</a>
+                  </li>;
+                })}
+              </ol>}
+            </details>}
             {!selected.placeholder && <details className="academic-history-panel">
               <summary>Historial personal · {selectedHistory.length}</summary>
               <p>Es un registro personal guardado en este dispositivo. No es una escolaridad oficial y no modifica la currícula.</p>

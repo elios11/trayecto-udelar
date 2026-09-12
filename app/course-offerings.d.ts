@@ -1,0 +1,31 @@
+export type AcademicPeriodPart = "first-semester" | "second-semester" | "annual" | "first-half-semester" | "second-half-semester" | "other";
+export type AcademicPeriod = { year: number; part: AcademicPeriodPart; startsOn?: string; endsOn?: string };
+export type OfferingDeclaration = "offered" | "not-offered" | "habitual";
+export type OfferingModality = "in-person" | "remote" | "hybrid" | "unknown";
+export type OfferingStatus = "confirmed" | "not-offered" | "habitual" | "unknown" | "needs-review";
+export type CourseOfferingEvidence = {
+  id: string;
+  courseId: string;
+  serviceId: string;
+  planIds: string[];
+  campusIds: string[];
+  academicPeriod: AcademicPeriod;
+  declaration: OfferingDeclaration;
+  basis?: "explicit";
+  modality: OfferingModality;
+  source: { url: string; title: string; publisher: string; publishedAt?: string; lastVerifiedAt: string; retrievedAt?: string };
+  validThrough: string;
+  note?: string;
+};
+export type OfferingMappingIssue = { id: string; courseId: string; serviceId?: string; academicPeriod?: AcademicPeriod; reason: string };
+export type OfferingResolution = { status: OfferingStatus; evidence: CourseOfferingEvidence[]; reason: string };
+export type OfferingTarget = { courseId: string; serviceId?: string; planId?: string; campusId?: string; academicPeriod: AcademicPeriod };
+
+export function validateCourseOfferings(records: unknown, options?: { catalog?: Array<{ courseId: string; serviceId: string }> }): { ok: boolean; issues: Array<{ path: string; code: string; message: string }> };
+export function normalizeCourseOfferings(records: CourseOfferingEvidence[]): CourseOfferingEvidence[];
+export function serializeCourseOfferings(records: CourseOfferingEvidence[]): string;
+export function resolveCourseOffering(input: OfferingTarget & { records: CourseOfferingEvidence[]; mappingIssues?: OfferingMappingIssue[]; now: string }): OfferingResolution;
+export function evidenceForCourse(records: CourseOfferingEvidence[], target: Omit<OfferingTarget, "academicPeriod">): CourseOfferingEvidence[];
+export function academicPeriodFromDateRange(range?: { startsOn?: string | null; endsOn?: string | null; startsAt?: string | null; endsAt?: string | null }): AcademicPeriod | null;
+export function formatAcademicPeriod(period: AcademicPeriod): string;
+export function courseOfferingStatusPresentation(status: OfferingStatus): { label: string; detail: string };

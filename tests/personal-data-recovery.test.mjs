@@ -68,7 +68,7 @@ test("restores a term at its original position without duplicate courses and pre
   const scenario = profile.planning.scenarios[0];
   scenario.terms = [
     { id: "term-a", label: "A", status: "planned", startsAt: null, endsAt: null, loadTarget: null, courseIds: ["MAT1"] },
-    { id: "term-b", label: "B", status: "in-progress", startsAt: null, endsAt: null, loadTarget: null, courseIds: ["FIS1", "PROG1"] },
+    { id: "term-b", label: "B", status: "in-progress", startsAt: "2026-08-03T03:00:00.000Z", endsAt: "2026-12-12T03:00:00.000Z", loadTarget: null, courseIds: ["FIS1", "PROG1"] },
   ];
   scenario.currentTermId = "term-a";
   const deleted = createDeletedTerm({ profileId: profile.id, planId: profile.selection.planId, scenarioId: scenario.id, originalIndex: 1, wasCurrent: true, term: scenario.terms[1] }, { now, id: "deleted-b" });
@@ -77,6 +77,8 @@ test("restores a term at its original position without duplicate courses and pre
   assert.equal(restored.ok, true);
   assert.deepEqual(restored.document.profiles[0].planning.scenarios[0].terms.map((term) => term.id), ["term-a", "term-b"]);
   assert.deepEqual(restored.document.profiles[0].planning.scenarios[0].terms[1].courseIds, ["PROG1"]);
+  assert.equal(restored.document.profiles[0].planning.scenarios[0].terms[1].startsAt, "2026-08-03T03:00:00.000Z");
+  assert.equal(restored.document.profiles[0].planning.scenarios[0].terms[1].endsAt, "2026-12-12T03:00:00.000Z");
   assert.equal(restored.document.profiles[0].planning.scenarios[0].currentTermId, "term-b");
   assert.deepEqual(restored.omittedCourseIds, ["FIS1"]);
   assert.equal(isDeletedTermAlreadyRestored(document, deleted), false);

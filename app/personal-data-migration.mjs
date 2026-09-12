@@ -238,7 +238,12 @@ function normalizePlannerPlans(value, currentTerms, path, issues) {
 function isDefaultEmptyPlanner(transfer) {
   return transfer.currentTermId === null
     && transfer.terms.length === 4
-    && transfer.terms.every((term, index) => term.id === `term-${index + 1}` && term.label === `Semestre ${index + 1}` && term.loadTarget === null && term.courseIds.length === 0);
+    && transfer.terms.every((term, index) => term.id === `term-${index + 1}`
+      && term.label === `Semestre ${index + 1}`
+      && term.startsAt == null
+      && term.endsAt == null
+      && term.loadTarget === null
+      && term.courseIds.length === 0);
 }
 
 function stableProfileId(selection) {
@@ -309,8 +314,8 @@ function profileFromLegacy(selection, statuses, planner, timestamp, previousProf
         status: term.id === planner.currentTermId
           ? "in-progress"
           : previousTerm?.status === "closed" ? "closed" : "planned",
-        startsAt: previousTerm?.startsAt ?? null,
-        endsAt: previousTerm?.endsAt ?? null,
+        startsAt: Object.hasOwn(term, "startsAt") ? term.startsAt : previousTerm?.startsAt ?? null,
+        endsAt: Object.hasOwn(term, "endsAt") ? term.endsAt : previousTerm?.endsAt ?? null,
         loadTarget: term.loadTarget ?? previousTerm?.loadTarget ?? null,
         courseIds: [...term.courseIds],
       };
@@ -360,7 +365,14 @@ function plannerFromProfile(profile) {
     ?? null;
   if (!scenario) return null;
   return {
-    terms: scenario.terms.map((term) => ({ id: term.id, label: term.label, loadTarget: term.loadTarget, courseIds: [...term.courseIds] })),
+    terms: scenario.terms.map((term) => ({
+      id: term.id,
+      label: term.label,
+      startsAt: term.startsAt,
+      endsAt: term.endsAt,
+      loadTarget: term.loadTarget,
+      courseIds: [...term.courseIds],
+    })),
     currentTermId: scenario.currentTermId,
   };
 }
@@ -769,7 +781,14 @@ export function personalDataStateFingerprint(state) {
   for (const [planId, terms] of Object.entries(state.plannerPlans ?? {})) {
     const transfer = { terms, currentTermId: state.currentPlannerTerms?.[planId] ?? null };
     if (!Array.isArray(terms) || isDefaultEmptyPlanner(transfer)) continue;
-    plannerPlans[planId] = terms;
+    plannerPlans[planId] = terms.map((term) => ({
+      id: term.id,
+      label: term.label,
+      startsAt: term.startsAt ?? null,
+      endsAt: term.endsAt ?? null,
+      loadTarget: term.loadTarget ?? null,
+      courseIds: Array.isArray(term.courseIds) ? [...term.courseIds] : [],
+    }));
     currentPlannerTerms[planId] = transfer.currentTermId;
   }
   return JSON.stringify({

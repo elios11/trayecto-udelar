@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-10",
+  "scope": "Muestra manual pequeña; no es un inventario de oferta Udelar.",
+  "mappings": [
+    {
+      "serviceId": "fadu",
+      "sourceUrl": "https://www.fadu.edu.uy/bedelia/horarios-y-modalidades-de-cursos-ldcv/",
+      "method": "Página oficial específica de LDCV, período 2026 y coincidencia exacta dentro del único plan vigente cargado; se contrastaron los códigos canónicos L112 y L230 del catálogo FADU.",
+      "courseIds": ["L112", "L230"],
+      "omittedFields": ["horarios", "salones", "modalidad no inequívoca para ambos registros"]
+    },
+    {
+      "serviceId": "fq",
+      "sourceUrl": "https://www.fq.edu.uy/?q=es/node/2023",
+      "method": "Declaraciones negativas expresas del Consejo de FQ para la edición/año 2026, enlazadas contra el catálogo FQ por servicio y unidad curricular canónica.",
+      "courseIds": ["734", "417"],
+      "omittedFields": ["motivos internos de los expedientes", "horarios de otras unidades"]
+    },
+    {
+      "serviceId": "fcea",
+      "sourceUrl": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html",
+      "method": "Resoluciones individuales 38/2025 y 63/2026 restringidas explícitamente a Contador Público Plan 2024; coincidencia exacta y única en ese plan para Cálculo I y Contabilidad General I.",
+      "courseIds": ["fcea-mc10-2", "fcea-c20-2"],
+      "omittedFields": ["horarios", "modalidad", "sedes no declaradas"]
+    }
+  ],
+  "unmappedCandidates": [
+    {
+      "serviceId": "fadu",
+      "sourceUrl": "https://www.fadu.edu.uy/bedelia/horarios-arq/",
+      "reason": "La proyección vigente de Arquitectura contiene bloques curriculares, no unidades individuales; no se enlazaron nombres de la grilla por aproximación.",
+      "status": "excluded-from-runtime"
+    }
+  ],
+  "discardedSources": [
+    {
+      "sourceUrl": "https://www.fq.edu.uy/sites/default/files/sites/all/themes/professional_theme/images/Horarios%20202601%20v13.pdf",
+      "reason": "La página oficial ya declara una versión posterior; no se congelaron horarios de una revisión superada."
+    },
+    {
+      "sourceUrl": "https://www.fadu.edu.uy/bedelia/horarios-arq/",
+      "reason": "Se conservó como antecedente, pero el catálogo ARQ no permite hoy un mapeo individual inequívoco. Se sustituyó por la página oficial LDCV del mismo servicio."
+    }
+  ]
+}

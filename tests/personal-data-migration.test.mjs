@@ -13,6 +13,7 @@ import {
   serializePersonalDataForStorage,
 } from "../app/personal-data-migration.mjs";
 import { parsePersonalDataV3 } from "../app/personal-data.mjs";
+import { academicPeriodFromDateRange } from "../app/course-offerings.mjs";
 
 const fixture = async (name) => JSON.parse(await readFile(new URL(`./fixtures/${name}`, import.meta.url), "utf8"));
 const now = "2026-09-08T12:00:00.000Z";
@@ -247,6 +248,44 @@ test("preserves and fingerprints a personal load target edited in app state", as
   assert.deepEqual(rebuilt.document.profiles[0].planning.scenarios[0].terms[0].loadTarget, { unit: "hours", value: 320 });
 });
 
+test("round-trips v4 term dates through app state and resolves their academic period", async () => {
+  const legacyV3 = await fixture("personal-data-v3-complete.json");
+  const matchingCatalog = catalogForDocument(legacyV3);
+  const migrated = personalDataToAppState(legacyV3, matchingCatalog);
+  assert.equal(migrated.ok, true);
+  assert.equal(migrated.document.formatVersion, 4);
+
+  const imported = personalDataToAppState(migrated.document, matchingCatalog);
+  assert.equal(imported.ok, true);
+  const term = imported.state.plannerPlans["computacion-1997"][0];
+  assert.equal(term.startsAt, "2025-03-10T03:00:00.000Z");
+  assert.equal(term.endsAt, "2025-07-19T03:00:00.000Z");
+  assert.deepEqual(academicPeriodFromDateRange(term), {
+    year: 2025,
+    part: "first-semester",
+    startsOn: "2025-03-10",
+    endsOn: "2025-07-19",
+  });
+
+  const fingerprint = personalDataStateFingerprint(imported.state);
+  const withoutDates = structuredClone(imported.state);
+  withoutDates.plannerPlans["computacion-1997"][0].startsAt = null;
+  withoutDates.plannerPlans["computacion-1997"][0].endsAt = null;
+  assert.notEqual(personalDataStateFingerprint(withoutDates), fingerprint);
+  term.label = "Semestre editado";
+  assert.notEqual(personalDataStateFingerprint(imported.state), fingerprint);
+  const rebuilt = appStateToPersonalData(imported.state, {
+    catalog: matchingCatalog,
+    now: "2026-09-12T12:00:00.000Z",
+    previousDocument: migrated.document,
+  });
+  assert.equal(rebuilt.ok, true);
+  const persistedTerm = rebuilt.document.profiles[0].planning.scenarios[0].terms[0];
+  assert.equal(persistedTerm.label, "Semestre editado");
+  assert.equal(persistedTerm.startsAt, "2025-03-10T03:00:00.000Z");
+  assert.equal(persistedTerm.endsAt, "2025-07-19T03:00:00.000Z");
+});
+
 test("imports the complete historical v1/v2 shapes actually accepted by the app", async () => {
   for (const name of ["personal-data-complete-v1.json", "personal-data-complete-v2.json"]) {
     const transfer = await fixture(name);
@@ -283,6 +322,7 @@ test("extracts planner v1 and planner data from complete v2 and v3", async () =>
     assert.equal(result.ok, true);
     assert.equal(result.planner.currentTermId, value === plannerV1 ? "term-1" : "term-2");
     assert.ok(result.planner.terms.every((term) => term.loadTarget === null));
+    if (value === plannerV1) assert.ok(result.planner.terms.every((term) => !Object.hasOwn(term, "startsAt") && !Object.hasOwn(term, "endsAt")));
   }
 });
 

@@ -23,12 +23,13 @@ export type PersonalDataCatalogEntry = {
   loadUnit: PersonalDataLoadUnit;
 };
 
-export type LegacyPlannerTerm = { id: string; label: string; loadTarget: PersonalDataLoadTargetV3 | null; courseIds: string[] };
-export type LegacyPlannerTransfer = { terms: LegacyPlannerTerm[]; currentTermId: string | null };
+export type PlannerAppTerm = { id: string; label: string; startsAt?: string | null; endsAt?: string | null; loadTarget: PersonalDataLoadTargetV3 | null; courseIds: string[] };
+export type LegacyPlannerTerm = Omit<PlannerAppTerm, "startsAt" | "endsAt">;
+export type LegacyPlannerTransfer = { terms: PlannerAppTerm[]; currentTermId: string | null };
 export type PersonalDataAppState = {
   progress: Record<string, Record<string, "pending" | "approved" | "exonerated">>;
   academicHistories: Record<string, AcademicHistory>;
-  plannerPlans: Record<string, LegacyPlannerTerm[]>;
+  plannerPlans: Record<string, PlannerAppTerm[]>;
   currentPlannerTerms: Record<string, string | null>;
   selection: PersonalDataSelectionV3 | null;
   activeProfileId?: string | null;
