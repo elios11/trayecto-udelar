@@ -31,7 +31,7 @@ test("separa el intercambio del planificador del intercambio completo", () => {
   assert.match(pageSource, /const importPlanner =/);
   assert.match(pageSource, /parseCompleteTransfer\(parsed,/);
   assert.match(pageSource, /parsePlannerTransferFile\(parsed,/);
-  assert.match(pageSource, /setPlannerPlans\(\(current\) => \(\{ \.\.\.current, \[planYear\]: transfer\.planner\.terms \}\)\)/);
+  assert.match(pageSource, /replaceActiveScenarioPlanning\(planning, transfer\.planner/);
   assert.match(pageSource, /Solo planificador/);
   assert.match(css, /\.data-panel-section button/);
 });

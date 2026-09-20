@@ -2,7 +2,7 @@
 
 ## Estado
 
-Especificación lista para implementación sobre el `main` posterior a P04. C02 ya garantiza que los escenarios activos, no activos y archivados sobrevivan al transporte entre el documento personal v4 y el estado de la aplicación. P03 agrega las operaciones de dominio y la superficie visible para administrarlos; no modifica el formato portable ni incorpora cuentas.
+Implementado y validado en el worktree de P03, listo para revisión e integración. Se mantuvo el documento personal v4 y el archivo separado del planificador v1; no se incorporaron cuentas ni servicios externos.
 
 ## Objetivo
 
@@ -116,4 +116,25 @@ P03 queda cerrado cuando una persona puede mantener, alternar y comparar escenar
 
 ## Continuidad y reanudación
 
-Especificación lista. Próximo paso: crear un worktree basado en el `main` que contiene este archivo, implementar P03 con `gpt-5.6-sol` y esfuerzo `high`, validar y devolver un commit aislado. No iniciar P05 hasta revisar e integrar o descartar explícitamente P03.
+### Resultado implementado
+
+- Se agregó un módulo puro e inmutable para crear, duplicar, renombrar, activar, promover, archivar, restaurar y comparar escenarios. Los IDs y el tiempo son inyectables; el límite documentado para nombres es de 80 caracteres.
+- El planificador expone un selector compacto con estado activo/principal, gestión explícita de archivados, confirmaciones propias y una comparación prudente de materias, períodos y carga conocida.
+- Las operaciones estructurales consolidan primero la edición visible, escriben mediante el documento v4 y su control de concurrencia, y recién después actualizan la interfaz. Una escritura fallida o obsoleta conserva las ramas mediante el mecanismo de conflictos existente.
+- La exportación completa conserva todos los escenarios. El intercambio de planificador permanece en v1 y sustituye solamente la planificación del escenario activo.
+- La papelera mantiene el `scenarioId`; si su escenario está archivado, conserva la entrada y pide restaurar primero ese escenario.
+
+### Verificación realizada
+
+- Pruebas focales: operaciones puras (7), persistencia/concurrencia (3), integración UI estática (5), recuperación (4) y preferencias/intercambio (7), todas aprobadas.
+- `npm test`: el build completo aprobó con ejecución fuera del sandbox; esa corrida de la suite obtuvo 877/878 por una única aserción estática desactualizada del intercambio v1. La aserción se actualizó al contrato de escenario activo y su archivo focal aprobó 7/7. No se repitió la suite completa para evitar otra ejecución prolongada sin cambio de lógica de producción.
+- `npm run lint`: aprobado sobre el código de P03 antes del cierre. Las pruebas focales suman 26/26 casos aprobados: operaciones puras (7), persistencia/concurrencia (3), UI estática (5), recuperación (4) y preferencias/intercambio (7).
+- `git diff --check`: aprobado sobre el estado final. `security:repo` no llegó a repetirse antes del checkpoint final; queda como verificación de integración.
+- QA funcional: el servidor local llegó a iniciar en `http://localhost:3000`, aunque el escaneo opcional de dependencias de desarrollo emitió errores preexistentes al tratar archivos `.d.ts` como entradas. La sesión fue interrumpida antes de completar recorridos verificables en escritorio y móvil; la cobertura visual/responsive quedó respaldada sólo por las 5 pruebas de integración UI y debe repetirse al integrar.
+
+### Decisiones y continuidad
+
+- No se elevó la versión del documento ni del archivo de planificador: v4 ya representa todos los escenarios y v1 conserva deliberadamente sólo el activo.
+- Duplicar crea identidades nuevas para escenario y semestres, conserva extensiones compatibles y abre explícitamente la copia; nunca la vuelve principal.
+- Promover no activa el escenario, y restaurar no lo activa ni lo convierte en principal.
+- Próximo paso: revisar e integrar el único commit de P03 sobre el `main` más reciente. No integrar, publicar ni iniciar P05 desde este worktree.

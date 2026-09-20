@@ -230,6 +230,7 @@ export function restoreDeletedTerm(document, deletedTerm) {
   const profile = next.profiles.find((candidate) => candidate.id === item.profileId && candidate.selection.planId === item.planId);
   const scenario = profile?.planning.scenarios.find((candidate) => candidate.id === item.scenarioId);
   if (!scenario) return { ok: false, code: "missing_context", issues: [issue("$.deletedTerm", "missing_context", "El plan o semestre original todavía no existe.")] };
+  if (scenario.archived) return { ok: false, code: "scenario_archived", issues: [issue("$.deletedTerm.scenarioId", "scenario_archived", "Restaurá el escenario original antes de recuperar este semestre.")] };
   if (scenario.terms.some((term) => term.id === item.term.id)) return { ok: false, code: "duplicate_term", issues: [issue("$.deletedTerm.term.id", "duplicate_id", "Ya existe un semestre con ese identificador.")] };
   const assigned = new Set(scenario.terms.flatMap((term) => term.courseIds));
   const omittedCourseIds = item.term.courseIds.filter((courseId) => assigned.has(courseId));

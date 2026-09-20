@@ -87,3 +87,26 @@ test("restores a term at its original position without duplicate courses and pre
   assert.equal(orphan.ok, false);
   assert.equal(orphan.code, "missing_context");
 });
+
+test("un semestre de un escenario archivado conserva su papelera hasta restaurar el escenario", async () => {
+  const document = await fixture();
+  const profile = document.profiles[0];
+  const scenario = profile.planning.scenarios[0];
+  const deleted = createDeletedTerm({
+    profileId: profile.id,
+    planId: profile.selection.planId,
+    scenarioId: scenario.id,
+    originalIndex: 0,
+    wasCurrent: false,
+    term: scenario.terms[0],
+  }, { now, id: "trash-archived" });
+  scenario.terms.shift();
+  scenario.currentTermId = null;
+  scenario.archived = true;
+  profile.planning.activeScenarioId = null;
+
+  const blocked = restoreDeletedTerm(document, deleted);
+  assert.equal(blocked.ok, false);
+  assert.equal(blocked.code, "scenario_archived");
+  assert.match(blocked.issues[0].message, /Restaurá el escenario original/);
+});
