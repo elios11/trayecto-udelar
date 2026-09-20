@@ -17,6 +17,10 @@ export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
 }
 
+export function isAdministrativeCreditEntry(value) {
+  return normalize(value).startsWith("creditos reconocidos");
+}
+
 function slug(value) {
   return normalize(value).replace(/\s+/g, "-") || "sin-nombre";
 }
@@ -466,6 +470,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       ? String(node.label).replace(/\s+-\s+cr[eé]ditos?:\s*\d+(?:[.,]\d+)?\s*$/i, "")
       : node.label);
     const parsed = compositionMatterFromNode(node);
+    if (isAdministrativeCreditEntry(parsed.name) || isAdministrativeCreditEntry(legacyParsed.name)) continue;
     if ((parsed.code && excludedSourceCourseIds.has(parsed.code))
       || (legacyParsed.code && excludedSourceCourseIds.has(legacyParsed.code))) continue;
     const courseOverride = courseOverrides[parsed.code]
@@ -835,6 +840,7 @@ function buildProjection(entry, snapshot, audit) {
   const periodMap = new Map();
   const codeToId = new Map();
   for (const [index, rawCourse] of (snapshot.plan?.courses ?? []).entries()) {
+    if (isAdministrativeCreditEntry(rawCourse.name)) continue;
     const id = courseId(snapshot.service.code, rawCourse, index, usedIds);
     const credits = Number(rawCourse.credits);
     const label = periodLabel(rawCourse);
@@ -874,6 +880,7 @@ function buildProjection(entry, snapshot, audit) {
   const noPublishedCodes = new Set();
   const rules = [];
   for (const rule of replaceBedeliasCourses ? [] : (snapshot.prerequisites ?? [])) {
+    if (isAdministrativeCreditEntry(rule.target?.name)) continue;
     if (rule.expression && ["course", "exam"].includes(rule.target?.assessment) && rule.target?.code) {
       publishedCodes.add(rule.target.code);
       rules.push({ target: { code: rule.target.code, name: rule.target.name, assessment: rule.target.assessment }, expression: normalizeExpressionCourseIds(rule.expression, codeToId, snapshot.service.code), heading: rule.heading, sourceUrl: rule.sourceUrl });

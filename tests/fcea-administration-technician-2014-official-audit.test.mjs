@@ -33,7 +33,7 @@ test("la grilla vigente orienta cinco semestres sin ocultar la oferta flexible",
   assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [6, 3, 5, 14, 11]);
   const availableIds = new Set([...pathway.periods.flatMap(({ courseIds }) => courseIds), ...pathway.catalogCourseIds]);
   assert.deepEqual(availableIds, new Set(plan.courses.map(({ id }) => id)));
-  assert.equal(plan.courses.length, 198);
+  assert.equal(plan.courses.length, 156);
 });
 
 test("exige las unidades obligatorias y modela correctamente las dos equivalencias", () => {
