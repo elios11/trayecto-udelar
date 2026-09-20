@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementado y validado en el worktree de P05, listo para revisión e integración. Este nodo agrega una lectura temporal del historial y del escenario activo; no cambia el contrato personal v4, no inventa fechas y no incorpora cuentas ni servicios externos.
+Implementado, validado e integrado en `main`. Este nodo agrega una lectura temporal del historial y del escenario activo; no cambia el contrato personal v4, no inventa fechas y no incorpora cuentas ni servicios externos.
 
 ## Objetivo
 
@@ -117,4 +117,5 @@ P05 queda cerrado cuando la persona puede leer pasado, presente y planificación
 - QA funcional de escritorio: se abrió el planificador local, se verificaron escenario, períodos, estados e hitos; el panel se minimizó, se recargó la aplicación y la preferencia permaneció cerrada; después volvió a expandirse correctamente. La automatización disponible no permitió fijar un viewport móvil real, por lo que la adaptación móvil se verificó mediante las reglas responsive y las pruebas estructurales, no como revisión visual pixel a pixel.
 - Revisión del coordinador: se corrigió la clasificación de hitos fechados fuera de períodos, la visibilidad de credenciales cuando no existen semestres y la aceptación de fechas calendario imposibles; se agregaron casos de regresión para superposición y estado vacío.
 - Riesgo residual: la evaluación futura es deliberadamente conservadora. Una currícula con requisitos no modelados no proyecta el hito, aunque la persona pueda cumplirlo en la realidad.
-- Próximo paso: revisar e integrar el único commit de P05 sobre el `main` más reciente. No hacer push ni publicar desde este worktree.
+- Integración final: el coordinador integró P05 sobre el `main` más reciente y repitió `npm test` (893/893), `npm run lint`, `npm run security:repo` y `git diff --check`, todos correctos junto con la depuración estricta del catálogo.
+- Próximo paso: P06, alertas por cambios curriculares. No reabrir P05 salvo que aparezca una regresión verificada.

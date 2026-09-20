@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01–P04 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P05. El roadmap no autoriza por sí solo servicios externos, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01–P05 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P06. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -186,6 +186,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### P05 — Línea temporal e hitos
 
 - Especificación: `docs/tasks/linea-temporal-hitos.md`.
+- Integrado en `main`; la línea temporal proyecta historial, escenario activo e hitos verificables sin persistir estados derivados ni inventar fechas.
 - Mostrar semestres planeados, actuales y cerrados, más títulos intermedios y requisitos relevantes.
 - Cierre: accesible en móvil, compatible con planes sin créditos y sin estimaciones falsas de egreso.
 
