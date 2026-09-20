@@ -98,7 +98,7 @@ test("la vía CFE acredita 245 créditos y exige sólo cuatro unidades de área 
 });
 
 test("conserva sólo las previaturas publicadas y neutraliza créditos desconocidos", () => {
-  assert.equal(projection.courses.length, 206);
+  assert.equal(projection.courses.length, 203);
   assert.equal(projection.rules.length, 21);
   assert.equal(projection.plan.publishedRules, 21);
   assert.equal(projection.plan.noPublishedRule, 174);

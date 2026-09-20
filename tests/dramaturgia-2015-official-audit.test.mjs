@@ -99,12 +99,12 @@ test("reemplaza el grupo electivo imposible por dos bloques acreditables 10 + 4"
 });
 
 test("mantiene la oferta flexible sin inventar previaturas", () => {
-  assert.equal(projection.courses.length, 131);
+  assert.equal(projection.courses.length, 130);
   assert.equal(projection.rules.length, 0);
   assert.equal(projection.plan.publishedRules, 0);
   assert.equal(projection.plan.noPublishedRule, 136);
   const visibleIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
-  assert.equal(new Set(visibleIds).size, 131);
+  assert.equal(new Set(visibleIds).size, 130);
   assert.ok(visibleIds.every((id) => courseById.has(id)));
   assert.equal(officialAudit.conclusion.canonicalModel, "one-shared-technical-degree-one-flexible-path");
 });

@@ -96,12 +96,12 @@ test("presenta ocho semestres sugeridos y conserva todo el catálogo flexible", 
   for (let semester = 1; semester <= 8; semester += 1) assert.ok(labels.includes(`Semestre ${semester}`));
   assert.equal(new Set(labels).size, labels.length);
   assert.equal(new Set(pathway.periods.flatMap(({ courseIds }) => courseIds)).size, projection.courses.length);
-  assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 280);
-  assert.equal(new Set(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map(({ bedeliasCode }) => bedeliasCode)).size, 280);
+  assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 267);
+  assert.equal(new Set(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map(({ bedeliasCode }) => bedeliasCode)).size, 267);
 });
 
 test("conserva 31 previaturas y los tres créditos excedentes sin elevar el mínimo", () => {
-  assert.equal(projection.courses.length, 282);
+  assert.equal(projection.courses.length, 269);
   assert.equal(projection.rules.length, 31);
   assert.equal(projection.plan.publishedRules, 31);
   assert.equal(projection.plan.noPublishedRule, 247);

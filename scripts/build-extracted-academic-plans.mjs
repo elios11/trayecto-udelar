@@ -21,6 +21,84 @@ export function isAdministrativeCreditEntry(value) {
   return normalize(value).startsWith("creditos reconocidos");
 }
 
+const COURSE_NAME_CONNECTORS = new Set(["a", "al", "de", "del", "el", "en", "la", "las", "los", "para", "y"]);
+
+export function normalizeEquivalentCourseName(value) {
+  return normalize(String(value ?? "").replace(/\([^)]*\)/g, " "))
+    .replace(/\bcorrec\b/g, "correccion")
+    .split(" ")
+    .filter((token) => token && !COURSE_NAME_CONNECTORS.has(token))
+    .join(" ");
+}
+
+function variantCourseSignature(course) {
+  const allocations = (course.creditAllocations ?? [])
+    .map(({ nodeId, credits }) => `${nodeId}:${Number(credits) || 0}`)
+    .sort()
+    .join("|");
+  return [normalizeEquivalentCourseName(course.name), Number(course.credits) || 0, Number(course.hours) || 0, allocations].join("::");
+}
+
+function preferredVariantCourse(courses) {
+  return [...courses].sort((left, right) => {
+    const leftCode = String(left.bedeliasCode ?? left.id);
+    const rightCode = String(right.bedeliasCode ?? right.id);
+    return leftCode.length - rightCode.length || leftCode.localeCompare(rightCode, "es-UY");
+  })[0];
+}
+
+export function consolidateEquivalentCourseVariants(curriculum) {
+  if (!curriculum) return new Map();
+  const courseById = new Map(curriculum.courses.map((course) => [course.id, course]));
+  const aliases = new Map();
+
+  for (const group of curriculum.requiredCourseGroups ?? []) {
+    if (group.minCompleted !== 1) continue;
+    const officialGroupName = normalizeEquivalentCourseName(group.label);
+    if (!officialGroupName) continue;
+    const buckets = new Map();
+    for (const courseId of group.courseIds) {
+      const course = courseById.get(courseId);
+      if (!course) continue;
+      if (normalizeEquivalentCourseName(course.name) !== officialGroupName) continue;
+      const signature = variantCourseSignature(course);
+      if (!buckets.has(signature)) buckets.set(signature, []);
+      buckets.get(signature).push(course);
+    }
+    for (const variants of buckets.values()) {
+      if (variants.length < 2 || !normalizeEquivalentCourseName(variants[0].name)) continue;
+      const canonical = preferredVariantCourse(variants);
+      const equivalentCourseIds = [];
+      const equivalentBedeliasCodes = [];
+      for (const variant of variants) {
+        if (variant.id === canonical.id) continue;
+        aliases.set(variant.id, canonical.id);
+        equivalentCourseIds.push(variant.id, ...(variant.equivalentCourseIds ?? []));
+        equivalentBedeliasCodes.push(variant.bedeliasCode, ...(variant.equivalentBedeliasCodes ?? []));
+      }
+      canonical.equivalentCourseIds = [...new Set([...(canonical.equivalentCourseIds ?? []), ...equivalentCourseIds].filter(Boolean))];
+      canonical.equivalentBedeliasCodes = [...new Set([...(canonical.equivalentBedeliasCodes ?? []), ...equivalentBedeliasCodes].filter(Boolean))];
+    }
+  }
+
+  if (aliases.size === 0) return aliases;
+  const canonicalId = (id) => aliases.get(id) ?? id;
+  const canonicalIds = (ids) => [...new Set(ids.map(canonicalId))];
+  curriculum.courses = curriculum.courses.filter((course) => !aliases.has(course.id));
+  curriculum.periods = curriculum.periods.map((period) => ({ ...period, courseIds: canonicalIds(period.courseIds) }));
+  for (const group of curriculum.requiredCourseGroups ?? []) {
+    group.courseIds = canonicalIds(group.courseIds);
+    group.minCompleted = Math.min(group.minCompleted, group.courseIds.length);
+  }
+  for (const [groupId, courseIds] of Object.entries(curriculum.requirementCourseGroups ?? {})) {
+    curriculum.requirementCourseGroups[groupId] = canonicalIds(courseIds);
+  }
+  for (const [sourceId, courseId] of curriculum.courseIdBySourceId ?? []) {
+    curriculum.courseIdBySourceId.set(sourceId, canonicalId(courseId));
+  }
+  return aliases;
+}
+
 function slug(value) {
   return normalize(value).replace(/\s+/g, "-") || "sin-nombre";
 }
@@ -863,6 +941,10 @@ function buildProjection(entry, snapshot, audit) {
   const usesBedeliasCompositionTree = audit?.officialPlan?.curriculum?.useBedeliasCompositionTree === true;
   const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds)
     ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
+  const equivalentCourseAliases = consolidateEquivalentCourseVariants(officialCurriculum);
+  for (const [sourceCode, courseId] of codeToId) {
+    codeToId.set(sourceCode, equivalentCourseAliases.get(courseId) ?? courseId);
+  }
   const replaceBedeliasCourses = audit?.officialPlan?.curriculum?.replaceBedeliasCourses === true;
   if (officialCurriculum && (
     courses.length === 0

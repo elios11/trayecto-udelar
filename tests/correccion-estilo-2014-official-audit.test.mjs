@@ -59,7 +59,7 @@ test("controla las cuatro áreas oficiales que completan 180 créditos", () => {
 });
 
 test("presenta el catálogo por áreas sin convertir optativas y electivas en obligaciones simultáneas", () => {
-  assert.equal(projection.courses.length, 180);
+  assert.equal(projection.courses.length, 177);
   assert.deepEqual(pathway.periods.map(({ label }) => label), [
     "Técnico-instrumental",
     "Lingüística",
@@ -68,8 +68,8 @@ test("presenta el catálogo por áreas sin convertir optativas y electivas en ob
     "Formación general y académica",
   ]);
   const visibleIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
-  assert.equal(visibleIds.length, 180);
-  assert.equal(new Set(visibleIds).size, 180);
+  assert.equal(visibleIds.length, 177);
+  assert.equal(new Set(visibleIds).size, 177);
   assert.ok(visibleIds.every((id) => courseById.has(id)));
   assert.equal(officialAudit.conclusion.canonicalModel, "one-technical-degree-one-flexible-path");
   assert.match(officialAudit.anomalies.find(({ field }) => field === "suggestedGridCredits").resolution, /193 créditos/);
@@ -78,7 +78,8 @@ test("presenta el catálogo por áreas sin convertir optativas y electivas en ob
 test("exige el núcleo vigente y conserva equivalencias administrativas", () => {
   const groups = new Map(credential.requiredCourseGroups.map((group) => [group.id, group]));
   assert.deepEqual(groups.get("tuce-academic-writing").courseIds.sort(), ["fhum-coe10-2", "fhum-coe6-2"]);
-  assert.deepEqual(groups.get("tuce-informatics").courseIds.sort(), ["fhum-coe5-2", "fhum-coe5a-2", "fhum-coe5f-2", "fhum-coe8-2"]);
+  assert.deepEqual(groups.get("tuce-informatics").courseIds, ["fhum-coe5-2"]);
+  assert.deepEqual(courseById.get("fhum-coe5-2").equivalentCourseIds.sort(), ["fhum-coe5a-2", "fhum-coe5f-2", "fhum-coe8-2"]);
   assert.deepEqual(groups.get("tuce-production").courseIds.sort(), ["fhum-coe7-2", "fhum-pecla-2"]);
   assert.deepEqual(groups.get("tuce-workshop-1").courseIds, ["fhum-coe2-2"]);
   assert.deepEqual(groups.get("tuce-workshop-2").courseIds, ["fhum-coe3-2"]);

@@ -43,8 +43,8 @@ test("controla los seis mínimos que completan los 360 créditos", () => {
 test("reconoce obligaciones nominales y sus equivalencias administrativas", () => {
   const groups = new Map(projection.creditStructure.credentials[0].requiredCourseGroups.map((group) => [group.id, group]));
   assert.equal(groups.size, 21);
-  assert.deepEqual([groups.get("mandatory-geography-one").minCompleted, groups.get("mandatory-geography-one").courseIds.length], [1, 3]);
-  assert.deepEqual([groups.get("mandatory-introduction-tourism").minCompleted, groups.get("mandatory-introduction-tourism").courseIds.length], [1, 3]);
+  assert.deepEqual([groups.get("mandatory-geography-one").minCompleted, groups.get("mandatory-geography-one").courseIds.length], [1, 1]);
+  assert.deepEqual([groups.get("mandatory-introduction-tourism").minCompleted, groups.get("mandatory-introduction-tourism").courseIds.length], [1, 1]);
   assert.deepEqual([groups.get("mandatory-seminar").minCompleted, groups.get("mandatory-seminar").courseIds.length], [1, 3]);
   assert.deepEqual([groups.get("mandatory-professional-practice").minCompleted, groups.get("mandatory-professional-practice").courseIds.length], [1, 2]);
   assert.deepEqual([groups.get("mandatory-thesis").minCompleted, groups.get("mandatory-thesis").courseIds.length], [1, 1]);
@@ -55,8 +55,9 @@ test("mantiene el catálogo flexible completo sin certificar perfiles personales
   const rawMatterNodes = flattenComposition(snapshot.plan.composition).filter((node) => node.nodeType === "Materia");
   const projectedCourses = projection.courses.filter((course) => course.dataStatus !== "manual-validation");
   assert.equal(rawMatterNodes.length, 393);
-  assert.equal(projectedCourses.length, 393);
-  assert.equal(projectedCourses.reduce((sum, course) => sum + course.credits, 0), 3026);
+  assert.equal(projectedCourses.length, 380);
+  assert.equal(projectedCourses.reduce((sum, course) => sum + course.credits, 0), 2871);
+  assert.equal(projectedCourses.reduce((sum, course) => sum + (course.equivalentCourseIds?.length ?? 0), 0), 13);
   assert.deepEqual(Object.keys(projection.pathways), ["bedelias"]);
   assert.match(projection.plan.notice, /Comisión de Carrera.*módulo/i);
 });

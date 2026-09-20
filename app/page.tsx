@@ -156,6 +156,8 @@ type Course = {
   engineeringOnly?: boolean;
   dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption" | "fq-damero" | "fadu-official" | "official-curriculum";
   bedeliasCode?: string;
+  equivalentCourseIds?: string[];
+  equivalentBedeliasCodes?: string[];
   core?: boolean;
   placeholder?: boolean;
   serviceCode?: string | null;
@@ -281,7 +283,7 @@ type RegisteredProjection = {
   source: { reviewedAt: string | null; careerPage: string; planDocument: string; bedeliasExtractedAt: string; bedeliasContentHash: string; bedeliasPlanUrl?: string };
   plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
-  courses: Array<{ id: string; bedeliasCode?: string; name: string; credits: number; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
+  courses: Array<{ id: string; bedeliasCode?: string; equivalentCourseIds?: string[]; equivalentBedeliasCodes?: string[]; name: string; credits: number; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
   pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
@@ -1148,11 +1150,18 @@ export default function Home() {
     [progress, initialQfCourseIds],
   );
   const statuses = useMemo(() => {
-    const storedStatuses = progress[activeProgressPlanId] ?? {};
+    const storedStatuses = { ...(progress[activeProgressPlanId] ?? {}) };
+    const priority: Record<CourseStatus, number> = { pending: 0, approved: 1, exonerated: 2 };
+    for (const course of activeCourses) {
+      for (const aliasId of course.equivalentCourseIds ?? []) {
+        const aliasStatus = storedStatuses[aliasId];
+        if (aliasStatus && priority[aliasStatus] > priority[storedStatuses[course.id] ?? "pending"]) storedStatuses[course.id] = aliasStatus;
+      }
+    }
     return planYear === "2025" && trajectoryId === "pi-60-plus"
       ? { ...storedStatuses, PI: "exonerated" as CourseStatus }
       : storedStatuses;
-  }, [progress, activeProgressPlanId, planYear, trajectoryId]);
+  }, [progress, activeProgressPlanId, planYear, trajectoryId, activeCourses]);
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
     if (isRegisteredPlan && activeRegisteredPlan) return new Map<string, unknown>(activeRegisteredPlan.courses.map((course) => [course.id, course]));

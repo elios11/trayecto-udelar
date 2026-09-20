@@ -113,7 +113,7 @@ test("muestra los nueve bloques oficiales y una validación final manual", () =>
 });
 
 test("conserva sólo las previaturas publicadas y neutraliza créditos desconocidos", () => {
-  assert.equal(projection.courses.length, 283);
+  assert.equal(projection.courses.length, 280);
   assert.equal(projection.rules.length, 46);
   assert.equal(projection.plan.publishedRules, 46);
   assert.equal(projection.plan.noPublishedRule, 228);
