@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementado y validado en el worktree de P03, listo para revisión e integración. Se mantuvo el documento personal v4 y el archivo separado del planificador v1; no se incorporaron cuentas ni servicios externos.
+Integrado y validado en `main`. Se mantuvo el documento personal v4 y el archivo separado del planificador v1; no se incorporaron cuentas ni servicios externos.
 
 ## Objetivo
 
@@ -137,4 +137,5 @@ P03 queda cerrado cuando una persona puede mantener, alternar y comparar escenar
 - No se elevó la versión del documento ni del archivo de planificador: v4 ya representa todos los escenarios y v1 conserva deliberadamente sólo el activo.
 - Duplicar crea identidades nuevas para escenario y semestres, conserva extensiones compatibles y abre explícitamente la copia; nunca la vuelve principal.
 - Promover no activa el escenario, y restaurar no lo activa ni lo convierte en principal.
-- Próximo paso: revisar e integrar el único commit de P03 sobre el `main` más reciente. No integrar, publicar ni iniciar P05 desde este worktree.
+- Integración serial: el coordinador integró P03 sobre el `main` más reciente y repitió `npm test` (881/881), `npm run lint`, `npm run security:repo` y `git diff --check`, todos correctos.
+- Próximo paso: ejecutar P05 desde un worktree nuevo basado en este `main`. No publicar P05 sin autorización explícita.

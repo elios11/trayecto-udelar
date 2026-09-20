@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04, P01, P02 y P04 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P03. El roadmap no autoriza por sí solo servicios externos, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01–P04 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P05. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -169,6 +169,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### P03 — Escenarios
 
 - Especificación: `docs/tasks/escenarios-planificacion.md`.
+- Integrado en `main`; los escenarios personales pueden crearse, duplicarse, compararse, archivarse y promoverse sin mezclarse con trayectorias oficiales.
 - Duplicar, nombrar, comparar, archivar y promover una planificación principal.
 - Evitar mezclar escenarios con trayectorias oficiales.
 - Cierre: IDs estables, comparación comprensible y exportación completa.
