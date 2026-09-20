@@ -2,7 +2,7 @@
 
 ## Estado
 
-Especificación preparada para implementación después de P02 y P03 integrados en `main`. Este nodo agrega una lectura temporal del historial y del escenario activo; no cambia el contrato personal v4, no inventa fechas y no incorpora cuentas ni servicios externos.
+Implementado y validado en el worktree de P05, listo para revisión e integración. Este nodo agrega una lectura temporal del historial y del escenario activo; no cambia el contrato personal v4, no inventa fechas y no incorpora cuentas ni servicios externos.
 
 ## Objetivo
 
@@ -100,3 +100,21 @@ Crear un módulo puro, importable por Node y React, que produzca una secuencia e
 - Crear un único commit enfocado en el worktree. No integrar, hacer push ni publicar desde el subagente.
 
 P05 queda cerrado cuando la persona puede leer pasado, presente y planificación futura del escenario activo, junto con hitos verificables, sin que la aplicación invente fechas, requisitos o certezas académicas.
+
+## Resultado de implementación
+
+- Se agregó `app/planning-timeline.mjs`, una proyección pura e inmutable que ordena períodos fechados, conserva el orden personal de los no fechados, calcula carga completa o parcial y advierte fechas inválidas, invertidas o superpuestas sin corregirlas.
+- Los acontecimientos efectivos del historial se separan entre los que pertenecen a un período, los fechados fuera de los rangos del escenario y los que realmente carecen de fecha. Ninguna materia se usa para inventar una asignación temporal.
+- El planificador incorpora un panel minimizable con el escenario activo, estados textuales, períodos, materias, hitos personales y credenciales curriculares. Los saltos a semestre y detalle reutilizan las superficies existentes.
+- Los hitos alcanzados se evalúan con el progreso actual. Una proyección futura sólo aparece cuando las materias planificadas satisfacen todos los requisitos modelados; requisitos incompletos o no modelados quedan como `No evaluable` y nunca producen fecha de egreso.
+- El estado abierto/cerrado del panel se guarda como preferencia visual local. El documento personal continúa en v4 y el intercambio del planificador permanece en v1.
+
+## Verificación y continuidad
+
+- Pruebas focales finales: `node --test tests/planning-timeline.test.mjs tests/planning-timeline-ui.test.mjs` — 11/11.
+- Suite global: `npm test` — build correcto y 892/892 pruebas aprobadas.
+- Calidad: `npm run lint`, `npm run security:repo` y `git diff --check` — correctos.
+- QA funcional de escritorio: se abrió el planificador local, se verificaron escenario, períodos, estados e hitos; el panel se minimizó, se recargó la aplicación y la preferencia permaneció cerrada; después volvió a expandirse correctamente. La automatización disponible no permitió fijar un viewport móvil real, por lo que la adaptación móvil se verificó mediante las reglas responsive y las pruebas estructurales, no como revisión visual pixel a pixel.
+- Revisión del coordinador: se corrigió la clasificación de hitos fechados fuera de períodos, la visibilidad de credenciales cuando no existen semestres y la aceptación de fechas calendario imposibles; se agregaron casos de regresión para superposición y estado vacío.
+- Riesgo residual: la evaluación futura es deliberadamente conservadora. Una currícula con requisitos no modelados no proyecta el hito, aunque la persona pueda cumplirlo en la realidad.
+- Próximo paso: revisar e integrar el único commit de P05 sobre el `main` más reciente. No hacer push ni publicar desde este worktree.

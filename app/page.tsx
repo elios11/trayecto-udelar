@@ -83,6 +83,7 @@ import {
   replaceActiveScenarioPlanning,
   restorePlanningScenario,
 } from "./planning-scenarios.mjs";
+import { projectPlanningTimeline } from "./planning-timeline.mjs";
 import {
   academicPeriodFromDateRange,
   courseOfferingStatusPresentation,
@@ -700,6 +701,7 @@ type VisualPreferences = {
   showElectives: boolean;
   showRequirements: boolean;
   showPlannerCatalog: boolean;
+  showTimeline: boolean;
 };
 
 const PLANNER_STORAGE_KEY = LEGACY_PLANNER_STORAGE_KEY;
@@ -748,6 +750,7 @@ export default function Home() {
   const [showElectives, setShowElectives] = useState(true);
   const [showRequirements, setShowRequirements] = useState(false);
   const [showPlannerCatalog, setShowPlannerCatalog] = useState(true);
+  const [showTimeline, setShowTimeline] = useState(true);
   const [extendedElectivesData, setExtendedElectivesData] = useState<ExtendedElectivesProjection | null>(null);
   const [extendedElectivesLoadState, setExtendedElectivesLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [electric2023Data, setElectric2023Data] = useState<Electric2023Projection | null>(null);
@@ -1411,6 +1414,7 @@ export default function Home() {
         if (typeof preferences.showElectives === "boolean") setShowElectives(preferences.showElectives);
         if (typeof preferences.showRequirements === "boolean") setShowRequirements(preferences.showRequirements);
         if (typeof preferences.showPlannerCatalog === "boolean") setShowPlannerCatalog(preferences.showPlannerCatalog);
+        if (typeof preferences.showTimeline === "boolean") setShowTimeline(preferences.showTimeline);
       }
       } catch (error) {
         updateLocalSaveStatus(failedLocalSaveStatus(error, { savedAt: localSaveStatusRef.current.savedAt }));
@@ -1588,10 +1592,10 @@ export default function Home() {
     root.dataset.colorVision = colorVisionEnabled ? colorVisionType : "standard";
     root.style.colorScheme = themeScheme;
     if (hydrated) {
-      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog };
+      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline };
       persistLegacyValue(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     }
-  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, hydrated]);
+  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline, hydrated]);
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
@@ -2560,6 +2564,58 @@ export default function Home() {
   const rolloverIncompleteHours = rolloverIncompleteCourses.reduce((sum, course) => sum + (course.hours ?? 0), 0);
 
   const activeAcademicHistory = academicHistories[activeProgressPlanId] ?? { events: [] };
+  const evaluateTimelineCredential = (candidate: Credential, candidateStatuses: Record<string, CourseStatus>) => {
+    const knownCourses = new Map(plannerCourses.map((course) => [course.id, course]));
+    const candidateNodeCredits = (nodeId: string) => plannerCourses.reduce((total, course) => {
+      if (candidateStatuses[course.id] !== "exonerated") return total;
+      const contribution = (course.creditAllocations ?? [])
+        .filter((allocation) => allocationBelongsTo(allocation.nodeId, nodeId))
+        .reduce((sum, allocation) => sum + allocation.credits, 0);
+      return total + Math.min(course.credits, contribution);
+    }, 0);
+    const candidateCredits = plannerCourses.reduce((total, course) => total + (candidateStatuses[course.id] === "exonerated" ? course.credits : 0), 0);
+    const requirements = [
+      ...(candidate.minTotalCredits > 0 ? [candidateCredits >= candidate.minTotalCredits] : []),
+      ...candidate.nodeRequirements.filter((requirement) => requirement.minCredits > 0).map((requirement) => candidateNodeCredits(requirement.nodeId) >= requirement.minCredits),
+      ...(candidate.alternativeNodeRequirements ?? []).map((requirement) => requirement.options.filter((option) => candidateNodeCredits(option.nodeId) >= option.minCredits).length >= requirement.minSatisfied),
+      ...candidate.requiredCourseGroups.map((group) => group.courseIds.filter((id) => candidateStatuses[id] === "exonerated").length >= group.minCompleted),
+      ...candidate.requiredActivities.map((activity) => activity.courseIds.reduce((sum, id) => sum + (candidateStatuses[id] === "exonerated" ? knownCourses.get(id)?.credits ?? 0 : 0), 0) >= activity.minCredits),
+    ];
+    const hasUnmodeledRequirement = candidate.nodeRequirements.some((requirement) => !nodeById.has(requirement.nodeId))
+      || (candidate.alternativeNodeRequirements ?? []).some((requirement) => requirement.options.some((option) => !nodeById.has(option.nodeId)))
+      || candidate.requiredActivities.some((activity) => activity.representationStatus === "not-modeled" || activity.courseIds.some((id) => !knownCourses.has(id)))
+      || candidate.requiredCourseGroups.some((group) => group.courseIds.some((id) => !knownCourses.has(id)));
+    return { evaluable: requirements.length > 0 && !hasUnmodeledRequirement, achieved: requirements.length > 0 && !hasUnmodeledRequirement && requirements.every(Boolean), inProgress: requirements.some(Boolean) };
+  };
+  const timelineCredentials = creditStructure.credentials.map((candidate) => {
+    const current = evaluateTimelineCredential(candidate, statuses);
+    let plannedTermId: string | null = null;
+    if (current.evaluable && !current.achieved && activePlanningScenario) {
+      const projectedStatuses = { ...statuses };
+      for (const term of activePlanningScenario.terms) {
+        for (const courseId of term.courseIds) if (plannerCourses.some((course) => course.id === courseId)) projectedStatuses[courseId] = "exonerated";
+        if (evaluateTimelineCredential(candidate, projectedStatuses).achieved) {
+          plannedTermId = term.id;
+          break;
+        }
+      }
+    }
+    return {
+      id: candidate.id,
+      title: candidate.title,
+      kind: candidate.id === degreeCredential.id ? "Título principal" : "Hito curricular",
+      ...current,
+      plannedTermId,
+      explanation: current.evaluable ? null : "La currícula no publica todos los requisitos necesarios para evaluarlo aquí.",
+    };
+  });
+  const timelineProjection = projectPlanningTimeline({
+    scenario: activePlanningScenario,
+    academicHistory: activeAcademicHistory,
+    courses: plannerCourses,
+    loadUnit: activeDocumentProfile?.loadUnit ?? "courses",
+    credentials: timelineCredentials,
+  });
   const selectedHistory = selected ? academicHistoryForCourse(activeAcademicHistory, selected.id) : [];
   const selectedEffectiveHistory = selected
     ? effectiveAcademicHistoryEvents(activeAcademicHistory).filter((event) => event.courseId === selected.id)
@@ -3189,6 +3245,39 @@ export default function Home() {
                 </div>
               </div>
 
+              <section className="planning-timeline" aria-labelledby="timeline-title">
+                <button type="button" className="timeline-heading" onClick={() => setShowTimeline((value) => !value)} aria-expanded={showTimeline}>
+                  <span><b id="timeline-title">Línea temporal</b><small>Lectura personal del historial y del escenario activo</small></span>
+                  <span>{showTimeline ? "− Minimizar" : "+ Mostrar"}</span>
+                </button>
+                {showTimeline && <div className="timeline-body">
+                  <p className="timeline-intro">El pasado pertenece a tu perfil. Los períodos futuros corresponden a <strong>{timelineProjection.scenario?.name ?? "este escenario"}</strong> y no son una escolaridad oficial ni una fecha estimada de egreso.</p>
+                  {timelineProjection.empty ? <p className="timeline-empty">Todavía no registraste hitos ni períodos para mostrar. Podés planificar sin indicar fechas.</p> : <>
+                    {timelineProjection.periods.length > 0 && <ol className="timeline-periods">
+                      {timelineProjection.periods.map((period) => <li className={`timeline-period ${period.status}`} key={period.id}>
+                        <div className="timeline-marker" aria-hidden="true" />
+                        <article>
+                          <header><span>{period.status === "closed" ? "Completado" : period.status === "in-progress" ? "En curso" : "Planificado"}</span><button type="button" onClick={() => document.getElementById(`planner-term-${period.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" })}>Ver semestre</button></header>
+                          <h3>{period.label}</h3>
+                          <p>{period.startsAt && period.endsAt ? `${period.startsAt} a ${period.endsAt}` : "Sin fecha registrada"} · {period.load.value} {period.load.label}{period.load.partial ? " · subtotal parcial" : ""}</p>
+                          <details><summary>{period.courseIds.length} {period.courseIds.length === 1 ? "materia" : "materias"} y {period.events.length} {period.events.length === 1 ? "hito" : "hitos"}</summary>
+                            <ul className="timeline-course-list">{period.courseIds.map((courseId) => {
+                              const course = plannerCourses.find((candidate) => candidate.id === courseId);
+                              return <li key={courseId}>{course ? <button type="button" onClick={() => setSelected(course)}>{course.name}</button> : <span>{courseId} · Materia sin ficha actual</span>}</li>;
+                            })}</ul>
+                            {period.events.length > 0 && <ul className="timeline-event-list">{period.events.map((event) => <li key={event.id}>Hito personal: {event.courseId} · {event.occurredAt}</li>)}</ul>}
+                          </details>
+                        </article>
+                      </li>)}
+                    </ol>}
+                    {timelineProjection.unassignedDatedEvents.length > 0 && <section className="timeline-undated"><h3>Otros hitos fechados</h3><p>Conservan su fecha personal, pero no coincide con un período fechado del escenario.</p><ul>{timelineProjection.unassignedDatedEvents.map((event) => <li key={event.id}>{event.courseId} · {event.occurredAt}</li>)}</ul></section>}
+                    {timelineProjection.undatedEvents.length > 0 && <section className="timeline-undated"><h3>Fecha no registrada</h3><p>Estos hitos personales no se asignan a un semestre por coincidencia de materia.</p><ul>{timelineProjection.undatedEvents.map((event) => <li key={event.id}>{event.courseId} · {event.kind === "recorded-status" ? "Estado importado, sin fecha" : "Hito personal sin fecha académica"}</li>)}</ul></section>}
+                    <section className="timeline-milestones" aria-labelledby="timeline-milestones-title"><h3 id="timeline-milestones-title">Hitos curriculares</h3><p>Se evalúan con la referencia curricular actual. Alcanzado no equivale a una certificación institucional.</p><ul>{timelineProjection.milestones.map((milestone) => <li key={milestone.id}><span className={`timeline-milestone-state ${milestone.state}`}>{milestone.state === "achieved" ? "Alcanzado" : milestone.state === "planned" ? "Planificado" : milestone.state === "in-progress" ? "En progreso" : milestone.state === "not-evaluable" ? "No evaluable" : "Pendiente"}</span><div><strong>{milestone.title}</strong><small>{milestone.state === "planned" ? `Estimación de este escenario: ${timelineProjection.periods.find((period) => period.id === milestone.termId)?.label ?? "período planificado"}.` : milestone.explanation ?? "Requisito curricular publicado."}</small></div></li>)}</ul></section>
+                    {timelineProjection.warnings.length > 0 && <ul className="timeline-warnings" aria-label="Advertencias de fechas">{timelineProjection.warnings.map((warning) => <li key={`${warning.code}-${warning.termId}-${warning.relatedTermId ?? ""}`}>{warning.message}</li>)}</ul>}
+                  </>}
+                </div>}
+              </section>
+
               {plannerView === "balance" && (
                 <div className="planner-load-overview" aria-label="Comparación de carga por semestre">
                   {plannerTerms.map((term) => {
@@ -3276,7 +3365,7 @@ export default function Home() {
                     const knownAreaImpacts = Object.entries(potentialImpact.nodeCredits).map(([nodeId, credits]) => ({ label: nodeById.get(nodeId)?.name ?? nodeId, credits }));
                     const potentialTitleCredits = Math.min(potentialImpact.totalCredits, Math.max(credential.minTotalCredits - earnedCredits, 0));
                     return (
-                      <section className={"planner-term" + (isCurrentTerm ? " current" : "")} key={term.id} onDragOver={(event) => event.preventDefault()} onDrop={() => { if (draggedCourseId) assignPlannerCourse(draggedCourseId, term.id); setDraggedCourseId(null); }}>
+                      <section id={`planner-term-${term.id}`} className={"planner-term" + (isCurrentTerm ? " current" : "")} key={term.id} onDragOver={(event) => event.preventDefault()} onDrop={() => { if (draggedCourseId) assignPlannerCourse(draggedCourseId, term.id); setDraggedCourseId(null); }}>
                         <header>
                           <span>{String(termIndex + 1).padStart(2, "0")}</span>
                           <div>
