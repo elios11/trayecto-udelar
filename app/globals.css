@@ -52,6 +52,20 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .pilot-note { max-width: 920px; margin: 14px 0 0; display: flex; align-items: flex-start; gap: 8px; color: var(--muted); font-size: 12px; line-height: 1.45; }
 .pilot-note-mark { width: 18px; height: 18px; flex: none; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--udelar) 38%, var(--line)); border-radius: 50%; background: var(--accent-soft); color: var(--udelar); font: 750 10px var(--font-geist-mono); }
 .pilot-note-copy { min-width: 0; }
+.curriculum-change-alert { margin: 18px 36px 0; padding: 18px 20px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; border: 1px solid color-mix(in srgb, var(--udelar) 34%, var(--line)); border-radius: 14px; background: color-mix(in srgb, var(--accent-soft) 66%, var(--surface)); }
+.curriculum-change-alert.is-review { border-color: color-mix(in srgb, var(--warning-ink) 38%, var(--line)); }
+.curriculum-change-alert.is-blocked { border-color: color-mix(in srgb, var(--warning-ink) 58%, var(--line)); background: color-mix(in srgb, var(--warning-soft) 72%, var(--surface)); }
+.curriculum-change-alert h2 { margin: 3px 0 6px; color: var(--ink); font-size: clamp(17px, 1.7vw, 23px); }
+.curriculum-change-alert p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.curriculum-change-actions { display: flex; flex-wrap: wrap; align-content: center; justify-content: flex-end; gap: 8px; max-width: 440px; }
+.curriculum-change-actions button { min-height: 40px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); color: var(--ink); font-size: 12px; font-weight: 720; }
+.curriculum-change-actions button.primary { border-color: var(--udelar); background: var(--udelar); color: var(--surface); }
+.curriculum-change-actions button:hover { border-color: var(--udelar); }
+.curriculum-change-detail { grid-column: 1 / -1; padding-top: 14px; border-top: 1px solid var(--line); }
+.curriculum-change-detail ul { margin: 0 0 12px; padding: 0; display: grid; gap: 8px; list-style: none; }
+.curriculum-change-detail li { display: grid; gap: 2px; padding: 9px 11px; border-radius: 9px; background: var(--surface); }
+.curriculum-change-detail li strong { color: var(--ink); font-size: 12px; }
+.curriculum-change-detail li span { color: var(--muted); font-size: 11px; }
 .credit-summary { gap: 16px; min-width: 230px; }
 .credit-ring { --progress: 0%; width: 78px; height: 78px; flex: none; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--udelar) var(--progress), #e4e9eb 0); position: relative; }
 .credit-ring::after { content: ""; position: absolute; inset: 7px; background: white; border-radius: 50%; }
@@ -891,6 +905,7 @@ body, .app-shell, .workspace { background: var(--paper); }
 .data-panel-section > span { color: var(--muted); font-size: 9px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .data-panel-section button { padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-subtle); color: var(--ink); font-size: 10px; font-weight: 680; text-align: left; }
 .data-panel-section button:hover { border-color: color-mix(in srgb, var(--udelar) 42%, var(--line)); background: var(--accent-soft); }
+.curriculum-data-section p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.45; overflow-wrap: anywhere; }
 .recovery-panel > summary { cursor: pointer; color: var(--ink); font-size: 10px; font-weight: 750; }
 .recovery-panel > p { margin: 0; color: var(--muted); font-size: 9px; line-height: 1.4; }
 .recovery-list { display: grid; gap: 6px; margin-top: 4px; }
@@ -931,6 +946,9 @@ body, .app-shell, .workspace { background: var(--paper); }
 .color-vision-select select { width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 9px; font-size: 10px; }
 
 @media (max-width: 720px) {
+  .curriculum-change-alert { margin: 14px 16px 0; padding: 15px; grid-template-columns: 1fr; }
+  .curriculum-change-actions { max-width: none; justify-content: stretch; }
+  .curriculum-change-actions button { flex: 1 1 145px; }
   .data-menu > summary { min-width: 58px; height: 38px; padding-inline: 9px; }
   .data-panel { position: fixed; top: 78px; right: 12px; width: min(320px, calc(100vw - 24px)); }
   .appearance-menu > summary { width: 38px; height: 38px; }

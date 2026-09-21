@@ -42,6 +42,14 @@ import {
 } from "./academic-history.mjs";
 import { classifyCurriculumReferences, curriculumRevisionForPlan } from "./curriculum-revisions.mjs";
 import {
+  compareCurriculumSnapshots,
+  createCurriculumSnapshot,
+  personalCourseIdsForProfile,
+  readCurriculumSnapshot,
+  storeCurriculumSnapshot,
+  type CurriculumComparison,
+} from "./curriculum-changes.mjs";
+import {
   RECOVERY_STORAGE_KEY,
   addDeletedTerm,
   createDeletedTerm,
@@ -704,6 +712,7 @@ type VisualPreferences = {
   showRequirements: boolean;
   showPlannerCatalog: boolean;
   showTimeline: boolean;
+  dismissedCurriculumChanges: string[];
 };
 
 const PLANNER_STORAGE_KEY = LEGACY_PLANNER_STORAGE_KEY;
@@ -753,6 +762,8 @@ export default function Home() {
   const [showRequirements, setShowRequirements] = useState(false);
   const [showPlannerCatalog, setShowPlannerCatalog] = useState(true);
   const [showTimeline, setShowTimeline] = useState(true);
+  const [dismissedCurriculumChanges, setDismissedCurriculumChanges] = useState<string[]>([]);
+  const [showCurriculumChanges, setShowCurriculumChanges] = useState(false);
   const [extendedElectivesData, setExtendedElectivesData] = useState<ExtendedElectivesProjection | null>(null);
   const [extendedElectivesLoadState, setExtendedElectivesLoadState] = useState<"idle" | "loading" | "loaded" | "error">("idle");
   const [electric2023Data, setElectric2023Data] = useState<Electric2023Projection | null>(null);
@@ -1221,6 +1232,27 @@ export default function Home() {
     ? credential
     : creditStructure.credentials.find((item) => item.id === "engineer" || item.id === "bedelias-degree") ?? creditStructure.credentials.at(-1)!;
   const intermediateCredential = hasPathwayCredentials ? undefined : creditStructure.credentials.find((item) => item.id !== degreeCredential.id);
+  const activeCurriculumRevision = curriculumRevisionForPlan(planYear);
+  const activeCurriculumSnapshot = useMemo(() => createCurriculumSnapshot({
+    planId: planYear,
+    revision: activeCurriculumRevision,
+    courses: plannerCourses,
+    creditStructure,
+    rules: publishedRules,
+  }), [planYear, activeCurriculumRevision, plannerCourses, creditStructure, publishedRules]);
+  const previousCurriculumRevision = activeDocumentProfile?.curriculumRevision ?? null;
+  const previousCurriculumSnapshot = previousCurriculumRevision && personalDataRef.current
+    ? readCurriculumSnapshot(personalDataRef.current, planYear, previousCurriculumRevision)
+    : null;
+  const curriculumChangeKey = activeDocumentProfile
+    ? `${activeDocumentProfile.id}|${previousCurriculumRevision ?? "sin-revision"}|${activeCurriculumRevision}`
+    : null;
+  const curriculumComparison: CurriculumComparison | null = activeDocumentProfile && previousCurriculumRevision !== activeCurriculumRevision
+    ? compareCurriculumSnapshots(previousCurriculumSnapshot, activeCurriculumSnapshot, {
+      personalCourseIds: personalCourseIdsForProfile(activeDocumentProfile),
+    })
+    : null;
+  const curriculumChangeDismissed = curriculumChangeKey ? dismissedCurriculumChanges.includes(curriculumChangeKey) : false;
 
   const setStatuses = (updater: Record<string, CourseStatus> | ((current: Record<string, CourseStatus>) => Record<string, CourseStatus>)) => {
     setProgress((current) => {
@@ -1424,6 +1456,9 @@ export default function Home() {
         if (typeof preferences.showRequirements === "boolean") setShowRequirements(preferences.showRequirements);
         if (typeof preferences.showPlannerCatalog === "boolean") setShowPlannerCatalog(preferences.showPlannerCatalog);
         if (typeof preferences.showTimeline === "boolean") setShowTimeline(preferences.showTimeline);
+        if (Array.isArray(preferences.dismissedCurriculumChanges)) {
+          setDismissedCurriculumChanges(preferences.dismissedCurriculumChanges.filter((value): value is string => typeof value === "string"));
+        }
       }
       } catch (error) {
         updateLocalSaveStatus(failedLocalSaveStatus(error, { savedAt: localSaveStatusRef.current.savedAt }));
@@ -1601,10 +1636,10 @@ export default function Home() {
     root.dataset.colorVision = colorVisionEnabled ? colorVisionType : "standard";
     root.style.colorScheme = themeScheme;
     if (hydrated) {
-      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline };
+      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline, dismissedCurriculumChanges };
       persistLegacyValue(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     }
-  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline, hydrated]);
+  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline, dismissedCurriculumChanges, hydrated]);
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
@@ -1919,6 +1954,54 @@ export default function Home() {
       scenarioMenuRef.current.open = false;
     }
     return true;
+  };
+
+  useEffect(() => {
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (cancelled || !hydrated || !activeDocumentProfile || activeDocumentProfile.curriculumRevision !== activeCurriculumRevision) return;
+      if (personalDataRef.current && readCurriculumSnapshot(personalDataRef.current, planYear, activeCurriculumRevision)) return;
+      const document = currentPersonalDocument();
+      if (!document) return;
+      const timestamp = new Date().toISOString();
+      const withSnapshot = storeCurriculumSnapshot(document, activeCurriculumSnapshot);
+      const candidate = { ...withSnapshot, revision: document.revision + 1, updatedAt: timestamp };
+      const fingerprint = personalDataStateFingerprint(currentPersonalState());
+      if (persistPersonalDocument(candidate, { fingerprint })) setScenarioDocumentRevision((revision) => revision + 1);
+    });
+    return () => { cancelled = true; };
+  }, [hydrated, activeDocumentProfile, activeCurriculumRevision, activeCurriculumSnapshot, planYear, currentPersonalDocument, currentPersonalState, persistPersonalDocument]);
+
+  const adoptCurrentCurriculumRevision = () => {
+    if (!activeDocumentProfile || !curriculumComparison?.adoptionAllowed || previousCurriculumRevision === activeCurriculumRevision) return;
+    const document = currentPersonalDocument();
+    if (!document) return;
+    const profile = document.profiles.find((candidate) => candidate.id === activeDocumentProfile.id);
+    if (!profile) return;
+    const timestamp = new Date().toISOString();
+    const snapshot = createRecoverySnapshot(recovery, document, {
+      now: timestamp,
+      id: crypto.randomUUID(),
+      reason: `Antes de adoptar la revisión curricular ${activeCurriculumRevision}`,
+    });
+    if (!snapshot.ok || !persistRecoveryImmediately(snapshot.store)) return;
+    const withSnapshot = storeCurriculumSnapshot(document, activeCurriculumSnapshot);
+    const candidate: PersonalDataDocumentV4 = {
+      ...withSnapshot,
+      revision: document.revision + 1,
+      updatedAt: timestamp,
+      profiles: withSnapshot.profiles.map((candidateProfile) => candidateProfile.id === profile.id
+        ? { ...candidateProfile, curriculumRevision: activeCurriculumRevision }
+        : candidateProfile),
+    };
+    const adapted = personalDataToAppState(candidate, personalDataCatalog);
+    if (!adapted.ok) {
+      setImportError({ title: "No pudimos adoptar la revisión", message: "Tus datos y la referencia curricular anterior siguen sin cambios." });
+      return;
+    }
+    if (!applyScenarioDocument(candidate, adapted.state, "Adoptaste la nueva revisión curricular. La copia anterior quedó en Recuperación.")) return;
+    setRecovery(snapshot.store);
+    setShowCurriculumChanges(false);
   };
 
   const mutateScenarios = (
@@ -2842,6 +2925,15 @@ export default function Home() {
                 <button type="button" onClick={() => { importRef.current?.click(); dataMenuRef.current!.open = false; }}>Todo · currícula y planificador</button>
                 <button type="button" onClick={() => { plannerImportRef.current?.click(); dataMenuRef.current!.open = false; }}>Solo planificador</button>
               </div>
+              {curriculumComparison && <div className="data-panel-section curriculum-data-section">
+                <span>Revisión curricular</span>
+                <p>Tu perfil usa {previousCurriculumRevision ?? "una referencia sin identificar"}. La publicada ahora es {activeCurriculumRevision}.</p>
+                <button type="button" onClick={() => {
+                  if (curriculumChangeKey) setDismissedCurriculumChanges((current) => current.filter((key) => key !== curriculumChangeKey));
+                  setShowCurriculumChanges(true);
+                  dataMenuRef.current!.open = false;
+                }}>Ver comparación</button>
+              </div>}
               {orphanedHistoryCourseIds.length > 0 && <details className="data-panel-section recovery-panel historical-courses-panel">
                 <summary>Historial fuera de la malla · {orphanedHistoryCourseIds.length}</summary>
                 <p>Estos registros personales siguen guardados y exportables aunque la materia ya no aparezca en la currícula actual.</p>
@@ -2971,6 +3063,35 @@ export default function Home() {
           <button className="avatar" aria-label="Progreso guardado en este dispositivo">LOCAL</button>
         </div>
       </header>
+
+      {curriculumComparison && !curriculumChangeDismissed && <aside className={`curriculum-change-alert is-${curriculumComparison.severity}`} aria-labelledby="curriculum-change-title">
+        <div>
+          <p className="eyebrow">Actualización curricular</p>
+          <h2 id="curriculum-change-title">Hay una revisión nueva de este plan</h2>
+          <p>{curriculumComparison.status === "protected"
+            ? "No tenemos evidencia histórica suficiente para comparar esta actualización con seguridad. Tus datos siguen usando la referencia anterior."
+            : curriculumComparison.severity === "blocked"
+              ? "Algunos cambios afectan materias de tu historial o planificación y necesitan revisión. No aplicamos nada automáticamente."
+              : curriculumComparison.differences.length === 0
+                ? "La referencia cambió, pero no encontramos diferencias académicas en los datos comparables."
+                : `Encontramos ${curriculumComparison.differences.length} cambios para revisar. Tus datos siguen sin modificarse.`}</p>
+        </div>
+        <div className="curriculum-change-actions">
+          <button type="button" onClick={() => setShowCurriculumChanges((value) => !value)} aria-expanded={showCurriculumChanges}>{showCurriculumChanges ? "Ocultar detalle" : "Revisar cambios"}</button>
+          <button type="button" onClick={exportProgress}>Exportar mis datos</button>
+          {curriculumComparison.adoptionAllowed && previousCurriculumSnapshot && <button type="button" className="primary" onClick={adoptCurrentCurriculumRevision}>Adoptar revisión nueva</button>}
+          <button type="button" onClick={() => curriculumChangeKey && setDismissedCurriculumChanges((current) => [...new Set([...current, curriculumChangeKey])])}>Seguir usando esta revisión</button>
+        </div>
+        {showCurriculumChanges && <div className="curriculum-change-detail">
+          {curriculumComparison.differences.length === 0 ? <p>{curriculumComparison.reason ?? "No hay diferencias académicas para listar."}</p> : <ul>
+            {curriculumComparison.differences.map((item) => <li key={`${item.entity}-${item.id}-${item.kind}`}>
+              <strong>{item.entity === "course" ? "Materia" : item.entity === "rule" ? "Requisito" : item.entity === "credential" ? "Título o hito" : "Área o grupo"}: {item.id}</strong>
+              <span>{item.kind === "added" ? "Agregado" : item.kind === "removed" ? "Retirado sin equivalencia oficial" : item.kind === "retired" ? "Retirado oficialmente" : item.kind === "aliased" ? "Reemplazo oficial registrado" : "Datos modificados"}{item.affectsPersonalData ? " · afecta tus datos personales" : ""}</span>
+            </li>)}
+          </ul>}
+          <p>Esta comparación es informativa y no sustituye una escolaridad ni una resolución académica.</p>
+        </div>}
+      </aside>}
 
       <section className="hero-row">
         <div className="career-heading">

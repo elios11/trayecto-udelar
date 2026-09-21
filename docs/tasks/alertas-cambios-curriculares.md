@@ -2,7 +2,7 @@
 
 ## Estado
 
-Especificación lista para implementar sobre `main`, con C04 y P02 integrados. Este nodo compara la referencia curricular guardada por cada perfil con la vigente, pero no modifica automáticamente historial, progreso, escenarios ni selección académica.
+Implementado y validado en el worktree de P06, listo para revisión e integración. Este nodo compara la referencia curricular guardada por cada perfil con la vigente, pero no modifica automáticamente historial, progreso, escenarios ni selección académica.
 
 ## Objetivo
 
@@ -117,3 +117,20 @@ El informe debe ser determinista, ordenado y serializable. Dos snapshots equival
 - Crear un único commit enfocado en el worktree de P06. No integrar, hacer push ni publicar desde la implementación aislada.
 
 P06 queda cerrado cuando una persona puede entender y decidir sobre una revisión curricular nueva sin que Trayecto reescriba sus datos personales, infiera equivalencias ni pierda la referencia histórica.
+
+## Resultado de implementación
+
+- Se agregó un comparador puro y determinista de snapshots curriculares compactos. Clasifica materias, áreas, credenciales y reglas agregadas, retiradas o modificadas; las coincidencias aproximadas nunca se convierten en equivalencias y sólo los aliases explícitos de C04 resuelven otra identidad.
+- Los snapshots se guardan una sola vez por plan y revisión en la extensión v4 compartida `org.trayecto.curriculumSnapshots`, preservada por exportaciones, importaciones, instantáneas y conflictos. Las expresiones de requisitos se resumen con una huella estable para evitar inflar innecesariamente el almacenamiento local.
+- La aplicación registra la referencia actual cuando todavía no existe. Ante una revisión nueva muestra severidad textual, cambios que afectan datos personales y acceso permanente desde `Datos`, aun si la alerta fue descartada para ese par exacto.
+- Adoptar exige una comparación no bloqueante, conserva IDs históricos, guarda primero una instantánea recuperable y recién después actualiza la revisión del perfil. Una referencia histórica ausente, dañada, de otro plan o con una materia personal retirada sin alias bloquea la adopción.
+- El descarte pertenece sólo a preferencias visuales locales; no forma parte del documento personal ni equivale a adoptar la nueva revisión.
+
+## Verificación y continuidad
+
+- Pruebas focales: `node --test tests/curriculum-changes.test.mjs tests/curriculum-changes-ui.test.mjs tests/personal-data-evolution.test.mjs`.
+- Suite global: `npm test`.
+- Calidad: `npm run lint`, `npm run security:repo` y `git diff --check`.
+- La validación funcional automatizada cubre dominio, persistencia, protección y estructura accesible de la UI. No se realizó revisión visual en navegador porque no fue solicitada en este nodo.
+- Riesgo residual: perfiles creados antes de que existieran snapshots no permiten reconstruir retrospectivamente la currícula usada; quedan en modo protegido y deben conservar su referencia anterior hasta disponer de evidencia oficial trazable.
+- Próximo paso: revisar e integrar el único commit de P06 sobre el `main` más reciente. No hacer push ni publicar desde este worktree.
