@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01–P05 están integrados en `main`; la puerta de integridad quedó cerrada y el próximo nodo secuencial es P06. El roadmap no autoriza por sí solo servicios externos, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01–P06 están integrados en `main`; las olas locales de integridad y planificación prolongada quedaron cerradas. Antes de iniciar la Ola 3 deben resolverse las decisiones humanas indicadas abajo. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -193,6 +193,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### P06 — Cambios curriculares
 
 - Especificación: `docs/tasks/alertas-cambios-curriculares.md`.
+- Integrado en `main`; compara snapshots curriculares, bloquea traslados ambiguos y exige adopción explícita con instantánea previa.
 - Versionar la referencia curricular usada por datos personales.
 - Comparar créditos, áreas, requisitos e identidad de materias antes de aplicar una actualización.
 - Cierre: nunca reescribir automáticamente el historial; ofrecer revisión y conservar la versión anterior.

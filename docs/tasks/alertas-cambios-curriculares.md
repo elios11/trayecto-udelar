@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementado y validado en el worktree de P06, listo para revisión e integración. Este nodo compara la referencia curricular guardada por cada perfil con la vigente, pero no modifica automáticamente historial, progreso, escenarios ni selección académica.
+Implementado, validado e integrado en `main`. Este nodo compara la referencia curricular guardada por cada perfil con la vigente, pero no modifica automáticamente historial, progreso, escenarios ni selección académica.
 
 ## Objetivo
 
@@ -133,4 +133,5 @@ P06 queda cerrado cuando una persona puede entender y decidir sobre una revisió
 - Calidad: `npm run lint`, `npm run security:repo` y `git diff --check`.
 - La validación funcional automatizada cubre dominio, persistencia, protección y estructura accesible de la UI. No se realizó revisión visual en navegador porque no fue solicitada en este nodo.
 - Riesgo residual: perfiles creados antes de que existieran snapshots no permiten reconstruir retrospectivamente la currícula usada; quedan en modo protegido y deben conservar su referencia anterior hasta disponer de evidencia oficial trazable.
-- Próximo paso: revisar e integrar el único commit de P06 sobre el `main` más reciente. No hacer push ni publicar desde este worktree.
+- Integración final: el coordinador integró P06 sobre el `main` más reciente y repitió `npm test` (901/901), `npm run lint`, `npm run security:repo` y `git diff --check`, todos correctos.
+- Próximo paso: cerrar las decisiones humanas de la Ola 3 antes de iniciar B01. No reabrir P06 salvo que aparezca una regresión verificada.
