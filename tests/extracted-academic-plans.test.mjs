@@ -47,20 +47,24 @@ test("cada proyección diferida conserva referencias internas válidas y estado 
   for (const item of report.plans) {
     const projection = await readJson(`app/data/bedelias-generated/${item.planId}.json`);
     assert.equal(projection.audit.publicationEligible, false, item.identity);
-    assert.match(projection.plan.auditStatus, /^(official-evidence-complete|structurally-valid|extracted)$/);
+    assert.match(projection.plan.planAuditStatus, /^(official-evidence-complete|structurally-valid|extracted)$/);
+    assert.match(projection.plan.courseCatalogAuditStatus, /^(verified|partial|structure-only)$/);
     const ids = new Set(projection.courses.map((course) => course.id));
     assert.equal(ids.size, projection.courses.length, `${item.identity}: ids repetidos`);
     for (const course of projection.courses) {
       assert.ok(Number.isFinite(course.credits) && course.credits >= 0, `${item.identity}/${course.id}`);
+      assert.match(course.authorityStatus, /^(verified|candidate)$/);
+      assert.ok(course.fieldProvenance?.inclusion);
     }
-    for (const pathway of Object.values(projection.pathways)) {
-      for (const id of pathway.periods.flatMap((period) => period.courseIds)) assert.ok(ids.has(id), `${item.identity}: referencia ${id}`);
-      for (const id of pathway.catalogCourseIds ?? []) assert.ok(ids.has(id), `${item.identity}: referencia de catálogo ${id}`);
+    const verifiedIds = new Set(projection.courses.filter((course) => course.authorityStatus === "verified").map((course) => course.id));
+    for (const pathway of Object.values(projection.publishedPathways)) {
+      for (const id of pathway.periods.flatMap((period) => period.courseIds)) assert.ok(verifiedIds.has(id), `${item.identity}: referencia publicada no verificada ${id}`);
+      for (const id of pathway.catalogCourseIds ?? []) assert.ok(verifiedIds.has(id), `${item.identity}: referencia de catálogo no verificada ${id}`);
     }
-    if (!item.compositionAvailable) {
-      assert.equal(projection.courses.length, 0, item.identity);
-      assert.deepEqual(projection.pathways.bedelias.periods, [], item.identity);
-      assert.match(projection.plan.notice, /no publica su composición/i);
+    if (projection.plan.courseCatalogAuditStatus === "structure-only") {
+      assert.equal(verifiedIds.size, 0, item.identity);
+      assert.ok(Object.values(projection.publishedPathways).every((pathway) => pathway.periods.length === 0), item.identity);
+      assert.match(projection.plan.notice, /(no publica su composición|validación|respald)/i);
     }
   }
 });
@@ -142,7 +146,9 @@ test("las trayectorias auditadas se filtran por sede y conservan metadatos ofici
   ]);
   assert.deepEqual(education.pathways["practicas-corporales"].campusIds, ["montevideo", "maldonado"]);
   assert.deepEqual(education.pathways.salud.campusIds, ["montevideo", "maldonado", "paysandu"]);
-  assert.ok(Object.values(education.pathways).every((pathway) => pathway.periods.length > 0));
+  assert.ok(Object.values(education.publishedPathways).every((pathway) => pathway.periods.length === 0));
+  assert.equal(education.plan.courseCatalogAuditStatus, "structure-only");
+  assert.ok(education.courses.every((course) => course.authorityStatus === "candidate"));
 
   const sports = await readJson("app/data/bedelias-generated/bedelias-isef-tecnicatura-en-deportes-2007.json");
   assert.equal(sports.plan.durationMonths, 24);
@@ -151,7 +157,8 @@ test("las trayectorias auditadas se filtran por sede y conservan metadatos ofici
   assert.deepEqual(sports.pathways.futbol.campusIds, ["montevideo"]);
   assert.deepEqual(sports.pathways["actividades-acuaticas"].campusIds, ["rocha"]);
   assert.deepEqual(sports.pathways.atletismo.campusIds, ["paysandu"]);
-  assert.ok(Object.values(sports.pathways).every((pathway) => pathway.periods.length > 0));
+  assert.ok(Object.values(sports.publishedPathways).every((pathway) => pathway.periods.length === 0));
+  assert.equal(sports.plan.courseCatalogAuditStatus, "structure-only");
   assert.ok(!sports.campuses.some((campus) => campus.id === "rivera"));
   assert.match(sports.plan.notice, /no tiene ingreso abierto/i);
 
@@ -163,8 +170,34 @@ test("las trayectorias auditadas se filtran por sede y conservan metadatos ofici
 });
 
 test("el reporte queda ligado por hash a sus tres entradas reproducibles", () => {
+  assert.equal(report.schemaVersion, 2);
+  assert.equal(report.counts.afterPublishedCourses, report.counts.courseAuthority.verified);
+  assert.ok(report.counts.beforePublishedCourses > report.counts.afterPublishedCourses);
+  assert.equal(report.counts.plansWithVerifiedCatalog + report.counts.plansWithPartialCatalog + report.counts.plansWithStructureOnly, report.counts.generatedPlans);
   assert.match(report.contentHash, /^sha256:[a-f0-9]{64}$/);
   assert.match(report.generatedFrom.auditQueueHash, /^sha256:/);
   assert.match(report.generatedFrom.officialAuditHash, /^sha256:/);
   assert.match(report.generatedFrom.globalManifestHash, /^sha256:/);
+});
+
+test("la contención conserva candidatos para importaciones sin publicarlos en rutas normales", async () => {
+  const psychology = await readJson("app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json");
+  assert.ok(psychology.courses.length > 2_000);
+  assert.ok(psychology.courses.every((course) => course.authorityStatus === "candidate"));
+  assert.ok(Object.values(psychology.publishedPathways).every((pathway) => pathway.periods.length === 0 && (pathway.catalogCourseIds ?? []).length === 0));
+  assert.equal(psychology.plan.planAuditStatus, "official-evidence-complete");
+  assert.equal(psychology.plan.courseCatalogAuditStatus, "structure-only");
+  assert.equal(psychology.plan.extractedCompositionAvailable, true);
+  assert.equal(psychology.plan.verifiedCompositionAvailable, false);
+  assert.equal(psychology.plan.compositionAvailable, true);
+
+  const economics = await readJson("app/data/bedelias-generated/bedelias-fcea-licenciatura-en-economia-2012.json");
+  const candidate = economics.courses.find((course) => course.authorityStatus === "candidate");
+  assert.ok(candidate, "el candidato queda recuperable para una importación previa o D02");
+  const visibleIds = new Set(Object.values(economics.publishedPathways).flatMap((pathway) => [
+    ...pathway.periods.flatMap((period) => period.courseIds),
+    ...(pathway.catalogCourseIds ?? []),
+  ]));
+  assert.ok(!visibleIds.has(candidate.id));
+  assert.equal(economics.plan.courseCatalogAuditStatus, "partial");
 });

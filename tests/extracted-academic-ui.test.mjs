@@ -15,10 +15,12 @@ test("la sede es un selector accesible e independiente de plan y trayectoria", (
 });
 
 test("la UI no presenta la extracción pendiente como auditoría oficial", () => {
-  assert.match(page, /Composición Bedelías · auditoría oficial pendiente/);
-  assert.match(page, /Extracción de Bedelías · auditoría oficial pendiente/);
-  assert.match(page, /activeRegisteredPlan\.plan\.compositionAvailable === false/);
-  assert.match(page, /La carrera está identificada, pero su malla todavía no está disponible/);
+  assert.match(page, /Catálogo parcial · sólo materias verificadas/);
+  assert.match(page, /Catálogo en validación · sin materias publicadas/);
+  assert.match(page, /\(course\.authorityStatus \?\? "verified"\) === "verified"/);
+  assert.match(page, /activeRegisteredPlan\.plan\.courseCatalogAuditStatus === "structure-only"/);
+  assert.match(page, /El plan está disponible, pero sus materias aún no tienen respaldo suficiente/);
+  assert.match(page, /Este plan todavía no tiene materias verificadas para agregar\. La composición extraída se conserva en revisión\./);
 });
 
 test("el planificador distingue la organización personal de la currícula oficial", () => {

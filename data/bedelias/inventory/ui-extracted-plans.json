@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedFrom": {
     "auditQueueHash": "sha256:d5c6ccef36e0d864a9544feb31cd84900034935b3dc69aed730ecd1899346712",
     "officialAuditHash": "sha256:5ef143671786b94ebb04a4a09e47051418927bf331a4f9b765098499b2b67224",
@@ -11,7 +11,19 @@
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
     "plansWithOfficialCampuses": 48,
-    "excludedFromCurrentUi": 38
+    "excludedFromCurrentUi": 38,
+    "courseAuthority": {
+      "verified": 4630,
+      "candidate": 27578,
+      "historical-equivalent": 36,
+      "administrative": 177,
+      "rejected": 9
+    },
+    "beforePublishedCourses": 32208,
+    "afterPublishedCourses": 4630,
+    "plansWithVerifiedCatalog": 60,
+    "plansWithPartialCatalog": 61,
+    "plansWithStructureOnly": 18
   },
   "plans": [
     {
@@ -19,324 +31,774 @@
       "planId": "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-ciclo-en-biologia-bioquimica-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "salto",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 30
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 30
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 30,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ciclo inicial de matematica:2012",
       "planId": "bedelias-cenurln-ciclo-inicial-de-matematica-2012",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-ciclo-inicial-de-matematica-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 29
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 29
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 29,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en ciencias hidricas aplicadas:2016",
       "planId": "bedelias-cenurln-licenciatura-en-ciencias-hidricas-aplicadas-2016",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-licenciatura-en-ciencias-hidricas-aplicadas-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 37
+      },
+      "after": {
+        "publishedCourses": 37,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 37,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en ciencias sociales:2009",
       "planId": "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-licenciatura-en-ciencias-sociales-2009.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 425
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 425
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 425,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en diseno integrado:2012",
       "planId": "bedelias-cenurln-licenciatura-en-diseno-integrado-2012",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-licenciatura-en-diseno-integrado-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 44
+      },
+      "after": {
+        "publishedCourses": 44,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 44,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en direccion de coros:2002",
       "planId": "bedelias-cenurln-tecnicatura-en-direccion-de-coros-2002",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-direccion-de-coros-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 33
+      },
+      "after": {
+        "publishedCourses": 33,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 33,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en interpretacion perfil canto guitarra piano:2002",
       "planId": "bedelias-cenurln-tecnicatura-en-interpretacion-perfil-canto-guitarra-piano-2002",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-interpretacion-perfil-canto-guitarra-piano-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 33
+      },
+      "after": {
+        "publishedCourses": 33,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 33,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en tecnologias de la imagen fotografica:2008",
       "planId": "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008",
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 15
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 15
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 15,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en diseno de paisaje:2008",
       "planId": "bedelias-cure-licenciatura-en-diseno-de-paisaje-2008",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-licenciatura-en-diseno-de-paisaje-2008.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "maldonado"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 303
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 302
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 302,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en gestion ambiental:2011",
       "planId": "bedelias-cure-licenciatura-en-gestion-ambiental-2011",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-licenciatura-en-gestion-ambiental-2011.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "maldonado",
         "rocha",
         "treinta-y-tres"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 72
+      },
+      "after": {
+        "publishedCourses": 72,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 72,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en lenguajes y medios audiovisuales:2011",
       "planId": "bedelias-cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-licenciatura-en-lenguajes-y-medios-audiovisuales-2011.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "maldonado"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 13
+      },
+      "after": {
+        "publishedCourses": 13,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 13,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en turismo:2014",
       "planId": "bedelias-cure-licenciatura-en-turismo-2014",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-licenciatura-en-turismo-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "maldonado",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 381
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 366
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 353,
+        "historical-equivalent": 13,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en artes artes plasticas y visuales:2013",
       "planId": "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "rocha"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 17
+      },
+      "after": {
+        "publishedCourses": 17,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 17,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en telecomunicaciones:2009",
       "planId": "bedelias-cure-tecnologo-en-telecomunicaciones-2009",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-tecnologo-en-telecomunicaciones-2009.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "rocha",
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 40
+      },
+      "after": {
+        "publishedCourses": 13,
+        "hiddenCourses": 27
+      },
+      "statuses": {
+        "verified": 13,
+        "candidate": 27,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo minero:2013",
       "planId": "bedelias-cure-tecnologo-minero-2013",
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-tecnologo-minero-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "treinta-y-tres"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 48
+      },
+      "after": {
+        "publishedCourses": 25,
+        "hiddenCourses": 24
+      },
+      "statuses": {
+        "verified": 25,
+        "candidate": 23,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 1
+      }
     },
     {
       "identity": "tecnologo en produccion equina:2022",
       "planId": "bedelias-cucel-tecnologo-en-produccion-equina-2022",
       "facultyCode": "CUCEL",
       "snapshotPath": "data/bedelias/cucel-tecnologo-en-produccion-equina-2022.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "melo-cerro-largo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 46
+      },
+      "after": {
+        "publishedCourses": 46,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 46,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en sistemas integrados de produccion agropecuaria:2022",
       "planId": "bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022",
       "facultyCode": "CUCEL",
       "snapshotPath": "data/bedelias/cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "melo-cerro-largo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 46
+      },
+      "after": {
+        "publishedCourses": 3,
+        "hiddenCourses": 43
+      },
+      "statuses": {
+        "verified": 3,
+        "candidate": 43,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en educacion fisica:2014",
       "planId": "bedelias-cur-licenciatura-en-educacion-fisica-2014",
       "facultyCode": "CUR",
       "snapshotPath": "data/bedelias/cur-licenciatura-en-educacion-fisica-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "rivera"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 440
+      },
+      "after": {
+        "publishedCourses": 34,
+        "hiddenCourses": 406
+      },
+      "statuses": {
+        "verified": 34,
+        "candidate": 406,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en recursos naturales:2010",
       "planId": "bedelias-cur-licenciatura-en-recursos-naturales-2010",
       "facultyCode": "CUR",
       "snapshotPath": "data/bedelias/cur-licenciatura-en-recursos-naturales-2010.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "rivera"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 379
+      },
+      "after": {
+        "publishedCourses": 2,
+        "hiddenCourses": 377
+      },
+      "statuses": {
+        "verified": 2,
+        "candidate": 377,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en artes plasticas y visuales:2017",
       "planId": "bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017",
       "facultyCode": "CUR",
       "snapshotPath": "data/bedelias/cur-tecnicatura-en-artes-plasticas-y-visuales-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "rivera"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 16
+      },
+      "after": {
+        "publishedCourses": 16,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 16,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en gestion de recursos naturales:2011",
       "planId": "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011",
       "facultyCode": "CUR",
       "snapshotPath": "data/bedelias/cur-tecnicatura-en-gestion-de-recursos-naturales-2011.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "rivera"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 76
+      },
+      "after": {
+        "publishedCourses": 2,
+        "hiddenCourses": 74
+      },
+      "statuses": {
+        "verified": 2,
+        "candidate": 74,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en madera:2012",
       "planId": "bedelias-cur-tecnologo-en-madera-2012",
       "facultyCode": "CUR",
       "snapshotPath": "data/bedelias/cur-tecnologo-en-madera-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "rivera"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 64
+      },
+      "after": {
+        "publishedCourses": 9,
+        "hiddenCourses": 55
+      },
+      "statuses": {
+        "verified": 9,
+        "candidate": 55,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria forestal:2013",
       "planId": "bedelias-cut-ingenieria-forestal-2013",
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-ingenieria-forestal-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 21
+      },
+      "after": {
+        "publishedCourses": 21,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 21,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en economia agricola y gestion de agronegocios:2022",
       "planId": "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 70
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 70
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 70,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en desarrollo regional sustentable:2013",
       "planId": "bedelias-cut-tecnicatura-en-desarrollo-regional-sustentable-2013",
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-tecnicatura-en-desarrollo-regional-sustentable-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 28
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnico operador de alimentos:2011",
       "planId": "bedelias-cut-tecnico-operador-de-alimentos-2011",
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-tecnico-operador-de-alimentos-2011.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 24
+      },
+      "after": {
+        "publishedCourses": 24,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 24,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo carnico:2010",
       "planId": "bedelias-cut-tecnologo-carnico-2010",
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-tecnologo-carnico-2010.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "tacuarembo",
         "durazno"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 34
+      },
+      "after": {
+        "publishedCourses": 34,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 34,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura universitaria en bienes culturales:2021",
       "planId": "bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021",
       "facultyCode": "CENURSO",
       "snapshotPath": "data/bedelias/cenurso-tecnicatura-universitaria-en-bienes-culturales-2021.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "colonia",
         "paysandu",
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 64
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 63
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 63,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en administracion y contabilidad:2012",
       "planId": "bedelias-cenurso-tecnologo-en-administracion-y-contabilidad-2012",
       "facultyCode": "CENURSO",
       "snapshotPath": "data/bedelias/cenurso-tecnologo-en-administracion-y-contabilidad-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "colonia",
         "mercedes",
@@ -344,684 +806,1660 @@
         "maldonado",
         "rocha",
         "treinta-y-tres"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 46
+      },
+      "after": {
+        "publishedCourses": 46,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 46,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en nutricion:2014",
       "planId": "bedelias-enut-licenciatura-en-nutricion-2014",
       "facultyCode": "ENUT",
       "snapshotPath": "data/bedelias/enut-licenciatura-en-nutricion-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu-solo-ciclo-iv"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 33
+      },
+      "after": {
+        "publishedCourses": 33,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 33,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingeniero agronomo:2020",
       "planId": "bedelias-fagro-ingeniero-agronomo-2020",
       "facultyCode": "FAGRO",
       "snapshotPath": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 717
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 717
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 717,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en arte digital y electronico:2013",
       "planId": "bedelias-fartes-licenciatura-en-arte-digital-y-electronico-2013",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-arte-digital-y-electronico-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 18
+      },
+      "after": {
+        "publishedCourses": 18,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 18,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en artes artes plasticas y visuales:2002",
       "planId": "bedelias-fartes-licenciatura-en-artes-artes-plasticas-y-visuales-2002",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-artes-artes-plasticas-y-visuales-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 10
+      },
+      "after": {
+        "publishedCourses": 10,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 10,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en artes ceramica:2002",
       "planId": "bedelias-fartes-licenciatura-en-artes-ceramica-2002",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-artes-ceramica-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 10
+      },
+      "after": {
+        "publishedCourses": 10,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 10,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en artes dibujo y pintura:2002",
       "planId": "bedelias-fartes-licenciatura-en-artes-dibujo-y-pintura-2002",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-artes-dibujo-y-pintura-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 10
+      },
+      "after": {
+        "publishedCourses": 10,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 10,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en artes diseno grafico:2002",
       "planId": "bedelias-fartes-licenciatura-en-artes-diseno-grafico-2002",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-artes-diseno-grafico-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 10
+      },
+      "after": {
+        "publishedCourses": 10,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 10,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en artes escultura y volumen en el espacio:2002",
       "planId": "bedelias-fartes-licenciatura-en-artes-escultura-y-volumen-en-el-espacio-2002",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-artes-escultura-y-volumen-en-el-espacio-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 10
+      },
+      "after": {
+        "publishedCourses": 10,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 10,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en artes fotografia:2002",
       "planId": "bedelias-fartes-licenciatura-en-artes-fotografia-2002",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-artes-fotografia-2002.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 10
+      },
+      "after": {
+        "publishedCourses": 10,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 10,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en composicion:1987",
       "planId": "bedelias-fartes-licenciatura-en-composicion-1987",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-composicion-1987.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
-      "campusIds": []
+      "extractedCompositionAvailable": true,
+      "campusIds": [],
+      "before": {
+        "publishedCourses": 130
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 129
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 129,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en danza contemporanea:2018",
       "planId": "bedelias-fartes-licenciatura-en-danza-contemporanea-2018",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-danza-contemporanea-2018.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 417
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 417
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 417,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en direccion coral:1987",
       "planId": "bedelias-fartes-licenciatura-en-direccion-coral-1987",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-direccion-coral-1987.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
-      "campusIds": []
+      "extractedCompositionAvailable": true,
+      "campusIds": [],
+      "before": {
+        "publishedCourses": 123
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 122
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 122,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en direccion orquestal:1987",
       "planId": "bedelias-fartes-licenciatura-en-direccion-orquestal-1987",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-direccion-orquestal-1987.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
-      "campusIds": []
+      "extractedCompositionAvailable": true,
+      "campusIds": [],
+      "before": {
+        "publishedCourses": 120
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 119
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 119,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en interpretacion musical:2005",
       "planId": "bedelias-fartes-licenciatura-en-interpretacion-musical-2005",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-interpretacion-musical-2005.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 1026
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 1025
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 1025,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en musica:2005",
       "planId": "bedelias-fartes-licenciatura-en-musica-2005",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-musica-2005.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 656
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 656
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 656,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en musicologia:1987",
       "planId": "bedelias-fartes-licenciatura-en-musicologia-1987",
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-musicologia-1987.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
-      "campusIds": []
+      "extractedCompositionAvailable": true,
+      "campusIds": [],
+      "before": {
+        "publishedCourses": 145
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 144
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 144,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura biologia humana:2004",
       "planId": "bedelias-fcien-licenciatura-biologia-humana-2004",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-biologia-humana-2004.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto",
         "paysandu",
         "rivera",
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 2033
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 2032
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 2032,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en astronomia:2016",
       "planId": "bedelias-fcien-licenciatura-en-astronomia-2016",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-astronomia-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 187
+      },
+      "after": {
+        "publishedCourses": 5,
+        "hiddenCourses": 182
+      },
+      "statuses": {
+        "verified": 5,
+        "candidate": 182,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en bioquimica:2017",
       "planId": "bedelias-fcien-licenciatura-en-bioquimica-2017",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-bioquimica-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 429
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 428
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 428,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en ciencias biologicas:2017",
       "planId": "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-ciencias-biologicas-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 978
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 977
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 977,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en ciencias de la atmosfera:2007",
       "planId": "bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-ciencias-de-la-atmosfera-2007.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 238
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 237
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 237,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en fisica:2019",
       "planId": "bedelias-fcien-licenciatura-en-fisica-2019",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-fisica-2019.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 291
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 290
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 290,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en fisica medica:2025",
       "planId": "bedelias-fcien-licenciatura-en-fisica-medica-2025",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-fisica-medica-2025.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 49
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 48
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 48,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en geografia:2018",
       "planId": "bedelias-fcien-licenciatura-en-geografia-2018",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-geografia-2018.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 168
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 167
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 167,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en geologia:2018",
       "planId": "bedelias-fcien-licenciatura-en-geologia-2018",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-geologia-2018.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 221
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 220
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 220,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en matematica:2014",
       "planId": "bedelias-fcien-licenciatura-en-matematica-2014",
       "facultyCode": "FCIEN",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-matematica-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 367
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 366
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 366,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "contador publico:2024",
       "planId": "bedelias-fcea-contador-publico-2024",
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-contador-publico-2024.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 128
+      },
+      "after": {
+        "publishedCourses": 2,
+        "hiddenCourses": 126
+      },
+      "statuses": {
+        "verified": 2,
+        "candidate": 126,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en administracion:2012",
       "planId": "bedelias-fcea-licenciatura-en-administracion-2012",
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-licenciatura-en-administracion-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 406
+      },
+      "after": {
+        "publishedCourses": 38,
+        "hiddenCourses": 430
+      },
+      "statuses": {
+        "verified": 38,
+        "candidate": 368,
+        "historical-equivalent": 0,
+        "administrative": 62,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en economia:2012",
       "planId": "bedelias-fcea-licenciatura-en-economia-2012",
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-licenciatura-en-economia-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 427
+      },
+      "after": {
+        "publishedCourses": 44,
+        "hiddenCourses": 456
+      },
+      "statuses": {
+        "verified": 44,
+        "candidate": 383,
+        "historical-equivalent": 0,
+        "administrative": 73,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en estadistica:2014",
       "planId": "bedelias-fcea-licenciatura-en-estadistica-2014",
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-licenciatura-en-estadistica-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 263
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 263
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 263,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnico en administracion:2014",
       "planId": "bedelias-fcea-tecnico-en-administracion-2014",
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-tecnico-en-administracion-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 156
+      },
+      "after": {
+        "publishedCourses": 40,
+        "hiddenCourses": 158
+      },
+      "statuses": {
+        "verified": 40,
+        "candidate": 116,
+        "historical-equivalent": 0,
+        "administrative": 42,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en gestion universitaria:2018",
       "planId": "bedelias-fcea-tecnologo-en-gestion-universitaria-2018",
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-tecnologo-en-gestion-universitaria-2018.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 45
+      },
+      "after": {
+        "publishedCourses": 45,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 45,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en ciencia politica:2009",
       "planId": "bedelias-fcs-licenciatura-en-ciencia-politica-2009",
       "facultyCode": "FCS",
       "snapshotPath": "data/bedelias/fcs-licenciatura-en-ciencia-politica-2009.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 57
+      },
+      "after": {
+        "publishedCourses": 57,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 57,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en desarrollo:2009",
       "planId": "bedelias-fcs-licenciatura-en-desarrollo-2009",
       "facultyCode": "FCS",
       "snapshotPath": "data/bedelias/fcs-licenciatura-en-desarrollo-2009.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 55
+      },
+      "after": {
+        "publishedCourses": 55,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 55,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en sociologia:2009",
       "planId": "bedelias-fcs-licenciatura-en-sociologia-2009",
       "facultyCode": "FCS",
       "snapshotPath": "data/bedelias/fcs-licenciatura-en-sociologia-2009.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 41
+      },
+      "after": {
+        "publishedCourses": 41,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 41,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en trabajo social:2009",
       "planId": "bedelias-fcs-licenciatura-en-trabajo-social-2009",
       "facultyCode": "FCS",
       "snapshotPath": "data/bedelias/fcs-licenciatura-en-trabajo-social-2009.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 50
+      },
+      "after": {
+        "publishedCourses": 50,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 50,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "abogacia:2016",
       "planId": "bedelias-fder-abogacia-2016",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-abogacia-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 510
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 510
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 510,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en relaciones internacionales:2013",
       "planId": "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-licenciatura-en-relaciones-internacionales-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 437
+      },
+      "after": {
+        "publishedCourses": 43,
+        "hiddenCourses": 394
+      },
+      "statuses": {
+        "verified": 43,
+        "candidate": 394,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en relaciones laborales:2012",
       "planId": "bedelias-fder-licenciatura-en-relaciones-laborales-2012",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-licenciatura-en-relaciones-laborales-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 37
+      },
+      "after": {
+        "publishedCourses": 37,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 37,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "notariado:2016",
       "planId": "bedelias-fder-notariado-2016",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-notariado-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 474
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 474
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 474,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en relaciones laborales:1995",
       "planId": "bedelias-fder-tecnicatura-en-relaciones-laborales-1995",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-tecnicatura-en-relaciones-laborales-1995.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
-      "campusIds": []
+      "extractedCompositionAvailable": true,
+      "campusIds": [],
+      "before": {
+        "publishedCourses": 13
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 13
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 13,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "traductorado publico aleman:2022",
       "planId": "bedelias-fder-traductorado-publico-aleman-2022",
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-traductorado-publico-aleman-2022.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 106
+      },
+      "after": {
+        "publishedCourses": 106,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 106,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en enfermeria:2016",
       "planId": "bedelias-fenf-licenciatura-en-enfermeria-2016",
       "facultyCode": "FENF",
       "snapshotPath": "data/bedelias/fenf-licenciatura-en-enfermeria-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "rivera",
         "rocha",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 223
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 223
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 223,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en enfermeria profesionalizacion de auxiliar:1999",
       "planId": "bedelias-fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999",
       "facultyCode": "FENF",
       "snapshotPath": "data/bedelias/fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "mercedes-soriano",
         "colonia-del-sacramento"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 25
+      },
+      "after": {
+        "publishedCourses": 25,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 25,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "antropologia:2014",
       "planId": "bedelias-fhum-antropologia-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-antropologia-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 273
+      },
+      "after": {
+        "publishedCourses": 1,
+        "hiddenCourses": 272
+      },
+      "statuses": {
+        "verified": 1,
+        "candidate": 272,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "correccion de estilo:2014",
       "planId": "bedelias-fhum-correccion-de-estilo-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-correccion-de-estilo-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 177
+      },
+      "after": {
+        "publishedCourses": 31,
+        "hiddenCourses": 149
+      },
+      "statuses": {
+        "verified": 31,
+        "candidate": 146,
+        "historical-equivalent": 3,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "dramaturgia:2015",
       "planId": "bedelias-fhum-dramaturgia-2015",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-dramaturgia-2015.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 130
+      },
+      "after": {
+        "publishedCourses": 80,
+        "hiddenCourses": 58
+      },
+      "statuses": {
+        "verified": 80,
+        "candidate": 50,
+        "historical-equivalent": 1,
+        "administrative": 0,
+        "rejected": 7
+      }
     },
     {
       "identity": "educacion:2014",
       "planId": "bedelias-fhum-educacion-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-educacion-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 300
+      },
+      "after": {
+        "publishedCourses": 50,
+        "hiddenCourses": 250
+      },
+      "statuses": {
+        "verified": 50,
+        "candidate": 250,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "filosofia:2010",
       "planId": "bedelias-fhum-filosofia-2010",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-filosofia-2010.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 280
+      },
+      "after": {
+        "publishedCourses": 32,
+        "hiddenCourses": 251
+      },
+      "statuses": {
+        "verified": 32,
+        "candidate": 248,
+        "historical-equivalent": 3,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "historia:2014",
       "planId": "bedelias-fhum-historia-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-historia-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 203
+      },
+      "after": {
+        "publishedCourses": 49,
+        "hiddenCourses": 158
+      },
+      "statuses": {
+        "verified": 49,
+        "candidate": 154,
+        "historical-equivalent": 3,
+        "administrative": 0,
+        "rejected": 1
+      }
     },
     {
       "identity": "interpretacion lsu espanol lsu:2014",
       "planId": "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-interpretacion-lsu-espanol-lsu-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 201
+      },
+      "after": {
+        "publishedCourses": 195,
+        "hiddenCourses": 6
+      },
+      "statuses": {
+        "verified": 195,
+        "candidate": 6,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "letras:2014",
       "planId": "bedelias-fhum-letras-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-letras-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 269
+      },
+      "after": {
+        "publishedCourses": 159,
+        "hiddenCourses": 123
+      },
+      "statuses": {
+        "verified": 159,
+        "candidate": 110,
+        "historical-equivalent": 13,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en estudios sordos:2025",
       "planId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 211
+      },
+      "after": {
+        "publishedCourses": 205,
+        "hiddenCourses": 6
+      },
+      "statuses": {
+        "verified": 205,
+        "candidate": 6,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "linguistica:2014",
       "planId": "bedelias-fhum-linguistica-2014",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-linguistica-2014.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 237
+      },
+      "after": {
+        "publishedCourses": 46,
+        "hiddenCourses": 191
+      },
+      "statuses": {
+        "verified": 46,
+        "candidate": 191,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "museologia:2011",
       "planId": "bedelias-fhum-museologia-2011",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-museologia-2011.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 392
+      },
+      "after": {
+        "publishedCourses": 23,
+        "hiddenCourses": 369
+      },
+      "statuses": {
+        "verified": 23,
+        "candidate": 369,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo int y trad lsu esp:2025",
       "planId": "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
       "facultyCode": "FHUM",
       "snapshotPath": "data/bedelias/fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 201
+      },
+      "after": {
+        "publishedCourses": 195,
+        "hiddenCourses": 6
+      },
+      "statuses": {
+        "verified": 195,
+        "candidate": 6,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "archivologia:2012",
       "planId": "bedelias-fic-archivologia-2012",
       "facultyCode": "FIC",
       "snapshotPath": "data/bedelias/fic-archivologia-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 45
+      },
+      "after": {
+        "publishedCourses": 45,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 45,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "bibliotecologia:2012",
       "planId": "bedelias-fic-bibliotecologia-2012",
       "facultyCode": "FIC",
       "snapshotPath": "data/bedelias/fic-bibliotecologia-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 49
+      },
+      "after": {
+        "publishedCourses": 49,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 49,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en comunicacion:2012",
       "planId": "bedelias-fic-licenciatura-en-comunicacion-2012",
       "facultyCode": "FIC",
       "snapshotPath": "data/bedelias/fic-licenciatura-en-comunicacion-2012.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 60
+      },
+      "after": {
+        "publishedCourses": 60,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 60,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en ingenieria de medios:2018",
       "planId": "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018",
       "facultyCode": "FIC",
       "snapshotPath": "data/bedelias/fic-licenciatura-en-ingenieria-de-medios-2018.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 29
+      },
+      "after": {
+        "publishedCourses": 9,
+        "hiddenCourses": 20
+      },
+      "statuses": {
+        "verified": 9,
+        "candidate": 20,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria de produccion:2010",
       "planId": "bedelias-fing-ingenieria-de-produccion-2010",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-de-produccion-2010.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "maldonado",
@@ -1030,589 +2468,1387 @@
         "rocha",
         "salto",
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 261
+      },
+      "after": {
+        "publishedCourses": 58,
+        "hiddenCourses": 203
+      },
+      "statuses": {
+        "verified": 58,
+        "candidate": 203,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria en agrimensura:2023",
       "planId": "bedelias-fing-ingenieria-en-agrimensura-2023",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-en-agrimensura-2023.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 79
+      },
+      "after": {
+        "publishedCourses": 2,
+        "hiddenCourses": 77
+      },
+      "statuses": {
+        "verified": 2,
+        "candidate": 77,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria en sistemas de comunicacion:2018",
       "planId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-en-sistemas-de-comunicacion-2018.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 224
+      },
+      "after": {
+        "publishedCourses": 4,
+        "hiddenCourses": 220
+      },
+      "statuses": {
+        "verified": 4,
+        "candidate": 220,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria fisico matematica:2017",
       "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-fisico-matematica-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 331
+      },
+      "after": {
+        "publishedCourses": 71,
+        "hiddenCourses": 260
+      },
+      "statuses": {
+        "verified": 71,
+        "candidate": 260,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria industrial mecanica:1997",
       "planId": "bedelias-fing-ingenieria-industrial-mecanica-1997",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-industrial-mecanica-1997.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu",
         "tacuarembo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 462
+      },
+      "after": {
+        "publishedCourses": 42,
+        "hiddenCourses": 420
+      },
+      "statuses": {
+        "verified": 42,
+        "candidate": 420,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria naval:1997",
       "planId": "bedelias-fing-ingenieria-naval-1997",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-naval-1997.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 328
+      },
+      "after": {
+        "publishedCourses": 9,
+        "hiddenCourses": 319
+      },
+      "statuses": {
+        "verified": 9,
+        "candidate": 319,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria quimica:2021",
       "planId": "bedelias-fing-ingenieria-quimica-2021",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-ingenieria-quimica-2021.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 380
+      },
+      "after": {
+        "publishedCourses": 27,
+        "hiddenCourses": 353
+      },
+      "statuses": {
+        "verified": 27,
+        "candidate": 353,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "lic en ingenieria biologica:2013",
       "planId": "bedelias-fing-lic-en-ingenieria-biologica-2013",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-lic-en-ingenieria-biologica-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo-tramo-inicial",
         "salto-tramo-inicial",
         "paysandu-carrera-completa"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 23
+      },
+      "after": {
+        "publishedCourses": 23,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 23,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en computacion:2025",
       "planId": "bedelias-fing-licenciatura-en-computacion-2025",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-licenciatura-en-computacion-2025.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "tacuarembo",
         "colonia",
         "salto",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 47
+      },
+      "after": {
+        "publishedCourses": 3,
+        "hiddenCourses": 44
+      },
+      "statuses": {
+        "verified": 3,
+        "candidate": 44,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en cartografia:2011",
       "planId": "bedelias-fing-tecnologo-en-cartografia-2011",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-tecnologo-en-cartografia-2011.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 104
+      },
+      "after": {
+        "publishedCourses": 4,
+        "hiddenCourses": 100
+      },
+      "statuses": {
+        "verified": 4,
+        "candidate": 100,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en informatica:2007",
       "planId": "bedelias-fing-tecnologo-en-informatica-2007",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-tecnologo-en-informatica-2007.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "florida",
         "san-jose",
         "maldonado",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 59
+      },
+      "after": {
+        "publishedCourses": 4,
+        "hiddenCourses": 55
+      },
+      "statuses": {
+        "verified": 4,
+        "candidate": 55,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo industrial mecanico:2016",
       "planId": "bedelias-fing-tecnologo-industrial-mecanico-2016",
       "facultyCode": "FING",
       "snapshotPath": "data/bedelias/fing-tecnologo-industrial-mecanico-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 48
+      },
+      "after": {
+        "publishedCourses": 5,
+        "hiddenCourses": 43
+      },
+      "statuses": {
+        "verified": 5,
+        "candidate": 43,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "doctor en medicina:2008",
       "planId": "bedelias-fmed-doctor-en-medicina-2008",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-doctor-en-medicina-2008.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "region-litoral-norte-paysandu-y-salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 2753
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 2753
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 2753,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en fisioterapia:2006",
       "planId": "bedelias-fmed-licenciatura-en-fisioterapia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-fisioterapia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 29
+      },
+      "after": {
+        "publishedCourses": 29,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 29,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en fonoaudiologia:2006",
       "planId": "bedelias-fmed-licenciatura-en-fonoaudiologia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-fonoaudiologia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 42
+      },
+      "after": {
+        "publishedCourses": 42,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 42,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en imagenologia:2006",
       "planId": "bedelias-fmed-licenciatura-en-imagenologia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-imagenologia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo-carrera-completa",
         "paysandu-carrera-completa",
         "rio-negro-3-er-y-4-ano"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 29
+      },
+      "after": {
+        "publishedCourses": 29,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 29,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en instrumentacion quirurgica:2006",
       "planId": "bedelias-fmed-licenciatura-en-instrumentacion-quirurgica-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-instrumentacion-quirurgica-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 28
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en laboratorio clinico:2006",
       "planId": "bedelias-fmed-licenciatura-en-laboratorio-clinico-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-laboratorio-clinico-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 28
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en neumocardiologia:2006",
       "planId": "bedelias-fmed-licenciatura-en-neumocardiologia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-neumocardiologia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 28
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en neurofisiologia clinica:2006",
       "planId": "bedelias-fmed-licenciatura-en-neurofisiologia-clinica-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-neurofisiologia-clinica-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 28
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en oftalmologia:2006",
       "planId": "bedelias-fmed-licenciatura-en-oftalmologia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-oftalmologia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 22
+      },
+      "after": {
+        "publishedCourses": 22,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 22,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en psicomotricidad:2006",
       "planId": "bedelias-fmed-licenciatura-en-psicomotricidad-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-psicomotricidad-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 26
+      },
+      "after": {
+        "publishedCourses": 26,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 26,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en registros medicos:2006",
       "planId": "bedelias-fmed-licenciatura-en-registros-medicos-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-registros-medicos-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 28
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en terapia ocupacional:2006",
       "planId": "bedelias-fmed-licenciatura-en-terapia-ocupacional-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-licenciatura-en-terapia-ocupacional-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 38
+      },
+      "after": {
+        "publishedCourses": 38,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 38,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "obstetra partera:1990",
       "planId": "bedelias-fmed-obstetra-partera-1990",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-obstetra-partera-1990.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 33
+      },
+      "after": {
+        "publishedCourses": 33,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 33,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en anatomia patologica:2006",
       "planId": "bedelias-fmed-tecnicatura-en-anatomia-patologica-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-anatomia-patologica-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 13
+      },
+      "after": {
+        "publishedCourses": 13,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 13,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en hemoterapia:2006",
       "planId": "bedelias-fmed-tecnicatura-en-hemoterapia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-hemoterapia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 21
+      },
+      "after": {
+        "publishedCourses": 21,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 21,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en podologia:2006",
       "planId": "bedelias-fmed-tecnicatura-en-podologia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-podologia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 23
+      },
+      "after": {
+        "publishedCourses": 23,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 23,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en radioisotopos:2006",
       "planId": "bedelias-fmed-tecnicatura-en-radioisotopos-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-radioisotopos-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 17
+      },
+      "after": {
+        "publishedCourses": 17,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 17,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en radioterapia:2006",
       "planId": "bedelias-fmed-tecnicatura-en-radioterapia-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-radioterapia-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 21
+      },
+      "after": {
+        "publishedCourses": 21,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 21,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en salud ocupacional:2006",
       "planId": "bedelias-fmed-tecnicatura-en-salud-ocupacional-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnicatura-en-salud-ocupacional-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 20
+      },
+      "after": {
+        "publishedCourses": 20,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 20,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo en cosmetologia medica:2006",
       "planId": "bedelias-fmed-tecnologo-en-cosmetologia-medica-2006",
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-tecnologo-en-cosmetologia-medica-2006.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 35
+      },
+      "after": {
+        "publishedCourses": 35,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 35,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "asistente en odontologia:2017",
       "planId": "bedelias-odon-asistente-en-odontologia-2017",
       "facultyCode": "ODON",
       "snapshotPath": "data/bedelias/odon-asistente-en-odontologia-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo-facultad-de-odontologia"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 22
+      },
+      "after": {
+        "publishedCourses": 22,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 22,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "higienista en odontologia:2017",
       "planId": "bedelias-odon-higienista-en-odontologia-2017",
       "facultyCode": "ODON",
       "snapshotPath": "data/bedelias/odon-higienista-en-odontologia-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo-facultad-de-odontologia"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 22
+      },
+      "after": {
+        "publishedCourses": 22,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 22,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "laboratorista en odontologia:2017",
       "planId": "bedelias-odon-laboratorista-en-odontologia-2017",
       "facultyCode": "ODON",
       "snapshotPath": "data/bedelias/odon-laboratorista-en-odontologia-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo-facultad-de-odontologia"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 19
+      },
+      "after": {
+        "publishedCourses": 19,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 19,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "odontologia:2011",
       "planId": "bedelias-odon-odontologia-2011",
       "facultyCode": "ODON",
       "snapshotPath": "data/bedelias/odon-odontologia-2011.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 377
+      },
+      "after": {
+        "publishedCourses": 47,
+        "hiddenCourses": 330
+      },
+      "statuses": {
+        "verified": 47,
+        "candidate": 330,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en psicologia:2013",
       "planId": "bedelias-psico-licenciatura-en-psicologia-2013",
       "facultyCode": "PSICO",
       "snapshotPath": "data/bedelias/psico-licenciatura-en-psicologia-2013.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 2946
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 2946
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 2946,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "bachiller en ciencias quimicas:2000",
       "planId": "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-bachiller-en-ciencias-quimicas-2000.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 169
+      },
+      "after": {
+        "publishedCourses": 26,
+        "hiddenCourses": 143
+      },
+      "statuses": {
+        "verified": 26,
+        "candidate": 143,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "bioquimico clinico:2015",
       "planId": "bedelias-fq-bioquimico-clinico-2015",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-bioquimico-clinico-2015.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 455
+      },
+      "after": {
+        "publishedCourses": 21,
+        "hiddenCourses": 434
+      },
+      "statuses": {
+        "verified": 21,
+        "candidate": 434,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "ingenieria de alimentos:2003",
       "planId": "bedelias-fq-ingenieria-de-alimentos-2003",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-ingenieria-de-alimentos-2003.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 394
+      },
+      "after": {
+        "publishedCourses": 5,
+        "hiddenCourses": 389
+      },
+      "statuses": {
+        "verified": 5,
+        "candidate": 389,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en biotecnologia:2024",
       "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-licenciatura-en-biotecnologia-2024.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 246
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 246
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 246,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en quimica:2016",
       "planId": "bedelias-fq-licenciatura-en-quimica-2016",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-licenciatura-en-quimica-2016.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 326
+      },
+      "after": {
+        "publishedCourses": 11,
+        "hiddenCourses": 315
+      },
+      "statuses": {
+        "verified": 11,
+        "candidate": 315,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en tecnologias de la quimica:2022",
       "planId": "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-licenciatura-en-tecnologias-de-la-quimica-2022.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 294
+      },
+      "after": {
+        "publishedCourses": 294,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 294,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "quimico:2015",
       "planId": "bedelias-fq-quimico-2015",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-quimico-2015.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 724
+      },
+      "after": {
+        "publishedCourses": 719,
+        "hiddenCourses": 5
+      },
+      "statuses": {
+        "verified": 719,
+        "candidate": 5,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnico bach en cs quimicas:2015",
       "planId": "bedelias-fq-tecnico-bach-en-cs-quimicas-2015",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-tecnico-bach-en-cs-quimicas-2015.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "salto"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 493
+      },
+      "after": {
+        "publishedCourses": 28,
+        "hiddenCourses": 465
+      },
+      "statuses": {
+        "verified": 28,
+        "candidate": 465,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnologo quimico:2025",
       "planId": "bedelias-fq-tecnologo-quimico-2025",
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-tecnologo-quimico-2025.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 40
+      },
+      "after": {
+        "publishedCourses": 40,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 40,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "doctor en ciencias veterinarias:2021",
       "planId": "bedelias-fvet-doctor-en-ciencias-veterinarias-2021",
       "facultyCode": "FVET",
       "snapshotPath": "data/bedelias/fvet-doctor-en-ciencias-veterinarias-2021.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "sur-montevideo-y-san-jose-instituto-de-produccion-animal",
         "norte-salto-1-7-y-paysandu-8-10"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 73
+      },
+      "after": {
+        "publishedCourses": 73,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 73,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "licenciatura en educacion fisica:2017",
       "planId": "bedelias-isef-licenciatura-en-educacion-fisica-2017",
       "facultyCode": "ISEF",
       "snapshotPath": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "maldonado",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 1434
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 1434
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 1434,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en deportes:2007",
       "planId": "bedelias-isef-tecnicatura-en-deportes-2007",
       "facultyCode": "ISEF",
       "snapshotPath": "data/bedelias/isef-tecnicatura-en-deportes-2007.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "structure-only",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo",
         "rocha",
         "paysandu"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 758
+      },
+      "after": {
+        "publishedCourses": 0,
+        "hiddenCourses": 758
+      },
+      "statuses": {
+        "verified": 0,
+        "candidate": 758,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     },
     {
       "identity": "tecnicatura en guardavidas:2025",
       "planId": "bedelias-isef-tecnicatura-en-guardavidas-2025",
       "facultyCode": "ISEF",
       "snapshotPath": "data/bedelias/isef-tecnicatura-en-guardavidas-2025.json",
-      "auditStatus": "official-evidence-complete",
+      "planAuditStatus": "official-evidence-complete",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
+      "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
-      ]
+      ],
+      "before": {
+        "publishedCourses": 18
+      },
+      "after": {
+        "publishedCourses": 18,
+        "hiddenCourses": 0
+      },
+      "statuses": {
+        "verified": 18,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      }
     }
   ],
-  "contentHash": "sha256:c609b5c8aa2ed79e32cbf1c1c687ce4823035a41cc5aae03a0ed35de29793d96"
+  "contentHash": "sha256:192fb6cc169bd60569eaeef2b7d23d3ba625c3a7e9b10013a988e660cf76be69"
 }

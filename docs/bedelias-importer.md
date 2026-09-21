@@ -68,7 +68,23 @@ Cada conjunto contiene:
 - texto original de cada regla;
 - incidencias automáticas y hash reproducible.
 
-El JSON extraído es un insumo, no una publicación automática. Para habilitar una carrera en la aplicación debe pasar validaciones estructurales y una comparación manual inicial con Bedelías.
+El JSON extraído es un insumo, no una publicación automática. Para habilitar una carrera en la aplicación debe pasar validaciones estructurales y una comparación con una fuente curricular oficial independiente de Bedelías.
+
+### Autoridad curricular y publicación
+
+La proyección separa `planAuditStatus` de `courseCatalogAuditStatus`. Confirmar título, sede, duración, créditos o estructura no confirma automáticamente las unidades curriculares de la composición.
+
+Cada materia proyectada conserva `authorityStatus` y referencias de procedencia para inclusión, identidad y créditos:
+
+- `verified`: una fuente curricular oficial respalda exactamente su inclusión;
+- `candidate`: sólo existe respaldo operativo o institucional insuficiente, normalmente la composición de Bedelías;
+- `historical-equivalent`: alias sustentado por una equivalencia o alternativa oficial;
+- `administrative`: reválida, créditos reconocidos u otro asiento no cursable;
+- `rejected`: entrada excluida mediante una decisión curada trazable.
+
+La malla, el buscador y el planificador normales sólo consumen `verified`. Los demás estados se conservan en la proyección o el snapshot para reconocer datos personales anteriores y alimentar revisiones posteriores. Nunca se promociona ni fusiona una materia mediante similitud de texto.
+
+`data/bedelias/inventory/ui-extracted-plans.json` es el informe determinista de contención: registra por plan los conteos antes y después, los cinco estados y la cobertura del catálogo. Se regenera junto con las proyecciones mediante `node scripts/build-extracted-academic-plans.mjs`.
 
 ## Áreas de formación y programas oficiales
 

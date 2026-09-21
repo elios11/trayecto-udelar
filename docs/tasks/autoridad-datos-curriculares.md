@@ -139,3 +139,10 @@ El estado pertenece a la materia dentro de un plan y revisión concretos. La vig
 3. D03 — reconciliación oficial por servicio, comenzando por los planes con mayor contaminación.
 
 No se amplía el catálogo global ni se inicia la Ola 3 de cuentas hasta cerrar D01 y D02. D03 continúa incrementalmente sin bloquear mejoras locales que no dependan de datos curriculares dudosos.
+
+## Estado recuperable
+
+- D01 implementado en el generador de proyecciones: contrato de autoridad, procedencia por campo, separación de auditorías y reporte determinista antes/después.
+- Los candidatos continúan en `projection.courses` para compatibilidad de importaciones, pero las rutas publicadas y la UI normal sólo aceptan `verified`.
+- Los aliases oficiales, asientos administrativos y exclusiones curadas quedan en `courseAuthority.records`; los snapshots originales no se modifican.
+- D02 sigue pendiente y será la única superficie donde se podrán consultar candidatos bajo demanda.

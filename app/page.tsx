@@ -159,6 +159,8 @@ type Course = {
   serviceCode?: string | null;
   ruleCoverage?: "published" | "partial" | "not-published" | "not-scraped" | "not-applicable";
   curricularBlock?: boolean;
+  authorityStatus?: "verified" | "candidate" | "historical-equivalent" | "administrative" | "rejected";
+  fieldProvenance?: { inclusion: string; name: string; credits: string };
   offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null };
 };
 
@@ -277,10 +279,11 @@ type CampusOption = {
 type RegisteredProjection = {
   schemaVersion: number;
   source: { reviewedAt: string | null; careerPage: string; planDocument: string; bedeliasExtractedAt: string; bedeliasContentHash: string; bedeliasPlanUrl?: string };
-  plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; compositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
+  plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; planAuditStatus?: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; courseCatalogAuditStatus?: "verified" | "partial" | "structure-only"; compositionAvailable?: boolean; verifiedCompositionAvailable?: boolean; extractedCompositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
-  courses: Array<{ id: string; bedeliasCode?: string; equivalentCourseIds?: string[]; equivalentBedeliasCodes?: string[]; name: string; credits: number; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean }>;
+  courses: Array<{ id: string; bedeliasCode?: string; equivalentCourseIds?: string[]; equivalentBedeliasCodes?: string[]; name: string; credits: number; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean; authorityStatus?: Course["authorityStatus"]; fieldProvenance?: Course["fieldProvenance"] }>;
   pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
+  publishedPathways?: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
   requirementGroupMap: Record<string, string>;
@@ -509,13 +512,14 @@ function buildQf2015Catalog(trajectoryId: string, planData: Qf2015Projection | n
 
 function buildRegisteredPlanCourses(pathwayId: string, data: RegisteredProjection | null): Course[] {
   if (!data) return [];
-  const pathway = resolveAcademicOption(data.pathways, pathwayId, Object.keys(data.pathways)[0] ?? "");
+  const publishedPathways = data.publishedPathways ?? data.pathways;
+  const pathway = resolveAcademicOption(publishedPathways, pathwayId, Object.keys(publishedPathways)[0] ?? "");
   if (!pathway) return [];
   const periods = new Map<string, number>();
   pathway.periods.forEach((period, index) => period.courseIds.forEach((id) => periods.set(id, index + 1)));
   const catalogIds = new Set(pathway.catalogCourseIds ?? []);
   return data.courses
-    .filter((course) => periods.has(course.id) || catalogIds.has(course.id))
+    .filter((course) => (course.authorityStatus ?? "verified") === "verified" && (periods.has(course.id) || catalogIds.has(course.id)))
     .map((course) => ({ ...course, semester: catalogIds.has(course.id) ? "opt" : periods.get(course.id)!, offered: [] }));
 }
 
@@ -995,8 +999,27 @@ export default function Home() {
   }, [registeredPlanData]);
   const isRegisteredPlan = isRegisteredAcademicPlan(planYear);
   const activeRegisteredPlan = registeredPlanData[planYear] ?? null;
-  const hasClosedOfficialEvidence = activeRegisteredPlan?.plan.auditStatus === "audited"
-    || activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete";
+  const hasClosedOfficialEvidence = activeRegisteredPlan?.plan.courseCatalogAuditStatus === "verified"
+    || (!activeRegisteredPlan?.plan.courseCatalogAuditStatus && (activeRegisteredPlan?.plan.auditStatus === "audited"
+      || activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete"));
+  const registeredCatalogStatusLabel = activeRegisteredPlan?.plan.courseCatalogAuditStatus === "verified"
+    ? `Malla normalizada · evidencia oficial cerrada · revisión ${activeRegisteredPlan.source.reviewedAt}`
+    : activeRegisteredPlan?.plan.courseCatalogAuditStatus === "partial"
+      ? "Catálogo parcial · sólo materias verificadas"
+      : activeRegisteredPlan?.plan.courseCatalogAuditStatus === "structure-only"
+        ? "Catálogo en validación · sin materias publicadas"
+        : activeRegisteredPlan?.plan.auditStatus === "audited"
+          ? `Proyección auditada · revisión ${activeRegisteredPlan.source.reviewedAt}`
+          : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete"
+            ? `Malla normalizada · evidencia oficial cerrada${activeRegisteredPlan?.plan.publishedRules ? ` · ${activeRegisteredPlan.plan.publishedRules} reglas` : ""}`
+            : `Composición Bedelías · auditoría oficial pendiente${activeRegisteredPlan?.plan.publishedRules ? ` · ${activeRegisteredPlan.plan.publishedRules} reglas` : ""}`;
+  const registeredPlanEyebrow = activeRegisteredPlan?.plan.courseCatalogAuditStatus === "partial"
+    ? "Catálogo curricular parcial"
+    : activeRegisteredPlan?.plan.courseCatalogAuditStatus === "structure-only"
+      ? "Catálogo en validación"
+      : activeRegisteredPlan?.plan.auditStatus === "audited"
+        ? "Plan vigente · proyección auditada"
+        : "Plan contrastado · malla normalizada";
   const activeProgressPlanId = isRegisteredPlan
     ? (registeredAcademicPlans[planYear]?.progressPlanId ?? planYear)
     : planYear;
@@ -1181,13 +1204,17 @@ export default function Home() {
     : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const activePlan2025Trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const activeRegisteredPathway = registeredPathwayEntries.find(([id]) => id === activeRegisteredPathwayId)?.[1];
+  const activeRegisteredPublishedPathway = activeRegisteredPlan?.publishedPathways?.[activeRegisteredPathwayId];
+  const activeRegisteredPeriods = activeRegisteredPlan?.publishedPathways
+    ? (activeRegisteredPublishedPathway?.periods ?? [])
+    : (activeRegisteredPathway?.periods ?? []);
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
   const pathwayCredentialId = isRegisteredPlan ? activeRegisteredPathway?.credentialId : undefined;
   const credential = creditStructure.credentials.find((item) => item.id === (pathwayCredentialId ?? credentialId)) ?? creditStructure.credentials[0];
   const credentialTargets = useMemo(() => new Map(credential.nodeRequirements.map((item) => [item.nodeId, item])), [credential]);
   const semesters = isRegisteredPlan
-    ? (activeRegisteredPathway?.periods ?? []).map((_, index) => index + 1)
+    ? activeRegisteredPeriods.map((_, index) => index + 1)
     : planYear === "2025"
     ? [
       ...(activePlan2025Trajectory.preSemester?.length ? [0] : []),
@@ -2985,7 +3012,7 @@ export default function Home() {
             </label>}
           </div>
           {appMode === "planner" ? (
-            <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Organizá cómo pensás cursar las materias de este plan. Esto no modifica sus requisitos, {usesPublishedHours ? "horas" : "créditos"} ni áreas oficiales. Tu planificación queda guardada en este dispositivo.{isRegisteredPlan && !hasClosedOfficialEvidence ? " Esta composición de Bedelías tiene auditoría oficial pendiente." : ""}</span></p>
+            <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Organizá cómo pensás cursar las materias de este plan. Esto no modifica sus requisitos, {usesPublishedHours ? "horas" : "créditos"} ni áreas oficiales. Tu planificación queda guardada en este dispositivo.{isRegisteredPlan && !hasClosedOfficialEvidence ? " El catálogo todavía está en validación y sólo incluye materias respaldadas por fuentes curriculares." : ""}</span></p>
           ) : isRegisteredPlan ? (
             <p className={`pilot-note ${activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-note"}`}><span className="pilot-note-mark" aria-hidden="true">{activeRegisteredPlan?.plan.auditStatus === "audited" ? "✓" : "i"}</span><span className="pilot-note-copy">{activeCampus ? `Sede: ${activeCampus.label}. ` : ""}{activeRegisteredPathway?.description} {activeRegisteredPlan?.plan.notice}</span></p>
           ) : planYear === "2025" ? (
@@ -3119,7 +3146,7 @@ export default function Home() {
               </details>;
             })}
           </div>
-          <p className="data-source">{isRegisteredPlan ? activeRegisteredPlan?.plan.auditStatus === "audited" ? "Las metas, etapas, perfiles y bloques provienen de documentación oficial auditada; el snapshot SGAE se usa como contraste." : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete" ? "Títulos, mínimos, sedes y recorridos se contrastaron con fuentes oficiales. Las unidades combinan la composición de Bedelías y las normalizaciones trazables indicadas en el plan." : "Las unidades y grupos visibles provienen de la composición de Bedelías. Títulos, mínimos, obligatoriedad y trayectoria conservan auditoría oficial pendiente salvo donde el aviso indique evidencia cerrada." : planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
+          <p className="data-source">{isRegisteredPlan ? activeRegisteredPlan?.plan.courseCatalogAuditStatus === "verified" ? "Las metas y las materias visibles provienen de documentación curricular oficial; el snapshot de Bedelías se usa como contraste." : activeRegisteredPlan?.plan.courseCatalogAuditStatus === "partial" ? "La estructura del plan está auditada. El catálogo visible contiene sólo materias respaldadas; otras entradas de Bedelías permanecen en validación." : "La estructura oficial del plan se conserva, pero su catálogo de materias todavía está en validación. Las entradas de Bedelías no se publican automáticamente." : planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
           </>}
         </aside>
 
@@ -3186,7 +3213,11 @@ export default function Home() {
                         </select>
                       </article>
                     ))}
-                    {availablePlannerCourses.length === 0 && <div className="catalog-empty"><span>✓</span><p>{plannerSearch ? "No hay materias que coincidan con la búsqueda." : "Todas las materias del catálogo están distribuidas."}</p></div>}
+                    {availablePlannerCourses.length === 0 && <div className="catalog-empty"><span>{isRegisteredPlan && activeRegisteredPlan?.plan.courseCatalogAuditStatus === "structure-only" ? "i" : "✓"}</span><p>{plannerSearch
+                      ? "No hay materias que coincidan con la búsqueda."
+                      : isRegisteredPlan && activeRegisteredPlan?.plan.courseCatalogAuditStatus === "structure-only"
+                        ? "Este plan todavía no tiene materias verificadas para agregar. La composición extraída se conserva en revisión."
+                        : "Todas las materias del catálogo están distribuidas."}</p></div>}
                   </div>
                 </aside>
 
@@ -3324,7 +3355,7 @@ export default function Home() {
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
             </label> : isRegisteredPlan
-              ? <span className={`rules-coverage ${hasClosedOfficialEvidence ? "" : "pending-audit-status"}`}>{activeRegisteredPlan?.plan.auditStatus === "audited" ? `Proyección auditada · revisión ${activeRegisteredPlan.source.reviewedAt}` : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete" ? `Malla normalizada · evidencia oficial cerrada${activeRegisteredPlan?.plan.publishedRules ? ` · ${activeRegisteredPlan.plan.publishedRules} reglas` : ""}` : `Composición Bedelías · auditoría oficial pendiente${activeRegisteredPlan?.plan.publishedRules ? ` · ${activeRegisteredPlan.plan.publishedRules} reglas` : ""}`}</span>
+              ? <span className={`rules-coverage ${hasClosedOfficialEvidence ? "" : "pending-audit-status"}`}>{registeredCatalogStatusLabel}</span>
               : isProfilePlan
               ? <span className="rules-coverage">Bedelías auditada: {activeProfileData?.plan.publishedRules ?? 0} reglas · {activeProfileData?.plan.noPublishedRule ?? 0} sin publicar</span>
               : planYear === "qf-2015" ? <span className="rules-coverage">Bedelías auditada: {qf2015Data?.plan.publishedRules ?? 0} reglas · {qf2015Data?.plan.partialRules ?? 0} parciales · {qf2015Data?.plan.noPublishedRule ?? 0} sin publicar</span>
@@ -3341,15 +3372,15 @@ export default function Home() {
           </div>
 
           <div className="curriculum-scroll" ref={curriculumScrollRef} role="region" tabIndex={0} aria-label="Trayectoria académica; usá las flechas o la barra inferior para desplazarte horizontalmente">
-            {isRegisteredPlan && activeRegisteredPlan && activeRegisteredPlan.plan.compositionAvailable === false ? <section className="curriculum-unavailable" role="status">
+            {isRegisteredPlan && activeRegisteredPlan && activeRegisteredPlan.plan.courseCatalogAuditStatus === "structure-only" ? <section className="curriculum-unavailable" role="status">
               <span aria-hidden="true">i</span>
-              <div><p className="eyebrow">Composición no publicada</p><h2>La carrera está identificada, pero su malla todavía no está disponible</h2><p>{activeRegisteredPlan.plan.notice}</p><a href={activeRegisteredPlan.source.bedeliasPlanUrl ?? activeRegisteredPlan.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente en Bedelías ↗</a></div>
+              <div><p className="eyebrow">Catálogo en validación</p><h2>El plan está disponible, pero sus materias aún no tienen respaldo suficiente</h2><p>{activeRegisteredPlan.plan.notice}</p><a href={activeRegisteredPlan.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente oficial disponible ↗</a></div>
             </section> : <div className="semester-grid">
               {semesters.map((semester) => (
                 <section className="semester-column" key={semester}>
                   <header>
                     <span>{semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
-                    <div><h2>{isRegisteredPlan ? activeRegisteredPathway?.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{coursesLoadLabel(filtered(semester))}</p></div>
+                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{coursesLoadLabel(filtered(semester))}</p></div>
                   </header>
                   <div className="course-stack">
                     {planYear === "1997" && semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
@@ -3385,9 +3416,9 @@ export default function Home() {
               </div>
               </>
             )}
-          </section> : isRegisteredPlan ? <section className={`plan-transition-note ${activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-panel"}`}>
-            <p className="eyebrow">{activeRegisteredPlan?.plan.auditStatus === "audited" ? "Plan vigente · proyección auditada" : activeRegisteredPlan?.plan.auditStatus === "official-evidence-complete" ? "Plan contrastado · malla normalizada" : "Extracción de Bedelías · auditoría oficial pendiente"}</p>
-            <h2>{activeRegisteredPlan?.plan.auditStatus === "audited" ? "Fuentes oficiales y alcance" : "Alcance provisional de los datos"}</h2>
+          </section> : isRegisteredPlan ? <section className={`plan-transition-note ${hasClosedOfficialEvidence ? "" : "pending-audit-panel"}`}>
+            <p className="eyebrow">{registeredPlanEyebrow}</p>
+            <h2>{hasClosedOfficialEvidence ? "Fuentes oficiales y alcance" : "Sólo publicamos materias respaldadas"}</h2>
             <p>{activeRegisteredPlan?.plan.notice}</p>
             <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente disponible ↗</a>
           </section> : <section className="plan-transition-note">

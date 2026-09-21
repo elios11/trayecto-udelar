@@ -21,6 +21,38 @@ export function isAdministrativeCreditEntry(value) {
   return normalize(value).startsWith("creditos reconocidos");
 }
 
+const COURSE_AUTHORITY_STATUSES = ["verified", "candidate", "historical-equivalent", "administrative", "rejected"];
+
+function courseFieldProvenance(status, officialIdentity = false, officialCredits = false) {
+  return {
+    inclusion: status === "verified" ? "official-curriculum" : "bedelias-composition",
+    name: officialIdentity ? "official-curriculum" : "bedelias-composition",
+    credits: officialCredits ? "official-curriculum" : "bedelias-composition",
+  };
+}
+
+function withCourseAuthority(course, status, options = {}) {
+  return {
+    ...course,
+    authorityStatus: status,
+    fieldProvenance: courseFieldProvenance(status, options.officialIdentity, options.officialCredits),
+  };
+}
+
+function exactOfficialCourseSourceIds(audit) {
+  const curriculum = audit?.officialPlan?.curriculum ?? {};
+  return new Set([
+    ...(curriculum.verifiedCourseIds ?? []),
+    ...(curriculum.commonCourseIds ?? []),
+    ...(curriculum.requiredCourseGroups ?? []).flatMap((group) => group.sourceCourseIds ?? []),
+    ...(audit?.officialPlan?.trajectories ?? []).flatMap((trajectory) => [
+      ...(trajectory.courseIds ?? []),
+      ...(trajectory.catalogSourceCourseIds ?? []),
+    ]),
+    ...(audit?.officialPlan?.documentedSportOptions ?? []).flatMap((option) => option.courseIds ?? []),
+  ].map(String));
+}
+
 const COURSE_NAME_CONNECTORS = new Set(["a", "al", "de", "del", "el", "en", "la", "las", "los", "para", "y"]);
 
 export function normalizeEquivalentCourseName(value) {
@@ -384,7 +416,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
       const hours = Number(rawCourse.hours);
       const nodeId = rawCourse.requirementId ?? "plan-total";
       const courseSourceUrl = rawCourse.sourceUrl ?? period.sourceUrl ?? sourceUrl;
-      courses.push({
+      courses.push(withCourseAuthority({
         id,
         name: rawCourse.name,
         credits: Number.isFinite(credits) && credits >= 0 ? credits : 0,
@@ -394,7 +426,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
         dataStatus: "official-curriculum",
         ruleCoverage: "not-published",
         curricularBlock: rawCourse.curricularBlock === true,
-      });
+      }, "verified", { officialIdentity: true, officialCredits: true }));
       if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
       courseIds.push(id);
     }
@@ -529,6 +561,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   const courseOverrides = curriculum.courseOverrides ?? {};
   const additionalRequirementIdsForAllCourses = curriculum.additionalRequirementIdsForAllCourses ?? [];
   const excludedSourceCourseIds = new Set(curriculum.excludedSourceCourseIds ?? []);
+  const verifiedSourceCourseIds = exactOfficialCourseSourceIds(audit);
   const sharedProfileCourses = new Map();
   const requirementIdForPath = (nodePath) => {
     for (const segment of [...(nodePath ?? [])].reverse()) {
@@ -598,7 +631,9 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
         ...(courseOverride.additionalRequirementIds ?? []),
         ...additionalRequirementIdsForAllCourses.filter((id) => !excludedRequirementIds.has(id)),
       ])];
-      course = {
+      const isOfficialOverride = Object.keys(courseOverride).length > 0;
+      const authorityStatus = isOfficialOverride || verifiedSourceCourseIds.has(String(sourceCourseId)) ? "verified" : "candidate";
+      course = withCourseAuthority({
         id,
         ...(sourceCourseId ? { bedeliasCode: sourceCourseId } : {}),
         name: displayName,
@@ -609,7 +644,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
           ? "official-curriculum"
           : curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
         ruleCoverage: "not-scraped",
-      };
+      }, authorityStatus, { officialIdentity: isOfficialOverride, officialCredits: isOfficialOverride });
       courses.push(course);
       if (sharedKey) sharedProfileCourses.set(sharedKey, course);
     } else {
@@ -649,7 +684,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     const id = courseId(serviceCode, rawCourse, matterNodes.length + index, usedIds);
     const nodeId = rawCourse.requirementId ?? "plan-total";
     const eligibleRequirementIds = [...new Set([nodeId, ...(rawCourse.additionalRequirementIds ?? [])])];
-    courses.push({
+    courses.push(withCourseAuthority({
       id,
       name: rawCourse.name,
       credits: Number(rawCourse.credits) || 0,
@@ -663,7 +698,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       dataStatus: "official-curriculum",
       ruleCoverage: "not-published",
       curricularBlock: rawCourse.curricularBlock === true,
-    });
+    }, "verified", { officialIdentity: true, officialCredits: true }));
     if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
     const period = rawCourse.periodLabel ?? "Estructura oficial";
     addToPeriod(periodsByLabel, period, id);
@@ -715,7 +750,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   }
 
   if (curriculum.manualCompletionValidation) {
-    const manualCourse = {
+    const manualCourse = withCourseAuthority({
       id: courseId(serviceCode, { id: "validacion-final-plan" }, courses.length, usedIds),
       name: curriculum.manualCompletionValidation,
       credits: 0,
@@ -724,7 +759,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       dataStatus: "manual-validation",
       ruleCoverage: "not-published",
       curricularBlock: true,
-    };
+    }, "verified", { officialIdentity: true, officialCredits: true });
     courses.push(manualCourse);
     courseIdBySourceId.set("validacion-final-plan", manualCourse.id);
     periodsByLabel.set("Validación de egreso", [manualCourse.id]);
@@ -925,7 +960,7 @@ function buildProjection(entry, snapshot, audit) {
     if (!periodMap.has(label)) periodMap.set(label, []);
     periodMap.get(label).push(id);
     if (rawCourse.code && !codeToId.has(rawCourse.code)) codeToId.set(rawCourse.code, id);
-    courses.push({
+    courses.push(withCourseAuthority({
       id,
       bedeliasCode: rawCourse.code || undefined,
       name: titleCase(rawCourse.name || rawCourse.code || `Unidad ${index + 1}`),
@@ -934,13 +969,14 @@ function buildProjection(entry, snapshot, audit) {
       creditAllocations: [{ nodeId: "plan-total", credits: Number.isFinite(credits) && credits >= 0 ? credits : 0, status: "official", sourceUrl: snapshot.plan.sourceUrl }],
       dataStatus: "bedelias-composition",
       ruleCoverage: "not-scraped",
-    });
+    }, "candidate"));
     courseRecords.push({ id, rawCourse });
   }
 
   const usesBedeliasCompositionTree = audit?.officialPlan?.curriculum?.useBedeliasCompositionTree === true;
   const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds)
     ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
+  const coursesBeforeAliasConsolidation = [...(officialCurriculum?.courses ?? [])];
   const equivalentCourseAliases = consolidateEquivalentCourseVariants(officialCurriculum);
   for (const [sourceCode, courseId] of codeToId) {
     codeToId.set(sourceCode, equivalentCourseAliases.get(courseId) ?? courseId);
@@ -985,26 +1021,44 @@ function buildProjection(entry, snapshot, audit) {
   const safeMinCredits = Number.isFinite(auditedMinCredits) && auditedMinCredits > 0
     ? auditedMinCredits
     : Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : 0;
-  const compositionAvailable = courses.length > 0;
+  const verifiedCourseIds = new Set(courses.filter((course) => course.authorityStatus === "verified").map((course) => course.id));
+  const hiddenCourseIds = new Set(courses.filter((course) => course.authorityStatus !== "verified").map((course) => course.id));
+  const filterPublishedIds = (ids) => ids.filter((id) => verifiedCourseIds.has(id));
+  const extractedCompositionAvailable = courses.length > 0;
+  const compositionAvailable = extractedCompositionAvailable;
+  const verifiedCompositionAvailable = verifiedCourseIds.size > 0;
   const periods = officialCurriculum
     ? officialCurriculum.periods
-    : compositionAvailable ? [...periodMap].map(([label, courseIds]) => ({ label, courseIds })) : [];
+    : extractedCompositionAvailable ? [...periodMap].map(([label, courseIds]) => ({ label, courseIds })) : [];
   const campuses = auditCampuses(audit);
   const pathways = buildPathways(audit, periods, courseRecords, campuses, officialCurriculum);
+  const publishedPathways = Object.fromEntries(Object.entries(pathways).map(([id, pathway]) => [id, {
+    ...pathway,
+    periods: pathway.periods.map((period) => ({ ...period, courseIds: filterPublishedIds(period.courseIds) })).filter((period) => period.courseIds.length > 0),
+    ...(pathway.catalogCourseIds ? { catalogCourseIds: filterPublishedIds(pathway.catalogCourseIds) } : {}),
+  }]));
   const auditStatus = audit ? "official-evidence-complete" : entry.canonicalSource.state === "structurally-valid" ? "structurally-valid" : "extracted";
+  const courseCatalogAuditStatus = verifiedCourseIds.size === 0
+    ? "structure-only"
+    : hiddenCourseIds.size === 0 ? "verified" : "partial";
   const planDocument = audit?.sources?.[0]?.url ?? snapshot.plan?.metadata?.colibriUrl ?? snapshot.plan?.sourceUrl;
-  const notice = audit?.uiNotice
+  let notice = audit?.uiNotice
     ?? (audit?.identity === "tecnicatura en deportes:2007"
     ? "El Plan 2007 continúa para cohortes existentes, pero no tiene ingreso abierto en Montevideo ni Rocha durante 2026; Paysandú no publica una nueva apertura y Rivera se conserva sólo como antecedente histórico."
     : officialCurriculum?.courses.length
       ? "Malla curricular vigente publicada por el servicio. Las previaturas no se muestran cuando la fuente oficial no las documenta."
     : officialCurriculum
       ? "La estructura de créditos y requisitos fue auditada en fuentes oficiales, pero el servicio no publica su composición por unidades curriculares. No se inventan materias ni trayectorias."
-    : compositionAvailable
+    : extractedCompositionAvailable
     ? audit
-      ? "La identidad, el plan y sus sedes fueron contrastados con fuentes oficiales. La composición mostrada sigue siendo la extracción de Bedelías y no una trayectoria curricular curada."
-      : "Composición extraída de Bedelías. La auditoría oficial de títulos, mínimos, obligatoriedad y trayectoria está pendiente."
+      ? "La estructura del plan fue contrastada con fuentes oficiales. Sólo se muestran las materias respaldadas por una fuente curricular vigente; el resto de la composición de Bedelías permanece en validación."
+      : "El plan permanece seleccionable, pero sus materias extraídas de Bedelías todavía no tienen respaldo curricular suficiente para mostrarse como catálogo vigente."
     : "Bedelías identifica este plan vigente, pero no publica su composición. No se inventan materias ni una trayectoria provisional.");
+  if (courseCatalogAuditStatus === "partial") {
+    notice = `${notice} El catálogo publicado es parcial: las demás entradas de Bedelías se conservaron para revisión, pero no se muestran como materias vigentes.`;
+  } else if (courseCatalogAuditStatus === "structure-only" && extractedCompositionAvailable) {
+    notice = `${notice} La composición extraída se conservó para revisión, pero ninguna entrada se presenta como materia vigente sin una fuente curricular que la respalde.`;
+  }
 
   const sharedWith = [
     ...(audit?.officialPlan?.sharedWith ?? []),
@@ -1035,7 +1089,11 @@ function buildProjection(entry, snapshot, audit) {
         campuses,
         sharedWith,
         auditStatus,
+        planAuditStatus: auditStatus,
+        courseCatalogAuditStatus,
         compositionAvailable,
+        verifiedCompositionAvailable,
+        extractedCompositionAvailable,
         notice,
         publishedRules: rules.length,
         partialRules: 0,
@@ -1050,12 +1108,42 @@ function buildProjection(entry, snapshot, audit) {
       },
       courses,
       pathways,
+      publishedPathways,
       campuses,
       rules,
       requirementGroupMap: {},
       ...(officialCurriculum && Object.keys(officialCurriculum.requirementCourseGroups).length > 0
         ? { requirementCourseGroups: officialCurriculum.requirementCourseGroups }
         : {}),
+      courseAuthority: {
+        schemaVersion: 1,
+        sources: {
+          "official-curriculum": { kind: "official-curriculum", url: audit?.officialPlan?.curriculum?.sourceUrl ?? planDocument, reviewedAt: audit?.reviewedAt ?? null },
+          "bedelias-composition": { kind: "bedelias-composition", url: snapshot.plan?.sourceUrl, extractedAt: snapshot.source?.extractedAt ?? null, contentHash: snapshot.contentHash ?? null },
+        },
+        statuses: COURSE_AUTHORITY_STATUSES,
+        records: [
+          ...coursesBeforeAliasConsolidation.filter((course) => equivalentCourseAliases.has(course.id)).map((course) => ({
+            courseId: course.id,
+            sourceCourseId: course.bedeliasCode ?? null,
+            status: "historical-equivalent",
+            canonicalCourseId: equivalentCourseAliases.get(course.id),
+            fieldProvenance: course.fieldProvenance,
+          })),
+          ...(snapshot.plan?.courses ?? []).filter((course) => isAdministrativeCreditEntry(course.name)).map((course, index) => ({
+            courseId: `${snapshot.service.code.toLocaleLowerCase()}-administrative-${slug(course.code || course.name || index + 1)}`,
+            sourceCourseId: course.code ?? null,
+            status: "administrative",
+            fieldProvenance: courseFieldProvenance("administrative"),
+          })),
+          ...(snapshot.plan?.courses ?? []).filter((course) => audit?.officialPlan?.curriculum?.excludedSourceCourseIds?.includes(course.code)).map((course, index) => ({
+            courseId: `${snapshot.service.code.toLocaleLowerCase()}-rejected-${slug(course.code || course.name || index + 1)}`,
+            sourceCourseId: course.code ?? null,
+            status: "rejected",
+            fieldProvenance: courseFieldProvenance("rejected"),
+          })),
+        ],
+      },
       audit: { anomalies: snapshot.validation?.issues ?? [], priority: entry.priority ?? "official-evidence-complete", publicationEligible: false },
     },
   };
@@ -1137,7 +1225,7 @@ export async function buildExtractedAcademicPlans() {
       if (!faculty.careers.has(careerId)) faculty.careers.set(careerId, { id: careerId, label: academicTitle(careerName), plans: [] });
       faculty.careers.get(careerId).plans.push({
         id: planId,
-        label: `Plan ${planYear} · ${audit?.officialPlan?.catalogStatusLabel ?? (projection.plan.current === false ? "histórico" : "vigente")}${projection.plan.compositionAvailable ? "" : " · sin composición"}`,
+        label: `Plan ${planYear} · ${audit?.officialPlan?.catalogStatusLabel ?? (projection.plan.current === false ? "histórico" : "vigente")}`,
         defaultTrajectoryId: Object.keys(projection.pathways)[0],
         defaultCredentialId: projection.pathways[Object.keys(projection.pathways)[0]]?.credentialId
           ?? projection.creditStructure.credentials.find((credential) => credential.id === "bedelias-degree")?.id
@@ -1155,8 +1243,16 @@ export async function buildExtractedAcademicPlans() {
   });
   await writeFile(loadersPath, `// Archivo generado por scripts/build-extracted-academic-plans.mjs.\nexport const extractedAcademicPlanRegistrations = {\n${loaderLines.join("\n")}\n} as const;\n`, "utf8");
 
+  const authorityRecords = (projection) => [
+    ...projection.courses.map((course) => ({ status: course.authorityStatus })),
+    ...projection.courseAuthority.records,
+  ];
+  const authorityTotals = Object.fromEntries(COURSE_AUTHORITY_STATUSES.map((status) => [
+    status,
+    projections.reduce((sum, { projection }) => sum + authorityRecords(projection).filter((record) => record.status === status).length, 0),
+  ]));
   const reportCore = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedFrom: { auditQueueHash: queue.contentHash, officialAuditHash: auditsRegistry.contentHash, globalManifestHash: global.contentHash },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,
@@ -1165,8 +1261,33 @@ export async function buildExtractedAcademicPlans() {
       compositionUnavailable: projections.filter(({ projection }) => !projection.plan.compositionAvailable).length,
       plansWithOfficialCampuses: projections.filter(({ projection }) => projection.campuses.length > 1).length,
       excludedFromCurrentUi: auditsRegistry.audits.filter((audit) => audit.conclusion?.excludeFromCurrentUi).length,
+      courseAuthority: authorityTotals,
+      beforePublishedCourses: projections.reduce((sum, { projection }) => sum + projection.courses.length, 0),
+      afterPublishedCourses: authorityTotals.verified,
+      plansWithVerifiedCatalog: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "verified").length,
+      plansWithPartialCatalog: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "partial").length,
+      plansWithStructureOnly: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "structure-only").length,
     },
-    plans: projections.map(({ entry, planId, item, projection }) => ({ identity: entry.identity, planId, facultyCode: entry.canonicalSource.serviceCode, snapshotPath: path.relative(projectRoot, item.absolutePath).replaceAll("\\", "/"), auditStatus: projection.plan.auditStatus, compositionAvailable: projection.plan.compositionAvailable, campusIds: projection.campuses.map((campus) => campus.id) })),
+    plans: projections.map(({ entry, planId, item, projection }) => ({
+      identity: entry.identity,
+      planId,
+      facultyCode: entry.canonicalSource.serviceCode,
+      snapshotPath: path.relative(projectRoot, item.absolutePath).replaceAll("\\", "/"),
+      planAuditStatus: projection.plan.planAuditStatus,
+      courseCatalogAuditStatus: projection.plan.courseCatalogAuditStatus,
+      compositionAvailable: projection.plan.compositionAvailable,
+      extractedCompositionAvailable: projection.plan.extractedCompositionAvailable,
+      campusIds: projection.campuses.map((campus) => campus.id),
+      before: { publishedCourses: projection.courses.length },
+      after: {
+        publishedCourses: authorityRecords(projection).filter((record) => record.status === "verified").length,
+        hiddenCourses: authorityRecords(projection).filter((record) => record.status !== "verified").length,
+      },
+      statuses: Object.fromEntries(COURSE_AUTHORITY_STATUSES.map((status) => [
+        status,
+        authorityRecords(projection).filter((record) => record.status === status).length,
+      ])),
+    })),
   };
   const report = { ...reportCore, contentHash: hash(reportCore) };
   await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
@@ -1175,5 +1296,5 @@ export async function buildExtractedAcademicPlans() {
 
 if (path.resolve(process.argv[1] ?? "") === fileURLToPath(import.meta.url)) {
   const report = await buildExtractedAcademicPlans();
-  console.log(`${report.counts.generatedPlans} planes generados: ${report.counts.compositionAvailable} con composición y ${report.counts.compositionUnavailable} sin composición.`);
+  console.log(`${report.counts.generatedPlans} planes generados: ${report.counts.plansWithVerifiedCatalog} catálogos verificados, ${report.counts.plansWithPartialCatalog} parciales y ${report.counts.plansWithStructureOnly} sólo con estructura.`);
 }
