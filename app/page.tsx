@@ -28,7 +28,7 @@ import {
   type PersonalDataAppState,
   type PersonalDataCatalogEntry,
 } from "./personal-data-migration.mjs";
-import { parsePersonalDataV4, type PersonalDataDocumentV4, type PersonalDataLoadTargetV3, type PersonalDataScenarioV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
+import { parsePersonalDataV4, type PersonalDataDocumentV4, type PersonalDataLoadTargetV3, type PersonalDataSelectionV3 } from "./personal-data.mjs";
 import {
   academicHistoryForCourse,
   addAcademicHistoryEvent,
@@ -79,19 +79,7 @@ import {
   type LocalDataConflict,
 } from "./local-data-concurrency.mjs";
 import { analyzePlannerLoad, calculatePotentialCreditImpact, calculateTermLoad } from "./planner-load.mjs";
-import {
-  SCENARIO_NAME_MAX_LENGTH,
-  activatePlanningScenario,
-  archivePlanningScenario,
-  comparePlanningScenarios,
-  createPlanningScenario,
-  duplicatePlanningScenario,
-  promotePlanningScenario,
-  renamePlanningScenario,
-  replaceActiveScenarioPlanning,
-  restorePlanningScenario,
-} from "./planning-scenarios.mjs";
-import { projectPlanningTimeline } from "./planning-timeline.mjs";
+import { replaceActiveScenarioPlanning } from "./planning-scenarios.mjs";
 import {
   academicPeriodFromDateRange,
   courseOfferingStatusPresentation,
@@ -692,11 +680,6 @@ type RecoveryConfirmation =
   | { kind: "delete-item"; itemKind: "snapshot" | "deleted-term"; id: string }
   | { kind: "clear-trash" }
   | { kind: "history-event"; event: AcademicHistoryEvent; courseName: string };
-type ScenarioDialog =
-  | { kind: "create" }
-  | { kind: "rename"; scenarioId: string }
-  | { kind: "promote"; scenarioId: string }
-  | { kind: "archive"; scenarioId: string };
 type ThemeId = "udelar" | "violeta" | "solarized" | "bosque" | "terracota";
 type ThemeScheme = "light" | "dark";
 type ColorVisionType = "deuteranopia" | "protanopia" | "tritanopia";
@@ -711,7 +694,6 @@ type VisualPreferences = {
   showElectives: boolean;
   showRequirements: boolean;
   showPlannerCatalog: boolean;
-  showTimeline: boolean;
   dismissedCurriculumChanges: string[];
 };
 
@@ -761,7 +743,6 @@ export default function Home() {
   const [showElectives, setShowElectives] = useState(true);
   const [showRequirements, setShowRequirements] = useState(false);
   const [showPlannerCatalog, setShowPlannerCatalog] = useState(true);
-  const [showTimeline, setShowTimeline] = useState(true);
   const [dismissedCurriculumChanges, setDismissedCurriculumChanges] = useState<string[]>([]);
   const [showCurriculumChanges, setShowCurriculumChanges] = useState(false);
   const [extendedElectivesData, setExtendedElectivesData] = useState<ExtendedElectivesProjection | null>(null);
@@ -795,10 +776,6 @@ export default function Home() {
   const [undoEntry, setUndoEntry] = useState<UndoEntry | null>(null);
   const [recoveryConfirmation, setRecoveryConfirmation] = useState<RecoveryConfirmation | null>(null);
   const [recoveryNotice, setRecoveryNotice] = useState("");
-  const [scenarioDialog, setScenarioDialog] = useState<ScenarioDialog | null>(null);
-  const [scenarioNameDraft, setScenarioNameDraft] = useState("");
-  const [showArchivedScenarios, setShowArchivedScenarios] = useState(false);
-  const [comparisonScenarioId, setComparisonScenarioId] = useState<string | null>(null);
   const [scenarioDocumentRevision, setScenarioDocumentRevision] = useState(0);
   const [localSaveStatus, setLocalSaveStatus] = useState<LocalSaveStatus>(() => initialLocalSaveStatus());
   const [localConflict, setLocalConflict] = useState<LocalDataConflict | null>(null);
@@ -810,9 +787,6 @@ export default function Home() {
   const plannerImportRef = useRef<HTMLInputElement>(null);
   const importErrorButtonRef = useRef<HTMLButtonElement>(null);
   const dataMenuRef = useRef<HTMLDetailsElement>(null);
-  const scenarioMenuRef = useRef<HTMLDetailsElement>(null);
-  const scenarioTriggerRef = useRef<HTMLElement | null>(null);
-  const scenarioDialogInitialRef = useRef<HTMLButtonElement | HTMLInputElement | null>(null);
   const appearanceMenuRef = useRef<HTMLDetailsElement>(null);
   const curriculumScrollRef = useRef<HTMLDivElement>(null);
   const curriculumEdgesRef = useRef(curriculumEdges);
@@ -1143,8 +1117,6 @@ export default function Home() {
       && profile.selection.trajectoryId === (trajectoryId || null)
       && profile.selection.credentialId === (credentialId || null)) ?? null;
   })();
-  const planningScenarios = activeDocumentProfile?.planning.scenarios ?? [];
-  const activePlanningScenario = planningScenarios.find((scenario) => scenario.id === activeDocumentProfile?.planning.activeScenarioId) ?? null;
   const activeCourses = appMode === "planner" ? plannerCourses : courses;
   const hasStoredExtendedElectiveProgress = useMemo(
     () => hasRecordedProgressOutsideCatalog(progress["1997"] ?? {}, initialPlan1997CourseIds),
@@ -1455,7 +1427,6 @@ export default function Home() {
         if (typeof preferences.showElectives === "boolean") setShowElectives(preferences.showElectives);
         if (typeof preferences.showRequirements === "boolean") setShowRequirements(preferences.showRequirements);
         if (typeof preferences.showPlannerCatalog === "boolean") setShowPlannerCatalog(preferences.showPlannerCatalog);
-        if (typeof preferences.showTimeline === "boolean") setShowTimeline(preferences.showTimeline);
         if (Array.isArray(preferences.dismissedCurriculumChanges)) {
           setDismissedCurriculumChanges(preferences.dismissedCurriculumChanges.filter((value): value is string => typeof value === "string"));
         }
@@ -1486,37 +1457,6 @@ export default function Home() {
     const frame = requestAnimationFrame(() => recoveryConfirmRef.current?.focus());
     return () => cancelAnimationFrame(frame);
   }, [recoveryConfirmation]);
-
-  useEffect(() => {
-    let cancelled = false;
-    queueMicrotask(() => {
-      if (cancelled) return;
-      setScenarioDialog(null);
-      setComparisonScenarioId(null);
-      setShowArchivedScenarios(false);
-      if (scenarioMenuRef.current) scenarioMenuRef.current.open = false;
-    });
-    return () => { cancelled = true; };
-  }, [planYear, facultyId, campusId, trajectoryId, credentialId]);
-
-  useEffect(() => {
-    if (!scenarioDialog && !comparisonScenarioId) return;
-    const frame = requestAnimationFrame(() => scenarioDialogInitialRef.current?.focus());
-    const closeWithEscape = (event: KeyboardEvent) => {
-      if (event.key !== "Escape") return;
-      event.preventDefault();
-      if (scenarioDialog) closeScenarioDialog();
-      else {
-        setComparisonScenarioId(null);
-        requestAnimationFrame(() => scenarioTriggerRef.current?.focus());
-      }
-    };
-    document.addEventListener("keydown", closeWithEscape);
-    return () => {
-      cancelAnimationFrame(frame);
-      document.removeEventListener("keydown", closeWithEscape);
-    };
-  }, [scenarioDialog, comparisonScenarioId]);
 
   useEffect(() => {
     if (!hydrated || canonicalWriteBlockedRef.current) return;
@@ -1636,10 +1576,10 @@ export default function Home() {
     root.dataset.colorVision = colorVisionEnabled ? colorVisionType : "standard";
     root.style.colorScheme = themeScheme;
     if (hydrated) {
-      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline, dismissedCurriculumChanges };
+      const preferences: VisualPreferences = { theme, scheme: themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, dismissedCurriculumChanges };
       persistLegacyValue(VISUAL_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     }
-  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, showTimeline, dismissedCurriculumChanges, hydrated]);
+  }, [theme, themeScheme, colorVisionEnabled, colorVisionType, appMode, plannerView, availableOnly, showElectives, showRequirements, showPlannerCatalog, dismissedCurriculumChanges, hydrated]);
 
   useEffect(() => {
     verticalScrollTargetRef.current = window.scrollY;
@@ -1949,10 +1889,6 @@ export default function Home() {
     setCurrentPlannerTerms(nextCurrentTerms);
     setScenarioDocumentRevision((revision) => revision + 1);
     setRecoveryNotice(notice);
-    if (scenarioMenuRef.current?.open) {
-      scenarioTriggerRef.current = scenarioMenuRef.current.querySelector("summary");
-      scenarioMenuRef.current.open = false;
-    }
     return true;
   };
 
@@ -2004,17 +1940,16 @@ export default function Home() {
     setShowCurriculumChanges(false);
   };
 
-  const mutateScenarios = (
-    operation: (planning: PersonalDataDocumentV4["profiles"][number]["planning"], now: string) => ReturnType<typeof activatePlanningScenario>,
-    notice: (scenario: PersonalDataScenarioV3) => string,
-    snapshotReason?: string,
+  const updateActiveScenario = (
+    operation: (planning: PersonalDataDocumentV4["profiles"][number]["planning"], now: string) => ReturnType<typeof replaceActiveScenarioPlanning>,
+    notice: (scenario: { name: string }) => string,
   ) => {
     const document = currentPersonalDocument();
     if (!document) return false;
     const profile = document.profiles.find((candidate) => candidate.id === activeDocumentProfile?.id)
       ?? document.profiles.find((candidate) => candidate.id === document.activeProfileId && candidate.selection.planId === planYear);
     if (!profile) {
-      setImportError({ title: "No pudimos administrar los escenarios", message: "La planificación visible todavía no tiene un perfil personal inequívoco." });
+      setImportError({ title: "No pudimos actualizar el planificador", message: "La planificación visible todavía no tiene un perfil personal inequívoco." });
       return false;
     }
     const timestamp = new Date().toISOString();
@@ -2022,11 +1957,6 @@ export default function Home() {
     if (!result.ok) {
       setImportError({ title: "No pudimos aplicar el cambio", message: result.message });
       return false;
-    }
-    if (snapshotReason) {
-      const snapshot = createRecoverySnapshot(recovery, document, { now: timestamp, id: crypto.randomUUID(), reason: snapshotReason });
-      if (!snapshot.ok || !persistRecoveryImmediately(snapshot.store)) return false;
-      setRecovery(snapshot.store);
     }
     const candidate: PersonalDataDocumentV4 = {
       ...document,
@@ -2043,65 +1973,6 @@ export default function Home() {
       return false;
     }
     return applyScenarioDocument(candidate, adapted.state, notice(result.scenario));
-  };
-
-  const switchScenario = (scenarioId: string) => mutateScenarios(
-    (planning) => activatePlanningScenario(planning, scenarioId),
-    (scenario) => `Abriste el escenario ${scenario.name}. La currícula y el progreso compartido no cambiaron.`,
-  );
-
-  const duplicateScenario = (scenarioId: string) => mutateScenarios(
-    (planning, timestamp) => duplicatePlanningScenario(planning, scenarioId, { now: timestamp, idGenerator: () => crypto.randomUUID(), activate: true }),
-    (scenario) => `Se creó y abrió ${scenario.name}. El original quedó sin cambios.`,
-  );
-
-  const restoreScenario = (scenarioId: string) => mutateScenarios(
-    (planning, timestamp) => restorePlanningScenario(planning, scenarioId, { now: timestamp }),
-    (scenario) => `Se restauró ${scenario.name}. Podés abrirlo cuando quieras.`,
-  );
-
-  const openScenarioDialog = (dialog: ScenarioDialog) => {
-    scenarioTriggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-    setScenarioDialog(dialog);
-    if (dialog.kind === "rename") setScenarioNameDraft(planningScenarios.find((scenario) => scenario.id === dialog.scenarioId)?.name ?? "");
-    else setScenarioNameDraft("Nuevo escenario");
-  };
-
-  const closeScenarioDialog = () => {
-    setScenarioDialog(null);
-    requestAnimationFrame(() => scenarioTriggerRef.current?.focus());
-  };
-
-  const openScenarioComparison = (scenarioId: string) => {
-    scenarioTriggerRef.current = scenarioMenuRef.current?.querySelector("summary") ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
-    setComparisonScenarioId(scenarioId);
-    if (scenarioMenuRef.current) scenarioMenuRef.current.open = false;
-  };
-
-  const confirmScenarioDialog = () => {
-    if (!scenarioDialog) return;
-    const applied = scenarioDialog.kind === "create"
-      ? mutateScenarios(
-        (planning, timestamp) => createPlanningScenario(planning, { now: timestamp, name: scenarioNameDraft, idGenerator: () => crypto.randomUUID(), activate: true }),
-        (scenario) => `Se creó y abrió ${scenario.name}. Empezó vacío, con un semestre.`,
-      )
-      : scenarioDialog.kind === "rename"
-        ? mutateScenarios(
-          (planning, timestamp) => renamePlanningScenario(planning, scenarioDialog.scenarioId, scenarioNameDraft, { now: timestamp }),
-          (scenario) => `El escenario ahora se llama ${scenario.name}.`,
-        )
-        : scenarioDialog.kind === "promote"
-          ? mutateScenarios(
-            (planning, timestamp) => promotePlanningScenario(planning, scenarioDialog.scenarioId, { now: timestamp }),
-            (scenario) => `${scenario.name} ahora es el escenario principal. El escenario activo no cambió.`,
-            "Antes de cambiar el escenario principal",
-          )
-          : mutateScenarios(
-            (planning, timestamp) => archivePlanningScenario(planning, scenarioDialog.scenarioId, { now: timestamp }),
-            (scenario) => `Se archivó ${scenario.name} sin borrar su planificación.`,
-            "Antes de archivar un escenario",
-          );
-    if (applied) closeScenarioDialog();
   };
 
   const rememberUndo = (description: string) => {
@@ -2456,7 +2327,7 @@ export default function Home() {
         }
         if (!createCurrentSnapshot("Importación de planificador")) return;
         rememberUndo("importación de planificador");
-        const imported = mutateScenarios(
+        const imported = updateActiveScenario(
           (planning, timestamp) => replaceActiveScenarioPlanning(planning, transfer.planner, { now: timestamp }),
           (scenario) => `Se importó la planificación dentro de ${scenario.name}; los demás escenarios quedaron sin cambios.`,
         );
@@ -2615,19 +2486,14 @@ export default function Home() {
   useEffect(() => {
     const handleUndoShortcut = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
-      if (!isUndoShortcut({ key: event.key, ctrlKey: event.ctrlKey, metaKey: event.metaKey, target, modalOpen: Boolean(selected || importError || rolloverTermId || recoveryConfirmation || scenarioDialog || comparisonScenarioId) })) return;
+      if (!isUndoShortcut({ key: event.key, ctrlKey: event.ctrlKey, metaKey: event.metaKey, target, modalOpen: Boolean(selected || importError || rolloverTermId || recoveryConfirmation) })) return;
       if (!undoStackRef.current.length) return;
       event.preventDefault();
       undoLastRef.current();
     };
     document.addEventListener("keydown", handleUndoShortcut);
     return () => document.removeEventListener("keydown", handleUndoShortcut);
-  }, [selected, importError, rolloverTermId, recoveryConfirmation, scenarioDialog, comparisonScenarioId, progress, plannerPlans, currentPlannerTerms, planYear, activeFaculty.id, activeCareer.id, activeProgressPlanId, campusId, trajectoryId, credentialId]);
-  const comparisonScenario = planningScenarios.find((scenario) => scenario.id === comparisonScenarioId) ?? null;
-  const scenarioComparison = activePlanningScenario && comparisonScenario
-    ? comparePlanningScenarios(activePlanningScenario, comparisonScenario, { unit: activeDocumentProfile?.loadUnit ?? "courses", courses: plannerCourses })
-    : null;
-  const comparisonCourseName = (courseId: string) => plannerCourses.find((course) => course.id === courseId)?.name ?? courseId;
+  }, [selected, importError, rolloverTermId, recoveryConfirmation, progress, plannerPlans, currentPlannerTerms, planYear, activeFaculty.id, activeCareer.id, activeProgressPlanId, campusId, trajectoryId, credentialId]);
   const assignedPlannerIds = new Set(plannerTerms.flatMap((term) => term.courseIds));
   const plannerLoadAnalysis = analyzePlannerLoad({ terms: plannerTerms, courses: plannerCourses, progress: statuses });
   const duplicatePlannerCourseIds = new Set(plannerLoadAnalysis.duplicateCourseIds);
@@ -2656,58 +2522,6 @@ export default function Home() {
   const rolloverIncompleteHours = rolloverIncompleteCourses.reduce((sum, course) => sum + (course.hours ?? 0), 0);
 
   const activeAcademicHistory = academicHistories[activeProgressPlanId] ?? { events: [] };
-  const evaluateTimelineCredential = (candidate: Credential, candidateStatuses: Record<string, CourseStatus>) => {
-    const knownCourses = new Map(plannerCourses.map((course) => [course.id, course]));
-    const candidateNodeCredits = (nodeId: string) => plannerCourses.reduce((total, course) => {
-      if (candidateStatuses[course.id] !== "exonerated") return total;
-      const contribution = (course.creditAllocations ?? [])
-        .filter((allocation) => allocationBelongsTo(allocation.nodeId, nodeId))
-        .reduce((sum, allocation) => sum + allocation.credits, 0);
-      return total + Math.min(course.credits, contribution);
-    }, 0);
-    const candidateCredits = plannerCourses.reduce((total, course) => total + (candidateStatuses[course.id] === "exonerated" ? course.credits : 0), 0);
-    const requirements = [
-      ...(candidate.minTotalCredits > 0 ? [candidateCredits >= candidate.minTotalCredits] : []),
-      ...candidate.nodeRequirements.filter((requirement) => requirement.minCredits > 0).map((requirement) => candidateNodeCredits(requirement.nodeId) >= requirement.minCredits),
-      ...(candidate.alternativeNodeRequirements ?? []).map((requirement) => requirement.options.filter((option) => candidateNodeCredits(option.nodeId) >= option.minCredits).length >= requirement.minSatisfied),
-      ...candidate.requiredCourseGroups.map((group) => group.courseIds.filter((id) => candidateStatuses[id] === "exonerated").length >= group.minCompleted),
-      ...candidate.requiredActivities.map((activity) => activity.courseIds.reduce((sum, id) => sum + (candidateStatuses[id] === "exonerated" ? knownCourses.get(id)?.credits ?? 0 : 0), 0) >= activity.minCredits),
-    ];
-    const hasUnmodeledRequirement = candidate.nodeRequirements.some((requirement) => !nodeById.has(requirement.nodeId))
-      || (candidate.alternativeNodeRequirements ?? []).some((requirement) => requirement.options.some((option) => !nodeById.has(option.nodeId)))
-      || candidate.requiredActivities.some((activity) => activity.representationStatus === "not-modeled" || activity.courseIds.some((id) => !knownCourses.has(id)))
-      || candidate.requiredCourseGroups.some((group) => group.courseIds.some((id) => !knownCourses.has(id)));
-    return { evaluable: requirements.length > 0 && !hasUnmodeledRequirement, achieved: requirements.length > 0 && !hasUnmodeledRequirement && requirements.every(Boolean), inProgress: requirements.some(Boolean) };
-  };
-  const timelineCredentials = creditStructure.credentials.map((candidate) => {
-    const current = evaluateTimelineCredential(candidate, statuses);
-    let plannedTermId: string | null = null;
-    if (current.evaluable && !current.achieved && activePlanningScenario) {
-      const projectedStatuses = { ...statuses };
-      for (const term of activePlanningScenario.terms) {
-        for (const courseId of term.courseIds) if (plannerCourses.some((course) => course.id === courseId)) projectedStatuses[courseId] = "exonerated";
-        if (evaluateTimelineCredential(candidate, projectedStatuses).achieved) {
-          plannedTermId = term.id;
-          break;
-        }
-      }
-    }
-    return {
-      id: candidate.id,
-      title: candidate.title,
-      kind: candidate.id === degreeCredential.id ? "Título principal" : "Hito curricular",
-      ...current,
-      plannedTermId,
-      explanation: current.evaluable ? null : "La currícula no publica todos los requisitos necesarios para evaluarlo aquí.",
-    };
-  });
-  const timelineProjection = projectPlanningTimeline({
-    scenario: activePlanningScenario,
-    academicHistory: activeAcademicHistory,
-    courses: plannerCourses,
-    loadUnit: activeDocumentProfile?.loadUnit ?? "courses",
-    credentials: timelineCredentials,
-  });
   const selectedHistory = selected ? academicHistoryForCourse(activeAcademicHistory, selected.id) : [];
   const selectedEffectiveHistory = selected
     ? effectiveAcademicHistoryEvents(activeAcademicHistory).filter((event) => event.courseId === selected.id)
@@ -3317,52 +3131,6 @@ export default function Home() {
                   <p className="eyebrow">Tu currícula, a tu ritmo</p>
                   <h2>Planificador</h2>
                   <span>{assignedPlannerIds.size} materias{hasPublishedCourseLoad ? ` · ${usesPublishedHours ? `${plannedHours} horas distribuidas` : `${plannedCredits} créditos distribuidos`}` : " · carga no publicada"}</span>
-                  <details className="scenario-selector" ref={scenarioMenuRef}>
-                    <summary>
-                      <span>Escenario</span>
-                      <strong>{activePlanningScenario?.name ?? "Elegí un escenario"}</strong>
-                      {activePlanningScenario?.isPrimary && <small>Principal</small>}
-                    </summary>
-                    <div className="scenario-menu" aria-label="Gestión de escenarios de planificación">
-                      <div className="scenario-menu-heading">
-                        <div><strong>Tus escenarios</strong><small>El progreso y el historial se comparten; sólo cambia la distribución futura.</small></div>
-                        <button type="button" className="secondary-button" onClick={() => openScenarioDialog({ kind: "create" })}>Nuevo escenario</button>
-                      </div>
-                      {planningScenarios.filter((scenario) => !scenario.archived).length === 0 ? <p className="scenario-empty">Todavía no hay escenarios disponibles.</p> : <ul className="scenario-list">
-                        {planningScenarios.filter((scenario) => !scenario.archived).map((scenario) => {
-                          const isActive = scenario.id === activePlanningScenario?.id;
-                          return <li key={scenario.id}>
-                            <div className="scenario-identity">
-                              <button type="button" className={isActive ? "active" : ""} aria-current={isActive ? "true" : undefined} disabled={isActive} onClick={() => switchScenario(scenario.id)}>{scenario.name}</button>
-                              <span>{isActive ? "Activo" : "Disponible"}{scenario.isPrimary ? " · Principal" : ""}</span>
-                            </div>
-                            <div className="scenario-row-actions">
-                              <button type="button" onClick={() => duplicateScenario(scenario.id)}>Duplicar y abrir</button>
-                              <button type="button" onClick={() => openScenarioDialog({ kind: "rename", scenarioId: scenario.id })}>Renombrar</button>
-                              {!isActive && <button type="button" disabled={!activePlanningScenario} onClick={() => openScenarioComparison(scenario.id)}>Comparar</button>}
-                              {!scenario.isPrimary && <button type="button" onClick={() => openScenarioDialog({ kind: "promote", scenarioId: scenario.id })}>Hacer principal</button>}
-                              <button type="button" disabled={isActive || scenario.isPrimary} title={isActive ? "Cambiá a otro escenario antes de archivarlo" : scenario.isPrimary ? "Hacé principal otro escenario antes de archivarlo" : undefined} onClick={() => openScenarioDialog({ kind: "archive", scenarioId: scenario.id })}>Archivar</button>
-                            </div>
-                          </li>;
-                        })}
-                      </ul>}
-                      {planningScenarios.some((scenario) => scenario.archived) && <div className="archived-scenarios">
-                        <button type="button" className="quiet-button" aria-expanded={showArchivedScenarios} onClick={() => setShowArchivedScenarios((value) => !value)}>{showArchivedScenarios ? "Ocultar archivados" : `Ver archivados (${planningScenarios.filter((scenario) => scenario.archived).length})`}</button>
-                        {showArchivedScenarios && <ul className="scenario-list">
-                          {planningScenarios.filter((scenario) => scenario.archived).map((scenario) => <li key={scenario.id}>
-                            <div className="scenario-identity"><strong>{scenario.name}</strong><span>Archivado</span></div>
-                            <div className="scenario-row-actions">
-                              <button type="button" onClick={() => duplicateScenario(scenario.id)}>Duplicar y abrir</button>
-                              <button type="button" onClick={() => openScenarioDialog({ kind: "rename", scenarioId: scenario.id })}>Renombrar</button>
-                              <button type="button" disabled={!activePlanningScenario} onClick={() => openScenarioComparison(scenario.id)}>Comparar</button>
-                              <button type="button" onClick={() => openScenarioDialog({ kind: "promote", scenarioId: scenario.id })}>Hacer principal</button>
-                              <button type="button" onClick={() => restoreScenario(scenario.id)}>Restaurar</button>
-                            </div>
-                          </li>)}
-                        </ul>}
-                      </div>}
-                    </div>
-                  </details>
                 </div>
                 <div className="planner-actions">
                   <div className="view-switch" role="group" aria-label="Opciones visuales del planificador">
@@ -3374,39 +3142,6 @@ export default function Home() {
                   <button className="add-term-button" onClick={addPlannerTerm}>+ Nuevo semestre</button>
                 </div>
               </div>
-
-              <section className="planning-timeline" aria-labelledby="timeline-title">
-                <button type="button" className="timeline-heading" onClick={() => setShowTimeline((value) => !value)} aria-expanded={showTimeline}>
-                  <span><b id="timeline-title">Línea temporal</b><small>Lectura personal del historial y del escenario activo</small></span>
-                  <span>{showTimeline ? "− Minimizar" : "+ Mostrar"}</span>
-                </button>
-                {showTimeline && <div className="timeline-body">
-                  <p className="timeline-intro">El pasado pertenece a tu perfil. Los períodos futuros corresponden a <strong>{timelineProjection.scenario?.name ?? "este escenario"}</strong> y no son una escolaridad oficial ni una fecha estimada de egreso.</p>
-                  {timelineProjection.empty ? <p className="timeline-empty">Todavía no registraste hitos ni períodos para mostrar. Podés planificar sin indicar fechas.</p> : <>
-                    {timelineProjection.periods.length > 0 && <ol className="timeline-periods">
-                      {timelineProjection.periods.map((period) => <li className={`timeline-period ${period.status}`} key={period.id}>
-                        <div className="timeline-marker" aria-hidden="true" />
-                        <article>
-                          <header><span>{period.status === "closed" ? "Completado" : period.status === "in-progress" ? "En curso" : "Planificado"}</span><button type="button" onClick={() => document.getElementById(`planner-term-${period.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" })}>Ver semestre</button></header>
-                          <h3>{period.label}</h3>
-                          <p>{period.startsAt && period.endsAt ? `${period.startsAt} a ${period.endsAt}` : "Sin fecha registrada"} · {period.load.value} {period.load.label}{period.load.partial ? " · subtotal parcial" : ""}</p>
-                          <details><summary>{period.courseIds.length} {period.courseIds.length === 1 ? "materia" : "materias"} y {period.events.length} {period.events.length === 1 ? "hito" : "hitos"}</summary>
-                            <ul className="timeline-course-list">{period.courseIds.map((courseId) => {
-                              const course = plannerCourses.find((candidate) => candidate.id === courseId);
-                              return <li key={courseId}>{course ? <button type="button" onClick={() => setSelected(course)}>{course.name}</button> : <span>{courseId} · Materia sin ficha actual</span>}</li>;
-                            })}</ul>
-                            {period.events.length > 0 && <ul className="timeline-event-list">{period.events.map((event) => <li key={event.id}>Hito personal: {event.courseId} · {event.occurredAt}</li>)}</ul>}
-                          </details>
-                        </article>
-                      </li>)}
-                    </ol>}
-                    {timelineProjection.unassignedDatedEvents.length > 0 && <section className="timeline-undated"><h3>Otros hitos fechados</h3><p>Conservan su fecha personal, pero no coincide con un período fechado del escenario.</p><ul>{timelineProjection.unassignedDatedEvents.map((event) => <li key={event.id}>{event.courseId} · {event.occurredAt}</li>)}</ul></section>}
-                    {timelineProjection.undatedEvents.length > 0 && <section className="timeline-undated"><h3>Fecha no registrada</h3><p>Estos hitos personales no se asignan a un semestre por coincidencia de materia.</p><ul>{timelineProjection.undatedEvents.map((event) => <li key={event.id}>{event.courseId} · {event.kind === "recorded-status" ? "Estado importado, sin fecha" : "Hito personal sin fecha académica"}</li>)}</ul></section>}
-                    <section className="timeline-milestones" aria-labelledby="timeline-milestones-title"><h3 id="timeline-milestones-title">Hitos curriculares</h3><p>Se evalúan con la referencia curricular actual. Alcanzado no equivale a una certificación institucional.</p><ul>{timelineProjection.milestones.map((milestone) => <li key={milestone.id}><span className={`timeline-milestone-state ${milestone.state}`}>{milestone.state === "achieved" ? "Alcanzado" : milestone.state === "planned" ? "Planificado" : milestone.state === "in-progress" ? "En progreso" : milestone.state === "not-evaluable" ? "No evaluable" : "Pendiente"}</span><div><strong>{milestone.title}</strong><small>{milestone.state === "planned" ? `Estimación de este escenario: ${timelineProjection.periods.find((period) => period.id === milestone.termId)?.label ?? "período planificado"}.` : milestone.explanation ?? "Requisito curricular publicado."}</small></div></li>)}</ul></section>
-                    {timelineProjection.warnings.length > 0 && <ul className="timeline-warnings" aria-label="Advertencias de fechas">{timelineProjection.warnings.map((warning) => <li key={`${warning.code}-${warning.termId}-${warning.relatedTermId ?? ""}`}>{warning.message}</li>)}</ul>}
-                  </>}
-                </div>}
-              </section>
 
               {plannerView === "balance" && (
                 <div className="planner-load-overview" aria-label="Comparación de carga por semestre">
@@ -3696,63 +3431,6 @@ export default function Home() {
               <button type="button" className="primary-button" onClick={() => finishPlannerTerm(true)}>{rolloverIncompleteCourses.length > 0 ? "Mover y continuar" : "Continuar"}</button>
               {rolloverIncompleteCourses.length > 0 && <button type="button" className="secondary-button" onClick={() => finishPlannerTerm(false)}>Cerrar sin mover</button>}
               <button type="button" className="quiet-button" onClick={() => setRolloverTermId(null)}>Cancelar</button>
-            </div>
-          </section>
-        </div>
-      )}
-
-      {scenarioDialog && (
-        <div className="modal-backdrop">
-          <button type="button" className="backdrop-dismiss" aria-label="Cerrar gestión de escenario" onClick={closeScenarioDialog} />
-          <section className="import-modal scenario-dialog" role="dialog" aria-modal="true" aria-labelledby="scenario-dialog-title">
-            <h2 id="scenario-dialog-title">{scenarioDialog.kind === "create" ? "Nuevo escenario" : scenarioDialog.kind === "rename" ? "Renombrar escenario" : scenarioDialog.kind === "promote" ? "¿Hacer principal este escenario?" : "¿Archivar este escenario?"}</h2>
-            {(scenarioDialog.kind === "create" || scenarioDialog.kind === "rename") ? <>
-              <p>{scenarioDialog.kind === "create" ? "Empezará vacío, con un semestre. No copiaremos materias de otro escenario." : "Los nombres pueden repetirse: Trayecto conserva la identidad por su código interno."}</p>
-              <label className="scenario-name-field">Nombre
-                <input ref={(element) => { scenarioDialogInitialRef.current = element; }} value={scenarioNameDraft} maxLength={SCENARIO_NAME_MAX_LENGTH} onChange={(event) => setScenarioNameDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && scenarioNameDraft.trim()) confirmScenarioDialog(); }} />
-                <small>{scenarioNameDraft.length}/{SCENARIO_NAME_MAX_LENGTH}</small>
-              </label>
-            </> : <p>{scenarioDialog.kind === "promote"
-              ? "Quedará marcado como principal para este perfil. No cambiará el escenario que estás editando ni sus materias."
-              : "Dejará de aparecer en la lista principal, pero conservará semestres, materias, fechas y objetivos. Podrás restaurarlo."}</p>}
-            <div className="rollover-actions">
-              <button ref={(element) => { if (scenarioDialog.kind === "promote" || scenarioDialog.kind === "archive") scenarioDialogInitialRef.current = element; }} type="button" className="primary-button" disabled={(scenarioDialog.kind === "create" || scenarioDialog.kind === "rename") && !scenarioNameDraft.trim()} onClick={confirmScenarioDialog}>{scenarioDialog.kind === "create" ? "Crear y abrir" : scenarioDialog.kind === "rename" ? "Guardar nombre" : scenarioDialog.kind === "promote" ? "Hacer principal" : "Archivar"}</button>
-              <button type="button" className="quiet-button" onClick={closeScenarioDialog}>Cancelar</button>
-            </div>
-          </section>
-        </div>
-      )}
-
-      {comparisonScenarioId && scenarioComparison?.ok && (
-        <div className="modal-backdrop">
-          <button type="button" className="backdrop-dismiss" aria-label="Cerrar comparación de escenarios" onClick={() => { setComparisonScenarioId(null); requestAnimationFrame(() => scenarioTriggerRef.current?.focus()); }} />
-          <section className="scenario-comparison" role="dialog" aria-modal="true" aria-labelledby="scenario-comparison-title">
-            <header>
-              <div><p className="eyebrow">Comparación observable</p><h2 id="scenario-comparison-title">{scenarioComparison.comparison.left.name} y {scenarioComparison.comparison.right.name}</h2></div>
-              <button ref={(element) => { scenarioDialogInitialRef.current = element; }} type="button" className="drawer-close" aria-label="Cerrar comparación" onClick={() => { setComparisonScenarioId(null); requestAnimationFrame(() => scenarioTriggerRef.current?.focus()); }}>×</button>
-            </header>
-            <p className="scenario-comparison-caution">Esta comparación no determina cuál escenario es mejor, más rápido o institucionalmente válido.</p>
-            <div className="scenario-comparison-summary">
-              {[scenarioComparison.comparison.left, scenarioComparison.comparison.right].map((side) => <section key={side.id}>
-                <h3>{side.name}</h3>
-                <strong>{side.termCount} {side.termCount === 1 ? "semestre" : "semestres"}</strong>
-                <span>{side.uniqueCourseCount} {side.uniqueCourseCount === 1 ? "materia única" : "materias únicas"}</span>
-                <span>Carga conocida: {side.load.value} {side.load.unit === "credits" ? "cr." : side.load.unit === "hours" ? "h" : side.load.value === 1 ? "materia" : "materias"}{side.load.partial ? " · subtotal parcial" : ""}</span>
-              </section>)}
-            </div>
-            <div className="scenario-comparison-grid">
-              <section><h3>Materias compartidas</h3><p>{scenarioComparison.comparison.sharedCourseIds.length}</p>{scenarioComparison.comparison.sharedCourseIds.length > 0 && <ul>{scenarioComparison.comparison.sharedCourseIds.map((id) => <li key={id}>{comparisonCourseName(id)}</li>)}</ul>}</section>
-              <section><h3>Sólo en {scenarioComparison.comparison.left.name}</h3><p>{scenarioComparison.comparison.onlyLeftCourseIds.length}</p>{scenarioComparison.comparison.onlyLeftCourseIds.length > 0 && <ul>{scenarioComparison.comparison.onlyLeftCourseIds.map((id) => <li key={id}>{comparisonCourseName(id)}</li>)}</ul>}</section>
-              <section><h3>Sólo en {scenarioComparison.comparison.right.name}</h3><p>{scenarioComparison.comparison.onlyRightCourseIds.length}</p>{scenarioComparison.comparison.onlyRightCourseIds.length > 0 && <ul>{scenarioComparison.comparison.onlyRightCourseIds.map((id) => <li key={id}>{comparisonCourseName(id)}</li>)}</ul>}</section>
-            </div>
-            <section className="scenario-movements">
-              <h3>Cambios de ubicación</h3>
-              {scenarioComparison.comparison.movedCourseIds.length === 0 ? <p>No hay cambios observables de ubicación.</p> : <ul>{scenarioComparison.comparison.movedCourseIds.map((move) => <li key={move.courseId}><strong>{comparisonCourseName(move.courseId)}</strong><span>{move.from.label} → {move.to.label}{move.basis === "dates" ? " · períodos alineados por fechas" : " · comparación por posición"}</span></li>)}</ul>}
-              {scenarioComparison.comparison.positionIsPresentationOnly && <p className="scenario-comparison-note">Sin fechas completas, la posición se usa sólo para presentar la diferencia y no equivale a un período institucional.</p>}
-              {(scenarioComparison.comparison.duplicateCourseIds.left.length > 0 || scenarioComparison.comparison.duplicateCourseIds.right.length > 0) && <p className="scenario-comparison-note">Hay materias repetidas en al menos una alternativa. Se informan sin descartar los datos; revisá la planificación importada.</p>}
-            </section>
-            <div className="scenario-term-loads">
-              {[scenarioComparison.comparison.left, scenarioComparison.comparison.right].map((side) => <section key={side.id}><h3>Carga por semestre · {side.name}</h3><ul>{side.load.perTerm.map((term) => <li key={term.termId}><span>{term.label}{term.targetStatus === "exceeded" && <> · supera el objetivo personal por {term.difference}</>}</span><strong>{term.value} {side.load.unit === "credits" ? "cr." : side.load.unit === "hours" ? "h" : term.value === 1 ? "materia" : "materias"}{term.partial ? " · parcial" : ""}</strong></li>)}</ul></section>)}
             </div>
           </section>
         </div>
