@@ -2,7 +2,7 @@
 
 ## Estado
 
-Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01–P06 están integrados en `main`; las olas locales de integridad y planificación prolongada quedaron cerradas. Antes de iniciar la Ola 3 deben resolverse las decisiones humanas indicadas abajo. El roadmap no autoriza por sí solo servicios externos, push o publicación.
+Roadmap aprobado para planificación y corregido tras la auditoría independiente del 9 de septiembre de 2026. F01–F05, C01–C04 y P01–P06 están integrados en `main`; las olas locales de integridad y planificación prolongada quedaron cerradas. El 21 de septiembre de 2026 se añadió la puerta urgente D01–D03 de autoridad curricular: D01 y D02 deben cerrarse antes de iniciar la Ola 3 o ampliar el catálogo global. Antes de iniciar la Ola 3 también deben resolverse las decisiones humanas indicadas abajo. El roadmap no autoriza por sí solo servicios externos, push o publicación.
 
 ## Objetivo
 
@@ -59,6 +59,9 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 | P04 | Modelo trazable de oferta y período de dictado | `gpt-5.6-sol` | high | — |
 | P05 | Línea temporal e hitos | `gpt-5.6-terra` | high | P02,P03 |
 | P06 | Alertas por cambios curriculares | `gpt-5.6-sol` | high | C04,P02 |
+| D01 | Contención y procedencia curricular por materia | `gpt-5.6-sol` | xhigh | — |
+| D02 | Superficie de materias sin verificar | `gpt-5.6-terra` + revisión Sol | high | D01 |
+| D03 | Reconciliación con fuentes oficiales por servicio | `gpt-5.6-sol` | xhigh | D01,D02 |
 | B01 | Prueba portable PostgreSQL | `gpt-5.6-sol` | high | F01,F02 |
 | B02 | Prueba de identidad OIDC | `gpt-5.6-sol` | high | F02 |
 | B03 | Esquema y adaptador de persistencia | `gpt-5.6-sol` | high | B01,B02,P02,P03,P06 |
@@ -198,6 +201,18 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Comparar créditos, áreas, requisitos e identidad de materias antes de aplicar una actualización.
 - Cierre: nunca reescribir automáticamente el historial; ofrecer revisión y conservar la versión anterior.
 
+## Puerta urgente — Autoridad curricular
+
+### D01–D03 — Saneamiento y fuentes de verdad
+
+- Especificación: `docs/tasks/autoridad-datos-curriculares.md`.
+- Prioridad urgente y bloqueante: la composición de SGAE/Bedelías deja de ser suficiente para publicar una materia como parte vigente del catálogo.
+- D01 conserva toda la extracción, clasifica cada entrada, separa auditoría del plan de auditoría del catálogo y oculta candidatos de la experiencia normal.
+- D02 incorpora una sección cerrada y buscable de materias sin verificar, con aporte provisional explícito y sin completar requisitos oficiales.
+- D03 reconcilia los candidatos contra planes, grillas, programas, resoluciones y ofertas oficiales por servicio. EVA queda limitado a enlace auxiliar de materias ya verificadas.
+- No se eliminan candidatos ni progreso; las coincidencias aproximadas sólo alimentan revisión y nunca crean equivalencias automáticas.
+- Cierre previo a Ola 3: D01 y D02 integrados, pruebas de compatibilidad y validación visual. D03 continúa incrementalmente por servicio.
+
 ## Ola 3 — Portabilidad y cuentas
 
 ### B01 — Prueba PostgreSQL portable
@@ -297,8 +312,9 @@ Se mantiene un solo subagente activo durante todo el roadmap. El orden prioriza 
 
 1. Base local e integridad: F01 → F02 → F03 → F04 → F05 → C01 → C02 → C03 → C04.
 2. Planificación prolongada: P01 → P02 → P04 → P03 → P05 → P06.
-3. Portabilidad y cuentas, después de cerrar las decisiones humanas: B01 → B02 → B03 → B06a → B04 → B05 → B06b → B07 → B08 → B09.
-4. Cierre: S01 → R01.
+3. Puerta urgente de autoridad curricular: D01 → D02 → D03 inicial y priorización de servicios.
+4. Portabilidad y cuentas, después de cerrar D01–D02 y las decisiones humanas: B01 → B02 → B03 → B06a → B04 → B05 → B06b → B07 → B08 → B09.
+5. Cierre: S01 → R01.
 
 ## Prompt para iniciar la orquestación
 
