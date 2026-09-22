@@ -26,7 +26,8 @@ test("proyecta diez bloques oficiales y no suma talleres alternativos", () => {
     ["5.º año", 2],
     ["6.º año", 3],
   ]);
-  assert.equal(plan.rules.length, 0);
+  assert.equal(plan.rules.length, 12);
+  assert.equal(plan.publishedRules.length, 0);
   assert.ok(!plan.courses.some((course) => /Taller (?:Alejandro|Alonso|Bruzzone|Delgado|Kühne)/i.test(course.name)));
 
   const credential = plan.creditStructure.credentials[0];

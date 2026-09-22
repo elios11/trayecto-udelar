@@ -88,9 +88,9 @@ test("exige el núcleo vigente y conserva equivalencias administrativas", () => 
   assert.ok([...groups.values()].flatMap(({ courseIds }) => courseIds).every((id) => courseById.has(id)));
 });
 
-test("mantiene sólo las previaturas publicadas y la pasantía dentro del área técnica", () => {
+test("mantiene la evidencia de previaturas y publica sólo las verificadas", () => {
   assert.equal(projection.rules.length, 36);
-  assert.equal(projection.plan.publishedRules, 36);
+  assert.equal(projection.plan.publishedRules, 8);
   assert.equal(projection.plan.noPublishedRule, 144);
   const technical = pathway.periods.find(({ label }) => label === "Técnico-instrumental");
   assert.ok(technical.courseIds.includes("fhum-coe4-2"));

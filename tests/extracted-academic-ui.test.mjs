@@ -18,6 +18,8 @@ test("la UI no presenta la extracción pendiente como auditoría oficial", () =>
   assert.match(page, /Catálogo parcial · sólo materias verificadas/);
   assert.match(page, /Catálogo en validación · sin materias publicadas/);
   assert.match(page, /\(course\.authorityStatus \?\? "verified"\) === "verified"/);
+  assert.match(page, /activeRegisteredPlan\?\.publishedRules \?\? activeRegisteredPlan\?\.rules \?\? \[\]/);
+  assert.match(page, /new Map<string, unknown>\(activeRegisteredPlan\.courses\.map/);
   assert.match(page, /activeRegisteredPlan\.plan\.courseCatalogAuditStatus === "structure-only"/);
   assert.match(page, /El plan está disponible, pero sus materias aún no tienen respaldo suficiente/);
   assert.match(page, /Este plan todavía no tiene materias verificadas para agregar\. La composición extraída se conserva en revisión\./);

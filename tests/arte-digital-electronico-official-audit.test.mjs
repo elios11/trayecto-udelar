@@ -31,7 +31,8 @@ test("proyecta los 18 bloques oficiales sin exigir el catálogo histórico", () 
     ["5.º año", 4],
     ["6.º año", 4],
   ]);
-  assert.equal(plan.rules.length, 0);
+  assert.equal(plan.rules.length, 17);
+  assert.equal(plan.publishedRules.length, 0);
   assert.ok(!plan.courses.some((course) => /Taller (?:Alejandro|Alonso|Bruzzone|Delgado|Kühne)/i.test(course.name)));
 
   const credential = plan.creditStructure.credentials[0];

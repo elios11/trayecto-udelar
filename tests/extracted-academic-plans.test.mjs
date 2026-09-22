@@ -6,6 +6,11 @@ const root = new URL("../", import.meta.url);
 const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relativePath, root), "utf8"));
 const report = await readJson("data/bedelias/inventory/ui-extracted-plans.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
+const collectRuleCourseIds = (expression, output = []) => {
+  output.push(...(expression?.options ?? []).map((option) => option.code).filter(Boolean));
+  for (const child of expression?.children ?? []) collectRuleCourseIds(child, output);
+  return output;
+};
 
 test("integra una sola proyección por identidad canónica vigente y excluye planes históricos verificados", () => {
   assert.equal(report.counts.canonicalCurrentIdentities, 184);
@@ -56,7 +61,15 @@ test("cada proyección diferida conserva referencias internas válidas y estado 
       assert.match(course.authorityStatus, /^(verified|candidate)$/);
       assert.ok(course.fieldProvenance?.inclusion);
     }
-    const verifiedIds = new Set(projection.courses.filter((course) => course.authorityStatus === "verified").map((course) => course.id));
+    const verifiedCourses = projection.courses.filter((course) => course.authorityStatus === "verified");
+    const verifiedIds = new Set(verifiedCourses.map((course) => course.id));
+    const publishedCourseIdentities = new Set(verifiedCourses.flatMap((course) => [course.id, course.bedeliasCode].filter(Boolean)));
+    assert.equal(projection.plan.publishedRules, projection.publishedRules.length, item.identity);
+    assert.equal(projection.plan.partialRules, projection.rules.length - projection.publishedRules.length, item.identity);
+    for (const rule of projection.publishedRules) {
+      assert.ok(publishedCourseIdentities.has(rule.target.code), `${item.identity}: objetivo de regla no publicado ${rule.target.code}`);
+      for (const id of collectRuleCourseIds(rule.expression)) assert.ok(publishedCourseIdentities.has(id), `${item.identity}: dependencia de regla no publicada ${id}`);
+    }
     for (const pathway of Object.values(projection.publishedPathways)) {
       for (const id of pathway.periods.flatMap((period) => period.courseIds)) assert.ok(verifiedIds.has(id), `${item.identity}: referencia publicada no verificada ${id}`);
       for (const id of pathway.catalogCourseIds ?? []) assert.ok(verifiedIds.has(id), `${item.identity}: referencia de catálogo no verificada ${id}`);
@@ -173,6 +186,10 @@ test("el reporte queda ligado por hash a sus tres entradas reproducibles", () =>
   assert.equal(report.schemaVersion, 2);
   assert.equal(report.counts.afterPublishedCourses, report.counts.courseAuthority.verified);
   assert.ok(report.counts.beforePublishedCourses > report.counts.afterPublishedCourses);
+  assert.ok(report.counts.beforePublishedRules > report.counts.afterPublishedRules);
+  assert.ok(report.counts.visibleTargetsWithUnpublishedDependencies > 0);
+  assert.equal(report.counts.afterPublishedRules, report.plans.reduce((sum, plan) => sum + plan.after.publishedRules, 0));
+  assert.equal(report.counts.visibleTargetsWithUnpublishedDependencies, report.plans.reduce((sum, plan) => sum + plan.after.rulesWithUnpublishedDependencies, 0));
   assert.equal(report.counts.plansWithVerifiedCatalog + report.counts.plansWithPartialCatalog + report.counts.plansWithStructureOnly, report.counts.generatedPlans);
   assert.match(report.contentHash, /^sha256:[a-f0-9]{64}$/);
   assert.match(report.generatedFrom.auditQueueHash, /^sha256:/);

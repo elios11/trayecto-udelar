@@ -22,7 +22,8 @@ test("controla diez bloques sin acumular talleres o planes personales", () => {
   assert.deepEqual(plan.pathways.bedelias.periods.map((period) => period.courseIds.length), [1, 1, 1, 2, 2, 3]);
   assert.deepEqual(plan.courses.filter((course) => /Plano en el Espacio/.test(course.name)).map((course) => course.credits), [50, 50, 30]);
   assert.equal(plan.courses.find((course) => /Trabajo Final/.test(course.name)).credits, 20);
-  assert.equal(plan.rules.length, 0);
+  assert.equal(plan.rules.length, 9);
+  assert.equal(plan.publishedRules.length, 0);
   assert.ok(!plan.courses.some((course) => /Alejandro|Alonso|Delgado|Kühne/i.test(course.name)));
   assert.match(plan.plan.notice, /no crea otra trayectoria o título/i);
 });

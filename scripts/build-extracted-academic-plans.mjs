@@ -398,6 +398,20 @@ function normalizeExpressionCourseIds(expression, codeToId, localServiceCode) {
   };
 }
 
+function collectExpressionCourseIds(expression, output = new Set()) {
+  if (!expression) return output;
+  for (const option of expression.options ?? []) {
+    if (option.code) output.add(option.code);
+  }
+  for (const child of expression.children ?? []) collectExpressionCourseIds(child, output);
+  return output;
+}
+
+function ruleUsesOnlyPublishedCourseIdentities(rule, publishedCourseIdentities) {
+  return publishedCourseIdentities.has(rule.target.code)
+    && [...collectExpressionCourseIds(rule.expression)].every((courseId) => publishedCourseIdentities.has(courseId));
+}
+
 function buildOfficialCurriculum(audit, serviceCode, usedIds) {
   const curriculum = audit?.officialPlan?.curriculum;
   const hasPeriods = Array.isArray(curriculum?.periods) && curriculum.periods.length > 0;
@@ -994,26 +1008,40 @@ function buildProjection(entry, snapshot, audit) {
     }
   }
 
-  const publishedCodes = new Set();
+  const verifiedCourseIds = new Set(courses.filter((course) => course.authorityStatus === "verified").map((course) => course.id));
+  const publishedCourseIdentities = new Set(courses
+    .filter((course) => course.authorityStatus === "verified")
+    .flatMap((course) => [course.id, course.bedeliasCode].filter(Boolean)));
+  const rawRuleTargetCodes = new Set();
   const noPublishedCodes = new Set();
   const rules = [];
-  for (const rule of replaceBedeliasCourses ? [] : (snapshot.prerequisites ?? [])) {
+  // Preserve the Bedelías rule evidence even when an official curriculum replaces
+  // the composition. `publishedRules` below is the authority boundary: only
+  // rules whose target and every referenced identity are verified reach the UI.
+  for (const rule of snapshot.prerequisites ?? []) {
     if (isAdministrativeCreditEntry(rule.target?.name)) continue;
     if (rule.expression && ["course", "exam"].includes(rule.target?.assessment) && rule.target?.code) {
-      publishedCodes.add(rule.target.code);
+      rawRuleTargetCodes.add(rule.target.code);
       rules.push({ target: { code: rule.target.code, name: rule.target.name, assessment: rule.target.assessment }, expression: normalizeExpressionCourseIds(rule.expression, codeToId, snapshot.service.code), heading: rule.heading, sourceUrl: rule.sourceUrl });
     } else if (rule.noPublishedRule && rule.target?.code) noPublishedCodes.add(rule.target.code);
   }
   for (const rule of buildOfficialPrerequisiteRules(audit, officialCurriculum, snapshot.service.code)) {
-    publishedCodes.add(rule.target.code);
+    rawRuleTargetCodes.add(rule.target.code);
     rules.push(rule);
   }
+  const publishedRules = rules.filter((rule) => ruleUsesOnlyPublishedCourseIdentities(rule, publishedCourseIdentities));
+  const publishedRuleTargetCodes = new Set(publishedRules.map((rule) => rule.target.code));
   for (const course of courses) {
     if (!course.bedeliasCode) {
-      if (publishedCodes.has(course.id)) course.ruleCoverage = "published";
+      if (publishedRuleTargetCodes.has(course.id)) course.ruleCoverage = "published";
+      else if (rawRuleTargetCodes.has(course.id)) course.ruleCoverage = "partial";
       continue;
     }
-    course.ruleCoverage = publishedCodes.has(course.bedeliasCode) ? "published" : noPublishedCodes.has(course.bedeliasCode) ? "not-published" : "not-scraped";
+    course.ruleCoverage = publishedRuleTargetCodes.has(course.bedeliasCode)
+      ? "published"
+      : rawRuleTargetCodes.has(course.bedeliasCode)
+        ? "partial"
+        : noPublishedCodes.has(course.bedeliasCode) ? "not-published" : "not-scraped";
   }
 
   const publishedMinCredits = Number(snapshot.plan?.metadata?.minCredits);
@@ -1021,7 +1049,6 @@ function buildProjection(entry, snapshot, audit) {
   const safeMinCredits = Number.isFinite(auditedMinCredits) && auditedMinCredits > 0
     ? auditedMinCredits
     : Number.isFinite(publishedMinCredits) && publishedMinCredits > 0 ? publishedMinCredits : 0;
-  const verifiedCourseIds = new Set(courses.filter((course) => course.authorityStatus === "verified").map((course) => course.id));
   const hiddenCourseIds = new Set(courses.filter((course) => course.authorityStatus !== "verified").map((course) => course.id));
   const filterPublishedIds = (ids) => ids.filter((id) => verifiedCourseIds.has(id));
   const extractedCompositionAvailable = courses.length > 0;
@@ -1095,8 +1122,8 @@ function buildProjection(entry, snapshot, audit) {
         verifiedCompositionAvailable,
         extractedCompositionAvailable,
         notice,
-        publishedRules: rules.length,
-        partialRules: 0,
+        publishedRules: publishedRules.length,
+        partialRules: rules.length - publishedRules.length,
         noPublishedRule: noPublishedCodes.size,
       },
       creditStructure: {
@@ -1111,6 +1138,7 @@ function buildProjection(entry, snapshot, audit) {
       publishedPathways,
       campuses,
       rules,
+      publishedRules,
       requirementGroupMap: {},
       ...(officialCurriculum && Object.keys(officialCurriculum.requirementCourseGroups).length > 0
         ? { requirementCourseGroups: officialCurriculum.requirementCourseGroups }
@@ -1247,6 +1275,18 @@ export async function buildExtractedAcademicPlans() {
     ...projection.courses.map((course) => ({ status: course.authorityStatus })),
     ...projection.courseAuthority.records,
   ];
+  const ruleAuthority = (projection) => {
+    const publishedCourseIdentities = new Set(projection.courses
+      .filter((course) => course.authorityStatus === "verified")
+      .flatMap((course) => [course.id, course.bedeliasCode].filter(Boolean)));
+    const visibleTargetRules = projection.rules.filter((rule) => publishedCourseIdentities.has(rule.target.code));
+    return {
+      retainedRules: projection.rules.length,
+      publishedRules: projection.publishedRules.length,
+      visibleTargetsWithUnpublishedDependencies: visibleTargetRules
+        .filter((rule) => !ruleUsesOnlyPublishedCourseIdentities(rule, publishedCourseIdentities)).length,
+    };
+  };
   const authorityTotals = Object.fromEntries(COURSE_AUTHORITY_STATUSES.map((status) => [
     status,
     projections.reduce((sum, { projection }) => sum + authorityRecords(projection).filter((record) => record.status === status).length, 0),
@@ -1264,6 +1304,9 @@ export async function buildExtractedAcademicPlans() {
       courseAuthority: authorityTotals,
       beforePublishedCourses: projections.reduce((sum, { projection }) => sum + projection.courses.length, 0),
       afterPublishedCourses: authorityTotals.verified,
+      beforePublishedRules: projections.reduce((sum, { projection }) => sum + ruleAuthority(projection).retainedRules, 0),
+      afterPublishedRules: projections.reduce((sum, { projection }) => sum + ruleAuthority(projection).publishedRules, 0),
+      visibleTargetsWithUnpublishedDependencies: projections.reduce((sum, { projection }) => sum + ruleAuthority(projection).visibleTargetsWithUnpublishedDependencies, 0),
       plansWithVerifiedCatalog: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "verified").length,
       plansWithPartialCatalog: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "partial").length,
       plansWithStructureOnly: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "structure-only").length,
@@ -1278,10 +1321,12 @@ export async function buildExtractedAcademicPlans() {
       compositionAvailable: projection.plan.compositionAvailable,
       extractedCompositionAvailable: projection.plan.extractedCompositionAvailable,
       campusIds: projection.campuses.map((campus) => campus.id),
-      before: { publishedCourses: projection.courses.length },
+      before: { publishedCourses: projection.courses.length, publishedRules: ruleAuthority(projection).retainedRules },
       after: {
         publishedCourses: authorityRecords(projection).filter((record) => record.status === "verified").length,
         hiddenCourses: authorityRecords(projection).filter((record) => record.status !== "verified").length,
+        publishedRules: ruleAuthority(projection).publishedRules,
+        rulesWithUnpublishedDependencies: ruleAuthority(projection).visibleTargetsWithUnpublishedDependencies,
       },
       statuses: Object.fromEntries(COURSE_AUTHORITY_STATUSES.map((status) => [
         status,

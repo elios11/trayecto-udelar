@@ -92,9 +92,9 @@ test("fusiona cada curso con créditos repartidos sin perder sus áreas", () => 
   assert.equal(projection.courses.length, 224);
 });
 
-test("conserva previaturas y discrepancias orientativas sin inventar reglas", () => {
+test("conserva previaturas como evidencia y publica sólo las verificadas", () => {
   assert.equal(projection.rules.length, 194);
-  assert.equal(projection.plan.publishedRules, 194);
+  assert.equal(projection.plan.publishedRules, 3);
   assert.equal(projection.plan.noPublishedRule, 36);
   assert.match(audit.anomalies.find(({ field }) => field === "suggestedProfileTotals").resolution, /451/);
   assert.match(audit.anomalies.find(({ field }) => field === "profilesAreNotCredentials").resolution, /mismo título/i);

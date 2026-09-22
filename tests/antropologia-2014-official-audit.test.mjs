@@ -127,9 +127,9 @@ test("exige la validación final de la opción y del plan individual", () => {
   }
 });
 
-test("conserva las previas publicadas y no inventa una tesis separada", () => {
+test("conserva la evidencia de previas sin publicar dependencias no verificadas ni inventar una tesis", () => {
   assert.equal(projection.rules.length, 83);
-  assert.equal(projection.plan.publishedRules, 83);
+  assert.equal(projection.plan.publishedRules, 0);
   assert.equal(projection.plan.noPublishedRule, 182);
   assert.equal(projection.courses.filter(({ name }) => /tesis/i.test(name)).length, 0);
   assert.ok(Object.values(projection.pathways).every(({ periods }) => periods.some(({ label }) => /Específica II/.test(label))));

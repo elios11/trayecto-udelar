@@ -112,7 +112,7 @@ test("aplica las previas vigentes a las materias comunes y a las cinco lenguas",
     assert.ok(rules.has(`fder-${language}-practica-4`));
   }
   assert.equal(projection.plan.publishedRules, 94);
-  assert.equal(projection.plan.noPublishedRule, 0);
+  assert.equal(projection.plan.noPublishedRule, 68);
 });
 
 test("excluye las cuatro ofertas idiomáticas duplicadas y normaliza la anomalía inglesa", () => {

@@ -27,7 +27,8 @@ test("proyecta diez bloques oficiales sin sumar cátedras alternativas", () => {
     ["5.º año", 2],
     ["6.º año", 3],
   ]);
-  assert.equal(plan.rules.length, 0);
+  assert.equal(plan.rules.length, 9);
+  assert.equal(plan.publishedRules.length, 0);
   assert.ok(!plan.courses.some((course) => /Alejandro|Alonso|Delgado|Kühne/i.test(course.name)));
 
   const credential = plan.creditStructure.credentials[0];

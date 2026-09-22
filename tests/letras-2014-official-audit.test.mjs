@@ -103,7 +103,7 @@ test("presenta ocho semestres sugeridos y conserva todo el catálogo flexible", 
 test("conserva 31 previaturas y los tres créditos excedentes sin elevar el mínimo", () => {
   assert.equal(projection.courses.length, 269);
   assert.equal(projection.rules.length, 31);
-  assert.equal(projection.plan.publishedRules, 31);
+  assert.equal(projection.plan.publishedRules, 21);
   assert.equal(projection.plan.noPublishedRule, 247);
   assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 70);
   assert.equal(projection.plan.minCredits, 360);

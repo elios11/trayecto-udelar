@@ -84,7 +84,9 @@ Cada materia proyectada conserva `authorityStatus` y referencias de procedencia 
 
 La malla, el buscador y el planificador normales sólo consumen `verified`. Los demás estados se conservan en la proyección o el snapshot para reconocer datos personales anteriores y alimentar revisiones posteriores. Nunca se promociona ni fusiona una materia mediante similitud de texto.
 
-`data/bedelias/inventory/ui-extracted-plans.json` es el informe determinista de contención: registra por plan los conteos antes y después, los cinco estados y la cobertura del catálogo. Se regenera junto con las proyecciones mediante `node scripts/build-extracted-academic-plans.mjs`.
+Las reglas extraídas completas permanecen en `rules` como evidencia de auditoría. La superficie normal consume `publishedRules`, que exige un objetivo verificado y que todas las identidades referenciadas también estén publicadas. Una regla que depende de una candidata o de otra identidad oculta queda como cobertura parcial: no se muestra como verificable ni bloquea una materia visible hasta reconciliar esas referencias.
+
+`data/bedelias/inventory/ui-extracted-plans.json` es el informe determinista de contención: registra por plan los conteos antes y después, los cinco estados, la cobertura del catálogo y las reglas retiradas de publicación por depender de identidades ocultas. Se regenera junto con las proyecciones mediante `node scripts/build-extracted-academic-plans.mjs`.
 
 ## Áreas de formación y programas oficiales
 

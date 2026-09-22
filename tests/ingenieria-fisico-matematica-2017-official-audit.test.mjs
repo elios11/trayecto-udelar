@@ -113,9 +113,9 @@ test("fusiona las seis unidades con créditos repartidos sin perder sus áreas",
   assert.equal(projection.courses.length, 331);
 });
 
-test("conserva las previaturas publicadas y no inventa las ausentes", () => {
+test("conserva la evidencia de previaturas y publica sólo las verificadas", () => {
   assert.equal(projection.rules.length, 241);
-  assert.equal(projection.plan.publishedRules, 241);
+  assert.equal(projection.plan.publishedRules, 29);
   assert.equal(projection.plan.noPublishedRule, 34);
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));
   assert.match(audit.anomalies.find(({ field }) => field === "profilesAreGuides").resolution, /mismo perfil|perfiles guía|opción personalizada/i);

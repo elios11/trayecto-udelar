@@ -144,5 +144,6 @@ No se amplía el catálogo global ni se inicia la Ola 3 de cuentas hasta cerrar 
 
 - D01 implementado en el generador de proyecciones: contrato de autoridad, procedencia por campo, separación de auditorías y reporte determinista antes/después.
 - Los candidatos continúan en `projection.courses` para compatibilidad de importaciones, pero las rutas publicadas y la UI normal sólo aceptan `verified`.
+- Las reglas completas permanecen en `projection.rules` para auditoría; `projection.publishedRules` excluye cualquier regla cuyo objetivo o dependencias no estén publicados, para que una candidata oculta nunca bloquee una materia visible.
 - Los aliases oficiales, asientos administrativos y exclusiones curadas quedan en `courseAuthority.records`; los snapshots originales no se modifican.
 - D02 sigue pendiente y será la única superficie donde se podrán consultar candidatos bajo demanda.

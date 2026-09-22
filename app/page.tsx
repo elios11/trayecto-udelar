@@ -286,6 +286,7 @@ type RegisteredProjection = {
   publishedPathways?: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
+  publishedRules?: VerifiedRule[];
   requirementGroupMap: Record<string, string>;
   requirementCourseGroups?: Record<string, string[]>;
   audit: { anomalies: unknown[]; priority?: string; publicationEligible?: boolean };
@@ -1188,7 +1189,7 @@ export default function Home() {
   }, [planYear, isProfilePlan, isRegisteredPlan, activeRegisteredPlan, activeProfileData, activeProfileCatalogData, extendedElectivesData, qfCatalogData, qf2015Data]);
   const publishedRules = useMemo(() => {
     return isRegisteredPlan
-      ? (activeRegisteredPlan?.rules ?? [])
+      ? (activeRegisteredPlan?.publishedRules ?? activeRegisteredPlan?.rules ?? [])
       : planYear === "2025"
       ? plan2025Data.rules
       : isProfilePlan

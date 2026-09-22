@@ -75,7 +75,7 @@ test("conserva la cobertura de previaturas sin fabricar reglas", () => {
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 77);
   assert.equal(audit.bedeliasComparison.compositionGroupCount, 20);
   assert.equal(projection.rules.length, 61);
-  assert.equal(projection.plan.publishedRules, 61);
+  assert.equal(projection.plan.publishedRules, 0);
   assert.equal(projection.plan.noPublishedRule, 2);
   assert.equal(new Set(projection.courses.map(({ id }) => id)).size, projection.courses.length);
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));

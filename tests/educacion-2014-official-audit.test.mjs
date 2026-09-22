@@ -95,7 +95,7 @@ test("cada trayectoria muestra su área y conserva el catálogo flexible", () =>
 test("conserva sólo las previaturas publicadas y neutraliza filas sin crédito", () => {
   assert.equal(projection.courses.length, 300);
   assert.equal(projection.rules.length, 75);
-  assert.equal(projection.plan.publishedRules, 75);
+  assert.equal(projection.plan.publishedRules, 23);
   assert.equal(projection.plan.noPublishedRule, 227);
   assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 55);
   assert.ok(projection.courses.filter(({ credits }) => credits === 0)
