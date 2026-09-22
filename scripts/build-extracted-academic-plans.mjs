@@ -48,6 +48,7 @@ function exactOfficialCourseSourceIds(audit) {
     ...(audit?.officialPlan?.trajectories ?? []).flatMap((trajectory) => [
       ...(trajectory.courseIds ?? []),
       ...(trajectory.catalogSourceCourseIds ?? []),
+      ...(trajectory.periods ?? []).flatMap((period) => period.courseIds ?? []),
     ]),
     ...(audit?.officialPlan?.documentedSportOptions ?? []).flatMap((option) => option.courseIds ?? []),
   ].map(String));

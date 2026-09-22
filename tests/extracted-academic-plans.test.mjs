@@ -6,6 +6,7 @@ const root = new URL("../", import.meta.url);
 const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relativePath, root), "utf8"));
 const report = await readJson("data/bedelias/inventory/ui-extracted-plans.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
+const officialSourceAudits = await readJson("data/bedelias/audits/official-source-audits.json");
 const collectRuleCourseIds = (expression, output = []) => {
   output.push(...(expression?.options ?? []).map((option) => option.code).filter(Boolean));
   for (const child of expression?.children ?? []) collectRuleCourseIds(child, output);
@@ -78,6 +79,47 @@ test("cada proyección diferida conserva referencias internas válidas y estado 
       assert.equal(verifiedIds.size, 0, item.identity);
       assert.ok(Object.values(projection.publishedPathways).every((pathway) => pathway.periods.length === 0), item.identity);
       assert.match(projection.plan.notice, /(no publica su composición|validación|respald)/i);
+    }
+  }
+});
+
+test("cada materia explícita de una trayectoria oficial conserva una copia visible en Currícula", async () => {
+  const generatedPlanByIdentity = new Map(report.plans.map((plan) => [plan.identity, plan]));
+  for (const audit of officialSourceAudits.audits) {
+    const generatedPlan = generatedPlanByIdentity.get(audit.identity);
+    const trajectories = audit.officialPlan?.trajectories ?? [];
+    if (!generatedPlan || trajectories.length === 0) continue;
+    const projection = await readJson(`app/data/bedelias-generated/${generatedPlan.planId}.json`);
+    const courseBySourceIdentity = new Map();
+    for (const course of projection.courses) {
+      for (const identity of [course.id, course.bedeliasCode, ...(course.equivalentCourseIds ?? []), ...(course.equivalentBedeliasCodes ?? [])].filter(Boolean)) {
+        courseBySourceIdentity.set(String(identity), course);
+      }
+    }
+    for (const record of projection.courseAuthority?.records ?? []) {
+      if (!record.sourceCourseId || !record.canonicalCourseId) continue;
+      const canonical = projection.courses.find((course) => course.id === record.canonicalCourseId);
+      if (canonical) courseBySourceIdentity.set(String(record.sourceCourseId), canonical);
+    }
+    for (const trajectory of trajectories) {
+      const publishedPathway = projection.publishedPathways?.[trajectory.id];
+      assert.ok(publishedPathway, `${audit.identity}/${trajectory.id}: trayectoria oficial ausente`);
+      const visibleIds = new Set([
+        ...publishedPathway.periods.flatMap((period) => period.courseIds),
+        ...(publishedPathway.catalogCourseIds ?? []),
+      ]);
+      const excludedIds = new Set((trajectory.excludedCourseIds ?? []).map(String));
+      const officialCourseIds = new Set([
+        ...(trajectory.courseIds ?? []),
+        ...(trajectory.periods ?? []).flatMap((period) => period.courseIds ?? []),
+      ].map(String).filter((id) => !excludedIds.has(id)));
+      for (const sourceId of officialCourseIds) {
+        const course = courseBySourceIdentity.get(sourceId)
+          ?? projection.courses.find((candidate) => candidate.id.endsWith(`-${sourceId}`));
+        assert.ok(course, `${audit.identity}/${trajectory.id}: materia oficial sin representación ${sourceId}`);
+        assert.equal(course.authorityStatus, "verified", `${audit.identity}/${trajectory.id}: materia oficial no verificada ${sourceId}`);
+        assert.ok(visibleIds.has(course.id), `${audit.identity}/${trajectory.id}: materia oficial fuera de Currícula ${sourceId} -> ${course.id}`);
+      }
     }
   }
 });
