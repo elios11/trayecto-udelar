@@ -12,6 +12,7 @@ const outputDirectory = path.join(projectRoot, "app", "data", "bedelias-generate
 const catalogPath = path.join(projectRoot, "app", "data", "extracted-academic-catalog.json");
 const loadersPath = path.join(projectRoot, "app", "data", "extracted-academic-loaders.ts");
 const reportPath = path.join(inventoryDirectory, "ui-extracted-plans.json");
+const fhceReconciliationsPath = path.join(projectRoot, "data", "fhce", "official-trajectories-2014.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -44,7 +45,10 @@ function exactOfficialCourseSourceIds(audit) {
   return new Set([
     ...(curriculum.verifiedCourseIds ?? []),
     ...(curriculum.commonCourseIds ?? []),
-    ...(curriculum.requiredCourseGroups ?? []).flatMap((group) => group.verifiedSourceCourseIds ?? group.sourceCourseIds ?? []),
+    ...(curriculum.requiredCourseGroups ?? []).flatMap((group) => (
+      group.verifiedSourceCourseIds
+      ?? (curriculum.strictOfficialCourseIds === true ? [] : group.sourceCourseIds ?? [])
+    )),
     ...(audit?.officialPlan?.trajectories ?? []).flatMap((trajectory) => [
       ...(trajectory.courseIds ?? []),
       ...(trajectory.catalogSourceCourseIds ?? []),
@@ -651,7 +655,8 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
         ...additionalRequirementIdsForAllCourses.filter((id) => !excludedRequirementIds.has(id)),
       ])];
       const isOfficialOverride = Object.keys(courseOverride).length > 0;
-      const authorityStatus = isOfficialOverride || verifiedSourceCourseIds.has(String(sourceCourseId))
+      const authorityStatus = verifiedSourceCourseIds.has(String(sourceCourseId))
+        || (curriculum.strictOfficialCourseIds !== true && isOfficialOverride)
         ? "verified"
         : historicalEquivalentSourceCourseIds.has(String(sourceCourseId)) ? "historical-equivalent" : "candidate";
       course = withCourseAuthority({
@@ -1188,11 +1193,47 @@ async function loadJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
 }
 
+function mergeAuditReconciliation(audit, reconciliation) {
+  if (!audit || !reconciliation) return audit;
+  const curriculum = {
+    ...audit.officialPlan?.curriculum,
+    ...reconciliation.curriculum,
+  };
+  if (reconciliation.requiredCourseGroupSourceIds) {
+    curriculum.requiredCourseGroups = (curriculum.requiredCourseGroups ?? []).map((group) => ({
+      ...group,
+      sourceCourseIds: [...new Set([
+        ...(group.sourceCourseIds ?? []),
+        ...(reconciliation.requiredCourseGroupSourceIds[group.id] ?? []),
+      ])],
+    }));
+  }
+  return {
+    ...audit,
+    reviewedAt: reconciliation.reviewedAt,
+    sources: reconciliation.sources ?? audit.sources,
+    uiNotice: reconciliation.uiNotice ?? audit.uiNotice,
+    officialPlan: {
+      ...audit.officialPlan,
+      trajectories: reconciliation.trajectories ?? audit.officialPlan?.trajectories,
+      curriculum,
+    },
+  };
+}
+
 export async function buildExtractedAcademicPlans() {
   const queue = await loadJson(path.join(inventoryDirectory, "audit-queue.json"));
   const auditsRegistry = await loadJson(path.join(snapshotDirectory, "audits", "official-source-audits.json"));
   const global = await loadJson(path.join(inventoryDirectory, "global-current.json"));
-  const audits = new Map(auditsRegistry.audits.map((audit) => [audit.identity, audit]));
+  const fhceReconciliations = await loadJson(fhceReconciliationsPath);
+  const fhceReconciliationByIdentity = new Map(fhceReconciliations.plans.map((plan) => [plan.identity, {
+    ...plan,
+    reviewedAt: plan.reviewedAt ?? fhceReconciliations.reviewedAt,
+  }]));
+  const audits = new Map(auditsRegistry.audits.map((audit) => [
+    audit.identity,
+    mergeAuditReconciliation(audit, fhceReconciliationByIdentity.get(audit.identity)),
+  ]));
   const globalPlans = global.services.flatMap((service) => service.plans.map((plan) => ({ ...plan, serviceName: service.name })));
   const globalByIdentity = new Map();
   for (const plan of globalPlans) {
@@ -1235,7 +1276,13 @@ export async function buildExtractedAcademicPlans() {
       ? snapshots.find((candidate) => candidate.absolutePath === explicitPath)
       : snapshotsByKey.get(`${normalize(entry.career.name)}:${entry.plan.year}:${entry.canonicalSource.serviceCode}`);
     if (!item) throw new Error(`No se encontró snapshot canónico para ${entry.identity} (${entry.canonicalSource.serviceCode}).`);
-    projections.push({ entry, item, audit, ...buildProjection(entry, item.snapshot, audit) });
+    projections.push({
+      entry,
+      item,
+      audit,
+      reconciliation: fhceReconciliationByIdentity.get(entry.identity) ?? null,
+      ...buildProjection(entry, item.snapshot, audit),
+    });
   }
 
   await mkdir(outputDirectory, { recursive: true });
@@ -1300,7 +1347,12 @@ export async function buildExtractedAcademicPlans() {
   ]));
   const reportCore = {
     schemaVersion: 2,
-    generatedFrom: { auditQueueHash: queue.contentHash, officialAuditHash: auditsRegistry.contentHash, globalManifestHash: global.contentHash },
+    generatedFrom: {
+      auditQueueHash: queue.contentHash,
+      officialAuditHash: auditsRegistry.contentHash,
+      globalManifestHash: global.contentHash,
+      fhceReconciliationsHash: hash(fhceReconciliations),
+    },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,
       generatedPlans: projections.length,
@@ -1318,7 +1370,7 @@ export async function buildExtractedAcademicPlans() {
       plansWithPartialCatalog: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "partial").length,
       plansWithStructureOnly: projections.filter(({ projection }) => projection.plan.courseCatalogAuditStatus === "structure-only").length,
     },
-    plans: projections.map(({ entry, planId, item, projection }) => ({
+    plans: projections.map(({ entry, planId, item, projection, reconciliation }) => ({
       identity: entry.identity,
       planId,
       facultyCode: entry.canonicalSource.serviceCode,
@@ -1339,6 +1391,15 @@ export async function buildExtractedAcademicPlans() {
         status,
         authorityRecords(projection).filter((record) => record.status === status).length,
       ])),
+      ...(reconciliation ? {
+        authorityReconciliation: {
+          before: reconciliation.authorityCountsBefore,
+          after: Object.fromEntries(COURSE_AUTHORITY_STATUSES.map((status) => [
+            status,
+            authorityRecords(projection).filter((record) => record.status === status).length,
+          ])),
+        },
+      } : {}),
     })),
   };
   const report = { ...reportCore, contentHash: hash(reportCore) };

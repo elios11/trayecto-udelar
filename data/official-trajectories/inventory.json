@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:ff062d96ceae7be740f7f672974ba3d66e102b7d2212ac5be14a6e1b05924e68",
-    "extractedReportHash": "sha256:26a5c17770410b6b09877c513617e663f015badd67a86c0df57e699a0b43af40",
+    "extractedReportHash": "sha256:16bf04e5b5e0a19d2938e6040f6ca8087dbb0dcd830e9327d53f076fe1222e6b",
     "officialAuditHash": "sha256:3178f26777476b7f43974edf798990ca056d0c09a267cb8f41f810ea9976af1f",
-    "reviewedTrajectoriesHash": "sha256:1ad9ee8d1e1984683836bbee5f55d6b71c3d7a82eb09e261414e454d4944bfc2"
+    "reviewedTrajectoriesHash": "sha256:272c4707342a90c6b6b0246ab2ce901fa536e18393c4d6a5db4fefb592b60966"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 60,
+      "official-trajectory-reproduced": 63,
       "official-trajectory-identified-pending": 19,
       "no-official-trajectory-documented": 0,
-      "research-pending": 68
+      "research-pending": 65
     },
-    "pending": 87,
+    "pending": 84,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -177,10 +177,10 @@
         "serviceLabel": "Facultad de Humanidades y Ciencias de la Educación",
         "selectablePlanIds": 13,
         "states": {
-          "official-trajectory-reproduced": 1,
+          "official-trajectory-reproduced": 4,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 12
+          "research-pending": 9
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 87,
+    "total": 84,
     "plans": [
       {
         "priority": 1,
@@ -865,15 +865,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-fhum-educacion-2014",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fhum-filosofia-2010",
         "state": "research-pending",
         "serviceIds": [
@@ -901,25 +892,7 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-fhum-letras-2014",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fhum-linguistica-2014",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fhum"
@@ -1211,13 +1184,10 @@
           "bedelias-cure-licenciatura-en-turismo-2014",
           "bedelias-fhum-antropologia-2014",
           "bedelias-fhum-dramaturgia-2015",
-          "bedelias-fhum-educacion-2014",
           "bedelias-fhum-filosofia-2010",
           "bedelias-fhum-historia-2014",
           "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
-          "bedelias-fhum-letras-2014",
           "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
-          "bedelias-fhum-linguistica-2014",
           "bedelias-fhum-museologia-2011",
           "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025"
         ]
@@ -7656,39 +7626,24 @@
           "defaultCredentialId": "licenciado-educacion"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios/",
-          "role": "vigencia del Plan 2014; título; cuatro años; 360 créditos",
-          "trajectoryEvidence": false
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/EDUCACION-Por-Semestre-julio-2026.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres"
         },
         {
-          "authority": "Plan de Estudios 2014, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo_Plan_de_Estudios_Educacion-LSU.pdf",
-          "role": "título único; áreas; tres direcciones de profundización; optativas; electivas; tesina",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Instituto de Educación, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2026/02/Presentacion-Lic-en-Educacion-1.pdf",
-          "role": "vigencia; distribución actual por áreas; unidades comunes; talleres consecutivos; tesina; acreditaciones",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular sugerida, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2025/03/EDUCACION-pdf-por-semestre.pdf",
-          "role": "ocho semestres sugeridos; unidades vigentes; créditos; talleres; electivas",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/educacion",
-          "role": "vigencia; 48 meses; 360 créditos; sede FHCE; requisitos de ingreso",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/EDUCACION-Por-Area-Tematica-julio-2026.pdf",
+          "role": "mínimos vigentes por área y requisitos de egreso"
         }
       ],
       "scope": {
@@ -7702,24 +7657,42 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "educacion:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-educacion-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-educacion-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-educacion-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:6ba867f972ab1973e67278c4b5242762ca42c5d4ecef281d3e2a093341609ce1",
+        "projectionContentHash": "sha256:3b75c71244145988bb52235bc79c564f915bed77f43fc3eebf03b819ee295cd2",
+        "pathways": [
+          {
+            "id": "historia-filosofia-educacion",
+            "periodCount": 8
+          },
+          {
+            "id": "pedagogia-politica-sociedad",
+            "periodCount": 8
+          },
+          {
+            "id": "ensenanza-aprendizaje",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 108,
+        "matchedCoursePlacements": 108
       },
       "conflictNotes": [
-        "profileTitles: Bedelías expone tres etiquetas de título con perfil, pero el Plan y la página vigente otorgan únicamente Licenciado en Educación. La UI conserva las tres concentraciones como áreas de profundización y usa una sola credencial sin mención.",
-        "adjustedCreditDistribution: La composición administrativa conserva mínimos originales de 51 y 8 créditos para formación específica e integración. La guía vigente distribuye 63 y 12 e incluye la Defensa de Tesina de 16 créditos; la UI usa esta distribución actualizada, que completa exactamente 360.",
-        "historicalCourseVersions: El catálogo de Bedelías reúne versiones históricas y actuales de varias unidades. Los mínimos por área evitan exigir todas las variantes y los grupos obligatorios identifican las unidades comunes y talleres actualmente publicados.",
-        "zeroCreditRows: Bedelías conserva 54 registros con crédito cero, principalmente ofertas históricas o sin acreditación publicada. No suman a ningún mínimo; la Comisión de Carrera debe validar su eventual acreditación antes de incorporarlos al egreso.",
-        "prerequisites: Se conservan las 75 reglas explícitas publicadas por Bedelías. La secuencia semestral restante es orientativa y no se transforma en previaturas inventadas."
+        "La malla de julio de 2026 sustituye como referencia vigente a la versión de 2025 inventariada previamente.",
+        "Las tres áreas organizan la profundización del mismo título y comparten la trayectoria semestral publicada."
       ]
     },
     {
@@ -7984,45 +7957,19 @@
           "defaultCredentialId": "licenciado-letras"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-29",
-      "effectiveAt": "2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2025-05",
       "officialSources": [
         {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-11/",
-          "role": "vigencia del Plan 2014; denominación; título; cuatro años; 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Plan de Estudios 2014, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Plan-Letras-2014.pdf",
-          "role": "estructura de créditos; núcleo obligatorio; áreas temáticas; seminarios; optativas; electivas; Taller y Tesina",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular por áreas 2025, FHCE",
-          "url": "https://fhce.edu.uy/malla-curricular-de-la-licenciatura-en-letras/",
-          "role": "distribución vigente; unidades obligatorias; oferta flexible; total sugerido de 363 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Trayectoria sugerida por semestre 2025, FHCE",
           "url": "https://fhce.edu.uy/wp-content/uploads/2025/05/Malla-curricular-o-Trayectoria-sugerida-por-semestre-para-la-Licenciatura-en-Letras-1.pdf",
-          "role": "ocho semestres; secuencia sugerida; alternativas de filología clásica; tres seminarios; Taller y Tesina",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta 2026 aprobada por el Consejo de FHCE",
-          "url": "https://fhce.edu.uy/programas-2026-lic-en-letras/",
-          "role": "vigencia de obligatorias; seminarios; oferta optativa",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/letras",
-          "role": "vigencia; 48 meses; 360 créditos; sede FHCE; requisitos de ingreso",
-          "trajectoryEvidence": false
+          "role": "trayectoria sugerida de ocho semestres, alternativas y bloques flexibles"
         }
       ],
       "scope": {
@@ -8034,24 +7981,34 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "letras:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-letras-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-letras-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-letras-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:542c7928b0d91f9cdf6b58105f82b7963aded74dcbd06706fd97a116409cd446",
+        "projectionContentHash": "sha256:4ce0dfbc37c0a8eeb76d37c060dfc2ae30f02c35c6b599b5172eb25305b03b16",
+        "pathways": [
+          {
+            "id": "trayectoria-flexible",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 39,
+        "matchedCoursePlacements": 39
       },
       "conflictNotes": [
-        "suggestedCurriculumTotal: La malla 2025 suma 363 créditos porque Gramática Básica figura con 13, mientras el Plan 2014 computaba 10 dentro de los 360. La UI conserva los 13 créditos publicados, pero mantiene 360 como mínimo de egreso.",
-        "seminarEquivalences: La malla permite que dos tópicos de la misma área equivalgan a un seminario. La UI controla 48 créditos, las dos áreas obligatorias y deja la equivalencia final a la Comisión de Carrera.",
-        "historicalCourseVersions: El catálogo reúne códigos históricos y actuales de obligatorias, seminarios y optativas. Los grupos de alternativas evitan exigir duplicados y los mínimos impiden convertir toda la oferta acumulada en obligación.",
-        "zeroCreditRows: Bedelías conserva 68 unidades con crédito cero. Permanecen visibles sin sumar a ningún mínimo y su eventual acreditación requiere validación administrativa.",
-        "prerequisites: Se conservan las 31 reglas explícitas publicadas por Bedelías. Las 247 unidades sin regla publicada y el orden semestral sugerido no generan previaturas inventadas."
+        "La malla suma 363 créditos por la carga vigente de Gramática Básica; el mínimo de egreso del Plan 2014 permanece en 360.",
+        "Las alternativas y los seminarios se publican como elecciones o bloques oficiales y no como obligaciones acumulativas."
       ]
     },
     {
@@ -8137,45 +8094,19 @@
           "defaultCredentialId": "licenciado-linguistica"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-12/",
-          "role": "vigencia del Plan 2014; denominación; título; duración; 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Plan de Estudios 2014, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-plan-de-estudios-de-lingstica.pdf",
-          "role": "título; dos ciclos; seis áreas; mínimos; lengua extranjera; prácticas; seminarios",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular por área temática, FHCE, julio de 2026",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/LINGUISTICA-por-Area-Tematica-julio-2026.pdf",
-          "role": "mínimos por área; unidades vigentes; oferta actual",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular por semestre, FHCE, julio de 2026",
           "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/Malla-curricular-LINGUISTICA-Por-semestre-julio-2026.pdf",
-          "role": "trayectoria sugerida; ocho semestres; optativas; electivas; conocimientos recomendados",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta 2026 aprobada por el Consejo de FHCE",
-          "url": "https://fhce.edu.uy/programas-2026-lic-en-linguistica/",
-          "role": "vigencia de unidades por área; oferta de ambos semestres",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/linguistica",
-          "role": "vigencia; 48 meses; 360 créditos; sede FHCE",
-          "trajectoryEvidence": false
+          "role": "trayectoria sugerida vigente de ocho semestres y bloques flexibles"
         }
       ],
       "scope": {
@@ -8187,24 +8118,34 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "linguistica:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-linguistica-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-linguistica-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-linguistica-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:3c464614ffbe76d728aff6bae0d356b8e4c38d73586ad6690d036a0fc3f85894",
+        "projectionContentHash": "sha256:9c40b79c2df36250a2cd3e53aebe9c9bc42ed6010370ff04d601379dce298f71",
+        "pathways": [
+          {
+            "id": "trayectoria-flexible",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 34,
+        "matchedCoursePlacements": 34
       },
       "conflictNotes": [
-        "suggestedCurriculumTotal: La malla sugerida de julio de 2026 suma 366 créditos y ofrece 261 fundamentales, seis por encima de los mínimos normativos. La UI conserva el mínimo de egreso de 360 y presenta los bloques flexibles como guía sin duplicar créditos elegidos del catálogo.",
-        "fundamentalAreaSum: Los mínimos A+B+C+D suman 240, pero el Plan exige 255 créditos fundamentales. Los 15 restantes pueden elegirse en cualquiera de esas cuatro áreas con tutoría de la Comisión de Carrera.",
-        "historicalCourseVersions: Bedelías reúne versiones históricas y actuales de varias unidades. La trayectoria sugerida selecciona la versión publicada en 2026 y conserva las demás como alternativas del catálogo, sin exigir duplicados.",
-        "zeroCreditRows: Bedelías conserva 62 registros con crédito cero, principalmente ofertas históricas o sin acreditación publicada. No suman a los mínimos y requieren validación administrativa si se incorporan al egreso.",
-        "prerequisites: Se conservan las 40 reglas explícitas publicadas por Bedelías. Los conocimientos previos recomendados en la malla 2026 no se convierten en previaturas obligatorias."
+        "La trayectoria sugerida suma 366 créditos y 261 fundamentales; el Plan conserva mínimos de egreso de 360 y 255 respectivamente.",
+        "Los conocimientos previos publicados son recomendaciones y no se convierten en previaturas."
       ]
     },
     {
@@ -13725,5 +13666,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:b30fb101b7bcb9de691747967906a10f390c96af415a8e68fe76db5675192617"
+  "contentHash": "sha256:46b84723c48b521ec3250196501a024463c96a94f59bc35823d4ca991cd1c0fd"
 }

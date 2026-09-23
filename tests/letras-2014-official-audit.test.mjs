@@ -7,9 +7,11 @@ const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relat
 const audits = await readJson("data/bedelias/audits/official-source-audits.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-fhum-letras-2014.json");
+const report = await readJson("data/bedelias/inventory/ui-extracted-plans.json");
 const officialAudit = audits.audits.find(({ identity }) => identity === "letras:2014");
 const credential = projection.creditStructure.credentials.find(({ id }) => id === "licenciado-letras");
 const groups = new Map(credential.requiredCourseGroups.map((group) => [group.id, group]));
+const publishedPathway = projection.publishedPathways["trayectoria-flexible"];
 
 test("publica una sola Licenciatura en Letras vigente en Montevideo", () => {
   const matches = catalog.flatMap((faculty) => faculty.careers
@@ -40,7 +42,7 @@ test("mantiene una trayectoria flexible sin inventar menciones", () => {
   assert.equal(projection.pathways["trayectoria-flexible"].credentialId, "licenciado-letras");
   assert.equal(credential.title, "Licenciado en Letras");
   assert.equal(officialAudit.conclusion.canonicalModel, "one-degree-flexible-trajectory");
-  assert.match(projection.plan.notice, /sin cambiar el mínimo de egreso/);
+  assert.match(projection.plan.notice, /no se suman como obligaciones acumulativas/);
 });
 
 test("controla once mínimos que suman exactamente 360 créditos", () => {
@@ -90,23 +92,42 @@ test("exige el núcleo, las alternativas clásicas y las dos áreas de seminario
   assert.ok(groups.get("letras-seminar-european").courseIds.length > 1);
 });
 
-test("presenta ocho semestres sugeridos y conserva todo el catálogo flexible", () => {
-  const pathway = projection.pathways["trayectoria-flexible"];
-  const labels = pathway.periods.map(({ label }) => label);
-  for (let semester = 1; semester <= 8; semester += 1) assert.ok(labels.includes(`Semestre ${semester}`));
-  assert.equal(new Set(labels).size, labels.length);
-  assert.equal(new Set(pathway.periods.flatMap(({ courseIds }) => courseIds)).size, projection.courses.length);
-  assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 267);
-  assert.equal(new Set(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map(({ bedeliasCode }) => bedeliasCode)).size, 267);
+test("reproduce los ocho semestres oficiales y no publica el catálogo acumulado", () => {
+  assert.deepEqual(
+    publishedPathway.periods.map(({ label }) => label),
+    Array.from({ length: 8 }, (_, index) => `Semestre ${index + 1}`),
+  );
+  assert.deepEqual(publishedPathway.periods.map(({ courseIds }) => courseIds.length), [5, 6, 5, 6, 6, 4, 3, 4]);
+  assert.equal(publishedPathway.catalogCourseIds?.length ?? 0, 0);
+  const visibleIds = new Set(publishedPathway.periods.flatMap(({ courseIds }) => courseIds));
+  assert.ok([...visibleIds].every((id) => projection.courses.find((course) => course.id === id)?.authorityStatus === "verified"));
+  assert.ok(projection.courses.filter(({ authorityStatus }) => authorityStatus === "candidate")
+    .every(({ id }) => !visibleIds.has(id)));
+  assert.equal(projection.courses.filter(({ curricularBlock }) => curricularBlock).length, 13);
 });
 
-test("conserva 31 previaturas y los tres créditos excedentes sin elevar el mínimo", () => {
-  assert.equal(projection.courses.length, 269);
+test("registra la reconciliación de autoridad y conserva los tres créditos excedentes", () => {
+  assert.equal(projection.courses.length, 280);
   assert.equal(projection.rules.length, 31);
-  assert.equal(projection.plan.publishedRules, 21);
+  assert.equal(projection.plan.publishedRules, 2);
   assert.equal(projection.plan.noPublishedRule, 247);
-  assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 70);
+  assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 81);
   assert.equal(projection.plan.minCredits, 360);
+  const authority = report.plans.find(({ planId }) => planId === "bedelias-fhum-letras-2014").authorityReconciliation;
+  assert.deepEqual(authority.before, {
+    verified: 159,
+    candidate: 110,
+    "historical-equivalent": 13,
+    administrative: 0,
+    rejected: 0,
+  });
+  assert.deepEqual(authority.after, {
+    verified: 39,
+    candidate: 241,
+    "historical-equivalent": 13,
+    administrative: 0,
+    rejected: 0,
+  });
   assert.match(officialAudit.anomalies.find(({ field }) => field === "suggestedCurriculumTotal").resolution, /363/);
   assert.match(officialAudit.anomalies.find(({ field }) => field === "zeroCreditRows").resolution, /68/);
 });

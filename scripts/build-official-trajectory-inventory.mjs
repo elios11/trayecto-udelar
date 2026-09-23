@@ -85,7 +85,26 @@ async function reviewedEvidence(review) {
   const projection = await readJson(path.join(projectRoot, review.evidence.projectionDataPath));
   const sourcePathways = toCollectionMap(source[review.evidence.sourceCollection]);
   const projectedPathways = toCollectionMap(projection[review.evidence.projectionCollection]);
+  const projectedCourseBySourceIdentity = new Map();
+  if (review.evidence.compareCoursePlacements === true) {
+    for (const course of projection.courses ?? []) {
+      for (const identity of [
+        course.id,
+        course.bedeliasCode,
+        course.sourceCourseId,
+        ...(course.equivalentCourseIds ?? []),
+        ...(course.equivalentBedeliasCodes ?? []),
+      ].filter(Boolean)) projectedCourseBySourceIdentity.set(String(identity), course.id);
+    }
+    for (const record of projection.courseAuthority?.records ?? []) {
+      if (record.sourceCourseId && record.canonicalCourseId) {
+        projectedCourseBySourceIdentity.set(String(record.sourceCourseId), record.canonicalCourseId);
+      }
+    }
+  }
   const pathways = [];
+  let expectedCoursePlacements = 0;
+  let matchedCoursePlacements = 0;
   for (const pathwayId of review.scope.pathwayIds) {
     const sourcePathway = sourcePathways.get(pathwayId);
     const projectedPathway = projectedPathways.get(pathwayId);
@@ -95,13 +114,37 @@ async function reviewedEvidence(review) {
     if (!Array.isArray(sourcePeriods) || sourcePeriods.length === 0 || sourcePeriods.length !== projectedPeriods?.length) {
       throw new Error(`Los períodos auditados y proyectados no coinciden para ${review.planId}/${pathwayId}.`);
     }
+    if (review.evidence.compareCoursePlacements === true) {
+      const sourceLabels = sourcePeriods.map(({ label }) => label);
+      const projectedLabels = projectedPeriods.map(({ label }) => label);
+      if (JSON.stringify(sourceLabels) !== JSON.stringify(projectedLabels)) {
+        throw new Error(`Las etiquetas de períodos no coinciden para ${review.planId}/${pathwayId}.`);
+      }
+      for (const [periodIndex, sourcePeriod] of sourcePeriods.entries()) {
+        const projectedIds = new Set(projectedPeriods[periodIndex].courseIds ?? []);
+        for (const sourceCourseId of sourcePeriod.courseIds ?? []) {
+          expectedCoursePlacements += 1;
+          const normalizedSuffix = normalize(sourceCourseId).replaceAll(" ", "-");
+          const projectedCourseId = projectedCourseBySourceIdentity.get(String(sourceCourseId))
+            ?? (projection.courses ?? []).find(({ id }) => id.endsWith(`-${normalizedSuffix}`))?.id;
+          if (projectedCourseId && projectedIds.has(projectedCourseId)) matchedCoursePlacements += 1;
+        }
+      }
+    }
     pathways.push({ id: pathwayId, periodCount: sourcePeriods.length });
+  }
+  if (review.evidence.compareCoursePlacements === true && expectedCoursePlacements !== matchedCoursePlacements) {
+    throw new Error(`La correspondencia de materias no coincide para ${review.planId}: ${matchedCoursePlacements}/${expectedCoursePlacements}.`);
   }
   return {
     ...review.evidence,
     sourceContentHash: digest(source),
     projectionContentHash: digest(projection),
     pathways,
+    ...(review.evidence.compareCoursePlacements === true ? {
+      expectedCoursePlacements,
+      matchedCoursePlacements,
+    } : {}),
   };
 }
 

@@ -7,9 +7,11 @@ const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relat
 const audits = await readJson("data/bedelias/audits/official-source-audits.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-fhum-linguistica-2014.json");
+const report = await readJson("data/bedelias/inventory/ui-extracted-plans.json");
 const officialAudit = audits.audits.find(({ identity }) => identity === "linguistica:2014");
 const credential = projection.creditStructure.credentials.find(({ id }) => id === "licenciado-linguistica");
 const courses = new Map(projection.courses.map((course) => [course.bedeliasCode ?? course.id, course]));
+const publishedPathway = projection.publishedPathways["trayectoria-flexible"];
 
 test("publica una sola Licenciatura en Lingüística vigente en Montevideo", () => {
   const matches = catalog.flatMap((faculty) => faculty.careers
@@ -39,7 +41,7 @@ test("modela una trayectoria flexible sin inventar menciones", () => {
   assert.deepEqual(Object.keys(projection.pathways), ["trayectoria-flexible"]);
   assert.equal(projection.pathways["trayectoria-flexible"].credentialId, "licenciado-linguistica");
   assert.equal(officialAudit.conclusion.canonicalModel, "one-degree-flexible-trajectory");
-  assert.match(projection.plan.notice, /malla de ocho semestres es sugerida/);
+  assert.match(projection.plan.notice, /Trayectoria sugerida de ocho semestres/);
 });
 
 test("controla los tres bloques de egreso y los cuatro mínimos fundamentales", () => {
@@ -81,22 +83,43 @@ test("exige IVU, orientación, dos seminarios y validación final", () => {
 });
 
 test("presenta ocho semestres y no acredita los bloques flexibles ficticiamente", () => {
-  const pathway = projection.pathways["trayectoria-flexible"];
-  for (let semester = 1; semester <= 8; semester += 1) {
-    assert.ok(pathway.periods.some(({ label }) => label === `Semestre ${semester}`));
-  }
+  assert.deepEqual(
+    publishedPathway.periods.map(({ label }) => label),
+    Array.from({ length: 8 }, (_, index) => `Semestre ${index + 1}`),
+  );
+  assert.deepEqual(publishedPathway.periods.map(({ courseIds }) => courseIds.length), [6, 4, 4, 4, 3, 5, 4, 4]);
+  assert.equal(publishedPathway.catalogCourseIds?.length ?? 0, 0);
   const flexibleBlocks = projection.courses.filter(({ name }) => name.startsWith("Elegí "));
   assert.equal(flexibleBlocks.length, 9);
   assert.ok(flexibleBlocks.every(({ credits, curricularBlock }) => credits === 0 && curricularBlock));
   assert.match(officialAudit.anomalies.find(({ field }) => field === "suggestedCurriculumTotal").resolution, /366/);
 });
 
-test("conserva catálogo y previaturas sin volver obligatorias las recomendaciones", () => {
+test("conserva candidatos y previaturas sin publicarlos como trayectoria vigente", () => {
   assert.equal(projection.courses.length, 237);
   assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 227);
   assert.equal(new Set(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map(({ bedeliasCode }) => bedeliasCode)).size, 226);
   assert.equal(projection.rules.length, 40);
+  assert.equal(projection.plan.publishedRules, 7);
   assert.equal(projection.plan.noPublishedRule, 184);
   assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 72);
+  const visibleIds = new Set(publishedPathway.periods.flatMap(({ courseIds }) => courseIds));
+  assert.ok(projection.courses.filter(({ authorityStatus }) => authorityStatus === "candidate")
+    .every(({ id }) => !visibleIds.has(id)));
+  const authority = report.plans.find(({ planId }) => planId === "bedelias-fhum-linguistica-2014").authorityReconciliation;
+  assert.deepEqual(authority.before, {
+    verified: 46,
+    candidate: 191,
+    "historical-equivalent": 0,
+    administrative: 0,
+    rejected: 0,
+  });
+  assert.deepEqual(authority.after, {
+    verified: 34,
+    candidate: 203,
+    "historical-equivalent": 0,
+    administrative: 0,
+    rejected: 0,
+  });
   assert.match(officialAudit.anomalies.find(({ field }) => field === "prerequisites").resolution, /40 reglas explícitas/);
 });

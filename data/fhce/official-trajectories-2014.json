@@ -1,0 +1,644 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-23",
+  "plans": [
+    {
+      "id": "bedelias-fhum-letras-2014",
+      "identity": "letras:2014",
+      "effectiveAt": "2025-05",
+      "authorityCountsBefore": {
+        "verified": 159,
+        "candidate": 110,
+        "historical-equivalent": 13,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/05/Malla-curricular-o-Trayectoria-sugerida-por-semestre-para-la-Licenciatura-en-Letras-1.pdf",
+          "role": "trayectoria sugerida de ocho semestres, alternativas y bloques flexibles"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Plan-Letras-2014.pdf",
+          "role": "mínimos, áreas y requisitos de egreso"
+        }
+      ],
+      "uiNotice": "Trayectoria sugerida de ocho semestres publicada por FHCE en mayo de 2025. Las alternativas, optativas, electivas y seminarios son elecciones: no se suman como obligaciones acumulativas y su acreditación final corresponde a la Comisión de Carrera.",
+      "requiredCourseGroupSourceIds": {
+        "letras-language-course": ["LETRAS-FOREIGN-READING"],
+        "letras-epistemology": ["LETRAS-EPISTEMOLOGY"],
+        "letras-seminar-uruguay-america": ["LETRAS-SEMINAR-URUGUAY-AMERICA"],
+        "letras-seminar-european": ["LETRAS-SEMINAR-EUROPEAN"],
+        "letras-three-seminars": [
+          "LETRAS-SEMINAR-URUGUAY-AMERICA",
+          "LETRAS-SEMINAR-EUROPEAN",
+          "LETRAS-SEMINAR-OPTIONAL"
+        ]
+      },
+      "trajectories": [
+        {
+          "id": "trayectoria-flexible",
+          "credentialId": "licenciado-letras",
+          "label": "Trayectoria sugerida",
+          "description": "Recorrido sugerido de ocho semestres publicado por FHCE. Las filas alternativas y flexibles se representan sin convertir todas sus opciones en obligaciones.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courseIds": ["IVU", "L116", "L170", "L124", "L117"]
+            },
+            {
+              "label": "Semestre 2",
+              "courseIds": [
+                "L144",
+                "L127",
+                "LETRAS-FOREIGN-READING",
+                "L126",
+                "LETRAS-EPISTEMOLOGY",
+                "L122"
+              ]
+            },
+            {
+              "label": "Semestre 3",
+              "courseIds": ["LU3", "L138", "L137", "L158", "LETRAS-OPTATIVE-2"]
+            },
+            {
+              "label": "Semestre 4",
+              "courseIds": ["LI176", "L101", "L156", "L118", "L119", "L102"]
+            },
+            {
+              "label": "Semestre 5",
+              "courseIds": [
+                "acreditacion-extension-letras",
+                "LETRAS-OPTATIVES-3-4",
+                "L205",
+                "L188",
+                "L181",
+                "LNORE"
+              ]
+            },
+            {
+              "label": "Semestre 6",
+              "courseIds": [
+                "LETRAS-ELECTIVE-1",
+                "L134",
+                "LETRAS-SEMINAR-URUGUAY-AMERICA",
+                "LETRAS-OPTATIVE-5"
+              ]
+            },
+            {
+              "label": "Semestre 7",
+              "courseIds": ["LETRAS-SEMINAR-EUROPEAN", "TT", "LETRAS-ELECTIVES-2-3"]
+            },
+            {
+              "label": "Semestre 8",
+              "courseIds": ["LETRAS-SEMINAR-OPTIONAL", "LETRAS-ELECTIVE-4", "L183", "validacion-final-plan"]
+            }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/05/Malla-curricular-o-Trayectoria-sugerida-por-semestre-para-la-Licenciatura-en-Letras-1.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "additionalCourses": [
+          {
+            "id": "LETRAS-FOREIGN-READING",
+            "name": "Comprensión lectora de lengua extranjera",
+            "credits": 0,
+            "requirementId": "letras-language",
+            "periodLabel": "Semestre 2",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-EPISTEMOLOGY",
+            "name": "Contenidos en epistemología",
+            "credits": 0,
+            "requirementId": "letras-general-flexible",
+            "periodLabel": "Semestre 2",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-OPTATIVE-2",
+            "name": "Optativa 2 · 13 créditos",
+            "credits": 0,
+            "requirementId": "letras-optionals",
+            "periodLabel": "Semestre 3",
+            "curricularBlock": true
+          },
+          {
+            "id": "acreditacion-extension-letras",
+            "name": "Actividad que incluya extensión · 10 créditos",
+            "credits": 0,
+            "requirementId": "letras-general-flexible",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-OPTATIVES-3-4",
+            "name": "Optativas 3 y 4 · 26 créditos",
+            "credits": 0,
+            "requirementId": "letras-optionals",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-ELECTIVE-1",
+            "name": "Electiva 1 · 8 créditos",
+            "credits": 0,
+            "requirementId": "letras-electives",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-SEMINAR-URUGUAY-AMERICA",
+            "name": "Seminario del área Literatura Uruguaya y de América Latina · 16 créditos",
+            "credits": 0,
+            "requirementId": "letras-seminars",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-OPTATIVE-5",
+            "name": "Optativa 5 · 13 créditos",
+            "credits": 0,
+            "requirementId": "letras-optionals",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-SEMINAR-EUROPEAN",
+            "name": "Seminario de Literaturas en Lenguas Europeas · 16 créditos",
+            "credits": 0,
+            "requirementId": "letras-seminars",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-ELECTIVES-2-3",
+            "name": "Electivas 2 y 3 · 16 créditos",
+            "credits": 0,
+            "requirementId": "letras-electives",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-SEMINAR-OPTIONAL",
+            "name": "Seminario optativo · 16 créditos",
+            "credits": 0,
+            "requirementId": "letras-seminars",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true
+          },
+          {
+            "id": "LETRAS-ELECTIVE-4",
+            "name": "Electiva 4 · 8 créditos",
+            "credits": 0,
+            "requirementId": "letras-electives",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bedelias-fhum-linguistica-2014",
+      "identity": "linguistica:2014",
+      "effectiveAt": "2026-07",
+      "authorityCountsBefore": {
+        "verified": 46,
+        "candidate": 191,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/Malla-curricular-LINGUISTICA-Por-semestre-julio-2026.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres y bloques flexibles"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-plan-de-estudios-de-lingstica.pdf",
+          "role": "mínimos, áreas y requisitos de egreso"
+        }
+      ],
+      "uiNotice": "Trayectoria sugerida de ocho semestres publicada por FHCE en julio de 2026. Los conocimientos previos de la malla son recomendaciones y no se convierten en previaturas; las optativas y electivas permanecen como bloques flexibles hasta acreditar una identidad oficial.",
+      "trajectories": [
+        {
+          "id": "trayectoria-flexible",
+          "credentialId": "licenciado-linguistica",
+          "label": "Trayectoria sugerida",
+          "description": "Malla sugerida de ocho semestres publicada por FHCE en julio de 2026, con bloques flexibles para optativas y electivas.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courseIds": ["IVU", "LI147", "LI8", "LI4", "LI179", "LI101"]
+            },
+            {
+              "label": "Semestre 2",
+              "courseIds": ["LI176", "LI107", "LI7", "LI120"]
+            },
+            {
+              "label": "Semestre 3",
+              "courseIds": ["LI133", "electiva-1", "optativa-1", "LI170"]
+            },
+            {
+              "label": "Semestre 4",
+              "courseIds": ["LI3", "LI10", "LI134", "EXT"]
+            },
+            {
+              "label": "Semestre 5",
+              "courseIds": ["LI135", "LI116", "optativa-2"]
+            },
+            {
+              "label": "Semestre 6",
+              "courseIds": ["LI6", "LI122", "LI144", "optativa-3", "electiva-2"]
+            },
+            {
+              "label": "Semestre 7",
+              "courseIds": ["20", "EXTE", "optativa-4", "electiva-3"]
+            },
+            {
+              "label": "Semestre 8",
+              "courseIds": ["21", "optativa-5", "electivas-4-5", "validacion-final-plan"]
+            }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/Malla-curricular-LINGUISTICA-Por-semestre-julio-2026.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false
+      }
+    },
+    {
+      "id": "bedelias-fhum-educacion-2014",
+      "identity": "educacion:2014",
+      "effectiveAt": "2026-07",
+      "authorityCountsBefore": {
+        "verified": 50,
+        "candidate": 250,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/EDUCACION-Por-Semestre-julio-2026.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres y bloques flexibles"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/EDUCACION-Por-Area-Tematica-julio-2026.pdf",
+          "role": "mínimos vigentes por área, unidades comunes y requisitos de egreso"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo_Plan_de_Estudios_Educacion-LSU.pdf",
+          "role": "título único y áreas de profundización"
+        }
+      ],
+      "uiNotice": "Trayectoria sugerida común de ocho semestres publicada por FHCE en julio de 2026. Las tres áreas de profundización conservan el mismo título; los talleres y las elecciones flexibles se muestran como bloques y su identidad concreta requiere validación oficial.",
+      "requiredCourseGroupSourceIds": {
+        "edu-language-course": ["EDU-FOREIGN-LANGUAGE"],
+        "edu-workshop-1": ["EDU-WORKSHOP-1"],
+        "edu-workshop-2": ["EDU-WORKSHOP-2"],
+        "edu-workshop-3": ["EDU-WORKSHOP-3"]
+      },
+      "trajectories": [
+        {
+          "id": "historia-filosofia-educacion",
+          "credentialId": "licenciado-educacion",
+          "label": "Historia y Filosofía de la Educación",
+          "description": "Área de profundización del mismo título, sobre la malla sugerida común de ocho semestres publicada por FHCE.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courseIds": ["IVU", "C190", "C191", "C201", "EDU-FOREIGN-LANGUAGE"]
+            },
+            {
+              "label": "Semestre 2",
+              "courseIds": ["C216", "C207", "C203", "EDU-OPTATIVE-1"]
+            },
+            {
+              "label": "Semestre 3",
+              "courseIds": ["C204", "C194", "C192", "EDU-OPTATIVE-2"]
+            },
+            {
+              "label": "Semestre 4",
+              "courseIds": ["C200", "C206", "EDU-OPTATIVE-3", "EDU-OPTATIVE-4", "EDU-INTEGRAL-1"]
+            },
+            {
+              "label": "Semestre 5",
+              "courseIds": ["C193", "EDU-OPTATIVE-5", "EDU-ELECTIVE-1", "EDU-ELECTIVE-2"]
+            },
+            {
+              "label": "Semestre 6",
+              "courseIds": ["EDU-WORKSHOP-1", "EDU-OPTATIVE-6", "EDU-ELECTIVE-3", "EDU-ELECTIVE-4", "EDU-INTEGRAL-2"]
+            },
+            {
+              "label": "Semestre 7",
+              "courseIds": ["EDU-OPTATIVES-7-8", "EDU-WORKSHOP-2", "EDU-ELECTIVE-5", "EDU-ELECTIVE-6"]
+            },
+            {
+              "label": "Semestre 8",
+              "courseIds": ["EDU-WORKSHOP-3", "EDU-ELECTIVE-7", "EDU-ELECTIVE-8", "DEFT", "validacion-final-plan"]
+            }
+          ]
+        },
+        {
+          "id": "pedagogia-politica-sociedad",
+          "credentialId": "licenciado-educacion",
+          "label": "Pedagogía, Política y Sociedad",
+          "description": "Área de profundización del mismo título, sobre la malla sugerida común de ocho semestres publicada por FHCE.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courseIds": ["IVU", "C190", "C191", "C201", "EDU-FOREIGN-LANGUAGE"]
+            },
+            {
+              "label": "Semestre 2",
+              "courseIds": ["C216", "C207", "C203", "EDU-OPTATIVE-1"]
+            },
+            {
+              "label": "Semestre 3",
+              "courseIds": ["C204", "C194", "C192", "EDU-OPTATIVE-2"]
+            },
+            {
+              "label": "Semestre 4",
+              "courseIds": ["C200", "C206", "EDU-OPTATIVE-3", "EDU-OPTATIVE-4", "EDU-INTEGRAL-1"]
+            },
+            {
+              "label": "Semestre 5",
+              "courseIds": ["C193", "EDU-OPTATIVE-5", "EDU-ELECTIVE-1", "EDU-ELECTIVE-2"]
+            },
+            {
+              "label": "Semestre 6",
+              "courseIds": ["EDU-WORKSHOP-1", "EDU-OPTATIVE-6", "EDU-ELECTIVE-3", "EDU-ELECTIVE-4", "EDU-INTEGRAL-2"]
+            },
+            {
+              "label": "Semestre 7",
+              "courseIds": ["EDU-OPTATIVES-7-8", "EDU-WORKSHOP-2", "EDU-ELECTIVE-5", "EDU-ELECTIVE-6"]
+            },
+            {
+              "label": "Semestre 8",
+              "courseIds": ["EDU-WORKSHOP-3", "EDU-ELECTIVE-7", "EDU-ELECTIVE-8", "DEFT", "validacion-final-plan"]
+            }
+          ]
+        },
+        {
+          "id": "ensenanza-aprendizaje",
+          "credentialId": "licenciado-educacion",
+          "label": "Enseñanza y Aprendizaje",
+          "description": "Área de profundización del mismo título, sobre la malla sugerida común de ocho semestres publicada por FHCE.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courseIds": ["IVU", "C190", "C191", "C201", "EDU-FOREIGN-LANGUAGE"]
+            },
+            {
+              "label": "Semestre 2",
+              "courseIds": ["C216", "C207", "C203", "EDU-OPTATIVE-1"]
+            },
+            {
+              "label": "Semestre 3",
+              "courseIds": ["C204", "C194", "C192", "EDU-OPTATIVE-2"]
+            },
+            {
+              "label": "Semestre 4",
+              "courseIds": ["C200", "C206", "EDU-OPTATIVE-3", "EDU-OPTATIVE-4", "EDU-INTEGRAL-1"]
+            },
+            {
+              "label": "Semestre 5",
+              "courseIds": ["C193", "EDU-OPTATIVE-5", "EDU-ELECTIVE-1", "EDU-ELECTIVE-2"]
+            },
+            {
+              "label": "Semestre 6",
+              "courseIds": ["EDU-WORKSHOP-1", "EDU-OPTATIVE-6", "EDU-ELECTIVE-3", "EDU-ELECTIVE-4", "EDU-INTEGRAL-2"]
+            },
+            {
+              "label": "Semestre 7",
+              "courseIds": ["EDU-OPTATIVES-7-8", "EDU-WORKSHOP-2", "EDU-ELECTIVE-5", "EDU-ELECTIVE-6"]
+            },
+            {
+              "label": "Semestre 8",
+              "courseIds": ["EDU-WORKSHOP-3", "EDU-ELECTIVE-7", "EDU-ELECTIVE-8", "DEFT", "validacion-final-plan"]
+            }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/EDUCACION-Por-Semestre-julio-2026.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "additionalCourses": [
+          {
+            "id": "EDU-FOREIGN-LANGUAGE",
+            "name": "Comprensión lectora de lengua extranjera · 8 créditos",
+            "credits": 0,
+            "requirementId": "edu-foreign-language",
+            "periodLabel": "Semestre 1",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-OPTATIVE-1",
+            "name": "Optativa 1 · 12 créditos",
+            "credits": 0,
+            "requirementId": "edu-interdisciplinary-teaching",
+            "periodLabel": "Semestre 2",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-OPTATIVE-2",
+            "name": "Optativa 2 · 8 créditos",
+            "credits": 0,
+            "requirementId": "edu-interdisciplinary-teaching",
+            "periodLabel": "Semestre 3",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-OPTATIVE-3",
+            "name": "Optativa 3 · 12 créditos",
+            "credits": 0,
+            "requirementId": "edu-interdisciplinary-teaching",
+            "periodLabel": "Semestre 4",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-OPTATIVE-4",
+            "name": "Optativa 4 · 8 créditos",
+            "credits": 0,
+            "requirementId": "edu-interdisciplinary-teaching",
+            "periodLabel": "Semestre 4",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-INTEGRAL-1",
+            "name": "EFI o curso de extensión · 4 créditos",
+            "credits": 0,
+            "requirementId": "edu-integral-activities",
+            "periodLabel": "Semestre 4",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-OPTATIVE-5",
+            "name": "Optativa 5 · 12 créditos",
+            "credits": 0,
+            "requirementId": "edu-interdisciplinary-integration",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-1",
+            "name": "Electiva 1 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-2",
+            "name": "Electiva 2 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-WORKSHOP-1",
+            "name": "Taller de Investigación 1 · 10 créditos",
+            "credits": 0,
+            "requirementId": "edu-specific-research",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-OPTATIVE-6",
+            "name": "Curso de profundización · 12 créditos",
+            "credits": 0,
+            "requirementId": "edu-specific-research",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-3",
+            "name": "Electiva 3 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-4",
+            "name": "Electiva 4 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-INTEGRAL-2",
+            "name": "EFI o curso de extensión · 6 créditos",
+            "credits": 0,
+            "requirementId": "edu-integral-activities",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-OPTATIVES-7-8",
+            "name": "Optativas 7 y 8 · 18 créditos",
+            "credits": 0,
+            "requirementId": "edu-interdisciplinary-teaching",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-WORKSHOP-2",
+            "name": "Taller de Investigación 2 · 10 créditos",
+            "credits": 0,
+            "requirementId": "edu-specific-research",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-5",
+            "name": "Electiva 5 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-6",
+            "name": "Electiva 6 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-WORKSHOP-3",
+            "name": "Taller de Investigación 3 · 15 créditos",
+            "credits": 0,
+            "requirementId": "edu-specific-research",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-7",
+            "name": "Electiva 7 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true
+          },
+          {
+            "id": "EDU-ELECTIVE-8",
+            "name": "Electiva 8 · 9 créditos",
+            "credits": 0,
+            "requirementId": "edu-electives",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true
+          },
+          {
+            "id": "validacion-final-plan",
+            "name": "Validación final de optativas, electivas, actividades integrales y coherencia de la tesina por la Comisión de Carrera",
+            "credits": 0,
+            "requirementId": "plan-total",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true,
+            "pathwayIds": [
+              "historia-filosofia-educacion",
+              "pedagogia-politica-sociedad",
+              "ensenanza-aprendizaje"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

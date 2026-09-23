@@ -7,6 +7,7 @@ const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relat
 const audits = await readJson("data/bedelias/audits/official-source-audits.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-fhum-educacion-2014.json");
+const report = await readJson("data/bedelias/inventory/ui-extracted-plans.json");
 const officialAudit = audits.audits.find(({ identity }) => identity === "educacion:2014");
 const credential = projection.creditStructure.credentials[0];
 
@@ -43,7 +44,7 @@ test("ofrece tres áreas de profundización vinculadas a la misma credencial", (
   assert.ok(Object.values(projection.pathways)
     .every(({ credentialId }) => credentialId === "licenciado-educacion"));
   assert.equal(projection.plan.degreeTitle, "Licenciado en Educación");
-  assert.match(projection.plan.notice, /título es siempre Licenciado en Educación/);
+  assert.match(projection.plan.notice, /conservan el mismo título/);
   assert.equal(officialAudit.conclusion.canonicalModel, "one-degree-three-research-pathways");
 });
 
@@ -77,28 +78,48 @@ test("exige el núcleo común, los tres talleres, la tesina y una lengua", () =>
   assert.equal(groups.get("validacion-final-plan").minCompleted, 1);
 });
 
-test("cada trayectoria muestra su área y conserva el catálogo flexible", () => {
-  const paths = Object.values(projection.pathways);
+test("las tres áreas reproducen la misma malla oficial de ocho semestres", () => {
+  const paths = Object.values(projection.publishedPathways);
+  const expectedLabels = Array.from({ length: 8 }, (_, index) => `Semestre ${index + 1}`);
+  const expectedSizes = [5, 4, 4, 5, 4, 5, 4, 5];
   for (const pathway of paths) {
-    const labels = pathway.periods.map(({ label }) => label);
-    assert.equal(labels.filter((label) => label === "Lengua extranjera").length, 1);
-    assert.ok(labels.includes("Formación específica y profundización metodológica"));
-    assert.ok(labels.includes("Integración interdisciplinaria"));
-    assert.ok(labels.includes("Validación de egreso"));
-    assert.ok(pathway.catalogCourseIds.length > 0);
+    assert.deepEqual(pathway.periods.map(({ label }) => label), expectedLabels);
+    assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), expectedSizes);
+    assert.equal(pathway.catalogCourseIds?.length ?? 0, 0);
   }
+  assert.deepEqual(paths[0].periods, paths[1].periods);
+  assert.deepEqual(paths[1].periods, paths[2].periods);
   const validation = projection.courses.find(({ name }) => /^Validación final/.test(name));
   assert.equal(validation.curricularBlock, true);
   assert.ok(paths.every(({ periods }) => periods.some(({ courseIds }) => courseIds.includes(validation.id))));
 });
 
-test("conserva sólo las previaturas publicadas y neutraliza filas sin crédito", () => {
-  assert.equal(projection.courses.length, 300);
+test("conserva candidatos sin publicarlos y registra la reconciliación", () => {
+  assert.equal(projection.courses.length, 321);
   assert.equal(projection.rules.length, 75);
-  assert.equal(projection.plan.publishedRules, 23);
+  assert.equal(projection.plan.publishedRules, 1);
   assert.equal(projection.plan.noPublishedRule, 227);
-  assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 55);
+  assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 76);
   assert.ok(projection.courses.filter(({ credits }) => credits === 0)
     .every(({ creditAllocations }) => creditAllocations.every(({ credits }) => credits === 0)));
+  const visibleIds = new Set(Object.values(projection.publishedPathways)
+    .flatMap(({ periods }) => periods.flatMap(({ courseIds }) => courseIds)));
+  assert.ok(projection.courses.filter(({ authorityStatus }) => authorityStatus === "candidate")
+    .every(({ id }) => !visibleIds.has(id)));
+  const authority = report.plans.find(({ planId }) => planId === "bedelias-fhum-educacion-2014").authorityReconciliation;
+  assert.deepEqual(authority.before, {
+    verified: 50,
+    candidate: 250,
+    "historical-equivalent": 0,
+    administrative: 0,
+    rejected: 0,
+  });
+  assert.deepEqual(authority.after, {
+    verified: 36,
+    candidate: 285,
+    "historical-equivalent": 0,
+    administrative: 0,
+    rejected: 0,
+  });
   assert.match(officialAudit.anomalies.find(({ field }) => field === "zeroCreditRows").resolution, /No suman/);
 });

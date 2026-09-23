@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 60,
+    "official-trajectory-reproduced": 63,
     "official-trajectory-identified-pending": 19,
     "no-official-trajectory-documented": 0,
-    "research-pending": 68,
+    "research-pending": 65,
   });
-  assert.equal(savedInventory.pendingQueue.total, 87);
-  assert.equal(savedInventory.pendingQueue.plans.length, 87);
+  assert.equal(savedInventory.pendingQueue.total, 84);
+  assert.equal(savedInventory.pendingQueue.plans.length, 84);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 19).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(19).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -106,6 +106,21 @@ test("el piloto TUCE queda cerrado y las divergencias conocidas permanecen en la
     "bedelias-fcs-licenciatura-en-desarrollo-2009",
   ]) {
     assert.equal(byPlanId.get(planId).state, "official-trajectory-identified-pending", planId);
+  }
+});
+
+test("el primer lote FHCE queda cerrado con ocho semestres y correspondencia exacta", () => {
+  const byPlanId = new Map(savedInventory.plans.map((plan) => [plan.planId, plan]));
+  for (const planId of [
+    "bedelias-fhum-letras-2014",
+    "bedelias-fhum-linguistica-2014",
+    "bedelias-fhum-educacion-2014",
+  ]) {
+    const plan = byPlanId.get(planId);
+    assert.equal(plan.state, "official-trajectory-reproduced", planId);
+    assert.equal(plan.currentProjection.primary, "official-periods", planId);
+    assert.ok(plan.evidence.pathways.every(({ periodCount }) => periodCount === 8), planId);
+    assert.equal(plan.evidence.expectedCoursePlacements, plan.evidence.matchedCoursePlacements, planId);
   }
 });
 
