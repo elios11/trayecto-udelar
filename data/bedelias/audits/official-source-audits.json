@@ -45147,8 +45147,27 @@
           {
             "id": "plan-flexible",
             "credentialId": "tecnico-correccion-estilo",
-            "label": "Plan flexible",
-            "description": "Recorrido por las cuatro áreas oficiales. La malla de cuatro semestres orienta el orden, pero las optativas, electivas y equivalencias se eligen dentro del catálogo vigente."
+            "label": "Trayectoria sugerida",
+            "description": "Malla de cuatro semestres publicada por FHCE en febrero de 2025. Es una guía de cursado: las optativas, electivas y la oferta efectiva pueden variar.",
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "1.er semestre",
+                "courseIds": ["IVU", "LI174", "COE5", "COE1", "COE10", "COE9"]
+              },
+              {
+                "label": "2.º semestre",
+                "courseIds": ["LI114", "TUCE-LITERATURE-1", "COE2", "TUCE-ELECTIVE-1"]
+              },
+              {
+                "label": "3.er semestre",
+                "courseIds": ["COE7", "LI133", "COE3", "TUCE-LITERARY-THEORY", "TUCE-ELECTIVE-2", "TUCE-FOREIGN-READING"]
+              },
+              {
+                "label": "4.º semestre",
+                "courseIds": ["LI134", "LI120", "TUCE-LITERATURE-2", "COE4"]
+              }
+            ]
           }
         ],
         "curriculum": {
@@ -45156,9 +45175,36 @@
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
           "includeAllCoursesInPathwayCatalog": true,
-          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2023/01/TUCE_2014_s_a.pdf",
+          "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/01/pdf-Malla-por-semestre-TUCE-feb-2025.pdf",
           "pathwayLabel": "Recorrido",
-          "pathwayDescription": "Catálogo vigente organizado por las cuatro áreas del Plan 2014. La malla semestral es una guía y las unidades optativas y electivas no son obligaciones simultáneas.",
+          "pathwayDescription": "Malla sugerida organizada por semestre. Cada unidad conserva el área con la que aporta al Plan 2014 y los bloques flexibles no representan cursos simultáneamente obligatorios.",
+          "historicalEquivalentSourceCourseIds": [
+            "IVA", "BAS2", "LI179", "LI176", "LI136", "LI110", "COE6", "COE5A", "COE5F", "COE8", "PECLA"
+          ],
+          "courseOverrides": {
+            "IVU": { "name": "Introducción a la Vida Universitaria", "credits": 2, "requirementId": "tuce-general" },
+            "LI174": { "name": "Introducción a la Gramática del Español", "credits": 9, "requirementId": "tuce-linguistics" },
+            "COE5": { "name": "Informática Aplicada a la Corrección de Estilo", "credits": 8, "requirementId": "tuce-technical" },
+            "COE1": { "name": "Instrumentos y Recursos del Corrector de Estilo", "credits": 13, "requirementId": "tuce-technical" },
+            "COE10": { "name": "Lectura y Escritura en Contextos Académicos", "credits": 8, "requirementId": "tuce-technical" },
+            "COE9": { "name": "Ortografía I", "credits": 6, "requirementId": "tuce-technical" },
+            "LI114": { "name": "Gramática del Español I", "credits": 13, "requirementId": "tuce-linguistics" },
+            "COE2": { "name": "Taller I", "credits": 16, "requirementId": "tuce-technical" },
+            "COE7": { "name": "Producción Editorial", "credits": 8, "requirementId": "tuce-technical" },
+            "LI133": { "name": "Sintaxis (Oración simple)", "credits": 9, "requirementId": "tuce-linguistics" },
+            "COE3": { "name": "Taller II", "credits": 16, "requirementId": "tuce-technical" },
+            "LI134": { "name": "Sintaxis (Oración subordinada)", "credits": 7, "requirementId": "tuce-linguistics" },
+            "LI120": { "name": "Sociolingüística", "credits": 13, "requirementId": "tuce-linguistics" },
+            "COE4": { "name": "Pasantía e informe", "credits": 15, "requirementId": "tuce-technical" }
+          },
+          "additionalCourses": [
+            { "id": "TUCE-LITERATURE-1", "name": "Optativa de Letras (semestre par)", "credits": 10, "requirementId": "tuce-literature", "periodLabel": "2.º semestre", "curricularBlock": true },
+            { "id": "TUCE-ELECTIVE-1", "name": "Electiva I", "credits": 8, "requirementId": "tuce-general", "periodLabel": "2.º semestre", "curricularBlock": true },
+            { "id": "TUCE-LITERARY-THEORY", "name": "Optativa de Teorías Literarias", "credits": 10, "requirementId": "tuce-literature", "periodLabel": "3.er semestre", "curricularBlock": true },
+            { "id": "TUCE-ELECTIVE-2", "name": "Electiva II", "credits": 4, "requirementId": "tuce-general", "periodLabel": "3.er semestre", "curricularBlock": true },
+            { "id": "TUCE-FOREIGN-READING", "name": "Comprensión lectora de lengua extranjera", "credits": 8, "requirementId": "tuce-foreign-language", "periodLabel": "3.er semestre", "curricularBlock": true },
+            { "id": "TUCE-LITERATURE-2", "name": "Optativa de Letras (semestre par)", "credits": 10, "requirementId": "tuce-literature", "periodLabel": "4.º semestre", "curricularBlock": true }
+          ],
           "pathRequirementMap": {
             "2784": "tuce-linguistics",
             "3168": "tuce-literature",
@@ -45222,7 +45268,8 @@
               "sourceCourseIds": [
                 "COE10",
                 "COE6"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["COE10"]
             },
             {
               "id": "tuce-informatics",
@@ -45233,7 +45280,8 @@
                 "COE5A",
                 "COE5F",
                 "COE8"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["COE5"]
             },
             {
               "id": "tuce-resources",
@@ -45241,7 +45289,8 @@
               "minCompleted": 1,
               "sourceCourseIds": [
                 "COE1"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["COE1"]
             },
             {
               "id": "tuce-production",
@@ -45250,7 +45299,8 @@
               "sourceCourseIds": [
                 "COE7",
                 "PECLA"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["COE7"]
             },
             {
               "id": "tuce-workshop-1",
@@ -45258,7 +45308,8 @@
               "minCompleted": 1,
               "sourceCourseIds": [
                 "COE2"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["COE2"]
             },
             {
               "id": "tuce-workshop-2",
@@ -45266,7 +45317,8 @@
               "minCompleted": 1,
               "sourceCourseIds": [
                 "COE3"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["COE3"]
             },
             {
               "id": "tuce-internship",
@@ -45274,7 +45326,8 @@
               "minCompleted": 1,
               "sourceCourseIds": [
                 "COE4"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["COE4"]
             },
             {
               "id": "tuce-intro-grammar",
@@ -45284,7 +45337,8 @@
                 "LI174",
                 "LI179",
                 "LI176"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["LI174"]
             },
             {
               "id": "tuce-grammar-1",
@@ -45292,7 +45346,8 @@
               "minCompleted": 1,
               "sourceCourseIds": [
                 "LI114"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["LI114"]
             },
             {
               "id": "tuce-simple-syntax",
@@ -45300,7 +45355,8 @@
               "minCompleted": 1,
               "sourceCourseIds": [
                 "LI133"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["LI133"]
             },
             {
               "id": "tuce-subordinate-syntax",
@@ -45310,7 +45366,8 @@
                 "LI134",
                 "LI136",
                 "LI110"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["LI134"]
             },
             {
               "id": "tuce-sociolinguistics",
@@ -45318,13 +45375,15 @@
               "minCompleted": 1,
               "sourceCourseIds": [
                 "LI120"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["LI120"]
             },
             {
               "id": "tuce-foreign-course",
               "label": "Comprensión lectora en una lengua extranjera moderna",
               "minCompleted": 1,
               "sourceCourseIds": [
+                "TUCE-FOREIGN-READING",
                 "INPFI",
                 "IPFI",
                 "ALEM",
@@ -45335,7 +45394,8 @@
                 "PORT",
                 "LEP2",
                 "PORCL"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["TUCE-FOREIGN-READING"]
             },
             {
               "id": "tuce-university-introduction",
@@ -45345,7 +45405,8 @@
                 "IVU",
                 "IVA",
                 "BAS2"
-              ]
+              ],
+              "verifiedSourceCourseIds": ["IVU"]
             }
           ],
           "credentials": [
@@ -45449,7 +45510,7 @@
           ]
         },
         {
-          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/pdf-Malla-por-semestre-TUCE-feb-2025.pdf",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/01/pdf-Malla-por-semestre-TUCE-feb-2025.pdf",
           "authority": "Malla curricular vigente de TUCE, FHCE",
           "supports": [
             "cuatro semestres sugeridos",
@@ -72634,6 +72695,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:5ef143671786b94ebb04a4a09e47051418927bf331a4f9b765098499b2b67224",
+  "contentHash": "sha256:3178f26777476b7f43974edf798990ca056d0c09a267cb8f41f810ea9976af1f",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

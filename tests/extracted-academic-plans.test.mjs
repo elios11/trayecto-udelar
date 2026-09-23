@@ -59,7 +59,7 @@ test("cada proyección diferida conserva referencias internas válidas y estado 
     assert.equal(ids.size, projection.courses.length, `${item.identity}: ids repetidos`);
     for (const course of projection.courses) {
       assert.ok(Number.isFinite(course.credits) && course.credits >= 0, `${item.identity}/${course.id}`);
-      assert.match(course.authorityStatus, /^(verified|candidate)$/);
+      assert.match(course.authorityStatus, /^(verified|candidate|historical-equivalent)$/);
       assert.ok(course.fieldProvenance?.inclusion);
     }
     const verifiedCourses = projection.courses.filter((course) => course.authorityStatus === "verified");
@@ -115,7 +115,7 @@ test("cada materia explícita de una trayectoria oficial conserva una copia visi
       ].map(String).filter((id) => !excludedIds.has(id)));
       for (const sourceId of officialCourseIds) {
         const course = courseBySourceIdentity.get(sourceId)
-          ?? projection.courses.find((candidate) => candidate.id.endsWith(`-${sourceId}`));
+          ?? projection.courses.find((candidate) => candidate.id.endsWith(`-${sourceId.toLocaleLowerCase("es-UY")}`));
         assert.ok(course, `${audit.identity}/${trajectory.id}: materia oficial sin representación ${sourceId}`);
         assert.equal(course.authorityStatus, "verified", `${audit.identity}/${trajectory.id}: materia oficial no verificada ${sourceId}`);
         assert.ok(visibleIds.has(course.id), `${audit.identity}/${trajectory.id}: materia oficial fuera de Currícula ${sourceId} -> ${course.id}`);

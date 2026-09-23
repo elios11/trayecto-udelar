@@ -206,6 +206,8 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 ### D01–D03 — Saneamiento y fuentes de verdad
 
 - Especificación: `docs/tasks/autoridad-datos-curriculares.md`.
+- Especificación individual de D02: `docs/tasks/materias-sin-verificar.md`.
+- Piloto individual de D03 para las mallas FHCE: `docs/tasks/reconciliacion-fhce-mallas.md`.
 - Prioridad urgente y bloqueante: la composición de SGAE/Bedelías deja de ser suficiente para publicar una materia como parte vigente del catálogo.
 - D01 conserva toda la extracción, clasifica cada entrada, separa auditoría del plan de auditoría del catálogo y oculta candidatos de la experiencia normal.
 - D02 incorpora una sección cerrada y buscable de materias sin verificar, con aporte provisional explícito y sin completar requisitos oficiales.

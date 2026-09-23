@@ -9,7 +9,7 @@ const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-fhum-correccion-de-estilo-2014.json");
 const officialAudit = audits.audits.find(({ identity }) => identity === "correccion de estilo:2014");
 const courseById = new Map(projection.courses.map((course) => [course.id, course]));
-const pathway = projection.pathways["plan-flexible"];
+const publishedPathway = projection.publishedPathways["plan-flexible"];
 const credential = projection.creditStructure.credentials[0];
 
 test("publica una sola TUCE Plan 2014 vigente en Montevideo", () => {
@@ -58,21 +58,37 @@ test("controla las cuatro áreas oficiales que completan 180 créditos", () => {
   ]);
 });
 
-test("presenta el catálogo por áreas sin convertir optativas y electivas en obligaciones simultáneas", () => {
-  assert.equal(projection.courses.length, 177);
-  assert.deepEqual(pathway.periods.map(({ label }) => label), [
-    "Técnico-instrumental",
-    "Lingüística",
-    "Comprensión lectora en lengua extranjera",
-    "Literatura",
-    "Formación general y académica",
+test("presenta la trayectoria oficial por cuatro semestres y conserva el área en cada materia", () => {
+  assert.deepEqual(publishedPathway.periods.map(({ label }) => label), [
+    "1.er semestre",
+    "2.º semestre",
+    "3.er semestre",
+    "4.º semestre",
   ]);
-  const visibleIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
-  assert.equal(visibleIds.length, 177);
-  assert.equal(new Set(visibleIds).size, 177);
-  assert.ok(visibleIds.every((id) => courseById.has(id)));
+  const visibleIds = publishedPathway.periods.flatMap(({ courseIds }) => courseIds);
+  assert.equal(visibleIds.length, 20);
+  assert.equal(new Set(visibleIds).size, 20);
+  assert.ok(visibleIds.every((id) => courseById.get(id)?.authorityStatus === "verified"));
+  assert.deepEqual(publishedPathway.periods.map(({ courseIds }) => (
+    courseIds.reduce((total, id) => total + courseById.get(id).credits, 0)
+  )), [46, 47, 55, 45]);
+  assert.equal(publishedPathway.catalogCourseIds?.length ?? 0, 0);
   assert.equal(officialAudit.conclusion.canonicalModel, "one-technical-degree-one-flexible-path");
   assert.match(officialAudit.anomalies.find(({ field }) => field === "suggestedGridCredits").resolution, /193 créditos/);
+});
+
+test("oculta variantes anteriores y entradas de Bedelías que la malla vigente no publica", () => {
+  const statuses = projection.courses.reduce((counts, course) => ({
+    ...counts,
+    [course.authorityStatus]: (counts[course.authorityStatus] ?? 0) + 1,
+  }), {});
+  assert.deepEqual(statuses, { candidate: 155, verified: 20, "historical-equivalent": 8 });
+  const visibleIds = new Set(publishedPathway.periods.flatMap(({ courseIds }) => courseIds));
+  for (const code of ["IVA", "BAS2", "LI179", "LI176", "LI136", "LI110", "COE6", "PECLA"]) {
+    const course = projection.courses.find((candidate) => candidate.bedeliasCode === code);
+    assert.equal(course.authorityStatus, "historical-equivalent", code);
+    assert.equal(visibleIds.has(course.id), false, code);
+  }
 });
 
 test("exige el núcleo vigente y conserva equivalencias administrativas", () => {
@@ -84,16 +100,17 @@ test("exige el núcleo vigente y conserva equivalencias administrativas", () => 
   assert.deepEqual(groups.get("tuce-workshop-1").courseIds, ["fhum-coe2-2"]);
   assert.deepEqual(groups.get("tuce-workshop-2").courseIds, ["fhum-coe3-2"]);
   assert.deepEqual(groups.get("tuce-internship").courseIds, ["fhum-coe4-2"]);
-  assert.equal(groups.get("tuce-foreign-course").courseIds.length, 10);
+  assert.equal(groups.get("tuce-foreign-course").courseIds.length, 11);
+  assert.ok(groups.get("tuce-foreign-course").courseIds.includes("fhum-tuce-foreign-reading"));
   assert.ok([...groups.values()].flatMap(({ courseIds }) => courseIds).every((id) => courseById.has(id)));
 });
 
 test("mantiene la evidencia de previaturas y publica sólo las verificadas", () => {
   assert.equal(projection.rules.length, 36);
-  assert.equal(projection.plan.publishedRules, 8);
+  assert.equal(projection.plan.publishedRules, 5);
   assert.equal(projection.plan.noPublishedRule, 144);
-  const technical = pathway.periods.find(({ label }) => label === "Técnico-instrumental");
-  assert.ok(technical.courseIds.includes("fhum-coe4-2"));
+  const fourthSemester = publishedPathway.periods.find(({ label }) => label === "4.º semestre");
+  assert.ok(fourthSemester.courseIds.includes("fhum-coe4-2"));
   assert.equal(courseById.get("fhum-coe4-2").credits, 15);
   assert.match(officialAudit.anomalies.find(({ field }) => field === "prerequisites").resolution, /36 reglas/);
 });

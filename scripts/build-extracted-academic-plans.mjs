@@ -44,7 +44,7 @@ function exactOfficialCourseSourceIds(audit) {
   return new Set([
     ...(curriculum.verifiedCourseIds ?? []),
     ...(curriculum.commonCourseIds ?? []),
-    ...(curriculum.requiredCourseGroups ?? []).flatMap((group) => group.sourceCourseIds ?? []),
+    ...(curriculum.requiredCourseGroups ?? []).flatMap((group) => group.verifiedSourceCourseIds ?? group.sourceCourseIds ?? []),
     ...(audit?.officialPlan?.trajectories ?? []).flatMap((trajectory) => [
       ...(trajectory.courseIds ?? []),
       ...(trajectory.catalogSourceCourseIds ?? []),
@@ -285,7 +285,10 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
         const knownCourseIds = new Set(officialCurriculum.courses.map((course) => course.id));
         const mergedPeriods = new Map();
-        for (const period of [...(trajectory.periods ?? []), ...compositionPeriods]) {
+        const sourcePeriods = trajectory.useOnlyConfiguredPeriods === true
+          ? trajectory.periods ?? []
+          : [...(trajectory.periods ?? []), ...compositionPeriods];
+        for (const period of sourcePeriods) {
           if (!mergedPeriods.has(period.label)) mergedPeriods.set(period.label, []);
           for (const sourceId of period.courseIds ?? []) {
             const id = officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId;
@@ -577,6 +580,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   const additionalRequirementIdsForAllCourses = curriculum.additionalRequirementIdsForAllCourses ?? [];
   const excludedSourceCourseIds = new Set(curriculum.excludedSourceCourseIds ?? []);
   const verifiedSourceCourseIds = exactOfficialCourseSourceIds(audit);
+  const historicalEquivalentSourceCourseIds = new Set(curriculum.historicalEquivalentSourceCourseIds ?? []);
   const sharedProfileCourses = new Map();
   const requirementIdForPath = (nodePath) => {
     for (const segment of [...(nodePath ?? [])].reverse()) {
@@ -647,7 +651,9 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
         ...additionalRequirementIdsForAllCourses.filter((id) => !excludedRequirementIds.has(id)),
       ])];
       const isOfficialOverride = Object.keys(courseOverride).length > 0;
-      const authorityStatus = isOfficialOverride || verifiedSourceCourseIds.has(String(sourceCourseId)) ? "verified" : "candidate";
+      const authorityStatus = isOfficialOverride || verifiedSourceCourseIds.has(String(sourceCourseId))
+        ? "verified"
+        : historicalEquivalentSourceCourseIds.has(String(sourceCourseId)) ? "historical-equivalent" : "candidate";
       course = withCourseAuthority({
         id,
         ...(sourceCourseId ? { bedeliasCode: sourceCourseId } : {}),
