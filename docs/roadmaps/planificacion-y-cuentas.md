@@ -207,6 +207,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 
 - Especificación: `docs/tasks/autoridad-datos-curriculares.md`.
 - Especificación individual de D02: `docs/tasks/materias-sin-verificar.md`.
+- Especificación individual de D03a: `docs/tasks/inventario-trayectorias-oficiales.md`.
 - Piloto individual de D03 para las mallas FHCE: `docs/tasks/reconciliacion-fhce-mallas.md`.
 - Prioridad urgente y bloqueante: la composición de SGAE/Bedelías deja de ser suficiente para publicar una materia como parte vigente del catálogo.
 - D01 conserva toda la extracción, clasifica cada entrada, separa auditoría del plan de auditoría del catálogo y oculta candidatos de la experiencia normal.
