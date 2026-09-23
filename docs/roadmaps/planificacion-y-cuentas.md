@@ -211,7 +211,7 @@ Estas decisiones no bloquean la Ola 1, pero deben cerrarse antes de la Ola 3:
 - Prioridad urgente y bloqueante: la composición de SGAE/Bedelías deja de ser suficiente para publicar una materia como parte vigente del catálogo.
 - D01 conserva toda la extracción, clasifica cada entrada, separa auditoría del plan de auditoría del catálogo y oculta candidatos de la experiencia normal.
 - D02 incorpora una sección cerrada y buscable de materias sin verificar, con aporte provisional explícito y sin completar requisitos oficiales.
-- D03 reconcilia los candidatos contra planes, grillas, programas, resoluciones y ofertas oficiales por servicio. EVA queda limitado a enlace auxiliar de materias ya verificadas.
+- D03 audita todos los planes seleccionables y reproduce como trayectoria predeterminada cualquier malla, grilla, damero o trayectoria sugerida oficial vigente. Sólo su ausencia documentada habilita una vista flexible o por áreas; la composición de Bedelías nunca se presenta como sugerencia institucional. Después reconcilia candidatos contra planes, programas, resoluciones y ofertas oficiales por servicio. EVA queda limitado a enlace auxiliar de materias ya verificadas.
 - No se eliminan candidatos ni progreso; las coincidencias aproximadas sólo alimentan revisión y nunca crean equivalencias automáticas.
 - Cierre previo a Ola 3: D01 y D02 integrados, pruebas de compatibilidad y validación visual. D03 continúa incrementalmente por servicio.
 

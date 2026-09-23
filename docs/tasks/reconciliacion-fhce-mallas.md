@@ -20,9 +20,12 @@ Usar las mallas o trayectorias sugeridas que publica FHCE como fuente curricular
 - No fusionar por semejanza de nombres ni borrar progreso previo.
 - Mantener el aviso de que la secuencia es sugerida y puede variar con la oferta.
 
-## Generalización FHCE
+## Generalización global
 
 - El mismo patrón debe aceptar las dos vistas oficiales de FHCE: por semestre para la trayectoria y por área para mínimos/asignaciones.
+- FHCE es el primer lote, no el límite del requerimiento: el inventario debe abarcar absolutamente todos los planes seleccionables de todos los servicios.
+- Para cada plan se debe buscar primero una malla, grilla, damero o trayectoria sugerida oficial vigente. Si existe, Currícula debe reproducirla; sólo su ausencia documentada habilita una vista flexible o por áreas.
+- La composición de Bedelías no puede utilizarse como fallback de trayectoria sugerida. Permanece como evidencia de identidad, créditos, previaturas y candidatos.
 - La reconciliación es por código o identidad documentada; la malla visual no habilita coincidencias aproximadas automáticas.
 - Cada carrera se promueve en un commit revisable con conteos antes/después y una prueba que cubra períodos, áreas y candidatas restantes.
 - Priorizar después las carreras de FHCE que ya tienen ambos archivos oficiales y mayor contaminación en Bedelías.
@@ -41,4 +44,4 @@ Usar las mallas o trayectorias sugeridas que publica FHCE como fuente curricular
 - TUCE proyecta 20 identidades verificadas en cuatro semestres (46, 47, 55 y 45 créditos), 155 candidatas y 8 equivalencias históricas conservadas.
 - Generación, `npm test` (900 pruebas) y `npm run lint` completados correctamente.
 - No se realizó una inspección visual interactiva; la estructura y la exclusión de variantes quedan cubiertas por pruebas de proyección.
-- Siguiente paso del nodo: extender el patrón carrera por carrera a las demás mallas oficiales de FHCE, sin deduplicación aproximada.
+- Siguiente paso del nodo: inventariar y reconciliar carrera por carrera todas las trayectorias oficiales publicadas, comenzando por las demás mallas de FHCE y continuando por cada servicio, sin deduplicación aproximada.

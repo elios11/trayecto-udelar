@@ -108,6 +108,10 @@ El estado pertenece a la materia dentro de un plan y revisión concretos. La vig
 
 ### Estrategia
 
+- Aplicar una regla global a todas las carreras: si el servicio publica una malla, grilla, damero o trayectoria sugerida oficial vigente, esa estructura define la trayectoria predeterminada de Currícula con sus períodos, perfiles y bloques flexibles. No es una optimización opcional ni una decisión por facultad.
+- Conservar áreas, créditos mínimos y requisitos como dimensiones académicas de las materias y del egreso; no reemplazar con ellas los semestres, años, ciclos u otros períodos que publique la trayectoria sugerida.
+- Permitir el fallback a una vista flexible, por áreas o por requisitos únicamente cuando la auditoría documente que no existe una trayectoria sugerida oficial publicada. El fallback debe indicarlo en la UI y jamás convertir el orden o agrupamiento de Bedelías en una sugerencia institucional.
+- Si existen varias trayectorias sugeridas oficiales para un mismo plan —por perfil, sede o cohorte— modelarlas como alternativas documentadas del mismo plan cuando corresponda, sin mezclarlas ni escoger una silenciosamente.
 - Crear adaptadores reproducibles por servicio para grillas, dameros, programas, resoluciones y ofertas oficiales.
 - Priorizar carreras con mayor cantidad de candidatos y uso esperado.
 - Promover candidatos por código e identidad oficial exactos; enviar ambigüedades a revisión.
@@ -120,9 +124,17 @@ El estado pertenece a la materia dentro de un plan y revisión concretos. La vig
 ### Cierre por servicio
 
 - Fuente oficial actual identificada y archivada con hash o fecha.
+- Inventario explícito por plan con uno de dos resultados: `trayectoria oficial reproducida` o `sin trayectoria sugerida publicada`; no se acepta un estado implícito basado en Bedelías.
+- Cuando exista trayectoria oficial, prueba determinista que compare cantidad y orden de períodos, identidades visibles, bloques flexibles y perfiles contra la fuente.
 - Catálogo reconciliado con conteos de verificadas, candidatas, históricas, administrativas, rechazadas y conflictos.
 - Muestra manual documentada y pruebas deterministas del adaptador.
 - Las promociones conservan progreso y no crean equivalencias aproximadas.
+
+### Cierre global de D03
+
+- Todos los planes seleccionables fueron auditados para localizar una trayectoria sugerida oficial vigente, no sólo las carreras con duplicados visibles.
+- Toda trayectoria encontrada se reproduce como vista predeterminada de Currícula; las excepciones quedan enumeradas con la evidencia de que el servicio no publica una.
+- Una prueba de inventario bloquea regresiones: ningún plan con fuente sugerida registrada puede volver a proyectarse por áreas o por composición administrativa.
 
 ## Fuera de alcance
 
