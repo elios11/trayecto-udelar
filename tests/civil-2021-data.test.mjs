@@ -8,7 +8,7 @@ const source = JSON.parse(await readFile(new URL("../data/fing/civil-2021-trayec
 const snapshot = JSON.parse(await readFile(new URL("../data/bedelias/fing-ingenieria-civil-2021.json", import.meta.url), "utf8"));
 const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 const migrationSource = await readFile(new URL("../app/personal-data-migration.mjs", import.meta.url), "utf8");
-const catalogSource = await readFile(new URL("../app/academic-catalog.ts", import.meta.url), "utf8");
+const curatedCatalog = JSON.parse(await readFile(new URL("../app/data/curated-academic-catalog.json", import.meta.url), "utf8"));
 
 test("projects the current Civil Engineering Plan 2021 identity", () => {
   assert.equal(initial.plan.year, "2021");
@@ -90,9 +90,9 @@ test("keeps source provenance, clean validation and storage migration", () => {
   assert.deepEqual(snapshot.validation.issues, []);
   assert.equal(initial.source.profilesSpreadsheet, source.source.profilesSpreadsheet);
   assert.equal(initial.source.planDocument, source.source.planDocument);
-  assert.match(catalogSource, /export type PlanId = string/);
-  assert.match(catalogSource, /label: "Ingeniería Civil"/);
-  assert.match(catalogSource, /id: "civil-2021"/);
+  const civilCareer = curatedCatalog.flatMap((faculty) => faculty.careers).find(({ id }) => id === "civil");
+  assert.equal(civilCareer.label, "Ingeniería Civil");
+  assert.ok(civilCareer.plans.some(({ id }) => id === "civil-2021"));
   assert.match(pageSource, /createAcademicPlanRecord\(\(\) => \(\{\}\)\)/);
   assert.match(pageSource, /createAcademicPlanRecord\(\(\) => createDefaultTerms\(\)\)/);
   assert.match(pageSource, /localStorage\.getItem\(PERSONAL_DATA_STORAGE_KEY\)/);

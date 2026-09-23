@@ -3,17 +3,15 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const pageSource = readFileSync(new URL("../app/page.tsx", import.meta.url), "utf8");
-const catalogSource = readFileSync(new URL("../app/academic-catalog.ts", import.meta.url), "utf8");
+const curatedCatalog = JSON.parse(readFileSync(new URL("../app/data/curated-academic-catalog.json", import.meta.url), "utf8"));
 const registrySource = readFileSync(new URL("../app/academic-plan-registry.ts", import.meta.url), "utf8");
 
 test("registra las tres carreras FADU auditadas en la jerarquía académica", () => {
-  assert.match(catalogSource, /label: "Facultad de Arquitectura, Diseño y Urbanismo"/);
-  assert.match(catalogSource, /id: "fadu-arquitectura-2015"/);
-  assert.match(catalogSource, /id: "fadu-ldcv-2007"/);
-  assert.match(catalogSource, /id: "fadu-ldind-2013"/);
-  assert.match(catalogSource, /defaultCredentialId: "architect"/);
-  assert.match(catalogSource, /defaultCredentialId: "visual-designer"/);
-  assert.match(catalogSource, /defaultCredentialId: "industrial-designer"/);
+  const faculty = curatedCatalog.find(({ id }) => id === "fadu");
+  const plans = faculty.careers.flatMap((career) => career.plans);
+  assert.equal(faculty.label, "Facultad de Arquitectura, Diseño y Urbanismo");
+  assert.deepEqual(plans.map(({ id }) => id), ["fadu-arquitectura-2015", "fadu-ldcv-2007", "fadu-ldind-2013"]);
+  assert.deepEqual(plans.map(({ defaultCredentialId }) => defaultCredentialId), ["architect", "visual-designer", "industrial-designer"]);
 });
 
 test("carga FADU por un registro diferido sin condicionales específicos en la interfaz", () => {

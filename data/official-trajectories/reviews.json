@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "reviews": [
+    {
+      "planId": "1997",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-09-22",
+      "effectiveAt": "2025",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["pi-20-59"]
+      },
+      "sources": [
+        {
+          "authority": "Comisión de Carrera de Computación, Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf",
+          "role": "trayectoria sugerida 2025 localizada en la implementación"
+        }
+      ],
+      "evidence": {
+        "kind": "source-identified",
+        "repositoryPath": "app/page.tsx",
+        "reason": "La trayectoria está codificada y enlazada, pero todavía no existe un artefacto auditado que permita cotejar automáticamente todos sus períodos contra la fuente."
+      },
+      "conflictNotes": [
+        "La fecha corresponde a la revisión del repositorio; la vigencia documental y la correspondencia completa deben cerrarse en un lote D03."
+      ]
+    },
+    {
+      "planId": "2025",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-08-08",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo", "Tacuarembó", "Colonia", "Salto", "Paysandú"],
+        "pathwayIds": ["pi-under-20", "pi-60-plus", "pi-20-59"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72912",
+          "role": "trayectoria para resultado de Prueba Inicial de 60% o más"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72913",
+          "role": "trayectoria para resultado de Prueba Inicial entre 20% y 59%"
+        }
+      ],
+      "evidence": {
+        "kind": "source-identified",
+        "sourceDataPath": "data/fing/computacion-2025-trayectorias.json",
+        "projectionDataPath": "app/data/computacion-2025-fing.json",
+        "reason": "La proyección declara que sólo cubre el núcleo común hasta el octavo semestre y deja sin ubicación semestral completa perfiles, optativas, créditos complementarios y Proyecto de Grado."
+      },
+      "conflictNotes": [
+        "La Prueba Inicial de cuatro créditos para la rama de 60% o más continúa marcada como supuesto operativo pendiente de confirmación documental explícita para 2026."
+      ]
+    },
+    {
+      "planId": "electrica-2023",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-08-09",
+      "effectiveAt": "2023",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["basic", "electronics", "signals-aa", "telecommunications", "biomedical", "power", "control"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/carreras/grado/ingenieriaelectrica",
+          "role": "carrera y plan vigente"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Eléctrica, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72770",
+          "role": "recorridos sugeridos por perfil; evidencia auxiliar contrastada con el plan"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/electrica-2023-trayectorias.json",
+        "projectionDataPath": "app/data/electrica-2023-fing.json",
+        "sourceCollection": "profiles",
+        "projectionCollection": "profiles",
+        "periodField": "semesters"
+      },
+      "conflictNotes": []
+    },
+    {
+      "planId": "civil-2021",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-08-11",
+      "effectiveAt": "2021",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["construction", "structures", "hydraulic-environmental", "transportation"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/carreras/grado/ingenieriacivil",
+          "role": "carrera y plan vigente"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Civil, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/79334/mod_folder/content/0/Curricula_Todos_Los_Perfiles%20-%20v2025_06.xlsx?forcedownload=1",
+          "role": "recorridos sugeridos por perfil; evidencia auxiliar contrastada con el plan"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/civil-2021-trayectorias.json",
+        "projectionDataPath": "app/data/civil-2021-fing.json",
+        "sourceCollection": "profiles",
+        "projectionCollection": "profiles",
+        "periodField": "semesters"
+      },
+      "conflictNotes": []
+    },
+    {
+      "planId": "qf-2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-08-11",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo", "Salto · primer año"],
+        "pathwayIds": ["suggested"]
+      },
+      "sources": [
+        {
+          "authority": "Consejo de Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20farmac%C3%A9utico%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "role": "damero sugerido vigente y créditos de las unidades obligatorias"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/quimico-farmaceutico-2015-trayectoria.json",
+        "projectionDataPath": "app/data/quimico-farmaceutico-2015-fq.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "trajectories",
+        "periodField": "semesters"
+      },
+      "conflictNotes": [
+        "Las trayectorias 2024 y 2015 se conservan como referencias históricas y no justifican la distribución vigente."
+      ]
+    },
+    {
+      "planId": "fadu-arquitectura-2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-08-12",
+      "effectiveAt": "2025",
+      "projectionMechanism": "official-flexible-structure",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["flexible"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "url": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU.pdf",
+          "role": "mapa curricular por etapas y bloques flexibles"
+        },
+        {
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "url": "https://www.fadu.edu.uy/bedelia/files/2025/04/Organizacion-Carrera-Arquitectura-2025.pdf",
+          "role": "organización vigente por etapas y mínimos"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fadu/audited-plans.json",
+        "sourcePlanId": "fadu-arquitectura-2015",
+        "projectionDataPath": "app/data/fadu-arquitectura-2015.json",
+        "sourceCollection": "pathways",
+        "projectionCollection": "pathways",
+        "periodField": "periods"
+      },
+      "conflictNotes": [
+        "La fuente organiza etapas y mínimos, no una secuencia semestral única; la proyección conserva ese alcance sin inventar semestres."
+      ]
+    },
+    {
+      "planId": "fadu-ldcv-2007",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-08-12",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["current-2026"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "url": "https://www.fadu.edu.uy/ldcv/files/2023/08/Mapa-Curricular-de-la-LDCV.pdf",
+          "role": "mapa curricular oficial"
+        },
+        {
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "url": "https://www.fadu.edu.uy/carreras/ldcv/informacion-general/",
+          "role": "implementación vigente del ingreso 2026"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fadu/audited-plans.json",
+        "sourcePlanId": "fadu-ldcv-2007",
+        "projectionDataPath": "app/data/fadu-ldcv-2007.json",
+        "sourceCollection": "pathways",
+        "projectionCollection": "pathways",
+        "periodField": "periods"
+      },
+      "conflictNotes": [
+        "El primer año usa el piloto vigente desde 2026; el mapa 2023 queda como antecedente para los tramos restantes."
+      ]
+    },
+    {
+      "planId": "fadu-ldind-2013",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-08-12",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["product", "textile"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "url": "https://old.fadu.edu.uy/bedelia/files/2025/12/Producto.pdf",
+          "role": "trayectoria oficial del perfil Producto"
+        },
+        {
+          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "url": "https://old.fadu.edu.uy/bedelia/files/2025/12/Textil.pdf",
+          "role": "trayectoria oficial del perfil Textil-Indumentaria"
+        },
+        {
+          "authority": "Consejo de Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
+          "url": "https://old.fadu.edu.uy/bedelia/files/2025/12/Res-11-Consejo-17-dic-2025.pdf",
+          "role": "regla flexible vigente desde 2026"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fadu/audited-plans.json",
+        "sourcePlanId": "fadu-ldind-2013",
+        "projectionDataPath": "app/data/fadu-ldind-2013.json",
+        "sourceCollection": "pathways",
+        "projectionCollection": "pathways",
+        "periodField": "periods"
+      },
+      "conflictNotes": []
+    }
+  ]
+}

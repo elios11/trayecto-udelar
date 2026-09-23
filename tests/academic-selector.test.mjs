@@ -3,23 +3,27 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-const catalogSource = await readFile(new URL("../app/academic-catalog.ts", import.meta.url), "utf8");
+const curatedCatalog = JSON.parse(await readFile(new URL("../app/data/curated-academic-catalog.json", import.meta.url), "utf8"));
 
 test("organizes every incorporated plan by faculty and career", () => {
   assert.match(pageSource, /<span>Facultad<\/span>/);
-  assert.match(catalogSource, /label: "Facultad de Ingeniería"/);
-  assert.match(catalogSource, /label: "Ingeniería en Computación"/);
-  assert.match(catalogSource, /label: "Ingeniería Eléctrica"/);
-  assert.match(catalogSource, /id: "2025"/);
-  assert.match(catalogSource, /id: "1997"/);
-  assert.match(catalogSource, /id: "electrica-2023"/);
-  assert.match(catalogSource, /label: "Facultad de Química"/);
-  assert.match(catalogSource, /label: "Química Farmacéutica"/);
-  assert.match(catalogSource, /id: "qf-2015"/);
-  assert.match(catalogSource, /label: "Facultad de Arquitectura, Diseño y Urbanismo"/);
-  assert.match(catalogSource, /label: "Arquitectura"/);
-  assert.match(catalogSource, /label: "Licenciatura en Diseño de Comunicación Visual"/);
-  assert.match(catalogSource, /label: "Licenciatura en Diseño Industrial"/);
+  const facultyLabels = curatedCatalog.map(({ label }) => label);
+  const careers = curatedCatalog.flatMap((faculty) => faculty.careers);
+  const careerLabels = careers.map(({ label }) => label);
+  const planIds = careers.flatMap((career) => career.plans.map(({ id }) => id));
+  assert.ok(facultyLabels.includes("Facultad de Ingeniería"));
+  assert.ok(careerLabels.includes("Ingeniería en Computación"));
+  assert.ok(careerLabels.includes("Ingeniería Eléctrica"));
+  assert.ok(planIds.includes("2025"));
+  assert.ok(planIds.includes("1997"));
+  assert.ok(planIds.includes("electrica-2023"));
+  assert.ok(facultyLabels.includes("Facultad de Química"));
+  assert.ok(careerLabels.includes("Química Farmacéutica"));
+  assert.ok(planIds.includes("qf-2015"));
+  assert.ok(facultyLabels.includes("Facultad de Arquitectura, Diseño y Urbanismo"));
+  assert.ok(careerLabels.includes("Arquitectura"));
+  assert.ok(careerLabels.includes("Licenciatura en Diseño de Comunicación Visual"));
+  assert.ok(careerLabels.includes("Licenciatura en Diseño Industrial"));
 });
 
 test("filters careers and plans through the active academic hierarchy", () => {

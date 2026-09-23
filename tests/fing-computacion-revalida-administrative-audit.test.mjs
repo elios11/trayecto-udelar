@@ -30,7 +30,9 @@ test("preserva la evidencia administrativa sin publicar una malla de mínimos ce
   const report = readJson("data/bedelias/inventory/ui-extracted-plans.json");
   const identities = new Set(report.plans.map((plan) => plan.identity));
   assert.ok(!identities.has("ingenieria en computacion revalida:1987"));
-  const catalogSource = readFileSync(new URL("../app/academic-catalog.ts", import.meta.url), "utf8");
-  assert.match(catalogSource, /label: "Ingeniería en Computación"[\s\S]*id: "2025"[\s\S]*id: "1997"/);
+  const catalog = readJson("app/data/curated-academic-catalog.json");
+  const career = catalog.flatMap((faculty) => faculty.careers).find(({ id }) => id === "computacion");
+  assert.equal(career.label, "Ingeniería en Computación");
+  assert.deepEqual(career.plans.map(({ id }) => id), ["2025", "1997"]);
   assert.equal(report.counts.compositionUnavailable, 0);
 });
