@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:ff062d96ceae7be740f7f672974ba3d66e102b7d2212ac5be14a6e1b05924e68",
-    "extractedReportHash": "sha256:a236fbb0d3d6607749ead77295cc09dbe5dc05859f98441b4750537df6f3a8ea",
-    "officialAuditHash": "sha256:3178f26777476b7f43974edf798990ca056d0c09a267cb8f41f810ea9976af1f",
-    "reviewedTrajectoriesHash": "sha256:390899404a1e88888fbb6d187646fe03243bbe0d60aa5ea83ae6d618ffcce85f"
+    "extractedReportHash": "sha256:a92bd3c36b88ec60ccb45a3c5b67eb6cd68fca96eb5bf9a12b8b1f86d290a5aa",
+    "officialAuditHash": "sha256:c8b9bf63997b34866805e2795ea635db2760de7a60dc958094c280c4fa4dac15",
+    "reviewedTrajectoriesHash": "sha256:04818ace86687b0dc80fc25fc7eae07c1ec588f50ed32e06e2f0d51ac693355e"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 66,
+      "official-trajectory-reproduced": 69,
       "official-trajectory-identified-pending": 19,
       "no-official-trajectory-documented": 0,
-      "research-pending": 62
+      "research-pending": 59
     },
-    "pending": 81,
+    "pending": 78,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -177,10 +177,10 @@
         "serviceLabel": "Facultad de Humanidades y Ciencias de la Educación",
         "selectablePlanIds": 13,
         "states": {
-          "official-trajectory-reproduced": 7,
+          "official-trajectory-reproduced": 10,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 6
+          "research-pending": 3
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 81,
+    "total": 78,
     "plans": [
       {
         "priority": 1,
@@ -856,34 +856,7 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fhum-museologia-2011",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fhum"
@@ -1156,10 +1129,7 @@
         "researchPending": [
           "bedelias-cure-licenciatura-en-turismo-2014",
           "bedelias-fhum-dramaturgia-2015",
-          "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
-          "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
-          "bedelias-fhum-museologia-2011",
-          "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025"
+          "bedelias-fhum-museologia-2011"
         ]
       },
       {
@@ -7830,45 +7800,29 @@
           "defaultCredentialId": "tecnologo-tuilsu-oyente"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-07",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2014, FHCE",
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/ILSU-Malla-curricular-junio2025.pdf",
+          "role": "trayectoria sugerida de seis semestres adaptada a la oferta efectiva"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
           "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/TUILSU_Plan_2014.pdf",
-          "role": "título; tres años; 270 créditos; áreas; recorridos para estudiantes sordos y oyentes; pasantías",
-          "trajectoryEvidence": false
+          "role": "áreas, mínimos y recorridos lingüísticos"
         },
         {
-          "authority": "Página vigente de planes de TUILSU, FHCE",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
           "url": "https://fhce.edu.uy/plan-de-estudios-4/",
-          "role": "vigencia administrativa del Plan 2014; denominación; título; duración; Plan 2025 sucesor",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular vigente, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2025/02/Malla-curricular-o-trayectoria-sugerida-por-semestre-para-TUILSU.pdf",
-          "role": "seis semestres; secuencia sugerida; unidades obligatorias; mínimos por área; flexibilidad",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Plan conjunto 2025, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
-          "role": "continuidad del título de Tecnólogo; nuevo plan; trayecto de Licenciatura; 270 y 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta 2026 aprobada por el Consejo de FHCE",
-          "url": "https://fhce.edu.uy/programas-2026-tuilsu/",
-          "role": "actividad académica vigente; unidades por área; recorridos LSU y español",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/interpretacion-lsu-espanol-lsu",
-          "role": "vigencia; 36 meses; 270 créditos; sedes FHCE y Salto; ingreso bienal",
-          "trajectoryEvidence": false
+          "role": "publicación separada de los planes 2014 y 2025"
         }
       ],
       "scope": {
@@ -7888,17 +7842,33 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "interpretacion lsu espanol lsu:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-interpretacion-lsu-espanol-lsu-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-interpretacion-lsu-espanol-lsu-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:0aac90c879802d0e9a937660a1dc81f6de8c2f4ff0a679e7e1c3151dbad31f84",
+        "projectionContentHash": "sha256:a2da18afd0869e3d729e03cb4392cdb9c48ce0bb6790494ac19938547d5fdb47",
+        "pathways": [
+          {
+            "id": "estudiante-oyente",
+            "periodCount": 6
+          },
+          {
+            "id": "estudiante-sordo",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 50,
+        "matchedCoursePlacements": 50
       },
       "conflictNotes": [
-        "planTransition: FHCE publica los planes 2014 y 2025. La UI conserva 2014 como plan vigente para cohortes registradas y mostrará 2025 como opción separada cuando se cierre su auditoría, sin duplicar la carrera.",
-        "suggestedCredits: La malla vigente suma 274 créditos porque implementa dos optativas de 13 créditos; el Plan exige 22 créditos optativos y 270 totales. La UI controla el mínimo normativo, no obliga a completar los 26 ofrecidos en el ejemplo.",
-        "territorialOffering: Las huellas curriculares regionales coinciden con la central. Salto figura en el catálogo vigente; Tacuarembó está documentado para cohortes previas pero no como sede vigente de ingreso, por lo que no se ofrece en el selector actual.",
-        "flexibleCatalog: Bedelías acumula optativas, electivas y actividades integrales de distintas ediciones. Se mantienen como catálogo elegible y los mínimos por área evitan convertir toda la oferta en obligación."
+        "La malla de julio de 2025 suma 271 créditos por las cargas de las optativas efectivamente ofrecidas; el Plan 2014 mantiene un mínimo normativo de 270.",
+        "FHCE publica 2014 y 2025 como planes separados y no publica una equivalencia ni una migración automática de progreso entre ambos.",
+        "Las optativas, actividades integrales, la electiva y la lengua extranjera sin identidad única se conservan como bloques oficiales de cero créditos."
       ]
     },
     {
@@ -7981,33 +7951,19 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-29",
-      "effectiveAt": "2025",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-06",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2025, FHCE",
+          "authority": "Plan de Estudios 2025, FHCE, Udelar",
           "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
-          "role": "Licenciatura; título intermedio; ocho semestres; 360 créditos; 90 créditos finales; estructura semestral",
-          "trajectoryEvidence": false
+          "role": "ocho semestres, dos credenciales, condiciones de ingreso y articulación explícita"
         },
         {
-          "authority": "Página vigente de la Licenciatura, FHCE",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
           "url": "https://fhce.edu.uy/licenciatura-en-estudios-sordos/",
-          "role": "vigencia; objetivos; servicio responsable",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página oficial del plan, FHCE",
-          "url": "https://fhce.edu.uy/plan-de-estudios-de-la-licenciatura-en-estudios-sordos/",
-          "role": "publicación vigente del Plan 2025",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Bienestar Universitario, Udelar",
-          "url": "https://bienestar.udelar.edu.uy/2025/09/21/saludo-de-bienestar-en-el-dia-nacional-de-las-personas-sordas/",
-          "role": "aprobación; apertura en 2026; dictado en FHCE",
-          "trajectoryEvidence": false
+          "role": "página vigente de la Licenciatura y servicio responsable"
         }
       ],
       "scope": {
@@ -8026,16 +7982,33 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en estudios sordos:2025",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-licenciatura-en-estudios-sordos-2025.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-licenciatura-en-estudios-sordos-2025.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:bbc77d26897b5324165612d6f1df235961ab89a5452fa90442a1a6638f18d947",
+        "projectionContentHash": "sha256:7376c77ba4bb93f79c601caf94b565c8364b570820b9e75d6fd8d50d6fc1f423",
+        "pathways": [
+          {
+            "id": "estudiante-oyente",
+            "periodCount": 9
+          },
+          {
+            "id": "estudiante-sordo",
+            "periodCount": 9
+          }
+        ],
+        "expectedCoursePlacements": 68,
+        "matchedCoursePlacements": 68
       },
       "conflictNotes": [
-        "bedeliasComposition: La composición administrativa de la Licenciatura es incompleta: no se usa para reducir el núcleo ni para omitir el cuarto año oficial.",
-        "fourthYearCourseOffer: FHCE todavía no publica una malla efectiva del cuarto año; se representan sólo los bloques y créditos nominales aprobados.",
-        "campus: El Plan permite ingreso de egresados del Tecnólogo, pero la apertura 2026 se atribuye a FHCE; Salto permanece como sede del Tecnólogo, no como sede completa de la Licenciatura."
+        "El Plan conjunto declara que los primeros tres años otorgan el título de Tecnólogo y que el cuarto año agrega 90 créditos para la Licenciatura.",
+        "La distribución semestral de actividades optativas, electivas e integrales es una organización posible; esos bloques no acreditan por sí mismos una unidad concreta.",
+        "La apertura documentada de la Licenciatura corresponde a FHCE en Montevideo; Salto se conserva como sede del Tecnólogo y no se infiere como sede completa de la Licenciatura."
       ]
     },
     {
@@ -8188,33 +8161,24 @@
           "defaultCredentialId": "tecnologo-tuilsu-oyente"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-29",
-      "effectiveAt": "2025",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-06",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2025, FHCE",
+          "authority": "Plan de Estudios 2025, FHCE, Udelar",
           "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
-          "role": "dos títulos articulados; tres años; 270 créditos; áreas; recorridos lingüísticos; pasantías",
-          "trajectoryEvidence": false
+          "role": "estructura de seis semestres, mínimos y articulación explícita con la Licenciatura"
         },
         {
-          "authority": "Página vigente de planes de TUILSU, FHCE",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
           "url": "https://fhce.edu.uy/plan-de-estudios-4/",
-          "role": "Plan 2025; denominación; título; duración; créditos",
-          "trajectoryEvidence": false
+          "role": "publicación vigente del Plan 2025 y separación administrativa del Plan 2014"
         },
         {
-          "authority": "Página vigente de la carrera, FHCE",
-          "url": "https://fhce.edu.uy/tecnologo-en-interpretacion-y-traduccion-lsu-espanol/",
-          "role": "ingreso 2026; prueba de suficiencia; admisión de estudiantes sordos y oyentes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
+          "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/interpretacion-lsu-espanol-lsu",
-          "role": "vigencia; 36 meses; 270 créditos; sedes Montevideo y Salto",
-          "trajectoryEvidence": false
+          "role": "duración, créditos, sedes y condiciones de ingreso"
         }
       ],
       "scope": {
@@ -8234,15 +8198,33 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnologo int y trad lsu esp:2025",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:be2eb235065f63af4fbfce462ff50ef990146c3a4394bcb064a13a64b7c1a5cf",
+        "projectionContentHash": "sha256:80792f85552574c726f99d0860f02e609e94659e0c37d64612920b76deaf472f",
+        "pathways": [
+          {
+            "id": "estudiante-oyente",
+            "periodCount": 7
+          },
+          {
+            "id": "estudiante-sordo",
+            "periodCount": 7
+          }
+        ],
+        "expectedCoursePlacements": 50,
+        "matchedCoursePlacements": 50
       },
       "conflictNotes": [
-        "regionalOffering.CUCEL: Bedelías publica la composición en CUCEL, pero el catálogo vigente de Udelar sólo confirma FHCE y Salto; CUCEL no se expone como sede.",
-        "prerequisites: Los snapshots 2025 no publican reglas operativas; no se heredan las previaturas del Plan 2014."
+        "El Plan 2025 integra los primeros tres años de la Licenciatura y respalda progreso compartido sólo entre esas dos identidades 2025.",
+        "El Plan 2014 permanece separado porque no se publicó equivalencia, reválida ni migración automática con 2025.",
+        "Las elecciones genéricas se muestran como bloques de cero créditos y no convierten el catálogo acumulado de Bedelías en oferta vigente."
       ]
     },
     {
@@ -13623,5 +13605,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:9a720c508a5717725bab13024ed0c0d366131fa14df61644ec4ab94130be146f"
+  "contentHash": "sha256:8375dcde33918b427dce2b013be194872a1ee8fd768feb8a1f357ed45b977b00"
 }

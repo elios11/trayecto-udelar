@@ -511,6 +511,135 @@
         "periodField": "periods"
       },
       "conflictNotes": []
+    },
+    {
+      "planId": "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-07",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo", "Salto"],
+        "pathwayIds": ["estudiante-oyente", "estudiante-sordo"]
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/ILSU-Malla-curricular-junio2025.pdf",
+          "role": "trayectoria sugerida de seis semestres adaptada a la oferta efectiva"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/TUILSU_Plan_2014.pdf",
+          "role": "áreas, mínimos y recorridos lingüísticos"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/plan-de-estudios-4/",
+          "role": "publicación separada de los planes 2014 y 2025"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-interpretacion-lsu-espanol-lsu-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La malla de julio de 2025 suma 271 créditos por las cargas de las optativas efectivamente ofrecidas; el Plan 2014 mantiene un mínimo normativo de 270.",
+        "FHCE publica 2014 y 2025 como planes separados y no publica una equivalencia ni una migración automática de progreso entre ambos.",
+        "Las optativas, actividades integrales, la electiva y la lengua extranjera sin identidad única se conservan como bloques oficiales de cero créditos."
+      ]
+    },
+    {
+      "planId": "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-06",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo", "Salto"],
+        "pathwayIds": ["estudiante-oyente", "estudiante-sordo"]
+      },
+      "sources": [
+        {
+          "authority": "Plan de Estudios 2025, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "role": "estructura de seis semestres, mínimos y articulación explícita con la Licenciatura"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/plan-de-estudios-4/",
+          "role": "publicación vigente del Plan 2025 y separación administrativa del Plan 2014"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/interpretacion-lsu-espanol-lsu",
+          "role": "duración, créditos, sedes y condiciones de ingreso"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Plan 2025 integra los primeros tres años de la Licenciatura y respalda progreso compartido sólo entre esas dos identidades 2025.",
+        "El Plan 2014 permanece separado porque no se publicó equivalencia, reválida ni migración automática con 2025.",
+        "Las elecciones genéricas se muestran como bloques de cero créditos y no convierten el catálogo acumulado de Bedelías en oferta vigente."
+      ]
+    },
+    {
+      "planId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-06",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["estudiante-oyente", "estudiante-sordo"]
+      },
+      "sources": [
+        {
+          "authority": "Plan de Estudios 2025, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "role": "ocho semestres, dos credenciales, condiciones de ingreso y articulación explícita"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/licenciatura-en-estudios-sordos/",
+          "role": "página vigente de la Licenciatura y servicio responsable"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-licenciatura-en-estudios-sordos-2025.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Plan conjunto declara que los primeros tres años otorgan el título de Tecnólogo y que el cuarto año agrega 90 créditos para la Licenciatura.",
+        "La distribución semestral de actividades optativas, electivas e integrales es una organización posible; esos bloques no acreditan por sí mismos una unidad concreta.",
+        "La apertura documentada de la Licenciatura corresponde a FHCE en Montevideo; Salto se conserva como sede del Tecnólogo y no se infiere como sede completa de la Licenciatura."
+      ]
     }
   ]
 }

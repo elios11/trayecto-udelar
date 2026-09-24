@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:3bdb1e05a317e361bdd5f491911f3e3ed2dc33c186907283fe6ac8d69001a320",
-    "officialAuditHash": "sha256:3178f26777476b7f43974edf798990ca056d0c09a267cb8f41f810ea9976af1f",
+    "auditQueueHash": "sha256:a0fb5f4cfc1614a9c30b3e568948fd4a96f5ab1c9e5b4d4280de0c3bc04e5b28",
+    "officialAuditHash": "sha256:c8b9bf63997b34866805e2795ea635db2760de7a60dc958094c280c4fa4dac15",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
-    "fhceReconciliationsHash": "sha256:07f200116eb0459c03c6c94a6561461895e8228f061a39bf4b1b3d1ce98daa25"
+    "fhceReconciliationsHash": "sha256:0b4510ad87acb1d29d1118ab650debb052f8f2c4fb9eaf0e00fdaf6288ca17a3"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -14,17 +14,17 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4840,
-      "candidate": 27481,
+      "verified": 4344,
+      "candidate": 28003,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 9
     },
-    "beforePublishedCourses": 32329,
-    "afterPublishedCourses": 4840,
+    "beforePublishedCourses": 32355,
+    "afterPublishedCourses": 4344,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1434,
-    "visibleTargetsWithUnpublishedDependencies": 1100,
+    "afterPublishedRules": 1426,
+    "visibleTargetsWithUnpublishedDependencies": 1103,
     "plansWithVerifiedCatalog": 60,
     "plansWithPartialCatalog": 61,
     "plansWithStructureOnly": 18
@@ -2496,21 +2496,37 @@
         "salto"
       ],
       "before": {
-        "publishedCourses": 201,
+        "publishedCourses": 210,
         "publishedRules": 29
       },
       "after": {
-        "publishedCourses": 195,
-        "hiddenCourses": 6,
-        "publishedRules": 29,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 30,
+        "hiddenCourses": 180,
+        "publishedRules": 21,
+        "rulesWithUnpublishedDependencies": 3
       },
       "statuses": {
-        "verified": 195,
-        "candidate": 6,
+        "verified": 30,
+        "candidate": 180,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 195,
+          "candidate": 6,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 30,
+          "candidate": 180,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -2572,21 +2588,37 @@
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 211,
+        "publishedCourses": 219,
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 205,
-        "hiddenCourses": 6,
+        "publishedCourses": 39,
+        "hiddenCourses": 180,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 205,
-        "candidate": 6,
+        "verified": 39,
+        "candidate": 180,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 205,
+          "candidate": 6,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 39,
+          "candidate": 180,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -2679,21 +2711,37 @@
         "salto"
       ],
       "before": {
-        "publishedCourses": 201,
+        "publishedCourses": 210,
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 195,
-        "hiddenCourses": 6,
+        "publishedCourses": 30,
+        "hiddenCourses": 180,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 195,
-        "candidate": 6,
+        "verified": 30,
+        "candidate": 180,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 195,
+          "candidate": 6,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 30,
+          "candidate": 180,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4367,5 +4415,5 @@
       }
     }
   ],
-  "contentHash": "sha256:a236fbb0d3d6607749ead77295cc09dbe5dc05859f98441b4750537df6f3a8ea"
+  "contentHash": "sha256:a92bd3c36b88ec60ccb45a3c5b67eb6cd68fca96eb5bf9a12b8b1f86d290a5aa"
 }

@@ -1445,6 +1445,464 @@
           { "id": "validacion-final-plan", "name": "Validación final de la opción y del plan de optativas por la Comisión de Carrera", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["antropologia-biologica", "arqueologia", "antropologia-social"] }
         ]
       }
+    },
+    {
+      "id": "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
+      "identity": "interpretacion lsu espanol lsu:2014",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-07",
+      "authorityCountsBefore": {
+        "verified": 195,
+        "candidate": 6,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/ILSU-Malla-curricular-junio2025.pdf",
+          "role": "trayectoria sugerida de seis semestres adaptada a la oferta efectiva"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/TUILSU_Plan_2014.pdf",
+          "role": "título, áreas, mínimos, recorridos lingüísticos y requisitos de egreso"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/plan-de-estudios-4/",
+          "role": "publicación separada de los planes 2014 y 2025"
+        }
+      ],
+      "uiNotice": "Plan 2014 de seis semestres y 270 créditos para cohortes en transición. La trayectoria de julio de 2025 suma 271 créditos por la carga efectiva de sus optativas; el egreso conserva el mínimo normativo de 270. Este plan mantiene progreso propio y no se migra ni se fusiona con el Plan 2025.",
+      "trajectories": [
+        {
+          "id": "estudiante-oyente",
+          "credentialId": "tecnologo-tuilsu-oyente",
+          "label": "Estudiante oyente",
+          "description": "Trayectoria sugerida de seis semestres: español como lengua primera y LSU como segunda lengua.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "IL18", "TUILSU-2014-ESTRUCTURA-ESPANOL", "IL19", "TUILSU-2014-OPTATIVA-1"] },
+            { "label": "Semestre 2", "courseIds": ["IL21", "IL25", "IL24", "IL22"] },
+            { "label": "Semestre 3", "courseIds": ["IL27", "IL82", "IL30", "IL28"] },
+            { "label": "Semestre 4", "courseIds": ["IL31", "IL33", "TUILSU-2014-OPTATIVA-2", "TUILSU-2014-PASANTIA-1"] },
+            { "label": "Semestre 5", "courseIds": ["TUILSU-2014-INTEGRALIDAD-1", "IL37", "TUILSU-2014-PASANTIA-2"] },
+            { "label": "Semestre 6", "courseIds": ["TUILSU-2014-INTEGRALIDAD-2", "TUILSU-2014-LENGUA-EXTRANJERA", "IL44", "TUILSU-2014-PASANTIA-3", "TUILSU-2014-ELECTIVA"] }
+          ]
+        },
+        {
+          "id": "estudiante-sordo",
+          "credentialId": "tecnologo-tuilsu-sordo",
+          "label": "Estudiante sordo/a",
+          "description": "Trayectoria sugerida de seis semestres: LSU como lengua primera y español escrito como segunda lengua.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "IL18", "IL17", "IL16", "TUILSU-2014-OPTATIVA-1"] },
+            { "label": "Semestre 2", "courseIds": ["IL20", "IL25", "IL24", "IL22"] },
+            { "label": "Semestre 3", "courseIds": ["IL26", "IL82", "IL30", "IL28"] },
+            { "label": "Semestre 4", "courseIds": ["IL32", "IL33", "TUILSU-2014-OPTATIVA-2", "TUILSU-2014-PASANTIA-1"] },
+            { "label": "Semestre 5", "courseIds": ["TUILSU-2014-INTEGRALIDAD-1", "IL37", "TUILSU-2014-PASANTIA-2"] },
+            { "label": "Semestre 6", "courseIds": ["TUILSU-2014-INTEGRALIDAD-2", "TUILSU-2014-LENGUA-EXTRANJERA", "IL44", "TUILSU-2014-PASANTIA-3", "TUILSU-2014-ELECTIVA"] }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/07/ILSU-Malla-curricular-junio2025.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "commonCourseIds": [],
+        "manualCompletionValidation": null,
+        "courseOverrides": {
+          "IVU": { "name": "Introducción a la Vida Universitaria", "credits": 2, "requirementId": "tuilsu-university" },
+          "IL18": { "name": "Estudios Sordos", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL17": { "name": "Estructura de la LSU", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL19": { "name": "Extensión de la LSU I", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL21": { "name": "Extensión de la LSU II", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL27": { "name": "Extensión de la LSU III", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL31": { "name": "Extensión de la LSU IV", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL16": { "name": "Extensión del español I", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL20": { "name": "Extensión del español II", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL26": { "name": "Extensión del español III", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL32": { "name": "Extensión del español IV", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL25": { "name": "Técnicas de videograbación, subtitulado y textualidad diferida I", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL24": { "name": "Teoría de la interpretación y de la traducción", "credits": 13, "requirementId": "tuilsu-technical" },
+          "IL22": { "name": "Lingüística de las lenguas orales y de señas I", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL82": { "name": "Técnicas de videograbación, subtitulado y textualidad diferida II", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL30": { "name": "Metodología y práctica de la interpretación y la traducción I", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL28": { "name": "Lingüística de las lenguas orales y de señas II", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL33": { "name": "Metodología y práctica de la interpretación y la traducción II", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL37": { "name": "Metodología y práctica de la interpretación y la traducción III", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL44": { "name": "Metodología y práctica de la interpretación y la traducción IV", "credits": 10, "requirementId": "tuilsu-technical" }
+        },
+        "requiredCourseGroups": [
+          { "id": "tuilsu-university-intro", "label": "Introducción a la Vida Universitaria", "minCompleted": 1, "sourceCourseIds": ["IVU"] },
+          { "id": "tuilsu-studies-sordos", "label": "Estudios Sordos", "minCompleted": 1, "sourceCourseIds": ["IL18"] },
+          { "id": "tuilsu-linguistic-1", "label": "Lingüística de las lenguas orales y de señas I", "minCompleted": 1, "sourceCourseIds": ["IL22"] },
+          { "id": "tuilsu-linguistic-2", "label": "Lingüística de las lenguas orales y de señas II", "minCompleted": 1, "sourceCourseIds": ["IL28"] },
+          { "id": "tuilsu-video-1", "label": "Técnicas de videograbación I", "minCompleted": 1, "sourceCourseIds": ["IL25"] },
+          { "id": "tuilsu-theory", "label": "Teoría de la interpretación y de la traducción", "minCompleted": 1, "sourceCourseIds": ["IL24"] },
+          { "id": "tuilsu-video-2", "label": "Técnicas de videograbación II", "minCompleted": 1, "sourceCourseIds": ["IL82"] },
+          { "id": "tuilsu-method-1", "label": "Metodología y práctica I", "minCompleted": 1, "sourceCourseIds": ["IL30"] },
+          { "id": "tuilsu-method-2", "label": "Metodología y práctica II", "minCompleted": 1, "sourceCourseIds": ["IL33"] },
+          { "id": "tuilsu-method-3", "label": "Metodología y práctica III", "minCompleted": 1, "sourceCourseIds": ["IL37"] },
+          { "id": "tuilsu-method-4", "label": "Metodología y práctica IV", "minCompleted": 1, "sourceCourseIds": ["IL44"] },
+          { "id": "tuilsu-pasantias", "label": "Pasantías I, II y III", "minCompleted": 3, "sourceCourseIds": ["TUILSU-2014-PASANTIA-1", "TUILSU-2014-PASANTIA-2", "TUILSU-2014-PASANTIA-3"] },
+          { "id": "tuilsu-oyente-structure", "label": "Estructuras del español", "minCompleted": 1, "sourceCourseIds": ["TUILSU-2014-ESTRUCTURA-ESPANOL"] },
+          { "id": "tuilsu-sordo-structure", "label": "Estructura de la LSU", "minCompleted": 1, "sourceCourseIds": ["IL17"] },
+          { "id": "tuilsu-oyente-language-1", "label": "Extensión de la LSU I", "minCompleted": 1, "sourceCourseIds": ["IL19"] },
+          { "id": "tuilsu-oyente-language-2", "label": "Extensión de la LSU II", "minCompleted": 1, "sourceCourseIds": ["IL21"] },
+          { "id": "tuilsu-oyente-language-3", "label": "Extensión de la LSU III", "minCompleted": 1, "sourceCourseIds": ["IL27"] },
+          { "id": "tuilsu-oyente-language-4", "label": "Extensión de la LSU IV", "minCompleted": 1, "sourceCourseIds": ["IL31"] },
+          { "id": "tuilsu-sordo-language-1", "label": "Extensión del español I", "minCompleted": 1, "sourceCourseIds": ["IL16"] },
+          { "id": "tuilsu-sordo-language-2", "label": "Extensión del español II", "minCompleted": 1, "sourceCourseIds": ["IL20"] },
+          { "id": "tuilsu-sordo-language-3", "label": "Extensión del español III", "minCompleted": 1, "sourceCourseIds": ["IL26"] },
+          { "id": "tuilsu-sordo-language-4", "label": "Extensión del español IV", "minCompleted": 1, "sourceCourseIds": ["IL32"] }
+        ],
+        "credentials": [
+          {
+            "id": "tecnologo-tuilsu-oyente",
+            "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+            "minTotalCredits": 270,
+            "requiredCourseGroupIds": ["tuilsu-university-intro", "tuilsu-studies-sordos", "tuilsu-linguistic-1", "tuilsu-linguistic-2", "tuilsu-video-1", "tuilsu-theory", "tuilsu-video-2", "tuilsu-method-1", "tuilsu-method-2", "tuilsu-method-3", "tuilsu-method-4", "tuilsu-pasantias", "tuilsu-oyente-structure", "tuilsu-oyente-language-1", "tuilsu-oyente-language-2", "tuilsu-oyente-language-3", "tuilsu-oyente-language-4"],
+            "nodeRequirements": [
+              { "nodeId": "tuilsu-technical", "minCredits": 112 }, { "nodeId": "tuilsu-linguistics", "minCredits": 52 }, { "nodeId": "tuilsu-language", "minCredits": 46 }, { "nodeId": "tuilsu-optionals", "minCredits": 22 }, { "nodeId": "tuilsu-electives", "minCredits": 10 }, { "nodeId": "tuilsu-integrated", "minCredits": 26 }, { "nodeId": "tuilsu-university", "minCredits": 2 }
+            ]
+          },
+          {
+            "id": "tecnologo-tuilsu-sordo",
+            "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+            "minTotalCredits": 270,
+            "requiredCourseGroupIds": ["tuilsu-university-intro", "tuilsu-studies-sordos", "tuilsu-linguistic-1", "tuilsu-linguistic-2", "tuilsu-video-1", "tuilsu-theory", "tuilsu-video-2", "tuilsu-method-1", "tuilsu-method-2", "tuilsu-method-3", "tuilsu-method-4", "tuilsu-pasantias", "tuilsu-sordo-structure", "tuilsu-sordo-language-1", "tuilsu-sordo-language-2", "tuilsu-sordo-language-3", "tuilsu-sordo-language-4"],
+            "nodeRequirements": [
+              { "nodeId": "tuilsu-technical", "minCredits": 112 }, { "nodeId": "tuilsu-linguistics", "minCredits": 52 }, { "nodeId": "tuilsu-language", "minCredits": 46 }, { "nodeId": "tuilsu-optionals", "minCredits": 22 }, { "nodeId": "tuilsu-electives", "minCredits": 10 }, { "nodeId": "tuilsu-integrated", "minCredits": 26 }, { "nodeId": "tuilsu-university", "minCredits": 2 }
+            ]
+          }
+        ],
+        "additionalCourses": [
+          { "id": "TUILSU-2014-ESTRUCTURA-ESPANOL", "name": "Estructuras del español", "credits": 13, "requirementId": "tuilsu-linguistics", "periodLabel": "Semestre 1", "pathwayIds": ["estudiante-oyente"] },
+          { "id": "TUILSU-2014-OPTATIVA-1", "name": "Primera actividad optativa · 10 créditos en la oferta efectiva", "credits": 0, "requirementId": "tuilsu-optionals", "periodLabel": "Semestre 1", "curricularBlock": true },
+          { "id": "TUILSU-2014-OPTATIVA-2", "name": "Segunda actividad optativa · 13 créditos en la oferta efectiva", "credits": 0, "requirementId": "tuilsu-optionals", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "TUILSU-2014-PASANTIA-1", "name": "Pasantía I", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 4" },
+          { "id": "TUILSU-2014-INTEGRALIDAD-1", "name": "Actividad de extensión, investigación o formación general · 18 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 5", "curricularBlock": true },
+          { "id": "TUILSU-2014-PASANTIA-2", "name": "Pasantía II", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 5" },
+          { "id": "TUILSU-2014-INTEGRALIDAD-2", "name": "Actividad de extensión, investigación o formación general · 8 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 6", "curricularBlock": true },
+          { "id": "TUILSU-2014-LENGUA-EXTRANJERA", "name": "Lengua de señas extranjera o comprensión lectora de lengua extranjera · 6 créditos", "credits": 0, "requirementId": "tuilsu-language", "periodLabel": "Semestre 6", "curricularBlock": true },
+          { "id": "TUILSU-2014-PASANTIA-3", "name": "Pasantía III", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 6" },
+          { "id": "TUILSU-2014-ELECTIVA", "name": "Actividad electiva · 10 créditos", "credits": 0, "requirementId": "tuilsu-electives", "periodLabel": "Semestre 6", "curricularBlock": true }
+        ]
+      }
+    },
+    {
+      "id": "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025",
+      "identity": "tecnologo int y trad lsu esp:2025",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-06",
+      "authorityCountsBefore": {
+        "verified": 195,
+        "candidate": 6,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Plan de Estudios 2025, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "role": "plan conjunto, estructura de seis semestres, mínimos y articulación con la Licenciatura"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/plan-de-estudios-4/",
+          "role": "publicación vigente del Plan 2025 del Tecnólogo y separación administrativa del Plan 2014"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/interpretacion-lsu-espanol-lsu",
+          "role": "duración, créditos, sedes y condiciones de ingreso"
+        }
+      ],
+      "uiNotice": "Plan 2025 de seis semestres y 270 créditos. Integra los primeros tres años del Plan 2025 de la Licenciatura en Estudios Sordos y comparte con ella únicamente el progreso respaldado por ese plan conjunto; el Plan 2014 permanece separado.",
+      "trajectories": [
+        {
+          "id": "estudiante-oyente",
+          "credentialId": "tecnologo-tuilsu-oyente",
+          "label": "Estudiante oyente",
+          "description": "Recorrido del Plan 2025: español como lengua primera y LSU como segunda lengua.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "IL18", "TUILSU-2025-ESTRUCTURA-ESPANOL", "IL19"] },
+            { "label": "Semestre 2", "courseIds": ["IL21", "IL25", "IL24", "IL22"] },
+            { "label": "Semestre 3", "courseIds": ["IL27", "IL82", "IL30", "IL28"] },
+            { "label": "Semestre 4", "courseIds": ["IL31", "IL33", "TUILSU-2025-OPTATIVA-1", "TUILSU-2025-PASANTIA-1"] },
+            { "label": "Semestre 5", "courseIds": ["TUILSU-2025-INTEGRALIDAD-1", "IL37", "TUILSU-2025-OPTATIVA-2", "TUILSU-2025-PASANTIA-2"] },
+            { "label": "Semestre 6", "courseIds": ["TUILSU-2025-INTEGRALIDAD-2", "IL44", "TUILSU-2025-PASANTIA-3", "TUILSU-2025-ELECTIVA-1"] },
+            { "label": "Entre los semestres 1 y 6", "courseIds": ["TUILSU-2025-LENGUA-EXTRANJERA"] }
+          ]
+        },
+        {
+          "id": "estudiante-sordo",
+          "credentialId": "tecnologo-tuilsu-sordo",
+          "label": "Estudiante sordo/a",
+          "description": "Recorrido del Plan 2025: LSU como lengua primera y español escrito como segunda lengua.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "IL18", "IL17", "IL16"] },
+            { "label": "Semestre 2", "courseIds": ["IL20", "IL25", "IL24", "IL22"] },
+            { "label": "Semestre 3", "courseIds": ["IL26", "IL82", "IL30", "IL28"] },
+            { "label": "Semestre 4", "courseIds": ["IL32", "IL33", "TUILSU-2025-OPTATIVA-1", "TUILSU-2025-PASANTIA-1"] },
+            { "label": "Semestre 5", "courseIds": ["TUILSU-2025-INTEGRALIDAD-1", "IL37", "TUILSU-2025-OPTATIVA-2", "TUILSU-2025-PASANTIA-2"] },
+            { "label": "Semestre 6", "courseIds": ["TUILSU-2025-INTEGRALIDAD-2", "IL44", "TUILSU-2025-PASANTIA-3", "TUILSU-2025-ELECTIVA-1"] },
+            { "label": "Entre los semestres 1 y 6", "courseIds": ["TUILSU-2025-LENGUA-EXTRANJERA"] }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "commonCourseIds": [],
+        "manualCompletionValidation": null,
+        "courseOverrides": {
+          "IVU": { "name": "Introducción a la Vida Universitaria", "credits": 2, "requirementId": "tuilsu-university" },
+          "IL18": { "name": "Estudios Sordos", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL17": { "name": "Estructura de la LSU", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL19": { "name": "Extensión de la LSU I", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL21": { "name": "Extensión de la LSU II", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL27": { "name": "Extensión de la LSU III", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL31": { "name": "Extensión de la LSU IV", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL16": { "name": "Extensión del español I", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL20": { "name": "Extensión del español II", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL26": { "name": "Extensión del español III", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL32": { "name": "Extensión del español IV", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL25": { "name": "Técnicas de videograbación, subtitulado y textualidad diferida I", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL24": { "name": "Teoría de la interpretación y de la traducción", "credits": 13, "requirementId": "tuilsu-technical" },
+          "IL22": { "name": "Lingüística de las lenguas orales y de señas I", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL82": { "name": "Técnicas de videograbación, subtitulado y textualidad diferida II", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL30": { "name": "Metodología y práctica de la interpretación y la traducción I", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL28": { "name": "Lingüística de las lenguas orales y de señas II", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL33": { "name": "Metodología y práctica de la interpretación y la traducción II", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL37": { "name": "Metodología y práctica de la interpretación y la traducción III", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL44": { "name": "Metodología y práctica de la interpretación y la traducción IV", "credits": 10, "requirementId": "tuilsu-technical" }
+        },
+        "requiredCourseGroups": [
+          { "id": "tuilsu-university-intro", "label": "Introducción a la Vida Universitaria", "minCompleted": 1, "sourceCourseIds": ["IVU"] },
+          { "id": "tuilsu-studies-sordos", "label": "Estudios Sordos", "minCompleted": 1, "sourceCourseIds": ["IL18"] },
+          { "id": "tuilsu-linguistic-1", "label": "Lingüística de las lenguas orales y de señas I", "minCompleted": 1, "sourceCourseIds": ["IL22"] },
+          { "id": "tuilsu-linguistic-2", "label": "Lingüística de las lenguas orales y de señas II", "minCompleted": 1, "sourceCourseIds": ["IL28"] },
+          { "id": "tuilsu-video-1", "label": "Técnicas de videograbación I", "minCompleted": 1, "sourceCourseIds": ["IL25"] },
+          { "id": "tuilsu-theory", "label": "Teoría de la interpretación y de la traducción", "minCompleted": 1, "sourceCourseIds": ["IL24"] },
+          { "id": "tuilsu-video-2", "label": "Técnicas de videograbación II", "minCompleted": 1, "sourceCourseIds": ["IL82"] },
+          { "id": "tuilsu-method-1", "label": "Metodología y práctica I", "minCompleted": 1, "sourceCourseIds": ["IL30"] },
+          { "id": "tuilsu-method-2", "label": "Metodología y práctica II", "minCompleted": 1, "sourceCourseIds": ["IL33"] },
+          { "id": "tuilsu-method-3", "label": "Metodología y práctica III", "minCompleted": 1, "sourceCourseIds": ["IL37"] },
+          { "id": "tuilsu-method-4", "label": "Metodología y práctica IV", "minCompleted": 1, "sourceCourseIds": ["IL44"] },
+          { "id": "tuilsu-pasantias", "label": "Pasantías I, II y III", "minCompleted": 3, "sourceCourseIds": ["TUILSU-2025-PASANTIA-1", "TUILSU-2025-PASANTIA-2", "TUILSU-2025-PASANTIA-3"] },
+          { "id": "tuilsu-oyente-structure", "label": "Estructuras del español", "minCompleted": 1, "sourceCourseIds": ["TUILSU-2025-ESTRUCTURA-ESPANOL"] },
+          { "id": "tuilsu-sordo-structure", "label": "Estructura de la LSU", "minCompleted": 1, "sourceCourseIds": ["IL17"] },
+          { "id": "tuilsu-oyente-language-1", "label": "Extensión de la LSU I", "minCompleted": 1, "sourceCourseIds": ["IL19"] },
+          { "id": "tuilsu-oyente-language-2", "label": "Extensión de la LSU II", "minCompleted": 1, "sourceCourseIds": ["IL21"] },
+          { "id": "tuilsu-oyente-language-3", "label": "Extensión de la LSU III", "minCompleted": 1, "sourceCourseIds": ["IL27"] },
+          { "id": "tuilsu-oyente-language-4", "label": "Extensión de la LSU IV", "minCompleted": 1, "sourceCourseIds": ["IL31"] },
+          { "id": "tuilsu-sordo-language-1", "label": "Extensión del español I", "minCompleted": 1, "sourceCourseIds": ["IL16"] },
+          { "id": "tuilsu-sordo-language-2", "label": "Extensión del español II", "minCompleted": 1, "sourceCourseIds": ["IL20"] },
+          { "id": "tuilsu-sordo-language-3", "label": "Extensión del español III", "minCompleted": 1, "sourceCourseIds": ["IL26"] },
+          { "id": "tuilsu-sordo-language-4", "label": "Extensión del español IV", "minCompleted": 1, "sourceCourseIds": ["IL32"] }
+        ],
+        "credentials": [
+          {
+            "id": "tecnologo-tuilsu-oyente",
+            "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+            "minTotalCredits": 270,
+            "requiredCourseGroupIds": ["tuilsu-university-intro", "tuilsu-studies-sordos", "tuilsu-linguistic-1", "tuilsu-linguistic-2", "tuilsu-video-1", "tuilsu-theory", "tuilsu-video-2", "tuilsu-method-1", "tuilsu-method-2", "tuilsu-method-3", "tuilsu-method-4", "tuilsu-pasantias", "tuilsu-oyente-structure", "tuilsu-oyente-language-1", "tuilsu-oyente-language-2", "tuilsu-oyente-language-3", "tuilsu-oyente-language-4"],
+            "nodeRequirements": [
+              { "nodeId": "tuilsu-technical", "minCredits": 112 }, { "nodeId": "tuilsu-linguistics", "minCredits": 52 }, { "nodeId": "tuilsu-language", "minCredits": 46 }, { "nodeId": "tuilsu-optionals", "minCredits": 22 }, { "nodeId": "tuilsu-electives", "minCredits": 10 }, { "nodeId": "tuilsu-integrated", "minCredits": 26 }, { "nodeId": "tuilsu-university", "minCredits": 2 }
+            ]
+          },
+          {
+            "id": "tecnologo-tuilsu-sordo",
+            "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+            "minTotalCredits": 270,
+            "requiredCourseGroupIds": ["tuilsu-university-intro", "tuilsu-studies-sordos", "tuilsu-linguistic-1", "tuilsu-linguistic-2", "tuilsu-video-1", "tuilsu-theory", "tuilsu-video-2", "tuilsu-method-1", "tuilsu-method-2", "tuilsu-method-3", "tuilsu-method-4", "tuilsu-pasantias", "tuilsu-sordo-structure", "tuilsu-sordo-language-1", "tuilsu-sordo-language-2", "tuilsu-sordo-language-3", "tuilsu-sordo-language-4"],
+            "nodeRequirements": [
+              { "nodeId": "tuilsu-technical", "minCredits": 112 }, { "nodeId": "tuilsu-linguistics", "minCredits": 52 }, { "nodeId": "tuilsu-language", "minCredits": 46 }, { "nodeId": "tuilsu-optionals", "minCredits": 22 }, { "nodeId": "tuilsu-electives", "minCredits": 10 }, { "nodeId": "tuilsu-integrated", "minCredits": 26 }, { "nodeId": "tuilsu-university", "minCredits": 2 }
+            ]
+          }
+        ],
+        "additionalCourses": [
+          { "id": "TUILSU-2025-ESTRUCTURA-ESPANOL", "name": "Estructuras del español", "credits": 13, "requirementId": "tuilsu-linguistics", "periodLabel": "Semestre 1", "pathwayIds": ["estudiante-oyente"] },
+          { "id": "TUILSU-2025-OPTATIVA-1", "name": "Primera actividad optativa · 11 créditos", "credits": 0, "requirementId": "tuilsu-optionals", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "TUILSU-2025-PASANTIA-1", "name": "Pasantía I", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 4" },
+          { "id": "TUILSU-2025-INTEGRALIDAD-1", "name": "Instancia de extensión, investigación y formación general · 13 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 5", "curricularBlock": true },
+          { "id": "TUILSU-2025-OPTATIVA-2", "name": "Segunda actividad optativa · 11 créditos", "credits": 0, "requirementId": "tuilsu-optionals", "periodLabel": "Semestre 5", "curricularBlock": true },
+          { "id": "TUILSU-2025-PASANTIA-2", "name": "Pasantía II", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 5" },
+          { "id": "TUILSU-2025-INTEGRALIDAD-2", "name": "Instancia de extensión, investigación y formación general · 13 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 6", "curricularBlock": true },
+          { "id": "TUILSU-2025-PASANTIA-3", "name": "Pasantía III", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 6" },
+          { "id": "TUILSU-2025-ELECTIVA-1", "name": "Primera actividad electiva · 10 créditos", "credits": 0, "requirementId": "tuilsu-electives", "periodLabel": "Semestre 6", "curricularBlock": true },
+          { "id": "TUILSU-2025-LENGUA-EXTRANJERA", "name": "Lengua extranjera · 6 créditos", "credits": 0, "requirementId": "tuilsu-language", "periodLabel": "Entre los semestres 1 y 6", "curricularBlock": true }
+        ]
+      }
+    },
+    {
+      "id": "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
+      "identity": "licenciatura en estudios sordos:2025",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2025-06",
+      "authorityCountsBefore": {
+        "verified": 205,
+        "candidate": 6,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Plan de Estudios 2025, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+          "role": "plan conjunto, ocho semestres, dos credenciales, condiciones de ingreso y articulación explícita"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/licenciatura-en-estudios-sordos/",
+          "role": "página vigente de la Licenciatura y servicio responsable"
+        }
+      ],
+      "uiNotice": "Plan 2025 de ocho semestres y 360 créditos. Sus primeros tres años integran el Tecnólogo Plan 2025 y el cuarto año agrega 90 créditos; sólo esas dos carreras comparten progreso. El Plan 2014 permanece como identidad separada y no se migra automáticamente.",
+      "trajectories": [
+        {
+          "id": "estudiante-oyente",
+          "label": "Estudiante oyente",
+          "description": "Recorrido del Plan 2025: español como lengua primera y LSU como segunda lengua; el cuarto año completa la Licenciatura.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "IL18", "TUILSU-2025-ESTRUCTURA-ESPANOL", "IL19"] },
+            { "label": "Semestre 2", "courseIds": ["IL21", "IL25", "IL24", "IL22"] },
+            { "label": "Semestre 3", "courseIds": ["IL27", "IL82", "IL30", "IL28"] },
+            { "label": "Semestre 4", "courseIds": ["IL31", "IL33", "TUILSU-2025-OPTATIVA-1", "TUILSU-2025-PASANTIA-1"] },
+            { "label": "Semestre 5", "courseIds": ["TUILSU-2025-INTEGRALIDAD-1", "IL37", "TUILSU-2025-OPTATIVA-2", "TUILSU-2025-PASANTIA-2"] },
+            { "label": "Semestre 6", "courseIds": ["TUILSU-2025-INTEGRALIDAD-2", "IL44", "TUILSU-2025-PASANTIA-3", "TUILSU-2025-ELECTIVA-1"] },
+            { "label": "Entre los semestres 1 y 6", "courseIds": ["TUILSU-2025-LENGUA-EXTRANJERA"] },
+            { "label": "Semestre 7", "courseIds": ["LIC-2025-ELECTIVA-2", "LIC-2025-HERRAMIENTAS", "LIC-2025-METODOLOGIA-1", "LIC-2025-TUTORIA-1"] },
+            { "label": "Semestre 8", "courseIds": ["LIC-2025-ELECTIVA-3", "LIC-2025-DISENO", "LIC-2025-METODOLOGIA-2", "LIC-2025-TUTORIA-2", "LIC-2025-TRABAJO-FINAL"] }
+          ]
+        },
+        {
+          "id": "estudiante-sordo",
+          "label": "Estudiante sordo/a",
+          "description": "Recorrido del Plan 2025: LSU como lengua primera y español escrito como segunda lengua; el cuarto año completa la Licenciatura.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "IL18", "IL17", "IL16"] },
+            { "label": "Semestre 2", "courseIds": ["IL20", "IL25", "IL24", "IL22"] },
+            { "label": "Semestre 3", "courseIds": ["IL26", "IL82", "IL30", "IL28"] },
+            { "label": "Semestre 4", "courseIds": ["IL32", "IL33", "TUILSU-2025-OPTATIVA-1", "TUILSU-2025-PASANTIA-1"] },
+            { "label": "Semestre 5", "courseIds": ["TUILSU-2025-INTEGRALIDAD-1", "IL37", "TUILSU-2025-OPTATIVA-2", "TUILSU-2025-PASANTIA-2"] },
+            { "label": "Semestre 6", "courseIds": ["TUILSU-2025-INTEGRALIDAD-2", "IL44", "TUILSU-2025-PASANTIA-3", "TUILSU-2025-ELECTIVA-1"] },
+            { "label": "Entre los semestres 1 y 6", "courseIds": ["TUILSU-2025-LENGUA-EXTRANJERA"] },
+            { "label": "Semestre 7", "courseIds": ["LIC-2025-ELECTIVA-2", "LIC-2025-HERRAMIENTAS", "LIC-2025-METODOLOGIA-1", "LIC-2025-TUTORIA-1"] },
+            { "label": "Semestre 8", "courseIds": ["LIC-2025-ELECTIVA-3", "LIC-2025-DISENO", "LIC-2025-METODOLOGIA-2", "LIC-2025-TUTORIA-2", "LIC-2025-TRABAJO-FINAL"] }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/06/PLAN_de_Licenciatura_de_Estudios_Sordos.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "commonCourseIds": [],
+        "manualCompletionValidation": null,
+        "courseOverrides": {
+          "IVU": { "name": "Introducción a la Vida Universitaria", "credits": 2, "requirementId": "tuilsu-university" },
+          "IL18": { "name": "Estudios Sordos", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL17": { "name": "Estructura de la LSU", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL19": { "name": "Extensión de la LSU I", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL21": { "name": "Extensión de la LSU II", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL27": { "name": "Extensión de la LSU III", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL31": { "name": "Extensión de la LSU IV", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL16": { "name": "Extensión del español I", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL20": { "name": "Extensión del español II", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL26": { "name": "Extensión del español III", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL32": { "name": "Extensión del español IV", "credits": 10, "requirementId": "tuilsu-language" },
+          "IL25": { "name": "Técnicas de videograbación, subtitulado y textualidad diferida I", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL24": { "name": "Teoría de la interpretación y de la traducción", "credits": 13, "requirementId": "tuilsu-technical" },
+          "IL22": { "name": "Lingüística de las lenguas orales y de señas I", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL82": { "name": "Técnicas de videograbación, subtitulado y textualidad diferida II", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL30": { "name": "Metodología y práctica de la interpretación y la traducción I", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL28": { "name": "Lingüística de las lenguas orales y de señas II", "credits": 13, "requirementId": "tuilsu-linguistics" },
+          "IL33": { "name": "Metodología y práctica de la interpretación y la traducción II", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL37": { "name": "Metodología y práctica de la interpretación y la traducción III", "credits": 10, "requirementId": "tuilsu-technical" },
+          "IL44": { "name": "Metodología y práctica de la interpretación y la traducción IV", "credits": 10, "requirementId": "tuilsu-technical" }
+        },
+        "requiredCourseGroups": [
+          { "id": "tuilsu-university-intro", "label": "Introducción a la Vida Universitaria", "minCompleted": 1, "sourceCourseIds": ["IVU"] },
+          { "id": "tuilsu-studies-sordos", "label": "Estudios Sordos", "minCompleted": 1, "sourceCourseIds": ["IL18"] },
+          { "id": "tuilsu-linguistic-1", "label": "Lingüística de las lenguas orales y de señas I", "minCompleted": 1, "sourceCourseIds": ["IL22"] },
+          { "id": "tuilsu-linguistic-2", "label": "Lingüística de las lenguas orales y de señas II", "minCompleted": 1, "sourceCourseIds": ["IL28"] },
+          { "id": "tuilsu-video-1", "label": "Técnicas de videograbación I", "minCompleted": 1, "sourceCourseIds": ["IL25"] },
+          { "id": "tuilsu-theory", "label": "Teoría de la interpretación y de la traducción", "minCompleted": 1, "sourceCourseIds": ["IL24"] },
+          { "id": "tuilsu-video-2", "label": "Técnicas de videograbación II", "minCompleted": 1, "sourceCourseIds": ["IL82"] },
+          { "id": "tuilsu-method-1", "label": "Metodología y práctica I", "minCompleted": 1, "sourceCourseIds": ["IL30"] },
+          { "id": "tuilsu-method-2", "label": "Metodología y práctica II", "minCompleted": 1, "sourceCourseIds": ["IL33"] },
+          { "id": "tuilsu-method-3", "label": "Metodología y práctica III", "minCompleted": 1, "sourceCourseIds": ["IL37"] },
+          { "id": "tuilsu-method-4", "label": "Metodología y práctica IV", "minCompleted": 1, "sourceCourseIds": ["IL44"] },
+          { "id": "tuilsu-pasantias", "label": "Pasantías I, II y III", "minCompleted": 3, "sourceCourseIds": ["TUILSU-2025-PASANTIA-1", "TUILSU-2025-PASANTIA-2", "TUILSU-2025-PASANTIA-3"] },
+          { "id": "tuilsu-language-structure", "label": "Estructuras de la lengua primera", "minCompleted": 1, "sourceCourseIds": ["TUILSU-2025-ESTRUCTURA-ESPANOL", "IL17"] },
+          { "id": "tuilsu-language-1", "label": "Extensión de la segunda lengua I", "minCompleted": 1, "sourceCourseIds": ["IL19", "IL16"] },
+          { "id": "tuilsu-language-2", "label": "Extensión de la segunda lengua II", "minCompleted": 1, "sourceCourseIds": ["IL21", "IL20"] },
+          { "id": "tuilsu-language-3", "label": "Extensión de la segunda lengua III", "minCompleted": 1, "sourceCourseIds": ["IL27", "IL26"] },
+          { "id": "tuilsu-language-4", "label": "Extensión de la segunda lengua IV", "minCompleted": 1, "sourceCourseIds": ["IL31", "IL32"] },
+          { "id": "lic-herramientas", "label": "Herramientas para el trabajo intelectual", "minCompleted": 1, "sourceCourseIds": ["LIC-2025-HERRAMIENTAS"] },
+          { "id": "lic-diseno", "label": "Diseño de proyectos", "minCompleted": 1, "sourceCourseIds": ["LIC-2025-DISENO"] },
+          { "id": "lic-tutorias", "label": "Tutorías I y II", "minCompleted": 2, "sourceCourseIds": ["LIC-2025-TUTORIA-1", "LIC-2025-TUTORIA-2"] },
+          { "id": "lic-trabajo-final", "label": "Trabajo final de grado", "minCompleted": 1, "sourceCourseIds": ["LIC-2025-TRABAJO-FINAL"] }
+        ],
+        "credentials": [
+          {
+            "id": "tecnologo-tuilsu",
+            "title": "Tecnólogo en Interpretación y Traducción LSU-Español",
+            "minTotalCredits": 270,
+            "requiredCourseGroupIds": ["tuilsu-university-intro", "tuilsu-studies-sordos", "tuilsu-linguistic-1", "tuilsu-linguistic-2", "tuilsu-video-1", "tuilsu-theory", "tuilsu-video-2", "tuilsu-method-1", "tuilsu-method-2", "tuilsu-method-3", "tuilsu-method-4", "tuilsu-pasantias", "tuilsu-language-structure", "tuilsu-language-1", "tuilsu-language-2", "tuilsu-language-3", "tuilsu-language-4"],
+            "nodeRequirements": [
+              { "nodeId": "tuilsu-technical", "minCredits": 112 }, { "nodeId": "tuilsu-linguistics", "minCredits": 52 }, { "nodeId": "tuilsu-language", "minCredits": 46 }, { "nodeId": "tuilsu-optionals", "minCredits": 22 }, { "nodeId": "tuilsu-electives", "minCredits": 10 }, { "nodeId": "tuilsu-integrated", "minCredits": 26 }, { "nodeId": "tuilsu-university", "minCredits": 2 }
+            ]
+          },
+          {
+            "id": "bedelias-degree",
+            "title": "Licenciado en Estudios Sordos",
+            "minTotalCredits": 360,
+            "requiredCourseGroupIds": ["tuilsu-university-intro", "tuilsu-studies-sordos", "tuilsu-linguistic-1", "tuilsu-linguistic-2", "tuilsu-video-1", "tuilsu-theory", "tuilsu-video-2", "tuilsu-method-1", "tuilsu-method-2", "tuilsu-method-3", "tuilsu-method-4", "tuilsu-pasantias", "tuilsu-language-structure", "tuilsu-language-1", "tuilsu-language-2", "tuilsu-language-3", "tuilsu-language-4", "lic-herramientas", "lic-diseno", "lic-tutorias", "lic-trabajo-final"],
+            "nodeRequirements": [
+              { "nodeId": "tuilsu-technical", "minCredits": 112 }, { "nodeId": "tuilsu-linguistics", "minCredits": 52 }, { "nodeId": "tuilsu-language", "minCredits": 46 }, { "nodeId": "tuilsu-optionals", "minCredits": 22 }, { "nodeId": "tuilsu-electives", "minCredits": 30 }, { "nodeId": "tuilsu-integrated", "minCredits": 96 }, { "nodeId": "tuilsu-university", "minCredits": 2 }
+            ]
+          }
+        ],
+        "additionalCourses": [
+          { "id": "TUILSU-2025-ESTRUCTURA-ESPANOL", "name": "Estructuras del español", "credits": 13, "requirementId": "tuilsu-linguistics", "periodLabel": "Semestre 1", "pathwayIds": ["estudiante-oyente"] },
+          { "id": "TUILSU-2025-OPTATIVA-1", "name": "Primera actividad optativa · 11 créditos", "credits": 0, "requirementId": "tuilsu-optionals", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "TUILSU-2025-PASANTIA-1", "name": "Pasantía I", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 4" },
+          { "id": "TUILSU-2025-INTEGRALIDAD-1", "name": "Instancia de extensión, investigación y formación general · 13 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 5", "curricularBlock": true },
+          { "id": "TUILSU-2025-OPTATIVA-2", "name": "Segunda actividad optativa · 11 créditos", "credits": 0, "requirementId": "tuilsu-optionals", "periodLabel": "Semestre 5", "curricularBlock": true },
+          { "id": "TUILSU-2025-PASANTIA-2", "name": "Pasantía II", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 5" },
+          { "id": "TUILSU-2025-INTEGRALIDAD-2", "name": "Instancia de extensión, investigación y formación general · 13 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 6", "curricularBlock": true },
+          { "id": "TUILSU-2025-PASANTIA-3", "name": "Pasantía III", "credits": 13, "requirementId": "tuilsu-technical", "periodLabel": "Semestre 6" },
+          { "id": "TUILSU-2025-ELECTIVA-1", "name": "Primera actividad electiva · 10 créditos", "credits": 0, "requirementId": "tuilsu-electives", "periodLabel": "Semestre 6", "curricularBlock": true },
+          { "id": "TUILSU-2025-LENGUA-EXTRANJERA", "name": "Lengua extranjera · 6 créditos", "credits": 0, "requirementId": "tuilsu-language", "periodLabel": "Entre los semestres 1 y 6", "curricularBlock": true },
+          { "id": "LIC-2025-ELECTIVA-2", "name": "Segunda actividad electiva · 10 créditos", "credits": 0, "requirementId": "tuilsu-electives", "periodLabel": "Semestre 7", "curricularBlock": true },
+          { "id": "LIC-2025-HERRAMIENTAS", "name": "Herramientas para el trabajo intelectual", "credits": 5, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 7" },
+          { "id": "LIC-2025-METODOLOGIA-1", "name": "Metodología de investigación y/o intervención · 8 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 7", "curricularBlock": true },
+          { "id": "LIC-2025-TUTORIA-1", "name": "Tutoría I", "credits": 10, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 7" },
+          { "id": "LIC-2025-ELECTIVA-3", "name": "Tercera actividad electiva · 10 créditos", "credits": 0, "requirementId": "tuilsu-electives", "periodLabel": "Semestre 8", "curricularBlock": true },
+          { "id": "LIC-2025-DISENO", "name": "Diseño de proyectos", "credits": 5, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 8" },
+          { "id": "LIC-2025-METODOLOGIA-2", "name": "Metodología de investigación y/o intervención · 7 créditos", "credits": 0, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 8", "curricularBlock": true },
+          { "id": "LIC-2025-TUTORIA-2", "name": "Tutoría II", "credits": 10, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 8" },
+          { "id": "LIC-2025-TRABAJO-FINAL", "name": "Trabajo final de grado", "credits": 25, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 8" }
+        ]
+      }
     }
   ]
 }
