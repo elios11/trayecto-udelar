@@ -16,21 +16,21 @@ const optionDetails = {
     title: "Licenciado en Ciencias Antropológicas opción Antropología Biológica",
     optionNodeId: "anth-options-biological",
     specificNodeIds: ["anth-biological-specific-i", "anth-biological-specific-ii"],
-    periodPattern: /Antropología Biológica/,
+    periodSizes: [4, 4, 6, 5, 3, 3, 3, 3],
   },
   arqueologia: {
     credentialId: "titulo-arqueologia",
     title: "Licenciado en Ciencias Antropológicas opción Arqueología",
     optionNodeId: "anth-options-archaeology",
     specificNodeIds: ["anth-archaeology-specific-i", "anth-archaeology-specific-ii"],
-    periodPattern: /Arqueología/,
+    periodSizes: [4, 4, 6, 5, 4, 4, 4, 4],
   },
   "antropologia-social": {
     credentialId: "titulo-antropologia-social",
     title: "Licenciado en Ciencias Antropológicas opción Antropología Social",
     optionNodeId: "anth-options-social",
     specificNodeIds: ["anth-social-specific-i", "anth-social-specific-ii"],
-    periodPattern: /Antropología Social/,
+    periodSizes: [4, 4, 6, 5, 5, 4, 3, 4],
   },
 };
 
@@ -59,7 +59,7 @@ test("publica una sola Licenciatura en Ciencias Antropológicas Plan 2014", () =
   assert.equal(officialAudit.conclusion.canonicalModel, "one-degree-three-titled-options");
 });
 
-test("expone las tres opciones oficiales con su título y sólo sus áreas específicas", () => {
+test("expone las tres opciones oficiales con su título y sus ocho semestres", () => {
   assert.deepEqual(Object.keys(projection.pathways), optionIds);
   assert.equal(projection.creditStructure.credentials.length, 3);
 
@@ -73,11 +73,23 @@ test("expone las tres opciones oficiales con su título y sólo sus áreas espec
 
     assert.equal(pathway.credentialId, detail.credentialId);
     assert.equal(credential.title, detail.title);
-    assert.equal(periodLabels.filter((label) => /^Específica (?:I|II)/.test(label)).length, 2);
-    assert.ok(periodLabels.filter((label) => /^Específica (?:I|II)/.test(label)).every((label) => detail.periodPattern.test(label)));
+    assert.deepEqual(periodLabels, [
+      "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4",
+      "Semestre 5", "Semestre 6", "Semestre 7", "Semestre 8",
+    ]);
+    assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), detail.periodSizes);
     assert.ok(referencedIds.every((id) => courseById.has(id)));
     assert.ok(visibleIds.includes("fhum-validacion-final-plan"));
-    assert.ok(pathway.catalogCourseIds.length > 0);
+    assert.ok(visibleIds.map((id) => courseById.get(id))
+      .every(({ authorityStatus }) => authorityStatus === "verified"));
+    assert.deepEqual(pathway.catalogCourseIds ?? [], []);
+  }
+
+  const commonFirstYear = projection.pathways[optionIds[0]].periods.slice(0, 2)
+    .map(({ courseIds }) => courseIds);
+  for (const optionId of optionIds.slice(1)) {
+    assert.deepEqual(projection.pathways[optionId].periods.slice(0, 2)
+      .map(({ courseIds }) => courseIds), commonFirstYear);
   }
 });
 
@@ -122,16 +134,20 @@ test("exige la validación final de la opción y del plan individual", () => {
       label: "Validación final de la opción y del plan de optativas por la Comisión de Carrera",
       minCompleted: 1,
       courseIds: ["fhum-validacion-final-plan"],
-      sourceUrl: "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-Plan-Antropologia.pdf",
+      sourceUrl: "https://fhce.edu.uy/malla-curricular-de-la-licenciatura-en-ciencias-antropologicas-por-semestre/",
     }]);
   }
 });
 
 test("conserva la evidencia de previas sin publicar dependencias no verificadas ni inventar una tesis", () => {
   assert.equal(projection.rules.length, 83);
-  assert.equal(projection.plan.publishedRules, 0);
+  assert.equal(projection.plan.publishedRules, 8);
   assert.equal(projection.plan.noPublishedRule, 182);
+  assert.equal(projection.courses.filter(({ authorityStatus }) => authorityStatus === "verified").length, 67);
+  assert.equal(projection.courses.filter(({ authorityStatus }) => authorityStatus === "candidate").length, 260);
+  assert.equal(projection.courses.filter(({ curricularBlock }) => curricularBlock).length, 55);
+  assert.ok(projection.courses.filter(({ curricularBlock }) => curricularBlock)
+    .every(({ credits, authorityStatus }) => credits === 0 && authorityStatus === "verified"));
   assert.equal(projection.courses.filter(({ name }) => /tesis/i.test(name)).length, 0);
-  assert.ok(Object.values(projection.pathways).every(({ periods }) => periods.some(({ label }) => /Específica II/.test(label))));
   assert.match(officialAudit.anomalies.find(({ field }) => field === "finalWork").resolution, /seminarios|talleres/i);
 });

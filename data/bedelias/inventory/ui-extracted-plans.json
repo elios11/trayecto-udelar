@@ -4,7 +4,7 @@
     "auditQueueHash": "sha256:3bdb1e05a317e361bdd5f491911f3e3ed2dc33c186907283fe6ac8d69001a320",
     "officialAuditHash": "sha256:3178f26777476b7f43974edf798990ca056d0c09a267cb8f41f810ea9976af1f",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
-    "fhceReconciliationsHash": "sha256:724d5ed41a557cceadc7b76ca7db1c2862f22f14cd6e74057039c41bd011ed8a"
+    "fhceReconciliationsHash": "sha256:07f200116eb0459c03c6c94a6561461895e8228f061a39bf4b1b3d1ce98daa25"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -14,17 +14,17 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4786,
-      "candidate": 27452,
+      "verified": 4840,
+      "candidate": 27481,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 9
     },
-    "beforePublishedCourses": 32246,
-    "afterPublishedCourses": 4786,
+    "beforePublishedCourses": 32329,
+    "afterPublishedCourses": 4840,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1434,
-    "visibleTargetsWithUnpublishedDependencies": 1096,
+    "visibleTargetsWithUnpublishedDependencies": 1100,
     "plansWithVerifiedCatalog": 60,
     "plansWithPartialCatalog": 61,
     "plansWithStructureOnly": 18
@@ -2251,21 +2251,37 @@
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 273,
+        "publishedCourses": 327,
         "publishedRules": 83
       },
       "after": {
-        "publishedCourses": 1,
-        "hiddenCourses": 272,
-        "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 67,
+        "hiddenCourses": 260,
+        "publishedRules": 8,
+        "rulesWithUnpublishedDependencies": 3
       },
       "statuses": {
-        "verified": 1,
-        "candidate": 272,
+        "verified": 67,
+        "candidate": 260,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 1,
+          "candidate": 272,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 67,
+          "candidate": 260,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -2387,21 +2403,37 @@
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 280,
+        "publishedCourses": 292,
         "publishedRules": 46
       },
       "after": {
-        "publishedCourses": 32,
-        "hiddenCourses": 251,
-        "publishedRules": 10,
-        "rulesWithUnpublishedDependencies": 1
+        "publishedCourses": 29,
+        "hiddenCourses": 266,
+        "publishedRules": 8,
+        "rulesWithUnpublishedDependencies": 2
       },
       "statuses": {
-        "verified": 32,
-        "candidate": 248,
+        "verified": 29,
+        "candidate": 263,
         "historical-equivalent": 3,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 32,
+          "candidate": 248,
+          "historical-equivalent": 3,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 29,
+          "candidate": 263,
+          "historical-equivalent": 3,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -2417,21 +2449,37 @@
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 203,
+        "publishedCourses": 220,
         "publishedRules": 21
       },
       "after": {
-        "publishedCourses": 49,
-        "hiddenCourses": 158,
-        "publishedRules": 13,
+        "publishedCourses": 40,
+        "hiddenCourses": 184,
+        "publishedRules": 7,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 49,
-        "candidate": 154,
+        "verified": 40,
+        "candidate": 180,
         "historical-equivalent": 3,
         "administrative": 0,
         "rejected": 1
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 49,
+          "candidate": 154,
+          "historical-equivalent": 3,
+          "administrative": 0,
+          "rejected": 1
+        },
+        "after": {
+          "verified": 40,
+          "candidate": 180,
+          "historical-equivalent": 3,
+          "administrative": 0,
+          "rejected": 1
+        }
       }
     },
     {
@@ -4319,5 +4367,5 @@
       }
     }
   ],
-  "contentHash": "sha256:16bf04e5b5e0a19d2938e6040f6ca8087dbb0dcd830e9327d53f076fe1222e6b"
+  "contentHash": "sha256:a236fbb0d3d6607749ead77295cc09dbe5dc05859f98441b4750537df6f3a8ea"
 }

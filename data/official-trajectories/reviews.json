@@ -122,6 +122,138 @@
       ]
     },
     {
+      "planId": "bedelias-fhum-historia-2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2026-07",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["ingreso-general", "continuidad-cfe"]
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-por-semestre-julio-2026.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf",
+          "role": "mínimos vigentes y continuidad CFE"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-historia-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-historia-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La continuidad CFE no publica una distribución semestral: se conserva como reconocimiento de 245 créditos más un período explícito de requisitos posteriores.",
+        "Las optativas, electivas e integrales sin identidad única se mantienen como bloques oficiales de cero créditos."
+      ]
+    },
+    {
+      "planId": "bedelias-fhum-filosofia-2010",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2026-07",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["trayectoria-flexible"]
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/FILOSOFIA-por-semestre-julio-2026-1.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/FILOSOFIA-Malla-curricular-por-AREA-TEMATICA-julio-2026.pdf",
+          "role": "mínimos vigentes por área"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-filosofia-2010",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-filosofia-2010.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La malla por área de julio de 2026 actualiza las obligatorias complementarias a 10 créditos y los tópicos especiales a 32; el total permanece en 360.",
+        "Las elecciones filosóficas y universitarias se muestran como bloques flexibles sujetos a orientación."
+      ]
+    },
+    {
+      "planId": "bedelias-fhum-antropologia-2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2025-07",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["antropologia-biologica", "arqueologia", "antropologia-social"]
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/malla-curricular-de-la-licenciatura-en-ciencias-antropologicas-por-semestre/",
+          "role": "índice vigente de las tres opciones oficiales"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Antropologia-Biologica-por-semestre.pdf",
+          "role": "trayectoria sugerida de Antropología Biológica"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Arqueologia-malla-20-junio2025.pdf",
+          "role": "trayectoria sugerida de Arqueología"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Antorpologia-Social-por-semestre.pdf",
+          "role": "trayectoria sugerida de Antropología Social"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-antropologia-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-antropologia-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Las tres opciones son denominaciones oficiales del título y conservan mallas separadas de ocho semestres con un núcleo común.",
+        "La malla de Antropología Social conserva la unidad anual de metodología entre quinto y sexto semestre sin duplicar créditos.",
+        "Los catálogos recomendados y las alternativas sin identidad única se representan como bloques y no como obligaciones acumulativas."
+      ]
+    },
+    {
       "planId": "1997",
       "state": "official-trajectory-identified-pending",
       "reviewedAt": "2026-09-22",

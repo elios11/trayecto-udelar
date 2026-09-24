@@ -639,6 +639,812 @@
           }
         ]
       }
+    },
+    {
+      "id": "bedelias-fhum-historia-2014",
+      "identity": "historia:2014",
+      "effectiveAt": "2026-07",
+      "authorityCountsBefore": {
+        "verified": 49,
+        "candidate": 154,
+        "historical-equivalent": 3,
+        "administrative": 0,
+        "rejected": 1
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-por-semestre-julio-2026.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf",
+          "role": "mínimos vigentes y continuidad oficial para egresados del CFE"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-PLAN-DE-HISTORIA.pdf",
+          "role": "áreas, créditos y requisitos de egreso"
+        }
+      ],
+      "uiNotice": "Trayectoria sugerida de ocho semestres publicada por FHCE en julio de 2026. Las optativas, electivas y actividades integrales son bloques flexibles y no acreditan una unidad concreta. La continuidad CFE conserva el reconocimiento oficial de 245 créditos y conduce al mismo título.",
+      "requiredCourseGroupSourceIds": {
+        "hist-theory": ["HIST-THEORY-METHODOLOGY"],
+        "hist-language-course": ["HIST-FOREIGN-READING"],
+        "hist-cfe-europe": ["HIST-CFE-EUROPE-COURSE"],
+        "hist-cfe-uruguay": ["HIST-CFE-URUGUAY-COURSE"],
+        "hist-cfe-america": ["HIST-CFE-AMERICA-COURSE"],
+        "hist-cfe-theory": ["HIST-CFE-THEORY-COURSE"]
+      },
+      "trajectories": [
+        {
+          "id": "ingreso-general",
+          "credentialId": "licenciado-historia",
+          "label": "Ingreso general",
+          "description": "Trayectoria sugerida de ocho semestres publicada por FHCE en julio de 2026.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courseIds": ["IVU", "H3", "H107", "HIST-INTRO-OPTATIVE-1", "HIST-EXTENSION-6"]
+            },
+            {
+              "label": "Semestre 2",
+              "courseIds": ["H6", "H9", "HIST-INTRO-OPTATIVE-2", "HIST-INTRO-OPTATIVE-3"]
+            },
+            {
+              "label": "Semestre 3",
+              "courseIds": ["H8", "H11", "HIST-THEORY-METHODOLOGY", "HIST-EFI-4"]
+            },
+            {
+              "label": "Semestre 4",
+              "courseIds": ["H12", "H14", "HIST-AREA-OPTATIVE-1", "HIST-FOREIGN-READING"]
+            },
+            {
+              "label": "Semestre 5",
+              "courseIds": ["H15", "H16", "H10", "HIST-EFI-3"]
+            },
+            {
+              "label": "Semestre 6",
+              "courseIds": ["H18", "H13", "HIST-THEORY-OPTATIVE"]
+            },
+            {
+              "label": "Semestre 7",
+              "courseIds": ["HIST-ELECTIVES-1-2", "HIST-AREA-OPTATIVE-2", "H109"]
+            },
+            {
+              "label": "Semestre 8",
+              "courseIds": ["HIST-ELECTIVES-3-5", "TDG", "validacion-final-plan"]
+            }
+          ]
+        },
+        {
+          "id": "continuidad-cfe",
+          "credentialId": "licenciado-historia-cfe",
+          "label": "Egreso del Profesorado de Historia (CFE)",
+          "description": "Continuidad oficial para egresados del Profesorado de Historia del CFE Plan 2008 o anteriores; reconoce 245 créditos y explicita los requisitos restantes del mismo título.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Reconocimiento CFE",
+              "courseIds": [
+                "reconocimiento-cfe-europa",
+                "reconocimiento-cfe-uruguay-america",
+                "reconocimiento-cfe-teorico-metodologica",
+                "reconocimiento-cfe-electivas",
+                "reconocimiento-cfe-optativas"
+              ]
+            },
+            {
+              "label": "Requisitos posteriores al reconocimiento",
+              "courseIds": [
+                "HIST-CFE-EUROPE-COURSE",
+                "HIST-CFE-URUGUAY-COURSE",
+                "HIST-CFE-AMERICA-COURSE",
+                "HIST-CFE-THEORY-COURSE",
+                "IVU",
+                "HIST-CFE-INTEGRATED",
+                "HIST-FOREIGN-READING",
+                "H109",
+                "TDG",
+                "validacion-final-plan"
+              ]
+            }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-por-semestre-julio-2026.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "manualCompletionValidation": null,
+        "additionalCourses": [
+          {
+            "id": "reconocimiento-cfe-europa",
+            "name": "Reconocimiento CFE · Europa y el mundo",
+            "credits": 52,
+            "requirementId": "hist-europe-world",
+            "periodLabel": "Reconocimiento CFE",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"],
+            "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf"
+          },
+          {
+            "id": "reconocimiento-cfe-uruguay-america",
+            "name": "Reconocimiento CFE · Uruguay y América",
+            "credits": 52,
+            "requirementId": "hist-uruguay-america",
+            "periodLabel": "Reconocimiento CFE",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"],
+            "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf"
+          },
+          {
+            "id": "reconocimiento-cfe-teorico-metodologica",
+            "name": "Reconocimiento CFE · Área teórico-metodológica",
+            "credits": 26,
+            "requirementId": "hist-theory-methods",
+            "periodLabel": "Reconocimiento CFE",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"],
+            "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf"
+          },
+          {
+            "id": "reconocimiento-cfe-electivas",
+            "name": "Reconocimiento CFE · Electivas",
+            "credits": 50,
+            "requirementId": "hist-electives",
+            "periodLabel": "Reconocimiento CFE",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"],
+            "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf"
+          },
+          {
+            "id": "reconocimiento-cfe-optativas",
+            "name": "Reconocimiento CFE · Optativas y formación introductoria reconocida",
+            "credits": 65,
+            "requirementId": "hist-optionals",
+            "periodLabel": "Reconocimiento CFE",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"],
+            "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf"
+          },
+          {
+            "id": "HIST-INTRO-OPTATIVE-1",
+            "name": "Optativa 1 del Área Introductoria · entre 6 y 15 créditos",
+            "credits": 0,
+            "requirementId": "hist-optionals",
+            "periodLabel": "Semestre 1",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-EXTENSION-6",
+            "name": "Formación en Extensión · 6 créditos",
+            "credits": 0,
+            "requirementId": "hist-integrated",
+            "periodLabel": "Semestre 1",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-INTRO-OPTATIVE-2",
+            "name": "Optativa 2 del Área Introductoria · entre 6 y 15 créditos",
+            "credits": 0,
+            "requirementId": "hist-optionals",
+            "periodLabel": "Semestre 2",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-INTRO-OPTATIVE-3",
+            "name": "Optativa 3 del Área Introductoria · entre 6 y 15 créditos",
+            "credits": 0,
+            "requirementId": "hist-optionals",
+            "periodLabel": "Semestre 2",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-THEORY-METHODOLOGY",
+            "name": "Teoría y Metodología de la Historia I · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-theory-methods",
+            "periodLabel": "Semestre 3",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-EFI-4",
+            "name": "Espacio de Formación Integral · 4 créditos",
+            "credits": 0,
+            "requirementId": "hist-integrated",
+            "periodLabel": "Semestre 3",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-AREA-OPTATIVE-1",
+            "name": "Optativa de Europa y el mundo o de Uruguay y América · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-optionals",
+            "periodLabel": "Semestre 4",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-FOREIGN-READING",
+            "name": "Comprensión lectora de lengua extranjera · 8 créditos",
+            "credits": 0,
+            "requirementId": "hist-modern-language",
+            "periodLabel": "Semestre 4",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-EFI-3",
+            "name": "Espacio de Formación Integral · 3 créditos",
+            "credits": 0,
+            "requirementId": "hist-integrated",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-THEORY-OPTATIVE",
+            "name": "Optativa del Área Teórico-Metodológica · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-optionals",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-ELECTIVES-1-2",
+            "name": "Electivas 1 y 2 · 20 créditos",
+            "credits": 0,
+            "requirementId": "hist-electives",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-AREA-OPTATIVE-2",
+            "name": "Optativa del Área Europa y el mundo o Uruguay y América · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-optionals",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-ELECTIVES-3-5",
+            "name": "Electivas 3, 4 y 5 · 30 créditos",
+            "credits": 0,
+            "requirementId": "hist-electives",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true
+          },
+          {
+            "id": "HIST-CFE-EUROPE-COURSE",
+            "name": "Una unidad obligatoria de Europa y el mundo posterior al reconocimiento CFE · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-europe-world",
+            "periodLabel": "Requisitos posteriores al reconocimiento",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"]
+          },
+          {
+            "id": "HIST-CFE-URUGUAY-COURSE",
+            "name": "Una unidad obligatoria de Historia del Uruguay posterior al reconocimiento CFE · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-uruguay-america",
+            "periodLabel": "Requisitos posteriores al reconocimiento",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"]
+          },
+          {
+            "id": "HIST-CFE-AMERICA-COURSE",
+            "name": "Una unidad obligatoria de Historia Americana posterior al reconocimiento CFE · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-uruguay-america",
+            "periodLabel": "Requisitos posteriores al reconocimiento",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"]
+          },
+          {
+            "id": "HIST-CFE-THEORY-COURSE",
+            "name": "Una unidad obligatoria del Área Teórico-Metodológica posterior al reconocimiento CFE · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-theory-methods",
+            "periodLabel": "Requisitos posteriores al reconocimiento",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"]
+          },
+          {
+            "id": "HIST-CFE-INTEGRATED",
+            "name": "Actividades integradas posteriores al reconocimiento CFE · 13 créditos",
+            "credits": 0,
+            "requirementId": "hist-integrated",
+            "periodLabel": "Requisitos posteriores al reconocimiento",
+            "curricularBlock": true,
+            "pathwayIds": ["continuidad-cfe"]
+          },
+          {
+            "id": "validacion-final-plan",
+            "name": "Validación final de optativas, electivas, integralidad y plan de tesis por la Comisión de Carrera",
+            "credits": 0,
+            "requirementId": "plan-total",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true,
+            "pathwayIds": ["ingreso-general", "continuidad-cfe"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bedelias-fhum-filosofia-2010",
+      "identity": "filosofia:2010",
+      "effectiveAt": "2026-07",
+      "authorityCountsBefore": {
+        "verified": 32,
+        "candidate": 248,
+        "historical-equivalent": 3,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/FILOSOFIA-por-semestre-julio-2026-1.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/FILOSOFIA-Malla-curricular-por-AREA-TEMATICA-julio-2026.pdf",
+          "role": "mínimos vigentes por área y actividades obligatorias"
+        },
+        {
+          "authority": "Plan de Estudios 2010, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/licenciatura_en_filosofia_2010.pdf",
+          "role": "título, estructura flexible y requisitos de egreso"
+        }
+      ],
+      "uiNotice": "Trayectoria sugerida de ocho semestres publicada por FHCE en julio de 2026. Las optativas filosóficas, los tópicos especiales y las electivas universitarias permanecen como bloques flexibles sujetos a orientación; no acreditan una unidad concreta.",
+      "requiredCourseGroupSourceIds": {
+        "fil-language": ["FIL-FOREIGN-READING"]
+      },
+      "trajectories": [
+        {
+          "id": "trayectoria-flexible",
+          "credentialId": "licenciado-filosofia",
+          "label": "Trayectoria sugerida",
+          "description": "Recorrido sugerido de ocho semestres publicado por FHCE en julio de 2026; las elecciones se construyen con orientación académica y no modifican el título.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "courseIds": ["IVU", "FA1", "FB1", "FF1"]
+            },
+            {
+              "label": "Semestre 2",
+              "courseIds": ["FA2", "FB4", "FD1", "FIL-FOREIGN-READING"]
+            },
+            {
+              "label": "Semestre 3",
+              "courseIds": ["FA3", "FIL-OPTATIVE-1", "FIL-OPTATIVE-2", "FIL-ELECTIVE-1"]
+            },
+            {
+              "label": "Semestre 4",
+              "courseIds": ["FA4", "FC1", "FE1", "FIL-ELECTIVE-2"]
+            },
+            {
+              "label": "Semestre 5",
+              "courseIds": ["FG1", "FIL-OPTATIVE-3", "FIL-TOPIC-1", "FIL-ELECTIVE-3"]
+            },
+            {
+              "label": "Semestre 6",
+              "courseIds": ["FTI", "FIL-TOPICS-2-3", "FIL-OPTATIVE-4"]
+            },
+            {
+              "label": "Semestre 7",
+              "courseIds": ["FST", "FIL-OPTATIVE-5", "FIL-TOPIC-4"]
+            },
+            {
+              "label": "Semestre 8",
+              "courseIds": ["FTF", "FIL-ELECTIVE-4", "validacion-final-plan"]
+            }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/FILOSOFIA-por-semestre-julio-2026-1.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "manualCompletionValidation": null,
+        "courseOverrides": {
+          "IVU": {
+            "name": "Introducción a la Vida Universitaria",
+            "credits": 2,
+            "periodLabel": "Semestre 1"
+          }
+        },
+        "creditRequirements": [
+          {
+            "id": "fil-philosophical-required",
+            "name": "Obligatorias filosóficas",
+            "shortName": "Obligatorias filosóficas",
+            "minCredits": 143
+          },
+          {
+            "id": "fil-complementary-required",
+            "name": "Obligatorias complementarias",
+            "shortName": "Complementarias",
+            "minCredits": 10
+          },
+          {
+            "id": "fil-flexible",
+            "name": "Formación filosófica y universitaria flexible",
+            "shortName": "Formación flexible",
+            "minCredits": 149
+          },
+          {
+            "id": "fil-philosophical-electives",
+            "parentId": "fil-flexible",
+            "name": "Electivas filosóficas",
+            "shortName": "Electivas filosóficas",
+            "minCredits": 65,
+            "credentialRequired": false
+          },
+          {
+            "id": "fil-special-topics",
+            "parentId": "fil-flexible",
+            "name": "Tópicos Especiales",
+            "shortName": "Tópicos",
+            "minCredits": 32,
+            "credentialRequired": false
+          },
+          {
+            "id": "fil-university-electives",
+            "parentId": "fil-flexible",
+            "name": "Electivas universitarias",
+            "shortName": "Electivas universitarias",
+            "minCredits": 52,
+            "credentialRequired": false
+          },
+          {
+            "id": "fil-integral-workshop",
+            "name": "Taller Integral",
+            "shortName": "Taller Integral",
+            "minCredits": 20
+          },
+          {
+            "id": "fil-thesis-seminar",
+            "name": "Seminario de Tesina",
+            "shortName": "Seminario",
+            "minCredits": 13
+          },
+          {
+            "id": "fil-thesis",
+            "name": "Tesina",
+            "shortName": "Tesina",
+            "minCredits": 25
+          }
+        ],
+        "credentials": [
+          {
+            "id": "licenciado-filosofia",
+            "title": "Licenciado en Filosofía",
+            "minTotalCredits": 360,
+            "requiredCourseGroupIds": [
+              "fil-history-ancient",
+              "fil-history-medieval",
+              "fil-history-modern",
+              "fil-history-contemporary",
+              "fil-ethics",
+              "fil-aesthetics",
+              "fil-latin-american",
+              "fil-theoretical",
+              "fil-science-history",
+              "fil-methodology",
+              "fil-logic",
+              "fil-university-introduction",
+              "fil-language",
+              "fil-integral-workshop-course",
+              "fil-thesis-seminar-course",
+              "fil-thesis-course",
+              "validacion-final-plan"
+            ],
+            "nodeRequirements": [
+              { "nodeId": "fil-philosophical-required", "minCredits": 143 },
+              { "nodeId": "fil-complementary-required", "minCredits": 10 },
+              { "nodeId": "fil-flexible", "minCredits": 149 },
+              { "nodeId": "fil-integral-workshop", "minCredits": 20 },
+              { "nodeId": "fil-thesis-seminar", "minCredits": 13 },
+              { "nodeId": "fil-thesis", "minCredits": 25 }
+            ]
+          }
+        ],
+        "additionalCourses": [
+          {
+            "id": "FIL-FOREIGN-READING",
+            "name": "Comprensión lectora de lengua extranjera · 8 créditos",
+            "credits": 0,
+            "requirementId": "fil-complementary-required",
+            "periodLabel": "Semestre 2",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-OPTATIVE-1",
+            "name": "Optativa filosófica I · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-philosophical-electives",
+            "periodLabel": "Semestre 3",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-OPTATIVE-2",
+            "name": "Optativa filosófica II · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-philosophical-electives",
+            "periodLabel": "Semestre 3",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-ELECTIVE-1",
+            "name": "Electiva universitaria 1 · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-university-electives",
+            "periodLabel": "Semestre 3",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-ELECTIVE-2",
+            "name": "Electiva universitaria 2 · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-university-electives",
+            "periodLabel": "Semestre 4",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-OPTATIVE-3",
+            "name": "Optativa filosófica III o Tópico · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-philosophical-electives",
+            "additionalRequirementIds": ["fil-special-topics"],
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-TOPIC-1",
+            "name": "Tópico especial I · 8 créditos",
+            "credits": 0,
+            "requirementId": "fil-special-topics",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-ELECTIVE-3",
+            "name": "Electiva universitaria 3 · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-university-electives",
+            "periodLabel": "Semestre 5",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-TOPICS-2-3",
+            "name": "Tópicos especiales II y III · 16 créditos",
+            "credits": 0,
+            "requirementId": "fil-special-topics",
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-OPTATIVE-4",
+            "name": "Optativa filosófica IV o Tópico · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-philosophical-electives",
+            "additionalRequirementIds": ["fil-special-topics"],
+            "periodLabel": "Semestre 6",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-OPTATIVE-5",
+            "name": "Optativa filosófica V · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-philosophical-electives",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-TOPIC-4",
+            "name": "Tópico especial IV · 8 créditos",
+            "credits": 0,
+            "requirementId": "fil-special-topics",
+            "periodLabel": "Semestre 7",
+            "curricularBlock": true
+          },
+          {
+            "id": "FIL-ELECTIVE-4",
+            "name": "Electiva universitaria 4 · 13 créditos",
+            "credits": 0,
+            "requirementId": "fil-university-electives",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true
+          },
+          {
+            "id": "validacion-final-plan",
+            "name": "Validación final de electivas y consistencia de la trayectoria por el Instituto de Filosofía",
+            "credits": 0,
+            "requirementId": "plan-total",
+            "periodLabel": "Semestre 8",
+            "curricularBlock": true,
+            "pathwayIds": ["trayectoria-flexible"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bedelias-fhum-antropologia-2014",
+      "identity": "antropologia:2014",
+      "effectiveAt": "2025-07",
+      "authorityCountsBefore": {
+        "verified": 1,
+        "candidate": 272,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/malla-curricular-de-la-licenciatura-en-ciencias-antropologicas-por-semestre/",
+          "role": "índice vigente de las tres opciones oficiales"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Antropologia-Biologica-por-semestre.pdf",
+          "role": "trayectoria sugerida de ocho semestres de Antropología Biológica"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Arqueologia-malla-20-junio2025.pdf",
+          "role": "trayectoria sugerida de ocho semestres de Arqueología"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Antorpologia-Social-por-semestre.pdf",
+          "role": "trayectoria sugerida de ocho semestres de Antropología Social"
+        },
+        {
+          "authority": "Plan de Estudios 2014, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-Plan-Antropologia.pdf",
+          "role": "tres opciones tituladas, áreas, créditos y requisitos de egreso"
+        }
+      ],
+      "uiNotice": "FHCE publica tres opciones oficiales y tituladas con mallas propias de ocho semestres: Antropología Biológica, Arqueología y Antropología Social. Comparten los primeros tramos; las elecciones y contenidos recomendados se muestran como bloques sin acreditar una unidad concreta.",
+      "trajectories": [
+        {
+          "id": "antropologia-biologica",
+          "credentialId": "titulo-antropologia-biologica",
+          "label": "Antropología Biológica",
+          "description": "Opción oficial titulada con trayectoria sugerida de ocho semestres publicada por FHCE en julio de 2025.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "A151", "ANTH-STATISTICS-11", "A107"] },
+            { "label": "Semestre 2", "courseIds": ["ANTH-METHODOLOGY-14", "ANTH-PREHISTORY-12", "A104", "ANTH-EPISTEMOLOGY-8"] },
+            { "label": "Semestre 3", "courseIds": ["A102", "ANTH-SOCIAL-OPTATIVE-1", "A117", "A110", "ANTH-FOREIGN-READING", "ANTH-EXTENSION-4"] },
+            { "label": "Semestre 4", "courseIds": ["ANTH-SOCIAL-OPTATIVE-2", "A183", "A116", "A167", "ANTH-ELECTIVE-12"] },
+            { "label": "Semestre 5", "courseIds": ["ANTH-BIO-METHOD-16", "ANTH-BIO-PRACTICUM-19", "ANTH-BIO-ELECTIVE-10-A"] },
+            { "label": "Semestre 6", "courseIds": ["ANTH-BIO-ETHICS-19", "ANTH-BIO-OPTIONS-16", "ANTH-BIO-ELECTIVE-10-B"] },
+            { "label": "Semestre 7", "courseIds": ["ANTH-BIO-SEMINAR-1", "ANTH-BIO-OPTIONS-20", "ANTH-BIO-EXTENSION-8"] },
+            { "label": "Semestre 8", "courseIds": ["ANTH-BIO-SEMINAR-2", "ANTH-BIO-ELECTIVES-26", "validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "arqueologia",
+          "credentialId": "titulo-arqueologia",
+          "label": "Arqueología",
+          "description": "Opción oficial titulada con trayectoria sugerida de ocho semestres publicada por FHCE en julio de 2025.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "A151", "ANTH-STATISTICS-11", "A107"] },
+            { "label": "Semestre 2", "courseIds": ["ANTH-METHODOLOGY-14", "ANTH-PREHISTORY-12", "A104", "ANTH-EPISTEMOLOGY-8"] },
+            { "label": "Semestre 3", "courseIds": ["A102", "ANTH-SOCIAL-OPTATIVE-1", "A117", "ANTH-ARCH-OPTION-1", "ANTH-FOREIGN-READING", "ANTH-EXTENSION-4"] },
+            { "label": "Semestre 4", "courseIds": ["ANTH-SOCIAL-OPTATIVE-2", "A183", "ANTH-ARCH-OPTION-2", "A153", "ANTH-ELECTIVE-12"] },
+            { "label": "Semestre 5", "courseIds": ["ANTH-ARCH-METHOD-16", "ANTH-ARCH-PRACTICUM-19", "ANTH-ARCH-OPTION-3", "ANTH-ARCH-ELECTIVE-10-A"] },
+            { "label": "Semestre 6", "courseIds": ["ANTH-ARCH-OPTION-4", "ANTH-ARCH-CONTENTS-16", "ANTH-ARCH-ELECTIVE-10-B", "ANTH-ARCH-ELECTIVE-9"] },
+            { "label": "Semestre 7", "courseIds": ["ANTH-ARCH-WORKSHOP-1", "ANTH-ARCH-CONTENTS-9", "ANTH-ARCH-EXTENSION-8", "ANTH-ARCH-ELECTIVE-10-C"] },
+            { "label": "Semestre 8", "courseIds": ["ANTH-ARCH-WORKSHOP-2", "ANTH-ARCH-CONTENTS-14", "ANTH-ARCH-ELECTIVE-7", "validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "antropologia-social",
+          "credentialId": "titulo-antropologia-social",
+          "label": "Antropología Social",
+          "description": "Opción oficial titulada con trayectoria sugerida de ocho semestres publicada por FHCE en julio de 2025.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["IVU", "A151", "ANTH-STATISTICS-11", "A107"] },
+            { "label": "Semestre 2", "courseIds": ["ANTH-METHODOLOGY-14", "ANTH-PREHISTORY-12", "A104", "ANTH-EPISTEMOLOGY-8"] },
+            { "label": "Semestre 3", "courseIds": ["A102", "ANTH-SOCIAL-OPTATIVE-1-OR-3", "A117", "A110", "ANTH-FOREIGN-READING", "ANTH-EXTENSION-4"] },
+            { "label": "Semestre 4", "courseIds": ["ANTH-SOCIAL-OPTATIVE-2-OR-4", "A183", "A116", "A148", "ANTH-ELECTIVE-12"] },
+            { "label": "Semestre 5", "courseIds": ["ANTH-SOCIAL-METHOD-START", "ANTH-SOCIAL-PRACTICUM-19", "ANTH-SOCIAL-OPTION-3", "ANTH-SOCIAL-ELECTIVE-10-A", "ANTH-SOCIAL-EXTENSION-8"] },
+            { "label": "Semestre 6", "courseIds": ["ANTH-SOCIAL-METHOD-CONTINUE", "ANTH-SOCIAL-OPTION-4", "ANTH-SOCIAL-CONTENTS-10-A", "ANTH-SOCIAL-ELECTIVE-10-B"] },
+            { "label": "Semestre 7", "courseIds": ["ANTH-SOCIAL-WORKSHOP-1", "ANTH-SOCIAL-CONTENTS-10-B", "ANTH-SOCIAL-ELECTIVE-13-A"] },
+            { "label": "Semestre 8", "courseIds": ["ANTH-SOCIAL-WORKSHOP-2", "ANTH-SOCIAL-ETHICS-19", "ANTH-SOCIAL-ELECTIVE-13-B", "validacion-final-plan"] }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/malla-curricular-de-la-licenciatura-en-ciencias-antropologicas-por-semestre/",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "additionalCourses": [
+          { "id": "ANTH-STATISTICS-11", "name": "Estadística General · 11 créditos", "credits": 0, "requirementId": "anth-general", "periodLabel": "Semestre 1", "curricularBlock": true },
+          { "id": "ANTH-METHODOLOGY-14", "name": "Metodología y técnicas · 14 créditos", "credits": 0, "requirementId": "anth-general", "periodLabel": "Semestre 2", "curricularBlock": true },
+          { "id": "ANTH-PREHISTORY-12", "name": "Prehistoria General · 12 créditos", "credits": 0, "requirementId": "anth-general", "periodLabel": "Semestre 2", "curricularBlock": true },
+          { "id": "ANTH-EPISTEMOLOGY-8", "name": "Epistemología, Ética y Educación o Historia y Filosofía de la Ciencia I · 8 créditos", "credits": 0, "requirementId": "anth-general", "periodLabel": "Semestre 2", "curricularBlock": true },
+          { "id": "ANTH-SOCIAL-OPTATIVE-1", "name": "Primera optativa de Antropología Social · 8 créditos", "credits": 0, "requirementId": "anth-options-social", "periodLabel": "Semestre 3", "curricularBlock": true },
+          { "id": "ANTH-SOCIAL-OPTATIVE-1-OR-3", "name": "Antropología Social I o III · 8 créditos", "credits": 0, "requirementId": "anth-options-social", "periodLabel": "Semestre 3", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-ARCH-OPTION-1", "name": "Prehistoria Americana I o Prehistoria de la Cuenca del Plata · 8 créditos", "credits": 0, "requirementId": "anth-options-archaeology", "periodLabel": "Semestre 3", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-FOREIGN-READING", "name": "Comprensión lectora de lengua extranjera · 8 créditos", "credits": 0, "requirementId": "anth-language", "periodLabel": "Semestre 3", "curricularBlock": true },
+          { "id": "ANTH-EXTENSION-4", "name": "Formación en extensión previa a la práctica · 4 créditos", "credits": 0, "requirementId": "anth-extension", "periodLabel": "Semestre 3", "curricularBlock": true },
+          { "id": "ANTH-SOCIAL-OPTATIVE-2", "name": "Segunda optativa de Antropología Social · 8 créditos", "credits": 0, "requirementId": "anth-options-social", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "ANTH-SOCIAL-OPTATIVE-2-OR-4", "name": "Antropología Social II o IV · 8 créditos", "credits": 0, "requirementId": "anth-options-social", "periodLabel": "Semestre 4", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-ARCH-OPTION-2", "name": "Prehistoria Americana II, Etnohistoria de la Cuenca del Plata o Arqueología asociada a fuentes escritas y orales · 8 créditos", "credits": 0, "requirementId": "anth-options-archaeology", "periodLabel": "Semestre 4", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ELECTIVE-12", "name": "Electiva de Formación General · 12 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 4", "curricularBlock": true },
+
+          { "id": "ANTH-BIO-METHOD-16", "name": "Metodología y técnicas específicas en Antropología Biológica · 16 créditos", "credits": 0, "requirementId": "anth-biological-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-PRACTICUM-19", "name": "Capacitación pasantía · 19 créditos", "credits": 0, "requirementId": "anth-biological-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-ELECTIVE-10-A", "name": "Electivas de Antropología Biológica · 10 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-ETHICS-19", "name": "Seminario Ética y Derechos Humanos en la investigación antropológica · 19 créditos", "credits": 0, "requirementId": "anth-biological-specific-i", "additionalRequirementIds": ["anth-biological-specific-ii"], "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-OPTIONS-16", "name": "Contenidos optativos de Antropología Biológica · 16 créditos", "credits": 0, "requirementId": "anth-biological-specific-i", "additionalRequirementIds": ["anth-biological-specific-ii"], "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-ELECTIVE-10-B", "name": "Electivas de Antropología Biológica · 10 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-SEMINAR-1", "name": "Seminario I en Antropología Biológica · 19 créditos", "credits": 0, "requirementId": "anth-biological-specific-ii", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-OPTIONS-20", "name": "Contenidos optativos de Antropología Biológica · 20 créditos", "credits": 0, "requirementId": "anth-biological-specific-ii", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-EXTENSION-8", "name": "Práctica en Extensión · 8 créditos", "credits": 0, "requirementId": "anth-extension", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-SEMINAR-2", "name": "Seminario II en Antropología Biológica · 19 créditos", "credits": 0, "requirementId": "anth-biological-specific-ii", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+          { "id": "ANTH-BIO-ELECTIVES-26", "name": "Electivas de Antropología Biológica · 26 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["antropologia-biologica"] },
+
+          { "id": "ANTH-ARCH-METHOD-16", "name": "Metodología y técnicas específicas en Arqueología · 16 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-PRACTICUM-19", "name": "Capacitación pasantía · 19 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-OPTION-3", "name": "Prehistoria Americana I o Prehistoria de la Cuenca del Plata · 8 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-ELECTIVE-10-A", "name": "Electivas de Arqueología · 10 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-OPTION-4", "name": "Prehistoria Americana II, Etnohistoria de la Cuenca del Plata o Arqueología asociada a fuentes escritas y orales · 8 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-i", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-CONTENTS-16", "name": "Contenidos optativos de Arqueología · 16 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-i", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-ELECTIVE-10-B", "name": "Electivas de Arqueología · 10 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-ELECTIVE-9", "name": "Electivas de Arqueología · 9 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-WORKSHOP-1", "name": "Taller de Investigación I en Arqueología · 19 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-ii", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-CONTENTS-9", "name": "Seminarios u optativas específicas de Arqueología · 9 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-ii", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-EXTENSION-8", "name": "Práctica en Extensión · 8 créditos", "credits": 0, "requirementId": "anth-extension", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-ELECTIVE-10-C", "name": "Electivas de Arqueología · 10 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-WORKSHOP-2", "name": "Taller de Arqueología · 19 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-ii", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-CONTENTS-14", "name": "Seminarios u optativas específicas de Arqueología · 14 créditos", "credits": 0, "requirementId": "anth-archaeology-specific-ii", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+          { "id": "ANTH-ARCH-ELECTIVE-7", "name": "Electivas de Arqueología · 7 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["arqueologia"] },
+
+          { "id": "ANTH-SOCIAL-METHOD-START", "name": "Metodología y técnicas específicas en Antropología Social · inicio anual", "credits": 0, "requirementId": "anth-social-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-PRACTICUM-19", "name": "Capacitación pasantía · 19 créditos", "credits": 0, "requirementId": "anth-social-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-OPTION-3", "name": "Antropología Social III o I · 8 créditos", "credits": 0, "requirementId": "anth-social-specific-i", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-ELECTIVE-10-A", "name": "Electivas de Antropología Social · 10 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-EXTENSION-8", "name": "Práctica en Extensión · 8 créditos", "credits": 0, "requirementId": "anth-extension", "periodLabel": "Semestre 5", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-METHOD-CONTINUE", "name": "Metodología y técnicas específicas en Antropología Social · continuación anual, 16 créditos", "credits": 0, "requirementId": "anth-social-specific-i", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-OPTION-4", "name": "Antropología Social IV o II · 8 créditos", "credits": 0, "requirementId": "anth-social-specific-i", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-CONTENTS-10-A", "name": "Contenidos optativos de Antropología Social · 10 créditos", "credits": 0, "requirementId": "anth-social-specific-i", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-ELECTIVE-10-B", "name": "Electivas de Antropología Social · 10 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 6", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-WORKSHOP-1", "name": "Taller de Investigación I en Antropología Social · 19 créditos", "credits": 0, "requirementId": "anth-social-specific-ii", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-CONTENTS-10-B", "name": "Contenidos optativos de Antropología Social · 10 créditos", "credits": 0, "requirementId": "anth-social-specific-ii", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-ELECTIVE-13-A", "name": "Electivas de Antropología Social · 13 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 7", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-WORKSHOP-2", "name": "Taller de Investigación II en Antropología Social · 19 créditos", "credits": 0, "requirementId": "anth-social-specific-ii", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-ETHICS-19", "name": "Seminario Ética y Derechos Humanos en la investigación antropológica · 19 créditos", "credits": 0, "requirementId": "anth-social-specific-ii", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "ANTH-SOCIAL-ELECTIVE-13-B", "name": "Electivas de Antropología Social · 13 créditos", "credits": 0, "requirementId": "anth-electives", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["antropologia-social"] },
+          { "id": "validacion-final-plan", "name": "Validación final de la opción y del plan de optativas por la Comisión de Carrera", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 8", "curricularBlock": true, "pathwayIds": ["antropologia-biologica", "arqueologia", "antropologia-social"] }
+        ]
+      }
     }
   ]
 }

@@ -43,6 +43,18 @@ test("ofrece ingreso general y continuidad CFE para la misma titulación", () =>
   assert.match(projection.plan.notice, /mismo título/);
 });
 
+test("reproduce los ocho semestres oficiales del ingreso general", () => {
+  const periods = projection.pathways["ingreso-general"].periods;
+  assert.deepEqual(periods.map(({ label }) => label), [
+    "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4",
+    "Semestre 5", "Semestre 6", "Semestre 7", "Semestre 8",
+  ]);
+  assert.deepEqual(periods.map(({ courseIds }) => courseIds.length), [5, 4, 4, 4, 4, 3, 3, 3]);
+  assert.ok(periods.flatMap(({ courseIds }) => courseIds)
+    .map((id) => projection.courses.find((course) => course.id === id))
+    .every(({ authorityStatus }) => authorityStatus === "verified"));
+});
+
 test("controla nueve mínimos que suman exactamente 360 créditos", () => {
   const nodes = projection.creditStructure.nodes.filter(({ id }) => id !== "plan-total");
   assert.deepEqual(nodes.map(({ minCredits }) => minCredits), [13, 65, 2, 39, 78, 50, 8, 65, 40]);
@@ -78,6 +90,11 @@ test("el ingreso general exige las catorce unidades obligatorias de las cuatro �
 
 test("la vía CFE acredita 245 créditos y exige sólo cuatro unidades de área adicionales", () => {
   const pathway = projection.pathways["continuidad-cfe"];
+  assert.deepEqual(pathway.periods.map(({ label }) => label), [
+    "Reconocimiento CFE",
+    "Requisitos posteriores al reconocimiento",
+  ]);
+  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [5, 10]);
   const recognitionPeriod = pathway.periods.find(({ label }) => label === "Reconocimiento CFE");
   const recognitionCourses = recognitionPeriod.courseIds
     .map((id) => projection.courses.find((course) => course.id === id));
@@ -98,12 +115,16 @@ test("la vía CFE acredita 245 créditos y exige sólo cuatro unidades de área 
 });
 
 test("conserva sólo las previaturas publicadas y neutraliza créditos desconocidos", () => {
-  assert.equal(projection.courses.length, 203);
+  assert.equal(projection.courses.length, 220);
   assert.equal(projection.rules.length, 21);
-  assert.equal(projection.plan.publishedRules, 13);
+  assert.equal(projection.plan.publishedRules, 7);
   assert.equal(projection.plan.noPublishedRule, 174);
-  assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 56);
+  assert.equal(projection.courses.filter(({ authorityStatus }) => authorityStatus === "verified").length, 40);
+  assert.equal(projection.courses.filter(({ authorityStatus }) => authorityStatus === "candidate").length, 180);
+  assert.equal(projection.courses.filter(({ credits }) => credits === 0).length, 73);
   assert.ok(projection.courses.filter(({ credits }) => credits === 0)
     .every(({ creditAllocations }) => creditAllocations.every(({ credits }) => credits === 0)));
+  assert.ok(projection.courses.filter(({ curricularBlock, credits }) => curricularBlock && credits === 0)
+    .every(({ authorityStatus }) => authorityStatus === "verified"));
   assert.match(officialAudit.anomalies.find(({ field }) => field === "zeroCreditRows").resolution, /No suman/);
 });

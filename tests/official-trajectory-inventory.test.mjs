@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 63,
+    "official-trajectory-reproduced": 66,
     "official-trajectory-identified-pending": 19,
     "no-official-trajectory-documented": 0,
-    "research-pending": 65,
+    "research-pending": 62,
   });
-  assert.equal(savedInventory.pendingQueue.total, 84);
-  assert.equal(savedInventory.pendingQueue.plans.length, 84);
+  assert.equal(savedInventory.pendingQueue.total, 81);
+  assert.equal(savedInventory.pendingQueue.plans.length, 81);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 19).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(19).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -120,6 +120,22 @@ test("el primer lote FHCE queda cerrado con ocho semestres y correspondencia exa
     assert.equal(plan.state, "official-trajectory-reproduced", planId);
     assert.equal(plan.currentProjection.primary, "official-periods", planId);
     assert.ok(plan.evidence.pathways.every(({ periodCount }) => periodCount === 8), planId);
+    assert.equal(plan.evidence.expectedCoursePlacements, plan.evidence.matchedCoursePlacements, planId);
+  }
+});
+
+test("el segundo lote FHCE conserva los períodos y opciones oficialmente documentados", () => {
+  const byPlanId = new Map(savedInventory.plans.map((plan) => [plan.planId, plan]));
+  const expected = new Map([
+    ["bedelias-fhum-historia-2014", { primary: "official-periods", periodCounts: [8, 2] }],
+    ["bedelias-fhum-filosofia-2010", { primary: "official-periods", periodCounts: [8] }],
+    ["bedelias-fhum-antropologia-2014", { primary: "official-profiles", periodCounts: [8, 8, 8] }],
+  ]);
+  for (const [planId, { primary, periodCounts }] of expected) {
+    const plan = byPlanId.get(planId);
+    assert.equal(plan.state, "official-trajectory-reproduced", planId);
+    assert.equal(plan.currentProjection.primary, primary, planId);
+    assert.deepEqual(plan.evidence.pathways.map(({ periodCount }) => periodCount), periodCounts, planId);
     assert.equal(plan.evidence.expectedCoursePlacements, plan.evidence.matchedCoursePlacements, planId);
   }
 });

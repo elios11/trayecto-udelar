@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:ff062d96ceae7be740f7f672974ba3d66e102b7d2212ac5be14a6e1b05924e68",
-    "extractedReportHash": "sha256:16bf04e5b5e0a19d2938e6040f6ca8087dbb0dcd830e9327d53f076fe1222e6b",
+    "extractedReportHash": "sha256:a236fbb0d3d6607749ead77295cc09dbe5dc05859f98441b4750537df6f3a8ea",
     "officialAuditHash": "sha256:3178f26777476b7f43974edf798990ca056d0c09a267cb8f41f810ea9976af1f",
-    "reviewedTrajectoriesHash": "sha256:272c4707342a90c6b6b0246ab2ce901fa536e18393c4d6a5db4fefb592b60966"
+    "reviewedTrajectoriesHash": "sha256:390899404a1e88888fbb6d187646fe03243bbe0d60aa5ea83ae6d618ffcce85f"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 63,
+      "official-trajectory-reproduced": 66,
       "official-trajectory-identified-pending": 19,
       "no-official-trajectory-documented": 0,
-      "research-pending": 65
+      "research-pending": 62
     },
-    "pending": 84,
+    "pending": 81,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -177,10 +177,10 @@
         "serviceLabel": "Facultad de Humanidades y Ciencias de la Educación",
         "selectablePlanIds": 13,
         "states": {
-          "official-trajectory-reproduced": 4,
+          "official-trajectory-reproduced": 7,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 9
+          "research-pending": 6
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 84,
+    "total": 81,
     "plans": [
       {
         "priority": 1,
@@ -847,34 +847,7 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-fhum-antropologia-2014",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fhum-dramaturgia-2015",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fhum-filosofia-2010",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fhum-historia-2014",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fhum"
@@ -1182,10 +1155,7 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-cure-licenciatura-en-turismo-2014",
-          "bedelias-fhum-antropologia-2014",
           "bedelias-fhum-dramaturgia-2015",
-          "bedelias-fhum-filosofia-2010",
-          "bedelias-fhum-historia-2014",
           "bedelias-fhum-interpretacion-lsu-espanol-lsu-2014",
           "bedelias-fhum-licenciatura-en-estudios-sordos-2025",
           "bedelias-fhum-museologia-2011",
@@ -7353,45 +7323,29 @@
           "defaultCredentialId": "titulo-antropologia-biologica"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2025-07",
       "officialSources": [
         {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-3/",
-          "role": "vigencia del Plan 2014; tres títulos con opción; cuatro años; 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Plan de Estudios 2014, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-Plan-Antropologia.pdf",
-          "role": "estructura 174 + 94 + 92; mínimos por contenido; opciones; optativas; electivas; extensión; títulos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Unidad de Apoyo a la Enseñanza, FHCE",
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
           "url": "https://fhce.edu.uy/malla-curricular-de-la-licenciatura-en-ciencias-antropologicas-por-semestre/",
-          "role": "tres trayectorias sugeridas vigentes; planificación por semestre",
-          "trajectoryEvidence": false
+          "role": "índice vigente de las tres opciones oficiales"
         },
         {
-          "authority": "FHCE",
-          "url": "https://fhce.edu.uy/preguntas-frecuentes-respecto-al-plan-2014/",
-          "role": "80 por ciento para avanzar entre áreas; orientación y aprobación del plan de optativas; distinción entre optativas y electivas",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Antropologia-Biologica-por-semestre.pdf",
+          "role": "trayectoria sugerida de Antropología Biológica"
         },
         {
-          "authority": "Oferta de licenciaturas 2026, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2026/02/2026-IMPAR-7.pdf",
-          "role": "dictado vigente; unidades por opción; umbrales actuales de 120 y 190 créditos",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Arqueologia-malla-20-junio2025.pdf",
+          "role": "trayectoria sugerida de Arqueología"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/antropologia",
-          "role": "vigencia; 48 meses; 360 créditos; sede FHCE",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2025/07/Antorpologia-Social-por-semestre.pdf",
+          "role": "trayectoria sugerida de Antropología Social"
         }
       ],
       "scope": {
@@ -7405,24 +7359,43 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-profiles",
         "features": [
-          "areas"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "antropologia:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-antropologia-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-antropologia-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-antropologia-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:e4a983a2e627b352d7111ec85b33bf75eeb6c726bfef2c5cc3e3614d8e5d70bb",
+        "projectionContentHash": "sha256:be8b2e34d7bc37a67aa0a836b08751e707cd78e2f5ef649f8ee397b9631a8695",
+        "pathways": [
+          {
+            "id": "antropologia-biologica",
+            "periodCount": 8
+          },
+          {
+            "id": "arqueologia",
+            "periodCount": 8
+          },
+          {
+            "id": "antropologia-social",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 101,
+        "matchedCoursePlacements": 101
       },
       "conflictNotes": [
-        "areaDistribution: El Plan expresa 174 créditos generales, 94 de Específica I y 92 de Específica II. Bedelías redistribuye esas obligaciones en 114 generales, 84 optativos específicos, 58 electivos y 66 + 38 específicos de opción; ambas lecturas suman 360. La UI usa la distribución operativa y conserva los submínimos normativos.",
-        "optionSpecificOptatives: Los 84 créditos optativos exigen 16 en cada rama y 36 adicionales de la opción elegida. Cada credencial controla 52 en su propia rama y 16 en las otras dos, sin convertir todo el catálogo en obligatorio.",
-        "prerequisites: La FAQ histórica indica que el Plan no fijó previaturas nominales y sí umbrales de 80 por ciento entre áreas. Bedelías y la oferta 2026 publican condiciones operativas actuales; la UI conserva únicamente las 83 reglas explícitas y deja 182 consultas sin regla publicada.",
-        "catalogSize: Las 273 apariciones incluyen versiones, equivalencias, optativas y electivas acumuladas. El egreso exige mínimos y la aprobación del plan individual, no completar todas las unidades visibles.",
-        "finalWork: El Plan culmina mediante seminarios o talleres de investigación dentro del Área Específica II. No se agrega una tesis o trabajo final separado."
+        "Las tres opciones son denominaciones oficiales del título y conservan mallas separadas de ocho semestres con un núcleo común.",
+        "La malla de Antropología Social conserva la unidad anual de metodología entre quinto y sexto semestre sin duplicar créditos.",
+        "Los catálogos recomendados y las alternativas sin identidad única se representan como bloques y no como obligaciones acumulativas."
       ]
     },
     {
@@ -7708,45 +7681,24 @@
           "defaultCredentialId": "licenciado-filosofia"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2010",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-10/",
-          "role": "vigencia del Plan 2010; denominación; título; 360 créditos",
-          "trajectoryEvidence": false
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/FILOSOFIA-por-semestre-julio-2026-1.pdf",
+          "role": "trayectoria sugerida vigente de ocho semestres"
         },
         {
-          "authority": "Plan de Estudios 2010, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/licenciatura_en_filosofia_2010.pdf",
-          "role": "estructura de créditos; núcleo obligatorio; electivas; Tópicos Especiales; Taller Integral; tesina",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Guía detallada del Plan, Instituto de Filosofía",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/03/Filosofia_CambioDePlanes_2023-03-22.pdf",
-          "role": "unidades obligatorias; trayectoria flexible; ocho semestres sugeridos; docente orientador",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Reglamentación de Tesina, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/ReglamentacionTesinaFilosofia.pdf",
-          "role": "Seminario de Tesina; 25 créditos de Tesina; 335 créditos previos; defensa",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta 2026 aprobada por el Consejo de FHCE",
-          "url": "https://fhce.edu.uy/programas-2026-lic-en-filosofia/",
-          "role": "vigencia de obligatorias; electivas filosóficas; Tópicos Especiales; Taller Integral",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/filosofia",
-          "role": "vigencia; 48 meses; 360 créditos; sede FHCE; requisitos de ingreso",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/FILOSOFIA-Malla-curricular-por-AREA-TEMATICA-julio-2026.pdf",
+          "role": "mínimos vigentes por área"
         }
       ],
       "scope": {
@@ -7758,23 +7710,34 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "filosofia:2010",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-filosofia-2010.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-filosofia-2010",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-filosofia-2010.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:3179612ea1fb7a564d381661aa3523355a548678885daefa36a945ee1152eb7f",
+        "projectionContentHash": "sha256:5e4177c576311d381363ed2eb4f25f3369eb3c07fd51db61be44d21fc10a714b",
+        "pathways": [
+          {
+            "id": "trayectoria-flexible",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 29,
+        "matchedCoursePlacements": 29
       },
       "conflictNotes": [
-        "guideCreditSummary: Una guía divulgativa consigna 32 créditos de Tópicos y 149 flexibles, pero el Plan normativo fija 30 de Tópicos, 95 electivos filosóficos y 52 universitarios. Bedelías coincide con el Plan y la UI usa 30 + 65 + 52 = 147.",
-        "historicalCourseVersions: El catálogo reúne códigos históricos y actuales para algunas obligatorias y una oferta electiva amplia. Los grupos de equivalencias evitan exigir duplicados y los mínimos impiden convertir todas las electivas en obligatorias.",
-        "zeroCreditRows: Bedelías conserva 89 registros únicos con crédito cero, principalmente ofertas históricas o sin acreditación publicada. No suman a ningún mínimo y su eventual acreditación requiere validación administrativa.",
-        "prerequisites: Se conservan las 46 reglas explícitas publicadas por Bedelías. Las 228 unidades sin regla publicada y la secuencia semestral sugerida no generan previaturas inventadas."
+        "La malla por área de julio de 2026 actualiza las obligatorias complementarias a 10 créditos y los tópicos especiales a 32; el total permanece en 360.",
+        "Las elecciones filosóficas y universitarias se muestran como bloques flexibles sujetos a orientación."
       ]
     },
     {
@@ -7790,45 +7753,24 @@
           "defaultCredentialId": "licenciado-historia"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-23",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de las mallas por área y por semestre"
+        },
+        {
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-2/",
-          "role": "vigencia del Plan 2014; denominación; título; cuatro años; 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Plan de Estudios 2014, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/Nuevo-PLAN-DE-HISTORIA.pdf",
-          "role": "áreas; créditos; núcleo obligatorio; optativas; electivas; integralidad; lengua; Seminario y Tesis",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular por áreas 2026, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf",
-          "role": "distribución vigente; unidades obligatorias; reconocimiento CFE; 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Trayectoria sugerida por semestre 2026, FHCE",
           "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-por-semestre-julio-2026.pdf",
-          "role": "ocho semestres; secuencia sugerida; créditos por unidad; flexibilidad",
-          "trajectoryEvidence": false
+          "role": "trayectoria sugerida vigente de ocho semestres"
         },
         {
-          "authority": "Oferta 2026 aprobada por el Consejo de FHCE",
-          "url": "https://fhce.edu.uy/programas-2026-lic-en-historia/",
-          "role": "vigencia de obligatorias; seminarios; oferta optativa; integralidad",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/historia",
-          "role": "vigencia; 48 meses; 360 créditos; sede FHCE; requisitos de ingreso",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/HISTORIA-Por-Area-Tematica-julio-2026.pdf",
+          "role": "mínimos vigentes y continuidad CFE"
         }
       ],
       "scope": {
@@ -7841,23 +7783,38 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "historia:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-historia-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-historia-2014",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-historia-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:ae702bff1594ace22b1a04c80d65540784e76dc4769f95c637905aa413e028c9",
+        "projectionContentHash": "sha256:207b887e07056835001e66cd131f738e5dce0ee6be9b4c921a5fc3a46fc4a971",
+        "pathways": [
+          {
+            "id": "ingreso-general",
+            "periodCount": 8
+          },
+          {
+            "id": "continuidad-cfe",
+            "periodCount": 2
+          }
+        ],
+        "expectedCoursePlacements": 45,
+        "matchedCoursePlacements": 45
       },
       "conflictNotes": [
-        "cfeRecognition: La composición incluye bloques EHCFE de 26, 50, 52 y 65 créditos. La malla 2026 confirma que corresponden al reconocimiento aprobado para egresados del Profesorado de Historia CFE y enumera las cuatro unidades adicionales; la UI lo presenta como vía del mismo título.",
-        "historicalCourseVersions: El catálogo reúne códigos históricos y actuales de algunas obligatorias y optativas. Los grupos de equivalencias evitan exigir duplicados y los mínimos impiden convertir la oferta flexible acumulada en una obligación total.",
-        "zeroCreditRows: Bedelías conserva 55 apariciones con crédito cero, principalmente actividades históricas o sin acreditación publicada. No suman a ningún mínimo y su eventual acreditación requiere validación administrativa.",
-        "prerequisites: Se conservan las 21 reglas explícitas publicadas por Bedelías. Las 174 unidades sin regla publicada y el orden semestral sugerido no generan previaturas inventadas."
+        "La continuidad CFE no publica una distribución semestral: se conserva como reconocimiento de 245 créditos más un período explícito de requisitos posteriores.",
+        "Las optativas, electivas e integrales sin identidad única se mantienen como bloques oficiales de cero créditos."
       ]
     },
     {
@@ -13666,5 +13623,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:46b84723c48b521ec3250196501a024463c96a94f59bc35823d4ca991cd1c0fd"
+  "contentHash": "sha256:9a720c508a5717725bab13024ed0c0d366131fa14df61644ec4ab94130be146f"
 }
