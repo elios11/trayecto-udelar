@@ -1903,6 +1903,146 @@
           { "id": "LIC-2025-TRABAJO-FINAL", "name": "Trabajo final de grado", "credits": 25, "requirementId": "tuilsu-integrated", "periodLabel": "Semestre 8" }
         ]
       }
+    },
+    {
+      "id": "bedelias-fhum-dramaturgia-2015",
+      "identity": "dramaturgia:2015",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2026-07",
+      "authorityCountsBefore": { "verified": 80, "candidate": 50, "historical-equivalent": 0, "administrative": 0, "rejected": 0 },
+      "sources": [
+        {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "publicación vigente de la trayectoria por área y por semestre"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/TUD-por-SEMESTRE-julio-2026.pdf",
+          "role": "trayectoria sugerida de cuatro semestres adaptada a la oferta efectiva"
+        },
+        {
+          "authority": "Plan de Estudios 2015, FHCE-EMAD",
+          "url": "https://www.fhce.edu.uy/images/Administracion_de_la_ensenanza/TUDplanestudios2015.pdf",
+          "role": "título, gestión compartida, duración, áreas y mínimos"
+        }
+      ],
+      "uiNotice": "Trayectoria sugerida oficial de cuatro semestres para el Plan 2015, gestionado conjuntamente por FHCE y EMAD. La carrera abre por cohortes con cupo; la malla no implica ingreso abierto permanente.",
+      "trajectories": [
+        {
+          "id": "plan-flexible",
+          "label": "Trayectoria sugerida",
+          "description": "Secuencia de cuatro semestres publicada por FHCE en julio de 2026.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["D26", "TUD-OPT-ESCR-1", "D11", "D5", "TUD-OPT-TEO-1", "IVU"] },
+            { "label": "Semestre 2", "courseIds": ["D33", "TUD-PASANTIA-1", "TUD-OPT-ESCR-2", "TUD-OPT-TEO-2"] },
+            { "label": "Semestre 3", "courseIds": ["D80", "TUD-PASANTIA-2", "TUD-OPT-ESCR-3", "D24", "TUD-OPT-TEO-3", "TUD-LENGUA"] },
+            { "label": "Semestre 4", "courseIds": ["D83", "TUD-OPT-ESCR-4", "D15", "electiva-1", "electiva-2"] }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2026/07/TUD-por-SEMESTRE-julio-2026.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "courseOverrides": {
+          "D26": { "name": "Taller de Dramaturgia I", "credits": 15, "requirementId": "tud-dramaturgy-workshops" },
+          "D33": { "name": "Taller de Dramaturgia II", "credits": 15, "requirementId": "tud-dramaturgy-workshops" },
+          "D80": { "name": "Taller de Dramaturgia III", "credits": 15, "requirementId": "tud-dramaturgy-workshops" },
+          "D83": { "name": "Taller de Dramaturgia IV", "credits": 15, "requirementId": "tud-dramaturgy-workshops" },
+          "D11": { "name": "Historia y análisis del drama", "credits": 9, "requirementId": "tud-theory-required" },
+          "D5": { "name": "Espacio escénico", "credits": 9, "requirementId": "tud-theory-required" },
+          "D24": { "name": "Historia de las prácticas escénicas", "credits": 9, "requirementId": "tud-theory-required" },
+          "D15": { "name": "Análisis crítico de los espectáculos", "credits": 9, "requirementId": "tud-theory-required" },
+          "IVU": { "name": "Introducción a la Vida Universitaria", "credits": 2, "requirementId": "tud-complementary" }
+        },
+        "requiredCourseGroups": [
+          { "id": "tud-workshop-1", "label": "Taller de Dramaturgia I", "minCompleted": 1, "sourceCourseIds": ["D26"] },
+          { "id": "tud-workshop-2", "label": "Taller de Dramaturgia II", "minCompleted": 1, "sourceCourseIds": ["D33"] },
+          { "id": "tud-workshop-3", "label": "Taller de Dramaturgia III", "minCompleted": 1, "sourceCourseIds": ["D80"] },
+          { "id": "tud-workshop-4", "label": "Taller de Dramaturgia IV", "minCompleted": 1, "sourceCourseIds": ["D83"] },
+          { "id": "tud-theory-core", "label": "Cuatro cursos teórico-prácticos obligatorios", "minCompleted": 4, "sourceCourseIds": ["D11", "D5", "D24", "D15"] },
+          { "id": "tud-university-introduction", "label": "Introducción a la Vida Universitaria", "minCompleted": 1, "sourceCourseIds": ["IVU"] },
+          { "id": "tud-foreign-course", "label": "Comprensión lectora en una lengua extranjera moderna", "minCompleted": 1, "sourceCourseIds": ["TUD-LENGUA"] },
+          { "id": "tud-elective-blocks", "label": "Dos bloques electivos acreditados", "minCompleted": 2, "sourceCourseIds": ["electiva-1", "electiva-2"] }
+        ],
+        "additionalCourses": [
+          { "id": "TUD-OPT-ESCR-1", "name": "Optativa de práctica de la escritura 1 · 4 créditos", "credits": 0, "requirementId": "tud-format-workshops", "periodLabel": "Semestre 1", "curricularBlock": true },
+          { "id": "TUD-PASANTIA-1", "name": "Pasantía 1", "credits": 10, "requirementId": "tud-internships", "periodLabel": "Semestre 2" },
+          { "id": "TUD-OPT-ESCR-2", "name": "Optativa de práctica de la escritura 2 · 4 créditos", "credits": 0, "requirementId": "tud-format-workshops", "periodLabel": "Semestre 2", "curricularBlock": true },
+          { "id": "TUD-PASANTIA-2", "name": "Pasantía 2", "credits": 15, "requirementId": "tud-internships", "periodLabel": "Semestre 3" },
+          { "id": "TUD-OPT-ESCR-3", "name": "Optativa de práctica de la escritura 3 · 4 créditos", "credits": 0, "requirementId": "tud-format-workshops", "periodLabel": "Semestre 3", "curricularBlock": true },
+          { "id": "TUD-OPT-ESCR-4", "name": "Optativa de práctica de la escritura 4 · 3 créditos", "credits": 0, "requirementId": "tud-format-workshops", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "TUD-OPT-TEO-1", "name": "Optativa teórico-práctica 1 · 10 créditos", "credits": 0, "requirementId": "tud-theory-optional", "periodLabel": "Semestre 1", "curricularBlock": true },
+          { "id": "TUD-OPT-TEO-2", "name": "Optativa teórico-práctica 2 · 8 créditos", "credits": 0, "requirementId": "tud-theory-optional", "periodLabel": "Semestre 2", "curricularBlock": true },
+          { "id": "TUD-OPT-TEO-3", "name": "Optativa teórico-práctica 3 · 6 créditos", "credits": 0, "requirementId": "tud-theory-optional", "periodLabel": "Semestre 3", "curricularBlock": true },
+          { "id": "TUD-LENGUA", "name": "Comprensión lectora en lengua extranjera · 4 créditos", "credits": 0, "requirementId": "tud-foreign-language", "periodLabel": "Semestre 3", "curricularBlock": true },
+          { "id": "electiva-1", "name": "Electiva 1 acreditada", "credits": 10, "requirementId": "tud-electives", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "electiva-2", "name": "Electiva 2 acreditada", "credits": 4, "requirementId": "tud-electives", "periodLabel": "Semestre 4", "curricularBlock": true }
+        ]
+      }
+    },
+    {
+      "id": "bedelias-fhum-museologia-2011",
+      "identity": "museologia:2011",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2011",
+      "authorityCountsBefore": { "verified": 23, "candidate": 369, "historical-equivalent": 0, "administrative": 0, "rejected": 0 },
+      "sources": [
+        {
+          "authority": "Plan de Estudios de la Tecnicatura Universitaria en Museología, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/tecnicatura_en_museologia.pdf",
+          "role": "secuencia sugerida de seis semestres, áreas, mínimos y título"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/plan-de-estudios-6/",
+          "role": "publicación institucional del plan histórico"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-bienes-culturales-tubicu/",
+          "role": "oferta vigente sucesora con Museología como mención, sin equivalencia automática inferida"
+        }
+      ],
+      "uiNotice": "Plan histórico de Museología sin nuevos ingresos desde 2010, conservado para escolaridades existentes. La oferta vigente relacionada es Bienes Culturales con mención Museología; no se migra progreso automáticamente.",
+      "trajectories": [
+        {
+          "id": "plan-2011",
+          "credentialId": "tecnico-universitario-museologia",
+          "label": "Plan 2011",
+          "description": "Secuencia de seis semestres publicada en el Plan de Estudios histórico.",
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["M2", "M4", "M1"] },
+            { "label": "Semestre 2", "courseIds": ["M3", "M5", "M6"] },
+            { "label": "Semestre 3", "courseIds": ["M7", "M8", "MUS-LENGUA"] },
+            { "label": "Semestre 4", "courseIds": ["MUS-ELECCION-4-1", "MUS-ELECCION-4-2", "MUS-ELECCION-4-3"] },
+            { "label": "Semestre 5", "courseIds": ["MUS-ELECCION-5-1", "MUS-ELECCION-5-2", "MUS-ELECCION-5-3"] },
+            { "label": "Semestre 6", "courseIds": ["M9"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        }
+      ],
+      "curriculum": {
+        "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2023/01/tecnicatura_en_museologia.pdf",
+        "strictOfficialCourseIds": true,
+        "includeAllCoursesInPathwayCatalog": false,
+        "requiredCourseGroups": [
+          { "id": "museum-core", "label": "Nueve unidades técnico-profesionales obligatorias", "minCompleted": 9, "sourceCourseIds": ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9"] },
+          { "id": "museum-language", "label": "Comprensión lectora en una lengua extranjera", "minCompleted": 1, "sourceCourseIds": ["MUS-LENGUA"] }
+        ],
+        "additionalCourses": [
+          { "id": "MUS-LENGUA", "name": "Comprensión lectora en lengua extranjera · 13 créditos", "credits": 0, "requirementId": "museum-technical", "periodLabel": "Semestre 3", "curricularBlock": true },
+          { "id": "MUS-ELECCION-4-1", "name": "Unidad optativa o electiva 1 del cuarto semestre · 13 créditos", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "MUS-ELECCION-4-2", "name": "Unidad optativa o electiva 2 del cuarto semestre · 13 créditos", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "MUS-ELECCION-4-3", "name": "Unidad optativa o electiva 3 del cuarto semestre · 13 créditos", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 4", "curricularBlock": true },
+          { "id": "MUS-ELECCION-5-1", "name": "Unidad optativa o electiva 1 del quinto semestre · 13 créditos", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 5", "curricularBlock": true },
+          { "id": "MUS-ELECCION-5-2", "name": "Unidad optativa o electiva 2 del quinto semestre · 13 créditos", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 5", "curricularBlock": true },
+          { "id": "MUS-ELECCION-5-3", "name": "Unidad optativa o electiva 3 del quinto semestre · 13 créditos", "credits": 0, "requirementId": "plan-total", "periodLabel": "Semestre 5", "curricularBlock": true }
+        ]
+      }
     }
   ]
 }

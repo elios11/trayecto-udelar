@@ -500,8 +500,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fhum-museologia-2011": {
     load: () => import("./bedelias-generated/bedelias-fhum-museologia-2011.json"),
-    pathwayIds: ["historia-del-uruguay","historia-americana","ciencia-y-tecnologia","arte","antropologia-social-y-cultural","arqueologia"],
-    pathwayLabel: "Opción temática",
+    pathwayIds: ["plan-2011"],
+    pathwayLabel: "Recorrido histórico",
     minCredits: 211,
   },
   "bedelias-fhum-tecnologo-int-y-trad-lsu-esp-2025": {

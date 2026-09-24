@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 69,
+    "official-trajectory-reproduced": 71,
     "official-trajectory-identified-pending": 19,
-    "no-official-trajectory-documented": 0,
-    "research-pending": 59,
+    "no-official-trajectory-documented": 1,
+    "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 78);
-  assert.equal(savedInventory.pendingQueue.plans.length, 78);
+  assert.equal(savedInventory.pendingQueue.total, 75);
+  assert.equal(savedInventory.pendingQueue.plans.length, 75);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 19).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(19).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -154,6 +154,21 @@ test("el tercer lote FHCE mantiene identidades separadas y sólo articula los do
     assert.deepEqual(plan.evidence.pathways.map(({ periodCount }) => periodCount), periodCounts, planId);
     assert.equal(plan.evidence.expectedCoursePlacements, plan.evidence.matchedCoursePlacements, planId);
   }
+});
+
+test("el cierre FHCE reproduce Dramaturgia y Museología sin inventar semestres para Turismo", () => {
+  const byPlanId = new Map(savedInventory.plans.map((plan) => [plan.planId, plan]));
+  const dramaturgia = byPlanId.get("bedelias-fhum-dramaturgia-2015");
+  const museologia = byPlanId.get("bedelias-fhum-museologia-2011");
+  const turismo = byPlanId.get("bedelias-cure-licenciatura-en-turismo-2014");
+  assert.equal(dramaturgia.state, "official-trajectory-reproduced");
+  assert.deepEqual(dramaturgia.evidence.pathways.map(({ periodCount }) => periodCount), [4]);
+  assert.equal(museologia.state, "official-trajectory-reproduced");
+  assert.deepEqual(museologia.evidence.pathways.map(({ periodCount }) => periodCount), [7]);
+  assert.equal(turismo.state, "no-official-trajectory-documented");
+  assert.equal(turismo.currentProjection.primary, "official-flexible-structure");
+  assert.equal(turismo.evidence.kind, "documented-absence");
+  assert.match(turismo.evidence.justification, /Próximamente/);
 });
 
 test("los planes interservicio conservan todas sus ubicaciones sin duplicar el ID global", () => {

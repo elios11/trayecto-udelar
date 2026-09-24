@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:ff062d96ceae7be740f7f672974ba3d66e102b7d2212ac5be14a6e1b05924e68",
-    "extractedReportHash": "sha256:a92bd3c36b88ec60ccb45a3c5b67eb6cd68fca96eb5bf9a12b8b1f86d290a5aa",
-    "officialAuditHash": "sha256:c8b9bf63997b34866805e2795ea635db2760de7a60dc958094c280c4fa4dac15",
-    "reviewedTrajectoriesHash": "sha256:04818ace86687b0dc80fc25fc7eae07c1ec588f50ed32e06e2f0d51ac693355e"
+    "extractedCatalogHash": "sha256:dc8f832004cd62893c45f4af43a0081b5821e1bd1a64a43cfd6f4b22bdc178d2",
+    "extractedReportHash": "sha256:de27395d6c534a0e8f3aa5411d3657a1fe7ac7506f04f9b903cfc208b2e6852c",
+    "officialAuditHash": "sha256:6e1b1926bbd0eb9d22af7b77800b566bd2ef0897ca2a21566e54f0030bdb65fe",
+    "reviewedTrajectoriesHash": "sha256:7e311a5999f0a7efb34c444146147e371fe336d53047f2d290aadd47a6216882"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 69,
+      "official-trajectory-reproduced": 71,
       "official-trajectory-identified-pending": 19,
-      "no-official-trajectory-documented": 0,
-      "research-pending": 59
+      "no-official-trajectory-documented": 1,
+      "research-pending": 56
     },
-    "pending": 78,
+    "pending": 75,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -177,10 +177,10 @@
         "serviceLabel": "Facultad de Humanidades y Ciencias de la Educación",
         "selectablePlanIds": 13,
         "states": {
-          "official-trajectory-reproduced": 10,
+          "official-trajectory-reproduced": 12,
           "official-trajectory-identified-pending": 0,
-          "no-official-trajectory-documented": 0,
-          "research-pending": 3
+          "no-official-trajectory-documented": 1,
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 78,
+    "total": 75,
     "plans": [
       {
         "priority": 1,
@@ -838,33 +838,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-cure-licenciatura-en-turismo-2014",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fhum-dramaturgia-2015",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fhum-museologia-2011",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fhum"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018",
         "state": "research-pending",
         "serviceIds": [
@@ -1120,16 +1093,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-fenf-licenciatura-en-enfermeria-2016"
-        ]
-      },
-      {
-        "serviceId": "bedelias-fhum",
-        "serviceLabel": "Facultad de Humanidades y Ciencias de la Educación",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-cure-licenciatura-en-turismo-2014",
-          "bedelias-fhum-dramaturgia-2015",
-          "bedelias-fhum-museologia-2011"
         ]
       },
       {
@@ -2920,39 +2883,19 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2014",
+      "state": "no-official-trajectory-documented",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2026-09",
       "officialSources": [
         {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/plandeestudiosli_turismo2014-1.pdf",
-          "role": "Plan 2014; título; ocho semestres; 360 créditos; módulos; obligatorias; optativas y electivas; Tesina; Práctica Profesional",
-          "trajectoryEvidence": false
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "el índice oficial marca la malla de Turismo como próxima, sin publicar todavía una secuencia"
         },
         {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-14/",
-          "role": "vigencia; título; 360 créditos; cinco módulos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de la Universidad de la República",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-turismo",
-          "role": "oferta vigente; Maldonado; Salto; ingreso alternado; 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2025/06/Informe_Final_graficos_arreglados_23_10.pdf",
-          "role": "Plan 2014 común en Maldonado y Salto; sustitución de la carrera binacional; supresión del título intermedio; cuatro años; 360 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Universidad de la República",
-          "url": "https://udelar.edu.uy/noticias/se-celebraron-convenios-de-cooperacion-con-el-ministerio-de-turismo",
-          "role": "actividad vigente 2026; equipo docente FHCE; dictado en Salto y Maldonado",
-          "trajectoryEvidence": false
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-turismo/",
+          "role": "plan vigente, estructura flexible, sedes y responsabilidad académica de FHCE"
         }
       ],
       "scope": {
@@ -2971,18 +2914,12 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en turismo:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cure-licenciatura-en-turismo-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "documented-absence",
+        "justification": "Al 24 de septiembre de 2026, el índice oficial de FHCE anuncia la malla de Turismo como ‘Próximamente’ y la página vigente de CURE publica la estructura flexible por áreas, pero no una secuencia sugerida por semestre. La proyección conserva áreas, mínimos y sedes sin usar la composición de Bedelías como orden de cursado."
       },
       "conflictNotes": [
-        "durationMonths: El plan y FHCE establecen cuatro años u ocho semestres; se corrigen los 60 meses administrativos.",
-        "campuses: La fuente canónica de Bedelías proviene del CURE, pero FHCE y Udelar confirman el mismo Plan 2014 completo en Maldonado y Salto.",
-        "moduleMinimums: Bedelías muestra en cada grupo el piso obligatorio; la UI controla el mínimo total oficial de cada módulo e incorpora las alternativas flexibles.",
-        "generalElectives: Las electivas generales cuentan para los 360 créditos pero su asignación a un módulo requiere validación académica explícita.",
-        "historicalDegrees: La Licenciatura Binacional y el título Técnico en Turismo dejaron de existir con la aplicación común del Plan 2014."
+        "La misma carrera se ofrece en Maldonado y Salto bajo responsabilidad académica de FHCE; no se duplica por servicio.",
+        "Cuando FHCE publique la malla anunciada, este estado deberá cambiar a trayectoria identificada o reproducida."
       ]
     },
     {
@@ -7480,51 +7417,24 @@
           "defaultCredentialId": "tecnico-dramaturgia"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
+          "authority": "Unidad de Apoyo a la Enseñanza, FHCE, Udelar",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "role": "índice vigente de trayectorias sugeridas"
+        },
+        {
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-8/",
-          "role": "vigencia del Plan 2015; título; dos años; 180 créditos",
-          "trajectoryEvidence": false
+          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/TUD-por-SEMESTRE-julio-2026.pdf",
+          "role": "trayectoria sugerida de cuatro semestres"
         },
         {
           "authority": "Plan de Estudios 2015, FHCE-EMAD",
           "url": "https://www.fhce.edu.uy/images/Administracion_de_la_ensenanza/TUDplanestudios2015.pdf",
-          "role": "gestión compartida; estructura 100 + 60 + 20; submínimos; talleres; pasantía; título",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular vigente por áreas, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2026/07/TUD-por-Area-Tematica-julio-2026.pdf",
-          "role": "total 180; talleres I-IV; pasantías 10 + 15; optativas; electivas 10 + 4; vida universitaria; lengua extranjera",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página vigente de la carrera, FHCE",
-          "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-dramaturgia/",
-          "role": "gestión conjunta con EMAD; título; dos años; 180 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Programas 2025 aprobados por el Consejo de FHCE",
-          "url": "https://fhce.edu.uy/programas-2025-tud/",
-          "role": "dictado de la cohorte 2025; talleres; optativas; pasantías",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/dramaturgia",
-          "role": "vigencia; 24 meses; 180 créditos; carrera compartida; cupos e ingreso no anual",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Librillo de carreras 2025, FHCE",
-          "url": "https://fhce.edu.uy/wp-content/uploads/2025/09/LIbrillo-de-las-carrreras-FHCE-2025.pdf",
-          "role": "cohorte con cupo; mínimos detallados; oferta compartida",
-          "trajectoryEvidence": false
+          "role": "gestión compartida, título, áreas y mínimos"
         }
       ],
       "scope": {
@@ -7536,24 +7446,35 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-periods",
         "features": [
-          "areas"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "dramaturgia:2015",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-dramaturgia-2015.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-dramaturgia-2015",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-dramaturgia-2015.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:a53ce5c87be586641c358e24614d598b62f6398a8ae47467f8ca4101f0fedb02",
+        "projectionContentHash": "sha256:b140d82d1377d537f45757d4902512f81e1cf09de9fc49a844674f094a8cd922",
+        "pathways": [
+          {
+            "id": "plan-flexible",
+            "periodCount": 4
+          }
+        ],
+        "expectedCoursePlacements": 21,
+        "matchedCoursePlacements": 21
       },
       "conflictNotes": [
-        "emptyTheorySubgroups: Bedelías declara 8 créditos afines a puesta en escena y 16 de ciencias humanas y sociales, pero deja vacíos ambos subgrupos y ubica 39 opciones en el padre común. La UI las clasifica conservadoramente por el contenido y la procedencia explícitos de cada unidad.",
-        "zeroCreditElectives: Las siete referencias del grupo electivo tienen crédito cero y no permiten completar los 14 exigidos. La malla vigente define Electiva 1 por 10 y Electiva 2 por 4; la UI usa esos bloques acreditables y no inventa nombres de cursos.",
-        "workshopVersions: Bedelías conserva versiones parciales e históricas de Talleres I-IV. El egreso exige al menos una variante de cada taller y 60 créditos acumulados en el grupo, evitando aceptar cuatro versiones breves que no alcancen el mínimo.",
-        "prerequisites: Las 136 consultas del snapshot no publican reglas automáticas. La UI no infiere previaturas del orden semestral: controla las obligaciones y mínimos de egreso, mientras la coordinación mantiene las condiciones de inscripción de cada cohorte.",
-        "admission: La carrera está vigente, pero abre cohortes cada dos años, con cupo y selección. La última cohorte comprobada ingresó en 2025 y FHCE invitó a postular nuevamente en 2027; no se presenta como ingreso abierto permanente."
+        "La oferta flexible de Bedelías no sustituye las posiciones genéricas que publica la malla.",
+        "Espacio escénico abarca los semestres 1 y 2, pero sus nueve créditos se acreditan una sola vez y se ubican al comienzo del recorrido.",
+        "La carrera abre por cohortes con cupo; la trayectoria no implica ingreso abierto permanente."
       ]
     },
     {
@@ -8087,31 +8008,23 @@
           "careerId": "bedelias-fhum-tecnicatura-universitaria-en-museologia",
           "careerLabel": "Tecnicatura Universitaria en Museología",
           "planLabel": "Plan 2011 · vigente",
-          "defaultTrajectoryId": "historia-del-uruguay",
+          "defaultTrajectoryId": "plan-2011",
           "defaultCredentialId": "tecnico-universitario-museologia"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-30",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-24",
       "effectiveAt": "2011",
       "officialSources": [
         {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-museologia/",
-          "role": "existencia institucional de la carrera; ausencia de nuevos ingresos desde 2010; atención en Montevideo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-6/",
-          "role": "denominación; título; 211 créditos; plan publicado",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Plan de Estudios de la Tecnicatura Universitaria en Museología, FHCE",
+          "authority": "Plan de Estudios de la Tecnicatura Universitaria en Museología, FHCE, Udelar",
           "url": "https://fhce.edu.uy/wp-content/uploads/2023/01/tecnicatura_en_museologia.pdf",
-          "role": "título único; seis semestres; 211 créditos; tres áreas; seis opciones temáticas; núcleo obligatorio; lengua extranjera; pasantía",
-          "trajectoryEvidence": false
+          "role": "secuencia de seis semestres, áreas y mínimos"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-bienes-culturales-tubicu/",
+          "role": "oferta vigente relacionada y mención Museología"
         }
       ],
       "scope": {
@@ -8119,12 +8032,7 @@
           "Montevideo"
         ],
         "pathwayIds": [
-          "historia-del-uruguay",
-          "historia-americana",
-          "ciencia-y-tecnologia",
-          "arte",
-          "antropologia-social-y-cultural",
-          "arqueologia"
+          "plan-2011"
         ]
       },
       "currentProjection": {
@@ -8134,18 +8042,29 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "museologia:2011",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fhum-museologia-2011.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fhce/official-trajectories-2014.json",
+        "sourcePlanId": "bedelias-fhum-museologia-2011",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fhum-museologia-2011.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:d31ea4fc0782482e5f2551780ce5eb117ac8b191f378d9e9915b797a89f0e46d",
+        "projectionContentHash": "sha256:b39df173a887877386ffda2e30b4f860ab1237bc64147c0333fd1bb26d25bb2c",
+        "pathways": [
+          {
+            "id": "plan-2011",
+            "periodCount": 7
+          }
+        ],
+        "expectedCoursePlacements": 17,
+        "matchedCoursePlacements": 17
       },
       "conflictNotes": [
-        "admissionStatus: FHCE informa que la tecnicatura no abre inscripciones desde 2010. La UI la conserva para estudiantes con escolaridad y lo advierte explícitamente; no se presenta como ingreso vigente.",
-        "bedeliasTitle: Bedelías rotula el snapshot con el perfil Antropología Social y Cultural. El plan oficial otorga un único título genérico y define seis opciones temáticas, por lo que el perfil pasa a ser seleccionable.",
-        "durationMonths: El inventario infería 24 meses, pero el plan distribuye la carrera en seis semestres. La UI normaliza la duración a 36 meses.",
-        "currentTeaching: La oferta 2026 de Museología I corresponde a la TUBICU y puede acreditarse en otras carreras; no demuestra reapertura de la Tecnicatura Universitaria en Museología.",
-        "catalogBreadth: Bedelías reúne alternativas, equivalencias y unidades históricas en cada perfil. La UI controla los mínimos y las obligatorias, pero no convierte todo el catálogo acreditable en una secuencia requerida."
+        "El plan se conserva para escolaridades existentes y no se presenta como ingreso vigente.",
+        "Las seis opciones temáticas son elecciones dentro del mismo título, no seis carreras ni seis trayectorias obligatorias.",
+        "Bienes Culturales con mención Museología es la oferta vigente relacionada; no se infiere migración automática de progreso."
       ]
     },
     {
@@ -13605,5 +13524,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:8375dcde33918b427dce2b013be194872a1ee8fd768feb8a1f357ed45b977b00"
+  "contentHash": "sha256:0ab788fe17a65dad19203e4f5f35e4e6deaad618d069d7349d863ad6509a557c"
 }

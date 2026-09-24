@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:a0fb5f4cfc1614a9c30b3e568948fd4a96f5ab1c9e5b4d4280de0c3bc04e5b28",
-    "officialAuditHash": "sha256:c8b9bf63997b34866805e2795ea635db2760de7a60dc958094c280c4fa4dac15",
+    "auditQueueHash": "sha256:0ebcd2f87263b615c3a8eccbfbf64280a1f299a897d67cc92160e04d47431b11",
+    "officialAuditHash": "sha256:6e1b1926bbd0eb9d22af7b77800b566bd2ef0897ca2a21566e54f0030bdb65fe",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
-    "fhceReconciliationsHash": "sha256:0b4510ad87acb1d29d1118ab650debb052f8f2c4fb9eaf0e00fdaf6288ca17a3"
+    "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -14,14 +14,14 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4344,
-      "candidate": 28003,
-      "historical-equivalent": 44,
+      "verified": 4279,
+      "candidate": 28082,
+      "historical-equivalent": 43,
       "administrative": 177,
       "rejected": 9
     },
-    "beforePublishedCourses": 32355,
-    "afterPublishedCourses": 4344,
+    "beforePublishedCourses": 32369,
+    "afterPublishedCourses": 4279,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1426,
     "visibleTargetsWithUnpublishedDependencies": 1103,
@@ -2327,21 +2327,37 @@
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 130,
+        "publishedCourses": 141,
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 80,
-        "hiddenCourses": 58,
+        "publishedCourses": 21,
+        "hiddenCourses": 127,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 80,
-        "candidate": 50,
-        "historical-equivalent": 1,
+        "verified": 21,
+        "candidate": 120,
+        "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 7
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 80,
+          "candidate": 50,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 21,
+          "candidate": 120,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 7
+        }
       }
     },
     {
@@ -2680,21 +2696,37 @@
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 392,
+        "publishedCourses": 395,
         "publishedRules": 36
       },
       "after": {
-        "publishedCourses": 23,
-        "hiddenCourses": 369,
+        "publishedCourses": 17,
+        "hiddenCourses": 378,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 23,
-        "candidate": 369,
+        "verified": 17,
+        "candidate": 378,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 23,
+          "candidate": 369,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 17,
+          "candidate": 378,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4415,5 +4447,5 @@
       }
     }
   ],
-  "contentHash": "sha256:a92bd3c36b88ec60ccb45a3c5b67eb6cd68fca96eb5bf9a12b8b1f86d290a5aa"
+  "contentHash": "sha256:de27395d6c534a0e8f3aa5411d3657a1fe7ac7506f04f9b903cfc208b2e6852c"
 }

@@ -9,15 +9,6 @@ const projection = await readJson("app/data/bedelias-generated/bedelias-fhum-mus
 const officialAudit = audits.audits.find(({ identity }) => identity === "museologia:2011");
 const credential = projection.creditStructure.credentials[0];
 
-const expectedPathways = [
-  "historia-del-uruguay",
-  "historia-americana",
-  "ciencia-y-tecnologia",
-  "arte",
-  "antropologia-social-y-cultural",
-  "arqueologia",
-];
-
 test("conserva Museología para escolaridades existentes sin presentarla como ingreso vigente", () => {
   assert.equal(officialAudit.status, "official-evidence-complete");
   assert.equal(officialAudit.publicationEligible, true);
@@ -29,16 +20,13 @@ test("conserva Museología para escolaridades existentes sin presentarla como in
   assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo"]);
 });
 
-test("modela seis opciones temáticas del mismo título y no seis carreras", () => {
-  assert.deepEqual(Object.keys(projection.pathways), expectedPathways);
+test("modela un único recorrido histórico y conserva un solo título", () => {
+  assert.deepEqual(Object.keys(projection.pathways), ["plan-2011"]);
   assert.equal(projection.creditStructure.credentials.length, 1);
   assert.equal(credential.title, "Técnico Universitario en Museología");
-  for (const [pathwayId, pathway] of Object.entries(projection.pathways)) {
-    assert.deepEqual(pathway.campusIds, ["montevideo"]);
-    assert.match(pathway.description, /mismo título/);
-    const thematicPeriods = pathway.periods.filter(({ label }) => label.startsWith("Opción temática ·"));
-    assert.equal(thematicPeriods.length, 1, pathwayId);
-  }
+  assert.deepEqual(projection.pathways["plan-2011"].campusIds, ["montevideo"]);
+  assert.match(projection.plan.notice, /sin nuevos ingresos desde 2010/i);
+  assert.match(projection.plan.notice, /Bienes Culturales/i);
 });
 
 test("controla exactamente los tres mínimos oficiales que suman 211 créditos", () => {
@@ -56,28 +44,31 @@ test("exige el núcleo, una lengua, la pasantía y la validación final", () => 
   assert.equal(groups.get("museum-core").minCompleted, 9);
   assert.equal(groups.get("museum-core").courseIds.length, 9);
   assert.equal(groups.get("museum-language").minCompleted, 1);
-  assert.equal(groups.get("museum-language").courseIds.length, 9);
+  assert.equal(groups.get("museum-language").courseIds.length, 1);
+  assert.equal(projection.courses.find(({ id }) => id === groups.get("museum-language").courseIds[0]).curricularBlock, true);
   assert.equal(groups.get("validacion-final-plan").minCompleted, 1);
   assert.ok(groups.get("museum-core").courseIds.some((id) => projection.courses.find((course) => course.id === id)?.bedeliasCode === "M9"));
 });
 
-test("presenta los seis semestres y deja la validación al final de cada opción", () => {
+test("presenta los seis semestres y deja la validación al final del recorrido", () => {
   for (const pathway of Object.values(projection.pathways)) {
     for (let semester = 1; semester <= 6; semester += 1) {
       assert.ok(pathway.periods.some(({ label }) => label === `Semestre ${semester}`));
     }
     assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
   }
-  const choiceBlocks = projection.courses.filter(({ name }) => /entre semestres 4 y 5/.test(name));
-  assert.equal(choiceBlocks.length, 4);
+  const choiceBlocks = projection.courses.filter(({ name }) => /Unidad optativa o electiva/.test(name));
+  assert.equal(choiceBlocks.length, 6);
   assert.ok(choiceBlocks.every(({ credits, curricularBlock }) => credits === 0 && curricularBlock));
 });
 
-test("mantiene el catálogo por opción y las previaturas publicadas sin volver todo obligatorio", () => {
-  assert.equal(projection.courses.length, 392);
+test("mantiene el catálogo histórico oculto y las previaturas publicadas", () => {
   assert.equal(projection.rules.length, 36);
   assert.equal(projection.plan.noPublishedRule, 304);
   assert.equal(officialAudit.bedeliasComparison.compositionMatterCount, 344);
+  const visibleIds = new Set(projection.pathways["plan-2011"].periods.flatMap(({ courseIds }) => courseIds));
+  assert.ok([...visibleIds].every((id) => projection.courses.find((course) => course.id === id)?.authorityStatus === "verified"));
+  assert.ok(projection.courses.some(({ authorityStatus }) => authorityStatus === "candidate"));
   assert.match(officialAudit.anomalies.find(({ field }) => field === "catalogBreadth").resolution, /no convierte todo el catálogo/i);
 });
 

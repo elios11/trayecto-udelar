@@ -65,12 +65,13 @@ test("controla 100 + 60 + 20 y todos los submínimos oficiales", () => {
   assert.equal(credential.nodeRequirements.length, 12);
 });
 
-test("exige los cuatro talleres troncales sin aceptar versiones breves como 60 créditos", () => {
+test("exige los cuatro talleres troncales vigentes sin aceptar variantes históricas", () => {
   const groups = new Map(credential.requiredCourseGroups.map((group) => [group.id, group]));
-  for (const number of [1, 2, 3, 4]) {
+  const expectedCodes = ["D26", "D33", "D80", "D83"];
+  for (const [index, number] of [1, 2, 3, 4].entries()) {
     const group = groups.get(`tud-workshop-${number}`);
     assert.equal(group.minCompleted, 1);
-    assert.ok(group.courseIds.length >= 2);
+    assert.deepEqual(group.courseIds.map((id) => courseById.get(id).bedeliasCode), [expectedCodes[index]]);
   }
   const workshopNode = projection.creditStructure.nodes.find(({ id }) => id === "tud-dramaturgy-workshops");
   assert.equal(workshopNode.minCredits, 60);
@@ -78,14 +79,13 @@ test("exige los cuatro talleres troncales sin aceptar versiones breves como 60 c
   assert.equal(groups.get("tud-theory-core").minCompleted, 4);
 });
 
-test("clasifica las optativas teóricas en puesta en escena o humanidades", () => {
-  const optional = pathway.periods.find(({ label }) => label === "Teórico-prácticas optativas");
-  assert.equal(optional.courseIds.length, 39);
-  const assignments = optional.courseIds.map((id) => courseById.get(id).eligibleRequirementIds);
-  assert.equal(assignments.filter((ids) => ids.includes("tud-staging")).length, 13);
-  assert.equal(assignments.filter((ids) => ids.includes("tud-humanities")).length, 26);
-  assert.ok(assignments.every((ids) => ids.length === 1));
-  assert.match(officialAudit.anomalies.find(({ field }) => field === "emptyTheorySubgroups").resolution, /vacíos/);
+test("reproduce los cuatro semestres oficiales y oculta el catálogo no demostrado", () => {
+  assert.deepEqual(pathway.periods.map(({ label }) => label), ["Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4"]);
+  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [6, 4, 6, 5]);
+  const visibleIds = new Set(pathway.periods.flatMap(({ courseIds }) => courseIds));
+  assert.ok([...visibleIds].every((id) => courseById.get(id)?.authorityStatus === "verified"));
+  assert.ok(projection.courses.some(({ authorityStatus }) => authorityStatus === "candidate"));
+  assert.ok(![...visibleIds].some((id) => courseById.get(id)?.authorityStatus === "candidate"));
 });
 
 test("reemplaza el grupo electivo imposible por dos bloques acreditables 10 + 4", () => {
@@ -98,13 +98,12 @@ test("reemplaza el grupo electivo imposible por dos bloques acreditables 10 + 4"
   assert.equal(projection.courses.some(({ bedeliasCode }) => ["UHD4", "UHD3", "UHD2", "UHD1", "EF158", "IDP", "IEI"].includes(bedeliasCode)), false);
 });
 
-test("mantiene la oferta flexible sin inventar previaturas", () => {
-  assert.equal(projection.courses.length, 130);
+test("mantiene la oferta flexible fuera de la trayectoria y no inventa previaturas", () => {
   assert.equal(projection.rules.length, 0);
   assert.equal(projection.plan.publishedRules, 0);
   assert.equal(projection.plan.noPublishedRule, 136);
   const visibleIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
-  assert.equal(new Set(visibleIds).size, 130);
+  assert.equal(new Set(visibleIds).size, 21);
   assert.ok(visibleIds.every((id) => courseById.has(id)));
   assert.equal(officialAudit.conclusion.canonicalModel, "one-shared-technical-degree-one-flexible-path");
 });
