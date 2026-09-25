@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 72,
-    "official-trajectory-identified-pending": 18,
+    "official-trajectory-reproduced": 73,
+    "official-trajectory-identified-pending": 17,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 74);
-  assert.equal(savedInventory.pendingQueue.plans.length, 74);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 18).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(18).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 73);
+  assert.equal(savedInventory.pendingQueue.plans.length, 73);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 17).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(17).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -92,7 +92,7 @@ test("una fuente de períodos o trayectorias auditada nunca se degrada a ausenci
   }
 });
 
-test("el piloto TUCE y Nutrición quedan cerrados y las divergencias conocidas permanecen en la cola", () => {
+test("TUCE, Nutrición y TGU quedan cerrados y las divergencias conocidas permanecen en la cola", () => {
   const byPlanId = new Map(savedInventory.plans.map((plan) => [plan.planId, plan]));
   const correction = byPlanId.get("bedelias-fhum-correccion-de-estilo-2014");
   assert.equal(correction.state, "official-trajectory-reproduced");
@@ -106,8 +106,14 @@ test("el piloto TUCE y Nutrición quedan cerrados y las divergencias conocidas p
   assert.equal(nutrition.evidence.matchedCoursePlacements, 33);
   assert.deepEqual(nutrition.scope.territories, ["Montevideo", "Paysandú · Sólo Ciclo IV"]);
 
+  const tgu = byPlanId.get("bedelias-fcea-tecnologo-en-gestion-universitaria-2018");
+  assert.equal(tgu.state, "official-trajectory-reproduced");
+  assert.equal(tgu.evidence.officialPeriodCount, 5);
+  assert.equal(tgu.evidence.expectedCoursePlacements, 45);
+  assert.equal(tgu.evidence.matchedCoursePlacements, 45);
+  assert.deepEqual(tgu.scope.territories, ["Montevideo"]);
+
   for (const planId of [
-    "bedelias-fcea-tecnologo-en-gestion-universitaria-2018",
     "bedelias-fcs-licenciatura-en-ciencia-politica-2009",
     "bedelias-fcs-licenciatura-en-desarrollo-2009",
   ]) {

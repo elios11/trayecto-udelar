@@ -55,6 +55,11 @@ test("aplica los mínimos vigentes de 2026 sin contar dos veces la libre elecci�
 });
 
 test("separa los cinco semestres del catálogo flexible y exige una sola UPC", () => {
+  assert.deepEqual(audit.officialPlan.curriculum.periods.map((period) => period.label), [
+    "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", "Semestre 5",
+  ]);
+  assert.equal(audit.officialPlan.curriculum.catalogCourses.length, 24);
+  assert.equal(audit.officialPlan.curriculum.periods.flatMap((period) => period.courses).length, 21);
   assert.deepEqual(projection.pathways.bedelias.periods.map((period) => period.label), [
     "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", "Semestre 5",
   ]);
@@ -64,6 +69,10 @@ test("separa los cinco semestres del catálogo flexible y exige una sola UPC", (
     const course = projection.courses.find((entry) => entry.id === id);
     return course?.eligibleRequirementIds[0] === "tgu-libre";
   }));
+  assert.equal(new Set([
+    ...projection.pathways.bedelias.periods.flatMap((period) => period.courseIds),
+    ...projection.pathways.bedelias.catalogCourseIds,
+  ]).size, 45);
   assert.ok(!projection.courses.some((course) => /Cargos y Remuneraciones|Transformación Cultural/.test(course.name)));
 
   const [mandatory, practice] = projection.creditStructure.credentials[0].requiredCourseGroups;

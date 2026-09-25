@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:dc8f832004cd62893c45f4af43a0081b5821e1bd1a64a43cfd6f4b22bdc178d2",
-    "extractedReportHash": "sha256:7e1cfae8d42fcb4d7f2bd8e515f41a5e46947c8d52798650a7ea51d2a8f3b67d",
-    "officialAuditHash": "sha256:27f41470949517132b5dabd59f82c0424394a59391c8d4133bd7257b0ba416cd",
+    "extractedReportHash": "sha256:d29546d71b4a7e83f41551f384305de0264d23515293bb1dbcf5afb8f92f4f75",
+    "officialAuditHash": "sha256:064a2d9e84dabf1434f9449b306d94106eda3ad1cdd57c1fca6247a9d002eb55",
     "reviewedTrajectoriesHash": "sha256:7e311a5999f0a7efb34c444146147e371fe336d53047f2d290aadd47a6216882"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 72,
-      "official-trajectory-identified-pending": 18,
+      "official-trajectory-reproduced": 73,
+      "official-trajectory-identified-pending": 17,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 74,
+    "pending": 73,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -133,8 +133,8 @@
         "serviceLabel": "Facultad de Ciencias Económicas y de Administración",
         "selectablePlanIds": 8,
         "states": {
-          "official-trajectory-reproduced": 2,
-          "official-trajectory-identified-pending": 1,
+          "official-trajectory-reproduced": 3,
+          "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
           "research-pending": 5
         }
@@ -274,17 +274,8 @@
     ]
   },
   "pendingQueue": {
-    "total": 74,
+    "total": 73,
     "plans": [
-      {
-        "priority": 1,
-        "planId": "bedelias-fcea-tecnologo-en-gestion-universitaria-2018",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "bedelias-fcea"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
       {
         "priority": 1,
         "planId": "bedelias-fcs-licenciatura-en-ciencia-politica-2009",
@@ -1039,9 +1030,7 @@
       {
         "serviceId": "bedelias-fcea",
         "serviceLabel": "Facultad de Ciencias Económicas y de Administración",
-        "identifiedPending": [
-          "bedelias-fcea-tecnologo-en-gestion-universitaria-2018"
-        ],
+        "identifiedPending": [],
         "researchPending": [
           "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
           "bedelias-fcea-contador-publico-2024",
@@ -5184,8 +5173,8 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-20",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-25",
       "effectiveAt": "2018",
       "officialSources": [
         {
@@ -5238,28 +5227,28 @@
         "auditIdentity": "tecnologo en gestion universitaria:2018",
         "auditPath": "data/bedelias/audits/official-source-audits.json",
         "projectionPath": "app/data/bedelias-generated/bedelias-fcea-tecnologo-en-gestion-universitaria-2018.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
+        "periodLabelsMatch": true,
+        "coursePlacementsMatch": true,
         "expectedCoursePlacements": 45,
-        "matchedCoursePlacements": 21,
-        "officialPeriodCount": 6,
+        "matchedCoursePlacements": 45,
+        "officialPeriodCount": 5,
         "projectedPathways": [
           {
             "id": "bedelias",
             "periodCount": 5
           }
         ],
-        "projectionContentHash": "sha256:d9c45465e398ddf7866a0b0a758ecbdc112bc687d1bd77cd19320ca469a23a9d"
+        "projectionContentHash": "sha256:927e42b4a5c29ae342dc905e404be4fdfae3afc7ed931180149a97313f7001e6"
       },
       "conflictNotes": [
         "planYear: El PDF aprobado imprime año 2015 y su ruta institucional contiene 2017, mientras Bedelías y las resoluciones vigentes identifican la carrera como Plan 2018. La UI conserva 2018 para coincidir con la inscripción y la grilla actual.",
         "creditMinimums: El plan aprobado asignaba 30 créditos a CSH y 45 a libre elección. La grilla vigente de julio de 2026 publica 40 CSH y 35 libres, manteniendo 225 totales; la UI usa los mínimos actuales.",
         "freeChoiceCounting: FCEA muestra cada libre elección en un área disciplinar y exige además 35 créditos libres. Como el núcleo obligatorio ya satisface los mínimos de las seis áreas, la UI asigna cada alternativa sólo al bloque libre para evitar contar dos veces los mismos créditos.",
+        "trajectoryInventory: La auditoría anterior guardaba las 24 opciones de libre elección como un sexto período técnico. El inventario comparaba esas 45 ubicaciones contra cinco semestres con 21 unidades y producía un falso 21/45. Se separa el catálogo flexible de los cinco períodos oficiales y se cotejan ambos conjuntos de forma independiente.",
         "upc: La grilla ofrece Pasantía de 20 créditos o Proyecto de Gestión de 10 como alternativas de la UPC. La UI exige aprobar una de las dos y acepta que la pasantía produzca un total superior al mínimo de 225.",
         "currentOffer: Taller de Cargos y Remuneraciones y Transformación Cultural figuran como opciones reconocidas pero expresamente no se dictan en 2026; no se incluyen en el catálogo activo.",
         "prerequisites: FCEA remite las previaturas vigentes a cada ficha de curso o a Autogestión desde septiembre de 2020. Sin una tabla pública consolidada, la UI no infiere correlatividades desde el orden semestral.",
-        "campus: La página oficial publica Montevideo y EVA. EVA es el entorno virtual de apoyo, no una sede o trayectoria independiente.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "campus: La página oficial publica Montevideo y EVA. EVA es el entorno virtual de apoyo, no una sede o trayectoria independiente."
       ]
     },
     {
@@ -13508,5 +13497,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:4f1d8ad0ace5cb974399f21e40c188cdba13466fa89ca4ddd235669d9c155489"
+  "contentHash": "sha256:164dfb9fbd84d3f3a44f6d03373c7ad37b438da4b0c4d76ad50dbbb3fe279c35"
 }
