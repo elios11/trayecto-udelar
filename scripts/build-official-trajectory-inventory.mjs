@@ -154,6 +154,7 @@ function officialSources(audit, trajectoryEvidenceUrls) {
     url: source.url,
     role: (source.supports ?? []).join("; "),
     trajectoryEvidence: trajectoryEvidenceUrls.has(source.url),
+    ...(source.contentHash ? { contentHash: source.contentHash } : {}),
   }));
   const curriculumUrl = audit?.officialPlan?.curriculum?.sourceUrl;
   if (curriculumUrl && !sources.some(({ url }) => url === curriculumUrl)) {
@@ -213,6 +214,12 @@ function compareOfficialPeriods(audit, projection) {
       expectedCoursePlacements += 1;
       if (projectedNames.has(normalize(course.name))) matchedCoursePlacements += 1;
     }
+  }
+  const projectedCatalogNames = new Set(projectedPathways.flatMap(([, pathway]) =>
+    (pathway.catalogCourseIds ?? []).map((courseId) => normalize(courseById.get(courseId)?.name))).filter(Boolean));
+  for (const course of audit.officialPlan.curriculum.catalogCourses ?? []) {
+    expectedCoursePlacements += 1;
+    if (projectedCatalogNames.has(normalize(course.name))) matchedCoursePlacements += 1;
   }
   return {
     periodLabelsMatch,

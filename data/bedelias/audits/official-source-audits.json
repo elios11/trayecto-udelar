@@ -15880,11 +15880,11 @@
       "identity": "licenciatura en nutricion:2014",
       "career": "LICENCIATURA EN NUTRICIÓN",
       "planYear": "2014",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-09-25",
       "status": "official-evidence-complete",
       "scope": "current-curriculum-cycles-flexibility-prerequisites-title-duration-and-territorial-scope",
       "publicationEligible": false,
-      "uiNotice": "El Plan 2014 exige 360 créditos en ocho semestres. La carrera completa se dicta en Montevideo; en Paysandú se puede realizar únicamente el Ciclo IV de Desempeño Profesional (Práctica Profesional y Trabajo Final de Grado). Las prácticas articuladoras y los campos de práctica permiten recorridos flexibles, pero no constituyen trayectorias certificadas diferentes.",
+      "uiNotice": "El Plan 2014 exige 360 créditos en ocho semestres. Los tres primeros ciclos son semestrales y el Ciclo IV se desarrolla de abril a noviembre. La carrera completa se dicta en Montevideo; en Paysandú se puede realizar únicamente el Ciclo IV de Desempeño Profesional (Práctica Profesional y Trabajo Final de Grado). Las prácticas articuladoras y los campos de práctica permiten recorridos flexibles, pero no constituyen trayectorias certificadas diferentes.",
       "officialPlan": {
         "facultyCode": "ENUT",
         "facultyName": "ESCUELA DE NUTRICIÓN",
@@ -15896,10 +15896,11 @@
         "durationMonths": 48,
         "minimumCredits": 360,
         "curriculum": {
-          "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2019/07/Plan-Estudios-2014-1.pdf",
+          "sourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2024/11/malla-curricular-V2png.jpg",
+          "planSourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2019/07/Plan-Estudios-2014-1.pdf",
           "prerequisitesSourceUrl": "https://www.nutricion.edu.uy/wp-content/uploads/2025/12/Disposiciones-reglamentarias-Actualizado-Diciembre-2025.pdf",
-          "pathwayLabel": "Malla oficial flexible",
-          "pathwayDescription": "Cuatro ciclos de 90 créditos. Las optativas y electivas son componentes flexibles del mismo plan y aparecen en el catálogo, no como un semestre adicional ni como trayectorias separadas.",
+          "pathwayLabel": "Malla oficial del Plan 2014",
+          "pathwayDescription": "Los tres primeros ciclos se organizan en dos semestres cada uno. El Ciclo IV es anual, de abril a noviembre, e integra Práctica Profesional y Trabajo Final de Grado. Las optativas y electivas atraviesan el recorrido como componentes flexibles del mismo plan y aparecen en el catálogo, no como un período adicional ni como trayectorias separadas.",
           "creditRequirements": [
             {
               "id": "nut-disciplinares",
@@ -15934,7 +15935,7 @@
           ],
           "periods": [
             {
-              "label": "Semestre 1",
+              "label": "Ciclo I · 1.er semestre",
               "courses": [
                 {
                   "id": "curso-introductorio",
@@ -15975,7 +15976,7 @@
               ]
             },
             {
-              "label": "Semestre 2",
+              "label": "Ciclo I · 2.º semestre",
               "courses": [
                 {
                   "id": "normativa-alimentaria",
@@ -16010,7 +16011,7 @@
               ]
             },
             {
-              "label": "Semestre 3",
+              "label": "Ciclo II · 1.er semestre",
               "courses": [
                 {
                   "id": "diagnostico-estado-nutricional",
@@ -16045,7 +16046,7 @@
               ]
             },
             {
-              "label": "Semestre 4",
+              "label": "Ciclo II · 2.º semestre",
               "courses": [
                 {
                   "id": "produccion-alimentos",
@@ -16080,7 +16081,7 @@
               ]
             },
             {
-              "label": "Semestre 5",
+              "label": "Ciclo III · 1.er semestre",
               "courses": [
                 {
                   "id": "etica-alimentacion",
@@ -16115,7 +16116,7 @@
               ]
             },
             {
-              "label": "Semestre 6",
+              "label": "Ciclo III · 2.º semestre",
               "courses": [
                 {
                   "id": "nutricion-clinica-2",
@@ -16138,19 +16139,14 @@
               ]
             },
             {
-              "label": "Semestre 7",
+              "label": "Ciclo IV · abril a noviembre",
               "courses": [
                 {
                   "id": "practica-profesional",
                   "name": "Práctica Profesional",
                   "credits": 45,
                   "requirementId": "nut-desempeno-profesional"
-                }
-              ]
-            },
-            {
-              "label": "Semestre 8",
-              "courses": [
+                },
                 {
                   "id": "trabajo-final-grado",
                   "name": "Trabajo Final de Grado",
@@ -16158,26 +16154,22 @@
                   "requirementId": "nut-desempeno-profesional"
                 }
               ]
+            }
+          ],
+          "catalogCourses": [
+            {
+              "id": "creditos-optativos",
+              "name": "Créditos optativos",
+              "credits": 30,
+              "requirementId": "nut-optativas",
+              "curricularBlock": true
             },
             {
-              "label": "Catálogo flexible",
-              "catalog": true,
-              "courses": [
-                {
-                  "id": "creditos-optativos",
-                  "name": "Créditos optativos",
-                  "credits": 30,
-                  "requirementId": "nut-optativas",
-                  "curricularBlock": true
-                },
-                {
-                  "id": "creditos-electivos",
-                  "name": "Créditos electivos",
-                  "credits": 10,
-                  "requirementId": "nut-electivas",
-                  "curricularBlock": true
-                }
-              ]
+              "id": "creditos-electivos",
+              "name": "Créditos electivos",
+              "credits": 10,
+              "requirementId": "nut-electivas",
+              "curricularBlock": true
             }
           ],
           "creditGroups": [
@@ -16412,7 +16404,7 @@
           "Mostrar una carrera bajo Escuela de Nutrición, un Plan 2014 y 360 créditos en ocho semestres.",
           "Mostrar Montevideo como carrera completa y Paysandú con la etiqueta explícita de que allí sólo se realiza el Ciclo IV.",
           "Exigir 190 créditos disciplinares, 30 optativos, 10 electivos, 40 de prácticas articuladoras y 90 de desempeño profesional.",
-          "Mantener optativas y electivas en el catálogo flexible, sin crear un noveno semestre ni una trayectoria artificial.",
+          "Reproducir las 31 unidades ubicadas por la malla en seis semestres y el Ciclo IV anual; conservar además los dos bloques transversales de optativas y electivas en el catálogo flexible, sin crear un noveno período ni una trayectoria artificial.",
           "Automatizar la cadena de prácticas, el mínimo de 56 créditos obligatorios del Ciclo I para ingresar al Ciclo III y las condiciones de acceso a Práctica Profesional y TFG que la UI puede representar fielmente."
         ]
       },
@@ -16442,10 +16434,13 @@
         {
           "url": "https://www.nutricion.edu.uy/wp-content/uploads/2024/11/malla-curricular-V2png.jpg",
           "authority": "Escuela de Nutrición",
+          "contentHash": "sha256:2adbe0bfec022f99b2a4a127b57ed68ab5b77192ad130113b365b4c73cb36760",
           "supports": [
             "malla vigente",
             "créditos por unidad",
             "áreas",
+            "seis semestres y Ciclo IV anual",
+            "bloques transversales optativos y electivos",
             "Práctica Profesional",
             "Trabajo Final de Grado"
           ]
@@ -16502,6 +16497,10 @@
           "resolution": "La oferta de optativas cambia por semestre. La UI conserva bloques de 30 créditos optativos y 10 electivos en el catálogo flexible, en vez de congelar como obligatoria una oferta temporal."
         },
         {
+          "field": "temporalStructure",
+          "resolution": "La malla ubica 29 unidades en los seis semestres de los ciclos I a III, Práctica Profesional y TFG durante todo el Ciclo IV, y dos bloques flexibles transversales. Se modelan siete períodos curriculares —el último anual— más el catálogo flexible; la duración normativa continúa siendo de ocho semestres."
+        },
+        {
           "field": "cycleTwoEnrollment",
           "resolution": "El ingreso al Ciclo II exige haber rendido al menos una evaluación de determinadas unidades del Ciclo I. La UI no registra intentos no aprobados, por lo que esa condición se informa pero no se endurece como aprobación obligatoria."
         },
@@ -16514,7 +16513,7 @@
           "resolution": "La descripción general agrupa 90 créditos como práctica profesional; la malla vigente los desagrega en 45 de Práctica Profesional y 45 de Trabajo Final de Grado. La UI usa esa desagregación actual."
         }
       ],
-      "remainingWork": "La malla, los mínimos, la flexibilidad, las previaturas representables y el alcance territorial quedan operativos. Mantener actualizado el catálogo de optativas por separado y ampliar el estado académico sólo si se necesita representar intentos de evaluación o condiciones de defensa distintas del inicio del TFG."
+      "remainingWork": "La trayectoria oficial, sus 33 ubicaciones, los mínimos, la flexibilidad, las previaturas representables y el alcance territorial quedan reconciliados. Mantener actualizado el catálogo variable de optativas por separado y ampliar el estado académico sólo si se necesita representar intentos de evaluación o condiciones de defensa distintas del inicio del TFG."
     },
     {
       "identity": "licenciatura en vitivinicultura:2006",
@@ -72665,6 +72664,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:6e1b1926bbd0eb9d22af7b77800b566bd2ef0897ca2a21566e54f0030bdb65fe",
+  "contentHash": "sha256:27f41470949517132b5dabd59f82c0424394a59391c8d4133bd7257b0ba416cd",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

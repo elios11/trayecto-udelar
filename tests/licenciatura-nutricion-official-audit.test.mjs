@@ -29,7 +29,7 @@ test("publica una sola Licenciatura en Nutrición y distingue la oferta parcial 
   assert.equal(audit.conclusion.regionalCurriculumVariant, false);
 });
 
-test("conserva los 360 créditos oficiales por modalidad y los ocho semestres", () => {
+test("conserva los 360 créditos oficiales y reproduce la organización temporal vigente", () => {
   const requirements = new Map(projection.creditStructure.nodes.map((node) => [node.id, node.minCredits]));
   assert.deepEqual([
     "nut-disciplinares",
@@ -39,7 +39,20 @@ test("conserva los 360 créditos oficiales por modalidad y los ocho semestres", 
     "nut-desempeno-profesional",
   ].map((id) => requirements.get(id)), [190, 30, 10, 40, 90]);
   assert.equal([...requirements.values()].slice(1).reduce((sum, credits) => sum + credits, 0), 360);
-  assert.equal(projection.pathways.bedelias.periods.length, 8);
+  assert.equal(projection.plan.durationMonths, 48);
+  assert.deepEqual(projection.pathways.bedelias.periods.map(({ label }) => label), [
+    "Ciclo I · 1.er semestre",
+    "Ciclo I · 2.º semestre",
+    "Ciclo II · 1.er semestre",
+    "Ciclo II · 2.º semestre",
+    "Ciclo III · 1.er semestre",
+    "Ciclo III · 2.º semestre",
+    "Ciclo IV · abril a noviembre",
+  ]);
+  assert.deepEqual(projection.pathways.bedelias.periods.at(-1).courseIds, [
+    "enut-practica-profesional",
+    "enut-trabajo-final-grado",
+  ]);
   assert.equal(projection.courses.length, 33);
 
   const allocated = (requirementId) => projection.courses
@@ -57,6 +70,12 @@ test("muestra optativas y electivas como catálogo flexible y no como noveno sem
   ]);
   assert.ok(projection.pathways.bedelias.periods.every((period) => period.label !== "Catálogo flexible"));
   assert.ok(projection.pathways.bedelias.catalogCourseIds.every((id) => projection.courses.find((course) => course.id === id)?.curricularBlock));
+  assert.equal(projection.pathways.bedelias.periods.flatMap(({ courseIds }) => courseIds).length
+    + projection.pathways.bedelias.catalogCourseIds.length, 33);
+  assert.equal(audit.officialPlan.curriculum.periods.length, 7);
+  assert.equal(audit.officialPlan.curriculum.catalogCourses.length, 2);
+  assert.equal(audit.sources.find(({ url }) => url.endsWith("malla-curricular-V2png.jpg"))?.contentHash,
+    "sha256:2adbe0bfec022f99b2a4a127b57ed68ab5b77192ad130113b365b4c73cb36760");
   assert.match(pageSource, /catalogIds\.has\(course\.id\) \? "opt"/);
 });
 

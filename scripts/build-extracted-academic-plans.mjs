@@ -362,7 +362,10 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
     }));
   }
   const hasOfficialCourses = audit?.officialPlan?.curriculum?.periods?.some((period) => (period.courses ?? []).length > 0) === true;
-  const catalogCourseIds = periods.filter((period) => period.catalog).flatMap((period) => period.courseIds);
+  const catalogCourseIds = [
+    ...periods.filter((period) => period.catalog).flatMap((period) => period.courseIds),
+    ...(officialCurriculum?.catalogCourseIds ?? []),
+  ];
   const pathways = {
     bedelias: {
       label: audit?.officialPlan?.curriculum?.pathwayLabel
@@ -455,6 +458,28 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     periods.push({ label: period.label, courseIds, ...(period.catalog === true ? { catalog: true } : {}) });
   }
 
+  const catalogCourseIds = [];
+  for (const [index, rawCourse] of (curriculum.catalogCourses ?? []).entries()) {
+    const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
+    const credits = Number(rawCourse.credits);
+    const hours = Number(rawCourse.hours);
+    const nodeId = rawCourse.requirementId ?? "plan-total";
+    const courseSourceUrl = rawCourse.sourceUrl ?? sourceUrl;
+    courses.push(withCourseAuthority({
+      id,
+      name: rawCourse.name,
+      credits: Number.isFinite(credits) && credits >= 0 ? credits : 0,
+      ...(Number.isFinite(hours) && hours > 0 ? { hours } : {}),
+      eligibleRequirementIds: [nodeId],
+      creditAllocations: [{ nodeId, credits, status: "official", sourceUrl: courseSourceUrl }],
+      dataStatus: "official-curriculum",
+      ruleCoverage: "not-published",
+      curricularBlock: rawCourse.curricularBlock === true,
+    }, "verified", { officialIdentity: true, officialCredits: true }));
+    if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
+    catalogCourseIds.push(id);
+  }
+
   const nodes = [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: Number(audit.officialPlan.minimumCredits), sourceStatus: "official", sourceUrl }];
   for (const requirement of curriculum.creditRequirements ?? []) {
     nodes.push({
@@ -507,7 +532,7 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     sourceUrl: credential.sourceUrl ?? sourceUrl,
   }));
 
-  return { courses, periods, nodes, requiredCourseGroups, requirementCourseGroups, credentials, sourceUrl, courseIdBySourceId };
+  return { courses, periods, catalogCourseIds, nodes, requiredCourseGroups, requirementCourseGroups, credentials, sourceUrl, courseIdBySourceId };
 }
 
 function compositionGroupLabel(value) {

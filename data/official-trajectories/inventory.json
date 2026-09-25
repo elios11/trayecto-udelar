@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:dc8f832004cd62893c45f4af43a0081b5821e1bd1a64a43cfd6f4b22bdc178d2",
-    "extractedReportHash": "sha256:de27395d6c534a0e8f3aa5411d3657a1fe7ac7506f04f9b903cfc208b2e6852c",
-    "officialAuditHash": "sha256:6e1b1926bbd0eb9d22af7b77800b566bd2ef0897ca2a21566e54f0030bdb65fe",
+    "extractedReportHash": "sha256:7e1cfae8d42fcb4d7f2bd8e515f41a5e46947c8d52798650a7ea51d2a8f3b67d",
+    "officialAuditHash": "sha256:27f41470949517132b5dabd59f82c0424394a59391c8d4133bd7257b0ba416cd",
     "reviewedTrajectoriesHash": "sha256:7e311a5999f0a7efb34c444146147e371fe336d53047f2d290aadd47a6216882"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 71,
-      "official-trajectory-identified-pending": 19,
+      "official-trajectory-reproduced": 72,
+      "official-trajectory-identified-pending": 18,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 75,
+    "pending": 74,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -78,8 +78,8 @@
         "serviceLabel": "Escuela de Nutrición",
         "selectablePlanIds": 2,
         "states": {
-          "official-trajectory-reproduced": 1,
-          "official-trajectory-identified-pending": 1,
+          "official-trajectory-reproduced": 2,
+          "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
           "research-pending": 0
         }
@@ -274,17 +274,8 @@
     ]
   },
   "pendingQueue": {
-    "total": 75,
+    "total": 74,
     "plans": [
-      {
-        "priority": 1,
-        "planId": "bedelias-enut-licenciatura-en-nutricion-2014",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "bedelias-enut"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
       {
         "priority": 1,
         "planId": "bedelias-fcea-tecnologo-en-gestion-universitaria-2018",
@@ -990,14 +981,6 @@
           "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
           "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008"
         ]
-      },
-      {
-        "serviceId": "bedelias-enut",
-        "serviceLabel": "Escuela de Nutrición",
-        "identifiedPending": [
-          "bedelias-enut-licenciatura-en-nutricion-2014"
-        ],
-        "researchPending": []
       },
       {
         "serviceId": "bedelias-fagro",
@@ -3629,15 +3612,15 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-20",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-25",
       "effectiveAt": "2014",
       "officialSources": [
         {
           "authority": "Escuela de Nutrición",
           "url": "https://www.nutricion.edu.uy/wp-content/uploads/2019/07/Plan-Estudios-2014-1.pdf",
           "role": "título; ocho semestres; 360 créditos; cuatro ciclos; modalidades de formación; flexibilidad curricular",
-          "trajectoryEvidence": true
+          "trajectoryEvidence": false
         },
         {
           "authority": "Escuela de Nutrición",
@@ -3648,8 +3631,9 @@
         {
           "authority": "Escuela de Nutrición",
           "url": "https://www.nutricion.edu.uy/wp-content/uploads/2024/11/malla-curricular-V2png.jpg",
-          "role": "malla vigente; créditos por unidad; áreas; Práctica Profesional; Trabajo Final de Grado",
-          "trajectoryEvidence": false
+          "role": "malla vigente; créditos por unidad; áreas; seis semestres y Ciclo IV anual; bloques transversales optativos y electivos; Práctica Profesional; Trabajo Final de Grado",
+          "trajectoryEvidence": true,
+          "contentHash": "sha256:2adbe0bfec022f99b2a4a127b57ed68ab5b77192ad130113b365b4c73cb36760"
         },
         {
           "authority": "Escuela de Nutrición",
@@ -3696,27 +3680,27 @@
         "auditIdentity": "licenciatura en nutricion:2014",
         "auditPath": "data/bedelias/audits/official-source-audits.json",
         "projectionPath": "app/data/bedelias-generated/bedelias-enut-licenciatura-en-nutricion-2014.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
+        "periodLabelsMatch": true,
+        "coursePlacementsMatch": true,
         "expectedCoursePlacements": 33,
-        "matchedCoursePlacements": 31,
-        "officialPeriodCount": 9,
+        "matchedCoursePlacements": 33,
+        "officialPeriodCount": 7,
         "projectedPathways": [
           {
             "id": "bedelias",
-            "periodCount": 8
+            "periodCount": 7
           }
         ],
-        "projectionContentHash": "sha256:ea61c528f99607b12fb178a00725ab1222cdb06ddaeaff2565d583639d768261"
+        "projectionContentHash": "sha256:b0aa329c9ed678d4515835ca70e689eba8f214542a867977077a8ee737b65684"
       },
       "conflictNotes": [
         "regionalScope: Paysandú no dicta la carrera completa: únicamente habilita el Ciclo IV. Se muestra como opción territorial con alcance explícito y no como carrera, plan o trayectoria duplicada.",
         "flexiblePaths: El plan permite itinerarios flexibles y campos de práctica reorientables, pero no publica orientaciones certificadas. No se crea un selector de trayectoria.",
         "optionalOffer: La oferta de optativas cambia por semestre. La UI conserva bloques de 30 créditos optativos y 10 electivos en el catálogo flexible, en vez de congelar como obligatoria una oferta temporal.",
+        "temporalStructure: La malla ubica 29 unidades en los seis semestres de los ciclos I a III, Práctica Profesional y TFG durante todo el Ciclo IV, y dos bloques flexibles transversales. Se modelan siete períodos curriculares —el último anual— más el catálogo flexible; la duración normativa continúa siendo de ocho semestres.",
         "cycleTwoEnrollment: El ingreso al Ciclo II exige haber rendido al menos una evaluación de determinadas unidades del Ciclo I. La UI no registra intentos no aprobados, por lo que esa condición se informa pero no se endurece como aprobación obligatoria.",
         "finalWorkDefense: Para iniciar el TFG se exige Práctica Articuladora V y las obligatorias de ciclos I y II; para defenderlo deben estar aprobadas también las obligatorias del Ciclo III. La tarjeta automatiza el inicio y el aviso conserva la condición de defensa, sin bloquear anticipadamente con una regla más estricta.",
-        "professionalPracticeCredits: La descripción general agrupa 90 créditos como práctica profesional; la malla vigente los desagrega en 45 de Práctica Profesional y 45 de Trabajo Final de Grado. La UI usa esa desagregación actual.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "professionalPracticeCredits: La descripción general agrupa 90 créditos como práctica profesional; la malla vigente los desagrega en 45 de Práctica Profesional y 45 de Trabajo Final de Grado. La UI usa esa desagregación actual."
       ]
     },
     {
@@ -13524,5 +13508,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:0ab788fe17a65dad19203e4f5f35e4e6deaad618d069d7349d863ad6509a557c"
+  "contentHash": "sha256:4f1d8ad0ace5cb974399f21e40c188cdba13466fa89ca4ddd235669d9c155489"
 }
