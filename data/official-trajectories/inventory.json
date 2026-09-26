@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:dc8f832004cd62893c45f4af43a0081b5821e1bd1a64a43cfd6f4b22bdc178d2",
-    "extractedReportHash": "sha256:d29546d71b4a7e83f41551f384305de0264d23515293bb1dbcf5afb8f92f4f75",
-    "officialAuditHash": "sha256:064a2d9e84dabf1434f9449b306d94106eda3ad1cdd57c1fca6247a9d002eb55",
+    "extractedReportHash": "sha256:53c1287e00f86f9cdd30c6fea4a52ce1bf0c600699d674cad58585b848d2bd79",
+    "officialAuditHash": "sha256:031c8f00197e273e12d816ff40fa64ded64177d95e3e0bcd9b640765cec3df92",
     "reviewedTrajectoriesHash": "sha256:7e311a5999f0a7efb34c444146147e371fe336d53047f2d290aadd47a6216882"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 73,
-      "official-trajectory-identified-pending": 17,
+      "official-trajectory-reproduced": 75,
+      "official-trajectory-identified-pending": 15,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 73,
+    "pending": 71,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -144,8 +144,8 @@
         "serviceLabel": "Facultad de Ciencias Sociales",
         "selectablePlanIds": 5,
         "states": {
-          "official-trajectory-reproduced": 3,
-          "official-trajectory-identified-pending": 2,
+          "official-trajectory-reproduced": 5,
+          "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
           "research-pending": 0
         }
@@ -274,26 +274,8 @@
     ]
   },
   "pendingQueue": {
-    "total": 73,
+    "total": 71,
     "plans": [
-      {
-        "priority": 1,
-        "planId": "bedelias-fcs-licenciatura-en-ciencia-politica-2009",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "bedelias-fcs"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fcs-licenciatura-en-desarrollo-2009",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "bedelias-fcs"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
       {
         "priority": 1,
         "planId": "1997",
@@ -1038,15 +1020,6 @@
           "bedelias-fcea-licenciatura-en-economia-2012",
           "bedelias-fcea-licenciatura-en-estadistica-2014"
         ]
-      },
-      {
-        "serviceId": "bedelias-fcs",
-        "serviceLabel": "Facultad de Ciencias Sociales",
-        "identifiedPending": [
-          "bedelias-fcs-licenciatura-en-ciencia-politica-2009",
-          "bedelias-fcs-licenciatura-en-desarrollo-2009"
-        ],
-        "researchPending": []
       },
       {
         "serviceId": "bedelias-fder",
@@ -6063,8 +6036,8 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-20",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
       "effectiveAt": "2009",
       "officialSources": [
         {
@@ -6083,13 +6056,15 @@
           "authority": "Facultad de Ciencias Sociales",
           "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf",
           "role": "Ciclo Inicial 2026; 120 créditos; cuatro módulos; 82 obligatorios; 38 optativos; alternativas",
-          "trajectoryEvidence": false
+          "trajectoryEvidence": false,
+          "contentHash": "sha256:719f4d62b5aa20036dab142d9bf7a270ad837f59e679ea8012fb331c9932aa73"
         },
         {
           "authority": "Facultad de Ciencias Sociales",
           "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/CP-Malla-2511.pdf",
           "role": "malla avanzada vigente; 210 créditos por módulos; Trabajo Final 30; alternativas; Resolución 2654 de 27/11/2025",
-          "trajectoryEvidence": true
+          "trajectoryEvidence": true,
+          "contentHash": "sha256:8eca41a377719c845d06da0d6650c89e484e5a1ef4f02b6330cefd2ecf8c0898"
         },
         {
           "authority": "Facultad de Ciencias Sociales",
@@ -6135,28 +6110,27 @@
         "auditIdentity": "licenciatura en ciencia politica:2009",
         "auditPath": "data/bedelias/audits/official-source-audits.json",
         "projectionPath": "app/data/bedelias-generated/bedelias-fcs-licenciatura-en-ciencia-politica-2009.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
+        "periodLabelsMatch": true,
+        "coursePlacementsMatch": true,
         "expectedCoursePlacements": 57,
-        "matchedCoursePlacements": 47,
-        "officialPeriodCount": 13,
+        "matchedCoursePlacements": 57,
+        "officialPeriodCount": 8,
         "projectedPathways": [
           {
             "id": "bedelias",
-            "periodCount": 12
+            "periodCount": 8
           }
         ],
-        "projectionContentHash": "sha256:169ba79e827f7562003faf7897427ef6d91c0946a546055a8af27ddd111e8b70"
+        "projectionContentHash": "sha256:9ea01553c05bf108033df3fe866713aa4d4e9d0bf1a38e2175d878025893f674"
       },
       "conflictNotes": [
         "composition: Bedelías no publica la composición. Se reconstruye exclusivamente desde las mallas oficiales vigentes de FCS de 2025 y 2026, no desde el orden histórico del Plan original.",
         "cycleOverlap: El Ciclo Inicial se organiza en cuatro semestres, pero con 48 créditos ya se puede comenzar el Avanzado y completar ambos en paralelo. La UI usa módulos y no bloquea artificialmente todo el Avanzado hasta llegar a 120.",
-        "semesterTotals: La malla avanzada publica rangos variables por semestre según cuándo se cursen electivas. La UI evita asignar una única trayectoria temporal rígida y conserva los mínimos por módulo.",
+        "semesterTotals: La malla avanzada publica ubicaciones y rangos variables por semestre según cuándo se cursen electivas. La UI reproduce esos ocho semestres como orientación, conserva los mínimos por módulo y mantiene fuera de los períodos el catálogo variable.",
         "economicAnalysis: El módulo exige 10 créditos: una base Macro o Micro de 4 y al menos 6 adicionales. La UI exige una base y el mínimo modular; el catálogo sugerido puede cambiar cada año.",
         "prerequisites: La tabla regula previas para rendir examen y admite promover, aprobar el examen o mantener la condición de reglamentado en la previa. Como la UI no representa esa tercera condición, no la sustituye por aprobación obligatoria.",
         "duration: La página principal y Udelar publican cuatro años y 48 meses. Una página para futuros estudiantes contiene el texto inconsistente 'Ciclo Avanzado de tres años'; se conserva la duración institucional de cuatro años.",
-        "campus: La carrera completa se publica en la sede Montevideo de FCS. La movilidad horizontal y las optativas de otros servicios no crean sedes adicionales.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "campus: La carrera completa se publica en la sede Montevideo de FCS. La movilidad horizontal y las optativas de otros servicios no crean sedes adicionales."
       ]
     },
     {
@@ -6172,8 +6146,8 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-20",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
       "effectiveAt": "2009",
       "officialSources": [
         {
@@ -6192,13 +6166,15 @@
           "authority": "Facultad de Ciencias Sociales",
           "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf",
           "role": "Ciclo Inicial 2026; 120 créditos; cuatro módulos; alternativas",
-          "trajectoryEvidence": false
+          "trajectoryEvidence": false,
+          "contentHash": "sha256:719f4d62b5aa20036dab142d9bf7a270ad837f59e679ea8012fb331c9932aa73"
         },
         {
           "authority": "Facultad de Ciencias Sociales",
           "url": "https://cienciassociales.edu.uy/wp-content/uploads/2023/07/Malla-curricular_LED-2306.pdf",
           "role": "malla avanzada; 240 créditos; seis módulos; materias y créditos; Resolución CF 1292 de 15/06/2023",
-          "trajectoryEvidence": true
+          "trajectoryEvidence": true,
+          "contentHash": "sha256:474e297b370a6f3ec6577d7910be8e35057976ce73f401d286a9405d9f0e1c0d"
         },
         {
           "authority": "Facultad de Ciencias Sociales",
@@ -6216,7 +6192,8 @@
           "authority": "Facultad de Ciencias Sociales",
           "url": "https://cienciassociales.edu.uy/wp-content/uploads/2021/04/2-TRAYECTORIAS-SUGERIDAS-EN-LA-LICENCIATURA-EN-DESARROLLO_Febrero-20211-1.pdf",
           "role": "orden recomendado; ausencia de previas reglamentadas; conocimientos previos recomendados",
-          "trajectoryEvidence": false
+          "trajectoryEvidence": false,
+          "contentHash": "sha256:92be0e25bd5f9164104764a0810dfcf5f81e197bd0a4d2b840f432a78a1549cb"
         },
         {
           "authority": "Facultad de Ciencias Sociales",
@@ -6253,26 +6230,26 @@
         "auditIdentity": "licenciatura en desarrollo:2009",
         "auditPath": "data/bedelias/audits/official-source-audits.json",
         "projectionPath": "app/data/bedelias-generated/bedelias-fcs-licenciatura-en-desarrollo-2009.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
+        "periodLabelsMatch": true,
+        "coursePlacementsMatch": true,
         "expectedCoursePlacements": 55,
-        "matchedCoursePlacements": 43,
-        "officialPeriodCount": 13,
+        "matchedCoursePlacements": 55,
+        "officialPeriodCount": 8,
         "projectedPathways": [
           {
             "id": "desarrollo-economico",
-            "periodCount": 11
+            "periodCount": 8
           },
           {
             "id": "desarrollo-territorial",
-            "periodCount": 11
+            "periodCount": 8
           },
           {
             "id": "gestion-politicas-publicas",
-            "periodCount": 11
+            "periodCount": 8
           }
         ],
-        "projectionContentHash": "sha256:31b0ec90d0f1f1e60031a862693178a6bd35f5e1d3587bd8fcb1dedf7843a146"
+        "projectionContentHash": "sha256:a38fb73bc7a7d2db268dc5ca0410b571f9b1b383b02b205f64c575e9eb2622a5"
       },
       "conflictNotes": [
         "composition: Bedelías no publica composición. Se reconstruye desde la malla de la Licenciatura enlazada actualmente por FCS y desde el Ciclo Inicial 2026.",
@@ -6280,9 +6257,8 @@
         "electiveCatalog: La nómina nominal disponible está fechada 2023 y las ofertas cambian por semestre. La UI conserva los mínimos y obligatorias vigentes y agrupa el resto como bloques flexibles, sin congelar todas las opciones históricas.",
         "doubleCounting: Métodos Cuantitativos puede acreditarse en Práctica o en el MOI Desarrollo Económico; si se usa en Práctica, FCS exige otra unidad metodológica en el MOI. La UI representa ese componente como bloque alternativo y no duplica una misma materia.",
         "prerequisites: Las normas eliminaron el régimen de previaturas a examen y el documento de trayectorias declara ausencia de previas reglamentadas. El orden sugerido y los conocimientos recomendados no se convierten en bloqueos automáticos.",
-        "semesterTotals: El Ciclo Avanzado puede comenzar en tercer semestre mientras se completa el Inicial y las optativas admiten recorridos diversos. La UI organiza por módulos en lugar de imponer una única secuencia rígida.",
-        "campus: La carrera completa se publica en la sede Montevideo de FCS. La movilidad horizontal, prácticas y cursos de otros servicios no crean sedes adicionales.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "semesterTotals: El Ciclo Avanzado comienza en el tercer semestre mientras se completa el Inicial y las optativas admiten recorridos diversos. La UI reproduce la secuencia sugerida sin convertirla en previaturas y conserva los MOI flexibles fuera de los períodos.",
+        "campus: La carrera completa se publica en la sede Montevideo de FCS. La movilidad horizontal, prácticas y cursos de otros servicios no crean sedes adicionales."
       ]
     },
     {
@@ -13497,5 +13473,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:164dfb9fbd84d3f3a44f6d03373c7ad37b438da4b0c4d76ad50dbbb3fe279c35"
+  "contentHash": "sha256:ef032a92713936597c4ae14338fba9b13c8099fc4dde4c9cd29a634938d22ee6"
 }

@@ -50,10 +50,49 @@ test("conserva los 120 créditos iniciales y 240 avanzados por módulos", () => 
   assert.deepEqual(credential.nodeRequirements.map(({ nodeId }) => nodeId), moduleIds);
 });
 
-test("distingue núcleo obligatorio, alternativas y catálogo flexible", () => {
+test("reproduce ocho semestres, el solapamiento de ciclos y el catálogo flexible", () => {
   assert.equal(projection.courses.length, 57);
-  assert.equal(projection.pathways.bedelias.periods.length, 12);
-  assert.equal(projection.pathways.bedelias.catalogCourseIds.length, 6);
+  assert.deepEqual(projection.pathways.bedelias.periods.map(({ label }) => label), [
+    "1.er semestre",
+    "2.º semestre",
+    "3.er semestre",
+    "4.º semestre",
+    "5.º semestre",
+    "6.º semestre",
+    "7.º semestre",
+    "8.º semestre",
+  ]);
+  const periods = new Map(projection.pathways.bedelias.periods.map((period) => [period.label, period.courseIds]));
+  assert.ok(periods.get("3.er semestre").includes("fcs-ci-politicas-publicas"));
+  assert.ok(periods.get("3.er semestre").includes("fcs-c60"));
+  assert.ok(periods.get("4.º semestre").includes("fcs-ci-desafios-contemporaneos"));
+  assert.ok(periods.get("4.º semestre").includes("fcs-c51"));
+  assert.deepEqual(projection.pathways.bedelias.catalogCourseIds, [
+    "fcs-ci-optativas-generales",
+    "fcs-cp-educacion-desarrollo",
+    "fcs-cp-economia-discriminacion",
+    "fcs-cp-desigualdad-pobreza",
+    "fcs-cp-economia-publica",
+    "fcs-cp-mercado-trabajo-familia",
+    "fcs-cp-economia-internacional",
+    "fcs-cp-monografia-final",
+    "fcs-cp-pasantia-final",
+  ]);
+  const placements = [
+    ...projection.pathways.bedelias.periods.flatMap(({ courseIds }) => courseIds),
+    ...projection.pathways.bedelias.catalogCourseIds,
+  ];
+  assert.equal(placements.length, 57);
+  assert.equal(new Set(placements).size, 57);
+  assert.ok(projection.pathways.bedelias.periods.every(({ label }) => !/catálogo|trabajo final/i.test(label)));
+
+  const malla = audit.sources.find(({ url }) => url.endsWith("CP-Malla-2511.pdf"));
+  const cicloInicial = audit.sources.find(({ url }) => url.endsWith("CI-Malla-04062026.pdf"));
+  assert.equal(malla.contentHash, "sha256:8eca41a377719c845d06da0d6650c89e484e5a1ef4f02b6330cefd2ecf8c0898");
+  assert.equal(cicloInicial.contentHash, "sha256:719f4d62b5aa20036dab142d9bf7a270ad837f59e679ea8012fb331c9932aa73");
+});
+
+test("distingue núcleo obligatorio y alternativas sin exigir todo el catálogo", () => {
 
   const groups = new Map(credential.requiredCourseGroups.map((group) => [group.id, group]));
   assert.deepEqual(

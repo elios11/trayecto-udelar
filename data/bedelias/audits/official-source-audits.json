@@ -17409,11 +17409,11 @@
       "identity": "licenciatura en ciencia politica:2009",
       "career": "LICENCIATURA EN CIENCIA POLÍTICA",
       "planYear": "2009",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-09-26",
       "status": "official-evidence-complete",
       "scope": "current-modular-curriculum-flexibility-final-work-prerequisites-title-duration-and-campus",
       "publicationEligible": false,
-      "uiNotice": "El Plan 2009 exige 360 créditos: 120 del Ciclo Inicial común y 240 del Ciclo Avanzado de Ciencia Política, incluido un Trabajo Final de 30 créditos. La UI presenta módulos y alternativas oficiales vigentes; desde 48 créditos del Ciclo Inicial se puede comenzar el Avanzado, por lo que no impone una secuencia semestral rígida. Las previas a examen admiten también conservar la condición de reglamentado y se informan sin endurecerlas como aprobación obligatoria.",
+      "uiNotice": "El Plan 2009 exige 360 créditos: 120 del Ciclo Inicial común y 240 del Ciclo Avanzado de Ciencia Política, incluido un Trabajo Final de 30 créditos. La UI reproduce los ocho semestres publicados como orientación y conserva por separado módulos, elecciones flexibles y catálogo variable; desde 48 créditos del Ciclo Inicial se puede comenzar el Avanzado, por lo que los ciclos se superponen. Las previas a examen admiten también conservar la condición de reglamentado y se informan sin endurecerlas como aprobación obligatoria.",
       "officialPlan": {
         "facultyCode": "FCS",
         "facultyName": "FACULTAD DE CIENCIAS SOCIALES",
@@ -17429,7 +17429,7 @@
         "curriculum": {
           "sourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/CP-Malla-2511.pdf",
           "pathwayLabel": "Plan modular vigente",
-          "pathwayDescription": "Módulos oficiales del Ciclo Inicial 2026 y del Ciclo Avanzado de Ciencia Política 2025. El orden visual organiza requisitos y alternativas, pero no fija una secuencia rígida: ambos ciclos pueden solaparse desde los 48 créditos iniciales reglamentarios.",
+          "pathwayDescription": "Ocho semestres publicados por FCS a partir de las mallas vigentes del Ciclo Inicial 2026 y del Ciclo Avanzado 2025. Los módulos siguen siendo requisitos académicos y las alternativas flexibles no se convierten en previaturas: ambos ciclos se superponen desde el tercer semestre.",
           "prerequisitesSourceUrl": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/TABLA-PREVIATURAS-CP.pdf",
           "creditRequirements": [
             {
@@ -17505,7 +17505,7 @@
               "minCredits": 30
             }
           ],
-          "periods": [
+          "courseGroups": [
             {
               "label": "Ciclo Inicial · Introducción",
               "courses": [
@@ -17918,6 +17918,107 @@
               ]
             }
           ],
+          "periods": [
+            {
+              "label": "1.er semestre",
+              "courseIds": [
+                "ci-cuestion-social",
+                "ci-problemas-desarrollo",
+                "ci-principios-economia",
+                "ci-matematica-1",
+                "ci-matematica-extendida"
+              ]
+            },
+            {
+              "label": "2.º semestre",
+              "courseIds": [
+                "ci-sociedades-modernas",
+                "ci-poder-estado",
+                "ci-estadistica-social",
+                "ci-metodologia-investigacion"
+              ]
+            },
+            {
+              "label": "3.er semestre",
+              "courseIds": [
+                "ci-historia-america-latina",
+                "ci-opcion-politica",
+                "ci-opcion-economica-social",
+                "ci-politicas-publicas",
+                "c60",
+                "cp-historia-uruguay",
+                "cp-analisis-macro"
+              ]
+            },
+            {
+              "label": "4.º semestre",
+              "courseIds": [
+                "ci-desafios-contemporaneos",
+                "ci-uruguay-mundo",
+                "ci-experiencias-desarrollo",
+                "ci-genero-desigualdades",
+                "ci-accion-colectiva",
+                "c51",
+                "c52",
+                "cp-tecnicas-cualitativas",
+                "cp-historia-universal",
+                "cp-analisis-micro"
+              ]
+            },
+            {
+              "label": "5.º semestre",
+              "courseIds": [
+                "c54",
+                "c55",
+                "c35",
+                "c36"
+              ]
+            },
+            {
+              "label": "6.º semestre",
+              "courseIds": [
+                "c58",
+                "c59",
+                "c61",
+                "c62",
+                "c87a"
+              ]
+            },
+            {
+              "label": "7.º semestre",
+              "courseIds": [
+                "c81",
+                "c82",
+                "c65",
+                "c85",
+                "cp-teoria-derecho",
+                "cp-profundizacion-1"
+              ]
+            },
+            {
+              "label": "8.º semestre",
+              "courseIds": [
+                "c88",
+                "2d86",
+                "2c86",
+                "c90",
+                "c103",
+                "c104",
+                "cp-profundizacion-2"
+              ]
+            }
+          ],
+          "catalogCourseIds": [
+            "ci-optativas-generales",
+            "cp-educacion-desarrollo",
+            "cp-economia-discriminacion",
+            "cp-desigualdad-pobreza",
+            "cp-economia-publica",
+            "cp-mercado-trabajo-familia",
+            "cp-economia-internacional",
+            "cp-monografia-final",
+            "cp-pasantia-final"
+          ],
           "requiredCourseGroups": [
             {
               "id": "cp-nucleo-obligatorio",
@@ -18068,7 +18169,7 @@
           "Exigir 120 créditos del Ciclo Inicial y 240 del Avanzado, con los mínimos de sus doce módulos y 360 créditos totales.",
           "Exigir el núcleo obligatorio y una unidad de cada grupo alternativo publicado, sin exigir todas las alternativas.",
           "Permitir Monografía o Pasantía Educativa como modalidades excluyentes del Trabajo Final de 30 créditos.",
-          "Presentar la estructura por módulos, porque el Ciclo Avanzado puede iniciarse con 48 créditos del Inicial y no existe una secuencia rígida única.",
+        "Reproducir los ocho semestres orientativos publicados, conservando los módulos como requisitos y el catálogo flexible separado; el Ciclo Avanzado se superpone con el Inicial desde el tercer semestre.",
           "No convertir las previas a examen en bloqueos de aprobación: la norma también admite conservar la condición de reglamentado."
         ]
       },
@@ -18095,9 +18196,10 @@
             "sede"
           ]
         },
-        {
-          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf",
-          "authority": "Facultad de Ciencias Sociales",
+          {
+            "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf",
+            "authority": "Facultad de Ciencias Sociales",
+            "contentHash": "sha256:719f4d62b5aa20036dab142d9bf7a270ad837f59e679ea8012fb331c9932aa73",
           "supports": [
             "Ciclo Inicial 2026",
             "120 créditos",
@@ -18107,9 +18209,10 @@
             "alternativas"
           ]
         },
-        {
-          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/CP-Malla-2511.pdf",
-          "authority": "Facultad de Ciencias Sociales",
+          {
+            "url": "https://cienciassociales.edu.uy/wp-content/uploads/2025/12/CP-Malla-2511.pdf",
+            "authority": "Facultad de Ciencias Sociales",
+            "contentHash": "sha256:8eca41a377719c845d06da0d6650c89e484e5a1ef4f02b6330cefd2ecf8c0898",
           "supports": [
             "malla avanzada vigente",
             "210 créditos por módulos",
@@ -18167,9 +18270,9 @@
           "field": "cycleOverlap",
           "resolution": "El Ciclo Inicial se organiza en cuatro semestres, pero con 48 créditos ya se puede comenzar el Avanzado y completar ambos en paralelo. La UI usa módulos y no bloquea artificialmente todo el Avanzado hasta llegar a 120."
         },
-        {
-          "field": "semesterTotals",
-          "resolution": "La malla avanzada publica rangos variables por semestre según cuándo se cursen electivas. La UI evita asignar una única trayectoria temporal rígida y conserva los mínimos por módulo."
+      {
+        "field": "semesterTotals",
+        "resolution": "La malla avanzada publica ubicaciones y rangos variables por semestre según cuándo se cursen electivas. La UI reproduce esos ocho semestres como orientación, conserva los mínimos por módulo y mantiene fuera de los períodos el catálogo variable."
         },
         {
           "field": "economicAnalysis",
@@ -18194,11 +18297,11 @@
       "identity": "licenciatura en desarrollo:2009",
       "career": "LICENCIATURA EN DESARROLLO",
       "planYear": "2009",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-09-26",
       "status": "official-evidence-complete",
       "scope": "Auditoría oficial de vigencia, título, sede, ciclos, mínimos modulares, composición vigente, profundizaciones y régimen de previaturas.",
       "publicationEligible": false,
-      "uiNotice": "El Plan 2009 exige 360 créditos: 120 del Ciclo Inicial y 240 del Avanzado. La UI presenta la malla por módulos y tres profundizaciones vigentes: Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas. Las optativas sujetas a oferta se agrupan como bloques flexibles; la licenciatura no tiene previas reglamentadas y el orden semestral es orientativo.",
+      "uiNotice": "El Plan 2009 exige 360 créditos: 120 del Ciclo Inicial y 240 del Avanzado. La UI reproduce los ocho semestres orientativos y las tres profundizaciones vigentes: Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas. Los MOI y las optativas sujetas a oferta se mantienen como catálogos flexibles; la licenciatura no tiene previas reglamentadas y el Ciclo Avanzado se superpone con el Inicial desde el tercer semestre.",
       "officialPlan": {
         "facultyCode": "FCS",
         "facultyName": "FACULTAD DE CIENCIAS SOCIALES",
@@ -18329,7 +18432,7 @@
               "minCredits": 55
             }
           ],
-          "periods": [
+          "courseGroups": [
             {
               "label": "Ciclo Inicial · Introducción",
               "courses": [
@@ -18736,6 +18839,106 @@
               ]
             }
           ],
+          "periods": [
+            {
+              "label": "1.er semestre",
+              "courseIds": [
+                "ci-cuestion-social",
+                "ci-problemas-desarrollo",
+                "ci-principios-economia",
+                "ci-matematica-1",
+                "ci-matematica-extendida"
+              ]
+            },
+            {
+              "label": "2.º semestre",
+              "courseIds": [
+                "ci-sociedades-modernas",
+                "ci-poder-estado",
+                "ci-estadistica-social",
+                "ci-metodologia-investigacion"
+              ]
+            },
+            {
+              "label": "3.er semestre",
+              "courseIds": [
+                "ci-historia-america-latina",
+                "ci-opcion-politica",
+                "ci-opcion-economica-social",
+                "ci-bases-desarrollo",
+                "led-analisis-macro",
+                "led-disenos-investigacion"
+              ]
+            },
+            {
+              "label": "4.º semestre",
+              "courseIds": [
+                "ci-desafios-contemporaneos",
+                "ci-uruguay-mundo",
+                "ci-experiencias-desarrollo",
+                "ci-genero-desigualdades",
+                "ci-accion-colectiva",
+                "led-pensamiento-desarrollo",
+                "led-objeto-metodo",
+                "led-teoria-sociologica",
+                "led-analisis-micro",
+                "led-optativas-teoricas-1",
+                "led-indicadores-desarrollo"
+              ]
+            },
+            {
+              "label": "5.º semestre",
+              "courseIds": [
+                "led-ctisyd",
+                "led-estado-desarrollo",
+                "led-poblacion-desarrollo",
+                "led-teoria-desarrollo-economico",
+                "led-estadistica-aplicada",
+                "moi-herramientas-interdisciplinario"
+              ]
+            },
+            {
+              "label": "6.º semestre",
+              "courseIds": [
+                "led-planificacion-prospectiva",
+                "led-sistema-internacional",
+                "led-teoria-instituciones",
+                "led-optativas-teoricas-2",
+                "led-optativa-metodologica",
+                "led-metodos-cuantitativos-aplicados",
+                "led-metodos-cualitativos-aplicados"
+              ]
+            },
+            {
+              "label": "7.º semestre",
+              "courseIds": [
+                "led-taller-desarrollo-1",
+                "led-optativas-libres-1"
+              ]
+            },
+            {
+              "label": "8.º semestre",
+              "courseIds": [
+                "led-taller-desarrollo-2",
+                "led-trabajo-final",
+                "led-optativas-libres-2"
+              ]
+            }
+          ],
+          "catalogCourseIds": [
+            "ci-optativas-generales",
+            "moi-de-economia-publica",
+            "moi-de-componente-metodologico",
+            "moi-de-optativas",
+            "moi-dt-desarrollo-politico",
+            "moi-dt-desarrollo-socioterritorial",
+            "moi-dt-desarrollo-economico-territorial",
+            "moi-dt-optativas",
+            "moi-gpp-estado-politicas-2",
+            "moi-gpp-gestionando",
+            "moi-gpp-seleccion"
+          ],
+          "includeAllCoursesInPathwayCatalog": true,
           "requiredCourseGroups": [
             {
               "id": "led-nucleo-obligatorio",
@@ -18842,9 +19045,10 @@
         "regionalCurriculumVariant": false,
         "reason": "Existe un solo título y una sola sede. Las tres profundizaciones son Módulos Optativos Integrales de 35 créditos dentro del mismo Plan 2009 y comparten todo el resto de la formación.",
         "normalization": [
-          "Mostrar una carrera bajo Facultad de Ciencias Sociales, un Plan 2009 y la sede Montevideo.",
-          "Exigir 120 créditos del Ciclo Inicial y 240 del Avanzado, con los mínimos de sus diez módulos y 360 créditos totales.",
-          "Ofrecer Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas como trayectorias sugeridas del mismo título.",
+        "Mostrar una carrera bajo Facultad de Ciencias Sociales, un Plan 2009 y la sede Montevideo.",
+        "Exigir 120 créditos del Ciclo Inicial y 240 del Avanzado, con los mínimos de sus diez módulos y 360 créditos totales.",
+        "Reproducir los ocho semestres orientativos publicados, incluido el solapamiento del Ciclo Inicial y el Avanzado en tercero y cuarto.",
+        "Ofrecer Desarrollo Económico, Desarrollo Territorial y Gestión y Políticas Públicas como trayectorias sugeridas del mismo título.",
           "Conservar como bloques flexibles las optativas cuya nómina cambia por semestre y exigir los 35 créditos completos del MOI elegido.",
           "No crear reglas de previatura: la normativa vigente eliminó el régimen reglamentado y las secuencias publicadas son recomendaciones académicas.",
           "No contar dos veces Métodos Cuantitativos cuando se acredita en el módulo de Práctica y en Desarrollo Económico; el bloque metodológico del MOI admite la sustitución oficial."
@@ -18875,9 +19079,10 @@
             "sede Montevideo"
           ]
         },
-        {
-          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf",
-          "authority": "Facultad de Ciencias Sociales",
+          {
+            "url": "https://cienciassociales.edu.uy/wp-content/uploads/2026/07/CI-Malla-04062026.pdf",
+            "authority": "Facultad de Ciencias Sociales",
+            "contentHash": "sha256:719f4d62b5aa20036dab142d9bf7a270ad837f59e679ea8012fb331c9932aa73",
           "supports": [
             "Ciclo Inicial 2026",
             "120 créditos",
@@ -18885,9 +19090,10 @@
             "alternativas"
           ]
         },
-        {
-          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2023/07/Malla-curricular_LED-2306.pdf",
-          "authority": "Facultad de Ciencias Sociales",
+          {
+            "url": "https://cienciassociales.edu.uy/wp-content/uploads/2023/07/Malla-curricular_LED-2306.pdf",
+            "authority": "Facultad de Ciencias Sociales",
+            "contentHash": "sha256:474e297b370a6f3ec6577d7910be8e35057976ce73f401d286a9405d9f0e1c0d",
           "supports": [
             "malla avanzada",
             "240 créditos",
@@ -18914,9 +19120,10 @@
             "estructura obligatoria y flexible de cada profundización"
           ]
         },
-        {
-          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2021/04/2-TRAYECTORIAS-SUGERIDAS-EN-LA-LICENCIATURA-EN-DESARROLLO_Febrero-20211-1.pdf",
-          "authority": "Facultad de Ciencias Sociales",
+          {
+            "url": "https://cienciassociales.edu.uy/wp-content/uploads/2021/04/2-TRAYECTORIAS-SUGERIDAS-EN-LA-LICENCIATURA-EN-DESARROLLO_Febrero-20211-1.pdf",
+            "authority": "Facultad de Ciencias Sociales",
+            "contentHash": "sha256:92be0e25bd5f9164104764a0810dfcf5f81e197bd0a4d2b840f432a78a1549cb",
           "supports": [
             "orden recomendado",
             "ausencia de previas reglamentadas",
@@ -18964,9 +19171,9 @@
           "field": "prerequisites",
           "resolution": "Las normas eliminaron el régimen de previaturas a examen y el documento de trayectorias declara ausencia de previas reglamentadas. El orden sugerido y los conocimientos recomendados no se convierten en bloqueos automáticos."
         },
-        {
-          "field": "semesterTotals",
-          "resolution": "El Ciclo Avanzado puede comenzar en tercer semestre mientras se completa el Inicial y las optativas admiten recorridos diversos. La UI organiza por módulos en lugar de imponer una única secuencia rígida."
+      {
+        "field": "semesterTotals",
+        "resolution": "El Ciclo Avanzado comienza en el tercer semestre mientras se completa el Inicial y las optativas admiten recorridos diversos. La UI reproduce la secuencia sugerida sin convertirla en previaturas y conserva los MOI flexibles fuera de los períodos."
         },
         {
           "field": "campus",
@@ -72664,6 +72871,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:064a2d9e84dabf1434f9449b306d94106eda3ad1cdd57c1fca6247a9d002eb55",
+  "contentHash": "sha256:031c8f00197e273e12d816ff40fa64ded64177d95e3e0bcd9b640765cec3df92",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

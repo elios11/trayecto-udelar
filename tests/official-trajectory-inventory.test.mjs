@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 73,
-    "official-trajectory-identified-pending": 17,
+    "official-trajectory-reproduced": 75,
+    "official-trajectory-identified-pending": 15,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 73);
-  assert.equal(savedInventory.pendingQueue.plans.length, 73);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 17).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(17).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 71);
+  assert.equal(savedInventory.pendingQueue.plans.length, 71);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 15).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(15).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -92,7 +92,7 @@ test("una fuente de períodos o trayectorias auditada nunca se degrada a ausenci
   }
 });
 
-test("TUCE, Nutrición y TGU quedan cerrados y las divergencias conocidas permanecen en la cola", () => {
+test("TUCE, Nutrición, TGU y las dos licenciaturas FCS quedan cerrados", () => {
   const byPlanId = new Map(savedInventory.plans.map((plan) => [plan.planId, plan]));
   const correction = byPlanId.get("bedelias-fhum-correccion-de-estilo-2014");
   assert.equal(correction.state, "official-trajectory-reproduced");
@@ -113,12 +113,21 @@ test("TUCE, Nutrición y TGU quedan cerrados y las divergencias conocidas perman
   assert.equal(tgu.evidence.matchedCoursePlacements, 45);
   assert.deepEqual(tgu.scope.territories, ["Montevideo"]);
 
-  for (const planId of [
-    "bedelias-fcs-licenciatura-en-ciencia-politica-2009",
-    "bedelias-fcs-licenciatura-en-desarrollo-2009",
-  ]) {
-    assert.equal(byPlanId.get(planId).state, "official-trajectory-identified-pending", planId);
-  }
+  const cienciaPolitica = byPlanId.get("bedelias-fcs-licenciatura-en-ciencia-politica-2009");
+  assert.equal(cienciaPolitica.state, "official-trajectory-reproduced");
+  assert.equal(cienciaPolitica.currentProjection.primary, "official-periods");
+  assert.equal(cienciaPolitica.evidence.officialPeriodCount, 8);
+  assert.equal(cienciaPolitica.evidence.expectedCoursePlacements, 57);
+  assert.equal(cienciaPolitica.evidence.matchedCoursePlacements, 57);
+  assert.deepEqual(cienciaPolitica.evidence.projectedPathways.map(({ periodCount }) => periodCount), [8]);
+
+  const desarrollo = byPlanId.get("bedelias-fcs-licenciatura-en-desarrollo-2009");
+  assert.equal(desarrollo.state, "official-trajectory-reproduced");
+  assert.equal(desarrollo.currentProjection.primary, "official-profiles");
+  assert.equal(desarrollo.evidence.officialPeriodCount, 8);
+  assert.equal(desarrollo.evidence.expectedCoursePlacements, 55);
+  assert.equal(desarrollo.evidence.matchedCoursePlacements, 55);
+  assert.deepEqual(desarrollo.evidence.projectedPathways.map(({ periodCount }) => periodCount), [8, 8, 8]);
 });
 
 test("el primer lote FHCE queda cerrado con ocho semestres y correspondencia exacta", () => {

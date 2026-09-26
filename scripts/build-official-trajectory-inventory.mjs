@@ -199,25 +199,36 @@ function extractedMechanism(audit, projection) {
 }
 
 function compareOfficialPeriods(audit, projection) {
-  const officialPeriods = audit.officialPlan.curriculum.periods;
+  const curriculum = audit.officialPlan.curriculum;
+  const officialPeriods = curriculum.periods;
   const projectedPathways = Object.entries(projection.pathways ?? {});
   const expectedLabels = officialPeriods.map(({ label }) => label);
   const periodLabelsMatch = projectedPathways.length > 0 && projectedPathways.every(([, pathway]) =>
     JSON.stringify((pathway.periods ?? []).map(({ label }) => label)) === JSON.stringify(expectedLabels));
   const courseById = new Map(projection.courses.map((course) => [course.id, course]));
+  const officialCourseNames = new Map([
+    ...(curriculum.courseGroups ?? []).flatMap((group) => (group.courses ?? []).map((course) => [course.id, course.name])),
+    ...(curriculum.catalogCourses ?? []).map((course) => [course.id, course.name]),
+  ]);
   let expectedCoursePlacements = 0;
   let matchedCoursePlacements = 0;
   for (const [periodIndex, officialPeriod] of officialPeriods.entries()) {
     const projectedNames = new Set(projectedPathways.flatMap(([, pathway]) =>
       (pathway.periods?.[periodIndex]?.courseIds ?? []).map((courseId) => normalize(courseById.get(courseId)?.name))).filter(Boolean));
-    for (const course of officialPeriod.courses ?? []) {
+    const periodCourses = officialPeriod.courses
+      ?? (officialPeriod.courseIds ?? []).map((id) => ({ id, name: officialCourseNames.get(id) }));
+    for (const course of periodCourses) {
       expectedCoursePlacements += 1;
       if (projectedNames.has(normalize(course.name))) matchedCoursePlacements += 1;
     }
   }
   const projectedCatalogNames = new Set(projectedPathways.flatMap(([, pathway]) =>
     (pathway.catalogCourseIds ?? []).map((courseId) => normalize(courseById.get(courseId)?.name))).filter(Boolean));
-  for (const course of audit.officialPlan.curriculum.catalogCourses ?? []) {
+  const catalogCourses = [
+    ...(curriculum.catalogCourses ?? []),
+    ...(curriculum.catalogCourseIds ?? []).map((id) => ({ id, name: officialCourseNames.get(id) })),
+  ];
+  for (const course of catalogCourses) {
     expectedCoursePlacements += 1;
     if (projectedCatalogNames.has(normalize(course.name))) matchedCoursePlacements += 1;
   }

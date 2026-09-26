@@ -45,6 +45,7 @@ function exactOfficialCourseSourceIds(audit) {
   return new Set([
     ...(curriculum.verifiedCourseIds ?? []),
     ...(curriculum.commonCourseIds ?? []),
+    ...(curriculum.courseGroups ?? []).flatMap((group) => (group.courses ?? []).map(({ id }) => id)),
     ...(curriculum.requiredCourseGroups ?? []).flatMap((group) => (
       group.verifiedSourceCourseIds
       ?? (curriculum.strictOfficialCourseIds === true ? [] : group.sourceCourseIds ?? [])
@@ -426,14 +427,16 @@ function ruleUsesOnlyPublishedCourseIdentities(rule, publishedCourseIdentities) 
 function buildOfficialCurriculum(audit, serviceCode, usedIds) {
   const curriculum = audit?.officialPlan?.curriculum;
   const hasPeriods = Array.isArray(curriculum?.periods) && curriculum.periods.length > 0;
+  const courseGroups = curriculum?.courseGroups ?? curriculum?.periods ?? [];
+  const hasCourseGroups = Array.isArray(courseGroups) && courseGroups.length > 0;
   const hasRequirements = Array.isArray(curriculum?.creditRequirements) && curriculum.creditRequirements.length > 0;
-  if (!hasPeriods && !hasRequirements) return null;
+  if (!hasPeriods && !hasCourseGroups && !hasRequirements) return null;
 
   const sourceUrl = curriculum.sourceUrl ?? audit.sources?.[0]?.url;
   const courses = [];
   const periods = [];
   const courseIdBySourceId = new Map();
-  for (const period of curriculum.periods ?? []) {
+  for (const period of courseGroups) {
     const courseIds = [];
     for (const [index, rawCourse] of (period.courses ?? []).entries()) {
       const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
@@ -455,7 +458,9 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
       if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
       courseIds.push(id);
     }
-    periods.push({ label: period.label, courseIds, ...(period.catalog === true ? { catalog: true } : {}) });
+    if (!curriculum.courseGroups) {
+      periods.push({ label: period.label, courseIds, ...(period.catalog === true ? { catalog: true } : {}) });
+    }
   }
 
   const catalogCourseIds = [];
@@ -478,6 +483,20 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
     }, "verified", { officialIdentity: true, officialCredits: true }));
     if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
     catalogCourseIds.push(id);
+  }
+
+  if (curriculum.courseGroups) {
+    for (const period of curriculum.periods ?? []) {
+      periods.push({
+        label: period.label,
+        courseIds: (period.courseIds ?? []).map((id) => courseIdBySourceId.get(id)).filter(Boolean),
+        ...(period.catalog === true ? { catalog: true } : {}),
+      });
+    }
+    for (const sourceCourseId of curriculum.catalogCourseIds ?? []) {
+      const id = courseIdBySourceId.get(sourceCourseId);
+      if (id && !catalogCourseIds.includes(id)) catalogCourseIds.push(id);
+    }
   }
 
   const nodes = [{ id: "plan-total", parentId: null, kind: "group", name: "Total del plan", shortName: "Total", minCredits: Number(audit.officialPlan.minimumCredits), sourceStatus: "official", sourceUrl }];

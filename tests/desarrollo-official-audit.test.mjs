@@ -42,7 +42,8 @@ test("conserva 120 créditos iniciales y los seis módulos avanzados por 240", (
   assert.equal(credential.nodeRequirements.reduce((sum, item) => sum + item.minCredits, 0), 360);
 });
 
-test("cada profundización muestra exactamente sus 35 créditos y ningún período vacío", () => {
+test("cada profundización reproduce ocho semestres y mantiene su MOI en el catálogo flexible", () => {
+  assert.equal(projection.courses.length, 55);
   const expected = {
     "desarrollo-economico": ["fcs-moi-de-economia-publica", "fcs-moi-de-componente-metodologico", "fcs-moi-de-optativas"],
     "desarrollo-territorial": ["fcs-moi-dt-desarrollo-politico", "fcs-moi-dt-desarrollo-socioterritorial", "fcs-moi-dt-desarrollo-economico-territorial", "fcs-moi-dt-optativas"],
@@ -51,8 +52,22 @@ test("cada profundización muestra exactamente sus 35 créditos y ningún perío
   const byId = new Map(projection.courses.map((course) => [course.id, course]));
   for (const [pathwayId, exclusiveIds] of Object.entries(expected)) {
     const pathway = projection.pathways[pathwayId];
-    const visibleIds = new Set(pathway.periods.flatMap((period) => period.courseIds));
+    assert.deepEqual(pathway.periods.map(({ label }) => label), [
+      "1.er semestre",
+      "2.º semestre",
+      "3.er semestre",
+      "4.º semestre",
+      "5.º semestre",
+      "6.º semestre",
+      "7.º semestre",
+      "8.º semestre",
+    ]);
     assert.ok(pathway.periods.every((period) => period.courseIds.length > 0));
+    assert.deepEqual(pathway.catalogCourseIds, ["fcs-ci-optativas-generales", ...exclusiveIds]);
+    const visibleIds = new Set([
+      ...pathway.periods.flatMap((period) => period.courseIds),
+      ...pathway.catalogCourseIds,
+    ]);
     assert.ok(visibleIds.has("fcs-moi-herramientas-interdisciplinario"));
     assert.ok(exclusiveIds.every((id) => visibleIds.has(id)));
     const moiCredits = [...visibleIds]
@@ -61,8 +76,28 @@ test("cada profundización muestra exactamente sus 35 créditos y ningún perío
       .reduce((sum, course) => sum + course.credits, 0);
     assert.equal(moiCredits, 35);
   }
-  assert.ok(!projection.pathways["desarrollo-economico"].periods.flatMap((period) => period.courseIds)
-    .includes("fcs-moi-dt-desarrollo-politico"));
+  const projectedIds = new Set(Object.values(projection.pathways).flatMap((pathway) => [
+    ...pathway.periods.flatMap((period) => period.courseIds),
+    ...pathway.catalogCourseIds,
+  ]));
+  assert.equal(projectedIds.size, 55);
+  assert.ok(!projection.pathways["desarrollo-economico"].catalogCourseIds.includes("fcs-moi-dt-desarrollo-politico"));
+
+  const third = projection.pathways["desarrollo-economico"].periods.find(({ label }) => label === "3.er semestre");
+  const fourth = projection.pathways["desarrollo-economico"].periods.find(({ label }) => label === "4.º semestre");
+  assert.ok(third.courseIds.includes("fcs-ci-bases-desarrollo"));
+  assert.ok(third.courseIds.includes("fcs-led-analisis-macro"));
+  assert.ok(fourth.courseIds.includes("fcs-ci-desafios-contemporaneos"));
+  assert.ok(fourth.courseIds.includes("fcs-led-objeto-metodo"));
+
+  const desarrolloEconomicoCatalog = projection.pathways["desarrollo-economico"].catalogCourseIds;
+  assert.ok(!desarrolloEconomicoCatalog.includes("fcs-led-metodos-cuantitativos-aplicados"));
+  assert.match(audit.anomalies.find((entry) => entry.field === "doubleCounting").resolution, /no duplica/i);
+
+  const malla = audit.sources.find(({ url }) => url.endsWith("Malla-curricular_LED-2306.pdf"));
+  const trayectoria = audit.sources.find(({ url }) => url.endsWith("Febrero-20211-1.pdf"));
+  assert.equal(malla.contentHash, "sha256:474e297b370a6f3ec6577d7910be8e35057976ce73f401d286a9405d9f0e1c0d");
+  assert.equal(trayectoria.contentHash, "sha256:92be0e25bd5f9164104764a0810dfcf5f81e197bd0a4d2b840f432a78a1549cb");
 });
 
 test("exige el núcleo y las elecciones comunes sin inventar previaturas", () => {
