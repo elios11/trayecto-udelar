@@ -36,13 +36,16 @@ test("traslada el damero 2026 y conserva los 174 créditos obligatorios exactos"
   const montevideo = projection.pathways.montevideo;
   assert.deepEqual(montevideo.periods.map(({ label }) => label), [
     "Primer semestre", "Segundo semestre", "Tercer semestre", "Cuarto semestre", "Quinto semestre",
-    "Sexto semestre", "Semestres 7 y 8", "Validación de egreso",
+    "Sexto semestre", "Séptimo semestre", "Octavo semestre",
   ]);
   assert.deepEqual(montevideo.periods.map(({ courseIds }) => courseIds.reduce((sum, id) => sum + courseById.get(id).credits, 0)), [
-    26, 34, 39, 29, 46, 0, 40, 0,
+    26, 34, 39, 29, 46, 0, 0, 40,
   ]);
   assert.equal(creditsInPeriods(montevideo), 214);
   assert.equal(montevideo.periods.flatMap(({ courseIds }) => courseIds).filter((id) => courseById.get(id).bedeliasCode === "922").length, 1);
+  assert.deepEqual(montevideo.periods.find(({ label }) => label === "Séptimo semestre").courseIds, ["fq-lq-pet-inicio"]);
+  assert.equal(courseById.get("fq-lq-pet-inicio").curricularBlock, true);
+  assert.ok(montevideo.periods.find(({ label }) => label === "Octavo semestre").courseIds.includes("fq-lq-pet-especificas-guia"));
   assert.equal(courseByCode.get("190").credits, 10);
   assert.equal(courseByCode.get("512").credits, 5);
   assert.ok(montevideo.periods.find(({ label }) => label === "Quinto semestre").courseIds.includes(courseByCode.get("512").id));
@@ -96,7 +99,7 @@ test("restringe Salto a la oferta regional explícita y no simula carrera comple
 });
 
 test("preserva composición, previaturas y referencias internas consistentes", () => {
-  assert.equal(projection.courses.length, 326);
+  assert.equal(projection.courses.length, 327);
   assert.equal(projection.rules.length, 125);
   assert.equal(projection.plan.noPublishedRule, 91);
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 322);

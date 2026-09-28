@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+const registeredPlanCourses = await readFile(new URL("../app/registered-plan-courses.mjs", import.meta.url), "utf8");
 const migration = await readFile(new URL("../app/personal-data-migration.mjs", import.meta.url), "utf8");
 const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
@@ -17,7 +18,7 @@ test("la sede es un selector accesible e independiente de plan y trayectoria", (
 test("la UI no presenta la extracción pendiente como auditoría oficial", () => {
   assert.match(page, /Catálogo parcial · sólo materias verificadas/);
   assert.match(page, /Catálogo en validación · sin materias publicadas/);
-  assert.match(page, /\(course\.authorityStatus \?\? "verified"\) === "verified"/);
+  assert.match(registeredPlanCourses, /\(course\.authorityStatus \?\? "verified"\) === "verified"/);
   assert.match(page, /activeRegisteredPlan\?\.publishedRules \?\? activeRegisteredPlan\?\.rules \?\? \[\]/);
   assert.match(page, /new Map<string, unknown>\(activeRegisteredPlan\.courses\.map/);
   assert.match(page, /activeRegisteredPlan\.plan\.courseCatalogAuditStatus === "structure-only"/);

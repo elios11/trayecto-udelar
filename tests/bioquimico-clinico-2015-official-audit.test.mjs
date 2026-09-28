@@ -32,17 +32,19 @@ test("publica un único Plan 2015 con Montevideo completo y Salto sólo como pri
   assert.ok(Object.values(projection.pathways).every(({ credentialId }) => credentialId === credential.id));
 });
 
-test("traslada sin ajustes el damero vigente 2026 y cuenta una sola vez el Practicantado", () => {
+test("traslada los diez semestres del damero 2026 y cuenta una sola vez el Practicantado", () => {
   const montevideo = projection.pathways.montevideo;
   assert.deepEqual(montevideo.periods.map(({ label }) => label), [
     "Primer semestre", "Segundo semestre", "Tercer semestre", "Cuarto semestre", "Quinto semestre",
-    "Sexto semestre", "Séptimo semestre", "Octavo semestre", "Semestres 9 y 10", "Validación de egreso",
+    "Sexto semestre", "Séptimo semestre", "Octavo semestre", "Noveno semestre", "Décimo semestre",
   ]);
   assert.deepEqual(montevideo.periods.map(({ courseIds }) => courseIds.reduce((sum, id) => sum + courseById.get(id).credits, 0)), [
-    26, 40, 46, 37, 46, 38, 43, 47, 55, 0,
+    26, 40, 46, 37, 46, 38, 43, 47, 0, 55,
   ]);
   assert.equal(creditsInPeriods(montevideo), 378);
   assert.equal(montevideo.periods.flatMap(({ courseIds }) => courseIds).filter((id) => courseById.get(id).bedeliasCode === "966X").length, 1);
+  assert.deepEqual(montevideo.periods.find(({ label }) => label === "Noveno semestre").courseIds, ["fq-bcl-practicantado-inicio"]);
+  assert.equal(courseById.get("fq-bcl-practicantado-inicio").curricularBlock, true);
   assert.equal(courseByCode.get("190").credits, 10);
   assert.equal(courseByCode.get("512").credits, 5);
   assert.ok(montevideo.periods.find(({ label }) => label === "Quinto semestre").courseIds.includes(courseByCode.get("512").id));
@@ -94,7 +96,7 @@ test("restringe Salto a 17 alternativas regionales y no simula egreso ni carrera
 });
 
 test("preserva composición, previaturas y referencias internas consistentes", () => {
-  assert.equal(projection.courses.length, 455);
+  assert.equal(projection.courses.length, 456);
   assert.equal(projection.rules.length, 398);
   assert.equal(projection.plan.noPublishedRule, 148);
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 453);

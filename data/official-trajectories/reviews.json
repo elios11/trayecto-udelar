@@ -743,6 +743,175 @@
         "La misma carrera se ofrece en Maldonado y Salto bajo responsabilidad académica de FHCE; no se duplica por servicio.",
         "Cuando FHCE publique la malla anunciada, este estado deberá cambiar a trayectoria identificada o reproducida."
       ]
+    },
+    {
+      "planId": "bedelias-fq-bioquimico-clinico-2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo · carrera completa",
+          "Salto · primer año"
+        ],
+        "pathwayIds": [
+          "montevideo",
+          "salto-primer-ano"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Consejo de Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Bioqu%C3%ADmico%20cl%C3%ADnico%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "role": "damero vigente de diez semestres aprobado por Resolución 112/2026"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/sites/all/themes/professional_theme/images/BIOQU%C3%8DMICO%20CL%C3%8DNICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+          "role": "plan normativo, créditos y estructura flexible"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/bioquimico-clinico",
+          "role": "alcance territorial vigente: carrera completa en Montevideo y primer año en Salto"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2015-2016.json",
+        "sourcePlanId": "bedelias-fq-bioquimico-clinico-2015",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-bioquimico-clinico-2015.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Practicantado aparece en noveno y décimo semestre; un bloque de inicio sin créditos conserva la extensión temporal sin duplicar la única identidad acreditable de 55 créditos.",
+        "Bedelías asigna 10 créditos al Laboratorio de Bioquímica; el damero vigente fija 5 y prevalece."
+      ]
+    },
+    {
+      "planId": "bedelias-fq-licenciatura-en-quimica-2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo · carrera completa",
+          "Salto · primer año"
+        ],
+        "pathwayIds": [
+          "montevideo",
+          "salto-primer-ano"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Consejo de Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20qu%C3%ADmica%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "role": "damero vigente de ocho semestres aprobado por Resolución 112/2026"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf",
+          "role": "mínimos de créditos y composición del Proyecto Específico de Título"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-quimica",
+          "role": "alcance territorial vigente: carrera completa en Montevideo y primer año en Salto"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2015-2016.json",
+        "sourcePlanId": "bedelias-fq-licenciatura-en-quimica-2016",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-quimica-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Proyecto Específico de Título abarca séptimo y octavo semestre; un bloque de inicio sin créditos evita duplicar sus componentes acreditables y mantiene los 60 créditos totales.",
+        "Bedelías asigna 10 créditos al Laboratorio de Bioquímica; el damero vigente fija 5 y prevalece."
+      ]
+    },
+    {
+      "planId": "bedelias-fq-quimico-2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo · cuatro recorridos",
+          "Paysandú · Agrícola y Medio Ambiente",
+          "Salto · primer año"
+        ],
+        "pathwayIds": [
+          "agricola-medio-ambiente",
+          "calidad",
+          "materiales",
+          "recorrido-sin-orientacion",
+          "salto-primer-ano"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Quimico%20op%20agricola%20y%20medio%20ambiente%20res%2074%20CFQ%2031%2007%202025.pdf",
+          "role": "damero vigente de Agrícola y Medio Ambiente"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20Qco%20op%20calidad%20plan%202015.pdf",
+          "role": "damero vigente de Calidad"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20materiales%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "role": "damero vigente de Materiales"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20Qco%20sin%20orientaci%C3%B3n%20plan%202015_0.pdf",
+          "role": "damero vigente del recorrido Sin orientación"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+          "role": "plan normativo, mínimos y alternativas de actividad final"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/quimico",
+          "role": "título único, duración y alcance territorial general"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrerasinterior/quimico-agricola-y-medioambienal/",
+          "role": "carrera completa de Agrícola y Medio Ambiente en Paysandú y primer año en Salto"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2015-2016.json",
+        "sourcePlanId": "bedelias-fq-quimico-2015",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-quimico-2015.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Los cuatro dameros ubican Practicantado en décimo semestre; Internado y Proyecto quedan como alternativas normativas de catálogo, no como colocaciones del damero.",
+        "La oferta flexible cambia por período y queda fuera de la secuencia sugerida de diez semestres.",
+        "La oferta parcial de Calidad y Materiales en el interior no acredita una trayectoria completa fuera de Montevideo."
+      ]
     }
   ]
 }

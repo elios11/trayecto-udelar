@@ -284,6 +284,8 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
   }
   if (Array.isArray(audit?.officialPlan?.trajectories) && audit.officialPlan.trajectories.length > 0) {
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => {
+      const excludedPeriodIds = new Set((trajectory.excludedPeriodCourseIds ?? [])
+        .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
       const compositionPeriods = officialCurriculum?.pathwayPeriods?.[trajectory.id];
       if (compositionPeriods) {
         const excludedIds = new Set((trajectory.excludedCourseIds ?? [])
@@ -297,7 +299,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           if (!mergedPeriods.has(period.label)) mergedPeriods.set(period.label, []);
           for (const sourceId of period.courseIds ?? []) {
             const id = officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId;
-            if (knownCourseIds.has(id) && !excludedIds.has(id) && !mergedPeriods.get(period.label).includes(id)) {
+            if (knownCourseIds.has(id) && !excludedIds.has(id) && !excludedPeriodIds.has(id) && !mergedPeriods.get(period.label).includes(id)) {
               mergedPeriods.get(period.label).push(id);
             }
           }
@@ -328,7 +330,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         label: period.label,
         courseIds: (period.courseIds ?? [])
           .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
-          .filter((id) => id && !excludedIds.has(id) && (!includedIds || includedIds.has(id))),
+          .filter((id) => id && !excludedIds.has(id) && !excludedPeriodIds.has(id) && (!includedIds || includedIds.has(id))),
       })).filter((period) => period.courseIds.length > 0);
       const configuredCourseIds = new Set(configuredTrajectoryPeriods.flatMap((period) => period.courseIds));
       const curricularBlockIds = new Set((officialCurriculum?.courses ?? [])
@@ -337,7 +339,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       const sharedBlockPeriods = (officialCurriculum?.periods ?? []).map((period) => ({
         label: period.label,
         courseIds: period.courseIds.filter((id) => (
-          curricularBlockIds.has(id) && !excludedIds.has(id) && !configuredCourseIds.has(id)
+          curricularBlockIds.has(id) && !excludedIds.has(id) && !excludedPeriodIds.has(id) && !configuredCourseIds.has(id)
         )),
       })).filter((period) => period.courseIds.length > 0);
       const leadingBlockPeriods = sharedBlockPeriods.filter((period) => /orientaci[oó]n/i.test(period.label));

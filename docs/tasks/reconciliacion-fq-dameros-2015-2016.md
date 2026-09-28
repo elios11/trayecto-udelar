@@ -2,7 +2,7 @@
 
 ## Estado
 
-Especificación lista para implementación en un worktree aislado basado en `main` después de D03h.
+Implementación completada y validada el 28 de septiembre de 2026 en el worktree aislado de D03i. Los tres planes quedaron cerrados como `official-trajectory-reproduced`; no hay trabajo funcional pendiente dentro del nodo. Resta únicamente integrar el commit sobre el `main` vigente mediante el flujo del roadmap. No se hizo push ni publicación.
 
 ## Objetivo
 
@@ -63,6 +63,43 @@ La jerarquía de autoridad es:
 - Inventario D03 regenerado, con los tres planes en `official-trajectory-reproduced` si se logra correspondencia exacta.
 - Pruebas focalizadas que validen períodos, colocaciones, perfiles, sedes, créditos y ausencia de duplicación.
 - Estado y resultados finales documentados en este archivo.
+
+## Resultado implementado
+
+- Bioquímico Clínico 2015 reproduce diez semestres en Montevideo. El Practicantado conserva una sola identidad acreditable de 55 créditos en décimo semestre y un bloque de inicio sin créditos en noveno, de modo que se representa su extensión temporal sin duplicar créditos. Salto continúa limitado al primer año y a sus 17 alternativas regionales verificadas.
+- Licenciatura en Química 2016 reproduce ocho semestres en Montevideo. El Proyecto Específico de Título se representa con inicio en séptimo, guía de 20 créditos de asignaturas específicas y Tesis de 40 créditos en octavo, sin duplicar la identidad acreditable. Salto continúa limitado al primer año y a sus cinco alternativas regionales verificadas.
+- Químico 2015 reproduce diez semestres para Agrícola y Medio Ambiente, Calidad, Materiales y Sin orientación. Practicantado queda en décimo semestre; Internado, Proyecto específico y el bloque flexible propio de cada recorrido permanecen disponibles en catálogo sin convertirse en materias fijas de la grilla. Paysandú sólo completa Agrícola y Medio Ambiente y Salto sigue siendo un primer año con continuidad.
+- El generador admite `excludedPeriodCourseIds`, por lo que una alternativa normativa puede permanecer publicada en catálogo aunque se quite de la secuencia sugerida.
+- El planificador construye para cada plan la unión de todas las materias verificadas referenciadas por cualquier trayectoria publicada y por sus catálogos, sin depender del recorrido activo ni de carga diferida. Conserva el semestre del recorrido activo y presenta como `opt` lo disponible sólo en otros recorridos; candidatos, registros administrativos, rechazados, equivalentes históricos y duplicados no publicados quedan fuera.
+- La cola de auditoría y la cola curricular se regeneraron para mantener sus hashes alineados con el registro y el reporte derivados.
+
+## Fuentes verificadas visualmente
+
+Se revisaron las páginas relevantes de los nueve PDF oficiales, renderizados bajo `tmp/d03i-fq-dameros/`:
+
+- Bioquímico Clínico: damero Resolución 112/2026 y Plan de Estudios 2015.
+- Licenciatura en Química: damero Resolución 112/2026 e instructivo vigente del Plan 2016.
+- Químico: Plan de Estudios 2015 y dameros vigentes de Agrícola y Medio Ambiente (Resolución 74/2025), Calidad, Materiales (Resolución 112/2026) y Sin orientación.
+
+La revisión confirmó rótulos y cantidad de semestres, unidades enumeradas, créditos de las actividades finales, bloques flexibles y alcance de cada recorrido. Las URL canónicas y el soporte de cada una quedaron registrados en `data/bedelias/audits/official-source-audits.json` y `data/official-trajectories/reviews.json`.
+
+## Inventario y límites
+
+- Inventario anterior: 75 planes reproducidos, 15 con fuente pendiente, 1 sin trayectoria documentada y 56 por investigar.
+- Inventario final: 78 reproducidos, 12 con fuente pendiente, 1 sin trayectoria documentada y 56 por investigar, sobre 147 planes seleccionables.
+- La oferta concreta de optativas, electivas y unidades cursables en el interior puede cambiar por período; este nodo publica sólo identidades vigentes demostradas y no infiere oferta temporal.
+- El registro duplicado `fq-733-3` se preserva como evidencia extraída, pero no se expone en el planificador porque ningún damero ni catálogo vigente publicado lo referencia. La identidad vigente `733A` sí permanece disponible.
+- La Comisión de Carrera continúa siendo la autoridad para validar orientación, equivalencias, selección flexible, actividad final y egreso.
+
+## Verificación ejecutada
+
+- `node scripts/bedelias-audit-queue.mjs`: 184 identidades canónicas y 0 pendientes.
+- `node scripts/bedelias-ui-curriculum-queue.mjs`: 139 planes con malla y 0 pendientes de composición.
+- `node scripts/build-extracted-academic-plans.mjs` y `npm run trajectory:inventory`: ejecutados dos veces; las tres proyecciones FQ y los dos inventarios comparados conservaron SHA-256 idénticos entre corridas.
+- Pruebas focalizadas de los tres planes, inventario y unión del catálogo del planificador: 30/30.
+- `npm test`: compilación completa y 915/915 pruebas.
+- `npm run lint`: sin errores.
+- `git diff --check`: sin errores.
 
 ## Verificación y cierre
 

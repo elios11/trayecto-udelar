@@ -8,6 +8,7 @@ const audits = await readJson("data/bedelias/audits/official-source-audits.json"
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-enut-licenciatura-en-nutricion-2014.json");
 const pageSource = await readFile(new URL("app/page.tsx", root), "utf8");
+const registeredPlanCoursesSource = await readFile(new URL("app/registered-plan-courses.mjs", root), "utf8");
 const audit = audits.audits.find((entry) => entry.identity === "licenciatura en nutricion:2014");
 
 test("publica una sola Licenciatura en Nutrición y distingue la oferta parcial de Paysandú", () => {
@@ -76,7 +77,7 @@ test("muestra optativas y electivas como catálogo flexible y no como noveno sem
   assert.equal(audit.officialPlan.curriculum.catalogCourses.length, 2);
   assert.equal(audit.sources.find(({ url }) => url.endsWith("malla-curricular-V2png.jpg"))?.contentHash,
     "sha256:2adbe0bfec022f99b2a4a127b57ed68ab5b77192ad130113b365b4c73cb36760");
-  assert.match(pageSource, /catalogIds\.has\(course\.id\) \? "opt"/);
+  assert.match(registeredPlanCoursesSource, /activePeriods\.get\(course\.id\) \?\? "opt"/);
 });
 
 test("automatiza sólo las previaturas que el estado académico puede representar fielmente", () => {

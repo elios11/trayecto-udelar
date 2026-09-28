@@ -8,6 +8,7 @@ import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, typ
 import { isRegisteredAcademicPlan, loadRegisteredAcademicPlan, registeredAcademicPlans } from "./academic-plan-registry";
 import { resolveAcademicOption } from "./academic-option.mjs";
 import { availablePathwayEntries, resolveCampus, resolveCampusPathway } from "./academic-campus.mjs";
+import { buildRegisteredPlanCourses } from "./registered-plan-courses.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
 import {
@@ -509,19 +510,6 @@ function buildQf2015Catalog(trajectoryId: string, planData: Qf2015Projection | n
     .filter((course) => !ids.has(course.id) && !bedeliasCodes.has(course.bedeliasCode))
     .map((course) => ({ ...course, semester: "opt" as const }));
   return [...trajectoryCourses, ...catalog];
-}
-
-function buildRegisteredPlanCourses(pathwayId: string, data: RegisteredProjection | null): Course[] {
-  if (!data) return [];
-  const publishedPathways = data.publishedPathways ?? data.pathways;
-  const pathway = resolveAcademicOption(publishedPathways, pathwayId, Object.keys(publishedPathways)[0] ?? "");
-  if (!pathway) return [];
-  const periods = new Map<string, number>();
-  pathway.periods.forEach((period, index) => period.courseIds.forEach((id) => periods.set(id, index + 1)));
-  const catalogIds = new Set(pathway.catalogCourseIds ?? []);
-  return data.courses
-    .filter((course) => (course.authorityStatus ?? "verified") === "verified" && (periods.has(course.id) || catalogIds.has(course.id)))
-    .map((course) => ({ ...course, semester: catalogIds.has(course.id) ? "opt" : periods.get(course.id)!, offered: [] }));
 }
 
 function optionSatisfied(option: RequirementOption, statuses: Record<string, CourseStatus>) {

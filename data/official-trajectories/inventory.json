@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:dc8f832004cd62893c45f4af43a0081b5821e1bd1a64a43cfd6f4b22bdc178d2",
-    "extractedReportHash": "sha256:53c1287e00f86f9cdd30c6fea4a52ce1bf0c600699d674cad58585b848d2bd79",
-    "officialAuditHash": "sha256:031c8f00197e273e12d816ff40fa64ded64177d95e3e0bcd9b640765cec3df92",
-    "reviewedTrajectoriesHash": "sha256:7e311a5999f0a7efb34c444146147e371fe336d53047f2d290aadd47a6216882"
+    "extractedReportHash": "sha256:972f05653e4e35b5339f5dfa8dc5cb30dae761807b228937e958d988281dded2",
+    "officialAuditHash": "sha256:6cbaccda2d8a35f35bab223ecd96eace0591f824df886ebd3c52ec9bbd763d49",
+    "reviewedTrajectoriesHash": "sha256:24c2beab1119c1e312e38a842ee063e08c5b190070f42c990145d1fbb1387125"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 75,
-      "official-trajectory-identified-pending": 15,
+      "official-trajectory-reproduced": 78,
+      "official-trajectory-identified-pending": 12,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 71,
+    "pending": 68,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -243,8 +243,8 @@
         "serviceLabel": "Facultad de Química",
         "selectablePlanIds": 11,
         "states": {
-          "official-trajectory-reproduced": 2,
-          "official-trajectory-identified-pending": 7,
+          "official-trajectory-reproduced": 5,
+          "official-trajectory-identified-pending": 4,
           "no-official-trajectory-documented": 0,
           "research-pending": 2
         }
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 71,
+    "total": 68,
     "plans": [
       {
         "priority": 1,
@@ -369,34 +369,7 @@
       },
       {
         "priority": 1,
-        "planId": "bedelias-fq-bioquimico-clinico-2015",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fq-licenciatura-en-quimica-2016",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
         "planId": "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fq-quimico-2015",
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
           "fq"
@@ -1100,10 +1073,7 @@
         "identifiedPending": [
           "bedelias-fing-ingenieria-quimica-2021",
           "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
-          "bedelias-fq-bioquimico-clinico-2015",
-          "bedelias-fq-licenciatura-en-quimica-2016",
           "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
-          "bedelias-fq-quimico-2015",
           "bedelias-fq-tecnico-bach-en-cs-quimicas-2015"
         ],
         "researchPending": [
@@ -11517,57 +11487,30 @@
           "defaultCredentialId": "bioquimico-clinico"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-09-01",
-      "effectiveAt": "2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
+      "effectiveAt": "2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2015 oficial de Facultad de Química",
-          "url": "https://www.fq.edu.uy/sites/default/files/sites/all/themes/professional_theme/images/BIOQU%C3%8DMICO%20CL%C3%8DNICO%202015%20VERSI%C3%93N%20FINAL.pdf",
-          "role": "título; 450 créditos; diez semestres; mínimos por área; flexibilidad; Practicantado",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Damero sugerido vigente aprobado por Resolución 112 del CFQ de 12/03/2026",
+          "authority": "Consejo de Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Bioqu%C3%ADmico%20cl%C3%ADnico%20res%20112%20CFQ%2012%2003%202026.pdf",
-          "role": "secuencia sugerida; Bioquímica Opción II; Laboratorio de Bioquímica; Practicantado de 55 créditos",
-          "trajectoryEvidence": true
+          "role": "damero vigente de diez semestres aprobado por Resolución 112/2026"
         },
         {
-          "authority": "Catálogo vigente de carreras Udelar",
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/sites/all/themes/professional_theme/images/BIOQU%C3%8DMICO%20CL%C3%8DNICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+          "role": "plan normativo, créditos y estructura flexible"
+        },
+        {
+          "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/bioquimico-clinico",
-          "role": "vigencia; cinco años; 450 créditos; carrera completa en Montevideo; primer año en Salto",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Programas vigentes de asignaturas de Facultad de Química",
-          "url": "https://webpage.fq.edu.uy/?q=es%2Fnode%2F557",
-          "role": "actualizaciones 2025-2026; códigos de unidades vigentes; versiones Plan 2015",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de optativas y electivas de Facultad de Química",
-          "url": "https://webpage.fq.edu.uy/?q=es%2Fnode%2F166",
-          "role": "catálogos actuales; carácter actualizable de la oferta flexible",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Resoluciones vigentes de electivas para Bioquímico Clínico Plan 2015",
-          "url": "https://www.fq.edu.uy/?q=en%2Fnode%2F1809",
-          "role": "exclusión de Física 103 y Fisicoquímica 101 por solapamiento; vigencia de Fisicoquímica 104 como electiva",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Estadísticas Básicas 2024 de Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
-          "role": "Plan 2015; cinco años; 450 créditos; Montevideo y Salto",
-          "trajectoryEvidence": false
+          "role": "alcance territorial vigente: carrera completa en Montevideo y primer año en Salto"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo",
-          "Salto"
+          "Montevideo · carrera completa",
+          "Salto · primer año"
         ],
         "pathwayIds": [
           "montevideo",
@@ -11575,23 +11518,23 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-profiles",
+        "primary": "official-periods",
         "features": [
-          "official-periods",
-          "official-profiles"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "bioquimico clinico:2015",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-bioquimico-clinico-2015.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": true,
-        "expectedCoursePlacements": 47,
-        "matchedCoursePlacements": 47,
-        "officialPeriodCount": 10,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2015-2016.json",
+        "sourcePlanId": "bedelias-fq-bioquimico-clinico-2015",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-bioquimico-clinico-2015.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:f80b83e14b5337d8bd768842985f571ca22c5b8f47da2ba68cde3ab566d54bbb",
+        "projectionContentHash": "sha256:2dcf47e2e01192a8434d5fb8d3366c6faa52775d8ff81b8e5228b62d66cd8fc1",
+        "pathways": [
           {
             "id": "montevideo",
             "periodCount": 10
@@ -11601,15 +11544,12 @@
             "periodCount": 1
           }
         ],
-        "projectionContentHash": "sha256:8ca5e724319f02b682922dca6c1b7d973dad4d68f254b91f17e4577435d32d8a"
+        "expectedCoursePlacements": 48,
+        "matchedCoursePlacements": 48
       },
       "conflictNotes": [
-        "saltoScope: Bedelías publica en CENURLN la composición completa, pero el catálogo vigente de Udelar limita la oferta territorial al primer año. La UI restringe el recorrido de Salto a 17 alternativas regionales iniciales y explica la continuidad en Montevideo.",
-        "dameroUpdateMetadata: El archivo aprobado por Resolución 112/2026 conserva dentro del documento la leyenda de actualización 19/12/2024, aunque reemplaza Bioquímica Opción III por Bioquímica Opción II más Laboratorio de Bioquímica. Se prioriza el contenido de la resolución 2026.",
-        "flexibleCatalog: Bedelías acumula versiones, equivalencias y unidades históricas. La secuencia sugerida selecciona las versiones vigentes y deja el resto como catálogo acreditable sujeto a validación, sin sumar equivalentes automáticamente.",
-        "laboratorioBioquimicaCredits: La composición de Bedelías asigna 10 créditos al código 512, mientras el damero aprobado por Resolución 112/2026 asigna 5 en esta carrera. La proyección de Bioquímico Clínico usa los 5 créditos específicos del damero vigente y conserva trazada la discrepancia.",
-        "prerequisiteCoverage: FQ publica 397 reglas y 149 consultas sin regla explícita; CENURLN tiene cobertura menor. Se preservan las reglas centrales y no se interpreta la diferencia como variante curricular.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "El Practicantado aparece en noveno y décimo semestre; un bloque de inicio sin créditos conserva la extensión temporal sin duplicar la única identidad acreditable de 55 créditos.",
+        "Bedelías asigna 10 créditos al Laboratorio de Bioquímica; el damero vigente fija 5 y prevalece."
       ]
     },
     {
@@ -11769,51 +11709,30 @@
           "defaultCredentialId": "licenciado-en-quimica"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-09-01",
-      "effectiveAt": "2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
+      "effectiveAt": "2026",
       "officialSources": [
         {
-          "authority": "Instructivo vigente de Licenciatura en Química de Facultad de Química, mayo de 2025",
-          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf",
-          "role": "título; 320 créditos; mínimos; vinculación con el medio; Proyecto Específico de Título; requisito de acceso al proyecto",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Damero sugerido vigente aprobado por Resolución 112 del CFQ de 12/03/2026",
+          "authority": "Consejo de Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20qu%C3%ADmica%20res%20112%20CFQ%2012%2003%202026.pdf",
-          "role": "ocho semestres; secuencia sugerida; Bioquímica Opción II; Laboratorio de Bioquímica; Proyecto Específico de Título",
-          "trajectoryEvidence": true
+          "role": "damero vigente de ocho semestres aprobado por Resolución 112/2026"
         },
         {
-          "authority": "Catálogo vigente de carreras Udelar",
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf",
+          "role": "mínimos de créditos y composición del Proyecto Específico de Título"
+        },
+        {
+          "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-quimica",
-          "role": "vigencia; cuatro años; 320 créditos; carrera completa en Montevideo; primer año en Salto",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página vigente de la carrera en Facultad de Química",
-          "url": "https://www.fq.edu.uy/?q=en%2Fnode%2F749",
-          "role": "perfil; Tesis de Grado; personalización de optativas/electivas; documentos normativos vigentes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo oficial de optativas y electivas de Licenciatura en Química",
-          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Cat%C3%A1logo%20asignaturas%20Electivas%20y%20Optativas%20Lic%20en%20Qca_16.pdf",
-          "role": "oferta flexible vigente; carácter actualizable del catálogo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Regulación vigente de trabajos individuales de Facultad de Química",
-          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F815",
-          "role": "máximo de 15 créditos por trabajos individuales; límites por modalidad",
-          "trajectoryEvidence": false
+          "role": "alcance territorial vigente: carrera completa en Montevideo y primer año en Salto"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo",
-          "Salto"
+          "Montevideo · carrera completa",
+          "Salto · primer año"
         ],
         "pathwayIds": [
           "montevideo",
@@ -11821,23 +11740,23 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-profiles",
+        "primary": "official-periods",
         "features": [
-          "official-periods",
-          "official-profiles"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "licenciatura en quimica:2016",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-quimica-2016.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": true,
-        "expectedCoursePlacements": 27,
-        "matchedCoursePlacements": 27,
-        "officialPeriodCount": 8,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2015-2016.json",
+        "sourcePlanId": "bedelias-fq-licenciatura-en-quimica-2016",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-quimica-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:f875c467dae1e297c9c53f2c9f6c002d0f6fb17b56e8867135c51ef043065467",
+        "projectionContentHash": "sha256:d7465611fb2710140791ec7b104ee43c36f81d7ea10306d593e723578ce0eeb7",
+        "pathways": [
           {
             "id": "montevideo",
             "periodCount": 8
@@ -11847,16 +11766,12 @@
             "periodCount": 1
           }
         ],
-        "projectionContentHash": "sha256:4ad68acc113cf8d8b0e4c0216053b434fd65359ee49982bcbaae43f590ca98b4"
+        "expectedCoursePlacements": 28,
+        "matchedCoursePlacements": 28
       },
       "conflictNotes": [
-        "saltoScope: Bedelías publica en CENURLN el catálogo completo, pero Udelar limita la oferta territorial al primer año. La UI restringe Salto a cinco alternativas regionales explícitas y explica la continuidad en Montevideo.",
-        "dameroUpdateMetadata: El archivo enlazado como Resolución 112/2026 conserva dentro del documento la fecha de actualización 20/02/2025, pero reemplaza Bioquímica Opción III por Bioquímica Opción II más Laboratorio de Bioquímica. Se prioriza el contenido de la resolución vigente.",
-        "laboratorioBioquimicaCredits: Bedelías asigna 10 créditos al código 512, mientras el damero vigente asigna 5 para esta carrera. La proyección usa 5 créditos y conserva trazada la discrepancia.",
-        "flexibleMinimums: Bedelías agrupa 86 créditos de optativas, electivas y vinculación. El instructivo vigente distingue 76 optativos/electivos, al menos 56 optativos, y 10 de vinculación; la UI controla los tres mínimos por separado.",
-        "projectPrerequisite: El instructivo exige 174 créditos básicos y al menos 40 optativos/electivos antes del Proyecto Específico de Título. Bedelías no publica regla para la Tesis código 922; se documenta la condición y se mantiene validación de Comisión de Carrera.",
-        "prerequisiteCoverage: FQ publica 125 reglas y 91 consultas sin regla explícita; CENURLN sólo publica 2 reglas. Se preservan las reglas centrales y no se interpreta la diferencia como variante curricular.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "El Proyecto Específico de Título abarca séptimo y octavo semestre; un bloque de inicio sin créditos evita duplicar sus componentes acreditables y mantiene los 60 créditos totales.",
+        "Bedelías asigna 10 créditos al Laboratorio de Bioquímica; el damero vigente fija 5 y prevalece."
       ]
     },
     {
@@ -11968,58 +11883,51 @@
           "defaultCredentialId": "quimico-agricola-medio-ambiente"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-09-01",
-      "effectiveAt": "2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-26",
+      "effectiveAt": "2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2015 de Facultad de Química",
-          "url": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%202015%20VERSI%C3%93N%20FINAL.pdf",
-          "role": "título único; 10 semestres; 450 créditos; mínimos por área; 64 optativos/electivos; 55 créditos de actividad final",
-          "trajectoryEvidence": true
-        },
-        {
-          "authority": "Damero vigente de la orientación Agrícola y Medio Ambiente, Resolución 74/2025",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Quimico%20op%20agricola%20y%20medio%20ambiente%20res%2074%20CFQ%2031%2007%202025.pdf",
-          "role": "secuencia sugerida de diez semestres; unidades del recorrido Agrícola y Medio Ambiente",
-          "trajectoryEvidence": false
+          "role": "damero vigente de Agrícola y Medio Ambiente"
         },
         {
-          "authority": "Damero vigente de la orientación Calidad",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20Qco%20op%20calidad%20plan%202015.pdf",
-          "role": "secuencia sugerida de diez semestres; unidad curricular del Área Calidad",
-          "trajectoryEvidence": false
+          "role": "damero vigente de Calidad"
         },
         {
-          "authority": "Damero vigente de la orientación Materiales, Resolución 112/2026",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Qu%C3%ADmico%20materiales%20res%20112%20CFQ%2012%2003%202026.pdf",
-          "role": "secuencia sugerida de diez semestres; unidades del recorrido Materiales",
-          "trajectoryEvidence": false
+          "role": "damero vigente de Materiales"
         },
         {
-          "authority": "Damero vigente del recorrido Sin orientación",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Damero%20Qco%20sin%20orientaci%C3%B3n%20plan%202015_0.pdf",
-          "role": "secuencia sugerida de diez semestres; recorrido sin orientación",
-          "trajectoryEvidence": false
+          "role": "damero vigente del recorrido Sin orientación"
         },
         {
-          "authority": "Catálogo vigente de carreras Udelar",
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/QU%C3%8DMICO%202015%20VERSI%C3%93N%20FINAL.pdf",
+          "role": "plan normativo, mínimos y alternativas de actividad final"
+        },
+        {
+          "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/quimico",
-          "role": "vigencia; 60 meses; 450 créditos; cuatro opciones de orientación; Montevideo; Paysandú; Salto",
-          "trajectoryEvidence": false
+          "role": "título único, duración y alcance territorial general"
         },
         {
-          "authority": "Catálogo vigente de carreras en el interior de Udelar",
+          "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/carrerasinterior/quimico-agricola-y-medioambienal/",
-          "role": "Agrícola y Medio Ambiente completa en Paysandú; primer año en Salto; continuidad regional; Calidad y Materiales no completas en el interior",
-          "trajectoryEvidence": false
+          "role": "carrera completa de Agrícola y Medio Ambiente en Paysandú y primer año en Salto"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo",
-          "Paysandú",
-          "Salto"
+          "Montevideo · cuatro recorridos",
+          "Paysandú · Agrícola y Medio Ambiente",
+          "Salto · primer año"
         ],
         "pathwayIds": [
           "agricola-medio-ambiente",
@@ -12032,52 +11940,49 @@
       "currentProjection": {
         "primary": "official-profiles",
         "features": [
-          "official-periods",
           "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "quimico:2015",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-quimico-2015.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": true,
-        "expectedCoursePlacements": 194,
-        "matchedCoursePlacements": 194,
-        "officialPeriodCount": 41,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2015-2016.json",
+        "sourcePlanId": "bedelias-fq-quimico-2015",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-quimico-2015.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:5e4239ab7f41fe69e7a58aff3aa5dda7fd9fcfcac7e2e6186d80c616a0ba911f",
+        "projectionContentHash": "sha256:277aedd8da63f0d2fab26d77b188534cb01fa64caaf31ee9fdb2bac5cc8966c4",
+        "pathways": [
           {
             "id": "agricola-medio-ambiente",
-            "periodCount": 11
+            "periodCount": 10
           },
           {
             "id": "calidad",
-            "periodCount": 11
+            "periodCount": 10
           },
           {
             "id": "materiales",
-            "periodCount": 11
+            "periodCount": 10
           },
           {
             "id": "recorrido-sin-orientacion",
-            "periodCount": 11
+            "periodCount": 10
           },
           {
             "id": "salto-primer-ano",
             "periodCount": 1
           }
         ],
-        "projectionContentHash": "sha256:e85a6d10d1a9bfa81ecaefe28ea13f529bfd8397dc739e01f4ce96ba8fc5c34a"
+        "expectedCoursePlacements": 182,
+        "matchedCoursePlacements": 182
       },
       "conflictNotes": [
-        "regionalIdentity: FQ y CENURLN tienen distinta huella general por cobertura de previaturas, pero idéntica composición curricular. Se mantiene un único plan con ofertas por sede.",
-        "regionalScope: El sitio de carreras en el interior indica que se puede cursar buena parte de Calidad y Materiales, pero sólo acredita la totalidad de Agrícola y Medio Ambiente en Paysandú. La UI no ofrece las otras dos como trayectorias regionales completas.",
-        "duration: La ficha regional menciona 4,5 años, mientras el Plan normativo establece 10 semestres y el catálogo vigente y Bedelías publican 60 meses. La UI usa 60 meses y diez semestres.",
-        "orientationNaming: Bedelías rotula cuatro perfiles y el catálogo los describe como orientaciones, incluida la opción Sin orientación. El título normativo sigue siendo Químico; la UI usa recorridos, no carreras nuevas.",
-        "qualityAreaPlaceholder: Los dameros de Calidad y Sin orientación exigen una UC de 4 créditos del Área Calidad sin fijar una materia única. La UI conserva un bloque seleccionable de cero créditos y evita inventar una asignatura.",
-        "prerequisiteCoverage: FQ publica 461 consultas completadas sobre 465 códigos; CENURLN publica una cobertura menor. Se preservan las reglas disponibles y la actividad final mantiene validación manual normativa.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "Los cuatro dameros ubican Practicantado en décimo semestre; Internado y Proyecto quedan como alternativas normativas de catálogo, no como colocaciones del damero.",
+        "La oferta flexible cambia por período y queda fuera de la secuencia sugerida de diez semestres.",
+        "La oferta parcial de Calidad y Materiales en el interior no acredita una trayectoria completa fuera de Montevideo."
       ]
     },
     {
@@ -13473,5 +13378,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:ef032a92713936597c4ae14338fba9b13c8099fc4dde4c9cd29a634938d22ee6"
+  "contentHash": "sha256:dae9b6cdc0021d513e9d7326ef639a05921bf0dad86279b506e2c5b37c311abe"
 }

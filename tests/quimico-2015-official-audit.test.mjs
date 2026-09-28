@@ -54,7 +54,6 @@ test("traslada los cuatro dameros vigentes sin mezclar sus grillas sugeridas", (
   const expectedLabels = [
     "Primer semestre", "Segundo semestre", "Tercer semestre", "Cuarto semestre", "Quinto semestre",
     "Sexto semestre", "Séptimo semestre", "Octavo semestre", "Noveno semestre", "Décimo semestre",
-    "Validación de egreso",
   ];
   const pathways = [
     projection.pathways["agricola-medio-ambiente"],
@@ -65,9 +64,11 @@ test("traslada los cuatro dameros vigentes sin mezclar sus grillas sugeridas", (
   for (const pathway of pathways) {
     assert.deepEqual(pathway.periods.map(({ label }) => label), expectedLabels);
     assert.deepEqual(periodCredits(pathway).slice(0, 4), [37, 44, 50, 43]);
-    assert.deepEqual(periodCodes(pathway, "Décimo semestre"), [
-      "964X", "fq-quimico-internado", "fq-quimico-proyecto-final",
-    ]);
+    assert.deepEqual(periodCodes(pathway, "Décimo semestre"), ["964X"]);
+    assert.ok(pathway.catalogCourseIds.includes("fq-quimico-internado"));
+    assert.ok(pathway.catalogCourseIds.includes("fq-quimico-proyecto-final"));
+    assert.ok(!pathway.periods.flatMap(({ courseIds }) => courseIds).includes("fq-quimico-internado"));
+    assert.ok(!pathway.periods.flatMap(({ courseIds }) => courseIds).includes("fq-quimico-proyecto-final"));
     const selected = pathway.periods.flatMap(({ courseIds }) => courseIds);
     assert.equal(new Set(selected).size, selected.length);
   }

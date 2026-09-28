@@ -64949,7 +64949,7 @@
       "identity": "bioquimico clinico:2015",
       "career": "Bioquímico Clínico",
       "planYear": "2015",
-      "reviewedAt": "2026-09-01",
+      "reviewedAt": "2026-09-26",
       "status": "official-evidence-complete",
       "scope": "current-plan-2015-montevideo-complete-salto-first-year-450-credits",
       "publicationEligible": true,
@@ -65066,14 +65066,21 @@
                 ]
               },
               {
-                "label": "Semestres 9 y 10",
+                "label": "Noveno semestre",
+                "courseIds": [
+                  "bcl-practicantado-inicio"
+                ]
+              },
+              {
+                "label": "Décimo semestre",
                 "courseIds": [
                   "966X"
                 ]
               }
             ],
             "excludedCourseIds": [
-              "bcl-inicio-salto"
+              "bcl-inicio-salto",
+              "validacion-final-plan"
             ]
           },
           {
@@ -65093,7 +65100,8 @@
               }
             ],
             "excludedCourseIds": [
-              "validacion-final-plan"
+              "validacion-final-plan",
+              "bcl-practicantado-inicio"
             ],
             "catalogSourceCourseIds": [
               "CENURLN-SRN21",
@@ -65160,7 +65168,8 @@
             "Sexto semestre",
             "Séptimo semestre",
             "Octavo semestre",
-            "Semestres 9 y 10",
+            "Noveno semestre",
+            "Décimo semestre",
             "Ciencias Biológicas y Biomédicas",
             "Ciencias Físico-Matemáticas",
             "Ciencias Químicas",
@@ -65273,6 +65282,15 @@
               "periodLabel": "Orientación del recorrido",
               "curricularBlock": true,
               "sourceUrl": "https://udelar.edu.uy/carrera/bioquimico-clinico"
+            },
+            {
+              "id": "bcl-practicantado-inicio",
+              "name": "Practicantado · inicio",
+              "credits": 0,
+              "requirementId": "bcl-practicantado",
+              "periodLabel": "Noveno semestre",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Bioqu%C3%ADmico%20cl%C3%ADnico%20res%20112%20CFQ%2012%2003%202026.pdf"
             }
           ],
           "credentials": [
@@ -65469,6 +65487,10 @@
         {
           "field": "prerequisiteCoverage",
           "resolution": "FQ publica 397 reglas y 149 consultas sin regla explícita; CENURLN tiene cobertura menor. Se preservan las reglas centrales y no se interpreta la diferencia como variante curricular."
+        },
+        {
+          "field": "practicantadoSpan",
+          "resolution": "El damero vigente muestra el mismo Practicantado de 55 créditos en noveno y décimo semestre. La proyección usa un bloque de inicio sin créditos y conserva una única identidad canónica acreditable en décimo, sin duplicar la unidad ni sus créditos."
         }
       ],
       "uiNotice": "Plan 2015 de 450 créditos. La carrera completa se cursa en Montevideo; Salto ofrece únicamente el primer año y luego se continúa en Montevideo con el mismo título y progreso. El damero es sugerido y el currículo flexible requiere validación de la Comisión de Carrera.",
@@ -65478,7 +65500,7 @@
       "identity": "licenciatura en quimica:2016",
       "career": "Licenciatura en Química",
       "planYear": "2016",
-      "reviewedAt": "2026-09-01",
+      "reviewedAt": "2026-09-26",
       "status": "official-evidence-complete",
       "scope": "current-plan-2016-montevideo-complete-salto-first-year-320-credits",
       "publicationEligible": true,
@@ -65564,7 +65586,13 @@
                 ]
               },
               {
-                "label": "Semestres 7 y 8",
+                "label": "Séptimo semestre",
+                "courseIds": [
+                  "lq-pet-inicio"
+                ]
+              },
+              {
+                "label": "Octavo semestre",
                 "courseIds": [
                   "lq-pet-especificas-guia",
                   "922"
@@ -65572,7 +65600,8 @@
               }
             ],
             "excludedCourseIds": [
-              "lq-inicio-salto"
+              "lq-inicio-salto",
+              "validacion-final-plan"
             ]
           },
           {
@@ -65593,6 +65622,7 @@
             ],
             "excludedCourseIds": [
               "validacion-final-plan",
+              "lq-pet-inicio",
               "lq-flexibilidad-sexto",
               "lq-pet-especificas-guia"
             ],
@@ -65647,7 +65677,8 @@
             "Cuarto semestre",
             "Quinto semestre",
             "Sexto semestre",
-            "Semestres 7 y 8",
+            "Séptimo semestre",
+            "Octavo semestre",
             "Ciencias físico-matemáticas, biológicas y otras",
             "Ciencias químicas",
             "Optativas",
@@ -65785,6 +65816,15 @@
               "credits": 0,
               "requirementId": "lq-complementaria",
               "periodLabel": "Sexto semestre",
+              "curricularBlock": true,
+              "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
+            },
+            {
+              "id": "lq-pet-inicio",
+              "name": "Proyecto específico del título · inicio",
+              "credits": 0,
+              "requirementId": "lq-pet",
+              "periodLabel": "Séptimo semestre",
               "curricularBlock": true,
               "sourceUrl": "https://www.fq.edu.uy/sites/default/files/archivos/Instructivo%20LQ%20%28expe%20101900-000024-25%29.pdf"
             },
@@ -65987,6 +66027,10 @@
         {
           "field": "flexibleMinimums",
           "resolution": "Bedelías agrupa 86 créditos de optativas, electivas y vinculación. El instructivo vigente distingue 76 optativos/electivos, al menos 56 optativos, y 10 de vinculación; la UI controla los tres mínimos por separado."
+        },
+        {
+          "field": "projectSpan",
+          "resolution": "El damero vigente distribuye el Proyecto Específico de Título durante séptimo y octavo semestre. La proyección usa un bloque de inicio sin créditos en séptimo y conserva en octavo las identidades acreditables de las asignaturas específicas y la Tesis, sin duplicar créditos."
         },
         {
           "field": "projectPrerequisite",
@@ -67298,7 +67342,7 @@
       "identity": "quimico:2015",
       "career": "Químico",
       "planYear": "2015",
-      "reviewedAt": "2026-09-01",
+      "reviewedAt": "2026-09-26",
       "status": "official-evidence-complete",
       "scope": "current-plan-2015-four-official-trajectories-montevideo-full-agricultural-paysandu-first-year-salto-450-credits",
       "publicationEligible": true,
@@ -67417,16 +67461,13 @@
               {
                 "label": "Noveno semestre",
                 "courseIds": [
-                  "232",
-                  "quimico-flexibilidad-agricola"
+                  "232"
                 ]
               },
               {
                 "label": "Décimo semestre",
                 "courseIds": [
-                  "964X",
-                  "quimico-internado",
-                  "quimico-proyecto-final"
+                  "964X"
                 ]
               }
             ],
@@ -67436,9 +67477,18 @@
               "quimico-flexibilidad-sin-orientacion",
               "quimico-area-calidad",
               "quimico-area-calidad-sin-orientacion",
-              "quimico-inicio-salto"
+              "quimico-inicio-salto",
+              "validacion-final-plan"
+            ],
+            "excludedPeriodCourseIds": [
+              "quimico-flexibilidad-agricola",
+              "quimico-internado",
+              "quimico-proyecto-final"
             ],
             "catalogSourceCourseIds": [
+              "quimico-flexibilidad-agricola",
+              "quimico-internado",
+              "quimico-proyecto-final",
               "103A",
               "103R",
               "203I",
@@ -68235,16 +68285,13 @@
                 "courseIds": [
                   "743",
                   "410B",
-                  "232",
-                  "quimico-flexibilidad-calidad"
+                  "232"
                 ]
               },
               {
                 "label": "Décimo semestre",
                 "courseIds": [
-                  "964X",
-                  "quimico-internado",
-                  "quimico-proyecto-final"
+                  "964X"
                 ]
               }
             ],
@@ -68253,9 +68300,18 @@
               "quimico-flexibilidad-materiales",
               "quimico-flexibilidad-sin-orientacion",
               "quimico-area-calidad-sin-orientacion",
-              "quimico-inicio-salto"
+              "quimico-inicio-salto",
+              "validacion-final-plan"
+            ],
+            "excludedPeriodCourseIds": [
+              "quimico-flexibilidad-calidad",
+              "quimico-internado",
+              "quimico-proyecto-final"
             ],
             "catalogSourceCourseIds": [
+              "quimico-flexibilidad-calidad",
+              "quimico-internado",
+              "quimico-proyecto-final",
               "103A",
               "103R",
               "203I",
@@ -69033,16 +69089,13 @@
                 "label": "Noveno semestre",
                 "courseIds": [
                   "905",
-                  "232",
-                  "quimico-flexibilidad-materiales"
+                  "232"
                 ]
               },
               {
                 "label": "Décimo semestre",
                 "courseIds": [
-                  "964X",
-                  "quimico-internado",
-                  "quimico-proyecto-final"
+                  "964X"
                 ]
               }
             ],
@@ -69052,9 +69105,18 @@
               "quimico-flexibilidad-sin-orientacion",
               "quimico-area-calidad",
               "quimico-area-calidad-sin-orientacion",
-              "quimico-inicio-salto"
+              "quimico-inicio-salto",
+              "validacion-final-plan"
+            ],
+            "excludedPeriodCourseIds": [
+              "quimico-flexibilidad-materiales",
+              "quimico-internado",
+              "quimico-proyecto-final"
             ],
             "catalogSourceCourseIds": [
+              "quimico-flexibilidad-materiales",
+              "quimico-internado",
+              "quimico-proyecto-final",
               "103A",
               "103R",
               "203I",
@@ -69836,16 +69898,13 @@
               {
                 "label": "Noveno semestre",
                 "courseIds": [
-                  "232",
-                  "quimico-flexibilidad-sin-orientacion"
+                  "232"
                 ]
               },
               {
                 "label": "Décimo semestre",
                 "courseIds": [
-                  "964X",
-                  "quimico-internado",
-                  "quimico-proyecto-final"
+                  "964X"
                 ]
               }
             ],
@@ -69854,9 +69913,18 @@
               "quimico-flexibilidad-calidad",
               "quimico-flexibilidad-materiales",
               "quimico-area-calidad",
-              "quimico-inicio-salto"
+              "quimico-inicio-salto",
+              "validacion-final-plan"
+            ],
+            "excludedPeriodCourseIds": [
+              "quimico-flexibilidad-sin-orientacion",
+              "quimico-internado",
+              "quimico-proyecto-final"
             ],
             "catalogSourceCourseIds": [
+              "quimico-flexibilidad-sin-orientacion",
+              "quimico-internado",
+              "quimico-proyecto-final",
               "103A",
               "103R",
               "203I",
@@ -71451,6 +71519,10 @@
         {
           "field": "prerequisiteCoverage",
           "resolution": "FQ publica 461 consultas completadas sobre 465 códigos; CENURLN publica una cobertura menor. Se preservan las reglas disponibles y la actividad final mantiene validación manual normativa."
+        },
+        {
+          "field": "flexibleAndFinalCatalog",
+          "resolution": "Los dameros ubican sólo el Practicantado en décimo semestre y no fijan una edición permanente de optativas/electivas. La secuencia sugerida excluye los bloques flexibles, Internado y Proyecto; el catálogo conserva las alternativas normativas de 55 créditos y el bloque flexible propio de cada recorrido."
         }
       ],
       "uiNotice": "Plan 2015 de 450 créditos y un único título. Elegí orientación o sede: Agrícola y Medio Ambiente se completa en Montevideo o Paysandú; Calidad, Materiales y Sin orientación se completan en Montevideo; Salto ofrece sólo el primer año.",
@@ -72871,6 +72943,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:031c8f00197e273e12d816ff40fa64ded64177d95e3e0bcd9b640765cec3df92",
+  "contentHash": "sha256:6cbaccda2d8a35f35bab223ecd96eace0591f824df886ebd3c52ec9bbd763d49",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
