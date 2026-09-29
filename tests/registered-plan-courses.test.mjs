@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-import { buildRegisteredPlanCourses } from "../app/registered-plan-courses.mjs";
+import { buildRegisteredPlanCourses, buildRegisteredPlanPresentation } from "../app/registered-plan-courses.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relativePath, root), "utf8"));
@@ -27,28 +27,36 @@ const publishedUnion = (projection) => {
   return ids;
 };
 
-test("el planificador ofrece la unión publicada y verificada de los tres planes FQ sin duplicados", () => {
+test("el planificador conserva la unión publicada o amplía el fallback con toda la composición sin duplicados", () => {
   for (const { slug, projection } of plans) {
     const pathways = projection.publishedPathways ?? projection.pathways;
     const availableIds = publishedUnion(projection);
-    const expectedIds = projection.courses
-      .filter((course) => (course.authorityStatus ?? "verified") === "verified" && availableIds.has(course.id))
-      .map(({ id }) => id)
-      .sort();
-
-    for (const [pathwayId, pathway] of Object.entries(pathways)) {
-      const courses = buildRegisteredPlanCourses(pathwayId, projection);
+    for (const pathwayId of Object.keys(pathways)) {
+      const presentation = buildRegisteredPlanPresentation(pathwayId, projection);
+      const courses = presentation.courses;
+      const expectedIds = projection.courses
+        .filter((course) => presentation.generated
+          ? !course.placeholder
+            && !["administrative", "historical-equivalent", "rejected"].includes(course.authorityStatus)
+            && (!course.curricularBlock || course.credits > 0 || (course.hours ?? 0) > 0)
+          : (course.authorityStatus ?? "verified") === "verified" && availableIds.has(course.id))
+        .map(({ id }) => id)
+        .sort();
       const ids = courses.map(({ id }) => id);
       assert.equal(new Set(ids).size, ids.length, `${slug}/${pathwayId}: identidades duplicadas`);
       assert.deepEqual([...ids].sort(), expectedIds, `${slug}/${pathwayId}: catálogo incompleto`);
 
       const activeSemesters = new Map();
-      pathway.periods.forEach(({ courseIds }, index) => {
+      presentation.periods.forEach(({ courseIds }, index) => {
         courseIds.forEach((id) => activeSemesters.set(id, index + 1));
       });
       for (const course of courses) {
         assert.equal(course.semester, activeSemesters.get(course.id) ?? "opt", `${slug}/${pathwayId}/${course.id}`);
-        assert.equal(course.authorityStatus ?? "verified", "verified");
+        if (course.authorityStatus !== "verified") {
+          assert.equal(course.provisional, true, `${slug}/${pathwayId}/${course.id}: candidata sin señalizar`);
+          assert.deepEqual(course.eligibleRequirementIds, []);
+          assert.deepEqual(course.creditAllocations, []);
+        }
       }
     }
   }

@@ -20,8 +20,8 @@ test("la UI no presenta la extracción pendiente como auditoría oficial", () =>
   assert.match(page, /Catálogo en validación · sin materias publicadas/);
   assert.match(registeredPlanCourses, /\(course\.authorityStatus \?\? "verified"\) === "verified"/);
   assert.match(page, /activeRegisteredPlan\?\.publishedRules \?\? activeRegisteredPlan\?\.rules \?\? \[\]/);
-  assert.match(page, /new Map<string, unknown>\(activeRegisteredPlan\.courses\.map/);
-  assert.match(page, /activeRegisteredPlan\.plan\.courseCatalogAuditStatus === "structure-only"/);
+  assert.match(page, /new Map<string, unknown>\(activeRegisteredPlan\.courses[\s\S]*?authorityStatus[\s\S]*?\.map/);
+  assert.match(page, /activeRegisteredPeriods\.length === 0/);
   assert.match(page, /El plan está disponible, pero sus materias aún no tienen respaldo suficiente/);
   assert.match(page, /Este plan todavía no tiene materias verificadas para agregar\. La composición extraída se conserva en revisión\./);
 });
@@ -30,6 +30,23 @@ test("el planificador distingue la organización personal de la currícula ofici
   assert.match(page, /Organizá cómo pensás cursar las materias de este plan/);
   assert.match(page, /Esto no modifica sus requisitos,[\s\S]*ni áreas oficiales/);
   assert.doesNotMatch(page, /Armá una currícula propia/);
+});
+
+test("la UI distingue trayectorias oficiales de recorridos orientativos generados", () => {
+  assert.match(page, /Recorrido orientativo generado/);
+  assert.match(page, /Trayectoria oficial ·/);
+  assert.match(page, /no completan requisitos oficiales/);
+  assert.match(page, /const officialStatuses = useMemo/);
+  assert.match(page, /expressionSatisfied\(rule\.expression, officialStatuses/);
+  assert.match(page, /activeRegisteredPresentation\.periods/);
+  assert.match(page, /Catálogo flexible de Bedelías/);
+  assert.match(page, /visibleElectives\.slice\(0, 20\)/);
+  assert.match(page, /Mostrar las \{visibleElectives\.length\} materias/);
+  assert.match(page, /course\.provisional[\s\S]*?provisional-badge/);
+  assert.match(registeredPlanCourses, /Orden provisorio construido por Trayecto desde la composición de Bedelías/);
+  assert.match(registeredPlanCourses, /creditAllocations: \[\]/);
+  assert.match(css, /\.generated-pathway-note \.pilot-note-mark/);
+  assert.match(css, /\.provisional-badge/);
 });
 
 test("los planes sin carga publicada se miden por materias y requisitos", () => {

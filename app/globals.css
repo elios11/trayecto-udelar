@@ -52,6 +52,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .pilot-note { max-width: 920px; margin: 14px 0 0; display: flex; align-items: flex-start; gap: 8px; color: var(--muted); font-size: 12px; line-height: 1.45; }
 .pilot-note-mark { width: 18px; height: 18px; flex: none; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--udelar) 38%, var(--line)); border-radius: 50%; background: var(--accent-soft); color: var(--udelar); font: 750 10px var(--font-geist-mono); }
 .pilot-note-copy { min-width: 0; }
+.generated-pathway-note .pilot-note-mark { border-color: color-mix(in srgb, var(--warning-ink) 48%, var(--line)); background: var(--warning-soft); color: var(--warning-ink); }
 .curriculum-change-alert { margin: 18px 36px 0; padding: 18px 20px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; border: 1px solid color-mix(in srgb, var(--udelar) 34%, var(--line)); border-radius: 14px; background: color-mix(in srgb, var(--accent-soft) 66%, var(--surface)); }
 .curriculum-change-alert.is-review { border-color: color-mix(in srgb, var(--warning-ink) 38%, var(--line)); }
 .curriculum-change-alert.is-blocked { border-color: color-mix(in srgb, var(--warning-ink) 58%, var(--line)); background: color-mix(in srgb, var(--warning-soft) 72%, var(--surface)); }
@@ -163,6 +164,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .catalog-help { margin: 10px 2px 12px; color: var(--muted); font-size: 9px; line-height: 1.45; }
 .catalog-list { flex: 1 1 0; min-height: 0; overflow-y: auto; display: grid; grid-auto-rows: max-content; align-content: start; gap: 9px; padding: 1px 6px 12px 1px; scrollbar-width: thin; }
 .catalog-course { min-height: 94px; border: 1px solid var(--line); border-radius: 10px; background: white; overflow: hidden; cursor: grab; }
+.catalog-course.provisional-course { border-color: color-mix(in srgb, var(--warning-ink) 36%, var(--line)); }
 .catalog-course:active { cursor: grabbing; }
 .catalog-course-main { width: 100%; display: grid; gap: 5px; padding: 10px 11px 8px; border: 0; background: transparent; text-align: left; }
 .catalog-course-main > span { color: var(--muted); font: 8px var(--font-geist-mono); }
@@ -291,12 +293,14 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .course-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--pending); }
 .course-card.approved::before { background: var(--approved); }
 .course-card.exonerated::before { background: var(--exonerated); }
+.course-card.provisional-course::before { background: var(--warning-ink); }
 .course-card.locked { background: #edf0f0; opacity: .72; }
 .course-card.unlocked:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(25,46,58,.08); }
 .course-topline { display: flex; justify-content: space-between; align-items: center; }
 .course-topline > span { font-family: var(--font-geist-mono); color: var(--muted); font-size: 9px; }
 .official-tag { display: inline-flex; margin-left: 6px; padding: 2px 5px; border-radius: 99px; background: #e6f3ef; color: var(--exonerated); font-family: var(--font-geist-sans); font-size: 7px; font-style: normal; font-weight: 750; letter-spacing: .03em; }
 .official-tag.fing-tag { background: #e8f0f5; color: var(--udelar); }
+.provisional-badge { display: inline-flex; margin-left: 6px; padding: 2px 5px; border-radius: 99px; background: var(--warning-soft); color: var(--warning-ink); font-family: var(--font-geist-sans); font-size: 7px; font-style: normal; font-weight: 780; letter-spacing: .02em; }
 .course-topline button { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--muted); font-family: Georgia, serif; font-style: italic; font-size: 11px; }
 .course-topline button:hover { border-color: var(--udelar); color: var(--udelar); }
 .course-card h3 { font-size: 13px; line-height: 1.25; letter-spacing: -.015em; margin: 12px 0; min-height: 33px; }
@@ -405,6 +409,8 @@ footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .verified-source a { color: var(--udelar); font-weight: 750; }
 .verified-source.fing-source { border-color: #cddde7; background: #f3f8fb; color: #355366; }
 .verified-source.fing-source > span { color: var(--udelar); }
+.verified-source.provisional-source { border-color: color-mix(in srgb, var(--warning-ink) 34%, var(--line)); background: var(--warning-soft); color: var(--warning-ink); }
+.verified-source.provisional-source > span { color: var(--warning-ink); }
 .requirements-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .requirements-list li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--paper); border-radius: 8px; font-size: 12px; }
 .requirements-list li.done { color: var(--exonerated); }

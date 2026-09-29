@@ -8,7 +8,7 @@ import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, typ
 import { isRegisteredAcademicPlan, loadRegisteredAcademicPlan, registeredAcademicPlans } from "./academic-plan-registry";
 import { resolveAcademicOption } from "./academic-option.mjs";
 import { availablePathwayEntries, resolveCampus, resolveCampusPathway } from "./academic-campus.mjs";
-import { buildRegisteredPlanCourses } from "./registered-plan-courses.mjs";
+import { buildRegisteredPlanPresentation } from "./registered-plan-courses.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
 import {
@@ -161,6 +161,7 @@ type Course = {
   ruleCoverage?: "published" | "partial" | "not-published" | "not-scraped" | "not-applicable";
   curricularBlock?: boolean;
   authorityStatus?: "verified" | "candidate" | "historical-equivalent" | "administrative" | "rejected";
+  provisional?: boolean;
   fieldProvenance?: { inclusion: string; name: string; credits: string };
   offering?: { term: string; sourceUrl: string; evaUrl?: string; capacity: number | null };
 };
@@ -197,6 +198,8 @@ const coursesLoadLabel = (courses: Course[]) => {
   if (hours > 0) return `${hours} horas`;
   return "Créditos no publicados";
 };
+
+const isOfficiallyAccreditableCourse = (course: Course | undefined) => (course?.authorityStatus ?? "verified") === "verified";
 
 type VerifiedRule = {
   target: { code: string; name: string; assessment: "course" | "exam" };
@@ -1093,12 +1096,14 @@ export default function Home() {
   const profileCatalogCourseIds = useMemo(() => new Set((activeProfileCatalogData?.courses ?? []).map((course) => course.id)), [activeProfileCatalogData]);
   const qf2015AvailableCourses = useMemo(() => buildQf2015Catalog(trajectoryId, qf2015Data, qfCatalogData), [trajectoryId, qf2015Data, qfCatalogData]);
   const qfCatalogCourseIds = useMemo(() => new Set((qfCatalogData?.courses ?? []).map((course) => course.id)), [qfCatalogData]);
-  const registeredAvailableCourses = useMemo(() => {
+  const activeRegisteredPresentation = useMemo(() => {
     const campuses = activeRegisteredPlan?.campuses ?? [];
     const selectedCampus = resolveCampus(campuses, campusId) as CampusOption | undefined;
     const effectivePathwayId = resolveCampusPathway(activeRegisteredPlan?.pathways ?? {}, selectedCampus, trajectoryId);
-    return buildRegisteredPlanCourses(effectivePathwayId, activeRegisteredPlan);
+    return buildRegisteredPlanPresentation(effectivePathwayId, activeRegisteredPlan);
   }, [trajectoryId, campusId, activeRegisteredPlan]);
+  const registeredAvailableCourses = activeRegisteredPresentation.courses as Course[];
+  const provisionalRegisteredCourseCount = registeredAvailableCourses.filter((course) => course.provisional).length;
   const courses = useMemo(
     () => isRegisteredPlan
       ? registeredAvailableCourses
@@ -1157,9 +1162,19 @@ export default function Home() {
       ? { ...storedStatuses, PI: "exonerated" as CourseStatus }
       : storedStatuses;
   }, [progress, activeProgressPlanId, planYear, trajectoryId, activeCourses]);
+  const officialStatuses = useMemo(() => {
+    if (!isRegisteredPlan || !activeRegisteredPlan) return statuses;
+    const result = { ...statuses };
+    for (const course of activeRegisteredPlan.courses) {
+      if (!isOfficiallyAccreditableCourse(course as Course)) result[course.id] = "pending";
+    }
+    return result;
+  }, [statuses, isRegisteredPlan, activeRegisteredPlan]);
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
-    if (isRegisteredPlan && activeRegisteredPlan) return new Map<string, unknown>(activeRegisteredPlan.courses.map((course) => [course.id, course]));
+    if (isRegisteredPlan && activeRegisteredPlan) return new Map<string, unknown>(activeRegisteredPlan.courses
+      .filter((course) => (course.authorityStatus ?? "verified") === "verified")
+      .map((course) => [course.id, course]));
     if (planYear === "2025") return new Map(plan2025Data.courses.filter((course) => course.dataStatus === "bedelias-composition").map((course) => [course.id, course]));
     if (isProfilePlan && activeProfileData) {
       const merged = new Map<string, unknown>(activeProfileData.courses.map((course) => [course.id, course]));
@@ -1193,10 +1208,7 @@ export default function Home() {
     : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const activePlan2025Trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const activeRegisteredPathway = registeredPathwayEntries.find(([id]) => id === activeRegisteredPathwayId)?.[1];
-  const activeRegisteredPublishedPathway = activeRegisteredPlan?.publishedPathways?.[activeRegisteredPathwayId];
-  const activeRegisteredPeriods = activeRegisteredPlan?.publishedPathways
-    ? (activeRegisteredPublishedPathway?.periods ?? [])
-    : (activeRegisteredPathway?.periods ?? []);
+  const activeRegisteredPeriods = activeRegisteredPresentation.periods;
   const requirementNodes = creditStructure.nodes;
   const nodeById = useMemo(() => new Map(requirementNodes.map((node) => [node.id, node])), [requirementNodes]);
   const pathwayCredentialId = isRegisteredPlan ? activeRegisteredPathway?.credentialId : undefined;
@@ -1741,17 +1753,17 @@ export default function Home() {
   }, [planYear, trajectoryId]);
 
   const earnedCredits = useMemo(
-    () => activeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + course.credits : sum, 0),
+    () => activeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course) ? sum + course.credits : sum, 0),
     [activeCourses, statuses],
   );
   const earnedHours = useMemo(
-    () => activeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" ? sum + (course.hours ?? 0) : sum, 0),
+    () => activeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course) ? sum + (course.hours ?? 0) : sum, 0),
     [activeCourses, statuses],
   );
   const planTotalHours = isRegisteredPlan ? (activeRegisteredPlan?.plan.totalHours ?? null) : null;
   const usesPublishedHours = planMinCredits <= 0 && activeCourses.some((course) => (course.hours ?? 0) > 0);
   const hasPublishedCourseLoad = usesPublishedHours || activeCourses.some((course) => course.credits > 0);
-  const completedCourseCount = activeCourses.filter((course) => statuses[course.id] === "exonerated").length;
+  const completedCourseCount = activeCourses.filter((course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course)).length;
 
   const allocationBelongsTo = (allocationNodeId: string, targetNodeId: string) => {
     let current = nodeById.get(allocationNodeId);
@@ -1762,7 +1774,7 @@ export default function Home() {
     return false;
   };
   const nodeCredits = (nodeId: string) => activeCourses.reduce((total, course) => {
-    if (statuses[course.id] !== "exonerated") return total;
+    if (statuses[course.id] !== "exonerated" || !isOfficiallyAccreditableCourse(course)) return total;
     const contribution = (course.creditAllocations ?? [])
       .filter((allocation) => allocationBelongsTo(allocation.nodeId, nodeId))
       .reduce((sum, allocation) => sum + allocation.credits, 0);
@@ -1779,9 +1791,12 @@ export default function Home() {
   const suggestedAllocationCount = courses.filter((course) => courseAllocationStatus(course) === "suggested").length;
   const activityProgress = (activity: Credential["requiredActivities"][number]) => activity.courseIds.reduce((sum, id) => {
     const course = activeCourses.find((item) => item.id === id);
-    return sum + (course && statuses[id] === "exonerated" ? course.credits : 0);
+    return sum + (course && isOfficiallyAccreditableCourse(course) && statuses[id] === "exonerated" ? course.credits : 0);
   }, 0);
-  const requiredCourseGroupProgress = (group: Credential["requiredCourseGroups"][number]) => group.courseIds.filter((id) => statuses[id] === "exonerated").length;
+  const requiredCourseGroupProgress = (group: Credential["requiredCourseGroups"][number]) => group.courseIds.filter((id) => {
+    const course = activeCourses.find((item) => item.id === id);
+    return isOfficiallyAccreditableCourse(course) && statuses[id] === "exonerated";
+  }).length;
   const countableNodeRequirements = credential.nodeRequirements.filter((requirement) => requirement.minCredits > 0);
   const alternativeNodeRequirements = credential.alternativeNodeRequirements ?? [];
   const alternativeNodeRequirementProgress = (requirement: NonNullable<Credential["alternativeNodeRequirements"]>[number]) => requirement.options.filter((option) => nodeCredits(option.nodeId) >= option.minCredits).length;
@@ -1793,10 +1808,10 @@ export default function Home() {
     + credential.requiredActivities.filter((activity) => activityProgress(activity) >= activity.minCredits).length;
   const credentialRequirementsTotal = (hasTotalCreditRequirement ? 1 : 0) + countableNodeRequirements.length + alternativeNodeRequirements.length + credential.requiredCourseGroups.length + credential.requiredActivities.length;
 
-  const isComplete = (id: string) => statuses[id] === "approved" || statuses[id] === "exonerated";
+  const isComplete = (id: string) => officialStatuses[id] === "approved" || officialStatuses[id] === "exonerated";
   const isFixedPlacementTest = (course: Course) => planYear === "2025" && trajectoryId === "pi-60-plus" && course.id === "PI";
   const isRequirementComplete = (id: string) => id === "MI2"
-    ? isComplete("MI2") || statuses.PI === "exonerated"
+    ? isComplete("MI2") || officialStatuses.PI === "exonerated"
     : isComplete(id);
   const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.bedeliasCode ?? (course.id === "1730-A" ? "1730" : course.id)}:${assessment}`);
   const publishedRule = (course: Course, assessment: "course" | "exam") => publishedRuleMap.get(`${course.bedeliasCode ?? (course.id === "1730-A" ? "1730" : course.id)}:${assessment}`);
@@ -1805,7 +1820,7 @@ export default function Home() {
     if (registeredCourseGroup) {
       return registeredCourseGroup.reduce((sum, courseId) => {
         const course = activeCourses.find((item) => item.id === courseId);
-        return sum + (course && statuses[courseId] === "exonerated" ? course.credits : 0);
+        return sum + (course && isOfficiallyAccreditableCourse(course) && statuses[courseId] === "exonerated" ? course.credits : 0);
       }, 0);
     }
     const nodeId = planYear === "1997"
@@ -1815,7 +1830,10 @@ export default function Home() {
   };
   const groupApprovals = (groupCode: string) => {
     const registeredCourseGroup = isRegisteredPlan ? activeRegisteredPlan?.requirementCourseGroups?.[groupCode] : undefined;
-    return (registeredCourseGroup ?? []).filter((courseId) => statuses[courseId] === "exonerated").length;
+    return (registeredCourseGroup ?? []).filter((courseId) => {
+      const course = activeCourses.find((item) => item.id === courseId);
+      return isOfficiallyAccreditableCourse(course) && statuses[courseId] === "exonerated";
+    }).length;
   };
   const hasVerifiedCourseRule = (course: Course) => Boolean(officialRule(course, "course"));
   const isCourseAvailabilityKnown = (course: Course) => course.curricularBlock || course.placementTest || hasVerifiedCourseRule(course) || Boolean(course.prerequisites?.length || course.minCredits);
@@ -1824,12 +1842,12 @@ export default function Home() {
     if (course.placementTest) return true;
     const modeledPrerequisitesMet = (course.prerequisites ?? []).every(isRequirementComplete);
     const rule = officialRule(course, "course");
-    if (rule) return modeledPrerequisitesMet && expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits, groupApprovals);
+    if (rule) return modeledPrerequisitesMet && expressionSatisfied(rule.expression, officialStatuses, earnedCredits, groupCredits, groupApprovals);
     return modeledPrerequisitesMet && (!course.minCredits || earnedCredits >= course.minCredits);
   };
   const isExamUnlocked = (course: Course) => {
     const rule = officialRule(course, "exam");
-    return rule ? expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits, groupApprovals) : true;
+    return rule ? expressionSatisfied(rule.expression, officialStatuses, earnedCredits, groupCredits, groupApprovals) : true;
   };
   const isUnlocked = (course: Course) => {
     const status = statuses[course.id] ?? "pending";
@@ -2071,6 +2089,9 @@ export default function Home() {
     return semester === "opt" ? sortCoursesByProgress(matches, statuses) : matches;
   };
   const visibleElectives = filtered("opt");
+  const displayedElectives = isRegisteredPlan && activeRegisteredPresentation.generated && !fullElectivesCatalogExpanded && !search.trim()
+    ? visibleElectives.slice(0, 20)
+    : visibleElectives;
 
   const downloadJson = (filename: string, payload: unknown, serialized = false) => {
     const blob = new Blob([serialized ? String(payload) : JSON.stringify(payload, null, 2)], { type: "application/json" });
@@ -2598,7 +2619,7 @@ export default function Home() {
     planId: planYear,
     campusId: campusId || undefined,
   }) : [];
-  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, statuses, earnedCredits, activeCourses, courseIds, groupCredits, groupApprovals) : [];
+  const selectedRows = selectedRule ? requirementRows(selectedRule.expression, officialStatuses, earnedCredits, activeCourses, courseIds, groupCredits, groupApprovals) : [];
   const selectedDependents = selected ? activeCourses.filter((course) => {
     if (course.id === selected.id) return false;
     if (course.prerequisites?.includes(selected.id)) return true;
@@ -2611,7 +2632,9 @@ export default function Home() {
   };
   const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : planYear === "qf-2015" ? qfCatalogLoadState : extendedElectivesLoadState;
   const deferredCatalogCount = isProfilePlan ? (activeProfileCatalogData?.courses.length ?? 0) : planYear === "qf-2015" ? (qfCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
-  const electivesSummary = visibleElectives.length > 0
+  const electivesSummary = isRegisteredPlan && activeRegisteredPresentation.generated
+    ? `${visibleElectives.length} materias adicionales disponibles`
+    : visibleElectives.length > 0
     ? `${visibleElectives.length} materias verificadas en la composición`
     : (isProfilePlan && !fullElectivesCatalogExpanded) || (planYear === "qf-2015" && !fullElectivesCatalogExpanded)
       ? "Catálogo oficial disponible"
@@ -3001,9 +3024,9 @@ export default function Home() {
             </label>}
           </div>
           {appMode === "planner" ? (
-            <p className="pilot-note planner-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Organizá cómo pensás cursar las materias de este plan. Esto no modifica sus requisitos, {usesPublishedHours ? "horas" : "créditos"} ni áreas oficiales. Tu planificación queda guardada en este dispositivo.{isRegisteredPlan && !hasClosedOfficialEvidence ? " El catálogo todavía está en validación y sólo incluye materias respaldadas por fuentes curriculares." : ""}</span></p>
+            <p className={`pilot-note planner-note ${activeRegisteredPresentation.generated ? "generated-pathway-note" : ""}`}><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Organizá cómo pensás cursar las materias de este plan. Esto no modifica sus requisitos, {usesPublishedHours ? "horas" : "créditos"} ni áreas oficiales. Tu planificación queda guardada en este dispositivo.{isRegisteredPlan && activeRegisteredPresentation.generated ? provisionalRegisteredCourseCount > 0 ? ` Incluye ${provisionalRegisteredCourseCount} materias de la composición de Bedelías todavía provisionales: sirven para planificar, pero no completan requisitos oficiales.` : " La ubicación por tramos es orientativa y no representa semestres institucionales." : isRegisteredPlan && !hasClosedOfficialEvidence ? " El catálogo todavía está en validación y sólo incluye materias respaldadas por fuentes curriculares." : ""}</span></p>
           ) : isRegisteredPlan ? (
-            <p className={`pilot-note ${activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-note"}`}><span className="pilot-note-mark" aria-hidden="true">{activeRegisteredPlan?.plan.auditStatus === "audited" ? "✓" : "i"}</span><span className="pilot-note-copy">{activeCampus ? `Sede: ${activeCampus.label}. ` : ""}{activeRegisteredPathway?.description} {activeRegisteredPlan?.plan.notice}</span></p>
+            <p className={`pilot-note ${activeRegisteredPresentation.generated ? "generated-pathway-note" : activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-note"}`}><span className="pilot-note-mark" aria-hidden="true">{activeRegisteredPresentation.generated ? "!" : activeRegisteredPlan?.plan.auditStatus === "audited" ? "✓" : "i"}</span><span className="pilot-note-copy">{activeCampus ? `Sede: ${activeCampus.label}. ` : ""}{activeRegisteredPresentation.generated ? <><strong>Recorrido orientativo generado.</strong> {activeRegisteredPresentation.description}{provisionalRegisteredCourseCount > 0 && <> Las materias marcadas como provisionales no completan requisitos oficiales.</>}</> : <>{activeRegisteredPathway?.description} {activeRegisteredPlan?.plan.notice}</>}</span></p>
           ) : planYear === "2025" ? (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activePlan2025Trajectory.description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
           ) : isProfilePlan ? (
@@ -3135,7 +3158,7 @@ export default function Home() {
               </details>;
             })}
           </div>
-          <p className="data-source">{isRegisteredPlan ? activeRegisteredPlan?.plan.courseCatalogAuditStatus === "verified" ? "Las metas y las materias visibles provienen de documentación curricular oficial; el snapshot de Bedelías se usa como contraste." : activeRegisteredPlan?.plan.courseCatalogAuditStatus === "partial" ? "La estructura del plan está auditada. El catálogo visible contiene sólo materias respaldadas; otras entradas de Bedelías permanecen en validación." : "La estructura oficial del plan se conserva, pero su catálogo de materias todavía está en validación. Las entradas de Bedelías no se publican automáticamente." : planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
+          <p className="data-source">{isRegisteredPlan ? activeRegisteredPresentation.generated ? "El núcleo prioriza materias verificadas; las demás entradas reales de Bedelías se ofrecen aparte y quedan señalizadas como provisionales cuando todavía requieren validación curricular." : activeRegisteredPlan?.plan.courseCatalogAuditStatus === "verified" ? "Las metas y las materias visibles provienen de documentación curricular oficial; el snapshot de Bedelías se usa como contraste." : activeRegisteredPlan?.plan.courseCatalogAuditStatus === "partial" ? "La estructura del plan está auditada. El catálogo visible contiene sólo materias respaldadas; otras entradas de Bedelías permanecen en validación." : "La estructura oficial del plan se conserva, pero su catálogo de materias todavía está en validación. Las entradas de Bedelías no se publican automáticamente." : planYear === "qf-2015" ? "Las metas y el damero provienen del Plan 2015 y de Facultad de Química; códigos y previaturas se contrastan con Bedelías." : "Las metas y el núcleo obligatorio provienen del plan, la implementación curricular de FING y la composición oficial de Bedelías."}</p>
           </>}
         </aside>
 
@@ -3190,9 +3213,9 @@ export default function Home() {
                   <p className="catalog-help">Arrastrá una materia o elegí su semestre. {hasPublishedCourseLoad ? `La ${usesPublishedHours ? "carga horaria" : "cantidad de créditos"} se conserva tal como figura en el plan.` : "La fuente oficial no publica la carga de estas materias, por eso el balance se compara por cantidad."}</p>
                   <div className="catalog-list">
                     {availablePlannerCourses.map((course) => (
-                      <article className="catalog-course" key={course.id} draggable onDragStart={() => setDraggedCourseId(course.id)} onDragEnd={() => setDraggedCourseId(null)}>
+                      <article className={`catalog-course${course.provisional ? " provisional-course" : ""}`} key={course.id} draggable onDragStart={() => setDraggedCourseId(course.id)} onDragEnd={() => setDraggedCourseId(null)}>
                         <button className="catalog-course-main" onClick={() => setSelected(course)} aria-label={`Ver detalles de ${course.name}`}>
-                          <span>#{course.id} · {courseAreaLabel(course)}</span>
+                          <span>#{course.id} · {courseAreaLabel(course)}{course.provisional && <i className="provisional-badge">Provisional</i>}</span>
                           <h4>{course.name}</h4>
                           <strong>{courseLoadLabel(course)}</strong>
                         </button>
@@ -3243,10 +3266,10 @@ export default function Home() {
                       if (statuses[course.id] === "exonerated") return false;
                       const modeledMissing = (course.prerequisites ?? []).some((id) => !isRequirementComplete(id)) || Boolean(course.minCredits && earnedCredits < course.minCredits);
                       const rule = officialRule(course, "course");
-                      return modeledMissing || Boolean(rule && !expressionSatisfied(rule.expression, statuses, earnedCredits, groupCredits, groupApprovals));
+                      return modeledMissing || Boolean(rule && !expressionSatisfied(rule.expression, officialStatuses, earnedCredits, groupCredits, groupApprovals));
                     });
                     const coursesWithRulesToReview = termCourses.filter((course) => statuses[course.id] !== "exonerated" && publishedRule(course, "course") && !officialRule(course, "course"));
-                    const potentialImpact = calculatePotentialCreditImpact(termCourses);
+                    const potentialImpact = calculatePotentialCreditImpact(termCourses.filter(isOfficiallyAccreditableCourse));
                     const knownAreaImpacts = Object.entries(potentialImpact.nodeCredits).map(([nodeId, credits]) => ({ label: nodeById.get(nodeId)?.name ?? nodeId, credits }));
                     const potentialTitleCredits = Math.min(potentialImpact.totalCredits, Math.max(credential.minTotalCredits - earnedCredits, 0));
                     return (
@@ -3344,7 +3367,7 @@ export default function Home() {
               <input type="checkbox" checked={availableOnly} onChange={(event) => setAvailableOnly(event.target.checked)} />
               <span /> Solo habilitadas
             </label> : isRegisteredPlan
-              ? <span className={`rules-coverage ${hasClosedOfficialEvidence ? "" : "pending-audit-status"}`}>{registeredCatalogStatusLabel}</span>
+              ? <span className={`rules-coverage ${activeRegisteredPresentation.generated || !hasClosedOfficialEvidence ? "pending-audit-status" : ""}`}>{activeRegisteredPresentation.generated ? `Recorrido orientativo generado · ${provisionalRegisteredCourseCount > 0 ? `${provisionalRegisteredCourseCount} materias provisionales` : "orden no oficial"}` : `Trayectoria oficial · ${registeredCatalogStatusLabel}`}</span>
               : isProfilePlan
               ? <span className="rules-coverage">Bedelías auditada: {activeProfileData?.plan.publishedRules ?? 0} reglas · {activeProfileData?.plan.noPublishedRule ?? 0} sin publicar</span>
               : planYear === "qf-2015" ? <span className="rules-coverage">Bedelías auditada: {qf2015Data?.plan.publishedRules ?? 0} reglas · {qf2015Data?.plan.partialRules ?? 0} parciales · {qf2015Data?.plan.noPublishedRule ?? 0} sin publicar</span>
@@ -3361,7 +3384,7 @@ export default function Home() {
           </div>
 
           <div className="curriculum-scroll" ref={curriculumScrollRef} role="region" tabIndex={0} aria-label="Trayectoria académica; usá las flechas o la barra inferior para desplazarte horizontalmente">
-            {isRegisteredPlan && activeRegisteredPlan && activeRegisteredPlan.plan.courseCatalogAuditStatus === "structure-only" ? <section className="curriculum-unavailable" role="status">
+            {isRegisteredPlan && activeRegisteredPlan && activeRegisteredPeriods.length === 0 ? <section className="curriculum-unavailable" role="status">
               <span aria-hidden="true">i</span>
               <div><p className="eyebrow">Catálogo en validación</p><h2>El plan está disponible, pero sus materias aún no tienen respaldo suficiente</h2><p>{activeRegisteredPlan.plan.notice}</p><a href={activeRegisteredPlan.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente oficial disponible ↗</a></div>
             </section> : <div className="semester-grid">
@@ -3383,32 +3406,36 @@ export default function Home() {
             </div>}
           </div>
 
-          {planYear === "1997" || isProfilePlan || planYear === "qf-2015" ? <section className="electives-section">
+          {planYear === "1997" || isProfilePlan || planYear === "qf-2015" || isRegisteredPlan && activeRegisteredPresentation.generated ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
-              <div><span className="eyebrow">Trayectoria flexible</span><h2>Optativas y electivas</h2></div>
+              <div><span className="eyebrow">{isRegisteredPlan ? "Catálogo flexible de Bedelías" : "Trayectoria flexible"}</span><h2>{isRegisteredPlan ? "Materias adicionales y optativas" : "Optativas y electivas"}</h2></div>
               <div><span>{electivesSummary}</span><b>{showElectives ? "−" : "+"}</b></div>
             </button>
             {showElectives && (
               <>
               <div className="electives-grid">
-                {visibleElectives.map((course) => (
+                {displayedElectives.map((course) => (
                   <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
-              <div className="electives-loader" role="status" aria-live="polite">
+              {isRegisteredPlan ? <div className="electives-loader" role="status" aria-live="polite">
+                <p>Estas materias están disponibles para organizar tu planificación, pero no tienen una ubicación oficial dentro del recorrido generado. Las señalizadas como provisionales no completan requisitos oficiales.</p>
+                {displayedElectives.length < visibleElectives.length && <button type="button" className="primary-button" onClick={() => setFullElectivesCatalogExpanded(true)}>Mostrar las {visibleElectives.length} materias</button>}
+                <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente disponible ↗</a>
+              </div> : <div className="electives-loader" role="status" aria-live="polite">
                 {fullElectivesCatalogExpanded ? <p>Se muestran <strong>{deferredCatalogCount} materias adicionales</strong> de la composición oficial del plan en Bedelías.</p> : <>
                   <p>{deferredCatalogLoadState === "error" ? "No pudimos abrir el catálogo ampliado. Podés reintentar sin perder tu progreso." : isProfilePlan ? activeProfileData?.plan.notice : planYear === "qf-2015" ? qf2015Data?.plan.notice : "La vista inicial mantiene 20 optativas. Al buscar se consultan temporalmente todas las materias de Bedelías; este botón deja visible el catálogo completo incluso al limpiar la búsqueda."}</p>
                   <button type="button" className="primary-button" disabled={deferredCatalogLoadState === "loading"} onClick={() => void expandFullElectivesCatalog()}>
                     {deferredCatalogLoadState === "loading" ? "Cargando materias..." : deferredCatalogLoadState === "error" ? "Reintentar carga" : "Cargar catálogo de Bedelías"}
                   </button>
                 </>}
-              </div>
+              </div>}
               </>
             )}
-          </section> : isRegisteredPlan ? <section className={`plan-transition-note ${hasClosedOfficialEvidence ? "" : "pending-audit-panel"}`}>
-            <p className="eyebrow">{registeredPlanEyebrow}</p>
-            <h2>{hasClosedOfficialEvidence ? "Fuentes oficiales y alcance" : "Sólo publicamos materias respaldadas"}</h2>
-            <p>{activeRegisteredPlan?.plan.notice}</p>
+          </section> : isRegisteredPlan ? <section className={`plan-transition-note ${activeRegisteredPresentation.generated || !hasClosedOfficialEvidence ? "pending-audit-panel" : ""}`}>
+            <p className="eyebrow">{activeRegisteredPresentation.generated ? "Recorrido orientativo generado" : registeredPlanEyebrow}</p>
+            <h2>{activeRegisteredPresentation.generated ? "Orden provisional desde la composición de Bedelías" : hasClosedOfficialEvidence ? "Fuentes oficiales y alcance" : "Sólo publicamos materias respaldadas"}</h2>
+            <p>{activeRegisteredPresentation.generated ? `${activeRegisteredPresentation.description}${provisionalRegisteredCourseCount > 0 ? ` ${provisionalRegisteredCourseCount} materias permanecen señalizadas como provisionales y no suman a los requisitos oficiales.` : " Las materias conservan su respaldo publicado; sólo la distribución por tramos es orientativa."}` : activeRegisteredPlan?.plan.notice}</p>
             <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente disponible ↗</a>
           </section> : <section className="plan-transition-note">
             <p className="eyebrow">Plan vigente · implementación en curso</p>
@@ -3490,6 +3517,7 @@ export default function Home() {
             <p className="eyebrow">{selected.id} · {courseAreaLabel(selected)}</p>
             <h2>{selected.name}</h2>
             <div className="drawer-stats"><div><span>{selected.credits > 0 ? "Créditos" : selected.hours ? "Horas" : "Créditos"}</span><strong>{selected.credits > 0 ? selected.credits : selected.hours ?? "No publicados"}</strong></div><div><span>Estado</span><strong>{selected.placeholder ? "Espacio a completar" : selected.placementTest ? (statuses.PI === "exonerated" ? "Acreditada" : "No acreditada") : stateLabels[statuses[selected.id] ?? "pending"]}</strong></div></div>
+            {selected.provisional && <p className="verified-source provisional-source"><span>!</span> Materia recuperada de la composición de <strong>Bedelías</strong> mientras se valida su inclusión curricular. Podés usarla para organizarte, pero no suma a los requisitos oficiales de Trayecto.</p>}
             {selectedAllocation?.status === "suggested" ? <p className="allocation-source suggested-allocation"><span>≈</span> Cuenta en <strong>{courseAreaLabel(selected)}</strong> mediante una asignación sugerida. Los créditos se computan normalmente, pero todavía falta un Anexo B o resolución específica para este plan.</p>
               : selectedAllocation?.status === "conflict" ? <p className="allocation-source conflict-allocation"><span>!</span> Hay fuentes oficiales en conflicto para esta asignación. Revisá los documentos antes de tomarla como definitiva.</p>
                 : selectedAllocation && <p className="allocation-source official-allocation"><span>✓</span> Cuenta oficialmente en <strong>{courseAreaLabel(selected)}</strong> según {selected.dataStatus === "fadu-official" ? "FADU" : planYear === "qf-2015" && selected.dataStatus === "fq-damero" ? "Facultad de Química" : selected.dataStatus === "official-curriculum" ? "el servicio universitario" : "Bedelías"}.</p>}
@@ -3598,11 +3626,11 @@ export default function Home() {
   );
 }
 
-function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rulesKnown, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; rulesKnown: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING" | "FQ" | "FADU"; onCycle: () => void; onDetails: () => void }) {
+function CourseCard({ course, areaLabel, allocationStatus, status, unlocked, rulesKnown, fixed = false, sourceLabel, onCycle, onDetails }: { course: Course; areaLabel: string; allocationStatus?: AllocationStatus; status: CourseStatus; unlocked: boolean; rulesKnown: boolean; fixed?: boolean; sourceLabel?: "Bedelías" | "FING" | "FQ" | "FADU" | "Udelar"; onCycle: () => void; onDetails: () => void }) {
   return (
-    <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}`}>
+    <article className={`course-card ${status} ${unlocked ? "unlocked" : "locked"}${course.provisional ? " provisional-course" : ""}`}>
       <div className="course-topline">
-        <span>#{course.id}{sourceLabel && <i className={`official-tag ${sourceLabel !== "Bedelías" ? "fing-tag" : ""}`}>{sourceLabel}</i>}{course.core && <i className="official-tag fing-tag">Común</i>}</span>
+        <span>#{course.id}{sourceLabel && <i className={`official-tag ${sourceLabel !== "Bedelías" ? "fing-tag" : ""}`}>{sourceLabel}</i>}{course.provisional && <i className="provisional-badge">Provisional</i>}{course.core && <i className="official-tag fing-tag">Común</i>}</span>
         <button onClick={onDetails} aria-label={`Ver detalles de ${course.name}`}>i</button>
       </div>
       <h3>{course.name}</h3>

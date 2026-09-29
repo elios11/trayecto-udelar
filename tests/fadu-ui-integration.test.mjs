@@ -19,13 +19,13 @@ test("carga FADU por un registro diferido sin condicionales específicos en la i
   assert.match(registrySource, /load: \(\) => import\("\.\/data\/fadu-ldcv-2007\.json"\)/);
   assert.match(registrySource, /load: \(\) => import\("\.\/data\/fadu-ldind-2013\.json"\)/);
   assert.match(pageSource, /loadRegisteredPlan\(nextPlan\.id\)/);
-  assert.match(pageSource, /buildRegisteredPlanCourses\(effectivePathwayId, activeRegisteredPlan\)/);
+  assert.match(pageSource, /buildRegisteredPlanPresentation\(effectivePathwayId, activeRegisteredPlan\)/);
   assert.doesNotMatch(pageSource, /planYear === "fadu-/);
   assert.doesNotMatch(pageSource, /nextPlan\.id === "fadu-/);
 });
 
 test("la UI distingue proyecciones auditadas de composiciones extraídas", () => {
-  assert.match(pageSource, /activeRegisteredPathway\?\.periods/);
+  assert.match(pageSource, /activeRegisteredPresentation\.periods/);
   assert.match(pageSource, /selected\.curricularBlock \? "Este bloque se acredita manualmente/);
   assert.match(pageSource, /course\.dataStatus === "fadu-official" \? "FADU"/);
   assert.match(pageSource, /Proyección auditada/);

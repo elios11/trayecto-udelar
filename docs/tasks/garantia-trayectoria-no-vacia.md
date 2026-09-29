@@ -2,7 +2,7 @@
 
 ## Estado
 
-Especificación urgente lista para implementación antes de continuar los cierres incrementales de D03.
+Implementación funcional completa y validada en el worktree `d03k-trayectorias-no-vacias`; lista para el commit enfocado y la posterior integración serial.
 
 ## Problema
 
@@ -47,3 +47,57 @@ Garantizar que cada plan seleccionable tenga una trayectoria utilizable y un cat
 ## Entrega
 
 Implementar en un worktree aislado, documentar el conjunto de planes corregidos y los límites, ejecutar verificaciones, crear un commit enfocado y devolver el hash. No integrar, hacer push ni publicar desde el subagente.
+
+## Estado recuperable de la implementación
+
+### Estrategia aplicada
+
+- `buildRegisteredPlanPresentation` es el adaptador común que entrega a Currícula sus períodos y al planificador la unión completa de materias.
+- Una trayectoria con al menos una materia curricular real y verificada conserva sus períodos publicados y la unión verificada incorporada en D03i.
+- Una trayectoria vacía o compuesta sólo por marcadores administrativos recibe un `Recorrido orientativo generado` determinista. El núcleo visible prioriza materias verificadas en el orden disponible de Bedelías; si no existe ninguna, usa las primeras materias reales disponibles. Respeta agrupaciones reales cuando existen y limita cada tramo a seis materias para evitar una grilla ilegible.
+- Las materias reales que no integran ese núcleo quedan con `semester: "opt"`: aparecen en Currícula bajo `Catálogo flexible de Bedelías` y en el catálogo completo del planificador. Currícula muestra inicialmente hasta 20 opciones y permite desplegar el total o buscar sobre él.
+- Las candidatas conservan su `authorityStatus`, se señalizan como provisionales y, sólo en la vista adaptada, reciben listas vacías de asignaciones y requisitos elegibles. Sus estados personales se conservan, pero una copia `officialStatuses` las fuerza a pendientes al evaluar previas, créditos, áreas, actividades y requisitos oficiales.
+- No se crean reglas de previas, equivalencias ni oferta temporal. El fallback sólo ordena identidades y cargas ya presentes en la proyección del plan.
+
+### Cobertura diagnosticada
+
+La prueba global cubre los 147 planes seleccionables actuales: 142 proyecciones registradas y los 5 planes especializados (`1997`, `2025`, `electrica-2023`, `civil-2021` y `qf-2015`). Detectó 76 recorridos que necesitaban fallback, distribuidos en 40 planes:
+
+- CENUR Litoral Norte: Ciclo en Biología/Bioquímica 2016, Ciclo Inicial de Matemática 2012, Licenciatura en Ciencias Sociales 2009 y Tecnicatura en Tecnologías de la Imagen Fotográfica 2008.
+- CURE/CUT: Licenciatura en Diseño de Paisaje 2008 y Licenciatura en Economía Agrícola y Gestión de Agronegocios 2022.
+- Facultad de Agronomía: Ingeniero Agrónomo 2020.
+- Facultad de Artes: Licenciaturas en Composición 1987, Danza Contemporánea 2018, Dirección Coral 1987, Dirección Orquestal 1987, Interpretación Musical 2005, Música 2005 y Musicología 1987.
+- Facultad de Ciencias: Licenciaturas en Biología Humana 2004, Bioquímica 2017, Ciencias Biológicas 2017, Ciencias de la Atmósfera 2007, Física 2019, Física Médica 2025, Geografía 2018, Geología 2018 y Matemática 2014.
+- FCEA: Licenciatura en Estadística 2014.
+- Facultad de Derecho: Abogacía 2016, Notariado 2016 y Tecnicatura en Relaciones Laborales 1995.
+- Facultad de Enfermería: Licenciatura en Enfermería 2016.
+- FING: Ingeniería en Agrimensura 2023, Ingeniería Química 2021 y Tecnólogo Industrial Mecánico 2016.
+- Facultad de Medicina: Doctor en Medicina 2008.
+- Facultad de Psicología: Licenciatura en Psicología 2013.
+- Facultad de Química: Bioquímico Clínico 2015, Ingeniería de Alimentos 2003, Licenciatura en Biotecnología 2024, Licenciatura en Química 2016 y Químico 2015.
+- ISEF: Licenciatura en Educación Física 2017 y Tecnicatura en Deportes 2007.
+
+Ingeniería Química Plan 2021 queda con 10 tramos orientativos y 22 materias verificadas en el núcleo de Montevideo. El planificador conserva 375 materias reales sin duplicados; 353 candidatas quedan provisionales y en el catálogo flexible. El inicio de Salto conserva sus 18 unidades regionales reales como núcleo y la misma unión completa en el planificador.
+
+### Límites explícitos
+
+- Los tramos generados no son semestres institucionales ni una recomendación académica de orden de cursado.
+- El límite de seis materias por tramo es sólo una decisión de presentación legible; las opciones restantes no se descartan.
+- Una entrada real de Bedelías puede seguir necesitando reconciliación curricular. Mostrarla como provisional no valida su vigencia, sus asignaciones ni sus previas.
+- Al publicarse una trayectoria oficial reconciliada, el adaptador deja de generar el fallback y vuelve a los períodos oficiales sin cambiar las identidades canónicas.
+
+### Verificaciones finales
+
+Aprobadas:
+
+- `node tests/selectable-plan-trajectories.test.mjs`
+- `node tests/registered-plan-courses.test.mjs`
+- `node tests/extracted-academic-ui.test.mjs`
+- `node tests/ingenieria-quimica-2021-official-audit.test.mjs`
+- `node tests/fadu-ui-integration.test.mjs`
+
+- `npm test`: compilación de producción y 919/919 pruebas aprobadas.
+- `npm run lint`: aprobado sin errores.
+- `git diff --check`: aprobado sin errores.
+
+La validación visual manual no pudo ejecutarse porque la sesión no expuso ninguna superficie de navegador o aplicación controlable. La cobertura de UI y procedencia quedó verificada mediante las pruebas estáticas y funcionales indicadas arriba; no se declara una inspección visual que no ocurrió.
