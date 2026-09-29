@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-29",
+  "authority": "Facultad de Química, Universidad de la República",
+  "notes": [
+    "Las trayectorias se transcribieron de los dameros y planes oficiales y se contrastaron visualmente con las proyecciones generadas.",
+    "Los bloques de validación representan controles de egreso de la Comisión de Carrera y no materias adicionales.",
+    "Los catálogos flexibles contienen solamente identidades reconocibles en las fuentes oficiales; Bedelías aporta código, créditos y versión vigente, pero no se usa por sí solo como prueba de pertenencia."
+  ],
+  "plans": [
+    {
+      "id": "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
+      "trajectories": [
+        {
+          "id": "bioquimico-clinico-plan-2000",
+          "periods": [
+            { "label": "Obligatorias comunes", "courseIds": ["01", "205", "304", "102", "202", "301", "302", "303", "401", "legacy-analitica-ii-qfbcl", "520A", "501", "502", "503", "105", "103A", "104A", "203A"] },
+            { "label": "Obligatorias del recorrido", "courseIds": ["legacy-matematica-02", "legacy-fisicoquimica-102", "legacy-bioquimica"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "quimico-farmaceutico-plan-2000",
+          "periods": [
+            { "label": "Obligatorias comunes", "courseIds": ["01", "205", "304", "102", "202", "301", "302", "303", "401", "legacy-analitica-ii-qfbcl", "520A", "501", "502", "503", "105", "103A", "104A", "203A"] },
+            { "label": "Obligatorias del recorrido", "courseIds": ["legacy-matematica-02", "legacy-fisicoquimica-102", "legacy-bioquimica"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "quimico-plan-2000",
+          "periods": [
+            { "label": "Obligatorias comunes", "courseIds": ["01", "205", "304", "102", "202", "301", "302", "303", "401", "520A", "501", "502", "503", "105", "103A", "104A", "203A", "402"] },
+            { "label": "Obligatorias del recorrido", "courseIds": ["04", "308", "406A"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "ing-alimentos",
+          "periods": [
+            { "label": "Área química común", "courseIds": ["102", "202", "301", "302", "303", "401", "402", "520A", "501", "502", "503"] },
+            { "label": "Obligatorias del recorrido", "courseIds": ["104A", "103A", "01", "03", "04", "205", "304", "406A", "308"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "ing-quimica",
+          "periods": [
+            { "label": "Área química común", "courseIds": ["102", "202", "301", "302", "303", "401", "402", "520A", "501", "502", "503"] },
+            { "label": "Obligatorias del recorrido", "courseIds": ["104A", "01", "03", "04", "205", "304", "308", "406A", "521A"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        }
+      ],
+      "catalogEvidence": {
+        "rule": "Los restantes créditos hasta 230 se completan con electivas de la carrera de origen y validación de Bedelía.",
+        "minimumFlexibleCredits": 60
+      }
+    },
+    {
+      "id": "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
+      "trajectories": [
+        {
+          "id": "biotecnologia",
+          "periods": [
+            { "label": "Primer semestre", "courseIds": ["01X", "03", "102", "103B", "104A"] },
+            { "label": "Segundo semestre", "courseIds": ["04", "202", "203A", "205", "157"] },
+            { "label": "Tercer semestre", "courseIds": ["301", "302", "303A", "304"] },
+            { "label": "Cuarto semestre", "courseIds": ["401Q", "402A", "508A", "02C"] },
+            { "label": "Quinto semestre", "courseIds": ["501", "785A", "520A", "190", "512"] },
+            { "label": "Sexto semestre", "courseIds": ["533T", "533L", "536X", "506X", "230", "753A", "162"] },
+            { "label": "Séptimo semestre", "courseIds": ["534X", "333", "425"] },
+            { "label": "Octavo semestre", "courseIds": ["736A", "196"] },
+            { "label": "Noveno semestre", "courseIds": ["290", "LTQ2"] },
+            { "label": "Optativas y electivas", "courseIds": ["ltq-flexibilidad-bio"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "nanotecnologia",
+          "periods": [
+            { "label": "Primer semestre", "courseIds": ["01X", "03", "102", "103B", "104A"] },
+            { "label": "Segundo semestre", "courseIds": ["04", "202", "203A", "205", "157"] },
+            { "label": "Tercer semestre", "courseIds": ["301", "302", "303A", "303B", "304"] },
+            { "label": "Cuarto semestre", "courseIds": ["401Q", "402A", "508A", "02C", "860A"] },
+            { "label": "Quinto semestre", "courseIds": ["501", "502X", "883", "520A", "190", "512", "931", "905"] },
+            { "label": "Sexto semestre", "courseIds": ["533T", "553", "154", "230", "162"] },
+            { "label": "Séptimo semestre", "courseIds": ["155", "333", "457", "785A"] },
+            { "label": "Octavo semestre", "courseIds": ["272", "711"] },
+            { "label": "Noveno semestre", "courseIds": ["LTQ2"] },
+            { "label": "Optativas y electivas", "courseIds": ["ltq-flexibilidad-nano"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        }
+      ],
+      "catalogEvidence": {
+        "rule": "Cada orientación conserva el catálogo completo de alternativas publicado para su perfil; la selección concreta requiere aprobación de la Comisión de Carrera.",
+        "minimumFlexibleCredits": 65
+      }
+    },
+    {
+      "id": "bedelias-fq-tecnico-bach-en-cs-quimicas-2015",
+      "trajectories": [
+        {
+          "id": "montevideo",
+          "periods": [
+            { "label": "Primer semestre", "courseIds": ["01A", "102", "103B", "104A"] },
+            { "label": "Segundo semestre", "courseIds": ["02B", "02C", "202", "203A", "205"] },
+            { "label": "Tercer semestre", "courseIds": ["301", "302", "303A", "303B", "304"] },
+            { "label": "Cuarto semestre", "courseIds": ["401Q", "402A", "508A", "157"] },
+            { "label": "Quinto semestre", "courseIds": ["501", "502X", "503", "520A", "190", "512L"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "salto-primer-ano",
+          "periods": [
+            { "label": "Orientación del recorrido", "courseIds": ["tbcq-inicio-salto"] },
+            { "label": "Primer semestre", "courseIds": ["01A", "102", "103B", "104A"] },
+            { "label": "Segundo semestre", "courseIds": ["02B", "02C", "202", "203A", "205"] }
+          ]
+        }
+      ],
+      "catalogEvidence": {
+        "sourceDate": "2018-07-19",
+        "courseIds": ["FCEA-A10", "744", "837A", "290", "522", "752A", "753A", "754", "161", "732", "736A", "836A", "880", "734", "804X", "907", "748", "426", "780A", "215A", "FING-1224", "722", "540", "835", "999C", "629", "746A", "749", "593", "790", "925", "721", "904", "694A", "930A", "518", "595A", "417", "818", "757", "758A", "235", "742", "859", "566", "760", "766", "764", "747", "641", "789", "331", "423", "424", "224", "526", "726A", "745", "781", "729", "633", "332", "573", "226", "662", "497", "615", "782A", "576B", "577", "974", "829", "850W", "555A"],
+        "unmatchedOrAmbiguousLabels": [
+          "Administración y Gestión de las Organizaciones II",
+          "Ciencia y Tecnología del Aceite de Oliva",
+          "Electrotécnica 1",
+          "Fenómenos de Transporte",
+          "Fluidodinámica",
+          "Gestión ambiental",
+          "Herramientas y aplicaciones de biología molecular en microbiología (HABMM)",
+          "Higiene y Seguridad Alimentaria",
+          "Higiene y Servicios de Plantas",
+          "Ingeniería de las Reacciones Químicas 1",
+          "Ingeniería de las Reacciones Químicas 2",
+          "Introducción a Ingeniería Bioquímica",
+          "Introducción a Ingeniería Química y de Procesos",
+          "Introducción a los fitoterápicos - Org.303",
+          "Introducción al Diseño y Montaje de Procesos",
+          "Introducción al diseño y representación gráfica",
+          "Legislación Alimentaria",
+          "Mecánica Aplicada",
+          "Microbiología Alimentaria",
+          "Nuevas metodologías en síntesis orgánica y sus aplicaciones",
+          "Nutrición Aplicada",
+          "Química Teórica",
+          "Síntesis de fármacos y conceptos de retrosíntesis Mod.II - Síntesis de fármacos (Org.203B)",
+          "Tecnología y servicios industriales 1",
+          "Tecnología y servicios industriales 2",
+          "Termodinámica Aplicada",
+          "Toxicología Alimentaria",
+          "Transferencia de calor y masa 1",
+          "Transferencia de calor y masa 2",
+          "Tutoría entre pares 1er. Módulo",
+          "Tutoría entre pares 2do. Módulo"
+        ],
+        "note": "Las etiquetas sin código inequívoco o sin unidad vigente equivalente en la extracción quedan documentadas y no se publican como identidades inventadas."
+      }
+    }
+  ]
+}

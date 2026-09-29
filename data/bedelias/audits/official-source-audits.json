@@ -64117,11 +64117,49 @@
             "id": "ing-alimentos",
             "credentialId": "bachiller-ingenieria-alimentos",
             "label": "Desde Ingeniería de Alimentos",
-            "description": "Requisitos del perfil Ingeniería de Alimentos publicados en Bedelías y en el damero. Las unidades listadas son alternativas acreditables por área: no es necesario aprobarlas todas.",
+            "description": "Requisitos exactos publicados para obtener el título intermedio desde Ingeniería de Alimentos. El resto de las unidades de la carrera de origen queda disponible como catálogo electivo y la acreditación final la valida Bedelía.",
             "campusIds": [
               "montevideo"
             ],
-            "periods": [],
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Área química común",
+                "courseIds": [
+                  "102",
+                  "202",
+                  "301",
+                  "302",
+                  "303",
+                  "401",
+                  "402",
+                  "520A",
+                  "501",
+                  "502",
+                  "503"
+                ]
+              },
+              {
+                "label": "Obligatorias del recorrido",
+                "courseIds": [
+                  "104A",
+                  "103A",
+                  "01",
+                  "03",
+                  "04",
+                  "205",
+                  "304",
+                  "406A",
+                  "308"
+                ]
+              },
+              {
+                "label": "Validación de egreso",
+                "courseIds": [
+                  "validacion-final-plan"
+                ]
+              }
+            ],
             "excludedCourseIds": [
               "legacy-analitica-ii-qfbcl",
               "legacy-matematica-02",
@@ -64133,11 +64171,49 @@
             "id": "ing-quimica",
             "credentialId": "bachiller-ingenieria-quimica",
             "label": "Desde Ingeniería Química",
-            "description": "Requisitos del perfil Ingeniería Química publicados en Bedelías y en el damero. Las unidades listadas son alternativas acreditables por área: no es necesario aprobarlas todas.",
+            "description": "Requisitos exactos publicados para obtener el título intermedio desde Ingeniería Química. El resto de las unidades de la carrera de origen queda disponible como catálogo electivo y la acreditación final la valida Bedelía.",
             "campusIds": [
               "montevideo"
             ],
-            "periods": [],
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Área química común",
+                "courseIds": [
+                  "102",
+                  "202",
+                  "301",
+                  "302",
+                  "303",
+                  "401",
+                  "402",
+                  "520A",
+                  "501",
+                  "502",
+                  "503"
+                ]
+              },
+              {
+                "label": "Obligatorias del recorrido",
+                "courseIds": [
+                  "104A",
+                  "01",
+                  "03",
+                  "04",
+                  "205",
+                  "304",
+                  "308",
+                  "406A",
+                  "521A"
+                ]
+              },
+              {
+                "label": "Validación de egreso",
+                "courseIds": [
+                  "validacion-final-plan"
+                ]
+              }
+            ],
             "excludedCourseIds": [
               "legacy-analitica-ii-qfbcl",
               "legacy-matematica-02",
@@ -66122,7 +66198,6 @@
                 "courseIds": [
                   "501",
                   "785A",
-                  "506X",
                   "520A",
                   "190",
                   "512"
@@ -66134,6 +66209,7 @@
                   "533T",
                   "533L",
                   "536X",
+                  "506X",
                   "230",
                   "753A",
                   "162"
@@ -71616,6 +71692,106 @@
             ],
             "excludedCourseIds": [
               "tbcq-inicio-salto"
+            ],
+            "catalogSourceCourseIds": [
+              "01A",
+              "102",
+              "103B",
+              "104A",
+              "02B",
+              "02C",
+              "202",
+              "203A",
+              "205",
+              "301",
+              "302",
+              "303A",
+              "303B",
+              "304",
+              "401Q",
+              "402A",
+              "508A",
+              "157",
+              "501",
+              "502X",
+              "503",
+              "520A",
+              "190",
+              "512L",
+              "FCEA-A10",
+              "744",
+              "837A",
+              "290",
+              "522",
+              "752A",
+              "753A",
+              "754",
+              "161",
+              "732",
+              "736A",
+              "836A",
+              "880",
+              "734",
+              "804X",
+              "907",
+              "748",
+              "426",
+              "780A",
+              "215A",
+              "FING-1224",
+              "722",
+              "540",
+              "835",
+              "999C",
+              "629",
+              "746A",
+              "749",
+              "593",
+              "790",
+              "925",
+              "721",
+              "904",
+              "694A",
+              "930A",
+              "518",
+              "595A",
+              "417",
+              "818",
+              "757",
+              "758A",
+              "235",
+              "742",
+              "859",
+              "566",
+              "760",
+              "766",
+              "764",
+              "747",
+              "641",
+              "789",
+              "331",
+              "423",
+              "424",
+              "224",
+              "526",
+              "726A",
+              "745",
+              "781",
+              "729",
+              "633",
+              "332",
+              "573",
+              "226",
+              "662",
+              "497",
+              "615",
+              "782A",
+              "576B",
+              "577",
+              "974",
+              "829",
+              "850W",
+              "555A"
             ]
           },
           {
@@ -72943,6 +73119,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:6cbaccda2d8a35f35bab223ecd96eace0591f824df886ebd3c52ec9bbd763d49",
+  "contentHash": "sha256:ce7aada67ababcc090ad2c26cb6853522f4799c056cd59aa094d7c312e2c6e6a",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

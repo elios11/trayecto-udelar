@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 78,
-    "official-trajectory-identified-pending": 12,
+    "official-trajectory-reproduced": 81,
+    "official-trajectory-identified-pending": 9,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 68);
-  assert.equal(savedInventory.pendingQueue.plans.length, 68);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 12).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(12).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 65);
+  assert.equal(savedInventory.pendingQueue.plans.length, 65);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 9).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(9).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -60,6 +60,26 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
       }
     }
   }
+});
+
+test("D03j cierra los tres planes FQ con correspondencia exacta y sedes explícitas", () => {
+  const byPlanId = new Map(savedInventory.plans.map((plan) => [plan.planId, plan]));
+  const expected = new Map([
+    ["bedelias-fq-bachiller-en-ciencias-quimicas-2000", { primary: "official-profiles", periods: [3, 3, 3, 3, 3], placements: 108 }],
+    ["bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022", { primary: "official-profiles", periods: [11, 11], placements: 81 }],
+    ["bedelias-fq-tecnico-bach-en-cs-quimicas-2015", { primary: "official-periods", periods: [6, 3], placements: 35 }],
+  ]);
+  for (const [planId, expectation] of expected) {
+    const plan = byPlanId.get(planId);
+    assert.equal(plan.state, "official-trajectory-reproduced", planId);
+    assert.equal(plan.currentProjection.primary, expectation.primary, planId);
+    assert.deepEqual(plan.evidence.pathways.map(({ periodCount }) => periodCount), expectation.periods, planId);
+    assert.equal(plan.evidence.expectedCoursePlacements, expectation.placements, planId);
+    assert.equal(plan.evidence.matchedCoursePlacements, expectation.placements, planId);
+  }
+  assert.deepEqual(byPlanId.get("bedelias-fq-tecnico-bach-en-cs-quimicas-2015").scope.territories, [
+    "Montevideo · carrera completa", "Salto · primer año",
+  ]);
 });
 
 test("la puerta rechaza cierres sin fuentes o sin justificación de ausencia", () => {

@@ -47,7 +47,7 @@ test("traslada sin duplicados los dos dameros vigentes de nueve semestres", () =
   ];
   assert.deepEqual(bio.periods.map(({ label }) => label), expectedLabels);
   assert.deepEqual(nano.periods.map(({ label }) => label), expectedLabels);
-  assert.deepEqual(periodCredits(bio), [37, 41, 34, 34, 41, 35, 17, 17, 44, 0, 0]);
+  assert.deepEqual(periodCredits(bio), [37, 41, 34, 34, 36, 40, 17, 17, 44, 0, 0]);
   assert.deepEqual(periodCredits(nano), [37, 41, 39, 40, 47, 23, 24, 9, 40, 0, 0]);
   for (const pathway of [bio, nano]) {
     const selected = pathway.periods.flatMap(({ courseIds }) => courseIds);
@@ -55,6 +55,8 @@ test("traslada sin duplicados los dos dameros vigentes de nueve semestres", () =
     assert.equal(selected.filter((id) => courseById.get(id)?.bedeliasCode === "LTQ2").length, 1);
   }
   assert.equal(courseByCode.get("512").credits, 5);
+  assert.ok(!bio.periods.find(({ label }) => label === "Quinto semestre").courseIds.includes(courseByCode.get("506X").id));
+  assert.ok(bio.periods.find(({ label }) => label === "Sexto semestre").courseIds.includes(courseByCode.get("506X").id));
   assert.ok(bio.periods.find(({ label }) => label === "Octavo semestre").courseIds.includes(courseByCode.get("196").id));
   assert.ok(nano.periods.find(({ label }) => label === "Séptimo semestre").courseIds.includes(courseByCode.get("457").id));
 });

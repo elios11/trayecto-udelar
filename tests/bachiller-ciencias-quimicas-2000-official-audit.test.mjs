@@ -57,6 +57,29 @@ test("ofrece cinco carreras de origen para el mismo título", () => {
   }
 });
 
+test("reproduce los requisitos explícitos de las dos ingenierías sin expandir grupos de Bedelías", () => {
+  const codesFor = (pathwayId, label) => projection.publishedPathways[pathwayId].periods
+    .find((period) => period.label === label).courseIds
+    .map((id) => courseById.get(id).bedeliasCode ?? courseById.get(id).id);
+  const expectedCommon = ["102", "202", "301", "302", "303", "401", "402", "520A", "501", "502", "503"];
+  assert.deepEqual(codesFor("ing-alimentos", "Área química común"), expectedCommon);
+  assert.deepEqual(codesFor("ing-quimica", "Área química común"), expectedCommon);
+  assert.deepEqual(codesFor("ing-alimentos", "Obligatorias del recorrido"), [
+    "104A", "103A", "01", "03", "04", "205", "304", "406A", "308",
+  ]);
+  assert.deepEqual(codesFor("ing-quimica", "Obligatorias del recorrido"), [
+    "104A", "01", "03", "04", "205", "304", "308", "406A", "521A",
+  ]);
+  for (const pathwayId of ["ing-alimentos", "ing-quimica"]) {
+    assert.deepEqual(projection.publishedPathways[pathwayId].periods.map(({ label }) => label), [
+      "Área química común", "Obligatorias del recorrido", "Validación de egreso",
+    ]);
+    assert.ok(projection.publishedPathways[pathwayId].periods
+      .flatMap(({ courseIds }) => courseIds)
+      .every((id) => courseById.get(id).authorityStatus === "verified"));
+  }
+});
+
 test("modela el damero FQ sin ajustar sus discrepancias aritméticas", () => {
   assert.equal(selectedCredits(projection.pathways["bioquimico-clinico-plan-2000"]), 173);
   assert.equal(selectedCredits(projection.pathways["quimico-farmaceutico-plan-2000"]), 173);

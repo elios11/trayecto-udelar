@@ -11,10 +11,29 @@ const plans = await Promise.all([
   "bioquimico-clinico-2015",
   "licenciatura-en-quimica-2016",
   "quimico-2015",
+  "bachiller-en-ciencias-quimicas-2000",
+  "licenciatura-en-tecnologias-de-la-quimica-2022",
+  "tecnico-bach-en-cs-quimicas-2015",
 ].map(async (slug) => ({
   slug,
   projection: await readJson(`app/data/bedelias-generated/bedelias-fq-${slug}.json`),
 })));
+
+test("los tres cierres D03j usan trayectorias oficiales y no el fallback generado", () => {
+  for (const slug of [
+    "bachiller-en-ciencias-quimicas-2000",
+    "licenciatura-en-tecnologias-de-la-quimica-2022",
+    "tecnico-bach-en-cs-quimicas-2015",
+  ]) {
+    const projection = plans.find((plan) => plan.slug === slug).projection;
+    for (const pathwayId of Object.keys(projection.publishedPathways)) {
+      const presentation = buildRegisteredPlanPresentation(pathwayId, projection);
+      assert.equal(presentation.generated, false, `${slug}/${pathwayId}`);
+      assert.equal(presentation.label, "Trayectoria oficial", `${slug}/${pathwayId}`);
+      assert.ok(presentation.periods.some(({ courseIds }) => courseIds.length > 0), `${slug}/${pathwayId}`);
+    }
+  }
+});
 
 const publishedUnion = (projection) => {
   const ids = new Set();

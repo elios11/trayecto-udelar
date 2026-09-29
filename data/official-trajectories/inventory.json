@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:dc8f832004cd62893c45f4af43a0081b5821e1bd1a64a43cfd6f4b22bdc178d2",
-    "extractedReportHash": "sha256:972f05653e4e35b5339f5dfa8dc5cb30dae761807b228937e958d988281dded2",
-    "officialAuditHash": "sha256:6cbaccda2d8a35f35bab223ecd96eace0591f824df886ebd3c52ec9bbd763d49",
-    "reviewedTrajectoriesHash": "sha256:24c2beab1119c1e312e38a842ee063e08c5b190070f42c990145d1fbb1387125"
+    "extractedReportHash": "sha256:571b8d09b94a549ee21a0e791c4c954f8d85dad04e801f9fc724dd7c76b2ad8c",
+    "officialAuditHash": "sha256:ce7aada67ababcc090ad2c26cb6853522f4799c056cd59aa094d7c312e2c6e6a",
+    "reviewedTrajectoriesHash": "sha256:f21962e0e17b80cc1777ad3ce52594652f19b394bf6e73c82a0d9d7244724fd4"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 78,
-      "official-trajectory-identified-pending": 12,
+      "official-trajectory-reproduced": 81,
+      "official-trajectory-identified-pending": 9,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 68,
+    "pending": 65,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -243,8 +243,8 @@
         "serviceLabel": "Facultad de Química",
         "selectablePlanIds": 11,
         "states": {
-          "official-trajectory-reproduced": 5,
-          "official-trajectory-identified-pending": 4,
+          "official-trajectory-reproduced": 8,
+          "official-trajectory-identified-pending": 1,
           "no-official-trajectory-documented": 0,
           "research-pending": 2
         }
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 68,
+    "total": 65,
     "plans": [
       {
         "priority": 1,
@@ -355,33 +355,6 @@
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
           "fing"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fq-tecnico-bach-en-cs-quimicas-2015",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fq"
         ],
         "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
       },
@@ -1071,10 +1044,7 @@
         "serviceId": "fq",
         "serviceLabel": "Facultad de Química",
         "identifiedPending": [
-          "bedelias-fing-ingenieria-quimica-2021",
-          "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
-          "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
-          "bedelias-fq-tecnico-bach-en-cs-quimicas-2015"
+          "bedelias-fing-ingenieria-quimica-2021"
         ],
         "researchPending": [
           "bedelias-fq-ingenieria-de-alimentos-2003",
@@ -11367,62 +11337,29 @@
           "defaultCredentialId": "bachiller-bioquimico-clinico"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-31",
-      "effectiveAt": "2000",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2000-2026",
       "officialSources": [
         {
-          "authority": "Página oficial del título intermedio Plan 2000, Facultad de Química",
-          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F14",
-          "role": "título intermedio; 230 créditos; 170 obligatorios; 60 electivos; cinco carreras de origen; Resolución 14/2003",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Damero oficial actualizado al 14/11/2008, Facultad de Química",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/DAMERO%20DE%20BACH%20EN%20CS%20QU%C3%8DMICAS.pdf",
-          "role": "núcleo común; unidades específicas de los tres planes FQ; requisitos de Ingeniería de Alimentos; requisitos de Ingeniería Química",
-          "trajectoryEvidence": true
+          "role": "requisitos del título intermedio y cinco carreras de origen"
         },
         {
-          "authority": "Procedimiento vigente de solicitud de egreso y título, Facultad de Química",
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F14",
+          "role": "vigencia, 230 créditos y carácter de título intermedio"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F1131",
-          "role": "solicitud expresa del título intermedio; vigencia para estudiantes Plan 2000; imposibilidad de solicitarlo después del título final",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta educativa vigente, Facultad de Química",
-          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F24",
-          "role": "separación entre Plan 2000, planes actuales y título intermedio",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Ingresos vigentes de Facultad de Química",
-          "url": "https://www.fq.edu.uy/es/node/60",
-          "role": "ausencia de ingreso directo al Bachiller Plan 2000; ingreso separado a Tecnicatura Plan 2015",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página oficial de Tecnicatura Bachiller en Ciencias Químicas Plan 2015",
-          "url": "https://www.fq.edu.uy/?q=en%2Fnode%2F621",
-          "role": "oferta distinta; 225 créditos; cinco semestres; 175 obligatorios; 50 optativos y electivos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Estadísticas Básicas 2023, Dirección General de Planeamiento Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/04/EB-2023.pdf",
-          "role": "clasificación como título intermedio; Plan 2000; tres años; 230 créditos; Montevideo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo general vigente de carreras Udelar",
-          "url": "https://udelar.edu.uy/carrera/bachiller-en-ciencias-quimicas",
-          "role": "presencia actual del título; metadatos de 230 créditos; anomalía de duración y descripción",
-          "trajectoryEvidence": false
+          "role": "procedimiento vigente para solicitar el título"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo"
+          "Montevideo · título intermedio sin ingreso directo"
         ],
         "pathwayIds": [
           "bioquimico-clinico-plan-2000",
@@ -11435,21 +11372,21 @@
       "currentProjection": {
         "primary": "official-profiles",
         "features": [
-          "official-periods",
           "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "bachiller en ciencias quimicas:2000",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-bachiller-en-ciencias-quimicas-2000.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": true,
-        "expectedCoursePlacements": 63,
-        "matchedCoursePlacements": 63,
-        "officialPeriodCount": 6,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2000-2022.json",
+        "sourcePlanId": "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-bachiller-en-ciencias-quimicas-2000.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:9baffb03dc667083a24e4b0d549b19f87a8013fe25841f86cba5706e7804f49c",
+        "projectionContentHash": "sha256:30562d524e5fd3c33825e878a4404768ad7d634b70020db63be96b9199f751c4",
+        "pathways": [
           {
             "id": "bioquimico-clinico-plan-2000",
             "periodCount": 3
@@ -11461,17 +11398,23 @@
           {
             "id": "quimico-plan-2000",
             "periodCount": 3
+          },
+          {
+            "id": "ing-alimentos",
+            "periodCount": 3
+          },
+          {
+            "id": "ing-quimica",
+            "periodCount": 3
           }
         ],
-        "projectionContentHash": "sha256:11054f8564653ab30d06d94d2d7086dd2b603ec12a60badebe34c0b9511dafcd"
+        "expectedCoursePlacements": 108,
+        "matchedCoursePlacements": 108
       },
       "conflictNotes": [
-        "duration: Bedelías y el catálogo general informan 24 meses, pero las estadísticas oficiales clasifican el título intermedio Plan 2000 con tres años. La UI usa 36 meses y conserva la discrepancia.",
-        "catalogDescription: El catálogo general reutiliza texto de la Tecnicatura 2015 bajo metadatos del Plan 2000. La UI separa ambas ofertas por plan, duración y créditos.",
-        "dameroArithmetic: El damero declara 136 créditos comunes aunque los valores literales suman 135, y llama 37 a bloques que suman 38. La UI controla los mínimos normativos 170/60 y conserva los créditos literales de cada unidad sin ajustar subtotales.",
-        "fqProfilesInBedelias: La composición SGAE sólo etiqueta perfiles de Ingeniería de Alimentos e Ingeniería Química. Los tres recorridos FQ se reconstruyen exclusivamente desde el damero oficial y requieren validación de equivalencias por Bedelía.",
-        "legacyEquivalences: Bedelías contiene versiones, reválidas y créditos genéricos de distintos períodos. La UI conserva el catálogo, no suma equivalentes automáticamente y exige validación final.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "El documento no define semestres: la UI conserva bloques oficiales por carrera de origen y no inventa una secuencia temporal.",
+        "La suma interna del damero contiene diferencias de un crédito en algunos subtotales; se conservan los mínimos normativos de 170 obligatorios y 60 electivos.",
+        "Las materias no obligatorias de la carrera de origen quedan en catálogo y requieren validación de Bedelía."
       ]
     },
     {
@@ -11787,44 +11730,30 @@
           "defaultCredentialId": "licenciado-tecnologias-quimica-biotecnologia"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-09-01",
-      "effectiveAt": "2022",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2022 de Facultad de Química",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Plan%20de%20estudios%20Licenciatura%20en%20Tecnolog%C3%ADas%20de%20la%20Qu%C3%ADmica.pdf",
-          "role": "título único; 360 créditos; estructura de mínimos; flexibilidad; Practicantado o Proyecto; requisitos de acceso a la actividad final",
-          "trajectoryEvidence": true
+          "role": "plan normativo, mínimos, flexibilidad y actividad final"
         },
         {
-          "authority": "Damero vigente de la orientación Biotecnología publicado bajo Resolución 112/2026",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20tecnolog%C3%ADas%20de%20la%20qu%C3%ADmica%20BIO%20res%20112%20CFQ%2012%2003%202026.pdf",
-          "role": "nueve semestres; secuencia sugerida de Biotecnología; Proyecto específico",
-          "trajectoryEvidence": false
+          "role": "damero vigente de Biotecnología"
         },
         {
-          "authority": "Damero vigente de la orientación Nanotecnología publicado bajo Resolución 112/2026",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20tecnolog%C3%ADas%20de%20la%20qu%C3%ADmica%20NANO%20res%20112%20CFQ%2012%2003%202026.pdf",
-          "role": "nueve semestres; secuencia sugerida de Nanotecnología; Proyecto específico",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-tecnologias-de-la-quimica",
-          "role": "vigencia; 60 meses; 360 créditos; orientaciones Biotecnología y Nanotecnología; Montevideo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página vigente de la carrera en Facultad de Química",
-          "url": "https://www.fq.edu.uy/?q=en%2Fnode%2F1853",
-          "role": "título; estructura curricular; mínimo de 50 créditos optativos; Practicantado o Proyecto; documentos vigentes",
-          "trajectoryEvidence": false
+          "role": "damero vigente de Nanotecnología"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo"
+          "Montevideo · Biotecnología",
+          "Montevideo · Nanotecnología"
         ],
         "pathwayIds": [
           "biotecnologia",
@@ -11834,21 +11763,21 @@
       "currentProjection": {
         "primary": "official-profiles",
         "features": [
-          "official-periods",
           "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "licenciatura en tecnologias de la quimica:2022",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": true,
-        "expectedCoursePlacements": 79,
-        "matchedCoursePlacements": 79,
-        "officialPeriodCount": 20,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2000-2022.json",
+        "sourcePlanId": "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:9903b08639d7b85f553fd73998740e42367bd15c4db4991580dc9968e1c72a84",
+        "projectionContentHash": "sha256:b04400e8b5c0c0153f570cc45384c68c80f099c991a02652c8f145e48bd3a816",
+        "pathways": [
           {
             "id": "biotecnologia",
             "periodCount": 11
@@ -11858,16 +11787,13 @@
             "periodCount": 11
           }
         ],
-        "projectionContentHash": "sha256:cb373fea4b4ac08b45493021acfaf420d327f0b83ccc27c98de2aeb6671a4b5e"
+        "expectedCoursePlacements": 81,
+        "matchedCoursePlacements": 81
       },
       "conflictNotes": [
-        "duration: El Plan original establece cuatro años y ocho semestres; el catálogo vigente de Udelar y Bedelías publican 60 meses, y los dameros actuales distribuyen la implementación en nueve semestres. La UI usa 60 meses y nueve semestres y conserva la discrepancia trazada.",
-        "dameroMetadata: Los archivos enlazados como Resolución 112/2026 conservan internamente aprobación de 08/08/2024 y actualización de 19/12/2024. Se priorizan los enlaces y contenidos vigentes publicados por FQ.",
-        "laboratorioBioquimicaCredits: Bedelías asigna 10 créditos al código 512; ambos dameros vigentes asignan 5. La proyección usa 5 para este Plan y conserva la discrepancia.",
-        "orientationNaming: Bedelías rotula perfiles y los sitios vigentes rotulan orientaciones. El Plan otorga un único título; la UI usa orientación como selector académico y no crea carreras distintas.",
-        "biotechnologyLaboratoryPlacement: El damero de Biotecnología incluye Laboratorio de Biotecnología código 196 como formación del perfil, aunque la composición de Bedelías lo lista bajo las optativas de Nanotecnología. La secuencia oficial lo muestra en el octavo semestre y habilita su cómputo profesional en Biotecnología.",
-        "prerequisiteCoverage: FQ publica 446 reglas de previatura y 31 consultas sin regla explícita. Se preserva la cobertura disponible y la actividad final mantiene además la condición normativa de aprobar todas las unidades obligatorias.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "El Plan 2022 prescribe ocho semestres, mientras los dameros vigentes distribuyen la implementación en nueve; la UI reproduce los dameros y conserva trazada la diferencia.",
+        "Inmunología I pertenece al sexto semestre de Biotecnología en el damero 2026.",
+        "Las orientaciones comparten un único título; el catálogo flexible completo permanece disponible por perfil."
       ]
     },
     {
@@ -11998,45 +11924,35 @@
           "defaultCredentialId": "tecnico-bachiller-ciencias-quimicas"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-09-01",
-      "effectiveAt": "2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2015 oficial de Facultad de Química",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/BACHILLER%20EN%20CIENCIAS%20QU%C3%8DMICAS%202015%20VERSI%C3%93N%20FINAL.pdf",
-          "role": "título propio; ingreso directo; cinco semestres; 225 créditos; mínimos por área; flexibilidad",
-          "trajectoryEvidence": false
+          "role": "plan normativo, título propio, mínimos y currículo flexible"
         },
         {
-          "authority": "Damero sugerido vigente aprobado por Resolución 112 del CFQ de 12/03/2026",
+          "authority": "Consejo de Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/archivos/Tecnico%20bachiller%20en%20ciencias%20quimicas%20res%20112%20CFQ%2012%2003%202026.pdf",
-          "role": "secuencia sugerida; 24 unidades obligatorias; Bioquímica Opción II; Laboratorio de Bioquímica",
-          "trajectoryEvidence": true
+          "role": "damero vigente de cinco semestres aprobado por Resolución 112/2026"
         },
         {
-          "authority": "Catálogo vigente de carreras Udelar",
-          "url": "https://udelar.edu.uy/carrera/tecnico-bach-en-csquimicas",
-          "role": "vigencia; 30 meses; 225 créditos; carrera completa en Montevideo; primer año en Salto; requisitos de ingreso",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Ficha vigente de la carrera en Facultad de Química",
-          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F621",
-          "role": "perfil; duración; 225 créditos; 175 obligatorios; 50 flexibles; 35 optativos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de electivas de la Tecnicatura en Facultad de Química",
+          "authority": "Facultad de Química, Udelar",
           "url": "https://www.fq.edu.uy/sites/default/files/sites/all/themes/professional_theme/images/Cat%C3%A1logo%20de%20asignaturas%20ELECTIVAS%20de%20Tec.%20Bach.%20Cs.%20Qcas._9.pdf",
-          "role": "oferta flexible actualizable; unidades electivas acreditables",
-          "trajectoryEvidence": false
+          "role": "catálogo oficial de electivas actualizado por Resolución 97 de 19/07/2018"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/tecnico-bach-en-csquimicas",
+          "role": "carrera completa en Montevideo y primer año en Salto"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo",
-          "Salto"
+          "Montevideo · carrera completa",
+          "Salto · primer año"
         ],
         "pathwayIds": [
           "montevideo",
@@ -12044,23 +11960,23 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-profiles",
+        "primary": "official-periods",
         "features": [
-          "official-periods",
-          "official-profiles"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "tecnico bach en cs quimicas:2015",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-tecnico-bach-en-cs-quimicas-2015.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
-        "expectedCoursePlacements": 33,
-        "matchedCoursePlacements": 24,
-        "officialPeriodCount": 7,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2000-2022.json",
+        "sourcePlanId": "bedelias-fq-tecnico-bach-en-cs-quimicas-2015",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-tecnico-bach-en-cs-quimicas-2015.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:51a9fca11504cf2cbea9ef1e9111b52374eb3be73d6af7d749e9fd8f86d25dea",
+        "projectionContentHash": "sha256:f61dc2a3cd534a1f0ad05ad7c67484b3ce378ff6915222b0a79334b306980700",
+        "pathways": [
           {
             "id": "montevideo",
             "periodCount": 6
@@ -12070,15 +11986,13 @@
             "periodCount": 3
           }
         ],
-        "projectionContentHash": "sha256:64614501e94d7b1fbe7d55e5bee23f2046f70b4823177e8e13fa5fdcdcafb81c"
+        "expectedCoursePlacements": 35,
+        "matchedCoursePlacements": 35
       },
       "conflictNotes": [
-        "careerVsIntermediateTitle: La oferta de FQ distingue la Tecnicatura Plan 2015, de ingreso directo y 225 créditos, del título intermedio Bachiller en Ciencias Químicas Plan 2000. La UI conserva dos identidades históricas distintas y publica sólo la carrera vigente Plan 2015 como ingreso propio.",
-        "saltoScope: Bedelías publica en CENURLN la composición completa, pero el catálogo vigente de Udelar limita la oferta territorial al primer año. La UI restringe Salto a alternativas regionales iniciales y explica la continuidad en Montevideo.",
-        "dameroUpdateMetadata: El archivo vinculado como Resolución 112/2026 conserva dentro del documento la leyenda 'Actualizado: 19/12/2024', pero incorpora Bioquímica Opción II y Laboratorio de Bioquímica. Se registra la discrepancia sin alterar el contenido aprobado.",
-        "flexibleCatalog: Bedelías acumula versiones, equivalencias y unidades históricas. La secuencia sugerida selecciona las versiones vigentes y deja el resto como catálogo acreditable sujeto a validación, sin sumar equivalentes automáticamente.",
-        "prerequisiteCoverage: FQ publica 149 reglas y 280 consultas sin regla explícita; CENURLN tiene cobertura menor. Se preservan las reglas centrales y no se interpreta la diferencia como variante curricular.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "La Tecnicatura Plan 2015 es una carrera de ingreso directo distinta del título intermedio Bachiller en Ciencias Químicas Plan 2000.",
+        "Salto ofrece exclusivamente el primer año y la continuidad se realiza en Montevideo con el mismo progreso.",
+        "El catálogo de electivas no publica códigos; sólo se vincularon coincidencias inequívocas y vigentes en Bedelías, dejando documentadas las etiquetas ambiguas o sin equivalente actual."
       ]
     },
     {
@@ -13378,5 +13292,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:dae9b6cdc0021d513e9d7326ef639a05921bf0dad86279b506e2c5b37c311abe"
+  "contentHash": "sha256:e52ec7aac24dc20f1fc2649fc449b0af66fb12c111ca839f1eb30e7dc70cbdfa"
 }

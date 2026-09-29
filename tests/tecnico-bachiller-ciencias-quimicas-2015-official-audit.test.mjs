@@ -9,6 +9,7 @@ const registry = await readJson("data/bedelias/audits/official-source-audits.jso
 const queue = await readJson("data/bedelias/inventory/audit-queue.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-fq-tecnico-bach-en-cs-quimicas-2015.json");
+const sourceEvidence = await readJson("data/fq/official-trajectories-2000-2022.json");
 const audit = registry.audits.find(({ identity }) => identity === "tecnico bach en cs quimicas:2015");
 const courseById = new Map(projection.courses.map((course) => [course.id, course]));
 
@@ -59,6 +60,27 @@ test("controla los mínimos 175/84/91 y 50 flexibles con 35 optativos", () => {
   assert.deepEqual(credential.requiredCourseGroups.map(({ id }) => id), ["tbcq-nucleo-vigente", "validacion-final-plan"]);
   assert.equal(credential.requiredCourseGroups[0].minCompleted, 24);
   assert.equal(credential.requiredCourseGroups[0].courseIds.length, 24);
+});
+
+test("publica completo el catálogo flexible conciliado con el catálogo oficial", () => {
+  const sourcePlan = sourceEvidence.plans.find(({ id }) => id === "bedelias-fq-tecnico-bach-en-cs-quimicas-2015");
+  const expectedCodes = [...sourcePlan.catalogEvidence.courseIds].sort();
+  const actualCodes = projection.publishedPathways.montevideo.catalogCourseIds
+    .map((id) => courseById.get(id).bedeliasCode)
+    .sort();
+  assert.deepEqual(actualCodes, expectedCodes);
+  assert.equal(actualCodes.length, 74);
+  assert.equal(new Set(actualCodes).size, actualCodes.length);
+  assert.equal(sourcePlan.catalogEvidence.unmatchedOrAmbiguousLabels.length, 31);
+  for (const label of [
+    "Gestión ambiental",
+    "Herramientas y aplicaciones de biología molecular en microbiología (HABMM)",
+    "Introducción a los fitoterápicos - Org.303",
+    "Nuevas metodologías en síntesis orgánica y sus aplicaciones",
+    "Síntesis de fármacos y conceptos de retrosíntesis Mod.II - Síntesis de fármacos (Org.203B)",
+    "Toxicología Alimentaria",
+  ]) assert.ok(sourcePlan.catalogEvidence.unmatchedOrAmbiguousLabels.includes(label), label);
+  assert.ok(projection.publishedPathways.montevideo.catalogCourseIds.every((id) => courseById.get(id).authorityStatus === "verified"));
 });
 
 test("Salto muestra sólo el primer año del mismo plan y conserva la continuidad en Montevideo", () => {

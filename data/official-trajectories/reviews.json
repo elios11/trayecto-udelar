@@ -912,6 +912,160 @@
         "La oferta flexible cambia por período y queda fuera de la secuencia sugerida de diez semestres.",
         "La oferta parcial de Calidad y Materiales en el interior no acredita una trayectoria completa fuera de Montevideo."
       ]
+    },
+    {
+      "planId": "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2000-2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo · título intermedio sin ingreso directo"
+        ],
+        "pathwayIds": [
+          "bioquimico-clinico-plan-2000",
+          "quimico-farmaceutico-plan-2000",
+          "quimico-plan-2000",
+          "ing-alimentos",
+          "ing-quimica"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/DAMERO%20DE%20BACH%20EN%20CS%20QU%C3%8DMICAS.pdf",
+          "role": "requisitos del título intermedio y cinco carreras de origen"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F14",
+          "role": "vigencia, 230 créditos y carácter de título intermedio"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/?q=es%2Fnode%2F1131",
+          "role": "procedimiento vigente para solicitar el título"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2000-2022.json",
+        "sourcePlanId": "bedelias-fq-bachiller-en-ciencias-quimicas-2000",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-bachiller-en-ciencias-quimicas-2000.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El documento no define semestres: la UI conserva bloques oficiales por carrera de origen y no inventa una secuencia temporal.",
+        "La suma interna del damero contiene diferencias de un crédito en algunos subtotales; se conservan los mínimos normativos de 170 obligatorios y 60 electivos.",
+        "Las materias no obligatorias de la carrera de origen quedan en catálogo y requieren validación de Bedelía."
+      ]
+    },
+    {
+      "planId": "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo · Biotecnología",
+          "Montevideo · Nanotecnología"
+        ],
+        "pathwayIds": [
+          "biotecnologia",
+          "nanotecnologia"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Plan%20de%20estudios%20Licenciatura%20en%20Tecnolog%C3%ADas%20de%20la%20Qu%C3%ADmica.pdf",
+          "role": "plan normativo, mínimos, flexibilidad y actividad final"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20tecnolog%C3%ADas%20de%20la%20qu%C3%ADmica%20BIO%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "role": "damero vigente de Biotecnología"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Licenciatura%20en%20tecnolog%C3%ADas%20de%20la%20qu%C3%ADmica%20NANO%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "role": "damero vigente de Nanotecnología"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2000-2022.json",
+        "sourcePlanId": "bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-tecnologias-de-la-quimica-2022.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Plan 2022 prescribe ocho semestres, mientras los dameros vigentes distribuyen la implementación en nueve; la UI reproduce los dameros y conserva trazada la diferencia.",
+        "Inmunología I pertenece al sexto semestre de Biotecnología en el damero 2026.",
+        "Las orientaciones comparten un único título; el catálogo flexible completo permanece disponible por perfil."
+      ]
+    },
+    {
+      "planId": "bedelias-fq-tecnico-bach-en-cs-quimicas-2015",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo · carrera completa",
+          "Salto · primer año"
+        ],
+        "pathwayIds": [
+          "montevideo",
+          "salto-primer-ano"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/BACHILLER%20EN%20CIENCIAS%20QU%C3%8DMICAS%202015%20VERSI%C3%93N%20FINAL.pdf",
+          "role": "plan normativo, título propio, mínimos y currículo flexible"
+        },
+        {
+          "authority": "Consejo de Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/archivos/Tecnico%20bachiller%20en%20ciencias%20quimicas%20res%20112%20CFQ%2012%2003%202026.pdf",
+          "role": "damero vigente de cinco semestres aprobado por Resolución 112/2026"
+        },
+        {
+          "authority": "Facultad de Química, Udelar",
+          "url": "https://www.fq.edu.uy/sites/default/files/sites/all/themes/professional_theme/images/Cat%C3%A1logo%20de%20asignaturas%20ELECTIVAS%20de%20Tec.%20Bach.%20Cs.%20Qcas._9.pdf",
+          "role": "catálogo oficial de electivas actualizado por Resolución 97 de 19/07/2018"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/tecnico-bach-en-csquimicas",
+          "role": "carrera completa en Montevideo y primer año en Salto"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/official-trajectories-2000-2022.json",
+        "sourcePlanId": "bedelias-fq-tecnico-bach-en-cs-quimicas-2015",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-tecnico-bach-en-cs-quimicas-2015.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La Tecnicatura Plan 2015 es una carrera de ingreso directo distinta del título intermedio Bachiller en Ciencias Químicas Plan 2000.",
+        "Salto ofrece exclusivamente el primer año y la continuidad se realiza en Montevideo con el mismo progreso.",
+        "El catálogo de electivas no publica códigos; sólo se vincularon coincidencias inequívocas y vigentes en Bedelías, dejando documentadas las etiquetas ambiguas o sin equivalente actual."
+      ]
     }
   ]
 }

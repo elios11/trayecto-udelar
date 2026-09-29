@@ -2,7 +2,7 @@
 
 ## Estado
 
-Especificación lista para implementación en un worktree aislado basado en `main` después de D03i.
+Implementación y validación terminadas en el worktree `d03j-fq-cierre-v2`; lista para el commit enfocado y la posterior integración serial.
 
 ## Objetivo
 
@@ -63,3 +63,32 @@ Jerarquía:
 - Ejecutar pruebas focalizadas, `npm test`, `npm run lint` y `git diff --check`.
 - Documentar aquí fuentes, resultados, límites y estado recuperable.
 - Crear un commit enfocado y devolver su hash; no integrar, hacer push ni publicar desde el subagente.
+
+## Resultado implementado
+
+- `data/fq/official-trajectories-2000-2022.json` conserva la transcripción normalizada y revisada de los nueve recorridos: cinco del Bachiller 2000, dos de LTQ 2022 y dos territoriales del Técnico Bachiller 2015.
+- Bachiller 2000 mantiene una sola identidad de título intermedio y sus cinco carreras de origen. Ingeniería de Alimentos e Ingeniería Química ya usan los requisitos explícitos del damero, no la expansión de grupos candidatos de Bedelías.
+- LTQ 2022 conserva un único título y dos orientaciones de nueve semestres. La revisión visual corrigió Inmunología I (`506X`): corresponde al sexto semestre de Biotecnología, no al quinto.
+- Técnico Bachiller 2015 mantiene la carrera completa de cinco semestres en Montevideo y limita Salto al primer año. El catálogo visible incorpora 74 coincidencias inequívocas y vigentes del catálogo oficial de electivas; los otros 31 rótulos únicos del PDF, ambiguos, históricos o sin equivalente actual, quedan enumerados literalmente en la evidencia y no se convierten en materias inventadas.
+- Los tres planes pasan a `official-trajectory-reproduced`; el inventario queda en 147 planes: 81 reproducidos, 9 con fuente identificada pendiente, 56 por investigar y 1 ausencia documentada.
+- La presentación del planificador conserva D03k: los nueve recorridos tienen materias oficiales reales, usan `Trayectoria oficial` y ofrecen la unión verificada de períodos y catálogos sin recurrir al fallback generado.
+
+## Fuentes verificadas y límites
+
+Se descargaron bajo `tmp/d03j-fq-cierre/` y se renderizaron 43 páginas de siete PDF oficiales: el damero del Bachiller 2000; el Plan 2022 y los dos dameros 2026 de LTQ; el Plan 2015, el damero 2026 y el catálogo de electivas del Técnico Bachiller. La revisión visual cubrió las 3 páginas del Bachiller, los 4 dameros LTQ, las páginas normativas pertinentes de los dos planes y las 3 páginas del catálogo de electivas.
+
+Límites preservados:
+
+- el documento del Bachiller 2000 organiza requisitos y carreras de origen, no semestres; la UI no inventa una secuencia temporal;
+- el Plan LTQ prescribe ocho semestres, pero los dameros vigentes distribuyen la implementación en nueve y son la fuente de orden actual;
+- el catálogo de electivas del Técnico Bachiller fue actualizado por Resolución 97 de 19/07/2018 y publica nombres, no códigos; Bedelías sólo resuelve código, créditos y versión cuando la identidad es inequívoca;
+- la oferta flexible efectiva puede cambiar por período y sigue sujeta a la Comisión de Carrera y Bedelía.
+
+## Verificaciones finales
+
+- La proyección académica y el inventario se regeneraron dos veces. Los 173 artefactos comparados conservaron en ambos pases el mismo hash combinado: `618e7ed5b0242401544cb1c77cd91d321f12789f24dfce998641ae433ba1a20d`.
+- Las pruebas focalizadas de los tres planes, del inventario y del catálogo del planificador aprobaron 33/33 casos.
+- `npm test`: compilación de producción y 923/923 pruebas aprobadas.
+- `npm run lint`: aprobado sin errores.
+- La revisión visual de las tres páginas del catálogo oficial de electivas confirmó 105 rótulos únicos: 74 correspondencias vigentes inequívocas publicadas y 31 rótulos conservados literalmente como evidencia sin inventar identidades.
+- `git diff --cached --check`: aprobado sobre el conjunto intencional preparado para el commit; los archivos generados marcados únicamente por finales de línea quedaron fuera.
