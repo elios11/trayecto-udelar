@@ -82,23 +82,26 @@ test("cada plan seleccionable tiene una presentación de Currícula con materias
   }
 });
 
-test("Ingeniería Química 2021 usa un recorrido generado útil y conserva todas las opciones", async () => {
+test("Ingeniería Química 2021 usa por defecto la currícula oficial FING y conserva todas las opciones verificadas", async () => {
   const projection = await readJson("app/data/bedelias-generated/bedelias-fing-ingenieria-quimica-2021.json");
-  const presentation = buildRegisteredPlanPresentation("curricula-personalizada", projection);
+  const presentation = buildRegisteredPlanPresentation("ingreso-fing", projection);
   const idsInCurriculum = presentation.periods.flatMap(({ courseIds }) => courseIds);
   const provisional = presentation.courses.filter((course) => course.provisional);
+  const verifiedRealIds = projection.courses
+    .filter((course) => course.authorityStatus === "verified" && isRealCurricularCourse(course))
+    .map(({ id }) => id)
+    .sort();
 
-  assert.equal(presentation.generated, true);
-  assert.equal(presentation.label, GENERATED_PATHWAY_LABEL);
+  assert.equal(presentation.generated, false);
+  assert.equal(presentation.label, "Trayectoria oficial");
   assert.equal(presentation.periods.length, 10);
-  assert.equal(idsInCurriculum.length, 22);
+  assert.equal(idsInCurriculum.length, 46);
   assert.equal(new Set(idsInCurriculum).size, idsInCurriculum.length);
-  assert.equal(presentation.courses.length, 375);
-  assert.equal(provisional.length, 353);
+  assert.deepEqual(presentation.courses.filter(isRealCurricularCourse).map(({ id }) => id).sort(), verifiedRealIds);
+  assert.equal(provisional.length, 0);
   assert.ok(idsInCurriculum.every((id) => presentation.courses.find((course) => course.id === id)?.authorityStatus === "verified"));
-  assert.ok(provisional.every((course) => course.semester === "opt"));
   assert.ok(presentation.courses.some(({ bedeliasCode }) => bedeliasCode === "Q80"));
-  assert.ok(!presentation.courses.some(({ id }) => id === "fing-validacion-final-plan"));
+  assert.ok(!idsInCurriculum.includes("fing-validacion-final-plan"));
 });
 
 test("las candidatas del fallback siguen siendo provisionales y no aportan requisitos oficiales", async () => {

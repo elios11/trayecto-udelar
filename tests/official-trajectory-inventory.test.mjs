@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 81,
-    "official-trajectory-identified-pending": 9,
+    "official-trajectory-reproduced": 82,
+    "official-trajectory-identified-pending": 8,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 65);
-  assert.equal(savedInventory.pendingQueue.plans.length, 65);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 9).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(9).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 64);
+  assert.equal(savedInventory.pendingQueue.plans.length, 64);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 8).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(8).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -60,6 +60,21 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
       }
     }
   }
+});
+
+test("D03l cierra Ingeniería Química con las dos currículas exactas y conserva Salto parcial", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-fing-ingenieria-quimica-2021");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-profiles");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["ingreso-fing", 10],
+    ["ingreso-fq", 10],
+    ["curricula-personalizada", 2],
+    ["inicio-salto", 2],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 96);
+  assert.equal(plan.evidence.matchedCoursePlacements, 96);
+  assert.deepEqual(plan.scope.territories, ["Montevideo · carrera completa", "Salto · primer año"]);
 });
 
 test("D03j cierra los tres planes FQ con correspondencia exacta y sedes explícitas", () => {

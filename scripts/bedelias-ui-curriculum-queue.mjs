@@ -98,13 +98,20 @@ async function writeJson(relativePath, value) {
   return output;
 }
 
-async function main() {
+export async function buildAndWriteUiCurriculumQueue() {
+  const previousQueue = await readJson("data/bedelias/inventory/ui-curriculum-queue.json");
   const queue = buildUiCurriculumQueue({
     uiReport: await readJson("data/bedelias/inventory/ui-extracted-plans.json"),
     auditRegistry: await readJson("data/bedelias/audits/official-source-audits.json"),
     globalManifest: await readJson("data/bedelias/inventory/global-current.json"),
+    generatedAt: previousQueue.generatedAt,
   });
   const output = await writeJson("data/bedelias/inventory/ui-curriculum-queue.json", queue);
+  return { queue, output };
+}
+
+async function main() {
+  const { queue, output } = await buildAndWriteUiCurriculumQueue();
   console.log(`Planes de UI con malla: ${queue.counts.curriculumReady}.`);
   console.log(`Planes de UI pendientes de composición: ${queue.counts.curriculumPending}.`);
   console.log(`Salida: ${output}`);

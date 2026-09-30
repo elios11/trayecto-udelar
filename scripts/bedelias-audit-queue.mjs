@@ -163,19 +163,26 @@ async function writeJson(relativePath, value) {
   return output;
 }
 
-async function main() {
+export async function buildAndWriteAuditQueue() {
   const auditRegistry = await readJson("data/bedelias/audits/official-source-audits.json");
   const expectedAuditHash = officialAuditRegistryHash(auditRegistry);
   if (auditRegistry.contentHash !== expectedAuditHash) {
     throw new Error(`Hash inválido en registro de auditorías: ${auditRegistry.contentHash} != ${expectedAuditHash}`);
   }
+  const previousQueue = await readJson("data/bedelias/inventory/audit-queue.json");
   const queue = buildAuditQueue({
     globalManifest: await readJson("data/bedelias/inventory/global-current.json"),
     regionalManifest: await readJson("data/bedelias/inventory/regional-offerings.json"),
     comparisonManifest: await readJson("data/bedelias/inventory/regional-content-comparison.json"),
     auditRegistry,
+    generatedAt: previousQueue.generatedAt,
   });
   const output = await writeJson("data/bedelias/inventory/audit-queue.json", queue);
+  return { queue, output };
+}
+
+async function main() {
+  const { queue, output } = await buildAndWriteAuditQueue();
   console.log(`Identidades canónicas: ${queue.counts.canonicalIdentities}.`);
   console.log(`Pendientes de auditoría: ${queue.counts.pendingCanonicalIdentities}.`);
   console.log(`Salida: ${output}`);

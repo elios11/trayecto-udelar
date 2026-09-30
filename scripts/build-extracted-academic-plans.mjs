@@ -13,6 +13,7 @@ const catalogPath = path.join(projectRoot, "app", "data", "extracted-academic-ca
 const loadersPath = path.join(projectRoot, "app", "data", "extracted-academic-loaders.ts");
 const reportPath = path.join(inventoryDirectory, "ui-extracted-plans.json");
 const fhceReconciliationsPath = path.join(projectRoot, "data", "fhce", "official-trajectories-2014.json");
+const iq2021ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-quimica-2021-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -1245,6 +1246,25 @@ function mergeAuditReconciliation(audit, reconciliation) {
     ...audit.officialPlan?.curriculum,
     ...reconciliation.curriculum,
   };
+  if (reconciliation.additionalCourses) {
+    const additionalCourses = new Map((curriculum.additionalCourses ?? []).map((course) => [course.id, course]));
+    for (const course of reconciliation.additionalCourses) additionalCourses.set(course.id, course);
+    curriculum.additionalCourses = [...additionalCourses.values()];
+  }
+  if (reconciliation.additionalRequiredCourseGroups) {
+    const requiredCourseGroups = new Map((curriculum.requiredCourseGroups ?? []).map((group) => [group.id, group]));
+    for (const group of reconciliation.additionalRequiredCourseGroups) requiredCourseGroups.set(group.id, group);
+    curriculum.requiredCourseGroups = [...requiredCourseGroups.values()];
+  }
+  if (reconciliation.credentialRequiredCourseGroupIds) {
+    curriculum.credentials = (curriculum.credentials ?? []).map((credential) => ({
+      ...credential,
+      requiredCourseGroupIds: [...new Set([
+        ...(credential.requiredCourseGroupIds ?? []),
+        ...(reconciliation.credentialRequiredCourseGroupIds[credential.id] ?? []),
+      ])],
+    }));
+  }
   if (reconciliation.requiredCourseGroupSourceIds) {
     curriculum.requiredCourseGroups = (curriculum.requiredCourseGroups ?? []).map((group) => ({
       ...group,
@@ -1272,13 +1292,20 @@ export async function buildExtractedAcademicPlans() {
   const auditsRegistry = await loadJson(path.join(snapshotDirectory, "audits", "official-source-audits.json"));
   const global = await loadJson(path.join(inventoryDirectory, "global-current.json"));
   const fhceReconciliations = await loadJson(fhceReconciliationsPath);
-  const fhceReconciliationByIdentity = new Map(fhceReconciliations.plans.map((plan) => [plan.identity, {
-    ...plan,
-    reviewedAt: plan.reviewedAt ?? fhceReconciliations.reviewedAt,
-  }]));
+  const iq2021Reconciliation = await loadJson(iq2021ReconciliationPath);
+  const reconciliationByIdentity = new Map([
+    ...fhceReconciliations.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? fhceReconciliations.reviewedAt,
+    }]),
+    ...iq2021Reconciliation.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? iq2021Reconciliation.reviewedAt,
+    }]),
+  ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,
-    mergeAuditReconciliation(audit, fhceReconciliationByIdentity.get(audit.identity)),
+    mergeAuditReconciliation(audit, reconciliationByIdentity.get(audit.identity)),
   ]));
   const globalPlans = global.services.flatMap((service) => service.plans.map((plan) => ({ ...plan, serviceName: service.name })));
   const globalByIdentity = new Map();
@@ -1326,7 +1353,7 @@ export async function buildExtractedAcademicPlans() {
       entry,
       item,
       audit,
-      reconciliation: fhceReconciliationByIdentity.get(entry.identity) ?? null,
+      reconciliation: reconciliationByIdentity.get(entry.identity) ?? null,
       ...buildProjection(entry, item.snapshot, audit),
     });
   }
@@ -1398,6 +1425,7 @@ export async function buildExtractedAcademicPlans() {
       officialAuditHash: auditsRegistry.contentHash,
       globalManifestHash: global.contentHash,
       fhceReconciliationsHash: hash(fhceReconciliations),
+      iq2021ReconciliationHash: hash(iq2021Reconciliation),
     },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,

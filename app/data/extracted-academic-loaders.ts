@@ -573,7 +573,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-quimica-2021": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-quimica-2021.json"),
-    pathwayIds: ["curricula-personalizada","ingreso-fing","ingreso-fq","inicio-salto"],
+    pathwayIds: ["ingreso-fing","ingreso-fq","curricula-personalizada","inicio-salto"],
     pathwayLabel: "Recorrido",
     minCredits: 450,
   },

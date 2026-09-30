@@ -61018,7 +61018,7 @@
       "identity": "ingenieria quimica:2021",
       "career": "Ingeniería Química",
       "planYear": "2021",
-      "reviewedAt": "2026-08-31",
+      "reviewedAt": "2026-09-29",
       "status": "official-evidence-complete",
       "scope": "current-shared-degree-title-credit-structure-minima-final-project-flexible-curriculum-entry-routes-and-partial-regional-offering",
       "publicationEligible": true,
@@ -61500,13 +61500,13 @@
         "canonicalIdentity": "ingenieria quimica:2021",
         "excludeFromCurrentUi": false,
         "regionalCurriculumVariant": false,
-        "reason": "Las fuentes oficiales confirman un único Plan 2021 y un único título compartido por FING y FQ. Salto ofrece solamente el primer año, por lo que se modela como tramo territorial del mismo progreso y no como otra carrera.",
+        "reason": "Las fuentes oficiales confirman un único Plan 2021 y un único título compartido por FING y FQ. La Comisión de Carrera publica currículas sugeridas 2025 separadas por facultad de ingreso; Salto ofrece solamente el primer año y se modela como tramo territorial del mismo progreso, no como otra carrera.",
         "normalization": [
           "Publicar una única Ingeniería Química Plan 2021 con un solo progreso y título.",
           "Separar los recorridos de ingreso por FING y FQ sin presentarlos como orientaciones o títulos diferentes.",
           "Ofrecer Salto como sede del primer año, restringida a las unidades regionales identificadas, y explicar la continuidad en Montevideo.",
           "Controlar los mínimos de cuatro grupos y ocho áreas, 450 créditos, Proyecto Industrial I y II y aprobación del currículo individual.",
-          "Conservar el catálogo completo de Bedelías para los recorridos centrales y no convertir una currícula sugerida en obligación."
+          "Publicar en los recorridos centrales el catálogo respaldado por las currículas y combinaciones tipo oficiales; conservar las demás entradas de Bedelías sólo como candidatas no publicadas."
         ]
       },
       "sources": [
@@ -61553,17 +61553,60 @@
             "incorporación temprana de Ingeniería Química"
           ]
         },
-        {
-          "url": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf",
-          "authority": "Informe de Autoevaluación ARCU-SUR 2025, FING y FQ",
+      {
+        "url": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf",
+        "authority": "Informe de Autoevaluación ARCU-SUR 2025, FING y FQ",
           "supports": [
             "aprobaciones",
             "tres currículas de ingreso",
             "Proyecto Industrial I y II",
             "Pasantía",
-            "flexibilidad"
-          ]
-        },
+          "flexibilidad"
+        ]
+      },
+      {
+        "url": "https://eva.fing.edu.uy/course/view.php?id=198&section=1",
+        "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+        "supports": [
+          "publicación vigente de currículas sugeridas",
+          "ingreso por FING",
+          "ingreso por FQ",
+          "actualización en curso desde febrero de 2026"
+        ]
+      },
+      {
+        "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FING%202025%20Plan%202021.pdf",
+        "authority": "Currícula sugerida FING 2025, Comisión de Carrera de Ingeniería Química",
+        "contentHash": "sha256:908ca3e6f3f8415f4354f1137c975cc27fa8019bc20afd86522a6228df1259ed",
+        "supports": [
+          "diez semestres",
+          "materias por período",
+          "alternativas",
+          "electivas de Gestión"
+        ]
+      },
+      {
+        "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FQ%202025%20Plan%202021.pdf",
+        "authority": "Currícula sugerida FQ 2025, Comisión de Carrera de Ingeniería Química",
+        "contentHash": "sha256:5f75ea37311fdc1f5800e34f8180bc09c7924f3b667d1d8f6174a8977abfbee2",
+        "supports": [
+          "diez semestres",
+          "materias por período",
+          "alternativas",
+          "electivas de Gestión"
+        ]
+      },
+      {
+        "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72845",
+        "authority": "Protocolo para la aprobación de currículos, Comisión de Carrera de Ingeniería Química",
+        "contentHash": "sha256:1e8e6a72484433da5fd78b1f92e56c0ea64a75c5a89fe8a9e215fdc9e2f1d1b0",
+        "supports": [
+          "450 créditos",
+          "combinaciones tipo",
+          "alternativas verificadas",
+          "validación por la Comisión de Carrera"
+        ]
+      },
         {
           "url": "https://www.litoralnorte.udelar.edu.uy/etiquetas/ciclo-inicial",
           "authority": "Oferta de ciclos iniciales, Cenur Litoral Norte",
@@ -61574,9 +61617,17 @@
         }
       ],
       "anomalies": [
-        {
-          "field": "suggestedCurriculaFiles",
-          "resolution": "El informe ARCU-SUR enlaza tres currículas 2024, pero los archivos de EVA ya no están disponibles anónimamente. La UI conserva sus rutas de ingreso como guías sin fijar una secuencia completa no verificable y ofrece el catálogo vigente para planificar."
+      {
+        "field": "suggestedCurriculaFiles",
+        "resolution": "Los tres enlaces de currículas 2024 citados por el informe ARCU-SUR devuelven un error de contexto de Moodle y no tienen captura recuperable en Internet Archive. La página vigente de la Comisión publica en su lugar dos currículas completas 2025, ingreso por FING e ingreso por FQ, que se reproducen exactamente. No se inventa una tercera secuencia de Matemática Inicial: en 2026 el comienzo por FING depende de la Prueba Inicial Obligatoria."
+      },
+      {
+        "field": "currentCurriculaUpdate",
+        "resolution": "La página vigente de la Comisión indica que contenidos y créditos están en actualización desde febrero de 2026. Se conserva la última publicación completa 2025 y se expone esta limitación; no se anticipan códigos, créditos ni semestres aún no publicados."
+      },
+      {
+        "field": "publishedCodeConflicts",
+        "resolution": "La currícula FQ 2025 enumera FQ-05A aunque la etiqueta extraída de Bedelías diga vigencia hasta 2023; se conserva el código oficial publicado. La alternativa Instrumentación Industrial no incluye código y existen dos homónimos en Bedelías, por lo que no se fusiona ni se promueve ninguno."
         },
         {
           "field": "regionalScope",
@@ -61595,8 +61646,8 @@
           "resolution": "Los tres snapshots tienen la misma huella curricular, pero FING, FQ y CENURLN exponen distinta cobertura de previaturas. Se conserva FING como fuente canónica de reglas y las diferencias no generan carreras duplicadas."
         }
       ],
-      "uiNotice": "Plan 2021 compartido por FING y FQ. Podés ingresar por cualquiera de ambas facultades o cursar el primer año en Salto; todos los recorridos mantienen el mismo título, mínimos y progreso, y Salto continúa luego en Montevideo.",
-      "remainingWork": "La oferta semestral y las previaturas vigentes deben verificarse en Bedelías; las secuencias sugeridas pueden actualizarse por la Comisión de Carrera."
+      "uiNotice": "Plan 2021 compartido por FING y FQ. Las currículas sugeridas 2025 reproducen diez semestres por facultad de ingreso; la Comisión informa una actualización de contenidos y créditos iniciada en febrero de 2026. Todos los recorridos mantienen el mismo título, mínimos y progreso. Salto conserva sólo el primer año y continúa luego en Montevideo.",
+      "remainingWork": "La Comisión de Carrera aún debe publicar el resultado de la actualización iniciada en febrero de 2026. La alternativa Instrumentación Industrial carece de código en las currículas y las secuencias 2024 retiradas no tienen copia archivada; se mantienen como limitaciones explícitas. La oferta y las previaturas de cada semestre se consultan operativamente sin convertir Bedelías en fuente curricular."
     },
     {
       "identity": "licenciatura en computacion:2025",
@@ -73119,6 +73170,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:ce7aada67ababcc090ad2c26cb6853522f4799c056cd59aa094d7c312e2c6e6a",
+  "contentHash": "sha256:b1eb08e0d9d357e5f4ec06258063055d84db8848a7bcba506b76103fcd1a2622",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

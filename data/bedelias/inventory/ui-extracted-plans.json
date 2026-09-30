@@ -1,10 +1,11 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:d0dcebe29b17f8943609930b7ea375b79653e2b817b6a798010f0c7e264e1a9a",
-    "officialAuditHash": "sha256:ce7aada67ababcc090ad2c26cb6853522f4799c056cd59aa094d7c312e2c6e6a",
+    "auditQueueHash": "sha256:6c373c0c02ab7e0916d5ce04487487631c713d0a25796e05ac8eb0cda980498b",
+    "officialAuditHash": "sha256:b1eb08e0d9d357e5f4ec06258063055d84db8848a7bcba506b76103fcd1a2622",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
-    "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080"
+    "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
+    "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -14,17 +15,17 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4357,
-      "candidate": 28006,
+      "verified": 4433,
+      "candidate": 27931,
       "historical-equivalent": 43,
       "administrative": 177,
       "rejected": 9
     },
-    "beforePublishedCourses": 32371,
-    "afterPublishedCourses": 4357,
+    "beforePublishedCourses": 32372,
+    "afterPublishedCourses": 4433,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1466,
-    "visibleTargetsWithUnpublishedDependencies": 1157,
+    "afterPublishedRules": 1490,
+    "visibleTargetsWithUnpublishedDependencies": 1213,
     "plansWithVerifiedCatalog": 60,
     "plansWithPartialCatalog": 61,
     "plansWithStructureOnly": 18
@@ -3100,21 +3101,37 @@
         "salto"
       ],
       "before": {
-        "publishedCourses": 380,
+        "publishedCourses": 381,
         "publishedRules": 168
       },
       "after": {
-        "publishedCourses": 27,
-        "hiddenCourses": 353,
-        "publishedRules": 1,
-        "rulesWithUnpublishedDependencies": 3
+        "publishedCourses": 103,
+        "hiddenCourses": 278,
+        "publishedRules": 25,
+        "rulesWithUnpublishedDependencies": 59
       },
       "statuses": {
-        "verified": 27,
-        "candidate": 353,
+        "verified": 103,
+        "candidate": 278,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 27,
+          "candidate": 353,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 103,
+          "candidate": 278,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4447,5 +4464,5 @@
       }
     }
   ],
-  "contentHash": "sha256:571b8d09b94a549ee21a0e791c4c954f8d85dad04e801f9fc724dd7c76b2ad8c"
+  "contentHash": "sha256:73127e1b9587829405d8fc25fddea0f968c3a5256f8c37e40ae7219d99600b17"
 }

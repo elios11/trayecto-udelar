@@ -7,6 +7,12 @@ const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relat
 const report = await readJson("data/bedelias/inventory/ui-extracted-plans.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const officialSourceAudits = await readJson("data/bedelias/audits/official-source-audits.json");
+const fhceReconciliations = await readJson("data/fhce/official-trajectories-2014.json");
+const iq2021Reconciliations = await readJson("data/fing/ingenieria-quimica-2021-trayectorias.json");
+const reconciliationByIdentity = new Map([
+  ...fhceReconciliations.plans,
+  ...iq2021Reconciliations.plans,
+].map((plan) => [plan.identity, plan]));
 const collectRuleCourseIds = (expression, output = []) => {
   output.push(...(expression?.options ?? []).map((option) => option.code).filter(Boolean));
   for (const child of expression?.children ?? []) collectRuleCourseIds(child, output);
@@ -87,7 +93,9 @@ test("cada materia explícita de una trayectoria oficial conserva una copia visi
   const generatedPlanByIdentity = new Map(report.plans.map((plan) => [plan.identity, plan]));
   for (const audit of officialSourceAudits.audits) {
     const generatedPlan = generatedPlanByIdentity.get(audit.identity);
-    const trajectories = audit.officialPlan?.trajectories ?? [];
+    const trajectories = reconciliationByIdentity.get(audit.identity)?.trajectories
+      ?? audit.officialPlan?.trajectories
+      ?? [];
     if (!generatedPlan || trajectories.length === 0) continue;
     const projection = await readJson(`app/data/bedelias-generated/${generatedPlan.planId}.json`);
     const courseBySourceIdentity = new Map();

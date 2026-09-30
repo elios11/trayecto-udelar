@@ -254,6 +254,59 @@
       ]
     },
     {
+      "planId": "bedelias-fing-ingenieria-quimica-2021",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2025",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo · carrera completa", "Salto · primer año"],
+        "pathwayIds": ["ingreso-fing", "ingreso-fq", "curricula-personalizada", "inicio-salto"]
+      },
+      "sources": [
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=198&section=1",
+          "role": "publicación vigente y advertencia de actualización iniciada en febrero de 2026"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FING%202025%20Plan%202021.pdf",
+          "role": "currícula sugerida 2025 de ingreso por FING",
+          "contentHash": "sha256:908ca3e6f3f8415f4354f1137c975cc27fa8019bc20afd86522a6228df1259ed"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FQ%202025%20Plan%202021.pdf",
+          "role": "currícula sugerida 2025 de ingreso por FQ",
+          "contentHash": "sha256:5f75ea37311fdc1f5800e34f8180bc09c7924f3b667d1d8f6174a8977abfbee2"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72845",
+          "role": "protocolo de aprobación y catálogo de combinaciones tipo",
+          "contentHash": "sha256:1e8e6a72484433da5fd78b1f92e56c0ea64a75c5a89fe8a9e215fdc9e2f1d1b0"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-quimica-2021-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-quimica-2021",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-quimica-2021.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Los tres enlaces de currículas 2024 citados por el informe ARCU-SUR ya no entregan los archivos y no tienen captura recuperable en Internet Archive; la publicación EVA vigente los reemplaza por dos currículas completas 2025, FING y FQ.",
+        "La publicación vigente informa que contenidos y créditos están en actualización desde febrero de 2026. Se reproduce la última versión completa sin anticipar cambios no publicados.",
+        "FQ-05A se conserva porque la currícula FQ 2025 la enumera expresamente, aunque la etiqueta extraída de Bedelías indique vigencia hasta 2023.",
+        "La alternativa de Instrumentación Industrial no publica un código en la currícula; se conserva la opción en la nota y no se fusiona con ninguno de los dos códigos homónimos de Bedelías.",
+        "La currícula personalizada no fija semestres y Salto sólo demuestra primer año; ambos recorridos conservan su alcance sin inferir una secuencia."
+      ]
+    },
+    {
       "planId": "1997",
       "state": "official-trajectory-identified-pending",
       "reviewedAt": "2026-09-22",

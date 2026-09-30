@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-29",
+  "plans": [
+    {
+      "id": "bedelias-fing-ingenieria-quimica-2021",
+      "identity": "ingenieria quimica:2021",
+      "effectiveAt": "2025",
+      "authorityCountsBefore": {
+        "verified": 27,
+        "candidate": 353,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=198&section=1",
+          "role": "publicación vigente de las currículas sugeridas por facultad de ingreso; advierte una actualización de contenidos y créditos iniciada en febrero de 2026"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FING%202025%20Plan%202021.pdf",
+          "role": "currícula sugerida 2025 de diez semestres para ingreso por FING",
+          "contentHash": "sha256:908ca3e6f3f8415f4354f1137c975cc27fa8019bc20afd86522a6228df1259ed"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FQ%202025%20Plan%202021.pdf",
+          "role": "currícula sugerida 2025 de diez semestres para ingreso por FQ",
+          "contentHash": "sha256:5f75ea37311fdc1f5800e34f8180bc09c7924f3b667d1d8f6174a8977abfbee2"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72845",
+          "role": "protocolo y combinaciones tipo para aprobar currículos del Plan 2021, anexo del 18 de julio de 2024",
+          "contentHash": "sha256:1e8e6a72484433da5fd78b1f92e56c0ea64a75c5a89fe8a9e215fdc9e2f1d1b0"
+        },
+        {
+          "authority": "Facultades de Ingeniería y Química, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf",
+          "role": "informe ARCU-SUR que confirma el Plan 2021 compartido y documenta las tres rutas publicadas en 2024",
+          "contentHash": "sha256:1eeb756fec72914de78ee024a37743ce9b30d8c96abeabe366c8e15a8a98ef9f"
+        }
+      ],
+      "uiNotice": "Las currículas sugeridas 2025 de ingreso por FING y por FQ se reproducen en diez semestres y pertenecen al mismo Plan 2021. La Comisión de Carrera informa que está actualizando contenidos y créditos desde febrero de 2026; por eso se conserva la última publicación completa y se señalan las alternativas sin convertirlas en obligaciones acumulativas. La currícula personalizada sigue siendo flexible y Salto conserva únicamente el alcance comprobado de primer año, con continuidad en Montevideo.",
+      "trajectories": [
+        {
+          "id": "ingreso-fing",
+          "credentialId": "ingeniero-quimico",
+          "label": "Ingreso por FING · currícula 2025",
+          "description": "Trayectoria sugerida de diez semestres publicada por la Comisión de Carrera para ingreso por FING. Q81B y Q104 son alternativas; las electivas de Gestión y las sustituciones indicadas en las notas se eligen, no se acumulan.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["1061", "1030", "1151", "FQ-102", "FQ-104A"] },
+            { "label": "Semestre 2", "courseIds": ["1062", "1031", "1152", "FQ-202", "Q102"] },
+            { "label": "Semestre 3", "courseIds": ["1063", "1025", "1153", "FQ-301", "FQ-302"] },
+            { "label": "Semestre 4", "courseIds": ["1064", "FQ-406A", "FQ-402", "FQ-401I", "Q59B"] },
+            { "label": "Semestre 5", "courseIds": ["1154", "FQ-303A", "FQ-520A", "FQ-501", "Q22", "Q21"] },
+            { "label": "Semestre 6", "courseIds": ["FQ-521A", "Q66", "Q74", "1411"] },
+            { "label": "Semestre 7", "courseIds": ["Q69", "Q71", "Q68", "2108"] },
+            { "label": "Semestre 8", "courseIds": ["Q70", "Q101", "Q94", "Q77C", "Q73"] },
+            { "label": "Semestre 9", "courseIds": ["Q81B", "Q104", "Q80", "Q197", "iq-electivas-gestion"] },
+            { "label": "Semestre 10", "courseIds": ["Q57", "Q82"] }
+          ],
+          "excludedCourseIds": ["iq-flexibilidad", "iq-ingreso-fing", "iq-ingreso-fq", "iq-inicio-salto"],
+          "excludedPeriodCourseIds": ["validacion-final-plan"]
+        },
+        {
+          "id": "ingreso-fq",
+          "credentialId": "ingeniero-quimico",
+          "label": "Ingreso por FQ · currícula 2025",
+          "description": "Trayectoria sugerida de diez semestres publicada por la Comisión de Carrera para ingreso por FQ. Q81B y Q104 son alternativas; las electivas de Gestión y las sustituciones indicadas en las notas se eligen, no se acumulan.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["FQ-01", "FQ-03", "FQ-102", "FQ-104A"] },
+            { "label": "Semestre 2", "courseIds": ["FQ-04", "FQ-205", "FQ-202", "Q102"] },
+            { "label": "Semestre 3", "courseIds": ["FQ-05A", "FQ-06A", "FQ-304", "FQ-301", "FQ-302"] },
+            { "label": "Semestre 4", "courseIds": ["FQ-07", "FQ-08", "FQ-308", "FQ-406A", "FQ-402", "FQ-401I", "Q59B"] },
+            { "label": "Semestre 5", "courseIds": ["FQ-303A", "FQ-520A", "FQ-501", "Q22", "Q21"] },
+            { "label": "Semestre 6", "courseIds": ["FQ-09", "FQ-521A", "Q66", "Q74", "1411"] },
+            { "label": "Semestre 7", "courseIds": ["Q69", "Q71", "Q68", "2108"] },
+            { "label": "Semestre 8", "courseIds": ["Q70", "Q101", "Q94", "Q77C", "Q73"] },
+            { "label": "Semestre 9", "courseIds": ["Q81B", "Q104", "Q80", "Q197", "iq-electivas-gestion"] },
+            { "label": "Semestre 10", "courseIds": ["Q57", "Q82"] }
+          ],
+          "excludedCourseIds": ["iq-flexibilidad", "iq-ingreso-fing", "iq-ingreso-fq", "iq-inicio-salto"],
+          "excludedPeriodCourseIds": ["validacion-final-plan"]
+        },
+        {
+          "id": "curricula-personalizada",
+          "credentialId": "ingeniero-quimico",
+          "label": "Currícula personalizada",
+          "description": "Opción flexible prevista por el Plan 2021 y el protocolo de aprobación. Elegí unidades verificadas hasta cubrir mínimos y 450 créditos; una combinación distinta de las combinaciones tipo requiere recomendación de la Comisión de Carrera.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Orientación del recorrido", "courseIds": ["iq-flexibilidad"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ],
+          "excludedCourseIds": ["iq-ingreso-fing", "iq-ingreso-fq", "iq-inicio-salto", "iq-electivas-gestion"]
+        },
+        {
+          "id": "inicio-salto",
+          "credentialId": "ingeniero-quimico",
+          "label": "Primer año en Salto",
+          "description": "Alcance parcial comprobado del primer año del mismo Plan 2021. Se muestran únicamente las 18 unidades regionales identificadas; no se inventa una secuencia semestral y la carrera continúa en Montevideo.",
+          "campusIds": ["salto"],
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Orientación del recorrido", "courseIds": ["iq-inicio-salto"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ],
+          "excludedCourseIds": ["iq-flexibilidad", "iq-ingreso-fing", "iq-ingreso-fq", "iq-electivas-gestion"],
+          "catalogSourceCourseIds": [
+            "CENURLN-CIM10", "CENURLN-CIM24", "CENURLN-CH201", "CENURLN-SRN03", "CENURLN-SRN10",
+            "CENURLN-SRN02", "CENURLN-SRN09", "CENURLN-SRN11", "CENURLN-REF04", "CENURLN-SRN26",
+            "CENURLN-SRN05", "CENURLN-SRN12", "CENURLN-SRN08", "CENURLN-SRN07", "CENURLN-AA808",
+            "CENURLN-AA504", "CENURLN-SRN06", "CENURLN-SRN13"
+          ]
+        }
+      ],
+      "curriculum": {
+        "strictOfficialCourseIds": true,
+        "verifiedCourseIds": [
+          "Q47", "Q85",
+          "FQ-05", "FQ-06", "1053", "FQ-401", "FQ-533",
+          "Q22B", "Q66B", "Q68B", "Q196", "Q624",
+          "Q16", "1944", "2244", "1940", "1922", "1510", "FQ-618A", "FQ-618", "1945", "1927", "1373"
+        ]
+      },
+      "additionalCourses": [
+        {
+          "id": "iq-electivas-gestion",
+          "name": "Elegí electivas en la subárea de Gestión",
+          "credits": 0,
+          "requirementId": "iq-tecnicas",
+          "periodLabel": "Semestre 9",
+          "curricularBlock": true,
+          "sourceUrl": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FING%202025%20Plan%202021.pdf"
+        }
+      ],
+      "additionalRequiredCourseGroups": [
+        {
+          "id": "iq-avanzada-bioambiental",
+          "label": "Elegí Ingeniería Bioquímica o Tratamiento de Efluentes y Residuos Sólidos",
+          "minCompleted": 1,
+          "sourceCourseIds": ["Q81B", "Q104"],
+          "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72845"
+        },
+        {
+          "id": "iq-gestion",
+          "label": "Elegí al menos una unidad de Gestión",
+          "minCompleted": 1,
+          "sourceCourseIds": ["Q16", "1944", "2244", "1940", "1922", "1510", "FQ-618A", "FQ-618", "1945", "1927"],
+          "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72845"
+        },
+        {
+          "id": "iq-computacion",
+          "label": "Elegí Computación 1 o Programación 1",
+          "minCompleted": 1,
+          "sourceCourseIds": ["1411", "1373"],
+          "sourceUrl": "https://eva.fing.edu.uy/mod/resource/view.php?id=72845"
+        }
+      ],
+      "credentialRequiredCourseGroupIds": {
+        "ingeniero-quimico": ["iq-avanzada-bioambiental", "iq-gestion", "iq-computacion"]
+      }
+    }
+  ]
+}

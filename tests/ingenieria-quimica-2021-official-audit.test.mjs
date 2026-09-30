@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
+import { buildRegisteredPlanPresentation, isRealCurricularCourse } from "../app/registered-plan-courses.mjs";
+
 const root = new URL("../", import.meta.url);
 const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relativePath, root), "utf8"));
 
@@ -9,7 +11,9 @@ const registry = await readJson("data/bedelias/audits/official-source-audits.jso
 const queue = await readJson("data/bedelias/inventory/audit-queue.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-fing-ingenieria-quimica-2021.json");
+const reconciliation = await readJson("data/fing/ingenieria-quimica-2021-trayectorias.json");
 const audit = registry.audits.find(({ identity }) => identity === "ingenieria quimica:2021");
+const reconciledPlan = reconciliation.plans.find(({ identity }) => identity === audit.identity);
 const credential = projection.creditStructure.credentials.find(({ id }) => id === "ingeniero-quimico");
 const courseById = new Map(projection.courses.map((course) => [course.id, course]));
 const courseByCode = new Map(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map((course) => [course.bedeliasCode, course]));
@@ -25,8 +29,9 @@ test("publica un único Plan 2021 compartido con dos sedes de alcance explícito
   assert.deepEqual(projection.plan.sharedWith, ["Facultad de Química"]);
   assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo", "salto"]);
   assert.equal(projection.plan.campuses.find(({ id }) => id === "salto").defaultPathwayId, "inicio-salto");
-  assert.deepEqual(Object.keys(projection.pathways), ["curricula-personalizada", "ingreso-fing", "ingreso-fq", "inicio-salto"]);
+  assert.deepEqual(Object.keys(projection.pathways), ["ingreso-fing", "ingreso-fq", "curricula-personalizada", "inicio-salto"]);
   assert.ok(Object.values(projection.pathways).every(({ credentialId }) => credentialId === credential.id));
+  assert.match(projection.plan.notice, /actualizando contenidos y créditos desde febrero de 2026/i);
 });
 
 test("controla los mínimos de grupos y áreas sin convertir sus brechas en bolsas inventadas", () => {
@@ -42,15 +47,21 @@ test("controla los mínimos de grupos y áreas sin convertir sus brechas en bols
   assert.match(audit.anomalies.find(({ field }) => field === "minimumGaps").resolution, /forma independiente/i);
 });
 
-test("exige las dos partes del Proyecto Final y la validación del currículo individual", () => {
+test("exige el Proyecto Final, las alternativas tipo y la validación del currículo individual", () => {
   assert.deepEqual(credential.requiredCourseGroups.map(({ id }) => id), [
     "iq-proyecto-industrial-1",
     "iq-proyecto-industrial-2",
     "validacion-final-plan",
+    "iq-avanzada-bioambiental",
+    "iq-gestion",
+    "iq-computacion",
   ]);
   assert.deepEqual(credential.requiredCourseGroups[0].courseIds.map((id) => courseById.get(id).bedeliasCode), ["Q80"]);
   assert.deepEqual(credential.requiredCourseGroups[1].courseIds.map((id) => courseById.get(id).bedeliasCode), ["Q85", "Q57"]);
   assert.equal(credential.requiredCourseGroups[1].minCompleted, 1);
+  assert.deepEqual(credential.requiredCourseGroups.find(({ id }) => id === "iq-avanzada-bioambiental").courseIds
+    .map((id) => courseById.get(id).bedeliasCode), ["Q81B", "Q104"]);
+  assert.equal(credential.requiredCourseGroups.find(({ id }) => id === "iq-gestion").courseIds.length, 10);
 });
 
 test("limita el tramo de Salto a las 18 unidades regionales y mantiene el catálogo completo en Montevideo", () => {
@@ -68,10 +79,42 @@ test("limita el tramo de Salto a las 18 unidades regionales y mantiene el catál
   assert.deepEqual(salto.catalogCourseIds.map((id) => courseById.get(id).bedeliasCode), expectedRegionalCodes);
   assert.equal(montevideo.catalogCourseIds.length, 375);
   assert.ok(montevideo.catalogCourseIds.some((id) => courseById.get(id).bedeliasCode === "Q80"));
-  for (const pathway of Object.values(projection.pathways)) {
-    assert.equal(pathway.periods[0].label, "Orientación del recorrido");
-    assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
+  assert.deepEqual(projection.pathways["ingreso-fing"].periods.map(({ label }) => label), Array.from({ length: 10 }, (_value, index) => `Semestre ${index + 1}`));
+  assert.deepEqual(projection.pathways["ingreso-fq"].periods.map(({ label }) => label), Array.from({ length: 10 }, (_value, index) => `Semestre ${index + 1}`));
+  assert.deepEqual(salto.periods.map(({ label }) => label), ["Orientación del recorrido", "Validación de egreso"]);
+});
+
+test("reproduce exactamente las dos currículas 2025 y conserva cada identidad canónica", () => {
+  const generatedIdToSourceId = new Map(projection.courses.map((course) => [
+    course.id,
+    course.bedeliasCode ?? course.id.replace(/^fing-/, ""),
+  ]));
+  for (const pathwayId of ["ingreso-fing", "ingreso-fq"]) {
+    const expected = reconciledPlan.trajectories.find(({ id }) => id === pathwayId);
+    const projected = projection.publishedPathways[pathwayId];
+    assert.deepEqual(projected.periods.map(({ label }) => label), expected.periods.map(({ label }) => label));
+    assert.deepEqual(projected.periods.map(({ courseIds }) => courseIds.map((id) => generatedIdToSourceId.get(id))), expected.periods.map(({ courseIds }) => courseIds));
+    assert.ok(projected.periods.flatMap(({ courseIds }) => courseIds).every((id) => courseById.get(id).authorityStatus === "verified"));
   }
+  assert.equal(courseByCode.get("FQ-05A").authorityStatus, "verified");
+  assert.match(courseByCode.get("FQ-05A").name, /hasta 2023/i);
+  assert.ok(!reconciledPlan.curriculum.verifiedCourseIds.includes("2704"));
+  assert.ok(!reconciledPlan.curriculum.verifiedCourseIds.includes("2706"));
+});
+
+test("la currícula predeterminada deja el fallback y el planificador reúne todo el catálogo verificado sin duplicados", () => {
+  const presentation = buildRegisteredPlanPresentation("ingreso-fing", projection);
+  const expectedRealIds = projection.courses
+    .filter((course) => course.authorityStatus === "verified" && isRealCurricularCourse(course))
+    .map(({ id }) => id)
+    .sort();
+  assert.equal(presentation.generated, false);
+  assert.equal(presentation.label, "Trayectoria oficial");
+  assert.equal(presentation.periods.length, 10);
+  assert.equal(presentation.courses.filter(isRealCurricularCourse).length, expectedRealIds.length);
+  assert.deepEqual(presentation.courses.filter(isRealCurricularCourse).map(({ id }) => id).sort(), expectedRealIds);
+  assert.equal(new Set(presentation.courses.map(({ id }) => id)).size, presentation.courses.length);
+  assert.ok(presentation.courses.every(({ authorityStatus }) => authorityStatus === "verified"));
 });
 
 test("fusiona Q47 sin duplicar sus cuatro créditos ni perder su doble elegibilidad", () => {
@@ -83,7 +126,7 @@ test("fusiona Q47 sin duplicar sus cuatro créditos ni perder su doble elegibili
     ["iq-quimica", 4],
     ["iq-avanzadas", 4],
   ]);
-  assert.equal(projection.courses.length, 380);
+  assert.equal(projection.courses.length, 381);
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 376);
   assert.equal(audit.bedeliasComparison.normalizedCourseCount, 375);
 });
@@ -104,7 +147,7 @@ test("conserva reglas, referencias internas y una sola entrada por facultad comp
     const careers = faculty.careers.filter(({ label }) => label === "Ingeniería Química");
     assert.equal(careers.length, 1, facultyId);
     assert.equal(careers[0].plans[0].id, "bedelias-fing-ingenieria-quimica-2021");
-    assert.equal(careers[0].plans[0].defaultTrajectoryId, "curricula-personalizada");
+    assert.equal(careers[0].plans[0].defaultTrajectoryId, "ingreso-fing");
   }
 });
 

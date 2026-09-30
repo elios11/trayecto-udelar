@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:dc8f832004cd62893c45f4af43a0081b5821e1bd1a64a43cfd6f4b22bdc178d2",
-    "extractedReportHash": "sha256:571b8d09b94a549ee21a0e791c4c954f8d85dad04e801f9fc724dd7c76b2ad8c",
-    "officialAuditHash": "sha256:ce7aada67ababcc090ad2c26cb6853522f4799c056cd59aa094d7c312e2c6e6a",
-    "reviewedTrajectoriesHash": "sha256:f21962e0e17b80cc1777ad3ce52594652f19b394bf6e73c82a0d9d7244724fd4"
+    "extractedCatalogHash": "sha256:ecfac0dacfda31ed775e2817dd3d15b7036cb2c27b4520ea3455743bbfc9ad06",
+    "extractedReportHash": "sha256:73127e1b9587829405d8fc25fddea0f968c3a5256f8c37e40ae7219d99600b17",
+    "officialAuditHash": "sha256:b1eb08e0d9d357e5f4ec06258063055d84db8848a7bcba506b76103fcd1a2622",
+    "reviewedTrajectoriesHash": "sha256:6470834307e2cbca4ee65dcd6068ccee3739f5dead8688db765a71fae643a18c"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 81,
-      "official-trajectory-identified-pending": 9,
+      "official-trajectory-reproduced": 82,
+      "official-trajectory-identified-pending": 8,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 65,
+    "pending": 64,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -199,8 +199,8 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 4,
-          "official-trajectory-identified-pending": 9,
+          "official-trajectory-reproduced": 5,
+          "official-trajectory-identified-pending": 8,
           "no-official-trajectory-documented": 0,
           "research-pending": 5
         }
@@ -243,8 +243,8 @@
         "serviceLabel": "Facultad de Química",
         "selectablePlanIds": 11,
         "states": {
-          "official-trajectory-reproduced": 8,
-          "official-trajectory-identified-pending": 1,
+          "official-trajectory-reproduced": 9,
+          "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
           "research-pending": 2
         }
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 65,
+    "total": 64,
     "plans": [
       {
         "priority": 1,
@@ -336,16 +336,6 @@
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
           "fing"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fing-ingenieria-quimica-2021",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fing",
-          "fq"
         ],
         "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
       },
@@ -1005,7 +995,6 @@
           "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
           "bedelias-fing-ingenieria-industrial-mecanica-1997",
           "bedelias-fing-ingenieria-naval-1997",
-          "bedelias-fing-ingenieria-quimica-2021",
           "bedelias-fing-tecnologo-industrial-mecanico-2016"
         ],
         "researchPending": [
@@ -1043,9 +1032,7 @@
       {
         "serviceId": "fq",
         "serviceLabel": "Facultad de Química",
-        "identifiedPending": [
-          "bedelias-fing-ingenieria-quimica-2021"
-        ],
+        "identifiedPending": [],
         "researchPending": [
           "bedelias-fq-ingenieria-de-alimentos-2003",
           "bedelias-fq-licenciatura-en-biotecnologia-2024"
@@ -9136,7 +9123,7 @@
           "careerId": "bedelias-fing-ingenieria-quimica",
           "careerLabel": "Ingeniería Química",
           "planLabel": "Plan 2021 · vigente",
-          "defaultTrajectoryId": "curricula-personalizada",
+          "defaultTrajectoryId": "ingreso-fing",
           "defaultCredentialId": "ingeniero-quimico"
         },
         {
@@ -9145,91 +9132,78 @@
           "careerId": "bedelias-fq-ingenieria-quimica",
           "careerLabel": "Ingeniería Química",
           "planLabel": "Plan 2021 · vigente",
-          "defaultTrajectoryId": "curricula-personalizada",
+          "defaultTrajectoryId": "ingreso-fing",
           "defaultCredentialId": "ingeniero-quimico"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-31",
-      "effectiveAt": "2021",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-29",
+      "effectiveAt": "2025",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2021 de Ingeniería Química, Udelar",
-          "url": "https://www.fing.edu.uy/sites/default/files/2024-01/PLAN%20DE%20ESTUDIOS%20IQ_2021.pdf",
-          "role": "título; cinco años; 450 créditos; mínimos; Proyecto Final; currículo individual; única orientación",
-          "trajectoryEvidence": true
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=198&section=1",
+          "role": "publicación vigente y advertencia de actualización iniciada en febrero de 2026"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingenieria-quimica",
-          "role": "vigencia; carrera compartida; ingreso por FING o FQ; primer año en Salto",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FING%202025%20Plan%202021.pdf",
+          "role": "currícula sugerida 2025 de ingreso por FING",
+          "contentHash": "sha256:908ca3e6f3f8415f4354f1137c975cc27fa8019bc20afd86522a6228df1259ed"
         },
         {
-          "authority": "Página vigente de la carrera, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/es/carrera/grado/ingenier%C3%ADa-qu%C3%ADmica",
-          "role": "Plan 2021; código 53-0; duración; créditos; ingreso por ambos servicios",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/78953/mod_label/intro/curricula%20sugerida%20FQ%202025%20Plan%202021.pdf",
+          "role": "currícula sugerida 2025 de ingreso por FQ",
+          "contentHash": "sha256:5f75ea37311fdc1f5800e34f8180bc09c7924f3b667d1d8f6174a8977abfbee2"
         },
         {
-          "authority": "Página vigente del Plan 2021, Facultad de Química",
-          "url": "https://www.fq.edu.uy/?q=en%2Fnode%2F1941",
-          "role": "ingreso por FQ; formación básica inicial; incorporación temprana de Ingeniería Química",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Informe de Autoevaluación ARCU-SUR 2025, FING y FQ",
-          "url": "https://www.fing.edu.uy/sites/default/files/2025-05/1-informe-ae-ing-quimica-y-plan-de-mejora.pdf",
-          "role": "aprobaciones; tres currículas de ingreso; Proyecto Industrial I y II; Pasantía; flexibilidad",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta de ciclos iniciales, Cenur Litoral Norte",
-          "url": "https://www.litoralnorte.udelar.edu.uy/etiquetas/ciclo-inicial",
-          "role": "asignaturas regionales disponibles; articulación con Ingeniería Química",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería Química, FING-FQ, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72845",
+          "role": "protocolo de aprobación y catálogo de combinaciones tipo",
+          "contentHash": "sha256:1e8e6a72484433da5fd78b1f92e56c0ea64a75c5a89fe8a9e215fdc9e2f1d1b0"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo",
-          "Salto"
+          "Montevideo · carrera completa",
+          "Salto · primer año"
         ],
         "pathwayIds": [
-          "curricula-personalizada",
           "ingreso-fing",
           "ingreso-fq",
+          "curricula-personalizada",
           "inicio-salto"
         ]
       },
       "currentProjection": {
         "primary": "official-profiles",
         "features": [
-          "official-periods",
           "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "ingenieria quimica:2021",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-quimica-2021.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": true,
-        "expectedCoursePlacements": 4,
-        "matchedCoursePlacements": 4,
-        "officialPeriodCount": 4,
-        "projectedPathways": [
-          {
-            "id": "curricula-personalizada",
-            "periodCount": 2
-          },
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-quimica-2021-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-quimica-2021",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-quimica-2021.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:68fcb93b9885b85421591a207bf55667ed44f2aff1d78973f9f5eed35e356dc7",
+        "projectionContentHash": "sha256:96fa9d5d74fbfe77a760c365fa206143be9e9ab57969cf287e61466628c6e8a3",
+        "pathways": [
           {
             "id": "ingreso-fing",
-            "periodCount": 2
+            "periodCount": 10
           },
           {
             "id": "ingreso-fq",
+            "periodCount": 10
+          },
+          {
+            "id": "curricula-personalizada",
             "periodCount": 2
           },
           {
@@ -9237,15 +9211,15 @@
             "periodCount": 2
           }
         ],
-        "projectionContentHash": "sha256:e214658764491645d028f6b79228600a6c8ef81650a26f1501deea347d1014ea"
+        "expectedCoursePlacements": 96,
+        "matchedCoursePlacements": 96
       },
       "conflictNotes": [
-        "suggestedCurriculaFiles: El informe ARCU-SUR enlaza tres currículas 2024, pero los archivos de EVA ya no están disponibles anónimamente. La UI conserva sus rutas de ingreso como guías sin fijar una secuencia completa no verificable y ofrece el catálogo vigente para planificar.",
-        "regionalScope: El catálogo de Udelar limita Salto al primer año. Se muestra como sede inicial del mismo Plan 2021, con continuidad en Montevideo, y nunca como carrera completa o variante curricular.",
-        "minimumGaps: Los mínimos por áreas suman 375 créditos, mientras los grupos exigen 190 básicos y 190 específicos y el título exige 450. La UI controla cada nivel de forma independiente sin convertir las diferencias en una bolsa rígida inventada.",
-        "sharedCourseQ47: Q47 aparece en Química y Avanzadas con cuatro créditos. Se representa una sola vez, conserva elegibilidad en ambas áreas y cuenta cuatro créditos en el total.",
-        "servicePrerequisiteCoverage: Los tres snapshots tienen la misma huella curricular, pero FING, FQ y CENURLN exponen distinta cobertura de previaturas. Se conserva FING como fuente canónica de reglas y las diferencias no generan carreras duplicadas.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "Los tres enlaces de currículas 2024 citados por el informe ARCU-SUR ya no entregan los archivos y no tienen captura recuperable en Internet Archive; la publicación EVA vigente los reemplaza por dos currículas completas 2025, FING y FQ.",
+        "La publicación vigente informa que contenidos y créditos están en actualización desde febrero de 2026. Se reproduce la última versión completa sin anticipar cambios no publicados.",
+        "FQ-05A se conserva porque la currícula FQ 2025 la enumera expresamente, aunque la etiqueta extraída de Bedelías indique vigencia hasta 2023.",
+        "La alternativa de Instrumentación Industrial no publica un código en la currícula; se conserva la opción en la nota y no se fusiona con ninguno de los dos códigos homónimos de Bedelías.",
+        "La currícula personalizada no fija semestres y Salto sólo demuestra primer año; ambos recorridos conservan su alcance sin inferir una secuencia."
       ]
     },
     {
@@ -13292,5 +13266,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:e52ec7aac24dc20f1fc2649fc449b0af66fb12c111ca839f1eb30e7dc70cbdfa"
+  "contentHash": "sha256:d79d9ba694fd5abc9530f91ea22273855bc15dfd96bc2e1811d8fba0885f4698"
 }
