@@ -1,12 +1,13 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:1a1a05fc2840cf944961db5b784e501626f9cf8f4dcbeba36ed32ca56b7d5248",
-    "officialAuditHash": "sha256:06fc2aace3e56d402c1dd61f5caaf69b73e3bc05e42f15dae6c58d3655c99901",
+    "auditQueueHash": "sha256:89e3b0e3221edec7ba6558c3d7dedffe1ca863fb4276c2cadc3573e5d32b3e6d",
+    "officialAuditHash": "sha256:9810074e4460d631dde8d89756a08366018c3d48afcec1b3fc20acf78449821c",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
-    "tim2016ReconciliationHash": "sha256:5aec8a2805c7c1defe607bd6043b3d78d83fc65719d05620b94d39bd7ea599dc"
+    "tim2016ReconciliationHash": "sha256:5aec8a2805c7c1defe607bd6043b3d78d83fc65719d05620b94d39bd7ea599dc",
+    "telecom2009ReconciliationHash": "sha256:0d9a2172680b130610766ceabd65065050f5cb479a5d39eb6f6e183fdedaa09b"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -455,6 +456,22 @@
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 21,
+          "candidate": 16,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 24,
+          "candidate": 16,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4481,5 +4498,5 @@
       }
     }
   ],
-  "contentHash": "sha256:7fb96129df3a1d93788423e80db67816a03623eef299a7f6cb0b40f4e3f977c3"
+  "contentHash": "sha256:b5ab1ffaba6b57ea7d51ffde0fd651cce2fb6926b8a503ecc3fb67fed51f6b66"
 }

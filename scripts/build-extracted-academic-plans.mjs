@@ -15,6 +15,7 @@ const reportPath = path.join(inventoryDirectory, "ui-extracted-plans.json");
 const fhceReconciliationsPath = path.join(projectRoot, "data", "fhce", "official-trajectories-2014.json");
 const iq2021ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-quimica-2021-trayectorias.json");
 const tim2016ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-industrial-mecanico-2016-trayectorias.json");
+const telecom2009ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-telecomunicaciones-2009-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -1295,6 +1296,7 @@ export async function buildExtractedAcademicPlans() {
   const fhceReconciliations = await loadJson(fhceReconciliationsPath);
   const iq2021Reconciliation = await loadJson(iq2021ReconciliationPath);
   const tim2016Reconciliation = await loadJson(tim2016ReconciliationPath);
+  const telecom2009Reconciliation = await loadJson(telecom2009ReconciliationPath);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1307,6 +1309,10 @@ export async function buildExtractedAcademicPlans() {
     ...tim2016Reconciliation.plans.map((plan) => [plan.identity, {
       ...plan,
       reviewedAt: plan.reviewedAt ?? tim2016Reconciliation.reviewedAt,
+    }]),
+    ...telecom2009Reconciliation.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? telecom2009Reconciliation.reviewedAt,
     }]),
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
@@ -1433,6 +1439,7 @@ export async function buildExtractedAcademicPlans() {
       fhceReconciliationsHash: hash(fhceReconciliations),
       iq2021ReconciliationHash: hash(iq2021Reconciliation),
       tim2016ReconciliationHash: hash(tim2016Reconciliation),
+      telecom2009ReconciliationHash: hash(telecom2009Reconciliation),
     },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,

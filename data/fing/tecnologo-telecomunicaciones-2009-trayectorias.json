@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-30",
+  "plans": [
+    {
+      "id": "bedelias-cure-tecnologo-en-telecomunicaciones-2009",
+      "identity": "tecnologo en telecomunicaciones:2009",
+      "effectiveAt": "2009-2026",
+      "authorityCountsBefore": {
+        "verified": 21,
+        "candidate": 16,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2011/3054/plan_tecnologo_telecom.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "Plan 2009 normativo: 200 créditos, seis mínimos, Proyecto o Pasantía y validación de la Comisión de Carrera",
+          "contentHash": "sha256:3bb0c316b7864d75e807d995edc8110b74874017b201911cda584240fbb56e60"
+        },
+        {
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnologo-en-telecomunicaciones/",
+          "reviewedAt": "2026-09-30",
+          "role": "oferta vigente 2026, cinco semestres de Rocha, créditos literales y actividad final",
+          "contentHash": "sha256:d6dfbd48b2e8363ca251e881134c0610d999e5343521d324bd4b136c74fa1bf3"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/carrera/grado/tecn%C3%B3logo-en-telecomunicaciones-rocha",
+          "reviewedAt": "2026-09-30",
+          "role": "currícula sugerida, carrera completa en Rocha y primer año parcial en Montevideo",
+          "contentHash": "sha256:878b32a683c11d32a2ca08df8b3dae3ca07b80e8b773135a46f5db2c9524660c"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/tecnologo-en-telecomunicaciones",
+          "reviewedAt": "2026-09-30",
+          "role": "identidad institucional, 200 créditos y alcance territorial",
+          "contentHash": "sha256:8e757568eba32f5258a546181346954bbae067f9fb3aa37cde3d7f9c5bf3dae5"
+        }
+      ],
+      "uiNotice": "Plan 2009 de 200 créditos: la carrera completa se cursa en Rocha en cinco semestres; Montevideo ofrece sólo el primer año. Elegí Proyecto o Pasantía y completá los seis mínimos con validación de la Comisión de Carrera.",
+      "trajectories": [
+        {
+          "id": "curricula-rocha",
+          "credentialId": "tecnologo-telecomunicaciones",
+          "label": "Carrera completa en Rocha",
+          "description": "Implementación vigente de cinco semestres publicada por CURE. La grilla suma 185 créditos antes de la actividad final y 199 al elegir Proyecto o Pasantía de 14 créditos; el egreso mantiene el mínimo oficial de 200 sin inventar el crédito faltante.",
+          "campusIds": ["rocha"],
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["TTR1", "TTR2", "TTR3"] },
+            { "label": "Semestre 2", "courseIds": ["TTR4", "TTR5", "TTR6"] },
+            { "label": "Semestre 3", "courseIds": ["TTR7", "TTR8", "TTR11", "TTR24"] },
+            { "label": "Semestre 4", "courseIds": ["TTR10", "TTR13", "TTR15", "TTR12", "TTR25"] },
+            { "label": "Semestre 5", "courseIds": ["TTR17", "TTR16", "TTR14", "telecom-egreso-alternativo", "telecom-cierre-creditos"] }
+          ],
+          "excludedPeriodCourseIds": ["validacion-final-plan"]
+        },
+        {
+          "id": "primer-ano-montevideo",
+          "credentialId": "tecnologo-telecomunicaciones",
+          "label": "Primer año en Montevideo",
+          "description": "Tramo inicial publicado por FING. Después del primer año se continúa la carrera completa en Rocha sin crear otro plan ni perder el progreso.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "periods": [
+            { "label": "Semestre 1 en Montevideo", "courseIds": ["TTR1", "TTR2", "TTR3", "TTR6"] },
+            { "label": "Semestre 2 en Montevideo", "courseIds": ["TTR4", "TTR5", "TTR12", "TTR9"] }
+          ],
+          "catalogSourceCourseIds": ["TTR1", "TTR2", "TTR3", "TTR6", "TTR4", "TTR5", "TTR12", "TTR9"],
+          "excludedCourseIds": ["telecom-egreso-alternativo", "telecom-cierre-creditos", "validacion-final-plan"]
+        }
+      ],
+      "curriculum": {
+        "strictOfficialCourseIds": true,
+        "verifiedCourseIds": [
+          "TTR1", "TTR2", "TTR3", "TTR4", "TTR5", "TTR6", "TTR7", "TTR8", "TTR11", "TTR24",
+          "TTR10", "TTR13", "TTR15", "TTR12", "TTR25", "TTR17", "TTR16", "TTR14", "TTR18", "TTR19", "TTR9"
+        ]
+      }
+    }
+  ]
+}

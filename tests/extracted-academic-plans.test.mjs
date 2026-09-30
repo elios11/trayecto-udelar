@@ -10,10 +10,12 @@ const officialSourceAudits = await readJson("data/bedelias/audits/official-sourc
 const fhceReconciliations = await readJson("data/fhce/official-trajectories-2014.json");
 const iq2021Reconciliations = await readJson("data/fing/ingenieria-quimica-2021-trayectorias.json");
 const tim2016Reconciliations = await readJson("data/fing/tecnologo-industrial-mecanico-2016-trayectorias.json");
+const telecom2009Reconciliations = await readJson("data/fing/tecnologo-telecomunicaciones-2009-trayectorias.json");
 const reconciliationByIdentity = new Map([
   ...fhceReconciliations.plans,
   ...iq2021Reconciliations.plans,
   ...tim2016Reconciliations.plans,
+  ...telecom2009Reconciliations.plans,
 ].map((plan) => [plan.identity, plan]));
 const collectRuleCourseIds = (expression, output = []) => {
   output.push(...(expression?.options ?? []).map((option) => option.code).filter(Boolean));

@@ -398,6 +398,64 @@
       ]
     },
     {
+      "planId": "bedelias-cure-tecnologo-en-telecomunicaciones-2009",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-30",
+      "effectiveAt": "2009-2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Rocha · carrera completa", "Montevideo · primer año"],
+        "pathwayIds": ["curricula-rocha", "primer-ano-montevideo"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2011/3054/plan_tecnologo_telecom.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "Plan 2009 normativo: 200 créditos, seis mínimos, Proyecto o Pasantía y validación de la Comisión de Carrera",
+          "contentHash": "sha256:3bb0c316b7864d75e807d995edc8110b74874017b201911cda584240fbb56e60"
+        },
+        {
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnologo-en-telecomunicaciones/",
+          "reviewedAt": "2026-09-30",
+          "role": "oferta vigente 2026, cinco semestres de Rocha, créditos literales y actividad final",
+          "contentHash": "sha256:d6dfbd48b2e8363ca251e881134c0610d999e5343521d324bd4b136c74fa1bf3"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/carrera/grado/tecn%C3%B3logo-en-telecomunicaciones-rocha",
+          "reviewedAt": "2026-09-30",
+          "role": "currícula sugerida, carrera completa en Rocha y primer año parcial en Montevideo",
+          "contentHash": "sha256:878b32a683c11d32a2ca08df8b3dae3ca07b80e8b773135a46f5db2c9524660c"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/tecnologo-en-telecomunicaciones",
+          "reviewedAt": "2026-09-30",
+          "role": "identidad institucional, 200 créditos y alcance territorial",
+          "contentHash": "sha256:8e757568eba32f5258a546181346954bbae067f9fb3aa37cde3d7f9c5bf3dae5"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/tecnologo-telecomunicaciones-2009-trayectorias.json",
+        "sourcePlanId": "bedelias-cure-tecnologo-en-telecomunicaciones-2009",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cure-tecnologo-en-telecomunicaciones-2009.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Plan 2009 recomendó dos años organizados en seis cuatrimestres; la implementación vigente de CURE y FING publica cinco semestres/dos años y medio. No se mezclan ambas secuencias.",
+        "La grilla vigente de Rocha suma 185 créditos antes de la actividad final y 199 al elegir Proyecto o Pasantía de 14 créditos, aunque el egreso exige 200. No se redondea ni se inventa el crédito faltante.",
+        "Montevideo demuestra solamente el primer año y la continuidad en Rocha; no se infieren más períodos ni una carrera completa en esa sede.",
+        "Las grillas y la alternativa normativa respaldan 21 identidades visibles. Las otras 16 entradas de la composición de Bedelías permanecen candidatas fuera de la experiencia normal.",
+        "CURE conserva 30 reglas de previatura frente a 6 en FING sobre la misma composición; se usa esa cobertura sin crear una variante territorial."
+      ]
+    },
+    {
       "planId": "1997",
       "state": "official-trajectory-identified-pending",
       "reviewedAt": "2026-09-22",

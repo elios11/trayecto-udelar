@@ -44,7 +44,6 @@ test("aplica la grilla vigente de Rocha sin presentar Montevideo como carrera co
     ["Semestre 3", 4],
     ["Semestre 4", 5],
     ["Semestre 5", 5],
-    ["Validación de egreso", 1],
   ]);
   const rochaNominalCredits = rocha.periods.flatMap(({ courseIds }) => courseIds)
     .reduce((sum, id) => sum + courseById.get(id).credits, 0);
