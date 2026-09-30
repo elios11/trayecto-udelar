@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 82,
-    "official-trajectory-identified-pending": 8,
+    "official-trajectory-reproduced": 83,
+    "official-trajectory-identified-pending": 7,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 64);
-  assert.equal(savedInventory.pendingQueue.plans.length, 64);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 8).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(8).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 63);
+  assert.equal(savedInventory.pendingQueue.plans.length, 63);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 7).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(7).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -75,6 +75,22 @@ test("D03l cierra Ingeniería Química con las dos currículas exactas y conserv
   assert.equal(plan.evidence.expectedCoursePlacements, 96);
   assert.equal(plan.evidence.matchedCoursePlacements, 96);
   assert.deepEqual(plan.scope.territories, ["Montevideo · carrera completa", "Salto · primer año"]);
+});
+
+test("D03m cierra TIM 2016 con cuatro perfiles exactos y currícula personalizada", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-fing-tecnologo-industrial-mecanico-2016");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-profiles");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["curricula-personalizada", 2],
+    ["perfil-fluidos-energia", 6],
+    ["perfil-diseno-materiales", 6],
+    ["perfil-planta", 6],
+    ["perfil-produccion", 6],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 120);
+  assert.equal(plan.evidence.matchedCoursePlacements, 120);
+  assert.deepEqual(plan.scope.territories, ["Montevideo · carrera completa", "Paysandú · carrera completa"]);
 });
 
 test("D03j cierra los tres planes FQ con correspondencia exacta y sedes explícitas", () => {

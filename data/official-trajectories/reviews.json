@@ -307,6 +307,97 @@
       ]
     },
     {
+      "planId": "bedelias-fing-tecnologo-industrial-mecanico-2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-30",
+      "effectiveAt": "2016-2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo · carrera completa", "Paysandú · carrera completa"],
+        "pathwayIds": ["curricula-personalizada", "perfil-fluidos-energia", "perfil-diseno-materiales", "perfil-planta", "perfil-produccion"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería y Diario Oficial, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Plan_Tecnologo_Ind_Mecanico_diario_oficial.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "Plan 2016 normativo: seis semestres, 270 créditos, ocho mínimos, 28 créditos optativos, Pasantía y currículo coherente",
+          "contentHash": "sha256:1fc2cc71f3d71a45921e3d11d1a3ffe52f4b94befd372669c25c75f38b5ed9e5"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Bloque%20semestre%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "seis semestres y colocación exacta de materias de los cuatro perfiles guía",
+          "contentHash": "sha256:0b37896c94730d41d76afdb5cb02e56134d0f031f74992fec478f212d1e78006"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Fluidos%20y%20Energia%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Fluidos y Energía",
+          "contentHash": "sha256:dc98a54d08abb1941e8f7ede54e46eb33bd73ec99a7910be03a780be6697023b"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Dise%C3%B1o%20Mec%C3%A1nico%20y%20Materiales%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Diseño Mecánico y Materiales",
+          "contentHash": "sha256:418b61ddcc4656531cf8d6a105e854c61d30247ff36b1e41ccec5610150754d7"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Planta%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Planta",
+          "contentHash": "sha256:6f2aacd7764d99574383d42980f11b28a6db88ff6dfcb0bd16c570d0fbc8f5cc"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Producci%C3%B3n%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Producción",
+          "contentHash": "sha256:bfbaed211109506daed5ebe01344c6838ddb525935f7f2f5da0b535ee95f9134"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/es/grado/tecnomec/plan-de-estudios",
+          "reviewedAt": "2026-09-30",
+          "role": "publicación vigente del Plan 2016, sus cuatro perfiles y los archivos utilizados"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/es/grado/tecnomec/asignaturas",
+          "reviewedAt": "2026-09-30",
+          "role": "catálogo vigente de 43 unidades del Plan 2016, códigos y semestre orientativo sin inferir oferta efectiva"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/index.php/es/grado/tecnomec",
+          "reviewedAt": "2026-09-30",
+          "role": "vigencia del Plan 2016, duración de tres años y sedes Montevideo y Paysandú; no se usa para inferir oferta por período"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/tecnologo-industrial-mecanico-2016-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-tecnologo-industrial-mecanico-2016",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-industrial-mecanico-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La tabla normativa fija 42 créditos mínimos de Materiales y Diseño; el resumen del ejemplo del Anexo II imprime 40. La UI aplica 42.",
+        "El Anexo I imprime 8 créditos para Instrumentación y Control; los perfiles, la implementación semestral y Bedelías vigentes publican 10. La UI conserva 10.",
+        "El Anexo I imprime 10 créditos para Instalaciones generales de gases combustibles y Bedelías vigente publica 12. Se conserva el valor vigente y la unidad queda en el catálogo optativo.",
+        "Los cuatro perfiles suman 273, 272, 271 y 270 créditos. Son guías sustituibles; el egreso se controla por los mínimos y no por forzar esos totales.",
+        "TIM82 Módulo de Extensión aparece en Bedelías pero no en el catálogo vigente FING del Plan 2016; queda como candidata recuperable fuera de la experiencia normal.",
+        "Las fuentes confirman la carrera completa en Montevideo y Paysandú, pero no una oferta idéntica de cada optativa por sede o semestre. No se infiere disponibilidad efectiva."
+      ]
+    },
+    {
       "planId": "1997",
       "state": "official-trajectory-identified-pending",
       "reviewedAt": "2026-09-22",

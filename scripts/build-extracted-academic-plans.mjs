@@ -14,6 +14,7 @@ const loadersPath = path.join(projectRoot, "app", "data", "extracted-academic-lo
 const reportPath = path.join(inventoryDirectory, "ui-extracted-plans.json");
 const fhceReconciliationsPath = path.join(projectRoot, "data", "fhce", "official-trajectories-2014.json");
 const iq2021ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-quimica-2021-trayectorias.json");
+const tim2016ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-industrial-mecanico-2016-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -1293,6 +1294,7 @@ export async function buildExtractedAcademicPlans() {
   const global = await loadJson(path.join(inventoryDirectory, "global-current.json"));
   const fhceReconciliations = await loadJson(fhceReconciliationsPath);
   const iq2021Reconciliation = await loadJson(iq2021ReconciliationPath);
+  const tim2016Reconciliation = await loadJson(tim2016ReconciliationPath);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1301,6 +1303,10 @@ export async function buildExtractedAcademicPlans() {
     ...iq2021Reconciliation.plans.map((plan) => [plan.identity, {
       ...plan,
       reviewedAt: plan.reviewedAt ?? iq2021Reconciliation.reviewedAt,
+    }]),
+    ...tim2016Reconciliation.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? tim2016Reconciliation.reviewedAt,
     }]),
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
@@ -1426,6 +1432,7 @@ export async function buildExtractedAcademicPlans() {
       globalManifestHash: global.contentHash,
       fhceReconciliationsHash: hash(fhceReconciliations),
       iq2021ReconciliationHash: hash(iq2021Reconciliation),
+      tim2016ReconciliationHash: hash(tim2016Reconciliation),
     },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,

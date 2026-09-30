@@ -9,9 +9,11 @@ const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const officialSourceAudits = await readJson("data/bedelias/audits/official-source-audits.json");
 const fhceReconciliations = await readJson("data/fhce/official-trajectories-2014.json");
 const iq2021Reconciliations = await readJson("data/fing/ingenieria-quimica-2021-trayectorias.json");
+const tim2016Reconciliations = await readJson("data/fing/tecnologo-industrial-mecanico-2016-trayectorias.json");
 const reconciliationByIdentity = new Map([
   ...fhceReconciliations.plans,
   ...iq2021Reconciliations.plans,
+  ...tim2016Reconciliations.plans,
 ].map((plan) => [plan.identity, plan]));
 const collectRuleCourseIds = (expression, output = []) => {
   output.push(...(expression?.options ?? []).map((option) => option.code).filter(Boolean));

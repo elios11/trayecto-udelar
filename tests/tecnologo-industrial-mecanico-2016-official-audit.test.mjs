@@ -52,7 +52,7 @@ test("ofrece currícula personalizada y cuatro perfiles guía sin separar títul
     assert.deepEqual(pathway.campusIds, ["montevideo", "paysandu"]);
     const selectedIds = pathway.periods.flatMap(({ courseIds }) => courseIds)
       .filter((id) => courseById.get(id).bedeliasCode);
-    const catalogIds = pathway.catalogCourseIds ?? [];
+    const catalogIds = (pathway.catalogCourseIds ?? []).filter((id) => courseById.get(id).bedeliasCode);
     assert.equal(new Set([...selectedIds, ...catalogIds]).size, 44);
     assert.equal(new Set(selectedIds).size, selectedIds.length);
     assert.ok(catalogIds.every((id) => !selectedIds.includes(id)));

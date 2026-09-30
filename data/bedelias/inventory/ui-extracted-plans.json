@@ -1,11 +1,12 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:6c373c0c02ab7e0916d5ce04487487631c713d0a25796e05ac8eb0cda980498b",
-    "officialAuditHash": "sha256:b1eb08e0d9d357e5f4ec06258063055d84db8848a7bcba506b76103fcd1a2622",
+    "auditQueueHash": "sha256:1a1a05fc2840cf944961db5b784e501626f9cf8f4dcbeba36ed32ca56b7d5248",
+    "officialAuditHash": "sha256:06fc2aace3e56d402c1dd61f5caaf69b73e3bc05e42f15dae6c58d3655c99901",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
-    "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d"
+    "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
+    "tim2016ReconciliationHash": "sha256:5aec8a2805c7c1defe607bd6043b3d78d83fc65719d05620b94d39bd7ea599dc"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -15,16 +16,16 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4433,
-      "candidate": 27931,
+      "verified": 4439,
+      "candidate": 27925,
       "historical-equivalent": 43,
       "administrative": 177,
       "rejected": 9
     },
     "beforePublishedCourses": 32372,
-    "afterPublishedCourses": 4433,
+    "afterPublishedCourses": 4439,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1490,
+    "afterPublishedRules": 1502,
     "visibleTargetsWithUnpublishedDependencies": 1213,
     "plansWithVerifiedCatalog": 60,
     "plansWithPartialCatalog": 61,
@@ -3282,17 +3283,33 @@
         "publishedRules": 68
       },
       "after": {
-        "publishedCourses": 41,
-        "hiddenCourses": 7,
-        "publishedRules": 40,
+        "publishedCourses": 47,
+        "hiddenCourses": 1,
+        "publishedRules": 52,
         "rulesWithUnpublishedDependencies": 16
       },
       "statuses": {
-        "verified": 41,
-        "candidate": 7,
+        "verified": 47,
+        "candidate": 1,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 41,
+          "candidate": 7,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 47,
+          "candidate": 1,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4464,5 +4481,5 @@
       }
     }
   ],
-  "contentHash": "sha256:73127e1b9587829405d8fc25fddea0f968c3a5256f8c37e40ae7219d99600b17"
+  "contentHash": "sha256:7fb96129df3a1d93788423e80db67816a03623eef299a7f6cb0b40f4e3f977c3"
 }

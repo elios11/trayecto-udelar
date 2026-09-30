@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:ecfac0dacfda31ed775e2817dd3d15b7036cb2c27b4520ea3455743bbfc9ad06",
-    "extractedReportHash": "sha256:73127e1b9587829405d8fc25fddea0f968c3a5256f8c37e40ae7219d99600b17",
-    "officialAuditHash": "sha256:b1eb08e0d9d357e5f4ec06258063055d84db8848a7bcba506b76103fcd1a2622",
-    "reviewedTrajectoriesHash": "sha256:6470834307e2cbca4ee65dcd6068ccee3739f5dead8688db765a71fae643a18c"
+    "extractedReportHash": "sha256:7fb96129df3a1d93788423e80db67816a03623eef299a7f6cb0b40f4e3f977c3",
+    "officialAuditHash": "sha256:06fc2aace3e56d402c1dd61f5caaf69b73e3bc05e42f15dae6c58d3655c99901",
+    "reviewedTrajectoriesHash": "sha256:c05ee8bad2bb8a280058b254239d9a520313f2db3ff6480493f16f384fc8ab24"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 82,
-      "official-trajectory-identified-pending": 8,
+      "official-trajectory-reproduced": 83,
+      "official-trajectory-identified-pending": 7,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 64,
+    "pending": 63,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -199,8 +199,8 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 5,
-          "official-trajectory-identified-pending": 8,
+          "official-trajectory-reproduced": 6,
+          "official-trajectory-identified-pending": 7,
           "no-official-trajectory-documented": 0,
           "research-pending": 5
         }
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 64,
+    "total": 63,
     "plans": [
       {
         "priority": 1,
@@ -333,15 +333,6 @@
       {
         "priority": 1,
         "planId": "bedelias-fing-ingenieria-naval-1997",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fing-tecnologo-industrial-mecanico-2016",
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
           "fing"
@@ -994,8 +985,7 @@
           "bedelias-fing-ingenieria-de-produccion-2010",
           "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
           "bedelias-fing-ingenieria-industrial-mecanica-1997",
-          "bedelias-fing-ingenieria-naval-1997",
-          "bedelias-fing-tecnologo-industrial-mecanico-2016"
+          "bedelias-fing-ingenieria-naval-1997"
         ],
         "researchPending": [
           "bedelias-fing-tecnologo-en-cartografia-2011",
@@ -9579,57 +9569,75 @@
           "defaultCredentialId": "tecnologo-industrial-mecanico"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-31",
-      "effectiveAt": "2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-30",
+      "effectiveAt": "2016-2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2016 publicado por Facultad de Ingeniería y Diario Oficial",
+          "authority": "Facultad de Ingeniería y Diario Oficial, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Plan_Tecnologo_Ind_Mecanico_diario_oficial.pdf",
-          "role": "aprobaciones; título; seis semestres; 270 créditos; ocho mínimos; 28 créditos optativos; Pasantía; currículo coherente",
-          "trajectoryEvidence": true
+          "reviewedAt": "2026-09-30",
+          "role": "Plan 2016 normativo: seis semestres, 270 créditos, ocho mínimos, 28 créditos optativos, Pasantía y currículo coherente",
+          "contentHash": "sha256:1fc2cc71f3d71a45921e3d11d1a3ffe52f4b94befd372669c25c75f38b5ed9e5"
         },
         {
-          "authority": "Ejemplos de implementación de cuatro perfiles, Facultad de Ingeniería",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Bloque%20semestre%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
-          "role": "secuencia de seis semestres; Fluidos y Energía; Diseño Mecánico y Materiales; Planta; Producción; totales orientativos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-09-30",
+          "role": "seis semestres y colocación exacta de materias de los cuatro perfiles guía",
+          "contentHash": "sha256:0b37896c94730d41d76afdb5cb02e56134d0f031f74992fec478f212d1e78006"
         },
         {
-          "authority": "Página de Plan de Estudios y perfiles vigentes, Facultad de Ingeniería",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Fluidos%20y%20Energia%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Fluidos y Energía",
+          "contentHash": "sha256:dc98a54d08abb1941e8f7ede54e46eb33bd73ec99a7910be03a780be6697023b"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Dise%C3%B1o%20Mec%C3%A1nico%20y%20Materiales%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Diseño Mecánico y Materiales",
+          "contentHash": "sha256:418b61ddcc4656531cf8d6a105e854c61d30247ff36b1e41ccec5610150754d7"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Planta%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Planta",
+          "contentHash": "sha256:6f2aacd7764d99574383d42980f11b28a6db88ff6dfcb0bd16c570d0fbc8f5cc"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2012/6564/Perfil%20Producci%C3%B3n%20tecn%C3%B3logo%20industrial%20mec%C3%A1nico_2016.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "materias fundamentales, específicas y optativas del perfil Producción",
+          "contentHash": "sha256:bfbaed211109506daed5ebe01344c6838ddb525935f7f2f5da0b535ee95f9134"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/es/grado/tecnomec/plan-de-estudios",
-          "role": "vigencia del Plan 2016; carácter obligatorio u optativo; requisitos adicionales por perfil",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-09-30",
+          "role": "publicación vigente del Plan 2016, sus cuatro perfiles y los archivos utilizados"
         },
         {
-          "authority": "Página vigente del Tecnólogo Industrial Mecánico, Facultad de Ingeniería",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/es/grado/tecnomec/asignaturas",
+          "reviewedAt": "2026-09-30",
+          "role": "catálogo vigente de 43 unidades del Plan 2016, códigos y semestre orientativo sin inferir oferta efectiva"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/index.php/es/grado/tecnomec",
-          "role": "vigencia 2026; duración; Montevideo; Paysandú; perfil de egreso",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta educativa vigente de UTEC",
-          "url": "https://utec.edu.uy/es/educacion/carrera/tecnologo-industrial-mecanico/",
-          "role": "Paysandú; modalidad presencial; tres años; gestión interinstitucional",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo de carreras en el interior de Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/tecnologo-industrial-mecanico/",
-          "role": "Paysandú; UTU-UTEC-Udelar; tres años; oferta sin cupo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Ingresos 2026 de Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/es/node/52412",
-          "role": "ingreso vigente en Montevideo",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-09-30",
+          "role": "vigencia del Plan 2016, duración de tres años y sedes Montevideo y Paysandú; no se usa para inferir oferta por período"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo",
-          "Paysandú"
+          "Montevideo · carrera completa",
+          "Paysandú · carrera completa"
         ],
         "pathwayIds": [
           "curricula-personalizada",
@@ -9642,51 +9650,52 @@
       "currentProjection": {
         "primary": "official-profiles",
         "features": [
-          "official-periods",
           "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "tecnologo industrial mecanico:2016",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-industrial-mecanico-2016.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
-        "expectedCoursePlacements": 119,
-        "matchedCoursePlacements": 1,
-        "officialPeriodCount": 25,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/tecnologo-industrial-mecanico-2016-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-tecnologo-industrial-mecanico-2016",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-industrial-mecanico-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:eacfd50aec2d079c9206de52e18476ca2a7c0ea607dfc0f7a9c07696ebb60e81",
+        "projectionContentHash": "sha256:8a1a28b6d8cd0a1e67bac438872b4bb283fe3b0be5352de5efb3b1a2b5ab5bd9",
+        "pathways": [
           {
             "id": "curricula-personalizada",
             "periodCount": 2
           },
           {
             "id": "perfil-fluidos-energia",
-            "periodCount": 8
+            "periodCount": 6
           },
           {
             "id": "perfil-diseno-materiales",
-            "periodCount": 8
+            "periodCount": 6
           },
           {
             "id": "perfil-planta",
-            "periodCount": 8
+            "periodCount": 6
           },
           {
             "id": "perfil-produccion",
-            "periodCount": 8
+            "periodCount": 6
           }
         ],
-        "projectionContentHash": "sha256:174e629447eb3375f9f0979c3a814211ce24d9bb809a6f31e8578f1736b08e68"
+        "expectedCoursePlacements": 120,
+        "matchedCoursePlacements": 120
       },
       "conflictNotes": [
-        "materialsMinimum: La tabla normativa de mínimos y los perfiles oficiales exigen 42 créditos de Materiales y Diseño; el resumen del ejemplo del Anexo II imprime 40. La UI aplica 42 y registra la inconsistencia tipográfica.",
-        "instrumentationCredits: El listado del Anexo I imprime 8 créditos para Instrumentación y Control, mientras el ejemplo, los perfiles y Bedelías vigentes publican 10. La UI conserva los 10 créditos de la implementación actual.",
-        "gasInstallationsCredits: El Anexo I asigna 10 créditos a Instalaciones generales de gases combustibles y Bedelías vigente publica 12. Se conserva el valor actual de Bedelías y la unidad queda como optativa del catálogo.",
-        "profileTotals: Las combinaciones tipo suman 273, 272, 271 y 270 créditos. Son guías sustituibles; el egreso se valida por 270 créditos, todos los mínimos y coherencia curricular, no por replicar una tabla exacta.",
-        "campusElectives: Las fuentes confirman la carrera completa en ambas sedes pero no una disponibilidad idéntica de cada optativa en cada período. La UI comparte el plan y advierte que la oferta concreta debe verificarse sin inventar una variante territorial.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "La tabla normativa fija 42 créditos mínimos de Materiales y Diseño; el resumen del ejemplo del Anexo II imprime 40. La UI aplica 42.",
+        "El Anexo I imprime 8 créditos para Instrumentación y Control; los perfiles, la implementación semestral y Bedelías vigentes publican 10. La UI conserva 10.",
+        "El Anexo I imprime 10 créditos para Instalaciones generales de gases combustibles y Bedelías vigente publica 12. Se conserva el valor vigente y la unidad queda en el catálogo optativo.",
+        "Los cuatro perfiles suman 273, 272, 271 y 270 créditos. Son guías sustituibles; el egreso se controla por los mínimos y no por forzar esos totales.",
+        "TIM82 Módulo de Extensión aparece en Bedelías pero no en el catálogo vigente FING del Plan 2016; queda como candidata recuperable fuera de la experiencia normal.",
+        "Las fuentes confirman la carrera completa en Montevideo y Paysandú, pero no una oferta idéntica de cada optativa por sede o semestre. No se infiere disponibilidad efectiva."
       ]
     },
     {
@@ -13266,5 +13275,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:d79d9ba694fd5abc9530f91ea22273855bc15dfd96bc2e1811d8fba0885f4698"
+  "contentHash": "sha256:4c719a390630e9d3761e345367ef7e5b9412264431fdfda9ed2d0ad8faec8252"
 }
