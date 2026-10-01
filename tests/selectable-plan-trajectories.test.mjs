@@ -76,7 +76,13 @@ test("cada plan seleccionable tiene una presentación de Currícula con materias
       if (coreCourses.some((course) => (course?.authorityStatus ?? "verified") === "verified")) {
         assert.ok(coreCourses.every((course) => (course?.authorityStatus ?? "verified") === "verified"), `${planId}/${pathwayId}: candidatas mezcladas con el núcleo verificado`);
       }
-      const expectedIds = projection.courses.filter(isRealCurricularCourse).map(({ id }) => id).sort();
+      const publishedPathway = projection.publishedPathways?.[pathwayId];
+      const expectedIds = publishedPathway?.restrictGeneratedCatalogToPublished === true
+        ? [...new Set([
+          ...publishedPathway.periods.flatMap(({ courseIds }) => courseIds),
+          ...(publishedPathway.catalogCourseIds ?? []),
+        ])].filter((id) => isRealCurricularCourse(projection.courses.find((course) => course.id === id))).sort()
+        : projection.courses.filter(isRealCurricularCourse).map(({ id }) => id).sort();
       assert.deepEqual(presentation.courses.map(({ id }) => id).sort(), expectedIds, `${planId}/${pathwayId}: composición incompleta en planificador`);
     }
   }

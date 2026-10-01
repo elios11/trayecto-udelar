@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-30",
+  "plans": [
+    {
+      "id": "bedelias-fing-ingenieria-naval-1997",
+      "identity": "ingenieria naval:1997",
+      "effectiveAt": "1997-2026",
+      "authorityCountsBefore": {
+        "verified": 326,
+        "candidate": 0,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "Plan 1997 normativo: 450 créditos, dieciséis mínimos, Taller, Pasantía, Proyecto Final y aprobación del currículo individual",
+          "contentHash": "sha256:205945fb7e19561d1daaceae9121de33fc60794fd684a026c54ef18cee2072ac"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2015/24857/20170214%20bloques%20por%20semestre%20naval.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "currícula sugerida 2017: diez semestres, créditos literales y Estructuras de Buques como curso anual",
+          "contentHash": "sha256:8c1493757e10680a1663a09185b4fd4f03f29083826a1f9575bd846375602579"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/en/carrera/grado/ingenier%C3%ADa-naval",
+          "reviewedAt": "2026-09-30",
+          "role": "página vigente de la carrera, Plan 1997, duración, créditos y acceso al plan",
+          "contentHash": "sha256:7dc67219e560fa28610c3f0b055fdff709f952734bb160da5ba8ac063409b31e"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/ingenieria-naval",
+          "reviewedAt": "2026-09-30",
+          "role": "identidad institucional, vigencia, 450 créditos y sede Montevideo",
+          "contentHash": "sha256:3905d464f15a1c90b0a074ee08db536615119aa5c22a2d7fdcc05aa7e7fae246"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/ingresos/calendario-%C2%B7-segundo-semestre/",
+          "reviewedAt": "2026-09-30",
+          "role": "ingreso vigente por Facultad de Ingeniería en 2026",
+          "contentHash": "sha256:6d6c7ec0eedb61ec0ade56fc7b46de3a74a86eac98dde5c00b63a7c741cf07ef"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/cio-cientifico-tecnologico",
+          "reviewedAt": "2026-09-30",
+          "role": "articulación regional hacia Ingeniería Naval sin convertir el CIO en sede completa",
+          "contentHash": "sha256:595f22aacbb97703428f36c668b16386718699915ef695c5cdf0993f6313105d"
+        }
+      ],
+      "uiNotice": "Plan 1997 vigente de 450 créditos en Montevideo. Podés seguir la currícula sugerida 2017 o armar un recorrido personalizado; en ambos casos deben cumplirse los mínimos y aprobarse el currículo individual.",
+      "trajectories": [
+        {
+          "id": "curricula-personalizada",
+          "credentialId": "ingeniero-naval",
+          "label": "Currícula personalizada",
+          "description": "Recorrido flexible del Plan 1997. Elegí entre las unidades respaldadas hasta cubrir los mínimos por materia y actividad, las actividades obligatorias y 450 créditos; el Consejo de Facultad debe aprobar la coherencia del currículo individual.",
+          "campusIds": ["montevideo"],
+          "restrictGeneratedCatalogToPublished": true,
+          "periods": [
+            { "label": "Orientación del recorrido", "courseIds": ["naval-flexibilidad-hasta-450"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ]
+        },
+        {
+          "id": "curricula-sugerida-2017",
+          "credentialId": "ingeniero-naval",
+          "label": "Currícula sugerida 2017",
+          "description": "Combinación tipo publicada por FING como orientación sustituible. La guía histórica suma 466 créditos; con los 10 créditos vigentes de Máquinas para Fluidos 1, la proyección actual suma 464. No reemplaza la verificación de mínimos ni la aprobación del currículo individual.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "excludedPeriodCourseIds": ["naval-flexibilidad-hasta-450", "validacion-final-plan"],
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["1020", "1030", "1151", "1220"] },
+            { "label": "Semestre 2", "courseIds": ["1022", "1031", "1152", "2302"] },
+            { "label": "Semestre 3", "courseIds": ["1024", "1025", "1153", "1078", "1154", "1701"] },
+            { "label": "Semestre 4", "courseIds": ["1028", "1155", "C10", "2001", "1719", "1073"] },
+            { "label": "Semestre 5", "courseIds": ["1805", "1764", "2102", "1724"] },
+            { "label": "Semestre 6", "courseIds": ["1823", "1765", "2103", "2604"] },
+            { "label": "Semestre 7", "courseIds": ["1824", "1850", "1810", "Q16", "2320"] },
+            { "label": "Estructuras de Buques · anual (semestres 7 y 8)", "courseIds": ["2600"] },
+            { "label": "Semestre 8", "courseIds": ["1903", "2200", "2603", "2002"] },
+            { "label": "Semestre 9", "courseIds": ["1650", "2605", "1818", "2601"] },
+            { "label": "Semestre 10", "courseIds": ["2019", "2401", "2256"] }
+          ]
+        }
+      ],
+      "curriculum": {
+        "strictOfficialCourseIds": true,
+        "verifiedCourseIds": []
+      },
+      "additionalRequiredCourseGroups": [
+        {
+          "id": "naval-proyecto-nominal",
+          "label": "Aprobá el Proyecto Final de Ingeniería Naval",
+          "minCompleted": 1,
+          "sourceCourseIds": ["2019"],
+          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf"
+        }
+      ]
+    }
+  ]
+}

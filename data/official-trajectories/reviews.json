@@ -456,6 +456,64 @@
       ]
     },
     {
+      "planId": "bedelias-fing-ingenieria-naval-1997",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-09-30",
+      "effectiveAt": "1997-2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["curricula-sugerida-2017"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43884/1/PLNAV_1997.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "Plan 1997 normativo: 450 créditos, dieciséis mínimos, Taller, Pasantía, Proyecto Final y aprobación del currículo individual",
+          "contentHash": "sha256:205945fb7e19561d1daaceae9121de33fc60794fd684a026c54ef18cee2072ac"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2015/24857/20170214%20bloques%20por%20semestre%20naval.pdf",
+          "reviewedAt": "2026-09-30",
+          "role": "currícula sugerida 2017: diez semestres, créditos literales y Estructuras de Buques como curso anual",
+          "contentHash": "sha256:8c1493757e10680a1663a09185b4fd4f03f29083826a1f9575bd846375602579"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/en/carrera/grado/ingenier%C3%ADa-naval",
+          "reviewedAt": "2026-09-30",
+          "role": "página vigente de la carrera, Plan 1997, duración, créditos y acceso al plan",
+          "contentHash": "sha256:7dc67219e560fa28610c3f0b055fdff709f952734bb160da5ba8ac063409b31e"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/ingenieria-naval",
+          "reviewedAt": "2026-09-30",
+          "role": "identidad institucional, vigencia, 450 créditos y sede Montevideo",
+          "contentHash": "sha256:3905d464f15a1c90b0a074ee08db536615119aa5c22a2d7fdcc05aa7e7fae246"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-naval-1997-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-naval-1997",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-naval-1997.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La tabla del plan imprime un subtotal de 385 créditos, pero sus dieciséis mínimos literales suman 382. Se conservan los mínimos publicados y el total de egreso de 450 sin inventar la diferencia.",
+        "La guía 2017 suma 466 créditos porque asigna 12 a Máquinas para Fluidos 1; Bedelías vigente publica 10 y la proyección suma 464. La diferencia queda explícita.",
+        "Estructuras de Buques figura con 10 créditos en los semestres 7 y 8; se representa una sola vez como unidad anual vigente de 20 créditos.",
+        "La grilla respalda 45 identidades visibles. Las otras 281 identidades normalizadas de Bedelías permanecen candidatas fuera de la Currícula y del planificador normales.",
+        "Los CIO regionales articulan con Ingeniería Naval, pero no se presentan como sedes completas del Plan 1997."
+      ]
+    },
+    {
       "planId": "1997",
       "state": "official-trajectory-identified-pending",
       "reviewedAt": "2026-09-22",

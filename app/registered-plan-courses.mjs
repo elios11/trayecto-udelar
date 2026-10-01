@@ -99,9 +99,10 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
     const course = courseById.get(id);
     return isRealCurricularCourse(course) && (course.authorityStatus ?? "verified") === "verified";
   }));
+  const restrictGeneratedCatalogToPublished = publishedPathway.restrictGeneratedCatalogToPublished === true;
   const periods = hasOfficialPeriodCourses
     ? publishedPathway.periods
-    : generatedPeriods(data, sourcePathway, courseById);
+    : generatedPeriods(data, restrictGeneratedCatalogToPublished ? publishedPathway : sourcePathway, courseById);
   const activePeriods = new Map();
   periods.forEach((period, index) => {
     period.courseIds.forEach((id) => activePeriods.set(id, index + 1));
@@ -115,6 +116,8 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
       }
       for (const id of candidate.catalogCourseIds ?? []) availableIds.add(id);
     }
+  } else if (restrictGeneratedCatalogToPublished && pathwayCourseIds(publishedPathway, courseById).length > 0) {
+    for (const id of pathwayCourseIds(publishedPathway, courseById)) availableIds.add(id);
   } else {
     for (const course of data.courses) {
       if (isRealCurricularCourse(course)) availableIds.add(course.id);

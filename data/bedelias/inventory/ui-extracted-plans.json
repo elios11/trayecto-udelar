@@ -1,13 +1,14 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:89e3b0e3221edec7ba6558c3d7dedffe1ca863fb4276c2cadc3573e5d32b3e6d",
-    "officialAuditHash": "sha256:9810074e4460d631dde8d89756a08366018c3d48afcec1b3fc20acf78449821c",
+    "auditQueueHash": "sha256:f89f511a6a30aea8c35b6e33e6e926c460aef472acceb3d0de92cfec2fd54d79",
+    "officialAuditHash": "sha256:66d4a0cf5968e741bd2d2185634391b7dddb64beb0991f730f3f3218b69d03e8",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
     "tim2016ReconciliationHash": "sha256:5aec8a2805c7c1defe607bd6043b3d78d83fc65719d05620b94d39bd7ea599dc",
-    "telecom2009ReconciliationHash": "sha256:0d9a2172680b130610766ceabd65065050f5cb479a5d39eb6f6e183fdedaa09b"
+    "telecom2009ReconciliationHash": "sha256:0d9a2172680b130610766ceabd65065050f5cb479a5d39eb6f6e183fdedaa09b",
+    "naval1997ReconciliationHash": "sha256:93730807916c8298bbe01e789bb4b4a31dc63b1666ac101f03c0b3c6c2c38c7f"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -17,17 +18,17 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4439,
-      "candidate": 27925,
+      "verified": 4435,
+      "candidate": 27929,
       "historical-equivalent": 43,
       "administrative": 177,
       "rejected": 9
     },
     "beforePublishedCourses": 32372,
-    "afterPublishedCourses": 4439,
+    "afterPublishedCourses": 4435,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1502,
-    "visibleTargetsWithUnpublishedDependencies": 1213,
+    "afterPublishedRules": 1500,
+    "visibleTargetsWithUnpublishedDependencies": 1210,
     "plansWithVerifiedCatalog": 60,
     "plansWithPartialCatalog": 61,
     "plansWithStructureOnly": 18
@@ -3092,17 +3093,33 @@
         "publishedRules": 242
       },
       "after": {
-        "publishedCourses": 51,
-        "hiddenCourses": 277,
-        "publishedRules": 18,
-        "rulesWithUnpublishedDependencies": 55
+        "publishedCourses": 47,
+        "hiddenCourses": 281,
+        "publishedRules": 16,
+        "rulesWithUnpublishedDependencies": 52
       },
       "statuses": {
-        "verified": 51,
-        "candidate": 277,
+        "verified": 47,
+        "candidate": 281,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "before": {
+          "verified": 326,
+          "candidate": 0,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        },
+        "after": {
+          "verified": 47,
+          "candidate": 281,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4498,5 +4515,5 @@
       }
     }
   ],
-  "contentHash": "sha256:b5ab1ffaba6b57ea7d51ffde0fd651cce2fb6926b8a503ecc3fb67fed51f6b66"
+  "contentHash": "sha256:d852f28472488fc4a1090f59caba7be59f7e089a6cde857ad0686c8426e7c0b6"
 }

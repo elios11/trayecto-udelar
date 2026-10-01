@@ -16,6 +16,7 @@ const fhceReconciliationsPath = path.join(projectRoot, "data", "fhce", "official
 const iq2021ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-quimica-2021-trayectorias.json");
 const tim2016ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-industrial-mecanico-2016-trayectorias.json");
 const telecom2009ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-telecomunicaciones-2009-trayectorias.json");
+const naval1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-naval-1997-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -320,6 +321,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
           ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
           campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
+          ...(trajectory.restrictGeneratedCatalogToPublished === true ? { restrictGeneratedCatalogToPublished: true } : {}),
           periods: trajectoryPeriods,
           ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
         }];
@@ -362,6 +364,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         description: trajectory.description ?? `${trajectory.label} es una trayectoria publicada por el servicio universitario.`,
         ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
         campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
+        ...(trajectory.restrictGeneratedCatalogToPublished === true ? { restrictGeneratedCatalogToPublished: true } : {}),
         periods: trajectoryPeriods,
         ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
       }];
@@ -1297,6 +1300,7 @@ export async function buildExtractedAcademicPlans() {
   const iq2021Reconciliation = await loadJson(iq2021ReconciliationPath);
   const tim2016Reconciliation = await loadJson(tim2016ReconciliationPath);
   const telecom2009Reconciliation = await loadJson(telecom2009ReconciliationPath);
+  const naval1997Reconciliation = await loadJson(naval1997ReconciliationPath);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1313,6 +1317,10 @@ export async function buildExtractedAcademicPlans() {
     ...telecom2009Reconciliation.plans.map((plan) => [plan.identity, {
       ...plan,
       reviewedAt: plan.reviewedAt ?? telecom2009Reconciliation.reviewedAt,
+    }]),
+    ...naval1997Reconciliation.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? naval1997Reconciliation.reviewedAt,
     }]),
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
@@ -1440,6 +1448,7 @@ export async function buildExtractedAcademicPlans() {
       iq2021ReconciliationHash: hash(iq2021Reconciliation),
       tim2016ReconciliationHash: hash(tim2016Reconciliation),
       telecom2009ReconciliationHash: hash(telecom2009Reconciliation),
+      naval1997ReconciliationHash: hash(naval1997Reconciliation),
     },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,

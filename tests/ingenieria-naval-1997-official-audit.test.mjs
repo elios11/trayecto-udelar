@@ -52,7 +52,7 @@ test("mantiene Taller, Pasantía, Proyecto y validación como requisitos nominal
   ]);
   assert.deepEqual(
     credential.requiredCourseGroups[2].courseIds.map((id) => courseById.get(id).bedeliasCode),
-    ["2019", "CP318"],
+    ["2019"],
   );
   assert.equal(credential.minTotalCredits, 450);
 });

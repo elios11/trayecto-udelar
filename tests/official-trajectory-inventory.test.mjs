@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 84,
-    "official-trajectory-identified-pending": 6,
+    "official-trajectory-reproduced": 85,
+    "official-trajectory-identified-pending": 5,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 62);
-  assert.equal(savedInventory.pendingQueue.plans.length, 62);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 6).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(6).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 61);
+  assert.equal(savedInventory.pendingQueue.plans.length, 61);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 5).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(5).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -104,6 +104,18 @@ test("D03n cierra Telecomunicaciones 2009 con Rocha completa y Montevideo parcia
   assert.equal(plan.evidence.expectedCoursePlacements, 28);
   assert.equal(plan.evidence.matchedCoursePlacements, 28);
   assert.deepEqual(plan.scope.territories, ["Rocha · carrera completa", "Montevideo · primer año"]);
+});
+
+test("D03o cierra Ingeniería Naval 1997 con la currícula sugerida exacta", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-fing-ingenieria-naval-1997");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-periods");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["curricula-sugerida-2017", 11],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 45);
+  assert.equal(plan.evidence.matchedCoursePlacements, 45);
+  assert.deepEqual(plan.scope.territories, ["Montevideo"]);
 });
 
 test("D03j cierra los tres planes FQ con correspondencia exacta y sedes explícitas", () => {
