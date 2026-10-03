@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-01",
+  "plans": [
+    {
+      "id": "bedelias-fing-ingenieria-industrial-mecanica-1997",
+      "identity": "ingenieria industrial mecanica:1997",
+      "effectiveAt": "1997-2026",
+      "authorityCountsBefore": {
+        "verified": 92,
+        "candidate": 370,
+        "historical-equivalent": 0,
+        "administrative": 0,
+        "rejected": 0
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/ing_mecanica.pdf",
+          "alternateUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43888/1/PLMEC_1997.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "Plan 1997 normativo: 450 créditos, doce mínimos fijos, alternativa Electrotecnia/Química, profundización, Taller, Pasantía, Proyecto Final y aprobación del currículo individual",
+          "contentHash": "sha256:6f0016289c190abd18397bb972b0add0834dbc40711f51af5b5b4e04502263d3"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2016/26628/20160603%20bloques%20semestrales%20por%20perfil%20v%202016.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "tres bloques sugeridos 2016 de diez semestres; identifica materias de ejemplo, materias específicas, créditos impresos y mínimos que deben completarse",
+          "contentHash": "sha256:25f2f2f5f47b667cbaa66078a39b374aa88d8b662ca27fb63dff5b360de7db6f"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "cuatro semestres iniciales de Ingeniería Industrial Mecánica en Paysandú y actividades presenciales en Salto",
+          "contentHash": "sha256:2293719e6486169108bfaa557992c37c5db39ce44a997577a77f36ae931f40e8"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2024-12/curriculos-tacuarembo-v2.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "tres semestres iniciales sugeridos en Tacuarembó y repetición temporal de Administración y Gestión de las Organizaciones I",
+          "contentHash": "sha256:1c28ff92432740ca0271a3a4c32d5d85435fbd08700a760e04c03e19ec550292"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/carrera/grado/ingenier%C3%ADa-industrial-mec%C3%A1nica",
+          "reviewedAt": "2026-10-01",
+          "role": "página vigente de la carrera: código 22-3, año de aprobación 1997, cinco años, 450 créditos y enlace al plan",
+          "contentHash": "sha256:1a2d9c84e4d49327418919903dd420648e4b1f3aac8a93fe1e948b52a59c73c3"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/ingenieria-industrial-mecanica",
+          "reviewedAt": "2026-10-01",
+          "role": "identidad institucional vigente, Facultad de Ingeniería, duración de 60 meses y 450 créditos",
+          "contentHash": "sha256:0941ef75cefd5fe134fb69554a7087c41382b5d5ac199a2fbd819169ec550695"
+        }
+      ],
+      "uiNotice": "Plan 1997 vigente de 450 créditos. En Montevideo podés armar una currícula personalizada o usar uno de los tres perfiles 2016 como guía sustituible; Paysandú y Tacuarembó muestran únicamente sus tramos iniciales comprobados y la continuidad se realiza en Montevideo.",
+      "trajectories": [
+        {
+          "id": "curricula-personalizada",
+          "credentialId": "ingeniero-industrial-mecanico",
+          "label": "Montevideo · currícula personalizada",
+          "description": "Recorrido flexible del Plan 1997. Elegí entre las unidades respaldadas hasta cubrir los doce mínimos fijos, las dos reglas alternativas, las actividades obligatorias y 450 créditos; el Consejo de Facultad debe aprobar el currículo individual.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "restrictGeneratedCatalogToPublished": true,
+          "periods": [
+            { "label": "Orientación del recorrido", "courseIds": ["iim-opcionales-hasta-450", "iim-profundizacion-25", "iim-opcionales-perfil-30"] },
+            { "label": "Validación de egreso", "courseIds": ["validacion-final-plan"] }
+          ],
+          "excludedCourseIds": [
+            "iim-p-calculo1", "iim-p-algebra1", "iim-p-fisica1", "iim-p-taller-diseno", "iim-p-economia-politica",
+            "iim-p-calculo2", "iim-p-algebra2", "iim-p-fisica2", "iim-p-fisica3", "iim-p-calculo-vectorial",
+            "iim-p-probabilidad", "iim-p-mecanica-clasica", "iim-p-fisica-experimental1", "iim-p-quimica", "iim-p-ecuaciones",
+            "iim-p-fisica-termica", "iim-p-fisica-experimental2", "iim-p-programacion1", "iim-t-calculo1", "iim-t-algebra",
+            "iim-t-quimica", "iim-t-administracion", "iim-t-vida-universitaria", "iim-t-calculo2", "iim-t-estadistica",
+            "iim-t-computacion1", "iim-t-fisica1", "iim-t-complementos", "iim-t-fisica3", "iim-t-taller-io", "iim-t-comprension-textos"
+          ]
+        },
+        {
+          "id": "perfil-fluidos-energia",
+          "credentialId": "ingeniero-industrial-mecanico",
+          "label": "Montevideo · Fluidos y Energía",
+          "description": "Perfil tipo 2016 publicado por FING como guía sustituible. La tabla imprime 436 créditos, sus filas suman 443 y la proyección con créditos vigentes suma 439; además debe completarse hasta cubrir todos los mínimos y 450 créditos.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "excludedPeriodCourseIds": ["iim-opcionales-hasta-450", "iim-profundizacion-25", "iim-opcionales-perfil-30", "validacion-final-plan"],
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["1020", "1030", "1151", "1220"] },
+            { "label": "Semestre 2", "courseIds": ["1022", "1031", "1152"] },
+            { "label": "Semestre 3", "courseIds": ["1024", "1025", "1153", "1078", "1154"] },
+            { "label": "Semestre 4", "courseIds": ["1028", "1155", "C10", "1073", "2001"] },
+            { "label": "Semestre 5", "courseIds": ["1805", "1764", "2102", "1701"] },
+            { "label": "Semestre 6", "courseIds": ["1823", "1765", "2103", "1719", "1226"] },
+            { "label": "Semestre 7", "courseIds": ["1824", "1850", "1810", "1944", "2703"] },
+            { "label": "Semestre 8", "courseIds": ["1903", "5503", "1814", "2256", "2002"] },
+            { "label": "Semestre 9", "courseIds": ["1650", "2706", "1818"] },
+            { "label": "Proyecto anual · semestres 9 y 10", "courseIds": ["2054"] },
+            { "label": "Semestre 10", "courseIds": ["2401", "1815"] }
+          ],
+          "excludedCourseIds": [
+            "iim-p-calculo1", "iim-p-algebra1", "iim-p-fisica1", "iim-p-taller-diseno", "iim-p-economia-politica",
+            "iim-p-calculo2", "iim-p-algebra2", "iim-p-fisica2", "iim-p-fisica3", "iim-p-calculo-vectorial",
+            "iim-p-probabilidad", "iim-p-mecanica-clasica", "iim-p-fisica-experimental1", "iim-p-quimica", "iim-p-ecuaciones",
+            "iim-p-fisica-termica", "iim-p-fisica-experimental2", "iim-p-programacion1", "iim-t-calculo1", "iim-t-algebra",
+            "iim-t-quimica", "iim-t-administracion", "iim-t-vida-universitaria", "iim-t-calculo2", "iim-t-estadistica",
+            "iim-t-computacion1", "iim-t-fisica1", "iim-t-complementos", "iim-t-fisica3", "iim-t-taller-io", "iim-t-comprension-textos"
+          ]
+        },
+        {
+          "id": "perfil-diseno-materiales",
+          "credentialId": "ingeniero-industrial-mecanico",
+          "label": "Montevideo · Diseño Mecánico y Materiales",
+          "description": "Perfil tipo 2016 publicado por FING como guía sustituible. La tabla imprime 419 créditos, sus filas suman 426 y la proyección con créditos vigentes suma 422; además debe completarse hasta cubrir todos los mínimos y 450 créditos.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "excludedPeriodCourseIds": ["iim-opcionales-hasta-450", "iim-profundizacion-25", "iim-opcionales-perfil-30", "validacion-final-plan"],
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["1020", "1030", "1151", "1220"] },
+            { "label": "Semestre 2", "courseIds": ["1022", "1031", "1152"] },
+            { "label": "Semestre 3", "courseIds": ["1024", "1025", "1153", "1078", "1154"] },
+            { "label": "Semestre 4", "courseIds": ["1028", "1155", "C10", "1073", "1144"] },
+            { "label": "Semestre 5", "courseIds": ["1805", "1764", "2102", "1701"] },
+            { "label": "Semestre 6", "courseIds": ["1823", "1765", "2103", "1719", "2001"] },
+            { "label": "Semestre 7", "courseIds": ["1824", "1850", "1810", "1944", "1724", "1720"] },
+            { "label": "Semestre 8", "courseIds": ["1903", "2200", "CP135", "2002"] },
+            { "label": "Semestre 9", "courseIds": ["1650", "2706"] },
+            { "label": "Proyecto anual · semestres 9 y 10", "courseIds": ["2054"] },
+            { "label": "Semestre 10", "courseIds": ["2401"] }
+          ],
+          "excludedCourseIds": [
+            "iim-p-calculo1", "iim-p-algebra1", "iim-p-fisica1", "iim-p-taller-diseno", "iim-p-economia-politica",
+            "iim-p-calculo2", "iim-p-algebra2", "iim-p-fisica2", "iim-p-fisica3", "iim-p-calculo-vectorial",
+            "iim-p-probabilidad", "iim-p-mecanica-clasica", "iim-p-fisica-experimental1", "iim-p-quimica", "iim-p-ecuaciones",
+            "iim-p-fisica-termica", "iim-p-fisica-experimental2", "iim-p-programacion1", "iim-t-calculo1", "iim-t-algebra",
+            "iim-t-quimica", "iim-t-administracion", "iim-t-vida-universitaria", "iim-t-calculo2", "iim-t-estadistica",
+            "iim-t-computacion1", "iim-t-fisica1", "iim-t-complementos", "iim-t-fisica3", "iim-t-taller-io", "iim-t-comprension-textos"
+          ]
+        },
+        {
+          "id": "perfil-ingenieria-planta",
+          "credentialId": "ingeniero-industrial-mecanico",
+          "label": "Montevideo · Ingeniería de Planta",
+          "description": "Perfil tipo 2016 publicado por FING como guía sustituible. La tabla imprime 443 créditos, sus filas suman 450 y la proyección con créditos vigentes suma 448; los cursos grises o azules siguen siendo elecciones orientativas, no obligaciones adicionales.",
+          "campusIds": ["montevideo"],
+          "useOnlyConfiguredPeriods": true,
+          "excludedPeriodCourseIds": ["iim-opcionales-hasta-450", "iim-profundizacion-25", "iim-opcionales-perfil-30", "validacion-final-plan"],
+          "periods": [
+            { "label": "Semestre 1", "courseIds": ["1020", "1030", "1151", "1220"] },
+            { "label": "Semestre 2", "courseIds": ["1022", "1031", "1152"] },
+            { "label": "Semestre 3", "courseIds": ["1024", "1025", "1153", "1078", "1154"] },
+            { "label": "Semestre 4", "courseIds": ["1028", "1155", "C10", "1073", "1128"] },
+            { "label": "Semestre 5", "courseIds": ["1805", "1764", "2102", "1701"] },
+            { "label": "Semestre 6", "courseIds": ["1823", "1765", "2103", "1719", "2001"] },
+            { "label": "Semestre 7", "courseIds": ["1824", "1850", "1810", "1944", "2703", "Q16"] },
+            { "label": "Semestre 8", "courseIds": ["1903", "1510", "5503", "1638", "2002"] },
+            { "label": "Semestre 9", "courseIds": ["1650", "2706", "5504", "1920"] },
+            { "label": "Proyecto anual · semestres 9 y 10", "courseIds": ["2054"] },
+            { "label": "Semestre 10", "courseIds": ["2401", "1815"] }
+          ],
+          "excludedCourseIds": [
+            "iim-p-calculo1", "iim-p-algebra1", "iim-p-fisica1", "iim-p-taller-diseno", "iim-p-economia-politica",
+            "iim-p-calculo2", "iim-p-algebra2", "iim-p-fisica2", "iim-p-fisica3", "iim-p-calculo-vectorial",
+            "iim-p-probabilidad", "iim-p-mecanica-clasica", "iim-p-fisica-experimental1", "iim-p-quimica", "iim-p-ecuaciones",
+            "iim-p-fisica-termica", "iim-p-fisica-experimental2", "iim-p-programacion1", "iim-t-calculo1", "iim-t-algebra",
+            "iim-t-quimica", "iim-t-administracion", "iim-t-vida-universitaria", "iim-t-calculo2", "iim-t-estadistica",
+            "iim-t-computacion1", "iim-t-fisica1", "iim-t-complementos", "iim-t-fisica3", "iim-t-taller-io", "iim-t-comprension-textos"
+          ]
+        },
+        {
+          "id": "paysandu-inicial",
+          "credentialId": "ingeniero-industrial-mecanico",
+          "label": "Paysandú · tramo inicial intersede",
+          "description": "Cuatro semestres iniciales oficiales con articulación Paysandú-Salto; Taller de Diseño y Física Experimental se dictan presencialmente en Salto. La carrera continúa en Montevideo desde el quinto semestre.",
+          "campusIds": ["paysandu"],
+          "useOnlyConfiguredPeriods": true,
+          "excludedPeriodCourseIds": ["iim-opcionales-hasta-450", "iim-profundizacion-25", "iim-opcionales-perfil-30", "validacion-final-plan"],
+          "periods": [
+            { "label": "Semestre 1 · Paysandú/Salto", "courseIds": ["iim-p-calculo1", "iim-p-algebra1", "iim-p-fisica1", "iim-p-taller-diseno", "iim-p-economia-politica"] },
+            { "label": "Semestre 2 · Paysandú/Salto", "courseIds": ["iim-p-calculo2", "iim-p-algebra2", "iim-p-fisica2", "iim-p-fisica3"] },
+            { "label": "Semestre 3 · Paysandú/Salto", "courseIds": ["iim-p-calculo-vectorial", "iim-p-probabilidad", "iim-p-mecanica-clasica", "iim-p-fisica-experimental1", "iim-p-quimica"] },
+            { "label": "Semestre 4 · Paysandú/Salto", "courseIds": ["iim-p-ecuaciones", "iim-p-fisica-termica", "iim-p-fisica-experimental2", "iim-p-programacion1"] }
+          ],
+          "excludedCourseIds": [
+            "iim-t-calculo1", "iim-t-algebra", "iim-t-quimica", "iim-t-administracion", "iim-t-vida-universitaria",
+            "iim-t-calculo2", "iim-t-estadistica", "iim-t-computacion1", "iim-t-fisica1", "iim-t-complementos",
+            "iim-t-fisica3", "iim-t-taller-io", "iim-t-comprension-textos"
+          ]
+        },
+        {
+          "id": "tacuarembo-inicial",
+          "credentialId": "ingeniero-industrial-mecanico",
+          "label": "Tacuarembó · tramo inicial",
+          "description": "Tres semestres iniciales sugeridos oficialmente. La tabla repite Administración y Gestión de las Organizaciones I en los semestres 1 y 3; la referencia temporal se conserva en la auditoría, pero la unidad y sus diez créditos se cuentan una sola vez. La continuidad se realiza en Montevideo.",
+          "campusIds": ["tacuarembo"],
+          "useOnlyConfiguredPeriods": true,
+          "excludedPeriodCourseIds": ["iim-opcionales-hasta-450", "iim-profundizacion-25", "iim-opcionales-perfil-30", "validacion-final-plan"],
+          "periods": [
+            { "label": "Semestre 1 · Tacuarembó", "courseIds": ["iim-t-calculo1", "iim-t-algebra", "iim-t-quimica", "iim-t-administracion", "iim-t-vida-universitaria"] },
+            { "label": "Semestre 2 · Tacuarembó", "courseIds": ["iim-t-calculo2", "iim-t-estadistica", "iim-t-computacion1", "iim-t-fisica1"] },
+            { "label": "Semestre 3 · Tacuarembó", "courseIds": ["iim-t-complementos", "iim-t-fisica3", "iim-t-taller-io", "iim-t-comprension-textos"] }
+          ],
+          "documentedRepeatedPlacements": [
+            {
+              "courseId": "iim-t-administracion",
+              "publishedPeriodLabels": ["Semestre 1 · Tacuarembó", "Semestre 3 · Tacuarembó"],
+              "canonicalPeriodLabel": "Semestre 1 · Tacuarembó",
+              "resolution": "La fuente repite la misma unidad de 10 créditos; Trayecto conserva la referencia, pero no duplica identidad ni créditos."
+            }
+          ],
+          "excludedCourseIds": [
+            "iim-p-calculo1", "iim-p-algebra1", "iim-p-fisica1", "iim-p-taller-diseno", "iim-p-economia-politica",
+            "iim-p-calculo2", "iim-p-algebra2", "iim-p-fisica2", "iim-p-fisica3", "iim-p-calculo-vectorial",
+            "iim-p-probabilidad", "iim-p-mecanica-clasica", "iim-p-fisica-experimental1", "iim-p-quimica", "iim-p-ecuaciones",
+            "iim-p-fisica-termica", "iim-p-fisica-experimental2", "iim-p-programacion1"
+          ]
+        }
+      ],
+      "curriculum": {
+        "strictOfficialCourseIds": true,
+        "verifiedCourseIds": [],
+        "requiredCourseGroups": [
+          {
+            "id": "iim-taller-nominal",
+            "label": "Aprobá un Taller del Plan 1997",
+            "minCompleted": 1,
+            "sourceCourseIds": ["2001"],
+            "verifiedSourceCourseIds": ["2001"],
+            "sourceUrl": "https://www.fing.edu.uy/sites/default/files/ing_mecanica.pdf"
+          },
+          {
+            "id": "iim-pasantia-nominal",
+            "label": "Aprobá la Pasantía",
+            "minCompleted": 1,
+            "sourceCourseIds": ["2002"],
+            "verifiedSourceCourseIds": ["2002"],
+            "sourceUrl": "https://www.fing.edu.uy/sites/default/files/ing_mecanica.pdf"
+          },
+          {
+            "id": "iim-proyecto-nominal",
+            "label": "Aprobá el Proyecto anual de Ingeniería Mecánica",
+            "minCompleted": 1,
+            "sourceCourseIds": ["2054"],
+            "verifiedSourceCourseIds": ["2054"],
+            "sourceUrl": "https://www.fing.edu.uy/sites/default/files/ing_mecanica.pdf"
+          }
+        ]
+      },
+      "differences": [
+        {
+          "field": "profilePrintedTotals",
+          "resolution": "La tabla 2016 imprime 436, 419 y 443 créditos, pero la suma literal de sus diez filas da 443, 426 y 450. Se preservan las colocaciones y ambos valores sin inventar un ajuste de siete créditos."
+        },
+        {
+          "field": "currentCourseCredits",
+          "resolution": "La guía 2016 asigna 12 créditos a Máquinas para Fluidos 1, Máquinas para Fluidos 2 y Dinámica de Máquinas y Vibraciones; Bedelías vigente publica 10. Con las mismas colocaciones, la proyección suma 439, 422 y 448 créditos."
+        },
+        {
+          "field": "guideScope",
+          "resolution": "Las materias grises son ejemplos y las azules pertenecen al grupo Específicas. Los tres perfiles son guías sustituibles y no reemplazan los mínimos de egreso ni la aprobación del currículo individual."
+        },
+        {
+          "field": "tacuaremboDuplicate",
+          "resolution": "Administración y Gestión de las Organizaciones I aparece en los semestres 1 y 3 de la tabla de Tacuarembó. Se conserva la referencia temporal y se cuenta una sola identidad de 10 créditos."
+        },
+        {
+          "field": "strictCatalog",
+          "resolution": "Las 84 identidades reales enumeradas por las cinco trayectorias oficiales quedan verificadas. Las otras 374 entradas normalizadas o bloques de Bedelías permanecen fuera del catálogo normal salvo los cuatro bloques estructurales verificados de orientación y validación."
+        }
+      ]
+    }
+  ]
+}

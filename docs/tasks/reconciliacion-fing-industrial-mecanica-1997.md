@@ -34,3 +34,10 @@ Verificar vigencia, alcance y contenido de esas publicaciones; registrar autorid
 - Actualizar auditoría, inventario y `PROJECT_CONTEXT.md` sólo con resultados confirmados.
 - Probar colocaciones exactas, sedes, materia repetida, requisitos, catálogo y unicidad de IDs. Regenerar dos veces con hashes idénticos; ejecutar focales, `npm test`, `npm run lint` y `git diff --check`.
 - Crear commit enfocado en worktree aislado desde el `main` más reciente. Entregar hash, evidencia, verificaciones y riesgos; no integrar, pushear ni publicar desde el subagente.
+
+## Cierre de implementación
+
+- Los tres perfiles de 2016 y los tramos iniciales de Paysandú y Tacuarembó quedan cotejados: 157/157 colocaciones oficiales, con la repetición de Administración I en Tacuarembó documentada pero contada una sola vez.
+- El planificador reúne 84 identidades reales verificadas y cuatro bloques estructurales; 374 entradas de Bedelías permanecen candidatas, fuera de la experiencia normal. Las diferencias entre los totales impresos, las sumas de filas y los créditos vigentes se conservan explícitas.
+- La fuente curada conserva seis fuentes oficiales con fecha y SHA-256. El generador sin red produjo los mismos hashes de la proyección, el reporte y el inventario en dos ejecuciones sucesivas.
+- Verificación local final: 13/13 pruebas focales, `npm test` 949/949, `npm run lint` correcto y `git diff --check` limpio. Próximo paso: integrar el commit de este worktree sobre el `main` más reciente, repetir pruebas y lint, y publicar sólo después de esos controles.

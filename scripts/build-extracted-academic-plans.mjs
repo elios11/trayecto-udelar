@@ -17,6 +17,7 @@ const iq2021ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenie
 const tim2016ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-industrial-mecanico-2016-trayectorias.json");
 const telecom2009ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-telecomunicaciones-2009-trayectorias.json");
 const naval1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-naval-1997-trayectorias.json");
+const industrialMecanica1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-industrial-mecanica-1997-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -1301,6 +1302,7 @@ export async function buildExtractedAcademicPlans() {
   const tim2016Reconciliation = await loadJson(tim2016ReconciliationPath);
   const telecom2009Reconciliation = await loadJson(telecom2009ReconciliationPath);
   const naval1997Reconciliation = await loadJson(naval1997ReconciliationPath);
+  const industrialMecanica1997Reconciliation = await loadJson(industrialMecanica1997ReconciliationPath);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1321,6 +1323,10 @@ export async function buildExtractedAcademicPlans() {
     ...naval1997Reconciliation.plans.map((plan) => [plan.identity, {
       ...plan,
       reviewedAt: plan.reviewedAt ?? naval1997Reconciliation.reviewedAt,
+    }]),
+    ...industrialMecanica1997Reconciliation.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? industrialMecanica1997Reconciliation.reviewedAt,
     }]),
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
@@ -1449,6 +1455,7 @@ export async function buildExtractedAcademicPlans() {
       tim2016ReconciliationHash: hash(tim2016Reconciliation),
       telecom2009ReconciliationHash: hash(telecom2009Reconciliation),
       naval1997ReconciliationHash: hash(naval1997Reconciliation),
+      industrialMecanica1997ReconciliationHash: hash(industrialMecanica1997Reconciliation),
     },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,

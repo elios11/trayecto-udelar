@@ -456,6 +456,85 @@
       ]
     },
     {
+      "planId": "bedelias-fing-ingenieria-industrial-mecanica-1997",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-01",
+      "effectiveAt": "1997-2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo", "Paysandú", "Tacuarembó"],
+        "pathwayIds": [
+          "perfil-fluidos-energia",
+          "perfil-diseno-materiales",
+          "perfil-ingenieria-planta",
+          "paysandu-inicial",
+          "tacuarembo-inicial"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/ing_mecanica.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "Plan 1997 normativo: 450 créditos, mínimos, reglas alternativas, actividades obligatorias y aprobación del currículo individual",
+          "contentHash": "sha256:6f0016289c190abd18397bb972b0add0834dbc40711f51af5b5b4e04502263d3"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2016/26628/20160603%20bloques%20semestrales%20por%20perfil%20v%202016.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "tres bloques sugeridos 2016 de diez semestres, materias de ejemplo y créditos impresos",
+          "contentHash": "sha256:25f2f2f5f47b667cbaa66078a39b374aa88d8b662ca27fb63dff5b360de7db6f"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "cuatro semestres iniciales de Ingeniería Industrial Mecánica en Paysandú y actividades presenciales en Salto",
+          "contentHash": "sha256:2293719e6486169108bfaa557992c37c5db39ce44a997577a77f36ae931f40e8"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/2024-12/curriculos-tacuarembo-v2.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "tres semestres iniciales sugeridos en Tacuarembó y repetición temporal de Administración y Gestión de las Organizaciones I",
+          "contentHash": "sha256:1c28ff92432740ca0271a3a4c32d5d85435fbd08700a760e04c03e19ec550292"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/carrera/grado/ingenier%C3%ADa-industrial-mec%C3%A1nica",
+          "reviewedAt": "2026-10-01",
+          "role": "página vigente: código 22-3, aprobación 1997, cinco años, 450 créditos y acceso al plan",
+          "contentHash": "sha256:1a2d9c84e4d49327418919903dd420648e4b1f3aac8a93fe1e948b52a59c73c3"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/ingenieria-industrial-mecanica",
+          "reviewedAt": "2026-10-01",
+          "role": "identidad institucional vigente, Facultad de Ingeniería, 60 meses y 450 créditos",
+          "contentHash": "sha256:0941ef75cefd5fe134fb69554a7087c41382b5d5ac199a2fbd819169ec550695"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-industrial-mecanica-1997-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-industrial-mecanica-1997",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-industrial-mecanica-1997.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La grilla 2016 imprime 436, 419 y 443 créditos; la suma literal de sus diez filas da 443, 426 y 450. Se conservan colocaciones y valores sin inventar un ajuste.",
+        "Bedelías vigente publica 10 créditos donde la guía asigna 12 a Máquinas para Fluidos 1, Máquinas para Fluidos 2 y Dinámica de Máquinas y Vibraciones; con créditos vigentes las guías suman 439, 422 y 448.",
+        "Proyecto figura con 15 créditos en los semestres 9 y 10 de cada guía; se representa una sola vez como unidad anual vigente de 30 créditos.",
+        "Las materias grises son ejemplos y las azules pertenecen al grupo Específicas; los perfiles no sustituyen los mínimos ni la aprobación del currículo individual.",
+        "Tacuarembó repite Administración y Gestión de las Organizaciones I en los semestres 1 y 3; se conserva la referencia temporal y se cuenta una sola identidad de 10 créditos.",
+        "Las cinco trayectorias respaldan 84 identidades reales visibles. Las otras 374 entradas normalizadas de Bedelías permanecen candidatas fuera de la experiencia normal."
+      ]
+    },
+    {
       "planId": "bedelias-fing-ingenieria-naval-1997",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-09-30",

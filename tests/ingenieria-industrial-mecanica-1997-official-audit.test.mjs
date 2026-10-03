@@ -9,6 +9,7 @@ const registry = await readJson("data/bedelias/audits/official-source-audits.jso
 const queue = await readJson("data/bedelias/inventory/audit-queue.json");
 const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-fing-ingenieria-industrial-mecanica-1997.json");
+const reconciliation = await readJson("data/fing/ingenieria-industrial-mecanica-1997-trayectorias.json");
 const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 const audit = registry.audits.find(({ identity }) => identity === "ingenieria industrial mecanica:1997");
 const credential = projection.creditStructure.credentials.find(({ id }) => id === "ingeniero-industrial-mecanico");
@@ -77,22 +78,22 @@ test("mantiene Taller, Pasantía, Proyecto y validación como requisitos nominal
   ]);
   assert.deepEqual(
     credential.requiredCourseGroups[2].courseIds.map((id) => courseById.get(id).bedeliasCode),
-    ["2054", "2004"],
+    ["2054"],
   );
   assert.equal(credential.minTotalCredits, 450);
 });
 
-test("los perfiles tipo conservan sus bloques y el catálogo necesario para completar 450 créditos", () => {
+test("los perfiles tipo conservan sus colocaciones oficiales y el catálogo necesario para completar 450 créditos", () => {
   const fluid = projection.pathways["perfil-fluidos-energia"];
   const materials = projection.pathways["perfil-diseno-materiales"];
   const plant = projection.pathways["perfil-ingenieria-planta"];
   for (const pathway of [fluid, materials, plant]) {
+    const expected = reconciliation.plans[0].trajectories.find(({ id }) => id === Object.entries(projection.pathways).find(([, candidate]) => candidate === pathway)[0]);
     const selectedIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
     assert.equal(new Set(selectedIds).size, selectedIds.length);
     assert.equal(new Set(pathway.catalogCourseIds).size, pathway.catalogCourseIds.length);
     assert.equal(selectedIds.length + pathway.catalogCourseIds.length, projection.courses.length - 31);
-    assert.equal(pathway.periods[0].label, "Orientación del recorrido");
-    assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
+    assert.deepEqual(pathway.periods.map(({ label }) => label), expected.periods.map(({ label }) => label));
   }
   assert.ok(selectedCodes("perfil-fluidos-energia").has("1818"));
   assert.ok(selectedCodes("perfil-diseno-materiales").has("1720"));
@@ -106,7 +107,7 @@ test("Paysandú y Tacuarembó muestran sólo el tramo oficial y continúan con c
   assert.deepEqual(paysandu.periods.filter(({ label }) => /Semestre/.test(label)).map(({ courseIds }) => courseIds.length), [5, 4, 5, 4]);
   assert.deepEqual(tacuarembo.periods.filter(({ label }) => /Semestre/.test(label)).map(({ courseIds }) => courseIds.length), [5, 4, 4]);
   assert.match(paysandu.description, /continúa en Montevideo/i);
-  assert.match(tacuarembo.description, /cuenta una sola vez/i);
+  assert.match(tacuarembo.description, /cuentan? una sola vez/i);
   assert.equal(projection.courses.filter(({ name }) => name === "Administración y Gestión de las Organizaciones I (TAC)").length, 1);
   assert.ok(paysandu.catalogCourseIds.some((id) => courseById.get(id)?.bedeliasCode === "2054"));
   assert.ok(tacuarembo.catalogCourseIds.some((id) => courseById.get(id)?.bedeliasCode === "2054"));
@@ -122,6 +123,7 @@ test("fusiona los tres códigos repetidos sin doble conteo del total", () => {
   assert.equal(courseByCode.get("1233").creditAllocations.length, 2);
   for (const code of ["2041", "1087", "1233"]) {
     assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode === code).length, 1, code);
+    assert.equal(courseByCode.get(code).authorityStatus, "candidate", code);
   }
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 430);
   assert.equal(audit.bedeliasComparison.normalizedCourseCount, 427);

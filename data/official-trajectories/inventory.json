@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:ecfac0dacfda31ed775e2817dd3d15b7036cb2c27b4520ea3455743bbfc9ad06",
-    "extractedReportHash": "sha256:d852f28472488fc4a1090f59caba7be59f7e089a6cde857ad0686c8426e7c0b6",
+    "extractedReportHash": "sha256:b92c355ea2c3a6d7505d97da4e754a51dcbf5a8c1d2a19b8043ae097a1ca3f01",
     "officialAuditHash": "sha256:66d4a0cf5968e741bd2d2185634391b7dddb64beb0991f730f3f3218b69d03e8",
-    "reviewedTrajectoriesHash": "sha256:42d47365fc12ed88fb7b629a90245d8b3fbabb4278eabc971bd8138401df393f"
+    "reviewedTrajectoriesHash": "sha256:5754f5c01a693432bc732fad523b826b9e830a77ab031f42af989ef65ce9c3f2"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 85,
-      "official-trajectory-identified-pending": 5,
+      "official-trajectory-reproduced": 86,
+      "official-trajectory-identified-pending": 4,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 61,
+    "pending": 60,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -199,8 +199,8 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 8,
-          "official-trajectory-identified-pending": 5,
+          "official-trajectory-reproduced": 9,
+          "official-trajectory-identified-pending": 4,
           "no-official-trajectory-documented": 0,
           "research-pending": 5
         }
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 61,
+    "total": 60,
     "plans": [
       {
         "priority": 1,
@@ -306,15 +306,6 @@
       {
         "priority": 1,
         "planId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fing-ingenieria-industrial-mecanica-1997",
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
           "fing"
@@ -964,8 +955,7 @@
           "1997",
           "2025",
           "bedelias-fing-ingenieria-de-produccion-2010",
-          "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
-          "bedelias-fing-ingenieria-industrial-mecanica-1997"
+          "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018"
         ],
         "researchPending": [
           "bedelias-fing-tecnologo-en-cartografia-2011",
@@ -8866,57 +8856,51 @@
           "defaultCredentialId": "ingeniero-industrial-mecanico"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "1997",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-01",
+      "effectiveAt": "1997-2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 1997 de Ingeniería Industrial Mecánica, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43888/1/PLMEC_1997.pdf",
-          "role": "aprobaciones; título; cinco años; 450 créditos; mínimos; reglas alternativas; Taller; Pasantía; Proyecto; currículo individual",
-          "trajectoryEvidence": true
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/ing_mecanica.pdf",
+          "reviewedAt": "2026-10-01",
+          "role": "Plan 1997 normativo: 450 créditos, mínimos, reglas alternativas, actividades obligatorias y aprobación del currículo individual",
+          "contentHash": "sha256:6f0016289c190abd18397bb972b0add0834dbc40711f51af5b5b4e04502263d3"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingenieria-industrial-mecanica",
-          "role": "vigencia; 60 meses; 450 créditos; Facultad de Ingeniería",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página vigente de la carrera, Facultad de Ingeniería",
-          "url": "https://webiie.fing.edu.uy/index.php/es/carrera/grado/ingenier%C3%ADa-industrial-mec%C3%A1nica",
-          "role": "Plan 1997; código 22-3; vigencia; duración; créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Bloques sugeridos 2016 por perfil, Facultad de Ingeniería",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2016/26628/20160603%20bloques%20semestrales%20por%20perfil%20v%202016.pdf",
-          "role": "Fluidos y Energía; Diseño Mecánico y Materiales; Ingeniería de Planta; diez semestres; carácter orientativo; necesidad de completar mínimos y 450 créditos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-01",
+          "role": "tres bloques sugeridos 2016 de diez semestres, materias de ejemplo y créditos impresos",
+          "contentHash": "sha256:25f2f2f5f47b667cbaa66078a39b374aa88d8b662ca27fb63dff5b360de7db6f"
         },
         {
-          "authority": "Trayectorias iniciales FING en Paysandú",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
-          "role": "cuatro semestres iniciales; articulación con Salto; unidades y créditos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-01",
+          "role": "cuatro semestres iniciales de Ingeniería Industrial Mecánica en Paysandú y actividades presenciales en Salto",
+          "contentHash": "sha256:2293719e6486169108bfaa557992c37c5db39ce44a997577a77f36ae931f40e8"
         },
         {
-          "authority": "Trayectorias iniciales FING en Tacuarembó",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2024-12/curriculos-tacuarembo-v2.pdf",
-          "role": "tres semestres iniciales; unidades y créditos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-01",
+          "role": "tres semestres iniciales sugeridos en Tacuarembó y repetición temporal de Administración y Gestión de las Organizaciones I",
+          "contentHash": "sha256:1c28ff92432740ca0271a3a4c32d5d85435fbd08700a760e04c03e19ec550292"
         },
         {
-          "authority": "Calendario oficial de ingresos 2026, Udelar",
-          "url": "https://udelar.edu.uy/ingresos/calendario-%C2%B7-segundo-semestre/",
-          "role": "ingreso vigente por Facultad de Ingeniería",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/carrera/grado/ingenier%C3%ADa-industrial-mec%C3%A1nica",
+          "reviewedAt": "2026-10-01",
+          "role": "página vigente: código 22-3, aprobación 1997, cinco años, 450 créditos y acceso al plan",
+          "contentHash": "sha256:1a2d9c84e4d49327418919903dd420648e4b1f3aac8a93fe1e948b52a59c73c3"
         },
         {
-          "authority": "Propuesta de nuevo plan, Instituto de Ingeniería Mecánica y Producción Industrial",
-          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/3%20%282024-2026%29%20Exp.%20060190-000159-23_%20NUEVO%20V2023_%20Pl.%20Estudio%20Ingenier%C3%ADa%20Industrial%20Mec%C3%A1nica%20e%20Ingenier%C3%ADa%20Naval.pdf",
-          "role": "existencia de una propuesta sucesora todavía no publicada como plan vigente",
-          "trajectoryEvidence": false
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/ingenieria-industrial-mecanica",
+          "reviewedAt": "2026-10-01",
+          "role": "identidad institucional vigente, Facultad de Ingeniería, 60 meses y 450 créditos",
+          "contentHash": "sha256:0941ef75cefd5fe134fb69554a7087c41382b5d5ac199a2fbd819169ec550695"
         }
       ],
       "scope": {
@@ -8926,7 +8910,6 @@
           "Tacuarembó"
         ],
         "pathwayIds": [
-          "curricula-personalizada",
           "perfil-fluidos-energia",
           "perfil-diseno-materiales",
           "perfil-ingenieria-planta",
@@ -8937,53 +8920,52 @@
       "currentProjection": {
         "primary": "official-profiles",
         "features": [
-          "official-periods",
           "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "ingenieria industrial mecanica:1997",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-industrial-mecanica-1997.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
-        "expectedCoursePlacements": 157,
-        "matchedCoursePlacements": 0,
-        "officialPeriodCount": 40,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-industrial-mecanica-1997-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-industrial-mecanica-1997",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-industrial-mecanica-1997.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:4c6c62c9e69d2cb3d649c2ff8c828a7844dd7a00f4dead8fe4dfccd7f47e2915",
+        "projectionContentHash": "sha256:b463eb08c6e3fad9c5e3e8dfdfc202865b64c6ac1103993884fd6e86837a4f8d",
+        "pathways": [
           {
             "id": "perfil-fluidos-energia",
-            "periodCount": 13
+            "periodCount": 11
           },
           {
             "id": "perfil-diseno-materiales",
-            "periodCount": 13
+            "periodCount": 11
           },
           {
             "id": "perfil-ingenieria-planta",
-            "periodCount": 13
+            "periodCount": 11
           },
           {
             "id": "paysandu-inicial",
-            "periodCount": 6
+            "periodCount": 4
           },
           {
             "id": "tacuarembo-inicial",
-            "periodCount": 5
+            "periodCount": 3
           }
         ],
-        "projectionContentHash": "sha256:95d471b16bd3798d60b5cb93a545f35d9771b47e465383eb6368f36bc2ebe69f"
+        "expectedCoursePlacements": 157,
+        "matchedCoursePlacements": 157
       },
       "conflictNotes": [
-        "currentPlan: Existe una propuesta de plan sucesor, pero el catálogo Udelar y la página vigente de FING continúan publicando el Plan 1997. No se anticipa una aprobación ni se migra progreso.",
-        "alternativeMinimum: El Plan exige 18 créditos en Electrotecnia o 18 en Química. La UI lo modela como una alternativa y no suma erróneamente ambos mínimos.",
-        "depthMinimum: Los 25 créditos adicionales deben concentrarse en una de once materias. La UI verifica que una materia supere su mínimo base en 25, no acepta una suma repartida.",
-        "guideProfiles: Los bloques 2016 suman 436, 419 y 443 créditos y advierten que no cubren por sí solos todos los mínimos. Se muestran como guías flexibles con catálogo completo, nunca como reglas cerradas de egreso.",
-        "regionalScope: Paysandú y Tacuarembó publican recorridos iniciales, no carreras completas. La UI permite elegir la sede, identifica los semestres cubiertos y explica la continuidad en Montevideo.",
-        "tacuaremboDuplicate: La guía de Tacuarembó repite Administración y Gestión de las Organizaciones I en los semestres 1 y 3. Se representa una sola vez y no se duplican sus diez créditos.",
-        "splitAndSharedCourses: Dos cursos distribuyen créditos entre Matemática y Sistemas; Tutoría en Matemática figura con cuatro créditos completos en Matemática y Ciencias Humanas. Los tres códigos aparecen una sola vez y conservan sus asignaciones.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "La grilla 2016 imprime 436, 419 y 443 créditos; la suma literal de sus diez filas da 443, 426 y 450. Se conservan colocaciones y valores sin inventar un ajuste.",
+        "Bedelías vigente publica 10 créditos donde la guía asigna 12 a Máquinas para Fluidos 1, Máquinas para Fluidos 2 y Dinámica de Máquinas y Vibraciones; con créditos vigentes las guías suman 439, 422 y 448.",
+        "Proyecto figura con 15 créditos en los semestres 9 y 10 de cada guía; se representa una sola vez como unidad anual vigente de 30 créditos.",
+        "Las materias grises son ejemplos y las azules pertenecen al grupo Específicas; los perfiles no sustituyen los mínimos ni la aprobación del currículo individual.",
+        "Tacuarembó repite Administración y Gestión de las Organizaciones I en los semestres 1 y 3; se conserva la referencia temporal y se cuenta una sola identidad de 10 créditos.",
+        "Las cinco trayectorias respaldan 84 identidades reales visibles. Las otras 374 entradas normalizadas de Bedelías permanecen candidatas fuera de la experiencia normal."
       ]
     },
     {
@@ -13245,5 +13227,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:fcf21d32416c2b38f1669a3ca7e2ceaf9d41203bf0f2197d77cfd001878fbb44"
+  "contentHash": "sha256:8ad1d5ea6f76b7fc510f345ea7e25663cca8baf197fa379940554394885c5b63"
 }
