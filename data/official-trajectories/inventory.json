@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:ecfac0dacfda31ed775e2817dd3d15b7036cb2c27b4520ea3455743bbfc9ad06",
-    "extractedReportHash": "sha256:f1642e4c9f54b162f40e0ed2726b73bf7412b7b56c5ee2d672716ac0153101f8",
+    "extractedReportHash": "sha256:45a43c58cc884f859325c8f948cbbcc31dea48f0183953ed22fa8bf82b3a63aa",
     "officialAuditHash": "sha256:66d4a0cf5968e741bd2d2185634391b7dddb64beb0991f730f3f3218b69d03e8",
-    "reviewedTrajectoriesHash": "sha256:a912f401e70dac9870d05ec85d48ceeaecd32d8f6ccdba9f6db5bfd125d81d43"
+    "reviewedTrajectoriesHash": "sha256:d87c856ba2ac3b2e2c0d63629a66d7256f4e575049dd03c48b1ec267501e4de0"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 87,
-      "official-trajectory-identified-pending": 3,
+      "official-trajectory-reproduced": 88,
+      "official-trajectory-identified-pending": 2,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 59,
+    "pending": 58,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -199,8 +199,8 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 10,
-          "official-trajectory-identified-pending": 3,
+          "official-trajectory-reproduced": 11,
+          "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 0,
           "research-pending": 5
         }
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 59,
+    "total": 58,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "fing"
         ],
         "reason": "La proyección declara que sólo cubre el núcleo común hasta el octavo semestre y deja sin ubicación semestral completa perfiles, optativas, créditos complementarios y Proyecto de Grado."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
       },
       {
         "priority": 2,
@@ -944,8 +935,7 @@
         "serviceLabel": "Facultad de Ingeniería",
         "identifiedPending": [
           "1997",
-          "2025",
-          "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018"
+          "2025"
         ],
         "researchPending": [
           "bedelias-fing-tecnologo-en-cartografia-2011",
@@ -8603,69 +8593,71 @@
           "defaultCredentialId": "ingeniero-sistemas-comunicacion"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2018",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-03",
+      "effectiveAt": "2018-2026",
       "officialSources": [
         {
           "authority": "Plan de Estudios 2018 de Ingeniería en Sistemas de Comunicación, Udelar",
           "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43877/1/PLSIST_2018.pdf",
-          "role": "título; cinco años; 450 créditos; áreas; mínimos; proyecto final; currículo individual; perfiles",
-          "trajectoryEvidence": true
+          "reviewedAt": "2026-10-03",
+          "role": "título, cinco años, 450 créditos, mínimos por grupos y áreas, Proyecto Final, currículo individual y perfiles tipo"
         },
         {
           "authority": "Catálogo vigente de carreras, Udelar",
           "url": "https://udelar.edu.uy/carrera/ingenieria-en-sistemas-de-comunicacion",
-          "role": "vigencia; 60 meses; 450 créditos; Facultad de Ingeniería",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "vigencia, 60 meses, 450 créditos y Facultad de Ingeniería",
+          "contentHash": "sha256:9c3ea4a3cf087ee63857a66b428d9de5f015fee209268c2281e8ee3a646a9862"
         },
         {
           "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
           "url": "https://eva.fing.edu.uy/course/view.php?id=1314",
-          "role": "perfiles tipo; perfil personalizado; un solo título; especialización posterior al grado",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "perfiles tipo, perfil personalizado, un solo título y especialización posterior al grado",
+          "contentHash": "sha256:ded492d39f3345d2fbc755aabdcd03cc686e30d1ee19bacdcde3d3640ab5a547"
         },
         {
-          "authority": "Currícula sugerida vigente, Comisión de Carrera, EVA FING",
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
           "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=1",
-          "role": "secuencia recomendada de diez semestres; 383 créditos nominados; proyecto anual; sustituciones; opcionalidad",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "currícula sugerida de diez semestres, proyecto anual, sustituciones y bloques opcionales",
+          "contentHash": "sha256:f2c8fd2f1e173895beecc79265c401ca0dedd0ca7da9743f6c4d837b72a52e44"
         },
         {
-          "authority": "Currícula sugerida con Matemática Inicial, Comisión de Carrera, EVA FING",
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
           "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=2",
-          "role": "secuencia alternativa de once semestres; misma carrera y perfil; proyecto anual",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "currícula sugerida alternativa de once semestres comenzando con Matemática Inicial",
+          "contentHash": "sha256:6602bf50068bcbf327ba61636a7215e319ad62ea427bc0fd72df929400b6d30b"
         },
         {
-          "authority": "Procedimiento de perfiles, Comisión de Carrera, EVA FING",
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
           "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=3",
-          "role": "planilla por áreas; evaluación y aprobación por la Comisión de Carrera",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "procedimiento de propuesta, evaluación y aprobación de perfiles individuales",
+          "contentHash": "sha256:8b804849b74851e277a1f67e316b3c0e978160e650a8a1ff15e3ac9338689b18"
         },
         {
-          "authority": "Perfil Electrónica para comunicaciones, Comisión de Carrera, EVA FING",
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
           "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=4",
-          "role": "secuencia sugerida; opcionales recomendadas; sustitución por perfil coherente",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "perfil tipo Electrónica para comunicaciones, bloques flexibles y opciones recomendadas",
+          "contentHash": "sha256:d5608499c97f7daee641af53317b94138b5197c6ec871685c82d0020d3a70d2e"
         },
         {
-          "authority": "Perfil Redes de telecomunicaciones, Comisión de Carrera, EVA FING",
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
           "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=5",
-          "role": "secuencia sugerida; opcionales recomendadas; sustitución por perfil coherente",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "perfil tipo Redes de telecomunicaciones, bloques flexibles y opciones recomendadas",
+          "contentHash": "sha256:3e59abca7a1e19fc121dd6a1b8a9d12f348cdf1390bd6b15b3d0dd3c1848e2a5"
         },
         {
-          "authority": "Perfil Procesamiento de información y señales, Comisión de Carrera, EVA FING",
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
           "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=6",
-          "role": "secuencia sugerida; grupos de opcionales; sustitución por perfil coherente",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal de ingresos 2026, Udelar",
-          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
-          "role": "ingreso vigente por FING; oferta en Montevideo",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-03",
+          "role": "perfil tipo Procesamiento de información y señales, cuatro grupos opcionales y sustituciones",
+          "contentHash": "sha256:fdcc9579f6183430ab73640afaeb8a115e0089f9d87986b2e8951a4675c59a53"
         }
       ],
       "scope": {
@@ -8674,6 +8666,7 @@
         ],
         "pathwayIds": [
           "perfil-general-personalizado",
+          "curricula-con-matematica-inicial",
           "perfil-electronica-comunicaciones",
           "perfil-redes-telecomunicaciones",
           "perfil-procesamiento-informacion-senales"
@@ -8682,49 +8675,52 @@
       "currentProjection": {
         "primary": "official-profiles",
         "features": [
-          "official-periods",
           "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "ingenieria en sistemas de comunicacion:2018",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
-        "expectedCoursePlacements": 157,
-        "matchedCoursePlacements": 0,
-        "officialPeriodCount": 42,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-sistemas-comunicacion-2018-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:02574ed2e6a4c2eff2ce1e34ff13ea57030a295bce546a5710bdf4bb11c8e13e",
+        "projectionContentHash": "sha256:85e97cf52ae78bbacfe4e231286f5d796e4bddc47560f03e8080c48524c15f8e",
+        "pathways": [
           {
             "id": "perfil-general-personalizado",
+            "periodCount": 11
+          },
+          {
+            "id": "curricula-con-matematica-inicial",
             "periodCount": 12
           },
           {
             "id": "perfil-electronica-comunicaciones",
-            "periodCount": 12
+            "periodCount": 11
           },
           {
             "id": "perfil-redes-telecomunicaciones",
-            "periodCount": 13
+            "periodCount": 11
           },
           {
             "id": "perfil-procesamiento-informacion-senales",
-            "periodCount": 13
+            "periodCount": 11
           }
         ],
-        "projectionContentHash": "sha256:8f5928fe3016207596aac99c89f2cd4ee8bad419b18bb5efce4bd8021f730863"
+        "expectedCoursePlacements": 221,
+        "matchedCoursePlacements": 221
       },
       "conflictNotes": [
-        "profilesAreNotCredentials: Electrónica, Redes y Procesamiento son perfiles tipo sugeridos del mismo título. La propia Comisión admite sustituciones y perfiles personalizados; la UI los presenta como recorridos, nunca como especializaciones certificadas.",
-        "structuralMinimumGap: Los mínimos de las cuatro áreas raíz suman 337 créditos y el título exige 450. Los 113 restantes se distribuyen de forma coherente entre áreas y opcionales aprobadas; la UI controla ambos niveles sin asignar la brecha a un área arbitraria.",
-        "splitCreditCourses: Cinco códigos aparecen dos veces porque sus créditos se reparten entre áreas. La UI los normaliza como 222 cursos únicos, suma sus partes una sola vez al total y conserva cada asignación de área.",
-        "suggestedProfileTotals: La grilla general nombra 383 créditos antes de opcionales. Redes publica 451; Procesamiento rotula 450 aunque sus filas suman 452; y Electrónica asigna 10 créditos a Diseño Lógico 2 mientras Bedelías vigente publica 8. La UI conserva los créditos actuales de Bedelías y exige completar 450 y todos los mínimos, sin convertir los totales orientativos en reglas de egreso.",
-        "projectAlternatives: La currícula muestra un proyecto anual de 35 créditos repartido entre los semestres 9 y 10, pero reconoce dos modalidades administrativas de 35 y 30 créditos. La UI muestra una sola actividad anual sugerida y acepta cualquiera de las dos para el requisito final.",
-        "recommendedCoursesAreSubstitutable: Tallerine, Legislación y Ciencia, Tecnología y Sociedad están especialmente recomendadas, no son obligaciones nominales. Permanecen en las trayectorias sugeridas y pueden sustituirse si el perfil coherente mantiene los mínimos.",
-        "matematicaInicialSequence: La alternativa de once semestres para quienes comienzan con Matemática Inicial modifica el orden recomendado, no crea otro plan, título o sede. Matemática Inicial queda disponible en el catálogo acreditable.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "Los perfiles son sugerencias del mismo título y no certificaciones independientes; la Comisión aprueba cada currículo individual y admite sustituciones coherentes.",
+        "La currícula general nombra 383 créditos y la variante con Matemática Inicial 387 antes de completar bloques opcionales hasta 450.",
+        "Las grillas de Electrónica, Redes y Procesamiento tienen totales orientativos incompatibles con algunas cargas vigentes de Bedelías; se conservan las colocaciones oficiales y los créditos actuales sin inventar ajustes.",
+        "Proyecto es anual y se muestra una sola vez; se mantienen las alternativas vigentes de 35 y 30 créditos para acreditar el requisito final.",
+        "Tres recomendaciones oficiales carecen de una identidad Bedelías inequívoca y se publican como identidades de fuente sin código inventado.",
+        "Las recomendaciones de perfiles son páginas mutables; sus huellas normalizadas permiten detectar cuándo corresponde repetir la revisión."
       ]
     },
     {
@@ -13215,5 +13211,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:4d20d2f4a67d2d963f5afdaecc7402e2e2bba82d2fcf1d5223f9883cdf263c31"
+  "contentHash": "sha256:3906669281721a60475821d49f546385012af424d6402249039008436b5f8895"
 }

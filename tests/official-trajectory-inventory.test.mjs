@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 87,
-    "official-trajectory-identified-pending": 3,
+    "official-trajectory-reproduced": 88,
+    "official-trajectory-identified-pending": 2,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 59);
-  assert.equal(savedInventory.pendingQueue.plans.length, 59);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 3).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(3).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 58);
+  assert.equal(savedInventory.pendingQueue.plans.length, 58);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 2).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(2).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -115,6 +115,22 @@ test("D03o cierra Ingeniería Naval 1997 con la currícula sugerida exacta", () 
   ]);
   assert.equal(plan.evidence.expectedCoursePlacements, 45);
   assert.equal(plan.evidence.matchedCoursePlacements, 45);
+  assert.deepEqual(plan.scope.territories, ["Montevideo"]);
+});
+
+test("D03r cierra Sistemas de Comunicación 2018 con cinco trayectorias exactas", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-profiles");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["perfil-general-personalizado", 11],
+    ["curricula-con-matematica-inicial", 12],
+    ["perfil-electronica-comunicaciones", 11],
+    ["perfil-redes-telecomunicaciones", 11],
+    ["perfil-procesamiento-informacion-senales", 11],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 221);
+  assert.equal(plan.evidence.matchedCoursePlacements, 221);
   assert.deepEqual(plan.scope.territories, ["Montevideo"]);
 });
 

@@ -19,6 +19,7 @@ const telecom2009ReconciliationPath = path.join(projectRoot, "data", "fing", "te
 const naval1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-naval-1997-trayectorias.json");
 const industrialMecanica1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-industrial-mecanica-1997-trayectorias.json");
 const produccion2010ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-produccion-2010-trayectorias.json");
+const sistemasComunicacion2018ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-sistemas-comunicacion-2018-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -343,7 +344,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       const curricularBlockIds = new Set((officialCurriculum?.courses ?? [])
         .filter((course) => course.curricularBlock === true && course.credits === 0)
         .map((course) => course.id));
-      const sharedBlockPeriods = (officialCurriculum?.periods ?? []).map((period) => ({
+      const sharedBlockPeriods = (trajectory.useOnlyConfiguredPeriods === true ? [] : officialCurriculum?.periods ?? []).map((period) => ({
         label: period.label,
         courseIds: period.courseIds.filter((id) => (
           curricularBlockIds.has(id) && !excludedIds.has(id) && !excludedPeriodIds.has(id) && !configuredCourseIds.has(id)
@@ -1281,11 +1282,15 @@ function mergeAuditReconciliation(audit, reconciliation) {
       ])],
     }));
   }
+  const anomalies = new Map((audit.anomalies ?? []).map((anomaly) => [anomaly.field, anomaly]));
+  for (const anomaly of reconciliation.additionalAnomalies ?? []) anomalies.set(anomaly.field, anomaly);
   return {
     ...audit,
     reviewedAt: reconciliation.reviewedAt,
     sources: reconciliation.sources ?? audit.sources,
     uiNotice: reconciliation.uiNotice ?? audit.uiNotice,
+    anomalies: [...anomalies.values()],
+    remainingWork: reconciliation.remainingWork ?? audit.remainingWork,
     officialPlan: {
       ...audit.officialPlan,
       trajectories: reconciliation.trajectories ?? audit.officialPlan?.trajectories,
@@ -1305,6 +1310,7 @@ export async function buildExtractedAcademicPlans() {
   const naval1997Reconciliation = await loadJson(naval1997ReconciliationPath);
   const industrialMecanica1997Reconciliation = await loadJson(industrialMecanica1997ReconciliationPath);
   const produccion2010Reconciliation = await loadJson(produccion2010ReconciliationPath);
+  const sistemasComunicacion2018Reconciliation = await loadJson(sistemasComunicacion2018ReconciliationPath);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1333,6 +1339,10 @@ export async function buildExtractedAcademicPlans() {
     ...produccion2010Reconciliation.plans.map((plan) => [plan.identity, {
       ...plan,
       reviewedAt: plan.reviewedAt ?? produccion2010Reconciliation.reviewedAt,
+    }]),
+    ...sistemasComunicacion2018Reconciliation.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? sistemasComunicacion2018Reconciliation.reviewedAt,
     }]),
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
@@ -1462,6 +1472,7 @@ export async function buildExtractedAcademicPlans() {
       telecom2009ReconciliationHash: hash(telecom2009Reconciliation),
       naval1997ReconciliationHash: hash(naval1997Reconciliation),
       industrialMecanica1997ReconciliationHash: hash(industrialMecanica1997Reconciliation),
+      sistemasComunicacion2018ReconciliationHash: hash(sistemasComunicacion2018Reconciliation),
     },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,

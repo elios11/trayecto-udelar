@@ -2,6 +2,107 @@
   "schemaVersion": 1,
   "reviews": [
     {
+      "planId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-03",
+      "effectiveAt": "2018-2026",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "perfil-general-personalizado",
+          "curricula-con-matematica-inicial",
+          "perfil-electronica-comunicaciones",
+          "perfil-redes-telecomunicaciones",
+          "perfil-procesamiento-informacion-senales"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Plan de Estudios 2018 de Ingeniería en Sistemas de Comunicación, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43877/1/PLSIST_2018.pdf",
+          "reviewedAt": "2026-10-03",
+          "role": "título, cinco años, 450 créditos, mínimos por grupos y áreas, Proyecto Final, currículo individual y perfiles tipo"
+        },
+        {
+          "authority": "Catálogo vigente de carreras, Udelar",
+          "url": "https://udelar.edu.uy/carrera/ingenieria-en-sistemas-de-comunicacion",
+          "reviewedAt": "2026-10-03",
+          "role": "vigencia, 60 meses, 450 créditos y Facultad de Ingeniería",
+          "contentHash": "sha256:9c3ea4a3cf087ee63857a66b428d9de5f015fee209268c2281e8ee3a646a9862"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1314",
+          "reviewedAt": "2026-10-03",
+          "role": "perfiles tipo, perfil personalizado, un solo título y especialización posterior al grado",
+          "contentHash": "sha256:ded492d39f3345d2fbc755aabdcd03cc686e30d1ee19bacdcde3d3640ab5a547"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=1",
+          "reviewedAt": "2026-10-03",
+          "role": "currícula sugerida de diez semestres, proyecto anual, sustituciones y bloques opcionales",
+          "contentHash": "sha256:f2c8fd2f1e173895beecc79265c401ca0dedd0ca7da9743f6c4d837b72a52e44"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=2",
+          "reviewedAt": "2026-10-03",
+          "role": "currícula sugerida alternativa de once semestres comenzando con Matemática Inicial",
+          "contentHash": "sha256:6602bf50068bcbf327ba61636a7215e319ad62ea427bc0fd72df929400b6d30b"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=3",
+          "reviewedAt": "2026-10-03",
+          "role": "procedimiento de propuesta, evaluación y aprobación de perfiles individuales",
+          "contentHash": "sha256:8b804849b74851e277a1f67e316b3c0e978160e650a8a1ff15e3ac9338689b18"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=4",
+          "reviewedAt": "2026-10-03",
+          "role": "perfil tipo Electrónica para comunicaciones, bloques flexibles y opciones recomendadas",
+          "contentHash": "sha256:d5608499c97f7daee641af53317b94138b5197c6ec871685c82d0020d3a70d2e"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=5",
+          "reviewedAt": "2026-10-03",
+          "role": "perfil tipo Redes de telecomunicaciones, bloques flexibles y opciones recomendadas",
+          "contentHash": "sha256:3e59abca7a1e19fc121dd6a1b8a9d12f348cdf1390bd6b15b3d0dd3c1848e2a5"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería en Sistemas de Comunicación, EVA FING",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1314&section=6",
+          "reviewedAt": "2026-10-03",
+          "role": "perfil tipo Procesamiento de información y señales, cuatro grupos opcionales y sustituciones",
+          "contentHash": "sha256:fdcc9579f6183430ab73640afaeb8a115e0089f9d87986b2e8951a4675c59a53"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-sistemas-comunicacion-2018-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Los perfiles son sugerencias del mismo título y no certificaciones independientes; la Comisión aprueba cada currículo individual y admite sustituciones coherentes.",
+        "La currícula general nombra 383 créditos y la variante con Matemática Inicial 387 antes de completar bloques opcionales hasta 450.",
+        "Las grillas de Electrónica, Redes y Procesamiento tienen totales orientativos incompatibles con algunas cargas vigentes de Bedelías; se conservan las colocaciones oficiales y los créditos actuales sin inventar ajustes.",
+        "Proyecto es anual y se muestra una sola vez; se mantienen las alternativas vigentes de 35 y 30 créditos para acreditar el requisito final.",
+        "Tres recomendaciones oficiales carecen de una identidad Bedelías inequívoca y se publican como identidades de fuente sin código inventado.",
+        "Las recomendaciones de perfiles son páginas mutables; sus huellas normalizadas permiten detectar cuándo corresponde repetir la revisión."
+      ]
+    },
+    {
       "planId": "bedelias-fhum-letras-2014",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-09-23",

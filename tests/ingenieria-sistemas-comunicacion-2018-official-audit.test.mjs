@@ -13,7 +13,7 @@ const audit = registry.audits.find(({ identity }) => identity === "ingenieria en
 const credential = projection.creditStructure.credentials.find(({ id }) => id === "ingeniero-sistemas-comunicacion");
 const courseByCode = new Map(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map((course) => [course.bedeliasCode, course]));
 
-test("publica un solo Plan 2018 y cuatro perfiles del mismo título en Montevideo", () => {
+test("publica un solo Plan 2018, sus currículas y tres perfiles del mismo título en Montevideo", () => {
   assert.equal(audit.status, "official-evidence-complete");
   assert.equal(audit.publicationEligible, true);
   assert.equal(audit.conclusion.canonicalModel, "one-degree-with-suggested-profiles-and-personalized-curriculum");
@@ -23,6 +23,7 @@ test("publica un solo Plan 2018 y cuatro perfiles del mismo título en Montevide
   assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo"]);
   assert.deepEqual(Object.keys(projection.pathways), [
     "perfil-general-personalizado",
+    "curricula-con-matematica-inicial",
     "perfil-electronica-comunicaciones",
     "perfil-redes-telecomunicaciones",
     "perfil-procesamiento-informacion-senales",
@@ -53,6 +54,7 @@ test("controla los mínimos oficiales, el proyecto y la aprobación del perfil",
 test("mantiene las recomendaciones como trayectorias y las opcionales como catálogo", () => {
   const expectedNamedCredits = {
     "perfil-general-personalizado": 383,
+    "curricula-con-matematica-inicial": 387,
     "perfil-electronica-comunicaciones": 406,
     "perfil-redes-telecomunicaciones": 405,
     "perfil-procesamiento-informacion-senales": 416,
@@ -64,12 +66,11 @@ test("mantiene las recomendaciones como trayectorias y las opcionales como catá
       .flatMap(({ courseIds }) => courseIds)
       .reduce((sum, id) => sum + byId.get(id).credits, 0);
     assert.equal(selectedCredits, expectedCredits);
-    assert.ok(pathway.catalogCourseIds.length >= 182);
+    assert.ok(pathway.catalogCourseIds.length >= 65);
     assert.equal(new Set(pathway.catalogCourseIds).size, pathway.catalogCourseIds.length);
-    assert.equal(pathway.periods[0].label, "Orientación del perfil");
-    assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
+    assert.equal(pathway.periods[0].label, "Semestre 1");
+    assert.ok(!pathway.periods.some(({ label }) => label === "Orientación del perfil" || label === "Validación de egreso"));
   }
-  assert.match(byId.get(projection.pathways["perfil-general-personalizado"].periods[0].courseIds[0]).name, /alcanzar 450 créditos/i);
 });
 
 test("fusiona cada curso con créditos repartidos sin perder sus áreas", () => {
@@ -89,12 +90,12 @@ test("fusiona cada curso con créditos repartidos sin perder sus áreas", () => 
   assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode === "1460").length, 1);
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 227);
   assert.equal(audit.bedeliasComparison.normalizedCourseCount, 222);
-  assert.equal(projection.courses.length, 224);
+  assert.equal(projection.courses.length, 253);
 });
 
 test("conserva previaturas como evidencia y publica sólo las verificadas", () => {
   assert.equal(projection.rules.length, 194);
-  assert.equal(projection.plan.publishedRules, 13);
+  assert.equal(projection.plan.publishedRules, 22);
   assert.equal(projection.plan.noPublishedRule, 36);
   assert.match(audit.anomalies.find(({ field }) => field === "suggestedProfileTotals").resolution, /451/);
   assert.match(audit.anomalies.find(({ field }) => field === "profilesAreNotCredentials").resolution, /mismo título/i);

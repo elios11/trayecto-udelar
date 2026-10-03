@@ -549,7 +549,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018.json"),
-    pathwayIds: ["perfil-general-personalizado","perfil-electronica-comunicaciones","perfil-redes-telecomunicaciones","perfil-procesamiento-informacion-senales"],
+    pathwayIds: ["perfil-general-personalizado","curricula-con-matematica-inicial","perfil-electronica-comunicaciones","perfil-redes-telecomunicaciones","perfil-procesamiento-informacion-senales"],
     pathwayLabel: "Perfil",
     minCredits: 450,
   },
