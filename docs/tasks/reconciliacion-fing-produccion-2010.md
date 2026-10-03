@@ -31,3 +31,11 @@ Verificar vigencia, contenido y alcance de cada documento; registrar autoridad, 
 - Actualizar auditoría, inventario y `PROJECT_CONTEXT.md` solamente con resultados confirmados.
 - Probar colocaciones, sedes parciales, requisitos, cobertura del planificador y unicidad de IDs. Regenerar dos veces y cotejar hashes; ejecutar pruebas focales, `npm test`, `npm run lint` y `git diff --check`.
 - Crear un commit enfocado en un worktree aislado desde el `main` más reciente. Entregar hash, evidencia, verificaciones, riesgos y paso de reanudación; no integrar, pushear ni publicar desde el subagente.
+
+## Checkpoint recuperable — 2026-10-02
+
+- Completado: se verificaron y conservaron diez fuentes oficiales con fecha y SHA-256; la fuente curada cubre Montevideo y los seis tramos regionales, el catálogo estricto y los requisitos nominales de Pasantía y Proyecto. El generador sin red terminó correctamente y el inventario clasifica el plan como `official-trajectory-reproduced`.
+- Cobertura actual: 145 materias reales verificadas y 112 candidatas; siete trayectorias; 174 colocaciones auditadas coinciden 174/174, incluidas las cinco actividades de control curricular compartidas por recorrido. Los períodos académicos comprobados son 19 bloques en Montevideo, 2 semestres en Maldonado/Rivera/Rocha y 4 en Paysandú/Salto/Tacuarembó.
+- Artefactos: `data/fing/ingenieria-produccion-2010-trayectorias.json`, `app/data/bedelias-generated/bedelias-fing-ingenieria-de-produccion-2010.json`, `data/official-trajectories/{reviews,inventory}.json` y descargas ignoradas bajo `tmp/d03q-produccion-2010/`.
+- Última validación: 33 pruebas focales y de integración pasaron; dos regeneraciones consecutivas produjeron hashes idénticos; `npm.cmd test` pasó la compilación y 951/951 pruebas; `npm.cmd run lint` y `git diff --check` terminaron sin hallazgos. El alcance final quedó revisado y está listo para un commit enfocado.
+- Reanudación: si el commit no existe, agregar únicamente los artefactos enumerados en este checkpoint, la fuente/generador, pruebas, contexto y registro de auditoría; crear el commit sin integrar, pushear ni publicar. Si el commit ya existe, entregar su hash al coordinador para integración serial sobre el `main` más reciente.

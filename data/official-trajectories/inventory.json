@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:ecfac0dacfda31ed775e2817dd3d15b7036cb2c27b4520ea3455743bbfc9ad06",
-    "extractedReportHash": "sha256:b92c355ea2c3a6d7505d97da4e754a51dcbf5a8c1d2a19b8043ae097a1ca3f01",
+    "extractedReportHash": "sha256:f1642e4c9f54b162f40e0ed2726b73bf7412b7b56c5ee2d672716ac0153101f8",
     "officialAuditHash": "sha256:66d4a0cf5968e741bd2d2185634391b7dddb64beb0991f730f3f3218b69d03e8",
-    "reviewedTrajectoriesHash": "sha256:5754f5c01a693432bc732fad523b826b9e830a77ab031f42af989ef65ce9c3f2"
+    "reviewedTrajectoriesHash": "sha256:a912f401e70dac9870d05ec85d48ceeaecd32d8f6ccdba9f6db5bfd125d81d43"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 86,
-      "official-trajectory-identified-pending": 4,
+      "official-trajectory-reproduced": 87,
+      "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 60,
+    "pending": 59,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -199,8 +199,8 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 9,
-          "official-trajectory-identified-pending": 4,
+          "official-trajectory-reproduced": 10,
+          "official-trajectory-identified-pending": 3,
           "no-official-trajectory-documented": 0,
           "research-pending": 5
         }
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 60,
+    "total": 59,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "fing"
         ],
         "reason": "La proyección declara que sólo cubre el núcleo común hasta el octavo semestre y deja sin ubicación semestral completa perfiles, optativas, créditos complementarios y Proyecto de Grado."
-      },
-      {
-        "priority": 1,
-        "planId": "bedelias-fing-ingenieria-de-produccion-2010",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "Existe una fuente de trayectoria, pero falta reconciliarla exactamente con la proyección."
       },
       {
         "priority": 1,
@@ -954,7 +945,6 @@
         "identifiedPending": [
           "1997",
           "2025",
-          "bedelias-fing-ingenieria-de-produccion-2010",
           "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018"
         ],
         "researchPending": [
@@ -8357,81 +8347,79 @@
           "defaultCredentialId": "ingeniero-produccion"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2010",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-02",
+      "effectiveAt": "2010-2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2010 publicado en Diario Oficial y preservado por Colibri, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43883/1/PLPROD_2010.pdf",
-          "role": "aprobaciones; título; diez semestres; 450 créditos; grupos; materias; mínimos; 50 electivas; Taller; Pasantía; Proyecto; aprobación del currículo",
-          "trajectoryEvidence": true
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://www.fing.edu.uy/sites/default/files/Plan_Estudios_Ing.Produccion.pdf",
+          "reviewedAt": "2026-10-02",
+          "role": "Plan 2010 normativo: título, 450 créditos, mínimos de grupos y materias, al menos 50 créditos electivos, Talleres, Pasantía, Proyecto Final y aprobación del currículo individual",
+          "contentHash": "sha256:4643e51e4794999bb6322a9a51fb9e2513c9e5fc45cfe9743cc291d993f8440d"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingenieria-de-produccion",
-          "role": "vigencia; 60 meses; 450 créditos; sede Facultad de Ingeniería",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería de Producción, Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/pluginfile.php/79190/mod_resource/content/14/Por%20semestre%20-%20Versi%C3%B3n%20en%20espa%C3%B1ol.pdf",
+          "reviewedAt": "2026-10-02",
+          "role": "currícula sugerida vigente de diez semestres, obligatorias, electivas sugeridas, otras unidades curriculares y distribución anual del Proyecto",
+          "contentHash": "sha256:55a9daf092ef68f5b7574cf1816dae3c727864bb5ea70049b6515b2a9d775889"
         },
         {
           "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/carrera/grado/ingenier%C3%ADa-de-producci%C3%B3n",
-          "role": "vigencia del Plan 2010; perfil; duración; créditos; Comisión de Carrera",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Comisión de Carrera de Ingeniería de Producción, FING",
-          "url": "https://eva.fing.edu.uy/pluginfile.php/79190/mod_resource/content/14/Por%20semestre%20-%20Versi%C3%B3n%20en%20espa%C3%B1ol.pdf",
-          "role": "currícula sugerida 2026; obligatorias; electivas; semestres; créditos; previaturas orientativas",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "página vigente: código 22-2, aprobación 2010, cinco años, 450 créditos y enlace a la Comisión de Carrera",
+          "contentHash": "sha256:66527606042eab292070c9a888e230d53022b308c2b55e8c691475fbcd9d3949"
         },
         {
           "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/ensenanza/carrerasinterior",
-          "role": "naturaleza inicial de las trayectorias; continuidad posterior; inscripción; sedes",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "carácter parcial de las Trayectorias Ingeniería, alcance de uno o dos años, sedes e inscripción",
+          "contentHash": "sha256:5be8bec1c9506bb306db55c78ec8064d282fe5afc6c3782010d2f434468fd702"
         },
         {
-          "authority": "Trayectorias Ingeniería Maldonado, FING",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2025-12/curriculos-maldonado-v2.pdf",
-          "role": "dos semestres; unidades; créditos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "dos semestres iniciales de Ingeniería de Producción en Maldonado",
+          "contentHash": "sha256:857c9a05ba95122a52ff783b3275d9a2f3cd61de2cc2a3a8b67a320f2490fe34"
         },
         {
-          "authority": "Trayectorias Ingeniería Paysandú, FING",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
-          "role": "cuatro semestres; unidades; créditos; articulación intersede",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "cuatro semestres iniciales en Paysandú con articulación presencial en Salto",
+          "contentHash": "sha256:2293719e6486169108bfaa557992c37c5db39ce44a997577a77f36ae931f40e8"
         },
         {
-          "authority": "Trayectorias Ingeniería Rivera, FING",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2024-12/curriculos-rivera-v2.pdf",
-          "role": "dos semestres; unidades; créditos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "dos semestres iniciales de Ingeniería de Producción en Rivera",
+          "contentHash": "sha256:9a1cba7e5788ea7eea8d918313dfeebd8e54ecf850f182bb0c2e8597d415d2ec"
         },
         {
-          "authority": "Trayectorias Ingeniería Rocha, FING",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2024-12/curriculos-rocha-v2.pdf",
-          "role": "dos semestres; unidades; créditos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "dos semestres iniciales de Ingeniería de Producción en Rocha",
+          "contentHash": "sha256:69764182ae5189648bc76a9abdae099b877ddcbc9f42642bdd09e79000600ce4"
         },
         {
-          "authority": "Trayectorias Ingeniería Salto, FING",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf",
-          "role": "cuatro semestres; unidades; créditos; articulación intersede",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "cuatro semestres iniciales en Salto con articulación presencial en Paysandú",
+          "contentHash": "sha256:331d523549e4ff0f38d4be0dad713e0a30406803ce6db2df931ef58c7e54c900"
         },
         {
-          "authority": "Trayectorias Ingeniería Tacuarembó, FING",
+          "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://www.fing.edu.uy/sites/default/files/2024-12/curriculos-tacuarembo-v2.pdf",
-          "role": "cuatro semestres; unidades; créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal de ingresos 2026, Udelar",
-          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
-          "role": "ingreso vigente por FING; oferta en Montevideo",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-02",
+          "role": "cuatro semestres iniciales de Ingeniería de Producción en Tacuarembó",
+          "contentHash": "sha256:1c28ff92432740ca0271a3a4c32d5d85435fbd08700a760e04c03e19ec550292"
         }
       ],
       "scope": {
@@ -8455,62 +8443,62 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-profiles",
+        "primary": "official-periods",
         "features": [
-          "official-periods",
-          "official-profiles"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "exact-period-course-placement",
-        "auditIdentity": "ingenieria de produccion:2010",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-de-produccion-2010.json",
-        "periodLabelsMatch": false,
-        "coursePlacementsMatch": false,
-        "expectedCoursePlacements": 425,
-        "matchedCoursePlacements": 0,
-        "officialPeriodCount": 118,
-        "projectedPathways": [
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/ingenieria-produccion-2010-trayectorias.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-de-produccion-2010",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-de-produccion-2010.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:98cf5ec8d10fa228a31336a25cc56b6f59306225774d48da3ef89b81bb302e22",
+        "projectionContentHash": "sha256:249c7f106a3a4e6244659627c8193986e1ea840e87f0f9f73a2fb36f2f3a0688",
+        "pathways": [
           {
             "id": "montevideo-curricula-sugerida",
             "periodCount": 21
           },
           {
             "id": "maldonado-inicial",
-            "periodCount": 19
+            "periodCount": 4
           },
           {
             "id": "paysandu-inicial",
-            "periodCount": 18
+            "periodCount": 6
           },
           {
             "id": "rivera-inicial",
-            "periodCount": 19
+            "periodCount": 4
           },
           {
             "id": "rocha-inicial",
-            "periodCount": 19
+            "periodCount": 4
           },
           {
             "id": "salto-inicial",
-            "periodCount": 18
+            "periodCount": 6
           },
           {
             "id": "tacuarembo-inicial",
-            "periodCount": 18
+            "periodCount": 6
           }
         ],
-        "projectionContentHash": "sha256:027705ced761730080864254817c0f60f4dcd2d360d21f9b88de564f4abbece3"
+        "expectedCoursePlacements": 174,
+        "matchedCoursePlacements": 174
       },
       "conflictNotes": [
-        "suggestedCurriculumVsDegreeRules: La currícula por semestre es orientativa y actualizada en 2026. Las reglas de egreso siguen siendo los mínimos, las actividades integradoras, 450 créditos y la aprobación del currículo; la UI distingue obligatorias sugeridas, electivas sugeridas y catálogo acreditable.",
-        "regionalInitialTrajectories: Las seis sedes regionales no imparten carreras completas separadas. Se muestran como opciones de inicio del mismo plan y cada recorrido anuncia la continuidad obligatoria en Montevideo.",
-        "litoralIntercampusDelivery: Los documentos de Salto y Paysandú publican la misma grilla de cuatro semestres y señalan unidades presenciales en la sede hermana. La UI conserva dos opciones de sede, con advertencia de cursado intersede.",
-        "minimumCreditsGaps: Los mínimos de grupo suman 400 créditos y el plan exige 50 electivos adicionales. Dentro de Básicas faltan 8 créditos sobre la suma de materias; en Específicas, 10; y en Ingeniería y Tecnología Industriales, 25. La UI conserva simultáneamente mínimos padre e hijo y explicita las brechas.",
-        "bedeliasCatalogSemantics: Las 206 entradas acumuladas incluyen obligatorias, electivas y alternativas acreditables. La currícula sugerida determina qué unidades se muestran por semestre y el resto queda en el catálogo, sin presentar 206 obligaciones.",
-        "prerequisiteCoverage: Bedelías publica 201 reglas administrativas y no publica regla para 46 consultas. Las unidades regionales conservan sus créditos oficiales, pero no se inventan previaturas no documentadas en sus grillas.",
-        "La fuente contiene períodos explícitos, pero la proyección actual no conserva una correspondencia exacta de etiquetas y materias por período."
+        "La currícula viva de EVA fue actualizada el 18 de septiembre de 2026: reemplaza Programación 1 por Programación Imperativa, Matemática Discreta 1 por Fundamentos de la Combinatoria y 2039 por 2039B.",
+        "La currícula imprime MI y Bedelías publica MI2; coinciden nombre y cuatro créditos, por lo que se conserva MI2 como identidad canónica sin duplicar la materia.",
+        "La currícula vigente asigna 5 créditos a Funciones de Variable Compleja 1036 y Bedelías asigna 10; prevalece la fuente curricular más reciente y la diferencia queda trazada.",
+        "Proyecto 2099 aparece en dos semestres con 10 y 20 créditos; se representa una sola vez como actividad anual de 30 créditos.",
+        "Las seis fuentes territoriales sólo demuestran tramos iniciales de dos o cuatro semestres; no se infiere una oferta completa local ni se copian períodos de Montevideo.",
+        "Las siete trayectorias y el catálogo flexible respaldan 145 identidades reales visibles. Las otras 112 entradas de Bedelías permanecen candidatas fuera de la experiencia normal."
       ]
     },
     {
@@ -13227,5 +13215,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:8ad1d5ea6f76b7fc510f345ea7e25663cca8baf197fa379940554394885c5b63"
+  "contentHash": "sha256:4d20d2f4a67d2d963f5afdaecc7402e2e2bba82d2fcf1d5223f9883cdf263c31"
 }

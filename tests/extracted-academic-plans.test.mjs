@@ -12,12 +12,14 @@ const iq2021Reconciliations = await readJson("data/fing/ingenieria-quimica-2021-
 const tim2016Reconciliations = await readJson("data/fing/tecnologo-industrial-mecanico-2016-trayectorias.json");
 const telecom2009Reconciliations = await readJson("data/fing/tecnologo-telecomunicaciones-2009-trayectorias.json");
 const naval1997Reconciliations = await readJson("data/fing/ingenieria-naval-1997-trayectorias.json");
+const produccion2010Reconciliations = await readJson("data/fing/ingenieria-produccion-2010-trayectorias.json");
 const reconciliationByIdentity = new Map([
   ...fhceReconciliations.plans,
   ...iq2021Reconciliations.plans,
   ...tim2016Reconciliations.plans,
   ...telecom2009Reconciliations.plans,
   ...naval1997Reconciliations.plans,
+  ...produccion2010Reconciliations.plans,
 ].map((plan) => [plan.identity, plan]));
 const collectRuleCourseIds = (expression, output = []) => {
   output.push(...(expression?.options ?? []).map((option) => option.code).filter(Boolean));

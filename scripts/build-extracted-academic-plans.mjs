@@ -18,6 +18,7 @@ const tim2016ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnol
 const telecom2009ReconciliationPath = path.join(projectRoot, "data", "fing", "tecnologo-telecomunicaciones-2009-trayectorias.json");
 const naval1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-naval-1997-trayectorias.json");
 const industrialMecanica1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-industrial-mecanica-1997-trayectorias.json");
+const produccion2010ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-produccion-2010-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -1303,6 +1304,7 @@ export async function buildExtractedAcademicPlans() {
   const telecom2009Reconciliation = await loadJson(telecom2009ReconciliationPath);
   const naval1997Reconciliation = await loadJson(naval1997ReconciliationPath);
   const industrialMecanica1997Reconciliation = await loadJson(industrialMecanica1997ReconciliationPath);
+  const produccion2010Reconciliation = await loadJson(produccion2010ReconciliationPath);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1327,6 +1329,10 @@ export async function buildExtractedAcademicPlans() {
     ...industrialMecanica1997Reconciliation.plans.map((plan) => [plan.identity, {
       ...plan,
       reviewedAt: plan.reviewedAt ?? industrialMecanica1997Reconciliation.reviewedAt,
+    }]),
+    ...produccion2010Reconciliation.plans.map((plan) => [plan.identity, {
+      ...plan,
+      reviewedAt: plan.reviewedAt ?? produccion2010Reconciliation.reviewedAt,
     }]),
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
