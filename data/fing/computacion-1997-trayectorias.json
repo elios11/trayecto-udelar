@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-03",
+  "plan": {
+    "id": "1997",
+    "name": "Ingeniería en Computación",
+    "year": "1997",
+    "territory": "Montevideo",
+    "additionalElectiveCredits": 119
+  },
+  "source": {
+    "authority": "Comisión de Carrera de Computación, Facultad de Ingeniería, Udelar",
+    "publicationPage": "https://eva.fing.edu.uy/course/view.php?id=800&section=5",
+    "resourcePage": "https://eva.fing.edu.uy/mod/resource/view.php?id=72938",
+    "documentUrl": "https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf",
+    "documentSha256": "1695f507d635737823ace832d35d24e95aee0ca1508c9fe7445d42423434f089",
+    "documentDate": "2025-02-28",
+    "pages": 5
+  },
+  "courseAliases": {
+    "PI": { "name": "Prueba Inicial", "credits": 4 },
+    "1730-A": { "name": "Proyecto de Grado · primera etapa", "bedeliasCode": "1730", "credits": 15 },
+    "1730-B": { "name": "Proyecto de Grado · segunda etapa", "bedeliasCode": "1730", "credits": 15 }
+  },
+  "trajectories": [
+    {
+      "id": "pi-under-20",
+      "label": "PI menor a 20% · tramo inicial",
+      "description": "La fuente sólo prescribe Matemática Inicial y TBEO en el primer semestre. Después permite continuar por alguna trayectoria sugerida que comience en el segundo semestre, sin fijar una única continuación.",
+      "coverage": "partial-official",
+      "continuation": "not-uniquely-published",
+      "periods": [
+        { "label": "Primer semestre", "publishedCredits": null, "courseIds": ["MI2", "1275"] }
+      ]
+    },
+    {
+      "id": "pi-20-59",
+      "label": "Ingreso marzo · PI 20–59%",
+      "description": "Trayectoria sugerida completa para ingreso en marzo con resultado de Prueba Inicial entre 20% y 59%.",
+      "coverage": "complete-official",
+      "publishedTotalCredits": 329,
+      "periods": [
+        { "label": "Primer semestre (marzo - julio)", "publishedCredits": 23, "courseIds": ["MI2", "1023", "1373"] },
+        { "label": "Segundo semestre (agosto - diciembre)", "publishedCredits": 44, "courseIds": ["1061", "1151", "1030", "1321"], "recommendedCourseIds": ["1151"] },
+        { "label": "Tercer semestre (marzo - julio)", "publishedCredits": 43, "courseIds": ["1062", "1031", "1027", "1026"] },
+        { "label": "Cuarto semestre (agosto - diciembre)", "publishedCredits": 43, "courseIds": ["1466", "1323", "1025", "1033"] },
+        { "label": "Quinto semestre (marzo - julio)", "publishedCredits": 44, "courseIds": ["1537", "1324", "1325", "1944"], "recommendedCourseIds": ["1944"] },
+        { "label": "Sexto semestre (agosto - diciembre)", "publishedCredits": 47, "courseIds": ["1911", "1327", "1446", "1945"], "recommendedCourseIds": ["1945"] },
+        { "label": "Séptimo semestre (marzo - julio)", "publishedCredits": 30, "courseIds": ["1650", "1783", "1340"], "choiceGroups": [{ "selectedCourseId": "1340", "alternativeCourseIds": ["1354"] }] },
+        { "label": "Octavo semestre (agosto - diciembre)", "publishedCredits": 25, "courseIds": ["1721", "1224", "1225"], "recommendedCourseIds": ["1224", "1225"] },
+        { "label": "Noveno semestre (marzo - julio)", "publishedCredits": 15, "courseIds": ["1730-A"] },
+        { "label": "Décimo semestre (agosto - diciembre)", "publishedCredits": 15, "courseIds": ["1730-B"] }
+      ]
+    },
+    {
+      "id": "pi-60-plus",
+      "label": "Ingreso marzo · PI 60% o más",
+      "description": "Trayectoria sugerida completa para ingreso en marzo con resultado de Prueba Inicial de 60% o más.",
+      "coverage": "complete-official",
+      "publishedTotalCredits": 329,
+      "periods": [
+        { "label": "Primer semestre (marzo - julio)", "publishedCredits": 32, "courseIds": ["PI", "1030", "1023", "1373"] },
+        { "label": "Segundo semestre (agosto - diciembre)", "publishedCredits": 43, "courseIds": ["1061", "1031", "1026", "1321"] },
+        { "label": "Tercer semestre (marzo - julio)", "publishedCredits": 40, "courseIds": ["1062", "1027", "1324"] },
+        { "label": "Cuarto semestre (agosto - diciembre)", "publishedCredits": 43, "courseIds": ["1025", "1323", "1466", "1033"] },
+        { "label": "Quinto semestre (marzo - julio)", "publishedCredits": 39, "courseIds": ["1650", "1537", "1325", "1944"], "recommendedCourseIds": ["1944"] },
+        { "label": "Sexto semestre (agosto - diciembre)", "publishedCredits": 47, "courseIds": ["1911", "1327", "1446", "1945"], "recommendedCourseIds": ["1945"] },
+        { "label": "Séptimo semestre (marzo - julio)", "publishedCredits": 30, "courseIds": ["1783", "1340", "1151"], "recommendedCourseIds": ["1151"], "choiceGroups": [{ "selectedCourseId": "1340", "alternativeCourseIds": ["1354"] }] },
+        { "label": "Octavo semestre (agosto - diciembre)", "publishedCredits": 25, "courseIds": ["1721", "1224", "1225"], "recommendedCourseIds": ["1224", "1225"] },
+        { "label": "Noveno semestre (marzo - julio)", "publishedCredits": 15, "courseIds": ["1730-A"] },
+        { "label": "Décimo semestre (agosto - diciembre)", "publishedCredits": 15, "courseIds": ["1730-B"] }
+      ]
+    },
+    {
+      "id": "august-pi-20-59",
+      "label": "Ingreso agosto · PI 20–59%",
+      "description": "Trayectoria sugerida completa para ingreso en agosto con resultado de Prueba Inicial entre 20% y 59%.",
+      "coverage": "complete-official",
+      "publishedTotalCredits": 329,
+      "periods": [
+        { "label": "Primer semestre (agosto - diciembre)", "publishedCredits": 23, "courseIds": ["MI2", "1023", "1373"] },
+        { "label": "Segundo semestre (marzo - julio)", "publishedCredits": 46, "courseIds": ["1061", "1030", "1027", "1321"] },
+        { "label": "Tercer semestre (agosto - diciembre)", "publishedCredits": 45, "courseIds": ["1062", "1466", "1323", "1224"], "recommendedCourseIds": ["1224"] },
+        { "label": "Cuarto semestre (marzo - julio)", "publishedCredits": 45, "courseIds": ["1026", "1031", "1324", "1537"] },
+        { "label": "Quinto semestre (agosto - diciembre)", "publishedCredits": 45, "courseIds": ["1911", "1327", "1446", "1225"], "recommendedCourseIds": ["1225"] },
+        { "label": "Sexto semestre (marzo - julio)", "publishedCredits": 37, "courseIds": ["1025", "1783", "1325", "1944"], "recommendedCourseIds": ["1944"] },
+        { "label": "Séptimo semestre (agosto - diciembre)", "publishedCredits": 38, "courseIds": ["1033", "1721", "1945", "1151"], "recommendedCourseIds": ["1945", "1151"] },
+        { "label": "Octavo semestre (marzo - julio)", "publishedCredits": 20, "courseIds": ["1650", "1340"], "choiceGroups": [{ "selectedCourseId": "1340", "alternativeCourseIds": ["1354"] }] },
+        { "label": "Noveno semestre (agosto - diciembre)", "publishedCredits": 15, "courseIds": ["1730-A"] },
+        { "label": "Décimo semestre (marzo - julio)", "publishedCredits": 15, "courseIds": ["1730-B"] }
+      ]
+    },
+    {
+      "id": "august-pi-60-plus",
+      "label": "Ingreso agosto · PI 60% o más",
+      "description": "Trayectoria sugerida completa para ingreso en agosto con resultado de Prueba Inicial de 60% o más.",
+      "coverage": "complete-official",
+      "publishedTotalCredits": 329,
+      "periods": [
+        { "label": "Primer semestre (agosto - diciembre)", "publishedCredits": 32, "courseIds": ["PI", "1030", "1023", "1373"] },
+        { "label": "Segundo semestre (marzo - julio)", "publishedCredits": 46, "courseIds": ["1061", "1031", "1027", "1321"] },
+        { "label": "Tercer semestre (agosto - diciembre)", "publishedCredits": 45, "courseIds": ["1062", "1466", "1323", "1224"], "recommendedCourseIds": ["1224"] },
+        { "label": "Cuarto semestre (marzo - julio)", "publishedCredits": 46, "courseIds": ["1025", "1026", "1324", "1537"] },
+        { "label": "Quinto semestre (agosto - diciembre)", "publishedCredits": 45, "courseIds": ["1911", "1327", "1446", "1225"], "recommendedCourseIds": ["1225"] },
+        { "label": "Sexto semestre (marzo - julio)", "publishedCredits": 37, "courseIds": ["1650", "1783", "1325", "1944"], "recommendedCourseIds": ["1944"] },
+        { "label": "Séptimo semestre (agosto - diciembre)", "publishedCredits": 38, "courseIds": ["1033", "1721", "1151", "1945"], "recommendedCourseIds": ["1151", "1945"] },
+        { "label": "Octavo semestre (marzo - julio)", "publishedCredits": 10, "courseIds": ["1340"], "choiceGroups": [{ "selectedCourseId": "1340", "alternativeCourseIds": ["1354"] }] },
+        { "label": "Noveno semestre (agosto - diciembre)", "publishedCredits": 15, "courseIds": ["1730-A"] },
+        { "label": "Décimo semestre (marzo - julio)", "publishedCredits": 15, "courseIds": ["1730-B"] }
+      ]
+    }
+  ],
+  "documentedGaps": [
+    "Para PI menor a 20% la fuente sólo publica el primer semestre y no fija una continuación única.",
+    "La tabla de agosto con PI 60% o más contiene la errata tipográfica ‘Cálculo Diferencial en Integral’; se conserva la identidad Bedelías 1061.",
+    "‘Programación Funcional o Programación Lógica’ es una elección: 1340 se usa como colocación visible y 1354 permanece disponible como alternativa del catálogo inicial.",
+    "Proyecto de Grado se publica en dos etapas de 15 créditos; se preservan los IDs históricos 1730-A y 1730-B, ambos vinculados al código Bedelías 1730."
+  ]
+}

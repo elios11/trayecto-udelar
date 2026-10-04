@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import bedeliasDataJson from "./data/computacion-1997-bedelias.json";
+import plan1997TrajectoryDataJson from "./data/computacion-1997-trayectorias.json";
 import plan2025DataJson from "./data/computacion-2025-fing.json";
 import courseOfferingsDataJson from "./data/course-offerings-prototype.json";
 import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, type CredentialId, type PlanId } from "./academic-catalog";
@@ -239,6 +240,29 @@ type Plan2025Projection = {
   rules: VerifiedRule[];
 };
 
+type Plan1997TrajectoryProjection = {
+  schemaVersion: number;
+  reviewedAt: string;
+  source: { publicationPage: string; resourcePage: string; documentUrl: string; documentSha256: string };
+  plan: { id: string; name: string; year: string; territory: string; additionalElectiveCredits: number };
+  courses: Array<{ id: string; bedeliasCode: string; name: string; credits: number; sourceCatalog: "initial" | "deferred" | "trajectory-source" }>;
+  trajectories: Record<string, {
+    label: string;
+    description: string;
+    coverage: "complete-official" | "partial-official";
+    continuation?: "not-uniquely-published";
+    publishedTotalCredits?: number;
+    periods: Array<{
+      label: string;
+      publishedCredits: number | null;
+      courseIds: string[];
+      recommendedCourseIds?: string[];
+      choiceGroups?: Array<{ selectedCourseId: string; alternativeCourseIds: string[] }>;
+    }>;
+  }>;
+  documentedGaps: string[];
+};
+
 type Electric2023Projection = Omit<Plan2025Projection, "trajectories" | "source" | "plan" | "courses" | "programSources"> & {
   source: { reviewedAt: string; profilesSpreadsheet: string; commissionPage: string; planDocument: string; bedeliasExtractedAt: string };
   plan: Plan2025Projection["plan"] & { approvalYear: number; careerCode: string; noPublishedRule: number; localCourses: number; externalEquivalences: number };
@@ -297,6 +321,7 @@ type RegisteredProjection = {
 };
 
 const bedeliasData = bedeliasDataJson as unknown as BedeliasProjection;
+const plan1997TrajectoryData = plan1997TrajectoryDataJson as unknown as Plan1997TrajectoryProjection;
 const plan2025Data = plan2025DataJson as unknown as Plan2025Projection;
 const courseOfferingEvidence = courseOfferingsDataJson as CourseOfferingEvidence[];
 
@@ -315,7 +340,11 @@ const buildPersonalDataCatalog = (loadedPlans: Partial<Record<PlanId, Registered
       curriculumRevision: curriculumRevisionForPlan(plan.id),
       defaultTrajectoryId: plan.defaultTrajectoryId,
       defaultCredentialId: plan.defaultCredentialId,
-      trajectoryIds: registration ? [...registration.pathwayIds] : [plan.defaultTrajectoryId],
+      trajectoryIds: registration
+        ? [...registration.pathwayIds]
+        : plan.id === "1997"
+          ? Object.keys(plan1997TrajectoryData.trajectories)
+          : [plan.defaultTrajectoryId],
       campusIds: campuses.map((campus) => campus.id),
       credentialIds: loaded?.creditStructure.credentials.map((credential) => credential.id) ?? [plan.defaultCredentialId],
       loadUnit: usesCredits ? "credits" : usesHours ? "hours" : "courses",
@@ -361,6 +390,7 @@ const plan1997PlacementTestSource = "https://eva.fing.edu.uy/pluginfile.php/7906
 const plan1997BaseCourses: Course[] = [
   { id: "PI", name: "Prueba Inicial", credits: 4, semester: 0, area: "Matemática", creditAllocations: [], placementTest: true, offered: ["impar", "par"] },
   { id: "MI2", name: "Matemática Inicial", credits: 4, semester: 1, area: "Matemática", offered: ["impar", "par"] },
+  { id: "1275", name: "Taller Básico de Estrategias y Orientación (TBEO)", credits: 3, semester: "opt", area: "Optativa", eligibleRequirementIds: ["p1997-optional"], creditAllocations: [{ nodeId: "p1997-optional", credits: 3, status: "official", sourceUrl: "https://bedelias.udelar.edu.uy/" }], offered: [] },
   { id: "1023", name: "Matemática Discreta 1", credits: 9, semester: 1, area: "Fundamentos", offered: ["impar", "par", "libre"] },
   { id: "1373", name: "Programación 1", credits: 10, semester: 1, area: "Programación", offered: ["impar", "par"] },
   { id: "1061", name: "Cálculo Diferencial e Integral en una Variable", credits: 13, semester: 2, area: "Matemática", prerequisites: ["MI2"], offered: ["impar", "par", "libre"] },
@@ -430,6 +460,8 @@ const plan1997FlexibleCourses: Course[] = bedeliasData.courses
 
 const plan1997Courses = [...plan1997TrajectoryCourses, ...plan1997FlexibleCourses];
 const initialPlan1997CourseIds = new Set(plan1997Courses.map((course) => course.id));
+const plan1997TrajectoryCourseIds = new Set(plan1997TrajectoryCourses.map((course) => course.id));
+const plan1997AuditedCourseIds = new Set(plan1997TrajectoryData.courses.filter((course) => course.id !== "PI").map((course) => course.id));
 const plan1997NodeLabels = new Map(bedeliasData.creditStructure.nodes.map((node) => [node.id, node.shortName ?? node.name]));
 const plan2025CatalogCourses: Course[] = (() => {
   const projected = plan2025Data.courses.map((course) => ({ ...course, semester: "opt" as const, offered: [] }));
@@ -471,6 +503,15 @@ function buildPlan2025Courses(trajectoryId: string): Course[] {
   return plan2025Data.courses
     .filter((course) => semesters.has(course.id))
     .map((course) => ({ ...course, semester: semesters.get(course.id)!, offered: [] }));
+}
+
+function buildPlan1997Courses(trajectoryId: string, catalog: Course[]): Course[] {
+  const trajectory = plan1997TrajectoryData.trajectories[trajectoryId] ?? plan1997TrajectoryData.trajectories["pi-20-59"];
+  const semesters = new Map<string, number>();
+  trajectory.periods.forEach((period, index) => period.courseIds.forEach((id) => semesters.set(id, index + 1)));
+  return catalog
+    .filter((course) => semesters.has(course.id) || !plan1997TrajectoryCourseIds.has(course.id))
+    .map((course) => ({ ...course, semester: semesters.get(course.id) ?? "opt" }));
 }
 
 function buildElectric2023Courses(profileId: string, data: Electric2023Projection | null): Course[] {
@@ -1084,7 +1125,7 @@ export default function Home() {
     ensureFullCatalogForSearch(value);
   };
   const extendedPlan1997Courses = useMemo(
-    () => buildExtendedPlan1997Courses(extendedElectivesData),
+    () => buildExtendedPlan1997Courses(extendedElectivesData).filter((course) => !initialPlan1997CourseIds.has(course.id)),
     [extendedElectivesData],
   );
   const extendedPlan1997CourseIds = useMemo(() => new Set(extendedPlan1997Courses.map((course) => course.id)), [extendedPlan1997Courses]);
@@ -1109,7 +1150,7 @@ export default function Home() {
       ? registeredAvailableCourses
       : planYear === "2025"
       ? buildPlan2025Courses(trajectoryId)
-      : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : plan1997AvailableCourses,
+      : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : buildPlan1997Courses(trajectoryId, plan1997AvailableCourses),
     [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses, isRegisteredPlan, registeredAvailableCourses],
   );
   const plannerCourses = useMemo<Course[]>(() => isRegisteredPlan
@@ -1207,6 +1248,7 @@ export default function Home() {
     ? plan2025Data.creditStructure
     : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const activePlan2025Trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
+  const activePlan1997Trajectory = plan1997TrajectoryData.trajectories[trajectoryId] ?? plan1997TrajectoryData.trajectories["pi-20-59"];
   const activeRegisteredPathway = registeredPathwayEntries.find(([id]) => id === activeRegisteredPathwayId)?.[1];
   const activeRegisteredPeriods = activeRegisteredPresentation.periods;
   const requirementNodes = creditStructure.nodes;
@@ -1221,7 +1263,7 @@ export default function Home() {
       ...(activePlan2025Trajectory.preSemester?.length ? [0] : []),
       ...activePlan2025Trajectory.semesters.map((_, index) => index + 1),
     ]
-    : isProfilePlan || planYear === "qf-2015" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    : isProfilePlan || planYear === "qf-2015" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : activePlan1997Trajectory.periods.map((_, index) => index + 1);
   const planMinCredits = isRegisteredPlan
     ? (activeRegisteredPlan?.plan.minCredits ?? registeredAcademicPlans[planYear]?.minCredits ?? 0)
     : planYear === "2025"
@@ -2079,7 +2121,7 @@ export default function Home() {
     const matches = courses.filter((course) => {
       const matchesSemester = course.semester === semester;
       const matchesSearch = matchesCourseSearch(course, courseAreaLabel(course), search);
-      const isReplacedByPlacementTest = course.id === "MI2" && statuses.PI === "exonerated";
+      const isReplacedByPlacementTest = planYear === "2025" && course.id === "MI2" && statuses.PI === "exonerated";
       const isSearchOnlyPlan1997Elective = extendedPlan1997CourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
     const isSearchOnlyElectricElective = profileCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
     const isSearchOnlyQfElective = qfCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !search.trim() && !hasRecordedCourseProgress(statuses[course.id]);
@@ -2627,7 +2669,7 @@ export default function Home() {
     return Boolean(courseRule && expressionReferencesCode(courseRule.expression, selected.id));
   }) : [];
   const sourceLabel = (course: Course): "Bedelías" | "FING" | "FQ" | "FADU" | "Udelar" | undefined => {
-    if (planYear === "1997") return course.id === "PI" ? "FING" : verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
+    if (planYear === "1997") return course.id === "PI" ? "FING" : plan1997AuditedCourseIds.has(course.id) || verifiedCourses.has(course.id.startsWith("1730-") ? "1730" : course.id) ? "Bedelías" : undefined;
     return course.dataStatus === "bedelias-composition" ? "Bedelías" : course.dataStatus === "fing-trajectory" ? "FING" : course.dataStatus === "fq-damero" ? "FQ" : course.dataStatus === "fadu-official" ? "FADU" : course.dataStatus === "official-curriculum" ? "Udelar" : undefined;
   };
   const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : planYear === "qf-2015" ? qfCatalogLoadState : extendedElectivesLoadState;
@@ -3019,7 +3061,9 @@ export default function Home() {
                   <option value={id} key={id}>{profile.label}</option>
                 )) : planYear === "qf-2015" ? Object.entries(qf2015Data?.trajectories ?? {}).map(([id, trajectory]) => (
                   <option value={id} key={id}>{trajectory.label}</option>
-                )) : <option value="pi-20-59">Ingreso 1er semestre · PI 20–59%</option>}
+                )) : Object.entries(plan1997TrajectoryData.trajectories).map(([id, trajectory]) => (
+                  <option value={id} key={id}>{trajectory.label}</option>
+                ))}
               </select>
             </label>}
           </div>
@@ -3034,7 +3078,7 @@ export default function Home() {
           ) : planYear === "qf-2015" ? (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{qf2015Data?.trajectories[trajectoryId]?.description} Los 71 créditos optativos y electivos se eligen del catálogo vigente y no tienen un semestre único.</span></p>
           ) : (
-            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">Semestres de la trayectoria sugerida compartida. Créditos, áreas y reglas centrales importados de Bedelías; núcleo obligatorio contrastado con la implementación curricular de FING.</span></p>
+            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activePlan1997Trajectory.description} La grilla reproduce la trayectoria oficial de Montevideo; las materias con asterisco en la fuente son recomendaciones, no obligaciones, y los 119 créditos optativos adicionales no tienen un semestre único.</span></p>
           )}
         </div>
 
@@ -3392,10 +3436,9 @@ export default function Home() {
                 <section className="semester-column" key={semester}>
                   <header>
                     <span>{semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
-                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{coursesLoadLabel(filtered(semester))}</p></div>
+                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : planYear === "1997" ? activePlan1997Trajectory.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{coursesLoadLabel(filtered(semester))}</p></div>
                   </header>
                   <div className="course-stack">
-                    {planYear === "1997" && semester === 1 && statuses.PI === "exonerated" && <p className="replacement-note">✓ Matemática Inicial sustituida por la Prueba Inicial.</p>}
                     {filtered(semester).map((course) => (
                       <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}

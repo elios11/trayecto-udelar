@@ -36,15 +36,15 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 88,
-    "official-trajectory-identified-pending": 2,
+    "official-trajectory-reproduced": 89,
+    "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 1,
     "research-pending": 56,
   });
-  assert.equal(savedInventory.pendingQueue.total, 58);
-  assert.equal(savedInventory.pendingQueue.plans.length, 58);
-  assert.ok(savedInventory.pendingQueue.plans.slice(0, 2).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
-  assert.ok(savedInventory.pendingQueue.plans.slice(2).every(({ priority, state }) => priority === 2 && state === "research-pending"));
+  assert.equal(savedInventory.pendingQueue.total, 57);
+  assert.equal(savedInventory.pendingQueue.plans.length, 57);
+  assert.ok(savedInventory.pendingQueue.plans.slice(0, 1).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
+  assert.ok(savedInventory.pendingQueue.plans.slice(1).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
   for (const plan of savedInventory.plans) {
     assert.ok(TRAJECTORY_STATES.includes(plan.state));
@@ -60,6 +60,22 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
       }
     }
   }
+});
+
+test("D03s cierra Computación 1997 con cuatro trayectorias completas y el tramo PI menor a 20", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "1997");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-profiles");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["pi-under-20", 1],
+    ["pi-20-59", 10],
+    ["pi-60-plus", 10],
+    ["august-pi-20-59", 10],
+    ["august-pi-60-plus", 10],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 126);
+  assert.equal(plan.evidence.matchedCoursePlacements, 126);
+  assert.deepEqual(plan.scope.territories, ["Montevideo"]);
 });
 
 test("D03l cierra Ingeniería Química con las dos currículas exactas y conserva Salto parcial", () => {

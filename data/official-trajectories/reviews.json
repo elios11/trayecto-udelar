@@ -804,28 +804,41 @@
     },
     {
       "planId": "1997",
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-09-22",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-03",
       "effectiveAt": "2025",
-      "projectionMechanism": "official-periods",
+      "projectionMechanism": "official-profiles",
       "scope": {
         "territories": ["Montevideo"],
-        "pathwayIds": ["pi-20-59"]
+        "pathwayIds": ["pi-under-20", "pi-20-59", "pi-60-plus", "august-pi-20-59", "august-pi-60-plus"]
       },
       "sources": [
         {
           "authority": "Comisión de Carrera de Computación, Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=800&section=5",
+          "role": "sección vigente del Plan 97 que publica la trayectoria sugerida de Montevideo"
+        },
+        {
+          "authority": "Comisión de Carrera de Computación, Facultad de Ingeniería, Udelar",
           "url": "https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf",
-          "role": "trayectoria sugerida 2025 localizada en la implementación"
+          "role": "cinco variantes: cuatro trayectorias completas y el tramo inicial para PI menor a 20%",
+          "contentHash": "sha256:1695f507d635737823ace832d35d24e95aee0ca1508c9fe7445d42423434f089"
         }
       ],
       "evidence": {
-        "kind": "source-identified",
-        "repositoryPath": "app/page.tsx",
-        "reason": "La trayectoria está codificada y enlazada, pero todavía no existe un artefacto auditado que permita cotejar automáticamente todos sus períodos contra la fuente."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/computacion-1997-trayectorias.json",
+        "sourceCollection": "trajectories",
+        "projectionDataPath": "app/data/computacion-1997-trayectorias.json",
+        "projectionCollection": "trajectories",
+        "periodField": "periods",
+        "compareCoursePlacements": true
       },
       "conflictNotes": [
-        "La fecha corresponde a la revisión del repositorio; la vigencia documental y la correspondencia completa deben cerrarse en un lote D03."
+        "Para PI menor a 20% sólo se reproduce el primer semestre publicado; la fuente no determina una continuación única.",
+        "Programación Funcional o Programación Lógica se conserva como elección: 1340 queda visible en la grilla y 1354 permanece disponible en el catálogo.",
+        "Las cuatro trayectorias completas distribuyen 329 créditos y la fuente exige además 119 créditos optativos sin semestre único.",
+        "Proyecto de Grado conserva los IDs históricos 1730-A y 1730-B, con 15 créditos por etapa y una única identidad Bedelías 1730."
       ]
     },
     {

@@ -5,18 +5,18 @@
     "extractedCatalogHash": "sha256:ecfac0dacfda31ed775e2817dd3d15b7036cb2c27b4520ea3455743bbfc9ad06",
     "extractedReportHash": "sha256:45a43c58cc884f859325c8f948cbbcc31dea48f0183953ed22fa8bf82b3a63aa",
     "officialAuditHash": "sha256:66d4a0cf5968e741bd2d2185634391b7dddb64beb0991f730f3f3218b69d03e8",
-    "reviewedTrajectoriesHash": "sha256:d87c856ba2ac3b2e2c0d63629a66d7256f4e575049dd03c48b1ec267501e4de0"
+    "reviewedTrajectoriesHash": "sha256:e69d2c2652946e81f40cae31ca9b96cb2f2dbeda73fbbea5bb534b58090ceae3"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 88,
-      "official-trajectory-identified-pending": 2,
+      "official-trajectory-reproduced": 89,
+      "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 1,
       "research-pending": 56
     },
-    "pending": 58,
+    "pending": 57,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -199,8 +199,8 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 11,
-          "official-trajectory-identified-pending": 2,
+          "official-trajectory-reproduced": 12,
+          "official-trajectory-identified-pending": 1,
           "no-official-trajectory-documented": 0,
           "research-pending": 5
         }
@@ -274,17 +274,8 @@
     ]
   },
   "pendingQueue": {
-    "total": 58,
+    "total": 57,
     "plans": [
-      {
-        "priority": 1,
-        "planId": "1997",
-        "state": "official-trajectory-identified-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "La trayectoria está codificada y enlazada, pero todavía no existe un artefacto auditado que permita cotejar automáticamente todos sus períodos contra la fuente."
-      },
       {
         "priority": 1,
         "planId": "2025",
@@ -934,7 +925,6 @@
         "serviceId": "fing",
         "serviceLabel": "Facultad de Ingeniería",
         "identifiedPending": [
-          "1997",
           "2025"
         ],
         "researchPending": [
@@ -1003,14 +993,20 @@
           "defaultCredentialId": "engineer"
         }
       ],
-      "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-09-22",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-03",
       "effectiveAt": "2025",
       "officialSources": [
         {
           "authority": "Comisión de Carrera de Computación, Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=800&section=5",
+          "role": "sección vigente del Plan 97 que publica la trayectoria sugerida de Montevideo"
+        },
+        {
+          "authority": "Comisión de Carrera de Computación, Facultad de Ingeniería, Udelar",
           "url": "https://eva.fing.edu.uy/pluginfile.php/79060/mod_resource/content/5/TrayectoriaSugerida_2025_Montevideo.pdf",
-          "role": "trayectoria sugerida 2025 localizada en la implementación"
+          "role": "cinco variantes: cuatro trayectorias completas y el tramo inicial para PI menor a 20%",
+          "contentHash": "sha256:1695f507d635737823ace832d35d24e95aee0ca1508c9fe7445d42423434f089"
         }
       ],
       "scope": {
@@ -1018,22 +1014,59 @@
           "Montevideo"
         ],
         "pathwayIds": [
-          "pi-20-59"
+          "pi-under-20",
+          "pi-20-59",
+          "pi-60-plus",
+          "august-pi-20-59",
+          "august-pi-60-plus"
         ]
       },
       "currentProjection": {
-        "primary": "official-periods",
+        "primary": "official-profiles",
         "features": [
-          "official-periods"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "source-identified",
-        "repositoryPath": "app/page.tsx",
-        "reason": "La trayectoria está codificada y enlazada, pero todavía no existe un artefacto auditado que permita cotejar automáticamente todos sus períodos contra la fuente."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/computacion-1997-trayectorias.json",
+        "sourceCollection": "trajectories",
+        "projectionDataPath": "app/data/computacion-1997-trayectorias.json",
+        "projectionCollection": "trajectories",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:6ba620e9eb5184524677bfc78e5d8631e88025a2c6dbee83c1a8a48250f9f09a",
+        "projectionContentHash": "sha256:818cb6f3551ea0424cebb189d5dd6b47890c7882e055ad0dda745c5d1b9567c0",
+        "pathways": [
+          {
+            "id": "pi-under-20",
+            "periodCount": 1
+          },
+          {
+            "id": "pi-20-59",
+            "periodCount": 10
+          },
+          {
+            "id": "pi-60-plus",
+            "periodCount": 10
+          },
+          {
+            "id": "august-pi-20-59",
+            "periodCount": 10
+          },
+          {
+            "id": "august-pi-60-plus",
+            "periodCount": 10
+          }
+        ],
+        "expectedCoursePlacements": 126,
+        "matchedCoursePlacements": 126
       },
       "conflictNotes": [
-        "La fecha corresponde a la revisión del repositorio; la vigencia documental y la correspondencia completa deben cerrarse en un lote D03."
+        "Para PI menor a 20% sólo se reproduce el primer semestre publicado; la fuente no determina una continuación única.",
+        "Programación Funcional o Programación Lógica se conserva como elección: 1340 queda visible en la grilla y 1354 permanece disponible en el catálogo.",
+        "Las cuatro trayectorias completas distribuyen 329 créditos y la fuente exige además 119 créditos optativos sin semestre único.",
+        "Proyecto de Grado conserva los IDs históricos 1730-A y 1730-B, con 15 créditos por etapa y una única identidad Bedelías 1730."
       ]
     },
     {
@@ -13211,5 +13244,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:3906669281721a60475821d49f546385012af424d6402249039008436b5f8895"
+  "contentHash": "sha256:69ab2f478d3244099c497c93dd2a1b29051c65e793551233b463cd63fcac7770"
 }
