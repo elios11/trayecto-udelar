@@ -844,33 +844,54 @@
     {
       "planId": "2025",
       "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-08-08",
+      "reviewedAt": "2026-10-04",
       "effectiveAt": "2026",
       "projectionMechanism": "official-periods",
       "scope": {
-        "territories": ["Montevideo", "Tacuarembó", "Colonia", "Salto", "Paysandú"],
+        "territories": ["Montevideo"],
         "pathwayIds": ["pi-under-20", "pi-60-plus", "pi-20-59"]
       },
       "sources": [
         {
+          "authority": "Comisión de Carrera de Computación, Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=800&section=4",
+          "role": "vigencia desde la generación 2026, criterio de ingreso por Prueba Inicial y tramo PI menor a 20%",
+          "contentHash": "sha256:ea8eb1ce31558586e13df1d1e17b67e8796a914fb5cc52a98de4564eb064d043"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909",
+          "role": "Plan de Estudios de Ingeniería en Computación del 21 de mayo de 2025; 450 créditos y cinco años",
+          "contentHash": "sha256:90f781344eab5e356b51010005c4075322151ad1ddd3b174d8aa0f0260f623db"
+        },
+        {
           "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72912",
-          "role": "trayectoria para resultado de Prueba Inicial de 60% o más"
+          "role": "trayectoria de Montevideo para ingreso en primer semestre y resultado de Prueba Inicial de 60% o más",
+          "contentHash": "sha256:0fb7bfda8bd8d848da66b5be49b37d2a2566934a30a2e9326bd62ecb940e7539"
         },
         {
           "authority": "Facultad de Ingeniería, Udelar",
           "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72913",
-          "role": "trayectoria para resultado de Prueba Inicial entre 20% y 59%"
+          "role": "trayectoria de Montevideo para ingreso en primer semestre y resultado de Prueba Inicial entre 20% y 59%",
+          "contentHash": "sha256:e0cffb6037fde785c1e091542437c74c58a0b7c0884002b6d208633e56e5584f"
         }
       ],
       "evidence": {
-        "kind": "source-identified",
+        "kind": "audited-projection",
         "sourceDataPath": "data/fing/computacion-2025-trayectorias.json",
         "projectionDataPath": "app/data/computacion-2025-fing.json",
-        "reason": "La proyección declara que sólo cubre el núcleo común hasta el octavo semestre y deja sin ubicación semestral completa perfiles, optativas, créditos complementarios y Proyecto de Grado."
+        "sourceCollection": "trajectories",
+        "projectionCollection": "trajectories",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "coverage": "partial-official",
+        "reason": "La correspondencia de los períodos publicados queda estructurada, pero la proyección sólo cubre hasta el octavo semestre y no cierra los diez semestres ni 450 créditos de Ingeniería."
       },
       "conflictNotes": [
-        "La Prueba Inicial de cuatro créditos para la rama de 60% o más continúa marcada como supuesto operativo pendiente de confirmación documental explícita para 2026."
+        "Las fuentes cotejadas no publican la Prueba Inicial como unidad curricular ni le asignan cuatro créditos; la UI deja de acreditarla automáticamente y conserva PI sólo como ID histórico no curricular.",
+        "Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos permanecen sin ubicación dentro de estas trayectorias de ocho semestres; no se extrapolan desde el ejemplo general del plan.",
+        "La sección EVA vigente al 4 de octubre de 2026 enlaza además trayectorias de ingreso en segundo semestre y recorridos regionales. Quedan inventariados como brecha pendiente y este nodo no los mezcla con las dos trayectorias de Montevideo especificadas."
       ]
     },
     {

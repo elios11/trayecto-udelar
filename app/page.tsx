@@ -235,8 +235,8 @@ type Plan2025Projection = {
   plan: { minCredits: number; intermediateCredits: number; intermediateTitle: string; degreeTitle: string; notice: string; bedeliasCompositionCourses: number; publishedRules: number };
   creditStructure: CreditStructure;
   programSources: Array<{ courseCode: string; courseName: string; area: string; url: string }>;
-  courses: Array<{ id: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; placementTest?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" | "project-assumption" }>;
-  trajectories: Record<string, { label: string; description: string; notice?: string; preSemester?: string[]; semesters: string[][] }>;
+  courses: Array<{ id: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; placementTest?: boolean; nonCurricular?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" | "project-assumption" }>;
+  trajectories: Record<string, { label: string; description: string; notice?: string; coverage?: "partial-official"; periods: Array<{ label: string; publishedCredits: number; courseIds: string[] }>; semesters: string[][] }>;
   rules: VerifiedRule[];
 };
 
@@ -462,24 +462,9 @@ const plan1997Courses = [...plan1997TrajectoryCourses, ...plan1997FlexibleCourse
 const initialPlan1997CourseIds = new Set(plan1997Courses.map((course) => course.id));
 const plan1997TrajectoryCourseIds = new Set(plan1997TrajectoryCourses.map((course) => course.id));
 const plan1997AuditedCourseIds = new Set(plan1997TrajectoryData.courses.filter((course) => course.id !== "PI").map((course) => course.id));
-const plan1997NodeLabels = new Map(bedeliasData.creditStructure.nodes.map((node) => [node.id, node.shortName ?? node.name]));
-const plan2025CatalogCourses: Course[] = (() => {
-  const projected = plan2025Data.courses.map((course) => ({ ...course, semester: "opt" as const, offered: [] }));
-  const projectedIds = new Set(projected.map((course) => course.id));
-  const projectedNames = new Set(projected.map((course) => course.name.toLocaleLowerCase("es-UY")));
-  const electives = plan1997FlexibleCourses
-    .filter((course) => !projectedIds.has(course.id) && !projectedNames.has(course.name.toLocaleLowerCase("es-UY")))
-    .map((course) => ({
-      ...course,
-      semester: "opt" as const,
-      area: plan1997NodeLabels.get(course.creditAllocations?.[0]?.nodeId ?? "") ?? "Optativa",
-      eligibleRequirementIds: [],
-      creditAllocations: [],
-      offered: [],
-      elective: true,
-    }));
-  return [...projected, ...electives];
-})();
+const plan2025CatalogCourses: Course[] = plan2025Data.courses
+  .filter((course) => !course.nonCurricular)
+  .map((course) => ({ ...course, semester: "opt" as const, offered: [] }));
 
 
 function buildExtendedPlan1997Courses(data: ExtendedElectivesProjection | null): Course[] {
@@ -498,7 +483,6 @@ function buildExtendedPlan1997Courses(data: ExtendedElectivesProjection | null):
 function buildPlan2025Courses(trajectoryId: string): Course[] {
   const trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const semesters = new Map<string, number>();
-  trajectory.preSemester?.forEach((id) => semesters.set(id, 0));
   trajectory.semesters.forEach((ids, index) => ids.forEach((id) => semesters.set(id, index + 1)));
   return plan2025Data.courses
     .filter((course) => semesters.has(course.id))
@@ -1199,10 +1183,8 @@ export default function Home() {
         if (aliasStatus && priority[aliasStatus] > priority[storedStatuses[course.id] ?? "pending"]) storedStatuses[course.id] = aliasStatus;
       }
     }
-    return planYear === "2025" && trajectoryId === "pi-60-plus"
-      ? { ...storedStatuses, PI: "exonerated" as CourseStatus }
-      : storedStatuses;
-  }, [progress, activeProgressPlanId, planYear, trajectoryId, activeCourses]);
+    return storedStatuses;
+  }, [progress, activeProgressPlanId, activeCourses]);
   const officialStatuses = useMemo(() => {
     if (!isRegisteredPlan || !activeRegisteredPlan) return statuses;
     const result = { ...statuses };
@@ -1259,10 +1241,7 @@ export default function Home() {
   const semesters = isRegisteredPlan
     ? activeRegisteredPeriods.map((_, index) => index + 1)
     : planYear === "2025"
-    ? [
-      ...(activePlan2025Trajectory.preSemester?.length ? [0] : []),
-      ...activePlan2025Trajectory.semesters.map((_, index) => index + 1),
-    ]
+    ? activePlan2025Trajectory.semesters.map((_, index) => index + 1)
     : isProfilePlan || planYear === "qf-2015" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : activePlan1997Trajectory.periods.map((_, index) => index + 1);
   const planMinCredits = isRegisteredPlan
     ? (activeRegisteredPlan?.plan.minCredits ?? registeredAcademicPlans[planYear]?.minCredits ?? 0)
@@ -1851,8 +1830,7 @@ export default function Home() {
   const credentialRequirementsTotal = (hasTotalCreditRequirement ? 1 : 0) + countableNodeRequirements.length + alternativeNodeRequirements.length + credential.requiredCourseGroups.length + credential.requiredActivities.length;
 
   const isComplete = (id: string) => officialStatuses[id] === "approved" || officialStatuses[id] === "exonerated";
-  const isFixedPlacementTest = (course: Course) => planYear === "2025" && trajectoryId === "pi-60-plus" && course.id === "PI";
-  const isRequirementComplete = (id: string) => id === "MI2"
+  const isRequirementComplete = (id: string) => id === "MI2" && planYear === "1997"
     ? isComplete("MI2") || officialStatuses.PI === "exonerated"
     : isComplete(id);
   const officialRule = (course: Course, assessment: "course" | "exam") => verifiedRules.get(`${course.bedeliasCode ?? (course.id === "1730-A" ? "1730" : course.id)}:${assessment}`);
@@ -2103,7 +2081,7 @@ export default function Home() {
   };
 
   const cycleStatus = (course: Course) => {
-    if (course.placeholder || !isUnlocked(course) || isFixedPlacementTest(course)) return;
+    if (course.placeholder || !isUnlocked(course)) return;
     rememberUndo(`cambio de estado de ${course.name}`);
     const currentStatus = statuses[course.id] ?? "pending";
     const next: CourseStatus = course.placementTest
@@ -3046,9 +3024,6 @@ export default function Home() {
                 setTrajectoryId(next);
                 const nextCredentialId = isRegisteredPlan ? activeRegisteredPlan?.pathways[next]?.credentialId : undefined;
                 if (nextCredentialId) setCredentialId(nextCredentialId);
-                if (planYear === "2025" && next !== "pi-60-plus") {
-                  setStatuses((current) => ({ ...current, PI: "pending" }));
-                }
                 setSelected(null);
               }}>
                 {isRegisteredPlan ? registeredPathwayEntries.map(([id, pathway]) => (
@@ -3440,7 +3415,7 @@ export default function Home() {
                   </header>
                   <div className="course-stack">
                     {filtered(semester).map((course) => (
-                      <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                      <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={false} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                     ))}
                     {filtered(semester).length === 0 && <p className="empty-column">Sin resultados</p>}
                   </div>
@@ -3458,7 +3433,7 @@ export default function Home() {
               <>
               <div className="electives-grid">
                 {displayedElectives.map((course) => (
-                  <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={isFixedPlacementTest(course)} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
+                  <CourseCard key={course.id} course={course} areaLabel={courseAreaLabel(course)} allocationStatus={courseAllocationStatus(course)} status={statuses[course.id] ?? "pending"} unlocked={isUnlocked(course)} rulesKnown={isCourseAvailabilityKnown(course)} fixed={false} sourceLabel={sourceLabel(course)} onCycle={() => cycleStatus(course)} onDetails={() => setSelected(course)} />
                 ))}
               </div>
               {isRegisteredPlan ? <div className="electives-loader" role="status" aria-live="polite">
@@ -3653,11 +3628,9 @@ export default function Home() {
                 </div>
               </div>
             </details>}
-            <button className="primary-button" disabled={selected.placeholder || !isUnlocked(selected) || isFixedPlacementTest(selected)} onClick={() => cycleStatus(selected)}>
+            <button className="primary-button" disabled={selected.placeholder || !isUnlocked(selected)} onClick={() => cycleStatus(selected)}>
               {selected.placeholder
                 ? "Elegí una materia del catálogo"
-                : isFixedPlacementTest(selected)
-                ? "Acreditada automáticamente por la trayectoria"
                 : selected.placementTest
                 ? (statuses.PI === "exonerated" ? "Desmarcar Prueba Inicial" : "Acreditar Prueba Inicial")
                 : isUnlocked(selected) ? `Marcar como ${(statuses[selected.id] ?? "pending") === "pending" ? "aprobada" : (statuses[selected.id] ?? "pending") === "approved" ? "exonerada" : "pendiente"}` : selectedStatus === "approved" ? "Examen aún no habilitado" : "Materia aún no habilitada"}

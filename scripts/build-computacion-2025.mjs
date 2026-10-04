@@ -17,7 +17,12 @@ const composition = new Map(
     .filter((course) => !course.serviceCode || course.serviceCode === bedelias.service.code)
     .map((course) => [course.code, course]),
 );
-const trajectoryIds = new Set(trajectory.courses.map((course) => course.id));
+const projectedTrajectories = Object.fromEntries(Object.entries(trajectory.trajectories).map(([id, item]) => [id, {
+  ...item,
+  semesters: item.periods.map((period) => period.courseIds),
+}]));
+const trajectoryIds = new Set(Object.values(projectedTrajectories)
+  .flatMap((item) => item.periods.flatMap((period) => period.courseIds)));
 const rules = bedelias.prerequisites
   .filter((rule) => isRequirementExpressionEvaluable(rule.expression) && trajectoryIds.has(rule.target?.code))
   .map(({ target, expression, heading, sourceUrl }) => ({ target, expression, heading, sourceUrl }));
@@ -25,6 +30,15 @@ const rules = bedelias.prerequisites
 const projectedCourses = trajectory.courses.map((course) => {
   const courseFields = { ...course };
   delete courseFields.area;
+  if (course.nonCurricular) {
+    return {
+      ...courseFields,
+      credits: 0,
+      dataStatus: course.dataStatus ?? "project-assumption",
+      eligibleRequirementIds: [],
+      creditAllocations: [],
+    };
+  }
   const official = composition.get(course.id);
   const credits = official?.credits ?? course.credits;
   const allocation = allocationFromPaths(
@@ -42,7 +56,7 @@ const projectedCourses = trajectory.courses.map((course) => {
   };
 });
 const programUrls = new Set(programCatalog.programs.map((program) => program.url));
-const sourceCoverage = projectedCourses.reduce((summary, course) => {
+const sourceCoverage = projectedCourses.filter((course) => !course.nonCurricular).reduce((summary, course) => {
   const allocation = course.creditAllocations[0];
   if (!allocation) summary.missing += 1;
   else if (allocation.status === "suggested") summary.suggested += 1;
@@ -73,7 +87,8 @@ const output = {
   programSources: programCatalog.programs.filter((program) => program.planYears.includes("2025")),
   sourceCoverage,
   courses: projectedCourses,
-  trajectories: trajectory.trajectories,
+  trajectories: projectedTrajectories,
+  documentedGaps: trajectory.documentedGaps,
   rules,
 };
 

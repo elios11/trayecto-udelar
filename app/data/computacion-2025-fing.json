@@ -7,7 +7,50 @@
     "trajectory60Plus": "https://eva.fing.edu.uy/mod/resource/view.php?id=72912",
     "trajectory20To59": "https://eva.fing.edu.uy/mod/resource/view.php?id=72913",
     "news": "https://www.fing.edu.uy/es/node/52537",
-    "reviewedAt": "2026-08-08",
+    "reviewedAt": "2026-10-04",
+    "evidence": {
+      "retrievedAt": "2026-10-04",
+      "documents": [
+        {
+          "id": "curriculum-section",
+          "url": "https://eva.fing.edu.uy/course/view.php?id=800&section=4",
+          "mediaType": "text/html",
+          "contentHash": "sha256:ea8eb1ce31558586e13df1d1e17b67e8796a914fb5cc52a98de4564eb064d043"
+        },
+        {
+          "id": "plan-2025",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909",
+          "mediaType": "application/pdf",
+          "documentDate": "2025-05-21",
+          "pdfCreationDate": "2025-07-14T10:54:25-03:00",
+          "pages": 14,
+          "contentHash": "sha256:90f781344eab5e356b51010005c4075322151ad1ddd3b174d8aa0f0260f623db"
+        },
+        {
+          "id": "trajectory-pi-60-plus",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72912",
+          "mediaType": "application/pdf",
+          "pdfCreationDate": "2025-12-17T00:09:35-03:00",
+          "pages": 1,
+          "contentHash": "sha256:0fb7bfda8bd8d848da66b5be49b37d2a2566934a30a2e9326bd62ecb940e7539"
+        },
+        {
+          "id": "trajectory-pi-20-59",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72913",
+          "mediaType": "application/pdf",
+          "pdfCreationDate": "2025-12-17T00:36:54-03:00",
+          "pages": 1,
+          "contentHash": "sha256:e0cffb6037fde785c1e091542437c74c58a0b7c0884002b6d208633e56e5584f"
+        }
+      ],
+      "additionalResourcesPendingReconciliation": [
+        "https://eva.fing.edu.uy/mod/resource/view.php?id=83838",
+        "https://eva.fing.edu.uy/mod/resource/view.php?id=83839",
+        "https://eva.fing.edu.uy/mod/resource/view.php?id=72916",
+        "https://eva.fing.edu.uy/mod/resource/view.php?id=72919",
+        "https://eva.fing.edu.uy/mod/resource/view.php?id=72922"
+      ]
+    },
     "bedeliasSystem": "SGAE Bedelías",
     "bedeliasExtractedAt": "2026-08-08T17:31:55.998Z",
     "bedeliasContentHash": "b9ccfbb98d1cd12e214425dbc4443a3599320d8fc7dcf0d7ae5a51f53ae52a59",
@@ -23,9 +66,9 @@
     "intermediateCredits": 270,
     "degreeTitle": "Ingeniero/a en Computación",
     "implementationStatus": "in-progress",
-    "placementTestCredits": 4,
-    "placementTestCreditsStatus": "assumed-current-pending-verification",
-    "notice": "La trayectoria publicada cubre el núcleo común y requisitos específicos hasta el octavo semestre. Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos no tienen todavía una ubicación semestral completa en esta proyección. Para la rama de 60% o más, la Prueba Inicial se representa como una instancia presemestre de 4 créditos que sustituye Matemática Inicial. Es un supuesto operativo del proyecto, coherente con la regla histórica, pendiente de confirmación documental explícita para 2026.",
+    "placementTestCredits": null,
+    "placementTestCreditsStatus": "not-published-as-curricular-credit",
+    "notice": "Las dos trayectorias de ingreso en primer semestre publicadas para Montevideo cubren el núcleo común y requisitos específicos hasta el octavo semestre. No ubican todavía perfiles, optativas, los 20 créditos complementarios ni el Proyecto de Grado de 30 créditos dentro de una trayectoria completa de diez semestres. La Prueba Inicial determina qué recorrido se recomienda, pero estas fuentes no la publican como unidad curricular ni le asignan créditos.",
     "bedeliasCompositionCourses": 38,
     "publishedRules": 17
   },
@@ -261,26 +304,20 @@
   "sourceCoverage": {
     "officialProgram": 0,
     "officialBedelias": 11,
-    "suggested": 22,
+    "suggested": 21,
     "conflicts": 0,
     "missing": 0
   },
   "courses": [
     {
       "id": "PI",
-      "name": "Prueba Inicial",
-      "credits": 4,
-      "placementTest": true,
+      "name": "Resultado de Prueba Inicial",
+      "credits": 0,
+      "placementCondition": true,
+      "nonCurricular": true,
       "dataStatus": "project-assumption",
       "eligibleRequirementIds": [],
-      "creditAllocations": [
-        {
-          "nodeId": "p2025-mce",
-          "credits": 4,
-          "status": "suggested",
-          "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=800&section=4"
-        }
-      ]
+      "creditAllocations": []
     },
     {
       "id": "MI2",
@@ -793,6 +830,19 @@
       "label": "Ingreso 1er semestre · PI menos de 20%",
       "description": "Tramo inicial obligatorio publicado por FING: Matemática Inicial y TBEO.",
       "notice": "FING publica únicamente este bloque obligatorio para el primer semestre. Una vez completado, el estudiante puede continuar por alguna de las trayectorias sugeridas; esta opción no inventa semestres posteriores.",
+      "coverage": "partial-official",
+      "continuation": "not-uniquely-published",
+      "sourceDocumentId": "curriculum-section",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "publishedCredits": 7,
+          "courseIds": [
+            "MI2",
+            "1275"
+          ]
+        }
+      ],
       "semesters": [
         [
           "MI2",
@@ -803,8 +853,87 @@
     "pi-60-plus": {
       "label": "Ingreso 1er semestre · PI 60% o más",
       "description": "Trayectoria sugerida por FING para quienes alcanzan al menos 60% en la Prueba Inicial.",
-      "preSemester": [
-        "PI"
+      "coverage": "partial-official",
+      "sourceDocumentId": "trajectory-pi-60-plus",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "publishedCredits": 36,
+          "courseIds": [
+            "2044",
+            "1030",
+            "2043",
+            "1061"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "publishedCredits": 38,
+          "courseIds": [
+            "1375",
+            "1031",
+            "2046",
+            "1062"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "publishedCredits": 42,
+          "courseIds": [
+            "P25-TG",
+            "P25-EDA",
+            "P25-LPO",
+            "1025",
+            "P25-MEC"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "publishedCredits": 43,
+          "courseIds": [
+            "P25-LAB",
+            "P25-ALG",
+            "P25-OOP",
+            "P25-ARQ",
+            "P25-BD"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "publishedCredits": 44,
+          "courseIds": [
+            "P25-TC",
+            "P25-APC",
+            "P25-SO",
+            "P25-PIS",
+            "P25-CPD"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "publishedCredits": 35,
+          "courseIds": [
+            "P25-RED",
+            "P25-TD",
+            "P25-AA"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "publishedCredits": 30,
+          "courseIds": [
+            "P25-IIO",
+            "P25-SEG",
+            "P25-ISA"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "publishedCredits": 15,
+          "courseIds": [
+            "P25-PROY-IS"
+          ]
+        }
       ],
       "semesters": [
         [
@@ -858,6 +987,89 @@
     "pi-20-59": {
       "label": "Ingreso 1er semestre · PI 20–59%",
       "description": "Trayectoria sugerida por FING para quienes obtienen entre 20% y 59% en la Prueba Inicial.",
+      "coverage": "partial-official",
+      "sourceDocumentId": "trajectory-pi-20-59",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "publishedCredits": 18,
+          "courseIds": [
+            "2044",
+            "2043",
+            "MI2"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "publishedCredits": 38,
+          "courseIds": [
+            "1375",
+            "1061",
+            "1030",
+            "2046"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "publishedCredits": 44,
+          "courseIds": [
+            "1062",
+            "P25-EDA",
+            "P25-LPO",
+            "1031",
+            "P25-TG"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "publishedCredits": 43,
+          "courseIds": [
+            "1025",
+            "P25-ARQ",
+            "P25-ALG",
+            "P25-OOP",
+            "P25-LAB"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "publishedCredits": 44,
+          "courseIds": [
+            "P25-SO",
+            "P25-TC",
+            "P25-PIS",
+            "P25-APC",
+            "P25-CPD"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "publishedCredits": 45,
+          "courseIds": [
+            "P25-RED",
+            "P25-BD",
+            "P25-TD",
+            "P25-AA"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "publishedCredits": 40,
+          "courseIds": [
+            "P25-MEC",
+            "P25-IIO",
+            "P25-SEG",
+            "P25-ISA"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "publishedCredits": 15,
+          "courseIds": [
+            "P25-PROY-IS"
+          ]
+        }
+      ],
       "semesters": [
         [
           "2044",
@@ -909,6 +1121,12 @@
       ]
     }
   },
+  "documentedGaps": [
+    "Las trayectorias cotejadas finalizan en el octavo semestre y no completan los diez semestres ni los 450 créditos exigidos por el Plan 2025 de Ingeniería.",
+    "Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos no se trasladan desde el ejemplo del plan a estas trayectorias sin una publicación vigente que determine su ubicación.",
+    "La Prueba Inicial sólo determina la recomendación de trayectoria; las fuentes cotejadas no la publican como unidad curricular ni le asignan cuatro créditos.",
+    "La sección EVA vigente también enlaza trayectorias para ingreso en segundo semestre y recorridos regionales. Esos recursos quedan inventariados como pendientes y no se extrapolan a las dos trayectorias de Montevideo auditadas en este nodo."
+  ],
   "rules": [
     {
       "target": {

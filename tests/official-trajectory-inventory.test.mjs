@@ -78,6 +78,24 @@ test("D03s cierra Computación 1997 con cuatro trayectorias completas y el tramo
   assert.deepEqual(plan.scope.territories, ["Montevideo"]);
 });
 
+test("D03t coteja Computación 2025 exactamente y conserva abierto el tramo no publicado", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "2025");
+  assert.equal(plan.state, "official-trajectory-identified-pending");
+  assert.equal(plan.currentProjection.primary, "official-periods");
+  assert.equal(plan.evidence.kind, "audited-projection");
+  assert.equal(plan.evidence.coverage, "partial-official");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["pi-under-20", 1],
+    ["pi-60-plus", 8],
+    ["pi-20-59", 8],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 63);
+  assert.equal(plan.evidence.matchedCoursePlacements, 63);
+  assert.deepEqual(plan.scope.territories, ["Montevideo"]);
+  assert.match(plan.evidence.reason, /no cierra los diez semestres/);
+  assert.ok(plan.conflictNotes.some((note) => /no publican la Prueba Inicial como unidad curricular/.test(note)));
+});
+
 test("D03l cierra Ingeniería Química con las dos currículas exactas y conserva Salto parcial", () => {
   const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-fing-ingenieria-quimica-2021");
   assert.equal(plan.state, "official-trajectory-reproduced");
