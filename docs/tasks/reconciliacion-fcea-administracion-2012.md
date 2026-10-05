@@ -2,7 +2,7 @@
 
 ## Estado y objetivo
 
-Nodo preparado. Reconciliar la Currícula de la Licenciatura en Administración Plan 2012 con la grilla indicativa vigente publicada por FCEA, conservando los mínimos, el progreso y las identidades académicas existentes.
+Implementación cerrada el 5 de octubre de 2026. La Currícula reproduce la grilla indicativa vigente de ocho semestres y las guías no certificadas de Gestión de Personas y Marketing, conservando los mínimos, el progreso y las identidades académicas existentes.
 
 Modelo: `gpt-5.6-sol`, esfuerzo `xhigh`. Depende de D03a y de la auditoría oficial de la carrera ya integrada.
 
@@ -26,3 +26,13 @@ Modelo: `gpt-5.6-sol`, esfuerzo `xhigh`. Depende de D03a y de la auditoría ofic
 - [FCEA: resoluciones de interés](https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html).
 
 Las fuentes deben comprobarse de nuevo al implementar. EVA y la composición de Bedelías no son autoridad de inclusión curricular.
+
+## Resultado verificado
+
+- La publicación FCEA actualizada en julio de 2026 cubre el plan completo: no corresponde agregar la carrera a `docs/carreras-a-actualizar.md`.
+- El catálogo normal contiene 100 identidades verificadas: 98 correspondencias inequívocas con Bedelías y dos identidades oficiales sin código. Quedan fuera 306 alias, reválidas o variantes sin correspondencia demostrada.
+- La grilla indicativa conserva 98 ubicaciones canónicas en ocho semestres. Las alternativas `MC10` frente a `114A`+`128A` y `E10` frente a `E11` se ofrecen sin acumularse en el núcleo fijo de 22 unidades; las marcas de doble dictado tampoco crean obligaciones nuevas.
+- Las guías sugeridas conservan 28 ubicaciones para Gestión de Personas y 27 para Marketing, con el catálogo flexible completo disponible en ambas.
+- `Actividades de difusión académica` y la fila `I20` conservan identidades descriptivas de fuente, separadas respectivamente de `UADA4` y `SAI20`. El modelo actual de curso completado no puede registrar por separado la segunda acreditación opcional que admite la ficha de actividades de difusión; la limitación queda trazada en el artefacto fuente, la revisión y las pruebas.
+- Artefactos recuperables: `data/fcea/administracion-2012-trayectoria.json`, auditoría oficial, proyección generada, revisión de trayectoria e inventario determinista.
+- Verificación de cierre: pruebas focales 25/25; `npm test` 975/975 (incluye build); `npm run lint` y `git diff --check` sin errores. Tras cambiar la auditoría se regeneraron de forma local `audit-queue.json`, `ui-curriculum-queue.json` y el inventario; el primer test global detectó sus hashes previos y el segundo quedó verde.

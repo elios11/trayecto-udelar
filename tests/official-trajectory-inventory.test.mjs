@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 90,
+    "official-trajectory-reproduced": 91,
     "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 1,
-    "research-pending": 55,
+    "research-pending": 54,
   });
-  assert.equal(savedInventory.pendingQueue.total, 56);
-  assert.equal(savedInventory.pendingQueue.plans.length, 56);
+  assert.equal(savedInventory.pendingQueue.total, 55);
+  assert.equal(savedInventory.pendingQueue.plans.length, 55);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 1).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(1).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -75,6 +75,20 @@ test("D03u cierra Contador Público 2024 con cinco perfiles semestrales exactos"
   ]);
   assert.equal(plan.evidence.expectedCoursePlacements, 232);
   assert.equal(plan.evidence.matchedCoursePlacements, 232);
+  assert.deepEqual(plan.scope.territories, ["Montevideo"]);
+});
+
+test("D03v cierra Administración 2012 con su grilla y dos guías sugeridas", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-fcea-licenciatura-en-administracion-2012");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-profiles");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["personalizada", 8],
+    ["gestion-de-personas", 8],
+    ["marketing", 8],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 153);
+  assert.equal(plan.evidence.matchedCoursePlacements, 153);
   assert.deepEqual(plan.scope.territories, ["Montevideo"]);
 });
 

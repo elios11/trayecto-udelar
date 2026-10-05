@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:3d4446b6b6f4f5b245abaf0a2e1724b8b6685bbfc705003731854550084089a6",
-    "extractedReportHash": "sha256:715048c4905d8f6284fe938951f3c84043e98e2aaec0dd573166de804bdb72dd",
-    "officialAuditHash": "sha256:68843581eed624aea70805e7e33d29f8ea29ed8338bca474d71a42463f3dbeb5",
-    "reviewedTrajectoriesHash": "sha256:0ccc7ceb59509602f28953781398677fb018d099517d9a11a37b675c493cf23a"
+    "extractedReportHash": "sha256:3739f72c13502797e5b1c405f0423923ea1da03bbf691a2ed0f4c09fdd9c887e",
+    "officialAuditHash": "sha256:6c64c8728d0a9687cf72b0573fbb098101e8218292a2908f7bd4a2371d560433",
+    "reviewedTrajectoriesHash": "sha256:0b57fefe0918ea12a7fd355ce65fd9cfee23d6f92fbd2e8dc100fc2dbc607e8b"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 90,
+      "official-trajectory-reproduced": 91,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 1,
-      "research-pending": 55
+      "research-pending": 54
     },
-    "pending": 56,
+    "pending": 55,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -133,10 +133,10 @@
         "serviceLabel": "Facultad de Ciencias Económicas y de Administración",
         "selectablePlanIds": 8,
         "states": {
-          "official-trajectory-reproduced": 4,
+          "official-trajectory-reproduced": 5,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 4
+          "research-pending": 3
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 56,
+    "total": 55,
     "plans": [
       {
         "priority": 1,
@@ -459,15 +459,6 @@
       {
         "priority": 2,
         "planId": "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcea"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcea-licenciatura-en-administracion-2012",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fcea"
@@ -879,7 +870,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
-          "bedelias-fcea-licenciatura-en-administracion-2012",
           "bedelias-fcea-licenciatura-en-economia-2012",
           "bedelias-fcea-licenciatura-en-estadistica-2014"
         ]
@@ -4845,27 +4835,21 @@
           "defaultCredentialId": "licenciado-administracion"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-27",
-      "effectiveAt": "2012",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-05",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
           "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "url": "https://fcea.udelar.edu.uy/depto-adm-ensenanza/lic-adm-ciencias-adm.html",
-          "role": "vigencia; título; ocho semestres; 360 créditos; Montevideo y EVA; mínimos por área; 40 créditos libres; grilla julio 2026; trayectorias sugeridas de Gestión de Personas y Marketing",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-05",
+          "role": "grilla curricular indicativa actualizada en julio de 2026, opciones y guías sugeridas de Gestión de Personas y Marketing"
         },
         {
-          "authority": "Bedelía de grado, FCEA",
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "url": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html",
-          "role": "oferta académica 2026; requisitos de egreso vigentes; actualizaciones y equivalencias",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Bedelía de grado, FCEA",
-          "url": "https://fcea.udelar.edu.uy/bedelia/ingreso-a-facultad.html",
-          "role": "ingreso vigente al Plan 2012; actualización de requisitos en 2025",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-05",
+          "role": "resoluciones y criterios institucionales complementarios de la carrera"
         }
       ],
       "scope": {
@@ -4879,23 +4863,44 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-profiles",
         "features": [
-          "areas"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en administracion:2012",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcea-licenciatura-en-administracion-2012.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/administracion-2012-trayectoria.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcea-licenciatura-en-administracion-2012.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:9177e4bce74f14c7011457e269fc11de6cd3ff5bbf521db1127047f473c2bd52",
+        "projectionContentHash": "sha256:e9f8cd3c099fdb9d39a7bd40a51d27b5a0ffa409318dae4e9a328e04be8859b9",
+        "pathways": [
+          {
+            "id": "personalizada",
+            "periodCount": 8
+          },
+          {
+            "id": "gestion-de-personas",
+            "periodCount": 8
+          },
+          {
+            "id": "marketing",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 153,
+        "matchedCoursePlacements": 153
       },
       "conflictNotes": [
-        "freeDistribution: Los siete mínimos por área suman 320, mientras el total es 360. FCEA confirma que los 40 restantes pueden realizarse en cualquier área; todas las unidades reciben esa elegibilidad alternativa sin duplicar créditos.",
-        "historicalEquivalences: Los grupos de U.C. básicas contienen códigos actuales, reválidas y equivalencias de planes anteriores. Se publican como alternativas elegibles para el submínimo, no como obligaciones simultáneas.",
-        "suggestedPathways: Gestión de Personas y Marketing son trayectorias sugeridas y no certificadas. La selección filtra una guía de cursos recomendados; la opción Personalizada conserva el catálogo completo.",
-        "currentOfferExceptions: A85 y A86 figuran como no ofrecidas en 2026. A85 permanece en la guía oficial de Gestión de Personas con esa limitación documental; elegir la trayectoria no la vuelve obligatoria."
+        "MC10 frente a 114A+128A y E10 frente a E11 son alternativas oficiales, no obligaciones acumulativas.",
+        "Las marcas de doble dictado describen disponibilidad en más de un semestre y no generan identidades ni obligaciones adicionales.",
+        "Actividades de difusión académica carece de código en su ficha y puede acreditarse hasta dos veces; se conserva una identidad oficial sin código y una ubicación canónica porque el modelo booleano no representa dos acreditaciones opcionales del mismo curso.",
+        "La fila I20 de la grilla enlaza una ficha sin código; se conserva como identidad descriptiva de fuente separada de SAI20 y sin código inventado.",
+        "Los alias, reválidas y variantes Bedelías sin correspondencia inequívoca en la publicación vigente se excluyen del catálogo normal."
       ]
     },
     {
@@ -13346,5 +13351,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:dc50f52f02559cf7337935c52a1d14eedcccf28db50c127452756fd8638e27af"
+  "contentHash": "sha256:bfe67017daa93c4b5e6fa730a43c18d0271aafcc75fa0306382183b6a966d7fe"
 }

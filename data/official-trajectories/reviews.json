@@ -1739,6 +1739,53 @@
         "La fila UPC admite cargas de 10, 15 o 20 créditos; se conservan UPC10, UPC15 y UPC20 para acreditar la carga elegida.",
         "Los alias, reválidas y variantes Bedelías sin correspondencia inequívoca en la publicación vigente se excluyen del catálogo normal."
       ]
+    },
+    {
+      "planId": "bedelias-fcea-licenciatura-en-administracion-2012",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-05",
+      "effectiveAt": "2026-07",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "personalizada",
+          "gestion-de-personas",
+          "marketing"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/depto-adm-ensenanza/lic-adm-ciencias-adm.html",
+          "reviewedAt": "2026-10-05",
+          "role": "grilla curricular indicativa actualizada en julio de 2026, opciones y guías sugeridas de Gestión de Personas y Marketing"
+        },
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html",
+          "reviewedAt": "2026-10-05",
+          "role": "resoluciones y criterios institucionales complementarios de la carrera"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/administracion-2012-trayectoria.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcea-licenciatura-en-administracion-2012.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "MC10 frente a 114A+128A y E10 frente a E11 son alternativas oficiales, no obligaciones acumulativas.",
+        "Las marcas de doble dictado describen disponibilidad en más de un semestre y no generan identidades ni obligaciones adicionales.",
+        "Actividades de difusión académica carece de código en su ficha y puede acreditarse hasta dos veces; se conserva una identidad oficial sin código y una ubicación canónica porque el modelo booleano no representa dos acreditaciones opcionales del mismo curso.",
+        "La fila I20 de la grilla enlaza una ficha sin código; se conserva como identidad descriptiva de fuente separada de SAI20 y sin código inventado.",
+        "Los alias, reválidas y variantes Bedelías sin correspondencia inequívoca en la publicación vigente se excluyen del catálogo normal."
+      ]
     }
   ]
 }

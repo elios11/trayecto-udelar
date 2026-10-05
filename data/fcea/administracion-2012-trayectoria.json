@@ -1,0 +1,2218 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fcea-licenciatura-en-administracion-2012",
+  "source": {
+    "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+    "url": "https://fcea.udelar.edu.uy/depto-adm-ensenanza/lic-adm-ciencias-adm.html",
+    "reviewedAt": "2026-10-05",
+    "effectiveAt": "2026-07",
+    "publishedUpdate": "julio 2026",
+    "scope": "grilla indicativa de ocho semestres, bloques obligatorios y opcionales, y guías de Gestión de Personas y Marketing"
+  },
+  "interpretation": {
+    "minimumCredits": 360,
+    "fixedRequiredCourseCount": 22,
+    "alternatives": [
+      {
+        "label": "Microeconomía",
+        "rule": "aprobar una",
+        "alternatives": [
+          [
+            "E10"
+          ],
+          [
+            "E11"
+          ]
+        ]
+      },
+      {
+        "label": "Cálculo I",
+        "rule": "aprobar una ruta",
+        "alternatives": [
+          [
+            "MC10"
+          ],
+          [
+            "114A",
+            "128A"
+          ]
+        ]
+      }
+    ],
+    "optionalBlocks": "Las filas Opcionales son catálogos semestrales; no se exige aprobar todas sus unidades.",
+    "doubleTeaching": "Las marcas doble dictado describen disponibilidad en más de un período, no materias diferentes ni obligaciones acumulativas.",
+    "repeatableActivityLimitation": "La ficha 2026 de Actividades de difusión académica no publica código, indica dictado todos los semestres y permite acreditarla hasta dos veces. Trayecto conserva una sola identidad oficial sin código y una colocación canónica; el modelo actual no registra por separado la segunda acreditación opcional.",
+    "sourceOnlyIdentity": "Investigación Colaborativa Internacional en Gestión de Personas figura como I20 en la grilla, pero su ficha no publica código. Se conserva con identidad descriptiva de fuente y sin inventar código Bedelías.",
+    "crosswalks": [
+      {
+        "gridCode": "DF33",
+        "projectionSourceId": "CURE-DF33",
+        "basis": "misma unidad, código DF33 y ficha oficial enlazada desde la grilla"
+      },
+      {
+        "gridCode": "O31T",
+        "projectionSourceId": "CUT-O31T",
+        "basis": "misma unidad, código O31T y ficha oficial enlazada desde la grilla"
+      },
+      {
+        "gridCode": "O33T",
+        "projectionSourceId": "CUT-O33T",
+        "basis": "misma unidad, ficha oficial enlazada desde la grilla"
+      }
+    ]
+  },
+  "courses": [
+    {
+      "sourceId": "A10",
+      "gridLabel": "A10",
+      "officialCode": "A10",
+      "bedeliasCode": "A10",
+      "name": "Administración y Gestión de las Organizaciones I",
+      "credits": 10,
+      "semesters": [
+        1
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "C10",
+      "gridLabel": "C10",
+      "officialCode": "C10",
+      "bedeliasCode": "C10",
+      "name": "Conceptos Contables",
+      "credits": 10,
+      "semesters": [
+        1
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "MC10",
+      "gridLabel": "MC10",
+      "officialCode": "MC10",
+      "bedeliasCode": "MC10",
+      "name": "Cálculo I",
+      "credits": 10,
+      "semesters": [],
+      "inclusion": "alternativa-obligatoria"
+    },
+    {
+      "sourceId": "114A",
+      "gridLabel": "114A",
+      "officialCode": "114A",
+      "bedeliasCode": "114A",
+      "name": "Cálculo I/a",
+      "credits": 5,
+      "semesters": [],
+      "inclusion": "alternativa-obligatoria"
+    },
+    {
+      "sourceId": "128A",
+      "gridLabel": "128A",
+      "officialCode": "128A",
+      "bedeliasCode": "128A",
+      "name": "Cálculo I/b",
+      "credits": 5,
+      "semesters": [],
+      "inclusion": "alternativa-obligatoria"
+    },
+    {
+      "sourceId": "E10",
+      "gridLabel": "E10",
+      "officialCode": "E10",
+      "bedeliasCode": "E10",
+      "name": "Introducción a la Microeconomía",
+      "credits": 10,
+      "semesters": [],
+      "inclusion": "alternativa-obligatoria"
+    },
+    {
+      "sourceId": "E11",
+      "gridLabel": "E11",
+      "officialCode": "E11",
+      "bedeliasCode": "E11",
+      "name": "Análisis de las Interacciones Económicas",
+      "credits": 10,
+      "semesters": [],
+      "inclusion": "alternativa-obligatoria"
+    },
+    {
+      "sourceId": "A20",
+      "gridLabel": "A20",
+      "officialCode": "A20",
+      "bedeliasCode": "A20",
+      "name": "Administración y Gestión de las Organizaciones II",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "C20",
+      "gridLabel": "C20",
+      "officialCode": "C20",
+      "bedeliasCode": "C20",
+      "name": "Contabilidad General I",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "E20N",
+      "gridLabel": "E20N",
+      "officialCode": "E20N",
+      "bedeliasCode": "E20N",
+      "name": "Economía Descriptiva",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "MC31",
+      "gridLabel": "MC31",
+      "officialCode": "MC31",
+      "bedeliasCode": "MC31",
+      "name": "Cálculo II",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "actividades-difusion-administracion",
+      "gridLabel": "UADA6 / UADA5",
+      "officialCode": "actividades-difusion-administracion",
+      "projectionCourseId": "fcea-actividades-difusion-administracion",
+      "name": "Actividades de difusión académica – Ciencias de la Administración",
+      "credits": 5,
+      "semesters": [
+        2,
+        3
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "MC20",
+      "gridLabel": "MC20",
+      "officialCode": "MC20",
+      "bedeliasCode": "MC20",
+      "name": "Álgebra Lineal",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I137",
+      "gridLabel": "I137",
+      "officialCode": "I137",
+      "bedeliasCode": "I137",
+      "name": "Curso-taller de Introducción a la Extensión Universitaria",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "ASA14",
+      "gridLabel": "ASA14",
+      "officialCode": "ASA14",
+      "bedeliasCode": "ASA14",
+      "name": "Transformación Digital de las Organizaciones",
+      "credits": 8,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "S46",
+      "gridLabel": "S46",
+      "officialCode": "S46",
+      "bedeliasCode": "S46",
+      "name": "Sociología Contemporánea",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "S21",
+      "gridLabel": "S21",
+      "officialCode": "S21",
+      "bedeliasCode": "S21",
+      "name": "Ciencia Política",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "S22",
+      "gridLabel": "S22",
+      "officialCode": "S22",
+      "bedeliasCode": "S22",
+      "name": "Desarrollo y Bienestar",
+      "credits": 10,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "investigacion-colaborativa-gestion-personas",
+      "gridLabel": "I20",
+      "officialCode": "investigacion-colaborativa-gestion-personas",
+      "projectionCourseId": "fcea-investigacion-colaborativa-gestion-personas",
+      "name": "Investigación Colaborativa Internacional en Gestión de Personas",
+      "credits": 5,
+      "semesters": [
+        2
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A30",
+      "gridLabel": "A30",
+      "officialCode": "A30",
+      "bedeliasCode": "A30",
+      "name": "Procesos y Sistemas de Información",
+      "credits": 10,
+      "semesters": [
+        3
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "E30",
+      "gridLabel": "E30",
+      "officialCode": "E30",
+      "bedeliasCode": "E30",
+      "name": "Macroeconomía I",
+      "credits": 10,
+      "semesters": [
+        3
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "MC40",
+      "gridLabel": "MC40",
+      "officialCode": "MC40",
+      "bedeliasCode": "MC40",
+      "name": "Introducción a la Estadística",
+      "credits": 10,
+      "semesters": [
+        3
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "J21",
+      "gridLabel": "J21",
+      "officialCode": "J21",
+      "bedeliasCode": "J21",
+      "name": "Derecho del Empresario",
+      "credits": 10,
+      "semesters": [
+        3
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A31",
+      "gridLabel": "A31",
+      "officialCode": "A31",
+      "bedeliasCode": "A31",
+      "name": "Emprender Desde la Profesión",
+      "credits": 5,
+      "semesters": [
+        3
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C30",
+      "gridLabel": "C30",
+      "officialCode": "C30",
+      "bedeliasCode": "C30",
+      "name": "Contabilidad General II",
+      "credits": 10,
+      "semesters": [
+        3
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "CURE-DF33",
+      "gridLabel": "DF33",
+      "officialCode": "DF33",
+      "bedeliasCode": "CURE-DF33",
+      "name": "Administración y Gestión de Cooperativas",
+      "credits": 10,
+      "semesters": [
+        3
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A40",
+      "gridLabel": "A40",
+      "officialCode": "A40",
+      "bedeliasCode": "A40",
+      "name": "Administración de Recursos Humanos",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "MC30",
+      "gridLabel": "MC30",
+      "officialCode": "MC30",
+      "bedeliasCode": "MC30",
+      "name": "Matemática Financiera",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A41",
+      "gridLabel": "A41",
+      "officialCode": "A41",
+      "bedeliasCode": "A41",
+      "name": "Sistemas de Información",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "S90",
+      "gridLabel": "S90",
+      "officialCode": "S90",
+      "bedeliasCode": "S90",
+      "name": "Sociología Económica",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C40",
+      "gridLabel": "C40",
+      "officialCode": "C40",
+      "bedeliasCode": "C40",
+      "name": "Contabilidad General III",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "MC42",
+      "gridLabel": "MC42",
+      "officialCode": "MC42",
+      "bedeliasCode": "MC42",
+      "name": "Estadística I(prob.y Estad.descriptiva)",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "E40",
+      "gridLabel": "E40",
+      "officialCode": "E40",
+      "bedeliasCode": "E40",
+      "name": "Macroeconomía II",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I40",
+      "gridLabel": "I40",
+      "officialCode": "I40",
+      "bedeliasCode": "I40",
+      "name": "Taller de Iniciación a la Investigación",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I41",
+      "gridLabel": "I41",
+      "officialCode": "I41",
+      "bedeliasCode": "I41",
+      "name": "Economía Circular",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "S42",
+      "gridLabel": "S42",
+      "officialCode": "S42",
+      "bedeliasCode": "S42",
+      "name": "Sociología de Dirigentes de Empresas",
+      "credits": 10,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "J61N",
+      "gridLabel": "J61N",
+      "officialCode": "J61N",
+      "bedeliasCode": "J61N",
+      "name": "Derecho Digital",
+      "credits": 5,
+      "semesters": [
+        4
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A61",
+      "gridLabel": "A61",
+      "officialCode": "A61",
+      "bedeliasCode": "A61",
+      "name": "Marketing Básico",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "C31",
+      "gridLabel": "C31",
+      "officialCode": "C31",
+      "bedeliasCode": "C31",
+      "name": "Costos Para la Gestión",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "E53",
+      "gridLabel": "E53",
+      "officialCode": "E53",
+      "bedeliasCode": "E53",
+      "name": "Economía de las Decisiones Empresariales",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "I50",
+      "gridLabel": "I50",
+      "officialCode": "I50",
+      "bedeliasCode": "I50",
+      "name": "Taller \"ética y Responsabilidad Social\"",
+      "credits": 5,
+      "semesters": [
+        5
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A50",
+      "gridLabel": "A50",
+      "officialCode": "A50",
+      "bedeliasCode": "A50",
+      "name": "Análisis Institucional y Planificación en El Sector Público",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A85",
+      "gridLabel": "A85",
+      "officialCode": "A85",
+      "bedeliasCode": "A85",
+      "name": "Taller de Gestión de Cargos y Remuneraciones",
+      "credits": 5,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "MC51",
+      "gridLabel": "MC51",
+      "officialCode": "MC51",
+      "bedeliasCode": "MC51",
+      "name": "Estadística II",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "338N",
+      "gridLabel": "338N",
+      "officialCode": "338N",
+      "bedeliasCode": "338N",
+      "name": "Seguros de Vida",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I112N",
+      "gridLabel": "I112N",
+      "officialCode": "I112N",
+      "bedeliasCode": "I112N",
+      "name": "Efi: Cooperativas de Trabajo y Colectivos Autogestionados",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "CUT-O31T",
+      "gridLabel": "O31T",
+      "officialCode": "O31T",
+      "bedeliasCode": "CUT-O31T",
+      "name": "Introducción a los Sistemas de Producción Agropecuarios",
+      "credits": 5,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "MC46",
+      "gridLabel": "MC46",
+      "officialCode": "MC46",
+      "bedeliasCode": "MC46",
+      "name": "Taller de Análisis de Datos",
+      "credits": 5,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "MC47",
+      "gridLabel": "MC47",
+      "officialCode": "MC47",
+      "bedeliasCode": "MC47",
+      "name": "Taller de Regresión",
+      "credits": 5,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "CUT-O33T",
+      "gridLabel": "O33T",
+      "officialCode": "O33T",
+      "bedeliasCode": "CUT-O33T",
+      "name": "Int. a la Economía de los Recursos Naturales",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I111N",
+      "gridLabel": "I111N",
+      "officialCode": "I111N",
+      "bedeliasCode": "I111N",
+      "name": "Efi: Microcecea-fortalecimiento a Microempresas",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A86",
+      "gridLabel": "A86",
+      "officialCode": "A86",
+      "bedeliasCode": "A86",
+      "name": "Transformación Cultural",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "J50",
+      "gridLabel": "J50",
+      "officialCode": "J50",
+      "bedeliasCode": "J50",
+      "name": "Derecho Tributario",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I56A",
+      "gridLabel": "I56A",
+      "officialCode": "I56A",
+      "bedeliasCode": "I56A",
+      "name": "Liderazgo Para la Innovación Social",
+      "credits": 10,
+      "semesters": [
+        5
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C64",
+      "gridLabel": "C64",
+      "officialCode": "C64",
+      "bedeliasCode": "C64",
+      "name": "Contabilidad Gerencial",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "S60",
+      "gridLabel": "S60",
+      "officialCode": "S60",
+      "bedeliasCode": "S60",
+      "name": "Administración de las Relaciones de Trabajo",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A44",
+      "gridLabel": "A44",
+      "officialCode": "A44",
+      "bedeliasCode": "A44",
+      "name": "Compras Públicas Para El Desarrollo",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A42",
+      "gridLabel": "A42",
+      "officialCode": "A42",
+      "bedeliasCode": "A42",
+      "name": "Diseño Organizacional",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "MC72",
+      "gridLabel": "MC72",
+      "officialCode": "MC72",
+      "bedeliasCode": "MC72",
+      "name": "Métodos Cuantitativos en Decisiones Gerenciales",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A62",
+      "gridLabel": "A62",
+      "officialCode": "A62",
+      "bedeliasCode": "A62",
+      "name": "Gestión de la Innovación y la Tecnología",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A63",
+      "gridLabel": "A63",
+      "officialCode": "A63",
+      "bedeliasCode": "A63",
+      "name": "Comercio Internacional",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A64",
+      "gridLabel": "A64",
+      "officialCode": "A64",
+      "bedeliasCode": "A64",
+      "name": "Administración y Planificación Financiera",
+      "credits": 5,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A65",
+      "gridLabel": "A65",
+      "officialCode": "A65",
+      "bedeliasCode": "A65",
+      "name": "Introducción al Emprendedurismo",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A66",
+      "gridLabel": "A66",
+      "officialCode": "A66",
+      "bedeliasCode": "A66",
+      "name": "Gestión de Proyectos",
+      "credits": 5,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A67",
+      "gridLabel": "A67",
+      "officialCode": "A67",
+      "bedeliasCode": "A67",
+      "name": "Gestión Financiera del Estado",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A72",
+      "gridLabel": "A72",
+      "officialCode": "A72",
+      "bedeliasCode": "A72",
+      "name": "Marketing Estratégico",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C60",
+      "gridLabel": "C60",
+      "officialCode": "C60",
+      "bedeliasCode": "C60",
+      "name": "Contabilidad Superior I",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C61",
+      "gridLabel": "C61",
+      "officialCode": "C61",
+      "bedeliasCode": "C61",
+      "name": "Control Interno",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C63",
+      "gridLabel": "C63",
+      "officialCode": "C63",
+      "bedeliasCode": "C63",
+      "name": "Interpretación y Análisis de Información Contable",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "E52",
+      "gridLabel": "E52",
+      "officialCode": "E52",
+      "bedeliasCode": "E52",
+      "name": "Economía y Finanzas Públicas",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I97",
+      "gridLabel": "I97",
+      "officialCode": "I97",
+      "bedeliasCode": "I97",
+      "name": "Efi: Contabilidad en las Escuelas",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I114D",
+      "gridLabel": "I114D",
+      "officialCode": "I114D",
+      "bedeliasCode": "I114D",
+      "name": "Efi: Costos Para la Gestión de Emprendimientos Sociales y Comunitarios",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I132",
+      "gridLabel": "I132",
+      "officialCode": "I132",
+      "bedeliasCode": "I132",
+      "name": "Efi: en El Marco de la Uc Control Interno",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I141",
+      "gridLabel": "I141",
+      "officialCode": "I141",
+      "bedeliasCode": "I141",
+      "name": "Efi - Emprendimientos Productivos en Contexto de Encierro",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "J60OP",
+      "gridLabel": "J60OP",
+      "officialCode": "J60OP",
+      "bedeliasCode": "J60OP",
+      "name": "Derecho Público",
+      "credits": 10,
+      "semesters": [
+        6
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A70",
+      "gridLabel": "A70",
+      "officialCode": "A70",
+      "bedeliasCode": "A70",
+      "name": "Comportamiento Organizacional",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A71",
+      "gridLabel": "A71",
+      "officialCode": "A71",
+      "bedeliasCode": "A71",
+      "name": "Finanzas Corporativas",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A52",
+      "gridLabel": "A52",
+      "officialCode": "A52",
+      "bedeliasCode": "A52",
+      "name": "Marketing de Servicios",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A73",
+      "gridLabel": "A73",
+      "officialCode": "A73",
+      "bedeliasCode": "A73",
+      "name": "Administración y Gestión de Empresas Familiares",
+      "credits": 5,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A76",
+      "gridLabel": "A76",
+      "officialCode": "A76",
+      "bedeliasCode": "A76",
+      "name": "Administración de Producción y Operaciones",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A77",
+      "gridLabel": "A77",
+      "officialCode": "A77",
+      "bedeliasCode": "A77",
+      "name": "Marketing Digital",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C70",
+      "gridLabel": "C70",
+      "officialCode": "C70",
+      "bedeliasCode": "C70",
+      "name": "Auditoría I",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C73",
+      "gridLabel": "C73",
+      "officialCode": "C73",
+      "bedeliasCode": "C73",
+      "name": "Contabilidad Bancaria",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C75N",
+      "gridLabel": "C75N",
+      "officialCode": "C75N",
+      "bedeliasCode": "C75N",
+      "name": "Contabilidad Social y Ambiental",
+      "credits": 5,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C76",
+      "gridLabel": "C76",
+      "officialCode": "C76",
+      "bedeliasCode": "C76",
+      "name": "Contabilidad Gerencial Avanzada",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "MC32",
+      "gridLabel": "MC32",
+      "officialCode": "MC32",
+      "bedeliasCode": "MC32",
+      "name": "Modelos de Comportamiento Estratégico",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "E77",
+      "gridLabel": "E77",
+      "officialCode": "E77",
+      "bedeliasCode": "E77",
+      "name": "Economía y Género",
+      "credits": 10,
+      "semesters": [
+        7
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A80",
+      "gridLabel": "A80",
+      "officialCode": "A80",
+      "bedeliasCode": "A80",
+      "name": "Dirección Estratégica de Empresas",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A83N",
+      "gridLabel": "A83N",
+      "officialCode": "A83N",
+      "bedeliasCode": "A83N",
+      "name": "Cambio Organizacional",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A81",
+      "gridLabel": "A81",
+      "officialCode": "A81",
+      "bedeliasCode": "A81",
+      "name": "Proyectos de Inversión",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "obligatoria"
+    },
+    {
+      "sourceId": "A84",
+      "gridLabel": "A84",
+      "officialCode": "A84",
+      "bedeliasCode": "A84",
+      "name": "Economía y Gestión de Organizaciones de Salud",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A82",
+      "gridLabel": "A82",
+      "officialCode": "A82",
+      "bedeliasCode": "A82",
+      "name": "Mercados Financieros",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "E86",
+      "gridLabel": "E86",
+      "officialCode": "E86",
+      "bedeliasCode": "E86",
+      "name": "Desarrollo Económico del Uruguay",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C83",
+      "gridLabel": "C83",
+      "officialCode": "C83",
+      "bedeliasCode": "C83",
+      "name": "Costos y Gestión de Actividades",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "C87",
+      "gridLabel": "C87",
+      "officialCode": "C87",
+      "bedeliasCode": "C87",
+      "name": "Logística y Cadena de Suministros",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I140",
+      "gridLabel": "I140",
+      "officialCode": "I140",
+      "bedeliasCode": "I140",
+      "name": "Cceemprende",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I87",
+      "gridLabel": "I87",
+      "officialCode": "I87",
+      "bedeliasCode": "I87",
+      "name": "Prospectiva Estratégica: Con la Mirada en El Futuro",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "I88",
+      "gridLabel": "I88",
+      "officialCode": "I88",
+      "bedeliasCode": "I88",
+      "name": "Información Analítica Para la Gestión",
+      "credits": 10,
+      "semesters": [
+        8
+      ],
+      "inclusion": "opcional"
+    },
+    {
+      "sourceId": "A54",
+      "gridLabel": "A54",
+      "officialCode": "A54",
+      "bedeliasCode": "A54",
+      "name": "Taller de Selección y Capacitación de Personal",
+      "credits": 5,
+      "semesters": [],
+      "inclusion": "recomendacion-de-guia"
+    },
+    {
+      "sourceId": "A89",
+      "gridLabel": "A89",
+      "officialCode": "A89",
+      "bedeliasCode": "A89",
+      "name": "Taller: Personas y Trabajo",
+      "credits": 5,
+      "semesters": [],
+      "inclusion": "recomendacion-de-guia"
+    }
+  ],
+  "mainGrid": {
+    "periods": [
+      {
+        "label": "Semestre 1",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "A10",
+              "C10"
+            ]
+          },
+          {
+            "id": "alternativas",
+            "label": "Alternativas obligatorias",
+            "courseIds": [
+              "MC10",
+              "114A",
+              "128A",
+              "E10",
+              "E11"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "A10",
+            "canonicalSourceId": "A10"
+          },
+          {
+            "gridLabel": "C10",
+            "canonicalSourceId": "C10"
+          },
+          {
+            "gridLabel": "MC10",
+            "canonicalSourceId": "MC10"
+          },
+          {
+            "gridLabel": "114A",
+            "canonicalSourceId": "114A"
+          },
+          {
+            "gridLabel": "128A",
+            "canonicalSourceId": "128A"
+          },
+          {
+            "gridLabel": "E10",
+            "canonicalSourceId": "E10"
+          },
+          {
+            "gridLabel": "E11",
+            "canonicalSourceId": "E11"
+          }
+        ],
+        "canonicalPlacementCount": 7,
+        "semester": 1
+      },
+      {
+        "label": "Semestre 2",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "A20",
+              "C20",
+              "E20N"
+            ]
+          },
+          {
+            "id": "opcionales",
+            "label": "Opcionales",
+            "courseIds": [
+              "MC31",
+              "actividades-difusion-administracion",
+              "MC20",
+              "I137",
+              "ASA14",
+              "S46",
+              "S21",
+              "S22",
+              "investigacion-colaborativa-gestion-personas"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "A20",
+            "canonicalSourceId": "A20"
+          },
+          {
+            "gridLabel": "C20",
+            "canonicalSourceId": "C20"
+          },
+          {
+            "gridLabel": "E20N",
+            "canonicalSourceId": "E20N"
+          },
+          {
+            "gridLabel": "MC31",
+            "canonicalSourceId": "MC31"
+          },
+          {
+            "gridLabel": "UADA6 / UADA5",
+            "canonicalSourceId": "actividades-difusion-administracion"
+          },
+          {
+            "gridLabel": "MC20",
+            "canonicalSourceId": "MC20"
+          },
+          {
+            "gridLabel": "I137",
+            "canonicalSourceId": "I137"
+          },
+          {
+            "gridLabel": "ASA14",
+            "canonicalSourceId": "ASA14"
+          },
+          {
+            "gridLabel": "S46",
+            "canonicalSourceId": "S46"
+          },
+          {
+            "gridLabel": "S21",
+            "canonicalSourceId": "S21"
+          },
+          {
+            "gridLabel": "S22",
+            "canonicalSourceId": "S22"
+          },
+          {
+            "gridLabel": "I20",
+            "canonicalSourceId": "investigacion-colaborativa-gestion-personas"
+          }
+        ],
+        "canonicalPlacementCount": 12,
+        "semester": 2
+      },
+      {
+        "label": "Semestre 3",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "A30",
+              "E30",
+              "MC40",
+              "J21"
+            ]
+          },
+          {
+            "id": "opcionales",
+            "label": "Opcionales",
+            "courseIds": [
+              "A31",
+              "C30",
+              "CURE-DF33"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "A30",
+            "canonicalSourceId": "A30"
+          },
+          {
+            "gridLabel": "E30",
+            "canonicalSourceId": "E30"
+          },
+          {
+            "gridLabel": "MC40",
+            "canonicalSourceId": "MC40"
+          },
+          {
+            "gridLabel": "J21",
+            "canonicalSourceId": "J21"
+          },
+          {
+            "gridLabel": "A31",
+            "canonicalSourceId": "A31"
+          },
+          {
+            "gridLabel": "C30",
+            "canonicalSourceId": "C30"
+          },
+          {
+            "gridLabel": "DF33",
+            "canonicalSourceId": "CURE-DF33"
+          },
+          {
+            "gridLabel": "UADA5",
+            "canonicalSourceId": "actividades-difusion-administracion"
+          }
+        ],
+        "canonicalPlacementCount": 7,
+        "semester": 3
+      },
+      {
+        "label": "Semestre 4",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "A40",
+              "MC30"
+            ]
+          },
+          {
+            "id": "opcionales",
+            "label": "Opcionales",
+            "courseIds": [
+              "A41",
+              "S90",
+              "C40",
+              "MC42",
+              "E40",
+              "I40",
+              "I41",
+              "S42",
+              "J61N"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "A40",
+            "canonicalSourceId": "A40"
+          },
+          {
+            "gridLabel": "MC30",
+            "canonicalSourceId": "MC30"
+          },
+          {
+            "gridLabel": "A41",
+            "canonicalSourceId": "A41"
+          },
+          {
+            "gridLabel": "S90",
+            "canonicalSourceId": "S90"
+          },
+          {
+            "gridLabel": "C40",
+            "canonicalSourceId": "C40"
+          },
+          {
+            "gridLabel": "MC42",
+            "canonicalSourceId": "MC42"
+          },
+          {
+            "gridLabel": "E40",
+            "canonicalSourceId": "E40"
+          },
+          {
+            "gridLabel": "I40",
+            "canonicalSourceId": "I40"
+          },
+          {
+            "gridLabel": "I41",
+            "canonicalSourceId": "I41"
+          },
+          {
+            "gridLabel": "S42",
+            "canonicalSourceId": "S42"
+          },
+          {
+            "gridLabel": "J61N",
+            "canonicalSourceId": "J61N"
+          }
+        ],
+        "canonicalPlacementCount": 11,
+        "semester": 4
+      },
+      {
+        "label": "Semestre 5",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "A61",
+              "C31",
+              "E53",
+              "I50"
+            ]
+          },
+          {
+            "id": "opcionales",
+            "label": "Opcionales",
+            "courseIds": [
+              "A50",
+              "A85",
+              "MC51",
+              "338N",
+              "I112N",
+              "CUT-O31T",
+              "MC46",
+              "MC47",
+              "CUT-O33T",
+              "I111N",
+              "A86",
+              "J50",
+              "I56A"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "A61",
+            "canonicalSourceId": "A61"
+          },
+          {
+            "gridLabel": "C31",
+            "canonicalSourceId": "C31"
+          },
+          {
+            "gridLabel": "E53",
+            "canonicalSourceId": "E53"
+          },
+          {
+            "gridLabel": "I50",
+            "canonicalSourceId": "I50"
+          },
+          {
+            "gridLabel": "A50",
+            "canonicalSourceId": "A50"
+          },
+          {
+            "gridLabel": "A85",
+            "canonicalSourceId": "A85"
+          },
+          {
+            "gridLabel": "MC51",
+            "canonicalSourceId": "MC51"
+          },
+          {
+            "gridLabel": "338N",
+            "canonicalSourceId": "338N"
+          },
+          {
+            "gridLabel": "I112N",
+            "canonicalSourceId": "I112N"
+          },
+          {
+            "gridLabel": "O31T",
+            "canonicalSourceId": "CUT-O31T"
+          },
+          {
+            "gridLabel": "MC46",
+            "canonicalSourceId": "MC46"
+          },
+          {
+            "gridLabel": "MC47",
+            "canonicalSourceId": "MC47"
+          },
+          {
+            "gridLabel": "O33T",
+            "canonicalSourceId": "CUT-O33T"
+          },
+          {
+            "gridLabel": "I111N",
+            "canonicalSourceId": "I111N"
+          },
+          {
+            "gridLabel": "A86",
+            "canonicalSourceId": "A86"
+          },
+          {
+            "gridLabel": "J50",
+            "canonicalSourceId": "J50"
+          },
+          {
+            "gridLabel": "I56A",
+            "canonicalSourceId": "I56A"
+          }
+        ],
+        "canonicalPlacementCount": 17,
+        "semester": 5
+      },
+      {
+        "label": "Semestre 6",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "C64",
+              "S60"
+            ]
+          },
+          {
+            "id": "opcionales",
+            "label": "Opcionales",
+            "courseIds": [
+              "A44",
+              "A42",
+              "MC72",
+              "A62",
+              "A63",
+              "A64",
+              "A65",
+              "A66",
+              "A67",
+              "A72",
+              "C60",
+              "C61",
+              "C63",
+              "E52",
+              "I97",
+              "I114D",
+              "I132",
+              "I141",
+              "J60OP"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "C64",
+            "canonicalSourceId": "C64"
+          },
+          {
+            "gridLabel": "S60",
+            "canonicalSourceId": "S60"
+          },
+          {
+            "gridLabel": "A44",
+            "canonicalSourceId": "A44"
+          },
+          {
+            "gridLabel": "A42",
+            "canonicalSourceId": "A42"
+          },
+          {
+            "gridLabel": "MC72",
+            "canonicalSourceId": "MC72"
+          },
+          {
+            "gridLabel": "A62",
+            "canonicalSourceId": "A62"
+          },
+          {
+            "gridLabel": "A63",
+            "canonicalSourceId": "A63"
+          },
+          {
+            "gridLabel": "A64",
+            "canonicalSourceId": "A64"
+          },
+          {
+            "gridLabel": "A65",
+            "canonicalSourceId": "A65"
+          },
+          {
+            "gridLabel": "A66",
+            "canonicalSourceId": "A66"
+          },
+          {
+            "gridLabel": "A67",
+            "canonicalSourceId": "A67"
+          },
+          {
+            "gridLabel": "A72",
+            "canonicalSourceId": "A72"
+          },
+          {
+            "gridLabel": "C60",
+            "canonicalSourceId": "C60"
+          },
+          {
+            "gridLabel": "C61",
+            "canonicalSourceId": "C61"
+          },
+          {
+            "gridLabel": "C63",
+            "canonicalSourceId": "C63"
+          },
+          {
+            "gridLabel": "E52",
+            "canonicalSourceId": "E52"
+          },
+          {
+            "gridLabel": "I97",
+            "canonicalSourceId": "I97"
+          },
+          {
+            "gridLabel": "I114D",
+            "canonicalSourceId": "I114D"
+          },
+          {
+            "gridLabel": "I132",
+            "canonicalSourceId": "I132"
+          },
+          {
+            "gridLabel": "I141",
+            "canonicalSourceId": "I141"
+          },
+          {
+            "gridLabel": "J60OP",
+            "canonicalSourceId": "J60OP"
+          }
+        ],
+        "canonicalPlacementCount": 21,
+        "semester": 6
+      },
+      {
+        "label": "Semestre 7",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "A70",
+              "A71"
+            ]
+          },
+          {
+            "id": "opcionales",
+            "label": "Opcionales",
+            "courseIds": [
+              "A52",
+              "A73",
+              "A76",
+              "A77",
+              "C70",
+              "C73",
+              "C75N",
+              "C76",
+              "MC32",
+              "E77"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "A70",
+            "canonicalSourceId": "A70"
+          },
+          {
+            "gridLabel": "A71",
+            "canonicalSourceId": "A71"
+          },
+          {
+            "gridLabel": "A52",
+            "canonicalSourceId": "A52"
+          },
+          {
+            "gridLabel": "A73",
+            "canonicalSourceId": "A73"
+          },
+          {
+            "gridLabel": "A76",
+            "canonicalSourceId": "A76"
+          },
+          {
+            "gridLabel": "A77",
+            "canonicalSourceId": "A77"
+          },
+          {
+            "gridLabel": "C70",
+            "canonicalSourceId": "C70"
+          },
+          {
+            "gridLabel": "C73",
+            "canonicalSourceId": "C73"
+          },
+          {
+            "gridLabel": "C75N",
+            "canonicalSourceId": "C75N"
+          },
+          {
+            "gridLabel": "C76",
+            "canonicalSourceId": "C76"
+          },
+          {
+            "gridLabel": "MC32",
+            "canonicalSourceId": "MC32"
+          },
+          {
+            "gridLabel": "E77",
+            "canonicalSourceId": "E77"
+          }
+        ],
+        "canonicalPlacementCount": 12,
+        "semester": 7
+      },
+      {
+        "label": "Semestre 8",
+        "blocks": [
+          {
+            "id": "obligatorias",
+            "label": "Obligatorias",
+            "courseIds": [
+              "A80",
+              "A83N",
+              "A81"
+            ]
+          },
+          {
+            "id": "opcionales",
+            "label": "Opcionales",
+            "courseIds": [
+              "A84",
+              "A82",
+              "E86",
+              "C83",
+              "C87",
+              "I140",
+              "I87",
+              "I88"
+            ]
+          }
+        ],
+        "sourceRows": [
+          {
+            "gridLabel": "A80",
+            "canonicalSourceId": "A80"
+          },
+          {
+            "gridLabel": "A83N",
+            "canonicalSourceId": "A83N"
+          },
+          {
+            "gridLabel": "A81",
+            "canonicalSourceId": "A81"
+          },
+          {
+            "gridLabel": "A84",
+            "canonicalSourceId": "A84"
+          },
+          {
+            "gridLabel": "A82",
+            "canonicalSourceId": "A82"
+          },
+          {
+            "gridLabel": "E86",
+            "canonicalSourceId": "E86"
+          },
+          {
+            "gridLabel": "C83",
+            "canonicalSourceId": "C83"
+          },
+          {
+            "gridLabel": "C87",
+            "canonicalSourceId": "C87"
+          },
+          {
+            "gridLabel": "I140",
+            "canonicalSourceId": "I140"
+          },
+          {
+            "gridLabel": "I87",
+            "canonicalSourceId": "I87"
+          },
+          {
+            "gridLabel": "I88",
+            "canonicalSourceId": "I88"
+          }
+        ],
+        "canonicalPlacementCount": 11,
+        "semester": 8
+      }
+    ]
+  },
+  "trajectories": [
+    {
+      "id": "personalizada",
+      "label": "Grilla indicativa",
+      "description": "Grilla curricular indicativa vigente de FCEA; ordena obligatorias y opciones por semestre sin volver obligatoria toda la oferta opcional.",
+      "credentialId": "licenciado-administracion",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "courseIds": [
+            "A10",
+            "C10",
+            "MC10",
+            "114A",
+            "128A",
+            "E10",
+            "E11"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "courseIds": [
+            "A20",
+            "C20",
+            "E20N",
+            "MC31",
+            "actividades-difusion-administracion",
+            "MC20",
+            "I137",
+            "ASA14",
+            "S46",
+            "S21",
+            "S22",
+            "investigacion-colaborativa-gestion-personas"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "courseIds": [
+            "A30",
+            "E30",
+            "MC40",
+            "J21",
+            "A31",
+            "C30",
+            "CURE-DF33"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "courseIds": [
+            "A40",
+            "MC30",
+            "A41",
+            "S90",
+            "C40",
+            "MC42",
+            "E40",
+            "I40",
+            "I41",
+            "S42",
+            "J61N"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "courseIds": [
+            "A61",
+            "C31",
+            "E53",
+            "I50",
+            "A50",
+            "A85",
+            "MC51",
+            "338N",
+            "I112N",
+            "CUT-O31T",
+            "MC46",
+            "MC47",
+            "CUT-O33T",
+            "I111N",
+            "A86",
+            "J50",
+            "I56A"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "courseIds": [
+            "C64",
+            "S60",
+            "A44",
+            "A42",
+            "MC72",
+            "A62",
+            "A63",
+            "A64",
+            "A65",
+            "A66",
+            "A67",
+            "A72",
+            "C60",
+            "C61",
+            "C63",
+            "E52",
+            "I97",
+            "I114D",
+            "I132",
+            "I141",
+            "J60OP"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "courseIds": [
+            "A70",
+            "A71",
+            "A52",
+            "A73",
+            "A76",
+            "A77",
+            "C70",
+            "C73",
+            "C75N",
+            "C76",
+            "MC32",
+            "E77"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "courseIds": [
+            "A80",
+            "A83N",
+            "A81",
+            "A84",
+            "A82",
+            "E86",
+            "C83",
+            "C87",
+            "I140",
+            "I87",
+            "I88"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gestion-de-personas",
+      "label": "Gestión de Personas",
+      "description": "Guía no certificada que combina las obligatorias con las unidades fuertemente recomendadas por FCEA para Gestión de Personas.",
+      "credentialId": "licenciado-administracion",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "courseIds": [
+            "A10",
+            "C10"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "courseIds": [
+            "A20",
+            "C20",
+            "E20N"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "courseIds": [
+            "A30",
+            "E30",
+            "MC40",
+            "J21"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "courseIds": [
+            "A40",
+            "MC30",
+            "A42"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "courseIds": [
+            "A61",
+            "C31",
+            "E53",
+            "I50",
+            "A54"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "courseIds": [
+            "C64",
+            "S60",
+            "A67"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "courseIds": [
+            "A70",
+            "A71",
+            "A85",
+            "E77"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "courseIds": [
+            "A80",
+            "A83N",
+            "A81",
+            "A89"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "label": "Marketing",
+      "description": "Guía no certificada que combina las obligatorias con las unidades fuertemente recomendadas por FCEA para Marketing.",
+      "credentialId": "licenciado-administracion",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "courseIds": [
+            "A10",
+            "C10"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "courseIds": [
+            "A20",
+            "C20",
+            "E20N"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "courseIds": [
+            "A30",
+            "E30",
+            "MC40",
+            "J21"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "courseIds": [
+            "A40",
+            "MC30"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "courseIds": [
+            "A61",
+            "C31",
+            "E53",
+            "I50"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "courseIds": [
+            "C64",
+            "S60",
+            "A63",
+            "A72"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "courseIds": [
+            "A70",
+            "A71",
+            "A52",
+            "A77"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "courseIds": [
+            "A80",
+            "A83N",
+            "A81",
+            "I87"
+          ]
+        }
+      ]
+    }
+  ]
+}
