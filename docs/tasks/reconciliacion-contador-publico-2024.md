@@ -27,3 +27,10 @@ Modelo: `gpt-5.6-sol`, esfuerzo `xhigh`. Depende de D03a y de la auditoría ofic
 - [FCEA: resoluciones de interés](https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html).
 
 Estas fuentes se deben verificar de nuevo al implementar; una página institucional puede cambiar. No usar EVA como autoridad curricular.
+
+## Estado de implementación
+
+- Fuente FCEA revisada el 5 de octubre de 2026: publicación completa, actualizada en julio de 2026, con ciclo común, catálogos flexibles y las cinco grillas de perfil. No corresponde registrar una brecha en `docs/carreras-a-actualizar.md`.
+- Artefacto auditable: `data/fcea/contador-publico-2024-trayectorias.json`. Regeneración: `node scripts/build-extracted-academic-plans.mjs` y `npm run trajectory:inventory`.
+- Resultado: 101 identidades verificadas, 27 asientos históricos excluidos y 232 colocaciones exactas distribuidas en cinco recorridos de ocho semestres (47, 43, 50, 46 y 46).
+- Validación final: `npm run trajectory:inventory`, pruebas específicas (24/24), `npm test` (972/972), `npm run lint` y `git diff --check` ejecutados antes del commit aislado.

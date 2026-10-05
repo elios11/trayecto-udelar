@@ -20,19 +20,19 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4523,
-      "candidate": 27871,
+      "verified": 4622,
+      "candidate": 27745,
       "historical-equivalent": 43,
       "administrative": 177,
-      "rejected": 9
+      "rejected": 36
     },
-    "beforePublishedCourses": 32402,
-    "afterPublishedCourses": 4523,
+    "beforePublishedCourses": 32375,
+    "afterPublishedCourses": 4622,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1515,
-    "visibleTargetsWithUnpublishedDependencies": 1256,
-    "plansWithVerifiedCatalog": 60,
-    "plansWithPartialCatalog": 61,
+    "afterPublishedRules": 1597,
+    "visibleTargetsWithUnpublishedDependencies": 1312,
+    "plansWithVerifiedCatalog": 61,
+    "plansWithPartialCatalog": 60,
     "plansWithStructureOnly": 18
   },
   "plans": [
@@ -1720,28 +1720,28 @@
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-contador-publico-2024.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "partial",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 128,
+        "publishedCourses": 101,
         "publishedRules": 151
       },
       "after": {
-        "publishedCourses": 2,
-        "hiddenCourses": 126,
-        "publishedRules": 2,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 101,
+        "hiddenCourses": 27,
+        "publishedRules": 84,
+        "rulesWithUnpublishedDependencies": 56
       },
       "statuses": {
-        "verified": 2,
-        "candidate": 126,
+        "verified": 101,
+        "candidate": 0,
         "historical-equivalent": 0,
         "administrative": 0,
-        "rejected": 0
+        "rejected": 27
       }
     },
     {
@@ -4565,5 +4565,5 @@
       }
     }
   ],
-  "contentHash": "sha256:45a43c58cc884f859325c8f948cbbcc31dea48f0183953ed22fa8bf82b3a63aa"
+  "contentHash": "sha256:715048c4905d8f6284fe938951f3c84043e98e2aaec0dd573166de804bdb72dd"
 }

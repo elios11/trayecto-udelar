@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:ecfac0dacfda31ed775e2817dd3d15b7036cb2c27b4520ea3455743bbfc9ad06",
-    "extractedReportHash": "sha256:45a43c58cc884f859325c8f948cbbcc31dea48f0183953ed22fa8bf82b3a63aa",
-    "officialAuditHash": "sha256:66d4a0cf5968e741bd2d2185634391b7dddb64beb0991f730f3f3218b69d03e8",
-    "reviewedTrajectoriesHash": "sha256:3e7cdabe613ef4ff22f9e21cfb3cc62d276ba6d8db7889dcf70ec92ff3cc1947"
+    "extractedCatalogHash": "sha256:3d4446b6b6f4f5b245abaf0a2e1724b8b6685bbfc705003731854550084089a6",
+    "extractedReportHash": "sha256:715048c4905d8f6284fe938951f3c84043e98e2aaec0dd573166de804bdb72dd",
+    "officialAuditHash": "sha256:68843581eed624aea70805e7e33d29f8ea29ed8338bca474d71a42463f3dbeb5",
+    "reviewedTrajectoriesHash": "sha256:0ccc7ceb59509602f28953781398677fb018d099517d9a11a37b675c493cf23a"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 89,
+      "official-trajectory-reproduced": 90,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 1,
-      "research-pending": 56
+      "research-pending": 55
     },
-    "pending": 57,
+    "pending": 56,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -133,10 +133,10 @@
         "serviceLabel": "Facultad de Ciencias Económicas y de Administración",
         "selectablePlanIds": 8,
         "states": {
-          "official-trajectory-reproduced": 3,
+          "official-trajectory-reproduced": 4,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 5
+          "research-pending": 4
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 57,
+    "total": 56,
     "plans": [
       {
         "priority": 1,
@@ -459,15 +459,6 @@
       {
         "priority": 2,
         "planId": "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcea"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcea-contador-publico-2024",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fcea"
@@ -888,7 +879,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
-          "bedelias-fcea-contador-publico-2024",
           "bedelias-fcea-licenciatura-en-administracion-2012",
           "bedelias-fcea-licenciatura-en-economia-2012",
           "bedelias-fcea-licenciatura-en-estadistica-2014"
@@ -4762,36 +4752,24 @@
           "careerLabel": "Contador Público",
           "planLabel": "Plan 2024 · vigente",
           "defaultTrajectoryId": "asesoria-financiera",
-          "defaultCredentialId": "sector-publico"
+          "defaultCredentialId": "asesoria-financiera"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-27",
-      "effectiveAt": "2024",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-05",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
           "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "url": "https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/7538-contador-publico-planes-varios.html",
-          "role": "vigencia del Plan 2024; ocho semestres; 360 créditos; estructura 260+10+60+30; cinco perfiles; cursos obligatorios y opcionales; constancias sin mención en el título",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Departamento de Contabilidad y Tributaria, FCEA",
-          "url": "https://www.fcea.udelar.edu.uy/departamentos-academicos/dpto-de-contabilidad-y-tributaria/193-departamentos/departamento-de-contabilidad-y-tributaria/6648-dcyt-contador-publico-2024.html",
-          "role": "Plan 2024; perfiles; organización académica vigente",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Bedelía de grado, FCEA",
-          "url": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html",
-          "role": "oferta 2026; resolución del perfil Controller y Transformación Digital; transición desde el Plan 2012",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-05",
+          "role": "ciclo común actualizado en julio de 2026, catálogos flexibles y cinco grillas semestrales de perfil"
         },
         {
           "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
-          "url": "https://fcea.udelar.edu.uy/ingreso-a-fcea.html",
-          "role": "ingreso vigente; sede Montevideo; apoyo mediante EVA",
-          "trajectoryEvidence": false
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/dpto_contabilidad_tributaria/Plan_de_estudios_2024_contador_publico.pdf",
+          "reviewedAt": "2026-10-05",
+          "role": "plan normativo, 360 créditos y estructura 260+10+60+30"
         }
       ],
       "scope": {
@@ -4807,23 +4785,51 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-periods",
+        "primary": "official-profiles",
         "features": [
-          "official-periods"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "contador publico:2024",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcea-contador-publico-2024.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/contador-publico-2024-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcea-contador-publico-2024.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:2209b2dd1ad8235209e2b9c5501b2800cf4ff1ee0bd3cd9da10fc9304e50444a",
+        "projectionContentHash": "sha256:f329bb141a5f79f9b8f47778bd5cb2ed0c94b769d875f774c48b63f18b1e93a6",
+        "pathways": [
+          {
+            "id": "asesoria-financiera",
+            "periodCount": 8
+          },
+          {
+            "id": "aspectos-tributarios-y-juridicos",
+            "periodCount": 8
+          },
+          {
+            "id": "controller-y-transformacion-digital",
+            "periodCount": 8
+          },
+          {
+            "id": "reportes-externos-y-atestiguamiento",
+            "periodCount": 8
+          },
+          {
+            "id": "sector-publico",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 232,
+        "matchedCoursePlacements": 232
       },
       "conflictNotes": [
-        "bedeliasGroupMinimums: Los grupos de los cinco perfiles figuran con mínimo cero en el árbol SGAE. Se sustituyen por los mínimos oficiales de FCEA: 40 obligatorios y 20 opcionales por perfil.",
-        "controllerRequiredCourses: El snapshot incluye I137 e I138 dentro del grupo obligatorio de Controller y eleva su oferta a 60 créditos. La página vigente de FCEA enumera seis cursos que suman 40; I137 e I138 se conservan sólo como opcionales libres.",
-        "commonCycleOffer: El grupo común de Bedelías suma 365 créditos porque contiene equivalencias y códigos alternativos. La UI exige el mínimo oficial de 260 y no presenta toda la oferta como obligatoria simultáneamente.",
-        "profileMeaning: Los perfiles son obligatorios y certificables, pero no alteran el título. Las credenciales de UI se rotulan como constancias para evitar presentarlas como cinco títulos distintos."
+        "E10/E11 y MC10 frente a 114A+128A son alternativas oficiales del ciclo común, no obligaciones acumulativas.",
+        "J44 figura como opción sin semestre en dos perfiles y permanece en catálogo sin inventar una ubicación.",
+        "La fila UPC admite cargas de 10, 15 o 20 créditos; se conservan UPC10, UPC15 y UPC20 para acreditar la carga elegida.",
+        "Los alias, reválidas y variantes Bedelías sin correspondencia inequívoca en la publicación vigente se excluyen del catálogo normal."
       ]
     },
     {
@@ -13340,5 +13346,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:12b8324bde44a1cd25c6f0f01c05ed8314e34cc6797d30855bb6d22daf9599fc"
+  "contentHash": "sha256:dc50f52f02559cf7337935c52a1d14eedcccf28db50c127452756fd8638e27af"
 }

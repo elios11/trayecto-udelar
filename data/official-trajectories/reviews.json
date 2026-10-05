@@ -1691,6 +1691,54 @@
         "Salto ofrece exclusivamente el primer año y la continuidad se realiza en Montevideo con el mismo progreso.",
         "El catálogo de electivas no publica códigos; sólo se vincularon coincidencias inequívocas y vigentes en Bedelías, dejando documentadas las etiquetas ambiguas o sin equivalente actual."
       ]
+    },
+    {
+      "planId": "bedelias-fcea-contador-publico-2024",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-05",
+      "effectiveAt": "2026-07",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "asesoria-financiera",
+          "aspectos-tributarios-y-juridicos",
+          "controller-y-transformacion-digital",
+          "reportes-externos-y-atestiguamiento",
+          "sector-publico"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/7538-contador-publico-planes-varios.html",
+          "reviewedAt": "2026-10-05",
+          "role": "ciclo común actualizado en julio de 2026, catálogos flexibles y cinco grillas semestrales de perfil"
+        },
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/dpto_contabilidad_tributaria/Plan_de_estudios_2024_contador_publico.pdf",
+          "reviewedAt": "2026-10-05",
+          "role": "plan normativo, 360 créditos y estructura 260+10+60+30"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/contador-publico-2024-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcea-contador-publico-2024.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "E10/E11 y MC10 frente a 114A+128A son alternativas oficiales del ciclo común, no obligaciones acumulativas.",
+        "J44 figura como opción sin semestre en dos perfiles y permanece en catálogo sin inventar una ubicación.",
+        "La fila UPC admite cargas de 10, 15 o 20 créditos; se conservan UPC10, UPC15 y UPC20 para acreditar la carga elegida.",
+        "Los alias, reválidas y variantes Bedelías sin correspondencia inequívoca en la publicación vigente se excluyen del catálogo normal."
+      ]
     }
   ]
 }
