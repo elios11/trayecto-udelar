@@ -20,6 +20,7 @@
 - `AGENTS.md` define como trabajar y es obligatorio para todos los chats.
 - `PROJECT_CONTEXT.md` describe el producto, la arquitectura y las decisiones transversales estables.
 - `docs/tasks/<nombre>.md` describe exclusivamente una funcionalidad, correccion o migracion concreta.
+- `docs/carreras-a-actualizar.md` registra carreras con implementacion academica progresiva, mallas anunciadas aun no publicadas o recorridos territoriales parciales que deban revisarse cuando aparezca evidencia oficial nueva. No sustituye el inventario de trayectorias aun sin investigar.
 - Para el comportamiento deseado de una tarea, prioriza la instruccion explicita actual del usuario y luego su especificacion. Para conocer el comportamiento ya implementado, verifica el codigo y las pruebas de la rama actual.
 - Si una fuente contradice materialmente a otra, no ocultes el conflicto: valida el estado real y pide una decision solo cuando no exista una opcion segura y claramente compatible.
 - No conviertas `PROJECT_CONTEXT.md` en historial de chats, lista de pendientes, registro de commits ni estado temporal de ramas.
@@ -31,6 +32,7 @@
 - Mantiene cada chat y worktree enfocado en una sola funcionalidad o correccion coherente.
 - Prefiere cambios pequenos y compatibles con la estructura actual. Evita refactorizaciones, renombrados o actualizaciones de dependencias no requeridos.
 - No agregues dependencias de produccion sin autorizacion explicita.
+- Durante una auditoria curricular, si descubres que la publicacion oficial de una carrera sigue en desarrollo, anuncia una malla futura o solo cubre parte de una sede/recorrido, agrega o actualiza su entrada en `docs/carreras-a-actualizar.md` en el mismo commit. Incluye ID de plan, alcance verificado, brecha, fuente y condicion concreta de nueva revision. No declares completa una malla por extrapolacion ni agregues planes simplemente no investigados. Retira la entrada solo despues de reconciliar y probar una publicacion oficial que cierre la brecha.
 - Preserva el comportamiento existente, la accesibilidad, el uso con teclado y tactil, y el diseno adaptable a movil.
 - Para preferencias exclusivamente locales, como tema o configuracion visual, usa almacenamiento del navegador salvo que la especificacion exija persistencia remota.
 - No cambies metadatos, imagenes sociales ni identidad visual fuera del alcance de la tarea.

@@ -1,0 +1,28 @@
+# Carreras a actualizar
+
+Inventario de **revisiones futuras por publicación académica nueva**. No es la cola de planes aún sin investigar (`data/official-trajectories/inventory.json`) ni una afirmación de que estas carreras estén mal implementadas: Trayecto muestra sólo el alcance que la fuente permite demostrar hoy.
+
+Al revisar una entrada, comparar la publicación oficial nueva con la revisión guardada, conservar IDs y progreso, actualizar la fuente curada y sus pruebas, y recién entonces cambiar la malla visible. Una fecha de revisión no promete que la facultad publique novedades ese día.
+
+| Carrera y plan | Alcance demostrado / motivo de seguimiento | Volver a revisar cuando… | Referencia actual |
+| --- | --- | --- | --- |
+| Ingeniería en Computación, Plan 2025 (`2025`) | La implementación y el cotejo oficial siguen en curso. Las trayectorias publicadas no distribuyen todavía los diez semestres ni los 450 créditos de Ingeniería; el recorrido de Analista en Colonia suma 248 de 270 cr. y Tacuarembó conserva sólo un tramo inicial. | La Comisión publique una trayectoria completa, los 22 cr. restantes del Analista en Colonia, continuidad en Tacuarembó, nuevos perfiles/optativas o una revisión de cualquiera de los recursos EVA auditados. | [Cotejo D03t](tasks/reconciliacion-fing-computacion-2025.md) · [sección curricular FING](https://eva.fing.edu.uy/course/view.php?id=800&section=4) |
+| Licenciatura en Ingeniería de Medios, Plan 2018 (`bedelias-fic-licenciatura-en-ingenieria-de-medios-2018`) | La primera cohorte comenzó en 2026; sólo el primer semestre dictado está demostrado como secuencia. El catálogo y el currículo individual siguen siendo parciales. | FIC/FING publiquen una grilla estable de semestres posteriores o amplíen la oferta curricular oficial. | [Auditoría de la carrera](tasks/importacion-masiva-carreras.md) |
+| Licenciatura en Turismo, Plan 2014 (`bedelias-cure-licenciatura-en-turismo-2014`) | FHCE aún anuncia su malla secuencial como próxima; se conserva la estructura flexible por áreas y sedes. | FHCE publique la malla prometida con períodos y materias. | [Índice de mallas FHCE](https://fhce.edu.uy/mallas-curriculares/) · [revisión de trayectorias](../data/official-trajectories/reviews.json) |
+| Ingeniería Química, Plan 2021 (`bedelias-fing-ingenieria-quimica-2021`) | Las sugerencias FING/FQ 2025 están reproducidas, pero la Comisión comunicó que actualiza contenidos y créditos desde febrero de 2026. | La Comisión publique una revisión del plan, las sugerencias o los créditos; no anticipar cambios anunciados pero no aprobados. | [Sección de la Comisión](https://eva.fing.edu.uy/course/view.php?id=198&section=1) · [revisión de trayectorias](../data/official-trajectories/reviews.json) |
+
+## Ofertas territoriales con recorrido parcial
+
+Estas carreras tienen una trayectoria más extensa demostrada en otra sede. Mantener la sede parcial tal como está hasta que el servicio publique una ampliación específica; no copiarle semestres de Montevideo u otra sede por similitud.
+
+| Carrera y sede | Alcance actual | Disparador de revisión |
+| --- | --- | --- |
+| Ingeniería Química 2021 · Salto | Primer año regional verificado, con continuidad en Montevideo. | Nuevo tramo curricular de Salto publicado por FING/FQ. |
+| Tecnólogo en Telecomunicaciones 2009 · Montevideo | Primer año verificado; la carrera completa está documentada en Rocha. | Nueva grilla o ampliación oficial de Montevideo. |
+| Técnico Bachiller en Ciencias Químicas 2015 · Salto | Primer año verificado; cinco semestres completos en Montevideo. | Nueva grilla oficial de Salto. |
+
+## Regla de mantenimiento
+
+- Agregar una entrada **en el mismo commit de la auditoría** cuando una fuente oficial indique implementación progresiva, malla futura anunciada, trayectoria incompleta o ampliación territorial pendiente. Registrar ID canónico de plan, alcance demostrado, brecha, fuente y disparador verificable.
+- Actualizar alcance, fuente y fecha de cotejo cuando se revise. Retirar una entrada sólo tras demostrar que la publicación ya cubre la brecha y que la proyección y las pruebas reproducen esa nueva cobertura.
+- No agregar automáticamente todos los planes `research-pending`: ahí falta investigación nuestra, no necesariamente una publicación futura de la institución.
