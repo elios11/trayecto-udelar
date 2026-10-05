@@ -844,12 +844,21 @@
     {
       "planId": "2025",
       "state": "official-trajectory-identified-pending",
-      "reviewedAt": "2026-10-04",
+      "reviewedAt": "2026-10-05",
       "effectiveAt": "2026",
       "projectionMechanism": "official-periods",
       "scope": {
-        "territories": ["Montevideo"],
-        "pathwayIds": ["pi-under-20", "pi-60-plus", "pi-20-59"]
+        "territories": ["Montevideo", "CENUR Litoral Norte", "Colonia", "Tacuarembó"],
+        "pathwayIds": [
+          "pi-under-20",
+          "pi-60-plus",
+          "pi-20-59",
+          "second-semester-pi-60-plus",
+          "second-semester-pi-20-59",
+          "litoral-norte",
+          "colonia-analyst",
+          "tacuarembo-initial"
+        ]
       },
       "sources": [
         {
@@ -875,6 +884,36 @@
           "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72913",
           "role": "trayectoria de Montevideo para ingreso en primer semestre y resultado de Prueba Inicial entre 20% y 59%",
           "contentHash": "sha256:e0cffb6037fde785c1e091542437c74c58a0b7c0884002b6d208633e56e5584f"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83838",
+          "role": "trayectoria de Montevideo para ingreso en segundo semestre y resultado de Prueba Inicial de 60% o más",
+          "contentHash": "sha256:6046414453ca23c2cdc5a7cb9e876befeaa9ac2e548d87fb2739d02f2df7b975"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83839",
+          "role": "trayectoria de Montevideo para ingreso en segundo semestre y resultado de Prueba Inicial entre 20% y 59%",
+          "contentHash": "sha256:bee2bacd70d308a948c2aeed57aec5b1cd8a6b64bcbaae3c4c6dfa67ac551afa"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72916",
+          "role": "trayectoria de Ingeniería y Licenciatura en Computación en CENUR Litoral Norte",
+          "contentHash": "sha256:164576b25c959b134630ca84a69a8c2431de91c3725c0c86a269a07fd165d445"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72919",
+          "role": "trayectoria parcial del título intermedio Analista en Computación del Plan 2025 en Colonia",
+          "contentHash": "sha256:4736746873934c2a2f70ada271dc4c58adc20e90fb50f7aa571bcdc320d63155"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Udelar",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72922",
+          "role": "trayecto inicial de Ingeniería en Computación en Tacuarembó, sin continuación publicada",
+          "contentHash": "sha256:54bcd9de82113255edfb68c04dbfccccfde67d256dd61042c595e82a7f0621e8"
         }
       ],
       "evidence": {
@@ -886,12 +925,15 @@
         "periodField": "periods",
         "compareCoursePlacements": true,
         "coverage": "partial-official",
-        "reason": "La correspondencia de los períodos publicados queda estructurada, pero la proyección sólo cubre hasta el octavo semestre y no cierra los diez semestres ni 450 créditos de Ingeniería."
+        "reason": "La correspondencia de las ocho variantes publicadas queda estructurada, pero ninguna fuente cierra los diez semestres ni 450 créditos de Ingeniería; Colonia cubre 248 de 270 créditos del título intermedio y Tacuarembó sólo publica un trayecto inicial de seis semestres."
       },
       "conflictNotes": [
         "Las fuentes cotejadas no publican la Prueba Inicial como unidad curricular ni le asignan cuatro créditos; la UI deja de acreditarla automáticamente y conserva PI sólo como ID histórico no curricular.",
-        "Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos permanecen sin ubicación dentro de estas trayectorias de ocho semestres; no se extrapolan desde el ejemplo general del plan.",
-        "La sección EVA vigente al 4 de octubre de 2026 enlaza además trayectorias de ingreso en segundo semestre y recorridos regionales. Quedan inventariados como brecha pendiente y este nodo no los mezcla con las dos trayectorias de Montevideo especificadas."
+        "Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos permanecen sin ubicación completa dentro de las variantes publicadas; no se extrapolan desde el ejemplo general del plan.",
+        "CENUR Litoral Norte se conserva como sede exacta porque el documento no atribuye la trayectoria a Salto o Paysandú por separado.",
+        "La trayectoria de Colonia pertenece al título intermedio Analista en Computación del mismo Plan 2025 y suma 248 de 270 créditos; no se presenta como plan separado ni se completan los 22 créditos restantes.",
+        "Tacuarembó publica 167 créditos en seis semestres como trayecto inicial y no determina una continuación; la proyección termina donde termina esa fuente.",
+        "El inventario contiene 201 ubicaciones: el conteo preliminar de 200 omitía Introducción a la Computación en el Semestre 1 del recurso 83839; sus cinco unidades curriculares suman exactamente los 43 créditos impresos."
       ]
     },
     {

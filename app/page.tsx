@@ -236,7 +236,7 @@ type Plan2025Projection = {
   creditStructure: CreditStructure;
   programSources: Array<{ courseCode: string; courseName: string; area: string; url: string }>;
   courses: Array<{ id: string; name: string; credits: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; placementTest?: boolean; nonCurricular?: boolean; engineeringOnly?: boolean; dataStatus: "bedelias-composition" | "fing-trajectory" | "project-assumption" }>;
-  trajectories: Record<string, { label: string; description: string; notice?: string; coverage?: "partial-official"; periods: Array<{ label: string; publishedCredits: number; courseIds: string[] }>; semesters: string[][] }>;
+  trajectories: Record<string, { label: string; description: string; notice?: string; campusId: string; campusLabel: string; credentialId: CredentialId; entryTerm?: "first-semester" | "second-semester"; coverage?: "partial-official"; continuation?: "not-uniquely-published"; periods: Array<{ label: string; publishedCredits: number; courseIds: string[] }>; semesters: string[][] }>;
   rules: VerifiedRule[];
 };
 
@@ -344,9 +344,15 @@ const buildPersonalDataCatalog = (loadedPlans: Partial<Record<PlanId, Registered
         ? [...registration.pathwayIds]
         : plan.id === "1997"
           ? Object.keys(plan1997TrajectoryData.trajectories)
+          : plan.id === "2025"
+            ? Object.keys(plan2025Data.trajectories)
           : [plan.defaultTrajectoryId],
-      campusIds: campuses.map((campus) => campus.id),
-      credentialIds: loaded?.creditStructure.credentials.map((credential) => credential.id) ?? [plan.defaultCredentialId],
+      campusIds: plan.id === "2025"
+        ? [...new Set(Object.values(plan2025Data.trajectories).map((trajectory) => trajectory.campusId))]
+        : campuses.map((campus) => campus.id),
+      credentialIds: plan.id === "2025"
+        ? plan2025Data.creditStructure.credentials.map((credential) => credential.id)
+        : loaded?.creditStructure.credentials.map((credential) => credential.id) ?? [plan.defaultCredentialId],
       loadUnit: usesCredits ? "credits" : usesHours ? "hours" : "courses",
     };
   })))
@@ -483,7 +489,10 @@ function buildExtendedPlan1997Courses(data: ExtendedElectivesProjection | null):
 function buildPlan2025Courses(trajectoryId: string): Course[] {
   const trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const semesters = new Map<string, number>();
-  trajectory.semesters.forEach((ids, index) => ids.forEach((id) => semesters.set(id, index + 1)));
+  trajectory.periods.forEach((period, index) => {
+    const periodNumber = Number.parseInt(period.label.match(/\d+/)?.[0] ?? String(index + 1), 10);
+    period.courseIds.forEach((id) => semesters.set(id, periodNumber));
+  });
   return plan2025Data.courses
     .filter((course) => semesters.has(course.id))
     .map((course) => ({ ...course, semester: semesters.get(course.id)!, offered: [] }));
@@ -751,7 +760,7 @@ export default function Home() {
   const [planYear, setPlanYear] = useState<PlanId>("2025");
   const [facultyId, setFacultyId] = useState("fing");
   const [trajectoryId, setTrajectoryId] = useState("pi-60-plus");
-  const [campusId, setCampusId] = useState("");
+  const [campusId, setCampusId] = useState("montevideo");
   const [progress, setProgress] = useState<PlanProgress>(() => createAcademicPlanRecord(() => ({})));
   const [academicHistories, setAcademicHistories] = useState<Record<string, AcademicHistory>>({});
   const [credentialId, setCredentialId] = useState<CredentialId>("engineer");
@@ -1069,9 +1078,10 @@ export default function Home() {
       setImportError({ title: "No pudimos cargar la carrera", message: "Probá seleccionar Química Farmacéutica nuevamente. Tu progreso no se modificó." });
       return;
     }
+    const nextPlan2025Trajectory = nextPlan.id === "2025" ? plan2025Data.trajectories[nextPlan.defaultTrajectoryId] : undefined;
     setTrajectoryId(nextPlan.defaultTrajectoryId);
-    setCampusId(nextRegisteredPlan?.campuses?.[0]?.id ?? "");
-    setCredentialId(nextPlan.defaultCredentialId);
+    setCampusId(nextPlan2025Trajectory?.campusId ?? nextRegisteredPlan?.campuses?.[0]?.id ?? "");
+    setCredentialId(nextPlan2025Trajectory?.credentialId ?? nextPlan.defaultCredentialId);
     setFacultyId(nextFacultyId);
     setPlanYear(nextPlan.id);
     setFullElectivesCatalogExpanded(false);
@@ -1230,6 +1240,10 @@ export default function Home() {
     ? plan2025Data.creditStructure
     : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
   const activePlan2025Trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
+  const plan2025CampusEntries = [...new Map(Object.values(plan2025Data.trajectories)
+    .map((trajectory) => [trajectory.campusId, trajectory.campusLabel] as const)).entries()];
+  const plan2025TrajectoryEntries = Object.entries(plan2025Data.trajectories)
+    .filter(([, trajectory]) => trajectory.campusId === activePlan2025Trajectory.campusId);
   const activePlan1997Trajectory = plan1997TrajectoryData.trajectories[trajectoryId] ?? plan1997TrajectoryData.trajectories["pi-20-59"];
   const activeRegisteredPathway = registeredPathwayEntries.find(([id]) => id === activeRegisteredPathwayId)?.[1];
   const activeRegisteredPeriods = activeRegisteredPresentation.periods;
@@ -1241,13 +1255,14 @@ export default function Home() {
   const semesters = isRegisteredPlan
     ? activeRegisteredPeriods.map((_, index) => index + 1)
     : planYear === "2025"
-    ? activePlan2025Trajectory.semesters.map((_, index) => index + 1)
+    ? activePlan2025Trajectory.periods.map((period, index) => Number.parseInt(period.label.match(/\d+/)?.[0] ?? String(index + 1), 10))
     : isProfilePlan || planYear === "qf-2015" ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : activePlan1997Trajectory.periods.map((_, index) => index + 1);
   const planMinCredits = isRegisteredPlan
     ? (activeRegisteredPlan?.plan.minCredits ?? registeredAcademicPlans[planYear]?.minCredits ?? 0)
     : planYear === "2025"
     ? plan2025Data.plan.minCredits
     : isProfilePlan ? (activeProfileData?.plan.minCredits ?? 450) : planYear === "qf-2015" ? (qf2015Data?.plan.minCredits ?? 450) : bedeliasData.plan.minCredits;
+  const activeTargetMinCredits = planYear === "2025" ? credential.minTotalCredits : planMinCredits;
   const hasPathwayCredentials = isRegisteredPlan && Object.values(activeRegisteredPlan?.pathways ?? {}).some((pathway) => pathway.credentialId);
   const degreeCredential = hasPathwayCredentials
     ? credential
@@ -1378,7 +1393,7 @@ export default function Home() {
         plannerV1: localStorage.getItem(PLANNER_STORAGE_KEY),
         currentTermV1: localStorage.getItem(CURRENT_TERM_STORAGE_KEY),
         selectionV1: localStorage.getItem(ACADEMIC_SELECTION_STORAGE_KEY)
-          ?? JSON.stringify({ facultyId: "fing", careerId: "computacion", planId: "2025", trajectoryId: "pi-60-plus", credentialId: "engineer", campusId: null }),
+          ?? JSON.stringify({ facultyId: "fing", careerId: "computacion", planId: "2025", trajectoryId: "pi-60-plus", credentialId: "engineer", campusId: "montevideo" }),
       };
       personalDataSerializedRef.current = rawStorage.personalDataV4;
       const baseCatalog = buildPersonalDataCatalog();
@@ -2558,8 +2573,8 @@ export default function Home() {
   const plannedHours = plannerCourses.reduce((sum, course) => assignedPlannerIds.has(course.id) ? sum + (course.hours ?? 0) : sum, 0);
   const creditProgressPercent = !hasPublishedCourseLoad
     ? Math.min((appMode === "planner" ? assignedPlannerIds.size / Math.max(plannerCourses.length, 1) : credentialRequirementsMet / Math.max(credentialRequirementsTotal, 1)) * 100, 100)
-    : planMinCredits > 0
-    ? Math.min((appMode === "planner" ? plannedCredits : earnedCredits) / planMinCredits * 100, 100)
+    : activeTargetMinCredits > 0
+    ? Math.min((appMode === "planner" ? plannedCredits : earnedCredits) / activeTargetMinCredits * 100, 100)
     : usesPublishedHours && planTotalHours
       ? Math.min((appMode === "planner" ? plannedHours : earnedHours) / planTotalHours * 100, 100)
       : 0;
@@ -3017,18 +3032,35 @@ export default function Home() {
                 {registeredCampuses.map((campus) => <option value={campus.id} key={campus.id}>{campus.label}</option>)}
               </select>
             </label>}
+            {planYear === "2025" && plan2025CampusEntries.length > 1 && <label className="campus-selector">
+              <span>Sede</span>
+              <select value={activePlan2025Trajectory.campusId} onChange={(event) => {
+                const nextEntry = Object.entries(plan2025Data.trajectories)
+                  .find(([, trajectory]) => trajectory.campusId === event.target.value);
+                if (!nextEntry) return;
+                const [nextId, nextTrajectory] = nextEntry;
+                setCampusId(nextTrajectory.campusId);
+                setTrajectoryId(nextId);
+                setCredentialId(nextTrajectory.credentialId);
+                setSelected(null);
+              }}>
+                {plan2025CampusEntries.map(([id, label]) => <option value={id} key={id}>{label}</option>)}
+              </select>
+            </label>}
             {appMode === "curriculum" && (!isRegisteredPlan || registeredPathwayEntries.length > 1 || activeRegisteredPlan?.plan.auditStatus === "audited") && <label>
               <span>{isRegisteredPlan ? registeredAcademicPlans[planYear]?.pathwayLabel : isProfilePlan ? "Perfil" : "Trayectoria"}</span>
               <select value={trajectoryId} onChange={(event) => {
                 const next = event.target.value;
                 setTrajectoryId(next);
-                const nextCredentialId = isRegisteredPlan ? activeRegisteredPlan?.pathways[next]?.credentialId : undefined;
+                const nextPlan2025Trajectory = planYear === "2025" ? plan2025Data.trajectories[next] : undefined;
+                const nextCredentialId = isRegisteredPlan ? activeRegisteredPlan?.pathways[next]?.credentialId : nextPlan2025Trajectory?.credentialId;
                 if (nextCredentialId) setCredentialId(nextCredentialId);
+                if (nextPlan2025Trajectory) setCampusId(nextPlan2025Trajectory.campusId);
                 setSelected(null);
               }}>
                 {isRegisteredPlan ? registeredPathwayEntries.map(([id, pathway]) => (
                   <option value={id} key={id}>{pathway.label}</option>
-                )) : planYear === "2025" ? Object.entries(plan2025Data.trajectories).map(([id, trajectory]) => (
+                )) : planYear === "2025" ? plan2025TrajectoryEntries.map(([id, trajectory]) => (
                   <option value={id} key={id}>{trajectory.label}</option>
                 )) : planYear === "electrica-2023" ? Object.entries(electric2023Data?.profiles ?? {}).map(([id, profile]) => (
                   <option value={id} key={id}>{profile.label}</option>
@@ -3047,7 +3079,7 @@ export default function Home() {
           ) : isRegisteredPlan ? (
             <p className={`pilot-note ${activeRegisteredPresentation.generated ? "generated-pathway-note" : activeRegisteredPlan?.plan.auditStatus === "audited" ? "" : "pending-audit-note"}`}><span className="pilot-note-mark" aria-hidden="true">{activeRegisteredPresentation.generated ? "!" : activeRegisteredPlan?.plan.auditStatus === "audited" ? "✓" : "i"}</span><span className="pilot-note-copy">{activeCampus ? `Sede: ${activeCampus.label}. ` : ""}{activeRegisteredPresentation.generated ? <><strong>Recorrido orientativo generado.</strong> {activeRegisteredPresentation.description}{provisionalRegisteredCourseCount > 0 && <> Las materias marcadas como provisionales no completan requisitos oficiales.</>}</> : <>{activeRegisteredPathway?.description} {activeRegisteredPlan?.plan.notice}</>}</span></p>
           ) : planYear === "2025" ? (
-            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activePlan2025Trajectory.description} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
+            <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy"><strong>Sede: {activePlan2025Trajectory.campusLabel}.</strong> {activePlan2025Trajectory.description} {activePlan2025Trajectory.notice} Bedelías confirma el plan vigente, pero su composición y sus previaturas todavía están incompletas.</span></p>
           ) : isProfilePlan ? (
             <p className="pilot-note"><span className="pilot-note-mark" aria-hidden="true">i</span><span className="pilot-note-copy">{activeProfileData?.profiles[trajectoryId]?.description} Trayectoria sugerida por la Comisión de Carrera; créditos, áreas y previaturas contrastados con Bedelías.</span></p>
           ) : planYear === "qf-2015" ? (
@@ -3059,11 +3091,11 @@ export default function Home() {
 
         <div className="credit-summary">
           <div className="credit-ring" style={{ "--progress": `${creditProgressPercent}%` } as React.CSSProperties}>
-            <div><strong>{!hasPublishedCourseLoad ? appMode === "planner" ? assignedPlannerIds.size : credentialRequirementsMet : usesPublishedHours ? (appMode === "planner" ? plannedHours : earnedHours) : (appMode === "planner" ? plannedCredits : earnedCredits)}</strong><span>{!hasPublishedCourseLoad ? appMode === "planner" ? `de ${plannerCourses.length} materias` : `de ${credentialRequirementsTotal} requisitos` : usesPublishedHours && planTotalHours ? `de ${planTotalHours} h` : planMinCredits > 0 ? `de ${planMinCredits}` : "mínimo pendiente"}</span></div>
+            <div><strong>{!hasPublishedCourseLoad ? appMode === "planner" ? assignedPlannerIds.size : credentialRequirementsMet : usesPublishedHours ? (appMode === "planner" ? plannedHours : earnedHours) : (appMode === "planner" ? plannedCredits : earnedCredits)}</strong><span>{!hasPublishedCourseLoad ? appMode === "planner" ? `de ${plannerCourses.length} materias` : `de ${credentialRequirementsTotal} requisitos` : usesPublishedHours && planTotalHours ? `de ${planTotalHours} h` : activeTargetMinCredits > 0 ? `de ${activeTargetMinCredits}` : "mínimo pendiente"}</span></div>
           </div>
           <div>
             <p>{!hasPublishedCourseLoad ? appMode === "planner" ? "Materias planificadas" : "Requisitos cumplidos" : usesPublishedHours ? (appMode === "planner" ? "Horas planificadas" : "Horas completadas") : appMode === "planner" ? "Créditos planificados" : "Créditos obtenidos"}</p>
-            <strong>{!hasPublishedCourseLoad ? appMode === "planner" ? `${assignedPlannerIds.size} materias distribuidas · carga no publicada` : `${completedCourseCount} materias completadas · carga no publicada` : usesPublishedHours && planTotalHours ? `${Math.round((appMode === "planner" ? plannedHours : earnedHours) / planTotalHours * 100)}% de la carga publicada` : appMode === "planner" ? `${plannedCredits} cr. distribuidos` : planMinCredits > 0 ? `${Math.round(earnedCredits / planMinCredits * 100)}% de la carrera` : "Mínimo no publicado"}</strong>
+            <strong>{!hasPublishedCourseLoad ? appMode === "planner" ? `${assignedPlannerIds.size} materias distribuidas · carga no publicada` : `${completedCourseCount} materias completadas · carga no publicada` : usesPublishedHours && planTotalHours ? `${Math.round((appMode === "planner" ? plannedHours : earnedHours) / planTotalHours * 100)}% de la carga publicada` : appMode === "planner" ? `${plannedCredits} cr. distribuidos` : activeTargetMinCredits > 0 ? `${Math.round(earnedCredits / activeTargetMinCredits * 100)}% del título seleccionado` : "Mínimo no publicado"}</strong>
           </div>
         </div>
       </section>
@@ -3410,8 +3442,8 @@ export default function Home() {
               {semesters.map((semester) => (
                 <section className="semester-column" key={semester}>
                   <header>
-                    <span>{semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
-                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : planYear === "1997" ? activePlan1997Trajectory.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{coursesLoadLabel(filtered(semester))}</p></div>
+                    <span>{planYear === "2025" ? String(semester).padStart(2, "0") : semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
+                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : planYear === "2025" ? activePlan2025Trajectory.periods.find((period) => period.label === `Semestre ${semester}`)?.label : planYear === "1997" ? activePlan1997Trajectory.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{coursesLoadLabel(filtered(semester))}</p></div>
                   </header>
                   <div className="course-stack">
                     {filtered(semester).map((course) => (

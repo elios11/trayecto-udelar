@@ -78,7 +78,7 @@ test("D03s cierra Computación 1997 con cuatro trayectorias completas y el tramo
   assert.deepEqual(plan.scope.territories, ["Montevideo"]);
 });
 
-test("D03t coteja Computación 2025 exactamente y conserva abierto el tramo no publicado", () => {
+test("D03t coteja las ocho variantes de Computación 2025 y conserva abiertas las continuaciones no publicadas", () => {
   const plan = savedInventory.plans.find(({ planId }) => planId === "2025");
   assert.equal(plan.state, "official-trajectory-identified-pending");
   assert.equal(plan.currentProjection.primary, "official-periods");
@@ -88,12 +88,20 @@ test("D03t coteja Computación 2025 exactamente y conserva abierto el tramo no p
     ["pi-under-20", 1],
     ["pi-60-plus", 8],
     ["pi-20-59", 8],
+    ["second-semester-pi-60-plus", 8],
+    ["second-semester-pi-20-59", 8],
+    ["litoral-norte", 8],
+    ["colonia-analyst", 7],
+    ["tacuarembo-initial", 6],
   ]);
-  assert.equal(plan.evidence.expectedCoursePlacements, 63);
-  assert.equal(plan.evidence.matchedCoursePlacements, 63);
-  assert.deepEqual(plan.scope.territories, ["Montevideo"]);
-  assert.match(plan.evidence.reason, /no cierra los diez semestres/);
+  assert.equal(plan.evidence.expectedCoursePlacements, 201);
+  assert.equal(plan.evidence.matchedCoursePlacements, 201);
+  assert.deepEqual(plan.scope.territories, ["Montevideo", "CENUR Litoral Norte", "Colonia", "Tacuarembó"]);
+  assert.match(plan.evidence.reason, /ninguna fuente cierra los diez semestres/);
+  assert.match(plan.evidence.reason, /248 de 270 créditos/);
   assert.ok(plan.conflictNotes.some((note) => /no publican la Prueba Inicial como unidad curricular/.test(note)));
+  assert.ok(plan.conflictNotes.some((note) => /no atribuye la trayectoria a Salto o Paysandú/.test(note)));
+  assert.ok(plan.conflictNotes.some((note) => /mismo Plan 2025/.test(note)));
 });
 
 test("D03l cierra Ingeniería Química con las dos currículas exactas y conserva Salto parcial", () => {

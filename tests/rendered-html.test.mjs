@@ -31,6 +31,11 @@ test("renderiza la malla y su procedencia institucional", async () => {
   assert.doesNotMatch(html, /Pre-semestre/);
   assert.doesNotMatch(html, /Acreditada por trayectoria · 4 cr\./);
   assert.match(html, /La Prueba Inicial determina qué recorrido se recomienda/);
+  assert.match(html, /CENUR Litoral Norte/);
+  assert.match(html, /Colonia/);
+  assert.match(html, /Tacuarembó/);
+  assert.match(html, /Ingreso 2º semestre · PI 60% o más/);
+  assert.match(html, /Ingreso 2º semestre · PI 20–59%/);
   assert.match(html, /Bedelías confirma el plan vigente/);
   assert.match(html, /Arquitectura de Computadoras/);
   assert.match(html, /official-tag/);

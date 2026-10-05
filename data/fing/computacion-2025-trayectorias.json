@@ -6,6 +6,11 @@
     "planDocument": "https://eva.fing.edu.uy/mod/resource/view.php?id=72909",
     "trajectory60Plus": "https://eva.fing.edu.uy/mod/resource/view.php?id=72912",
     "trajectory20To59": "https://eva.fing.edu.uy/mod/resource/view.php?id=72913",
+    "trajectorySecondSemester60Plus": "https://eva.fing.edu.uy/mod/resource/view.php?id=83838",
+    "trajectorySecondSemester20To59": "https://eva.fing.edu.uy/mod/resource/view.php?id=83839",
+    "trajectoryLitoralNorte": "https://eva.fing.edu.uy/mod/resource/view.php?id=72916",
+    "trajectoryColoniaAnalyst": "https://eva.fing.edu.uy/mod/resource/view.php?id=72919",
+    "trajectoryTacuaremboInitial": "https://eva.fing.edu.uy/mod/resource/view.php?id=72922",
     "news": "https://www.fing.edu.uy/es/node/52537",
     "reviewedAt": "2026-10-04",
     "evidence": {
@@ -41,15 +46,49 @@
           "pdfCreationDate": "2025-12-17T00:36:54-03:00",
           "pages": 1,
           "contentHash": "sha256:e0cffb6037fde785c1e091542437c74c58a0b7c0884002b6d208633e56e5584f"
+        },
+        {
+          "id": "trajectory-second-semester-pi-60-plus",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83838",
+          "mediaType": "application/pdf",
+          "pdfCreationDate": "2026-07-08T22:19:53-03:00",
+          "pages": 1,
+          "contentHash": "sha256:6046414453ca23c2cdc5a7cb9e876befeaa9ac2e548d87fb2739d02f2df7b975"
+        },
+        {
+          "id": "trajectory-second-semester-pi-20-59",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83839",
+          "mediaType": "application/pdf",
+          "pdfCreationDate": "2026-07-21T18:58:50-03:00",
+          "pages": 1,
+          "contentHash": "sha256:bee2bacd70d308a948c2aeed57aec5b1cd8a6b64bcbaae3c4c6dfa67ac551afa"
+        },
+        {
+          "id": "trajectory-litoral-norte",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72916",
+          "mediaType": "application/pdf",
+          "pdfCreationDate": "2025-12-23T07:08:20-03:00",
+          "pages": 1,
+          "contentHash": "sha256:164576b25c959b134630ca84a69a8c2431de91c3725c0c86a269a07fd165d445"
+        },
+        {
+          "id": "trajectory-colonia-analyst",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72919",
+          "mediaType": "application/pdf",
+          "pdfCreationDate": "2025-12-17T00:44:24-03:00",
+          "pages": 1,
+          "contentHash": "sha256:4736746873934c2a2f70ada271dc4c58adc20e90fb50f7aa571bcdc320d63155"
+        },
+        {
+          "id": "trajectory-tacuarembo-initial",
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72922",
+          "mediaType": "application/pdf",
+          "pdfCreationDate": "2025-12-23T19:22:09-03:00",
+          "pages": 1,
+          "contentHash": "sha256:54bcd9de82113255edfb68c04dbfccccfde67d256dd61042c595e82a7f0621e8"
         }
       ],
-      "additionalResourcesPendingReconciliation": [
-        "https://eva.fing.edu.uy/mod/resource/view.php?id=83838",
-        "https://eva.fing.edu.uy/mod/resource/view.php?id=83839",
-        "https://eva.fing.edu.uy/mod/resource/view.php?id=72916",
-        "https://eva.fing.edu.uy/mod/resource/view.php?id=72919",
-        "https://eva.fing.edu.uy/mod/resource/view.php?id=72922"
-      ]
+      "additionalResourcesPendingReconciliation": []
     }
   },
   "plan": {
@@ -64,7 +103,7 @@
     "implementationStatus": "in-progress",
     "placementTestCredits": null,
     "placementTestCreditsStatus": "not-published-as-curricular-credit",
-    "notice": "Las dos trayectorias de ingreso en primer semestre publicadas para Montevideo cubren el núcleo común y requisitos específicos hasta el octavo semestre. No ubican todavía perfiles, optativas, los 20 créditos complementarios ni el Proyecto de Grado de 30 créditos dentro de una trayectoria completa de diez semestres. La Prueba Inicial determina qué recorrido se recomienda, pero estas fuentes no la publican como unidad curricular ni le asignan créditos."
+    "notice": "Las trayectorias oficiales publicadas cubren ingresos en primer y segundo semestre de Montevideo, CENUR Litoral Norte, el título intermedio de Analista en Colonia y el trayecto inicial de Tacuarembó. Ninguna ubica una trayectoria completa de Ingeniería de diez semestres y 450 créditos. La Prueba Inicial determina qué recorrido se recomienda, pero estas fuentes no la publican como unidad curricular ni le asignan créditos."
   },
   "areaTargets": [
     { "id": "MCE", "name": "Matemática y ciencias", "target": 50 },
@@ -109,12 +148,30 @@
     { "id": "P25-IIO", "name": "Introducción a la Investigación de Operaciones", "credits": 10, "area": "CA", "engineeringOnly": true },
     { "id": "P25-SEG", "name": "Seguridad Computacional", "credits": 10, "area": "FS" },
     { "id": "P25-ISA", "name": "Ingeniería de Software Avanzada", "credits": 10, "area": "IS", "engineeringOnly": true },
-    { "id": "P25-PROY-IS", "name": "Proyecto de Ingeniería de Software", "credits": 15, "area": "AI", "engineeringOnly": true }
+    { "id": "P25-PROY-IS", "name": "Proyecto de Ingeniería de Software", "credits": 15, "area": "AI", "engineeringOnly": true },
+    { "id": "P25-FAC", "name": "Física con Apoyo Computacional", "credits": 10, "area": "MCE" },
+    { "id": "P25-LN-GAL1", "name": "Geometría y Álgebra Lineal I · CENUR Litoral Norte", "credits": 12, "area": "MCE" },
+    { "id": "P25-LN-CALC1", "name": "Cálculo I · CENUR Litoral Norte", "credits": 16, "area": "MCE" },
+    { "id": "P25-LN-GAL2", "name": "Geometría y Álgebra Lineal II · CENUR Litoral Norte", "credits": 12, "area": "MCE" },
+    { "id": "P25-LN-CALC2", "name": "Cálculo II · CENUR Litoral Norte", "credits": 16, "area": "MCE" },
+    { "id": "P25-TAC-CALC1", "name": "Cálculo 1 (IF, TAC, LEAGA)", "credits": 10, "area": "MCE" },
+    { "id": "P25-TAC-GAL", "name": "Geometría y Álgebra Lineal (IF, TAC, LEAGA)", "credits": 9, "area": "MCE" },
+    { "id": "P25-TAC-TIC", "name": "Taller de Introducción a la Computación", "credits": 8, "area": "AI" },
+    { "id": "P25-TAC-CALC2", "name": "Cálculo 2 (IF, TAC, LEAGA)", "credits": 10, "area": "MCE" },
+    { "id": "P25-TAC-CA", "name": "Computación Aplicada", "credits": 10, "area": "CA" },
+    { "id": "P25-TAC-EST1", "name": "Estadística I", "credits": 10, "area": "MCE" },
+    { "id": "P25-TAC-TIIO", "name": "Taller de Introducción a la Investigación de Operaciones", "credits": 6, "area": "CA" },
+    { "id": "P25-TAC-ECON", "name": "Introducción a la Economía (TED)", "credits": 10, "area": "COMP" },
+    { "id": "P25-TAC-EPCN", "name": "Elementos de Programación y Cálculo Numérico", "credits": 6, "area": "CA" }
   ],
   "trajectories": {
     "pi-under-20": {
       "label": "Ingreso 1er semestre · PI menos de 20%",
       "description": "Tramo inicial obligatorio publicado por FING: Matemática Inicial y TBEO.",
+      "campusId": "montevideo",
+      "campusLabel": "Montevideo",
+      "credentialId": "engineer",
+      "entryTerm": "first-semester",
       "notice": "FING publica únicamente este bloque obligatorio para el primer semestre. Una vez completado, el estudiante puede continuar por alguna de las trayectorias sugeridas; esta opción no inventa semestres posteriores.",
       "coverage": "partial-official",
       "continuation": "not-uniquely-published",
@@ -126,6 +183,10 @@
     "pi-60-plus": {
       "label": "Ingreso 1er semestre · PI 60% o más",
       "description": "Trayectoria sugerida por FING para quienes alcanzan al menos 60% en la Prueba Inicial.",
+      "campusId": "montevideo",
+      "campusLabel": "Montevideo",
+      "credentialId": "engineer",
+      "entryTerm": "first-semester",
       "coverage": "partial-official",
       "sourceDocumentId": "trajectory-pi-60-plus",
       "periods": [
@@ -142,6 +203,10 @@
     "pi-20-59": {
       "label": "Ingreso 1er semestre · PI 20–59%",
       "description": "Trayectoria sugerida por FING para quienes obtienen entre 20% y 59% en la Prueba Inicial.",
+      "campusId": "montevideo",
+      "campusLabel": "Montevideo",
+      "credentialId": "engineer",
+      "entryTerm": "first-semester",
       "coverage": "partial-official",
       "sourceDocumentId": "trajectory-pi-20-59",
       "periods": [
@@ -154,12 +219,109 @@
         { "label": "Semestre 7", "publishedCredits": 40, "courseIds": ["P25-MEC", "P25-IIO", "P25-SEG", "P25-ISA"] },
         { "label": "Semestre 8", "publishedCredits": 15, "courseIds": ["P25-PROY-IS"] }
       ]
+    },
+    "second-semester-pi-60-plus": {
+      "label": "Ingreso 2º semestre · PI 60% o más",
+      "description": "Trayectoria sugerida para Ingeniería y Licenciatura en Montevideo, con ingreso en el segundo semestre del año y al menos 60% en la Prueba Inicial.",
+      "campusId": "montevideo",
+      "campusLabel": "Montevideo",
+      "credentialId": "engineer",
+      "entryTerm": "second-semester",
+      "coverage": "partial-official",
+      "sourceDocumentId": "trajectory-second-semester-pi-60-plus",
+      "periods": [
+        { "label": "Semestre 0", "publishedCredits": 38, "courseIds": ["1061", "2044", "2046", "1375"] },
+        { "label": "Semestre 1", "publishedCredits": 36, "courseIds": ["P25-EDA", "1030", "2043", "P25-LPO", "P25-TG"] },
+        { "label": "Semestre 2", "publishedCredits": 46, "courseIds": ["P25-ALG", "P25-ARQ", "1062", "P25-OOP", "P25-LAB"] },
+        { "label": "Semestre 3", "publishedCredits": 45, "courseIds": ["P25-CPD", "1031", "P25-PIS", "1025", "P25-SO"] },
+        { "label": "Semestre 4", "publishedCredits": 45, "courseIds": ["P25-AA", "P25-BD", "P25-RED", "P25-TD"] },
+        { "label": "Semestre 5", "publishedCredits": 48, "courseIds": ["P25-APC", "P25-FAC", "P25-ISA", "P25-SEG", "P25-TC"] },
+        { "label": "Semestre 6", "publishedCredits": 15, "courseIds": ["P25-PROY-IS"] },
+        { "label": "Semestre 7", "publishedCredits": 10, "courseIds": ["P25-IIO"] }
+      ]
+    },
+    "second-semester-pi-20-59": {
+      "label": "Ingreso 2º semestre · PI 20–59%",
+      "description": "Trayectoria sugerida para Ingeniería y Licenciatura en Montevideo, con ingreso en el segundo semestre del año y resultado de 20% a 59% en la Prueba Inicial.",
+      "campusId": "montevideo",
+      "campusLabel": "Montevideo",
+      "credentialId": "engineer",
+      "entryTerm": "second-semester",
+      "coverage": "partial-official",
+      "sourceDocumentId": "trajectory-second-semester-pi-20-59",
+      "periods": [
+        { "label": "Semestre 0", "publishedCredits": 20, "courseIds": ["2046", "MI2", "1375"] },
+        { "label": "Semestre 1", "publishedCredits": 43, "courseIds": ["1061", "P25-EDA", "2044", "2043", "P25-LPO"] },
+        { "label": "Semestre 2", "publishedCredits": 34, "courseIds": ["P25-ARQ", "P25-OOP", "1030", "P25-LAB"] },
+        { "label": "Semestre 3", "publishedCredits": 45, "courseIds": ["1062", "P25-CPD", "P25-PIS", "P25-SO", "P25-TG"] },
+        { "label": "Semestre 4", "publishedCredits": 42, "courseIds": ["P25-ALG", "P25-BD", "1031", "P25-TD"] },
+        { "label": "Semestre 5", "publishedCredits": 38, "courseIds": ["P25-APC", "P25-ISA", "1025", "P25-TC"] },
+        { "label": "Semestre 6", "publishedCredits": 35, "courseIds": ["P25-AA", "P25-PROY-IS", "P25-RED"] },
+        { "label": "Semestre 7", "publishedCredits": 30, "courseIds": ["P25-FAC", "P25-IIO", "P25-SEG"] }
+      ]
+    },
+    "litoral-norte": {
+      "label": "CENUR Litoral Norte",
+      "description": "Trayectoria sugerida para Ingeniería y Licenciatura en Computación en CENUR Litoral Norte.",
+      "campusId": "cenur-litoral-norte",
+      "campusLabel": "CENUR Litoral Norte",
+      "credentialId": "engineer",
+      "coverage": "partial-official",
+      "sourceDocumentId": "trajectory-litoral-norte",
+      "periods": [
+        { "label": "Semestre 1", "publishedCredits": 42, "courseIds": ["2044", "P25-LN-GAL1", "2043", "P25-LN-CALC1"] },
+        { "label": "Semestre 2", "publishedCredits": 44, "courseIds": ["1375", "P25-LN-GAL2", "2046", "P25-LN-CALC2"] },
+        { "label": "Semestre 3", "publishedCredits": 42, "courseIds": ["P25-TG", "P25-EDA", "P25-LPO", "1025", "P25-MEC"] },
+        { "label": "Semestre 4", "publishedCredits": 43, "courseIds": ["P25-LAB", "P25-ALG", "P25-OOP", "P25-ARQ", "P25-BD"] },
+        { "label": "Semestre 5", "publishedCredits": 44, "courseIds": ["P25-TC", "P25-APC", "P25-SO", "P25-PIS", "P25-CPD"] },
+        { "label": "Semestre 6", "publishedCredits": 35, "courseIds": ["P25-RED", "P25-TD", "P25-AA"] },
+        { "label": "Semestre 7", "publishedCredits": 30, "courseIds": ["P25-IIO", "P25-SEG", "P25-ISA"] },
+        { "label": "Semestre 8", "publishedCredits": 15, "courseIds": ["P25-PROY-IS"] }
+      ]
+    },
+    "colonia-analyst": {
+      "label": "Analista · Colonia",
+      "description": "Trayectoria sugerida para el título intermedio de Analista en Computación en Colonia.",
+      "campusId": "colonia",
+      "campusLabel": "Colonia",
+      "credentialId": "analyst",
+      "coverage": "partial-official",
+      "sourceDocumentId": "trajectory-colonia-analyst",
+      "periods": [
+        { "label": "Semestre 1", "publishedCredits": 36, "courseIds": ["2044", "1030", "2043", "1061"] },
+        { "label": "Semestre 2", "publishedCredits": 38, "courseIds": ["1375", "1031", "2046", "1062"] },
+        { "label": "Semestre 3", "publishedCredits": 42, "courseIds": ["P25-TG", "P25-EDA", "P25-LPO", "1025", "P25-MEC"] },
+        { "label": "Semestre 4", "publishedCredits": 43, "courseIds": ["P25-LAB", "P25-ALG", "P25-OOP", "P25-ARQ", "P25-BD"] },
+        { "label": "Semestre 5", "publishedCredits": 44, "courseIds": ["P25-TC", "P25-APC", "P25-SO", "P25-PIS", "P25-CPD"] },
+        { "label": "Semestre 6", "publishedCredits": 35, "courseIds": ["P25-RED", "P25-TD", "P25-AA"] },
+        { "label": "Semestre 7", "publishedCredits": 10, "courseIds": ["P25-SEG"] }
+      ]
+    },
+    "tacuarembo-initial": {
+      "label": "Trayecto inicial · Tacuarembó",
+      "description": "Trayecto inicial de Ingeniería en Computación publicado para Tacuarembó.",
+      "notice": "La fuente sólo publica seis semestres del trayecto inicial y no fija una continuación; esta opción no inventa períodos posteriores.",
+      "campusId": "tacuarembo",
+      "campusLabel": "Tacuarembó",
+      "credentialId": "engineer",
+      "coverage": "partial-official",
+      "continuation": "not-uniquely-published",
+      "sourceDocumentId": "trajectory-tacuarembo-initial",
+      "periods": [
+        { "label": "Semestre 1", "publishedCredits": 27, "courseIds": ["P25-TAC-CALC1", "P25-TAC-GAL", "P25-TAC-TIC"] },
+        { "label": "Semestre 2", "publishedCredits": 35, "courseIds": ["1375", "2044", "2046", "P25-TAC-CALC2"] },
+        { "label": "Semestre 3", "publishedCredits": 22, "courseIds": ["P25-TG", "P25-EDA", "P25-LPO"] },
+        { "label": "Semestre 4", "publishedCredits": 33, "courseIds": ["P25-LAB", "P25-ALG", "P25-TAC-CA", "P25-TAC-EST1"] },
+        { "label": "Semestre 5", "publishedCredits": 24, "courseIds": ["P25-TC", "P25-APC", "P25-TAC-TIIO"] },
+        { "label": "Semestre 6", "publishedCredits": 26, "courseIds": ["P25-TAC-ECON", "P25-TAC-EPCN", "P25-OOP"] }
+      ]
     }
   },
   "documentedGaps": [
-    "Las trayectorias cotejadas finalizan en el octavo semestre y no completan los diez semestres ni los 450 créditos exigidos por el Plan 2025 de Ingeniería.",
+    "Las siete trayectorias completas o parciales publicadas, además del tramo PI menor a 20%, cubren hasta ocho períodos y no completan los diez semestres ni los 450 créditos exigidos por el Plan 2025 de Ingeniería.",
     "Los perfiles, las optativas, los 20 créditos complementarios y el Proyecto de Grado de 30 créditos no se trasladan desde el ejemplo del plan a estas trayectorias sin una publicación vigente que determine su ubicación.",
     "La Prueba Inicial sólo determina la recomendación de trayectoria; las fuentes cotejadas no la publican como unidad curricular ni le asignan cuatro créditos.",
-    "La sección EVA vigente también enlaza trayectorias para ingreso en segundo semestre y recorridos regionales. Esos recursos quedan inventariados como pendientes y no se extrapolan a las dos trayectorias de Montevideo auditadas en este nodo."
+    "La trayectoria de Analista en Colonia publica 248 créditos en siete semestres, por debajo de los 270 créditos del título intermedio; no se completa con materias inferidas.",
+    "El trayecto inicial de Tacuarembó publica 167 créditos en seis semestres y no fija una continuación; no se extrapola desde otra sede."
   ]
 }

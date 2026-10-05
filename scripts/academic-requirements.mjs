@@ -189,6 +189,20 @@ export const plan2025SuggestedNodes = {
   "P25-SEG": "p2025-fs",
   "P25-ISA": "p2025-is",
   "P25-PROY-IS": "p2025-ai",
+  "P25-FAC": "p2025-mce",
+  "P25-LN-GAL1": "p2025-mce",
+  "P25-LN-CALC1": "p2025-mce",
+  "P25-LN-GAL2": "p2025-mce",
+  "P25-LN-CALC2": "p2025-mce",
+  "P25-TAC-CALC1": "p2025-mce",
+  "P25-TAC-GAL": "p2025-mce",
+  "P25-TAC-TIC": "p2025-ai",
+  "P25-TAC-CALC2": "p2025-mce",
+  "P25-TAC-CA": "p2025-ca",
+  "P25-TAC-EST1": "p2025-mce",
+  "P25-TAC-TIIO": "p2025-ca",
+  "P25-TAC-ECON": "p2025-society",
+  "P25-TAC-EPCN": "p2025-ca",
 };
 
 export const groupCodeToNode = {
