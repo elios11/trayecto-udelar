@@ -26,3 +26,30 @@ Modelo: `gpt-5.6-sol`, esfuerzo `xhigh`. Depende de D03a, D03u y D03v ya integra
 - [FCEA: ficha de la carrera, grilla y trayectorias sugeridas](https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/155-licenciado-en-economia.html).
 
 Verificar vigencia y contenido durante la implementación. EVA y la composición de Bedelías no son autoridad de inclusión curricular.
+
+## Resultado auditado
+
+- Consulta: 2026-10-05. Vigencia publicada: grilla FCEA actualizada en julio de 2026 para Montevideo, con ocho semestres y 360 créditos.
+- Evidencia versionada: `data/fcea/economia-2012-trayectoria.json`. Contiene autoridad, URL exacta y función de cada documento; 81 filas de grilla y 83 identidades verificadas; mínimos, alternativas y cuatro guías no certificadas; contrastes puntuales con Bedelías y trayectorias normalizadas para comprobar la proyección.
+- Huellas reproducibles: `sha256:7cd7b1fd61c360bd944c32021eb01ea7929c9843826dc229dad20a105fc14072` para `mainGrid` y `sha256:a38b9bf4b02ea3b46352a7f43bb749eccbcda0dff93b5cbf9786816548fe9b79` para `suggestedGuides`. La canonicalización es `JSON.stringify` de cada sección conservando el orden versionado.
+- No se detectó una publicación parcial ni una ampliación futura anunciada. La oferta opcional puede variar por semestre, pero la grilla curricular cotejada está publicada como vigente; por eso no corresponde agregar esta carrera a `docs/carreras-a-actualizar.md`.
+
+Discrepancias resueltas sin extrapolar:
+
+- `MC52` tiene 15 créditos en la grilla vigente y aparece repartida en Bedelías como 10 básicos más 5 opcionales. Se conserva `fcea-mc52-2` como identidad canónica de 15 créditos y `fcea-mc52-3` sólo como alias histórico explícito de progreso.
+- `UADA1` y `UADA2` permanecen como IDs de progreso distintos para el doble dictado de una actividad opcional de 5 créditos; no se suman como obligación.
+- `I90` usa los 25 créditos de la grilla vigente. Los 20 impresos en la guía Académica y su total histórico de 100 se conservan en el artefacto como evidencia, sin recalcularlos ni convertirlos en la carga vigente.
+- Las categorías abiertas y pares alternativos de las guías permanecen como recomendaciones. No se inventan materias, menciones ni equivalencias por semejanza de nombre.
+
+## Regeneración sin extracción
+
+Desde la raíz del repositorio:
+
+```powershell
+npm run trajectory:economia-2012
+node scripts/bedelias-audit-queue.mjs
+node scripts/bedelias-ui-curriculum-queue.mjs
+npm run trajectory:inventory
+```
+
+El primer comando verifica ambas huellas y la estructura normalizada antes de reconstruir la proyección. Ningún comando requiere el HTML o PDF crudo ni acceso de red; una revisión futura sólo debe volver a consultar las URLs institucionales para detectar una nueva versión publicada y, si corresponde, actualizar las filas y huellas versionadas.

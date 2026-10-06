@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:c49263de6e38f34e5fe54a0dc3d3155ebc0d29c08b1e037a437605cf7ef5eb9c",
-    "officialAuditHash": "sha256:68843581eed624aea70805e7e33d29f8ea29ed8338bca474d71a42463f3dbeb5",
+    "auditQueueHash": "sha256:bc0bc041545152640bf31b7838c624abd24f216768d5df2498b36bbdc504b548",
+    "officialAuditHash": "sha256:6c64c8728d0a9687cf72b0573fbb098101e8218292a2908f7bd4a2371d560433",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -20,19 +20,19 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4684,
-      "candidate": 27377,
-      "historical-equivalent": 43,
+      "verified": 4723,
+      "candidate": 26994,
+      "historical-equivalent": 44,
       "administrative": 177,
-      "rejected": 253
+      "rejected": 534
     },
-    "beforePublishedCourses": 32069,
-    "afterPublishedCourses": 4684,
+    "beforePublishedCourses": 31725,
+    "afterPublishedCourses": 4723,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1617,
-    "visibleTargetsWithUnpublishedDependencies": 1362,
-    "plansWithVerifiedCatalog": 62,
-    "plansWithPartialCatalog": 59,
+    "afterPublishedRules": 1636,
+    "visibleTargetsWithUnpublishedDependencies": 1395,
+    "plansWithVerifiedCatalog": 63,
+    "plansWithPartialCatalog": 58,
     "plansWithStructureOnly": 18
   },
   "plans": [
@@ -1780,28 +1780,37 @@
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-licenciatura-en-economia-2012.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "partial",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 427,
+        "publishedCourses": 83,
         "publishedRules": 163
       },
       "after": {
-        "publishedCourses": 44,
-        "hiddenCourses": 456,
-        "publishedRules": 24,
-        "rulesWithUnpublishedDependencies": 47
+        "publishedCourses": 83,
+        "hiddenCourses": 355,
+        "publishedRules": 43,
+        "rulesWithUnpublishedDependencies": 80
       },
       "statuses": {
-        "verified": 44,
-        "candidate": 383,
-        "historical-equivalent": 0,
+        "verified": 83,
+        "candidate": 0,
+        "historical-equivalent": 1,
         "administrative": 73,
-        "rejected": 0
+        "rejected": 281
+      },
+      "authorityReconciliation": {
+        "after": {
+          "verified": 83,
+          "candidate": 0,
+          "historical-equivalent": 1,
+          "administrative": 73,
+          "rejected": 281
+        }
       }
     },
     {
@@ -4565,5 +4574,5 @@
       }
     }
   ],
-  "contentHash": "sha256:3739f72c13502797e5b1c405f0423923ea1da03bbf691a2ed0f4c09fdd9c887e"
+  "contentHash": "sha256:f427ce713f9430da5cdeca0c5cd796c737e1f27002b683afabbc2c3eca98222b"
 }

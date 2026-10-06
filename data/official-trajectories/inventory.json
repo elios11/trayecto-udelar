@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:3d4446b6b6f4f5b245abaf0a2e1724b8b6685bbfc705003731854550084089a6",
-    "extractedReportHash": "sha256:3739f72c13502797e5b1c405f0423923ea1da03bbf691a2ed0f4c09fdd9c887e",
-    "officialAuditHash": "sha256:6c64c8728d0a9687cf72b0573fbb098101e8218292a2908f7bd4a2371d560433",
-    "reviewedTrajectoriesHash": "sha256:0b57fefe0918ea12a7fd355ce65fd9cfee23d6f92fbd2e8dc100fc2dbc607e8b"
+    "extractedReportHash": "sha256:f427ce713f9430da5cdeca0c5cd796c737e1f27002b683afabbc2c3eca98222b",
+    "officialAuditHash": "sha256:bc339e7af03d63cfedaefff6bf2d9660b1c443c2cf3172a3e956185a9da01656",
+    "reviewedTrajectoriesHash": "sha256:2d1f34640cbbc60af75652f1209ef2b0884c2ba125033b516428963de24f3437"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 91,
+      "official-trajectory-reproduced": 92,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 1,
-      "research-pending": 54
+      "research-pending": 53
     },
-    "pending": 55,
+    "pending": 54,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -133,10 +133,10 @@
         "serviceLabel": "Facultad de Ciencias Económicas y de Administración",
         "selectablePlanIds": 8,
         "states": {
-          "official-trajectory-reproduced": 5,
+          "official-trajectory-reproduced": 6,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 3
+          "research-pending": 2
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 55,
+    "total": 54,
     "plans": [
       {
         "priority": 1,
@@ -459,15 +459,6 @@
       {
         "priority": 2,
         "planId": "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcea"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcea-licenciatura-en-economia-2012",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fcea"
@@ -870,7 +861,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
-          "bedelias-fcea-licenciatura-en-economia-2012",
           "bedelias-fcea-licenciatura-en-estadistica-2014"
         ]
       },
@@ -4916,33 +4906,27 @@
           "defaultCredentialId": "licenciado-economia"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-27",
-      "effectiveAt": "2012",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-05",
+      "effectiveAt": "2026-07",
       "officialSources": [
         {
           "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "url": "https://fcea.udelar.edu.uy/ensenanza-dpto-economia/licenciatura-en-economia.html",
-          "role": "vigencia; título; ocho semestres; 360 créditos; Montevideo y EVA; mínimos por área; grilla julio 2026; cuatro trayectorias sugeridas",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-05",
+          "role": "vigencia, grilla curricular de ocho semestres actualizada en julio de 2026 y mínimos por área"
         },
         {
           "authority": "Comisión de Carrera de Licenciatura en Economía, FCEA",
           "url": "https://www.fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Trayectorias_sugeridas_-_Todos_Juntos.pdf",
-          "role": "carácter orientativo de las trayectorias; cursos fuertemente recomendados; alternativas; créditos sugeridos y libres por perfil",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-05",
+          "role": "cuatro guías sugeridas, alternativas, categorías abiertas y créditos impresos"
         },
         {
           "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "url": "https://www.fcea.udelar.edu.uy/images/institucional/Documentos/Normativa/plan-de-estudios-2012.pdf",
-          "role": "plan vigente; título único sin menciones; 360 créditos; flexibilidad curricular; mínimos por área",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Bedelía de grado, FCEA",
-          "url": "https://fcea.udelar.edu.uy/bedelia-carreras-grado/resoluciones-de-interes.html",
-          "role": "oferta académica 2026; actualizaciones de la grilla",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-05",
+          "role": "plan vigente, título único, 360 créditos y flexibilidad curricular"
         }
       ],
       "scope": {
@@ -4958,23 +4942,52 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-profiles",
         "features": [
-          "areas"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en economia:2012",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcea-licenciatura-en-economia-2012.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/economia-2012-trayectoria.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcea-licenciatura-en-economia-2012.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:fbf03433167e263db5152f3581f6e072b9c819b7be9621292e2bb9b429360c41",
+        "projectionContentHash": "sha256:3accd41e1b331c556292b8317ebf2717b89e684dd5139a67732a56b3219acb84",
+        "pathways": [
+          {
+            "id": "personalizada",
+            "periodCount": 8
+          },
+          {
+            "id": "academica",
+            "periodCount": 8
+          },
+          {
+            "id": "empresarial",
+            "periodCount": 8
+          },
+          {
+            "id": "politicas-publicas",
+            "periodCount": 8
+          },
+          {
+            "id": "sector-financiero",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 215,
+        "matchedCoursePlacements": 215
       },
       "conflictNotes": [
-        "freeDistribution: Los mínimos absolutos por área suman 310, mientras el total es 360. Los 50 restantes son de libre distribución; todas las unidades reciben esa elegibilidad alternativa sin duplicar créditos.",
-        "historicalEquivalences: Los grupos de U.C. básicas contienen códigos actuales, reválidas y equivalencias. Se publican como alternativas elegibles para el submínimo, no como obligaciones simultáneas.",
-        "suggestedPathways: Las cuatro trayectorias son guías no certificadas. La UI destaca las unidades concretas del documento oficial y mantiene visibles en el catálogo las categorías abiertas y todas las demás opciones.",
-        "firstSemesterEquivalences: MC10 equivale al conjunto 114A + 128A. Desde 2026 E10 es la única oferta obligatoria inicial, aunque E11 conserva equivalencia de egreso; la proyección mantiene las alternativas históricas sin exigirlas simultáneamente."
+        "E10 frente a E11 y MC10 frente a 114A+128A son alternativas oficiales, no obligaciones acumulativas.",
+        "MC52 publica 15 créditos vigentes y conserva el ID fcea-mc52-2 con asignaciones Bedelías de 10 básicos y 5 opcionales; fcea-mc52-3 queda como alias explícito de progreso.",
+        "UADA1 y UADA2 conservan IDs distintos para el doble dictado de una actividad opcional de 5 créditos; no forman una obligación acumulativa.",
+        "I90 usa los 25 créditos de la grilla vigente; los 20 créditos impresos por la guía Académica histórica quedan trazados como discrepancia.",
+        "Las categorías abiertas de las guías no se convierten en materias ni obligaciones inventadas, y los registros Bedelías sin respaldo exacto quedan fuera del catálogo normal."
       ]
     },
     {
@@ -13351,5 +13364,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:bfe67017daa93c4b5e6fa730a43c18d0271aafcc75fa0306382183b6a966d7fe"
+  "contentHash": "sha256:c893883b28f88c76d1d90aacb46a1d9108f77b6e947f02aadfe0f4a2d0bc77fe"
 }

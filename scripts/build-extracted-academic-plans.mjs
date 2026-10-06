@@ -20,6 +20,7 @@ const naval1997ReconciliationPath = path.join(projectRoot, "data", "fing", "inge
 const industrialMecanica1997ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-industrial-mecanica-1997-trayectorias.json");
 const produccion2010ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-produccion-2010-trayectorias.json");
 const sistemasComunicacion2018ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-sistemas-comunicacion-2018-trayectorias.json");
+const fceaEconomia2012Path = path.join(projectRoot, "data", "fcea", "economia-2012-trayectoria.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -668,6 +669,8 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       ?? courseOverrides[normalize(legacyParsed.name)]
       ?? {};
     const sourceCourseId = courseOverride.sourceId ?? parsed.code;
+    if (curriculum.excludeUnverifiedSnapshotCourses === true
+      && !verifiedSourceCourseIds.has(String(sourceCourseId))) continue;
     const profileIndex = (node.path ?? []).findIndex((segment) => normalize(segment) === "perfiles");
     const configuredPathwayId = [...(node.path ?? [])].reverse().map((segment) => (
       String(segment).match(/^([A-Z0-9.]+(?:-[A-Z0-9.]+)*)\s+-\s+/i)?.[1]
@@ -717,6 +720,12 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       course = withCourseAuthority({
         id,
         ...(sourceCourseId ? { bedeliasCode: sourceCourseId } : {}),
+        ...((courseOverride.equivalentCourseIds ?? []).length > 0
+          ? { equivalentCourseIds: [...new Set(courseOverride.equivalentCourseIds)] }
+          : {}),
+        ...((courseOverride.equivalentBedeliasCodes ?? []).length > 0
+          ? { equivalentBedeliasCodes: [...new Set(courseOverride.equivalentBedeliasCodes)] }
+          : {}),
         name: displayName,
         credits,
         eligibleRequirementIds,
@@ -747,6 +756,10 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     }
     if (Number.isFinite(Number(courseOverride.mergedTotalCredits))) {
       course.credits = Number(courseOverride.mergedTotalCredits);
+    }
+    for (const [allocationNodeId, allocationCredits] of Object.entries(courseOverride.allocationCreditOverrides ?? {})) {
+      const allocation = course.creditAllocations.find(({ nodeId: allocationNodeIdValue }) => allocationNodeIdValue === allocationNodeId);
+      if (allocation && Number.isFinite(Number(allocationCredits))) allocation.credits = Number(allocationCredits);
     }
     const id = course.id;
     addToPeriod(periodsByLabel, period, id);
@@ -1237,15 +1250,145 @@ function buildProjection(entry, snapshot, audit) {
             status: "rejected",
             fieldProvenance: courseFieldProvenance("rejected"),
           })),
+          ...(audit?.officialPlan?.curriculum?.progressAliases ?? []).flatMap((alias) => {
+            const canonicalCourseId = officialCurriculum?.courseIdBySourceId?.get(alias.sourceId);
+            if (!canonicalCourseId) return [];
+            return (alias.equivalentCourseIds ?? []).map((courseId) => ({
+              courseId,
+              sourceCourseId: alias.sourceId,
+              status: "historical-equivalent",
+              canonicalCourseId,
+              fieldProvenance: courseFieldProvenance("historical-equivalent"),
+            }));
+          }),
+          ...(audit?.officialPlan?.curriculum?.excludeUnverifiedSnapshotCourses === true
+            ? (snapshot.plan?.courses ?? []).filter((course) => (
+              course.code
+              && !isAdministrativeCreditEntry(course.name)
+              && !exactOfficialCourseSourceIds(audit).has(String(course.code))
+            )).map((course, index) => ({
+              courseId: `${snapshot.service.code.toLocaleLowerCase()}-rejected-${slug(course.code || course.name || index + 1)}`,
+              sourceCourseId: course.code ?? null,
+              status: "rejected",
+              fieldProvenance: courseFieldProvenance("rejected"),
+            }))
+            : []),
         ],
       },
-      audit: { anomalies: snapshot.validation?.issues ?? [], priority: entry.priority ?? "official-evidence-complete", publicationEligible: false },
+      audit: {
+        anomalies: audit?.officialPlan?.curriculum?.projectionAnomalies ?? snapshot.validation?.issues ?? [],
+        priority: entry.priority ?? "official-evidence-complete",
+        publicationEligible: false,
+      },
     },
   };
 }
 
 async function loadJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
+}
+
+function fceaEconomia2012Reconciliation(source) {
+  const gridRows = source.mainGrid.periods.flatMap((period) => (
+    period.rows.flatMap((row) => row.sourceIds.map((sourceId) => ({ ...row, sourceId, periodLabel: period.label })))
+  ));
+  const sourceCourses = [
+    ...gridRows,
+    ...source.additionalVerifiedCourses.map((course) => ({
+      ...course,
+      sourceId: course.sourceId,
+      sourceIds: [course.sourceId],
+    })),
+  ];
+  const courseOverrides = Object.fromEntries(sourceCourses.map((course) => [course.sourceId, {
+    sourceId: course.sourceId,
+    name: course.name,
+    ...(course.sourceId === "MC52" ? {} : { requirementId: course.area }),
+    ...(course.sourceId === "MC52"
+      ? {
+          mergedTotalCredits: course.credits,
+          allocationCreditOverrides: { "free-distribution": course.credits },
+        }
+      : { credits: course.credits }),
+    ...((source.bedeliasComparison.progressAliases ?? []).find(({ sourceId }) => sourceId === course.sourceId) ?? {}),
+  }]));
+  const verifiedCourseIds = [...new Set(sourceCourses.map(({ sourceId }) => sourceId))];
+  const requiredByPeriod = new Map(source.mainGrid.periods.map((period) => [
+    period.label,
+    period.rows.filter(({ inclusion }) => inclusion !== "opcional").flatMap(({ sourceIds }) => sourceIds),
+  ]));
+  const periodBySourceId = new Map(gridRows.map(({ sourceId, periodLabel }) => [sourceId, periodLabel]));
+  const guideTrajectory = (guide) => {
+    const recommendedIds = [...new Set(guide.suggestions.flatMap(({ sourceIds = [] }) => sourceIds))];
+    return {
+      id: guide.id,
+      label: guide.label,
+      description: guide.description,
+      credentialId: "licenciado-economia",
+      useOnlyConfiguredPeriods: true,
+      periods: source.mainGrid.periods.map(({ label }) => ({
+        label,
+        courseIds: [...new Set([
+          ...(requiredByPeriod.get(label) ?? []),
+          ...recommendedIds.filter((sourceId) => periodBySourceId.get(sourceId) === label),
+        ])],
+      })),
+    };
+  };
+  const trajectories = [
+    {
+      id: "personalizada",
+      label: "Grilla curricular",
+      description: "Grilla curricular vigente de FCEA; ordena obligatorias y opciones por semestre sin volver obligatoria toda la oferta opcional.",
+      credentialId: "licenciado-economia",
+      useOnlyConfiguredPeriods: true,
+      periods: source.mainGrid.periods.map(({ label, rows }) => ({
+        label,
+        courseIds: rows.flatMap(({ sourceIds }) => sourceIds),
+      })),
+    },
+    ...source.suggestedGuides.map(guideTrajectory),
+  ];
+
+  return {
+    reviewedAt: source.source.reviewedAt,
+    sources: source.source.documents,
+    trajectories,
+    curriculum: {
+      sourceUrl: source.mainGrid.sourceUrl,
+      sourceDataPath: "data/fcea/economia-2012-trayectoria.json",
+      pathwayLabel: "Recorrido",
+      strictOfficialCourseIds: true,
+      verifiedCourseIds,
+      excludeUnverifiedSnapshotCourses: true,
+      mergeSplitCompositionCourses: true,
+      courseOverrides,
+      progressAliases: source.bedeliasComparison.progressAliases ?? [],
+      includeAllCoursesInPathwayCatalog: true,
+      periodOrder: source.mainGrid.periods.map(({ label }) => label),
+      projectionAnomalies: source.interpretation.creditConflicts.map(({ sourceId, resolution }) => ({
+        field: `credits.${sourceId}`,
+        resolution,
+      })),
+      requiredCourseGroups: [{
+        id: "economia-obligatorias-fijas",
+        label: "Unidades curriculares obligatorias sin alternativas",
+        minCompleted: source.interpretation.fixedRequiredSourceIds.length,
+        sourceCourseIds: source.interpretation.fixedRequiredSourceIds,
+        verifiedSourceCourseIds: source.interpretation.fixedRequiredSourceIds,
+        sourceUrl: source.mainGrid.sourceUrl,
+      }],
+    },
+    credentialRequiredCourseGroupIds: {
+      "licenciado-economia": ["economia-obligatorias-fijas"],
+    },
+    additionalAnomalies: source.interpretation.creditConflicts.map(({ sourceId, resolution }) => ({
+      field: `credits.${sourceId}`,
+      resolution,
+    })),
+    uiNotice: "Plan 2012 flexible de ocho semestres y 360 créditos en Montevideo. La Currícula reproduce la grilla FCEA actualizada en julio de 2026 y ofrece cuatro guías no certificadas; sus categorías abiertas y alternativas no son obligaciones acumulativas. Cumplí los mínimos por área y 50 créditos de libre distribución.",
+    remainingWork: "La oferta opcional puede variar por semestre. Una nueva revisión sólo requiere reconsultar las fuentes si cambia su fecha publicada o alguna huella normalizada.",
+  };
 }
 
 function mergeAuditReconciliation(audit, reconciliation) {
@@ -1311,6 +1454,7 @@ export async function buildExtractedAcademicPlans() {
   const industrialMecanica1997Reconciliation = await loadJson(industrialMecanica1997ReconciliationPath);
   const produccion2010Reconciliation = await loadJson(produccion2010ReconciliationPath);
   const sistemasComunicacion2018Reconciliation = await loadJson(sistemasComunicacion2018ReconciliationPath);
+  const fceaEconomia2012 = await loadJson(fceaEconomia2012Path);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1344,6 +1488,7 @@ export async function buildExtractedAcademicPlans() {
       ...plan,
       reviewedAt: plan.reviewedAt ?? sistemasComunicacion2018Reconciliation.reviewedAt,
     }]),
+    ["licenciatura en economia:2012", fceaEconomia2012Reconciliation(fceaEconomia2012)],
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,

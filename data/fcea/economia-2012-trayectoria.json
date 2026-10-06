@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fcea-licenciatura-en-economia-2012",
+  "source": {
+    "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+    "reviewedAt": "2026-10-05",
+    "effectiveAt": "2026-07",
+    "publishedUpdate": "julio 2026",
+    "scope": "grilla curricular vigente de ocho semestres, mínimos por área, equivalencias de egreso y cuatro trayectorias sugeridas para créditos opcionales",
+    "documents": [
+      {"url":"https://fcea.udelar.edu.uy/ensenanza-dpto-economia/licenciatura-en-economia.html","authority":"Facultad de Ciencias Económicas y de Administración, Udelar","role":"vigencia, título, duración, sede, grilla curricular actualizada en julio de 2026, mínimos por área y enlace al documento de trayectorias"},
+      {"url":"https://www.fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Trayectorias_sugeridas_-_Todos_Juntos.pdf","authority":"Comisión de Carrera de Licenciatura en Economía, FCEA","role":"carácter orientativo, relevancia, alternativas, categorías abiertas y créditos impresos de las cuatro trayectorias sugeridas"},
+      {"url":"https://www.fcea.udelar.edu.uy/images/institucional/Documentos/Normativa/plan-de-estudios-2012.pdf","authority":"Facultad de Ciencias Económicas y de Administración, Udelar","role":"plan vigente, título único, 360 créditos y flexibilidad curricular"}
+    ]
+  },
+  "fingerprints": {
+    "algorithm": "sha256",
+    "canonicalization": "JSON.stringify de la sección normalizada, conservando orden de filas, alternativas y propiedades",
+    "normalizedGrid": "sha256:7cd7b1fd61c360bd944c32021eb01ea7929c9843826dc229dad20a105fc14072",
+    "normalizedSuggestedGuides": "sha256:a38b9bf4b02ea3b46352a7f43bb749eccbcda0dff93b5cbf9786816548fe9b79"
+  },
+  "interpretation": {
+    "minimumCredits": 360,
+    "minimumCreditsByArea": {"economics":150,"quantitative":80,"social":50,"integrative":10,"accounting":10,"administration":10,"legal":0,"freeDistribution":50},
+    "basicCreditsByArea": {"economics":120,"quantitative":70,"social":20,"integrative":10,"accounting":10,"administration":10},
+    "fixedRequiredSourceIds": ["C10","A10","MC20","E34N","E30","MC31","S40","E31","E40","MC42","E41","E51","E50","MC51","I51E","E60","E61","MC61","E70","E71","MC70","S82"],
+    "alternatives": [
+      {"label":"Introducción a la Microeconomía","rule":"E10 es la fila vigente y E11 conserva equivalencia para el egreso; no se exigen ambas","alternatives":[["E10"],["E11"]]},
+      {"label":"Cálculo I","rule":"aprobar MC10 o la ruta 114A más 128A","alternatives":[["MC10"],["114A","128A"]]}
+    ],
+    "optionalBlocks": "Las filas opcionales son catálogos semestrales de elección; no se exige aprobar todas sus unidades.",
+    "suggestedGuides": "Académica, Empresarial, Políticas Públicas y Sector Financiero son guías no certificadas. Las categorías abiertas y alternativas del PDF no se transforman en materias concretas ni obligaciones acumulativas.",
+    "bedeliasRole": "Bedelías se usa para conservar identidades de progreso y contrastar códigos, créditos y previaturas de filas ya respaldadas por la publicación curricular vigente. Sus demás registros no acreditan inclusión.",
+    "creditConflicts": [
+      {"sourceId":"MC52","resolution":"La grilla vigente publica 15 créditos. Bedelías reparte la misma identidad en 10 créditos básicos y 5 opcionales; la proyección conserva el ID fcea-mc52-2 como curso de 15 créditos, ambas asignaciones y fcea-mc52-3 como alias explícito de progreso."},
+      {"sourceId":"I90","resolution":"La grilla vigente publica 25 créditos, mientras el documento histórico de trayectorias imprime 20. La materia usa 25 créditos; el total impreso de la guía Académica se conserva como evidencia y no se recalcula."}
+    ],
+    "doubleTeaching": "La fila UADA1/UADA2 publica dos códigos para la misma actividad de 5 créditos con doble dictado. Se conservan ambas identidades de progreso como opciones y no se acumulan como obligación."
+  },
+  "additionalVerifiedCourses": [
+    {"sourceId":"E11","officialCode":"E11","bedeliasCode":"E11","name":"Análisis de las Interacciones Económicas","credits":10,"area":"economics-basic","inclusion":"alternativa-obligatoria-sin-fila-vigente","basis":"La nota al pie de la grilla vigente la declara equivalente a E10 para el egreso."}
+  ],
+  "mainGrid": {
+    "sourceUrl": "https://fcea.udelar.edu.uy/ensenanza-dpto-economia/licenciatura-en-economia.html",
+    "periods": [
+      {"label":"Semestre 1","semester":1,"rows":[
+        {"gridLabel":"E10","sourceIds":["E10"],"name":"Introducción a la Microeconomía","credits":10,"area":"economics-basic","inclusion":"alternativa-obligatoria"},
+        {"gridLabel":"MC10","sourceIds":["MC10"],"name":"Cálculo I","credits":10,"area":"quantitative-basic","inclusion":"alternativa-obligatoria"},
+        {"gridLabel":"114A","sourceIds":["114A"],"name":"Cálculo I/A","credits":5,"area":"quantitative-basic","inclusion":"alternativa-obligatoria"},
+        {"gridLabel":"128A","sourceIds":["128A"],"name":"Cálculo I/B","credits":5,"area":"quantitative-basic","inclusion":"alternativa-obligatoria"},
+        {"gridLabel":"C10","sourceIds":["C10"],"name":"Conceptos Contables","credits":10,"area":"accounting-basic","inclusion":"obligatoria"},
+        {"gridLabel":"A10","sourceIds":["A10"],"name":"Administración y Gestión de las Organizaciones I","credits":10,"area":"administration-basic","inclusion":"obligatoria"}
+      ]},
+      {"label":"Semestre 2","semester":2,"rows":[
+        {"gridLabel":"MC20","sourceIds":["MC20"],"name":"Álgebra Lineal","credits":10,"area":"quantitative-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E34N","sourceIds":["E34N"],"name":"Introducción a la Macroeconomía","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"S21","sourceIds":["S21"],"name":"Ciencia Política","credits":10,"area":"social-optional","inclusion":"opcional"},
+        {"gridLabel":"E20N","sourceIds":["E20N"],"name":"Economía Descriptiva","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"S46","sourceIds":["S46"],"name":"Sociología Contemporánea","credits":10,"area":"social-optional","inclusion":"opcional"},
+        {"gridLabel":"S22","sourceIds":["S22"],"name":"Desarrollo y Bienestar","credits":10,"area":"social-optional","inclusion":"opcional"},
+        {"gridLabel":"I137","sourceIds":["I137"],"name":"Curso-taller de Introducción a la Extensión Universitaria","credits":10,"area":"integrative-optional","inclusion":"opcional"}
+      ]},
+      {"label":"Semestre 3","semester":3,"rows":[
+        {"gridLabel":"E30","sourceIds":["E30"],"name":"Macroeconomía I","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"MC31","sourceIds":["MC31"],"name":"Cálculo II","credits":10,"area":"quantitative-basic","inclusion":"obligatoria"},
+        {"gridLabel":"S40","sourceIds":["S40"],"name":"Historia Económica Mundial","credits":10,"area":"social-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E33","sourceIds":["E33"],"name":"Sistemas de Descripción Macroeconómica","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"118E","sourceIds":["118E"],"name":"Estadística Descriptiva","credits":10,"area":"quantitative-optional","inclusion":"opcional"},
+        {"gridLabel":"S30","sourceIds":["S30"],"name":"Población, Economía y Desarrollo","credits":10,"area":"social-optional","inclusion":"opcional"},
+        {"gridLabel":"149A","sourceIds":["FCS-149A"],"name":"Historia Contemporánea de América Latina","credits":10,"area":"social-optional","inclusion":"opcional"},
+        {"gridLabel":"J21","sourceIds":["J21"],"name":"Derecho del Empresario","credits":10,"area":"legal-optional","inclusion":"opcional"}
+      ]},
+      {"label":"Semestre 4","semester":4,"rows":[
+        {"gridLabel":"E31","sourceIds":["E31"],"name":"Microeconomía I","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E40","sourceIds":["E40"],"name":"Macroeconomía II","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"MC42","sourceIds":["MC42"],"name":"Estadística I","credits":10,"area":"quantitative-basic","inclusion":"obligatoria"},
+        {"gridLabel":"MC43","sourceIds":["MC43"],"name":"Cálculo III","credits":10,"area":"quantitative-optional","inclusion":"opcional"},
+        {"gridLabel":"MC44","sourceIds":["MC44"],"name":"Economía Matemática","credits":10,"area":"quantitative-optional","inclusion":"opcional"},
+        {"gridLabel":"S41","sourceIds":["S41"],"name":"Ética, Economía y Justicia","credits":10,"area":"social-optional","inclusion":"opcional"},
+        {"gridLabel":"I41","sourceIds":["I41"],"name":"Economía Circular","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"S90","sourceIds":["S90"],"name":"Sociología Económica","credits":10,"area":"social-optional","inclusion":"opcional"}
+      ]},
+      {"label":"Semestre 5","semester":5,"rows":[
+        {"gridLabel":"E41","sourceIds":["E41"],"name":"Microeconomía II","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E51","sourceIds":["E51"],"name":"Economía de América Latina","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E50","sourceIds":["E50"],"name":"Macroeconomía III","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"MC51","sourceIds":["MC51"],"name":"Estadística II","credits":10,"area":"quantitative-basic","inclusion":"obligatoria"},
+        {"gridLabel":"I51E","sourceIds":["I51E"],"name":"Introducción a la Metodología","credits":10,"area":"integrative-basic","inclusion":"obligatoria"},
+        {"gridLabel":"MC52","sourceIds":["MC52"],"name":"Estadística I - PR","credits":15,"area":"quantitative-optional","inclusion":"opcional"},
+        {"gridLabel":"I111N","sourceIds":["I111N"],"name":"EFI MicroCECEA","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"340","sourceIds":["340"],"name":"Ciencia de Datos con R","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"E90","sourceIds":["E90"],"name":"Análisis económico y evaluación de impacto de proyectos y programas","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"I112N","sourceIds":["I112N"],"name":"EFI: Cooperativas de Trabajo y Colectivos Autogestionados","credits":10,"area":"integrative-optional","inclusion":"opcional"}
+      ]},
+      {"label":"Semestre 6","semester":6,"rows":[
+        {"gridLabel":"E60","sourceIds":["E60"],"name":"Economía del Uruguay","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E61","sourceIds":["E61"],"name":"Microeconomía III","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"MC61","sourceIds":["MC61"],"name":"Econometría I","credits":10,"area":"quantitative-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E72","sourceIds":["E72"],"name":"Cambio y Diseño de Instituciones Económicas","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"MC30","sourceIds":["MC30"],"name":"Matemática Financiera","credits":10,"area":"quantitative-optional","inclusion":"opcional"},
+        {"gridLabel":"E73N","sourceIds":["E73N"],"name":"Economía Agropecuaria y Ambiental","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E74","sourceIds":["E74"],"name":"Economía y Gestión Bancaria","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"S44","sourceIds":["S44"],"name":"Historia Económica del Uruguay","credits":10,"area":"social-optional","inclusion":"opcional"},
+        {"gridLabel":"E45","sourceIds":["E45"],"name":"Desigualdad y Pobreza","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"C63","sourceIds":["C63"],"name":"Interpretación y Análisis de Información Contable","credits":10,"area":"accounting-optional","inclusion":"opcional"},
+        {"gridLabel":"E76","sourceIds":["E76"],"name":"Economía Laboral","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"I135","sourceIds":["I135"],"name":"EFI: Determinantes de las trayectorias académicas en la Universidad","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"UADA1 / UADA2","sourceIds":["UADA1","UADA2"],"name":"Unidad de Actividades de Difusión Académica (Lic. Economía)","credits":5,"area":"integrative-optional","inclusion":"opcional","selection":"una identidad por acreditación; doble dictado"}
+      ]},
+      {"label":"Semestre 7","semester":7,"rows":[
+        {"gridLabel":"E70","sourceIds":["E70"],"name":"Economía Internacional","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E71","sourceIds":["E71"],"name":"Teorías del Desarrollo Económico","credits":10,"area":"economics-basic","inclusion":"obligatoria"},
+        {"gridLabel":"MC70","sourceIds":["MC70"],"name":"Econometría II","credits":10,"area":"quantitative-basic","inclusion":"obligatoria"},
+        {"gridLabel":"S82","sourceIds":["S82"],"name":"Historia del Pensamiento Económico","credits":10,"area":"social-basic","inclusion":"obligatoria"},
+        {"gridLabel":"E75","sourceIds":["E75"],"name":"Economía Pública","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E77","sourceIds":["E77"],"name":"Economía y Género","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E78","sourceIds":["E78"],"name":"Economía y Política Monetaria","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E79","sourceIds":["E79"],"name":"Política Económica","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E91","sourceIds":["E91"],"name":"Organización Industrial","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"MC71","sourceIds":["MC71"],"name":"Análisis Multivariado I","credits":10,"area":"quantitative-optional","inclusion":"opcional"},
+        {"gridLabel":"462","sourceIds":["462"],"name":"Series Cronológicas I","credits":10,"area":"quantitative-optional","inclusion":"opcional"},
+        {"gridLabel":"I73","sourceIds":["I73"],"name":"Bases y Paquetes Estadísticos","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"A71","sourceIds":["A71"],"name":"Finanzas Corporativas","credits":10,"area":"administration-optional","inclusion":"opcional"},
+        {"gridLabel":"A61","sourceIds":["A61"],"name":"Marketing Básico","credits":10,"area":"administration-optional","inclusion":"opcional"}
+      ]},
+      {"label":"Semestre 8","semester":8,"rows":[
+        {"gridLabel":"A82","sourceIds":["A82"],"name":"Mercados Financieros","credits":10,"area":"administration-optional","inclusion":"opcional"},
+        {"gridLabel":"I86","sourceIds":["I86"],"name":"Modelos Dinámicos y Computacionales en Economía","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"E80","sourceIds":["E80"],"name":"Economía y Finanzas Internacionales","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E81","sourceIds":["E81"],"name":"Tópicos de Macroeconomía","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E82","sourceIds":["E82"],"name":"Seminario de Economía Nacional","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E83","sourceIds":["E83"],"name":"Macroeconomía y Finanzas Públicas","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E87","sourceIds":["E87"],"name":"Economía y Estrategia Empresarial","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"E170","sourceIds":["E170"],"name":"Taller de Análisis de Coyuntura","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"D94","sourceIds":["FCS-D94"],"name":"Desarrollo Económico Territorial","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"I140","sourceIds":["I140"],"name":"CCEEmprende","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"A72","sourceIds":["A72"],"name":"Marketing Estratégico","credits":10,"area":"administration-optional","inclusion":"opcional"},
+        {"gridLabel":"A81","sourceIds":["A81"],"name":"Proyectos de Inversión","credits":10,"area":"administration-optional","inclusion":"opcional"},
+        {"gridLabel":"E86","sourceIds":["E86"],"name":"Desarrollo Económico del Uruguay","credits":10,"area":"economics-optional","inclusion":"opcional"},
+        {"gridLabel":"470N","sourceIds":["470N"],"name":"Aprendizaje Estadístico Supervisado","credits":10,"area":"integrative-optional","inclusion":"opcional"},
+        {"gridLabel":"I90","sourceIds":["I90"],"name":"Trabajo de Iniciación a la Investigación","credits":25,"area":"integrative-optional","inclusion":"opcional"}
+      ]}
+    ]
+  },
+  "suggestedGuides": [
+    {"id":"academica","label":"Académica","description":"Guía no certificada para investigación y docencia; conserva alternativas y categorías abiertas sin convertirlas en obligaciones.","printedSuggestedCredits":100,"printedFreeCredits":20,"suggestions":[
+      {"label":"Economía Laboral o Economía y Género","sourceIds":["E76","E77"],"selection":"una alternativa","relevance":"recomendada","printedCredits":10},
+      {"label":"Opcional del área Economía - Macroeconomía","selection":"categoría abierta","relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Opcional del área Economía - Microeconomía o Macroeconomía","selection":"categoría abierta","relevance":"recomendada","printedCredits":10},
+      {"label":"Opcional del área Economía - Libre","selection":"categoría abierta","relevance":"recomendada","printedCredits":10},
+      {"label":"Historia Económica del Uruguay","sourceIds":["S44"],"relevance":"recomendada","printedCredits":10},
+      {"label":"Desigualdad y Pobreza","sourceIds":["E45"],"relevance":"recomendada","printedCredits":10},
+      {"label":"Series Cronológicas I","sourceIds":["462"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Análisis Multivariado I","sourceIds":["MC71"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Trabajo de Iniciación a la Investigación","sourceIds":["I90"],"relevance":"fuertemente recomendada","printedCredits":20}
+    ]},
+    {"id":"empresarial","label":"Empresarial","description":"Guía no certificada para empresas y proyectos privados; conserva categorías abiertas sin convertirlas en materias concretas.","printedSuggestedCredits":110,"printedFreeCredits":10,"suggestions":[
+      {"label":"Economía y Estrategia Empresarial","sourceIds":["E87"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Opcional del área Economía - Libre","selection":"categoría abierta","occurrences":3,"relevance":"recomendada","printedCredits":30},
+      {"label":"Opcional del área Social","selection":"categoría abierta","occurrences":3,"printedCredits":30},
+      {"label":"Finanzas Corporativas","sourceIds":["A71"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Proyectos de Inversión","sourceIds":["A81"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Interpretación y Análisis de Información Contable","sourceIds":["C63"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Matemática Financiera","sourceIds":["MC30"],"relevance":"fuertemente recomendada","printedCredits":10}
+    ]},
+    {"id":"politicas-publicas","label":"Políticas Públicas","description":"Guía no certificada para diseño y evaluación de políticas; conserva alternativas y categorías abiertas sin acumularlas.","printedSuggestedCredits":90,"printedFreeCredits":30,"suggestions":[
+      {"label":"Economía Laboral o Economía y Género","sourceIds":["E76","E77"],"selection":"una alternativa","relevance":"recomendada","printedCredits":10},
+      {"label":"Economía Pública o Cambio y Diseño de Instituciones Económicas","sourceIds":["E75","E72"],"selection":"una alternativa","relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Opcional del área Economía - Macroeconomía","selection":"categoría abierta","relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Opcional del área Economía - Macroeconomía","selection":"categoría abierta","relevance":"recomendada","printedCredits":10},
+      {"label":"Historia Económica del Uruguay","sourceIds":["S44"],"relevance":"recomendada","printedCredits":10},
+      {"label":"Desigualdad y Pobreza","sourceIds":["E45"],"relevance":"recomendada","printedCredits":10},
+      {"label":"Ciencia Política","sourceIds":["S21"],"relevance":"recomendada","printedCredits":10},
+      {"label":"Proyectos de Inversión","sourceIds":["A81"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Opcional del área Métodos Cuantitativos","selection":"categoría abierta","printedCredits":10}
+    ]},
+    {"id":"sector-financiero","label":"Sector Financiero","description":"Guía no certificada para finanzas; conserva la alternativa cuantitativa y las categorías abiertas sin acumularlas.","printedSuggestedCredits":110,"printedFreeCredits":10,"suggestions":[
+      {"label":"Economía y Política Monetaria","sourceIds":["E78"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Economía Bancaria","sourceIds":["E74"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Opcional del área Economía - Macroeconomía","selection":"categoría abierta","relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Ética, Economía y Justicia","sourceIds":["S41"],"relevance":"recomendada","printedCredits":10},
+      {"label":"Opcional del área Social","selection":"categoría abierta","occurrences":2,"printedCredits":20},
+      {"label":"Finanzas Corporativas","sourceIds":["A71"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Proyectos de Inversión","sourceIds":["A81"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Interpretación y Análisis de Información Contable","sourceIds":["C63"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Matemática Financiera","sourceIds":["MC30"],"relevance":"fuertemente recomendada","printedCredits":10},
+      {"label":"Series Cronológicas I o Análisis Multivariado I","sourceIds":["462","MC71"],"selection":"una alternativa","relevance":"recomendada","printedCredits":10}
+    ]}
+  ],
+  "trajectories": [
+    {"id":"personalizada","label":"Grilla curricular","periods":[
+      {"label":"Semestre 1","courseIds":["E10","MC10","114A","128A","C10","A10"]},
+      {"label":"Semestre 2","courseIds":["MC20","E34N","S21","E20N","S46","S22","I137"]},
+      {"label":"Semestre 3","courseIds":["E30","MC31","S40","E33","118E","S30","FCS-149A","J21"]},
+      {"label":"Semestre 4","courseIds":["E31","E40","MC42","MC43","MC44","S41","I41","S90"]},
+      {"label":"Semestre 5","courseIds":["E41","E51","E50","MC51","I51E","MC52","I111N","340","E90","I112N"]},
+      {"label":"Semestre 6","courseIds":["E60","E61","MC61","E72","MC30","E73N","E74","S44","E45","C63","E76","I135","UADA1","UADA2"]},
+      {"label":"Semestre 7","courseIds":["E70","E71","MC70","S82","E75","E77","E78","E79","E91","MC71","462","I73","A71","A61"]},
+      {"label":"Semestre 8","courseIds":["A82","I86","E80","E81","E82","E83","E87","E170","FCS-D94","I140","A72","A81","E86","470N","I90"]}
+    ]},
+    {"id":"academica","label":"Académica","periods":[
+      {"label":"Semestre 1","courseIds":["E10","MC10","114A","128A","C10","A10"]},
+      {"label":"Semestre 2","courseIds":["MC20","E34N"]},
+      {"label":"Semestre 3","courseIds":["E30","MC31","S40"]},
+      {"label":"Semestre 4","courseIds":["E31","E40","MC42"]},
+      {"label":"Semestre 5","courseIds":["E41","E51","E50","MC51","I51E"]},
+      {"label":"Semestre 6","courseIds":["E60","E61","MC61","E76","S44","E45"]},
+      {"label":"Semestre 7","courseIds":["E70","E71","MC70","S82","E77","462","MC71"]},
+      {"label":"Semestre 8","courseIds":["I90"]}
+    ]},
+    {"id":"empresarial","label":"Empresarial","periods":[
+      {"label":"Semestre 1","courseIds":["E10","MC10","114A","128A","C10","A10"]},
+      {"label":"Semestre 2","courseIds":["MC20","E34N"]},
+      {"label":"Semestre 3","courseIds":["E30","MC31","S40"]},
+      {"label":"Semestre 4","courseIds":["E31","E40","MC42"]},
+      {"label":"Semestre 5","courseIds":["E41","E51","E50","MC51","I51E"]},
+      {"label":"Semestre 6","courseIds":["E60","E61","MC61","C63","MC30"]},
+      {"label":"Semestre 7","courseIds":["E70","E71","MC70","S82","A71"]},
+      {"label":"Semestre 8","courseIds":["E87","A81"]}
+    ]},
+    {"id":"politicas-publicas","label":"Políticas Públicas","periods":[
+      {"label":"Semestre 1","courseIds":["E10","MC10","114A","128A","C10","A10"]},
+      {"label":"Semestre 2","courseIds":["MC20","E34N","S21"]},
+      {"label":"Semestre 3","courseIds":["E30","MC31","S40"]},
+      {"label":"Semestre 4","courseIds":["E31","E40","MC42"]},
+      {"label":"Semestre 5","courseIds":["E41","E51","E50","MC51","I51E"]},
+      {"label":"Semestre 6","courseIds":["E60","E61","MC61","E76","E72","S44","E45"]},
+      {"label":"Semestre 7","courseIds":["E70","E71","MC70","S82","E77","E75"]},
+      {"label":"Semestre 8","courseIds":["A81"]}
+    ]},
+    {"id":"sector-financiero","label":"Sector Financiero","periods":[
+      {"label":"Semestre 1","courseIds":["E10","MC10","114A","128A","C10","A10"]},
+      {"label":"Semestre 2","courseIds":["MC20","E34N"]},
+      {"label":"Semestre 3","courseIds":["E30","MC31","S40"]},
+      {"label":"Semestre 4","courseIds":["E31","E40","MC42","S41"]},
+      {"label":"Semestre 5","courseIds":["E41","E51","E50","MC51","I51E"]},
+      {"label":"Semestre 6","courseIds":["E60","E61","MC61","E74","C63","MC30"]},
+      {"label":"Semestre 7","courseIds":["E70","E71","MC70","S82","E78","A71","462","MC71"]},
+      {"label":"Semestre 8","courseIds":["A81"]}
+    ]}
+  ],
+  "bedeliasComparison": {
+    "snapshotPath": "data/bedelias/fcea-licenciatura-en-economia-2012.json",
+    "compositionMatterEntries": 500,
+    "distinctSnapshotCourseRecords": 435,
+    "crosswalks": [
+      {"gridLabel":"149A","sourceId":"FCS-149A","basis":"la composición Bedelías identifica el servicio FCS para la misma fila y código 149A"},
+      {"gridLabel":"D94","sourceId":"FCS-D94","basis":"la composición Bedelías identifica el servicio FCS para la misma fila y código D94"}
+    ],
+    "progressAliases": [
+      {"sourceId":"MC52","canonicalCourseId":"fcea-mc52-2","equivalentCourseIds":["fcea-mc52-3"],"basis":"dos nodos Bedelías con el mismo código MC52 distribuyen los 15 créditos publicados por la grilla entre 10 básicos y 5 opcionales"}
+    ],
+    "projectionPolicy": "Sólo se publican las identidades enumeradas por la grilla, su equivalencia E11 y las alternativas concretas del documento de trayectorias. El resto del snapshot queda rechazado para el catálogo normal y recuperable en la auditoría de autoridad."
+  }
+}

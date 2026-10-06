@@ -267,12 +267,12 @@ test("la contención conserva candidatos para importaciones sin publicarlos en r
   assert.equal(psychology.plan.compositionAvailable, true);
 
   const economics = await readJson("app/data/bedelias-generated/bedelias-fcea-licenciatura-en-economia-2012.json");
-  const candidate = economics.courses.find((course) => course.authorityStatus === "candidate");
-  assert.ok(candidate, "el candidato queda recuperable para una importación previa o D02");
+  assert.equal(economics.courses.length, 83);
+  assert.ok(economics.courses.every((course) => course.authorityStatus === "verified"));
   const visibleIds = new Set(Object.values(economics.publishedPathways).flatMap((pathway) => [
     ...pathway.periods.flatMap((period) => period.courseIds),
     ...(pathway.catalogCourseIds ?? []),
   ]));
-  assert.ok(!visibleIds.has(candidate.id));
-  assert.equal(economics.plan.courseCatalogAuditStatus, "partial");
+  assert.deepEqual(visibleIds, new Set(economics.courses.map(({ id }) => id)));
+  assert.equal(economics.plan.courseCatalogAuditStatus, "verified");
 });

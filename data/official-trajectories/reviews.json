@@ -1786,6 +1786,61 @@
         "La fila I20 de la grilla enlaza una ficha sin código; se conserva como identidad descriptiva de fuente separada de SAI20 y sin código inventado.",
         "Los alias, reválidas y variantes Bedelías sin correspondencia inequívoca en la publicación vigente se excluyen del catálogo normal."
       ]
+    },
+    {
+      "planId": "bedelias-fcea-licenciatura-en-economia-2012",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-05",
+      "effectiveAt": "2026-07",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "personalizada",
+          "academica",
+          "empresarial",
+          "politicas-publicas",
+          "sector-financiero"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/ensenanza-dpto-economia/licenciatura-en-economia.html",
+          "reviewedAt": "2026-10-05",
+          "role": "vigencia, grilla curricular de ocho semestres actualizada en julio de 2026 y mínimos por área"
+        },
+        {
+          "authority": "Comisión de Carrera de Licenciatura en Economía, FCEA",
+          "url": "https://www.fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Trayectorias_sugeridas_-_Todos_Juntos.pdf",
+          "reviewedAt": "2026-10-05",
+          "role": "cuatro guías sugeridas, alternativas, categorías abiertas y créditos impresos"
+        },
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://www.fcea.udelar.edu.uy/images/institucional/Documentos/Normativa/plan-de-estudios-2012.pdf",
+          "reviewedAt": "2026-10-05",
+          "role": "plan vigente, título único, 360 créditos y flexibilidad curricular"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/economia-2012-trayectoria.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcea-licenciatura-en-economia-2012.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "E10 frente a E11 y MC10 frente a 114A+128A son alternativas oficiales, no obligaciones acumulativas.",
+        "MC52 publica 15 créditos vigentes y conserva el ID fcea-mc52-2 con asignaciones Bedelías de 10 básicos y 5 opcionales; fcea-mc52-3 queda como alias explícito de progreso.",
+        "UADA1 y UADA2 conservan IDs distintos para el doble dictado de una actividad opcional de 5 créditos; no forman una obligación acumulativa.",
+        "I90 usa los 25 créditos de la grilla vigente; los 20 créditos impresos por la guía Académica histórica quedan trazados como discrepancia.",
+        "Las categorías abiertas de las guías no se convierten en materias ni obligaciones inventadas, y los registros Bedelías sin respaldo exacto quedan fuera del catálogo normal."
+      ]
     }
   ]
 }
