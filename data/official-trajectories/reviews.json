@@ -1841,6 +1841,66 @@
         "I90 usa los 25 créditos de la grilla vigente; los 20 créditos impresos por la guía Académica histórica quedan trazados como discrepancia.",
         "Las categorías abiertas de las guías no se convierten en materias ni obligaciones inventadas, y los registros Bedelías sin respaldo exacto quedan fuera del catálogo normal."
       ]
+    },
+    {
+      "planId": "bedelias-fcea-licenciatura-en-estadistica-2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-06",
+      "effectiveAt": "2026-07",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["actuarial-demografico", "bioestadistico", "economia", "tecnologico"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/depto-met-cuant-ensenanza/licenciatura-en-estadistica.html",
+          "reviewedAt": "2026-10-06",
+          "role": "grillas vigentes de los cuatro perfiles, actualizadas en julio de 2026; códigos, nombres, créditos, áreas, obligatoriedad, sede y duración"
+        },
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Plan_de_Estudios_Licenciatura_en_Estad%C3%ADstica.pdf",
+          "reviewedAt": "2026-10-06",
+          "role": "plan vigente: título único, 360 créditos, ocho semestres, mínimos por área y flexibilidad curricular"
+        },
+        {
+          "authority": "Consejo de la Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/IESTA/Publicaciones/Regl_Lic_Est_2014_20150224-1_CORREGIDO.pdf",
+          "reviewedAt": "2026-10-06",
+          "role": "reglamento del Plan 2014 y supervisión del trayecto individual"
+        },
+        {
+          "authority": "Bedelía de grado, FCEA",
+          "url": "https://fcea.udelar.edu.uy/bedelia/inicio/54-gestion/bedelia-cat/180-planes-de-estudio-vigentes.html",
+          "reviewedAt": "2026-10-06",
+          "role": "vigencia y enlace al Plan 2014"
+        },
+        {
+          "authority": "Bedelía de grado, FCEA",
+          "url": "https://fcea.udelar.edu.uy/bedelia/ingreso-a-facultad.html",
+          "reviewedAt": "2026-10-06",
+          "role": "ingreso vigente a la Licenciatura en Estadística, Plan 2014"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/estadistica-2014-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcea-licenciatura-en-estadistica-2014.json",
+        "sourceCollection": "profiles",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Los cuatro perfiles son especializaciones del único título de Licenciado en Estadística; no se proyectan como cuatro carreras ni cuatro títulos.",
+        "Las filas opcionales y las alternativas publicadas son oferta de elección y no obligaciones acumulativas.",
+        "La grilla tecnológica imprime 83 créditos mínimos de Matemática; el Plan fija 85 para todos los perfiles y ese valor normativo controla el egreso.",
+        "Tres filas publicadas no ofrecen un código estable y se conservan como identidades de fuente sin inventar código de Bedelías.",
+        "FING 2046 y FCIEN BG793 figuran en las grillas vigentes pero no en el snapshot auditado; se incorporan desde la fuente curricular oficial.",
+        "La grilla Bioestadística ubica 335 en Instrumental, mientras los demás perfiles la ubican en Inferencia; se conserva cada ubicación publicada."
+      ]
     }
   ]
 }

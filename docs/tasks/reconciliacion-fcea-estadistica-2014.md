@@ -28,3 +28,13 @@ Modelo: `gpt-5.6-sol`, esfuerzo `xhigh`. Depende del inventario D03a y de las re
 - [FCEA: planes de estudio vigentes](https://fcea.udelar.edu.uy/institucional/novedades/54-gestion/bedelia-cat/180-planes-de-estudio-vigentes.html).
 
 Estos enlaces provienen de la auditoría previa. Localizar y fijar las URLs directas de las grillas vigentes durante el cotejo; no suponer que la página de búsqueda o el plan de 2013 publican la secuencia actual.
+
+## Checkpoint de implementación — 2026-10-06
+
+- Investigación completada: la ficha vigente de FCEA publica cuatro grillas completas, cada una con ocho semestres, y declara actualización de julio de 2026. El plan vigente confirma un único título, 360 créditos y los mínimos comunes; no se detectó publicación futura, parcial ni territorial que justifique una entrada en `docs/carreras-a-actualizar.md`.
+- Fuente durable guardada en `data/fcea/estadistica-2014-trayectorias.json`: 121 identidades oficiales y 293 ubicaciones perfil/semestre, con códigos, nombres, créditos, áreas, obligatoriedad, alternativas, alcance y huella SHA-256 de la sección normalizada.
+- Discrepancias abiertas ya resueltas en el artefacto: 83/85 créditos de Matemática en la tabla tecnológica; tres filas sin código estable; dos códigos oficiales ausentes del snapshot; créditos editoriales que difieren de Bedelías; y ubicación de 335 en Instrumental para Bioestadística.
+- Implementación completada: la fuente alimenta el generador compartido, la proyección publica 121 identidades verificadas y 293 ubicaciones exactas, la auditoría y el inventario quedan cerrados como `official-trajectory-reproduced`, y `PROJECT_CONTEXT.md` registra la convención estable.
+- Regeneración offline exacta: `npm run trajectory:estadistica-2014` (equivalente a `node scripts/build-fcea-estadistica-2014.mjs`). No consulta red; valida la huella de `data/fcea/estadistica-2014-trayectorias.json` antes de escribir la proyección.
+- Doble regeneración: dos ejecuciones consecutivas produjeron los mismos SHA-256 para la proyección (`CB529004…`), el catálogo (`62132147…`), los loaders (`E242AAC7…`) y el informe (`71824EBF…`); la cola curricular derivada quedó reproducible con `contentHash` `sha256:ff14ebfcf22a59a430bf422c85f335edcda349d639fadc92d7ec73df869a27a8`.
+- Validación completada: las pruebas focales de auditoría e inventario pasan 28/28, la prueba de cola derivada pasa 2/2, `npm test` pasa build y 982/982 pruebas, `npm run lint` finaliza sin errores y `git diff --check` no informa defectos.

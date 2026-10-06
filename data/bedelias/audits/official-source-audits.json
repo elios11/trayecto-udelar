@@ -39242,9 +39242,9 @@
       "identity": "licenciatura en estadistica:2014",
       "career": "LICENCIATURA EN ESTADÍSTICA",
       "planYear": "2014",
-      "reviewedAt": "2026-08-27",
+      "reviewedAt": "2026-10-06",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, servicios participantes, sede, duración, créditos, perfiles, mínimos por área y libre distribución",
+      "scope": "vigencia, título único, sede, duración, créditos, mínimos y cuatro grillas curriculares completas de ocho semestres con código, nombre, créditos, área y obligatoriedad",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -39289,7 +39289,7 @@
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
           "includeAllCoursesInPathwayCatalog": true,
-          "sourceUrl": "https://fcea.udelar.edu.uy/publicaciones/buscar/advanced-search/156.html?page=2",
+          "sourceUrl": "https://fcea.udelar.edu.uy/depto-met-cuant-ensenanza/licenciatura-en-estadistica.html",
           "pathwayLabel": "Perfil",
           "additionalRequirementIdsForAllCourses": [
             "free-distribution"
@@ -39573,7 +39573,7 @@
           "credentials": [
             {
               "id": "actuarial-demografico",
-              "title": "Licenciado en Estadística · Perfil Actuarial-Demográfico",
+              "title": "Licenciado en Estadística",
               "minTotalCredits": 360,
               "nodeRequirements": [
                 {
@@ -39609,7 +39609,7 @@
             },
             {
               "id": "bioestadistico",
-              "title": "Licenciado en Estadística · Perfil Bioestadístico",
+              "title": "Licenciado en Estadística",
               "minTotalCredits": 360,
               "nodeRequirements": [
                 {
@@ -39645,7 +39645,7 @@
             },
             {
               "id": "economia",
-              "title": "Licenciado en Estadística · Perfil Economía",
+              "title": "Licenciado en Estadística",
               "minTotalCredits": 360,
               "nodeRequirements": [
                 {
@@ -39681,7 +39681,7 @@
             },
             {
               "id": "tecnologico",
-              "title": "Licenciado en Estadística · Perfil Tecnológico",
+              "title": "Licenciado en Estadística",
               "minTotalCredits": 360,
               "nodeRequirements": [
                 {
@@ -39715,7 +39715,8 @@
               ],
               "requiredCourseGroupIds": []
             }
-          ]
+          ],
+          "sourceDataPath": "data/fcea/estadistica-2014-trayectorias.json"
         }
       },
       "offerings": [
@@ -39742,7 +39743,7 @@
         "compositionMatterEntries": 642,
         "distinctSnapshotCourseRecords": 192,
         "publishedPrerequisiteRecords": 240,
-        "interpretation": "Bedelías publica los cuatro perfiles, pero sólo carga mínimos distintos de cero en el árbol del perfil Economía. El Plan aprobado fija 290 créditos mínimos por áreas y 70 libres para cualquier perfil; la normalización aplica esa regla común a los cuatro."
+        "interpretation": "Bedelías conserva identidades de progreso, previaturas y una composición administrativa más amplia. La publicación curricular vigente de FCEA es la autoridad de inclusión: 121 identidades oficiales ocupan 293 ubicaciones en las cuatro grillas; los registros restantes se conservan como candidatos rechazados de la UI normal."
       },
       "conclusion": {
         "canonicalModel": "one-degree-four-specialization-profiles",
@@ -39752,72 +39753,84 @@
         "normalization": [
           "Crear cuatro trayectorias del mismo plan y compartir el progreso de las unidades comunes.",
           "Aplicar a cada perfil los seis mínimos normativos que suman 290 créditos y un bloque común de 70 créditos de libre distribución.",
-          "No trasladar los mínimos cero de tres árboles administrativos de Bedelías a la UI.",
-          "Conservar las 263 unidades normalizadas y sus alternativas como catálogo acreditable, sin exigir las 642 apariciones de composición; los 192 registros de plan del snapshot no incluyen todas las unidades externas presentes en los perfiles.",
+          "Reproducir 293 ubicaciones de 121 identidades oficiales en cuatro grillas de ocho semestres, sin volver obligatoria toda la oferta opcional ni las alternativas de una misma fila.",
+          "Excluir del catálogo normal los registros de composición sin correspondencia exacta en la publicación vigente y conservarlos como candidatos recuperables en la auditoría.",
           "Mantener Montevideo como única sede; EVA es apoyo virtual y no otra localización."
         ]
       },
       "sources": [
         {
-          "url": "https://fcea.udelar.edu.uy/publicaciones/buscar/advanced-search/156.html?page=2",
+          "url": "https://fcea.udelar.edu.uy/depto-met-cuant-ensenanza/licenciatura-en-estadistica.html",
           "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "supports": [
-            "vigencia",
-            "360 créditos",
-            "cuatro años",
-            "Montevideo y EVA",
-            "cuatro perfiles",
-            "grillas vigentes",
-            "mínimos por área"
+            "grillas vigentes de los cuatro perfiles, actualizadas en julio de 2026; códigos, nombres, créditos, áreas, obligatoriedad, sede y duración"
           ]
         },
         {
-          "url": "https://fcea.udelar.edu.uy/images/micrositios/bedelia/equivalencias/1990-2012/Plan_Lic_Estadistica_Junio2013_modificado.pdf",
-          "authority": "Plan de Estudios de la Licenciatura en Estadística, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Plan_de_Estudios_Licenciatura_en_Estad%C3%ADstica.pdf",
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "supports": [
-            "título único",
-            "ocho semestres",
-            "290 créditos mínimos por áreas",
-            "70 créditos libres",
-            "perfiles de especialización",
-            "administración por FCEA"
+            "plan vigente: título único, 360 créditos, ocho semestres, mínimos por área y flexibilidad curricular"
           ]
         },
         {
-          "url": "https://fcea.udelar.edu.uy/institucional/novedades/54-gestion/bedelia-cat/180-planes-de-estudio-vigentes.html",
+          "url": "https://fcea.udelar.edu.uy/images/IESTA/Publicaciones/Regl_Lic_Est_2014_20150224-1_CORREGIDO.pdf",
+          "authority": "Consejo de la Facultad de Ciencias Económicas y de Administración, Udelar",
+          "supports": [
+            "reglamento del Plan 2014 y supervisión del trayecto individual"
+          ]
+        },
+        {
+          "url": "https://fcea.udelar.edu.uy/bedelia/inicio/54-gestion/bedelia-cat/180-planes-de-estudio-vigentes.html",
           "authority": "Bedelía de grado, FCEA",
           "supports": [
-            "vigencia del Plan 2014"
+            "vigencia y enlace al Plan 2014"
           ]
         },
         {
           "url": "https://fcea.udelar.edu.uy/bedelia/ingreso-a-facultad.html",
           "authority": "Bedelía de grado, FCEA",
           "supports": [
-            "ingreso vigente al Plan 2014"
+            "ingreso vigente a la Licenciatura en Estadística, Plan 2014"
           ]
         }
       ],
       "anomalies": [
         {
           "field": "bedeliasProfileMinimums",
-          "resolution": "Tres perfiles tienen mínimos cero en el snapshot y sólo Economía conserva 10, 85, 30, 20, 85 y 60. Se aplica a los cuatro la tabla normativa común de 85, 85, 30, 60, 10 y 20."
-        },
-        {
-          "field": "technologyGridMathematics",
-          "resolution": "La grilla web resume 83 créditos de Matemática para el perfil Tecnológico, en contradicción con los 85 del Plan y con el total normativo de 290. Se usa 85 y se documenta el desvío editorial."
+          "resolution": "Tres perfiles tienen mínimos cero en el snapshot y sólo Economía conserva valores distintos de cero. Se aplica a los cuatro la tabla normativa común de 85, 85, 30, 60, 10 y 20, más 70 créditos libres."
         },
         {
           "field": "profileTitles",
-          "resolution": "Bedelías agrega el perfil entre paréntesis a sus cuatro etiquetas de título. El Plan denomina un solo título; la UI muestra el perfil como trayectoria del mismo plan, no como carrera separada."
+          "resolution": "Bedelías agrega el perfil entre paréntesis a sus cuatro etiquetas. El Plan denomina un solo título; la UI muestra el perfil como trayectoria y las cuatro credenciales internas usan el mismo título."
         },
         {
-          "field": "compositionDuplicates",
-          "resolution": "Las 642 apariciones de composición se normalizan por servicio y código a 263 unidades de UI. El arreglo plan.courses del snapshot contiene 192 registros, pero no incluye todas las unidades externas presentes en los árboles de perfil. Una materia compartida conserva progreso al cambiar de perfil."
+          "field": "technologyGridMathematics",
+          "resolution": "La grilla tecnológica imprime 83 créditos mínimos de Matemática; el Plan fija 85 para todos los perfiles y ese valor normativo controla el egreso."
+        },
+        {
+          "field": "sourceOnlyIdentities",
+          "resolution": "Tres filas publicadas no ofrecen un código estable (Señales y Sistemas, Bioinformática y Aprendizaje supervisado/no supervisado/semisupervisado); se conservan como identidades source-only sin inventar código de Bedelías."
+        },
+        {
+          "field": "bedeliasCreditConflicts",
+          "resolution": "La publicación vigente prevalece para los créditos de FING 1030, 1031, 1223, 1450, 1886, 2512 y FCIEN BG456; Bedelías sólo conserva sus identidades de progreso."
+        },
+        {
+          "field": "additionalOfficialCodes",
+          "resolution": "FING 2046 y FCIEN BG793 figuran en las grillas vigentes pero no en el snapshot auditado; se incorporan desde la fuente curricular oficial."
+        },
+        {
+          "field": "bio335Area",
+          "resolution": "La grilla Bioestadística ubica 335 en Instrumental, mientras los demás perfiles la ubican en Inferencia; se conserva cada ubicación publicada."
+        },
+        {
+          "field": "compositionCandidates",
+          "resolution": "Las 642 apariciones de composición y 263 identidades anteriormente proyectadas no acreditan inclusión por sí solas. La UI publica las 121 identidades demostradas por las grillas vigentes y registra las restantes como candidatos rechazados, sin borrar los IDs de progreso de las coincidencias verificadas."
         }
       ],
-      "uiNotice": "Plan 2014 compartido, de cuatro años y 360 créditos en Montevideo. Elegí un perfil Actuarial-Demográfico, Bioestadístico, Economía o Tecnológico; todos conducen al mismo título y exigen 290 créditos mínimos por áreas más 70 de libre distribución.",
-      "remainingWork": "La Comisión de Carrera y sus docentes orientadores validan la coherencia de los 60 créditos del área asociada al perfil, las electivas externas, las reválidas y el trayecto individual."
+      "uiNotice": "Plan 2014 flexible de ocho semestres y 360 créditos en Montevideo. Elegí uno de los cuatro perfiles del mismo título; cada grilla separa obligatorias y opciones, y el egreso exige los mínimos por área más 70 créditos de libre distribución.",
+      "remainingWork": "La oferta opcional puede variar y la Comisión de Carrera supervisa cada trayecto individual. Reconsultar las fuentes sólo si cambia la actualización publicada o la huella normalizada."
     },
     {
       "identity": "tecnico en administracion:2014",
@@ -74833,6 +74846,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:bc339e7af03d63cfedaefff6bf2d9660b1c443c2cf3172a3e956185a9da01656",
+  "contentHash": "sha256:6a3290339c997abee7559487f9b4a4473427290ef3ae1e710eb77ef854b859bc",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

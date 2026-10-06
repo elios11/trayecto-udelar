@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:bc0bc041545152640bf31b7838c624abd24f216768d5df2498b36bbdc504b548",
-    "officialAuditHash": "sha256:6c64c8728d0a9687cf72b0573fbb098101e8218292a2908f7bd4a2371d560433",
+    "auditQueueHash": "sha256:af08570f3840ba9bba29ee26998d36c32d3e610fcf3fca8c1403587c75918144",
+    "officialAuditHash": "sha256:6a3290339c997abee7559487f9b4a4473427290ef3ae1e710eb77ef854b859bc",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -10,7 +10,9 @@
     "telecom2009ReconciliationHash": "sha256:0d9a2172680b130610766ceabd65065050f5cb479a5d39eb6f6e183fdedaa09b",
     "naval1997ReconciliationHash": "sha256:93730807916c8298bbe01e789bb4b4a31dc63b1666ac101f03c0b3c6c2c38c7f",
     "industrialMecanica1997ReconciliationHash": "sha256:74a02e98ba6c3d38467c8f29635c23b4320e3a2ec57f5cbf2dc8e7502fc4f436",
-    "sistemasComunicacion2018ReconciliationHash": "sha256:c68fa5cda3c94a0df2d8c4ac1dc0784e63440e57165172bd6a91ba1fff425e0c"
+    "sistemasComunicacion2018ReconciliationHash": "sha256:c68fa5cda3c94a0df2d8c4ac1dc0784e63440e57165172bd6a91ba1fff425e0c",
+    "fceaEconomia2012ReconciliationHash": "sha256:fbf03433167e263db5152f3581f6e072b9c819b7be9621292e2bb9b429360c41",
+    "fceaEstadistica2014ReconciliationHash": "sha256:963f8778906beae94f1f0e718b1dc68410328ed9b933db0033338f57a9fa331d"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -20,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4723,
-      "candidate": 26994,
+      "verified": 4844,
+      "candidate": 26731,
       "historical-equivalent": 44,
       "administrative": 177,
-      "rejected": 534
+      "rejected": 652
     },
-    "beforePublishedCourses": 31725,
-    "afterPublishedCourses": 4723,
+    "beforePublishedCourses": 31583,
+    "afterPublishedCourses": 4844,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1636,
-    "visibleTargetsWithUnpublishedDependencies": 1395,
-    "plansWithVerifiedCatalog": 63,
+    "afterPublishedRules": 1699,
+    "visibleTargetsWithUnpublishedDependencies": 1449,
+    "plansWithVerifiedCatalog": 64,
     "plansWithPartialCatalog": 58,
-    "plansWithStructureOnly": 18
+    "plansWithStructureOnly": 17
   },
   "plans": [
     {
@@ -1819,28 +1821,37 @@
       "facultyCode": "FCEA",
       "snapshotPath": "data/bedelias/fcea-licenciatura-en-estadistica-2014.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 263,
+        "publishedCourses": 121,
         "publishedRules": 168
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 263,
-        "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 121,
+        "hiddenCourses": 118,
+        "publishedRules": 63,
+        "rulesWithUnpublishedDependencies": 54
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 263,
+        "verified": 121,
+        "candidate": 0,
         "historical-equivalent": 0,
         "administrative": 0,
-        "rejected": 0
+        "rejected": 118
+      },
+      "authorityReconciliation": {
+        "after": {
+          "verified": 121,
+          "candidate": 0,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 118
+        }
       }
     },
     {
@@ -4574,5 +4585,5 @@
       }
     }
   ],
-  "contentHash": "sha256:f427ce713f9430da5cdeca0c5cd796c737e1f27002b683afabbc2c3eca98222b"
+  "contentHash": "sha256:9e6c793c24c3bc32eca332e3c8da6e31b8c958af4d2e227b2db6095bcd0bc3de"
 }

@@ -1,0 +1,3971 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fcea-licenciatura-en-estadistica-2014",
+  "source": {
+    "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+    "reviewedAt": "2026-10-06",
+    "effectiveAt": "2026-07",
+    "publishedUpdate": "julio 2026",
+    "scope": "cuatro grillas curriculares completas de ocho semestres, códigos, nombres, créditos, áreas, obligatoriedad, mínimos por área, título, vigencia y sede",
+    "documents": [
+      {
+        "url": "https://fcea.udelar.edu.uy/depto-met-cuant-ensenanza/licenciatura-en-estadistica.html",
+        "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "grillas vigentes de los cuatro perfiles, actualizadas en julio de 2026; códigos, nombres, créditos, áreas, obligatoriedad, sede y duración"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/images/micrositios/bedelia/planes/Plan_de_Estudios_Licenciatura_en_Estad%C3%ADstica.pdf",
+        "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "plan vigente: título único, 360 créditos, ocho semestres, mínimos por área y flexibilidad curricular"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/images/IESTA/Publicaciones/Regl_Lic_Est_2014_20150224-1_CORREGIDO.pdf",
+        "authority": "Consejo de la Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "reglamento del Plan 2014 y supervisión del trayecto individual"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/bedelia/inicio/54-gestion/bedelia-cat/180-planes-de-estudio-vigentes.html",
+        "authority": "Bedelía de grado, FCEA",
+        "role": "vigencia y enlace al Plan 2014"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/bedelia/ingreso-a-facultad.html",
+        "authority": "Bedelía de grado, FCEA",
+        "role": "ingreso vigente a la Licenciatura en Estadística, Plan 2014"
+      }
+    ]
+  },
+  "fingerprints": {
+    "algorithm": "sha256",
+    "canonicalization": "JSON.stringify de {courses, profiles}, conservando orden de perfiles, semestres, ubicaciones y alternativas",
+    "normalizedCurriculum": "sha256:f4dd412092a91ceef849530e814107a05d69c00aee80808a6264d4c73d5ff7f9"
+  },
+  "interpretation": {
+    "minimumCredits": 360,
+    "minimumCreditsByArea": {
+      "M": 85,
+      "IE": 85,
+      "I": 30,
+      "PE": 60,
+      "CG": 10,
+      "AI": 20,
+      "freeDistribution": 70
+    },
+    "title": "Licenciado en Estadística",
+    "profilesAreSpecializations": true,
+    "optionalBlocks": "Las filas opcionales son oferta elegible por perfil y semestre; no se exige aprobar toda la oferta.",
+    "alternatives": "Las identidades agrupadas en alternatives representan opciones equivalentes de una misma fila y no obligaciones acumulativas.",
+    "bedeliasRole": "Bedelías conserva identidades de progreso y permite cotejar filas ya publicadas por FCEA; sus restantes apariciones de composición no acreditan inclusión.",
+    "discrepancies": [
+      {
+        "field": "technologyGridMathematics",
+        "resolution": "La grilla tecnológica imprime 83 créditos mínimos de Matemática; el Plan fija 85 para todos los perfiles y ese valor normativo controla el egreso."
+      },
+      {
+        "field": "sourceOnlyIdentities",
+        "resolution": "Tres filas publicadas no ofrecen un código estable (Señales y Sistemas, Bioinformática y Aprendizaje supervisado/no supervisado/semisupervisado); se conservan como identidades source-only sin inventar código de Bedelías."
+      },
+      {
+        "field": "bedeliasCreditConflicts",
+        "resolution": "La publicación vigente prevalece para los créditos de FING 1030, 1031, 1223, 1450, 1886, 2512 y FCIEN BG456; Bedelías sólo conserva sus identidades de progreso."
+      },
+      {
+        "field": "additionalOfficialCodes",
+        "resolution": "FING 2046 y FCIEN BG793 figuran en las grillas vigentes pero no en el snapshot auditado; se incorporan desde la fuente curricular oficial."
+      },
+      {
+        "field": "bio335Area",
+        "resolution": "La grilla Bioestadística ubica 335 en Instrumental, mientras los demás perfiles la ubican en Inferencia; se conserva cada ubicación publicada."
+      }
+    ]
+  },
+  "courses": [
+    {
+      "sourceId": "MC10",
+      "officialCode": "MC10",
+      "name": "Cálculo I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC11",
+      "officialCode": "MC11",
+      "name": "Cálculo I/Est",
+      "credits": 13,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC20",
+      "officialCode": "MC20",
+      "name": "Álgebra Lineal",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "118E",
+      "officialCode": "118E",
+      "name": "Estadística Descriptiva",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-2044",
+      "officialCode": "2044",
+      "name": "Fundamentos de la Combinatoria (FING)",
+      "credits": 9,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E10",
+      "officialCode": "E10",
+      "name": "Introducción a la Microeconomía",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "C10",
+      "officialCode": "C10",
+      "name": "Conceptos Contables",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "A10",
+      "officialCode": "A10",
+      "name": "Administración y Gestión de las Organizaciones I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC31",
+      "officialCode": "MC31",
+      "name": "Cálculo II",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1411",
+      "officialCode": "1411",
+      "name": "Computación I (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1375",
+      "officialCode": "1375",
+      "name": "Programación Imperativa (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-MA069",
+      "officialCode": "MA069",
+      "name": "Computación (FCIEN)",
+      "credits": 12,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E20N",
+      "officialCode": "E20N",
+      "name": "Economía Descriptiva",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "475",
+      "officialCode": "475",
+      "name": "Introducción a los Métodos Estadísticos",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "I137",
+      "officialCode": "I137",
+      "name": "Curso-taller de Introducción a la Extensión Universitaria",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "S22",
+      "officialCode": "S22",
+      "name": "Desarrollo y Bienestar",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCS-D91",
+      "officialCode": "D91",
+      "name": "Sociodemografía (FCS)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "230",
+      "officialCode": "230",
+      "name": "Probabilidad I",
+      "credits": 15,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E30",
+      "officialCode": "E30",
+      "name": "Macroeconomía I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E33",
+      "officialCode": "E33",
+      "name": "Sistemas de Descripción Macroeconómica",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "S30",
+      "officialCode": "S30",
+      "name": "Población, Economía y Desarrollo",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "340",
+      "officialCode": "340",
+      "name": "Ciencia de Datos con R",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC43",
+      "officialCode": "MC43",
+      "name": "Cálculo III",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "330",
+      "officialCode": "330",
+      "name": "Inferencia I",
+      "credits": 15,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E31",
+      "officialCode": "E31",
+      "name": "Microeconomía I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E34N",
+      "officialCode": "E34N",
+      "name": "Introducción a la Macroeconomía",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E40",
+      "officialCode": "E40",
+      "name": "Macroeconomía II",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "337N",
+      "officialCode": "337N",
+      "name": "Demografía",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "A81",
+      "officialCode": "A81",
+      "name": "Proyectos de Inversión",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC30",
+      "officialCode": "MC30",
+      "name": "Matemática Financiera",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC44",
+      "officialCode": "MC44",
+      "name": "Economía Matemática",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1064",
+      "officialCode": "1064",
+      "name": "Introducción a las Ecuaciones Diferenciales (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1886",
+      "officialCode": "1886",
+      "name": "Topología y Análisis Real (FING)",
+      "credits": 12,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1892",
+      "officialCode": "1892",
+      "name": "Bases de Datos para Ingeniería (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "119N",
+      "officialCode": "119N",
+      "name": "Introducción a la Estadística Computacional",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1033",
+      "officialCode": "1033",
+      "name": "Métodos Numéricos (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCS-D78A",
+      "officialCode": "D78A",
+      "name": "Ciencia, Tecnología, Innovación, Sociedad y Desarrollo (FCS)",
+      "credits": 6,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "335",
+      "officialCode": "335",
+      "name": "Muestreo y Planificación de Encuestas I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "333",
+      "officialCode": "333",
+      "name": "Modelos Lineales",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "I51E",
+      "officialCode": "I51E",
+      "name": "Introducción a la Metodología",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E50",
+      "officialCode": "E50",
+      "name": "Macroeconomía III",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E41",
+      "officialCode": "E41",
+      "name": "Microeconomía II",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E51",
+      "officialCode": "E51",
+      "name": "Economía de América Latina",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "343",
+      "officialCode": "343",
+      "name": "Álgebra Lineal Numérica Para Aprendizaje Estadístico",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "331",
+      "officialCode": "331",
+      "name": "Probabilidad II",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "338N",
+      "officialCode": "338N",
+      "name": "Seguros de Vida",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "334",
+      "officialCode": "334",
+      "name": "Inferencia II",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC61",
+      "officialCode": "MC61",
+      "name": "Econometría I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "6002",
+      "officialCode": "6002",
+      "name": "Introducción a los Modelos Multinivel",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "478",
+      "officialCode": "478",
+      "name": "Introducción al Análisis de Datos Espaciales",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "468",
+      "officialCode": "468",
+      "name": "Muestreo II",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "342",
+      "officialCode": "342",
+      "name": "Análisis de Supervivencia",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "6003",
+      "officialCode": "6003",
+      "name": "Microsimulación de Sistemas Sociales",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E61",
+      "officialCode": "E61",
+      "name": "Microeconomía III",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E60",
+      "officialCode": "E60",
+      "name": "Economía del Uruguay",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E52",
+      "officialCode": "E52",
+      "name": "Economía y Finanzas Públicas",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E45",
+      "officialCode": "E45",
+      "name": "Desigualdad y Pobreza",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "500",
+      "officialCode": "500",
+      "name": "Análisis de Redes: técnicas y aplicaciones",
+      "credits": 5,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "519",
+      "officialCode": "519",
+      "name": "Meta-análisis",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "476",
+      "officialCode": "476",
+      "name": "Estadística en el Deporte",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "I86",
+      "officialCode": "I86",
+      "name": "Modelos Dinámicos y Computacionales en Economía",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "I140",
+      "officialCode": "I140",
+      "name": "CCEEmprende",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "I135",
+      "officialCode": "I135",
+      "name": "EFI: Determinantes de las trayectorias académicas en la universidad",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "6004",
+      "officialCode": "6004",
+      "name": "Grafos y Grafos Aleatorios",
+      "credits": 12,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "461N",
+      "officialCode": "461N",
+      "name": "Introducción a los Procesos Estocásticos",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "6007",
+      "officialCode": "6007",
+      "name": "Python para Ciencia de Datos",
+      "credits": 6,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC71",
+      "officialCode": "MC71",
+      "name": "Análisis Multivariado I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "462",
+      "officialCode": "462",
+      "name": "Series Cronológicas I",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E90",
+      "officialCode": "E90",
+      "name": "Análisis Económico y Evaluación de Impacto de Proyectos y Programas",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "MC70",
+      "officialCode": "MC70",
+      "name": "Econometría II",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E77",
+      "officialCode": "E77",
+      "name": "Economía y Género",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "S82",
+      "officialCode": "S82",
+      "name": "Historia del Pensamiento Económico",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E75",
+      "officialCode": "E75",
+      "name": "Economía Pública",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "341",
+      "officialCode": "341",
+      "name": "Seguros Generales y Modelos de Riesgo",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "I138",
+      "officialCode": "I138",
+      "name": "Iniciación a la Docencia Universitaria",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "800",
+      "officialCode": "800",
+      "name": "Análisis Avanzado de Datos",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "P14",
+      "officialCode": "P14",
+      "name": "Trabajo Final de Grado",
+      "credits": 30,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "463N",
+      "officialCode": "463N",
+      "name": "Estadística No Paramétrica",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FAGRO-CACCN",
+      "officialCode": "CACCN",
+      "name": "Diseño y análisis de experimentos (Facultad de Agronomía)",
+      "credits": 5,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "336",
+      "officialCode": "336",
+      "name": "Inferencia III",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "470N",
+      "officialCode": "470N",
+      "name": "Aprendizaje Estadístico Supervisado",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "E86",
+      "officialCode": "E86",
+      "name": "Desarrollo Económico del Uruguay",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1061",
+      "officialCode": "1061",
+      "name": "Cálculo Diferencial e Integral en una Variable (FING)",
+      "credits": 13,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1030",
+      "officialCode": "1030",
+      "name": "Geometría y Álgebra Lineal 1 (FING)",
+      "credits": 9,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1031",
+      "officialCode": "1031",
+      "name": "Geometría y Álgebra Lineal 2 (FING)",
+      "credits": 9,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1062",
+      "officialCode": "1062",
+      "name": "Cálculo Diferencial e Integral en Varias Variables (FING)",
+      "credits": 13,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1223",
+      "officialCode": "1223",
+      "name": "Ciencia, Tecnología y Sociedad (FING)",
+      "credits": 8,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-2046",
+      "officialCode": "2046",
+      "name": "Herramientas de Modelización y Análisis",
+      "credits": 6,
+      "projectionBasis": "source-only"
+    },
+    {
+      "sourceId": "FING-1066",
+      "officialCode": "1066",
+      "name": "Funciones de Variable Compleja (FING)",
+      "credits": 5,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1224",
+      "officialCode": "1224",
+      "name": "Economía (FING)",
+      "credits": 7,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "PA24E",
+      "officialCode": "PA24E",
+      "name": "Topología y Análisis Real (FING)",
+      "credits": 12,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1872",
+      "officialCode": "1872",
+      "name": "Aplicaciones del Álgebra Lineal (FING)",
+      "credits": 9,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-2041",
+      "officialCode": "2041",
+      "name": "Métodos Numéricos (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1650",
+      "officialCode": "1650",
+      "name": "Introducción a la Investigación de Operaciones (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1634",
+      "officialCode": "1634",
+      "name": "Análisis de Datos en Redes Complejas (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1450",
+      "officialCode": "1450",
+      "name": "Introducción a la Teoría de la Información (FING)",
+      "credits": 8,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "574",
+      "officialCode": "574",
+      "name": "Econometría de Series Temporales",
+      "credits": 6,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-2512",
+      "officialCode": "2512",
+      "name": "Diseño Lógico (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1466",
+      "officialCode": "1466",
+      "name": "Arquitectura de Computadoras (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1617",
+      "officialCode": "1617",
+      "name": "Simulación a Eventos Discretos (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1637",
+      "officialCode": "1637",
+      "name": "Algoritmos Evolutivos (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1438",
+      "officialCode": "1438",
+      "name": "Aplicación de Teoría de la Información al Procesamiento de Imágenes (FING)",
+      "credits": 6,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-5828",
+      "officialCode": "5828",
+      "name": "Tratamiento de Imágenes por Computadora (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1624",
+      "officialCode": "1624",
+      "name": "Modelado y Optimización (FING)",
+      "credits": 6,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-SENALES-SISTEMAS-SIN-CODIGO",
+      "officialCode": "SENALES-SISTEMAS-SIN-CODIGO",
+      "name": "Señales y Sistemas (FING)",
+      "credits": 11,
+      "projectionBasis": "source-only"
+    },
+    {
+      "sourceId": "FING-5824",
+      "officialCode": "5824",
+      "name": "Redes de Datos 1 (FING)",
+      "credits": 8,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1057",
+      "officialCode": "1057",
+      "name": "Métodos de Montecarlo (FING)",
+      "credits": 8,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-MA281",
+      "officialCode": "MA281",
+      "name": "Cadenas de Markov (FCIEN)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1063",
+      "officialCode": "1063",
+      "name": "Cálculo Vectorial (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-BG456",
+      "officialCode": "BG456",
+      "name": "Biología General I (FCIEN)",
+      "credits": 11,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-BG793",
+      "officialCode": "BG793",
+      "name": "Universidad y Sociedad (FCIEN)",
+      "credits": 10,
+      "projectionBasis": "source-only"
+    },
+    {
+      "sourceId": "FCIEN-BL041",
+      "officialCode": "BL041",
+      "name": "Etología (FCIEN)",
+      "credits": 7,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-BL018",
+      "officialCode": "BL018",
+      "name": "Introducción a la Biología II (FCIEN)",
+      "credits": 3,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-B0069",
+      "officialCode": "B0069",
+      "name": "Biofísica (FCIEN)",
+      "credits": 13,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FQ-BIOINFORMATICA-SIN-CODIGO",
+      "officialCode": "FQ-BIOINFORMATICA-SIN-CODIGO",
+      "name": "Bioinformática (FQ)",
+      "credits": 10,
+      "projectionBasis": "source-only"
+    },
+    {
+      "sourceId": "FCIEN-BG859",
+      "officialCode": "BG859",
+      "name": "Genética General (FCIEN)",
+      "credits": 14,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-BL014",
+      "officialCode": "BL014",
+      "name": "Ecología (FCIEN)",
+      "credits": 8,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-BL016",
+      "officialCode": "BL016",
+      "name": "Evolución (FCIEN)",
+      "credits": 12,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FCIEN-APRENDIZAJE-SEMI-SUPERVISADO-SIN-CODIGO",
+      "officialCode": "APRENDIZAJE-SEMI-SUPERVISADO-SIN-CODIGO",
+      "name": "Aprendizaje supervisado, no supervisado y semisupervisado (FCiencias)",
+      "credits": 10,
+      "projectionBasis": "source-only"
+    },
+    {
+      "sourceId": "E20",
+      "officialCode": "E20",
+      "name": "Economía Descriptiva",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    },
+    {
+      "sourceId": "FING-1510",
+      "officialCode": "1510",
+      "name": "Control de Calidad (FING)",
+      "credits": 10,
+      "projectionBasis": "bedelias-crosswalk"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "economia",
+      "label": "Económico",
+      "credentialId": "economia",
+      "printedMinimums": {
+        "M": 85,
+        "IE": 85,
+        "I": 30,
+        "PE": 60,
+        "CG": 10,
+        "AI": 20
+      },
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "semester": 1,
+          "placements": [
+            {
+              "sourceId": "MC10",
+              "officialCode": "MC10",
+              "name": "Cálculo I",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC11",
+              "officialCode": "MC11",
+              "name": "Cálculo I/Est",
+              "credits": 13,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC20",
+              "officialCode": "MC20",
+              "name": "Álgebra Lineal",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "118E",
+              "officialCode": "118E",
+              "name": "Estadística Descriptiva",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-2044",
+              "officialCode": "2044",
+              "name": "Fundamentos de la Combinatoria (FING)",
+              "credits": 9,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E10",
+              "officialCode": "E10",
+              "name": "Introducción a la Microeconomía",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "C10",
+              "officialCode": "C10",
+              "name": "Conceptos Contables",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "A10",
+              "officialCode": "A10",
+              "name": "Administración y Gestión de las Organizaciones I",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC10",
+            "MC11",
+            "MC20",
+            "118E",
+            "FING-2044",
+            "E10",
+            "C10",
+            "A10"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "semester": 2,
+          "placements": [
+            {
+              "sourceId": "MC31",
+              "officialCode": "MC31",
+              "name": "Cálculo II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1411",
+              "officialCode": "1411",
+              "name": "Computación I (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1375",
+              "officialCode": "1375",
+              "name": "Programación Imperativa (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FCIEN-MA069",
+              "officialCode": "MA069",
+              "name": "Computación (FCIEN)",
+              "credits": 12,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "E20N",
+              "officialCode": "E20N",
+              "name": "Economía Descriptiva",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "475",
+              "officialCode": "475",
+              "name": "Introducción a los Métodos Estadísticos",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I137",
+              "officialCode": "I137",
+              "name": "Curso-taller de Introducción a la Extensión Universitaria",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "S22",
+              "officialCode": "S22",
+              "name": "Desarrollo y Bienestar",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCS-D91",
+              "officialCode": "D91",
+              "name": "Sociodemografía (FCS)",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC31",
+            "FING-1411",
+            "FING-1375",
+            "FCIEN-MA069",
+            "E20N",
+            "475",
+            "I137",
+            "S22",
+            "FCS-D91"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "semester": 3,
+          "placements": [
+            {
+              "sourceId": "230",
+              "officialCode": "230",
+              "name": "Probabilidad I",
+              "credits": 15,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "E30",
+              "officialCode": "E30",
+              "name": "Macroeconomía I",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E33",
+              "officialCode": "E33",
+              "name": "Sistemas de Descripción Macroeconómica",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "S30",
+              "officialCode": "S30",
+              "name": "Población, Economía y Desarrollo",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "340",
+              "officialCode": "340",
+              "name": "Ciencia de Datos con R",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "230",
+            "E30",
+            "E33",
+            "S30",
+            "340"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "semester": 4,
+          "placements": [
+            {
+              "sourceId": "MC43",
+              "officialCode": "MC43",
+              "name": "Cálculo III",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "330",
+              "officialCode": "330",
+              "name": "Inferencia I",
+              "credits": 15,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "E31",
+              "officialCode": "E31",
+              "name": "Microeconomía I",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E34N",
+              "officialCode": "E34N",
+              "name": "Introducción a la Macroeconomía",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E40",
+              "officialCode": "E40",
+              "name": "Macroeconomía II",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "337N",
+              "officialCode": "337N",
+              "name": "Demografía",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "A81",
+              "officialCode": "A81",
+              "name": "Proyectos de Inversión",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "MC30",
+              "officialCode": "MC30",
+              "name": "Matemática Financiera",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "MC44",
+              "officialCode": "MC44",
+              "name": "Economía Matemática",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1064",
+              "officialCode": "1064",
+              "name": "Introducción a las Ecuaciones Diferenciales (FING)",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1886",
+              "officialCode": "1886",
+              "name": "Topología y Análisis Real (FING)",
+              "credits": 12,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1892",
+              "officialCode": "1892",
+              "name": "Bases de Datos para Ingeniería (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "119N",
+              "officialCode": "119N",
+              "name": "Introducción a la Estadística Computacional",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1033",
+              "officialCode": "1033",
+              "name": "Métodos Numéricos (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCS-D78A",
+              "officialCode": "D78A",
+              "name": "Ciencia, Tecnología, Innovación, Sociedad y Desarrollo (FCS)",
+              "credits": 6,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC43",
+            "330",
+            "E31",
+            "E34N",
+            "E40",
+            "337N",
+            "A81",
+            "MC30",
+            "MC44",
+            "FING-1064",
+            "FING-1886",
+            "FING-1892",
+            "119N",
+            "FING-1033",
+            "FCS-D78A"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "semester": 5,
+          "placements": [
+            {
+              "sourceId": "335",
+              "officialCode": "335",
+              "name": "Muestreo y Planificación de Encuestas I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "333",
+              "officialCode": "333",
+              "name": "Modelos Lineales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "I51E",
+              "officialCode": "I51E",
+              "name": "Introducción a la Metodología",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E50",
+              "officialCode": "E50",
+              "name": "Macroeconomía III",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E41",
+              "officialCode": "E41",
+              "name": "Microeconomía II",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E51",
+              "officialCode": "E51",
+              "name": "Economía de América Latina",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "343",
+              "officialCode": "343",
+              "name": "Álgebra Lineal Numérica Para Aprendizaje Estadístico",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "331",
+              "officialCode": "331",
+              "name": "Probabilidad II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "338N",
+              "officialCode": "338N",
+              "name": "Seguros de Vida",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "335",
+            "333",
+            "I51E",
+            "E50",
+            "E41",
+            "E51",
+            "343",
+            "331",
+            "338N"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "semester": 6,
+          "placements": [
+            {
+              "sourceId": "334",
+              "officialCode": "334",
+              "name": "Inferencia II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC61",
+              "officialCode": "MC61",
+              "name": "Econometría I",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "6002",
+              "officialCode": "6002",
+              "name": "Introducción a los Modelos Multinivel",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "478",
+              "officialCode": "478",
+              "name": "Introducción al Análisis de Datos Espaciales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "468",
+              "officialCode": "468",
+              "name": "Muestreo II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "342",
+              "officialCode": "342",
+              "name": "Análisis de Supervivencia",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6003",
+              "officialCode": "6003",
+              "name": "Microsimulación de Sistemas Sociales",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E61",
+              "officialCode": "E61",
+              "name": "Microeconomía III",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E60",
+              "officialCode": "E60",
+              "name": "Economía del Uruguay",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E52",
+              "officialCode": "E52",
+              "name": "Economía y Finanzas Públicas",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E45",
+              "officialCode": "E45",
+              "name": "Desigualdad y Pobreza",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "500",
+              "officialCode": "500",
+              "name": "Análisis de Redes: técnicas y aplicaciones",
+              "credits": 5,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "519",
+              "officialCode": "519",
+              "name": "Meta-análisis",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "476",
+              "officialCode": "476",
+              "name": "Estadística en el Deporte",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I86",
+              "officialCode": "I86",
+              "name": "Modelos Dinámicos y Computacionales en Economía",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I140",
+              "officialCode": "I140",
+              "name": "CCEEmprende",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I135",
+              "officialCode": "I135",
+              "name": "EFI: Determinantes de las trayectorias académicas en la universidad",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6004",
+              "officialCode": "6004",
+              "name": "Grafos y Grafos Aleatorios",
+              "credits": 12,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "461N",
+              "officialCode": "461N",
+              "name": "Introducción a los Procesos Estocásticos",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6007",
+              "officialCode": "6007",
+              "name": "Python para Ciencia de Datos",
+              "credits": 6,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "334",
+            "MC61",
+            "6002",
+            "478",
+            "468",
+            "342",
+            "6003",
+            "E61",
+            "E60",
+            "E52",
+            "E45",
+            "500",
+            "519",
+            "476",
+            "I86",
+            "I140",
+            "I135",
+            "6004",
+            "461N",
+            "6007"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "semester": 7,
+          "placements": [
+            {
+              "sourceId": "MC71",
+              "officialCode": "MC71",
+              "name": "Análisis Multivariado I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "462",
+              "officialCode": "462",
+              "name": "Series Cronológicas I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "E90",
+              "officialCode": "E90",
+              "name": "Análisis Económico y Evaluación de Impacto de Proyectos y Programas",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "MC70",
+              "officialCode": "MC70",
+              "name": "Econometría II",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E77",
+              "officialCode": "E77",
+              "name": "Economía y Género",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "S82",
+              "officialCode": "S82",
+              "name": "Historia del Pensamiento Económico",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E75",
+              "officialCode": "E75",
+              "name": "Economía Pública",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC71",
+            "462",
+            "E90",
+            "MC70",
+            "E77",
+            "S82",
+            "E75"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "semester": 8,
+          "placements": [
+            {
+              "sourceId": "341",
+              "officialCode": "341",
+              "name": "Seguros Generales y Modelos de Riesgo",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I138",
+              "officialCode": "I138",
+              "name": "Iniciación a la Docencia Universitaria",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "800",
+              "officialCode": "800",
+              "name": "Análisis Avanzado de Datos",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "P14",
+              "officialCode": "P14",
+              "name": "Trabajo Final de Grado",
+              "credits": 30,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "463N",
+              "officialCode": "463N",
+              "name": "Estadística No Paramétrica",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FAGRO-CACCN",
+              "officialCode": "CACCN",
+              "name": "Diseño y análisis de experimentos (Facultad de Agronomía)",
+              "credits": 5,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "336",
+              "officialCode": "336",
+              "name": "Inferencia III",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "470N",
+              "officialCode": "470N",
+              "name": "Aprendizaje Estadístico Supervisado",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E86",
+              "officialCode": "E86",
+              "name": "Desarrollo Económico del Uruguay",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "341",
+            "I138",
+            "800",
+            "P14",
+            "463N",
+            "FAGRO-CACCN",
+            "336",
+            "470N",
+            "E86"
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "period": "Semestre 1",
+          "sourceIds": [
+            "MC10",
+            "MC11"
+          ],
+          "rule": "alternativas de Cálculo I"
+        },
+        {
+          "period": "Semestre 2",
+          "sourceIds": [
+            "FING-1411",
+            "FING-1375",
+            "FCIEN-MA069"
+          ],
+          "rule": "alternativas de programación/computación"
+        }
+      ]
+    },
+    {
+      "id": "tecnologico",
+      "label": "Tecnológico",
+      "credentialId": "tecnologico",
+      "printedMinimums": {
+        "M": 83,
+        "IE": 85,
+        "I": 30,
+        "PE": 60,
+        "CG": 10,
+        "AI": 20
+      },
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "semester": 1,
+          "placements": [
+            {
+              "sourceId": "FING-1061",
+              "officialCode": "1061",
+              "name": "Cálculo Diferencial e Integral en una Variable (FING)",
+              "credits": 13,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC10",
+              "officialCode": "MC10",
+              "name": "Cálculo I",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC11",
+              "officialCode": "MC11",
+              "name": "Cálculo I/Est",
+              "credits": 13,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1030",
+              "officialCode": "1030",
+              "name": "Geometría y Álgebra Lineal 1 (FING)",
+              "credits": 9,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-2044",
+              "officialCode": "2044",
+              "name": "Fundamentos de la Combinatoria (FING)",
+              "credits": 9,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "118E",
+              "officialCode": "118E",
+              "name": "Estadística Descriptiva",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "A10",
+              "officialCode": "A10",
+              "name": "Administración y Gestión de las Organizaciones I",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "C10",
+              "officialCode": "C10",
+              "name": "Conceptos Contables",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E10",
+              "officialCode": "E10",
+              "name": "Introducción a la Microeconomía",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "FING-1061",
+            "MC10",
+            "MC11",
+            "FING-1030",
+            "FING-2044",
+            "118E",
+            "A10",
+            "C10",
+            "E10"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "semester": 2,
+          "placements": [
+            {
+              "sourceId": "FING-1031",
+              "officialCode": "1031",
+              "name": "Geometría y Álgebra Lineal 2 (FING)",
+              "credits": 9,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC31",
+              "officialCode": "MC31",
+              "name": "Cálculo II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1062",
+              "officialCode": "1062",
+              "name": "Cálculo Diferencial e Integral en Varias Variables (FING)",
+              "credits": 13,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1411",
+              "officialCode": "1411",
+              "name": "Computación I (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FCIEN-MA069",
+              "officialCode": "MA069",
+              "name": "Computación (FCIEN)",
+              "credits": 12,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1375",
+              "officialCode": "1375",
+              "name": "Programación Imperativa (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "475",
+              "officialCode": "475",
+              "name": "Introducción a los Métodos Estadísticos",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1223",
+              "officialCode": "1223",
+              "name": "Ciencia, Tecnología y Sociedad (FING)",
+              "credits": 8,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-2046",
+              "officialCode": "2046",
+              "name": "Herramientas de Modelización y Análisis",
+              "credits": 6,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I137",
+              "officialCode": "I137",
+              "name": "Curso-taller de Introducción a la Extensión Universitaria",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "FING-1031",
+            "MC31",
+            "FING-1062",
+            "FING-1411",
+            "FCIEN-MA069",
+            "FING-1375",
+            "475",
+            "FING-1223",
+            "FING-2046",
+            "I137"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "semester": 3,
+          "placements": [
+            {
+              "sourceId": "230",
+              "officialCode": "230",
+              "name": "Probabilidad I",
+              "credits": 15,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1066",
+              "officialCode": "1066",
+              "name": "Funciones de Variable Compleja (FING)",
+              "credits": 5,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "340",
+              "officialCode": "340",
+              "name": "Ciencia de Datos con R",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "230",
+            "FING-1066",
+            "340"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "semester": 4,
+          "placements": [
+            {
+              "sourceId": "FING-1064",
+              "officialCode": "1064",
+              "name": "Introducción a las Ecuaciones Diferenciales (FING)",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "330",
+              "officialCode": "330",
+              "name": "Inferencia I",
+              "credits": 15,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC30",
+              "officialCode": "MC30",
+              "name": "Matemática Financiera",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "337N",
+              "officialCode": "337N",
+              "name": "Demografía",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1224",
+              "officialCode": "1224",
+              "name": "Economía (FING)",
+              "credits": 7,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "MC43",
+              "officialCode": "MC43",
+              "name": "Cálculo III",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "PA24E",
+              "officialCode": "PA24E",
+              "name": "Topología y Análisis Real (FING)",
+              "credits": 12,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1872",
+              "officialCode": "1872",
+              "name": "Aplicaciones del Álgebra Lineal (FING)",
+              "credits": 9,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "119N",
+              "officialCode": "119N",
+              "name": "Introducción a la Estadística Computacional",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1892",
+              "officialCode": "1892",
+              "name": "Bases de Datos para Ingeniería (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-2041",
+              "officialCode": "2041",
+              "name": "Métodos Numéricos (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "FING-1064",
+            "330",
+            "MC30",
+            "337N",
+            "FING-1224",
+            "MC43",
+            "PA24E",
+            "FING-1872",
+            "119N",
+            "FING-1892",
+            "FING-2041"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "semester": 5,
+          "placements": [
+            {
+              "sourceId": "335",
+              "officialCode": "335",
+              "name": "Muestreo y Planificación de Encuestas I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "333",
+              "officialCode": "333",
+              "name": "Modelos Lineales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1650",
+              "officialCode": "1650",
+              "name": "Introducción a la Investigación de Operaciones (FING)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "331",
+              "officialCode": "331",
+              "name": "Probabilidad II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "343",
+              "officialCode": "343",
+              "name": "Álgebra Lineal Numérica Para Aprendizaje Estadístico",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "338N",
+              "officialCode": "338N",
+              "name": "Seguros de Vida",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I51E",
+              "officialCode": "I51E",
+              "name": "Introducción a la Metodología",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "335",
+            "333",
+            "FING-1650",
+            "331",
+            "343",
+            "338N",
+            "I51E"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "semester": 6,
+          "placements": [
+            {
+              "sourceId": "334",
+              "officialCode": "334",
+              "name": "Inferencia II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "519",
+              "officialCode": "519",
+              "name": "Meta-análisis",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "476",
+              "officialCode": "476",
+              "name": "Estadística en el Deporte",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I135",
+              "officialCode": "I135",
+              "name": "EFI: Determinantes de las trayectorias académicas en la universidad",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I140",
+              "officialCode": "I140",
+              "name": "CCEEmprende",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I86",
+              "officialCode": "I86",
+              "name": "Modelos Dinámicos y Computacionales en Economía",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6004",
+              "officialCode": "6004",
+              "name": "Grafos y Grafos Aleatorios",
+              "credits": 12,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1634",
+              "officialCode": "1634",
+              "name": "Análisis de Datos en Redes Complejas (FING)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6007",
+              "officialCode": "6007",
+              "name": "Python para Ciencia de Datos",
+              "credits": 6,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "478",
+              "officialCode": "478",
+              "name": "Introducción al Análisis de Datos Espaciales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "342",
+              "officialCode": "342",
+              "name": "Análisis de Supervivencia",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "468",
+              "officialCode": "468",
+              "name": "Muestreo II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6002",
+              "officialCode": "6002",
+              "name": "Introducción a los Modelos Multinivel",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "461N",
+              "officialCode": "461N",
+              "name": "Introducción a los Procesos Estocásticos",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "334",
+            "519",
+            "476",
+            "I135",
+            "I140",
+            "I86",
+            "6004",
+            "FING-1634",
+            "6007",
+            "478",
+            "342",
+            "468",
+            "6002",
+            "461N"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "semester": 7,
+          "placements": [
+            {
+              "sourceId": "MC71",
+              "officialCode": "MC71",
+              "name": "Análisis Multivariado I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "462",
+              "officialCode": "462",
+              "name": "Series Cronológicas I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1450",
+              "officialCode": "1450",
+              "name": "Introducción a la Teoría de la Información (FING)",
+              "credits": 8,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC71",
+            "462",
+            "FING-1450"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "semester": 8,
+          "placements": [
+            {
+              "sourceId": "341",
+              "officialCode": "341",
+              "name": "Seguros Generales y Modelos de Riesgo",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I138",
+              "officialCode": "I138",
+              "name": "Iniciación a la Docencia Universitaria",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "470N",
+              "officialCode": "470N",
+              "name": "Aprendizaje Estadístico Supervisado",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "463N",
+              "officialCode": "463N",
+              "name": "Estadística No Paramétrica",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FAGRO-CACCN",
+              "officialCode": "CACCN",
+              "name": "Diseño y análisis de experimentos (Facultad de Agronomía)",
+              "credits": 5,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "574",
+              "officialCode": "574",
+              "name": "Econometría de Series Temporales",
+              "credits": 6,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "P14",
+              "officialCode": "P14",
+              "name": "Trabajo Final de Grado",
+              "credits": 30,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "500",
+              "officialCode": "500",
+              "name": "Análisis de Redes: técnicas y aplicaciones",
+              "credits": 5,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "800",
+              "officialCode": "800",
+              "name": "Análisis Avanzado de Datos",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-2512",
+              "officialCode": "2512",
+              "name": "Diseño Lógico (FING)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1466",
+              "officialCode": "1466",
+              "name": "Arquitectura de Computadoras (FING)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1617",
+              "officialCode": "1617",
+              "name": "Simulación a Eventos Discretos (FING)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1637",
+              "officialCode": "1637",
+              "name": "Algoritmos Evolutivos (FING)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1438",
+              "officialCode": "1438",
+              "name": "Aplicación de Teoría de la Información al Procesamiento de Imágenes (FING)",
+              "credits": 6,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-5828",
+              "officialCode": "5828",
+              "name": "Tratamiento de Imágenes por Computadora (FING)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1624",
+              "officialCode": "1624",
+              "name": "Modelado y Optimización (FING)",
+              "credits": 6,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-SENALES-SISTEMAS-SIN-CODIGO",
+              "officialCode": "SENALES-SISTEMAS-SIN-CODIGO",
+              "name": "Señales y Sistemas (FING)",
+              "credits": 11,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-5824",
+              "officialCode": "5824",
+              "name": "Redes de Datos 1 (FING)",
+              "credits": 8,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1057",
+              "officialCode": "1057",
+              "name": "Métodos de Montecarlo (FING)",
+              "credits": 8,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-MA281",
+              "officialCode": "MA281",
+              "name": "Cadenas de Markov (FCIEN)",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1063",
+              "officialCode": "1063",
+              "name": "Cálculo Vectorial (FING)",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "341",
+            "I138",
+            "470N",
+            "463N",
+            "FAGRO-CACCN",
+            "574",
+            "P14",
+            "500",
+            "800",
+            "FING-2512",
+            "FING-1466",
+            "FING-1617",
+            "FING-1637",
+            "FING-1438",
+            "FING-5828",
+            "FING-1624",
+            "FING-SENALES-SISTEMAS-SIN-CODIGO",
+            "FING-5824",
+            "FING-1057",
+            "FCIEN-MA281",
+            "FING-1063"
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "period": "Semestre 1",
+          "sourceIds": [
+            "FING-1061",
+            "MC10",
+            "MC11"
+          ],
+          "rule": "alternativas de Cálculo I"
+        },
+        {
+          "period": "Semestre 2",
+          "sourceIds": [
+            "MC31",
+            "FING-1062"
+          ],
+          "rule": "alternativas de Cálculo II"
+        },
+        {
+          "period": "Semestre 2",
+          "sourceIds": [
+            "FING-1411",
+            "FCIEN-MA069",
+            "FING-1375"
+          ],
+          "rule": "alternativas de programación/computación"
+        }
+      ]
+    },
+    {
+      "id": "bioestadistico",
+      "label": "Bioestadístico",
+      "credentialId": "bioestadistico",
+      "printedMinimums": {
+        "M": 85,
+        "IE": 85,
+        "I": 30,
+        "PE": 60,
+        "CG": 10,
+        "AI": 20
+      },
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "semester": 1,
+          "placements": [
+            {
+              "sourceId": "MC10",
+              "officialCode": "MC10",
+              "name": "Cálculo I",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC11",
+              "officialCode": "MC11",
+              "name": "Cálculo I/Est",
+              "credits": 13,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC20",
+              "officialCode": "MC20",
+              "name": "Álgebra Lineal",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FCIEN-BG456",
+              "officialCode": "BG456",
+              "name": "Biología General I (FCIEN)",
+              "credits": 11,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "118E",
+              "officialCode": "118E",
+              "name": "Estadística Descriptiva",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-2044",
+              "officialCode": "2044",
+              "name": "Fundamentos de la Combinatoria (FING)",
+              "credits": 9,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "C10",
+              "officialCode": "C10",
+              "name": "Conceptos Contables",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "A10",
+              "officialCode": "A10",
+              "name": "Administración y Gestión de las Organizaciones I",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1223",
+              "officialCode": "1223",
+              "name": "Ciencia, Tecnología y Sociedad (FING)",
+              "credits": 8,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-BG793",
+              "officialCode": "BG793",
+              "name": "Universidad y Sociedad (FCIEN)",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-BL041",
+              "officialCode": "BL041",
+              "name": "Etología (FCIEN)",
+              "credits": 7,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC10",
+            "MC11",
+            "MC20",
+            "FCIEN-BG456",
+            "118E",
+            "FING-2044",
+            "C10",
+            "A10",
+            "FING-1223",
+            "FCIEN-BG793",
+            "FCIEN-BL041"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "semester": 2,
+          "placements": [
+            {
+              "sourceId": "MC31",
+              "officialCode": "MC31",
+              "name": "Cálculo II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1411",
+              "officialCode": "1411",
+              "name": "Computación I (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FCIEN-MA069",
+              "officialCode": "MA069",
+              "name": "Computación (FCIEN)",
+              "credits": 12,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1375",
+              "officialCode": "1375",
+              "name": "Programación Imperativa (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "475",
+              "officialCode": "475",
+              "name": "Introducción a los Métodos Estadísticos",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-BL018",
+              "officialCode": "BL018",
+              "name": "Introducción a la Biología II (FCIEN)",
+              "credits": 3,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I137",
+              "officialCode": "I137",
+              "name": "Curso-taller de Introducción a la Extensión Universitaria",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC31",
+            "FING-1411",
+            "FCIEN-MA069",
+            "FING-1375",
+            "475",
+            "FCIEN-BL018",
+            "I137"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "semester": 3,
+          "placements": [
+            {
+              "sourceId": "230",
+              "officialCode": "230",
+              "name": "Probabilidad I",
+              "credits": 15,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1066",
+              "officialCode": "1066",
+              "name": "Funciones de Variable Compleja (FING)",
+              "credits": 5,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-B0069",
+              "officialCode": "B0069",
+              "name": "Biofísica (FCIEN)",
+              "credits": 13,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "340",
+              "officialCode": "340",
+              "name": "Ciencia de Datos con R",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "230",
+            "FING-1066",
+            "FCIEN-B0069",
+            "340"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "semester": 4,
+          "placements": [
+            {
+              "sourceId": "MC43",
+              "officialCode": "MC43",
+              "name": "Cálculo III",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "330",
+              "officialCode": "330",
+              "name": "Inferencia I",
+              "credits": 15,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "PA24E",
+              "officialCode": "PA24E",
+              "name": "Topología y Análisis Real (FING)",
+              "credits": 12,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "337N",
+              "officialCode": "337N",
+              "name": "Demografía",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "119N",
+              "officialCode": "119N",
+              "name": "Introducción a la Estadística Computacional",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1892",
+              "officialCode": "1892",
+              "name": "Bases de Datos para Ingeniería (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-2041",
+              "officialCode": "2041",
+              "name": "Métodos Numéricos (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FQ-BIOINFORMATICA-SIN-CODIGO",
+              "officialCode": "FQ-BIOINFORMATICA-SIN-CODIGO",
+              "name": "Bioinformática (FQ)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-BG859",
+              "officialCode": "BG859",
+              "name": "Genética General (FCIEN)",
+              "credits": 14,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC43",
+            "330",
+            "PA24E",
+            "337N",
+            "119N",
+            "FING-1892",
+            "FING-2041",
+            "FQ-BIOINFORMATICA-SIN-CODIGO",
+            "FCIEN-BG859"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "semester": 5,
+          "placements": [
+            {
+              "sourceId": "335",
+              "officialCode": "335",
+              "name": "Muestreo y Planificación de Encuestas I",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "333",
+              "officialCode": "333",
+              "name": "Modelos Lineales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FCIEN-BL014",
+              "officialCode": "BL014",
+              "name": "Ecología (FCIEN)",
+              "credits": 8,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "331",
+              "officialCode": "331",
+              "name": "Probabilidad II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "343",
+              "officialCode": "343",
+              "name": "Álgebra Lineal Numérica Para Aprendizaje Estadístico",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I51E",
+              "officialCode": "I51E",
+              "name": "Introducción a la Metodología",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "338N",
+              "officialCode": "338N",
+              "name": "Seguros de Vida",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "335",
+            "333",
+            "FCIEN-BL014",
+            "331",
+            "343",
+            "I51E",
+            "338N"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "semester": 6,
+          "placements": [
+            {
+              "sourceId": "334",
+              "officialCode": "334",
+              "name": "Inferencia II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "519",
+              "officialCode": "519",
+              "name": "Meta-análisis",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "476",
+              "officialCode": "476",
+              "name": "Estadística en el Deporte",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I140",
+              "officialCode": "I140",
+              "name": "CCEEmprende",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I135",
+              "officialCode": "I135",
+              "name": "EFI: Determinantes de las trayectorias académicas en la universidad",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-BL016",
+              "officialCode": "BL016",
+              "name": "Evolución (FCIEN)",
+              "credits": 12,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-MA281",
+              "officialCode": "MA281",
+              "name": "Cadenas de Markov (FCIEN)",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "461N",
+              "officialCode": "461N",
+              "name": "Introducción a los Procesos Estocásticos",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6004",
+              "officialCode": "6004",
+              "name": "Grafos y Grafos Aleatorios",
+              "credits": 12,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "468",
+              "officialCode": "468",
+              "name": "Muestreo II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "342",
+              "officialCode": "342",
+              "name": "Análisis de Supervivencia",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "478",
+              "officialCode": "478",
+              "name": "Introducción al Análisis de Datos Espaciales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6002",
+              "officialCode": "6002",
+              "name": "Introducción a los Modelos Multinivel",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6007",
+              "officialCode": "6007",
+              "name": "Python para Ciencia de Datos",
+              "credits": 6,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "334",
+            "519",
+            "476",
+            "I140",
+            "I135",
+            "FCIEN-BL016",
+            "FCIEN-MA281",
+            "461N",
+            "6004",
+            "468",
+            "342",
+            "478",
+            "6002",
+            "6007"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "semester": 7,
+          "placements": [
+            {
+              "sourceId": "MC71",
+              "officialCode": "MC71",
+              "name": "Análisis Multivariado I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "462",
+              "officialCode": "462",
+              "name": "Series Cronológicas I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1650",
+              "officialCode": "1650",
+              "name": "Introducción a la Investigación de Operaciones (FING)",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC71",
+            "462",
+            "FING-1650"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "semester": 8,
+          "placements": [
+            {
+              "sourceId": "341",
+              "officialCode": "341",
+              "name": "Seguros Generales y Modelos de Riesgo",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I138",
+              "officialCode": "I138",
+              "name": "Iniciación a la Docencia Universitaria",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "P14",
+              "officialCode": "P14",
+              "name": "Trabajo Final de Grado",
+              "credits": 30,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "500",
+              "officialCode": "500",
+              "name": "Análisis de Redes: técnicas y aplicaciones",
+              "credits": 5,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "800",
+              "officialCode": "800",
+              "name": "Análisis Avanzado de Datos",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "463N",
+              "officialCode": "463N",
+              "name": "Estadística No Paramétrica",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "470N",
+              "officialCode": "470N",
+              "name": "Aprendizaje Estadístico Supervisado",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FAGRO-CACCN",
+              "officialCode": "CACCN",
+              "name": "Diseño y análisis de experimentos (Facultad de Agronomía)",
+              "credits": 5,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCIEN-APRENDIZAJE-SEMI-SUPERVISADO-SIN-CODIGO",
+              "officialCode": "APRENDIZAJE-SEMI-SUPERVISADO-SIN-CODIGO",
+              "name": "Aprendizaje supervisado, no supervisado y semisupervisado (FCiencias)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "341",
+            "I138",
+            "P14",
+            "500",
+            "800",
+            "463N",
+            "470N",
+            "FAGRO-CACCN",
+            "FCIEN-APRENDIZAJE-SEMI-SUPERVISADO-SIN-CODIGO"
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "period": "Semestre 1",
+          "sourceIds": [
+            "MC10",
+            "MC11"
+          ],
+          "rule": "alternativas de Cálculo I"
+        },
+        {
+          "period": "Semestre 2",
+          "sourceIds": [
+            "FING-1411",
+            "FCIEN-MA069",
+            "FING-1375"
+          ],
+          "rule": "alternativas de programación/computación"
+        }
+      ]
+    },
+    {
+      "id": "actuarial-demografico",
+      "label": "Actuarial-Demográfico",
+      "credentialId": "actuarial-demografico",
+      "printedMinimums": {
+        "M": 85,
+        "IE": 85,
+        "I": 30,
+        "PE": 60,
+        "CG": 10,
+        "AI": 20
+      },
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "semester": 1,
+          "placements": [
+            {
+              "sourceId": "MC10",
+              "officialCode": "MC10",
+              "name": "Cálculo I",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC11",
+              "officialCode": "MC11",
+              "name": "Cálculo I/Est",
+              "credits": 13,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC20",
+              "officialCode": "MC20",
+              "name": "Álgebra Lineal",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "118E",
+              "officialCode": "118E",
+              "name": "Estadística Descriptiva",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-2044",
+              "officialCode": "2044",
+              "name": "Fundamentos de la Combinatoria (FING)",
+              "credits": 9,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "A10",
+              "officialCode": "A10",
+              "name": "Administración y Gestión de las Organizaciones I",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E10",
+              "officialCode": "E10",
+              "name": "Introducción a la Microeconomía",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "C10",
+              "officialCode": "C10",
+              "name": "Conceptos Contables",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC10",
+            "MC11",
+            "MC20",
+            "118E",
+            "FING-2044",
+            "A10",
+            "E10",
+            "C10"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "semester": 2,
+          "placements": [
+            {
+              "sourceId": "MC31",
+              "officialCode": "MC31",
+              "name": "Cálculo II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1411",
+              "officialCode": "1411",
+              "name": "Computación I (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FCIEN-MA069",
+              "officialCode": "MA069",
+              "name": "Computación (FCIEN)",
+              "credits": 12,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1375",
+              "officialCode": "1375",
+              "name": "Programación Imperativa (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "475",
+              "officialCode": "475",
+              "name": "Introducción a los Métodos Estadísticos",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E30",
+              "officialCode": "E30",
+              "name": "Macroeconomía I",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E20",
+              "officialCode": "E20",
+              "name": "Economía Descriptiva",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCS-D91",
+              "officialCode": "D91",
+              "name": "Sociodemografía (FCS)",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I137",
+              "officialCode": "I137",
+              "name": "Curso-taller de Introducción a la Extensión Universitaria",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC31",
+            "FING-1411",
+            "FCIEN-MA069",
+            "FING-1375",
+            "475",
+            "E30",
+            "E20",
+            "FCS-D91",
+            "I137"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "semester": 3,
+          "placements": [
+            {
+              "sourceId": "230",
+              "officialCode": "230",
+              "name": "Probabilidad I",
+              "credits": 15,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "S30",
+              "officialCode": "S30",
+              "name": "Población, Economía y Desarrollo",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "340",
+              "officialCode": "340",
+              "name": "Ciencia de Datos con R",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "230",
+            "S30",
+            "340"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "semester": 4,
+          "placements": [
+            {
+              "sourceId": "MC43",
+              "officialCode": "MC43",
+              "name": "Cálculo III",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "MC30",
+              "officialCode": "MC30",
+              "name": "Matemática Financiera",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "337N",
+              "officialCode": "337N",
+              "name": "Demografía",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "330",
+              "officialCode": "330",
+              "name": "Inferencia I",
+              "credits": 15,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "PA24E",
+              "officialCode": "PA24E",
+              "name": "Topología y Análisis Real (FING)",
+              "credits": 12,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1064",
+              "officialCode": "1064",
+              "name": "Introducción a las Ecuaciones Diferenciales (FING)",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E34N",
+              "officialCode": "E34N",
+              "name": "Introducción a la Macroeconomía",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FCS-D78A",
+              "officialCode": "D78A",
+              "name": "Ciencia, Tecnología, Innovación, Sociedad y Desarrollo (FCS)",
+              "credits": 6,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1892",
+              "officialCode": "1892",
+              "name": "Bases de Datos para Ingeniería (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "119N",
+              "officialCode": "119N",
+              "name": "Introducción a la Estadística Computacional",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-2041",
+              "officialCode": "2041",
+              "name": "Métodos Numéricos (FING)",
+              "credits": 10,
+              "area": "I",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "A81",
+              "officialCode": "A81",
+              "name": "Proyectos de Inversión",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC43",
+            "MC30",
+            "337N",
+            "330",
+            "PA24E",
+            "FING-1064",
+            "E34N",
+            "FCS-D78A",
+            "FING-1892",
+            "119N",
+            "FING-2041",
+            "A81"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "semester": 5,
+          "placements": [
+            {
+              "sourceId": "338N",
+              "officialCode": "338N",
+              "name": "Seguros de Vida",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "333",
+              "officialCode": "333",
+              "name": "Modelos Lineales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "335",
+              "officialCode": "335",
+              "name": "Muestreo y Planificación de Encuestas I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "FING-1650",
+              "officialCode": "1650",
+              "name": "Introducción a la Investigación de Operaciones (FING)",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FING-1510",
+              "officialCode": "1510",
+              "name": "Control de Calidad (FING)",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "331",
+              "officialCode": "331",
+              "name": "Probabilidad II",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "343",
+              "officialCode": "343",
+              "name": "Álgebra Lineal Numérica Para Aprendizaje Estadístico",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I51E",
+              "officialCode": "I51E",
+              "name": "Introducción a la Metodología",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "338N",
+            "333",
+            "335",
+            "FING-1650",
+            "FING-1510",
+            "331",
+            "343",
+            "I51E"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "semester": 6,
+          "placements": [
+            {
+              "sourceId": "334",
+              "officialCode": "334",
+              "name": "Inferencia II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "519",
+              "officialCode": "519",
+              "name": "Meta-análisis",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "476",
+              "officialCode": "476",
+              "name": "Estadística en el Deporte",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I135",
+              "officialCode": "I135",
+              "name": "EFI: Determinantes de las trayectorias académicas en la universidad",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I140",
+              "officialCode": "I140",
+              "name": "CCEEmprende",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "468",
+              "officialCode": "468",
+              "name": "Muestreo II",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "478",
+              "officialCode": "478",
+              "name": "Introducción al Análisis de Datos Espaciales",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "342",
+              "officialCode": "342",
+              "name": "Análisis de Supervivencia",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6002",
+              "officialCode": "6002",
+              "name": "Introducción a los Modelos Multinivel",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "461N",
+              "officialCode": "461N",
+              "name": "Introducción a los Procesos Estocásticos",
+              "credits": 10,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6004",
+              "officialCode": "6004",
+              "name": "Grafos y Grafos Aleatorios",
+              "credits": 12,
+              "area": "M",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E52",
+              "officialCode": "E52",
+              "name": "Economía y Finanzas Públicas",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6003",
+              "officialCode": "6003",
+              "name": "Microsimulación de Sistemas Sociales",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "6007",
+              "officialCode": "6007",
+              "name": "Python para Ciencia de Datos",
+              "credits": 6,
+              "area": "I",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "334",
+            "519",
+            "476",
+            "I135",
+            "I140",
+            "468",
+            "478",
+            "342",
+            "6002",
+            "461N",
+            "6004",
+            "E52",
+            "6003",
+            "6007"
+          ]
+        },
+        {
+          "label": "Semestre 7",
+          "semester": 7,
+          "placements": [
+            {
+              "sourceId": "MC71",
+              "officialCode": "MC71",
+              "name": "Análisis Multivariado I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "462",
+              "officialCode": "462",
+              "name": "Series Cronológicas I",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "E77",
+              "officialCode": "E77",
+              "name": "Economía y Género",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "E90",
+              "officialCode": "E90",
+              "name": "Análisis Económico y Evaluación de Impacto de Proyectos y Programas",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "MC71",
+            "462",
+            "E77",
+            "E90"
+          ]
+        },
+        {
+          "label": "Semestre 8",
+          "semester": 8,
+          "placements": [
+            {
+              "sourceId": "341",
+              "officialCode": "341",
+              "name": "Seguros Generales y Modelos de Riesgo",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "E86",
+              "officialCode": "E86",
+              "name": "Desarrollo Económico del Uruguay",
+              "credits": 10,
+              "area": "PE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "336",
+              "officialCode": "336",
+              "name": "Inferencia III",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "obligatoria"
+            },
+            {
+              "sourceId": "574",
+              "officialCode": "574",
+              "name": "Econometría de Series Temporales",
+              "credits": 6,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "463N",
+              "officialCode": "463N",
+              "name": "Estadística No Paramétrica",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "470N",
+              "officialCode": "470N",
+              "name": "Aprendizaje Estadístico Supervisado",
+              "credits": 10,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "FAGRO-CACCN",
+              "officialCode": "CACCN",
+              "name": "Diseño y análisis de experimentos (Facultad de Agronomía)",
+              "credits": 5,
+              "area": "IE",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "800",
+              "officialCode": "800",
+              "name": "Análisis Avanzado de Datos",
+              "credits": 10,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "P14",
+              "officialCode": "P14",
+              "name": "Trabajo Final de Grado",
+              "credits": 30,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "500",
+              "officialCode": "500",
+              "name": "Análisis de Redes: técnicas y aplicaciones",
+              "credits": 5,
+              "area": "AI",
+              "inclusion": "opcional"
+            },
+            {
+              "sourceId": "I138",
+              "officialCode": "I138",
+              "name": "Iniciación a la Docencia Universitaria",
+              "credits": 10,
+              "area": "CG",
+              "inclusion": "opcional"
+            }
+          ],
+          "courseIds": [
+            "341",
+            "E86",
+            "336",
+            "574",
+            "463N",
+            "470N",
+            "FAGRO-CACCN",
+            "800",
+            "P14",
+            "500",
+            "I138"
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "period": "Semestre 1",
+          "sourceIds": [
+            "MC10",
+            "MC11"
+          ],
+          "rule": "alternativas de Cálculo I"
+        },
+        {
+          "period": "Semestre 2",
+          "sourceIds": [
+            "FING-1411",
+            "FCIEN-MA069",
+            "FING-1375"
+          ],
+          "rule": "alternativas de programación/computación"
+        }
+      ]
+    }
+  ]
+}
