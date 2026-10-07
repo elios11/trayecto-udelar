@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:8037fc24c3089924031a2edc93602fda6d4c39352dbb2f0c731bc983f217a73a",
-    "extractedReportHash": "sha256:9e6c793c24c3bc32eca332e3c8da6e31b8c958af4d2e227b2db6095bcd0bc3de",
+    "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
+    "extractedReportHash": "sha256:7b4859c9e672ca7e55741e95d89eb1c4d8adb2cca66d7f416b48200c49affc32",
     "officialAuditHash": "sha256:6a3290339c997abee7559487f9b4a4473427290ef3ae1e710eb77ef854b859bc",
-    "reviewedTrajectoriesHash": "sha256:570a4ec2c5b9cae4a314e786ccbdbd09fa116f937d00007d6768150a444d53a8"
+    "reviewedTrajectoriesHash": "sha256:fe87a86c1de773bfec86892267d770671723ec26ac09254d8dfbf83f87ae5c00"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 93,
+      "official-trajectory-reproduced": 94,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 1,
-      "research-pending": 52
+      "research-pending": 51
     },
-    "pending": 53,
+    "pending": 52,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -133,10 +133,10 @@
         "serviceLabel": "Facultad de Ciencias Económicas y de Administración",
         "selectablePlanIds": 8,
         "states": {
-          "official-trajectory-reproduced": 7,
+          "official-trajectory-reproduced": 8,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 53,
+    "total": 52,
     "plans": [
       {
         "priority": 1,
@@ -453,15 +453,6 @@
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fartes"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcea"
         ],
         "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
@@ -844,14 +835,6 @@
           "bedelias-fcien-licenciatura-en-geologia-2018",
           "bedelias-fcien-licenciatura-en-matematica-2014",
           "bedelias-fing-tecnologo-en-cartografia-2011"
-        ]
-      },
-      {
-        "serviceId": "bedelias-fcea",
-        "serviceLabel": "Facultad de Ciencias Económicas y de Administración",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022"
         ]
       },
       {
@@ -3150,42 +3133,42 @@
           "careerLabel": "Licenciatura en Economía Agrícola y Gestión de Agronegocios",
           "planLabel": "Plan 2022 · vigente",
           "defaultTrajectoryId": "mencion-en-investigacion",
-          "defaultCredentialId": "degree-professional"
+          "defaultCredentialId": "degree-research"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-26",
-      "effectiveAt": "2022",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-06",
+      "effectiveAt": "2026-10",
       "officialSources": [
         {
           "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
           "url": "https://fcea.udelar.edu.uy/ensenanza/carreras-en-centros-universitarios-regionales/6743-licenciatura-en-economia-agricola-y-gestion-de-agronegocios.html",
-          "role": "vigencia 2026; Plan 2022; cuatro años; 360 créditos; Tacuarembó; grilla curricular; códigos; créditos; cursos recomendados por mención",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-06",
+          "role": "grilla vigente completa de ocho semestres, filas principales y opcionales, recomendaciones por mención, códigos, créditos, sede y duración"
         },
         {
           "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-economia-agricola-y-gestion-de-agronegocios/",
-          "role": "oferta vigente; Tacuarembó; dos menciones; elección de una mención; descripción de Investigación y Profesional",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-06",
+          "role": "oferta vigente en Tacuarembó y dos menciones del mismo recorrido de grado"
         },
         {
-          "authority": "Diario Oficial / IMPO",
+          "authority": "Consejo Directivo Central de Udelar / Diario Oficial",
           "url": "https://www.impo.com.uy/diariooficial/2023/10/19/avisos.pdf",
-          "role": "Reglamento vigente; Resolución 88 del CDC; 360 créditos; título único; constancia de mención; previaturas por fichas de unidades curriculares",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-06",
+          "role": "reglamento vigente, título único, 360 créditos y constancia de la mención"
         },
         {
-          "authority": "Dirección General Jurídica, Udelar",
-          "url": "https://dgjuridica.udelar.edu.uy/532-reglamento-del-plan-de-estudios-de-la-licenciatura-en-economia-agricola-y-gestion-de-agronegocios/",
-          "role": "identificación del reglamento; Resolución 88 del CDC de 03/10/2023; publicación en Diario Oficial",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/I111N_2026_03__EFI_Microcecea.pdf",
+          "reviewedAt": "2026-10-06",
+          "role": "identidad vigente I111N, 10 créditos y carácter opcional; no declara equivalencia con I71"
         },
         {
-          "authority": "Portal central de la Universidad de la República",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-economia-agricola-y-gestion-de-agronegocios",
-          "role": "48 meses; 360 créditos; Tacuarembó",
-          "trajectoryEvidence": false
+          "authority": "CENUR Noreste, Sede Tacuarembó, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/EGAF2_2026_02_Econom%C3%ADa_y_gesti%C3%B3n_en_la_actividad_forestal_II.pdf",
+          "reviewedAt": "2026-10-06",
+          "role": "ficha institucional vigente de EGAF2 con 4 créditos, en conflicto con los 5 impresos en la grilla"
         }
       ],
       "scope": {
@@ -3198,24 +3181,40 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-profiles",
         "features": [
-          "areas"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en economia agricola y gestion de agronegocios:2022",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/economia-agricola-2022-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:c92b66120ce5d1e9731c5dc0071facce5577367c4ebf1de012eed19fac346985",
+        "projectionContentHash": "sha256:ee139065324b019e4dfadebe83261ef7626d54e6fdd3e7555049c4cd574f4370",
+        "pathways": [
+          {
+            "id": "mencion-en-investigacion",
+            "periodCount": 8
+          },
+          {
+            "id": "mencion-profesional",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 53,
+        "matchedCoursePlacements": 53
       },
       "conflictNotes": [
-        "profileDuplication: Los 135 nodos de materia contienen 70 unidades distintas repetidas entre menciones. La UI comparte sus identificadores para conservar progreso y evita duplicar créditos.",
-        "externalServiceCodes: Las etiquetas de composición se interpretan como servicio-código-nombre; FCEA y CURE dejan de colapsarse en dos códigos genéricos.",
-        "titles: Bedelías etiqueta dos títulos con perfil; el reglamento establece un único título y una constancia que acredita la mención.",
-        "quantitativeOptionalResearch: El árbol exige 90 créditos cuantitativos y 85 obligatorios, pero el subgrupo opcional de 5 créditos no enumera unidades. La UI controla ambos pisos sin inventar una materia.",
-        "currentGridVsAccumulatedCatalog: La grilla 2026 de FCEA orienta la secuencia y recomendaciones; Bedelías conserva una oferta acumulada mayor. El catálogo se presenta como flexible y no como obligación completa."
+        "La publicación vigente contiene 57 filas: 30 principales —incluidas alternativas de Cálculo I— y 27 opcionales, electivas o flexibles; estas últimas permanecen en catálogo y no se convierten en obligaciones acumulativas.",
+        "I111N se publica como identidad vigente, pero ninguna fuente cotejada declara equivalencia o sustitución respecto de I71; ambos códigos permanecen separados y no se migra progreso.",
+        "EGAF2 usa 4 créditos con procedencia en la ficha institucional vigente de la unidad curricular; la grilla vigente imprime 5 y no se encontró prioridad normativa que resuelva la contradicción oficial.",
+        "La práctica curricular puede acreditarse luego de 200 créditos y su carga depende de la duración; se conserva flexible con cero créditos predeterminados.",
+        "Las dos menciones acreditan un único título y comparten el mismo progreso del Plan 2022."
       ]
     },
     {
@@ -13386,5 +13385,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:586366162b00946803c862e14045df8f3f5e5437c129e83824524fe62bfbc485"
+  "contentHash": "sha256:656f0262089905893d8091d89850168a479abd19247a7ad2b145e937eb77a9bb"
 }

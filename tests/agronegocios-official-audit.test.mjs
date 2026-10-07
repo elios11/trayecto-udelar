@@ -74,11 +74,10 @@ test("conserva los submínimos obligatorios y opcionales sin inventar el opciona
 });
 
 test("deduplica las materias compartidas y preserva el progreso entre menciones", () => {
-  assert.equal(projection.courses.length, 70);
-  assert.equal(projection.courses.reduce((sum, course) => sum + course.credits, 0), 632);
-  assert.equal(new Set(projection.courses.map((course) => course.bedeliasCode)).size, 70);
-  assert.equal(projection.pathways["mencion-en-investigacion"].periods.flatMap((period) => period.courseIds).length, 67);
-  assert.equal(projection.pathways["mencion-profesional"].periods.flatMap((period) => period.courseIds).length, 68);
+  assert.equal(projection.courses.length, 57);
+  assert.equal(new Set(projection.courses.map((course) => course.id)).size, 57);
+  assert.equal(projection.pathways["mencion-en-investigacion"].periods.flatMap((period) => period.courseIds).length, 27);
+  assert.equal(projection.pathways["mencion-profesional"].periods.flatMap((period) => period.courseIds).length, 26);
 
   const shared = projection.courses.find((course) => course.bedeliasCode === "FCEA-A10");
   assert.deepEqual(shared.eligibleRequirementIds, ["research-administration-required", "professional-administration-required"]);
@@ -90,9 +89,9 @@ test("deduplica las materias compartidas y preserva el progreso entre menciones"
 test("distingue servicio y código en las materias compartidas", () => {
   const codes = new Set(projection.courses.map((course) => course.bedeliasCode));
   assert.ok(codes.has("FCEA-A10"));
-  assert.ok(codes.has("CURE-A10TM"));
-  assert.ok(codes.has("FCEA-MC30"));
   assert.ok(codes.has("CURE-MCC30"));
+  assert.ok(!codes.has("CURE-A10TM"));
+  assert.ok(!codes.has("FCEA-MC30"));
   assert.ok(!codes.has("FCEA"));
   assert.ok(!codes.has("CURE"));
 });

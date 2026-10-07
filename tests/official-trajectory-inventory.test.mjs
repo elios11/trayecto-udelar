@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 93,
+    "official-trajectory-reproduced": 94,
     "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 1,
-    "research-pending": 52,
+    "research-pending": 51,
   });
-  assert.equal(savedInventory.pendingQueue.total, 53);
-  assert.equal(savedInventory.pendingQueue.plans.length, 53);
+  assert.equal(savedInventory.pendingQueue.total, 52);
+  assert.equal(savedInventory.pendingQueue.plans.length, 52);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 1).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(1).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -121,6 +121,19 @@ test("D03x cierra Estadística 2014 con cuatro perfiles y un único título", ()
   assert.equal(plan.evidence.expectedCoursePlacements, 293);
   assert.equal(plan.evidence.matchedCoursePlacements, 293);
   assert.deepEqual(plan.scope.territories, ["Montevideo"]);
+});
+
+test("D03y coteja las dos menciones y los ocho semestres de Economía Agrícola 2022", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-profiles");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [
+    ["mencion-en-investigacion", 8],
+    ["mencion-profesional", 8],
+  ]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 53);
+  assert.equal(plan.evidence.matchedCoursePlacements, 53);
+  assert.deepEqual(plan.scope.territories, ["Tacuarembó"]);
 });
 
 test("D03s cierra Computación 1997 con cuatro trayectorias completas y el tramo PI menor a 20", () => {

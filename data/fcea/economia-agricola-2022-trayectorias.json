@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
+  "identity": "licenciatura en economia agricola y gestion de agronegocios:2022",
+  "source": {
+    "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+    "reviewedAt": "2026-10-06",
+    "publishedValidity": "grilla vigente consultada el 6 de octubre de 2026; fichas enlazadas con vigencia 2025 y 2026",
+    "scope": "grilla curricular completa de ocho semestres, filas principales, opcionales y electivas, códigos publicados, créditos, áreas, recomendaciones por mención, sede, duración, título y mínimos de las dos menciones",
+    "documents": [
+      {
+        "url": "https://fcea.udelar.edu.uy/ensenanza/carreras-en-centros-universitarios-regionales/6743-licenciatura-en-economia-agricola-y-gestion-de-agronegocios.html",
+        "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "página vigente de la carrera, grilla de ocho semestres, códigos, créditos, áreas, filas principales y opcionales, recomendaciones por mención, 360 créditos, cuatro años y sede Tacuarembó"
+      },
+      {
+        "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-economia-agricola-y-gestion-de-agronegocios/",
+        "authority": "Universidad de la República",
+        "role": "oferta vigente en Tacuarembó y definición de las menciones Investigación y Profesional"
+      },
+      {
+        "url": "https://www.impo.com.uy/diariooficial/2023/10/19/avisos.pdf",
+        "authority": "Consejo Directivo Central de Udelar / Diario Oficial",
+        "role": "reglamento vigente: título único, mínimo de 360 créditos y constancia de la mención"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/E10_2026_03_Introducci%C3%B3n_a_la_Microeconom%C3%ADa_copy_copy.pdf",
+        "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "ficha vigente de E10: código, 10 créditos y obligatoriedad para LEAGA"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/I111N_2026_03__EFI_Microcecea.pdf",
+        "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "ficha vigente de I111N: código actual, 10 créditos, sexto semestre y carácter opcional para LEAGA"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/EGAF2_2026_02_Econom%C3%ADa_y_gesti%C3%B3n_en_la_actividad_forestal_II.pdf",
+        "authority": "CENUR Noreste, Sede Tacuarembó, Udelar",
+        "role": "ficha vigente de EGAF2: inclusión en LEAGA y 4 créditos; la divergencia con los 5 impresos en la grilla queda sin prioridad normativa resuelta"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2025/O03T_2025_02_An%C3%A1lisis_de_la_Comunicaci%C3%B3n_Organizacional_2.pdf",
+        "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "ficha vigente de O03T: 5 créditos, cuarto semestre y carácter opcional para LEAGA"
+      },
+      {
+        "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/MCC30_2026_02_Matem%C3%A1tica_Financiera_TAC.pdf",
+        "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+        "role": "ficha vigente de MCC30: 10 créditos, cuarto semestre y obligatoriedad para LEAGA"
+      }
+    ]
+  },
+  "fingerprints": {
+    "algorithm": "sha256",
+    "canonicalization": "JSON.stringify de {grid, mentions, trajectories, requirements, crosswalk}, conservando el orden de semestres y filas",
+    "normalizedCurriculum": "sha256:6a534ea3ed446586ad90a7c123432d6d0f8c32fdbb692e2b27d1728103cddb00"
+  },
+  "interpretation": {
+    "title": "Licenciado en Economía Agrícola y Gestión de Agronegocios",
+    "minimumCredits": 360,
+    "durationMonths": 48,
+    "campus": "Tacuarembó",
+    "mentionsAreAccreditedTrajectories": true,
+    "singleProgressPlan": true,
+    "mainRows": "Las filas principales integran la grilla sugerida. Cuando FCEA recomienda una fila sólo para una mención, la otra la conserva como opción de catálogo y no como ubicación semestral predeterminada.",
+    "optionalRows": "Las filas Opcionales y Electivos son oferta elegible del semestre; no son obligaciones acumulativas.",
+    "calculusAlternatives": "MC10 o la secuencia 114A + 128A acreditan Cálculo I según la nota de la grilla. Se conservan las tres identidades visibles sin fingir una equivalencia uno-a-uno.",
+    "bedeliasRole": "Bedelías conserva identidades, servicios y previaturas de las filas ya publicadas por FCEA; sus restantes entradas no acreditan inclusión vigente.",
+    "discrepancies": [
+      {
+        "field": "CPTAL.name",
+        "resolution": "La grilla y el archivo enlazado 2026 publican CPTAL como Herramientas de difusión de conocimientos en la Era Digital; ese nombre vigente prevalece sobre la denominación histórica del snapshot sin cambiar el ID de progreso."
+      },
+      {
+        "field": "I111N.progressIdentity",
+        "resolution": "La grilla y la ficha con vigencia marzo de 2026 publican I111N para EFI Microcecea, mientras el snapshot conserva I71. Ninguna fuente cotejada declara equivalencia o sustitución entre códigos: I111N se proyecta como identidad nueva e I71 permanece histórico separado, sin migrar progreso."
+      },
+      {
+        "field": "EGAF2.credits",
+        "resolution": "La celda de la grilla imprime 5 créditos pero la ficha institucional vigente de la unidad curricular publica 4. La proyección usa 4 con procedencia explícita en esa ficha y una advertencia de conflicto; no se encontró una regla institucional que establezca prioridad normativa entre ambas fuentes oficiales."
+      },
+      {
+        "field": "researchQuantitativeOptional",
+        "resolution": "El plan exige 90 créditos cuantitativos y 85 obligatorios para Investigación, pero no enumera una unidad concreta para los 5 restantes; se controla el mínimo sin inventar curso ni bloque."
+      },
+      {
+        "field": "practicesCredits",
+        "resolution": "La página permite acreditar prácticas desde 200 créditos aprobados y aclara que su carga depende de la duración. Se conserva como actividad flexible sin fijar créditos ni volverla obligación."
+      }
+    ]
+  },
+  "mentions": [
+    {
+      "id": "mencion-en-investigacion",
+      "label": "Mención en Investigación",
+      "credentialId": "degree-research",
+      "description": "Trayectoria acreditada con profundización en econometría, estadística y métodos cuantitativos."
+    },
+    {
+      "id": "mencion-profesional",
+      "label": "Mención Profesional",
+      "credentialId": "degree-professional",
+      "description": "Trayectoria acreditada con énfasis en gestión estratégica, contabilidad y toma de decisiones."
+    }
+  ],
+  "trajectories": [
+    {
+      "id": "mencion-en-investigacion",
+      "label": "Mención en Investigación",
+      "credentialId": "degree-research",
+      "periods": [
+        { "label": "Semestre 1", "courseIds": ["FCEA-A10", "FCEA-C10", "FCEA-E10", "FCEA-MC10", "FCEA-114A"] },
+        { "label": "Semestre 2", "courseIds": ["FCEA-A20", "FCEA-C20", "FCEA-128A", "O20T", "ESTAI"] },
+        { "label": "Semestre 3", "courseIds": ["O31T", "FCEA-E30", "AL"] },
+        { "label": "Semestre 4", "courseIds": ["CAL2", "ESII", "IFEPA", "PDCA", "CURE-MCC30"] },
+        { "label": "Semestre 5", "courseIds": ["O33T", "GPAA"] },
+        { "label": "Semestre 6", "courseIds": ["ECAP", "FCEA-E31"] },
+        { "label": "Semestre 7", "courseIds": ["EECO"] },
+        { "label": "Semestre 8", "courseIds": ["CVAPA", "TCTA", "FCEA-MC72", "FCEA-I86"] }
+      ]
+    },
+    {
+      "id": "mencion-profesional",
+      "label": "Mención Profesional",
+      "credentialId": "degree-professional",
+      "periods": [
+        { "label": "Semestre 1", "courseIds": ["FCEA-A10", "FCEA-C10", "FCEA-E10", "FCEA-MC10", "FCEA-114A"] },
+        { "label": "Semestre 2", "courseIds": ["FCEA-A20", "FCEA-C20", "FCEA-128A", "O20T", "ESTAI"] },
+        { "label": "Semestre 3", "courseIds": ["O31T", "FCEA-C30", "AL"] },
+        { "label": "Semestre 4", "courseIds": ["CAL2", "IFEPA", "PDCA", "CURE-MCC30"] },
+        { "label": "Semestre 5", "courseIds": ["O33T", "GPAA", "FCEA-C31"] },
+        { "label": "Semestre 6", "courseIds": ["ECAP", "FCEA-E31", "FCEA-C64"] },
+        { "label": "Semestre 7", "courseIds": ["EECO"] },
+        { "label": "Semestre 8", "courseIds": ["CVAPA", "TCTA"] }
+      ]
+    }
+  ],
+  "requirements": {
+    "research": [
+      { "nodeId": "research-integrative", "minCredits": 15 },
+      { "nodeId": "research-administration", "minCredits": 90 },
+      { "nodeId": "research-social", "minCredits": 30 },
+      { "nodeId": "research-accounting", "minCredits": 20 },
+      { "nodeId": "research-economics", "minCredits": 100 },
+      { "nodeId": "research-quantitative", "minCredits": 90 },
+      { "nodeId": "research-free-choice", "minCredits": 15 },
+      { "nodeId": "research-administration-required", "minCredits": 30 },
+      { "nodeId": "research-administration-optional", "minCredits": 60 },
+      { "nodeId": "research-economics-required", "minCredits": 80 },
+      { "nodeId": "research-economics-optional", "minCredits": 20 },
+      { "nodeId": "research-quantitative-required", "minCredits": 85 }
+    ],
+    "professional": [
+      { "nodeId": "professional-integrative", "minCredits": 10 },
+      { "nodeId": "professional-administration", "minCredits": 100 },
+      { "nodeId": "professional-social", "minCredits": 10 },
+      { "nodeId": "professional-accounting", "minCredits": 80 },
+      { "nodeId": "professional-economics", "minCredits": 75 },
+      { "nodeId": "professional-quantitative", "minCredits": 60 },
+      { "nodeId": "professional-free-choice", "minCredits": 25 },
+      { "nodeId": "professional-administration-required", "minCredits": 30 },
+      { "nodeId": "professional-administration-optional", "minCredits": 70 },
+      { "nodeId": "professional-accounting-required", "minCredits": 60 },
+      { "nodeId": "professional-accounting-optional", "minCredits": 20 },
+      { "nodeId": "professional-economics-required", "minCredits": 70 },
+      { "nodeId": "professional-economics-optional", "minCredits": 5 }
+    ]
+  },
+  "crosswalk": {
+    "FCEA-I111N": {
+      "snapshotCandidate": "FCEA-I71",
+      "status": "not-proven-equivalent",
+      "action": "project-source-only-and-keep-history-separate"
+    }
+  },
+  "grid": {
+    "sourceUrl": "https://fcea.udelar.edu.uy/ensenanza/carreras-en-centros-universitarios-regionales/6743-licenciatura-en-economia-agricola-y-gestion-de-agronegocios.html",
+    "periods": [
+      {
+        "label": "Semestre 1",
+        "semester": 1,
+        "rows": [
+          { "sourceId": "FCEA-A10", "officialCode": "A10", "name": "Administración y Gestión de las Organizaciones I", "credits": 10, "area": "A", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-C10", "officialCode": "C10", "name": "Conceptos Contables", "credits": 10, "area": "C", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-E10", "officialCode": "E10", "name": "Introducción a la Microeconomía", "credits": 10, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-MC10", "officialCode": "MC10", "name": "Cálculo I", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"], "alternativeSet": "calculo-i" },
+          { "sourceId": "FCEA-114A", "officialCode": "114A", "name": "Cálculo I/A", "credits": 5, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"], "alternativeSet": "calculo-i-fraccionado" },
+          { "sourceId": "CPTAL", "officialCode": "CPTAL", "name": "Herramientas de difusión de conocimientos en la Era Digital", "credits": 10, "area": "I", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] }
+        ]
+      },
+      {
+        "label": "Semestre 2",
+        "semester": 2,
+        "rows": [
+          { "sourceId": "FCEA-A20", "officialCode": "A20", "name": "Administración y Gestión de las Organizaciones II", "credits": 10, "area": "A", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-C20", "officialCode": "C20", "name": "Contabilidad General I", "credits": 10, "area": "C", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-128A", "officialCode": "128A", "name": "Cálculo I/B", "credits": 5, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"], "alternativeSet": "calculo-i-fraccionado" },
+          { "sourceId": "O20T", "officialCode": "O20T", "name": "Competitividad y Entorno Empresarial", "credits": 10, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "ESTAI", "officialCode": "ESTAI", "name": "Estadística I", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "O04T", "officialCode": "O04T", "name": "Comunicación Organizacional en la Era Digital", "credits": 10, "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-E20", "officialCode": "E20", "name": "Economía Descriptiva", "credits": 10, "area": "E", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "CURE-CCI01", "officialCode": "CCI01", "name": "Universidad, Descentralización y Regionalización", "credits": 2, "area": "I", "inclusion": "electivo", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] }
+        ]
+      },
+      {
+        "label": "Semestre 3",
+        "semester": 3,
+        "rows": [
+          { "sourceId": "O31T", "officialCode": "O31T", "name": "Introducción a los sistemas de producción agropecuarios. Empresas agropecuarias", "credits": 5, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-E30", "officialCode": "E30", "name": "Macroeconomía I", "credits": 10, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion"], "recommendation": "Mención en Investigación" },
+          { "sourceId": "FCEA-C30", "officialCode": "C30", "name": "Contabilidad General II", "credits": 10, "area": "C", "inclusion": "principal", "mentionIds": ["mencion-profesional"], "recommendation": "Mención Profesional" },
+          { "sourceId": "AL", "officialCode": "AL", "name": "Geometría y Álgebra Lineal", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "O02T", "officialCode": "O02T", "name": "Análisis de la comunicación organizacional I", "credits": 10, "area": "I", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "IAGEA", "officialCode": "IAGEA", "name": "EFI Introducción a aspectos de gestión de empresas agroindustriales", "credits": 5, "area": "I", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "IPD1", "officialCode": "IPD1", "name": "Introducción a los problemas de desarrollo", "credits": 10, "area": "S", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] }
+        ]
+      },
+      {
+        "label": "Semestre 4",
+        "semester": 4,
+        "rows": [
+          { "sourceId": "CAL2", "officialCode": "CAL2", "name": "Cálculo II", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "ESII", "officialCode": "ESII", "name": "Estadística II", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion"], "recommendation": "Perfil académico (denominación editorial de la grilla)" },
+          { "sourceId": "IFEPA", "officialCode": "IFEPA", "name": "Formulación y evaluación de proyectos agropecuarios", "credits": 10, "area": "I", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "PDCA", "officialCode": "PDCA", "name": "Principales desafíos de las cadenas agroindustriales", "credits": 5, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "CURE-MCC30", "officialCode": "MCC30", "name": "Matemática Financiera TAC", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "IEE", "officialCode": "IEE", "name": "Introducción al Ecosistema Emprendedor", "credits": 10, "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "TI1", "officialCode": "TI1", "name": "Taller de Informática I - Gestión en Empresas Agropecuarias", "credits": 5, "area": "I", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "O03T", "officialCode": "O03T", "name": "Análisis de la Comunicación Organizacional II", "credits": 5, "area": "I", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] }
+        ]
+      },
+      {
+        "label": "Semestre 5",
+        "semester": 5,
+        "rows": [
+          { "sourceId": "O33T", "officialCode": "O33T", "name": "Introducción a la economía de los recursos naturales", "credits": 10, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "GPAA", "officialCode": "GPAA", "name": "Gestión de proyectos agropecuarios y agroindustriales", "credits": 10, "area": "A", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-C31", "officialCode": "C31", "name": "Costos para la gestión", "credits": 10, "area": "C", "inclusion": "principal", "mentionIds": ["mencion-profesional"], "recommendation": "Mención Profesional" },
+          { "sourceId": "CTID", "officialCode": "CTID", "name": "Ciencia, Tecnología, Innovación y Desarrollo", "credits": 10, "area": "S", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "SEBIO", "officialCode": "SEBIO", "name": "Seminario: Aproximaciones teóricas y empíricas a la Bioeconomía: desafíos y oportunidades para Uruguay", "credits": 5, "area": "E", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "EGAF1", "officialCode": "EGAF1", "name": "Economía y Gestión de la Actividad Forestal I", "credits": 6, "area": "E", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "TI2", "officialCode": "TI2", "name": "Taller de Informática II - Sistemas de información en agronegocios", "credits": 10, "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] }
+        ]
+      },
+      {
+        "label": "Semestre 6",
+        "semester": 6,
+        "rows": [
+          { "sourceId": "ECAP", "officialCode": "ECAP", "name": "Econometría Aplicada", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-E31", "officialCode": "E31", "name": "Microeconomía I", "credits": 10, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-C64", "officialCode": "C64", "name": "Contabilidad Gerencial", "credits": 10, "area": "C", "inclusion": "principal", "mentionIds": ["mencion-profesional"], "recommendation": "Mención Profesional" },
+          { "sourceId": "FCEA-C40", "officialCode": "C40", "name": "Contabilidad General III", "credits": 10, "area": "C", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-I41", "officialCode": "I41", "name": "Economía Circular", "credits": 10, "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "EGAF2", "officialCode": null, "name": "Economía y Gestión en la Actividad Forestal II", "credits": 4, "gridPrintedCredits": 5, "linkedCourseSheetCredits": 4, "creditStatus": "source-conflict-unresolved", "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "GIISD", "officialCode": "GIISD", "name": "Gestión de la innovación para la inclusión y el desarrollo local", "credits": 10, "area": "S", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-I111N", "officialCode": "I111N", "name": "EFI Microcecea", "credits": 10, "area": "I", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] }
+        ]
+      },
+      {
+        "label": "Semestre 7",
+        "semester": 7,
+        "rows": [
+          { "sourceId": "EECO", "officialCode": "EECO", "name": "Economía Ecológica", "credits": 10, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-A71", "officialCode": "A71", "name": "Finanzas Corporativas", "credits": 10, "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-A70", "officialCode": "A70", "name": "Comportamiento Organizacional", "credits": 10, "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-C75N", "officialCode": "C75N", "name": "Contabilidad Social y Ambiental", "credits": 5, "area": "C", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-C76", "officialCode": "C76", "name": "Contabilidad Gerencial Avanzada", "credits": 10, "area": "C", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"], "recommendation": "Mención Profesional" }
+        ]
+      },
+      {
+        "label": "Semestre 8",
+        "semester": 8,
+        "rows": [
+          { "sourceId": "CVAPA", "officialCode": "CVAPA", "name": "Cadena de valor y análisis de políticas agropecuarias", "credits": 10, "area": "E", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "TCTA", "officialCode": "TCTA", "name": "Taller de Contabilidad y Tributación aplicado al Sector Agropecuario", "credits": 10, "area": "C", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-MC72", "officialCode": "MC72", "name": "Métodos Cuantitativos en Decisiones Gerenciales", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion"], "recommendation": "Mención en Investigación" },
+          { "sourceId": "FCEA-I86", "officialCode": "I86", "name": "Modelos Dinámicos y Computacionales en Economía", "credits": 10, "area": "MC", "inclusion": "principal", "mentionIds": ["mencion-en-investigacion"], "recommendation": "Mención en Investigación" },
+          { "sourceId": "FCEA-C83", "officialCode": "C83", "name": "Costos y gestión de actividades", "credits": 10, "area": "C", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"], "recommendation": "Mención Profesional" },
+          { "sourceId": "FCS-D94", "officialCode": "D94", "name": "Desarrollo Económico Territorial", "credits": 10, "area": "S", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "FCEA-I87", "officialCode": "I87", "name": "Prospectiva Estratégica: con la mirada en el futuro", "credits": 10, "area": "A", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"] },
+          { "sourceId": "PRACTICA-LEAGA", "officialCode": null, "name": "Unidad de Prácticas Curriculares", "credits": null, "area": "J", "inclusion": "opcional", "mentionIds": ["mencion-en-investigacion", "mencion-profesional"], "minimumPriorCredits": 200 }
+        ]
+      }
+    ]
+  }
+}

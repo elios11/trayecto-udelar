@@ -1901,6 +1901,65 @@
         "FING 2046 y FCIEN BG793 figuran en las grillas vigentes pero no en el snapshot auditado; se incorporan desde la fuente curricular oficial.",
         "La grilla Bioestadística ubica 335 en Instrumental, mientras los demás perfiles la ubican en Inferencia; se conserva cada ubicación publicada."
       ]
+    },
+    {
+      "planId": "bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-06",
+      "effectiveAt": "2026-10",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": ["Tacuarembó"],
+        "pathwayIds": ["mencion-en-investigacion", "mencion-profesional"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/ensenanza/carreras-en-centros-universitarios-regionales/6743-licenciatura-en-economia-agricola-y-gestion-de-agronegocios.html",
+          "reviewedAt": "2026-10-06",
+          "role": "grilla vigente completa de ocho semestres, filas principales y opcionales, recomendaciones por mención, códigos, créditos, sede y duración"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-economia-agricola-y-gestion-de-agronegocios/",
+          "reviewedAt": "2026-10-06",
+          "role": "oferta vigente en Tacuarembó y dos menciones del mismo recorrido de grado"
+        },
+        {
+          "authority": "Consejo Directivo Central de Udelar / Diario Oficial",
+          "url": "https://www.impo.com.uy/diariooficial/2023/10/19/avisos.pdf",
+          "reviewedAt": "2026-10-06",
+          "role": "reglamento vigente, título único, 360 créditos y constancia de la mención"
+        },
+        {
+          "authority": "Facultad de Ciencias Económicas y de Administración, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/I111N_2026_03__EFI_Microcecea.pdf",
+          "reviewedAt": "2026-10-06",
+          "role": "identidad vigente I111N, 10 créditos y carácter opcional; no declara equivalencia con I71"
+        },
+        {
+          "authority": "CENUR Noreste, Sede Tacuarembó, Udelar",
+          "url": "https://fcea.udelar.edu.uy/images/micrositios/descentralizacion/fichas_2026/EGAF2_2026_02_Econom%C3%ADa_y_gesti%C3%B3n_en_la_actividad_forestal_II.pdf",
+          "reviewedAt": "2026-10-06",
+          "role": "ficha institucional vigente de EGAF2 con 4 créditos, en conflicto con los 5 impresos en la grilla"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcea/economia-agricola-2022-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La publicación vigente contiene 57 filas: 30 principales —incluidas alternativas de Cálculo I— y 27 opcionales, electivas o flexibles; estas últimas permanecen en catálogo y no se convierten en obligaciones acumulativas.",
+        "I111N se publica como identidad vigente, pero ninguna fuente cotejada declara equivalencia o sustitución respecto de I71; ambos códigos permanecen separados y no se migra progreso.",
+        "EGAF2 usa 4 créditos con procedencia en la ficha institucional vigente de la unidad curricular; la grilla vigente imprime 5 y no se encontró prioridad normativa que resuelva la contradicción oficial.",
+        "La práctica curricular puede acreditarse luego de 200 créditos y su carga depende de la duración; se conserva flexible con cero créditos predeterminados.",
+        "Las dos menciones acreditan un único título y comparten el mismo progreso del Plan 2022."
+      ]
     }
   ]
 }

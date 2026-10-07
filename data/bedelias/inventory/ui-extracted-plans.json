@@ -22,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4844,
-      "candidate": 26731,
+      "verified": 4901,
+      "candidate": 26661,
       "historical-equivalent": 44,
       "administrative": 177,
-      "rejected": 652
+      "rejected": 666
     },
-    "beforePublishedCourses": 31583,
-    "afterPublishedCourses": 4844,
+    "beforePublishedCourses": 31570,
+    "afterPublishedCourses": 4901,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1699,
-    "visibleTargetsWithUnpublishedDependencies": 1449,
-    "plansWithVerifiedCatalog": 64,
+    "afterPublishedRules": 1711,
+    "visibleTargetsWithUnpublishedDependencies": 1459,
+    "plansWithVerifiedCatalog": 65,
     "plansWithPartialCatalog": 58,
-    "plansWithStructureOnly": 17
+    "plansWithStructureOnly": 16
   },
   "plans": [
     {
@@ -755,28 +755,37 @@
       "facultyCode": "CUT",
       "snapshotPath": "data/bedelias/cut-licenciatura-en-economia-agricola-y-gestion-de-agronegocios-2022.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "tacuarembo"
       ],
       "before": {
-        "publishedCourses": 70,
+        "publishedCourses": 57,
         "publishedRules": 22
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 70,
-        "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 57,
+        "hiddenCourses": 14,
+        "publishedRules": 12,
+        "rulesWithUnpublishedDependencies": 10
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 70,
+        "verified": 57,
+        "candidate": 0,
         "historical-equivalent": 0,
         "administrative": 0,
-        "rejected": 0
+        "rejected": 14
+      },
+      "authorityReconciliation": {
+        "after": {
+          "verified": 57,
+          "candidate": 0,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 14
+        }
       }
     },
     {
@@ -4585,5 +4594,5 @@
       }
     }
   ],
-  "contentHash": "sha256:9e6c793c24c3bc32eca332e3c8da6e31b8c958af4d2e227b2db6095bcd0bc3de"
+  "contentHash": "sha256:7b4859c9e672ca7e55741e95d89eb1c4d8adb2cca66d7f416b48200c49affc32"
 }

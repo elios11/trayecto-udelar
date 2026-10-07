@@ -22,6 +22,7 @@ const produccion2010ReconciliationPath = path.join(projectRoot, "data", "fing", 
 const sistemasComunicacion2018ReconciliationPath = path.join(projectRoot, "data", "fing", "ingenieria-sistemas-comunicacion-2018-trayectorias.json");
 const fceaEconomia2012Path = path.join(projectRoot, "data", "fcea", "economia-2012-trayectoria.json");
 const fceaEstadistica2014Path = path.join(projectRoot, "data", "fcea", "estadistica-2014-trayectorias.json");
+const fceaEconomiaAgricola2022Path = path.join(projectRoot, "data", "fcea", "economia-agricola-2022-trayectorias.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -734,6 +735,8 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
           : {}),
         name: displayName,
         credits,
+        ...(courseOverride.creditSourceUrl ? { creditSourceUrl: courseOverride.creditSourceUrl } : {}),
+        ...(courseOverride.creditConflict ? { creditConflict: courseOverride.creditConflict } : {}),
         eligibleRequirementIds,
         creditAllocations: eligibleRequirementIds.map((eligibleNodeId) => ({ nodeId: eligibleNodeId, credits, status: "official", sourceUrl })),
         dataStatus: Object.keys(courseOverride).length > 0
@@ -1493,6 +1496,120 @@ function fceaEstadistica2014Reconciliation(source) {
   };
 }
 
+function fceaEconomiaAgricola2022Reconciliation(source) {
+  const rows = source.grid.periods.flatMap(({ label, rows: periodRows }) => (
+    periodRows.map((row) => ({ ...row, periodLabel: label }))
+  ));
+  const sourceOnly = new Set(["FCEA-I111N", "PRACTICA-LEAGA"]);
+  const isPrincipalFor = (row, mentionId) => row.inclusion === "principal" && row.mentionIds.includes(mentionId);
+  const requirementIds = (row) => {
+    switch (row.area) {
+      case "A":
+        return [
+          isPrincipalFor(row, "mencion-en-investigacion") ? "research-administration-required" : "research-administration-optional",
+          isPrincipalFor(row, "mencion-profesional") ? "professional-administration-required" : "professional-administration-optional",
+        ];
+      case "C":
+        return [
+          "research-accounting",
+          isPrincipalFor(row, "mencion-profesional") ? "professional-accounting-required" : "professional-accounting-optional",
+        ];
+      case "E":
+        return [
+          isPrincipalFor(row, "mencion-en-investigacion") ? "research-economics-required" : "research-economics-optional",
+          isPrincipalFor(row, "mencion-profesional") ? "professional-economics-required" : "professional-economics-optional",
+        ];
+      case "MC":
+        return [
+          isPrincipalFor(row, "mencion-en-investigacion") ? "research-quantitative-required" : "research-quantitative",
+          "professional-quantitative",
+        ];
+      case "I":
+        return ["research-integrative", "professional-integrative"];
+      case "S":
+        return ["research-social", "professional-social"];
+      case "J":
+        return ["research-free-choice", "professional-free-choice"];
+      default:
+        throw new Error(`Área curricular desconocida en ${row.sourceId}: ${row.area}.`);
+    }
+  };
+  const courseOverrides = Object.fromEntries(rows.filter(({ sourceId }) => !sourceOnly.has(sourceId)).map((row) => {
+    const [requirementId, ...additionalRequirementIds] = requirementIds(row);
+    return [row.sourceId, {
+      sourceId: row.sourceId,
+      name: row.name,
+      preserveName: true,
+      credits: row.credits,
+      requirementId,
+      additionalRequirementIds,
+      ...(row.sourceId === "EGAF2" ? {
+        creditSourceUrl: source.source.documents.find(({ url }) => url.includes("EGAF2_2026"))?.url,
+        creditConflict: {
+          status: "official-source-conflict-unresolved",
+          selectedCredits: row.linkedCourseSheetCredits,
+          selectedSource: "ficha institucional vigente de la unidad curricular",
+          gridCredits: row.gridPrintedCredits,
+          gridSourceUrl: source.grid.sourceUrl,
+          notice: "La ficha institucional vigente publica 4 créditos y la grilla vigente imprime 5; no existe prioridad normativa documentada entre ambas fuentes.",
+        },
+      } : {}),
+    }];
+  }));
+  const additionalCourses = rows.filter(({ sourceId }) => sourceOnly.has(sourceId)).map((row) => {
+    const [requirementId, ...additionalRequirementIds] = requirementIds(row);
+    return {
+      id: row.sourceId,
+      sourceCourseId: row.sourceId,
+      name: row.name,
+      credits: row.credits ?? 0,
+      requirementId,
+      additionalRequirementIds,
+      sourceUrl: source.grid.sourceUrl,
+    };
+  });
+  const trajectories = source.trajectories.map((trajectory) => ({
+    ...trajectory,
+    description: source.mentions.find(({ id }) => id === trajectory.id)?.description,
+    useOnlyConfiguredPeriods: true,
+    sourceUrl: source.grid.sourceUrl,
+  }));
+  const credentials = [
+    { id: "degree-research", requirements: source.requirements.research },
+    { id: "degree-professional", requirements: source.requirements.professional },
+  ].map(({ id, requirements }) => ({
+    id,
+    title: source.interpretation.title,
+    minTotalCredits: source.interpretation.minimumCredits,
+    nodeRequirements: requirements,
+    requiredCourseGroupIds: [],
+  }));
+  const discrepancies = source.interpretation.discrepancies.map(({ field, resolution }) => ({ field, resolution }));
+
+  return {
+    reviewedAt: source.source.reviewedAt,
+    sources: source.source.documents.map(({ url, authority, role }) => ({ url, authority, supports: [role] })),
+    trajectories,
+    curriculum: {
+      sourceUrl: source.grid.sourceUrl,
+      sourceDataPath: "data/fcea/economia-agricola-2022-trayectorias.json",
+      pathwayLabel: "Mención",
+      strictOfficialCourseIds: true,
+      verifiedCourseIds: rows.filter(({ sourceId }) => !sourceOnly.has(sourceId)).map(({ sourceId }) => sourceId),
+      excludeUnverifiedSnapshotCourses: true,
+      courseOverrides,
+      additionalCourses,
+      credentials,
+      includeAllCoursesInPathwayCatalog: true,
+      periodOrder: source.grid.periods.map(({ label }) => label),
+      projectionAnomalies: discrepancies,
+    },
+    additionalAnomalies: discrepancies,
+    uiNotice: "Plan 2022 de 360 créditos en Tacuarembó. Elegí una de las dos menciones acreditadas del mismo título; Cálculo I se cursa como MC10 o como 114A más 128A. Las opciones de la grilla no son obligaciones acumulativas. EGAF2 figura con 4 cr. en su ficha 2026 y con 5 cr. en la grilla; la contradicción oficial sigue abierta.",
+    remainingWork: "La oferta opcional puede variar por edición. I111N permanece separado del histórico I71 porque no se publicó una equivalencia, y el conflicto de EGAF2 entre 5 créditos en la grilla y 4 en su ficha sigue sin prioridad normativa documentada.",
+  };
+}
+
 function mergeAuditReconciliation(audit, reconciliation) {
   if (!audit || !reconciliation) return audit;
   const curriculum = {
@@ -1558,6 +1675,7 @@ export async function buildExtractedAcademicPlans() {
   const sistemasComunicacion2018Reconciliation = await loadJson(sistemasComunicacion2018ReconciliationPath);
   const fceaEconomia2012 = await loadJson(fceaEconomia2012Path);
   const fceaEstadistica2014 = await loadJson(fceaEstadistica2014Path);
+  const fceaEconomiaAgricola2022 = await loadJson(fceaEconomiaAgricola2022Path);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1593,6 +1711,7 @@ export async function buildExtractedAcademicPlans() {
     }]),
     ["licenciatura en economia:2012", fceaEconomia2012Reconciliation(fceaEconomia2012)],
     ["licenciatura en estadistica:2014", fceaEstadistica2014Reconciliation(fceaEstadistica2014)],
+    ["licenciatura en economia agricola y gestion de agronegocios:2022", fceaEconomiaAgricola2022Reconciliation(fceaEconomiaAgricola2022)],
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,
