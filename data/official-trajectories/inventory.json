@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:7b4859c9e672ca7e55741e95d89eb1c4d8adb2cca66d7f416b48200c49affc32",
+    "extractedReportHash": "sha256:623a3a2d14f6c26f3c4f459f5e257c6a3d8b75349399ca633c85c7f42e67125a",
     "officialAuditHash": "sha256:6a3290339c997abee7559487f9b4a4473427290ef3ae1e710eb77ef854b859bc",
-    "reviewedTrajectoriesHash": "sha256:fe87a86c1de773bfec86892267d770671723ec26ac09254d8dfbf83f87ae5c00"
+    "reviewedTrajectoriesHash": "sha256:2374f9b55abd522698a56b62734b3880663620ebcfc7dbec4cc5d1567de34bbe"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 94,
+      "official-trajectory-reproduced": 95,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 1,
-      "research-pending": 51
+      "research-pending": 50
     },
-    "pending": 52,
+    "pending": 51,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -67,10 +67,10 @@
         "serviceLabel": "Cenur Litoral Norte",
         "selectablePlanIds": 6,
         "states": {
-          "official-trajectory-reproduced": 2,
+          "official-trajectory-reproduced": 3,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 4
+          "research-pending": 3
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 52,
+    "total": 51,
     "plans": [
       {
         "priority": 1,
@@ -284,15 +284,6 @@
           "fing"
         ],
         "reason": "La correspondencia de las ocho variantes publicadas queda estructurada, pero ninguna fuente cierra los diez semestres ni 450 créditos de Ingeniería; Colonia cubre 248 de 270 créditos del título intermedio y Tacuarembó sólo publica un trayecto inicial de seis semestres."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-cenurln"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -777,7 +768,6 @@
         "serviceLabel": "Cenur Litoral Norte",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016",
           "bedelias-cenurln-ciclo-inicial-de-matematica-2012",
           "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
           "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008"
@@ -1179,33 +1169,28 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-07",
+      "effectiveAt": "2018-2026",
       "officialSources": [
         {
-          "authority": "CENUR Litoral Norte, Udelar",
+          "authority": "CENUR Litoral Norte, Universidad de la República",
           "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/ciclo-de-biologia-y-bioquimica",
-          "role": "vigencia, título del ciclo, duración, sedes y total de 90 créditos",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-07",
+          "role": "título del ciclo, duración de un año, 90 créditos, sedes Salto y Paysandú y continuidades posteriores"
         },
         {
-          "authority": "Departamento de Ciencias Biológicas del CENUR Litoral Norte",
+          "authority": "Departamento de Ciencias Biológicas, CENUR Litoral Norte, Universidad de la República",
           "url": "https://dcb.litoralnorte.udelar.edu.uy/ense%C3%B1anza",
-          "role": "áreas y mínimos curriculares; unidades orientativas por semestre; continuidades educativas reconocidas",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-07",
+          "role": "tres áreas con mínimos y currícula de ocho unidades distribuida en dos semestres",
+          "contentHash": "sha256:899d752b907f149eee0398c9757f261a71fbf08b38d3d30f5ed0c36b3673ece8"
         },
         {
           "authority": "Portal central de la Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/ciclo-en-biologia-bioquimica",
-          "role": "duración, créditos y sedes vigentes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Dirección General de Planeamiento, Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
-          "role": "estudiantes activos en 2025",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-07",
+          "role": "identidad vigente, 12 meses, 90 créditos y sedes Paysandú y Salto"
         }
       ],
       "scope": {
@@ -1218,21 +1203,35 @@
         ]
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "ciclo en biologia bioquimica:2016",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cenurln-ciclo-en-biologia-bioquimica-2016.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cenurln/ciclo-biologia-bioquimica-2016.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cenurln-ciclo-en-biologia-bioquimica-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:cbf850335f6cfa3fa58633a856be83c8924086fa0a85d14fcc61b05d446aa93a",
+        "projectionContentHash": "sha256:b11c76693be043dff6f5346b3534ed97b78800cee5a17cc6fb2bb6df72f10edb",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 2
+          }
+        ],
+        "expectedCoursePlacements": 8,
+        "matchedCoursePlacements": 8
       },
       "conflictNotes": [
-        "planYear: Bedelías identifica Plan 2016 y la documentación académica describe aprobación en 2017. Se conserva 2016 como clave administrativa sin afirmar que sea la fecha final de aprobación.",
-        "composition: La lista académica de ocho unidades es una currícula orientativa y Bedelías admite más unidades/acreditaciones para alcanzar los mínimos. No se eliminan opciones válidas ni se las declara obligatorias sin resolución específica."
+        "El plan administrativo figura como 2016, la propuesta académica fue aprobada en 2017 y comenzó a implementarse en 2018; se conserva 2016 como ID estable sin reescribir la cronología académica.",
+        "Los ocho nombres y sus semestres provienen del Departamento de Ciencias Biológicas; Bedelías sólo contrasta códigos, créditos, áreas y previaturas.",
+        "Las otras 22 entradas de Bedelías permanecen candidatas recuperables fuera de la UI: no se descartan ni se convierten en inclusión, período u obligatoriedad vigente.",
+        "Las Licenciaturas en Ciencias Biológicas y Bioquímica continúan en Montevideo, y Biología Humana continúa regionalmente; ninguna es título, perfil ni sede completa de licenciatura dentro del ciclo."
       ]
     },
     {
@@ -13385,5 +13384,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:656f0262089905893d8091d89850168a479abd19247a7ad2b145e937eb77a9bb"
+  "contentHash": "sha256:a12187ca95d0a69a88a2d32da5383ce929dd371bb62065d125a84e5e7dc7f19b"
 }

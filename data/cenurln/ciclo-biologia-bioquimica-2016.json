@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016",
+  "auditIdentity": "ciclo en biologia bioquimica:2016",
+  "reviewedAt": "2026-10-07",
+  "publication": {
+    "administrativePlanYear": "2016",
+    "academicApprovalYear": "2017",
+    "implementedFrom": "2018",
+    "currentAtReview": true,
+    "durationMonths": 12,
+    "minimumCredits": 90,
+    "title": "Ciclo en Biología - Bioquímica",
+    "kind": "ciclo universitario de primer año",
+    "notACompleteDegree": true
+  },
+  "scope": {
+    "campuses": [
+      {
+        "id": "salto",
+        "label": "Salto",
+        "coverage": "ciclo completo de 90 créditos"
+      },
+      {
+        "id": "paysandu",
+        "label": "Paysandú",
+        "coverage": "ciclo completo de 90 créditos"
+      }
+    ],
+    "continuations": [
+      {
+        "career": "Licenciatura en Ciencias Biológicas",
+        "location": "Montevideo",
+        "relationship": "continuidad posterior; no integra el plan ni las sedes del ciclo"
+      },
+      {
+        "career": "Licenciatura en Bioquímica",
+        "location": "Montevideo",
+        "relationship": "continuidad posterior; no integra el plan ni las sedes del ciclo"
+      },
+      {
+        "career": "Licenciatura en Biología Humana",
+        "location": "Salto y Paysandú",
+        "relationship": "continuidad posterior regional; no es título ni perfil del ciclo"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "cenurln-career-page",
+      "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/ciclo-de-biologia-y-bioquimica",
+      "authority": "CENUR Litoral Norte, Universidad de la República",
+      "consultedAt": "2026-10-07",
+      "publicationState": "página vigente al consultar",
+      "supports": [
+        "título del ciclo",
+        "duración de un año",
+        "90 créditos",
+        "sedes Salto y Paysandú",
+        "continuidad posterior hacia otras carreras"
+      ]
+    },
+    {
+      "id": "dcb-teaching-page",
+      "url": "https://dcb.litoralnorte.udelar.edu.uy/ense%C3%B1anza",
+      "authority": "Departamento de Ciencias Biológicas, CENUR Litoral Norte, Universidad de la República",
+      "consultedAt": "2026-10-07",
+      "publicationState": "página de enseñanza vigente al consultar",
+      "supports": [
+        "responsabilidad académica del ciclo",
+        "tres áreas y sus mínimos",
+        "ocho unidades distribuidas en dos semestres",
+        "continuidades y alcance territorial"
+      ]
+    },
+    {
+      "id": "udelar-career-page",
+      "url": "https://udelar.edu.uy/carrera/ciclo-en-biologia-bioquimica",
+      "authority": "Portal central de la Universidad de la República",
+      "consultedAt": "2026-10-07",
+      "publicationState": "ficha vigente al consultar",
+      "supports": [
+        "identidad vigente del ciclo",
+        "12 meses",
+        "90 créditos",
+        "sedes Paysandú y Salto"
+      ]
+    },
+    {
+      "id": "bedelias-snapshot",
+      "url": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+      "authority": "Sistema de Gestión Administrativa de la Enseñanza, Universidad de la República",
+      "consultedAt": "2026-08-14",
+      "publicationState": "snapshot institucional versionado",
+      "snapshotPath": "data/bedelias/cenurln-ciclo-en-biologia-bioquimica-2016.json",
+      "contentHash": "aed666c9eb9e7fda6217df4d2300c2e3769667831d05d5c06acca00661af38f4",
+      "supports": [
+        "código administrativo",
+        "créditos vigentes",
+        "asignación de área",
+        "previaturas contrastables"
+      ],
+      "doesNotSupport": [
+        "inclusión curricular vigente por sí sola",
+        "semestre",
+        "obligatoriedad"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "biologia-celular-molecular",
+      "sourceGroupCode": "CBB10",
+      "name": "Biología Celular y Molecular",
+      "shortName": "Biología celular",
+      "minCredits": 25
+    },
+    {
+      "id": "diversidad-biologica",
+      "sourceGroupCode": "CBB20",
+      "name": "Diversidad Biológica",
+      "shortName": "Diversidad",
+      "minCredits": 15
+    },
+    {
+      "id": "formacion-metodologica-general",
+      "sourceGroupCode": "CBB30",
+      "name": "Formación Metodológica y General",
+      "shortName": "Formación metodológica",
+      "minCredits": 5,
+      "maxCreditsPublished": 20,
+      "projectionNote": "El modelo controla el mínimo; el máximo publicado permanece documentado y no se convierte en una obligación."
+    }
+  ],
+  "trajectories": [
+    {
+      "id": "bedelias",
+      "label": "Currícula publicada",
+      "description": "Dos semestres y ocho unidades publicados por el Departamento de Ciencias Biológicas para el ciclo de 90 créditos. Salto y Paysandú comparten la misma currícula.",
+      "campusIds": [
+        "salto",
+        "paysandu"
+      ],
+      "useOnlyConfiguredPeriods": true,
+      "restrictGeneratedCatalogToPublished": true,
+      "periods": [
+        {
+          "label": "Primer semestre",
+          "courseIds": [
+            "CBB22",
+            "CBB23",
+            "CBB27",
+            "CBB25"
+          ]
+        },
+        {
+          "label": "Segundo semestre",
+          "courseIds": [
+            "CBB24",
+            "CBB26",
+            "CBB20",
+            "CBB21"
+          ]
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "order": 1,
+      "period": "Primer semestre",
+      "officialLabel": "Introducción a las Ciencias Biológicas I",
+      "sourceCourseId": "CBB22",
+      "bedeliasName": "INTRODUCCIÓN A LAS CIENCIAS BIOL. I",
+      "credits": 11,
+      "requirementId": "diversidad-biologica",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    },
+    {
+      "order": 2,
+      "period": "Primer semestre",
+      "officialLabel": "Fundamentos de Bioquímica y Bases biomoleculares",
+      "sourceCourseId": "CBB23",
+      "bedeliasName": "FUNDAMENTOS DE BIO.Y BASES BIOMOLE",
+      "credits": 11,
+      "requirementId": "biologia-celular-molecular",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    },
+    {
+      "order": 3,
+      "period": "Primer semestre",
+      "officialLabel": "Biología Celular",
+      "sourceCourseId": "CBB27",
+      "bedeliasName": "BIOLOGÍA CELULAR",
+      "credits": 14,
+      "requirementId": "biologia-celular-molecular",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    },
+    {
+      "order": 4,
+      "period": "Primer semestre",
+      "officialLabel": "Introducción a la Metodología Científica",
+      "sourceCourseId": "CBB25",
+      "bedeliasName": "INTRODUCCIÓN A LA METODOL. CIENTÍFICA",
+      "credits": 11,
+      "requirementId": "formacion-metodologica-general",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    },
+    {
+      "order": 5,
+      "period": "Segundo semestre",
+      "officialLabel": "Introducción a las Ciencias Biológicas II",
+      "sourceCourseId": "CBB24",
+      "bedeliasName": "INTRODUCCIÓN A LAS CIENCIAS BIOL. II",
+      "credits": 7,
+      "requirementId": "diversidad-biologica",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    },
+    {
+      "order": 6,
+      "period": "Segundo semestre",
+      "officialLabel": "Biofísica",
+      "sourceCourseId": "CBB26",
+      "bedeliasName": "BIOFÍSICA",
+      "credits": 15,
+      "requirementId": "biologia-celular-molecular",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    },
+    {
+      "order": 7,
+      "period": "Segundo semestre",
+      "officialLabel": "Genética General",
+      "sourceCourseId": "CBB20",
+      "bedeliasName": "GENÉTICA GENERAL",
+      "credits": 12,
+      "requirementId": "biologia-celular-molecular",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    },
+    {
+      "order": 8,
+      "period": "Segundo semestre",
+      "officialLabel": "Introducción a la Biología Animal",
+      "sourceCourseId": "CBB21",
+      "bedeliasName": "INTRODUCCIÓN A LA BIOLOGÍA ANIMAL",
+      "credits": 9,
+      "requirementId": "diversidad-biologica",
+      "inclusionSourceId": "dcb-teaching-page",
+      "creditsSourceId": "bedelias-snapshot"
+    }
+  ],
+  "authorityPolicy": {
+    "verifiedSourceCourseIds": [
+      "CBB22",
+      "CBB23",
+      "CBB27",
+      "CBB25",
+      "CBB24",
+      "CBB26",
+      "CBB20",
+      "CBB21"
+    ],
+    "unmatchedBedeliasEntries": "candidate",
+    "candidateVisibility": "audit-only",
+    "optionalEntriesBecomeRequired": false,
+    "bedeliasDoesNotAssignPeriods": true
+  },
+  "sourcePortions": {
+    "cenurln-career-page": [
+      "Título: Ciclo Biología - Bioquímica.",
+      "Completa en la Región: Sí.",
+      "Sede donde se dicta: Salto y Paysandú.",
+      "Duración: 1 años.",
+      "Se trata de un primer año de formación, con asignaturas que suman un total de 90 créditos."
+    ],
+    "dcb-teaching-page": [
+      "El Departamento de Ciencias Biológicas es responsable del Ciclo Inicial de Biología y Bioquímica.",
+      "Posee 90 créditos equivalentes a un primer año de formación terciaria universitaria.",
+      "Biología Celular y Molecular: mínimo de 25 créditos.",
+      "Diversidad Biológica: mínimo de 15 créditos.",
+      "Formación Metodológica y general: mínimo de 5 y máximo de 20 créditos.",
+      "Primer semestre: Introducción a las Ciencias Biológicas I; Fundamentos de Bioquímica y Bases biomoleculares; Biología Celular; Introducción a la Metodología Científica.",
+      "Segundo semestre: Introducción a las Ciencias Biológicas II; Biofísica; Genética General; Introducción a la Biología Animal."
+    ],
+    "udelar-career-page": [
+      "Duración (meses): 12.",
+      "Créditos: 90.",
+      "Sede: Sede Paysandú; Sede Salto."
+    ]
+  },
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "value": "sha256:899d752b907f149eee0398c9757f261a71fbf08b38d3d30f5ed0c36b3673ece8"
+  }
+}

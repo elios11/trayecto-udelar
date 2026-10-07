@@ -2,6 +2,58 @@
   "schemaVersion": 1,
   "reviews": [
     {
+      "planId": "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-07",
+      "effectiveAt": "2018-2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Salto",
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "CENUR Litoral Norte, Universidad de la República",
+          "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/ciclo-de-biologia-y-bioquimica",
+          "reviewedAt": "2026-10-07",
+          "role": "título del ciclo, duración de un año, 90 créditos, sedes Salto y Paysandú y continuidades posteriores"
+        },
+        {
+          "authority": "Departamento de Ciencias Biológicas, CENUR Litoral Norte, Universidad de la República",
+          "url": "https://dcb.litoralnorte.udelar.edu.uy/ense%C3%B1anza",
+          "reviewedAt": "2026-10-07",
+          "role": "tres áreas con mínimos y currícula de ocho unidades distribuida en dos semestres",
+          "contentHash": "sha256:899d752b907f149eee0398c9757f261a71fbf08b38d3d30f5ed0c36b3673ece8"
+        },
+        {
+          "authority": "Portal central de la Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/ciclo-en-biologia-bioquimica",
+          "reviewedAt": "2026-10-07",
+          "role": "identidad vigente, 12 meses, 90 créditos y sedes Paysandú y Salto"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cenurln/ciclo-biologia-bioquimica-2016.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cenurln-ciclo-en-biologia-bioquimica-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El plan administrativo figura como 2016, la propuesta académica fue aprobada en 2017 y comenzó a implementarse en 2018; se conserva 2016 como ID estable sin reescribir la cronología académica.",
+        "Los ocho nombres y sus semestres provienen del Departamento de Ciencias Biológicas; Bedelías sólo contrasta códigos, créditos, áreas y previaturas.",
+        "Las otras 22 entradas de Bedelías permanecen candidatas recuperables fuera de la UI: no se descartan ni se convierten en inclusión, período u obligatoriedad vigente.",
+        "Las Licenciaturas en Ciencias Biológicas y Bioquímica continúan en Montevideo, y Biología Humana continúa regionalmente; ninguna es título, perfil ni sede completa de licenciatura dentro del ciclo."
+      ]
+    },
+    {
       "planId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-10-03",

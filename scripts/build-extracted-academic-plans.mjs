@@ -23,6 +23,7 @@ const sistemasComunicacion2018ReconciliationPath = path.join(projectRoot, "data"
 const fceaEconomia2012Path = path.join(projectRoot, "data", "fcea", "economia-2012-trayectoria.json");
 const fceaEstadistica2014Path = path.join(projectRoot, "data", "fcea", "estadistica-2014-trayectorias.json");
 const fceaEconomiaAgricola2022Path = path.join(projectRoot, "data", "fcea", "economia-agricola-2022-trayectorias.json");
+const cenurlnBiologiaBioquimica2016Path = path.join(projectRoot, "data", "cenurln", "ciclo-biologia-bioquimica-2016.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -720,6 +721,8 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
         ...additionalRequirementIdsForAllCourses.filter((id) => !excludedRequirementIds.has(id)),
       ])];
       const isOfficialOverride = Object.keys(courseOverride).length > 0;
+      const hasOfficialIdentity = courseOverride.officialIdentity ?? isOfficialOverride;
+      const hasOfficialCredits = courseOverride.officialCredits ?? isOfficialOverride;
       const authorityStatus = verifiedSourceCourseIds.has(String(sourceCourseId))
         || (curriculum.strictOfficialCourseIds !== true && isOfficialOverride)
         ? "verified"
@@ -743,7 +746,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
           ? "official-curriculum"
           : curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
         ruleCoverage: "not-scraped",
-      }, authorityStatus, { officialIdentity: isOfficialOverride, officialCredits: isOfficialOverride });
+      }, authorityStatus, { officialIdentity: hasOfficialIdentity, officialCredits: hasOfficialCredits });
       courses.push(course);
       if (sharedKey) sharedProfileCourses.set(sharedKey, course);
     } else {
@@ -1078,7 +1081,10 @@ function buildProjection(entry, snapshot, audit) {
   }
 
   const usesBedeliasCompositionTree = audit?.officialPlan?.curriculum?.useBedeliasCompositionTree === true;
-  const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, usedIds)
+  const officialCurriculumUsedIds = audit?.officialPlan?.curriculum?.preserveBedeliasCourseIds === true
+    ? new Set()
+    : usedIds;
+  const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, officialCurriculumUsedIds)
     ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
   const coursesBeforeAliasConsolidation = [...(officialCurriculum?.courses ?? [])];
   const equivalentCourseAliases = consolidateEquivalentCourseVariants(officialCurriculum);
@@ -1610,6 +1616,65 @@ function fceaEconomiaAgricola2022Reconciliation(source) {
   };
 }
 
+function cenurlnBiologiaBioquimica2016Reconciliation(source) {
+  const curriculumSource = source.sources.find(({ id }) => id === "dcb-teaching-page");
+  const bedeliasSource = source.sources.find(({ id }) => id === "bedelias-snapshot");
+  const sourceUrl = curriculumSource?.url;
+  const pathRequirementMap = Object.fromEntries(source.requirements.map((requirement) => [
+    requirement.sourceGroupCode,
+    requirement.id,
+  ]));
+  return {
+    reviewedAt: source.reviewedAt,
+    sources: source.sources.map((entry) => ({
+      url: entry.url,
+      authority: entry.authority,
+      supports: entry.supports,
+      ...(entry.contentHash ? { contentHash: entry.contentHash } : {}),
+    })),
+    trajectories: source.trajectories.map((trajectory) => ({
+      ...trajectory,
+      sourceUrl,
+      catalogSourceCourseIds: [],
+    })),
+    curriculum: {
+      sourceUrl,
+      useBedeliasCompositionTree: true,
+      preserveBedeliasCourseIds: true,
+      usePublishedCredits: true,
+      strictOfficialCourseIds: true,
+      includeAllCoursesInPathwayCatalog: false,
+      pathRequirementMap,
+      courseOverrides: Object.fromEntries(source.rows.map((row) => [row.sourceCourseId, {
+        name: row.officialLabel,
+        preserveName: true,
+        officialIdentity: true,
+        officialCredits: false,
+        creditSourceUrl: bedeliasSource?.url,
+      }])),
+      periodOrder: source.trajectories[0].periods.map(({ label }) => label),
+      pathwayLabel: "Currícula",
+      pathwayDescription: "La currícula publicada distribuye ocho unidades en dos semestres y se comparte entre Salto y Paysandú.",
+      creditRequirements: source.requirements.map((requirement) => ({
+        id: requirement.id,
+        name: requirement.name,
+        shortName: requirement.shortName,
+        minCredits: requirement.minCredits,
+      })),
+      projectionAnomalies: [{
+        field: "formacion-metodologica-general-maxCredits",
+        resolution: "La fuente publica un máximo de 20 créditos para Formación Metodológica y General; el modelo controla el mínimo de 5 y conserva el máximo como límite documental no automatizado.",
+      }],
+    },
+    uiNotice: "Ciclo completo de 90 créditos compartido por Salto y Paysandú. La currícula publicada distribuye ocho unidades en dos semestres; las demás entradas acreditables de Bedelías permanecen fuera del catálogo visible porque no demuestran inclusión curricular vigente.",
+    remainingWork: "Revisar nuevamente si el Departamento publica otra currícula o modifica los máximos de área; las continuaciones posteriores no forman parte de este plan.",
+    additionalAnomalies: [{
+      field: "curriculumAuthority",
+      resolution: "Los ocho nombres y sus semestres provienen del Departamento de Ciencias Biológicas; Bedelías sólo contrasta códigos, créditos, áreas y previaturas.",
+    }],
+  };
+}
+
 function mergeAuditReconciliation(audit, reconciliation) {
   if (!audit || !reconciliation) return audit;
   const curriculum = {
@@ -1676,6 +1741,7 @@ export async function buildExtractedAcademicPlans() {
   const fceaEconomia2012 = await loadJson(fceaEconomia2012Path);
   const fceaEstadistica2014 = await loadJson(fceaEstadistica2014Path);
   const fceaEconomiaAgricola2022 = await loadJson(fceaEconomiaAgricola2022Path);
+  const cenurlnBiologiaBioquimica2016 = await loadJson(cenurlnBiologiaBioquimica2016Path);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1712,6 +1778,7 @@ export async function buildExtractedAcademicPlans() {
     ["licenciatura en economia:2012", fceaEconomia2012Reconciliation(fceaEconomia2012)],
     ["licenciatura en estadistica:2014", fceaEstadistica2014Reconciliation(fceaEstadistica2014)],
     ["licenciatura en economia agricola y gestion de agronegocios:2022", fceaEconomiaAgricola2022Reconciliation(fceaEconomiaAgricola2022)],
+    [cenurlnBiologiaBioquimica2016.auditIdentity, cenurlnBiologiaBioquimica2016Reconciliation(cenurlnBiologiaBioquimica2016)],
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,

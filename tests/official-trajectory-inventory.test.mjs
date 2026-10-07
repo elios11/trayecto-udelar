@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 94,
+    "official-trajectory-reproduced": 95,
     "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 1,
-    "research-pending": 51,
+    "research-pending": 50,
   });
-  assert.equal(savedInventory.pendingQueue.total, 52);
-  assert.equal(savedInventory.pendingQueue.plans.length, 52);
+  assert.equal(savedInventory.pendingQueue.total, 51);
+  assert.equal(savedInventory.pendingQueue.plans.length, 51);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 1).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(1).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -60,6 +60,16 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
       }
     }
   }
+});
+
+test("D03z cierra el Ciclo en Biología - Bioquímica con dos semestres y sedes compartidas", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-periods");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [["bedelias", 2]]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 8);
+  assert.equal(plan.evidence.matchedCoursePlacements, 8);
+  assert.deepEqual(plan.scope.territories, ["Salto", "Paysandú"]);
 });
 
 test("D03u cierra Contador Público 2024 con cinco perfiles semestrales exactos", () => {

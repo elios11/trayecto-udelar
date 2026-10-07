@@ -27,3 +27,12 @@ Modelo: `gpt-5.6-sol`, esfuerzo `xhigh`. Depende de la regla de autoridad curric
 - [Udelar: ficha de carrera](https://udelar.edu.uy/carrera/ciclo-en-biologia-bioquimica).
 
 Estos enlaces provienen de la auditoría previa y deben cotejarse nuevamente antes de convertirlos en secuencia curricular vigente.
+
+## Checkpoint de ejecución
+
+- Hito documental (2026-10-07): las tres páginas oficiales siguen publicando un ciclo vigente de 12 meses y 90 créditos en Salto y Paysandú. El Departamento de Ciencias Biológicas publica ocho unidades en dos semestres; su correspondencia inequívoca con el snapshot versionado de Bedelías suma 47 créditos en el primero y 43 en el segundo.
+- Estado recuperable: la evidencia normalizada, alcance territorial, continuidades posteriores, filas cotejadas y porción fuente reproducible están en `data/cenurln/ciclo-biologia-bioquimica-2016.json`. Las otras entradas de Bedelías permanecen candidatas y no respaldan inclusión, semestre ni obligatoriedad.
+- Decisión: el ciclo queda cerrado como recorrido anual completo de 90 créditos; las Licenciaturas en Ciencias Biológicas y Bioquímica son continuaciones en Montevideo y la Licenciatura en Biología Humana una continuación regional, no sedes, títulos ni perfiles de este plan.
+- Regeneración offline: `npm run trajectory:cenurln-cbb-2016`. Valida la huella normalizada, las ocho identidades y créditos contra el snapshot versionado, los 90 créditos y mínimos por área, y reconstruye proyección, cola e inventario sin red.
+- Resultado final (2026-10-07): dos regeneraciones consecutivas dejaron idénticos los seis artefactos derivados cotejados. Las pruebas focales pasaron (4/4 de esta trayectoria, 5/5 de oferta vigente, 7/7 del generador, 24/24 del inventario y 2/2 de la cola); `npm test` pasó 993/993 y `npm run lint` terminó sin errores.
+- Cobertura y pendiente: se publican sólo las ocho unidades oficiales que completan los 90 créditos. Las 22 entradas restantes de Bedelías quedan recuperables como candidatas, fuera de la UI y sin atribuirles semestre u obligatoriedad. No corresponde agregar la carrera a `docs/carreras-a-actualizar.md`: la publicación actual cierra el ciclo anual y no anuncia una malla futura ni una brecha territorial.
