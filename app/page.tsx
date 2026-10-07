@@ -141,6 +141,7 @@ type Course = {
   id: string;
   name: string;
   credits: number;
+  creditsPublished?: boolean;
   hours?: number;
   semester: number | "opt";
   area?: string;
@@ -150,6 +151,8 @@ type Course = {
   minCredits?: number;
   offered: Array<"impar" | "par" | "libre">;
   elective?: boolean;
+  catalogRole?: "official-plan-example-option";
+  availabilityStatus?: "not-asserted-by-plan";
   placementTest?: boolean;
   engineeringOnly?: boolean;
   dataStatus?: "bedelias-composition" | "fing-trajectory" | "project-assumption" | "fq-damero" | "fadu-official" | "official-curriculum";
@@ -185,7 +188,9 @@ type RequirementExpression = {
   children: RequirementExpression[];
 };
 
-const courseLoadLabel = (course: Pick<Course, "credits" | "hours">) => course.credits > 0
+const courseLoadLabel = (course: Pick<Course, "credits" | "creditsPublished" | "hours">) => course.creditsPublished === false
+  ? "Créditos no publicados"
+  : course.credits > 0
   ? `${course.credits} cr.`
   : course.hours
     ? `${course.hours} h`
@@ -194,9 +199,11 @@ const courseLoadLabel = (course: Pick<Course, "credits" | "hours">) => course.cr
 const coursesLoadLabel = (courses: Course[]) => {
   const credits = courses.reduce((sum, course) => sum + course.credits, 0);
   const hours = courses.reduce((sum, course) => sum + (course.hours ?? 0), 0);
-  if (credits > 0 && hours > 0) return `${credits} créditos · ${hours} horas`;
-  if (credits > 0) return `${credits} créditos`;
-  if (hours > 0) return `${hours} horas`;
+  const hasUnpublishedLoad = courses.some((course) => course.creditsPublished === false);
+  const unpublishedSuffix = hasUnpublishedLoad ? " · hay cargas no publicadas" : "";
+  if (credits > 0 && hours > 0) return `${credits} créditos · ${hours} horas${unpublishedSuffix}`;
+  if (credits > 0) return `${credits} créditos${unpublishedSuffix}`;
+  if (hours > 0) return `${hours} horas${unpublishedSuffix}`;
   return "Créditos no publicados";
 };
 
@@ -304,12 +311,23 @@ type CampusOption = {
   defaultPathwayId?: string;
 };
 
+type CreditComputationCoverage = {
+  status: "partial";
+  countableCredits: number;
+  countableMathematicsCredits: number;
+  requiredCredits: number;
+  requiredMathematicsCredits: number;
+  manualValidationRequired: true;
+  uncountedComponents: string[];
+  notice: string;
+};
+
 type RegisteredProjection = {
   schemaVersion: number;
   source: { reviewedAt: string | null; careerPage: string; planDocument: string; bedeliasExtractedAt: string; bedeliasContentHash: string; bedeliasPlanUrl?: string };
-  plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; planAuditStatus?: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; courseCatalogAuditStatus?: "verified" | "partial" | "structure-only"; compositionAvailable?: boolean; verifiedCompositionAvailable?: boolean; extractedCompositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
+  plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; planAuditStatus?: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; courseCatalogAuditStatus?: "verified" | "partial" | "structure-only"; creditComputationCoverage?: CreditComputationCoverage; compositionAvailable?: boolean; verifiedCompositionAvailable?: boolean; extractedCompositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
-  courses: Array<{ id: string; bedeliasCode?: string; equivalentCourseIds?: string[]; equivalentBedeliasCodes?: string[]; name: string; credits: number; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean; authorityStatus?: Course["authorityStatus"]; fieldProvenance?: Course["fieldProvenance"] }>;
+  courses: Array<{ id: string; bedeliasCode?: string; equivalentCourseIds?: string[]; equivalentBedeliasCodes?: string[]; name: string; credits: number; creditsPublished?: boolean; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean; elective?: boolean; catalogRole?: Course["catalogRole"]; availabilityStatus?: Course["availabilityStatus"]; authorityStatus?: Course["authorityStatus"]; fieldProvenance?: Course["fieldProvenance"] }>;
   pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   publishedPathways?: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
@@ -1239,6 +1257,7 @@ export default function Home() {
     : planYear === "2025"
     ? plan2025Data.creditStructure
     : isProfilePlan ? (activeProfileData?.creditStructure ?? plan2025Data.creditStructure) : planYear === "qf-2015" ? (qf2015Data?.creditStructure ?? plan2025Data.creditStructure) : bedeliasData.creditStructure;
+  const creditComputationCoverage = isRegisteredPlan ? activeRegisteredPlan?.plan.creditComputationCoverage : undefined;
   const activePlan2025Trajectory = plan2025Data.trajectories[trajectoryId] ?? plan2025Data.trajectories["pi-60-plus"];
   const plan2025CampusEntries = [...new Map(Object.values(plan2025Data.trajectories)
     .map((trajectory) => [trajectory.campusId, trajectory.campusLabel] as const)).entries()];
@@ -3127,6 +3146,11 @@ export default function Home() {
             <strong>{!hasPublishedCourseLoad ? credentialRequirementsMet : usesPublishedHours ? earnedHours : earnedCredits}<small>{!hasPublishedCourseLoad ? `/${credentialRequirementsTotal} req.` : `/${usesPublishedHours && planTotalHours ? `${planTotalHours} h` : planMinCredits > 0 ? planMinCredits : "—"}`}</small></strong>
             <div className="linear-progress"><i style={{ width: `${!hasPublishedCourseLoad ? Math.min(credentialRequirementsMet / Math.max(credentialRequirementsTotal, 1) * 100, 100) : usesPublishedHours && planTotalHours ? Math.min(earnedHours / planTotalHours * 100, 100) : planMinCredits > 0 ? Math.min(earnedCredits / planMinCredits * 100, 100) : 0}%` }} /></div>
           </div>
+
+          {creditComputationCoverage?.status === "partial" && <div className="credit-computation-notice" role="note" aria-label="Cobertura parcial del cómputo de créditos">
+            <strong>Cómputo parcial</strong>
+            <p>{creditComputationCoverage.notice}</p>
+          </div>}
 
           <button type="button" className="requirement-heading" onClick={() => setShowRequirements((value) => !value)} aria-expanded={showRequirements}>
             <div>

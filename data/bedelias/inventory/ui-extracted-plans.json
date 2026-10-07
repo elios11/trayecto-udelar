@@ -22,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4909,
-      "candidate": 26653,
+      "verified": 4939,
+      "candidate": 26645,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31570,
-    "afterPublishedCourses": 4909,
+    "beforePublishedCourses": 31592,
+    "afterPublishedCourses": 4939,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1718,
-    "visibleTargetsWithUnpublishedDependencies": 1460,
+    "visibleTargetsWithUnpublishedDependencies": 1476,
     "plansWithVerifiedCatalog": 65,
-    "plansWithPartialCatalog": 59,
-    "plansWithStructureOnly": 15
+    "plansWithPartialCatalog": 60,
+    "plansWithStructureOnly": 14
   },
   "plans": [
     {
@@ -84,28 +84,37 @@
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-ciclo-inicial-de-matematica-2012.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "salto"
       ],
       "before": {
-        "publishedCourses": 29,
+        "publishedCourses": 51,
         "publishedRules": 43
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 29,
+        "publishedCourses": 30,
+        "hiddenCourses": 21,
         "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "rulesWithUnpublishedDependencies": 16
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 29,
+        "verified": 30,
+        "candidate": 21,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "after": {
+          "verified": 30,
+          "candidate": 21,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4603,5 +4612,5 @@
       }
     }
   ],
-  "contentHash": "sha256:623a3a2d14f6c26f3c4f459f5e257c6a3d8b75349399ca633c85c7f42e67125a"
+  "contentHash": "sha256:e2dc20351153a1df514ed6e332ada8057d4a7bda21653252e8da8ff6f0665a49"
 }

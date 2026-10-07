@@ -24,6 +24,7 @@ const fceaEconomia2012Path = path.join(projectRoot, "data", "fcea", "economia-20
 const fceaEstadistica2014Path = path.join(projectRoot, "data", "fcea", "estadistica-2014-trayectorias.json");
 const fceaEconomiaAgricola2022Path = path.join(projectRoot, "data", "fcea", "economia-agricola-2022-trayectorias.json");
 const cenurlnBiologiaBioquimica2016Path = path.join(projectRoot, "data", "cenurln", "ciclo-biologia-bioquimica-2016.json");
+const cenurlnCicloInicialMatematica2012Path = path.join(projectRoot, "data", "cenurln", "ciclo-inicial-matematica-2012.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -47,7 +48,10 @@ function withCourseAuthority(course, status, options = {}) {
   return {
     ...course,
     authorityStatus: status,
-    fieldProvenance: courseFieldProvenance(status, options.officialIdentity, options.officialCredits),
+    fieldProvenance: {
+      ...courseFieldProvenance(status, options.officialIdentity, options.officialCredits),
+      ...(options.creditsProvenance ? { credits: options.creditsProvenance } : {}),
+    },
   };
 }
 
@@ -805,7 +809,15 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       dataStatus: "official-curriculum",
       ruleCoverage: "not-published",
       curricularBlock: rawCourse.curricularBlock === true,
-    }, "verified", { officialIdentity: true, officialCredits: true }));
+      ...(rawCourse.elective === true ? { elective: true } : {}),
+      ...(rawCourse.creditsPublished === false ? { creditsPublished: false } : {}),
+      ...(rawCourse.catalogRole ? { catalogRole: rawCourse.catalogRole } : {}),
+      ...(rawCourse.availabilityStatus ? { availabilityStatus: rawCourse.availabilityStatus } : {}),
+    }, "verified", {
+      officialIdentity: true,
+      officialCredits: rawCourse.officialCredits ?? true,
+      ...(rawCourse.creditsProvenance ? { creditsProvenance: rawCourse.creditsProvenance } : {}),
+    }));
     if (rawCourse.id) courseIdBySourceId.set(rawCourse.id, id);
     const period = rawCourse.periodLabel ?? "Estructura oficial";
     addToPeriod(periodsByLabel, period, id);
@@ -1214,6 +1226,7 @@ function buildProjection(entry, snapshot, audit) {
         auditStatus,
         planAuditStatus: auditStatus,
         courseCatalogAuditStatus,
+        ...(audit?.officialPlan?.creditComputationCoverage ? { creditComputationCoverage: audit.officialPlan.creditComputationCoverage } : {}),
         compositionAvailable,
         verifiedCompositionAvailable,
         extractedCompositionAvailable,
@@ -1675,6 +1688,104 @@ function cenurlnBiologiaBioquimica2016Reconciliation(source) {
   };
 }
 
+function cenurlnCicloInicialMatematica2012Reconciliation(source) {
+  const curriculumSource = source.sources.find(({ id }) => id === "impo-plan-2012");
+  const sourceUrl = curriculumSource?.url;
+  const pathRequirementMap = Object.fromEntries(source.requirements.map((requirement) => [
+    requirement.sourceGroupCode,
+    requirement.id,
+  ]));
+  return {
+    reviewedAt: source.reviewedAt,
+    officialPlan: {
+      durationMonths: source.publication.ownDurationMonths,
+      minimumCredits: source.publication.minimumCredits,
+      current: source.publication.currentAtReview,
+      creditComputationCoverage: source.creditComputationCoverage,
+    },
+    sources: source.sources.map((entry) => ({
+      url: entry.url,
+      authority: entry.authority,
+      supports: entry.supports,
+      ...(entry.contentHash ? { contentHash: entry.contentHash } : {}),
+    })),
+    trajectories: [{
+      ...source.fallbackPathway,
+      sourceUrl,
+      catalogSourceCourseIds: [],
+      restrictGeneratedCatalogToPublished: true,
+    }],
+    curriculum: {
+      sourceUrl,
+      sourceDataPath: "data/cenurln/ciclo-inicial-matematica-2012.json",
+      useBedeliasCompositionTree: true,
+      preserveBedeliasCourseIds: true,
+      usePublishedCredits: true,
+      strictOfficialCourseIds: true,
+      includeAllCoursesInPathwayCatalog: false,
+      pathRequirementMap,
+      courseOverrides: Object.fromEntries(source.rows.map((row) => [row.sourceCourseId, {
+        name: row.officialLabel,
+        preserveName: true,
+        officialIdentity: true,
+        officialCredits: true,
+        credits: row.credits,
+        requirementId: row.requirementId,
+        creditSourceUrl: source.sources.find(({ id }) => id === row.creditsSourceId)?.url ?? sourceUrl,
+        ...(row.conflict ? { creditConflict: row.conflict } : {}),
+      }])),
+      additionalCourses: source.officialSourceOnlyOptions.map((option) => ({
+        id: option.identityKey,
+        name: option.officialLabel,
+        elective: true,
+        creditsPublished: false,
+        officialCredits: false,
+        creditsProvenance: "official-source-no-load",
+        catalogRole: "official-plan-example-option",
+        availabilityStatus: "not-asserted-by-plan",
+        requirementId: "plan-total",
+        periodLabel: source.fallbackPathway.periods[1].label,
+        sourceUrl,
+      })),
+      periodOrder: source.fallbackPathway.periods.map(({ label }) => label),
+      pathwayLabel: source.fallbackPathway.label,
+      pathwayDescription: source.fallbackPathway.description,
+      creditRequirements: source.requirements.map((requirement) => ({
+        id: requirement.id,
+        name: requirement.name,
+        shortName: requirement.shortName,
+        minCredits: requirement.minCredits,
+      })),
+      projectionAnomalies: [
+        {
+          field: "durationMonths",
+          resolution: "El Plan 2012 define un año propio después del CIO-CT; las fichas que indican dos años describen el recorrido acumulado CIO-CT + CIM y no dos años propios del CIM.",
+        },
+        {
+          field: "CIM10.credits",
+          resolution: "El Plan y el DMEL publican 12 créditos para Cálculo Vectorial; prevalecen sobre los 10 del snapshot de Bedelías.",
+        },
+      ],
+    },
+    uiNotice: "El CIM es un ciclo flexible de un año posterior al CIO-CT; los dos años difundidos corresponden al recorrido acumulado. Sus 160 créditos no se completan con las ocho UC propias cotejadas: incluyen la formación previa reconocida y las opciones del Plan de Formación individual que debe aprobar la Comisión de Carrera. No existe una secuencia semestral oficial. Las 22 opciones del Plan sin código ni carga se muestran como tales y no se equiparan con Bedelías.",
+    remainingWork: "Revisar si el CIM publica códigos, cargas o nueva oferta para las 22 opciones del Plan; los semestres y cursos previos del CIO-CT no se incorporan como trayectoria del CIM.",
+    additionalAnomalies: [
+      {
+        field: "trajectoryAuthority",
+        resolution: "El Plan 2012 declara una formación amplia y flexible con Plan de Formación individual; la proyección no reutiliza los semestres administrativos de Bedelías como sugerencia institucional.",
+      },
+      {
+        field: "courseAuthority",
+        resolution: "Ocho identidades propias del listado CIM tienen correspondencia oficial inequívoca con Bedelías; las otras 21 entradas administrativas permanecen candidatas recuperables. Además se conservan 22 opciones oficiales por su nombre literal, sin código, carga ni equivalencia inferida.",
+      },
+      {
+        field: "catalogCoverage",
+        resolution: "El catálogo es parcial: el Plan aprobado enumera 22 ejemplos opcionales, pero no publica sus códigos, créditos ni asignación a mínimos de área. Se muestran con carga no publicada y quedan sujetos al Plan de Formación individual.",
+      },
+    ],
+  };
+}
+
 function mergeAuditReconciliation(audit, reconciliation) {
   if (!audit || !reconciliation) return audit;
   const curriculum = {
@@ -1720,6 +1831,7 @@ function mergeAuditReconciliation(audit, reconciliation) {
     remainingWork: reconciliation.remainingWork ?? audit.remainingWork,
     officialPlan: {
       ...audit.officialPlan,
+      ...reconciliation.officialPlan,
       trajectories: reconciliation.trajectories ?? audit.officialPlan?.trajectories,
       curriculum,
     },
@@ -1742,6 +1854,7 @@ export async function buildExtractedAcademicPlans() {
   const fceaEstadistica2014 = await loadJson(fceaEstadistica2014Path);
   const fceaEconomiaAgricola2022 = await loadJson(fceaEconomiaAgricola2022Path);
   const cenurlnBiologiaBioquimica2016 = await loadJson(cenurlnBiologiaBioquimica2016Path);
+  const cenurlnCicloInicialMatematica2012 = await loadJson(cenurlnCicloInicialMatematica2012Path);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1779,6 +1892,7 @@ export async function buildExtractedAcademicPlans() {
     ["licenciatura en estadistica:2014", fceaEstadistica2014Reconciliation(fceaEstadistica2014)],
     ["licenciatura en economia agricola y gestion de agronegocios:2022", fceaEconomiaAgricola2022Reconciliation(fceaEconomiaAgricola2022)],
     [cenurlnBiologiaBioquimica2016.auditIdentity, cenurlnBiologiaBioquimica2016Reconciliation(cenurlnBiologiaBioquimica2016)],
+    [cenurlnCicloInicialMatematica2012.auditIdentity, cenurlnCicloInicialMatematica2012Reconciliation(cenurlnCicloInicialMatematica2012)],
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,

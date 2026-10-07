@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:623a3a2d14f6c26f3c4f459f5e257c6a3d8b75349399ca633c85c7f42e67125a",
+    "extractedReportHash": "sha256:e2dc20351153a1df514ed6e332ada8057d4a7bda21653252e8da8ff6f0665a49",
     "officialAuditHash": "sha256:6a3290339c997abee7559487f9b4a4473427290ef3ae1e710eb77ef854b859bc",
-    "reviewedTrajectoriesHash": "sha256:2374f9b55abd522698a56b62734b3880663620ebcfc7dbec4cc5d1567de34bbe"
+    "reviewedTrajectoriesHash": "sha256:5348b2787fb1613b8419b70692a01ca4eaabfa80adc14d65bdc55a0a6877ec62"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -13,10 +13,10 @@
     "states": {
       "official-trajectory-reproduced": 95,
       "official-trajectory-identified-pending": 1,
-      "no-official-trajectory-documented": 1,
-      "research-pending": 50
+      "no-official-trajectory-documented": 2,
+      "research-pending": 49
     },
-    "pending": 51,
+    "pending": 50,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -69,8 +69,8 @@
         "states": {
           "official-trajectory-reproduced": 3,
           "official-trajectory-identified-pending": 0,
-          "no-official-trajectory-documented": 0,
-          "research-pending": 3
+          "no-official-trajectory-documented": 1,
+          "research-pending": 2
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 51,
+    "total": 50,
     "plans": [
       {
         "priority": 1,
@@ -284,15 +284,6 @@
           "fing"
         ],
         "reason": "La correspondencia de las ocho variantes publicadas queda estructurada, pero ninguna fuente cierra los diez semestres ni 450 créditos de Ingeniería; Colonia cubre 248 de 270 créditos del título intermedio y Tacuarembó sólo publica un trayecto inicial de seis semestres."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cenurln-ciclo-inicial-de-matematica-2012",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-cenurln"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -768,7 +759,6 @@
         "serviceLabel": "Cenur Litoral Norte",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-cenurln-ciclo-inicial-de-matematica-2012",
           "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
           "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008"
         ]
@@ -1247,27 +1237,34 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2012",
+      "state": "no-official-trajectory-documented",
+      "reviewedAt": "2026-10-07",
+      "effectiveAt": "2012-2026",
       "officialSources": [
         {
-          "authority": "CENUR Litoral Norte, Udelar",
-          "url": "https://pruebawww.litoralnorte.udelar.edu.uy/457-ciclo-inicial-en-matematica",
-          "role": "título del ciclo, requisitos, sede Salto y duración de dos años",
-          "trajectoryEvidence": false
+          "authority": "Diario Oficial, Plan aprobado por Facultad de Ciencias y Consejo Directivo Central de la Universidad de la República",
+          "url": "https://www.impo.com.uy/diariooficial/2013/02/08/avisos.pdf",
+          "reviewedAt": "2026-10-07",
+          "role": "plan flexible, duración propia, créditos, mínimos, Plan de Formación individual, ocho UC cotejables y 22 ejemplos opcionales sin código ni carga",
+          "contentHash": "sha256:fe63de0707c3fdeb12d13a942400982b6ef1a8d6de5469ddbefd2d912efcd8c4"
+        },
+        {
+          "authority": "Departamento de Matemática y Estadística del Litoral, CENUR Litoral Norte, Universidad de la República",
+          "url": "https://dmel.multisitio.interior.edu.uy/ciclo-inicial-en-matematica/",
+          "reviewedAt": "2026-10-07",
+          "role": "listado actual de cursos propios del CIM sin orden ni semestre publicado"
+        },
+        {
+          "authority": "Departamento de Matemática y Estadística del Litoral, CENUR Litoral Norte, Universidad de la República",
+          "url": "https://dmel.multisitio.interior.edu.uy/ensenanza/",
+          "reviewedAt": "2026-10-07",
+          "role": "separación explícita entre UC del CIO-CT y UC del CIM, con códigos y créditos"
         },
         {
           "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
-          "role": "inscripciones abiertas en julio de 2026",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Comisión Sectorial de Enseñanza, Udelar",
-          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2019/06/PARTE-1.pdf",
-          "role": "Plan 2012 y registro del ciclo único en Salto",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-07",
+          "role": "vigencia de la oferta en el segundo semestre de 2026"
         }
       ],
       "scope": {
@@ -1279,22 +1276,21 @@
         ]
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-flexible-structure",
         "features": [
-          "administrative-composition"
+          "official-flexible-structure"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "ciclo inicial de matematica:2012",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cenurln-ciclo-inicial-de-matematica-2012.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "documented-absence",
+        "sourceDataPath": "data/cenurln/ciclo-inicial-matematica-2012.json",
+        "justification": "El Plan 2012 declara expresamente una propuesta amplia y flexible en la que pueden darse distintas trayectorias de formación, y exige que cada Plan de Formación individual sea aprobado por la Comisión de Carrera. El DMEL publica las UC propias del CIM pero no les asigna orden ni semestre. Por ello no existe una trayectoria sugerida única que reproducir y el fallback las muestra sin secuencia institucional."
       },
       "conflictNotes": [
-        "durationMonths: La UI usa 24 meses según el CENUR. Los 60 meses publicados por Bedelías se consideran un metadato administrativo erróneo.",
-        "name: Se corrige el texto residual «Ciclo Incial de Matematica» a «Ciclo Inicial en Matemática».",
-        "continuity: Las carreras que reconocen créditos se documentan como continuidad posible, no como títulos ni trayectorias internas automáticas."
+        "El Plan aprobado define un año propio del CIM después del CIO-CT; las fichas que indican dos años describen el recorrido acumulado CIO-CT + CIM. Los semestres del CIO-CT no son períodos del CIM.",
+        "Cálculo Vectorial tiene 12 créditos en el Plan y en el DMEL, frente a 10 en Bedelías; prevalece la fuente curricular.",
+        "Ocho UC propias tienen correspondencia inequívoca con Bedelías. Las 21 entradas restantes de Bedelías, incluidas las UC previas del CIO-CT, permanecen candidatas recuperables.",
+        "El Plan también enumera 22 ejemplos de asignaturas opcionales sin código, créditos ni oferta vigente comprobada. Se conservan como opciones oficiales sólo-fuente, sin inventar equivalencias administrativas ni tratarlas como obligatorias."
       ]
     },
     {
@@ -13384,5 +13380,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:a12187ca95d0a69a88a2d32da5383ce929dd371bb62065d125a84e5e7dc7f19b"
+  "contentHash": "sha256:3fb9976992047e173ea98328ac5844e55c97b71bb3b95397b5b566083a04bb64"
 }

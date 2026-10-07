@@ -54,6 +54,59 @@
       ]
     },
     {
+      "planId": "bedelias-cenurln-ciclo-inicial-de-matematica-2012",
+      "state": "no-official-trajectory-documented",
+      "reviewedAt": "2026-10-07",
+      "effectiveAt": "2012-2026",
+      "projectionMechanism": "official-flexible-structure",
+      "scope": {
+        "territories": [
+          "Salto"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Diario Oficial, Plan aprobado por Facultad de Ciencias y Consejo Directivo Central de la Universidad de la República",
+          "url": "https://www.impo.com.uy/diariooficial/2013/02/08/avisos.pdf",
+          "reviewedAt": "2026-10-07",
+          "role": "plan flexible, duración propia, créditos, mínimos, Plan de Formación individual, ocho UC cotejables y 22 ejemplos opcionales sin código ni carga",
+          "contentHash": "sha256:fe63de0707c3fdeb12d13a942400982b6ef1a8d6de5469ddbefd2d912efcd8c4"
+        },
+        {
+          "authority": "Departamento de Matemática y Estadística del Litoral, CENUR Litoral Norte, Universidad de la República",
+          "url": "https://dmel.multisitio.interior.edu.uy/ciclo-inicial-en-matematica/",
+          "reviewedAt": "2026-10-07",
+          "role": "listado actual de cursos propios del CIM sin orden ni semestre publicado"
+        },
+        {
+          "authority": "Departamento de Matemática y Estadística del Litoral, CENUR Litoral Norte, Universidad de la República",
+          "url": "https://dmel.multisitio.interior.edu.uy/ensenanza/",
+          "reviewedAt": "2026-10-07",
+          "role": "separación explícita entre UC del CIO-CT y UC del CIM, con códigos y créditos"
+        },
+        {
+          "authority": "Universidad de la República",
+          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
+          "reviewedAt": "2026-10-07",
+          "role": "vigencia de la oferta en el segundo semestre de 2026"
+        }
+      ],
+      "evidence": {
+        "kind": "documented-absence",
+        "sourceDataPath": "data/cenurln/ciclo-inicial-matematica-2012.json",
+        "justification": "El Plan 2012 declara expresamente una propuesta amplia y flexible en la que pueden darse distintas trayectorias de formación, y exige que cada Plan de Formación individual sea aprobado por la Comisión de Carrera. El DMEL publica las UC propias del CIM pero no les asigna orden ni semestre. Por ello no existe una trayectoria sugerida única que reproducir y el fallback las muestra sin secuencia institucional."
+      },
+      "conflictNotes": [
+        "El Plan aprobado define un año propio del CIM después del CIO-CT; las fichas que indican dos años describen el recorrido acumulado CIO-CT + CIM. Los semestres del CIO-CT no son períodos del CIM.",
+        "Cálculo Vectorial tiene 12 créditos en el Plan y en el DMEL, frente a 10 en Bedelías; prevalece la fuente curricular.",
+        "Ocho UC propias tienen correspondencia inequívoca con Bedelías. Las 21 entradas restantes de Bedelías, incluidas las UC previas del CIO-CT, permanecen candidatas recuperables.",
+        "El Plan también enumera 22 ejemplos de asignaturas opcionales sin código, créditos ni oferta vigente comprobada. Se conservan como opciones oficiales sólo-fuente, sin inventar equivalencias administrativas ni tratarlas como obligatorias."
+      ]
+    },
+    {
       "planId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-10-03",

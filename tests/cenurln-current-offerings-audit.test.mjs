@@ -40,10 +40,13 @@ test("publica sólo las sedes oficiales del Ciclo en Biología-Bioquímica", () 
 
 test("corrige duración y denominación del Ciclo Inicial en Matemática", () => {
   assert.equal(mathematics.plan.degreeTitle, "Ciclo Inicial en Matemática");
-  assert.equal(mathematics.plan.durationMonths, 24);
+  assert.equal(mathematics.plan.durationMonths, 12);
   assert.equal(mathematics.plan.minCredits, 160);
   assert.deepEqual(mathematics.campuses.map((campus) => campus.label), ["Salto"]);
-  assert.equal(mathematics.courses.length, 29);
+  assert.equal(mathematics.courses.length, 51);
+  assert.equal(mathematics.courses.filter(({ authorityStatus }) => authorityStatus === "verified").length, 30);
+  assert.equal(mathematics.courses.filter(({ authorityStatus }) => authorityStatus === "candidate").length, 21);
+  assert.match(mathematics.plan.notice, /dos años.*recorrido acumulado/);
 });
 
 test("normaliza Ciencias Sociales como carrera completa de cuatro años en Salto", () => {
