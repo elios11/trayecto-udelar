@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:e2dc20351153a1df514ed6e332ada8057d4a7bda21653252e8da8ff6f0665a49",
-    "officialAuditHash": "sha256:6a3290339c997abee7559487f9b4a4473427290ef3ae1e710eb77ef854b859bc",
-    "reviewedTrajectoriesHash": "sha256:5348b2787fb1613b8419b70692a01ca4eaabfa80adc14d65bdc55a0a6877ec62"
+    "extractedReportHash": "sha256:9f2f08dd0804e84160765cf14156542deb992d8eabd61303dae6796dcf602a65",
+    "officialAuditHash": "sha256:06fa38e1f7c3cbceb8adf87b4cabe093516249efc3ab5bcc8bbb49a67e364879",
+    "reviewedTrajectoriesHash": "sha256:7b66ac126b4ef0de877ea5e3de69d0e839918beb3703eaec515aa5ee6efa1e38"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -292,7 +292,7 @@
         "serviceIds": [
           "bedelias-cenurln"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
       },
       {
         "priority": 2,
@@ -1399,32 +1399,39 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2009",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2009-2026",
       "officialSources": [
         {
-          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "authority": "Facultad de Ciencias Sociales, Universidad de la República",
           "url": "https://cienciassociales.edu.uy/wp-content/uploads/2020/01/procesos-Plan-de-Estudios-FCS2009.pdf",
-          "role": "Plan de Estudios 2009 y capítulo específico de la Licenciatura en Ciencias Sociales de Regional Norte",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "Plan 2009 aprobado, capítulo XIII propio de la licenciatura regional y estructura modular de 360 créditos"
         },
         {
-          "authority": "Facultad de Ciencias Sociales, Udelar",
-          "url": "https://cienciassociales.edu.uy/oferta-de-grado-en-el-interior/",
-          "role": "título, duración de cuatro años y oferta completa en Salto",
-          "trajectoryEvidence": false
+          "authority": "Portal central de la Universidad de la República",
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-ciencias-sociales/",
+          "reviewedAt": "2026-10-09",
+          "role": "ficha de la carrera en Salto que enlaza las normas y la malla propias del Plan 2009"
         },
         {
-          "authority": "CENUR Litoral Norte, Udelar",
+          "authority": "CENUR Litoral Norte, Universidad de la República",
           "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-lic-ccss",
-          "role": "vigencia, título, carrera completa y sede Salto",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "vigencia, título, duración de cuatro años, carrera completa y sede Salto"
         },
         {
-          "authority": "Facultad de Ciencias Sociales, Udelar",
-          "url": "https://cienciassociales.edu.uy/ensenanza/",
-          "role": "oferta vigente y exigencia general de 360 créditos para las licenciaturas",
-          "trajectoryEvidence": false
+          "authority": "Departamento de Ciencias Sociales de Regional Norte, Universidad de la República",
+          "url": "https://web.archive.org/web/20221004125326id_/http://dcs.unorte.edu.uy/sites/default/files/ensenanza/malla-curricular-ciclo-avanzado-ccss-plan-2009.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "copia archivada de la malla institucional histórica de 2012; no acredita vigencia actual",
+          "contentHash": "sha256:aa5d96ac67c9ea2fe9c01e9b99439b0e00a395ac44c534e7408edbc8c86e2936"
+        },
+        {
+          "authority": "Facultad de Ciencias Sociales, Universidad de la República",
+          "url": "https://cienciassociales.edu.uy/ensenanza/bedelia-de-grado/mallas-curriculares-y-programas/",
+          "reviewedAt": "2026-10-09",
+          "role": "índice vigente de mallas que omite esta licenciatura regional"
         }
       ],
       "scope": {
@@ -1442,16 +1449,21 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en ciencias sociales:2009",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cenurln-licenciatura-en-ciencias-sociales-2009.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/cenurln/ciencias-sociales-2009.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cenurln-licenciatura-en-ciencias-sociales-2009.json",
+        "historicalGridPeriodCount": 6,
+        "historicalGridCoursePlacements": 27,
+        "historicalExactBedeliasMatches": 15,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 425,
+        "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
       },
       "conflictNotes": [
-        "planYear: Una descripción vigente de FCS conserva un párrafo que atribuye Plan 1992 a la carrera, pero el plan aprobado de 2009 incluye expresamente la Licenciatura regional, SGAE la registra como 2009 y llamados docentes de 2022/2023 refieren al Plan 2009. Se mantiene la clave 2009 y se documenta la contradicción.",
-        "durationMonths: La UI usa 48 meses conforme a FCS y CENUR; se descarta el metadato de 60 meses de Bedelías.",
-        "composition: La extracción lista una oferta amplia de 425 unidades. Se mantiene como catálogo elegible, no como 425 obligaciones ni como una única secuencia recomendada."
+        "La página general de Enseñanza de FCS conserva una mención a Plan 1992, contradicha por el Plan 2009 aprobado, la ficha central de Udelar y llamados posteriores del CENUR para módulos del Plan 2009.",
+        "La malla institucional de 2012 confirma una secuencia histórica de seis semestres para el Ciclo Avanzado, pero no se presume vigente mientras su URL original siga caída y no exista confirmación curricular actual.",
+        "Quince filas históricas coinciden exactamente por identidad única, nombre normalizado y créditos con el snapshot; permanecen candidatas porque una coincidencia histórica no prueba período ni inclusión vigente.",
+        "Las 425 entradas de Bedelías siguen como composición administrativa recuperable: no se convierten en obligaciones, no se fusionan por semejanza nominal y no se importan mallas de otras licenciaturas FCS."
       ]
     },
     {
@@ -13380,5 +13392,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:3fb9976992047e173ea98328ac5844e55c97b71bb3b95397b5b566083a04bb64"
+  "contentHash": "sha256:f2384b76f13d7d57590f25a84bb59536052e921b14a2de477b7362503e0e4fe7"
 }

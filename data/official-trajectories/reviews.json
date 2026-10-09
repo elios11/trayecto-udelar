@@ -2,6 +2,67 @@
   "schemaVersion": 1,
   "reviews": [
     {
+      "planId": "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
+      "state": "research-pending",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2009-2026",
+      "projectionMechanism": "administrative-composition",
+      "scope": {
+        "territories": ["Salto"],
+        "pathwayIds": ["bedelias"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias Sociales, Universidad de la República",
+          "url": "https://cienciassociales.edu.uy/wp-content/uploads/2020/01/procesos-Plan-de-Estudios-FCS2009.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "Plan 2009 aprobado, capítulo XIII propio de la licenciatura regional y estructura modular de 360 créditos"
+        },
+        {
+          "authority": "Portal central de la Universidad de la República",
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-ciencias-sociales/",
+          "reviewedAt": "2026-10-09",
+          "role": "ficha de la carrera en Salto que enlaza las normas y la malla propias del Plan 2009"
+        },
+        {
+          "authority": "CENUR Litoral Norte, Universidad de la República",
+          "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-lic-ccss",
+          "reviewedAt": "2026-10-09",
+          "role": "vigencia, título, duración de cuatro años, carrera completa y sede Salto"
+        },
+        {
+          "authority": "Departamento de Ciencias Sociales de Regional Norte, Universidad de la República",
+          "url": "https://web.archive.org/web/20221004125326id_/http://dcs.unorte.edu.uy/sites/default/files/ensenanza/malla-curricular-ciclo-avanzado-ccss-plan-2009.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "copia archivada de la malla institucional histórica de 2012; no acredita vigencia actual",
+          "contentHash": "sha256:aa5d96ac67c9ea2fe9c01e9b99439b0e00a395ac44c534e7408edbc8c86e2936"
+        },
+        {
+          "authority": "Facultad de Ciencias Sociales, Universidad de la República",
+          "url": "https://cienciassociales.edu.uy/ensenanza/bedelia-de-grado/mallas-curriculares-y-programas/",
+          "reviewedAt": "2026-10-09",
+          "role": "índice vigente de mallas que omite esta licenciatura regional"
+        }
+      ],
+      "evidence": {
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/cenurln/ciencias-sociales-2009.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cenurln-licenciatura-en-ciencias-sociales-2009.json",
+        "historicalGridPeriodCount": 6,
+        "historicalGridCoursePlacements": 27,
+        "historicalExactBedeliasMatches": 15,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 425,
+        "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
+      },
+      "conflictNotes": [
+        "La página general de Enseñanza de FCS conserva una mención a Plan 1992, contradicha por el Plan 2009 aprobado, la ficha central de Udelar y llamados posteriores del CENUR para módulos del Plan 2009.",
+        "La malla institucional de 2012 confirma una secuencia histórica de seis semestres para el Ciclo Avanzado, pero no se presume vigente mientras su URL original siga caída y no exista confirmación curricular actual.",
+        "Quince filas históricas coinciden exactamente por identidad única, nombre normalizado y créditos con el snapshot; permanecen candidatas porque una coincidencia histórica no prueba período ni inclusión vigente.",
+        "Las 425 entradas de Bedelías siguen como composición administrativa recuperable: no se convierten en obligaciones, no se fusionan por semejanza nominal y no se importan mallas de otras licenciaturas FCS."
+      ]
+    },
+    {
       "planId": "bedelias-cenurln-ciclo-en-biologia-bioquimica-2016",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-10-07",

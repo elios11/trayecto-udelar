@@ -28311,9 +28311,9 @@
       "identity": "licenciatura en ciencias sociales:2009",
       "career": "LICENCIATURA EN CIENCIAS SOCIALES",
       "planYear": "2009",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-09",
       "status": "official-evidence-complete",
-      "scope": "vigencia, plan, título, créditos y sede",
+      "scope": "vigencia, plan, título, créditos, sede y checkpoint de trayectoria",
       "publicationEligible": false,
       "officialPlan": {
         "title": "Licenciado/a en Ciencias Sociales",
@@ -28339,7 +28339,10 @@
         "metadataCurrent": true,
         "publishedDurationMonths": 60,
         "publishedMinimumCredits": null,
-        "interpretation": "Bedelías conserva Plan 2009 con composición por Ciclo Inicial y Ciclo Avanzado, pero omite el total y publica 60 meses. El plan aprobado y la información vigente de FCS establecen cuatro años y 360 créditos."
+        "candidateCourseCount": 425,
+        "historicalExactMatchCount": 15,
+        "promotedCourseCount": 0,
+        "interpretation": "Bedelías conserva Plan 2009 con composición por Ciclo Inicial y Ciclo Avanzado, pero omite el total y publica 60 meses. El plan aprobado y la información vigente de FCS establecen cuatro años y 360 créditos. Las 15 coincidencias exactas con la grilla institucional de 2012 siguen candidatas porque esa copia histórica no demuestra períodos vigentes."
       },
       "conclusion": {
         "canonicalModel": "regional-complete-degree",
@@ -28361,6 +28364,28 @@
           ]
         },
         {
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-ciencias-sociales/",
+          "authority": "Universidad de la República",
+          "supports": [
+            "ficha propia de la carrera en Salto y enlaces institucionales a las normas y a la malla del Plan 2009"
+          ]
+        },
+        {
+          "url": "https://web.archive.org/web/20221004125326id_/http://dcs.unorte.edu.uy/sites/default/files/ensenanza/malla-curricular-ciclo-avanzado-ccss-plan-2009.pdf",
+          "authority": "Departamento de Ciencias Sociales de Regional Norte, Udelar; copia histórica conservada por Internet Archive",
+          "contentHash": "sha256:aa5d96ac67c9ea2fe9c01e9b99439b0e00a395ac44c534e7408edbc8c86e2936",
+          "supports": [
+            "malla institucional histórica de 2012 del Ciclo Avanzado Plan 2009; no acredita vigencia actual"
+          ]
+        },
+        {
+          "url": "https://cienciassociales.edu.uy/ensenanza/bedelia-de-grado/mallas-curriculares-y-programas/",
+          "authority": "Facultad de Ciencias Sociales, Udelar",
+          "supports": [
+            "índice vigente de mallas que omite la Licenciatura en Ciencias Sociales regional"
+          ]
+        },
+        {
           "url": "https://cienciassociales.edu.uy/oferta-de-grado-en-el-interior/",
           "authority": "Facultad de Ciencias Sociales, Udelar",
           "supports": [
@@ -28378,7 +28403,21 @@
           "url": "https://cienciassociales.edu.uy/ensenanza/",
           "authority": "Facultad de Ciencias Sociales, Udelar",
           "supports": [
-            "oferta vigente y exigencia general de 360 créditos para las licenciaturas"
+            "contradicción publicada que todavía atribuye Plan 1992 a Regional Norte; no se usa como fuente de malla"
+          ]
+        },
+        {
+          "url": "https://pruebawww.litoralnorte.udelar.edu.uy/llamados/1216-profesor-adjunto-para-desempenar-funciones-en-el-modulo-perspectivas-analiticas-avanzadas-en-ciencias-sociales-plan-2009-de-la-licenciatura-en-ciencias-sociales-en-el-departamento-de-ciencias-sociales-del-cenur-litoral-norte",
+          "authority": "CENUR Litoral Norte, Udelar",
+          "supports": [
+            "implementación posterior del módulo Perspectivas Analíticas Avanzadas de la licenciatura bajo Plan 2009"
+          ]
+        },
+        {
+          "url": "https://pruebawww.litoralnorte.udelar.edu.uy/llamados/1217-profesor-adjunto-para-desempenar-funciones-en-el-modulo-taller-y-actividades-integrales-plan-2009-de-la-licenciatura-en-ciencias-sociales-en-el-departamento-de-ciencias-sociales-del-cenur-litoral-norte",
+          "authority": "CENUR Litoral Norte, Udelar",
+          "supports": [
+            "implementación posterior del módulo Taller y Actividades Integrales de la licenciatura bajo Plan 2009"
           ]
         }
       ],
@@ -28394,9 +28433,13 @@
         {
           "field": "composition",
           "resolution": "La extracción lista una oferta amplia de 425 unidades. Se mantiene como catálogo elegible, no como 425 obligaciones ni como una única secuencia recomendada."
+        },
+        {
+          "field": "trajectory",
+          "resolution": "La malla institucional recuperada documenta seis semestres del Ciclo Avanzado en 2012, pero su URL original está caída y el índice vigente de FCS omite esta licenciatura. Se conserva research-pending y no se promueve ninguna fila histórica hasta confirmar vigencia y cohorte."
         }
       ],
-      "remainingWork": "Las orientaciones personales dentro del currículo flexible y las reválidas requieren validación académica individual; no se inventa una trayectoria única."
+      "remainingWork": "Obtener una malla completa vigente publicada por FCS/CENUR o una resolución que confirme expresamente la vigencia actual de la grilla de 2012. Hasta entonces las 425 entradas permanecen candidatas, sin semestres inventados ni fusiones nominales."
     },
     {
       "identity": "tecnicatura en tecnologias de la imagen fotografica:2008",
@@ -74846,6 +74889,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:6a3290339c997abee7559487f9b4a4473427290ef3ae1e710eb77ef854b859bc",
+  "contentHash": "sha256:06fa38e1f7c3cbceb8adf87b4cabe093516249efc3ab5bcc8bbb49a67e364879",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
