@@ -89,6 +89,8 @@ test("mantiene el orden provisional como generado, no como trayectoria FHCE", ()
     const presentation = buildRegisteredPlanPresentation(pathwayId, projection);
     assert.equal(presentation.generated, true);
     assert.equal(presentation.label, GENERATED_PATHWAY_LABEL);
+    assert.match(presentation.description, /materias candidatas/i);
+    assert.doesNotMatch(presentation.description, /priorizando materias verificadas/i);
     assert.ok(presentation.periods.length > 0);
     assert.ok(presentation.periods.every(({ label, courseIds }) => (
       /^Selección orientativa Bedelías · parte \d+$/.test(label)
