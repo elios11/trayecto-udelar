@@ -282,6 +282,17 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       .map((sourceId) => officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId));
     return courseIds.filter((id) => allowedIds.has(id));
   };
+  const generatedFallbackFields = (trajectory) => {
+    if (audit?.identity !== "tecnicatura universitaria en bienes culturales:2021" || trajectory.generatedFallback !== true) return {};
+    const knownCourseIds = new Set((officialCurriculum?.courses ?? []).map((course) => course.id));
+    const courseIds = (trajectory.generatedFallbackCourseIds ?? [])
+      .map((sourceId) => officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId)
+      .filter((id) => knownCourseIds.has(id));
+    return {
+      generatedFallback: true,
+      ...(courseIds.length > 0 ? { generatedFallbackCourseIds: courseIds } : {}),
+    };
+  };
   if (audit?.identity === "licenciatura en educacion fisica:2017") {
     return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => [trajectory.id, {
       label: trajectory.label,
@@ -334,6 +345,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
           campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
           ...(trajectory.restrictGeneratedCatalogToPublished === true ? { restrictGeneratedCatalogToPublished: true } : {}),
+          ...generatedFallbackFields(trajectory),
           periods: trajectoryPeriods,
           ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
         }];
@@ -377,6 +389,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
         campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
         ...(trajectory.restrictGeneratedCatalogToPublished === true ? { restrictGeneratedCatalogToPublished: true } : {}),
+        ...generatedFallbackFields(trajectory),
         periods: trajectoryPeriods,
         ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
       }];

@@ -28548,9 +28548,9 @@
       "identity": "tecnicatura universitaria en bienes culturales:2021",
       "career": "TECNICATURA UNIVERSITARIA EN BIENES CULTURALES",
       "planYear": "2021",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-09",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, créditos, menciones, estructura curricular y sedes",
+      "scope": "vigencia, título, créditos, menciones, estructura curricular, sedes y estado de publicación de la trayectoria",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -28567,17 +28567,78 @@
           {
             "id": "historia-regional-y-local",
             "label": "Historia Regional y Local",
-            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021."
+            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021.",
+            "generatedFallback": true,
+            "generatedFallbackCourseIds": [
+              "cenurso-cut-hgpci",
+              "cenurso-cut-hgpii",
+              "cenurso-cut-hri",
+              "cenurso-cut-hrii",
+              "cenurso-cut-hl",
+              "cenurso-cut-mtics",
+              "cenurso-cut-pati",
+              "cenurso-cut-patii",
+              "cenurso-cut-paiii",
+              "cenurso-cut-musg",
+              "cenurso-cut-mus",
+              "cenurso-cut-hriii",
+              "cenurso-cut-arqp",
+              "cenurso-cut-geor",
+              "cenurso-cut-dcpo",
+              "cenurso-cut-tpc",
+              "cenurso-cut-tfhr"
+            ]
           },
           {
             "id": "museologia",
             "label": "Museología",
-            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021."
+            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021.",
+            "generatedFallback": true,
+            "generatedFallbackCourseIds": [
+              "cenurso-cut-hgpci",
+              "cenurso-cut-hgpii",
+              "cenurso-cut-hri",
+              "cenurso-cut-hrii",
+              "cenurso-cut-hl",
+              "cenurso-cut-mtics",
+              "cenurso-cut-pati",
+              "cenurso-cut-patii",
+              "cenurso-cut-paiii",
+              "cenurso-cut-musg",
+              "cenurso-cut-mus",
+              "cenurso-cut-hriii-2",
+              "cenurso-cut-dcpo-2",
+              "cenurso-cut-crbc",
+              "cenurso-cut-musii",
+              "cenurso-cut-tfmus"
+            ]
           },
           {
             "id": "patrimonio",
             "label": "Patrimonio",
-            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021."
+            "description": "Mención oficial certificada por FHCE dentro del mismo Plan 2021.",
+            "generatedFallback": true,
+            "generatedFallbackCourseIds": [
+              "cenurso-cut-hgpci",
+              "cenurso-cut-hgpii",
+              "cenurso-cut-hri",
+              "cenurso-cut-hrii",
+              "cenurso-cut-hl",
+              "cenurso-cut-mtics",
+              "cenurso-cut-pati",
+              "cenurso-cut-patii",
+              "cenurso-cut-paiii",
+              "cenurso-cut-musg",
+              "cenurso-cut-mus",
+              "cenurso-cut-hriii-3",
+              "cenurso-cut-arqp-2",
+              "cenurso-cut-gpi",
+              "cenurso-cut-ia",
+              "cenurso-cut-geor-2",
+              "cenurso-cut-dcpo-3",
+              "cenurso-cut-tpc-2",
+              "cenurso-cut-tfpat"
+            ]
           }
         ],
         "degreeRule": "La Universidad expide un único título de Técnico Universitario en Bienes Culturales y FHCE certifica la mención desarrollada.",
@@ -28586,7 +28647,7 @@
           "usePublishedCredits": true,
           "sourceUrl": "https://fhce.edu.uy/wp-content/uploads/2025/01/tubicu_museologia_version-final-rev-segun-DGJ-para-publicar.pdf",
           "pathwayLabel": "Mención",
-          "pathwayDescription": "Malla del Plan 2021 con tronco común y la mención seleccionada; las optativas y electivas conservan su carácter flexible.",
+          "pathwayDescription": "Estructura flexible del Plan 2021 con tronco común y la mención seleccionada. FHCE todavía no publicó la malla sugerida; cualquier orden visible es una ayuda provisoria de Trayecto y no una secuencia institucional.",
           "pathRequirementMap": {
             "1836": "elective-activities",
             "4167": "specific-formation",
@@ -28702,6 +28763,12 @@
               ]
             }
           ]
+        },
+        "trajectoryPublication": {
+          "state": "no-official-trajectory-documented",
+          "reviewedAt": "2026-10-09",
+          "sourceDataPath": "data/fhce/bienes-culturales-2021-trajectory-review.json",
+          "reason": "El índice oficial de mallas de FHCE mantiene a Bienes Culturales bajo Próximamente; el cuadro anual del Plan 2021 declara tentativa su distribución y no publica semestres por materia."
         }
       },
       "offerings": [
@@ -28757,20 +28824,25 @@
         "canonicalModel": "one-plan-multiple-offerings-and-mentions",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "El Plan 2021 define un único título y tres menciones certificadas. El portal central publica simultáneamente Colonia, Paysandú y Tacuarembó sin documentar una variante curricular ni restringir una mención a una sede.",
+        "trajectoryStatus": "no-official-trajectory-documented",
+        "trajectorySourceDataPath": "data/fhce/bienes-culturales-2021-trajectory-review.json",
+        "reason": "El Plan 2021 define un único título y tres menciones certificadas. El portal central publica simultáneamente Colonia, Paysandú y Tacuarembó sin documentar una variante curricular ni restringir una mención a una sede. Al 9 de octubre de 2026, FHCE mantiene expresamente la malla de Bienes Culturales bajo Próximamente.",
         "normalization": [
           "Conservar una única carrera y un único Plan 2021 para las tres sedes.",
           "Modelar Historia Regional y Local, Museología y Patrimonio como menciones seleccionables, no como títulos ni carreras separadas.",
           "Ofrecer las tres menciones en Colonia, Paysandú y Tacuarembó mientras una fuente oficial vigente no publique una restricción territorial.",
           "Controlar 141 créditos generales, 29 específicos, 20 electivos y 10 de actividades integradas, con mínimo total de 200 créditos.",
           "Conservar los catálogos flexibles como opciones y representar los siete créditos integrados específicos como bloque acreditable cuando la fuente no fija una unidad nominal.",
-          "No inferir previaturas ni una secuencia obligatoria desde la distribución anual tentativa."
+          "No inferir previaturas ni una secuencia obligatoria desde la distribución anual tentativa.",
+          "Marcar como generado por Trayecto cualquier recorrido provisional construido desde la composición de Bedelías; no atribuirlo a FHCE ni usar duración, oferta o calendarios para inventar semestres."
         ]
       },
       "sources": [
         {
           "url": "https://fhce.edu.uy/wp-content/uploads/2025/01/tubicu_museologia_version-final-rev-segun-DGJ-para-publicar.pdf",
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "consultedAt": "2026-10-09",
+          "contentHash": "sha256:a84a1476ea895c69cff2a08f9ace43f85021092006d2650a5bffb17b26b1f552",
           "supports": [
             "aprobaciones del Plan 2021",
             "título único, cinco semestres y 200 créditos",
@@ -28779,10 +28851,30 @@
           ]
         },
         {
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "authority": "Unidad de Apoyo a la Enseñanza, Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "consultedAt": "2026-10-09",
+          "contentHash": "sha256:3a2800e759742f3c9e15d9e3573eab8ef0531955fa837ffdb9d5f5e47c16495d",
+          "supports": [
+            "estado explícito Próximamente de la malla curricular de Bienes Culturales",
+            "distinción institucional entre mallas por área y por semestre sugerido"
+          ]
+        },
+        {
           "url": "https://fhce.edu.uy/plan-de-estudios-7/",
           "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
           "supports": [
             "publicación vigente del Plan 2021"
+          ]
+        },
+        {
+          "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-bienes-culturales-tubicu/",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "consultedAt": "2026-10-09",
+          "contentHash": "sha256:1097beeb136061a48ac8c7d0661c3720fdafbbdd116de587c674766c874cf6d0",
+          "supports": [
+            "vigencia, cinco semestres, tres menciones y tres sedes",
+            "publicación de planes, programas y calendarios sin una malla alternativa"
           ]
         },
         {
@@ -28814,10 +28906,14 @@
         {
           "field": "flexibleCatalogs",
           "resolution": "Las 63 entradas de la composición son un catálogo de alternativas comunes y por mención. No se exige aprobarlas todas ni se presentan como una secuencia fija."
+        },
+        {
+          "field": "trajectoryPublication",
+          "resolution": "FHCE mantiene la malla bajo Próximamente. El cuadro por años y los calendarios de dictado no sustituyen una trayectoria sugerida; la UI identifica como generado cualquier orden provisional."
         }
       ],
-      "uiNotice": "Plan 2021 con tronco común y tres menciones certificadas. Las optativas, electivas y actividades integradas son flexibles; elegí únicamente las necesarias para cumplir los mínimos oficiales.",
-      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica; la distribución anual del plan es tentativa y no se transforma en una secuencia obligatoria."
+      "uiNotice": "Plan 2021 con tronco común y tres menciones certificadas. FHCE todavía no publicó la malla sugerida: el orden que muestra Trayecto es provisorio y generado desde Bedelías. Las optativas, electivas y actividades integradas son flexibles; elegí únicamente las necesarias para cumplir los mínimos oficiales.",
+      "remainingWork": "Revisar cuando FHCE retire a Bienes Culturales de Próximamente y publique una malla por área o semestre, o cuando FHCE/CENUR publique una trayectoria completa autorizada para el Plan 2021. Las previaturas sólo se muestran cuando Bedelías las publica."
     },
     {
       "identity": "tecnologo en produccion equina:2022",
@@ -74905,6 +75001,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:39ad64d1abf3cfa787656769aa9fb1cc630155be51c6a10f3f7a65330e23a3a3",
+  "contentHash": "sha256:e67bfaa2df2e8802012322c29e67909ea98d0bb41b08807dbc9cacbda12def3b",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

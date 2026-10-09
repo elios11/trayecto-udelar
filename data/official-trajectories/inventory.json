@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:223e1e532f32c9eb2081779ed8d78560eb7054df17fb6860e7a946a238a3d750",
-    "officialAuditHash": "sha256:39ad64d1abf3cfa787656769aa9fb1cc630155be51c6a10f3f7a65330e23a3a3",
-    "reviewedTrajectoriesHash": "sha256:fb1daf2da49ba711a50d297f615e2c8d816cedb54ec107d85b5ce16116d1a014"
+    "extractedReportHash": "sha256:204a8c51d0f6481c0247187a9c0e2ea21a4dfe6011daac2311c56d9209a5cec0",
+    "officialAuditHash": "sha256:e67bfaa2df2e8802012322c29e67909ea98d0bb41b08807dbc9cacbda12def3b",
+    "reviewedTrajectoriesHash": "sha256:816fdd81d473b3bf0c20054008c4071278514746cbf8d31a22eaf7684e1c4f15"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -13,10 +13,10 @@
     "states": {
       "official-trajectory-reproduced": 96,
       "official-trajectory-identified-pending": 1,
-      "no-official-trajectory-documented": 2,
-      "research-pending": 48
+      "no-official-trajectory-documented": 3,
+      "research-pending": 47
     },
-    "pending": 49,
+    "pending": 48,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -58,8 +58,8 @@
         "states": {
           "official-trajectory-reproduced": 0,
           "official-trajectory-identified-pending": 0,
-          "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "no-official-trajectory-documented": 1,
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 49,
+    "total": 48,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-cenurso"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -735,14 +726,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-cur-licenciatura-en-educacion-fisica-2014"
-        ]
-      },
-      {
-        "serviceId": "bedelias-cenurso",
-        "serviceLabel": "Centro Universitario Regional Suroeste",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021"
         ]
       },
       {
@@ -1811,33 +1794,30 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2021",
+      "state": "no-official-trajectory-documented",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2021-2026",
       "officialSources": [
         {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "authority": "Unidad de Apoyo a la Enseñanza, Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "reviewedAt": "2026-10-09",
+          "role": "índice institucional vigente que coloca expresamente la malla de Bienes Culturales bajo Próximamente",
+          "contentHash": "sha256:3a2800e759742f3c9e15d9e3573eab8ef0531955fa837ffdb9d5f5e47c16495d"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación y Consejo Directivo Central, Universidad de la República",
           "url": "https://fhce.edu.uy/wp-content/uploads/2025/01/tubicu_museologia_version-final-rev-segun-DGJ-para-publicar.pdf",
-          "role": "aprobaciones del Plan 2021; título único, cinco semestres y 200 créditos; tres menciones y certificación; estructura de créditos, actividades integradas y flexibilidad",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "Plan 2021 vigente: título único, tres menciones, cinco semestres, 200 créditos y cuadro anual cuya distribución se declara tentativa",
+          "contentHash": "sha256:a84a1476ea895c69cff2a08f9ace43f85021092006d2650a5bffb17b26b1f552"
         },
         {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
-          "url": "https://fhce.edu.uy/plan-de-estudios-7/",
-          "role": "publicación vigente del Plan 2021",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de la Universidad de la República",
-          "url": "https://udelar.edu.uy/carrera/tecnicatura-universitaria-en-bienes-culturales",
-          "role": "vigencia, duración y créditos; menciones Historia Regional y Local, Patrimonio y Museología; sedes Colonia, Paysandú y Tacuarembó",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Universidad de la República",
-          "url": "https://udelar.edu.uy/noticias/region-suroeste-abre-sus-inscripciones-para-la-tecnicatura-universitaria-en-bienes-culturales?fecha=&servicios=All&temas=31",
-          "role": "apertura de la oferta completa en Colonia desde 2025",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-bienes-culturales-tubicu/",
+          "reviewedAt": "2026-10-09",
+          "role": "página vigente que confirma cinco semestres, tres menciones y las sedes Paysandú, Tacuarembó y Colonia sin publicar una malla alternativa",
+          "contentHash": "sha256:1097beeb136061a48ac8c7d0661c3720fdafbbdd116de587c674766c874cf6d0"
         }
       ],
       "scope": {
@@ -1859,16 +1839,15 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura universitaria en bienes culturales:2021",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "documented-absence",
+        "sourceDataPath": "data/fhce/bienes-culturales-2021-trajectory-review.json",
+        "justification": "Al 9 de octubre de 2026, el índice oficial con el que FHCE publica sus mallas y trayectorias sugeridas coloca a Bienes Culturales bajo ‘Próximamente’. El Plan 2021 vigente sólo publica una creditización por años cuya nota declara tentativa la distribución y permite acreditar componentes en cualquier momento. La página actual de la carrera publica planes, programas y calendarios, pero no otra malla. Por ello no existe todavía una trayectoria sugerida oficial publicada que pueda reproducirse."
       },
       "conflictNotes": [
-        "title: Se corrige la forma gramatical defectuosa de las etiquetas de Bedelías y se usa el título jurídico único del Plan 2021.",
-        "specificFormation: La rama de Bedelías agrupa 36 créditos porque combina 29 de formación específica y siete integrados; la UI los muestra en requisitos separados conforme al cuadro oficial de 200 créditos.",
-        "flexibleCatalogs: Las 63 entradas de la composición son un catálogo de alternativas comunes y por mención. No se exige aprobarlas todas ni se presentan como una secuencia fija."
+        "La ausencia documentada es temporal: debe revisarse cuando FHCE publique la malla anunciada.",
+        "El cuadro anual tentativo no se convierte en semestres ni en una secuencia obligatoria; la duración de cinco semestres tampoco autoriza esa inferencia.",
+        "Las tres menciones y las tres sedes pertenecen al mismo Plan 2021 y comparten catálogo y progreso.",
+        "El recorrido visible se identifica como generado por Trayecto desde Bedelías; los candidatos son provisionales y no aportan a requisitos oficiales hasta verificarse."
       ]
     },
     {
@@ -13392,5 +13371,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:4a8a7911d32200b36a3ceeca238695ca3f8fce372964a3d7bd2a45d7477589e3"
+  "contentHash": "sha256:61dabfa535f0e2f81df2b5feaf8196abbb862114cecd524e04c7e1ec83079dec"
 }

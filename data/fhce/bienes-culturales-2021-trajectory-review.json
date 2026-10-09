@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cenurso-tecnicatura-universitaria-en-bienes-culturales-2021",
+  "auditIdentity": "tecnicatura universitaria en bienes culturales:2021",
+  "reviewedAt": "2026-10-09",
+  "publication": {
+    "planYear": "2021",
+    "currentAtReview": true,
+    "durationSemesters": 5,
+    "minimumCredits": 200,
+    "credential": "Técnico Universitario en Bienes Culturales",
+    "trajectoryStatus": "no-official-trajectory-documented",
+    "trajectoryPublicationState": "announced-pending"
+  },
+  "scope": {
+    "campuses": [
+      { "id": "colonia", "label": "Colonia" },
+      { "id": "paysandu", "label": "Paysandú" },
+      { "id": "tacuarembo", "label": "Tacuarembó" }
+    ],
+    "mentions": [
+      { "id": "historia-regional-y-local", "label": "Historia Regional y Local" },
+      { "id": "museologia", "label": "Museología" },
+      { "id": "patrimonio", "label": "Patrimonio" }
+    ],
+    "singlePlan": true,
+    "singleCredential": true,
+    "sharedProgress": true
+  },
+  "sources": [
+    {
+      "id": "fhce-mallas-current",
+      "url": "https://fhce.edu.uy/mallas-curriculares/",
+      "authority": "Unidad de Apoyo a la Enseñanza, Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+      "consultedAt": "2026-10-09",
+      "publicationState": "índice institucional vigente de mallas curriculares",
+      "contentHash": "sha256:3a2800e759742f3c9e15d9e3573eab8ef0531955fa837ffdb9d5f5e47c16495d",
+      "supports": [
+        "la página distingue mallas por área temática y por semestre sugerido",
+        "Bienes Culturales figura expresamente bajo Próximamente",
+        "FHCE todavía no publica una trayectoria sugerida vigente para este plan"
+      ]
+    },
+    {
+      "id": "fhce-plan-2021",
+      "url": "https://fhce.edu.uy/wp-content/uploads/2025/01/tubicu_museologia_version-final-rev-segun-DGJ-para-publicar.pdf",
+      "authority": "Facultad de Humanidades y Ciencias de la Educación y Consejo Directivo Central, Universidad de la República",
+      "consultedAt": "2026-10-09",
+      "publicationState": "Plan 2021 aprobado por Resoluciones 50 de FHCE y 11 del CDC",
+      "rawPdfContentHash": "sha256:30380de8e316b54dff3e22c87acb75970a59d9e35a787073a06e1c00ae88f498",
+      "contentHash": "sha256:a84a1476ea895c69cff2a08f9ace43f85021092006d2650a5bffb17b26b1f552",
+      "pages": [4, 5, 6, 7, 8, 9, 10],
+      "visuallyInspectedPages": [9, 10],
+      "supports": [
+        "un único título, tres menciones certificadas, cinco semestres y 200 créditos",
+        "estructura flexible por ejes, optativas, electivas y actividades integradas",
+        "cuadro general por años y su nota de distribución tentativa",
+        "acreditación del idioma y de las actividades integradas en cualquier momento"
+      ],
+      "doesNotSupport": [
+        "una secuencia de materias por semestre",
+        "una malla distinta por sede",
+        "convertir la distribución anual tentativa en períodos obligatorios"
+      ]
+    },
+    {
+      "id": "fhce-career-current",
+      "url": "https://fhce.edu.uy/tecnicatura-universitaria-en-bienes-culturales-tubicu/",
+      "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+      "consultedAt": "2026-10-09",
+      "publicationState": "página institucional vigente al consultar",
+      "contentHash": "sha256:1097beeb136061a48ac8c7d0661c3720fdafbbdd116de587c674766c874cf6d0",
+      "supports": [
+        "vigencia y duración de cinco semestres",
+        "las mismas tres menciones en Paysandú, Tacuarembó y Colonia",
+        "publicación separada de planes, programas y calendarios de dictado"
+      ],
+      "doesNotSupport": [
+        "una trayectoria sugerida alternativa",
+        "usar calendarios de clases o prácticos como malla curricular"
+      ]
+    }
+  ],
+  "trajectoryConclusion": {
+    "state": "no-official-trajectory-documented",
+    "temporary": true,
+    "justification": "Al 9 de octubre de 2026, el índice oficial con el que FHCE publica sus mallas y trayectorias sugeridas coloca a la Tecnicatura Universitaria en Bienes Culturales bajo ‘Próximamente’. El Plan 2021 vigente define una estructura flexible y un cuadro general por años cuya propia nota declara tentativa la distribución y permite acreditar sus componentes en cualquier momento. La página institucional de la carrera publica planes, programas y calendarios, pero no otra malla vigente. Por ello no hay una trayectoria sugerida oficial publicada que pueda reproducirse en esta revisión.",
+    "reviewTrigger": "Revisar cuando FHCE retire a Bienes Culturales de Próximamente y publique una malla por área o semestre, o cuando FHCE/CENUR publique una trayectoria completa autorizada para el Plan 2021.",
+    "alternativeOfficialSurfacesReviewed": [
+      "índice de mallas curriculares de FHCE",
+      "página de planes de estudio de la carrera",
+      "página institucional vigente de la carrera",
+      "Plan de estudios 2021 aprobado",
+      "portales universitarios de las sedes para comprobar que los calendarios y la oferta no constituyen otra malla"
+    ],
+    "doesNotAuthorize": [
+      "atribuir a FHCE los tramos generados por Trayecto",
+      "inferir semestres desde la tabla anual tentativa",
+      "convertir horarios, calendarios de dictado, programas o EVA en trayectoria oficial",
+      "usar el orden de la composición de Bedelías como sugerencia institucional"
+    ]
+  },
+  "creditTable": {
+    "rows": [
+      { "label": "Primer Año", "general": 78, "specific": 0, "electives": 0, "integrated": 2, "total": 80 },
+      { "label": "Segundo Año", "general": 59, "specific": 11, "electives": 10, "integrated": 1, "total": 81 },
+      { "label": "Tercer Año", "general": 0, "specific": 18, "electives": 10, "integrated": 7, "total": 35 },
+      { "label": "Idioma moderno optativo", "general": 4, "specific": 0, "electives": 0, "integrated": 0, "total": 4 }
+    ],
+    "totals": { "general": 141, "specific": 29, "electives": 20, "integrated": 10, "total": 200 },
+    "notes": {
+      "modernLanguageAccreditableAtAnyTime": true,
+      "integratedDistributionTentative": true,
+      "integratedActivitiesAccreditableAtAnyTime": true
+    },
+    "projectionPolicy": "Se conservan créditos y mínimos; las filas anuales no se transforman en semestres ni períodos oficiales."
+  },
+  "projectionBaseline": {
+    "pathwayIds": [
+      "historia-regional-y-local",
+      "museologia",
+      "patrimonio"
+    ],
+    "campusIds": ["colonia", "paysandu", "tacuarembo"],
+    "generatedFallback": true,
+    "verifiedCourseIds": [
+      "cenurso-actividades-integradas-especificas"
+    ],
+    "candidateCourseIds": [
+      "cenurso-cut-acr1",
+      "cenurso-cut-acr2",
+      "cenurso-cure-t3m",
+      "cenurso-cut-gpie",
+      "cenurso-cenurln-he",
+      "cenurso-cut-hiiie",
+      "cenurso-cure-t1m",
+      "cenurso-cut-iae",
+      "cenurso-cenurln-len1",
+      "cenurso-cut-geore",
+      "cenurso-cut-poel",
+      "cenurso-cenurln-112",
+      "cenurso-cenurln-tce",
+      "cenurso-cut-tpce",
+      "cenurso-fhum-ef165",
+      "cenurso-fhum-ef169",
+      "cenurso-cut-efi25",
+      "cenurso-cut-efi4",
+      "cenurso-cut-efi56",
+      "cenurso-cut-efi21",
+      "cenurso-cenurln-acr3",
+      "cenurso-cenurln-acr4",
+      "cenurso-cenurln-acr6",
+      "cenurso-cenurln-acr5",
+      "cenurso-cut-acr7",
+      "cenurso-cut-efi",
+      "cenurso-cut-efi1",
+      "cenurso-cut-efi3",
+      "cenurso-cut-ocmb",
+      "cenurso-cut-efi2",
+      "cenurso-cut-ing",
+      "cenurso-cut-it",
+      "cenurso-cut-por",
+      "cenurso-cut-hgpii",
+      "cenurso-cut-hgpci",
+      "cenurso-cut-hl",
+      "cenurso-cut-hri",
+      "cenurso-cut-hrii",
+      "cenurso-cut-mtics",
+      "cenurso-cut-pati",
+      "cenurso-cut-patii",
+      "cenurso-cut-paiii",
+      "cenurso-cut-musg",
+      "cenurso-cut-mus",
+      "cenurso-cut-arqp",
+      "cenurso-cut-hriii",
+      "cenurso-cut-geor",
+      "cenurso-cut-dcpo",
+      "cenurso-cut-tpc",
+      "cenurso-cut-tfhr",
+      "cenurso-cut-hriii-2",
+      "cenurso-cut-dcpo-2",
+      "cenurso-cut-crbc",
+      "cenurso-cut-musii",
+      "cenurso-cut-tfmus",
+      "cenurso-cut-hriii-3",
+      "cenurso-cut-arqp-2",
+      "cenurso-cut-gpi",
+      "cenurso-cut-ia",
+      "cenurso-cut-geor-2",
+      "cenurso-cut-dcpo-3",
+      "cenurso-cut-tpc-2",
+      "cenurso-cut-tfpat"
+    ],
+    "fallbackCoreByPathway": {
+      "historia-regional-y-local": [
+        "cenurso-cut-hgpci", "cenurso-cut-hgpii", "cenurso-cut-hri", "cenurso-cut-hrii", "cenurso-cut-hl", "cenurso-cut-mtics", "cenurso-cut-pati", "cenurso-cut-patii", "cenurso-cut-paiii", "cenurso-cut-musg", "cenurso-cut-mus", "cenurso-cut-hriii", "cenurso-cut-arqp", "cenurso-cut-geor", "cenurso-cut-dcpo", "cenurso-cut-tpc", "cenurso-cut-tfhr"
+      ],
+      "museologia": [
+        "cenurso-cut-hgpci", "cenurso-cut-hgpii", "cenurso-cut-hri", "cenurso-cut-hrii", "cenurso-cut-hl", "cenurso-cut-mtics", "cenurso-cut-pati", "cenurso-cut-patii", "cenurso-cut-paiii", "cenurso-cut-musg", "cenurso-cut-mus", "cenurso-cut-hriii-2", "cenurso-cut-dcpo-2", "cenurso-cut-crbc", "cenurso-cut-musii", "cenurso-cut-tfmus"
+      ],
+      "patrimonio": [
+        "cenurso-cut-hgpci", "cenurso-cut-hgpii", "cenurso-cut-hri", "cenurso-cut-hrii", "cenurso-cut-hl", "cenurso-cut-mtics", "cenurso-cut-pati", "cenurso-cut-patii", "cenurso-cut-paiii", "cenurso-cut-musg", "cenurso-cut-mus", "cenurso-cut-hriii-3", "cenurso-cut-arqp-2", "cenurso-cut-gpi", "cenurso-cut-ia", "cenurso-cut-geor-2", "cenurso-cut-dcpo-3", "cenurso-cut-tpc-2", "cenurso-cut-tfpat"
+      ]
+    },
+    "catalogPolicy": {
+      "verifiedCount": 1,
+      "candidateCount": 63,
+      "candidateVisibility": "unverified-search-and-generated-fallback",
+      "candidateRequirementsContribution": false,
+      "preserveCanonicalIdsAndProgress": true
+    }
+  },
+  "sourcePortions": {
+    "fhce-mallas-current": {
+      "section": "Mallas curriculares",
+      "formats": ["área temática", "semestre sugerido"],
+      "pendingHeading": "Próximamente",
+      "pendingCareers": [
+        "Licenciatura en Biología Humana",
+        "Licenciatura en Turismo",
+        "Tecnicatura Universitaria en Bienes Culturales"
+      ]
+    },
+    "fhce-plan-2021": {
+      "credential": "Técnico Universitario en Bienes Culturales",
+      "mentions": ["Historia Regional y Local", "Museología", "Patrimonio"],
+      "durationSemesters": 5,
+      "minimumCredits": 200,
+      "yearlyCreditRows": [
+        ["Primer Año", 78, 0, 0, 2, 80],
+        ["Segundo Año", 59, 11, 10, 1, 81],
+        ["Tercer Año", 0, 18, 10, 7, 35],
+        ["Idioma moderno optativo", 4, 0, 0, 0, 4]
+      ],
+      "yearlyCreditTotals": [141, 29, 20, 10, 200],
+      "languageAccreditationTiming": "cualquier momento",
+      "integratedDistribution": "tentativa",
+      "integratedAccreditationTiming": "cualquier momento"
+    },
+    "fhce-career-current": {
+      "durationSemesters": 5,
+      "campuses": ["Paysandú", "Tacuarembó", "Colonia del Sacramento"],
+      "mentions": ["Historia Regional y Local", "Patrimonio", "Museología"],
+      "relatedPublications": ["planes de estudio", "programas", "calendarios de clases", "calendarios de prácticos"]
+    }
+  },
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "sourceHashes": {
+      "fhce-mallas-current": "sha256:3a2800e759742f3c9e15d9e3573eab8ef0531955fa837ffdb9d5f5e47c16495d",
+      "fhce-plan-2021": "sha256:a84a1476ea895c69cff2a08f9ace43f85021092006d2650a5bffb17b26b1f552",
+      "fhce-career-current": "sha256:1097beeb136061a48ac8c7d0661c3720fdafbbdd116de587c674766c874cf6d0"
+    },
+    "value": "sha256:7b791eff72947cd3b52d47513b0ad9a0f0f5e570419eb03fe8f69885713f16a6"
+  }
+}

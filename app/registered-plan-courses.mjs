@@ -52,6 +52,13 @@ function distributeGeneratedPeriods(data, courseIds) {
 }
 
 function generatedPeriods(data, pathway, courseById) {
+  const explicitFallbackIds = uniqueCourseIds(pathway?.generatedFallbackCourseIds ?? [], courseById);
+  if (pathway?.generatedFallback === true && explicitFallbackIds.length > 0) {
+    return Array.from({ length: Math.ceil(explicitFallbackIds.length / MAX_COURSES_PER_GENERATED_PERIOD) }, (_, index) => ({
+      label: `Selección orientativa Bedelías · parte ${index + 1}`,
+      courseIds: explicitFallbackIds.slice(index * MAX_COURSES_PER_GENERATED_PERIOD, (index + 1) * MAX_COURSES_PER_GENERATED_PERIOD),
+    }));
+  }
   const pathwayIds = pathwayCourseIds(pathway, courseById);
   const orderedIds = pathwayIds.length > 0
     ? pathwayIds
@@ -95,7 +102,8 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
   if (!publishedPathway || !sourcePathway) return { courses: [], periods: [], generated: false, label: "Trayectoria oficial", description: "" };
 
   const courseById = new Map(data.courses.map((course) => [course.id, course]));
-  const hasOfficialPeriodCourses = publishedPathway.periods.some((period) => period.courseIds.some((id) => {
+  const forcedGeneratedFallback = publishedPathway.generatedFallback === true || sourcePathway.generatedFallback === true;
+  const hasOfficialPeriodCourses = !forcedGeneratedFallback && publishedPathway.periods.some((period) => period.courseIds.some((id) => {
     const course = courseById.get(id);
     return isRealCurricularCourse(course) && (course.authorityStatus ?? "verified") === "verified";
   }));
