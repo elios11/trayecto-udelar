@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008",
+  "auditIdentity": "tecnicatura en tecnologias de la imagen fotografica:2008",
+  "reviewedAt": "2026-10-09",
+  "publication": {
+    "planYear": "2008",
+    "approvedByIenbaAt": "2008-11-24",
+    "approvedByCdcAt": "2008-12-16",
+    "currentAtReview": true,
+    "durationMonths": 36,
+    "semesterCount": 6,
+    "creditsPerSemester": 40,
+    "minimumCredits": 240,
+    "credential": "Técnico/a Universitario/a en Tecnologías de la Imagen Fotográfica",
+    "semesterApproval": {
+      "minimumActivityCompletionPercentByCourse": 85,
+      "scope": "actividades curriculares presenciales y no presenciales de cada curso",
+      "notModeledAsCredits": true
+    },
+    "titleRequirement": {
+      "completedSemesters": 6,
+      "requiredActivityId": "TFE"
+    }
+  },
+  "scope": {
+    "campuses": [
+      {
+        "id": "paysandu",
+        "label": "Paysandú",
+        "coverage": "carrera completa de seis semestres"
+      }
+    ],
+    "excludedPrograms": [
+      {
+        "name": "Licenciatura en Fotografía",
+        "location": "Montevideo",
+        "reason": "programa distinto; no integra ni sustituye esta tecnicatura regional"
+      },
+      {
+        "name": "Tecnicatura en Artes Plásticas y Visuales",
+        "reason": "programa distinto; su grilla no se reutiliza en este plan"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "fartes-career-page",
+      "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica/",
+      "authority": "Facultad de Artes, Universidad de la República",
+      "consultedAt": "2026-10-09",
+      "publicationState": "página vigente al consultar",
+      "supports": [
+        "vigencia y denominación de la carrera",
+        "referencia académica de Facultad de Artes",
+        "sede Paysandú",
+        "enlace vigente al Plan de Estudios 2008"
+      ]
+    },
+    {
+      "id": "fartes-plan-2008",
+      "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PLAN_DE_ESTUDIOS_TECNICATURA_FOTOGRAFIA_web_v.2.pdf",
+      "authority": "Facultad de Artes, Universidad de la República",
+      "consultedAt": "2026-10-09",
+      "publicationState": "Plan 2008 aprobado y todavía enlazado desde la página vigente de la carrera",
+      "contentHash": "sha256:a0f9f2a7082ea2e5420bfe28156faacfd3f773aae2cba5e881864b1eb6804f65",
+      "pages": [
+        1,
+        2
+      ],
+      "supports": [
+        "aprobaciones del Consejo del IENBA y del CDC",
+        "sede Paysandú",
+        "tres años y seis semestres",
+        "240 créditos y referencia de 40 créditos semestrales",
+        "veinte actividades y su ubicación visual",
+        "regla de aprobación semestral",
+        "Trabajo Final de Egreso como requisito del título"
+      ]
+    },
+    {
+      "id": "udelar-career-page",
+      "url": "https://udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica",
+      "authority": "Portal central de la Universidad de la República",
+      "consultedAt": "2026-10-09",
+      "publicationState": "ficha vigente al consultar",
+      "supports": [
+        "identidad vigente",
+        "240 créditos",
+        "sede Paysandú",
+        "contradicción publicada de 60 meses"
+      ]
+    },
+    {
+      "id": "bedelias-snapshot",
+      "url": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+      "authority": "Sistema de Gestión Administrativa de la Enseñanza, Universidad de la República",
+      "consultedAt": "2026-08-14",
+      "publicationState": "snapshot institucional versionado",
+      "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
+      "contentHash": "sha256:dcdf8bcef16ec58d7be9c11826db28bce6d7035e8b358c85d68cefe1dda52ebf",
+      "supports": [
+        "códigos administrativos de diez actividades cotejadas",
+        "créditos contrastables",
+        "previaturas administrativas"
+      ],
+      "doesNotSupport": [
+        "inclusión curricular vigente por sí sola",
+        "códigos separados para Fotografía I–V y T.L.O.E.P. I–V",
+        "equivalencia entre TFI–TFV y las actividades separadas",
+        "semestre u obligatoriedad por el orden de la composición"
+      ]
+    }
+  ],
+  "trajectories": [
+    {
+      "id": "bedelias",
+      "label": "Plan de Estudios 2008",
+      "description": "Seis semestres y 240 créditos publicados por Facultad de Artes para la tecnicatura completa en Paysandú. Los seminarios opcionales ocupan un único espacio de 5 créditos en tercero y cuarto; el Trabajo Final de Egreso cierra el sexto tramo y también es requisito del título.",
+      "campusIds": [
+        "paysandu"
+      ],
+      "useOnlyConfiguredPeriods": true,
+      "restrictGeneratedCatalogToPublished": true,
+      "periods": [
+        {
+          "label": "Primer semestre",
+          "courseIds": [
+            "IUR",
+            "EPI"
+          ]
+        },
+        {
+          "label": "Segundo semestre",
+          "courseIds": [
+            "EPII",
+            "fotografia-i",
+            "tloep-i"
+          ]
+        },
+        {
+          "label": "Tercer semestre",
+          "courseIds": [
+            "EPIII",
+            "fotografia-ii",
+            "tloep-ii",
+            "SOPI"
+          ]
+        },
+        {
+          "label": "Cuarto semestre",
+          "courseIds": [
+            "EPIIV",
+            "fotografia-iii",
+            "tloep-iii",
+            "SOPII"
+          ]
+        },
+        {
+          "label": "Quinto semestre",
+          "courseIds": [
+            "EPIV",
+            "fotografia-iv",
+            "tloep-iv"
+          ]
+        },
+        {
+          "label": "Sexto semestre",
+          "courseIds": [
+            "fotografia-v",
+            "tloep-v",
+            "STEA",
+            "TFE"
+          ]
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "order": 1,
+      "period": "Primer semestre",
+      "officialLabel": "Introducción a la Universidad",
+      "credits": 2,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "IUR",
+      "bedeliasName": "INTROD. A LA UNIVERSIDAD",
+      "bedeliasCredits": 2
+    },
+    {
+      "order": 2,
+      "period": "Primer semestre",
+      "officialLabel": "Estética y Percepción I",
+      "credits": 38,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "EPI",
+      "bedeliasName": "ESTETICA Y PERCEPCION I",
+      "bedeliasCredits": 38
+    },
+    {
+      "order": 3,
+      "period": "Segundo semestre",
+      "officialLabel": "Estética y Percepción II",
+      "credits": 30,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "EPII",
+      "bedeliasName": "ESTETICA Y PERCEPCION II",
+      "bedeliasCredits": 30
+    },
+    {
+      "order": 4,
+      "period": "Segundo semestre",
+      "officialLabel": "Fotografía I",
+      "credits": 5,
+      "projectionBasis": "source-only",
+      "identityKey": "fotografia-i"
+    },
+    {
+      "order": 5,
+      "period": "Segundo semestre",
+      "officialLabel": "T.L.O.E.P. I",
+      "credits": 5,
+      "projectionBasis": "source-only",
+      "identityKey": "tloep-i"
+    },
+    {
+      "order": 6,
+      "period": "Tercer semestre",
+      "officialLabel": "Estética y Percepción III",
+      "credits": 20,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "EPIII",
+      "bedeliasName": "ESTETICA Y PERCEPCION III",
+      "bedeliasCredits": 20
+    },
+    {
+      "order": 7,
+      "period": "Tercer semestre",
+      "officialLabel": "Fotografía II",
+      "credits": 10,
+      "projectionBasis": "source-only",
+      "identityKey": "fotografia-ii"
+    },
+    {
+      "order": 8,
+      "period": "Tercer semestre",
+      "officialLabel": "T.L.O.E.P. II",
+      "credits": 5,
+      "projectionBasis": "source-only",
+      "identityKey": "tloep-ii"
+    },
+    {
+      "order": 9,
+      "period": "Tercer semestre",
+      "officialLabel": "Seminario Opcional 1",
+      "credits": 5,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "SOPI",
+      "bedeliasName": "SEMINARIO OPCIONAL I",
+      "bedeliasCredits": 5,
+      "electiveSlot": true,
+      "layoutPlacement": "lateral conectado al tercer semestre"
+    },
+    {
+      "order": 10,
+      "period": "Cuarto semestre",
+      "officialLabel": "Estética y Percepción IV",
+      "credits": 20,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "EPIIV",
+      "bedeliasName": "ESTETICA Y PERCEPCION IV",
+      "bedeliasCredits": 20
+    },
+    {
+      "order": 11,
+      "period": "Cuarto semestre",
+      "officialLabel": "Fotografía III",
+      "credits": 10,
+      "projectionBasis": "source-only",
+      "identityKey": "fotografia-iii"
+    },
+    {
+      "order": 12,
+      "period": "Cuarto semestre",
+      "officialLabel": "T.L.O.E.P. III",
+      "credits": 5,
+      "projectionBasis": "source-only",
+      "identityKey": "tloep-iii"
+    },
+    {
+      "order": 13,
+      "period": "Cuarto semestre",
+      "officialLabel": "Seminario Opcional 2",
+      "credits": 5,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "SOPII",
+      "bedeliasName": "SEMINARIO OPCIONAL II",
+      "bedeliasCredits": 5,
+      "electiveSlot": true,
+      "layoutPlacement": "lateral conectado al cuarto semestre"
+    },
+    {
+      "order": 14,
+      "period": "Quinto semestre",
+      "officialLabel": "Estética y Percepción V",
+      "credits": 10,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "EPIV",
+      "bedeliasName": "ESTETICA Y PERCEPCION V",
+      "bedeliasCredits": 10
+    },
+    {
+      "order": 15,
+      "period": "Quinto semestre",
+      "officialLabel": "Fotografía IV",
+      "credits": 25,
+      "projectionBasis": "source-only",
+      "identityKey": "fotografia-iv"
+    },
+    {
+      "order": 16,
+      "period": "Quinto semestre",
+      "officialLabel": "T.L.O.E.P. IV",
+      "credits": 5,
+      "projectionBasis": "source-only",
+      "identityKey": "tloep-iv"
+    },
+    {
+      "order": 17,
+      "period": "Sexto semestre",
+      "officialLabel": "Fotografía V",
+      "credits": 15,
+      "projectionBasis": "source-only",
+      "identityKey": "fotografia-v"
+    },
+    {
+      "order": 18,
+      "period": "Sexto semestre",
+      "officialLabel": "T.L.O.E.P. V",
+      "credits": 5,
+      "projectionBasis": "source-only",
+      "identityKey": "tloep-v"
+    },
+    {
+      "order": 19,
+      "period": "Sexto semestre",
+      "officialLabel": "Seminario de educación artística",
+      "credits": 15,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "STEA",
+      "bedeliasName": "SEMINARIO TALLER EDUCACION ARTISTICA",
+      "bedeliasCredits": 15
+    },
+    {
+      "order": 20,
+      "period": "Sexto semestre",
+      "officialLabel": "Trabajo Final de Egreso",
+      "credits": 5,
+      "projectionBasis": "bedelias-match",
+      "sourceCourseId": "TFE",
+      "bedeliasName": "TRABAJO FINAL DE EGRESO",
+      "bedeliasCredits": 5,
+      "titleRequirement": true,
+      "layoutPlacement": "debajo de la grilla, después del sexto semestre"
+    }
+  ],
+  "bedeliasComparison": {
+    "snapshotCourseCount": 15,
+    "matchedCourseCount": 10,
+    "sourceOnlyCourseCount": 10,
+    "candidateRetainedCount": 5,
+    "candidateSourceCourseIds": [
+      "TFI",
+      "TFII",
+      "TFIII",
+      "TFIV",
+      "TFV"
+    ],
+    "interpretation": "TFI–TFV reúnen administrativamente, con la misma suma de créditos, Fotografía I–V y T.L.O.E.P. I–V. El Plan aprobado publica las actividades por separado pero no publica esos códigos ni declara equivalencia; por eso las cinco identidades de Bedelías conservan sus IDs y progreso como candidatas, sin alias automático."
+  },
+  "authorityPolicy": {
+    "verifiedBedeliasSourceCourseIds": [
+      "IUR",
+      "EPI",
+      "EPII",
+      "EPIII",
+      "EPIIV",
+      "EPIV",
+      "SOPI",
+      "SOPII",
+      "STEA",
+      "TFE"
+    ],
+    "verifiedSourceOnlyIdentityKeys": [
+      "fotografia-i",
+      "tloep-i",
+      "fotografia-ii",
+      "tloep-ii",
+      "fotografia-iii",
+      "tloep-iii",
+      "fotografia-iv",
+      "tloep-iv",
+      "fotografia-v",
+      "tloep-v"
+    ],
+    "unmatchedBedeliasEntries": "candidate",
+    "candidateVisibility": "audit-only",
+    "inventCodesForSourceOnlyRows": false,
+    "inventEquivalencesForCombinedRows": false,
+    "optionalSlotsBecomeCumulativeRequirements": false,
+    "bedeliasDoesNotAssignPeriods": true
+  },
+  "sourcePortions": {
+    "fartes-career-page": [
+      "Tecnicatura en Tecnologías de la Imagen Fotográfica.",
+      "CENUR Litoral Norte – Paysandú.",
+      "PLAN_DE_ESTUDIOS_TECNICATURA_FOTOGRAFIA_web_v.2."
+    ],
+    "fartes-plan-page-1": [
+      "Resolución del Consejo del IENBA N° 18 del 24/11/08 y Resolución del CDC N° 9 del 16/12/08.",
+      "La carrera se desarrolla en tres años (seis semestres) con un total de 240 créditos divididos en 40 créditos semestrales.",
+      "Para la aprobación de cada semestre se requiere haber cumplido con el 85% de las actividades curriculares propuestas en cada curso.",
+      "El título se obtiene habiendo aprobado los seis semestres de la Tecnicatura y la realización de un Trabajo Final de Egreso."
+    ],
+    "fartes-plan-page-2": [
+      "Primer semestre: Introducción a la Universidad (2); Estética y Percepción I (38).",
+      "Segundo semestre: Estética y Percepción II (30); Fotografía I (5); T.L.O.E.P. I (5).",
+      "Tercer semestre: Estética y Percepción III (20); Fotografía II (10); T.L.O.E.P. II (5); Seminario Opcional 1 (5), ubicado lateralmente con flecha al semestre.",
+      "Cuarto semestre: Estética y Percepción IV (20); Fotografía III (10); T.L.O.E.P. III (5); Seminario Opcional 2 (5), ubicado lateralmente con flecha al semestre.",
+      "Quinto semestre: Estética y Percepción V (10); Fotografía IV (25); T.L.O.E.P. IV (5).",
+      "Sexto semestre: Fotografía V (15); T.L.O.E.P. V (5); Seminario de educación artística (15); Trabajo Final de Egreso (5), dibujado debajo de la grilla con flecha posterior al semestre.",
+      "Desde 2019 los Seminarios Opcionales 1 y 2 se dictan como Escritura Creativa y Académica 1 y 2, respectivamente."
+    ],
+    "udelar-career-page": [
+      "Duración (meses): 60.",
+      "Créditos: 240.",
+      "Sede: Sede Paysandú."
+    ]
+  },
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "value": "sha256:5ae101c581d1f3a632e03af6ca42224bb10334b4ad0a41457cabf5b3ca411c5d"
+  }
+}

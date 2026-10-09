@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:9f2f08dd0804e84160765cf14156542deb992d8eabd61303dae6796dcf602a65",
-    "officialAuditHash": "sha256:06fa38e1f7c3cbceb8adf87b4cabe093516249efc3ab5bcc8bbb49a67e364879",
-    "reviewedTrajectoriesHash": "sha256:7b66ac126b4ef0de877ea5e3de69d0e839918beb3703eaec515aa5ee6efa1e38"
+    "extractedReportHash": "sha256:223e1e532f32c9eb2081779ed8d78560eb7054df17fb6860e7a946a238a3d750",
+    "officialAuditHash": "sha256:39ad64d1abf3cfa787656769aa9fb1cc630155be51c6a10f3f7a65330e23a3a3",
+    "reviewedTrajectoriesHash": "sha256:fb1daf2da49ba711a50d297f615e2c8d816cedb54ec107d85b5ce16116d1a014"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 95,
+      "official-trajectory-reproduced": 96,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 2,
-      "research-pending": 49
+      "research-pending": 48
     },
-    "pending": 50,
+    "pending": 49,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -67,10 +67,10 @@
         "serviceLabel": "Cenur Litoral Norte",
         "selectablePlanIds": 6,
         "states": {
-          "official-trajectory-reproduced": 3,
+          "official-trajectory-reproduced": 4,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 1,
-          "research-pending": 2
+          "research-pending": 1
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 50,
+    "total": 49,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-cenurln"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -759,8 +750,7 @@
         "serviceLabel": "Cenur Litoral Norte",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
-          "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008"
+          "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009"
         ]
       },
       {
@@ -1743,33 +1733,28 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2008",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2008-2026",
       "officialSources": [
         {
-          "authority": "Facultad de Artes, Udelar",
-          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PLAN_DE_ESTUDIOS_TECNICATURA_FOTOGRAFIA_web_v.2.pdf",
-          "role": "aprobación del Plan 2008, seis semestres, 240 créditos, título y trabajo final",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Artes, Universidad de la República",
+          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica/",
+          "reviewedAt": "2026-10-09",
+          "role": "vigencia de la carrera, referencia académica, sede Paysandú y enlace vigente al Plan 2008"
         },
         {
-          "authority": "Facultad de Artes, Udelar",
-          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica/",
-          "role": "oferta vigente, programas, coordinación y sede Paysandú",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Artes, Universidad de la República",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PLAN_DE_ESTUDIOS_TECNICATURA_FOTOGRAFIA_web_v.2.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "Plan aprobado, seis semestres, 240 créditos, veinte actividades y Trabajo Final de Egreso",
+          "contentHash": "sha256:a0f9f2a7082ea2e5420bfe28156faacfd3f773aae2cba5e881864b1eb6804f65"
         },
         {
           "authority": "Portal central de la Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica",
-          "role": "créditos y sede vigentes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Dirección General de Planeamiento, Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
-          "role": "oferta completa en 2024",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "identidad vigente, 240 créditos, sede Paysandú y contradicción de 60 meses"
         }
       ],
       "scope": {
@@ -1781,21 +1766,36 @@
         ]
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura en tecnologias de la imagen fotografica:2008",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cenurln/imagen-fotografica-2008.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:acdce21d30a95eb9db6f24fc62c269a2c954290287b5eaee1d2e376ae4adc031",
+        "projectionContentHash": "sha256:ea43ab7cd48df75d73ee006e5ee78aa384829db889cef889956faf44f7799fa4",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 20,
+        "matchedCoursePlacements": 20
       },
       "conflictNotes": [
-        "durationMonths: La UI usa 36 meses según el plan aprobado; el valor de 60 meses de Bedelías y del portal central se considera un error de metadatos.",
-        "title: Se normaliza el título con lenguaje inclusivo sin alterar la denominación jurídica del Plan 2008."
+        "El Plan aprobado publica tres años y seis semestres; prevalecen 36 meses sobre los 60 de la ficha central y del snapshot de Bedelías.",
+        "Fotografía I–V y T.L.O.E.P. I–V son actividades separadas en la grilla. Como el Plan no publica códigos, se proyectan con identidades sólo-fuente sin equipararlas con TFI–TFV.",
+        "TFI–TFV conservan sus IDs y progreso como cinco candidatas ocultas: sus cargas coinciden con la suma de dos actividades, pero esa coincidencia no crea una equivalencia oficial.",
+        "Seminario Opcional 1 y 2 ocupan un único espacio lateral de 5 créditos en tercero y cuarto; no se convierten en listas acumulativas de opciones.",
+        "El Trabajo Final de Egreso aparece después del sexto semestre, completa los 240 créditos y se conserva además como requisito explícito del título."
       ]
     },
     {
@@ -13392,5 +13392,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:f2384b76f13d7d57590f25a84bb59536052e921b14a2de477b7362503e0e4fe7"
+  "contentHash": "sha256:4a8a7911d32200b36a3ceeca238695ca3f8fce372964a3d7bd2a45d7477589e3"
 }

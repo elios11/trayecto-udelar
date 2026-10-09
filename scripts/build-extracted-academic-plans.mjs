@@ -25,6 +25,7 @@ const fceaEstadistica2014Path = path.join(projectRoot, "data", "fcea", "estadist
 const fceaEconomiaAgricola2022Path = path.join(projectRoot, "data", "fcea", "economia-agricola-2022-trayectorias.json");
 const cenurlnBiologiaBioquimica2016Path = path.join(projectRoot, "data", "cenurln", "ciclo-biologia-bioquimica-2016.json");
 const cenurlnCicloInicialMatematica2012Path = path.join(projectRoot, "data", "cenurln", "ciclo-inicial-matematica-2012.json");
+const cenurlnImagenFotografica2008Path = path.join(projectRoot, "data", "cenurln", "imagen-fotografica-2008.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -750,6 +751,9 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
           ? "official-curriculum"
           : curriculum.usePublishedCredits === true ? "bedelias-composition" : "bedelias-composition-creditless",
         ruleCoverage: "not-scraped",
+        ...(courseOverride.elective === true ? { elective: true } : {}),
+        ...(courseOverride.catalogRole ? { catalogRole: courseOverride.catalogRole } : {}),
+        ...(courseOverride.availabilityStatus ? { availabilityStatus: courseOverride.availabilityStatus } : {}),
       }, authorityStatus, { officialIdentity: hasOfficialIdentity, officialCredits: hasOfficialCredits });
       courses.push(course);
       if (sharedKey) sharedProfileCourses.set(sharedKey, course);
@@ -1688,6 +1692,103 @@ function cenurlnBiologiaBioquimica2016Reconciliation(source) {
   };
 }
 
+function cenurlnImagenFotografica2008Reconciliation(source) {
+  const curriculumSource = source.sources.find(({ id }) => id === "fartes-plan-2008");
+  const sourceUrl = curriculumSource?.url;
+  const matchedRows = source.rows.filter(({ projectionBasis }) => projectionBasis === "bedelias-match");
+  const sourceOnlyRows = source.rows.filter(({ projectionBasis }) => projectionBasis === "source-only");
+  const projectionAnomalies = [
+    {
+      field: "durationMonths",
+      resolution: "El Plan aprobado publica tres años y seis semestres; prevalecen 36 meses sobre los 60 de la ficha central y del snapshot de Bedelías.",
+    },
+    {
+      field: "TFI-TFV.identity",
+      resolution: "Bedelías reúne Fotografía y T.L.O.E.P. de cada nivel en TFI–TFV. El Plan las publica como actividades separadas, pero no declara códigos ni equivalencia: las cinco identidades administrativas permanecen candidatas sin alias.",
+    },
+    {
+      field: "TFE.placement",
+      resolution: "El Trabajo Final de Egreso se dibuja después del sexto semestre. Se coloca al final de ese tramo para reconciliar la carga de 40 créditos y, por separado, se exige como requisito del título.",
+    },
+    {
+      field: "semesterApproval",
+      resolution: "El 85 % publicado refiere al cumplimiento de actividades de cada curso para aprobar el semestre; no se convierte en créditos, materias adicionales ni una regla acumulativa automática.",
+    },
+  ];
+  return {
+    reviewedAt: source.reviewedAt,
+    officialPlan: {
+      durationMonths: source.publication.durationMonths,
+      minimumCredits: source.publication.minimumCredits,
+      current: source.publication.currentAtReview,
+    },
+    sources: source.sources.map((entry) => ({
+      url: entry.url,
+      authority: entry.authority,
+      supports: entry.supports,
+      ...(entry.contentHash ? { contentHash: entry.contentHash } : {}),
+    })),
+    trajectories: source.trajectories.map((trajectory) => ({
+      ...trajectory,
+      sourceUrl,
+      catalogSourceCourseIds: [],
+    })),
+    curriculum: {
+      sourceUrl,
+      sourceDataPath: "data/cenurln/imagen-fotografica-2008.json",
+      useBedeliasCompositionTree: true,
+      preserveBedeliasCourseIds: true,
+      usePublishedCredits: true,
+      strictOfficialCourseIds: true,
+      verifiedCourseIds: source.authorityPolicy.verifiedBedeliasSourceCourseIds,
+      includeAllCoursesInPathwayCatalog: false,
+      courseOverrides: Object.fromEntries(matchedRows.map((row) => [row.sourceCourseId, {
+        name: row.officialLabel,
+        preserveName: true,
+        officialIdentity: true,
+        officialCredits: true,
+        credits: row.credits,
+        creditSourceUrl: sourceUrl,
+        ...(row.electiveSlot ? {
+          elective: true,
+          catalogRole: "official-semester-option-slot",
+          availabilityStatus: "published-plan-slot",
+        } : {}),
+      }])),
+      additionalCourses: sourceOnlyRows.map((row) => ({
+        id: row.identityKey,
+        name: row.officialLabel,
+        credits: row.credits,
+        requirementId: "plan-total",
+        periodLabel: row.period,
+        sourceUrl,
+      })),
+      requiredCourseGroups: [{
+        id: "trabajo-final-egreso",
+        label: "Trabajo Final de Egreso",
+        minCompleted: 1,
+        sourceCourseIds: [source.publication.titleRequirement.requiredActivityId],
+        sourceUrl,
+      }],
+      credentials: [{
+        id: "bedelias-degree",
+        title: source.publication.credential,
+        minTotalCredits: source.publication.minimumCredits,
+        nodeRequirements: [],
+        requiredCourseGroupIds: ["trabajo-final-egreso"],
+        sourceUrl,
+      }],
+      periodOrder: source.trajectories[0].periods.map(({ label }) => label),
+      pathwayLabel: "Currícula",
+      pathwayDescription: source.trajectories[0].description,
+      projectionAnomalies,
+    },
+    uiNotice: "Plan 2008 completo en Paysandú: seis semestres de 40 créditos. Fotografía y T.L.O.E.P. se muestran como actividades separadas según la grilla oficial; los códigos combinados TFI–TFV de Bedelías se conservan sólo como candidatas. Los seminarios opcionales ocupan un espacio por semestre y el Trabajo Final de Egreso cierra el sexto tramo y es requisito del título.",
+    remainingWork: "Revisar únicamente si Facultad de Artes publica una revisión del Plan, alternativas concretas para los seminarios opcionales o códigos separados para Fotografía y T.L.O.E.P.; no inferir equivalencias desde TFI–TFV.",
+    additionalAnomalies: projectionAnomalies,
+  };
+}
+
 function cenurlnCicloInicialMatematica2012Reconciliation(source) {
   const curriculumSource = source.sources.find(({ id }) => id === "impo-plan-2012");
   const sourceUrl = curriculumSource?.url;
@@ -1855,6 +1956,7 @@ export async function buildExtractedAcademicPlans() {
   const fceaEconomiaAgricola2022 = await loadJson(fceaEconomiaAgricola2022Path);
   const cenurlnBiologiaBioquimica2016 = await loadJson(cenurlnBiologiaBioquimica2016Path);
   const cenurlnCicloInicialMatematica2012 = await loadJson(cenurlnCicloInicialMatematica2012Path);
+  const cenurlnImagenFotografica2008 = await loadJson(cenurlnImagenFotografica2008Path);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -1893,6 +1995,7 @@ export async function buildExtractedAcademicPlans() {
     ["licenciatura en economia agricola y gestion de agronegocios:2022", fceaEconomiaAgricola2022Reconciliation(fceaEconomiaAgricola2022)],
     [cenurlnBiologiaBioquimica2016.auditIdentity, cenurlnBiologiaBioquimica2016Reconciliation(cenurlnBiologiaBioquimica2016)],
     [cenurlnCicloInicialMatematica2012.auditIdentity, cenurlnCicloInicialMatematica2012Reconciliation(cenurlnCicloInicialMatematica2012)],
+    [cenurlnImagenFotografica2008.auditIdentity, cenurlnImagenFotografica2008Reconciliation(cenurlnImagenFotografica2008)],
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,

@@ -28445,9 +28445,9 @@
       "identity": "tecnicatura en tecnologias de la imagen fotografica:2008",
       "career": "TECNICATURA EN TECNOLOGÍAS DE LA IMAGEN FOTOGRÁFICA",
       "planYear": "2008",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-09",
       "status": "official-evidence-complete",
-      "scope": "vigencia, estructura, título, créditos y sede",
+      "scope": "vigencia, trayectoria de seis semestres, catálogo, título, créditos y sede",
       "publicationEligible": false,
       "officialPlan": {
         "title": "Técnico/a Universitario/a en Tecnologías de la Imagen Fotográfica",
@@ -28473,7 +28473,7 @@
         "metadataCurrent": true,
         "publishedDurationMonths": 60,
         "publishedMinimumCredits": 240,
-        "interpretation": "La composición y el mínimo de Bedelías coinciden con las áreas del plan oficial. La duración de 60 meses contradice los seis semestres aprobados y se corrige a 36 meses."
+        "interpretation": "Diez identidades coinciden inequívocamente con actividades del Plan. TFI–TFV reúnen administrativamente Fotografía y T.L.O.E.P. de cada nivel, por lo que se conservan como candidatas sin alias; la duración de 60 meses contradice los seis semestres aprobados y se corrige a 36 meses."
       },
       "conclusion": {
         "canonicalModel": "regional-complete-technical-degree",
@@ -28482,7 +28482,10 @@
         "normalization": [
           "Corregir la duración a tres años y mantener el mínimo de 240 créditos.",
           "Ofrecer únicamente Paysandú como sede oficial.",
-          "Conservar los bloques secuenciales de Bedelías y el Trabajo Final de Egreso.",
+          "Reproducir los seis semestres y las veinte actividades del Plan; conservar códigos sólo en las diez correspondencias inequívocas.",
+          "Crear identidades sólo-fuente para Fotografía I–V y T.L.O.E.P. I–V sin códigos ni equivalencias inventadas.",
+          "Conservar TFI–TFV con sus IDs y progreso como candidatas ocultas.",
+          "Exigir el Trabajo Final de Egreso tanto en los 240 créditos como en el requisito específico del título.",
           "No crear una orientación Fotografía separada ni fusionarla con la Licenciatura en Artes de Montevideo."
         ]
       },
@@ -28490,8 +28493,9 @@
         {
           "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PLAN_DE_ESTUDIOS_TECNICATURA_FOTOGRAFIA_web_v.2.pdf",
           "authority": "Facultad de Artes, Udelar",
+          "contentHash": "sha256:a0f9f2a7082ea2e5420bfe28156faacfd3f773aae2cba5e881864b1eb6804f65",
           "supports": [
-            "aprobación del Plan 2008, seis semestres, 240 créditos, título y trabajo final"
+            "aprobación del Plan 2008, seis semestres, 240 créditos, veinte actividades, regla semestral, título y trabajo final"
           ]
         },
         {
@@ -28505,7 +28509,7 @@
           "url": "https://udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica",
           "authority": "Portal central de la Universidad de la República",
           "supports": [
-            "créditos y sede vigentes"
+            "identidad, créditos y sede vigentes, y contradicción publicada de 60 meses"
           ]
         },
         {
@@ -28524,9 +28528,21 @@
         {
           "field": "title",
           "resolution": "Se normaliza el título con lenguaje inclusivo sin alterar la denominación jurídica del Plan 2008."
+        },
+        {
+          "field": "trajectory",
+          "resolution": "La grilla se leyó visualmente: Seminario Opcional 1 está en tercero, Seminario Opcional 2 en cuarto y el Trabajo Final de Egreso cierra el sexto tramo."
+        },
+        {
+          "field": "TFI-TFV.identity",
+          "resolution": "La coincidencia de carga con la suma de Fotografía y T.L.O.E.P. no demuestra identidad ni equivalencia. TFI–TFV conservan sus IDs y progreso como candidatas sin alias automático."
+        },
+        {
+          "field": "semesterApproval",
+          "resolution": "El 85 % publicado corresponde a actividades de cada curso; no se convierte en créditos ni en una obligación acumulativa adicional."
         }
       ],
-      "remainingWork": "La secuencia de previaturas se limita a las reglas publicadas por Bedelías; no se deduce de la distribución semestral."
+      "remainingWork": "Revisar sólo si Facultad de Artes publica una revisión, alternativas concretas para los seminarios opcionales o códigos separados para Fotografía y T.L.O.E.P. Las previaturas se limitan a reglas publicadas y no se deducen de los semestres."
     },
     {
       "identity": "tecnicatura universitaria en bienes culturales:2021",
@@ -74889,6 +74905,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:06fa38e1f7c3cbceb8adf87b4cabe093516249efc3ab5bcc8bbb49a67e364879",
+  "contentHash": "sha256:39ad64d1abf3cfa787656769aa9fb1cc630155be51c6a10f3f7a65330e23a3a3",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

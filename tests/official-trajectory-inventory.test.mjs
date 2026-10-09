@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 95,
+    "official-trajectory-reproduced": 96,
     "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 2,
-    "research-pending": 49,
+    "research-pending": 48,
   });
-  assert.equal(savedInventory.pendingQueue.total, 50);
-  assert.equal(savedInventory.pendingQueue.plans.length, 50);
+  assert.equal(savedInventory.pendingQueue.total, 49);
+  assert.equal(savedInventory.pendingQueue.plans.length, 49);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 1).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(1).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 

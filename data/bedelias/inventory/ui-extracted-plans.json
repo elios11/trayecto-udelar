@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:fa0b9d9f7af12ac9e4322af9bb7294c81848d469f188a7c6568703d477f7624a",
-    "officialAuditHash": "sha256:06fa38e1f7c3cbceb8adf87b4cabe093516249efc3ab5bcc8bbb49a67e364879",
+    "auditQueueHash": "sha256:a9c8493f15dd923669b5f75ab1306bf2949595736701e0c7bc1af06994d98fca",
+    "officialAuditHash": "sha256:39ad64d1abf3cfa787656769aa9fb1cc630155be51c6a10f3f7a65330e23a3a3",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -22,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4939,
-      "candidate": 26645,
+      "verified": 4959,
+      "candidate": 26635,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31592,
-    "afterPublishedCourses": 4939,
+    "beforePublishedCourses": 31602,
+    "afterPublishedCourses": 4959,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1718,
-    "visibleTargetsWithUnpublishedDependencies": 1476,
+    "afterPublishedRules": 1723,
+    "visibleTargetsWithUnpublishedDependencies": 1477,
     "plansWithVerifiedCatalog": 65,
-    "plansWithPartialCatalog": 60,
-    "plansWithStructureOnly": 14
+    "plansWithPartialCatalog": 61,
+    "plansWithStructureOnly": 13
   },
   "plans": [
     {
@@ -273,28 +273,37 @@
       "facultyCode": "CENURLN",
       "snapshotPath": "data/bedelias/cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "paysandu"
       ],
       "before": {
-        "publishedCourses": 15,
+        "publishedCourses": 25,
         "publishedRules": 11
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 15,
-        "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 20,
+        "hiddenCourses": 5,
+        "publishedRules": 5,
+        "rulesWithUnpublishedDependencies": 1
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 15,
+        "verified": 20,
+        "candidate": 5,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
+      },
+      "authorityReconciliation": {
+        "after": {
+          "verified": 20,
+          "candidate": 5,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 0
+        }
       }
     },
     {
@@ -4612,5 +4621,5 @@
       }
     }
   ],
-  "contentHash": "sha256:9f2f08dd0804e84160765cf14156542deb992d8eabd61303dae6796dcf602a65"
+  "contentHash": "sha256:223e1e532f32c9eb2081779ed8d78560eb7054df17fb6860e7a946a238a3d750"
 }

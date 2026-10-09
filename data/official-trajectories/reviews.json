@@ -168,6 +168,58 @@
       ]
     },
     {
+      "planId": "bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2008-2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Artes, Universidad de la República",
+          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica/",
+          "reviewedAt": "2026-10-09",
+          "role": "vigencia de la carrera, referencia académica, sede Paysandú y enlace vigente al Plan 2008"
+        },
+        {
+          "authority": "Facultad de Artes, Universidad de la República",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PLAN_DE_ESTUDIOS_TECNICATURA_FOTOGRAFIA_web_v.2.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "Plan aprobado, seis semestres, 240 créditos, veinte actividades y Trabajo Final de Egreso",
+          "contentHash": "sha256:a0f9f2a7082ea2e5420bfe28156faacfd3f773aae2cba5e881864b1eb6804f65"
+        },
+        {
+          "authority": "Portal central de la Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/tecnicatura-en-tecnologias-de-la-imagen-fotografica",
+          "reviewedAt": "2026-10-09",
+          "role": "identidad vigente, 240 créditos, sede Paysandú y contradicción de 60 meses"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cenurln/imagen-fotografica-2008.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cenurln-tecnicatura-en-tecnologias-de-la-imagen-fotografica-2008.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Plan aprobado publica tres años y seis semestres; prevalecen 36 meses sobre los 60 de la ficha central y del snapshot de Bedelías.",
+        "Fotografía I–V y T.L.O.E.P. I–V son actividades separadas en la grilla. Como el Plan no publica códigos, se proyectan con identidades sólo-fuente sin equipararlas con TFI–TFV.",
+        "TFI–TFV conservan sus IDs y progreso como cinco candidatas ocultas: sus cargas coinciden con la suma de dos actividades, pero esa coincidencia no crea una equivalencia oficial.",
+        "Seminario Opcional 1 y 2 ocupan un único espacio lateral de 5 créditos en tercero y cuarto; no se convierten en listas acumulativas de opciones.",
+        "El Trabajo Final de Egreso aparece después del sexto semestre, completa los 240 créditos y se conserva además como requisito explícito del título."
+      ]
+    },
+    {
       "planId": "bedelias-fing-ingenieria-en-sistemas-de-comunicacion-2018",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-10-03",
