@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:cfd2613cd8460142d57752f1de5b09cacd0e43f1d3671c80c428320b9b4ea10f",
-    "officialAuditHash": "sha256:e67bfaa2df2e8802012322c29e67909ea98d0bb41b08807dbc9cacbda12def3b",
+    "auditQueueHash": "sha256:80b4c6b48bbc590ce58804e2126f4781a5cf9f2b5c0026a9b1bae05d05e04b68",
+    "officialAuditHash": "sha256:2affecafe51218e4e5110340ff6c935db08b98e17ff9955823bee9ed38b5b6d1",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -22,19 +22,19 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 4959,
-      "candidate": 26635,
+      "verified": 4958,
+      "candidate": 26636,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
     "beforePublishedCourses": 31602,
-    "afterPublishedCourses": 4959,
+    "afterPublishedCourses": 4958,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1723,
     "visibleTargetsWithUnpublishedDependencies": 1477,
-    "plansWithVerifiedCatalog": 65,
-    "plansWithPartialCatalog": 61,
+    "plansWithVerifiedCatalog": 64,
+    "plansWithPartialCatalog": 62,
     "plansWithStructureOnly": 13
   },
   "plans": [
@@ -542,7 +542,7 @@
       "facultyCode": "CUCEL",
       "snapshotPath": "data/bedelias/cucel-tecnologo-en-produccion-equina-2022.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "verified",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -553,14 +553,14 @@
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 46,
-        "hiddenCourses": 0,
+        "publishedCourses": 45,
+        "hiddenCourses": 1,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 46,
-        "candidate": 0,
+        "verified": 45,
+        "candidate": 1,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4621,5 +4621,5 @@
       }
     }
   ],
-  "contentHash": "sha256:204a8c51d0f6481c0247187a9c0e2ea21a4dfe6011daac2311c56d9209a5cec0"
+  "contentHash": "sha256:99a5af21643e05cf9e777b300b84e4d2d74782a459ce49139145a7a6a9971211"
 }

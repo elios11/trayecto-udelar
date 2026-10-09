@@ -1241,17 +1241,17 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 - Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:38a3841fa4c10615a866d46a50995c1cb1416d7c62d796950aa832a5879b3d8a`. Cola funcional vacía; hash `sha256:189cea525ce4dd06e66809107faa7c9f80d974fbbf86caab4928dcd737a78f2f`.
 - Siguiente paso: auditar el Tecnólogo en Producción Equina Plan 2022, primera identidad reproducible restante.
 
-### Tecnólogo en Producción Equina — plan conjunto y trayectoria sugerida operativos 2026-08-24
+### Tecnólogo en Producción Equina — Plan 2021 y ejemplo oficial reconciliados 2026-10-09
 
-- La resolución de ANEP-DGETP y el plan conjunto publicado por IMPO establecen seis semestres, 270 créditos y el título de Tecnólogo en Producción Equina. La UI muestra la denominación oficial Plan 2021 y conserva Plan 2022 sólo como identidad técnica de la oferta de Bedelías iniciada en 2022.
+- La resolución de ANEP-DGETP y el plan conjunto publicado por IMPO establecen seis semestres, 270 créditos y el título de Tecnólogo en Producción Equina. La UI muestra la denominación oficial Plan 2021 y conserva 2022 sólo como identidad técnica de Bedelías, sin convertirla en otro plan ni inferir oferta abierta en 2026.
 - Se corrigen los metadatos imposibles de Bedelías: seis meses y 225 créditos pasan a 36 meses y 270 créditos. La referencia anterior de Facultad de Veterinaria a 254 créditos se documenta como versión superada por la aprobación de 270.
 - El egreso controla 36+15 créditos del eje Básico e introductorio, 122+29 de Producción equina, 32+12 de Formación integral y 24 del Trabajo Final. Los 56 créditos optativos del cuadro oficial cierran el total; la contradicción con la frase narrativa “al menos 55” queda explícita.
-- La distribución oficial de seis semestres se publica como trayectoria sugerida, no como orden obligatorio. Las optativas se mantienen flexibles y la unidad Introducción a las Dinámicas Universitarias, incorporada actualmente en Bedelías, queda disponible sin convertirse por inferencia en requisito de egreso.
-- La carrera se representa una sola vez con sede Melo, Cerro Largo y sin variante territorial. Las previaturas se limitan a reglas efectivamente publicadas por Bedelías.
-- El generador admite correcciones oficiales por código de unidad, orden reproducible de períodos y grupos nominales obligatorios dentro de composiciones jerárquicas; esto evita alterar el snapshot y mantiene trazabilidad entre la fuente administrativa y la normativa.
-- Registro de auditoría: hash `sha256:47bee90131fa5750315546f96be45ecf0592e15f18b7bcaa556eb27d098d926a`. Cola general: 76 identidades pendientes; hash `sha256:80b991a370e546248b7bef0819dffe7e048c4335da1923a9c4a168ede4301f6a`.
-- Manifiesto UI: 143 proyecciones, todas con composición utilizable, 33 con más de una sede oficial y treinta y cuatro identidades excluidas; hash `sha256:3d6393feff5a245eb896dc3347eb0fd64e3fa03b0b02a93baef93a11cdf48555`. Cola funcional vacía; hash `sha256:087f0f4f91f6a3719076bb0957669db45160aef561ef595618d82fb42ca66c82`.
-- Siguiente paso: auditar el Tecnólogo en Sistemas Integrados de Producción Agropecuaria Plan 2022, primera identidad reproducible restante.
+- El anexo rotula la tabla como `EJEMPLO`: se reproduce en seis semestres con 45 identidades, pero no como orden obligatorio ni promesa de dictado. La nota exige una oferta optativa mayor que la selección ilustrada. `INFO`, `IT1`, `IT2`, `PBA` y `ECD` se ubican conforme a la tabla visualmente cotejada; Introducción a las Dinámicas Universitarias aparece sólo en el snapshot y queda como candidata fuera del catálogo publicado, la trayectoria y el egreso.
+- La carrera se representa una sola vez con sede Melo, Cerro Largo y sin variante territorial. La etiqueta regional inconsistente de la guía FVET no se propaga. Las previaturas se limitan a reglas efectivamente publicadas por Bedelías.
+- El artefacto `data/cucel/produccion-equina-2021-trajectory-review.json` conserva páginas inspeccionadas, porciones normalizadas, huellas, 45 identidades y sus seis períodos. `npm run trajectory:cucel-produccion-equina-2021` regenera offline y valida orden, catálogo, IDs/progreso y la frontera entre verificadas y candidatas.
+- Registro de auditoría: hash `sha256:2affecafe51218e4e5110340ff6c935db08b98e17ff9955823bee9ed38b5b6d1`. La cola general permanece cerrada en cero pendientes; hash `sha256:80b4c6b48bbc590ce58804e2126f4781a5cf9f2b5c0026a9b1bae05d05e04b68`.
+- Manifiesto UI: 139 proyecciones, todas con composición utilizable, 48 con sedes oficiales y 38 identidades excluidas; hash `sha256:99a5af21643e05cf9e777b300b84e4d2d74782a459ce49139145a7a6a9971211`. Cola funcional vacía; hash `sha256:e918ab02f594f35aa9ca2d0054b8609f03fbce5e35c9d12f948c2482cd4844a6`.
+- Inventario D03: 97 trayectorias reproducidas, una identificada pendiente, 46 en investigación y tres ausencias documentadas; hash `sha256:90489e594906f7a74f5bde90bb6028b718fb969b33562cca935d2f0ee59fa6b3`.
 
 ### TESIPA Plan 2022 — currículo semiabierto y trayectorias operativas 2026-08-24
 

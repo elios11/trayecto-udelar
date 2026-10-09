@@ -2223,6 +2223,54 @@
         "La práctica curricular puede acreditarse luego de 200 créditos y su carga depende de la duración; se conserva flexible con cero créditos predeterminados.",
         "Las dos menciones acreditan un único título y comparten el mismo progreso del Plan 2022."
       ]
+    },
+    {
+      "planId": "bedelias-cucel-tecnologo-en-produccion-equina-2022",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2022-01-21",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Melo, Cerro Largo"],
+        "pathwayIds": ["bedelias"]
+      },
+      "sources": [
+        {
+          "authority": "Consejo Directivo Central de Udelar / Diario Oficial - IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2022/01/21/avisos.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "Plan 2021 aprobado, título, 270 créditos y ejemplo completo de distribución en seis semestres con nota de flexibilidad optativa"
+        },
+        {
+          "authority": "ANEP - Dirección General de Educación Técnico Profesional",
+          "url": "https://www.utu.edu.uy/wp-content/themes/balpadraUTU/data/archivodigital/resoluciones/2022/11/fojas-res-2021254007158.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "Resolución 7158/2021, malla del plan conjunto y distribución de unidades curriculares por semestre"
+        },
+        {
+          "authority": "Facultad de Veterinaria, Udelar",
+          "url": "https://www.fvet.edu.uy/wp-content/uploads/2024/08/Guia_estudiantil-FVET-actualizada-2024.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "duración de tres años, 270 créditos y dictado conjunto en Melo; no se usa para afirmar oferta abierta en 2026"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cucel/produccion-equina-2021-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cucel-tecnologo-en-produccion-equina-2022.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El anexo rotula expresamente la tabla como ejemplo y su nota exige una oferta optativa más amplia; los seis semestres se reproducen como guía flexible, no como secuencia obligatoria.",
+        "El texto narrativo exige al menos 55 créditos optativos, mientras el cuadro oficial suma 56 y sólo con 56 alcanza los 270 créditos; la proyección conserva los mínimos del cuadro y documenta el conflicto.",
+        "Plan 2021 es la identificación oficial; 2022 se conserva únicamente como identidad técnica de Bedelías y no crea otro plan.",
+        "La duración oficial es 36 meses/seis semestres; el dato técnico de seis meses se corrige sin alterar la identidad persistida.",
+        "Introducción a las Dinámicas Universitarias existe en el snapshot pero no en el ejemplo oficial: queda como candidata no publicada y sin aporte a requisitos o trayectoria.",
+        "La guía FVET 2024 confirma Melo pero usa una etiqueta regional inconsistente; se conserva la sede y no se propaga esa etiqueta ni se extrapola oferta vigente."
+      ]
     }
   ]
 }

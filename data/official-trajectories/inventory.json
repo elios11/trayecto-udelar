@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:204a8c51d0f6481c0247187a9c0e2ea21a4dfe6011daac2311c56d9209a5cec0",
-    "officialAuditHash": "sha256:e67bfaa2df2e8802012322c29e67909ea98d0bb41b08807dbc9cacbda12def3b",
-    "reviewedTrajectoriesHash": "sha256:816fdd81d473b3bf0c20054008c4071278514746cbf8d31a22eaf7684e1c4f15"
+    "extractedReportHash": "sha256:99a5af21643e05cf9e777b300b84e4d2d74782a459ce49139145a7a6a9971211",
+    "officialAuditHash": "sha256:2affecafe51218e4e5110340ff6c935db08b98e17ff9955823bee9ed38b5b6d1",
+    "reviewedTrajectoriesHash": "sha256:9fea7b77f6bd07e2ef3c08a83d0c17a83861492a1ed86cde6772eb30d9ea1b32"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 96,
+      "official-trajectory-reproduced": 97,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 47
+      "research-pending": 46
     },
-    "pending": 48,
+    "pending": 47,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -34,10 +34,10 @@
         "serviceLabel": "Centro Universitario Regional Noreste - Cucel",
         "selectablePlanIds": 2,
         "states": {
-          "official-trajectory-reproduced": 0,
+          "official-trajectory-reproduced": 1,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 2
+          "research-pending": 1
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 48,
+    "total": 47,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cucel-tecnologo-en-produccion-equina-2022",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-cucel"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -716,7 +707,6 @@
         "serviceLabel": "Centro Universitario Regional Noreste - Cucel",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-cucel-tecnologo-en-produccion-equina-2022",
           "bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022"
         ]
       },
@@ -1986,39 +1976,27 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2021",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2022-01-21",
       "officialSources": [
         {
-          "authority": "Diario Oficial - IMPO",
+          "authority": "Consejo Directivo Central de Udelar / Diario Oficial - IMPO",
           "url": "https://www.impo.com.uy/diariooficial/2022/01/21/avisos.pdf",
-          "role": "texto oficial del plan; 270 créditos; estructura por ejes; Trabajo Final; mapa y trayectoria sugerida de seis semestres",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "Plan 2021 aprobado, título, 270 créditos y ejemplo completo de distribución en seis semestres con nota de flexibilidad optativa"
         },
         {
           "authority": "ANEP - Dirección General de Educación Técnico Profesional",
           "url": "https://www.utu.edu.uy/wp-content/themes/balpadraUTU/data/archivodigital/resoluciones/2022/11/fojas-res-2021254007158.pdf",
-          "role": "Resolución 7158/2021; plan conjunto ANEP-Udelar",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "Resolución 7158/2021, malla del plan conjunto y distribución de unidades curriculares por semestre"
         },
         {
           "authority": "Facultad de Veterinaria, Udelar",
           "url": "https://www.fvet.edu.uy/wp-content/uploads/2024/08/Guia_estudiantil-FVET-actualizada-2024.pdf",
-          "role": "vigencia; tres años; 270 créditos; dictado conjunto en Melo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Dirección General de Planeamiento, Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
-          "role": "Plan 2021; tres años; 270 créditos; sede Cerro Largo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Universidad de la República",
-          "url": "https://udelar.edu.uy/noticias/se-presentaron-nuevas-carreras-en-cerro-largo",
-          "role": "inicio de cursos en 2022; oferta en Cerro Largo; cogestión Udelar-UTU",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "duración de tres años, 270 créditos y dictado conjunto en Melo; no se usa para afirmar oferta abierta en 2026"
         }
       ],
       "scope": {
@@ -2036,18 +2014,31 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnologo en produccion equina:2022",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cucel-tecnologo-en-produccion-equina-2022.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cucel/produccion-equina-2021-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cucel-tecnologo-en-produccion-equina-2022.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:96ccee8434f5f33deb6b3434f52361245b26f424563a251a43ae379c845f37c8",
+        "projectionContentHash": "sha256:baa6cda3f58c6eea1576be193c301d6cc48bac76b3771246a38a59b737ec687a",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 45,
+        "matchedCoursePlacements": 45
       },
       "conflictNotes": [
-        "planYear: La UI muestra Plan 2021, como lo identifica Planeamiento Udelar; Bedelías conserva 2022 como año técnico de la oferta iniciada en agosto de 2022.",
-        "durationMonths: Se corrige el valor imposible de seis meses publicado por Bedelías y el portal central: el plan y las guías oficiales establecen seis semestres/tres años.",
-        "minimumCredits: Se sustituye el mínimo 225 de Bedelías y la ficha FVET antigua de 254 por los 270 créditos del plan aprobado y las guías vigentes.",
-        "optionalCredits: El texto narrativo dice al menos 55 créditos optativos, pero su cuadro suma 56 y el total oficial sólo cierra con 56; la UI conserva los mínimos por eje del cuadro y documenta la discrepancia.",
-        "courseCredits: La trayectoria usa los créditos del anexo oficial; la unidad introductoria adicional de Bedelías queda disponible sin contarse como obligatoria para el egreso."
+        "El anexo rotula expresamente la tabla como ejemplo y su nota exige una oferta optativa más amplia; los seis semestres se reproducen como guía flexible, no como secuencia obligatoria.",
+        "El texto narrativo exige al menos 55 créditos optativos, mientras el cuadro oficial suma 56 y sólo con 56 alcanza los 270 créditos; la proyección conserva los mínimos del cuadro y documenta el conflicto.",
+        "Plan 2021 es la identificación oficial; 2022 se conserva únicamente como identidad técnica de Bedelías y no crea otro plan.",
+        "La duración oficial es 36 meses/seis semestres; el dato técnico de seis meses se corrige sin alterar la identidad persistida.",
+        "Introducción a las Dinámicas Universitarias existe en el snapshot pero no en el ejemplo oficial: queda como candidata no publicada y sin aporte a requisitos o trayectoria.",
+        "La guía FVET 2024 confirma Melo pero usa una etiqueta regional inconsistente; se conserva la sede y no se propaga esa etiqueta ni se extrapola oferta vigente."
       ]
     },
     {
@@ -13371,5 +13362,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:61dabfa535f0e2f81df2b5feaf8196abbb862114cecd524e04c7e1ec83079dec"
+  "contentHash": "sha256:90489e594906f7a74f5bde90bb6028b718fb969b33562cca935d2f0ee59fa6b3"
 }

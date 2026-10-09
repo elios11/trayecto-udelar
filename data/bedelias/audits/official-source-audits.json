@@ -28919,9 +28919,9 @@
       "identity": "tecnologo en produccion equina:2022",
       "career": "TECNÓLOGO EN PRODUCCIÓN EQUINA",
       "planYear": "2022",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-09",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, duración, créditos, estructura curricular, trayectoria sugerida y sede",
+      "scope": "aprobación, título, duración, créditos, ejemplo oficial de seis semestres, identidades curriculares y sede; sin inferir oferta vigente",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -28939,16 +28939,140 @@
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
           "sourceUrl": "https://www.impo.com.uy/diariooficial/2022/01/21/avisos.pdf",
-          "pathwayLabel": "Trayectoria sugerida",
-          "pathwayDescription": "Distribución orientativa de seis semestres publicada con el plan; las optativas pueden cambiar y no constituyen una secuencia obligatoria.",
+          "pathwayLabel": "Ejemplo oficial de distribución",
+          "pathwayDescription": "Ejemplo flexible y no obligatorio de seis semestres publicado con el plan; las optativas pueden cambiar y la oferta debe ser mayor que la selección ilustrada.",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "AF1",
+            "BIOQ",
+            "INFO",
+            "COE",
+            "MBE",
+            "EQUI",
+            "BAE",
+            "TIN1",
+            "BGPE",
+            "AF2",
+            "IT1",
+            "EBE",
+            "TIN2",
+            "IINV",
+            "EXRU",
+            "MGE",
+            "IT2",
+            "NAE",
+            "CEQUI",
+            "TIN3",
+            "BIOE",
+            "DDHH",
+            "PBA",
+            "GPEQ",
+            "GDE1",
+            "TIN4",
+            "ECD",
+            "DES",
+            "LEQUI",
+            "EIL",
+            "BEAP",
+            "MEGE",
+            "GDE2",
+            "TIN5",
+            "PAH",
+            "BGEQ",
+            "EGE",
+            "BSL",
+            "TDD",
+            "IMPR",
+            "MDN",
+            "MDP",
+            "PF",
+            "MKT",
+            "TRFI"
+          ],
+          "periods": [
+            {
+              "label": "Semestre 1",
+              "sourceCourseIds": [
+                "AF1",
+                "BIOQ",
+                "INFO",
+                "COE",
+                "MBE",
+                "EQUI",
+                "BAE",
+                "TIN1"
+              ]
+            },
+            {
+              "label": "Semestre 2",
+              "sourceCourseIds": [
+                "BGPE",
+                "AF2",
+                "IT1",
+                "EBE",
+                "TIN2",
+                "IINV",
+                "EXRU"
+              ]
+            },
+            {
+              "label": "Semestre 3",
+              "sourceCourseIds": [
+                "MGE",
+                "IT2",
+                "NAE",
+                "CEQUI",
+                "TIN3",
+                "BIOE",
+                "DDHH"
+              ]
+            },
+            {
+              "label": "Semestre 4",
+              "sourceCourseIds": [
+                "PBA",
+                "GPEQ",
+                "GDE1",
+                "TIN4",
+                "ECD",
+                "DES",
+                "LEQUI",
+                "EIL"
+              ]
+            },
+            {
+              "label": "Semestre 5",
+              "sourceCourseIds": [
+                "BEAP",
+                "MEGE",
+                "GDE2",
+                "TIN5",
+                "PAH",
+                "BGEQ",
+                "EGE",
+                "BSL"
+              ]
+            },
+            {
+              "label": "Semestre 6",
+              "sourceCourseIds": [
+                "TDD",
+                "IMPR",
+                "MDN",
+                "MDP",
+                "PF",
+                "MKT",
+                "TRFI"
+              ]
+            }
+          ],
           "periodOrder": [
             "Semestre 1",
             "Semestre 2",
             "Semestre 3",
             "Semestre 4",
             "Semestre 5",
-            "Semestre 6",
-            "Oferta vigente sin semestre oficial"
+            "Semestre 6"
           ],
           "courseOverrides": {
             "AF1": {
@@ -28976,15 +29100,10 @@
               "requirementId": "basic-required",
               "periodLabel": "Semestre 3"
             },
-            "CUR-UNIV": {
-              "credits": 4,
-              "requirementId": "basic-required",
-              "periodLabel": "Oferta vigente sin semestre oficial"
-            },
             "IT1": {
               "credits": 3,
               "requirementId": "basic-optional",
-              "periodLabel": "Semestre 1"
+              "periodLabel": "Semestre 2"
             },
             "COE": {
               "credits": 3,
@@ -28994,17 +29113,17 @@
             "IT2": {
               "credits": 3,
               "requirementId": "basic-optional",
-              "periodLabel": "Semestre 2"
+              "periodLabel": "Semestre 3"
             },
             "PBA-PORTUGUÉS BÁSICO": {
               "credits": 3,
               "requirementId": "basic-optional",
-              "periodLabel": "Semestre 3"
+              "periodLabel": "Semestre 4"
             },
             "INFO": {
               "credits": 3,
               "requirementId": "basic-optional",
-              "periodLabel": "Semestre 4"
+              "periodLabel": "Semestre 1"
             },
             "MBE": {
               "credits": 3,
@@ -29109,7 +29228,7 @@
             "ECD": {
               "credits": 3,
               "requirementId": "production-optional",
-              "periodLabel": "Semestre 6"
+              "periodLabel": "Semestre 4"
             },
             "MDN": {
               "credits": 3,
@@ -29299,36 +29418,40 @@
         "publishedMinimumCredits": 225,
         "publishedCourseCredits": 267,
         "compositionMatterEntries": 46,
-        "interpretation": "La composición vigente de Bedelías contiene las unidades del mapa oficial y una unidad introductoria adicional, pero sus metadatos y varios créditos por curso no reflejan el plan conjunto aprobado de 270 créditos."
+        "interpretation": "El snapshot técnico de Bedelías contiene las 45 unidades del ejemplo oficial y una unidad introductoria adicional. El snapshot sirve para conservar identidades, no para afirmar oferta vigente, y sus metadatos y varios créditos por curso no reflejan el plan conjunto aprobado de 270 créditos."
       },
       "conclusion": {
         "canonicalModel": "one-plan-one-offering",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "Las fuentes vigentes documentan una única carrera conjunta radicada en Melo. El cuadro de seis semestres es una trayectoria sugerida del mismo plan, no una carrera ni una variante territorial separada.",
+        "trajectorySourceDataPath": "data/cucel/produccion-equina-2021-trajectory-review.json",
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "reason": "Las fuentes documentan una única carrera conjunta radicada en Melo. El cuadro de seis semestres es un ejemplo oficial viable y flexible del mismo plan, no una carrera, una variante territorial ni una secuencia obligatoria; esta auditoría no afirma que exista oferta abierta en 2026.",
         "normalization": [
           "Mostrar Plan 2021 como denominación oficial y conservar 2022 como identidad técnica de la inscripción en Bedelías.",
           "Corregir la duración a 36 meses y el mínimo a 270 créditos.",
           "Controlar 214 créditos obligatorios, 56 optativos y 24 de Trabajo Final según el cuadro oficial por ejes.",
-          "Presentar la distribución de seis semestres como sugerida y conservar la flexibilidad de las optativas.",
-          "Incluir la unidad Introducción a las Dinámicas Universitarias publicada actualmente por Bedelías sin volverla requisito de egreso por inferencia."
+          "Presentar la distribución de seis semestres como ejemplo oficial no obligatorio y conservar la flexibilidad y amplitud de la oferta optativa.",
+          "Verificar las 45 identidades del ejemplo oficial y conservar Introducción a las Dinámicas Universitarias solamente como candidata del snapshot, sin publicarla en el catálogo normal ni volverla requisito de egreso."
         ]
       },
       "sources": [
         {
           "url": "https://www.impo.com.uy/diariooficial/2022/01/21/avisos.pdf",
           "authority": "Diario Oficial - IMPO",
+          "contentHash": "sha256:3725c68fe772297ff4cc3b3d1f20fa12e5461e09ad9686d4eb7de583fe0a343e",
           "supports": [
             "texto oficial del plan",
             "270 créditos",
             "estructura por ejes",
             "Trabajo Final",
-            "mapa y trayectoria sugerida de seis semestres"
+            "ejemplo oficial flexible de distribución en seis semestres"
           ]
         },
         {
           "url": "https://www.utu.edu.uy/wp-content/themes/balpadraUTU/data/archivodigital/resoluciones/2022/11/fojas-res-2021254007158.pdf",
           "authority": "ANEP - Dirección General de Educación Técnico Profesional",
+          "contentHash": "sha256:6a17b197db7c73ab7b98607ed6d1124b4bcd660a04c1e6ac5032b0e941448662",
           "supports": [
             "Resolución 7158/2021",
             "plan conjunto ANEP-Udelar"
@@ -29337,8 +29460,8 @@
         {
           "url": "https://www.fvet.edu.uy/wp-content/uploads/2024/08/Guia_estudiantil-FVET-actualizada-2024.pdf",
           "authority": "Facultad de Veterinaria, Udelar",
+          "contentHash": "sha256:0439a8f3a270beec1c78cf674031d3ebef17f0410b916ed8d094f72ff645bbbc",
           "supports": [
-            "vigencia",
             "tres años",
             "270 créditos",
             "dictado conjunto en Melo"
@@ -29383,11 +29506,11 @@
         },
         {
           "field": "courseCredits",
-          "resolution": "La trayectoria usa los créditos del anexo oficial; la unidad introductoria adicional de Bedelías queda disponible sin contarse como obligatoria para el egreso."
+          "resolution": "La trayectoria usa los créditos del anexo oficial; la unidad introductoria adicional del snapshot de Bedelías queda como candidata no publicada y no cuenta para catálogo normal, trayectoria ni egreso."
         }
       ],
-      "uiNotice": "Plan conjunto ANEP-Udelar de 270 créditos. La distribución por semestre es sugerida y la oferta optativa puede cambiar; completá los mínimos de cada eje y el Trabajo Final.",
-      "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías; no se deducen del orden semestral sugerido."
+      "uiNotice": "Plan conjunto ANEP-Udelar de 270 créditos. Los seis semestres son un ejemplo de distribución, no cursado obligatorio. Los 56 créditos optativos son mínimos por eje y no exigen cursar todas las opciones publicadas.",
+      "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías y no se deducen del ejemplo semestral. Una revisión futura de oferta requiere evidencia institucional nueva; esta auditoría no extrapola vigencia de inscripción desde el Plan 2021 ni desde la guía 2024."
     },
     {
       "identity": "tecnologo en sistemas integrados de produccion agropecuaria:2022",
@@ -75001,6 +75124,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:e67bfaa2df2e8802012322c29e67909ea98d0bb41b08807dbc9cacbda12def3b",
+  "contentHash": "sha256:2affecafe51218e4e5110340ff6c935db08b98e17ff9955823bee9ed38b5b6d1",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
