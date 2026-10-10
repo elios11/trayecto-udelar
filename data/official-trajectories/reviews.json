@@ -2,6 +2,76 @@
   "schemaVersion": 1,
   "reviews": [
     {
+      "planId": "bedelias-cur-licenciatura-en-educacion-fisica-2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2015-2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Rivera"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Instituto Superior de Educación Física, Udelar / Consejo de Formación en Educación, ANEP",
+          "url": "https://isef.udelar.edu.uy/wp-content/uploads/2012/10/VF-Programa-conjunto-a-color-con-modificaci%C3%B3n-CSE-publicada-DO.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "Plan 2014, título, créditos, áreas y Anexo 3 con ocho semestres y tres prácticas docentes anuales",
+          "contentHash": "sha256:e689573a997b8ac05d48c2c8f9e43d7fc3c5570d6a536c0bc2910401634c6a00"
+        },
+        {
+          "authority": "Diario Oficial, Universidad de la República",
+          "url": "https://www.impo.com.uy/diariooficial/2015/03/23/avisos.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "resolución 3 del CDC del 24 de febrero de 2015, expediente 008450-000678-14, que aprueba el Plan y el título",
+          "contentHash": "sha256:2b3ff765e1e952f7cf29d5542b183a4a29400ade6a1fd97c85e2c5d0b066b675"
+        },
+        {
+          "authority": "Instituto Superior de Educación Física, Universidad de la República",
+          "url": "https://isef.udelar.edu.uy/estudia-en-isef/",
+          "reviewedAt": "2026-10-09",
+          "role": "oferta 2026 de la opción Prácticas Educativas conjunta ANEP-Udelar en Rivera"
+        },
+        {
+          "authority": "Portal central de la Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-educacion-fisica-0",
+          "reviewedAt": "2026-10-09",
+          "role": "vigencia, duración de 48 meses, 360 créditos y sede Rivera"
+        },
+        {
+          "authority": "Instituto Superior de Educación Física, Universidad de la República",
+          "url": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/",
+          "reviewedAt": "2026-10-09",
+          "role": "publicación institucional vigente del Plan 2014 y contraste de la malla visible"
+        },
+        {
+          "authority": "Consejo de Formación en Educación, ANEP",
+          "url": "https://www.cfe.edu.uy/index.php/61-convenios",
+          "reviewedAt": "2026-10-09",
+          "role": "programa aprobado por ambas instituciones y radicación permanente en Rivera desde marzo de 2016"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cur/educacion-fisica-practicas-educativas-2014.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cur-licenciatura-en-educacion-fisica-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "El Anexo 3 aprobado prevalece para las prácticas docentes anuales: DPD I ocupa semestres 3-4, DPD II semestres 5-6 y DPD III semestres 7-8. El listado HTML vigente las intercala de forma incompleta y no se usa para moverlas ni duplicarlas.",
+        "La grilla oficial usa Prácticas Corporales Regionales y la tabla de créditos contigua usa el singular. Ambas referencias describen una única actividad PCR de 6 créditos en octavo semestre.",
+        "Las 406 entradas restantes de la composición Bedelías permanecen candidatas recuperables fuera del catálogo normal: no prueban inclusión oficial específica ni se convierten en obligaciones.",
+        "EVA no se usa como autoridad curricular. Los créditos, períodos e identidades provienen del Plan aprobado, y Bedelías sólo contrasta las 33 correspondencias inequívocas."
+      ]
+    },
+    {
       "planId": "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009",
       "state": "research-pending",
       "reviewedAt": "2026-10-09",

@@ -26,6 +26,7 @@ const fceaEconomiaAgricola2022Path = path.join(projectRoot, "data", "fcea", "eco
 const cenurlnBiologiaBioquimica2016Path = path.join(projectRoot, "data", "cenurln", "ciclo-biologia-bioquimica-2016.json");
 const cenurlnCicloInicialMatematica2012Path = path.join(projectRoot, "data", "cenurln", "ciclo-inicial-matematica-2012.json");
 const cenurlnImagenFotografica2008Path = path.join(projectRoot, "data", "cenurln", "imagen-fotografica-2008.json");
+const curEducacionFisica2014Path = path.join(projectRoot, "data", "cur", "educacion-fisica-practicas-educativas-2014.json");
 
 export function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-UY").replace(/[^a-z0-9]+/g, " ").trim();
@@ -1802,6 +1803,88 @@ function cenurlnImagenFotografica2008Reconciliation(source) {
   };
 }
 
+function curEducacionFisica2014Reconciliation(source) {
+  const curriculumSource = source.sources.find(({ id }) => id === "programa-conjunto-2014");
+  const sourceUrl = curriculumSource?.url;
+  const verifiedCourseIds = source.authorityPolicy.verifiedBedeliasSourceCourseIds;
+  const projectionAnomalies = source.conflicts.map(({ field, resolution }) => ({ field, resolution }));
+  return {
+    reviewedAt: source.reviewedAt,
+    officialPlan: {
+      approval: [
+        `Plan aprobado por ${source.publication.approval.resolution}, expediente ${source.publication.approval.file}`,
+        "Oferta 2026 confirmada en Rivera por ISEF y el portal central de Udelar",
+      ],
+      durationMonths: source.publication.durationMonths,
+      semesters: source.publication.semesterCount,
+      minimumCredits: source.publication.minimumCredits,
+      current: source.publication.currentAtReview,
+    },
+    sources: source.sources.map((entry) => ({
+      url: entry.url,
+      authority: entry.authority,
+      supports: entry.supports,
+      ...(entry.contentHash ? { contentHash: entry.contentHash } : {}),
+    })),
+    trajectories: source.trajectories.map((trajectory) => ({
+      ...trajectory,
+      sourceUrl,
+      catalogSourceCourseIds: [],
+      restrictGeneratedCatalogToPublished: true,
+    })),
+    curriculum: {
+      sourceUrl,
+      sourceDataPath: "data/cur/educacion-fisica-practicas-educativas-2014.json",
+      useBedeliasCompositionTree: true,
+      usePublishedCredits: true,
+      strictOfficialCourseIds: true,
+      verifiedCourseIds,
+      includeAllCoursesInPathwayCatalog: false,
+      pathRequirementMap: Object.fromEntries(source.requirements.map((requirement) => [
+        requirement.sourceGroupCode,
+        requirement.id,
+      ])),
+      courseOverrides: Object.fromEntries(source.rows.map((row) => [row.sourceCourseId, {
+        name: row.officialLabel,
+        preserveName: true,
+        officialIdentity: true,
+        officialCredits: true,
+        credits: row.credits,
+        creditSourceUrl: sourceUrl,
+        requirementId: row.requirementId,
+        periodLabel: row.period,
+      }])),
+      periodOrder: source.trajectories[0].periods.map(({ label }) => label),
+      pathwayLabel: source.trajectories[0].label,
+      pathwayDescription: source.trajectories[0].description,
+      creditRequirements: source.requirements.map((requirement) => ({
+        id: requirement.id,
+        name: requirement.name,
+        shortName: requirement.shortName,
+        minCredits: requirement.minCredits,
+      })),
+      requiredCourseGroups: [{
+        id: "mandatory-core",
+        label: "Las 33 unidades curriculares obligatorias del Plan 2014",
+        minCompleted: verifiedCourseIds.length,
+        sourceCourseIds: verifiedCourseIds,
+        sourceUrl,
+      }],
+      manualCompletionValidation: "Validación de los créditos opcionales: al menos 40% vinculados con Educación y 10 créditos de extensión, investigación o enseñanza",
+      projectionAnomalies,
+    },
+    uiNotice: "Plan conjunto ANEP-Udelar vigente en Rivera: ocho semestres y tres prácticas docentes anuales, con 33 unidades obligatorias (304 créditos) y 56 créditos opcionales. Bedelía debe validar que al menos 40% de los opcionales se vincule con Educación y que 10 créditos correspondan a extensión, investigación o enseñanza.",
+    remainingWork: "Revisar sólo si ISEF o CFE publican una modificación del Plan 2014 o una clasificación oficial de las alternativas opcionales; no inferir inclusión desde EVA ni desde la composición administrativa de Bedelías.",
+    additionalAnomalies: [
+      ...projectionAnomalies,
+      {
+        field: "admissions",
+        resolution: "ISEF publica la opción Prácticas Educativas conjunta ANEP-Udelar dentro de su oferta 2026 en Rivera; la continuidad ya no se apoya sólo en actividad académica de cohortes anteriores.",
+      },
+    ],
+  };
+}
+
 function cenurlnCicloInicialMatematica2012Reconciliation(source) {
   const curriculumSource = source.sources.find(({ id }) => id === "impo-plan-2012");
   const sourceUrl = curriculumSource?.url;
@@ -1970,6 +2053,7 @@ export async function buildExtractedAcademicPlans() {
   const cenurlnBiologiaBioquimica2016 = await loadJson(cenurlnBiologiaBioquimica2016Path);
   const cenurlnCicloInicialMatematica2012 = await loadJson(cenurlnCicloInicialMatematica2012Path);
   const cenurlnImagenFotografica2008 = await loadJson(cenurlnImagenFotografica2008Path);
+  const curEducacionFisica2014 = await loadJson(curEducacionFisica2014Path);
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -2009,6 +2093,7 @@ export async function buildExtractedAcademicPlans() {
     [cenurlnBiologiaBioquimica2016.auditIdentity, cenurlnBiologiaBioquimica2016Reconciliation(cenurlnBiologiaBioquimica2016)],
     [cenurlnCicloInicialMatematica2012.auditIdentity, cenurlnCicloInicialMatematica2012Reconciliation(cenurlnCicloInicialMatematica2012)],
     [cenurlnImagenFotografica2008.auditIdentity, cenurlnImagenFotografica2008Reconciliation(cenurlnImagenFotografica2008)],
+    [curEducacionFisica2014.auditIdentity, curEducacionFisica2014Reconciliation(curEducacionFisica2014)],
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,

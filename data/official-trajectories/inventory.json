@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:88ef84c6343d795b27c361253d8db381ff15db2d6f10d723f5e49dd4898763e8",
+    "extractedReportHash": "sha256:f26230c560c315383f7d28950eeec9a50db77e5fb9d2cf6ffd87ef9849aaba5f",
     "officialAuditHash": "sha256:19aa36c1d33c6b7b2dfad473421405f90cc32cc38a9b3656eccd4f10105b6734",
-    "reviewedTrajectoriesHash": "sha256:965c74634b6e25babe6233c94a8287390e60329bf2bd6c5d6147cdd0139eddea"
+    "reviewedTrajectoriesHash": "sha256:c370b6be8c95a0c2f9d82ee8cb6172060f591d5866906318c5b37ab73637c82e"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 98,
+      "official-trajectory-reproduced": 99,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 45
+      "research-pending": 44
     },
-    "pending": 46,
+    "pending": 45,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -45,10 +45,10 @@
         "serviceLabel": "Centro Universitario Regional Noreste - Rivera",
         "selectablePlanIds": 1,
         "states": {
-          "official-trajectory-reproduced": 0,
+          "official-trajectory-reproduced": 1,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 46,
+    "total": 45,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cur-licenciatura-en-educacion-fisica-2014",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-cur"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -693,14 +684,6 @@
       }
     ],
     "byService": [
-      {
-        "serviceId": "bedelias-cur",
-        "serviceLabel": "Centro Universitario Regional Noreste - Rivera",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-cur-licenciatura-en-educacion-fisica-2014"
-        ]
-      },
       {
         "serviceId": "bedelias-cenurln",
         "serviceLabel": "Cenur Litoral Norte",
@@ -2135,33 +2118,47 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2014",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2015-2026",
       "officialSources": [
         {
           "authority": "Instituto Superior de Educación Física, Udelar / Consejo de Formación en Educación, ANEP",
           "url": "https://isef.udelar.edu.uy/wp-content/uploads/2012/10/VF-Programa-conjunto-a-color-con-modificaci%C3%B3n-CSE-publicada-DO.pdf",
-          "role": "Plan 2014; título; cuatro años y 360 créditos; cinco áreas; 304 créditos obligatorios; 56 opcionales; malla de ocho semestres",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "Plan 2014, título, créditos, áreas y Anexo 3 con ocho semestres y tres prácticas docentes anuales",
+          "contentHash": "sha256:e689573a997b8ac05d48c2c8f9e43d7fc3c5570d6a536c0bc2910401634c6a00"
         },
         {
-          "authority": "Unidad de Apoyo a la Enseñanza, ISEF-Udelar",
-          "url": "https://isef.udelar.edu.uy/ensenanza/uaen-isef/",
-          "role": "publicación institucional vigente del plan conjunto y su reglamento; asesoramiento para cambios de plan",
-          "trajectoryEvidence": false
+          "authority": "Diario Oficial, Universidad de la República",
+          "url": "https://www.impo.com.uy/diariooficial/2015/03/23/avisos.pdf",
+          "reviewedAt": "2026-10-09",
+          "role": "resolución 3 del CDC del 24 de febrero de 2015, expediente 008450-000678-14, que aprueba el Plan y el título",
+          "contentHash": "sha256:2b3ff765e1e952f7cf29d5542b183a4a29400ade6a1fd97c85e2c5d0b066b675"
         },
         {
-          "authority": "Comisión Directiva de ISEF, Udelar",
-          "url": "https://ordendeldia.isef.udelar.edu.uy/sesionescd/Distribuidos/1245-24.pdf",
-          "role": "actividad docente prevista para 2025 en LEFoPE Plan 2014; radicación en CENUR Noreste, Rivera; carácter conjunto ANEP-Udelar",
-          "trajectoryEvidence": false
+          "authority": "Instituto Superior de Educación Física, Universidad de la República",
+          "url": "https://isef.udelar.edu.uy/estudia-en-isef/",
+          "reviewedAt": "2026-10-09",
+          "role": "oferta 2026 de la opción Prácticas Educativas conjunta ANEP-Udelar en Rivera"
         },
         {
-          "authority": "Comisión Directiva de ISEF, Udelar",
-          "url": "https://ordendeldia.isef.udelar.edu.uy/sesionescd/Distribuidos/255-25.pdf",
-          "role": "tramitación académica de estudiantes del Plan 2014 en 2025; adjudicación de créditos optativos",
-          "trajectoryEvidence": false
+          "authority": "Portal central de la Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-educacion-fisica-0",
+          "reviewedAt": "2026-10-09",
+          "role": "vigencia, duración de 48 meses, 360 créditos y sede Rivera"
+        },
+        {
+          "authority": "Instituto Superior de Educación Física, Universidad de la República",
+          "url": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/",
+          "reviewedAt": "2026-10-09",
+          "role": "publicación institucional vigente del Plan 2014 y contraste de la malla visible"
+        },
+        {
+          "authority": "Consejo de Formación en Educación, ANEP",
+          "url": "https://www.cfe.edu.uy/index.php/61-convenios",
+          "reviewedAt": "2026-10-09",
+          "role": "programa aprobado por ambas instituciones y radicación permanente en Rivera desde marzo de 2016"
         }
       ],
       "scope": {
@@ -2173,23 +2170,35 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en educacion fisica:2014",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cur-licenciatura-en-educacion-fisica-2014.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cur/educacion-fisica-practicas-educativas-2014.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cur-licenciatura-en-educacion-fisica-2014.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:d34923e3eeda0efa59dd876118201a7429269181bd3f1c2ff1f0cd9107acff9e",
+        "projectionContentHash": "sha256:5f004b5dda11b32aa726a9fdfb4cb718c73ed4e3770a0795f8cad8d6eaf6dc49",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 11
+          }
+        ],
+        "expectedCoursePlacements": 33,
+        "matchedCoursePlacements": 33
       },
       "conflictNotes": [
-        "identity: Se conserva separada del Plan 2017 porque el Plan 2014 otorga la opción Prácticas Educativas y tiene malla normativa propia en Rivera.",
-        "optionalCatalog: Las 406 entradas no obligatorias visibles en Bedelías son alternativas acumuladas. La UI controla sólo los 56 créditos opcionales y no induce a cursarlas todas.",
-        "optionalSubrequirements: El plan exige que el 40% de los opcionales se relacione con Educación y reserva 10 créditos a extensión, investigación o enseñanza; se documenta una validación manual porque la composición no permite clasificar cada alternativa con certeza.",
-        "admissions: Las fuentes 2025 acreditan continuidad académica y estudiantes activos, pero no una nueva cohorte de ingreso; la UI lo conserva para que quienes cursan el plan puedan registrar su avance."
+        "El Anexo 3 aprobado prevalece para las prácticas docentes anuales: DPD I ocupa semestres 3-4, DPD II semestres 5-6 y DPD III semestres 7-8. El listado HTML vigente las intercala de forma incompleta y no se usa para moverlas ni duplicarlas.",
+        "La grilla oficial usa Prácticas Corporales Regionales y la tabla de créditos contigua usa el singular. Ambas referencias describen una única actividad PCR de 6 créditos en octavo semestre.",
+        "Las 406 entradas restantes de la composición Bedelías permanecen candidatas recuperables fuera del catálogo normal: no prueban inclusión oficial específica ni se convierten en obligaciones.",
+        "EVA no se usa como autoridad curricular. Los créditos, períodos e identidades provienen del Plan aprobado, y Bedelías sólo contrasta las 33 correspondencias inequívocas."
       ]
     },
     {
@@ -13364,5 +13373,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:f9dc37a39eba663e5baab0eff40f80108962535e9a1ac49692b53112d4143634"
+  "contentHash": "sha256:f436fca021b6b57afd9bd266db10a20e1a701334fb277e3d2b0f87f9025eec85"
 }

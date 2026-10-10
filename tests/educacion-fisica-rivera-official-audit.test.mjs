@@ -64,7 +64,8 @@ test("controla la estructura oficial de 304 créditos obligatorios y 56 opcional
 });
 
 test("ordena la malla obligatoria en ocho semestres y mantiene las prácticas anuales", () => {
-  assert.deepEqual(projection.pathways.bedelias.periods.slice(0, 11).map((period) => period.label), [
+  assert.equal(projection.pathways.bedelias.periods.length, 11);
+  assert.deepEqual(projection.pathways.bedelias.periods.map((period) => period.label), [
     "Semestre 1",
     "Semestre 2",
     "Semestre 3",
@@ -77,8 +78,10 @@ test("ordena la malla obligatoria en ocho semestres y mantiene las prácticas an
     "Semestre 8",
     "Anual (semestres 7 y 8)",
   ]);
-  const mandatoryPeriods = projection.pathways.bedelias.periods.slice(0, 11);
+  const mandatoryPeriods = projection.pathways.bedelias.periods;
   assert.equal(mandatoryPeriods.flatMap((period) => period.courseIds).length, 33);
+  assert.equal(new Set(mandatoryPeriods.flatMap((period) => period.courseIds)).size, 33);
+  assert.ok(mandatoryPeriods.every((period) => period.label !== "Validación de egreso"));
 
   const validation = projection.creditStructure.credentials[0].requiredCourseGroups
     .find((group) => group.id === "validacion-final-plan");

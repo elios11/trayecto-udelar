@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cur-licenciatura-en-educacion-fisica-2014",
+  "auditIdentity": "licenciatura en educacion fisica:2014",
+  "reviewedAt": "2026-10-09",
+  "sources": [
+    {
+      "id": "programa-conjunto-2014",
+      "authority": "Instituto Superior de Educación Física, Udelar / Consejo de Formación en Educación, ANEP",
+      "url": "https://isef.udelar.edu.uy/wp-content/uploads/2012/10/VF-Programa-conjunto-a-color-con-modificaci%C3%B3n-CSE-publicada-DO.pdf",
+      "supports": [
+        "Plan 2014 y título conjunto",
+        "cuatro años, ocho semestres y 360 créditos",
+        "cinco áreas, 304 créditos obligatorios y 56 opcionales o electivos",
+        "33 unidades obligatorias en ocho semestres y tres actividades anuales"
+      ],
+      "contentHash": "sha256:e689573a997b8ac05d48c2c8f9e43d7fc3c5570d6a536c0bc2910401634c6a00",
+      "pages": [
+        1,
+        7,
+        8,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "impo-aprobacion-2015",
+      "authority": "Diario Oficial, Universidad de la República",
+      "url": "https://www.impo.com.uy/diariooficial/2015/03/23/avisos.pdf",
+      "supports": [
+        "aprobación del Plan 2014 por resolución 3 del CDC del 24 de febrero de 2015",
+        "expediente 008450-000678-14 y título otorgado"
+      ],
+      "contentHash": "sha256:2b3ff765e1e952f7cf29d5542b183a4a29400ade6a1fd97c85e2c5d0b066b675",
+      "pages": [
+        68,
+        69
+      ]
+    },
+    {
+      "id": "isef-oferta-2026",
+      "authority": "Instituto Superior de Educación Física, Universidad de la República",
+      "url": "https://isef.udelar.edu.uy/estudia-en-isef/",
+      "supports": [
+        "oferta 2026 de la opción Prácticas Educativas conjunta ANEP-Udelar en Rivera"
+      ]
+    },
+    {
+      "id": "udelar-ficha-vigente",
+      "authority": "Portal central de la Universidad de la República",
+      "url": "https://udelar.edu.uy/carrera/licenciatura-en-educacion-fisica-0",
+      "supports": [
+        "vigencia, 48 meses, 360 créditos y sede Rivera"
+      ]
+    },
+    {
+      "id": "isef-malla-vigente",
+      "authority": "Instituto Superior de Educación Física, Universidad de la República",
+      "url": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/",
+      "supports": [
+        "publicación institucional vigente del Plan 2014 y su malla",
+        "contraste de los nombres y períodos visibles"
+      ]
+    },
+    {
+      "id": "cfe-convenio",
+      "authority": "Consejo de Formación en Educación, ANEP",
+      "url": "https://www.cfe.edu.uy/index.php/61-convenios",
+      "supports": [
+        "programa aprobado por ambas instituciones y radicación permanente en Rivera desde marzo de 2016"
+      ]
+    }
+  ],
+  "publication": {
+    "planYear": 2014,
+    "credential": "Licenciado en Educación Física. Opción: Prácticas Educativas",
+    "durationMonths": 48,
+    "semesterCount": 8,
+    "annualActivityCount": 3,
+    "minimumCredits": 360,
+    "mandatoryCredits": 304,
+    "optionalCredits": 56,
+    "currentAtReview": true,
+    "approval": {
+      "date": "2015-02-24",
+      "resolution": "3-CDC-24-02-2015",
+      "file": "008450-000678-14"
+    },
+    "optionalRules": {
+      "educationRelatedPercent": 40,
+      "extensionResearchTeachingCredits": 10,
+      "automated": false
+    }
+  },
+  "scope": {
+    "complete": true,
+    "campuses": [
+      {
+        "id": "rivera",
+        "label": "Rivera"
+      }
+    ],
+    "pathwayIds": [
+      "bedelias"
+    ]
+  },
+  "requirements": [
+    {
+      "id": "sports",
+      "sourceGroupCode": "1",
+      "name": "Deportes",
+      "shortName": "Deportes",
+      "minCredits": 64
+    },
+    {
+      "id": "education",
+      "sourceGroupCode": "2",
+      "name": "Educación",
+      "shortName": "Educación",
+      "minCredits": 130
+    },
+    {
+      "id": "body-practices",
+      "sourceGroupCode": "3",
+      "name": "Prácticas Corporales",
+      "shortName": "Prácticas corporales",
+      "minCredits": 34
+    },
+    {
+      "id": "health",
+      "sourceGroupCode": "4",
+      "name": "Salud",
+      "shortName": "Salud",
+      "minCredits": 50
+    },
+    {
+      "id": "leisure",
+      "sourceGroupCode": "5",
+      "name": "Tiempo Libre y Ocio",
+      "shortName": "Tiempo libre",
+      "minCredits": 26
+    },
+    {
+      "id": "optional",
+      "sourceGroupCode": "6",
+      "name": "Optativas y electivas",
+      "shortName": "Opcionales",
+      "minCredits": 56
+    }
+  ],
+  "rows": [
+    { "sourceCourseId": "EFI1", "officialLabel": "Educación Física Infantil I", "credits": 6, "requirementId": "body-practices", "period": "Semestre 1" },
+    { "sourceCourseId": "JU", "officialLabel": "Juego", "credits": 8, "requirementId": "leisure", "period": "Semestre 1" },
+    { "sourceCourseId": "FAF", "officialLabel": "Fundamentos Anátomo-Fisiológicos", "credits": 16, "requirementId": "health", "period": "Semestre 1" },
+    { "sourceCourseId": "PE", "officialLabel": "Pedagogía", "credits": 10, "requirementId": "education", "period": "Semestre 1" },
+    { "sourceCourseId": "DC1", "officialLabel": "Deportes Colectivos I", "credits": 16, "requirementId": "sports", "period": "Semestre 2" },
+    { "sourceCourseId": "EFI2", "officialLabel": "Educación Física Infantil II", "credits": 6, "requirementId": "body-practices", "period": "Semestre 2" },
+    { "sourceCourseId": "REC", "officialLabel": "Recreación", "credits": 6, "requirementId": "leisure", "period": "Semestre 2" },
+    { "sourceCourseId": "DEF", "officialLabel": "Didáctica y Educación Física", "credits": 12, "requirementId": "education", "period": "Semestre 2" },
+    { "sourceCourseId": "HEF", "officialLabel": "Historia de la Educación Física", "credits": 8, "requirementId": "education", "period": "Semestre 2" },
+    { "sourceCourseId": "AT", "officialLabel": "Atletismo", "credits": 10, "requirementId": "sports", "period": "Semestre 3" },
+    { "sourceCourseId": "GIM1", "officialLabel": "Gimnasia I", "credits": 10, "requirementId": "body-practices", "period": "Semestre 3" },
+    { "sourceCourseId": "FDE", "officialLabel": "Fisiología del Ejercicio", "credits": 8, "requirementId": "health", "period": "Semestre 3" },
+    { "sourceCourseId": "PEF", "officialLabel": "Pedagogía de la Educación Física", "credits": 8, "requirementId": "education", "period": "Semestre 3" },
+    { "sourceCourseId": "MA", "officialLabel": "Motricidad y Aprendizaje", "credits": 6, "requirementId": "sports", "period": "Semestre 4" },
+    { "sourceCourseId": "RTD", "officialLabel": "Ritmo y Danza", "credits": 6, "requirementId": "body-practices", "period": "Semestre 4" },
+    { "sourceCourseId": "SOC", "officialLabel": "Sociología", "credits": 12, "requirementId": "education", "period": "Semestre 4" },
+    { "sourceCourseId": "PS", "officialLabel": "Psicología", "credits": 12, "requirementId": "education", "period": "Semestre 4" },
+    { "sourceCourseId": "DPD1", "officialLabel": "Didáctica / Práctica Docente I", "credits": 12, "requirementId": "education", "period": "Anual (semestres 3 y 4)", "annual": true },
+    { "sourceCourseId": "DC2", "officialLabel": "Deportes Colectivos II", "credits": 16, "requirementId": "sports", "period": "Semestre 5" },
+    { "sourceCourseId": "AFB", "officialLabel": "Acondicionamiento Físico Básico", "credits": 12, "requirementId": "health", "period": "Semestre 5" },
+    { "sourceCourseId": "INV", "officialLabel": "Investigación", "credits": 8, "requirementId": "education", "period": "Semestre 5" },
+    { "sourceCourseId": "NA", "officialLabel": "Natación", "credits": 10, "requirementId": "sports", "period": "Semestre 6" },
+    { "sourceCourseId": "CVN", "officialLabel": "Campamento y Vida en la Naturaleza", "credits": 6, "requirementId": "leisure", "period": "Semestre 6" },
+    { "sourceCourseId": "GIM2", "officialLabel": "Gimnasia II", "credits": 6, "requirementId": "health", "period": "Semestre 6" },
+    { "sourceCourseId": "FE", "officialLabel": "Filosofía de la Educación", "credits": 8, "requirementId": "education", "period": "Semestre 6" },
+    { "sourceCourseId": "DPD2", "officialLabel": "Didáctica / Práctica Docente II", "credits": 12, "requirementId": "education", "period": "Anual (semestres 5 y 6)", "annual": true },
+    { "sourceCourseId": "GA", "officialLabel": "Gimnasia Artística", "credits": 6, "requirementId": "sports", "period": "Semestre 7" },
+    { "sourceCourseId": "EFA", "officialLabel": "Educación Física Adaptada", "credits": 8, "requirementId": "health", "period": "Semestre 7" },
+    { "sourceCourseId": "SDE1", "officialLabel": "Seminario de Egreso I", "credits": 8, "requirementId": "education", "period": "Semestre 7" },
+    { "sourceCourseId": "PCR", "officialLabel": "Prácticas Corporales Regionales", "credits": 6, "requirementId": "body-practices", "period": "Semestre 8" },
+    { "sourceCourseId": "TLO", "officialLabel": "Tiempo Libre y Ocio", "credits": 6, "requirementId": "leisure", "period": "Semestre 8" },
+    { "sourceCourseId": "SDE2", "officialLabel": "Seminario de Egreso II", "credits": 8, "requirementId": "education", "period": "Semestre 8" },
+    { "sourceCourseId": "DPD3", "officialLabel": "Didáctica / Práctica Docente III", "credits": 12, "requirementId": "education", "period": "Anual (semestres 7 y 8)", "annual": true }
+  ],
+  "trajectories": [
+    {
+      "id": "bedelias",
+      "label": "Trayectoria sugerida",
+      "description": "Distribución oficial del Plan 2014 en ocho semestres y tres actividades anuales. Las optativas y electivas se eligen de forma flexible y no forman parte de esta secuencia obligatoria.",
+      "campusIds": [
+        "rivera"
+      ],
+      "useOnlyConfiguredPeriods": true,
+      "periods": [
+        { "label": "Semestre 1", "courseIds": ["EFI1", "JU", "FAF", "PE"] },
+        { "label": "Semestre 2", "courseIds": ["DC1", "EFI2", "REC", "DEF", "HEF"] },
+        { "label": "Semestre 3", "courseIds": ["AT", "GIM1", "FDE", "PEF"] },
+        { "label": "Semestre 4", "courseIds": ["MA", "RTD", "SOC", "PS"] },
+        { "label": "Anual (semestres 3 y 4)", "courseIds": ["DPD1"] },
+        { "label": "Semestre 5", "courseIds": ["DC2", "AFB", "INV"] },
+        { "label": "Semestre 6", "courseIds": ["NA", "CVN", "GIM2", "FE"] },
+        { "label": "Anual (semestres 5 y 6)", "courseIds": ["DPD2"] },
+        { "label": "Semestre 7", "courseIds": ["GA", "EFA", "SDE1"] },
+        { "label": "Semestre 8", "courseIds": ["PCR", "TLO", "SDE2"] },
+        { "label": "Anual (semestres 7 y 8)", "courseIds": ["DPD3"] }
+      ]
+    }
+  ],
+  "authorityPolicy": {
+    "verifiedBedeliasSourceCourseIds": [
+      "EFI1", "JU", "FAF", "PE", "DC1", "EFI2", "REC", "DEF", "HEF", "AT", "GIM1", "FDE", "PEF", "MA", "RTD", "SOC", "PS", "DPD1", "DC2", "AFB", "INV", "NA", "CVN", "GIM2", "FE", "DPD2", "GA", "EFA", "SDE1", "PCR", "TLO", "SDE2", "DPD3"
+    ],
+    "candidateCompositionEntriesRemainUnpublished": true,
+    "evaIsCurriculumAuthority": false
+  },
+  "bedeliasComparison": {
+    "snapshotPath": "data/bedelias/cur-licenciatura-en-educacion-fisica-2014.json",
+    "snapshotContentHash": "sha256:81586c3ca0994680e8e6e5e818955a097f3477003367cdc2e080649fa62768e1",
+    "compositionEntryCount": 439,
+    "uniqueSourceCourseCodeCount": 404,
+    "verifiedCourseCount": 33,
+    "candidateRetainedCount": 406
+  },
+  "conflicts": [
+    {
+      "field": "annual-practice-placement",
+      "resolution": "El Anexo 3 aprobado prevalece: Didáctica / Práctica Docente I, II y III son actividades anuales ubicadas respectivamente en semestres 3-4, 5-6 y 7-8. El listado HTML vigente de ISEF las intercala de forma incompleta y no se usa para moverlas ni duplicarlas."
+    },
+    {
+      "field": "PCR.label",
+      "resolution": "La grilla del Anexo 3 y la publicación HTML vigente usan Prácticas Corporales Regionales; la tabla de créditos de la página siguiente usa el singular Práctica Corporal Regional. Se conserva el rótulo de la grilla sin crear una segunda actividad."
+    },
+    {
+      "field": "optional-catalog",
+      "resolution": "Las 406 entradas restantes de la composición Bedelías no acreditan inclusión oficial específica. Permanecen como candidatas recuperables y fuera del catálogo normal; el Plan sólo exige 56 créditos opcionales o electivos."
+    }
+  ],
+  "sourcePortions": {
+    "plan": {
+      "year": 2014,
+      "title": "Licenciado en Educación Física. Opción: Prácticas Educativas",
+      "durationMonths": 48,
+      "semesterCount": 8,
+      "annualActivityCount": 3,
+      "minimumCredits": 360,
+      "mandatoryCredits": 304,
+      "optionalCredits": 56
+    },
+    "approval": {
+      "date": "2015-02-24",
+      "resolution": "3-CDC-24-02-2015",
+      "file": "008450-000678-14"
+    },
+    "requiredRows": 33,
+    "periodLabels": [
+      "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", "Anual (semestres 3 y 4)", "Semestre 5", "Semestre 6", "Anual (semestres 5 y 6)", "Semestre 7", "Semestre 8", "Anual (semestres 7 y 8)"
+    ],
+    "currentOffering": {
+      "year": 2026,
+      "campus": "Rivera",
+      "jointProgram": "ANEP-Udelar"
+    }
+  },
+  "fingerprint": {
+    "algorithm": "sha256",
+    "value": "sha256:b7e5b852b8bbebd21757836ffbcb8a6cead66d140a3aa29cc533695f96ee811b"
+  }
+}
