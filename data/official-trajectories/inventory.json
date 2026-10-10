@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:99a5af21643e05cf9e777b300b84e4d2d74782a459ce49139145a7a6a9971211",
-    "officialAuditHash": "sha256:2affecafe51218e4e5110340ff6c935db08b98e17ff9955823bee9ed38b5b6d1",
-    "reviewedTrajectoriesHash": "sha256:9fea7b77f6bd07e2ef3c08a83d0c17a83861492a1ed86cde6772eb30d9ea1b32"
+    "extractedReportHash": "sha256:88ef84c6343d795b27c361253d8db381ff15db2d6f10d723f5e49dd4898763e8",
+    "officialAuditHash": "sha256:19aa36c1d33c6b7b2dfad473421405f90cc32cc38a9b3656eccd4f10105b6734",
+    "reviewedTrajectoriesHash": "sha256:965c74634b6e25babe6233c94a8287390e60329bf2bd6c5d6147cdd0139eddea"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 97,
+      "official-trajectory-reproduced": 98,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 46
+      "research-pending": 45
     },
-    "pending": 47,
+    "pending": 46,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -34,10 +34,10 @@
         "serviceLabel": "Centro Universitario Regional Noreste - Cucel",
         "selectablePlanIds": 2,
         "states": {
-          "official-trajectory-reproduced": 1,
+          "official-trajectory-reproduced": 2,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 47,
+    "total": 46,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-cucel"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -702,14 +693,6 @@
       }
     ],
     "byService": [
-      {
-        "serviceId": "bedelias-cucel",
-        "serviceLabel": "Centro Universitario Regional Noreste - Cucel",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022"
-        ]
-      },
       {
         "serviceId": "bedelias-cur",
         "serviceLabel": "Centro Universitario Regional Noreste - Rivera",
@@ -2054,39 +2037,33 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2022",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-09",
+      "effectiveAt": "2023-06-26",
       "officialSources": [
         {
           "authority": "Diario Oficial - IMPO / Facultad de Agronomía",
           "url": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
-          "role": "Plan 2022; seis semestres y 270 créditos; estructura por áreas; 79 créditos flexibles; Trabajo Final; trayectorias sugeridas",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "título, seis semestres y 270 créditos; 167 créditos obligatorios, 79 optativos/electivos y 24 de Trabajo Final; ubicación semestral de los bloques obligatorios de los cuadros 4 y 5; dos ejemplos semestrales de optativas para Sistemas Integrados y Enfoque Económico-Social; existencia de un posible foco en Recursos Naturales sin grilla optativa propia publicada"
         },
         {
           "authority": "Facultad de Agronomía, Udelar",
           "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria/",
-          "role": "vigencia; tres años; 270 créditos; sede Cerro Largo; carrera compartida con Veterinaria",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "duración de tres años y 270 créditos; dictado en Cerro Largo; carrera compartida con Facultad de Veterinaria"
         },
         {
           "authority": "Facultad de Veterinaria, Udelar",
           "url": "https://www.fvet.edu.uy/ensenanza/grado/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria/",
-          "role": "vigencia; tres años; 270 créditos; sede Cerro Largo; carrera compartida con Agronomía",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "duración de tres años y 270 créditos; dictado en Cerro Largo; carrera compartida con Facultad de Agronomía"
         },
         {
           "authority": "Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria",
-          "role": "título; 36 meses; 270 créditos; Sede Cerro Largo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Dirección General de Planeamiento, Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
-          "role": "actividad estudiantil vigente en 2025",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-09",
+          "role": "título único; 36 meses y 270 créditos; Sede Cerro Largo; participación de Agronomía y Veterinaria"
         }
       ],
       "scope": {
@@ -2101,23 +2078,48 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-profiles",
         "features": [
-          "areas"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnologo en sistemas integrados de produccion agropecuaria:2022",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cucel/sistemas-integrados-produccion-agropecuaria-2022-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:d161f2b2457a8de32bf786eaea5f67089a036fdb9e0bdab2a5d141e5cfb76b8c",
+        "projectionContentHash": "sha256:a2529cd7f9b4cfa68ab1bc3022be3288040173c6531e3f3ea9ebcba55c7bdabb",
+        "pathways": [
+          {
+            "id": "personalizada",
+            "periodCount": 6
+          },
+          {
+            "id": "sistemas-integrados",
+            "periodCount": 6
+          },
+          {
+            "id": "recursos-naturales",
+            "periodCount": 6
+          },
+          {
+            "id": "economico-social",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 124,
+        "matchedCoursePlacements": 124
       },
       "conflictNotes": [
-        "compositionCredits: Los 299 créditos visibles son oferta disponible, no el requisito de 270. La UI controla mínimos por área y deja las alternativas flexibles.",
-        "missingFinalProject: Bedelías no individualiza el Trabajo Final en la composición, pero el plan exige 24 créditos y una de dos modalidades; se agrega un único bloque acreditable.",
-        "structuralCreditGaps: Se agregan bloques de 5 créditos obligatorios de Sistemas Integrados y 3 flexibles porque el catálogo actual no alcanza esos mínimos. No se inventan unidades nominales.",
-        "suggestedPathways: Los enfoques publicados son ejemplos no certificados. La selección orienta la planificación sin filtrar el catálogo ni cambiar requisitos."
+        "Los seis semestres comunes provienen de los cuadros 4 y 5; sólo los cuadros 6 y 7 publican ubicación de optativas para Sistemas Integrados y Económico-Social.",
+        "Manejo sustentable de los Recursos Naturales está nombrado como foco posible, pero no tiene grilla optativa propia; se conserva sin asignaciones inferidas.",
+        "Los totales flexibles impresos de los ejemplos suman 81 y 85, pero el egreso exige 79; no se distribuyen cargas individuales no publicadas.",
+        "Sólo SPS coincide exactamente con una entrada de Bedelías. O31T, CUT-O31T, CUT-MITMR, CUT-O33T y las demás identidades técnicas siguen candidatas.",
+        "No hubo inspección visual del PDF por Cache miss y timeout de descarga; la correspondencia se coteja contra la extracción estructurada versionada."
       ]
     },
     {
@@ -13362,5 +13364,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:90489e594906f7a74f5bde90bb6028b718fb969b33562cca935d2f0ee59fa6b3"
+  "contentHash": "sha256:f9dc37a39eba663e5baab0eff40f80108962535e9a1ac49692b53112d4143634"
 }

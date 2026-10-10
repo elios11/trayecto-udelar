@@ -29516,15 +29516,15 @@
       "identity": "tecnologo en sistemas integrados de produccion agropecuaria:2022",
       "career": "TECNÓLOGO EN SISTEMAS INTEGRADOS DE PRODUCCIÓN AGROPECUARIA",
       "planYear": "2022",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-09",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, duración, créditos, estructura semiabierta, trayectorias sugeridas y sede",
+      "scope": "vigencia publicada, título, seis semestres, créditos, bloques comunes, ejemplos flexibles y sede",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
-          "Propuesta educativa del Polo Agroforestal del CENUR Noreste, Cerro Largo, 2022",
-          "Publicación del plan por Facultad de Agronomía en Diario Oficial de 26/06/2023"
+          "Plan 2022 publicado por Facultad de Agronomía en el Diario Oficial de 26/06/2023"
         ],
+        "planYear": "2022",
         "title": "Tecnólogo en Sistemas Integrados de Producción Agropecuaria",
         "durationMonths": 36,
         "semesters": 6,
@@ -29534,44 +29534,387 @@
           "Facultad de Agronomía",
           "Facultad de Veterinaria"
         ],
-        "pathwayLabel": "Trayectoria sugerida",
+        "pathwayLabel": "Trayectoria orientativa",
         "trajectories": [
           {
             "id": "personalizada",
             "label": "Personalizada",
-            "description": "Currículo flexible acordado con la Comisión de Carrera; permite combinar optativas y electivas validadas sin asumir un énfasis obligatorio."
+            "description": "Trayectoria flexible acordada con la Comisión de Carrera. El Plan publica la ubicación semestral común, pero no una grilla optativa propia para esta selección.",
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CB1",
+                  "CB2",
+                  "CB3",
+                  "AI1",
+                  "AC1",
+                  "AC2"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CB4",
+                  "CB5",
+                  "CB6",
+                  "AI2",
+                  "AC3",
+                  "AC4"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "SA",
+                  "SPS",
+                  "SIP",
+                  "EcI",
+                  "AI3"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "MP",
+                  "MF",
+                  "SIPCA",
+                  "EsI",
+                  "AI4"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "SEM",
+                  "PV",
+                  "EGGF",
+                  "AI5"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "trabajo-final"
+                ]
+              }
+            ],
+            "catalogSourceCourseIds": [
+              "sistemas-integrados-obligatorios-no-individualizados",
+              "flexibles-adicionales-validados",
+              "BA",
+              "BM",
+              "CF",
+              "BLD",
+              "EL",
+              "BR",
+              "IAG",
+              "SIG",
+              "MIMR",
+              "IERN",
+              "CEE",
+              "PA",
+              "EDR"
+            ],
+            "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf"
           },
           {
             "id": "sistemas-integrados",
             "label": "Sistemas Integrados de Producción",
-            "description": "Ejemplo oficial de énfasis; orienta la elección flexible y no modifica el título ni los mínimos de egreso."
+            "description": "Ejemplo oficial de énfasis: conserva la ubicación común y agrega únicamente las optativas ubicadas por el Cuadro 6. No crea una mención ni afirma oferta actual.",
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CB1",
+                  "CB2",
+                  "CB3",
+                  "AI1",
+                  "AC1",
+                  "AC2"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CB4",
+                  "CB5",
+                  "CB6",
+                  "AI2",
+                  "AC3",
+                  "AC4"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "SA",
+                  "SPS",
+                  "SIP",
+                  "EcI",
+                  "AI3",
+                  "BA",
+                  "CF",
+                  "MIMR"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "MP",
+                  "MF",
+                  "SIPCA",
+                  "EsI",
+                  "AI4",
+                  "BM",
+                  "BLD"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "SEM",
+                  "PV",
+                  "EGGF",
+                  "AI5",
+                  "IAG",
+                  "SIG",
+                  "IERN"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "trabajo-final"
+                ]
+              }
+            ],
+            "catalogSourceCourseIds": [
+              "sistemas-integrados-obligatorios-no-individualizados",
+              "flexibles-adicionales-validados",
+              "BA",
+              "BM",
+              "CF",
+              "BLD",
+              "EL",
+              "BR",
+              "IAG",
+              "SIG",
+              "MIMR",
+              "IERN",
+              "CEE",
+              "PA",
+              "EDR"
+            ],
+            "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf"
           },
           {
             "id": "recursos-naturales",
             "label": "Manejo sustentable de los Recursos Naturales",
-            "description": "Ejemplo oficial de énfasis; orienta la elección flexible y no constituye una mención certificada."
+            "description": "Foco posible nombrado por el Plan, sin grilla optativa propia publicada. Se conserva la ubicación semestral común y el catálogo flexible sin inventar asignaciones.",
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CB1",
+                  "CB2",
+                  "CB3",
+                  "AI1",
+                  "AC1",
+                  "AC2"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CB4",
+                  "CB5",
+                  "CB6",
+                  "AI2",
+                  "AC3",
+                  "AC4"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "SA",
+                  "SPS",
+                  "SIP",
+                  "EcI",
+                  "AI3"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "MP",
+                  "MF",
+                  "SIPCA",
+                  "EsI",
+                  "AI4"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "SEM",
+                  "PV",
+                  "EGGF",
+                  "AI5"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "trabajo-final"
+                ]
+              }
+            ],
+            "catalogSourceCourseIds": [
+              "sistemas-integrados-obligatorios-no-individualizados",
+              "flexibles-adicionales-validados",
+              "BA",
+              "BM",
+              "CF",
+              "BLD",
+              "EL",
+              "BR",
+              "IAG",
+              "SIG",
+              "MIMR",
+              "IERN",
+              "CEE",
+              "PA",
+              "EDR"
+            ],
+            "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf"
           },
           {
             "id": "economico-social",
             "label": "Enfoque Económico-Social",
-            "description": "Ejemplo oficial de énfasis; orienta la elección flexible y no constituye una mención certificada."
+            "description": "Ejemplo oficial de énfasis: conserva la ubicación común y agrega únicamente las optativas ubicadas por el Cuadro 7. No crea una mención ni afirma oferta actual.",
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CB1",
+                  "CB2",
+                  "CB3",
+                  "AI1",
+                  "AC1",
+                  "AC2"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CB4",
+                  "CB5",
+                  "CB6",
+                  "AI2",
+                  "AC3",
+                  "AC4"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "SA",
+                  "SPS",
+                  "SIP",
+                  "EcI",
+                  "AI3",
+                  "BA",
+                  "MIMR"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "MP",
+                  "MF",
+                  "SIPCA",
+                  "EsI",
+                  "AI4",
+                  "BM",
+                  "PA"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "SEM",
+                  "PV",
+                  "EGGF",
+                  "AI5",
+                  "IAG",
+                  "CEE"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "trabajo-final",
+                  "IERN",
+                  "EDR"
+                ]
+              }
+            ],
+            "catalogSourceCourseIds": [
+              "sistemas-integrados-obligatorios-no-individualizados",
+              "flexibles-adicionales-validados",
+              "BA",
+              "BM",
+              "CF",
+              "BLD",
+              "EL",
+              "BR",
+              "IAG",
+              "SIG",
+              "MIMR",
+              "IERN",
+              "CEE",
+              "PA",
+              "EDR"
+            ],
+            "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf"
           }
         ],
-        "degreeRule": "El título exige 270 créditos: 167 obligatorios, 79 optativos/electivos y 24 de Trabajo Final, respetando los mínimos temáticos.",
+        "degreeRule": "El título exige 270 créditos: 167 obligatorios, 79 optativos/electivos y 24 de Trabajo Final. Los enfoques son ejemplos flexibles del mismo título.",
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
+          "strictOfficialCourseIds": true,
           "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+          "sourceDataPath": "data/cucel/sistemas-integrados-produccion-agropecuaria-2022-trajectory-review.json",
           "periodOrder": [
-            "SISTEMAS INTEGRADOS DE PRODUCCIÓN",
-            "RECURSOS NATURALES Y SOSTENIBILIDAD",
-            "ECONÓMICO Y SOCIAL",
-            "ACTIVIDADES INTEGRADORAS",
-            "ACTIVIDADES COMPLEMENTARIAS",
-            "OPTATIVAS Y ELECTIVAS",
-            "Ajustes estructurales del plan",
-            "Trabajo Final"
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6"
           ],
+          "pathwayLabel": "Trayectoria orientativa",
+          "includeAllCoursesInPathwayCatalog": true,
+          "verifiedCourseIds": [
+            "SPS"
+          ],
+          "courseOverrides": {
+            "SPS": {
+              "name": "Sistemas de producción simples",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "creditSourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+              "requirementId": "integrated-production"
+            }
+          },
           "pathRequirementMap": {
             "100": "integrated-production",
             "200": "natural-resources",
@@ -29625,7 +29968,9 @@
               "credits": 5,
               "requirementId": "integrated-production",
               "periodLabel": "Ajustes estructurales del plan",
-              "curricularBlock": true
+              "curricularBlock": true,
+              "officialCredits": false,
+              "creditsProvenance": "derived-structural-balance"
             },
             {
               "id": "flexibles-adicionales-validados",
@@ -29633,15 +29978,578 @@
               "credits": 3,
               "requirementId": "flexible-credits",
               "periodLabel": "Ajustes estructurales del plan",
-              "curricularBlock": true
+              "curricularBlock": true,
+              "officialCredits": false,
+              "creditsProvenance": "derived-structural-balance"
             },
             {
               "id": "trabajo-final",
+              "sourceCourseId": "TF",
               "name": "Trabajo Final: pasantía académica o proyecto de conclusión de carrera",
               "credits": 24,
               "requirementId": "final-project",
-              "periodLabel": "Trabajo Final",
-              "curricularBlock": true
+              "periodLabel": "Semestre 6",
+              "curricularBlock": true,
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf"
+            },
+            {
+              "id": "CB1",
+              "sourceCourseId": "CB1",
+              "name": "Anatomía y fisiología animal",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "CB2",
+              "sourceCourseId": "CB2",
+              "name": "Anatomía y fisiología vegetal",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "CB3",
+              "sourceCourseId": "CB3",
+              "name": "Suelo y agua",
+              "requirementId": "natural-resources",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AI1",
+              "sourceCourseId": "AI1",
+              "name": "Actividades integradoras AI1: talleres, seminarios y salidas de campo",
+              "requirementId": "integrative-activities",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AC1",
+              "sourceCourseId": "AC1",
+              "name": "Formación complementaria AC1: inglés o portugués",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AC2",
+              "sourceCourseId": "AC2",
+              "name": "Formación complementaria AC2: inglés o portugués",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "CB4",
+              "sourceCourseId": "CB4",
+              "name": "Nutrición, genética y manejo animal",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "CB5",
+              "sourceCourseId": "CB5",
+              "name": "Pasturas y forrajes: aspectos básicos",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "CB6",
+              "sourceCourseId": "CB6",
+              "name": "Introducción al reconocimiento de flora o botánica",
+              "requirementId": "natural-resources",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AI2",
+              "sourceCourseId": "AI2",
+              "name": "Actividades integradoras AI2: talleres, seminarios y salidas de campo",
+              "requirementId": "integrative-activities",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AC3",
+              "sourceCourseId": "AC3",
+              "name": "Formación complementaria AC3: inglés o portugués",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AC4",
+              "sourceCourseId": "AC4",
+              "name": "Formación complementaria AC4: inglés o portugués",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "SA",
+              "sourceCourseId": "SA",
+              "name": "Sanidad animal",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "SIP",
+              "sourceCourseId": "SIP",
+              "name": "Sistemas integrados de producción",
+              "requirementId": "natural-resources",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "EcI",
+              "sourceCourseId": "EcI",
+              "name": "Economía I",
+              "requirementId": "economic-social",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AI3",
+              "sourceCourseId": "AI3",
+              "name": "Actividades integradoras AI3: talleres, seminarios y salidas de campo",
+              "requirementId": "integrative-activities",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "MP",
+              "sourceCourseId": "MP",
+              "name": "Establecimiento y manejo de pasturas y campo natural",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "MF",
+              "sourceCourseId": "MF",
+              "name": "Establecimiento y manejo de especies forestales",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "SIPCA",
+              "sourceCourseId": "SIPCA",
+              "name": "Sistemas integrados de producción complejos y su análisis",
+              "requirementId": "natural-resources",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "EsI",
+              "sourceCourseId": "EsI",
+              "name": "Estadística I",
+              "requirementId": "economic-social",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AI4",
+              "sourceCourseId": "AI4",
+              "name": "Actividades integradoras AI4: talleres, seminarios y salidas de campo",
+              "requirementId": "integrative-activities",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "SEM",
+              "sourceCourseId": "SEM",
+              "name": "Silvicultura de especies maderables",
+              "requirementId": "integrated-production",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "PV",
+              "sourceCourseId": "PV",
+              "name": "Protección vegetal",
+              "requirementId": "natural-resources",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "EGGF",
+              "sourceCourseId": "EGGF",
+              "name": "Economía y gestión de la actividad forestal y ganadera",
+              "requirementId": "economic-social",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "AI5",
+              "sourceCourseId": "AI5",
+              "name": "Actividades integradoras AI5: talleres, seminarios y salidas de campo",
+              "requirementId": "integrative-activities",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-block",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "BA",
+              "sourceCourseId": "BA",
+              "name": "Bienestar animal",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "BM",
+              "sourceCourseId": "BM",
+              "name": "Biología molecular",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "CF",
+              "sourceCourseId": "CF",
+              "name": "Cosecha forestal",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "BLD",
+              "sourceCourseId": "BLD",
+              "name": "Botánica de leñosas y dendrología",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "EL",
+              "sourceCourseId": "EL",
+              "name": "Ecofisiología de leñosas",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "BR",
+              "sourceCourseId": "BR",
+              "name": "Biotecnologías reproductivas",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "IAG",
+              "sourceCourseId": "IAG",
+              "name": "Impactos ambientales de la ganadería y estrategias de mitigación",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "SIG",
+              "sourceCourseId": "SIG",
+              "name": "Sistemas de información geográfica",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "MIMR",
+              "sourceCourseId": "MIMR",
+              "name": "Metodología de intervención técnica en el medio rural",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "IERN",
+              "sourceCourseId": "IERN",
+              "name": "Introducción a la economía de recursos naturales",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "CEE",
+              "sourceCourseId": "CEE",
+              "name": "Competitividad y entorno empresarial",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "PA",
+              "sourceCourseId": "PA",
+              "name": "Proyecto agropecuario",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            },
+            {
+              "id": "EDR",
+              "sourceCourseId": "EDR",
+              "name": "Extensión y desarrollo rural",
+              "requirementId": "flexible-credits",
+              "periodLabel": "Estructura oficial sin carga individual publicada",
+              "sourceUrl": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-plan-option",
+              "creditsPublished": false,
+              "officialCredits": false,
+              "creditsProvenance": "official-source-no-load",
+              "availabilityStatus": "published-plan-identity-no-current-offering-asserted"
+            }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "visualInspection",
+              "resolution": "La extracción estructurada del PDF permite cotejar las tablas, pero no hubo renderizado visual: IMPO devolvió Cache miss y la descarga agotó el tiempo."
+            },
+            {
+              "field": "individualCourseCredits",
+              "resolution": "El Plan no publica cargas individuales para las abreviaturas de los cuadros; se modelan como bloques de 0 créditos con carga no publicada."
+            },
+            {
+              "field": "resourcesNaturalGrid",
+              "resolution": "El foco en Recursos Naturales está nombrado, pero no tiene grilla optativa propia; no se asignan optativas por inferencia."
             }
           ]
         }
@@ -29652,7 +30560,7 @@
           "locations": [
             "Melo, Cerro Largo"
           ],
-          "role": "oferta completa del CENUR Noreste con Agronomía y Veterinaria como servicios de referencia académica",
+          "role": "oferta institucional de la carrera conjunta; la auditoría no afirma inscripción abierta en 2026",
           "trajectoryIds": [
             "personalizada",
             "sistemas-integrados",
@@ -29664,24 +30572,28 @@
       ],
       "bedeliasComparison": {
         "canonicalSnapshot": "data/bedelias/cucel-tecnologo-en-sistemas-integrados-de-produccion-agropecuaria-2022.json",
-        "metadataCurrent": true,
+        "metadataCurrent": false,
         "publishedDurationMonths": 36,
         "publishedMinimumCredits": 270,
         "compositionMatterEntries": 43,
         "compositionCredits": 299,
-        "interpretation": "Bedelías publica un catálogo de 299 créditos distribuido por áreas, no una lista de 270 créditos enteramente obligatoria. Faltan el Trabajo Final y pequeños saldos estructurales para que cada mínimo oficial sea operable."
+        "exactVerifiedEntries": 1,
+        "candidateEntriesPreserved": 42,
+        "interpretation": "Bedelías conserva 43 entradas y 299 créditos para contraste técnico. Sólo SPS coincide exactamente con código y nombre del Plan; las demás 42 permanecen candidatas y ninguna área se usa como semestre."
       },
       "conclusion": {
         "canonicalModel": "one-plan-one-offering-with-flexible-pathways",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "El Plan 2022 define una carrera única en Cerro Largo con currículo semiabierto. Los tres enfoques son ejemplos para orientar optativas y electivas, no menciones, títulos ni variantes territoriales.",
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/cucel/sistemas-integrados-produccion-agropecuaria-2022-trajectory-review.json",
+        "reason": "Los cuadros 4 y 5 publican seis semestres comunes; los cuadros 6 y 7 ubican optativas sólo para dos ejemplos. La proyección conserva exactamente esas ubicaciones, deja el foco de Recursos Naturales y la trayectoria personalizada sin optativas semestrales inventadas y mantiene un único título.",
         "normalization": [
-          "Conservar una única carrera, un único Plan 2022 y una única sede en Melo.",
-          "Exigir 64 créditos en Sistemas Integrados, 37 en Recursos Naturales, 26 en Económico-Social, 40 en Actividades Integradoras, 79 flexibles y 24 de Trabajo Final.",
-          "Mantener como catálogo las 43 unidades de la composición jerárquica y no exigir aprobar los 299 créditos disponibles.",
-          "Representar como bloques acreditables sólo los saldos que el plan exige pero Bedelías no individualiza, sin inventar nombres de materias.",
-          "Ofrecer trayectoria personalizada y los tres énfasis sugeridos; todos conservan el mismo título y acceso al catálogo flexible."
+          "Conservar una única carrera, un único Plan 2022, una única sede y un único progreso.",
+          "Proyectar seis semestres desde los cuadros oficiales, nunca desde las áreas de Bedelías.",
+          "Publicar los dos ejemplos optativos con ubicación explícita y dejar Recursos Naturales y Personalizada sin asignaciones inventadas.",
+          "Mantener un catálogo parcial: sólo SPS se vincula exactamente con Bedelías; O31T, CUT-O31T, CUT-MITMR, CUT-O33T y las demás entradas siguen candidatas.",
+          "Conservar los bloques estructurales de 5 y 3 créditos como saldos acreditables derivados, no como unidades curriculares nominales."
         ]
       },
       "sources": [
@@ -29689,74 +30601,108 @@
           "url": "https://impo.com.uy/diariooficial/2023/06/26/avisos.pdf",
           "authority": "Diario Oficial - IMPO / Facultad de Agronomía",
           "supports": [
-            "Plan 2022",
-            "seis semestres y 270 créditos",
-            "estructura por áreas",
-            "79 créditos flexibles",
-            "Trabajo Final",
-            "trayectorias sugeridas"
-          ]
+            "título, seis semestres y 270 créditos",
+            "167 créditos obligatorios, 79 optativos/electivos y 24 de Trabajo Final",
+            "ubicación semestral de los bloques obligatorios de los cuadros 4 y 5",
+            "dos ejemplos semestrales de optativas para Sistemas Integrados y Enfoque Económico-Social",
+            "existencia de un posible foco en Recursos Naturales sin grilla optativa propia publicada"
+          ],
+          "contentHash": "sha256:153b1be378285f839107381e783d0465e5581e7d44ffdda554c3b6b6b470bd2f"
         },
         {
           "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria/",
           "authority": "Facultad de Agronomía, Udelar",
           "supports": [
-            "vigencia",
-            "tres años",
-            "270 créditos",
-            "sede Cerro Largo",
-            "carrera compartida con Veterinaria"
-          ]
+            "duración de tres años y 270 créditos",
+            "dictado en Cerro Largo",
+            "carrera compartida con Facultad de Veterinaria"
+          ],
+          "contentHash": "sha256:5961369d7be2a9ad97eb6243abe5eb95424a206e0996b0fd7508b94ad5b945d2"
         },
         {
           "url": "https://www.fvet.edu.uy/ensenanza/grado/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria/",
           "authority": "Facultad de Veterinaria, Udelar",
           "supports": [
-            "vigencia",
-            "tres años",
-            "270 créditos",
-            "sede Cerro Largo",
-            "carrera compartida con Agronomía"
-          ]
+            "duración de tres años y 270 créditos",
+            "dictado en Cerro Largo",
+            "carrera compartida con Facultad de Agronomía"
+          ],
+          "contentHash": "sha256:64aea80bd8807ae1addc73ad757717998d091d448a480f69570f47869f8ef8f5"
         },
         {
           "url": "https://udelar.edu.uy/carrera/tecnologo-en-sistemas-integrados-de-produccion-agropecuaria",
           "authority": "Universidad de la República",
           "supports": [
-            "título",
-            "36 meses",
-            "270 créditos",
-            "Sede Cerro Largo"
-          ]
+            "título único",
+            "36 meses y 270 créditos",
+            "Sede Cerro Largo",
+            "participación de Agronomía y Veterinaria"
+          ],
+          "contentHash": "sha256:4770aa5dd52c941b5e8f7df3ba53a04d1239ff8b3bd4c3795f7c233deaf68e82"
         },
         {
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
-          "authority": "Dirección General de Planeamiento, Udelar",
+          "url": "https://eva.interior.udelar.edu.uy/pluginfile.php/21010/mod_resource/content/19/EconRRNN_Presentaci%C3%B3n%20del%20curso_V26.pdf?forcedownload=1",
+          "authority": "EVA Interior, Udelar",
           "supports": [
-            "actividad estudiantil vigente en 2025"
-          ]
+            "corrobora el nombre desarrollado de IERN y una carga informada de 10 créditos",
+            "menciona TESIPA/CUCEL entre las carreras destinatarias"
+          ],
+          "contentHash": "sha256:c03ee71b4665c7245825032e38ffa799cf1395ff7e66f2e051c5145dd60e6b40"
+        },
+        {
+          "url": "https://eva.interior.udelar.edu.uy/pluginfile.php/379877/mod_resource/content/1/O31T_2026_01_Introducci%C3%B3n_a_los_Sistemas_de_Producci%C3%B3n_Agropecuarios_-_Empresas_Agropecuarias.pdf",
+          "authority": "EVA Interior, Udelar",
+          "supports": [
+            "registra O31T, 5 créditos y destinatarios que incluyen TESIPA Cerro Largo"
+          ],
+          "contentHash": "sha256:f8387482c3e3468474918f27928263c95c26cd59216e8168b7c580e0fda0b883"
+        },
+        {
+          "url": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+          "authority": "SGAE/Bedelías, Universidad de la República",
+          "supports": [
+            "preservación de códigos, IDs, créditos y progreso existentes",
+            "coincidencia literal de SPS con el código y nombre publicados por el Plan"
+          ],
+          "contentHash": "sha256:a03077cc32810ba93cad4dee64d3b6815a45c39e9383c966d9bc13af7a9970c7"
         }
       ],
       "anomalies": [
         {
           "field": "compositionCredits",
-          "resolution": "Los 299 créditos visibles son oferta disponible, no el requisito de 270. La UI controla mínimos por área y deja las alternativas flexibles."
+          "resolution": "Los 299 créditos de Bedelías son oferta disponible, no una obligación. El egreso conserva 167 + 79 + 24 = 270."
         },
         {
           "field": "missingFinalProject",
-          "resolution": "Bedelías no individualiza el Trabajo Final en la composición, pero el plan exige 24 créditos y una de dos modalidades; se agrega un único bloque acreditable."
+          "resolution": "El Trabajo Final de 24 créditos se conserva como bloque oficial porque el Plan lo exige y Bedelías no lo individualiza."
         },
         {
           "field": "structuralCreditGaps",
-          "resolution": "Se agregan bloques de 5 créditos obligatorios de Sistemas Integrados y 3 flexibles porque el catálogo actual no alcanza esos mínimos. No se inventan unidades nominales."
+          "resolution": "Se preservan los IDs existentes de bloques de 5 créditos obligatorios y 3 flexibles. Son saldos derivados y acreditables, no materias inventadas."
         },
         {
           "field": "suggestedPathways",
-          "resolution": "Los enfoques publicados son ejemplos no certificados. La selección orienta la planificación sin filtrar el catálogo ni cambiar requisitos."
+          "resolution": "Los enfoques son ejemplos no certificados. Sólo Sistemas Integrados y Económico-Social publican grillas optativas; Recursos Naturales no."
+        },
+        {
+          "field": "individualCourseCredits",
+          "resolution": "Las abreviaturas del Plan no tienen carga individual publicada; las identidades de fuente se modelan como bloques de 0 créditos y no se enlazan por similitud con candidatas."
+        },
+        {
+          "field": "optionalSemesterTotals",
+          "resolution": "Los totales semestrales de los ejemplos suman 81 y 85, mientras el egreso exige 79 flexibles. Se conservan como valores impresos del ejemplo y no se convierten en cargas por materia ni mínimos acumulativos."
+        },
+        {
+          "field": "visualInspection",
+          "resolution": "No se declara QA visual del PDF: la captura web falló por Cache miss y la descarga directa agotó el tiempo. Se versionan líneas, páginas y tablas de la extracción estructurada."
+        },
+        {
+          "field": "auxiliaryCourseDocuments",
+          "resolution": "Las fichas EVA de IERN y O31T son auxiliares. No crean identidades canónicas, equivalencias, semestres ni vigencia de dictado."
         }
       ],
-      "uiNotice": "Plan 2022 semiabierto: elegí una trayectoria orientativa o armá una personalizada. Los énfasis no cambian el título; completá los mínimos por área, 79 créditos flexibles y el Trabajo Final.",
-      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La Comisión de Carrera debe validar electivas y la trayectoria personalizada."
+      "uiNotice": "Plan 2022 de seis semestres y 270 créditos. La grilla común y dos ejemplos flexibles provienen del Plan oficial; los enfoques no cambian el título. Las abreviaturas sin carga individual publicada se muestran como bloques, y el resto de Bedelías permanece candidato.",
+      "remainingWork": "Repetir la inspección visual del PDF cuando IMPO permita renderizarlo y revisar sólo ante una nueva publicación curricular u oferta oficial. No inferir previaturas, cargas individuales, semestres de candidatas ni inscripción abierta."
     },
     {
       "identity": "licenciatura en educacion fisica:2014",
@@ -75124,6 +76070,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:2affecafe51218e4e5110340ff6c935db08b98e17ff9955823bee9ed38b5b6d1",
+  "contentHash": "sha256:19aa36c1d33c6b7b2dfad473421405f90cc32cc38a9b3656eccd4f10105b6734",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
