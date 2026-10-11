@@ -2783,6 +2783,57 @@
         "SPAF y SEMI permanecen visibles como alternativas del mismo cupo; se exige aprobar una sola. SEMII corresponde al cupo separado del cuarto semestre.",
         "No se crea un Plan 2020 ni se altera la carga oficial: prevalecen el Plan 2017, la Resolución 48/2019, la página vigente y los encabezados/programas concordantes."
       ]
+    },
+    {
+      "planId": "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-11",
+      "effectiveAt": "2013",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Rocha"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "sede exclusiva Rocha; tres años y seis semestres; 240 créditos y 40 por semestre; malla; seminarios de contenido variable; Proyecto de Egreso; título"
+        },
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales-2/",
+          "reviewedAt": "2026-10-11",
+          "role": "vigencia institucional; sede Rocha; duración de tres años; dos cupos de seminario opcional en segundo año; Proyecto de Egreso"
+        },
+        {
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "url": "https://www.cure.edu.uy/abren-las-inscripciones-para-la-generacion-2026-en-el-cure/",
+          "reviewedAt": "2026-10-11",
+          "role": "apertura de ingreso para la generación 2026; sede Rocha"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/cure-artes-plasticas-2013.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La estructura y las cargas se reproducen desde el Plan PDF, que cierra seis semestres de 40 y coincide con los códigos y créditos técnicos de Bedelías. La página HTML sólo se usa para vigencia y alcance territorial.",
+        "Prevalecen los 36 meses de la fuente académica oficial; los 60 meses administrativos permanecen trazados como discrepancia.",
+        "AP07 y AP15 representan los dos cupos semestrales de contenido variable. Se exige completar ambos cupos, no todas las propuestas o ediciones disponibles dentro de cada uno.",
+        "No aparecen en la malla oficial. Permanecen candidatas recuperables y no integran períodos, catálogo visible ni requisitos.",
+        "Son planes territoriales distintos bajo una misma carrera; no comparten identidades, períodos, códigos ni progreso."
+      ]
     }
   ]
 }

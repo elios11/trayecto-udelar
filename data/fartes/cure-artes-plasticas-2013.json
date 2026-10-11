@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013",
+  "auditIdentity": "tecnicatura en artes artes plasticas y visuales:2013",
+  "reviewedAt": "2026-10-11",
+  "scope": {
+    "service": "Facultad de Artes",
+    "campuses": [
+      {
+        "id": "rocha",
+        "label": "Rocha"
+      }
+    ],
+    "excludedPlans": [
+      {
+        "planYear": "2017",
+        "campus": "Rivera",
+        "reason": "Es una malla territorial distinta y conserva progreso independiente."
+      }
+    ]
+  },
+  "publication": {
+    "officialPlanYear": "2013",
+    "credential": "Técnico Universitario en Artes - Artes Plásticas y Visuales",
+    "durationMonths": 36,
+    "durationSemesters": 6,
+    "minimumCredits": 240,
+    "effectiveFrom": "2013",
+    "currentAtReview": true,
+    "currentEvidence": "Facultad de Artes mantiene la página específica de Rocha y CURE abrió la Tecnicatura en Rocha para la generación 2026."
+  },
+  "sources": [
+    {
+      "id": "fartes-plan-rocha-2013",
+      "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+      "authority": "Facultad de Artes, Udelar",
+      "supports": [
+        "sede exclusiva Rocha",
+        "tres años y seis semestres",
+        "240 créditos y 40 por semestre",
+        "malla",
+        "seminarios de contenido variable",
+        "Proyecto de Egreso",
+        "título"
+      ],
+      "rawContentHash": "sha256:bd646d5527965e2c88e919ab288e5d9bd9e5c467511bee8ae5c84ec2b2b0c194",
+      "visuallyInspectedPdfPages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "fartes-current-career-page-rocha",
+      "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales-2/",
+      "authority": "Facultad de Artes, Udelar",
+      "supports": [
+        "vigencia institucional",
+        "sede Rocha",
+        "duración de tres años",
+        "dos cupos de seminario opcional en segundo año",
+        "Proyecto de Egreso"
+      ],
+      "rawContentHash": "sha256:07fb3c7c7da3f677024563bbcf2cc6e7f95452e9e87dea2996a37c5a0d217ea2"
+    },
+    {
+      "id": "cure-ingresos-generacion-2026",
+      "url": "https://www.cure.edu.uy/abren-las-inscripciones-para-la-generacion-2026-en-el-cure/",
+      "authority": "Centro Universitario Regional del Este, Udelar",
+      "supports": [
+        "apertura de ingreso para la generación 2026",
+        "sede Rocha"
+      ],
+      "rawContentHash": "sha256:1531730b028ddce2d780134701ee81b1a2a0c921dae8d602a4dedcef1e8c357c"
+    }
+  ],
+  "sourcePortions": {
+    "fartes-plan-rocha-2013": {
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "facts": {
+        "campus": "Centro Universitario Regional Este - sede Rocha",
+        "documentCreationDate": "2013-12-23",
+        "semesterCount": 6,
+        "durationYears": 3,
+        "creditsPerSemester": 40,
+        "minimumCredits": 240,
+        "creditHours": 15,
+        "credential": "Técnico Universitario en Artes - Artes Plásticas y Visuales",
+        "secondYearFlexibleSlots": [
+          "Seminarios - tercer semestre - 5 créditos",
+          "Seminarios - cuarto semestre - 5 créditos"
+        ],
+        "finalProject": "Proyecto de Egreso - sexto semestre - 10 créditos"
+      }
+    },
+    "fartes-current-career-page-rocha": {
+      "reviewedAt": "2026-10-11",
+      "facts": {
+        "campus": "CURE sede Rocha",
+        "duration": "3 años más el proyecto de egreso",
+        "credential": "Técnico en Artes - Artes Plásticas y Visuales",
+        "seminarSlots": [
+          "Seminario Opcional - 5 créditos - tercer semestre",
+          "Seminario Opcional - 5 créditos - cuarto semestre"
+        ],
+        "graduationRequirement": "Proyecto de egreso: presentación de obra contextualizada en una monografía",
+        "publishedGridConflict": "El resumen HTML asigna 20 créditos a Estética y Percepción V y 15 a Taller/Área IV; no cierra los 40 créditos del quinto semestre publicados en el Plan."
+      }
+    },
+    "cure-ingresos-generacion-2026": {
+      "reviewedAt": "2026-10-11",
+      "facts": {
+        "generation": 2026,
+        "enrollmentWindow": "4 al 24 de febrero de 2026",
+        "offering": "Tecnicatura en Artes Plásticas y Visuales (Rocha)"
+      }
+    }
+  },
+  "rows": [
+    {
+      "sourceCourseId": "AP01",
+      "officialLabel": "Estética y Percepción I",
+      "credits": 38,
+      "period": "Semestre 1",
+      "requirementId": "semester-1",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP02",
+      "officialLabel": "Introducción a la Universidad",
+      "credits": 2,
+      "period": "Semestre 1",
+      "requirementId": "semester-1",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP03",
+      "officialLabel": "Estética y Percepción II",
+      "credits": 30,
+      "period": "Semestre 2",
+      "requirementId": "semester-2",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP04",
+      "officialLabel": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos I",
+      "credits": 10,
+      "period": "Semestre 2",
+      "requirementId": "semester-2",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP05",
+      "officialLabel": "Estética y Percepción III",
+      "credits": 20,
+      "period": "Semestre 3",
+      "requirementId": "semester-3",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP06",
+      "officialLabel": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos II",
+      "credits": 15,
+      "period": "Semestre 3",
+      "requirementId": "semester-3",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP07",
+      "officialLabel": "Seminarios - cupo del tercer semestre",
+      "credits": 5,
+      "period": "Semestre 3",
+      "requirementId": "semester-3",
+      "flexibleSlotId": "second-year-seminar-slots",
+      "projectionBasis": "exact-generic-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP08",
+      "officialLabel": "Estética y Percepción IV",
+      "credits": 20,
+      "period": "Semestre 4",
+      "requirementId": "semester-4",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP09",
+      "officialLabel": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos III",
+      "credits": 15,
+      "period": "Semestre 4",
+      "requirementId": "semester-4",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP15",
+      "officialLabel": "Seminarios - cupo del cuarto semestre",
+      "credits": 5,
+      "period": "Semestre 4",
+      "requirementId": "semester-4",
+      "flexibleSlotId": "second-year-seminar-slots",
+      "projectionBasis": "exact-generic-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP10",
+      "officialLabel": "Estética y Percepción V",
+      "credits": 10,
+      "period": "Semestre 5",
+      "requirementId": "semester-5",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP11",
+      "officialLabel": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos IV",
+      "credits": 30,
+      "period": "Semestre 5",
+      "requirementId": "semester-5",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP12",
+      "officialLabel": "Seminario-Taller de Educación Artística",
+      "credits": 15,
+      "period": "Semestre 6",
+      "requirementId": "semester-6",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP13",
+      "officialLabel": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos V",
+      "credits": 15,
+      "period": "Semestre 6",
+      "requirementId": "semester-6",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    },
+    {
+      "sourceCourseId": "AP14",
+      "officialLabel": "Proyecto de Egreso",
+      "credits": 10,
+      "period": "Semestre 6",
+      "requirementId": "semester-6",
+      "projectionBasis": "exact-plan-slot-and-bedelias-code"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "semester-1",
+      "name": "Primer semestre",
+      "shortName": "Semestre 1",
+      "minCredits": 40
+    },
+    {
+      "id": "semester-2",
+      "name": "Segundo semestre",
+      "shortName": "Semestre 2",
+      "minCredits": 40
+    },
+    {
+      "id": "semester-3",
+      "name": "Tercer semestre",
+      "shortName": "Semestre 3",
+      "minCredits": 40
+    },
+    {
+      "id": "semester-4",
+      "name": "Cuarto semestre",
+      "shortName": "Semestre 4",
+      "minCredits": 40
+    },
+    {
+      "id": "semester-5",
+      "name": "Quinto semestre",
+      "shortName": "Semestre 5",
+      "minCredits": 40
+    },
+    {
+      "id": "semester-6",
+      "name": "Sexto semestre y Proyecto de Egreso",
+      "shortName": "Semestre 6",
+      "minCredits": 40
+    }
+  ],
+  "requiredCourseGroups": [
+    {
+      "id": "mandatory-core",
+      "label": "Trece unidades obligatorias del Plan 2013",
+      "minCompleted": 13,
+      "sourceCourseIds": [
+        "AP01",
+        "AP02",
+        "AP03",
+        "AP04",
+        "AP05",
+        "AP06",
+        "AP08",
+        "AP09",
+        "AP10",
+        "AP11",
+        "AP12",
+        "AP13",
+        "AP14"
+      ]
+    },
+    {
+      "id": "second-year-seminar-slots",
+      "label": "Dos seminarios de contenido variable: uno en tercer y otro en cuarto semestre",
+      "minCompleted": 2,
+      "sourceCourseIds": [
+        "AP07",
+        "AP15"
+      ]
+    }
+  ],
+  "trajectories": [
+    {
+      "id": "bedelias",
+      "label": "Plan de Estudios 2013 · Rocha",
+      "description": "Seis semestres de Rocha, 40 créditos por período y dos cupos de seminario de contenido variable en segundo año.",
+      "campusIds": [
+        "rocha"
+      ],
+      "useOnlyConfiguredPeriods": true,
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "courseIds": [
+            "AP01",
+            "AP02"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "courseIds": [
+            "AP03",
+            "AP04"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "courseIds": [
+            "AP05",
+            "AP06",
+            "AP07"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "courseIds": [
+            "AP08",
+            "AP09",
+            "AP15"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "courseIds": [
+            "AP10",
+            "AP11"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "courseIds": [
+            "AP12",
+            "AP13",
+            "AP14"
+          ]
+        }
+      ]
+    }
+  ],
+  "authorityPolicy": {
+    "verifiedBedeliasSourceCourseIds": [
+      "AP01",
+      "AP02",
+      "AP03",
+      "AP04",
+      "AP05",
+      "AP06",
+      "AP07",
+      "AP08",
+      "AP09",
+      "AP15",
+      "AP10",
+      "AP11",
+      "AP12",
+      "AP13",
+      "AP14"
+    ],
+    "candidateSourceCourseIds": [
+      "INUNI",
+      "AP16"
+    ],
+    "allowFuzzyNameMatching": false,
+    "seminarContentOptionsBecomeCumulativeRequirements": false,
+    "riveraPlanMayShareCourseIdentity": false
+  },
+  "bedeliasComparison": {
+    "snapshotPath": "data/bedelias/cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
+    "snapshotContentHash": "sha256:92044d53aa9f58575239f4150fd62d6b3a094a73ff49e345017591d544e64c3c",
+    "compositionEntryCount": 17,
+    "compositionCredits": 244,
+    "verifiedCourseCount": 15,
+    "candidateRetainedCount": 2,
+    "interpretation": "Quince identidades coinciden exactamente con los quince cupos de la malla y suman 240 créditos. INUNI duplica Introducción a la Universidad con 4 créditos y AP16 Botánica y Arte figura con 0 créditos: ambas permanecen candidatas fuera de la trayectoria."
+  },
+  "conflicts": [
+    {
+      "field": "currentPageCredits",
+      "publishedValues": [
+        "El Plan PDF distribuye 10 créditos de Estética y Percepción V y 30 de Taller IV en quinto semestre",
+        "El resumen HTML vigente publica 20 créditos de Estética y Percepción V y 15 de Taller/Área IV"
+      ],
+      "resolution": "La estructura y las cargas se reproducen desde el Plan PDF, que cierra seis semestres de 40 y coincide con los códigos y créditos técnicos de Bedelías. La página HTML sólo se usa para vigencia y alcance territorial."
+    },
+    {
+      "field": "durationMonths",
+      "publishedValues": [
+        "El Plan y la página de Facultad de Artes publican tres años",
+        "Bedelías informa 60 meses"
+      ],
+      "resolution": "Prevalecen los 36 meses de la fuente académica oficial; los 60 meses administrativos permanecen trazados como discrepancia."
+    },
+    {
+      "field": "secondYearSeminars",
+      "publishedValues": [
+        "El Plan muestra un cupo genérico de Seminarios de 5 créditos en tercer semestre y otro en cuarto",
+        "La página vigente los describe como dos seminarios opcionales que pueden contener otros lenguajes"
+      ],
+      "resolution": "AP07 y AP15 representan los dos cupos semestrales de contenido variable. Se exige completar ambos cupos, no todas las propuestas o ediciones disponibles dentro de cada uno."
+    },
+    {
+      "field": "nonCurricularSnapshotEntries",
+      "publishedValues": [
+        "INUNI - Introducción a la Universidad - 4 créditos",
+        "AP16 - Botánica y Arte - 0 créditos"
+      ],
+      "resolution": "No aparecen en la malla oficial. Permanecen candidatas recuperables y no integran períodos, catálogo visible ni requisitos."
+    },
+    {
+      "field": "planRelationship",
+      "publishedValues": [
+        "Plan 2013 de Rocha",
+        "Plan 2017 de Rivera"
+      ],
+      "resolution": "Son planes territoriales distintos bajo una misma carrera; no comparten identidades, períodos, códigos ni progreso."
+    }
+  ],
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "value": "sha256:93c598cae6162a736f21dd5ed107d4ded59f26cd61e1460a1cd7bf85216607a8",
+    "sourceHashes": {
+      "fartes-plan-rocha-2013": "sha256:77efe45e8b11d90ccc92142c43c9ad190c94df963ac8d4549e72fb99c1cf9ab5",
+      "fartes-current-career-page-rocha": "sha256:bb9c8203e19a0f072a39693c43ae03cfacc83710f879f502384357d563bffb4b",
+      "cure-ingresos-generacion-2026": "sha256:a5d8c92c0d4bbad0f9c4201660bef5ea8998213a1c53c2a794554ad440a6033f"
+    }
+  }
+}

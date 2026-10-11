@@ -75,7 +75,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013": {
     load: () => import("./bedelias-generated/bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json"),
     pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Plan de Estudios 2013 · Rocha",
     minCredits: 240,
   },
   "bedelias-cure-tecnologo-en-telecomunicaciones-2009": {

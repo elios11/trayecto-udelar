@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6f32bed4443b2621ea3e0613c827bae88a7afe653b11eccecc82f1eecef02461",
-    "extractedReportHash": "sha256:fcea4a9060709d32407a67bf3df8c3cf1437c46a3fb1922a57a02b7b74ff4bfb",
-    "officialAuditHash": "sha256:4d2be2f5f673f93461f3dc96ffea84861c3c873b3d0e27e2e7d96663f1f2c2d6",
-    "reviewedTrajectoriesHash": "sha256:b330ebbdc10ee3d4ad3df910404bfe44d3fe9d6c62e4bc2b3cab9e95df8363e3"
+    "extractedReportHash": "sha256:0f030c2d8ef4d3e58e87723d4f429096f6321f6a9209bf8321f5b38d5fbea682",
+    "officialAuditHash": "sha256:d7324e69508747610db14f8ffa9dd51dcc34984e04d5991a7354cc2b77b597cc",
+    "reviewedTrajectoriesHash": "sha256:28658b0f82c03682e10f9f1c75943fc505f22d19c082da22da9b50a1f7c6d902"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 102,
+      "official-trajectory-reproduced": 103,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 41
+      "research-pending": 40
     },
-    "pending": 42,
+    "pending": 41,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -111,10 +111,10 @@
         "serviceLabel": "Facultad de Artes",
         "selectablePlanIds": 17,
         "states": {
-          "official-trajectory-reproduced": 9,
+          "official-trajectory-reproduced": 10,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 8
+          "research-pending": 7
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 42,
+    "total": 41,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fartes"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -678,7 +669,6 @@
         "serviceLabel": "Facultad de Artes",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013",
           "bedelias-fartes-licenciatura-en-composicion-1987",
           "bedelias-fartes-licenciatura-en-danza-contemporanea-2018",
           "bedelias-fartes-licenciatura-en-direccion-coral-1987",
@@ -2835,21 +2825,27 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-11",
       "effectiveAt": "2013",
       "officialSources": [
         {
           "authority": "Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
-          "role": "plan de estudios; título; tres años; seis semestres; 240 créditos; malla; Proyecto de Egreso; sede Rocha",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "sede exclusiva Rocha; tres años y seis semestres; 240 créditos y 40 por semestre; malla; seminarios de contenido variable; Proyecto de Egreso; título"
         },
         {
           "authority": "Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales-2/",
-          "role": "vigencia; coordinación actual; grilla; requisitos de egreso; sede Rocha",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "vigencia institucional; sede Rocha; duración de tres años; dos cupos de seminario opcional en segundo año; Proyecto de Egreso"
+        },
+        {
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "url": "https://www.cure.edu.uy/abren-las-inscripciones-para-la-generacion-2026-en-el-cure/",
+          "reviewedAt": "2026-10-11",
+          "role": "apertura de ingreso para la generación 2026; sede Rocha"
         }
       ],
       "scope": {
@@ -2867,16 +2863,30 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura en artes artes plasticas y visuales:2013",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/cure-artes-plasticas-2013.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:8d444cd2c55acc740c29f63dc581111bfc46de3adf5c5c05933820766a656f15",
+        "projectionContentHash": "sha256:99bb4350948b7eff2da5082790fd3892a36cc40799b75c812a6883179352d3ec",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 15,
+        "matchedCoursePlacements": 15
       },
       "conflictNotes": [
-        "durationMonths: La fuente académica oficial establece tres años; se corrigen los 60 meses administrativos publicados por Bedelías.",
-        "supplementaryEntries: INUNI y AP16 no integran la malla oficial publicada; quedan visibles como oferta complementaria sin créditos exigibles.",
-        "planRelationship: El Plan 2013 de Rocha y el Plan 2017 de Rivera se muestran como planes de una misma carrera, no como trayectorias intercambiables ni como carreras duplicadas."
+        "La estructura y las cargas se reproducen desde el Plan PDF, que cierra seis semestres de 40 y coincide con los códigos y créditos técnicos de Bedelías. La página HTML sólo se usa para vigencia y alcance territorial.",
+        "Prevalecen los 36 meses de la fuente académica oficial; los 60 meses administrativos permanecen trazados como discrepancia.",
+        "AP07 y AP15 representan los dos cupos semestrales de contenido variable. Se exige completar ambos cupos, no todas las propuestas o ediciones disponibles dentro de cada uno.",
+        "No aparecen en la malla oficial. Permanecen candidatas recuperables y no integran períodos, catálogo visible ni requisitos.",
+        "Son planes territoriales distintos bajo una misma carrera; no comparten identidades, períodos, códigos ni progreso."
       ]
     },
     {
@@ -13421,5 +13431,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:f21eaedcb24732e7f657d784fab8c89dcb993ef9037a3c3eafbd3e198464ab3e"
+  "contentHash": "sha256:c04e0e6d5f3b11086fa09da64fc35fe5ccdcf6f11720ea1c5150e283b3f07927"
 }

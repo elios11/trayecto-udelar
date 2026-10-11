@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:e6dd90fada643c2c7e8b91ade1256ad8b06ad21e04c41b9850170d9f5f7e1e7d",
-    "officialAuditHash": "sha256:4d2be2f5f673f93461f3dc96ffea84861c3c873b3d0e27e2e7d96663f1f2c2d6",
+    "auditQueueHash": "sha256:51f0458d4a89e1b0258670e9cb5f1ca2609e17abb9d13991c623c3f2d31b840b",
+    "officialAuditHash": "sha256:d7324e69508747610db14f8ffa9dd51dcc34984e04d5991a7354cc2b77b597cc",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -22,19 +22,19 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5104,
-      "candidate": 26590,
+      "verified": 5102,
+      "candidate": 26592,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
     "beforePublishedCourses": 31702,
-    "afterPublishedCourses": 5104,
+    "afterPublishedCourses": 5102,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1754,
     "visibleTargetsWithUnpublishedDependencies": 1491,
-    "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 63,
+    "plansWithVerifiedCatalog": 63,
+    "plansWithPartialCatalog": 64,
     "plansWithStructureOnly": 12
   },
   "plans": [
@@ -435,7 +435,7 @@
       "facultyCode": "CURE",
       "snapshotPath": "data/bedelias/cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "verified",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -446,14 +446,14 @@
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 17,
-        "hiddenCourses": 0,
+        "publishedCourses": 15,
+        "hiddenCourses": 2,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 17,
-        "candidate": 0,
+        "verified": 15,
+        "candidate": 2,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4630,5 +4630,5 @@
       }
     }
   ],
-  "contentHash": "sha256:fcea4a9060709d32407a67bf3df8c3cf1437c46a3fb1922a57a02b7b74ff4bfb"
+  "contentHash": "sha256:0f030c2d8ef4d3e58e87723d4f429096f6321f6a9209bf8321f5b38d5fbea682"
 }

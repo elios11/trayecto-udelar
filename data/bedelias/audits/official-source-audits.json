@@ -32950,15 +32950,17 @@
       "identity": "tecnicatura en artes artes plasticas y visuales:2013",
       "career": "TECNICATURA EN ARTES - ARTES PLÁSTICAS Y VISUALES",
       "planYear": "2013",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-11",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, duración, créditos, estructura semestral, unidades extracurriculares y sede",
+      "scope": "vigencia 2026, título, duración, 240 créditos, seis semestres, seminarios de contenido variable, Proyecto de Egreso y sede Rocha",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
-          "Plan de Estudios publicado por Facultad de Artes para el Centro Universitario Regional del Este"
+          "Plan de Estudios publicado por Facultad de Artes para el Centro Universitario Regional Este, sede Rocha",
+          "Apertura de ingreso CURE para la generación 2026"
         ],
         "planYear": "2013",
+        "effectiveFrom": "2013",
         "title": "Técnico Universitario en Artes - Artes Plásticas y Visuales",
         "careerName": "Tecnicatura en Artes Plásticas y Visuales",
         "facultyCode": "FARTES",
@@ -32967,22 +32969,93 @@
         "semesters": 6,
         "minimumCredits": 240,
         "current": true,
-        "degreeRule": "El título se obtiene con 240 créditos distribuidos en seis semestres de 40 créditos, incluyendo el Proyecto de Egreso.",
+        "pathwayLabel": "Plan de Estudios 2013 · Rocha",
+        "trajectories": [
+          {
+            "id": "bedelias",
+            "label": "Plan de Estudios 2013 · Rocha",
+            "description": "Seis semestres de Rocha, 40 créditos por período y dos cupos de seminario de contenido variable en segundo año.",
+            "campusIds": [
+              "rocha"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "AP01",
+                  "AP02"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "AP03",
+                  "AP04"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "AP05",
+                  "AP06",
+                  "AP07"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "AP08",
+                  "AP09",
+                  "AP15"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "AP10",
+                  "AP11"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "AP12",
+                  "AP13",
+                  "AP14"
+                ]
+              }
+            ],
+            "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+            "catalogSourceCourseIds": [],
+            "restrictGeneratedCatalogToPublished": true
+          }
+        ],
+        "degreeRule": "El título exige 240 créditos en seis semestres de 40: las trece unidades fijas, dos cupos de seminario de contenido variable y el Proyecto de Egreso.",
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
-          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
-          "pathwayLabel": "Trayectoria del plan",
-          "pathwayDescription": "Secuencia semestral oficial del Plan 2013 en Rocha.",
-          "periodOrder": [
-            "Semestre 1",
-            "Semestre 2",
-            "Semestre 3",
-            "Semestre 4",
-            "Semestre 5",
-            "Semestre 6",
-            "Oferta complementaria"
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "AP01",
+            "AP02",
+            "AP03",
+            "AP04",
+            "AP05",
+            "AP06",
+            "AP07",
+            "AP08",
+            "AP09",
+            "AP15",
+            "AP10",
+            "AP11",
+            "AP12",
+            "AP13",
+            "AP14"
           ],
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+          "sourceDataPath": "data/fartes/cure-artes-plasticas-2013.json",
+          "includeAllCoursesInPathwayCatalog": false,
           "pathRequirementMap": {
             "2449": "semester-5",
             "2593": "semester-6",
@@ -32993,61 +33066,170 @@
           },
           "courseOverrides": {
             "AP01": {
+              "name": "Estética y Percepción I",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 38,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-1",
               "periodLabel": "Semestre 1"
             },
             "AP02": {
+              "name": "Introducción a la Universidad",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 2,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-1",
               "periodLabel": "Semestre 1"
             },
             "AP03": {
+              "name": "Estética y Percepción II",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 30,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-2",
               "periodLabel": "Semestre 2"
             },
             "AP04": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos I",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 10,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-2",
               "periodLabel": "Semestre 2"
             },
             "AP05": {
+              "name": "Estética y Percepción III",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 20,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-3",
               "periodLabel": "Semestre 3"
             },
             "AP06": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos II",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-3",
               "periodLabel": "Semestre 3"
             },
             "AP07": {
-              "periodLabel": "Semestre 3"
+              "name": "Seminarios - cupo del tercer semestre",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 5,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-3",
+              "periodLabel": "Semestre 3",
+              "elective": true,
+              "catalogRole": "official-semester-choice-slot"
             },
             "AP08": {
+              "name": "Estética y Percepción IV",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 20,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-4",
               "periodLabel": "Semestre 4"
             },
             "AP09": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos III",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-4",
               "periodLabel": "Semestre 4"
             },
             "AP15": {
-              "periodLabel": "Semestre 4"
+              "name": "Seminarios - cupo del cuarto semestre",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 5,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-4",
+              "periodLabel": "Semestre 4",
+              "elective": true,
+              "catalogRole": "official-semester-choice-slot"
             },
             "AP10": {
+              "name": "Estética y Percepción V",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 10,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-5",
               "periodLabel": "Semestre 5"
             },
             "AP11": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos IV",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 30,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-5",
               "periodLabel": "Semestre 5"
             },
             "AP12": {
+              "name": "Seminario-Taller de Educación Artística",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-6",
               "periodLabel": "Semestre 6"
             },
             "AP13": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos V",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-6",
               "periodLabel": "Semestre 6"
             },
             "AP14": {
+              "name": "Proyecto de Egreso",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 10,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
+              "requirementId": "semester-6",
               "periodLabel": "Semestre 6"
-            },
-            "INUNI": {
-              "credits": 0,
-              "requirementId": "supplementary-offer",
-              "periodLabel": "Oferta complementaria"
-            },
-            "AP16": {
-              "credits": 0,
-              "requirementId": "supplementary-offer",
-              "periodLabel": "Oferta complementaria"
             }
           },
+          "periodOrder": [
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6"
+          ],
+          "pathwayLabel": "Plan de Estudios 2013 · Rocha",
+          "pathwayDescription": "Seis semestres de Rocha, 40 créditos por período y dos cupos de seminario de contenido variable en segundo año.",
           "creditRequirements": [
             {
               "id": "semester-1",
@@ -33081,22 +33263,16 @@
             },
             {
               "id": "semester-6",
-              "name": "Sexto semestre",
+              "name": "Sexto semestre y Proyecto de Egreso",
               "shortName": "Semestre 6",
               "minCredits": 40
-            },
-            {
-              "id": "supplementary-offer",
-              "name": "Oferta complementaria no exigida por el plan",
-              "shortName": "Complementarias",
-              "minCredits": 0,
-              "credentialRequired": false
             }
           ],
           "requiredCourseGroups": [
             {
-              "id": "mandatory-curriculum",
-              "label": "Unidades obligatorias del Plan 2013",
+              "id": "mandatory-core",
+              "label": "Trece unidades obligatorias del Plan 2013",
+              "minCompleted": 13,
               "sourceCourseIds": [
                 "AP01",
                 "AP02",
@@ -33104,16 +33280,67 @@
                 "AP04",
                 "AP05",
                 "AP06",
-                "AP07",
                 "AP08",
                 "AP09",
-                "AP15",
                 "AP10",
                 "AP11",
                 "AP12",
                 "AP13",
                 "AP14"
-              ]
+              ],
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf"
+            },
+            {
+              "id": "second-year-seminar-slots",
+              "label": "Dos seminarios de contenido variable: uno en tercer y otro en cuarto semestre",
+              "minCompleted": 2,
+              "sourceCourseIds": [
+                "AP07",
+                "AP15"
+              ],
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf"
+            }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "currentPageCredits",
+              "publishedValues": [
+                "El Plan PDF distribuye 10 créditos de Estética y Percepción V y 30 de Taller IV en quinto semestre",
+                "El resumen HTML vigente publica 20 créditos de Estética y Percepción V y 15 de Taller/Área IV"
+              ],
+              "resolution": "La estructura y las cargas se reproducen desde el Plan PDF, que cierra seis semestres de 40 y coincide con los códigos y créditos técnicos de Bedelías. La página HTML sólo se usa para vigencia y alcance territorial."
+            },
+            {
+              "field": "durationMonths",
+              "publishedValues": [
+                "El Plan y la página de Facultad de Artes publican tres años",
+                "Bedelías informa 60 meses"
+              ],
+              "resolution": "Prevalecen los 36 meses de la fuente académica oficial; los 60 meses administrativos permanecen trazados como discrepancia."
+            },
+            {
+              "field": "secondYearSeminars",
+              "publishedValues": [
+                "El Plan muestra un cupo genérico de Seminarios de 5 créditos en tercer semestre y otro en cuarto",
+                "La página vigente los describe como dos seminarios opcionales que pueden contener otros lenguajes"
+              ],
+              "resolution": "AP07 y AP15 representan los dos cupos semestrales de contenido variable. Se exige completar ambos cupos, no todas las propuestas o ediciones disponibles dentro de cada uno."
+            },
+            {
+              "field": "nonCurricularSnapshotEntries",
+              "publishedValues": [
+                "INUNI - Introducción a la Universidad - 4 créditos",
+                "AP16 - Botánica y Arte - 0 créditos"
+              ],
+              "resolution": "No aparecen en la malla oficial. Permanecen candidatas recuperables y no integran períodos, catálogo visible ni requisitos."
+            },
+            {
+              "field": "planRelationship",
+              "publishedValues": [
+                "Plan 2013 de Rocha",
+                "Plan 2017 de Rivera"
+              ],
+              "resolution": "Son planes territoriales distintos bajo una misma carrera; no comparten identidades, períodos, códigos ni progreso."
             }
           ]
         }
@@ -33125,28 +33352,36 @@
             "Rocha"
           ],
           "role": "oferta completa de Facultad de Artes en el CENUR Este, sede Rocha",
+          "trajectoryIds": [
+            "bedelias"
+          ],
           "curriculumVariant": false
         }
       ],
       "bedeliasComparison": {
         "canonicalSnapshot": "data/bedelias/cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013.json",
         "metadataCurrent": true,
-        "publishedDurationMonths": 60,
+        "publishedDurationMonths": 36,
         "publishedMinimumCredits": 240,
         "compositionMatterEntries": 17,
         "compositionCredits": 244,
-        "interpretation": "La composición contiene las 15 unidades del plan y dos entradas complementarias: una duplicación administrativa de Introducción a la Universidad por 4 créditos y Botánica y Arte con 0 créditos. Ninguna se vuelve requisito de egreso."
+        "exactVerifiedEntries": 15,
+        "candidateEntriesPreserved": 2,
+        "interpretation": "Quince identidades coinciden exactamente con los quince cupos de la malla y suman 240 créditos. INUNI duplica Introducción a la Universidad con 4 créditos y AP16 Botánica y Arte figura con 0 créditos: ambas permanecen candidatas fuera de la trayectoria."
       },
       "conclusion": {
         "canonicalModel": "one-career-distinct-site-plan",
         "regionalCurriculumVariant": true,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "Rocha conserva un Plan 2013 vigente y territorialmente radicado, con estructura propia respecto del Plan 2017 de Rivera. Comparten carrera y título, pero la persona estudiante debe seleccionar el plan que realmente cursa.",
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fartes/cure-artes-plasticas-2013.json",
+        "reason": "Rocha conserva un Plan 2013 propio y vigente en 2026. Su malla de seis semestres se reconstruye sólo con las quince correspondencias exactas del Plan; Rivera 2017 no aporta identidad, calendario ni progreso.",
         "normalization": [
-          "Agrupar el Plan 2013 y el Plan 2017 bajo una única Tecnicatura en Artes Plásticas y Visuales de Facultad de Artes.",
-          "Mantener el Plan 2013 como opción independiente con sede Rocha, seis semestres y 240 créditos.",
-          "Exigir las 15 unidades nominales del plan, incluidos los dos Seminarios, el Seminario-Taller de Educación Artística y el Proyecto de Egreso.",
-          "Conservar Introducción a la Universidad de 4 créditos y Botánica y Arte como oferta complementaria de Bedelías, sin contarlas para el título oficial."
+          "Mantener el Plan 2013 de Rocha separado del Plan 2017 de Rivera bajo una sola carrera.",
+          "Reproducir seis semestres de 40 créditos desde el Plan PDF de Facultad de Artes.",
+          "Conservar AP07 y AP15 como dos cupos semestrales de contenido variable, sin acumular todas sus propuestas posibles.",
+          "Mantener INUNI y AP16 candidatas fuera de la trayectoria y del catálogo normal.",
+          "Mostrar Proyecto de Egreso una sola vez en sexto semestre."
         ]
       },
       "sources": [
@@ -33154,44 +33389,88 @@
           "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Tecnicatura_Artes-Artes_Plasticas_y_Visuales.pdf",
           "authority": "Facultad de Artes, Udelar",
           "supports": [
-            "plan de estudios",
-            "título",
-            "tres años",
-            "seis semestres",
-            "240 créditos",
+            "sede exclusiva Rocha",
+            "tres años y seis semestres",
+            "240 créditos y 40 por semestre",
             "malla",
+            "seminarios de contenido variable",
             "Proyecto de Egreso",
-            "sede Rocha"
-          ]
+            "título"
+          ],
+          "contentHash": "sha256:bd646d5527965e2c88e919ab288e5d9bd9e5c467511bee8ae5c84ec2b2b0c194"
         },
         {
           "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales-2/",
           "authority": "Facultad de Artes, Udelar",
           "supports": [
-            "vigencia",
-            "coordinación actual",
-            "grilla",
-            "requisitos de egreso",
+            "vigencia institucional",
+            "sede Rocha",
+            "duración de tres años",
+            "dos cupos de seminario opcional en segundo año",
+            "Proyecto de Egreso"
+          ],
+          "contentHash": "sha256:07fb3c7c7da3f677024563bbcf2cc6e7f95452e9e87dea2996a37c5a0d217ea2"
+        },
+        {
+          "url": "https://www.cure.edu.uy/abren-las-inscripciones-para-la-generacion-2026-en-el-cure/",
+          "authority": "Centro Universitario Regional del Este, Udelar",
+          "supports": [
+            "apertura de ingreso para la generación 2026",
             "sede Rocha"
-          ]
+          ],
+          "contentHash": "sha256:1531730b028ddce2d780134701ee81b1a2a0c921dae8d602a4dedcef1e8c357c"
         }
       ],
       "anomalies": [
         {
-          "field": "durationMonths",
-          "resolution": "La fuente académica oficial establece tres años; se corrigen los 60 meses administrativos publicados por Bedelías."
+          "field": "currentPageCredits",
+          "publishedValues": [
+            "El Plan PDF distribuye 10 créditos de Estética y Percepción V y 30 de Taller IV en quinto semestre",
+            "El resumen HTML vigente publica 20 créditos de Estética y Percepción V y 15 de Taller/Área IV"
+          ],
+          "resolution": "La estructura y las cargas se reproducen desde el Plan PDF, que cierra seis semestres de 40 y coincide con los códigos y créditos técnicos de Bedelías. La página HTML sólo se usa para vigencia y alcance territorial."
         },
         {
-          "field": "supplementaryEntries",
-          "resolution": "INUNI y AP16 no integran la malla oficial publicada; quedan visibles como oferta complementaria sin créditos exigibles."
+          "field": "durationMonths",
+          "publishedValues": [
+            "El Plan y la página de Facultad de Artes publican tres años",
+            "Bedelías informa 60 meses"
+          ],
+          "resolution": "Prevalecen los 36 meses de la fuente académica oficial; los 60 meses administrativos permanecen trazados como discrepancia."
+        },
+        {
+          "field": "secondYearSeminars",
+          "publishedValues": [
+            "El Plan muestra un cupo genérico de Seminarios de 5 créditos en tercer semestre y otro en cuarto",
+            "La página vigente los describe como dos seminarios opcionales que pueden contener otros lenguajes"
+          ],
+          "resolution": "AP07 y AP15 representan los dos cupos semestrales de contenido variable. Se exige completar ambos cupos, no todas las propuestas o ediciones disponibles dentro de cada uno."
+        },
+        {
+          "field": "nonCurricularSnapshotEntries",
+          "publishedValues": [
+            "INUNI - Introducción a la Universidad - 4 créditos",
+            "AP16 - Botánica y Arte - 0 créditos"
+          ],
+          "resolution": "No aparecen en la malla oficial. Permanecen candidatas recuperables y no integran períodos, catálogo visible ni requisitos."
         },
         {
           "field": "planRelationship",
-          "resolution": "El Plan 2013 de Rocha y el Plan 2017 de Rivera se muestran como planes de una misma carrera, no como trayectorias intercambiables ni como carreras duplicadas."
+          "publishedValues": [
+            "Plan 2013 de Rocha",
+            "Plan 2017 de Rivera"
+          ],
+          "resolution": "Son planes territoriales distintos bajo una misma carrera; no comparten identidades, períodos, códigos ni progreso."
         }
       ],
-      "uiNotice": "Plan 2013 de Rocha: 240 créditos en seis semestres y Proyecto de Egreso. Las entradas complementarias de Bedelías no sustituyen las 15 unidades del plan oficial.",
-      "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías; no se deducen del orden semestral."
+      "uiNotice": "Plan 2013 vigente en Rocha: 240 créditos en seis semestres de 40. En segundo año completás un seminario de contenido variable en cada semestre; las entradas auxiliares de Bedelías no forman parte de la malla.",
+      "remainingWork": "Revisar sólo ante un nuevo plan, resolución o grilla oficial de Facultad de Artes. La oferta concreta de contenidos de seminario no se convierte en obligación acumulativa.",
+      "sourceEvidence": {
+        "sourceDataPath": "data/fartes/cure-artes-plasticas-2013.json",
+        "normalizedFingerprint": "sha256:93c598cae6162a736f21dd5ed107d4ded59f26cd61e1460a1cd7bf85216607a8",
+        "planContentHash": "sha256:bd646d5527965e2c88e919ab288e5d9bd9e5c467511bee8ae5c84ec2b2b0c194",
+        "currentEnrollmentContentHash": "sha256:1531730b028ddce2d780134701ee81b1a2a0c921dae8d602a4dedcef1e8c357c"
+      }
     },
     {
       "identity": "tecnicatura en gestion de recursos naturales:2011",
@@ -78309,6 +78588,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:4d2be2f5f673f93461f3dc96ffea84861c3c873b3d0e27e2e7d96663f1f2c2d6",
+  "contentHash": "sha256:d7324e69508747610db14f8ffa9dd51dcc34984e04d5991a7354cc2b77b597cc",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

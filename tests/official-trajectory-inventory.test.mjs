@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 102,
+    "official-trajectory-reproduced": 103,
     "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 3,
-    "research-pending": 41,
+    "research-pending": 40,
   });
-  assert.equal(savedInventory.pendingQueue.total, 42);
-  assert.equal(savedInventory.pendingQueue.plans.length, 42);
+  assert.equal(savedInventory.pendingQueue.total, 41);
+  assert.equal(savedInventory.pendingQueue.plans.length, 41);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 1).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(1).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -93,6 +93,18 @@ test("D03ah cierra Tecnólogo en Madera 2011 con la guía flexible oficial", () 
   assert.equal(plan.evidence.matchedCoursePlacements, 54);
   assert.deepEqual(plan.scope.territories, ["Rivera"]);
   assert.ok(plan.conflictNotes.some((note) => /Anexo IV.*ejemplos/i.test(note)));
+});
+
+test("D03ak cierra Artes Plásticas y Visuales 2013 con seis semestres propios de Rocha", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-periods");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [["bedelias", 6]]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 15);
+  assert.equal(plan.evidence.matchedCoursePlacements, 15);
+  assert.deepEqual(plan.scope.territories, ["Rocha"]);
+  assert.ok(plan.conflictNotes.some((note) => /página HTML sólo se usa para vigencia/i.test(note)));
+  assert.ok(plan.conflictNotes.some((note) => /planes territoriales distintos/i.test(note)));
 });
 
 test("D03u cierra Contador Público 2024 con cinco perfiles semestrales exactos", () => {

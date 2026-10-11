@@ -47,16 +47,15 @@ test("el Plan 2017 exige un solo seminario alternativo en tercer semestre", () =
   assert.match(rivera.plan.notice, /elegí un seminario de 5 créditos/i);
 });
 
-test("el Plan 2013 no cuenta las dos entradas complementarias como requisitos", () => {
+test("el Plan 2013 conserva dos entradas auxiliares como candidatas fuera de la malla", () => {
   const credential = rocha.creditStructure.credentials[0];
-  const mandatory = credential.requiredCourseGroups.find((group) => group.id === "mandatory-curriculum");
-  assert.deepEqual([mandatory.minCompleted, mandatory.courseIds.length], [15, 15]);
-  assert.equal(rocha.courses.filter((course) => course.credits > 0).reduce((sum, course) => sum + course.credits, 0), 240);
-  for (const code of ["INUNI", "AP16"]) {
-    const course = rocha.courses.find((candidate) => candidate.bedeliasCode === code);
-    assert.equal(course.credits, 0);
-    assert.deepEqual(course.eligibleRequirementIds, ["supplementary-offer"]);
-    assert.ok(!mandatory.courseIds.includes(course.id));
-  }
-  assert.match(rocha.plan.notice, /no sustituyen las 15 unidades/i);
+  const mandatory = credential.requiredCourseGroups.find((group) => group.id === "mandatory-core");
+  const seminars = credential.requiredCourseGroups.find((group) => group.id === "second-year-seminar-slots");
+  const visibleIds = new Set(rocha.publishedPathways.bedelias.periods.flatMap(({ courseIds }) => courseIds));
+  const candidates = rocha.courses.filter(({ authorityStatus }) => authorityStatus === "candidate");
+  assert.deepEqual([mandatory.minCompleted, mandatory.courseIds.length], [13, 13]);
+  assert.deepEqual([seminars.minCompleted, seminars.courseIds.length], [2, 2]);
+  assert.deepEqual(candidates.map(({ bedeliasCode, credits }) => [bedeliasCode, credits]).sort(), [["AP16", 0], ["INUNI", 4]]);
+  assert.ok(candidates.every(({ id }) => !visibleIds.has(id)));
+  assert.match(rocha.plan.notice, /entradas auxiliares.*no forman parte/i);
 });
