@@ -33,8 +33,8 @@ test("el Plan 2017 exige un solo seminario alternativo en tercer semestre", () =
     ["semester-2", 40],
     ["semester-3", 40],
     ["semester-4", 40],
-    ["semester-5", 40],
-    ["semester-6", 40],
+    ["semester-5", 45],
+    ["semester-6", 35],
   ]);
   const mandatory = credential.requiredCourseGroups.find((group) => group.id === "mandatory-curriculum");
   const seminar = credential.requiredCourseGroups.find((group) => group.id === "third-semester-seminar");

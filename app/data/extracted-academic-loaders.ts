@@ -117,7 +117,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017": {
     load: () => import("./bedelias-generated/bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017.json"),
     pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Plan de Estudios 2017 - implementación vigente",
     minCredits: 240,
   },
   "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011": {

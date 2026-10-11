@@ -32373,15 +32373,17 @@
       "identity": "tecnicatura en artes plasticas y visuales:2017",
       "career": "TECNICATURA EN ARTES - PLÁSTICAS Y VISUALES",
       "planYear": "2017",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-11",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, duración, créditos, estructura semestral, seminarios alternativos y sede",
+      "scope": "vigencia, título, duración, 240 créditos, seis semestres, calendario aprobado, errata de Taller III, seminarios alternativos y sede Rivera",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
-          "Plan de Estudios publicado por Facultad de Artes para el Centro Universitario de Rivera"
+          "Plan de Estudios 2017 publicado por Facultad de Artes para el Centro Universitario de Rivera",
+          "Resolución 48 del Consejo del I.ENBA de 03/09/2019"
         ],
         "planYear": "2017",
+        "effectiveFrom": "2020",
         "title": "Técnico Universitario en Artes - Artes Plásticas y Visuales",
         "careerName": "Tecnicatura en Artes Plásticas y Visuales",
         "facultyCode": "FARTES",
@@ -32390,21 +32392,95 @@
         "semesters": 6,
         "minimumCredits": 240,
         "current": true,
-        "degreeRule": "El título se obtiene con 240 créditos distribuidos en seis semestres de 40 créditos, incluyendo el Proyecto de Egreso.",
+        "pathwayLabel": "Plan de Estudios 2017 - implementación vigente",
+        "trajectories": [
+          {
+            "id": "bedelias",
+            "label": "Plan de Estudios 2017 - implementación vigente",
+            "description": "Seis semestres de Rivera con el intercambio de quinto y sexto aprobado por Resolución 48/2019.",
+            "campusIds": [
+              "rivera"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "EPI",
+                  "UNIV"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "EPII",
+                  "TAI"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "SPAF",
+                  "EPIII",
+                  "SEMI",
+                  "TAII"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "EPIV",
+                  "SEMII",
+                  "TAIII"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "STEA",
+                  "TAIV"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "EPV",
+                  "TAV",
+                  "PROE"
+                ]
+              }
+            ],
+            "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Cambio_orden_cursado_tercer_ao.pdf",
+            "catalogSourceCourseIds": [],
+            "restrictGeneratedCatalogToPublished": true
+          }
+        ],
+        "degreeRule": "El título exige 240 créditos en seis semestres, las 14 unidades obligatorias, un seminario de 5 créditos entre SPAF y SEMI y el Proyecto de Egreso. La Resolución 48/2019 deja 45 créditos en quinto y 35 en sexto sin cambiar el total.",
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
-          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
-          "pathwayLabel": "Trayectoria del plan",
-          "pathwayDescription": "Secuencia semestral oficial del Plan 2017 en Rivera.",
-          "periodOrder": [
-            "Semestre 1",
-            "Semestre 2",
-            "Semestre 3",
-            "Semestre 4",
-            "Semestre 5",
-            "Semestre 6"
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "EPI",
+            "UNIV",
+            "EPII",
+            "TAI",
+            "SPAF",
+            "EPIII",
+            "SEMI",
+            "TAII",
+            "EPIV",
+            "SEMII",
+            "TAIII",
+            "STEA",
+            "TAIV",
+            "EPV",
+            "TAV",
+            "PROE"
           ],
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+          "sourceDataPath": "data/fartes/cur-artes-plasticas-2017.json",
+          "includeAllCoursesInPathwayCatalog": false,
           "pathRequirementMap": {
             "1R": "semester-1",
             "2R": "semester-2",
@@ -32416,55 +32492,180 @@
           },
           "courseOverrides": {
             "EPI": {
+              "name": "Estética y Percepción I",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 38,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-1",
               "periodLabel": "Semestre 1"
             },
             "UNIV": {
+              "name": "Introducción a la Universidad",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 2,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-1",
               "periodLabel": "Semestre 1"
             },
             "EPII": {
+              "name": "Estética y Percepción II",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 30,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-2",
               "periodLabel": "Semestre 2"
             },
             "TAI": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos I",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 10,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-2",
               "periodLabel": "Semestre 2"
             },
             "SPAF": {
-              "periodLabel": "Semestre 3"
+              "name": "Seminario Procesos Artísticos y Prácticas Audiovisuales en Contexto Fronterizo",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 5,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-3",
+              "periodLabel": "Semestre 3",
+              "elective": true,
+              "catalogRole": "official-semester-alternative"
             },
             "EPIII": {
+              "name": "Estética y Percepción III",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 20,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-3",
               "periodLabel": "Semestre 3"
             },
             "SEMI": {
-              "periodLabel": "Semestre 3"
+              "name": "Seminario I Maquillaje",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 5,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-3",
+              "periodLabel": "Semestre 3",
+              "elective": true,
+              "catalogRole": "official-semester-alternative"
             },
             "TAII": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos II",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-3",
               "periodLabel": "Semestre 3"
             },
             "EPIV": {
+              "name": "Estética y Percepción IV",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 20,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-4",
               "periodLabel": "Semestre 4"
             },
             "SEMII": {
+              "name": "Seminario II Aproximación al Cuerpo",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 5,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-4",
               "periodLabel": "Semestre 4"
             },
             "TAIII": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos III",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-4",
               "periodLabel": "Semestre 4"
             },
-            "EPV": {
+            "STEA": {
+              "name": "Seminario-Taller de Educación Artística",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-5",
               "periodLabel": "Semestre 5"
             },
             "TAIV": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos IV",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 30,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-5",
               "periodLabel": "Semestre 5"
             },
-            "STEA": {
+            "EPV": {
+              "name": "Estética y Percepción V",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 10,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-6",
               "periodLabel": "Semestre 6"
             },
             "TAV": {
+              "name": "Taller de Libre Orientación Estético Pedagógica y Área de las Técnicas y Medios Expresivos V",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 15,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
+              "requirementId": "semester-6",
               "periodLabel": "Semestre 6"
             },
             "PROE": {
+              "name": "Proyecto de Egreso",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "credits": 10,
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
               "requirementId": "semester-6",
               "periodLabel": "Semestre 6"
             }
           },
+          "periodOrder": [
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6"
+          ],
+          "pathwayLabel": "Plan de Estudios 2017 - implementación vigente",
+          "pathwayDescription": "Seis semestres de Rivera con el intercambio de quinto y sexto aprobado por Resolución 48/2019.",
           "creditRequirements": [
             {
               "id": "semester-1",
@@ -32492,21 +32693,22 @@
             },
             {
               "id": "semester-5",
-              "name": "Quinto semestre",
+              "name": "Quinto semestre según Resolución 48/2019",
               "shortName": "Semestre 5",
-              "minCredits": 40
+              "minCredits": 45
             },
             {
               "id": "semester-6",
-              "name": "Sexto semestre y Proyecto de Egreso",
+              "name": "Sexto semestre y Proyecto de Egreso según Resolución 48/2019",
               "shortName": "Semestre 6",
-              "minCredits": 40
+              "minCredits": 35
             }
           ],
           "requiredCourseGroups": [
             {
               "id": "mandatory-curriculum",
               "label": "Unidades obligatorias del Plan 2017",
+              "minCompleted": 14,
               "sourceCourseIds": [
                 "EPI",
                 "UNIV",
@@ -32517,12 +32719,13 @@
                 "EPIV",
                 "SEMII",
                 "TAIII",
-                "EPV",
-                "TAIV",
                 "STEA",
+                "TAIV",
+                "EPV",
                 "TAV",
                 "PROE"
-              ]
+              ],
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf"
             },
             {
               "id": "third-semester-seminar",
@@ -32531,7 +32734,43 @@
               "sourceCourseIds": [
                 "SPAF",
                 "SEMI"
-              ]
+              ],
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf"
+            }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "fourthSemesterWorkshop",
+              "publishedValues": [
+                "El cuadro del Plan imprime Taller IV en cuarto semestre",
+                "La página vigente, el encabezado del programa, las previaturas y la secuencia I-V identifican Taller III en cuarto semestre"
+              ],
+              "resolution": "Se proyecta TAIII en cuarto semestre. El doble rótulo IV del cuadro del Plan se conserva como errata explícita y no crea una segunda identidad TAIV."
+            },
+            {
+              "field": "fifthAndSixthSemesterCalendar",
+              "publishedValues": [
+                "El cuadro original ubica Estética y Percepción V en quinto y Seminario-Taller de Educación Artística en sexto",
+                "La Resolución 48/2019 aprueba intercambiarlas y la página vigente/programas reflejan el cambio"
+              ],
+              "resolution": "La trayectoria vigente ubica STEA en quinto y EPV en sexto; los mínimos efectivos de esos tramos son 45 y 35 créditos, sin alterar los 240 créditos totales."
+            },
+            {
+              "field": "thirdSemesterSeminars",
+              "publishedValues": [
+                "El Plan exige un cupo genérico de Seminarios de 5 créditos en tercer semestre",
+                "Bedelías conserva SPAF y SEMI como dos propuestas concretas de 5 créditos"
+              ],
+              "resolution": "SPAF y SEMI permanecen visibles como alternativas del mismo cupo; se exige aprobar una sola. SEMII corresponde al cupo separado del cuarto semestre."
+            },
+            {
+              "field": "supportingDocumentTypos",
+              "publishedValues": [
+                "El programa de Taller III encabeza cuarto semestre pero su campo interno dice semestre 6",
+                "El programa de Taller IV consigna Plan 2020",
+                "La tabla de previaturas asigna 15 créditos a Taller IV"
+              ],
+              "resolution": "No se crea un Plan 2020 ni se altera la carga oficial: prevalecen el Plan 2017, la Resolución 48/2019, la página vigente y los encabezados/programas concordantes."
             }
           ]
         }
@@ -32543,6 +32782,9 @@
             "Rivera"
           ],
           "role": "oferta completa de Facultad de Artes en el CENUR Noreste, sede Rivera",
+          "trajectoryIds": [
+            "bedelias"
+          ],
           "curriculumVariant": false
         }
       ],
@@ -32553,18 +32795,23 @@
         "publishedMinimumCredits": 240,
         "compositionMatterEntries": 16,
         "compositionCredits": 245,
-        "interpretation": "Bedelías reproduce la estructura oficial y agrega dos seminarios concretos de 5 créditos en el tercer semestre. El plan exige un único seminario de 5 créditos en ese semestre, por lo que se modelan como alternativas."
+        "exactVerifiedEntries": 16,
+        "candidateEntriesPreserved": 0,
+        "interpretation": "Las dieciséis identidades técnicas quedan preservadas. SPAF y SEMI son dos propuestas concretas para un único cupo de 5 créditos del tercer semestre; no se acumulan."
       },
       "conclusion": {
         "canonicalModel": "one-career-distinct-site-plan",
         "regionalCurriculumVariant": true,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "Rivera tiene un Plan 2017 propio, vigente y territorialmente radicado, con unidades y seminarios diferentes al Plan 2013 de Rocha. Comparten carrera y título, pero no deben fusionarse como una sola malla.",
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fartes/cur-artes-plasticas-2017.json",
+        "reason": "Rivera conserva un Plan 2017 propio. La trayectoria aplica la Resolución 48/2019 y corrige el doble rótulo Taller IV sólo con documentos de Facultad de Artes; el Plan 2013 de Rocha no aporta identidad, períodos ni progreso.",
         "normalization": [
-          "Agrupar el Plan 2017 y el Plan 2013 bajo una única Tecnicatura en Artes Plásticas y Visuales de Facultad de Artes.",
-          "Mantener el Plan 2017 como opción independiente con sede Rivera, seis semestres y 240 créditos.",
-          "Exigir las unidades nominales del plan, un único seminario de 5 créditos en el tercer semestre y el Proyecto de Egreso.",
-          "Tratar SPAF y Seminario I Maquillaje como alternativas vigentes para el cupo de seminario del tercer semestre, no como 10 créditos obligatorios acumulados."
+          "Mantener el Plan 2017 de Rivera separado del Plan 2013 de Rocha bajo una sola carrera.",
+          "Proyectar Taller III en cuarto semestre y Taller IV en quinto sin crear equivalencias por semejanza.",
+          "Aplicar el intercambio aprobado: Seminario-Taller de Educación Artística en quinto y Estética y Percepción V en sexto.",
+          "Conservar SPAF y SEMI como alternativas del único cupo de seminario de 5 créditos del tercer semestre.",
+          "Mostrar Proyecto de Egreso una sola vez en sexto semestre."
         ]
       },
       "sources": [
@@ -32572,50 +32819,132 @@
           "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
           "authority": "Facultad de Artes, Udelar",
           "supports": [
-            "plan de estudios",
+            "Plan 2017 de Rivera",
             "título",
-            "tres años",
             "seis semestres",
             "240 créditos",
-            "malla",
-            "Proyecto de Egreso",
-            "sede Rivera"
-          ]
+            "unidades y cargas publicadas"
+          ],
+          "contentHash": "sha256:ee73fc9fa498d439c574448d064d78c959fac75bd40e2a0d821c5df828fcc348"
         },
         {
           "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales/",
           "authority": "Facultad de Artes, Udelar",
           "supports": [
-            "vigencia",
-            "coordinación actual",
-            "programas de unidades curriculares",
-            "sede Rivera"
-          ]
+            "vigencia y sede Rivera",
+            "seis semestres",
+            "programas enlazados",
+            "Taller III en cuarto, Taller IV en quinto y Taller V en sexto",
+            "Estética y Percepción V en sexto y Seminario-Taller de Educación Artística en quinto"
+          ],
+          "contentHash": "sha256:65a230393c67861bbfec7887f43ad016c566a6f6ad28067b85bf59c7585839a5"
         },
         {
-          "url": "https://udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales",
-          "authority": "Portal central de la Universidad de la República",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Cambio_orden_cursado_tercer_ao.pdf",
+          "authority": "Consejo del Instituto Escuela Nacional de Bellas Artes, Udelar",
           "supports": [
-            "vigencia",
-            "36 meses",
-            "240 créditos",
-            "sede Rivera",
-            "requisitos de ingreso"
-          ]
+            "intercambio aprobado entre Estética y Percepción V y Seminario-Taller de Educación Artística",
+            "implementación de quinto y sexto semestre desde 2020"
+          ],
+          "contentHash": "sha256:445e5e1cb4b4fa7ac61940da052f6988d26734f1a82d2b380a0938d863a88ace"
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Previaturas_tecnicatura_Rivera.pdf",
+          "authority": "Instituto Escuela Nacional de Bellas Artes, Udelar",
+          "supports": [
+            "identidades y secuencia I-V de los talleres",
+            "dos cupos semestrales de seminario de contenido variable",
+            "previaturas publicadas"
+          ],
+          "contentHash": "sha256:4dc25cdf2e6944487e898dd7fa97858a72d77c06ecd8ad79b43e08051a432ef3"
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/v2_Programa_TLOEP_Y_ATME_III_2020.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": [
+            "Taller III",
+            "15 créditos",
+            "cuarto semestre",
+            "Plan 2017"
+          ],
+          "contentHash": "sha256:ca7e500bea842abcf9903fba717e3b7506ea664f8e58983ea55961f64b0c5e1c"
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Programa_Taller_de_Libre_Orientacin_Esttico_Pedaggico_y_rea_de_las_Tcnicas_y_Medios_Expresivos_IV.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": [
+            "Taller IV",
+            "30 créditos",
+            "quinto semestre",
+            "previatura Taller III"
+          ],
+          "contentHash": "sha256:1f880bf4e8c4b3bb4eb5df252dff88942596b5f5d95089fb850fc7ebb5384b3c"
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/v2_Programa_TLOEP_y_ATME_V.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": [
+            "Taller V",
+            "15 créditos",
+            "sexto semestre",
+            "Plan 2017"
+          ],
+          "contentHash": "sha256:75874bafc6c8c22a73d709276231a12f653803b1532fe6df9559cde5d90a1a02"
+        },
+        {
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Programa_Estetica_y_Percepcion_V.pdf",
+          "authority": "Facultad de Artes, Udelar",
+          "supports": [
+            "Estética y Percepción V",
+            "10 créditos",
+            "sexto semestre",
+            "Plan 2017"
+          ],
+          "contentHash": "sha256:e0264c62a73cd9cbbe4470501d42abbea969d38e9cf5b0111901fd92e12be556"
         }
       ],
       "anomalies": [
         {
-          "field": "thirdSemesterSeminars",
-          "resolution": "El plan exige 5 créditos de Seminarios. Bedelías lista dos propuestas concretas de 5 créditos; la UI exige una, sin convertir ambas en obligatorias."
+          "field": "fourthSemesterWorkshop",
+          "publishedValues": [
+            "El cuadro del Plan imprime Taller IV en cuarto semestre",
+            "La página vigente, el encabezado del programa, las previaturas y la secuencia I-V identifican Taller III en cuarto semestre"
+          ],
+          "resolution": "Se proyecta TAIII en cuarto semestre. El doble rótulo IV del cuadro del Plan se conserva como errata explícita y no crea una segunda identidad TAIV."
         },
         {
-          "field": "planRelationship",
-          "resolution": "El Plan 2017 de Rivera y el Plan 2013 de Rocha se muestran como planes de una misma carrera, no como trayectorias intercambiables ni como carreras duplicadas."
+          "field": "fifthAndSixthSemesterCalendar",
+          "publishedValues": [
+            "El cuadro original ubica Estética y Percepción V en quinto y Seminario-Taller de Educación Artística en sexto",
+            "La Resolución 48/2019 aprueba intercambiarlas y la página vigente/programas reflejan el cambio"
+          ],
+          "resolution": "La trayectoria vigente ubica STEA en quinto y EPV en sexto; los mínimos efectivos de esos tramos son 45 y 35 créditos, sin alterar los 240 créditos totales."
+        },
+        {
+          "field": "thirdSemesterSeminars",
+          "publishedValues": [
+            "El Plan exige un cupo genérico de Seminarios de 5 créditos en tercer semestre",
+            "Bedelías conserva SPAF y SEMI como dos propuestas concretas de 5 créditos"
+          ],
+          "resolution": "SPAF y SEMI permanecen visibles como alternativas del mismo cupo; se exige aprobar una sola. SEMII corresponde al cupo separado del cuarto semestre."
+        },
+        {
+          "field": "supportingDocumentTypos",
+          "publishedValues": [
+            "El programa de Taller III encabeza cuarto semestre pero su campo interno dice semestre 6",
+            "El programa de Taller IV consigna Plan 2020",
+            "La tabla de previaturas asigna 15 créditos a Taller IV"
+          ],
+          "resolution": "No se crea un Plan 2020 ni se altera la carga oficial: prevalecen el Plan 2017, la Resolución 48/2019, la página vigente y los encabezados/programas concordantes."
         }
       ],
-      "uiNotice": "Plan 2017 de Rivera: 240 créditos en seis semestres. En el tercer semestre elegí un seminario de 5 créditos entre las propuestas vigentes y completá el Proyecto de Egreso.",
-      "remainingWork": "Las previaturas se limitan a las reglas publicadas por Bedelías y por los programas oficiales; no se deducen del orden semestral."
+      "uiNotice": "Plan 2017 vigente en Rivera: 240 créditos en seis semestres. La implementación aprobada ubica el Seminario-Taller de Educación Artística en quinto y Estética y Percepción V en sexto; en tercer semestre elegí un seminario de 5 créditos entre las propuestas vigentes.",
+      "remainingWork": "Revisar sólo ante una nueva resolución, plan, errata o programa oficial de Facultad de Artes. EVA y la oferta periódica no modifican esta trayectoria.",
+      "sourceEvidence": {
+        "sourceDataPath": "data/fartes/cur-artes-plasticas-2017.json",
+        "normalizedFingerprint": "sha256:c2fb60dd69946f448481f059303eb39b744f9ff6db93ba8a59fe54deb667448a",
+        "calendarContentHash": "sha256:445e5e1cb4b4fa7ac61940da052f6988d26734f1a82d2b380a0938d863a88ace"
+      }
     },
     {
       "identity": "tecnicatura en artes artes plasticas y visuales:2013",
@@ -77980,6 +78309,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:f5e780c867d435b5d69a5e85d54ea3ebd3614d47de948fd3ea8e92a22e0d2048",
+  "contentHash": "sha256:4d2be2f5f673f93461f3dc96ffea84861c3c873b3d0e27e2e7d96663f1f2c2d6",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

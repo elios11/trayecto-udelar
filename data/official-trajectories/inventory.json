@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6f32bed4443b2621ea3e0613c827bae88a7afe653b11eccecc82f1eecef02461",
-    "extractedReportHash": "sha256:943a549e79407e6e2ddec7a3f062c859e6e6d96dc0b0bbf7ae8a9ddd32123a89",
-    "officialAuditHash": "sha256:f5e780c867d435b5d69a5e85d54ea3ebd3614d47de948fd3ea8e92a22e0d2048",
-    "reviewedTrajectoriesHash": "sha256:f3a4719a74063edd03ac22f5bb697611fb2472eb2793b9266ed9105f8a0cae31"
+    "extractedReportHash": "sha256:fcea4a9060709d32407a67bf3df8c3cf1437c46a3fb1922a57a02b7b74ff4bfb",
+    "officialAuditHash": "sha256:4d2be2f5f673f93461f3dc96ffea84861c3c873b3d0e27e2e7d96663f1f2c2d6",
+    "reviewedTrajectoriesHash": "sha256:b330ebbdc10ee3d4ad3df910404bfe44d3fe9d6c62e4bc2b3cab9e95df8363e3"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 101,
+      "official-trajectory-reproduced": 102,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 42
+      "research-pending": 41
     },
-    "pending": 43,
+    "pending": 42,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -111,10 +111,10 @@
         "serviceLabel": "Facultad de Artes",
         "selectablePlanIds": 17,
         "states": {
-          "official-trajectory-reproduced": 8,
+          "official-trajectory-reproduced": 9,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 9
+          "research-pending": 8
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 43,
+    "total": 42,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fartes"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -687,7 +678,6 @@
         "serviceLabel": "Facultad de Artes",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017",
           "bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuales-2013",
           "bedelias-fartes-licenciatura-en-composicion-1987",
           "bedelias-fartes-licenciatura-en-danza-contemporanea-2018",
@@ -2257,27 +2247,57 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2017",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-11",
+      "effectiveAt": "2020",
       "officialSources": [
         {
           "authority": "Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/PlandeEstudios_TecnicaturaArtesPlsticasyVisuales_CUR.pdf",
-          "role": "plan de estudios; título; tres años; seis semestres; 240 créditos; malla; Proyecto de Egreso; sede Rivera",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "Plan 2017 de Rivera; título; seis semestres; 240 créditos; unidades y cargas publicadas"
+        },
+        {
+          "authority": "Consejo del Instituto Escuela Nacional de Bellas Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Cambio_orden_cursado_tercer_ao.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "intercambio aprobado entre Estética y Percepción V y Seminario-Taller de Educación Artística; implementación de quinto y sexto semestre desde 2020"
         },
         {
           "authority": "Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales/",
-          "role": "vigencia; coordinación actual; programas de unidades curriculares; sede Rivera",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "vigencia y sede Rivera; seis semestres; programas enlazados; Taller III en cuarto, Taller IV en quinto y Taller V en sexto; Estética y Percepción V en sexto y Seminario-Taller de Educación Artística en quinto"
         },
         {
-          "authority": "Portal central de la Universidad de la República",
-          "url": "https://udelar.edu.uy/carrera/tecnicatura-en-artes-plasticas-y-visuales",
-          "role": "vigencia; 36 meses; 240 créditos; sede Rivera; requisitos de ingreso",
-          "trajectoryEvidence": false
+          "authority": "Instituto Escuela Nacional de Bellas Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Previaturas_tecnicatura_Rivera.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "identidades y secuencia I-V de los talleres; dos cupos semestrales de seminario de contenido variable; previaturas publicadas"
+        },
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/v2_Programa_TLOEP_Y_ATME_III_2020.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "Taller III; 15 créditos; cuarto semestre; Plan 2017"
+        },
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Programa_Taller_de_Libre_Orientacin_Esttico_Pedaggico_y_rea_de_las_Tcnicas_y_Medios_Expresivos_IV.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "Taller IV; 30 créditos; quinto semestre; previatura Taller III"
+        },
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/v2_Programa_TLOEP_y_ATME_V.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "Taller V; 15 créditos; sexto semestre; Plan 2017"
+        },
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/Programa_Estetica_y_Percepcion_V.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "Estética y Percepción V; 10 créditos; sexto semestre; Plan 2017"
         }
       ],
       "scope": {
@@ -2295,15 +2315,29 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura en artes plasticas y visuales:2017",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/cur-artes-plasticas-2017.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:80b6a548f670328652ee474b081848fc537dfd355a2d1422cb0a7c754e2edc88",
+        "projectionContentHash": "sha256:19028240268c6bcd786497074fc737aa8fb96e927d54290ee52137b394cf8beb",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 16,
+        "matchedCoursePlacements": 16
       },
       "conflictNotes": [
-        "thirdSemesterSeminars: El plan exige 5 créditos de Seminarios. Bedelías lista dos propuestas concretas de 5 créditos; la UI exige una, sin convertir ambas en obligatorias.",
-        "planRelationship: El Plan 2017 de Rivera y el Plan 2013 de Rocha se muestran como planes de una misma carrera, no como trayectorias intercambiables ni como carreras duplicadas."
+        "Se proyecta TAIII en cuarto semestre. El doble rótulo IV del cuadro del Plan se conserva como errata explícita y no crea una segunda identidad TAIV.",
+        "La trayectoria vigente ubica STEA en quinto y EPV en sexto; los mínimos efectivos de esos tramos son 45 y 35 créditos, sin alterar los 240 créditos totales.",
+        "SPAF y SEMI permanecen visibles como alternativas del mismo cupo; se exige aprobar una sola. SEMII corresponde al cupo separado del cuarto semestre.",
+        "No se crea un Plan 2020 ni se altera la carga oficial: prevalecen el Plan 2017, la Resolución 48/2019, la página vigente y los encabezados/programas concordantes."
       ]
     },
     {
@@ -13387,5 +13421,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:82f89cfbf23db6afd7e926fdaebd9ee8c0469efbb91be1050e24996c92e5b8b2"
+  "contentHash": "sha256:f21eaedcb24732e7f657d784fab8c89dcb993ef9037a3c3eafbd3e198464ab3e"
 }
