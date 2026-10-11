@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cur-tecnologo-en-madera-2012",
+  "auditIdentity": "tecnologo en madera:2012",
+  "reviewedAt": "2026-10-10",
+  "sources": [
+    {
+      "id": "impo-plan-2011",
+      "authority": "Diario Oficial - IMPO / Universidad de la República",
+      "url": "https://www.impo.com.uy/diariooficial/2011/11/21/avisos.pdf",
+      "supports": [
+        "Plan 2011 aprobado por resolución 20 del CDC del 25/10/2011",
+        "seis semestres, 270 créditos y mínimos por área",
+        "Anexo III como posible implementación semestral",
+        "Anexo IV como tres ejemplos flexibles, no menciones ni obligaciones"
+      ],
+      "printedPages": [81, 82, 83, 84, 85, 86, 87, 88, 89, 90],
+      "pdfPagesZeroBased": [70, 71, 72, 73, 74, 75, 76, 77, 78, 79],
+      "contentHash": "sha256:9ac0f4fd22b0087b3801227cf99d85fbf6406760fcdca168e960fda0da80f2c0"
+    },
+    {
+      "id": "fing-plan-copy",
+      "authority": "Facultad de Ingeniería, Universidad de la República",
+      "url": "https://www.fing.edu.uy/sites/default/files/Plan_Tec_Madera.pdf",
+      "supports": [
+        "copia institucional íntegra del Plan 2011 y sus anexos",
+        "corrección publicada el 05/12/2011 sobre la autoría conjunta Agronomía-Ingeniería"
+      ],
+      "rawPdfContentHash": "sha256:afef87b689b0878f58708b9d24ac0ea3a62d3ec80c000e778d4081a031b14566",
+      "visuallyInspectedPdfPages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      "contentHash": "sha256:cea5689990699a415f39582def59cbde71dc7423c192f0b2810348e9ebc7f210"
+    },
+    {
+      "id": "dgetp-current-grid-2024",
+      "authority": "Programa de Educación Terciaria, DGETP-UTU",
+      "url": "https://eduterciaria.utu.edu.uy/2024/06/21/tecnologo-en-madera/",
+      "publishedAt": "2024-06-21",
+      "supports": [
+        "vigencia publicada de la carrera conjunta Udelar-DGETP-UTU",
+        "seis semestres y sede Rivera",
+        "republicación de las 54 ubicaciones del Anexo III como Plan de estudios"
+      ],
+      "contentHash": "sha256:2ea2e55a6a8d584284f0fb609ecb4bbca77531877663fde8bcd3dc218a398d68"
+    },
+    {
+      "id": "fagro-current-page",
+      "authority": "Facultad de Agronomía, Universidad de la República",
+      "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/tecnologo-de-la-madera/",
+      "supports": [
+        "vigencia",
+        "tres años y 270 créditos",
+        "sede Rivera y carácter compartido con Ingeniería y DGETP-UTU"
+      ],
+      "contentHash": "sha256:7658de4746aee17fff836d02edb0310aa0d2ba0ecfb061c615fc6c7fc66141fa"
+    }
+  ],
+  "publication": {
+    "officialPlanYear": "2011",
+    "bedeliasTechnicalYear": "2012",
+    "credential": "Tecnólogo en Madera",
+    "durationMonths": 36,
+    "durationSemesters": 6,
+    "minimumCredits": 270,
+    "currentAtReview": true,
+    "currentGridPublishedAt": "2024-06-21",
+    "approval": {
+      "date": "2011-10-25",
+      "resolution": "20-CDC-25-10-2011"
+    }
+  },
+  "scope": {
+    "complete": true,
+    "campuses": [
+      { "id": "rivera", "label": "Rivera" }
+    ],
+    "pathwayIds": ["bedelias"]
+  },
+  "requirements": [
+    { "id": "introductory", "sourceGroupCode": "4672", "name": "Taller introductorio", "shortName": "Introductorio", "minCredits": 0, "credentialRequired": false },
+    { "id": "basic-mathematics", "sourceGroupCode": "5050", "name": "Matemática, Estadística y Control de Procesos", "shortName": "Matemática", "minCredits": 22 },
+    { "id": "basic-physical", "sourceGroupCode": "5099", "name": "Procesos Físicos y sus Aplicaciones", "shortName": "Procesos físicos", "minCredits": 27 },
+    { "id": "basic-biochemical", "sourceGroupCode": "4327", "name": "Procesos Biológicos y Químicos de la Madera", "shortName": "Bioquímica", "minCredits": 45 },
+    { "id": "technology", "name": "Formación Tecnológica", "shortName": "Tecnológica", "minCredits": 110 },
+    { "id": "technology-common", "sourceGroupCode": "4801", "parentId": "technology", "name": "Eje Tecnológico Común", "shortName": "Eje común", "minCredits": 66 },
+    { "id": "technology-production", "sourceGroupCode": "4706", "parentId": "technology", "name": "Gestión de la Producción", "shortName": "Gestión", "minCredits": 0, "credentialRequired": false },
+    { "id": "technology-energy", "sourceGroupCode": "4321", "parentId": "technology", "name": "Secado y Energía", "shortName": "Secado y energía", "minCredits": 0, "credentialRequired": false },
+    { "id": "technology-wood", "sourceGroupCode": "4348", "parentId": "technology", "name": "Tecnología de la Madera", "shortName": "Tecnología madera", "minCredits": 0, "credentialRequired": false },
+    { "id": "complementary", "sourceGroupCode": "4615", "name": "Formación Complementaria", "shortName": "Complementaria", "minCredits": 34 }
+  ],
+  "rows": [
+    { "sourceCourseId": "FA1", "officialLabel": "Física I", "credits": 7, "requirementId": "basic-physical", "period": "Semestre 1", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ME1", "officialLabel": "Matemática I", "credits": 7, "requirementId": "basic-mathematics", "period": "Semestre 1", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "PBQ7", "officialLabel": "Mensura (Bosque y Planta)", "credits": 9, "requirementId": "basic-biochemical", "period": "Semestre 1", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TIMEM", "officialLabel": "Taller de Metrología y Elaboración de la Madera", "credits": 0, "requirementId": "introductory", "period": "Semestre 1", "courseType": "obligatoria", "projectionBasis": "bedelias-match", "creditsProvenance": "official-plan-no-credit" },
+    { "sourceCourseId": "ETC1", "officialLabel": "Complejos Foresto-industriales", "credits": 5, "requirementId": "technology-common", "period": "Semestre 1", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "AC1", "officialLabel": "Inglés Instrumental", "credits": 6, "requirementId": "complementary", "period": "Semestre 1", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "AC3", "officialLabel": "Dibujo Técnico", "credits": 7, "requirementId": "complementary", "period": "Semestre 1", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "AC4", "officialLabel": "Informática I", "credits": 6, "requirementId": "complementary", "period": "Semestre 1", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+
+    { "sourceCourseId": "FA3", "officialLabel": "Materiales - Características y Utilización", "credits": 7, "requirementId": "basic-physical", "period": "Semestre 2", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "FA4", "officialLabel": "Propiedades Físicas y Mecánicas de la Madera", "credits": 5, "requirementId": "basic-physical", "period": "Semestre 2", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ME2", "officialLabel": "Matemática II", "credits": 8, "requirementId": "basic-mathematics", "period": "Semestre 2", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "PBQ1", "officialLabel": "Botánica de Leñosas", "credits": 7, "requirementId": "basic-biochemical", "period": "Semestre 2", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "PBQ5", "officialLabel": "Fase Agraria del Complejo Forestal", "credits": 5, "requirementId": "basic-biochemical", "period": "Semestre 2", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "AC2", "officialLabel": "Inglés Industrial", "credits": 6, "requirementId": "complementary", "period": "Semestre 2", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "marketing-plan-2011", "officialLabel": "Marketing", "credits": 5, "requirementId": "technology-production", "period": "Semestre 2", "courseType": "electiva", "projectionBasis": "source-only" },
+    { "sourceCourseId": "TM1", "officialLabel": "Calidad Tecnológica de la Madera", "credits": 5, "requirementId": "technology-wood", "period": "Semestre 2", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+
+    { "sourceCourseId": "ME3", "officialLabel": "Estadística y Control de Procesos", "credits": 7, "requirementId": "basic-mathematics", "period": "Semestre 3", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "PBQ2", "officialLabel": "Anatomía de Maderas", "credits": 7, "requirementId": "basic-biochemical", "period": "Semestre 3", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "PBQ3", "officialLabel": "Química Orgánica", "credits": 5, "requirementId": "basic-biochemical", "period": "Semestre 3", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "PBQ6", "officialLabel": "Silvicultura de Especies Maderables", "credits": 5, "requirementId": "basic-biochemical", "period": "Semestre 3", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC2", "officialLabel": "Aserrado - Procesos de Corte en Madera", "credits": 7, "requirementId": "technology-common", "period": "Semestre 3", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC3", "officialLabel": "Seguridad Laboral", "credits": 7, "requirementId": "technology-common", "period": "Semestre 3", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "AC5", "officialLabel": "Informática II - Programación Industrial", "credits": 7, "requirementId": "complementary", "period": "Semestre 3", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "GP2", "officialLabel": "Administración del Stock", "credits": 5, "requirementId": "technology-production", "period": "Semestre 3", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "SE1", "officialLabel": "Biomasa - Conversión Energética", "credits": 5, "requirementId": "technology-energy", "period": "Semestre 3", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+
+    { "sourceCourseId": "AC6", "officialLabel": "Taller I - Comunicación", "credits": 3, "requirementId": "complementary", "period": "Semestre 4", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "FA2", "officialLabel": "Física II", "credits": 8, "requirementId": "basic-physical", "period": "Semestre 4", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "PBQ4", "officialLabel": "Química de la Madera", "credits": 7, "requirementId": "basic-biochemical", "period": "Semestre 4", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC4", "officialLabel": "Nociones de Circuitos y Máquinas Eléctricas", "credits": 6, "requirementId": "technology-common", "period": "Semestre 4", "courseType": "obligatoria", "projectionBasis": "bedelias-match", "officialCredits": false, "creditsProvenance": "bedelias-operational-conflict" },
+    { "sourceCourseId": "ETC5", "officialLabel": "Secado I - Transferencia de Calor y Masa", "credits": 9, "requirementId": "technology-common", "period": "Semestre 4", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "GP3", "officialLabel": "Cosecha Forestal - Logística", "credits": 7, "requirementId": "technology-production", "period": "Semestre 4", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM4", "officialLabel": "Maquinaria de Cosecha Forestal", "credits": 8, "requirementId": "technology-wood", "period": "Semestre 4", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM2", "officialLabel": "Remanufactura - Segunda Elaboración", "credits": 5, "requirementId": "technology-wood", "period": "Semestre 4", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM3", "officialLabel": "Carpintería - Tercera Elaboración", "credits": 5, "requirementId": "technology-wood", "period": "Semestre 4", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+
+    { "sourceCourseId": "AC7", "officialLabel": "Taller II - Debate y Argumentación", "credits": 3, "requirementId": "complementary", "period": "Semestre 5", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC6", "officialLabel": "Secado II - Manipulación y Controles", "credits": 6, "requirementId": "technology-common", "period": "Semestre 5", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC7", "officialLabel": "Administración y Costos", "credits": 8, "requirementId": "technology-common", "period": "Semestre 5", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC8", "officialLabel": "Sistemas Integrados de Gestión I", "credits": 8, "requirementId": "technology-common", "period": "Semestre 5", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC9", "officialLabel": "Gestión de Personal", "credits": 5, "requirementId": "technology-common", "period": "Semestre 5", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "SE2", "officialLabel": "Calderas - Generación de Vapor Industrial", "credits": 5, "requirementId": "technology-energy", "period": "Semestre 5", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "SE3", "officialLabel": "Implementos Hidráulicos y Neumáticos", "credits": 6, "requirementId": "technology-energy", "period": "Semestre 5", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "SE4", "officialLabel": "Automatización y Control", "credits": 7, "requirementId": "technology-energy", "period": "Semestre 5", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM5", "officialLabel": "Encolado", "credits": 5, "requirementId": "technology-wood", "period": "Semestre 5", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM6", "officialLabel": "Tableros", "credits": 5, "requirementId": "technology-wood", "period": "Semestre 5", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM7", "officialLabel": "Acabado y Terminación", "credits": 5, "requirementId": "technology-wood", "period": "Semestre 5", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+
+    { "sourceCourseId": "AC9", "officialLabel": "Pasantía o Proyecto", "credits": 25, "requirementId": "complementary", "period": "Semestre 6", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "AC8", "officialLabel": "Taller III - Método Científico", "credits": 3, "requirementId": "complementary", "period": "Semestre 6", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "ETC10", "officialLabel": "Relaciones Laborales", "credits": 5, "requirementId": "technology-common", "period": "Semestre 6", "courseType": "obligatoria", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "GP4", "officialLabel": "Nociones de Mantenimiento Industrial", "credits": 5, "requirementId": "technology-production", "period": "Semestre 6", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "GP5", "officialLabel": "Sistemas Integrados de Gestión II", "credits": 6, "requirementId": "technology-production", "period": "Semestre 6", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "GP6", "officialLabel": "Logística Industrial - Estudios Tiempos y Métodos", "credits": 5, "requirementId": "technology-production", "period": "Semestre 6", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM8", "officialLabel": "Herramientas de Corte y Afilado", "credits": 8, "requirementId": "technology-wood", "period": "Semestre 6", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM9", "officialLabel": "Producción de Celulosa y Papel", "credits": 7, "requirementId": "technology-wood", "period": "Semestre 6", "courseType": "electiva", "projectionBasis": "bedelias-match" },
+    { "sourceCourseId": "TM10", "officialLabel": "Deterioro y Preservación de la Madera", "credits": 7, "requirementId": "technology-wood", "period": "Semestre 6", "courseType": "electiva", "projectionBasis": "bedelias-match" }
+  ],
+  "trajectories": [
+    {
+      "id": "bedelias",
+      "label": "Implementación semestral publicada",
+      "description": "Guía flexible de seis semestres republicada por DGETP-UTU a partir de la posible implementación del Anexo III. Las unidades electivas son opciones para completar 270 créditos y los mínimos por área; no se exige aprobar las 54 ubicaciones ni se convierten los ejemplos del Anexo IV en perfiles.",
+      "campusIds": ["rivera"],
+      "useOnlyConfiguredPeriods": true,
+      "periods": [
+        { "label": "Semestre 1", "courseIds": ["FA1", "ME1", "PBQ7", "TIMEM", "ETC1", "AC1", "AC3", "AC4"] },
+        { "label": "Semestre 2", "courseIds": ["FA3", "FA4", "ME2", "PBQ1", "PBQ5", "AC2", "marketing-plan-2011", "TM1"] },
+        { "label": "Semestre 3", "courseIds": ["ME3", "PBQ2", "PBQ3", "PBQ6", "ETC2", "ETC3", "AC5", "GP2", "SE1"] },
+        { "label": "Semestre 4", "courseIds": ["AC6", "FA2", "PBQ4", "ETC4", "ETC5", "GP3", "TM4", "TM2", "TM3"] },
+        { "label": "Semestre 5", "courseIds": ["AC7", "ETC6", "ETC7", "ETC8", "ETC9", "SE2", "SE3", "SE4", "TM5", "TM6", "TM7"] },
+        { "label": "Semestre 6", "courseIds": ["AC9", "AC8", "ETC10", "GP4", "GP5", "GP6", "TM8", "TM9", "TM10"] }
+      ]
+    }
+  ],
+  "requiredCourseGroups": [
+    { "id": "mandatory-introductory-workshop", "label": "Taller Introductorio de Metrología y Elaboración de la Madera obligatorio", "minCompleted": 1, "sourceCourseIds": ["TIMEM"] },
+    { "id": "mandatory-common-technology", "label": "Unidades obligatorias del Eje Tecnológico Común", "minCompleted": 10, "sourceCourseIds": ["ETC1", "ETC2", "ETC3", "ETC4", "ETC5", "ETC6", "ETC7", "ETC8", "ETC9", "ETC10"] },
+    { "id": "mandatory-complementary-activities", "label": "Talleres y Pasantía o Proyecto obligatorios", "minCompleted": 4, "sourceCourseIds": ["AC6", "AC7", "AC8", "AC9"] }
+  ],
+  "authorityPolicy": {
+    "verifiedBedeliasSourceCourseIds": [
+      "FA1", "ME1", "PBQ7", "TIMEM", "ETC1", "AC1", "AC3", "AC4",
+      "FA3", "FA4", "ME2", "PBQ1", "PBQ5", "AC2", "TM1",
+      "ME3", "PBQ2", "PBQ3", "PBQ6", "ETC2", "ETC3", "AC5", "GP2", "SE1",
+      "AC6", "FA2", "PBQ4", "ETC4", "ETC5", "GP3", "TM4", "TM2", "TM3",
+      "AC7", "ETC6", "ETC7", "ETC8", "ETC9", "SE2", "SE3", "SE4", "TM5", "TM6", "TM7",
+      "AC9", "AC8", "ETC10", "GP4", "GP5", "GP6", "TM8", "TM9", "TM10"
+    ],
+    "sourceOnlyCourseIds": ["marketing-plan-2011"],
+    "candidateCompositionEntriesRemainUnpublished": true,
+    "annexIvExamplesBecomeProfiles": false,
+    "evaIsCurriculumAuthority": false
+  },
+  "bedeliasComparison": {
+    "snapshotPath": "data/bedelias/cur-tecnologo-en-madera-2012.json",
+    "snapshotContentHash": "sha256:82ef6c74215a2b24dd2f9aa28b703f84df5a4fdc662891dd538dfc11e4f18500",
+    "compositionEntryCount": 63,
+    "uniqueSourceCourseCodeCount": 63,
+    "verifiedCourseCount": 53,
+    "candidateRetainedCount": 10,
+    "sourceOnlyCourseCount": 1,
+    "candidateSourceCourseIds": ["CUT-SILB", "AAC13", "AAC10", "AAC11", "AAC12", "AAC14", "AAC15", "UNIV", "GP1", "TM11"]
+  },
+  "conflicts": [
+    {
+      "field": "trajectoryAuthority",
+      "resolution": "DGETP-UTU republica en su ficha vigente las 54 ubicaciones del Anexo III, titulado posible implementación. Se conserva como guía semestral flexible oficial, no como secuencia obligatoria."
+    },
+    {
+      "field": "annexIvExamples",
+      "resolution": "Los tres cuadros del Anexo IV son ejemplos de currículos de 267, 262 y 271 créditos. No son menciones, perfiles certificados ni trayectorias predeterminadas separadas."
+    },
+    {
+      "field": "marketingIdentity",
+      "resolution": "El Anexo III y la ficha vigente publican Marketing; el Anexo II y Bedelías publican GP1 Comercialización sin equivalencia explícita. Marketing se conserva como identidad oficial sólo-fuente y GP1 permanece candidata."
+    },
+    {
+      "field": "TIMEM.credits",
+      "resolution": "El Plan imprime guion en el Anexo II y S/C en el Anexo IV para el Taller Introductorio; se proyecta con 0 créditos y aprobación obligatoria. Los 11 créditos de Bedelías quedan trazados como conflicto operativo."
+    },
+    {
+      "field": "ETC4.credits",
+      "resolution": "El Anexo II imprime 5 créditos, pero sus diez obligatorias suman 65 frente al mínimo normativo de 66; Bedelías publica 6 para ETC4. Se conserva el valor operativo de 6 con conflicto explícito y sin alterar el mínimo de 66."
+    },
+    {
+      "field": "SE4.credits",
+      "resolution": "El Anexo III imprime 11 créditos para Automatización y Control, mientras el Anexo II y Bedelías publican 7. Se conservan 7 y la contradicción queda auditada."
+    },
+    {
+      "field": "publishedSemesterCatalogCredits",
+      "resolution": "Las 54 ubicaciones reúnen 342 créditos disponibles; el título exige elegir un currículo coherente de 270 créditos con mínimos por área y aprobación de la Comisión. No se suman todas como obligación."
+    }
+  ],
+  "sourcePortions": {
+    "impo-plan-2011": {
+      "approval": "20-CDC-25-10-2011",
+      "durationSemesters": 6,
+      "minimumCredits": 270,
+      "annexIII": "posible implementación del Plan de estudios",
+      "annexIIIPlacementCount": 54,
+      "annexIV": "tres ejemplos de trayectoria curricular con distinto énfasis",
+      "annexIVTotals": [267, 262, 271],
+      "studentChoice": true,
+      "commissionApproval": true
+    },
+    "fing-plan-copy": {
+      "rawPdfContentHash": "sha256:afef87b689b0878f58708b9d24ac0ea3a62d3ec80c000e778d4081a031b14566",
+      "planPages": 10,
+      "correctionPage": 11,
+      "visualInspection": "complete"
+    },
+    "dgetp-current-grid-2024": {
+      "publishedAt": "2024-06-21",
+      "durationSemesters": 6,
+      "jointManagement": "Udelar y DGETP-UTU",
+      "campus": "Rivera",
+      "periodCourseIds": [
+        ["FA1", "ME1", "PBQ7", "TIMEM", "ETC1", "AC1", "AC3", "AC4"],
+        ["FA3", "FA4", "ME2", "PBQ1", "PBQ5", "AC2", "marketing-plan-2011", "TM1"],
+        ["ME3", "PBQ2", "PBQ3", "PBQ6", "ETC2", "ETC3", "AC5", "GP2", "SE1"],
+        ["AC6", "FA2", "PBQ4", "ETC4", "ETC5", "GP3", "TM4", "TM2", "TM3"],
+        ["AC7", "ETC6", "ETC7", "ETC8", "ETC9", "SE2", "SE3", "SE4", "TM5", "TM6", "TM7"],
+        ["AC9", "AC8", "ETC10", "GP4", "GP5", "GP6", "TM8", "TM9", "TM10"]
+      ]
+    },
+    "fagro-current-page": {
+      "durationYears": 3,
+      "minimumCredits": 270,
+      "campus": "CENUR Noreste - Sede Rivera",
+      "sharedWith": ["Facultad de Ingeniería", "DGETP-UTU"]
+    }
+  },
+  "fingerprint": {
+    "algorithm": "sha256",
+    "value": "sha256:d25e38c9af5f60edb993bbfd7c23133e93fd37f59a2f5673edd9adc5b745d53c",
+    "sourceHashes": {
+      "impo-plan-2011": "sha256:9ac0f4fd22b0087b3801227cf99d85fbf6406760fcdca168e960fda0da80f2c0",
+      "fing-plan-copy": "sha256:cea5689990699a415f39582def59cbde71dc7423c192f0b2810348e9ebc7f210",
+      "dgetp-current-grid-2024": "sha256:2ea2e55a6a8d584284f0fb609ecb4bbca77531877663fde8bcd3dc218a398d68",
+      "fagro-current-page": "sha256:7658de4746aee17fff836d02edb0310aa0d2ba0ecfb061c615fc6c7fc66141fa"
+    }
+  }
+}

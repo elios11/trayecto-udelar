@@ -36,13 +36,13 @@ test("los estados cerrados tienen evidencia suficiente y los pendientes permanec
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 99,
+    "official-trajectory-reproduced": 100,
     "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 3,
-    "research-pending": 44,
+    "research-pending": 43,
   });
-  assert.equal(savedInventory.pendingQueue.total, 45);
-  assert.equal(savedInventory.pendingQueue.plans.length, 45);
+  assert.equal(savedInventory.pendingQueue.total, 44);
+  assert.equal(savedInventory.pendingQueue.plans.length, 44);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 1).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(1).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 
@@ -82,6 +82,17 @@ test("D03ae cierra Producción Equina 2021 con el ejemplo flexible de seis semes
   assert.deepEqual(plan.scope.territories, ["Melo, Cerro Largo"]);
   assert.ok(plan.conflictNotes.some((note) => /55 créditos optativos/.test(note)));
   assert.ok(plan.conflictNotes.some((note) => /Introducción a las Dinámicas Universitarias/.test(note)));
+});
+
+test("D03ah cierra Tecnólogo en Madera 2011 con la guía flexible oficial", () => {
+  const plan = savedInventory.plans.find(({ planId }) => planId === "bedelias-cur-tecnologo-en-madera-2012");
+  assert.equal(plan.state, "official-trajectory-reproduced");
+  assert.equal(plan.currentProjection.primary, "official-periods");
+  assert.deepEqual(plan.evidence.pathways.map(({ id, periodCount }) => [id, periodCount]), [["bedelias", 6]]);
+  assert.equal(plan.evidence.expectedCoursePlacements, 54);
+  assert.equal(plan.evidence.matchedCoursePlacements, 54);
+  assert.deepEqual(plan.scope.territories, ["Rivera"]);
+  assert.ok(plan.conflictNotes.some((note) => /Anexo IV.*ejemplos/i.test(note)));
 });
 
 test("D03u cierra Contador Público 2024 con cinco perfiles semestrales exactos", () => {

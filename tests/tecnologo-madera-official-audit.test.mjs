@@ -14,7 +14,7 @@ const flattenComposition = (node) => [node, ...(node.children ?? []).flatMap(fla
 
 test("normaliza el plan conjunto vigente en Rivera", () => {
   assert.equal(audit.status, "official-evidence-complete");
-  assert.equal(audit.conclusion.canonicalModel, "one-joint-plan-flexible-by-areas");
+  assert.equal(audit.conclusion.canonicalModel, "one-joint-plan-with-flexible-official-semester-guide");
   assert.equal(projection.plan.year, "2011");
   assert.equal(projection.plan.durationMonths, 36);
   assert.equal(projection.plan.minCredits, 270);
@@ -48,17 +48,20 @@ test("controla los mínimos por área y todas las actividades nominales obligato
   );
 });
 
-test("conserva una sola vez cada unidad de la composición flexible", () => {
+test("conserva la composición flexible y agrega Marketing sólo desde la grilla oficial", () => {
   const rawMatterNodes = flattenComposition(snapshot.plan.composition).filter((node) => node.nodeType === "Materia");
   const projectedCourses = projection.courses.filter((course) => course.dataStatus !== "manual-validation");
-  const projectedKeys = projectedCourses.map((course) => `${course.bedeliasCode}:${course.name}`);
+  const bedeliasCourses = projectedCourses.filter(({ bedeliasCode }) => bedeliasCode);
+  const projectedKeys = projectedCourses.map((course) => `${course.bedeliasCode ?? course.sourceCourseId}:${course.name}`);
 
   assert.equal(rawMatterNodes.length, 63);
-  assert.equal(projectedCourses.length, 63);
+  assert.equal(bedeliasCourses.length, 63);
+  assert.equal(projectedCourses.length, 64);
   assert.equal(new Set(projectedKeys).size, projectedKeys.length);
-  assert.equal(projectedCourses.reduce((sum, course) => sum + course.credits, 0), 406);
+  assert.equal(projectedCourses.reduce((sum, course) => sum + course.credits, 0), 400);
+  assert.equal(projectedCourses.find(({ sourceCourseId }) => sourceCourseId === "marketing-plan-2011").credits, 5);
   assert.ok(projectedCourses.reduce((sum, course) => sum + course.credits, 0) > projection.plan.minCredits);
-  assert.match(projection.plan.notice, /currículo coherente aprobado por la Comisión/i);
+  assert.match(projection.plan.notice, /guía flexible oficial de seis semestres/i);
 });
 
 test("no presenta los currículos tipo como menciones ni trayectorias certificadas", () => {

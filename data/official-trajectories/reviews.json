@@ -2580,6 +2580,65 @@
         "Sólo SPS coincide exactamente con una entrada de Bedelías. O31T, CUT-O31T, CUT-MITMR, CUT-O33T y las demás identidades técnicas siguen candidatas.",
         "No hubo inspección visual del PDF por Cache miss y timeout de descarga; la correspondencia se coteja contra la extracción estructurada versionada."
       ]
+    },
+    {
+      "planId": "bedelias-cur-tecnologo-en-madera-2012",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-10",
+      "effectiveAt": "2024-06-21",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Rivera"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Diario Oficial - IMPO / Universidad de la República",
+          "url": "https://www.impo.com.uy/diariooficial/2011/11/21/avisos.pdf",
+          "reviewedAt": "2026-10-10",
+          "role": "Plan 2011 aprobado por resolución 20 del CDC del 25/10/2011; seis semestres, 270 créditos y mínimos por área; Anexo III como posible implementación semestral; Anexo IV como tres ejemplos flexibles, no menciones ni obligaciones"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "url": "https://www.fing.edu.uy/sites/default/files/Plan_Tec_Madera.pdf",
+          "reviewedAt": "2026-10-10",
+          "role": "copia institucional íntegra del Plan 2011 y sus anexos; corrección publicada el 05/12/2011 sobre la autoría conjunta Agronomía-Ingeniería"
+        },
+        {
+          "authority": "Programa de Educación Terciaria, DGETP-UTU",
+          "url": "https://eduterciaria.utu.edu.uy/2024/06/21/tecnologo-en-madera/",
+          "reviewedAt": "2026-10-10",
+          "role": "vigencia publicada de la carrera conjunta Udelar-DGETP-UTU; seis semestres y sede Rivera; republicación de las 54 ubicaciones del Anexo III como Plan de estudios"
+        },
+        {
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/tecnologo-de-la-madera/",
+          "reviewedAt": "2026-10-10",
+          "role": "vigencia; tres años y 270 créditos; sede Rivera y carácter compartido con Ingeniería y DGETP-UTU"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cur/tecnologo-madera-2011.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cur-tecnologo-en-madera-2012.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "DGETP-UTU republica en su ficha vigente las 54 ubicaciones del Anexo III, titulado posible implementación. Se conserva como guía semestral flexible oficial, no como secuencia obligatoria.",
+        "Los tres cuadros del Anexo IV son ejemplos de currículos de 267, 262 y 271 créditos. No son menciones, perfiles certificados ni trayectorias predeterminadas separadas.",
+        "El Anexo III y la ficha vigente publican Marketing; el Anexo II y Bedelías publican GP1 Comercialización sin equivalencia explícita. Marketing se conserva como identidad oficial sólo-fuente y GP1 permanece candidata.",
+        "El Plan imprime guion en el Anexo II y S/C en el Anexo IV para el Taller Introductorio; se proyecta con 0 créditos y aprobación obligatoria. Los 11 créditos de Bedelías quedan trazados como conflicto operativo.",
+        "El Anexo II imprime 5 créditos, pero sus diez obligatorias suman 65 frente al mínimo normativo de 66; Bedelías publica 6 para ETC4. Se conserva el valor operativo de 6 con conflicto explícito y sin alterar el mínimo de 66.",
+        "El Anexo III imprime 11 créditos para Automatización y Control, mientras el Anexo II y Bedelías publican 7. Se conservan 7 y la contradicción queda auditada.",
+        "Las 54 ubicaciones reúnen 342 créditos disponibles; el título exige elegir un currículo coherente de 270 créditos con mínimos por área y aprobación de la Comisión. No se suman todas como obligación."
+      ]
     }
   ]
 }

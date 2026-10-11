@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:f26230c560c315383f7d28950eeec9a50db77e5fb9d2cf6ffd87ef9849aaba5f",
-    "officialAuditHash": "sha256:19aa36c1d33c6b7b2dfad473421405f90cc32cc38a9b3656eccd4f10105b6734",
-    "reviewedTrajectoriesHash": "sha256:c370b6be8c95a0c2f9d82ee8cb6172060f591d5866906318c5b37ab73637c82e"
+    "extractedReportHash": "sha256:b890565f923bf552f4f334c44c4fd4498e61cde91ceb177c520b71396530d9f6",
+    "officialAuditHash": "sha256:e43a9cba5c1f9a679c02a4ad48c9a0ba89241c41792d428d32ad41ed0deec2f8",
+    "reviewedTrajectoriesHash": "sha256:09624f5a6c43c21b04f8b07ecacb7f2e118c1cd2567a16f3a859c93b6520a2d4"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 99,
+      "official-trajectory-reproduced": 100,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 44
+      "research-pending": 43
     },
-    "pending": 45,
+    "pending": 44,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -89,10 +89,10 @@
         "serviceLabel": "Facultad de Agronomía",
         "selectablePlanIds": 3,
         "states": {
-          "official-trajectory-reproduced": 1,
+          "official-trajectory-reproduced": 2,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 2
+          "research-pending": 1
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 45,
+    "total": 44,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cur-tecnologo-en-madera-2012",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fagro"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -697,7 +688,6 @@
         "serviceLabel": "Facultad de Agronomía",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-cur-tecnologo-en-madera-2012",
           "bedelias-fagro-ingeniero-agronomo-2020"
         ]
       },
@@ -2410,27 +2400,33 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2011",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-10",
+      "effectiveAt": "2024-06-21",
       "officialSources": [
         {
           "authority": "Diario Oficial - IMPO / Universidad de la República",
           "url": "https://www.impo.com.uy/diariooficial/2011/11/21/avisos.pdf",
-          "role": "Resolución 20 del CDC; Plan 2011; título conjunto; seis semestres; 270 créditos; mínimos por áreas; obligaciones; flexibilidad; aprobación de Comisión",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-10",
+          "role": "Plan 2011 aprobado por resolución 20 del CDC del 25/10/2011; seis semestres, 270 créditos y mínimos por área; Anexo III como posible implementación semestral; Anexo IV como tres ejemplos flexibles, no menciones ni obligaciones"
         },
         {
-          "authority": "Facultad de Ingeniería, Udelar",
-          "url": "https://www.fing.edu.uy/es/carrera/grado/tecn%C3%B3logo-en-madera-rivera",
-          "role": "vigencia; Plan 2011; tres años; sede Rivera; coordinación actual",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "url": "https://www.fing.edu.uy/sites/default/files/Plan_Tec_Madera.pdf",
+          "reviewedAt": "2026-10-10",
+          "role": "copia institucional íntegra del Plan 2011 y sus anexos; corrección publicada el 05/12/2011 sobre la autoría conjunta Agronomía-Ingeniería"
         },
         {
-          "authority": "Facultad de Agronomía, Udelar",
+          "authority": "Programa de Educación Terciaria, DGETP-UTU",
+          "url": "https://eduterciaria.utu.edu.uy/2024/06/21/tecnologo-en-madera/",
+          "reviewedAt": "2026-10-10",
+          "role": "vigencia publicada de la carrera conjunta Udelar-DGETP-UTU; seis semestres y sede Rivera; republicación de las 54 ubicaciones del Anexo III como Plan de estudios"
+        },
+        {
+          "authority": "Facultad de Agronomía, Universidad de la República",
           "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/tecnologo-de-la-madera/",
-          "role": "vigencia; tres años; 270 créditos; carácter compartido con Ingeniería y DGETP-UTU; sede Rivera",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-10",
+          "role": "vigencia; tres años y 270 créditos; sede Rivera y carácter compartido con Ingeniería y DGETP-UTU"
         }
       ],
       "scope": {
@@ -2442,23 +2438,38 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-periods",
         "features": [
-          "areas"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnologo en madera:2012",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cur-tecnologo-en-madera-2012.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cur/tecnologo-madera-2011.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cur-tecnologo-en-madera-2012.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:3e46f5a7723a72ba732d6e21938aaec0cd2ef4315afb517f725033b684ec407c",
+        "projectionContentHash": "sha256:6424d174ecbc927b1347095f362175681a32fed038888d57066b04e00b7dea64",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 54,
+        "matchedCoursePlacements": 54
       },
       "conflictNotes": [
-        "planYear: La UI muestra Plan 2011, año de aprobación oficial; Bedelías conserva 2012 como clave técnica de la oferta iniciada ese año.",
-        "durationMonths: El plan y las páginas académicas vigentes establecen seis semestres/tres años; se corrigen los 60 meses administrativos.",
-        "compositionHierarchy: Los caminos padre e hijo repiten contexto visual, pero el snapshot conserva 63 unidades distintas; la proyección verifica su unicidad por código y nombre.",
-        "catalogSize: Los 406 créditos de cursos únicos son oferta flexible. El requisito real es alcanzar 270, respetar mínimos y obtener aprobación de la Comisión."
+        "DGETP-UTU republica en su ficha vigente las 54 ubicaciones del Anexo III, titulado posible implementación. Se conserva como guía semestral flexible oficial, no como secuencia obligatoria.",
+        "Los tres cuadros del Anexo IV son ejemplos de currículos de 267, 262 y 271 créditos. No son menciones, perfiles certificados ni trayectorias predeterminadas separadas.",
+        "El Anexo III y la ficha vigente publican Marketing; el Anexo II y Bedelías publican GP1 Comercialización sin equivalencia explícita. Marketing se conserva como identidad oficial sólo-fuente y GP1 permanece candidata.",
+        "El Plan imprime guion en el Anexo II y S/C en el Anexo IV para el Taller Introductorio; se proyecta con 0 créditos y aprobación obligatoria. Los 11 créditos de Bedelías quedan trazados como conflicto operativo.",
+        "El Anexo II imprime 5 créditos, pero sus diez obligatorias suman 65 frente al mínimo normativo de 66; Bedelías publica 6 para ETC4. Se conserva el valor operativo de 6 con conflicto explícito y sin alterar el mínimo de 66.",
+        "El Anexo III imprime 11 créditos para Automatización y Control, mientras el Anexo II y Bedelías publican 7. Se conservan 7 y la contradicción queda auditada.",
+        "Las 54 ubicaciones reúnen 342 créditos disponibles; el título exige elegir un currículo coherente de 270 créditos con mínimos por área y aprobación de la Comisión. No se suman todas como obligación."
       ]
     },
     {
@@ -13373,5 +13384,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:f436fca021b6b57afd9bd266db10a20e1a701334fb277e3d2b0f87f9025eec85"
+  "contentHash": "sha256:c51a44aa8c63d5672d75c0f14683b622723730cd96bf26b9fa39151599da3d6f"
 }

@@ -129,7 +129,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-cur-tecnologo-en-madera-2012": {
     load: () => import("./bedelias-generated/bedelias-cur-tecnologo-en-madera-2012.json"),
     pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Implementación semestral publicada",
     minCredits: 270,
   },
   "bedelias-cut-ingenieria-forestal-2013": {
