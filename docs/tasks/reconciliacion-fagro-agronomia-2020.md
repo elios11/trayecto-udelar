@@ -48,4 +48,4 @@ Comprobaciones finales ejecutadas:
 
 ## Límites y siguiente paso
 
-La grilla aprobada no asigna una trayectoria completa estable por sede ni por sistema de producción. `docs/carreras-a-actualizar.md` conserva esa brecha y pide revisar sólo cuando Fagro publique una malla permanente que sustituya las planillas anuales o modifique los anexos del Plan 2020. No se infiere continuidad territorial desde la oferta 2026. Tras el commit aislado, el coordinador debe revisar e integrar sobre el `main` más reciente; este worktree no hace push ni despliegue.
+La grilla aprobada no asigna una trayectoria completa estable por sede ni por sistema de producción. `docs/carreras-a-actualizar.md` conserva esa brecha y pide revisar sólo cuando Fagro publique una malla permanente que sustituya las planillas anuales o modifique los anexos del Plan 2020. No se infiere continuidad territorial desde la oferta 2026. El commit aislado `0223662` se integró en `main` como `6fcc3a3`; allí volvieron a pasar la compilación, las 1033 pruebas y el lint. Push y despliegue quedan para un lote posterior.
