@@ -24,3 +24,8 @@ Nodo implementado. `bedelias-cur-tecnicatura-en-artes-plasticas-y-visuales-2017`
 - Las porciones crudas principales quedaron identificadas por `sha256:ee73fc9fa498d439c574448d064d78c959fac75bd40e2a0d821c5df828fcc348` para el Plan, `sha256:445e5e1cb4b4fa7ac61940da052f6988d26734f1a82d2b380a0938d863a88ace` para la Resolución 48/2019 y `sha256:65a230393c67861bbfec7887f43ad016c566a6f6ad28067b85bf59c7585839a5` para la página vigente. Las huellas de previaturas y programas complementarios se versionan en el mismo artefacto.
 - Regeneración offline: `npm run trajectory:cur-artes-plasticas-2017`. Dos ejecuciones consecutivas produjeron exactamente las mismas huellas: proyección `sha256:3e0b3e238e605d827a77bafe95a01227fb09ddd290395b9ac595e30be0016fbc`, registro de auditorías `sha256:038a15310af0f5e810ec124894ebd79df81431d6323b0217d7f6a8e787ca822d`, revisiones `sha256:6a03a0d9ee3f1af077b78ec2b2b4d5732621fb8469df91b64a5c069670491ac3` e inventario `sha256:85e793823c1d46b61bbc098c84da5f11ed49195a8004959639e5259a2c123cca`.
 - La reconstrucción preserva los IDs de progreso existentes con sufijo `-2`, no depende de los PDF/HTML temporales y mantiene a Rocha 2013 como plan territorial independiente.
+
+## Integración
+
+- Implementación aislada `fea669d`; integrada en `main` como `96b7ffa`.
+- Verificación del resultado combinado: `npm test` (1039/1039), `npm run lint` y `git diff --check`, todas correctas. No se hizo push ni despliegue en este nodo.
