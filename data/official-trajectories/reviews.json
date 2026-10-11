@@ -2639,6 +2639,70 @@
         "El Anexo III imprime 11 créditos para Automatización y Control, mientras el Anexo II y Bedelías publican 7. Se conservan 7 y la contradicción queda auditada.",
         "Las 54 ubicaciones reúnen 342 créditos disponibles; el título exige elegir un currículo coherente de 270 créditos con mínimos por área y aprobación de la Comisión. No se suman todas como obligación."
       ]
+    },
+    {
+      "planId": "bedelias-fagro-ingeniero-agronomo-2020",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-11",
+      "effectiveAt": "2019-11-05",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Paysandú",
+          "Salto"
+        ],
+        "pathwayIds": [
+          "maximo-afo-iii",
+          "minimo-afo-iii"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "url": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "plan aprobado; tres ciclos; 450 créditos; grillas tentativas e indicativas de diez semestres; dos ejemplos flexibles para cuarto y quinto año",
+          "contentHash": "sha256:2e24c078579a263bdf8bfc31f9fa20441b1643eef503e7451c84b1116855fa56"
+        },
+        {
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/",
+          "reviewedAt": "2026-10-11",
+          "role": "vigencia del Plan 2020 y separación explícita respecto de la currícula académica del Plan 1989",
+          "contentHash": "sha256:4af8b6a296b2eb11347e9cab41e117e28ab2d953050fcd3cca5bd512a28107d6"
+        },
+        {
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/primer-ano/",
+          "reviewedAt": "2026-10-11",
+          "role": "estructura de créditos por ciclo y enlaces a oferta periódica 2026 de primero a quinto año; no se usa como grilla estable",
+          "contentHash": "sha256:db59b42ff367ef08ce5ddbcf7f135c1307eea04cf875620dbb5b08676f30b007"
+        },
+        {
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "url": "https://portal.fagro.edu.uy/wp-content/uploads/2024/12/Formulario_de_datos_ARCUSUR.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "antecedente de implementación hasta 2022; confirma cursos de los tres primeros años pero declara que cuarto y quinto se orientaban por Plan 1989 en esa etapa",
+          "contentHash": "sha256:7112525ed0e03f761a90ca93e6598c464339361b2c244173415d9ebf75fdd417"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fagro/ingenieria-agronomica-2020-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fagro-ingeniero-agronomo-2020.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La tabla nominal y semestral de la portada pertenece expresamente al Plan 1989 y no se mezcla con el Plan 2020.",
+        "Las grillas del Plan 2020 son tentativas e indicativas; sus dos ejemplos no son perfiles certificados ni obligan a cursar todos los bloques como materias.",
+        "El Anexo 2 imprime EyC1 en los semestres 3 y 4. Se conservan dos bloques periodizados con la misma etiqueta, sin inferir una corrección de código.",
+        "La oferta 2026 se registra como evidencia periódica separada y no como garantía de futuras ediciones.",
+        "Las grillas estables no asignan recorridos completos por sede; la cobertura territorial 2026 debe volver a revisarse cuando Fagro publique una malla o guía estable por sede o sistema de producción."
+      ]
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:0fcaa221856aa9cb1e7c00a6993d5204427711919bec56240ed5bf89a5afad14",
-    "officialAuditHash": "sha256:e43a9cba5c1f9a679c02a4ad48c9a0ba89241c41792d428d32ad41ed0deec2f8",
+    "auditQueueHash": "sha256:aba997722d22213f9ff4485c455cbad983cf74925edd78057db87bf5623ab43f",
+    "officialAuditHash": "sha256:f5e780c867d435b5d69a5e85d54ea3ebd3614d47de948fd3ea8e92a22e0d2048",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -22,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5043,
+      "verified": 5104,
       "candidate": 26590,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31641,
-    "afterPublishedCourses": 5043,
+    "beforePublishedCourses": 31702,
+    "afterPublishedCourses": 5104,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1754,
     "visibleTargetsWithUnpublishedDependencies": 1491,
     "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 62,
-    "plansWithStructureOnly": 13
+    "plansWithPartialCatalog": 63,
+    "plansWithStructureOnly": 12
   },
   "plans": [
     {
@@ -1019,7 +1019,7 @@
       "facultyCode": "FAGRO",
       "snapshotPath": "data/bedelias/fagro-ingeniero-agronomo-2020.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -1028,17 +1028,17 @@
         "salto"
       ],
       "before": {
-        "publishedCourses": 717,
+        "publishedCourses": 778,
         "publishedRules": 327
       },
       "after": {
-        "publishedCourses": 0,
+        "publishedCourses": 61,
         "hiddenCourses": 717,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
+        "verified": 61,
         "candidate": 717,
         "historical-equivalent": 0,
         "administrative": 0,
@@ -4630,5 +4630,5 @@
       }
     }
   ],
-  "contentHash": "sha256:b890565f923bf552f4f334c44c4fd4498e61cde91ceb177c520b71396530d9f6"
+  "contentHash": "sha256:943a549e79407e6e2ddec7a3f062c859e6e6d96dc0b0bbf7ae8a9ddd32123a89"
 }

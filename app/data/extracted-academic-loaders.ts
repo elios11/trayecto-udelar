@@ -182,7 +182,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fagro-ingeniero-agronomo-2020": {
     load: () => import("./bedelias-generated/bedelias-fagro-ingeniero-agronomo-2020.json"),
-    pathwayIds: ["bedelias","salto-agricola-ganadera"],
+    pathwayIds: ["maximo-afo-iii","minimo-afo-iii"],
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },

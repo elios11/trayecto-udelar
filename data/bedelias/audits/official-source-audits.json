@@ -5,18 +5,22 @@
       "identity": "ingeniero agronomo:2020",
       "career": "INGENIERO AGRÓNOMO",
       "planYear": "2020",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-10-11",
       "status": "official-evidence-complete",
-      "scope": "plan-and-regional-offering",
+      "scope": "plan aprobado, ciclos, créditos, dos grillas tentativas de diez semestres y separación de la oferta periódica 2026",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
           "Consejo de Facultad, Resolución 1563 de 21/10/2019",
           "Consejo Directivo Central, Resolución 25 de 05/11/2019"
         ],
+        "planYear": "2020",
         "title": "Ingeniero Agrónomo",
         "durationMonths": 60,
+        "semesters": 10,
         "minimumCredits": 450,
+        "current": true,
+        "degreeRule": "El título exige 450 créditos: 90 del Ciclo Básico General, 180 del Ciclo Básico Agronómico y 180 del Ciclo de Análisis y Consolidación, incluido un Trabajo Final de Grado de 45 créditos.",
         "cycles": [
           {
             "name": "Ciclo Básico General",
@@ -51,7 +55,1082 @@
             }
           }
         ],
-        "trajectoryRule": "El último ciclo admite trayectorias personalizadas con tutor y elección de sistema de producción; no define un perfil de título distinto."
+        "trajectoryRule": "Las grillas del Plan 2020 son tentativas e indicativas. Los ejemplos máximo y mínimo de AFO III muestran distribuciones posibles del mismo título y no perfiles certificados ni secuencias obligatorias.",
+        "trajectories": [
+          {
+            "id": "maximo-afo-iii",
+            "label": "Ejemplo 1 · máximo AFO III",
+            "description": "Grilla tentativa e indicativa del Plan 2020 con 63 créditos de AFO III. Es una guía flexible, no un perfil certificado ni una secuencia obligatoria.",
+            "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "cb1",
+                  "cb3",
+                  "cb5",
+                  "cb7",
+                  "afo-i-s1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "cb2",
+                  "cb4",
+                  "cb6",
+                  "cb8",
+                  "afoe-i-s2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "rrnn1",
+                  "ccss1",
+                  "v1",
+                  "a1",
+                  "eyc1-s3",
+                  "afoe-ii-s3"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "rrnn2",
+                  "ccss2",
+                  "v2",
+                  "a2",
+                  "eyc1-s4",
+                  "afoe-ii-s4"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "rrnn3",
+                  "ccss3",
+                  "v3",
+                  "a3",
+                  "afoe-ii-s5"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "rrnn4",
+                  "ccss4",
+                  "v4",
+                  "a4",
+                  "afo-ii-s6",
+                  "afoe-ii-s6"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "max-afo-iii-s7",
+                  "max-afoe-obligatorias-s7",
+                  "max-afoe-vinculadas-s7",
+                  "max-tfg-s7"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "max-afo-iii-s8",
+                  "max-afoe-obligatorias-s8",
+                  "max-tfg-s8"
+                ]
+              },
+              {
+                "label": "Semestre 9",
+                "courseIds": [
+                  "max-afo-iii-s9",
+                  "max-tfg-s9"
+                ]
+              },
+              {
+                "label": "Semestre 10",
+                "courseIds": [
+                  "max-afoe-vinculadas-s10",
+                  "max-afoe-no-vinculadas-s10",
+                  "max-tfg-s10"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "minimo-afo-iii",
+            "label": "Ejemplo 2 · mínimo AFO III",
+            "description": "Grilla tentativa e indicativa del Plan 2020 con 27 créditos de AFO III. Es una guía flexible, no un perfil certificado ni una secuencia obligatoria.",
+            "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "cb1",
+                  "cb3",
+                  "cb5",
+                  "cb7",
+                  "afo-i-s1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "cb2",
+                  "cb4",
+                  "cb6",
+                  "cb8",
+                  "afoe-i-s2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "rrnn1",
+                  "ccss1",
+                  "v1",
+                  "a1",
+                  "eyc1-s3",
+                  "afoe-ii-s3"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "rrnn2",
+                  "ccss2",
+                  "v2",
+                  "a2",
+                  "eyc1-s4",
+                  "afoe-ii-s4"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "rrnn3",
+                  "ccss3",
+                  "v3",
+                  "a3",
+                  "afoe-ii-s5"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "rrnn4",
+                  "ccss4",
+                  "v4",
+                  "a4",
+                  "afo-ii-s6",
+                  "afoe-ii-s6"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "min-afo-iii-s7",
+                  "min-afoe-obligatorias-s7",
+                  "min-afoe-vinculadas-s7",
+                  "min-afoe-no-vinculadas-s7",
+                  "min-tfg-s7"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "min-afo-iii-s8",
+                  "min-afoe-obligatorias-s8",
+                  "min-afoe-vinculadas-s8",
+                  "min-afoe-no-vinculadas-s8",
+                  "min-tfg-s8"
+                ]
+              },
+              {
+                "label": "Semestre 9",
+                "courseIds": [
+                  "min-afoe-vinculadas-s9",
+                  "min-afoe-no-vinculadas-s9",
+                  "min-tfg-s9"
+                ]
+              },
+              {
+                "label": "Semestre 10",
+                "courseIds": [
+                  "min-afoe-vinculadas-s10",
+                  "min-afoe-no-vinculadas-s10",
+                  "min-tfg-s10"
+                ]
+              }
+            ]
+          }
+        ],
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "preserveBedeliasCourseIds": true,
+          "deduplicateSharedProfileCourses": true,
+          "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+          "sourceDataPath": "data/fagro/ingenieria-agronomica-2020-trajectory-review.json",
+          "pathwayLabel": "Ejemplo oficial de distribución",
+          "pathwayDescription": "Grilla tentativa e indicativa del Plan 2020; orienta una trayectoria flexible y no impone cursar todos los bloques como materias.",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [],
+          "additionalCourses": [
+            {
+              "id": "cb1",
+              "sourceCourseId": "cb1",
+              "name": "CB1 · Célula y anatomía vegetal",
+              "credits": 10,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "cb3",
+              "sourceCourseId": "cb3",
+              "name": "CB3 · Introducción a la microbiología",
+              "credits": 9,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "cb5",
+              "sourceCourseId": "cb5",
+              "name": "CB5 · Química orgánica e inorgánica para Agronomía",
+              "credits": 10,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "cb7",
+              "sourceCourseId": "cb7",
+              "name": "CB7 · Familias de las plantas agrícolas",
+              "credits": 10,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "afo-i-s1",
+              "sourceCourseId": "afo-i-s1",
+              "name": "Área de Formación Obligatoria I",
+              "credits": 6,
+              "requirementId": "afo-i",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "cb2",
+              "sourceCourseId": "cb2",
+              "name": "CB2 · Célula y fisiología básica animal",
+              "credits": 11,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "cb4",
+              "sourceCourseId": "cb4",
+              "name": "CB4 · Bases de física para Agronomía",
+              "credits": 10,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "cb6",
+              "sourceCourseId": "cb6",
+              "name": "CB6 · Matemática aplicada al cálculo diferencial y álgebra lineal y matricial",
+              "credits": 10,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "cb8",
+              "sourceCourseId": "cb8",
+              "name": "CB8 · Familias de las plantas agrícolas",
+              "credits": 10,
+              "requirementId": "cbg-obligatorias",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "afoe-i-s2",
+              "sourceCourseId": "afoe-i-s2",
+              "name": "Área de Formación Optativa/Electiva I",
+              "credits": 4,
+              "requirementId": "afoe-i",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "rrnn1",
+              "sourceCourseId": "rrnn1",
+              "name": "RRNN1 · Recursos naturales y su conservación",
+              "credits": 9,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "ccss1",
+              "sourceCourseId": "ccss1",
+              "name": "CCSS1 · Ciencias sociales",
+              "credits": 4,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "v1",
+              "sourceCourseId": "v1",
+              "name": "V1 · Producción vegetal",
+              "credits": 10,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "a1",
+              "sourceCourseId": "a1",
+              "name": "A1 · Producción animal",
+              "credits": 10,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "eyc1-s3",
+              "sourceCourseId": "eyc1-s3",
+              "name": "EyC1 · Estadística y cómputo (primer tramo)",
+              "credits": 6,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "afoe-ii-s3",
+              "sourceCourseId": "afoe-ii-s3",
+              "name": "Área de Formación Optativa/Electiva II",
+              "credits": 6,
+              "requirementId": "afoe-ii",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "rrnn2",
+              "sourceCourseId": "rrnn2",
+              "name": "RRNN2 · Recursos naturales y su conservación",
+              "credits": 10,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "ccss2",
+              "sourceCourseId": "ccss2",
+              "name": "CCSS2 · Ciencias sociales",
+              "credits": 4,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "v2",
+              "sourceCourseId": "v2",
+              "name": "V2 · Producción vegetal",
+              "credits": 10,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "a2",
+              "sourceCourseId": "a2",
+              "name": "A2 · Producción animal",
+              "credits": 8,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "eyc1-s4",
+              "sourceCourseId": "eyc1-s4",
+              "name": "EyC1 · Estadística y cómputo (segundo tramo impreso)",
+              "credits": 6,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "afoe-ii-s4",
+              "sourceCourseId": "afoe-ii-s4",
+              "name": "Área de Formación Optativa/Electiva II",
+              "credits": 7,
+              "requirementId": "afoe-ii",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "rrnn3",
+              "sourceCourseId": "rrnn3",
+              "name": "RRNN3 · Recursos naturales y su conservación",
+              "credits": 14,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "ccss3",
+              "sourceCourseId": "ccss3",
+              "name": "CCSS3 · Ciencias sociales",
+              "credits": 6,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "v3",
+              "sourceCourseId": "v3",
+              "name": "V3 · Producción vegetal",
+              "credits": 14,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "a3",
+              "sourceCourseId": "a3",
+              "name": "A3 · Producción animal",
+              "credits": 4,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "afoe-ii-s5",
+              "sourceCourseId": "afoe-ii-s5",
+              "name": "Área de Formación Optativa/Electiva II",
+              "credits": 7,
+              "requirementId": "afoe-ii",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "rrnn4",
+              "sourceCourseId": "rrnn4",
+              "name": "RRNN4 · Recursos naturales y su conservación",
+              "credits": 8,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "ccss4",
+              "sourceCourseId": "ccss4",
+              "name": "CCSS4 · Ciencias sociales",
+              "credits": 4,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "v4",
+              "sourceCourseId": "v4",
+              "name": "V4 · Producción vegetal",
+              "credits": 6,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "a4",
+              "sourceCourseId": "a4",
+              "name": "A4 · Producción animal",
+              "credits": 2,
+              "requirementId": "cba-obligatorias",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "afo-ii-s6",
+              "sourceCourseId": "afo-ii-s6",
+              "name": "Área de Formación Obligatoria II",
+              "credits": 18,
+              "requirementId": "afo-ii",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "afoe-ii-s6",
+              "sourceCourseId": "afoe-ii-s6",
+              "name": "Área de Formación Optativa/Electiva II",
+              "credits": 7,
+              "requirementId": "afoe-ii",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "max-afo-iii-s7",
+              "sourceCourseId": "max-afo-iii-s7",
+              "name": "AFO III · distribución tentativa máxima",
+              "credits": 21,
+              "requirementId": "afo-iii",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-afoe-obligatorias-s7",
+              "sourceCourseId": "max-afoe-obligatorias-s7",
+              "name": "Optativas obligatorias vinculadas al sistema de producción",
+              "credits": 13,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-afoe-vinculadas-s7",
+              "sourceCourseId": "max-afoe-vinculadas-s7",
+              "name": "Optativas libres vinculadas al sistema de producción",
+              "credits": 6,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-tfg-s7",
+              "sourceCourseId": "max-tfg-s7",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 5,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-afo-iii-s8",
+              "sourceCourseId": "max-afo-iii-s8",
+              "name": "AFO III · distribución tentativa máxima",
+              "credits": 27,
+              "requirementId": "afo-iii",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-afoe-obligatorias-s8",
+              "sourceCourseId": "max-afoe-obligatorias-s8",
+              "name": "Optativas obligatorias vinculadas al sistema de producción",
+              "credits": 13,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-tfg-s8",
+              "sourceCourseId": "max-tfg-s8",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 5,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-afo-iii-s9",
+              "sourceCourseId": "max-afo-iii-s9",
+              "name": "AFO III · distribución tentativa máxima",
+              "credits": 15,
+              "requirementId": "afo-iii",
+              "periodLabel": "Semestre 9",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-tfg-s9",
+              "sourceCourseId": "max-tfg-s9",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 30,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 9",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-afoe-vinculadas-s10",
+              "sourceCourseId": "max-afoe-vinculadas-s10",
+              "name": "Optativas libres vinculadas al sistema de producción",
+              "credits": 17,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 10",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-afoe-no-vinculadas-s10",
+              "sourceCourseId": "max-afoe-no-vinculadas-s10",
+              "name": "Optativas libres no vinculadas al sistema de producción",
+              "credits": 23,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 10",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "max-tfg-s10",
+              "sourceCourseId": "max-tfg-s10",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 5,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 10",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "maximo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afo-iii-s7",
+              "sourceCourseId": "min-afo-iii-s7",
+              "name": "AFO III · distribución tentativa mínima",
+              "credits": 7,
+              "requirementId": "afo-iii",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-obligatorias-s7",
+              "sourceCourseId": "min-afoe-obligatorias-s7",
+              "name": "Optativas obligatorias vinculadas al sistema de producción",
+              "credits": 20,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-vinculadas-s7",
+              "sourceCourseId": "min-afoe-vinculadas-s7",
+              "name": "Optativas libres vinculadas al sistema de producción",
+              "credits": 8,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-no-vinculadas-s7",
+              "sourceCourseId": "min-afoe-no-vinculadas-s7",
+              "name": "Optativas libres no vinculadas al sistema de producción",
+              "credits": 5,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-tfg-s7",
+              "sourceCourseId": "min-tfg-s7",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 5,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afo-iii-s8",
+              "sourceCourseId": "min-afo-iii-s8",
+              "name": "AFO III · distribución tentativa mínima",
+              "credits": 20,
+              "requirementId": "afo-iii",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-obligatorias-s8",
+              "sourceCourseId": "min-afoe-obligatorias-s8",
+              "name": "Optativas obligatorias vinculadas al sistema de producción",
+              "credits": 6,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-vinculadas-s8",
+              "sourceCourseId": "min-afoe-vinculadas-s8",
+              "name": "Optativas libres vinculadas al sistema de producción",
+              "credits": 6,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-no-vinculadas-s8",
+              "sourceCourseId": "min-afoe-no-vinculadas-s8",
+              "name": "Optativas libres no vinculadas al sistema de producción",
+              "credits": 8,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-tfg-s8",
+              "sourceCourseId": "min-tfg-s8",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 5,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-vinculadas-s9",
+              "sourceCourseId": "min-afoe-vinculadas-s9",
+              "name": "Optativas libres vinculadas al sistema de producción",
+              "credits": 7,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 9",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-no-vinculadas-s9",
+              "sourceCourseId": "min-afoe-no-vinculadas-s9",
+              "name": "Optativas libres no vinculadas al sistema de producción",
+              "credits": 8,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 9",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-tfg-s9",
+              "sourceCourseId": "min-tfg-s9",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 30,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 9",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-vinculadas-s10",
+              "sourceCourseId": "min-afoe-vinculadas-s10",
+              "name": "Optativas libres vinculadas al sistema de producción",
+              "credits": 17,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 10",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-afoe-no-vinculadas-s10",
+              "sourceCourseId": "min-afoe-no-vinculadas-s10",
+              "name": "Optativas libres no vinculadas al sistema de producción",
+              "credits": 23,
+              "requirementId": "afoe-iii",
+              "periodLabel": "Semestre 10",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            },
+            {
+              "id": "min-tfg-s10",
+              "sourceCourseId": "min-tfg-s10",
+              "name": "Trabajo Final de Grado · avance tentativo",
+              "credits": 5,
+              "requirementId": "trabajo-final",
+              "periodLabel": "Semestre 10",
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
+              "curricularBlock": true,
+              "pathwayIds": [
+                "minimo-afo-iii"
+              ]
+            }
+          ],
+          "creditRequirements": [
+            {
+              "id": "ciclo-basico-general",
+              "name": "Ciclo Básico General",
+              "shortName": "CBG",
+              "minCredits": 90
+            },
+            {
+              "id": "cbg-obligatorias",
+              "parentId": "ciclo-basico-general",
+              "name": "Asignaturas obligatorias del Ciclo Básico General",
+              "shortName": "Obligatorias I",
+              "minCredits": 80
+            },
+            {
+              "id": "afo-i",
+              "parentId": "ciclo-basico-general",
+              "name": "Área de Formación Obligatoria I",
+              "shortName": "AFO I",
+              "minCredits": 6
+            },
+            {
+              "id": "afoe-i",
+              "parentId": "ciclo-basico-general",
+              "name": "Área de Formación Optativa/Electiva I",
+              "shortName": "AFOE I",
+              "minCredits": 4
+            },
+            {
+              "id": "ciclo-basico-agronomico",
+              "name": "Ciclo Básico Agronómico",
+              "shortName": "CBA",
+              "minCredits": 180
+            },
+            {
+              "id": "cba-obligatorias",
+              "parentId": "ciclo-basico-agronomico",
+              "name": "Asignaturas obligatorias del Ciclo Básico Agronómico",
+              "shortName": "Obligatorias II",
+              "minCredits": 135
+            },
+            {
+              "id": "afo-ii",
+              "parentId": "ciclo-basico-agronomico",
+              "name": "Área de Formación Obligatoria II",
+              "shortName": "AFO II",
+              "minCredits": 18
+            },
+            {
+              "id": "afoe-ii",
+              "parentId": "ciclo-basico-agronomico",
+              "name": "Área de Formación Optativa/Electiva II",
+              "shortName": "AFOE II",
+              "minCredits": 27
+            },
+            {
+              "id": "ciclo-analisis-consolidacion",
+              "name": "Ciclo de Análisis y Consolidación",
+              "shortName": "CAC",
+              "minCredits": 180
+            },
+            {
+              "id": "afo-iii",
+              "parentId": "ciclo-analisis-consolidacion",
+              "name": "Área de Formación Obligatoria III",
+              "shortName": "AFO III",
+              "minCredits": 27
+            },
+            {
+              "id": "afoe-iii",
+              "parentId": "ciclo-analisis-consolidacion",
+              "name": "Área de Formación Optativa/Electiva III",
+              "shortName": "AFOE III",
+              "minCredits": 72
+            },
+            {
+              "id": "trabajo-final",
+              "parentId": "ciclo-analisis-consolidacion",
+              "name": "Trabajo Final de Grado",
+              "shortName": "TFG",
+              "minCredits": 45
+            }
+          ],
+          "credentials": [
+            {
+              "id": "bedelias-degree",
+              "title": "Ingeniero Agrónomo",
+              "minTotalCredits": 450,
+              "nodeRequirements": [
+                {
+                  "nodeId": "ciclo-basico-general",
+                  "minCredits": 90
+                },
+                {
+                  "nodeId": "cbg-obligatorias",
+                  "minCredits": 80
+                },
+                {
+                  "nodeId": "afo-i",
+                  "minCredits": 6
+                },
+                {
+                  "nodeId": "afoe-i",
+                  "minCredits": 4
+                },
+                {
+                  "nodeId": "ciclo-basico-agronomico",
+                  "minCredits": 180
+                },
+                {
+                  "nodeId": "cba-obligatorias",
+                  "minCredits": 135
+                },
+                {
+                  "nodeId": "afo-ii",
+                  "minCredits": 18
+                },
+                {
+                  "nodeId": "afoe-ii",
+                  "minCredits": 27
+                },
+                {
+                  "nodeId": "ciclo-analisis-consolidacion",
+                  "minCredits": 180
+                },
+                {
+                  "nodeId": "afo-iii",
+                  "minCredits": 27
+                },
+                {
+                  "nodeId": "afoe-iii",
+                  "minCredits": 72
+                },
+                {
+                  "nodeId": "trabajo-final",
+                  "minCredits": 45
+                }
+              ],
+              "sourceUrl": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf"
+            }
+          ],
+          "includeAllCoursesInPathwayCatalog": false,
+          "periodOrder": [
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6",
+            "Semestre 7",
+            "Semestre 8",
+            "Semestre 9",
+            "Semestre 10"
+          ]
+        }
       },
       "offerings": [
         {
@@ -61,7 +1140,12 @@
             "Estación Experimental Mario A. Cassinoni, Paysandú",
             "Estación Experimental de Facultad de Agronomía de Salto"
           ],
-          "role": "servicio responsable del plan y de sus trayectorias"
+          "role": "servicio responsable del único Plan 2020; la grilla estable no asigna un ejemplo por sede",
+          "trajectoryIds": [
+            "maximo-afo-iii",
+            "minimo-afo-iii"
+          ],
+          "curriculumVariant": false
         },
         {
           "serviceCode": "CENURLN",
@@ -69,7 +1153,12 @@
             "Sede Salto",
             "Sede Paysandú"
           ],
-          "role": "oferta regional completa del mismo plan; la ficha central destaca la opción Agrícola-ganadera en Salto"
+          "role": "oferta regional del mismo plan; las planillas 2026 se conservan como oferta periódica separada",
+          "trajectoryIds": [
+            "maximo-afo-iii",
+            "minimo-afo-iii"
+          ],
+          "curriculumVariant": false
         }
       ],
       "bedeliasComparison": {
@@ -79,70 +1168,81 @@
         "regionalCourses": 717,
         "onlyCanonical": 0,
         "onlyRegional": 0,
-        "changedCredits": 0,
-        "regionalOnlyCoursesUnderFlexibleBranches": 0,
-        "canonicalPrerequisiteEntries": 511,
-        "regionalPrerequisiteEntries": 9
+        "interpretation": "Los dos snapshots contienen las mismas 717 identidades. Se mantienen como candidatas recuperables; los 61 bloques de las grillas del Plan son la única capa curricular verificada de esta reconciliación."
       },
       "conclusion": {
         "canonicalModel": "one-plan-multiple-offerings",
         "regionalCurriculumVariant": false,
-        "reason": "Las dos ofertas publican el Plan 2020 con el mismo título, duración, créditos y mínimos. Tras completar el árbol central de Bedelías, ambos snapshots contienen las mismas 717 materias y no muestran una variante curricular regional.",
+        "siteSpecificTrajectoryAvailability": false,
+        "trajectorySourceDataPath": "data/fagro/ingenieria-agronomica-2020-trajectory-review.json",
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "reason": "El Plan 2020 publica dos grillas tentativas e indicativas de diez semestres para el mismo título. La tabla nominal de portada pertenece al Plan 1989 y la oferta 2026 varía por período y sede, por lo que ninguna de las dos se importa como trayectoria estable.",
         "normalization": [
-          "Conservar una sola identidad canónica para el Plan 2020.",
-          "Modelar Salto y Paysandú como ofertas/sedes, no como carreras duplicadas.",
-          "Representar Agrícola-ganadera como trayectoria disponible en la oferta regional cuando se modele el selector de sede.",
-          "No duplicar el catálogo compartido ni presentarlo como una malla regional separada.",
-          "Mantener la menor cobertura regional de previaturas como diferencia de publicación, no de currícula."
+          "Conservar una sola identidad canónica para el Plan 2020 en Montevideo, Paysandú y Salto.",
+          "Reproducir los dos ejemplos tentativos máximo y mínimo de AFO III como guías flexibles del mismo título.",
+          "No convertir los bloques de área ni las opciones de los anexos en una secuencia obligatoria de materias.",
+          "Mantener las 717 entradas de los snapshots como candidatas y fuera de los períodos publicados hasta contar con autoridad curricular inequívoca.",
+          "Excluir expresamente la currícula Plan 1989 y separar la oferta 2026 de la trayectoria estable."
         ]
       },
       "sources": [
         {
           "url": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
-          "authority": "Facultad de Agronomía, Udelar",
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "contentHash": "sha256:2e24c078579a263bdf8bfc31f9fa20441b1643eef503e7451c84b1116855fa56",
           "supports": [
-            "aprobación y vigencia del Plan 2020",
-            "título, duración y 450 créditos",
-            "estructura y mínimos de los tres ciclos",
-            "flexibilidad, trayectorias y trabajo final"
+            "plan aprobado; tres ciclos; 450 créditos; grillas tentativas e indicativas de diez semestres; dos ejemplos flexibles para cuarto y quinto año"
           ]
         },
         {
           "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/",
-          "authority": "Facultad de Agronomía, Udelar",
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "contentHash": "sha256:4af8b6a296b2eb11347e9cab41e117e28ab2d953050fcd3cca5bd512a28107d6",
           "supports": [
-            "plan vigente",
-            "estructura por años",
-            "sistemas de producción y localizaciones de cuarto y quinto año"
+            "vigencia del Plan 2020 y separación explícita respecto de la currícula académica del Plan 1989"
           ]
         },
         {
-          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/cuarto-ano/",
-          "authority": "Facultad de Agronomía, Udelar",
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/primer-ano/",
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "contentHash": "sha256:db59b42ff367ef08ce5ddbcf7f135c1307eea04cf875620dbb5b08676f30b007",
           "supports": [
-            "definición vigente de optativas y electivas",
-            "trayectorias por sistema de producción",
-            "trabajo final de 45 créditos"
+            "estructura de créditos por ciclo y enlaces a oferta periódica 2026 de primero a quinto año; no se usa como grilla estable"
           ]
         },
         {
-          "url": "https://udelar.edu.uy/carrera/ingeniero-agronomo",
-          "authority": "Catálogo central de carreras, Udelar",
+          "url": "https://portal.fagro.edu.uy/wp-content/uploads/2024/12/Formulario_de_datos_ARCUSUR.pdf",
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "contentHash": "sha256:7112525ed0e03f761a90ca93e6598c464339361b2c244173415d9ebf75fdd417",
           "supports": [
-            "una única carrera y título",
-            "450 créditos y 60 meses",
-            "oferta en Facultad de Agronomía y Sede Salto con opción Agrícola-ganadera"
-          ]
-        },
-        {
-          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
-          "authority": "Catálogo de carreras del interior, Udelar",
-          "supports": [
-            "oferta de Ingeniero Agrónomo en Paysandú y Salto"
+            "antecedente de implementación hasta 2022; confirma cursos de los tres primeros años pero declara que cuarto y quinto se orientaban por Plan 1989 en esa etapa"
           ]
         }
       ],
-      "remainingWork": "La auditoría resuelve la excepción regional y la estructura normativa. La proyección curada de materias, previaturas y trayectorias para la UI sigue pendiente y no habilita publicación."
+      "anomalies": [
+        {
+          "field": "fagro-plan-2020-1",
+          "resolution": "La tabla nominal y semestral de la portada pertenece expresamente al Plan 1989 y no se mezcla con el Plan 2020."
+        },
+        {
+          "field": "fagro-plan-2020-2",
+          "resolution": "Las grillas del Plan 2020 son tentativas e indicativas; sus dos ejemplos no son perfiles certificados ni obligan a cursar todos los bloques como materias."
+        },
+        {
+          "field": "fagro-plan-2020-3",
+          "resolution": "El Anexo 2 imprime EyC1 en los semestres 3 y 4. Se conservan dos bloques periodizados con la misma etiqueta, sin inferir una corrección de código."
+        },
+        {
+          "field": "fagro-plan-2020-4",
+          "resolution": "La oferta 2026 se registra como evidencia periódica separada y no como garantía de futuras ediciones."
+        },
+        {
+          "field": "fagro-plan-2020-5",
+          "resolution": "Las grillas estables no asignan recorridos completos por sede; la cobertura territorial 2026 debe volver a revisarse cuando Fagro publique una malla o guía estable por sede o sistema de producción."
+        }
+      ],
+      "uiNotice": "Plan 2020 de 450 créditos. Los dos recorridos son ejemplos tentativos e indicativos: orientan una distribución flexible y no obligan a cursar todos los bloques como materias. La oferta 2026 y la tabla Plan 1989 no forman parte de esta grilla estable.",
+      "remainingWork": "Las 717 entradas históricas de Bedelías siguen como candidatas sin aportar a períodos ni requisitos. La distribución estable por sede o sistema de producción debe revisarse cuando Fagro publique una malla permanente que sustituya la oferta anual."
     },
     {
       "identity": "licenciatura en biotecnologia:2024",
@@ -76880,6 +77980,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:e43a9cba5c1f9a679c02a4ad48c9a0ba89241c41792d428d32ad41ed0deec2f8",
+  "contentHash": "sha256:f5e780c867d435b5d69a5e85d54ea3ebd3614d47de948fd3ea8e92a22e0d2048",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

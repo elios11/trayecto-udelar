@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:6245b3e8d96bbb4be758683123baf2aa930a7d18ae505329bbc723b5e5ab051f",
-    "extractedReportHash": "sha256:b890565f923bf552f4f334c44c4fd4498e61cde91ceb177c520b71396530d9f6",
-    "officialAuditHash": "sha256:e43a9cba5c1f9a679c02a4ad48c9a0ba89241c41792d428d32ad41ed0deec2f8",
-    "reviewedTrajectoriesHash": "sha256:09624f5a6c43c21b04f8b07ecacb7f2e118c1cd2567a16f3a859c93b6520a2d4"
+    "extractedCatalogHash": "sha256:6f32bed4443b2621ea3e0613c827bae88a7afe653b11eccecc82f1eecef02461",
+    "extractedReportHash": "sha256:943a549e79407e6e2ddec7a3f062c859e6e6d96dc0b0bbf7ae8a9ddd32123a89",
+    "officialAuditHash": "sha256:f5e780c867d435b5d69a5e85d54ea3ebd3614d47de948fd3ea8e92a22e0d2048",
+    "reviewedTrajectoriesHash": "sha256:f3a4719a74063edd03ac22f5bb697611fb2472eb2793b9266ed9105f8a0cae31"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 100,
+      "official-trajectory-reproduced": 101,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 43
+      "research-pending": 42
     },
-    "pending": 44,
+    "pending": 43,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -89,10 +89,10 @@
         "serviceLabel": "Facultad de Agronomía",
         "selectablePlanIds": 3,
         "states": {
-          "official-trajectory-reproduced": 2,
+          "official-trajectory-reproduced": 3,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 44,
+    "total": 43,
     "plans": [
       {
         "priority": 1,
@@ -293,15 +293,6 @@
           "bedelias-cenurln"
         ],
         "reason": "La identidad Plan 2009 está confirmada, pero la única malla propia recuperable fue creada en 2012 y su enlace institucional actual está caído. El índice vigente de FCS omite la carrera y la oferta EVA no reconstruye todos los períodos; falta confirmar la vigencia actual antes de proyectar la grilla histórica."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fagro-ingeniero-agronomo-2020",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fagro"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -681,14 +672,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009"
-        ]
-      },
-      {
-        "serviceId": "bedelias-fagro",
-        "serviceLabel": "Facultad de Agronomía",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fagro-ingeniero-agronomo-2020"
         ]
       },
       {
@@ -3626,43 +3609,41 @@
           "careerId": "bedelias-fagro-ingeniero-agronomo",
           "careerLabel": "Ingeniero Agrónomo",
           "planLabel": "Plan 2020 · vigente",
-          "defaultTrajectoryId": "bedelias",
+          "defaultTrajectoryId": "maximo-afo-iii",
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-15",
-      "effectiveAt": "2020",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-11",
+      "effectiveAt": "2019-11-05",
       "officialSources": [
         {
-          "authority": "Facultad de Agronomía, Udelar",
+          "authority": "Facultad de Agronomía, Universidad de la República",
           "url": "https://portal.fagro.edu.uy/wp-content/uploads/2025/07/PE2020-Ingeniero-Agronomo-Fagro-Udelar.pdf",
-          "role": "aprobación y vigencia del Plan 2020; título, duración y 450 créditos; estructura y mínimos de los tres ciclos; flexibilidad, trayectorias y trabajo final",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "plan aprobado; tres ciclos; 450 créditos; grillas tentativas e indicativas de diez semestres; dos ejemplos flexibles para cuarto y quinto año",
+          "contentHash": "sha256:2e24c078579a263bdf8bfc31f9fa20441b1643eef503e7451c84b1116855fa56"
         },
         {
-          "authority": "Facultad de Agronomía, Udelar",
+          "authority": "Facultad de Agronomía, Universidad de la República",
           "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/",
-          "role": "plan vigente; estructura por años; sistemas de producción y localizaciones de cuarto y quinto año",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "vigencia del Plan 2020 y separación explícita respecto de la currícula académica del Plan 1989",
+          "contentHash": "sha256:4af8b6a296b2eb11347e9cab41e117e28ab2d953050fcd3cca5bd512a28107d6"
         },
         {
-          "authority": "Facultad de Agronomía, Udelar",
-          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/cuarto-ano/",
-          "role": "definición vigente de optativas y electivas; trayectorias por sistema de producción; trabajo final de 45 créditos",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/ingenieria-agronomica/primer-ano/",
+          "reviewedAt": "2026-10-11",
+          "role": "estructura de créditos por ciclo y enlaces a oferta periódica 2026 de primero a quinto año; no se usa como grilla estable",
+          "contentHash": "sha256:db59b42ff367ef08ce5ddbcf7f135c1307eea04cf875620dbb5b08676f30b007"
         },
         {
-          "authority": "Catálogo central de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingeniero-agronomo",
-          "role": "una única carrera y título; 450 créditos y 60 meses; oferta en Facultad de Agronomía y Sede Salto con opción Agrícola-ganadera",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo de carreras del interior, Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
-          "role": "oferta de Ingeniero Agrónomo en Paysandú y Salto",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Agronomía, Universidad de la República",
+          "url": "https://portal.fagro.edu.uy/wp-content/uploads/2024/12/Formulario_de_datos_ARCUSUR.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "antecedente de implementación hasta 2022; confirma cursos de los tres primeros años pero declara que cuarto y quinto se orientaban por Plan 1989 en esa etapa",
+          "contentHash": "sha256:7112525ed0e03f761a90ca93e6598c464339361b2c244173415d9ebf75fdd417"
         }
       ],
       "scope": {
@@ -3672,24 +3653,46 @@
           "Salto"
         ],
         "pathwayIds": [
-          "bedelias",
-          "salto-agricola-ganadera"
+          "maximo-afo-iii",
+          "minimo-afo-iii"
         ]
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-profiles",
         "features": [
-          "administrative-composition"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "ingeniero agronomo:2020",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fagro-ingeniero-agronomo-2020.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fagro/ingenieria-agronomica-2020-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fagro-ingeniero-agronomo-2020.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:03480462c0baf16756de19d08bcc0a8b9a0732176646726c952cc0b51a106f6b",
+        "projectionContentHash": "sha256:f5dc00bf8ae4ab6e7ed31915020d1db951a5f37f04b08385d91cbbe2ddb45ee8",
+        "pathways": [
+          {
+            "id": "maximo-afo-iii",
+            "periodCount": 10
+          },
+          {
+            "id": "minimo-afo-iii",
+            "periodCount": 10
+          }
+        ],
+        "expectedCoursePlacements": 94,
+        "matchedCoursePlacements": 94
       },
-      "conflictNotes": []
+      "conflictNotes": [
+        "La tabla nominal y semestral de la portada pertenece expresamente al Plan 1989 y no se mezcla con el Plan 2020.",
+        "Las grillas del Plan 2020 son tentativas e indicativas; sus dos ejemplos no son perfiles certificados ni obligan a cursar todos los bloques como materias.",
+        "El Anexo 2 imprime EyC1 en los semestres 3 y 4. Se conservan dos bloques periodizados con la misma etiqueta, sin inferir una corrección de código.",
+        "La oferta 2026 se registra como evidencia periódica separada y no como garantía de futuras ediciones.",
+        "Las grillas estables no asignan recorridos completos por sede; la cobertura territorial 2026 debe volver a revisarse cuando Fagro publique una malla o guía estable por sede o sistema de producción."
+      ]
     },
     {
       "planId": "bedelias-fartes-licenciatura-en-arte-digital-y-electronico-2013",
@@ -13384,5 +13387,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:c51a44aa8c63d5672d75c0f14683b622723730cd96bf26b9fa39151599da3d6f"
+  "contentHash": "sha256:82f89cfbf23db6afd7e926fdaebd9ee8c0469efbb91be1050e24996c92e5b8b2"
 }

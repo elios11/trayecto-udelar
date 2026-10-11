@@ -224,9 +224,7 @@ function auditCampuses(audit) {
     id: slug(id),
     label: entry.label,
     official: true,
-    defaultPathwayId: audit.identity === "ingeniero agronomo:2020" && id === "salto"
-      ? "salto-agricola-ganadera"
-      : entry.pathwayIds[0] ?? defaultAuditedPathwayId,
+    defaultPathwayId: entry.pathwayIds[0] ?? defaultAuditedPathwayId,
   }));
 }
 
@@ -416,14 +414,6 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
     },
   };
-  if (audit?.identity === "ingeniero agronomo:2020") {
-    pathways["salto-agricola-ganadera"] = {
-      label: "Agrícola-ganadera",
-      description: "Opción territorial oficialmente publicada para Salto. La selección flexible de unidades todavía requiere curaduría documental.",
-      campusIds: ["salto"],
-      periods,
-    };
-  }
   return pathways;
 }
 

@@ -198,9 +198,9 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
   }
   const agronomyItem = report.plans.find((plan) => plan.identity === "ingeniero agronomo:2020");
   const agronomy = await readJson(`app/data/bedelias-generated/${agronomyItem.planId}.json`);
-  assert.deepEqual(agronomy.pathways["salto-agricola-ganadera"].campusIds, ["salto"]);
-  assert.equal(agronomy.campuses.find((campus) => campus.id === "salto").defaultPathwayId, "salto-agricola-ganadera");
-  assert.equal(agronomy.campuses.find((campus) => campus.id === "montevideo").defaultPathwayId, "bedelias");
+  assert.deepEqual(Object.keys(agronomy.pathways), ["maximo-afo-iii", "minimo-afo-iii"]);
+  assert.ok(agronomy.campuses.every((campus) => campus.defaultPathwayId === "maximo-afo-iii"));
+  assert.ok(Object.values(agronomy.pathways).every((pathway) => pathway.campusIds.length === 3));
   const animalBiologyRule = agronomy.rules.find((rule) => rule.target.code === "A0620");
   assert.equal(animalBiologyRule.expression.children[0].options[0].code, "fagro-a0120");
 });
