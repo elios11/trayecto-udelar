@@ -21,7 +21,7 @@ Revisar la trayectoria predeterminada de Tecnólogo en Madera en Rivera. El inve
 
 ## Estado recuperable
 
-Implementado en el worktree dedicado el 10 de octubre de 2026. Tras una interrupción por límite de uso, el coordinador reanudó las verificaciones el 11 de octubre; pendiente commit e integración.
+Implementado en el worktree dedicado el 10 de octubre de 2026. Tras una interrupción por límite de uso, el coordinador reanudó las verificaciones el 11 de octubre y lo integró en `main` mediante `6473d9c`.
 
 ### Resultado documental
 
@@ -49,3 +49,4 @@ No se actualiza `docs/carreras-a-actualizar.md`: las fuentes vigentes cubren la 
 - Pruebas focales D03ah, inventario y auditoría: 35/35.
 - `npm.cmd test`: compilación y 1029/1029 pruebas.
 - `npm.cmd run lint`: aprobado.
+- Sobre el `main` combinado: `npm.cmd test` (1029/1029) y `npm.cmd run lint` aprobados. Push y despliegue quedan para un lote posterior.
