@@ -109,8 +109,21 @@ async function reviewedEvidence(review) {
     const sourcePathway = sourcePathways.get(pathwayId);
     const projectedPathway = projectedPathways.get(pathwayId);
     if (!sourcePathway || !projectedPathway) throw new Error(`Falta la trayectoria ${pathwayId} en la evidencia de ${review.planId}.`);
-    const sourcePeriods = sourcePathway[review.evidence.periodField];
-    const projectedPeriods = projectedPathway[review.evidence.periodField];
+    let sourcePeriods = sourcePathway[review.evidence.periodField];
+    const sharedPeriods = source[review.evidence.sharedPeriodsField];
+    if (Array.isArray(sourcePeriods) && Array.isArray(sharedPeriods)) {
+      const specificByLabel = new Map(sourcePeriods.map((period) => [period.label, period]));
+      sourcePeriods = sharedPeriods.map((period) => ({
+        label: period.label,
+        [review.evidence.sourceCourseIdsField ?? "courseIds"]: [
+          ...(period[review.evidence.sourceCourseIdsField ?? "courseIds"] ?? []),
+          ...(specificByLabel.get(period.label)?.[review.evidence.sourceCourseIdsField ?? "courseIds"] ?? []),
+        ],
+      }));
+    }
+    const projectedPeriods = projectedPathway[
+      review.evidence.projectionPeriodField ?? review.evidence.periodField
+    ];
     if (!Array.isArray(sourcePeriods) || sourcePeriods.length === 0 || sourcePeriods.length !== projectedPeriods?.length) {
       throw new Error(`Los períodos auditados y proyectados no coinciden para ${review.planId}/${pathwayId}.`);
     }
@@ -122,7 +135,7 @@ async function reviewedEvidence(review) {
       }
       for (const [periodIndex, sourcePeriod] of sourcePeriods.entries()) {
         const projectedIds = new Set(projectedPeriods[periodIndex].courseIds ?? []);
-        for (const sourceCourseId of sourcePeriod.courseIds ?? []) {
+        for (const sourceCourseId of sourcePeriod[review.evidence.sourceCourseIdsField ?? "courseIds"] ?? []) {
           expectedCoursePlacements += 1;
           const normalizedSuffix = normalize(sourceCourseId).replaceAll(" ", "-");
           const projectedCourseId = projectedCourseBySourceIdentity.get(String(sourceCourseId))

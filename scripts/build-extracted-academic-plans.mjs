@@ -676,7 +676,10 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
     if (isAdministrativeCreditEntry(parsed.name) || isAdministrativeCreditEntry(legacyParsed.name)) continue;
     if ((parsed.code && excludedSourceCourseIds.has(parsed.code))
       || (legacyParsed.code && excludedSourceCourseIds.has(legacyParsed.code))) continue;
-    const courseOverride = courseOverrides[parsed.code]
+    const publishedCredits = Number(node.course?.credits) || 0;
+    const courseOverride = courseOverrides[`${parsed.code}:${publishedCredits}`]
+      ?? courseOverrides[`${legacyParsed.code}:${publishedCredits}`]
+      ?? courseOverrides[parsed.code]
       ?? courseOverrides[legacyParsed.code]
       ?? courseOverrides[normalize(parsed.name)]
       ?? courseOverrides[normalize(legacyParsed.name)]
@@ -702,7 +705,6 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       ?? ((useProfileComposition ? compositionCreditGroupLabel(rawPeriod) : compositionGroupLabel(rawPeriod))
         || "Composición del plan");
     const nodeId = courseOverride.requirementId ?? requirementIdForPath(node.path);
-    const publishedCredits = Number(node.course?.credits) || 0;
     const credits = Number.isFinite(Number(courseOverride.credits))
       ? Number(courseOverride.credits)
       : curriculum.usePublishedCredits === true ? publishedCredits : 0;

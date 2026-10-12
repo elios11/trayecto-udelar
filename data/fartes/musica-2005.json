@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fartes-licenciatura-en-musica-2005",
+  "auditIdentity": "licenciatura en musica:2005",
+  "reviewedAt": "2026-10-12",
+  "scope": {
+    "service": "Facultad de Artes",
+    "campuses": [
+      {
+        "id": "montevideo",
+        "label": "Montevideo"
+      }
+    ]
+  },
+  "publication": {
+    "planYear": "2005",
+    "credential": "Licenciado en Música",
+    "durationMonths": 48,
+    "durationSemesters": 8,
+    "minimumCredits": 360,
+    "effectiveFrom": "2005",
+    "currentAtReview": true,
+    "currentEvidence": "Facultad de Artes mantiene publicadas las cuatro opciones de la Licenciatura en Música, las materias y las grillas semestrales del Plan 2005."
+  },
+  "sources": [
+    {
+      "id": "fartes-musica-plan-2005",
+      "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+      "authority": "Escuela Universitaria de Música / Facultad de Artes, Udelar",
+      "supports": [
+        "Plan 2005",
+        "Licenciatura en Música con cuatro opciones certificadas",
+        "ocho semestres",
+        "360 créditos",
+        "grillas de Composición, Musicología, Dirección de Orquesta y Dirección de Coro",
+        "mínimos diferenciados y flexibilidad"
+      ],
+      "rawContentHash": "sha256:9994f1c969c824718b2eae0e092b62bd8ed00db7bd6820b1c9121ae67659d335",
+      "textExtractedPdfPages": [11, 12, 13, 16, 17, 18, 19],
+      "visuallyInspectedPdfPages": [16, 17, 18, 19]
+    },
+    {
+      "id": "fartes-musica-current-career-page",
+      "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
+      "authority": "Instituto de Música / Facultad de Artes, Udelar",
+      "supports": [
+        "vigencia institucional",
+        "cuatro opciones certificadas",
+        "ocho semestres",
+        "360 créditos",
+        "materias y mínimos diferenciados"
+      ]
+    }
+  ],
+  "sourcePortions": {
+    "fartes-musica-plan-2005": {
+      "pages": [11, 12, 13, 16, 17, 18, 19],
+      "facts": {
+        "documentTitle": "Plan de estudios 2005 - Escuela Universitaria de Música",
+        "durationSemesters": 8,
+        "minimumCredits": 360,
+        "commonCoreCredits": 138,
+        "degreeCoreCredits": 12,
+        "specialProjectsCredits": 8,
+        "specialProjectsMinimumCount": 2,
+        "pathwayOrderInDocument": [
+          "composicion",
+          "musicologia",
+          "direccion-de-orquesta",
+          "direccion-de-coro"
+        ],
+        "pathways": {
+          "composicion": {
+            "specificCredits": 144,
+            "electiveCredits": 58,
+            "musicalElectiveMinimum": 20,
+            "nonMusicalElectiveMinimum": 20,
+            "periodCreditsFromRows": [40, 44, 44, 46, 44, 40, 16, 20],
+            "printedPeriodCredits": [40, 44, 44, 46, 40, 40, 16, 20]
+          },
+          "musicologia": {
+            "specificCredits": 116,
+            "electiveCredits": 86,
+            "musicalElectiveMinimum": 29,
+            "nonMusicalElectiveMinimum": 29,
+            "periodCreditsFromRows": [40, 38, 34, 30, 36, 32, 26, 30]
+          },
+          "direccion-de-orquesta": {
+            "specificCredits": 116,
+            "electiveCredits": 86,
+            "musicalElectiveMinimum": 29,
+            "nonMusicalElectiveMinimum": 29,
+            "periodCreditsFromRows": [41, 45, 44, 46, 37, 25, 12, 16]
+          },
+          "direccion-de-coro": {
+            "specificCredits": 124,
+            "electiveCredits": 78,
+            "musicalElectiveMinimum": 26,
+            "nonMusicalElectiveMinimum": 26,
+            "periodCreditsFromRows": [39, 41, 46, 46, 37, 29, 16, 20]
+          }
+        }
+      }
+    },
+    "fartes-musica-current-career-page": {
+      "reviewedAt": "2026-10-12",
+      "facts": {
+        "publishesPlan": true,
+        "publishesFourOptions": true,
+        "publishesEightSemesterTables": true,
+        "minimumCredits": 360,
+        "campus": "Montevideo",
+        "compositionSemester5PublishedSubtotal": 44,
+        "musicologySemester8PublishedSubtotal": 20,
+        "musicologySemester4PublishedSpecificRow": "Transcripción"
+      }
+    }
+  },
+  "requirements": {
+    "commonCoreCredits": 138,
+    "degreeCoreCredits": 12,
+    "specialProjectsCredits": 8,
+    "pathways": {
+      "composicion": {
+        "specificCredits": 144,
+        "electiveCredits": 58,
+        "musicalElectiveMinimum": 20,
+        "nonMusicalElectiveMinimum": 20
+      },
+      "direccion-de-coro": {
+        "specificCredits": 124,
+        "electiveCredits": 78,
+        "musicalElectiveMinimum": 26,
+        "nonMusicalElectiveMinimum": 26
+      },
+      "direccion-de-orquesta": {
+        "specificCredits": 116,
+        "electiveCredits": 86,
+        "musicalElectiveMinimum": 29,
+        "nonMusicalElectiveMinimum": 29
+      },
+      "musicologia": {
+        "specificCredits": 116,
+        "electiveCredits": 86,
+        "musicalElectiveMinimum": 29,
+        "nonMusicalElectiveMinimum": 29
+      }
+    }
+  },
+  "technicalMatches": [
+    { "sourceCourseId": "EUMUS-ACUS", "progressId": "fartes-eumus-acus", "officialLabel": "Acústica", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA1", "progressId": "fartes-eumus-ana1", "officialLabel": "Análisis 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA2", "progressId": "fartes-eumus-ana2", "officialLabel": "Análisis 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA3", "progressId": "fartes-eumus-ana3", "officialLabel": "Análisis 3", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA4", "progressId": "fartes-eumus-ana4", "officialLabel": "Análisis 4", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-CPT1", "progressId": "fartes-eumus-cpt1", "officialLabel": "Contrapunto 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-CPT2", "progressId": "fartes-eumus-cpt2", "officialLabel": "Contrapunto 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS1", "progressId": "fartes-eumus-hmus1", "officialLabel": "Historia de la Música 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS2", "progressId": "fartes-eumus-hmus2", "officialLabel": "Historia de la Música 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS3", "progressId": "fartes-eumus-hmus3", "officialLabel": "Historia de la Música 3", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS4", "progressId": "fartes-eumus-hmus4", "officialLabel": "Historia de la Música 4", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS5", "progressId": "fartes-eumus-hmus5", "officialLabel": "Historia de la Música 5", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT1", "progressId": "fartes-eumus-lect1", "officialLabel": "Lectoescritura musical 1", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT2", "progressId": "fartes-eumus-lect2", "officialLabel": "Lectoescritura musical 2", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT3", "progressId": "fartes-eumus-lect3", "officialLabel": "Lectoescritura musical 3", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT4", "progressId": "fartes-eumus-lect4", "officialLabel": "Lectoescritura musical 4", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT5", "progressId": "fartes-eumus-lect5", "officialLabel": "Lectoescritura musical 5", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT6", "progressId": "fartes-eumus-lect6", "officialLabel": "Lectoescritura musical 6", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LST1", "progressId": "fartes-eumus-lst1", "officialLabel": "Lectura sobre el teclado 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LST2", "progressId": "fartes-eumus-lst2", "officialLabel": "Lectura sobre el teclado 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LST3", "progressId": "fartes-eumus-lst3", "officialLabel": "Lectura sobre el teclado 3", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-MPTTC", "progressId": "fartes-eumus-mpttc", "officialLabel": "Músicas populares y tradicionales 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-RM", "progressId": "fartes-eumus-rm", "officialLabel": "Rítmica - Métrica", "credits": 3, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-MINV1", "progressId": "fartes-eumus-minv1", "officialLabel": "Metodología de la Investigación 1", "credits": 4, "requirementIds": ["composition-degree-core", "chorus-degree-core", "orchestra-degree-core", "musicology-degree-core"] },
+    { "sourceCourseId": "EUMUS-MYS", "progressId": "fartes-eumus-mys", "officialLabel": "Música y Sociedad", "credits": 4, "requirementIds": ["composition-degree-core", "chorus-degree-core", "orchestra-degree-core", "musicology-degree-core"] },
+    { "sourceCourseId": "EUMUS-PCTC1", "progressId": "fartes-eumus-pctc1", "officialLabel": "Práctica Coral 1", "credits": 2, "requirementIds": ["composition-degree-core", "chorus-degree-core", "orchestra-degree-core", "musicology-degree-core"] },
+    { "sourceCourseId": "EUMUS-PCTC2", "progressId": "fartes-eumus-pctc2", "officialLabel": "Práctica Coral 2", "credits": 2, "requirementIds": ["composition-degree-core", "chorus-degree-core", "orchestra-degree-core", "musicology-degree-core"] },
+
+    { "sourceCourseId": "EUMUS-CAMP", "overrideKey": "EUMUS-CAMP:8", "progressId": "fartes-eumus-camp", "officialLabel": "Composición y Arreglos en Música Popular", "credits": 8, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP1", "overrideKey": "EUMUS-COMP1:8", "progressId": "fartes-eumus-comp1", "officialLabel": "Composición 1", "credits": 8, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP2", "progressId": "fartes-eumus-comp2", "officialLabel": "Composición 2", "credits": 8, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP3", "progressId": "fartes-eumus-comp3", "officialLabel": "Composición 3", "credits": 8, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP4", "progressId": "fartes-eumus-comp4", "officialLabel": "Composición 4", "credits": 8, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP5", "progressId": "fartes-eumus-comp5", "officialLabel": "Composición 5", "credits": 8, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP6", "progressId": "fartes-eumus-comp6", "officialLabel": "Composición 6", "credits": 8, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP7", "progressId": "fartes-eumus-comp7", "officialLabel": "Composición 7", "credits": 12, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-COMP8", "progressId": "fartes-eumus-comp8", "officialLabel": "Composición 8", "credits": 12, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-INST1", "progressId": "fartes-eumus-inst1", "officialLabel": "Instrumentación 1", "credits": 6, "requirementIds": ["composition-specific", "orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-INST2", "progressId": "fartes-eumus-inst2", "officialLabel": "Instrumentación 2", "credits": 6, "requirementIds": ["composition-specific", "orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-INST3", "progressId": "fartes-eumus-inst3", "officialLabel": "Instrumentación 3", "credits": 8, "requirementIds": ["composition-specific", "orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-INST4", "progressId": "fartes-eumus-inst4", "officialLabel": "Instrumentación 4", "credits": 8, "requirementIds": ["composition-specific", "orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-LST4", "progressId": "fartes-eumus-lst4", "officialLabel": "Lectura sobre el teclado 4", "credits": 4, "requirementIds": ["composition-specific", "chorus-specific", "orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-PDC1", "progressId": "fartes-eumus-pdc1", "officialLabel": "Práctica de Conjunto 1", "credits": 6, "requirementIds": ["composition-specific", "orchestra-specific", "musicology-specific"] },
+    { "sourceCourseId": "EUMUS-PDC2", "progressId": "fartes-eumus-pdc2", "officialLabel": "Práctica de Conjunto 2", "credits": 6, "requirementIds": ["composition-specific", "orchestra-specific", "musicology-specific"] },
+    { "sourceCourseId": "EUMUS-SEM", "progressId": "fartes-eumus-sem", "officialLabel": "Seminario", "credits": 4, "requirementIds": ["composition-specific", "chorus-specific", "orchestra-specific", "musicology-specific"] },
+    { "sourceCourseId": "EUMUS-TARM1", "progressId": "fartes-eumus-tarm1", "officialLabel": "Taller de Armonía 1", "credits": 4, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-TARM2", "progressId": "fartes-eumus-tarm2", "officialLabel": "Taller de Armonía 2", "credits": 4, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-TCPT", "progressId": "fartes-eumus-tcpt", "officialLabel": "Taller de Contrapunto 1", "credits": 4, "requirementIds": ["composition-specific"] },
+    { "sourceCourseId": "EUMUS-TCPT2", "progressId": "fartes-eumus-tcpt2", "officialLabel": "Taller de Contrapunto 2", "credits": 4, "requirementIds": ["composition-specific"] },
+
+    { "sourceCourseId": "EUMUS-INMU1", "progressId": "fartes-eumus-inmu1", "officialLabel": "Introducción a la Musicología 1", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-INMU2", "progressId": "fartes-eumus-inmu2", "officialLabel": "Introducción a la Musicología 2", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-ORG1", "progressId": "fartes-eumus-org1", "officialLabel": "Organología 1", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-ORG2", "progressId": "fartes-eumus-org2", "officialLabel": "Organología 2", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-TRA1", "progressId": "fartes-eumus-tra1", "officialLabel": "Transcripción 1", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-MINV", "progressId": "fartes-eumus-minv", "officialLabel": "Metodología de la Investigación 2", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-INV1", "progressId": "fartes-eumus-inv1", "officialLabel": "Investigación 1", "credits": 12, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-INV2", "progressId": "fartes-eumus-inv2", "officialLabel": "Investigación 2", "credits": 12, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-INV3", "progressId": "fartes-eumus-inv3", "officialLabel": "Investigación 3", "credits": 18, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-INV4", "progressId": "fartes-eumus-inv4", "officialLabel": "Investigación 4", "credits": 22, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-MPT2", "progressId": "fartes-eumus-mpt2", "officialLabel": "Músicas Populares y Tradicionales 2", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-MPT3", "progressId": "fartes-eumus-mpt3", "officialLabel": "Músicas Populares y Tradicionales 3", "credits": 4, "requirementIds": ["musicology-specific"] },
+    { "sourceCourseId": "EUMUS-MPT4", "progressId": "fartes-eumus-mpt4", "officialLabel": "Músicas Populares y Tradicionales 4", "credits": 4, "requirementIds": ["musicology-specific"] },
+
+    { "sourceCourseId": "EUMUS-DCOR1", "progressId": "fartes-eumus-dcor1", "officialLabel": "Dirección de Coro 1", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR2", "progressId": "fartes-eumus-dcor2", "officialLabel": "Dirección de Coro 2", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR3", "progressId": "fartes-eumus-dcor3", "officialLabel": "Dirección de Coro 3", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR4", "progressId": "fartes-eumus-dcor4", "officialLabel": "Dirección de Coro 4", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR5", "progressId": "fartes-eumus-dcor5", "officialLabel": "Dirección de Coro 5", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR6", "progressId": "fartes-eumus-dcor6", "officialLabel": "Dirección de Coro 6", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR7", "progressId": "fartes-eumus-dcor7", "officialLabel": "Dirección de Coro 7", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR8", "progressId": "fartes-eumus-dcor8", "officialLabel": "Dirección de Coro 8", "credits": 8, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR1", "progressId": "fartes-eumus-dcor1-2", "officialLabel": "Dirección de Coro 1", "credits": 1, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DCOR2", "progressId": "fartes-eumus-dcor2-2", "officialLabel": "Dirección de Coro 2", "credits": 1, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ1", "progressId": "fartes-eumus-dorq1", "officialLabel": "Dirección de Orquesta 1", "credits": 1, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ2", "progressId": "fartes-eumus-dorq2-2", "officialLabel": "Dirección de Orquesta 2", "credits": 1, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ1", "progressId": "fartes-eumus-dorq1-2", "officialLabel": "Dirección de Orquesta 1", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ2", "progressId": "fartes-eumus-dorq2", "officialLabel": "Dirección de Orquesta 2", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ3", "progressId": "fartes-eumus-dorq3", "officialLabel": "Dirección de Orquesta 3", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ4", "progressId": "fartes-eumus-dorq4", "officialLabel": "Dirección de Orquesta 4", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ5", "progressId": "fartes-eumus-dorq5", "officialLabel": "Dirección de Orquesta 5", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ6", "progressId": "fartes-eumus-dorq6", "officialLabel": "Dirección de Orquesta 6", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ7", "progressId": "fartes-eumus-dorq7", "officialLabel": "Dirección de Orquesta 7", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-DORQ8", "progressId": "fartes-eumus-dorq8", "officialLabel": "Dirección de Orquesta 8", "credits": 8, "requirementIds": ["orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-SENS1", "progressId": "fartes-eumus-sens1", "officialLabel": "Sensibilización Corporal 1", "credits": 1, "requirementIds": ["chorus-specific", "orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-SENS2", "progressId": "fartes-eumus-sens2", "officialLabel": "Sensibilización Corporal 2", "credits": 1, "requirementIds": ["chorus-specific", "orchestra-specific"] },
+    { "sourceCourseId": "EUMUS-ARRC", "progressId": "fartes-eumus-arrc", "officialLabel": "Arreglos Corales", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-PC1", "progressId": "fartes-eumus-pc1", "officialLabel": "Práctica de Coro 1", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-PC2", "progressId": "fartes-eumus-pc2", "officialLabel": "Práctica de Coro 2", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-PC3", "progressId": "fartes-eumus-pc3", "officialLabel": "Práctica de Coro 3", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-PC4", "progressId": "fartes-eumus-pc4", "officialLabel": "Práctica de Coro 4", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-PC5", "progressId": "fartes-eumus-pc5", "officialLabel": "Práctica de Coro 5", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-PC6", "progressId": "fartes-eumus-pc6", "officialLabel": "Práctica de Coro 6", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-PC7", "progressId": "fartes-eumus-pc7", "officialLabel": "Práctica de Coro 7", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-TVOC1", "progressId": "fartes-eumus-tvoc1", "officialLabel": "Técnicas Vocales 1", "credits": 4, "requirementIds": ["chorus-specific"] },
+    { "sourceCourseId": "EUMUS-TVOC4", "progressId": "fartes-eumus-tvoc4", "officialLabel": "Técnicas Vocales 4", "credits": 4, "requirementIds": ["chorus-specific"] }
+  ],
+  "sourceOnlyBlocks": [
+    { "sourceOnlyId": "musica-plan-introduccion-universidad", "progressId": "fartes-musica-plan-introduccion-universidad", "officialLabel": "Introducción a la Universidad", "credits": 1, "requirementId": "common-core", "reason": "Bedelías conserva IU23, IU24 e IUN sin una equivalencia oficial que identifique cuál corresponde a la fila estable del Plan." },
+    { "sourceOnlyId": "musica-plan-armonia-1", "progressId": "fartes-musica-plan-armonia-1", "officialLabel": "Armonía 1", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "musica-plan-armonia-2", "progressId": "fartes-musica-plan-armonia-2", "officialLabel": "Armonía 2", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "musica-plan-armonia-3", "progressId": "fartes-musica-plan-armonia-3", "officialLabel": "Armonía 3", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "musica-plan-armonia-4", "progressId": "fartes-musica-plan-armonia-4", "officialLabel": "Armonía 4", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "musica-plan-repertorio-1", "progressId": "fartes-musica-plan-repertorio-1", "officialLabel": "Repertorio 1", "credits": 2, "requirementId": "common-core", "reason": "Bedelías conserva las series REP y RPT; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "musica-plan-repertorio-2", "progressId": "fartes-musica-plan-repertorio-2", "officialLabel": "Repertorio 2", "credits": 2, "requirementId": "common-core", "reason": "Bedelías conserva las series REP y RPT; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "musica-plan-repertorio-3", "progressId": "fartes-musica-plan-repertorio-3", "officialLabel": "Repertorio 3", "credits": 2, "requirementId": "common-core", "reason": "Bedelías conserva las series REP y RPT; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "musica-plan-tecnicas-vocales-2", "progressId": "fartes-musica-plan-tecnicas-vocales-2", "officialLabel": "Técnicas Vocales 2", "credits": 4, "requirementId": "chorus-specific", "reason": "Bedelías conserva TVOC2 y TVO2 con el mismo nombre y carga; el Plan no publica un código que resuelva el alias." },
+    { "sourceOnlyId": "musica-plan-tecnicas-vocales-3", "progressId": "fartes-musica-plan-tecnicas-vocales-3", "officialLabel": "Técnicas Vocales 3", "credits": 4, "requirementId": "chorus-specific", "reason": "Bedelías conserva TVOC3 y TVO3 con el mismo nombre y carga; el Plan no publica un código que resuelva el alias." }
+  ],
+  "sharedPeriods": [
+    { "label": "Semestre 1", "courseRefs": ["fartes-eumus-lect1", "fartes-eumus-lst1", "fartes-eumus-rm", "musica-plan-introduccion-universidad", "musica-plan-armonia-1", "fartes-eumus-acus", "fartes-eumus-pctc1"] },
+    { "label": "Semestre 2", "courseRefs": ["fartes-eumus-lect2", "fartes-eumus-lst2", "fartes-eumus-hmus1", "musica-plan-repertorio-1", "musica-plan-armonia-2", "fartes-eumus-pctc2"] },
+    { "label": "Semestre 3", "courseRefs": ["fartes-eumus-lect3", "fartes-eumus-lst3", "fartes-eumus-hmus2", "musica-plan-repertorio-2", "musica-plan-armonia-3", "fartes-eumus-cpt1", "fartes-eumus-minv1"] },
+    { "label": "Semestre 4", "courseRefs": ["fartes-eumus-lect4", "fartes-eumus-hmus3", "musica-plan-repertorio-3", "musica-plan-armonia-4", "fartes-eumus-cpt2", "fartes-eumus-mpttc"] },
+    { "label": "Semestre 5", "courseRefs": ["fartes-eumus-lect5", "fartes-eumus-hmus4", "fartes-eumus-ana1", "fartes-eumus-mys"] },
+    { "label": "Semestre 6", "courseRefs": ["fartes-eumus-lect6", "fartes-eumus-hmus5", "fartes-eumus-ana2"] },
+    { "label": "Semestre 7", "courseRefs": ["fartes-eumus-ana3"] },
+    { "label": "Semestre 8", "courseRefs": ["fartes-eumus-ana4"] }
+  ],
+  "trajectories": [
+    {
+      "id": "composicion",
+      "label": "Composición",
+      "description": "Ocho semestres de la opción certificada Composición. Los 58 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-comp1", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-comp2", "fartes-eumus-inst1", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-comp3", "fartes-eumus-inst2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-comp4", "fartes-eumus-lst4", "fartes-eumus-inst3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-comp5", "fartes-eumus-inst4", "fartes-eumus-tarm1", "fartes-eumus-tcpt"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-comp6", "fartes-eumus-camp", "fartes-eumus-tarm2", "fartes-eumus-tcpt2"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-comp7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-comp8", "fartes-eumus-sem"] }
+      ]
+    },
+    {
+      "id": "direccion-de-coro",
+      "label": "Dirección de Coro",
+      "description": "Ocho semestres de la opción certificada Dirección de Coro. Los 78 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-dcor1", "fartes-eumus-sens1", "fartes-eumus-tvoc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-dcor2", "fartes-eumus-sens2", "musica-plan-tecnicas-vocales-2", "fartes-eumus-pc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-dcor3", "musica-plan-tecnicas-vocales-3", "fartes-eumus-pc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-dcor4", "fartes-eumus-tvoc4", "fartes-eumus-lst4", "fartes-eumus-pc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-dcor5", "fartes-eumus-pc4", "fartes-eumus-dorq1", "fartes-eumus-arrc"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-dcor6", "fartes-eumus-pc5", "fartes-eumus-dorq2-2"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-dcor7", "fartes-eumus-pc6"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-dcor8", "fartes-eumus-pc7", "fartes-eumus-sem"] }
+      ]
+    },
+    {
+      "id": "direccion-de-orquesta",
+      "label": "Dirección de Orquesta",
+      "description": "Ocho semestres de la opción certificada Dirección de Orquesta. Los 86 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-dorq1-2", "fartes-eumus-sens1", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-dorq2", "fartes-eumus-sens2", "fartes-eumus-inst1", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-dorq3", "fartes-eumus-inst2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-dorq4", "fartes-eumus-lst4", "fartes-eumus-inst3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-dorq5", "fartes-eumus-inst4", "fartes-eumus-dcor1-2"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-dorq6", "fartes-eumus-dcor2-2"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-dorq7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-dorq8", "fartes-eumus-sem"] }
+      ]
+    },
+    {
+      "id": "musicologia",
+      "label": "Musicología",
+      "description": "Ocho semestres de la opción certificada Musicología. Los 86 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-inmu1", "fartes-eumus-org1", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-inmu2", "fartes-eumus-org2", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-tra1"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-minv"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-inv1", "fartes-eumus-mpt2"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-inv2", "fartes-eumus-mpt3"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-inv3", "fartes-eumus-mpt4"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-inv4", "fartes-eumus-sem"] }
+      ]
+    }
+  ],
+  "authorityPolicy": {
+    "verifiedProjectionBasis": [
+      "exact-plan-row-and-bedelias-identity",
+      "source-only-grid-block"
+    ],
+    "candidatePolicy": "Toda entrada de Bedelías que no corresponde inequívocamente a una fila estable de las cuatro grillas permanece candidata, incluidas las ediciones de electivas, proyectos y seminarios distintos del bloque genérico del Plan.",
+    "separatedPlanIds": [
+      "bedelias-fartes-licenciatura-en-interpretacion-musical-2005",
+      "bedelias-fartes-licenciatura-en-composicion-1987",
+      "bedelias-fartes-licenciatura-en-direccion-coral-1987",
+      "bedelias-fartes-licenciatura-en-direccion-orquestal-1987",
+      "bedelias-fartes-licenciatura-en-musicologia-1987"
+    ]
+  },
+  "bedeliasComparison": {
+    "snapshotPath": "data/bedelias/fartes-licenciatura-en-musica-2005.json",
+    "snapshotContentHash": "sha256:ad697196aab4dac93942f078ef6de8a45f8456d13ff29ce1c35c96fcc03f049c",
+    "compositionEntryCount": 1498,
+    "compositionCredits": 7232,
+    "verifiedTechnicalCourseCount": 93,
+    "sourceOnlyGridBlockCount": 10,
+    "candidateRetainedCount": 563,
+    "interpretation": "Las 93 identidades técnicas inequívocas conservan sus IDs de progreso; diez filas ambiguas se representan como bloques sólo-fuente. Las otras 563 entradas permanecen candidatas y no integran la malla normal."
+  },
+  "conflicts": [
+    {
+      "field": "durationMonths",
+      "resolution": "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres. La proyección conserva 48 meses y 360 créditos."
+    },
+    {
+      "field": "compositionSemester5Subtotal",
+      "resolution": "La grilla PDF imprime 40 créditos en el semestre 5 de Composición, pero sus ocho filas suman 44 y la página vigente publica 44. Se conservan las filas y 44 créditos, sin prorrateo."
+    },
+    {
+      "field": "musicologySemester8Subtotal",
+      "resolution": "La página vigente imprime 20 créditos en el semestre 8 de Musicología, pero Investigación 4, Análisis 4 y Seminario suman 30 y el PDF imprime 30. Se conserva 30."
+    },
+    {
+      "field": "musicologySemester4SpecificRow",
+      "resolution": "La página vigente repite Transcripción en el semestre 4 de Musicología, mientras la grilla y la estructura del Plan ubican Metodología de la Investigación 2. Prevalece el libro del Plan."
+    },
+    {
+      "field": "ambiguousTechnicalAliases",
+      "resolution": "Introducción a la Universidad, las cuatro Armonías, los tres Repertorios y Técnicas Vocales 2 y 3 tienen más de una identidad técnica compatible. Se usan diez bloques sólo-fuente y todas las variantes técnicas permanecen candidatas."
+    },
+    {
+      "field": "flatFlexibleOffer",
+      "resolution": "Los catálogos electivos y los proyectos especiales varían por edición. Se controlan sus mínimos, pero no se incorporan todas las alternativas de Bedelías como obligaciones o como oferta vigente."
+    },
+    {
+      "field": "chorusSpecificOffer",
+      "resolution": "Dirección de Coro exige 124 créditos específicos. Los aliases técnicos adicionales que elevaban la oferta a 132 permanecen candidatos y no inflan el requisito."
+    }
+  ],
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "value": "sha256:27b90dd530371b22ebbd73660d83c4b5154916d3ade377e05ddf938fc3e04cb4",
+    "sourceHashes": {
+      "fartes-musica-plan-2005": "sha256:1dfc92e8aeecf155e9cae70ea0bf538c966f0c240e3498d245d0e45edca5af14",
+      "fartes-musica-current-career-page": "sha256:a2fca556c59fcb055c8f0ea15c7b244083a910463b4934a2c731abfe187cef0a"
+    }
+  }
+}

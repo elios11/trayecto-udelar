@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:9bb62800ea17b45f1de1237b1ad505d92b5c9a3ecdb95373ec3ae625c1da4b9d",
-    "officialAuditHash": "sha256:d7316d46831384bfaf7618d6a357ecdee6b28cff47ba91c860e2d8a379d7d05e",
+    "auditQueueHash": "sha256:d6a6d74e1135f0a44ba3e137bd5d675c2f0da2640605ae0a2a4bc21ee1cf5c89",
+    "officialAuditHash": "sha256:1445dc2455c0053de538192d4271dacb0c7cfb934719dbbb0f932d84d601d231",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -22,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5138,
-      "candidate": 26562,
+      "verified": 5241,
+      "candidate": 26469,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31708,
-    "afterPublishedCourses": 5138,
+    "beforePublishedCourses": 31718,
+    "afterPublishedCourses": 5241,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1754,
     "visibleTargetsWithUnpublishedDependencies": 1491,
     "plansWithVerifiedCatalog": 63,
-    "plansWithPartialCatalog": 65,
-    "plansWithStructureOnly": 11
+    "plansWithPartialCatalog": 66,
+    "plansWithStructureOnly": 10
   },
   "plans": [
     {
@@ -1405,25 +1405,25 @@
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-musica-2005.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 656,
+        "publishedCourses": 666,
         "publishedRules": 6
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 656,
+        "publishedCourses": 103,
+        "hiddenCourses": 563,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 656,
+        "verified": 103,
+        "candidate": 563,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4630,5 +4630,5 @@
       }
     }
   ],
-  "contentHash": "sha256:6d0e64ceb47698d810d22e7dcd9bb3d0871dbda4a9c58097e1edb077f8deb807"
+  "contentHash": "sha256:017485f450bc2a01707111547f00f9c158c388e4e51b367b181ccc9f64ddf05f"
 }

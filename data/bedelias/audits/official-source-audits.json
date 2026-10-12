@@ -40162,15 +40162,16 @@
       "identity": "licenciatura en musica:2005",
       "career": "LICENCIATURA EN MÚSICA",
       "planYear": "2005",
-      "reviewedAt": "2026-08-27",
+      "reviewedAt": "2026-10-12",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, sede, duración, créditos, cuatro opciones certificadas y mínimos diferenciados del Plan 2005",
+      "scope": "vigencia, Plan 2005, título, sede, cuatro opciones certificadas, ocho semestres por opción, 360 créditos y mínimos flexibles",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
           "Plan de Estudios 2005 de la Escuela Universitaria de Música, vigente en el Instituto de Música de Facultad de Artes"
         ],
         "planYear": "2005",
+        "effectiveFrom": "2005",
         "title": "Licenciado en Música",
         "careerName": "Licenciatura en Música",
         "facultyCode": "FARTES",
@@ -40180,35 +40181,460 @@
         "minimumCredits": 360,
         "current": true,
         "pathwayLabel": "Opción",
-        "degreeRule": "El título exige 360 créditos y expresa la opción elegida. Las cuatro opciones comparten 138 créditos de Tronco Común y exigen 12 créditos troncales y 8 de proyectos especiales; los mínimos específicos y electivos completan el total según cada opción.",
         "trajectories": [
           {
             "id": "composicion",
             "label": "Composición",
-            "description": "Opción certificada de Composición del Plan 2005."
+            "description": "Ocho semestres de la opción certificada Composición. Los 58 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+            "credentialId": "composicion",
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "catalogSourceCourseIds": [],
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "fartes-eumus-lect1",
+                  "fartes-eumus-lst1",
+                  "fartes-eumus-rm",
+                  "musica-plan-introduccion-universidad",
+                  "musica-plan-armonia-1",
+                  "fartes-eumus-acus",
+                  "fartes-eumus-pctc1",
+                  "fartes-eumus-comp1",
+                  "fartes-eumus-pdc1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "fartes-eumus-lect2",
+                  "fartes-eumus-lst2",
+                  "fartes-eumus-hmus1",
+                  "musica-plan-repertorio-1",
+                  "musica-plan-armonia-2",
+                  "fartes-eumus-pctc2",
+                  "fartes-eumus-comp2",
+                  "fartes-eumus-inst1",
+                  "fartes-eumus-pdc2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "fartes-eumus-lect3",
+                  "fartes-eumus-lst3",
+                  "fartes-eumus-hmus2",
+                  "musica-plan-repertorio-2",
+                  "musica-plan-armonia-3",
+                  "fartes-eumus-cpt1",
+                  "fartes-eumus-minv1",
+                  "fartes-eumus-comp3",
+                  "fartes-eumus-inst2"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "fartes-eumus-lect4",
+                  "fartes-eumus-hmus3",
+                  "musica-plan-repertorio-3",
+                  "musica-plan-armonia-4",
+                  "fartes-eumus-cpt2",
+                  "fartes-eumus-mpttc",
+                  "fartes-eumus-comp4",
+                  "fartes-eumus-lst4",
+                  "fartes-eumus-inst3"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "fartes-eumus-lect5",
+                  "fartes-eumus-hmus4",
+                  "fartes-eumus-ana1",
+                  "fartes-eumus-mys",
+                  "fartes-eumus-comp5",
+                  "fartes-eumus-inst4",
+                  "fartes-eumus-tarm1",
+                  "fartes-eumus-tcpt"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "fartes-eumus-lect6",
+                  "fartes-eumus-hmus5",
+                  "fartes-eumus-ana2",
+                  "fartes-eumus-comp6",
+                  "fartes-eumus-camp",
+                  "fartes-eumus-tarm2",
+                  "fartes-eumus-tcpt2"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "fartes-eumus-ana3",
+                  "fartes-eumus-comp7"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "fartes-eumus-ana4",
+                  "fartes-eumus-comp8",
+                  "fartes-eumus-sem"
+                ]
+              }
+            ],
+            "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
           },
           {
             "id": "direccion-de-coro",
             "label": "Dirección de Coro",
-            "description": "Opción certificada de Dirección de Coro del Plan 2005."
+            "description": "Ocho semestres de la opción certificada Dirección de Coro. Los 78 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+            "credentialId": "direccion-de-coro",
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "catalogSourceCourseIds": [],
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "fartes-eumus-lect1",
+                  "fartes-eumus-lst1",
+                  "fartes-eumus-rm",
+                  "musica-plan-introduccion-universidad",
+                  "musica-plan-armonia-1",
+                  "fartes-eumus-acus",
+                  "fartes-eumus-pctc1",
+                  "fartes-eumus-dcor1",
+                  "fartes-eumus-sens1",
+                  "fartes-eumus-tvoc1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "fartes-eumus-lect2",
+                  "fartes-eumus-lst2",
+                  "fartes-eumus-hmus1",
+                  "musica-plan-repertorio-1",
+                  "musica-plan-armonia-2",
+                  "fartes-eumus-pctc2",
+                  "fartes-eumus-dcor2",
+                  "fartes-eumus-sens2",
+                  "musica-plan-tecnicas-vocales-2",
+                  "fartes-eumus-pc1"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "fartes-eumus-lect3",
+                  "fartes-eumus-lst3",
+                  "fartes-eumus-hmus2",
+                  "musica-plan-repertorio-2",
+                  "musica-plan-armonia-3",
+                  "fartes-eumus-cpt1",
+                  "fartes-eumus-minv1",
+                  "fartes-eumus-dcor3",
+                  "musica-plan-tecnicas-vocales-3",
+                  "fartes-eumus-pc2"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "fartes-eumus-lect4",
+                  "fartes-eumus-hmus3",
+                  "musica-plan-repertorio-3",
+                  "musica-plan-armonia-4",
+                  "fartes-eumus-cpt2",
+                  "fartes-eumus-mpttc",
+                  "fartes-eumus-dcor4",
+                  "fartes-eumus-tvoc4",
+                  "fartes-eumus-lst4",
+                  "fartes-eumus-pc3"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "fartes-eumus-lect5",
+                  "fartes-eumus-hmus4",
+                  "fartes-eumus-ana1",
+                  "fartes-eumus-mys",
+                  "fartes-eumus-dcor5",
+                  "fartes-eumus-pc4",
+                  "fartes-eumus-dorq1",
+                  "fartes-eumus-arrc"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "fartes-eumus-lect6",
+                  "fartes-eumus-hmus5",
+                  "fartes-eumus-ana2",
+                  "fartes-eumus-dcor6",
+                  "fartes-eumus-pc5",
+                  "fartes-eumus-dorq2-2"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "fartes-eumus-ana3",
+                  "fartes-eumus-dcor7",
+                  "fartes-eumus-pc6"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "fartes-eumus-ana4",
+                  "fartes-eumus-dcor8",
+                  "fartes-eumus-pc7",
+                  "fartes-eumus-sem"
+                ]
+              }
+            ],
+            "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
           },
           {
             "id": "direccion-de-orquesta",
             "label": "Dirección de Orquesta",
-            "description": "Opción certificada de Dirección de Orquesta del Plan 2005."
+            "description": "Ocho semestres de la opción certificada Dirección de Orquesta. Los 86 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+            "credentialId": "direccion-de-orquesta",
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "catalogSourceCourseIds": [],
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "fartes-eumus-lect1",
+                  "fartes-eumus-lst1",
+                  "fartes-eumus-rm",
+                  "musica-plan-introduccion-universidad",
+                  "musica-plan-armonia-1",
+                  "fartes-eumus-acus",
+                  "fartes-eumus-pctc1",
+                  "fartes-eumus-dorq1-2",
+                  "fartes-eumus-sens1",
+                  "fartes-eumus-pdc1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "fartes-eumus-lect2",
+                  "fartes-eumus-lst2",
+                  "fartes-eumus-hmus1",
+                  "musica-plan-repertorio-1",
+                  "musica-plan-armonia-2",
+                  "fartes-eumus-pctc2",
+                  "fartes-eumus-dorq2",
+                  "fartes-eumus-sens2",
+                  "fartes-eumus-inst1",
+                  "fartes-eumus-pdc2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "fartes-eumus-lect3",
+                  "fartes-eumus-lst3",
+                  "fartes-eumus-hmus2",
+                  "musica-plan-repertorio-2",
+                  "musica-plan-armonia-3",
+                  "fartes-eumus-cpt1",
+                  "fartes-eumus-minv1",
+                  "fartes-eumus-dorq3",
+                  "fartes-eumus-inst2"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "fartes-eumus-lect4",
+                  "fartes-eumus-hmus3",
+                  "musica-plan-repertorio-3",
+                  "musica-plan-armonia-4",
+                  "fartes-eumus-cpt2",
+                  "fartes-eumus-mpttc",
+                  "fartes-eumus-dorq4",
+                  "fartes-eumus-lst4",
+                  "fartes-eumus-inst3"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "fartes-eumus-lect5",
+                  "fartes-eumus-hmus4",
+                  "fartes-eumus-ana1",
+                  "fartes-eumus-mys",
+                  "fartes-eumus-dorq5",
+                  "fartes-eumus-inst4",
+                  "fartes-eumus-dcor1-2"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "fartes-eumus-lect6",
+                  "fartes-eumus-hmus5",
+                  "fartes-eumus-ana2",
+                  "fartes-eumus-dorq6",
+                  "fartes-eumus-dcor2-2"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "fartes-eumus-ana3",
+                  "fartes-eumus-dorq7"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "fartes-eumus-ana4",
+                  "fartes-eumus-dorq8",
+                  "fartes-eumus-sem"
+                ]
+              }
+            ],
+            "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
           },
           {
             "id": "musicologia",
             "label": "Musicología",
-            "description": "Opción certificada de Musicología del Plan 2005."
+            "description": "Ocho semestres de la opción certificada Musicología. Los 86 créditos electivos y 8 de proyectos especiales son flexibles y no tienen semestre único.",
+            "credentialId": "musicologia",
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "catalogSourceCourseIds": [],
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "fartes-eumus-lect1",
+                  "fartes-eumus-lst1",
+                  "fartes-eumus-rm",
+                  "musica-plan-introduccion-universidad",
+                  "musica-plan-armonia-1",
+                  "fartes-eumus-acus",
+                  "fartes-eumus-pctc1",
+                  "fartes-eumus-inmu1",
+                  "fartes-eumus-org1",
+                  "fartes-eumus-pdc1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "fartes-eumus-lect2",
+                  "fartes-eumus-lst2",
+                  "fartes-eumus-hmus1",
+                  "musica-plan-repertorio-1",
+                  "musica-plan-armonia-2",
+                  "fartes-eumus-pctc2",
+                  "fartes-eumus-inmu2",
+                  "fartes-eumus-org2",
+                  "fartes-eumus-pdc2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "fartes-eumus-lect3",
+                  "fartes-eumus-lst3",
+                  "fartes-eumus-hmus2",
+                  "musica-plan-repertorio-2",
+                  "musica-plan-armonia-3",
+                  "fartes-eumus-cpt1",
+                  "fartes-eumus-minv1",
+                  "fartes-eumus-tra1"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "fartes-eumus-lect4",
+                  "fartes-eumus-hmus3",
+                  "musica-plan-repertorio-3",
+                  "musica-plan-armonia-4",
+                  "fartes-eumus-cpt2",
+                  "fartes-eumus-mpttc",
+                  "fartes-eumus-minv"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "fartes-eumus-lect5",
+                  "fartes-eumus-hmus4",
+                  "fartes-eumus-ana1",
+                  "fartes-eumus-mys",
+                  "fartes-eumus-inv1",
+                  "fartes-eumus-mpt2"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "fartes-eumus-lect6",
+                  "fartes-eumus-hmus5",
+                  "fartes-eumus-ana2",
+                  "fartes-eumus-inv2",
+                  "fartes-eumus-mpt3"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "fartes-eumus-ana3",
+                  "fartes-eumus-inv3",
+                  "fartes-eumus-mpt4"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "fartes-eumus-ana4",
+                  "fartes-eumus-inv4",
+                  "fartes-eumus-sem"
+                ]
+              }
+            ],
+            "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
           }
         ],
+        "degreeRule": "El título exige 360 créditos y expresa la opción elegida. Las cuatro opciones comparten 138 créditos de Tronco Común, 12 troncales de Licenciatura y 8 de al menos dos proyectos especiales; los mínimos específicos y electivos completan 360 sin volver obligatoria toda la oferta flexible.",
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
-          "sourceUrl": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
-          "pathwayLabel": "Opción",
+          "strictOfficialCourseIds": true,
+          "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+          "sourceDataPath": "data/fartes/musica-2005.json",
+          "includeAllCoursesInPathwayCatalog": false,
           "pathRequirementMap": {
             "1092": "musicology-degree-core",
             "1134": "orchestra-specific",
@@ -40236,24 +40662,823 @@
             "4928": "composition-musical-electives",
             "5192": "musicology-musical-electives"
           },
-          "periodLabelMap": {
-            "tronco comun": "Tronco común",
-            "asignaturas electivas": "Electivas",
-            "de formacion musical": "Electivas · formación musical",
-            "de formacion no musical": "Electivas · formación no musical",
-            "materias especificas de opcion": "Materias específicas de la opción",
-            "materias troncales de lic": "Materias troncales de la Licenciatura",
-            "proyectos especiales": "Proyectos especiales"
+          "courseOverrides": {
+            "EUMUS-ACUS": {
+              "name": "Acústica",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-ANA1": {
+              "name": "Análisis 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-ANA2": {
+              "name": "Análisis 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-ANA3": {
+              "name": "Análisis 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-ANA4": {
+              "name": "Análisis 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-CPT1": {
+              "name": "Contrapunto 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-CPT2": {
+              "name": "Contrapunto 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-HMUS1": {
+              "name": "Historia de la Música 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-HMUS2": {
+              "name": "Historia de la Música 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-HMUS3": {
+              "name": "Historia de la Música 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-HMUS4": {
+              "name": "Historia de la Música 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-HMUS5": {
+              "name": "Historia de la Música 5",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LECT1": {
+              "name": "Lectoescritura musical 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LECT2": {
+              "name": "Lectoescritura musical 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LECT3": {
+              "name": "Lectoescritura musical 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LECT4": {
+              "name": "Lectoescritura musical 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LECT5": {
+              "name": "Lectoescritura musical 5",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LECT6": {
+              "name": "Lectoescritura musical 6",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LST1": {
+              "name": "Lectura sobre el teclado 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LST2": {
+              "name": "Lectura sobre el teclado 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LST3": {
+              "name": "Lectura sobre el teclado 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-MPTTC": {
+              "name": "Músicas populares y tradicionales 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-RM": {
+              "name": "Rítmica - Métrica",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-MINV1": {
+              "name": "Metodología de la Investigación 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-MYS": {
+              "name": "Música y Sociedad",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PCTC1": {
+              "name": "Práctica Coral 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PCTC2": {
+              "name": "Práctica Coral 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-CAMP:8": {
+              "name": "Composición y Arreglos en Música Popular",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP1:8": {
+              "name": "Composición 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP2": {
+              "name": "Composición 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP3": {
+              "name": "Composición 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP4": {
+              "name": "Composición 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP5": {
+              "name": "Composición 5",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP6": {
+              "name": "Composición 6",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP7": {
+              "name": "Composición 7",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-COMP8": {
+              "name": "Composición 8",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INST1": {
+              "name": "Instrumentación 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INST2": {
+              "name": "Instrumentación 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INST3": {
+              "name": "Instrumentación 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INST4": {
+              "name": "Instrumentación 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-LST4": {
+              "name": "Lectura sobre el teclado 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PDC1": {
+              "name": "Práctica de Conjunto 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PDC2": {
+              "name": "Práctica de Conjunto 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-SEM": {
+              "name": "Seminario",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-TARM1": {
+              "name": "Taller de Armonía 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-TARM2": {
+              "name": "Taller de Armonía 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-TCPT": {
+              "name": "Taller de Contrapunto 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-TCPT2": {
+              "name": "Taller de Contrapunto 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INMU1": {
+              "name": "Introducción a la Musicología 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INMU2": {
+              "name": "Introducción a la Musicología 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-ORG1": {
+              "name": "Organología 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-ORG2": {
+              "name": "Organología 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-TRA1": {
+              "name": "Transcripción 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-MINV": {
+              "name": "Metodología de la Investigación 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INV1": {
+              "name": "Investigación 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INV2": {
+              "name": "Investigación 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INV3": {
+              "name": "Investigación 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-INV4": {
+              "name": "Investigación 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-MPT2": {
+              "name": "Músicas Populares y Tradicionales 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-MPT3": {
+              "name": "Músicas Populares y Tradicionales 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-MPT4": {
+              "name": "Músicas Populares y Tradicionales 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR1": {
+              "name": "Dirección de Coro 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR2": {
+              "name": "Dirección de Coro 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR3": {
+              "name": "Dirección de Coro 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR4": {
+              "name": "Dirección de Coro 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR5": {
+              "name": "Dirección de Coro 5",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR6": {
+              "name": "Dirección de Coro 6",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR7": {
+              "name": "Dirección de Coro 7",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DCOR8": {
+              "name": "Dirección de Coro 8",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ1": {
+              "name": "Dirección de Orquesta 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ2": {
+              "name": "Dirección de Orquesta 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ3": {
+              "name": "Dirección de Orquesta 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ4": {
+              "name": "Dirección de Orquesta 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ5": {
+              "name": "Dirección de Orquesta 5",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ6": {
+              "name": "Dirección de Orquesta 6",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ7": {
+              "name": "Dirección de Orquesta 7",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-DORQ8": {
+              "name": "Dirección de Orquesta 8",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-SENS1": {
+              "name": "Sensibilización Corporal 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-SENS2": {
+              "name": "Sensibilización Corporal 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-ARRC": {
+              "name": "Arreglos Corales",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PC1": {
+              "name": "Práctica de Coro 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PC2": {
+              "name": "Práctica de Coro 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PC3": {
+              "name": "Práctica de Coro 3",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PC4": {
+              "name": "Práctica de Coro 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PC5": {
+              "name": "Práctica de Coro 5",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PC6": {
+              "name": "Práctica de Coro 6",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-PC7": {
+              "name": "Práctica de Coro 7",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-TVOC1": {
+              "name": "Técnicas Vocales 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            },
+            "EUMUS-TVOC4": {
+              "name": "Técnicas Vocales 4",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf"
+            }
           },
-          "periodOrder": [
-            "Tronco común",
-            "Materias troncales de la Licenciatura",
-            "Materias específicas de la opción",
-            "Electivas",
-            "Electivas · formación musical",
-            "Electivas · formación no musical",
-            "Proyectos especiales"
+          "additionalCourses": [
+            {
+              "id": "musica-plan-introduccion-universidad",
+              "sourceCourseId": "musica-plan-introduccion-universidad",
+              "name": "Introducción a la Universidad",
+              "credits": 1,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-armonia-1",
+              "sourceCourseId": "musica-plan-armonia-1",
+              "name": "Armonía 1",
+              "credits": 4,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-armonia-2",
+              "sourceCourseId": "musica-plan-armonia-2",
+              "name": "Armonía 2",
+              "credits": 4,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-armonia-3",
+              "sourceCourseId": "musica-plan-armonia-3",
+              "name": "Armonía 3",
+              "credits": 4,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-armonia-4",
+              "sourceCourseId": "musica-plan-armonia-4",
+              "name": "Armonía 4",
+              "credits": 4,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-repertorio-1",
+              "sourceCourseId": "musica-plan-repertorio-1",
+              "name": "Repertorio 1",
+              "credits": 2,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-repertorio-2",
+              "sourceCourseId": "musica-plan-repertorio-2",
+              "name": "Repertorio 2",
+              "credits": 2,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-repertorio-3",
+              "sourceCourseId": "musica-plan-repertorio-3",
+              "name": "Repertorio 3",
+              "credits": 2,
+              "requirementId": "common-core",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-tecnicas-vocales-2",
+              "sourceCourseId": "musica-plan-tecnicas-vocales-2",
+              "name": "Técnicas Vocales 2",
+              "credits": 4,
+              "requirementId": "chorus-specific",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            },
+            {
+              "id": "musica-plan-tecnicas-vocales-3",
+              "sourceCourseId": "musica-plan-tecnicas-vocales-3",
+              "name": "Técnicas Vocales 3",
+              "credits": 4,
+              "requirementId": "chorus-specific",
+              "sourceUrl": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+              "curricularBlock": true
+            }
           ],
+          "periodOrder": [
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6",
+            "Semestre 7",
+            "Semestre 8"
+          ],
+          "pathwayLabel": "Opción",
           "creditRequirements": [
             {
               "id": "common-core",
@@ -40559,6 +41784,36 @@
               ],
               "requiredCourseGroupIds": []
             }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "durationMonths",
+              "resolution": "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres. La proyección conserva 48 meses y 360 créditos."
+            },
+            {
+              "field": "compositionSemester5Subtotal",
+              "resolution": "La grilla PDF imprime 40 créditos en el semestre 5 de Composición, pero sus ocho filas suman 44 y la página vigente publica 44. Se conservan las filas y 44 créditos, sin prorrateo."
+            },
+            {
+              "field": "musicologySemester8Subtotal",
+              "resolution": "La página vigente imprime 20 créditos en el semestre 8 de Musicología, pero Investigación 4, Análisis 4 y Seminario suman 30 y el PDF imprime 30. Se conserva 30."
+            },
+            {
+              "field": "musicologySemester4SpecificRow",
+              "resolution": "La página vigente repite Transcripción en el semestre 4 de Musicología, mientras la grilla y la estructura del Plan ubican Metodología de la Investigación 2. Prevalece el libro del Plan."
+            },
+            {
+              "field": "ambiguousTechnicalAliases",
+              "resolution": "Introducción a la Universidad, las cuatro Armonías, los tres Repertorios y Técnicas Vocales 2 y 3 tienen más de una identidad técnica compatible. Se usan diez bloques sólo-fuente y todas las variantes técnicas permanecen candidatas."
+            },
+            {
+              "field": "flatFlexibleOffer",
+              "resolution": "Los catálogos electivos y los proyectos especiales varían por edición. Se controlan sus mínimos, pero no se incorporan todas las alternativas de Bedelías como obligaciones o como oferta vigente."
+            },
+            {
+              "field": "chorusSpecificOffer",
+              "resolution": "Dirección de Coro exige 124 créditos específicos. Los aliases técnicos adicionales que elevaban la oferta a 132 permanecen candidatos y no inflan el requisito."
+            }
           ]
         }
       },
@@ -40586,22 +41841,25 @@
         "publishedProfileTitles": 4,
         "compositionMatterEntries": 1498,
         "compositionOfferedCredits": 7232,
-        "projectedCourseRecordsBeforeAudit": 295,
-        "projectedCourseCreditsBeforeAudit": 1592,
-        "publishedPrerequisiteRecords": 42,
-        "interpretation": "Bedelías conserva las cuatro opciones y sus mínimos diferenciados, pero la proyección anterior mezclaba toda la oferta en una trayectoria y sólo publicaba la primera credencial. La normalización comparte el Tronco Común, separa cada opción y trata el catálogo electivo como oferta flexible."
+        "exactVerifiedEntries": 93,
+        "sourceOnlyEntries": 10,
+        "candidateEntriesPreserved": 563,
+        "interpretation": "Las 93 identidades técnicas inequívocas conservan sus IDs de progreso; diez filas ambiguas se representan como bloques sólo-fuente. Las otras 563 entradas permanecen candidatas y no integran la malla normal."
       },
       "conclusion": {
         "canonicalModel": "one-degree-four-certified-options",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "El Plan 2005 reúne Composición, Dirección de Coro, Dirección de Orquesta y Musicología en una Licenciatura en Música con opción expresada en el título.",
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fartes/musica-2005.json",
+        "reason": "El Plan 2005 y la página vigente publican una única Licenciatura en Música con cuatro opciones certificadas, cada una organizada en ocho semestres y con mínimos flexibles propios.",
         "normalization": [
-          "Corregir la duración administrativa de 60 a 48 meses según los ocho semestres del Plan 2005.",
-          "Publicar un selector de Opción con cuatro recorridos certificados y un único progreso académico.",
-          "Compartir los 138 créditos del Tronco Común y controlar los mínimos específicos de cada opción.",
-          "Conservar los submínimos de electivas musicales y no musicales sin exigir toda la oferta acumulada.",
-          "Publicar Montevideo como única sede confirmada."
+          "Conservar un único plan y progreso para Composición, Dirección de Coro, Dirección de Orquesta y Musicología.",
+          "Reproducir las cuatro grillas de ocho semestres con el mismo tronco común y los mismos IDs de progreso compartidos.",
+          "Preservar 93 identidades técnicas inequívocas y crear diez bloques sólo-fuente donde los aliases de Bedelías no se pueden resolver.",
+          "Controlar 360 créditos y los mínimos electivos y de proyectos sin convertir catálogos variables en obligaciones acumulativas.",
+          "Mantener separadas Interpretación Musical 2005 y las cuatro carreras históricas de 1987.",
+          "Conservar explícitas las contradicciones de subtotales y la fila de Musicología sin prorratear créditos."
         ]
       },
       "sources": [
@@ -40610,71 +41868,64 @@
           "authority": "Escuela Universitaria de Música / Facultad de Artes, Udelar",
           "supports": [
             "Plan 2005",
-            "dos licenciaturas",
-            "cuatro opciones de Música",
-            "títulos",
+            "Licenciatura en Música con cuatro opciones certificadas",
             "ocho semestres",
             "360 créditos",
-            "bloques y mínimos diferenciados"
-          ]
+            "grillas de Composición, Musicología, Dirección de Orquesta y Dirección de Coro",
+            "mínimos diferenciados y flexibilidad"
+          ],
+          "contentHash": "sha256:9994f1c969c824718b2eae0e092b62bd8ed00db7bd6820b1c9121ae67659d335"
         },
         {
           "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
           "authority": "Instituto de Música / Facultad de Artes, Udelar",
           "supports": [
-            "vigencia",
-            "estructura",
-            "mínimos",
-            "materias",
-            "opciones",
-            "tutoría"
-          ]
-        },
-        {
-          "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/",
-          "authority": "Facultad de Artes, Udelar",
-          "supports": [
-            "oferta vigente",
-            "Licenciatura en Música",
-            "Montevideo"
-          ]
-        },
-        {
-          "url": "https://www.artes.udelar.edu.uy/admisiones/",
-          "authority": "Facultad de Artes, Udelar",
-          "supports": [
-            "ingreso 2026",
-            "Plan 2005",
-            "pruebas específicas"
-          ]
-        },
-        {
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-musica",
-          "authority": "Universidad de la República",
-          "supports": [
-            "título",
+            "vigencia institucional",
+            "cuatro opciones certificadas",
+            "ocho semestres",
             "360 créditos",
-            "sede",
-            "opciones"
-          ]
+            "materias y mínimos diferenciados"
+          ],
+          "contentHash": "sha256:a2fca556c59fcb055c8f0ea15c7b244083a910463b4934a2c731abfe187cef0a"
         }
       ],
       "anomalies": [
         {
           "field": "durationMonths",
-          "resolution": "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres y 360 créditos. La UI usa 48 meses y conserva la discrepancia trazable."
+          "resolution": "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres. La proyección conserva 48 meses y 360 créditos."
+        },
+        {
+          "field": "compositionSemester5Subtotal",
+          "resolution": "La grilla PDF imprime 40 créditos en el semestre 5 de Composición, pero sus ocho filas suman 44 y la página vigente publica 44. Se conservan las filas y 44 créditos, sin prorrateo."
+        },
+        {
+          "field": "musicologySemester8Subtotal",
+          "resolution": "La página vigente imprime 20 créditos en el semestre 8 de Musicología, pero Investigación 4, Análisis 4 y Seminario suman 30 y el PDF imprime 30. Se conserva 30."
+        },
+        {
+          "field": "musicologySemester4SpecificRow",
+          "resolution": "La página vigente repite Transcripción en el semestre 4 de Musicología, mientras la grilla y la estructura del Plan ubican Metodología de la Investigación 2. Prevalece el libro del Plan."
+        },
+        {
+          "field": "ambiguousTechnicalAliases",
+          "resolution": "Introducción a la Universidad, las cuatro Armonías, los tres Repertorios y Técnicas Vocales 2 y 3 tienen más de una identidad técnica compatible. Se usan diez bloques sólo-fuente y todas las variantes técnicas permanecen candidatas."
         },
         {
           "field": "flatFlexibleOffer",
-          "resolution": "Los 7232 créditos repetidos en 1498 nodos corresponden a cuatro perfiles y catálogos electivos compartidos. No se suman como obligación de una opción."
+          "resolution": "Los catálogos electivos y los proyectos especiales varían por edición. Se controlan sus mínimos, pero no se incorporan todas las alternativas de Bedelías como obligaciones o como oferta vigente."
         },
         {
           "field": "chorusSpecificOffer",
-          "resolution": "Dirección de Coro publica 132 créditos de materias específicas elegibles para un mínimo de 124; los ocho créditos excedentes representan alternativas y no se vuelven obligatorios."
+          "resolution": "Dirección de Coro exige 124 créditos específicos. Los aliases técnicos adicionales que elevaban la oferta a 132 permanecen candidatos y no inflan el requisito."
         }
       ],
-      "uiNotice": "Plan 2005 de ocho semestres y 360 créditos en Montevideo. Elegís Composición, Dirección de Coro, Dirección de Orquesta o Musicología; cada opción tiene mínimos específicos y se expresa en el título.",
-      "remainingWork": "La oferta electiva cambia por edición; la UI conserva el catálogo de Bedelías como opciones elegibles y no lo congela como una lista obligatoria."
+      "uiNotice": "Plan 2005 de ocho semestres y 360 créditos en Montevideo. Elegís Composición, Dirección de Coro, Dirección de Orquesta o Musicología; cada opción reproduce su grilla y conserva electivas y proyectos como mínimos flexibles.",
+      "remainingWork": "Las ediciones concretas de electivas, proyectos especiales y aliases técnicos ambiguos permanecen candidatas hasta que una fuente curricular vigente confirme su identidad y pertenencia.",
+      "sourceEvidence": {
+        "sourceDataPath": "data/fartes/musica-2005.json",
+        "normalizedFingerprint": "sha256:27b90dd530371b22ebbd73660d83c4b5154916d3ade377e05ddf938fc3e04cb4",
+        "planContentHash": "sha256:9994f1c969c824718b2eae0e092b62bd8ed00db7bd6820b1c9121ae67659d335"
+      }
     },
     {
       "identity": "contador publico:2024",
@@ -79120,6 +80371,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:d7316d46831384bfaf7618d6a357ecdee6b28cff47ba91c860e2d8a379d7d05e",
+  "contentHash": "sha256:1445dc2455c0053de538192d4271dacb0c7cfb934719dbbb0f932d84d601d231",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

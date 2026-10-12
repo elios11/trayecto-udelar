@@ -2879,6 +2879,59 @@
         "La UI controla los mínimos 67/36 sin sumar todas las alternativas ni prometer su oferta por semestre. Las entradas no demostradas por la malla permanecen candidatas.",
         "Se conserva el ID y año técnico 2018 para no romper progreso, mientras la UI y la evidencia identifican la autoridad académica como Plan de Estudios 2008 / Implementación 2018."
       ]
+    },
+    {
+      "planId": "bedelias-fartes-licenciatura-en-musica-2005",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-12",
+      "effectiveAt": "2005",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "composicion",
+          "direccion-de-coro",
+          "direccion-de-orquesta",
+          "musicologia"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Escuela Universitaria de Música / Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+          "reviewedAt": "2026-10-12",
+          "role": "Plan 2005; Licenciatura en Música con cuatro opciones certificadas; ocho semestres; 360 créditos; grillas de Composición, Musicología, Dirección de Orquesta y Dirección de Coro; mínimos diferenciados y flexibilidad"
+        },
+        {
+          "authority": "Instituto de Música / Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
+          "reviewedAt": "2026-10-12",
+          "role": "vigencia institucional; cuatro opciones certificadas; ocho semestres; 360 créditos; materias y mínimos diferenciados"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/musica-2005.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-musica-2005.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "specificPeriods",
+        "projectionPeriodField": "periods",
+        "sharedPeriodsField": "sharedPeriods",
+        "sourceCourseIdsField": "courseRefs",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres. La proyección conserva 48 meses y 360 créditos.",
+        "La grilla PDF imprime 40 créditos en el semestre 5 de Composición, pero sus ocho filas suman 44 y la página vigente publica 44. Se conservan las filas y 44 créditos, sin prorrateo.",
+        "La página vigente imprime 20 créditos en el semestre 8 de Musicología, pero Investigación 4, Análisis 4 y Seminario suman 30 y el PDF imprime 30. Se conserva 30.",
+        "La página vigente repite Transcripción en el semestre 4 de Musicología, mientras la grilla y la estructura del Plan ubican Metodología de la Investigación 2. Prevalece el libro del Plan.",
+        "Introducción a la Universidad, las cuatro Armonías, los tres Repertorios y Técnicas Vocales 2 y 3 tienen más de una identidad técnica compatible. Se usan diez bloques sólo-fuente y todas las variantes técnicas permanecen candidatas.",
+        "Los catálogos electivos y los proyectos especiales varían por edición. Se controlan sus mínimos, pero no se incorporan todas las alternativas de Bedelías como obligaciones o como oferta vigente.",
+        "Dirección de Coro exige 124 créditos específicos. Los aliases técnicos adicionales que elevaban la oferta a 132 permanecen candidatos y no inflan el requisito."
+      ]
     }
   ]
 }
