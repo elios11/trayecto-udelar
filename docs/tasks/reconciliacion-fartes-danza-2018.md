@@ -27,3 +27,8 @@ Nodo implementado. `bedelias-fartes-licenciatura-en-danza-contemporanea-2018` pa
 - Los 257 créditos ubicados en la malla se complementan con 67 optativos y 36 electivos flexibles hasta 360. La UI no convierte las 387 candidatas en oferta vigente ni crea orientaciones certificadas a partir de perfiles personales.
 - El texto narrativo del Plan publica 38 créditos para Estudios del cuerpo, mientras su cuadro y sus nueve ubicaciones suman 43. La proyección controla 43 para mantener la malla y el total institucional de 360, y conserva 38 como contradicción explícita del mismo documento.
 - No corresponde modificar `docs/carreras-a-actualizar.md`: las fuentes cotejadas muestran una malla completa y vigente en Montevideo, no una implementación progresiva, futura ni territorialmente parcial.
+
+## Integración
+
+- Implementación aislada `0fb11d9`; integrada en `main` como `861cbf0`.
+- Verificación del resultado combinado: `npm test` (1050/1050), `npm run lint` y `git diff --check`, todas correctas. No se hizo push ni despliegue en este nodo.
