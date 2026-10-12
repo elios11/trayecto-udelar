@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:51f0458d4a89e1b0258670e9cb5f1ca2609e17abb9d13991c623c3f2d31b840b",
-    "officialAuditHash": "sha256:d7324e69508747610db14f8ffa9dd51dcc34984e04d5991a7354cc2b77b597cc",
+    "auditQueueHash": "sha256:9bb62800ea17b45f1de1237b1ad505d92b5c9a3ecdb95373ec3ae625c1da4b9d",
+    "officialAuditHash": "sha256:d7316d46831384bfaf7618d6a357ecdee6b28cff47ba91c860e2d8a379d7d05e",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -22,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5102,
-      "candidate": 26592,
+      "verified": 5138,
+      "candidate": 26562,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31702,
-    "afterPublishedCourses": 5102,
+    "beforePublishedCourses": 31708,
+    "afterPublishedCourses": 5138,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1754,
     "visibleTargetsWithUnpublishedDependencies": 1491,
     "plansWithVerifiedCatalog": 63,
-    "plansWithPartialCatalog": 64,
-    "plansWithStructureOnly": 12
+    "plansWithPartialCatalog": 65,
+    "plansWithStructureOnly": 11
   },
   "plans": [
     {
@@ -1289,25 +1289,25 @@
       "facultyCode": "FARTES",
       "snapshotPath": "data/bedelias/fartes-licenciatura-en-danza-contemporanea-2018.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
         "montevideo"
       ],
       "before": {
-        "publishedCourses": 417,
+        "publishedCourses": 423,
         "publishedRules": 12
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 417,
+        "publishedCourses": 36,
+        "hiddenCourses": 387,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 417,
+        "verified": 36,
+        "candidate": 387,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4630,5 +4630,5 @@
       }
     }
   ],
-  "contentHash": "sha256:0f030c2d8ef4d3e58e87723d4f429096f6321f6a9209bf8321f5b38d5fbea682"
+  "contentHash": "sha256:6d0e64ceb47698d810d22e7dcd9bb3d0871dbda4a9c58097e1edb077f8deb807"
 }

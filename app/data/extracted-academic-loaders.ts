@@ -237,7 +237,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-fartes-licenciatura-en-danza-contemporanea-2018": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-danza-contemporanea-2018.json"),
     pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Malla curricular · implementación 2018",
     minCredits: 360,
   },
   "bedelias-fartes-licenciatura-en-direccion-coral-1987": {

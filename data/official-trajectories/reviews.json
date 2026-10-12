@@ -2834,6 +2834,51 @@
         "No aparecen en la malla oficial. Permanecen candidatas recuperables y no integran períodos, catálogo visible ni requisitos.",
         "Son planes territoriales distintos bajo una misma carrera; no comparten identidades, períodos, códigos ni progreso."
       ]
+    },
+    {
+      "planId": "bedelias-fartes-licenciatura-en-danza-contemporanea-2018",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-11",
+      "effectiveAt": "2018",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2024/06/Licenciatura_Danza_Contemporanea_Plan_de_Estudios_v2.pdf",
+          "reviewedAt": "2026-10-11",
+          "role": "Plan de Estudios 2008 / Implementación 2018; cuatro años y ocho semestres; 360 créditos; seis ejes de formación; malla curricular; estructura común sin orientaciones"
+        },
+        {
+          "authority": "Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-danza-contemporanea/",
+          "reviewedAt": "2026-10-11",
+          "role": "vigencia institucional; cuatro años; modalidad semestral; 360 créditos; seis ejes; programas troncales; sede 18 de Julio 1772"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/danza-contemporanea-2018.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-danza-contemporanea-2018.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La proyección controla 43 créditos porque el cuadro resumen de la malla y la suma de sus nueve ubicaciones coinciden en 43 y permiten cerrar los 360 créditos publicados. Los 38 del texto narrativo permanecen registrados como contradicción interna del mismo Plan, sin corregirse ni ocultarse.",
+        "Los dos cupos de la malla se conservan como bloques sólo-fuente de 6 créditos. STAM1, STAM2, SI1 y SI2 permanecen candidatas y no se convierten en equivalencias ni obligaciones acumulativas.",
+        "Se reproducen los cuatro bloques de la malla sin atribuirles los códigos LTFE1/LTFE2, porque el Plan no publica esa equivalencia. Ambos registros técnicos permanecen candidatos y recuperables.",
+        "La UI controla los mínimos 67/36 sin sumar todas las alternativas ni prometer su oferta por semestre. Las entradas no demostradas por la malla permanecen candidatas.",
+        "Se conserva el ID y año técnico 2018 para no romper progreso, mientras la UI y la evidencia identifican la autoridad académica como Plan de Estudios 2008 / Implementación 2018."
+      ]
     }
   ]
 }

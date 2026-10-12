@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fartes-licenciatura-en-danza-contemporanea-2018",
+  "auditIdentity": "licenciatura en danza contemporanea:2018",
+  "reviewedAt": "2026-10-11",
+  "scope": {
+    "service": "Facultad de Artes",
+    "campuses": [
+      {
+        "id": "montevideo",
+        "label": "Montevideo"
+      }
+    ]
+  },
+  "publication": {
+    "officialPlanYear": "2008",
+    "implementationYear": "2018",
+    "catalogPlanYear": "2018",
+    "credential": "Licenciado en Danza Contemporánea",
+    "durationMonths": 48,
+    "durationSemesters": 8,
+    "minimumCredits": 360,
+    "effectiveFrom": "2018",
+    "currentAtReview": true,
+    "currentEvidence": "Facultad de Artes mantiene la carrera, el Plan de Estudios y los programas troncales; publica cuatro años, modalidad semestral y 360 créditos."
+  },
+  "sources": [
+    {
+      "id": "fartes-danza-plan-2008-implementation-2018",
+      "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2024/06/Licenciatura_Danza_Contemporanea_Plan_de_Estudios_v2.pdf",
+      "authority": "Facultad de Artes, Udelar",
+      "supports": [
+        "Plan de Estudios 2008 / Implementación 2018",
+        "cuatro años y ocho semestres",
+        "360 créditos",
+        "seis ejes de formación",
+        "malla curricular",
+        "estructura común sin orientaciones"
+      ],
+      "rawContentHash": "sha256:e54d8ddd06f8d768a63ce7d905ca560413d3d1d69cd536af40a251f302d45ce4",
+      "textExtractedPdfPages": [1, 2, 3, 4, 5],
+      "visuallyInspectedPdfPages": [3, 4, 5]
+    },
+    {
+      "id": "fartes-danza-current-career-page",
+      "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-danza-contemporanea/",
+      "authority": "Facultad de Artes, Udelar",
+      "supports": [
+        "vigencia institucional",
+        "cuatro años",
+        "modalidad semestral",
+        "360 créditos",
+        "seis ejes",
+        "programas troncales",
+        "sede 18 de Julio 1772"
+      ]
+    }
+  ],
+  "sourcePortions": {
+    "fartes-danza-plan-2008-implementation-2018": {
+      "pages": [1, 2, 3, 4, 5],
+      "facts": {
+        "documentTitle": "Licenciatura en Danza Contemporánea - Plan de Estudios",
+        "planLabel": "Plan de estudios 2008 / Implementación 2018",
+        "durationYears": 4,
+        "semesterCount": 8,
+        "minimumCredits": 360,
+        "commonStructure": true,
+        "certifiedOrientations": false,
+        "trainingAxes": [
+          "Creación artística en relación a la danza",
+          "Investigación",
+          "Estudios epistémico históricos de la danza y demás disciplinas artísticas",
+          "Estudios del cuerpo",
+          "Procesos de mediación artística en el campo específico",
+          "Optativo y electivo"
+        ],
+        "narrativeBodyMinimumCredits": 38,
+        "gridBodyMinimumCredits": 43,
+        "gridAxisCredits": {
+          "creation": 81,
+          "research": 34,
+          "theoryHistory": 43,
+          "bodyStudies": 43,
+          "mediation": 20,
+          "optativesAndElectives": 103
+        },
+        "flexibleCredits": {
+          "optatives": 67,
+          "electives": 36
+        },
+        "finalProjectCredits": 36
+      }
+    },
+    "fartes-danza-current-career-page": {
+      "reviewedAt": "2026-10-11",
+      "facts": {
+        "duration": "4 años",
+        "modality": "semestral",
+        "minimumCredits": 360,
+        "campusAddress": "18 de Julio 1772, Montevideo",
+        "trainingAxes": 6,
+        "publishesPlan": true,
+        "publishesCorePrograms": true
+      }
+    }
+  },
+  "requirements": [
+    {
+      "id": "creation",
+      "name": "Creación artística en relación a la danza",
+      "shortName": "Creación",
+      "minCredits": 81
+    },
+    {
+      "id": "research",
+      "name": "Investigación",
+      "shortName": "Investigación",
+      "minCredits": 34
+    },
+    {
+      "id": "theory-history",
+      "name": "Estudios epistémico históricos de la danza y otras disciplinas artísticas",
+      "shortName": "Teoría e historia",
+      "minCredits": 43
+    },
+    {
+      "id": "body-studies",
+      "name": "Estudios del cuerpo",
+      "shortName": "Cuerpo",
+      "minCredits": 43
+    },
+    {
+      "id": "mediation",
+      "name": "Procesos de mediación artística en el campo específico",
+      "shortName": "Mediación",
+      "minCredits": 20
+    },
+    {
+      "id": "optatives",
+      "name": "Optativas",
+      "shortName": "Optativas",
+      "minCredits": 67
+    },
+    {
+      "id": "electives",
+      "name": "Electivas",
+      "shortName": "Electivas",
+      "minCredits": 36
+    },
+    {
+      "id": "final-project",
+      "name": "Trabajo Final de Egreso",
+      "shortName": "TFE",
+      "minCredits": 36
+    }
+  ],
+  "trajectories": [
+    {
+      "id": "bedelias",
+      "label": "Malla curricular · implementación 2018",
+      "description": "Ocho semestres del Plan de Estudios 2008, implementación 2018. Los 103 créditos optativos y electivos son flexibles y no tienen un semestre único publicado.",
+      "campusIds": ["montevideo"],
+      "useOnlyConfiguredPeriods": true,
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "courseIds": ["ENBA-D1", "ENBA-TD1", "fartes-enba-4", "ENBA-M1"]
+        },
+        {
+          "label": "Semestre 2",
+          "courseIds": ["ENBA-D2", "ENBA-MI1", "ENBA-TD2", "fartes-enba-5", "fartes-enba-6", "ENBA-M2"]
+        },
+        {
+          "label": "Semestre 3",
+          "courseIds": ["ENBA-AE1", "ENBA-MI2", "ENBA-D3", "ENBA-ATC", "ENBA-AIM1", "ENBA-AIM2"]
+        },
+        {
+          "label": "Semestre 4",
+          "courseIds": ["ENBA-AE2", "ENBA-MI3", "ENBA-D4", "ENBA-ECC", "ENBA-M3"]
+        },
+        {
+          "label": "Semestre 5",
+          "courseIds": ["fartes-enba-2", "danza-plan-seminarios-teorico-analiticos", "ENBA-D5", "ENBA-PF", "ENBA-M4"]
+        },
+        {
+          "label": "Semestre 6",
+          "courseIds": ["ENBA-DIN", "danza-plan-seminario-investigacion", "ENBA-D6", "ENBA-TEC"]
+        },
+        {
+          "label": "Semestre 7",
+          "courseIds": ["ENBA-ES", "danza-plan-anteproyecto", "danza-plan-feedback-7"]
+        },
+        {
+          "label": "Semestre 8",
+          "courseIds": ["ENBA-CCV", "danza-plan-proyecto-realizacion", "danza-plan-feedback-8"]
+        }
+      ]
+    }
+  ],
+  "rows": [
+    { "rowId": "s1-danza-1", "sourceCourseId": "ENBA-D1", "bedeliasRawIdentity": "ENBA - D1", "officialLabel": "Danza I: Prácticas sensoperceptivas", "credits": 10, "period": "Semestre 1", "requirementId": "creation", "progressId": "fartes-enba-d1", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s1-teoria-danza-1", "sourceCourseId": "ENBA-TD1", "bedeliasRawIdentity": "ENBA - TD1", "officialLabel": "Teoría de la Danza I: Introducción", "credits": 13, "period": "Semestre 1", "requirementId": "theory-history", "progressId": "fartes-enba-td1", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s1-faf-1", "sourceCourseId": "ENBA", "overrideKey": "faf 1 fundamentos anatomo fisiologicos 1", "bedeliasRawIdentity": "ENBA - FAF-1", "officialLabel": "FAF 1", "credits": 2, "period": "Semestre 1", "requirementId": "body-studies", "progressId": "fartes-enba-4", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s1-danza-sociedad", "sourceCourseId": "ENBA-M1", "bedeliasRawIdentity": "ENBA - M1", "officialLabel": "Danza y Sociedad", "credits": 4, "period": "Semestre 1", "requirementId": "mediation", "progressId": "fartes-enba-m1", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+
+    { "rowId": "s2-danza-2", "sourceCourseId": "ENBA-D2", "bedeliasRawIdentity": "ENBA - D2", "officialLabel": "Danza II: Cuerpo-Espacio-Tiempo", "credits": 10, "period": "Semestre 2", "requirementId": "creation", "progressId": "fartes-enba-d2", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s2-metodologia-1", "sourceCourseId": "ENBA-MI1", "bedeliasRawIdentity": "ENBA - MI1", "officialLabel": "Metodología de la Investigación I: Introducción al campo de investigación en danza", "credits": 6, "period": "Semestre 2", "requirementId": "research", "progressId": "fartes-enba-mi1", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s2-teoria-danza-2", "sourceCourseId": "ENBA-TD2", "bedeliasRawIdentity": "ENBA - TD2", "officialLabel": "Teoría de la Danza II: Abordaje histórico-teórico", "credits": 10, "period": "Semestre 2", "requirementId": "theory-history", "progressId": "fartes-enba-td2", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s2-faf-2", "sourceCourseId": "ENBA", "overrideKey": "faf 2 fundamentos anatomo fisiologicos 2", "bedeliasRawIdentity": "ENBA - FAF-2", "officialLabel": "FAF 2 (Técnica Alexander)", "credits": 3, "period": "Semestre 2", "requirementId": "body-studies", "progressId": "fartes-enba-5", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s2-faf-3", "sourceCourseId": "ENBA", "overrideKey": "faf 3 fundamentos anatomo fisiologicos 3", "bedeliasRawIdentity": "ENBA - FAF-3", "officialLabel": "FAF 3", "credits": 3, "period": "Semestre 2", "requirementId": "body-studies", "progressId": "fartes-enba-6", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s2-educacion-artistica", "sourceCourseId": "ENBA-M2", "bedeliasRawIdentity": "ENBA - M2", "officialLabel": "Educación artística", "credits": 4, "period": "Semestre 2", "requirementId": "mediation", "progressId": "fartes-enba-m2", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+
+    { "rowId": "s3-arte-enunciados-1", "sourceCourseId": "ENBA-AE1", "bedeliasRawIdentity": "ENBA - AE1", "officialLabel": "Arte y Enunciados Estéticos I", "credits": 10, "period": "Semestre 3", "requirementId": "theory-history", "progressId": "fartes-enba-ae1", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s3-metodologia-2", "sourceCourseId": "ENBA-MI2", "bedeliasRawIdentity": "ENBA - MI2", "officialLabel": "Metodología de la Investigación II: Formas académicas de la investigación", "credits": 8, "period": "Semestre 3", "requirementId": "research", "progressId": "fartes-enba-mi2", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s3-danza-3", "sourceCourseId": "ENBA-D3", "bedeliasRawIdentity": "ENBA - D3", "officialLabel": "Danza III: Metodologías de la composición", "credits": 10, "period": "Semestre 3", "requirementId": "creation", "progressId": "fartes-enba-d3", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s3-aproximaciones-cuerpo", "sourceCourseId": "ENBA-ATC", "bedeliasRawIdentity": "ENBA - ATC", "officialLabel": "Aproximaciones teóricas al cuerpo", "credits": 8, "period": "Semestre 3", "requirementId": "body-studies", "progressId": "fartes-enba-atc", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s3-aim-1", "sourceCourseId": "ENBA-AIM1", "bedeliasRawIdentity": "ENBA - AIM1", "officialLabel": "Análisis e Investigación del Movimiento I", "credits": 4, "period": "Semestre 3", "requirementId": "body-studies", "progressId": "fartes-enba-aim1", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s3-aim-2", "sourceCourseId": "ENBA-AIM2", "bedeliasRawIdentity": "ENBA - AIM2", "officialLabel": "Análisis e Investigación del Movimiento II (Técnica Alexander)", "credits": 4, "period": "Semestre 3", "requirementId": "body-studies", "progressId": "fartes-enba-aim2", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+
+    { "rowId": "s4-arte-enunciados-2", "sourceCourseId": "ENBA-AE2", "bedeliasRawIdentity": "ENBA - AE2", "officialLabel": "Arte y Enunciados Estéticos II", "credits": 10, "period": "Semestre 4", "requirementId": "theory-history", "progressId": "fartes-enba-ae2", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s4-metodologia-3", "sourceCourseId": "ENBA-MI3", "bedeliasRawIdentity": "ENBA - MI3", "officialLabel": "Metodología de la Investigación III: Investigación textual-escénica", "credits": 8, "period": "Semestre 4", "requirementId": "research", "progressId": "fartes-enba-mi3", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s4-danza-4", "sourceCourseId": "ENBA-D4", "bedeliasRawIdentity": "ENBA - D4", "officialLabel": "Danza IV: Composición por talleres", "credits": 10, "period": "Semestre 4", "requirementId": "creation", "progressId": "fartes-enba-d4", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s4-estudios-cuerpo", "sourceCourseId": "ENBA-ECC", "bedeliasRawIdentity": "ENBA - ECC", "officialLabel": "Estudios contemporáneos del cuerpo", "credits": 6, "period": "Semestre 4", "requirementId": "body-studies", "progressId": "fartes-enba-ecc", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s4-gestion-curaduria", "sourceCourseId": "ENBA-M3", "bedeliasRawIdentity": "ENBA - M3", "officialLabel": "Gestión y Curaduría", "credits": 6, "period": "Semestre 4", "requirementId": "mediation", "progressId": "fartes-enba-m3", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+
+    { "rowId": "s5-medios-arte-digital", "sourceCourseId": "ENBA", "overrideKey": "ma ad medios audiovisuales arte digital", "bedeliasRawIdentity": "ENBA - MA-AD", "officialLabel": "Medios Audiovisuales / Arte Digital", "credits": 5, "period": "Semestre 5", "requirementId": "creation", "progressId": "fartes-enba-2", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s5-seminarios-teorico-analiticos", "sourceOnlyId": "danza-plan-seminarios-teorico-analiticos", "officialLabel": "Seminarios teórico-analíticos", "credits": 6, "period": "Semestre 5", "requirementId": "research", "progressId": "fartes-danza-plan-seminarios-teorico-analiticos", "projectionBasis": "source-only-grid-block" },
+    { "rowId": "s5-danza-5", "sourceCourseId": "ENBA-D5", "bedeliasRawIdentity": "ENBA - D5", "officialLabel": "Danza V: Investigación coreográfica con semiótica aplicada", "credits": 10, "period": "Semestre 5", "requirementId": "creation", "progressId": "fartes-enba-d5", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s5-performance", "sourceCourseId": "ENBA-PF", "bedeliasRawIdentity": "ENBA - PF", "officialLabel": "Performance", "credits": 6, "period": "Semestre 5", "requirementId": "creation", "progressId": "fartes-enba-pf", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s5-politicas-culturales", "sourceCourseId": "ENBA-M4", "bedeliasRawIdentity": "ENBA - M4", "officialLabel": "Políticas culturales", "credits": 6, "period": "Semestre 5", "requirementId": "mediation", "progressId": "fartes-enba-m4", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+
+    { "rowId": "s6-diseno-integrado", "sourceCourseId": "ENBA-DIN", "bedeliasRawIdentity": "ENBA - DIN", "officialLabel": "Diseño Integrado (escénico)", "credits": 5, "period": "Semestre 6", "requirementId": "creation", "progressId": "fartes-enba-din", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s6-seminario-investigacion", "sourceOnlyId": "danza-plan-seminario-investigacion", "officialLabel": "Seminario de investigación", "credits": 6, "period": "Semestre 6", "requirementId": "research", "progressId": "fartes-danza-plan-seminario-investigacion", "projectionBasis": "source-only-grid-block" },
+    { "rowId": "s6-danza-6", "sourceCourseId": "ENBA-D6", "bedeliasRawIdentity": "ENBA - D6", "officialLabel": "Danza VI: Investigación coreográfica con dramaturgia aplicada", "credits": 10, "period": "Semestre 6", "requirementId": "creation", "progressId": "fartes-enba-d6", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s6-teoria-educacion-cuerpo", "sourceCourseId": "ENBA-TEC", "bedeliasRawIdentity": "ENBA - TEC", "officialLabel": "Teoría de la Educación del Cuerpo", "credits": 8, "period": "Semestre 6", "requirementId": "body-studies", "progressId": "fartes-enba-tec", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+
+    { "rowId": "s7-espacio-sonoro", "sourceCourseId": "ENBA-ES", "bedeliasRawIdentity": "ENBA - ES", "officialLabel": "Espacio Sonoro", "credits": 5, "period": "Semestre 7", "requirementId": "creation", "progressId": "fartes-enba-es", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s7-anteproyecto", "sourceOnlyId": "danza-plan-anteproyecto", "officialLabel": "Anteproyecto", "credits": 10, "period": "Semestre 7", "requirementId": "final-project", "progressId": "fartes-danza-plan-anteproyecto", "projectionBasis": "source-only-grid-block" },
+    { "rowId": "s7-feedback", "sourceOnlyId": "danza-plan-feedback-7", "officialLabel": "Feedback: investigación académica, investigación-creación artística o mediación", "credits": 8, "period": "Semestre 7", "requirementId": "final-project", "progressId": "fartes-danza-plan-feedback-7", "projectionBasis": "source-only-grid-block" },
+
+    { "rowId": "s8-cuerpo-cultura-visual", "sourceCourseId": "ENBA-CCV", "bedeliasRawIdentity": "ENBA - CCV", "officialLabel": "Cuerpo y Cultura Visual", "credits": 5, "period": "Semestre 8", "requirementId": "body-studies", "progressId": "fartes-enba-ccv", "projectionBasis": "exact-plan-row-and-bedelias-identity" },
+    { "rowId": "s8-proyecto-realizacion", "sourceOnlyId": "danza-plan-proyecto-realizacion", "officialLabel": "Proyecto Realización", "credits": 10, "period": "Semestre 8", "requirementId": "final-project", "progressId": "fartes-danza-plan-proyecto-realizacion", "projectionBasis": "source-only-grid-block" },
+    { "rowId": "s8-feedback", "sourceOnlyId": "danza-plan-feedback-8", "officialLabel": "Feedback: investigación académica, investigación-creación artística o mediación", "credits": 8, "period": "Semestre 8", "requirementId": "final-project", "progressId": "fartes-danza-plan-feedback-8", "projectionBasis": "source-only-grid-block" }
+  ],
+  "authorityPolicy": {
+    "verifiedBedeliasSourceCourseIds": [
+      "ENBA-D1", "ENBA-D2", "ENBA-D3", "ENBA-D4", "ENBA-D5", "ENBA-D6", "ENBA-DIN", "ENBA-ES", "ENBA-PF",
+      "ENBA-MI1", "ENBA-MI2", "ENBA-MI3",
+      "ENBA-AE1", "ENBA-AE2", "ENBA-TD1", "ENBA-TD2",
+      "ENBA-AIM1", "ENBA-AIM2", "ENBA-ATC", "ENBA-CCV", "ENBA-ECC", "ENBA-TEC",
+      "ENBA-M1", "ENBA-M2", "ENBA-M3", "ENBA-M4"
+    ],
+    "verifiedByExactRawNameRowIds": ["s1-faf-1", "s2-faf-2", "s2-faf-3", "s5-medios-arte-digital"],
+    "excludedHistoricalSourceCourseIds": ["ENBA-CD1", "ENBA-CM1", "ENBA-CTD1"],
+    "sourceOnlyGridRowIds": ["s5-seminarios-teorico-analiticos", "s6-seminario-investigacion", "s7-anteproyecto", "s7-feedback", "s8-proyecto-realizacion", "s8-feedback"],
+    "allowFuzzyNameMatching": false,
+    "technicalCandidatesBecomeAutomaticEquivalences": false,
+    "flexibleCatalogBecomesCumulativeRequirement": false,
+    "personalProfilesBecomeCertifiedOrientations": false
+  },
+  "bedeliasComparison": {
+    "snapshotPath": "data/bedelias/fartes-licenciatura-en-danza-contemporanea-2018.json",
+    "snapshotContentHash": "sha256:911151de334b99506193acfec19c6acbed400f9cd2afca52111d6c3614eef3be",
+    "compositionEntryCount": 420,
+    "compositionCredits": 2787,
+    "verifiedBedeliasCourseCount": 30,
+    "sourceOnlyGridBlockCount": 6,
+    "candidateRetainedCount": 387,
+    "excludedHistoricalCount": 3,
+    "interpretation": "Treinta ubicaciones de la grilla tienen correspondencia técnica inequívoca y preservan sus IDs de progreso. Dos seminarios genéricos y cuatro componentes del Trabajo Final se publican como bloques sólo-fuente; las demás entradas técnicas permanecen candidatas fuera del catálogo normal."
+  },
+  "conflicts": [
+    {
+      "field": "bodyStudiesMinimumCredits",
+      "publishedValues": [
+        "El texto narrativo del Plan publica 38 créditos mínimos para Estudios del cuerpo",
+        "El cuadro resumen y las unidades de la malla suman 43 créditos para Teorías/Estudios del CUERPO"
+      ],
+      "resolution": "La proyección controla 43 créditos porque el cuadro resumen de la malla y la suma de sus nueve ubicaciones coinciden en 43 y permiten cerrar los 360 créditos publicados. Los 38 del texto narrativo permanecen registrados como contradicción interna del mismo Plan, sin corregirse ni ocultarse."
+    },
+    {
+      "field": "genericSeminarIdentity",
+      "publishedValues": [
+        "La malla publica Seminarios teórico-analíticos y Seminario de investigación sin código ni edición",
+        "Bedelías conserva STAM1, STAM2, SI1 y SI2 como ediciones técnicas concretas"
+      ],
+      "resolution": "Los dos cupos de la malla se conservan como bloques sólo-fuente de 6 créditos. STAM1, STAM2, SI1 y SI2 permanecen candidatas y no se convierten en equivalencias ni obligaciones acumulativas."
+    },
+    {
+      "field": "finalProjectIdentity",
+      "publishedValues": [
+        "La malla divide el Trabajo Final en Anteproyecto 10, Feedback 8, Proyecto Realización 10 y Feedback 8",
+        "Bedelías agrega LTFE1 y LTFE2 como dos registros de 18 créditos"
+      ],
+      "resolution": "Se reproducen los cuatro bloques de la malla sin atribuirles los códigos LTFE1/LTFE2, porque el Plan no publica esa equivalencia. Ambos registros técnicos permanecen candidatos y recuperables."
+    },
+    {
+      "field": "flexibleCredits",
+      "publishedValues": [
+        "El Plan exige 67 créditos optativos y 36 electivos",
+        "La composición de Bedelías contiene una oferta histórica y variable mucho mayor"
+      ],
+      "resolution": "La UI controla los mínimos 67/36 sin sumar todas las alternativas ni prometer su oferta por semestre. Las entradas no demostradas por la malla permanecen candidatas."
+    },
+    {
+      "field": "planLabel",
+      "publishedValues": [
+        "Plan de estudios 2008",
+        "Implementación 2018 y Plan 2018 en Bedelías"
+      ],
+      "resolution": "Se conserva el ID y año técnico 2018 para no romper progreso, mientras la UI y la evidencia identifican la autoridad académica como Plan de Estudios 2008 / Implementación 2018."
+    }
+  ],
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "value": "sha256:e10c0a3d05d014ec297c04696f7fcbc9aad71c03f2f239c3a956a2fdbbb7980b",
+    "sourceHashes": {
+      "fartes-danza-plan-2008-implementation-2018": "sha256:bead615ac938542e748658a9f32a3164573afabe72a56a5e6ff21d620cbbf6c1",
+      "fartes-danza-current-career-page": "sha256:61874822c127929341f821b8122f7c10ee4dbf9060f8bf4a427a33daf5f517e4"
+    }
+  }
+}

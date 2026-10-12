@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:6f32bed4443b2621ea3e0613c827bae88a7afe653b11eccecc82f1eecef02461",
-    "extractedReportHash": "sha256:0f030c2d8ef4d3e58e87723d4f429096f6321f6a9209bf8321f5b38d5fbea682",
-    "officialAuditHash": "sha256:d7324e69508747610db14f8ffa9dd51dcc34984e04d5991a7354cc2b77b597cc",
-    "reviewedTrajectoriesHash": "sha256:28658b0f82c03682e10f9f1c75943fc505f22d19c082da22da9b50a1f7c6d902"
+    "extractedReportHash": "sha256:6d0e64ceb47698d810d22e7dcd9bb3d0871dbda4a9c58097e1edb077f8deb807",
+    "officialAuditHash": "sha256:d7316d46831384bfaf7618d6a357ecdee6b28cff47ba91c860e2d8a379d7d05e",
+    "reviewedTrajectoriesHash": "sha256:a0e0d5b47c0893fe758f5bc99853c35aab702f433031d7db260bd3ca23f0bc06"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 103,
+      "official-trajectory-reproduced": 104,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 40
+      "research-pending": 39
     },
-    "pending": 41,
+    "pending": 40,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -111,10 +111,10 @@
         "serviceLabel": "Facultad de Artes",
         "selectablePlanIds": 17,
         "states": {
-          "official-trajectory-reproduced": 10,
+          "official-trajectory-reproduced": 11,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 7
+          "research-pending": 6
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 41,
+    "total": 40,
     "plans": [
       {
         "priority": 1,
@@ -297,15 +297,6 @@
       {
         "priority": 2,
         "planId": "bedelias-fartes-licenciatura-en-composicion-1987",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fartes"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fartes-licenciatura-en-danza-contemporanea-2018",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fartes"
@@ -670,7 +661,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-fartes-licenciatura-en-composicion-1987",
-          "bedelias-fartes-licenciatura-en-danza-contemporanea-2018",
           "bedelias-fartes-licenciatura-en-direccion-coral-1987",
           "bedelias-fartes-licenciatura-en-direccion-orquestal-1987",
           "bedelias-fartes-licenciatura-en-interpretacion-musical-2005",
@@ -4373,33 +4363,21 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-26",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-11",
       "effectiveAt": "2018",
       "officialSources": [
         {
           "authority": "Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2024/06/Licenciatura_Danza_Contemporanea_Plan_de_Estudios_v2.pdf",
-          "role": "plan 2008 implementado en 2018; cuatro años; 360 créditos; seis ejes; mínimos; malla semestral; ausencia de orientaciones",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "Plan de Estudios 2008 / Implementación 2018; cuatro años y ocho semestres; 360 créditos; seis ejes de formación; malla curricular; estructura común sin orientaciones"
         },
         {
           "authority": "Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/carrera/licenciatura-en-danza-contemporanea/",
-          "role": "vigencia 2026; cuatro años; 360 créditos; programas; Comisión de Carrera; sede 18 de Julio",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Universidad de la República",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-danza-contemporanea",
-          "role": "título; 48 meses; 360 créditos; Facultad de Artes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Artes, Udelar",
-          "url": "https://www.artes.udelar.edu.uy/inscripciones-danza-contemporanea-nueva-generacion/",
-          "role": "ingreso 2026; ocho semestres; Montevideo",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-11",
+          "role": "vigencia institucional; cuatro años; modalidad semestral; 360 créditos; seis ejes; programas troncales; sede 18 de Julio 1772"
         }
       ],
       "scope": {
@@ -4411,22 +4389,36 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-periods",
         "features": [
-          "areas"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en danza contemporanea:2018",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-danza-contemporanea-2018.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/danza-contemporanea-2018.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-danza-contemporanea-2018.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:2a7060638a204f2eebd22b10c8688fea7c7c5dc789c5f72615d3f82c2155501f",
+        "projectionContentHash": "sha256:26bca24320529e9fac8022b96f03d04a22d231ebc7399d6b5d233d75a131774b",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 36,
+        "matchedCoursePlacements": 36
       },
       "conflictNotes": [
-        "axisTotals: La tabla operativa y Bedelías fijan 43 créditos en Teorías y Estudios del Cuerpo; el párrafo descriptivo del PDF dice 38. Se usa 43 porque completa las unidades publicadas y, junto con el TFE separado, cierra los 360 créditos.",
-        "flexibleOfferCredits: Los 2787 créditos listados en la composición son un catálogo histórico/ampliado de alternativas, no una obligación acumulativa. La UI exige únicamente 67 optativos y 36 electivos.",
-        "personalProfiles: Los perfiles personales no son orientaciones certificadas y no habilitan un selector de trayectoria."
+        "La proyección controla 43 créditos porque el cuadro resumen de la malla y la suma de sus nueve ubicaciones coinciden en 43 y permiten cerrar los 360 créditos publicados. Los 38 del texto narrativo permanecen registrados como contradicción interna del mismo Plan, sin corregirse ni ocultarse.",
+        "Los dos cupos de la malla se conservan como bloques sólo-fuente de 6 créditos. STAM1, STAM2, SI1 y SI2 permanecen candidatas y no se convierten en equivalencias ni obligaciones acumulativas.",
+        "Se reproducen los cuatro bloques de la malla sin atribuirles los códigos LTFE1/LTFE2, porque el Plan no publica esa equivalencia. Ambos registros técnicos permanecen candidatos y recuperables.",
+        "La UI controla los mínimos 67/36 sin sumar todas las alternativas ni prometer su oferta por semestre. Las entradas no demostradas por la malla permanecen candidatas.",
+        "Se conserva el ID y año técnico 2018 para no romper progreso, mientras la UI y la evidencia identifican la autoridad académica como Plan de Estudios 2008 / Implementación 2018."
       ]
     },
     {
@@ -13431,5 +13423,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:c04e0e6d5f3b11086fa09da64fc35fe5ccdcf6f11720ea1c5150e283b3f07927"
+  "contentHash": "sha256:43558e6da07dadaa82c01546f37f90fbf65e7e04342b10fec1292e96e2407444"
 }

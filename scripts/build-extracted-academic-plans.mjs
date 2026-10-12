@@ -733,6 +733,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       const hasOfficialIdentity = courseOverride.officialIdentity ?? isOfficialOverride;
       const hasOfficialCredits = courseOverride.officialCredits ?? isOfficialOverride;
       const authorityStatus = verifiedSourceCourseIds.has(String(sourceCourseId))
+        || courseOverride.authorityStatus === "verified"
         || (curriculum.strictOfficialCourseIds !== true && isOfficialOverride)
         ? "verified"
         : historicalEquivalentSourceCourseIds.has(String(sourceCourseId)) ? "historical-equivalent" : "candidate";
@@ -786,6 +787,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       if (allocation && Number.isFinite(Number(allocationCredits))) allocation.credits = Number(allocationCredits);
     }
     const id = course.id;
+    if (!courseIdBySourceId.has(id)) courseIdBySourceId.set(id, id);
     addToPeriod(periodsByLabel, period, id);
     if (profileId) {
       if (!profilePeriodsById.has(profileId)) profilePeriodsById.set(profileId, new Map());
