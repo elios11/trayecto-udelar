@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:7e8a8951509c026376b10d4c5aefdb164527c17dc7503fc1047be0c4afa8a058",
-    "extractedReportHash": "sha256:017485f450bc2a01707111547f00f9c158c388e4e51b367b181ccc9f64ddf05f",
-    "officialAuditHash": "sha256:1445dc2455c0053de538192d4271dacb0c7cfb934719dbbb0f932d84d601d231",
-    "reviewedTrajectoriesHash": "sha256:56371dbcbef24b67d212af6c540e324c59eb1cfc3816350639c5ad5902e8364b"
+    "extractedCatalogHash": "sha256:fb6c57eab03c5ba72a9ded8509e4434cca5535ee071ef70deec6dace94ab6894",
+    "extractedReportHash": "sha256:2fcab59aae592337dcb89141a2631c7c69ae8f6a33c3467d9da65654c78443f4",
+    "officialAuditHash": "sha256:d7eb46013cdb2ab70db6b52e6b8ed69108a5b254f96591a80e399497e5fc9598",
+    "reviewedTrajectoriesHash": "sha256:d05ada0abc52338f7338af4790eb9d7115230d8b3c2cfc325b9dc1cc806c3250"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 105,
+      "official-trajectory-reproduced": 106,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 38
+      "research-pending": 37
     },
-    "pending": 39,
+    "pending": 38,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -111,10 +111,10 @@
         "serviceLabel": "Facultad de Artes",
         "selectablePlanIds": 17,
         "states": {
-          "official-trajectory-reproduced": 12,
+          "official-trajectory-reproduced": 13,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 5
+          "research-pending": 4
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 39,
+    "total": 38,
     "plans": [
       {
         "priority": 1,
@@ -315,15 +315,6 @@
       {
         "priority": 2,
         "planId": "bedelias-fartes-licenciatura-en-direccion-orquestal-1987",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fartes"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fartes-licenciatura-en-interpretacion-musical-2005",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fartes"
@@ -654,7 +645,6 @@
           "bedelias-fartes-licenciatura-en-composicion-1987",
           "bedelias-fartes-licenciatura-en-direccion-coral-1987",
           "bedelias-fartes-licenciatura-en-direccion-orquestal-1987",
-          "bedelias-fartes-licenciatura-en-interpretacion-musical-2005",
           "bedelias-fartes-licenciatura-en-musicologia-1987"
         ]
       },
@@ -4527,42 +4517,30 @@
           "careerLabel": "Licenciatura en Interpretación Musical",
           "planLabel": "Plan 2005 · vigente",
           "defaultTrajectoryId": "opcion-canto",
-          "defaultCredentialId": "opcion-violoncello"
+          "defaultCredentialId": "opcion-canto"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-26",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-12",
       "effectiveAt": "2005",
       "officialSources": [
         {
           "authority": "Escuela Universitaria de Música / Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
-          "role": "Plan 2005; dos licenciaturas; opciones; títulos con mención; ocho semestres; 360 créditos; bloques y Actividad de Graduación",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-12",
+          "role": "Plan 2005; Licenciatura en Interpretación Musical con mención; ocho semestres; 360 créditos; grillas de Instrumentos y Canto; mínimos flexibles y Actividad de Graduación"
         },
         {
           "authority": "Instituto de Música / Facultad de Artes, Udelar",
           "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
-          "role": "vigencia; estructura; mínimos; materias; opciones; admisión; tutoría",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-12",
+          "role": "vigencia institucional; menciones publicadas; ocho semestres; 360 créditos; materias y mínimos"
         },
         {
-          "authority": "Facultad de Artes, Udelar",
-          "url": "https://www.artes.udelar.edu.uy/carreras-de-grado/",
-          "role": "oferta vigente; quince opciones publicadas; Montevideo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Artes, Udelar",
-          "url": "https://www.artes.udelar.edu.uy/admisiones/",
-          "role": "ingreso 2026; Plan 2005; pruebas específicas",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Universidad de la República",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-interpretacion-musical",
-          "role": "título; 360 créditos; sede; opciones de ingreso publicadas",
-          "trajectoryEvidence": false
+          "authority": "Instituto de Música / Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2025/10/PRUEBAS-ADMISION-INSTRUMENTOS-LICENCIATURAS-2026.pdf",
+          "reviewedAt": "2026-10-12",
+          "role": "admisión 2026; quince menciones con prueba específica; ausencia de Corno y Trombón en la convocatoria"
         }
       ],
       "scope": {
@@ -4590,22 +4568,104 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-periods",
         "features": [
-          "areas"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en interpretacion musical:2005",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-interpretacion-musical-2005.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/interpretacion-musical-2005.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-interpretacion-musical-2005.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "specificPeriods",
+        "projectionPeriodField": "periods",
+        "sharedPeriodsField": "sharedPeriods",
+        "sourceCourseIdsField": "courseRefs",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:1687314c5ef5e71d4c6285de8e61f5da88549d5d1620cd6c406e088e04ed38dc",
+        "projectionContentHash": "sha256:a905203ba58d82b978877dff573f0448cbacc0cb6adfd2d14c493b6804a4a40b",
+        "pathways": [
+          {
+            "id": "opcion-canto",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-clarinete",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-contrabajo",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-corno",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-fagot",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-flauta",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-guitarra",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-oboe",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-organo",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-percusion",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-piano",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-saxofon",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-trombon",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-trompeta",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-viola",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-violin",
+            "periodCount": 8
+          },
+          {
+            "id": "opcion-violoncello",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 1005,
+        "matchedCoursePlacements": 1005
       },
       "conflictNotes": [
-        "durationMonths: Bedelías y el portal central informan 60 meses, pero el Plan 2005 define expresamente ocho semestres y 360 créditos. La UI usa 48 meses y conserva la discrepancia trazable.",
-        "currentOptions: Bedelías mantiene perfiles y títulos para Corno y Trombón; la oferta y admisión 2026 no los enumeran. Permanecen disponibles para continuidad, con aviso de que no implican ingreso abierto.",
-        "flatFlexibleOffer: Los 31306 créditos repetidos en 6440 nodos de composición corresponden a diecisiete perfiles y catálogos flexibles compartidos. No se suman como obligación de una opción."
+        "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres. La proyección conserva 48 meses y 360 créditos.",
+        "Bedelías mantiene Corno y Trombón para estudiantes activos; la admisión 2026 no los enumera. Se conservan como menciones de continuidad sin presentarlas como ingreso abierto.",
+        "La página vigente transcribe 4 créditos de Arte Escénico en el semestre 3 de Canto, pero el Plan PDF imprime 6 y el subtotal oficial de 44 sólo cierra con 6. Prevalece el Plan, sin prorrateo.",
+        "La página vigente omite Contrapunto en el semestre 5 de Canto, aunque el Plan PDF lo incluye con 4 créditos y el subtotal de 41 lo requiere. Prevalece el Plan.",
+        "Introducción a la Universidad, Armonías, Repertorios, seminarios, práctica con pianista e idiomas tienen aliases u ofertas variables sin código resuelto por el Plan. Se usan bloques sólo-fuente y las variantes técnicas permanecen candidatas.",
+        "Los catálogos electivos, seminarios y proyectos especiales varían por edición. Se controlan sus mínimos o cupos estables, pero no se incorporan todas las alternativas de Bedelías como obligaciones ni como oferta vigente."
       ]
     },
     {
@@ -13426,5 +13486,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:57147b7a6fb21495681ffd98dfb2e9790987ed85f6e4de334ce800b6ed5eae6b"
+  "contentHash": "sha256:cb575b6fd239941f245b050cd12424c7b8bcddb80a787d67ef438f936d8ddaff"
 }

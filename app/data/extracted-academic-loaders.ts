@@ -255,7 +255,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-fartes-licenciatura-en-interpretacion-musical-2005": {
     load: () => import("./bedelias-generated/bedelias-fartes-licenciatura-en-interpretacion-musical-2005.json"),
     pathwayIds: ["opcion-canto","opcion-clarinete","opcion-contrabajo","opcion-corno","opcion-fagot","opcion-flauta","opcion-guitarra","opcion-oboe","opcion-organo","opcion-percusion","opcion-piano","opcion-saxofon","opcion-trombon","opcion-trompeta","opcion-viola","opcion-violin","opcion-violoncello"],
-    pathwayLabel: "Opción",
+    pathwayLabel: "Mención",
     minCredits: 360,
   },
   "bedelias-fartes-licenciatura-en-musica-2005": {

@@ -2932,6 +2932,77 @@
         "Los catálogos electivos y los proyectos especiales varían por edición. Se controlan sus mínimos, pero no se incorporan todas las alternativas de Bedelías como obligaciones o como oferta vigente.",
         "Dirección de Coro exige 124 créditos específicos. Los aliases técnicos adicionales que elevaban la oferta a 132 permanecen candidatos y no inflan el requisito."
       ]
+    },
+    {
+      "planId": "bedelias-fartes-licenciatura-en-interpretacion-musical-2005",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-12",
+      "effectiveAt": "2005",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "opcion-canto",
+          "opcion-clarinete",
+          "opcion-contrabajo",
+          "opcion-corno",
+          "opcion-fagot",
+          "opcion-flauta",
+          "opcion-guitarra",
+          "opcion-oboe",
+          "opcion-organo",
+          "opcion-percusion",
+          "opcion-piano",
+          "opcion-saxofon",
+          "opcion-trombon",
+          "opcion-trompeta",
+          "opcion-viola",
+          "opcion-violin",
+          "opcion-violoncello"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Escuela Universitaria de Música / Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+          "reviewedAt": "2026-10-12",
+          "role": "Plan 2005; Licenciatura en Interpretación Musical con mención; ocho semestres; 360 créditos; grillas de Instrumentos y Canto; mínimos flexibles y Actividad de Graduación"
+        },
+        {
+          "authority": "Instituto de Música / Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
+          "reviewedAt": "2026-10-12",
+          "role": "vigencia institucional; menciones publicadas; ocho semestres; 360 créditos; materias y mínimos"
+        },
+        {
+          "authority": "Instituto de Música / Facultad de Artes, Udelar",
+          "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2025/10/PRUEBAS-ADMISION-INSTRUMENTOS-LICENCIATURAS-2026.pdf",
+          "reviewedAt": "2026-10-12",
+          "role": "admisión 2026; quince menciones con prueba específica; ausencia de Corno y Trombón en la convocatoria"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fartes/interpretacion-musical-2005.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-interpretacion-musical-2005.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "specificPeriods",
+        "projectionPeriodField": "periods",
+        "sharedPeriodsField": "sharedPeriods",
+        "sourceCourseIdsField": "courseRefs",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres. La proyección conserva 48 meses y 360 créditos.",
+        "Bedelías mantiene Corno y Trombón para estudiantes activos; la admisión 2026 no los enumera. Se conservan como menciones de continuidad sin presentarlas como ingreso abierto.",
+        "La página vigente transcribe 4 créditos de Arte Escénico en el semestre 3 de Canto, pero el Plan PDF imprime 6 y el subtotal oficial de 44 sólo cierra con 6. Prevalece el Plan, sin prorrateo.",
+        "La página vigente omite Contrapunto en el semestre 5 de Canto, aunque el Plan PDF lo incluye con 4 créditos y el subtotal de 41 lo requiere. Prevalece el Plan.",
+        "Introducción a la Universidad, Armonías, Repertorios, seminarios, práctica con pianista e idiomas tienen aliases u ofertas variables sin código resuelto por el Plan. Se usan bloques sólo-fuente y las variantes técnicas permanecen candidatas.",
+        "Los catálogos electivos, seminarios y proyectos especiales varían por edición. Se controlan sus mínimos o cupos estables, pero no se incorporan todas las alternativas de Bedelías como obligaciones ni como oferta vigente."
+      ]
     }
   ]
 }

@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fartes-licenciatura-en-interpretacion-musical-2005",
+  "auditIdentity": "licenciatura en interpretacion musical:2005",
+  "reviewedAt": "2026-10-12",
+  "scope": {
+    "service": "Facultad de Artes",
+    "campuses": [
+      {
+        "id": "montevideo",
+        "label": "Montevideo"
+      }
+    ]
+  },
+  "publication": {
+    "planYear": "2005",
+    "credential": "Licenciado en Interpretación Musical",
+    "durationMonths": 48,
+    "durationSemesters": 8,
+    "minimumCredits": 360,
+    "effectiveFrom": "2005",
+    "currentAtReview": true,
+    "currentEvidence": "Facultad de Artes mantiene publicado el Plan 2005, sus grillas de Instrumentos y Canto y las admisiones 2026 de quince menciones; Corno y Trombón permanecen como menciones de continuidad registradas en Bedelías."
+  },
+  "sources": [
+    {
+      "id": "fartes-interpretacion-plan-2005",
+      "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2023/09/plan_2005_libro_naranja.pdf",
+      "authority": "Escuela Universitaria de Música / Facultad de Artes, Udelar",
+      "supports": [
+        "Plan 2005",
+        "Licenciatura en Interpretación Musical con mención",
+        "ocho semestres",
+        "360 créditos",
+        "grillas de Instrumentos y Canto",
+        "mínimos flexibles y Actividad de Graduación"
+      ],
+      "rawContentHash": "sha256:9994f1c969c824718b2eae0e092b62bd8ed00db7bd6820b1c9121ae67659d335",
+      "textExtractedPdfPages": [11, 12, 13, 20, 21, 36, 37, 38, 39, 40, 41],
+      "visuallyInspectedPdfPages": [20, 21]
+    },
+    {
+      "id": "fartes-interpretacion-current-career-page",
+      "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
+      "authority": "Instituto de Música / Facultad de Artes, Udelar",
+      "supports": [
+        "vigencia institucional",
+        "menciones publicadas",
+        "ocho semestres",
+        "360 créditos",
+        "materias y mínimos"
+      ]
+    },
+    {
+      "id": "fartes-interpretacion-admission-2026",
+      "url": "https://www.artes.udelar.edu.uy/wp-content/uploads/2025/10/PRUEBAS-ADMISION-INSTRUMENTOS-LICENCIATURAS-2026.pdf",
+      "landingPageUrl": "https://www.artes.udelar.edu.uy/admisiones/",
+      "authority": "Instituto de Música / Facultad de Artes, Udelar",
+      "supports": [
+        "admisión 2026",
+        "quince menciones con prueba específica",
+        "ausencia de Corno y Trombón en la convocatoria"
+      ]
+    }
+  ],
+  "sourcePortions": {
+    "fartes-interpretacion-plan-2005": {
+      "pages": [11, 12, 13, 20, 21, 36, 37, 38, 39, 40, 41],
+      "facts": {
+        "documentTitle": "Plan de estudios 2005 - Escuela Universitaria de Música",
+        "durationSemesters": 8,
+        "minimumCredits": 360,
+        "commonCoreCredits": 138,
+        "degreeCoreCredits": 18,
+        "specificCredits": 152,
+        "electiveCredits": 29,
+        "specialProjectsCredits": 8,
+        "specialProjectsMinimumCount": 2,
+        "graduationCredits": 15,
+        "instrumentPeriodCreditsFromRows": [46, 44, 43, 43, 41, 41, 25, 40],
+        "cantoPeriodCreditsFromRows": [43, 45, 44, 44, 41, 41, 25, 40]
+      }
+    },
+    "fartes-interpretacion-current-career-page": {
+      "reviewedAt": "2026-10-12",
+      "facts": {
+        "publishesPlan": true,
+        "publishesInstrumentAndCantoTables": true,
+        "publishesEightSemesterTables": true,
+        "minimumCredits": 360,
+        "campus": "Montevideo",
+        "publishedMentionLabels": [
+          "Violín",
+          "Viola",
+          "Violonchelo",
+          "Contrabajo",
+          "Flauta",
+          "Clarinete",
+          "Oboe",
+          "Fagot",
+          "Saxofón",
+          "Percusión",
+          "Piano",
+          "Guitarra",
+          "Órgano",
+          "Trompeta",
+          "Canto"
+        ],
+        "cantoSemester3StageCredits": 4,
+        "cantoSemester5OmitsCounterpoint": true
+      }
+    },
+    "fartes-interpretacion-admission-2026": {
+      "reviewedAt": "2026-10-12",
+      "facts": {
+        "admissionYear": 2026,
+        "admissionMentionLabels": [
+          "Canto",
+          "Clarinete",
+          "Contrabajo",
+          "Fagot",
+          "Flauta",
+          "Guitarra",
+          "Oboe",
+          "Órgano",
+          "Percusión",
+          "Piano",
+          "Saxofón",
+          "Trompeta",
+          "Viola",
+          "Violín",
+          "Violonchelo"
+        ],
+        "continuityOnlyMentionLabels": ["Corno", "Trombón"]
+      }
+    }
+  },
+  "requirements": {
+    "commonCoreCredits": 138,
+    "degreeCoreCredits": 18,
+    "specificCredits": 152,
+    "electiveCredits": 29,
+    "specialProjectsCredits": 8,
+    "graduationCredits": 15
+  },
+  "technicalMatches": [
+    { "sourceCourseId": "EUMUS-ACUS", "progressId": "fartes-eumus-acus", "officialLabel": "Acústica", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA1", "progressId": "fartes-eumus-ana1", "officialLabel": "Análisis 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA2", "progressId": "fartes-eumus-ana2", "officialLabel": "Análisis 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA3", "progressId": "fartes-eumus-ana3", "officialLabel": "Análisis 3", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-ANA4", "progressId": "fartes-eumus-ana4", "officialLabel": "Análisis 4", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-CPT1", "progressId": "fartes-eumus-cpt1", "officialLabel": "Contrapunto 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-CPT2", "progressId": "fartes-eumus-cpt2", "officialLabel": "Contrapunto 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS1", "progressId": "fartes-eumus-hmus1", "officialLabel": "Historia de la Música 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS2", "progressId": "fartes-eumus-hmus2", "officialLabel": "Historia de la Música 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS3", "progressId": "fartes-eumus-hmus3", "officialLabel": "Historia de la Música 3", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS4", "progressId": "fartes-eumus-hmus4", "officialLabel": "Historia de la Música 4", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-HMUS5", "progressId": "fartes-eumus-hmus5", "officialLabel": "Historia de la Música 5", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT1", "progressId": "fartes-eumus-lect1", "officialLabel": "Lectoescritura musical 1", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT2", "progressId": "fartes-eumus-lect2", "officialLabel": "Lectoescritura musical 2", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT3", "progressId": "fartes-eumus-lect3", "officialLabel": "Lectoescritura musical 3", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT4", "progressId": "fartes-eumus-lect4", "officialLabel": "Lectoescritura musical 4", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT5", "progressId": "fartes-eumus-lect5", "officialLabel": "Lectoescritura musical 5", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LECT6", "progressId": "fartes-eumus-lect6", "officialLabel": "Lectoescritura musical 6", "credits": 8, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LST1", "progressId": "fartes-eumus-lst1", "officialLabel": "Lectura sobre el teclado 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LST2", "progressId": "fartes-eumus-lst2", "officialLabel": "Lectura sobre el teclado 2", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-LST3", "progressId": "fartes-eumus-lst3", "officialLabel": "Lectura sobre el teclado 3", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-MPTTC", "progressId": "fartes-eumus-mpttc", "officialLabel": "Músicas populares y tradicionales 1", "credits": 4, "requirementIds": ["common-core"] },
+    { "sourceCourseId": "EUMUS-RM", "progressId": "fartes-eumus-rm", "officialLabel": "Rítmica - Métrica", "credits": 3, "requirementIds": ["common-core"] },
+
+    { "sourceCourseId": "EUMUS-SENS1", "progressId": "fartes-eumus-sens1", "officialLabel": "Sensibilización Corporal 1", "credits": 1, "requirementIds": ["degree-core"] },
+    { "sourceCourseId": "EUMUS-SENS2", "progressId": "fartes-eumus-sens2", "officialLabel": "Sensibilización Corporal 2", "credits": 1, "requirementIds": ["degree-core"] },
+    { "sourceCourseId": "EUMUS-PDC4", "progressId": "fartes-eumus-pdc4", "officialLabel": "Práctica de Conjunto 4", "credits": 2, "requirementIds": ["degree-core"] },
+    { "sourceCourseId": "EUMUS-PDC5", "progressId": "fartes-eumus-pdc5", "officialLabel": "Práctica de Conjunto 5", "credits": 2, "requirementIds": ["degree-core"] },
+    { "sourceCourseId": "EUMUS-PDC6", "progressId": "fartes-eumus-pdc6", "officialLabel": "Práctica de Conjunto 6", "credits": 2, "requirementIds": ["degree-core"] },
+    { "sourceCourseId": "EUMUS-PDC7", "progressId": "fartes-eumus-pdc7", "officialLabel": "Práctica de Conjunto 7", "credits": 2, "requirementIds": ["degree-core"] },
+
+    { "sourceCourseId": "EUMUS-PCTC1", "progressId": "fartes-eumus-pctc1", "officialLabel": "Práctica Coral 1", "credits": 2, "requirementIds": ["option-specific"] },
+    { "sourceCourseId": "EUMUS-PDC1", "progressId": "fartes-eumus-pdc1", "officialLabel": "Práctica de Conjunto 1", "credits": 2, "requirementIds": ["option-specific"] },
+    { "sourceCourseId": "EUMUS-PDC2", "progressId": "fartes-eumus-pdc2", "officialLabel": "Práctica de Conjunto 2", "credits": 2, "requirementIds": ["option-specific"] },
+    { "sourceCourseId": "EUMUS-PDC3", "progressId": "fartes-eumus-pdc3", "officialLabel": "Práctica de Conjunto 3", "credits": 2, "requirementIds": ["option-specific"] },
+
+    { "sourceCourseId": "EUMUS-AGCAN", "progressId": "fartes-eumus-agcan", "officialLabel": "Actividad de Graduación · Canto", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGCLA", "progressId": "fartes-eumus-agcla", "officialLabel": "Actividad de Graduación · Clarinete", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGCON", "progressId": "fartes-eumus-agcon", "officialLabel": "Actividad de Graduación · Contrabajo", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGFAG", "progressId": "fartes-eumus-agfag", "officialLabel": "Actividad de Graduación · Fagot", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGFLA", "progressId": "fartes-eumus-agfla", "officialLabel": "Actividad de Graduación · Flauta", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGGUI", "progressId": "fartes-eumus-aggui", "officialLabel": "Actividad de Graduación · Guitarra", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGOBO", "progressId": "fartes-eumus-agobo", "officialLabel": "Actividad de Graduación · Oboe", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGORG", "progressId": "fartes-eumus-agorg", "officialLabel": "Actividad de Graduación · Órgano", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGPER", "progressId": "fartes-eumus-agper", "officialLabel": "Actividad de Graduación · Percusión", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGPIA", "progressId": "fartes-eumus-agpia", "officialLabel": "Actividad de Graduación · Piano", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGSAX", "progressId": "fartes-eumus-agsax", "officialLabel": "Actividad de Graduación · Saxofón", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGTRO", "progressId": "fartes-eumus-agtro", "officialLabel": "Actividad de Graduación · Trompeta", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGVLA", "progressId": "fartes-eumus-agvla", "officialLabel": "Actividad de Graduación · Viola", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGVLI", "progressId": "fartes-eumus-agvli", "officialLabel": "Actividad de Graduación · Violín", "credits": 15, "requirementIds": ["graduation"] },
+    { "sourceCourseId": "EUMUS-AGCEL", "progressId": "fartes-eumus-agcel", "officialLabel": "Actividad de Graduación · Violonchelo", "credits": 15, "requirementIds": ["graduation"] }
+  ],
+  "technicalSeries": [
+    { "id": "canto", "sourceCoursePrefix": "EUMUS-CANT", "progressIdPrefix": "fartes-eumus-cant", "officialLabel": "Canto", "credits": 9, "requirementIds": ["option-specific"] },
+    { "id": "arte-escenico", "sourceCoursePrefix": "EUMUS-ARTE", "progressIdPrefix": "fartes-eumus-arte", "officialLabel": "Arte Escénico", "credits": 6, "requirementIds": ["option-specific"] },
+    { "id": "practica-coro", "sourceCoursePrefix": "EUMUS-PC", "progressIdPrefix": "fartes-eumus-pc", "officialLabel": "Práctica de Coro", "credits": 2, "requirementIds": ["option-specific"] },
+    { "id": "clarinete", "sourceCoursePrefix": "EUMUS-CLA", "progressIdPrefix": "fartes-eumus-cla", "officialLabel": "Clarinete", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "contrabajo", "sourceCoursePrefix": "EUMUS-CONT", "progressIdPrefix": "fartes-eumus-cont", "officialLabel": "Contrabajo", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "corno", "sourceCoursePrefix": "EUMUS-CORN", "progressIdPrefix": "fartes-eumus-corn", "officialLabel": "Corno", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "fagot", "sourceCoursePrefix": "EUMUS-FAG", "progressIdPrefix": "fartes-eumus-fag", "officialLabel": "Fagot", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "flauta", "sourceCoursePrefix": "EUMUS-FLAU", "progressIdPrefix": "fartes-eumus-flau", "officialLabel": "Flauta", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "guitarra", "sourceCoursePrefix": "EUMUS-GUIT", "progressIdPrefix": "fartes-eumus-guit", "officialLabel": "Guitarra", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "oboe", "sourceCoursePrefix": "EUMUS-OBOE", "progressIdPrefix": "fartes-eumus-oboe", "officialLabel": "Oboe", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "organo", "sourceCoursePrefix": "EUMUS-ORGA", "progressIdPrefix": "fartes-eumus-orga", "officialLabel": "Órgano", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "percusion", "sourceCoursePrefix": "EUMUS-PERC", "progressIdPrefix": "fartes-eumus-perc", "officialLabel": "Percusión", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "piano", "sourceCoursePrefix": "EUMUS-PIAN", "progressIdPrefix": "fartes-eumus-pian", "officialLabel": "Piano", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "saxofon", "sourceCoursePrefix": "EUMUS-SAXO", "progressIdPrefix": "fartes-eumus-saxo", "officialLabel": "Saxofón", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "trombon", "sourceCoursePrefix": "EUMUS-TROB", "progressIdPrefix": "fartes-eumus-trob", "officialLabel": "Trombón", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "trompeta", "sourceCoursePrefix": "EUMUS-TROP", "progressIdPrefix": "fartes-eumus-trop", "officialLabel": "Trompeta", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "viola", "sourceCoursePrefix": "EUMUS-VIOL", "progressIdPrefix": "fartes-eumus-viol", "officialLabel": "Viola", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "violin", "sourceCoursePrefix": "EUMUS-VLIN", "progressIdPrefix": "fartes-eumus-vlin", "officialLabel": "Violín", "credits": 18, "requirementIds": ["option-specific"] },
+    { "id": "violoncello", "sourceCoursePrefix": "EUMUS-CELO", "progressIdPrefix": "fartes-eumus-celo", "officialLabel": "Violonchelo", "credits": 18, "requirementIds": ["option-specific"] }
+  ],
+  "sourceOnlyBlocks": [
+    { "sourceOnlyId": "interpretacion-plan-introduccion-universidad", "progressId": "fartes-interpretacion-plan-introduccion-universidad", "officialLabel": "Introducción a la Universidad", "credits": 1, "requirementId": "common-core", "reason": "Bedelías conserva IU23, IU24 e IUN sin una equivalencia oficial que identifique cuál corresponde a la fila estable del Plan." },
+    { "sourceOnlyId": "interpretacion-plan-armonia-1", "progressId": "fartes-interpretacion-plan-armonia-1", "officialLabel": "Armonía 1", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "interpretacion-plan-armonia-2", "progressId": "fartes-interpretacion-plan-armonia-2", "officialLabel": "Armonía 2", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "interpretacion-plan-armonia-3", "progressId": "fartes-interpretacion-plan-armonia-3", "officialLabel": "Armonía 3", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "interpretacion-plan-armonia-4", "progressId": "fartes-interpretacion-plan-armonia-4", "officialLabel": "Armonía 4", "credits": 4, "requirementId": "common-core", "reason": "Bedelías conserva las series ARM y ARMO; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "interpretacion-plan-repertorio-1", "progressId": "fartes-interpretacion-plan-repertorio-1", "officialLabel": "Repertorio 1", "credits": 2, "requirementId": "common-core", "reason": "Bedelías conserva las series REP y RPT; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "interpretacion-plan-repertorio-2", "progressId": "fartes-interpretacion-plan-repertorio-2", "officialLabel": "Repertorio 2", "credits": 2, "requirementId": "common-core", "reason": "Bedelías conserva las series REP y RPT; el Plan no publica un código que permita elegir una sin inferencia." },
+    { "sourceOnlyId": "interpretacion-plan-repertorio-3", "progressId": "fartes-interpretacion-plan-repertorio-3", "officialLabel": "Repertorio 3", "credits": 2, "requirementId": "common-core", "reason": "Bedelías conserva las series REP y RPT; el Plan no publica un código que permita elegir una sin inferencia." },
+
+    { "sourceOnlyId": "interpretacion-plan-seminario-1", "progressId": "fartes-interpretacion-plan-seminario-1", "officialLabel": "Seminario de Interpretación · semestre 1", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+    { "sourceOnlyId": "interpretacion-plan-seminario-2", "progressId": "fartes-interpretacion-plan-seminario-2", "officialLabel": "Seminario de Interpretación · semestre 2", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+    { "sourceOnlyId": "interpretacion-plan-seminario-3", "progressId": "fartes-interpretacion-plan-seminario-3", "officialLabel": "Seminario de Interpretación · semestre 3", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+    { "sourceOnlyId": "interpretacion-plan-seminario-4", "progressId": "fartes-interpretacion-plan-seminario-4", "officialLabel": "Seminario de Interpretación · semestre 4", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+    { "sourceOnlyId": "interpretacion-plan-seminario-5", "progressId": "fartes-interpretacion-plan-seminario-5", "officialLabel": "Seminario de Interpretación · semestre 5", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+    { "sourceOnlyId": "interpretacion-plan-seminario-6", "progressId": "fartes-interpretacion-plan-seminario-6", "officialLabel": "Seminario de Interpretación · semestre 6", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+    { "sourceOnlyId": "interpretacion-plan-seminario-7", "progressId": "fartes-interpretacion-plan-seminario-7", "officialLabel": "Seminario de Interpretación · semestre 7", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+    { "sourceOnlyId": "interpretacion-plan-seminario-8", "progressId": "fartes-interpretacion-plan-seminario-8", "officialLabel": "Seminario de Interpretación · semestre 8", "credits": 1, "requirementId": "degree-core", "reason": "El Plan publica un cupo semestral estable, no una edición ni un código de seminario concreto." },
+
+    { "sourceOnlyId": "interpretacion-plan-pianista-acompanante-1", "progressId": "fartes-interpretacion-plan-pianista-acompanante-1", "officialLabel": "Práctica con pianista acompañante 1", "credits": 1, "requirementId": "option-specific", "reason": "Bedelías conserva aliases PPA y PPAC; el Plan no publica código para resolverlos." },
+    { "sourceOnlyId": "interpretacion-plan-pianista-acompanante-2", "progressId": "fartes-interpretacion-plan-pianista-acompanante-2", "officialLabel": "Práctica con pianista acompañante 2", "credits": 1, "requirementId": "option-specific", "reason": "Bedelías conserva aliases PPA y PPAC; el Plan no publica código para resolverlos." },
+    { "sourceOnlyId": "interpretacion-plan-pianista-acompanante-3", "progressId": "fartes-interpretacion-plan-pianista-acompanante-3", "officialLabel": "Práctica con pianista acompañante 3", "credits": 1, "requirementId": "option-specific", "reason": "Bedelías conserva aliases PPA y PPAC; el Plan no publica código para resolverlos." },
+    { "sourceOnlyId": "interpretacion-plan-pianista-acompanante-4", "progressId": "fartes-interpretacion-plan-pianista-acompanante-4", "officialLabel": "Práctica con pianista acompañante 4", "credits": 1, "requirementId": "option-specific", "reason": "Bedelías conserva aliases PPA y PPAC; el Plan no publica código para resolverlos." },
+    { "sourceOnlyId": "interpretacion-plan-idioma-italiano", "progressId": "fartes-interpretacion-plan-idioma-italiano", "officialLabel": "Idioma italiano", "credits": 4, "requirementId": "option-specific", "reason": "Bedelías conserva más de una identidad de Italiano y el Plan no publica código." },
+    { "sourceOnlyId": "interpretacion-plan-idioma-3", "progressId": "fartes-interpretacion-plan-idioma-3", "officialLabel": "Idioma (francés o alemán) · semestre 3", "credits": 4, "requirementId": "option-specific", "reason": "El Plan exige idiomas distintos entre francés y alemán, sin fijar su orden ni código." },
+    { "sourceOnlyId": "interpretacion-plan-idioma-4", "progressId": "fartes-interpretacion-plan-idioma-4", "officialLabel": "Idioma (francés o alemán) · semestre 4", "credits": 4, "requirementId": "option-specific", "reason": "El Plan exige idiomas distintos entre francés y alemán, sin fijar su orden ni código." },
+    { "sourceOnlyId": "interpretacion-plan-actividad-graduacion-corno", "progressId": "fartes-interpretacion-plan-actividad-graduacion-corno", "officialLabel": "Actividad de Graduación · Corno", "credits": 15, "requirementId": "graduation", "reason": "El Plan exige la actividad, pero la composición no publica una identidad específica inequívoca para Corno." },
+    { "sourceOnlyId": "actividad-graduacion-trombon", "progressId": "fartes-actividad-graduacion-trombon", "officialLabel": "Actividad de Graduación · Trombón", "credits": 15, "requirementId": "graduation", "reason": "El Plan exige la actividad, pero la composición no publica una identidad específica inequívoca para Trombón; se preserva el ID ya publicado." }
+  ],
+  "sharedPeriods": [
+    { "label": "Semestre 1", "courseRefs": ["fartes-eumus-lect1", "fartes-eumus-lst1", "fartes-eumus-rm", "interpretacion-plan-introduccion-universidad", "interpretacion-plan-armonia-1", "fartes-eumus-acus", "interpretacion-plan-seminario-1", "fartes-eumus-sens1"] },
+    { "label": "Semestre 2", "courseRefs": ["fartes-eumus-lect2", "fartes-eumus-lst2", "fartes-eumus-hmus1", "interpretacion-plan-repertorio-1", "interpretacion-plan-armonia-2", "interpretacion-plan-seminario-2", "fartes-eumus-sens2"] },
+    { "label": "Semestre 3", "courseRefs": ["fartes-eumus-lect3", "fartes-eumus-lst3", "fartes-eumus-hmus2", "interpretacion-plan-repertorio-2", "interpretacion-plan-armonia-3", "interpretacion-plan-seminario-3"] },
+    { "label": "Semestre 4", "courseRefs": ["fartes-eumus-lect4", "fartes-eumus-mpttc", "fartes-eumus-hmus3", "interpretacion-plan-repertorio-3", "interpretacion-plan-armonia-4", "interpretacion-plan-seminario-4"] },
+    { "label": "Semestre 5", "courseRefs": ["fartes-eumus-lect5", "fartes-eumus-hmus4", "fartes-eumus-cpt1", "fartes-eumus-ana1", "fartes-eumus-pdc4", "interpretacion-plan-seminario-5"] },
+    { "label": "Semestre 6", "courseRefs": ["fartes-eumus-lect6", "fartes-eumus-hmus5", "fartes-eumus-cpt2", "fartes-eumus-ana2", "fartes-eumus-pdc5", "interpretacion-plan-seminario-6"] },
+    { "label": "Semestre 7", "courseRefs": ["fartes-eumus-ana3", "fartes-eumus-pdc6", "interpretacion-plan-seminario-7"] },
+    { "label": "Semestre 8", "courseRefs": ["fartes-eumus-ana4", "fartes-eumus-pdc7", "interpretacion-plan-seminario-8"] }
+  ],
+  "trajectories": [
+    {
+      "id": "opcion-canto",
+      "label": "Canto",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Canto",
+      "admissionStatus": "open-2026",
+      "description": "Mención oficial incluida en la admisión 2026. Reproduce la grilla propia de Canto y conserva idiomas y acompañamiento sin resolver aliases técnicos por inferencia.",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-cant1", "fartes-eumus-pc1", "fartes-eumus-arte1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-cant2", "fartes-eumus-pc2", "fartes-eumus-arte2", "interpretacion-plan-idioma-italiano"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-cant3", "fartes-eumus-pc3", "fartes-eumus-arte3", "interpretacion-plan-idioma-3"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-cant4", "fartes-eumus-pc4", "fartes-eumus-arte4", "interpretacion-plan-idioma-4"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-cant5", "interpretacion-plan-pianista-acompanante-1", "fartes-eumus-pc5", "fartes-eumus-arte5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-cant6", "interpretacion-plan-pianista-acompanante-2", "fartes-eumus-pc6", "fartes-eumus-arte6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-cant7", "interpretacion-plan-pianista-acompanante-3", "fartes-eumus-pc7", "fartes-eumus-arte7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-cant8", "interpretacion-plan-pianista-acompanante-4", "fartes-eumus-pc8", "fartes-eumus-arte8", "fartes-eumus-agcan"] }
+      ]
+    },
+    {
+      "id": "opcion-clarinete",
+      "label": "Clarinete",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Clarinete",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "clarinete",
+      "graduationRef": "fartes-eumus-agcla",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-cla1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-cla2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-cla3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-cla4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-cla5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-cla6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-cla7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-cla8", "fartes-eumus-agcla"] }
+      ]
+    },
+    {
+      "id": "opcion-contrabajo",
+      "label": "Contrabajo",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Contrabajo",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "contrabajo",
+      "graduationRef": "fartes-eumus-agcon",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-cont1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-cont2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-cont3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-cont4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-cont5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-cont6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-cont7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-cont8", "fartes-eumus-agcon"] }
+      ]
+    },
+    {
+      "id": "opcion-corno",
+      "label": "Corno",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Corno",
+      "admissionStatus": "continuity-only",
+      "instrumentSeriesId": "corno",
+      "graduationRef": "interpretacion-plan-actividad-graduacion-corno",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-corn1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-corn2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-corn3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-corn4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-corn5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-corn6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-corn7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-corn8", "interpretacion-plan-actividad-graduacion-corno"] }
+      ]
+    },
+    {
+      "id": "opcion-fagot",
+      "label": "Fagot",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Fagot",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "fagot",
+      "graduationRef": "fartes-eumus-agfag",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-fag1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-fag2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-fag3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-fag4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-fag5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-fag6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-fag7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-fag8", "fartes-eumus-agfag"] }
+      ]
+    },
+    {
+      "id": "opcion-flauta",
+      "label": "Flauta",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Flauta",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "flauta",
+      "graduationRef": "fartes-eumus-agfla",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-flau1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-flau2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-flau3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-flau4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-flau5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-flau6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-flau7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-flau8", "fartes-eumus-agfla"] }
+      ]
+    },
+    {
+      "id": "opcion-guitarra",
+      "label": "Guitarra",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Guitarra",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "guitarra",
+      "graduationRef": "fartes-eumus-aggui",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-guit1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-guit2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-guit3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-guit4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-guit5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-guit6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-guit7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-guit8", "fartes-eumus-aggui"] }
+      ]
+    },
+    {
+      "id": "opcion-oboe",
+      "label": "Oboe",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Oboe",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "oboe",
+      "graduationRef": "fartes-eumus-agobo",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-oboe1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-oboe2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-oboe3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-oboe4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-oboe5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-oboe6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-oboe7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-oboe8", "fartes-eumus-agobo"] }
+      ]
+    },
+    {
+      "id": "opcion-organo",
+      "label": "Órgano",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Órgano",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "organo",
+      "graduationRef": "fartes-eumus-agorg",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-orga1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-orga2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-orga3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-orga4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-orga5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-orga6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-orga7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-orga8", "fartes-eumus-agorg"] }
+      ]
+    },
+    {
+      "id": "opcion-percusion",
+      "label": "Percusión",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Percusión",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "percusion",
+      "graduationRef": "fartes-eumus-agper",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-perc1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-perc2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-perc3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-perc4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-perc5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-perc6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-perc7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-perc8", "fartes-eumus-agper"] }
+      ]
+    },
+    {
+      "id": "opcion-piano",
+      "label": "Piano",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Piano",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "piano",
+      "graduationRef": "fartes-eumus-agpia",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-pian1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-pian2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-pian3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-pian4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-pian5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-pian6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-pian7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-pian8", "fartes-eumus-agpia"] }
+      ]
+    },
+    {
+      "id": "opcion-saxofon",
+      "label": "Saxofón",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Saxofón",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "saxofon",
+      "graduationRef": "fartes-eumus-agsax",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-saxo1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-saxo2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-saxo3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-saxo4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-saxo5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-saxo6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-saxo7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-saxo8", "fartes-eumus-agsax"] }
+      ]
+    },
+    {
+      "id": "opcion-trombon",
+      "label": "Trombón",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Trombón",
+      "admissionStatus": "continuity-only",
+      "instrumentSeriesId": "trombon",
+      "graduationRef": "actividad-graduacion-trombon",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-trob1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-trob2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-trob3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-trob4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-trob5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-trob6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-trob7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-trob8", "actividad-graduacion-trombon"] }
+      ]
+    },
+    {
+      "id": "opcion-trompeta",
+      "label": "Trompeta",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Trompeta",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "trompeta",
+      "graduationRef": "fartes-eumus-agtro",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-trop1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-trop2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-trop3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-trop4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-trop5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-trop6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-trop7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-trop8", "fartes-eumus-agtro"] }
+      ]
+    },
+    {
+      "id": "opcion-viola",
+      "label": "Viola",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Viola",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "viola",
+      "graduationRef": "fartes-eumus-agvla",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-viol1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-viol2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-viol3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-viol4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-viol5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-viol6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-viol7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-viol8", "fartes-eumus-agvla"] }
+      ]
+    },
+    {
+      "id": "opcion-violin",
+      "label": "Violín",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Violín",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "violin",
+      "graduationRef": "fartes-eumus-agvli",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-vlin1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-vlin2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-vlin3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-vlin4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-vlin5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-vlin6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-vlin7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-vlin8", "fartes-eumus-agvli"] }
+      ]
+    },
+    {
+      "id": "opcion-violoncello",
+      "label": "Violonchelo",
+      "credentialTitle": "Licenciado en Interpretación Musical con mención Violonchelo",
+      "admissionStatus": "open-2026",
+      "instrumentSeriesId": "violoncello",
+      "graduationRef": "fartes-eumus-agcel",
+      "specificPeriods": [
+        { "label": "Semestre 1", "courseRefs": ["fartes-eumus-celo1", "fartes-eumus-pctc1"] },
+        { "label": "Semestre 2", "courseRefs": ["fartes-eumus-celo2", "fartes-eumus-pdc1"] },
+        { "label": "Semestre 3", "courseRefs": ["fartes-eumus-celo3", "fartes-eumus-pdc2"] },
+        { "label": "Semestre 4", "courseRefs": ["fartes-eumus-celo4", "fartes-eumus-pdc3"] },
+        { "label": "Semestre 5", "courseRefs": ["fartes-eumus-celo5"] },
+        { "label": "Semestre 6", "courseRefs": ["fartes-eumus-celo6"] },
+        { "label": "Semestre 7", "courseRefs": ["fartes-eumus-celo7"] },
+        { "label": "Semestre 8", "courseRefs": ["fartes-eumus-celo8", "fartes-eumus-agcel"] }
+      ]
+    }
+  ],
+  "authorityPolicy": {
+    "verifiedProjectionBasis": [
+      "exact-plan-row-and-bedelias-identity",
+      "source-only-grid-block"
+    ],
+    "candidatePolicy": "Toda entrada de Bedelías que no corresponde inequívocamente a una fila estable de las grillas permanece candidata, incluidas las ediciones de seminarios, electivas, proyectos y aliases técnicos.",
+    "separatedPlanIds": [
+      "bedelias-fartes-licenciatura-en-musica-2005",
+      "bedelias-fartes-licenciatura-en-composicion-1987",
+      "bedelias-fartes-licenciatura-en-direccion-coral-1987",
+      "bedelias-fartes-licenciatura-en-direccion-orquestal-1987",
+      "bedelias-fartes-licenciatura-en-musicologia-1987"
+    ]
+  },
+  "bedeliasComparison": {
+    "snapshotPath": "data/bedelias/fartes-licenciatura-en-interpretacion-musical-2005.json",
+    "snapshotContentHash": "sha256:e567afd8e54fc6ee04280fa76c5015d135ddda25b84e029b7b424927cff0c159",
+    "compositionEntryCount": 6440,
+    "compositionCredits": 31306,
+    "verifiedTechnicalCourseCount": 200,
+    "sourceOnlyGridBlockCount": 25,
+    "candidateRetainedCount": 824,
+    "interpretation": "Las 200 identidades técnicas inequívocas conservan sus IDs de progreso; la composición repite una segunda ocurrencia técnica de Práctica de Coro 2 con el mismo código, fuera de la grilla. Las 25 filas sin código inequívoco se representan como bloques sólo-fuente y las otras 824 entradas permanecen candidatas sin integrar las grillas normales."
+  },
+  "conflicts": [
+    {
+      "field": "durationMonths",
+      "resolution": "Bedelías informa 60 meses, pero el Plan 2005 define ocho semestres. La proyección conserva 48 meses y 360 créditos."
+    },
+    {
+      "field": "currentOptions",
+      "resolution": "Bedelías mantiene Corno y Trombón para estudiantes activos; la admisión 2026 no los enumera. Se conservan como menciones de continuidad sin presentarlas como ingreso abierto."
+    },
+    {
+      "field": "cantoSemester3StageCredits",
+      "resolution": "La página vigente transcribe 4 créditos de Arte Escénico en el semestre 3 de Canto, pero el Plan PDF imprime 6 y el subtotal oficial de 44 sólo cierra con 6. Prevalece el Plan, sin prorrateo."
+    },
+    {
+      "field": "cantoSemester5Counterpoint",
+      "resolution": "La página vigente omite Contrapunto en el semestre 5 de Canto, aunque el Plan PDF lo incluye con 4 créditos y el subtotal de 41 lo requiere. Prevalece el Plan."
+    },
+    {
+      "field": "ambiguousTechnicalAliases",
+      "resolution": "Introducción a la Universidad, Armonías, Repertorios, seminarios, práctica con pianista e idiomas tienen aliases u ofertas variables sin código resuelto por el Plan. Se usan bloques sólo-fuente y las variantes técnicas permanecen candidatas."
+    },
+    {
+      "field": "flatFlexibleOffer",
+      "resolution": "Los catálogos electivos, seminarios y proyectos especiales varían por edición. Se controlan sus mínimos o cupos estables, pero no se incorporan todas las alternativas de Bedelías como obligaciones ni como oferta vigente."
+    }
+  ],
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "value": "sha256:8e4e9abae7370d086b858adc7daf66f10c934a791c66cae00ffa04e94cb529ba",
+    "sourceHashes": {
+      "fartes-interpretacion-plan-2005": "sha256:61a1a58ce6aeaa3da36b24c7035d204566a4f06252664f2a7c4e2dac59194552",
+      "fartes-interpretacion-current-career-page": "sha256:e3c6bcac540541e57323fd2bda7e96430d534a86aa347446fb36fd96eabb2b42",
+      "fartes-interpretacion-admission-2026": "sha256:b2fd75349e3637c7f8e1a928102922c5f350a5b62180568e79e93ca5ffbbcd9c"
+    }
+  }
+}
