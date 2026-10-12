@@ -26,3 +26,8 @@ Nodo implementado. `bedelias-cure-tecnicatura-en-artes-artes-plasticas-y-visuale
 - Regeneración offline: `npm run trajectory:cure-artes-plasticas-2013`. Dos ejecuciones consecutivas produjeron las mismas huellas: proyección `sha256:fa2784f9362c0f04f8518f34564d29ec510c898bee0752d681a6109e641c571d`, registro de auditorías `sha256:7fa682830ebb51b62c4db95af40f81c02257bf08cc1b5b7aa997fd2652cfefab`, revisiones `sha256:02721384db9317dbfcf03004bb717f723e67cb511fdaf07871783a9c100845df` e inventario `sha256:be51ceae96a8c8a6379864e9344a43c1ff0d4380e9ecb414bd5848364286cd48`.
 - AP07 y AP15 se modelan como dos cupos semestrales de contenido variable; no se acumulan todas sus ediciones o propuestas. INUNI y AP16 permanecen candidatas recuperables fuera de la trayectoria y el catálogo normal. Los IDs de progreso `cure-*` se preservan y no se articulan con Rivera 2017.
 - No corresponde agregar esta carrera a `docs/carreras-a-actualizar.md`: las fuentes cotejadas muestran una oferta completa y vigente, no una implementación progresiva, malla futura ni cobertura territorial parcial.
+
+## Integración
+
+- Implementación aislada `ad210ce`; integrada en `main` como `9897d4f`.
+- Verificación del resultado combinado: `npm test` (1046/1046), `npm run lint` y `git diff --check`, todas correctas. No se hizo push ni despliegue en este nodo.
