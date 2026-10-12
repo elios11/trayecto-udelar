@@ -42,3 +42,8 @@ El comando es offline: parte de `data/fartes/musica-2005.json`, del snapshot `da
 - `npm run lint`: pasó sin observaciones.
 - `git diff --check`: pasó sin errores.
 - La comprobación funcional en navegador no pudo ejecutarse porque la sesión no expuso ningún proveedor de navegador; la compilación de producción sí pasó. La inspección visual obligatoria de las tablas PDF se realizó sobre las páginas 16–19 renderizadas localmente.
+
+## Integración
+
+- Implementación aislada `8371829`; integrada en `main` como `fd513f4`.
+- Verificación del resultado combinado: `npm test` (1053/1053), `npm run lint` y `git diff --check`, todas correctas. No se hizo push ni despliegue en este nodo.
