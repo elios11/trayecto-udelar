@@ -47,3 +47,9 @@ git diff --check
 ```
 
 El focal controla fuentes y huellas, diecisiete selectores, ocho períodos por mención, 1005 ubicaciones oficiales, cargas semestrales, IDs compartidos, mínimos no acumulativos, Actividad de Graduación, frontera de autoridad, continuidad 2026 y separación de planes.
+
+## Integración
+
+- Commit aislado: `742d6a6`; incorporado a `main` como `b2fe92a`.
+- Sobre el resultado combinado: `npm test` pasó (1057/1057) y `npm run lint` pasó. `git diff --check` no reportó errores.
+- No se hizo push ni despliegue. La revisión visual de la aplicación queda pendiente; las pruebas anteriores validan datos y comportamiento automatizado, no la pantalla en un navegador.
