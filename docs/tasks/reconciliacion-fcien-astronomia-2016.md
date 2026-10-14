@@ -40,3 +40,9 @@ La regeneración valida las huellas de evidencia y snapshot, actualiza auditorí
 - Commit aislado: `08d8405`; incorporado a `main` como `dbe5bfb`.
 - Resultado combinado: `npm test` pasó (1057/1057), `npm run lint` pasó y `git diff --check HEAD^ HEAD` quedó limpio.
 - La revisión visual en navegador no se realizó. No hubo push ni despliegue; `research-pending` sigue abierto.
+
+## Corrección de fuente oficial identificada — 2026-10-14
+
+La conclusión anterior fue incompleta. El [Plan 2016 publicado en el Diario Oficial](https://www.impo.com.uy/diariooficial/2017/03/30/avisos.pdf), páginas PDF 56–57 (páginas impresas 74–75), contiene literalmente el «Anexo 2: Trayectoria sugerida», con ocho semestres y materias nominales. El usuario aportó además una [copia del Departamento de Astronomía](https://www.astronomia.edu.uy/depto/cca/docs/LicenciaturaAstronomia.pdf); su servidor no respondió durante esta revisión, pero su URL y procedencia se conservan para cotejo. La versión modificada en 2023 enlazada desde EVA continúa inaccesible directamente; comparar cualquier cambio comprobable antes de afirmar que el anexo 2017 reproduce la versión vigente sin reservas.
+
+Siguiente nodo: versionar las ocho filas semestrales del anexo con huella y correspondencias, reemplazar el fallback generado por la trayectoria **sugerida** institucional, mantener los bloques optativos/electivos como flexibles y preservar los IDs de progreso. Las materias de la tabla sin código Bedelías inequívoco deben figurar como identidades de fuente sin código inventado; no promover el resto de Bedelías por similitud. Probar que cada materia nominal tenga al menos una representación en Currícula y que el planificador conserve las opciones verificadas. Regenerar auditoría e inventario sin red y dejar explícita la reserva sobre la modificación 2023.
