@@ -17,3 +17,20 @@ Nodo preparado para implementación. `bedelias-fcien-licenciatura-en-astronomia-
 - Probar estado, períodos y materias visibles —si hay malla oficial—, mínimos/áreas y 360 créditos, catálogo del planificador, flexibilidad y frontera `verified`/`candidate`. Verificar que ningún resultado sustituya ocho semestres *estimados* por ocho períodos inventados.
 - Actualizar `docs/carreras-a-actualizar.md` sólo si se acredita malla futura, implementación progresiva o recorrido/sede parcial; `PROJECT_CONTEXT.md` sólo ante decisión transversal confirmada.
 - Ejecutar focales, `npm test`, `npm run lint` si se cambia código y `git diff --check`. Crear commit aislado, informar riesgos; no push ni despliegue desde el worktree.
+
+## Resultado de la investigación — 2026-10-14
+
+- El enlace al Plan 2016 modificado en 2023 que publica el Departamento devuelve HTTP 404. El registro institucional alternativo de Colibri identifica el Plan 916/2016 de la carrera 300 y el archivo `PLAST_2016.pdf`; la descarga automatizada del PDF fue rechazada por el filtro de tráfico, por lo que no se atribuyen cambios de 2023 no cotejados.
+- La evidencia institucional indexada describe un currículo individual aprobado por la Comisión de Carrera, pero también exige que se ofrezca una implementación concreta. La guía de ingreso 2026 de Facultad remite unidades y, para algunas carreras, trayectorias sugeridas a EVA. No se halló una trayectoria pública, vigente y reproducible específica de Astronomía ni una declaración que pruebe su ausencia. El estado se conserva como `research-pending` con cero períodos temporales oficiales reproducidos.
+- Los programas Colibri de `AS20` y `AS28` verifican que ambas unidades pertenecen a la carrera 300, Plan 916/2016. Sus créditos se cotejan con el snapshot versionado de Bedelías. Las restantes identidades continúan como candidatas y no satisfacen requisitos oficiales en la presentación generada.
+- Los ocho semestres publicados son una duración estimada de 48 meses. No se crean ocho períodos ni se distribuyen materias por inferencia.
+
+## Artefactos y regeneración
+
+- Evidencia normalizada: `data/fcien/astronomia-2016-trajectory-review.json`.
+- Snapshot reutilizado: `data/bedelias/fcien-licenciatura-en-astronomia-2016.json`, SHA-256 `93f3b4cb616c6a0666fd22ce5724453d7dbbc1f3bac11d2d9ad3dbeaea4e5a3a`.
+- Huella canónica de las porciones institucionales: `sha256:d77c9985f94b06f3c1fe7a4c9896251bcb7b53df4af9fd2957d2d3245120cac6`.
+- Regeneración offline: `npm run trajectory:fcien-astronomia-2016`.
+- Conteo esperado: 187 registros proyectados; 2 materias reales verificadas (`AS20`, `AS28`), 1 bloque de validación verificado y 184 candidatas. El fallback visible contiene sólo las dos materias cotejadas en un bloque generado no temporal; el resto del catálogo permanece recuperable como candidato.
+
+La regeneración valida las huellas de evidencia y snapshot, actualiza auditoría, proyección, colas e inventario y falla si cambia la frontera de autoridad o aparece un período inferido. Para comprobar determinismo, ejecutar el comando dos veces y comparar las huellas de todos los artefactos modificados. La próxima revisión requiere una implementación o trayectoria vigente publicada por la Comisión/EVA con identidades y períodos reproducibles, o una declaración institucional explícita de que no existe una secuencia oficial.

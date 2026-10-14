@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:fb6c57eab03c5ba72a9ded8509e4434cca5535ee071ef70deec6dace94ab6894",
-    "extractedReportHash": "sha256:2fcab59aae592337dcb89141a2631c7c69ae8f6a33c3467d9da65654c78443f4",
-    "officialAuditHash": "sha256:d7eb46013cdb2ab70db6b52e6b8ed69108a5b254f96591a80e399497e5fc9598",
-    "reviewedTrajectoriesHash": "sha256:d05ada0abc52338f7338af4790eb9d7115230d8b3c2cfc325b9dc1cc806c3250"
+    "extractedReportHash": "sha256:cb12b503bf6796d0a98ddeef8561b39af169319f781966ba4ef66ad167bbc344",
+    "officialAuditHash": "sha256:06499264c938567c430c6f2f611bc257d358732edf05e1466b01073a04374cc5",
+    "reviewedTrajectoriesHash": "sha256:f7c97cbeee5c0e23ebffef6fbdd68d67231e9a039946c523f62b8d548ca01902"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -373,7 +373,7 @@
         "serviceIds": [
           "bedelias-fcien"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "El Plan acredita una estructura flexible individual y exige ofrecer una implementación concreta; Facultad remite orientación a EVA, pero no se obtuvo una propuesta pública y reproducible específica de Astronomía. No se puede reproducir una malla vigente ni demostrar su ausencia."
       },
       {
         "priority": 2,
@@ -5459,32 +5459,44 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-27",
-      "effectiveAt": "2016",
+      "reviewedAt": "2026-10-14",
+      "effectiveAt": "2016-2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios y Reglamento 2016, Facultad de Ciencias, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24439/1/PLAST_2016.pdf",
-          "role": "título; ocho semestres; 360 créditos; mínimos por área; optativas y electivas; experiencias obligatorias; tutoría; aprobación del currículo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Departamento de Astronomía, Facultad de Ciencias",
+          "authority": "Departamento de Astronomía, Facultad de Ciencias, Universidad de la República",
           "url": "https://astronomia.fcien.edu.uy/carrera/licenciatura",
-          "role": "vigencia; cuatro años; 360 créditos; estructura por áreas; Montevideo",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-14",
+          "role": "vigencia, 360 créditos, duración estimada de ocho semestres, áreas temáticas y sede Montevideo"
         },
         {
-          "authority": "Repositorio Colibri, Udelar",
+          "authority": "Departamento de Astronomía y EVA de Facultad de Ciencias, Universidad de la República",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/165106/mod_resource/content/4/PlanyReglamentoAstronomia2016modif2023.pdf",
+          "reviewedAt": "2026-10-14",
+          "role": "enlace institucional al Plan 2016 modificado en 2023; devolvió HTTP 404 y no aporta una malla reproducible"
+        },
+        {
+          "authority": "Repositorio Colibri, Universidad de la República",
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24439",
-          "role": "Plan 2016; código de carrera 300; responsabilidad de Facultad de Ciencias",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-14",
+          "role": "copia institucional alternativa del Plan 2016, carrera 300 y plan 916"
         },
         {
-          "authority": "Dirección General de Planeamiento, Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
-          "role": "oferta vigente; Plan 2016; cuatro años; 360 créditos; Montevideo",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://9.80.fcien.edu.uy/noticias/3657-generacion-2026-preguntas-frecuentes",
+          "reviewedAt": "2026-10-14",
+          "role": "orientación por carrera y trayectorias de algunas carreras alojadas en EVA, sin identificar la propuesta específica de Astronomía"
+        },
+        {
+          "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24438?mode=full",
+          "reviewedAt": "2026-10-14",
+          "role": "programa exacto de AS20 Astronomía Fundamental para carrera 300 y Plan 916/2016"
+        },
+        {
+          "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/36799",
+          "reviewedAt": "2026-10-14",
+          "role": "programa exacto de AS28 Astronomía Galáctica y Extragaláctica para carrera 300 y Plan 916/2016"
         }
       ],
       "scope": {
@@ -5502,17 +5514,21 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en astronomia:2016",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-astronomia-2016.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fcien/astronomia-2016-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-astronomia-2016.json",
+        "publicTemporalPeriodCount": 0,
+        "verifiedRealCourseCount": 2,
+        "verifiedValidationBlockCount": 1,
+        "candidateRetainedCount": 184,
+        "generatedFallback": true,
+        "reason": "El Plan acredita una estructura flexible individual y exige ofrecer una implementación concreta; Facultad remite orientación a EVA, pero no se obtuvo una propuesta pública y reproducible específica de Astronomía. No se puede reproducir una malla vigente ni demostrar su ausencia."
       },
       "conflictNotes": [
-        "flexibleMinimum: Bedelías publica 40 créditos mínimos en el grupo padre Electivas-Optativas, igual a la suma de los submínimos 10+30. El Plan exige 360 totales y establece rangos 10-20/30-40; por ello el bloque combinado se normaliza a 50 manteniendo los dos submínimos.",
-        "personalProfile: El Plan usa la palabra perfil para el diseño individual mediante optativas y electivas. No denomina perfiles certificados ni cambia el título; la UI lo presenta como formación personalizada.",
-        "prerequisites: El Reglamento aclara que no hay cursos específicos obligatorios como previaturas para cursar; existen umbrales globales de créditos y recomendaciones. La UI conserva las reglas publicadas por Bedelías sin reinterpretar recomendaciones como bloqueos adicionales.",
-        "catalogSize: Los 1.755 créditos de los 180 registros y las 186 apariciones de composición son oferta acumulada y flexible. El requisito real es cumplir los mínimos y 360 créditos, no aprobar el catálogo completo."
+        "Los ocho semestres publicados son una duración estimada, no ocho períodos curriculares ni evidencia para distribuir materias.",
+        "El enlace oficial a la versión modificada en 2023 devuelve HTTP 404; Colibri conserva el Plan 2016, pero no se atribuyen cambios de 2023 sin cotejo.",
+        "AS20 y AS28 se verifican por programas institucionales exactos; las otras 184 identidades proyectadas siguen candidatas y no aportan a los mínimos mientras no exista evidencia curricular específica.",
+        "El recorrido visible se fuerza como no temporal, orientativo y generado por Trayecto; no se atribuye al Departamento ni a la Comisión de Carrera."
       ]
     },
     {
@@ -13486,5 +13502,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:cb575b6fd239941f245b050cd12424c7b8bcddb80a787d67ef438f936d8ddaff"
+  "contentHash": "sha256:5ca290966e8ec066c46ffad8d8029ca9cdf54cf4cb34414f46285247429a58df"
 }

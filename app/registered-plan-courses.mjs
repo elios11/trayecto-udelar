@@ -153,7 +153,7 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
     description: hasOfficialPeriodCourses
       ? publishedPathway.description
       : forcedGeneratedFallback
-        ? "Recorrido no temporal y provisorio construido por Trayecto con materias candidatas de la composición de Bedelías. No es una trayectoria sugerida por la institución y será sustituido al reconciliar la malla oficial."
+        ? "Recorrido no temporal y provisorio construido por Trayecto con materias candidatas y materias cotejadas de la composición de Bedelías. No es una trayectoria sugerida por la institución y será sustituido al reconciliar la malla oficial."
         : "Orden provisorio construido por Trayecto desde la composición de Bedelías, priorizando materias verificadas y dejando las opciones adicionales en un catálogo flexible. No es una trayectoria sugerida por la institución y será sustituido al reconciliar la malla oficial.",
   };
 }

@@ -2,6 +2,76 @@
   "schemaVersion": 1,
   "reviews": [
     {
+      "planId": "bedelias-fcien-licenciatura-en-astronomia-2016",
+      "state": "research-pending",
+      "reviewedAt": "2026-10-14",
+      "effectiveAt": "2016-2026",
+      "projectionMechanism": "official-flexible-structure",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "formacion-personalizada"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Departamento de Astronomía, Facultad de Ciencias, Universidad de la República",
+          "url": "https://astronomia.fcien.edu.uy/carrera/licenciatura",
+          "reviewedAt": "2026-10-14",
+          "role": "vigencia, 360 créditos, duración estimada de ocho semestres, áreas temáticas y sede Montevideo"
+        },
+        {
+          "authority": "Departamento de Astronomía y EVA de Facultad de Ciencias, Universidad de la República",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/165106/mod_resource/content/4/PlanyReglamentoAstronomia2016modif2023.pdf",
+          "reviewedAt": "2026-10-14",
+          "role": "enlace institucional al Plan 2016 modificado en 2023; devolvió HTTP 404 y no aporta una malla reproducible"
+        },
+        {
+          "authority": "Repositorio Colibri, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24439",
+          "reviewedAt": "2026-10-14",
+          "role": "copia institucional alternativa del Plan 2016, carrera 300 y plan 916"
+        },
+        {
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://9.80.fcien.edu.uy/noticias/3657-generacion-2026-preguntas-frecuentes",
+          "reviewedAt": "2026-10-14",
+          "role": "orientación por carrera y trayectorias de algunas carreras alojadas en EVA, sin identificar la propuesta específica de Astronomía"
+        },
+        {
+          "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24438?mode=full",
+          "reviewedAt": "2026-10-14",
+          "role": "programa exacto de AS20 Astronomía Fundamental para carrera 300 y Plan 916/2016"
+        },
+        {
+          "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/36799",
+          "reviewedAt": "2026-10-14",
+          "role": "programa exacto de AS28 Astronomía Galáctica y Extragaláctica para carrera 300 y Plan 916/2016"
+        }
+      ],
+      "evidence": {
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fcien/astronomia-2016-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-astronomia-2016.json",
+        "publicTemporalPeriodCount": 0,
+        "verifiedRealCourseCount": 2,
+        "verifiedValidationBlockCount": 1,
+        "candidateRetainedCount": 184,
+        "generatedFallback": true,
+        "reason": "El Plan acredita una estructura flexible individual y exige ofrecer una implementación concreta; Facultad remite orientación a EVA, pero no se obtuvo una propuesta pública y reproducible específica de Astronomía. No se puede reproducir una malla vigente ni demostrar su ausencia."
+      },
+      "conflictNotes": [
+        "Los ocho semestres publicados son una duración estimada, no ocho períodos curriculares ni evidencia para distribuir materias.",
+        "El enlace oficial a la versión modificada en 2023 devuelve HTTP 404; Colibri conserva el Plan 2016, pero no se atribuyen cambios de 2023 sin cotejo.",
+        "AS20 y AS28 se verifican por programas institucionales exactos; las otras 184 identidades proyectadas siguen candidatas y no aportan a los mínimos mientras no exista evidencia curricular específica.",
+        "El recorrido visible se fuerza como no temporal, orientativo y generado por Trayecto; no se atribuye al Departamento ni a la Comisión de Carrera."
+      ]
+    },
+    {
       "planId": "bedelias-cur-licenciatura-en-educacion-fisica-2014",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-10-09",

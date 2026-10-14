@@ -282,7 +282,8 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
     return courseIds.filter((id) => allowedIds.has(id));
   };
   const generatedFallbackFields = (trajectory) => {
-    if (audit?.identity !== "tecnicatura universitaria en bienes culturales:2021" || trajectory.generatedFallback !== true) return {};
+    if (!["tecnicatura universitaria en bienes culturales:2021", "licenciatura en astronomia:2016"].includes(audit?.identity)
+      || trajectory.generatedFallback !== true) return {};
     const knownCourseIds = new Set((officialCurriculum?.courses ?? []).map((course) => course.id));
     const courseIds = (trajectory.generatedFallbackCourseIds ?? [])
       .map((sourceId) => officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId)
