@@ -34,3 +34,9 @@ Nodo preparado para implementación. `bedelias-fcien-licenciatura-en-astronomia-
 - Conteo esperado: 187 registros proyectados; 2 materias reales verificadas (`AS20`, `AS28`), 1 bloque de validación verificado y 184 candidatas. El fallback visible contiene sólo las dos materias cotejadas en un bloque generado no temporal; el resto del catálogo permanece recuperable como candidato.
 
 La regeneración valida las huellas de evidencia y snapshot, actualiza auditoría, proyección, colas e inventario y falla si cambia la frontera de autoridad o aparece un período inferido. Para comprobar determinismo, ejecutar el comando dos veces y comparar las huellas de todos los artefactos modificados. La próxima revisión requiere una implementación o trayectoria vigente publicada por la Comisión/EVA con identidades y períodos reproducibles, o una declaración institucional explícita de que no existe una secuencia oficial.
+
+## Integración
+
+- Commit aislado: `08d8405`; incorporado a `main` como `dbe5bfb`.
+- Resultado combinado: `npm test` pasó (1057/1057), `npm run lint` pasó y `git diff --check HEAD^ HEAD` quedó limpio.
+- La revisión visual en navegador no se realizó. No hubo push ni despliegue; `research-pending` sigue abierto.
