@@ -279,7 +279,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-fcien-licenciatura-en-astronomia-2016": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-astronomia-2016.json"),
     pathwayIds: ["formacion-personalizada"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Trayectoria sugerida",
     minCredits: 360,
   },
   "bedelias-fcien-licenciatura-en-bioquimica-2017": {

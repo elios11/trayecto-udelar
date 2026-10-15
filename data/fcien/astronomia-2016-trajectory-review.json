@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "planId": "bedelias-fcien-licenciatura-en-astronomia-2016",
   "auditIdentity": "licenciatura en astronomia:2016",
   "reviewedAt": "2026-10-14",
@@ -10,20 +10,15 @@
     "durationMonths": 48,
     "durationQualification": "duración estimada de ocho semestres (cuatro años)",
     "minimumCredits": 360,
-    "trajectoryStatus": "research-pending"
+    "trajectoryStatus": "official-trajectory-reproduced",
+    "trajectoryEffectiveAt": "2023-2026"
   },
   "scope": {
-    "campuses": [
-      {
-        "id": "montevideo",
-        "label": "Montevideo",
-        "coverage": "carrera completa"
-      }
-    ],
+    "campuses": [{ "id": "montevideo", "label": "Montevideo", "coverage": "carrera completa" }],
     "singlePlan": true,
     "singleCredential": true,
     "personalizedCurriculum": true,
-    "officialTemporalPeriodsReproduced": 0
+    "officialTemporalPeriodsReproduced": 8
   },
   "sources": [
     {
@@ -32,99 +27,42 @@
       "authority": "Departamento de Astronomía, Facultad de Ciencias, Universidad de la República",
       "consultedAt": "2026-10-14",
       "publicationState": "página vigente al consultar",
-      "supports": [
-        "vigencia",
-        "360 créditos",
-        "duración estimada de ocho semestres (cuatro años)",
-        "estructura por áreas",
-        "Montevideo"
-      ]
+      "supports": ["vigencia", "360 créditos", "duración estimada de ocho semestres", "áreas", "Montevideo", "enlace al Plan modificado en 2023"]
     },
     {
-      "id": "modified-plan-2023-link",
+      "id": "modified-plan-2023-indexed",
       "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/165106/mod_resource/content/4/PlanyReglamentoAstronomia2016modif2023.pdf",
       "authority": "Departamento de Astronomía y EVA de Facultad de Ciencias, Universidad de la República",
       "consultedAt": "2026-10-14",
-      "publicationState": "enlace oficial vigente en la página del Departamento, pero el recurso directo devuelve HTTP 404",
-      "accessStatus": "http-404",
-      "supports": [
-        "el Departamento identifica esta URL como Plan 2016 y reglamento",
-        "el contenido institucional indexado conserva el diseño individual, la aprobación de la Comisión y la obligación de ofrecer una implementación concreta"
-      ],
-      "doesNotSupport": [
-        "una malla reproducible por períodos",
-        "la ausencia de una trayectoria sugerida"
-      ]
+      "publicationState": "el archivo directo devuelve HTTP 404, pero el PDF institucional permanece indexado íntegramente y la página vigente del Departamento conserva el enlace",
+      "accessStatus": "http-404-search-index-complete",
+      "supports": ["Anexo 2: Trayectoria sugerida", "ocho semestres nominales", "rótulos actualizados de la oferta estable 2023", "tres espacios optativa/electiva"],
+      "doesNotSupport": ["códigos técnicos para todas las unidades", "oferta efectiva posterior a 2023"]
+    },
+    {
+      "id": "impo-plan-2017",
+      "url": "https://www.impo.com.uy/diariooficial/2017/03/30/avisos.pdf",
+      "authority": "Diario Oficial, IMPO; reglamento aprobado por Consejo de Facultad de Ciencias y Consejo Directivo Central",
+      "consultedAt": "2026-10-14",
+      "publicationState": "publicación normativa accesible, páginas PDF 56-57 (impresas 74-75), líneas web 10682-10722",
+      "supports": ["Plan 2016", "Anexo 2: Trayectoria sugerida", "ocho semestres nominales", "bloques flexibles"]
+    },
+    {
+      "id": "department-plan-copy",
+      "url": "https://www.astronomia.edu.uy/depto/cca/docs/LicenciaturaAstronomia.pdf",
+      "authority": "Departamento de Astronomía, Facultad de Ciencias, Universidad de la República",
+      "consultedAt": "2026-10-14",
+      "publicationState": "URL institucional aportada por el usuario; el servidor no respondió durante la revisión",
+      "accessStatus": "server-no-response",
+      "doesNotSupport": ["cotejo reproducible de versión o contenido en esta revisión"]
     },
     {
       "id": "colibri-plan-record",
       "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24439",
       "authority": "Repositorio Colibri, Universidad de la República",
       "consultedAt": "2026-10-14",
-      "publicationState": "registro institucional accesible; la descarga automatizada del PDF fue bloqueada por el filtro de tráfico",
-      "supports": [
-        "Plan 2016",
-        "código de carrera 300",
-        "código de plan 916",
-        "responsabilidad de Facultad de Ciencias",
-        "copia institucional alternativa PLAST_2016.pdf"
-      ]
-    },
-    {
-      "id": "udelar-career-page",
-      "url": "https://udelar.edu.uy/carrera/licenciatura-en-astronomia",
-      "authority": "Portal central de la Universidad de la República",
-      "consultedAt": "2026-10-14",
-      "publicationState": "ficha vigente al consultar",
-      "supports": [
-        "vigencia",
-        "48 meses",
-        "360 créditos",
-        "Facultad de Ciencias"
-      ]
-    },
-    {
-      "id": "fcien-generation-2026",
-      "url": "https://9.80.fcien.edu.uy/noticias/3657-generacion-2026-preguntas-frecuentes",
-      "authority": "Facultad de Ciencias, Universidad de la República",
-      "consultedAt": "2026-10-14",
-      "publicationState": "preguntas frecuentes vigentes de la generación 2026",
-      "supports": [
-        "las unidades sugeridas por carrera se publican en espacios EVA",
-        "algunas carreras conservan trayectorias sugeridas dentro de EVA",
-        "SGAE conserva las unidades curriculares básicas"
-      ],
-      "doesNotSupport": [
-        "cuáles períodos o unidades corresponden específicamente a Astronomía"
-      ]
-    },
-    {
-      "id": "colibri-program-as20",
-      "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24438?mode=full",
-      "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
-      "consultedAt": "2026-10-14",
-      "publicationState": "programa institucional 2020",
-      "supports": [
-        "AS20 Astronomía Fundamental integra la Licenciatura en Astronomía, carrera 300, Plan 916/2016"
-      ],
-      "doesNotSupport": [
-        "período sugerido",
-        "créditos vigentes por sí solo"
-      ]
-    },
-    {
-      "id": "colibri-program-as28",
-      "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/36799",
-      "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
-      "consultedAt": "2026-10-14",
-      "publicationState": "programa institucional 2023, dictado desde 2022",
-      "supports": [
-        "AS28 Astronomía Galáctica y Extragaláctica integra la Licenciatura en Astronomía, carrera 300, Plan 916/2016"
-      ],
-      "doesNotSupport": [
-        "período sugerido",
-        "créditos vigentes por sí solo"
-      ]
+      "publicationState": "registro y PDF institucional del Plan 2016 accesibles e indexados",
+      "supports": ["Plan 2016", "carrera 300", "plan 916", "Facultad de Ciencias", "PLAST_2016.pdf"]
     },
     {
       "id": "bedelias-snapshot",
@@ -134,203 +72,173 @@
       "publicationState": "snapshot institucional versionado",
       "snapshotPath": "data/bedelias/fcien-licenciatura-en-astronomia-2016.json",
       "contentHash": "sha256:93f3b4cb616c6a0666fd22ce5724453d7dbbc1f3bac11d2d9ad3dbeaea4e5a3a",
-      "supports": [
-        "identidades administrativas",
-        "créditos vigentes",
-        "asignación de área",
-        "previaturas contrastables"
-      ],
-      "doesNotSupport": [
-        "inclusión curricular vigente por sí sola",
-        "semestre",
-        "obligatoriedad",
-        "trayectoria sugerida"
-      ]
+      "supports": ["identidades técnicas", "créditos", "áreas", "previaturas"],
+      "doesNotSupport": ["inclusión vigente por sí sola", "semestre", "obligatoriedad"]
     }
   ],
   "requirements": [
-    {
-      "id": "mathematics",
-      "name": "Matemática",
-      "minCredits": 70
-    },
-    {
-      "id": "physics",
-      "name": "Física",
-      "minCredits": 100
-    },
-    {
-      "id": "astronomy",
-      "name": "Astronomía",
-      "minCredits": 90
-    },
-    {
-      "id": "computational-methods",
-      "name": "Métodos Computacionales",
-      "minCredits": 20
-    },
-    {
-      "id": "social-human-sciences",
-      "name": "Ciencias Sociales y Humanas",
-      "minCredits": 8
-    },
+    { "id": "mathematics", "name": "Matemática", "shortName": "Matemática", "minCredits": 70 },
+    { "id": "physics", "name": "Física", "shortName": "Física", "minCredits": 100 },
+    { "id": "astronomy", "name": "Astronomía", "shortName": "Astronomía", "minCredits": 90 },
+    { "id": "computational-methods", "name": "Métodos Computacionales", "shortName": "Computacionales", "minCredits": 20 },
+    { "id": "social-human-sciences", "name": "Ciencias Sociales y Humanas", "shortName": "Sociales y humanas", "minCredits": 8 },
     {
       "id": "training-experiences",
       "name": "Experiencias de Formación",
+      "shortName": "Experiencias",
       "minCredits": 22,
       "children": [
-        {
-          "id": "research-initiation",
-          "name": "Iniciación a la Investigación",
-          "minCredits": 12
-        },
-        {
-          "id": "training-practice",
-          "name": "Práctica de Formación",
-          "minCredits": 10
-        }
+        { "id": "research-initiation", "name": "Iniciación a la Investigación", "shortName": "Investigación", "minCredits": 12 },
+        { "id": "training-practice", "name": "Práctica de Formación", "shortName": "Práctica", "minCredits": 10 }
       ]
     },
     {
       "id": "flexible",
       "name": "Optativas y electivas",
+      "shortName": "Flexibles",
       "minCredits": 50,
       "children": [
-        {
-          "id": "optional",
-          "name": "Optativas",
-          "minCredits": 30
-        },
-        {
-          "id": "elective",
-          "name": "Electivas",
-          "minCredits": 10
-        }
+        { "id": "optional", "name": "Optativas", "shortName": "Optativas", "minCredits": 30 },
+        { "id": "elective", "name": "Electivas", "shortName": "Electivas", "minCredits": 10 }
       ]
     }
   ],
-  "trajectoryConclusion": {
-    "state": "research-pending",
-    "reason": "El Plan define una formación flexible y un currículo individual aprobado por la Comisión, pero también exige que se ofrezca una implementación concreta. Facultad de Ciencias remite unidades y, para algunas carreras, trayectorias sugeridas a EVA. Sin acceso reproducible a la propuesta específica de Astronomía no se puede afirmar ni reproducir una malla vigente ni demostrar su ausencia.",
-    "durationIsNotPeriodEvidence": true,
-    "publicTemporalPeriods": [],
-    "nextReviewCondition": "Obtener de la Comisión de Carrera o de un espacio institucional público la implementación o trayectoria sugerida vigente de Astronomía, con períodos e identidades reproducibles, o una declaración explícita de que no existe una secuencia oficial."
-  },
-  "catalogMatches": [
+  "trajectories": [
     {
-      "sourceCourseId": "AS20",
-      "officialLabel": "Astronomía Fundamental",
-      "bedeliasName": "ASTRONOMÍA FUNDAMENTAL",
-      "credits": 11,
-      "inclusionSourceId": "colibri-program-as20",
-      "creditsSourceId": "bedelias-snapshot"
-    },
-    {
-      "sourceCourseId": "AS28",
-      "officialLabel": "Astronomía Galáctica y Extragaláctica",
-      "bedeliasName": "ASTRONOMÍA GALÁCTICA Y EXTRAGALÁCTICA (2022-",
-      "credits": 12,
-      "inclusionSourceId": "colibri-program-as28",
-      "creditsSourceId": "bedelias-snapshot"
+      "id": "formacion-personalizada",
+      "label": "Trayectoria sugerida (2023)",
+      "description": "Trayectoria sugerida del Anexo 2 modificado en 2023. Ordena una implementación posible de un currículo flexible; las optativas y electivas se eligen con tutoría y aprobación de la Comisión de Carrera.",
+      "sourceId": "modified-plan-2023-indexed",
+      "periods": [
+        { "label": "Primer semestre", "courseIds": ["MA428", "MA424", "FI183", "FI294"] },
+        { "label": "Segundo semestre", "courseIds": ["MA473", "MA472", "FI267", "FI06"] },
+        { "label": "Tercer semestre", "courseIds": ["MA07", "FI58", "FI08", "AS20"] },
+        { "label": "Cuarto semestre", "courseIds": ["MA486", "FI04", "FI10", "AS015"] },
+        { "label": "Quinto semestre", "courseIds": ["FI05", "FI007", "astronomia-probabilidad-bioestadistica", "AS020"] },
+        { "label": "Sexto semestre", "courseIds": ["FI19", "FI269", "A0006", "AS021"] },
+        { "label": "Séptimo semestre", "courseIds": ["astronomia-ciencias-sociales-humanas", "FI57", "astronomia-optativa-electiva-s7", "AS28"] },
+        { "label": "Octavo semestre", "courseIds": ["astronomia-optativa-electiva-s8-1", "astronomia-optativa-electiva-s8-2", "FI182", "astronomia-practica-formacion"] }
+      ]
     }
   ],
+  "catalogMatches": [
+    { "sourceCourseId": "MA428", "officialLabel": "Cálculo Diferencial e Integral I", "bedeliasName": "CÁLCULO DIFERENCIAL E INTEGRAL 1 (2020-", "credits": 15, "requirementId": "mathematics", "period": "Primer semestre" },
+    { "sourceCourseId": "MA424", "officialLabel": "Álgebra Lineal y Geometría I", "bedeliasName": "ÁLGEBRA LINEAL Y GEOMETRÍA 1 (2020-", "credits": 12, "requirementId": "mathematics", "period": "Primer semestre" },
+    { "sourceCourseId": "FI183", "officialLabel": "Física General I", "bedeliasName": "FÍSICA GENERAL I", "credits": 15, "requirementId": "physics", "period": "Primer semestre" },
+    { "sourceCourseId": "FI294", "officialLabel": "Introducción a las Ciencias de la Tierra y el Espacio I", "bedeliasName": "INTRODUCCIÓN A LA CIENCIA DE LA TIERRA Y EL ESPACIO I (2026-", "credits": 11, "requirementId": "astronomy", "period": "Primer semestre" },
+    { "sourceCourseId": "MA473", "officialLabel": "Cálculo Diferencial e Integral II", "bedeliasName": "CÁLCULO DIFERENCIAL E INTEGRAL 2 (2022-", "credits": 15, "requirementId": "mathematics", "period": "Segundo semestre" },
+    { "sourceCourseId": "MA472", "officialLabel": "Álgebra Lineal y Geometría II", "bedeliasName": "ÁLGEBRA LINEAL Y GEOMETRÍA 2 (2022-", "credits": 12, "requirementId": "mathematics", "period": "Segundo semestre" },
+    { "sourceCourseId": "FI267", "officialLabel": "Física General II", "bedeliasName": "FÍSICA GENERAL II (2021-", "credits": 13, "requirementId": "physics", "period": "Segundo semestre" },
+    { "sourceCourseId": "FI06", "officialLabel": "Introducción a las Ciencias de la Tierra y el Espacio II", "bedeliasName": "INTRODUCCIÓN A LA CIENCIA DE LA TIERRA Y EL ESPACIO II", "credits": 11, "requirementId": "astronomy", "period": "Segundo semestre" },
+    { "sourceCourseId": "MA07", "officialLabel": "Cálculo Vectorial y Complejo", "bedeliasName": "CÁLCULO VECTORIAL Y ANÁLISIS COMPLEJO", "credits": 13, "requirementId": "mathematics", "period": "Tercer semestre" },
+    { "sourceCourseId": "FI58", "officialLabel": "Mecánica Clásica", "bedeliasName": "MECÁNICA CLÁSICA (2022-", "credits": 14, "requirementId": "physics", "period": "Tercer semestre" },
+    { "sourceCourseId": "FI08", "officialLabel": "Física Moderna", "bedeliasName": "FÍSICA MODERNA", "credits": 12, "requirementId": "physics", "period": "Tercer semestre" },
+    { "sourceCourseId": "AS20", "officialLabel": "Astronomía Fundamental", "bedeliasName": "ASTRONOMÍA FUNDAMENTAL", "credits": 11, "requirementId": "astronomy", "period": "Tercer semestre" },
+    { "sourceCourseId": "MA486", "officialLabel": "Ecuaciones Diferenciales", "bedeliasName": "ECUACIONES DIFERENCIALES (2023-", "credits": 12, "requirementId": "mathematics", "period": "Cuarto semestre" },
+    { "sourceCourseId": "FI04", "officialLabel": "Termodinámica", "bedeliasName": "TERMODINÁMICA", "credits": 11, "requirementId": "physics", "period": "Cuarto semestre" },
+    { "sourceCourseId": "FI10", "officialLabel": "Electromagnetismo", "bedeliasName": "ELECTROMAGNETISMO (FCIEN)", "credits": 11, "requirementId": "physics", "period": "Cuarto semestre" },
+    { "sourceCourseId": "AS015", "officialLabel": "Técnicas Astronómicas", "bedeliasName": "TÉCNICAS ASTRONÓMICAS", "credits": 11, "requirementId": "astronomy", "period": "Cuarto semestre" },
+    { "sourceCourseId": "FI05", "officialLabel": "Ondas", "bedeliasName": "ONDAS", "credits": 11, "requirementId": "physics", "period": "Quinto semestre" },
+    { "sourceCourseId": "FI007", "officialLabel": "Mecánica Analítica", "bedeliasName": "MECÁNICA ANALÍTICA", "credits": 14, "requirementId": "physics", "period": "Quinto semestre" },
+    { "sourceCourseId": "AS020", "officialLabel": "Ciencias Planetarias", "bedeliasName": "CIENCIAS PLANETARIAS", "credits": 12, "requirementId": "astronomy", "period": "Quinto semestre" },
+    { "sourceCourseId": "FI19", "officialLabel": "Introducción a la Computación", "bedeliasName": "INTRODUCCIÓN A LA COMPUTACIÓN (FÍSICA)", "credits": 8, "requirementId": "computational-methods", "period": "Sexto semestre" },
+    { "sourceCourseId": "FI269", "officialLabel": "Mecánica Estadística", "bedeliasName": "MECÁNICA ESTADÍSTICA (2021-", "credits": 14, "requirementId": "physics", "period": "Sexto semestre" },
+    { "sourceCourseId": "A0006", "officialLabel": "Astrofísica Estelar", "bedeliasName": "ASTROFÍSICA ESTELAR (2022-", "credits": 12, "requirementId": "astronomy", "period": "Sexto semestre" },
+    { "sourceCourseId": "AS021", "officialLabel": "Dinámica Orbital", "bedeliasName": "DINÁMICA ORBITAL", "credits": 12, "requirementId": "astronomy", "period": "Sexto semestre" },
+    { "sourceCourseId": "FI57", "officialLabel": "Física Computacional", "bedeliasName": "FÍSICA COMPUTACIONAL (2020-", "credits": 14, "requirementId": "computational-methods", "period": "Séptimo semestre" },
+    { "sourceCourseId": "AS28", "officialLabel": "Astronomía Galáctica y Extragaláctica", "bedeliasName": "ASTRONOMÍA GALÁCTICA Y EXTRAGALÁCTICA (2022-", "credits": 12, "requirementId": "astronomy", "period": "Séptimo semestre" },
+    { "sourceCourseId": "FI182", "officialLabel": "Iniciación a la Investigación", "bedeliasName": "INICIACIÓN A LA INVESTIGACIÓN", "credits": 12, "requirementId": "research-initiation", "period": "Octavo semestre" }
+  ],
+  "sourceOnlyRows": [
+    { "identityKey": "astronomia-probabilidad-bioestadistica", "officialLabel": "Probabilidad / Bioestadística", "period": "Quinto semestre", "requirementId": "mathematics", "credits": 0, "creditsPublished": false, "curricularBlock": false, "catalogRole": "official-semester-choice" },
+    { "identityKey": "astronomia-ciencias-sociales-humanas", "officialLabel": "Ciencias Sociales y Humanas", "period": "Séptimo semestre", "requirementId": "social-human-sciences", "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-block" },
+    { "identityKey": "astronomia-optativa-electiva-s7", "officialLabel": "Optativa / Electiva", "period": "Séptimo semestre", "requirementId": "flexible", "additionalRequirementIds": ["optional", "elective"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "astronomia-optativa-electiva-s8-1", "officialLabel": "Optativa / Electiva I", "period": "Octavo semestre", "requirementId": "flexible", "additionalRequirementIds": ["optional", "elective"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "astronomia-optativa-electiva-s8-2", "officialLabel": "Optativa / Electiva II", "period": "Octavo semestre", "requirementId": "flexible", "additionalRequirementIds": ["optional", "elective"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "astronomia-practica-formacion", "officialLabel": "Práctica de Formación", "period": "Octavo semestre", "requirementId": "training-practice", "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-training-block" }
+  ],
+  "trajectoryConclusion": {
+    "state": "official-trajectory-reproduced",
+    "reason": "El Anexo 2 publicado en el Diario Oficial contiene ocho semestres nominales y el PDF modificado en 2023, aún enlazado por el Departamento e indexado por EVA, actualiza sus rótulos a la oferta estable 2023. Se reproduce como trayectoria sugerida y se mantienen sólo-fuente las elecciones sin código inequívoco.",
+    "durationIsNotPeriodEvidence": true,
+    "publicTemporalPeriods": ["Primer semestre", "Segundo semestre", "Tercer semestre", "Cuarto semestre", "Quinto semestre", "Sexto semestre", "Séptimo semestre", "Octavo semestre"],
+    "versionReservation": "El recurso directo modificado en 2023 devuelve HTTP 404. La reproducción usa su contenido institucional íntegramente indexado y lo contrasta con el Anexo 2 normativo de 2017; no afirma oferta efectiva posterior a 2023.",
+    "nextReviewCondition": "Revisar si el Departamento publica una copia directa accesible o una modificación posterior del Plan o de la trayectoria sugerida."
+  },
   "bedeliasComparison": {
     "snapshotContentHash": "sha256:93f3b4cb616c6a0666fd22ce5724453d7dbbc1f3bac11d2d9ad3dbeaea4e5a3a",
     "compositionMatterEntries": 186,
     "distinctSnapshotCourseRecords": 180,
-    "exactProgramMatches": 2,
-    "projectedCourseRecords": 187,
-    "verifiedRealCourseCount": 2,
+    "verifiedBedeliasCourseCount": 26,
+    "verifiedSourceOnlyCourseCount": 1,
+    "verifiedSourceOnlyBlockCount": 5,
+    "projectedCourseRecords": 193,
     "verifiedValidationBlockCount": 1,
-    "candidateRetainedCount": 184
+    "candidateRetainedCount": 160
   },
   "projectionBaseline": {
     "pathwayId": "formacion-personalizada",
-    "generatedFallback": true,
-    "generatedFallbackSourceCourseIds": [
-      "AS20",
-      "AS28"
-    ],
-    "temporalPeriodCount": 0,
+    "generatedFallback": false,
+    "temporalPeriodCount": 8,
+    "coursePlacementCount": 32,
     "allSnapshotOptionsRemainRecoverable": true
   },
   "authorityPolicy": {
-    "verifiedSourceCourseIds": [
-      "AS20",
-      "AS28"
-    ],
+    "verifiedSourceCourseIds": ["MA428", "MA424", "FI183", "FI294", "MA473", "MA472", "FI267", "FI06", "MA07", "FI58", "FI08", "AS20", "MA486", "FI04", "FI10", "AS015", "FI05", "FI007", "AS020", "FI19", "FI269", "A0006", "AS021", "FI57", "AS28", "FI182"],
+    "verifiedSourceOnlyIdentityKeys": ["astronomia-probabilidad-bioestadistica", "astronomia-ciencias-sociales-humanas", "astronomia-optativa-electiva-s7", "astronomia-optativa-electiva-s8-1", "astronomia-optativa-electiva-s8-2", "astronomia-practica-formacion"],
     "unmatchedBedeliasEntries": "candidate",
-    "candidateVisibility": "generated-route-and-audit",
+    "candidateVisibility": "audit-only",
     "candidateCreditsSatisfyRequirements": false,
     "bedeliasDoesNotAssignPeriods": true
   },
   "conflicts": [
-    {
-      "field": "modifiedPlanAvailability",
-      "resolution": "El Departamento enlaza una versión modificada en 2023 que devuelve HTTP 404. Colibri conserva el Plan 2016 y su texto institucional indexado, pero no se atribuyen cambios de 2023 que no puedan cotejarse."
-    },
-    {
-      "field": "trajectory",
-      "resolution": "El diseño individual no prueba ausencia de trayectoria sugerida: el propio Plan exige ofrecer una implementación concreta y Facultad remite orientación por carrera a EVA. Se conserva research-pending."
-    },
-    {
-      "field": "duration",
-      "resolution": "Los ocho semestres publicados son una duración estimada; no se transforman en ocho períodos ni se distribuyen materias por inferencia."
-    },
-    {
-      "field": "catalog",
-      "resolution": "AS20 y AS28 tienen programa institucional exacto para carrera 300/Plan 916. Las otras 184 identidades de la proyección permanecen candidatas; Bedelías por sí sola no demuestra inclusión vigente."
-    }
+    { "field": "modifiedPlanAvailability", "resolution": "El archivo modificado en 2023 devuelve HTTP 404 directo. Su contenido completo permanece indexado por EVA y coincide estructuralmente con el Anexo 2 normativo de 2017; no se infiere oferta posterior." },
+    { "field": "trajectory", "resolution": "Los ocho semestres tienen unidades nominales en el Anexo 2. Se presentan como trayectoria sugerida compatible con un currículo individual, no como secuencia obligatoria." },
+    { "field": "technicalIdentity", "resolution": "Se cotejan 26 identidades activas inequívocas por rótulo y área. Probabilidad/Bioestadística, Ciencias Sociales y Humanas, tres espacios Optativa/Electiva y Práctica de Formación permanecen sólo-fuente." },
+    { "field": "catalog", "resolution": "Las otras 160 entradas proyectadas de Bedelías permanecen candidatas recuperables y no satisfacen requisitos oficiales." }
   ],
   "sourcePortions": {
     "department-career-page": [
       "La Licenciatura en Astronomía requiere cumplir con un mínimo de 360 créditos, con una duración estimada de ocho semestres (cuatro años).",
-      "El plan de estudios se organiza en áreas temáticas: Matemática (20%), Física (30%), Astronomía (30%), Métodos computacionales (5%), Ciencias sociales y humanas (2%) y Opcionales (13%).",
-      "Departamentos donde se dicta: Montevideo."
+      "Plan de estudios 2016 y reglamento: PLAN DE LICENCIATURA EN ASTRONOMÍA 2016.",
+      "El plan se organiza en Matemática, Física, Astronomía, Métodos computacionales, Ciencias sociales y humanas y Opcionales."
     ],
     "modified-plan-2023-indexed": [
-      "La secuencia de créditos que el estudiante va generando a medida que avanza en la carrera se establece mediante un sistema de previaturas y una propuesta concreta de implementación de las áreas temáticas que se debe ofrecer, contemplando las pautas de este Plan.",
-      "El plan de créditos en asignaturas optativas de cada estudiante debe ser aprobado por la Comisión de Carrera.",
-      "Las asignaturas u otras actividades acreditables son elegidas por el estudiante, cumpliendo con los mínimos requeridos por cada área temática; esto se asegura mediante la aprobación del currículo por parte de la Comisión de Carrera."
+      "ANEXO 2: TRAYECTORIA SUGERIDA. *=pertenece a la Oferta Estable (2023).",
+      "Primer semestre: Cálculo Diferencial e Integral I; Álgebra Lineal y Geometría I; Física General I; Introd. a las Ciencias de la Tierra y el Espacio I.",
+      "Segundo semestre: Cálculo Diferencial e Integral II; Álgebra Lineal y Geometría II; Física General II; Introd. a las Ciencias de la Tierra y el Espacio II.",
+      "Tercer semestre: Cálculo Vectorial y Complejo; Mecánica Clásica; Física Moderna; Astronomía Fundamental.",
+      "Cuarto semestre: Ecuaciones Diferenciales; Termodinámica; Electromagnetismo; Técnicas Astronómicas.",
+      "Quinto semestre: Ondas; Mecánica Analítica; Probabilidad/Bioestadística; Ciencias Planetarias.",
+      "Sexto semestre: Introducción a la Computación; Mecánica Estadística; Astrofísica Estelar; Dinámica Orbital.",
+      "Séptimo semestre: Ciencias Sociales y Humanas; Física Computacional; Optativa/Electiva; Astronomía Galáctica y Extragaláctica.",
+      "Octavo semestre: Optativa/Electiva; Optativa/Electiva; Iniciación a la Investigación; Práctica de Formación."
+    ],
+    "impo-plan-2017": [
+      "Diario Oficial Nº 29.674, 30 de marzo de 2017, páginas impresas 74-75: ANEXO 2: TRAYECTORIA SUGERIDA.",
+      "El Anexo 2 distribuye unidades nominales en Primer a Octavo semestre; séptimo y octavo conservan Ciencias Sociales y Humanas, Física Computacional, tres espacios Optativa/Electiva, Astronomía Galáctica, Iniciación a la Investigación y Práctica de Formación.",
+      "Consejo Resolución Nº 84 del 05/12/2016 y C.D.C. Resolución Nº 29 del 07/03/2017, distribución Nº 121/17."
     ],
     "colibri-plan-record": [
       "Carrera: Licenciatura en Astronomía; código de carrera: 300; tipo: Grado.",
       "Plan de estudios de la Licenciatura en Astronomía; código de plan: 916; año: 2016.",
       "Responsable: Universidad de la República (Uruguay). Facultad de Ciencias; archivo: PLAST_2016.pdf."
     ],
-    "udelar-career-page": [
-      "Duración (meses): 48.",
-      "Créditos: 360.",
-      "Sede: Facultad de Ciencias."
-    ],
-    "fcien-generation-2026": [
-      "La información sobre las unidades curriculares a cursar en el primer semestre se encuentra en EVA dentro de los espacios correspondientes a cada carrera.",
-      "Algunas carreras disponen de trayectorias sugeridas publicadas en su sitio en EVA.",
-      "En el SGAE se puede acceder al Plan de estudio de cada carrera y ver cuáles son sus unidades curriculares básicas."
-    ],
-    "colibri-program-as20": [
-      "Programa de Astronomía Fundamental, código AS20_2020, unidad curricular AS20.",
-      "Licenciatura en Astronomía, carrera 300, Plan 916, Plan 2016.",
-      "Responsable: Facultad de Ciencias, Comisión de Carrera Licenciatura Astronomía."
-    ],
-    "colibri-program-as28": [
-      "Programa de Astronomía Galáctica y Extragaláctica, código AS28_2023, unidad curricular AS28.",
-      "Licenciatura en Astronomía, carrera 300, Plan 916, Plan 2016.",
-      "Responsable: Facultad de Ciencias, Comisión de Carrera Licenciatura Astronomía."
+    "bedelias-active-matches": [
+      "MA428, MA424, FI183, FI294, MA473, MA472, FI267, FI06, MA07, FI58, FI08, AS20, MA486, FI04, FI10, AS015, FI05, FI007, AS020, FI19, FI269, A0006, AS021, FI57, AS28 y FI182 son las 26 identidades técnicas activas cotejadas.",
+      "El snapshot conserva 186 apariciones de materia, 180 registros distintos y huella 93f3b4cb616c6a0666fd22ce5724453d7dbbc1f3bac11d2d9ad3dbeaea4e5a3a."
     ]
   },
   "fingerprint": {
     "algorithm": "sha256",
     "canonicalField": "sourcePortions",
-    "value": "sha256:d77c9985f94b06f3c1fe7a4c9896251bcb7b53df4af9fd2957d2d3245120cac6",
+    "value": "sha256:4df3db19100a7df8e9641c6a4fa11ca3d8a1c11d7580627591ee5754c3fd0826",
     "sourceHashes": {
-      "department-career-page": "sha256:e745f461ecaa385baa86f4dad6394de45ab85b59f0dff0ac93e78c60fb6d7dd9",
-      "modified-plan-2023-indexed": "sha256:50ecf1899ded125eae63246b041f5a94269214aaf5acc0f50134a605f5dcbf80",
+      "department-career-page": "sha256:f4fbcc0cf59ce9fcb6fc4a97c7aace672ac28e440988d672556c9a846b7b05e5",
+      "modified-plan-2023-indexed": "sha256:863417ee4f223f3d9b7ec518d64a6ca84da03d0a585be84cb5036930310f62ea",
+      "impo-plan-2017": "sha256:b8381728fefba09dd4cd8debfe3a338e6abd4b58377051a7aafafc4f667d3a5f",
       "colibri-plan-record": "sha256:a7b3603b9e53f5a8d9fc562af46fe49bb3205da3ca861633e86bdec3322d8229",
-      "udelar-career-page": "sha256:af0cc537d53f81146bd81fed0b35983a5a54432f75a2981df83bfa618b0cb844",
-      "fcien-generation-2026": "sha256:553dff4774efcf42412a0aa85742dac49daa7298af49d57f0bdbfd69987c62fc",
-      "colibri-program-as20": "sha256:444066e94440ba80d9ecf8371f74a92e834f023aa5fd1b6429fa49af0483feb9",
-      "colibri-program-as28": "sha256:0f19acdebf208da321809ae3926746ca09a0c5299df36bd772c8ee7b1ab04647"
+      "bedelias-active-matches": "sha256:0255c1d34f470ef821670fb38f6104dad157f689c15277915b638c05ff35fae9"
     }
   }
 }

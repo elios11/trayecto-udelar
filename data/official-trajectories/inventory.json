@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:fb6c57eab03c5ba72a9ded8509e4434cca5535ee071ef70deec6dace94ab6894",
-    "extractedReportHash": "sha256:cb12b503bf6796d0a98ddeef8561b39af169319f781966ba4ef66ad167bbc344",
-    "officialAuditHash": "sha256:06499264c938567c430c6f2f611bc257d358732edf05e1466b01073a04374cc5",
-    "reviewedTrajectoriesHash": "sha256:f7c97cbeee5c0e23ebffef6fbdd68d67231e9a039946c523f62b8d548ca01902"
+    "extractedReportHash": "sha256:1f53241a9bad5db0c3e117d61c8f3d97a184625a8d2ef238ca52ebea3e15c466",
+    "officialAuditHash": "sha256:d25ea7ad6470ba262217297c4cbe57422fa7146d6c11c7312cb38ae14626ae6c",
+    "reviewedTrajectoriesHash": "sha256:e67faef67bb5fa043bd79f2c9158a60c91d4ee4557bd7d245cfe8aaa36caa61b"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 106,
+      "official-trajectory-reproduced": 107,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 37
+      "research-pending": 36
     },
-    "pending": 38,
+    "pending": 37,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -122,10 +122,10 @@
         "serviceLabel": "Facultad de Ciencias",
         "selectablePlanIds": 14,
         "states": {
-          "official-trajectory-reproduced": 0,
+          "official-trajectory-reproduced": 1,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 14
+          "research-pending": 13
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 38,
+    "total": 37,
     "plans": [
       {
         "priority": 1,
@@ -365,15 +365,6 @@
           "bedelias-fcien"
         ],
         "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcien-licenciatura-en-astronomia-2016",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "El Plan acredita una estructura flexible individual y exige ofrecer una implementación concreta; Facultad remite orientación a EVA, pero no se obtuvo una propuesta pública y reproducible específica de Astronomía. No se puede reproducir una malla vigente ni demostrar su ausencia."
       },
       {
         "priority": 2,
@@ -657,7 +648,6 @@
           "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011",
           "bedelias-cure-tecnologo-minero-2013",
           "bedelias-fcien-licenciatura-biologia-humana-2004",
-          "bedelias-fcien-licenciatura-en-astronomia-2016",
           "bedelias-fcien-licenciatura-en-bioquimica-2017",
           "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
           "bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007",
@@ -5458,45 +5448,39 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
+      "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-10-14",
-      "effectiveAt": "2016-2026",
+      "effectiveAt": "2023-2026",
       "officialSources": [
         {
           "authority": "Departamento de Astronomía, Facultad de Ciencias, Universidad de la República",
           "url": "https://astronomia.fcien.edu.uy/carrera/licenciatura",
           "reviewedAt": "2026-10-14",
-          "role": "vigencia, 360 créditos, duración estimada de ocho semestres, áreas temáticas y sede Montevideo"
+          "role": "vigencia; 360 créditos; duración estimada de ocho semestres; áreas; Montevideo; enlace al Plan modificado en 2023"
         },
         {
           "authority": "Departamento de Astronomía y EVA de Facultad de Ciencias, Universidad de la República",
           "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/165106/mod_resource/content/4/PlanyReglamentoAstronomia2016modif2023.pdf",
           "reviewedAt": "2026-10-14",
-          "role": "enlace institucional al Plan 2016 modificado en 2023; devolvió HTTP 404 y no aporta una malla reproducible"
+          "role": "Anexo 2: Trayectoria sugerida; ocho semestres nominales; rótulos actualizados de la oferta estable 2023; tres espacios optativa/electiva; códigos técnicos para todas las unidades; oferta efectiva posterior a 2023"
+        },
+        {
+          "authority": "Diario Oficial, IMPO; reglamento aprobado por Consejo de Facultad de Ciencias y Consejo Directivo Central",
+          "url": "https://www.impo.com.uy/diariooficial/2017/03/30/avisos.pdf",
+          "reviewedAt": "2026-10-14",
+          "role": "Plan 2016; Anexo 2: Trayectoria sugerida; ocho semestres nominales; bloques flexibles"
+        },
+        {
+          "authority": "Departamento de Astronomía, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.astronomia.edu.uy/depto/cca/docs/LicenciaturaAstronomia.pdf",
+          "reviewedAt": "2026-10-14",
+          "role": "cotejo reproducible de versión o contenido en esta revisión"
         },
         {
           "authority": "Repositorio Colibri, Universidad de la República",
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24439",
           "reviewedAt": "2026-10-14",
-          "role": "copia institucional alternativa del Plan 2016, carrera 300 y plan 916"
-        },
-        {
-          "authority": "Facultad de Ciencias, Universidad de la República",
-          "url": "https://9.80.fcien.edu.uy/noticias/3657-generacion-2026-preguntas-frecuentes",
-          "reviewedAt": "2026-10-14",
-          "role": "orientación por carrera y trayectorias de algunas carreras alojadas en EVA, sin identificar la propuesta específica de Astronomía"
-        },
-        {
-          "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24438?mode=full",
-          "reviewedAt": "2026-10-14",
-          "role": "programa exacto de AS20 Astronomía Fundamental para carrera 300 y Plan 916/2016"
-        },
-        {
-          "authority": "Comisión de Carrera Licenciatura Astronomía, Facultad de Ciencias, Universidad de la República",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/36799",
-          "reviewedAt": "2026-10-14",
-          "role": "programa exacto de AS28 Astronomía Galáctica y Extragaláctica para carrera 300 y Plan 916/2016"
+          "role": "Plan 2016; carrera 300; plan 916; Facultad de Ciencias; PLAST_2016.pdf"
         }
       ],
       "scope": {
@@ -5508,27 +5492,35 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-current-trajectory-evidence",
+        "kind": "audited-projection",
         "sourceDataPath": "data/fcien/astronomia-2016-trajectory-review.json",
         "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-astronomia-2016.json",
-        "publicTemporalPeriodCount": 0,
-        "verifiedRealCourseCount": 2,
-        "verifiedValidationBlockCount": 1,
-        "candidateRetainedCount": 184,
-        "generatedFallback": true,
-        "reason": "El Plan acredita una estructura flexible individual y exige ofrecer una implementación concreta; Facultad remite orientación a EVA, pero no se obtuvo una propuesta pública y reproducible específica de Astronomía. No se puede reproducir una malla vigente ni demostrar su ausencia."
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:045bb655a30c0cd00b46326356af587be0162b224e396c5d426f2d31a9d71436",
+        "projectionContentHash": "sha256:c8a2ca62c5e269ec70e8f857894f7e224dedc02965ba1666c2bb28736e238cd1",
+        "pathways": [
+          {
+            "id": "formacion-personalizada",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 32,
+        "matchedCoursePlacements": 32
       },
       "conflictNotes": [
-        "Los ocho semestres publicados son una duración estimada, no ocho períodos curriculares ni evidencia para distribuir materias.",
-        "El enlace oficial a la versión modificada en 2023 devuelve HTTP 404; Colibri conserva el Plan 2016, pero no se atribuyen cambios de 2023 sin cotejo.",
-        "AS20 y AS28 se verifican por programas institucionales exactos; las otras 184 identidades proyectadas siguen candidatas y no aportan a los mínimos mientras no exista evidencia curricular específica.",
-        "El recorrido visible se fuerza como no temporal, orientativo y generado por Trayecto; no se atribuye al Departamento ni a la Comisión de Carrera."
+        "El archivo modificado en 2023 devuelve HTTP 404 directo. Su contenido completo permanece indexado por EVA y coincide estructuralmente con el Anexo 2 normativo de 2017; no se infiere oferta posterior.",
+        "Los ocho semestres tienen unidades nominales en el Anexo 2. Se presentan como trayectoria sugerida compatible con un currículo individual, no como secuencia obligatoria.",
+        "Se cotejan 26 identidades activas inequívocas por rótulo y área. Probabilidad/Bioestadística, Ciencias Sociales y Humanas, tres espacios Optativa/Electiva y Práctica de Formación permanecen sólo-fuente.",
+        "Las otras 160 entradas proyectadas de Bedelías permanecen candidatas recuperables y no satisfacen requisitos oficiales."
       ]
     },
     {
@@ -13502,5 +13494,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:5ca290966e8ec066c46ffad8d8029ca9cdf54cf4cb34414f46285247429a58df"
+  "contentHash": "sha256:fed8a6811f61fcef9cad9a729d340b210db6eefabc8b689eb8dca2acd047ab0b"
 }
