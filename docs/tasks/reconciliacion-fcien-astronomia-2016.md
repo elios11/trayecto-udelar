@@ -54,3 +54,9 @@ La conclusión anterior fue incompleta. El [Plan 2016 publicado en el Diario Ofi
 - Evidencia normalizada y huella canónica: `data/fcien/astronomia-2016-trajectory-review.json`, `sha256:4df3db19100a7df8e9641c6a4fa11ca3d8a1c11d7580627591ee5754c3fd0826`.
 - Regeneración offline: `npm run trajectory:fcien-astronomia-2016`. La ejecución reconstruye auditoría, revisión, proyección, colas e inventario y valida las 32 correspondencias de período.
 - Verificación focal: `node --test --experimental-test-isolation=none tests/fcien-astronomy-2016-official-audit.test.mjs`.
+
+## Integración correctiva
+
+- Commit aislado `8fff143`; integrado al `main` local más reciente como `3d6b4f9`, conservando la entrada de revisión de Bioquímica.
+- Regeneración offline ejecutada dos veces con hashes idénticos en los diez artefactos comprobados. `npm test` pasó (1058/1058), `npm run lint` pasó y `git diff HEAD^ HEAD --check` quedó limpio sobre el resultado combinado.
+- No se realizó validación visual de la app ni push o despliegue. La siguiente auditoría curricular puede seguir la cola de fuentes oficiales alternativas; no corresponde reabrir Astronomía salvo nueva publicación o conflicto de versión.
