@@ -392,8 +392,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fder-abogacia-2016": {
     load: () => import("./bedelias-generated/bedelias-fder-abogacia-2016.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["grilla-plan-2016"],
+    pathwayLabel: "Grilla oficial Plan 2016",
     minCredits: 450,
   },
   "bedelias-fder-licenciatura-en-relaciones-internacionales-2013": {

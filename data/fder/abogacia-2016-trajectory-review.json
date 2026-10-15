@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fder-abogacia-2016",
+  "auditIdentity": "abogacia:2016",
+  "reviewedAt": "2026-10-15",
+  "scope": {
+    "officialTemporalPeriodsReproduced": 10,
+    "campuses": ["Montevideo", "Salto"],
+    "canonicalPlanCount": 1,
+    "catalogPolicy": "Sólo se publican las unidades y cupos que la página o la grilla curricular vigente de FDER identifican exactamente. Las demás entradas de Bedelías permanecen candidatas recuperables."
+  },
+  "publication": {
+    "planYear": "2016",
+    "title": "Abogado",
+    "durationMonths": 60,
+    "minimumCredits": 450,
+    "currentAtReview": true,
+    "trajectoryStatus": "official-trajectory-reproduced",
+    "trajectoryEffectiveAt": "2023-12-20",
+    "intermediateTitle": "Procurador",
+    "intermediateMinimumCredits": 160
+  },
+  "sources": [
+    {
+      "id": "fder-career-page",
+      "url": "https://www.fder.edu.uy/node/4052",
+      "authority": "Facultad de Derecho, Universidad de la República",
+      "consultedAt": "2026-10-15",
+      "publicationState": "página vigente de Abogacía; enumera las unidades por año, semestre y área",
+      "supports": ["unidades nominales por semestre", "áreas", "créditos de cada unidad fija"],
+      "doesNotSupport": ["catálogo nominal permanente de optativas o electivas", "todos los cupos flexibles que sí aparecen en la grilla PDF"]
+    },
+    {
+      "id": "fder-grid-2024",
+      "url": "https://www.fder.edu.uy/sites/default/files/2024-05/grilla-abogac%C3%ADa-actualizada-20240527.pdf",
+      "authority": "Facultad de Derecho, Universidad de la República",
+      "consultedAt": "2026-10-15",
+      "publicationState": "PDF institucional de tres páginas publicado en mayo de 2024; grilla vigente al 26/12/2019 con modificaciones de 2019 y 2023",
+      "accessStatus": "downloaded-and-visually-inspected",
+      "documentSha256": "sha256:3f4269f33517c296173d2000dd108d53cd35ca09a054588b530f1389d06ee0b3",
+    "visuallyInspectedPdfPages": [1, 2, 3],
+      "supports": ["diez períodos 1.1 a 5.2", "cinco cupos optativos o electivos", "créditos por fila y semestre", "mínimos por seis áreas", "450 créditos"],
+      "doesNotSupport": ["identidades técnicas de todas las filas", "catálogo nominal de opciones", "una suma interna única sin conflicto"]
+    },
+    {
+      "id": "fder-plan-2016",
+      "url": "https://www.fder.edu.uy/node/529",
+      "authority": "Consejo de Facultad de Derecho y Consejo Directivo Central, Universidad de la República",
+      "consultedAt": "2026-10-15",
+      "publicationState": "Plan aprobado por Facultad el 18/06/2015 y 26/05/2016 y por el CDC el 19/07/2016",
+      "supports": ["título Abogado", "cinco años", "450 créditos", "seis mínimos de área", "flexibilidad", "certificado intermedio común"]
+    },
+    {
+      "id": "fder-procurador-2021",
+      "url": "https://www.fder.edu.uy/node/3873",
+      "authority": "Consejo de Facultad de Derecho, Universidad de la República",
+      "consultedAt": "2026-10-15",
+      "publicationState": "resolución del 16/06/2021 y grilla vigente para solicitar el título intermedio",
+      "supports": ["Procurador dentro de Abogacía y Notariado Plan 2016", "mínimo de 160 créditos", "unidades obligatorias", "alternativa de práctica", "créditos flexibles 4/2"]
+    },
+    {
+      "id": "fder-regional-audit",
+      "url": "https://www.cse.udelar.edu.uy/proyecto-financiado/evaluacion-de-la-implementacion-y-propuesta-de-ajustes-a-los-planes-de-estudio-de-abogacia-y-notariado-2016/",
+      "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+      "consultedAt": "2026-08-15",
+      "publicationState": "fuente ya auditada y versionada en data/bedelias/audits/official-source-audits.json",
+      "supports": ["implantación del mismo Plan 2016 en Montevideo y CENUR Litoral Norte desde 2017", "carácter flexible de optativas y electivas"]
+    },
+    {
+      "id": "bedelias-fder-snapshot",
+      "url": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+      "authority": "Sistema de Gestión Administrativa de la Enseñanza, Universidad de la República",
+      "consultedAt": "2026-08-13",
+      "publicationState": "snapshot institucional versionado",
+      "snapshotPath": "data/bedelias/fder-abogacia-2016.json",
+      "contentHash": "sha256:87b7b3c6438b23fcea9fd689a4668afc0c42302d611e3fb19afc2afe1bd865e6",
+      "supports": ["códigos técnicos", "créditos", "previaturas", "identidad histórica de progreso"],
+      "doesNotSupport": ["inclusión vigente por sí sola", "semestre oficial", "obligatoriedad"]
+    },
+    {
+      "id": "bedelias-cenurln-snapshot",
+      "url": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+      "authority": "Sistema de Gestión Administrativa de la Enseñanza, Universidad de la República",
+      "consultedAt": "2026-08-14",
+      "publicationState": "snapshot regional institucional versionado",
+      "snapshotPath": "data/bedelias/cenurln-abogacia-2016.json",
+      "contentHash": "sha256:a5b057423e4dfa42e3b8524cd2fe35eba479251e2546a0d0c3d53a2a0b7507d9",
+      "supports": ["mismo núcleo técnico de 65 unidades cotejadas", "oferta regional del plan canónico"],
+      "doesNotSupport": ["una currícula territorial distinta", "inclusión vigente de las 53 entradas flexibles regionales por sí sola"]
+    }
+  ],
+  "requirements": [
+    { "id": "socio-juridica", "name": "Formación socio-jurídica, teórico-jurídica y metodológica", "shortName": "Socio-jurídica", "minCredits": 66 },
+    { "id": "derecho-publico", "name": "Derecho público", "shortName": "Público", "minCredits": 114 },
+    { "id": "derecho-privado", "name": "Derecho privado", "shortName": "Privado", "minCredits": 90 },
+    { "id": "derecho-social", "name": "Derecho de carácter social específico", "shortName": "Social específico", "minCredits": 54 },
+    { "id": "practica-profesional", "name": "Práctica profesional", "shortName": "Práctica", "minCredits": 78 },
+    { "id": "flexibles", "name": "Optativas o electivas", "shortName": "Optativas/electivas", "minCredits": 48 }
+  ],
+  "trajectories": [
+    {
+      "id": "grilla-plan-2016",
+      "label": "Grilla oficial Plan 2016",
+      "description": "Distribución semestral publicada por Facultad de Derecho. Los cupos optativos o electivos pueden cursarse en cualquiera de los dos semestres del año correspondiente; la asignación a áreas y la validación final dependen de las unidades efectivamente elegidas.",
+      "sourceId": "fder-grid-2024",
+      "campusIds": ["montevideo", "salto"],
+      "periods": [
+        { "label": "1.1 · Primer semestre", "courseIds": ["11.1", "11.2", "11.3", "11.4", "11.8", "11.5", "11.6"] },
+        { "label": "1.2 · Segundo semestre", "courseIds": ["12.1", "12.10", "12.2", "12.3", "12.4", "12.5", "12.8", "12.6", "12.9", "12.7"] },
+        { "label": "2.1 · Tercer semestre", "courseIds": ["21.9", "21.6", "21.2", "21.3", "21.7", "21.8", "21.4", "21.5", "21.1"] },
+        { "label": "2.2 · Cuarto semestre", "courseIds": ["22.1", "22.2", "22.3", "22.4", "22.5", "abogacia-flex-2-2"] },
+        { "label": "3.1 · Quinto semestre", "courseIds": ["31.1", "31.2", "31.10", "31.3", "31.8", "31.9"] },
+        { "label": "3.2 · Sexto semestre", "courseIds": ["32.6", "32.1", "32.2", "32.3", "abogacia-flex-3-2"] },
+        { "label": "4.1 · Séptimo semestre", "courseIds": ["41.6", "41.8", "41.3", "41.4", "41.5", "41.1", "41.7"] },
+        { "label": "4.2 · Octavo semestre", "courseIds": ["42.1", "42.2", "42.6", "42.7", "42.5", "abogacia-flex-4-2"] },
+        { "label": "5.1 · Noveno semestre", "courseIds": ["51.7", "51.8", "51.9", "51.10", "51.11", "51.5", "abogacia-flex-5-1"] },
+        { "label": "5.2 · Décimo semestre", "courseIds": ["52.8", "52.9", "52.3", "52.5", "52.6", "52.7", "abogacia-flex-5-2"] }
+      ]
+    }
+  ],
+  "catalogMatches": [
+    { "sourceCourseId": "11.1", "officialLabel": "Taller de Análisis Crítico", "bedeliasName": "TALLER DE A.CRÍTICO CONSTITUCIONAL", "bedeliasCredits": 2, "credits": 2, "requirementId": "socio-juridica", "period": "1.1 · Primer semestre" },
+    { "sourceCourseId": "11.2", "officialLabel": "Constitucional", "bedeliasName": "CONSTITUCIONAL", "bedeliasCredits": 13, "credits": 13, "requirementId": "derecho-publico", "period": "1.1 · Primer semestre" },
+    { "sourceCourseId": "11.3", "officialLabel": "Ideas Jurídico-Políticas en la Construcción del Orden Moderno", "bedeliasName": "IDEAS JUR-POL. EN EL ORDEN MODERNO", "bedeliasCredits": 8, "credits": 8, "requirementId": "socio-juridica", "period": "1.1 · Primer semestre" },
+    { "sourceCourseId": "11.4", "officialLabel": "Sociedad y Derecho", "bedeliasName": "SOCIEDAD Y DERECHO", "bedeliasCredits": 7, "credits": 7, "requirementId": "socio-juridica", "period": "1.1 · Primer semestre" },
+    { "sourceCourseId": "11.8", "officialLabel": "Actividad Integrativa de Extensión e Investigación", "bedeliasName": "SOCIEDAD Y DERECHO-ACTIV.INTEG.", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "1.1 · Primer semestre" },
+    { "sourceCourseId": "11.5", "officialLabel": "Historia del Derecho", "bedeliasName": "HISTORIA DEL DERECHO", "bedeliasCredits": 6, "credits": 6, "requirementId": "socio-juridica", "period": "1.1 · Primer semestre" },
+    { "sourceCourseId": "11.6", "officialLabel": "Personas", "bedeliasName": "PERSONAS", "bedeliasCredits": 6, "credits": 6, "requirementId": "derecho-privado", "period": "1.1 · Primer semestre" },
+    { "sourceCourseId": "12.1", "officialLabel": "Taller de Lecto-Escritura Universitaria", "bedeliasName": "TALLER DE LECTO ESCRITURA UNIVERSITARIA", "bedeliasCredits": 4, "credits": 4, "requirementId": "socio-juridica", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.10", "officialLabel": "Taller Práctico de Lecto-Escritura", "bedeliasName": "TALLER PRÁCT.DE LECTOESCRITURA", "bedeliasCredits": 1, "credits": 1, "requirementId": "practica-profesional", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.2", "officialLabel": "Introducción al Fenómeno Jurídico", "bedeliasName": "INTRODUCCIÓN AL FENÓMENO JURÍDICO", "bedeliasCredits": 4, "credits": 4, "requirementId": "socio-juridica", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.3", "officialLabel": "Bienes", "bedeliasName": "BIENES", "bedeliasCredits": 6, "credits": 6, "requirementId": "derecho-privado", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.4", "officialLabel": "Introducción al Derecho Penal", "bedeliasName": "INTRODUCCIÓN AL DERECHO PENAL", "bedeliasCredits": 6, "credits": 6, "requirementId": "derecho-publico", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.5", "officialLabel": "Derecho Informático e Informática Jurídica 1", "bedeliasName": "D.INFORMÁTICO E INF.JURÍDICA 1", "bedeliasCredits": 4, "credits": 4, "requirementId": "socio-juridica", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.8", "officialLabel": "Taller Práctico de Derecho Informático e Informática Jurídica 1", "bedeliasName": "TALLER PRÁCT.D.INF.E INF.JURÍDICA 1", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.6", "officialLabel": "Ciencia Política", "bedeliasName": "CIENCIA POLÍTICA", "bedeliasCredits": 7, "credits": 7, "requirementId": "socio-juridica", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.9", "officialLabel": "Actividad Integrativa de Extensión e Investigación", "bedeliasName": "CIENCIA POLÍTICA-ACTIV.INTEGRATIVA", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "12.7", "officialLabel": "Derechos Humanos", "bedeliasName": "DERECHOS HUMANOS", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-social", "period": "1.2 · Segundo semestre" },
+    { "sourceCourseId": "21.9", "officialLabel": "Taller de Análisis Crítico de Obligaciones y Contratos", "bedeliasName": "TALLER A.CRÍTICO OBLIG. Y CONTRATOS", "bedeliasCredits": 2, "credits": 2, "requirementId": "socio-juridica", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.6", "officialLabel": "Obligaciones y Contratos", "bedeliasName": "OBLIGACIONES Y CONTRATOS", "bedeliasCredits": 12, "credits": 12, "requirementId": "derecho-privado", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.2", "officialLabel": "Economía, Derecho e Instituciones", "bedeliasName": "ECONOMÍA, DERECHO E INSTITUCIONES", "bedeliasCredits": 6, "credits": 6, "requirementId": "socio-juridica", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.3", "officialLabel": "Actividad Integrativa de Extensión e Investigación", "bedeliasName": "ECONOMÍA, DER. E INST.-ACT.INTEGRATIVA", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.7", "officialLabel": "Procesal 1", "bedeliasName": "PROCESAL 1", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-publico", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.8", "officialLabel": "Taller Práctico de Procesal 1", "bedeliasName": "PROCESAL 1 - TALLER PRÁCTICO", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.4", "officialLabel": "Introducción a la Metodología de la Investigación", "bedeliasName": "INT.METODOLOGÍA INVESTIGACIÓN", "bedeliasCredits": 4, "credits": 4, "requirementId": "socio-juridica", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.5", "officialLabel": "Taller Práctico de Introducción a la Metodología de la Investigación", "bedeliasName": "INT.METOD. INVEST.-TALLER PRÁCTICO", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "21.1", "officialLabel": "Derecho Informático e Informática Jurídica 2", "bedeliasName": "D.INFOR.E INFORMATICA.JURIDICA 2", "bedeliasCredits": 4, "credits": 4, "requirementId": "socio-juridica", "period": "2.1 · Tercer semestre" },
+    { "sourceCourseId": "22.1", "officialLabel": "Derecho Penal - Parte General", "bedeliasName": "D.PENAL - PARTE GENERAL", "bedeliasCredits": 7, "credits": 7, "requirementId": "derecho-publico", "period": "2.2 · Cuarto semestre" },
+    { "sourceCourseId": "22.2", "officialLabel": "Teoría General de la Responsabilidad Civil", "bedeliasName": "TEORÍA GRAL. RESP. CIVIL", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-privado", "period": "2.2 · Cuarto semestre" },
+    { "sourceCourseId": "22.3", "officialLabel": "Derecho Internacional Público", "bedeliasName": "DERECHO INTERNACIONAL PÚBLICO", "bedeliasCredits": 12, "credits": 12, "requirementId": "derecho-publico", "period": "2.2 · Cuarto semestre" },
+    { "sourceCourseId": "22.4", "officialLabel": "Trabajo y Seguridad Social 1", "bedeliasName": "TRABAJO Y SEGURIDAD SOCIAL 1", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-social", "period": "2.2 · Cuarto semestre" },
+    { "sourceCourseId": "22.5", "officialLabel": "Taller Práctico de Trabajo y Seguridad Social 1", "bedeliasName": "TRABAJO Y SEG. SOCIAL 1 - T. PRÁCTICO", "bedeliasCredits": 1, "credits": 1, "requirementId": "practica-profesional", "period": "2.2 · Cuarto semestre" },
+    { "sourceCourseId": "31.1", "officialLabel": "Contratos Especiales", "bedeliasName": "CONTRATOS ESPECIALES", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-privado", "period": "3.1 · Quinto semestre" },
+    { "sourceCourseId": "31.2", "officialLabel": "Taller Práctico de Contratos Especiales", "bedeliasName": "TALLER PRACTICO DE CONTRATOS ESPECIALES", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "3.1 · Quinto semestre" },
+    { "sourceCourseId": "31.10", "officialLabel": "Derecho Penal - Parte Especial", "bedeliasName": "D.PENAL-PARTE ESPECIAL", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-publico", "period": "3.1 · Quinto semestre" },
+    { "sourceCourseId": "31.3", "officialLabel": "Administrativo 1", "bedeliasName": "ADMINISTRATIVO 1", "bedeliasCredits": 6, "credits": 6, "requirementId": "derecho-publico", "period": "3.1 · Quinto semestre" },
+    { "sourceCourseId": "31.8", "officialLabel": "Derecho Registral", "bedeliasName": "REGISTRAL", "bedeliasCredits": 4, "credits": 4, "requirementId": "derecho-publico", "period": "3.1 · Quinto semestre" },
+    { "sourceCourseId": "31.9", "officialLabel": "Práctica Profesional 1", "bedeliasName": "PRÁCTICA PROFESIONAL 1", "bedeliasCredits": 14, "credits": 14, "requirementId": "practica-profesional", "period": "3.1 · Quinto semestre" },
+    { "sourceCourseId": "32.6", "officialLabel": "Financiero 1", "bedeliasName": "FINANCIERO 1", "bedeliasCredits": 6, "credits": 6, "requirementId": "derecho-publico", "period": "3.2 · Sexto semestre" },
+    { "sourceCourseId": "32.1", "officialLabel": "Procesal 2", "bedeliasName": "PROCESAL 2", "bedeliasCredits": 12, "credits": 12, "requirementId": "derecho-publico", "period": "3.2 · Sexto semestre" },
+    { "sourceCourseId": "32.2", "officialLabel": "Comercial 1", "bedeliasName": "COMERCIAL 1", "bedeliasCredits": 12, "credits": 12, "requirementId": "derecho-privado", "period": "3.2 · Sexto semestre" },
+    { "sourceCourseId": "32.3", "officialLabel": "Taller Práctico de Comercial 1", "bedeliasName": "TALLER PRÁCTICO D. COMERCIAL", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "3.2 · Sexto semestre" },
+    { "sourceCourseId": "41.6", "officialLabel": "Minoridad, Adolescencia y Familia", "bedeliasName": "MINORIDAD, ADOLESCENCIA Y FAMILIA", "bedeliasCredits": 6, "credits": 6, "requirementId": "derecho-social", "period": "4.1 · Séptimo semestre" },
+    { "sourceCourseId": "41.8", "officialLabel": "Financiero 2", "bedeliasName": "FINANCIERO 2", "bedeliasCredits": 7, "credits": 7, "requirementId": "derecho-publico", "period": "4.1 · Séptimo semestre" },
+    { "sourceCourseId": "41.3", "officialLabel": "Comercial 2", "bedeliasName": "COMERCIAL 2", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-privado", "period": "4.1 · Séptimo semestre" },
+    { "sourceCourseId": "41.4", "officialLabel": "Taller Práctico de Comercial 2", "bedeliasName": "TALLER PRÁCTICO D.COMERCIAL 2", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "4.1 · Séptimo semestre" },
+    { "sourceCourseId": "41.5", "officialLabel": "Seminario del Área de Derecho Público", "bedeliasName": "SEMINARIO DEL ÁREA DCHO PUBLICO", "bedeliasCredits": 2, "credits": 2, "requirementId": "derecho-publico", "period": "4.1 · Séptimo semestre" },
+    { "sourceCourseId": "41.1", "officialLabel": "Familia Personal y Patrimonial", "bedeliasName": "FAMILIA, PERSONAL Y PATRIMONIAL", "bedeliasCredits": 8, "credits": 8, "requirementId": "derecho-privado", "period": "4.1 · Séptimo semestre" },
+    { "sourceCourseId": "41.7", "officialLabel": "Derecho Agrario", "bedeliasName": "DERECHO AGRARIO", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-social", "period": "4.1 · Séptimo semestre" },
+    { "sourceCourseId": "42.1", "officialLabel": "Sucesiones", "bedeliasName": "SUCESIONES", "bedeliasCredits": 6, "credits": 6, "requirementId": "derecho-privado", "period": "4.2 · Octavo semestre" },
+    { "sourceCourseId": "42.2", "officialLabel": "Taller Práctico de Sucesiones", "bedeliasName": "TALLER PRÁCTICO SUCESIONES", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "4.2 · Octavo semestre" },
+    { "sourceCourseId": "42.6", "officialLabel": "Práctica Profesional 2", "bedeliasName": "PRÁCTICA PROFESIONAL 2", "bedeliasCredits": 14, "credits": 14, "requirementId": "practica-profesional", "period": "4.2 · Octavo semestre" },
+    { "sourceCourseId": "42.7", "officialLabel": "Administrativo 2", "bedeliasName": "ADMINISTRATIVO 2 (ABOG)", "bedeliasCredits": 7, "credits": 7, "requirementId": "derecho-publico", "period": "4.2 · Octavo semestre" },
+    { "sourceCourseId": "42.5", "officialLabel": "Seminario del Área de Derecho Privado", "bedeliasName": "SEMINARIO DEL ÁREA DCHO PRIVADO", "bedeliasCredits": 2, "credits": 2, "requirementId": "derecho-privado", "period": "4.2 · Octavo semestre" },
+    { "sourceCourseId": "51.7", "officialLabel": "Teoría del Derecho", "bedeliasName": "TEORÍA DEL DERECHO", "bedeliasCredits": 8, "credits": 8, "requirementId": "socio-juridica", "period": "5.1 · Noveno semestre" },
+    { "sourceCourseId": "51.8", "officialLabel": "Consultorio Jurídico 1", "bedeliasName": "CONSULTORIO JURÍDICO 1", "bedeliasCredits": 10, "credits": 11, "requirementId": "practica-profesional", "period": "5.1 · Noveno semestre", "creditConflict": "La grilla FDER publica 11 créditos; Bedelías conserva 10." },
+    { "sourceCourseId": "51.9", "officialLabel": "Actividad Integrativa de Extensión e Investigación", "bedeliasName": "ACT.INTEG.EXTENSIÓN E INVESTIGACIÓN", "bedeliasCredits": 3, "credits": 3, "requirementId": "practica-profesional", "period": "5.1 · Noveno semestre" },
+    { "sourceCourseId": "51.10", "officialLabel": "Trabajo y Seguridad Social 2", "bedeliasName": "TRABAJO Y SEGURIDAD SOCIAL 2", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-social", "period": "5.1 · Noveno semestre" },
+    { "sourceCourseId": "51.11", "officialLabel": "Taller Práctico de Trabajo y Seguridad Social 2", "bedeliasName": "TALLER P. DEL TRABAJO Y SEG.SOCIAL 2", "bedeliasCredits": 1, "credits": 1, "requirementId": "practica-profesional", "period": "5.1 · Noveno semestre" },
+    { "sourceCourseId": "51.5", "officialLabel": "Seminario del Área de Derecho Social Específico", "bedeliasName": "SEMINARIO DE ÁREA DCHO SOCIAL ESPECIFICO", "bedeliasCredits": 2, "credits": 2, "requirementId": "derecho-social", "period": "5.1 · Noveno semestre" },
+    { "sourceCourseId": "52.8", "officialLabel": "Situaciones Jurídicas Subjetivas", "bedeliasName": "SITUACIONES JURÍDICAS SUBJETIVAS", "bedeliasCredits": 12, "credits": 12, "requirementId": "derecho-publico", "period": "5.2 · Décimo semestre" },
+    { "sourceCourseId": "52.9", "officialLabel": "Consultorio Jurídico 2", "bedeliasName": "CONSULTORIO JURÍDICO 2", "bedeliasCredits": 10, "credits": 11, "requirementId": "practica-profesional", "period": "5.2 · Décimo semestre", "creditConflict": "La grilla FDER publica 11 créditos; Bedelías conserva 10." },
+    { "sourceCourseId": "52.3", "officialLabel": "Financiamiento Empresarial", "bedeliasName": "FINANCIAMIENTO EMPRESARIAL", "bedeliasCredits": 4, "credits": 4, "requirementId": "derecho-social", "period": "5.2 · Décimo semestre" },
+    { "sourceCourseId": "52.5", "officialLabel": "Seminario del Área de Práctica Profesional", "bedeliasName": "SEMINARIO DE ÁREA PRACTICA PROFESIONAL", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "5.2 · Décimo semestre" },
+    { "sourceCourseId": "52.6", "officialLabel": "Derecho Internacional Privado", "bedeliasName": "DERECHO INTERNACIONAL PRIVADO", "bedeliasCredits": 10, "credits": 10, "requirementId": "derecho-privado", "period": "5.2 · Décimo semestre" },
+    { "sourceCourseId": "52.7", "officialLabel": "Taller Práctico de Derecho Internacional Privado", "bedeliasName": "TALLER PRÁCTICO DE D.INT.PRIVADO", "bedeliasCredits": 2, "credits": 2, "requirementId": "practica-profesional", "period": "5.2 · Décimo semestre" }
+  ],
+  "sourceOnlyRows": [
+    { "identityKey": "abogacia-flex-2-2", "officialLabel": "Optativa o electiva (segundo año)", "period": "2.2 · Cuarto semestre", "requirementId": "flexibles", "credits": 6, "creditsPublished": true, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "abogacia-flex-3-2", "officialLabel": "Optativa o electiva (tercer año)", "period": "3.2 · Sexto semestre", "requirementId": "flexibles", "credits": 12, "creditsPublished": true, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "abogacia-flex-4-2", "officialLabel": "Optativa o electiva (cuarto año)", "period": "4.2 · Octavo semestre", "requirementId": "flexibles", "credits": 14, "creditsPublished": true, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "abogacia-flex-5-1", "officialLabel": "Optativa o electiva (quinto año, primer cupo)", "period": "5.1 · Noveno semestre", "requirementId": "flexibles", "credits": 8, "creditsPublished": true, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "abogacia-flex-5-2", "officialLabel": "Optativa o electiva (quinto año, segundo cupo)", "period": "5.2 · Décimo semestre", "requirementId": "flexibles", "credits": 8, "creditsPublished": true, "curricularBlock": true, "catalogRole": "official-flexible-slot" }
+  ],
+  "procurador": {
+    "credentialId": "procurador",
+    "title": "Procurador",
+    "minimumCredits": 160,
+    "requiredSourceCourseIds": ["11.6", "12.3", "11.2", "21.6", "22.2", "31.1", "21.7", "21.8", "31.3", "32.2", "12.4", "22.1", "32.1", "41.1", "11.5", "12.5", "21.1", "22.4", "31.9"],
+    "flexibleCreditsWithAbogaciaPractice": 4,
+    "publishedNamedCreditsWithAbogaciaPractice": 162,
+    "commonToCareers": ["Abogacía", "Notariado"]
+  },
+  "trajectoryConclusion": {
+    "state": "official-trajectory-reproduced",
+    "reason": "La página vigente y la grilla PDF de FDER publican diez períodos nominales del Plan 2016. La grilla prevalece para ubicar los cinco cupos flexibles que la página no enumera de forma completa; las identidades técnicas sólo se usan cuando el código y la fila son inequívocos.",
+    "flexiblePlacementRule": "La Resolución 40 del 20/11/2019 permite cursar los créditos optativos o electivos en cualquiera de los dos semestres del año correspondiente; la grilla conserva la ubicación editorial de los cupos.",
+    "regionalConclusion": "Montevideo y Salto ofrecen el mismo plan, la misma trayectoria y el mismo progreso. Las diferencias del snapshot regional están íntegramente en ramas flexibles y no demuestran otra currícula.",
+    "nextReviewCondition": "Revisar si FDER publica una nueva grilla, un catálogo curricular permanente de optativas/electivas o una resolución que cierre las contradicciones de créditos consignadas."
+  },
+  "bedeliasComparison": {
+    "canonicalSnapshotContentHash": "sha256:87b7b3c6438b23fcea9fd689a4668afc0c42302d611e3fb19afc2afe1bd865e6",
+    "regionalSnapshotContentHash": "sha256:a5b057423e4dfa42e3b8524cd2fe35eba479251e2546a0d0c3d53a2a0b7507d9",
+    "canonicalCourseRecords": 510,
+    "regionalCourseRecords": 566,
+    "verifiedBedeliasCourseCount": 65,
+    "verifiedSourceOnlyBlockCount": 5,
+    "canonicalMandatoryCoreCourses": 85,
+    "regionalMandatoryCoreCourses": 85,
+    "regionalOnlyFlexibleCourses": 53,
+    "changedFlexibleCredits": 1,
+    "canonicalPrerequisiteEntries": 468,
+    "regionalPrerequisiteEntries": 40,
+    "candidateRetainedCount": 506
+  },
+  "projectionBaseline": {
+    "pathwayId": "grilla-plan-2016",
+    "generatedFallback": false,
+    "temporalPeriodCount": 10,
+    "coursePlacementCount": 70,
+    "verifiedCourseCount": 71,
+    "candidateCourseCount": 506,
+    "projectedCourseCount": 577,
+    "allSnapshotOptionsRemainRecoverable": true
+  },
+  "authorityPolicy": {
+    "verifiedSourceCourseIds": ["11.1", "11.2", "11.3", "11.4", "11.8", "11.5", "11.6", "12.1", "12.10", "12.2", "12.3", "12.4", "12.5", "12.8", "12.6", "12.9", "12.7", "21.9", "21.6", "21.2", "21.3", "21.7", "21.8", "21.4", "21.5", "21.1", "22.1", "22.2", "22.3", "22.4", "22.5", "31.1", "31.2", "31.10", "31.3", "31.8", "31.9", "32.6", "32.1", "32.2", "32.3", "41.6", "41.8", "41.3", "41.4", "41.5", "41.1", "41.7", "42.1", "42.2", "42.6", "42.7", "42.5", "51.7", "51.8", "51.9", "51.10", "51.11", "51.5", "52.8", "52.9", "52.3", "52.5", "52.6", "52.7"],
+    "verifiedSourceOnlyIdentityKeys": ["abogacia-flex-2-2", "abogacia-flex-3-2", "abogacia-flex-4-2", "abogacia-flex-5-1", "abogacia-flex-5-2"],
+    "unmatchedBedeliasEntries": "candidate",
+    "candidateVisibility": "audit-only",
+    "candidateCreditsSatisfyRequirements": false,
+    "bedeliasDoesNotAssignOfficialPeriods": true,
+    "aggregateTechnicalRowsRemainCandidates": ["11.2U", "11.4U", "12.1U", "12.5U", "12.6U", "21.2U", "21.4U", "21.6U", "21.7U", "22.4U", "31.1U", "32.2U", "41.3U", "42.1U", "5110U", "52.6U", "53.0"]
+  },
+  "conflicts": [
+    {
+      "field": "flexible-periods",
+      "resolution": "La página de carrera enumera sólo el cupo de 8 créditos de 5.2. La grilla PDF vigente publica además 6 en 2.2, 12 en 3.2, 14 en 4.2 y 8 en 5.1; se reproducen los cinco cupos y se conserva la regla que permite cursarlos en cualquier semestre del año correspondiente."
+    },
+    {
+      "field": "grid-total",
+      "resolution": "Los totales semestrales de la grilla suman 452 (90+90+90+90+92), mientras el Plan y la misma grilla fijan 450. Se conservan las filas publicadas, el mínimo normativo de 450 y la contradicción sin prorratear."
+    },
+    {
+      "field": "consultorio-credits",
+      "resolution": "La grilla publica 11 créditos para Consultorio Jurídico 1 y 11 para Consultorio Jurídico 2; Bedelías conserva 10 y 10. La proyección usa los 11 de la fuente curricular y registra el conflicto, sin usar el agregado técnico anual 53.0."
+    },
+    {
+      "field": "area-distribution",
+      "resolution": "Las filas fijas publicadas suman 92 créditos privados y 52 sociales frente a mínimos 90 y 54. Las opciones reales deben completar la distribución; como FDER no publica un catálogo curricular nominal estable en estas fuentes, los cinco cupos permanecen bloques de fuente y la validación final de áreas es manual."
+    },
+    {
+      "field": "procurador-total",
+      "resolution": "La grilla de Procurador declara mínimo 160, pero sus filas obligatorias con Práctica Profesional 1 y 4 créditos flexibles suman 162. Se conservan el mínimo y todas las filas; no se resta ni fusiona ninguna unidad."
+    },
+    {
+      "field": "technical-duplicates",
+      "resolution": "Las variantes U, el agregado anual 53.0 y las ediciones históricas de talleres, seminarios, integrativas u optativas de Bedelías no se publican sin una correspondencia curricular exacta. Permanecen candidatas con sus IDs recuperables."
+    }
+  ],
+  "sourcePortions": {
+    "fder-career-page": [
+      "La página declara que enumera el Plan 2016 por año, semestre y área con créditos de cada materia.",
+      "Primer a quinto año: unidades fijas distribuidas en diez semestres; en 5.2 enumera Opcional o Electiva (8 créditos).",
+      "Los rótulos repetidos Taller Práctico, Seminario del Área y Actividad Integrativa se cotejan por su fila y curso asociado, no por igualdad textual aislada."
+    ],
+    "fder-grid-2024": [
+      "Página 1: primer año 1.1=44 y 1.2=46; segundo año 2.1=44 y 2.2=46, con cupo opcional/electivo de 6 en 2.2.",
+      "Página 2: tercer año 3.1=46 y 3.2=44, con cupo flexible de 12; cuarto año 4.1=45 y 4.2=45, con cupo flexible de 14.",
+      "Página 3: quinto año 5.1=43 y 5.2=49, con cupos flexibles de 8 y 8; crédito anual 92.",
+      "Página 3: créditos por área 66, 114, 92, 52, 78 y 48; mínimos aprobados 66, 114, 90, 54, 78 y 48; total 450.",
+      "Resolución 40 de 20/11/2019: los créditos optativos/electivos pueden cursarse en el primer o segundo semestre del año correspondiente.",
+      "Resolución 58 de 20/12/2023: aumenta créditos de Sociedad y Derecho, Ciencia Política y sus actividades integrativas."
+    ],
+    "fder-plan-2016": [
+      "Títulos: Abogado y Escribano Público; duración cinco años; mínimo 450 créditos.",
+      "Abogacía: 66 socio-jurídicos, 114 de Derecho público, 90 de Derecho privado, 54 de Derecho social específico, 78 de práctica profesional y el resto optativo/electivo.",
+      "El certificado intermedio común se obtiene al cumplir los 160 créditos establecidos para cada carrera."
+    ],
+    "fder-procurador-2021": [
+      "La resolución aprueba el título intermedio de Procurador dentro de Abogacía y Notariado Plan 2016 con 160 créditos como mínimo.",
+      "La grilla exige Personas, Bienes, Constitucional, Obligaciones y Contratos, Responsabilidad Civil, Contratos Especiales, Procesal 1 con taller, Administrativo 1, Comercial 1, Introducción al Derecho Penal con Penal Parte General, Procesal 2, Familia, Historia, Informática Jurídica 1 y 2, Trabajo y Seguridad Social 1 y Práctica Profesional 1 o Derecho Notarial.",
+      "Con Práctica Profesional 1 la grilla agrega 4 créditos optativos/electivos; con Derecho Notarial agrega 2."
+    ],
+    "bedelias-matches": [
+      "Los 65 códigos técnicos enumerados en authorityPolicy.verifiedSourceCourseIds existen una vez en los snapshots FDER y CENURLN con el mismo nombre y crédito técnico.",
+      "FDER conserva 510 registros y CENURLN 566; el núcleo obligatorio auditado es 85 en ambos y las 53 diferencias regionales están bajo la bolsa flexible.",
+      "Consultorio Jurídico 1 y 2 conservan 10 créditos técnicos en ambos snapshots frente a 11 y 11 en la grilla curricular."
+    ]
+  },
+  "fingerprint": {
+    "algorithm": "sha256",
+    "canonicalField": "sourcePortions",
+    "value": "sha256:bcb07976830e971dcb2065b677b0b062db7cdce0d0c5765d6de53333f8c94a27",
+    "sourceHashes": {
+      "fder-career-page": "sha256:ee18e8dbcd9a3de1ac26bbfb76ede0ded7eb134fffeefd1743d9bb757128d07e",
+      "fder-grid-2024": "sha256:2e80c3df48d7b1eb5e05b0fe380f36826731d43d7ad8d3574c7849429d792305",
+      "fder-plan-2016": "sha256:ad15f62b6a9ddec474e6a81b7da1017f17ee40a3baab03787368dcb21ab6c935",
+      "fder-procurador-2021": "sha256:decace12c5e7090e831cc476922a3cc027f0e4a6724d27315e6c8b93e0ce1079",
+      "bedelias-matches": "sha256:d1a0efbdbfc7ef03d23b8eb0107956002276da2cefde16574e5bd42812734c19"
+    }
+  }
+}

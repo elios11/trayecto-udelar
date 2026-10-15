@@ -17,3 +17,10 @@
 - Probar períodos, todas las materias publicadas, áreas, 450 créditos, Procurador 160, flexibilidad, frontera `verified`/`candidate`, sedes y compatibilidad de progreso. Una prueba debe detectar que desaparezca cualquier materia explícita de la grilla oficial.
 - Actualizar `docs/carreras-a-actualizar.md` sólo si se demuestra malla futura, implementación progresiva o alcance parcial; `PROJECT_CONTEXT.md` sólo ante una decisión estable confirmada.
 - Ejecutar pruebas focales, `npm test`, `npm run lint` si cambia código y `git diff --check`. Crear un commit enfocado, reportar riesgos. No integrar, hacer push ni desplegar desde el worktree.
+
+## Estado de implementación
+
+- Evidencia normalizada: `data/fder/abogacia-2016-trajectory-review.json`, con las diez filas de período, 65 identidades técnicas inequívocas, cinco cupos flexibles sólo-fuente, las sedes compartidas y huellas por porción.
+- Generación offline: `npm run trajectory:fder-abogacia-2016`; reconstruye proyección, auditoría, revisión, colas e inventario sin volver a consultar la red.
+- Conflictos preservados: la grilla suma 452 créditos por filas aunque publica 450; Bedelías consigna 10 créditos para cada Consultorio frente a 11 en la grilla; la composición publicada de Procurador suma 162 aunque el título exige 160; la página HTML no enumera cuatro de los cinco cupos flexibles del PDF.
+- Cierre local: dos regeneraciones offline consecutivas produjeron el mismo SHA-256 agregado (`005fd31941ba6f1abac6de7c67c792f36a22ce242e05dbcb60bd8de0a357a81e`). Pasaron las pruebas focales, `npm test` (1063 pruebas), `npm run lint` y `git diff --check`; no hubo integración, push ni despliegue.

@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:fb6c57eab03c5ba72a9ded8509e4434cca5535ee071ef70deec6dace94ab6894",
-    "extractedReportHash": "sha256:1f53241a9bad5db0c3e117d61c8f3d97a184625a8d2ef238ca52ebea3e15c466",
-    "officialAuditHash": "sha256:d25ea7ad6470ba262217297c4cbe57422fa7146d6c11c7312cb38ae14626ae6c",
-    "reviewedTrajectoriesHash": "sha256:e67faef67bb5fa043bd79f2c9158a60c91d4ee4557bd7d245cfe8aaa36caa61b"
+    "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
+    "extractedReportHash": "sha256:7032e3bbb226307c38c02455a3529c05be01de12b52a79913cb74eeeb3fa5691",
+    "officialAuditHash": "sha256:066c0abac798d95e7bc9bd41a8a5f40b5cbe8a47d7f099c274605f8e38d93103",
+    "reviewedTrajectoriesHash": "sha256:5fd1a7b5296fd8dfc0d97381ac889d423563ffc084893941c8af2eb04f94b1c3"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 107,
+      "official-trajectory-reproduced": 108,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 36
+      "research-pending": 35
     },
-    "pending": 37,
+    "pending": 36,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -155,10 +155,10 @@
         "serviceLabel": "Facultad de Derecho",
         "selectablePlanIds": 6,
         "states": {
-          "official-trajectory-reproduced": 2,
+          "official-trajectory-reproduced": 3,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 4
+          "research-pending": 3
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 37,
+    "total": 36,
     "plans": [
       {
         "priority": 1,
@@ -445,15 +445,6 @@
         "serviceIds": [
           "bedelias-fcien",
           "fing"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fder-abogacia-2016",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fder"
         ],
         "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
@@ -664,7 +655,6 @@
         "serviceLabel": "Facultad de Derecho",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-fder-abogacia-2016",
           "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
           "bedelias-fder-notariado-2016",
           "bedelias-fder-tecnicatura-en-relaciones-laborales-1995"
@@ -6625,43 +6615,43 @@
           "careerId": "bedelias-fder-abogacia",
           "careerLabel": "Abogacía",
           "planLabel": "Plan 2016 · vigente",
-          "defaultTrajectoryId": "bedelias",
+          "defaultTrajectoryId": "grilla-plan-2016",
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-15",
-      "effectiveAt": "2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-15",
+      "effectiveAt": "2023-12-20",
       "officialSources": [
         {
-          "authority": "Facultad de Derecho, Udelar",
-          "url": "https://www.fder.edu.uy/node/529",
-          "role": "aprobación institucional del Plan 2016; título Abogado, cinco años y 450 créditos; mínimos por áreas, flexibilidad y optativas/electivas",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/4052",
+          "reviewedAt": "2026-10-15",
+          "role": "unidades nominales por semestre; áreas; créditos de cada unidad fija; catálogo nominal permanente de optativas o electivas; todos los cupos flexibles que sí aparecen en la grilla PDF"
         },
         {
-          "authority": "Facultad de Derecho, Udelar",
+          "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/sites/default/files/2024-05/grilla-abogac%C3%ADa-actualizada-20240527.pdf",
-          "role": "grilla vigente y núcleo por semestre; mínimos 66, 114, 90, 54, 78 y 48 créditos; modificaciones aprobadas en 2019 y 2023",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-15",
+          "role": "diez períodos 1.1 a 5.2; cinco cupos optativos o electivos; créditos por fila y semestre; mínimos por seis áreas; 450 créditos; identidades técnicas de todas las filas; catálogo nominal de opciones; una suma interna única sin conflicto"
         },
         {
-          "authority": "Comisión Sectorial de Enseñanza, Udelar",
-          "url": "https://www.cse.udelar.edu.uy/proyecto-financiado/evaluacion-de-la-implementacion-y-propuesta-de-ajustes-a-los-planes-de-estudio-de-abogacia-y-notariado-2016/",
-          "role": "implantación del mismo Plan 2016 en Montevideo y CENUR Litoral Norte desde 2017; carácter flexible de optativas y electivas",
-          "trajectoryEvidence": false
+          "authority": "Consejo de Facultad de Derecho y Consejo Directivo Central, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/529",
+          "reviewedAt": "2026-10-15",
+          "role": "título Abogado; cinco años; 450 créditos; seis mínimos de área; flexibilidad; certificado intermedio común"
         },
         {
-          "authority": "Catálogo de carreras del interior, Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/portada/centro-universitario-regional-norte/",
-          "role": "oferta completa de Abogacía en Salto",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Derecho, Udelar",
+          "authority": "Consejo de Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/node/3873",
-          "role": "título intermedio de Procurador; mínimo de 160 créditos y grilla aprobada",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-15",
+          "role": "Procurador dentro de Abogacía y Notariado Plan 2016; mínimo de 160 créditos; unidades obligatorias; alternativa de práctica; créditos flexibles 4/2"
+        },
+        {
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/proyecto-financiado/evaluacion-de-la-implementacion-y-propuesta-de-ajustes-a-los-planes-de-estudio-de-abogacia-y-notariado-2016/",
+          "reviewedAt": "2026-08-15",
+          "role": "implantación del mismo Plan 2016 en Montevideo y CENUR Litoral Norte desde 2017; carácter flexible de optativas y electivas"
         }
       ],
       "scope": {
@@ -6670,23 +6660,42 @@
           "Salto"
         ],
         "pathwayIds": [
-          "bedelias"
+          "grilla-plan-2016"
         ]
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "abogacia:2016",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fder-abogacia-2016.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fder/abogacia-2016-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-abogacia-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:6a33daf0454a0e244dc038dd0707ff2a44f9143f09b17e9e580f431152ec739c",
+        "projectionContentHash": "sha256:749e7f225f0938b84cd5b29ba2fca3a8cbf774337e8c370abe37379a0dbbf81a",
+        "pathways": [
+          {
+            "id": "grilla-plan-2016",
+            "periodCount": 10
+          }
+        ],
+        "expectedCoursePlacements": 70,
+        "matchedCoursePlacements": 70
       },
-      "conflictNotes": []
+      "conflictNotes": [
+        "La página de carrera enumera sólo el cupo de 8 créditos de 5.2. La grilla PDF vigente publica además 6 en 2.2, 12 en 3.2, 14 en 4.2 y 8 en 5.1; se reproducen los cinco cupos y se conserva la regla que permite cursarlos en cualquier semestre del año correspondiente.",
+        "Los totales semestrales de la grilla suman 452 (90+90+90+90+92), mientras el Plan y la misma grilla fijan 450. Se conservan las filas publicadas, el mínimo normativo de 450 y la contradicción sin prorratear.",
+        "La grilla publica 11 créditos para Consultorio Jurídico 1 y 11 para Consultorio Jurídico 2; Bedelías conserva 10 y 10. La proyección usa los 11 de la fuente curricular y registra el conflicto, sin usar el agregado técnico anual 53.0.",
+        "Las filas fijas publicadas suman 92 créditos privados y 52 sociales frente a mínimos 90 y 54. Las opciones reales deben completar la distribución; como FDER no publica un catálogo curricular nominal estable en estas fuentes, los cinco cupos permanecen bloques de fuente y la validación final de áreas es manual.",
+        "La grilla de Procurador declara mínimo 160, pero sus filas obligatorias con Práctica Profesional 1 y 4 créditos flexibles suman 162. Se conservan el mínimo y todas las filas; no se resta ni fusiona ninguna unidad.",
+        "Las variantes U, el agregado anual 53.0 y las ediciones históricas de talleres, seminarios, integrativas u optativas de Bedelías no se publican sin una correspondencia curricular exacta. Permanecen candidatas con sus IDs recuperables."
+      ]
     },
     {
       "planId": "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
@@ -13494,5 +13503,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:fed8a6811f61fcef9cad9a729d340b210db6eefabc8b689eb8dca2acd047ab0b"
+  "contentHash": "sha256:b5f06aeffac05bda63ec7fe66a0d4fc4ee3533a47bca4ccc74179f3b9ea7251c"
 }

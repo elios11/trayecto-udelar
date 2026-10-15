@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:ab346752c24fbf15071711d3a8730700b162bb89632a5f98bdf6abcb45ce1b0b",
-    "officialAuditHash": "sha256:d25ea7ad6470ba262217297c4cbe57422fa7146d6c11c7312cb38ae14626ae6c",
+    "auditQueueHash": "sha256:0b1805f707e8915b761b7541eedc7fa056aefebe1cf7d00dc776b4e1fb88b51f",
+    "officialAuditHash": "sha256:066c0abac798d95e7bc9bd41a8a5f40b5cbe8a47d7f099c274605f8e38d93103",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -22,20 +22,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5494,
-      "candidate": 26246,
+      "verified": 5565,
+      "candidate": 26242,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31748,
-    "afterPublishedCourses": 5494,
+    "beforePublishedCourses": 31815,
+    "afterPublishedCourses": 5565,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1782,
     "visibleTargetsWithUnpublishedDependencies": 1499,
     "plansWithVerifiedCatalog": 63,
-    "plansWithPartialCatalog": 66,
-    "plansWithStructureOnly": 10
+    "plansWithPartialCatalog": 67,
+    "plansWithStructureOnly": 9
   },
   "plans": [
     {
@@ -2086,7 +2086,7 @@
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-abogacia-2016.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -2094,18 +2094,18 @@
         "salto"
       ],
       "before": {
-        "publishedCourses": 510,
+        "publishedCourses": 577,
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 510,
+        "publishedCourses": 71,
+        "hiddenCourses": 506,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 510,
+        "verified": 71,
+        "candidate": 506,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4630,5 +4630,5 @@
       }
     }
   ],
-  "contentHash": "sha256:1f53241a9bad5db0c3e117d61c8f3d97a184625a8d2ef238ca52ebea3e15c466"
+  "contentHash": "sha256:7032e3bbb226307c38c02455a3529c05be01de12b52a79913cb74eeeb3fa5691"
 }

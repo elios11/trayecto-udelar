@@ -3065,6 +3065,71 @@
         "Introducción a la Universidad, Armonías, Repertorios, seminarios, práctica con pianista e idiomas tienen aliases u ofertas variables sin código resuelto por el Plan. Se usan bloques sólo-fuente y las variantes técnicas permanecen candidatas.",
         "Los catálogos electivos, seminarios y proyectos especiales varían por edición. Se controlan sus mínimos o cupos estables, pero no se incorporan todas las alternativas de Bedelías como obligaciones ni como oferta vigente."
       ]
+    },
+    {
+      "planId": "bedelias-fder-abogacia-2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-15",
+      "effectiveAt": "2023-12-20",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Salto"
+        ],
+        "pathwayIds": [
+          "grilla-plan-2016"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/4052",
+          "reviewedAt": "2026-10-15",
+          "role": "unidades nominales por semestre; áreas; créditos de cada unidad fija; catálogo nominal permanente de optativas o electivas; todos los cupos flexibles que sí aparecen en la grilla PDF"
+        },
+        {
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/sites/default/files/2024-05/grilla-abogac%C3%ADa-actualizada-20240527.pdf",
+          "reviewedAt": "2026-10-15",
+          "role": "diez períodos 1.1 a 5.2; cinco cupos optativos o electivos; créditos por fila y semestre; mínimos por seis áreas; 450 créditos; identidades técnicas de todas las filas; catálogo nominal de opciones; una suma interna única sin conflicto"
+        },
+        {
+          "authority": "Consejo de Facultad de Derecho y Consejo Directivo Central, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/529",
+          "reviewedAt": "2026-10-15",
+          "role": "título Abogado; cinco años; 450 créditos; seis mínimos de área; flexibilidad; certificado intermedio común"
+        },
+        {
+          "authority": "Consejo de Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/3873",
+          "reviewedAt": "2026-10-15",
+          "role": "Procurador dentro de Abogacía y Notariado Plan 2016; mínimo de 160 créditos; unidades obligatorias; alternativa de práctica; créditos flexibles 4/2"
+        },
+        {
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/proyecto-financiado/evaluacion-de-la-implementacion-y-propuesta-de-ajustes-a-los-planes-de-estudio-de-abogacia-y-notariado-2016/",
+          "reviewedAt": "2026-08-15",
+          "role": "implantación del mismo Plan 2016 en Montevideo y CENUR Litoral Norte desde 2017; carácter flexible de optativas y electivas"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fder/abogacia-2016-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-abogacia-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La página de carrera enumera sólo el cupo de 8 créditos de 5.2. La grilla PDF vigente publica además 6 en 2.2, 12 en 3.2, 14 en 4.2 y 8 en 5.1; se reproducen los cinco cupos y se conserva la regla que permite cursarlos en cualquier semestre del año correspondiente.",
+        "Los totales semestrales de la grilla suman 452 (90+90+90+90+92), mientras el Plan y la misma grilla fijan 450. Se conservan las filas publicadas, el mínimo normativo de 450 y la contradicción sin prorratear.",
+        "La grilla publica 11 créditos para Consultorio Jurídico 1 y 11 para Consultorio Jurídico 2; Bedelías conserva 10 y 10. La proyección usa los 11 de la fuente curricular y registra el conflicto, sin usar el agregado técnico anual 53.0.",
+        "Las filas fijas publicadas suman 92 créditos privados y 52 sociales frente a mínimos 90 y 54. Las opciones reales deben completar la distribución; como FDER no publica un catálogo curricular nominal estable en estas fuentes, los cinco cupos permanecen bloques de fuente y la validación final de áreas es manual.",
+        "La grilla de Procurador declara mínimo 160, pero sus filas obligatorias con Práctica Profesional 1 y 4 créditos flexibles suman 162. Se conservan el mínimo y todas las filas; no se resta ni fusiona ninguna unidad.",
+        "Las variantes U, el agregado anual 53.0 y las ediciones históricas de talleres, seminarios, integrativas u optativas de Bedelías no se publican sin una correspondencia curricular exacta. Permanecen candidatas con sus IDs recuperables."
+      ]
     }
   ]
 }
