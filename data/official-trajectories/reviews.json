@@ -3130,6 +3130,70 @@
         "La grilla de Procurador declara mínimo 160, pero sus filas obligatorias con Práctica Profesional 1 y 4 créditos flexibles suman 162. Se conservan el mínimo y todas las filas; no se resta ni fusiona ninguna unidad.",
         "Las variantes U, el agregado anual 53.0 y las ediciones históricas de talleres, seminarios, integrativas u optativas de Bedelías no se publican sin una correspondencia curricular exacta. Permanecen candidatas con sus IDs recuperables."
       ]
+    },
+    {
+      "planId": "bedelias-fcien-licenciatura-en-bioquimica-2017",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-16",
+      "effectiveAt": "2025",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "formacion-personalizada"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Instituto de Química Biológica y Comisión de Carrera en Bioquímica, Facultad de Ciencias, Universidad de la República",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/3482/mod_resource/content/9/bienvenida%202025%20final.pdf",
+          "reviewedAt": "2026-10-16",
+          "role": "Plan 2017; trayectoria sugerida 2025; ocho semestres; cargas publicadas; alternativas; regla de cohorte anterior a 2025; códigos técnicos; una trayectoria posterior a 2025"
+        },
+        {
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-bioquimica",
+          "reviewedAt": "2026-10-16",
+          "role": "vigencia de la carrera; 360 créditos; cuatro años; Montevideo; cinco áreas del tramo común; orientación personal"
+        },
+        {
+          "authority": "Repositorio Colibri, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24552",
+          "reviewedAt": "2026-10-16",
+          "role": "carrera 302; plan 1083; año 2017; responsabilidad de Facultad de Ciencias"
+        },
+        {
+          "authority": "Plan de Estudios de la Licenciatura en Bioquímica, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24552/1/PLBIO_2020.pdf",
+          "reviewedAt": "2026-10-16",
+          "role": "aprobaciones; título; cuatro años; 360 créditos; mínimos por área; 33 créditos de orientación; Tesina de 40 créditos; validación académica"
+        },
+        {
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.fcien.edu.uy/images/Comunicaci%C3%B3n%202019/Librillo%20informativo%20Lic.%20Bioqu%C3%ADmica.pdf",
+          "reviewedAt": "2026-10-16",
+          "role": "Plan 2017; mínimos por área; estructura 241+33+40 y total de 360 créditos; identidad técnica vigente de cursos en 2025; ausencia de cambios posteriores"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/bioquimica-2017-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-bioquimica-2017.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "Se cotejan 28 códigos por rótulo y carga. Seguridad y Prevención del Riesgo, Fisicoquímica I, Biofísica y Fisicoquímica Moderna permanecen sólo-fuente porque el snapshot ofrece pares, sucesoras o vigencias incompatibles sin equivalencia oficial publicada.",
+        "Microbiología FC reemplaza el par FQ, Fisiología Vegetal/Animal es una elección y Virología Molecular reemplaza Módulo 1. Las opciones se conservan sin volverlas obligaciones acumulativas.",
+        "Los cinco renglones Humanística/Electivas/AFI/Pasantías se conservan como espacios sin carga publicada; no son cinco requisitos independientes.",
+        "La Tesina aparece en séptimo y octavo, pero se conserva una sola identidad BQ200 de 40 créditos en ambos períodos.",
+        "La exención de AFI y virología para generaciones anteriores a 2025 se informa como regla de cohorte; no se elimina la exigencia del recorrido 2025.",
+        "Las otras 331 identidades de Bedelías permanecen candidatas recuperables y no satisfacen requisitos oficiales hasta contar con evidencia curricular."
+      ]
     }
   ]
 }

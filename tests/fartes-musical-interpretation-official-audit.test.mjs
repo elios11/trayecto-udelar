@@ -170,9 +170,9 @@ test("cierra la correspondencia estructurada del inventario", () => {
   assert.deepEqual([entry.evidence.expectedCoursePlacements, entry.evidence.matchedCoursePlacements], [1005, 1005]);
   assert.ok(entry.conflictNotes.some((note) => /permanecen candidatas/i.test(note)));
   assert.deepEqual(inventory.counts.states, {
-    "official-trajectory-reproduced": 108,
+    "official-trajectory-reproduced": 109,
     "official-trajectory-identified-pending": 1,
     "no-official-trajectory-documented": 3,
-    "research-pending": 35,
+    "research-pending": 34,
   });
 });

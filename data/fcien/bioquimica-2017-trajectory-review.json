@@ -1,134 +1,234 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "planId": "bedelias-fcien-licenciatura-en-bioquimica-2017",
+  "auditIdentity": "licenciatura en bioquimica:2017",
   "reviewedAt": "2026-10-16",
-  "state": "source-transcribed-not-projected",
-  "scope": "Láminas de trayectoria sugerida de la propuesta educativa 2025; todavía no se cotejaron códigos técnicos ni se modificó la proyección",
-  "source": {
-    "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/3482/mod_resource/content/9/bienvenida%202025%20final.pdf",
-    "authority": "Instituto de Química Biológica y Comisión de Carrera en Bioquímica, Facultad de Ciencias, Udelar",
-    "publicationLabel": "Propuesta educativa 2025: Licenciatura en Bioquímica",
-    "planLabel": "Plan 2017",
-    "consultedAt": "2026-10-16",
-    "documentSha256": "sha256:2679f414fa3a490187e9e3c219720e04dac352ccc7587aa32ccb00516cd47f97",
-    "visuallyInspectedPdfPages": [11, 12],
-    "planRulePdfPage": 6,
-    "areaCourseListPdfPages": [9, 10]
-  },
-  "publishedDegree": {
+  "publication": {
+    "planYear": "2017",
+    "title": "Licenciado en Bioquímica",
+    "currentAtReview": true,
+    "durationMonths": 48,
     "minimumCredits": 360,
     "commonMinimumCredits": 241,
-    "areaMinimumCredits": {
-      "physicalMathematics": 60,
-      "chemistry": 70,
-      "basicBiochemistry": 45,
-      "biology": 60,
-      "humanities": 6
-    },
     "orientationMinimumCredits": 33,
     "thesisCredits": 40,
-    "integralTrainingCreditsWithinElectives": 10
+    "integralTrainingCreditsWithinElectives": 10,
+    "trajectoryStatus": "official-trajectory-reproduced",
+    "trajectoryEffectiveAt": "2025"
   },
-  "periods": [
+  "scope": {
+    "campuses": [{ "id": "montevideo", "label": "Montevideo", "coverage": "carrera completa" }],
+    "singlePlan": true,
+    "singleCredential": true,
+    "personalizedCurriculum": true,
+    "officialTemporalPeriodsReproduced": 8
+  },
+  "sources": [
     {
-      "label": "Primer semestre",
-      "publishedTermCredits": 54,
-      "rows": [
-        { "sourceLabel": "Seguridad y Prev del Riesgo (I y II)", "publishedCredits": 4, "kind": "course" },
-        { "sourceLabel": "Matemática I", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Física I", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Laboratorio de Física I", "publishedCredits": 4, "kind": "course" },
-        { "sourceLabel": "Química General", "publishedCredits": 10, "kind": "course" },
-        { "sourceLabel": "Biología General", "publishedCredits": 12, "kind": "course" }
-      ]
+      "id": "proposal-2025",
+      "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/3482/mod_resource/content/9/bienvenida%202025%20final.pdf",
+      "authority": "Instituto de Química Biológica y Comisión de Carrera en Bioquímica, Facultad de Ciencias, Universidad de la República",
+      "consultedAt": "2026-10-16",
+      "publicationState": "presentación institucional 2025 accesible; tablas de las páginas PDF 11-12 inspeccionadas visualmente",
+      "contentHash": "sha256:2679f414fa3a490187e9e3c219720e04dac352ccc7587aa32ccb00516cd47f97",
+      "supports": ["Plan 2017", "trayectoria sugerida 2025", "ocho semestres", "cargas publicadas", "alternativas", "regla de cohorte anterior a 2025"],
+      "doesNotSupport": ["códigos técnicos", "una trayectoria posterior a 2025"]
     },
     {
-      "label": "Segundo semestre",
-      "publishedTermCredits": 47,
-      "rows": [
-        { "sourceLabel": "Matemática II (módulo 1)", "publishedCredits": 6, "kind": "course" },
-        { "sourceLabel": "Matemática II (módulo 2)", "publishedCredits": 6, "kind": "course" },
-        { "sourceLabel": "Física II", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Química Orgánica I", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Química Analítica", "publishedCredits": 11, "kind": "course" }
-      ]
+      "id": "faculty-career-page",
+      "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-bioquimica",
+      "authority": "Facultad de Ciencias, Universidad de la República",
+      "consultedAt": "2026-10-16",
+      "publicationState": "página institucional vigente al consultar, actualizada en diciembre de 2024",
+      "supports": ["vigencia de la carrera", "360 créditos", "cuatro años", "Montevideo", "cinco áreas del tramo común", "orientación personal"]
     },
     {
-      "label": "Tercer semestre",
-      "publishedTermCredits": 48,
-      "rows": [
-        { "sourceLabel": "Química Orgánica II", "publishedCredits": 6, "kind": "course" },
-        { "sourceLabel": "Laboratorio de Química Orgánica", "publishedCredits": 6, "kind": "course" },
-        { "sourceLabel": "Fisicoquímica I", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Bioquímica I", "publishedCredits": 11, "kind": "course" },
-        { "sourceLabel": "Biofísica", "publishedCredits": 13, "kind": "course" }
-      ]
+      "id": "colibri-plan-record",
+      "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24552",
+      "authority": "Repositorio Colibri, Universidad de la República",
+      "consultedAt": "2026-10-16",
+      "publicationState": "registro institucional del Plan de Estudios 2017",
+      "supports": ["carrera 302", "plan 1083", "año 2017", "responsabilidad de Facultad de Ciencias"]
     },
     {
-      "label": "Cuarto semestre",
-      "publishedTermCredits": 37,
-      "rows": [
-        { "sourceLabel": "Estadística para Ciencias", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Bioquímica II", "publishedCredits": 14, "kind": "course" },
-        { "sourceLabel": "Fisicoquímica Moderna", "publishedCredits": 11, "kind": "course" },
-        { "sourceLabel": "Humanística/Electivas/AFI/Pasantías", "publishedCredits": null, "kind": "flexible-space" }
-      ]
+      "id": "colibri-plan-pdf",
+      "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24552/1/PLBIO_2020.pdf",
+      "authority": "Plan de Estudios de la Licenciatura en Bioquímica, Facultad de Ciencias, Universidad de la República",
+      "consultedAt": "2026-10-16",
+      "publicationState": "copia institucional del Plan 2017",
+      "supports": ["aprobaciones", "título", "cuatro años", "360 créditos", "mínimos por área", "33 créditos de orientación", "Tesina de 40 créditos", "validación académica"]
     },
     {
-      "label": "Quinto semestre",
-      "publishedTermCredits": 21,
-      "rows": [
-        { "sourceLabel": "Fisicoquímica Biológica", "publishedCredits": 10, "kind": "course" },
-        { "sourceLabel": "Biología Celular", "publishedCredits": 11, "kind": "course" },
-        { "sourceLabel": "Humanística/Electivas/AFI/Pasantías", "publishedCredits": null, "kind": "flexible-space" }
-      ]
+      "id": "faculty-booklet-2019",
+      "url": "https://www.fcien.edu.uy/images/Comunicaci%C3%B3n%202019/Librillo%20informativo%20Lic.%20Bioqu%C3%ADmica.pdf",
+      "authority": "Facultad de Ciencias, Universidad de la República",
+      "consultedAt": "2026-10-16",
+      "publicationState": "librillo institucional histórico de 2019, página PDF 6",
+      "supports": ["Plan 2017", "mínimos por área", "estructura 241+33+40 y total de 360 créditos"],
+      "doesNotSupport": ["identidad técnica vigente de cursos en 2025", "ausencia de cambios posteriores"]
     },
     {
-      "label": "Sexto semestre",
-      "publishedTermCredits": 38,
-      "rows": [
-        { "sourceLabel": "Microbiología General FQ - Teórico", "publishedCredits": 6, "kind": "course", "alternativeGroup": "microbiology" },
-        { "sourceLabel": "Laboratorio de Análisis Microbiológico", "publishedCredits": 6, "kind": "course", "alternativeGroup": "microbiology" },
-        { "sourceLabel": "Genética General", "publishedCredits": 14, "kind": "course" },
-        { "sourceLabel": "Inmunología", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Humanística/Electivas/AFI/Pasantías", "publishedCredits": null, "kind": "flexible-space" }
-      ]
-    },
-    {
-      "label": "Séptimo semestre",
-      "publishedTermCredits": [28, 31],
-      "rows": [
-        { "sourceLabel": "Biología Molecular", "publishedCredits": 12, "kind": "course" },
-        { "sourceLabel": "Fisiología Vegetal / Animal", "publishedCredits": [11, 14], "kind": "alternative-slot", "alternativeGroup": "physiology" },
-        { "sourceLabel": "Virología - Módulo 1", "publishedCredits": 5, "kind": "course", "alternativeGroup": "virology" },
-        { "sourceLabel": "Humanística/Electivas/AFI/Pasantías", "publishedCredits": null, "kind": "flexible-space" },
-        { "sourceLabel": "Tesina de Grado", "publishedCredits": null, "kind": "multi-period-thesis" }
-      ]
-    },
-    {
-      "label": "Octavo semestre",
-      "publishedTermCredits": null,
-      "rows": [
-        { "sourceLabel": "Humanística/Electivas/AFI/Pasantías", "publishedCredits": null, "kind": "flexible-space" },
-        { "sourceLabel": "Tesina de Grado", "publishedCredits": null, "kind": "multi-period-thesis" }
-      ]
+      "id": "bedelias-snapshot",
+      "url": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+      "authority": "Sistema de Gestión Administrativa de la Enseñanza, Universidad de la República",
+      "consultedAt": "2026-08-13",
+      "publicationState": "snapshot institucional versionado",
+      "snapshotPath": "data/bedelias/fcien-licenciatura-en-bioquimica-2017.json",
+      "contentHash": "sha256:105145195b16aa47bc44471db60cabe7ab4355cce23c6df88a21bfc8c25a818e",
+      "supports": ["identidades técnicas", "créditos", "áreas", "previaturas"],
+      "doesNotSupport": ["inclusión vigente por sí sola", "semestre", "obligatoriedad"]
     }
   ],
+  "requirements": [
+    { "id": "physical-mathematics", "name": "Físico-Matemática", "shortName": "Físico-Matemática", "minCredits": 60 },
+    { "id": "chemistry", "name": "Química", "shortName": "Química", "minCredits": 70 },
+    { "id": "biology", "name": "Biología", "shortName": "Biología", "minCredits": 60 },
+    { "id": "basic-biochemistry", "name": "Bioquímica Básica", "shortName": "Bioquímica", "minCredits": 45 },
+    { "id": "humanities", "name": "Humanística", "shortName": "Humanística", "minCredits": 6 },
+    { "id": "orientation", "name": "Optativas y electivas de orientación", "shortName": "Orientación", "minCredits": 33 },
+    { "id": "thesis", "name": "Tesina de Graduación", "shortName": "Tesina", "minCredits": 40 },
+    { "id": "social-productive", "name": "Formación social/productiva u otros servicios", "shortName": "Formación transversal", "minCredits": 0, "credentialRequired": false }
+  ],
+  "trajectories": [{
+    "id": "formacion-personalizada",
+    "label": "Trayectoria sugerida (2025)",
+    "description": "Trayectoria sugerida por la Comisión de Carrera para la cohorte 2025. Es una guía flexible: las alternativas de microbiología, fisiología y virología no son acumulativas; los espacios Humanística/Electivas/AFI/Pasantías se completan con tutoría y validación académica.",
+    "sourceId": "proposal-2025",
+    "periods": [
+      { "label": "Primer semestre", "courseIds": ["bioquimica-seguridad-riesgos-i-ii", "MA400", "FI252", "B0025", "BG1", "BG456"] },
+      { "label": "Segundo semestre", "courseIds": ["MA403", "MA404", "FI253", "BQ426", "BQ428"] },
+      { "label": "Tercer semestre", "courseIds": ["BQ403", "BQ440", "bioquimica-fisicoquimica-i-2025", "B0031", "bioquimica-biofisica-2025"] },
+      { "label": "Cuarto semestre", "courseIds": ["MA503", "BQ429", "bioquimica-fisicoquimica-moderna-2025", "bioquimica-flexible-s4"] },
+      { "label": "Quinto semestre", "courseIds": ["BG830", "B0016", "bioquimica-flexible-s5"] },
+      { "label": "Sexto semestre", "courseIds": ["BG994", "BG986", "BG859", "BQ260", "bioquimica-flexible-s6"] },
+      { "label": "Séptimo semestre", "courseIds": ["BG828", "B0015", "BG460", "B0021", "bioquimica-flexible-s7", "BQ200"] },
+      { "label": "Octavo semestre", "courseIds": ["bioquimica-flexible-s8", "bioquimica-tesina-continuacion-s8"] }
+    ]
+  }],
+  "catalogMatches": [
+    { "sourceCourseId": "MA400", "officialLabel": "Matemática I", "bedeliasName": "MATEMÁTICA 1 (2017-", "credits": 12, "requirementId": "physical-mathematics", "period": "Primer semestre" },
+    { "sourceCourseId": "FI252", "officialLabel": "Física I", "bedeliasName": "FÍSICA 1 (BIOGEOCIENCIAS) (2017-", "credits": 12, "requirementId": "physical-mathematics", "period": "Primer semestre" },
+    { "sourceCourseId": "B0025", "officialLabel": "Laboratorio de Física I", "bedeliasName": "LABORATORIO DE FÍSICA I (2025-", "credits": 4, "requirementId": "physical-mathematics", "period": "Primer semestre" },
+    { "sourceCourseId": "BG1", "officialLabel": "Química General", "bedeliasName": "QUÍMICA I/QUÍMICA GENERAL (2013-", "credits": 10, "requirementId": "chemistry", "period": "Primer semestre" },
+    { "sourceCourseId": "BG456", "officialLabel": "Biología General", "bedeliasName": "BIOLOGÍA GENERAL (2017-", "credits": 12, "requirementId": "biology", "period": "Primer semestre" },
+    { "sourceCourseId": "MA403", "officialLabel": "Matemática II (módulo 1)", "bedeliasName": "MATEMÁTICA 2 (MÓDULO 1)", "credits": 6, "requirementId": "physical-mathematics", "period": "Segundo semestre" },
+    { "sourceCourseId": "MA404", "officialLabel": "Matemática II (módulo 2)", "bedeliasName": "MATEMÁTICA 2 (MÓDULO 2)", "credits": 6, "requirementId": "physical-mathematics", "period": "Segundo semestre" },
+    { "sourceCourseId": "FI253", "officialLabel": "Física II", "bedeliasName": "FÍSICA 2 (BIOGEOCIENCIAS) (2017-", "credits": 12, "requirementId": "physical-mathematics", "period": "Segundo semestre" },
+    { "sourceCourseId": "BQ426", "officialLabel": "Química Orgánica I", "bedeliasName": "QUÍMICA ORGÁNICA I (2022-", "credits": 12, "requirementId": "chemistry", "period": "Segundo semestre" },
+    { "sourceCourseId": "BQ428", "officialLabel": "Química Analítica", "bedeliasName": "QUÍMICA ANALÍTICA (2022-", "credits": 11, "requirementId": "chemistry", "period": "Segundo semestre" },
+    { "sourceCourseId": "BQ403", "officialLabel": "Química Orgánica II", "bedeliasName": "QUÍMICA ORGÁNICA II (TEÓRICO)", "credits": 6, "requirementId": "chemistry", "period": "Tercer semestre" },
+    { "sourceCourseId": "BQ440", "officialLabel": "Laboratorio de Química Orgánica", "bedeliasName": "LABORATORIO DE QUÍMICA ORGÁNICA (2025-", "credits": 6, "requirementId": "chemistry", "period": "Tercer semestre" },
+    { "sourceCourseId": "B0031", "officialLabel": "Bioquímica I", "bedeliasName": "BIOQUÍMICA 1 (2025 -", "credits": 11, "requirementId": "basic-biochemistry", "period": "Tercer semestre" },
+    { "sourceCourseId": "MA503", "officialLabel": "Estadística para Ciencias", "bedeliasName": "ESTADÍSTICA PARA CIENCIAS", "credits": 12, "requirementId": "physical-mathematics", "period": "Cuarto semestre" },
+    { "sourceCourseId": "BQ429", "officialLabel": "Bioquímica II", "bedeliasName": "BIOQUÍMICA 2 (2022-", "credits": 14, "requirementId": "basic-biochemistry", "period": "Cuarto semestre" },
+    { "sourceCourseId": "BG830", "officialLabel": "Fisicoquímica Biológica", "bedeliasName": "FISICOQUÍMICA BIOLÓGICA (2020-", "credits": 10, "requirementId": "chemistry", "period": "Quinto semestre" },
+    { "sourceCourseId": "B0016", "officialLabel": "Biología Celular", "bedeliasName": "BIOLOGÍA CELULAR (2025-", "credits": 11, "requirementId": "biology", "period": "Quinto semestre" },
+    { "sourceCourseId": "BG994", "officialLabel": "Microbiología General FQ - Teórico", "bedeliasName": "MICROBIOLOGÍA GENERAL (FQ - TEÓRICO) (2023-", "credits": 6, "requirementId": "biology", "period": "Sexto semestre", "alternativeGroup": "microbiology" },
+    { "sourceCourseId": "BG986", "officialLabel": "Laboratorio de Análisis Microbiológico", "bedeliasName": "LABORATORIO DE ANÁLISIS MICROBIOLÓGICO (FQ)", "credits": 6, "requirementId": "biology", "period": "Sexto semestre", "alternativeGroup": "microbiology" },
+    { "sourceCourseId": "B0020", "officialLabel": "Microbiología de Facultad de Ciencias", "bedeliasName": "MICROBIOLOGÍA (FC) (2025-", "credits": 12, "requirementId": "biology", "period": "Sexto semestre", "alternativeGroup": "microbiology", "catalogOnlyAlternative": true },
+    { "sourceCourseId": "BG859", "officialLabel": "Genética General", "bedeliasName": "GENÉTICA GENERAL (2020-", "credits": 14, "requirementId": "biology", "period": "Sexto semestre" },
+    { "sourceCourseId": "BQ260", "officialLabel": "Inmunología", "bedeliasName": "INMUNOLOGÍA (2025-", "credits": 12, "requirementId": "basic-biochemistry", "period": "Sexto semestre" },
+    { "sourceCourseId": "BG828", "officialLabel": "Biología Molecular", "bedeliasName": "BIOLOGÍA MOLECULAR (2020-", "credits": 12, "requirementId": "basic-biochemistry", "period": "Séptimo semestre" },
+    { "sourceCourseId": "B0015", "officialLabel": "Fisiología Vegetal", "bedeliasName": "FISIOLOGÍA VEGETAL (2025-", "credits": 11, "requirementId": "orientation", "period": "Séptimo semestre", "alternativeGroup": "physiology" },
+    { "sourceCourseId": "BG460", "officialLabel": "Fisiología Animal", "bedeliasName": "FISIOLOGÍA ANIMAL (2017-", "credits": 14, "requirementId": "orientation", "period": "Séptimo semestre", "alternativeGroup": "physiology" },
+    { "sourceCourseId": "B0021", "officialLabel": "Virología - Módulo 1", "bedeliasName": "VIROLOGÍA - MÓDULO 1 (2025-", "credits": 5, "requirementId": "orientation", "period": "Séptimo semestre", "alternativeGroup": "virology" },
+    { "sourceCourseId": "BG046", "officialLabel": "Virología Molecular", "bedeliasName": "VIROLOGÍA MOLECULAR (2025-", "credits": 10, "requirementId": "orientation", "period": "Séptimo semestre", "alternativeGroup": "virology", "catalogOnlyAlternative": true },
+    { "sourceCourseId": "BQ200", "officialLabel": "Tesina de Grado", "bedeliasName": "TESINA DE GRADO", "credits": 40, "requirementId": "thesis", "period": "Séptimo y octavo semestre" }
+  ],
+  "sourceOnlyRows": [
+    { "identityKey": "bioquimica-seguridad-riesgos-i-ii", "officialLabel": "Seguridad y Prevención del Riesgo (I y II)", "period": "Primer semestre", "requirementId": "plan-total", "credits": 4, "creditsPublished": true, "curricularBlock": false, "catalogRole": "official-semester-source-only-course", "identityReservation": "Bedelías contiene pares de módulos en áreas diferentes; la fuente 2025 no publica códigos que permitan elegir uno sin ambigüedad." },
+    { "identityKey": "bioquimica-fisicoquimica-i-2025", "officialLabel": "Fisicoquímica I", "period": "Tercer semestre", "requirementId": "chemistry", "credits": 12, "creditsPublished": true, "curricularBlock": false, "catalogRole": "official-semester-source-only-course", "identityReservation": "El snapshot conserva una versión 2022-2025 y otra 2026-; la lámina 2025 no publica código técnico." },
+    { "identityKey": "bioquimica-biofisica-2025", "officialLabel": "Biofísica", "period": "Tercer semestre", "requirementId": "physical-mathematics", "credits": 13, "creditsPublished": true, "curricularBlock": false, "catalogRole": "official-semester-source-only-course", "identityReservation": "El snapshot conserva una versión 2020-2025 y otra 2026-; la lámina 2025 no publica código técnico." },
+    { "identityKey": "bioquimica-fisicoquimica-moderna-2025", "officialLabel": "Fisicoquímica Moderna", "period": "Cuarto semestre", "requirementId": "chemistry", "credits": 11, "creditsPublished": true, "curricularBlock": false, "catalogRole": "official-semester-source-only-course", "identityReservation": "La única coincidencia técnica del snapshot está rotulada 2020-2024; no se proyecta como identidad 2025 sin equivalencia publicada." },
+    { "identityKey": "bioquimica-flexible-s4", "officialLabel": "Humanística / Electivas / AFI / Pasantías", "period": "Cuarto semestre", "requirementId": "orientation", "additionalRequirementIds": ["humanities", "social-productive"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "bioquimica-flexible-s5", "officialLabel": "Humanística / Electivas / AFI / Pasantías", "period": "Quinto semestre", "requirementId": "orientation", "additionalRequirementIds": ["humanities", "social-productive"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "bioquimica-flexible-s6", "officialLabel": "Humanística / Electivas / AFI / Pasantías", "period": "Sexto semestre", "requirementId": "orientation", "additionalRequirementIds": ["humanities", "social-productive"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "bioquimica-flexible-s7", "officialLabel": "Humanística / Electivas / AFI / Pasantías", "period": "Séptimo semestre", "requirementId": "orientation", "additionalRequirementIds": ["humanities", "social-productive"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "bioquimica-flexible-s8", "officialLabel": "Humanística / Electivas / AFI / Pasantías", "period": "Octavo semestre", "requirementId": "orientation", "additionalRequirementIds": ["humanities", "social-productive"], "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-flexible-slot" },
+    { "identityKey": "bioquimica-tesina-continuacion-s8", "officialLabel": "Tesina de Grado · continuación", "period": "Octavo semestre", "requirementId": "thesis", "credits": 0, "creditsPublished": false, "curricularBlock": true, "catalogRole": "official-multi-period-continuation", "identityReservation": "Representa la continuidad temporal de la única Tesina BQ200 iniciada en séptimo; no acredita una segunda actividad ni créditos adicionales." }
+  ],
   "publishedAlternatives": [
-    { "group": "microbiology", "sourceLabel": "Microbiología de Facultad de Ciencias", "publishedCredits": 12, "replaces": ["Microbiología General FQ - Teórico", "Laboratorio de Análisis Microbiológico"] },
-    { "group": "physiology", "sourceLabels": ["Fisiología Vegetal", "Fisiología Animal"], "publishedCredits": [11, 14], "replaces": ["Fisiología Vegetal / Animal"] },
-    { "group": "virology", "sourceLabel": "Virología Molecular", "publishedCredits": 10, "replaces": ["Virología - Módulo 1"] }
+    { "group": "microbiology", "primarySourceCourseIds": ["BG994", "BG986"], "alternativeSourceCourseIds": ["B0020"], "rule": "Microbiología de Facultad de Ciencias (12 créditos) sustituye el teórico de FQ más el Laboratorio de Análisis Microbiológico (6+6)." },
+    { "group": "physiology", "primarySourceCourseIds": ["B0015", "BG460"], "alternativeSourceCourseIds": [], "rule": "Se cursa Fisiología Vegetal (11 créditos) o Fisiología Animal (14), no ambas como obligación." },
+    { "group": "virology", "primarySourceCourseIds": ["B0021"], "alternativeSourceCourseIds": ["BG046"], "rule": "Virología Molecular (10 créditos) sustituye Virología - Módulo 1 (5)." }
   ],
   "cohortRule": "Para generaciones anteriores a 2025 no se exigirán Actividades de Formación Integral ni cursos con contenido en virología.",
-  "projectionCautions": [
-    "La trayectoria es sugerida; los espacios flexibles no son cinco obligaciones independientes ni tienen créditos semestrales publicados.",
-    "La Tesina aparece en séptimo y octavo como una actividad extendida de 40 créditos, no dos tesinas.",
-    "Las alternativas de microbiología, fisiología y virología no son obligaciones acumulativas.",
-    "Los créditos de los cursos pueden cambiar; cotejar identidad y carga vigente antes de publicar una correspondencia Bedelías."
+  "trajectoryConclusion": {
+    "state": "official-trajectory-reproduced",
+    "reason": "La presentación institucional de 2025 identifica expresamente el Plan 2017 y publica ocho semestres con materias, cargas, alternativas y una regla de cohorte. El Plan y la página vigente confirman el título único de 360 créditos; la trayectoria se reproduce como sugerida, no obligatoria.",
+    "publicTemporalPeriods": ["Primer semestre", "Segundo semestre", "Tercer semestre", "Cuarto semestre", "Quinto semestre", "Sexto semestre", "Séptimo semestre", "Octavo semestre"],
+    "versionReservation": "La evidencia reproduce la propuesta educativa 2025. Confirma vigencia del Plan 2017, pero no afirma que no exista una revisión de trayectoria posterior a 2025.",
+    "nextReviewCondition": "Revisar cuando la Comisión de Carrera publique una propuesta posterior a 2025 o equivalencias técnicas para Fisicoquímica I, Biofísica, Fisicoquímica Moderna y los módulos de Seguridad y Prevención del Riesgo."
+  },
+  "bedeliasComparison": {
+    "snapshotContentHash": "sha256:105145195b16aa47bc44471db60cabe7ab4355cce23c6df88a21bfc8c25a818e",
+    "compositionMatterEntries": 428,
+    "distinctSnapshotCourseRecords": 359,
+    "verifiedBedeliasCourseCount": 28,
+    "verifiedSourceOnlyCourseCount": 4,
+    "verifiedSourceOnlyBlockCount": 6,
+    "projectedCourseRecords": 439,
+    "verifiedValidationBlockCount": 1,
+    "candidateRetainedCount": 400
+  },
+  "projectionBaseline": {
+    "pathwayId": "formacion-personalizada",
+    "generatedFallback": false,
+    "temporalPeriodCount": 8,
+    "coursePlacementCount": 36,
+    "termPublishedCredits": [54, 47, 48, 37, 21, 38, [28, 31], null],
+    "allSnapshotOptionsRemainRecoverable": true
+  },
+  "authorityPolicy": {
+    "verifiedSourceCourseIds": ["MA400", "FI252", "B0025", "BG1", "BG456", "MA403", "MA404", "FI253", "BQ426", "BQ428", "BQ403", "BQ440", "B0031", "MA503", "BQ429", "BG830", "B0016", "BG994", "BG986", "B0020", "BG859", "BQ260", "BG828", "B0015", "BG460", "B0021", "BG046", "BQ200"],
+    "verifiedSourceOnlyIdentityKeys": ["bioquimica-seguridad-riesgos-i-ii", "bioquimica-fisicoquimica-i-2025", "bioquimica-biofisica-2025", "bioquimica-fisicoquimica-moderna-2025", "bioquimica-flexible-s4", "bioquimica-flexible-s5", "bioquimica-flexible-s6", "bioquimica-flexible-s7", "bioquimica-flexible-s8", "bioquimica-tesina-continuacion-s8"],
+    "unmatchedBedeliasEntries": "candidate",
+    "candidateVisibility": "audit-only",
+    "candidateCreditsSatisfyRequirements": false,
+    "bedeliasDoesNotAssignPeriods": true
+  },
+  "conflicts": [
+    { "field": "technicalIdentity", "resolution": "Se cotejan 28 códigos por rótulo y carga. Seguridad y Prevención del Riesgo, Fisicoquímica I, Biofísica y Fisicoquímica Moderna permanecen sólo-fuente porque el snapshot ofrece pares, sucesoras o vigencias incompatibles sin equivalencia oficial publicada." },
+    { "field": "alternatives", "resolution": "Microbiología FC reemplaza el par FQ, Fisiología Vegetal/Animal es una elección y Virología Molecular reemplaza Módulo 1. Las opciones se conservan sin volverlas obligaciones acumulativas." },
+    { "field": "flexibleSlots", "resolution": "Los cinco renglones Humanística/Electivas/AFI/Pasantías se conservan como espacios sin carga publicada; no son cinco requisitos independientes." },
+    { "field": "thesisPlacement", "resolution": "La Tesina aparece en séptimo y octavo, pero se conserva una sola identidad BQ200 de 40 créditos en ambos períodos." },
+    { "field": "cohort", "resolution": "La exención de AFI y virología para generaciones anteriores a 2025 se informa como regla de cohorte; no se elimina la exigencia del recorrido 2025." },
+    { "field": "catalog", "resolution": "Las otras 331 identidades de Bedelías permanecen candidatas recuperables y no satisfacen requisitos oficiales hasta contar con evidencia curricular." }
   ],
-  "sourcePortionFingerprint": {
+  "sourcePortions": {
+    "proposal-2025": [
+      "Propuesta educativa 2025: Licenciatura en Bioquímica, Plan 2017.",
+      "La trayectoria sugerida distribuye materias en Primer a Octavo semestre y publica cargas para las materias y los siete primeros semestres cuando corresponde.",
+      "Microbiología FC sustituye Microbiología General FQ más Laboratorio; Fisiología Vegetal o Animal y Virología Molecular o Módulo 1 son alternativas no acumulativas.",
+      "Humanística/Electivas/AFI/Pasantías aparece desde cuarto a octavo sin carga fija; Tesina de Grado aparece en séptimo y octavo.",
+      "Para generaciones anteriores a 2025 no se exigirán AFI ni cursos con contenido en virología."
+    ],
+    "faculty-career-page": [
+      "La Licenciatura en Bioquímica se dicta en Montevideo, dura cuatro años y exige 360 créditos.",
+      "El tramo común cubre cinco áreas y el tramo diferencial se diseña con orientación personal."
+    ],
+    "colibri-plan": [
+      "Carrera 302, plan 1083, año 2017, Facultad de Ciencias; el título exige 360 créditos y cuatro años.",
+      "Mínimos: 60 Físico-Matemática, 70 Química, 45 Bioquímica Básica, 60 Biología, 6 Humanística, 33 de orientación y Tesina de 40 créditos."
+    ],
+    "faculty-booklet-2019": [
+      "El librillo histórico reproduce la estructura 241+33+40 y el total de 360; no prueba identidades técnicas de 2025."
+    ],
+    "bedelias-active-matches": [
+      "MA400, FI252, B0025, BG1, BG456, MA403, MA404, FI253, BQ426, BQ428, BQ403, BQ440, B0031, MA503, BQ429, BG830, B0016, BG994, BG986, B0020, BG859, BQ260, BG828, B0015, BG460, B0021, BG046 y BQ200 son las 28 identidades técnicas cotejadas.",
+      "El snapshot conserva 428 apariciones de materia, 359 registros distintos y huella 105145195b16aa47bc44471db60cabe7ab4355cce23c6df88a21bfc8c25a818e."
+    ]
+  },
+  "fingerprint": {
     "algorithm": "sha256",
-    "canonicalFields": ["periods", "publishedAlternatives", "cohortRule"],
-    "value": "sha256:07384413ef780a97c002c2718071ce8cc2cf6eab14512c9378bce4b8c1064f6f"
+    "canonicalField": "sourcePortions",
+    "value": "sha256:ee8c5df6e06f525ea341fdf045d0b8c6706cc30dd16fc97fbab0ddc83e876868",
+    "sourceHashes": {
+      "proposal-2025": "sha256:c8677342d80eea7a1cd4843385c794ab34cdfd1fba6ba28a3d58692ec5180683",
+      "faculty-career-page": "sha256:be6503c1fa011dee7a569c151ddf016b306091be657126aea0dfba2e8666b701",
+      "colibri-plan": "sha256:5feb21012083fdfb23844fdb3db009d59b3423192bf3f71474437d1b907609e4",
+      "faculty-booklet-2019": "sha256:d6a96e710df93f9c28a0a92777ee0cdb5e050e090cc15ec3c322b72a1e7074dc",
+      "bedelias-active-matches": "sha256:0647525c0ec6c7d47fe61e32db1428df574ba3c204729a9f585c059e895441c5"
+    }
   }
 }

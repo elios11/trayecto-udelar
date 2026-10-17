@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:7032e3bbb226307c38c02455a3529c05be01de12b52a79913cb74eeeb3fa5691",
-    "officialAuditHash": "sha256:066c0abac798d95e7bc9bd41a8a5f40b5cbe8a47d7f099c274605f8e38d93103",
-    "reviewedTrajectoriesHash": "sha256:5fd1a7b5296fd8dfc0d97381ac889d423563ffc084893941c8af2eb04f94b1c3"
+    "extractedReportHash": "sha256:66c7af80e15f1fc0991cc2dda8e4ad5caf98187a553e24cf6e47ca641ab8f5b8",
+    "officialAuditHash": "sha256:59e91b167778ded477f96d5744cd7eeb2a8ffd219c1a6534c98acd8a7959e5e3",
+    "reviewedTrajectoriesHash": "sha256:678a110d06b821331b2247783ce36d5a755c258ddc47ffffdca03f10daaa8c17"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 108,
+      "official-trajectory-reproduced": 109,
       "official-trajectory-identified-pending": 1,
       "no-official-trajectory-documented": 3,
-      "research-pending": 35
+      "research-pending": 34
     },
-    "pending": 36,
+    "pending": 35,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -122,10 +122,10 @@
         "serviceLabel": "Facultad de Ciencias",
         "selectablePlanIds": 14,
         "states": {
-          "official-trajectory-reproduced": 1,
+          "official-trajectory-reproduced": 2,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 13
+          "research-pending": 12
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 36,
+    "total": 35,
     "plans": [
       {
         "priority": 1,
@@ -360,15 +360,6 @@
       {
         "priority": 2,
         "planId": "bedelias-fcien-licenciatura-biologia-humana-2004",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcien-licenciatura-en-bioquimica-2017",
         "state": "research-pending",
         "serviceIds": [
           "bedelias-fcien"
@@ -639,7 +630,6 @@
           "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011",
           "bedelias-cure-tecnologo-minero-2013",
           "bedelias-fcien-licenciatura-biologia-humana-2004",
-          "bedelias-fcien-licenciatura-en-bioquimica-2017",
           "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
           "bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007",
           "bedelias-fcien-licenciatura-en-fisica-2019",
@@ -5526,27 +5516,39 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-27",
-      "effectiveAt": "2017",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-16",
+      "effectiveAt": "2025",
       "officialSources": [
         {
-          "authority": "Plan de Estudios de la Licenciatura en Bioquímica, Facultad de Ciencias, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24552/1/PLBIO_2020.pdf",
-          "role": "aprobaciones; título; cuatro años; 360 créditos; tramos; mínimos por área; tesina; formación transversal; tutoría",
-          "trajectoryEvidence": false
+          "authority": "Instituto de Química Biológica y Comisión de Carrera en Bioquímica, Facultad de Ciencias, Universidad de la República",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/3482/mod_resource/content/9/bienvenida%202025%20final.pdf",
+          "reviewedAt": "2026-10-16",
+          "role": "Plan 2017; trayectoria sugerida 2025; ocho semestres; cargas publicadas; alternativas; regla de cohorte anterior a 2025; códigos técnicos; una trayectoria posterior a 2025"
         },
         {
-          "authority": "Repositorio Colibri, Udelar",
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-bioquimica",
+          "reviewedAt": "2026-10-16",
+          "role": "vigencia de la carrera; 360 créditos; cuatro años; Montevideo; cinco áreas del tramo común; orientación personal"
+        },
+        {
+          "authority": "Repositorio Colibri, Universidad de la República",
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24552",
-          "role": "Plan 2017; código de carrera 302; código de plan 1083; responsabilidad de Facultad de Ciencias",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-16",
+          "role": "carrera 302; plan 1083; año 2017; responsabilidad de Facultad de Ciencias"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-bioquimica",
-          "role": "vigencia; cuatro años; Facultad de Ciencias; orientaciones del perfil",
-          "trajectoryEvidence": false
+          "authority": "Plan de Estudios de la Licenciatura en Bioquímica, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24552/1/PLBIO_2020.pdf",
+          "reviewedAt": "2026-10-16",
+          "role": "aprobaciones; título; cuatro años; 360 créditos; mínimos por área; 33 créditos de orientación; Tesina de 40 créditos; validación académica"
+        },
+        {
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.fcien.edu.uy/images/Comunicaci%C3%B3n%202019/Librillo%20informativo%20Lic.%20Bioqu%C3%ADmica.pdf",
+          "reviewedAt": "2026-10-16",
+          "role": "Plan 2017; mínimos por área; estructura 241+33+40 y total de 360 créditos; identidad técnica vigente de cursos en 2025; ausencia de cambios posteriores"
         }
       ],
       "scope": {
@@ -5558,23 +5560,37 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en bioquimica:2017",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-bioquimica-2017.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/bioquimica-2017-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-bioquimica-2017.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:023b16e2b619ba4e3c32c898a88ed6fe10a350b48ab62c0204a3ddf53363ee5c",
+        "projectionContentHash": "sha256:c759ed0a15581e483611ebab5212d929cbc4f85c1e263bb5e0b79eb191cbba13",
+        "pathways": [
+          {
+            "id": "formacion-personalizada",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 36,
+        "matchedCoursePlacements": 36
       },
       "conflictNotes": [
-        "minimumCredits: El snapshot deja vacío el mínimo total y marca el tramo diferencial con cero créditos. El Plan aprobado exige 360 totales, 33 de optativas/electivas de orientación y 40 de Tesina.",
-        "socialProductiveTraining: El Plan exige 10 créditos transversales, pero el grupo específico de Bedelías conserva sólo dos actividades históricas por 7 créditos. Se muestra el grupo como catálogo y se requiere validación académica sin inventar una materia ni bloquear el plan con una bolsa incompleta.",
-        "orientations: Investigación, diagnóstico, biotecnología, bioinformática y demás campos son ejemplos de énfasis dentro de un perfil común. La UI no los ofrece como menciones separadas.",
-        "catalogSize: Los 2.897 créditos de los 359 códigos distintos y las 428 apariciones jerárquicas constituyen oferta acumulada, equivalencias y cursos históricos. El requisito es cumplir áreas, Tesina y 360 créditos, no aprobar el catálogo completo."
+        "Se cotejan 28 códigos por rótulo y carga. Seguridad y Prevención del Riesgo, Fisicoquímica I, Biofísica y Fisicoquímica Moderna permanecen sólo-fuente porque el snapshot ofrece pares, sucesoras o vigencias incompatibles sin equivalencia oficial publicada.",
+        "Microbiología FC reemplaza el par FQ, Fisiología Vegetal/Animal es una elección y Virología Molecular reemplaza Módulo 1. Las opciones se conservan sin volverlas obligaciones acumulativas.",
+        "Los cinco renglones Humanística/Electivas/AFI/Pasantías se conservan como espacios sin carga publicada; no son cinco requisitos independientes.",
+        "La Tesina aparece en séptimo y octavo, pero se conserva una sola identidad BQ200 de 40 créditos en ambos períodos.",
+        "La exención de AFI y virología para generaciones anteriores a 2025 se informa como regla de cohorte; no se elimina la exigencia del recorrido 2025.",
+        "Las otras 331 identidades de Bedelías permanecen candidatas recuperables y no satisfacen requisitos oficiales hasta contar con evidencia curricular."
       ]
     },
     {
@@ -13503,5 +13519,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:b5f06aeffac05bda63ec7fe66a0d4fc4ee3533a47bca4ccc74179f3b9ea7251c"
+  "contentHash": "sha256:e8d279e9b892f189db84e6fc84ff0c5af54f1e614c464335dea6566a9613db49"
 }
