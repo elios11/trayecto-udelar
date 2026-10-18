@@ -3194,6 +3194,60 @@
         "La exención de AFI y virología para generaciones anteriores a 2025 se informa como regla de cohorte; no se elimina la exigencia del recorrido 2025.",
         "Las otras 331 identidades de Bedelías permanecen candidatas recuperables y no satisfacen requisitos oficiales hasta contar con evidencia curricular."
       ]
+    },
+    {
+      "planId": "bedelias-fartes-licenciatura-en-composicion-1987",
+      "state": "research-pending",
+      "reviewedAt": "2026-10-17",
+      "effectiveAt": "1987-2025",
+      "projectionMechanism": "administrative-composition",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Artes, Universidad de la República",
+          "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
+          "reviewedAt": "2026-10-17",
+          "role": "régimen de egreso, derecho a finalizar el plan de ingreso, sustitución progresiva y referencia a planes anteriores del Plan 1987 que ya no se exponen"
+        },
+        {
+          "authority": "Facultad de Artes, Universidad de la República",
+          "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/",
+          "reviewedAt": "2026-10-17",
+          "role": "continuidad de exámenes e inscripción por Bedelía para estudiantes del Plan 1987 en 2025"
+        },
+        {
+          "authority": "Maestría en Enseñanza Universitaria, Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/tesis_graciela_carreno_2017.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "Tabla 8: reconstrucción secundaria de siete años elaborada a partir de planes de estudio; Anexo F: expedientes 2642/87 y 7704/87 no recuperados",
+          "contentHash": "sha256:900b145000232c173ead36d9ebe1afd845d1a47342a8120a85aa03a109f61107"
+        }
+      ],
+      "evidence": {
+        "kind": "insufficient-primary-trajectory-evidence",
+        "sourceDataPath": "data/fartes/composicion-1987.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-composicion-1987.json",
+        "secondaryGridPeriodCount": 7,
+        "secondaryGridCoursePlacements": 38,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 129,
+        "verifiedManualValidationCount": 1,
+        "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
+      },
+      "conflictNotes": [
+        "La página vigente de Facultad refiere a planes anteriores y previas del Plan 1987, pero la versión migrada no expone la grilla ni un enlace recuperable.",
+        "La Tabla 8 de la tesis institucional contiene 38 ubicaciones en siete años, pero declara elaboración propia a partir de los planes de estudio y no sustituye a los expedientes aprobatorios.",
+        "Bedelías agrupa 129 identidades técnicas en siete años más cultura general, con variantes y equivalentes históricos; no publica créditos ni una correspondencia normativa con las 38 filas secundarias.",
+        "Se conserva el marcador manual de egreso como único registro verified; las 129 identidades técnicas siguen candidate, con sus IDs y cero créditos.",
+        "El Plan 2005 queda excluido: no se usa para inferir secuencia, créditos, obligatoriedad ni equivalencias del Plan 1987."
+      ]
     }
   ]
 }

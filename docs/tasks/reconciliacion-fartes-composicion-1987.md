@@ -20,4 +20,20 @@ Investigar si Facultad de Artes publicó una malla o secuencia oficial del Plan 
 
 ## Estado
 
-- Pendiente de investigación. La auditoría existente de 2026-08-24 confirma el régimen de egreso histórico, pero no la trayectoria temporal.
+- Investigación completada el 2026-10-17 con estado `research-pending`. La búsqueda agrupada cubrió Facultad de Artes/Instituto de Música, portal central Udelar, CSE, Colibri e IMPO. Se confirmó el régimen de egreso y se localizó una secuencia secundaria de siete años, pero no una copia pública del Plan 1987 aprobado ni de sus expedientes fuente.
+- La Tabla 8 de la tesis de Graciela Carreño (Maestría en Enseñanza Universitaria, 2017) contiene 38 ubicaciones para Composición Plan 1987 y el Anexo F identifica los expedientes 2642/87 y 7704/87. La tabla dice «elaboración propia a partir de los PE»; por eso se normaliza como reconstrucción secundaria y no se proyecta como trayectoria oficial.
+- La página vigente de Licenciaturas del Instituto de Música remite a planes anteriores para las materias y previas del Plan 1987, pero la versión migrada no expone el documento ni un enlace recuperable. Los calendarios 2025 acreditan exámenes e inscripción por Bedelía, no una secuencia curricular.
+- Se conservan las 129 identidades técnicas como `candidate`, con sus IDs y cero créditos, más el marcador manual de egreso como único registro `verified`. El Plan 2005 queda expresamente excluido de cualquier inferencia o migración.
+
+### Artefactos y reproducción
+
+- Evidencia normalizada: `data/fartes/composicion-1987.json`.
+- Crudo consultado y páginas renderizadas: `tmp/d03as-composicion-1987/` (no versionado).
+- Generador offline: `npm run trajectory:fartes-composicion-1987`.
+- Prueba focal: `node --test tests/fartes-composicion-1987-research.test.mjs`.
+- La regeneración valida la huella de la evidencia, los 38 renglones secundarios, los dos expedientes pendientes, la frontera de 129 candidatas, cero créditos, unicidad/huella de IDs y el estado del inventario. Debe ejecutarse dos veces; la segunda no debe introducir diferencias.
+
+### Brecha y siguiente paso
+
+- Para cerrar la trayectoria hace falta una copia institucional del Plan 1987 aprobado o de los expedientes 2642/87 y 7704/87, con la versión aplicable, o una confirmación expresa de Facultad de Artes/Udelar de que la columna 1987 de la Tabla 8 transcribe la secuencia oficial aplicable al régimen de egreso.
+- El siguiente paso recuperable es solicitar esos expedientes al archivo de Facultad de Artes o a la Dirección General Jurídica y cotejarlos con las 38 ubicaciones, las variantes de Bedelías y eventuales modificaciones posteriores. Hasta entonces no se promueven períodos, obligaciones ni equivalencias.
