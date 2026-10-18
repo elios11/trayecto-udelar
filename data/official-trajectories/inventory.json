@@ -3,18 +3,18 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:31486adad3f72787690b2e547b082d1bc8d88246a7552c260f3cc6737745366b",
-    "officialAuditHash": "sha256:d0c4b4926075762224655e1d73c1cc140e5b79c318b21236db4552eac5ba728d",
-    "reviewedTrajectoriesHash": "sha256:2b3f15e19a6f5a5fdb9fd3870ac3f3e7c361478250705537601b4cb8d3016bb4"
+    "extractedReportHash": "sha256:13cb441539fcb3510878238f54a9c24eabf2e8fba12783ee730d3f17cc801d61",
+    "officialAuditHash": "sha256:d3824d5200acc6231e38b77e2f3df546f8736adb02f020c5b564ac7c3dc0b6e3",
+    "reviewedTrajectoriesHash": "sha256:6a7c5c4493cd577c647a48f873aba5d697a7867babb9c710bcf590991f6a7fc9"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
       "official-trajectory-reproduced": 109,
-      "official-trajectory-identified-pending": 1,
+      "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 3,
-      "research-pending": 34
+      "research-pending": 32
     },
     "pending": 35,
     "byService": [
@@ -123,9 +123,9 @@
         "selectablePlanIds": 14,
         "states": {
           "official-trajectory-reproduced": 2,
-          "official-trajectory-identified-pending": 0,
+          "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 0,
-          "research-pending": 12
+          "research-pending": 10
         }
       },
       {
@@ -278,6 +278,24 @@
     "plans": [
       {
         "priority": 1,
+        "planId": "bedelias-cur-licenciatura-en-recursos-naturales-2010",
+        "state": "official-trajectory-identified-pending",
+        "serviceIds": [
+          "bedelias-fcien"
+        ],
+        "reason": "No se halló una publicación oficial con los cursos y su ubicación por año o semestre para una cohorte vigente del Plan 2010."
+      },
+      {
+        "priority": 1,
+        "planId": "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011",
+        "state": "official-trajectory-identified-pending",
+        "serviceIds": [
+          "bedelias-fcien"
+        ],
+        "reason": "No se halló una publicación oficial que asigne cursos concretos a años o semestres del Plan 2011; el Plan sólo enumera ejemplos ilustrativos."
+      },
+      {
+        "priority": 1,
         "planId": "2025",
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
@@ -329,24 +347,6 @@
           "bedelias-fartes"
         ],
         "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cur-licenciatura-en-recursos-naturales-2010",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -624,10 +624,11 @@
       {
         "serviceId": "bedelias-fcien",
         "serviceLabel": "Facultad de Ciencias",
-        "identifiedPending": [],
-        "researchPending": [
+        "identifiedPending": [
           "bedelias-cur-licenciatura-en-recursos-naturales-2010",
-          "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011",
+          "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011"
+        ],
+        "researchPending": [
           "bedelias-cure-tecnologo-minero-2013",
           "bedelias-fcien-licenciatura-biologia-humana-2004",
           "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
@@ -2107,33 +2108,51 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2010",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-10-18",
+      "effectiveAt": "2023",
       "officialSources": [
         {
           "authority": "Diario Oficial - IMPO / Universidad de la República",
           "url": "https://www.impo.com.uy/diariooficial/2010/11/15/avisosdeldia.pdf",
-          "role": "Plan 2010; título; 360 créditos; mínimos por siete áreas; Tesina; aprobación del currículo individual; articulación con la tecnicatura",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-18",
+          "role": "Plan 2010; 360 créditos y mínimos por áreas; currículo individual flexible aprobado por la Comisión de Carrera; no publica materias por año o semestre",
+          "contentHash": "sha256:c31b501060a96a0c3cb9774e817bf7bf78aba577e44aaa3ff0e5fcb3eb52df53"
         },
         {
-          "authority": "Facultad de Ciencias, Udelar",
-          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-recursos-naturales",
-          "role": "vigencia; cuatro años; 360 créditos; siete áreas; inscripciones y dictado en Rivera",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-recursos-naturales/2339-licenciatura-en-recursos-naturales",
+          "reviewedAt": "2026-10-18",
+          "role": "vigencia; 360 créditos; cuatro años; siete áreas; dictado en Rivera sin grilla temporal pública",
+          "contentHash": "sha256:bfca19a43eadfe96e4f67c73ff072a6b507e05a902bc9240915956e2e2a6a5b6"
         },
         {
           "authority": "Portal central de la Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-recursos-naturales",
-          "role": "título; 360 créditos; sede exclusiva Rivera; requisitos de ingreso",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-18",
+          "role": "título; 360 créditos; sede Rivera; vigencia",
+          "contentHash": "sha256:4699433ae1cd0d683fea61efbacd60945203c2b486f5773374f33b80ce81af5a"
         },
         {
-          "authority": "Dirección General de Planeamiento, Udelar",
+          "authority": "Repositorio institucional Colibrí, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42928",
+          "reviewedAt": "2026-10-18",
+          "role": "la Licenciatura organiza el plan flexible por áreas; cada generación recibe una trayectoria sugerida; la trayectoria busca cubrir los mínimos en el tiempo ideal; no publica la tabla de asignación de cursos de una cohorte",
+          "contentHash": "sha256:6122afc426bf8f5d0aac78c990d56149f3ea9d8d226a94fd5997af7762996cf2"
+        },
+        {
+          "authority": "Dirección General de Planeamiento, Universidad de la República",
           "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
-          "role": "actividad estudiantil vigente en 2025",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-18",
+          "role": "actividad estudiantil vigente de la Licenciatura en 2025; no publica secuencia temporal",
+          "contentHash": "sha256:1927ca6fa3ac5140312ea3c063d0bc12e04ecca7b7b51d9953af0a142fddf292"
+        },
+        {
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/LICENCIATURA-EN-RECURSOS-NATURALES-CSE2017-.pdf",
+          "reviewedAt": "2026-10-18",
+          "role": "planes flexibles y creditizados; cursos sin obligatoriedad nominal general; calendarios organizados por años como práctica de implementación; no publica correspondencia curso-año ni curso-semestre",
+          "contentHash": "sha256:4242ee69d140626e4320d9d18e22454c35cf65626adc0eab546bcd6f2f991227"
         }
       ],
       "scope": {
@@ -2151,17 +2170,20 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en recursos naturales:2010",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cur-licenciatura-en-recursos-naturales-2010.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "identified-source-pending-reconciliation",
+        "sourceDataPath": "data/cur/recursos-naturales-rivera-trajectory-review.json",
+        "sourcePlanId": "bedelias-cur-licenciatura-en-recursos-naturales-2010",
+        "identifiedScope": "La implementación institucional declara una trayectoria sugerida para cada generación, organizada para cubrir los mínimos y el tiempo ideal.",
+        "missingFields": [
+          "etiquetas temporales",
+          "ubicaciones curso-período"
+        ],
+        "reason": "No se halló una publicación oficial con los cursos y su ubicación por año o semestre para una cohorte vigente del Plan 2010."
       },
       "conflictNotes": [
-        "durationMonths: Facultad de Ciencias y el plan aprobado establecen cuatro años; se normaliza a 48 meses y se conserva la referencia administrativa de 60 meses como discrepancia.",
-        "catalogSize: Los 2.811 créditos visibles son oferta acumulada por área. El requisito real es alcanzar 360 créditos, respetar mínimos y obtener aprobación de la Comisión de Carrera.",
-        "areaMinimums: Los mínimos de las siete áreas suman 323 créditos. Los 37 restantes no constituyen un área omitida: se completan dentro del currículo coherente individual.",
-        "technicalArticulation: La continuidad para egresados de la tecnicatura no convierte ese título en una salida intermedia automática del Plan 2010."
+        "No se halló una publicación oficial con los cursos y su ubicación por año o semestre para una cohorte vigente del Plan 2010.",
+        "La búsqueda fallida de una grilla pública no demuestra ausencia de trayectoria oficial.",
+        "La composición de Bedelías preserva candidatas, pero no acredita períodos ni obligaciones."
       ]
     },
     {
@@ -2283,27 +2305,44 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2011",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-10-18",
+      "effectiveAt": "2017",
       "officialSources": [
         {
           "authority": "Diario Oficial - IMPO / Universidad de la República",
           "url": "https://impo.com.uy/diariooficial/2011/08/08/avisosdeldia.pdf",
-          "role": "Resolución 33 del CDC; Plan 2011; título; 195 créditos; mínimos por ejes; máximo optativo; Trabajo Final; carácter ilustrativo de las asignaturas",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-18",
+          "role": "Plan 2011; 195 créditos; mínimos por tres ejes y Trabajo Final; las asignaturas listadas son ejemplos ilustrativos; no publica materias por año o semestre",
+          "contentHash": "sha256:0279e419d6ea3365952f043c82ffb8693d80d0f8ee772051f8b998e2a22bb353"
         },
         {
-          "authority": "Facultad de Ciencias, Udelar",
-          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/tecnicatura-gestion-recursos-naturales",
-          "role": "vigencia; dos años y medio; 195 créditos; ejes; Trabajo Final; dirección de carrera; sede Rivera",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/tecnicatura-gestion-recursos-naturales/358-plan-de-estudios",
+          "reviewedAt": "2026-10-18",
+          "role": "vigencia; 195 créditos; Trabajo Final; tres ejes; no publica grilla temporal",
+          "contentHash": "sha256:274a5f644acfc1002e16a167205941f0b16f87b21817b2d7f3c97b4059b2db9b"
         },
         {
-          "authority": "Dirección General de Planeamiento, Udelar",
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/LICENCIATURA-EN-RECURSOS-NATURALES-CSE2017-.pdf",
+          "reviewedAt": "2026-10-18",
+          "role": "planes flexibles y creditizados; cursos sin obligatoriedad nominal general; calendarios organizados por años como práctica de implementación; no publica correspondencia curso-año ni curso-semestre",
+          "contentHash": "sha256:4242ee69d140626e4320d9d18e22454c35cf65626adc0eab546bcd6f2f991227"
+        },
+        {
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://biblioteca.fcien.edu.uy/wp-content/uploads/2023/08/facultad-de-ciencias-anuario-2014.pdf",
+          "reviewedAt": "2026-10-18",
+          "role": "estructura por ejes; carácter ilustrativo de las asignaturas; mínimos de egreso; no publica secuencia temporal",
+          "contentHash": "sha256:eea4be3d95e26c1fe6e6472a1f368a5ecd3310c2d310fe9fa8dce651453c278b"
+        },
+        {
+          "authority": "Dirección General de Planeamiento, Universidad de la República",
           "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
-          "role": "Plan 2011; dos años y medio; 195 créditos; sede Rivera",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-18",
+          "role": "Plan 2011; dos años y medio; 195 créditos; sede Rivera; no publica secuencia temporal",
+          "contentHash": "sha256:aa3f0d096a5d1897e75ef781cd1c53acd7c9e03fa73cd39b4a356727e449e442"
         }
       ],
       "scope": {
@@ -2315,23 +2354,26 @@
         ]
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-flexible-structure",
         "features": [
-          "areas"
+          "official-flexible-structure"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura en gestion de recursos naturales:2011",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "identified-source-pending-reconciliation",
+        "sourceDataPath": "data/cur/recursos-naturales-rivera-trajectory-review.json",
+        "sourcePlanId": "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011",
+        "identifiedScope": "La presentación institucional de la implementación conjunta registra calendarios organizados por años como práctica académica.",
+        "missingFields": [
+          "etiquetas temporales",
+          "ubicaciones curso-período"
+        ],
+        "reason": "No se halló una publicación oficial que asigne cursos concretos a años o semestres del Plan 2011; el Plan sólo enumera ejemplos ilustrativos."
       },
       "conflictNotes": [
-        "durationMonths: El plan, Facultad de Ciencias y Planeamiento establecen dos años y medio; se normaliza a 30 meses frente a los 60 administrativos de Bedelías y del portal central.",
-        "catalogSize: Las 75 entradas y 535 créditos por caminos de composición son oferta acumulada y contienen unidades repetidas entre ejes. No se vuelven obligaciones de egreso.",
-        "optionalMaximum: El máximo de 10 créditos optativos requiere validación explícita porque el modelo de progreso controla mínimos, no máximos por nodo.",
-        "degreeRelationship: La tecnicatura conserva título y plan propios; la continuidad hacia la Licenciatura no es una salida intermedia automática."
+        "No se halló una publicación oficial que asigne cursos concretos a años o semestres del Plan 2011; el Plan sólo enumera ejemplos ilustrativos.",
+        "La búsqueda fallida de una grilla pública no demuestra ausencia de trayectoria oficial.",
+        "La composición de Bedelías preserva candidatas, pero no acredita períodos ni obligaciones."
       ]
     },
     {
@@ -13623,5 +13665,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:2a544a61acfd74e8c5bb81d61cfbce2bde2dd8bc3d44d53149033f3827e3a8b8"
+  "contentHash": "sha256:fd4f44023e11c4a6aa17b8fdc06033606fb6b51f1e5fdfed4e92c7819815d618"
 }

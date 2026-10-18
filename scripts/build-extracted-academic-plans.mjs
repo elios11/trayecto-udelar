@@ -411,6 +411,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
             : "Mínimos y requisitos publicados por el servicio universitario; la composición por unidades curriculares sigue pendiente."
           : "Agrupación publicada por Bedelías; no equivale a una trayectoria sugerida auditada."),
       campusIds: campuses.map((campus) => campus.id),
+      ...(audit?.officialPlan?.curriculum?.generatedFallback === true ? { generatedFallback: true } : {}),
       periods: periods.filter((period) => !period.catalog),
       ...(catalogCourseIds.length > 0 ? { catalogCourseIds } : {}),
     },

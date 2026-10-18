@@ -33419,9 +33419,9 @@
       "identity": "licenciatura en recursos naturales:2010",
       "career": "LICENCIATURA EN RECURSOS NATURALES",
       "planYear": "2010",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-18",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, duración, créditos, áreas, currículo flexible, tesina, sede y articulación con la tecnicatura",
+      "scope": "vigencia, título, duración, créditos, áreas, currículo flexible, tesina, sede, articulación y brecha de publicación de la trayectoria por cohorte",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -33521,7 +33521,9 @@
               ]
             }
           ],
-          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del currículo individual coherente que completa los 360 créditos"
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del currículo individual coherente que completa los 360 créditos",
+          "sourceDataPath": "data/cur/recursos-naturales-rivera-trajectory-review.json",
+          "generatedFallback": true
         }
       },
       "offerings": [
@@ -33547,7 +33549,7 @@
         "canonicalModel": "one-plan-one-offering-flexible-by-areas",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "El Plan 2010 define una única licenciatura de Facultad de Ciencias, dictada íntegramente en Rivera. Su flexibilidad por áreas y su articulación con la tecnicatura no crean menciones, títulos ni sedes adicionales.",
+        "reason": "El Plan 2010 define una única licenciatura de Facultad de Ciencias, dictada íntegramente en Rivera. Su flexibilidad por áreas y su articulación con la tecnicatura no crean menciones, títulos ni sedes adicionales. La implementación institucional declara una trayectoria sugerida para cada generación, organizada para cubrir los mínimos y el tiempo ideal. No se halló una publicación oficial con los cursos y su ubicación por año o semestre para una cohorte vigente del Plan 2010.",
         "normalization": [
           "Publicar una única Licenciatura en Recursos Naturales Plan 2010 bajo Facultad de Ciencias y con sede Rivera.",
           "Usar la duración normativa de cuatro años; documentar los 60 meses de la ficha central y de Bedelías como metadato administrativo contradictorio.",
@@ -33555,8 +33557,13 @@
           "Exigir 360 créditos totales: los mínimos por área suman 323 y los 37 restantes se distribuyen dentro del currículo personal aprobado.",
           "Mantener las 378 unidades de Bedelías como catálogo acreditable por área, sin volverlas obligatorias ni inferir una secuencia.",
           "Exigir la Tesina de Graduación nominal y una validación final de la Comisión de Carrera.",
-          "Conservar la Tecnicatura en Gestión de Recursos Naturales como carrera y título separados; su articulación habilita continuidad, no una credencial intermedia automática de la licenciatura."
-        ]
+          "Conservar la Tecnicatura en Gestión de Recursos Naturales como carrera y título separados; su articulación habilita continuidad, no una credencial intermedia automática de la licenciatura.",
+          "La trayectoria sugerida por generación está identificada, pero permanece pendiente hasta obtener su asignación oficial de cursos y períodos; el orden de Bedelías no la sustituye.",
+          "La Licenciatura y la Tecnicatura conservan planes, títulos y progreso separados; su articulación no autoriza compartir avance."
+        ],
+        "siteSpecificTrajectoryIdentified": true,
+        "trajectoryStatus": "official-trajectory-identified-pending",
+        "trajectorySourceDataPath": "data/cur/recursos-naturales-rivera-trajectory-review.json"
       },
       "sources": [
         {
@@ -33564,24 +33571,23 @@
           "authority": "Diario Oficial - IMPO / Universidad de la República",
           "supports": [
             "Plan 2010",
-            "título",
-            "360 créditos",
-            "mínimos por siete áreas",
-            "Tesina",
-            "aprobación del currículo individual",
-            "articulación con la tecnicatura"
-          ]
+            "360 créditos y mínimos por áreas",
+            "currículo individual flexible aprobado por la Comisión de Carrera",
+            "no publica materias por año o semestre"
+          ],
+          "contentHash": "sha256:c31b501060a96a0c3cb9774e817bf7bf78aba577e44aaa3ff0e5fcb3eb52df53"
         },
         {
-          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-recursos-naturales",
-          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-recursos-naturales/2339-licenciatura-en-recursos-naturales",
+          "authority": "Facultad de Ciencias, Universidad de la República",
           "supports": [
             "vigencia",
-            "cuatro años",
             "360 créditos",
+            "cuatro años",
             "siete áreas",
-            "inscripciones y dictado en Rivera"
-          ]
+            "dictado en Rivera sin grilla temporal pública"
+          ],
+          "contentHash": "sha256:bfca19a43eadfe96e4f67c73ff072a6b507e05a902bc9240915956e2e2a6a5b6"
         },
         {
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-recursos-naturales",
@@ -33589,16 +33595,41 @@
           "supports": [
             "título",
             "360 créditos",
-            "sede exclusiva Rivera",
-            "requisitos de ingreso"
-          ]
+            "sede Rivera",
+            "vigencia"
+          ],
+          "contentHash": "sha256:4699433ae1cd0d683fea61efbacd60945203c2b486f5773374f33b80ce81af5a"
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42928",
+          "authority": "Repositorio institucional Colibrí, Universidad de la República",
+          "supports": [
+            "la Licenciatura organiza el plan flexible por áreas",
+            "cada generación recibe una trayectoria sugerida",
+            "la trayectoria busca cubrir los mínimos en el tiempo ideal",
+            "no publica la tabla de asignación de cursos de una cohorte"
+          ],
+          "contentHash": "sha256:6122afc426bf8f5d0aac78c990d56149f3ea9d8d226a94fd5997af7762996cf2"
         },
         {
           "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
-          "authority": "Dirección General de Planeamiento, Udelar",
+          "authority": "Dirección General de Planeamiento, Universidad de la República",
           "supports": [
-            "actividad estudiantil vigente en 2025"
-          ]
+            "actividad estudiantil vigente de la Licenciatura en 2025",
+            "no publica secuencia temporal"
+          ],
+          "contentHash": "sha256:1927ca6fa3ac5140312ea3c063d0bc12e04ecca7b7b51d9953af0a142fddf292"
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/LICENCIATURA-EN-RECURSOS-NATURALES-CSE2017-.pdf",
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "supports": [
+            "planes flexibles y creditizados",
+            "cursos sin obligatoriedad nominal general",
+            "calendarios organizados por años como práctica de implementación",
+            "no publica correspondencia curso-año ni curso-semestre"
+          ],
+          "contentHash": "sha256:4242ee69d140626e4320d9d18e22454c35cf65626adc0eab546bcd6f2f991227"
         }
       ],
       "anomalies": [
@@ -33617,10 +33648,14 @@
         {
           "field": "technicalArticulation",
           "resolution": "La continuidad para egresados de la tecnicatura no convierte ese título en una salida intermedia automática del Plan 2010."
+        },
+        {
+          "field": "trajectoryPublication",
+          "resolution": "Colibrí documenta que cada generación recibe una trayectoria sugerida, pero ninguna fuente consultada publica sus cursos por año o semestre. Se identifica la trayectoria sin atribuirle el catálogo de Bedelías."
         }
       ],
-      "uiNotice": "Plan 2010 flexible: completá los mínimos de cada área, la Tesina y 360 créditos totales. La Comisión de Carrera debe aprobar la coherencia del currículo individual; el catálogo disponible no es obligatorio completo.",
-      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La asignación concreta de unidades a un currículo personal requiere resolución de la Comisión de Carrera."
+      "uiNotice": "Plan 2010 flexible: completá los mínimos de cada área, la Tesina y 360 créditos totales. El catálogo disponible no es obligatorio completo. La institución documenta una trayectoria sugerida por generación, pero no publicó su asignación curso-período; Trayecto muestra un recorrido orientativo generado, no institucional, y la Comisión de Carrera valida el currículo individual.",
+      "remainingWork": "Obtener de la Comisión de Carrera, FCIEN o CENUR Noreste la trayectoria vigente de una cohorte con cursos y períodos; reconciliarla sin inferir desde el catálogo por áreas."
     },
     {
       "identity": "tecnicatura en artes plasticas y visuales:2017",
@@ -34729,9 +34764,9 @@
       "identity": "tecnicatura en gestion de recursos naturales:2011",
       "career": "TECNICATURA EN GESTIÓN DE RECURSOS NATURALES",
       "planYear": "2011",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-18",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, duración, créditos, mínimos por eje, trabajo final, optativas, articulación y sede",
+      "scope": "vigencia, título, duración, créditos, mínimos por eje, trabajo final, optativas, articulación, sede y brecha de publicación de calendarios por cohorte",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -34816,7 +34851,9 @@
               ]
             }
           ],
-          "manualCompletionValidation": "Validación de la Comisión de Carrera: máximo 10 créditos optativos y pertinencia de los 195 créditos del currículo"
+          "manualCompletionValidation": "Validación de la Comisión de Carrera: máximo 10 créditos optativos y pertinencia de los 195 créditos del currículo",
+          "sourceDataPath": "data/cur/recursos-naturales-rivera-trajectory-review.json",
+          "generatedFallback": true
         }
       },
       "offerings": [
@@ -34844,7 +34881,7 @@
         "canonicalModel": "one-plan-one-offering-flexible-by-axes",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "El Plan 2011 define una tecnicatura propia de Facultad de Ciencias, radicada en Rivera y flexible por ejes. Su articulación académica con la Licenciatura en Recursos Naturales no la convierte en una credencial intermedia de esa licenciatura.",
+        "reason": "El Plan 2011 define una tecnicatura propia de Facultad de Ciencias, radicada en Rivera y flexible por ejes. Su articulación académica con la Licenciatura en Recursos Naturales no la convierte en una credencial intermedia de esa licenciatura. La presentación institucional de la implementación conjunta registra calendarios organizados por años como práctica académica. No se halló una publicación oficial que asigne cursos concretos a años o semestres del Plan 2011; el Plan sólo enumera ejemplos ilustrativos.",
         "normalization": [
           "Publicar una única Tecnicatura en Gestión de Recursos Naturales Plan 2011 bajo Facultad de Ciencias y con sede Rivera.",
           "Corregir la duración administrativa de 60 meses a los dos años y medio oficiales.",
@@ -34852,46 +34889,72 @@
           "Mantener la oferta de Bedelías como catálogo por ejes: el plan declara sus asignaturas como ejemplos ilustrativos y no exige aprobarlas todas.",
           "Aplicar validación de Comisión de Carrera para el máximo de 10 créditos optativos, restricción que el contador de mínimos no representa por sí solo.",
           "Conservar el Trabajo Final o pasantía como requisito nominal obligatorio.",
-          "No otorgar automáticamente este título desde la Licenciatura ni presentar la articulación entre carreras como una trayectoria interna."
-        ]
+          "No otorgar automáticamente este título desde la Licenciatura ni presentar la articulación entre carreras como una trayectoria interna.",
+          "Los calendarios por años están identificados como práctica de implementación, pero permanecen pendientes hasta obtener una asignación oficial de cursos y períodos; los ejemplos del Plan no la sustituyen.",
+          "La Licenciatura y la Tecnicatura conservan planes, títulos y progreso separados; su articulación no autoriza compartir avance."
+        ],
+        "siteSpecificTrajectoryIdentified": true,
+        "trajectoryStatus": "official-trajectory-identified-pending",
+        "trajectorySourceDataPath": "data/cur/recursos-naturales-rivera-trajectory-review.json"
       },
       "sources": [
         {
           "url": "https://impo.com.uy/diariooficial/2011/08/08/avisosdeldia.pdf",
           "authority": "Diario Oficial - IMPO / Universidad de la República",
           "supports": [
-            "Resolución 33 del CDC",
             "Plan 2011",
-            "título",
             "195 créditos",
-            "mínimos por ejes",
-            "máximo optativo",
-            "Trabajo Final",
-            "carácter ilustrativo de las asignaturas"
-          ]
+            "mínimos por tres ejes y Trabajo Final",
+            "las asignaturas listadas son ejemplos ilustrativos",
+            "no publica materias por año o semestre"
+          ],
+          "contentHash": "sha256:0279e419d6ea3365952f043c82ffb8693d80d0f8ee772051f8b998e2a22bb353"
         },
         {
-          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/tecnicatura-gestion-recursos-naturales",
-          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/tecnicatura-gestion-recursos-naturales/358-plan-de-estudios",
+          "authority": "Facultad de Ciencias, Universidad de la República",
           "supports": [
             "vigencia",
-            "dos años y medio",
             "195 créditos",
-            "ejes",
             "Trabajo Final",
-            "dirección de carrera",
-            "sede Rivera"
-          ]
+            "tres ejes",
+            "no publica grilla temporal"
+          ],
+          "contentHash": "sha256:274a5f644acfc1002e16a167205941f0b16f87b21817b2d7f3c97b4059b2db9b"
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/LICENCIATURA-EN-RECURSOS-NATURALES-CSE2017-.pdf",
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "supports": [
+            "planes flexibles y creditizados",
+            "cursos sin obligatoriedad nominal general",
+            "calendarios organizados por años como práctica de implementación",
+            "no publica correspondencia curso-año ni curso-semestre"
+          ],
+          "contentHash": "sha256:4242ee69d140626e4320d9d18e22454c35cf65626adc0eab546bcd6f2f991227"
+        },
+        {
+          "url": "https://biblioteca.fcien.edu.uy/wp-content/uploads/2023/08/facultad-de-ciencias-anuario-2014.pdf",
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "supports": [
+            "estructura por ejes",
+            "carácter ilustrativo de las asignaturas",
+            "mínimos de egreso",
+            "no publica secuencia temporal"
+          ],
+          "contentHash": "sha256:eea4be3d95e26c1fe6e6472a1f368a5ecd3310c2d310fe9fa8dce651453c278b"
         },
         {
           "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
-          "authority": "Dirección General de Planeamiento, Udelar",
+          "authority": "Dirección General de Planeamiento, Universidad de la República",
           "supports": [
             "Plan 2011",
             "dos años y medio",
             "195 créditos",
-            "sede Rivera"
-          ]
+            "sede Rivera",
+            "no publica secuencia temporal"
+          ],
+          "contentHash": "sha256:aa3f0d096a5d1897e75ef781cd1c53acd7c9e03fa73cd39b4a356727e449e442"
         }
       ],
       "anomalies": [
@@ -34910,10 +34973,14 @@
         {
           "field": "degreeRelationship",
           "resolution": "La tecnicatura conserva título y plan propios; la continuidad hacia la Licenciatura no es una salida intermedia automática."
+        },
+        {
+          "field": "trajectoryPublication",
+          "resolution": "La presentación institucional registra calendarios organizados por años, pero no publica la correspondencia entre cursos y períodos. El Plan 2011 sólo enumera asignaturas como ejemplos ilustrativos."
         }
       ],
-      "uiNotice": "Plan 2011 flexible: completá 50 créditos en cada eje, el Trabajo Final de 35 créditos y 195 totales. La Comisión de Carrera valida la pertinencia del currículo y el máximo de 10 créditos optativos.",
-      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica. La aprobación concreta de unidades dentro de cada eje corresponde a la Comisión de Carrera."
+      "uiNotice": "Plan 2011 flexible: completá 50 créditos en cada eje, el Trabajo Final de 35 créditos y 195 totales. La institución documenta calendarios por años, pero no publicó su asignación curso-período; Trayecto muestra un recorrido orientativo generado, no institucional, y la Comisión valida la pertinencia y el máximo de 10 créditos optativos.",
+      "remainingWork": "Obtener de la Comisión de Carrera, FCIEN o CENUR Noreste el calendario vigente con cursos y años o semestres; reconciliarlo sin convertir los ejemplos ilustrativos del Plan en obligaciones."
     },
     {
       "identity": "tecnologo en madera:2012",
@@ -86374,6 +86441,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:d0c4b4926075762224655e1d73c1cc140e5b79c318b21236db4552eac5ba728d",
+  "contentHash": "sha256:d3824d5200acc6231e38b77e2f3df546f8736adb02f020c5b564ac7c3dc0b6e3",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

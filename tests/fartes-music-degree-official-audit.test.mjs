@@ -176,8 +176,8 @@ test("cierra la correspondencia estructurada del inventario", () => {
   assert.ok(entry.conflictNotes.some((note) => /permanecen candidatas/i.test(note)));
   assert.deepEqual(inventory.counts.states, {
     "official-trajectory-reproduced": 109,
-    "official-trajectory-identified-pending": 1,
+    "official-trajectory-identified-pending": 3,
     "no-official-trajectory-documented": 3,
-    "research-pending": 34,
+    "research-pending": 32,
   });
 });
