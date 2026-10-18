@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:71e744f61bd0b86cab549d9ec2ac457b764a6d8284414e7e4eaf28a457d3cb37",
-    "officialAuditHash": "sha256:2572c01af375e7cbfb61c063095cd1278f97c4a483883b6cfd2a258aaed90657",
-    "reviewedTrajectoriesHash": "sha256:cb74679b8d13de182dc60433dc4cda847a21d54c025490af3dd32469d047b32d"
+    "extractedReportHash": "sha256:31486adad3f72787690b2e547b082d1bc8d88246a7552c260f3cc6737745366b",
+    "officialAuditHash": "sha256:d0c4b4926075762224655e1d73c1cc140e5b79c318b21236db4552eac5ba728d",
+    "reviewedTrajectoriesHash": "sha256:2b3f15e19a6f5a5fdb9fd3870ac3f3e7c361478250705537601b4cb8d3016bb4"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -310,7 +310,7 @@
         "serviceIds": [
           "bedelias-fartes"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
       },
       {
         "priority": 2,
@@ -319,7 +319,7 @@
         "serviceIds": [
           "bedelias-fartes"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
       },
       {
         "priority": 2,
@@ -328,7 +328,7 @@
         "serviceIds": [
           "bedelias-fartes"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
       },
       {
         "priority": 2,
@@ -4401,24 +4401,45 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "1987",
+      "reviewedAt": "2026-10-17",
+      "effectiveAt": "1987-2025",
       "officialSources": [
         {
           "authority": "Facultad de Artes, Universidad de la República",
           "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
-          "role": "derecho a finalizar Plan 1987; sustitución progresiva; Plan 2005 actual",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-17",
+          "role": "régimen de egreso, derecho a finalizar el plan de ingreso, sustitución progresiva y referencia a planes anteriores del Plan 1987 que ya no se exponen"
         },
         {
           "authority": "Facultad de Artes, Universidad de la República",
           "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/",
-          "role": "exámenes vigentes para estudiantes Plan 1987",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-17",
+          "role": "continuidad de exámenes e inscripción por Bedelía para estudiantes del Plan 1987 en 2025"
+        },
+        {
+          "authority": "Maestría en Enseñanza Universitaria, Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/tesis_graciela_carreno_2017.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "Tabla 9: reconstrucción secundaria de siete años elaborada a partir de planes de estudio; Anexo F: expedientes 2642/87 y 7704/87 no recuperados",
+          "contentHash": "sha256:900b145000232c173ead36d9ebe1afd845d1a47342a8120a85aa03a109f61107"
+        },
+        {
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "identidad institucional carrera 22, ciclo único 22, Plan 1987; sin trayectoria publicada"
+        },
+        {
+          "authority": "Diario Oficial, IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2025/07/31/avisos.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "reconocimiento contemporáneo del título y Plan 1987; sin secuencia curricular"
         }
       ],
       "scope": {
-        "territories": [],
+        "territories": [
+          "Montevideo"
+        ],
         "pathwayIds": [
           "bedelias"
         ]
@@ -4430,14 +4451,22 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en direccion coral:1987",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-direccion-coral-1987.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-primary-trajectory-evidence",
+        "sourceDataPath": "data/fartes/direccion-coral-1987.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-direccion-coral-1987.json",
+        "secondaryGridPeriodCount": 7,
+        "secondaryGridCoursePlacements": 39,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 122,
+        "verifiedManualValidationCount": 1,
+        "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
       },
       "conflictNotes": [
-        "credits: Unidades visibles con cero créditos y validación manual final; no se inventa una conversión a Plan 2005."
+        "La página vigente de Facultad refiere a planes anteriores y previas del Plan 1987, pero la versión migrada no expone la grilla ni un enlace recuperable.",
+        "La columna Dirección Coral de la Tabla 9 contiene 39 ubicaciones en siete años, pero declara elaboración propia a partir de los planes de estudio y no sustituye a los expedientes aprobatorios.",
+        "Bedelías agrupa 122 identidades técnicas en siete años más cultura general, con variantes y equivalentes históricos; no publica créditos ni una correspondencia normativa con las 39 filas secundarias.",
+        "Se conserva el marcador manual de egreso como único registro verified; las 122 identidades técnicas siguen candidate, con sus IDs y cero créditos.",
+        "El Plan 2005 queda excluido: no se usa para inferir secuencia, créditos, obligatoriedad ni equivalencias del Plan 1987."
       ]
     },
     {
@@ -4454,24 +4483,45 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "1987",
+      "reviewedAt": "2026-10-17",
+      "effectiveAt": "1987-2025",
       "officialSources": [
         {
           "authority": "Facultad de Artes, Universidad de la República",
           "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
-          "role": "derecho a finalizar Plan 1987; sustitución progresiva; Plan 2005 actual",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-17",
+          "role": "régimen de egreso, derecho a finalizar el plan de ingreso, sustitución progresiva y referencia a planes anteriores del Plan 1987 que ya no se exponen"
         },
         {
           "authority": "Facultad de Artes, Universidad de la República",
           "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/",
-          "role": "exámenes vigentes para estudiantes Plan 1987",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-17",
+          "role": "continuidad de exámenes e inscripción por Bedelía para estudiantes del Plan 1987 en 2025"
+        },
+        {
+          "authority": "Maestría en Enseñanza Universitaria, Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/tesis_graciela_carreno_2017.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "Tabla 9: reconstrucción secundaria de siete años elaborada a partir de planes de estudio; Anexo F: expedientes 2642/87 y 7704/87 no recuperados",
+          "contentHash": "sha256:900b145000232c173ead36d9ebe1afd845d1a47342a8120a85aa03a109f61107"
+        },
+        {
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "identidad institucional carrera 23, ciclo único 23, Plan 1987; sin trayectoria publicada"
+        },
+        {
+          "authority": "Diario Oficial, IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2025/07/31/avisos.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "reconocimiento contemporáneo del título y Plan 1987; sin secuencia curricular"
         }
       ],
       "scope": {
-        "territories": [],
+        "territories": [
+          "Montevideo"
+        ],
         "pathwayIds": [
           "bedelias"
         ]
@@ -4483,14 +4533,22 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en direccion orquestal:1987",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-direccion-orquestal-1987.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-primary-trajectory-evidence",
+        "sourceDataPath": "data/fartes/direccion-orquestal-1987.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-direccion-orquestal-1987.json",
+        "secondaryGridPeriodCount": 7,
+        "secondaryGridCoursePlacements": 38,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 119,
+        "verifiedManualValidationCount": 1,
+        "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
       },
       "conflictNotes": [
-        "credits: Unidades visibles con cero créditos y validación manual final; no se inventa una conversión a Plan 2005."
+        "La página vigente de Facultad refiere a planes anteriores y previas del Plan 1987, pero la versión migrada no expone la grilla ni un enlace recuperable.",
+        "La columna Dirección Orquestal de la Tabla 9 contiene 38 ubicaciones en siete años, pero declara elaboración propia a partir de los planes de estudio y no sustituye a los expedientes aprobatorios.",
+        "Bedelías agrupa 119 identidades técnicas en siete años más cultura general, con variantes y equivalentes históricos; no publica créditos ni una correspondencia normativa con las 38 filas secundarias.",
+        "Se conserva el marcador manual de egreso como único registro verified; las 119 identidades técnicas siguen candidate, con sus IDs y cero créditos.",
+        "El Plan 2005 queda excluido: no se usa para inferir secuencia, créditos, obligatoriedad ni equivalencias del Plan 1987."
       ]
     },
     {
@@ -4759,24 +4817,45 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "1987",
+      "reviewedAt": "2026-10-17",
+      "effectiveAt": "1987-2025",
       "officialSources": [
         {
           "authority": "Facultad de Artes, Universidad de la República",
           "url": "https://www.artes.udelar.edu.uy/carrera/licenciaturas-instituto-de-musica/",
-          "role": "derecho a finalizar Plan 1987; sustitución progresiva; Plan 2005 actual",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-17",
+          "role": "régimen de egreso, derecho a finalizar el plan de ingreso, sustitución progresiva y referencia a planes anteriores del Plan 1987 que ya no se exponen"
         },
         {
           "authority": "Facultad de Artes, Universidad de la República",
           "url": "https://www.artes.udelar.edu.uy/calendario-de-examenes/",
-          "role": "exámenes vigentes para estudiantes Plan 1987",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-17",
+          "role": "continuidad de exámenes e inscripción por Bedelía para estudiantes del Plan 1987 en 2025"
+        },
+        {
+          "authority": "Maestría en Enseñanza Universitaria, Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/2017/10/tesis_graciela_carreno_2017.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "Tabla 10: reconstrucción secundaria de cuatro años elaborada a partir de planes de estudio; Anexo F: expedientes 2642/87 y 7704/87 no recuperados",
+          "contentHash": "sha256:900b145000232c173ead36d9ebe1afd845d1a47342a8120a85aa03a109f61107"
+        },
+        {
+          "authority": "Comisión Sectorial de Enseñanza, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24705/1/Listado%20de%20carreras-CSE.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "identidad institucional carrera 19, ciclo único 19, Plan 1987; sin trayectoria publicada"
+        },
+        {
+          "authority": "Diario Oficial, IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2025/07/31/avisos.pdf",
+          "reviewedAt": "2026-10-17",
+          "role": "reconocimiento contemporáneo del título y Plan 1987; sin secuencia curricular"
         }
       ],
       "scope": {
-        "territories": [],
+        "territories": [
+          "Montevideo"
+        ],
         "pathwayIds": [
           "bedelias"
         ]
@@ -4788,14 +4867,23 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en musicologia:1987",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-musicologia-1987.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-primary-trajectory-evidence",
+        "sourceDataPath": "data/fartes/musicologia-1987.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fartes-licenciatura-en-musicologia-1987.json",
+        "secondaryGridPeriodCount": 4,
+        "secondaryGridCoursePlacements": 25,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 144,
+        "verifiedManualValidationCount": 1,
+        "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
       },
       "conflictNotes": [
-        "credits: Unidades visibles con cero créditos y validación manual final; no se inventa una conversión a Plan 2005."
+        "La página vigente de Facultad refiere a planes anteriores y previas del Plan 1987, pero la versión migrada no expone la grilla ni un enlace recuperable.",
+        "La Tabla 10 contiene 25 ubicaciones en cuatro años, pero declara elaboración propia a partir de los planes de estudio y no sustituye a los expedientes aprobatorios.",
+        "El índice de la tesis remite la Tabla 10 a la página 54, mientras el PDF revisado muestra su inicio en la página impresa 53 y su continuación en la 54.",
+        "Bedelías agrupa 144 identidades técnicas en cuatro años, historia y cultura general, con variantes y equivalentes históricos; no publica créditos ni una correspondencia normativa con las 25 filas secundarias.",
+        "Se conserva el marcador manual de egreso como único registro verified; las 144 identidades técnicas siguen candidate, con sus IDs y cero créditos.",
+        "El Plan 2005 queda excluido: no se usa para inferir secuencia, créditos, obligatoriedad ni equivalencias del Plan 1987."
       ]
     },
     {
@@ -13535,5 +13623,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:651920c5cf4d4212e7749f288d945fe8d6c0d7b98e96ab4fa07da5a1c492fb7c"
+  "contentHash": "sha256:2a544a61acfd74e8c5bb81d61cfbce2bde2dd8bc3d44d53149033f3827e3a8b8"
 }

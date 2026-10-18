@@ -20,4 +20,20 @@ Auditar en un solo nodo las tres licenciaturas históricas Plan 1987 del Institu
 
 ## Estado
 
-- Pendiente. Composición 1987 ya quedó auditada por separado; sus expedientes originales no están disponibles públicamente y su Tabla 8 no se promovió.
+- Implementación completada el 18 de octubre de 2026, pendiente únicamente de integración autorizada. Composición 1987 quedó auditada por separado; sus expedientes originales tampoco están disponibles públicamente y su Tabla 8 no se promovió.
+
+### Hallazgos y brechas
+
+- La consulta agrupada en Facultad de Artes/Instituto de Música, portal Udelar/CSE, Colibrí e IMPO confirmó identidad institucional, régimen histórico de egreso y continuidad de exámenes, pero no localizó el Plan 1987 aprobado, una resolución que publique la secuencia ni copias de los expedientes `2642/87` y `7704/87`.
+- La tesis de Carreño se descargó desde CSE con huella `sha256:900b145000232c173ead36d9ebe1afd845d1a47342a8120a85aa03a109f61107`; su copia en Colibrí conserva el mismo contenido visual relevante. La Tabla 9 contiene 39 ubicaciones para Dirección Coral y 38 para Dirección Orquestal en siete años. La Tabla 10 contiene 25 ubicaciones para Musicología en cuatro años; la revisión visual muestra que comienza en la página impresa 53 y continúa en la 54, aunque el índice de la tesis la remite a la 54.
+- Las tablas declaran «Elaboración propia a partir de los PE». Se preservan como evidencia secundaria normalizada en `data/fartes/direccion-coral-1987.json`, `data/fartes/direccion-orquestal-1987.json` y `data/fartes/musicologia-1987.json`, con huella de `sourcePortions`, pero no se proyecta ninguna de sus filas como trayectoria oficial.
+- Los tres planes permanecen separados entre sí y de Música 2005. Se conservan sin cambios 122, 119 y 144 IDs candidatos de Bedelías, respectivamente, con créditos desconocidos representados por cero; el único registro `verified` de cada proyección continúa siendo `fartes-validacion-final-plan`.
+- Para cerrar cada brecha se necesita una copia institucional del Plan 1987 aprobado o de los expedientes `2642/87` y `7704/87`, con versión aplicable, o confirmación expresa de Facultad de Artes/Udelar de que la columna correspondiente de las Tablas 9 o 10 reproduce la secuencia oficial aplicable al régimen de egreso.
+
+### Regeneración y verificación
+
+- Crudo revisado localmente: `tmp/d03at-licenciaturas-1987/tesis-graciela-carreno-2017-2017-10.pdf`; las páginas relevantes se renderizaron con Poppler y se cotejaron visualmente antes de transcribir.
+- Regeneración offline: `npm run trajectory:fartes-licenciaturas-1987`.
+- Se ejecutaron dos regeneraciones consecutivas y coincidieron las huellas SHA-256 de las tres proyecciones, el registro de auditorías, ambas colas, el manifiesto de planes extraídos y el inventario de trayectorias.
+- Pruebas focales: `node tests/fartes-licenciaturas-1987-research.test.mjs` y `node tests/fartes-historical-music-plans.test.mjs`.
+- Verificación final: `npm test`, `npm run lint` y `git diff --check`.
