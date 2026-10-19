@@ -24,3 +24,10 @@ Buscar además publicaciones del Instituto de Física, Comisión de Carrera, CSE
 ## Entrega
 
 Dos regeneraciones idénticas, pruebas focales, `npm test`, `npm run lint` y `git diff --check`; commit enfocado sólo en este worktree. No integrar, pushear ni publicar desde el nodo.
+
+## Checkpoint de continuidad — 19/10/2026
+
+- El agente asignado se interrumpió por el límite de uso antes de modificar archivos. El worktree quedó limpio en `16011f4`; `main` permanece en `e25a390` y este nodo no está integrado.
+- Búsqueda inicial en fuentes institucionales: el registro [Colibrí Plan 2019](https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/25632?mode=full) confirma identidad 2019, código de carrera 301 y código de plan 1385, pero no muestra una secuencia en sus metadatos. El visor web no pudo abrir el PDF por respuesta 403; el contenido del PDF sigue por cotejar mediante una vía oficial alternativa.
+- El [Anuario FCIEN 2010](https://biblioteca.fcien.edu.uy/wp-content/uploads/2023/08/facultad-de-ciencias-anuario-2010.pdf) publica semestres de la antigua Licenciatura en Ciencias Físicas. Es antecedente histórico, **no** evidencia de adopción de esa grilla por el Plan 2019. No usar sus filas para esta proyección.
+- Próximo paso: inspeccionar el Plan/Reglamento 2019 y la página vigente de FCIEN, buscar publicaciones de la Comisión de Carrera o del Instituto de Física con versión y alcance explícitos. Si hay fuente curso-período vigente, normalizar y cotejar; si no, mantener `research-pending` hasta evidencia suficiente. No repetir una extracción masiva de Bedelías.
