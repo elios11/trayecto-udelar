@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:bcd44e3037ebffbc5d51c19a6567f9cd1b367b194990277e2a5ed99e50c1d571",
-    "officialAuditHash": "sha256:d3824d5200acc6231e38b77e2f3df546f8736adb02f020c5b564ac7c3dc0b6e3",
-    "reviewedTrajectoriesHash": "sha256:d54f61d6c0333da9eda5ffa897546dc19a3b6bdd8c3bb44a11d14c43cc532b6d"
+    "extractedReportHash": "sha256:274bc324f44bec92a59206dc5683b3fb524fa74545a90a71f7af9c289921fb3d",
+    "officialAuditHash": "sha256:a404ae32093ad701320d5bd495b01420553d1adcae3bdce3cc5b6ff6c7043b3c",
+    "reviewedTrajectoriesHash": "sha256:c858cc18c32adb802e0dd9b676c028307cd4e64a43af623b0d07157271d9aee8"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -13,10 +13,10 @@
     "states": {
       "official-trajectory-reproduced": 110,
       "official-trajectory-identified-pending": 3,
-      "no-official-trajectory-documented": 3,
-      "research-pending": 31
+      "no-official-trajectory-documented": 4,
+      "research-pending": 30
     },
-    "pending": 34,
+    "pending": 33,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -124,8 +124,8 @@
         "states": {
           "official-trajectory-reproduced": 3,
           "official-trajectory-identified-pending": 2,
-          "no-official-trajectory-documented": 0,
-          "research-pending": 9
+          "no-official-trajectory-documented": 1,
+          "research-pending": 8
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 34,
+    "total": 33,
     "plans": [
       {
         "priority": 1,
@@ -347,15 +347,6 @@
           "bedelias-fartes"
         ],
         "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcien-licenciatura-biologia-humana-2004",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -620,7 +611,6 @@
           "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011"
         ],
         "researchPending": [
-          "bedelias-fcien-licenciatura-biologia-humana-2004",
           "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
           "bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007",
           "bedelias-fcien-licenciatura-en-fisica-2019",
@@ -5504,39 +5494,86 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-27",
-      "effectiveAt": "2004",
+      "state": "no-official-trajectory-documented",
+      "reviewedAt": "2026-10-19",
+      "effectiveAt": "2004/2011; consulta 2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios archivado por Facultad de Ciencias, Udelar",
+          "authority": "Unidad de Apoyo a la Enseñanza, Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "reviewedAt": "2026-10-19",
+          "role": "anuncio expreso de malla pendiente; fuente decisiva de ausencia actual temporal",
+          "contentHash": "sha256:f1a2189caa2c436905351fb79ac013a157677b99c4f08e9e777344665f5bc311"
+        },
+        {
+          "authority": "Facultades de Ciencias, Humanidades y Ciencias de la Educación, Medicina y Odontología, Udelar; repositorio Colibrí",
           "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24551/1/PLBIHU_2020.pdf",
-          "role": "título único; cuatro años; 360 créditos; mínimos porcentuales y por áreas; orientación específica individual; tutor y Comisión Curricular; pasantía de 120 horas e informe",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-19",
+          "role": "currículo individual, 360 créditos, cuatro años, áreas, tutor, Comisión Curricular y pasantía",
+          "contentHash": "sha256:8ebdb60485e68962d136fd5df5903ea76ccd0019d3c7781a47bdc6367b21e140"
         },
         {
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "authority": "Repositorio Colibrí, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24551",
+          "reviewedAt": "2026-10-19",
+          "role": "contraste de identidad 2004/2011; no crea otra carrera",
+          "contentHash": "sha256:9cf5532f0bde5538f5c3f6764f3198f28d7e3a8e6e65337e2dec4e03b36128ca"
+        },
+        {
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
           "url": "https://fhce.edu.uy/licenciatura-en-biologia-humana/",
-          "role": "vigencia; servicios participantes; flexibilidad; tutorías; requisitos de ingreso",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-19",
+          "role": "vigencia interservicios, flexibilidad y tutorías; no ofrece grilla alternativa",
+          "contentHash": "sha256:500e1bb8e643310ceb7a2c692c32bbc2c85d499387f27805c5a54a37edd26319"
         },
         {
-          "authority": "Catálogo de carreras de Udelar",
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-biologia-humana/2328-licenciatura-en-biologia-humana-2",
+          "reviewedAt": "2026-10-19",
+          "role": "360 créditos, cuatro años, áreas, pasantía y cinco localidades; sin secuencia nominal",
+          "contentHash": "sha256:579c44807670327f4ce9ddf23be94f903dfd862e7b7716f0bd5cd2059668ff0b"
+        },
+        {
+          "authority": "Catálogo de carreras de la Universidad de la República",
           "url": "https://udelar.edu.uy/carrera/licenciatura-biologia-humana",
-          "role": "vigencia; título; 360 créditos; carácter compartido; oferta regional",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-19",
+          "role": "contraste de 360 créditos y discrepancia administrativa de 60 meses",
+          "contentHash": "sha256:04860f8c5499e61e69ac46d4f810c85b005b6d8bc30423ecfe7aba31494ebffe"
         },
         {
-          "authority": "Portal Carreras Interior de Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-biologia-humana-3/",
-          "role": "cuatro años; 360 créditos; sedes Montevideo, Salto, Rivera, Paysandú y Tacuarembó",
-          "trajectoryEvidence": false
+          "authority": "Portal Carreras Interior de la Universidad de la República",
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-biologia-humana-2/",
+          "reviewedAt": "2026-10-19",
+          "role": "cuatro años, 360 créditos, currículo flexible y tutorías; no documenta variante local",
+          "contentHash": "sha256:8524c416e7b815480724eedfbfb02641bcfb703f688d1d70b0c99d65306e5a19"
         },
         {
-          "authority": "Dirección General de Planeamiento, Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2026/04/EA-CARRERA-2025.pdf",
-          "role": "actividad estudiantil vigente en 2025 como carrera compartida",
-          "trajectoryEvidence": false
+          "authority": "Natalia Pi-Denis, Ana Egaña y Lucía González Perilli, Licenciatura en Biología Humana, Udelar; publicación CSE/JIES",
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/sites/13/2021/10/jies.libro_.resumenes.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "tres propuestas de malla de inicio sin filas nominales ni vigencia actual demostrada",
+          "contentHash": "sha256:1a3f100ba39cca2e864c79ee1c6fe8535477ca7d0a6ae7a66a758d67e7eedae5"
+        },
+        {
+          "authority": "Consejo Directivo Central, Universidad de la República; Diario Oficial/IMPO",
+          "url": "https://impo.com.uy/diariooficial/2004/08/10/avisosdeldia.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "plan original flexible; no se aplica su reparto 63/37 posteriormente rectificado",
+          "contentHash": "sha256:759b24e570e63c81a414bbc325df598f576e5bf1bfb256edfac5d223cf490226"
+        },
+        {
+          "authority": "Consejo Directivo Central, Universidad de la República; Diario Oficial/IMPO",
+          "url": "https://impo.com.uy/diariooficial/2004/10/20/avisosdeldia.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "rectificación explícita a 67% común y 33% específico, concordante con PDF depositado",
+          "contentHash": "sha256:070e85dfb1d85abd190819b6fc153130c6b6843c8877bc436992efe612b2758e"
+        },
+        {
+          "authority": "Facultad de Medicina y Universidad de la República; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2013/05/15/avisos.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "Comisión Curricular aprueba el plan de cada estudiante y designa tutor y tribunal de pasantía",
+          "contentHash": "sha256:c3fc8a676389c00e31950bd2ce982604df96e90410e7776500b3bc5b5bdef342"
         }
       ],
       "scope": {
@@ -5558,18 +5595,19 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura biologia humana:2004",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-biologia-humana-2004.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "documented-absence",
+        "sourceDataPath": "data/fcien/biologia-humana-2004-trajectory-review.json",
+        "justification": "Al 19 de octubre de 2026, FHCE incluye expresamente Biología Humana bajo Próximamente en su índice vigente de mallas por área y semestre sugerido. El Plan depositado en Colibrí prescribe un currículo individual con tutor y Comisión Curricular, no una grilla común. La Unidad Académica presentó en JIES 2021 una propuesta histórica de tres mallas iniciales por bachillerato, sin publicar allí filas nominales curso-período ni demostrar su adopción actual. Se documenta la ausencia actual de una malla publicada reproducible, no la inexistencia permanente de recomendaciones o de planes individuales.",
+        "temporary": true,
+        "reviewTrigger": "Revisar cuando FHCE retire Biología Humana de Próximamente y publique su malla, o cuando la Comisión Curricular, FCIEN, la Unidad Académica o un CENUR publique las filas nominales y vigencia de una trayectoria inicial o completa autorizada.",
+        "historicalProposalAdoption": "not-demonstrated"
       },
       "conflictNotes": [
-        "planYear: Bedelías y el registro de Colibri identifican 2004, mientras el PDF depositado se rotula Plan de Estudios 2011. Se conserva la identidad canónica 2004 y se documenta el rótulo posterior sin crear otro plan.",
-        "duration: El Plan y los portales territoriales establecen cuatro años; Bedelías y el catálogo central informan 60 meses. La UI usa 48 meses como duración normativa.",
-        "campuses: El catálogo central resume Facultad de Ciencias y CENUR Noreste, pero Carreras Interior y las páginas de sede documentan además Salto, Paysandú, Rivera y Tacuarembó. Se normalizan las cinco localidades sin duplicar carrera.",
-        "catalogSize: Las 2.032 apariciones de composición y 1.797 registros de plan incluyen cursos de múltiples servicios, años e instituciones. Son opciones acreditables para currículos individuales, no obligaciones acumulativas.",
-        "internship: Bedelías contiene varias pasantías con créditos y duraciones diferentes. Como el Plan exige 120 horas e informe pero no fija un código único, la UI solicita validación manual en lugar de imponer una unidad arbitraria."
+        "Ausencia temporal de malla publicada, no inexistencia permanente: FHCE anuncia Próximamente.",
+        "JIES 2021 propone tres mallas de inicio sin filas nominales ni adopción vigente demostrada; no se proyectan.",
+        "Se conserva la identidad 2004 aunque el documento depositado diga 2011; IMPO documenta aprobación y rectificación en 2004.",
+        "Se conservan 48 meses normativos frente a los 60 administrativos, 360 créditos y las cinco sedes del mismo título y progreso.",
+        "Los 1797 registros técnicos y 2032 apariciones siguen como candidatas recuperables, no obligaciones ni oferta actual."
       ]
     },
     {
@@ -13676,5 +13714,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:e8b84e206f814cd9012f51537dd7997e3d34948fda40dd36b6818d6ced1ca8ad"
+  "contentHash": "sha256:298c79b11b9c732c9465eb1a6b1ee00d98f08351c316fc63f17a4cd9233dbe44"
 }

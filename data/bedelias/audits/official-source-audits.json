@@ -50805,9 +50805,9 @@
       "identity": "licenciatura biologia humana:2004",
       "career": "LICENCIATURA EN BIOLOGÍA HUMANA",
       "planYear": "2004",
-      "reviewedAt": "2026-08-27",
+      "reviewedAt": "2026-10-19",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, servicios participantes, sedes, duración, créditos, áreas comunes, orientación individual, tutorías y pasantía",
+      "scope": "vigencia, título, servicios participantes, sedes, duración, créditos, áreas comunes, orientación individual, tutorías, pasantía y ausencia temporal explícita de malla publicada",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -50920,43 +50920,42 @@
           "Conservar para cada unidad el área publicada por Bedelías; cualquier reasignación entre áreas requiere resolución de la Comisión Curricular.",
           "Exigir una validación final explícita para la coherencia del currículo y la pasantía con informe científico.",
           "Normalizar la duración normativa a cuatro años; conservar los 60 meses del catálogo central y Bedelías como discrepancia administrativa."
-        ]
+        ],
+        "trajectoryStatus": "no-official-trajectory-documented",
+        "trajectorySourceDataPath": "data/fcien/biologia-humana-2004-trajectory-review.json",
+        "trajectoryJustification": "Al 19 de octubre de 2026, FHCE incluye expresamente Biología Humana bajo Próximamente en su índice vigente de mallas por área y semestre sugerido. El Plan depositado en Colibrí prescribe un currículo individual con tutor y Comisión Curricular, no una grilla común. La Unidad Académica presentó en JIES 2021 una propuesta histórica de tres mallas iniciales por bachillerato, sin publicar allí filas nominales curso-período ni demostrar su adopción actual. Se documenta la ausencia actual de una malla publicada reproducible, no la inexistencia permanente de recomendaciones o de planes individuales.",
+        "trajectoryReviewTrigger": "Revisar cuando FHCE retire Biología Humana de Próximamente y publique su malla, o cuando la Comisión Curricular, FCIEN, la Unidad Académica o un CENUR publique las filas nominales y vigencia de una trayectoria inicial o completa autorizada."
       },
       "sources": [
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24551/1/PLBIHU_2020.pdf",
-          "authority": "Plan de Estudios archivado por Facultad de Ciencias, Udelar",
+          "authority": "Facultades de Ciencias, Humanidades y Ciencias de la Educación, Medicina y Odontología, Udelar; repositorio Colibrí",
           "supports": [
-            "título único",
-            "cuatro años",
-            "360 créditos",
-            "mínimos porcentuales y por áreas",
-            "orientación específica individual",
-            "tutor y Comisión Curricular",
-            "pasantía de 120 horas e informe"
-          ]
+            "currículo individual, 360 créditos, cuatro años, áreas, tutor, Comisión Curricular y pasantía"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Plan de Estudios 2011 depositado en el registro canónico 2004; no declara grilla nominal",
+          "contentHash": "sha256:8ebdb60485e68962d136fd5df5903ea76ccd0019d3c7781a47bdc6367b21e140"
         },
         {
           "url": "https://fhce.edu.uy/licenciatura-en-biologia-humana/",
-          "authority": "Facultad de Humanidades y Ciencias de la Educación, Udelar",
+          "authority": "Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
           "supports": [
-            "vigencia",
-            "servicios participantes",
-            "flexibilidad",
-            "tutorías",
-            "requisitos de ingreso"
-          ]
+            "vigencia interservicios, flexibilidad y tutorías; no ofrece grilla alternativa"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "página vigente al consultar; no declara fecha de actualización",
+          "contentHash": "sha256:500e1bb8e643310ceb7a2c692c32bbc2c85d499387f27805c5a54a37edd26319"
         },
         {
           "url": "https://udelar.edu.uy/carrera/licenciatura-biologia-humana",
-          "authority": "Catálogo de carreras de Udelar",
+          "authority": "Catálogo de carreras de la Universidad de la República",
           "supports": [
-            "vigencia",
-            "título",
-            "360 créditos",
-            "carácter compartido",
-            "oferta regional"
-          ]
+            "contraste de 360 créditos y discrepancia administrativa de 60 meses"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "ficha vigente al consultar",
+          "contentHash": "sha256:04860f8c5499e61e69ac46d4f810c85b005b6d8bc30423ecfe7aba31494ebffe"
         },
         {
           "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-biologia-humana-3/",
@@ -50973,6 +50972,86 @@
           "supports": [
             "actividad estudiantil vigente en 2025 como carrera compartida"
           ]
+        },
+        {
+          "url": "https://fhce.edu.uy/mallas-curriculares/",
+          "authority": "Unidad de Apoyo a la Enseñanza, Facultad de Humanidades y Ciencias de la Educación, Universidad de la República",
+          "supports": [
+            "anuncio expreso de malla pendiente; fuente decisiva de ausencia actual temporal"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "índice institucional vigente al consultar; no declara fecha de actualización",
+          "contentHash": "sha256:f1a2189caa2c436905351fb79ac013a157677b99c4f08e9e777344665f5bc311"
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24551",
+          "authority": "Repositorio Colibrí, Universidad de la República",
+          "supports": [
+            "contraste de identidad 2004/2011; no crea otra carrera"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "registro institucional con año 2004 y cita Plan 2011",
+          "contentHash": "sha256:9cf5532f0bde5538f5c3f6764f3198f28d7e3a8e6e65337e2dec4e03b36128ca"
+        },
+        {
+          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-biologia-humana/2328-licenciatura-en-biologia-humana-2",
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "supports": [
+            "360 créditos, cuatro años, áreas, pasantía y cinco localidades; sin secuencia nominal"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "actualizado diciembre 2024; contenido recuperado por índice de búsqueda institucional",
+          "contentHash": "sha256:579c44807670327f4ce9ddf23be94f903dfd862e7b7716f0bd5cd2059668ff0b"
+        },
+        {
+          "url": "https://udelar.edu.uy/carrerasinterior/licenciatura-en-biologia-humana-2/",
+          "authority": "Portal Carreras Interior de la Universidad de la República",
+          "supports": [
+            "cuatro años, 360 créditos, currículo flexible y tutorías; no documenta variante local"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "ficha de Tacuarembó de 18 de enero de 2021",
+          "contentHash": "sha256:8524c416e7b815480724eedfbfb02641bcfb703f688d1d70b0c99d65306e5a19"
+        },
+        {
+          "url": "https://www.cse.udelar.edu.uy/wp-content/uploads/sites/13/2021/10/jies.libro_.resumenes.pdf",
+          "authority": "Natalia Pi-Denis, Ana Egaña y Lucía González Perilli, Licenciatura en Biología Humana, Udelar; publicación CSE/JIES",
+          "supports": [
+            "tres propuestas de malla de inicio sin filas nominales ni vigencia actual demostrada"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "JIES 2020/21, resumen 266; antecedente histórico de propuesta, no resolución de adopción",
+          "contentHash": "sha256:1a3f100ba39cca2e864c79ee1c6fe8535477ca7d0a6ae7a66a758d67e7eedae5"
+        },
+        {
+          "url": "https://impo.com.uy/diariooficial/2004/08/10/avisosdeldia.pdf",
+          "authority": "Consejo Directivo Central, Universidad de la República; Diario Oficial/IMPO",
+          "supports": [
+            "plan original flexible; no se aplica su reparto 63/37 posteriormente rectificado"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "aprobación CDC 11 de 20 de julio de 2004, publicada el 10 de agosto de 2004",
+          "contentHash": "sha256:759b24e570e63c81a414bbc325df598f576e5bf1bfb256edfac5d223cf490226"
+        },
+        {
+          "url": "https://impo.com.uy/diariooficial/2004/10/20/avisosdeldia.pdf",
+          "authority": "Consejo Directivo Central, Universidad de la República; Diario Oficial/IMPO",
+          "supports": [
+            "rectificación explícita a 67% común y 33% específico, concordante con PDF depositado"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "rectificación CDC de 28 de septiembre de 2004, publicada el 20 de octubre de 2004; expediente 100011-000255-04",
+          "contentHash": "sha256:070e85dfb1d85abd190819b6fc153130c6b6843c8877bc436992efe612b2758e"
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2013/05/15/avisos.pdf",
+          "authority": "Facultad de Medicina y Universidad de la República; Diario Oficial/IMPO",
+          "supports": [
+            "Comisión Curricular aprueba el plan de cada estudiante y designa tutor y tribunal de pasantía"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Reglamento del Plan de Estudios publicado el 15 de mayo de 2013; antecedente normativo",
+          "contentHash": "sha256:c3fc8a676389c00e31950bd2ce982604df96e90410e7776500b3bc5b5bdef342"
         }
       ],
       "anomalies": [
@@ -50995,10 +51074,14 @@
         {
           "field": "internship",
           "resolution": "Bedelías contiene varias pasantías con créditos y duraciones diferentes. Como el Plan exige 120 horas e informe pero no fija un código único, la UI solicita validación manual en lugar de imponer una unidad arbitraria."
+        },
+        {
+          "field": "trajectory",
+          "resolution": "Al 19 de octubre de 2026, FHCE incluye expresamente Biología Humana bajo Próximamente en su índice vigente de mallas por área y semestre sugerido. El Plan depositado en Colibrí prescribe un currículo individual con tutor y Comisión Curricular, no una grilla común. La Unidad Académica presentó en JIES 2021 una propuesta histórica de tres mallas iniciales por bachillerato, sin publicar allí filas nominales curso-período ni demostrar su adopción actual. Se documenta la ausencia actual de una malla publicada reproducible, no la inexistencia permanente de recomendaciones o de planes individuales."
         }
       ],
-      "uiNotice": "Carrera interservicios de cuatro años y 360 créditos, disponible en Montevideo, Salto, Paysandú, Rivera y Tacuarembó. Construí tu orientación con tutoría, cumplí los cuatro mínimos por área y validá con la Comisión Curricular la coherencia del plan y la pasantía obligatoria.",
-      "remainingWork": "La Comisión Curricular determina la pertinencia y los créditos concretos de cursos, reválidas, orientación específica y pasantía para cada estudiante; la UI no puede sustituir esa aprobación individual."
+      "uiNotice": "Carrera interservicios de cuatro años y 360 créditos, disponible en Montevideo, Salto, Paysandú, Rivera y Tacuarembó. FHCE todavía anuncia la malla sugerida bajo Próximamente: el orden visible es un recorrido orientativo generado por Trayecto, no una secuencia institucional. Construí tu orientación con tutoría y validá con la Comisión Curricular los cuatro mínimos, la coherencia del currículo y la pasantía mínima de 120 horas con informe científico.",
+      "remainingWork": "Revisar cuando FHCE retire Biología Humana de Próximamente y publique su malla, o cuando la Comisión Curricular, FCIEN, la Unidad Académica o un CENUR publique las filas nominales y vigencia de una trayectoria inicial o completa autorizada. La Comisión Curricular conserva la validación individual de cursos, créditos y pasantía."
     },
     {
       "identity": "licenciatura en astronomia:2016",
@@ -86441,6 +86524,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:d3824d5200acc6231e38b77e2f3df546f8736adb02f020c5b564ac7c3dc0b6e3",
+  "contentHash": "sha256:a404ae32093ad701320d5bd495b01420553d1adcae3bdce3cc5b6ff6c7043b3c",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
