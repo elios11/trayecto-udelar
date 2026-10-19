@@ -1340,6 +1340,8 @@ La revisión documental consulta planes, resoluciones, sitios del servicio, EVA 
 
 ### Tecnólogo Minero — plan conjunto, catálogo flexible y trayectoria sugerida operativos 2026-08-26
 
+> Reconciliación posterior D03av (2026-10-19): [auditoría del ejemplo CURE vigente](reconciliacion-cure-tecnologo-minero-2012.md). El resumen de agosto es histórico: sus overrides no constituían evidencia estructurada y la ficha CURE publica ubicaciones diferentes del ejemplo aprobado. La proyección actual conserva 24 filas en seis semestres y sólo publica identidades respaldadas; las variantes ambiguas quedan candidatas sin equivalencia automática.
+
 - El CDC aprobó el Plan 2012 como carrera conjunta de Facultad de Ciencias, Agronomía e Ingeniería. Facultad de Ingeniería y CURE confirman tres años o seis semestres, título de Tecnólogo Minero y dictado exclusivo en Treinta y Tres; la UI conserva 2013 sólo como identidad técnica del comienzo de la oferta en Bedelías.
 - La implementación vigente de CURE y Bedelías exige 272 créditos. El texto aprobado dice 270: la discrepancia queda visible y no se fuerza una conciliación ficticia. La UI controla 40 créditos de Matemática-Física-Química, 70 de Geología, 40 de Prospección y Exploración, 50 de Explotación y Beneficiación, 20 de Ambiental y Seguridad, 20 de Humanística y 15 de Pasantía.
 - La secuencia de seis semestres del plan se publica como trayectoria sugerida para ingreso desde CIO, no como una malla rígida. Las demás unidades permanecen en un catálogo flexible orientado por tutor; la Comisión de Carrera valida el currículo de 272 créditos y la condición transversal de al menos 10 créditos de formación social-productiva o cursados en otros servicios.

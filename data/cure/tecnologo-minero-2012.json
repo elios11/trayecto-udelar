@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-cure-tecnologo-minero-2013",
+  "auditIdentity": "tecnologo minero:2013",
+  "reviewedAt": "2026-10-19",
+  "effectiveAt": "Ficha CURE vigente con inscripciones 2026; grilla sin fecha editorial propia",
+  "scope": { "territories": ["Treinta y Tres"], "title": "Tecnólogo Minero", "officialPlanYear": "2012", "technicalPlanYear": "2013", "durationMonths": 36, "implementedMinimumCredits": 272, "approvedMinimumCredits": 270 },
+  "sources": [
+    { "id": "cure-current", "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnologo-minero/", "authority": "Centro Universitario Regional del Este, Universidad de la República", "reviewedAt": "2026-10-19", "publishedValidity": "Oferta con inscripciones 2026; sin fecha de modificación de la grilla", "supports": ["ejemplo vigente de grilla: seis semestres y 24 filas", "once electivas u optativas sin semestre", "Treinta y Tres", "272 créditos en requisitos de graduación y 270 en preguntas frecuentes"], "portion": "Grilla de asignaturas → Preguntas frecuentes, HTML sin etiquetas y con espacios normalizados", "fingerprintFields": ["currentSourcePortion"] },
+    { "id": "fing-approved", "url": "https://www.fing.edu.uy/sites/default/files/Plan_Estudios_Tec_Minero.pdf", "authority": "Facultad de Ingeniería / Universidad de la República", "reviewedAt": "2026-10-19", "publishedValidity": "Resolución CDC 25 de 18/12/2012; Diario Oficial 08/02/2013", "supports": ["Plan 2012", "270 créditos", "mínimos por seis áreas", "pasantía de 15 créditos", "currículo flexible y tutor", "ejemplo de ingreso desde CIO"], "portion": "PDF páginas 10–13: resolución y publicación definitiva; páginas 12–13: ejemplo de trayectoria", "contentHash": "sha256:a10376db930067adb24c3bb3dfaea68f8111ca7711ade1bb3b46999e1e29f348" },
+    { "id": "impo-approved", "url": "https://www.impo.com.uy/diariooficial/2013/02/08/avisos.pdf", "authority": "Diario Oficial, IMPO / Universidad de la República", "reviewedAt": "2026-10-19", "publishedValidity": "08/02/2013, Nº 28655, páginas impresas 72–74", "supports": ["copia primaria del mismo Plan aprobado", "dos cupos Optativa en tercero y cuarto", "Beneficiación en quinto y Geología del Uruguay en sexto"], "portion": "PDF páginas 65–67; grilla páginas 66–67", "fingerprintFields": ["approvedExample"] },
+    { "id": "fing-career", "url": "https://www.fing.edu.uy/es/carrera/grado/tecn%C3%B3logo-minero-treinta-y-tres", "authority": "Facultad de Ingeniería, Universidad de la República", "reviewedAt": "2026-10-19", "publishedValidity": "ficha vigente al consultar", "supports": ["aprobación 2012", "tres años o seis semestres", "dictado en Treinta y Tres"] },
+    { "id": "cure-implementation", "url": "https://www.cure.edu.uy/tecnologo-minero-la-unica-carrera-en-tecnologo-minero-esta-en-el-cure/", "authority": "Centro Universitario Regional del Este, Universidad de la República", "reviewedAt": "2026-10-19", "publishedValidity": "difusión institucional vigente al consultar", "supports": ["272 créditos", "15 créditos de pasantía", "tres años", "oferta única en Treinta y Tres"] }
+  ],
+  "currentSourcePortion": "Grilla de asignaturas Ejemplo de grilla de asignaturas: 1er. semestre: Introducción a la Universidad Cálculo Geología Básica I Química I 2do. semestre: Geometría Física Mecánica Geología Básica II Cartografía y Topografía 3er. semestre: Descripción de Rocas y Minerales Perforaciones y Cateos Explosivos y voladuras Hidrogeología 4to. semestre: Métodos de Prospección Geoquímica aplicada Recursos Minerales Aspectos Geotécnicos en Minería 5to. semestre: Maquinaria de Minas Explotación de Yacimientos Inglés Técnico Geología del Uruguay 6to. semestre: Beneficiación Derecho Minero Seguridad e Higiene Pasantía Grilla de electivas u optativas: Química Analítica Inorgánica Física Básica Física II Estadística Social Hidrogeología Sistemas de Información Geográfica Economía Minera Cartografía Geológica y Minera Minerales Opacos Diseño Digital de Minas Minería y Medio Ambiente Preguntas frecuentes",
+  "creditPolicy": "CURE no publica créditos por fila. Los 31 emparejamientos nominales inequívocos conservan la carga del snapshot Bedelías, con procedencia separada. Las tres identidades ambiguas se publican sólo por su nombre de fuente, sin código ni carga; no equivalen a los códigos candidatos.",
+  "identityPolicy": "Se preservan los IDs técnicos existentes. La coincidencia nominal única respalda inclusión, no obligatoriedad ni oferta periódica. No se convierte una variante de Introducción a la Universidad, Geología II o Aspectos geológicos-geotécnicos en una equivalencia oficial.",
+  "rows": [
+    { "id": "intro-universidad-oficial", "officialLabel": "Introducción a la Universidad", "requirementId": "humanistic", "unresolvedSourceCourseIds": ["INU33", "INUN3", "INUNI"] },
+    { "id": "TM02", "sourceCourseId": "TM02", "officialLabel": "Cálculo", "credits": 12, "requirementId": "mathematics-physics-chemistry" },
+    { "id": "TM05", "sourceCourseId": "TM05", "officialLabel": "Geología Básica I", "credits": 12, "requirementId": "geology" },
+    { "id": "TM01", "sourceCourseId": "TM01", "officialLabel": "Química I", "credits": 12, "requirementId": "mathematics-physics-chemistry" },
+    { "id": "TM03", "sourceCourseId": "TM03", "officialLabel": "Geometría", "credits": 12, "requirementId": "mathematics-physics-chemistry" },
+    { "id": "TM04", "sourceCourseId": "TM04", "officialLabel": "Física Mecánica", "credits": 12, "requirementId": "mathematics-physics-chemistry" },
+    { "id": "geologia-basica-ii-oficial", "officialLabel": "Geología Básica II", "requirementId": "geology", "unresolvedSourceCourseIds": ["TM06"] },
+    { "id": "TM08", "sourceCourseId": "TM08", "officialLabel": "Cartografía y Topografía", "credits": 12, "requirementId": "geology" },
+    { "id": "TM11", "sourceCourseId": "TM11", "officialLabel": "Descripción de Rocas y Minerales", "credits": 12, "requirementId": "prospecting-exploration" },
+    { "id": "TM12", "sourceCourseId": "TM12", "officialLabel": "Perforaciones y Cateos", "credits": 12, "requirementId": "prospecting-exploration" },
+    { "id": "TM15", "sourceCourseId": "TM15", "officialLabel": "Explosivos y voladuras", "credits": 10, "requirementId": "exploitation-beneficiation" },
+    { "id": "TM19", "sourceCourseId": "TM19", "officialLabel": "Hidrogeología", "credits": 12, "requirementId": "environment-safety" },
+    { "id": "TM17", "sourceCourseId": "TM17", "officialLabel": "Métodos de Prospección", "credits": 12, "requirementId": "prospecting-exploration" },
+    { "id": "TM13", "sourceCourseId": "TM13", "officialLabel": "Geoquímica aplicada", "credits": 12, "requirementId": "prospecting-exploration" },
+    { "id": "TM07", "sourceCourseId": "TM07", "officialLabel": "Recursos Minerales", "credits": 18, "requirementId": "geology" },
+    { "id": "aspectos-geotecnicos-oficial", "officialLabel": "Aspectos Geotécnicos en Minería", "requirementId": "plan-total", "unresolvedSourceCourseIds": ["TM14"] },
+    { "id": "TM22", "sourceCourseId": "TM22", "officialLabel": "Maquinaria de Minas", "credits": 10, "requirementId": "exploitation-beneficiation" },
+    { "id": "TM23", "sourceCourseId": "TM23", "officialLabel": "Explotación de Yacimientos", "credits": 15, "requirementId": "exploitation-beneficiation" },
+    { "id": "TM24", "sourceCourseId": "TM24", "officialLabel": "Inglés Técnico", "credits": 10, "requirementId": "humanistic" },
+    { "id": "TM09", "sourceCourseId": "TM09", "officialLabel": "Geología del Uruguay", "credits": 16, "requirementId": "geology" },
+    { "id": "TM25", "sourceCourseId": "TM25", "officialLabel": "Beneficiación", "credits": 10, "requirementId": "exploitation-beneficiation" },
+    { "id": "TM26", "sourceCourseId": "TM26", "officialLabel": "Derecho Minero", "credits": 6, "requirementId": "humanistic" },
+    { "id": "TM27", "sourceCourseId": "TM27", "officialLabel": "Seguridad e Higiene", "credits": 10, "requirementId": "environment-safety" },
+    { "id": "TM30", "sourceCourseId": "TM30", "officialLabel": "Pasantía", "credits": 15, "requirementId": "internship" },
+    { "id": "TM21", "sourceCourseId": "TM21", "officialLabel": "Química Analítica Inorgánica", "credits": 7, "requirementId": "mathematics-physics-chemistry" },
+    { "id": "TM10", "sourceCourseId": "TM10", "officialLabel": "Física Básica", "credits": 4, "requirementId": "mathematics-physics-chemistry" },
+    { "id": "REV05", "sourceCourseId": "REV05", "officialLabel": "Física II", "credits": 11, "requirementId": "mathematics-physics-chemistry" },
+    { "id": "CAS97", "sourceCourseId": "CAS97", "officialLabel": "Estadística Social", "credits": 8, "requirementId": "humanistic", "matchNote": "Única entrada CAS97 ESTADÍSTICA SOCIAL CCSS; CCSS identifica el servicio, no otra asignatura." },
+    { "id": "TM32", "sourceCourseId": "TM32", "officialLabel": "Sistemas de Información Geográfica", "credits": 3, "requirementId": "prospecting-exploration", "matchNote": "Se preserva el ID canónico TM32 ya publicado; TMM32 sigue rechazado, sin migración ni equivalencia nueva." },
+    { "id": "TM34", "sourceCourseId": "TM34", "officialLabel": "Economía Minera", "credits": 10, "requirementId": "exploitation-beneficiation" },
+    { "id": "TM31", "sourceCourseId": "TM31", "officialLabel": "Cartografía Geológica y Minera", "credits": 14, "requirementId": "geology" },
+    { "id": "TM33", "sourceCourseId": "TM33", "officialLabel": "Minerales Opacos", "credits": 5, "requirementId": "geology" },
+    { "id": "TM37", "sourceCourseId": "TM37", "officialLabel": "Diseño Digital de Minas", "credits": 2, "requirementId": "exploitation-beneficiation" },
+    { "id": "TM36", "sourceCourseId": "TM36", "officialLabel": "Minería y Medio Ambiente", "credits": 10, "requirementId": "environment-safety" }
+  ],
+  "trajectories": [
+    {
+      "id": "bedelias",
+      "label": "Ejemplo de grilla CURE · seis semestres",
+      "description": "Ejemplo flexible de la ficha vigente de CURE, no secuencia obligatoria ni promesa de oferta. Sustituye el ejemplo histórico de ingreso desde CIO. Las electivas se eligen con tutor; las tres filas sin correspondencia inequívoca conservan nombre oficial, sin código ni carga inferidos.",
+      "periods": [
+        { "label": "1.er semestre · trayectoria sugerida", "courseIds": ["intro-universidad-oficial", "TM02", "TM05", "TM01"] },
+        { "label": "2.º semestre · trayectoria sugerida", "courseIds": ["TM03", "TM04", "geologia-basica-ii-oficial", "TM08"] },
+        { "label": "3.er semestre · trayectoria sugerida", "courseIds": ["TM11", "TM12", "TM15", "TM19"] },
+        { "label": "4.º semestre · trayectoria sugerida", "courseIds": ["TM17", "TM13", "TM07", "aspectos-geotecnicos-oficial"] },
+        { "label": "5.º semestre · trayectoria sugerida", "courseIds": ["TM22", "TM23", "TM24", "TM09"] },
+        { "label": "6.º semestre · trayectoria sugerida", "courseIds": ["TM25", "TM26", "TM27", "TM30"] }
+      ]
+    }
+  ],
+  "electiveRowIds": ["TM21", "TM10", "REV05", "CAS97", "TM19", "TM32", "TM34", "TM31", "TM33", "TM37", "TM36"],
+  "approvedExample": {
+    "kind": "historical-suggested-example-not-current-default",
+    "sourceId": "impo-approved",
+    "entryCondition": "ingreso a partir del CIO",
+    "periods": [
+      { "semester": 1, "labels": ["Introducción a la Universidad", "Cálculo", "Geología Básica I", "Química I"] },
+      { "semester": 2, "labels": ["Geometría", "Física Mecánica", "Geología Básica II", "Cartografía y Topografía"] },
+      { "semester": 3, "labels": ["Descripción de Rocas y Minerales", "Perforaciones y Cateos", "Explosivos y voladuras", "Optativa"] },
+      { "semester": 4, "labels": ["Métodos de Prospección", "Geoquímica aplicada", "Recursos Minerales", "Optativa"] },
+      { "semester": 5, "labels": ["Maquinaria de Minas", "Explotación de Yacimientos", "Inglés Técnico", "Beneficiación"] },
+      { "semester": 6, "labels": ["Geología del Uruguay", "Derecho Minero", "Seguridad e Higiene", "Pasantía"] }
+    ]
+  },
+  "conflicts": [
+    { "field": "trajectoryAuthority", "resolution": "La auditoría de agosto conservaba seis semestres por overrides, sin correspondencia fuente-proyección; D03a no podía certificarlos. La ficha CURE actual contiene 24 filas en seis semestres y once electivas: se reproduce exactamente como ejemplo flexible, no como obligación." },
+    { "field": "approved-versus-current-grid", "resolution": "El ejemplo del Plan aprobado tiene Optativa en tercero y cuarto, Beneficiación en quinto y Geología del Uruguay en sexto. La ficha vigente CURE especifica Hidrogeología y Aspectos Geotécnicos en tercero/cuarto e invierte las últimas dos ubicaciones. Se usa la ficha actual sin presentarla como reforma normativa ni convertir sus opciones en obligaciones." },
+    { "field": "minimumCredits", "resolution": "Plan aprobado: 270. La ficha CURE se contradice: requisitos de graduación 272, preguntas frecuentes 270; la nota institucional CURE y Bedelías coinciden en 272. Se conserva el total operativo 272 existente, sin afirmar una modificación normativa no hallada." },
+    { "field": "planYear", "resolution": "2012 es el año aprobado por CDC y publicado por FING; 2013 identifica técnicamente la oferta en Bedelías. No se cambia el planId ni el progreso." },
+    { "field": "source-only-identities", "resolution": "Introducción a la Universidad tiene INU33/INUN3/INUNI con cargas 4/2/4; Geología Básica II no es nombre exacto de TM06 Geología II, y Aspectos Geotécnicos en Minería no es nombre exacto de TM14 Aspectos geológicos-geotécnicos. Sin equivalencia expresa se conservan las cinco entradas candidatas y se crean tres identidades sólo-fuente sin código ni créditos." },
+    { "field": "electives", "resolution": "CURE enumera Hidrogeología también entre electivas; se conserva una única identidad TM19, ubicada en tercero, sin duplicar créditos. La lista de once opciones no exige aprobarlas todas ni prueba oferta periódica." }
+  ],
+  "reviewCondition": "Revisar cuando CURE publique otra grilla o créditos/códigos por fila, una equivalencia expresa de las tres identidades ambiguas o una resolución que concilie 270/272. No hay evidencia de publicación académica progresiva ni sede parcial: no corresponde entrada en carreras-a-actualizar."
+}

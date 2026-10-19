@@ -45,7 +45,7 @@ test("controla las seis áreas, el total vigente y la pasantía", () => {
   assert.match(credential.requiredCourseGroups[1].label, /10 créditos.*social-productiva|10 créditos.*otros servicios/i);
 });
 
-test("presenta los seis semestres como sugerencia y conserva la flexibilidad", () => {
+test("presenta el ejemplo vigente CURE en seis semestres y conserva la flexibilidad", () => {
   const periods = projection.pathways.bedelias.periods;
   assert.deepEqual(periods.slice(0, 6).map((period) => period.label), [
     "1.er semestre · trayectoria sugerida",
@@ -55,15 +55,15 @@ test("presenta los seis semestres como sugerencia y conserva la flexibilidad", (
     "5.º semestre · trayectoria sugerida",
     "6.º semestre · trayectoria sugerida",
   ]);
-  assert.deepEqual(periods.slice(0, 6).map((period) => period.courseIds.length), [6, 4, 3, 3, 4, 4]);
+  assert.deepEqual(periods.map((period) => period.courseIds.length), [4, 4, 4, 4, 4, 4]);
   assert.deepEqual(Object.keys(projection.pathways), ["bedelias"]);
   assert.match(projection.plan.notice, /secuencia semestral es sugerida/i);
 });
 
 test("elimina el alias duplicado de SIG sin recortar el catálogo flexible", () => {
   const courses = projection.courses.filter((course) => course.dataStatus !== "manual-validation");
-  const geographicInformationSystems = courses.filter((course) => course.name === "Sistemas de la Información Geográfica");
-  assert.equal(courses.length, 47);
+  const geographicInformationSystems = courses.filter((course) => course.name === "Sistemas de Información Geográfica");
+  assert.equal(courses.length, 50);
   assert.equal(courses.reduce((sum, course) => sum + course.credits, 0), 398);
   assert.deepEqual(geographicInformationSystems.map((course) => course.bedeliasCode), ["TM32"]);
   assert.ok(courses.reduce((sum, course) => sum + course.credits, 0) > projection.plan.minCredits);

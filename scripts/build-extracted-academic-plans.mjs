@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { tecnologoMineroReconciliation } from "./tecnologo-minero-reconciliation.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const inventoryDirectory = path.join(projectRoot, "data", "bedelias", "inventory");
@@ -2050,6 +2051,7 @@ export async function buildExtractedAcademicPlans() {
   const cenurlnCicloInicialMatematica2012 = await loadJson(cenurlnCicloInicialMatematica2012Path);
   const cenurlnImagenFotografica2008 = await loadJson(cenurlnImagenFotografica2008Path);
   const curEducacionFisica2014 = await loadJson(curEducacionFisica2014Path);
+  const cureMinero2012 = await loadJson(path.join(projectRoot, "data/cure/tecnologo-minero-2012.json"));
   const reconciliationByIdentity = new Map([
     ...fhceReconciliations.plans.map((plan) => [plan.identity, {
       ...plan,
@@ -2090,6 +2092,7 @@ export async function buildExtractedAcademicPlans() {
     [cenurlnCicloInicialMatematica2012.auditIdentity, cenurlnCicloInicialMatematica2012Reconciliation(cenurlnCicloInicialMatematica2012)],
     [cenurlnImagenFotografica2008.auditIdentity, cenurlnImagenFotografica2008Reconciliation(cenurlnImagenFotografica2008)],
     [curEducacionFisica2014.auditIdentity, curEducacionFisica2014Reconciliation(curEducacionFisica2014)],
+    [cureMinero2012.auditIdentity, tecnologoMineroReconciliation(cureMinero2012)],
   ]);
   const audits = new Map(auditsRegistry.audits.map((audit) => [
     audit.identity,
@@ -2221,6 +2224,7 @@ export async function buildExtractedAcademicPlans() {
       sistemasComunicacion2018ReconciliationHash: hash(sistemasComunicacion2018Reconciliation),
       fceaEconomia2012ReconciliationHash: hash(fceaEconomia2012),
       fceaEstadistica2014ReconciliationHash: hash(fceaEstadistica2014),
+      cureMinero2012ReconciliationHash: hash(cureMinero2012),
     },
     counts: {
       canonicalCurrentIdentities: queue.counts.canonicalIdentities,

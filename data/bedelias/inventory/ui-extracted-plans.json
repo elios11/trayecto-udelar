@@ -12,7 +12,8 @@
     "industrialMecanica1997ReconciliationHash": "sha256:74a02e98ba6c3d38467c8f29635c23b4320e3a2ec57f5cbf2dc8e7502fc4f436",
     "sistemasComunicacion2018ReconciliationHash": "sha256:c68fa5cda3c94a0df2d8c4ac1dc0784e63440e57165172bd6a91ba1fff425e0c",
     "fceaEconomia2012ReconciliationHash": "sha256:fbf03433167e263db5152f3581f6e072b9c819b7be9621292e2bb9b429360c41",
-    "fceaEstadistica2014ReconciliationHash": "sha256:963f8778906beae94f1f0e718b1dc68410328ed9b933db0033338f57a9fa331d"
+    "fceaEstadistica2014ReconciliationHash": "sha256:963f8778906beae94f1f0e718b1dc68410328ed9b933db0033338f57a9fa331d",
+    "cureMinero2012ReconciliationHash": "sha256:dee17eb88b56bd6b716daa6a27f5b016249e9f0bdf2d60be2af47fd351a9bf42"
   },
   "counts": {
     "canonicalCurrentIdentities": 184,
@@ -22,17 +23,17 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5603,
-      "candidate": 26214,
+      "verified": 5613,
+      "candidate": 26207,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31825,
-    "afterPublishedCourses": 5603,
+    "beforePublishedCourses": 31828,
+    "afterPublishedCourses": 5613,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1806,
-    "visibleTargetsWithUnpublishedDependencies": 1522,
+    "afterPublishedRules": 1811,
+    "visibleTargetsWithUnpublishedDependencies": 1530,
     "plansWithVerifiedCatalog": 63,
     "plansWithPartialCatalog": 67,
     "plansWithStructureOnly": 9
@@ -519,21 +520,30 @@
         "treinta-y-tres"
       ],
       "before": {
-        "publishedCourses": 48,
+        "publishedCourses": 51,
         "publishedRules": 57
       },
       "after": {
-        "publishedCourses": 25,
-        "hiddenCourses": 24,
-        "publishedRules": 28,
-        "rulesWithUnpublishedDependencies": 2
+        "publishedCourses": 35,
+        "hiddenCourses": 17,
+        "publishedRules": 33,
+        "rulesWithUnpublishedDependencies": 10
       },
       "statuses": {
-        "verified": 25,
-        "candidate": 23,
+        "verified": 35,
+        "candidate": 16,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 1
+      },
+      "authorityReconciliation": {
+        "after": {
+          "verified": 35,
+          "candidate": 16,
+          "historical-equivalent": 0,
+          "administrative": 0,
+          "rejected": 1
+        }
       }
     },
     {
@@ -4630,5 +4640,5 @@
       }
     }
   ],
-  "contentHash": "sha256:13cb441539fcb3510878238f54a9c24eabf2e8fba12783ee730d3f17cc801d61"
+  "contentHash": "sha256:bcd44e3037ebffbc5d51c19a6567f9cd1b367b194990277e2a5ed99e50c1d571"
 }

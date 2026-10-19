@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:13cb441539fcb3510878238f54a9c24eabf2e8fba12783ee730d3f17cc801d61",
+    "extractedReportHash": "sha256:bcd44e3037ebffbc5d51c19a6567f9cd1b367b194990277e2a5ed99e50c1d571",
     "officialAuditHash": "sha256:d3824d5200acc6231e38b77e2f3df546f8736adb02f020c5b564ac7c3dc0b6e3",
-    "reviewedTrajectoriesHash": "sha256:6a7c5c4493cd577c647a48f873aba5d697a7867babb9c710bcf590991f6a7fc9"
+    "reviewedTrajectoriesHash": "sha256:d54f61d6c0333da9eda5ffa897546dc19a3b6bdd8c3bb44a11d14c43cc532b6d"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 109,
+      "official-trajectory-reproduced": 110,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 3,
-      "research-pending": 32
+      "research-pending": 31
     },
-    "pending": 35,
+    "pending": 34,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -122,10 +122,10 @@
         "serviceLabel": "Facultad de Ciencias",
         "selectablePlanIds": 14,
         "states": {
-          "official-trajectory-reproduced": 2,
+          "official-trajectory-reproduced": 3,
           "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 0,
-          "research-pending": 10
+          "research-pending": 9
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 35,
+    "total": 34,
     "plans": [
       {
         "priority": 1,
@@ -347,15 +347,6 @@
           "bedelias-fartes"
         ],
         "reason": "La secuencia recuperada es una elaboración académica secundaria. Sin el Plan 1987 aprobado, los expedientes 2642/87 y 7704/87 o una confirmación institucional expresa, no se pueden promover períodos, obligaciones ni equivalencias."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-cure-tecnologo-minero-2013",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -629,7 +620,6 @@
           "bedelias-cur-tecnicatura-en-gestion-de-recursos-naturales-2011"
         ],
         "researchPending": [
-          "bedelias-cure-tecnologo-minero-2013",
           "bedelias-fcien-licenciatura-biologia-humana-2004",
           "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
           "bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007",
@@ -2978,33 +2968,42 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-26",
-      "effectiveAt": "2012",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-19",
+      "effectiveAt": "Ficha CURE vigente con inscripciones 2026; grilla sin fecha editorial propia",
       "officialSources": [
+        {
+          "authority": "Centro Universitario Regional del Este, Universidad de la República",
+          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnologo-minero/",
+          "reviewedAt": "2026-10-19",
+          "role": "ejemplo vigente de grilla: seis semestres y 24 filas; once electivas u optativas sin semestre; Treinta y Tres; 272 créditos en requisitos de graduación y 270 en preguntas frecuentes",
+          "contentHash": "sha256:70581b656f6fdc35bfec952b54a57a8840df65d7f8a7ba7733eb9f455f68e741"
+        },
         {
           "authority": "Facultad de Ingeniería / Universidad de la República",
           "url": "https://www.fing.edu.uy/sites/default/files/Plan_Estudios_Tec_Minero.pdf",
-          "role": "Resolución 25 del CDC; Plan 2012; título; tres años; 270 créditos en el texto aprobado; mínimos por áreas; pasantía; flexibilidad; trayectoria sugerida",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-19",
+          "role": "Plan 2012; 270 créditos; mínimos por seis áreas; pasantía de 15 créditos; currículo flexible y tutor; ejemplo de ingreso desde CIO",
+          "contentHash": "sha256:a10376db930067adb24c3bb3dfaea68f8111ca7711ade1bb3b46999e1e29f348"
         },
         {
-          "authority": "Facultad de Ingeniería, Udelar",
+          "authority": "Diario Oficial, IMPO / Universidad de la República",
+          "url": "https://www.impo.com.uy/diariooficial/2013/02/08/avisos.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "copia primaria del mismo Plan aprobado; dos cupos Optativa en tercero y cuarto; Beneficiación en quinto y Geología del Uruguay en sexto",
+          "contentHash": "sha256:e2576b769f0dc826c233690b6cdc529d1547567af7ed5b8e90257a3d9f6de9e2"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Universidad de la República",
           "url": "https://www.fing.edu.uy/es/carrera/grado/tecn%C3%B3logo-minero-treinta-y-tres",
-          "role": "vigencia; Plan 2012; tres años; seis semestres; Treinta y Tres; carácter conjunto",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-19",
+          "role": "aprobación 2012; tres años o seis semestres; dictado en Treinta y Tres"
         },
         {
-          "authority": "Centro Universitario Regional del Este, Udelar",
-          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnologo-minero/",
-          "role": "vigencia 2026; tres años; 272 créditos; pasantía obligatoria; Treinta y Tres; servicios de referencia",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Centro Universitario Regional del Este, Udelar",
+          "authority": "Centro Universitario Regional del Este, Universidad de la República",
           "url": "https://www.cure.edu.uy/tecnologo-minero-la-unica-carrera-en-tecnologo-minero-esta-en-el-cure/",
-          "role": "oferta única; Treinta y Tres; 272 créditos; 15 créditos de pasantía",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-19",
+          "role": "272 créditos; 15 créditos de pasantía; tres años; oferta única en Treinta y Tres"
         }
       ],
       "scope": {
@@ -3016,25 +3015,37 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnologo minero:2013",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cure-tecnologo-minero-2013.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cure/tecnologo-minero-2012.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cure-tecnologo-minero-2013.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:dee17eb88b56bd6b716daa6a27f5b016249e9f0bdf2d60be2af47fd351a9bf42",
+        "projectionContentHash": "sha256:b94245019a2b3aaaabe0f95f30604891fd7ec30178b8e700b6f1939238110a6e",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 24,
+        "matchedCoursePlacements": 24
       },
       "conflictNotes": [
-        "planYear: La aprobación es de 2012; Bedelías identifica la oferta por el año 2013 en que comenzó el dictado.",
-        "minimumCredits: El texto aprobado dice 270; CURE y Bedelías publican actualmente 272. La UI usa el total vigente y conserva la discrepancia trazable.",
-        "areaMinimums: Las seis áreas suman 240 y la pasantía lleva el subtotal a 255; los 17 restantes se completan flexiblemente hasta 272, con la condición transversal de 10 créditos del artículo 12.",
-        "durationMonths: El plan y las páginas académicas establecen tres años; se corrigen los 60 meses administrativos.",
-        "duplicateSig: TMM32 y TM32 tienen igual nombre, área y 3 créditos; se conserva TM32 como la única unidad visible y se documenta el alias administrativo.",
-        "campus: La carrera se dicta sólo en Treinta y Tres; la antigua posibilidad de inscribirse en Rocha o Maldonado no implica dictado allí."
+        "La auditoría de agosto conservaba seis semestres por overrides, sin correspondencia fuente-proyección; D03a no podía certificarlos. La ficha CURE actual contiene 24 filas en seis semestres y once electivas: se reproduce exactamente como ejemplo flexible, no como obligación.",
+        "El ejemplo del Plan aprobado tiene Optativa en tercero y cuarto, Beneficiación en quinto y Geología del Uruguay en sexto. La ficha vigente CURE especifica Hidrogeología y Aspectos Geotécnicos en tercero/cuarto e invierte las últimas dos ubicaciones. Se usa la ficha actual sin presentarla como reforma normativa ni convertir sus opciones en obligaciones.",
+        "Plan aprobado: 270. La ficha CURE se contradice: requisitos de graduación 272, preguntas frecuentes 270; la nota institucional CURE y Bedelías coinciden en 272. Se conserva el total operativo 272 existente, sin afirmar una modificación normativa no hallada.",
+        "2012 es el año aprobado por CDC y publicado por FING; 2013 identifica técnicamente la oferta en Bedelías. No se cambia el planId ni el progreso.",
+        "Introducción a la Universidad tiene INU33/INUN3/INUNI con cargas 4/2/4; Geología Básica II no es nombre exacto de TM06 Geología II, y Aspectos Geotécnicos en Minería no es nombre exacto de TM14 Aspectos geológicos-geotécnicos. Sin equivalencia expresa se conservan las cinco entradas candidatas y se crean tres identidades sólo-fuente sin código ni créditos.",
+        "CURE enumera Hidrogeología también entre electivas; se conserva una única identidad TM19, ubicada en tercero, sin duplicar créditos. La lista de once opciones no exige aprobarlas todas ni prueba oferta periódica."
       ]
     },
     {
@@ -13665,5 +13676,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:fd4f44023e11c4a6aa17b8fdc06033606fb6b51f1e5fdfed4e92c7819815d618"
+  "contentHash": "sha256:e8b84e206f814cd9012f51537dd7997e3d34948fda40dd36b6818d6ced1ca8ad"
 }

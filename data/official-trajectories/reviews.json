@@ -3590,6 +3590,73 @@
         "La búsqueda fallida de una grilla pública no demuestra ausencia de trayectoria oficial.",
         "La composición de Bedelías preserva candidatas, pero no acredita períodos ni obligaciones."
       ]
+    },
+    {
+      "planId": "bedelias-cure-tecnologo-minero-2013",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-19",
+      "effectiveAt": "Ficha CURE vigente con inscripciones 2026; grilla sin fecha editorial propia",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Treinta y Tres"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Centro Universitario Regional del Este, Universidad de la República",
+          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnologo-minero/",
+          "reviewedAt": "2026-10-19",
+          "role": "ejemplo vigente de grilla: seis semestres y 24 filas; once electivas u optativas sin semestre; Treinta y Tres; 272 créditos en requisitos de graduación y 270 en preguntas frecuentes",
+          "contentHash": "sha256:70581b656f6fdc35bfec952b54a57a8840df65d7f8a7ba7733eb9f455f68e741"
+        },
+        {
+          "authority": "Facultad de Ingeniería / Universidad de la República",
+          "url": "https://www.fing.edu.uy/sites/default/files/Plan_Estudios_Tec_Minero.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "Plan 2012; 270 créditos; mínimos por seis áreas; pasantía de 15 créditos; currículo flexible y tutor; ejemplo de ingreso desde CIO",
+          "contentHash": "sha256:a10376db930067adb24c3bb3dfaea68f8111ca7711ade1bb3b46999e1e29f348"
+        },
+        {
+          "authority": "Diario Oficial, IMPO / Universidad de la República",
+          "url": "https://www.impo.com.uy/diariooficial/2013/02/08/avisos.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "copia primaria del mismo Plan aprobado; dos cupos Optativa en tercero y cuarto; Beneficiación en quinto y Geología del Uruguay en sexto",
+          "contentHash": "sha256:e2576b769f0dc826c233690b6cdc529d1547567af7ed5b8e90257a3d9f6de9e2"
+        },
+        {
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "url": "https://www.fing.edu.uy/es/carrera/grado/tecn%C3%B3logo-minero-treinta-y-tres",
+          "reviewedAt": "2026-10-19",
+          "role": "aprobación 2012; tres años o seis semestres; dictado en Treinta y Tres"
+        },
+        {
+          "authority": "Centro Universitario Regional del Este, Universidad de la República",
+          "url": "https://www.cure.edu.uy/tecnologo-minero-la-unica-carrera-en-tecnologo-minero-esta-en-el-cure/",
+          "reviewedAt": "2026-10-19",
+          "role": "272 créditos; 15 créditos de pasantía; tres años; oferta única en Treinta y Tres"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/cure/tecnologo-minero-2012.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cure-tecnologo-minero-2013.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "pathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La auditoría de agosto conservaba seis semestres por overrides, sin correspondencia fuente-proyección; D03a no podía certificarlos. La ficha CURE actual contiene 24 filas en seis semestres y once electivas: se reproduce exactamente como ejemplo flexible, no como obligación.",
+        "El ejemplo del Plan aprobado tiene Optativa en tercero y cuarto, Beneficiación en quinto y Geología del Uruguay en sexto. La ficha vigente CURE especifica Hidrogeología y Aspectos Geotécnicos en tercero/cuarto e invierte las últimas dos ubicaciones. Se usa la ficha actual sin presentarla como reforma normativa ni convertir sus opciones en obligaciones.",
+        "Plan aprobado: 270. La ficha CURE se contradice: requisitos de graduación 272, preguntas frecuentes 270; la nota institucional CURE y Bedelías coinciden en 272. Se conserva el total operativo 272 existente, sin afirmar una modificación normativa no hallada.",
+        "2012 es el año aprobado por CDC y publicado por FING; 2013 identifica técnicamente la oferta en Bedelías. No se cambia el planId ni el progreso.",
+        "Introducción a la Universidad tiene INU33/INUN3/INUNI con cargas 4/2/4; Geología Básica II no es nombre exacto de TM06 Geología II, y Aspectos Geotécnicos en Minería no es nombre exacto de TM14 Aspectos geológicos-geotécnicos. Sin equivalencia expresa se conservan las cinco entradas candidatas y se crean tres identidades sólo-fuente sin código ni créditos.",
+        "CURE enumera Hidrogeología también entre electivas; se conserva una única identidad TM19, ubicada en tercero, sin duplicar créditos. La lista de once opciones no exige aprobarlas todas ni prueba oferta periódica."
+      ]
     }
   ]
 }
