@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
+  "auditIdentity": "licenciatura en ciencias biologicas:2017",
+  "reviewedAt": "2026-10-19",
+  "publication": {
+    "planYear": "2017",
+    "approvedPlanLabel": "Plan 2015",
+    "minimumCredits": 360,
+    "durationMonths": 48,
+    "trajectoryEffectiveAt": "CIDU 2026",
+    "trajectoryStatus": "official-trajectory-reproduced",
+    "coverage": "partial-initial-two-semesters",
+    "completeDegreeSequence": false
+  },
+  "sources": [
+    {"id":"cidu-2026","url":"https://eva.fcien.udelar.edu.uy/pluginfile.php/146022/mod_resource/content/3/Taller%20ingreso%202026_final.pdf","authority":"Comisión de Carrera de la Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar","consultedAt":"2026-10-19","publishedValidity":"Presentación taller CIDU 2026, Plan 2017; páginas 1-20 leídas; páginas 11, 12, 15 y 19 cotejadas visualmente","role":"guía sugerida inicial de dos semestres y ejemplos no temporales por áreas","rawSha256":"b47462c97b26b38bb10bc4263949bd463c0b946b4dc652b253d1fc04ddd6c856"},
+    {"id":"faculty-current","url":"https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-biologicas/2327-licenciatura-en-ciencias-biologicas","authority":"Facultad de Ciencias, Universidad de la República","consultedAt":"2026-10-19","publishedValidity":"página institucional vigente al consultar; sin fecha editorial declarada","role":"360 créditos, cuatro años, Montevideo, perfil individual y enlace institucional al espacio público de la carrera"},
+    {"id":"public-career-space","url":"https://eva.fcien.udelar.edu.uy/course/view.php?id=5","authority":"Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar","consultedAt":"2026-10-19","publishedValidity":"espacio público enlazado por la página FCIEN vigente; recurso Presentación taller CIDU 2026","role":"cadena de procedencia de la presentación, no fuente autónoma de identidades administrativas"},
+    {"id":"basic-information","url":"https://eva.fcien.udelar.edu.uy/pluginfile.php/54936/mod_resource/content/3/Informaci%C3%B3n%20b%C3%A1sica%20sobre%20la%20carrera.pdf","authority":"Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar","consultedAt":"2026-10-19","publishedValidity":"folleto de tres páginas sin fecha editorial; corroboración, no sustituto del CIDU 2026","role":"cuatro materias iniciales y estructura flexible","rawSha256":"681f9b55d00ea7b11f6be7469ddad22e59bf863eaa8b0a4b9b7bc83f78faad13"},
+    {"id":"dgj-regulation","url":"https://dgjuridica.udelar.edu.uy/wp-content/uploads/2019/06/Reglamento-422.pdf","authority":"Consejo de Facultad de Ciencias y Consejo Directivo Central, Udelar; Dirección General Jurídica","consultedAt":"2026-10-19","publishedValidity":"Consejo FCIEN Resolución 78, 13/02/2017; CDC Resolución 23, 21/05/2019; Diario Oficial 20/06/2019","role":"trayectorias diversas, tutorías, 210 comunes, 140 orientación y proyecto final aprobado previamente","rawSha256":"8d38cd02a42d0fa713d97ed08d545864995dbaa263d052d4db6d34e6cd17dd03"},
+    {"id":"impo-regulation","url":"https://www.impo.com.uy/diariooficial/2019/06/20/avisos.pdf","authority":"Universidad de la República; Diario Oficial/IMPO","consultedAt":"2026-10-19","publishedValidity":"20/06/2019, páginas impresas 85-86 (PDF 70-71), expediente 240011-000116-17","role":"copia oficial del reglamento independiente de EVA y contraste de versión 2015/2017"},
+    {"id":"colibri-record","url":"https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24553","authority":"Repositorio Colibrí, Universidad de la República","consultedAt":"2026-10-19","publishedValidity":"registro canónico Plan 2017, carrera 137, plan 1110","role":"identidad de implementación; el PDF PLCBIO_2020.pdf devolvió 403 y no se usa para afirmar ausencia"},
+    {"id":"udelar-current","url":"https://udelar.edu.uy/carrera/licenciatura-en-ciencias-biologicas","authority":"Catálogo de carreras, Universidad de la República","consultedAt":"2026-10-19","publishedValidity":"ficha vigente al consultar","role":"48 meses, 360 créditos y campos disciplinares sin nuevas menciones"}
+  ],
+  "trajectories": [{
+    "id": "formacion-personalizada",
+    "label": "Guía inicial oficial 2026 · parcial",
+    "description": "Guía inicial parcial publicada por la Comisión de Carrera en CIDU 2026: sólo primer y segundo semestre. El segundo se recomienda si se ganaron los cursos del primero. No es una malla completa de ocho semestres ni una secuencia obligatoria. Los ejemplos avanzados se organizan por áreas, sin períodos; el resto del currículo se construye con tutoría. El Seminario de Biología conserva carga no publicada e identidad sólo-fuente sin equivalencia técnica inferida. El énfasis personal no constituye una mención certificada.",
+    "periods": [
+      {"label":"Primer semestre","courseIds":["BG456","BG1","FI252","MA400"]},
+      {"label":"Segundo semestre","courseIds":["BQ426","FI253","MA403","ciencias-biologicas-seminario-biologia-cidu-2026"]}
+    ]
+  }],
+  "catalogMatches": [
+    {"sourceCourseId":"BG456","officialLabel":"Biología General","bedeliasName":"BIOLOGÍA GENERAL (2017-","credits":12,"requirementId":"common-basic-science","period":"Primer semestre","identityBasis":"código explícito en página 15"},
+    {"sourceCourseId":"BG1","officialLabel":"Química General","bedeliasName":"QUÍMICA I/QUÍMICA GENERAL (2013-","credits":10,"requirementId":"common-basic-science","period":"Primer semestre","identityBasis":"código explícito en página 15"},
+    {"sourceCourseId":"FI252","officialLabel":"Física 1","bedeliasName":"FÍSICA 1 (BIOGEOCIENCIAS) (2017-","credits":12,"requirementId":"common-basic-science","period":"Primer semestre","identityBasis":"código explícito en página 15"},
+    {"sourceCourseId":"MA400","officialLabel":"Matemática 1","bedeliasName":"MATEMÁTICA 1 (2017-","credits":12,"requirementId":"common-basic-science","period":"Primer semestre","identityBasis":"código explícito en página 15"},
+    {"sourceCourseId":"BQ426","officialLabel":"Química Orgánica 1","bedeliasName":"QUÍMICA ORGÁNICA I (2022-","credits":12,"requirementId":"common-basic-science","period":"Segundo semestre","identityBasis":"rótulo de página 19, única versión abierta del mismo curso en el tramo común; las variantes hasta 2019 y 2020-2021 no se equiparan"},
+    {"sourceCourseId":"FI253","officialLabel":"Física 2","bedeliasName":"FÍSICA 2 (BIOGEOCIENCIAS) (2017-","credits":12,"requirementId":"common-basic-science","period":"Segundo semestre","identityBasis":"rótulo de página 19 y correspondencia nominal única en el tramo común"},
+    {"sourceCourseId":"MA403","officialLabel":"Matemática 2 módulo 1","bedeliasName":"MATEMÁTICA 2 (MÓDULO 1)","credits":6,"requirementId":"common-basic-science","period":"Segundo semestre","identityBasis":"rótulo y módulo explícitos en página 19; no se sustituye por Matemática 2 histórica ni módulo 2"},
+    {"sourceCourseId":"BG900","officialLabel":"Trabajo Final","bedeliasName":"TRABAJO FINAL","credits":32,"requirementId":"final-project","period":"Trabajo final de carrera","identityBasis":"actividad final nominal única de 32 créditos en página 10 y ejemplo de página 12; sin semestre asignado"}
+  ],
+  "sourceOnlyRows": [{"identityKey":"ciencias-biologicas-seminario-biologia-cidu-2026","officialLabel":"Seminario de Biología","period":"Segundo semestre","requirementId":"common","credits":0,"creditsPublished":false,"curricularBlock":false,"identityReservation":"Página 19 no publica código ni carga. No se equipara automáticamente a BG861 o a los seminarios del ejemplo por áreas."}],
+  "sourcePortions": {
+    "cidu-2026": {"planYear":"2017","durationSemesters":8,"minimumCredits":360,"initialRows":[["Primer semestre","Biología General","BG456"],["Primer semestre","Química General","BG1"],["Primer semestre","Física 1","FI252"],["Primer semestre","Matemática 1","MA400"],["Segundo semestre","Química Orgánica 1",null],["Segundo semestre","Física 2",null],["Segundo semestre","Matemática 2 módulo 1",null],["Segundo semestre","Seminario de Biología",null]],"secondSemesterCondition":"Si se ganaron los cursos del primer semestre","maximumRecommendedCourses":4,"firstSemesterApproximateCredits":45,"commonAreaMinimums":[90,40,60,10],"finalProjectCredits":32,"illustrativeTables":{"pages":[11,12],"organization":"tramos y áreas, no períodos temporales","commonPrintedCredits":217,"orientationPrintedCredits":145,"extensionPrintedCredits":10,"degreePrintedCredits":362,"orientationRowsSubtotal":135,"extensionAssignedTo":"TO","notAUniqueMandatoryCurriculum":true},"laterCoursePeriodRows":[]},
+    "faculty-current":{"minimumCredits":360,"durationYears":4,"location":"Montevideo","commonCredits":210,"individualOrientation":true,"officialCareerSpace":"https://eva.fcien.udelar.edu.uy/course/view.php?id=5"},
+    "public-career-space":{"resourceId":"88552","label":"Presentación taller CIDU 2026","publicGuestAccess":true},
+    "basic-information":{"firstSemesterCourses":["Biología General","Química General","Física 1","Matemática 1"],"minimumCredits":360,"commonAreaMinimums":[90,40,60,10],"orientationIndividual":true},
+    "dgj-regulation":{"facultyResolution":"78, 13/02/2017","cdcResolution":"23, 21/05/2019","diverseIndividualTrajectories":true,"commonMinimum":210,"orientationMinimum":140,"orientationEntryCredits":90,"tutorMeetingsPerYearMinimum":2,"finalProjectPriorApproval":true,"transitionPlanLabel":"2015","commonFixedSequencePublished":false},
+    "impo-regulation":{"publishedAt":"2019-06-20","printedPages":[85,86],"sameFacultyAndCdcResolutions":true,"case":"240011-000116-17","individualTrajectoriesBasedOnAreaAndStageMinimums":true,"transitionPlanLabel":"2015"},
+    "colibri-record":{"careerCode":"137","planCode":"1110","year":"2017","responsible":"Facultad de Ciencias, Universidad de la República","planPdfAccess":"403 during current query; prior structural audit preserved"},
+    "udelar-current":{"minimumCredits":360,"durationMonths":48,"disciplinaryFieldsDoNotCreateSeparateCertifiedMentions":true}
+  },
+  "bedeliasComparison":{"snapshotContentHash":"30dce86fb9adc7edbf4e128ce447f231b62eef569a032f94c8cb66e0d64ab84e","distinctSnapshotCourseRecords":842,"compositionMatterEntries":978},
+  "trajectoryConclusion": {
+    "state":"official-trajectory-reproduced",
+    "partial":true,
+    "reason":"Se reproduce exclusivamente la guía inicial de dos semestres publicada por la Comisión de Carrera en CIDU 2026. La página vigente FCIEN enlaza ese espacio y confirma el plan flexible; DG Jurídica e IMPO corroboran tutoría, mínimos y trayectorias diversas. Los ejemplos por áreas no publican períodos y no prueban una malla completa ni ausencia de otras recomendaciones.",
+    "reviewTrigger":"Revisar cuando la Comisión de Carrera o FCIEN publique una guía posterior al segundo semestre, una revisión del CIDU 2026 o código y carga inequívocos del Seminario de Biología."
+  },
+  "conflicts": [
+    {"field":"partialSequence","resolution":"Sólo se verifican ocho ubicaciones en dos semestres. No se generan semestres 3-8 ni se declara ausencia documentada de una trayectoria completa."},
+    {"field":"approximateLoad","resolution":"La recomendación de 45 créditos aproximados del primer semestre corresponde a cuatro materias cuyas cargas cotejadas suman 46; no se ajustan las materias para forzar 45."},
+    {"field":"seminarIdentity","resolution":"Seminario de Biología se mantiene sólo-fuente y sin carga, porque la página 19 no publica equivalencia con los seminarios de 6 créditos del ejemplo por áreas ni código técnico."},
+    {"field":"illustrativeTotals","resolution":"El ejemplo de páginas 11-12 imprime 217 comunes, 145 orientación, 10 extensión asignados al TO y 362 totales; la tabla de actividades de orientación suma 135 antes de esa extensión. Se conserva como ejemplo ilustrativo sin reinterpretar los mínimos normativos 210+140+10 ni extrapolar cargas individuales actuales."},
+    {"field":"catalog","resolution":"Los ejemplos avanzados no se promueven masivamente ni se vuelven secuencia u obligaciones acumulativas. El catálogo es parcial: ocho códigos cotejados y un seminario sólo-fuente; las demás identidades administrativas permanecen recuperables fuera del catálogo normal."}
+  ],
+  "projectionBaseline":{"existingCourseRecords":978,"existingIdentityLoadHash":"sha256:c346aec905cb5b61d8fb835c84b37c240aa56befa22fc8fcf3b0d0efbae2b20b"},
+  "fingerprint":{"algorithm":"sha256","canonicalField":"sourcePortions","value":"sha256:0ea6b178df1a2e6c2f00ebcb6c523237954a55de7d36d6dd9ae595dc93280025"}
+}

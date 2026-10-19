@@ -60,24 +60,14 @@ test("conserva los submínimos comunes y el Trabajo Final dentro de orientación
   assert.deepEqual([integralValidation.credits, integralValidation.eligibleRequirementIds], [10, ["integral-practice"]]);
 });
 
-test("mantiene el catálogo por tramos sin inventar orientaciones certificadas", () => {
+test("reproduce sólo la guía inicial parcial sin inventar orientaciones ni semestres posteriores", () => {
   const pathway = plan.pathways["formacion-personalizada"];
   assert.deepEqual(pathway.periods.map(({ label }) => label), [
-    "Tramo común · Científico-Básica",
-    "Tramo común · Biología Celular y Molecular",
-    "Tramo común · Diversidad Biológica",
-    "Tramo común · Reflexión Científica y Formación General",
-    "Prácticas integrales · Tramo común",
-    "Orientación · Científico-Básica",
-    "Orientación · Biología Celular y Molecular",
-    "Orientación · Diversidad Biológica",
-    "Orientación · Reflexión Científica y Formación General",
-    "Prácticas integrales · Tramo de orientación",
-    "Trabajo final de carrera",
-    "Validación de egreso",
+    "Primer semestre",
+    "Segundo semestre",
   ]);
-  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [77, 44, 84, 42, 39, 83, 175, 319, 64, 50, 1, 1]);
-  assert.equal(plan.courses.length, 978);
+  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [4, 4]);
+  assert.equal(plan.courses.length, 979);
   assert.equal(plan.rules.length, 897);
   assert.match(pathway.description, /no constituye una mención certificada/i);
   const validation = plan.creditStructure.credentials[0].requiredCourseGroups.find(({ id }) => id === "validacion-final-plan");

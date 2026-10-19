@@ -291,7 +291,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-ciencias-biologicas-2017.json"),
     pathwayIds: ["formacion-personalizada"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Guía inicial oficial 2026 · parcial",
     minCredits: 360,
   },
   "bedelias-fcien-licenciatura-en-ciencias-de-la-atmosfera-2007": {

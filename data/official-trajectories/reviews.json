@@ -3770,6 +3770,100 @@
         "Se conservan 48 meses normativos frente a los 60 administrativos, 360 créditos y las cinco sedes del mismo título y progreso.",
         "Los 1797 registros técnicos y 2032 apariciones siguen como candidatas recuperables, no obligaciones ni oferta actual."
       ]
+    },
+    {
+      "planId": "bedelias-fcien-licenciatura-en-ciencias-biologicas-2017",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-19",
+      "effectiveAt": "CIDU 2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "formacion-personalizada"
+        ],
+        "coverage": "partial-initial-two-semesters",
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "authority": "Comisión de Carrera de la Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/146022/mod_resource/content/3/Taller%20ingreso%202026_final.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "guía sugerida inicial de dos semestres y ejemplos no temporales por áreas",
+          "contentHash": "sha256:c027cac917cfde63f0fb6f2b25c32851245d4177a18ebb1f5a0918ad23837757"
+        },
+        {
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-biologicas/2327-licenciatura-en-ciencias-biologicas",
+          "reviewedAt": "2026-10-19",
+          "role": "360 créditos, cuatro años, Montevideo, perfil individual y enlace institucional al espacio público de la carrera",
+          "contentHash": "sha256:3833b8746ed26d28aca0f35e6cc4f0c25fdde784ebf4176d1256bfdbb4b525a0"
+        },
+        {
+          "authority": "Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar",
+          "url": "https://eva.fcien.udelar.edu.uy/course/view.php?id=5",
+          "reviewedAt": "2026-10-19",
+          "role": "cadena de procedencia de la presentación, no fuente autónoma de identidades administrativas",
+          "contentHash": "sha256:d6a8984a2877cf07299277fab80d2377d3c9197f0865fa97d7bf79844bd3f7be"
+        },
+        {
+          "authority": "Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/54936/mod_resource/content/3/Informaci%C3%B3n%20b%C3%A1sica%20sobre%20la%20carrera.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "cuatro materias iniciales y estructura flexible",
+          "contentHash": "sha256:e91f165b5d4cd56f42f4d8027cc4d5df01a475d97eb034a40ebd29367575e1d0"
+        },
+        {
+          "authority": "Consejo de Facultad de Ciencias y Consejo Directivo Central, Udelar; Dirección General Jurídica",
+          "url": "https://dgjuridica.udelar.edu.uy/wp-content/uploads/2019/06/Reglamento-422.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "trayectorias diversas, tutorías, 210 comunes, 140 orientación y proyecto final aprobado previamente",
+          "contentHash": "sha256:3493dd3a6aa7952a1712afa47f0c3ca26315e5d338e5eb0f79997b5749619ed5"
+        },
+        {
+          "authority": "Universidad de la República; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2019/06/20/avisos.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "copia oficial del reglamento independiente de EVA y contraste de versión 2015/2017",
+          "contentHash": "sha256:89d950f171c65d818609481096f8b5a9ab17a75a0b5183ca2267c08aaad91173"
+        },
+        {
+          "authority": "Repositorio Colibrí, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24553",
+          "reviewedAt": "2026-10-19",
+          "role": "identidad de implementación; el PDF PLCBIO_2020.pdf devolvió 403 y no se usa para afirmar ausencia",
+          "contentHash": "sha256:c2e0c21e94eb6abec080e07442748ebb6697d6e079994e954a9977dc7a59bd8a"
+        },
+        {
+          "authority": "Catálogo de carreras, Universidad de la República",
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-ciencias-biologicas",
+          "reviewedAt": "2026-10-19",
+          "role": "48 meses, 360 créditos y campos disciplinares sin nuevas menciones",
+          "contentHash": "sha256:faac54604c791761dcfd15ed67211908cb74a515136a6cdae91060d40bb1e419"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/ciencias-biologicas-2017-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-ciencias-biologicas-2017.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "Revisar cuando la Comisión de Carrera o FCIEN publique una guía posterior al segundo semestre, una revisión del CIDU 2026 o código y carga inequívocos del Seminario de Biología."
+      },
+      "conflictNotes": [
+        "Sólo se verifican ocho ubicaciones en dos semestres. No se generan semestres 3-8 ni se declara ausencia documentada de una trayectoria completa.",
+        "La recomendación de 45 créditos aproximados del primer semestre corresponde a cuatro materias cuyas cargas cotejadas suman 46; no se ajustan las materias para forzar 45.",
+        "Seminario de Biología se mantiene sólo-fuente y sin carga, porque la página 19 no publica equivalencia con los seminarios de 6 créditos del ejemplo por áreas ni código técnico.",
+        "El ejemplo de páginas 11-12 imprime 217 comunes, 145 orientación, 10 extensión asignados al TO y 362 totales; la tabla de actividades de orientación suma 135 antes de esa extensión. Se conserva como ejemplo ilustrativo sin reinterpretar los mínimos normativos 210+140+10 ni extrapolar cargas individuales actuales.",
+        "Los ejemplos avanzados no se promueven masivamente ni se vuelven secuencia u obligaciones acumulativas. El catálogo es parcial: ocho códigos cotejados y un seminario sólo-fuente; las demás identidades administrativas permanecen recuperables fuera del catálogo normal."
+      ]
     }
   ]
 }

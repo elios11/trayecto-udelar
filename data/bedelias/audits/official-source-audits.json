@@ -52620,9 +52620,9 @@
       "identity": "licenciatura en ciencias biologicas:2017",
       "career": "LICENCIATURA EN CIENCIAS BIOLÓGICAS",
       "planYear": "2017",
-      "reviewedAt": "2026-08-28",
+      "reviewedAt": "2026-10-19",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, sede, duración, créditos, tramos, áreas, prácticas integrales, trabajo final y tutorías",
+      "scope": "vigencia, Plan 2015/implementación 2017, título único, Montevideo, 360 créditos, mínimos, tutoría y guía inicial parcial CIDU 2026 de dos semestres",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -52639,22 +52639,44 @@
         "semesters": 8,
         "minimumCredits": 360,
         "current": true,
-        "pathwayLabel": "Trayectoria",
+        "pathwayLabel": "Guía inicial oficial 2026 · parcial",
         "degreeRule": "El título exige al menos 360 créditos: un tramo común de 210, un tramo de orientación de 140 y 10 créditos de prácticas integrales o extensión. Dentro del tramo común se requieren 90 créditos del área Científico-Básica, 40 de Biología Celular y Molecular, 60 de Diversidad Biológica y 10 de Reflexión Científica y Formación General. El Trabajo Final de 32 créditos integra el tramo de orientación.",
         "trajectories": [
           {
             "id": "formacion-personalizada",
-            "label": "Formación personalizada",
-            "description": "Recorrido flexible diseñado con un Tutor de Orientación Curricular. Puede profundizar campos como biología celular, ecología, genética, oceanografía o zoología, pero no constituye una mención certificada ni modifica el título."
+            "label": "Guía inicial oficial 2026 · parcial",
+            "description": "Guía inicial parcial publicada por la Comisión de Carrera en CIDU 2026: sólo primer y segundo semestre. El segundo se recomienda si se ganaron los cursos del primero. No es una malla completa de ocho semestres ni una secuencia obligatoria. Los ejemplos avanzados se organizan por áreas, sin períodos; el resto del currículo se construye con tutoría. El Seminario de Biología conserva carga no publicada e identidad sólo-fuente sin equivalencia técnica inferida. El énfasis personal no constituye una mención certificada.",
+            "periods": [
+              {
+                "label": "Primer semestre",
+                "courseIds": [
+                  "BG456",
+                  "BG1",
+                  "FI252",
+                  "MA400"
+                ]
+              },
+              {
+                "label": "Segundo semestre",
+                "courseIds": [
+                  "BQ426",
+                  "FI253",
+                  "MA403",
+                  "ciencias-biologicas-seminario-biologia-cidu-2026"
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true
           }
         ],
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
-          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24553/1/PLCBIO_2020.pdf",
-          "pathwayLabel": "Trayectoria",
-          "pathwayDescription": "Catálogo flexible por tramos y áreas. El orden no prescribe una secuencia; la Comisión de Carrera y las tutorías orientan y validan la coherencia del recorrido personal.",
+          "sourceUrl": "https://eva.fcien.udelar.edu.uy/pluginfile.php/146022/mod_resource/content/3/Taller%20ingreso%202026_final.pdf",
+          "pathwayLabel": "Guía inicial oficial 2026 · parcial",
+          "pathwayDescription": "Guía inicial parcial publicada por la Comisión de Carrera en CIDU 2026: sólo primer y segundo semestre. El segundo se recomienda si se ganaron los cursos del primero. No es una malla completa de ocho semestres ni una secuencia obligatoria. Los ejemplos avanzados se organizan por áreas, sin períodos; el resto del currículo se construye con tutoría. El Seminario de Biología conserva carga no publicada e identidad sólo-fuente sin equivalencia técnica inferida. El énfasis personal no constituye una mención certificada.",
           "periodOrder": [
             "Tramo común · Científico-Básica",
             "Tramo común · Biología Celular y Molecular",
@@ -52752,7 +52774,131 @@
               "minCredits": 10
             }
           ],
-          "manualCompletionValidation": "Aprobación de la trayectoria personal y del proyecto de Trabajo Final por la Comisión de Carrera"
+          "manualCompletionValidation": "Aprobación de la trayectoria personal y del proyecto de Trabajo Final por la Comisión de Carrera",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "BG456",
+            "BG1",
+            "FI252",
+            "MA400",
+            "BQ426",
+            "FI253",
+            "MA403",
+            "BG900"
+          ],
+          "sourceDataPath": "data/fcien/ciencias-biologicas-2017-trajectory-review.json",
+          "includeAllCoursesInPathwayCatalog": true,
+          "courseOverrides": {
+            "BG456": {
+              "name": "Biología General",
+              "preserveName": true,
+              "requirementId": "common-basic-science",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BG1": {
+              "name": "Química General",
+              "preserveName": true,
+              "requirementId": "common-basic-science",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI252": {
+              "name": "Física 1",
+              "preserveName": true,
+              "requirementId": "common-basic-science",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA400": {
+              "name": "Matemática 1",
+              "preserveName": true,
+              "requirementId": "common-basic-science",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BQ426": {
+              "name": "Química Orgánica 1",
+              "preserveName": true,
+              "requirementId": "common-basic-science",
+              "periodLabel": "Segundo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI253": {
+              "name": "Física 2",
+              "preserveName": true,
+              "requirementId": "common-basic-science",
+              "periodLabel": "Segundo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA403": {
+              "name": "Matemática 2 módulo 1",
+              "preserveName": true,
+              "requirementId": "common-basic-science",
+              "periodLabel": "Segundo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BG900": {
+              "name": "Trabajo Final",
+              "preserveName": true,
+              "requirementId": "final-project",
+              "periodLabel": "Trabajo final de carrera",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "ciencias-biologicas-seminario-biologia-cidu-2026",
+              "sourceCourseId": "ciencias-biologicas-seminario-biologia-cidu-2026",
+              "name": "Seminario de Biología",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": false,
+              "requirementId": "common",
+              "periodLabel": "Segundo semestre",
+              "sourceUrl": "https://eva.fcien.udelar.edu.uy/pluginfile.php/146022/mod_resource/content/3/Taller%20ingreso%202026_final.pdf",
+              "catalogRole": "official-semester-source-only-course",
+              "availabilityStatus": "official-trajectory-no-unambiguous-technical-code"
+            }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "partialSequence",
+              "resolution": "Sólo se verifican ocho ubicaciones en dos semestres. No se generan semestres 3-8 ni se declara ausencia documentada de una trayectoria completa."
+            },
+            {
+              "field": "approximateLoad",
+              "resolution": "La recomendación de 45 créditos aproximados del primer semestre corresponde a cuatro materias cuyas cargas cotejadas suman 46; no se ajustan las materias para forzar 45."
+            },
+            {
+              "field": "seminarIdentity",
+              "resolution": "Seminario de Biología se mantiene sólo-fuente y sin carga, porque la página 19 no publica equivalencia con los seminarios de 6 créditos del ejemplo por áreas ni código técnico."
+            },
+            {
+              "field": "illustrativeTotals",
+              "resolution": "El ejemplo de páginas 11-12 imprime 217 comunes, 145 orientación, 10 extensión asignados al TO y 362 totales; la tabla de actividades de orientación suma 135 antes de esa extensión. Se conserva como ejemplo ilustrativo sin reinterpretar los mínimos normativos 210+140+10 ni extrapolar cargas individuales actuales."
+            },
+            {
+              "field": "catalog",
+              "resolution": "Los ejemplos avanzados no se promueven masivamente ni se vuelven secuencia u obligaciones acumulativas. El catálogo es parcial: ocho códigos cotejados y un seminario sólo-fuente; las demás identidades administrativas permanecen recuperables fuera del catálogo normal."
+            }
+          ]
         }
       },
       "offerings": [
@@ -52782,15 +52928,19 @@
         "canonicalModel": "one-degree-one-personalized-biological-pathway",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "El Plan y su Reglamento establecen un único título en Montevideo y trayectorias curriculares diversas diseñadas con tutoría. Las áreas de énfasis son posibilidades del recorrido personal, no menciones certificadas.",
+        "reason": "Se reproduce exclusivamente la guía inicial de dos semestres publicada por la Comisión de Carrera en CIDU 2026. La página vigente FCIEN enlaza ese espacio y confirma el plan flexible; DG Jurídica e IMPO corroboran tutoría, mínimos y trayectorias diversas. Los ejemplos por áreas no publican períodos y no prueban una malla completa ni ausencia de otras recomendaciones.",
         "normalization": [
           "Publicar una sola Licenciatura en Ciencias Biológicas Plan 2017, de ocho semestres y 360 créditos en Montevideo.",
           "Controlar 210 créditos de tramo común, con submínimos de 90 Científico-Básica, 40 Biología Celular y Molecular, 60 Diversidad Biológica y 10 Reflexión Científica y Formación General.",
           "Controlar 140 créditos de tramo de orientación, incluyendo el Trabajo Final de 32 créditos, y 10 créditos adicionales de prácticas integrales o extensión.",
-          "Mantener las 978 apariciones de composición como catálogo flexible por tramo y área, deduplicando sólo coincidencias exactas de identidad y créditos.",
           "Presentar una única trayectoria personalizada y no convertir los campos disciplinares publicados en menciones o títulos separados.",
-          "Conservar Montevideo como única sede completa; el Ciclo en Biología-Bioquímica de Salto y Paysandú es una vía inicial de 90 créditos que continúa esta carrera en Facultad de Ciencias."
-        ]
+          "Conservar Montevideo como única sede completa; el Ciclo en Biología-Bioquímica de Salto y Paysandú es una vía inicial de 90 créditos que continúa esta carrera en Facultad de Ciencias.",
+          "Reproducir sólo dos semestres de la guía inicial CIDU 2026; catálogo verificado parcial de ocho códigos y un seminario sólo-fuente, sin semestres 3-8 ni promoción de las otras identidades administrativas."
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fcien/ciencias-biologicas-2017-trajectory-review.json",
+        "trajectoryCoverage": "partial-initial-two-semesters",
+        "completeDegreeSequence": false
       },
       "sources": [
         {
@@ -52829,24 +52979,23 @@
         },
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24553",
-          "authority": "Repositorio Colibri, Udelar",
+          "authority": "Repositorio Colibrí, Universidad de la República",
           "supports": [
-            "Plan 2017",
-            "código de carrera 137",
-            "código de plan 1110",
-            "responsabilidad de Facultad de Ciencias"
-          ]
+            "identidad de implementación; el PDF PLCBIO_2020.pdf devolvió 403 y no se usa para afirmar ausencia"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "registro canónico Plan 2017, carrera 137, plan 1110",
+          "contentHash": "sha256:c2e0c21e94eb6abec080e07442748ebb6697d6e079994e954a9977dc7a59bd8a"
         },
         {
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-ciencias-biologicas",
-          "authority": "Catálogo vigente de carreras, Udelar",
+          "authority": "Catálogo de carreras, Universidad de la República",
           "supports": [
-            "vigencia",
-            "cuatro años",
-            "360 créditos",
-            "Facultad de Ciencias",
-            "campos de orientación"
-          ]
+            "48 meses, 360 créditos y campos disciplinares sin nuevas menciones"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "ficha vigente al consultar",
+          "contentHash": "sha256:faac54604c791761dcfd15ed67211908cb74a515136a6cdae91060d40bb1e419"
         },
         {
           "url": "https://udelar.edu.uy/carrera/ciclo-en-biologia-bioquimica",
@@ -52855,6 +53004,69 @@
             "ciclo inicial regional de 90 créditos",
             "continuidad posterior en Facultad de Ciencias en Montevideo"
           ]
+        },
+        {
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/146022/mod_resource/content/3/Taller%20ingreso%202026_final.pdf",
+          "authority": "Comisión de Carrera de la Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar",
+          "supports": [
+            "guía sugerida inicial de dos semestres y ejemplos no temporales por áreas"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Presentación taller CIDU 2026, Plan 2017; páginas 1-20 leídas; páginas 11, 12, 15 y 19 cotejadas visualmente",
+          "contentHash": "sha256:c027cac917cfde63f0fb6f2b25c32851245d4177a18ebb1f5a0918ad23837757",
+          "rawContentHash": "sha256:b47462c97b26b38bb10bc4263949bd463c0b946b4dc652b253d1fc04ddd6c856"
+        },
+        {
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-biologicas/2327-licenciatura-en-ciencias-biologicas",
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "supports": [
+            "360 créditos, cuatro años, Montevideo, perfil individual y enlace institucional al espacio público de la carrera"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "página institucional vigente al consultar; sin fecha editorial declarada",
+          "contentHash": "sha256:3833b8746ed26d28aca0f35e6cc4f0c25fdde784ebf4176d1256bfdbb4b525a0"
+        },
+        {
+          "url": "https://eva.fcien.udelar.edu.uy/course/view.php?id=5",
+          "authority": "Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar",
+          "supports": [
+            "cadena de procedencia de la presentación, no fuente autónoma de identidades administrativas"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "espacio público enlazado por la página FCIEN vigente; recurso Presentación taller CIDU 2026",
+          "contentHash": "sha256:d6a8984a2877cf07299277fab80d2377d3c9197f0865fa97d7bf79844bd3f7be"
+        },
+        {
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/54936/mod_resource/content/3/Informaci%C3%B3n%20b%C3%A1sica%20sobre%20la%20carrera.pdf",
+          "authority": "Licenciatura en Ciencias Biológicas, Facultad de Ciencias, Udelar",
+          "supports": [
+            "cuatro materias iniciales y estructura flexible"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "folleto de tres páginas sin fecha editorial; corroboración, no sustituto del CIDU 2026",
+          "contentHash": "sha256:e91f165b5d4cd56f42f4d8027cc4d5df01a475d97eb034a40ebd29367575e1d0",
+          "rawContentHash": "sha256:681f9b55d00ea7b11f6be7469ddad22e59bf863eaa8b0a4b9b7bc83f78faad13"
+        },
+        {
+          "url": "https://dgjuridica.udelar.edu.uy/wp-content/uploads/2019/06/Reglamento-422.pdf",
+          "authority": "Consejo de Facultad de Ciencias y Consejo Directivo Central, Udelar; Dirección General Jurídica",
+          "supports": [
+            "trayectorias diversas, tutorías, 210 comunes, 140 orientación y proyecto final aprobado previamente"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Consejo FCIEN Resolución 78, 13/02/2017; CDC Resolución 23, 21/05/2019; Diario Oficial 20/06/2019",
+          "contentHash": "sha256:3493dd3a6aa7952a1712afa47f0c3ca26315e5d338e5eb0f79997b5749619ed5",
+          "rawContentHash": "sha256:8d38cd02a42d0fa713d97ed08d545864995dbaa263d052d4db6d34e6cd17dd03"
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2019/06/20/avisos.pdf",
+          "authority": "Universidad de la República; Diario Oficial/IMPO",
+          "supports": [
+            "copia oficial del reglamento independiente de EVA y contraste de versión 2015/2017"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "20/06/2019, páginas impresas 85-86 (PDF 70-71), expediente 240011-000116-17",
+          "contentHash": "sha256:89d950f171c65d818609481096f8b5a9ab17a75a0b5183ca2267c08aaad91173"
         }
       ],
       "anomalies": [
@@ -52877,10 +53089,30 @@
         {
           "field": "catalogSize",
           "resolution": "Los 6.710 créditos de los 842 códigos distintos y las 978 apariciones jerárquicas constituyen oferta acumulada, alternativas y cursos históricos. El requisito real es cumplir tramos, submínimos, prácticas, Trabajo Final y 360 créditos."
+        },
+        {
+          "field": "partialSequence",
+          "resolution": "Sólo se verifican ocho ubicaciones en dos semestres. No se generan semestres 3-8 ni se declara ausencia documentada de una trayectoria completa."
+        },
+        {
+          "field": "approximateLoad",
+          "resolution": "La recomendación de 45 créditos aproximados del primer semestre corresponde a cuatro materias cuyas cargas cotejadas suman 46; no se ajustan las materias para forzar 45."
+        },
+        {
+          "field": "seminarIdentity",
+          "resolution": "Seminario de Biología se mantiene sólo-fuente y sin carga, porque la página 19 no publica equivalencia con los seminarios de 6 créditos del ejemplo por áreas ni código técnico."
+        },
+        {
+          "field": "illustrativeTotals",
+          "resolution": "El ejemplo de páginas 11-12 imprime 217 comunes, 145 orientación, 10 extensión asignados al TO y 362 totales; la tabla de actividades de orientación suma 135 antes de esa extensión. Se conserva como ejemplo ilustrativo sin reinterpretar los mínimos normativos 210+140+10 ni extrapolar cargas individuales actuales."
+        },
+        {
+          "field": "catalog",
+          "resolution": "Los ejemplos avanzados no se promueven masivamente ni se vuelven secuencia u obligaciones acumulativas. El catálogo es parcial: ocho códigos cotejados y un seminario sólo-fuente; las demás identidades administrativas permanecen recuperables fuera del catálogo normal."
         }
       ],
-      "uiNotice": "Plan 2017 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí 210 créditos comunes, 140 de orientación, 10 de prácticas integrales y el Trabajo Final de 32; la Comisión de Carrera debe aprobar tu trayectoria y proyecto final.",
-      "remainingWork": "La Comisión de Carrera y las tutorías determinan la coherencia de cada recorrido, la clasificación de cursos entre áreas, las reválidas y la aprobación previa del proyecto de Trabajo Final; la UI conserva esa validación como requisito manual explícito."
+      "uiNotice": "Guía inicial oficial 2026 · parcial: sólo primer y segundo semestre en Montevideo. No es la malla completa de ocho semestres. El resto se construye con tutoría: 360 créditos, 210 comunes, 140 de orientación, 10 de prácticas integrales y Trabajo Final de 32. El catálogo verificado es parcial; las candidatas administrativas no acreditan requisitos.",
+      "remainingWork": "Revisar cuando la Comisión de Carrera o FCIEN publique una guía posterior al segundo semestre, una revisión del CIDU 2026 o código y carga inequívocos del Seminario de Biología."
     },
     {
       "identity": "licenciatura en ciencias de la atmosfera:2007",
@@ -86524,6 +86756,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:a404ae32093ad701320d5bd495b01420553d1adcae3bdce3cc5b6ff6c7043b3c",
+  "contentHash": "sha256:20c3051879b328e46cd254b4008b4966b1579e68c1e24dc804d28d3f39d95569",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
