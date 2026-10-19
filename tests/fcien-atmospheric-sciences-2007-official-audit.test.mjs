@@ -59,19 +59,11 @@ test("controla nueve mínimos por 279 créditos y deja 81 de distribución flexi
 test("conserva el catálogo flexible por área sin inventar menciones", () => {
   const pathway = plan.pathways["curriculo-personalizado"];
   assert.deepEqual(pathway.periods.map(({ label }) => label), [
-    "Matemática",
-    "Física básica, intermedia y avanzada",
-    "Mecánica de los fluidos y dinámica atmosférica",
-    "Actividades integradoras, laboratorios y especiales",
-    "Tratamiento de datos",
-    "Métodos numéricos",
-    "Química",
-    "Recursos hídricos y otras geociencias",
-    "Ciencia y Sociedad",
-    "Validación de egreso",
+    "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4",
+    "Semestre 5", "Semestre 6", "Semestre 7", "Semestre 8",
   ]);
-  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [43, 41, 28, 38, 13, 16, 8, 21, 30, 1]);
-  assert.equal(plan.courses.length, 238);
+  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [4, 4, 4, 4, 4, 4, 4, 4]);
+  assert.equal(plan.courses.length, 253);
   assert.equal(plan.rules.length, 150);
   assert.match(pathway.description, /no crea menciones ni títulos diferentes/i);
   const validation = plan.creditStructure.credentials[0].requiredCourseGroups.find(({ id }) => id === "validacion-final-plan");

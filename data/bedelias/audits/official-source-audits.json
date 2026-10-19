@@ -53118,9 +53118,9 @@
       "identity": "licenciatura en ciencias de la atmosfera:2007",
       "career": "LICENCIATURA EN CIENCIAS DE LA ATMÓSFERA",
       "planYear": "2007",
-      "reviewedAt": "2026-08-28",
+      "reviewedAt": "2026-10-19",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título compartido, servicios de ingreso, sede, duración, créditos, mínimos por área, flexibilidad y aprobación curricular",
+      "scope": "título compartido, Montevideo, 360 créditos, nueve mínimos, currículo individual y trayectoria ejemplo departamental de ocho semestres con catálogo flexible",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -53142,17 +53142,93 @@
         "trajectories": [
           {
             "id": "curriculo-personalizado",
-            "label": "Currículo personalizado",
-            "description": "Recorrido flexible construido con tutoría y aprobado por la Comisión de Carrera. La elección de cursos puede profundizar intereses meteorológicos, climáticos, físicos o aplicados, pero no crea menciones ni títulos diferentes."
+            "label": "Trayectoria ejemplo · Ciencias",
+            "description": "Ejemplo oficial de ocho semestres publicado por el Departamento de Ciencias de la Atmósfera y Física de los Océanos, referido a cursos de Facultad de Ciencias. Es una guía flexible, no una secuencia obligatoria ni oferta garantizada. Las opciones no se acumulan: completá 360 créditos y los nueve mínimos con tutoría y aprobación de la Comisión de Carrera compartida. El currículo personal no crea menciones ni títulos diferentes. Las cargas y códigos ambiguos se conservan como identidades de fuente, sin equivalencias automáticas.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "MA428",
+                  "MA424",
+                  "FI183",
+                  "ME18"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "MA473",
+                  "MA472",
+                  "FI267",
+                  "ME32"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "MA07",
+                  "FI58",
+                  "ME29",
+                  "FI19"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "MA486",
+                  "atmosfera-termodinamica",
+                  "atmosfera-fisica-sistema-climatico",
+                  "ME15"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "FI05",
+                  "ME14",
+                  "ME13",
+                  "atmosfera-optativa-s5"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "ME011",
+                  "atmosfera-ciencia-sociedad-s6",
+                  "FI57",
+                  "atmosfera-bioestadistica"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "FI35",
+                  "BG1",
+                  "atmosfera-optativa-s7-a",
+                  "atmosfera-optativa-s7-b"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "ME20",
+                  "ME07",
+                  "atmosfera-optativa-s8-a",
+                  "atmosfera-optativa-s8-b"
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true
           }
         ],
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
-          "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24554/1/PLATM_2020.pdf",
+          "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
           "pathwayLabel": "Trayectoria",
-          "pathwayDescription": "Catálogo flexible por áreas temáticas. El orden no prescribe una secuencia y una misma unidad no se contabiliza dos veces; la Comisión de Carrera debe aprobar la coherencia del currículo individual.",
+          "pathwayDescription": "Ejemplo oficial de ocho semestres publicado por el Departamento de Ciencias de la Atmósfera y Física de los Océanos, referido a cursos de Facultad de Ciencias. Es una guía flexible, no una secuencia obligatoria ni oferta garantizada. Las opciones no se acumulan: completá 360 créditos y los nueve mínimos con tutoría y aprobación de la Comisión de Carrera compartida. El currículo personal no crea menciones ni títulos diferentes. Las cargas y códigos ambiguos se conservan como identidades de fuente, sin equivalencias automáticas.",
           "periodOrder": [
             "Matemática",
             "Física básica, intermedia y avanzada",
@@ -53243,7 +53319,565 @@
               "minCredits": 6
             }
           ],
-          "manualCompletionValidation": "Aprobación del currículo individual por la Comisión de Carrera compartida entre Ciencias e Ingeniería"
+          "manualCompletionValidation": "Aprobación del currículo individual por la Comisión de Carrera compartida entre Ciencias e Ingeniería",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "MA428",
+            "MA424",
+            "FI183",
+            "ME18",
+            "MA473",
+            "MA472",
+            "FI267",
+            "ME32",
+            "MA07",
+            "FI58",
+            "ME29",
+            "FI19",
+            "MA486",
+            "ME15",
+            "FI05",
+            "ME14",
+            "ME13",
+            "ME011",
+            "FI57",
+            "FI35",
+            "BG1",
+            "ME20",
+            "ME07",
+            "BL15",
+            "ME28",
+            "ME10",
+            "ME23",
+            "FI08",
+            "FI10",
+            "FI036",
+            "BL02"
+          ],
+          "sourceDataPath": "data/fcien/ciencias-atmosfera-2007-trajectory-review.json",
+          "includeAllCoursesInPathwayCatalog": true,
+          "courseOverrides": {
+            "MA428": {
+              "name": "Cálculo Diferencial e Integral 1",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Semestre 1",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA424": {
+              "name": "Álgebra Lineal y Geometría I",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Semestre 1",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI183": {
+              "name": "Física General I",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Semestre 1",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME18": {
+              "name": "Taller de Introducción a las Ciencias de la Atmósfera",
+              "preserveName": true,
+              "requirementId": "integrative-lab-special",
+              "periodLabel": "Semestre 1",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA473": {
+              "name": "Cálculo Diferencial e Integral 2",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA472": {
+              "name": "Álgebra Lineal y Geometría 2",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI267": {
+              "name": "Física General 2",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME32": {
+              "name": "Climatología",
+              "preserveName": true,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA07": {
+              "name": "Cálculo Vectorial y Análisis Complejo",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI58": {
+              "name": "Mecánica Clásica",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME29": {
+              "name": "Elementos de Meteorología",
+              "preserveName": true,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI19": {
+              "name": "Introducción a la Computación",
+              "preserveName": true,
+              "requirementId": "numerical-methods",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA486": {
+              "name": "Ecuaciones Diferenciales",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Semestre 4",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME15": {
+              "name": "Principios Básicos de Mediciones Atmosféricas",
+              "preserveName": true,
+              "requirementId": "integrative-lab-special",
+              "periodLabel": "Semestre 4",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI05": {
+              "name": "Ondas",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Semestre 5",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME14": {
+              "name": "Introducción a la Dinámica de la Atmósfera",
+              "preserveName": true,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Semestre 5",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME13": {
+              "name": "Física de la Atmósfera",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Semestre 5",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME011": {
+              "name": "Meteorología Dinámica y Sinóptica",
+              "preserveName": true,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Semestre 6",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI57": {
+              "name": "Física Computacional",
+              "preserveName": true,
+              "requirementId": "numerical-methods",
+              "periodLabel": "Semestre 6",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI35": {
+              "name": "Análisis Estadístico de Datos Climáticos",
+              "preserveName": true,
+              "requirementId": "data-treatment",
+              "periodLabel": "Semestre 7",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BG1": {
+              "name": "Química General",
+              "preserveName": true,
+              "requirementId": "chemistry",
+              "periodLabel": "Semestre 7",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME20": {
+              "name": "Trabajo especial",
+              "preserveName": true,
+              "requirementId": "integrative-lab-special",
+              "periodLabel": "Semestre 8",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "ME07": {
+              "name": "Modelización Numérica de la Atmósfera",
+              "preserveName": true,
+              "requirementId": "numerical-methods",
+              "periodLabel": "Semestre 8",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BL15": {
+              "name": "Oceanografía Dinámica",
+              "preserveName": true,
+              "requirementId": "water-geosciences",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            },
+            "ME28": {
+              "name": "Clima de Sudamérica",
+              "preserveName": true,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            },
+            "ME10": {
+              "name": "Circulación General de la Atmósfera",
+              "preserveName": true,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            },
+            "ME23": {
+              "name": "Capa Límite Atmosférica",
+              "preserveName": true,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            },
+            "FI08": {
+              "name": "Física Moderna",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            },
+            "FI10": {
+              "name": "Electromagnetismo",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            },
+            "FI036": {
+              "name": "Óptica (FING)",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            },
+            "BL02": {
+              "name": "Universidad, Ciencia y Tecnología",
+              "preserveName": true,
+              "requirementId": "science-society",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-flexible-option"
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "atmosfera-termodinamica",
+              "sourceCourseId": "atmosfera-termodinamica",
+              "name": "Termodinámica",
+              "credits": 10,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "physics",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-semester-source-only-course",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-fisica-sistema-climatico",
+              "sourceCourseId": "atmosfera-fisica-sistema-climatico",
+              "name": "Física del Sistema Climático",
+              "credits": 12,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-semester-source-only-course",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-bioestadistica",
+              "sourceCourseId": "atmosfera-bioestadistica",
+              "name": "Bioestadística",
+              "credits": 10,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "data-treatment",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-semester-source-only-course",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-sig",
+              "sourceCourseId": "atmosfera-sig",
+              "name": "SIG",
+              "credits": 8,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "water-geosciences",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "elective": true,
+              "catalogRole": "official-flexible-source-only-option",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-percepcion-remota",
+              "sourceCourseId": "atmosfera-percepcion-remota",
+              "name": "Percepción Remota (FING)",
+              "credits": 11,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "water-geosciences",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "elective": true,
+              "catalogRole": "official-flexible-source-only-option",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-ingenieria-ambiental",
+              "sourceCourseId": "atmosfera-ingenieria-ambiental",
+              "name": "Elementos de Ingeniería Ambiental (FING)",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": false,
+              "requirementId": "water-geosciences",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "elective": true,
+              "catalogRole": "official-flexible-source-only-option",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-inestabilidad-fluidos",
+              "sourceCourseId": "atmosfera-inestabilidad-fluidos",
+              "name": "Inestabilidad en Fluidos (FING)",
+              "credits": 8,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "fluids-atmospheric-dynamics",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "elective": true,
+              "catalogRole": "official-flexible-source-only-option",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-economia",
+              "sourceCourseId": "atmosfera-economia",
+              "name": "Economía (FING)",
+              "credits": 7,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "science-society",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "elective": true,
+              "catalogRole": "official-flexible-source-only-option",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-ciencia-tecnologia-sociedad",
+              "sourceCourseId": "atmosfera-ciencia-tecnologia-sociedad",
+              "name": "Ciencia, Tecnología y Sociedad",
+              "credits": 8,
+              "creditsPublished": true,
+              "curricularBlock": false,
+              "requirementId": "science-society",
+              "periodLabel": "Optativas/Electivas sin semestre fijo",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "elective": true,
+              "catalogRole": "official-flexible-source-only-option",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-optativa-s5",
+              "sourceCourseId": "atmosfera-optativa-s5",
+              "name": "Optativa/Electiva",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": true,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-flexible-slot",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-ciencia-sociedad-s6",
+              "sourceCourseId": "atmosfera-ciencia-sociedad-s6",
+              "name": "Área ciencia y sociedad",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": true,
+              "requirementId": "science-society",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-flexible-slot",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-optativa-s7-a",
+              "sourceCourseId": "atmosfera-optativa-s7-a",
+              "name": "Optativa/Electiva",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": true,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-flexible-slot",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-optativa-s7-b",
+              "sourceCourseId": "atmosfera-optativa-s7-b",
+              "name": "Optativa/Electiva",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": true,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-flexible-slot",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-optativa-s8-a",
+              "sourceCourseId": "atmosfera-optativa-s8-a",
+              "name": "Optativa/Electiva",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": true,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-flexible-slot",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            },
+            {
+              "id": "atmosfera-optativa-s8-b",
+              "sourceCourseId": "atmosfera-optativa-s8-b",
+              "name": "Optativa/Electiva",
+              "credits": 0,
+              "creditsPublished": false,
+              "curricularBlock": true,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 8",
+              "sourceUrl": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+              "catalogRole": "official-flexible-slot",
+              "availabilityStatus": "official-example-not-guaranteed-offering"
+            }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "trajectory-source",
+              "resolution": "El sitio departamental enlazado por FCIEN funciona por HTTP y publica cursos 2026. Su tabla actual contiene 32 filas en ocho semestres y 14 opciones por áreas. La flexibilidad y aprobación personal no prueban ausencia de trayectoria: se reproduce el ejemplo sin convertirlo en obligación u oferta actual."
+            },
+            {
+              "field": "trajectory-versions",
+              "resolution": "El Anexo II original tiene tres ejemplos con cargas históricas y totales impresos 360/363/363. El folleto de FING prescribe sólo el primer semestre 2020. No se mezclan con la tabla departamental actualmente enlazada, concordante en sus primeros dos semestres con el PDF de ingreso y con versiones técnicas 2022/2023."
+            },
+            {
+              "field": "trajectory-loads",
+              "resolution": "La tabla nominal distribuye 300 créditos en 26 materias y deja seis bloques sin carga (cinco Optativa/Electiva y Área ciencia y sociedad). No se inventan 60 créditos ni se prorratean los 81 flexibles normativos: los 279 mínimos de área no son el subtotal de las materias del ejemplo."
+            },
+            {
+              "field": "trajectory-technical-ambiguities",
+              "resolution": "Termodinámica publica 10 frente a FI04=11; Física del Sistema Climático tiene FI048 cerrado en 2025; Bioestadística de 10 tiene MA402 cerrado en 2022 y las otras versiones no coinciden. Se crean tres identidades sólo-fuente conservando los asientos técnicos, cargas e historial anteriores sin acreditar equivalencias."
+            },
+            {
+              "field": "flexible-options-ambiguities",
+              "resolution": "SIG de 8 no se equipara al vigente GF203 de 12 ni reactiva GF02; Percepción Remota, Elementos de Ingeniería Ambiental, Inestabilidad en Fluidos FING, Economía FING y Ciencia, Tecnología y Sociedad conservan identidad sólo-fuente. Elementos de Ingeniería Ambiental mantiene carga no publicada. Las 14 opciones no son obligaciones acumulativas ni oferta periódica garantizada."
+            }
+          ]
         }
       },
       "offerings": [
@@ -53284,15 +53918,17 @@
         "canonicalModel": "one-shared-degree-one-flexible-curriculum",
         "regionalCurriculumVariant": false,
         "siteSpecificTrajectoryAvailability": false,
-        "reason": "El Plan establece un único título otorgado conjuntamente por Ciencias e Ingeniería, con ingreso por ambos servicios y currículo personal aprobado. Las áreas organizan mínimos de una misma carrera y no son orientaciones certificadas.",
+        "reason": "La página departamental enlazada por FCIEN publica una trayectoria ejemplo de ocho semestres, mínimos y catálogo flexible. La página de Enseñanza mantiene cursos 2026 y el PDF de ingreso corrobora los primeros dos semestres. No corresponde declarar ausencia ni reconstruir una grilla desde EVA o Bedelías.",
         "normalization": [
           "Publicar una sola Licenciatura en Ciencias de la Atmósfera Plan 2007, de ocho semestres y 360 créditos en Montevideo.",
           "Representar Facultad de Ciencias y Facultad de Ingeniería como servicios compartidos de ingreso al mismo plan, sin duplicar la carrera ni el progreso.",
           "Controlar los nueve mínimos oficiales, que suman 279 créditos, y permitir distribuir los 81 restantes entre actividades acreditables hasta completar 360.",
-          "Mantener las 238 apariciones de composición como catálogo flexible por área, deduplicando coincidencias exactas y sin sumar simultáneamente alternativas o equivalencias.",
           "Presentar una única trayectoria de currículo personalizado y exigir la validación final de la Comisión de Carrera.",
-          "Conservar Montevideo como única sede completa; el CIO Científico-Tecnológico regional es una vía inicial y no una oferta completa de este plan."
-        ]
+          "Conservar Montevideo como única sede completa; el CIO Científico-Tecnológico regional es una vía inicial y no una oferta completa de este plan.",
+          "Reproducir 32 filas de la trayectoria ejemplo departamental en ocho semestres y 14 opciones sin semestre; sólo 31 códigos cotejados, nueve materias sólo-fuente y seis bloques sin carga inventada. Mantener el resto como candidatas recuperables."
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fcien/ciencias-atmosfera-2007-trajectory-review.json"
       },
       "sources": [
         {
@@ -53320,25 +53956,25 @@
         },
         {
           "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-de-la-atmosfera",
-          "authority": "Facultad de Ciencias, oferta vigente",
+          "authority": "Facultad de Ciencias, Universidad de la República",
           "supports": [
-            "vigencia",
-            "cuatro años",
-            "360 créditos",
-            "carrera compartida",
-            "áreas temáticas",
-            "Montevideo"
-          ]
+            "Cuatro años, 360 créditos, Montevideo, carrera compartida y enlace al sitio departamental"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Actualizado 27/12/2024; ficha vigente",
+          "contentHash": "sha256:66601958055b85a6111661f0e83c67e832bf503ffeb5fb025774348183f0d062",
+          "rawContentHash": "sha256:2d9b911cd1b450de074fa3047b53229caa62520d6c5e51190b7265b3b6257b3f"
         },
         {
           "url": "https://www.fing.edu.uy/es/carrera/grado/lic-en-ciencias-de-la-atm%C3%B3sfera",
-          "authority": "Facultad de Ingeniería, oferta de grado",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
           "supports": [
-            "título compartido",
-            "cuatro años",
-            "360 créditos",
-            "Montevideo"
-          ]
+            "Cuatro años, 360 créditos, título conjunto; folleto enlazado sólo recomienda primer semestre 2020"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Ficha vigente sin fecha editorial; aprobación 2006",
+          "contentHash": "sha256:9ef8fe32d65fdc4487b95726d8658906fc760b06f3f33d7b110330d649ae4747",
+          "rawContentHash": "sha256:c6653bc72962c66a79e4f2a278cd76b47e96197f0504df4d957376de4fcb0224"
         },
         {
           "url": "https://www.fing.edu.uy/es/paginas/lic-en-cs-de-la-atm%C3%B3sfera",
@@ -53361,13 +53997,13 @@
         },
         {
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-ciencias-de-la-atmosfera",
-          "authority": "Catálogo vigente de carreras, Udelar",
+          "authority": "Catálogo de carreras, Universidad de la República",
           "supports": [
-            "vigencia",
-            "carrera compartida",
-            "ingreso por Ciencias o Ingeniería",
-            "360 créditos"
-          ]
+            "Ingreso por ambas facultades y 360 créditos; 60 meses administrativos en conflicto con cuatro años académicos"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Ficha vigente",
+          "contentHash": "sha256:599539f1274523abd372105d3e0a1e05a9367ff7a69510efca26440bec49c7d2"
         },
         {
           "url": "https://udelar.edu.uy/carrera/cio-cientifico-tecnologico",
@@ -53375,6 +54011,71 @@
           "supports": [
             "CIO regional como vía inicial de continuidad"
           ]
+        },
+        {
+          "url": "http://www.meteorologia.edu.uy/plan-de-estudios/",
+          "authority": "Departamento de Ciencias de la Atmósfera y Física de los Océanos, Instituto de Física, Facultad de Ciencias, Udelar",
+          "supports": [
+            "Trayectoria ejemplo: 32 filas en ocho semestres, 14 opciones por áreas y nueve mínimos; aprobación individual y tutor"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Plan 2007; página sin fecha editorial, enlazada por Enseñanza con cursos 2026",
+          "contentHash": "sha256:ee1ee6bf4fcc76747de298f82ef895900b2a5840c378a66bd84204452d1b4ccf",
+          "rawContentHash": "sha256:53ed408db1d02b3fa2c5638528f130836d8f54e40e9a6b487d303396dac98796"
+        },
+        {
+          "url": "http://www.meteorologia.edu.uy/ensenanza/",
+          "authority": "Departamento de Ciencias de la Atmósfera y Física de los Océanos, Facultad de Ciencias, Udelar",
+          "supports": [
+            "Cadena institucional desde FCIEN; enlaces a plan, ingreso y FAQ; oferta periódica separada de la secuencia curricular"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Cursos específicos a dictarse en 2026",
+          "contentHash": "sha256:4e2b992313d4b6f3a999a268d976e9dbb89e364fea85be7fd6a30b84dcdbf2a9",
+          "rawContentHash": "sha256:b854b7bb517c9aa10e4125666d845c9f8d4c6ffd021c32aa71ceecc0120da7c9"
+        },
+        {
+          "url": "http://www.meteorologia.edu.uy/preguntas-frecuentes/",
+          "authority": "Departamento de Ciencias de la Atmósfera y Física de los Océanos, Facultad de Ciencias, Udelar",
+          "supports": [
+            "Tutor, ingreso por ambas facultades, materias sugeridas sustituibles y ausencia de orientaciones formales"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Página sin fecha; enlazada por Enseñanza vigente",
+          "contentHash": "sha256:eab740eecf40e5dea565f94aff62a8a15deed71405be134482b4167af69f4785",
+          "rawContentHash": "sha256:f29e13ec6dd71d0f6a920100febb46c73e83a1a266f4fb66788a0b4637c680df"
+        },
+        {
+          "url": "http://www.meteorologia.edu.uy/wp-content/uploads/2021/Info_nuevos_estudiantes.pdf",
+          "authority": "Departamento de Ciencias de la Atmósfera y Física de los Océanos, Facultad de Ciencias, Udelar",
+          "supports": [
+            "Contraste de las ocho filas iniciales; recomienda TICA y formación de Física/Matemática sin imponer todas las alternativas"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Archivo alojado en 2021; actualmente enlazado para generación de ingreso",
+          "contentHash": "sha256:87de613d6e3c276259d4c17a6e3f1c743492194f13580febe469814c2c24c9b2",
+          "rawContentHash": "sha256:031d2d1f545eed4b65bd14a03edf3254879e368abc022f52193fdce7b8487482"
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/Licenciatura%20en%20Ciencias%20de%20la%20Atm%C3%B3sfera.pdf",
+          "authority": "Facultades de Ciencias e Ingeniería, Universidad de la República",
+          "supports": [
+            "360 créditos y nueve mínimos; Anexo II con tres ejemplos históricos, no sustituyen la grilla departamental actual"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Plan aprobado en 2006 e implementado como Plan 2007; copia enlazada por FING",
+          "contentHash": "sha256:e527ec79ab6761d2aae844a51c3266e8abcf1fd15766f2cb5814bdcea9581d17",
+          "rawContentHash": "sha256:754fe6c79d8470157e7651472aeaa5487af99740e526a63afaa4397653740435"
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24554?mode=full",
+          "authority": "Repositorio Colibrí, Universidad de la República",
+          "supports": [
+            "Identidad institucional 2007, carrera 20, plan 335; el bitstream devuelve 403 al descargar, se contrasta con la copia FING"
+          ],
+          "reviewedAt": "2026-10-19",
+          "publishedValidity": "Plan 2007; depósito 2020",
+          "contentHash": "sha256:d098029a059c2f2bd06569f41d925d4a485201d12ebad155b63963ee0eee7810"
         }
       ],
       "anomalies": [
@@ -53401,10 +54102,30 @@
         {
           "field": "catalogSize",
           "resolution": "Los 1.792 créditos de 173 códigos y las 238 apariciones jerárquicas representan oferta acumulada, equivalencias y alternativas. El egreso requiere 360 créditos, los mínimos por área y la aprobación del currículo."
+        },
+        {
+          "field": "trajectory-source",
+          "resolution": "El sitio departamental enlazado por FCIEN funciona por HTTP y publica cursos 2026. Su tabla actual contiene 32 filas en ocho semestres y 14 opciones por áreas. La flexibilidad y aprobación personal no prueban ausencia de trayectoria: se reproduce el ejemplo sin convertirlo en obligación u oferta actual."
+        },
+        {
+          "field": "trajectory-versions",
+          "resolution": "El Anexo II original tiene tres ejemplos con cargas históricas y totales impresos 360/363/363. El folleto de FING prescribe sólo el primer semestre 2020. No se mezclan con la tabla departamental actualmente enlazada, concordante en sus primeros dos semestres con el PDF de ingreso y con versiones técnicas 2022/2023."
+        },
+        {
+          "field": "trajectory-loads",
+          "resolution": "La tabla nominal distribuye 300 créditos en 26 materias y deja seis bloques sin carga (cinco Optativa/Electiva y Área ciencia y sociedad). No se inventan 60 créditos ni se prorratean los 81 flexibles normativos: los 279 mínimos de área no son el subtotal de las materias del ejemplo."
+        },
+        {
+          "field": "trajectory-technical-ambiguities",
+          "resolution": "Termodinámica publica 10 frente a FI04=11; Física del Sistema Climático tiene FI048 cerrado en 2025; Bioestadística de 10 tiene MA402 cerrado en 2022 y las otras versiones no coinciden. Se crean tres identidades sólo-fuente conservando los asientos técnicos, cargas e historial anteriores sin acreditar equivalencias."
+        },
+        {
+          "field": "flexible-options-ambiguities",
+          "resolution": "SIG de 8 no se equipara al vigente GF203 de 12 ni reactiva GF02; Percepción Remota, Elementos de Ingeniería Ambiental, Inestabilidad en Fluidos FING, Economía FING y Ciencia, Tecnología y Sociedad conservan identidad sólo-fuente. Elementos de Ingeniería Ambiental mantiene carga no publicada. Las 14 opciones no son obligaciones acumulativas ni oferta periódica garantizada."
         }
       ],
-      "uiNotice": "Plan 2007 compartido entre Ciencias e Ingeniería, de ocho semestres y 360 créditos en Montevideo. Cumplí los nueve mínimos por área y distribuí con flexibilidad los 81 créditos restantes; la Comisión de Carrera debe aprobar tu currículo.",
-      "remainingWork": "La Comisión de Carrera determina la coherencia del currículo individual, la asignación de actividades acreditables y las equivalencias; la UI conserva esa aprobación como requisito manual explícito."
+      "uiNotice": "Ejemplo oficial de ocho semestres referido a cursos de Ciencias, compartido con Ingeniería. Es una guía flexible, no una secuencia obligatoria ni oferta garantizada. Completá 360 créditos, los nueve mínimos por 279 y los 81 restantes con tutoría y aprobación de la Comisión. Las identidades sólo-fuente no acreditan automáticamente versiones técnicas con otra carga o vigencia.",
+      "remainingWork": "Revisar al cambiar la tabla departamental, publicarse una nueva sugerencia FCIEN/FING o aclararse códigos/cargas de las nueve opciones sólo-fuente. La Comisión conserva la aprobación de cada currículo y la oferta debe consultarse por período."
     },
     {
       "identity": "licenciatura en fisica:2019",
@@ -86756,6 +87477,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:20c3051879b328e46cd254b4008b4966b1579e68c1e24dc804d28d3f39d95569",
+  "contentHash": "sha256:083eb1dd562485f8f948128e9d5024f82e512f7510e8a650b92557493547204b",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
