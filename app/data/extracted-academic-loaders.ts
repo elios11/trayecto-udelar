@@ -309,7 +309,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-fcien-licenciatura-en-fisica-medica-2025": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-fisica-medica-2025.json"),
     pathwayIds: ["plan-individual"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Trayectoria sugerida 2025",
     minCredits: 360,
   },
   "bedelias-fcien-licenciatura-en-geografia-2018": {

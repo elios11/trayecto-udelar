@@ -54463,9 +54463,9 @@
       "identity": "licenciatura en fisica medica:2025",
       "career": "LICENCIATURA EN FÍSICA MÉDICA",
       "planYear": "2025",
-      "reviewedAt": "2026-08-28",
+      "reviewedAt": "2026-10-20",
       "status": "official-evidence-complete",
-      "scope": "vigencia, plan nuevo, título compartido, sede, duración, créditos, mínimos por área, práctica social y productiva, flexibilidad y aprobación curricular",
+      "scope": "Plan 2025, título compartido, sede, créditos y mínimos, más ocho semestres de la trayectoria sugerida 2025 con frontera de catálogo cotejada",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -54482,32 +54482,111 @@
         "semesters": 8,
         "minimumCredits": 360,
         "current": true,
-        "pathwayLabel": "Trayectoria",
+        "pathwayLabel": "Trayectoria sugerida 2025",
         "degreeRule": "El título compartido exige al menos 360 créditos, los mínimos de siete áreas que suman 324, al menos 10 créditos de prácticas de formación en ámbitos social y productivo o cursos afines admitidos por la Ordenanza de Grado, y la aprobación del plan individual por la Comisión de Carrera una vez alcanzados 180 créditos.",
         "trajectories": [
           {
             "id": "plan-individual",
-            "label": "Plan individual",
-            "description": "Recorrido flexible construido con optativas y electivas de acuerdo con los intereses del estudiante. Los módulos de radioterapia, medicina nuclear, imagenología, radiología y radioprotección son opciones dentro del mismo título y no menciones certificadas separadas."
+            "label": "Trayectoria sugerida 2025",
+            "description": "Guía flexible de ocho semestres publicada por la Licenciatura. No es una obligación de cursar todas las alternativas ni una promesa de oferta semestral; los módulos hospitalarios son opciones y no menciones certificadas separadas. El plan individual requiere aprobación de la Comisión.",
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Primer semestre",
+                "courseIds": [
+                  "MA428",
+                  "MA424",
+                  "FI183",
+                  "FI282"
+                ]
+              },
+              {
+                "label": "Segundo semestre",
+                "courseIds": [
+                  "MA473",
+                  "MA472",
+                  "FI267",
+                  "FI284"
+                ]
+              },
+              {
+                "label": "Tercer semestre",
+                "courseIds": [
+                  "FI58",
+                  "MA07",
+                  "FI08",
+                  "TECMED-2"
+                ]
+              },
+              {
+                "label": "Cuarto semestre",
+                "courseIds": [
+                  "MA486",
+                  "FI10",
+                  "BI21",
+                  "TECMED-4",
+                  "TECMED-3",
+                  "TECMED-5",
+                  "TECMED-6"
+                ]
+              },
+              {
+                "label": "Quinto semestre",
+                "courseIds": [
+                  "FI05",
+                  "FI195",
+                  "FI172",
+                  "FI12"
+                ]
+              },
+              {
+                "label": "Sexto semestre",
+                "courseIds": [
+                  "FI47",
+                  "BI25",
+                  "MA069",
+                  "FI57",
+                  "MA291"
+                ]
+              },
+              {
+                "label": "Séptimo semestre",
+                "courseIds": [
+                  "BI20",
+                  "FM04",
+                  "FM05",
+                  "fisica-medica-opcional-s7"
+                ]
+              },
+              {
+                "label": "Octavo semestre",
+                "courseIds": [
+                  "fisica-medica-practica-social",
+                  "FM08",
+                  "FM06",
+                  "fisica-medica-opcional-s8"
+                ]
+              }
+            ]
           }
         ],
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
-          "sourceUrl": "https://www.fcien.edu.uy/images/2024/noticias_noviembre/Publicaci%C3%B3n_DO_Plan_Estudio_F%C3%ADsica_M%C3%A9dica.pdf",
-          "pathwayLabel": "Trayectoria",
-          "pathwayDescription": "Catálogo flexible por áreas del Plan 2025. El orden no prescribe semestres: cada estudiante completa los mínimos, distribuye los créditos restantes y presenta su plan individual a la Comisión de Carrera.",
+          "sourceUrl": "https://medicanew.fisica.edu.uy/wp-content/uploads/2025/03/Trayectoria-sugerida-2025_sinRB.pdf",
+          "pathwayLabel": "Trayectoria sugerida 2025",
+          "pathwayDescription": "Guía flexible de ocho semestres publicada por la Licenciatura. No es una obligación de cursar todas las alternativas ni una promesa de oferta semestral; los módulos hospitalarios son opciones y no menciones certificadas separadas. El plan individual requiere aprobación de la Comisión.",
           "periodOrder": [
-            "Biología-Medicina",
-            "Física",
-            "Física de radiaciones",
-            "Física experimental",
-            "Formación complementaria",
-            "Matemática",
-            "Módulos electivos en Física Médica",
-            "Prácticas de formación en el ámbito social y productivo",
-            "Validación de egreso"
+            "Primer semestre",
+            "Segundo semestre",
+            "Tercer semestre",
+            "Cuarto semestre",
+            "Quinto semestre",
+            "Sexto semestre",
+            "Séptimo semestre",
+            "Octavo semestre"
           ],
           "periodLabelMap": {
             "000001": "Biología-Medicina",
@@ -54579,7 +54658,413 @@
               "minCredits": 10
             }
           ],
-          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del plan individual una vez alcanzados 180 créditos"
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del plan individual una vez alcanzados 180 créditos",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "MA428",
+            "MA424",
+            "FI183",
+            "FI282",
+            "MA473",
+            "MA472",
+            "FI267",
+            "FI284",
+            "FI58",
+            "MA07",
+            "FI08",
+            "TECMED-2",
+            "MA486",
+            "FI10",
+            "BI21",
+            "TECMED-4",
+            "TECMED-3",
+            "TECMED-5",
+            "TECMED-6",
+            "FI05",
+            "FI195",
+            "FI172",
+            "FI12",
+            "FI47",
+            "BI25",
+            "MA069",
+            "FI57",
+            "MA291",
+            "BI20",
+            "FM04",
+            "FM05",
+            "FM08",
+            "FM06",
+            "FI44",
+            "FI273"
+          ],
+          "sourceDataPath": "data/fcien/fisica-medica-2025-trajectory-review.json",
+          "includeAllCoursesInPathwayCatalog": true,
+          "courseOverrides": {
+            "MA428": {
+              "name": "Cálculo Diferencial e Integral I",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA424": {
+              "name": "Álgebra Lineal y Geometría I",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI183": {
+              "name": "Física General I",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI282": {
+              "name": "Taller I",
+              "preserveName": true,
+              "requirementId": "experimental-physics",
+              "periodLabel": "Primer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA473": {
+              "name": "Cálculo Diferencial e Integral II",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Segundo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA472": {
+              "name": "Álgebra Lineal y Geometría II",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Segundo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI267": {
+              "name": "Física General II",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Segundo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI284": {
+              "name": "Taller II",
+              "preserveName": true,
+              "requirementId": "experimental-physics",
+              "periodLabel": "Segundo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI58": {
+              "name": "Mecánica clásica",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Tercer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA07": {
+              "name": "Cálculo vectorial y análisis complejo",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Tercer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI08": {
+              "name": "Física Moderna",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Tercer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "TECMED-2": {
+              "name": "Biología Celular y Tisular",
+              "preserveName": true,
+              "requirementId": "biology-medicine",
+              "periodLabel": "Tercer semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA486": {
+              "name": "Ecuaciones diferenciales",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Cuarto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI10": {
+              "name": "Electromagnetismo",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Cuarto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BI21": {
+              "name": "Anatomía imagenológica",
+              "preserveName": true,
+              "requirementId": "biology-medicine",
+              "periodLabel": "Cuarto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "TECMED-4": {
+              "name": "Cardiovascular y Respiratorio",
+              "preserveName": true,
+              "requirementId": "biology-medicine",
+              "periodLabel": "Cuarto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "TECMED-3": {
+              "name": "Neurobiología",
+              "preserveName": true,
+              "requirementId": "biology-medicine",
+              "periodLabel": "Cuarto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "TECMED-5": {
+              "name": "Digestivo, Renal y Endócrino",
+              "preserveName": true,
+              "requirementId": "biology-medicine",
+              "periodLabel": "Cuarto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "TECMED-6": {
+              "name": "Reproductor y desarrollo",
+              "preserveName": true,
+              "requirementId": "biology-medicine",
+              "periodLabel": "Cuarto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI05": {
+              "name": "Ondas",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Quinto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI195": {
+              "name": "Física de radiaciones I",
+              "preserveName": true,
+              "requirementId": "radiation-physics",
+              "periodLabel": "Quinto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI172": {
+              "name": "Laboratorio de partículas, física nuclear y radiaciones",
+              "preserveName": true,
+              "requirementId": "radiation-physics",
+              "periodLabel": "Quinto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI12": {
+              "name": "Teoría Electromagnética",
+              "preserveName": true,
+              "requirementId": "physics",
+              "periodLabel": "Quinto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI47": {
+              "name": "Física de radiaciones II",
+              "preserveName": true,
+              "requirementId": "radiation-physics",
+              "periodLabel": "Sexto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BI25": {
+              "name": "Neoplasias",
+              "preserveName": true,
+              "requirementId": "biology-medicine",
+              "periodLabel": "Sexto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA069": {
+              "name": "Computación",
+              "preserveName": true,
+              "requirementId": "complementary-training",
+              "periodLabel": "Sexto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-semester-alternative"
+            },
+            "FI57": {
+              "name": "Física Computacional",
+              "preserveName": true,
+              "requirementId": "complementary-training",
+              "periodLabel": "Sexto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-semester-alternative"
+            },
+            "MA291": {
+              "name": "Probabilidad y Estadística",
+              "preserveName": true,
+              "requirementId": "mathematics",
+              "periodLabel": "Sexto semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BI20": {
+              "name": "Bioética para Física Médica",
+              "preserveName": true,
+              "requirementId": "complementary-training",
+              "periodLabel": "Séptimo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FM04": {
+              "name": "Módulo FM: Radioprotección",
+              "preserveName": true,
+              "requirementId": "medical-physics-electives",
+              "periodLabel": "Séptimo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FM05": {
+              "name": "Módulo FM: Radioterapia",
+              "preserveName": true,
+              "requirementId": "medical-physics-electives",
+              "periodLabel": "Séptimo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FM08": {
+              "name": "Módulo FM: Medicina Nuclear",
+              "preserveName": true,
+              "requirementId": "medical-physics-electives",
+              "periodLabel": "Octavo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FM06": {
+              "name": "Módulo FM: Imagenología",
+              "preserveName": true,
+              "requirementId": "medical-physics-electives",
+              "periodLabel": "Octavo semestre",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI44": {
+              "name": "Taller III Electrónica e Instrumentación",
+              "preserveName": true,
+              "requirementId": "experimental-physics",
+              "periodLabel": "Opcionales sugeridas",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-catalog-alternative"
+            },
+            "FI273": {
+              "name": "Análisis y procesamiento de señales digitales",
+              "preserveName": true,
+              "requirementId": "experimental-physics",
+              "periodLabel": "Opcionales sugeridas",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "elective": true,
+              "catalogRole": "official-catalog-alternative"
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "fisica-medica-opcional-s7",
+              "sourceCourseId": "fisica-medica-opcional-s7",
+              "name": "Opcional",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "plan-total",
+              "periodLabel": "Séptimo semestre",
+              "curricularBlock": true,
+              "catalogRole": "official-flexible-slot-no-fixed-load",
+              "availabilityStatus": "official-flexible-slot-no-fixed-load",
+              "sourceUrl": "https://medicanew.fisica.edu.uy/wp-content/uploads/2025/03/Trayectoria-sugerida-2025_sinRB.pdf"
+            },
+            {
+              "id": "fisica-medica-practica-social",
+              "sourceCourseId": "fisica-medica-practica-social",
+              "name": "Formación en ámbitos social y productivo (extensión)",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "social-productive-practices",
+              "periodLabel": "Octavo semestre",
+              "curricularBlock": true,
+              "catalogRole": "official-flexible-slot-no-fixed-load",
+              "availabilityStatus": "official-flexible-slot-no-fixed-load",
+              "sourceUrl": "https://medicanew.fisica.edu.uy/wp-content/uploads/2025/03/Trayectoria-sugerida-2025_sinRB.pdf"
+            },
+            {
+              "id": "fisica-medica-opcional-s8",
+              "sourceCourseId": "fisica-medica-opcional-s8",
+              "name": "Opcional",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "plan-total",
+              "periodLabel": "Octavo semestre",
+              "curricularBlock": true,
+              "catalogRole": "official-flexible-slot-no-fixed-load",
+              "availabilityStatus": "official-flexible-slot-no-fixed-load",
+              "sourceUrl": "https://medicanew.fisica.edu.uy/wp-content/uploads/2025/03/Trayectoria-sugerida-2025_sinRB.pdf"
+            }
+          ]
         }
       },
       "offerings": [
@@ -54626,9 +55111,14 @@
           "Representar Facultad de Ciencias y Facultad de Medicina como responsables del mismo título, con inscripción por Ciencias, sin duplicar carrera ni progreso.",
           "Controlar los siete mínimos oficiales que suman 324 créditos y el requisito transversal de 10 créditos de prácticas sociales y productivas.",
           "Permitir distribuir los 26 créditos restantes entre actividades acreditables hasta completar 360 y exigir aprobación del plan individual por la Comisión de Carrera.",
-          "Conservar las 48 apariciones de composición de Bedelías como catálogo por área y deduplicar coincidencias exactas.",
-          "Presentar una única trayectoria de plan individual y no convertir los módulos electivos hospitalarios en menciones separadas."
-        ]
+          "Reproducir los ocho semestres de la trayectoria sugerida 2025 como guía flexible; la alternativa Computación/Física Computacional no exige ambas unidades.",
+          "Publicar sólo las 35 identidades técnicas cotejadas y tres bloques oficiales sin carga; las otras nueve identidades del snapshot siguen candidatas recuperables.",
+          "Publicar sólo las 35 identidades técnicas cotejadas y tres bloques oficiales sin carga; las otras 13 identidades de la composición siguen candidatas recuperables."
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fcien/fisica-medica-2025-trajectory-review.json",
+        "trajectoryJustification": "El sitio oficial de la Licenciatura publica una trayectoria sugerida 2025 con ocho semestres. Se conserva como guía flexible y no se confunden sus alternativas con materias acumulativas ni con una oferta futura garantizada.",
+        "trajectoryReviewTrigger": "Revisar visualmente la copia PDF cuando el servidor vuelva a permitir descarga y cotejar cambios de la Comisión, especialmente notas al pie, equivalencias técnicas ESFUNO y oferta de módulos antes de ampliar el catálogo."
       },
       "sources": [
         {
@@ -54648,38 +55138,33 @@
         },
         {
           "url": "https://www.fcien.edu.uy/noticias/3158-la-licenciatura-en-fisica-medica-tiene-un-nuevo-plan-de-estudios",
-          "authority": "Facultad de Ciencias, texto y anuncio oficial del Plan 2025",
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar",
           "supports": [
-            "vigencia desde 2025",
-            "Resolución Nº 10 del CDC",
-            "estructura",
-            "flexibilidad",
-            "plan individual",
-            "módulos electivos"
-          ]
+            "360 créditos, siete mínimos disciplinares, 10 créditos transversales y currículo individual aprobado desde 180 créditos; no asigna cursos a semestres"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Plan aprobado el 17/09/2024, vigente desde 2025",
+          "contentHash": "sha256:4637bfcc98f67c8dbcfbb23628d4c4b93f451e33ac337029d2b44767d44d506a"
         },
         {
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica-medica",
-          "authority": "Catálogo vigente de carreras, Udelar",
+          "authority": "Catálogo de carreras, Udelar",
           "supports": [
-            "vigencia",
-            "carrera compartida",
-            "inscripción por Ciencias",
-            "48 meses",
-            "360 créditos",
-            "sede Facultad de Ciencias"
-          ]
+            "Ciencias y Medicina, inscripción por Ciencias, 48 meses y 360 créditos; enlace al sitio del Instituto"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "ficha vigente al consultar",
+          "contentHash": "sha256:0ccc49942bb3249f2347b130826a4323058efabd73a33eb814d5d641e9f19211"
         },
         {
           "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisica-medica",
-          "authority": "Facultad de Ciencias, oferta vigente",
+          "authority": "Facultad de Ciencias, Udelar",
           "supports": [
-            "vigencia",
-            "título compartido",
-            "cuatro años",
-            "360 créditos",
-            "Montevideo"
-          ]
+            "carrera compartida, sede Montevideo, 360 créditos, siete áreas y enlace al sitio del Instituto; no enumera semestres"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "ficha actualizada en febrero de 2025 y vigente al consultar",
+          "contentHash": "sha256:ba5ac29c797110b1f8e099a4baac1e805ba3d2d16a205802c3aed9bb4bca8cd7"
         },
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24561",
@@ -54689,6 +55174,46 @@
             "carrera compartida",
             "código de carrera 356"
           ]
+        },
+        {
+          "url": "https://medicanew.fisica.edu.uy/wp-content/uploads/2025/03/Trayectoria-sugerida-2025_sinRB.pdf",
+          "authority": "Licenciatura en Física Médica, Instituto de Física, Facultad de Ciencias, Udelar",
+          "supports": [
+            "ocho semestres y ubicación nominal de cursos, alternativas y espacios opcionales; no publica códigos ni créditos individuales"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Trayectoria sugerida rotulada 2025, alojada en marzo de 2025 en el sitio que enlazan FCIEN y Udelar para la Licenciatura vigente",
+          "contentHash": "sha256:7f1c90e6a8b664d0855fb365e6f3ab716a55721487a89e658691f11629d0c236"
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2024/10/11/avisos.pdf",
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+          "supports": [
+            "copia normativa alternativa del Plan 2025, estructura flexible sin grilla ordinal"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Diario Oficial 31.525 del 11/10/2024, Plan aprobado por CDC en septiembre de 2024",
+          "contentHash": "sha256:ac8164f82192d6c73a577573764a07eace2cad0defb4d2955b2bdb0bb200a5f3"
+        },
+        {
+          "url": "https://www.fcien.edu.uy/images/2025/Agosto/HORARIOS_DEL_SEMESTRE_PAR_2025.pdf",
+          "authority": "Facultad de Ciencias, Udelar",
+          "supports": [
+            "contraste de nombres ESFUNO Cardiovascular y Respiratorio, Digestivo Renal y Endócrino; no se usa para inferir una malla"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "horarios semestre par 2025, versión del 05/08/2025; no prueba oferta futura",
+          "contentHash": "sha256:f9df8fc33670737a0b26f3b32bf8bacd80d550a5eaf9d73bfaa0cadb84306b75"
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/items/d5f0af57-d06d-4319-b2cc-423c2e897f5f/full",
+          "authority": "Comisiones de Carrera de Física y Física Médica, Facultad de Ciencias, Udelar",
+          "supports": [
+            "contraste de código FI195 y vigencia de curso; la asociación curricular 2025 proviene sólo de la trayectoria sugerida"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "programa de Física de Radiaciones I emitido en 2025; metadatos todavía registran código de Plan 2011",
+          "contentHash": "sha256:93528b02d9d45b935379fb8100eb9d4ca0f4c06623e6267e7d61b9a80bf779a8"
         }
       ],
       "anomalies": [
@@ -54715,10 +55240,18 @@
         {
           "field": "catalogSize",
           "resolution": "Los 468 créditos de 44 registros y las 48 apariciones por grupo representan una oferta de opciones y cursos que pueden satisfacer más de un requisito. El egreso exige 360 créditos y la aprobación de un plan individual, no completar todo el catálogo."
+        },
+        {
+          "field": "trajectoryPdfAccess",
+          "resolution": "El PDF oficial está indexado con tabla y notas, pero el servidor rechazó la descarga directa durante la auditoría; inspección visual pendiente. Su grilla nominal de ocho semestres sí se conserva con huella de la transcripción normalizada."
+        },
+        {
+          "field": "catalogVersion",
+          "resolution": "Taller II FI41 está rotulado 1991-2024 y queda candidato; FI284 es la versión 2025. MA069/FI57 son alternativas, no dos obligaciones. Las otras 12 entradas no demostradas también quedan candidatas."
         }
       ],
-      "uiNotice": "Plan 2025 compartido entre Ciencias y Medicina, de ocho semestres y 360 créditos en Montevideo. Cumplí los siete mínimos de área, 10 créditos de práctica social/productiva y distribuí con flexibilidad los 26 restantes; la Comisión debe aprobar tu plan individual.",
-      "remainingWork": "La Comisión de Carrera determina la coherencia del plan individual y la acreditación de optativas, electivas y prácticas; la UI conserva esa aprobación como requisito manual explícito."
+      "uiNotice": "Trayectoria sugerida 2025 en ocho semestres, flexible y no obligatoria. Las alternativas y las optativas no se suman como obligaciones; el orden no garantiza oferta futura. Conservá los siete mínimos, los 10 créditos transversales y la aprobación de tu plan individual por la Comisión.",
+      "remainingWork": "Revisar visualmente la copia PDF cuando el servidor vuelva a permitir descarga y cotejar cambios de la Comisión, especialmente notas al pie, equivalencias técnicas ESFUNO y oferta de módulos antes de ampliar el catálogo."
     },
     {
       "identity": "licenciatura en geografia:2018",
@@ -87586,6 +88119,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:e10235a5875974460d1651761d2155fda0c146b54e478b5a814e2e1314de07ea",
+  "contentHash": "sha256:b3a35ff9892f70d9328856abadcfddf5474cfd1e793f7932e43f919bf822b312",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

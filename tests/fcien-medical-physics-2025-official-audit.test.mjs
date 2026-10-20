@@ -44,21 +44,20 @@ test("controla siete áreas, la práctica transversal y deja 26 créditos flexib
   assert.match(validation.label, /Comisión de Carrera.*180 créditos/i);
 });
 
-test("mantiene un plan individual y el catálogo operativo por requisitos", () => {
+test("mantiene el plan individual y reproduce la guía oficial por semestres", () => {
   const pathway = plan.pathways["plan-individual"];
   assert.deepEqual(pathway.periods.map(({ label }) => label), [
-    "Biología-Medicina",
-    "Física",
-    "Física de radiaciones",
-    "Física experimental",
-    "Formación complementaria",
-    "Matemática",
-    "Módulos electivos en Física Médica",
-    "Prácticas de formación en el ámbito social y productivo",
-    "Validación de egreso",
+    "Primer semestre",
+    "Segundo semestre",
+    "Tercer semestre",
+    "Cuarto semestre",
+    "Quinto semestre",
+    "Sexto semestre",
+    "Séptimo semestre",
+    "Octavo semestre",
   ]);
-  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [7, 8, 3, 7, 4, 8, 5, 6, 1]);
-  assert.equal(plan.courses.length, 49);
+  assert.deepEqual(pathway.periods.map(({ courseIds }) => courseIds.length), [4, 4, 4, 7, 4, 5, 4, 4]);
+  assert.equal(plan.courses.length, 52);
   assert.equal(plan.rules.length, 55);
   assert.match(pathway.description, /no menciones certificadas separadas/i);
 });

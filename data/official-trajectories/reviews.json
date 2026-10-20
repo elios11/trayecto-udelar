@@ -4068,6 +4068,87 @@
         "La flexibilidad, el 403 de Colibrí y el enlace EVA de la Comisión no son evidencia positiva de ausencia de trayectoria.",
         "Se conserva 2019 como identidad técnica única, con origen FCIEN 2017, aprobación CDC 2018 y Reglamento 2021 republicado 2026."
       ]
+    },
+    {
+      "planId": "bedelias-fcien-licenciatura-en-fisica-medica-2025",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "trayectoria sugerida 2025 para Plan 2025",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "plan-individual"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Licenciatura en Física Médica, Instituto de Física, Facultad de Ciencias, Udelar",
+          "url": "https://medicanew.fisica.edu.uy/wp-content/uploads/2025/03/Trayectoria-sugerida-2025_sinRB.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "ocho semestres y ubicación nominal de cursos, alternativas y espacios opcionales; no publica códigos ni créditos individuales",
+          "contentHash": "sha256:7f1c90e6a8b664d0855fb365e6f3ab716a55721487a89e658691f11629d0c236"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisica-medica",
+          "reviewedAt": "2026-10-20",
+          "role": "carrera compartida, sede Montevideo, 360 créditos, siete áreas y enlace al sitio del Instituto; no enumera semestres",
+          "contentHash": "sha256:ba5ac29c797110b1f8e099a4baac1e805ba3d2d16a205802c3aed9bb4bca8cd7"
+        },
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar",
+          "url": "https://www.fcien.edu.uy/noticias/3158-la-licenciatura-en-fisica-medica-tiene-un-nuevo-plan-de-estudios",
+          "reviewedAt": "2026-10-20",
+          "role": "360 créditos, siete mínimos disciplinares, 10 créditos transversales y currículo individual aprobado desde 180 créditos; no asigna cursos a semestres",
+          "contentHash": "sha256:4637bfcc98f67c8dbcfbb23628d4c4b93f451e33ac337029d2b44767d44d506a"
+        },
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2024/10/11/avisos.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "copia normativa alternativa del Plan 2025, estructura flexible sin grilla ordinal",
+          "contentHash": "sha256:ac8164f82192d6c73a577573764a07eace2cad0defb4d2955b2bdb0bb200a5f3"
+        },
+        {
+          "authority": "Catálogo de carreras, Udelar",
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica-medica",
+          "reviewedAt": "2026-10-20",
+          "role": "Ciencias y Medicina, inscripción por Ciencias, 48 meses y 360 créditos; enlace al sitio del Instituto",
+          "contentHash": "sha256:0ccc49942bb3249f2347b130826a4323058efabd73a33eb814d5d641e9f19211"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/images/2025/Agosto/HORARIOS_DEL_SEMESTRE_PAR_2025.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste de nombres ESFUNO Cardiovascular y Respiratorio, Digestivo Renal y Endócrino; no se usa para inferir una malla",
+          "contentHash": "sha256:f9df8fc33670737a0b26f3b32bf8bacd80d550a5eaf9d73bfaa0cadb84306b75"
+        },
+        {
+          "authority": "Comisiones de Carrera de Física y Física Médica, Facultad de Ciencias, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/items/d5f0af57-d06d-4319-b2cc-423c2e897f5f/full",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste de código FI195 y vigencia de curso; la asociación curricular 2025 proviene sólo de la trayectoria sugerida",
+          "contentHash": "sha256:93528b02d9d45b935379fb8100eb9d4ca0f4c06623e6267e7d61b9a80bf779a8"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/fisica-medica-2025-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-fisica-medica-2025.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true
+      },
+      "conflictNotes": [
+        "La trayectoria es sugerida y no desplaza el Plan flexible individual aprobado desde 180 créditos.",
+        "MA069 y FI57 son alternativas en el sexto semestre; las optativas sugeridas no se convierten en obligaciones ni reciben semestre inventado.",
+        "FI41 es la versión de Taller II que terminó en 2024; la correspondencia 2025 es FI284.",
+        "El PDF estuvo indexado pero su descarga directa falló; quedan por comprobar visualmente las notas al pie y eventuales cambios de la Comisión."
+      ]
     }
   ]
 }

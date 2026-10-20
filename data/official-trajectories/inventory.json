@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:e0840316a03f78ba198149ece1bbe264d6cb4003105c461e34812fd3e7bf0efb",
-    "officialAuditHash": "sha256:e10235a5875974460d1651761d2155fda0c146b54e478b5a814e2e1314de07ea",
-    "reviewedTrajectoriesHash": "sha256:2ba12c63e06297bf1fed1ecefca5276fc3ceff55d3178eef42550fe0478b082d"
+    "extractedReportHash": "sha256:e6b7cd44e28dfcbdeb56bc59b5748b48710530800060e16fdcc7049407c6dde5",
+    "officialAuditHash": "sha256:b3a35ff9892f70d9328856abadcfddf5474cfd1e793f7932e43f919bf822b312",
+    "reviewedTrajectoriesHash": "sha256:075f20771571f0d5158b9673c7627d1da1b2a6b3602449b03c8f451dfdef036a"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 112,
+      "official-trajectory-reproduced": 113,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 28
+      "research-pending": 27
     },
-    "pending": 31,
+    "pending": 30,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -122,10 +122,10 @@
         "serviceLabel": "Facultad de Ciencias",
         "selectablePlanIds": 14,
         "states": {
-          "official-trajectory-reproduced": 5,
+          "official-trajectory-reproduced": 6,
           "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 1,
-          "research-pending": 6
+          "research-pending": 5
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 31,
+    "total": 30,
     "plans": [
       {
         "priority": 1,
@@ -356,15 +356,6 @@
           "bedelias-fcien"
         ],
         "reason": "El Plan y el Reglamento vigentes establecen un currículo individual con tutoría y Comisión de Carrera. La página de grado del Instituto enlaza 28 cursos regulares con paridad Impar/Par y frecuencia Anual, no posiciones ordinales ni una trayectoria sugerida de ocho semestres. Sus requisitos por créditos tampoco permiten deducir una grilla. No se recuperó una publicación vigente curso-período ni una afirmación oficial positiva de ausencia; el silencio, el error de Colibrí y el enlace de la Comisión a EVA no prueban que no exista una trayectoria."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcien-licenciatura-en-fisica-medica-2025",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -594,7 +585,6 @@
         ],
         "researchPending": [
           "bedelias-fcien-licenciatura-en-fisica-2019",
-          "bedelias-fcien-licenciatura-en-fisica-medica-2025",
           "bedelias-fcien-licenciatura-en-geografia-2018",
           "bedelias-fcien-licenciatura-en-geologia-2018",
           "bedelias-fcien-licenciatura-en-matematica-2014",
@@ -6147,39 +6137,58 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2025",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "trayectoria sugerida 2025 para Plan 2025",
       "officialSources": [
         {
-          "authority": "Publicación del Plan de Estudios en el Diario Oficial, Facultad de Ciencias, Udelar",
-          "url": "https://www.fcien.edu.uy/images/2024/noticias_noviembre/Publicaci%C3%B3n_DO_Plan_Estudio_F%C3%ADsica_M%C3%A9dica.pdf",
-          "role": "plan nuevo; publicación oficial; título; 360 créditos; cuatro años; áreas; mínimos; prácticas; aprobación curricular",
-          "trajectoryEvidence": false
+          "authority": "Licenciatura en Física Médica, Instituto de Física, Facultad de Ciencias, Udelar",
+          "url": "https://medicanew.fisica.edu.uy/wp-content/uploads/2025/03/Trayectoria-sugerida-2025_sinRB.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "ocho semestres y ubicación nominal de cursos, alternativas y espacios opcionales; no publica códigos ni créditos individuales",
+          "contentHash": "sha256:7f1c90e6a8b664d0855fb365e6f3ab716a55721487a89e658691f11629d0c236"
         },
         {
-          "authority": "Facultad de Ciencias, texto y anuncio oficial del Plan 2025",
-          "url": "https://www.fcien.edu.uy/noticias/3158-la-licenciatura-en-fisica-medica-tiene-un-nuevo-plan-de-estudios",
-          "role": "vigencia desde 2025; Resolución Nº 10 del CDC; estructura; flexibilidad; plan individual; módulos electivos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica-medica",
-          "role": "vigencia; carrera compartida; inscripción por Ciencias; 48 meses; 360 créditos; sede Facultad de Ciencias",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Ciencias, oferta vigente",
+          "authority": "Facultad de Ciencias, Udelar",
           "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-fisica-medica",
-          "role": "vigencia; título compartido; cuatro años; 360 créditos; Montevideo",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-20",
+          "role": "carrera compartida, sede Montevideo, 360 créditos, siete áreas y enlace al sitio del Instituto; no enumera semestres",
+          "contentHash": "sha256:ba5ac29c797110b1f8e099a4baac1e805ba3d2d16a205802c3aed9bb4bca8cd7"
         },
         {
-          "authority": "Repositorio Colibri, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24561",
-          "role": "Plan 2011 predecesor; carrera compartida; código de carrera 356",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar",
+          "url": "https://www.fcien.edu.uy/noticias/3158-la-licenciatura-en-fisica-medica-tiene-un-nuevo-plan-de-estudios",
+          "reviewedAt": "2026-10-20",
+          "role": "360 créditos, siete mínimos disciplinares, 10 créditos transversales y currículo individual aprobado desde 180 créditos; no asigna cursos a semestres",
+          "contentHash": "sha256:4637bfcc98f67c8dbcfbb23628d4c4b93f451e33ac337029d2b44767d44d506a"
+        },
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2024/10/11/avisos.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "copia normativa alternativa del Plan 2025, estructura flexible sin grilla ordinal",
+          "contentHash": "sha256:ac8164f82192d6c73a577573764a07eace2cad0defb4d2955b2bdb0bb200a5f3"
+        },
+        {
+          "authority": "Catálogo de carreras, Udelar",
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica-medica",
+          "reviewedAt": "2026-10-20",
+          "role": "Ciencias y Medicina, inscripción por Ciencias, 48 meses y 360 créditos; enlace al sitio del Instituto",
+          "contentHash": "sha256:0ccc49942bb3249f2347b130826a4323058efabd73a33eb814d5d641e9f19211"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/images/2025/Agosto/HORARIOS_DEL_SEMESTRE_PAR_2025.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste de nombres ESFUNO Cardiovascular y Respiratorio, Digestivo Renal y Endócrino; no se usa para inferir una malla",
+          "contentHash": "sha256:f9df8fc33670737a0b26f3b32bf8bacd80d550a5eaf9d73bfaa0cadb84306b75"
+        },
+        {
+          "authority": "Comisiones de Carrera de Física y Física Médica, Facultad de Ciencias, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/items/d5f0af57-d06d-4319-b2cc-423c2e897f5f/full",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste de código FI195 y vigencia de curso; la asociación curricular 2025 proviene sólo de la trayectoria sugerida",
+          "contentHash": "sha256:93528b02d9d45b935379fb8100eb9d4ca0f4c06623e6267e7d61b9a80bf779a8"
         }
       ],
       "scope": {
@@ -6191,25 +6200,35 @@
         ]
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en fisica medica:2025",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-fisica-medica-2025.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/fisica-medica-2025-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-fisica-medica-2025.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "sourceContentHash": "sha256:03557eed7f1f7e44981ae2302d991320af901a30303428a5dc7ba6ed9c281823",
+        "projectionContentHash": "sha256:99c053ad8fd8691f7a6997ef135c03a5ca9046e4f1c280ebc519226e5adc3e57",
+        "pathways": [
+          {
+            "id": "plan-individual",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 36,
+        "matchedCoursePlacements": 36
       },
       "conflictNotes": [
-        "planTransition: Colibri todavía expone el Plan 2011 de 323/324 créditos y algunos programas recientes conservan su código administrativo, pero el CDC aprobó el nuevo texto en 2024, el Diario Oficial lo publicó y Bedelías lo registra como Plan 2025 de 360 créditos. La UI usa el plan vigente y conserva el anterior sólo como antecedente.",
-        "areaMinimums: Las siete áreas del Plan suman 324 créditos. Los 10 créditos de formación social y productiva son un requisito transversal; Bedelías los presenta como octavo grupo operativo. La UI los controla por separado sin afirmar que constituyen una octava área disciplinar.",
-        "freeCredits: Los siete mínimos y la práctica transversal suman 334 créditos. Los 26 restantes se completan con optativas, electivas u otras actividades acreditables coherentes con el plan individual hasta alcanzar 360.",
-        "sharedServices: Ciencias y Medicina son responsables del mismo título, mientras la inscripción y la sede publicada se concentran en Facultad de Ciencias. Se muestran como servicios compartidos y no como dos carreras o sedes.",
-        "electiveModules: Radioterapia, medicina nuclear, imagenología, radiología y radioprotección son opciones dentro de los 60 créditos de módulos electivos. El Plan no las define como menciones certificadas y la UI no crea trayectorias separadas.",
-        "catalogSize: Los 468 créditos de 44 registros y las 48 apariciones por grupo representan una oferta de opciones y cursos que pueden satisfacer más de un requisito. El egreso exige 360 créditos y la aprobación de un plan individual, no completar todo el catálogo."
+        "La trayectoria es sugerida y no desplaza el Plan flexible individual aprobado desde 180 créditos.",
+        "MA069 y FI57 son alternativas en el sexto semestre; las optativas sugeridas no se convierten en obligaciones ni reciben semestre inventado.",
+        "FI41 es la versión de Taller II que terminó en 2024; la correspondencia 2025 es FI284.",
+        "El PDF estuvo indexado pero su descarga directa falló; quedan por comprobar visualmente las notas al pie y eventuales cambios de la Comisión."
       ]
     },
     {
@@ -13798,5 +13817,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:6884fc0dd683d5e1a2b9720a3245a69c1c157c97a67e10723524f51a5e13554f"
+  "contentHash": "sha256:3ec18b2f508786add7ccc16fc21336beb549b2fb56fc4f70c431e2ad10f024b8"
 }
