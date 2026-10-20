@@ -55533,9 +55533,9 @@
       "identity": "licenciatura en geologia:2018",
       "career": "LICENCIATURA EN GEOLOGÍA",
       "planYear": "2018",
-      "reviewedAt": "2026-08-28",
+      "reviewedAt": "2026-10-20",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, sede, duración, créditos, tramos, áreas, formación general, orientación individual y trabajo final",
+      "scope": "Plan 2018, título, Montevideo, mínimos y siete recomendaciones de ingreso CIDU 2025; resto de períodos no publicado",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -55550,22 +55550,38 @@
         "semesters": 8,
         "minimumCredits": 360,
         "current": true,
-        "pathwayLabel": "Trayectoria",
+        "pathwayLabel": "Guía de ingreso 2025 · parcial",
         "degreeRule": "El título exige 360 créditos. El tramo común aporta al menos 210 créditos: 90 del área científico-básica, 100 de geología fundamental y 20 de profundización. La orientación individual completa al menos 140 créditos, incluido un trabajo final de 35, y el plan exige además 10 créditos transversales de reflexión científica y formación general que pueden cursarse en cualquiera de los dos tramos.",
         "trajectories": [
           {
             "id": "trayectoria-individual",
-            "label": "Trayectoria individual",
-            "description": "Orientación personalizada acordada con la Comisión de Carrera y un futuro tutor. Las posibles trayectorias sugeridas no son menciones ni títulos certificados separados."
+            "label": "Guía de ingreso 2025 · parcial",
+            "description": "Guía institucional parcial de ingreso 2025: sólo recomienda opciones del primer semestre. No es una malla completa de ocho semestres ni una secuencia obligatoria; el resto se organiza con la Comisión de Carrera. Los cursos sin código inequívoco conservan identidad de fuente y las variantes técnicas no se equiparan automáticamente. La orientación personal no es una mención certificada.",
+            "periods": [
+              {
+                "label": "Primer semestre sugerido (2025)",
+                "courseIds": [
+                  "GL002",
+                  "FI252",
+                  "geologia-laboratorio-fisica-i-cidu-2025",
+                  "MA400",
+                  "BG1",
+                  "B01",
+                  "geologia-efi-cidu-2025"
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true
           }
         ],
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
-          "sourceUrl": "https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf",
-          "pathwayLabel": "Trayectoria",
-          "pathwayDescription": "Catálogo flexible del Plan 2018 organizado por tramo y área. El orden no prescribe semestres: la orientación se construye individualmente con la Comisión y un tutor, sin menciones certificadas separadas.",
+          "sourceUrl": "https://eva.fcien.udelar.edu.uy/pluginfile.php/189471/mod_resource/content/2/CIDU%20Licenciatura%20en%20Geolog%C3%ADa%202025.pdf",
+          "pathwayLabel": "Guía de ingreso 2025 · parcial",
+          "pathwayDescription": "Guía institucional parcial de ingreso 2025: sólo recomienda opciones del primer semestre. No es una malla completa de ocho semestres ni una secuencia obligatoria; el resto se organiza con la Comisión de Carrera. Los cursos sin código inequívoco conservan identidad de fuente y las variantes técnicas no se equiparan automáticamente. La orientación personal no es una mención certificada.",
           "periodOrder": [
             "Tramo común · Científico-básica",
             "Tramo común · Geología fundamental",
@@ -55691,7 +55707,114 @@
               ]
             }
           ],
-          "manualCompletionValidation": "Aprobación de la trayectoria individual y del proyecto de trabajo final por la Comisión de Carrera; para iniciar la orientación se requieren 130 créditos del tramo común con formación geológica fundamental, y para iniciar el trabajo final, los 210 créditos comunes y 90 de orientación"
+          "manualCompletionValidation": "Aprobación de la trayectoria individual y del proyecto de trabajo final por la Comisión de Carrera; para iniciar la orientación se requieren 130 créditos del tramo común con formación geológica fundamental, y para iniciar el trabajo final, los 210 créditos comunes y 90 de orientación",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "GL002",
+            "FI252",
+            "MA400",
+            "BG1",
+            "B01"
+          ],
+          "sourceDataPath": "data/fcien/geologia-2018-trajectory-review.json",
+          "includeAllCoursesInPathwayCatalog": true,
+          "courseOverrides": {
+            "GL002": {
+              "name": "Geología General I",
+              "preserveName": true,
+              "requirementId": "common-scientific-basic",
+              "periodLabel": "Primer semestre sugerido (2025)",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FI252": {
+              "name": "Física 1 (Biogeociencias)",
+              "preserveName": true,
+              "requirementId": "common-scientific-basic",
+              "periodLabel": "Primer semestre sugerido (2025)",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "MA400": {
+              "name": "Matemática 1",
+              "preserveName": true,
+              "requirementId": "common-scientific-basic",
+              "periodLabel": "Primer semestre sugerido (2025)",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "BG1": {
+              "name": "Química General",
+              "preserveName": true,
+              "requirementId": "common-scientific-basic",
+              "periodLabel": "Primer semestre sugerido (2025)",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "B01": {
+              "name": "Alfabetización en Información I",
+              "preserveName": true,
+              "requirementId": "scientific-reflection-general",
+              "periodLabel": "Primer semestre sugerido (2025)",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "geologia-laboratorio-fisica-i-cidu-2025",
+              "sourceCourseId": "geologia-laboratorio-fisica-i-cidu-2025",
+              "name": "Laboratorio de Física I (guía de ingreso 2025)",
+              "credits": 3,
+              "creditsPublished": true,
+              "requirementId": "common-scientific-basic",
+              "periodLabel": "Primer semestre sugerido (2025)",
+              "curricularBlock": false,
+              "catalogRole": "official-semester-source-only-course",
+              "availabilityStatus": "official-trajectory-no-unambiguous-technical-code",
+              "sourceUrl": "https://eva.fcien.udelar.edu.uy/pluginfile.php/189471/mod_resource/content/2/CIDU%20Licenciatura%20en%20Geolog%C3%ADa%202025.pdf"
+            },
+            {
+              "id": "geologia-efi-cidu-2025",
+              "sourceCourseId": "geologia-efi-cidu-2025",
+              "name": "Espacio de Formación Integral (opción de ingreso)",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "scientific-reflection-general",
+              "periodLabel": "Primer semestre sugerido (2025)",
+              "curricularBlock": true,
+              "catalogRole": "official-semester-source-only-course",
+              "availabilityStatus": "official-trajectory-no-unambiguous-technical-code",
+              "sourceUrl": "https://eva.fcien.udelar.edu.uy/pluginfile.php/189471/mod_resource/content/2/CIDU%20Licenciatura%20en%20Geolog%C3%ADa%202025.pdf"
+            }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "partialSequence",
+              "resolution": "La fuente 2025 sólo recomienda el primer semestre; los siete posteriores no se inventan y el recorrido no se declara completo."
+            },
+            {
+              "field": "laboratoryLoad",
+              "resolution": "CIDU 2025 recomienda Laboratorio de Física I con 3 créditos, mientras la versión técnica B0025 de 2025 muestra 4 y BG833 de 3 termina en 2024. Se conserva una identidad sólo-fuente de 3 sin equivalencia automática."
+            },
+            {
+              "field": "alfabetizacionVersion",
+              "resolution": "B01 corresponde a la recomendación y oferta 2025, pero Bedelías lo marca hasta 2025; B09 2026 permanece candidata hasta cotejar una edición posterior de la guía o equivalencia expresa."
+            },
+            {
+              "field": "efiIdentity",
+              "resolution": "EFI es un cupo genérico sin código ni carga publicada en la guía; no equivale a ninguna de las EFI de Bedelías por similitud."
+            },
+            {
+              "field": "catalog",
+              "resolution": "Sólo cinco códigos se cotejan con el primer semestre; las otras 215 identidades técnicas siguen candidatas recuperables fuera del catálogo normal."
+            }
+          ]
         }
       },
       "offerings": [
@@ -55728,26 +55851,26 @@
           "Controlar 210 créditos de tramo común, con mínimos de 90 científico-básicos, 100 de geología fundamental y 20 de profundización.",
           "Representar 140 créditos de orientación individual, incluido el trabajo final de 35, y controlar aparte los 10 créditos transversales de reflexión científica y formación general sin contarlos dos veces.",
           "Presentar una única trayectoria individual y no convertir recorridos sugeridos por la Comisión en menciones o perfiles certificados.",
-          "Conservar la composición de Bedelías como catálogo flexible por tramo y área, deduplicando coincidencias exactas sin exigir toda la oferta acumulada.",
-          "Mantener como validación académica explícita los umbrales de ingreso a la orientación y al trabajo final, así como la aprobación de la trayectoria y del proyecto."
-        ]
+          "Mantener como validación académica explícita los umbrales de ingreso a la orientación y al trabajo final, así como la aprobación de la trayectoria y del proyecto.",
+          "Reproducir sólo el primer semestre recomendado en CIDU 2025: cinco códigos cotejados y dos identidades sólo-fuente; los 215 registros técnicos restantes permanecen candidatas y no se inventan semestres posteriores."
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fcien/geologia-2018-trajectory-review.json",
+        "trajectoryCoverage": "partial-first-semester",
+        "completeDegreeSequence": false,
+        "trajectoryJustification": "La presentación institucional CIDU 2025 publica siete recomendaciones del primer semestre del Plan 2018. La Guía 2019 aprobada por Comisión y el Plan ofrecen ejemplos por área, pero no una secuencia completa; la página vigente confirma estructura flexible. Se reproduce sólo el primer semestre, sin trasladar la grilla del Plan histórico 2008 ni la oferta anual a períodos posteriores.",
+        "trajectoryReviewTrigger": "Revisar al publicarse una guía posterior del CIDU/Comisión/Instituto que distribuya materias de los semestres 2–8, una edición de ingreso más reciente con equivalencias técnicas o una aclaración oficial sobre la diferencia de 3/4 créditos del Laboratorio de Física I."
       },
       "sources": [
         {
           "url": "https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf",
-          "authority": "Plan de Estudios 2018 publicado en el Diario Oficial, Facultad de Ciencias, Udelar",
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial 05/01/2018",
           "supports": [
-            "publicación oficial",
-            "título",
-            "cuatro años",
-            "360 créditos",
-            "tramos",
-            "áreas",
-            "formación general",
-            "orientación individual",
-            "trabajo final",
-            "umbrales de avance"
-          ]
+            "título, cuatro años, 360 créditos, mínimos y flexibilidad; no ubica cursos por semestre"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Plan aprobado en 2017 y publicado en 2018",
+          "contentHash": "sha256:d7c810b76f733360c88abd584bd623002337b3749dc635544532a61a68b9693d"
         },
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24563/1/PLGEOL_2020.PDF",
@@ -55770,15 +55893,13 @@
         },
         {
           "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geologia/2336-licenciatura-en-geologia-2",
-          "authority": "Facultad de Ciencias, oferta vigente",
+          "authority": "Facultad de Ciencias, Udelar",
           "supports": [
-            "vigencia",
-            "cuatro años",
-            "360 créditos",
-            "cuatro áreas",
-            "tramo común",
-            "orientación individual"
-          ]
+            "360 créditos, cuatro años, cuatro áreas y orientación individual"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "ficha vigente al consultar en 2026",
+          "contentHash": "sha256:70eea2a98ecb774a258b217578447cfacfe6fbdc3d87beff4c213d871ac65cf6"
         },
         {
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-geologia",
@@ -55793,14 +55914,73 @@
         },
         {
           "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/1953/mod_resource/content/1/Gu%C3%ADa%20del%20Estudiante.pdf",
-          "authority": "Guía del Estudiante de la Licenciatura en Geología, Facultad de Ciencias",
+          "authority": "Guía del Estudiante de Geología aprobada por Comisión de Carrera, Res. 6 del Acta 8, 29/05/2019",
           "supports": [
-            "estructura operativa",
-            "mínimos por tramo y área",
-            "ubicación flexible de formación general",
-            "orientación individual",
-            "trabajo final"
-          ]
+            "ejemplos por tramo y área, sin grilla ordinal completa"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "edición 2019 de la Guía del Plan 2018; no sustituye la recomendación de ingreso 2025",
+          "contentHash": "sha256:caa347a454167c7f5786ace0dc04de45f48661f979ba155743860f7bc3f551ca"
+        },
+        {
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/189471/mod_resource/content/2/CIDU%20Licenciatura%20en%20Geolog%C3%ADa%202025.pdf",
+          "authority": "Comisión de Carrera e Instituto de Ciencias Geológicas, Facultad de Ciencias, Udelar",
+          "supports": [
+            "siete filas recomendadas para el primer semestre, incluidas una EFI sin carga definida"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "presentación de ingreso 2025 para el Plan 2018; sólo recomienda el primer semestre",
+          "contentHash": "sha256:35e1c91325a1c9eae2f76065fc5f172d04aea552c2caddce8617560545b33b19"
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24563?mode=full",
+          "authority": "Repositorio Colibrí, Udelar",
+          "supports": [
+            "versión del plan; no incorpora grilla ordinal"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "registro de Plan 2018, carrera 245 y plan 1274",
+          "contentHash": "sha256:bdf6a174151180b2391627c6cc93cab2f60d76ddfa4485cb309729b801e93b76"
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2018/01/05/avisos.pdf",
+          "authority": "Universidad de la República; Diario Oficial/IMPO",
+          "supports": [
+            "contraste normativo independiente de EVA"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "publicación 05/01/2018 del Plan aprobado",
+          "contentHash": "sha256:3bb1aa5214b1b3299aa4c8545fb8f0fe08b57761864acb1bf6d49552c498ce30"
+        },
+        {
+          "url": "https://www.fcien.edu.uy/images/2025/Marzo/2025-03-05_HORARIOS_2025_IMPAR.pdf",
+          "authority": "Bedelía de Facultad de Ciencias, Udelar",
+          "supports": [
+            "códigos técnicos inequívocos de cinco recomendaciones; señala versión B0025 de laboratorio de cuatro créditos, en tensión con tres en CIDU"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "oferta del semestre impar 2025, no malla permanente",
+          "contentHash": "sha256:e84c0e454cc37afe696bce3e7eb5b4ea33d80f82635d0a29b9345f021f312eb9"
+        },
+        {
+          "url": "https://www.fcien.edu.uy/images/2026/Marzo/HORARIOS_IMPAR_2026_V3_06-03-2026_para_web.pdf",
+          "authority": "Bedelía de Facultad de Ciencias, Udelar",
+          "supports": [
+            "confirma GL002 vigente en 2026; no extrapola una secuencia completa"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "oferta del semestre impar 2026, no malla permanente",
+          "contentHash": "sha256:4b12391a8fadf0ad3a50389b04e120090f655ce650a105127d39629cdc3c7696"
+        },
+        {
+          "url": "https://www.fcien.edu.uy/media/pdf/planes-estudio/lic-geologia.pdf",
+          "authority": "Facultad de Ciencias, Udelar",
+          "supports": [
+            "grilla semestral antigua descartada por versión"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "plan histórico anterior, no aplicable al Plan 2018",
+          "contentHash": "sha256:fd809c032d24eb9a718255f5e41ae16a8e78906762c21f9494dd9f43c842bffe"
         }
       ],
       "anomalies": [
@@ -55827,10 +56007,30 @@
         {
           "field": "catalogSize",
           "resolution": "Los 1.642 créditos de las 220 unidades del catálogo representan oferta flexible acumulada. El egreso requiere 360 créditos distribuidos según los mínimos oficiales y no completar todas las alternativas."
+        },
+        {
+          "field": "partialSequence",
+          "resolution": "La fuente 2025 sólo recomienda el primer semestre; los siete posteriores no se inventan y el recorrido no se declara completo."
+        },
+        {
+          "field": "laboratoryLoad",
+          "resolution": "CIDU 2025 recomienda Laboratorio de Física I con 3 créditos, mientras la versión técnica B0025 de 2025 muestra 4 y BG833 de 3 termina en 2024. Se conserva una identidad sólo-fuente de 3 sin equivalencia automática."
+        },
+        {
+          "field": "alfabetizacionVersion",
+          "resolution": "B01 corresponde a la recomendación y oferta 2025, pero Bedelías lo marca hasta 2025; B09 2026 permanece candidata hasta cotejar una edición posterior de la guía o equivalencia expresa."
+        },
+        {
+          "field": "efiIdentity",
+          "resolution": "EFI es un cupo genérico sin código ni carga publicada en la guía; no equivale a ninguna de las EFI de Bedelías por similitud."
+        },
+        {
+          "field": "catalog",
+          "resolution": "Sólo cinco códigos se cotejan con el primer semestre; las otras 215 identidades técnicas siguen candidatas recuperables fuera del catálogo normal."
         }
       ],
-      "uiNotice": "Plan 2018 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí 210 créditos comunes con sus tres mínimos, 140 de orientación —incluido el trabajo final de 35— y 10 transversales de reflexión/formación; la Comisión debe aprobar tu trayectoria y proyecto final.",
-      "remainingWork": "La Comisión de Carrera aprueba la orientación individual, la acreditación de actividades, el tutor y el proyecto de trabajo final; la UI conserva esas decisiones como validación académica explícita."
+      "uiNotice": "Guía oficial de ingreso 2025 · parcial: sólo el primer semestre sugerido en Montevideo. No es la malla completa de ocho semestres ni garantiza oferta futura. Laboratorio de Física I aparece con 3 créditos en la guía y 4 en la versión técnica 2025; no se equiparan. Los demás cursos se eligen con la Comisión para cumplir 360 créditos y los mínimos del Plan 2018.",
+      "remainingWork": "Revisar al publicarse una guía posterior del CIDU/Comisión/Instituto que distribuya materias de los semestres 2–8, una edición de ingreso más reciente con equivalencias técnicas o una aclaración oficial sobre la diferencia de 3/4 créditos del Laboratorio de Física I."
     },
     {
       "identity": "licenciatura en matematica:2014",
@@ -88158,6 +88358,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:3bdf1cf4158f7eec0d2710a14b86b8a0cfa2153944cca9ca8dd2ed8c7e9fc1df",
+  "contentHash": "sha256:63be4e58243e31541bbf7233616705e7d464f455458d3251a4872ec7127fb3ab",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

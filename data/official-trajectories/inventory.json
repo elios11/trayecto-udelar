@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:e89bca8fce01ef8b5b18e2203e8916c85f788af3d643ff80dfc451acaaee254e",
-    "officialAuditHash": "sha256:3bdf1cf4158f7eec0d2710a14b86b8a0cfa2153944cca9ca8dd2ed8c7e9fc1df",
-    "reviewedTrajectoriesHash": "sha256:cd4136584bd87f7e7e0f0dd24d07f6f0b6f0be209a6bcf03cca03d4f6ca7d9fe"
+    "extractedReportHash": "sha256:a19e296d202d36031265b6be0502d907aebec898dd1a64227c4febd7dadf5b23",
+    "officialAuditHash": "sha256:63be4e58243e31541bbf7233616705e7d464f455458d3251a4872ec7127fb3ab",
+    "reviewedTrajectoriesHash": "sha256:c1918ac56d880b57b50a0bb4e8c2d8b9c359d92bce77fcaa88620b1a2dee044e"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 113,
+      "official-trajectory-reproduced": 114,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 27
+      "research-pending": 26
     },
-    "pending": 30,
+    "pending": 29,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -122,10 +122,10 @@
         "serviceLabel": "Facultad de Ciencias",
         "selectablePlanIds": 14,
         "states": {
-          "official-trajectory-reproduced": 6,
+          "official-trajectory-reproduced": 7,
           "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 1,
-          "research-pending": 5
+          "research-pending": 4
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 30,
+    "total": 29,
     "plans": [
       {
         "priority": 1,
@@ -365,15 +365,6 @@
           "bedelias-fcien"
         ],
         "reason": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fcien-licenciatura-en-geologia-2018",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -586,7 +577,6 @@
         "researchPending": [
           "bedelias-fcien-licenciatura-en-fisica-2019",
           "bedelias-fcien-licenciatura-en-geografia-2018",
-          "bedelias-fcien-licenciatura-en-geologia-2018",
           "bedelias-fcien-licenciatura-en-matematica-2014",
           "bedelias-fing-tecnologo-en-cartografia-2011"
         ]
@@ -6351,45 +6341,72 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2018",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "CIDU 2025",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2018 publicado en el Diario Oficial, Facultad de Ciencias, Udelar",
-          "url": "https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf",
-          "role": "publicación oficial; título; cuatro años; 360 créditos; tramos; áreas; formación general; orientación individual; trabajo final; umbrales de avance",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera e Instituto de Ciencias Geológicas, Facultad de Ciencias, Udelar",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/189471/mod_resource/content/2/CIDU%20Licenciatura%20en%20Geolog%C3%ADa%202025.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "siete filas recomendadas para el primer semestre, incluidas una EFI sin carga definida",
+          "contentHash": "sha256:35e1c91325a1c9eae2f76065fc5f172d04aea552c2caddce8617560545b33b19"
         },
         {
-          "authority": "Plan de Estudios de la Licenciatura en Geología, repositorio Colibri, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24563/1/PLGEOL_2020.PDF",
-          "role": "Plan 2018; código de carrera 245; código de plan 1274; responsabilidad de Facultad de Ciencias; aprobaciones",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Repositorio Colibri, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24563",
-          "role": "identificación del Plan 2018; Facultad de Ciencias",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Ciencias, oferta vigente",
-          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geologia/2336-licenciatura-en-geologia-2",
-          "role": "vigencia; cuatro años; 360 créditos; cuatro áreas; tramo común; orientación individual",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-geologia",
-          "role": "vigencia; 48 meses; 360 créditos; Facultad de Ciencias; sede Montevideo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Guía del Estudiante de la Licenciatura en Geología, Facultad de Ciencias",
+          "authority": "Guía del Estudiante de Geología aprobada por Comisión de Carrera, Res. 6 del Acta 8, 29/05/2019",
           "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/1953/mod_resource/content/1/Gu%C3%ADa%20del%20Estudiante.pdf",
-          "role": "estructura operativa; mínimos por tramo y área; ubicación flexible de formación general; orientación individual; trabajo final",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-20",
+          "role": "ejemplos por tramo y área, sin grilla ordinal completa",
+          "contentHash": "sha256:caa347a454167c7f5786ace0dc04de45f48661f979ba155743860f7bc3f551ca"
+        },
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial 05/01/2018",
+          "url": "https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "título, cuatro años, 360 créditos, mínimos y flexibilidad; no ubica cursos por semestre",
+          "contentHash": "sha256:d7c810b76f733360c88abd584bd623002337b3749dc635544532a61a68b9693d"
+        },
+        {
+          "authority": "Repositorio Colibrí, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24563?mode=full",
+          "reviewedAt": "2026-10-20",
+          "role": "versión del plan; no incorpora grilla ordinal",
+          "contentHash": "sha256:bdf6a174151180b2391627c6cc93cab2f60d76ddfa4485cb309729b801e93b76"
+        },
+        {
+          "authority": "Universidad de la República; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2018/01/05/avisos.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste normativo independiente de EVA",
+          "contentHash": "sha256:3bb1aa5214b1b3299aa4c8545fb8f0fe08b57761864acb1bf6d49552c498ce30"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geologia/2336-licenciatura-en-geologia-2",
+          "reviewedAt": "2026-10-20",
+          "role": "360 créditos, cuatro años, cuatro áreas y orientación individual",
+          "contentHash": "sha256:70eea2a98ecb774a258b217578447cfacfe6fbdc3d87beff4c213d871ac65cf6"
+        },
+        {
+          "authority": "Bedelía de Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/images/2025/Marzo/2025-03-05_HORARIOS_2025_IMPAR.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "códigos técnicos inequívocos de cinco recomendaciones; señala versión B0025 de laboratorio de cuatro créditos, en tensión con tres en CIDU",
+          "contentHash": "sha256:e84c0e454cc37afe696bce3e7eb5b4ea33d80f82635d0a29b9345f021f312eb9"
+        },
+        {
+          "authority": "Bedelía de Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/images/2026/Marzo/HORARIOS_IMPAR_2026_V3_06-03-2026_para_web.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "confirma GL002 vigente en 2026; no extrapola una secuencia completa",
+          "contentHash": "sha256:4b12391a8fadf0ad3a50389b04e120090f655ce650a105127d39629cdc3c7696"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/media/pdf/planes-estudio/lic-geologia.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "grilla semestral antigua descartada por versión",
+          "contentHash": "sha256:fd809c032d24eb9a718255f5e41ae16a8e78906762c21f9494dd9f43c842bffe"
         }
       ],
       "scope": {
@@ -6398,28 +6415,44 @@
         ],
         "pathwayIds": [
           "trayectoria-individual"
-        ]
+        ],
+        "coverage": "partial-first-semester",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en geologia:2018",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-geologia-2018.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/geologia-2018-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-geologia-2018.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "Revisar al publicarse una guía posterior del CIDU/Comisión/Instituto que distribuya materias de los semestres 2–8, una edición de ingreso más reciente con equivalencias técnicas o una aclaración oficial sobre la diferencia de 3/4 créditos del Laboratorio de Física I.",
+        "sourceContentHash": "sha256:fcc0a78e2bd6f3658825e3ea104ede66aecdb52d4e8c618fef3e4fe4cda21a85",
+        "projectionContentHash": "sha256:b7ade4a49dbefcbdf983907640ecb5abe5260f513d9bb2b8f413f62bfec573ae",
+        "pathways": [
+          {
+            "id": "trayectoria-individual",
+            "periodCount": 1
+          }
+        ],
+        "expectedCoursePlacements": 7,
+        "matchedCoursePlacements": 7
       },
       "conflictNotes": [
-        "transversalCredits: Los 10 créditos de reflexión científica y formación general pueden realizarse en cualquiera de los tramos. Según su ubicación, el tramo común totaliza 210 o 220 y la orientación 150 o 140. La UI los representa como requisito transversal separado junto con 210 comunes y 140 de orientación: suma 360 y no duplica créditos.",
-        "bedeliasTrancheMinimums: Bedelías muestra simultáneamente mínimos de 210 para tramo común, 150 para orientación y 10 para formación general, que leídos como obligaciones independientes sumarían 370. El Plan aclara que la formación general está incluida de manera móvil en uno de los tramos; la UI aplica la equivalencia oficial de 210 + 140 + 10.",
-        "trajectoryLabels: La Comisión puede definir trayectorias sugeridas, pero el Plan sólo certifica el título de Licenciado en Geología. La UI ofrece una trayectoria individual y no inventa menciones.",
-        "progressionThresholds: El ingreso a actividades de orientación requiere 130 créditos comunes con formación geológica fundamental; el trabajo final exige 210 comunes, 90 de orientación, tutor, propuesta y aprobación de la Comisión. Al no existir una única regla automática de Bedelías que concentre estas condiciones, quedan como validación manual explícita.",
-        "catalogCodes: Las 220 unidades publicadas usan 205 códigos administrativos distintos porque algunos códigos reaparecen en versiones o denominaciones diferentes. La UI conserva los 220 registros trazables y sólo deduplica coincidencias exactas, sin fusionar variantes por código.",
-        "catalogSize: Los 1.642 créditos de las 220 unidades del catálogo representan oferta flexible acumulada. El egreso requiere 360 créditos distribuidos según los mínimos oficiales y no completar todas las alternativas."
+        "La fuente 2025 sólo recomienda el primer semestre; los siete posteriores no se inventan y el recorrido no se declara completo.",
+        "CIDU 2025 recomienda Laboratorio de Física I con 3 créditos, mientras la versión técnica B0025 de 2025 muestra 4 y BG833 de 3 termina en 2024. Se conserva una identidad sólo-fuente de 3 sin equivalencia automática.",
+        "B01 corresponde a la recomendación y oferta 2025, pero Bedelías lo marca hasta 2025; B09 2026 permanece candidata hasta cotejar una edición posterior de la guía o equivalencia expresa.",
+        "EFI es un cupo genérico sin código ni carga publicada en la guía; no equivale a ninguna de las EFI de Bedelías por similitud.",
+        "Sólo cinco códigos se cotejan con el primer semestre; las otras 215 identidades técnicas siguen candidatas recuperables fuera del catálogo normal."
       ]
     },
     {
@@ -13853,5 +13886,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:953cf82b11357adba2bfd5694bf0048746c471ba50d62477f5bf4006c3d4c187"
+  "contentHash": "sha256:7ff62bdd5fe053e692297e395a272aade6cf4dbf6bfbb3fa8c5a1ff090f8c617"
 }

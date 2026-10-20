@@ -4240,6 +4240,107 @@
         "El rango 10–15 de actividades en la prosa y el mínimo de 10 del cuadro se conservan como anomalía; no se cambia la regla operativa.",
         "La flexibilidad individual y la búsqueda sin resultados no son una declaración institucional positiva de ausencia de malla."
       ]
+    },
+    {
+      "planId": "bedelias-fcien-licenciatura-en-geologia-2018",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "CIDU 2025",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "trayectoria-individual"
+        ],
+        "coverage": "partial-first-semester",
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "authority": "Comisión de Carrera e Instituto de Ciencias Geológicas, Facultad de Ciencias, Udelar",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/189471/mod_resource/content/2/CIDU%20Licenciatura%20en%20Geolog%C3%ADa%202025.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "siete filas recomendadas para el primer semestre, incluidas una EFI sin carga definida",
+          "contentHash": "sha256:35e1c91325a1c9eae2f76065fc5f172d04aea552c2caddce8617560545b33b19"
+        },
+        {
+          "authority": "Guía del Estudiante de Geología aprobada por Comisión de Carrera, Res. 6 del Acta 8, 29/05/2019",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/1953/mod_resource/content/1/Gu%C3%ADa%20del%20Estudiante.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "ejemplos por tramo y área, sin grilla ordinal completa",
+          "contentHash": "sha256:caa347a454167c7f5786ace0dc04de45f48661f979ba155743860f7bc3f551ca"
+        },
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial 05/01/2018",
+          "url": "https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "título, cuatro años, 360 créditos, mínimos y flexibilidad; no ubica cursos por semestre",
+          "contentHash": "sha256:d7c810b76f733360c88abd584bd623002337b3749dc635544532a61a68b9693d"
+        },
+        {
+          "authority": "Repositorio Colibrí, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24563?mode=full",
+          "reviewedAt": "2026-10-20",
+          "role": "versión del plan; no incorpora grilla ordinal",
+          "contentHash": "sha256:bdf6a174151180b2391627c6cc93cab2f60d76ddfa4485cb309729b801e93b76"
+        },
+        {
+          "authority": "Universidad de la República; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2018/01/05/avisos.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste normativo independiente de EVA",
+          "contentHash": "sha256:3bb1aa5214b1b3299aa4c8545fb8f0fe08b57761864acb1bf6d49552c498ce30"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geologia/2336-licenciatura-en-geologia-2",
+          "reviewedAt": "2026-10-20",
+          "role": "360 créditos, cuatro años, cuatro áreas y orientación individual",
+          "contentHash": "sha256:70eea2a98ecb774a258b217578447cfacfe6fbdc3d87beff4c213d871ac65cf6"
+        },
+        {
+          "authority": "Bedelía de Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/images/2025/Marzo/2025-03-05_HORARIOS_2025_IMPAR.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "códigos técnicos inequívocos de cinco recomendaciones; señala versión B0025 de laboratorio de cuatro créditos, en tensión con tres en CIDU",
+          "contentHash": "sha256:e84c0e454cc37afe696bce3e7eb5b4ea33d80f82635d0a29b9345f021f312eb9"
+        },
+        {
+          "authority": "Bedelía de Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/images/2026/Marzo/HORARIOS_IMPAR_2026_V3_06-03-2026_para_web.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "confirma GL002 vigente en 2026; no extrapola una secuencia completa",
+          "contentHash": "sha256:4b12391a8fadf0ad3a50389b04e120090f655ce650a105127d39629cdc3c7696"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/media/pdf/planes-estudio/lic-geologia.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "grilla semestral antigua descartada por versión",
+          "contentHash": "sha256:fd809c032d24eb9a718255f5e41ae16a8e78906762c21f9494dd9f43c842bffe"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/geologia-2018-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-geologia-2018.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "Revisar al publicarse una guía posterior del CIDU/Comisión/Instituto que distribuya materias de los semestres 2–8, una edición de ingreso más reciente con equivalencias técnicas o una aclaración oficial sobre la diferencia de 3/4 créditos del Laboratorio de Física I."
+      },
+      "conflictNotes": [
+        "La fuente 2025 sólo recomienda el primer semestre; los siete posteriores no se inventan y el recorrido no se declara completo.",
+        "CIDU 2025 recomienda Laboratorio de Física I con 3 créditos, mientras la versión técnica B0025 de 2025 muestra 4 y BG833 de 3 termina en 2024. Se conserva una identidad sólo-fuente de 3 sin equivalencia automática.",
+        "B01 corresponde a la recomendación y oferta 2025, pero Bedelías lo marca hasta 2025; B09 2026 permanece candidata hasta cotejar una edición posterior de la guía o equivalencia expresa.",
+        "EFI es un cupo genérico sin código ni carga publicada en la guía; no equivale a ninguna de las EFI de Bedelías por similitud.",
+        "Sólo cinco códigos se cotejan con el primer semestre; las otras 215 identidades técnicas siguen candidatas recuperables fuera del catálogo normal."
+      ]
     }
   ]
 }

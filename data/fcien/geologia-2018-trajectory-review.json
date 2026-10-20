@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fcien-licenciatura-en-geologia-2018",
+  "auditIdentity": "licenciatura en geologia:2018",
+  "reviewedAt": "2026-10-20",
+  "publication": {
+    "planYear": "2018",
+    "minimumCredits": 360,
+    "durationMonths": 48,
+    "commonCredits": 210,
+    "orientationCredits": 140,
+    "transversalCredits": 10,
+    "finalWorkCredits": 35,
+    "trajectoryEffectiveAt": "CIDU 2025",
+    "coverage": "partial-first-semester",
+    "completeDegreeSequence": false
+  },
+  "sources": [
+    {"id":"cidu-2025","url":"https://eva.fcien.udelar.edu.uy/pluginfile.php/189471/mod_resource/content/2/CIDU%20Licenciatura%20en%20Geolog%C3%ADa%202025.pdf","authority":"Comisión de Carrera e Instituto de Ciencias Geológicas, Facultad de Ciencias, Udelar","consultedAt":"2026-10-20","publishedValidity":"presentación de ingreso 2025 para el Plan 2018; sólo recomienda el primer semestre","role":"siete filas recomendadas para el primer semestre, incluidas una EFI sin carga definida"},
+    {"id":"student-guide-2019","url":"https://eva.fcien.udelar.edu.uy/pluginfile.php/1953/mod_resource/content/1/Gu%C3%ADa%20del%20Estudiante.pdf","authority":"Guía del Estudiante de Geología aprobada por Comisión de Carrera, Res. 6 del Acta 8, 29/05/2019","consultedAt":"2026-10-20","publishedValidity":"edición 2019 de la Guía del Plan 2018; no sustituye la recomendación de ingreso 2025","role":"ejemplos por tramo y área, sin grilla ordinal completa"},
+    {"id":"plan-2018","url":"https://www.fcien.edu.uy/images/pdf/planes-estudio/Plan2018_Geologia.pdf","authority":"Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial 05/01/2018","consultedAt":"2026-10-20","publishedValidity":"Plan aprobado en 2017 y publicado en 2018","role":"título, cuatro años, 360 créditos, mínimos y flexibilidad; no ubica cursos por semestre"},
+    {"id":"colibri-record","url":"https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24563?mode=full","authority":"Repositorio Colibrí, Udelar","consultedAt":"2026-10-20","publishedValidity":"registro de Plan 2018, carrera 245 y plan 1274","role":"versión del plan; no incorpora grilla ordinal"},
+    {"id":"impo-plan","url":"https://www.impo.com.uy/diariooficial/2018/01/05/avisos.pdf","authority":"Universidad de la República; Diario Oficial/IMPO","consultedAt":"2026-10-20","publishedValidity":"publicación 05/01/2018 del Plan aprobado","role":"contraste normativo independiente de EVA"},
+    {"id":"faculty-current","url":"https://fc-si-portal.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geologia/2336-licenciatura-en-geologia-2","authority":"Facultad de Ciencias, Udelar","consultedAt":"2026-10-20","publishedValidity":"ficha vigente al consultar en 2026","role":"360 créditos, cuatro años, cuatro áreas y orientación individual"},
+    {"id":"faculty-2025-schedule","url":"https://www.fcien.edu.uy/images/2025/Marzo/2025-03-05_HORARIOS_2025_IMPAR.pdf","authority":"Bedelía de Facultad de Ciencias, Udelar","consultedAt":"2026-10-20","publishedValidity":"oferta del semestre impar 2025, no malla permanente","role":"códigos técnicos inequívocos de cinco recomendaciones; señala versión B0025 de laboratorio de cuatro créditos, en tensión con tres en CIDU"},
+    {"id":"faculty-2026-schedule","url":"https://www.fcien.edu.uy/images/2026/Marzo/HORARIOS_IMPAR_2026_V3_06-03-2026_para_web.pdf","authority":"Bedelía de Facultad de Ciencias, Udelar","consultedAt":"2026-10-20","publishedValidity":"oferta del semestre impar 2026, no malla permanente","role":"confirma GL002 vigente en 2026; no extrapola una secuencia completa"},
+    {"id":"historical-2008","url":"https://www.fcien.edu.uy/media/pdf/planes-estudio/lic-geologia.pdf","authority":"Facultad de Ciencias, Udelar","consultedAt":"2026-10-20","publishedValidity":"plan histórico anterior, no aplicable al Plan 2018","role":"grilla semestral antigua descartada por versión"}
+  ],
+  "trajectories": [{
+    "id": "trayectoria-individual",
+    "label": "Guía de ingreso 2025 · parcial",
+    "description": "Guía institucional parcial de ingreso 2025: sólo recomienda opciones del primer semestre. No es una malla completa de ocho semestres ni una secuencia obligatoria; el resto se organiza con la Comisión de Carrera. Los cursos sin código inequívoco conservan identidad de fuente y las variantes técnicas no se equiparan automáticamente. La orientación personal no es una mención certificada.",
+    "periods": [
+      {"label":"Primer semestre sugerido (2025)","courseIds":["GL002","FI252","geologia-laboratorio-fisica-i-cidu-2025","MA400","BG1","B01","geologia-efi-cidu-2025"]}
+    ]
+  }],
+  "catalogMatches": [
+    {"sourceCourseId":"GL002","officialLabel":"Geología General I","bedeliasName":"GEOLOGÍA GENERAL I","credits":12,"requirementId":"common-scientific-basic","period":"Primer semestre sugerido (2025)","identityBasis":"CIDU 2025 página 24; horario FCIEN 2025 código GL002 para Geología"},
+    {"sourceCourseId":"FI252","officialLabel":"Física 1 (Biogeociencias)","bedeliasName":"FÍSICA 1 (BIOGEOCIENCIAS) (2017-","credits":12,"requirementId":"common-scientific-basic","period":"Primer semestre sugerido (2025)","identityBasis":"CIDU 2025 página 24; horario FCIEN 2025 código FI252 para Biogeociencias"},
+    {"sourceCourseId":"MA400","officialLabel":"Matemática 1","bedeliasName":"MATEMÁTICA 1 (2017-","credits":12,"requirementId":"common-scientific-basic","period":"Primer semestre sugerido (2025)","identityBasis":"CIDU 2025 página 24; horario FCIEN 2025 código MA400"},
+    {"sourceCourseId":"BG1","officialLabel":"Química General","bedeliasName":"QUÍMICA I/QUÍMICA GENERAL (2013-","credits":10,"requirementId":"common-scientific-basic","period":"Primer semestre sugerido (2025)","identityBasis":"CIDU 2025 página 24; horario FCIEN 2025 código BG1"},
+    {"sourceCourseId":"B01","officialLabel":"Alfabetización en Información I","bedeliasName":"ALFABETIZACIÓN EN INFORMACIÓN I (TC-RCYFG) (2015-2025)","credits":1,"requirementId":"scientific-reflection-general","period":"Primer semestre sugerido (2025)","identityBasis":"CIDU 2025 página 24; horario FCIEN 2025 código B01; versión terminada en 2025, no se equipara a B09 2026"}
+  ],
+  "sourceOnlyRows": [
+    {"identityKey":"geologia-laboratorio-fisica-i-cidu-2025","officialLabel":"Laboratorio de Física I (guía de ingreso 2025)","period":"Primer semestre sugerido (2025)","requirementId":"common-scientific-basic","credits":3,"creditsPublished":true,"identityReservation":"CIDU 2025 publica tres créditos, pero B0025 de 2025 registra cuatro; no asignar ese código ni el BG833 terminado en 2024."},
+    {"identityKey":"geologia-efi-cidu-2025","officialLabel":"Espacio de Formación Integral (opción de ingreso)","period":"Primer semestre sugerido (2025)","requirementId":"scientific-reflection-general","credits":0,"creditsPublished":false,"identityReservation":"La guía sólo dice EFI y no fija programa, código ni créditos; no equivale a todas las EFI técnicas acumuladas."}
+  ],
+  "sourcePortions": {
+    "cidu-2025": {"planYear":"2018","initialRows":[["Geología General I",12],["Física I",12],["Laboratorio de Física I",3],["Matemática I",12],["Química General",10],["Alfabetización en Información I",1],["EFI",null]],"period":"primer semestre","laterCoursePeriodRows":[],"guidanceKind":"pueden cursar, no obligación","page":24},
+    "student-guide-2019": {"approvedBy":"Comisión de Carrera, Acta 8, Resolución 6, 29/05/2019","planYear":"2018","examplesBy":"tramo y área","ordinalCoursePeriodRows":[],"specificYearMention":"Paleontología A y B en segundo año, sin grilla integral"},
+    "plan-2018": {"minimumCredits":360,"durationYears":4,"commonCredits":210,"orientationCredits":140,"transversalCredits":10,"finalWorkCredits":35,"individualOrientation":true,"ordinalCoursePeriodRows":[]},
+    "colibri-record": {"careerCode":"245","planCode":"1274","planYear":"2018","ordinalCoursePeriodRows":[]},
+    "impo-plan": {"publishedAt":"2018-01-05","planYear":"2018","ordinalCoursePeriodRows":[]},
+    "faculty-current": {"minimumCredits":360,"durationYears":4,"commonCredits":210,"orientationIndividual":true,"ordinalCoursePeriodRows":[]},
+    "faculty-2025-schedule": {"publishedCodes":{"Geología General I":"GL002","Física 1 (Biogeociencias)":"FI252","Matemática 1":"MA400","Química General":"BG1","Alfabetización en Información I":"B01","Laboratorio de Física I":"B0025"},"laboratoryB0025CreditsInTechnicalComposition":4,"isCurriculumGrid":false},
+    "faculty-2026-schedule": {"publishedCourse":"GL002 Geología General I","isCurriculumGrid":false},
+    "historical-2008": {"hasSemesterGrid":true,"applicableToPlan2018":false}
+  },
+  "bedeliasComparison": {"snapshotContentHash":"0decf95fe6defc3ea05bf19aaa56f9cee1d1d925657d9e89014700fec5f50d85","snapshotDistinctCourseRecords":205,"compositionAppearances":220},
+  "trajectoryConclusion": {"state":"official-trajectory-reproduced","partial":true,"reason":"La presentación institucional CIDU 2025 publica siete recomendaciones del primer semestre del Plan 2018. La Guía 2019 aprobada por Comisión y el Plan ofrecen ejemplos por área, pero no una secuencia completa; la página vigente confirma estructura flexible. Se reproduce sólo el primer semestre, sin trasladar la grilla del Plan histórico 2008 ni la oferta anual a períodos posteriores.","reviewTrigger":"Revisar al publicarse una guía posterior del CIDU/Comisión/Instituto que distribuya materias de los semestres 2–8, una edición de ingreso más reciente con equivalencias técnicas o una aclaración oficial sobre la diferencia de 3/4 créditos del Laboratorio de Física I."},
+  "conflicts": [
+    {"field":"partialSequence","resolution":"La fuente 2025 sólo recomienda el primer semestre; los siete posteriores no se inventan y el recorrido no se declara completo."},
+    {"field":"laboratoryLoad","resolution":"CIDU 2025 recomienda Laboratorio de Física I con 3 créditos, mientras la versión técnica B0025 de 2025 muestra 4 y BG833 de 3 termina en 2024. Se conserva una identidad sólo-fuente de 3 sin equivalencia automática."},
+    {"field":"alfabetizacionVersion","resolution":"B01 corresponde a la recomendación y oferta 2025, pero Bedelías lo marca hasta 2025; B09 2026 permanece candidata hasta cotejar una edición posterior de la guía o equivalencia expresa."},
+    {"field":"efiIdentity","resolution":"EFI es un cupo genérico sin código ni carga publicada en la guía; no equivale a ninguna de las EFI de Bedelías por similitud."},
+    {"field":"catalog","resolution":"Sólo cinco códigos se cotejan con el primer semestre; las otras 215 identidades técnicas siguen candidatas recuperables fuera del catálogo normal."}
+  ],
+  "projectionBaseline": {"existingCourseRecords":221,"existingIdentityLoadHash":"sha256:10b1125b8fa50e371a1421033d5ad288ddef2c07cd7b5e580593aa6bfb67c694","rulesHash":"sha256:9e680a3829f6db5b3be8bc8cb83cb66dbc5d1ec9baed994f075d24d836294826"},
+  "fingerprint": {"algorithm":"sha256 of JSON.stringify(sourcePortions), UTF-8","value":"sha256:91278ffd071602955a2d09ecbddfcac68406ece81d479345bd954b2d715c5022"},
+  "regeneration": {"command":"node scripts/build-fcien-geologia-2018.mjs","networkRequired":false,"rawFilesRequired":false}
+}

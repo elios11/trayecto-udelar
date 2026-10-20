@@ -321,7 +321,7 @@ export const extractedAcademicPlanRegistrations = {
   "bedelias-fcien-licenciatura-en-geologia-2018": {
     load: () => import("./bedelias-generated/bedelias-fcien-licenciatura-en-geologia-2018.json"),
     pathwayIds: ["trayectoria-individual"],
-    pathwayLabel: "Trayectoria",
+    pathwayLabel: "Guía de ingreso 2025 · parcial",
     minCredits: 360,
   },
   "bedelias-fcien-licenciatura-en-matematica-2014": {
