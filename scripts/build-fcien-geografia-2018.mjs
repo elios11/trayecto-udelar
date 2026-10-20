@@ -47,6 +47,14 @@ export function validateGeographySource(source, snapshot) {
   assert.equal(source.scope.technicalCourseIdentitiesPromoted, 0);
   assert.equal(source.sourcePortions["historical-plan-2003"].applicableToPlan2018, false);
   assert.equal(source.sourcePortions["isolated-programs"].planCode, "1273");
+  const regulation = source.sourcePortions["eva-reglamento-2021"];
+  assert.deepEqual(regulation.suggestedSemesterTables.map(({ number }) => number), [2, 3]);
+  assert.equal(regulation.regularCoursesTable, 4);
+  assert.deepEqual(regulation.creditDistribution, { basic: 220, optional: 80, eligible: 20, extension: 10, thesis: 30, total: 360 });
+  assert.deepEqual(regulation.plan2018ApprovedDistribution, { basic: 220, optional: 90, eligible: 0, extension: 10, thesis: 40, total: 360 });
+  assert.equal(regulation.approvalResolutionVerified, false);
+  assert.equal(regulation.visualTablesVerified, false);
+  assert.equal(regulation.usedForCurriculumProjection, false);
   for (const entry of source.sources) {
     assert.ok(entry.consultedAt <= source.reviewedAt);
     assert.ok(entry.authority && entry.publishedValidity && entry.role);
@@ -97,7 +105,7 @@ export async function buildGeographyReview() {
   const audit = registry.audits.find(({ identity }) => identity === source.auditIdentity);
   assert.ok(audit, "Falta auditoría previa: no se reconstruye el plan");
   audit.reviewedAt = source.reviewedAt;
-  audit.scope = "vigencia, aprobación, título, sede, duración, mínimos, optativas, extensión, tesina y revisión de fuentes institucionales de trayectoria sin grilla ordinal demostrada";
+  audit.scope = "vigencia, aprobación, título, sede, duración, mínimos, optativas, extensión, tesina y contraste del reglamento EVA con grillas no adoptadas y distribución contradictoria";
   Object.assign(audit.conclusion, {
     trajectoryStatus: source.trajectoryConclusion.state,
     trajectorySourceDataPath: sourceDataPath,
@@ -114,7 +122,7 @@ export async function buildGeographyReview() {
   audit.sources = [...sources.values()];
   audit.anomalies = audit.anomalies.filter(({ field }) => field !== "trajectory");
   audit.anomalies.push({ field: "trajectory", resolution: source.trajectoryConclusion.reason });
-  audit.uiNotice = "Plan 2018 flexible de cuatro años y 360 créditos en Montevideo. No hay una grilla oficial curso-semestre cotejada: el orden visible es un recorrido orientativo generado por Trayecto, no una trayectoria institucional. Cumplí los cinco mínimos por 220 créditos, 90 optativos, 10 de extensión y la tesina de 40; la Comisión debe avalar su propuesta y verificar los mínimos previamente.";
+  audit.uiNotice = "Plan 2018 flexible de cuatro años y 360 créditos en Montevideo. Una guía semestral publicada en EVA tiene vigencia sin confirmar y contradice los créditos del Plan aprobado; el orden visible sigue siendo un recorrido orientativo generado por Trayecto, no una trayectoria institucional validada. Cumplí los cinco mínimos por 220 créditos, 90 optativos, 10 de extensión y la tesina de 40; la Comisión debe avalar su propuesta y verificar los mínimos previamente.";
   audit.remainingWork = source.trajectoryConclusion.reviewTrigger;
   registry.contentHash = officialAuditRegistryHash(registry);
   await writeJsonIfChanged(auditPath, registry);
@@ -133,7 +141,9 @@ export async function buildGeographyReview() {
       reason: source.trajectoryConclusion.reason, reviewTrigger: source.trajectoryConclusion.reviewTrigger,
     },
     conflictNotes: [
-      "El Plan 2018 describe cinco áreas y trayectorias individuales, no ubica unidades en semestres ordinales; sus cuatro años no autorizan una grilla de ocho semestres.",
+      "El Plan 2018 aprobado describe cinco áreas y trayectorias individuales, sin ubicar unidades en semestres ordinales; sus cuatro años no autorizan inferir una grilla de ocho semestres.",
+      "El PDF de reglamentación alojado en EVA contiene tres trayectorias sugeridas en los Cuadros 2–3 y cursos regulares en el Cuadro 4, pero no se verificó resolución ni vigencia; la descarga y la captura visual fallaron.",
+      "El PDF EVA propone 220 básicos + 80 optativos + 20 elegibles + 10 extensión + 30 tesina, incompatible con los 220 + 90 + 10 + 40 del Plan aprobado. No se modifican mínimos ni se adoptan semestres sin aclaración oficial.",
       "La grilla semestral del Plan 2003 y los anuarios anteriores no se trasladan a 2018 por semejanza nominal.",
       "Un programa GF075 del Plan 2018 valida un curso aislado, pero no la secuencia ni las 167 apariciones técnicas; no se promueven candidatas en esta auditoría de trayectoria.",
       "El rango 10–15 de actividades en la prosa y el mínimo de 10 del cuadro se conservan como anomalía; no se cambia la regla operativa.",
@@ -164,7 +174,7 @@ export async function buildGeographyReview() {
     if (generated !== previous) await replaceFileAtomically(target, generated.replace(/\r?\n/g, "\r\n"));
   }
   validateGeographyProjection(source, await readJson(`app/data/bedelias-generated/${source.planId}.json`), inventory.plans.find(({ planId }) => planId === source.planId));
-  console.log("D03bb regenerado sin red: research-pending, cero períodos oficiales inferidos y 167 apariciones candidatas preservadas.");
+  console.log("D03bd regenerado sin red: reglamento EVA contradictorio sin adopción comprobada; research-pending y 167 candidatas preservadas.");
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await buildGeographyReview();

@@ -31,6 +31,21 @@ test("las áreas, programas aislados y el Plan 2003 no se convierten en semestre
   assert.ok(inventory.pendingQueue.plans.some(({ planId }) => planId === source.planId));
 });
 
+test("el reglamento EVA contradictorio no sustituye el Plan aprobado ni promueve la grilla", () => {
+  const regulation = source.sourcePortions["eva-reglamento-2021"];
+  assert.deepEqual(regulation.suggestedSemesterTables.map(({ number }) => number), [2, 3]);
+  assert.equal(regulation.regularCoursesTable, 4);
+  assert.equal(regulation.approvalResolutionVerified, false);
+  assert.equal(regulation.usedForCurriculumProjection, false);
+  assert.equal(regulation.creditDistribution.optional + regulation.creditDistribution.eligible, 100);
+  assert.equal(regulation.plan2018ApprovedDistribution.optional, 90);
+  assert.equal(regulation.creditDistribution.thesis, 30);
+  assert.equal(projection.creditStructure.credentials[0].nodeRequirements.find(({ nodeId }) => nodeId === "thesis").minCredits, 40);
+  assert.equal(entry.evidence.ordinalCoursePeriodRows, 0);
+  const review = reviews.reviews.find(({ planId }) => planId === source.planId);
+  assert.ok(review.conflictNotes.some((note) => /220 básicos.*80 optativos.*20 elegibles/.test(note)));
+});
+
 test("conserva título, mínimos, optativas, extensión, tesina y validación humana", () => {
   const audit = registry.audits.find(({ identity }) => identity === source.auditIdentity);
   assert.equal(audit.status, "official-evidence-complete");

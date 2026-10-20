@@ -19,3 +19,21 @@ Reabrir la auditoría D03bb desde `main` `adc41ad` por un hallazgo institucional
 ## Entrega
 
 Documentar hallazgo, decisión y límites aquí y en la auditoría. Dos regeneraciones idénticas, pruebas focales, `npm test`, `npm run lint`, `git diff --check`; commit enfocado en este worktree. No integrar, pushear ni publicar desde el nodo.
+
+## Resultado de D03bd — 20/10/2026
+
+**Continúa `research-pending` y no se cambian los mínimos ni la trayectoria visible.** El [PDF alojado en EVA FCIEN](https://eva.fcien.udelar.edu.uy/pluginfile.php/60567/mod_resource/content/3/Reglamento%20Licenciatura%20en%20Geografia.pdf) está titulado «Reglamentación del Plan de Estudios 2018» y su nombre indexado menciona `25marzo2021.docx`. El texto indexado identifica el Cuadro 2 como trayectoria ambiental por semestre, el Cuadro 3 como trayectorias con énfasis en tecnologías de la información y socioespacial, y el Cuadro 4 como elenco de cursos regulares. Sugiere cursar elegibles desde el quinto semestre. No se localizaron en la versión indexada resolución de aprobación, firma o constancia de vigencia. Las búsquedas delimitadas en FCIEN, Departamento, Colibrí, Udelar e IMPO no aportaron aprobación independiente ni modificación del Plan.
+
+El mismo PDF distribuye 360 créditos en 220 básicos, **80 optativos, 20 elegibles**, 10 de extensión y **30 de tesina**; el [Plan 2018 aprobado](https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24562) y su publicación oficial en IMPO sostienen 220, **90 optativos**, 10 de extensión y **40 de tesina**. El conflicto también afecta la condición para iniciar la tesina: el PDF EVA menciona 200 créditos básicos validados, frente a todos los mínimos por área del Plan. Un recurso en EVA no puede por sí solo modificar los requisitos aprobados por CDC. Tampoco puede darse por adoptada su guía semestral sin aclarar versión y autoridad. Se conserva en `data/fcien/geografia-2018-trajectory-review.json` el contraste normalizado y su huella SHA-256, como evidencia recuperable pero no utilizada para promover candidatas o períodos.
+
+También se verificó la [ruta actual del recurso EVA](https://eva.fcien.udelar.edu.uy/mod/resource/view.php?id=40307&redirect=1), que entrega el mismo documento indexado, y la [copia del Plan aprobada que sirve FCIEN](https://www.fcien.edu.uy/images/Plan_de_estudios_-_Lic_Geograf%C3%ADa.pdf), con resoluciones identificables de Claustro, Consejo y CDC. La disponibilidad reciente del recurso EVA no acredita por sí misma la adopción del texto ni modifica esa jerarquía.
+
+La inspección visual pedida **quedó pendiente**: la descarga local del PDF fue impedida por la red del entorno y las capturas del PDF indexado devolvieron `cache miss`. Por eso no se transcribieron filas de los cuadros ni sus notas, ni se afirma que se hayan verificado visualmente. Condición concreta de reanudación: obtener de Comisión de Carrera/Consejo FCIEN/DG Jurídica resolución y versión vigente que aclaren la distribución de créditos; recuperar y revisar visualmente los Cuadros 2–4; cotejar identidad, carga y alcance antes de reemplazar el recorrido generado. Una declaración oficial expresa de que no hay guía común también resolvería el estado de trayectoria.
+
+La fuente no anuncia una futura publicación curricular ni una implementación territorial parcial; no corresponde una entrada en `docs/carreras-a-actualizar.md`. El expediente queda en la cola de investigación del inventario. La regeneración offline se ejecuta con `node scripts/build-fcien-geografia-2018.mjs`; no requiere red ni PDF crudo. Esta auditoría no incluye Geología.
+
+## Validación
+
+- Dos ejecuciones de `node scripts/build-fcien-geografia-2018.mjs` produjeron el mismo diff byte a byte (hash Git `60c34cf3298e38dbc28889c4761d7e1aa8921c2d`).
+- Pruebas focales: 34/34. Suite completa: `npm test` 1110/1110. El primer intento de build en sandbox falló por `spawn EPERM` de Vite; el reintento autorizado pasó.
+- `npm run lint` y `git diff --check`: pasan. No hubo validación visual del PDF ni prueba de interfaz en navegador.

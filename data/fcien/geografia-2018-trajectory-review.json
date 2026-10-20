@@ -29,14 +29,16 @@
   },
   "trajectoryConclusion": {
     "state": "research-pending",
-    "reason": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia.",
-    "reviewTrigger": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado.",
+    "reason": "El PDF de reglamentación alojado en EVA contiene tres trayectorias sugeridas por semestre y un elenco de cursos regulares, pero no se encontró una resolución de aprobación ni confirmación independiente de vigencia. Su distribución 220+80+20+10+30 contradice el Plan 2018 aprobado 220+90+10+40, incluso para la tesina y la elegibilidad. Por ello las tablas no se atribuyen todavía a una guía institucional adoptada ni sustituyen los mínimos normativos. La tabla del Plan 2003 tampoco se reutiliza.",
+    "reviewTrigger": "Obtener de Comisión de Carrera, Consejo FCIEN o DG Jurídica la resolución y versión vigente de la reglamentación alojada en EVA, aclarando la discrepancia 220+80+20+10+30 frente a 220+90+10+40; entonces inspeccionar visualmente los Cuadros 2–4, cotejar cada identidad/carga con el Plan 2018 y Bedelías, y sólo después reproducir semestres. Una confirmación oficial expresa de ausencia de guía también permite cerrar la investigación.",
     "doesNotAuthorize": [
       "convertir los cinco bloques por área de Bedelías en semestres ordinales",
       "adoptar la tabla de materias del Plan 2003 o los anuarios históricos",
       "deducir períodos desde horarios, frecuencia impar/par o programas individuales",
       "promover candidatas o fusionar códigos por parecido del nombre",
       "declarar ausencia institucional por silencio o por un enlace no recuperado",
+      "adoptar los Cuadros 2–4 de un PDF EVA sin resolución ni versión vigente confirmadas",
+      "reemplazar los mínimos del Plan aprobado por los 80 optativos, 20 elegibles y 30 de tesina del PDF EVA",
       "presentar énfasis personales como menciones certificadas"
     ]
   },
@@ -105,6 +107,14 @@
       "consultedAt": "2026-10-20",
       "publishedValidity": "Plan 2003 anterior, expresamente reemplazado por el Plan 2018",
       "role": "tabla semestral histórica sólo para descartar una falsa correspondencia"
+    },
+    {
+      "id": "eva-reglamento-2021",
+      "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/60567/mod_resource/content/3/Reglamento%20Licenciatura%20en%20Geografia.pdf",
+      "authority": "EVA de Facultad de Ciencias, Udelar; autoría/aprobación del PDF no identificadas",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "archivo titulado 25marzo2021.docx; sin resolución, firma ni vigencia demostradas en el texto indexado",
+      "role": "Cuadros 2 y 3: tres trayectorias sugeridas por semestre; Cuadro 4: cursos regulares. Conflicto material de mínimos con el Plan aprobado; evidencia no adoptada para proyección"
     }
   ],
   "sourcePortions": {
@@ -127,12 +137,29 @@
     "geography-department": {"publishedSections": ["Introducción", "Organigrama", "Líneas de investigación", "Autoridades", "Contacto"], "ordinalCoursePeriodRows": []},
     "udelar-career": {"durationMonths": 48, "minimumCredits": 360, "service": "Facultad de Ciencias", "ordinalCoursePeriodRows": []},
     "isolated-programs": {"exampleCode": "GF075", "exampleTitle": "Taller de Geografía Política 1", "issued": "2023", "planCode": "1273", "ordinalCoursePeriodRows": [], "note": "Programa de curso aislado; no valida la composición completa ni la secuencia."},
-    "historical-plan-2003": {"planYear": "2003", "hasSemesterTable": true, "applicableToPlan2018": false}
+    "historical-plan-2003": {"planYear": "2003", "hasSemesterTable": true, "applicableToPlan2018": false},
+    "eva-reglamento-2021": {
+      "documentTitle": "Reglamentación del Plan de Estudios 2018",
+      "indexedFilename": "Reglamento Licenciatura en Geografía 25marzo2021.docx",
+      "pageCount": 12,
+      "suggestedSemesterTables": [
+        {"number": 2, "emphasis": "ambiental"},
+        {"number": 3, "emphases": ["tecnologías de la información", "socio espacial"]}
+      ],
+      "regularCoursesTable": 4,
+      "creditDistribution": {"basic": 220, "optional": 80, "eligible": 20, "extension": 10, "thesis": 30, "total": 360},
+      "plan2018ApprovedDistribution": {"basic": 220, "optional": 90, "eligible": 0, "extension": 10, "thesis": 40, "total": 360},
+      "approvalResolutionVerified": false,
+      "visualTablesVerified": false,
+      "downloadObservation": "El texto indexado permite verificar títulos, número de cuadros y distribución; el PDF directo falló al descargar y el servicio de capturas devolvió cache miss. No se transcriben filas nominales ni notas visuales sin inspección.",
+      "usedForCurriculumProjection": false
+    }
   },
   "researchLog": [
     {"authority": "FCIEN, Departamento y Udelar", "result": "Fichas vigentes con flexibilidad, mínimos y sede; sin publicación curso-período para el Plan 2018."},
     {"authority": "Colibrí, CSE e IMPO", "result": "Plan aprobado recuperado en Colibrí e IMPO. Programas individuales no equivalen a malla; búsquedas delimitadas no produjeron guía vigente."},
-    {"authority": "Biblioteca FCIEN", "result": "Anuarios y Plan 2003 contienen grillas de planes anteriores; no se transfieren sus períodos ni materias por semejanza."}
+    {"authority": "Biblioteca FCIEN", "result": "Anuarios y Plan 2003 contienen grillas de planes anteriores; no se transfieren sus períodos ni materias por semejanza."},
+    {"authority": "EVA FCIEN, Consejo FCIEN, Colibrí, Udelar e IMPO", "result": "Se detectó reglamentación con Cuadros 2–4, pero su texto no exhibe resolución de aprobación y contradice el Plan vigente en 80/20/30 frente a 90/0/40. Búsquedas oficiales delimitadas no hallaron aprobación o versión posterior; la descarga y la captura visual fallaron. Pendiente confirmación institucional y cotejo visual, sin promover materias."}
   ],
   "projectionBaseline": {
     "snapshotContentHash": "68130b967454677a7b55c8123ca22d4ff86b42b7d8c33a4ce96abe73ceada5bf",
@@ -144,6 +171,6 @@
     "courseIdentityLoadAuthorityHash": "sha256:a6a3d19472a529c3e1fd6731a9cacb830d6b38a76f1384f1a3cfff58583bd373",
     "rulesHash": "sha256:f1c7d8a0cec9eb2b2478e72b00e6866a59831eeff9eb1442d6ed4201f789ffd6"
   },
-  "fingerprint": {"algorithm": "sha256 of JSON.stringify(sourcePortions), UTF-8", "value": "sha256:f85a9e605430a728fefe108a1d3ad11d645595fe6ef498504eab0e68f4b6575a"},
+  "fingerprint": {"algorithm": "sha256 of JSON.stringify(sourcePortions), UTF-8", "value": "sha256:bf4bd542de0df963ce7f7d4fb085552006bf8021911db416aeb2d01a3c668131"},
   "regeneration": {"command": "node scripts/build-fcien-geografia-2018.mjs", "networkRequired": false, "rawFilesRequired": false}
 }

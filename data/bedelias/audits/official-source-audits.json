@@ -55259,7 +55259,7 @@
       "planYear": "2018",
       "reviewedAt": "2026-10-20",
       "status": "official-evidence-complete",
-      "scope": "vigencia, aprobación, título, sede, duración, mínimos, optativas, extensión, tesina y revisión de fuentes institucionales de trayectoria sin grilla ordinal demostrada",
+      "scope": "vigencia, aprobación, título, sede, duración, mínimos, optativas, extensión, tesina y contraste del reglamento EVA con grillas no adoptadas y distribución contradictoria",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -55415,8 +55415,8 @@
         ],
         "trajectoryStatus": "research-pending",
         "trajectorySourceDataPath": "data/fcien/geografia-2018-trajectory-review.json",
-        "trajectoryJustification": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia.",
-        "trajectoryReviewTrigger": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado."
+        "trajectoryJustification": "El PDF de reglamentación alojado en EVA contiene tres trayectorias sugeridas por semestre y un elenco de cursos regulares, pero no se encontró una resolución de aprobación ni confirmación independiente de vigencia. Su distribución 220+80+20+10+30 contradice el Plan 2018 aprobado 220+90+10+40, incluso para la tesina y la elegibilidad. Por ello las tablas no se atribuyen todavía a una guía institucional adoptada ni sustituyen los mínimos normativos. La tabla del Plan 2003 tampoco se reutiliza.",
+        "trajectoryReviewTrigger": "Obtener de Comisión de Carrera, Consejo FCIEN o DG Jurídica la resolución y versión vigente de la reglamentación alojada en EVA, aclarando la discrepancia 220+80+20+10+30 frente a 220+90+10+40; entonces inspeccionar visualmente los Cuadros 2–4, cotejar cada identidad/carga con el Plan 2018 y Bedelías, y sólo después reproducir semestres. Una confirmación oficial expresa de ausencia de guía también permite cerrar la investigación."
       },
       "sources": [
         {
@@ -55498,6 +55498,16 @@
           "reviewedAt": "2026-10-20",
           "publishedValidity": "Plan 2003 anterior, expresamente reemplazado por el Plan 2018",
           "contentHash": "sha256:574aedb1614460e0321168724dbf86c067b7f12bc9c6641033ae280cd1c8bfd4"
+        },
+        {
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/60567/mod_resource/content/3/Reglamento%20Licenciatura%20en%20Geografia.pdf",
+          "authority": "EVA de Facultad de Ciencias, Udelar; autoría/aprobación del PDF no identificadas",
+          "supports": [
+            "Cuadros 2 y 3: tres trayectorias sugeridas por semestre; Cuadro 4: cursos regulares. Conflicto material de mínimos con el Plan aprobado; evidencia no adoptada para proyección"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "archivo titulado 25marzo2021.docx; sin resolución, firma ni vigencia demostradas en el texto indexado",
+          "contentHash": "sha256:9efd2c8174fc5158a015d89b63cd5154393f7c239f5a9e5dfe002f86acc0401f"
         }
       ],
       "anomalies": [
@@ -55523,11 +55533,11 @@
         },
         {
           "field": "trajectory",
-          "resolution": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia."
+          "resolution": "El PDF de reglamentación alojado en EVA contiene tres trayectorias sugeridas por semestre y un elenco de cursos regulares, pero no se encontró una resolución de aprobación ni confirmación independiente de vigencia. Su distribución 220+80+20+10+30 contradice el Plan 2018 aprobado 220+90+10+40, incluso para la tesina y la elegibilidad. Por ello las tablas no se atribuyen todavía a una guía institucional adoptada ni sustituyen los mínimos normativos. La tabla del Plan 2003 tampoco se reutiliza."
         }
       ],
-      "uiNotice": "Plan 2018 flexible de cuatro años y 360 créditos en Montevideo. No hay una grilla oficial curso-semestre cotejada: el orden visible es un recorrido orientativo generado por Trayecto, no una trayectoria institucional. Cumplí los cinco mínimos por 220 créditos, 90 optativos, 10 de extensión y la tesina de 40; la Comisión debe avalar su propuesta y verificar los mínimos previamente.",
-      "remainingWork": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado."
+      "uiNotice": "Plan 2018 flexible de cuatro años y 360 créditos en Montevideo. Una guía semestral publicada en EVA tiene vigencia sin confirmar y contradice los créditos del Plan aprobado; el orden visible sigue siendo un recorrido orientativo generado por Trayecto, no una trayectoria institucional validada. Cumplí los cinco mínimos por 220 créditos, 90 optativos, 10 de extensión y la tesina de 40; la Comisión debe avalar su propuesta y verificar los mínimos previamente.",
+      "remainingWork": "Obtener de Comisión de Carrera, Consejo FCIEN o DG Jurídica la resolución y versión vigente de la reglamentación alojada en EVA, aclarando la discrepancia 220+80+20+10+30 frente a 220+90+10+40; entonces inspeccionar visualmente los Cuadros 2–4, cotejar cada identidad/carga con el Plan 2018 y Bedelías, y sólo después reproducir semestres. Una confirmación oficial expresa de ausencia de guía también permite cerrar la investigación."
     },
     {
       "identity": "licenciatura en geologia:2018",
@@ -88358,6 +88368,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:63be4e58243e31541bbf7233616705e7d464f455458d3251a4872ec7127fb3ab",
+  "contentHash": "sha256:9476f83a4715096302edb5f956fd4919b5526a65aee927a4077499dab87d379a",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

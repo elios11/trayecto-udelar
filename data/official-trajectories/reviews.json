@@ -4220,21 +4220,30 @@
           "reviewedAt": "2026-10-20",
           "role": "tabla semestral histórica sólo para descartar una falsa correspondencia",
           "contentHash": "sha256:574aedb1614460e0321168724dbf86c067b7f12bc9c6641033ae280cd1c8bfd4"
+        },
+        {
+          "authority": "EVA de Facultad de Ciencias, Udelar; autoría/aprobación del PDF no identificadas",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/60567/mod_resource/content/3/Reglamento%20Licenciatura%20en%20Geografia.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "Cuadros 2 y 3: tres trayectorias sugeridas por semestre; Cuadro 4: cursos regulares. Conflicto material de mínimos con el Plan aprobado; evidencia no adoptada para proyección",
+          "contentHash": "sha256:9efd2c8174fc5158a015d89b63cd5154393f7c239f5a9e5dfe002f86acc0401f"
         }
       ],
       "evidence": {
         "kind": "insufficient-current-trajectory-evidence",
         "sourceDataPath": "data/fcien/geografia-2018-trajectory-review.json",
         "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-geografia-2018.json",
-        "sourceContentHash": "sha256:f85a9e605430a728fefe108a1d3ad11d645595fe6ef498504eab0e68f4b6575a",
+        "sourceContentHash": "sha256:bf4bd542de0df963ce7f7d4fb085552006bf8021911db416aeb2d01a3c668131",
         "ordinalCoursePeriodRows": 0,
         "promotedCourseCount": 0,
         "candidateRetainedCount": 167,
-        "reason": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia.",
-        "reviewTrigger": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado."
+        "reason": "El PDF de reglamentación alojado en EVA contiene tres trayectorias sugeridas por semestre y un elenco de cursos regulares, pero no se encontró una resolución de aprobación ni confirmación independiente de vigencia. Su distribución 220+80+20+10+30 contradice el Plan 2018 aprobado 220+90+10+40, incluso para la tesina y la elegibilidad. Por ello las tablas no se atribuyen todavía a una guía institucional adoptada ni sustituyen los mínimos normativos. La tabla del Plan 2003 tampoco se reutiliza.",
+        "reviewTrigger": "Obtener de Comisión de Carrera, Consejo FCIEN o DG Jurídica la resolución y versión vigente de la reglamentación alojada en EVA, aclarando la discrepancia 220+80+20+10+30 frente a 220+90+10+40; entonces inspeccionar visualmente los Cuadros 2–4, cotejar cada identidad/carga con el Plan 2018 y Bedelías, y sólo después reproducir semestres. Una confirmación oficial expresa de ausencia de guía también permite cerrar la investigación."
       },
       "conflictNotes": [
-        "El Plan 2018 describe cinco áreas y trayectorias individuales, no ubica unidades en semestres ordinales; sus cuatro años no autorizan una grilla de ocho semestres.",
+        "El Plan 2018 aprobado describe cinco áreas y trayectorias individuales, sin ubicar unidades en semestres ordinales; sus cuatro años no autorizan inferir una grilla de ocho semestres.",
+        "El PDF de reglamentación alojado en EVA contiene tres trayectorias sugeridas en los Cuadros 2–3 y cursos regulares en el Cuadro 4, pero no se verificó resolución ni vigencia; la descarga y la captura visual fallaron.",
+        "El PDF EVA propone 220 básicos + 80 optativos + 20 elegibles + 10 extensión + 30 tesina, incompatible con los 220 + 90 + 10 + 40 del Plan aprobado. No se modifican mínimos ni se adoptan semestres sin aclaración oficial.",
         "La grilla semestral del Plan 2003 y los anuarios anteriores no se trasladan a 2018 por semejanza nominal.",
         "Un programa GF075 del Plan 2018 valida un curso aislado, pero no la secuencia ni las 167 apariciones técnicas; no se promueven candidatas en esta auditoría de trayectoria.",
         "El rango 10–15 de actividades en la prosa y el mínimo de 10 del cuadro se conservan como anomalía; no se cambia la regla operativa.",
