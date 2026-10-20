@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:e6b7cd44e28dfcbdeb56bc59b5748b48710530800060e16fdcc7049407c6dde5",
-    "officialAuditHash": "sha256:b3a35ff9892f70d9328856abadcfddf5474cfd1e793f7932e43f919bf822b312",
-    "reviewedTrajectoriesHash": "sha256:075f20771571f0d5158b9673c7627d1da1b2a6b3602449b03c8f451dfdef036a"
+    "extractedReportHash": "sha256:e89bca8fce01ef8b5b18e2203e8916c85f788af3d643ff80dfc451acaaee254e",
+    "officialAuditHash": "sha256:3bdf1cf4158f7eec0d2710a14b86b8a0cfa2153944cca9ca8dd2ed8c7e9fc1df",
+    "reviewedTrajectoriesHash": "sha256:cd4136584bd87f7e7e0f0dd24d07f6f0b6f0be209a6bcf03cca03d4f6ca7d9fe"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -364,7 +364,7 @@
         "serviceIds": [
           "bedelias-fcien"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia."
       },
       {
         "priority": 2,
@@ -6245,32 +6245,64 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2018",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "Plan aprobado en 2017 y registrado como implementación 2018; ficha FCIEN actualizada febrero 2024",
       "officialSources": [
         {
-          "authority": "Plan de Estudios de la Licenciatura en Geografía, Facultad de Ciencias, Udelar",
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar",
           "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24562/1/PLGEOF_2020.pdf",
-          "role": "aprobaciones; título; cuatro años; 360 créditos; cinco áreas; mínimos; optativas; extensión; tesina; flexibilidad",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-20",
+          "role": "normativa vigente de título, duración, mínimos y trayectoria individual; no contiene grilla curso-período",
+          "contentHash": "sha256:e4d29471a4068f59c72e752b6ad0c26226803e3613105acb3378f78cb40f7c0a"
         },
         {
-          "authority": "Repositorio Colibri, Udelar",
+          "authority": "Repositorio Colibrí, Udelar",
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24562",
-          "role": "Plan 2018; código de carrera 193; código de plan 1273; responsabilidad de Facultad de Ciencias",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-20",
+          "role": "identidad y versión institucional del PDF del plan",
+          "contentHash": "sha256:dc117382b254e55553006daa601f6d758f6b2406c3468dd7dd775ab408865e19"
         },
         {
-          "authority": "Facultad de Ciencias, oferta vigente",
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2018/01/05/avisos.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "copia oficial alternativa del Plan 2018 y cronología de aprobación, sin grilla nominal",
+          "contentHash": "sha256:b6cc37de5dce5191490ae930fe6313fa08970a482e68c5492a61d8be349e3a78"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
           "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geografia",
-          "role": "vigencia; cuatro años; 360 créditos; cinco áreas; trayectoria flexible; tesina; Montevideo",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-20",
+          "role": "cinco áreas, 220 créditos comunes, trayectorias flexibles, tesina, cuatro años y Montevideo; sin guía ordinal",
+          "contentHash": "sha256:5f2fb32dbbac3a2969a36f75e1a0d5f39b433c86490248bdccf8bca3727f2668"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
+          "authority": "Departamento de Geografía, Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/institucional/estructura-academica/unidades/departamento-de-geografia",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste de publicaciones departamentales; presenta organización, laboratorios y contacto, no grilla curricular",
+          "contentHash": "sha256:7cf001683f345d3f2ee8ac87dcd94cb42c9cc3e1768cee6c53b1a100b6abad5a"
+        },
+        {
+          "authority": "Catálogo de carreras, Udelar",
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-geografia",
-          "role": "vigencia; 48 meses; 360 créditos; Facultad de Ciencias; sede",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-20",
+          "role": "48 meses, 360 créditos y Facultad de Ciencias; sin materias y períodos",
+          "contentHash": "sha256:1d0808215cd1cd015aff87a80dadf84ae6517e82792942441170e4f1003e0934"
+        },
+        {
+          "authority": "Comisión de Carrera de Geografía, Facultad de Ciencias, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/36837",
+          "reviewedAt": "2026-10-20",
+          "role": "programa individual con identidad de curso y referencia a trayectoria socioespacial, sin ubicación ordinal en el plan",
+          "contentHash": "sha256:b834b5deefeafaff47921d74044cf925f0c21ab2f5c651e93b10f53feef246af"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/media/pdf/planes-estudio/geo.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "tabla semestral histórica sólo para descartar una falsa correspondencia",
+          "contentHash": "sha256:574aedb1614460e0321168724dbf86c067b7f12bc9c6641033ae280cd1c8bfd4"
         }
       ],
       "scope": {
@@ -6288,18 +6320,22 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en geografia:2018",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-geografia-2018.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fcien/geografia-2018-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-geografia-2018.json",
+        "sourceContentHash": "sha256:f85a9e605430a728fefe108a1d3ad11d645595fe6ef498504eab0e68f4b6575a",
+        "ordinalCoursePeriodRows": 0,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 167,
+        "reason": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia.",
+        "reviewTrigger": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado."
       },
       "conflictNotes": [
-        "trajectoryLabels: El Plan permite trayectorias con énfasis diversos, pero no nombra orientaciones ni define grillas o certificaciones distintas. La UI ofrece una sola trayectoria flexible construida con optativas y tesina.",
-        "extensionRange: El texto indica entre 10 y 15 créditos de prácticas y actividades pertinentes, mientras el cuadro resumen y Bedelías fijan un mínimo operativo de 10. La UI controla el mínimo de 10 y deja cualquier excedente dentro del total de 360.",
-        "thesisPrerequisite: Bedelías no publica una regla automática para GF303 Tesina de Graduación. El Plan exige haber aprobado los mínimos de las cinco áreas y contar con tutor y aval de la Comisión; la UI conserva esa condición como validación manual explícita.",
-        "catalogOverlap: Una misma unidad puede figurar en más de un área u optativa. La UI deduplica coincidencias exactas y acredita según el área seleccionada sin contar dos veces un mismo curso.",
-        "catalogSize: Los 1.314 créditos de 155 registros y las 167 apariciones jerárquicas representan oferta flexible acumulada. El egreso requiere 360 créditos distribuidos según el cuadro oficial y no completar todo el catálogo."
+        "El Plan 2018 describe cinco áreas y trayectorias individuales, no ubica unidades en semestres ordinales; sus cuatro años no autorizan una grilla de ocho semestres.",
+        "La grilla semestral del Plan 2003 y los anuarios anteriores no se trasladan a 2018 por semejanza nominal.",
+        "Un programa GF075 del Plan 2018 valida un curso aislado, pero no la secuencia ni las 167 apariciones técnicas; no se promueven candidatas en esta auditoría de trayectoria.",
+        "El rango 10–15 de actividades en la prosa y el mínimo de 10 del cuadro se conservan como anomalía; no se cambia la regla operativa.",
+        "La flexibilidad individual y la búsqueda sin resultados no son una declaración institucional positiva de ausencia de malla."
       ]
     },
     {
@@ -13817,5 +13853,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:3ec18b2f508786add7ccc16fc21336beb549b2fb56fc4f70c431e2ad10f024b8"
+  "contentHash": "sha256:953cf82b11357adba2bfd5694bf0048746c471ba50d62477f5bf4006c3d4c187"
 }

@@ -55257,9 +55257,9 @@
       "identity": "licenciatura en geografia:2018",
       "career": "LICENCIATURA EN GEOGRAFÍA",
       "planYear": "2018",
-      "reviewedAt": "2026-08-28",
+      "reviewedAt": "2026-10-20",
       "status": "official-evidence-complete",
-      "scope": "vigencia, aprobación, título, sede, duración, créditos, áreas, optativas, extensión, tesina y flexibilidad curricular",
+      "scope": "vigencia, aprobación, título, sede, duración, mínimos, optativas, extensión, tesina y revisión de fuentes institucionales de trayectoria sin grilla ordinal demostrada",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -55373,7 +55373,8 @@
               "minCredits": 40
             }
           ],
-          "manualCompletionValidation": "Aval de la Comisión de Carrera para la propuesta de tesina y verificación previa de los mínimos de las cinco áreas"
+          "manualCompletionValidation": "Aval de la Comisión de Carrera para la propuesta de tesina y verificación previa de los mínimos de las cinco áreas",
+          "sourceDataPath": "data/fcien/geografia-2018-trajectory-review.json"
         }
       },
       "offerings": [
@@ -55411,58 +55412,92 @@
           "Conservar la composición de Bedelías como catálogo por área, deduplicando coincidencias exactas sin exigir todas las alternativas acumuladas.",
           "Exigir el aval de la Comisión para la propuesta de tesina y la validación de los mínimos de área antes de iniciarla.",
           "Mantener la sede completa exclusivamente en Montevideo, sin inferir sedes regionales a partir de cursos acreditables externos."
-        ]
+        ],
+        "trajectoryStatus": "research-pending",
+        "trajectorySourceDataPath": "data/fcien/geografia-2018-trajectory-review.json",
+        "trajectoryJustification": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia.",
+        "trajectoryReviewTrigger": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado."
       },
       "sources": [
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24562/1/PLGEOF_2020.pdf",
-          "authority": "Plan de Estudios de la Licenciatura en Geografía, Facultad de Ciencias, Udelar",
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar",
           "supports": [
-            "aprobaciones",
-            "título",
-            "cuatro años",
-            "360 créditos",
-            "cinco áreas",
-            "mínimos",
-            "optativas",
-            "extensión",
-            "tesina",
-            "flexibilidad"
-          ]
+            "normativa vigente de título, duración, mínimos y trayectoria individual; no contiene grilla curso-período"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Plan aprobado por Claustro 02/06/2017, Consejo FCIEN 26/06/2017 y CDC 12/12/2017; Colibrí lo registra como Plan 2018",
+          "contentHash": "sha256:e4d29471a4068f59c72e752b6ad0c26226803e3613105acb3378f78cb40f7c0a"
         },
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24562",
-          "authority": "Repositorio Colibri, Udelar",
+          "authority": "Repositorio Colibrí, Udelar",
           "supports": [
-            "Plan 2018",
-            "código de carrera 193",
-            "código de plan 1273",
-            "responsabilidad de Facultad de Ciencias"
-          ]
+            "identidad y versión institucional del PDF del plan"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "registro de Plan 2018 consultado en 2026; carrera 193, plan 1273",
+          "contentHash": "sha256:dc117382b254e55553006daa601f6d758f6b2406c3468dd7dd775ab408865e19"
         },
         {
           "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geografia",
-          "authority": "Facultad de Ciencias, oferta vigente",
+          "authority": "Facultad de Ciencias, Udelar",
           "supports": [
-            "vigencia",
-            "cuatro años",
-            "360 créditos",
-            "cinco áreas",
-            "trayectoria flexible",
-            "tesina",
-            "Montevideo"
-          ]
+            "cinco áreas, 220 créditos comunes, trayectorias flexibles, tesina, cuatro años y Montevideo; sin guía ordinal"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "ficha de carrera actualizada febrero 2024, vigente al consultar",
+          "contentHash": "sha256:5f2fb32dbbac3a2969a36f75e1a0d5f39b433c86490248bdccf8bca3727f2668"
         },
         {
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-geografia",
-          "authority": "Catálogo vigente de carreras, Udelar",
+          "authority": "Catálogo de carreras, Udelar",
           "supports": [
-            "vigencia",
-            "48 meses",
-            "360 créditos",
-            "Facultad de Ciencias",
-            "sede"
-          ]
+            "48 meses, 360 créditos y Facultad de Ciencias; sin materias y períodos"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "ficha vigente al consultar en 2026",
+          "contentHash": "sha256:1d0808215cd1cd015aff87a80dadf84ae6517e82792942441170e4f1003e0934"
+        },
+        {
+          "url": "https://www.impo.com.uy/diariooficial/2018/01/05/avisos.pdf",
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+          "supports": [
+            "copia oficial alternativa del Plan 2018 y cronología de aprobación, sin grilla nominal"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Diario Oficial 05/01/2018, publicación de resoluciones de 2017",
+          "contentHash": "sha256:b6cc37de5dce5191490ae930fe6313fa08970a482e68c5492a61d8be349e3a78"
+        },
+        {
+          "url": "https://www.fcien.edu.uy/institucional/estructura-academica/unidades/departamento-de-geografia",
+          "authority": "Departamento de Geografía, Facultad de Ciencias, Udelar",
+          "supports": [
+            "contraste de publicaciones departamentales; presenta organización, laboratorios y contacto, no grilla curricular"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "página institucional vigente al consultar, sin fecha editorial",
+          "contentHash": "sha256:7cf001683f345d3f2ee8ac87dcd94cb42c9cc3e1768cee6c53b1a100b6abad5a"
+        },
+        {
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/36837",
+          "authority": "Comisión de Carrera de Geografía, Facultad de Ciencias, Udelar",
+          "supports": [
+            "programa individual con identidad de curso y referencia a trayectoria socioespacial, sin ubicación ordinal en el plan"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "programa GF075 publicado en 2023 para el Plan 2018; no acredita una grilla integral",
+          "contentHash": "sha256:b834b5deefeafaff47921d74044cf925f0c21ab2f5c651e93b10f53feef246af"
+        },
+        {
+          "url": "https://www.fcien.edu.uy/media/pdf/planes-estudio/geo.pdf",
+          "authority": "Facultad de Ciencias, Udelar",
+          "supports": [
+            "tabla semestral histórica sólo para descartar una falsa correspondencia"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Plan 2003 anterior, expresamente reemplazado por el Plan 2018",
+          "contentHash": "sha256:574aedb1614460e0321168724dbf86c067b7f12bc9c6641033ae280cd1c8bfd4"
         }
       ],
       "anomalies": [
@@ -55485,10 +55520,14 @@
         {
           "field": "catalogSize",
           "resolution": "Los 1.314 créditos de 155 registros y las 167 apariciones jerárquicas representan oferta flexible acumulada. El egreso requiere 360 créditos distribuidos según el cuadro oficial y no completar todo el catálogo."
+        },
+        {
+          "field": "trajectory",
+          "resolution": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia."
         }
       ],
-      "uiNotice": "Plan 2018 flexible de ocho semestres y 360 créditos en Montevideo. Cumplí 220 créditos mínimos por área, 90 optativos, 10 de extensión y la tesina de 40; la Comisión debe avalar la propuesta y los mínimos antes de iniciarla.",
-      "remainingWork": "La Comisión de Carrera determina el énfasis del recorrido, la acreditación por área y la pertinencia de actividades externas, y avala la tesina; la UI conserva esas decisiones como validación académica explícita."
+      "uiNotice": "Plan 2018 flexible de cuatro años y 360 créditos en Montevideo. No hay una grilla oficial curso-semestre cotejada: el orden visible es un recorrido orientativo generado por Trayecto, no una trayectoria institucional. Cumplí los cinco mínimos por 220 créditos, 90 optativos, 10 de extensión y la tesina de 40; la Comisión debe avalar su propuesta y verificar los mínimos previamente.",
+      "remainingWork": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado."
     },
     {
       "identity": "licenciatura en geologia:2018",
@@ -88119,6 +88158,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:b3a35ff9892f70d9328856abadcfddf5474cfd1e793f7932e43f919bf822b312",
+  "contentHash": "sha256:3bdf1cf4158f7eec0d2710a14b86b8a0cfa2153944cca9ca8dd2ed8c7e9fc1df",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

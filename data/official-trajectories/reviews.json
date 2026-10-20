@@ -4149,6 +4149,97 @@
         "FI41 es la versión de Taller II que terminó en 2024; la correspondencia 2025 es FI284.",
         "El PDF estuvo indexado pero su descarga directa falló; quedan por comprobar visualmente las notas al pie y eventuales cambios de la Comisión."
       ]
+    },
+    {
+      "planId": "bedelias-fcien-licenciatura-en-geografia-2018",
+      "state": "research-pending",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "Plan aprobado en 2017 y registrado como implementación 2018; ficha FCIEN actualizada febrero 2024",
+      "projectionMechanism": "official-flexible-structure",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "trayectoria-flexible"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24562/1/PLGEOF_2020.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "normativa vigente de título, duración, mínimos y trayectoria individual; no contiene grilla curso-período",
+          "contentHash": "sha256:e4d29471a4068f59c72e752b6ad0c26226803e3613105acb3378f78cb40f7c0a"
+        },
+        {
+          "authority": "Repositorio Colibrí, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24562",
+          "reviewedAt": "2026-10-20",
+          "role": "identidad y versión institucional del PDF del plan",
+          "contentHash": "sha256:dc117382b254e55553006daa601f6d758f6b2406c3468dd7dd775ab408865e19"
+        },
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2018/01/05/avisos.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "copia oficial alternativa del Plan 2018 y cronología de aprobación, sin grilla nominal",
+          "contentHash": "sha256:b6cc37de5dce5191490ae930fe6313fa08970a482e68c5492a61d8be349e3a78"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-geografia",
+          "reviewedAt": "2026-10-20",
+          "role": "cinco áreas, 220 créditos comunes, trayectorias flexibles, tesina, cuatro años y Montevideo; sin guía ordinal",
+          "contentHash": "sha256:5f2fb32dbbac3a2969a36f75e1a0d5f39b433c86490248bdccf8bca3727f2668"
+        },
+        {
+          "authority": "Departamento de Geografía, Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/institucional/estructura-academica/unidades/departamento-de-geografia",
+          "reviewedAt": "2026-10-20",
+          "role": "contraste de publicaciones departamentales; presenta organización, laboratorios y contacto, no grilla curricular",
+          "contentHash": "sha256:7cf001683f345d3f2ee8ac87dcd94cb42c9cc3e1768cee6c53b1a100b6abad5a"
+        },
+        {
+          "authority": "Catálogo de carreras, Udelar",
+          "url": "https://udelar.edu.uy/carrera/licenciatura-en-geografia",
+          "reviewedAt": "2026-10-20",
+          "role": "48 meses, 360 créditos y Facultad de Ciencias; sin materias y períodos",
+          "contentHash": "sha256:1d0808215cd1cd015aff87a80dadf84ae6517e82792942441170e4f1003e0934"
+        },
+        {
+          "authority": "Comisión de Carrera de Geografía, Facultad de Ciencias, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/36837",
+          "reviewedAt": "2026-10-20",
+          "role": "programa individual con identidad de curso y referencia a trayectoria socioespacial, sin ubicación ordinal en el plan",
+          "contentHash": "sha256:b834b5deefeafaff47921d74044cf925f0c21ab2f5c651e93b10f53feef246af"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/media/pdf/planes-estudio/geo.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "tabla semestral histórica sólo para descartar una falsa correspondencia",
+          "contentHash": "sha256:574aedb1614460e0321168724dbf86c067b7f12bc9c6641033ae280cd1c8bfd4"
+        }
+      ],
+      "evidence": {
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fcien/geografia-2018-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-geografia-2018.json",
+        "sourceContentHash": "sha256:f85a9e605430a728fefe108a1d3ad11d645595fe6ef498504eab0e68f4b6575a",
+        "ordinalCoursePeriodRows": 0,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 167,
+        "reason": "El Plan 2018 y la ficha vigente de FCIEN describen trayectorias flexibles individuales y mínimos por área, sin filas nominales curso-semestre. El Departamento no publica una grilla en su página institucional; los programas aislados y el semestre de dictado de cursos particulares no constituyen una trayectoria adoptada. La tabla de materias del Plan 2003 pertenece al plan sustituido. No se obtuvo una guía vigente del Plan 2018 ni una declaración institucional positiva de su ausencia.",
+        "reviewTrigger": "Revisar cuando la Comisión de Carrera, el Departamento de Geografía o FCIEN publique o confirme una malla vigente con filas nominales curso-período para el Plan 2018, o declare expresamente que no publica una trayectoria común. Cotejar códigos, cargas, versiones, vigencia y alcance antes de sustituir el recorrido generado."
+      },
+      "conflictNotes": [
+        "El Plan 2018 describe cinco áreas y trayectorias individuales, no ubica unidades en semestres ordinales; sus cuatro años no autorizan una grilla de ocho semestres.",
+        "La grilla semestral del Plan 2003 y los anuarios anteriores no se trasladan a 2018 por semejanza nominal.",
+        "Un programa GF075 del Plan 2018 valida un curso aislado, pero no la secuencia ni las 167 apariciones técnicas; no se promueven candidatas en esta auditoría de trayectoria.",
+        "El rango 10–15 de actividades en la prosa y el mínimo de 10 del cuadro se conservan como anomalía; no se cambia la regla operativa.",
+        "La flexibilidad individual y la búsqueda sin resultados no son una declaración institucional positiva de ausencia de malla."
+      ]
     }
   ]
 }
