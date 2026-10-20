@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fcien-licenciatura-en-fisica-2019",
+  "auditIdentity": "licenciatura en fisica:2019",
+  "reviewedAt": "2026-10-20",
+  "publication": {
+    "canonicalPlanYear": "2019",
+    "normativePlanLabel": "Licenciatura en Física (2017)",
+    "title": "Licenciado/a en Física",
+    "durationMonths": 48,
+    "minimumCredits": 360,
+    "areaMinimums": {"physics": 110, "mathematics": 70, "research-professional-tools": 60, "other-scientific-technological": 10, "integral-human-social": 18},
+    "flexibleCredits": 92,
+    "integralCreditsWithinHumanSocial": 10,
+    "researchInitiationCreditsWithinAnyArea": 8
+  },
+  "scope": {
+    "territories": ["Montevideo"],
+    "pathwayIds": ["formacion-personalizada"],
+    "singlePlan": true,
+    "singleCredential": true,
+    "sameProgressIdentity": true,
+    "coursePeriodRowsReconciled": [],
+    "regularCourseRowsTranscribed": 28,
+    "technicalCourseIdentitiesPromoted": 0
+  },
+  "trajectoryConclusion": {
+    "state": "research-pending",
+    "reason": "El Plan y el Reglamento vigentes establecen un currículo individual con tutoría y Comisión de Carrera. La página de grado del Instituto enlaza 28 cursos regulares con paridad Impar/Par y frecuencia Anual, no posiciones ordinales ni una trayectoria sugerida de ocho semestres. Sus requisitos por créditos tampoco permiten deducir una grilla. No se recuperó una publicación vigente curso-período ni una afirmación oficial positiva de ausencia; el silencio, el error de Colibrí y el enlace de la Comisión a EVA no prueban que no exista una trayectoria.",
+    "reviewTrigger": "Revisar cuando la Comisión de Carrera, el Instituto de Física o FCIEN publique o confirme una guía vigente con filas nominales curso-período y alcance para el Plan implementado en 2019, o declare expresamente que no publica una trayectoria común. Cotejar versión, cargas, identidades y vigencia antes de sustituir el recorrido generado.",
+    "doesNotAuthorize": [
+      "convertir Impar/Par en semestres ordinales o frecuencia Anual en duración curricular",
+      "deducir períodos desde requisitos por créditos, horarios o programas de cursos",
+      "adoptar los semestres del Anuario 2010 o del Plan de Ciencias Físicas anterior",
+      "convertir el listado de cursos regulares en catálogo verified u oferta futura garantizada",
+      "promover o fusionar códigos de Bedelías por semejanza de nombre",
+      "presentar los perfiles personales como menciones certificadas o crear nuevas sedes",
+      "declarar ausencia documentada a partir de una búsqueda fallida o de la flexibilidad del Plan"
+    ]
+  },
+  "sources": [
+    {
+      "id": "institute-plan-page",
+      "url": "http://info.fisica.edu.uy/fisica-plan-2017/",
+      "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "página de grado vigente al consultar; enlaza Reglamento en ruta 2026/05 y documentos de implementación en ruta 2019/02; no declara fecha editorial",
+      "role": "ruta oficial recuperable al Plan, Reglamento, cursos regulares, requisitos y Comisión; no publica grilla ordinal"
+    },
+    {
+      "id": "institute-plan",
+      "url": "http://info.fisica.edu.uy/wp-content/uploads/2019/02/Plan-de-Estudios-Lic.-Física-1.pdf",
+      "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "Plan rotulado 2017 enlazado por la página vigente; implementación en ruta febrero 2019",
+      "role": "título, duración, mínimos, tutoría, perfiles posibles y contenido no ordinal",
+      "pagesRead": [1, 2, 3, 4, 5],
+      "rawSha256": "5ea02808e55ffe32d31bdd2bd03f24ab4eb63547a143e129ea914c63b9667827"
+    },
+    {
+      "id": "institute-regulation",
+      "url": "http://info.fisica.edu.uy/wp-content/uploads/2026/05/Reglamento-496.pdf",
+      "authority": "Instituto de Física y Dirección General Jurídica, Udelar",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "Resolución CDC 16 de 11/05/2021, DO 27/07/2021; republicación en ruta mayo 2026 idéntica byte a byte a DG Jurídica",
+      "role": "plan individual, 92 créditos flexibles, formación integral e iniciación a investigación; ninguna grilla ordinal",
+      "pagesRead": [1, 2],
+      "rawSha256": "fa2d008a6f24b3071bce1b927080253017c6012a601971f4a7d82307d35d951d"
+    },
+    {
+      "id": "juridica-regulation",
+      "url": "https://dgjuridica.udelar.edu.uy/wp-content/uploads/2021/07/Reglamento-496.pdf",
+      "authority": "Dirección General Jurídica, Udelar",
+      "consultedAt": "2026-10-19",
+      "publishedValidity": "Reglamento CDC 2021 del Plan denominado 2017; copia normativa todavía enlazada por el Instituto en 2026",
+      "role": "contraste de identidad e integridad de la copia republicada en el Instituto",
+      "pagesRead": [1, 2],
+      "rawSha256": "fa2d008a6f24b3071bce1b927080253017c6012a601971f4a7d82307d35d951d"
+    },
+    {
+      "id": "regular-courses",
+      "url": "http://info.fisica.edu.uy/wp-content/uploads/2019/02/Listado-de-cursos-regulares.pdf",
+      "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "enlazado por la página vigente; ruta febrero 2019, sin fecha editorial ni códigos o créditos individuales",
+      "role": "28 filas de cursos por área, paridad y frecuencia; no posiciones de trayectoria ni validación automática de versiones técnicas",
+      "pagesRead": [1],
+      "rawSha256": "2efd223c5482d893ebb4453b9122024064241e5e2649b6e3f738dd54a5a61a4f"
+    },
+    {
+      "id": "course-requirements",
+      "url": "http://info.fisica.edu.uy/wp-content/uploads/2019/02/Requisitos-de-unidades-curriculares.pdf",
+      "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "enlazado por la página vigente; ruta febrero 2019; sin semestres ordinales",
+      "role": "requisitos por créditos de las 28 etiquetas; no permiten deducir períodos ni equivalencias CTE/códigos",
+      "pagesRead": [1],
+      "rawSha256": "43520d32e101ea0e23bd8ecce6882cda6f52887cc2f7b6cdef5d1318cd56e296"
+    },
+    {
+      "id": "colibri-record",
+      "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/25632?mode=full",
+      "authority": "Repositorio Colibrí, Udelar",
+      "consultedAt": "2026-10-19",
+      "publishedValidity": "metadatos Plan 2019, disponible desde 21/10/2020",
+      "role": "identidad institucional 2019, carrera 301 y plan 1385; PDF directo respondió 403, suplido por copia del Instituto e IMPO"
+    },
+    {
+      "id": "impo-plan",
+      "url": "https://www.impo.com.uy/diariooficial/2018/08/03/avisos.pdf",
+      "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+      "consultedAt": "2026-10-19",
+      "publishedValidity": "Diario Oficial 29.998 de 03/08/2018, páginas impresas 84-85; aprobación FCIEN 2017 y CDC 2018",
+      "role": "copia oficial alternativa: cadena de aprobación, 360 créditos y currículo individual, sin grilla ordinal",
+      "pagesRead": [71, 72],
+      "rawSha256": "eb3767d34b0a74c491c9ae74a72815f1607b54c3f00086edc9e5c401eb9f9f7a"
+    },
+    {
+      "id": "fcien-career",
+      "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-fisicas/2334-licenciatura-en-ciencias-fisicas",
+      "authority": "Facultad de Ciencias, Udelar",
+      "consultedAt": "2026-10-19",
+      "publishedValidity": "ficha vigente al consultar, sin fecha explícita de actualización",
+      "role": "cuatro años, 360 créditos, cinco áreas, tutoría desde 180 créditos y Montevideo; sin secuencia nominal"
+    },
+    {
+      "id": "udelar-career",
+      "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica",
+      "authority": "Catálogo de carreras, Udelar",
+      "consultedAt": "2026-10-19",
+      "publishedValidity": "ficha vigente al consultar",
+      "role": "contraste de título, Facultad de Ciencias, cuatro años y 360 créditos; sin grilla"
+    }
+  ],
+  "sourcePortions": {
+    "institute-plan-page": {
+      "heading": "Física Plan 2017",
+      "linkedDocuments": ["Página de la Comisión de Carrera de la Licenciatura en Física", "Plan de Estudios", "Reglamento", "Listado de Cursos Regulares", "Requisitos de Unidades Curriculares", "Programas de la licenciatura"],
+      "commissionUrl": "https://eva.fcien.udelar.edu.uy/course/view.php?id=448#section-1",
+      "ordinalCoursePeriodRows": []
+    },
+    "institute-plan": {
+      "planLabel": "Licenciatura en Física (2017)",
+      "title": "Licenciado/a en Física",
+      "minimumCredits": 360,
+      "durationYears": 4,
+      "tutoringFromCredits": 180,
+      "areaMinimums": [110, 70, 60, 10, 18],
+      "integralWithinHumanSocial": 10,
+      "researchWithinAnyArea": 8,
+      "individualPlanApproval": true,
+      "profileExamplesAreCertifiedMentions": false,
+      "ordinalCoursePeriodRows": []
+    },
+    "institute-regulation": {"resolution": "CDC 16 de 11/05/2021; DO 27/07/2021", "article10": "La Comisión aprueba el plan individual y designa tutores; el estudiante puede solicitar cambios.", "article11": "Los 92 créditos restantes se distribuyen libremente en las áreas, sujetos al plan individual aprobado; no hay máximos de área.", "article12": "Formación integral admite cursos de otros servicios o pasantías sociales/productivas con orientador aprobado.", "article13": "Ocho créditos mínimos de iniciación a investigación mediante unidad específica o propuesta individual aprobada; esta última admite máximo doce y defensa de monografía.", "articles14to17": "La Comisión valida planes anteriores; el cambio no es obligatorio ni una equivalencia automática.", "ordinalCoursePeriodRows": []},
+    "juridica-regulation": {"sameBytesAs": "institute-regulation", "resolution": "CDC 16 de 11/05/2021; DO 27/07/2021"},
+    "regular-courses": {
+      "columns": ["ÁREA TEMÁTICA", "CURSO", "SEMESTRE", "FRECUENCIA"],
+      "semesterValuesMean": "paridad de dictado, no semestre ordinal de cursado",
+      "frequency": "Anual",
+      "codesPublished": false,
+      "creditsPublished": false,
+      "rows": [
+        ["Física", "Física General I", "Impar"],
+        ["Física", "Física General II", "Par"],
+        ["Física", "Mecánica Clásica", "Impar"],
+        ["Física", "Física Moderna", "Impar"],
+        ["Física", "Termodinámica", "Par"],
+        ["Física", "Electromagnetismo", "Par"],
+        ["Física", "Ondas", "Impar"],
+        ["Física", "Mecánica Analítica", "Impar"],
+        ["Física", "Mecánica de los Fluidos", "Par"],
+        ["Física", "Mecánica Estadística", "Par"],
+        ["Física", "Mecánica Cuántica", "Par"],
+        ["Física", "Física del Estado Sólido", "Impar"],
+        ["Física", "Teoría Electromagnética", "Impar"],
+        ["Matemática", "Cálculo Diferencial e Integral I", "Impar"],
+        ["Matemática", "Álgebra Lineal I", "Impar"],
+        ["Matemática", "Cálculo Diferencial e Integral II", "Par"],
+        ["Matemática", "Álgebra Lineal II", "Par"],
+        ["Matemática", "Cálculo Vectorial y Análisis Complejo", "Impar"],
+        ["Matemática", "Ecuaciones Diferenciales", "Par"],
+        ["Herramientas", "Taller I", "Impar"],
+        ["Herramientas", "Taller II", "Par"],
+        ["Herramientas", "CTE I", "Impar"],
+        ["Herramientas", "CTE II", "Par"],
+        ["Herramientas", "Laboratorio I", "Impar"],
+        ["Herramientas", "Laboratorio II", "Par"],
+        ["Herramientas", "Laboratorio III", "Impar"],
+        ["Herramientas", "Introducción a la Computación", "Impar"],
+        ["Herramientas", "Física Computacional", "Par"]
+      ],
+      "ordinalCoursePeriodRows": []
+    },
+    "course-requirements": {
+      "unit": "créditos mínimos aprobados para cursar; no posición curricular",
+      "groups": [
+        {"courses": ["Física General I", "Física General II", "Taller I", "Taller II", "Introducción a las Ciencias de la Tierra y el Espacio I", "Introducción a las Ciencias de la Tierra y el Espacio II", "Álgebra Lineal I", "Álgebra Lineal II", "Cálculo Diferencial e Integral I", "Cálculo Diferencial e Integral II"], "minimums": {}},
+        {"courses": ["Mecánica Clásica", "Física Moderna", "Introducción a la Computación"], "minimums": {"physics": 10, "mathematics": 20}},
+        {"courses": ["Termodinámica", "Electromagnetismo"], "minimums": {"physics": 20, "mathematics": 40}},
+        {"courses": ["Ondas", "Mecánica Analítica"], "minimums": {"physics": 50, "mathematics": 60}},
+        {"courses": ["Mecánica de los Fluidos"], "minimums": {"physics": 50, "mathematics": 70}},
+        {"courses": ["Mecánica Estadística", "Mecánica Cuántica", "Física del Estado Sólido", "Teoría Electromagnética"], "minimums": {"physics": 60, "mathematics": 70}},
+        {"courses": ["Laboratorio I"], "minimums": {"physics": 10, "mathematics": 20, "research-professional-tools": 6}},
+        {"courses": ["Laboratorio II"], "minimums": {"physics": 20, "mathematics": 40, "research-professional-tools": 16}},
+        {"courses": ["Laboratorio III"], "minimums": {"physics": 40, "mathematics": 40, "research-professional-tools": 20}},
+        {"courses": ["Física Computacional"], "minimums": {"physics": 60, "mathematics": 60}},
+        {"courses": ["Cálculo Vectorial y Análisis Complejo"], "minimums": {"mathematics": 20}},
+        {"courses": ["Ecuaciones Diferenciales"], "minimums": {"mathematics": 40}}
+      ],
+      "technicalMappingsConfirmed": [],
+      "ordinalCoursePeriodRows": []
+    },
+    "colibri-record": {"issued": "2019", "availableSince": "2020-10-21", "careerCode": "301", "planCode": "1385", "pdfDirectAccess": "403; alternativa oficial recuperada en Instituto e IMPO"},
+    "impo-plan": {"claustro": "6 de 01/12/2017", "facultyCouncil": "130 de 18/12/2017", "cdc": "21 de 26/06/2018, Dist. 432/18", "published": "2018-08-03", "printedPages": [84, 85], "minimumCredits": 360, "durationYears": 4, "tutoringFromCredits": 180, "areaMinimums": [110, 70, 60, 10, 18], "ordinalCoursePeriodRows": []},
+    "fcien-career": {"minimumCredits": 360, "durationYears": 4, "areaCount": 5, "tutoringFromCredits": 180, "location": "Montevideo", "ordinalCoursePeriodRows": []},
+    "udelar-career": {"service": "Facultad de Ciencias", "durationMonths": 48, "minimumCredits": 360, "ordinalCoursePeriodRows": []}
+  },
+  "researchLog": [
+    {"authority": "Instituto de Física", "route": "http://www.fisica.edu.uy/ → http://info.fisica.edu.uy/ → Grado → Física Plan 2017", "result": "HTTP recuperable; HTTPS y visor web fallaron. Se recuperaron copias del Plan y Reglamento, cursos regulares y requisitos. Ninguno publica una grilla ordinal."},
+    {"authority": "Comisión de Carrera", "route": "enlace EVA 448 publicado por el Instituto", "result": "El visor no pudo recuperar la página; no se usa como única fuente curricular ni se infiere ausencia."},
+    {"authority": "FCIEN, CSE, Udelar, Colibrí e IMPO", "queries": ["Licenciatura en Física trayectoria sugerida", "Física plan 2019 semestre", "Física plan 2017 implementación", "Física 2026 CIDU"], "result": "Se recuperaron fichas vigentes y normativa alternativa; no una publicación adoptada curso-semestre ordinal para 2019. Los resultados de Física Médica, Ciencias de la Atmósfera y programas aislados no son una trayectoria de este título."},
+    {"authority": "Biblioteca FCIEN", "url": "https://biblioteca.fcien.edu.uy/wp-content/uploads/2023/08/facultad-de-ciencias-anuario-2010.pdf", "result": "Antecedente anterior al Plan: no se adoptan sus filas ni se presume vigencia por coincidencia de nombres."}
+  ],
+  "projectionBaseline": {
+    "snapshotContentHash": "f66b2aa6ab4e5a2c81a892fa57f3f1bda645c6dfc4927b9865dec600fbcbf14a",
+    "snapshotDistinctCourseRecords": 266,
+    "compositionAppearances": 290,
+    "projectedCourseRecords": 291,
+    "candidateCount": 290,
+    "verifiedValidationIds": ["fcien-validacion-final-plan"],
+    "courseIdentityLoadAuthorityHash": "sha256:04097fdb1c79eae8462fc48ebdbd2d8b4e21e0c7e44967786943a60c163f87a6",
+    "rulesHash": "sha256:6099d90beb2c471ed490daece030e4e3d4c3c833e1c0afa107f100005af51782"
+  },
+  "fingerprint": {"algorithm": "sha256 of JSON.stringify(sourcePortions), UTF-8", "value": "sha256:4ef9c3cac405b52beb40568d44df0d5dced832a372d974e9902894ea866ce17a"},
+  "regeneration": {"command": "node scripts/build-fcien-fisica-2019.mjs", "networkRequired": false, "rawFilesRequired": false}
+}

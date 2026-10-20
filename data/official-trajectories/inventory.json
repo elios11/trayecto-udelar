@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:c7461f04265ee5770edee231b6337a27edbb3a8e42033b2b1a4f3009d2bee125",
-    "officialAuditHash": "sha256:083eb1dd562485f8f948128e9d5024f82e512f7510e8a650b92557493547204b",
-    "reviewedTrajectoriesHash": "sha256:44c07f29081dd10a5e8740f78aa742ffaddbb52ed2a7eb6e3f14dd5bbf8afa0a"
+    "extractedReportHash": "sha256:e0840316a03f78ba198149ece1bbe264d6cb4003105c461e34812fd3e7bf0efb",
+    "officialAuditHash": "sha256:e10235a5875974460d1651761d2155fda0c146b54e478b5a814e2e1314de07ea",
+    "reviewedTrajectoriesHash": "sha256:2ba12c63e06297bf1fed1ecefca5276fc3ceff55d3178eef42550fe0478b082d"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -355,7 +355,7 @@
         "serviceIds": [
           "bedelias-fcien"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "El Plan y el Reglamento vigentes establecen un currículo individual con tutoría y Comisión de Carrera. La página de grado del Instituto enlaza 28 cursos regulares con paridad Impar/Par y frecuencia Anual, no posiciones ordinales ni una trayectoria sugerida de ocho semestres. Sus requisitos por créditos tampoco permiten deducir una grilla. No se recuperó una publicación vigente curso-período ni una afirmación oficial positiva de ausencia; el silencio, el error de Colibrí y el enlace de la Comisión a EVA no prueban que no exista una trayectoria."
       },
       {
         "priority": 2,
@@ -6025,44 +6025,78 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2019",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "Plan 2017, CDC 2018, implementación 2019; Reglamento 2021 republicado 2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios de la Licenciatura en Física, Facultad de Ciencias, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/25632/1/PLFIS_2020.pdf",
-          "role": "título; cuatro años; 360 créditos; cinco áreas; mínimos; tutoría; requisitos transversales; perfiles posibles",
-          "trajectoryEvidence": false
+          "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+          "url": "http://info.fisica.edu.uy/fisica-plan-2017/",
+          "reviewedAt": "2026-10-20",
+          "role": "ruta oficial recuperable al Plan, Reglamento, cursos regulares, requisitos y Comisión; no publica grilla ordinal",
+          "contentHash": "sha256:b6ffcd13041ada15587c54b164bca5dfe14aede61ed1112c971cd8a1064b74c7"
         },
         {
-          "authority": "Repositorio Colibri, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/25632",
-          "role": "Plan 2019; código de carrera 301; código de plan 1385; responsabilidad de Facultad de Ciencias",
-          "trajectoryEvidence": false
+          "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+          "url": "http://info.fisica.edu.uy/wp-content/uploads/2019/02/Plan-de-Estudios-Lic.-Física-1.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "título, duración, mínimos, tutoría, perfiles posibles y contenido no ordinal",
+          "contentHash": "sha256:5fbac06bc50201a8328a615269d90890e20c3b3cce1be1b550b12270afa73168"
+        },
+        {
+          "authority": "Instituto de Física y Dirección General Jurídica, Udelar",
+          "url": "http://info.fisica.edu.uy/wp-content/uploads/2026/05/Reglamento-496.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "plan individual, 92 créditos flexibles, formación integral e iniciación a investigación; ninguna grilla ordinal",
+          "contentHash": "sha256:7befe1d6eae7ea82de9ebe4bacc4507aab2a6596fe79e93bfc1f245e4fc7212f"
         },
         {
           "authority": "Dirección General Jurídica, Udelar",
-          "url": "https://dgjuridica.udelar.edu.uy/496-reglamento-del-plan-de-estudios-licenciatura-en-fisica-2017/",
-          "role": "reglamento; ratificación del Consejo Directivo Central en 2021",
-          "trajectoryEvidence": false
+          "url": "https://dgjuridica.udelar.edu.uy/wp-content/uploads/2021/07/Reglamento-496.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "contraste de identidad e integridad de la copia republicada en el Instituto",
+          "contentHash": "sha256:e92a200fa00956b530b6d07b578b75276e849d3b6ea85cc09ee08b0bdd56ba97"
         },
         {
-          "authority": "Facultad de Ciencias, oferta vigente",
-          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-fisicas",
-          "role": "vigencia; cuatro años; 360 créditos; cinco áreas; tutoría desde 180 créditos; Montevideo",
-          "trajectoryEvidence": false
+          "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+          "url": "http://info.fisica.edu.uy/wp-content/uploads/2019/02/Listado-de-cursos-regulares.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "28 filas de cursos por área, paridad y frecuencia; no posiciones de trayectoria ni validación automática de versiones técnicas",
+          "contentHash": "sha256:345e1e148e75a94ec76df51a22c3b821a8a13cc05608084a1a275d53fad63c9b"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
+          "authority": "Instituto de Física, Facultad de Ciencias, Udelar",
+          "url": "http://info.fisica.edu.uy/wp-content/uploads/2019/02/Requisitos-de-unidades-curriculares.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "requisitos por créditos de las 28 etiquetas; no permiten deducir períodos ni equivalencias CTE/códigos",
+          "contentHash": "sha256:2ec7507fed64fcd4ffa06e27951676f9803c46561215699483b5687a7662f8ef"
+        },
+        {
+          "authority": "Repositorio Colibrí, Udelar",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/25632?mode=full",
+          "reviewedAt": "2026-10-19",
+          "role": "identidad institucional 2019, carrera 301 y plan 1385; PDF directo respondió 403, suplido por copia del Instituto e IMPO",
+          "contentHash": "sha256:215ec67aeff45b611c48603c35688b7a06840e2bf25d4a06bc25eb5410d1cbae"
+        },
+        {
+          "authority": "Facultad de Ciencias y Consejo Directivo Central, Udelar; Diario Oficial/IMPO",
+          "url": "https://www.impo.com.uy/diariooficial/2018/08/03/avisos.pdf",
+          "reviewedAt": "2026-10-19",
+          "role": "copia oficial alternativa: cadena de aprobación, 360 créditos y currículo individual, sin grilla ordinal",
+          "contentHash": "sha256:33eaf57eb34c2c112587dcbdc21ceca8907bac7633f8387a5ac18b4303dad211"
+        },
+        {
+          "authority": "Facultad de Ciencias, Udelar",
+          "url": "https://www.fcien.edu.uy/ensenanza/carreras-de-grado/licenciatura-en-ciencias-fisicas/2334-licenciatura-en-ciencias-fisicas",
+          "reviewedAt": "2026-10-19",
+          "role": "cuatro años, 360 créditos, cinco áreas, tutoría desde 180 créditos y Montevideo; sin secuencia nominal",
+          "contentHash": "sha256:2ff71080bdc99bc3b34ea88c85c3a17bbbb7c6723f76649909e6244e2729d85e"
+        },
+        {
+          "authority": "Catálogo de carreras, Udelar",
           "url": "https://udelar.edu.uy/carrera/licenciatura-en-fisica",
-          "role": "vigencia; 48 meses; 360 créditos; Facultad de Ciencias",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Programa oficial de Iniciación a la Investigación, Facultad de Ciencias",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/27141",
-          "role": "actividad FI182 de 8 créditos; Plan 2019; iniciación a la investigación",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-19",
+          "role": "contraste de título, Facultad de Ciencias, cuatro años y 360 créditos; sin grilla",
+          "contentHash": "sha256:ed744df9036efd804ae69c0ed7d83d05fe67fb8f29a30a38652e3942df2bc003"
         }
       ],
       "scope": {
@@ -6080,18 +6114,24 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en fisica:2019",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-fisica-2019.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fcien/fisica-2019-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-fisica-2019.json",
+        "sourceContentHash": "sha256:4ef9c3cac405b52beb40568d44df0d5dced832a372d974e9902894ea866ce17a",
+        "regularCourseRows": 28,
+        "ordinalCoursePeriodRows": 0,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 290,
+        "reason": "El Plan y el Reglamento vigentes establecen un currículo individual con tutoría y Comisión de Carrera. La página de grado del Instituto enlaza 28 cursos regulares con paridad Impar/Par y frecuencia Anual, no posiciones ordinales ni una trayectoria sugerida de ocho semestres. Sus requisitos por créditos tampoco permiten deducir una grilla. No se recuperó una publicación vigente curso-período ni una afirmación oficial positiva de ausencia; el silencio, el error de Colibrí y el enlace de la Comisión a EVA no prueban que no exista una trayectoria.",
+        "reviewTrigger": "Revisar cuando la Comisión de Carrera, el Instituto de Física o FCIEN publique o confirme una guía vigente con filas nominales curso-período y alcance para el Plan implementado en 2019, o declare expresamente que no publica una trayectoria común. Cotejar versión, cargas, identidades y vigencia antes de sustituir el recorrido generado."
       },
       "conflictNotes": [
-        "planYear: El texto del Plan se denomina 2017 y el Reglamento conserva ese rótulo, mientras Colibri, Bedelías y Planeamiento registran la implementación vigente como Plan 2019. La UI conserva la identidad institucional 2019 y documenta el origen normativo.",
-        "profileExamples: Matemáticas, enseñanza de la física, biofísica, astrofísica y geofísica son ejemplos de perfiles que pueden construirse con tutoría. El Plan no los define como menciones certificadas ni fija grillas separadas.",
-        "transversalRequirements: El árbol de Bedelías no separa todas las actividades que satisfacen los 10 créditos integrales ni las materias de iniciación a la investigación que pueden pertenecer a cualquier área. La UI no infiere esa clasificación y exige validación de la Comisión.",
-        "freeCredits: Los mínimos de las cinco áreas suman 268 créditos. Los 92 restantes se completan con optativas y electivas coherentes con el perfil personal, sin crear un bloque disciplinar adicional.",
-        "catalogSize: Los 2.534 créditos de 266 registros y las 290 apariciones jerárquicas constituyen oferta acumulada y alternativas. El requisito real es completar 360 créditos, mínimos, condiciones transversales y aprobación curricular."
+        "Impar/Par y frecuencia Anual no son semestres ordinales ni una garantía de oferta futura; no se proyectan como trayectoria.",
+        "Las 28 etiquetas regulares no publican códigos ni créditos; se conservan 266 registros técnicos, 290 apariciones candidatas y sus versiones sin promover ni fusionar por semejanza.",
+        "Los requisitos por créditos no permiten deducir períodos; se preservan las reglas previas sin sustituirlas por inferencia.",
+        "La grilla del Anuario 2010 corresponde al Plan anterior y no demuestra adopción por el Plan 2019.",
+        "La flexibilidad, el 403 de Colibrí y el enlace EVA de la Comisión no son evidencia positiva de ausencia de trayectoria.",
+        "Se conserva 2019 como identidad técnica única, con origen FCIEN 2017, aprobación CDC 2018 y Reglamento 2021 republicado 2026."
       ]
     },
     {
@@ -13758,5 +13798,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:e56f4d1d485fc7adfac0e4fb59062e7b989947002b68f105fa82b7abf081ee19"
+  "contentHash": "sha256:6884fc0dd683d5e1a2b9720a3245a69c1c157c97a67e10723524f51a5e13554f"
 }
