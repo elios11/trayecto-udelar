@@ -4350,6 +4350,90 @@
         "EFI es un cupo genérico sin código ni carga publicada en la guía; no equivale a ninguna de las EFI de Bedelías por similitud.",
         "Sólo cinco códigos se cotejan con el primer semestre; las otras 215 identidades técnicas siguen candidatas recuperables fuera del catálogo normal."
       ]
+    },
+    {
+      "planId": "bedelias-fcien-licenciatura-en-matematica-2014",
+      "state": "research-pending",
+      "reviewedAt": "2026-10-20",
+      "effectiveAt": "Plan 2014; ejemplos históricos 2017-2020; oferta estable 2025-2029",
+      "projectionMechanism": "official-flexible-structure",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "perfil-matematica",
+          "orientacion-ciencia-datos",
+          "perfil-ciencias-computacion",
+          "perfil-ciencias-fisicas",
+          "perfil-ciencias-biologicas",
+          "perfil-ingenieria-electrica"
+        ]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias y repositorio institucional Colibrí, Universidad de la República",
+          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24564/1/PLMAT_2020.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "título, duración, créditos, estructura flexible y plan individual; no publica secuencia nominal",
+          "contentHash": "sha256:f224007e790388f7471761d32345496501ff50113661c94e74fd5cbe5c6c8a4d"
+        },
+        {
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.cmat.edu.uy/licenciatura/estudiantes",
+          "reviewedAt": "2026-10-20",
+          "role": "enlaza oferta estable 2025-2029 y, separadamente, ejemplos de planes individuales posibles",
+          "contentHash": "sha256:710ca8c39c58039de5fe8af9b2d870a6b8810d8e342749ce42132bef79781cdf"
+        },
+        {
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.cmat.edu.uy/licenciatura/documentos/trayectorias/ejemplo_perfil_mat.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "grilla histórica con filas nominales, alternativas y créditos de entonces; antecedente, no proyección vigente",
+          "contentHash": "sha256:4cd0b2c6c4e05daec95103479b3cfab951d0b2b1a2ad064feaf41054487ca3a0"
+        },
+        {
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.cmat.edu.uy/licenciatura/cursos_matematica.pdf",
+          "reviewedAt": "2026-10-20",
+          "role": "26 filas de cursos regulares con código, paridad, frecuencia y créditos; contraste de versiones, no malla sugerida",
+          "contentHash": "sha256:8ecc173c423e63c294d4fe31daa1f9f5f0e556b1d330b36340637d0e55d3f969"
+        },
+        {
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "url": "https://www.cmat.edu.uy/noticias/novedades/generacion_ingreso",
+          "reviewedAt": "2026-10-20",
+          "role": "tres cursos nominales y una opción genérica para primer semestre de ingreso 2024",
+          "contentHash": "sha256:b3aa37e1505b7ad74452d31296441bc0a809af219784a45eb3a5c53328544874"
+        }
+      ],
+      "evidence": {
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fcien/matematica-2014-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fcien-licenciatura-en-matematica-2014.json",
+        "sourceContentHash": "sha256:36d00d9677fa81d8aede47e7040a4ee0df1f13baa360d03a3d824e08df8b7285",
+        "historicalExamplePeriodCount": 8,
+        "historicalExampleCoursePlacements": 29,
+        "currentRegularCourseRows": 26,
+        "currentOrdinalCoursePeriodRows": 0,
+        "promotedCourseCount": 0,
+        "candidateRetainedCount": 366,
+        "reason": "El Centro de Matemática conserva ejemplos de ocho semestres diseñados expresamente para la oferta 2017-2020 y los enlaza hoy como posibles planes individuales. La oferta estable 2025-2029 publica códigos, créditos, paridad y frecuencia de dictado, pero no una secuencia ordinal de ingreso ni valida la vigencia de las opciones históricas. La orientación para ingresantes todavía rotula sus cursos como primer semestre 2024. No hay una guía curso-período actual cotejada ni declaración oficial positiva de ausencia.",
+        "reviewTrigger": "Pedir o localizar una guía curso→semestre para una generación actual del Plan 2014, adoptada o confirmada por la Comisión de Carrera/Centro de Matemática/Facultad, o confirmación expresa de que el ejemplo 2017-2020 sigue recomendado como trayectoria histórica opcional. Cotejar códigos, cargas, alternativas y alcance antes de mostrarla; si no existe guía común, obtener declaración institucional positiva."
+      },
+      "conflictNotes": [
+        "durationMonths: El catálogo central informa 60 meses, mientras el Plan 2014 y la página vigente de Facultad establecen cuatro años lectivos. La UI usa 48 meses y conserva la discrepancia como evidencia trazable.",
+        "profiles: Bedelías publica la estructura general pero no separa los requisitos de los perfiles reglamentados en 2022. La UI los presenta como opciones del mismo plan y vincula cada selección a sus metas oficiales.",
+        "dataScienceCertification: La Orientación en Ciencia de Datos no cambia el título de Licenciado en Matemática. La Comisión emite una constancia específica; por eso se modela como perfil seleccionable con requisitos adicionales, no como otra carrera.",
+        "levelConstraints: La reglamentación combina mínimos por área y subárea con límites de nivel básico, intermedio y avanzado que se superponen sobre los mismos créditos. La UI controla las áreas y subáreas sin doble conteo y deja la comprobación de niveles como validación manual explícita de la Comisión.",
+        "monographAccounting: Bedelías muestra el trabajo monográfico como grupo superior independiente, pero el Plan lo exige dentro del conjunto del Área A. La normalización lo anida bajo Matemática para evitar sumar 24 créditos dos veces.",
+        "catalogSize: Las 367 unidades representan oferta acumulada, equivalencias y alternativas de varias áreas. El egreso exige 360 créditos en un plan individual aprobado y no completar todo el catálogo.",
+        "Los ejemplos de ocho semestres publicados por el Centro corresponden a ingreso 2017 y oferta prevista 2017-2020. La página vigente aún los enlaza como planes personales posibles, sin actualizarlos ni declararlos obligatorios.",
+        "La oferta estable 2025-2029 es una tabla de dictado Impar/Par y frecuencia, no semestre ordinal ni promesa para cada edición. No se transforma en malla.",
+        "La recomendación nominal de ingreso recuperable se refiere explícitamente al primer semestre 2024; no se extrapola a 2026.",
+        "La grilla histórica no publica códigos. Se conservan 366 registros técnicos candidatos y un marcador manual verificado, sin equivalencias por semejanza o cambio de carga.",
+        "La investigación pendiente no es ausencia institucional documentada; se mantiene un único Plan 2014 y seis opciones del mismo progreso."
+      ]
     }
   ]
 }

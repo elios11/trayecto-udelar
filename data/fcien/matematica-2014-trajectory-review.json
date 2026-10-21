@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fcien-licenciatura-en-matematica-2014",
+  "auditIdentity": "licenciatura en matematica:2014",
+  "reviewedAt": "2026-10-20",
+  "publication": {
+    "planYear": "2014",
+    "title": "Licenciado en Matemática",
+    "territories": ["Montevideo"],
+    "durationMonths": 48,
+    "minimumCredits": 360,
+    "pathwayIds": ["perfil-matematica", "orientacion-ciencia-datos", "perfil-ciencias-computacion", "perfil-ciencias-fisicas", "perfil-ciencias-biologicas", "perfil-ingenieria-electrica"]
+  },
+  "projectionBaseline": {
+    "snapshotContentHash": "1a045cf9d04c1e00d5d3fcd841f38ecb724ec5a036d27217b44310d42d6dd258",
+    "snapshotDistinctCourseRecords": 343,
+    "projectedCourseRecords": 367,
+    "candidateCourseRecords": 366,
+    "verifiedManualValidationRecords": 1,
+    "courseIdentityLoadAuthorityHash": "sha256:6f9c6d43f0ace358d21111e260ce863cfaab23adea3070c8871c9ce7c2b23dab",
+    "publishedRulesHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "creditStructureHash": "sha256:366b851b7ca542c00030b319db7e988508d7a079524ac432b5402443e83cf6b6"
+  },
+  "trajectoryConclusion": {
+    "state": "research-pending",
+    "reason": "El Centro de Matemática conserva ejemplos de ocho semestres diseñados expresamente para la oferta 2017-2020 y los enlaza hoy como posibles planes individuales. La oferta estable 2025-2029 publica códigos, créditos, paridad y frecuencia de dictado, pero no una secuencia ordinal de ingreso ni valida la vigencia de las opciones históricas. La orientación para ingresantes todavía rotula sus cursos como primer semestre 2024. No hay una guía curso-período actual cotejada ni declaración oficial positiva de ausencia.",
+    "reviewTrigger": "Pedir o localizar una guía curso→semestre para una generación actual del Plan 2014, adoptada o confirmada por la Comisión de Carrera/Centro de Matemática/Facultad, o confirmación expresa de que el ejemplo 2017-2020 sigue recomendado como trayectoria histórica opcional. Cotejar códigos, cargas, alternativas y alcance antes de mostrarla; si no existe guía común, obtener declaración institucional positiva.",
+    "doesNotAuthorize": [
+      "publicar los ejemplos 2017-2020 como oferta actual o secuencia única obligatoria",
+      "convertir Impar/Par y frecuencia de dictado 2025-2029 en semestres ordinales 1-8",
+      "promover códigos de Bedelías por semejanza nominal con cursos de los ejemplos",
+      "convertir perfiles y orientación en carreras, títulos o progresos separados",
+      "declarar ausencia oficial de trayectoria a partir de silencio o búsqueda fallida"
+    ]
+  },
+  "sources": [
+    {
+      "id": "plan-2014",
+      "authority": "Facultad de Ciencias y repositorio institucional Colibrí, Universidad de la República",
+      "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24564/1/PLMAT_2020.pdf",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "Plan 2014 vigente según ficha de Facultad y auditoría previa; no se interpreta 2020 del nombre de archivo como nuevo plan",
+      "role": "título, duración, créditos, estructura flexible y plan individual; no publica secuencia nominal"
+    },
+    {
+      "id": "current-student-page",
+      "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+      "url": "https://www.cmat.edu.uy/licenciatura/estudiantes",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "página para estudiantes consultada en octubre de 2026; muestra semestre par 2026",
+      "role": "enlaza oferta estable 2025-2029 y, separadamente, ejemplos de planes individuales posibles"
+    },
+    {
+      "id": "historical-example",
+      "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+      "url": "https://www.cmat.edu.uy/licenciatura/documentos/trayectorias/ejemplo_perfil_mat.pdf",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "ejemplo para perfil Matemática e ingreso 2017, basado en oferta prevista 2017-2020; conserva ocho semestres históricos, sin prueba de adopción para la oferta 2025-2029",
+      "role": "grilla histórica con filas nominales, alternativas y créditos de entonces; antecedente, no proyección vigente"
+    },
+    {
+      "id": "current-stable-offer",
+      "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+      "url": "https://www.cmat.edu.uy/licenciatura/cursos_matematica.pdf",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "oferta estable 2025-2029; no garantiza una edición concreta ni establece avance curricular ordinal",
+      "role": "26 filas de cursos regulares con código, paridad, frecuencia y créditos; contraste de versiones, no malla sugerida"
+    },
+    {
+      "id": "entry-guidance-2024",
+      "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+      "url": "https://www.cmat.edu.uy/noticias/novedades/generacion_ingreso",
+      "consultedAt": "2026-10-20",
+      "publishedValidity": "la propia página rotula sus recomendaciones como primer semestre 2024; no se extrapola a 2026",
+      "role": "tres cursos nominales y una opción genérica para primer semestre de ingreso 2024"
+    }
+  ],
+  "sourcePortions": {
+    "plan-2014": {
+      "durationYears": 4,
+      "minimumCredits": 360,
+      "individualPlanRequired": true,
+      "ordinalCoursePeriodRows": []
+    },
+    "current-student-page": {
+      "linksHistoricalExamplesAsPossibleIndividualPlans": true,
+      "linksCurrentOffer2025To2029": true,
+      "publishesCurrentOrdinalPathway": false
+    },
+    "historical-example": {
+      "entryYear": 2017,
+      "offerYears": "2017-2020",
+      "profile": "Matemática",
+      "semesters": [
+        ["Álgebra lineal 1", "Cálculo diferencial e integral 1", "Física 1", "Matemática Discreta"],
+        ["Álgebra lineal 2", "Cálculo diferencial e integral 2", "Física 2", "Computación"],
+        ["Cálculo diferencial e integral 3", "Probabilidad", "Topología general"],
+        ["Ecuaciones Diferenciales", "Geometría de Curvas y Superficies", "Electromagnetismo", "Teoría de números"],
+        ["Medida e integración", "Electiva en Sistemas Dinámicos", "Grupos y Teoría de Galois", "Seminario"],
+        ["Funciones de Variable Compleja", "Estadística", "Electiva en Probabilidad", "Electiva en Análisis"],
+        ["Topología Algebraica", "Seminario", "Electiva en EDPs o Análisis de Fourier"],
+        ["Electiva en Matemática Aplicada", "Electiva área C", "Trabajo monográfico"]
+      ],
+      "sourceRowCount": 29,
+      "technicalCodesPublished": false,
+      "technicalIdentitiesPromoted": []
+    },
+    "current-stable-offer": {
+      "years": "2025-2029",
+      "columns": ["code", "name", "parity", "frequency", "credits"],
+      "rows": [
+        ["MA425", "Álgebra lineal 1", "Impar", "Anual", 16],
+        ["MA424", "Álgebra Lineal y Geometría 1", "Impar", "Anual", 12],
+        ["MA427", "Cálculo 1", "Impar", "Anual", 16],
+        ["MA006", "Cálculo 3", "Impar", "Anual", 16],
+        ["MA428", "Cálculo Diferencial e Integral 1", "Impar", "Anual", 15],
+        ["MA07", "Cálculo Vectorial y Análisis Complejo", "Impar", "Anual", 13],
+        ["MA306", "Grupos y teoría de Galois", "Impar", "Anual", 12],
+        ["MA460", "Introducción a la topología", "Impar", "Anual", 16],
+        ["MA400", "Matemática 1", "Impar", "Anual", 12],
+        ["MA309", "Medida e integración", "Impar", "Anual", 12],
+        ["MA429", "Álgebra lineal 2", "Par", "Anual", 16],
+        ["MA472", "Algebra Lineal y Geometría 2", "Par", "Anual", 12],
+        [null, "Análisis de datos para Ciencias", "Par", "Anual", 12],
+        ["MA431", "Cálculo 2", "Par", "Anual", 16],
+        ["MA473", "Cálculo Diferencial e Integral 2", "Par", "Anual", 15],
+        ["MA486", "Ecuaciones Diferenciales", "Par", "Anual", 12],
+        [null, "Estadística para ciencias", "Par", "Anual", 12],
+        ["MA273", "Funciones de variable compleja", "Par", "Anual", 12],
+        ["MA274", "Geometría de curvas y superficies", "Par", "Anual", 12],
+        ["MA403", "Matemática 2, módulo 1", "Par", "Anual", 6],
+        ["MA404", "Matemática 2, módulo 2", "Par", "Anual", 6],
+        [null, "Probabilidad y estadística", "Par", "Anual", 12],
+        ["MA315", "Topología algebraica", "Impar", "Bienal (años pares)", 12],
+        ["MA069", "Computación", "Par", "Bienal (años impares)", 12],
+        ["MA120", "Teoría de números", "Par", "Bienal (años impares)", 12],
+        ["MA272", "Anillos y módulos", "Par", "Bienal (años pares)", 12]
+      ],
+      "ordinalCoursePeriodRows": [],
+      "technicalIdentitiesPromoted": []
+    },
+    "entry-guidance-2024": {
+      "semester": "primer semestre 2024",
+      "rows": [["MA427", "Cálculo 1", 16], ["MA425", "Álgebra Lineal 1", 16], ["MA24", "Matemática Discreta", 12]],
+      "optionalExample": "Física 1",
+      "technicalIdentitiesPromoted": []
+    }
+  },
+  "fingerprint": {
+    "algorithm": "sha256(JSON.stringify(sourcePortions))",
+    "value": "sha256:36d00d9677fa81d8aede47e7040a4ee0df1f13baa360d03a3d824e08df8b7285"
+  },
+  "regeneration": {
+    "command": "node scripts/build-fcien-matematica-2014.mjs",
+    "networkRequired": false,
+    "rawFilesRequired": false
+  }
+}

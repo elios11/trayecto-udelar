@@ -56046,9 +56046,9 @@
       "identity": "licenciatura en matematica:2014",
       "career": "LICENCIATURA EN MATEMÁTICA",
       "planYear": "2014",
-      "reviewedAt": "2026-08-28",
+      "reviewedAt": "2026-10-20",
       "status": "official-evidence-complete",
-      "scope": "vigencia, título, sede, duración, créditos, áreas, subáreas, perfiles, orientación certificada, seminarios, trabajo monográfico y aprobación del plan individual",
+      "scope": "Plan 2014, perfiles, mínimos y catálogo; contraste de la guía histórica de ocho semestres para ingreso 2017 con la oferta estable de cursos 2025-2029, sin trayectoria actual acreditada",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -56111,7 +56111,7 @@
           "includeAllCoursesInPathwayCatalog": true,
           "sourceUrl": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24564/1/PLMAT_2020.pdf",
           "pathwayLabel": "Perfil",
-          "pathwayDescription": "Catálogo flexible del Plan 2014 organizado por áreas y subáreas. No prescribe semestres: cada estudiante arma un plan individual y la Comisión valida el perfil, los niveles, la coherencia y el trabajo monográfico.",
+          "pathwayDescription": "Plan individual flexible. Los ejemplos del Centro de Matemática corresponden a ingreso 2017 y oferta 2017-2020; aún falta cotejar una guía vigente. El orden visible es orientativo generado por Trayecto, no una secuencia institucional actual.",
           "periodOrder": [
             "Matemática · Cálculo",
             "Matemática · Álgebra lineal",
@@ -56701,7 +56701,8 @@
               ]
             }
           ],
-          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del plan individual, del perfil, de los mínimos por nivel y de las acreditaciones; para iniciar el trabajo monográfico se requieren 220 créditos totales, los mínimos básicos y 36 créditos intermedios del Área A, además de orientador y plan de trabajo"
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del plan individual, del perfil, de los mínimos por nivel y de las acreditaciones; para iniciar el trabajo monográfico se requieren 220 créditos totales, los mínimos básicos y 36 créditos intermedios del Área A, además de orientador y plan de trabajo",
+          "sourceDataPath": "data/fcien/matematica-2014-trajectory-review.json"
         }
       },
       "offerings": [
@@ -56744,23 +56745,22 @@
           "Vincular cada perfil a sus mínimos propios sin presentar las opciones como carreras o títulos distintos; sólo Ciencia de Datos emite una constancia específica de orientación.",
           "Conservar las 367 unidades de Bedelías como catálogo flexible por áreas y subáreas, no como obligación acumulativa ni secuencia semestral.",
           "Controlar seminarios y trabajo monográfico dentro del Área A y dejar explícita la validación manual de niveles, coherencia y plan individual por la Comisión."
-        ]
+        ],
+        "trajectoryStatus": "research-pending",
+        "trajectorySourceDataPath": "data/fcien/matematica-2014-trajectory-review.json",
+        "trajectoryJustification": "El Centro de Matemática conserva ejemplos de ocho semestres diseñados expresamente para la oferta 2017-2020 y los enlaza hoy como posibles planes individuales. La oferta estable 2025-2029 publica códigos, créditos, paridad y frecuencia de dictado, pero no una secuencia ordinal de ingreso ni valida la vigencia de las opciones históricas. La orientación para ingresantes todavía rotula sus cursos como primer semestre 2024. No hay una guía curso-período actual cotejada ni declaración oficial positiva de ausencia.",
+        "trajectoryReviewTrigger": "Pedir o localizar una guía curso→semestre para una generación actual del Plan 2014, adoptada o confirmada por la Comisión de Carrera/Centro de Matemática/Facultad, o confirmación expresa de que el ejemplo 2017-2020 sigue recomendado como trayectoria histórica opcional. Cotejar códigos, cargas, alternativas y alcance antes de mostrarla; si no existe guía común, obtener declaración institucional positiva."
       },
       "sources": [
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/24564/1/PLMAT_2020.pdf",
-          "authority": "Plan de Estudios de la Licenciatura en Matemática, Facultad de Ciencias, Udelar",
+          "authority": "Facultad de Ciencias y repositorio institucional Colibrí, Universidad de la República",
           "supports": [
-            "Plan 2014",
-            "título",
-            "cuatro años",
-            "360 créditos",
-            "áreas",
-            "subáreas",
-            "seminarios",
-            "trabajo monográfico",
-            "plan individual"
-          ]
+            "título, duración, créditos, estructura flexible y plan individual; no publica secuencia nominal"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "Plan 2014 vigente según ficha de Facultad y auditoría previa; no se interpreta 2020 del nombre de archivo como nuevo plan",
+          "contentHash": "sha256:f224007e790388f7471761d32345496501ff50113661c94e74fd5cbe5c6c8a4d"
         },
         {
           "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/24564",
@@ -56818,6 +56818,46 @@
             "sede",
             "requisitos de ingreso"
           ]
+        },
+        {
+          "url": "https://www.cmat.edu.uy/licenciatura/estudiantes",
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "supports": [
+            "enlaza oferta estable 2025-2029 y, separadamente, ejemplos de planes individuales posibles"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "página para estudiantes consultada en octubre de 2026; muestra semestre par 2026",
+          "contentHash": "sha256:710ca8c39c58039de5fe8af9b2d870a6b8810d8e342749ce42132bef79781cdf"
+        },
+        {
+          "url": "https://www.cmat.edu.uy/licenciatura/documentos/trayectorias/ejemplo_perfil_mat.pdf",
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "supports": [
+            "grilla histórica con filas nominales, alternativas y créditos de entonces; antecedente, no proyección vigente"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "ejemplo para perfil Matemática e ingreso 2017, basado en oferta prevista 2017-2020; conserva ocho semestres históricos, sin prueba de adopción para la oferta 2025-2029",
+          "contentHash": "sha256:4cd0b2c6c4e05daec95103479b3cfab951d0b2b1a2ad064feaf41054487ca3a0"
+        },
+        {
+          "url": "https://www.cmat.edu.uy/licenciatura/cursos_matematica.pdf",
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "supports": [
+            "26 filas de cursos regulares con código, paridad, frecuencia y créditos; contraste de versiones, no malla sugerida"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "oferta estable 2025-2029; no garantiza una edición concreta ni establece avance curricular ordinal",
+          "contentHash": "sha256:8ecc173c423e63c294d4fe31daa1f9f5f0e556b1d330b36340637d0e55d3f969"
+        },
+        {
+          "url": "https://www.cmat.edu.uy/noticias/novedades/generacion_ingreso",
+          "authority": "Centro de Matemática, Facultad de Ciencias, Universidad de la República",
+          "supports": [
+            "tres cursos nominales y una opción genérica para primer semestre de ingreso 2024"
+          ],
+          "reviewedAt": "2026-10-20",
+          "publishedValidity": "la propia página rotula sus recomendaciones como primer semestre 2024; no se extrapola a 2026",
+          "contentHash": "sha256:b3aa37e1505b7ad74452d31296441bc0a809af219784a45eb3a5c53328544874"
         }
       ],
       "anomalies": [
@@ -56844,10 +56884,14 @@
         {
           "field": "catalogSize",
           "resolution": "Las 367 unidades representan oferta acumulada, equivalencias y alternativas de varias áreas. El egreso exige 360 créditos en un plan individual aprobado y no completar todo el catálogo."
+        },
+        {
+          "field": "trajectory",
+          "resolution": "El Centro de Matemática conserva ejemplos de ocho semestres diseñados expresamente para la oferta 2017-2020 y los enlaza hoy como posibles planes individuales. La oferta estable 2025-2029 publica códigos, créditos, paridad y frecuencia de dictado, pero no una secuencia ordinal de ingreso ni valida la vigencia de las opciones históricas. La orientación para ingresantes todavía rotula sus cursos como primer semestre 2024. No hay una guía curso-período actual cotejada ni declaración oficial positiva de ausencia."
         }
       ],
-      "uiNotice": "Plan 2014 flexible de ocho semestres y 360 créditos en Montevideo. Elegí el perfil para ver sus mínimos; los cursos forman un catálogo por áreas, seminarios y monografía, y la Comisión debe aprobar tu plan individual y verificar los niveles.",
-      "remainingWork": "La Comisión de Carrera conserva la aprobación del plan individual, la clasificación por nivel, la coherencia de actividades, la orientación y el trabajo monográfico; la UI explicita esas decisiones sin reemplazarlas."
+      "uiNotice": "Plan 2014 flexible de ocho semestres y 360 créditos en Montevideo. Los ejemplos semestrales del Centro de Matemática son para ingreso 2017 y oferta 2017-2020; no garantizan la oferta actual. El orden visible es un recorrido orientativo generado por Trayecto. Elegí el perfil para ver sus mínimos y confirmá tu plan individual con la Comisión de Carrera.",
+      "remainingWork": "Pedir o localizar una guía curso→semestre para una generación actual del Plan 2014, adoptada o confirmada por la Comisión de Carrera/Centro de Matemática/Facultad, o confirmación expresa de que el ejemplo 2017-2020 sigue recomendado como trayectoria histórica opcional. Cotejar códigos, cargas, alternativas y alcance antes de mostrarla; si no existe guía común, obtener declaración institucional positiva."
     },
     {
       "identity": "licenciatura en relaciones internacionales:2013",
@@ -88368,6 +88412,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:9476f83a4715096302edb5f956fd4919b5526a65aee927a4077499dab87d379a",
+  "contentHash": "sha256:c176ec91fd21349332739fe22fa83ede32c4e6a641d33c7f0f72884981d54577",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
