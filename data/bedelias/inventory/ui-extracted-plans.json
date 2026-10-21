@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "generatedFrom": {
     "auditQueueHash": "sha256:c7b02b8dc43daa5300210cbc99ece7b790798df2f06945fcdd94752b3fac45f8",
-    "officialAuditHash": "sha256:4c1c15096b7b382eda1c9ab853249b57c264b79f139efca924fbaa09ac2c0acd",
+    "officialAuditHash": "sha256:9c96952e15131733d4b0174e058f751840ceba8bcae069f59e6219cf9f45e664",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -23,20 +23,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5723,
-      "candidate": 26128,
+      "verified": 5736,
+      "candidate": 26115,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
     "beforePublishedCourses": 31859,
-    "afterPublishedCourses": 5723,
+    "afterPublishedCourses": 5736,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1880,
     "visibleTargetsWithUnpublishedDependencies": 1562,
-    "plansWithVerifiedCatalog": 63,
+    "plansWithVerifiedCatalog": 64,
     "plansWithPartialCatalog": 67,
-    "plansWithStructureOnly": 9
+    "plansWithStructureOnly": 8
   },
   "plans": [
     {
@@ -2218,7 +2218,7 @@
       "facultyCode": "FDER",
       "snapshotPath": "data/bedelias/fder-tecnicatura-en-relaciones-laborales-1995.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "verified",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [],
@@ -2227,14 +2227,14 @@
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 13,
+        "publishedCourses": 13,
+        "hiddenCourses": 0,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 13,
+        "verified": 13,
+        "candidate": 0,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4640,5 +4640,5 @@
       }
     }
   ],
-  "contentHash": "sha256:862cdcfa34609d2f343294334df38aa55ac4200a58b6a4311af671cf38bfb993"
+  "contentHash": "sha256:68fb9ffb010fe0421465ea9d2fee64e147edf1ca82e4518cc9dd8160e9f5640a"
 }

@@ -631,6 +631,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   if (curriculum?.useBedeliasCompositionTree !== true) return null;
 
   const sourceUrl = curriculum.sourceUrl ?? snapshot.plan?.sourceUrl ?? audit.sources?.[0]?.url;
+  const compositionRequirementsSourceUrl = curriculum.compositionRequirementsSourceUrl ?? sourceUrl;
   const matterNodes = [];
   const groupNodes = [];
   const visit = (node) => {
@@ -866,7 +867,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       label: compositionGroupLabel(group.label),
       minCompleted: Math.min(minimum, courseIds.length),
       courseIds,
-      sourceUrl,
+      sourceUrl: compositionRequirementsSourceUrl,
     }];
   });
   for (const configuredGroup of curriculum.requiredCourseGroups ?? []) {

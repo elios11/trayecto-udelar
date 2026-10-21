@@ -26321,9 +26321,9 @@
       "identity": "tecnicatura en relaciones laborales:1995",
       "career": "TECNICATURA EN RELACIONES LABORALES",
       "planYear": "1995",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-10-21",
       "status": "official-evidence-complete",
-      "scope": "Auditoría del Plan 1995 en régimen de egreso y proyección de sus trece unidades sin créditos.",
+      "scope": "Trece identidades del índice oficial de programas Plan 1995, conservadas como plan histórico. La secuencia formal y el texto aprobado siguen sin localizarse.",
       "publicationEligible": false,
       "officialPlan": {
         "facultyCode": "FDER",
@@ -26335,16 +26335,37 @@
         "current": false,
         "curriculum": {
           "useBedeliasCompositionTree": true,
-          "sourceUrl": "https://www.fder.edu.uy/node/8457"
+          "sourceUrl": "https://www.fder.edu.uy/node/8457",
+          "compositionRequirementsSourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": ["910", "911", "912", "913", "914", "920", "921", "922", "923", "924", "930", "931", "932"],
+          "pathwayLabel": "Índice de programas del Plan 1995",
+          "pathwayDescription": "Programas agrupados por Primero, Segundo y Tercero por Facultad de Derecho. No equivale al Plan aprobado, una malla semestral ni una secuencia de cursado verificada.",
+          "periodLabelMap": { "3527": "Primero (programas)", "2569": "Segundo (programas)", "1876": "Tercero (programas)" },
+          "courseOverrides": {
+            "910": { "name": "Curso Introductorio", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "911": { "name": "Derecho del Trabajo 1", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "912": { "name": "Sociología del Trabajo 1", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "913": { "name": "Economía del Trabajo 1", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "914": { "name": "Estadística Laboral", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "920": { "name": "Organización del Trabajo", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "921": { "name": "Derecho del Trabajo 2", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "922": { "name": "Sociología del Trabajo 2", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "923": { "name": "Economía del Trabajo 2", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "924": { "name": "Psicología Laboral", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "930": { "name": "Derecho de la Empresa", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "931": { "name": "Derecho de las RRLL en el Sector Público", "preserveName": true, "officialIdentity": true, "officialCredits": false },
+            "932": { "name": "RRLL en los Procesos de Integración", "preserveName": true, "officialIdentity": true, "officialCredits": false }
+          }
         }
       },
-      "uiNotice": "Plan anterior sin nuevos ingresos, conservado para estudiantes de la Tecnicatura 1995. La malla permite seguir sus trece unidades obligatorias; como el plan no usa créditos, cada unidad vale cero en el contador.",
+      "uiNotice": "Plan anterior sin nuevos ingresos, conservado para estudiantes de la Tecnicatura 1995. Se muestran trece programas oficiales agrupados por Primero, Segundo y Tercero; no es una grilla semestral ni se localizaron el Plan aprobado o cargas individuales. La carga no publicada no se interpreta como cero créditos oficiales y la culminación requiere validación institucional.",
       "bedeliasComparison": {
         "canonicalSnapshot": "data/bedelias/fder-tecnicatura-en-relaciones-laborales-1995.json",
         "metadataCurrent": false,
         "indexCurrent": true,
         "compositionMatterCount": 13,
-        "interpretation": "El árbol Bedelías coincide exactamente con los programas oficiales del Plan 1995: cinco unidades de primer año, cinco de segundo y tres de tercero. Facultad lo rotula como plan anterior y ofrece actualmente la Licenciatura Plan 2012."
+        "interpretation": "Las trece identidades del árbol Bedelías corresponden a los programas del Plan 1995 (5+5+3), pero el índice oficial sólo rotula Primero, Segundo y Tercero. No prueba semestres, carga individual ni por sí solo el régimen completo de egreso."
       },
       "conclusion": {
         "canonicalModel": "historical-teach-out-plan-visible-for-existing-students",
@@ -26360,7 +26381,7 @@
           "supports": [
             "rótulo plan anterior",
             "trece programas del Plan 1995",
-            "distribución por tres años"
+          "agrupación de programas en Primero, Segundo y Tercero sin semestres publicados"
           ]
         },
         {
@@ -26397,14 +26418,14 @@
         },
         {
           "field": "credits",
-          "resolution": "El plan trabaja por unidades y no publica créditos; se exigen las 5+5+3 unidades del árbol sin asignar créditos ficticios."
+          "resolution": "El índice de programas no publica carga por unidad ni créditos; se conservan valores operativos cero sin atribuirlos a la Facultad. El régimen de culminación debe confirmarse con el Plan aprobado."
         },
         {
           "field": "identity",
           "resolution": "Técnico en Relaciones Laborales Plan 1995 no se fusiona con Técnico Asesor, título intermedio de 200 créditos del Plan 2012."
         }
       ],
-      "remainingWork": "Malla histórica cerrada; cualquier reválida al Plan 2012 continúa siendo un trámite individual y no una migración automática."
+      "remainingWork": "Localizar el texto aprobado del distribuido 95/95 o una grilla autorizada que aclare la secuencia y el régimen de egreso. Las reválidas al Plan 2012 son trámites individuales, nunca migración automática."
     },
     {
       "identity": "creador plastico:1991",
@@ -88624,6 +88645,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:4c1c15096b7b382eda1c9ab853249b57c264b79f139efca924fbaa09ac2c0acd",
+  "contentHash": "sha256:9c96952e15131733d4b0174e058f751840ceba8bcae069f59e6219cf9f45e664",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

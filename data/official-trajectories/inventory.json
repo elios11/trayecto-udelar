@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:862cdcfa34609d2f343294334df38aa55ac4200a58b6a4311af671cf38bfb993",
-    "officialAuditHash": "sha256:4c1c15096b7b382eda1c9ab853249b57c264b79f139efca924fbaa09ac2c0acd",
-    "reviewedTrajectoriesHash": "sha256:fae4f15aa79dc54cbe5bd81881881cad0305afa27889f6d1413ffb93e42f5a4d"
+    "extractedReportHash": "sha256:68fb9ffb010fe0421465ea9d2fee64e147edf1ca82e4518cc9dd8160e9f5640a",
+    "officialAuditHash": "sha256:9c96952e15131733d4b0174e058f751840ceba8bcae069f59e6219cf9f45e664",
+    "reviewedTrajectoriesHash": "sha256:3e726702f60831e9945a5646d2e341e14886c8559aad0c8c3a8eb4a1c78c65eb"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -400,7 +400,7 @@
         "serviceIds": [
           "bedelias-fder"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
       },
       {
         "priority": 2,
@@ -7329,32 +7329,38 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "1995",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "1995-2026",
       "officialSources": [
         {
           "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/node/8457",
-          "role": "rótulo plan anterior; trece programas del Plan 1995; distribución por tres años",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "Índice oficial de trece programas por Primero, Segundo y Tercero, no texto aprobado ni malla semestral"
+        },
+        {
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/1532",
+          "reviewedAt": "2026-10-21",
+          "role": "Página titulada Plan 1995; reproduce el mismo índice de programas"
         },
         {
           "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/node/6317",
-          "role": "creación de la Tecnicatura en 1994; inicio de cursos en 1995; duración de dos años y medio; evolución hacia la Licenciatura",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Consejo de Facultad de Derecho, Universidad de la República",
-          "url": "https://www.fder.edu.uy/sites/default/files/2022-12/Exp.051440-000117-22_Calendarios%20de%20mayo%20a%20diciembre%2023_0.pdf",
-          "role": "mesas de examen Plan 1995 durante 2023; códigos de las trece unidades",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "Historia de la carrera y duración de dos años y medio"
         },
         {
           "authority": "Facultad de Derecho, Universidad de la República",
-          "url": "https://www.fder.edu.uy/sites/default/files/2018-02/FORMULARIO%20CAMBIO%20DE%20PLAN%20RRLL.pdf",
-          "role": "cambio voluntario al Plan 2012; reválidas desde el plan anterior",
-          "trajectoryEvidence": false
+          "url": "https://www.fder.edu.uy/node/5166",
+          "reviewedAt": "2026-10-21",
+          "role": "Estudiantes del Plan 1995 pueden rendir materias equivalentes del nuevo plan tras revisión individual"
+        },
+        {
+          "authority": "Diario Oficial, IMPO",
+          "url": "https://www.impo.com.uy/bases/avisos/54640-1995",
+          "reviewedAt": "2026-10-21",
+          "role": "Título de Técnico en Relaciones Laborales y duración de dos años y seis meses; no grilla"
         }
       ],
       "scope": {
@@ -7370,16 +7376,18 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura en relaciones laborales:1995",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fder-tecnicatura-en-relaciones-laborales-1995.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fder/relaciones-laborales-1995-programas.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-tecnicatura-en-relaciones-laborales-1995.json",
+        "programCount": 13,
+        "promotedCourseCount": 13,
+        "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
       },
       "conflictNotes": [
-        "current: Se muestra como histórico: Facultad lo denomina plan anterior y la Licenciatura 2012 es la oferta vigente.",
-        "credits: El plan trabaja por unidades y no publica créditos; se exigen las 5+5+3 unidades del árbol sin asignar créditos ficticios.",
-        "identity: Técnico en Relaciones Laborales Plan 1995 no se fusiona con Técnico Asesor, título intermedio de 200 créditos del Plan 2012."
+        "La página titulada Plan 1995 contiene sólo Programas, no el texto del distribuido 95/95 ni semestres; la duración histórica es de 30 meses, por lo que Tercero no acredita un tercer año completo.",
+        "Los calendarios de examen prueban actividad del Plan 1995 y códigos, no obligatoriedad curricular ni asignación por períodos.",
+        "Estadística Laboral, Derecho de las RRLL en el Sector Público y RRLL en los Procesos de Integración conservan sus IDs técnicos aunque el calendario y Bedelías abrevíen los nombres.",
+        "No se importan unidades ni la credencial intermedia de la Licenciatura Plan 2012."
       ]
     },
     {
@@ -13858,5 +13866,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:8a486f4f695feda94b975888ac83acf6f06abe69366c77f6542c7dbcc12cb42a"
+  "contentHash": "sha256:ab8181f73e4c1b08a3787be282dfc4d11901e2dfc004f00904cf14aad1ed2532"
 }
