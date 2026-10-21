@@ -77295,9 +77295,9 @@
       "identity": "tecnologo en cartografia:2011",
       "career": "Tecnólogo en Cartografía",
       "planYear": "2011",
-      "reviewedAt": "2026-08-31",
+      "reviewedAt": "2026-10-21",
       "status": "official-evidence-complete",
-      "scope": "current-shared-technologist-title-duration-total-credits-area-minima-internship-project-flexible-curriculum-and-campus",
+      "scope": "Plan 2011 compartido FING/FCIEN: cuatro módulos de recomendaciones parciales, sin convertir optativas ni variantes técnicas en obligaciones",
       "publicationEligible": true,
       "officialPlan": {
         "approval": [
@@ -77325,18 +77325,60 @@
         "trajectories": [
           {
             "id": "curricula-personalizada",
+            "label": "Recorrido sugerido parcial",
+            "description": "Guía parcial de módulos sugeridos en el Plan 2011, no secuencia obligatoria ni oferta actual. Las diez asignaturas sin código y carga inequívocos conservan identidad de fuente, sin acreditar variantes de Bedelías. La propuesta por materias no ubica todas las unidades por semestre; optativas y créditos restantes se acuerdan en el currículo individual.",
             "credentialId": "tecnologo-cartografia",
-            "label": "Currícula personalizada",
-            "description": "Plan 2011 flexible y compartido por Ingeniería y Ciencias. Elegí unidades del catálogo hasta cubrir los ocho mínimos oficiales y 180 créditos; la Comisión Coordinadora valida el currículo individual.",
             "campusIds": [
               "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Módulo I",
+                "courseIds": [
+                  "cartografia-territorio-2011",
+                  "cartografia-taller-informatica-2011",
+                  "cartografia-taller-cad-2011"
+                ]
+              },
+              {
+                "label": "Módulo II",
+                "courseIds": [
+                  "cartografia-geodesia-posicionamiento-2011",
+                  "cartografia-estadistica-geoestadistica-2011",
+                  "cartografia-cartografia-matematica-2011"
+                ]
+              },
+              {
+                "label": "Módulo III",
+                "courseIds": [
+                  "cartografia-captura-remota-2011",
+                  "cartografia-taller-sig-2011",
+                  "TCI21"
+                ]
+              },
+              {
+                "label": "Módulo IV",
+                "courseIds": [
+                  "cartografia-produccion-2011",
+                  "cartografia-evaluacion-recursos-2011",
+                  "TCI26"
+                ]
+              },
+              {
+                "label": "Optativas y currículo personal (sin semestre fijo)",
+                "courseIds": [
+                  "cartografia-flexibilidad"
+                ]
+              }
             ]
           }
         ],
         "curriculum": {
           "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf",
-          "pathwayLabel": "Recorrido",
-          "pathwayDescription": "Un único Plan 2011 flexible, compartido por las facultades de Ingeniería y Ciencias en Montevideo.",
+          "pathwayLabel": "Recorrido sugerido parcial",
+          "pathwayDescription": "Guía parcial de módulos sugeridos en el Plan 2011, no secuencia obligatoria ni oferta actual. Las diez asignaturas sin código y carga inequívocos conservan identidad de fuente, sin acreditar variantes de Bedelías. La propuesta por materias no ubica todas las unidades por semestre; optativas y créditos restantes se acuerdan en el currículo individual.",
           "includeAllCoursesInPathwayCatalog": true,
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
@@ -77475,6 +77517,136 @@
               "periodLabel": "Orientación del recorrido",
               "curricularBlock": true,
               "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-territorio-2011",
+              "sourceCourseId": "cartografia-territorio-2011",
+              "name": "Territorio: dimensiones físicas y sociales y su representación espacial",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-analisis-territorial",
+              "periodLabel": "Módulo I",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-taller-informatica-2011",
+              "sourceCourseId": "cartografia-taller-informatica-2011",
+              "name": "Taller de Informática",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-taller",
+              "periodLabel": "Módulo I",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-taller-cad-2011",
+              "sourceCourseId": "cartografia-taller-cad-2011",
+              "name": "Taller de CAD",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-taller",
+              "periodLabel": "Módulo I",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-geodesia-posicionamiento-2011",
+              "sourceCourseId": "cartografia-geodesia-posicionamiento-2011",
+              "name": "Introducción a la Geodesia y Sistemas de Posicionamiento Global",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-geodesia",
+              "periodLabel": "Módulo II",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-estadistica-geoestadistica-2011",
+              "sourceCourseId": "cartografia-estadistica-geoestadistica-2011",
+              "name": "Estadística y Geoestadística",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-matematicas",
+              "periodLabel": "Módulo II",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-cartografia-matematica-2011",
+              "sourceCourseId": "cartografia-cartografia-matematica-2011",
+              "name": "Cartografía Matemática",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-geodesia",
+              "periodLabel": "Módulo II",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-captura-remota-2011",
+              "sourceCourseId": "cartografia-captura-remota-2011",
+              "name": "Captura de datos por Percepción Remota para Cartografía",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-geomatica",
+              "periodLabel": "Módulo III",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-taller-sig-2011",
+              "sourceCourseId": "cartografia-taller-sig-2011",
+              "name": "Taller de SIG",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-taller",
+              "periodLabel": "Módulo III",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-produccion-2011",
+              "sourceCourseId": "cartografia-produccion-2011",
+              "name": "Producción Cartográfica",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-geomatica",
+              "periodLabel": "Módulo IV",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
+            },
+            {
+              "id": "cartografia-evaluacion-recursos-2011",
+              "sourceCourseId": "cartografia-evaluacion-recursos-2011",
+              "name": "Evaluación de recursos naturales e impacto ambiental",
+              "credits": 0,
+              "creditsPublished": false,
+              "requirementId": "cartografia-analisis-territorial",
+              "periodLabel": "Módulo IV",
+              "curricularBlock": true,
+              "catalogRole": "official-module-source-only-course",
+              "availabilityStatus": "2011-plan-recommendation-no-technical-identity-or-current-offer",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
             }
           ],
           "credentials": [
@@ -77524,7 +77696,45 @@
               "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf"
             }
           ],
-          "manualCompletionValidation": "Aprobación del currículo individual por la Comisión Coordinadora del Tecnólogo en Cartografía"
+          "manualCompletionValidation": "Aprobación del currículo individual por la Comisión Coordinadora del Tecnólogo en Cartografía",
+          "sourceDataPath": "data/fing/cartografia-2011-trajectory-review.json",
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "TCI21",
+            "TCI26"
+          ],
+          "courseOverrides": {
+            "TCI21": {
+              "name": "Pasantía",
+              "preserveName": true,
+              "periodLabel": "Módulo III",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "TCI26": {
+              "name": "Proyecto",
+              "preserveName": true,
+              "periodLabel": "Módulo IV",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            }
+          },
+          "projectionAnomalies": [
+            {
+              "field": "trajectory",
+              "resolution": "El Plan recomienda módulos y una tabla por materias, pero no asigna inequívocamente todas las unidades a semestres; se publican sólo diez nombres de fuente y Pasantía/Proyecto con código y carga cotejados."
+            },
+            {
+              "field": "technicalVariants",
+              "resolution": "Matemáticas, Cartografía Matemática, Percepción Remota y otros nombres tienen variantes técnicas; ninguna se equipara por similitud de título."
+            },
+            {
+              "field": "visualReview",
+              "resolution": "no realizada: captura web sin imagen y descarga local rechazada por el servidor"
+            }
+          ]
         }
       },
       "offerings": [
@@ -77574,22 +77784,24 @@
           "Controlar los ocho mínimos oficiales, cuya suma es 144 créditos, y orientar los 36 restantes dentro del currículo individual.",
           "Conservar las 102 opciones de Bedelías organizadas por área sin fijar como obligatorias las versiones históricas o alternativas.",
           "Exigir nominalmente Pasantía, Proyecto y validación del currículo individual."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fing/cartografia-2011-trajectory-review.json",
+        "trajectoryCoverage": "partial-module-recommendations",
+        "completeDegreeSequence": false,
+        "trajectoryJustification": "Se reproducen las recomendaciones nominales inequívocas de los cuatro módulos del Plan 2011; la tabla por materias, las variantes técnicas y la oferta actual no permiten completar una malla sin inferencias.",
+        "trajectoryReviewTrigger": "Cotejar visualmente el anexo y obtener de FING/FCIEN una tabla vigente que vincule cada unidad con código, carga y módulo; hasta entonces no equiparar las versiones de Bedelías ni completar asignaturas/optativas por inferencia."
       },
       "sources": [
         {
           "url": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf",
-          "authority": "Plan de Estudios 2011 del Tecnólogo en Cartografía, Facultad de Ingeniería",
+          "authority": "Consejo Directivo Central de la Udelar; Facultades de Ingeniería y Ciencias",
           "supports": [
-            "título",
-            "dos años",
-            "180 créditos",
-            "ocho mínimos",
-            "pasantía",
-            "proyecto",
-            "currículo individual",
-            "servicios responsables"
-          ]
+            "Anexo 1, páginas PDF 7–11: estructura de cuatro módulos y propuesta sugerida; no oferta periódica"
+          ],
+          "reviewedAt": "2026-10-21",
+          "publishedValidity": "Plan 2011 aprobado; ficha FING vigente lo enlaza como plan de la carrera",
+          "contentHash": "sha256:97dfbd6c0811ec1838146d0f14fe20ffa3fe8ee24580eba63ddce5739207ecb1"
         },
         {
           "url": "https://www.fing.edu.uy/es/ia/ense%C3%B1anza/42cursos-de-grado/423tecnico-legal",
@@ -77643,8 +77855,8 @@
           "resolution": "La carrera se muestra bajo Ingeniería y Ciencias, pero ambas entradas cargan exactamente el mismo plan y progreso; no se duplica la identidad académica."
         }
       ],
-      "uiNotice": "Plan 2011 compartido por Ingeniería y Ciencias: 180 créditos en dos años. Los mínimos de área suman 144; completá 36 créditos adicionales en tu currículo, además de Pasantía, Proyecto y validación de la Comisión.",
-      "remainingWork": "La oferta semestral y la elección entre unidades vigentes, sustituciones e históricos deben confirmarse con la Comisión Coordinadora antes de convertir el catálogo flexible en una secuencia recomendada."
+      "uiNotice": "Guía oficial parcial del Plan 2011: cuatro módulos orientativos, no una oferta garantizada ni una secuencia obligatoria. Pasantía y Proyecto conservan sus códigos y 10 créditos; los otros nombres del anexo aún no tienen equivalencia técnica/carga comprobada. Completá 36 créditos adicionales a los mínimos por área hasta sumar 180 dentro de un currículo individual aprobado.",
+      "remainingWork": "Cotejar visualmente el anexo y obtener de FING/FCIEN una tabla vigente que vincule cada unidad con código, carga y módulo; hasta entonces no equiparar las versiones de Bedelías ni completar asignaturas/optativas por inferencia."
     },
     {
       "identity": "tecnologo en informatica:2007",
@@ -88412,6 +88624,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:c176ec91fd21349332739fe22fa83ede32c4e6a641d33c7f0f72884981d54577",
+  "contentHash": "sha256:4c1c15096b7b382eda1c9ab853249b57c264b79f139efca924fbaa09ac2c0acd",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

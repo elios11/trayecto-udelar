@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fing-tecnologo-en-cartografia-2011",
+  "auditIdentity": "tecnologo en cartografia:2011",
+  "reviewedAt": "2026-10-21",
+  "source": {
+    "authority": "Consejo Directivo Central de la Udelar; Facultades de Ingeniería y Ciencias",
+    "url": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf",
+    "approvedAt": "2011-02-22",
+    "publishedAt": "2011-03-22",
+    "consultedAt": "2026-10-21",
+    "publishedValidity": "Plan 2011 aprobado; ficha FING vigente lo enlaza como plan de la carrera",
+    "scope": "Anexo 1, páginas PDF 7–11: estructura de cuatro módulos y propuesta sugerida; no oferta periódica",
+    "visualVerification": "no realizada: captura web sin imagen y descarga local rechazada por el servidor"
+  },
+  "currentPage": {
+    "authority": "Facultad de Ingeniería, Udelar",
+    "url": "https://www.fing.edu.uy/es/ia/ense%C3%B1anza/42cursos-de-grado/423tecnico-legal",
+    "consultedAt": "2026-10-21",
+    "role": "vigencia y enlace al Plan 2011; no equivalencias de códigos"
+  },
+  "sourcePortion": {
+    "durationSemesters": 4,
+    "minimumCredits": 180,
+    "courseCredits": 160,
+    "pasantiaCredits": 10,
+    "projectCredits": 10,
+    "moduleStructure": [
+      ["I", "2 asignaturas y 2 talleres de cartografía digital"],
+      ["II", "4 asignaturas y optativa"],
+      ["III", "3 asignaturas, taller, optativa y pasantía"],
+      ["IV", "2 asignaturas, optativa y proyecto"]
+    ],
+    "sourceOnlyRecommendations": [
+      ["cartografia-territorio-2011", "Territorio: dimensiones físicas y sociales y su representación espacial", "Módulo I", "cartografia-analisis-territorial", "página PDF 8, módulo I: asignatura a crear"],
+      ["cartografia-taller-informatica-2011", "Taller de Informática", "Módulo I", "cartografia-taller", "página PDF 8, módulo I: taller a crear"],
+      ["cartografia-taller-cad-2011", "Taller de CAD", "Módulo I", "cartografia-taller", "página PDF 8, módulo I: taller a crear"],
+      ["cartografia-geodesia-posicionamiento-2011", "Introducción a la Geodesia y Sistemas de Posicionamiento Global", "Módulo II", "cartografia-geodesia", "página PDF 9, módulo II: asignatura a crear"],
+      ["cartografia-estadistica-geoestadistica-2011", "Estadística y Geoestadística", "Módulo II", "cartografia-matematicas", "página PDF 9, módulo II: asignatura a crear"],
+      ["cartografia-cartografia-matematica-2011", "Cartografía Matemática", "Módulo II", "cartografia-geodesia", "página PDF 9, módulo II: asignatura a crear"],
+      ["cartografia-captura-remota-2011", "Captura de datos por Percepción Remota para Cartografía", "Módulo III", "cartografia-geomatica", "página PDF 9, módulo III: recomendación"],
+      ["cartografia-taller-sig-2011", "Taller de SIG", "Módulo III", "cartografia-taller", "página PDF 9, módulo III: recomendación"],
+      ["cartografia-produccion-2011", "Producción Cartográfica", "Módulo IV", "cartografia-geomatica", "página PDF 10, módulo IV: recomendación"],
+      ["cartografia-evaluacion-recursos-2011", "Evaluación de recursos naturales e impacto ambiental", "Módulo IV", "cartografia-analisis-territorial", "página PDF 10, módulo IV: recomendación en FCIEN"]
+    ],
+    "verifiedTechnicalPlacements": [
+      ["TCI21", "fing-tci21-2", "Pasantía", 10, "Módulo III", "página PDF 7: pasantía en tercer semestre; página PDF 8: módulo III; Bedelías código y 10 créditos"],
+      ["TCI26", "fing-tci26-2", "Proyecto", 10, "Módulo IV", "página PDF 7: proyecto en cuarto semestre; página PDF 10: módulo IV; Bedelías código y 10 créditos"]
+    ],
+    "unplacedExamples": ["Matemática I", "Matemática II", "Sistemas de Información Geográfica", "alternativas de Humanística", "optativas no excluyentes"],
+    "reasonUnplaced": "La tabla final agrupa por materias y no fija el módulo de cada versión técnica; el texto no determina código, carga ni oferta actual para esos ejemplos."
+  },
+  "trajectories": [{
+    "id": "curricula-personalizada",
+    "periods": [
+      {"label":"Módulo I","courseIds":["cartografia-territorio-2011","cartografia-taller-informatica-2011","cartografia-taller-cad-2011"]},
+      {"label":"Módulo II","courseIds":["cartografia-geodesia-posicionamiento-2011","cartografia-estadistica-geoestadistica-2011","cartografia-cartografia-matematica-2011"]},
+      {"label":"Módulo III","courseIds":["cartografia-captura-remota-2011","cartografia-taller-sig-2011","TCI21"]},
+      {"label":"Módulo IV","courseIds":["cartografia-produccion-2011","cartografia-evaluacion-recursos-2011","TCI26"]},
+      {"label":"Optativas y currículo personal (sin semestre fijo)","courseIds":["cartografia-flexibilidad"]}
+    ]
+  }],
+  "conclusion": {
+    "state": "official-trajectory-reproduced",
+    "coverage": "partial-module-recommendations",
+    "completeDegreeSequence": false,
+    "technicalCandidatesRetained": 100,
+    "reviewTrigger": "Cotejar visualmente el anexo y obtener de FING/FCIEN una tabla vigente que vincule cada unidad con código, carga y módulo; hasta entonces no equiparar las versiones de Bedelías ni completar asignaturas/optativas por inferencia."
+  },
+  "fingerprint": {
+    "algorithm": "sha256 of JSON.stringify(sourcePortion), UTF-8",
+    "value": "sha256:97dfbd6c0811ec1838146d0f14fe20ffa3fe8ee24580eba63ddce5739207ecb1"
+  },
+  "regeneration": {
+    "command": "node scripts/build-cartografia-2011.mjs",
+    "networkRequired": false,
+    "rawPdfRequired": false
+  }
+}

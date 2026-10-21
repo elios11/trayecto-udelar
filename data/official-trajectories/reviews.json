@@ -4434,6 +4434,48 @@
         "La grilla histórica no publica códigos. Se conservan 366 registros técnicos candidatos y un marcador manual verificado, sin equivalencias por semejanza o cambio de carga.",
         "La investigación pendiente no es ausencia institucional documentada; se mantiene un único Plan 2014 y seis opciones del mismo progreso."
       ]
+    },
+    {
+      "planId": "bedelias-fing-tecnologo-en-cartografia-2011",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "Plan 2011 aprobado; propuesta orientativa del anexo",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "curricula-personalizada"
+        ],
+        "coverage": "partial-module-recommendations",
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "authority": "Consejo Directivo Central de la Udelar; Facultades de Ingeniería y Ciencias",
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf",
+          "reviewedAt": "2026-10-21",
+          "role": "Anexo 1, páginas PDF 7–11: estructura de cuatro módulos y propuesta sugerida; no oferta periódica",
+          "contentHash": "sha256:97dfbd6c0811ec1838146d0f14fe20ffa3fe8ee24580eba63ddce5739207ecb1"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/cartografia-2011-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-en-cartografia-2011.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "Cotejar visualmente el anexo y obtener de FING/FCIEN una tabla vigente que vincule cada unidad con código, carga y módulo; hasta entonces no equiparar las versiones de Bedelías ni completar asignaturas/optativas por inferencia."
+      },
+      "conflictNotes": [
+        "no realizada: captura web sin imagen y descarga local rechazada por el servidor",
+        "La tabla final agrupa por materias y no fija el módulo de cada versión técnica; el texto no determina código, carga ni oferta actual para esos ejemplos."
+      ]
     }
   ]
 }

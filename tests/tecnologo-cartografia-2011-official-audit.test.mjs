@@ -32,9 +32,9 @@ test("publica un único Plan 2011 compartido por Ingeniería y Ciencias", () => 
   assert.ok(catalogEntries.every(({ career }) => career.plans[0].defaultCredentialId === "tecnologo-cartografia"));
 });
 
-test("conserva las 102 opciones de Bedelías y los ocho mínimos oficiales", () => {
+test("conserva las 102 identidades técnicas y los ocho mínimos oficiales", () => {
   assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 102);
-  assert.equal(projection.courses.length, 104);
+  assert.equal(projection.courses.length, 114);
   assert.equal(projection.rules.length, 55);
   assert.equal(projection.plan.noPublishedRule, 30);
   assert.deepEqual(Object.fromEntries(credential.nodeRequirements.map(({ nodeId, minCredits }) => [nodeId, minCredits])), {
@@ -50,16 +50,11 @@ test("conserva las 102 opciones de Bedelías y los ocho mínimos oficiales", () 
   assert.equal(credential.nodeRequirements.reduce((sum, { minCredits }) => sum + minCredits, 0), 144);
   assert.equal(credential.minTotalCredits, 180);
   assert.deepEqual(projection.pathways["curricula-personalizada"].periods.map(({ label, courseIds }) => [label, courseIds.length]), [
-    ["Orientación del recorrido", 1],
-    ["Matemáticas", 15],
-    ["Geodesia", 7],
-    ["Análisis Territorial", 26],
-    ["Geomática", 25],
-    ["Humanística", 16],
-    ["Taller de Cartografía Digital", 11],
-    ["Pasantía", 1],
-    ["Proyecto", 1],
-    ["Validación de egreso", 1],
+    ["Módulo I", 3],
+    ["Módulo II", 3],
+    ["Módulo III", 3],
+    ["Módulo IV", 3],
+    ["Optativas y currículo personal (sin semestre fijo)", 1],
   ]);
 });
 

@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:9dd5f4c2d8fa7a4786845effa4161a9b364d9c0fe245bab57b6006eec8046563",
-    "officialAuditHash": "sha256:c176ec91fd21349332739fe22fa83ede32c4e6a641d33c7f0f72884981d54577",
-    "reviewedTrajectoriesHash": "sha256:f342abcb6dbc39f453776e3445b49872630f8624302bf06aef163ab46a330f4e"
+    "extractedReportHash": "sha256:862cdcfa34609d2f343294334df38aa55ac4200a58b6a4311af671cf38bfb993",
+    "officialAuditHash": "sha256:4c1c15096b7b382eda1c9ab853249b57c264b79f139efca924fbaa09ac2c0acd",
+    "reviewedTrajectoriesHash": "sha256:a97cc8b1926d7c4926e7aaed3e3f10581318c2518aca2fe24725754e7c5f95f8"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 114,
+      "official-trajectory-reproduced": 115,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 26
+      "research-pending": 25
     },
-    "pending": 29,
+    "pending": 28,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -122,10 +122,10 @@
         "serviceLabel": "Facultad de Ciencias",
         "selectablePlanIds": 14,
         "states": {
-          "official-trajectory-reproduced": 7,
+          "official-trajectory-reproduced": 8,
           "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 1,
-          "research-pending": 4
+          "research-pending": 3
         }
       },
       {
@@ -199,10 +199,10 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 12,
+          "official-trajectory-reproduced": 13,
           "official-trajectory-identified-pending": 1,
           "no-official-trajectory-documented": 0,
-          "research-pending": 5
+          "research-pending": 4
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 29,
+    "total": 28,
     "plans": [
       {
         "priority": 1,
@@ -374,16 +374,6 @@
           "bedelias-fcien"
         ],
         "reason": "El Centro de Matemática conserva ejemplos de ocho semestres diseñados expresamente para la oferta 2017-2020 y los enlaza hoy como posibles planes individuales. La oferta estable 2025-2029 publica códigos, créditos, paridad y frecuencia de dictado, pero no una secuencia ordinal de ingreso ni valida la vigencia de las opciones históricas. La orientación para ingresantes todavía rotula sus cursos como primer semestre 2024. No hay una guía curso-período actual cotejada ni declaración oficial positiva de ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fing-tecnologo-en-cartografia-2011",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fcien",
-          "fing"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -577,8 +567,7 @@
         "researchPending": [
           "bedelias-fcien-licenciatura-en-fisica-2019",
           "bedelias-fcien-licenciatura-en-geografia-2018",
-          "bedelias-fcien-licenciatura-en-matematica-2014",
-          "bedelias-fing-tecnologo-en-cartografia-2011"
+          "bedelias-fcien-licenciatura-en-matematica-2014"
         ]
       },
       {
@@ -614,7 +603,6 @@
           "2025"
         ],
         "researchPending": [
-          "bedelias-fing-tecnologo-en-cartografia-2011",
           "bedelias-fing-ingenieria-en-agrimensura-2023",
           "bedelias-fing-ingenieria-fisico-matematica-2017",
           "bedelias-fing-licenciatura-en-computacion-2025",
@@ -10043,33 +10031,16 @@
           "defaultCredentialId": "tecnologo-cartografia"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-31",
-      "effectiveAt": "2011",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "Plan 2011 aprobado; propuesta orientativa del anexo",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2011 del Tecnólogo en Cartografía, Facultad de Ingeniería",
+          "authority": "Consejo Directivo Central de la Udelar; Facultades de Ingeniería y Ciencias",
           "url": "https://www.fing.edu.uy/sites/default/files/2025-02/plan-de-estudios-tecnologo-en-cartografia-2011.pdf",
-          "role": "título; dos años; 180 créditos; ocho mínimos; pasantía; proyecto; currículo individual; servicios responsables",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página vigente del Tecnólogo en Cartografía, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/es/ia/ense%C3%B1anza/42cursos-de-grado/423tecnico-legal",
-          "role": "vigencia; Plan 2011; perfil; carrera compartida; duración; pasantía; proyecto",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/tecnologo-en-cartografia",
-          "role": "identidad institucional; Facultad de Ingeniería; Facultad de Ciencias; 180 créditos; sede Montevideo; ingreso vigente",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Historia institucional del Instituto de Agrimensura, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/es/ia/1instituto/13historia",
-          "role": "aprobación en 2011; responsabilidad compartida con Facultad de Ciencias",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "Anexo 1, páginas PDF 7–11: estructura de cuatro módulos y propuesta sugerida; no oferta periódica",
+          "contentHash": "sha256:97dfbd6c0811ec1838146d0f14fe20ffa3fe8ee24580eba63ddce5739207ecb1"
         }
       ],
       "scope": {
@@ -10078,26 +10049,41 @@
         ],
         "pathwayIds": [
           "curricula-personalizada"
-        ]
+        ],
+        "coverage": "partial-module-recommendations",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnologo en cartografia:2011",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-en-cartografia-2011.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fing/cartografia-2011-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-en-cartografia-2011.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "Cotejar visualmente el anexo y obtener de FING/FCIEN una tabla vigente que vincule cada unidad con código, carga y módulo; hasta entonces no equiparar las versiones de Bedelías ni completar asignaturas/optativas por inferencia.",
+        "sourceContentHash": "sha256:1f6864e08e95b515eeceb4f75fe0687ca93412363015dc9f6633d4e5ced29a07",
+        "projectionContentHash": "sha256:11c4c576f4c4e2980b6176fc68089da91fe5b6ae9e91f15e7da83725911be30b",
+        "pathways": [
+          {
+            "id": "curricula-personalizada",
+            "periodCount": 5
+          }
+        ],
+        "expectedCoursePlacements": 13,
+        "matchedCoursePlacements": 13
       },
       "conflictNotes": [
-        "duration: Bedelías y el catálogo general muestran 60 meses, mientras el Plan 2011 y la página vigente de FING establecen cuatro semestres/dos años. La UI prioriza el plan oficial específico y usa 24 meses.",
-        "creditShorthand: La página de FING resume 160 créditos de cursos. El Plan desglosa además 10 de Pasantía y 10 de Proyecto, por lo que el total de egreso es 180.",
-        "suggestedSequence: El Plan publica módulos sugeridos, pero Bedelías mezcla unidades actuales, sustituciones e históricos. La UI conserva el catálogo por áreas y no transforma esas alternativas en una secuencia obligatoria o engañosa.",
-        "sharedCareer: La carrera se muestra bajo Ingeniería y Ciencias, pero ambas entradas cargan exactamente el mismo plan y progreso; no se duplica la identidad académica."
+        "no realizada: captura web sin imagen y descarga local rechazada por el servidor",
+        "La tabla final agrupa por materias y no fija el módulo de cada versión técnica; el texto no determina código, carga ni oferta actual para esos ejemplos."
       ]
     },
     {
@@ -13906,5 +13892,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:555fec7b44635aa10d549dd9500531a0e92e669052917ea754708c0761c684c7"
+  "contentHash": "sha256:ec6a6d6a9356a96ebe15e45c1cc9ca233650dbb2c416466c411503e7a6dbb52a"
 }
