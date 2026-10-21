@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -80,7 +80,11 @@ export async function buildRriiEvidenceValidation({ write = true } = {}) {
     unresolved: evidence.unresolved,
     decision: evidence.decision,
   };
-  if (write) await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  if (write) {
+    const pendingPath = new URL("data/fder/rrii-2013-2021-validation.json.tmp", root);
+    await writeFile(pendingPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+    await rename(pendingPath, reportPath);
+  }
   return report;
 }
 
