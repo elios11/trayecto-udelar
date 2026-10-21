@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
+  "reviewedAt": "2026-10-21",
+  "officialSource": {
+    "authority": "Facultad de Derecho, Universidad de la República",
+    "documentPageUrl": "https://www.fder.edu.uy/node/3553",
+    "curriculumUrl": "https://www.fder.edu.uy/sites/default/files/2021-09/Plan%20de%20Estudios%20RRII%202013_0.pdf",
+    "publishedVersion": "Plan 2013, grilla actualizada 2021"
+  },
+  "normalizedSourcePortionHash": "sha256:b4390553d1efe8bc94f7f46254d7e73e216e1ceb86c4fb2a2f8b15e3dcc54508",
+  "evidenceHash": "sha256:1b1ae4aec69cc6e4beabe1e1801adb5005e96939182d56faa5e47c36ca62d8d3",
+  "projectionHash": "sha256:346be6a2f571d8fda90eef59dd28cb0c7fb0fdb5118d1226860893e9c1892cd8",
+  "auditHash": "sha256:747264c710c248e994a369e0b8ef3b90ed258faa950abd2039dc411e7bed9e99",
+  "checks": {
+    "semesterCount": 8,
+    "semestersMatchPriorAudit": true,
+    "placementChecks": [
+      {
+        "semester": 1,
+        "expectedCodes": [
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "3010"
+        ],
+        "actualCodes": [
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "3010"
+        ],
+        "matchesPriorAudit": true
+      },
+      {
+        "semester": 2,
+        "expectedCodes": [
+          "3014",
+          "3015",
+          "2015I",
+          "2015",
+          "3016",
+          "3017"
+        ],
+        "actualCodes": [
+          "3014",
+          "3015",
+          "2015I",
+          "2015",
+          "3016",
+          "3017"
+        ],
+        "matchesPriorAudit": true
+      },
+      {
+        "semester": 3,
+        "expectedCodes": [
+          "3018",
+          "3019",
+          "3114",
+          "3021",
+          "3022"
+        ],
+        "actualCodes": [
+          "3018",
+          "3019",
+          "3114",
+          "3021",
+          "3022"
+        ],
+        "matchesPriorAudit": true
+      },
+      {
+        "semester": 4,
+        "expectedCodes": [
+          "3033",
+          "3034",
+          "3035",
+          "3036"
+        ],
+        "actualCodes": [
+          "3033",
+          "3034",
+          "3035",
+          "3036"
+        ],
+        "matchesPriorAudit": true
+      },
+      {
+        "semester": 5,
+        "expectedCodes": [
+          "3050",
+          "3051",
+          "3052",
+          "3053",
+          "3054"
+        ],
+        "actualCodes": [
+          "3050",
+          "3051",
+          "3052",
+          "3053",
+          "3054"
+        ],
+        "matchesPriorAudit": true
+      },
+      {
+        "semester": 6,
+        "expectedCodes": [
+          "3059",
+          "3063",
+          "3062",
+          "3061",
+          "3060"
+        ],
+        "actualCodes": [
+          "3059",
+          "3063",
+          "3062",
+          "3061",
+          "3060"
+        ],
+        "matchesPriorAudit": true
+      },
+      {
+        "semester": 7,
+        "expectedCodes": [
+          "3069",
+          "3068",
+          "3067",
+          "3075"
+        ],
+        "actualCodes": [
+          "3069",
+          "3068",
+          "3067",
+          "3075"
+        ],
+        "matchesPriorAudit": true
+      },
+      {
+        "semester": 8,
+        "expectedCodes": [
+          "2044I",
+          "3076",
+          "2045I",
+          "2046I",
+          "3077"
+        ],
+        "actualCodes": [
+          "2044I",
+          "3076",
+          "2045I",
+          "2046I",
+          "3077"
+        ],
+        "matchesPriorAudit": true
+      }
+    ],
+    "intermediateCreditsMatch": true,
+    "degreeCreditsMatch": true,
+    "graduationModeCreditsMatch": true,
+    "introductionToResearch": {
+      "sourceOccurrences": 1,
+      "projectedCodes": [
+        "2015",
+        "2015I"
+      ],
+      "duplicateUnresolved": true
+    }
+  },
+  "visualReview": {
+    "status": "unavailable",
+    "reason": "La descarga directa del PDF falló por el proxy del entorno y el visor del navegador mostró una pantalla vacía; la extracción textual web desordena las columnas de la grilla"
+  },
+  "unresolved": [
+    "El semestre 2 publica 2015 y 2015I como identidades verificadas de Introducción a la Investigación, pero el PDF textual enumera una sola unidad sin código. No hay equivalencia oficial que permita fusionarlas o elegir una identidad canónica.",
+    "El PDF suma 60 créditos profesionales nominales más 30 de egreso, mientras su pie declara 227 obligatorios y Bedelías operacionaliza 80 profesionales; no se corrige por aritmética.",
+    "La página documental confirma que sigue enlazada la grilla 2021, no que todas las correspondencias código-semestre de la proyección estén visualmente verificadas."
+  ],
+  "decision": "research-pending"
+}

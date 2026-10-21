@@ -5,7 +5,7 @@
     "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
     "extractedReportHash": "sha256:862cdcfa34609d2f343294334df38aa55ac4200a58b6a4311af671cf38bfb993",
     "officialAuditHash": "sha256:4c1c15096b7b382eda1c9ab853249b57c264b79f139efca924fbaa09ac2c0acd",
-    "reviewedTrajectoriesHash": "sha256:a97cc8b1926d7c4926e7aaed3e3f10581318c2518aca2fe24725754e7c5f95f8"
+    "reviewedTrajectoriesHash": "sha256:fae4f15aa79dc54cbe5bd81881881cad0305afa27889f6d1413ffb93e42f5a4d"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -382,7 +382,7 @@
         "serviceIds": [
           "bedelias-fder"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "La página vigente mantiene la grilla 2021, pero no se pudo revisar visualmente el PDF; el semestre 2 publica dos códigos técnicos para una única Introducción a la Investigación sin equivalencia oficial."
       },
       {
         "priority": 2,
@@ -7102,50 +7102,20 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-28",
-      "effectiveAt": "2013",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "2021",
       "officialSources": [
         {
-          "authority": "Grilla actualizada del Plan 2013, Facultad de Derecho, Udelar",
-          "url": "https://www.fder.edu.uy/sites/default/files/2021-09/Plan%20de%20Estudios%20RRII%202013_0.pdf",
-          "role": "ocho semestres; ciclos; áreas; asignaturas nominales; créditos; título intermedio; título final; modalidades de egreso",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Página vigente de documentos de Relaciones Internacionales, Facultad de Derecho",
+          "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/node/3553",
-          "role": "vigencia de la grilla 2021; previaturas; modalidades de egreso; acreditaciones",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "página documental vigente que enlaza expresamente el Plan 2013 actualizado en 2021"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-relaciones-internacionales",
-          "role": "vigencia; 60 meses; 320 créditos; Facultad de Derecho; sede",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Sistema de previaturas del Plan 2013, Facultad de Derecho",
-          "url": "https://www.fder.edu.uy/sites/default/files/2018-03/Sistema%20de%20Previaturas%20de%20la%20Licenciatura%20en%20Relaciones%20Internacionales%20Plan%202013_actd.pdf",
-          "role": "previaturas nominales; cadena metodológica; una Función Universitaria; habilitación del Ciclo Profesional",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Pauta vigente de monografía del Plan 2013, Facultad de Derecho",
-          "url": "https://www.fder.edu.uy/sites/default/files/2025-04/Pauta%20monograf%C3%ADas_rev%2020325.pdf",
-          "role": "vigencia; 30 créditos; título intermedio; sexto semestre; defensa ante tribunal",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Reglamento de prácticas profesionales como modalidad de egreso, Facultad de Derecho",
-          "url": "https://www.fder.edu.uy/sites/default/files/2022-07/RRII%20-%20PRACTICAS%20PROFESIONALES%20REQUISITOS%20Y%20PROCEDIMIENTO_2022.pdf",
-          "role": "modalidad de egreso; 30 créditos; control de pertinencia por la Comisión",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Memoria institucional de Facultad de Derecho, Udelar",
-          "url": "https://udelar.edu.uy/pmb/doc_num.php?explnum_id=1329",
-          "role": "reforma del Plan 1986; aprobación del nuevo plan; Resolución n.º 4 del CDC",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/sites/default/files/2021-09/Plan%20de%20Estudios%20RRII%202013_0.pdf",
+          "reviewedAt": "2026-10-21",
+          "role": "texto de dos páginas: ocho semestres, 200 créditos del título intermedio, 320 del final y una sola Introducción a la Investigación; tablas visuales aún no verificadas"
         }
       ],
       "scope": {
@@ -7164,18 +7134,14 @@
       },
       "evidence": {
         "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en relaciones internacionales:2013",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fder-licenciatura-en-relaciones-internacionales-2013.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "sourceDataPath": "data/fder/rrii-2013-2021-evidence.json",
+        "validationDataPath": "data/fder/rrii-2013-2021-validation.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-licenciatura-en-relaciones-internacionales-2013.json",
+        "reason": "La página vigente mantiene la grilla 2021, pero no se pudo revisar visualmente el PDF; el semestre 2 publica dos códigos técnicos para una única Introducción a la Investigación sin equivalencia oficial."
       },
       "conflictNotes": [
-        "professionalMandatoryCredits: La grilla 2021 enumera 60 créditos profesionales nominales más un trabajo final de 30, pero su pie fija 227 obligatorios totales; Bedelías operacionaliza 60 + 87 + 80 = 227. La UI controla el mínimo profesional de 80, las alternativas de Función Universitaria y egreso, y no inventa qué diez créditos nominales quedarían fuera.",
-        "duration: La grilla se organiza en ocho semestres, mientras el catálogo central vigente y Bedelías informan 60 meses. La UI conserva 60 meses como duración publicada y muestra la grilla académica de ocho semestres.",
-        "duplicateCoreRecords: Bedelías conserva versiones administrativas alternativas de algunas unidades obligatorias, como Introducción a la Investigación. La credencial exige la versión nominal vigente una sola vez y mantiene las demás como trazabilidad del catálogo.",
-        "prerequisiteCoverage: El snapshot contiene 300 consultas sin regla operativa publicada. La UI reconstruye únicamente las previaturas nominales del PDF oficial de Facultad y no infiere reglas para el catálogo optativo.",
-        "catalogSize: Los 3.064 créditos de 436 registros representan oferta acumulada, equivalencias, idiomas y actividades. El egreso requiere 320 créditos según mínimos y no completar todas las opciones.",
-        "professionalCycleGate: La resolución exige completar todo el Ciclo Inicial y los semestres tercero y cuarto antes de aprobar unidades del Ciclo Profesional. La UI muestra esa condición en la validación final porque el documento no publica una única equivalencia automática para todas las variantes administrativas."
+        "Se preservan 2015 y 2015I con sus IDs y progreso: el PDF textual nombra una sola Introducción a la Investigación, pero no asigna código ni resuelve equivalencia.",
+        "El subtotal profesional, la duración publicada de 60 meses frente a ocho semestres y las variantes de egreso siguen como discrepancias documentadas en la auditoría; no se corrigen por inferencia."
       ]
     },
     {
@@ -13892,5 +13858,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:ec6a6d6a9356a96ebe15e45c1cc9ca233650dbb2c416466c411503e7a6dbb52a"
+  "contentHash": "sha256:8a486f4f695feda94b975888ac83acf6f06abe69366c77f6542c7dbcc12cb42a"
 }

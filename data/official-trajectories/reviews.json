@@ -3132,6 +3132,42 @@
       ]
     },
     {
+      "planId": "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
+      "state": "research-pending",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "2021",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": ["Montevideo"],
+        "pathwayIds": ["bedelias"]
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/3553",
+          "reviewedAt": "2026-10-21",
+          "role": "página documental vigente que enlaza expresamente el Plan 2013 actualizado en 2021"
+        },
+        {
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/sites/default/files/2021-09/Plan%20de%20Estudios%20RRII%202013_0.pdf",
+          "reviewedAt": "2026-10-21",
+          "role": "texto de dos páginas: ocho semestres, 200 créditos del título intermedio, 320 del final y una sola Introducción a la Investigación; tablas visuales aún no verificadas"
+        }
+      ],
+      "evidence": {
+        "kind": "insufficient-trajectory-evidence",
+        "sourceDataPath": "data/fder/rrii-2013-2021-evidence.json",
+        "validationDataPath": "data/fder/rrii-2013-2021-validation.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-licenciatura-en-relaciones-internacionales-2013.json",
+        "reason": "La página vigente mantiene la grilla 2021, pero no se pudo revisar visualmente el PDF; el semestre 2 publica dos códigos técnicos para una única Introducción a la Investigación sin equivalencia oficial."
+      },
+      "conflictNotes": [
+        "Se preservan 2015 y 2015I con sus IDs y progreso: el PDF textual nombra una sola Introducción a la Investigación, pero no asigna código ni resuelve equivalencia.",
+        "El subtotal profesional, la duración publicada de 60 meses frente a ocho semestres y las variantes de egreso siguen como discrepancias documentadas en la auditoría; no se corrigen por inferencia."
+      ]
+    },
+    {
       "planId": "bedelias-fcien-licenciatura-en-bioquimica-2017",
       "state": "official-trajectory-reproduced",
       "reviewedAt": "2026-10-16",
