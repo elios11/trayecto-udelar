@@ -4701,6 +4701,58 @@
         "Los subtotales impresos de las páginas 4 y 5 no constituyen los 360 créditos ni la oferta garantizada de una cohorte.",
         "Nombres y créditos de la malla requieren cotejo con la composición técnica y con otras publicaciones vigentes antes de promover identidades verificadas."
       ]
+    },
+    {
+      "planId": "bedelias-psico-licenciatura-en-psicologia-2013",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "malla actualizada en diciembre de 2025",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Salto",
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "malla-2025"
+        ],
+        "coverage": "ocho semestres oficiales y espacios flexibles transversales",
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Psicología, Universidad de la República",
+          "url": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "malla actualizada y cotejada visualmente",
+          "contentHash": "sha256:728c7ea5b865364e66d662a253cf24480190e4b3d8cf8016c5dedcf2d44ec5e8"
+        },
+        {
+          "authority": "Facultad de Psicología, Universidad de la República",
+          "url": "https://psico.edu.uy/ensenanza/grado/licenciatura/plan/malla-curricular",
+          "reviewedAt": "2026-10-22",
+          "role": "enlace institucional vigente"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/psico/psicologia-2013-malla-2025.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión oficial de malla o aclaración de 662A"
+      },
+      "conflictNotes": [
+        "Las franjas que atraviesan varios semestres se muestran una sola vez y no fijan el período personal de cursado.",
+        "La malla no garantiza dictado ni disponibilidad de optativas, prácticas o proyectos por sede y período.",
+        "El rótulo técnico 662A menciona Intervenciones Clínicas II, mientras la malla publica Teorías y técnicas de las intervenciones; se conserva como candidata y la ubicación oficial usa un bloque sólo-fuente sin fusionar progreso.",
+        "La página HTML todavía enumera Psicopatología Clínica como vigente hasta 2018; el PDF enlazado y actualizado en diciembre de 2025 publica las dos unidades de infancia/adolescencia y adultos."
+      ]
     }
   ]
 }

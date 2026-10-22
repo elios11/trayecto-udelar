@@ -4162,9 +4162,9 @@
       "identity": "licenciatura en psicologia:2013",
       "career": "LICENCIATURA EN PSICOLOGÍA",
       "planYear": "2013",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-10-22",
       "status": "official-evidence-complete",
-      "scope": "plan-multi-site-offering-and-regional-entry-route",
+      "scope": "Plan 2013 compartido por Montevideo, Salto y Paysandú; ocho semestres oficiales y franjas flexibles transversales, con catálogo verificado parcial",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -4190,7 +4190,733 @@
         "institutionalCooperationMaximumCredits": 5,
         "finalDegreeProjectCredits": 40,
         "itineraryRule": "El itinerario es una construcción flexible y personal que atraviesa ciclos y módulos; no es una orientación territorial ni modifica el título.",
-        "flexibilityRule": "El Ciclo Inicial es obligatorio. En Formación Integral y Graduación conviven unidades obligatorias, optativas y electivas, prácticas, proyectos y contenidos renovables aprobados por el Consejo."
+        "flexibilityRule": "El Ciclo Inicial es obligatorio. En Formación Integral y Graduación conviven unidades obligatorias, optativas y electivas, prácticas, proyectos y contenidos renovables aprobados por el Consejo.",
+        "trajectories": [
+          {
+            "id": "malla-2025",
+            "label": "Malla oficial · actualización 2025",
+            "description": "Malla oficial del Plan 2013, actualizada en diciembre de 2025. Los espacios flexibles y franjas que cruzan semestres no fijan cuándo cursarlos ni garantizan oferta. El catálogo está en verificación; consultá con la Facultad por tus opciones y sede.",
+            "credentialId": "bedelias-degree",
+            "campusIds": [
+              "montevideo",
+              "salto",
+              "paysandu"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "601",
+                  "6073",
+                  "400",
+                  "603",
+                  "602",
+                  "604",
+                  "607"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "606",
+                  "6071",
+                  "401",
+                  "609",
+                  "608",
+                  "616EP",
+                  "610",
+                  "611"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "612",
+                  "613",
+                  "615",
+                  "621",
+                  "617E"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "6261",
+                  "620",
+                  "650",
+                  "614",
+                  "652",
+                  "623",
+                  "624"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "619PI",
+                  "619PA",
+                  "625",
+                  "psico-malla-intervenciones",
+                  "653",
+                  "618"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "626",
+                  "641",
+                  "645",
+                  "646"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "635E",
+                  "psico-malla-opt-psicologia-7",
+                  "psico-malla-opt-articulacion-7"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "634",
+                  "psico-malla-opt-psicologia-8",
+                  "psico-malla-opt-articulacion-8"
+                ]
+              }
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+          "sourceDataPath": "data/psico/psicologia-2013-malla-2025.json",
+          "useBedeliasCompositionTree": true,
+          "preserveBedeliasCourseIds": true,
+          "usePublishedCredits": true,
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "601",
+            "6073",
+            "400",
+            "603",
+            "602",
+            "604",
+            "607",
+            "606",
+            "6071",
+            "401",
+            "609",
+            "608",
+            "616EP",
+            "610",
+            "611",
+            "612",
+            "613",
+            "615",
+            "621",
+            "617E",
+            "6261",
+            "620",
+            "650",
+            "614",
+            "652",
+            "623",
+            "624",
+            "619PI",
+            "619PA",
+            "625",
+            "653",
+            "618",
+            "626",
+            "641",
+            "645",
+            "646",
+            "635E",
+            "634",
+            "643G",
+            "644G"
+          ],
+          "includeAllCoursesInPathwayCatalog": true,
+          "pathwayLabel": "Malla oficial · actualización 2025",
+          "pathwayDescription": "Malla oficial del Plan 2013, actualizada en diciembre de 2025. Los espacios flexibles y franjas que cruzan semestres no fijan cuándo cursarlos ni garantizan oferta. El catálogo está en verificación; consultá con la Facultad por tus opciones y sede.",
+          "courseOverrides": {
+            "400": {
+              "name": "Fundamentos de la psicología",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "401": {
+              "name": "Teorías psicológicas",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "601": {
+              "name": "Historia de la psicología",
+              "credits": 10,
+              "preserveName": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "602": {
+              "name": "Herramientas para el trabajo intelectual",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "603": {
+              "name": "Epistemología",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "604": {
+              "name": "Condiciones sociales de producción del sujeto",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "articulation",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "606": {
+              "name": "Psicología del desarrollo",
+              "credits": 10,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "607": {
+              "name": "Inicio a la formación en psicología",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "referential",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "608": {
+              "name": "Metodología general de la investigación",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "609": {
+              "name": "Métodos y herramientas orientadas a la extensión",
+              "credits": 2,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "610": {
+              "name": "Psicología, género y derechos humanos",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "articulation",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "611": {
+              "name": "Formación integral",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "referential",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "612": {
+              "name": "Psicología social",
+              "credits": 10,
+              "preserveName": true,
+              "periodLabel": "Semestre 3",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "613": {
+              "name": "Psicología, sujeto y aprendizaje",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 3",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "614": {
+              "name": "Métodos y técnicas cuantitativas",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "615": {
+              "name": "Ética y deontología",
+              "credits": 3,
+              "preserveName": true,
+              "periodLabel": "Semestre 3",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "618": {
+              "name": "Construcción de itinerario",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "referential",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "620": {
+              "name": "Psicología y salud",
+              "credits": 10,
+              "preserveName": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "621": {
+              "name": "Métodos y técnicas cualitativas",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 3",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "623": {
+              "name": "Diseño de proyectos",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "practice",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "624": {
+              "name": "Estado, sociedad y políticas públicas",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "articulation",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "625": {
+              "name": "Neuropsicología",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "626": {
+              "name": "Problemáticas contemporáneas de la psicología social",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "634": {
+              "name": "Trabajo final",
+              "credits": 40,
+              "preserveName": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "641": {
+              "name": "Psicología y educación",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "645": {
+              "name": "Dispositivos psicoterapéuticos",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "646": {
+              "name": "Diálogos y ámbitos interdisciplinarios",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "articulation",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "650": {
+              "name": "Herramientas de la psicología clínica",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "652": {
+              "name": "Herramientas de la psicología social",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "653": {
+              "name": "La psicología social y el problema de lo colectivo",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "articulation",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "6071": {
+              "name": "Procesos cognitivos",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "6073": {
+              "name": "Neurobiología de la mente",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "6261": {
+              "name": "Fundamentos psicoanalíticos",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "616EP": {
+              "name": "Entrevista psicológica",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "practice",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "617E": {
+              "name": "Clínica y subjetividad",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 3",
+              "requirementId": "articulation",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "619PI": {
+              "name": "Psicopatología de la infancia y la adolescencia",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "619PA": {
+              "name": "Psicopatología de adultos",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "psychology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "635E": {
+              "name": "Referencial de egreso",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "referential",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "643G": {
+              "name": "Idioma Inglés",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Formación transversal",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "644G": {
+              "name": "Idioma Portugués",
+              "credits": 5,
+              "preserveName": true,
+              "periodLabel": "Formación transversal",
+              "requirementId": "methodology",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "psico-malla-proyectos",
+              "sourceCourseId": "psico-malla-proyectos",
+              "name": "Proyectos de formación integral o de graduación",
+              "credits": 10,
+              "requirementId": "practice",
+              "periodLabel": "Formación transversal",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-practica-integral",
+              "sourceCourseId": "psico-malla-practica-integral",
+              "name": "Práctica integral",
+              "credits": 10,
+              "requirementId": "practice",
+              "periodLabel": "Formación transversal",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-practica-graduacion",
+              "sourceCourseId": "psico-malla-practica-graduacion",
+              "name": "Práctica de graduación",
+              "credits": 20,
+              "requirementId": "practice",
+              "periodLabel": "Formación transversal",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-cooperacion",
+              "sourceCourseId": "psico-malla-cooperacion",
+              "name": "Cooperación institucional",
+              "credits": 5,
+              "requirementId": "cooperation",
+              "periodLabel": "Formación transversal",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-opt-psicologia-7",
+              "sourceCourseId": "psico-malla-opt-psicologia-7",
+              "name": "Optativa o electiva de Psicología · séptimo semestre",
+              "credits": 5,
+              "requirementId": "psychology",
+              "periodLabel": "Semestre 7",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-opt-psicologia-8",
+              "sourceCourseId": "psico-malla-opt-psicologia-8",
+              "name": "Optativa o electiva de Psicología · octavo semestre",
+              "credits": 5,
+              "requirementId": "psychology",
+              "periodLabel": "Semestre 8",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-opt-metodologico",
+              "sourceCourseId": "psico-malla-opt-metodologico",
+              "name": "Optativa o electiva del módulo Metodológico",
+              "credits": 5,
+              "requirementId": "methodology",
+              "periodLabel": "Formación transversal",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-opt-articulacion-7",
+              "sourceCourseId": "psico-malla-opt-articulacion-7",
+              "name": "Optativa o electiva de Articulación de Saberes · séptimo semestre",
+              "credits": 5,
+              "requirementId": "articulation",
+              "periodLabel": "Semestre 7",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-opt-articulacion-8",
+              "sourceCourseId": "psico-malla-opt-articulacion-8",
+              "name": "Optativa o electiva de Articulación de Saberes · octavo semestre",
+              "credits": 5,
+              "requirementId": "articulation",
+              "periodLabel": "Semestre 8",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            },
+            {
+              "id": "psico-malla-intervenciones",
+              "sourceCourseId": "psico-malla-intervenciones",
+              "name": "Teorías y técnicas de las intervenciones",
+              "credits": 5,
+              "requirementId": "methodology",
+              "periodLabel": "Semestre 5",
+              "curricularBlock": true,
+              "elective": false,
+              "catalogRole": "official-source-only-course",
+              "sourceUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+              "availabilityStatus": "curricular-space-not-current-course-offer"
+            }
+          ],
+          "creditRequirements": [
+            {
+              "id": "psychology",
+              "name": "Módulo Psicología",
+              "shortName": "Psicología",
+              "minCredits": 145
+            },
+            {
+              "id": "methodology",
+              "name": "Módulo Metodológico",
+              "shortName": "Metodológico",
+              "minCredits": 60
+            },
+            {
+              "id": "practice",
+              "name": "Módulo Prácticas y Proyectos",
+              "shortName": "Prácticas",
+              "minCredits": 50
+            },
+            {
+              "id": "articulation",
+              "name": "Módulo Articulación de Saberes",
+              "shortName": "Articulación",
+              "minCredits": 40
+            },
+            {
+              "id": "referential",
+              "name": "Módulo Referencial",
+              "shortName": "Referencial",
+              "minCredits": 20
+            },
+            {
+              "id": "cooperation",
+              "name": "Cooperación Institucional",
+              "shortName": "Cooperación",
+              "minCredits": 0,
+              "credentialRequired": false
+            }
+          ]
+        }
       },
       "offerings": [
         {
@@ -4254,7 +4980,12 @@
           "Conservar 40 créditos para el Trabajo Final de Grado dentro del Módulo Psicología y del Ciclo de Graduación.",
           "No convertir prácticas, proyectos, electivas ni acreditaciones regionales en trayectoria territorial.",
           "Tratar la diferencia de previaturas como cobertura de publicación."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/psico/psicologia-2013-malla-2025.json",
+        "trajectoryCoverage": "ocho semestres y 75 créditos en espacios flexibles, de los cuales 55 no tienen semestre único",
+        "completeDegreeSequence": false,
+        "trajectoryReviewTrigger": "Facultad publique revisión de la malla o aclare la identidad técnica 662A"
       },
       "sources": [
         {
@@ -4277,10 +5008,10 @@
         },
         {
           "url": "https://psico.edu.uy/ensenanza/grado/licenciatura/plan/malla-curricular",
-          "authority": "Facultad de Psicología, Udelar",
+          "authority": "Facultad de Psicología, Universidad de la República",
+          "reviewedAt": "2026-10-22",
           "supports": [
-            "malla vigente en tres ciclos y cinco módulos",
-            "carácter singular del itinerario estudiantil"
+            "enlace vigente al PDF de la malla 2025"
           ]
         },
         {
@@ -4306,6 +5037,17 @@
             "90 créditos del CIO reconocidos como primer año de Psicología",
             "carácter de trayectoria de ingreso y no de orientación de egreso"
           ]
+        },
+        {
+          "url": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+          "authority": "Facultad de Psicología, Universidad de la República",
+          "reviewedAt": "2026-10-22",
+          "contentHash": "sha256:728c7ea5b865364e66d662a253cf24480190e4b3d8cf8016c5dedcf2d44ec5e8",
+          "supports": [
+            "malla oficial actualizada en diciembre de 2025",
+            "códigos y créditos de ocho semestres",
+            "franjas flexibles transversales"
+          ]
         }
       ],
       "anomalies": [
@@ -4322,7 +5064,8 @@
           "resolution": "Los mínimos operativos publicados por Bedelías no reproducen literalmente la distribución 80/160/80 del Plan. La normalización de egreso debe respetar el documento aprobado y modelar por separado las reglas operativas vigentes."
         }
       ],
-      "remainingWork": "La auditoría resuelve la falsa variante regional y la vía de ingreso CURE. La proyección curada de unidades, mínimos operativos y previaturas para la UI sigue pendiente y no habilita publicación automática."
+      "remainingWork": "Contrastar equivalencia de 662A, oferta y codificación de espacios transversales por sede sin incluir entradas de Bedelías no respaldadas.",
+      "uiNotice": "Malla oficial de Psicología actualizada en diciembre de 2025. La secuencia de ocho semestres es orientativa; los espacios transversales y optativos no son cursos simultáneos obligatorios ni garantizan oferta. Sólo se muestran identidades cotejadas con la malla."
     },
     {
       "identity": "diplomatura en musica:1994",
@@ -89656,6 +90399,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:dee1ebfd5747fab38e269cf010621d857fdaeaa9ccb05999c23f7b210684f284",
+  "contentHash": "sha256:e9532e657d77837e7c66e490e67261cb02a097e1c15717b9ca51a23c2a7c17ab",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

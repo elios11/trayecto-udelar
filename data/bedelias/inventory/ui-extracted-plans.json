@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:6f4d52ec1bc4f6f621ac1c8be1dd73beb705eeb6576140ff3cf2db8026f0a92b",
-    "officialAuditHash": "sha256:dee1ebfd5747fab38e269cf010621d857fdaeaa9ccb05999c23f7b210684f284",
+    "auditQueueHash": "sha256:20a7c9d9bbc327ed947c1707b2f3bd3a61e26c1698dea22fcea25cc420cac002",
+    "officialAuditHash": "sha256:e9532e657d77837e7c66e490e67261cb02a097e1c15717b9ca51a23c2a7c17ab",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -23,20 +23,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5780,
-      "candidate": 26192,
+      "verified": 5830,
+      "candidate": 26218,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31980,
-    "afterPublishedCourses": 5780,
+    "beforePublishedCourses": 32056,
+    "afterPublishedCourses": 5830,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1903,
     "visibleTargetsWithUnpublishedDependencies": 1569,
     "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 68,
-    "plansWithStructureOnly": 7
+    "plansWithPartialCatalog": 69,
+    "plansWithStructureOnly": 6
   },
   "plans": [
     {
@@ -4210,7 +4210,7 @@
       "facultyCode": "PSICO",
       "snapshotPath": "data/bedelias/psico-licenciatura-en-psicologia-2013.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -4219,18 +4219,18 @@
         "paysandu"
       ],
       "before": {
-        "publishedCourses": 2946,
+        "publishedCourses": 3022,
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 2946,
+        "publishedCourses": 50,
+        "hiddenCourses": 2972,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 2946,
+        "verified": 50,
+        "candidate": 2972,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4640,5 +4640,5 @@
       }
     }
   ],
-  "contentHash": "sha256:6bf701d01a6d89292a9c5bc1dcec704df0a0c8aa1e20bc1e2206766db1732c1b"
+  "contentHash": "sha256:af408ee25d666ee06d200973dd0447797cb8f3cd48c7442fe883f15c7fb994b8"
 }

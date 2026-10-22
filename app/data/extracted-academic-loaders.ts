@@ -753,7 +753,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-psico-licenciatura-en-psicologia-2013": {
     load: () => import("./bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["malla-2025"],
     pathwayLabel: "Trayectoria",
     minCredits: 320,
   },

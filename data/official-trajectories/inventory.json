@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:9ddf5f3e2e05ae9d3919b89fb1d9f2ee99475cfe9f5d0bffb519f801026200e1",
-    "extractedReportHash": "sha256:6bf701d01a6d89292a9c5bc1dcec704df0a0c8aa1e20bc1e2206766db1732c1b",
-    "officialAuditHash": "sha256:dee1ebfd5747fab38e269cf010621d857fdaeaa9ccb05999c23f7b210684f284",
-    "reviewedTrajectoriesHash": "sha256:ba3b74732f48d19000c81d65667fd5bb02b8d44f2850112d40b390fce7ca8587"
+    "extractedCatalogHash": "sha256:9d7a17dcc390e5cd8f5e527205a9d96578aeac20b61ea45d28c5e6d0a7665a1f",
+    "extractedReportHash": "sha256:af408ee25d666ee06d200973dd0447797cb8f3cd48c7442fe883f15c7fb994b8",
+    "officialAuditHash": "sha256:e9532e657d77837e7c66e490e67261cb02a097e1c15717b9ca51a23c2a7c17ab",
+    "reviewedTrajectoriesHash": "sha256:59a16942d016aa8d3cbb99cb7625c4d31a299773580e7f5c619296efb9ebf45b"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 117,
+      "official-trajectory-reproduced": 118,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 23
+      "research-pending": 22
     },
-    "pending": 26,
+    "pending": 25,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -232,10 +232,10 @@
         "serviceLabel": "Facultad de Psicología",
         "selectablePlanIds": 1,
         "states": {
-          "official-trajectory-reproduced": 0,
+          "official-trajectory-reproduced": 1,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 26,
+    "total": 25,
     "plans": [
       {
         "priority": 1,
@@ -440,15 +440,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-psico-licenciatura-en-psicologia-2013",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-psico"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-cure-licenciatura-en-diseno-de-paisaje-2008",
         "state": "research-pending",
         "serviceIds": [
@@ -589,14 +580,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-odon-odontologia-2011"
-        ]
-      },
-      {
-        "serviceId": "bedelias-psico",
-        "serviceLabel": "Facultad de Psicología",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-psico-licenciatura-en-psicologia-2013"
         ]
       },
       {
@@ -13363,49 +13346,26 @@
           "careerId": "bedelias-psico-licenciatura-en-psicologia",
           "careerLabel": "Licenciatura en Psicologia",
           "planLabel": "Plan 2013 · vigente",
-          "defaultTrajectoryId": "bedelias",
+          "defaultTrajectoryId": "malla-2025",
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-20",
-      "effectiveAt": "2013",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "malla actualizada en diciembre de 2025",
       "officialSources": [
         {
-          "authority": "Facultad de Psicología, Udelar",
-          "url": "https://psico.edu.uy/sites/default/files/plan_de_estudio_de_la_licenciatura_en_psicologia_2013.diariooficial.pdf",
-          "role": "aprobación del Plan 2013 por el CDC; título, cuatro años y 320 créditos; créditos por ciclo y módulo, cooperación y Trabajo Final de Grado; naturaleza flexible y personal de los itinerarios",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Psicología, Universidad de la República",
+          "url": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "malla actualizada y cotejada visualmente",
+          "contentHash": "sha256:728c7ea5b865364e66d662a253cf24480190e4b3d8cf8016c5dedcf2d44ec5e8"
         },
         {
-          "authority": "Facultad de Psicología, Udelar",
-          "url": "https://www.psico.edu.uy/noticias/publicacion-del-plan-de-estudio-2013",
-          "role": "aplicación del mismo PELP 2013 en Montevideo, Paysandú y Salto; ingreso mediante CIO en CURE",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Psicología, Udelar",
+          "authority": "Facultad de Psicología, Universidad de la República",
           "url": "https://psico.edu.uy/ensenanza/grado/licenciatura/plan/malla-curricular",
-          "role": "malla vigente en tres ciclos y cinco módulos; carácter singular del itinerario estudiantil",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Psicología, Udelar",
-          "url": "https://psico.edu.uy/sites/default/pub_files/2021-04/malla%20curricular%20-%20Plan%202013.pdf",
-          "role": "distribución semestral vigente; 320 créditos y mínimos por módulo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo central de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-psicologia",
-          "role": "carrera completa en Montevideo, Paysandú y Salto; CIO Ciencia y Tecnología — Trayectoria Psicología como primer año reconocido",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo de carreras del interior, Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/ciclo-inicial-optativo-ciencia-y-tecnologia-trayectoria-psicologia/",
-          "role": "90 créditos del CIO reconocidos como primer año de Psicología; carácter de trayectoria de ingreso y no de orientación de egreso",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-22",
+          "role": "enlace institucional vigente"
         }
       ],
       "scope": {
@@ -13415,25 +13375,44 @@
           "Paysandú"
         ],
         "pathwayIds": [
-          "bedelias"
-        ]
+          "malla-2025"
+        ],
+        "coverage": "ocho semestres oficiales y espacios flexibles transversales",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en psicologia:2013",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/psico/psicologia-2013-malla-2025.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión oficial de malla o aclaración de 662A",
+        "sourceContentHash": "sha256:62bdfc557bc3d458166c3a2c0c2a5aef2532b84c2d8b162cd0d6578479f6b04f",
+        "projectionContentHash": "sha256:ed88b87a7371035a5f93c2b2d64362bedbcd1cd6e17ede735d27c385386e8b50",
+        "pathways": [
+          {
+            "id": "malla-2025",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 43,
+        "matchedCoursePlacements": 43
       },
       "conflictNotes": [
-        "durationMonths: Usar 48 meses porque el Plan aprobado establece cuatro años y ocho semestres. Conservar los 60 meses del catálogo central como discrepancia documental, no como regla curricular.",
-        "bedeliasCycleMinimums: Los mínimos operativos publicados por Bedelías no reproducen literalmente la distribución 80/160/80 del Plan. La normalización de egreso debe respetar el documento aprobado y modelar por separado las reglas operativas vigentes."
+        "Las franjas que atraviesan varios semestres se muestran una sola vez y no fijan el período personal de cursado.",
+        "La malla no garantiza dictado ni disponibilidad de optativas, prácticas o proyectos por sede y período.",
+        "El rótulo técnico 662A menciona Intervenciones Clínicas II, mientras la malla publica Teorías y técnicas de las intervenciones; se conserva como candidata y la ubicación oficial usa un bloque sólo-fuente sin fusionar progreso.",
+        "La página HTML todavía enumera Psicopatología Clínica como vigente hasta 2018; el PDF enlazado y actualizado en diciembre de 2025 publica las dos unidades de infancia/adolescencia y adultos."
       ]
     },
     {
@@ -13857,5 +13836,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:5958298e49a9c1667e304c6d0f06418c018f2de7ba65cec41192a6aba7a9d402"
+  "contentHash": "sha256:676c440c574777b33dd5e6d0183bdcb69c9a2a120fd3b48020234e9dd8f86400"
 }
