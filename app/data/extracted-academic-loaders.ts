@@ -531,7 +531,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018": {
     load: () => import("./bedelias-generated/bedelias-fic-licenciatura-en-ingenieria-de-medios-2018.json"),
-    pathwayIds: ["trayectoria-flexible"],
+    pathwayIds: ["malla-fing-1-4","malla-fcea-1-4","trayectoria-flexible"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },

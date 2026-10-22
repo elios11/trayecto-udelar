@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:9a75c63dfec29f2f322fe28fa57af17e8a5fdcf6eb608c4bee2ac32eb3d9e6a5",
-    "extractedReportHash": "sha256:09fba00822761e9db97a7583a8fa1e00768e3b5e525b9c6be71bd168b17853df",
-    "officialAuditHash": "sha256:487e4c615ee333edc98273b8f2e3dcb106d15cdacb0c58f480cdcdb96c81b237",
-    "reviewedTrajectoriesHash": "sha256:62cc3241b25a0ecd56693774bb8f49f5779f6aeca01b88cf237347bd16f5ea2a"
+    "extractedCatalogHash": "sha256:9ddf5f3e2e05ae9d3919b89fb1d9f2ee99475cfe9f5d0bffb519f801026200e1",
+    "extractedReportHash": "sha256:6bf701d01a6d89292a9c5bc1dcec704df0a0c8aa1e20bc1e2206766db1732c1b",
+    "officialAuditHash": "sha256:dee1ebfd5747fab38e269cf010621d857fdaeaa9ccb05999c23f7b210684f284",
+    "reviewedTrajectoriesHash": "sha256:ba3b74732f48d19000c81d65667fd5bb02b8d44f2850112d40b390fce7ca8587"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 116,
+      "official-trajectory-reproduced": 117,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 24
+      "research-pending": 23
     },
-    "pending": 27,
+    "pending": 26,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -188,10 +188,10 @@
         "serviceLabel": "Facultad de Información y Comunicación",
         "selectablePlanIds": 4,
         "states": {
-          "official-trajectory-reproduced": 3,
+          "official-trajectory-reproduced": 4,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 27,
+    "total": 26,
     "plans": [
       {
         "priority": 1,
@@ -401,15 +401,6 @@
           "bedelias-fder"
         ],
         "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fic"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -569,14 +560,6 @@
           "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
           "bedelias-fder-notariado-2016",
           "bedelias-fder-tecnicatura-en-relaciones-laborales-1995"
-        ]
-      },
-      {
-        "serviceId": "bedelias-fic",
-        "serviceLabel": "Facultad de Información y Comunicación",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018"
         ]
       },
       {
@@ -8917,43 +8900,26 @@
           "careerId": "bedelias-fic-licenciatura-en-ingenieria-de-medios",
           "careerLabel": "Licenciatura en Ingeniería de Medios",
           "planLabel": "Plan 2018 · vigente",
-          "defaultTrajectoryId": "trayectoria-flexible",
+          "defaultTrajectoryId": "malla-fing-1-4",
           "defaultCredentialId": "licenciado-ingenieria-medios"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2018",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "malla sugerida FIC, archivo fechado 10 de diciembre de 2025",
       "officialSources": [
         {
-          "authority": "Plan de Estudios aprobado por FIC y FING, Udelar",
-          "url": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf",
-          "role": "título; cuatro años; 360 créditos; grupos y áreas; mínimos; currículos individuales; Comisión de Carrera; pasantías",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Información y Comunicación, Universidad de la República",
+          "url": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+          "reviewedAt": "2026-10-22",
+          "role": "malla sugerida parcial",
+          "contentHash": "sha256:20b9529459fbf3540fd29c3bca0791e08e127960f60bf4b1d5893d6248b1c0be"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-ingenieria-de-medios",
-          "role": "vigencia; responsabilidad conjunta FIC-FING; 48 meses; 360 créditos; sede FIC; condiciones de ingreso",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Diario Oficial de la República Oriental del Uruguay",
-          "url": "https://www.impo.com.uy/diariooficial/2019/06/06/avisos.pdf",
-          "role": "publicación oficial del plan; organización curricular; aprobación de currículos individuales",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Ingeniería, Udelar",
-          "url": "https://www.fing.edu.uy/index.php/es/node/52385",
-          "role": "implementación desde marzo de 2026; primera cohorte de 50 cupos; malla sugerida flexible; tres grupos; talleres y pasantías",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Información y Comunicación, Udelar",
-          "url": "https://fic.edu.uy/node/5704",
-          "role": "inicio efectivo de la primera cohorte; cinco unidades curriculares del primer semestre 2026; Taller Integrador",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Información y Comunicación, Universidad de la República",
+          "url": "https://www.fic.edu.uy/node/5573",
+          "reviewedAt": "2026-10-22",
+          "role": "enlace vigente; variantes sugeridas"
         }
       ],
       "scope": {
@@ -8961,28 +8927,49 @@
           "Montevideo"
         ],
         "pathwayIds": [
-          "trayectoria-flexible"
-        ]
+          "malla-fing-1-4",
+          "malla-fcea-1-4"
+        ],
+        "coverage": "sólo semestres 1-4 de las dos guías iniciales",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en ingenieria de medios:2018",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fic-licenciatura-en-ingenieria-de-medios-2018.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fic/ingenieria-medios-2018-malla-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fic-licenciatura-en-ingenieria-de-medios-2018.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "publicación oficial de semestre 5 y trayectoria completa",
+        "sourceContentHash": "sha256:9ab28d1edca49870a46ca5567cad6ead6777687319888d67aba8270cb0a75237",
+        "projectionContentHash": "sha256:ddf5d39e30ffc0a0ea6fd47ad5bebfbde1e0bb3d80cac0978df3586e5444b0c8",
+        "pathways": [
+          {
+            "id": "malla-fing-1-4",
+            "periodCount": 4
+          },
+          {
+            "id": "malla-fcea-1-4",
+            "periodCount": 4
+          }
+        ],
+        "expectedCoursePlacements": 42,
+        "matchedCoursePlacements": 42
       },
       "conflictNotes": [
-        "implementationStatus: El plan fue creado en 2017 y publicado en 2019, pero no se implementó hasta marzo de 2026. Las páginas históricas que aún indican que no funciona están superadas por el catálogo Udelar y la primera cohorte efectiva.",
-        "suggestedCurriculum: FIC y FING presentaron una malla sugerida en diciembre de 2025, pero no publican una tabla estable y trazable de los ocho semestres. La UI sólo fija las cinco unidades confirmadas del primer semestre y deja el resto por áreas.",
-        "bedeliasCatalogCoverage: Las 25 entradas actuales de Bedelías no alcanzan los mínimos de todas las áreas y no incluyen ninguna unidad de Señales e Ingeniería Eléctrica. Se muestran como catálogo parcial, con orientación explícita para registrar otras unidades acreditables.",
-        "minimumCreditsGap: Los mínimos de los tres grupos suman 315 créditos. El total de 360 exige al menos 45 créditos adicionales en áreas del plan o formación complementaria coherente, según aprobación de la Comisión de Carrera.",
-        "prerequisites: Bedelías no publica previaturas para las unidades del snapshot. La UI no inventa bloqueos y deriva la validación de coherencia del currículo a la Comisión de Carrera."
+        "El enlace oficial publica dos variantes para los primeros cuatro semestres, no dos menciones ni dos planes.",
+        "Las capturas de grillas posteriores omiten el semestre 5 y muestran semestres 6-9, mientras el Plan define una duración promedio de ocho semestres; no se debe concatenar estas filas en una malla completa sin aclaración institucional.",
+        "Los subtotales impresos de las páginas 4 y 5 no constituyen los 360 créditos ni la oferta garantizada de una cohorte.",
+        "Nombres y créditos de la malla requieren cotejo con la composición técnica y con otras publicaciones vigentes antes de promover identidades verificadas."
       ]
     },
     {
@@ -13870,5 +13857,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:ffc4fda168b73aa1512e645bdffb41525bfab250c370d664ae8a1dfaeda726ee"
+  "contentHash": "sha256:5958298e49a9c1667e304c6d0f06418c018f2de7ba65cec41192a6aba7a9d402"
 }

@@ -69640,9 +69640,9 @@
       "identity": "licenciatura en ingenieria de medios:2018",
       "career": "Licenciatura en Ingeniería de Medios",
       "planYear": "2018",
-      "reviewedAt": "2026-08-30",
+      "reviewedAt": "2026-10-22",
       "status": "official-evidence-complete",
-      "scope": "current-joint-degree-plan-title-credit-structure-flexible-individual-curriculum-first-implemented-cohort-first-semester-and-campus",
+      "scope": "Plan 2018 conjunto FIC/FING, Montevideo; dos guías oficiales sólo para semestres 1-4, catálogo parcial y currículo personal validado",
       "publicationEligible": true,
       "officialPlan": {
         "approval": [
@@ -69666,10 +69666,160 @@
         "degreeRule": "El Plan 2018 exige 360 créditos y otorga un único título de Licenciado en Ingeniería de Medios. El currículo individual debe cumplir 85 créditos de Ingeniería, 80 de Información, Comunicación y Medios y 150 de Creatividad e Innovación, junto con los mínimos de sus áreas; los 45 créditos restantes completan el recorrido coherente aprobado por la Comisión de Carrera.",
         "trajectories": [
           {
-            "id": "trayectoria-flexible",
+            "id": "malla-fing-1-4",
+            "label": "Trayectoria Fing · tramo inicial",
+            "description": "Guía parcial FIC de los semestres 1 a 4; no fija los posteriores ni garantiza oferta. Podés ajustar el currículo con la Comisión de Carrera hasta cumplir 360 créditos y los mínimos por área.",
             "credentialId": "licenciado-ingenieria-medios",
-            "label": "Trayectoria flexible",
-            "description": "Recorrido individual de ocho semestres. El primer semestre corresponde a la cohorte efectivamente iniciada en 2026; las unidades posteriores se eligen por áreas y la Comisión de Carrera aprueba la coherencia del currículo."
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "6001",
+                  "lim-grilla-curso-introductorio",
+                  "4205",
+                  "FING-MI2",
+                  "2602L",
+                  "2601L"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "O3000",
+                  "O1140",
+                  "802",
+                  "FING-1061",
+                  "FING-1030"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "lim-grilla-introduccion-preservacion-audiovisual-1",
+                  "O1235",
+                  "4203",
+                  "FING-1062",
+                  "lim-grilla-taller-integrador-2"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "lim-grilla-tecnologia-aplicada-sonido",
+                  "lim-grilla-diseno-analisis",
+                  "lim-grilla-comunicacion-inteligencia-artificial",
+                  "FING-1151",
+                  "lim-grilla-probabilidad-estadistica-fing"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "malla-fcea-1-4",
+            "label": "Trayectoria FCEA con Matemática Inicial (Fing) · tramo inicial",
+            "description": "Guía parcial FIC de los semestres 1 a 4; no fija los posteriores ni garantiza oferta. Podés ajustar el currículo con la Comisión de Carrera hasta cumplir 360 créditos y los mínimos por área.",
+            "credentialId": "licenciado-ingenieria-medios",
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "6001",
+                  "lim-grilla-curso-introductorio",
+                  "4205",
+                  "FING-MI2",
+                  "2602L",
+                  "2601L"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "O3000",
+                  "O1140",
+                  "802",
+                  "lim-grilla-calculo-1-fcea",
+                  "FCEA-MC20"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "lim-grilla-introduccion-preservacion-audiovisual-1",
+                  "O1235",
+                  "4203",
+                  "FCEA-MC31",
+                  "lim-grilla-taller-integrador-2"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "lim-grilla-tecnologia-aplicada-sonido",
+                  "lim-grilla-diseno-analisis",
+                  "lim-grilla-comunicacion-inteligencia-artificial",
+                  "FING-1151",
+                  "lim-grilla-probabilidad-estadistica-fing"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trayectoria-flexible",
+            "label": "Recorrido personalizado",
+            "credentialId": "licenciado-ingenieria-medios",
+            "description": "Recorrido personal conservado para compatibilidad; sólo el primer semestre está ubicado y el resto se elige con la Comisión de Carrera.",
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "6001",
+                  "lim-grilla-curso-introductorio",
+                  "4205",
+                  "FING-MI2",
+                  "2602L",
+                  "2601L"
+                ]
+              },
+              {
+                "label": "Orientación del recorrido",
+                "courseIds": [
+                  "recorrido-flexible-45"
+                ]
+              },
+              {
+                "label": "Señales e Ingeniería Eléctrica",
+                "courseIds": [
+                  "senales-catalogo-pendiente"
+                ]
+              },
+              {
+                "label": "Formación Complementaria",
+                "courseIds": [
+                  "formacion-complementaria"
+                ]
+              },
+              {
+                "label": "Validación de egreso",
+                "courseIds": [
+                  "validacion-final-plan"
+                ]
+              }
+            ]
           }
         ],
         "curriculum": {
@@ -69677,10 +69827,10 @@
           "usePublishedCredits": true,
           "deduplicateSharedProfileCourses": true,
           "includeAllCoursesInPathwayCatalog": true,
-          "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf",
+          "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
           "prerequisitesSourceUrl": "https://bedelias.udelar.edu.uy/",
-          "pathwayLabel": "Trayectoria",
-          "pathwayDescription": "La carrera es flexible: el primer semestre 2026 está identificado y el resto del catálogo se organiza por áreas acreditables, sin convertir todas las alternativas de Bedelías en obligatorias.",
+          "pathwayLabel": "Malla sugerida · tramo inicial",
+          "pathwayDescription": "Guía parcial FIC de los semestres 1 a 4; no fija los posteriores ni garantiza oferta. Podés ajustar el currículo con la Comisión de Carrera hasta cumplir 360 créditos y los mínimos por área.",
           "pathRequirementMap": {
             "LIM0001": "media-engineering",
             "LIM0001A": "media-signals",
@@ -69725,25 +69875,165 @@
             "Validación de egreso"
           ],
           "courseOverrides": {
+            "802": {
+              "name": "Redes y Sistemas",
+              "credits": 8,
+              "preserveName": true,
+              "requirementId": "media-information-science",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "4203": {
+              "name": "Comunicación Sonora",
+              "credits": 6,
+              "preserveName": true,
+              "requirementId": "media-languages",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
             "4205": {
               "name": "Teoría de la Comunicación II",
-              "periodLabel": "Semestre 1"
+              "periodLabel": "Semestre 1",
+              "credits": 9,
+              "preserveName": true,
+              "requirementId": "media-theory",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
             },
             "6001": {
               "name": "Introducción al Estudio del Audiovisual",
-              "periodLabel": "Semestre 1"
+              "periodLabel": "Semestre 1",
+              "credits": 7,
+              "preserveName": true,
+              "requirementId": "media-content-conception",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
             },
             "2601L": {
-              "name": "Taller Integrador",
-              "periodLabel": "Semestre 1"
+              "name": "Taller integrador I",
+              "periodLabel": "Semestre 1",
+              "credits": 8,
+              "preserveName": true,
+              "requirementId": "media-integrative",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
             },
             "FING-MI2": {
-              "name": "Matemática Inicial",
-              "periodLabel": "Semestre 1"
+              "name": "Matemática Inicial (Fing)",
+              "periodLabel": "Semestre 1",
+              "credits": 4,
+              "preserveName": true,
+              "requirementId": "media-mathematics",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
             },
             "2602L": {
-              "name": "Informática",
-              "periodLabel": "Semestre 1"
+              "name": "Informática LIM",
+              "periodLabel": "Semestre 1",
+              "credits": 10,
+              "preserveName": true,
+              "requirementId": "media-informatics",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "O3000": {
+              "name": "Edición I",
+              "credits": 8,
+              "preserveName": true,
+              "requirementId": "media-content-techniques",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "O1140": {
+              "name": "Historia de los medios",
+              "credits": 9,
+              "preserveName": true,
+              "requirementId": "media-theory",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FING-1061": {
+              "name": "Cálculo Diferencial e Integral en Una Variable (Fing)",
+              "credits": 13,
+              "preserveName": true,
+              "requirementId": "media-mathematics",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FING-1030": {
+              "name": "Geometría y Álgebra Lineal 1 (Fing)",
+              "credits": 9,
+              "preserveName": true,
+              "requirementId": "media-mathematics",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "O1235": {
+              "name": "Audiovisión I",
+              "credits": 9,
+              "preserveName": true,
+              "requirementId": "media-content-techniques",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FING-1062": {
+              "name": "Cálculo Diferencial e Integral en Varias Variables (Fing)",
+              "credits": 13,
+              "preserveName": true,
+              "requirementId": "media-mathematics",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FING-1151": {
+              "name": "Física 1 (Fing)",
+              "credits": 10,
+              "preserveName": true,
+              "requirementId": "media-physics",
+              "periodLabel": "Semestre 4",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FCEA-MC20": {
+              "name": "Álgebra Lineal (FCEA)",
+              "credits": 10,
+              "preserveName": true,
+              "requirementId": "media-mathematics",
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "FCEA-MC31": {
+              "name": "Cálculo II (FCEA)",
+              "credits": 13,
+              "preserveName": true,
+              "requirementId": "media-mathematics",
+              "periodLabel": "Semestre 3",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
             }
           },
           "creditRequirements": [
@@ -69874,6 +70164,86 @@
               "periodLabel": "Formación Complementaria",
               "curricularBlock": true,
               "sourceUrl": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf"
+            },
+            {
+              "id": "lim-grilla-curso-introductorio",
+              "sourceCourseId": "lim-grilla-curso-introductorio",
+              "name": "Curso Introductorio",
+              "credits": 2,
+              "requirementId": "media-integrative",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
+            },
+            {
+              "id": "lim-grilla-introduccion-preservacion-audiovisual-1",
+              "sourceCourseId": "lim-grilla-introduccion-preservacion-audiovisual-1",
+              "name": "Introducción a la preservación audiovisual I",
+              "credits": 8,
+              "requirementId": "media-content-conception",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
+            },
+            {
+              "id": "lim-grilla-taller-integrador-2",
+              "sourceCourseId": "lim-grilla-taller-integrador-2",
+              "name": "Taller integrador II",
+              "credits": 10,
+              "requirementId": "media-integrative",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
+            },
+            {
+              "id": "lim-grilla-tecnologia-aplicada-sonido",
+              "sourceCourseId": "lim-grilla-tecnologia-aplicada-sonido",
+              "name": "Tecnología aplicada al sonido",
+              "credits": 9,
+              "requirementId": "media-content-techniques",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
+            },
+            {
+              "id": "lim-grilla-diseno-analisis",
+              "sourceCourseId": "lim-grilla-diseno-analisis",
+              "name": "Diseño y Análisis",
+              "credits": 8,
+              "requirementId": "media-theory",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
+            },
+            {
+              "id": "lim-grilla-comunicacion-inteligencia-artificial",
+              "sourceCourseId": "lim-grilla-comunicacion-inteligencia-artificial",
+              "name": "Comunicación e Inteligencia Artificial CIA",
+              "credits": 9,
+              "requirementId": "media-languages",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
+            },
+            {
+              "id": "lim-grilla-probabilidad-estadistica-fing",
+              "sourceCourseId": "lim-grilla-probabilidad-estadistica-fing",
+              "name": "Probabilidad y Estadística (Fing)",
+              "credits": 10,
+              "requirementId": "media-mathematics",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
+            },
+            {
+              "id": "lim-grilla-calculo-1-fcea",
+              "sourceCourseId": "lim-grilla-calculo-1-fcea",
+              "name": "Cálculo I (FCEA)",
+              "credits": 10,
+              "requirementId": "media-mathematics",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+              "availabilityStatus": "suggested-not-confirmed-current-offer"
             }
           ],
           "credentials": [
@@ -69940,7 +70310,28 @@
               ]
             }
           ],
-          "manualCompletionValidation": "Validación del currículo individual por la Comisión de Carrera de Ingeniería de Medios"
+          "manualCompletionValidation": "Validación del currículo individual por la Comisión de Carrera de Ingeniería de Medios",
+          "sourceDataPath": "data/fic/ingenieria-medios-2018-malla-review.json",
+          "preserveBedeliasCourseIds": true,
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "6001",
+            "4205",
+            "FING-MI2",
+            "2602L",
+            "2601L",
+            "O3000",
+            "O1140",
+            "802",
+            "FING-1061",
+            "FING-1030",
+            "O1235",
+            "4203",
+            "FING-1062",
+            "FING-1151",
+            "FCEA-MC20",
+            "FCEA-MC31"
+          ]
         }
       },
       "offerings": [
@@ -69982,7 +70373,12 @@
           "Mostrar como primer semestre efectivo 2026 Taller Integrador, Matemática Inicial, Informática, Introducción al Estudio del Audiovisual y Teoría de la Comunicación II.",
           "Mantener el resto de las unidades de Bedelías organizado por áreas acreditables, sin afirmar obligatoriedad ni semestre cuando la fuente vigente no lo publica de forma estable.",
           "Exigir una validación final del currículo individual por la Comisión de Carrera y advertir que faltan unidades futuras de la primera cohorte en el catálogo administrativo actual."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fic/ingenieria-medios-2018-malla-review.json",
+        "trajectoryCoverage": "dos variantes indicativas de semestres 1-4",
+        "completeDegreeSequence": false,
+        "trajectoryReviewTrigger": "FIC/FING aclaren y publiquen la malla completa, incluido el semestre 5"
       },
       "sources": [
         {
@@ -70039,6 +70435,24 @@
             "cinco unidades curriculares del primer semestre 2026",
             "Taller Integrador"
           ]
+        },
+        {
+          "url": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+          "authority": "Facultad de Información y Comunicación, Universidad de la República",
+          "reviewedAt": "2026-10-22",
+          "contentHash": "sha256:20b9529459fbf3540fd29c3bca0791e08e127960f60bf4b1d5893d6248b1c0be",
+          "supports": [
+            "malla indicativa Fing y FCEA semestres 1-4",
+            "ejemplos incompletos 6-9"
+          ]
+        },
+        {
+          "url": "https://www.fic.edu.uy/node/5573",
+          "authority": "Facultad de Información y Comunicación, Universidad de la República",
+          "reviewedAt": "2026-10-22",
+          "supports": [
+            "enlaces vigentes y carácter sugerido de ambas variantes"
+          ]
         }
       ],
       "anomalies": [
@@ -70063,8 +70477,8 @@
           "resolution": "Bedelías no publica previaturas para las unidades del snapshot. La UI no inventa bloqueos y deriva la validación de coherencia del currículo a la Comisión de Carrera."
         }
       ],
-      "uiNotice": "Plan 2018 conjunto de FIC y FING, activo desde marzo de 2026. Completá 360 créditos y los mínimos de las tres áreas; el primer semestre está confirmado y el resto del currículo flexible requiere aprobación de la Comisión de Carrera.",
-      "remainingWork": "La Comisión de Carrera debe validar unidades acreditables, equivalencias, previaturas no publicadas y la secuencia de semestres posteriores a medida que avance la primera cohorte."
+      "uiNotice": "Malla sugerida parcial de FIC: sólo los semestres 1 a 4 están cotejados en dos variantes. Los semestres posteriores no están completos en la fuente. El catálogo sigue parcial; verificá con la Comisión de Carrera las unidades acreditables y la oferta vigente.",
+      "remainingWork": "Contrastar el quinto semestre y las grillas 6-9 con una publicación oficial completa; ampliar catálogo verificado por curso sin inferir equivalencias."
     },
     {
       "identity": "ingenieria de alimentos:2003",
@@ -89242,6 +89656,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:487e4c615ee333edc98273b8f2e3dcb106d15cdacb0c58f480cdcdb96c81b237",
+  "contentHash": "sha256:dee1ebfd5747fab38e269cf010621d857fdaeaa9ccb05999c23f7b210684f284",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

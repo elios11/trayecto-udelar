@@ -19,15 +19,18 @@ test("publica la carrera conjunta que funciona desde 2026 como un único plan", 
   assert.equal(projection.plan.minCredits, 360);
   assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo"]);
   assert.deepEqual(projection.plan.sharedWith, ["FACULTAD DE INGENIERÍA"]);
-  assert.match(projection.plan.notice, /activo desde marzo de 2026/i);
+  assert.match(projection.plan.notice, /semestres 1 a 4/i);
 });
 
-test("mantiene una trayectoria flexible y no inventa menciones desde las líneas de trabajo", () => {
-  assert.deepEqual(Object.keys(projection.pathways), ["trayectoria-flexible"]);
+test("publica las dos guías iniciales y conserva el recorrido flexible y los IDs", () => {
+  assert.deepEqual(Object.keys(projection.pathways), ["malla-fing-1-4", "malla-fcea-1-4", "trayectoria-flexible"]);
+  assert.deepEqual(projection.pathways["malla-fing-1-4"].periods.map(({ label }) => label), ["Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4"]);
+  assert.deepEqual(projection.pathways["malla-fcea-1-4"].periods.map(({ label }) => label), ["Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4"]);
   assert.equal(pathway.credentialId, "licenciado-ingenieria-medios");
   assert.deepEqual(pathway.campusIds, ["montevideo"]);
-  assert.match(pathway.description, /currículo/i);
+  assert.match(pathway.description, /compatibilidad/i);
   assert.equal(projection.creditStructure.credentials.length, 1);
+  assert.ok(projection.courses.some(({ id }) => id === "fic-2601l"));
 });
 
 test("controla los tres grupos y los doce mínimos de área del plan", () => {
@@ -51,20 +54,21 @@ test("controla los tres grupos y los doce mínimos de área del plan", () => {
   assert.equal(credential.minTotalCredits - 315, 45);
 });
 
-test("identifica exactamente las cinco unidades del primer semestre efectivo", () => {
+test("identifica las seis unidades del primer semestre sugerido compartido", () => {
   const firstSemester = pathway.periods.find(({ label }) => label === "Semestre 1");
   const names = firstSemester.courseIds.map((id) => projection.courses.find((course) => course.id === id)?.name).sort();
   assert.deepEqual(names, [
-    "Informática",
+    "Informática LIM",
+    "Curso Introductorio",
     "Introducción al Estudio del Audiovisual",
-    "Matemática Inicial",
-    "Taller Integrador",
+    "Matemática Inicial (Fing)",
+    "Taller integrador I",
     "Teoría de la Comunicación II",
   ].sort());
 });
 
 test("expone las áreas aún incompletas sin simular asignaturas o previaturas", () => {
-  assert.equal(projection.courses.length, 29);
+  assert.equal(projection.courses.length, 37);
   assert.equal(projection.rules.length, 0);
   assert.equal(projection.plan.noPublishedRule, 14);
   assert.equal(officialAudit.bedeliasComparison.compositionMatterCount, 25);

@@ -51,6 +51,48 @@
       ]
     }
   ],
+  "technicalMatchesByPublishedName": {
+    "Introducción al Estudio del Audiovisual": "6001",
+    "Teoría de la Comunicación II": "4205",
+    "Matemática Inicial (Fing)": "FING-MI2",
+    "Informática LIM": "2602L",
+    "Taller integrador I": "2601L",
+    "Edición I": "O3000",
+    "Historia de los medios": "O1140",
+    "Redes y Sistemas": "802",
+    "Cálculo Diferencial e Integral en Una Variable (Fing)": "FING-1061",
+    "Geometría y Álgebra Lineal 1 (Fing)": "FING-1030",
+    "Audiovisión I": "O1235",
+    "Comunicación Sonora": "4203",
+    "Cálculo Diferencial e Integral en Varias Variables (Fing)": "FING-1062",
+    "Física 1 (Fing)": "FING-1151",
+    "Álgebra Lineal (FCEA)": "FCEA-MC20",
+    "Cálculo II (FCEA)": "FCEA-MC31"
+  },
+  "sourceOnlyIdsByPublishedName": {
+    "Curso Introductorio": "lim-grilla-curso-introductorio",
+    "Introducción a la preservación audiovisual I": "lim-grilla-introduccion-preservacion-audiovisual-1",
+    "Taller integrador II": "lim-grilla-taller-integrador-2",
+    "Tecnología aplicada al sonido": "lim-grilla-tecnologia-aplicada-sonido",
+    "Diseño y Análisis": "lim-grilla-diseno-analisis",
+    "Comunicación e Inteligencia Artificial CIA": "lim-grilla-comunicacion-inteligencia-artificial",
+    "Probabilidad y Estadística (Fing)": "lim-grilla-probabilidad-estadistica-fing",
+    "Cálculo I (FCEA)": "lim-grilla-calculo-1-fcea"
+  },
+  "auditedPathways": [
+    { "id": "malla-fing-1-4", "periods": [
+      { "label": "Semestre 1", "courseIds": ["6001", "lim-grilla-curso-introductorio", "4205", "FING-MI2", "2602L", "2601L"] },
+      { "label": "Semestre 2", "courseIds": ["O3000", "O1140", "802", "FING-1061", "FING-1030"] },
+      { "label": "Semestre 3", "courseIds": ["lim-grilla-introduccion-preservacion-audiovisual-1", "O1235", "4203", "FING-1062", "lim-grilla-taller-integrador-2"] },
+      { "label": "Semestre 4", "courseIds": ["lim-grilla-tecnologia-aplicada-sonido", "lim-grilla-diseno-analisis", "lim-grilla-comunicacion-inteligencia-artificial", "FING-1151", "lim-grilla-probabilidad-estadistica-fing"] }
+    ] },
+    { "id": "malla-fcea-1-4", "periods": [
+      { "label": "Semestre 1", "courseIds": ["6001", "lim-grilla-curso-introductorio", "4205", "FING-MI2", "2602L", "2601L"] },
+      { "label": "Semestre 2", "courseIds": ["O3000", "O1140", "802", "lim-grilla-calculo-1-fcea", "FCEA-MC20"] },
+      { "label": "Semestre 3", "courseIds": ["lim-grilla-introduccion-preservacion-audiovisual-1", "O1235", "4203", "FCEA-MC31", "lim-grilla-taller-integrador-2"] },
+      { "label": "Semestre 4", "courseIds": ["lim-grilla-tecnologia-aplicada-sonido", "lim-grilla-diseno-analisis", "lim-grilla-comunicacion-inteligencia-artificial", "FING-1151", "lim-grilla-probabilidad-estadistica-fing"] }
+    ] }
+  ],
   "laterExamples": [
     { "id": "creativo-audiovisual", "page": 4, "semestersPrinted": [6, 7, 8, 9], "subtotalsPrinted": [44, 45, 45, 50], "totalPrinted": 184 },
     { "id": "tecnologico", "page": 5, "semestersPrinted": [6, 7, 8, 9], "subtotalsPrinted": [44, 45, 44, 50], "totalPrinted": 183 }
