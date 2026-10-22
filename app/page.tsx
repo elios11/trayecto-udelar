@@ -207,6 +207,21 @@ const coursesLoadLabel = (courses: Course[]) => {
   return "Créditos no publicados";
 };
 
+const registeredPeriodLoadLabel = (courses: Course[], groups: Array<{ courseIds: string[]; required: boolean }> | undefined) => {
+  if (!groups?.length || courses.some((course) => course.creditsPublished === false || course.hours)) return coursesLoadLabel(courses);
+  const creditsById = new Map(courses.map((course) => [course.id, course.credits]));
+  let minimum = courses.reduce((sum, course) => sum + course.credits, 0);
+  let maximum = minimum;
+  for (const group of groups) {
+    const options = group.courseIds.map((id) => creditsById.get(id)).filter((credits): credits is number => credits !== undefined);
+    if (options.length < 2) continue;
+    const allOptions = options.reduce((sum, credits) => sum + credits, 0);
+    minimum += (group.required ? Math.min(...options) : 0) - allOptions;
+    maximum += Math.max(...options) - allOptions;
+  }
+  return minimum === maximum ? `${minimum} créditos según opciones` : `${minimum}–${maximum} créditos según opciones`;
+};
+
 const isOfficiallyAccreditableCourse = (course: Course | undefined) => (course?.authorityStatus ?? "verified") === "verified";
 
 type VerifiedRule = {
@@ -328,8 +343,8 @@ type RegisteredProjection = {
   plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; planAuditStatus?: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; courseCatalogAuditStatus?: "verified" | "partial" | "structure-only"; creditComputationCoverage?: CreditComputationCoverage; compositionAvailable?: boolean; verifiedCompositionAvailable?: boolean; extractedCompositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
   courses: Array<{ id: string; bedeliasCode?: string; equivalentCourseIds?: string[]; equivalentBedeliasCodes?: string[]; name: string; credits: number; creditsPublished?: boolean; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean; elective?: boolean; catalogRole?: Course["catalogRole"]; availabilityStatus?: Course["availabilityStatus"]; authorityStatus?: Course["authorityStatus"]; fieldProvenance?: Course["fieldProvenance"] }>;
-  pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
-  publishedPathways?: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[] }>; catalogCourseIds?: string[] }>;
+  pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[]; alternativeGroups?: Array<{ id: string; courseIds: string[]; required: boolean }> }>; catalogCourseIds?: string[] }>;
+  publishedPathways?: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[]; alternativeGroups?: Array<{ id: string; courseIds: string[]; required: boolean }> }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
   publishedRules?: VerifiedRule[];
@@ -3467,7 +3482,7 @@ export default function Home() {
                 <section className="semester-column" key={semester}>
                   <header>
                     <span>{planYear === "2025" ? String(semester).padStart(2, "0") : semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
-                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : planYear === "2025" ? activePlan2025Trajectory.periods.find((period) => period.label === `Semestre ${semester}`)?.label : planYear === "1997" ? activePlan1997Trajectory.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{coursesLoadLabel(filtered(semester))}</p></div>
+                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : planYear === "2025" ? activePlan2025Trajectory.periods.find((period) => period.label === `Semestre ${semester}`)?.label : planYear === "1997" ? activePlan1997Trajectory.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{isRegisteredPlan && !search.trim() ? registeredPeriodLoadLabel(filtered(semester), activeRegisteredPeriods[Number(semester) - 1]?.alternativeGroups) : coursesLoadLabel(filtered(semester))}</p></div>
                   </header>
                   <div className="course-stack">
                     {filtered(semester).map((course) => (

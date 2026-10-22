@@ -31,6 +31,14 @@ async function writeJsonIfChanged(relative, value) {
 
 const sourceOnlyId = (identity) => `ia2003-${identity}`;
 const periodLabel = (number) => `Semestre ${number}`;
+const periodAlternatives = (semester, rows, technical, groups) => Object.keys(groups)
+  .map((group) => ({
+    id: group,
+    courseIds: semester.filter((identity) => rows.get(identity)?.[5] === group)
+      .map((identity) => technical.get(identity)?.code ?? sourceOnlyId(identity)),
+    required: group === "bioquimica",
+  }))
+  .filter(({ courseIds }) => courseIds.length > 1);
 const sourceOnlyRequirements = {
   mat05: "food-mathematics", fq101: "food-chemistry", bioquim3: "food-biology",
   controlcalidad: "food-quality", gestionprocesos: "food-industrial-management",
@@ -86,6 +94,7 @@ export async function buildIngenieriaAlimentos2003() {
     periods: pathway.semesters.map((semester, index) => ({
       label: periodLabel(index + 1),
       courseIds: semester.map((identity) => technical.get(identity)?.code ?? sourceOnlyId(identity)),
+      alternativeGroups: periodAlternatives(semester, rows, technical, source.alternativeGroups),
     })),
   }));
   await writeJsonIfChanged(sourcePath, source);
@@ -100,6 +109,7 @@ export async function buildIngenieriaAlimentos2003() {
     periods: pathway.semesters.map((semester, index) => ({
       label: periodLabel(index + 1),
       courseIds: semester.map((identity) => technical.get(identity)?.code ?? sourceOnlyId(identity)),
+      alternativeGroups: periodAlternatives(semester, rows, technical, source.alternativeGroups),
     })),
   }));
   audit.reviewedAt = source.reviewedAt;

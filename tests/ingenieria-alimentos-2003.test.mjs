@@ -24,11 +24,25 @@ test("Alimentos 2003 conserva dos guías de diez semestres y sus alternativas si
     assert.deepEqual(published.campusIds, ["montevideo"]);
     for (const [index, period] of pathway.periods.entries()) {
       assert.equal(published.periods[index].courseIds.length, period.courseIds.length);
+      assert.deepEqual(published.periods[index].alternativeGroups ?? [], (period.alternativeGroups ?? []).map((group) => ({
+        ...group,
+        courseIds: group.courseIds.map((sourceId) => byIdentity.get(sourceId).id),
+      })));
       for (const identity of period.courseIds) {
         const course = byIdentity.get(identity);
         assert.ok(course, `Falta ${identity}`);
         assert.equal(course.authorityStatus, "verified");
         assert.ok(published.periods[index].courseIds.includes(course.id));
+      }
+      const publishedPeriod = published.periods[index];
+      if (publishedPeriod.alternativeGroups?.length) {
+        const creditsById = new Map(projection.courses.map((course) => [course.id, course.credits]));
+        const rawTotal = publishedPeriod.courseIds.reduce((sum, id) => sum + creditsById.get(id), 0);
+        const maximum = publishedPeriod.alternativeGroups.reduce((sum, group) => {
+          const credits = group.courseIds.map((id) => creditsById.get(id));
+          return sum - credits.reduce((total, amount) => total + amount, 0) + Math.max(...credits);
+        }, rawTotal);
+        assert.ok(maximum < rawTotal, "Las alternativas no deben contarse todas en la carga del semestre");
       }
     }
   }
