@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:9d7a17dcc390e5cd8f5e527205a9d96578aeac20b61ea45d28c5e6d0a7665a1f",
-    "extractedReportHash": "sha256:af408ee25d666ee06d200973dd0447797cb8f3cd48c7442fe883f15c7fb994b8",
-    "officialAuditHash": "sha256:e9532e657d77837e7c66e490e67261cb02a097e1c15717b9ca51a23c2a7c17ab",
-    "reviewedTrajectoriesHash": "sha256:59a16942d016aa8d3cbb99cb7625c4d31a299773580e7f5c619296efb9ebf45b"
+    "extractedReportHash": "sha256:0dcc617ad8a695dc8025df70d30025a899e8fa5a7016e6534510763074e6e998",
+    "officialAuditHash": "sha256:238c0cc779532d18b628951799a2883395f1229592d63ea2764bd5982e4f2c5e",
+    "reviewedTrajectoriesHash": "sha256:912628d5d3d7a4dfe3c4e4d53af06c81b43d34f289d5f2eab8e57b35328ebe17"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 118,
+      "official-trajectory-reproduced": 119,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 22
+      "research-pending": 21
     },
-    "pending": 25,
+    "pending": 24,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -243,10 +243,10 @@
         "serviceLabel": "Facultad de Química",
         "selectablePlanIds": 11,
         "states": {
-          "official-trajectory-reproduced": 9,
+          "official-trajectory-reproduced": 10,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 2
+          "research-pending": 1
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 25,
+    "total": 24,
     "plans": [
       {
         "priority": 1,
@@ -485,15 +485,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-fq-ingenieria-de-alimentos-2003",
-        "state": "research-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
         "state": "research-pending",
         "serviceIds": [
@@ -587,7 +578,6 @@
         "serviceLabel": "Facultad de Química",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-fq-ingenieria-de-alimentos-2003",
           "bedelias-fq-licenciatura-en-biotecnologia-2024"
         ]
       },
@@ -12056,39 +12046,23 @@
           "defaultCredentialId": "ingeniero-alimentario"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2003",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "guías institucionales enlazadas al 22/10/2026; sin fecha de aprobación impresa",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2003, Facultad de Ingeniería, Udelar",
-          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf",
-          "role": "título Ingeniero Alimentario; 450 créditos; currículo flexible; grupos y materias; mínimos; aprobación del currículo individual",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "guía FQ cotejada visualmente",
+          "contentHash": "sha256:266fe0e9949e5a06bc78f45f4e4f09e218c74baf1251f9338041c752b1ebacb4"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingenieria-de-alimentos",
-          "role": "vigencia; responsabilidad de cuatro facultades; 60 meses; 450 créditos; sede Facultad de Química",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Diario Oficial de la República Oriental del Uruguay",
-          "url": "https://www.impo.com.uy/diariooficial/2022/09/01/avisos.pdf",
-          "role": "Reglamentación 2022; Comisión de Carrera; referencias académicas de FQ y FING; participación de Agronomía y Veterinaria",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal de ingresos 2026, Udelar",
-          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
-          "role": "ingreso vigente exclusivamente por Facultad de Química",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Guía oficial de carreras de grado, Udelar",
-          "url": "https://udelar.edu.uy/portal/wp-content/uploads/sites/48/2023/11/Carreras-de-Grado-2024-V1-web-OK-1.pdf",
-          "role": "primer año cursable en Salto; continuidad posterior en Montevideo",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "guía FING cotejada visualmente",
+          "contentHash": "sha256:158bb0a5066a3f3f39c93ceb1ee9e314dd1ffbc05bd7f7896dc657ab79d2518f"
         }
       ],
       "scope": {
@@ -12096,28 +12070,49 @@
           "Montevideo"
         ],
         "pathwayIds": [
-          "trayectoria-flexible"
-        ]
+          "trayectoria-flexible",
+          "matematicas-fisicas-fing"
+        ],
+        "coverage": "dos currículas sugeridas de diez semestres; catálogo parcial",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-profiles",
         "features": [
-          "official-flexible-structure"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "ingenieria de alimentos:2003",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/ingenieria-alimentos-2003-curriculas.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión de las guías oficiales o nuevos códigos verificados",
+        "sourceContentHash": "sha256:98f86217ae19385943fd200c60650cbfd99986bf4cf9004f29f695808a60452c",
+        "projectionContentHash": "sha256:2109fbd5a35d174a21d20da4bff91d5c90dd2e824685785cfcce505b8c87257e",
+        "pathways": [
+          {
+            "id": "trayectoria-flexible",
+            "periodCount": 10
+          },
+          {
+            "id": "matematicas-fisicas-fing",
+            "periodCount": 10
+          }
+        ],
+        "expectedCoursePlacements": 101,
+        "matchedCoursePlacements": 101
       },
       "conflictNotes": [
-        "administrativeCanonicalService: El inventario deduplicado había elegido FING, pero el catálogo y el ingreso 2026 ubican la sede administrativa vigente en FQ. Los tres snapshots tienen idéntica composición; se normaliza con FQ sin perder la corresponsabilidad de los otros servicios.",
-        "regionalFirstYear: La guía oficial permite cursar el primer año en Salto, pero exige continuar desde el segundo semestre en Montevideo. CENURLN no se presenta como sede completa ni como trayectoria curricular diferente.",
-        "minimumCreditsGaps: Los mínimos de los cuatro grupos suman 400 créditos, 50 menos que el total. Además, los mínimos por materia suman 150 dentro de Básicas, 4 dentro de Complementarias y 122 dentro de Profesional Específica; la UI conserva simultáneamente cada mínimo padre e hijo sin sumarlos como requisitos independientes adicionales.",
-        "bedeliasCatalogSemantics: Las 389 entradas son alternativas acumuladas y acreditables de varios servicios y años. No se interpretan como 389 asignaturas obligatorias ni como una secuencia fija de diez semestres.",
-        "prerequisiteCoverage: La cobertura de previaturas varía según el servicio administrativo. La proyección usa las 155 reglas publicadas por FQ y marca 103 consultas sin regla, sin completar condiciones por inferencia."
+        "Las fechas de los archivos digitales no acreditan fecha de aprobación o vigencia de esta versión de las guías; ambas están enlazadas por fichas institucionales consultadas el 22/10/2026.",
+        "Los códigos técnicos de Bedelías no están impresos en estas dos grillas. Las identidades con código se cotejaron por nombre, créditos y servicio; nombres repetidos, códigos de otra facultad o créditos discrepantes permanecen como filas sólo-fuente.",
+        "Las alternativas dentro de un mismo semestre no son créditos acumulativos ni materias obligatorias simultáneas.",
+        "La secuencia de diez semestres no documenta oferta territorial completa en Salto."
       ]
     },
     {
@@ -13836,5 +13831,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:676c440c574777b33dd5e6d0183bdcb69c9a2a120fd3b48020234e9dd8f86400"
+  "contentHash": "sha256:16ade87fb90a63f05c66d1061416d0f0e09f17c1424abb228899faa49fcb0d11"
 }

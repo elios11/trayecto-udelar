@@ -71227,9 +71227,9 @@
       "identity": "ingenieria de alimentos:2003",
       "career": "Ingeniería de Alimentos",
       "planYear": "2003",
-      "reviewedAt": "2026-08-30",
+      "reviewedAt": "2026-10-22",
       "status": "official-evidence-complete",
-      "scope": "current-joint-degree-title-credit-structure-flexible-individual-curriculum-academic-references-admission-and-regional-first-year",
+      "scope": "Plan 2003 conjunto: dos currículas sugeridas de diez semestres para Montevideo; catálogo curricular verificado parcial; Salto conserva únicamente el primer año documentado.",
       "publicationEligible": true,
       "officialPlan": {
         "approval": [
@@ -71256,9 +71256,230 @@
         "trajectories": [
           {
             "id": "trayectoria-flexible",
+            "label": "Matemáticas y Físicas de Química",
+            "description": "Guía sugerida del Plan 2003; la elección de unidades y las equivalencias se aprueban en el currículo individual. En Bioquímica se cursa una opción; Nutrición y Gestión presentan alternativas, no créditos acumulativos. La grilla no garantiza oferta por semestre o sede.",
             "credentialId": "ingeniero-alimentario",
-            "label": "Trayectoria flexible",
-            "description": "Currículo individual de cinco años organizado por áreas acreditables. La selección de unidades, equivalencias y distribución temporal se valida con la Comisión de Carrera; el catálogo no implica que todas las unidades sean obligatorias."
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "01",
+                  "03",
+                  "102",
+                  "104A",
+                  "103B"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "04",
+                  "202",
+                  "205",
+                  "FING-1224"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "304",
+                  "ia2003-mat05",
+                  "06",
+                  "301",
+                  "302"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "401",
+                  "402",
+                  "ia2003-fq101",
+                  "07",
+                  "308",
+                  "FING-Q59"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "520A",
+                  "501",
+                  "FING-Q22",
+                  "FING-Q21",
+                  "514",
+                  "513",
+                  "ia2003-bioquim3"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "FING-Q66",
+                  "FING-Q67",
+                  "533",
+                  "792"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "FING-Q69",
+                  "FVET-31",
+                  "FING-Q68",
+                  "796"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "ia2003-controlcalidad",
+                  "FAGRO-CAC30",
+                  "FMED-APSE",
+                  "FVET-44",
+                  "793",
+                  "794",
+                  "FING-A65"
+                ]
+              },
+              {
+                "label": "Semestre 9",
+                "courseIds": [
+                  "FING-A88",
+                  "FING-Q80",
+                  "FING-1921",
+                  "ia2003-gestionprocesos",
+                  "FING-Q81"
+                ]
+              },
+              {
+                "label": "Semestre 10",
+                "courseIds": [
+                  "ia2003-proyecto2",
+                  "FVET-45"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "matematicas-fisicas-fing",
+            "label": "Matemáticas y Físicas de Ingeniería",
+            "description": "Guía sugerida del Plan 2003; la elección de unidades y las equivalencias se aprueban en el currículo individual. En Bioquímica se cursa una opción; Nutrición y Gestión presentan alternativas, no créditos acumulativos. La grilla no garantiza oferta por semestre o sede.",
+            "credentialId": "ingeniero-alimentario",
+            "campusIds": [
+              "montevideo"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "FING-1061",
+                  "FING-1030",
+                  "FING-1151",
+                  "102",
+                  "104A",
+                  "103B"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "FING-1062",
+                  "FING-1031",
+                  "FING-1152",
+                  "202",
+                  "FING-1224"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "FING-1063",
+                  "FING-1153",
+                  "FING-1025",
+                  "06",
+                  "301",
+                  "302"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "401",
+                  "402",
+                  "ia2003-fq101",
+                  "FING-1064",
+                  "FING-Q59"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "520A",
+                  "501",
+                  "FING-Q22",
+                  "FING-Q21",
+                  "FING-1154",
+                  "514",
+                  "513",
+                  "ia2003-bioquim3"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "FING-Q66",
+                  "FING-Q67",
+                  "533",
+                  "792"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "FING-Q69",
+                  "FVET-31",
+                  "FING-Q68",
+                  "796"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "ia2003-controlcalidad",
+                  "FAGRO-CAC30",
+                  "FMED-APSE",
+                  "FVET-44",
+                  "793",
+                  "794",
+                  "FING-A65"
+                ]
+              },
+              {
+                "label": "Semestre 9",
+                "courseIds": [
+                  "FING-A88",
+                  "FING-Q80",
+                  "FING-1921",
+                  "ia2003-gestionprocesos",
+                  "FING-Q81"
+                ]
+              },
+              {
+                "label": "Semestre 10",
+                "courseIds": [
+                  "ia2003-proyecto2",
+                  "FVET-45"
+                ]
+              }
+            ]
           }
         ],
         "curriculum": {
@@ -71268,8 +71489,8 @@
           "includeAllCoursesInPathwayCatalog": true,
           "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf",
           "prerequisitesSourceUrl": "https://bedelias.udelar.edu.uy/",
-          "pathwayLabel": "Trayectoria",
-          "pathwayDescription": "El Plan 2003 es flexible: elegí unidades de los catálogos acreditables hasta cumplir cada mínimo y el total, sin interpretar todas las alternativas de Bedelías como obligatorias ni asignarles un semestre no publicado.",
+          "pathwayLabel": "Currícula sugerida",
+          "pathwayDescription": "Guía sugerida del Plan 2003; la elección de unidades y las equivalencias se aprueban en el currículo individual. En Bioquímica se cursa una opción; Nutrición y Gestión presentan alternativas, no créditos acumulativos. La grilla no garantiza oferta por semestre o sede.",
           "pathRequirementMap": {
             "2084": "food-integrative",
             "2611": "food-professional",
@@ -71482,6 +71703,74 @@
               "periodLabel": "Orientación del recorrido",
               "curricularBlock": true,
               "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf"
+            },
+            {
+              "id": "ia2003-mat05",
+              "sourceCourseId": "ia2003-mat05",
+              "name": "Matemática 05",
+              "credits": 10,
+              "requirementId": "food-mathematics",
+              "periodLabel": "Materias de la currícula sugerida",
+              "catalogRole": "official-source-only-course",
+              "availabilityStatus": "curricular-guide-not-current-offer",
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            {
+              "id": "ia2003-fq101",
+              "sourceCourseId": "ia2003-fq101",
+              "name": "Fisicoquímica 101",
+              "credits": 13,
+              "requirementId": "food-chemistry",
+              "periodLabel": "Materias de la currícula sugerida",
+              "catalogRole": "official-source-only-course",
+              "availabilityStatus": "curricular-guide-not-current-offer",
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            {
+              "id": "ia2003-bioquim3",
+              "sourceCourseId": "ia2003-bioquim3",
+              "name": "Bioquímica (opción 3)",
+              "credits": 15,
+              "requirementId": "food-biology",
+              "periodLabel": "Materias de la currícula sugerida",
+              "catalogRole": "official-source-only-course",
+              "availabilityStatus": "curricular-guide-not-current-offer",
+              "elective": true,
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            {
+              "id": "ia2003-controlcalidad",
+              "sourceCourseId": "ia2003-controlcalidad",
+              "name": "Control de Calidad",
+              "credits": 8,
+              "requirementId": "food-quality",
+              "periodLabel": "Materias de la currícula sugerida",
+              "catalogRole": "official-source-only-course",
+              "availabilityStatus": "curricular-guide-not-current-offer",
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            {
+              "id": "ia2003-gestionprocesos",
+              "sourceCourseId": "ia2003-gestionprocesos",
+              "name": "Gestión de los Procesos en la Industria",
+              "credits": 6,
+              "requirementId": "food-industrial-management",
+              "periodLabel": "Materias de la currícula sugerida",
+              "catalogRole": "official-source-only-course",
+              "availabilityStatus": "curricular-guide-not-current-offer",
+              "elective": true,
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            {
+              "id": "ia2003-proyecto2",
+              "sourceCourseId": "ia2003-proyecto2",
+              "name": "Proyecto Industrial 2",
+              "credits": 20,
+              "requirementId": "food-integrative",
+              "periodLabel": "Materias de la currícula sugerida",
+              "catalogRole": "official-source-only-course",
+              "availabilityStatus": "curricular-guide-not-current-offer",
+              "sourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
             }
           ],
           "credentials": [
@@ -71556,7 +71845,559 @@
               ]
             }
           ],
-          "manualCompletionValidation": "Validación del currículo individual por la Comisión de Carrera de Ingeniería de Alimentos"
+          "manualCompletionValidation": "Validación del currículo individual por la Comisión de Carrera de Ingeniería de Alimentos",
+          "sourceDataPath": "data/fq/ingenieria-alimentos-2003-curriculas.json",
+          "preserveBedeliasCourseIds": true,
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "01",
+            "03",
+            "102",
+            "104A",
+            "103B",
+            "04",
+            "202",
+            "205",
+            "FING-1224",
+            "304",
+            "06",
+            "301",
+            "302",
+            "401",
+            "402",
+            "07",
+            "308",
+            "FING-Q59",
+            "520A",
+            "501",
+            "FING-Q22",
+            "FING-Q21",
+            "514",
+            "513",
+            "FING-Q66",
+            "FING-Q67",
+            "533",
+            "792",
+            "FING-Q69",
+            "FVET-31",
+            "FING-Q68",
+            "796",
+            "FAGRO-CAC30",
+            "FMED-APSE",
+            "FVET-44",
+            "793",
+            "794",
+            "FING-A65",
+            "FING-A88",
+            "FING-Q80",
+            "FING-1921",
+            "FING-Q81",
+            "FVET-45",
+            "FING-1061",
+            "FING-1030",
+            "FING-1151",
+            "FING-1062",
+            "FING-1031",
+            "FING-1152",
+            "FING-1063",
+            "FING-1153",
+            "FING-1025",
+            "FING-1064",
+            "FING-1154"
+          ],
+          "courseOverrides": {
+            "102": {
+              "name": "Química General 1",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "202": {
+              "name": "Química General 2",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "205": {
+              "name": "Física 101",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "301": {
+              "name": "Química Orgánica 101",
+              "preserveName": true,
+              "credits": 11,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "302": {
+              "name": "Química Analítica 1",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "304": {
+              "name": "Física 102",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "308": {
+              "name": "Física 103 (Laboratorio)",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "401": {
+              "name": "Química Orgánica 102",
+              "preserveName": true,
+              "credits": 6,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "402": {
+              "name": "Química Analítica 2",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "501": {
+              "name": "Química Orgánica 103 (Laboratorio)",
+              "preserveName": true,
+              "credits": 5,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "513": {
+              "name": "Bioquímica (opción 2)",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+              "elective": true
+            },
+            "514": {
+              "name": "Bioquímica (opción 1)",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+              "elective": true
+            },
+            "533": {
+              "name": "Microbiología General",
+              "preserveName": true,
+              "credits": 12,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "792": {
+              "name": "Química de Alimentos",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "793": {
+              "name": "Laboratorio de Química de Alimentos",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "794": {
+              "name": "Toxicología Alimentaria",
+              "preserveName": true,
+              "credits": 6,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "796": {
+              "name": "Análisis de Alimentos",
+              "preserveName": true,
+              "credits": 14,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "01": {
+              "name": "Matemática 01",
+              "preserveName": true,
+              "credits": 14,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "03": {
+              "name": "Matemática 03",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "104A": {
+              "name": "Prevención de Riesgos en el Laboratorio",
+              "preserveName": true,
+              "credits": 4,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "103B": {
+              "name": "Introducción a las Ciencias Biológicas 1",
+              "preserveName": true,
+              "credits": 5,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "04": {
+              "name": "Matemática 04",
+              "preserveName": true,
+              "credits": 17,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-1224": {
+              "name": "Economía",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "06": {
+              "name": "Matemática 06",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "07": {
+              "name": "Matemática 07",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q59": {
+              "name": "Introducción a la Ingeniería Química y de Procesos",
+              "preserveName": true,
+              "credits": 7,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "520A": {
+              "name": "Fisicoquímica 103",
+              "preserveName": true,
+              "credits": 12,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q22": {
+              "name": "Fenómenos de Transporte en Ingeniería de Procesos",
+              "preserveName": true,
+              "credits": 12,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q21": {
+              "name": "Termodinámica Aplicada a Ingeniería de Procesos",
+              "preserveName": true,
+              "credits": 9,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q66": {
+              "name": "Fluidodinámica",
+              "preserveName": true,
+              "credits": 14,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q67": {
+              "name": "Transferencia de Calor y Masa 1",
+              "preserveName": true,
+              "credits": 14,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q69": {
+              "name": "Ingeniería de las Reacciones Químicas 1",
+              "preserveName": true,
+              "credits": 14,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FVET-31": {
+              "name": "Microbiología Alimentaria",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q68": {
+              "name": "Transferencia de Calor y Masa 2",
+              "preserveName": true,
+              "credits": 14,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FAGRO-CAC30": {
+              "name": "Nutrición Aplicada a la Ingeniería de Alimentos",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+              "elective": true
+            },
+            "FMED-APSE": {
+              "name": "Alimentos y Proceso Salud-Enfermedad",
+              "preserveName": true,
+              "credits": 6,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+              "elective": true
+            },
+            "FVET-44": {
+              "name": "Higiene y Seguridad de los Alimentos",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-A65": {
+              "name": "Higiene y Servicios de Plantas Procesadoras de Alimentos",
+              "preserveName": true,
+              "credits": 6,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-A88": {
+              "name": "Pasantía-Trabajo Práctico de Grado (m1)",
+              "preserveName": true,
+              "credits": 15,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-Q80": {
+              "name": "Proyecto Industrial 1",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-1921": {
+              "name": "Gestión de Calidad",
+              "preserveName": true,
+              "credits": 8,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+              "elective": true
+            },
+            "FING-Q81": {
+              "name": "Ingeniería Bioquímica",
+              "preserveName": true,
+              "credits": 14,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FVET-45": {
+              "name": "Legislación Alimentaria",
+              "preserveName": true,
+              "credits": 5,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf"
+            },
+            "FING-1061": {
+              "name": "Cálculo Diferencial e Integral en una Variable",
+              "preserveName": true,
+              "credits": 13,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1030": {
+              "name": "Geometría y Álgebra Lineal 1",
+              "preserveName": true,
+              "credits": 9,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1151": {
+              "name": "Física 1",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1062": {
+              "name": "Cálculo Diferencial e Integral en Varias Variables",
+              "preserveName": true,
+              "credits": 13,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1031": {
+              "name": "Geometría y Álgebra Lineal 2",
+              "preserveName": true,
+              "credits": 9,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1152": {
+              "name": "Física 2",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1063": {
+              "name": "Cálculo Vectorial",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1153": {
+              "name": "Física 3",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1025": {
+              "name": "Probabilidad y Estadística",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1064": {
+              "name": "Introducción a las Ecuaciones Diferenciales",
+              "preserveName": true,
+              "credits": 10,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            },
+            "FING-1154": {
+              "name": "Física Experimental 1",
+              "preserveName": true,
+              "credits": 5,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified",
+              "creditSourceUrl": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf"
+            }
+          }
         }
       },
       "offerings": [
@@ -71592,12 +72433,17 @@
         "normalization": [
           "Publicar una única Ingeniería de Alimentos Plan 2003, de cinco años y 450 créditos, con título Ingeniero Alimentario.",
           "Ubicar la sede completa y el ingreso vigente en Facultad de Química, Montevideo, y conservar la corresponsabilidad de Agronomía, Ingeniería y Veterinaria.",
-          "Representar una sola trayectoria flexible y controlar los cuatro mínimos de grupo y los once mínimos positivos por materia.",
-          "Mostrar las 389 entradas de Bedelías como catálogo acreditable por áreas, sin convertir todas las alternativas en obligatorias ni inventar semestres.",
           "Explicitar los 50 créditos adicionales al total de mínimos de grupo y las brechas internas de 30 créditos básicos, 31 complementarios y 28 profesionales.",
           "No ofrecer Salto como sede completa: la fuente oficial sólo habilita allí el primer año y desde el segundo semestre el recorrido continúa en Montevideo.",
-          "Exigir validación final del currículo individual por la Comisión de Carrera."
-        ]
+          "Exigir validación final del currículo individual por la Comisión de Carrera.",
+          "Presentar las dos guías sugeridas de diez semestres para el mismo Plan 2003, sin sumar alternativas como obligatorias simultáneas.",
+          "Publicar sólo materias verificadas por la guía; retener las demás entradas de Bedelías como candidatas hasta cotejo oficial."
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fq/ingenieria-alimentos-2003-curriculas.json",
+        "trajectoryCoverage": "dos variantes oficiales de diez semestres; catálogo parcial cotejado con Bedelías",
+        "completeDegreeSequence": false,
+        "trajectoryReviewTrigger": "la Comisión publique una guía revisada, códigos inequívocos o una oferta regional posterior al primer año"
       },
       "sources": [
         {
@@ -71647,6 +72493,36 @@
             "primer año cursable en Salto",
             "continuidad posterior en Montevideo"
           ]
+        },
+        {
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-10-22",
+          "contentHash": "sha256:266fe0e9949e5a06bc78f45f4e4f09e218c74baf1251f9338041c752b1ebacb4",
+          "supports": [
+            "currícula sugerida con Matemática y Física de FQ",
+            "diez semestres",
+            "tres grupos de alternativas"
+          ]
+        },
+        {
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf",
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-10-22",
+          "contentHash": "sha256:158bb0a5066a3f3f39c93ceb1ee9e314dd1ffbc05bd7f7896dc657ab79d2518f",
+          "supports": [
+            "currícula sugerida con Matemática y Física de FING",
+            "diez semestres",
+            "tres grupos de alternativas"
+          ]
+        },
+        {
+          "url": "https://www.iie.fing.edu.uy/carrera/grado/ingenier%C3%ADa-de-alimentos",
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-10-22",
+          "supports": [
+            "enlace institucional a ambas currículas y al Plan 2003"
+          ]
         }
       ],
       "anomalies": [
@@ -71671,8 +72547,8 @@
           "resolution": "La cobertura de previaturas varía según el servicio administrativo. La proyección usa las 155 reglas publicadas por FQ y marca 103 consultas sin regla, sin completar condiciones por inferencia."
         }
       ],
-      "uiNotice": "Plan 2003 conjunto de Agronomía, Ingeniería, Química y Veterinaria. Completá 450 créditos y los mínimos de cada área mediante un currículo flexible; el ingreso y la sede completa son en FQ, Montevideo. El primer año puede cursarse en Salto, pero el recorrido continúa en Montevideo.",
-      "remainingWork": "La Comisión de Carrera debe aprobar el currículo individual, equivalencias, unidades acreditables y previaturas no publicadas. La opción de primer año en Salto no evita la continuidad presencial posterior en Montevideo."
+      "uiNotice": "Plan 2003 flexible de 450 créditos. Elegí entre las dos currículas sugeridas: base de Matemática y Física de Química o de Ingeniería. Las alternativas de Bioquímica, Nutrición y Gestión no se suman todas como obligatorias. El ingreso y la sede completa son en Montevideo; Salto sólo documenta el primer año.",
+      "remainingWork": "Aprobar currículo individual, cotejar códigos no publicados y materias optativas fuera de las dos guías, verificar vigencia y oferta semestral. Salto sólo acredita primer año; no extender allí la grilla completa."
     },
     {
       "identity": "ingenieria de produccion:2010",
@@ -90399,6 +91275,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:e9532e657d77837e7c66e490e67261cb02a097e1c15717b9ca51a23c2a7c17ab",
+  "contentHash": "sha256:238c0cc779532d18b628951799a2883395f1229592d63ea2764bd5982e4f2c5e",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

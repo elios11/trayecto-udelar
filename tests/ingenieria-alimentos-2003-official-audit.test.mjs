@@ -30,10 +30,10 @@ test("publica un único Plan 2003 conjunto con el título y la sede vigentes", (
 });
 
 test("no convierte el primer año de Salto en sede completa ni en otra trayectoria", () => {
-  assert.deepEqual(Object.keys(projection.pathways), ["trayectoria-flexible"]);
-  assert.deepEqual(pathway.campusIds, ["montevideo"]);
-  assert.match(projection.plan.notice, /primer año puede cursarse en Salto/i);
-  assert.match(projection.plan.notice, /continúa en Montevideo/i);
+  assert.deepEqual(Object.keys(projection.pathways), ["trayectoria-flexible", "matematicas-fisicas-fing"]);
+  assert.ok(Object.values(projection.pathways).every(({ campusIds, periods }) =>
+    campusIds.join() === "montevideo" && periods.length === 10));
+  assert.match(projection.plan.notice, /Salto sólo documenta el primer año/i);
   assert.match(audit.anomalies.find(({ field }) => field === "regionalFirstYear").resolution, /no se presenta como sede completa/i);
 });
 
@@ -63,14 +63,16 @@ test("controla simultáneamente los mínimos de grupo y de materia sin sumarlos 
   assert.equal(requirements["food-professional"] - 122, 28);
 });
 
-test("muestra el catálogo acreditable completo sin fingir 389 obligaciones", () => {
+test("conserva la composición Bedelías sin publicar 389 obligaciones", () => {
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 389);
-  assert.equal(projection.courses.length, 394);
+  assert.equal(projection.courses.length, 400);
+  assert.equal(projection.courses.filter(({ authorityStatus }) => authorityStatus === "verified").length, 65);
   assert.equal(projection.rules.length, 155);
   assert.equal(projection.plan.noPublishedRule, 103);
   assert.equal(new Set(projection.courses.map(({ id }) => id)).size, projection.courses.length);
-  assert.equal(pathway.periods.find(({ label }) => label === "Orientación del recorrido").courseIds.length, 4);
-  assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
+  assert.equal(pathway.periods[0].label, "Semestre 1");
+  assert.equal(pathway.periods.at(-1).label, "Semestre 10");
+  assert.ok(pathway.catalogCourseIds.includes("fq-validacion-final-plan"));
   assert.equal(credential.requiredCourseGroups[0].id, "validacion-final-plan");
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));
 });

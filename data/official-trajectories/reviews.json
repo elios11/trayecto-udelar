@@ -4753,6 +4753,58 @@
         "El rótulo técnico 662A menciona Intervenciones Clínicas II, mientras la malla publica Teorías y técnicas de las intervenciones; se conserva como candidata y la ubicación oficial usa un bloque sólo-fuente sin fusionar progreso.",
         "La página HTML todavía enumera Psicopatología Clínica como vigente hasta 2018; el PDF enlazado y actualizado en diciembre de 2025 publica las dos unidades de infancia/adolescencia y adultos."
       ]
+    },
+    {
+      "planId": "bedelias-fq-ingenieria-de-alimentos-2003",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "guías institucionales enlazadas al 22/10/2026; sin fecha de aprobación impresa",
+      "projectionMechanism": "official-profiles",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "trayectoria-flexible",
+          "matematicas-fisicas-fing"
+        ],
+        "coverage": "dos currículas sugeridas de diez semestres; catálogo parcial",
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "guía FQ cotejada visualmente",
+          "contentHash": "sha256:266fe0e9949e5a06bc78f45f4e4f09e218c74baf1251f9338041c752b1ebacb4"
+        },
+        {
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "guía FING cotejada visualmente",
+          "contentHash": "sha256:158bb0a5066a3f3f39c93ceb1ee9e314dd1ffbc05bd7f7896dc657ab79d2518f"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/ingenieria-alimentos-2003-curriculas.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión de las guías oficiales o nuevos códigos verificados"
+      },
+      "conflictNotes": [
+        "Las fechas de los archivos digitales no acreditan fecha de aprobación o vigencia de esta versión de las guías; ambas están enlazadas por fichas institucionales consultadas el 22/10/2026.",
+        "Los códigos técnicos de Bedelías no están impresos en estas dos grillas. Las identidades con código se cotejaron por nombre, créditos y servicio; nombres repetidos, códigos de otra facultad o créditos discrepantes permanecen como filas sólo-fuente.",
+        "Las alternativas dentro de un mismo semestre no son créditos acumulativos ni materias obligatorias simultáneas.",
+        "La secuencia de diez semestres no documenta oferta territorial completa en Salto."
+      ]
     }
   ]
 }

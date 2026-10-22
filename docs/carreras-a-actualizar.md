@@ -27,6 +27,7 @@ Estas carreras tienen una trayectoria más extensa demostrada en otra sede. Mant
 | Carrera y sede | Alcance actual | Disparador de revisión |
 | --- | --- | --- |
 | Ingeniería Química 2021 · Salto | Primer año regional verificado, con continuidad en Montevideo. | Nuevo tramo curricular de Salto publicado por FING/FQ. |
+| Ingeniería de Alimentos Plan 2003 (`bedelias-fq-ingenieria-de-alimentos-2003`) · Salto | La guía oficial de carreras acredita sólo el primer año regional; las dos currículas completas de diez semestres corresponden al recorrido de Montevideo y no prueban continuidad íntegra en Salto. [Cotejo D03bn](tasks/reconciliacion-alimentos-2003.md). | FQ/FING/CENUR Litoral Norte publiquen una ampliación explícita de cursos y períodos en Salto. |
 | Tecnólogo en Telecomunicaciones 2009 · Montevideo | Primer año verificado; la carrera completa está documentada en Rocha. | Nueva grilla o ampliación oficial de Montevideo. |
 | Técnico Bachiller en Ciencias Químicas 2015 · Salto | Primer año verificado; cinco semestres completos en Montevideo. | Nueva grilla oficial de Salto. |
 

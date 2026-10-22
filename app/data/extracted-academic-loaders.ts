@@ -771,7 +771,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-ingenieria-de-alimentos-2003": {
     load: () => import("./bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json"),
-    pathwayIds: ["trayectoria-flexible"],
+    pathwayIds: ["trayectoria-flexible","matematicas-fisicas-fing"],
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
