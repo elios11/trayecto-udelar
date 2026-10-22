@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018",
+  "reviewedAt": "2026-10-22",
+  "source": {
+    "authority": "Facultad de Información y Comunicación, Universidad de la República",
+    "careerPage": "https://www.fic.edu.uy/node/5573",
+    "documentUrl": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+    "documentTitle": "Grilla LIM, 10 de diciembre de 2025",
+    "dateInFilename": "2025-12-10",
+    "documentSha256": "20b9529459fbf3540fd29c3bca0791e08e127960f60bf4b1d5893d6248b1c0be",
+    "format": "PDF de cinco páginas que contiene capturas de una planilla; sin capa de texto extraíble"
+  },
+  "scope": {
+    "campus": "Montevideo",
+    "firstFourSemesters": "Dos trayectorias sugeridas, Fing y FCEA con Matemática Inicial de Fing",
+    "laterExamples": "Páginas 4 y 5 muestran semestres 6 a 9 de grillas Creativo-Audiovisual y Tecnológico; no incluyen semestre 5 ni prueban una trayectoria de egreso completa",
+    "officialStatus": "Guía flexible publicada por FIC; no sustituye los mínimos ni la aprobación del currículo individual"
+  },
+  "planMinimums": {
+    "page": 1,
+    "totalCredits": 360,
+    "groups": [
+      { "name": "Ingeniería", "minCredits": 85, "areas": [{ "name": "Señales e Ingeniería Eléctrica", "minCredits": 16 }, { "name": "Informática", "minCredits": 16 }, { "name": "Matemática", "minCredits": 25 }, { "name": "Física", "minCredits": 16 }] },
+      { "name": "Información, Comunicación y Medios", "minCredits": 80, "areas": [{ "name": "Lenguajes y narrativas", "minCredits": 24 }, { "name": "Teoría de Comunicación y Medios", "minCredits": 36 }, { "name": "Ciencia de la Información", "minCredits": 8 }] },
+      { "name": "Creatividad e Innovación", "minCredits": 150, "areas": [{ "name": "Concepción y Producción de Contenidos", "minCredits": 40 }, { "name": "Técnicas para la Realización de Contenidos", "minCredits": 40 }, { "name": "Actividades Integradoras", "minCredits": 58 }] },
+      { "name": "Complementarias", "minCredits": 0, "areas": [{ "name": "Regulación y gestión", "minCredits": 0 }] }
+    ]
+  },
+  "firstFourSemesters": [
+    {
+      "id": "fing",
+      "label": "Trayectoria Fing",
+      "page": 2,
+      "periods": [
+        { "semester": 1, "printedSubtotal": 40, "rows": [["CPC", "Introducción al Estudio del Audiovisual", 7], ["INT", "Curso Introductorio", 2], ["TCM", "Teoría de la Comunicación II", 9], ["MAT", "Matemática Inicial (Fing)", 4], ["INF", "Informática LIM", 10], ["INT", "Taller integrador I", 8]] },
+        { "semester": 2, "printedSubtotal": 47, "rows": [["TRC", "Edición I", 8], ["TCM", "Historia de los medios", 9], ["CIN", "Redes y Sistemas", 8], ["MAT", "Cálculo Diferencial e Integral en Una Variable (Fing)", 13], ["MAT", "Geometría y Álgebra Lineal 1 (Fing)", 9]] },
+        { "semester": 3, "printedSubtotal": 46, "rows": [["CPC", "Introducción a la preservación audiovisual I", 8], ["TRC", "Audiovisión I", 9], ["LYN", "Comunicación Sonora", 6], ["MAT", "Cálculo Diferencial e Integral en Varias Variables (Fing)", 13], ["INT", "Taller integrador II", 10]] },
+        { "semester": 4, "printedSubtotal": 46, "rows": [["TRC", "Tecnología aplicada al sonido", 9], ["TCM", "Diseño y Análisis", 8], ["LYN", "Comunicación e Inteligencia Artificial CIA", 9], ["FIS", "Física 1 (Fing)", 10], ["MAT", "Probabilidad y Estadística (Fing)", 10]] }
+      ]
+    },
+    {
+      "id": "fcea",
+      "label": "Trayectoria FCEA con Matemática Inicial (Fing)",
+      "page": 3,
+      "periods": [
+        { "semester": 1, "printedSubtotal": 40, "rows": [["CPC", "Introducción al Estudio del Audiovisual", 7], ["INT", "Curso Introductorio", 2], ["TCM", "Teoría de la Comunicación II", 9], ["MAT", "Matemática Inicial (Fing)", 4], ["INF", "Informática LIM", 10], ["INT", "Taller integrador I", 8]] },
+        { "semester": 2, "printedSubtotal": 45, "rows": [["TRC", "Edición I", 8], ["TCM", "Historia de los medios", 9], ["CIN", "Redes y Sistemas", 8], ["MAT", "Cálculo I (FCEA)", 10], ["MAT", "Álgebra Lineal (FCEA)", 10]] },
+        { "semester": 3, "printedSubtotal": 46, "rows": [["CPC", "Introducción a la preservación audiovisual I", 8], ["TRC", "Audiovisión I", 9], ["LYN", "Comunicación Sonora", 6], ["MAT", "Cálculo II (FCEA)", 13], ["INT", "Taller integrador II", 10]] },
+        { "semester": 4, "printedSubtotal": 46, "rows": [["TRC", "Tecnología aplicada al sonido", 9], ["TCM", "Diseño y Análisis", 8], ["LYN", "Comunicación e Inteligencia Artificial CIA", 9], ["FIS", "Física 1 (Fing)", 10], ["MAT", "Probabilidad y Estadística (Fing)", 10]] }
+      ]
+    }
+  ],
+  "laterExamples": [
+    { "id": "creativo-audiovisual", "page": 4, "semestersPrinted": [6, 7, 8, 9], "subtotalsPrinted": [44, 45, 45, 50], "totalPrinted": 184 },
+    { "id": "tecnologico", "page": 5, "semestersPrinted": [6, 7, 8, 9], "subtotalsPrinted": [44, 45, 44, 50], "totalPrinted": 183 }
+  ],
+  "conflictsAndLimits": [
+    "El enlace oficial publica dos variantes para los primeros cuatro semestres, no dos menciones ni dos planes.",
+    "Las capturas de grillas posteriores omiten el semestre 5 y muestran semestres 6-9, mientras el Plan define una duración promedio de ocho semestres; no se debe concatenar estas filas en una malla completa sin aclaración institucional.",
+    "Los subtotales impresos de las páginas 4 y 5 no constituyen los 360 créditos ni la oferta garantizada de una cohorte.",
+    "Nombres y créditos de la malla requieren cotejo con la composición técnica y con otras publicaciones vigentes antes de promover identidades verificadas."
+  ]
+}
