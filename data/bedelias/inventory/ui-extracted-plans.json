@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:c7b02b8dc43daa5300210cbc99ece7b790798df2f06945fcdd94752b3fac45f8",
-    "officialAuditHash": "sha256:9c96952e15131733d4b0174e058f751840ceba8bcae069f59e6219cf9f45e664",
+    "auditQueueHash": "sha256:df63b2ecc39fa28c1c75842a09d1e561d0c5a07862f549c9da911bde0f16e739",
+    "officialAuditHash": "sha256:487e4c615ee333edc98273b8f2e3dcb106d15cdacb0c58f480cdcdb96c81b237",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -23,20 +23,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5736,
-      "candidate": 26115,
+      "verified": 5761,
+      "candidate": 26203,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 31859,
-    "afterPublishedCourses": 5736,
+    "beforePublishedCourses": 31972,
+    "afterPublishedCourses": 5761,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1880,
-    "visibleTargetsWithUnpublishedDependencies": 1562,
+    "afterPublishedRules": 1903,
+    "visibleTargetsWithUnpublishedDependencies": 1569,
     "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 67,
-    "plansWithStructureOnly": 8
+    "plansWithPartialCatalog": 68,
+    "plansWithStructureOnly": 7
   },
   "plans": [
     {
@@ -2276,7 +2276,7 @@
       "facultyCode": "FENF",
       "snapshotPath": "data/bedelias/fenf-licenciatura-en-enfermeria-2016.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -2286,18 +2286,18 @@
         "salto"
       ],
       "before": {
-        "publishedCourses": 223,
+        "publishedCourses": 336,
         "publishedRules": 50
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 223,
-        "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 25,
+        "hiddenCourses": 311,
+        "publishedRules": 23,
+        "rulesWithUnpublishedDependencies": 7
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 223,
+        "verified": 25,
+        "candidate": 311,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4640,5 +4640,5 @@
       }
     }
   ],
-  "contentHash": "sha256:68fb9ffb010fe0421465ea9d2fee64e147edf1ca82e4518cc9dd8160e9f5640a"
+  "contentHash": "sha256:09fba00822761e9db97a7583a8fa1e00768e3b5e525b9c6be71bd168b17853df"
 }

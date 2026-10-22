@@ -428,8 +428,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fenf-licenciatura-en-enfermeria-2016": {
     load: () => import("./bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["plan-2016-indicativo"],
+    pathwayLabel: "Esquema indicativo · cotejo parcial",
     minCredits: 360,
   },
   "bedelias-fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999": {

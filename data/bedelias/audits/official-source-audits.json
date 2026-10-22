@@ -2844,9 +2844,9 @@
       "identity": "licenciatura en enfermeria:2016",
       "career": "LICENCIATURA EN ENFERMERÍA",
       "planYear": "2016",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-10-21",
       "status": "official-evidence-complete",
-      "scope": "plan-and-multiple-regional-offerings",
+      "scope": "un Plan 2016 y cuatro sedes; tabla semestral indicativa del Plan aprobado, catálogo obligatorio parcial y Anexo III pendiente de cotejo visual",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -2888,7 +2888,503 @@
           "minimumCredits": 200,
           "completion": "unidades curriculares hasta el quinto semestre inclusive"
         },
-        "trajectoryRule": "El Plan 2016 es flexible y permite completar los 30 créditos no obligatorios con optativas, electivas o una combinación. Las trayectorias autónomas no están vinculadas a una sede."
+        "trajectoryRule": "El Plan 2016 es flexible y permite completar los 30 créditos no obligatorios con optativas, electivas o una combinación. Las trayectorias autónomas no están vinculadas a una sede.",
+        "pathwayLabel": "Esquema indicativo · cotejo parcial",
+        "trajectories": [
+          {
+            "id": "plan-2016-indicativo",
+            "label": "Esquema indicativo · cotejo parcial",
+            "description": "Esquema indicativo del Plan 2016, con nueve semestres. La verificación visual del Anexo III sigue pendiente; no se afirma una malla completa ni oferta periódica por sede. Los 30 créditos optativos/electivos se pueden cursar hasta el octavo semestre, sin obligación de seguir la distribución sugerida.",
+            "credentialId": "licenciado-enfermeria",
+            "campusIds": [
+              "montevideo",
+              "rivera",
+              "rocha",
+              "salto"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "1.º semestre",
+                "courseIds": [
+                  "1000",
+                  "1001",
+                  "1002",
+                  "1003"
+                ]
+              },
+              {
+                "label": "2.º semestre",
+                "courseIds": [
+                  "1004",
+                  "1005",
+                  "fenf-flex-2"
+                ]
+              },
+              {
+                "label": "3.º semestre",
+                "courseIds": [
+                  "2000",
+                  "2007",
+                  "fenf-flex-3"
+                ]
+              },
+              {
+                "label": "4.º semestre",
+                "courseIds": [
+                  "2008"
+                ]
+              },
+              {
+                "label": "5.º semestre",
+                "courseIds": [
+                  "3000",
+                  "3001",
+                  "fenf-flex-5"
+                ]
+              },
+              {
+                "label": "6.º semestre",
+                "courseIds": [
+                  "3002",
+                  "3003",
+                  "fenf-flex-6"
+                ]
+              },
+              {
+                "label": "7.º semestre",
+                "courseIds": [
+                  "4000",
+                  "4001",
+                  "4002",
+                  "fenf-flex-7"
+                ]
+              },
+              {
+                "label": "8.º semestre",
+                "courseIds": [
+                  "4003",
+                  "4004"
+                ]
+              },
+              {
+                "label": "9.º semestre",
+                "courseIds": [
+                  "5000",
+                  "5001"
+                ]
+              }
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
+          "sourceDataPath": "data/fenf/enfermeria-2016-trajectory-review.json",
+          "useBedeliasCompositionTree": true,
+          "preserveBedeliasCourseIds": true,
+          "usePublishedCredits": true,
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "1000",
+            "1001",
+            "1002",
+            "1003",
+            "1004",
+            "1005",
+            "2000",
+            "2007",
+            "2008",
+            "3000",
+            "3001",
+            "3002",
+            "3003",
+            "4000",
+            "4001",
+            "4002",
+            "4003",
+            "4004",
+            "5000",
+            "5001"
+          ],
+          "includeAllCoursesInPathwayCatalog": true,
+          "pathwayLabel": "Esquema indicativo · cotejo parcial",
+          "pathwayDescription": "Esquema indicativo del Plan 2016, con nueve semestres. La verificación visual del Anexo III sigue pendiente; no se afirma una malla completa ni oferta periódica por sede. Los 30 créditos optativos/electivos se pueden cursar hasta el octavo semestre, sin obligación de seguir la distribución sugerida.",
+          "courseOverrides": {
+            "1000": {
+              "name": "Orientación a la Universidad",
+              "preserveName": true,
+              "periodLabel": "1.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "1001": {
+              "name": "ESFUNO",
+              "preserveName": true,
+              "periodLabel": "1.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "1002": {
+              "name": "Microbiología",
+              "preserveName": true,
+              "periodLabel": "1.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "1003": {
+              "name": "Enfermería Fundamental",
+              "preserveName": true,
+              "periodLabel": "1.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "1004": {
+              "name": "Enfermería en Salud Individual y Colectiva",
+              "preserveName": true,
+              "periodLabel": "2.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "1005": {
+              "name": "Ciencias Sociales Aplicadas a la Salud",
+              "preserveName": true,
+              "periodLabel": "2.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "2000": {
+              "name": "Herramientas Metodológicas",
+              "preserveName": true,
+              "periodLabel": "3.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "2007": {
+              "name": "Atención de Enfermería a adultos y ancianos I",
+              "preserveName": true,
+              "periodLabel": "3.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "2008": {
+              "name": "Atención de Enfermería a adultos y ancianos II",
+              "preserveName": true,
+              "periodLabel": "4.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "3000": {
+              "name": "Enfermería en Salud Sexual y Reproductiva",
+              "preserveName": true,
+              "periodLabel": "5.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "3001": {
+              "name": "Bioética",
+              "preserveName": true,
+              "periodLabel": "5.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "3002": {
+              "name": "Atención de Enfermería a niño, niña y adolescente",
+              "preserveName": true,
+              "periodLabel": "6.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "3003": {
+              "name": "Administración",
+              "preserveName": true,
+              "periodLabel": "6.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "4000": {
+              "name": "Enfermería en Salud Mental y Psiquiatría",
+              "preserveName": true,
+              "periodLabel": "7.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "4001": {
+              "name": "Ética",
+              "preserveName": true,
+              "periodLabel": "7.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "4002": {
+              "name": "Protocolo de Investigación",
+              "preserveName": true,
+              "periodLabel": "7.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "4003": {
+              "name": "Administración de los Servicios de Salud",
+              "preserveName": true,
+              "periodLabel": "8.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "4004": {
+              "name": "Enfermería Comunitaria",
+              "preserveName": true,
+              "periodLabel": "8.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "5000": {
+              "name": "Internado",
+              "preserveName": true,
+              "periodLabel": "9.º semestre",
+              "requirementId": "integrated",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            },
+            "5001": {
+              "name": "Trabajo de Investigación",
+              "preserveName": true,
+              "periodLabel": "9.º semestre",
+              "requirementId": "independent",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "authorityStatus": "verified"
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "fenf-flex-2",
+              "sourceCourseId": "fenf-flex-2",
+              "name": "Optativas o electivas · 10 créditos indicativos",
+              "credits": 10,
+              "requirementId": "flexible",
+              "periodLabel": "2.º semestre",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
+              "availabilityStatus": "indicative-credit-space-not-current-course-offer"
+            },
+            {
+              "id": "fenf-flex-3",
+              "sourceCourseId": "fenf-flex-3",
+              "name": "Optativas o electivas · 5 créditos indicativos",
+              "credits": 5,
+              "requirementId": "flexible",
+              "periodLabel": "3.º semestre",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
+              "availabilityStatus": "indicative-credit-space-not-current-course-offer"
+            },
+            {
+              "id": "fenf-flex-5",
+              "sourceCourseId": "fenf-flex-5",
+              "name": "Optativas o electivas · 5 créditos indicativos",
+              "credits": 5,
+              "requirementId": "flexible",
+              "periodLabel": "5.º semestre",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
+              "availabilityStatus": "indicative-credit-space-not-current-course-offer"
+            },
+            {
+              "id": "fenf-flex-6",
+              "sourceCourseId": "fenf-flex-6",
+              "name": "Optativas o electivas · 5 créditos indicativos",
+              "credits": 5,
+              "requirementId": "flexible",
+              "periodLabel": "6.º semestre",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
+              "availabilityStatus": "indicative-credit-space-not-current-course-offer"
+            },
+            {
+              "id": "fenf-flex-7",
+              "sourceCourseId": "fenf-flex-7",
+              "name": "Optativas o electivas · 5 créditos indicativos",
+              "credits": 5,
+              "requirementId": "flexible",
+              "periodLabel": "7.º semestre",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-flexible-slot",
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
+              "availabilityStatus": "indicative-credit-space-not-current-course-offer"
+            }
+          ],
+          "creditRequirements": [
+            {
+              "id": "integrated",
+              "name": "UC integradas obligatorias",
+              "shortName": "Integradas",
+              "minCredits": 240,
+              "credentialRequired": false
+            },
+            {
+              "id": "independent",
+              "name": "UC independientes obligatorias",
+              "shortName": "Independientes",
+              "minCredits": 90,
+              "credentialRequired": false
+            },
+            {
+              "id": "flexible",
+              "name": "Optativas o electivas",
+              "shortName": "Flexibles",
+              "minCredits": 30
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "auxiliar-hasta-quinto",
+              "label": "Aprobá las UC hasta el quinto semestre",
+              "minCompleted": 11,
+              "sourceCourseIds": [
+                "1000",
+                "1001",
+                "1002",
+                "1003",
+                "1004",
+                "1005",
+                "2000",
+                "2007",
+                "2008",
+                "3000",
+                "3001"
+              ],
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf"
+            },
+            {
+              "id": "licenciatura-obligatorias",
+              "label": "Aprobá las 20 UC obligatorias",
+              "minCompleted": 20,
+              "sourceCourseIds": [
+                "1000",
+                "1001",
+                "1002",
+                "1003",
+                "1004",
+                "1005",
+                "2000",
+                "2007",
+                "2008",
+                "3000",
+                "3001",
+                "3002",
+                "3003",
+                "4000",
+                "4001",
+                "4002",
+                "4003",
+                "4004",
+                "5000",
+                "5001"
+              ],
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf"
+            }
+          ],
+          "credentials": [
+            {
+              "id": "auxiliar-enfermeria",
+              "title": "Auxiliar de Enfermería",
+              "minTotalCredits": 200,
+              "nodeRequirements": [
+                {
+                  "nodeId": "plan-total",
+                  "minCredits": 200
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "auxiliar-hasta-quinto"
+              ],
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf"
+            },
+            {
+              "id": "licenciado-enfermeria",
+              "title": "Licenciado/a en Enfermería",
+              "minTotalCredits": 360,
+              "nodeRequirements": [
+                {
+                  "nodeId": "plan-total",
+                  "minCredits": 360
+                },
+                {
+                  "nodeId": "flexible",
+                  "minCredits": 30
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "licenciatura-obligatorias"
+              ],
+              "sourceUrl": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf"
+            }
+          ],
+          "projectionAnomalies": [
+            {
+              "field": "visualAnnex",
+              "resolution": "Intentada el 21/10/2026: captura web sin imagen, visor PDF del navegador sin captura y descarga local rechazada. Las ubicaciones se toman exclusivamente de la tabla textual a título indicativo del Plan aprobado (página PDF 26), no de la extracción intercalada del Anexo III. Pendiente contraste visual de ese diagrama."
+            },
+            {
+              "field": "compositeAlias",
+              "resolution": "Agrupa Adulto y Anciano I y II en 55 créditos; no es tercera unidad del Plan y se mantiene candidata."
+            },
+            {
+              "field": "flexibleOffer",
+              "resolution": "La composición de Bedelías no demuestra oferta vigente ni ubicación de cada optativa/electiva."
+            },
+            {
+              "field": "categoryCredits",
+              "resolution": "La Guía 2025 declara 240 créditos integrados y 90 independientes, pero las diez UC integradas enumeradas suman 245 y las diez independientes 85. No se altera ninguna carga ni se fuerza un mínimo categorial imposible hasta aclaración de FENF."
+            }
+          ]
+        }
       },
       "offerings": [
         {
@@ -2982,32 +3478,40 @@
           "Normalizar el egreso por 360 créditos: 240 integrados obligatorios, 90 independientes obligatorios y 30 optativos/electivos.",
           "Conservar Auxiliar de Enfermería como título intermedio vigente de 200 créditos.",
           "Tratar las diferencias del catálogo flexible y la menor cobertura regional de previaturas como diferencias de publicación."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fenf/enfermeria-2016-trajectory-review.json",
+        "trajectoryCoverage": "partial-indicative-nine-semesters-pending-visual-annex-review",
+        "completeDegreeSequence": false,
+        "trajectoryReviewTrigger": "Inspeccionar visualmente el Anexo III y cotejar sus columnas con la tabla del Plan; revisar si FENF modifica el esquema, la guía o la oferta territorial."
       },
       "sources": [
         {
           "url": "https://www.fenf.edu.uy/plan-de-estudios-2016/",
           "authority": "Facultad de Enfermería, Udelar",
+          "reviewedAt": "2026-10-21",
+          "publishedValidity": "índice vigente del Plan 2016",
           "supports": [
-            "documentación vigente del Plan 2016",
-            "reglamento actualizado y guía estudiantil oficial"
+            "enlaces al Plan aprobado, esquema y reglamento"
           ]
         },
         {
           "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
-          "authority": "Facultad de Enfermería, Udelar",
+          "authority": "Consejo Directivo Central, Udelar; Facultad de Enfermería",
+          "reviewedAt": "2026-10-21",
+          "publishedValidity": "Plan 2016 aprobado; esquema a título indicativo en página PDF 26",
           "supports": [
-            "texto institucional del Plan 2016",
-            "aprobación por el Consejo Directivo Central"
-          ]
+            "veinte unidades obligatorias y cinco espacios flexibles ubicados por semestre; créditos individuales"
+          ],
+          "contentHash": "sha256:4820cfcf2b1a3457a79bfef6513f9163bc375050052805816c50b16eb203883b"
         },
         {
           "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf",
-          "authority": "Facultad de Enfermería, Udelar",
+          "authority": "Unidad Pedagógica, Facultad de Enfermería, Udelar",
+          "reviewedAt": "2026-10-21",
+          "publishedValidity": "Guía del estudiante 2025 para Plan 2016",
           "supports": [
-            "implementación del mismo Plan 2016 en Montevideo, Rivera, Rocha y Salto",
-            "cuatro ciclos de 80, 200, 40 y 40 créditos",
-            "distribución de 330 créditos obligatorios y 30 optativos/electivos"
+            "cuatro sedes, ciclos, créditos, unidades integradas e independientes, optativas y certificación intermedia"
           ]
         },
         {
@@ -3034,9 +3538,19 @@
             "una carrera de 360 créditos y 54 meses",
             "oferta en Montevideo, Rivera, Rocha y Salto"
           ]
+        },
+        {
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/02/Anexo-III.-Diagrama15.1.19.pdf",
+          "authority": "Facultad de Enfermería, Udelar",
+          "reviewedAt": "2026-10-21",
+          "publishedValidity": "esquema fechado 15/01/2019 enlazado en el índice vigente",
+          "supports": [
+            "diagrama de columnas no verificado visualmente; extracción textual sólo de contraste"
+          ]
         }
       ],
-      "remainingWork": "La auditoría resuelve las falsas diferencias regionales y los requisitos normativos. La proyección curada de unidades, previaturas y catálogo flexible para la UI sigue pendiente y no habilita publicación."
+      "remainingWork": "Inspeccionar visualmente el Anexo III y cotejar sus columnas con la tabla del Plan; revisar si FENF modifica el esquema, la guía o la oferta territorial.",
+      "uiNotice": "Esquema indicativo del Plan 2016, con nueve semestres. La verificación visual del Anexo III sigue pendiente; no se afirma una malla completa ni oferta periódica por sede. Los 30 créditos optativos/electivos se pueden cursar hasta el octavo semestre, sin obligación de seguir la distribución sugerida."
     },
     {
       "identity": "doctor en medicina:2008",
@@ -26338,24 +26852,107 @@
           "sourceUrl": "https://www.fder.edu.uy/node/8457",
           "compositionRequirementsSourceUrl": "https://bedelias.udelar.edu.uy/views/public/desktop/consultarPlan/consultarPlan01.xhtml?cid=1",
           "strictOfficialCourseIds": true,
-          "verifiedCourseIds": ["910", "911", "912", "913", "914", "920", "921", "922", "923", "924", "930", "931", "932"],
+          "verifiedCourseIds": [
+            "910",
+            "911",
+            "912",
+            "913",
+            "914",
+            "920",
+            "921",
+            "922",
+            "923",
+            "924",
+            "930",
+            "931",
+            "932"
+          ],
           "pathwayLabel": "Índice de programas del Plan 1995",
           "pathwayDescription": "Programas agrupados por Primero, Segundo y Tercero por Facultad de Derecho. No equivale al Plan aprobado, una malla semestral ni una secuencia de cursado verificada.",
-          "periodLabelMap": { "3527": "Primero (programas)", "2569": "Segundo (programas)", "1876": "Tercero (programas)" },
+          "periodLabelMap": {
+            "1876": "Tercero (programas)",
+            "2569": "Segundo (programas)",
+            "3527": "Primero (programas)"
+          },
           "courseOverrides": {
-            "910": { "name": "Curso Introductorio", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "911": { "name": "Derecho del Trabajo 1", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "912": { "name": "Sociología del Trabajo 1", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "913": { "name": "Economía del Trabajo 1", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "914": { "name": "Estadística Laboral", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "920": { "name": "Organización del Trabajo", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "921": { "name": "Derecho del Trabajo 2", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "922": { "name": "Sociología del Trabajo 2", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "923": { "name": "Economía del Trabajo 2", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "924": { "name": "Psicología Laboral", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "930": { "name": "Derecho de la Empresa", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "931": { "name": "Derecho de las RRLL en el Sector Público", "preserveName": true, "officialIdentity": true, "officialCredits": false },
-            "932": { "name": "RRLL en los Procesos de Integración", "preserveName": true, "officialIdentity": true, "officialCredits": false }
+            "910": {
+              "name": "Curso Introductorio",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "911": {
+              "name": "Derecho del Trabajo 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "912": {
+              "name": "Sociología del Trabajo 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "913": {
+              "name": "Economía del Trabajo 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "914": {
+              "name": "Estadística Laboral",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "920": {
+              "name": "Organización del Trabajo",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "921": {
+              "name": "Derecho del Trabajo 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "922": {
+              "name": "Sociología del Trabajo 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "923": {
+              "name": "Economía del Trabajo 2",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "924": {
+              "name": "Psicología Laboral",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "930": {
+              "name": "Derecho de la Empresa",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "931": {
+              "name": "Derecho de las RRLL en el Sector Público",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "932": {
+              "name": "RRLL en los Procesos de Integración",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
+            }
           }
         }
       },
@@ -88645,6 +89242,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:9c96952e15131733d4b0174e058f751840ceba8bcae069f59e6219cf9f45e664",
+  "contentHash": "sha256:487e4c615ee333edc98273b8f2e3dcb106d15cdacb0c58f480cdcdb96c81b237",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

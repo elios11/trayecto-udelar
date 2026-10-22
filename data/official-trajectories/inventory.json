@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:68fb9ffb010fe0421465ea9d2fee64e147edf1ca82e4518cc9dd8160e9f5640a",
-    "officialAuditHash": "sha256:9c96952e15131733d4b0174e058f751840ceba8bcae069f59e6219cf9f45e664",
-    "reviewedTrajectoriesHash": "sha256:3bcca259b5f6aa8310ca51671846ce747183c8db9835427f96d6c9c04ef1f67d"
+    "extractedCatalogHash": "sha256:9a75c63dfec29f2f322fe28fa57af17e8a5fdcf6eb608c4bee2ac32eb3d9e6a5",
+    "extractedReportHash": "sha256:09fba00822761e9db97a7583a8fa1e00768e3b5e525b9c6be71bd168b17853df",
+    "officialAuditHash": "sha256:487e4c615ee333edc98273b8f2e3dcb106d15cdacb0c58f480cdcdb96c81b237",
+    "reviewedTrajectoriesHash": "sha256:62cc3241b25a0ecd56693774bb8f49f5779f6aeca01b88cf237347bd16f5ea2a"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 149,
     "states": {
-      "official-trajectory-reproduced": 115,
+      "official-trajectory-reproduced": 116,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 25
+      "research-pending": 24
     },
-    "pending": 28,
+    "pending": 27,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -166,10 +166,10 @@
         "serviceLabel": "Facultad de Enfermería",
         "selectablePlanIds": 2,
         "states": {
-          "official-trajectory-reproduced": 1,
+          "official-trajectory-reproduced": 2,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 28,
+    "total": 27,
     "plans": [
       {
         "priority": 1,
@@ -401,15 +401,6 @@
           "bedelias-fder"
         ],
         "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fenf-licenciatura-en-enfermeria-2016",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fenf"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -578,14 +569,6 @@
           "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
           "bedelias-fder-notariado-2016",
           "bedelias-fder-tecnicatura-en-relaciones-laborales-1995"
-        ]
-      },
-      {
-        "serviceId": "bedelias-fenf",
-        "serviceLabel": "Facultad de Enfermería",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fenf-licenciatura-en-enfermeria-2016"
         ]
       },
       {
@@ -7521,49 +7504,38 @@
           "careerId": "bedelias-fenf-licenciatura-en-enfermeria",
           "careerLabel": "Licenciatura en Enfermeria",
           "planLabel": "Plan 2016 · vigente",
-          "defaultTrajectoryId": "bedelias",
-          "defaultCredentialId": "bedelias-degree"
+          "defaultTrajectoryId": "plan-2016-indicativo",
+          "defaultCredentialId": "licenciado-enfermeria"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-15",
-      "effectiveAt": "2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "Plan 2016; tabla indicativa del Plan aprobado y Guía 2025",
       "officialSources": [
         {
           "authority": "Facultad de Enfermería, Udelar",
           "url": "https://www.fenf.edu.uy/plan-de-estudios-2016/",
-          "role": "documentación vigente del Plan 2016; reglamento actualizado y guía estudiantil oficial",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "enlaces al Plan aprobado, esquema y reglamento"
         },
         {
-          "authority": "Facultad de Enfermería, Udelar",
+          "authority": "Consejo Directivo Central, Udelar; Facultad de Enfermería",
           "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
-          "role": "texto institucional del Plan 2016; aprobación por el Consejo Directivo Central",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "veinte unidades obligatorias y cinco espacios flexibles ubicados por semestre; créditos individuales",
+          "contentHash": "sha256:4820cfcf2b1a3457a79bfef6513f9163bc375050052805816c50b16eb203883b"
         },
         {
           "authority": "Facultad de Enfermería, Udelar",
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/02/Anexo-III.-Diagrama15.1.19.pdf",
+          "reviewedAt": "2026-10-21",
+          "role": "diagrama de columnas no verificado visualmente; extracción textual sólo de contraste"
+        },
+        {
+          "authority": "Unidad Pedagógica, Facultad de Enfermería, Udelar",
           "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf",
-          "role": "implementación del mismo Plan 2016 en Montevideo, Rivera, Rocha y Salto; cuatro ciclos de 80, 200, 40 y 40 créditos; distribución de 330 créditos obligatorios y 30 optativos/electivos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Enfermería, Udelar",
-          "url": "https://www.fenf.edu.uy/wp-content/uploads/2026/01/Reglamento-Plan-2016-.pdf",
-          "role": "reglamento vigente aprobado por Resolución 48 de 18/12/2024; títulos Licenciado/a y Auxiliar de Enfermería; título intermedio al completar 200 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Enfermería, Udelar",
-          "url": "https://udelar.edu.uy/sites/default/files/migrated-files/Memoria-Enfermeri%25CC%2581a-2021-WEB-v8_2.pdf",
-          "role": "decisión institucional de un único plan curricular para todas las sedes; implantación progresiva del Plan 2016 en las cuatro sedes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo central de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-enfermeria",
-          "role": "una carrera de 360 créditos y 54 meses; oferta en Montevideo, Rivera, Rocha y Salto",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "cuatro sedes, ciclos, créditos, unidades integradas e independientes, optativas y certificación intermedia"
         }
       ],
       "scope": {
@@ -7574,23 +7546,43 @@
           "Salto"
         ],
         "pathwayIds": [
-          "bedelias"
-        ]
+          "plan-2016-indicativo"
+        ],
+        "coverage": "partial-indicative-nine-semesters-pending-visual-annex-review",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en enfermeria:2016",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fenf/enfermeria-2016-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "Inspeccionar visualmente el Anexo III y cotejar sus columnas con la tabla del Plan; revisar si FENF modifica el esquema, la guía o la oferta territorial.",
+        "sourceContentHash": "sha256:de8654ee3b5a0a7050b3e58550f3f9d68b32d421dc335d3bf56c2073100444bc",
+        "projectionContentHash": "sha256:c4bb32d4718936628475fdcb6424e59bacaa06d4a7f0f5b07090e1f5ce46f60d",
+        "pathways": [
+          {
+            "id": "plan-2016-indicativo",
+            "periodCount": 9
+          }
+        ],
+        "expectedCoursePlacements": 25,
+        "matchedCoursePlacements": 25
       },
-      "conflictNotes": []
+      "conflictNotes": [
+        "Intentada el 21/10/2026: captura web sin imagen, visor PDF del navegador sin captura y descarga local rechazada. Las ubicaciones se toman exclusivamente de la tabla textual a título indicativo del Plan aprobado (página PDF 26), no de la extracción intercalada del Anexo III. Pendiente contraste visual de ese diagrama.",
+        "Agrupa Adulto y Anciano I y II en 55 créditos; no es tercera unidad del Plan y se mantiene candidata."
+      ]
     },
     {
       "planId": "bedelias-fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999",
@@ -13878,5 +13870,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:a14819b94f1ec70a9da9864110d00ae97387a070d9b393b2da3cf8193931913f"
+  "contentHash": "sha256:ffc4fda168b73aa1512e645bdffb41525bfab250c370d664ae8a1dfaeda726ee"
 }

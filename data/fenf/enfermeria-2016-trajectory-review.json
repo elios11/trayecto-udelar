@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fenf-licenciatura-en-enfermeria-2016",
+  "auditIdentity": "licenciatura en enfermeria:2016",
+  "reviewedAt": "2026-10-21",
+  "sources": [
+    { "id": "portal", "url": "https://www.fenf.edu.uy/plan-de-estudios-2016/", "authority": "Facultad de Enfermería, Udelar", "consultedAt": "2026-10-21", "publishedValidity": "índice vigente del Plan 2016", "scope": "enlaces al Plan aprobado, esquema y reglamento" },
+    { "id": "plan", "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf", "authority": "Consejo Directivo Central, Udelar; Facultad de Enfermería", "consultedAt": "2026-10-21", "publishedValidity": "Plan 2016 aprobado; esquema a título indicativo en página PDF 26", "scope": "veinte unidades obligatorias y cinco espacios flexibles ubicados por semestre; créditos individuales" },
+    { "id": "anexo", "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/02/Anexo-III.-Diagrama15.1.19.pdf", "authority": "Facultad de Enfermería, Udelar", "consultedAt": "2026-10-21", "publishedValidity": "esquema fechado 15/01/2019 enlazado en el índice vigente", "scope": "diagrama de columnas no verificado visualmente; extracción textual sólo de contraste" },
+    { "id": "guia", "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf", "authority": "Unidad Pedagógica, Facultad de Enfermería, Udelar", "consultedAt": "2026-10-21", "publishedValidity": "Guía del estudiante 2025 para Plan 2016", "scope": "cuatro sedes, ciclos, créditos, unidades integradas e independientes, optativas y certificación intermedia" }
+  ],
+  "visualVerification": "Intentada el 21/10/2026: captura web sin imagen, visor PDF del navegador sin captura y descarga local rechazada. Las ubicaciones se toman exclusivamente de la tabla textual a título indicativo del Plan aprobado (página PDF 26), no de la extracción intercalada del Anexo III. Pendiente contraste visual de ese diagrama.",
+  "sourcePortion": {
+    "credits": { "total": 360, "cycles": [80, 200, 40, 40], "integrated": 240, "independent": 90, "flexible": 30, "intermediate": 200 },
+    "campuses": ["Montevideo", "Rivera", "Rocha", "Salto"],
+    "periodRows": [
+      ["1000", "Orientación a la Universidad", 5, 1, "independent"],
+      ["1001", "ESFUNO", 20, 1, "independent"],
+      ["1002", "Microbiología", 5, 1, "independent"],
+      ["1003", "Enfermería Fundamental", 10, 1, "integrated"],
+      ["1004", "Enfermería en Salud Individual y Colectiva", 25, 2, "integrated"],
+      ["1005", "Ciencias Sociales Aplicadas a la Salud", 5, 2, "independent"],
+      ["2000", "Herramientas Metodológicas", 20, 3, "independent"],
+      ["2007", "Atención de Enfermería a adultos y ancianos I", 15, 3, "integrated"],
+      ["2008", "Atención de Enfermería a adultos y ancianos II", 40, 4, "integrated"],
+      ["3000", "Enfermería en Salud Sexual y Reproductiva", 30, 5, "integrated"],
+      ["3001", "Bioética", 5, 5, "independent"],
+      ["3002", "Atención de Enfermería a niño, niña y adolescente", 30, 6, "integrated"],
+      ["3003", "Administración", 5, 6, "independent"],
+      ["4000", "Enfermería en Salud Mental y Psiquiatría", 20, 7, "integrated"],
+      ["4001", "Ética", 5, 7, "independent"],
+      ["4002", "Protocolo de Investigación", 10, 7, "independent"],
+      ["4003", "Administración de los Servicios de Salud", 20, 8, "integrated"],
+      ["4004", "Enfermería Comunitaria", 20, 8, "integrated"],
+      ["5000", "Internado", 35, 9, "integrated"],
+      ["5001", "Trabajo de Investigación", 5, 9, "independent"]
+    ],
+    "flexiblePlacements": [[2, 10], [3, 5], [5, 5], [6, 5], [7, 5]],
+    "flexibleRule": "La guía 2025 admite cursar los 30 créditos de optativas/electivas hasta el octavo semestre inclusive; los períodos impresos son indicativos, no previaturas ni oferta efectiva.",
+    "intermediateRule": "Certificación Auxiliar de Enfermería luego de aprobar las UC hasta el quinto semestre inclusive y 200 créditos."
+  },
+  "technicalComparison": { "snapshotPath": "data/bedelias/fenf-licenciatura-en-enfermeria-2016.json", "compositeAlias": "2001", "compositeAliasReason": "Agrupa Adulto y Anciano I y II en 55 créditos; no es tercera unidad del Plan y se mantiene candidata.", "unmatchedFlexibleCatalog": "La composición de Bedelías no demuestra oferta vigente ni ubicación de cada optativa/electiva.", "categoryConflict": "La Guía 2025 declara 240 créditos integrados y 90 independientes, pero las diez UC integradas enumeradas suman 245 y las diez independientes 85. No se altera ninguna carga ni se fuerza un mínimo categorial imposible hasta aclaración de FENF." },
+  "trajectories": [{
+    "id": "plan-2016-indicativo",
+    "periods": [
+      { "label": "1.º semestre", "courseIds": ["1000", "1001", "1002", "1003"] },
+      { "label": "2.º semestre", "courseIds": ["1004", "1005", "fenf-flex-2"] },
+      { "label": "3.º semestre", "courseIds": ["2000", "2007", "fenf-flex-3"] },
+      { "label": "4.º semestre", "courseIds": ["2008"] },
+      { "label": "5.º semestre", "courseIds": ["3000", "3001", "fenf-flex-5"] },
+      { "label": "6.º semestre", "courseIds": ["3002", "3003", "fenf-flex-6"] },
+      { "label": "7.º semestre", "courseIds": ["4000", "4001", "4002", "fenf-flex-7"] },
+      { "label": "8.º semestre", "courseIds": ["4003", "4004"] },
+      { "label": "9.º semestre", "courseIds": ["5000", "5001"] }
+    ]
+  }],
+  "conclusion": { "state": "official-trajectory-reproduced", "coverage": "partial-indicative-nine-semesters-pending-visual-annex-review", "completeDegreeSequence": false, "technicalMatches": 20, "reviewTrigger": "Inspeccionar visualmente el Anexo III y cotejar sus columnas con la tabla del Plan; revisar si FENF modifica el esquema, la guía o la oferta territorial." },
+  "fingerprint": { "algorithm": "sha256-json-sourcePortion", "value": "sha256:4820cfcf2b1a3457a79bfef6513f9163bc375050052805816c50b16eb203883b" }
+}
