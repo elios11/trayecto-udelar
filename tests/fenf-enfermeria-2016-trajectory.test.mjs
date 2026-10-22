@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
+import { mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
+import path from "node:path";
 import test from "node:test";
-import { verifyFenfProjection, verifyFenfSource } from "../scripts/build-fenf-enfermeria-2016.mjs";
+import { fileURLToPath } from "node:url";
+import { verifyFenfProjection, verifyFenfSource, writeJsonIfChanged } from "../scripts/build-fenf-enfermeria-2016.mjs";
 
 const readJson = (relative) => JSON.parse(readFileSync(new URL(`../${relative}`, import.meta.url), "utf8"));
 const source = readJson("data/fenf/enfermeria-2016-trajectory-review.json");
@@ -42,4 +45,26 @@ test("preserva 360 créditos, título intermedio y discrepancia 240/90", () => {
   assert.ok(credentials["licenciado-enfermeria"].nodeRequirements.some(({ nodeId, minCredits }) => nodeId === "flexible" && minCredits === 30));
   assert.match(source.technicalComparison.categoryConflict, /245/);
   assert.match(source.technicalComparison.categoryConflict, /85/);
+});
+
+test("la escritura JSON usa reemplazo atómico e idempotente", async () => {
+  const root = fileURLToPath(new URL("../", import.meta.url));
+  const tempRoot = path.join(root, "tmp");
+  await mkdir(tempRoot, { recursive: true });
+  const directory = await mkdtemp(path.join(tempRoot, "fenf-atomic-"));
+  try {
+    const target = path.join(directory, "review.json");
+    const relative = path.relative(root, target);
+    await writeFile(target, "{}\n", "utf8");
+    await writeJsonIfChanged(relative, { checked: true });
+    const first = await readFile(target, "utf8");
+    const firstMtime = (await stat(target)).mtimeMs;
+    assert.equal(first, '{\n  "checked": true\n}\n');
+    assert.deepEqual(await readdir(directory), ["review.json"]);
+    await writeJsonIfChanged(relative, { checked: true });
+    assert.equal((await stat(target)).mtimeMs, firstMtime);
+    assert.deepEqual(await readdir(directory), ["review.json"]);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
 });

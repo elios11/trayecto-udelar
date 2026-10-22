@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
-import { readFile, writeFile } from "node:fs/promises";
+import { createHash, randomUUID } from "node:crypto";
+import { readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildAndWriteAuditQueue, officialAuditRegistryHash } from "./bedelias-audit-queue.mjs";
@@ -17,12 +17,16 @@ const reviewsPath = "data/official-trajectories/reviews.json";
 const projectionPath = "app/data/bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json";
 const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), "utf8"));
 const digest = (value) => `sha256:${createHash("sha256").update(JSON.stringify(value)).digest("hex")}`;
-const writeJsonIfChanged = async (relative, value) => {
+export const writeJsonIfChanged = async (relative, value) => {
   const target = path.join(root, relative);
   const previous = await readFile(target, "utf8");
   const content = `${JSON.stringify(value, null, 2)}\n`;
   const next = previous.includes("\r\n") ? content.replace(/\n/g, "\r\n") : content;
-  if (previous !== next) await writeFile(target, next, "utf8");
+  if (previous !== next) {
+    const pending = `${target}.d03bj.${process.pid}.${randomUUID()}.tmp`;
+    await writeFile(pending, next, "utf8");
+    await rename(pending, target);
+  }
 };
 const periodLabel = (number) => `${number}.º semestre`;
 
