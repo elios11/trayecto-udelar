@@ -24,8 +24,10 @@ export async function buildNotariadoEvidenceValidation({ write = true, evidenceO
   const inventoryEntry = inventory.plans.find(({ planId }) => planId === evidence.planId);
   const source = evidence.sourcePortion;
   if (evidence.planId !== "bedelias-fder-notariado-2016" || evidence.decision !== "research-pending"
-    || evidence.visualReview.status !== "unavailable" || evidence.visualReview.pagesInspected.length !== 0) {
-    throw new Error("La evidencia de Notariado no puede declarar un cierre visual ni cambiar de identidad.");
+    || evidence.visualReview.status !== "verified"
+    || !equal(evidence.visualReview.pagesInspected, [1, 2, 3])
+    || evidence.sourcePdfSha256 !== "60a64fa0dc1fa696edc13ad15609d19872d61d288b33cd0cff6ccde908024ee4") {
+    throw new Error("La evidencia de Notariado debe conservar el cotejo visual y la identidad de la fuente sin declarar cierre académico.");
   }
   if (source.semesterRows.length !== 10 || !equal(source.semesterRows.map(({ semester }) => semester), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     || source.semesterRows.some(({ labels, unclear }) => !labels.length || !unclear.length)) {
@@ -67,6 +69,7 @@ export async function buildNotariadoEvidenceValidation({ write = true, evidenceO
       curriculumUrl: evidence.curriculumUrl,
       publishedVersion: evidence.publishedVersion,
       scope: evidence.scope,
+      sourcePdfSha256: evidence.sourcePdfSha256,
     },
     normalizedSourcePortionHash: hash(source),
     evidenceHash: hash(evidence),
