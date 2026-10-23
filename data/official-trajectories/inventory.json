@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:9d7a17dcc390e5cd8f5e527205a9d96578aeac20b61ea45d28c5e6d0a7665a1f",
-    "extractedReportHash": "sha256:ff606f5293e05d2816f350a53bf8706299055f7ec101b840c4dd5e54558bdab0",
-    "officialAuditHash": "sha256:e5d79b31510254ade8f293c37408777a8bda6228c9cb7d63c49a70053358a124",
-    "reviewedTrajectoriesHash": "sha256:912628d5d3d7a4dfe3c4e4d53af06c81b43d34f289d5f2eab8e57b35328ebe17"
+    "extractedCatalogHash": "sha256:cdbc361be9add17d27c9357f8af5c0f4b59da7280a3b55edc91c286c2eb336ca",
+    "extractedReportHash": "sha256:998722f4db4b7269c08c015868f396f5470a56a75003903e16c4a62dc52f33a8",
+    "officialAuditHash": "sha256:7395e05d884d707691c2d1cad9f45a287e5ffe26b9bf637e6e2090f694341b2a",
+    "reviewedTrajectoriesHash": "sha256:54cce7129ce308154dc08c70b2e694ad11272b642140c657dcad864c0ccfce6f"
   },
   "counts": {
     "selectablePlanIds": 147,
-    "catalogPlacements": 149,
+    "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 119,
+      "official-trajectory-reproduced": 120,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 21
+      "research-pending": 20
     },
-    "pending": 24,
+    "pending": 23,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -65,9 +65,9 @@
       {
         "serviceId": "bedelias-cenurln",
         "serviceLabel": "Cenur Litoral Norte",
-        "selectablePlanIds": 6,
+        "selectablePlanIds": 7,
         "states": {
-          "official-trajectory-reproduced": 4,
+          "official-trajectory-reproduced": 5,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 1,
           "research-pending": 1
@@ -120,9 +120,9 @@
       {
         "serviceId": "bedelias-fcien",
         "serviceLabel": "Facultad de Ciencias",
-        "selectablePlanIds": 14,
+        "selectablePlanIds": 15,
         "states": {
-          "official-trajectory-reproduced": 8,
+          "official-trajectory-reproduced": 9,
           "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 1,
           "research-pending": 3
@@ -243,10 +243,10 @@
         "serviceLabel": "Facultad de Química",
         "selectablePlanIds": 11,
         "states": {
-          "official-trajectory-reproduced": 10,
+          "official-trajectory-reproduced": 11,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 24,
+    "total": 23,
     "plans": [
       {
         "priority": 1,
@@ -482,15 +482,6 @@
           "fing"
         ],
         "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
-        "state": "research-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       }
     ],
     "byService": [
@@ -571,14 +562,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-odon-odontologia-2011"
-        ]
-      },
-      {
-        "serviceId": "fq",
-        "serviceLabel": "Facultad de Química",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fq-licenciatura-en-biotecnologia-2024"
         ]
       },
       {
@@ -12119,42 +12102,43 @@
       "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
       "catalogPlacements": [
         {
+          "serviceId": "bedelias-cenurln",
+          "serviceLabel": "Cenur Litoral Norte",
+          "careerId": "bedelias-cenurln-licenciatura-en-biotecnologia",
+          "careerLabel": "Licenciatura en Biotecnología",
+          "planLabel": "Plan 2024 · vigente",
+          "defaultTrajectoryId": "cenurln-2024",
+          "defaultCredentialId": "bedelias-degree"
+        },
+        {
+          "serviceId": "bedelias-fcien",
+          "serviceLabel": "Facultad de Ciencias",
+          "careerId": "bedelias-fcien-licenciatura-en-biotecnologia",
+          "careerLabel": "Licenciatura en Biotecnología",
+          "planLabel": "Plan 2024 · vigente",
+          "defaultTrajectoryId": "fcien-2024",
+          "defaultCredentialId": "bedelias-degree"
+        },
+        {
           "serviceId": "fq",
           "serviceLabel": "Facultad de Química",
           "careerId": "bedelias-fq-licenciatura-en-biotecnologia",
           "careerLabel": "Licenciatura en Biotecnología",
           "planLabel": "Plan 2024 · vigente",
-          "defaultTrajectoryId": "bedelias",
+          "defaultTrajectoryId": "fq-2024",
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-15",
-      "effectiveAt": "2024",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "anexo actualizado el 22/02/2024",
       "officialSources": [
         {
-          "authority": "Repositorio institucional Colibrí, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42761",
-          "role": "Plan 2024 y códigos institucionales; Facultad de Ciencias como servicio de referencia; responsabilidad compartida entre siete servicios",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Ciencias, Udelar",
-          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/177982/mod_forum/attachment/81185/Plan%20de%20Estudio%20Licenciatura%20Biotecnolog%C3%ADa.pdf",
-          "role": "título, cuatro años y 360 créditos; mínimos por tramos y áreas; optativas, electivas, trabajo final y trayectorias sugeridas",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de Udelar",
-          "url": "https://udelar.edu.uy/noticias/nueva-carrera-de-grado-licenciatura-en-biotecnologia",
-          "role": "oferta en Montevideo, Salto y Paysandú; servicios universitarios responsables",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de Udelar",
-          "url": "https://udelar.edu.uy/noticias/carrera-nueva-de-la-udelar-en-2024-licenciatura-en-biotecnologia-se-podra-cursar-en-las-sedes-salto",
-          "role": "puertas de entrada regionales; implementación mediante recursos curriculares existentes",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/177982/mod_forum/attachment/81185/Trayectoria%20Lic%20Biotecnologia%20actualizada%20al%2022022024.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "ejemplos semestrales cotejados visualmente",
+          "contentHash": "sha256:18d5f6c4cf8c4ba61e727a8607d003405209a4f0573bdd4a3f50fc07f6f81253"
         }
       ],
       "scope": {
@@ -12164,23 +12148,55 @@
           "Paysandú"
         ],
         "pathwayIds": [
-          "bedelias"
-        ]
+          "fcien-2024",
+          "cenurln-2024",
+          "fq-2024"
+        ],
+        "coverage": "tres ejemplos de ocho semestres, sin equivalencia técnica completa ni oferta territorial confirmada",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en biotecnologia:2024",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-biotecnologia-2024.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/biotecnologia-2024-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-biotecnologia-2024.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión institucional o correspondencias técnicas adicionales",
+        "sourceContentHash": "sha256:4389faf26a56ad21cd716e39f9b4cfb055a6021755a67e8cd12a7a2fec115d90",
+        "projectionContentHash": "sha256:d6cc97ccfb5e7ff485a15ff8633ddbfec97c8102c424ec1c682aafd7c9131a7b",
+        "pathways": [
+          {
+            "id": "fcien-2024",
+            "periodCount": 8
+          },
+          {
+            "id": "cenurln-2024",
+            "periodCount": 8
+          },
+          {
+            "id": "fq-2024",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 110,
+        "matchedCoursePlacements": 110
       },
-      "conflictNotes": []
+      "conflictNotes": [
+        "Las nueve páginas de los ejemplos fueron cotejadas visualmente; salvo las filas con códigos CBB27 y 536X, la equivalencia con códigos técnicos de Bedelías sigue pendiente.",
+        "El documento publica ejemplos modificables y no acredita oferta vigente de una unidad por sede o período.",
+        "Los renglones de optativas/electivas/pasantía son cupos de crédito, no cursos obligatorios simultáneos.",
+        "La grilla de entrada por FCIEN suma 357 créditos impresos, tres menos que el mínimo normativo de 360; no se prorratea ni se inventa el faltante."
+      ]
     },
     {
       "planId": "bedelias-fq-licenciatura-en-quimica-2016",
@@ -13831,5 +13847,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:94b4c33929454f376b278843b2403de11765ac9019183d0bf7cc8cb9aef086aa"
+  "contentHash": "sha256:8fcd4f94bdbebce9a3614cdb9c9f81efbe05b664d6074ecfd35e1f0dd9ad529b"
 }

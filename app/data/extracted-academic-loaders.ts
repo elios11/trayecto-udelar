@@ -777,7 +777,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-licenciatura-en-biotecnologia-2024": {
     load: () => import("./bedelias-generated/bedelias-fq-licenciatura-en-biotecnologia-2024.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["fcien-2024","cenurln-2024","fq-2024"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },

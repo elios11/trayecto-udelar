@@ -4805,6 +4805,54 @@
         "Las alternativas dentro de un mismo semestre no son créditos acumulativos ni materias obligatorias simultáneas.",
         "La secuencia de diez semestres no documenta oferta territorial completa en Salto."
       ]
+    },
+    {
+      "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "anexo actualizado el 22/02/2024",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Salto",
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "fcien-2024",
+          "cenurln-2024",
+          "fq-2024"
+        ],
+        "coverage": "tres ejemplos de ocho semestres, sin equivalencia técnica completa ni oferta territorial confirmada",
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/177982/mod_forum/attachment/81185/Trayectoria%20Lic%20Biotecnologia%20actualizada%20al%2022022024.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "ejemplos semestrales cotejados visualmente",
+          "contentHash": "sha256:18d5f6c4cf8c4ba61e727a8607d003405209a4f0573bdd4a3f50fc07f6f81253"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/biotecnologia-2024-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-biotecnologia-2024.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión institucional o correspondencias técnicas adicionales"
+      },
+      "conflictNotes": [
+        "Las nueve páginas de los ejemplos fueron cotejadas visualmente; salvo las filas con códigos CBB27 y 536X, la equivalencia con códigos técnicos de Bedelías sigue pendiente.",
+        "El documento publica ejemplos modificables y no acredita oferta vigente de una unidad por sede o período.",
+        "Los renglones de optativas/electivas/pasantía son cupos de crédito, no cursos obligatorios simultáneos.",
+        "La grilla de entrada por FCIEN suma 357 créditos impresos, tres menos que el mínimo normativo de 360; no se prorratea ni se inventa el faltante."
+      ]
     }
   ]
 }

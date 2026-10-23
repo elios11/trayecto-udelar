@@ -1113,7 +1113,9 @@ export default function Home() {
     }
     const nextPlan2025Trajectory = nextPlan.id === "2025" ? plan2025Data.trajectories[nextPlan.defaultTrajectoryId] : undefined;
     setTrajectoryId(nextPlan.defaultTrajectoryId);
-    setCampusId(nextPlan2025Trajectory?.campusId ?? nextRegisteredPlan?.campuses?.[0]?.id ?? "");
+    setCampusId(nextPlan2025Trajectory?.campusId
+      ?? nextRegisteredPlan?.pathways[nextPlan.defaultTrajectoryId]?.campusIds?.[0]
+      ?? nextRegisteredPlan?.campuses?.[0]?.id ?? "");
     setCredentialId(nextPlan2025Trajectory?.credentialId ?? nextPlan.defaultCredentialId);
     setFacultyId(nextFacultyId);
     setPlanYear(nextPlan.id);

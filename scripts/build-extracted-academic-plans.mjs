@@ -2191,7 +2191,8 @@ export async function buildExtractedAcademicPlans() {
       faculty.careers.get(careerId).plans.push({
         id: planId,
         label: `Plan ${planYear} · ${audit?.officialPlan?.catalogStatusLabel ?? (projection.plan.current === false ? "histórico" : "vigente")}`,
-        defaultTrajectoryId: Object.keys(projection.pathways)[0],
+        defaultTrajectoryId: audit?.officialPlan?.catalogDefaultTrajectoryIds?.[catalogFacultyCode]
+          ?? Object.keys(projection.pathways)[0],
         defaultCredentialId: projection.pathways[Object.keys(projection.pathways)[0]]?.credentialId
           ?? projection.creditStructure.credentials.find((credential) => credential.id === "bedelias-degree")?.id
           ?? projection.creditStructure.credentials.at(-1)?.id

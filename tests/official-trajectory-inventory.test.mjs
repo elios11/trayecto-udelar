@@ -25,24 +25,24 @@ test("el inventario de trayectorias es determinista y cubre exactamente los plan
   const selectablePlanIds = new Set([...catalogPlanIds(curatedCatalog), ...catalogPlanIds(extractedCatalog)]);
   const inventoryPlanIds = savedInventory.plans.map(({ planId }) => planId);
   assert.equal(savedInventory.counts.selectablePlanIds, 147);
-  assert.equal(savedInventory.counts.catalogPlacements, 149);
+  assert.equal(savedInventory.counts.catalogPlacements, 151);
   assert.equal(inventoryPlanIds.length, selectablePlanIds.size);
   assert.equal(new Set(inventoryPlanIds).size, inventoryPlanIds.length);
   assert.deepEqual(new Set(inventoryPlanIds), selectablePlanIds);
-  assert.equal(savedInventory.plans.flatMap(({ catalogPlacements }) => catalogPlacements).length, 149);
+  assert.equal(savedInventory.plans.flatMap(({ catalogPlacements }) => catalogPlacements).length, 151);
 });
 
 test("los estados cerrados tienen evidencia suficiente y los pendientes permanecen visibles", () => {
   const stateTotals = Object.fromEntries(TRAJECTORY_STATES.map((state) => [state, savedInventory.plans.filter((plan) => plan.state === state).length]));
   assert.deepEqual(savedInventory.counts.states, stateTotals);
   assert.deepEqual(stateTotals, {
-    "official-trajectory-reproduced": 119,
+    "official-trajectory-reproduced": 120,
     "official-trajectory-identified-pending": 3,
     "no-official-trajectory-documented": 4,
-    "research-pending": 21,
+    "research-pending": 20,
   });
-  assert.equal(savedInventory.pendingQueue.total, 24);
-  assert.equal(savedInventory.pendingQueue.plans.length, 24);
+  assert.equal(savedInventory.pendingQueue.total, 23);
+  assert.equal(savedInventory.pendingQueue.plans.length, 23);
   assert.ok(savedInventory.pendingQueue.plans.slice(0, 3).every(({ priority, state }) => priority === 1 && state === "official-trajectory-identified-pending"));
   assert.ok(savedInventory.pendingQueue.plans.slice(3).every(({ priority, state }) => priority === 2 && state === "research-pending"));
 

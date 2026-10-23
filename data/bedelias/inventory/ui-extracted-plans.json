@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:2b836a0fa2acd69d48c20df3b89b1412f1f4ff59a17251b1bbe314a3f328fe56",
-    "officialAuditHash": "sha256:e5d79b31510254ade8f293c37408777a8bda6228c9cb7d63c49a70053358a124",
+    "auditQueueHash": "sha256:9b860ee75e3efdee2fb9c13e6fef99f61a4ac967b0c2716630e63b54a7f2f12d",
+    "officialAuditHash": "sha256:7395e05d884d707691c2d1cad9f45a287e5ffe26b9bf637e6e2090f694341b2a",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -23,20 +23,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 5890,
-      "candidate": 26164,
+      "verified": 5988,
+      "candidate": 26162,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 32062,
-    "afterPublishedCourses": 5890,
+    "beforePublishedCourses": 32158,
+    "afterPublishedCourses": 5988,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1923,
-    "visibleTargetsWithUnpublishedDependencies": 1592,
+    "afterPublishedRules": 1924,
+    "visibleTargetsWithUnpublishedDependencies": 1593,
     "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 69,
-    "plansWithStructureOnly": 6
+    "plansWithPartialCatalog": 70,
+    "plansWithStructureOnly": 5
   },
   "plans": [
     {
@@ -4333,7 +4333,7 @@
       "facultyCode": "FQ",
       "snapshotPath": "data/bedelias/fq-licenciatura-en-biotecnologia-2024.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -4342,18 +4342,18 @@
         "paysandu"
       ],
       "before": {
-        "publishedCourses": 246,
+        "publishedCourses": 342,
         "publishedRules": 75
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 246,
-        "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 98,
+        "hiddenCourses": 244,
+        "publishedRules": 1,
+        "rulesWithUnpublishedDependencies": 1
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 246,
+        "verified": 98,
+        "candidate": 244,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4640,5 +4640,5 @@
       }
     }
   ],
-  "contentHash": "sha256:ff606f5293e05d2816f350a53bf8706299055f7ec101b840c4dd5e54558bdab0"
+  "contentHash": "sha256:998722f4db4b7269c08c015868f396f5470a56a75003903e16c4a62dc52f33a8"
 }
