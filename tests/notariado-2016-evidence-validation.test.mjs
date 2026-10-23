@@ -28,7 +28,7 @@ test("la discrepancia por áreas y los componentes ambiguos permanecen explícit
   assert.deepEqual(evidence.sourcePortion.currentMinimumCreditsByArea, [61, 83, 94, 42, 135, 35]);
   assert.equal(report.checks.gridAndMinimumAreaDifferencePreserved, true);
   assert.match(evidence.sourcePortion.semesterRows[0].unclear[0], /13 créditos más taller de 2/);
-  assert.match(evidence.sourcePortion.semesterRows[9].unclear[0], /no se atribuye código/);
+  assert.match(evidence.sourcePortion.semesterRows[9].unclear[0], /3 créditos de área.*2 en la columna/);
   assert.match(evidence.sourcePortion.flexiblePlacementNote, /20\/11\/2019/);
 });
 
@@ -36,7 +36,9 @@ test("identidades y progreso quedan conservados sin publicación indebida", () =
   const entry = inventory.plans.find(({ planId }) => planId === evidence.planId);
   assert.equal(entry.state, "research-pending");
   assert.equal(report.decision, "research-pending");
-  assert.equal(evidence.visualReview.status, "unavailable");
+  assert.equal(evidence.visualReview.status, "verified");
+  assert.deepEqual(evidence.visualReview.pagesInspected, [1, 2, 3]);
+  assert.equal(evidence.sourcePdfSha256, "60a64fa0dc1fa696edc13ad15609d19872d61d288b33cd0cff6ccde908024ee4");
   assert.equal(projection.plan.degreeTitle, "Escribano Público");
   assert.deepEqual(projection.campuses.map(({ id }) => id), ["montevideo", "salto"]);
   assert.equal(projection.courses.length, report.checks.technicalIdsPreserved);
@@ -49,7 +51,7 @@ test("el verificador es determinista y rechaza cierre o pérdida de un semestre"
   assert.deepEqual(await buildNotariadoEvidenceValidation({ write: false }), report);
   await assert.rejects(
     buildNotariadoEvidenceValidation({ write: false, evidenceOverride: { ...evidence, decision: "official-trajectory-reproduced" } }),
-    /no puede declarar un cierre visual/,
+    /sin declarar cierre académico/,
   );
   await assert.rejects(
     buildNotariadoEvidenceValidation({ write: false, evidenceOverride: {
