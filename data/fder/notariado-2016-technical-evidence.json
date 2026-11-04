@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fder-notariado-2016",
+  "reviewedAt": "2026-11-04",
+  "authority": "Departamento de Administración de la Enseñanza, Facultad de Derecho, Udelar",
+  "scope": "Identidad técnica y carga publicadas; la pertenencia curricular continúa respaldada por la grilla vigente. No acredita equivalencias ni oferta futura.",
+  "sources": [
+    {
+      "id": "first-year-2026",
+      "url": "https://www.fder.edu.uy/sites/default/files/2026-03/Cursos%201%C2%BAa%C3%B1o%20%201er%20semestre%202026_1.pdf",
+      "publication": "Cursos reglamentados 2026, Abogacía/Notariado Plan 2016, primer año primer semestre",
+      "rows": [
+        {"code":"11.2U","name":"Constitucional","credits":15,"page":1},
+        {"code":"11.3","name":"Ideas Jurídicas Pol. en el Orden Moderno","credits":8,"page":1},
+        {"code":"11.4U","name":"Sociedad y Derecho","credits":9,"page":2},
+        {"code":"11.5","name":"Historia del Derecho","credits":6,"page":2},
+        {"code":"11.6","name":"Personas","credits":6,"page":3}
+      ]
+    },
+    {
+      "id": "third-year-2025",
+      "url": "https://www.fder.edu.uy/sites/default/files/2025-08/Cursos%203er%20a%C3%B1o%20Notariado_3.pdf",
+      "publication": "Cursos reglamentados 2025, Notariado Plan 2016, tercer año segundo semestre",
+      "rows": [
+        {"code":"32.1","name":"Procesal 2","credits":12,"page":1},
+        {"code":"32.2U","name":"Comercial 1","credits":14,"page":1},
+        {"code":"32.4","name":"Derecho Registral","credits":10,"page":1},
+        {"code":"32.5","name":"Taller Práctico","credits":6,"page":1}
+      ],
+      "notes": ["La inscripción en 32.5 provoca inscripción de Bedelía al teórico 32.4; quienes sólo deben el teórico usan otro procedimiento. Son componentes distintos, no aliases."]
+    }
+  ],
+  "cohortRule": {
+    "sourceUrl": "https://www.fder.edu.uy/node/8770",
+    "publication": "Calendario de inscripciones del segundo semestre de 2026",
+    "codes": ["42.5", "52.5", "52.41", "52.42"],
+    "rule": "52.41 se usa para estudiantes que deben partes 1 y 2; quienes aprobaron parte 1 en 2025 y deben parte 2 usan 52.42. Quienes aprobaron el seminario antes de 2025 no deben parte 2.",
+    "effect": "Requiere decisión de cohorte al interpretar progreso histórico; no se agrega automáticamente una obligación nueva ni se migra 52.4 por semejanza."
+  }
+}

@@ -13,6 +13,11 @@ test('el cotejo cubre todas las filas oficiales y preserva las contradicciones t
   assert.ok(registral.every(r => r.conflict));
   assert.ok(report.rows.find(r => r.semester === 10 && /Parte 1/.test(r.officialLabel)).conflict);
   assert.ok(report.rows.every(r => !('verified' in r) && !('aliases' in r)));
+  const supported = report.rows.flatMap(r => r.candidates.filter(c => c.technicalIdentityEvidence));
+  assert.equal(supported.length, 9);
+  assert.deepEqual(supported.filter(c => c.code.startsWith('32.')).map(c => [c.code,c.credits]), [['32.4',10],['32.5',6],['32.1',12],['32.2U',14]]);
+  assert.match(report.cohortRule.rule, /antes de 2025 no deben parte 2/);
+  assert.match(report.cohortRule.effect, /no se agrega automáticamente/);
   const saved = JSON.parse(await readFile(new URL('../data/fder/notariado-2016-crosswalk.json', import.meta.url), 'utf8'));
   assert.deepEqual(report, saved);
 });

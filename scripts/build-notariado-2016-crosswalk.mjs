@@ -22,6 +22,8 @@ const hash = x => `sha256:${createHash('sha256').update(JSON.stringify(x)).diges
 
 export async function buildNotariadoCrosswalk({ write = true } = {}) {
   const evidence = await readJson('data/fder/notariado-2016-evidence.json');
+  const technicalEvidence = await readJson('data/fder/notariado-2016-technical-evidence.json');
+  const supported = new Map(technicalEvidence.sources.flatMap(s => s.rows.map(r => [r.code, { ...r, sourceUrl: s.url }])));
   const snapshot = await readJson('app/data/bedelias-generated/bedelias-fder-notariado-2016.json');
   const courses = new Map(snapshot.courses.map(c => [c.bedeliasCode, c]));
   const rows = evidence.sourcePortion.semesterRows.flatMap((period, p) => {
@@ -31,7 +33,10 @@ export async function buildNotariadoCrosswalk({ write = true } = {}) {
       const matched = codes.map(code => {
         const c = courses.get(code);
         if (!c) throw new Error(`Falta la identidad técnica ${code}`);
-        return { code, id: c.id, name: c.name, credits: c.credits };
+        const support = supported.get(code);
+        if (support && support.credits !== c.credits) throw new Error(`Cambió la carga técnica cotejada de ${code}`);
+        return { code, id: c.id, name: c.name, credits: c.credits,
+          ...(support ? { technicalIdentityEvidence: { sourceUrl: support.sourceUrl, page: support.page, publishedName: support.name } } : {}) };
       });
       return {
         semester: period.semester, sourcePage: period.page, officialLabel,
@@ -44,9 +49,11 @@ export async function buildNotariadoCrosswalk({ write = true } = {}) {
     });
   });
   const report = {
-    schemaVersion: 1, planId: evidence.planId, reviewedAt: '2026-11-01',
+    schemaVersion: 1, planId: evidence.planId, reviewedAt: technicalEvidence.reviewedAt,
     sourceUrl: evidence.curriculumUrl, sourcePdfSha256: evidence.sourcePdfSha256,
     evidenceHash: hash(evidence), projectionHash: hash(snapshot),
+    technicalEvidenceHash: hash(technicalEvidence),
+    cohortRule: technicalEvidence.cohortRule,
     policy: 'Candidatos para cotejo humano. Este archivo no promueve, fusiona, migra progreso ni publica identidades.',
     counts: { rows: rows.length, flexibleSlots: rows.filter(r => r.status === 'official-flexible-slot').length, explicitConflicts: rows.filter(r => r.conflict).length },
     rows,
