@@ -428,8 +428,8 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fenf-licenciatura-en-enfermeria-2016": {
     load: () => import("./bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json"),
-    pathwayIds: ["bedelias"],
-    pathwayLabel: "Trayectoria",
+    pathwayIds: ["plan-2016-indicativo"],
+    pathwayLabel: "Esquema indicativo · cotejo parcial",
     minCredits: 360,
   },
   "bedelias-fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999": {
@@ -531,7 +531,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018": {
     load: () => import("./bedelias-generated/bedelias-fic-licenciatura-en-ingenieria-de-medios-2018.json"),
-    pathwayIds: ["trayectoria-flexible"],
+    pathwayIds: ["malla-fing-1-4","malla-fcea-1-4","trayectoria-flexible"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },
@@ -753,7 +753,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-psico-licenciatura-en-psicologia-2013": {
     load: () => import("./bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["malla-2025"],
     pathwayLabel: "Trayectoria",
     minCredits: 320,
   },
@@ -771,13 +771,13 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fq-ingenieria-de-alimentos-2003": {
     load: () => import("./bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json"),
-    pathwayIds: ["trayectoria-flexible"],
+    pathwayIds: ["trayectoria-flexible","matematicas-fisicas-fing"],
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },
   "bedelias-fq-licenciatura-en-biotecnologia-2024": {
     load: () => import("./bedelias-generated/bedelias-fq-licenciatura-en-biotecnologia-2024.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["fcien-2024","cenurln-2024","fq-2024"],
     pathwayLabel: "Trayectoria",
     minCredits: 360,
   },

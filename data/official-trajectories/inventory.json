@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:e4d4438a1a85aaa39da3af25f56e855d0f9cbe67e890458a37da70325b64659f",
-    "extractedReportHash": "sha256:862cdcfa34609d2f343294334df38aa55ac4200a58b6a4311af671cf38bfb993",
-    "officialAuditHash": "sha256:4c1c15096b7b382eda1c9ab853249b57c264b79f139efca924fbaa09ac2c0acd",
-    "reviewedTrajectoriesHash": "sha256:fae4f15aa79dc54cbe5bd81881881cad0305afa27889f6d1413ffb93e42f5a4d"
+    "extractedCatalogHash": "sha256:cdbc361be9add17d27c9357f8af5c0f4b59da7280a3b55edc91c286c2eb336ca",
+    "extractedReportHash": "sha256:998722f4db4b7269c08c015868f396f5470a56a75003903e16c4a62dc52f33a8",
+    "officialAuditHash": "sha256:7395e05d884d707691c2d1cad9f45a287e5ffe26b9bf637e6e2090f694341b2a",
+    "reviewedTrajectoriesHash": "sha256:54cce7129ce308154dc08c70b2e694ad11272b642140c657dcad864c0ccfce6f"
   },
   "counts": {
     "selectablePlanIds": 147,
-    "catalogPlacements": 149,
+    "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 115,
+      "official-trajectory-reproduced": 120,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 25
+      "research-pending": 20
     },
-    "pending": 28,
+    "pending": 23,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -65,9 +65,9 @@
       {
         "serviceId": "bedelias-cenurln",
         "serviceLabel": "Cenur Litoral Norte",
-        "selectablePlanIds": 6,
+        "selectablePlanIds": 7,
         "states": {
-          "official-trajectory-reproduced": 4,
+          "official-trajectory-reproduced": 5,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 1,
           "research-pending": 1
@@ -120,9 +120,9 @@
       {
         "serviceId": "bedelias-fcien",
         "serviceLabel": "Facultad de Ciencias",
-        "selectablePlanIds": 14,
+        "selectablePlanIds": 15,
         "states": {
-          "official-trajectory-reproduced": 8,
+          "official-trajectory-reproduced": 9,
           "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 1,
           "research-pending": 3
@@ -166,10 +166,10 @@
         "serviceLabel": "Facultad de Enfermería",
         "selectablePlanIds": 2,
         "states": {
-          "official-trajectory-reproduced": 1,
+          "official-trajectory-reproduced": 2,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -188,10 +188,10 @@
         "serviceLabel": "Facultad de Información y Comunicación",
         "selectablePlanIds": 4,
         "states": {
-          "official-trajectory-reproduced": 3,
+          "official-trajectory-reproduced": 4,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -232,10 +232,10 @@
         "serviceLabel": "Facultad de Psicología",
         "selectablePlanIds": 1,
         "states": {
-          "official-trajectory-reproduced": 0,
+          "official-trajectory-reproduced": 1,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -243,10 +243,10 @@
         "serviceLabel": "Facultad de Química",
         "selectablePlanIds": 11,
         "states": {
-          "official-trajectory-reproduced": 9,
+          "official-trajectory-reproduced": 11,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 2
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 28,
+    "total": 23,
     "plans": [
       {
         "priority": 1,
@@ -400,25 +400,7 @@
         "serviceIds": [
           "bedelias-fder"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fenf-licenciatura-en-enfermeria-2016",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fenf"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fic"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
       },
       {
         "priority": 2,
@@ -453,15 +435,6 @@
         "state": "research-pending",
         "serviceIds": [
           "bedelias-odon"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-psico-licenciatura-en-psicologia-2013",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-psico"
         ],
         "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
@@ -507,24 +480,6 @@
         "state": "research-pending",
         "serviceIds": [
           "fing"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fq-ingenieria-de-alimentos-2003",
-        "state": "research-pending",
-        "serviceIds": [
-          "fq"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
-        "state": "research-pending",
-        "serviceIds": [
-          "fq"
         ],
         "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       }
@@ -581,22 +536,6 @@
         ]
       },
       {
-        "serviceId": "bedelias-fenf",
-        "serviceLabel": "Facultad de Enfermería",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fenf-licenciatura-en-enfermeria-2016"
-        ]
-      },
-      {
-        "serviceId": "bedelias-fic",
-        "serviceLabel": "Facultad de Información y Comunicación",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fic-licenciatura-en-ingenieria-de-medios-2018"
-        ]
-      },
-      {
         "serviceId": "fing",
         "serviceLabel": "Facultad de Ingeniería",
         "identifiedPending": [
@@ -623,23 +562,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-odon-odontologia-2011"
-        ]
-      },
-      {
-        "serviceId": "bedelias-psico",
-        "serviceLabel": "Facultad de Psicología",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-psico-licenciatura-en-psicologia-2013"
-        ]
-      },
-      {
-        "serviceId": "fq",
-        "serviceLabel": "Facultad de Química",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fq-ingenieria-de-alimentos-2003",
-          "bedelias-fq-licenciatura-en-biotecnologia-2024"
         ]
       },
       {
@@ -7329,32 +7251,50 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "1995",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "1995-2026",
       "officialSources": [
         {
           "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/node/8457",
-          "role": "rótulo plan anterior; trece programas del Plan 1995; distribución por tres años",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "Índice oficial de trece programas por Primero, Segundo y Tercero, no texto aprobado ni malla semestral"
+        },
+        {
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/1532",
+          "reviewedAt": "2026-10-21",
+          "role": "Página titulada Plan 1995; reproduce el mismo índice de programas"
         },
         {
           "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/node/6317",
-          "role": "creación de la Tecnicatura en 1994; inicio de cursos en 1995; duración de dos años y medio; evolución hacia la Licenciatura",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "Historia de la carrera y duración de dos años y medio"
+        },
+        {
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "url": "https://www.fder.edu.uy/node/5166",
+          "reviewedAt": "2026-10-21",
+          "role": "Estudiantes del Plan 1995 pueden rendir materias equivalentes del nuevo plan tras revisión individual"
         },
         {
           "authority": "Consejo de Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/sites/default/files/2022-12/Exp.051440-000117-22_Calendarios%20de%20mayo%20a%20diciembre%2023_0.pdf",
-          "role": "mesas de examen Plan 1995 durante 2023; códigos de las trece unidades",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "Calendarios de exámenes 2023: actividad y códigos del Plan 1995; no prueban malla, cargas ni asignación por períodos"
         },
         {
           "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/sites/default/files/2018-02/FORMULARIO%20CAMBIO%20DE%20PLAN%20RRLL.pdf",
-          "role": "cambio voluntario al Plan 2012; reválidas desde el plan anterior",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "Formulario de cambio al Plan 2012 y reválidas individuales; no acredita equivalencia automática ni estructura curricular"
+        },
+        {
+          "authority": "Diario Oficial, IMPO",
+          "url": "https://www.impo.com.uy/bases/avisos/54640-1995",
+          "reviewedAt": "2026-10-21",
+          "role": "Título de Técnico en Relaciones Laborales y duración de dos años y seis meses; no grilla"
         }
       ],
       "scope": {
@@ -7370,16 +7310,18 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura en relaciones laborales:1995",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fder-tecnicatura-en-relaciones-laborales-1995.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "insufficient-current-trajectory-evidence",
+        "sourceDataPath": "data/fder/relaciones-laborales-1995-programas.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-tecnicatura-en-relaciones-laborales-1995.json",
+        "programCount": 13,
+        "promotedCourseCount": 13,
+        "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
       },
       "conflictNotes": [
-        "current: Se muestra como histórico: Facultad lo denomina plan anterior y la Licenciatura 2012 es la oferta vigente.",
-        "credits: El plan trabaja por unidades y no publica créditos; se exigen las 5+5+3 unidades del árbol sin asignar créditos ficticios.",
-        "identity: Técnico en Relaciones Laborales Plan 1995 no se fusiona con Técnico Asesor, título intermedio de 200 créditos del Plan 2012."
+        "La página titulada Plan 1995 contiene sólo Programas, no el texto del distribuido 95/95 ni semestres; la duración histórica es de 30 meses, por lo que Tercero no acredita un tercer año completo.",
+        "Los calendarios de examen prueban actividad del Plan 1995 y códigos, no obligatoriedad curricular ni asignación por períodos.",
+        "Estadística Laboral, Derecho de las RRLL en el Sector Público y RRLL en los Procesos de Integración conservan sus IDs técnicos aunque el calendario y Bedelías abrevíen los nombres.",
+        "No se importan unidades ni la credencial intermedia de la Licenciatura Plan 2012."
       ]
     },
     {
@@ -7501,49 +7443,38 @@
           "careerId": "bedelias-fenf-licenciatura-en-enfermeria",
           "careerLabel": "Licenciatura en Enfermeria",
           "planLabel": "Plan 2016 · vigente",
-          "defaultTrajectoryId": "bedelias",
-          "defaultCredentialId": "bedelias-degree"
+          "defaultTrajectoryId": "plan-2016-indicativo",
+          "defaultCredentialId": "licenciado-enfermeria"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-15",
-      "effectiveAt": "2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-21",
+      "effectiveAt": "Plan 2016; tabla indicativa del Plan aprobado y Guía 2025",
       "officialSources": [
         {
           "authority": "Facultad de Enfermería, Udelar",
           "url": "https://www.fenf.edu.uy/plan-de-estudios-2016/",
-          "role": "documentación vigente del Plan 2016; reglamento actualizado y guía estudiantil oficial",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "enlaces al Plan aprobado, esquema y reglamento"
         },
         {
-          "authority": "Facultad de Enfermería, Udelar",
+          "authority": "Consejo Directivo Central, Udelar; Facultad de Enfermería",
           "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/01/PdeE2016-modificaciones-CAG-noviembre-2017.pdf",
-          "role": "texto institucional del Plan 2016; aprobación por el Consejo Directivo Central",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "veinte unidades obligatorias y cinco espacios flexibles ubicados por semestre; créditos individuales",
+          "contentHash": "sha256:4820cfcf2b1a3457a79bfef6513f9163bc375050052805816c50b16eb203883b"
         },
         {
           "authority": "Facultad de Enfermería, Udelar",
+          "url": "https://www.fenf.edu.uy/wp-content/uploads/2019/02/Anexo-III.-Diagrama15.1.19.pdf",
+          "reviewedAt": "2026-10-21",
+          "role": "diagrama de columnas no verificado visualmente; extracción textual sólo de contraste"
+        },
+        {
+          "authority": "Unidad Pedagógica, Facultad de Enfermería, Udelar",
           "url": "https://www.fenf.edu.uy/wp-content/uploads/2025/11/GUIA-DEL-ESTUDIANTE-.pdf",
-          "role": "implementación del mismo Plan 2016 en Montevideo, Rivera, Rocha y Salto; cuatro ciclos de 80, 200, 40 y 40 créditos; distribución de 330 créditos obligatorios y 30 optativos/electivos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Enfermería, Udelar",
-          "url": "https://www.fenf.edu.uy/wp-content/uploads/2026/01/Reglamento-Plan-2016-.pdf",
-          "role": "reglamento vigente aprobado por Resolución 48 de 18/12/2024; títulos Licenciado/a y Auxiliar de Enfermería; título intermedio al completar 200 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Enfermería, Udelar",
-          "url": "https://udelar.edu.uy/sites/default/files/migrated-files/Memoria-Enfermeri%25CC%2581a-2021-WEB-v8_2.pdf",
-          "role": "decisión institucional de un único plan curricular para todas las sedes; implantación progresiva del Plan 2016 en las cuatro sedes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo central de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-enfermeria",
-          "role": "una carrera de 360 créditos y 54 meses; oferta en Montevideo, Rivera, Rocha y Salto",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-21",
+          "role": "cuatro sedes, ciclos, créditos, unidades integradas e independientes, optativas y certificación intermedia"
         }
       ],
       "scope": {
@@ -7554,23 +7485,43 @@
           "Salto"
         ],
         "pathwayIds": [
-          "bedelias"
-        ]
+          "plan-2016-indicativo"
+        ],
+        "coverage": "partial-indicative-nine-semesters-pending-visual-annex-review",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en enfermeria:2016",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fenf/enfermeria-2016-trajectory-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fenf-licenciatura-en-enfermeria-2016.json",
+        "sourceCollection": "trajectories",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "Inspeccionar visualmente el Anexo III y cotejar sus columnas con la tabla del Plan; revisar si FENF modifica el esquema, la guía o la oferta territorial.",
+        "sourceContentHash": "sha256:de8654ee3b5a0a7050b3e58550f3f9d68b32d421dc335d3bf56c2073100444bc",
+        "projectionContentHash": "sha256:c4bb32d4718936628475fdcb6424e59bacaa06d4a7f0f5b07090e1f5ce46f60d",
+        "pathways": [
+          {
+            "id": "plan-2016-indicativo",
+            "periodCount": 9
+          }
+        ],
+        "expectedCoursePlacements": 25,
+        "matchedCoursePlacements": 25
       },
-      "conflictNotes": []
+      "conflictNotes": [
+        "Intentada el 21/10/2026: captura web sin imagen, visor PDF del navegador sin captura y descarga local rechazada. Las ubicaciones se toman exclusivamente de la tabla textual a título indicativo del Plan aprobado (página PDF 26), no de la extracción intercalada del Anexo III. Pendiente contraste visual de ese diagrama.",
+        "Agrupa Adulto y Anciano I y II en 55 créditos; no es tercera unidad del Plan y se mantiene candidata."
+      ]
     },
     {
       "planId": "bedelias-fenf-licenciatura-en-enfermeria-profesionalizacion-de-auxiliar-1999",
@@ -8905,43 +8856,26 @@
           "careerId": "bedelias-fic-licenciatura-en-ingenieria-de-medios",
           "careerLabel": "Licenciatura en Ingeniería de Medios",
           "planLabel": "Plan 2018 · vigente",
-          "defaultTrajectoryId": "trayectoria-flexible",
+          "defaultTrajectoryId": "malla-fing-1-4",
           "defaultCredentialId": "licenciado-ingenieria-medios"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2018",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "malla sugerida FIC, archivo fechado 10 de diciembre de 2025",
       "officialSources": [
         {
-          "authority": "Plan de Estudios aprobado por FIC y FING, Udelar",
-          "url": "https://idm.fing.edu.uy/sites/default/files/claustro_citaciones/2017/distribuido/31199/41%20%282016-2018%29%20Lic.%20Ing.%20de%20Medios.%20Plan%20de%20Estudios%20aprobado%20FIC%20V1.5.pdf",
-          "role": "título; cuatro años; 360 créditos; grupos y áreas; mínimos; currículos individuales; Comisión de Carrera; pasantías",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Información y Comunicación, Universidad de la República",
+          "url": "https://files.fic.edu.uy/index.php/s/wF3crIDqOmhMFjQ",
+          "reviewedAt": "2026-10-22",
+          "role": "malla sugerida parcial",
+          "contentHash": "sha256:20b9529459fbf3540fd29c3bca0791e08e127960f60bf4b1d5893d6248b1c0be"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-ingenieria-de-medios",
-          "role": "vigencia; responsabilidad conjunta FIC-FING; 48 meses; 360 créditos; sede FIC; condiciones de ingreso",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Diario Oficial de la República Oriental del Uruguay",
-          "url": "https://www.impo.com.uy/diariooficial/2019/06/06/avisos.pdf",
-          "role": "publicación oficial del plan; organización curricular; aprobación de currículos individuales",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Ingeniería, Udelar",
-          "url": "https://www.fing.edu.uy/index.php/es/node/52385",
-          "role": "implementación desde marzo de 2026; primera cohorte de 50 cupos; malla sugerida flexible; tres grupos; talleres y pasantías",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Información y Comunicación, Udelar",
-          "url": "https://fic.edu.uy/node/5704",
-          "role": "inicio efectivo de la primera cohorte; cinco unidades curriculares del primer semestre 2026; Taller Integrador",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Información y Comunicación, Universidad de la República",
+          "url": "https://www.fic.edu.uy/node/5573",
+          "reviewedAt": "2026-10-22",
+          "role": "enlace vigente; variantes sugeridas"
         }
       ],
       "scope": {
@@ -8949,28 +8883,49 @@
           "Montevideo"
         ],
         "pathwayIds": [
-          "trayectoria-flexible"
-        ]
+          "malla-fing-1-4",
+          "malla-fcea-1-4"
+        ],
+        "coverage": "sólo semestres 1-4 de las dos guías iniciales",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en ingenieria de medios:2018",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fic-licenciatura-en-ingenieria-de-medios-2018.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fic/ingenieria-medios-2018-malla-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fic-licenciatura-en-ingenieria-de-medios-2018.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "publicación oficial de semestre 5 y trayectoria completa",
+        "sourceContentHash": "sha256:9ab28d1edca49870a46ca5567cad6ead6777687319888d67aba8270cb0a75237",
+        "projectionContentHash": "sha256:ddf5d39e30ffc0a0ea6fd47ad5bebfbde1e0bb3d80cac0978df3586e5444b0c8",
+        "pathways": [
+          {
+            "id": "malla-fing-1-4",
+            "periodCount": 4
+          },
+          {
+            "id": "malla-fcea-1-4",
+            "periodCount": 4
+          }
+        ],
+        "expectedCoursePlacements": 42,
+        "matchedCoursePlacements": 42
       },
       "conflictNotes": [
-        "implementationStatus: El plan fue creado en 2017 y publicado en 2019, pero no se implementó hasta marzo de 2026. Las páginas históricas que aún indican que no funciona están superadas por el catálogo Udelar y la primera cohorte efectiva.",
-        "suggestedCurriculum: FIC y FING presentaron una malla sugerida en diciembre de 2025, pero no publican una tabla estable y trazable de los ocho semestres. La UI sólo fija las cinco unidades confirmadas del primer semestre y deja el resto por áreas.",
-        "bedeliasCatalogCoverage: Las 25 entradas actuales de Bedelías no alcanzan los mínimos de todas las áreas y no incluyen ninguna unidad de Señales e Ingeniería Eléctrica. Se muestran como catálogo parcial, con orientación explícita para registrar otras unidades acreditables.",
-        "minimumCreditsGap: Los mínimos de los tres grupos suman 315 créditos. El total de 360 exige al menos 45 créditos adicionales en áreas del plan o formación complementaria coherente, según aprobación de la Comisión de Carrera.",
-        "prerequisites: Bedelías no publica previaturas para las unidades del snapshot. La UI no inventa bloqueos y deriva la validación de coherencia del currículo a la Comisión de Carrera."
+        "El enlace oficial publica dos variantes para los primeros cuatro semestres, no dos menciones ni dos planes.",
+        "Las capturas de grillas posteriores omiten el semestre 5 y muestran semestres 6-9, mientras el Plan define una duración promedio de ocho semestres; no se debe concatenar estas filas en una malla completa sin aclaración institucional.",
+        "Los subtotales impresos de las páginas 4 y 5 no constituyen los 360 créditos ni la oferta garantizada de una cohorte.",
+        "Nombres y créditos de la malla requieren cotejo con la composición técnica y con otras publicaciones vigentes antes de promover identidades verificadas."
       ]
     },
     {
@@ -12074,39 +12029,23 @@
           "defaultCredentialId": "ingeniero-alimentario"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2003",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "guías institucionales enlazadas al 22/10/2026; sin fecha de aprobación impresa",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2003, Facultad de Ingeniería, Udelar",
-          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Plan_de_Estudios_2003.pdf",
-          "role": "título Ingeniero Alimentario; 450 créditos; currículo flexible; grupos y materias; mínimos; aprobación del currículo individual",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FQ.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "guía FQ cotejada visualmente",
+          "contentHash": "sha256:266fe0e9949e5a06bc78f45f4e4f09e218c74baf1251f9338041c752b1ebacb4"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingenieria-de-alimentos",
-          "role": "vigencia; responsabilidad de cuatro facultades; 60 meses; 450 créditos; sede Facultad de Química",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Diario Oficial de la República Oriental del Uruguay",
-          "url": "https://www.impo.com.uy/diariooficial/2022/09/01/avisos.pdf",
-          "role": "Reglamentación 2022; Comisión de Carrera; referencias académicas de FQ y FING; participación de Agronomía y Veterinaria",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal de ingresos 2026, Udelar",
-          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
-          "role": "ingreso vigente exclusivamente por Facultad de Química",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Guía oficial de carreras de grado, Udelar",
-          "url": "https://udelar.edu.uy/portal/wp-content/uploads/sites/48/2023/11/Carreras-de-Grado-2024-V1-web-OK-1.pdf",
-          "role": "primer año cursable en Salto; continuidad posterior en Montevideo",
-          "trajectoryEvidence": false
+          "authority": "Comisión de Carrera de Ingeniería de Alimentos, Facultad de Ingeniería, Universidad de la República",
+          "url": "https://webiie.fing.edu.uy/index.php/sites/default/files/Curricula%20Sugerida%20IA%20con%20%20%20%20%20%20Matem%C3%A1ticas%20y%20F%C3%ADsicas%20de%20FI.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "guía FING cotejada visualmente",
+          "contentHash": "sha256:158bb0a5066a3f3f39c93ceb1ee9e314dd1ffbc05bd7f7896dc657ab79d2518f"
         }
       ],
       "scope": {
@@ -12114,70 +12053,92 @@
           "Montevideo"
         ],
         "pathwayIds": [
-          "trayectoria-flexible"
-        ]
+          "trayectoria-flexible",
+          "matematicas-fisicas-fing"
+        ],
+        "coverage": "dos currículas sugeridas de diez semestres; catálogo parcial",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-profiles",
         "features": [
-          "official-flexible-structure"
+          "official-profiles"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "ingenieria de alimentos:2003",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fq/ingenieria-alimentos-2003-curriculas.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-ingenieria-de-alimentos-2003.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión de las guías oficiales o nuevos códigos verificados",
+        "sourceContentHash": "sha256:a4d676fc2346f1129891ff08e56bc2fc3a6b6fe45ae2f7d8cb8f86000c8a35e3",
+        "projectionContentHash": "sha256:b327ff635df7a64b5f309f6b5eb58268c7a98f3dd20eabcda047e5f47a8b3244",
+        "pathways": [
+          {
+            "id": "trayectoria-flexible",
+            "periodCount": 10
+          },
+          {
+            "id": "matematicas-fisicas-fing",
+            "periodCount": 10
+          }
+        ],
+        "expectedCoursePlacements": 101,
+        "matchedCoursePlacements": 101
       },
       "conflictNotes": [
-        "administrativeCanonicalService: El inventario deduplicado había elegido FING, pero el catálogo y el ingreso 2026 ubican la sede administrativa vigente en FQ. Los tres snapshots tienen idéntica composición; se normaliza con FQ sin perder la corresponsabilidad de los otros servicios.",
-        "regionalFirstYear: La guía oficial permite cursar el primer año en Salto, pero exige continuar desde el segundo semestre en Montevideo. CENURLN no se presenta como sede completa ni como trayectoria curricular diferente.",
-        "minimumCreditsGaps: Los mínimos de los cuatro grupos suman 400 créditos, 50 menos que el total. Además, los mínimos por materia suman 150 dentro de Básicas, 4 dentro de Complementarias y 122 dentro de Profesional Específica; la UI conserva simultáneamente cada mínimo padre e hijo sin sumarlos como requisitos independientes adicionales.",
-        "bedeliasCatalogSemantics: Las 389 entradas son alternativas acumuladas y acreditables de varios servicios y años. No se interpretan como 389 asignaturas obligatorias ni como una secuencia fija de diez semestres.",
-        "prerequisiteCoverage: La cobertura de previaturas varía según el servicio administrativo. La proyección usa las 155 reglas publicadas por FQ y marca 103 consultas sin regla, sin completar condiciones por inferencia."
+        "Las fechas de los archivos digitales no acreditan fecha de aprobación o vigencia de esta versión de las guías; ambas están enlazadas por fichas institucionales consultadas el 22/10/2026.",
+        "Los códigos técnicos de Bedelías no están impresos en estas dos grillas. Las identidades con código se cotejaron por nombre, créditos y servicio; nombres repetidos, códigos de otra facultad o créditos discrepantes permanecen como filas sólo-fuente.",
+        "Las alternativas dentro de un mismo semestre no son créditos acumulativos ni materias obligatorias simultáneas.",
+        "La secuencia de diez semestres no documenta oferta territorial completa en Salto."
       ]
     },
     {
       "planId": "bedelias-fq-licenciatura-en-biotecnologia-2024",
       "catalogPlacements": [
         {
+          "serviceId": "bedelias-cenurln",
+          "serviceLabel": "Cenur Litoral Norte",
+          "careerId": "bedelias-cenurln-licenciatura-en-biotecnologia",
+          "careerLabel": "Licenciatura en Biotecnología",
+          "planLabel": "Plan 2024 · vigente",
+          "defaultTrajectoryId": "cenurln-2024",
+          "defaultCredentialId": "bedelias-degree"
+        },
+        {
+          "serviceId": "bedelias-fcien",
+          "serviceLabel": "Facultad de Ciencias",
+          "careerId": "bedelias-fcien-licenciatura-en-biotecnologia",
+          "careerLabel": "Licenciatura en Biotecnología",
+          "planLabel": "Plan 2024 · vigente",
+          "defaultTrajectoryId": "fcien-2024",
+          "defaultCredentialId": "bedelias-degree"
+        },
+        {
           "serviceId": "fq",
           "serviceLabel": "Facultad de Química",
           "careerId": "bedelias-fq-licenciatura-en-biotecnologia",
           "careerLabel": "Licenciatura en Biotecnología",
           "planLabel": "Plan 2024 · vigente",
-          "defaultTrajectoryId": "bedelias",
+          "defaultTrajectoryId": "fq-2024",
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-15",
-      "effectiveAt": "2024",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "anexo actualizado el 22/02/2024",
       "officialSources": [
         {
-          "authority": "Repositorio institucional Colibrí, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42761",
-          "role": "Plan 2024 y códigos institucionales; Facultad de Ciencias como servicio de referencia; responsabilidad compartida entre siete servicios",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Ciencias, Udelar",
-          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/177982/mod_forum/attachment/81185/Plan%20de%20Estudio%20Licenciatura%20Biotecnolog%C3%ADa.pdf",
-          "role": "título, cuatro años y 360 créditos; mínimos por tramos y áreas; optativas, electivas, trabajo final y trayectorias sugeridas",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de Udelar",
-          "url": "https://udelar.edu.uy/noticias/nueva-carrera-de-grado-licenciatura-en-biotecnologia",
-          "role": "oferta en Montevideo, Salto y Paysandú; servicios universitarios responsables",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de Udelar",
-          "url": "https://udelar.edu.uy/noticias/carrera-nueva-de-la-udelar-en-2024-licenciatura-en-biotecnologia-se-podra-cursar-en-las-sedes-salto",
-          "role": "puertas de entrada regionales; implementación mediante recursos curriculares existentes",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Ciencias, Universidad de la República",
+          "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/177982/mod_forum/attachment/81185/Trayectoria%20Lic%20Biotecnologia%20actualizada%20al%2022022024.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "ejemplos semestrales cotejados visualmente",
+          "contentHash": "sha256:18d5f6c4cf8c4ba61e727a8607d003405209a4f0573bdd4a3f50fc07f6f81253"
         }
       ],
       "scope": {
@@ -12187,23 +12148,55 @@
           "Paysandú"
         ],
         "pathwayIds": [
-          "bedelias"
-        ]
+          "fcien-2024",
+          "cenurln-2024",
+          "fq-2024"
+        ],
+        "coverage": "tres ejemplos de ocho semestres, sin equivalencia técnica completa ni oferta territorial confirmada",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en biotecnologia:2024",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-biotecnologia-2024.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fcien/biotecnologia-2024-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fq-licenciatura-en-biotecnologia-2024.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión institucional o correspondencias técnicas adicionales",
+        "sourceContentHash": "sha256:4389faf26a56ad21cd716e39f9b4cfb055a6021755a67e8cd12a7a2fec115d90",
+        "projectionContentHash": "sha256:d6cc97ccfb5e7ff485a15ff8633ddbfec97c8102c424ec1c682aafd7c9131a7b",
+        "pathways": [
+          {
+            "id": "fcien-2024",
+            "periodCount": 8
+          },
+          {
+            "id": "cenurln-2024",
+            "periodCount": 8
+          },
+          {
+            "id": "fq-2024",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 110,
+        "matchedCoursePlacements": 110
       },
-      "conflictNotes": []
+      "conflictNotes": [
+        "Las nueve páginas de los ejemplos fueron cotejadas visualmente; salvo las filas con códigos CBB27 y 536X, la equivalencia con códigos técnicos de Bedelías sigue pendiente.",
+        "El documento publica ejemplos modificables y no acredita oferta vigente de una unidad por sede o período.",
+        "Los renglones de optativas/electivas/pasantía son cupos de crédito, no cursos obligatorios simultáneos.",
+        "La grilla de entrada por FCIEN suma 357 créditos impresos, tres menos que el mínimo normativo de 360; no se prorratea ni se inventa el faltante."
+      ]
     },
     {
       "planId": "bedelias-fq-licenciatura-en-quimica-2016",
@@ -13364,49 +13357,26 @@
           "careerId": "bedelias-psico-licenciatura-en-psicologia",
           "careerLabel": "Licenciatura en Psicologia",
           "planLabel": "Plan 2013 · vigente",
-          "defaultTrajectoryId": "bedelias",
+          "defaultTrajectoryId": "malla-2025",
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-20",
-      "effectiveAt": "2013",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-10-22",
+      "effectiveAt": "malla actualizada en diciembre de 2025",
       "officialSources": [
         {
-          "authority": "Facultad de Psicología, Udelar",
-          "url": "https://psico.edu.uy/sites/default/files/plan_de_estudio_de_la_licenciatura_en_psicologia_2013.diariooficial.pdf",
-          "role": "aprobación del Plan 2013 por el CDC; título, cuatro años y 320 créditos; créditos por ciclo y módulo, cooperación y Trabajo Final de Grado; naturaleza flexible y personal de los itinerarios",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Psicología, Universidad de la República",
+          "url": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+          "reviewedAt": "2026-10-22",
+          "role": "malla actualizada y cotejada visualmente",
+          "contentHash": "sha256:728c7ea5b865364e66d662a253cf24480190e4b3d8cf8016c5dedcf2d44ec5e8"
         },
         {
-          "authority": "Facultad de Psicología, Udelar",
-          "url": "https://www.psico.edu.uy/noticias/publicacion-del-plan-de-estudio-2013",
-          "role": "aplicación del mismo PELP 2013 en Montevideo, Paysandú y Salto; ingreso mediante CIO en CURE",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Psicología, Udelar",
+          "authority": "Facultad de Psicología, Universidad de la República",
           "url": "https://psico.edu.uy/ensenanza/grado/licenciatura/plan/malla-curricular",
-          "role": "malla vigente en tres ciclos y cinco módulos; carácter singular del itinerario estudiantil",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Psicología, Udelar",
-          "url": "https://psico.edu.uy/sites/default/pub_files/2021-04/malla%20curricular%20-%20Plan%202013.pdf",
-          "role": "distribución semestral vigente; 320 créditos y mínimos por módulo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo central de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-psicologia",
-          "role": "carrera completa en Montevideo, Paysandú y Salto; CIO Ciencia y Tecnología — Trayectoria Psicología como primer año reconocido",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo de carreras del interior, Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/ciclo-inicial-optativo-ciencia-y-tecnologia-trayectoria-psicologia/",
-          "role": "90 créditos del CIO reconocidos como primer año de Psicología; carácter de trayectoria de ingreso y no de orientación de egreso",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-10-22",
+          "role": "enlace institucional vigente"
         }
       ],
       "scope": {
@@ -13416,25 +13386,44 @@
           "Paysandú"
         ],
         "pathwayIds": [
-          "bedelias"
-        ]
+          "malla-2025"
+        ],
+        "coverage": "ocho semestres oficiales y espacios flexibles transversales",
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en psicologia:2013",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/psico/psicologia-2013-malla-2025.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "reviewTrigger": "revisión oficial de malla o aclaración de 662A",
+        "sourceContentHash": "sha256:62bdfc557bc3d458166c3a2c0c2a5aef2532b84c2d8b162cd0d6578479f6b04f",
+        "projectionContentHash": "sha256:ed88b87a7371035a5f93c2b2d64362bedbcd1cd6e17ede735d27c385386e8b50",
+        "pathways": [
+          {
+            "id": "malla-2025",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 43,
+        "matchedCoursePlacements": 43
       },
       "conflictNotes": [
-        "durationMonths: Usar 48 meses porque el Plan aprobado establece cuatro años y ocho semestres. Conservar los 60 meses del catálogo central como discrepancia documental, no como regla curricular.",
-        "bedeliasCycleMinimums: Los mínimos operativos publicados por Bedelías no reproducen literalmente la distribución 80/160/80 del Plan. La normalización de egreso debe respetar el documento aprobado y modelar por separado las reglas operativas vigentes."
+        "Las franjas que atraviesan varios semestres se muestran una sola vez y no fijan el período personal de cursado.",
+        "La malla no garantiza dictado ni disponibilidad de optativas, prácticas o proyectos por sede y período.",
+        "El rótulo técnico 662A menciona Intervenciones Clínicas II, mientras la malla publica Teorías y técnicas de las intervenciones; se conserva como candidata y la ubicación oficial usa un bloque sólo-fuente sin fusionar progreso.",
+        "La página HTML todavía enumera Psicopatología Clínica como vigente hasta 2018; el PDF enlazado y actualizado en diciembre de 2025 publica las dos unidades de infancia/adolescencia y adultos."
       ]
     },
     {
@@ -13858,5 +13847,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:8a486f4f695feda94b975888ac83acf6f06abe69366c77f6542c7dbcc12cb42a"
+  "contentHash": "sha256:8fcd4f94bdbebce9a3614cdb9c9f81efbe05b664d6074ecfd35e1f0dd9ad529b"
 }

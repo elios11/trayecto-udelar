@@ -320,11 +320,20 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id));
         const knownCourseIds = new Set(officialCurriculum.courses.map((course) => course.id));
         const mergedPeriods = new Map();
+        const periodAlternatives = new Map();
         const sourcePeriods = trajectory.useOnlyConfiguredPeriods === true
           ? trajectory.periods ?? []
           : [...(trajectory.periods ?? []), ...compositionPeriods];
         for (const period of sourcePeriods) {
           if (!mergedPeriods.has(period.label)) mergedPeriods.set(period.label, []);
+          if (period.alternativeGroups?.length) {
+            periodAlternatives.set(period.label, period.alternativeGroups.map((group) => ({
+              id: group.id,
+              required: group.required === true,
+              courseIds: group.courseIds.map((sourceId) => officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId)
+                .filter((id) => knownCourseIds.has(id) && !excludedIds.has(id) && !excludedPeriodIds.has(id)),
+            })).filter((group) => group.courseIds.length > 1));
+          }
           for (const sourceId of period.courseIds ?? []) {
             const id = officialCurriculum?.courseIdBySourceId.get(sourceId) ?? sourceId;
             if (knownCourseIds.has(id) && !excludedIds.has(id) && !excludedPeriodIds.has(id) && !mergedPeriods.get(period.label).includes(id)) {
@@ -333,7 +342,10 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           }
         }
         const trajectoryPeriods = [...mergedPeriods]
-          .map(([label, courseIds]) => ({ label, courseIds }))
+          .map(([label, courseIds]) => ({
+            label, courseIds,
+            ...(periodAlternatives.get(label)?.length ? { alternativeGroups: periodAlternatives.get(label) } : {}),
+          }))
           .filter((period) => period.courseIds.length > 0);
         const selectedCourseIds = new Set(trajectoryPeriods.flatMap((period) => period.courseIds));
         const catalogCourseIds = filterTrajectoryCatalog(trajectory, audit.officialPlan.curriculum.includeAllCoursesInPathwayCatalog
@@ -361,6 +373,12 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         courseIds: (period.courseIds ?? [])
           .map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
           .filter((id) => id && !excludedIds.has(id) && !excludedPeriodIds.has(id) && (!includedIds || includedIds.has(id))),
+        ...(period.alternativeGroups?.length ? { alternativeGroups: period.alternativeGroups.map((group) => ({
+          id: group.id,
+          required: group.required === true,
+          courseIds: group.courseIds.map((id) => officialCurriculum?.courseIdBySourceId.get(id) ?? id)
+            .filter((id) => id && !excludedIds.has(id) && !excludedPeriodIds.has(id) && (!includedIds || includedIds.has(id))),
+        })).filter((group) => group.courseIds.length > 1) } : {}),
       })).filter((period) => period.courseIds.length > 0);
       const configuredCourseIds = new Set(configuredTrajectoryPeriods.flatMap((period) => period.courseIds));
       const curricularBlockIds = new Set((officialCurriculum?.courses ?? [])
@@ -631,6 +649,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
   if (curriculum?.useBedeliasCompositionTree !== true) return null;
 
   const sourceUrl = curriculum.sourceUrl ?? snapshot.plan?.sourceUrl ?? audit.sources?.[0]?.url;
+  const compositionRequirementsSourceUrl = curriculum.compositionRequirementsSourceUrl ?? sourceUrl;
   const matterNodes = [];
   const groupNodes = [];
   const visit = (node) => {
@@ -866,7 +885,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       label: compositionGroupLabel(group.label),
       minCompleted: Math.min(minimum, courseIds.length),
       courseIds,
-      sourceUrl,
+      sourceUrl: compositionRequirementsSourceUrl,
     }];
   });
   for (const configuredGroup of curriculum.requiredCourseGroups ?? []) {
@@ -2172,7 +2191,8 @@ export async function buildExtractedAcademicPlans() {
       faculty.careers.get(careerId).plans.push({
         id: planId,
         label: `Plan ${planYear} · ${audit?.officialPlan?.catalogStatusLabel ?? (projection.plan.current === false ? "histórico" : "vigente")}`,
-        defaultTrajectoryId: Object.keys(projection.pathways)[0],
+        defaultTrajectoryId: audit?.officialPlan?.catalogDefaultTrajectoryIds?.[catalogFacultyCode]
+          ?? Object.keys(projection.pathways)[0],
         defaultCredentialId: projection.pathways[Object.keys(projection.pathways)[0]]?.credentialId
           ?? projection.creditStructure.credentials.find((credential) => credential.id === "bedelias-degree")?.id
           ?? projection.creditStructure.credentials.at(-1)?.id

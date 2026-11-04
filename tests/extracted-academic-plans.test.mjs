@@ -37,7 +37,7 @@ test("integra una sola proyección por identidad canónica vigente y excluye pla
     .flatMap((faculty) => faculty.careers)
     .flatMap((career) => career.plans)
     .map((plan) => plan.id);
-  assert.equal(catalogPlanIds.length, 141);
+  assert.equal(catalogPlanIds.length, 143);
   assert.equal(new Set(catalogPlanIds).size, 139);
   assert.ok(!report.plans.some((plan) => plan.identity === "diplomatura en musica:1994"));
   assert.ok(!report.plans.some((plan) => plan.identity === "escalonada de enfermeria:2001"));
@@ -258,12 +258,19 @@ test("el reporte queda ligado por hash a sus tres entradas reproducibles", () =>
 test("la contención conserva candidatos para importaciones sin publicarlos en rutas normales", async () => {
   const psychology = await readJson("app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json");
   assert.ok(psychology.courses.length > 2_000);
-  assert.ok(psychology.courses.every((course) => course.authorityStatus === "candidate"));
-  assert.ok(Object.values(psychology.publishedPathways).every((pathway) => pathway.periods.length === 0 && (pathway.catalogCourseIds ?? []).length === 0));
+  const psychologyVerifiedIds = new Set(psychology.courses.filter((course) => course.authorityStatus === "verified").map(({ id }) => id));
+  const psychologyCandidateIds = new Set(psychology.courses.filter((course) => course.authorityStatus === "candidate").map(({ id }) => id));
+  const psychologyVisibleIds = new Set(Object.values(psychology.publishedPathways).flatMap((pathway) => [
+    ...pathway.periods.flatMap(({ courseIds }) => courseIds), ...(pathway.catalogCourseIds ?? []),
+  ]));
+  assert.ok(psychologyVerifiedIds.size > 0);
+  assert.ok(psychologyCandidateIds.size > 0);
+  assert.deepEqual(psychologyVisibleIds, psychologyVerifiedIds);
+  assert.ok([...psychologyCandidateIds].every((id) => !psychologyVisibleIds.has(id)));
   assert.equal(psychology.plan.planAuditStatus, "official-evidence-complete");
-  assert.equal(psychology.plan.courseCatalogAuditStatus, "structure-only");
+  assert.equal(psychology.plan.courseCatalogAuditStatus, "partial");
   assert.equal(psychology.plan.extractedCompositionAvailable, true);
-  assert.equal(psychology.plan.verifiedCompositionAvailable, false);
+  assert.equal(psychology.plan.verifiedCompositionAvailable, true);
   assert.equal(psychology.plan.compositionAvailable, true);
 
   const economics = await readJson("app/data/bedelias-generated/bedelias-fcea-licenciatura-en-economia-2012.json");

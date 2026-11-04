@@ -1,7 +1,7 @@
 export type RegisteredPlanPathway = {
   label?: string;
   description?: string;
-  periods: Array<{ label: string; courseIds: string[] }>;
+  periods: Array<{ label: string; courseIds: string[]; alternativeGroups?: Array<{ id: string; courseIds: string[]; required: boolean }> }>;
   catalogCourseIds?: string[];
 };
 
@@ -21,7 +21,7 @@ export function buildRegisteredPlanPresentation<TCourse extends { id: string; au
   data: RegisteredPlanProjection<TCourse> | null,
 ): {
   courses: Array<TCourse & { provisional?: true; semester: number | "opt"; offered: never[] }>;
-  periods: Array<{ label: string; courseIds: string[] }>;
+  periods: Array<{ label: string; courseIds: string[]; alternativeGroups?: Array<{ id: string; courseIds: string[]; required: boolean }> }>;
   generated: boolean;
   label: "Trayectoria oficial" | "Recorrido orientativo generado";
   description: string;

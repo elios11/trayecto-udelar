@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-psico-licenciatura-en-psicologia-2013",
+  "reviewedAt": "2026-10-22",
+  "source": {
+    "authority": "Facultad de Psicología, Universidad de la República",
+    "careerPage": "https://psico.edu.uy/ensenanza/grado/licenciatura/plan/malla-curricular",
+    "documentUrl": "https://www.psico.edu.uy/sites/default/files/2026-02/malla%20curricular_0.pdf",
+    "documentSha256": "728c7ea5b865364e66d662a253cf24480190e4b3d8cf8016c5dedcf2d44ec5e8",
+    "printedUpdate": "diciembre de 2025",
+    "pageCount": 1,
+    "scope": "Malla del Plan 2013 con ocho semestres, tres ciclos y cinco módulos; franjas flexibles sin oferta territorial ni temporal garantizada"
+  },
+  "moduleMinimums": {
+    "Psicología": 145,
+    "Metodológico": 60,
+    "Prácticas y Proyectos": 50,
+    "Articulación de Saberes": 40,
+    "Referencial": 20
+  },
+  "cooperationMaximumCredits": 5,
+  "periods": [
+    { "semester": 1, "cycle": "Inicial", "courses": [
+      ["601", "Historia de la psicología", 10], ["6073", "Neurobiología de la mente", 5],
+      ["400", "Fundamentos de la psicología", 5], ["603", "Epistemología", 5],
+      ["602", "Herramientas para el trabajo intelectual", 5],
+      ["604", "Condiciones sociales de producción del sujeto", 5],
+      ["607", "Inicio a la formación en psicología", 5]
+    ] },
+    { "semester": 2, "cycle": "Inicial", "courses": [
+      ["606", "Psicología del desarrollo", 10], ["6071", "Procesos cognitivos", 5],
+      ["401", "Teorías psicológicas", 5], ["609", "Métodos y herramientas orientadas a la extensión", 2],
+      ["608", "Metodología general de la investigación", 5],
+      ["616EP", "Entrevista psicológica", 5],
+      ["610", "Psicología, género y derechos humanos", 5],
+      ["611", "Formación integral", 5]
+    ] },
+    { "semester": 3, "cycle": "Formación Integral", "courses": [
+      ["612", "Psicología social", 10], ["613", "Psicología, sujeto y aprendizaje", 5],
+      ["615", "Ética y deontología", 3], ["621", "Métodos y técnicas cualitativas", 5],
+      ["617E", "Clínica y subjetividad", 5]
+    ] },
+    { "semester": 4, "cycle": "Formación Integral", "courses": [
+      ["6261", "Fundamentos psicoanalíticos", 5], ["620", "Psicología y salud", 10],
+      ["650", "Herramientas de la psicología clínica", 5],
+      ["614", "Métodos y técnicas cuantitativas", 5],
+      ["652", "Herramientas de la psicología social", 5],
+      ["623", "Diseño de proyectos", 5],
+      ["624", "Estado, sociedad y políticas públicas", 5]
+    ] },
+    { "semester": 5, "cycle": "Formación Integral", "courses": [
+      ["619PI", "Psicopatología de la infancia y la adolescencia", 5],
+      ["619PA", "Psicopatología de adultos", 5],
+      ["625", "Neuropsicología", 5],
+      ["662A", "Teorías y técnicas de las intervenciones", 5],
+      ["653", "La psicología social y el problema de lo colectivo", 5],
+      ["618", "Construcción de itinerario", 5]
+    ] },
+    { "semester": 6, "cycle": "Formación Integral", "courses": [
+      ["626", "Problemáticas contemporáneas de la psicología social", 5],
+      ["641", "Psicología y educación", 5],
+      ["645", "Dispositivos psicoterapéuticos", 5],
+      ["646", "Diálogos y ámbitos interdisciplinarios", 5]
+    ] },
+    { "semester": 7, "cycle": "Graduación", "courses": [
+      ["635E", "Referencial de egreso", 5]
+    ] },
+    { "semester": 8, "cycle": "Graduación", "courses": [
+      ["634", "Trabajo final", 40]
+    ] }
+  ],
+  "crossPeriodBlocks": [
+    { "id": "psico-malla-idioma", "name": "Idioma: inglés o portugués", "credits": 5, "semesters": [3, 4, 5, 6, 7, 8], "publishedCodes": ["643G", "644G"], "kind": "alternative" },
+    { "id": "psico-malla-proyectos", "name": "Proyectos de formación integral o de graduación", "credits": 10, "semesters": [5, 6, 7, 8], "publishedCodes": ["YI", "YG"], "kind": "flexible" },
+    { "id": "psico-malla-practica-integral", "name": "Práctica integral", "credits": 10, "semesters": [5, 6], "publishedCodes": ["PI"], "kind": "flexible" },
+    { "id": "psico-malla-practica-graduacion", "name": "Práctica de graduación", "credits": 20, "semesters": [7, 8], "publishedCodes": ["PG"], "kind": "flexible" },
+    { "id": "psico-malla-cooperacion", "name": "Cooperación institucional", "credits": 5, "semesters": [1, 2, 3, 4, 5, 6, 7, 8], "publishedCodes": [], "kind": "flexible" },
+    { "id": "psico-malla-opt-psicologia-7", "name": "Optativa o electiva de Psicología · séptimo semestre", "credits": 5, "semesters": [7], "publishedCodes": ["OG", "EL"], "kind": "flexible" },
+    { "id": "psico-malla-opt-psicologia-8", "name": "Optativa o electiva de Psicología · octavo semestre", "credits": 5, "semesters": [8], "publishedCodes": ["OG", "EL"], "kind": "flexible" },
+    { "id": "psico-malla-opt-metodologico", "name": "Optativa o electiva del módulo Metodológico", "credits": 5, "semesters": [7, 8], "publishedCodes": ["OG", "EL"], "kind": "flexible" },
+    { "id": "psico-malla-opt-articulacion-7", "name": "Optativa o electiva de Articulación de Saberes · séptimo semestre", "credits": 5, "semesters": [7], "publishedCodes": ["OG", "EL"], "kind": "flexible" },
+    { "id": "psico-malla-opt-articulacion-8", "name": "Optativa o electiva de Articulación de Saberes · octavo semestre", "credits": 5, "semesters": [8], "publishedCodes": ["OG", "EL"], "kind": "flexible" }
+  ],
+  "auditedPathways": [
+    { "id": "malla-2025", "periods": [
+      { "label": "Semestre 1", "courseIds": ["601", "6073", "400", "603", "602", "604", "607"] },
+      { "label": "Semestre 2", "courseIds": ["606", "6071", "401", "609", "608", "616EP", "610", "611"] },
+      { "label": "Semestre 3", "courseIds": ["612", "613", "615", "621", "617E"] },
+      { "label": "Semestre 4", "courseIds": ["6261", "620", "650", "614", "652", "623", "624"] },
+      { "label": "Semestre 5", "courseIds": ["619PI", "619PA", "625", "psico-malla-intervenciones", "653", "618"] },
+      { "label": "Semestre 6", "courseIds": ["626", "641", "645", "646"] },
+      { "label": "Semestre 7", "courseIds": ["635E", "psico-malla-opt-psicologia-7", "psico-malla-opt-articulacion-7"] },
+      { "label": "Semestre 8", "courseIds": ["634", "psico-malla-opt-psicologia-8", "psico-malla-opt-articulacion-8"] }
+    ] }
+  ],
+  "limits": [
+    "Las franjas que atraviesan varios semestres se muestran una sola vez y no fijan el período personal de cursado.",
+    "La malla no garantiza dictado ni disponibilidad de optativas, prácticas o proyectos por sede y período.",
+    "El rótulo técnico 662A menciona Intervenciones Clínicas II, mientras la malla publica Teorías y técnicas de las intervenciones; se conserva como candidata y la ubicación oficial usa un bloque sólo-fuente sin fusionar progreso.",
+    "La página HTML todavía enumera Psicopatología Clínica como vigente hasta 2018; el PDF enlazado y actualizado en diciembre de 2025 publica las dos unidades de infancia/adolescencia y adultos."
+  ]
+}
