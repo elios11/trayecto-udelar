@@ -1,0 +1,73 @@
+{
+  "identity": "odontologia:2011",
+  "planId": "bedelias-odon-odontologia-2011",
+  "consultedAt": "2026-11-16",
+  "authority": "Facultad de Odontología, Universidad de la República",
+  "scope": "Montevideo, Plan 2011, núcleo publicado, ubicación de las pasantías y lista institucional de optativas; no cubre la implementación del plan sucesor",
+  "sources": {
+    "mainGrid": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
+    "historicalGrid": "https://odon.edu.uy/sitios/bedelia/wp-content/uploads/sites/44/2019/09/MALLA-CURRICULAR.pdf",
+    "plan": "https://odon.edu.uy/sitio/wp-content/uploads/2024/11/Plan-de-Estudios-2011.pdf",
+    "regulation": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-que-Regulan-el-Plan-de-Estudios-2011-Res.15-del-23-10-25.pdf",
+    "rotation2026": "https://odon.edu.uy/sitio/primer-rotacion-del-semestre-11-montevideo-y-area-metropolitana/",
+    "admissions2026": "https://odon.edu.uy/sitio/inscripciones-2026/",
+    "successor": "https://odon.edu.uy/sitio/se-realizo-la-segunda-jornada-de-implementacion-del-plan-de-estudios-de-la-carrera-de-odontologia/"
+  },
+  "publishedEdition": "Plan 2011 y reglamento actualizado por Resolución 15 del Consejo del 23/10/2025",
+  "normalizedRowsHash": "sha256:a5c0075c3b9d810bf2702d38aca0716723128c64a96d42c0ddb34508580dd9c6",
+  "bedeliasSnapshot": "data/bedelias/odon-odontologia-2011.json",
+  "minimumCredits": { "degree": 495, "core": 465, "flexible": 30 },
+  "periods": [
+    { "semesters": [1], "courseCodes": ["IO", "1021A", "1021B", "1021C", "1600"] },
+    { "semesters": [1, 2], "courseCodes": ["1131"] },
+    { "semesters": [2], "courseCodes": ["1022A", "1022B", "1022C", "1014"] },
+    { "semesters": [3], "courseCodes": ["2023", "2019", "2015", "2016", "2022"] },
+    { "semesters": [4], "courseCodes": ["2024", "2020", "2018"] },
+    { "semesters": [5], "courseCodes": ["3021"] },
+    { "semesters": [5, 6], "courseCodes": ["3024", "3026", "3023", "3025", "3041", "3131"] },
+    { "semesters": [6], "courseCodes": ["3022A", "3022B"] },
+    { "semesters": [7, 8], "courseCodes": ["4019", "4022", "4023", "4021", "4024"] },
+    { "semesters": [9, 10], "courseCodes": ["5028", "5025", "5026", "5027", "5131"] },
+    { "semesters": [10], "courseCodes": ["5070"], "source": "regulation" },
+    { "semesters": [11], "courseCodes": ["5071"], "source": "regulation" }
+  ],
+  "finalWork": { "code": "5080", "credits": 10, "fromYear": 4, "fixedSemester": null, "source": "regulation" },
+  "priorAuditCodeConflicts": [
+    { "prior": "1601", "current": "1600", "source": "admissions2026", "cohort": 2026, "equivalenceConfirmed": false }
+  ],
+  "optativeRowFormat": ["nombre", "créditos publicados", "código cotejado o null", "candidatos no resueltos si existen"],
+  "optatives": [
+    ["Curso Básico de Informática", 6, null, ["1060", "1062"]],
+    ["Extensión Universitaria y Elaboración de Proyectos", 6, "1800"],
+    ["Comprensión Lectora en inglés", 6, null, ["2050", "2052"]],
+    ["Curso de iniciación a la docencia en odontología", 6, null, ["4047"]],
+    ["Habilidades Experimentales Básicas de Bioquímica", 6, "2060"],
+    ["Emergencias Médicas en Odontología", 6, "4040"],
+    ["Imagenología Buco-Maxilo-Facial", 6, "4043"],
+    ["Atención odontológica del adulto mayor", 6, "5055"],
+    ["Odontología Legal y Forense", 6, "5060"],
+    ["Patología Molecular y sus principios fundamentales", 6, "4041"],
+    ["Encerado de Diagnóstico, Planificación Analógica y Digital", 7, "4049"],
+    ["Emprendimientos y gestión de consultorios odontológicos", 6, "4046"],
+    ["Tutoría entre pares", 6, "4060"],
+    ["Taller Trabajo Final", 4, "4070"],
+    ["Mantenimiento y Urgencias en Prótesis Removible", 6, "4042"],
+    ["Estrategias de Estudio para las Bases Biológicas de la Odontología", 6, "1043"],
+    ["Cuidados Paliativos Bucales en Población Adulta", 6, "3052"],
+    ["Género y Bioética Aplicada", 6, "4052"],
+    ["Saliva y Salud Oral", 6, "3051"],
+    ["Fundamentos Anatómicos Aplicados a la Planificación Digital en Odontología", 6, "4032"]
+  ],
+  "optativeCreditConflicts": {
+    "4049": { "malla": 7, "bedelias": 6 },
+    "4070": { "malla": 4, "bedelias": 6 }
+  },
+  "limitations": [
+    "Los bloques de dos semestres agrupan unidades sin ubicación más fina verificada; no se duplican Clínicas Integradas 2 a 4 como identidades autónomas.",
+    "La malla PDF histórica se contrasta sólo por texto estructurado, no por una captura visual; no prevalece sobre la página actual ni sobre el reglamento 2025.",
+    "El listado de inscripción 2026 usa 1600 para Iniciación a la Investigación y 1131 se inscribe en el primer semestre. La inscripción inicial no establece la duración de Salud y Prevención; la malla de Bedelía la muestra en el tramo de primer año.",
+    "El Taller Trabajo Final es optativo y no sustituye al Trabajo Final de Carrera obligatorio.",
+    "La publicación de una optativa no garantiza su próxima edición. Las electivas externas de la composición no se verificaron.",
+    "Facultad anunció un plan sucesor aprobado en Claustro y Consejo en 2025; no se confirmó resolución del CDC, grilla final ni transición por cohorte."
+  ]
+}
