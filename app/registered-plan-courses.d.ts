@@ -10,6 +10,7 @@ export type RegisteredPlanPathway = {
   description?: string;
   periods: RegisteredPlanPeriod[];
   catalogCourseIds?: string[];
+  localCatalogOnly?: boolean;
 };
 
 export type RegisteredPlanProjection<TCourse extends { id: string; authorityStatus?: string; credits?: number; hours?: number; curricularBlock?: boolean; placeholder?: boolean; eligibleRequirementIds?: string[]; creditAllocations?: unknown[] }> = {
@@ -37,4 +38,10 @@ export function buildRegisteredPlanPresentation<TCourse extends { id: string; au
 export function buildRegisteredPlanCourses<TCourse extends { id: string; authorityStatus?: string; credits?: number; hours?: number; curricularBlock?: boolean; placeholder?: boolean; eligibleRequirementIds?: string[]; creditAllocations?: unknown[] }>(
   pathwayId: string,
   data: RegisteredPlanProjection<TCourse> | null,
+): Array<TCourse & { provisional?: true; semester: number | "opt"; offered: never[] }>;
+
+export function completeRegisteredPlanCourses<TCourse extends { id: string; authorityStatus?: string; credits?: number; hours?: number; curricularBlock?: boolean; placeholder?: boolean; eligibleRequirementIds?: string[]; creditAllocations?: unknown[] }>(
+  pathwayId: string,
+  data: RegisteredPlanProjection<TCourse> | null,
+  activeCourses: Array<TCourse & { provisional?: true; semester: number | "opt"; offered: never[] }>,
 ): Array<TCourse & { provisional?: true; semester: number | "opt"; offered: never[] }>;

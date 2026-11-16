@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:732969322d9955fbc7b8eb276b6d90ce28632c245b56ffa2339118ae06a61bd1",
-    "officialAuditHash": "sha256:c4e08c3fc2a327232bd700055d6bb5f653e1f6aa64d3cacc7a0f49fc04201b00",
+    "auditQueueHash": "sha256:faf4c900f9d26ef9186b14f0e8fa0a37c342ed810cee1ecc4210891bfdbd5e9e",
+    "officialAuditHash": "sha256:80e6a8738a5a72a70780fd3292187b0fdcac35d8610e8143e9dc72af7f9aed13",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -20,17 +20,17 @@
     "generatedPlans": 139,
     "compositionAvailable": 139,
     "compositionUnavailable": 0,
-    "plansWithOfficialCampuses": 48,
+    "plansWithOfficialCampuses": 50,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 6211,
+      "verified": 6239,
       "candidate": 26814,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 33033,
-    "afterPublishedCourses": 6211,
+    "beforePublishedCourses": 33061,
+    "afterPublishedCourses": 6239,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 2021,
     "visibleTargetsWithUnpublishedDependencies": 1657,
@@ -3057,20 +3057,22 @@
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
-        "montevideo"
+        "montevideo",
+        "salto",
+        "paysandu"
       ],
       "before": {
-        "publishedCourses": 79,
+        "publishedCourses": 87,
         "publishedRules": 61
       },
       "after": {
-        "publishedCourses": 2,
+        "publishedCourses": 10,
         "hiddenCourses": 77,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 2,
+        "verified": 10,
         "candidate": 77,
         "historical-equivalent": 0,
         "administrative": 0,
@@ -3133,20 +3135,22 @@
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
-        "montevideo"
+        "montevideo",
+        "salto",
+        "paysandu"
       ],
       "before": {
-        "publishedCourses": 331,
+        "publishedCourses": 351,
         "publishedRules": 241
       },
       "after": {
-        "publishedCourses": 71,
+        "publishedCourses": 91,
         "hiddenCourses": 260,
         "publishedRules": 29,
         "rulesWithUnpublishedDependencies": 80
       },
       "statuses": {
-        "verified": 71,
+        "verified": 91,
         "candidate": 260,
         "historical-equivalent": 0,
         "administrative": 0,
@@ -4640,5 +4644,5 @@
       }
     }
   ],
-  "contentHash": "sha256:81d7172f62aa4845979f32bbbc32ee009790d4485a68407ebdf439017b44670d"
+  "contentHash": "sha256:b96ffdd71ac3929469fb6656b72d118b90e0fc8ec37b91ca97e4b77e12659b30"
 }

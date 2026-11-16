@@ -26,7 +26,7 @@ test("publica un solo Plan 2017, una currícula personalizada y ocho perfiles gu
   assert.equal(projection.plan.year, "2017");
   assert.equal(projection.plan.durationMonths, 60);
   assert.equal(projection.plan.minCredits, 450);
-  assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo"]);
+  assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo", "salto", "paysandu"]);
   assert.deepEqual(Object.keys(projection.pathways), [
     "curricula-personalizada",
     "perfil-procesos-industriales",
@@ -37,10 +37,12 @@ test("publica un solo Plan 2017, una currícula personalizada y ocho perfiles gu
     "perfil-control",
     "perfil-ciencia-datos",
     "perfil-procesamiento-senales",
+    "salto-inicial",
+    "paysandu-inicial",
   ]);
   assert.equal(projection.creditStructure.credentials.length, 1);
   assert.equal(credential.title, "Ingeniero Físico-Matemático");
-  assert.ok(Object.values(projection.pathways).every(({ credentialId, campusIds }) => (
+  assert.ok(Object.values(projection.pathways).filter(({ localCatalogOnly }) => !localCatalogOnly).every(({ credentialId, campusIds }) => (
     credentialId === credential.id && campusIds.length === 1 && campusIds[0] === "montevideo"
   )));
 });
@@ -72,11 +74,12 @@ test("controla los mínimos oficiales, el proyecto y la aprobación del currícu
 });
 
 test("mantiene recomendaciones reemplazables y todo lo demás en el catálogo acreditable", () => {
-  for (const pathway of Object.values(projection.pathways)) {
+  const capitalCourses = projection.courses.filter(({ id }) => !id.startsWith("fing-litoral-norte-"));
+  for (const pathway of Object.values(projection.pathways).filter(({ localCatalogOnly }) => !localCatalogOnly)) {
     const selectedIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
     assert.equal(new Set(selectedIds).size, selectedIds.length);
     assert.equal(new Set(pathway.catalogCourseIds).size, pathway.catalogCourseIds.length);
-    assert.equal(selectedIds.length + pathway.catalogCourseIds.length, projection.courses.length);
+    assert.equal(selectedIds.length + pathway.catalogCourseIds.length, capitalCourses.length);
     assert.equal(pathway.periods[0].label, "Orientación del perfil");
     assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
   }
@@ -110,7 +113,7 @@ test("fusiona las seis unidades con créditos repartidos sin perder sus áreas",
   }
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 335);
   assert.equal(audit.bedeliasComparison.normalizedCourseCount, 329);
-  assert.equal(projection.courses.length, 331);
+  assert.equal(projection.courses.length, 351);
 });
 
 test("conserva la evidencia de previaturas y publica sólo las verificadas", () => {

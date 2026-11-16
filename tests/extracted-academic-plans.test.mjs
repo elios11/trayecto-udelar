@@ -186,6 +186,8 @@ test("las sedes sólo aparecen con auditoría oficial y no duplican carreras", a
     ["ingenieria de produccion:2010", ["montevideo", "maldonado", "paysandu", "rivera", "rocha", "salto", "tacuarembo"]],
     ["ingenieria industrial mecanica:1997", ["montevideo", "paysandu", "tacuarembo"]],
     ["ingenieria quimica:2021", ["montevideo", "salto"]],
+    ["ingenieria en agrimensura:2023", ["montevideo", "salto", "paysandu"]],
+    ["ingenieria fisico matematica:2017", ["montevideo", "salto", "paysandu"]],
     ["licenciatura en computacion:2025", ["montevideo", "tacuarembo", "colonia", "salto", "paysandu"]],
     ["tecnologo en informatica:2007", ["montevideo", "florida", "san-jose", "maldonado", "paysandu"]],
     ["tecnologo en telecomunicaciones:2009", ["rocha", "montevideo"]],

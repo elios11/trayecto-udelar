@@ -3,9 +3,9 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:81d7172f62aa4845979f32bbbc32ee009790d4485a68407ebdf439017b44670d",
-    "officialAuditHash": "sha256:c4e08c3fc2a327232bd700055d6bb5f653e1f6aa64d3cacc7a0f49fc04201b00",
-    "reviewedTrajectoriesHash": "sha256:f65062c0ffca6fc0179cda64f673103813df337b71ce2f49d39025a7db2b5c60"
+    "extractedReportHash": "sha256:b96ffdd71ac3929469fb6656b72d118b90e0fc8ec37b91ca97e4b77e12659b30",
+    "officialAuditHash": "sha256:80e6a8738a5a72a70780fd3292187b0fdcac35d8610e8143e9dc72af7f9aed13",
+    "reviewedTrajectoriesHash": "sha256:d8c3e8abf2746adced19ed0f291c5701335d44fbbd3da1d0dd30f8f08c147174"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -400,7 +400,7 @@
         "serviceIds": [
           "fing"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "Falta evidencia suficiente para confirmar trayectoria oficial o ausencia documentada."
       },
       {
         "priority": 2,
@@ -409,7 +409,7 @@
         "serviceIds": [
           "fing"
         ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "reason": "Falta evidencia suficiente para confirmar trayectoria oficial o ausencia documentada."
       },
       {
         "priority": 2,
@@ -9043,79 +9043,77 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2023",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
       "officialSources": [
         {
-          "authority": "Plan de Estudios de Ingeniería en Agrimensura 2023, Facultad de Ingeniería, Udelar",
-          "url": "https://www.fing.edu.uy/index.php/sites/default/files/Plan%20de%20Estudios%20Ing%20en%20Agrimensura%202023.pdf",
-          "role": "aprobaciones; título; cinco años; 450 créditos; grupos; áreas; mínimos; pasantía; proyecto; 57 créditos opcionales; currículo individual",
-          "trajectoryEvidence": false
+          "url": "https://www.fing.edu.uy/es/node/49415",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "índice vigente de Trayectorias Ingeniería, inscripción y continuidad"
         },
         {
-          "authority": "Página vigente de la carrera, Facultad de Ingeniería, Udelar",
-          "url": "https://www.fing.edu.uy/index.php/es/carrera/grado/agrimensura",
-          "role": "vigencia; Plan 2023; duración; créditos; Comisión de Carrera",
-          "trajectoryEvidence": false
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Salto",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
         },
         {
-          "authority": "Noticia institucional de la Facultad de Ingeniería, Udelar",
-          "url": "https://www.fing.edu.uy/es/node/51147",
-          "role": "implementación desde 2025; cambio de denominación; aprobación del Plan 2023",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingenieria-en-agrimensura",
-          "role": "vigencia; 60 meses; 450 créditos; sede Facultad de Ingeniería",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Comisión de Carrera de Ingeniería en Agrimensura, EVA FING",
-          "url": "https://eva.fing.edu.uy/course/view.php?id=1511",
-          "role": "comisión responsable; orientación académica; vínculo con trayectorias de ingreso en el interior",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/cio-trayectoria-ingenieria",
-          "role": "naturaleza independiente del CIO; oferta en Paysandú y Salto; articulación con Ingeniería",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal de ingresos 2026, Udelar",
-          "url": "https://udelar.edu.uy/noticias/inscripciones-de-ingreso-carreras-de-la-udelar-en-el-2deg-semestre",
-          "role": "ingreso vigente por FING; oferta en Montevideo",
-          "trajectoryEvidence": false
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Paysandú",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo"
+          "Salto",
+          "Paysandú"
         ],
         "pathwayIds": [
-          "trayectoria-flexible"
-        ]
+          "salto-inicial",
+          "paysandu-inicial"
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-periods",
         "features": [
-          "areas"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "ingenieria en agrimensura:2023",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-en-agrimensura-2023.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-en-agrimensura-2023.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-en-agrimensura-2023",
+        "sourceCollection": "pathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:129bc72b4eb5f6ea4b43bb2f42100f78efb8b16b7bd14e396ea53b135b398ffc",
+        "projectionContentHash": "sha256:a120544ad0682fac546c59b4d66df47c7e90a6b4797b0a10758176f28f2dc481",
+        "pathways": [
+          {
+            "id": "salto-inicial",
+            "periodCount": 2
+          },
+          {
+            "id": "paysandu-inicial",
+            "periodCount": 2
+          }
+        ],
+        "expectedCoursePlacements": 16,
+        "matchedCoursePlacements": 16
       },
       "conflictNotes": [
-        "careerNameTransition: El Plan 2023 cambia la denominación de Agrimensura a Ingeniería en Agrimensura y comenzó a implementarse para ingresos 2025. La UI usa la denominación vigente y conserva el año reglamentario del plan.",
-        "structuralMinimumGap: Los cuatro mínimos de grupo suman 393 créditos. El plan identifica expresamente los 57 créditos restantes como opcionales del currículo individual; la UI controla los mínimos anidados y explicita esa brecha sin asignarla arbitrariamente a un área.",
-        "noOfficialSuggestedSequence: No se encontró una grilla semestral pública estable con carácter de currícula sugerida. La UI presenta un recorrido flexible y el catálogo por áreas, sin inventar orden ni obligatoriedad por semestre.",
-        "regionalGatewayVsCampus: Los CIO de Paysandú y Salto permiten iniciar trayectos articulables con Ingeniería, pero son carreras independientes. No se muestran como sedes o trayectorias completas de Ingeniería en Agrimensura.",
-        "bedeliasCatalogSemantics: Las 77 unidades son alternativas acreditables acumuladas. Permanecen en el catálogo y los mínimos por área determinan qué debe completar cada estudiante; no se presentan como una malla rígida de 77 obligaciones."
+        "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
+        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
       ]
     },
     {
@@ -9275,94 +9273,77 @@
         }
       ],
       "state": "research-pending",
-      "reviewedAt": "2026-08-30",
-      "effectiveAt": "2017",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2017 de Ingeniería Físico-Matemática, Udelar",
-          "url": "https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/43876/1/PLFISMAT_2017.pdf",
-          "role": "título; cinco años; 450 créditos; áreas; mínimos; proyecto final; currículo individual",
-          "trajectoryEvidence": false
+          "url": "https://www.fing.edu.uy/es/node/49415",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "índice vigente de Trayectorias Ingeniería, inscripción y continuidad"
         },
         {
-          "authority": "Catálogo vigente de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/ingenieria-fisico-matematica",
-          "role": "vigencia; 60 meses; 450 créditos; Facultad de Ingeniería",
-          "trajectoryEvidence": false
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Salto",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
         },
         {
-          "authority": "Página vigente de la carrera, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/es/node/45266",
-          "role": "Plan 2017; cinco años; 450 créditos; dirección de carrera",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, EVA FING",
-          "url": "https://eva.fing.edu.uy/course/view.php?id=1570",
-          "role": "actividad vigente de la Comisión; currícula individual; malla interactiva orientativa",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Comienzo de la carrera, Comisión de Carrera, EVA FING",
-          "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=1",
-          "role": "secuencia recomendada de los primeros cuatro semestres; alternativas de taller inicial",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Perfiles guía vigentes, Comisión de Carrera, EVA FING",
-          "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=2",
-          "role": "ocho perfiles guía; cursos fuertemente recomendados; ejemplos de implementación; aprobación individual",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal de noticias de Udelar",
-          "url": "https://udelar.edu.uy/noticias/se-graduo-el-primer-ingeniero-fisico-matematico-del-uruguay",
-          "role": "primer egreso en 2024; flexibilidad del perfil; mismo título profesional",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Calendario oficial de ingresos 2026, Udelar",
-          "url": "https://udelar.edu.uy/ingresos/calendario-%C2%B7-segundo-semestre/",
-          "role": "ingreso vigente por Facultad de Ingeniería",
-          "trajectoryEvidence": false
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Paysandú",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
         }
       ],
       "scope": {
         "territories": [
-          "Montevideo"
+          "Salto",
+          "Paysandú"
         ],
         "pathwayIds": [
-          "curricula-personalizada",
-          "perfil-procesos-industriales",
-          "perfil-energia",
-          "perfil-fisica",
-          "perfil-mecanica-computacional",
-          "perfil-investigacion-operaciones",
-          "perfil-control",
-          "perfil-ciencia-datos",
-          "perfil-procesamiento-senales"
-        ]
+          "salto-inicial",
+          "paysandu-inicial"
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "ingenieria fisico matematica:2017",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-fisico-matematica-2017.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-fisico-matematica-2017.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-fisico-matematica-2017",
+        "sourceCollection": "pathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:1dd3e53d929e8ea5d70d2364280d4148e226239f9a4afc6bc074fcecf193bb4d",
+        "projectionContentHash": "sha256:9703a1955e26f742df22352e73b53fa6834afad2ebad411af7f782e8c29bb47c",
+        "pathways": [
+          {
+            "id": "salto-inicial",
+            "periodCount": 4
+          },
+          {
+            "id": "paysandu-inicial",
+            "periodCount": 4
+          }
+        ],
+        "expectedCoursePlacements": 36,
+        "matchedCoursePlacements": 36
       },
       "conflictNotes": [
-        "profilesAreGuides: Procesos industriales, Energía, Física, Mecánica computacional, Investigación de operaciones, Control, Ciencia de datos y Procesamiento de señales son perfiles guía. La UI los presenta como recomendaciones flexibles y conserva una opción personalizada.",
-        "structuralMinimumGap: Los mínimos de las cuatro áreas raíz suman 412 créditos y el título exige 450. Los 38 restantes se distribuyen coherentemente en el currículo individual; no se adjudican por inferencia a un área.",
-        "nestedFlexibility: Dentro de Ciencias básicas faltan 50 créditos respecto de los mínimos subordinados, dentro de Ciencias de la ingeniería faltan 10 y dentro de Ingeniería aplicada faltan 7. Son márgenes de elección internos que se solapan con el total, no bolsas adicionales independientes.",
-        "splitCreditCourses: Señales y Sistemas, Taller de Diseño, Introducción a la Ingeniería de Producción, Taller de Introducción a la Ingeniería Eléctrica, Taller de Ingeniería Biológica I y Taller de Aprendizaje Automático aparecen repartidos entre dos áreas. La UI unifica cada código y conserva las dos asignaciones.",
-        "profileExamplesNotDegreeRules: Los documentos publican ejemplos que alcanzan entre 450 y 452 créditos y admiten intercambios, opcionales y énfasis internos. La UI usa los créditos actuales de Bedelías y controla las reglas del plan, no el total ilustrativo de cada tabla.",
-        "campusScope: La carrera completa vigente se publica en Montevideo. Los CIO de Paysandú y Salto son ofertas independientes que pueden articular el inicio de estudios de Ingeniería; no se presentan como sedes completas ni perfiles territoriales de esta carrera."
+        "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
+        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
       ]
     },
     {
@@ -13737,5 +13718,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:428c12b5df549324ad47fa3fdb319c639b714e20a6c553297727cd1827a52bb5"
+  "contentHash": "sha256:2ae3fb3d535374e29840eba6647f43ca59004c01aa63d5a8823e90399a8deff8"
 }

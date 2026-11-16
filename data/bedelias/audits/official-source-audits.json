@@ -79749,7 +79749,7 @@
       "identity": "ingenieria en agrimensura:2023",
       "career": "Ingeniería en Agrimensura",
       "planYear": "2023",
-      "reviewedAt": "2026-08-30",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
       "scope": "current-degree-title-credit-structure-minima-flexible-curriculum-admission-and-campus",
       "publicationEligible": true,
@@ -79780,7 +79780,81 @@
             "campusIds": [
               "montevideo"
             ],
-            "periods": []
+            "periods": [],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii"
+            ]
+          },
+          {
+            "id": "salto-inicial",
+            "label": "Inicio en Salto",
+            "credentialId": "ingeniero-agrimensor",
+            "campusIds": [
+              "salto"
+            ],
+            "description": "Trayectoria inicial oficial de 2 semestres; la carrera completa continúa en Montevideo. Algunas materias pueden dictarse en la otra sede del Litoral Norte. Consultá inscripción, modalidad y reválidas con FING. La grilla documenta créditos totales, no el reparto por área ni la oferta actual.",
+            "useOnlyConfiguredPeriods": true,
+            "catalogSourceCourseIds": [],
+            "localCatalogOnly": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "litoral-norte-calculo-i",
+                  "litoral-norte-algebra-lineal-i",
+                  "litoral-norte-fisica-i",
+                  "litoral-norte-taller-de-diseno"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "litoral-norte-calculo-ii",
+                  "litoral-norte-algebra-lineal-ii",
+                  "litoral-norte-fisica-ii",
+                  "litoral-norte-fisica-iii"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "paysandu-inicial",
+            "label": "Inicio en Paysandú",
+            "credentialId": "ingeniero-agrimensor",
+            "campusIds": [
+              "paysandu"
+            ],
+            "description": "Trayectoria inicial oficial de 2 semestres; la carrera completa continúa en Montevideo. Algunas materias pueden dictarse en la otra sede del Litoral Norte. Consultá inscripción, modalidad y reválidas con FING. La grilla documenta créditos totales, no el reparto por área ni la oferta actual.",
+            "useOnlyConfiguredPeriods": true,
+            "catalogSourceCourseIds": [],
+            "localCatalogOnly": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "litoral-norte-calculo-i",
+                  "litoral-norte-algebra-lineal-i",
+                  "litoral-norte-fisica-i",
+                  "litoral-norte-taller-de-diseno"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "litoral-norte-calculo-ii",
+                  "litoral-norte-algebra-lineal-ii",
+                  "litoral-norte-fisica-ii",
+                  "litoral-norte-fisica-iii"
+                ]
+              }
+            ]
           }
         ],
         "curriculum": {
@@ -79989,6 +80063,70 @@
               "periodLabel": "Orientación del recorrido",
               "curricularBlock": true,
               "sourceUrl": "https://www.fing.edu.uy/index.php/sites/default/files/Plan%20de%20Estudios%20Ing%20en%20Agrimensura%202023.pdf"
+            },
+            {
+              "id": "litoral-norte-calculo-i",
+              "name": "Cálculo I",
+              "credits": 16,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-algebra-lineal-i",
+              "name": "Álgebra Lineal I",
+              "credits": 12,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-i",
+              "name": "Física I",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-taller-de-diseno",
+              "name": "Taller de Diseño",
+              "credits": 6,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-calculo-ii",
+              "name": "Cálculo II",
+              "credits": 16,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-algebra-lineal-ii",
+              "name": "Álgebra Lineal II",
+              "credits": 12,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-ii",
+              "name": "Física II",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-iii",
+              "name": "Física III",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
             }
           ],
           "credentials": [
@@ -80097,6 +80235,28 @@
           "trajectoryIds": [
             "trayectoria-flexible"
           ]
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "trayectoria inicial oficial intersede con continuidad en Montevideo",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "salto-inicial"
+          ]
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "trayectoria inicial oficial intersede con continuidad en Montevideo",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "paysandu-inicial"
+          ]
         }
       ],
       "bedeliasComparison": {
@@ -80113,7 +80273,7 @@
         "canonicalModel": "one-degree-flexible-individual-curriculum",
         "canonicalIdentity": "ingenieria en agrimensura:2023",
         "excludeFromCurrentUi": false,
-        "regionalCurriculumVariant": false,
+        "regionalCurriculumVariant": true,
         "reason": "Las fuentes oficiales vigentes documentan una sola carrera completa en la Facultad de Ingeniería, un único Plan 2023 y un currículo individual flexible. Los CIO del Litoral son vías de inicio articuladas y carreras registradas por separado, no sedes completas ni trayectorias propias de este título.",
         "normalization": [
           "Publicar una única Ingeniería en Agrimensura Plan 2023, de cinco años, 450 créditos y título Ingeniero Agrimensor / Ingeniera Agrimensora.",
@@ -80123,7 +80283,8 @@
           "Explicitar los 57 créditos opcionales que completan la brecha entre los mínimos estructurales de 393 créditos y el total del plan.",
           "Exigir la validación final del currículo individual por la Comisión de Carrera.",
           "Mantener los CIO de Paysandú y Salto como ofertas independientes que pueden articular el ingreso, no como nuevas sedes de esta carrera."
-        ]
+        ],
+        "regionalTrajectoryEvidencePath": "data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json"
       },
       "sources": [
         {
@@ -80198,6 +80359,27 @@
             "ingreso vigente por FING",
             "oferta en Montevideo"
           ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/node/49415",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "índice vigente de Trayectorias Ingeniería, inscripción y continuidad"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "grilla inicial de Salto"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "grilla inicial de Paysandú"
+          ]
         }
       ],
       "anomalies": [
@@ -80215,7 +80397,7 @@
         },
         {
           "field": "regionalGatewayVsCampus",
-          "resolution": "Los CIO de Paysandú y Salto permiten iniciar trayectos articulables con Ingeniería, pero son carreras independientes. No se muestran como sedes o trayectorias completas de Ingeniería en Agrimensura."
+          "resolution": "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas."
         },
         {
           "field": "bedeliasCatalogSemantics",
@@ -80223,7 +80405,7 @@
         }
       ],
       "uiNotice": "Plan 2023 flexible de 450 créditos, con sede en Montevideo. Elegí unidades del catálogo para cubrir los mínimos por área, 57 créditos opcionales y las actividades integradoras; la Comisión de Carrera valida el currículo individual.",
-      "remainingWork": "La Comisión de Carrera debe aprobar cada currículo individual, las opcionales y las equivalencias. Las previaturas y la oferta efectiva por semestre se verifican en Bedelías."
+      "remainingWork": "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú."
     },
     {
       "identity": "ingenieria en sistemas de comunicacion:2018",
@@ -81125,7 +81307,7 @@
       "identity": "ingenieria fisico matematica:2017",
       "career": "Ingeniería Físico-Matemática",
       "planYear": "2017",
-      "reviewedAt": "2026-08-30",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
       "scope": "current-degree-title-credit-structure-minima-personalized-curriculum-guide-profiles-admission-and-campus",
       "publicationEligible": true,
@@ -81154,7 +81336,29 @@
             "campusIds": [
               "montevideo"
             ],
-            "courseIds": []
+            "courseIds": [],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
+            ]
           },
           {
             "id": "perfil-procesos-industriales",
@@ -81176,6 +81380,28 @@
               "Q66B",
               "Q74",
               "Q94"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
             ]
           },
           {
@@ -81202,6 +81428,28 @@
               "1824",
               "1850",
               "5508"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
             ]
           },
           {
@@ -81225,6 +81473,28 @@
               "1456",
               "5715",
               "1461"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
             ]
           },
           {
@@ -81253,6 +81523,28 @@
               "1312",
               "2382",
               "2395"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
             ]
           },
           {
@@ -81277,6 +81569,28 @@
               "1617",
               "1911",
               "5720"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
             ]
           },
           {
@@ -81304,6 +81618,28 @@
               "5850",
               "2512",
               "5824"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
             ]
           },
           {
@@ -81326,6 +81662,28 @@
               "5849",
               "1911",
               "5720"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
             ]
           },
           {
@@ -81350,6 +81708,132 @@
               "1892",
               "5824",
               "5720"
+            ],
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
+            ]
+          },
+          {
+            "id": "salto-inicial",
+            "label": "Inicio en Salto",
+            "credentialId": "ingeniero-fisico-matematico",
+            "campusIds": [
+              "salto"
+            ],
+            "description": "Trayectoria inicial oficial de 4 semestres; la carrera completa continúa en Montevideo. Algunas materias pueden dictarse en la otra sede del Litoral Norte. Consultá inscripción, modalidad y reválidas con FING. La grilla documenta créditos totales, no el reparto por área ni la oferta actual.",
+            "useOnlyConfiguredPeriods": true,
+            "catalogSourceCourseIds": [],
+            "localCatalogOnly": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "litoral-norte-calculo-i",
+                  "litoral-norte-algebra-lineal-i",
+                  "litoral-norte-fisica-i",
+                  "litoral-norte-taller-de-diseno"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "litoral-norte-calculo-ii",
+                  "litoral-norte-algebra-lineal-ii",
+                  "litoral-norte-fisica-ii",
+                  "litoral-norte-fisica-iii"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "litoral-norte-calculo-vectorial",
+                  "litoral-norte-probabilidad-y-estadistica",
+                  "litoral-norte-mecanica-clasica",
+                  "litoral-norte-fisica-experimental-i",
+                  "litoral-norte-administracion-y-gestion-de-organizaciones-i"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "litoral-norte-ecuaciones-diferenciales",
+                  "litoral-norte-electromagnetismo",
+                  "litoral-norte-fisica-experimental-ii",
+                  "litoral-norte-teorica-de-circuitos",
+                  "litoral-norte-diseno-logico"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "paysandu-inicial",
+            "label": "Inicio en Paysandú",
+            "credentialId": "ingeniero-fisico-matematico",
+            "campusIds": [
+              "paysandu"
+            ],
+            "description": "Trayectoria inicial oficial de 4 semestres; la carrera completa continúa en Montevideo. Algunas materias pueden dictarse en la otra sede del Litoral Norte. Consultá inscripción, modalidad y reválidas con FING. La grilla documenta créditos totales, no el reparto por área ni la oferta actual.",
+            "useOnlyConfiguredPeriods": true,
+            "catalogSourceCourseIds": [],
+            "localCatalogOnly": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "litoral-norte-calculo-i",
+                  "litoral-norte-algebra-lineal-i",
+                  "litoral-norte-fisica-i",
+                  "litoral-norte-taller-de-robotica"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "litoral-norte-calculo-ii",
+                  "litoral-norte-algebra-lineal-ii",
+                  "litoral-norte-fisica-ii",
+                  "litoral-norte-fisica-iii"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "litoral-norte-calculo-vectorial",
+                  "litoral-norte-probabilidad-y-estadistica",
+                  "litoral-norte-mecanica-clasica",
+                  "litoral-norte-fisica-experimental-i",
+                  "litoral-norte-principios-de-quimica-general"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "litoral-norte-ecuaciones-diferenciales",
+                  "litoral-norte-electromagnetismo",
+                  "litoral-norte-fisica-experimental-ii",
+                  "litoral-norte-teorica-de-circuitos",
+                  "litoral-norte-diseno-logico"
+                ]
+              }
             ]
           }
         ],
@@ -81578,6 +82062,166 @@
               "periodLabel": "Orientación del perfil",
               "curricularBlock": true,
               "sourceUrl": "https://eva.fing.edu.uy/course/view.php?id=1570&section=2"
+            },
+            {
+              "id": "litoral-norte-calculo-i",
+              "name": "Cálculo I",
+              "credits": 16,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-algebra-lineal-i",
+              "name": "Álgebra Lineal I",
+              "credits": 12,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-i",
+              "name": "Física I",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-taller-de-diseno",
+              "name": "Taller de Diseño",
+              "credits": 6,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-calculo-ii",
+              "name": "Cálculo II",
+              "credits": 16,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-algebra-lineal-ii",
+              "name": "Álgebra Lineal II",
+              "credits": 12,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-ii",
+              "name": "Física II",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-iii",
+              "name": "Física III",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-calculo-vectorial",
+              "name": "Cálculo Vectorial",
+              "credits": 12,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-probabilidad-y-estadistica",
+              "name": "Probabilidad y Estadística",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-mecanica-clasica",
+              "name": "Mecánica Clásica",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-experimental-i",
+              "name": "Física Experimental I",
+              "credits": 5,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "name": "Administración y Gestión de Organizaciones I",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-ecuaciones-diferenciales",
+              "name": "Ecuaciones Diferenciales",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-electromagnetismo",
+              "name": "Electromagnetismo",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-fisica-experimental-ii",
+              "name": "Física Experimental II",
+              "credits": 5,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-teorica-de-circuitos",
+              "name": "Teórica de Circuitos",
+              "credits": 8,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-diseno-logico",
+              "name": "Diseño Lógico",
+              "credits": 12,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-taller-de-robotica",
+              "name": "Taller de Robótica",
+              "credits": 2,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf"
+            },
+            {
+              "id": "litoral-norte-principios-de-quimica-general",
+              "name": "Principios de Química General",
+              "credits": 10,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf"
             }
           ],
           "credentials": [
@@ -81667,6 +82311,28 @@
             "perfil-ciencia-datos",
             "perfil-procesamiento-senales"
           ]
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Salto"
+          ],
+          "role": "trayectoria inicial oficial intersede con continuidad en Montevideo",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "salto-inicial"
+          ]
+        },
+        {
+          "serviceCode": "CENURLN",
+          "locations": [
+            "Paysandú"
+          ],
+          "role": "trayectoria inicial oficial intersede con continuidad en Montevideo",
+          "admissionStatus": "active",
+          "trajectoryIds": [
+            "paysandu-inicial"
+          ]
         }
       ],
       "bedeliasComparison": {
@@ -81684,7 +82350,7 @@
         "canonicalModel": "one-degree-with-personalized-curriculum-and-guide-profiles",
         "canonicalIdentity": "ingenieria fisico matematica:2017",
         "excludeFromCurrentUi": false,
-        "regionalCurriculumVariant": false,
+        "regionalCurriculumVariant": true,
         "reason": "Las fuentes oficiales documentan un único Plan 2017, un único título y una currícula individual. Los ocho perfiles vigentes son guías aprobadas que orientan selecciones sustituibles; no son menciones ni títulos separados.",
         "normalization": [
           "Publicar una única Ingeniería Físico-Matemática Plan 2017, de cinco años, 450 créditos y sede Montevideo.",
@@ -81693,7 +82359,8 @@
           "Controlar los cuatro mínimos raíz, todos los mínimos subordinados positivos, el proyecto final y el total de 450 créditos.",
           "Sumar como una sola unidad los seis códigos cuyos créditos Bedelías reparte entre áreas, conservando todas sus asignaciones.",
           "Exigir aprobación de la Comisión de Carrera para el currículo individual, el perfil y sus opcionales."
-        ]
+        ],
+        "regionalTrajectoryEvidencePath": "data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json"
       },
       "sources": [
         {
@@ -81771,6 +82438,27 @@
           "supports": [
             "ingreso vigente por Facultad de Ingeniería"
           ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/node/49415",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "índice vigente de Trayectorias Ingeniería, inscripción y continuidad"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "grilla inicial de Salto"
+          ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "supports": [
+            "grilla inicial de Paysandú"
+          ]
         }
       ],
       "anomalies": [
@@ -81796,11 +82484,11 @@
         },
         {
           "field": "campusScope",
-          "resolution": "La carrera completa vigente se publica en Montevideo. Los CIO de Paysandú y Salto son ofertas independientes que pueden articular el inicio de estudios de Ingeniería; no se presentan como sedes completas ni perfiles territoriales de esta carrera."
+          "resolution": "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas."
         }
       ],
       "uiNotice": "Plan 2017 de 450 créditos en Montevideo. Elegí una currícula personalizada o uno de los ocho perfiles guía; todos otorgan el mismo título y requieren cubrir los mínimos y obtener aprobación de la Comisión de Carrera.",
-      "remainingWork": "La Comisión de Carrera debe aprobar el currículo individual, el perfil y las opcionales. Las recomendaciones pueden actualizarse y la oferta semestral y las previaturas vigentes se verifican en Bedelías."
+      "remainingWork": "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú."
     },
     {
       "identity": "ingenieria industrial mecanica:1997",
@@ -97323,6 +98011,6 @@
       "remainingWork": "Confirmar el plan sucesor y su transición por cohorte, códigos ambiguos y electivas externas."
     }
   ],
-  "contentHash": "sha256:c4e08c3fc2a327232bd700055d6bb5f653e1f6aa64d3cacc7a0f49fc04201b00",
+  "contentHash": "sha256:80e6a8738a5a72a70780fd3292187b0fdcac35d8610e8143e9dc72af7f9aed13",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

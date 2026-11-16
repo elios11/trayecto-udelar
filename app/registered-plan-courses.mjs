@@ -118,7 +118,10 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
 
   const availableIds = new Set();
   if (hasOfficialPeriodCourses) {
-    for (const candidate of Object.values(publishedPathways)) {
+    const catalogPathways = publishedPathway.localCatalogOnly
+      ? [publishedPathway]
+      : Object.values(publishedPathways).filter((candidate) => !candidate.localCatalogOnly);
+    for (const candidate of catalogPathways) {
       for (const period of candidate.periods) {
         for (const id of period.courseIds) availableIds.add(id);
       }
@@ -126,6 +129,8 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
     }
   } else if (restrictGeneratedCatalogToPublished && pathwayCourseIds(publishedPathway, courseById).length > 0) {
     for (const id of pathwayCourseIds(publishedPathway, courseById)) availableIds.add(id);
+  } else if (Object.values(publishedPathways).some((candidate) => candidate.localCatalogOnly)) {
+    for (const id of pathwayCourseIds(sourcePathway, courseById)) availableIds.add(id);
   } else {
     for (const course of data.courses) {
       if (isRealCurricularCourse(course)) availableIds.add(course.id);
@@ -160,4 +165,18 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
 
 export function buildRegisteredPlanCourses(pathwayId, data) {
   return buildRegisteredPlanPresentation(pathwayId, data).courses;
+}
+
+// Availability is scoped for an initial regional path; already planned courses and
+// curriculum snapshots must still resolve references across the same canonical plan.
+export function completeRegisteredPlanCourses(pathwayId, data, activeCourses) {
+  if (!data || !Object.values(data.pathways).some((pathway) => pathway.localCatalogOnly)) return activeCourses;
+  const courses = new Map(activeCourses.map((course) => [course.id, course]));
+  for (const id of Object.keys(data.pathways)) {
+    if (id === pathwayId) continue;
+    for (const course of buildRegisteredPlanCourses(id, data)) {
+      if (!courses.has(course.id)) courses.set(course.id, { ...course, semester: "opt" });
+    }
+  }
+  return [...courses.values()];
 }

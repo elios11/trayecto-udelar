@@ -13,15 +13,15 @@ const audit = registry.audits.find(({ identity }) => identity === "ingenieria en
 const credential = projection.creditStructure.credentials.find(({ id }) => id === "ingeniero-agrimensor");
 const pathway = projection.pathways["trayectoria-flexible"];
 
-test("publica una única Ingeniería en Agrimensura Plan 2023 en Montevideo", () => {
+test("publica un Plan 2023 con sede completa en Montevideo e inicios regionales", () => {
   assert.equal(audit.status, "official-evidence-complete");
   assert.equal(audit.publicationEligible, true);
   assert.equal(audit.conclusion.canonicalModel, "one-degree-flexible-individual-curriculum");
-  assert.equal(audit.conclusion.regionalCurriculumVariant, false);
+  assert.equal(audit.conclusion.regionalCurriculumVariant, true);
   assert.equal(projection.plan.degreeTitle, "Ingeniero Agrimensor / Ingeniera Agrimensora");
   assert.equal(projection.plan.durationMonths, 60);
   assert.equal(projection.plan.minCredits, 450);
-  assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo"]);
+  assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo", "salto", "paysandu"]);
   assert.deepEqual(pathway.campusIds, ["montevideo"]);
   assert.equal(pathway.label, "Trayectoria flexible");
 });
@@ -62,7 +62,7 @@ test("controla los mínimos oficiales y deja explícitos los 57 créditos opcion
 test("mantiene las 77 unidades como catálogo flexible y no inventa semestres", () => {
   assert.deepEqual(pathway.periods.map(({ label }) => label), ["Orientación del recorrido", "Validación de egreso"]);
   assert.equal(pathway.catalogCourseIds.length, 77);
-  assert.equal(projection.courses.length, 79);
+  assert.equal(projection.courses.length, 87);
   assert.equal(new Set(pathway.catalogCourseIds).size, 77);
   const byId = new Map(projection.courses.map((course) => [course.id, course]));
   assert.ok(pathway.catalogCourseIds.every((id) => byId.get(id).bedeliasCode));
@@ -76,16 +76,16 @@ test("conserva la cobertura de previaturas sin fabricar reglas", () => {
   assert.equal(audit.bedeliasComparison.compositionGroupCount, 20);
   assert.equal(projection.rules.length, 61);
   assert.equal(projection.plan.publishedRules, 0);
-  assert.equal(projection.plan.noPublishedRule, 2);
+  assert.equal(projection.courses.filter(({ bedeliasCode, ruleCoverage }) => bedeliasCode && ruleCoverage === "not-published").length, 2);
   assert.equal(new Set(projection.courses.map(({ id }) => id)).size, projection.courses.length);
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));
 });
 
 test("no confunde los CIO regionales con sedes de la carrera", () => {
-  assert.deepEqual(audit.offerings.map(({ locations }) => locations), [["Montevideo"]]);
+  assert.deepEqual(audit.offerings.map(({ locations }) => locations), [["Montevideo"], ["Salto"], ["Paysandú"]]);
   assert.ok(audit.sources.some(({ url }) => url.includes("cio-trayectoria-ingenieria")));
   assert.match(audit.anomalies.find(({ field }) => field === "regionalGatewayVsCampus").resolution, /carreras independientes/i);
-  assert.equal(projection.plan.campuses.some(({ id }) => ["paysandu", "salto"].includes(id)), false);
+  assert.ok(audit.offerings.slice(1).every(({ role }) => /trayectoria inicial.*Montevideo/i.test(role)));
 });
 
 test("ubica la carrera bajo FING y avanza la cola a Sistemas de Comunicación", () => {

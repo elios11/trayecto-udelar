@@ -82,7 +82,12 @@ test("cada plan seleccionable tiene una presentación de Currícula con materias
           ...publishedPathway.periods.flatMap(({ courseIds }) => courseIds),
           ...(publishedPathway.catalogCourseIds ?? []),
         ])].filter((id) => isRealCurricularCourse(projection.courses.find((course) => course.id === id))).sort()
-        : projection.courses.filter(isRealCurricularCourse).map(({ id }) => id).sort();
+        : Object.values(projection.pathways).some(({ localCatalogOnly }) => localCatalogOnly)
+          ? [...new Set([
+            ...projection.pathways[pathwayId].periods.flatMap(({ courseIds }) => courseIds),
+            ...(projection.pathways[pathwayId].catalogCourseIds ?? []),
+          ])].filter((id) => isRealCurricularCourse(projection.courses.find((course) => course.id === id))).sort()
+          : projection.courses.filter(isRealCurricularCourse).map(({ id }) => id).sort();
       assert.deepEqual(presentation.courses.map(({ id }) => id).sort(), expectedIds, `${planId}/${pathwayId}: composición incompleta en planificador`);
     }
   }

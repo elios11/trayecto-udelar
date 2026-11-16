@@ -9,7 +9,7 @@ import { academicCatalog, createAcademicPlanRecord, type AcademicPlanOption, typ
 import { isRegisteredAcademicPlan, loadRegisteredAcademicPlan, registeredAcademicPlans } from "./academic-plan-registry";
 import { resolveAcademicOption } from "./academic-option.mjs";
 import { availablePathwayEntries, resolveCampus, resolveCampusPathway } from "./academic-campus.mjs";
-import { buildRegisteredPlanPresentation } from "./registered-plan-courses.mjs";
+import { buildRegisteredPlanPresentation, completeRegisteredPlanCourses } from "./registered-plan-courses.mjs";
 import { matchesCourseSearch } from "./course-search.mjs";
 import { hasRecordedCourseProgress, hasRecordedProgressOutsideCatalog, sortCoursesByProgress } from "./course-progress.mjs";
 import {
@@ -1178,6 +1178,11 @@ export default function Home() {
     return buildRegisteredPlanPresentation(effectivePathwayId, activeRegisteredPlan);
   }, [trajectoryId, campusId, activeRegisteredPlan]);
   const registeredAvailableCourses = activeRegisteredPresentation.courses as Course[];
+  const registeredCompleteCourses = useMemo(() => completeRegisteredPlanCourses(
+    activeRegisteredPathwayId, activeRegisteredPlan, activeRegisteredPresentation.courses,
+  ) as Course[], [activeRegisteredPathwayId, activeRegisteredPlan, activeRegisteredPresentation.courses]);
+  const registeredAvailabilityIds = useMemo(() => registeredCompleteCourses === registeredAvailableCourses
+    ? null : new Set(registeredAvailableCourses.map(({ id }) => id)), [registeredCompleteCourses, registeredAvailableCourses]);
   const provisionalRegisteredCourseCount = registeredAvailableCourses.filter((course) => course.provisional).length;
   const courses = useMemo(
     () => isRegisteredPlan
@@ -1188,11 +1193,11 @@ export default function Home() {
     [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses, isRegisteredPlan, registeredAvailableCourses],
   );
   const plannerCourses = useMemo<Course[]>(() => isRegisteredPlan
-    ? registeredAvailableCourses
+    ? registeredCompleteCourses
     : planYear === "2025"
     ? plan2025CatalogCourses
     : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : plan1997AvailableCourses,
-  [planYear, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses, isRegisteredPlan, registeredAvailableCourses]);
+  [planYear, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses, isRegisteredPlan, registeredCompleteCourses]);
   const plannerTerms = plannerPlans[planYear];
   const currentPlannerTermId = currentPlannerTerms[planYear];
   const activeDocumentProfile = (() => {
@@ -1209,7 +1214,7 @@ export default function Home() {
       && profile.selection.trajectoryId === (trajectoryId || null)
       && profile.selection.credentialId === (credentialId || null)) ?? null;
   })();
-  const activeCourses = appMode === "planner" ? plannerCourses : courses;
+  const activeCourses = appMode === "planner" || registeredAvailabilityIds ? plannerCourses : courses;
   const hasStoredExtendedElectiveProgress = useMemo(
     () => hasRecordedProgressOutsideCatalog(progress["1997"] ?? {}, initialPlan1997CourseIds),
     [progress],
@@ -2629,7 +2634,8 @@ export default function Home() {
     const isSearchOnlyElectricElective = appMode !== "planner" && profileCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
     const isSearchOnlyQfElective = appMode !== "planner" && qfCatalogCourseIds.has(course.id) && !fullElectivesCatalogExpanded && !query && !hasRecordedCourseProgress(statuses[course.id]);
     const isSearchOnlyElective = isSearchOnlyPlan1997Elective || isSearchOnlyElectricElective || isSearchOnlyQfElective;
-    return !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
+    return (!registeredAvailabilityIds || registeredAvailabilityIds.has(course.id))
+      && !isSearchOnlyElective && !assignedPlannerIds.has(course.id) && matchesCourseSearch(course, courseAreaLabel(course), plannerSearch);
   });
 
   const rolloverTerm = plannerTerms.find((term) => term.id === rolloverTermId);

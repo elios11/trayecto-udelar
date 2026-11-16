@@ -5156,6 +5156,120 @@
         "Nivelación sin créditos diferenciada según el bachillerato de ingreso.",
         "Los 12 espacios flexibles no son materias ni otorgan créditos por sí mismos; el Plan nombra ejemplos, no una oferta vigente por sede."
       ]
+    },
+    {
+      "planId": "bedelias-fing-ingenieria-en-agrimensura-2023",
+      "state": "research-pending",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Salto",
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "salto-inicial",
+          "paysandu-inicial"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/es/node/49415",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "índice vigente de Trayectorias Ingeniería, inscripción y continuidad"
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Salto",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Paysandú",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-en-agrimensura-2023.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-en-agrimensura-2023",
+        "sourceCollection": "pathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
+        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
+      ]
+    },
+    {
+      "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
+      "state": "research-pending",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Salto",
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "salto-inicial",
+          "paysandu-inicial"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://www.fing.edu.uy/es/node/49415",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "índice vigente de Trayectorias Ingeniería, inscripción y continuidad"
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-salto-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Salto",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
+        },
+        {
+          "url": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf",
+          "authority": "Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "grilla inicial de Paysandú",
+          "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-ingenieria-fisico-matematica-2017.json",
+        "sourcePlanId": "bedelias-fing-ingenieria-fisico-matematica-2017",
+        "sourceCollection": "pathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
+        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
+      ]
     }
   ]
 }

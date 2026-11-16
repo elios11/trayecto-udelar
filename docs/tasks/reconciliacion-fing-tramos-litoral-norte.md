@@ -1,0 +1,7 @@
+# Agrimensura y Físico-Matemática: inicios del Litoral Norte
+
+La [página vigente de FING sobre Trayectorias Ingeniería](https://www.fing.edu.uy/es/node/49415) enlaza las tablas de Salto y Paysandú y distingue la inscripción a una trayectoria inicial de la inscripción a un CIO. FING documenta la continuidad por inscripción en una sede que dicta la carrera completa, con escolaridad; la sede completa identificada para estos planes es Montevideo. No se afirman apertura para una cohorte particular, presencialidad de todas las filas ni equivalencias individuales.
+
+Mostrar dos semestres de Agrimensura 2023 y cuatro de Físico-Matemática 2017, diferenciados por sede donde cambian las filas. No sustituir el recorrido ni los perfiles de Montevideo, ni retirar el plan de la cola mientras la secuencia capitalina no esté cotejada. Mantener IDs de plan, mínimos y progreso. Las guías no dan códigos: usar IDs sólo-fuente compartidos entre Salto y Paysandú para la misma fila, sin reemplazar las identidades previas de Bedelías. Currícula y el listado de materias para agregar se ajustan a la sede; las materias ya planificadas, el progreso y las referencias del documento personal se resuelven contra el mismo plan completo aunque se cambie de sede.
+
+Evidencia: `data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json`. Regenerar sin red: `node scripts/build-fing-tramos-litoral-norte.mjs`. Prueba focal: `node tests/fing-tramos-litoral-norte.test.mjs`.
