@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:800376656602d45b8e99b65711d97962df0a22c3927746d9f90de318e389a79a",
-    "officialAuditHash": "sha256:13cc032102577812b5d824867dad4b200ba1a5ce5e314bdf53e2ec79044d55c1",
-    "reviewedTrajectoriesHash": "sha256:4fb7f79545b18a69c414d67b4e8b6504e0834c070a5af31afd5178229b4c3e66"
+    "extractedReportHash": "sha256:b16d469395173a6e79ce083f100150ecd2850aa8849e3bd307d58c15773ebf61",
+    "officialAuditHash": "sha256:666705dd4eaa5af5361439817a602a2931dfbf6d6c617e9be935b9055a2fb60f",
+    "reviewedTrajectoriesHash": "sha256:194802c502febe5bc6eb20ddef88b9cbed67ae6be723c906822704e095a6d37c"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 124,
+      "official-trajectory-reproduced": 125,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 16
+      "research-pending": 15
     },
-    "pending": 19,
+    "pending": 18,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -100,10 +100,10 @@
         "serviceLabel": "Facultad de Arquitectura, Diseño y Urbanismo",
         "selectablePlanIds": 5,
         "states": {
-          "official-trajectory-reproduced": 4,
+          "official-trajectory-reproduced": 5,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 19,
+    "total": 18,
     "plans": [
       {
         "priority": 1,
@@ -404,15 +404,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-cure-licenciatura-en-diseno-de-paisaje-2008",
-        "state": "research-pending",
-        "serviceIds": [
-          "fadu"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fing-ingenieria-en-agrimensura-2023",
         "state": "research-pending",
         "serviceIds": [
@@ -455,14 +446,6 @@
         "identifiedPending": [],
         "researchPending": [
           "bedelias-cenurln-licenciatura-en-ciencias-sociales-2009"
-        ]
-      },
-      {
-        "serviceId": "fadu",
-        "serviceLabel": "Facultad de Arquitectura, Diseño y Urbanismo",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-cure-licenciatura-en-diseno-de-paisaje-2008"
         ]
       },
       {
@@ -2270,39 +2253,22 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2007",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "mapa FADU 2022 enlazado desde la ficha vigente y grilla publicada por Fagro",
       "officialSources": [
         {
-          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
-          "url": "https://old.fadu.edu.uy/ldp/informacion-general/plan-estudios/",
-          "role": "Plan aprobado; título; ocho semestres; 360 créditos; mínimos por ejes; flexibilidad; currículo individual; sede Maldonado",
-          "trajectoryEvidence": false
+          "url": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+          "authority": "FADU, Udelar",
+          "reviewedAt": "2026-11-16",
+          "role": "28 filas, ubicación y créditos del Proyecto Final, 50 flexibles; huella del cotejo normalizado",
+          "contentHash": "sha256:f3c72000d029179205ead0a7f824c8b8636879ade862261437e958ca123fb386"
         },
         {
-          "authority": "Facultad de Arquitectura, Diseño y Urbanismo, Udelar",
-          "url": "https://www.fadu.edu.uy/carreras/ldp/informacion-general/",
-          "role": "vigencia 2026; cuatro años; 360 créditos; carácter conjunto; ejes; sede Maldonado",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Agronomía, Udelar",
           "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/licenciatura-en-diseno-de-paisajes/",
-          "role": "vigencia; aprobación 2007; título; cuatro años; 360 créditos; grilla; sede Maldonado",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Diario Oficial - IMPO / Universidad de la República",
-          "url": "https://www.impo.com.uy/diariooficial/2020/03/06/avisos.pdf",
-          "role": "Reglamento vigente aprobado por el CDC el 18/02/2020; gestión de cursos; programas; evaluación",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de la Universidad de la República",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-diseno-de-paisaje",
-          "role": "oferta vigente; 360 créditos; servicios académicos; sede Maldonado",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Agronomía, Udelar",
+          "reviewedAt": "2026-11-16",
+          "role": "mismo plan aprobado en 2007, Diseño de Paisaje V en sexto"
         }
       ],
       "scope": {
@@ -2311,26 +2277,43 @@
         ],
         "pathwayIds": [
           "bedelias"
-        ]
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-periods",
         "features": [
-          "areas"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en diseno de paisaje:2008",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-cure-licenciatura-en-diseno-de-paisaje-2008.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/diseno-paisaje-2007-semester-evidence.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cure-licenciatura-en-diseno-de-paisaje-2008.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:66ef4df4d6264a30e50426b97f9ec5d2bdd7724a6657e17a49268bbf976703da",
+        "projectionContentHash": "sha256:3d28af41961768636bd1b0c45f747d8e6167f859271c3245ac53f83cab7f65d9",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 9
+          }
+        ],
+        "expectedCoursePlacements": 29,
+        "matchedCoursePlacements": 29
       },
       "conflictNotes": [
-        "planYear: La UI muestra Plan 2007, año de aprobación oficial; 2008 se conserva como identidad técnica de Bedelías y año de inicio del dictado.",
-        "durationMonths: FADU, Agronomía y el plan establecen cuatro años u ocho semestres; se corrigen los 60 meses administrativos.",
-        "creditAccounting: La separación operativa 6+101+160+43+50 de Bedelías totaliza 360 y equivale a los ejes 103+162+45+50 del plan cuando se distribuyen dos créditos del Taller Transversal en cada eje común.",
-        "catalogSize: Las 302 unidades y 2.450 créditos son oferta acumulada por ejes y no obligaciones completas de egreso; once electivas externas aparecen sólo en la composición, con su servicio de origen explícito."
+        "El mapa FADU 2022 ubica Técnicas I en 2.º y Técnicas II en 3.º; Fagro nombra Técnicas I en 3.º. La lista de primer año de FADU también identifica Técnicas I. Se retiene la posición del mapa detallado.",
+        "Fagro lista Horticultura en 5.º y Arboricultura en 6.º; el mapa FADU 2022 hace lo contrario. No se infiere la oferta efectiva de ningún período a partir de la diferencia.",
+        "Fagro incluye Diseño de Paisaje V en 6.º y CURE publica que hay cinco talleres; el mapa FADU omite V. Las 28 filas de FADU suman 290 y la fila adicional de 20 completa los 310 créditos comunes.",
+        "Fagro muestra dos segmentos de 20 créditos del Proyecto Final; FADU lo rotula anual con 40 y Bedelías ofrece variantes de 40. Se conserva como una sola actividad.",
+        "La tabla de CURE rotula 2008 y la prosa de evaluación menciona al menos 48 electivos; el Plan FADU publicado y el mapa mantienen 50. No se cambia el mínimo sin acto académico que lo sustituya.",
+        "La captura web del PDF no estuvo disponible. Se cotejó su tabla estructurada con la grilla de Fagro, la página de ingreso y los registros de Bedelías. Los candidatos homónimos no son equivalencias."
       ]
     },
     {
@@ -13746,5 +13729,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:178d4a96fea3436b2896dd4deb73638ad281e6164a69a6ad836b57b8cafbed18"
+  "contentHash": "sha256:6f8451156dadb7e4e581e1237311ea2c981322122383391a35bd0adcd7f6c8f5"
 }

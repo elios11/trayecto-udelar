@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { buildRegisteredPlanPresentation } from "../app/registered-plan-courses.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relativePath, root), "utf8"));
@@ -43,9 +44,9 @@ test("hace operativa la distribución equivalente del Taller Transversal y los c
   );
 });
 
-test("conserva toda la oferta flexible, incluidas las electivas externas de la composición", () => {
+test("conserva la composición de Bedelías para auditoría sin publicarla como oferta acreditable", () => {
   const rawMatterNodes = flattenComposition(snapshot.plan.composition).filter((node) => node.nodeType === "Materia");
-  const projectedCourses = projection.courses.filter((course) => course.dataStatus !== "manual-validation");
+  const projectedCourses = projection.courses.filter((course) => course.bedeliasCode);
   const projectedKeys = projectedCourses.map((course) => `${course.bedeliasCode}:${course.name}`);
 
   assert.equal(snapshot.plan.courses.length, 291);
@@ -54,8 +55,33 @@ test("conserva toda la oferta flexible, incluidas las electivas externas de la c
   assert.equal(projectedCourses.length, 302);
   assert.equal(new Set(projectedKeys).size, projectedKeys.length);
   assert.equal(projectedCourses.reduce((sum, course) => sum + course.credits, 0), 2450);
-  assert.ok(projectedCourses.some((course) => course.bedeliasCode === "FADU-G1085"));
-  assert.ok(projectedCourses.some((course) => course.bedeliasCode === "FAGRO-M000"));
+  assert.ok(projectedCourses.some((course) => course.bedeliasCode === "FADU-G1085" && course.authorityStatus === "candidate"));
+  assert.ok(projectedCourses.some((course) => course.bedeliasCode === "FAGRO-M000" && course.authorityStatus === "candidate"));
+});
+
+test("la referencia y el planificador muestran 29 unidades sin duplicar talleres ni Proyecto Final", () => {
+  const presentation = buildRegisteredPlanPresentation("bedelias", projection);
+  assert.equal(presentation.generated, false);
+  assert.deepEqual(presentation.periods.map(({ label }) => label),
+    [...Array.from({ length: 8 }, (_, index) => `Semestre ${index + 1}`), "Semestres 7 y 8 · Proyecto Final anual"]);
+  const placed = presentation.periods.flatMap(({ courseIds }) => courseIds);
+  assert.equal(placed.length, 29);
+  assert.equal(new Set(placed).size, 29);
+  assert.equal(presentation.courses.length, 29);
+  assert.equal(presentation.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 14);
+  assert.ok(presentation.courses.every(({ authorityStatus }) => authorityStatus === "verified"));
+  assert.deepEqual(presentation.courses.filter(({ name }) => name === "Proyecto Final de Paisaje").map(({ credits }) => credits), [40]);
+  const allocated = {};
+  for (const { creditAllocations } of presentation.courses) for (const { nodeId, credits } of creditAllocations) {
+    allocated[nodeId] = (allocated[nodeId] ?? 0) + credits;
+  }
+  assert.deepEqual(allocated, {
+    "transversal-introduction": 6, "science-technology": 101, "project-practice": 160, "theory-history": 43,
+  });
+  assert.equal(projection.publishedPathways.bedelias.catalogCourseIds?.length ?? 0, 0);
+  for (const code of ["DP65", "DP63", "DP188", "DP73", "DP75", "DP184", "DP12", "DP012"]) {
+    assert.equal(projection.courses.find(({ bedeliasCode }) => bedeliasCode === code).authorityStatus, "candidate", code);
+  }
 });
 
 test("no convierte la orientación individual en perfil o trayectoria certificada", () => {

@@ -41866,9 +41866,9 @@
       "identity": "licenciatura en diseno de paisaje:2008",
       "career": "LICENCIATURA EN DISEÑO DE PAISAJE",
       "planYear": "2008",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
-      "scope": "vigencia, plan aprobado, título conjunto, duración, créditos, ejes, flexibilidad, reglamento y sede",
+      "scope": "Plan 2007 en Maldonado; malla de referencia y mínimos por eje, sin catálogo optativo nominal verificado",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -41890,16 +41890,19 @@
         "curriculum": {
           "useBedeliasCompositionTree": true,
           "usePublishedCredits": true,
-          "sourceUrl": "https://old.fadu.edu.uy/ldp/informacion-general/plan-estudios/",
+          "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
           "pathwayLabel": "Currículo flexible por ejes",
           "pathwayDescription": "Catálogo acreditable del plan conjunto; la secuencia y los cursos ilustrativos no sustituyen los mínimos por eje ni la aprobación del currículo individual.",
           "periodOrder": [
-            "INICIACIÓN DISEÑO DE PAISAJE",
-            "CIENCIAS, TEC.Y TECNO. PAISAJE",
-            "TEORÍA E HISTORIA DEL PAISAJE",
-            "PRÁCTICAS PROYECTUALES",
-            "OPTATIVAS Y ELECTIVAS",
-            "Validación de egreso"
+            "Semestre 1",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestre 6",
+            "Semestre 7",
+            "Semestre 8",
+            "Semestres 7 y 8 · Proyecto Final anual"
           ],
           "pathRequirementMap": {
             "2160": "theory-history",
@@ -41940,8 +41943,384 @@
               "minCredits": 50
             }
           ],
-          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del balance de los 360 créditos y de la orientación curricular individual"
-        }
+          "manualCompletionValidation": "Aprobación de la Comisión de Carrera del balance de los 360 créditos y de la orientación curricular individual",
+          "sourceDataPath": "data/bedelias/audits/diseno-paisaje-2007-semester-evidence.json",
+          "strictOfficialCourseIds": true,
+          "preserveBedeliasCourseIds": true,
+          "verifiedCourseIds": [
+            "DP11",
+            "DP24",
+            "DP22",
+            "DP32",
+            "DP34",
+            "DP41",
+            "DP44",
+            "DP61",
+            "DP64",
+            "DP54",
+            "DP51",
+            "DP71",
+            "DP72",
+            "DP81"
+          ],
+          "courseOverrides": {
+            "DP11": {
+              "name": "Taller Transversal de Iniciación al Diseño de Paisaje",
+              "credits": 6,
+              "periodLabel": "Semestre 1",
+              "requirementId": "transversal-introduction",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP24": {
+              "name": "Representación Gráfica del Espacio II",
+              "credits": 10,
+              "periodLabel": "Semestre 2",
+              "requirementId": "project-practice",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP22": {
+              "name": "Técnicas y Procedimientos Constructivos I",
+              "credits": 7,
+              "periodLabel": "Semestre 2",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP32": {
+              "name": "Técnicas y Procedimientos Constructivos II",
+              "credits": 7,
+              "periodLabel": "Semestre 3",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP34": {
+              "name": "Historia del Paisaje I",
+              "credits": 8,
+              "periodLabel": "Semestre 3",
+              "requirementId": "theory-history",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP41": {
+              "name": "Botánica III",
+              "credits": 7,
+              "periodLabel": "Semestre 4",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP44": {
+              "name": "Teoría del Paisaje I",
+              "credits": 8,
+              "periodLabel": "Semestre 4",
+              "requirementId": "theory-history",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP61": {
+              "name": "Arboricultura",
+              "credits": 7,
+              "periodLabel": "Semestre 5",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP64": {
+              "name": "Teoría del Paisaje II",
+              "credits": 8,
+              "periodLabel": "Semestre 5",
+              "requirementId": "theory-history",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP54": {
+              "name": "Historia del Paisaje II",
+              "credits": 8,
+              "periodLabel": "Semestre 6",
+              "requirementId": "theory-history",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP51": {
+              "name": "Horticultura Ornamental",
+              "credits": 7,
+              "periodLabel": "Semestre 6",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP71": {
+              "name": "Hidrología y Riego",
+              "credits": 7,
+              "periodLabel": "Semestre 7",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP72": {
+              "name": "Clima y Confort",
+              "credits": 5,
+              "periodLabel": "Semestre 7",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "DP81": {
+              "name": "Gestión y Administración de Áreas Verdes",
+              "credits": 7,
+              "periodLabel": "Semestre 8",
+              "requirementId": "science-technology",
+              "creditSourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "malla-2007-s1-2",
+              "name": "Ecología del Paisaje",
+              "credits": 6,
+              "requirementId": "science-technology",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s1-3",
+              "name": "Representación Gráfica del Espacio I",
+              "credits": 10,
+              "requirementId": "project-practice",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s1-4",
+              "name": "Percepción Ambiental y del Espacio",
+              "credits": 4,
+              "requirementId": "theory-history",
+              "periodLabel": "Semestre 1",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s2-1",
+              "name": "Diseño de Paisaje I",
+              "credits": 20,
+              "requirementId": "project-practice",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s2-3",
+              "name": "Botánica I",
+              "credits": 10,
+              "requirementId": "science-technology",
+              "periodLabel": "Semestre 2",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s3-1",
+              "name": "Diseño de Paisaje II",
+              "credits": 20,
+              "requirementId": "project-practice",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s3-2",
+              "name": "Botánica II",
+              "credits": 7,
+              "requirementId": "science-technology",
+              "periodLabel": "Semestre 3",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s4-1",
+              "name": "Diseño de Paisaje III",
+              "credits": 20,
+              "requirementId": "project-practice",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s4-3",
+              "name": "Interpretación del Paisaje I",
+              "credits": 7,
+              "requirementId": "science-technology",
+              "periodLabel": "Semestre 4",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s5-1",
+              "name": "Diseño de Paisaje IV",
+              "credits": 20,
+              "requirementId": "project-practice",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s5-2",
+              "name": "Interpretación del Paisaje II",
+              "credits": 7,
+              "requirementId": "science-technology",
+              "periodLabel": "Semestre 5",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s6-1",
+              "name": "Diseño de Paisaje V",
+              "credits": 20,
+              "requirementId": "project-practice",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/licenciatura-en-diseno-de-paisajes/"
+            },
+            {
+              "id": "malla-2007-s6-4",
+              "name": "Interpretación del Paisaje III",
+              "credits": 10,
+              "requirementId": "science-technology",
+              "periodLabel": "Semestre 6",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-s7-3",
+              "name": "Métodos de Investigación en Ciencias Sociales",
+              "credits": 7,
+              "requirementId": "theory-history",
+              "periodLabel": "Semestre 7",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            },
+            {
+              "id": "malla-2007-proyecto-1",
+              "name": "Proyecto Final de Paisaje",
+              "credits": 40,
+              "requirementId": "project-practice",
+              "periodLabel": "Semestres 7 y 8 · Proyecto Final anual",
+              "sourceUrl": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf"
+            }
+          ],
+          "projectionAnomalies": [
+            "El mapa FADU 2022 ubica Técnicas I en 2.º y Técnicas II en 3.º; Fagro nombra Técnicas I en 3.º. La lista de primer año de FADU también identifica Técnicas I. Se retiene la posición del mapa detallado.",
+            "Fagro lista Horticultura en 5.º y Arboricultura en 6.º; el mapa FADU 2022 hace lo contrario. No se infiere la oferta efectiva de ningún período a partir de la diferencia.",
+            "Fagro incluye Diseño de Paisaje V en 6.º y CURE publica que hay cinco talleres; el mapa FADU omite V. Las 28 filas de FADU suman 290 y la fila adicional de 20 completa los 310 créditos comunes.",
+            "Fagro muestra dos segmentos de 20 créditos del Proyecto Final; FADU lo rotula anual con 40 y Bedelías ofrece variantes de 40. Se conserva como una sola actividad.",
+            "La tabla de CURE rotula 2008 y la prosa de evaluación menciona al menos 48 electivos; el Plan FADU publicado y el mapa mantienen 50. No se cambia el mínimo sin acto académico que lo sustituya.",
+            "La captura web del PDF no estuvo disponible. Se cotejó su tabla estructurada con la grilla de Fagro, la página de ingreso y los registros de Bedelías. Los candidatos homónimos no son equivalencias."
+          ]
+        },
+        "trajectories": [
+          {
+            "id": "bedelias",
+            "label": "Referencia curricular",
+            "description": "Referencia de ocho semestres para Maldonado basada en el mapa de FADU y la grilla de Fagro. El Proyecto Final anual abarca séptimo y octavo y se cuenta una vez. La referencia suma 310 créditos; los 50 créditos optativos y electivos no tienen semestre fijo ni catálogo completo verificado. La Comisión de Carrera valida el currículo individual. Esta secuencia no garantiza la oferta de cursos ni sustituye el plan aprobado.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "DP11",
+                  "malla-2007-s1-2",
+                  "malla-2007-s1-3",
+                  "malla-2007-s1-4"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "malla-2007-s2-1",
+                  "DP24",
+                  "malla-2007-s2-3",
+                  "DP22"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "malla-2007-s3-1",
+                  "malla-2007-s3-2",
+                  "DP32",
+                  "DP34"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "malla-2007-s4-1",
+                  "DP41",
+                  "malla-2007-s4-3",
+                  "DP44"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "malla-2007-s5-1",
+                  "malla-2007-s5-2",
+                  "DP61",
+                  "DP64"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "malla-2007-s6-1",
+                  "DP54",
+                  "DP51",
+                  "malla-2007-s6-4"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "DP71",
+                  "DP72",
+                  "malla-2007-s7-3"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "DP81"
+                ]
+              },
+              {
+                "label": "Semestres 7 y 8 · Proyecto Final anual",
+                "courseIds": [
+                  "malla-2007-proyecto-1"
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true
+          }
+        ]
       },
       "offerings": [
         {
@@ -41968,14 +42347,15 @@
         "siteSpecificTrajectoryAvailability": false,
         "reason": "El Plan 2007 define una única licenciatura conjunta de FADU y Agronomía radicada en Maldonado. La formación es flexible e individual y no publica perfiles o menciones certificadas.",
         "normalization": [
-          "Mostrar Plan 2007 como denominación oficial y conservar 2008 como identidad técnica del comienzo de cursos y de Bedelías.",
-          "Corregir la duración administrativa de 60 meses a cuatro años u ocho semestres.",
-          "Publicar una sola carrera conjunta bajo FADU, compartida con Facultad de Agronomía, y con sede Maldonado.",
-          "Hacer operativa la distribución de Bedelías de 6+101+160+43+50 créditos, equivalente a los mínimos oficiales de 103+162+45+50 al reintegrar dos créditos del Taller Transversal en cada eje común.",
-          "Mantener las 302 unidades de la composición como catálogo flexible por ejes y exigir 360 créditos totales, sin convertir el esquema curricular ilustrativo en una secuencia obligatoria.",
-          "Exigir la validación de la Comisión de Carrera sobre el balance y la orientación del currículo individual.",
-          "No publicar orientaciones personales como perfiles, menciones o trayectorias certificadas."
-        ]
+          "Mostrar Plan 2007 y conservar el ID técnico 2008, un título, una sede y un progreso.",
+          "Usar la referencia FADU de ocho semestres complementada por Diseño de Paisaje V de la grilla de Fagro.",
+          "Conservar las variantes técnicas sin publicar ni inferir equivalencias; contabilizar el Proyecto Final 7.º–8.º una vez.",
+          "Conservar los 360 créditos y los mínimos operativos 6+101+160+43+50; exigir validación de la Comisión de Carrera.",
+          "No tratar la referencia como una lista de obligaciones individuales ni como la oferta efectiva."
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/bedelias/audits/diseno-paisaje-2007-semester-evidence.json",
+        "trajectoryCoverage": "ocho semestres; 29 unidades, incluido un proyecto anual; flexibles sin catálogo verificado"
       },
       "sources": [
         {
@@ -42036,6 +42416,15 @@
             "servicios académicos",
             "sede Maldonado"
           ]
+        },
+        {
+          "url": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+          "authority": "FADU, Udelar",
+          "supports": [
+            "ubicaciones y créditos del mapa curricular",
+            "Proyecto Final anual",
+            "50 créditos optativos y electivos"
+          ]
         }
       ],
       "anomalies": [
@@ -42056,8 +42445,8 @@
           "resolution": "Las 302 unidades y 2.450 créditos son oferta acumulada por ejes y no obligaciones completas de egreso; once electivas externas aparecen sólo en la composición, con su servicio de origen explícito."
         }
       ],
-      "uiNotice": "Plan conjunto y flexible de 360 créditos. Completá los mínimos por eje y acordá con la Comisión de Carrera el balance y la orientación de tu currículo individual.",
-      "remainingWork": "Las previaturas sólo se muestran cuando Bedelías las publica; la Comisión de Carrera mantiene la competencia sobre la pertinencia y creditización de optativas y electivas."
+      "uiNotice": "Referencia de ocho semestres para Maldonado basada en el mapa de FADU y la grilla de Fagro. El Proyecto Final anual abarca séptimo y octavo y se cuenta una vez. La referencia suma 310 créditos; los 50 créditos optativos y electivos no tienen semestre fijo ni catálogo completo verificado. La Comisión de Carrera valida el currículo individual. Esta secuencia no garantiza la oferta de cursos ni sustituye el plan aprobado.",
+      "remainingWork": "Confirmar códigos ambiguos y optativas nominales, y revisar una eventual actualización del plan."
     },
     {
       "identity": "licenciatura en turismo:2014",
@@ -96336,6 +96725,6 @@
       "remainingWork": "Confirmar el plan sucesor y su transición por cohorte, códigos ambiguos y electivas externas."
     }
   ],
-  "contentHash": "sha256:13cc032102577812b5d824867dad4b200ba1a5ce5e314bdf53e2ec79044d55c1",
+  "contentHash": "sha256:666705dd4eaa5af5361439817a602a2931dfbf6d6c617e9be935b9055a2fb60f",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

@@ -5031,6 +5031,56 @@
         "Encerado de Diagnóstico (4049) tiene 7 créditos y Taller Trabajo Final (4070) tiene 4 según Facultad; Bedelías registra 6 para ambos.",
         "Tres optativas figuran en la malla sin correspondencia Bedelías inequívoca. No se promueven las electivas externas sólo presentes en Bedelías."
       ]
+    },
+    {
+      "planId": "bedelias-cure-licenciatura-en-diseno-de-paisaje-2008",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "mapa FADU 2022 enlazado desde la ficha vigente y grilla publicada por Fagro",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Maldonado"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+          "authority": "FADU, Udelar",
+          "reviewedAt": "2026-11-16",
+          "role": "28 filas, ubicación y créditos del Proyecto Final, 50 flexibles; huella del cotejo normalizado",
+          "contentHash": "sha256:f3c72000d029179205ead0a7f824c8b8636879ade862261437e958ca123fb386"
+        },
+        {
+          "url": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/licenciatura-en-diseno-de-paisajes/",
+          "authority": "Facultad de Agronomía, Udelar",
+          "reviewedAt": "2026-11-16",
+          "role": "mismo plan aprobado en 2007, Diseño de Paisaje V en sexto"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/diseno-paisaje-2007-semester-evidence.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-cure-licenciatura-en-diseno-de-paisaje-2008.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "El mapa FADU 2022 ubica Técnicas I en 2.º y Técnicas II en 3.º; Fagro nombra Técnicas I en 3.º. La lista de primer año de FADU también identifica Técnicas I. Se retiene la posición del mapa detallado.",
+        "Fagro lista Horticultura en 5.º y Arboricultura en 6.º; el mapa FADU 2022 hace lo contrario. No se infiere la oferta efectiva de ningún período a partir de la diferencia.",
+        "Fagro incluye Diseño de Paisaje V en 6.º y CURE publica que hay cinco talleres; el mapa FADU omite V. Las 28 filas de FADU suman 290 y la fila adicional de 20 completa los 310 créditos comunes.",
+        "Fagro muestra dos segmentos de 20 créditos del Proyecto Final; FADU lo rotula anual con 40 y Bedelías ofrece variantes de 40. Se conserva como una sola actividad.",
+        "La tabla de CURE rotula 2008 y la prosa de evaluación menciona al menos 48 electivos; el Plan FADU publicado y el mapa mantienen 50. No se cambia el mínimo sin acto académico que lo sustituya.",
+        "La captura web del PDF no estuvo disponible. Se cotejó su tabla estructurada con la grilla de Fagro, la página de ingreso y los registros de Bedelías. Los candidatos homónimos no son equivalencias."
+      ]
     }
   ]
 }
