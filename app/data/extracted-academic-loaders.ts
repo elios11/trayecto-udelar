@@ -410,7 +410,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fder-notariado-2016": {
     load: () => import("./bedelias-generated/bedelias-fder-notariado-2016.json"),
-    pathwayIds: ["bedelias"],
+    pathwayIds: ["grilla-notariado-2016"],
     pathwayLabel: "Trayectoria",
     minCredits: 450,
   },

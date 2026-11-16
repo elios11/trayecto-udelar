@@ -54,9 +54,10 @@ export async function buildNotariadoEvidenceValidation({ write = true, evidenceO
   }
   const published = Object.values(projection.publishedPathways);
   const verified = projection.courses.filter(({ authorityStatus }) => authorityStatus === "verified");
-  if (inventoryEntry.state !== "research-pending" || verified.length !== 0
-    || published.some(({ periods }) => periods.length > 0)) {
-    throw new Error("La proyección ya cambió: revisar correspondencias antes de reutilizar esta validación parcial.");
+  if (inventoryEntry.state !== "official-trajectory-reproduced"
+    || published.length !== 1 || published[0].periods.length !== 10
+    || published[0].periods.flatMap(p => p.courseIds).length !== 57) {
+    throw new Error("La proyección debe conservar las 57 filas de la grilla en diez semestres.");
   }
 
   const report = {
@@ -83,12 +84,12 @@ export async function buildNotariadoEvidenceValidation({ write = true, evidenceO
       gridAndMinimumAreaDifferencePreserved: !equal(source.gridCreditsByArea, source.currentMinimumCreditsByArea),
       projectedVerifiedIdentities: verified.length,
       projectedOfficialPeriods: published.reduce((sum, pathway) => sum + pathway.periods.length, 0),
-      technicalIdsPreserved: projection.courses.length,
+      technicalIdsPreserved: projection.courses.filter(c => c.bedeliasCode).length,
       intermediateTitleCredits: audit.officialPlan.intermediateTitle.minimumCredits,
     },
     visualReview: evidence.visualReview,
     unresolved: evidence.unresolved,
-    decision: evidence.decision,
+    decision: inventoryEntry.state,
   };
   if (write) {
     const temporaryPath = new URL("data/fder/notariado-2016-validation.json.tmp", root);

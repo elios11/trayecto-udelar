@@ -836,7 +836,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       eligibleRequirementIds,
       creditAllocations: eligibleRequirementIds.map((eligibleNodeId) => ({
         nodeId: eligibleNodeId,
-        credits: Number(rawCourse.credits) || 0,
+        credits: Number(rawCourse.allocationCreditOverrides?.[eligibleNodeId] ?? rawCourse.credits) || 0,
         status: "official",
         sourceUrl: rawCourse.sourceUrl ?? sourceUrl,
       })),

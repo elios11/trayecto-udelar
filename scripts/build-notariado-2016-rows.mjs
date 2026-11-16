@@ -55,11 +55,14 @@ const result = { schemaVersion:1, planId:evidence.planId, reviewedAt:'2026-11-04
   evidenceHash:createHash('sha256').update(JSON.stringify(evidence)).digest('hex'),
   policy:'Filas de la grilla vigente. Los códigos sólo se asignan con corroboración institucional; los bloques flexibles representan cupos y no oferta nominal.',
   rows,
+  auditedPathways:[{id:'grilla-notariado-2016', periods:evidence.sourcePortion.semesterCredits.map((_,i)=>({
+    label:`Semestre ${i+1}`, courseIds:rows.filter(r=>r.semester===i+1).map(r=>r.bedeliasCode ?? r.id),
+  }))}],
   observedAreaTotals,
   printedFooterAreaCredits:Object.fromEntries(['socio','publico','privado','social','practica','flexibles'].map((key,i)=>[key,evidence.sourcePortion.gridCreditsByArea[i]])),
   pending:['Validar la contradicción entre columnas, C. Curso y totales del pie antes de automatizar acreditación por áreas.',
     'Regla de cohorte del seminario, antes de publicar una nueva obligación sobre progreso histórico.',
-    'Proyección de períodos y unión del catálogo del planificador.'],
+    'Completar correspondencias técnicas y catálogo nominal de optativas con evidencia oficial.'],
 };
 const target = new URL('data/fder/notariado-2016-curricular-rows.json',root);
 await writeFile(new URL(`${target.href}.tmp`),`${JSON.stringify(result,null,2)}\n`);

@@ -1,5 +1,12 @@
 # D03bh — Notariado Plan 2016
 
+## Proyección semestral (2026-11-16)
+
+- Regenerar sin red con `node scripts/build-notariado-2016-rows.mjs` y después `node scripts/build-notariado-2016.mjs`. La segunda etapa actualiza la auditoría, los catálogos, el inventario y los informes de cotejo.
+- Un plan y una grilla de diez semestres para Montevideo y Salto: 57 ubicaciones, siete códigos corroborados, 46 materias sólo-fuente y cuatro cupos flexibles. Se conservan los IDs técnicos recuperables y no se infieren equivalencias.
+- Los mínimos institucionales y el desglose quedan trazados. Las dos filas con sumas incompatibles cuentan sólo al total; el egreso requiere validación de requisitos por Facultad. Procurador mantiene su mínimo de 160 y validación manual. El aviso explica la excepción de la Parte 2 del seminario; no hay requisito automático por cohorte.
+- Quedan pendientes un catálogo nominal de optativas respaldado y la resolución institucional de las discrepancias de área. La reproducción de la grilla no acredita oferta futura ni cierre académico completo.
+
 ## Objetivo
 
 Reconciliar `bedelias-fder-notariado-2016`, hoy `research-pending`, con la [página del Plan 2016 de Facultad de Derecho](https://www.fder.edu.uy/node/431) y su [grilla vigente de diciembre de 2024, publicada en 2025](https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf). La grilla muestra diez semestres y 450 créditos en cinco años. Verificar visualmente sus tres páginas si es posible antes de atribuir a cada semestre las filas mezcladas por la extracción textual.
