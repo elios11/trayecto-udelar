@@ -66,7 +66,7 @@ test("controla los cuatro mínimos operativos sin sumar el catálogo acumulado",
 test("ordena la grilla oficial y mantiene optativas y electivas como alternativas", () => {
   assert.deepEqual(projection.pathways.bedelias.periods.slice(0, 9).map(({ label, courseIds }) => [label, courseIds.length]), [
     ["Semestre 1", 5],
-    ["Semestre 2", 6],
+    ["Semestre 2", 5],
     ["Semestre 3", 5],
     ["Semestre 4", 4],
     ["Semestre 5", 5],
@@ -75,8 +75,13 @@ test("ordena la grilla oficial y mantiene optativas y electivas como alternativa
     ["Semestre 8", 5],
     ["Modalidades de egreso", 3],
   ]);
-  assert.equal(projection.pathways.bedelias.periods.find(({ label }) => label === "Optativas").courseIds.length, 239);
-  assert.equal(projection.pathways.bedelias.periods.find(({ label }) => label === "Electivas").courseIds.length, 146);
+  assert.ok(projection.pathways.bedelias.catalogCourseIds.length >= 385);
+  assert.ok(projection.pathways.bedelias.catalogCourseIds.includes(courseByCode.get("3097U").id));
+  assert.equal(courseByCode.get("2015I").authorityStatus, "candidate");
+  const published = projection.publishedPathways.bedelias;
+  assert.deepEqual(published.periods[1].courseIds.filter((id) => /-2015i?-2$/.test(id)), ["fder-2015-2"]);
+  assert.deepEqual(published.periods.slice(7).map(({ alternativeGroups }) =>
+    alternativeGroups.map(({ required, courseIds }) => [required, courseIds.length])), [[[true, 3]], [[true, 3]]]);
   assert.match(projection.pathways.bedelias.description, /no materias que deban aprobarse todas/i);
 });
 

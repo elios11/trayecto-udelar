@@ -63098,7 +63098,7 @@
       "identity": "licenciatura en relaciones internacionales:2013",
       "career": "LICENCIATURA EN RELACIONES INTERNACIONALES",
       "planYear": "2013",
-      "reviewedAt": "2026-08-28",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
       "scope": "vigencia, título final e intermedio, sede, duración, créditos, ciclos, semestres, núcleo obligatorio, optativas, modalidades de egreso y previaturas",
       "publicationEligible": false,
@@ -63128,7 +63128,7 @@
           "includeAllCoursesInPathwayCatalog": true,
           "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2021-09/Plan%20de%20Estudios%20RRII%202013_0.pdf",
           "prerequisitesSourceUrl": "https://www.fder.edu.uy/sites/default/files/2018-03/Sistema%20de%20Previaturas%20de%20la%20Licenciatura%20en%20Relaciones%20Internacionales%20Plan%202013_actd.pdf",
-          "pathwayDescription": "Grilla oficial de ocho semestres y catálogo vigente de optativas/electivas. Las optativas son alternativas para completar mínimos, no materias que deban aprobarse todas.",
+          "pathwayDescription": "Grilla oficial de ocho semestres. Elegí una Función Universitaria en octavo y una modalidad de egreso. Las optativas son alternativas para completar mínimos, no materias que deban aprobarse todas.",
           "periodOrder": [
             "Semestre 1",
             "Semestre 2",
@@ -63177,7 +63177,8 @@
               "periodLabel": "Semestre 1"
             },
             "2015": {
-              "periodLabel": "Semestre 2"
+              "periodLabel": "Semestre 2",
+              "officialIdentity": true
             },
             "3010": {
               "periodLabel": "Semestre 1"
@@ -63274,9 +63275,6 @@
             },
             "3123": {
               "periodLabel": "Modalidades de egreso"
-            },
-            "2015I": {
-              "periodLabel": "Semestre 2"
             },
             "2044I": {
               "periodLabel": "Semestre 8"
@@ -63605,8 +63603,131 @@
               "minCredits": 200
             }
           ],
-          "manualCompletionValidation": "Control de Bedelía y de la Comisión de Carrera de los 227 créditos obligatorios, 93 opcionales, ciclo habilitante y modalidad de egreso"
-        }
+          "manualCompletionValidation": "Control de Bedelía y de la Comisión de Carrera de los 227 créditos obligatorios, 93 opcionales, ciclo habilitante y modalidad de egreso",
+          "sourceDataPath": "data/fder/rrii-2013-2021-evidence.json"
+        },
+        "trajectories": [
+          {
+            "id": "bedelias",
+            "credentialId": "bedelias-degree",
+            "label": "Grilla oficial",
+            "description": "Grilla oficial de ocho semestres. Elegí una Función Universitaria en octavo y una modalidad de egreso. Las optativas son alternativas para completar mínimos, no materias que deban aprobarse todas.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "2010",
+                  "2011",
+                  "2012",
+                  "2013",
+                  "3010"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "3014",
+                  "3015",
+                  "2015",
+                  "3016",
+                  "3017"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "3018",
+                  "3019",
+                  "3114",
+                  "3021",
+                  "3022"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "3033",
+                  "3034",
+                  "3035",
+                  "3036"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "3050",
+                  "3051",
+                  "3052",
+                  "3053",
+                  "3054"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "3059",
+                  "3063",
+                  "3062",
+                  "3061",
+                  "3060"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "3069",
+                  "3068",
+                  "3067",
+                  "3075"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "2044I",
+                  "3076",
+                  "2045I",
+                  "2046I",
+                  "3077"
+                ],
+                "alternativeGroups": [
+                  {
+                    "id": "funcion-universitaria",
+                    "required": true,
+                    "courseIds": [
+                      "2044I",
+                      "2045I",
+                      "2046I"
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "Modalidades de egreso",
+                "courseIds": [
+                  "3112B",
+                  "3113",
+                  "3123"
+                ],
+                "alternativeGroups": [
+                  {
+                    "id": "modalidad-de-egreso",
+                    "required": true,
+                    "courseIds": [
+                      "3112B",
+                      "3113",
+                      "3123"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "excludedCourseIds": [
+              "2015I"
+            ]
+          }
+        ]
       },
       "offerings": [
         {
@@ -63642,7 +63763,10 @@
           "Mostrar los ocho semestres nominales y separar las optativas, electivas, equivalencias y actividades extracurriculares como alternativas.",
           "Exigir una de las tres Funciones Universitarias y una modalidad de egreso de 30 créditos entre monografía, práctica profesional y práctica educativa.",
           "Aplicar las previaturas nominales publicadas por Facultad de Derecho y dejar el control final de ciclo y egreso como validación explícita."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fder/rrii-2013-2021-evidence.json",
+        "trajectoryCoverage": "ocho semestres, Función Universitaria y modalidades de egreso; optativas sin asignación oficial por semestre"
       },
       "sources": [
         {
@@ -63718,6 +63842,20 @@
             "aprobación del nuevo plan",
             "Resolución n.º 4 del CDC"
           ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/node/9036",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": [
+            "código 2015 en el calendario de 2026"
+          ]
+        },
+        {
+          "url": "https://www.fder.edu.uy/node/7865",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "supports": [
+            "código histórico 2015I en el calendario de 2025"
+          ]
         }
       ],
       "anomalies": [
@@ -63746,7 +63884,7 @@
           "resolution": "La resolución exige completar todo el Ciclo Inicial y los semestres tercero y cuarto antes de aprobar unidades del Ciclo Profesional. La UI muestra esa condición en la validación final porque el documento no publica una única equivalencia automática para todas las variantes administrativas."
         }
       ],
-      "uiNotice": "Plan 2013 de 320 créditos en Montevideo. A los 200 créditos podés obtener el título de Técnico Asesor en Comercio Internacional; para la licenciatura completá los cuatro mínimos, una Función Universitaria y una modalidad de egreso de 30 créditos.",
+      "uiNotice": "Grilla oficial de ocho semestres. Elegí una Función Universitaria en octavo y una modalidad de egreso. Las optativas son alternativas para completar mínimos, no materias que deban aprobarse todas.",
       "remainingWork": "Bedelía y la Comisión de Carrera conservan el control de la habilitación por ciclos, las acreditaciones opcionales y la modalidad de egreso; la UI explicita esas validaciones sin reemplazarlas."
     },
     {
@@ -85429,7 +85567,7 @@
       "identity": "tecnologo en informatica:2007",
       "career": "Tecnólogo en Informática",
       "planYear": "2007",
-      "reviewedAt": "2026-08-31",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
       "scope": "current-joint-technologist-title-duration-total-credits-area-minima-internship-project-flexible-curriculum-and-five-campuses",
       "publicationEligible": true,
@@ -85457,16 +85595,148 @@
         "trajectories": [
           {
             "id": "curricula-personalizada",
+            "label": "Ingreso desde Secundaria",
             "credentialId": "tecnologo-informatica",
-            "label": "Currícula personalizada",
-            "description": "Plan 2007 común a las cinco sedes. Elegí unidades del catálogo hasta cubrir los siete mínimos oficiales y 252 créditos; la Comisión Nacional valida la implementación curricular y el egreso.",
             "campusIds": [
               "montevideo",
               "florida",
               "maldonado",
               "san-jose",
               "paysandu"
-            ]
+            ],
+            "description": "Referencia oficial de seis semestres del Plan 2007, común a las cinco sedes. Elegí el recorrido de ingreso que corresponda a tu bachillerato. La nivelación no suma créditos. Los espacios complementarios y optativos indican carga sugerida, no suman por sí solos: planificá las unidades concretas que ofrezca tu sede. Para egresar se mantienen los siete mínimos, los 252 créditos y la validación de la Comisión.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "TI01",
+                  "TI05",
+                  "TI02",
+                  "actividad-complementaria-1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "TI06",
+                  "TI08",
+                  "TI07",
+                  "TI09",
+                  "actividad-complementaria-2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "TI12",
+                  "TI11",
+                  "actividad-complementaria-3",
+                  "TI13",
+                  "actividad-complementaria-4"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "TI16",
+                  "TI17",
+                  "TI18",
+                  "actividad-complementaria-5",
+                  "opcional-matematica"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "TI21",
+                  "opcional-tecnologica-1",
+                  "opcional-tecnologica-2",
+                  "opcional-tecnologica-3"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "TI27",
+                  "opcional-tecnologica-4",
+                  "opcional-tecnologica-5",
+                  "opcional-tecnologica-6"
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true
+          },
+          {
+            "id": "ingreso-tecnologico",
+            "label": "Ingreso desde Bachillerato Tecnológico en Informática",
+            "credentialId": "tecnologo-informatica",
+            "campusIds": [
+              "montevideo",
+              "florida",
+              "maldonado",
+              "san-jose",
+              "paysandu"
+            ],
+            "description": "Referencia oficial de seis semestres del Plan 2007, común a las cinco sedes. Elegí el recorrido de ingreso que corresponda a tu bachillerato. La nivelación no suma créditos. Los espacios complementarios y optativos indican carga sugerida, no suman por sí solos: planificá las unidades concretas que ofrezca tu sede. Para egresar se mantienen los siete mínimos, los 252 créditos y la validación de la Comisión.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "TI03",
+                  "TI02",
+                  "actividad-complementaria-1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "TI06",
+                  "TI08",
+                  "TI07",
+                  "TI09",
+                  "actividad-complementaria-2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "TI12",
+                  "TI11",
+                  "actividad-complementaria-3",
+                  "TI13",
+                  "actividad-complementaria-4"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "TI16",
+                  "TI17",
+                  "TI18",
+                  "actividad-complementaria-5",
+                  "opcional-matematica"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "TI21",
+                  "opcional-tecnologica-1",
+                  "opcional-tecnologica-2",
+                  "opcional-tecnologica-3"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "TI27",
+                  "opcional-tecnologica-4",
+                  "opcional-tecnologica-5",
+                  "opcional-tecnologica-6"
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true
           }
         ],
         "curriculum": {
@@ -85599,6 +85869,150 @@
               "periodLabel": "Orientación del recorrido",
               "curricularBlock": true,
               "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "actividad-complementaria-1",
+              "name": "Actividad Complementaria 1 · 8 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "informatica-humanas",
+              "periodLabel": "Semestre 1",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "actividad-complementaria-2",
+              "name": "Actividad Complementaria 2 · 4 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "informatica-humanas",
+              "periodLabel": "Semestre 2",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "actividad-complementaria-3",
+              "name": "Actividad Complementaria 3 · 4 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "informatica-humanas",
+              "periodLabel": "Semestre 3",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "actividad-complementaria-4",
+              "name": "Actividad Complementaria 4 · 8 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "informatica-humanas",
+              "periodLabel": "Semestre 3",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "actividad-complementaria-5",
+              "name": "Actividad Complementaria 5 · 4 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "informatica-humanas",
+              "periodLabel": "Semestre 4",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "opcional-matematica",
+              "name": "Opcional en Matemática · 8 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "informatica-matematica",
+              "periodLabel": "Semestre 4",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "opcional-tecnologica-1",
+              "name": "Opcional Tecnológica 1 · 12 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 5",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "opcional-tecnologica-2",
+              "name": "Opcional Tecnológica 2 · 12 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 5",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "opcional-tecnologica-3",
+              "name": "Opcional Tecnológica 3 · 4 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 5",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "opcional-tecnologica-4",
+              "name": "Opcional Tecnológica 4 · 12 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 6",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "opcional-tecnologica-5",
+              "name": "Opcional Tecnológica 5 · 12 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 6",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            {
+              "id": "opcional-tecnologica-6",
+              "name": "Opcional Tecnológica 6 · 4 cr. sugeridos",
+              "credits": 0,
+              "requirementId": "plan-total",
+              "periodLabel": "Semestre 6",
+              "curricularBlock": true,
+              "elective": true,
+              "catalogRole": "official-semester-option-slot",
+              "availabilityStatus": "published-plan-slot",
+              "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
             }
           ],
           "credentials": [
@@ -85644,7 +86058,174 @@
               "sourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
             }
           ],
-          "manualCompletionValidation": "Validación de la implementación curricular y del egreso por la Comisión Nacional de Carrera"
+          "manualCompletionValidation": "Validación de la implementación curricular y del egreso por la Comisión Nacional de Carrera",
+          "courseOverrides": {
+            "TI01": {
+              "name": "Principios de Programación",
+              "credits": 0,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI05": {
+              "name": "Arquitectura de Computadoras",
+              "credits": 0,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI03": {
+              "name": "Matemáticas",
+              "credits": 0,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI02": {
+              "name": "Matemática Discreta y Lógica 1",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI06": {
+              "name": "Estructuras de Datos y Algoritmos",
+              "credits": 16,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI08": {
+              "name": "Sistemas Operativos",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI07": {
+              "name": "Matemática Discreta y Lógica 2",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI09": {
+              "name": "Base de Datos 1",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI12": {
+              "name": "Programación Avanzada",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI11": {
+              "name": "Redes de Computadoras",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI13": {
+              "name": "Base de Datos 2",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI16": {
+              "name": "Programación de Aplicaciones",
+              "credits": 16,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI17": {
+              "name": "Administración de Infraestructuras",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI18": {
+              "name": "Ingeniería de Software",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI21": {
+              "name": "Pasantía Laboral",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI27": {
+              "name": "Proyecto",
+              "credits": 20,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "creditSourceUrl": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf"
+            },
+            "TI04": {
+              "officialIdentity": true,
+              "officialCredits": true,
+              "elective": true,
+              "catalogRole": "official-plan-example-option"
+            },
+            "TI10": {
+              "officialIdentity": true,
+              "officialCredits": true,
+              "elective": true,
+              "catalogRole": "official-plan-example-option"
+            },
+            "TI15": {
+              "officialIdentity": true,
+              "officialCredits": true,
+              "elective": true,
+              "catalogRole": "official-plan-example-option"
+            },
+            "TI14": {
+              "officialIdentity": true,
+              "officialCredits": true,
+              "elective": true,
+              "catalogRole": "official-plan-example-option"
+            },
+            "TI20": {
+              "officialIdentity": true,
+              "officialCredits": true,
+              "elective": true,
+              "catalogRole": "official-plan-example-option"
+            },
+            "TI19": {
+              "officialIdentity": true,
+              "officialCredits": true,
+              "elective": true,
+              "catalogRole": "official-plan-example-option"
+            }
+          },
+          "sourceDataPath": "data/bedelias/audits/tecnologo-informatica-2007-semester-evidence.json"
         }
       },
       "offerings": [
@@ -85726,7 +86307,10 @@
           "Controlar los siete mínimos oficiales, cuya suma es 196 créditos, y orientar 56 créditos adicionales dentro de la implementación aprobada.",
           "Exigir nominalmente Pasantía Laboral, Proyecto y validación de egreso por la Comisión Nacional.",
           "Conservar las 57 opciones de Bedelías por área sin interpretar diferencias de cobertura de previaturas como variantes regionales."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/bedelias/audits/tecnologo-informatica-2007-semester-evidence.json",
+        "trajectoryCoverage": "seis semestres, dos vías de ingreso y espacios flexibles oficiales, sin oferta nominal completa"
       },
       "sources": [
         {
@@ -85787,6 +86371,20 @@
             "Comisión Nacional",
             "gobernanza Udelar-UTEC-DGETP-UTU"
           ]
+        },
+        {
+          "url": "https://www.fing.edu.uy/es/ense%C3%B1anza/carreras-terciarias-y-de-grado-7/curr%C3%ADcula-sugerida",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "supports": [
+            "Grilla de seis semestres"
+          ]
+        },
+        {
+          "url": "https://utec.edu.uy/uploads/plan/5614988ee1ea96ded1ec3f8bb97bd0e06f10800f.pdf",
+          "authority": "UTEC",
+          "supports": [
+            "Malla de referencia de seis semestres y naturaleza flexible de los espacios"
+          ]
         }
       ],
       "anomalies": [
@@ -85811,7 +86409,7 @@
           "resolution": "Buceo y LATU son puntos de ingreso/oferta dentro de Montevideo. Se modelan como una sola sede académica para no duplicar el mismo plan ni el progreso."
         }
       ],
-      "uiNotice": "Plan 2007 compartido por Udelar, UTEC y DGETP-UTU: 252 créditos en seis semestres. Elegí sede; el plan y tu progreso son comunes. Los mínimos de área suman 196 créditos y la Comisión Nacional valida los 56 restantes, la Pasantía y el Proyecto.",
+      "uiNotice": "Referencia oficial de seis semestres del Plan 2007, común a las cinco sedes. Elegí el recorrido de ingreso que corresponda a tu bachillerato. La nivelación no suma créditos. Los espacios complementarios y optativos indican carga sugerida, no suman por sí solos: planificá las unidades concretas que ofrezca tu sede. Para egresar se mantienen los siete mínimos, los 252 créditos y la validación de la Comisión.",
       "remainingWork": "La oferta concreta de optativas y horarios debe confirmarse en cada sede antes de convertir el catálogo flexible en una secuencia semestral recomendada."
     },
     {
@@ -96725,6 +97323,6 @@
       "remainingWork": "Confirmar el plan sucesor y su transición por cohorte, códigos ambiguos y electivas externas."
     }
   ],
-  "contentHash": "sha256:666705dd4eaa5af5361439817a602a2931dfbf6d6c617e9be935b9055a2fb60f",
+  "contentHash": "sha256:c4e08c3fc2a327232bd700055d6bb5f653e1f6aa64d3cacc7a0f49fc04201b00",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

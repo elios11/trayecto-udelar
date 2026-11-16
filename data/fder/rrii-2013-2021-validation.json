@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "planId": "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
-  "reviewedAt": "2026-10-21",
+  "reviewedAt": "2026-11-16",
   "officialSource": {
     "authority": "Facultad de Derecho, Universidad de la República",
     "documentPageUrl": "https://www.fder.edu.uy/node/3553",
@@ -9,9 +9,9 @@
     "publishedVersion": "Plan 2013, grilla actualizada 2021"
   },
   "normalizedSourcePortionHash": "sha256:b4390553d1efe8bc94f7f46254d7e73e216e1ceb86c4fb2a2f8b15e3dcc54508",
-  "evidenceHash": "sha256:1b1ae4aec69cc6e4beabe1e1801adb5005e96939182d56faa5e47c36ca62d8d3",
-  "projectionHash": "sha256:346be6a2f571d8fda90eef59dd28cb0c7fb0fdb5118d1226860893e9c1892cd8",
-  "auditHash": "sha256:747264c710c248e994a369e0b8ef3b90ed258faa950abd2039dc411e7bed9e99",
+  "evidenceHash": "sha256:7cce5c490859741ff89d64d4e197b558c313fcc779ea1b02292afc2e8863028f",
+  "projectionHash": "sha256:d0b911f1f95c58172250423f7e46dfc97b1487c9c12cf4becb6eb43eae600c64",
+  "auditHash": "sha256:b96c25f4f53842090dbb96540a1d6a3ca59df9117c4148adedd7a06e6f3275ef",
   "checks": {
     "semesterCount": 8,
     "semestersMatchPriorAudit": true,
@@ -39,7 +39,6 @@
         "expectedCodes": [
           "3014",
           "3015",
-          "2015I",
           "2015",
           "3016",
           "3017"
@@ -47,7 +46,6 @@
         "actualCodes": [
           "3014",
           "3015",
-          "2015I",
           "2015",
           "3016",
           "3017"
@@ -165,20 +163,19 @@
     "introductionToResearch": {
       "sourceOccurrences": 1,
       "projectedCodes": [
-        "2015",
-        "2015I"
+        "2015"
       ],
-      "duplicateUnresolved": true
+      "duplicateUnresolved": false
     }
   },
   "visualReview": {
-    "status": "unavailable",
-    "reason": "La descarga directa del PDF falló por el proxy del entorno y el visor del navegador mostró una pantalla vacía; la extracción textual web desordena las columnas de la grilla"
+    "status": "verified",
+    "pageCount": 2,
+    "pdfHash": "sha256:8673f1e2813d9b2c66e1402c451f82da26325a48e647c4480b9600553724ad3f"
   },
   "unresolved": [
-    "El semestre 2 publica 2015 y 2015I como identidades verificadas de Introducción a la Investigación, pero el PDF textual enumera una sola unidad sin código. No hay equivalencia oficial que permita fusionarlas o elegir una identidad canónica.",
-    "El PDF suma 60 créditos profesionales nominales más 30 de egreso, mientras su pie declara 227 obligatorios y Bedelías operacionaliza 80 profesionales; no se corrige por aritmética.",
-    "La página documental confirma que sigue enlazada la grilla 2021, no que todas las correspondencias código-semestre de la proyección estén visualmente verificadas."
+    "La grilla tiene una sola Introducción a la Investigación; se muestra 2015, documentado en 2026, y se conserva 2015I, documentado en 2025, sin alias ni migración automática de progreso.",
+    "El subtítulo profesional suma 60 créditos nominales más 30 de egreso, mientras su pie declara 227 obligatorios y Bedelías operacionaliza 80 profesionales; no se corrige por aritmética."
   ],
-  "decision": "research-pending"
+  "decision": "official-trajectory-reproduced"
 }

@@ -12,7 +12,13 @@ Conservar el único Plan 2013, sede, título, progreso e IDs; las ocho posicione
 
 Normalizar evidencia versionada bajo `data/` con URL, autoridad, consulta, vigencia, alcance, filas cotejadas y huella; regenerar offline sin red ni nueva extracción. Actualizar auditoría/inventario/proyección sólo donde sea necesario para reflejar evidencia, sin cambiar comportamiento correcto existente. Añadir pruebas focales de cobertura, identidad, créditos, alternativas y estado. Si no se puede verificar visualmente la grilla, dejar el límite explícito. Dos regeneraciones idénticas, pruebas focales, `npm test`, `npm run lint`, `git diff --check`. Commit enfocado en este worktree, sin integrar, pushear ni publicar desde él.
 
-## Revisión conservadora del 21 de octubre de 2026
+## Cierre del 16 de noviembre de 2026
+
+- Se descargaron y renderizaron las dos páginas. La tabla confirma las ubicaciones del cotejo previo y una sola Introducción a la Investigación en segundo. El [calendario FDER de septiembre de 2026](https://www.fder.edu.uy/node/9036) usa `2015`, frente a `2015I` en el [calendario de septiembre de 2025](https://www.fder.edu.uy/node/7865). El semestre muestra `2015`; `2015I` queda como candidata recuperable, sin alias, borrado ni transferencia automática.
+- Se verificaron ocho semestres y el bloque final. Las tres Funciones Universitarias y las tres modalidades de egreso son dos grupos de alternativas, no seis requisitos acumulativos. El cotejo no modifica mínimos ni afirma un catálogo opcional completo.
+- La evidencia versiona la huella binaria de la grilla y las ubicaciones contrastadas. Regeneración offline de la proyección, evidencia derivada e inventario: `node scripts/build-official-semester-batch.mjs`.
+
+## Revisión conservadora del 21 de octubre de 2026 (histórico)
 
 - La [página documental actual de Facultad de Derecho](https://www.fder.edu.uy/node/3553) enlaza expresamente «Plan de estudios de RRII 2013 (actualizado 2021)» al mismo [PDF institucional de dos páginas](https://www.fder.edu.uy/sites/default/files/2021-09/Plan%20de%20Estudios%20RRII%202013_0.pdf). El texto recuperable confirma ocho semestres, título intermedio de 200 créditos (147 obligatorios y 53 opcionales), título final de 320 (227 obligatorios y 93 opcionales) y una sola unidad «Introducción a la Investigación».
 - La descarga local del PDF falló al conectar con el proxy del entorno y el visor del navegador mostró una página vacía. La extracción textual desordena las columnas, por lo que **no** se atribuyó una nueva validación visual ni se promovieron las correspondencias materia-semestre sólo por el OCR.

@@ -35,7 +35,7 @@ test("publica un único Plan 2007 interinstitucional con cinco sedes", () => {
 
 test("conserva las 57 opciones de Bedelías y controla los siete mínimos", () => {
   assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 57);
-  assert.equal(projection.courses.length, 59);
+  assert.equal(projection.courses.length, 71);
   assert.equal(projection.rules.length, 61);
   assert.equal(projection.plan.noPublishedRule, 3);
   assert.deepEqual(Object.fromEntries(credential.nodeRequirements.map(({ nodeId, minCredits }) => [nodeId, minCredits])), {
@@ -49,17 +49,21 @@ test("conserva las 57 opciones de Bedelías y controla los siete mínimos", () =
   });
   assert.equal(credential.nodeRequirements.reduce((sum, { minCredits }) => sum + minCredits, 0), 196);
   assert.equal(credential.minTotalCredits, 252);
-  assert.deepEqual(projection.pathways["curricula-personalizada"].periods.map(({ label, courseIds }) => [label, courseIds.length]), [
-    ["Orientación del recorrido", 1],
-    ["Matemática", 4],
-    ["Programación", 21],
-    ["Arquitectura, Sistemas Operativos y Redes", 9],
-    ["Bases de Datos y Sistemas de Información", 7],
-    ["Desarrollo de Software", 3],
-    ["Ciencias Humanas y Sociales", 11],
-    ["Proyecto y Pasantía Laboral", 2],
-    ["Validación de egreso", 1],
+  const published = projection.publishedPathways;
+  const secundaria = published["curricula-personalizada"];
+  const tecnologico = published["ingreso-tecnologico"];
+  assert.deepEqual(secundaria.periods.map(({ label, courseIds }) => [label, courseIds.length]), [
+    ["Semestre 1", 4], ["Semestre 2", 5], ["Semestre 3", 5],
+    ["Semestre 4", 5], ["Semestre 5", 4], ["Semestre 6", 4],
   ]);
+  assert.deepEqual(secundaria.periods.slice(1), tecnologico.periods.slice(1));
+  assert.deepEqual(secundaria.periods[0].courseIds.slice(0, 2), ["fing-ti01-2", "fing-ti05-2"]);
+  assert.deepEqual(tecnologico.periods[0].courseIds, ["fing-ti03-2", ...secundaria.periods[0].courseIds.slice(2)]);
+  const slots = projection.courses.filter(({ catalogRole }) => catalogRole === "official-semester-option-slot");
+  assert.equal(slots.length, 12);
+  assert.ok(slots.every(({ credits, curricularBlock }) => credits === 0 && curricularBlock));
+  assert.ok(["04", "10", "15", "14", "20", "19"].every((code) =>
+    secundaria.catalogCourseIds.includes(`fing-ti${code}-2`)));
 });
 
 test("exige Pasantía, Proyecto y validación sin duplicar sus créditos", () => {
@@ -76,7 +80,7 @@ test("exige Pasantía, Proyecto y validación sin duplicar sus créditos", () =>
   assert.equal(project.credits, 20);
   assert.equal(validation.credits, 0);
   assert.equal(validation.dataStatus, "manual-validation");
-  assert.match(projection.plan.notice, /56 restantes/i);
+  assert.match(projection.plan.notice, /252 créditos y la validación de la Comisión/i);
 });
 
 test("cierra la auditoría y avanza a Tecnólogo en Telecomunicaciones", () => {

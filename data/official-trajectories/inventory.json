@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:b16d469395173a6e79ce083f100150ecd2850aa8849e3bd307d58c15773ebf61",
-    "officialAuditHash": "sha256:666705dd4eaa5af5361439817a602a2931dfbf6d6c617e9be935b9055a2fb60f",
-    "reviewedTrajectoriesHash": "sha256:194802c502febe5bc6eb20ddef88b9cbed67ae6be723c906822704e095a6d37c"
+    "extractedReportHash": "sha256:81d7172f62aa4845979f32bbbc32ee009790d4485a68407ebdf439017b44670d",
+    "officialAuditHash": "sha256:c4e08c3fc2a327232bd700055d6bb5f653e1f6aa64d3cacc7a0f49fc04201b00",
+    "reviewedTrajectoriesHash": "sha256:f65062c0ffca6fc0179cda64f673103813df337b71ce2f49d39025a7db2b5c60"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 125,
+      "official-trajectory-reproduced": 127,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 15
+      "research-pending": 13
     },
-    "pending": 18,
+    "pending": 16,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -155,10 +155,10 @@
         "serviceLabel": "Facultad de Derecho",
         "selectablePlanIds": 6,
         "states": {
-          "official-trajectory-reproduced": 4,
+          "official-trajectory-reproduced": 5,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 2
+          "research-pending": 1
         }
       },
       {
@@ -199,10 +199,10 @@
         "serviceLabel": "Facultad de Ingeniería",
         "selectablePlanIds": 18,
         "states": {
-          "official-trajectory-reproduced": 13,
+          "official-trajectory-reproduced": 14,
           "official-trajectory-identified-pending": 1,
           "no-official-trajectory-documented": 0,
-          "research-pending": 4
+          "research-pending": 3
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 18,
+    "total": 16,
     "plans": [
       {
         "priority": 1,
@@ -377,15 +377,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fder"
-        ],
-        "reason": "La página vigente mantiene la grilla 2021, pero no se pudo revisar visualmente el PDF; el semestre 2 publica dos códigos técnicos para una única Introducción a la Investigación sin equivalencia oficial."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fder-tecnicatura-en-relaciones-laborales-1995",
         "state": "research-pending",
         "serviceIds": [
@@ -423,15 +414,6 @@
       {
         "priority": 2,
         "planId": "bedelias-fing-licenciatura-en-computacion-2025",
-        "state": "research-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fing-tecnologo-en-informatica-2007",
         "state": "research-pending",
         "serviceIds": [
           "fing"
@@ -477,7 +459,6 @@
         "serviceLabel": "Facultad de Derecho",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-fder-licenciatura-en-relaciones-internacionales-2013",
           "bedelias-fder-tecnicatura-en-relaciones-laborales-1995"
         ]
       },
@@ -490,8 +471,7 @@
         "researchPending": [
           "bedelias-fing-ingenieria-en-agrimensura-2023",
           "bedelias-fing-ingenieria-fisico-matematica-2017",
-          "bedelias-fing-licenciatura-en-computacion-2025",
-          "bedelias-fing-tecnologo-en-informatica-2007"
+          "bedelias-fing-licenciatura-en-computacion-2025"
         ]
       },
       {
@@ -6952,21 +6932,34 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-10-21",
-      "effectiveAt": "2021",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "Plan 2013, grilla actualizada 2021",
       "officialSources": [
         {
-          "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/node/3553",
-          "reviewedAt": "2026-10-21",
-          "role": "página documental vigente que enlaza expresamente el Plan 2013 actualizado en 2021"
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "role": "publicación vigente de la grilla actualizada en 2021",
+          "reviewedAt": "2026-11-16"
         },
         {
-          "authority": "Facultad de Derecho, Universidad de la República",
           "url": "https://www.fder.edu.uy/sites/default/files/2021-09/Plan%20de%20Estudios%20RRII%202013_0.pdf",
-          "reviewedAt": "2026-10-21",
-          "role": "texto de dos páginas: ocho semestres, 200 créditos del título intermedio, 320 del final y una sola Introducción a la Investigación; tablas visuales aún no verificadas"
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "role": "grilla cotejada en dos páginas",
+          "contentHash": "sha256:8673f1e2813d9b2c66e1402c451f82da26325a48e647c4480b9600553724ad3f",
+          "reviewedAt": "2026-11-16"
+        },
+        {
+          "url": "https://www.fder.edu.uy/node/9036",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "role": "código 2015 en el calendario de 2026",
+          "reviewedAt": "2026-11-16"
+        },
+        {
+          "url": "https://www.fder.edu.uy/node/7865",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "role": "código histórico 2015I en el calendario de 2025",
+          "reviewedAt": "2026-11-16"
         }
       ],
       "scope": {
@@ -6975,7 +6968,8 @@
         ],
         "pathwayIds": [
           "bedelias"
-        ]
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
         "primary": "official-periods",
@@ -6984,15 +6978,29 @@
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
+        "kind": "audited-projection",
         "sourceDataPath": "data/fder/rrii-2013-2021-evidence.json",
-        "validationDataPath": "data/fder/rrii-2013-2021-validation.json",
         "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-licenciatura-en-relaciones-internacionales-2013.json",
-        "reason": "La página vigente mantiene la grilla 2021, pero no se pudo revisar visualmente el PDF; el semestre 2 publica dos códigos técnicos para una única Introducción a la Investigación sin equivalencia oficial."
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:7cce5c490859741ff89d64d4e197b558c313fcc779ea1b02292afc2e8863028f",
+        "projectionContentHash": "sha256:d0b911f1f95c58172250423f7e46dfc97b1487c9c12cf4becb6eb43eae600c64",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 9
+          }
+        ],
+        "expectedCoursePlacements": 41,
+        "matchedCoursePlacements": 41
       },
       "conflictNotes": [
-        "Se preservan 2015 y 2015I con sus IDs y progreso: el PDF textual nombra una sola Introducción a la Investigación, pero no asigna código ni resuelve equivalencia.",
-        "El subtotal profesional, la duración publicada de 60 meses frente a ocho semestres y las variantes de egreso siguen como discrepancias documentadas en la auditoría; no se corrigen por inferencia."
+        "La grilla tiene una sola Introducción a la Investigación; se muestra 2015, documentado en 2026, y se conserva 2015I, documentado en 2025, sin alias ni migración automática de progreso.",
+        "El subtítulo profesional suma 60 créditos nominales más 30 de egreso, mientras su pie declara 227 obligatorios y Bedelías operacionaliza 80 profesionales; no se corrige por aritmética."
       ]
     },
     {
@@ -9946,78 +9954,78 @@
           "defaultCredentialId": "tecnologo-informatica"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-31",
-      "effectiveAt": "2007",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "Plan 2007; currículo básico y cargas de las secciones 6 y 10–12",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2007 del Tecnólogo en Informática, Facultad de Ingeniería",
           "url": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf",
-          "role": "título; seis semestres; 252 créditos; siete mínimos; pasantía; proyecto; implementaciones curriculares; gobernanza original",
-          "trajectoryEvidence": false
+          "authority": "Udelar y ANEP",
+          "role": "Secciones 6 y 10–12: vías de ingreso, ubicación y créditos",
+          "contentHash": "sha256:852f92b7cec2ea37ccb8738aa51539d9a4edbe2f39f5b5ad560b678ad57b30a0",
+          "reviewedAt": "2026-11-16"
         },
         {
-          "authority": "Página vigente del Tecnólogo en Informática, UTEC",
-          "url": "https://utec.edu.uy/es/educacion/carrera/tecnologo-en-informatica/",
-          "role": "vigencia; seis semestres; instituciones actuales; Florida; Maldonado; San José; Paysandú; modalidades; ingreso",
-          "trajectoryEvidence": false
+          "url": "https://www.fing.edu.uy/es/ense%C3%B1anza/carreras-terciarias-y-de-grado-7/curr%C3%ADcula-sugerida",
+          "authority": "Facultad de Ingeniería, Udelar",
+          "role": "Grilla de seis semestres",
+          "reviewedAt": "2026-11-16"
         },
         {
-          "authority": "Ingreso 2026 del Tecnólogo en Informática en Montevideo, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/tecnoinf/mvd/varios/sorteo2026.html",
-          "role": "oferta vigente en Montevideo; Buceo",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Sitio vigente del Tecnólogo en Informática en Maldonado, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/tecnoinf/maldonado/novedades.html",
-          "role": "oferta vigente en Maldonado",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Sitio vigente del Tecnólogo en Informática en Paysandú, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/tecnoinf/paysandu/midder.html",
-          "role": "oferta vigente en Paysandú",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Acuerdo interinstitucional 2018 del Tecnólogo en Informática",
-          "url": "https://www.fing.edu.uy/tecnoinf/maldonado/docsgrales/acuerdo2018.pdf",
-          "role": "Comisión Nacional; gobernanza Udelar-UTEC-DGETP-UTU",
-          "trajectoryEvidence": false
+          "url": "https://utec.edu.uy/uploads/plan/5614988ee1ea96ded1ec3f8bb97bd0e06f10800f.pdf",
+          "authority": "UTEC",
+          "role": "Malla de referencia de seis semestres y naturaleza flexible de los espacios",
+          "reviewedAt": "2026-11-16"
         }
       ],
       "scope": {
         "territories": [
           "Montevideo",
           "Florida",
-          "San José",
           "Maldonado",
+          "San José",
           "Paysandú"
         ],
         "pathwayIds": [
-          "curricula-personalizada"
-        ]
+          "curricula-personalizada",
+          "ingreso-tecnologico"
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "areas",
+        "primary": "official-periods",
         "features": [
-          "areas"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnologo en informatica:2007",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-en-informatica-2007.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/tecnologo-informatica-2007-semester-evidence.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-tecnologo-en-informatica-2007.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:cceb4e874d90b18dcfa35f80f86ba94bc57dded0d069a4d96109a85c8af9f171",
+        "projectionContentHash": "sha256:d7b07dfd4af4eae81bd78969292cda5b36f3ac1eb6d22a698fad25f8a7c7fb27",
+        "pathways": [
+          {
+            "id": "curricula-personalizada",
+            "periodCount": 6
+          },
+          {
+            "id": "ingreso-tecnologico",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 53,
+        "matchedCoursePlacements": 53
       },
       "conflictNotes": [
-        "duration: Bedelías muestra 60 meses, pero el Plan 2007 y la página vigente de UTEC establecen seis semestres/tres años. La UI usa 36 meses.",
-        "institutionalGovernance: El texto original refiere a Udelar y ANEP/CETP. La oferta vigente se gobierna entre Udelar, UTEC y DGETP-UTU; la UI usa las instituciones actuales sin alterar el Plan 2007.",
-        "regionalPrerequisites: CURE y CENURLN publican el mismo catálogo y créditos que FING, pero menos previaturas. Se conserva la cobertura canónica FING y no se infiere una variante curricular por sede.",
-        "campusModality: La modalidad varía por oferta: Florida, Maldonado y San José son presenciales; Paysandú es híbrida. Esto no crea trayectorias académicas distintas.",
-        "montevideoLocations: Buceo y LATU son puntos de ingreso/oferta dentro de Montevideo. Se modelan como una sola sede académica para no duplicar el mismo plan ni el progreso."
+        "Nivelación sin créditos diferenciada según el bachillerato de ingreso.",
+        "Los 12 espacios flexibles no son materias ni otorgan créditos por sí mismos; el Plan nombra ejemplos, no una oferta vigente por sede."
       ]
     },
     {
@@ -13729,5 +13737,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:6f8451156dadb7e4e581e1237311ea2c981322122383391a35bd0adcd7f6c8f5"
+  "contentHash": "sha256:428c12b5df549324ad47fa3fdb319c639b714e20a6c553297727cd1827a52bb5"
 }

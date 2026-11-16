@@ -1,0 +1,30 @@
+{
+  "consultedAt": "2026-11-16",
+  "authority": "Facultad de Ingeniería, Universidad de la República",
+  "effectiveAt": "guías publicadas en diciembre de 2024 y febrero de 2025; no se confirma vigencia por cohorte posterior",
+  "scope": "Referencias iniciales de tránsito desde Salto y Paysandú. No acreditan la oferta vigente, los códigos técnicos, la continuidad ni un egreso en esas sedes.",
+  "sources": {
+    "salto": "https://www.fing.edu.uy/sites/default/files/2024-12/curriculos-salto-v2_0.pdf",
+    "paysandu": "https://www.fing.edu.uy/sites/default/files/2025-02/curriculos-paysandu-v2.pdf"
+  },
+  "rows": {
+    "agrimensura-2023": {
+      "territories": ["salto", "paysandu"],
+      "sharedSemesters": [
+        [["Cálculo I",16],["Álgebra Lineal I",12],["Física I",10],["Taller de Diseño",6]],
+        [["Cálculo II",16],["Álgebra Lineal II",12],["Física II",10],["Física III",10]]
+      ]
+    },
+    "fisico-matematica-2017": {
+      "shared": {
+        "1": [["Cálculo I",16],["Álgebra Lineal I",12],["Física I",10]],
+        "2": [["Cálculo II",16],["Álgebra Lineal II",12],["Física II",10],["Física III",10]],
+        "3": [["Cálculo Vectorial",12],["Probabilidad y Estadística",10],["Mecánica Clásica",10],["Física Experimental I",5]],
+        "4": [["Ecuaciones Diferenciales",10],["Electromagnetismo",10],["Física Experimental II",5],["Teórica de Circuitos",8],["Diseño Lógico",12]]
+      },
+      "saltoAdditions": {"1":[["Taller de Diseño",6]],"3":[["Administración y Gestión de Organizaciones I",10]]},
+      "paysanduAdditions": {"1":[["Taller de Robótica",2]],"3":[["Principios de Química General",10]]}
+    }
+  },
+  "method": "Transcripción de los renglones tabulares de las dos guías. No se deducen códigos, equivalencias ni previaturas. Validar inscripciones, oferta regional y continuidad antes de generar una proyección."
+}

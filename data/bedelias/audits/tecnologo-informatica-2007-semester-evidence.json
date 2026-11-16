@@ -1,0 +1,335 @@
+{
+  "identity": "tecnologo en informatica:2007",
+  "planId": "bedelias-fing-tecnologo-en-informatica-2007",
+  "consultedAt": "2026-11-16",
+  "effectiveAt": "Plan 2007; currículo básico y cargas de las secciones 6 y 10–12",
+  "scope": "Referencia interinstitucional para cinco sedes; no confirma oferta ni horarios locales",
+  "sources": [
+    {
+      "url": "https://www.fing.edu.uy/sites/default/files/plan_tecnologo_informatico.pdf",
+      "authority": "Udelar y ANEP",
+      "role": "Secciones 6 y 10–12: vías de ingreso, ubicación y créditos"
+    },
+    {
+      "url": "https://www.fing.edu.uy/es/ense%C3%B1anza/carreras-terciarias-y-de-grado-7/curr%C3%ADcula-sugerida",
+      "authority": "Facultad de Ingeniería, Udelar",
+      "role": "Grilla de seis semestres"
+    },
+    {
+      "url": "https://utec.edu.uy/uploads/plan/5614988ee1ea96ded1ec3f8bb97bd0e06f10800f.pdf",
+      "authority": "UTEC",
+      "role": "Malla de referencia de seis semestres y naturaleza flexible de los espacios"
+    }
+  ],
+  "entryProfiles": [
+    {
+      "id": "curricula-personalizada",
+      "label": "Ingreso desde Secundaria",
+      "codes": [
+        "TI01",
+        "TI05"
+      ]
+    },
+    {
+      "id": "ingreso-tecnologico",
+      "label": "Ingreso desde Bachillerato Tecnológico en Informática",
+      "codes": [
+        "TI03"
+      ]
+    }
+  ],
+  "entryCourses": [
+    [
+      "TI01",
+      "Principios de Programación",
+      0
+    ],
+    [
+      "TI05",
+      "Arquitectura de Computadoras",
+      0
+    ],
+    [
+      "TI03",
+      "Matemáticas",
+      0
+    ]
+  ],
+  "semesters": [
+    [
+      [
+        "TI02",
+        "Matemática Discreta y Lógica 1",
+        12
+      ],
+      [
+        "actividad-complementaria-1",
+        "Actividad Complementaria 1",
+        8,
+        "informatica-humanas"
+      ]
+    ],
+    [
+      [
+        "TI06",
+        "Estructuras de Datos y Algoritmos",
+        16
+      ],
+      [
+        "TI08",
+        "Sistemas Operativos",
+        12
+      ],
+      [
+        "TI07",
+        "Matemática Discreta y Lógica 2",
+        6
+      ],
+      [
+        "TI09",
+        "Base de Datos 1",
+        12
+      ],
+      [
+        "actividad-complementaria-2",
+        "Actividad Complementaria 2",
+        4,
+        "informatica-humanas"
+      ]
+    ],
+    [
+      [
+        "TI12",
+        "Programación Avanzada",
+        12
+      ],
+      [
+        "TI11",
+        "Redes de Computadoras",
+        12
+      ],
+      [
+        "actividad-complementaria-3",
+        "Actividad Complementaria 3",
+        4,
+        "informatica-humanas"
+      ],
+      [
+        "TI13",
+        "Base de Datos 2",
+        12
+      ],
+      [
+        "actividad-complementaria-4",
+        "Actividad Complementaria 4",
+        8,
+        "informatica-humanas"
+      ]
+    ],
+    [
+      [
+        "TI16",
+        "Programación de Aplicaciones",
+        16
+      ],
+      [
+        "TI17",
+        "Administración de Infraestructuras",
+        8
+      ],
+      [
+        "TI18",
+        "Ingeniería de Software",
+        12
+      ],
+      [
+        "actividad-complementaria-5",
+        "Actividad Complementaria 5",
+        4,
+        "informatica-humanas"
+      ],
+      [
+        "opcional-matematica",
+        "Opcional en Matemática",
+        8,
+        "informatica-matematica"
+      ]
+    ],
+    [
+      [
+        "TI21",
+        "Pasantía Laboral",
+        10
+      ],
+      [
+        "opcional-tecnologica-1",
+        "Opcional Tecnológica 1",
+        12,
+        "plan-total"
+      ],
+      [
+        "opcional-tecnologica-2",
+        "Opcional Tecnológica 2",
+        12,
+        "plan-total"
+      ],
+      [
+        "opcional-tecnologica-3",
+        "Opcional Tecnológica 3",
+        4,
+        "plan-total"
+      ]
+    ],
+    [
+      [
+        "TI27",
+        "Proyecto",
+        20
+      ],
+      [
+        "opcional-tecnologica-4",
+        "Opcional Tecnológica 4",
+        12,
+        "plan-total"
+      ],
+      [
+        "opcional-tecnologica-5",
+        "Opcional Tecnológica 5",
+        12,
+        "plan-total"
+      ],
+      [
+        "opcional-tecnologica-6",
+        "Opcional Tecnológica 6",
+        4,
+        "plan-total"
+      ]
+    ]
+  ],
+  "normalizedRowsHash": "sha256:852f92b7cec2ea37ccb8738aa51539d9a4edbe2f39f5b5ad560b678ad57b30a0",
+  "auditedPathways": [
+    {
+      "id": "curricula-personalizada",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "courseIds": [
+            "fing-ti01-2",
+            "fing-ti05-2",
+            "fing-ti02-2",
+            "fing-actividad-complementaria-1"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "courseIds": [
+            "fing-ti06-2",
+            "fing-ti08-2",
+            "fing-ti07-2",
+            "fing-ti09-2",
+            "fing-actividad-complementaria-2"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "courseIds": [
+            "fing-ti12-2",
+            "fing-ti11-2",
+            "fing-actividad-complementaria-3",
+            "fing-ti13-2",
+            "fing-actividad-complementaria-4"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "courseIds": [
+            "fing-ti16-2",
+            "fing-ti17-2",
+            "fing-ti18-2",
+            "fing-actividad-complementaria-5",
+            "fing-opcional-matematica"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "courseIds": [
+            "fing-ti21-2",
+            "fing-opcional-tecnologica-1",
+            "fing-opcional-tecnologica-2",
+            "fing-opcional-tecnologica-3"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "courseIds": [
+            "fing-ti27-2",
+            "fing-opcional-tecnologica-4",
+            "fing-opcional-tecnologica-5",
+            "fing-opcional-tecnologica-6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ingreso-tecnologico",
+      "periods": [
+        {
+          "label": "Semestre 1",
+          "courseIds": [
+            "fing-ti03-2",
+            "fing-ti02-2",
+            "fing-actividad-complementaria-1"
+          ]
+        },
+        {
+          "label": "Semestre 2",
+          "courseIds": [
+            "fing-ti06-2",
+            "fing-ti08-2",
+            "fing-ti07-2",
+            "fing-ti09-2",
+            "fing-actividad-complementaria-2"
+          ]
+        },
+        {
+          "label": "Semestre 3",
+          "courseIds": [
+            "fing-ti12-2",
+            "fing-ti11-2",
+            "fing-actividad-complementaria-3",
+            "fing-ti13-2",
+            "fing-actividad-complementaria-4"
+          ]
+        },
+        {
+          "label": "Semestre 4",
+          "courseIds": [
+            "fing-ti16-2",
+            "fing-ti17-2",
+            "fing-ti18-2",
+            "fing-actividad-complementaria-5",
+            "fing-opcional-matematica"
+          ]
+        },
+        {
+          "label": "Semestre 5",
+          "courseIds": [
+            "fing-ti21-2",
+            "fing-opcional-tecnologica-1",
+            "fing-opcional-tecnologica-2",
+            "fing-opcional-tecnologica-3"
+          ]
+        },
+        {
+          "label": "Semestre 6",
+          "courseIds": [
+            "fing-ti27-2",
+            "fing-opcional-tecnologica-4",
+            "fing-opcional-tecnologica-5",
+            "fing-opcional-tecnologica-6"
+          ]
+        }
+      ]
+    }
+  ]
+}
