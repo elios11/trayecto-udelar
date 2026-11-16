@@ -1,0 +1,79 @@
+{
+  "identity": "licenciatura en diseno de paisaje:2008",
+  "planId": "bedelias-cure-licenciatura-en-diseno-de-paisaje-2008",
+  "officialPlanYear": 2007,
+  "firstTeachingYear": 2008,
+  "consultedAt": "2026-11-16",
+  "authority": "FADU, Facultad de Agronomía y CURE, Universidad de la República",
+  "scope": "Maldonado, una secuencia de referencia de ocho semestres, sin promesa de dictado ni imposición de todas las opciones",
+  "sources": {
+    "plan": "https://old.fadu.edu.uy/ldp/informacion-general/plan-estudios/",
+    "faduMap": "https://www.fadu.edu.uy/wp-content/uploads/2014/09/Mapa-Curricular-Carreras-FADU-2022.pdf",
+    "faduCareer": "https://www.fadu.edu.uy/carreras/ldp/informacion-general/",
+    "faduAxes": "https://www.fadu.edu.uy/carreras/ldp/ejes-ldp/",
+    "fagroGrid": "https://portal.fagro.edu.uy/ensenanza/unidad-de-ensenanza/licenciatura-en-diseno-de-paisajes/",
+    "currentAdmission": "https://www.fadu.edu.uy/ingreso/",
+    "cureCareer": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-diseno-de-paisaje/",
+    "cureReport": "https://www.cure.edu.uy/wp-content/uploads/2026/08/Informe-Evaluacion-Institucional-CURE-_-2025.pdf"
+  },
+  "snapshot": "data/bedelias/cure-licenciatura-en-diseno-de-paisaje-2008.json",
+  "normalizedRowsHash": "sha256:f3c72000d029179205ead0a7f824c8b8636879ade862261437e958ca123fb386",
+  "minimumCredits": { "total": 360, "core": 310, "flexible": 50 },
+  "axes": { "transversal": 6, "science": 101, "project": 160, "theory": 43 },
+  "rowFormat": ["nombre", "créditos", "eje", "código inequívoco o null", "códigos candidatos si existen"],
+  "semesters": [
+    { "number": 1, "rows": [
+      ["Taller Transversal de Iniciación al Diseño de Paisaje", 6, "transversal", "DP11"],
+      ["Ecología del Paisaje", 6, "science", null, ["DP12", "DP012"]],
+      ["Representación Gráfica del Espacio I", 10, "project", null, ["DP13", "DP013"]],
+      ["Percepción Ambiental y del Espacio", 4, "theory", null, ["DP14", "DP014"]]
+    ] },
+    { "number": 2, "rows": [
+      ["Diseño de Paisaje I", 20, "project", null, ["DP25", "DP186", "DP23"]],
+      ["Representación Gráfica del Espacio II", 10, "project", "DP24"],
+      ["Botánica I", 10, "science", null, ["DP21", "DP021"]],
+      ["Técnicas y Procedimientos Constructivos I", 7, "science", "DP22"]
+    ] },
+    { "number": 3, "rows": [
+      ["Diseño de Paisaje II", 20, "project", null, ["DP35", "DP33", "DP182"]],
+      ["Botánica II", 7, "science", null, ["DP31", "DP031"]],
+      ["Técnicas y Procedimientos Constructivos II", 7, "science", "DP32"],
+      ["Historia del Paisaje I", 8, "theory", "DP34"]
+    ] },
+    { "number": 4, "rows": [
+      ["Diseño de Paisaje III", 20, "project", null, ["DP45", "DP187", "DP43"]],
+      ["Botánica III", 7, "science", "DP41"],
+      ["Interpretación del Paisaje I", 7, "science", null, ["DP42", "DP042"]],
+      ["Teoría del Paisaje I", 8, "theory", "DP44"]
+    ] },
+    { "number": 5, "rows": [
+      ["Diseño de Paisaje IV", 20, "project", null, ["DP55", "DP53", "DP183"]],
+      ["Interpretación del Paisaje II", 7, "science", null, ["DP52", "DP052"]],
+      ["Arboricultura", 7, "science", "DP61"],
+      ["Teoría del Paisaje II", 8, "theory", "DP64"]
+    ] },
+    { "number": 6, "rows": [
+      ["Diseño de Paisaje V", 20, "project", null, ["DP65", "DP63", "DP188"]],
+      ["Historia del Paisaje II", 8, "theory", "DP54"],
+      ["Horticultura Ornamental", 7, "science", "DP51"],
+      ["Interpretación del Paisaje III", 10, "science", null, ["DP62", "DP062"]]
+    ] },
+    { "number": 7, "rows": [
+      ["Hidrología y Riego", 7, "science", "DP71"],
+      ["Clima y Confort", 5, "science", "DP72"],
+      ["Métodos de Investigación en Ciencias Sociales", 7, "theory", null, ["DP78", "DP77", "DP83"]]
+    ] },
+    { "number": 8, "rows": [
+      ["Gestión y Administración de Áreas Verdes", 7, "science", "DP81"]
+    ] }
+  ],
+  "annual": { "semesters": [7, 8], "row": ["Proyecto Final de Paisaje", 40, "project", null, ["DP73", "DP75", "DP184"]] },
+  "discrepancies": [
+    "El mapa FADU 2022 ubica Técnicas I en 2.º y Técnicas II en 3.º; Fagro nombra Técnicas I en 3.º. La lista de primer año de FADU también identifica Técnicas I. Se retiene la posición del mapa detallado.",
+    "Fagro lista Horticultura en 5.º y Arboricultura en 6.º; el mapa FADU 2022 hace lo contrario. No se infiere la oferta efectiva de ningún período a partir de la diferencia.",
+    "Fagro incluye Diseño de Paisaje V en 6.º y CURE publica que hay cinco talleres; el mapa FADU omite V. Las 28 filas de FADU suman 290 y la fila adicional de 20 completa los 310 créditos comunes.",
+    "Fagro muestra dos segmentos de 20 créditos del Proyecto Final; FADU lo rotula anual con 40 y Bedelías ofrece variantes de 40. Se conserva como una sola actividad.",
+    "La tabla de CURE rotula 2008 y la prosa de evaluación menciona al menos 48 electivos; el Plan FADU publicado y el mapa mantienen 50. No se cambia el mínimo sin acto académico que lo sustituya.",
+    "La captura web del PDF no estuvo disponible. Se cotejó su tabla estructurada con la grilla de Fagro, la página de ingreso y los registros de Bedelías. Los candidatos homónimos no son equivalencias."
+  ]
+}
