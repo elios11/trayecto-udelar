@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { buildNotariadoEvidenceValidation } from "../scripts/verify-notariado-2016-evidence.mjs";
+import { buildRegisteredPlanPresentation } from "../app/registered-plan-courses.mjs";
 
 const readJson = (path) => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), "utf8"));
 const evidence = readJson("data/fder/notariado-2016-evidence.json");
@@ -32,18 +33,32 @@ test("la discrepancia por áreas y los componentes ambiguos permanecen explícit
   assert.match(evidence.sourcePortion.flexiblePlacementNote, /20\/11\/2019/);
 });
 
-test("identidades y progreso quedan conservados sin publicación indebida", () => {
+test("la grilla conserva las identidades técnicas y separa créditos de la validación de egreso", () => {
   const entry = inventory.plans.find(({ planId }) => planId === evidence.planId);
-  assert.equal(entry.state, "research-pending");
-  assert.equal(report.decision, "research-pending");
+  assert.equal(entry.state, "official-trajectory-reproduced");
+  assert.equal(report.decision, entry.state);
   assert.equal(evidence.visualReview.status, "verified");
   assert.deepEqual(evidence.visualReview.pagesInspected, [1, 2, 3]);
   assert.equal(evidence.sourcePdfSha256, "60a64fa0dc1fa696edc13ad15609d19872d61d288b33cd0cff6ccde908024ee4");
   assert.equal(projection.plan.degreeTitle, "Escribano Público");
   assert.deepEqual(projection.campuses.map(({ id }) => id), ["montevideo", "salto"]);
-  assert.equal(projection.courses.length, report.checks.technicalIdsPreserved);
-  assert.equal(projection.courses.filter(({ authorityStatus }) => authorityStatus === "verified").length, 0);
-  assert.ok(Object.values(projection.publishedPathways).every(({ periods }) => periods.length === 0));
+  assert.equal(projection.courses.filter(c => c.bedeliasCode).length, report.checks.technicalIdsPreserved);
+  const periods = projection.publishedPathways["grilla-notariado-2016"].periods;
+  const courses = new Map(projection.courses.map(c => [c.id,c]));
+  const visible = periods.flatMap(p => p.courseIds.map(id => courses.get(id)));
+  assert.equal(new Set(visible.map(c => c.id)).size, 57);
+  assert.ok(visible.every(c => c.authorityStatus === "verified"));
+  assert.deepEqual(periods.map(p => p.courseIds.reduce((s,id)=>s+courses.get(id).credits,0)), evidence.sourcePortion.semesterCredits);
+  assert.equal(visible.filter(c => c.curricularBlock && c.elective).length, 4);
+  assert.deepEqual(courses.get("fder-notariado-grilla-s3-r1").creditAllocations.map(a => [a.nodeId,a.credits]), [["plan-total",14]]);
+  assert.deepEqual(courses.get("fder-notariado-grilla-s2-r5").creditAllocations.map(a => [a.nodeId,a.credits]), [["socio",4],["practica",2]]);
+  assert.ok(projection.creditStructure.credentials.every(c => c.requiredCourseGroups.some(g => g.id === "validacion-final-plan")));
+  for (const campus of projection.campuses) {
+    const presentation = buildRegisteredPlanPresentation(campus.defaultPathwayId, projection);
+    assert.equal(presentation.generated, false);
+    assert.deepEqual(presentation.periods, periods);
+    assert.deepEqual(new Set(presentation.courses.map(c => c.id)), new Set(visible.map(c => c.id)));
+  }
   assert.equal(report.checks.intermediateTitleCredits, 160);
 });
 

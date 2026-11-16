@@ -1,5 +1,12 @@
 # D03bh — Notariado Plan 2016
 
+## Proyección semestral (2026-11-16)
+
+- Regenerar sin red con `node scripts/build-notariado-2016-rows.mjs` y después `node scripts/build-notariado-2016.mjs`. La segunda etapa actualiza la auditoría, los catálogos, el inventario y los informes de cotejo.
+- Un plan y una grilla de diez semestres para Montevideo y Salto: 57 ubicaciones, siete códigos corroborados, 46 materias sólo-fuente y cuatro cupos flexibles. Se conservan los IDs técnicos recuperables y no se infieren equivalencias.
+- Los mínimos institucionales y el desglose quedan trazados. Las dos filas con sumas incompatibles cuentan sólo al total; el egreso requiere validación de requisitos por Facultad. Procurador mantiene su mínimo de 160 y validación manual. El aviso explica la excepción de la Parte 2 del seminario; no hay requisito automático por cohorte.
+- Quedan pendientes un catálogo nominal de optativas respaldado y la resolución institucional de las discrepancias de área. La reproducción de la grilla no acredita oferta futura ni cierre académico completo.
+
 ## Objetivo
 
 Reconciliar `bedelias-fder-notariado-2016`, hoy `research-pending`, con la [página del Plan 2016 de Facultad de Derecho](https://www.fder.edu.uy/node/431) y su [grilla vigente de diciembre de 2024, publicada en 2025](https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf). La grilla muestra diez semestres y 450 créditos en cinco años. Verificar visualmente sus tres páginas si es posible antes de atribuir a cada semestre las filas mezcladas por la extracción textual.
@@ -22,7 +29,17 @@ Guardar evidencia normalizada y versionada bajo `data/fder/`, con autoridad, URL
 - Validación del cotejo visual: prueba focal 4/4, dos regeneraciones idénticas del informe (SHA-256 `1e1f74b76af8d1c271f2be250eea48fc58432f27f61e23ed79efe5844e11a6a1`), `npm run lint` correcto y `git diff --check` limpio. `npm test` se intentó, pero Vite volvió a recibir `spawn EPERM` al cargar `vite.config.ts` en este worktree; no se atribuye a los datos nuevos.
 - Siguiente paso: cotejar cada fila con las identidades técnicas y la tabla oficial de materias, construir la trayectoria sin fusionar componentes ambiguos, regenerar las proyecciones y volver a validar cobertura y créditos. Repetir `npm test` tras la implementación. El comando de regeneración de esta fase es `node scripts/verify-notariado-2016-evidence.mjs`.
 
-## Cotejo técnico recuperable (2026-11-01)
+## Cotejo técnico recuperable (2026-11-04)
+
+- `node scripts/build-notariado-2016-rows.mjs` genera atómicamente `data/fder/notariado-2016-curricular-rows.json`: 57 filas con identidad estable, página, semestre y carga C. Curso. Verifica 450 créditos, 35 flexibles y siete códigos técnicos inequívocos. Registral permanece sólo-fuente por el conflicto teórico/práctico; los nueve códigos corroborados no se convierten todos automáticamente en correspondencias curriculares.
+- Próximo paso de implementación: completar asignaciones por área con el desglose publicado de las filas compuestas, conservar la discrepancia entre distribución y mínimos y conectar estos datos a `officialPlan.trajectories`/`curriculum`. La transcripción de filas ya está guardada y no requiere nueva extracción.
+- La prueba `tests/notariado-2016-curricular-rows.test.mjs` contrasta todos los rótulos con la evidencia, los diez subtotales, unicidad, cupos flexibles y exclusión de códigos en Registral. Suite completa del worktree: 1139/1139 (`tmp/notariado-2016/test-rows.log`); lint correcto. La tabla aún no está conectada a la UI.
+- El cotejo visual adicional de las tres páginas transcribe las columnas de área en `printedAreaCredits`, sin corregirlas: sus sumas son socio 71, público 102, privado 82, social 42, práctica 121 y flexibles 35. Contradicen el pie 61/101/94/42/117/35. Hay además dos filas cuya suma de áreas difiere de C. Curso: Obligaciones y Contratos (16 frente a 14) y Seminario Público Parte 1 (3 frente a 2). Se conservan los 450 créditos de C. Curso; no se duplican ni prorratean esas asignaciones. La futura proyección debe conservar estas contradicciones y exigir validación final de áreas en lugar de acreditar automáticamente las cifras inconsistentes.
+- Verificación posterior al desglose por áreas: prueba focal correcta y `npm test` 1139/1139; registro en `tmp/notariado-2016/test-areas.log`. El worktree activo y sus PDFs quedaron excluidos de la limpieza de espacio local.
+
+- Las porciones de las fuentes auxiliares se guardan en `data/fder/notariado-2016-technical-evidence.json`. El regenerador las vincula con nueve códigos concretos y verifica que los créditos coincidan con el snapshot; el informe conserva una huella de esta evidencia. Las identidades quedan respaldadas técnicamente, pero las filas compuestas siguen pendientes de decidir su representación curricular.
+- El calendario 2026 introduce una condición de cohorte relevante: aprobar el seminario antes de 2025 exime de Parte 2. La regla queda versionada para evitar que una futura proyección cree obligaciones nuevas sobre progreso histórico. No se infiere equivalencia del antiguo `52.4`.
+- Validación 04/11: `npm test` 1123/1123 en el worktree, prueba focal del cotejo correcta y regeneración offline correcta. La nueva huella del informe es `77dd648931a5d0cf755abe7a9a0ddff088503ef3bff122c99dcc83581f434ae5`; reemplaza la de la fase inicial citada abajo. Registro completo de pruebas en `tmp/notariado-2016/test-20261104.log`.
 
 - `node scripts/build-notariado-2016-crosswalk.mjs` produce atómicamente `data/fder/notariado-2016-crosswalk.json`, sin red. Conserva las 57 filas, sus páginas y semestres, los cuatro cupos flexibles y todos los códigos candidatos seleccionados expresamente para revisión. Incluye huellas del PDF, evidencia y proyección; no modifica la publicación ni el progreso.
 - Las filas de Derecho Registral exponen el conflicto 6/10 de teoría/práctica de la grilla frente a 10/6 de `32.4` y `32.5`. También permanecen explícitos el rótulo Sociedad y Derecho / Ciencia Política y los 3/2 créditos de Seminario de Derecho Público Parte 1. Los códigos unificados U se conservan como candidatos alternativos, sin acreditar simultáneamente sus componentes.

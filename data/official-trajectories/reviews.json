@@ -4853,6 +4853,49 @@
         "Los renglones de optativas/electivas/pasantía son cupos de crédito, no cursos obligatorios simultáneos.",
         "La grilla de entrada por FCIEN suma 357 créditos impresos, tres menos que el mínimo normativo de 360; no se prorratea ni se inventa el faltante."
       ]
+    },
+    {
+      "planId": "bedelias-fder-notariado-2016",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-04",
+      "effectiveAt": "2024-12-27",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Salto"
+        ],
+        "pathwayIds": [
+          "grilla-notariado-2016"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+          "authority": "Facultad de Derecho, Universidad de la República",
+          "reviewedAt": "2026-11-04",
+          "role": "grilla de diez semestres",
+          "contentHash": "sha256:60a64fa0dc1fa696edc13ad15609d19872d61d288b33cd0cff6ccde908024ee4"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/fder/notariado-2016-curricular-rows.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fder-notariado-2016.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "Obligaciones y Contratos: 16 por áreas frente a 14 de curso; Seminario Público Parte 1: 3 frente a 2. Ambas filas computan sólo al total del plan.",
+        "Las sumas por área de las filas, el pie de la grilla y los mínimos aprobados discrepan. Las cargas no se prorratean; se requiere la validación de Facultad de Derecho.",
+        "Registral conserva las dos identidades de fuente y sus cargas publicadas sin asociarlas a los códigos técnicos de carga invertida.",
+        "52.41 se usa para estudiantes que deben partes 1 y 2; quienes aprobaron parte 1 en 2025 y deben parte 2 usan 52.42. Quienes aprobaron el seminario antes de 2025 no deben parte 2."
+      ]
     }
   ]
 }

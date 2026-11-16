@@ -4306,9 +4306,9 @@
       "identity": "notariado:2016",
       "career": "NOTARIADO",
       "planYear": "2016",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-11-04",
       "status": "official-evidence-complete",
-      "scope": "plan-and-regional-offering",
+      "scope": "plan, sedes y grilla semestral oficial; identificación técnica parcial",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -4338,7 +4338,1141 @@
           "title": "Procurador",
           "minimumCredits": 160
         },
-        "trajectoryRule": "El Plan 2016 admite variaciones dentro de Notariado mediante optativas y electivas. Los cuatro primeros semestres forman un ciclo común con Abogacía; desde el quinto comienza el ciclo orientado a Notariado."
+        "trajectoryRule": "El Plan 2016 admite variaciones dentro de Notariado mediante optativas y electivas. Los cuatro primeros semestres forman un ciclo común con Abogacía; desde el quinto comienza el ciclo orientado a Notariado.",
+        "trajectories": [
+          {
+            "id": "grilla-notariado-2016",
+            "label": "Grilla oficial de Notariado",
+            "description": "Grilla oficial de diez semestres. Las cifras por área no coinciden con los subtotales y requieren revisión de Facultad de Derecho. Los cupos flexibles no garantizan oferta. Quienes aprobaron el Seminario de Derecho Público antes de 2025 no deben cursar la Parte 2.",
+            "campusIds": [
+              "montevideo",
+              "salto"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "11.2U",
+                  "11.3",
+                  "11.4U",
+                  "11.5",
+                  "11.6"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "notariado-grilla-s2-r1",
+                  "notariado-grilla-s2-r2",
+                  "notariado-grilla-s2-r3",
+                  "notariado-grilla-s2-r4",
+                  "notariado-grilla-s2-r5",
+                  "notariado-grilla-s2-r6",
+                  "notariado-grilla-s2-r7"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "notariado-grilla-s3-r1",
+                  "notariado-grilla-s3-r2",
+                  "notariado-grilla-s3-r3",
+                  "notariado-grilla-s3-r4",
+                  "notariado-grilla-s3-r5"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "notariado-grilla-s4-r1",
+                  "notariado-grilla-s4-r2",
+                  "notariado-grilla-s4-r3",
+                  "notariado-grilla-s4-r4",
+                  "notariado-grilla-s4-r5"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "notariado-grilla-s5-r1",
+                  "notariado-grilla-s5-r2",
+                  "notariado-grilla-s5-r3",
+                  "notariado-grilla-s5-r4",
+                  "notariado-grilla-s5-r5",
+                  "notariado-grilla-s5-r6"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "notariado-grilla-s6-r1",
+                  "notariado-grilla-s6-r2",
+                  "32.1",
+                  "32.2U"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "notariado-grilla-s7-r1",
+                  "notariado-grilla-s7-r2",
+                  "notariado-grilla-s7-r3",
+                  "notariado-grilla-s7-r4",
+                  "notariado-grilla-s7-r5",
+                  "notariado-grilla-s7-r6"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "notariado-grilla-s8-r1",
+                  "notariado-grilla-s8-r2",
+                  "notariado-grilla-s8-r3",
+                  "notariado-grilla-s8-r4",
+                  "notariado-grilla-s8-r5"
+                ]
+              },
+              {
+                "label": "Semestre 9",
+                "courseIds": [
+                  "notariado-grilla-s9-r1",
+                  "notariado-grilla-s9-r2",
+                  "notariado-grilla-s9-r3",
+                  "notariado-grilla-s9-r4",
+                  "notariado-grilla-s9-r5",
+                  "notariado-grilla-s9-r6"
+                ]
+              },
+              {
+                "label": "Semestre 10",
+                "courseIds": [
+                  "notariado-grilla-s10-r1",
+                  "notariado-grilla-s10-r2",
+                  "notariado-grilla-s10-r3",
+                  "notariado-grilla-s10-r4",
+                  "notariado-grilla-s10-r5",
+                  "notariado-grilla-s10-r6",
+                  "notariado-grilla-s10-r7",
+                  "notariado-grilla-s10-r8"
+                ]
+              }
+            ]
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+          "sourceDataPath": "data/fder/notariado-2016-curricular-rows.json",
+          "useBedeliasCompositionTree": true,
+          "preserveBedeliasCourseIds": true,
+          "usePublishedCredits": true,
+          "strictOfficialCourseIds": true,
+          "includeAllCoursesInPathwayCatalog": false,
+          "verifiedCourseIds": [
+            "11.2U",
+            "11.3",
+            "11.4U",
+            "11.5",
+            "11.6",
+            "32.1",
+            "32.2U"
+          ],
+          "courseOverrides": {
+            "11.2U": {
+              "name": "Constitucional",
+              "credits": 15,
+              "periodLabel": "Semestre 1",
+              "requirementId": "socio",
+              "additionalRequirementIds": [
+                "publico"
+              ],
+              "allocationCreditOverrides": {
+                "socio": 2,
+                "publico": 13
+              },
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "11.3": {
+              "name": "Ideas Jurídico-Políticas en la Construcción del Orden Moderno",
+              "credits": 8,
+              "periodLabel": "Semestre 1",
+              "requirementId": "socio",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "socio": 8
+              },
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "11.4U": {
+              "name": "Sociedad y Derecho",
+              "credits": 9,
+              "periodLabel": "Semestre 1",
+              "requirementId": "socio",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "socio": 9
+              },
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "11.5": {
+              "name": "Historia del Derecho",
+              "credits": 6,
+              "periodLabel": "Semestre 1",
+              "requirementId": "socio",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "socio": 6
+              },
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "11.6": {
+              "name": "Personas",
+              "credits": 6,
+              "periodLabel": "Semestre 1",
+              "requirementId": "privado",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "privado": 6
+              },
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "32.1": {
+              "name": "Procesal 2",
+              "credits": 12,
+              "periodLabel": "Semestre 6",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 12
+              },
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            },
+            "32.2U": {
+              "name": "Comercial 1",
+              "credits": 14,
+              "periodLabel": "Semestre 6",
+              "requirementId": "privado",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "privado": 12,
+                "practica": 2
+              },
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true
+            }
+          },
+          "additionalCourses": [
+            {
+              "name": "Taller de Lecto Escritura Universitaria",
+              "credits": 5,
+              "periodLabel": "Semestre 2",
+              "requirementId": "socio",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "socio": 5
+              },
+              "id": "notariado-grilla-s2-r1",
+              "sourceCourseId": "notariado-grilla-s2-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Introducción al Fenómeno Jurídico",
+              "credits": 4,
+              "periodLabel": "Semestre 2",
+              "requirementId": "socio",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "socio": 4
+              },
+              "id": "notariado-grilla-s2-r2",
+              "sourceCourseId": "notariado-grilla-s2-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Bienes",
+              "credits": 6,
+              "periodLabel": "Semestre 2",
+              "requirementId": "privado",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "privado": 6
+              },
+              "id": "notariado-grilla-s2-r3",
+              "sourceCourseId": "notariado-grilla-s2-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Introducción al D. Penal",
+              "credits": 6,
+              "periodLabel": "Semestre 2",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 6
+              },
+              "id": "notariado-grilla-s2-r4",
+              "sourceCourseId": "notariado-grilla-s2-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Informático e Informática Jurídica 1",
+              "credits": 6,
+              "periodLabel": "Semestre 2",
+              "requirementId": "socio",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "socio": 4,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s2-r5",
+              "sourceCourseId": "notariado-grilla-s2-r5",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Sociedad y Derecho / Ciencia Política",
+              "credits": 9,
+              "periodLabel": "Semestre 2",
+              "requirementId": "socio",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "socio": 7,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s2-r6",
+              "sourceCourseId": "notariado-grilla-s2-r6",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derechos Humanos",
+              "credits": 10,
+              "periodLabel": "Semestre 2",
+              "requirementId": "social",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "social": 10
+              },
+              "id": "notariado-grilla-s2-r7",
+              "sourceCourseId": "notariado-grilla-s2-r7",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Obligaciones y contratos",
+              "credits": 14,
+              "periodLabel": "Semestre 3",
+              "requirementId": "plan-total",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "plan-total": 14
+              },
+              "id": "notariado-grilla-s3-r1",
+              "sourceCourseId": "notariado-grilla-s3-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Economía, Derecho e Instituciones",
+              "credits": 8,
+              "periodLabel": "Semestre 3",
+              "requirementId": "socio",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "socio": 6,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s3-r2",
+              "sourceCourseId": "notariado-grilla-s3-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Procesal 1",
+              "credits": 12,
+              "periodLabel": "Semestre 3",
+              "requirementId": "publico",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "publico": 10,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s3-r3",
+              "sourceCourseId": "notariado-grilla-s3-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Introducción a la Metodología de la Investigación",
+              "credits": 6,
+              "periodLabel": "Semestre 3",
+              "requirementId": "socio",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "socio": 4,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s3-r4",
+              "sourceCourseId": "notariado-grilla-s3-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Informático e Informática Jurídica 2",
+              "credits": 4,
+              "periodLabel": "Semestre 3",
+              "requirementId": "socio",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "socio": 4
+              },
+              "id": "notariado-grilla-s3-r5",
+              "sourceCourseId": "notariado-grilla-s3-r5",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "D. Penal - Parte General",
+              "credits": 7,
+              "periodLabel": "Semestre 4",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 7
+              },
+              "id": "notariado-grilla-s4-r1",
+              "sourceCourseId": "notariado-grilla-s4-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Teoría de la Responsabilidad civil",
+              "credits": 10,
+              "periodLabel": "Semestre 4",
+              "requirementId": "privado",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "privado": 10
+              },
+              "id": "notariado-grilla-s4-r2",
+              "sourceCourseId": "notariado-grilla-s4-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Internacional Público",
+              "credits": 12,
+              "periodLabel": "Semestre 4",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 12
+              },
+              "id": "notariado-grilla-s4-r3",
+              "sourceCourseId": "notariado-grilla-s4-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Trabajo y Seguridad Social",
+              "credits": 11,
+              "periodLabel": "Semestre 4",
+              "requirementId": "social",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "social": 10,
+                "practica": 1
+              },
+              "id": "notariado-grilla-s4-r4",
+              "sourceCourseId": "notariado-grilla-s4-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Opcional o electiva",
+              "credits": 6,
+              "periodLabel": "Semestre 4",
+              "requirementId": "flexibles",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "flexibles": 6
+              },
+              "id": "notariado-grilla-s4-r5",
+              "sourceCourseId": "notariado-grilla-s4-r5",
+              "curricularBlock": true,
+              "elective": true,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-flexible-slot"
+            },
+            {
+              "name": "Contratos Especiales",
+              "credits": 12,
+              "periodLabel": "Semestre 5",
+              "requirementId": "privado",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "privado": 10,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s5-r1",
+              "sourceCourseId": "notariado-grilla-s5-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Notarial Teórico",
+              "credits": 8,
+              "periodLabel": "Semestre 5",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 8
+              },
+              "id": "notariado-grilla-s5-r2",
+              "sourceCourseId": "notariado-grilla-s5-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Notarial Práctico",
+              "credits": 8,
+              "periodLabel": "Semestre 5",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 8
+              },
+              "id": "notariado-grilla-s5-r3",
+              "sourceCourseId": "notariado-grilla-s5-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Administrativo 1",
+              "credits": 6,
+              "periodLabel": "Semestre 5",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 6
+              },
+              "id": "notariado-grilla-s5-r4",
+              "sourceCourseId": "notariado-grilla-s5-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Tributario Teórico",
+              "credits": 4,
+              "periodLabel": "Semestre 5",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 4
+              },
+              "id": "notariado-grilla-s5-r5",
+              "sourceCourseId": "notariado-grilla-s5-r5",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Tributario Práctico",
+              "credits": 10,
+              "periodLabel": "Semestre 5",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 10
+              },
+              "id": "notariado-grilla-s5-r6",
+              "sourceCourseId": "notariado-grilla-s5-r6",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Registral Teórico",
+              "credits": 6,
+              "periodLabel": "Semestre 6",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 6
+              },
+              "id": "notariado-grilla-s6-r1",
+              "sourceCourseId": "notariado-grilla-s6-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Registral",
+              "credits": 10,
+              "periodLabel": "Semestre 6",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 10
+              },
+              "id": "notariado-grilla-s6-r2",
+              "sourceCourseId": "notariado-grilla-s6-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Infancia, Adolescencia y Familia",
+              "credits": 6,
+              "periodLabel": "Semestre 7",
+              "requirementId": "social",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "social": 6
+              },
+              "id": "notariado-grilla-s7-r1",
+              "sourceCourseId": "notariado-grilla-s7-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Comercial 2",
+              "credits": 12,
+              "periodLabel": "Semestre 7",
+              "requirementId": "privado",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "privado": 10,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s7-r2",
+              "sourceCourseId": "notariado-grilla-s7-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Administrativo 2",
+              "credits": 7,
+              "periodLabel": "Semestre 7",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 7
+              },
+              "id": "notariado-grilla-s7-r3",
+              "sourceCourseId": "notariado-grilla-s7-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Seminario del Área",
+              "credits": 2,
+              "periodLabel": "Semestre 7",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 2
+              },
+              "id": "notariado-grilla-s7-r4",
+              "sourceCourseId": "notariado-grilla-s7-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Familia Personal y Patrimonial",
+              "credits": 8,
+              "periodLabel": "Semestre 7",
+              "requirementId": "privado",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "privado": 8
+              },
+              "id": "notariado-grilla-s7-r5",
+              "sourceCourseId": "notariado-grilla-s7-r5",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Agrario",
+              "credits": 10,
+              "periodLabel": "Semestre 7",
+              "requirementId": "social",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "social": 10
+              },
+              "id": "notariado-grilla-s7-r6",
+              "sourceCourseId": "notariado-grilla-s7-r6",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Sucesiones",
+              "credits": 8,
+              "periodLabel": "Semestre 8",
+              "requirementId": "privado",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "privado": 6,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s8-r1",
+              "sourceCourseId": "notariado-grilla-s8-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Técnica Notarial Personas y bienes",
+              "credits": 14,
+              "periodLabel": "Semestre 8",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 14
+              },
+              "id": "notariado-grilla-s8-r2",
+              "sourceCourseId": "notariado-grilla-s8-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Técnica Notarial Sociedades Comerciales",
+              "credits": 7,
+              "periodLabel": "Semestre 8",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 7
+              },
+              "id": "notariado-grilla-s8-r3",
+              "sourceCourseId": "notariado-grilla-s8-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Seminario del Área",
+              "credits": 2,
+              "periodLabel": "Semestre 8",
+              "requirementId": "privado",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "privado": 2
+              },
+              "id": "notariado-grilla-s8-r4",
+              "sourceCourseId": "notariado-grilla-s8-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Opcional o electiva",
+              "credits": 14,
+              "periodLabel": "Semestre 8",
+              "requirementId": "flexibles",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "flexibles": 14
+              },
+              "id": "notariado-grilla-s8-r5",
+              "sourceCourseId": "notariado-grilla-s8-r5",
+              "curricularBlock": true,
+              "elective": true,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-flexible-slot"
+            },
+            {
+              "name": "Técnica Procesal y Administrativa",
+              "credits": 12,
+              "periodLabel": "Semestre 9",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 12
+              },
+              "id": "notariado-grilla-s9-r1",
+              "sourceCourseId": "notariado-grilla-s9-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Técnica Notarial Contratos Civiles",
+              "credits": 7,
+              "periodLabel": "Semestre 9",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 7
+              },
+              "id": "notariado-grilla-s9-r2",
+              "sourceCourseId": "notariado-grilla-s9-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Clínica Notarial 1",
+              "credits": 6,
+              "periodLabel": "Semestre 9",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 6
+              },
+              "id": "notariado-grilla-s9-r3",
+              "sourceCourseId": "notariado-grilla-s9-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Técnica Notarial Contratos Comerciales",
+              "credits": 9,
+              "periodLabel": "Semestre 9",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 9
+              },
+              "id": "notariado-grilla-s9-r4",
+              "sourceCourseId": "notariado-grilla-s9-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Seminario área 3",
+              "credits": 2,
+              "periodLabel": "Semestre 9",
+              "requirementId": "social",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "social": 2
+              },
+              "id": "notariado-grilla-s9-r5",
+              "sourceCourseId": "notariado-grilla-s9-r5",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Opcional o electiva",
+              "credits": 8,
+              "periodLabel": "Semestre 9",
+              "requirementId": "flexibles",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "flexibles": 8
+              },
+              "id": "notariado-grilla-s9-r6",
+              "sourceCourseId": "notariado-grilla-s9-r6",
+              "curricularBlock": true,
+              "elective": true,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-flexible-slot"
+            },
+            {
+              "name": "Clínica Notarial 2",
+              "credits": 6,
+              "periodLabel": "Semestre 10",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 6
+              },
+              "id": "notariado-grilla-s10-r1",
+              "sourceCourseId": "notariado-grilla-s10-r1",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Técnica Notarial Contratos de Garantías y otros",
+              "credits": 7,
+              "periodLabel": "Semestre 10",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 7
+              },
+              "id": "notariado-grilla-s10-r2",
+              "sourceCourseId": "notariado-grilla-s10-r2",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Financiamiento Empresarial",
+              "credits": 4,
+              "periodLabel": "Semestre 10",
+              "requirementId": "social",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "social": 4
+              },
+              "id": "notariado-grilla-s10-r3",
+              "sourceCourseId": "notariado-grilla-s10-r3",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Seminario del Área",
+              "credits": 2,
+              "periodLabel": "Semestre 10",
+              "requirementId": "practica",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "practica": 2
+              },
+              "id": "notariado-grilla-s10-r4",
+              "sourceCourseId": "notariado-grilla-s10-r4",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Derecho Internacional Privado",
+              "credits": 12,
+              "periodLabel": "Semestre 10",
+              "requirementId": "socio",
+              "additionalRequirementIds": [
+                "practica"
+              ],
+              "allocationCreditOverrides": {
+                "socio": 10,
+                "practica": 2
+              },
+              "id": "notariado-grilla-s10-r5",
+              "sourceCourseId": "notariado-grilla-s10-r5",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Seminario de Derecho Público (Parte 1)",
+              "credits": 2,
+              "periodLabel": "Semestre 10",
+              "requirementId": "plan-total",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "plan-total": 2
+              },
+              "id": "notariado-grilla-s10-r6",
+              "sourceCourseId": "notariado-grilla-s10-r6",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Seminario de Derecho Público (Parte 2)",
+              "credits": 6,
+              "periodLabel": "Semestre 10",
+              "requirementId": "publico",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "publico": 6
+              },
+              "id": "notariado-grilla-s10-r7",
+              "sourceCourseId": "notariado-grilla-s10-r7",
+              "curricularBlock": false,
+              "elective": false,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-source-only-course"
+            },
+            {
+              "name": "Opcional o electiva",
+              "credits": 7,
+              "periodLabel": "Semestre 10",
+              "requirementId": "flexibles",
+              "additionalRequirementIds": [],
+              "allocationCreditOverrides": {
+                "flexibles": 7
+              },
+              "id": "notariado-grilla-s10-r8",
+              "sourceCourseId": "notariado-grilla-s10-r8",
+              "curricularBlock": true,
+              "elective": true,
+              "sourceUrl": "https://www.fder.edu.uy/sites/default/files/2025-10/GRILLA%202025%20Notariado.pdf",
+              "catalogRole": "official-flexible-slot"
+            }
+          ],
+          "creditRequirements": [
+            {
+              "id": "socio",
+              "name": "Formación socio-jurídica, teórico-jurídica y metodológica",
+              "shortName": "Formación socio-jurídica, teórico-jurídica y metodológica",
+              "minCredits": 61
+            },
+            {
+              "id": "publico",
+              "name": "Derecho público",
+              "shortName": "Derecho público",
+              "minCredits": 83
+            },
+            {
+              "id": "privado",
+              "name": "Derecho privado",
+              "shortName": "Derecho privado",
+              "minCredits": 94
+            },
+            {
+              "id": "social",
+              "name": "Derecho de carácter social específico",
+              "shortName": "Derecho de carácter social específico",
+              "minCredits": 42
+            },
+            {
+              "id": "practica",
+              "name": "Práctica profesional",
+              "shortName": "Práctica profesional",
+              "minCredits": 135
+            },
+            {
+              "id": "flexibles",
+              "name": "Optativas o electivas",
+              "shortName": "Optativas o electivas",
+              "minCredits": 35
+            }
+          ],
+          "projectionAnomalies": [
+            "Obligaciones y Contratos: 16 por áreas frente a 14 de curso; Seminario Público Parte 1: 3 frente a 2. Ambas filas computan sólo al total del plan.",
+            "Las sumas por área de las filas, el pie de la grilla y los mínimos aprobados discrepan. Las cargas no se prorratean; se requiere la validación de Facultad de Derecho.",
+            "Registral conserva las dos identidades de fuente y sus cargas publicadas sin asociarlas a los códigos técnicos de carga invertida.",
+            "52.41 se usa para estudiantes que deben partes 1 y 2; quienes aprobaron parte 1 en 2025 y deben parte 2 usan 52.42. Quienes aprobaron el seminario antes de 2025 no deben parte 2."
+          ],
+          "manualCompletionValidation": "Validación de requisitos y distribución por áreas con Facultad de Derecho",
+          "credentials": [
+            {
+              "id": "bedelias-degree",
+              "title": "Escribano Público",
+              "minTotalCredits": 450,
+              "requiredCourseGroupIds": [
+                "validacion-final-plan"
+              ]
+            },
+            {
+              "id": "procurador",
+              "title": "Procurador",
+              "minTotalCredits": 160,
+              "requiredCourseGroupIds": [
+                "validacion-final-plan"
+              ]
+            }
+          ]
+        }
       },
       "offerings": [
         {
@@ -4383,7 +5517,10 @@
           "Mantener las 52 materias adicionales de Salto dentro del catálogo flexible; no proyectarlas como obligatorias.",
           "Tratar la menor cobertura regional de previaturas como una diferencia de publicación.",
           "Conservar Procurador como título intermedio común de 160 créditos."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/fder/notariado-2016-curricular-rows.json",
+        "trajectoryCoverage": "diez semestres, con correspondencia técnica parcial y validación manual de áreas"
       },
       "sources": [
         {
@@ -4428,7 +5565,8 @@
           ]
         }
       ],
-      "remainingWork": "La auditoría resuelve la falsa diferencia regional y los requisitos normativos vigentes. La selección curada de unidades, previaturas y catálogo flexible para la UI sigue pendiente y no habilita publicación."
+      "remainingWork": "Verificar la distribución por áreas con Facultad de Derecho, el catálogo nominal de optativas y las correspondencias técnicas pendientes.",
+      "uiNotice": "Grilla oficial de diez semestres. Las cifras por área no coinciden con los subtotales y requieren revisión de Facultad de Derecho. Los cupos flexibles no garantizan oferta. Quienes aprobaron el Seminario de Derecho Público antes de 2025 no deben cursar la Parte 2."
     },
     {
       "identity": "licenciatura en enfermeria:2016",
@@ -92941,6 +94079,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:7395e05d884d707691c2d1cad9f45a287e5ffe26b9bf637e6e2090f694341b2a",
+  "contentHash": "sha256:99a64eba0b7cc1420378421bcd80678fd6dfd4b5d571c075c1794d33e440ef05",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
