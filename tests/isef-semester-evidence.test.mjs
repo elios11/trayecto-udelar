@@ -35,3 +35,77 @@ test("las opciones suman 60 créditos; Deporte exige cuatro modalidades, no las 
   assert.ok(rows.every(([semester, , value]) => [6, 7, 8].includes(semester) && value === 6));
   assert.equal(requiredCredits, requiredCount * 6);
 });
+
+test("el cotejo ISEF distingue el tronco, las opciones y las identidades ambiguas en las tres sedes", () => {
+  const crosswalk = audit.bedeliasCrosswalk;
+  const technicalIds = [
+    ...crosswalk.commonCodes.flat().filter(Boolean),
+    ...crosswalk.annualCodes,
+    ...Object.values(crosswalk.optionCodes).flat(),
+    ...crosswalk.deporteChoiceCodes,
+  ];
+  assert.equal(technicalIds.length, 62);
+  assert.equal(new Set(technicalIds).size, technicalIds.length);
+  assert.deepEqual(crosswalk.commonCodes.map((rows) => rows.length), audit.common.map((rows) => rows.length));
+  assert.equal(crosswalk.annualCodes.length, audit.annualCommon.length);
+  assert.deepEqual(crosswalk.seminarioSemesters, [7, 8]);
+  assert.equal(crosswalk.deporteChoiceCodes.length, audit.deporteChoice.rows.length);
+  const missing = crosswalk.commonCodes.flatMap((rows, index) =>
+    rows.flatMap((id, column) => id === null ? [[index + 1, column]] : []));
+  assert.deepEqual(missing, crosswalk.unresolvedCommon.map(({ semester, index }) => [semester, index]));
+  const branches = {
+    "practicas-corporales": "173 - OPCIÓN PRÁCTICAS CORPORALES",
+    salud: "172 - OPCIÓN SALUD",
+    "tiempo-libre-y-ocio": "174 - OPCIÓN TIEMPO LIBRE Y OCIO",
+    deporte: "171 - OPCIÓN DEPORTE",
+  };
+  for (const path of [crosswalk.snapshot, ...crosswalk.regionalSnapshots]) {
+    const courses = JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), "utf8")).plan.courses;
+    const byCode = new Map();
+    for (const code of technicalIds) {
+      const matches = courses.filter((row) => row.code === code);
+      assert.equal(matches.length, 1, `${path}: ${code}`);
+      byCode.set(code, matches[0]);
+    }
+    const hasBranch = (course, prefix) =>
+      course.curriculumPaths.some((trail) => trail.some((node) => node.startsWith(prefix)));
+    let commonCredits = 0;
+    for (const code of [...crosswalk.commonCodes.flat().filter(Boolean), ...crosswalk.annualCodes]) {
+      const course = byCode.get(code);
+      assert.ok(hasBranch(course, "2030 - TRONCO COMÚN"), code);
+      commonCredits += course.credits;
+    }
+    for (const row of crosswalk.unresolvedCommon) {
+      assert.ok(audit.sources[row.source]?.startsWith("https://isef.udelar.edu.uy/"));
+      for (const code of row.candidateCodes) {
+        assert.ok(!byCode.has(code), code);
+        const candidate = courses.find((course) => course.code === code);
+        assert.ok(candidate && hasBranch(candidate, "2030 - TRONCO COMÚN"), code);
+        assert.equal(candidate.credits, row.credits, code);
+      }
+      commonCredits += row.credits;
+    }
+    assert.equal(commonCredits, audit.minimumCredits.common, path);
+    for (const [key, codes] of Object.entries(crosswalk.optionCodes)) {
+      assert.equal(codes.length, audit.options[key].length);
+      for (const [index, code] of codes.entries()) {
+        const course = byCode.get(code);
+        const [, name, officialCredits] = audit.options[key][index];
+        const conflict = crosswalk.creditConflicts[code];
+        if (conflict) {
+          assert.equal(conflict.official, officialCredits);
+          assert.notEqual(conflict.official, conflict.bedelias);
+          assert.ok(audit.sources[conflict.source]);
+        }
+        assert.ok(hasBranch(course, branches[key]), code);
+        assert.equal(course.credits, conflict?.bedelias ?? officialCredits, code);
+        if (name === "Seminario") assert.match(course.name, /^SEMINARIO /);
+      }
+    }
+    for (const code of crosswalk.deporteChoiceCodes) {
+      const course = byCode.get(code);
+      assert.ok(hasBranch(course, branches.deporte), code);
+      assert.equal(course.credits, 6, code);
+    }
+  }
+});

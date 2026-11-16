@@ -6,7 +6,11 @@
   "sources": {
     "programs": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/",
     "options": "https://isef.udelar.edu.uy/wp-content/uploads/2024/12/Opciones-LEF-diciembre2024.pdf",
-    "maldonado": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-educacion-fisica/"
+    "maldonado": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-educacion-fisica/",
+    "fundamentos": "https://isef.udelar.edu.uy/wp-content/uploads/2024/03/1.-Fundamentos-Anatomo-Fisiologicos-CORREGIDO-7.12.17.pdf",
+    "aprendizaje": "https://isef.udelar.edu.uy/wp-content/uploads/2024/03/1.-Teorias-del-Aprendizaje-y-del-Sujeto-CORREGIDO-7.12.17.pdf",
+    "practicasCorporales": "https://isef.udelar.edu.uy/wp-content/uploads/2021/02/Programa-EF-y-Practicas-Corporales-PLAN-2017.pdf",
+    "seminario": "https://isef.udelar.edu.uy/wp-content/uploads/2026/03/PLAN-2017-Seminario-reformulacion-2025.pdf"
   },
   "edition": "Plan 2017, bloque vigente de programas; guía de opciones de diciembre de 2024",
   "minimumCredits": { "common": 270, "option": 60, "flexible": 30 },
@@ -36,9 +40,43 @@
     "requiredCredits": 24,
     "rows": [[6, "Handball", 6], [6, "Fútbol", 6], [7, "Voleibol", 6], [7, "Básquetbol", 6], [7, "Natación II", 6], [8, "Atletismo", 6], [8, "Gimnasia Artística", 6]]
   },
+  "bedeliasCrosswalk": {
+    "snapshot": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
+    "regionalSnapshots": [
+      "data/bedelias/cure-licenciatura-en-educacion-fisica-2017.json",
+      "data/bedelias/cenurln-licenciatura-en-educacion-fisica-2017.json"
+    ],
+    "commonCodes": [
+      ["CE1TE", "CE1EF", "CE1CH", null, null],
+      ["CE2EN", "CD2TP", "CS2S1", "CP2G1", "CT2J1"],
+      ["CS5S2", "CD3C1", "CP3RD", "CT3R", "CB3FE"],
+      ["CE4P", "CD4DI", "CP4G2", "CT4VC", "CE4H", "CE4MH"],
+      ["CB5TE", "CD5C2", "CP5C1", "CE3II"],
+      ["CD6N1", "CD6C3", "CE6EC", "CS6A1"],
+      [],
+      []
+    ],
+    "unresolvedCommon": [
+      { "semester": 1, "index": 3, "credits": 10, "candidateCodes": ["CB1AF", "FAF"], "source": "fundamentos" },
+      { "semester": 1, "index": 4, "credits": 8, "candidateCodes": ["CE1AS", "CE1AR"], "source": "aprendizaje" }
+    ],
+    "annualCodes": ["CE5P1", "CE7P2"],
+    "optionCodes": {
+      "practicas-corporales": ["OPC01", "OPC02", "OPC03", "OPC04", "OSEMP", "OPC05", "OPC06"],
+      "salud": ["OS001", "OS002", "OS003", "OS004", "OSEMS", "OS005", "OS006"],
+      "tiempo-libre-y-ocio": ["OT001", "OT002", "OT003", "OT004", "OSEMT", "OT005", "OT006"],
+      "deporte": ["OD001", "OD003", "OD004", "OSEMD", "OD007"]
+    },
+    "seminarioSemesters": [7, 8],
+    "deporteChoiceCodes": ["OD002", "OD008", "OD005", "OD009", "OD010", "OD006", "OD011"],
+    "creditConflicts": {
+      "OPC01": { "official": 10, "bedelias": 12, "source": "practicasCorporales" }
+    }
+  },
   "openQuestions": [
     "La guía de ISEF de 2024 indica Salud en Montevideo y Paysandú; la ficha oficial de CURE lista Salud entre los perfiles sin precisar oferta anual de la opción en Maldonado. No cambiar el filtro de sede sin evidencia operativa.",
     "El seminario es específico de la opción; no se deduce una identidad común del enlace genérico.",
-    "Cotejar nombres con códigos, créditos y áreas de Bedelías; no considerar todas las modalidades deportivas obligatorias ni contar cada práctica de nuevo en el siguiente semestre."
+    "Dos materias de primero no tienen código técnico inequívoco. Conservar sus filas y créditos de fuente sin transferir progreso por coincidencia nominal.",
+    "La proyección aún debe distinguir las modalidades deportivas de los cursos fijos y conservar las prácticas y seminarios anuales como ocurrencias únicas."
   ]
 }
