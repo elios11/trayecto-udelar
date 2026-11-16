@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:cf8c364a1161c92acfc953b37a6a9732abb6936f66be55b821eea460e381e224",
-    "officialAuditHash": "sha256:0f8d1a85f13514fb0e6540c796fe538348753e9362517f4275a4b836906bde79",
+    "auditQueueHash": "sha256:f32dd40faf56910c36c769a014e01e41708a530993e71c191111f571812387c3",
+    "officialAuditHash": "sha256:251e032938caff209a6be8b44971f4b6f0a29db0bbfd77271423c6357043a11c",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -23,20 +23,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 6072,
-      "candidate": 26913,
+      "verified": 6137,
+      "candidate": 26858,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 32993,
-    "afterPublishedCourses": 6072,
+    "beforePublishedCourses": 33003,
+    "afterPublishedCourses": 6137,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 1924,
-    "visibleTargetsWithUnpublishedDependencies": 1593,
+    "afterPublishedRules": 1995,
+    "visibleTargetsWithUnpublishedDependencies": 1624,
     "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 72,
-    "plansWithStructureOnly": 3
+    "plansWithPartialCatalog": 73,
+    "plansWithStructureOnly": 2
   },
   "plans": [
     {
@@ -4551,7 +4551,7 @@
       "facultyCode": "ISEF",
       "snapshotPath": "data/bedelias/isef-licenciatura-en-educacion-fisica-2017.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -4560,18 +4560,18 @@
         "paysandu"
       ],
       "before": {
-        "publishedCourses": 1434,
+        "publishedCourses": 1444,
         "publishedRules": 117
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 1434,
-        "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "publishedCourses": 65,
+        "hiddenCourses": 1379,
+        "publishedRules": 71,
+        "rulesWithUnpublishedDependencies": 31
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 1434,
+        "verified": 65,
+        "candidate": 1379,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4640,5 +4640,5 @@
       }
     }
   ],
-  "contentHash": "sha256:abc2fac04389b529c6fcbdcfe956e94fc0a5feccb0f5702fda40b1eabc747a92"
+  "contentHash": "sha256:f7f4062765a2e40c0b746abc33f39a6b75fbee5b934b2f4214e3e864807cad2c"
 }

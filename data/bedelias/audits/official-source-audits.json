@@ -6932,9 +6932,9 @@
       "identity": "licenciatura en educacion fisica:2017",
       "career": "LICENCIATURA EN EDUCACIÓN FÍSICA",
       "planYear": "2017",
-      "reviewedAt": "2026-08-24",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
-      "scope": "plan-and-site-filtered-trajectories",
+      "scope": "plan, sedes, ocho semestres y cuatro opciones oficiales; catálogo flexible no verificado",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -6957,22 +6957,1277 @@
         "trajectories": [
           {
             "id": "deporte",
-            "label": "Deporte"
+            "label": "Deporte",
+            "credentialId": "bedelias-degree",
+            "description": "Opción Deporte: además de sus cinco cursos fijos, elegí cuatro de las siete modalidades de sexto a octavo (24 créditos en total). No hay un cupo por semestre.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CE1TE",
+                  "CE1EF",
+                  "CE1CH",
+                  "malla-2017-s1-4",
+                  "malla-2017-s1-5"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CE2EN",
+                  "CD2TP",
+                  "CS2S1",
+                  "CP2G1",
+                  "CT2J1"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "CS5S2",
+                  "CD3C1",
+                  "CP3RD",
+                  "CT3R",
+                  "CB3FE"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "CE4P",
+                  "CD4DI",
+                  "CP4G2",
+                  "CT4VC",
+                  "CE4H",
+                  "CE4MH"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "CB5TE",
+                  "CD5C2",
+                  "CP5C1",
+                  "CE3II",
+                  "CE5P1",
+                  "OD001"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "CD6N1",
+                  "CD6C3",
+                  "CE6EC",
+                  "CS6A1",
+                  "OD002",
+                  "OD008"
+                ],
+                "choiceCourseIds": [
+                  "OD002",
+                  "OD008"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "CE7P2",
+                  "OD003",
+                  "OD004",
+                  "OSEMD",
+                  "OD005",
+                  "OD009",
+                  "OD010"
+                ],
+                "choiceCourseIds": [
+                  "OD005",
+                  "OD009",
+                  "OD010"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "OD007",
+                  "OD006",
+                  "OD011"
+                ],
+                "choiceCourseIds": [
+                  "OD006",
+                  "OD011"
+                ]
+              }
+            ]
           },
           {
             "id": "salud",
-            "label": "Salud"
+            "label": "Salud",
+            "credentialId": "bedelias-degree-salud",
+            "description": "Opción Salud, con 60 créditos específicos.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CE1TE",
+                  "CE1EF",
+                  "CE1CH",
+                  "malla-2017-s1-4",
+                  "malla-2017-s1-5"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CE2EN",
+                  "CD2TP",
+                  "CS2S1",
+                  "CP2G1",
+                  "CT2J1"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "CS5S2",
+                  "CD3C1",
+                  "CP3RD",
+                  "CT3R",
+                  "CB3FE"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "CE4P",
+                  "CD4DI",
+                  "CP4G2",
+                  "CT4VC",
+                  "CE4H",
+                  "CE4MH"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "CB5TE",
+                  "CD5C2",
+                  "CP5C1",
+                  "CE3II",
+                  "CE5P1",
+                  "OS001"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "CD6N1",
+                  "CD6C3",
+                  "CE6EC",
+                  "CS6A1",
+                  "OS002"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "CE7P2",
+                  "OS003",
+                  "OS004",
+                  "OSEMS"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "OS005",
+                  "OS006"
+                ]
+              }
+            ]
           },
           {
             "id": "practicas-corporales",
-            "label": "Prácticas Corporales"
+            "label": "Prácticas Corporales",
+            "credentialId": "bedelias-degree-practicas-corporales",
+            "description": "Opción Prácticas Corporales, con 60 créditos específicos.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CE1TE",
+                  "CE1EF",
+                  "CE1CH",
+                  "malla-2017-s1-4",
+                  "malla-2017-s1-5"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CE2EN",
+                  "CD2TP",
+                  "CS2S1",
+                  "CP2G1",
+                  "CT2J1"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "CS5S2",
+                  "CD3C1",
+                  "CP3RD",
+                  "CT3R",
+                  "CB3FE"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "CE4P",
+                  "CD4DI",
+                  "CP4G2",
+                  "CT4VC",
+                  "CE4H",
+                  "CE4MH"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "CB5TE",
+                  "CD5C2",
+                  "CP5C1",
+                  "CE3II",
+                  "CE5P1",
+                  "OPC01"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "CD6N1",
+                  "CD6C3",
+                  "CE6EC",
+                  "CS6A1",
+                  "OPC02"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "CE7P2",
+                  "OPC03",
+                  "OPC04",
+                  "OSEMP"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "OPC05",
+                  "OPC06"
+                ]
+              }
+            ]
           },
           {
             "id": "tiempo-libre-y-ocio",
-            "label": "Tiempo Libre y Ocio"
+            "label": "Tiempo Libre y Ocio",
+            "credentialId": "bedelias-degree-tiempo-libre-y-ocio",
+            "description": "Opción Tiempo Libre y Ocio, con 60 créditos específicos.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "CE1TE",
+                  "CE1EF",
+                  "CE1CH",
+                  "malla-2017-s1-4",
+                  "malla-2017-s1-5"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "CE2EN",
+                  "CD2TP",
+                  "CS2S1",
+                  "CP2G1",
+                  "CT2J1"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "CS5S2",
+                  "CD3C1",
+                  "CP3RD",
+                  "CT3R",
+                  "CB3FE"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "CE4P",
+                  "CD4DI",
+                  "CP4G2",
+                  "CT4VC",
+                  "CE4H",
+                  "CE4MH"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "CB5TE",
+                  "CD5C2",
+                  "CP5C1",
+                  "CE3II",
+                  "CE5P1",
+                  "OT001"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "CD6N1",
+                  "CD6C3",
+                  "CE6EC",
+                  "CS6A1",
+                  "OT002"
+                ]
+              },
+              {
+                "label": "Semestre 7",
+                "courseIds": [
+                  "CE7P2",
+                  "OT003",
+                  "OT004",
+                  "OSEMT"
+                ]
+              },
+              {
+                "label": "Semestre 8",
+                "courseIds": [
+                  "OT005",
+                  "OT006"
+                ]
+              }
+            ]
           }
         ],
-        "degreeRule": "El título es único para las cuatro opciones. ISEF expide además un certificado que identifica la opción elegida."
+        "degreeRule": "El título es único para las cuatro opciones. ISEF expide además un certificado que identifica la opción elegida.",
+        "curriculum": {
+          "useBedeliasCompositionTree": true,
+          "usePublishedCredits": true,
+          "strictOfficialCourseIds": true,
+          "deduplicateSharedProfileCourses": true,
+          "preserveBedeliasCourseIds": true,
+          "sourceUrl": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/",
+          "sourceDataPath": "data/bedelias/audits/isef-licenciatura-2017-semester-evidence.json",
+          "verifiedCourseIds": [
+            "CE1TE",
+            "CE1EF",
+            "CE1CH",
+            "CE2EN",
+            "CD2TP",
+            "CS2S1",
+            "CP2G1",
+            "CT2J1",
+            "CS5S2",
+            "CD3C1",
+            "CP3RD",
+            "CT3R",
+            "CB3FE",
+            "CE4P",
+            "CD4DI",
+            "CP4G2",
+            "CT4VC",
+            "CE4H",
+            "CE4MH",
+            "CB5TE",
+            "CD5C2",
+            "CP5C1",
+            "CE3II",
+            "CD6N1",
+            "CD6C3",
+            "CE6EC",
+            "CS6A1",
+            "CE5P1",
+            "CE7P2",
+            "OPC01",
+            "OPC02",
+            "OPC03",
+            "OPC04",
+            "OSEMP",
+            "OPC05",
+            "OPC06",
+            "OS001",
+            "OS002",
+            "OS003",
+            "OS004",
+            "OSEMS",
+            "OS005",
+            "OS006",
+            "OT001",
+            "OT002",
+            "OT003",
+            "OT004",
+            "OSEMT",
+            "OT005",
+            "OT006",
+            "OD001",
+            "OD003",
+            "OD004",
+            "OSEMD",
+            "OD007",
+            "OD002",
+            "OD008",
+            "OD005",
+            "OD009",
+            "OD010",
+            "OD006",
+            "OD011"
+          ],
+          "courseOverrides": {
+            "CE1TE": {
+              "name": "Teoría de la Educación",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 1",
+              "requirementId": "tronco"
+            },
+            "CE1EF": {
+              "name": "Teoría de la Educación Física",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 1",
+              "requirementId": "tronco"
+            },
+            "CE1CH": {
+              "name": "Fundamentos Generales de las Ciencias Humanas",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 1",
+              "requirementId": "tronco"
+            },
+            "CE2EN": {
+              "name": "Teoría de la Enseñanza",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 2",
+              "requirementId": "tronco"
+            },
+            "CD2TP": {
+              "name": "Teoría y Práctica del Deporte",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 2",
+              "requirementId": "tronco"
+            },
+            "CS2S1": {
+              "name": "Educación Física y Salud I",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 2",
+              "requirementId": "tronco"
+            },
+            "CP2G1": {
+              "name": "Gimnasia I",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 2",
+              "requirementId": "tronco"
+            },
+            "CT2J1": {
+              "name": "Juego y Prácticas Lúdicas I",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 2",
+              "requirementId": "tronco"
+            },
+            "CS5S2": {
+              "name": "Educación Física y Salud II",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 3",
+              "requirementId": "tronco"
+            },
+            "CD3C1": {
+              "name": "Deportes Colectivos I",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 3",
+              "requirementId": "tronco"
+            },
+            "CP3RD": {
+              "name": "Ritmo y Danza",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 3",
+              "requirementId": "tronco"
+            },
+            "CT3R": {
+              "name": "Recreación",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 3",
+              "requirementId": "tronco"
+            },
+            "CB3FE": {
+              "name": "Fisiología del Ejercicio",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 3",
+              "requirementId": "tronco"
+            },
+            "CE4P": {
+              "name": "Planificación, Metodología y Evaluación",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 4",
+              "requirementId": "tronco"
+            },
+            "CD4DI": {
+              "name": "Deportes Individuales",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 4",
+              "requirementId": "tronco"
+            },
+            "CP4G2": {
+              "name": "Gimnasia II",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 4",
+              "requirementId": "tronco"
+            },
+            "CT4VC": {
+              "name": "Vida en la Naturaleza y Campamento I",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 4",
+              "requirementId": "tronco"
+            },
+            "CE4H": {
+              "name": "Historia de la Educación Física",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 4",
+              "requirementId": "tronco"
+            },
+            "CE4MH": {
+              "name": "Fundamentos del Movimiento Humano",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 4",
+              "requirementId": "tronco"
+            },
+            "CB5TE": {
+              "name": "Teoría del Entrenamiento",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 5",
+              "requirementId": "tronco"
+            },
+            "CD5C2": {
+              "name": "Deportes Colectivos II",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 5",
+              "requirementId": "tronco"
+            },
+            "CP5C1": {
+              "name": "Técnicas Corporales I",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 5",
+              "requirementId": "tronco"
+            },
+            "CE3II": {
+              "name": "Iniciación a la investigación",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 5",
+              "requirementId": "tronco"
+            },
+            "CD6N1": {
+              "name": "Natación I",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 6",
+              "requirementId": "tronco"
+            },
+            "CD6C3": {
+              "name": "Deportes Colectivos III",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 6",
+              "requirementId": "tronco"
+            },
+            "CE6EC": {
+              "name": "Teoría de la Educación del Cuerpo",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 6",
+              "requirementId": "tronco"
+            },
+            "CS6A1": {
+              "name": "Educación Física Adaptada I",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 6",
+              "requirementId": "tronco"
+            },
+            "CE5P1": {
+              "name": "Práctica Profesional I Sistema Educativo",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 5",
+              "requirementId": "tronco"
+            },
+            "CE7P2": {
+              "name": "Práctica Profesional II Comunitaria",
+              "credits": 12,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false,
+              "periodLabel": "Semestre 7",
+              "requirementId": "tronco"
+            },
+            "OPC01": {
+              "name": "Educación Física y Prácticas Corporales",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "practicas-corporales-fijas",
+              "creditSourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2021/02/Programa-EF-y-Practicas-Corporales-PLAN-2017.pdf",
+              "creditConflict": "ISEF: 10; Bedelías: 12."
+            },
+            "OPC02": {
+              "name": "Técnicas Corporales II: Danza",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "practicas-corporales-fijas"
+            },
+            "OPC03": {
+              "name": "Técnicas Corporales III / Acuáticas",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "practicas-corporales-fijas"
+            },
+            "OPC04": {
+              "name": "Técnicas Corporales IV / Circo y Teatro",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "practicas-corporales-fijas"
+            },
+            "OSEMP": {
+              "name": "Seminario · Prácticas Corporales",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "practicas-corporales-fijas"
+            },
+            "OPC05": {
+              "name": "Técnicas Corporales V / Lucha",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "practicas-corporales-fijas"
+            },
+            "OPC06": {
+              "name": "Políticas públicas, Educación Física y Prácticas Corporales",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "practicas-corporales-fijas"
+            },
+            "OS001": {
+              "name": "Educación Física Inclusiva",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "salud-fijas"
+            },
+            "OS002": {
+              "name": "Sexualidad y género",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "salud-fijas"
+            },
+            "OS003": {
+              "name": "Educación Física Adaptada a Poblaciones Especiales I",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "salud-fijas"
+            },
+            "OS004": {
+              "name": "Educación Física y Salud Colectiva",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "salud-fijas"
+            },
+            "OSEMS": {
+              "name": "Seminario · Salud",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "salud-fijas"
+            },
+            "OS005": {
+              "name": "Educación Física Adaptada a Poblaciones Especiales II",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "salud-fijas"
+            },
+            "OS006": {
+              "name": "Políticas públicas y Salud",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "salud-fijas"
+            },
+            "OT001": {
+              "name": "Teoría del Tiempo Libre y el Ocio",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "tiempo-libre-y-ocio-fijas"
+            },
+            "OT002": {
+              "name": "Historia del Ocio",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "tiempo-libre-y-ocio-fijas"
+            },
+            "OT003": {
+              "name": "Juego y Prácticas Lúdicas II",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "tiempo-libre-y-ocio-fijas"
+            },
+            "OT004": {
+              "name": "Vida en la Naturaleza y Campamento II",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "tiempo-libre-y-ocio-fijas"
+            },
+            "OSEMT": {
+              "name": "Seminario · Tiempo Libre y Ocio",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "tiempo-libre-y-ocio-fijas"
+            },
+            "OT005": {
+              "name": "Gestión Cultural",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "tiempo-libre-y-ocio-fijas"
+            },
+            "OT006": {
+              "name": "Políticas Públicas y Tiempo Libre y Ocio",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "tiempo-libre-y-ocio-fijas"
+            },
+            "OD001": {
+              "name": "Motricidad Deportiva",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "deporte-fijas"
+            },
+            "OD003": {
+              "name": "Entrenamiento Deportivo",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "deporte-fijas"
+            },
+            "OD004": {
+              "name": "Historia del Deporte",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "deporte-fijas"
+            },
+            "OSEMD": {
+              "name": "Seminario · Deporte",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "deporte-fijas"
+            },
+            "OD007": {
+              "name": "Políticas públicas y Deporte",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "deporte-fijas"
+            },
+            "OD002": {
+              "name": "Handball",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "modalidades-deporte",
+              "elective": true
+            },
+            "OD008": {
+              "name": "Fútbol",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "modalidades-deporte",
+              "elective": true
+            },
+            "OD005": {
+              "name": "Voleibol",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "modalidades-deporte",
+              "elective": true
+            },
+            "OD009": {
+              "name": "Básquetbol",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "modalidades-deporte",
+              "elective": true
+            },
+            "OD010": {
+              "name": "Natación II",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 7",
+              "requirementId": "modalidades-deporte",
+              "elective": true
+            },
+            "OD006": {
+              "name": "Atletismo",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "modalidades-deporte",
+              "elective": true
+            },
+            "OD011": {
+              "name": "Gimnasia Artística",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 8",
+              "requirementId": "modalidades-deporte",
+              "elective": true
+            }
+          },
+          "additionalCourses": [
+            {
+              "id": "malla-2017-s1-4",
+              "name": "Fundamentos Anátomo-Fisiológicos",
+              "credits": 10,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/03/1.-Fundamentos-Anatomo-Fisiologicos-CORREGIDO-7.12.17.pdf",
+              "periodLabel": "Semestre 1",
+              "requirementId": "tronco"
+            },
+            {
+              "id": "malla-2017-s1-5",
+              "name": "Teoría del Aprendizaje y el Sujeto",
+              "credits": 8,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/03/1.-Teorias-del-Aprendizaje-y-del-Sujeto-CORREGIDO-7.12.17.pdf",
+              "periodLabel": "Semestre 1",
+              "requirementId": "tronco"
+            }
+          ],
+          "creditRequirements": [
+            {
+              "id": "tronco",
+              "name": "Tronco común",
+              "shortName": "Común",
+              "minCredits": 270
+            },
+            {
+              "id": "deporte-fijas",
+              "name": "Unidades fijas · Deporte",
+              "shortName": "Deporte",
+              "minCredits": 36
+            },
+            {
+              "id": "salud-fijas",
+              "name": "Unidades fijas · Salud",
+              "shortName": "Salud",
+              "minCredits": 60
+            },
+            {
+              "id": "practicas-corporales-fijas",
+              "name": "Unidades fijas · Prácticas Corporales",
+              "shortName": "Prácticas Corporales",
+              "minCredits": 60
+            },
+            {
+              "id": "tiempo-libre-y-ocio-fijas",
+              "name": "Unidades fijas · Tiempo Libre y Ocio",
+              "shortName": "Tiempo Libre y Ocio",
+              "minCredits": 60
+            },
+            {
+              "id": "modalidades-deporte",
+              "name": "Cuatro modalidades deportivas a elegir",
+              "shortName": "Modalidades",
+              "minCredits": 24
+            }
+          ],
+          "requiredCourseGroups": [
+            {
+              "id": "tronco-comun",
+              "label": "Unidades del tronco común",
+              "sourceCourseIds": [
+                "CE1TE",
+                "CE1EF",
+                "CE1CH",
+                "malla-2017-s1-4",
+                "malla-2017-s1-5",
+                "CE2EN",
+                "CD2TP",
+                "CS2S1",
+                "CP2G1",
+                "CT2J1",
+                "CS5S2",
+                "CD3C1",
+                "CP3RD",
+                "CT3R",
+                "CB3FE",
+                "CE4P",
+                "CD4DI",
+                "CP4G2",
+                "CT4VC",
+                "CE4H",
+                "CE4MH",
+                "CB5TE",
+                "CD5C2",
+                "CP5C1",
+                "CE3II",
+                "CD6N1",
+                "CD6C3",
+                "CE6EC",
+                "CS6A1",
+                "CE5P1",
+                "CE7P2"
+              ],
+              "minCompleted": 31,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/12/Opciones-LEF-diciembre2024.pdf"
+            },
+            {
+              "id": "fijas-deporte",
+              "label": "Unidades fijas · Deporte",
+              "sourceCourseIds": [
+                "OD001",
+                "OD003",
+                "OD004",
+                "OSEMD",
+                "OD007"
+              ],
+              "minCompleted": 5,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/12/Opciones-LEF-diciembre2024.pdf"
+            },
+            {
+              "id": "fijas-salud",
+              "label": "Unidades fijas · Salud",
+              "sourceCourseIds": [
+                "OS001",
+                "OS002",
+                "OS003",
+                "OS004",
+                "OSEMS",
+                "OS005",
+                "OS006"
+              ],
+              "minCompleted": 7,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/12/Opciones-LEF-diciembre2024.pdf"
+            },
+            {
+              "id": "fijas-practicas-corporales",
+              "label": "Unidades fijas · Prácticas Corporales",
+              "sourceCourseIds": [
+                "OPC01",
+                "OPC02",
+                "OPC03",
+                "OPC04",
+                "OSEMP",
+                "OPC05",
+                "OPC06"
+              ],
+              "minCompleted": 7,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/12/Opciones-LEF-diciembre2024.pdf"
+            },
+            {
+              "id": "fijas-tiempo-libre-y-ocio",
+              "label": "Unidades fijas · Tiempo Libre y Ocio",
+              "sourceCourseIds": [
+                "OT001",
+                "OT002",
+                "OT003",
+                "OT004",
+                "OSEMT",
+                "OT005",
+                "OT006"
+              ],
+              "minCompleted": 7,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/12/Opciones-LEF-diciembre2024.pdf"
+            },
+            {
+              "id": "cuatro-modalidades",
+              "label": "Cuatro de las siete modalidades deportivas",
+              "sourceCourseIds": [
+                "OD002",
+                "OD008",
+                "OD005",
+                "OD009",
+                "OD010",
+                "OD006",
+                "OD011"
+              ],
+              "minCompleted": 4,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2024/12/Opciones-LEF-diciembre2024.pdf"
+            }
+          ],
+          "projectionAnomalies": [
+            "Educación Física y Prácticas Corporales (OPC01): 10 créditos en el programa y la guía oficial; 12 en Bedelías.",
+            "Salud en Maldonado: CURE lista el perfil, pero la guía ISEF no indica dictado allí. Se conserva el perfil consultable con aviso, no una promesa de oferta.",
+            "Dos materias del primer semestre se conservan sin código Bedelías por ambigüedad de identidades. No se mapea el historial por semejanza."
+          ],
+          "manualCompletionValidation": "Confirmación institucional de los 30 créditos optativos o electivos y requisitos de egreso",
+          "credentials": [
+            {
+              "id": "bedelias-degree",
+              "title": "Licenciado en Educación Física",
+              "minTotalCredits": 360,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2017/02/Plan-de-Estudios-2017.pdf",
+              "nodeRequirements": [
+                {
+                  "nodeId": "tronco",
+                  "minCredits": 270
+                },
+                {
+                  "nodeId": "deporte-fijas",
+                  "minCredits": 36
+                },
+                {
+                  "nodeId": "modalidades-deporte",
+                  "minCredits": 24
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "tronco-comun",
+                "fijas-deporte",
+                "validacion-final-plan",
+                "cuatro-modalidades"
+              ]
+            },
+            {
+              "id": "bedelias-degree-salud",
+              "title": "Licenciado en Educación Física",
+              "minTotalCredits": 360,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2017/02/Plan-de-Estudios-2017.pdf",
+              "nodeRequirements": [
+                {
+                  "nodeId": "tronco",
+                  "minCredits": 270
+                },
+                {
+                  "nodeId": "salud-fijas",
+                  "minCredits": 60
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "tronco-comun",
+                "fijas-salud",
+                "validacion-final-plan"
+              ]
+            },
+            {
+              "id": "bedelias-degree-practicas-corporales",
+              "title": "Licenciado en Educación Física",
+              "minTotalCredits": 360,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2017/02/Plan-de-Estudios-2017.pdf",
+              "nodeRequirements": [
+                {
+                  "nodeId": "tronco",
+                  "minCredits": 270
+                },
+                {
+                  "nodeId": "practicas-corporales-fijas",
+                  "minCredits": 60
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "tronco-comun",
+                "fijas-practicas-corporales",
+                "validacion-final-plan"
+              ]
+            },
+            {
+              "id": "bedelias-degree-tiempo-libre-y-ocio",
+              "title": "Licenciado en Educación Física",
+              "minTotalCredits": 360,
+              "sourceUrl": "https://isef.udelar.edu.uy/wp-content/uploads/2017/02/Plan-de-Estudios-2017.pdf",
+              "nodeRequirements": [
+                {
+                  "nodeId": "tronco",
+                  "minCredits": 270
+                },
+                {
+                  "nodeId": "tiempo-libre-y-ocio-fijas",
+                  "minCredits": 60
+                }
+              ],
+              "requiredCourseGroupIds": [
+                "tronco-comun",
+                "fijas-tiempo-libre-y-ocio",
+                "validacion-final-plan"
+              ]
+            }
+          ]
+        }
       },
       "offerings": [
         {
@@ -7067,7 +8322,10 @@
           "Normalizar el egreso por 270 créditos comunes, 60 específicos del trayecto y 30 optativos/electivos.",
           "No usar las diferencias del catálogo flexible ni las colisiones de créditos para definir disponibilidad de trayectos.",
           "Tratar la menor cobertura regional de previaturas como una diferencia de publicación."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/bedelias/audits/isef-licenciatura-2017-semester-evidence.json",
+        "trajectoryCoverage": "ocho semestres y cuatro opciones; créditos flexibles sin secuencia nominal verificada"
       },
       "sources": [
         {
@@ -7137,7 +8395,8 @@
           ]
         }
       ],
-      "remainingWork": "La auditoría resuelve la falsa diferencia curricular y permite filtrar trayectos por sede. La proyección curada de unidades y previaturas para la UI sigue pendiente y no habilita publicación automática."
+      "remainingWork": "Verificar catálogo optativo/electivo y oferta efectiva de Salud en Maldonado.",
+      "uiNotice": "Malla oficial ISEF de ocho semestres. Las dos prácticas profesionales y el Seminario son anuales: se muestran una sola vez, al inicio del tramo. El egreso requiere además 30 créditos optativos o electivos, sujetos a validación institucional. Salud en Maldonado figura como perfil en CURE, pero la guía de ISEF no confirma su oferta allí: consultá a la sede."
     },
     {
       "identity": "tecnicatura en deportes:2007",
@@ -94543,6 +95802,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:0f8d1a85f13514fb0e6540c796fe538348753e9362517f4275a4b836906bde79",
+  "contentHash": "sha256:251e032938caff209a6be8b44971f4b6f0a29db0bbfd77271423c6357043a11c",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

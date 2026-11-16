@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:abc2fac04389b529c6fcbdcfe956e94fc0a5feccb0f5702fda40b1eabc747a92",
-    "officialAuditHash": "sha256:0f8d1a85f13514fb0e6540c796fe538348753e9362517f4275a4b836906bde79",
-    "reviewedTrajectoriesHash": "sha256:ff9142a196237fcfacb47e550dda53168843505d0c388e41c4914b9b8291149d"
+    "extractedReportHash": "sha256:f7f4062765a2e40c0b746abc33f39a6b75fbee5b934b2f4214e3e864807cad2c",
+    "officialAuditHash": "sha256:251e032938caff209a6be8b44971f4b6f0a29db0bbfd77271423c6357043a11c",
+    "reviewedTrajectoriesHash": "sha256:f49d0950639bd0c77ca7e4c593677accd88ab1a908bea372efce4fdfe6b38869"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 122,
+      "official-trajectory-reproduced": 123,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 18
+      "research-pending": 17
     },
-    "pending": 21,
+    "pending": 20,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -265,16 +265,16 @@
         "serviceLabel": "Instituto Superior de Educación Física",
         "selectablePlanIds": 3,
         "states": {
-          "official-trajectory-reproduced": 1,
+          "official-trajectory-reproduced": 2,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 2
+          "research-pending": 1
         }
       }
     ]
   },
   "pendingQueue": {
-    "total": 21,
+    "total": 20,
     "plans": [
       {
         "priority": 1,
@@ -392,15 +392,6 @@
           "bedelias-fder"
         ],
         "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-isef-licenciatura-en-educacion-fisica-2017",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-isef"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -542,7 +533,6 @@
         "serviceLabel": "Instituto Superior de Educación Física",
         "identifiedPending": [],
         "researchPending": [
-          "bedelias-isef-licenciatura-en-educacion-fisica-2017",
           "bedelias-isef-tecnicatura-en-deportes-2007"
         ]
       }
@@ -12688,57 +12678,16 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-24",
-      "effectiveAt": "2017",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "programas publicados para el Plan 2017 y reforma de Seminario 2025",
       "officialSources": [
         {
+          "url": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/",
           "authority": "Instituto Superior de Educación Física, Udelar",
-          "url": "https://isef.udelar.edu.uy/wp-content/uploads/2017/02/Plan-de-Estudios-2017.pdf",
-          "role": "Plan de Estudios 2017; título único, duración y estructura de créditos; cuatro opciones y selección desde el quinto semestre",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Instituto Superior de Educación Física, Udelar",
-          "url": "https://isef.udelar.edu.uy/noticias/nuevo-plan-de-estudio-licenciatura-en-educacion-fisica/",
-          "role": "implementación del Plan 2017; 270 créditos comunes, 60 específicos y 30 flexibles; certificación de la opción elegida",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Instituto Superior de Educación Física, Udelar",
-          "url": "https://isef.udelar.edu.uy/noticias/isef-montevideo-inscripcion-a-trayectos-en-la-licenciatura-en-educacion-fisica/",
-          "role": "oferta en Montevideo de los cuatro trayectos; inscripción a trayecto desde el quinto semestre",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Centro Universitario Regional del Este, Udelar",
-          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/licenciatura-en-educacion-fisica/",
-          "role": "oferta vigente del Plan 2017 en Maldonado; cuatro perfiles publicados y egreso por 360 créditos con tesina",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Centro Universitario Regional Litoral Norte, Udelar",
-          "url": "https://www.litoralnorte.udelar.edu.uy/bedelia-de-grado/estudiar-educacion-fisica",
-          "role": "oferta completa en Paysandú; disponibilidad territorial de los trayectos Deporte y Salud",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Instituto Superior de Educación Física, Udelar",
-          "url": "https://isef.udelar.edu.uy/estudia-en-isef/",
-          "role": "oferta 2026 en Montevideo, Maldonado y Paysandú; selección de una única sede al ingresar",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Comisión Directiva del Instituto Superior de Educación Física, Udelar",
-          "url": "https://ordendeldia.isef.udelar.edu.uy/sesionescd/Distribuidos/317-25.pdf",
-          "role": "distribución nacional de inscripciones por trayecto y sede entre 2020 y 2024; cuatro trayectos en Montevideo, tres con matrícula en Maldonado y dos en Paysandú",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Instituto Superior de Educación Física, Udelar",
-          "url": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/previaturas-academicas-plan-2017/",
-          "role": "previaturas vigentes del Plan 2017; requisitos de inscripción a trayecto y seminario",
-          "trajectoryEvidence": false
+          "reviewedAt": "2026-11-16",
+          "role": "orden por semestre; opciones, cargas y alcances cotejados en la fuente curada",
+          "contentHash": "sha256:372fc27aa5717991b1cacfd70da6e4d43fc987fe057f2666aaafbc5baff1ca62"
         }
       ],
       "scope": {
@@ -12752,22 +12701,53 @@
           "salud",
           "practicas-corporales",
           "tiempo-libre-y-ocio"
-        ]
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-profiles",
+        "primary": "official-periods",
         "features": [
-          "official-profiles"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en educacion fisica:2017",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-isef-licenciatura-en-educacion-fisica-2017.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/isef-licenciatura-2017-semester-evidence.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-isef-licenciatura-en-educacion-fisica-2017.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:facc68f34c89548058056a4df46dd86151c8191e907bf2ec7451b4eac1cb8c5c",
+        "projectionContentHash": "sha256:d813f9d0667bb5f965c38d0e9e0fd84141f43a13f3d5682aa23f43469ba21afa",
+        "pathways": [
+          {
+            "id": "deporte",
+            "periodCount": 8
+          },
+          {
+            "id": "salud",
+            "periodCount": 8
+          },
+          {
+            "id": "practicas-corporales",
+            "periodCount": 8
+          },
+          {
+            "id": "tiempo-libre-y-ocio",
+            "periodCount": 8
+          }
+        ],
+        "expectedCoursePlacements": 157,
+        "matchedCoursePlacements": 157
       },
-      "conflictNotes": []
+      "conflictNotes": [
+        "Educación Física y Prácticas Corporales (OPC01): 10 créditos en el programa y la guía oficial; 12 en Bedelías.",
+        "Salud en Maldonado: CURE lista el perfil, pero la guía ISEF no indica dictado allí. Se conserva el perfil consultable con aviso, no una promesa de oferta.",
+        "Dos materias del primer semestre se conservan sin código Bedelías por ambigüedad de identidades. No se mapea el historial por semejanza."
+      ]
     },
     {
       "planId": "bedelias-isef-tecnicatura-en-deportes-2007",
@@ -13792,5 +13772,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:6d60fedb443f252622d661b5980bf80322c0055cae4f30ecb9ea9ff072936acf"
+  "contentHash": "sha256:6699d631f3f506e23af8fe61a883daad8c423a81532017025982000e1462ac11"
 }

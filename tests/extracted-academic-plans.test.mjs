@@ -217,9 +217,10 @@ test("las trayectorias auditadas se filtran por sede y conservan metadatos ofici
   ]);
   assert.deepEqual(education.pathways["practicas-corporales"].campusIds, ["montevideo", "maldonado"]);
   assert.deepEqual(education.pathways.salud.campusIds, ["montevideo", "maldonado", "paysandu"]);
-  assert.ok(Object.values(education.publishedPathways).every((pathway) => pathway.periods.length === 0));
-  assert.equal(education.plan.courseCatalogAuditStatus, "structure-only");
-  assert.ok(education.courses.every((course) => course.authorityStatus === "candidate"));
+  assert.ok(Object.values(education.publishedPathways).every((pathway) => pathway.periods.length === 8));
+  assert.equal(education.plan.courseCatalogAuditStatus, "partial");
+  assert.equal(education.courses.filter((course) => course.authorityStatus === "verified"
+    && course.id !== "isef-validacion-final-plan").length, 64);
 
   const sports = await readJson("app/data/bedelias-generated/bedelias-isef-tecnicatura-en-deportes-2007.json");
   assert.equal(sports.plan.durationMonths, 24);

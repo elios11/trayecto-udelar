@@ -4937,6 +4937,52 @@
         "Clínica Quirúrgica tiene 58 créditos y Metodología Científica 2 tiene 24 en la grilla; ambos registros Bedelías indican 57 y 25.",
         "Los requisitos flexibles y actas de reanimación no están ubicados por semestre. Su cumplimiento debe verificarse con Facultad, sin inferir un mínimo total nuevo."
       ]
+    },
+    {
+      "planId": "bedelias-isef-licenciatura-en-educacion-fisica-2017",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "programas publicados para el Plan 2017 y reforma de Seminario 2025",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Maldonado",
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "deporte",
+          "salud",
+          "practicas-corporales",
+          "tiempo-libre-y-ocio"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://isef.udelar.edu.uy/ensenanza/licenciatura-en-educacion-fisica/",
+          "authority": "Instituto Superior de Educación Física, Udelar",
+          "reviewedAt": "2026-11-16",
+          "role": "orden por semestre; opciones, cargas y alcances cotejados en la fuente curada",
+          "contentHash": "sha256:372fc27aa5717991b1cacfd70da6e4d43fc987fe057f2666aaafbc5baff1ca62"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/isef-licenciatura-2017-semester-evidence.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-isef-licenciatura-en-educacion-fisica-2017.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "Educación Física y Prácticas Corporales (OPC01): 10 créditos en el programa y la guía oficial; 12 en Bedelías.",
+        "Salud en Maldonado: CURE lista el perfil, pero la guía ISEF no indica dictado allí. Se conserva el perfil consultable con aviso, no una promesa de oferta.",
+        "Dos materias del primer semestre se conservan sin código Bedelías por ambigüedad de identidades. No se mapea el historial por semejanza."
+      ]
     }
   ]
 }

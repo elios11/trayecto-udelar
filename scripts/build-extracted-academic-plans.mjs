@@ -295,12 +295,24 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
     };
   };
   if (audit?.identity === "licenciatura en educacion fisica:2017") {
-    return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => [trajectory.id, {
-      label: trajectory.label,
-      description: `${trajectory.label} es una opción certificada del Plan 2017. Su disponibilidad se filtra según la sede elegida.`,
-      campusIds: campusIdsForPathway(audit, trajectory.id),
-      periods: periodsForProfile(courseRecords, trajectory.label),
-    }]));
+    return Object.fromEntries(audit.officialPlan.trajectories.map((trajectory) => {
+      const resolveIds = (ids) => ids.map((id) => {
+        const resolved = officialCurriculum?.courseIdBySourceId.get(id);
+        if (!resolved) throw new Error(`Falta la identidad ${id} en la malla ISEF`);
+        return resolved;
+      });
+      return [trajectory.id, {
+        label: trajectory.label,
+        description: trajectory.description ?? `${trajectory.label} es una opción certificada del Plan 2017. Su disponibilidad se filtra según la sede elegida.`,
+        campusIds: campusIdsForPathway(audit, trajectory.id),
+        ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
+        periods: trajectory.periods?.map((period) => ({
+          label: period.label,
+          courseIds: resolveIds(period.courseIds),
+          ...(period.choiceCourseIds?.length ? { choiceCourseIds: resolveIds(period.choiceCourseIds) } : {}),
+        })) ?? periodsForProfile(courseRecords, trajectory.label),
+      }];
+    }));
   }
   if (audit?.identity === "tecnicatura en deportes:2007") {
     return Object.fromEntries(audit.officialPlan.documentedSportOptions.map((option) => [option.id, {

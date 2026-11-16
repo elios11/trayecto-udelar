@@ -207,7 +207,12 @@ const coursesLoadLabel = (courses: Course[]) => {
   return "Créditos no publicados";
 };
 
-const registeredPeriodLoadLabel = (courses: Course[], groups: Array<{ courseIds: string[]; required: boolean }> | undefined) => {
+const registeredPeriodLoadLabel = (courses: Course[], groups: Array<{ courseIds: string[]; required: boolean }> | undefined, choiceIds?: string[]): string => {
+  if (choiceIds?.length) {
+    const choices = new Set(choiceIds);
+    const fixedLabel = registeredPeriodLoadLabel(courses.filter((course) => !choices.has(course.id)), groups);
+    return courses.some((course) => choices.has(course.id)) ? `${fixedLabel} + modalidades a elegir` : fixedLabel;
+  }
   if (!groups?.length || courses.some((course) => course.creditsPublished === false || course.hours)) return coursesLoadLabel(courses);
   const creditsById = new Map(courses.map((course) => [course.id, course.credits]));
   let minimum = courses.reduce((sum, course) => sum + course.credits, 0);
@@ -3484,7 +3489,7 @@ export default function Home() {
                 <section className="semester-column" key={semester}>
                   <header>
                     <span>{planYear === "2025" ? String(semester).padStart(2, "0") : semester === 0 ? "PI" : String(semester).padStart(2, "0")}</span>
-                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : planYear === "2025" ? activePlan2025Trajectory.periods.find((period) => period.label === `Semestre ${semester}`)?.label : planYear === "1997" ? activePlan1997Trajectory.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{isRegisteredPlan && !search.trim() ? registeredPeriodLoadLabel(filtered(semester), activeRegisteredPeriods[Number(semester) - 1]?.alternativeGroups) : coursesLoadLabel(filtered(semester))}</p></div>
+                    <div><h2>{isRegisteredPlan ? activeRegisteredPeriods[Number(semester) - 1]?.label : planYear === "2025" ? activePlan2025Trajectory.periods.find((period) => period.label === `Semestre ${semester}`)?.label : planYear === "1997" ? activePlan1997Trajectory.periods[Number(semester) - 1]?.label : semester === 0 ? "Pre-semestre" : `${semester}º semestre`}</h2><p>{isRegisteredPlan && !search.trim() ? registeredPeriodLoadLabel(filtered(semester), activeRegisteredPeriods[Number(semester) - 1]?.alternativeGroups, activeRegisteredPeriods[Number(semester) - 1]?.choiceCourseIds) : coursesLoadLabel(filtered(semester))}</p></div>
                   </header>
                   <div className="course-stack">
                     {filtered(semester).map((course) => (
