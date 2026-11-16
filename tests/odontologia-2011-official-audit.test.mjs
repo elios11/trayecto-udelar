@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { buildRegisteredPlanPresentation } from "../app/registered-plan-courses.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (relativePath) => JSON.parse(await readFile(new URL(relativePath, root), "utf8"));
@@ -12,12 +13,12 @@ const catalog = await readJson("app/data/extracted-academic-catalog.json");
 const projection = await readJson("app/data/bedelias-generated/bedelias-odon-odontologia-2011.json");
 const audit = registry.audits.find(({ identity }) => identity === "odontologia:2011");
 const pathway = projection.pathways.bedelias;
+const evidence = await readJson("data/bedelias/audits/odontologia-2011-semester-evidence.json");
 const courseById = new Map(projection.courses.map((course) => [course.id, course]));
 const courseByCode = new Map(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map((course) => [course.bedeliasCode, course]));
 const credential = projection.creditStructure.credentials.find(({ id }) => id === "doctor-odontologia");
 
 const period = (label) => pathway.periods.find((candidate) => candidate.label === label);
-const periodCredits = (label) => period(label).courseIds.reduce((sum, id) => sum + courseById.get(id).credits, 0);
 
 test("publica una única Odontología Plan 2011 vigente y completa en Montevideo", () => {
   assert.equal(audit.status, "official-evidence-complete");
@@ -34,16 +35,22 @@ test("publica una única Odontología Plan 2011 vigente y completa en Montevideo
   assert.match(projection.plan.notice, /30 créditos flexibles/i);
 });
 
-test("ordena las 40 unidades troncales por año y suma 465 créditos antes de la flexibilidad", () => {
-  const yearLabels = ["Primer año", "Segundo año", "Tercer año", "Cuarto año", "Quinto año", "Sexto año — semestre 11"];
-  assert.deepEqual(pathway.periods.slice(0, 6).map(({ label }) => label), yearLabels);
-  assert.deepEqual(pathway.periods.slice(0, 6).map(({ courseIds }) => courseIds.length), [10, 8, 9, 5, 6, 2]);
-  assert.deepEqual(yearLabels.map(periodCredits), [91, 89, 88, 73, 84, 40]);
+test("reproduce los tramos de los once semestres y conserva el Trabajo Final sin semestre fijo", () => {
+  assert.deepEqual(pathway.periods, evidence.auditedPathways[0].periods);
+  assert.deepEqual(period("Semestre 10").courseIds, [courseByCode.get("5070").id]);
+  assert.deepEqual(period("Semestre 11").courseIds, [courseByCode.get("5071").id]);
+  assert.deepEqual(period("Trabajo Final · desde cuarto año, sin semestre fijo").courseIds, [courseByCode.get("5080").id]);
 
   const core = credential.requiredCourseGroups.find(({ id }) => id === "odontologia-nucleo-troncal");
   assert.equal(core.minCompleted, 40);
   assert.equal(core.courseIds.length, 40);
   assert.equal(core.courseIds.reduce((sum, id) => sum + courseById.get(id).credits, 0), 465);
+  for (const { nodeId, minCredits } of credential.nodeRequirements.filter(({ nodeId }) => nodeId !== "odontologia-flexible")) {
+    const allocated = core.courseIds.map((id) => courseById.get(id))
+      .flatMap(({ creditAllocations }) => creditAllocations)
+      .filter((allocation) => allocation.nodeId === nodeId);
+    assert.equal(allocated.reduce((sum, { credits }) => sum + credits, 0), minCredits, nodeId);
+  }
   assert.ok(core.courseIds.includes(courseByCode.get("5080").id));
 });
 
@@ -68,15 +75,26 @@ test("controla 495 créditos entre el núcleo operativo y 30 créditos flexibles
   const flexibleCourses = projection.courses.filter((course) => course.eligibleRequirementIds.includes("odontologia-flexible"));
   assert.ok(flexibleCourses.length > 300);
   assert.ok(flexibleCourses.some(({ name }) => /Electiva/i.test(name)));
+  const presentation = buildRegisteredPlanPresentation("bedelias", projection);
+  assert.equal(presentation.generated, false);
+  assert.equal(presentation.courses.length, 60);
+  assert.ok(presentation.courses.every(({ authorityStatus }) => authorityStatus === "verified"));
+  const options = presentation.courses.filter(({ semester }) => semester === "opt");
+  assert.equal(options.length, 20);
+  assert.ok(options.every(({ elective }) => elective));
+  assert.equal(options.filter(({ bedeliasCode }) => !bedeliasCode).length, 3);
+  assert.equal(courseByCode.get("4049").credits, 7);
+  assert.equal(courseByCode.get("4070").credits, 4);
   assert.equal(courseById.get(credential.requiredCourseGroups[1].courseIds[0]).curricularBlock, true);
 });
 
 test("evita doble conteo de agregados y versiones sustituidas", () => {
-  for (const code of ["1021", "1022", "1600", "2014", "2017", "2021"]) {
+  for (const code of ["1021", "1022", "1601", "2014", "2017", "2021"]) {
     assert.equal(courseByCode.get(code).credits, 0, code);
     assert.equal(courseByCode.get(code).eligibleRequirementIds.includes("odontologia-flexible"), true, code);
+    assert.notEqual(courseByCode.get(code).authorityStatus, "verified", code);
   }
-  for (const code of ["1021A", "1021B", "1021C", "1022A", "1022B", "1022C", "1601", "2016", "2022"]) {
+  for (const code of ["1021A", "1021B", "1021C", "1022A", "1022B", "1022C", "1600", "2016", "2022"]) {
     assert.ok(courseByCode.get(code).credits > 0, code);
   }
 });
@@ -99,8 +117,10 @@ test("conserva las 112 previaturas sin referencias rotas después de normalizar 
   assert.deepEqual([...new Set(referenced.filter((code) => code && !knownCodes.has(code)))], []);
 
   const periodCourseIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
-  assert.equal(periodCourseIds.length, projection.courses.length);
-  assert.equal(new Set(periodCourseIds).size, projection.courses.length);
+  assert.equal(periodCourseIds.length, 40);
+  assert.equal(new Set(periodCourseIds).size, 40);
+  assert.ok(projection.publishedRules.every(({ target }) =>
+    projection.courses.some((course) => course.bedeliasCode === target.code && course.authorityStatus === "verified")));
 });
 
 test("cierra las colas global y curricular sin duplicar la carrera", () => {

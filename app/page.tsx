@@ -2164,7 +2164,11 @@ export default function Home() {
     });
     return semester === "opt" ? sortCoursesByProgress(matches, statuses) : matches;
   };
-  const visibleElectives = filtered("opt");
+  const officialOptativeIds = new Set(!activeRegisteredPresentation.generated ? activeRegisteredPathway?.catalogCourseIds ?? [] : []);
+  const hasOfficialOptatives = isRegisteredPlan && courses.some((course) => course.elective && officialOptativeIds.has(course.id));
+  const visibleElectives = hasOfficialOptatives
+    ? filtered("opt").filter((course) => course.elective && officialOptativeIds.has(course.id))
+    : filtered("opt");
   const displayedElectives = isRegisteredPlan && activeRegisteredPresentation.generated && !fullElectivesCatalogExpanded && !search.trim()
     ? visibleElectives.slice(0, 20)
     : visibleElectives;
@@ -2708,7 +2712,8 @@ export default function Home() {
   };
   const deferredCatalogLoadState = isProfilePlan ? activeProfileCatalogLoadState : planYear === "qf-2015" ? qfCatalogLoadState : extendedElectivesLoadState;
   const deferredCatalogCount = isProfilePlan ? (activeProfileCatalogData?.courses.length ?? 0) : planYear === "qf-2015" ? (qfCatalogData?.courses.length ?? 0) : extendedPlan1997Courses.length;
-  const electivesSummary = isRegisteredPlan && activeRegisteredPresentation.generated
+  const electivesSummary = hasOfficialOptatives ? `${visibleElectives.length} optativas visibles`
+    : isRegisteredPlan && activeRegisteredPresentation.generated
     ? `${visibleElectives.length} materias adicionales disponibles`
     : visibleElectives.length > 0
     ? `${visibleElectives.length} materias verificadas en la composición`
@@ -3502,9 +3507,9 @@ export default function Home() {
             </div>}
           </div>
 
-          {planYear === "1997" || isProfilePlan || planYear === "qf-2015" || isRegisteredPlan && activeRegisteredPresentation.generated ? <section className="electives-section">
+          {planYear === "1997" || isProfilePlan || planYear === "qf-2015" || hasOfficialOptatives || isRegisteredPlan && activeRegisteredPresentation.generated ? <section className="electives-section">
             <button className="electives-heading" onClick={() => setShowElectives((value) => !value)} aria-expanded={showElectives}>
-              <div><span className="eyebrow">{isRegisteredPlan ? "Catálogo flexible de Bedelías" : "Trayectoria flexible"}</span><h2>{isRegisteredPlan ? "Materias adicionales y optativas" : "Optativas y electivas"}</h2></div>
+              <div><span className="eyebrow">{hasOfficialOptatives ? "Catálogo curricular verificado" : isRegisteredPlan ? "Catálogo flexible de Bedelías" : "Trayectoria flexible"}</span><h2>{hasOfficialOptatives ? "Optativas publicadas" : isRegisteredPlan ? "Materias adicionales y optativas" : "Optativas y electivas"}</h2></div>
               <div><span>{electivesSummary}</span><b>{showElectives ? "−" : "+"}</b></div>
             </button>
             {showElectives && (
@@ -3515,7 +3520,7 @@ export default function Home() {
                 ))}
               </div>
               {isRegisteredPlan ? <div className="electives-loader" role="status" aria-live="polite">
-                <p>Estas materias están disponibles para organizar tu planificación, pero no tienen una ubicación oficial dentro del recorrido generado. Las señalizadas como provisionales no completan requisitos oficiales.</p>
+                <p>{hasOfficialOptatives ? "Estas opciones no tienen un semestre fijo. La lista no garantiza su dictado en un período particular." : "Estas materias están disponibles para organizar tu planificación, pero no tienen una ubicación oficial dentro del recorrido generado. Las señalizadas como provisionales no completan requisitos oficiales."}</p>
                 {displayedElectives.length < visibleElectives.length && <button type="button" className="primary-button" onClick={() => setFullElectivesCatalogExpanded(true)}>Mostrar las {visibleElectives.length} materias</button>}
                 <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">Consultar la fuente disponible ↗</a>
               </div> : <div className="electives-loader" role="status" aria-live="polite">

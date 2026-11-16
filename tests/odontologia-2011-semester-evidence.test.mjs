@@ -17,16 +17,15 @@ test("Odontología conserva 40 identidades troncales sin repetir las unidades qu
   const ids = [...evidence.periods.flatMap(({ courseCodes }) => courseCodes), evidence.finalWork.code];
   assert.equal(ids.length, 40);
   assert.equal(new Set(ids).size, ids.length);
-  const priorCore = new Set(audit.officialPlan.curriculum.requiredCourseGroups
+  const auditedCore = new Set(audit.officialPlan.curriculum.requiredCourseGroups
     .find(({ id }) => id === "odontologia-nucleo-troncal").sourceCourseIds);
   for (const { prior, current, source, equivalenceConfirmed } of evidence.priorAuditCodeConflicts) {
-    assert.ok(priorCore.delete(prior));
+    assert.ok(!auditedCore.has(prior) && auditedCore.has(current));
     assert.equal(byCode.get(prior).credits, byCode.get(current).credits);
     assert.ok(evidence.sources[source]);
     assert.equal(equivalenceConfirmed, false);
-    priorCore.add(current);
   }
-  assert.deepEqual(new Set(ids), priorCore);
+  assert.deepEqual(new Set(ids), auditedCore);
   assert.deepEqual([...new Set(evidence.periods.flatMap(({ semesters }) => semesters))],
     Array.from({ length: 11 }, (_, index) => index + 1));
   let credits = 0;

@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:f7f4062765a2e40c0b746abc33f39a6b75fbee5b934b2f4214e3e864807cad2c",
-    "officialAuditHash": "sha256:251e032938caff209a6be8b44971f4b6f0a29db0bbfd77271423c6357043a11c",
-    "reviewedTrajectoriesHash": "sha256:f49d0950639bd0c77ca7e4c593677accd88ab1a908bea372efce4fdfe6b38869"
+    "extractedReportHash": "sha256:800376656602d45b8e99b65711d97962df0a22c3927746d9f90de318e389a79a",
+    "officialAuditHash": "sha256:13cc032102577812b5d824867dad4b200ba1a5ce5e314bdf53e2ec79044d55c1",
+    "reviewedTrajectoriesHash": "sha256:4fb7f79545b18a69c414d67b4e8b6504e0834c070a5af31afd5178229b4c3e66"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 123,
+      "official-trajectory-reproduced": 124,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 17
+      "research-pending": 16
     },
-    "pending": 20,
+    "pending": 19,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -221,10 +221,10 @@
         "serviceLabel": "Facultad de Odontología",
         "selectablePlanIds": 4,
         "states": {
-          "official-trajectory-reproduced": 3,
+          "official-trajectory-reproduced": 4,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 20,
+    "total": 19,
     "plans": [
       {
         "priority": 1,
@@ -404,15 +404,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-odon-odontologia-2011",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-odon"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-cure-licenciatura-en-diseno-de-paisaje-2008",
         "state": "research-pending",
         "serviceIds": [
@@ -518,14 +509,6 @@
           "bedelias-fing-ingenieria-fisico-matematica-2017",
           "bedelias-fing-licenciatura-en-computacion-2025",
           "bedelias-fing-tecnologo-en-informatica-2007"
-        ]
-      },
-      {
-        "serviceId": "bedelias-odon",
-        "serviceLabel": "Facultad de Odontología",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-odon-odontologia-2011"
         ]
       },
       {
@@ -13203,45 +13186,22 @@
           "defaultCredentialId": "doctor-odontologia"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-09-04",
-      "effectiveAt": "2011",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "malla institucional del Plan 2011, reglamento de octubre de 2025 y códigos de ingreso 2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2011 oficial de Facultad de Odontología",
-          "url": "https://odon.edu.uy/sitio/wp-content/uploads/2024/11/Plan-de-Estudios-2011.pdf",
-          "role": "título; duración nominal de cinco años y medio; 495 créditos; organización semestral; áreas de formación",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Malla curricular vigente de la Carrera de Odontología, Facultad de Odontología",
           "url": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
-          "role": "unidades troncales por año; onceavo semestre; Trabajo Final; optativas vigentes; requisitos y créditos de cursos",
-          "trajectoryEvidence": false
+          "authority": "Facultad de Odontología, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "núcleo y lista de optativas; huella de filas normalizadas cotejadas",
+          "contentHash": "sha256:a5c0075c3b9d810bf2702d38aca0716723128c64a96d42c0ddb34508580dd9c6"
         },
         {
-          "authority": "Aspectos reglamentarios oficiales del Plan 2011, actualizados por el Consejo de Facultad",
-          "url": "https://odon.edu.uy/sitios/bedelia/wp-content/uploads/sites/44/2021/04/web-Reglamento-Plan-2011-con-actualizaciones-13-09-18.pdf",
-          "role": "modalidad reglamentada; asistencia obligatoria; previaturas 2020; condiciones para cuarto y quinto año",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Reglamento oficial del Trabajo Final de Carrera, Facultad de Odontología",
-          "url": "https://odon.edu.uy/sitios/tfc/wp-content/uploads/sites/62/2022/05/Aspectos-Reglamentarios-TFC-diciembre-2021.pdf",
-          "role": "Trabajo Final obligatorio; 10 créditos; habilitación desde cuarto año; condiciones de defensa",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo vigente de carreras Udelar",
-          "url": "https://udelar.edu.uy/carrera/odontologia",
-          "role": "vigencia; 495 créditos; sede Facultad de Odontología; perfil y requisitos de ingreso",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Estadísticas Básicas 2024 de Planeamiento Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/12/Estadisticas-Basicas-2024.pdf",
-          "role": "Plan 2011; cinco años y medio; 495 créditos; Montevideo; distinción de títulos intermedios",
-          "trajectoryEvidence": false
+          "url": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-que-Regulan-el-Plan-de-Estudios-2011-Res.15-del-23-10-25.pdf",
+          "authority": "Facultad de Odontología, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "pasantías en semestres 10 y 11, Trabajo Final y 30 créditos flexibles"
         }
       ],
       "scope": {
@@ -13250,27 +13210,41 @@
         ],
         "pathwayIds": [
           "bedelias"
-        ]
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "odontologia:2011",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-odon-odontologia-2011.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/odontologia-2011-semester-evidence.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-odon-odontologia-2011.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:1085d52a31c00b035591a189f0e176d2f3b0481a921de9fc6bcabd63d420170a",
+        "projectionContentHash": "sha256:e72076e78810e76de9d00201654bff7ff6dde2f3f6802c368ccba6656d21dd56",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 13
+          }
+        ],
+        "expectedCoursePlacements": 40,
+        "matchedCoursePlacements": 40
       },
       "conflictNotes": [
-        "duration: El Plan 2011 y la oferta académica institucional expresan cinco años y medio/once semestres, mientras que el catálogo web central redondea la duración a 60 meses. La UI conserva 66 meses porque coincide con la organización curricular publicada y deja trazada la discrepancia.",
-        "projectedVsOperationalAreaCredits: El texto original proyecta 89/44/40/222/50/50 créditos por área. La malla vigente y Bedelías operan un núcleo de 465 créditos con 30 flexibles: 40 en introducción/salud, 90 en bases, 37 en patología, 230 clínico-profesionales, 50 en servicios/comunidad y 18 generales/TFC. La UI usa esta estructura operativa y conserva el total oficial de 495.",
-        "duplicateVersions: Bedelías publica BBO 1/2 agregadas y por disciplinas, dos versiones de Iniciación a la Investigación, Tratamiento de Enfermedades Prevalentes 1 y Oclusión/Prostodoncia. La malla vigente selecciona disciplinas y unidades combinadas; las alternativas quedan visibles con cero créditos y validación manual para impedir doble conteo.",
-        "intermediateTitles: Planeamiento registra Asistente e Higienista Plan 2011 como títulos intermedios de 180 y 270 créditos, además de las carreras de ingreso directo Plan 2017. No se agregan credenciales automáticas al progreso de Odontología porque las fuentes consultadas no publican requisitos completos de egreso intermedio.",
-        "prerequisiteCoverage: Bedelías publica 112 reglas y 211 consultas sin regla explícita. La UI conserva las reglas extraídas, el reglamento 2020 como respaldo y no interpreta una ausencia como libre cursado."
+        "La malla histórica no prevalece sobre el Reglamento 2025: Pasantía 2 se ubica en 10.º y Pasantía 3 en 11.º; el Trabajo Final no se vuelve una actividad exclusiva del semestre 11.",
+        "Iniciación a la Investigación Científica: inscripción 2026 publica 1600, no 1601. No se declara equivalencia ni se migra progreso.",
+        "Encerado de Diagnóstico (4049) tiene 7 créditos y Taller Trabajo Final (4070) tiene 4 según Facultad; Bedelías registra 6 para ambos.",
+        "Tres optativas figuran en la malla sin correspondencia Bedelías inequívoca. No se promueven las electivas externas sólo presentes en Bedelías."
       ]
     },
     {
@@ -13772,5 +13746,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:6699d631f3f506e23af8fe61a883daad8c423a81532017025982000e1462ac11"
+  "contentHash": "sha256:178d4a96fea3436b2896dd4deb73638ad281e6164a69a6ad836b57b8cafbed18"
 }

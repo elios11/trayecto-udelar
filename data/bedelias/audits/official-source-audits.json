@@ -95252,9 +95252,9 @@
       "identity": "odontologia:2011",
       "career": "Odontología",
       "planYear": "2011",
-      "reviewedAt": "2026-09-04",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
-      "scope": "current-doctor-in-dentistry-plan-2011-montevideo-eleven-semesters-495-credits",
+      "scope": "Plan 2011 en Montevideo: periodización respaldada, requisitos y catálogo institucional parcial",
       "publicationEligible": true,
       "officialPlan": {
         "approval": [
@@ -95301,8 +95301,10 @@
           },
           "courseOverrides": {
             "1014": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestre 2",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1021": {
               "name": "Bases Biológicas 1 — registro integrado/equivalencia",
@@ -95316,19 +95318,47 @@
               "requirementId": "odontologia-flexible",
               "periodLabel": "Equivalencias y versiones anteriores"
             },
+            "1043": {
+              "name": "Estrategias de Estudio para las Bases Biológicas de la Odontología",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
             "1131": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-salud-colectiva"
+              "periodLabel": "Semestres 1 y 2",
+              "requirementId": "odontologia-salud-colectiva",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1600": {
-              "name": "Iniciación a la Investigación Científica — versión anterior",
-              "credits": 0,
-              "requirementId": "odontologia-flexible",
-              "periodLabel": "Equivalencias y versiones anteriores"
+              "name": "Iniciación a la Investigación Científica",
+              "credits": 8,
+              "requirementId": "odontologia-general-academica",
+              "periodLabel": "Semestre 1",
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1601": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-general-academica"
+              "credits": 0,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Versiones anteriores"
+            },
+            "1800": {
+              "name": "Extensión Universitaria y Elaboración de Proyectos",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
             },
             "2014": {
               "name": "Tratamiento de las Enfermedades más Prevalentes 1 — versión anterior",
@@ -95337,12 +95367,16 @@
               "periodLabel": "Equivalencias y versiones anteriores"
             },
             "2015": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestre 3",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "2016": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestre 3",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "2017": {
               "name": "Oclusión — versión sustituida por Oclusión y Prostodoncia",
@@ -95351,16 +95385,22 @@
               "periodLabel": "Equivalencias y versiones anteriores"
             },
             "2018": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestre 4",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "2019": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-patologia"
+              "periodLabel": "Semestre 3",
+              "requirementId": "odontologia-patologia",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "2020": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-patologia"
+              "periodLabel": "Semestre 4",
+              "requirementId": "odontologia-patologia",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "2021": {
               "name": "Prostodoncia — versión sustituida por Oclusión y Prostodoncia",
@@ -95369,150 +95409,384 @@
               "periodLabel": "Equivalencias y versiones anteriores"
             },
             "2022": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestre 3",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "2023": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 3",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "2024": {
-              "periodLabel": "Segundo año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 4",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "2060": {
+              "name": "Habilidades Experimentales Básicas de Bioquímica",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
             },
             "3021": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-patologia"
+              "periodLabel": "Semestre 5",
+              "requirementId": "odontologia-patologia",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "3023": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 5 y 6",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "3024": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 5 y 6",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "3025": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 5 y 6",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "3026": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 5 y 6",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "3041": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-servicios-comunidad"
+              "periodLabel": "Semestres 5 y 6",
+              "requirementId": "odontologia-servicios-comunidad",
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "3051": {
+              "name": "Saliva y Salud Oral",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "3052": {
+              "name": "Cuidados Paliativos Bucales en Población Adulta",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
             },
             "3131": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-salud-colectiva"
+              "periodLabel": "Semestres 5 y 6",
+              "requirementId": "odontologia-salud-colectiva",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "4019": {
-              "periodLabel": "Cuarto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "4021": {
-              "periodLabel": "Cuarto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "4022": {
-              "periodLabel": "Cuarto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "4023": {
-              "periodLabel": "Cuarto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "4024": {
-              "periodLabel": "Cuarto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "4032": {
+              "name": "Fundamentos Anatómicos Aplicados a la Planificación Digital en Odontología",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4040": {
+              "name": "Emergencias Médicas en Odontología",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4041": {
+              "name": "Patología Molecular y sus principios fundamentales",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4042": {
+              "name": "Mantenimiento y Urgencias en Prótesis Removible",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4043": {
+              "name": "Imagenología Buco-Maxilo-Facial",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4046": {
+              "name": "Emprendimientos y gestión de consultorios odontológicos",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4049": {
+              "name": "Encerado de Diagnóstico, Planificación Analógica y Digital",
+              "credits": 7,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
+              "creditConflict": "Facultad: 7; Bedelías: 6."
+            },
+            "4052": {
+              "name": "Género y Bioética Aplicada",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4060": {
+              "name": "Tutoría entre pares",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "4070": {
+              "name": "Taller Trabajo Final",
+              "credits": 4,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
+              "creditConflict": "Facultad: 4; Bedelías: 6."
             },
             "5025": {
-              "periodLabel": "Quinto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 9 y 10",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "5026": {
-              "periodLabel": "Quinto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 9 y 10",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "5027": {
-              "periodLabel": "Quinto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 9 y 10",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "5028": {
-              "periodLabel": "Quinto año",
-              "requirementId": "odontologia-clinico-profesional"
+              "periodLabel": "Semestres 9 y 10",
+              "requirementId": "odontologia-clinico-profesional",
+              "officialIdentity": true,
+              "officialCredits": false
+            },
+            "5055": {
+              "name": "Atención odontológica del adulto mayor",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
+            },
+            "5060": {
+              "name": "Odontología Legal y Forense",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "requirementId": "odontologia-flexible",
+              "periodLabel": "Optativas publicadas por Facultad",
+              "elective": true,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/"
             },
             "5070": {
-              "periodLabel": "Quinto año",
-              "requirementId": "odontologia-servicios-comunidad"
+              "periodLabel": "Semestre 10",
+              "requirementId": "odontologia-servicios-comunidad",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "5071": {
-              "periodLabel": "Sexto año — semestre 11",
-              "requirementId": "odontologia-servicios-comunidad"
+              "periodLabel": "Semestre 11",
+              "requirementId": "odontologia-servicios-comunidad",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "5080": {
-              "periodLabel": "Sexto año — semestre 11",
-              "requirementId": "odontologia-general-academica"
+              "periodLabel": "Trabajo Final · desde cuarto año, sin semestre fijo",
+              "requirementId": "odontologia-general-academica",
+              "officialIdentity": true,
+              "officialCredits": true,
+              "name": "Trabajo Final de Carrera",
+              "preserveName": true,
+              "credits": 10,
+              "creditSourceUrl": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-que-Regulan-el-Plan-de-Estudios-2011-Res.15-del-23-10-25.pdf"
             },
             "5131": {
-              "periodLabel": "Quinto año",
-              "requirementId": "odontologia-salud-colectiva"
+              "periodLabel": "Semestres 9 y 10",
+              "requirementId": "odontologia-salud-colectiva",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "IO": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-salud-colectiva"
+              "periodLabel": "Semestre 1",
+              "requirementId": "odontologia-salud-colectiva",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1021A": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 1",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1021B": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 1",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1021C": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 1",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1022A": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 2",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1022B": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 2",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "1022C": {
-              "periodLabel": "Primer año",
-              "requirementId": "odontologia-bases-biologicas"
+              "periodLabel": "Semestre 2",
+              "requirementId": "odontologia-bases-biologicas",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "3022A": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-patologia"
+              "periodLabel": "Semestre 6",
+              "requirementId": "odontologia-patologia",
+              "officialIdentity": true,
+              "officialCredits": false
             },
             "3022B": {
-              "periodLabel": "Tercer año",
-              "requirementId": "odontologia-patologia"
+              "periodLabel": "Semestre 6",
+              "requirementId": "odontologia-patologia",
+              "officialIdentity": true,
+              "officialCredits": false
             }
           },
           "periodOrder": [
-            "Primer año",
-            "Segundo año",
-            "Tercer año",
-            "Cuarto año",
-            "Quinto año",
-            "Sexto año — semestre 11",
-            "Formación flexible — clínico-profesional",
-            "Formación flexible — patología",
-            "Formación flexible — servicios y comunidad",
-            "Formación flexible — salud colectiva",
-            "Formación flexible — Facultad de Odontología",
-            "Electivas de otros servicios",
-            "Formación flexible — bases biológicas",
-            "Equivalencias y versiones anteriores",
-            "Validación de egreso"
+            "Semestre 1",
+            "Semestres 1 y 2",
+            "Semestre 2",
+            "Semestre 3",
+            "Semestre 4",
+            "Semestre 5",
+            "Semestres 5 y 6",
+            "Semestre 6",
+            "Semestres 7 y 8",
+            "Semestres 9 y 10",
+            "Semestre 10",
+            "Semestre 11",
+            "Trabajo Final · desde cuarto año, sin semestre fijo",
+            "Optativas publicadas por Facultad"
           ],
           "creditRequirements": [
             {
@@ -95585,44 +95859,44 @@
               "label": "Aprobá las 40 unidades troncales de la malla vigente",
               "minCompleted": 40,
               "sourceCourseIds": [
-                "1014",
-                "1131",
-                "1601",
                 "IO",
                 "1021A",
                 "1021B",
                 "1021C",
+                "1600",
+                "1131",
                 "1022A",
                 "1022B",
                 "1022C",
+                "1014",
+                "2023",
+                "2019",
                 "2015",
                 "2016",
-                "2018",
-                "2019",
-                "2020",
                 "2022",
-                "2023",
                 "2024",
+                "2020",
+                "2018",
                 "3021",
-                "3023",
                 "3024",
-                "3025",
                 "3026",
+                "3023",
+                "3025",
                 "3041",
                 "3131",
                 "3022A",
                 "3022B",
                 "4019",
-                "4021",
                 "4022",
                 "4023",
+                "4021",
                 "4024",
+                "5028",
                 "5025",
                 "5026",
                 "5027",
-                "5028",
-                "5070",
                 "5131",
+                "5070",
                 "5071",
                 "5080"
               ],
@@ -95671,8 +95945,245 @@
               "sourceUrl": "https://odon.edu.uy/sitio/wp-content/uploads/2024/11/Plan-de-Estudios-2011.pdf"
             }
           ],
-          "manualCompletionValidation": "Validación final de optativas, electivas, equivalencias, Trabajo Final de Carrera y egreso por la Comisión Académica de Carreras de Odontología"
-        }
+          "manualCompletionValidation": "Validación final de optativas, electivas, equivalencias, Trabajo Final de Carrera y egreso por la Comisión Académica de Carreras de Odontología",
+          "sourceDataPath": "data/bedelias/audits/odontologia-2011-semester-evidence.json",
+          "strictOfficialCourseIds": true,
+          "preserveBedeliasCourseIds": true,
+          "includeAllCoursesInPathwayCatalog": true,
+          "verifiedCourseIds": [
+            "IO",
+            "1021A",
+            "1021B",
+            "1021C",
+            "1600",
+            "1131",
+            "1022A",
+            "1022B",
+            "1022C",
+            "1014",
+            "2023",
+            "2019",
+            "2015",
+            "2016",
+            "2022",
+            "2024",
+            "2020",
+            "2018",
+            "3021",
+            "3024",
+            "3026",
+            "3023",
+            "3025",
+            "3041",
+            "3131",
+            "3022A",
+            "3022B",
+            "4019",
+            "4022",
+            "4023",
+            "4021",
+            "4024",
+            "5028",
+            "5025",
+            "5026",
+            "5027",
+            "5131",
+            "5070",
+            "5071",
+            "5080",
+            "1800",
+            "2060",
+            "4040",
+            "4043",
+            "5055",
+            "5060",
+            "4041",
+            "4049",
+            "4046",
+            "4060",
+            "4070",
+            "4042",
+            "1043",
+            "3052",
+            "4052",
+            "3051",
+            "4032"
+          ],
+          "additionalCourses": [
+            {
+              "id": "optativa-malla-2011-1",
+              "name": "Curso Básico de Informática",
+              "credits": 6,
+              "sourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
+              "requirementId": "odontologia-flexible",
+              "elective": true,
+              "periodLabel": "Optativas publicadas por Facultad"
+            },
+            {
+              "id": "optativa-malla-2011-3",
+              "name": "Comprensión Lectora en inglés",
+              "credits": 6,
+              "sourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
+              "requirementId": "odontologia-flexible",
+              "elective": true,
+              "periodLabel": "Optativas publicadas por Facultad"
+            },
+            {
+              "id": "optativa-malla-2011-4",
+              "name": "Curso de iniciación a la docencia en odontología",
+              "credits": 6,
+              "sourceUrl": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
+              "requirementId": "odontologia-flexible",
+              "elective": true,
+              "periodLabel": "Optativas publicadas por Facultad"
+            }
+          ],
+          "projectionAnomalies": [
+            "La malla histórica no prevalece sobre el Reglamento 2025: Pasantía 2 se ubica en 10.º y Pasantía 3 en 11.º; el Trabajo Final no se vuelve una actividad exclusiva del semestre 11.",
+            "Iniciación a la Investigación Científica: inscripción 2026 publica 1600, no 1601. No se declara equivalencia ni se migra progreso.",
+            "Encerado de Diagnóstico (4049) tiene 7 créditos y Taller Trabajo Final (4070) tiene 4 según Facultad; Bedelías registra 6 para ambos.",
+            "Tres optativas figuran en la malla sin correspondencia Bedelías inequívoca. No se promueven las electivas externas sólo presentes en Bedelías."
+          ]
+        },
+        "trajectories": [
+          {
+            "id": "bedelias",
+            "label": "Malla oficial",
+            "description": "Núcleo del Plan 2011 por semestre y por tramo anual, con 20 optativas fuera de los períodos fijos.",
+            "credentialId": "doctor-odontologia",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "IO",
+                  "1021A",
+                  "1021B",
+                  "1021C",
+                  "1600"
+                ]
+              },
+              {
+                "label": "Semestres 1 y 2",
+                "courseIds": [
+                  "1131"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "1022A",
+                  "1022B",
+                  "1022C",
+                  "1014"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "2023",
+                  "2019",
+                  "2015",
+                  "2016",
+                  "2022"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "2024",
+                  "2020",
+                  "2018"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "3021"
+                ]
+              },
+              {
+                "label": "Semestres 5 y 6",
+                "courseIds": [
+                  "3024",
+                  "3026",
+                  "3023",
+                  "3025",
+                  "3041",
+                  "3131"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "3022A",
+                  "3022B"
+                ]
+              },
+              {
+                "label": "Semestres 7 y 8",
+                "courseIds": [
+                  "4019",
+                  "4022",
+                  "4023",
+                  "4021",
+                  "4024"
+                ]
+              },
+              {
+                "label": "Semestres 9 y 10",
+                "courseIds": [
+                  "5028",
+                  "5025",
+                  "5026",
+                  "5027",
+                  "5131"
+                ]
+              },
+              {
+                "label": "Semestre 10",
+                "courseIds": [
+                  "5070"
+                ]
+              },
+              {
+                "label": "Semestre 11",
+                "courseIds": [
+                  "5071"
+                ]
+              },
+              {
+                "label": "Trabajo Final · desde cuarto año, sin semestre fijo",
+                "courseIds": [
+                  "5080"
+                ]
+              }
+            ],
+            "catalogSourceCourseIds": [
+              "optativa-malla-2011-1",
+              "1800",
+              "optativa-malla-2011-3",
+              "optativa-malla-2011-4",
+              "2060",
+              "4040",
+              "4043",
+              "5055",
+              "5060",
+              "4041",
+              "4049",
+              "4046",
+              "4060",
+              "4070",
+              "4042",
+              "1043",
+              "3052",
+              "4052",
+              "3051",
+              "4032"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true
+          }
+        ]
       },
       "offerings": [
         {
@@ -95703,13 +96214,15 @@
         "regionalCurriculumVariant": false,
         "reason": "Las fuentes oficiales vigentes confirman una sola carrera de Odontología Plan 2011, dictada completamente en Montevideo, con título Doctor en Odontología, once semestres y 495 créditos. La oferta amplia de Bedelías es el catálogo flexible y no acredita carreras o sedes adicionales.",
         "normalization": [
-          "Publicar una única carrera Odontología Plan 2011 y una sola trayectoria completa en Montevideo.",
-          "Ordenar las 40 unidades troncales por año según la malla vigente de Facultad y conservar el catálogo flexible completo, con 376 ofertas de composición y 332 actividades normalizadas en el snapshot.",
-          "Exigir las 40 unidades troncales, 30 créditos flexibles, el Trabajo Final de 10 créditos y la validación administrativa final.",
-          "Conservar las previaturas publicadas por Bedelías; no inventar reglas para las 211 consultas sin condición explícita.",
-          "Mostrar agregados y versiones sustituidas con cero créditos para evitar doble conteo, manteniéndolos visibles para equivalencias.",
-          "No presentar los títulos intermedios Plan 2011 como carreras nuevas ni habilitarlos por mero total de créditos sin reglas de egreso suficientes."
-        ]
+          "Conservar una única carrera y los IDs de plan, progreso, trayectoria y título.",
+          "Reproducir las unidades troncales por semestre o tramo respaldado, sin duplicar clínicas ni pasantías.",
+          "Conservar el Trabajo Final de 10 créditos y exigir los 30 créditos flexibles con validación institucional.",
+          "Publicar sólo las 20 optativas identificadas; no garantizar oferta futura ni promover candidatos del snapshot.",
+          "No inferir equivalencia entre variantes ni migrar el progreso al plan sucesor."
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/bedelias/audits/odontologia-2011-semester-evidence.json",
+        "trajectoryCoverage": "once semestres, un Trabajo Final sin período fijo y lista parcial de optativas"
       },
       "sources": [
         {
@@ -95774,6 +96287,27 @@
             "Montevideo",
             "distinción de títulos intermedios"
           ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-que-Regulan-el-Plan-de-Estudios-2011-Res.15-del-23-10-25.pdf",
+          "authority": "Facultad de Odontología, Universidad de la República",
+          "supports": [
+            "ubicación de pasantías, Trabajo Final y créditos flexibles"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/inscripciones-2026/",
+          "authority": "Facultad de Odontología, Universidad de la República",
+          "supports": [
+            "identidades publicadas para el ingreso 2026"
+          ]
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/se-realizo-la-segunda-jornada-de-implementacion-del-plan-de-estudios-de-la-carrera-de-odontologia/",
+          "authority": "Facultad de Odontología, Universidad de la República",
+          "supports": [
+            "plan sucesor anunciado; no prueba transición"
+          ]
         }
       ],
       "anomalies": [
@@ -95786,22 +96320,22 @@
           "resolution": "El texto original proyecta 89/44/40/222/50/50 créditos por área. La malla vigente y Bedelías operan un núcleo de 465 créditos con 30 flexibles: 40 en introducción/salud, 90 en bases, 37 en patología, 230 clínico-profesionales, 50 en servicios/comunidad y 18 generales/TFC. La UI usa esta estructura operativa y conserva el total oficial de 495."
         },
         {
-          "field": "duplicateVersions",
-          "resolution": "Bedelías publica BBO 1/2 agregadas y por disciplinas, dos versiones de Iniciación a la Investigación, Tratamiento de Enfermedades Prevalentes 1 y Oclusión/Prostodoncia. La malla vigente selecciona disciplinas y unidades combinadas; las alternativas quedan visibles con cero créditos y validación manual para impedir doble conteo."
-        },
-        {
           "field": "intermediateTitles",
           "resolution": "Planeamiento registra Asistente e Higienista Plan 2011 como títulos intermedios de 180 y 270 créditos, además de las carreras de ingreso directo Plan 2017. No se agregan credenciales automáticas al progreso de Odontología porque las fuentes consultadas no publican requisitos completos de egreso intermedio."
         },
         {
           "field": "prerequisiteCoverage",
           "resolution": "Bedelías publica 112 reglas y 211 consultas sin regla explícita. La UI conserva las reglas extraídas, el reglamento 2020 como respaldo y no interpreta una ausencia como libre cursado."
+        },
+        {
+          "field": "duplicateVersions",
+          "resolution": "Iniciación a la Investigación Científica: inscripción 2026 publica 1600, no 1601. No se declara equivalencia ni se migra progreso."
         }
       ],
-      "uiNotice": "Plan 2011 de once semestres y 495 créditos, con carrera completa en Montevideo. La malla ordena 40 unidades troncales por año y exige 30 créditos flexibles; las equivalencias, versiones, optativas y el egreso se validan con la Comisión Académica de Carreras.",
-      "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
+      "uiNotice": "Plan 2011 de once semestres y 495 créditos en Montevideo: 40 unidades troncales (465 créditos) y 30 créditos flexibles. Las clínicas que abarcan dos semestres se muestran una sola vez. El Trabajo Final es obligatorio y se puede iniciar desde cuarto año, sin semestre fijo. Las optativas publicadas no garantizan oferta en un período particular. Si cursaste Iniciación a la Investigación con el código 1601, confirmá su reconocimiento con Facultad; para ingreso 2026 figura 1600.",
+      "remainingWork": "Confirmar el plan sucesor y su transición por cohorte, códigos ambiguos y electivas externas."
     }
   ],
-  "contentHash": "sha256:251e032938caff209a6be8b44971f4b6f0a29db0bbfd77271423c6357043a11c",
+  "contentHash": "sha256:13cc032102577812b5d824867dad4b200ba1a5ce5e314bdf53e2ec79044d55c1",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

@@ -4983,6 +4983,54 @@
         "Salud en Maldonado: CURE lista el perfil, pero la guía ISEF no indica dictado allí. Se conserva el perfil consultable con aviso, no una promesa de oferta.",
         "Dos materias del primer semestre se conservan sin código Bedelías por ambigüedad de identidades. No se mapea el historial por semejanza."
       ]
+    },
+    {
+      "planId": "bedelias-odon-odontologia-2011",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "malla institucional del Plan 2011, reglamento de octubre de 2025 y códigos de ingreso 2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://odon.edu.uy/sitio/malla-curricular-grado-carrera/",
+          "authority": "Facultad de Odontología, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "núcleo y lista de optativas; huella de filas normalizadas cotejadas",
+          "contentHash": "sha256:a5c0075c3b9d810bf2702d38aca0716723128c64a96d42c0ddb34508580dd9c6"
+        },
+        {
+          "url": "https://odon.edu.uy/sitio/wp-content/uploads/2025/10/Pautas-Reglamentarias-que-Regulan-el-Plan-de-Estudios-2011-Res.15-del-23-10-25.pdf",
+          "authority": "Facultad de Odontología, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "pasantías en semestres 10 y 11, Trabajo Final y 30 créditos flexibles"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/odontologia-2011-semester-evidence.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-odon-odontologia-2011.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "La malla histórica no prevalece sobre el Reglamento 2025: Pasantía 2 se ubica en 10.º y Pasantía 3 en 11.º; el Trabajo Final no se vuelve una actividad exclusiva del semestre 11.",
+        "Iniciación a la Investigación Científica: inscripción 2026 publica 1600, no 1601. No se declara equivalencia ni se migra progreso.",
+        "Encerado de Diagnóstico (4049) tiene 7 créditos y Taller Trabajo Final (4070) tiene 4 según Facultad; Bedelías registra 6 para ambos.",
+        "Tres optativas figuran en la malla sin correspondencia Bedelías inequívoca. No se promueven las electivas externas sólo presentes en Bedelías."
+      ]
     }
   ]
 }
