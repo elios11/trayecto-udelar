@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fmed-doctor-en-medicina-2008",
+  "reviewedAt": "2026-11-16",
+  "authority": "Bedelía de Facultad de Medicina, Universidad de la República",
+  "sources": {
+    "curriculum": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/sistema-de-previaturas",
+    "plan": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/plan-de-estudios",
+    "credentials": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/tramite-de-titulos-y-certificados",
+    "regional": "https://udelar.edu.uy/carrerasinterior/doctor-en-medicina-2/",
+    "flexibleResolution": "https://www.fmed.edu.uy/sites/default/files/bedelia/RESOL%2078%20DEL%2010.07.2013%20-%20CREDITOS%20M%C3%8DNIMOS%20EN%20OPTATIVAS%20Y%20ELECTIVAS.pdf"
+  },
+  "scope": "Tabla que Facultad enlaza para el ingreso 2027, con cambios de materias y previaturas en 2026. Incluye las 25 unidades numeradas; no es catálogo de oferta efectiva ni certificación de egreso.",
+  "columns": ["code", "name", "facultyCredits"],
+  "periods": [
+    {"semesters":[1],"rows":[["MIBCM","Introducción a la Biología Celular y Molecular",10],["MIBES","Introducción a la Bioestadística",5],["MSPHB","Salud Pública y Humanidades",11],["MAT1","Aprendizaje en Territorio 1",14]]},
+    {"semesters":[2],"rows":[["MBCM","Biología Celular y Molecular",37],["MAT2","Aprendizaje en Territorio 2",8]]},
+    {"semesters":[3],"rows":[["MANAT","Anatomía",34],["MBDT","Biología del Desarrollo y de los Tejidos",11]]},
+    {"semesters":[4],"rows":[["MHESA","Histología y Embriología de Sistemas y Aparatos",6],["BCC3N","Neurociencias (sin Histología)",21],["BCC4C","Cardiovascular y Respiratorio (sin Histología)",18]]},
+    {"semesters":[5],"rows":[["BCC5","Digestivo, Renal, Endócrino y Metabolismo, y Reproducción y Desarrollo",45]]},
+    {"semesters":[6],"rows":[["BCC6","Hematología e Inmunobiología",27],["MC1","Metodología Científica 1",18]]},
+    {"semesters":[7,8],"rows":[["M4PNA","Medicina en el Primer Nivel de Atención",20],["M4BCP","Bases Científicas de la Patología",35],["M4PED","Pediatría",27],["M4GYN","Ginecología y Neonatología",28]]},
+    {"semesters":[9,10],"rows":[["MCM","Clínica Médica",87],["MPMT","Patología Médica y Terapéutica",23]]},
+    {"semesters":[11,12],"rows":[["M6CQ","Clínica Quirúrgica",58],["M6PQ","Patología Quirúrgica",11],["M6MFC","Medicina Familiar y Comunitaria, Salud Mental en Comunidad y Psicología Médica",17],["M6MC2","Metodología Científica 2",24]]},
+    {"semesters":[13,14],"rows":[["INTO","Internado Rotatorio",146]]}
+  ],
+  "creditConflicts": {
+    "M6CQ": {"faculty":58,"bedelias":57},
+    "M6MC2": {"faculty":24,"bedelias":25}
+  },
+  "credentials": {
+    "degree": {"publishedPlanMinimum":741,"flexibleCredits":60,"optionalMinimum":15,"electiveMinimum":10,"additionalRequiredActas":["RCPA","RCRP"]},
+    "intermediate": {"throughAcademicYear":4,"flexibleCredits":20}
+  },
+  "region": {
+    "label": "Región Litoral Norte (Paysandú y Salto)",
+    "firstYear": "CIO Salud, Trayectoria Medicina, en Paysandú, reconocido como primer año",
+    "subsequentYears": "Trayecto intersede, con distribución entre Paysandú y Salto"
+  },
+  "limits": [
+    "MBDT y MHESA figuran desde 2026; no se infiere equivalencia con asignaturas anteriores.",
+    "Los tramos de dos semestres no se subdividen sin respaldo por unidad, y el internado se registra una sola vez.",
+    "Los 741 créditos de las 25 filas no prueban que se hayan cumplido los 60 flexibles ni las dos actas de reanimación. No se infiere un nuevo mínimo total ni se asignan esos requisitos a un semestre.",
+    "La resolución de créditos flexibles enlazada dice 10/07/2013 en el documento; la página del plan la rotula 10/07/2023.",
+    "No se deducen previaturas ejecutables de esta transcripción ni se amplía el catálogo optativo por aparecer en Bedelías."
+  ]
+}
