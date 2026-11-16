@@ -6284,9 +6284,9 @@
       "identity": "doctor en medicina:2008",
       "career": "DOCTOR EN MEDICINA",
       "planYear": "2008",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-11-16",
       "status": "official-evidence-complete",
-      "scope": "plan-and-multi-site-regional-offering",
+      "scope": "plan, oferta intersede, grilla de previaturas de Facultad y requisitos de títulos",
       "publicationEligible": false,
       "officialPlan": {
         "approval": [
@@ -6323,7 +6323,467 @@
           "requirement": "cuarto año completo y 20 créditos optativos o electivos",
           "evidenceNote": "El total de 395 surge de los 375 créditos de los ocho primeros semestres más los 20 flexibles exigidos por Bedelía y coincide con la guía central de carreras 2023. Las estadísticas de Planeamiento 2023 publican 410; se conserva esa discrepancia como anomalía documental."
         },
-        "trajectoryRule": "Las optativas y electivas permiten perfiles personales, pero no definen orientaciones territoriales. En CENUR Litoral Norte, «Trayectoria Medicina» denomina el recorrido de ingreso por CIO Salud que Facultad reconoce como primer año."
+        "trajectoryRule": "Las optativas y electivas permiten perfiles personales, pero no definen orientaciones territoriales. En CENUR Litoral Norte, «Trayectoria Medicina» denomina el recorrido de ingreso por CIO Salud que Facultad reconoce como primer año.",
+        "trajectories": [
+          {
+            "id": "bedelias",
+            "label": "Grilla oficial de Medicina",
+            "description": "Grilla oficial de Medicina. Los cursos anuales y el internado se muestran una sola vez. En Litoral Norte, el CIO Salud Trayectoria Medicina en Paysandú se reconoce como primer año; después la carrera es intersede entre Paysandú y Salto. Para egresar se requieren las actas RCPA y RCRP y 60 créditos flexibles (mínimo 15 optativos y 10 electivos), con validación de Facultad. Para el título intermedio se requiere cuarto año completo y 20 flexibles.",
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "MIBCM",
+                  "MIBES",
+                  "MSPHB",
+                  "MAT1"
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "MBCM",
+                  "MAT2"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "MANAT",
+                  "MBDT"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "MHESA",
+                  "BCC3N",
+                  "BCC4C"
+                ]
+              },
+              {
+                "label": "Semestre 5",
+                "courseIds": [
+                  "BCC5"
+                ]
+              },
+              {
+                "label": "Semestre 6",
+                "courseIds": [
+                  "BCC6",
+                  "MC1"
+                ]
+              },
+              {
+                "label": "Semestres 7 y 8",
+                "courseIds": [
+                  "M4PNA",
+                  "M4BCP",
+                  "M4PED",
+                  "M4GYN"
+                ]
+              },
+              {
+                "label": "Semestres 9 y 10",
+                "courseIds": [
+                  "MCM",
+                  "MPMT"
+                ]
+              },
+              {
+                "label": "Semestres 11 y 12",
+                "courseIds": [
+                  "M6CQ",
+                  "M6PQ",
+                  "M6MFC",
+                  "M6MC2"
+                ]
+              },
+              {
+                "label": "Semestres 13 y 14",
+                "courseIds": [
+                  "INTO"
+                ]
+              }
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "restrictGeneratedCatalogToPublished": true
+          }
+        ],
+        "curriculum": {
+          "sourceUrl": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/sistema-de-previaturas",
+          "sourceDataPath": "data/official-trajectories/medicina-2008-grilla.json",
+          "useBedeliasCompositionTree": true,
+          "preserveBedeliasCourseIds": true,
+          "usePublishedCredits": true,
+          "strictOfficialCourseIds": true,
+          "verifiedCourseIds": [
+            "MIBCM",
+            "MIBES",
+            "MSPHB",
+            "MAT1",
+            "MBCM",
+            "MAT2",
+            "MANAT",
+            "MBDT",
+            "MHESA",
+            "BCC3N",
+            "BCC4C",
+            "BCC5",
+            "BCC6",
+            "MC1",
+            "M4PNA",
+            "M4BCP",
+            "M4PED",
+            "M4GYN",
+            "MCM",
+            "MPMT",
+            "M6CQ",
+            "M6PQ",
+            "M6MFC",
+            "M6MC2",
+            "INTO"
+          ],
+          "courseOverrides": {
+            "MIBCM": {
+              "name": "Introducción a la Biología Celular y Molecular",
+              "credits": 10,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "primer-trienio"
+            },
+            "MIBES": {
+              "name": "Introducción a la Bioestadística",
+              "credits": 5,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "primer-trienio"
+            },
+            "MSPHB": {
+              "name": "Salud Pública y Humanidades",
+              "credits": 11,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "primer-trienio"
+            },
+            "MAT1": {
+              "name": "Aprendizaje en Territorio 1",
+              "credits": 14,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 1",
+              "requirementId": "primer-trienio"
+            },
+            "MBCM": {
+              "name": "Biología Celular y Molecular",
+              "credits": 37,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "primer-trienio"
+            },
+            "MAT2": {
+              "name": "Aprendizaje en Territorio 2",
+              "credits": 8,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 2",
+              "requirementId": "primer-trienio"
+            },
+            "MANAT": {
+              "name": "Anatomía",
+              "credits": 34,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 3",
+              "requirementId": "primer-trienio"
+            },
+            "MBDT": {
+              "name": "Biología del Desarrollo y de los Tejidos",
+              "credits": 11,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 3",
+              "requirementId": "primer-trienio"
+            },
+            "MHESA": {
+              "name": "Histología y Embriología de Sistemas y Aparatos",
+              "credits": 6,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "primer-trienio"
+            },
+            "BCC3N": {
+              "name": "Neurociencias (sin Histología)",
+              "credits": 21,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "primer-trienio"
+            },
+            "BCC4C": {
+              "name": "Cardiovascular y Respiratorio (sin Histología)",
+              "credits": 18,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 4",
+              "requirementId": "primer-trienio"
+            },
+            "BCC5": {
+              "name": "Digestivo, Renal, Endócrino y Metabolismo, y Reproducción y Desarrollo",
+              "credits": 45,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 5",
+              "requirementId": "primer-trienio"
+            },
+            "BCC6": {
+              "name": "Hematología e Inmunobiología",
+              "credits": 27,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "primer-trienio"
+            },
+            "MC1": {
+              "name": "Metodología Científica 1",
+              "credits": 18,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestre 6",
+              "requirementId": "primer-trienio"
+            },
+            "M4PNA": {
+              "name": "Medicina en el Primer Nivel de Atención",
+              "credits": 20,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "segundo-trienio"
+            },
+            "M4BCP": {
+              "name": "Bases Científicas de la Patología",
+              "credits": 35,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "segundo-trienio"
+            },
+            "M4PED": {
+              "name": "Pediatría",
+              "credits": 27,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "segundo-trienio"
+            },
+            "M4GYN": {
+              "name": "Ginecología y Neonatología",
+              "credits": 28,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 7 y 8",
+              "requirementId": "segundo-trienio"
+            },
+            "MCM": {
+              "name": "Clínica Médica",
+              "credits": 87,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 9 y 10",
+              "requirementId": "segundo-trienio"
+            },
+            "MPMT": {
+              "name": "Patología Médica y Terapéutica",
+              "credits": 23,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 9 y 10",
+              "requirementId": "segundo-trienio"
+            },
+            "M6CQ": {
+              "name": "Clínica Quirúrgica",
+              "credits": 58,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 11 y 12",
+              "requirementId": "segundo-trienio",
+              "creditSourceUrl": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/sistema-de-previaturas",
+              "creditConflict": "Facultad: 58; Bedelías: 57."
+            },
+            "M6PQ": {
+              "name": "Patología Quirúrgica",
+              "credits": 11,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 11 y 12",
+              "requirementId": "segundo-trienio"
+            },
+            "M6MFC": {
+              "name": "Medicina Familiar y Comunitaria, Salud Mental en Comunidad y Psicología Médica",
+              "credits": 17,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 11 y 12",
+              "requirementId": "segundo-trienio"
+            },
+            "M6MC2": {
+              "name": "Metodología Científica 2",
+              "credits": 24,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 11 y 12",
+              "requirementId": "segundo-trienio",
+              "creditSourceUrl": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/sistema-de-previaturas",
+              "creditConflict": "Facultad: 24; Bedelías: 25."
+            },
+            "INTO": {
+              "name": "Internado Rotatorio",
+              "credits": 146,
+              "preserveName": true,
+              "officialIdentity": true,
+              "officialCredits": true,
+              "periodLabel": "Semestres 13 y 14",
+              "requirementId": "internado"
+            }
+          },
+          "requiredCourseGroups": [
+            {
+              "id": "medicina-grilla",
+              "label": "Unidades de la grilla oficial",
+              "minCompleted": 25,
+              "sourceCourseIds": [
+                "MIBCM",
+                "MIBES",
+                "MSPHB",
+                "MAT1",
+                "MBCM",
+                "MAT2",
+                "MANAT",
+                "MBDT",
+                "MHESA",
+                "BCC3N",
+                "BCC4C",
+                "BCC5",
+                "BCC6",
+                "MC1",
+                "M4PNA",
+                "M4BCP",
+                "M4PED",
+                "M4GYN",
+                "MCM",
+                "MPMT",
+                "M6CQ",
+                "M6PQ",
+                "M6MFC",
+                "M6MC2",
+                "INTO"
+              ],
+              "sourceUrl": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/sistema-de-previaturas"
+            },
+            {
+              "id": "medicina-hasta-cuarto",
+              "label": "Unidades hasta cuarto año inclusive",
+              "minCompleted": 18,
+              "sourceCourseIds": [
+                "MIBCM",
+                "MIBES",
+                "MSPHB",
+                "MAT1",
+                "MBCM",
+                "MAT2",
+                "MANAT",
+                "MBDT",
+                "MHESA",
+                "BCC3N",
+                "BCC4C",
+                "BCC5",
+                "BCC6",
+                "MC1",
+                "M4PNA",
+                "M4BCP",
+                "M4PED",
+                "M4GYN"
+              ],
+              "sourceUrl": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/tramite-de-titulos-y-certificados"
+            }
+          ],
+          "creditRequirements": [
+            {
+              "id": "primer-trienio",
+              "name": "Primer trienio",
+              "shortName": "Primer trienio",
+              "minCredits": 265
+            },
+            {
+              "id": "segundo-trienio",
+              "name": "Segundo trienio",
+              "shortName": "Segundo trienio",
+              "minCredits": 330
+            },
+            {
+              "id": "internado",
+              "name": "Internado Rotatorio",
+              "shortName": "Internado",
+              "minCredits": 146
+            }
+          ],
+          "projectionAnomalies": [
+            "Clínica Quirúrgica tiene 58 créditos y Metodología Científica 2 tiene 24 en la grilla; ambos registros Bedelías indican 57 y 25.",
+            "Los requisitos flexibles y actas de reanimación no están ubicados por semestre. Su cumplimiento debe verificarse con Facultad, sin inferir un mínimo total nuevo."
+          ],
+          "manualCompletionValidation": "Confirmación con Facultad de los requisitos que corresponden al título",
+          "credentials": [
+            {
+              "id": "bedelias-degree",
+              "title": "Doctor en Medicina",
+              "minTotalCredits": 741,
+              "requiredCourseGroupIds": [
+                "medicina-grilla",
+                "validacion-final-plan"
+              ],
+              "sourceUrl": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/tramite-de-titulos-y-certificados"
+            },
+            {
+              "id": "tecnico-promocion-salud",
+              "title": "Técnico en Promoción de Salud y Prevención de Enfermedades",
+              "minTotalCredits": 395,
+              "requiredCourseGroupIds": [
+                "medicina-hasta-cuarto",
+                "validacion-final-plan"
+              ],
+              "sourceUrl": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/tramite-de-titulos-y-certificados"
+            }
+          ]
+        }
       },
       "offerings": [
         {
@@ -6382,7 +6842,10 @@
           "Conservar el título intermedio de Técnico en Promoción de Salud y Prevención de Enfermedades con el requisito operativo vigente de cuarto año completo y 20 créditos flexibles.",
           "No interpretar el catálogo flexible ampliado de CENURLN ni las colisiones EPAR/PORT como cambios del núcleo.",
           "Tratar la cobertura regional de siete previaturas frente a 2276 entradas centrales como una diferencia de publicación."
-        ]
+        ],
+        "trajectoryStatus": "official-trajectory-reproduced",
+        "trajectorySourceDataPath": "data/official-trajectories/medicina-2008-grilla.json",
+        "trajectoryCoverage": "25 unidades en seis semestres individuales y cuatro tramos de dos semestres"
       },
       "sources": [
         {
@@ -6462,7 +6925,8 @@
           "resolution": "Se usa 395 porque coincide con la suma del Plan 2008 y el requisito operativo vigente de Bedelía; mantener 410 como discrepancia de la serie estadística de Planeamiento hasta aclaración institucional."
         }
       ],
-      "remainingWork": "La auditoría resuelve la falsa diferencia curricular regional y define la oferta intersede. La proyección curada de unidades y previaturas para la UI sigue pendiente; la discrepancia documental del título intermedio debe permanecer visible y no habilita publicación automática."
+      "remainingWork": "Verificar catálogo nominal, acreditación flexible y actas de reanimación; sin asignar semestre a estos requisitos.",
+      "uiNotice": "Grilla oficial de Medicina. Los cursos anuales y el internado se muestran una sola vez. En Litoral Norte, el CIO Salud Trayectoria Medicina en Paysandú se reconoce como primer año; después la carrera es intersede entre Paysandú y Salto. Para egresar se requieren las actas RCPA y RCRP y 60 créditos flexibles (mínimo 15 optativos y 10 electivos), con validación de Facultad. Para el título intermedio se requiere cuarto año completo y 20 flexibles."
     },
     {
       "identity": "licenciatura en educacion fisica:2017",
@@ -94079,6 +94543,6 @@
       "remainingWork": "La oferta concreta de optativas/electivas y las equivalencias cambian por período. Los títulos intermedios Plan 2011 requieren reglas oficiales completas antes de poder mostrarse como credenciales automáticas; Bedelía y la Comisión Académica de Carreras validan cada trayectoria y el egreso."
     }
   ],
-  "contentHash": "sha256:99a64eba0b7cc1420378421bcd80678fd6dfd4b5d571c075c1794d33e440ef05",
+  "contentHash": "sha256:0f8d1a85f13514fb0e6540c796fe538348753e9362517f4275a4b836906bde79",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }

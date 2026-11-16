@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 
 const read = async (path) => JSON.parse(await readFile(new URL(path, import.meta.url), "utf8"));
-const grid = await read("../data/official-trajectories/medicina-2008-grilla.json");
+const { auditedPathways, ...grid } = await read("../data/official-trajectories/medicina-2008-grilla.json");
 const rows = grid.periods.flatMap(({ rows }) => rows);
 assert.equal(rows.length, 25);
 assert.equal(new Set(rows.map(([code]) => code)).size, 25);
@@ -13,6 +13,10 @@ assert.deepEqual(grid.periods.map(({ semesters }) => semesters), [
 assert.deepEqual(grid.periods.map(({ rows }) => rows.reduce((total, [, , credits]) => total + credits, 0)),
   [40, 45, 45, 45, 45, 45, 110, 110, 110, 146]);
 assert.deepEqual(grid.periods.at(-1).rows.map(([code]) => code), ["INTO"]);
+if (auditedPathways) {
+  assert.deepEqual(auditedPathways.flatMap(({ periods }) => periods.map(({ courseIds }) => courseIds)),
+    grid.periods.map(({ rows }) => rows.map(([code]) => code)));
+}
 
 for (const service of ["fmed", "cenurln"]) {
   const snapshot = await read(`../data/bedelias/${service}-doctor-en-medicina-2008.json`);

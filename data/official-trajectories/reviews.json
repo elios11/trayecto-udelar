@@ -4896,6 +4896,47 @@
         "Registral conserva las dos identidades de fuente y sus cargas publicadas sin asociarlas a los códigos técnicos de carga invertida.",
         "52.41 se usa para estudiantes que deben partes 1 y 2; quienes aprobaron parte 1 en 2025 y deben parte 2 usan 52.42. Quienes aprobaron el seminario antes de 2025 no deben parte 2."
       ]
+    },
+    {
+      "planId": "bedelias-fmed-doctor-en-medicina-2008",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "tabla vigente enlazada para ingreso 2027",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Región Litoral Norte (Paysandú y Salto)"
+        ],
+        "pathwayIds": [
+          "bedelias"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/sistema-de-previaturas",
+          "authority": "Bedelía de Facultad de Medicina, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "25 unidades numeradas de la grilla; consulta de requisitos de título por separado",
+          "contentHash": "sha256:d7d8445d7a84fe864ac78b59115ee9bb7385d84ce6452358edb568fd2fbe7303"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/official-trajectories/medicina-2008-grilla.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fmed-doctor-en-medicina-2008.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "Clínica Quirúrgica tiene 58 créditos y Metodología Científica 2 tiene 24 en la grilla; ambos registros Bedelías indican 57 y 25.",
+        "Los requisitos flexibles y actas de reanimación no están ubicados por semestre. Su cumplimiento debe verificarse con Facultad, sin inferir un mínimo total nuevo."
+      ]
     }
   ]
 }

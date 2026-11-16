@@ -12,6 +12,8 @@ La [tabla de previaturas de FMed](https://www.fmed.edu.uy/gestion/bedelia/dr-en-
 
 La [página de títulos](https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/tramite-de-titulos-y-certificados) confirma 60 flexibles para el egreso (15 optativos y 10 electivos como mínimos) y dos actas de reanimación adicionales al internado. Para el título intermedio pide cuarto año completo más 20 flexibles. Estos requisitos no tienen ubicación semestral en la tabla de 25 filas. La resolución enlazada en la página del plan está fechada en 2013 en el documento, aunque el enlace descriptivo dice 2023.
 
-## Pendiente
+## Proyección
 
-Proyectar las 25 ubicaciones con cargas de Facultad y los IDs existentes. Mostrar aparte los requisitos flexibles y de reanimación: no sumar otra vez los 60 créditos a la meta del plan sin resolver la relación con el mínimo de 741, ni usar las 25 unidades como certificación automática de egreso. Verificar que ambas sedes compartan progreso y que el aviso explique el CIO; probar Currícula y planificador antes de publicar. No publicar como vigentes las equivalencias históricas ni el catálogo flexible administrativo.
+`node scripts/build-medicina-2008.mjs` regenera sin red la proyección, revisiones e inventario. Publica las 25 ubicaciones con cargas de Facultad y los IDs existentes. Conserva los requisitos flexibles y de reanimación en el aviso y exige confirmación de Facultad para los títulos. No suma otra vez los 60 créditos a la meta de 741. Para la credencial intermedia, conserva la referencia auditada de 395 (375 de los primeros cuatro años y 20 flexibles); el catálogo sigue siendo parcial y no acredita esos 20.
+
+Pendientes: contrastar las equivalencias de cohortes anteriores y el catálogo nominal flexible, así como el cómputo de las actas. No se asigna un semestre a esos requisitos ni se promueven automáticamente candidatos administrativos.

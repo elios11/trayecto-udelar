@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:8b6e0c57c0fc49d7100fbaff4fc7fde2d8bbb4a1e00a0cbeee65937e5996af37",
-    "officialAuditHash": "sha256:99a64eba0b7cc1420378421bcd80678fd6dfd4b5d571c075c1794d33e440ef05",
-    "reviewedTrajectoriesHash": "sha256:f5659db88943778a15dc037838e02e2a43d44539cbdb795e393d5a53e5728591"
+    "extractedReportHash": "sha256:abc2fac04389b529c6fcbdcfe956e94fc0a5feccb0f5702fda40b1eabc747a92",
+    "officialAuditHash": "sha256:0f8d1a85f13514fb0e6540c796fe538348753e9362517f4275a4b836906bde79",
+    "reviewedTrajectoriesHash": "sha256:ff9142a196237fcfacb47e550dda53168843505d0c388e41c4914b9b8291149d"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 121,
+      "official-trajectory-reproduced": 122,
       "official-trajectory-identified-pending": 3,
       "no-official-trajectory-documented": 4,
-      "research-pending": 19
+      "research-pending": 18
     },
-    "pending": 22,
+    "pending": 21,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -210,10 +210,10 @@
         "serviceLabel": "Facultad de Medicina",
         "selectablePlanIds": 20,
         "states": {
-          "official-trajectory-reproduced": 19,
+          "official-trajectory-reproduced": 20,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -274,7 +274,7 @@
     ]
   },
   "pendingQueue": {
-    "total": 22,
+    "total": 21,
     "plans": [
       {
         "priority": 1,
@@ -392,15 +392,6 @@
           "bedelias-fder"
         ],
         "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fmed-doctor-en-medicina-2008",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-fmed"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       },
       {
         "priority": 2,
@@ -536,14 +527,6 @@
           "bedelias-fing-ingenieria-fisico-matematica-2017",
           "bedelias-fing-licenciatura-en-computacion-2025",
           "bedelias-fing-tecnologo-en-informatica-2007"
-        ]
-      },
-      {
-        "serviceId": "bedelias-fmed",
-        "serviceLabel": "Facultad de Medicina",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-fmed-doctor-en-medicina-2008"
         ]
       },
       {
@@ -10236,83 +10219,58 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-15",
-      "effectiveAt": "2008",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "tabla vigente enlazada para ingreso 2027",
       "officialSources": [
         {
-          "authority": "Facultad de Medicina, Udelar",
-          "url": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/plan-de-estudios",
-          "role": "aprobaciones institucionales del Plan 2008; documentos vigentes del plan y mínimos flexibles",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Medicina, Udelar",
-          "url": "https://www.fmed.edu.uy/sites/default/files/bedelia/PLAN%20DE%20ESTUDIOS%20y%20CREDITOS%28final%20CDC%29.pdf",
-          "role": "título Doctor en Medicina y duración de siete años; 741 créditos y distribución por semestres e internado; título intermedio al completar los cuatro primeros años",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Consejo de Facultad de Medicina, Udelar",
-          "url": "https://www.fmed.edu.uy/sites/default/files/bedelia/RESOL%2078%20DEL%2010.07.2013%20-%20CREDITOS%20M%C3%8DNIMOS%20EN%20OPTATIVAS%20Y%20ELECTIVAS.pdf",
-          "role": "60 créditos optativos/electivos para egresar; mínimos de 15 optativos y 10 electivos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Facultad de Medicina, Udelar",
-          "url": "https://www.fmed.edu.uy/ensenanza/carreras-de-grado/dr-en-medicina/programas-de-las-unidades-curriculares",
-          "role": "estructura vigente en dos trienios y un año de práctica supervisada; unidades curriculares y siete ciclos del Plan 2008",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Bedelía de Facultad de Medicina, Udelar",
-          "url": "https://webng.fmed.edu.uy/gestion/bedelia/dr-en-medicina/tramite-de-titulos-y-certificados",
-          "role": "título intermedio; requisito de cuarto año completo y 20 créditos optativos/electivos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo de carreras del interior, Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/doctor-en-medicina-2/",
-          "role": "carrera completa en CENUR Litoral Norte; CIO Salud en Paysandú como primer año y cursado posterior intersede",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de Udelar",
-          "url": "https://udelar.edu.uy/noticias/cdc-aprobo-el-cursado-completo-de-la-carrera-de-medicina-en-el-cenur-litoral-norte",
-          "role": "aprobación del despliegue de segundo y tercer año entre Salto y Paysandú; extensión territorial de la misma carrera de Facultad de Medicina",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Guía de carreras de grado, Udelar",
-          "url": "https://udelar.edu.uy/portal/wp-content/uploads/sites/48/2023/01/Carreras-de-Grado-2023.pdf",
-          "role": "Doctor en Medicina, siete años y 741 créditos; título intermedio de cuatro años y 395 créditos; oferta regional en Paysandú y Salto",
-          "trajectoryEvidence": false
+          "url": "https://www.fmed.edu.uy/gestion/bedelia/dr-en-medicina/sistema-de-previaturas",
+          "authority": "Bedelía de Facultad de Medicina, Universidad de la República",
+          "reviewedAt": "2026-11-16",
+          "role": "25 unidades numeradas de la grilla; consulta de requisitos de título por separado",
+          "contentHash": "sha256:d7d8445d7a84fe864ac78b59115ee9bb7385d84ce6452358edb568fd2fbe7303"
         }
       ],
       "scope": {
         "territories": [
           "Montevideo",
-          "Región Litoral Norte (paysandú y Salto)"
+          "Región Litoral Norte (Paysandú y Salto)"
         ],
         "pathwayIds": [
           "bedelias"
-        ]
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "doctor en medicina:2008",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fmed-doctor-en-medicina-2008.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/official-trajectories/medicina-2008-grilla.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fmed-doctor-en-medicina-2008.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:c6de321e22b5489995ef1343eacc675a875a18e3fabeee894561e82047475789",
+        "projectionContentHash": "sha256:1d1566f05c52082b4924430374625986f8b2153abefc269361bc8b0fb8e5bee0",
+        "pathways": [
+          {
+            "id": "bedelias",
+            "periodCount": 10
+          }
+        ],
+        "expectedCoursePlacements": 25,
+        "matchedCoursePlacements": 25
       },
       "conflictNotes": [
-        "intermediateTitle.minimumCredits: Se usa 395 porque coincide con la suma del Plan 2008 y el requisito operativo vigente de Bedelía; mantener 410 como discrepancia de la serie estadística de Planeamiento hasta aclaración institucional."
+        "Clínica Quirúrgica tiene 58 créditos y Metodología Científica 2 tiene 24 en la grilla; ambos registros Bedelías indican 57 y 25.",
+        "Los requisitos flexibles y actas de reanimación no están ubicados por semestre. Su cumplimiento debe verificarse con Facultad, sin inferir un mínimo total nuevo."
       ]
     },
     {
@@ -13834,5 +13792,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:b6ab35a7ae7ba228e73de385da7d881436edbe5799b38eef98febee99caff140"
+  "contentHash": "sha256:6d60fedb443f252622d661b5980bf80322c0055cae4f30ecb9ea9ff072936acf"
 }

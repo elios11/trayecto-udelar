@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:6a02804cfcf912ed91d310a00c0c94af220f0c89d9516620dbee1108750b0726",
-    "officialAuditHash": "sha256:99a64eba0b7cc1420378421bcd80678fd6dfd4b5d571c075c1794d33e440ef05",
+    "auditQueueHash": "sha256:cf8c364a1161c92acfc953b37a6a9732abb6936f66be55b821eea460e381e224",
+    "officialAuditHash": "sha256:0f8d1a85f13514fb0e6540c796fe538348753e9362517f4275a4b836906bde79",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -23,20 +23,20 @@
     "plansWithOfficialCampuses": 48,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 6046,
-      "candidate": 26209,
+      "verified": 6072,
+      "candidate": 26913,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 32263,
-    "afterPublishedCourses": 6046,
+    "beforePublishedCourses": 32993,
+    "afterPublishedCourses": 6072,
     "beforePublishedRules": 9265,
     "afterPublishedRules": 1924,
     "visibleTargetsWithUnpublishedDependencies": 1593,
     "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 71,
-    "plansWithStructureOnly": 4
+    "plansWithPartialCatalog": 72,
+    "plansWithStructureOnly": 3
   },
   "plans": [
     {
@@ -3477,7 +3477,7 @@
       "facultyCode": "FMED",
       "snapshotPath": "data/bedelias/fmed-doctor-en-medicina-2008.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -3485,18 +3485,18 @@
         "region-litoral-norte-paysandu-y-salto"
       ],
       "before": {
-        "publishedCourses": 2753,
+        "publishedCourses": 3483,
         "publishedRules": 0
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 2753,
+        "publishedCourses": 26,
+        "hiddenCourses": 3457,
         "publishedRules": 0,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 2753,
+        "verified": 26,
+        "candidate": 3457,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4640,5 +4640,5 @@
       }
     }
   ],
-  "contentHash": "sha256:8b6e0c57c0fc49d7100fbaff4fc7fde2d8bbb4a1e00a0cbeee65937e5996af37"
+  "contentHash": "sha256:abc2fac04389b529c6fcbdcfe956e94fc0a5feccb0f5702fda40b1eabc747a92"
 }
