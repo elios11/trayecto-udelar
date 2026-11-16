@@ -348,7 +348,7 @@ type RegisteredProjection = {
   plan: { year: string; current: boolean; degreeTitle: string; credentialLabel?: string; minCredits: number; publishedMinCredits?: number | null; durationMonths: number | null; totalHours?: number | null; campuses: string[] | CampusOption[]; sharedWith: string[]; auditStatus: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; planAuditStatus?: "audited" | "official-evidence-complete" | "structurally-valid" | "extracted"; courseCatalogAuditStatus?: "verified" | "partial" | "structure-only"; creditComputationCoverage?: CreditComputationCoverage; compositionAvailable?: boolean; verifiedCompositionAvailable?: boolean; extractedCompositionAvailable?: boolean; notice: string; publishedRules: number; partialRules: number; noPublishedRule: number };
   creditStructure: CreditStructure;
   courses: Array<{ id: string; bedeliasCode?: string; equivalentCourseIds?: string[]; equivalentBedeliasCodes?: string[]; name: string; credits: number; creditsPublished?: boolean; hours?: number; eligibleRequirementIds: string[]; creditAllocations: CreditAllocation[]; dataStatus: "fadu-official" | "bedelias-composition" | "official-curriculum"; ruleCoverage: Course["ruleCoverage"]; curricularBlock?: boolean; elective?: boolean; catalogRole?: Course["catalogRole"]; availabilityStatus?: Course["availabilityStatus"]; authorityStatus?: Course["authorityStatus"]; fieldProvenance?: Course["fieldProvenance"] }>;
-  pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[]; alternativeGroups?: Array<{ id: string; courseIds: string[]; required: boolean }> }>; catalogCourseIds?: string[] }>;
+  pathways: Record<string, { label: string; description: string; credentialId?: CredentialId; scopeProgressToPathway?: boolean; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[]; alternativeGroups?: Array<{ id: string; courseIds: string[]; required: boolean }> }>; catalogCourseIds?: string[] }>;
   publishedPathways?: Record<string, { label: string; description: string; credentialId?: CredentialId; campusIds?: string[]; periods: Array<{ label: string; courseIds: string[]; alternativeGroups?: Array<{ id: string; courseIds: string[]; required: boolean }> }>; catalogCourseIds?: string[] }>;
   campuses?: CampusOption[];
   rules: VerifiedRule[];
@@ -1215,6 +1215,9 @@ export default function Home() {
       && profile.selection.credentialId === (credentialId || null)) ?? null;
   })();
   const activeCourses = appMode === "planner" || registeredAvailabilityIds ? plannerCourses : courses;
+  const scopeProgressToPathway = isRegisteredPlan
+    && activeRegisteredPlan?.pathways[activeRegisteredPathwayId]?.scopeProgressToPathway === true;
+  const degreeCourses = scopeProgressToPathway ? registeredAvailableCourses : activeCourses;
   const hasStoredExtendedElectiveProgress = useMemo(
     () => hasRecordedProgressOutsideCatalog(progress["1997"] ?? {}, initialPlan1997CourseIds),
     [progress],
@@ -1244,10 +1247,11 @@ export default function Home() {
     if (!isRegisteredPlan || !activeRegisteredPlan) return statuses;
     const result = { ...statuses };
     for (const course of activeRegisteredPlan.courses) {
-      if (!isOfficiallyAccreditableCourse(course as Course)) result[course.id] = "pending";
+      if (!isOfficiallyAccreditableCourse(course as Course)
+        || (scopeProgressToPathway && registeredAvailabilityIds && !registeredAvailabilityIds.has(course.id))) result[course.id] = "pending";
     }
     return result;
-  }, [statuses, isRegisteredPlan, activeRegisteredPlan]);
+  }, [statuses, isRegisteredPlan, activeRegisteredPlan, scopeProgressToPathway, registeredAvailabilityIds]);
   const courseIds = useMemo(() => new Set(activeCourses.map((course) => course.id)), [activeCourses]);
   const verifiedCourses = useMemo(() => {
     if (isRegisteredPlan && activeRegisteredPlan) return new Map<string, unknown>(activeRegisteredPlan.courses
@@ -1835,17 +1839,17 @@ export default function Home() {
   }, [planYear, trajectoryId]);
 
   const earnedCredits = useMemo(
-    () => activeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course) ? sum + course.credits : sum, 0),
-    [activeCourses, statuses],
+    () => degreeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course) ? sum + course.credits : sum, 0),
+    [degreeCourses, statuses],
   );
   const earnedHours = useMemo(
-    () => activeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course) ? sum + (course.hours ?? 0) : sum, 0),
-    [activeCourses, statuses],
+    () => degreeCourses.reduce((sum, course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course) ? sum + (course.hours ?? 0) : sum, 0),
+    [degreeCourses, statuses],
   );
   const planTotalHours = isRegisteredPlan ? (activeRegisteredPlan?.plan.totalHours ?? null) : null;
   const usesPublishedHours = planMinCredits <= 0 && activeCourses.some((course) => (course.hours ?? 0) > 0);
   const hasPublishedCourseLoad = usesPublishedHours || activeCourses.some((course) => course.credits > 0);
-  const completedCourseCount = activeCourses.filter((course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course)).length;
+  const completedCourseCount = degreeCourses.filter((course) => statuses[course.id] === "exonerated" && isOfficiallyAccreditableCourse(course)).length;
 
   const allocationBelongsTo = (allocationNodeId: string, targetNodeId: string) => {
     let current = nodeById.get(allocationNodeId);
@@ -1855,7 +1859,7 @@ export default function Home() {
     }
     return false;
   };
-  const nodeCredits = (nodeId: string) => activeCourses.reduce((total, course) => {
+  const nodeCredits = (nodeId: string) => degreeCourses.reduce((total, course) => {
     if (statuses[course.id] !== "exonerated" || !isOfficiallyAccreditableCourse(course)) return total;
     const contribution = (course.creditAllocations ?? [])
       .filter((allocation) => allocationBelongsTo(allocation.nodeId, nodeId))

@@ -231,10 +231,10 @@ test("las trayectorias auditadas se filtran por sede y conservan metadatos ofici
   assert.deepEqual(sports.pathways.futbol.campusIds, ["montevideo"]);
   assert.deepEqual(sports.pathways["actividades-acuaticas"].campusIds, ["rocha"]);
   assert.deepEqual(sports.pathways.atletismo.campusIds, ["paysandu"]);
-  assert.ok(Object.values(sports.publishedPathways).every((pathway) => pathway.periods.length === 0));
-  assert.equal(sports.plan.courseCatalogAuditStatus, "structure-only");
+  assert.ok(Object.values(sports.publishedPathways).every((pathway) => pathway.periods.length === 6));
+  assert.equal(sports.plan.courseCatalogAuditStatus, "partial");
   assert.ok(!sports.campuses.some((campus) => campus.id === "rivera"));
-  assert.match(sports.plan.notice, /no tiene ingreso abierto/i);
+  assert.match(sports.plan.notice, /no abrió Fútbol en 2026/i);
 
   const psychology = await readJson("app/data/bedelias-generated/bedelias-psico-licenciatura-en-psicologia-2013.json");
   assert.equal(psychology.plan.durationMonths, 48);

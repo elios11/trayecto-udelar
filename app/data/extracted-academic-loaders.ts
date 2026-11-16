@@ -585,7 +585,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-licenciatura-en-computacion-2025": {
     load: () => import("./bedelias-generated/bedelias-fing-licenciatura-en-computacion-2025.json"),
-    pathwayIds: ["curricula-personalizada"],
+    pathwayIds: ["curricula-personalizada","second-semester-pi-60-plus","second-semester-pi-20-59","litoral-norte"],
     pathwayLabel: "Recorrido",
     minCredits: 360,
   },

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "auditQueueHash": "sha256:faf4c900f9d26ef9186b14f0e8fa0a37c342ed810cee1ecc4210891bfdbd5e9e",
-    "officialAuditHash": "sha256:80e6a8738a5a72a70780fd3292187b0fdcac35d8610e8143e9dc72af7f9aed13",
+    "auditQueueHash": "sha256:109008bb8a4dab7cdf5f0c9295226bb345cb3b4bf8302b3eb46e0db0b7d8cdc6",
+    "officialAuditHash": "sha256:4e931f74981ff448a9c62a873a6ca8fffbf2c13529280a865a1a2bd729599714",
     "globalManifestHash": "sha256:ab4c238d3fb309cccbc5e31c0a54fc2333dd6d4d1938af944d13a4781d4d0153",
     "fhceReconciliationsHash": "sha256:dde5b4b30a8fe87b4369573ff1da36efdd396e7419675a07d6db04e12a9ac080",
     "iq2021ReconciliationHash": "sha256:40760d9473fb17b46204009603af86f1143a43e08d91cf9acdf4dcbd4500eb9d",
@@ -23,20 +23,20 @@
     "plansWithOfficialCampuses": 50,
     "excludedFromCurrentUi": 38,
     "courseAuthority": {
-      "verified": 6239,
-      "candidate": 26814,
+      "verified": 6313,
+      "candidate": 26795,
       "historical-equivalent": 44,
       "administrative": 177,
       "rejected": 666
     },
-    "beforePublishedCourses": 33061,
-    "afterPublishedCourses": 6239,
+    "beforePublishedCourses": 33116,
+    "afterPublishedCourses": 6313,
     "beforePublishedRules": 9265,
-    "afterPublishedRules": 2021,
-    "visibleTargetsWithUnpublishedDependencies": 1657,
+    "afterPublishedRules": 2022,
+    "visibleTargetsWithUnpublishedDependencies": 1674,
     "plansWithVerifiedCatalog": 64,
-    "plansWithPartialCatalog": 73,
-    "plansWithStructureOnly": 2
+    "plansWithPartialCatalog": 74,
+    "plansWithStructureOnly": 1
   },
   "plans": [
     {
@@ -3347,18 +3347,18 @@
         "paysandu"
       ],
       "before": {
-        "publishedCourses": 47,
+        "publishedCourses": 73,
         "publishedRules": 26
       },
       "after": {
-        "publishedCourses": 3,
-        "hiddenCourses": 44,
+        "publishedCourses": 39,
+        "hiddenCourses": 34,
         "publishedRules": 0,
-        "rulesWithUnpublishedDependencies": 0
+        "rulesWithUnpublishedDependencies": 17
       },
       "statuses": {
-        "verified": 3,
-        "candidate": 44,
+        "verified": 39,
+        "candidate": 34,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4587,7 +4587,7 @@
       "facultyCode": "ISEF",
       "snapshotPath": "data/bedelias/isef-tecnicatura-en-deportes-2007.json",
       "planAuditStatus": "official-evidence-complete",
-      "courseCatalogAuditStatus": "structure-only",
+      "courseCatalogAuditStatus": "partial",
       "compositionAvailable": true,
       "extractedCompositionAvailable": true,
       "campusIds": [
@@ -4596,18 +4596,18 @@
         "paysandu"
       ],
       "before": {
-        "publishedCourses": 758,
+        "publishedCourses": 787,
         "publishedRules": 49
       },
       "after": {
-        "publishedCourses": 0,
-        "hiddenCourses": 758,
-        "publishedRules": 0,
+        "publishedCourses": 38,
+        "hiddenCourses": 749,
+        "publishedRules": 1,
         "rulesWithUnpublishedDependencies": 0
       },
       "statuses": {
-        "verified": 0,
-        "candidate": 758,
+        "verified": 38,
+        "candidate": 749,
         "historical-equivalent": 0,
         "administrative": 0,
         "rejected": 0
@@ -4644,5 +4644,5 @@
       }
     }
   ],
-  "contentHash": "sha256:b96ffdd71ac3929469fb6656b72d118b90e0fc8ec37b91ca97e4b77e12659b30"
+  "contentHash": "sha256:a86d6cf01b369c42508501db50d8b0218c035d460199b5290b43df7eaf40e1df"
 }

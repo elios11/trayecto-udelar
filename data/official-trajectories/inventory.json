@@ -3,20 +3,20 @@
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:b96ffdd71ac3929469fb6656b72d118b90e0fc8ec37b91ca97e4b77e12659b30",
-    "officialAuditHash": "sha256:80e6a8738a5a72a70780fd3292187b0fdcac35d8610e8143e9dc72af7f9aed13",
-    "reviewedTrajectoriesHash": "sha256:d8c3e8abf2746adced19ed0f291c5701335d44fbbd3da1d0dd30f8f08c147174"
+    "extractedReportHash": "sha256:a86d6cf01b369c42508501db50d8b0218c035d460199b5290b43df7eaf40e1df",
+    "officialAuditHash": "sha256:4e931f74981ff448a9c62a873a6ca8fffbf2c13529280a865a1a2bd729599714",
+    "reviewedTrajectoriesHash": "sha256:ff382b9235fb3a663989c787225608ec2d23bf3635756c40af8565c3f4f0e5fb"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
-      "official-trajectory-reproduced": 127,
-      "official-trajectory-identified-pending": 3,
+      "official-trajectory-reproduced": 128,
+      "official-trajectory-identified-pending": 4,
       "no-official-trajectory-documented": 4,
-      "research-pending": 13
+      "research-pending": 11
     },
-    "pending": 16,
+    "pending": 15,
     "byService": [
       {
         "serviceId": "bedelias-cure",
@@ -200,9 +200,9 @@
         "selectablePlanIds": 18,
         "states": {
           "official-trajectory-reproduced": 14,
-          "official-trajectory-identified-pending": 1,
+          "official-trajectory-identified-pending": 2,
           "no-official-trajectory-documented": 0,
-          "research-pending": 3
+          "research-pending": 2
         }
       },
       {
@@ -265,16 +265,16 @@
         "serviceLabel": "Instituto Superior de Educación Física",
         "selectablePlanIds": 3,
         "states": {
-          "official-trajectory-reproduced": 2,
+          "official-trajectory-reproduced": 3,
           "official-trajectory-identified-pending": 0,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       }
     ]
   },
   "pendingQueue": {
-    "total": 16,
+    "total": 15,
     "plans": [
       {
         "priority": 1,
@@ -302,6 +302,15 @@
           "fing"
         ],
         "reason": "La correspondencia de las ocho variantes publicadas queda estructurada, pero ninguna fuente cierra los diez semestres ni 450 créditos de Ingeniería; Colonia cubre 248 de 270 créditos del título intermedio y Tacuarembó sólo publica un trayecto inicial de seis semestres."
+      },
+      {
+        "priority": 1,
+        "planId": "bedelias-fing-licenciatura-en-computacion-2025",
+        "state": "official-trajectory-identified-pending",
+        "serviceIds": [
+          "fing"
+        ],
+        "reason": "Se reproducen tres guías compartidas. No se publicó o cotejó la ubicación del Trabajo Final de Licenciatura ni una guía propia de ingreso inicial para cada sede."
       },
       {
         "priority": 2,
@@ -386,15 +395,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-isef-tecnicatura-en-deportes-2007",
-        "state": "research-pending",
-        "serviceIds": [
-          "bedelias-isef"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fing-ingenieria-en-agrimensura-2023",
         "state": "research-pending",
         "serviceIds": [
@@ -410,15 +410,6 @@
           "fing"
         ],
         "reason": "Falta evidencia suficiente para confirmar trayectoria oficial o ausencia documentada."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fing-licenciatura-en-computacion-2025",
-        "state": "research-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
       }
     ],
     "byService": [
@@ -466,20 +457,12 @@
         "serviceId": "fing",
         "serviceLabel": "Facultad de Ingeniería",
         "identifiedPending": [
-          "2025"
+          "2025",
+          "bedelias-fing-licenciatura-en-computacion-2025"
         ],
         "researchPending": [
           "bedelias-fing-ingenieria-en-agrimensura-2023",
-          "bedelias-fing-ingenieria-fisico-matematica-2017",
-          "bedelias-fing-licenciatura-en-computacion-2025"
-        ]
-      },
-      {
-        "serviceId": "bedelias-isef",
-        "serviceLabel": "Instituto Superior de Educación Física",
-        "identifiedPending": [],
-        "researchPending": [
-          "bedelias-isef-tecnicatura-en-deportes-2007"
+          "bedelias-fing-ingenieria-fisico-matematica-2017"
         ]
       }
     ]
@@ -9777,72 +9760,58 @@
           "defaultCredentialId": "licenciado-computacion"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-31",
-      "effectiveAt": 2026,
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-10-04",
+      "effectiveAt": "Plan 2025, ingreso desde 2026",
       "officialSources": [
         {
-          "authority": "Plan de Estudios 2025 de la Licenciatura en Computación, Diario Oficial y Udelar",
-          "url": "https://www.fing.edu.uy/sites/default/files/diario-oficial-plan-estudio-licenciatura-en-computacion.pdf",
-          "role": "aprobaciones; título; cuatro años; 360 créditos; ingreso directo; mínimos; título intermedio; trabajo final; currículo individual",
-          "trajectoryEvidence": false
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83838",
+          "authority": "Facultad de Ingeniería · Universidad de la República",
+          "role": "grilla que nombra a Ingeniería y Licenciatura",
+          "contentHash": "sha256:6046414453ca23c2cdc5a7cb9e876befeaa9ac2e548d87fb2739d02f2df7b975",
+          "reviewedAt": "2026-10-04"
         },
         {
-          "authority": "Página vigente de la carrera, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/es/carrera/grado/lic-en-computaci%C3%B3n",
-          "role": "Plan 2025; cuatro años; 360 créditos; documento oficial",
-          "trajectoryEvidence": false
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83839",
+          "authority": "Facultad de Ingeniería · Universidad de la República",
+          "role": "grilla que nombra a Ingeniería y Licenciatura",
+          "contentHash": "sha256:bee2bacd70d308a948c2aeed57aec5b1cd8a6b64bcbaae3c4c6dfa67ac551afa",
+          "reviewedAt": "2026-10-04"
         },
         {
-          "authority": "Noticia institucional de Udelar sobre la implementación del Plan 2025",
-          "url": "https://udelar.edu.uy/noticias/la-facultad-de-ingenieria-aprobo-un-nuevo-plan-de-estudios",
-          "role": "vigencia desde 2026; ingreso directo; núcleo compartido con Ingeniería; trabajo final de 20 créditos",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Oferta vigente de carreras en el interior, Facultad de Ingeniería",
-          "url": "https://www.fing.edu.uy/ensenanza/carrerasinterior",
-          "role": "carrera completa en Tacuarembó; carrera completa en Colonia; carrera completa en Salto; carrera completa en Paysandú",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo general de carreras, Udelar",
-          "url": "https://udelar.edu.uy/carrera/licenciatura-en-computacion",
-          "role": "identidad institucional; servicio responsable",
-          "trajectoryEvidence": false
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72916",
+          "authority": "Facultad de Ingeniería · Universidad de la República",
+          "role": "grilla que nombra a Ingeniería y Licenciatura",
+          "contentHash": "sha256:164576b25c959b134630ca84a69a8c2431de91c3725c0c86a269a07fd165d445",
+          "reviewedAt": "2026-10-04"
         }
       ],
       "scope": {
         "territories": [
           "Montevideo",
-          "Tacuarembó",
-          "Colonia",
-          "Salto",
-          "Paysandú"
+          "CENUR Litoral Norte"
         ],
         "pathwayIds": [
-          "curricula-personalizada"
-        ]
+          "second-semester-pi-60-plus",
+          "second-semester-pi-20-59",
+          "litoral-norte"
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "official-flexible-structure",
+        "primary": "official-periods",
         "features": [
-          "official-flexible-structure"
+          "official-periods"
         ]
       },
       "evidence": {
         "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "licenciatura en computacion:2025",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-fing-licenciatura-en-computacion-2025.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "sourceDataPath": "data/fing/computacion-2025-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-licenciatura-en-computacion-2025.json",
+        "reason": "Se reproducen tres guías compartidas. No se publicó o cotejó la ubicación del Trabajo Final de Licenciatura ni una guía propia de ingreso inicial para cada sede."
       },
       "conflictNotes": [
-        "durationAndAdmission: El catálogo general aún muestra 60 meses y el antiguo ingreso posterior al título de Analista. Se priorizan el Plan 2025 aprobado, la página vigente de FING y la comunicación institucional de implementación: cuatro años e ingreso directo desde 2026.",
-        "bedeliasTitleLabel: Bedelías rotula únicamente Analista en Computación aunque el registro corresponde al Plan 2025 de la Licenciatura. La UI publica Licenciado en Computación como título final y conserva Analista como título intermedio.",
-        "missingCompositionAreas: La composición visible de Bedelías omite los encabezados B.1 y C.1 y no lista cursos bajo B.2 y B.3. Los mínimos oficiales se conservan como objetivos verificables, sin inventar asignaciones de cursos no publicadas.",
-        "campusCurriculum: La oferta de FING confirma la carrera en cinco sedes, pero no publica diferencias curriculares por sede. Todas comparten un único plan, recorrido y progreso hasta que una fuente oficial pruebe una variante.",
-        "courseSequencing: El Plan 2025 define áreas, mínimos y flexibilidad, no una secuencia semestral obligatoria. La UI ofrece catálogo y control de requisitos sin presentar una trayectoria sugerida como prescriptiva."
+        "No se convierte el Proyecto de Ingeniería de Software en Trabajo Final de Licenciatura ni se comparte progreso entre los dos planes."
       ]
     },
     {
@@ -12717,51 +12686,22 @@
           "defaultCredentialId": "bedelias-degree"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-08-20",
-      "effectiveAt": "2007",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "Plan 2007 enlazado como vigente; sin apertura de ingreso a Fútbol en 2026",
       "officialSources": [
         {
-          "authority": "Instituto Superior de Educación Física, Udelar",
-          "url": "https://www.cure.edu.uy/wp-content/uploads/2025/02/Plan-de-estudios-tecnicatura_en_deportes-2_0.pdf",
-          "role": "Plan de Estudios 2007, duración de dos años y título; 160 créditos distribuidos en 37 comunes, 107 específicos y 16 opcionales; estructura común y específica de la opción deportiva",
-          "trajectoryEvidence": false
+          "url": "https://isef.udelar.edu.uy/wp-content/uploads/2012/11/TED-PLAN-DE-ESTUDIO-VIGENTE-6.10.09.pdf",
+          "authority": "ISEF, Universidad de la República",
+          "role": "Tablas de formación básica de los dos años",
+          "contentHash": "sha256:00b1e1c78845ef86949c11f5c18a94da7da669e829b82a32afee0e785900944a",
+          "reviewedAt": "2026-11-16"
         },
         {
-          "authority": "Instituto Superior de Educación Física, Udelar",
           "url": "https://isef.udelar.edu.uy/ensenanza/tecnicatura-en-deporte/",
-          "role": "vigencia curricular del Plan 2007 para cohortes existentes; flexibilidad para cursar núcleo y parte específica en sedes diferentes; programas específicos de Fútbol, Actividades Acuáticas y Atletismo; cierre del ingreso a Fútbol en 2026",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Instituto Superior de Educación Física, Udelar",
-          "url": "https://isef.udelar.edu.uy/institucional/distribucion-territorial/",
-          "role": "Fútbol como opción territorial publicada en Montevideo; ausencia actual de la Tecnicatura en la oferta anunciada para Este, Litoral Norte y Noreste",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Centro Universitario Regional del Este, Udelar",
-          "url": "https://www.cure.edu.uy/ensenanza/oferta-educativa/tecnicatura-en-deporte/",
-          "role": "opción Actividades Acuáticas en Rocha; título Técnico Deportivo Superior y duración de dos años; cierre de inscripciones en 2026 y variabilidad anual de optativas",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Catálogo de carreras del interior, Udelar",
-          "url": "https://udelar.edu.uy/carrerasinterior/tecnicatura-en-deportes/",
-          "role": "opción Atletismo en Paysandú; organización en bloques común, específico y opcional; posibilidad de cursado coordinado entre sedes",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Dirección General de Planeamiento, Udelar",
-          "url": "https://planeamiento.udelar.edu.uy/portal/wp-content/uploads/sites/33/2025/04/EB-2023.pdf",
-          "role": "Plan 2007, dos años, 1264 horas y 160 créditos; mapeo de Actividades Acuáticas a Rocha, Atletismo a Paysandú y Fútbol a Montevideo; carácter rotativo de las opciones del interior",
-          "trajectoryEvidence": false
-        },
-        {
-          "authority": "Portal central de Udelar",
-          "url": "https://udelar.edu.uy/noticias/2013-sumando-carreras-en-el-interior",
-          "role": "inicio histórico en Rivera de las opciones Actividades Acuáticas y Fútbol en 2013",
-          "trajectoryEvidence": false
+          "authority": "ISEF, Universidad de la República",
+          "role": "Enlace vigente y condición de ingreso 2026",
+          "reviewedAt": "2026-11-16"
         }
       ],
       "scope": {
@@ -12774,24 +12714,47 @@
           "futbol",
           "actividades-acuaticas",
           "atletismo"
-        ]
+        ],
+        "completeDegreeSequence": false
       },
       "currentProjection": {
-        "primary": "administrative-composition",
+        "primary": "official-periods",
         "features": [
-          "administrative-composition"
+          "official-periods"
         ]
       },
       "evidence": {
-        "kind": "insufficient-trajectory-evidence",
-        "auditIdentity": "tecnicatura en deportes:2007",
-        "auditPath": "data/bedelias/audits/official-source-audits.json",
-        "projectionPath": "app/data/bedelias-generated/bedelias-isef-tecnicatura-en-deportes-2007.json",
-        "reason": "La auditoría existente no demuestra una trayectoria sugerida oficial ni su ausencia."
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/tecnicatura-deportes-2007-trajectory.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-isef-tecnicatura-en-deportes-2007.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false,
+        "sourceContentHash": "sha256:f65b76f4db5641774e89899451f81d07d98a76ae2d23839c6f396121f3a4f639",
+        "projectionContentHash": "sha256:f09745c8fc15f128559d7b52d40b2a104a9ff0e8da269dd28ae49c562dcbeccc",
+        "pathways": [
+          {
+            "id": "futbol",
+            "periodCount": 6
+          },
+          {
+            "id": "actividades-acuaticas",
+            "periodCount": 6
+          },
+          {
+            "id": "atletismo",
+            "periodCount": 6
+          }
+        ],
+        "expectedCoursePlacements": 60,
+        "matchedCoursePlacements": 60
       },
       "conflictNotes": [
-        "centralSnapshot.completeness: No usar el snapshot ISEF como única fuente de composición: contiene 67 claves básicas únicas frente a 86 en los tres snapshots regionales idénticos y presenta ramas incompletas, especialmente Handball.",
-        "activeAdmissions: Separar vigencia del plan, continuidad de cohortes y apertura de ingreso. En 2026 no hay apertura documentada para Montevideo ni Rocha, y no se confirma una nueva cohorte en Paysandú o Rivera."
+        "Las tablas ilustran 8 créditos por año, pero el Plan exige 16 en el conjunto de los dos años; no fija oferta nominal ni mínimos independientes por semestre.",
+        "No se supone equivalencia automática entre materias específicas de deportes distintos."
       ]
     },
     {
@@ -13718,5 +13681,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:2ae3fb3d535374e29840eba6647f43ca59004c01aa63d5a8823e90399a8deff8"
+  "contentHash": "sha256:009a32250792f32ed1dad34a0892ed20988e69b6e28cbb08c6b92d17a3afb6dc"
 }

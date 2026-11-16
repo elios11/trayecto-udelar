@@ -314,7 +314,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
       }];
     }));
   }
-  if (audit?.identity === "tecnicatura en deportes:2007") {
+  if (audit?.identity === "tecnicatura en deportes:2007" && !audit.officialPlan.trajectories?.length) {
     return Object.fromEntries(audit.officialPlan.documentedSportOptions.map((option) => [option.id, {
       label: option.label,
       description: `${option.label} es una opción deportiva del Plan 2007 vinculada a las sedes y cohortes documentadas. La selección no implica que exista ingreso abierto en 2026.`,
@@ -370,6 +370,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
           ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
           campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
           ...(trajectory.localCatalogOnly === true ? { localCatalogOnly: true } : {}),
+          ...(trajectory.scopeProgressToPathway === true ? { scopeProgressToPathway: true } : {}),
           ...(trajectory.restrictGeneratedCatalogToPublished === true ? { restrictGeneratedCatalogToPublished: true } : {}),
           ...generatedFallbackFields(trajectory),
           periods: trajectoryPeriods,
@@ -421,6 +422,7 @@ function buildPathways(audit, periods, courseRecords, campuses, officialCurricul
         ...(trajectory.credentialId ? { credentialId: trajectory.credentialId } : {}),
         campusIds: trajectory.campusIds ?? campuses.map((campus) => campus.id),
         ...(trajectory.localCatalogOnly === true ? { localCatalogOnly: true } : {}),
+        ...(trajectory.scopeProgressToPathway === true ? { scopeProgressToPathway: true } : {}),
         ...(trajectory.restrictGeneratedCatalogToPublished === true ? { restrictGeneratedCatalogToPublished: true } : {}),
         ...generatedFallbackFields(trajectory),
         periods: trajectoryPeriods,
@@ -483,7 +485,7 @@ function ruleUsesOnlyPublishedCourseIdentities(rule, publishedCourseIdentities) 
     && [...collectExpressionCourseIds(rule.expression)].every((courseId) => publishedCourseIdentities.has(courseId));
 }
 
-function buildOfficialCurriculum(audit, serviceCode, usedIds) {
+function buildOfficialCurriculum(audit, serviceCode, usedIds, legacyCoursesById = new Map()) {
   const curriculum = audit?.officialPlan?.curriculum;
   const hasPeriods = Array.isArray(curriculum?.periods) && curriculum.periods.length > 0;
   const courseGroups = curriculum?.courseGroups ?? curriculum?.periods ?? [];
@@ -524,13 +526,18 @@ function buildOfficialCurriculum(audit, serviceCode, usedIds) {
 
   const catalogCourseIds = [];
   for (const [index, rawCourse] of (curriculum.catalogCourses ?? []).entries()) {
-    const id = courseId(serviceCode, rawCourse, courses.length + index, usedIds);
+    const legacy = rawCourse.reuseBedeliasCourseId ? legacyCoursesById.get(rawCourse.reuseBedeliasCourseId) : null;
+    if (rawCourse.reuseBedeliasCourseId && (!legacy || legacy.bedeliasCode !== rawCourse.id || legacy.credits !== rawCourse.credits)) {
+      throw new Error(`No coincide la identidad publicada ${rawCourse.reuseBedeliasCourseId} con la composición guardada.`);
+    }
+    const id = legacy?.id ?? courseId(serviceCode, rawCourse, courses.length + index, usedIds);
     const credits = Number(rawCourse.credits);
     const hours = Number(rawCourse.hours);
     const nodeId = rawCourse.requirementId ?? "plan-total";
     const courseSourceUrl = rawCourse.sourceUrl ?? sourceUrl;
     courses.push(withCourseAuthority({
       id,
+      ...(legacy ? { bedeliasCode: legacy.bedeliasCode } : {}),
       ...(rawCourse.sourceCourseId ? { sourceCourseId: rawCourse.sourceCourseId } : {}),
       name: rawCourse.name,
       credits: Number.isFinite(credits) && credits >= 0 ? credits : 0,
@@ -1145,7 +1152,8 @@ function buildProjection(entry, snapshot, audit) {
     ? new Set()
     : usedIds;
   const officialCurriculum = buildBedeliasCompositionCurriculum(audit, snapshot, snapshot.service.code, officialCurriculumUsedIds)
-    ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds);
+    ?? buildOfficialCurriculum(audit, snapshot.service.code, usedIds, audit?.officialPlan?.curriculum?.augmentBedeliasCourses
+      ? new Map(courses.map((course) => [course.id, course])) : undefined);
   const coursesBeforeAliasConsolidation = [...(officialCurriculum?.courses ?? [])];
   const equivalentCourseAliases = consolidateEquivalentCourseVariants(officialCurriculum);
   for (const [sourceCode, courseId] of codeToId) {
@@ -1162,6 +1170,10 @@ function buildProjection(entry, snapshot, audit) {
     for (const course of courses) {
       if (course.bedeliasCode && !codeToId.has(course.bedeliasCode)) codeToId.set(course.bedeliasCode, course.id);
     }
+  } else if (officialCurriculum && audit?.officialPlan?.curriculum?.augmentBedeliasCourses === true) {
+    const combined = new Map(courses.map((course) => [course.id, course]));
+    for (const course of officialCurriculum.courses) combined.set(course.id, course);
+    courses = [...combined.values()];
   }
 
   const verifiedCourseIds = new Set(courses.filter((course) => course.authorityStatus === "verified").map((course) => course.id));

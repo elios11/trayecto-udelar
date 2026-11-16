@@ -23,7 +23,9 @@ test("publica un único Plan 2025 en cinco sedes sin duplicar la carrera", () =>
   assert.equal(projection.plan.durationMonths, 48);
   assert.equal(projection.plan.minCredits, 360);
   assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo", "tacuarembo", "colonia", "salto", "paysandu"]);
-  assert.deepEqual(Object.keys(projection.pathways), ["curricula-personalizada"]);
+  assert.deepEqual(Object.keys(projection.pathways), [
+    "curricula-personalizada", "second-semester-pi-60-plus", "second-semester-pi-20-59", "litoral-norte",
+  ]);
   assert.deepEqual(projection.pathways["curricula-personalizada"].campusIds, ["montevideo", "tacuarembo", "colonia", "salto", "paysandu"]);
 
   const catalogEntries = catalog.flatMap((faculty) => faculty.careers
@@ -48,7 +50,7 @@ test("conserva la currícula flexible y todos los mínimos oficiales del título
   assert.equal(requirements["liccomp-data"], 10);
   assert.equal(requirements["liccomp-integrating"], 30);
   assert.equal(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).length, 44);
-  assert.equal(projection.courses.length, 47);
+  assert.equal(projection.courses.length, 73);
   assert.equal(projection.rules.length, 26);
   assert.equal(projection.plan.noPublishedRule, 2);
   assert.deepEqual(projection.pathways["curricula-personalizada"].periods.map(({ label, courseIds }) => [label, courseIds.length]), [
@@ -60,6 +62,7 @@ test("conserva la currícula flexible y todos los mínimos oficiales del título
     ["Ingeniería y Sociedad", 6],
     ["Trabajo final", 1],
     ["Validación de egreso", 1],
+    ["Materias de las guías compartidas", 26],
   ]);
   assert.equal(projection.pathways["curricula-personalizada"].catalogCourseIds, undefined);
 });

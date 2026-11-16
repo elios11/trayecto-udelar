@@ -170,12 +170,23 @@ export function buildRegisteredPlanCourses(pathwayId, data) {
 // Availability is scoped for an initial regional path; already planned courses and
 // curriculum snapshots must still resolve references across the same canonical plan.
 export function completeRegisteredPlanCourses(pathwayId, data, activeCourses) {
-  if (!data || !Object.values(data.pathways).some((pathway) => pathway.localCatalogOnly)) return activeCourses;
+  if (!data) return activeCourses;
+  const pathways = Object.entries(data.pathways);
+  if (!pathways.some(([, pathway]) => pathway.localCatalogOnly)) return activeCourses;
   const courses = new Map(activeCourses.map((course) => [course.id, course]));
-  for (const id of Object.keys(data.pathways)) {
+  for (const [id] of pathways) {
     if (id === pathwayId) continue;
     for (const course of buildRegisteredPlanCourses(id, data)) {
       if (!courses.has(course.id)) courses.set(course.id, { ...course, semester: "opt" });
+    }
+  }
+  // A plan that replaces every provisional pathway can still have saved terms
+  // referring to candidate IDs. Resolve those references without offering or accrediting them.
+  if (pathways.every(([, pathway]) => pathway.localCatalogOnly)) {
+    for (const course of data.courses) {
+      if (course.authorityStatus === "candidate" && isRealCurricularCourse(course) && !courses.has(course.id)) {
+        courses.set(course.id, { ...course, provisional: true, eligibleRequirementIds: [], creditAllocations: [], semester: "opt", offered: [] });
+      }
     }
   }
   return [...courses.values()];

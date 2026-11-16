@@ -5270,6 +5270,107 @@
         "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
         "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
       ]
+    },
+    {
+      "planId": "bedelias-isef-tecnicatura-en-deportes-2007",
+      "state": "official-trajectory-reproduced",
+      "reviewedAt": "2026-11-16",
+      "effectiveAt": "Plan 2007 enlazado como vigente; sin apertura de ingreso a Fútbol en 2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "Rocha",
+          "Paysandú"
+        ],
+        "pathwayIds": [
+          "futbol",
+          "actividades-acuaticas",
+          "atletismo"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://isef.udelar.edu.uy/wp-content/uploads/2012/11/TED-PLAN-DE-ESTUDIO-VIGENTE-6.10.09.pdf",
+          "authority": "ISEF, Universidad de la República",
+          "role": "Tablas de formación básica de los dos años",
+          "contentHash": "sha256:00b1e1c78845ef86949c11f5c18a94da7da669e829b82a32afee0e785900944a",
+          "reviewedAt": "2026-11-16"
+        },
+        {
+          "url": "https://isef.udelar.edu.uy/ensenanza/tecnicatura-en-deporte/",
+          "authority": "ISEF, Universidad de la República",
+          "role": "Enlace vigente y condición de ingreso 2026",
+          "reviewedAt": "2026-11-16"
+        }
+      ],
+      "evidence": {
+        "kind": "audited-projection",
+        "sourceDataPath": "data/bedelias/audits/tecnicatura-deportes-2007-trajectory.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-isef-tecnicatura-en-deportes-2007.json",
+        "sourceCollection": "auditedPathways",
+        "projectionCollection": "publishedPathways",
+        "periodField": "periods",
+        "compareCoursePlacements": true,
+        "partial": true,
+        "completeDegreeSequence": false
+      },
+      "conflictNotes": [
+        "Las tablas ilustran 8 créditos por año, pero el Plan exige 16 en el conjunto de los dos años; no fija oferta nominal ni mínimos independientes por semestre.",
+        "No se supone equivalencia automática entre materias específicas de deportes distintos."
+      ]
+    },
+    {
+      "planId": "bedelias-fing-licenciatura-en-computacion-2025",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-10-04",
+      "effectiveAt": "Plan 2025, ingreso desde 2026",
+      "projectionMechanism": "official-periods",
+      "scope": {
+        "territories": [
+          "Montevideo",
+          "CENUR Litoral Norte"
+        ],
+        "pathwayIds": [
+          "second-semester-pi-60-plus",
+          "second-semester-pi-20-59",
+          "litoral-norte"
+        ],
+        "completeDegreeSequence": false
+      },
+      "sources": [
+        {
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83838",
+          "authority": "Facultad de Ingeniería · Universidad de la República",
+          "role": "grilla que nombra a Ingeniería y Licenciatura",
+          "contentHash": "sha256:6046414453ca23c2cdc5a7cb9e876befeaa9ac2e548d87fb2739d02f2df7b975",
+          "reviewedAt": "2026-10-04"
+        },
+        {
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=83839",
+          "authority": "Facultad de Ingeniería · Universidad de la República",
+          "role": "grilla que nombra a Ingeniería y Licenciatura",
+          "contentHash": "sha256:bee2bacd70d308a948c2aeed57aec5b1cd8a6b64bcbaae3c4c6dfa67ac551afa",
+          "reviewedAt": "2026-10-04"
+        },
+        {
+          "url": "https://eva.fing.edu.uy/mod/resource/view.php?id=72916",
+          "authority": "Facultad de Ingeniería · Universidad de la República",
+          "role": "grilla que nombra a Ingeniería y Licenciatura",
+          "contentHash": "sha256:164576b25c959b134630ca84a69a8c2431de91c3725c0c86a269a07fd165d445",
+          "reviewedAt": "2026-10-04"
+        }
+      ],
+      "evidence": {
+        "kind": "insufficient-trajectory-evidence",
+        "sourceDataPath": "data/fing/computacion-2025-trayectorias.json",
+        "projectionDataPath": "app/data/bedelias-generated/bedelias-fing-licenciatura-en-computacion-2025.json",
+        "reason": "Se reproducen tres guías compartidas. No se publicó o cotejó la ubicación del Trabajo Final de Licenciatura ni una guía propia de ingreso inicial para cada sede."
+      },
+      "conflictNotes": [
+        "No se convierte el Proyecto de Ingeniería de Software en Trabajo Final de Licenciatura ni se comparte progreso entre los dos planes."
+      ]
     }
   ]
 }
