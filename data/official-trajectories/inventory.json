@@ -5,16 +5,16 @@
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
     "extractedReportHash": "sha256:a86d6cf01b369c42508501db50d8b0218c035d460199b5290b43df7eaf40e1df",
     "officialAuditHash": "sha256:4e931f74981ff448a9c62a873a6ca8fffbf2c13529280a865a1a2bd729599714",
-    "reviewedTrajectoriesHash": "sha256:98ef11e3fb77de774498f7a9e89fc0e81601c57da6000191b9524127e48d3912"
+    "reviewedTrajectoriesHash": "sha256:30fdad92335254cceff5f38071fce52a2c1dc2418c12410159e54f5f80908708"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
       "official-trajectory-reproduced": 128,
-      "official-trajectory-identified-pending": 5,
+      "official-trajectory-identified-pending": 6,
       "no-official-trajectory-documented": 4,
-      "research-pending": 10
+      "research-pending": 9
     },
     "pending": 15,
     "byService": [
@@ -200,9 +200,9 @@
         "selectablePlanIds": 18,
         "states": {
           "official-trajectory-reproduced": 14,
-          "official-trajectory-identified-pending": 3,
+          "official-trajectory-identified-pending": 4,
           "no-official-trajectory-documented": 0,
-          "research-pending": 1
+          "research-pending": 0
         }
       },
       {
@@ -314,6 +314,15 @@
       },
       {
         "priority": 1,
+        "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
+        "state": "official-trajectory-identified-pending",
+        "serviceIds": [
+          "fing"
+        ],
+        "reason": "Montevideo: la Comisión publica cuatro semestres iniciales y ocho perfiles-guía; se confirmaron dos ejemplos de diez semestres en Física. Falta cotejar y proyectar estas fuentes sin sustituir los inicios regionales."
+      },
+      {
+        "priority": 1,
         "planId": "bedelias-fing-licenciatura-en-computacion-2025",
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
@@ -401,15 +410,6 @@
           "bedelias-fder"
         ],
         "reason": "Las trece identidades son programas del Plan anterior, pero ni las dos páginas FDER ni las copias oficiales localizadas publican el Plan aprobado, una grilla semestral o el régimen de egreso. La agrupación no se eleva a trayectoria curricular cerrada."
-      },
-      {
-        "priority": 2,
-        "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
-        "state": "research-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "Falta evidencia suficiente para confirmar trayectoria oficial o ausencia documentada."
       }
     ],
     "byService": [
@@ -459,11 +459,10 @@
         "identifiedPending": [
           "2025",
           "bedelias-fing-ingenieria-en-agrimensura-2023",
+          "bedelias-fing-ingenieria-fisico-matematica-2017",
           "bedelias-fing-licenciatura-en-computacion-2025"
         ],
-        "researchPending": [
-          "bedelias-fing-ingenieria-fisico-matematica-2017"
-        ]
+        "researchPending": []
       }
     ]
   },
@@ -9262,10 +9261,22 @@
           "defaultCredentialId": "ingeniero-fisico-matematico"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-11-16",
-      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-11-18",
+      "effectiveAt": "guías iniciales de febrero de 2025; el índice de perfiles capitalinos incluye documentos subidos en 2026",
       "officialSources": [
+        {
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=1",
+          "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, FING",
+          "reviewedAt": "2026-11-18",
+          "role": "guía inicial capitalina de cuatro semestres, todavía sin proyectar"
+        },
+        {
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=2",
+          "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, FING",
+          "reviewedAt": "2026-11-18",
+          "role": "índice de ocho perfiles-guía aprobados por la Comisión, todavía sin proyectar"
+        },
         {
           "url": "https://www.fing.edu.uy/es/node/49415",
           "authority": "Facultad de Ingeniería, Universidad de la República",
@@ -9315,6 +9326,7 @@
         "compareCoursePlacements": true,
         "partial": true,
         "completeDegreeSequence": false,
+        "reason": "Montevideo: la Comisión publica cuatro semestres iniciales y ocho perfiles-guía; se confirmaron dos ejemplos de diez semestres en Física. Falta cotejar y proyectar estas fuentes sin sustituir los inicios regionales.",
         "sourceContentHash": "sha256:1dd3e53d929e8ea5d70d2364280d4148e226239f9a4afc6bc074fcecf193bb4d",
         "projectionContentHash": "sha256:9703a1955e26f742df22352e73b53fa6834afad2ebad411af7f782e8c29bb47c",
         "pathways": [
@@ -9332,7 +9344,7 @@
       },
       "conflictNotes": [
         "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
-        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "La guía capitalina se conserva en data/official-trajectories/fing-fisico-matematica-2017-montevideo.json; no se extrapolan semestres ni se convierten los perfiles-guía en títulos.",
         "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
       ]
     },
@@ -13688,5 +13700,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:87aa1c36852a6e3a6bd3098013b85679c5508f5c09f8267440fcd6e84558e2e8"
+  "contentHash": "sha256:293dc3e6fdd8e5808746862b69d76fc068c551dea729b5eb99dfa6004ec91145"
 }

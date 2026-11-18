@@ -46,8 +46,7 @@ for (const [key, main, expected] of [
     } else {
       assert.deepEqual(regional[0].periods, regional[1].periods);
     }
-    assert.equal(inventory.plans.find((entry) => entry.planId === planId).state,
-      key === "ingenieria-en-agrimensura-2023" ? "official-trajectory-identified-pending" : "research-pending");
+    assert.equal(inventory.plans.find((entry) => entry.planId === planId).state, "official-trajectory-identified-pending");
   });
 }
 

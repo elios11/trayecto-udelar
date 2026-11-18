@@ -5223,9 +5223,9 @@
     },
     {
       "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
-      "state": "research-pending",
-      "reviewedAt": "2026-11-16",
-      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-11-18",
+      "effectiveAt": "guías iniciales de febrero de 2025; el índice de perfiles capitalinos incluye documentos subidos en 2026",
       "projectionMechanism": "official-periods",
       "scope": {
         "territories": [
@@ -5239,6 +5239,18 @@
         "completeDegreeSequence": false
       },
       "sources": [
+        {
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=1",
+          "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, FING",
+          "reviewedAt": "2026-11-18",
+          "role": "guía inicial capitalina de cuatro semestres, todavía sin proyectar"
+        },
+        {
+          "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=2",
+          "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, FING",
+          "reviewedAt": "2026-11-18",
+          "role": "índice de ocho perfiles-guía aprobados por la Comisión, todavía sin proyectar"
+        },
         {
           "url": "https://www.fing.edu.uy/es/node/49415",
           "authority": "Facultad de Ingeniería, Universidad de la República",
@@ -5270,11 +5282,12 @@
         "periodField": "periods",
         "compareCoursePlacements": true,
         "partial": true,
-        "completeDegreeSequence": false
+        "completeDegreeSequence": false,
+        "reason": "Montevideo: la Comisión publica cuatro semestres iniciales y ocho perfiles-guía; se confirmaron dos ejemplos de diez semestres en Física. Falta cotejar y proyectar estas fuentes sin sustituir los inicios regionales."
       },
       "conflictNotes": [
         "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
-        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "La guía capitalina se conserva en data/official-trajectories/fing-fisico-matematica-2017-montevideo.json; no se extrapolan semestres ni se convierten los perfiles-guía en títulos.",
         "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
       ]
     },

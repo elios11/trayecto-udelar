@@ -5,3 +5,11 @@ La [página vigente de FING sobre Trayectorias Ingeniería](https://www.fing.edu
 Mostrar dos semestres de Agrimensura 2023 y cuatro de Físico-Matemática 2017, diferenciados por sede donde cambian las filas. No sustituir el recorrido ni los perfiles de Montevideo, ni retirar el plan de la cola mientras la secuencia capitalina no esté cotejada. Mantener IDs de plan, mínimos y progreso. Las guías no dan códigos: usar IDs sólo-fuente compartidos entre Salto y Paysandú para la misma fila, sin reemplazar las identidades previas de Bedelías. Currícula y el listado de materias para agregar se ajustan a la sede; las materias ya planificadas, el progreso y las referencias del documento personal se resuelven contra el mismo plan completo aunque se cambie de sede.
 
 Evidencia: `data/bedelias/audits/fing-trayectos-iniciales-litoral-norte-review.json`. Regenerar sin red: `node scripts/build-fing-tramos-litoral-norte.mjs`. Prueba focal: `node tests/fing-tramos-litoral-norte.test.mjs`.
+
+## Continuación en Montevideo: Físico-Matemática
+
+La Comisión publica los cuatro primeros semestres para ingreso con suficiencia en la prueba diagnóstica. La transcripción normalizada está en `data/official-trajectories/fing-fisico-matematica-2017-montevideo.json`. El taller de primero se elige una vez; Introducción a la Ingeniería Civil sigue anotada como pendiente de incorporación según esa versión. Las doce opciones referidas a tercero y cuarto no se asignan a un semestre ordinal por su paridad de dictado.
+
+El índice de la Comisión enlaza ocho perfiles-guía. Física contiene dos ejemplos de diez semestres en las pp. 3–4; su existencia está verificada, pero las tablas aún no están reconciliadas con los códigos. Antes de proyectarlas, cotejar los otros perfiles y los créditos por versión, conservar los espacios flexibles y contar una sola vez el proyecto que los ejemplos distribuyen en dos períodos. Mantener separados los tramos regionales y la oferta efectiva. El visualizador curricular enlazado por la Comisión fue elaborado por un estudiante: no es fuente oficial de los períodos.
+
+Regenerar el inventario desde la evidencia versionada: `npm run trajectory:inventory`. Verificar con `node --test --experimental-test-isolation=none tests/fing-tramos-litoral-norte.test.mjs tests/official-trajectory-inventory.test.mjs`.
