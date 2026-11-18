@@ -5159,9 +5159,9 @@
     },
     {
       "planId": "bedelias-fing-ingenieria-en-agrimensura-2023",
-      "state": "research-pending",
-      "reviewedAt": "2026-11-16",
-      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-11-18",
+      "effectiveAt": "guías regionales de febrero de 2025 y guía del Plan 2023 de la Comisión (variante PI ≥60%, actualizada el 26 de junio de 2025)",
       "projectionMechanism": "official-periods",
       "scope": {
         "territories": [
@@ -5194,6 +5194,12 @@
           "reviewedAt": "2026-11-16",
           "role": "grilla inicial de Paysandú",
           "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
+        },
+        {
+          "url": "https://eva.fing.edu.uy/mod/page/view.php?id=73102",
+          "authority": "Comisión de Carrera de Ingeniería en Agrimensura, Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-18",
+          "role": "seis semestres para PI ≥60%; aún sin proyectar"
         }
       ],
       "evidence": {
@@ -5206,11 +5212,12 @@
         "periodField": "periods",
         "compareCoursePlacements": true,
         "partial": true,
-        "completeDegreeSequence": false
+        "completeDegreeSequence": false,
+        "reason": "Montevideo: la guía de la Comisión tiene seis semestres para PI ≥60%, sin proyectar. Los dos recorridos iniciales regionales siguen disponibles."
       },
       "conflictNotes": [
         "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
-        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "Para Montevideo se identificaron seis semestres de PI ≥60%, conservados en data/official-trajectories/fing-agrimensura-2023-pi60.json. Queda pendiente cotejar TCI24 y 1858, representar las alternativas de Informática y verificar las demás variantes y la continuación de la guía.",
         "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
       ]
     },

@@ -46,6 +46,22 @@ for (const [key, main, expected] of [
     } else {
       assert.deepEqual(regional[0].periods, regional[1].periods);
     }
-    assert.equal(inventory.plans.find((entry) => entry.planId === planId).state, "research-pending");
+    assert.equal(inventory.plans.find((entry) => entry.planId === planId).state,
+      key === "ingenieria-en-agrimensura-2023" ? "official-trajectory-identified-pending" : "research-pending");
   });
 }
+
+test("Agrimensura: la guía parcial de Montevideo conserva sus alternativas e identidades pendientes", async () => {
+  const guide = await read("data/official-trajectories/fing-agrimensura-2023-pi60.json");
+  const projection = await read(`app/data/bedelias-generated/${guide.planId}.json`);
+  const catalog = buildRegisteredPlanPresentation("trayectoria-flexible", projection).courses;
+  const rows = guide.periods.flatMap(({ rows }) => rows);
+  assert.equal(guide.scope.completeDegreeSequence, false);
+  assert.deepEqual(guide.periods.map(({ semester }) => semester), [1, 2, 3, 4, 5, 6]);
+  assert.equal(rows.length, 30);
+  assert.deepEqual(guide.alternativeGroups, [{ semester: 4, choose: 1, codes: ["1411", "423EU"] }]);
+  assert.ok(guide.alternativeGroups[0].codes.every((code) => guide.periods[3].rows.some(([rowCode]) => rowCode === code)));
+  const unmatchedCodes = rows.filter(([code, credits]) => !catalog.some((course) =>
+    course.bedeliasCode === (guide.bedeliasCodeMappings[code] ?? code) && course.credits === credits)).map(([code]) => code);
+  assert.deepEqual(unmatchedCodes.sort(), Object.keys(guide.missingFromProjectedCatalog.identities).sort());
+});

@@ -5,16 +5,16 @@
     "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
     "extractedReportHash": "sha256:a86d6cf01b369c42508501db50d8b0218c035d460199b5290b43df7eaf40e1df",
     "officialAuditHash": "sha256:4e931f74981ff448a9c62a873a6ca8fffbf2c13529280a865a1a2bd729599714",
-    "reviewedTrajectoriesHash": "sha256:ff382b9235fb3a663989c787225608ec2d23bf3635756c40af8565c3f4f0e5fb"
+    "reviewedTrajectoriesHash": "sha256:98ef11e3fb77de774498f7a9e89fc0e81601c57da6000191b9524127e48d3912"
   },
   "counts": {
     "selectablePlanIds": 147,
     "catalogPlacements": 151,
     "states": {
       "official-trajectory-reproduced": 128,
-      "official-trajectory-identified-pending": 4,
+      "official-trajectory-identified-pending": 5,
       "no-official-trajectory-documented": 4,
-      "research-pending": 11
+      "research-pending": 10
     },
     "pending": 15,
     "byService": [
@@ -200,9 +200,9 @@
         "selectablePlanIds": 18,
         "states": {
           "official-trajectory-reproduced": 14,
-          "official-trajectory-identified-pending": 2,
+          "official-trajectory-identified-pending": 3,
           "no-official-trajectory-documented": 0,
-          "research-pending": 2
+          "research-pending": 1
         }
       },
       {
@@ -305,6 +305,15 @@
       },
       {
         "priority": 1,
+        "planId": "bedelias-fing-ingenieria-en-agrimensura-2023",
+        "state": "official-trajectory-identified-pending",
+        "serviceIds": [
+          "fing"
+        ],
+        "reason": "Montevideo: la guía de la Comisión tiene seis semestres para PI ≥60%, sin proyectar. Los dos recorridos iniciales regionales siguen disponibles."
+      },
+      {
+        "priority": 1,
         "planId": "bedelias-fing-licenciatura-en-computacion-2025",
         "state": "official-trajectory-identified-pending",
         "serviceIds": [
@@ -395,15 +404,6 @@
       },
       {
         "priority": 2,
-        "planId": "bedelias-fing-ingenieria-en-agrimensura-2023",
-        "state": "research-pending",
-        "serviceIds": [
-          "fing"
-        ],
-        "reason": "Falta evidencia suficiente para confirmar trayectoria oficial o ausencia documentada."
-      },
-      {
-        "priority": 2,
         "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
         "state": "research-pending",
         "serviceIds": [
@@ -458,10 +458,10 @@
         "serviceLabel": "Facultad de Ingeniería",
         "identifiedPending": [
           "2025",
+          "bedelias-fing-ingenieria-en-agrimensura-2023",
           "bedelias-fing-licenciatura-en-computacion-2025"
         ],
         "researchPending": [
-          "bedelias-fing-ingenieria-en-agrimensura-2023",
           "bedelias-fing-ingenieria-fisico-matematica-2017"
         ]
       }
@@ -9025,9 +9025,9 @@
           "defaultCredentialId": "ingeniero-agrimensor"
         }
       ],
-      "state": "research-pending",
-      "reviewedAt": "2026-11-16",
-      "effectiveAt": "guías de febrero de 2025 enlazadas por el índice vigente de FING; sin cohorte específica indicada",
+      "state": "official-trajectory-identified-pending",
+      "reviewedAt": "2026-11-18",
+      "effectiveAt": "guías regionales de febrero de 2025 y guía del Plan 2023 de la Comisión (variante PI ≥60%, actualizada el 26 de junio de 2025)",
       "officialSources": [
         {
           "url": "https://www.fing.edu.uy/es/node/49415",
@@ -9048,6 +9048,12 @@
           "reviewedAt": "2026-11-16",
           "role": "grilla inicial de Paysandú",
           "contentHash": "sha256:9e8ed80d8dd7d31e25c460da66925235a57fa9cf14212a19e1ff482ab52cc870"
+        },
+        {
+          "url": "https://eva.fing.edu.uy/mod/page/view.php?id=73102",
+          "authority": "Comisión de Carrera de Ingeniería en Agrimensura, Facultad de Ingeniería, Universidad de la República",
+          "reviewedAt": "2026-11-18",
+          "role": "seis semestres para PI ≥60%; aún sin proyectar"
         }
       ],
       "scope": {
@@ -9078,6 +9084,7 @@
         "compareCoursePlacements": true,
         "partial": true,
         "completeDegreeSequence": false,
+        "reason": "Montevideo: la guía de la Comisión tiene seis semestres para PI ≥60%, sin proyectar. Los dos recorridos iniciales regionales siguen disponibles.",
         "sourceContentHash": "sha256:129bc72b4eb5f6ea4b43bb2f42100f78efb8b16b7bd14e396ea53b135b398ffc",
         "projectionContentHash": "sha256:a120544ad0682fac546c59b4d66df47c7e90a6b4797b0a10758176f28f2dc481",
         "pathways": [
@@ -9095,7 +9102,7 @@
       },
       "conflictNotes": [
         "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
-        "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.",
+        "Para Montevideo se identificaron seis semestres de PI ≥60%, conservados en data/official-trajectories/fing-agrimensura-2023-pi60.json. Queda pendiente cotejar TCI24 y 1858, representar las alternativas de Informática y verificar las demás variantes y la continuación de la guía.",
         "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
       ]
     },
@@ -13681,5 +13688,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:009a32250792f32ed1dad34a0892ed20988e69b6e28cbb08c6b92d17a3afb6dc"
+  "contentHash": "sha256:87aa1c36852a6e3a6bd3098013b85679c5508f5c09f8267440fcd6e84558e2e8"
 }
