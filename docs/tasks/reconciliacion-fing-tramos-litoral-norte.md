@@ -14,6 +14,8 @@ El índice de la Comisión enlaza ocho perfiles-guía. Física contiene dos ejem
 
 El cotejo de la guía inicial guarda 27 de 28 correspondencias por código y carga con la proyección actual: las 13 filas fijas, las tres opciones del taller y 11 de las 12 opciones de tercero y cuarto. FING identifica como 1322 la Programación 1 de Montevideo en su horario de segundo semestre de 2025; éste sirve para distinguir el código entre cuatro homónimos, no para atribuir pertenencia curricular ni oferta futura. El catálogo aún marca 1322, 1990 y 1723 como candidatas: el cotejo no las publica automáticamente ni activa sus reglas.
 
-Principios de Química General sigue discrepante: 7 créditos en la guía, 8 para 1620 y 10 para el registro regional. No reemplazar ni sumar cargas por similitud. El siguiente paso para la app es proyectar primero la guía inicial con taller alternativo, opciones sin semestre ordinal y la discrepancia explícita; preservar los IDs previos y comprobar Salto y Paysandú. Los perfiles avanzados se pueden cotejar por separado.
+Principios de Química General sigue discrepante: 7 créditos en la guía, 8 para 1620 y 10 para el registro regional. La guía inicial de Montevideo se proyecta con taller alternativo, 11 opciones sin semestre ordinal y la discrepancia explícita; 1620 conserva sus 8 créditos fuera de los semestres. Se verifican 1322, 1990 y 1723 a partir de la guía y el cotejo; no se agregan previaturas. Los perfiles avanzados siguen pendientes de cotejo.
+
+Regenerar la proyección con `node scripts/build-fing-tramos-litoral-norte.mjs`; la prueba focal verifica los tres recorridos, las alternativas del taller y la disponibilidad en el catálogo.
 
 Regenerar el inventario desde la evidencia versionada: `npm run trajectory:inventory`. Verificar con `node --test --experimental-test-isolation=none tests/fing-tramos-litoral-norte.test.mjs tests/official-trajectory-inventory.test.mjs`.

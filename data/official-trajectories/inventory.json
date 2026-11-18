@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "generatedFrom": {
     "curatedCatalogHash": "sha256:da805b9cc27e114f5576e52fb79a6e69d7a438a33ce4f4aecb2ad38c985eb948",
-    "extractedCatalogHash": "sha256:992c51d6732e55fbd4544133d11f8b89d2b8c3c0ccacc0a9847f2f908b7c2a32",
-    "extractedReportHash": "sha256:a86d6cf01b369c42508501db50d8b0218c035d460199b5290b43df7eaf40e1df",
-    "officialAuditHash": "sha256:4e931f74981ff448a9c62a873a6ca8fffbf2c13529280a865a1a2bd729599714",
-    "reviewedTrajectoriesHash": "sha256:30fdad92335254cceff5f38071fce52a2c1dc2418c12410159e54f5f80908708"
+    "extractedCatalogHash": "sha256:c69b9b1e480d5b9cfa44cec5f45ce2a6cf136284afa38e9a3ac2c90269bd19e7",
+    "extractedReportHash": "sha256:2af10f9972204369554726e8eb14017f1d3b70c07f8fedfa5a34bd2c31e781bd",
+    "officialAuditHash": "sha256:843453e6a9905c8dd73ece1b9dba6b34f76e3cbc247c20ff318bfc1eb030c85a",
+    "reviewedTrajectoriesHash": "sha256:c42d42466d748a4a6451bd8bf36cfa9bf01f989d1f6198c6219bf694ac229728"
   },
   "counts": {
     "selectablePlanIds": 147,
@@ -319,7 +319,7 @@
         "serviceIds": [
           "fing"
         ],
-        "reason": "Montevideo: la Comisión publica cuatro semestres iniciales y ocho perfiles-guía; se confirmaron dos ejemplos de diez semestres en Física. Falta cotejar y proyectar estas fuentes sin sustituir los inicios regionales."
+        "reason": "Se reproducen los cuatro primeros semestres de Montevideo y los inicios regionales. Falta cotejar y proyectar los perfiles avanzados de Montevideo."
       },
       {
         "priority": 1,
@@ -9257,7 +9257,7 @@
           "careerId": "bedelias-fing-ingenieria-fisico-matematica",
           "careerLabel": "Ingeniería Físico-matemática",
           "planLabel": "Plan 2017 · vigente",
-          "defaultTrajectoryId": "curricula-personalizada",
+          "defaultTrajectoryId": "montevideo-inicial",
           "defaultCredentialId": "ingeniero-fisico-matematico"
         }
       ],
@@ -9269,7 +9269,7 @@
           "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=1",
           "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, FING",
           "reviewedAt": "2026-11-18",
-          "role": "guía inicial capitalina de cuatro semestres, todavía sin proyectar"
+          "role": "guía inicial capitalina de cuatro semestres reproducida"
         },
         {
           "url": "https://eva.fing.edu.uy/course/view.php?id=1570&section=2",
@@ -9300,6 +9300,7 @@
       ],
       "scope": {
         "territories": [
+          "Montevideo",
           "Salto",
           "Paysandú"
         ],
@@ -9326,9 +9327,9 @@
         "compareCoursePlacements": true,
         "partial": true,
         "completeDegreeSequence": false,
-        "reason": "Montevideo: la Comisión publica cuatro semestres iniciales y ocho perfiles-guía; se confirmaron dos ejemplos de diez semestres en Física. Falta cotejar y proyectar estas fuentes sin sustituir los inicios regionales.",
+        "reason": "Se reproducen los cuatro primeros semestres de Montevideo y los inicios regionales. Falta cotejar y proyectar los perfiles avanzados de Montevideo.",
         "sourceContentHash": "sha256:1dd3e53d929e8ea5d70d2364280d4148e226239f9a4afc6bc074fcecf193bb4d",
-        "projectionContentHash": "sha256:9703a1955e26f742df22352e73b53fa6834afad2ebad411af7f782e8c29bb47c",
+        "projectionContentHash": "sha256:1075af0d81ccf86442ae025952b963f8a297081c5ce10e76e61d6d31f4c9bd56",
         "pathways": [
           {
             "id": "salto-inicial",
@@ -9344,8 +9345,8 @@
       },
       "conflictNotes": [
         "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.",
-        "La guía capitalina se conserva en data/official-trajectories/fing-fisico-matematica-2017-montevideo.json; no se extrapolan semestres ni se convierten los perfiles-guía en títulos.",
-        "Las filas de fuente no publican códigos ni equivalencias con Bedelías. Los mínimos del grado permanecen intactos."
+        "Cotejar y proyectar los perfiles avanzados de Montevideo; resolver la discrepancia de créditos de Química General.",
+        "Guía inicial de Montevideo: data/official-trajectories/fing-fisico-matematica-2017-montevideo.json."
       ]
     },
     {
@@ -13700,5 +13701,5 @@
       ]
     }
   ],
-  "contentHash": "sha256:293dc3e6fdd8e5808746862b69d76fc068c551dea729b5eb99dfa6004ec91145"
+  "contentHash": "sha256:5129145e7e62ae89867cf988221231b172853e35efef36cd8c0e5d4ac6fa44f5"
 }

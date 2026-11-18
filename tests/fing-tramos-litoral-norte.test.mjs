@@ -10,7 +10,7 @@ const inventory = await read("data/official-trajectories/inventory.json");
 
 for (const [key, main, expected] of [
   ["ingenieria-en-agrimensura-2023", "trayectoria-flexible", [[44, 48], [44, 48]]],
-  ["ingenieria-fisico-matematica-2017", "curricula-personalizada", [[44, 48, 47, 45], [40, 48, 47, 45]]],
+  ["ingenieria-fisico-matematica-2017", "montevideo-inicial", [[44, 48, 47, 45], [40, 48, 47, 45]]],
 ]) {
   test(`${key}: las sedes iniciales muestran sólo su tramo oficial y no alteran Montevideo`, async () => {
     const planId = `bedelias-fing-${key}`;
@@ -93,4 +93,19 @@ test("Físico-Matemática: el cotejo capitalino conserva créditos e identidades
   }
   assert.equal(used.size, 27);
   assert.deepEqual(unresolved, review.unresolved.map(({ name, sourceCredits }) => [name, sourceCredits]));
+  const pathway = buildRegisteredPlanPresentation("montevideo-inicial", projection);
+  const byId = new Map(pathway.courses.map((course) => [course.id, course]));
+  const toCodes = (ids) => ids.map((id) => byId.get(id).bedeliasCode);
+  assert.equal(pathway.generated, false);
+  assert.deepEqual(pathway.periods.map(({ label }) => label), ["Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4"]);
+  const [workshop] = pathway.periods[0].alternativeGroups;
+  assert.equal(workshop.required, true);
+  assert.deepEqual(toCodes(workshop.courseIds), review.initialWorkshopCodes);
+  assert.deepEqual(pathway.periods.map(({ courseIds }) => toCodes(courseIds.filter((id) => !workshop.courseIds.includes(id)))),
+    review.semesterCodes);
+  for (const code of review.earlyOptionCodes.filter(Boolean)) {
+    assert.equal(pathway.courses.find((course) => course.bedeliasCode === code)?.semester, "opt", code);
+  }
+  assert.equal(pathway.courses.find((course) => course.bedeliasCode === "1620")?.credits, 8);
+  assert.match(pathway.description, /7 créditos/);
 });

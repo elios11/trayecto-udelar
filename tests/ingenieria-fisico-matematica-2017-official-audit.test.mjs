@@ -28,6 +28,7 @@ test("publica un solo Plan 2017, una currícula personalizada y ocho perfiles gu
   assert.equal(projection.plan.minCredits, 450);
   assert.deepEqual(projection.plan.campuses.map(({ id }) => id), ["montevideo", "salto", "paysandu"]);
   assert.deepEqual(Object.keys(projection.pathways), [
+    "montevideo-inicial",
     "curricula-personalizada",
     "perfil-procesos-industriales",
     "perfil-energia",
@@ -75,13 +76,14 @@ test("controla los mínimos oficiales, el proyecto y la aprobación del currícu
 
 test("mantiene recomendaciones reemplazables y todo lo demás en el catálogo acreditable", () => {
   const capitalCourses = projection.courses.filter(({ id }) => !id.startsWith("fing-litoral-norte-"));
-  for (const pathway of Object.values(projection.pathways).filter(({ localCatalogOnly }) => !localCatalogOnly)) {
+  for (const [id, pathway] of Object.entries(projection.pathways)) {
+    if (pathway.localCatalogOnly) continue;
     const selectedIds = pathway.periods.flatMap(({ courseIds }) => courseIds);
     assert.equal(new Set(selectedIds).size, selectedIds.length);
     assert.equal(new Set(pathway.catalogCourseIds).size, pathway.catalogCourseIds.length);
     assert.equal(selectedIds.length + pathway.catalogCourseIds.length, capitalCourses.length);
-    assert.equal(pathway.periods[0].label, "Orientación del perfil");
-    assert.equal(pathway.periods.at(-1).label, "Validación de egreso");
+    assert.equal(pathway.periods[0].label, id === "montevideo-inicial" ? "Semestre 1" : "Orientación del perfil");
+    assert.equal(pathway.periods.at(-1).label, id === "montevideo-inicial" ? "Semestre 4" : "Validación de egreso");
   }
   assert.equal(projection.pathways["curricula-personalizada"].periods.flatMap(({ courseIds }) => courseIds).length, 19);
   assert.equal(projection.pathways["curricula-personalizada"].catalogCourseIds.length, 312);
@@ -129,7 +131,7 @@ test("ubica la carrera bajo FING y avanza la cola al siguiente plan", () => {
   const faculty = catalog.find(({ id }) => id === "bedelias-fing");
   const career = faculty.careers.find(({ label }) => label === "Ingeniería Físico-matemática");
   assert.equal(career.plans[0].id, "bedelias-fing-ingenieria-fisico-matematica-2017");
-  assert.equal(career.plans[0].defaultTrajectoryId, "curricula-personalizada");
+  assert.equal(career.plans[0].defaultTrajectoryId, "montevideo-inicial");
   assert.ok(!queue.queue.some(({ identity }) => identity === "ingenieria fisico matematica:2017"));
   assert.equal(queue.counts.evidenceClosedCanonicalIdentities, 177);
   assert.equal(queue.counts.pendingCanonicalIdentities, 0);

@@ -22,6 +22,9 @@ async function save(file, data) {
 }
 
 const [source, registry, reviews] = await Promise.all([sourcePath, auditPath, reviewsPath].map(read));
+const ifmGuidePath = "data/official-trajectories/fing-fisico-matematica-2017-montevideo.json";
+const ifmGuide = await read(ifmGuidePath);
+const ifmPathwayId = "montevideo-inicial";
 const consultedAt = source.consultedAt;
 const contentHash = `sha256:${createHash("sha256").update(JSON.stringify(source.rows)).digest("hex")}`;
 const regionalPathways = ["salto-inicial", "paysandu-inicial"];
@@ -41,7 +44,7 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
   const officialPlan = audit.officialPlan;
   const curriculum = officialPlan.curriculum;
   const data = source.rows[evidenceKey];
-  const oldTrajectories = officialPlan.trajectories.filter(({ id }) => !regionalPathways.includes(id));
+  const oldTrajectories = officialPlan.trajectories.filter(({ id }) => id !== ifmPathwayId && !regionalPathways.includes(id));
   const credentialId = oldTrajectories[0].credentialId;
   assert.ok(credentialId);
   const rowsById = new Map();
@@ -78,6 +81,35 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
   curriculum.additionalCourses = [
     ...(curriculum.additionalCourses ?? []).filter(({ id }) => !rowsById.has(id)), ...rowsById.values(),
   ];
+  if (planId === ifmGuide.planId) {
+    const { semesterCodes, initialWorkshopCodes, earlyOptionCodes } = ifmGuide.catalogReconciliation;
+    assert.ok(semesterCodes.flat().every(Boolean));
+    assert.equal(ifmGuide.initialWorkshop.choose, 1);
+    const choice = [...initialWorkshopCodes];
+    const optionCodes = earlyOptionCodes.filter(Boolean);
+    curriculum.verifiedCourseIds = [...new Set([...(curriculum.verifiedCourseIds ?? []),
+      ...semesterCodes.flat(), ...choice, ...optionCodes])];
+    officialPlan.trajectories.unshift({
+      id: ifmPathwayId,
+      label: "Montevideo · primeros cuatro semestres",
+      credentialId,
+      campusIds: ["montevideo"],
+      description: "Guía parcial para ingreso con suficiencia en la prueba diagnóstica. En primero elegí un taller; las opciones adicionales de tercero y cuarto quedan en el catálogo sin semestre fijo. La guía indica 7 créditos para Principios de Química General y Bedelías registra 8 en Montevideo: no se asignó esa materia a un semestre ni se cambió su carga. La Comisión debe aprobar el currículo individual.",
+      excludedCourseIds: newIds,
+      useOnlyConfiguredPeriods: true,
+      periods: semesterCodes.map((codes, index) => ({
+        label: `Semestre ${index + 1}`,
+        courseIds: index === 0 ? [...codes, ...choice] : codes,
+        ...(index === 0 ? { alternativeGroups: [{ id: "taller-inicial", required: true, courseIds: choice }] } : {}),
+      })),
+    });
+    const capital = audit.offerings.find(({ locations }) => locations.includes("Montevideo"));
+    capital.trajectoryIds = [ifmPathwayId, ...capital.trajectoryIds.filter((id) => id !== ifmPathwayId)];
+    if (!audit.sources.some(({ url }) => url === ifmGuide.source.url)) {
+      audit.sources.push({ url: ifmGuide.source.url, authority: ifmGuide.source.authority,
+        supports: ["cuatro semestres iniciales de Montevideo y sus alternativas"] });
+    }
+  }
   const notice = "Los CIO son carreras independientes. Las Trayectorias Ingeniería publicadas para Salto y Paysandú son inicios parciales de este mismo plan, distintos del CIO, con continuidad en Montevideo; no son sedes completas.";
   audit.offerings = [
     ...audit.offerings.filter((offering) => !offering.trajectoryIds?.some((id) => regionalPathways.includes(id))),
@@ -86,7 +118,7 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
       admissionStatus: "active", trajectoryIds: [`${campusId}-inicial`],
     })),
   ];
-  audit.reviewedAt = consultedAt;
+  audit.reviewedAt = planId === ifmGuide.planId ? ifmGuide.source.reviewedAt : consultedAt;
   audit.anomalies.find(({ field }) => field === anomaly).resolution = notice;
   const sources = Object.entries(source.sources).map(([id, url]) => ({
     url, authority: source.authority, reviewedAt: consultedAt, role: id === "indice"
@@ -99,7 +131,9 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
   const pending = "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú.";
   audit.conclusion.regionalCurriculumVariant = true;
   audit.conclusion.regionalTrajectoryEvidencePath = sourcePath;
-  audit.remainingWork = pending;
+  audit.remainingWork = planId === ifmGuide.planId
+    ? "Cotejar y proyectar los perfiles avanzados de Montevideo; resolver la discrepancia de créditos de Química General."
+    : pending;
   auditedPathwaysByPlan.push({ id: planId, pathways: regional.map(({ id, periods }) => ({
     id, periods: periods.map(({ label, courseIds }) => ({ label, courseIds: courseIds.map((code) => `fing-${code}`) })),
   })) });
@@ -117,7 +151,15 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
   };
   const reviewIndex = reviews.reviews.findIndex((item) => item.planId === planId);
   if (reviewIndex === -1) reviews.reviews.push(entry);
-  else reviews.reviews[reviewIndex] = entry;
+  else if (reviews.reviews[reviewIndex].state === "research-pending") reviews.reviews[reviewIndex] = entry;
+  if (planId === ifmGuide.planId) {
+    const review = reviews.reviews.find((item) => item.planId === planId);
+    review.scope.territories = ["Montevideo", "Salto", "Paysandú"];
+    // The audited projection evidence below still compares the regional rows only.
+    review.evidence.reason = "Se reproducen los cuatro primeros semestres de Montevideo y los inicios regionales. Falta cotejar y proyectar los perfiles avanzados de Montevideo.";
+    review.conflictNotes = [notice, audit.remainingWork, `Guía inicial de Montevideo: ${ifmGuidePath}.`];
+    review.sources.find(({ url }) => url === ifmGuide.source.url).role = "guía inicial capitalina de cuatro semestres reproducida";
+  }
 }
 
 registry.contentHash = officialAuditRegistryHash(registry);

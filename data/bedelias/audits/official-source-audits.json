@@ -81844,7 +81844,7 @@
       "identity": "ingenieria fisico matematica:2017",
       "career": "Ingeniería Físico-Matemática",
       "planYear": "2017",
-      "reviewedAt": "2026-11-16",
+      "reviewedAt": "2026-11-18",
       "status": "official-evidence-complete",
       "scope": "current-degree-title-credit-structure-minima-personalized-curriculum-guide-profiles-admission-and-campus",
       "publicationEligible": true,
@@ -81865,6 +81865,87 @@
         "pathwayLabel": "Perfil guía",
         "degreeRule": "El Plan 2017 exige 450 créditos, los mínimos de sus cuatro áreas raíz y doce áreas subordinadas positivas, un proyecto final de al menos 35 créditos y un currículo individual coherente aprobado por la Comisión de Carrera. Los perfiles guía son puntos de partida flexibles y no títulos, menciones ni especializaciones.",
         "trajectories": [
+          {
+            "id": "montevideo-inicial",
+            "label": "Montevideo · primeros cuatro semestres",
+            "credentialId": "ingeniero-fisico-matematico",
+            "campusIds": [
+              "montevideo"
+            ],
+            "description": "Guía parcial para ingreso con suficiencia en la prueba diagnóstica. En primero elegí un taller; las opciones adicionales de tercero y cuarto quedan en el catálogo sin semestre fijo. La guía indica 7 créditos para Principios de Química General y Bedelías registra 8 en Montevideo: no se asignó esa materia a un semestre ni se cambió su carga. La Comisión debe aprobar el currículo individual.",
+            "excludedCourseIds": [
+              "litoral-norte-calculo-i",
+              "litoral-norte-algebra-lineal-i",
+              "litoral-norte-fisica-i",
+              "litoral-norte-taller-de-diseno",
+              "litoral-norte-calculo-ii",
+              "litoral-norte-algebra-lineal-ii",
+              "litoral-norte-fisica-ii",
+              "litoral-norte-fisica-iii",
+              "litoral-norte-calculo-vectorial",
+              "litoral-norte-probabilidad-y-estadistica",
+              "litoral-norte-mecanica-clasica",
+              "litoral-norte-fisica-experimental-i",
+              "litoral-norte-administracion-y-gestion-de-organizaciones-i",
+              "litoral-norte-ecuaciones-diferenciales",
+              "litoral-norte-electromagnetismo",
+              "litoral-norte-fisica-experimental-ii",
+              "litoral-norte-teorica-de-circuitos",
+              "litoral-norte-diseno-logico",
+              "litoral-norte-taller-de-robotica",
+              "litoral-norte-principios-de-quimica-general"
+            ],
+            "useOnlyConfiguredPeriods": true,
+            "periods": [
+              {
+                "label": "Semestre 1",
+                "courseIds": [
+                  "1061",
+                  "1030",
+                  "1151",
+                  "1990",
+                  "5904",
+                  "1266"
+                ],
+                "alternativeGroups": [
+                  {
+                    "id": "taller-inicial",
+                    "required": true,
+                    "courseIds": [
+                      "1990",
+                      "5904",
+                      "1266"
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "Semestre 2",
+                "courseIds": [
+                  "1062",
+                  "1031",
+                  "1152",
+                  "1322"
+                ]
+              },
+              {
+                "label": "Semestre 3",
+                "courseIds": [
+                  "1063",
+                  "1025",
+                  "1153",
+                  "1154"
+                ]
+              },
+              {
+                "label": "Semestre 4",
+                "courseIds": [
+                  "1064",
+                  "1155"
+                ]
+              }
+            ]
+          },
           {
             "id": "curricula-personalizada",
             "credentialId": "ingeniero-fisico-matematico",
@@ -82826,7 +82907,36 @@
               ]
             }
           ],
-          "manualCompletionValidation": "Aprobación del currículo individual, del perfil y de sus opcionales por la Comisión de Carrera de Ingeniería Físico-Matemática"
+          "manualCompletionValidation": "Aprobación del currículo individual, del perfil y de sus opcionales por la Comisión de Carrera de Ingeniería Físico-Matemática",
+          "verifiedCourseIds": [
+            "1061",
+            "1030",
+            "1151",
+            "1062",
+            "1031",
+            "1152",
+            "1322",
+            "1063",
+            "1025",
+            "1153",
+            "1154",
+            "1064",
+            "1155",
+            "1990",
+            "5904",
+            "1266",
+            "1023",
+            "1078",
+            "1128",
+            "1073",
+            "1723",
+            "2368",
+            "1764",
+            "1456",
+            "2512",
+            "1321",
+            "1027"
+          ]
         }
       },
       "offerings": [
@@ -82838,6 +82948,7 @@
           "role": "sede responsable y carrera completa",
           "admissionStatus": "active",
           "trajectoryIds": [
+            "montevideo-inicial",
             "curricula-personalizada",
             "perfil-procesos-industriales",
             "perfil-energia",
@@ -83025,7 +83136,7 @@
         }
       ],
       "uiNotice": "Plan 2017 de 450 créditos en Montevideo. Elegí una currícula personalizada o uno de los ocho perfiles guía; todos otorgan el mismo título y requieren cubrir los mínimos y obtener aprobación de la Comisión de Carrera.",
-      "remainingWork": "Continúa pendiente la secuencia sugerida y la cobertura de asignaturas de Montevideo; no se extrapola de Salto ni Paysandú."
+      "remainingWork": "Cotejar y proyectar los perfiles avanzados de Montevideo; resolver la discrepancia de créditos de Química General."
     },
     {
       "identity": "ingenieria industrial mecanica:1997",
@@ -99110,6 +99221,6 @@
       "remainingWork": "Confirmar el plan sucesor y su transición por cohorte, códigos ambiguos y electivas externas."
     }
   ],
-  "contentHash": "sha256:4e931f74981ff448a9c62a873a6ca8fffbf2c13529280a865a1a2bd729599714",
+  "contentHash": "sha256:843453e6a9905c8dd73ece1b9dba6b34f76e3cbc247c20ff318bfc1eb030c85a",
   "generatedAt": "2026-09-04T00:00:00.000Z"
 }
