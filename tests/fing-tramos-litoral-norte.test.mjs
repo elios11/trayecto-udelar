@@ -64,3 +64,33 @@ test("Agrimensura: la guía parcial de Montevideo conserva sus alternativas e id
     course.bedeliasCode === (guide.bedeliasCodeMappings[code] ?? code) && course.credits === credits)).map(([code]) => code);
   assert.deepEqual(unmatchedCodes.sort(), Object.keys(guide.missingFromProjectedCatalog.identities).sort());
 });
+
+test("Físico-Matemática: el cotejo capitalino conserva créditos e identidades sin tomar códigos regionales", async () => {
+  const guide = await read("data/official-trajectories/fing-fisico-matematica-2017-montevideo.json");
+  const projection = await read(`app/data/bedelias-generated/${guide.planId}.json`);
+  const review = guide.catalogReconciliation;
+  assert.equal(guide.initialWorkshop.choose, 1);
+  const groups = [
+    ...guide.periods.map(({ rows }, index) => [rows, review.semesterCodes[index]]),
+    [guide.initialWorkshop.rows, review.initialWorkshopCodes],
+    [guide.earlyOptions.rows, review.earlyOptionCodes],
+  ];
+  const used = new Set();
+  const unresolved = [];
+  for (const [rows, codes] of groups) {
+    assert.equal(rows.length, codes.length);
+    for (const [[name, credits], code] of rows.map((row, index) => [row, codes[index]])) {
+      if (code === null) {
+        unresolved.push([name, credits]);
+        continue;
+      }
+      const matches = projection.courses.filter((course) => course.bedeliasCode === code && course.credits === credits);
+      assert.equal(matches.length, 1, name);
+      assert.ok(!used.has(matches[0].id), name);
+      assert.ok(!matches[0].id.startsWith("fing-litoral-norte-"), name);
+      used.add(matches[0].id);
+    }
+  }
+  assert.equal(used.size, 27);
+  assert.deepEqual(unresolved, review.unresolved.map(({ name, sourceCredits }) => [name, sourceCredits]));
+});
