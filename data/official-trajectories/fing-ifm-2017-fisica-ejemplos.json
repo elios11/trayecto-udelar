@@ -61,9 +61,33 @@
     "Pasantía": "18887", "CTS": "1223", "AGPI": "1944", "ElectAvanz2": "5717", "MétNum": "1033",
     "Sist y Cont": "5905", "Sist y cont tiempo disc": "5906", "Fund AA": "5852", "Est y Pred Ser temp": "5849"
   },
+  "supplementalCourseEvidence": {
+    "Sisem": {
+      "name": "Sistemas Embebidos para Tiempo Real", "credits": 10, "code": "1556", "status": "source-only-in-plan",
+      "programmeUrl": "https://www.fing.edu.uy/static/programas/Grado/2020/Sistemas%20Embebidos%20para%20Tiempo%20Real/Sist-EmbebidosTiempoReal-20.pdf",
+      "codeUrl": "https://www.fing.edu.uy/sites/default/files/2026-04/grado-2025.pdf"
+    },
+    "DCI": {
+      "name": "Diseño de Circuitos Integrados", "credits": 9, "code": "5708", "status": "source-only-in-plan",
+      "programmeUrl": "https://www.fing.edu.uy/sites/default/files/2024-06/Dise%C3%B1o%20de%20circuitos%20integrados%2021.pdf",
+      "codeUrl": "https://www.fing.edu.uy/sites/default/files/2026-04/grado-2025.pdf"
+    },
+    "Moderna": {
+      "name": "Introducción a la Física Moderna", "credits": 10, "status": "guide-version-unconfirmed",
+      "programmeCode": "1159", "otherCatalogCode": "1131",
+      "programmeUrl": "https://www.fing.edu.uy/sites/default/files/2025-06/introduccion-a-la-fisica-moderna_1159.pdf"
+    },
+    "Ant y Prop": {
+      "name": "Antenas y Propagación", "credits": 12, "status": "credit-conflict",
+      "externalCatalogVersions": [{"code": "5817", "credits": 10}, {"code": "5803", "credits": 10}],
+      "programmeIndexUrl": "https://idm.fing.edu.uy/index.php/es/node/47420"
+    },
+    "AIMD": {"credits": 8, "status": "unidentified"}
+  },
   "pending": [
-    "Moderna: 1131 y 1159 coinciden por carga y nombre abreviado; no se elige un código por semejanza.",
-    "Sisem, DCI, AIMD y Ant y Prop: verificar abreviatura y código contra programa institucional antes de asignar identidad.",
+    "Sisem y DCI tienen identidad y carga institucionales pero no se encontraron en el snapshot de este plan; la inclusión en la guía no acredita una regla de Bedelías.",
+    "Moderna: el programa institucional confirma 1159 con 10 créditos, pero la guía no distingue 1159 de 1131; no migrar ni fusionar progreso.",
+    "Ant y Prop: el perfil nombra Antenas y Propagación; la carga de 12 de la grilla no coincide con las otras proyecciones FING consultadas. AIMD sigue sin expansión confirmada.",
     "Métodos Numéricos: 8 créditos en ambos ejemplos y en 1033; la variante 2041 de 10 créditos no se sustituye automáticamente.",
     "Los cupos optativos y Taller se conservan como espacios de elección, no como materias acreditables adicionales."
   ]

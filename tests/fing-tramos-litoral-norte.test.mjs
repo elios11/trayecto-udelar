@@ -13,6 +13,15 @@ test("los ejemplos de Física cierran en 451 créditos y su proyecto es una sola
   const projection = await read(`app/data/bedelias-generated/${source.planId}.json`);
   const courses = new Map(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map((course) => [course.bedeliasCode, course]));
   const { project, internship } = source.activityReconciliation;
+  const guideRows = [...source.common, ...source.examples.flatMap(({ periods4To10 }) => periods4To10)].flat();
+  for (const [label, evidence] of Object.entries(source.supplementalCourseEvidence)) {
+    assert.ok(guideRows.some(([name, credits]) => name === label && credits === evidence.credits), label);
+    assert.equal(Object.hasOwn(source.catalogMatches, label), false, label);
+    if (evidence.status === "source-only-in-plan") {
+      assert.ok(evidence.programmeUrl && evidence.codeUrl, label);
+      assert.equal(courses.has(evidence.code), false, label);
+    }
+  }
   assert.equal(source.examples.length, 2);
   for (const example of source.examples) {
     const periods = [...source.common, ...example.periods4To10];
