@@ -24,7 +24,9 @@ async function save(file, data) {
 const [source, registry, reviews] = await Promise.all([sourcePath, auditPath, reviewsPath].map(read));
 const ifmGuidePath = "data/official-trajectories/fing-fisico-matematica-2017-montevideo.json";
 const ifmGuide = await read(ifmGuidePath);
+const ifmPhysics = await read("data/official-trajectories/fing-ifm-2017-fisica-ejemplos.json");
 const ifmPathwayId = "montevideo-inicial";
+const physicsIds = ifmPhysics.examples.map(({ id }) => `fisica-ejemplo-${id}`);
 const consultedAt = source.consultedAt;
 const contentHash = `sha256:${createHash("sha256").update(JSON.stringify(source.rows)).digest("hex")}`;
 const regionalPathways = ["salto-inicial", "paysandu-inicial"];
@@ -44,7 +46,8 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
   const officialPlan = audit.officialPlan;
   const curriculum = officialPlan.curriculum;
   const data = source.rows[evidenceKey];
-  const oldTrajectories = officialPlan.trajectories.filter(({ id }) => id !== ifmPathwayId && !regionalPathways.includes(id));
+  const oldTrajectories = officialPlan.trajectories.filter(({ id }) =>
+    id !== ifmPathwayId && !regionalPathways.includes(id) && !physicsIds.includes(id));
   const credentialId = oldTrajectories[0].credentialId;
   assert.ok(credentialId);
   const rowsById = new Map();
@@ -87,8 +90,40 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
     assert.equal(ifmGuide.initialWorkshop.choose, 1);
     const choice = [...initialWorkshopCodes];
     const optionCodes = earlyOptionCodes.filter(Boolean);
+    const sourceRows = new Map();
+    const examples = ifmPhysics.examples.map((example, exampleIndex) => {
+      const id = physicsIds[exampleIndex];
+      return {
+        id, label: `Física · ${example.label}`, credentialId, campusIds: ["montevideo"],
+        description: "Ejemplo oficial, no obligatorio. Los cupos y las materias pendientes de cotejo no acreditan créditos por sí mismos. El Proyecto se cuenta una vez: 35 créditos en total, distribuidos por la guía entre 9.º y 10.º.",
+        excludedCourseIds: newIds, useOnlyConfiguredPeriods: true,
+        periods: [...ifmPhysics.common, ...example.periods4To10].map((rows, index) => {
+          const label = `Semestre ${index + 1}`;
+          const courseIds = rows.flatMap(([name, credits], rowIndex) => {
+            if (name === "Proyecto") return index === 9 ? [ifmPhysics.activityReconciliation.project.bedeliasCode] : [];
+            if (name === "Taller (*)") return choice;
+            if (Object.hasOwn(ifmPhysics.catalogMatches, name)) return [ifmPhysics.catalogMatches[name]];
+            const evidence = ifmPhysics.supplementalCourseEvidence[name];
+            const sourceOnly = evidence?.status === "source-only-in-plan";
+            const rowId = sourceOnly ? `ifm-fisica-fuente-${evidence.code}` : `ifm-${id}-s${index + 1}-${rowIndex + 1}`;
+            const row = sourceRows.get(rowId) ?? {
+              id: rowId, name: sourceOnly ? evidence.name : `${evidence?.name ?? name} · ${credits} cr. en la guía${evidence ? " (por cotejar)" : " (a elegir)"}`,
+              credits: sourceOnly ? credits : 0, placeholder: !sourceOnly,
+              pathwayIds: [], periodLabel: label, sourceUrl: ifmPhysics.source.url,
+            };
+            if (!row.pathwayIds.includes(id)) row.pathwayIds.push(id);
+            sourceRows.set(rowId, row);
+            return [rowId];
+          });
+          return { label, courseIds, ...(index === 0 ? { alternativeGroups: [{ id: "taller-inicial", required: true, courseIds: choice }] } : {}) };
+        }),
+      };
+    });
+    const previousPhysicsRows = (row) => row.id.startsWith("ifm-fisica-fuente-") || row.id.startsWith("ifm-fisica-ejemplo-");
+    curriculum.additionalCourses = [...curriculum.additionalCourses.filter((row) => !previousPhysicsRows(row)), ...sourceRows.values()];
+    officialPlan.trajectories.splice(officialPlan.trajectories.findIndex(({ id }) => regionalPathways.includes(id)), 0, ...examples);
     curriculum.verifiedCourseIds = [...new Set([...(curriculum.verifiedCourseIds ?? []),
-      ...semesterCodes.flat(), ...choice, ...optionCodes])];
+      ...semesterCodes.flat(), ...choice, ...optionCodes, ...Object.values(ifmPhysics.catalogMatches)])];
     officialPlan.trajectories.unshift({
       id: ifmPathwayId,
       label: "Montevideo · primeros cuatro semestres",
@@ -104,7 +139,11 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
       })),
     });
     const capital = audit.offerings.find(({ locations }) => locations.includes("Montevideo"));
-    capital.trajectoryIds = [ifmPathwayId, ...capital.trajectoryIds.filter((id) => id !== ifmPathwayId)];
+    capital.trajectoryIds = [ifmPathwayId, ...capital.trajectoryIds.filter((id) => id !== ifmPathwayId && !physicsIds.includes(id)), ...physicsIds];
+    if (!audit.sources.some(({ url }) => url === ifmPhysics.source.url)) {
+      audit.sources.push({ url: ifmPhysics.source.url, authority: ifmPhysics.source.authority,
+        supports: ["dos ejemplos semestrales del perfil Física"] });
+    }
     if (!audit.sources.some(({ url }) => url === ifmGuide.source.url)) {
       audit.sources.push({ url: ifmGuide.source.url, authority: ifmGuide.source.authority,
         supports: ["cuatro semestres iniciales de Montevideo y sus alternativas"] });
@@ -156,7 +195,7 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
     const review = reviews.reviews.find((item) => item.planId === planId);
     review.scope.territories = ["Montevideo", "Salto", "Paysandú"];
     // The audited projection evidence below still compares the regional rows only.
-    review.evidence.reason = "Se reproducen los cuatro primeros semestres de Montevideo y los inicios regionales. Falta cotejar y proyectar los perfiles avanzados de Montevideo.";
+    review.evidence.reason = "Se reproducen los inicios regionales y capitalino, y dos ejemplos de diez semestres del perfil Física. Quedan pendientes otras guías y las equivalencias sin cotejar.";
     review.conflictNotes = [notice, audit.remainingWork, `Guía inicial de Montevideo: ${ifmGuidePath}.`];
     review.sources.find(({ url }) => url === ifmGuide.source.url).role = "guía inicial capitalina de cuatro semestres reproducida";
   }

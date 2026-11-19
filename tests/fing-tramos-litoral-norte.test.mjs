@@ -38,6 +38,18 @@ test("los ejemplos de Física cierran en 451 créditos y su proyecto es una sola
     for (const [name, credits] of periods.flat()) {
       if (Object.hasOwn(source.catalogMatches, name)) assert.equal(courses.get(source.catalogMatches[name])?.credits, credits, name);
     }
+    const id = `fisica-ejemplo-${example.id}`;
+    const view = buildRegisteredPlanPresentation(id, projection);
+    assert.equal(view.generated, false);
+    assert.equal(view.periods.length, 10);
+    const ids = view.periods.flatMap(({ courseIds }) => courseIds);
+    const projectId = courses.get(project.bedeliasCode).id;
+    assert.equal(ids.filter((id) => id === projectId).length, 1);
+    assert.ok(view.periods[9].courseIds.includes(projectId));
+    const placeholders = view.courses.filter(({ placeholder }) => placeholder);
+    assert.ok(placeholders.length > 0);
+    assert.ok(placeholders.every(({ credits }) => credits === 0));
+    assert.ok(completeRegisteredPlanCourses(id, projection, view.courses).every(({ placeholder }) => !placeholder));
   }
 });
 

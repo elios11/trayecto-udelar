@@ -1193,7 +1193,7 @@ export default function Home() {
     [planYear, trajectoryId, plan1997AvailableCourses, isProfilePlan, profileAvailableCourses, qf2015AvailableCourses, isRegisteredPlan, registeredAvailableCourses],
   );
   const plannerCourses = useMemo<Course[]>(() => isRegisteredPlan
-    ? registeredCompleteCourses
+    ? registeredCompleteCourses.filter((course) => !course.placeholder)
     : planYear === "2025"
     ? plan2025CatalogCourses
     : isProfilePlan ? profileAvailableCourses : planYear === "qf-2015" ? qf2015AvailableCourses : plan1997AvailableCourses,
@@ -3636,7 +3636,7 @@ export default function Home() {
               : selected.dataStatus === "fq-damero" ? <p className="verified-source fing-source"><span>FQ</span> Materia, créditos y semestre publicados en el <a href={qf2015Data?.source.suggestedCurriculum} target="_blank" rel="noreferrer">damero vigente de Facultad de Química</a>; códigos y previaturas se contrastan con Bedelías.</p>
               : selected.dataStatus === "fadu-official" ? <p className="verified-source fing-source"><span>FA</span> {selected.curricularBlock ? "Bloque y créditos" : "Unidad curricular y créditos"} contrastados con el <a href={activeRegisteredPlan?.source.planDocument} target="_blank" rel="noreferrer">plan y la organización oficial de FADU</a>.</p>
               : selected.dataStatus === "official-curriculum" ? <p className="verified-source fing-source"><span>U</span> {selected.curricularBlock ? (selected.hours ? "Bloque y carga horaria" : "Bloque y créditos") : selected.hours ? "Unidad curricular, carga horaria y período" : "Unidad curricular, créditos y período"} publicados en la <a href={activeRegisteredPlan?.source.careerPage} target="_blank" rel="noreferrer">malla curricular oficial del servicio</a>.</p>
-              : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={activeProfileData?.source.profilesSpreadsheet} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>; debe completarse eligiendo una unidad curricular admitida por el plan.</p>
+              : selected.placeholder ? <p className="verified-source fing-source"><span>F</span> Espacio previsto en la <a href={activeProfileData?.source.profilesSpreadsheet ?? activeRegisteredPlan?.source.careerPage} target="_blank" rel="noreferrer">trayectoria oficial del perfil</a>. No acredita créditos por sí mismo.</p>
               : verifiedCourses.has(selected.id) ? <p className="verified-source"><span>✓</span> Materia incluida en la composición publicada por <strong>Bedelías</strong>.</p>
                 : selected.dataStatus === "fing-trajectory" ? <p className="verified-source fing-source"><span>F</span> Materia y semestre publicados en la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria sugerida de FING</a>; Bedelías aún no publica su regla para este plan.</p>
                   : selected.dataStatus === "project-assumption" && <p className="verified-source fing-source"><span>!</span> Los 4 créditos se mantienen como supuesto del proyecto para el Plan 2025; la <a href={plan2025Data.source.curriculumPage} target="_blank" rel="noreferrer">trayectoria vigente de FING</a> confirma el corte de 60%, pero no explicita este crédito.</p>}

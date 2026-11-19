@@ -868,6 +868,7 @@ function buildBedeliasCompositionCurriculum(audit, snapshot, serviceCode, usedId
       ...(rawCourse.creditsPublished === false ? { creditsPublished: false } : {}),
       ...(rawCourse.catalogRole ? { catalogRole: rawCourse.catalogRole } : {}),
       ...(rawCourse.availabilityStatus ? { availabilityStatus: rawCourse.availabilityStatus } : {}),
+      ...(rawCourse.placeholder === true ? { placeholder: true } : {}),
     }, "verified", {
       officialIdentity: true,
       officialCredits: rawCourse.officialCredits ?? true,

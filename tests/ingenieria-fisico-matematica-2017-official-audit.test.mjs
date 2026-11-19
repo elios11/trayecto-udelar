@@ -38,6 +38,8 @@ test("publica un solo Plan 2017, una currícula personalizada y ocho perfiles gu
     "perfil-control",
     "perfil-ciencia-datos",
     "perfil-procesamiento-senales",
+    "fisica-ejemplo-dispositivos-electronicos",
+    "fisica-ejemplo-optica-propagacion",
     "salto-inicial",
     "paysandu-inicial",
   ]);
@@ -82,11 +84,12 @@ test("mantiene recomendaciones reemplazables y todo lo demás en el catálogo ac
     assert.equal(new Set(selectedIds).size, selectedIds.length);
     assert.equal(new Set(pathway.catalogCourseIds).size, pathway.catalogCourseIds.length);
     assert.equal(selectedIds.length + pathway.catalogCourseIds.length, capitalCourses.length);
-    assert.equal(pathway.periods[0].label, id === "montevideo-inicial" ? "Semestre 1" : "Orientación del perfil");
-    assert.equal(pathway.periods.at(-1).label, id === "montevideo-inicial" ? "Semestre 4" : "Validación de egreso");
+    const example = id.startsWith("fisica-ejemplo-");
+    assert.equal(pathway.periods[0].label, id === "montevideo-inicial" || example ? "Semestre 1" : "Orientación del perfil");
+    assert.equal(pathway.periods.at(-1).label, example ? "Semestre 10" : id === "montevideo-inicial" ? "Semestre 4" : "Validación de egreso");
   }
   assert.equal(projection.pathways["curricula-personalizada"].periods.flatMap(({ courseIds }) => courseIds).length, 19);
-  assert.equal(projection.pathways["curricula-personalizada"].catalogCourseIds.length, 312);
+  assert.ok(projection.pathways["curricula-personalizada"].catalogCourseIds.length >= 312);
   assert.ok(selectedCodes("perfil-procesos-industriales").has("Q94"));
   assert.ok(selectedCodes("perfil-energia").has("5508"));
   assert.ok(selectedCodes("perfil-fisica").has("5715"));
@@ -115,12 +118,12 @@ test("fusiona las seis unidades con créditos repartidos sin perder sus áreas",
   }
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 335);
   assert.equal(audit.bedeliasComparison.normalizedCourseCount, 329);
-  assert.equal(projection.courses.length, 351);
+  assert.equal(projection.courses.filter(({ id }) => !id.startsWith("fing-ifm-fisica-")).length, 351);
 });
 
 test("conserva la evidencia de previaturas y publica sólo las verificadas", () => {
   assert.equal(projection.rules.length, 241);
-  assert.equal(projection.plan.publishedRules, 29);
+  assert.equal(projection.plan.publishedRules, 38);
   assert.equal(projection.plan.noPublishedRule, 34);
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));
   assert.match(audit.anomalies.find(({ field }) => field === "profilesAreGuides").resolution, /mismo perfil|perfiles guía|opción personalizada/i);

@@ -139,6 +139,7 @@ export function buildRegisteredPlanPresentation(pathwayId, data) {
 
   const courses = data.courses
     .filter((course) => availableIds.has(course.id)
+      && (!course.placeholder || activePeriods.has(course.id))
       && (hasOfficialPeriodCourses ? (course.authorityStatus ?? "verified") === "verified" : isRealCurricularCourse(course)))
     .map((course) => {
       const provisional = (course.authorityStatus ?? "verified") !== "verified";
@@ -173,11 +174,11 @@ export function completeRegisteredPlanCourses(pathwayId, data, activeCourses) {
   if (!data) return activeCourses;
   const pathways = Object.entries(data.pathways);
   if (!pathways.some(([, pathway]) => pathway.localCatalogOnly)) return activeCourses;
-  const courses = new Map(activeCourses.map((course) => [course.id, course]));
+  const courses = new Map(activeCourses.filter((course) => !course.placeholder).map((course) => [course.id, course]));
   for (const [id] of pathways) {
     if (id === pathwayId) continue;
     for (const course of buildRegisteredPlanCourses(id, data)) {
-      if (!courses.has(course.id)) courses.set(course.id, { ...course, semester: "opt" });
+      if (!course.placeholder && !courses.has(course.id)) courses.set(course.id, { ...course, semester: "opt" });
     }
   }
   // A plan that replaces every provisional pathway can still have saved terms
