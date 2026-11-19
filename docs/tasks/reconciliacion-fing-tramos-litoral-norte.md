@@ -19,3 +19,9 @@ Principios de Química General sigue discrepante: 7 créditos en la guía, 8 par
 Regenerar la proyección con `node scripts/build-fing-tramos-litoral-norte.mjs`; la prueba focal verifica los tres recorridos, las alternativas del taller y la disponibilidad en el catálogo.
 
 Regenerar el inventario desde la evidencia versionada: `npm run trajectory:inventory`. Verificar con `node --test --experimental-test-isolation=none tests/fing-tramos-litoral-norte.test.mjs tests/official-trajectory-inventory.test.mjs`.
+
+### Ejemplos de diez semestres del perfil Física
+
+Los dos ejemplos, Fundamentos de los dispositivos electrónicos y Óptica y propagación de ondas electromagnéticas, se transcribieron desde las páginas 3 y 4 del PDF identificado por la Comisión. El artefacto `data/official-trajectories/fing-ifm-2017-fisica-ejemplos.json` conserva las filas, la huella del PDF, las correspondencias por nombre y carga y los casos sin resolver. La comprobación de sumas y correspondencias es offline con la prueba focal anterior; no reconsulta el PDF. Para repetir el cotejo visual con una copia del mismo archivo: `pdftoppm -f 3 -l 4 -scale-to 1600 -png tmp/pdfs/ifm-perfil-fisica.pdf tmp/pdfs/ifm-perfil-fisica`.
+
+Cada ejemplo suma 451 créditos incluyendo los cupos elegibles. Proyecto es una sola actividad (1885, 35 cr.) distribuida en dos períodos en el documento, y Pasantía es la actividad de 10 créditos del octavo. La prueba compara las correspondencias guardadas contra el catálogo, pero no promueve candidatas. Antes de proyectar, confirmar Moderna, Sisem, DCI, AIMD y Ant y Prop y validar versiones históricas que no deben sustituirse automáticamente. Los ejemplos no se agregan al selector en este paso.

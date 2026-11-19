@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
+  "scope": "Montevideo, perfil-guía Física; dos ejemplos sustituibles, no secuencias obligatorias ni oferta vigente",
+  "source": {
+    "url": "https://eva.fing.edu.uy/pluginfile.php/79275/mod_resource/content/5/Perfil%20F%C3%ADsica%20-%20IFM%20-%20DocumentoDescriptivo-20240813.pdf",
+    "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, FING, Udelar",
+    "publishedVersion": "documento 2024-08-13, listado por la Comisión con carga 2026-02-04",
+    "reviewedAt": "2026-11-18",
+    "contentHash": "sha256:4630654a55f2c1904c1008401d6603c567102c278112d99e8b07ea30167c7130"
+  },
+  "common": [
+    [["CDI1V", 13], ["GAL1", 9], ["F1", 10], ["Taller (*)", 4]],
+    [["CDIVV", 13], ["GAL2", 9], ["F2", 10], ["P1", 10]],
+    [["Calc Vect", 10], ["MecNewt", 10], ["F3", 10], ["FExp1", 5], ["PyE", 10]]
+  ],
+  "examples": [
+    {
+      "id": "dispositivos-electronicos",
+      "label": "Fundamentos de los dispositivos electrónicos",
+      "page": 3,
+      "periods4To10": [
+        [["Diseño Lógico", 12], ["Electromag", 10], ["Int. EcDifs", 10], ["FExp2", 5], ["Teocirc", 8]],
+        [["P2", 12], ["SeyS", 11], ["ElecFund", 11], ["FVC", 5], ["Intro uP", 11]],
+        [["Sist y Control", 12], ["SAM", 8], ["ElecAvanz 1", 10], ["Moderna", 10], ["Algún Taller", 6]],
+        [["IIO", 10], ["Medidas Elec", 10], ["Opc Básica", 9], ["Opc Fis", 10], ["Sisem", 10]],
+        [["Opc básica", 10], ["Mét Num", 8], ["Opc Ciencias Ing", 9], ["Opc básica", 10], ["Pasantía", 10]],
+        [["Proyecto", 10], ["CTS", 8], ["AGPI", 5], ["Opc CC", 10], ["ElectAvanz2", 8], ["Opc básica", 8]],
+        [["Proyecto", 25], ["DCI", 9], ["AIMD", 8]]
+      ],
+      "publishedSemesterTotals": [36, 42, 45, 45, 50, 46, 49, 47, 49, 42],
+      "publishedTotal": 451
+    },
+    {
+      "id": "optica-propagacion",
+      "label": "Óptica y propagación de ondas electromagnéticas",
+      "page": 4,
+      "periods4To10": [
+        [["Opc Física", 12], ["Electromag", 10], ["Int. EcDifs", 10], ["FExp2", 5], ["Teocirc", 8]],
+        [["P2", 12], ["SeyS", 11], ["ElecFund", 11], ["FVC", 5], ["Opc Básica", 11]],
+        [["SAM", 8], ["MétNum", 8], ["Sist y Cont", 12], ["Moderna", 10], ["Algún Taller", 6]],
+        [["IIO", 10], ["Medidas Elec", 10], ["Ant y Prop", 12], ["Opc Fis", 10], ["Sist y cont tiempo disc", 8]],
+        [["Opc básica", 8], ["Opc Básica", 10], ["Fund AA", 8], ["Opc básica", 10], ["Pasantía", 10]],
+        [["Proyecto", 10], ["CTS", 8], ["Opc Básica", 9], ["Opc CC", 10], ["AGPI", 5]],
+        [["Proyecto", 25], ["Opcional Ciencias de Ing", 8], ["Est y Pred Ser temp", 10], ["Opc libre", 8]]
+      ],
+      "publishedSemesterTotals": [36, 42, 45, 45, 50, 44, 50, 46, 42, 51],
+      "publishedTotal": 451
+    }
+  ],
+  "activityReconciliation": {
+    "project": {"bedeliasCode": "1885", "credits": 35, "placements": [[9, 10], [10, 25]]},
+    "internship": {"bedeliasCode": "18887", "credits": 10, "semester": 8}
+  },
+  "catalogMatches": {
+    "CDI1V": "1061", "GAL1": "1030", "F1": "1151", "CDIVV": "1062", "GAL2": "1031", "F2": "1152",
+    "P1": "1322", "Calc Vect": "1063", "MecNewt": "1078", "F3": "1153", "FExp1": "1154", "PyE": "1025",
+    "Diseño Lógico": "2512", "Electromag": "1128", "Int. EcDifs": "1064", "FExp2": "1155", "Teocirc": "1456",
+    "P2": "1321", "SeyS": "1457", "ElecFund": "5715", "FVC": "1066", "Intro uP": "1513", "Sist y Control": "5905",
+    "SAM": "1460", "ElecAvanz 1": "5716", "IIO": "1610", "Medidas Elec": "1461", "Mét Num": "1033",
+    "Pasantía": "18887", "CTS": "1223", "AGPI": "1944", "ElectAvanz2": "5717", "MétNum": "1033",
+    "Sist y Cont": "5905", "Sist y cont tiempo disc": "5906", "Fund AA": "5852", "Est y Pred Ser temp": "5849"
+  },
+  "pending": [
+    "Moderna: 1131 y 1159 coinciden por carga y nombre abreviado; no se elige un código por semejanza.",
+    "Sisem, DCI, AIMD y Ant y Prop: verificar abreviatura y código contra programa institucional antes de asignar identidad.",
+    "Métodos Numéricos: 8 créditos en ambos ejemplos y en 1033; la variante 2041 de 10 créditos no se sustituye automáticamente.",
+    "Los cupos optativos y Taller se conservan como espacios de elección, no como materias acreditables adicionales."
+  ]
+}

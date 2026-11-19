@@ -8,6 +8,30 @@ const root = new URL("../", import.meta.url);
 const read = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
 const inventory = await read("data/official-trajectories/inventory.json");
 
+test("los ejemplos de Física cierran en 451 créditos y su proyecto es una sola actividad", async () => {
+  const source = await read("data/official-trajectories/fing-ifm-2017-fisica-ejemplos.json");
+  const projection = await read(`app/data/bedelias-generated/${source.planId}.json`);
+  const courses = new Map(projection.courses.filter(({ bedeliasCode }) => bedeliasCode).map((course) => [course.bedeliasCode, course]));
+  const { project, internship } = source.activityReconciliation;
+  assert.equal(source.examples.length, 2);
+  for (const example of source.examples) {
+    const periods = [...source.common, ...example.periods4To10];
+    assert.equal(periods.length, 10);
+    const totals = periods.map((rows) => rows.reduce((sum, [, credits]) => sum + credits, 0));
+    assert.deepEqual(totals, example.publishedSemesterTotals);
+    assert.equal(totals.reduce((sum, credits) => sum + credits, 0), example.publishedTotal);
+    const projectRows = periods.flatMap((rows, i) => rows.filter(([name]) => name === "Proyecto")
+      .map(([, credits]) => [i + 1, credits]));
+    assert.deepEqual(projectRows, project.placements);
+    assert.equal(projectRows.reduce((sum, [, credits]) => sum + credits, 0), courses.get(project.bedeliasCode).credits);
+    assert.equal(courses.get(project.bedeliasCode).credits, 35);
+    assert.ok(periods[internship.semester - 1].some(([name, credits]) => name === "Pasantía" && credits === internship.credits));
+    for (const [name, credits] of periods.flat()) {
+      if (Object.hasOwn(source.catalogMatches, name)) assert.equal(courses.get(source.catalogMatches[name])?.credits, credits, name);
+    }
+  }
+});
+
 for (const [key, main, expected] of [
   ["ingenieria-en-agrimensura-2023", "trayectoria-flexible", [[44, 48], [44, 48]]],
   ["ingenieria-fisico-matematica-2017", "montevideo-inicial", [[44, 48, 47, 45], [40, 48, 47, 45]]],
