@@ -8,6 +8,21 @@ const root = new URL("../", import.meta.url);
 const read = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
 const inventory = await read("data/official-trajectories/inventory.json");
 
+test("el inventario de Físico-Matemática conserva los nueve ejemplos y la transcripción de Procesos", async () => {
+  const source = await read("data/official-trajectories/fing-ifm-2017-perfiles-inventario.json");
+  assert.equal(new Set(source.profiles.map(({ resourceId }) => resourceId)).size, 7);
+  assert.equal(source.profiles.flatMap(({ examples }) => examples).length, 9);
+  for (const profile of source.profiles) {
+    assert.match(profile.sha256, /^[a-f0-9]{64}$/);
+    for (const example of profile.examples) assert.equal(example.semesters, 10);
+  }
+  const [{ examples: [processes] }] = source.profiles;
+  const totals = processes.rows.map((rows) => rows.reduce((sum, [, credits]) => sum + credits, 0));
+  assert.deepEqual(totals, processes.printedSemesterTotals);
+  assert.equal(totals.reduce((total, value) => total + value, 0), processes.printedCredits);
+  assert.deepEqual(processes.rows[2].find(([name]) => name === "Princ. Quím. Gral."), ["Princ. Quím. Gral.", 8]);
+});
+
 test("los ejemplos de Física cierran en 451 créditos y su proyecto es una sola actividad", async () => {
   const source = await read("data/official-trajectories/fing-ifm-2017-fisica-ejemplos.json");
   const projection = await read(`app/data/bedelias-generated/${source.planId}.json`);

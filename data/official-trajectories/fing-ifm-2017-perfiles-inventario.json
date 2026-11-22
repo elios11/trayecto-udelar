@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "planId": "bedelias-fing-ingenieria-fisico-matematica-2017",
+  "authority": "Comisión de Carrera de Ingeniería Físico-Matemática, FING, Udelar",
+  "scope": "Montevideo; ejemplos flexibles y no obligatorios. Los totales son los impresos, no cargas recalculadas ni certificación de egreso.",
+  "indexUrl": "https://eva.fing.edu.uy/course/view.php?id=1570&section=2",
+  "reviewedAt": "2026-11-21",
+  "profiles": [
+    {
+      "id": "procesos-industriales", "resourceId": 73136, "version": "2026",
+      "url": "https://eva.fing.edu.uy/pluginfile.php/79272/mod_resource/content/4/Perfil%20Procesos%20-%20IFM%20-%20DocumentoDescriptivo-%202026.pdf",
+      "sha256": "f6f5ea8c065a2ba909a98e0cddaec77b50db6071f3e6793d23e62b3f76234e98",
+      "examples": [{
+        "id": "general", "pages": [3, 4], "semesters": 10, "printedCredits": 450,
+        "printedSemesterTotals": [36, 42, 43, 45, 44, 48, 50, 48, 45, 49],
+        "rows": [
+          [["CDI1V", 13], ["GAL1", 9], ["F1", 10], ["Taller (*)", 4]],
+          [["CDIVV", 13], ["GAL2", 9], ["F2", 10], ["PI", 10]],
+          [["Calc Vect", 10], ["Princ. Quím. Gral.", 8], ["F3", 10], ["FExp1", 5], ["Mec.Newt.", 10]],
+          [["Int.IngProc", 5], ["PyE", 10], ["Int. EcDifs", 10], ["FExp2", 5], ["Térmica", 10], ["AGPI", 5]],
+          [["Fenómenos De Transp", 14], ["IIO", 10], ["Opc Fis", 10], ["EDA", 10]],
+          [["Fluidodinámica", 14], ["Transf. Calor Y Masa 1", 14], ["Opc Mat", 10], ["MetNum", 10]],
+          [["Opc Fis", 10], ["Opc tecnol", 10], ["Opc Básica", 8], ["Opc CC", 10], ["Taller avanzado", 6], ["Opc Ciencias Ing", 6]],
+          [["Opc Tecnol", 10], ["Dinámica y Ctrl de Procesos", 10], ["Opc Básica", 10], ["Pasantía", 10], ["Opc libre", 8]],
+          [["Proyecto", 10], ["CTS", 8], ["Opc Tecnol", 11], ["Opc libre", 8], ["Opc libre", 8]],
+          [["Proyecto", 25], ["Opc Básica", 10], ["Opc libre", 8], ["Opc libre", 6]]
+        ],
+        "notes": ["PI en segundo es Programación 1 según el texto del perfil, no la Prueba Inicial.", "La sugerencia en prosa y la tabla ubican Probabilidad y Estadística en semestres distintos; no combinarlas.", "La guía de Procesos indica 8 créditos para Química General, no los 7 de la guía inicial general."],
+        "catalogContrast": [
+          {"row": "Int.IngProc", "guideCredits": 5, "catalog": [["2416", 6]], "status": "credit-conflict"},
+          {"row": "Fenómenos De Transp", "guideCredits": 14, "catalog": [["Q22", 14], ["Q22B", 12]], "status": "version-review"},
+          {"row": "Fluidodinámica", "guideCredits": 14, "catalog": [["Q66", 14], ["Q66B", 12]], "status": "version-review"},
+          {"row": "Transf. Calor Y Masa 1", "guideCredits": 14, "catalog": [["Q74", 14], ["Q74B", 12]], "status": "version-review"},
+          {"row": "MetNum", "guideCredits": 10, "catalog": [["2041", 10], ["1033", 8]], "status": "version-review"}
+        ]
+      }]
+    },
+    {
+      "id": "energia", "resourceId": 73137, "version": "2026",
+      "url": "https://eva.fing.edu.uy/pluginfile.php/79274/mod_resource/content/5/Perfil%20Energia%20-%20IFM%20-%20DocumentoDescriptivo-%202026.pdf",
+      "sha256": "e8eba2f3af550c199feade13c19ebb354710ebe0b7e8332021decfe9129d0fce",
+      "examples": [{"id": "mas-mecanico", "pages": [3], "semesters": 10, "printedCredits": 450}, {"id": "mas-electrico", "pages": [3], "semesters": 10, "printedCredits": 450}]
+    },
+    {
+      "id": "mecanica-computacional", "resourceId": 73139, "version": null,
+      "url": "https://eva.fing.edu.uy/pluginfile.php/79276/mod_resource/content/5/Documento_Descriptivo_IngFM_Mec_Comp.pdf",
+      "sha256": "3a800d4a36253a2dc9abe7f04efa5dd6dbb2d3755ada8978b91b2332c87fa7ba",
+      "examples": [{"id": "mecanico", "pages": [3], "semesters": 10, "printedCredits": 452}, {"id": "estructural", "pages": [3], "semesters": 10, "printedCredits": 450}]
+    },
+    {
+      "id": "investigacion-operaciones", "resourceId": 73140, "version": "2024-08-13",
+      "url": "https://eva.fing.edu.uy/pluginfile.php/79277/mod_resource/content/7/Perfil%20IO%20-%20IFM%20-%20DocumentoDescriptivo-%2020240813.pdf",
+      "sha256": "fee299e64c684c3de03c0e34fd429474b700a04cc08ca95e2eb84ea43eed19e4",
+      "examples": [{"id": "general", "pages": [3], "semesters": 10, "printedCredits": 450}]
+    },
+    {
+      "id": "control", "resourceId": 73141, "version": "2026",
+      "url": "https://eva.fing.edu.uy/pluginfile.php/79278/mod_resource/content/6/Perfil%20Control%20-%20IFM%20-%20DocumentoDescriptivo-%202026.pdf",
+      "sha256": "7093891c764680a71e0ec1fb2d9ef8d9f696b6ee401bfa1756bd74d6886e07a5",
+      "examples": [{"id": "general", "pages": [3], "semesters": 10, "printedCredits": 450}]
+    },
+    {
+      "id": "ciencia-datos", "resourceId": 73142, "version": "2024-03-19",
+      "url": "https://eva.fing.edu.uy/pluginfile.php/79279/mod_resource/content/5/Perfil%20Ciencia%20de%20Datos%20-%20IFM%20-%20DocumentoDescriptivo-%2020240319.pdf",
+      "sha256": "d65e731b32a3bff1675b3f7bce42821a1a66b2bccb2d8b6500aa1d50b447bad4",
+      "examples": [{"id": "general", "pages": [3], "semesters": 10, "printedCredits": 451}]
+    },
+    {
+      "id": "procesamiento-senales", "resourceId": 73143, "version": "2026-06-11",
+      "url": "https://eva.fing.edu.uy/pluginfile.php/79280/mod_resource/content/8/Perfil%20Se%C3%B1ales%20-%20IFM%20-%20DocumentoDescriptivo-%2020260611.pdf",
+      "sha256": "23f51133d518a3a9dfa135ed5bf36208522376109d3cdf3c1fdc0b24057c35c2",
+      "examples": [{"id": "general", "pages": [3], "semesters": 10, "printedCredits": 450}]
+    }
+  ]
+}
