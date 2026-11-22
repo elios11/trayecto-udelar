@@ -8,6 +8,30 @@ const root = new URL("../", import.meta.url);
 const read = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
 const inventory = await read("data/official-trajectories/inventory.json");
 
+test("las ocho grillas avanzadas restantes conservan sus filas y subtotales impresos", async () => {
+  const indexPath = "fing-ifm-2017-perfiles-inventario.json";
+  const source = await read("data/official-trajectories/fing-ifm-2017-perfiles-filas.json");
+  assert.equal(source.sourceInventory, indexPath);
+  const index = await read(`data/official-trajectories/${indexPath}`);
+  const expected = new Map(index.profiles.flatMap(({ resourceId, examples }) =>
+    examples.filter(({ rows }) => !rows).map((example) => [`${resourceId}/${example.id}`, example])));
+  assert.equal(expected.size, 8);
+  for (const { resourceId, id, rows, printedSemesterTotals } of source.examples) {
+    const key = `${resourceId}/${id}`;
+    assert.ok(expected.has(key), key);
+    assert.equal(rows.length, 10, key);
+    assert.ok(rows.every((semester) => semester.length && semester.every(([name, credits]) =>
+      name.trim() && Number.isInteger(credits) && credits > 0)), key);
+    const totals = rows.map((semester) => semester.reduce((sum, [, credits]) => sum + credits, 0));
+    assert.deepEqual(totals, printedSemesterTotals, key);
+    assert.equal(totals.reduce((sum, value) => sum + value, 0), expected.get(key).printedCredits, key);
+    assert.deepEqual(rows.flatMap((semester, index) => semester.filter(([name]) => name === "Proyecto")
+      .map(([, credits]) => [index + 1, credits])), [[9, 10], [10, 25]], key);
+    expected.delete(key);
+  }
+  assert.equal(expected.size, 0);
+});
+
 test("el inventario de Físico-Matemática conserva los nueve ejemplos y la transcripción de Procesos", async () => {
   const source = await read("data/official-trajectories/fing-ifm-2017-perfiles-inventario.json");
   assert.equal(new Set(source.profiles.map(({ resourceId }) => resourceId)).size, 7);
