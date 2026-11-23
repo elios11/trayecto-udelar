@@ -32,6 +32,40 @@ test("las ocho grillas avanzadas restantes conservan sus filas y subtotales impr
   assert.equal(expected.size, 0);
 });
 
+test("el cotejo avanzado cubre las nueve grillas sin mezclar siglas, versiones ni cupos", async () => {
+  const base = "data/official-trajectories";
+  const index = await read(`${base}/fing-ifm-2017-perfiles-inventario.json`);
+  const { examples } = await read(`${base}/fing-ifm-2017-perfiles-filas.json`);
+  const review = await read(`${base}/fing-ifm-2017-perfiles-cotejo.json`);
+  const { catalogMatches } = await read(`${base}/fing-ifm-2017-fisica-ejemplos.json`);
+  const { courses } = await read(`app/data/bedelias-generated/${index.planId}.json`);
+  const counts = { matched: 0, flexible: 0, unresolved: 0, project: 0 };
+  const seenPending = new Set();
+  for (const { resourceId, rows } of [{ resourceId: 73136, ...index.profiles[0].examples[0] }, ...examples]) {
+    const usedCodes = new Set();
+    for (const [name, credits] of rows.flat()) {
+      if (name === "Proyecto") { counts.project++; continue; }
+      if (/^(Opc|Taller \(\*\)|Taller avanzado)/i.test(name)) { counts.flexible++; continue; }
+      const key = `${name}|${credits}`;
+      const code = review.byResource[resourceId]?.[key] ?? review.labelAndCredits[key] ?? catalogMatches[name];
+      if (!code) {
+        assert.ok(review.pendingNotes[key], key);
+        seenPending.add(key);
+        counts.unresolved++;
+        continue;
+      }
+      assert.equal(courses.filter((course) => course.bedeliasCode === code && course.credits === credits).length, 1, key);
+      assert.ok(!usedCodes.has(code), `${resourceId}: ${key}`);
+      usedCodes.add(code);
+      counts.matched++;
+    }
+  }
+  assert.deepEqual([...seenPending].sort(), Object.keys(review.pendingNotes).sort());
+  assert.deepEqual(counts, { matched: 261, flexible: 116, unresolved: 25, project: 18 });
+  assert.deepEqual(review.byResource["73143"], { "PI|10": "1375" });
+  assert.deepEqual(review.byResource["73136"], { "PI|10": "1322" });
+});
+
 test("el inventario de Físico-Matemática conserva los nueve ejemplos y la transcripción de Procesos", async () => {
   const source = await read("data/official-trajectories/fing-ifm-2017-perfiles-inventario.json");
   assert.equal(new Set(source.profiles.map(({ resourceId }) => resourceId)).size, 7);
