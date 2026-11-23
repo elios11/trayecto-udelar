@@ -555,7 +555,7 @@ export const extractedAcademicPlanRegistrations = {
   },
   "bedelias-fing-ingenieria-fisico-matematica-2017": {
     load: () => import("./bedelias-generated/bedelias-fing-ingenieria-fisico-matematica-2017.json"),
-    pathwayIds: ["montevideo-inicial","curricula-personalizada","perfil-procesos-industriales","perfil-energia","perfil-fisica","perfil-mecanica-computacional","perfil-investigacion-operaciones","perfil-control","perfil-ciencia-datos","perfil-procesamiento-senales","fisica-ejemplo-dispositivos-electronicos","fisica-ejemplo-optica-propagacion","salto-inicial","paysandu-inicial"],
+    pathwayIds: ["montevideo-inicial","curricula-personalizada","perfil-procesos-industriales","perfil-energia","perfil-fisica","perfil-mecanica-computacional","perfil-investigacion-operaciones","perfil-control","perfil-ciencia-datos","perfil-procesamiento-senales","fisica-ejemplo-dispositivos-electronicos","fisica-ejemplo-optica-propagacion","ifm-avanzado-procesos-industriales-general","ifm-avanzado-energia-mas-mecanico","ifm-avanzado-energia-mas-electrico","ifm-avanzado-mecanica-computacional-mecanico","ifm-avanzado-mecanica-computacional-estructural","ifm-avanzado-investigacion-operaciones-general","ifm-avanzado-control-general","ifm-avanzado-ciencia-datos-general","ifm-avanzado-procesamiento-senales-general","salto-inicial","paysandu-inicial"],
     pathwayLabel: "Perfil guía",
     minCredits: 450,
   },

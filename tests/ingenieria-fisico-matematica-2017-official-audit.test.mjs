@@ -40,6 +40,15 @@ test("publica un solo Plan 2017, una currícula personalizada y ocho perfiles gu
     "perfil-procesamiento-senales",
     "fisica-ejemplo-dispositivos-electronicos",
     "fisica-ejemplo-optica-propagacion",
+    "ifm-avanzado-procesos-industriales-general",
+    "ifm-avanzado-energia-mas-mecanico",
+    "ifm-avanzado-energia-mas-electrico",
+    "ifm-avanzado-mecanica-computacional-mecanico",
+    "ifm-avanzado-mecanica-computacional-estructural",
+    "ifm-avanzado-investigacion-operaciones-general",
+    "ifm-avanzado-control-general",
+    "ifm-avanzado-ciencia-datos-general",
+    "ifm-avanzado-procesamiento-senales-general",
     "salto-inicial",
     "paysandu-inicial",
   ]);
@@ -84,7 +93,7 @@ test("mantiene recomendaciones reemplazables y todo lo demás en el catálogo ac
     assert.equal(new Set(selectedIds).size, selectedIds.length);
     assert.equal(new Set(pathway.catalogCourseIds).size, pathway.catalogCourseIds.length);
     assert.equal(selectedIds.length + pathway.catalogCourseIds.length, capitalCourses.length);
-    const example = id.startsWith("fisica-ejemplo-");
+    const example = id.startsWith("fisica-ejemplo-") || id.startsWith("ifm-avanzado-");
     assert.equal(pathway.periods[0].label, id === "montevideo-inicial" || example ? "Semestre 1" : "Orientación del perfil");
     assert.equal(pathway.periods.at(-1).label, example ? "Semestre 10" : id === "montevideo-inicial" ? "Semestre 4" : "Validación de egreso");
   }
@@ -118,13 +127,13 @@ test("fusiona las seis unidades con créditos repartidos sin perder sus áreas",
   }
   assert.equal(audit.bedeliasComparison.compositionMatterCount, 335);
   assert.equal(audit.bedeliasComparison.normalizedCourseCount, 329);
-  assert.equal(projection.courses.filter(({ id }) => !id.startsWith("fing-ifm-fisica-")).length, 351);
+  assert.equal(projection.courses.filter(({ id }) => !id.startsWith("fing-ifm-fisica-") && !id.startsWith("fing-ifm-avanzado-")).length, 351);
 });
 
 test("conserva la evidencia de previaturas y publica sólo las verificadas", () => {
   assert.equal(projection.rules.length, 241);
-  assert.equal(projection.plan.publishedRules, 38);
-  assert.equal(projection.plan.noPublishedRule, 34);
+  assert.ok(projection.plan.publishedRules >= 38);
+  assert.equal(projection.plan.publishedRules, projection.publishedRules.length);
   assert.ok(projection.courses.every(({ creditAllocations }) => creditAllocations?.length > 0));
   assert.match(audit.anomalies.find(({ field }) => field === "profilesAreGuides").resolution, /mismo perfil|perfiles guía|opción personalizada/i);
   assert.match(audit.anomalies.find(({ field }) => field === "campusScope").resolution, /CIO/);

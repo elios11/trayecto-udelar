@@ -66,6 +66,25 @@ test("el cotejo avanzado cubre las nueve grillas sin mezclar siglas, versiones n
   assert.deepEqual(review.byResource["73136"], { "PI|10": "1322" });
 });
 
+test("las nueve grillas avanzadas aparecen sólo en Montevideo y no ofrecen cupos en el planificador", async () => {
+  const source = await read("data/official-trajectories/fing-ifm-2017-perfiles-inventario.json");
+  const projection = await read(`app/data/bedelias-generated/${source.planId}.json`);
+  const projectId = projection.courses.find(({ bedeliasCode }) => bedeliasCode === "1885").id;
+  for (const profile of source.profiles) for (const example of profile.examples) {
+    const id = `ifm-avanzado-${profile.id}-${example.id}`;
+    const view = buildRegisteredPlanPresentation(id, projection);
+    assert.deepEqual(projection.publishedPathways[id].campusIds, ["montevideo"], id);
+    assert.equal(view.generated, false, id);
+    assert.equal(view.periods.length, 10, id);
+    assert.equal(view.periods.flatMap(({ courseIds }) => courseIds).filter((key) => key === projectId).length, 1, id);
+    assert.ok(view.periods[9].courseIds.includes(projectId), id);
+    assert.ok(view.courses.some(({ placeholder }) => placeholder), id);
+    assert.ok(view.courses.every(({ placeholder, credits }) => !placeholder || credits === 0), id);
+    assert.ok(completeRegisteredPlanCourses(id, projection, view.courses).every(({ placeholder }) => !placeholder), id);
+  }
+  assert.equal(projection.campuses.find(({ id }) => id === "montevideo").defaultPathwayId, "montevideo-inicial");
+});
+
 test("el inventario de Físico-Matemática conserva los nueve ejemplos y la transcripción de Procesos", async () => {
   const source = await read("data/official-trajectories/fing-ifm-2017-perfiles-inventario.json");
   assert.equal(new Set(source.profiles.map(({ resourceId }) => resourceId)).size, 7);

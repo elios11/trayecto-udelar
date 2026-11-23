@@ -27,6 +27,13 @@ const ifmGuide = await read(ifmGuidePath);
 const ifmPhysics = await read("data/official-trajectories/fing-ifm-2017-fisica-ejemplos.json");
 const ifmPathwayId = "montevideo-inicial";
 const physicsIds = ifmPhysics.examples.map(({ id }) => `fisica-ejemplo-${id}`);
+const ifmAdvancedIndex = await read("data/official-trajectories/fing-ifm-2017-perfiles-inventario.json");
+const ifmAdvancedRows = await read("data/official-trajectories/fing-ifm-2017-perfiles-filas.json");
+const ifmAdvancedReview = await read("data/official-trajectories/fing-ifm-2017-perfiles-cotejo.json");
+const advancedProfiles = new Map(ifmAdvancedIndex.profiles.map((profile) => [profile.resourceId, profile]));
+const advancedRows = [{ resourceId: 73136, ...advancedProfiles.get(73136).examples[0] }, ...ifmAdvancedRows.examples];
+const advancedIds = advancedRows.map(({ resourceId, id }) => `ifm-avanzado-${advancedProfiles.get(resourceId).id}-${id}`);
+const advancedNames = new Map(ifmGuide.profileIndex.rows.map(([name, resourceId]) => [resourceId, name]));
 const consultedAt = source.consultedAt;
 const contentHash = `sha256:${createHash("sha256").update(JSON.stringify(source.rows)).digest("hex")}`;
 const regionalPathways = ["salto-inicial", "paysandu-inicial"];
@@ -47,7 +54,7 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
   const curriculum = officialPlan.curriculum;
   const data = source.rows[evidenceKey];
   const oldTrajectories = officialPlan.trajectories.filter(({ id }) =>
-    id !== ifmPathwayId && !regionalPathways.includes(id) && !physicsIds.includes(id));
+    id !== ifmPathwayId && !regionalPathways.includes(id) && !physicsIds.includes(id) && !advancedIds.includes(id));
   const credentialId = oldTrajectories[0].credentialId;
   assert.ok(credentialId);
   const rowsById = new Map();
@@ -119,11 +126,48 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
         }),
       };
     });
-    const previousPhysicsRows = (row) => row.id.startsWith("ifm-fisica-fuente-") || row.id.startsWith("ifm-fisica-ejemplo-");
+    const matchedAdvancedCodes = new Set();
+    for (const [exampleIndex, example] of advancedRows.entries()) {
+      const { resourceId, rows } = example;
+      const profile = advancedProfiles.get(resourceId);
+      const id = advancedIds[exampleIndex];
+      const variant = { "mas-mecanico": "más mecánico", "mas-electrico": "más eléctrico", mecanico: "mecánico", estructural: "estructural" }[example.id];
+      const periods = rows.map((semester, index) => {
+        const label = `Semestre ${index + 1}`;
+        const courseIds = semester.flatMap(([name, credits], rowIndex) => {
+          if (name === "Proyecto") return index === 9 ? [ifmPhysics.activityReconciliation.project.bedeliasCode] : [];
+          const key = `${name}|${credits}`;
+          const code = ifmAdvancedReview.byResource[resourceId]?.[key] ?? ifmAdvancedReview.labelAndCredits[key] ?? ifmPhysics.catalogMatches[name];
+          if (code) {
+            matchedAdvancedCodes.add(code);
+            return [code];
+          }
+          const flexible = /^(Opc|Taller \(\*\)|Taller avanzado)/i.test(name);
+          assert.ok(flexible || ifmAdvancedReview.pendingNotes[key], key);
+          const rowId = `${id}-s${index + 1}-${rowIndex + 1}`;
+          sourceRows.set(rowId, {
+            id: rowId, name: `${name === "Taller (*)" ? "Taller inicial" : name} · ${credits} cr. en la guía (${flexible ? "a elegir" : "por cotejar"})`,
+            credits: 0, placeholder: true, pathwayIds: [id], periodLabel: label, sourceUrl: profile.url,
+          });
+          return [rowId];
+        });
+        return { label, courseIds };
+      });
+      examples.push({
+        id, label: `${advancedNames.get(resourceId)} · ejemplo${variant ? " " + variant : ""}`,
+        credentialId, campusIds: ["montevideo"], periods,
+        description: `Ejemplo flexible de la Comisión, no obligatorio. Total impreso: ${profile.examples.find(({ id }) => id === example.id).printedCredits} créditos. Los cupos y las filas por cotejar no acreditan créditos por sí mismos. El Proyecto se cuenta una vez: 35 créditos entre 9.º y 10.º.`,
+        excludedCourseIds: newIds, useOnlyConfiguredPeriods: true,
+      });
+      if (!audit.sources.some(({ url }) => url === profile.url)) audit.sources.push({
+        url: profile.url, authority: ifmAdvancedIndex.authority, supports: ["ejemplos semestrales del perfil"],
+      });
+    }
+    const previousPhysicsRows = (row) => row.id.startsWith("ifm-fisica-fuente-") || row.id.startsWith("ifm-fisica-ejemplo-") || row.id.startsWith("ifm-avanzado-");
     curriculum.additionalCourses = [...curriculum.additionalCourses.filter((row) => !previousPhysicsRows(row)), ...sourceRows.values()];
     officialPlan.trajectories.splice(officialPlan.trajectories.findIndex(({ id }) => regionalPathways.includes(id)), 0, ...examples);
     curriculum.verifiedCourseIds = [...new Set([...(curriculum.verifiedCourseIds ?? []),
-      ...semesterCodes.flat(), ...choice, ...optionCodes, ...Object.values(ifmPhysics.catalogMatches)])];
+      ...semesterCodes.flat(), ...choice, ...optionCodes, ...Object.values(ifmPhysics.catalogMatches), ...matchedAdvancedCodes])];
     officialPlan.trajectories.unshift({
       id: ifmPathwayId,
       label: "Montevideo · primeros cuatro semestres",
@@ -139,7 +183,7 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
       })),
     });
     const capital = audit.offerings.find(({ locations }) => locations.includes("Montevideo"));
-    capital.trajectoryIds = [ifmPathwayId, ...capital.trajectoryIds.filter((id) => id !== ifmPathwayId && !physicsIds.includes(id)), ...physicsIds];
+    capital.trajectoryIds = [ifmPathwayId, ...capital.trajectoryIds.filter((id) => id !== ifmPathwayId && !physicsIds.includes(id) && !advancedIds.includes(id)), ...physicsIds, ...advancedIds];
     if (!audit.sources.some(({ url }) => url === ifmPhysics.source.url)) {
       audit.sources.push({ url: ifmPhysics.source.url, authority: ifmPhysics.source.authority,
         supports: ["dos ejemplos semestrales del perfil Física"] });
@@ -171,7 +215,7 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
   audit.conclusion.regionalCurriculumVariant = true;
   audit.conclusion.regionalTrajectoryEvidencePath = sourcePath;
   audit.remainingWork = planId === ifmGuide.planId
-    ? "Cotejar y proyectar los perfiles avanzados de Montevideo; resolver la discrepancia de créditos de Química General."
+    ? "Cotejar las referencias sin equivalencia y resolver las discrepancias entre versiones de las guías de Montevideo."
     : pending;
   auditedPathwaysByPlan.push({ id: planId, pathways: regional.map(({ id, periods }) => ({
     id, periods: periods.map(({ label, courseIds }) => ({ label, courseIds: courseIds.map((code) => `fing-${code}`) })),
@@ -195,7 +239,7 @@ for (const { identity, slug, evidenceKey, credits, anomaly } of plans) {
     const review = reviews.reviews.find((item) => item.planId === planId);
     review.scope.territories = ["Montevideo", "Salto", "Paysandú"];
     // The audited projection evidence below still compares the regional rows only.
-    review.evidence.reason = "Se reproducen los inicios regionales y capitalino, y dos ejemplos de diez semestres del perfil Física. Quedan pendientes otras guías y las equivalencias sin cotejar.";
+    review.evidence.reason = "Se reproducen los inicios regionales y capitalino y once ejemplos de diez semestres. Quedan referencias y diferencias de carga por cotejar.";
     review.conflictNotes = [notice, audit.remainingWork, `Guía inicial de Montevideo: ${ifmGuidePath}.`];
     review.sources.find(({ url }) => url === ifmGuide.source.url).role = "guía inicial capitalina de cuatro semestres reproducida";
   }
